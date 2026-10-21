@@ -4,6 +4,16 @@
   "docnum": "AQS-DUTY-064",
   "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
  },
+ "ADS_CHILL": {
+  "doc": "docs-authority/sizing/ADS_CHILL.md",
+  "docnum": "AQS-SIZE-ADS_CHILL",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "AFTERBURNER": {
+  "doc": "docs-authority/sizing/AFTERBURNER.md",
+  "docnum": "AQS-SIZE-AFTERBURNER",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "AFTERBURNER_FLUE": {
   "doc": "docs-authority/sizing/HEADERS.md",
   "docnum": "AQS-DUTY-075",
@@ -29,10 +39,20 @@
   "docnum": "AQS-ELEC-007",
   "family": "Plant power sizing (docs-authority/_power_sizing.py)"
  },
+ "BAGHOUSE": {
+  "doc": "docs-authority/sizing/BAGHOUSE.md",
+  "docnum": "AQS-SIZE-BAGHOUSE",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "BLACK_DIGEST": {
   "doc": "docs-authority/sizing/SANITATION.md",
   "docnum": "AQS-DUTY-063",
   "family": "Sanitation train (flow_graph/param/sanitation.py)"
+ },
+ "BLOW_MOLD": {
+  "doc": "docs-authority/sizing/BLOW_MOLD.md",
+  "docnum": "AQS-SIZE-BLOW_MOLD",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "BMED_ACID": {
   "doc": "docs-authority/sizing/BMED_STACK.md",
@@ -48,6 +68,11 @@
   "doc": "docs-authority/sizing/UPW_POLISH.md",
   "docnum": "AQS-DUTY-070",
   "family": "UPW polish RO/EDI (flow_graph/param/upw_polish.py)"
+ },
+ "C29_RECYCLE": {
+  "doc": "docs-authority/sizing/C29_RECYCLE.md",
+  "docnum": "AQS-SIZE-C29_RECYCLE",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "CAST_LINE": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
@@ -74,10 +99,30 @@
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
  },
+ "CONTINUOUS_RECYCLE": {
+  "doc": "docs-authority/sizing/CONTINUOUS_RECYCLE.md",
+  "docnum": "AQS-SIZE-CONTINUOUS_RECYCLE",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "CONT_CAST": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "CRU": {
+  "doc": "docs-authority/sizing/CRU.md",
+  "docnum": "AQS-SIZE-CRU",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "CRYO_AHU": {
+  "doc": "docs-authority/sizing/CRYO_AHU.md",
+  "docnum": "AQS-SIZE-CRYO_AHU",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "CRYO_AHU_COND_CONDENSABLE": {
+  "doc": "docs-authority/sizing/CRYO_AHU_COND_CONDENSABLE.md",
+  "docnum": "AQS-SIZE-CRYO_AHU_COND_CONDENSABLE",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "CRYO_ASU": {
   "doc": "docs-authority/sizing/COLD_BOX.md",
@@ -89,10 +134,25 @@
   "docnum": "AQS-DUTY-065",
   "family": "Gas receiver banks (flow_graph/param/receivers.py)"
  },
+ "CRYO_DED_COOL": {
+  "doc": "docs-authority/sizing/CRYO_DED_COOL.md",
+  "docnum": "AQS-SIZE-CRYO_DED_COOL",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "CRYO_H2": {
   "doc": "docs-authority/sizing/GAS_RECEIVERS.md",
   "docnum": "AQS-DUTY-065",
   "family": "Gas receiver banks (flow_graph/param/receivers.py)"
+ },
+ "CRYO_HX_Q4": {
+  "doc": "docs-authority/sizing/CRYO_HX_Q4.md",
+  "docnum": "AQS-SIZE-CRYO_HX_Q4",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "CRYO_N2": {
+  "doc": "docs-authority/sizing/CRYO_N2.md",
+  "docnum": "AQS-SIZE-CRYO_N2",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "CRYO_O2": {
   "doc": "docs-authority/sizing/GAS_RECEIVERS.md",
@@ -108,6 +168,16 @@
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "DRY_COOLER": {
+  "doc": "docs-authority/sizing/DRY_COOLER.md",
+  "docnum": "AQS-SIZE-DRY_COOLER",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "ELECTRODE_COAT": {
+  "doc": "docs-authority/sizing/ELECTRODE_COAT.md",
+  "docnum": "AQS-SIZE-ELECTRODE_COAT",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "EVAP_ACID": {
   "doc": "docs-authority/sizing/EVAP_DESIGN.md",
@@ -174,6 +244,11 @@
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
  },
+ "EXT_HALL": {
+  "doc": "docs-authority/sizing/EXT_HALL.md",
+  "docnum": "AQS-SIZE-EXT_HALL",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "FAB_UPW_TANK": {
   "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
   "docnum": "AQS-DUTY-064",
@@ -183,6 +258,16 @@
   "doc": "docs-authority/sizing/POLYMERS_LINE.md",
   "docnum": "AQS-DUTY-073",
   "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "FLOAT_SINK": {
+  "doc": "docs-authority/sizing/FLOAT_SINK.md",
+  "docnum": "AQS-SIZE-FLOAT_SINK",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "FLUE_KO": {
+  "doc": "docs-authority/sizing/FLUE_KO.md",
+  "docnum": "AQS-SIZE-FLUE_KO",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "FLUX_PREP": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
@@ -204,6 +289,11 @@
   "docnum": "AQS-ELEC-007",
   "family": "Plant power sizing (docs-authority/_power_sizing.py)"
  },
+ "F_RECOVER": {
+  "doc": "docs-authority/sizing/F_RECOVER.md",
+  "docnum": "AQS-SIZE-F_RECOVER",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "GAS_ATOMIZER": {
   "doc": "docs-authority/MFG_TOOLS.md",
   "docnum": "AQS-MFG-010",
@@ -224,15 +314,60 @@
   "docnum": "AQS-DUTY-076",
   "family": "GEO loop (flow_graph/param/geo_loop.py)"
  },
+ "GLASS_BURNOUT": {
+  "doc": "docs-authority/sizing/GLASS_BURNOUT.md",
+  "docnum": "AQS-SIZE-GLASS_BURNOUT",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "GLASS_DIGEST": {
   "doc": "docs-authority/sizing/REACTOR_DESIGN.md",
   "docnum": "AQS-DUTY-062",
   "family": "In-house reactors (flow_graph/param/reactor_design.py)"
  },
+ "GLASS_MILL": {
+  "doc": "docs-authority/sizing/GLASS_MILL.md",
+  "docnum": "AQS-SIZE-GLASS_MILL",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "GLASS_RINSE": {
+  "doc": "docs-authority/sizing/GLASS_RINSE.md",
+  "docnum": "AQS-SIZE-GLASS_RINSE",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "GREASE_CA": {
+  "doc": "docs-authority/sizing/GREASE_CA.md",
+  "docnum": "AQS-SIZE-GREASE_CA",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "GREASE_LI": {
+  "doc": "docs-authority/sizing/GREASE_LI.md",
+  "docnum": "AQS-SIZE-GREASE_LI",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "GREY_TREAT": {
+  "doc": "docs-authority/sizing/GREY_TREAT.md",
+  "docnum": "AQS-SIZE-GREY_TREAT",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "GROW_BED": {
+  "doc": "docs-authority/sizing/GROW_BED.md",
+  "docnum": "AQS-SIZE-GROW_BED",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "H2O_ELYZ": {
+  "doc": "docs-authority/sizing/H2O_ELYZ.md",
+  "docnum": "AQS-SIZE-H2O_ELYZ",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "H2_DRYER": {
   "doc": "docs-authority/sizing/H2_PURIFIER_BEDS.md",
   "docnum": "AQS-DUTY-066",
   "family": "H2 purifier / dryer beds (flow_graph/param/h2_purifier.py)"
+ },
+ "HABITATION": {
+  "doc": "docs-authority/sizing/HABITATION.md",
+  "docnum": "AQS-SIZE-HABITATION",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "HDR_CO2": {
   "doc": "docs-authority/sizing/HEADERS.md",
@@ -294,6 +429,36 @@
   "docnum": "AQS-DUTY-050",
   "family": "Leach CSTR (docs-authority/_leach_sizing.py)"
  },
+ "LITHO_ALIGN": {
+  "doc": "docs-authority/sizing/LITHO_ALIGN.md",
+  "docnum": "AQS-SIZE-LITHO_ALIGN",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "LITHO_COAT": {
+  "doc": "docs-authority/sizing/LITHO_COAT.md",
+  "docnum": "AQS-SIZE-LITHO_COAT",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "LITHO_DEV": {
+  "doc": "docs-authority/sizing/LITHO_DEV.md",
+  "docnum": "AQS-SIZE-LITHO_DEV",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "LI_RECOVER": {
+  "doc": "docs-authority/sizing/LI_RECOVER.md",
+  "docnum": "AQS-SIZE-LI_RECOVER",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "LOAD_AGG": {
+  "doc": "docs-authority/sizing/LOAD_AGG.md",
+  "docnum": "AQS-SIZE-LOAD_AGG",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "MAU_HX": {
+  "doc": "docs-authority/sizing/MAU_HX.md",
+  "docnum": "AQS-SIZE-MAU_HX",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "MEOH_COND": {
   "doc": "docs-authority/sizing/MEOH_TRAIN.md",
   "docnum": "AQS-DUTY-077",
@@ -324,6 +489,16 @@
   "docnum": "AQS-DUTY-064",
   "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
  },
+ "MET_AHU": {
+  "doc": "docs-authority/sizing/MET_AHU.md",
+  "docnum": "AQS-SIZE-MET_AHU",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "MET_HX_Q4": {
+  "doc": "docs-authority/sizing/MET_HX_Q4.md",
+  "docnum": "AQS-SIZE-MET_HX_Q4",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "MET_MELT": {
   "doc": "docs-authority/MFG_TOOLS.md",
   "docnum": "AQS-MFG-010",
@@ -333,6 +508,11 @@
   "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
   "docnum": "AQS-DUTY-064",
   "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
+ },
+ "MFG_SHOP": {
+  "doc": "docs-authority/sizing/MFG_SHOP.md",
+  "docnum": "AQS-SIZE-MFG_SHOP",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "MG_POT": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
@@ -359,6 +539,16 @@
   "docnum": "AQS-DUTY-064",
   "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
  },
+ "OIL_DRYER": {
+  "doc": "docs-authority/sizing/OIL_DRYER.md",
+  "docnum": "AQS-SIZE-OIL_DRYER",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "OIL_FRAC": {
+  "doc": "docs-authority/sizing/OIL_FRAC.md",
+  "docnum": "AQS-SIZE-OIL_FRAC",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "OIL_PYRO": {
   "doc": "docs-authority/sizing/REACTOR_DESIGN.md",
   "docnum": "AQS-DUTY-062",
@@ -368,6 +558,11 @@
   "doc": "docs-authority/sizing/POLYMERS_LINE.md",
   "docnum": "AQS-DUTY-073",
   "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
+ "POLISH_BANK": {
+  "doc": "docs-authority/sizing/POLISH_BANK.md",
+  "docnum": "AQS-SIZE-POLISH_BANK",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "POLY_COND": {
   "doc": "docs-authority/sizing/POLYMERS_LINE.md",
@@ -429,6 +624,11 @@
   "docnum": "AQS-ELEC-007",
   "family": "Plant power sizing (docs-authority/_power_sizing.py)"
  },
+ "P_CA": {
+  "doc": "docs-authority/sizing/P_CA.md",
+  "docnum": "AQS-SIZE-P_CA",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "Q1_A": {
   "doc": "docs-authority/sizing/HEAT_BATTERY.md",
   "docnum": "AQS-DUTY-074",
@@ -474,6 +674,21 @@
   "docnum": "AQS-DUTY-075",
   "family": "Headers and the Q4 bus (flow_graph/param/headers.py)"
  },
+ "RECTIFIER": {
+  "doc": "docs-authority/sizing/RECTIFIER.md",
+  "docnum": "AQS-SIZE-RECTIFIER",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "RELIEF_CRYO": {
+  "doc": "docs-authority/sizing/RELIEF_CRYO.md",
+  "docnum": "AQS-SIZE-RELIEF_CRYO",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
+ "RELIEF_H2": {
+  "doc": "docs-authority/sizing/RELIEF_H2.md",
+  "docnum": "AQS-SIZE-RELIEF_H2",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "REMIN": {
   "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
   "docnum": "AQS-DUTY-064",
@@ -484,6 +699,11 @@
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
  },
+ "RF_HEAT": {
+  "doc": "docs-authority/sizing/RF_HEAT.md",
+  "docnum": "AQS-SIZE-RF_HEAT",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "ROLL": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
   "docnum": "AQS-DUTY-072",
@@ -493,6 +713,11 @@
   "doc": "docs-authority/WATER_TOWER.md",
   "docnum": "AQS-BLD-014",
   "family": "Water tower reservoirs and hydro set (docs-authority/_water_tower.py)"
+ },
+ "SALT_FEED": {
+  "doc": "docs-authority/sizing/SALT_FEED.md",
+  "docnum": "AQS-SIZE-SALT_FEED",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "SHELL_BREAK": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
@@ -513,6 +738,11 @@
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "SI_REDUCE": {
+  "doc": "docs-authority/sizing/SI_REDUCE.md",
+  "docnum": "AQS-SIZE-SI_REDUCE",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "SOLAR_PV_CELL": {
   "doc": "docs-authority/sizing/PV_CELL_LINE.md",
@@ -549,15 +779,30 @@
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
  },
+ "VCD_TRAIN": {
+  "doc": "docs-authority/sizing/VCD_TRAIN.md",
+  "docnum": "AQS-SIZE-VCD_TRAIN",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "VDF_SYN": {
   "doc": "docs-authority/sizing/POLYMERS_LINE.md",
   "docnum": "AQS-DUTY-073",
   "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
  },
+ "WAFER_FAB": {
+  "doc": "docs-authority/sizing/WAFER_FAB.md",
+  "docnum": "AQS-SIZE-WAFER_FAB",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "WAX_PATTERN": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
+ },
+ "WET_BENCH": {
+  "doc": "docs-authority/sizing/WET_BENCH.md",
+  "docnum": "AQS-SIZE-WET_BENCH",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
  "WIRE_DRAW": {
   "doc": "docs-authority/MFG_TOOLS.md",
@@ -613,5 +858,10 @@
   "doc": "docs-authority/POWER_SIZING.md",
   "docnum": "AQS-ELEC-007",
   "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+ },
+ "ZNBR2_BR2_REGEN": {
+  "doc": "docs-authority/sizing/ZNBR2_BR2_REGEN.md",
+  "docnum": "AQS-SIZE-ZNBR2_BR2_REGEN",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  }
 }

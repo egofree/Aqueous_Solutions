@@ -19,7 +19,7 @@
     "process"
    ],
    "pass": 1,
-   "seconds": 0.84,
+   "seconds": 0.8,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -32,7 +32,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.16,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -45,7 +45,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.28,
+   "seconds": 0.27,
    "status": "ok",
    "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
   },
@@ -110,7 +110,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
   },
@@ -277,7 +277,7 @@
     "power"
    ],
    "pass": 1,
-   "seconds": 0.31,
+   "seconds": 0.32,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
   },
@@ -336,7 +336,7 @@
     "docs-authority/_ew_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -347,7 +347,7 @@
     "docs-authority/_leach_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -360,7 +360,7 @@
     "--doc-only"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -371,7 +371,7 @@
     "docs-authority/_foundry_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.17,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -382,7 +382,7 @@
     "docs-authority/_polymers_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -406,7 +406,7 @@
     "docs-authority/_duty_basis.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.18,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -439,7 +439,7 @@
     "docs-authority/_line_list.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.18,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -450,7 +450,7 @@
     "docs-authority/_pid_sheets.py"
    ],
    "pass": 0,
-   "seconds": 1.56,
+   "seconds": 1.59,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -461,7 +461,7 @@
     "docs-authority/_iso_routes.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.18,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -472,7 +472,7 @@
     "docs-authority/_iso_sheets.py"
    ],
    "pass": 0,
-   "seconds": 0.2,
+   "seconds": 0.21,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -516,7 +516,7 @@
     "docs-authority/_cable_schedule.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -594,7 +594,7 @@
     "docs-authority/_task_plan_gen.py"
    ],
    "pass": 0,
-   "seconds": 0.2,
+   "seconds": 0.21,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -605,7 +605,7 @@
     "docs-authority/_model_workbook.py"
    ],
    "pass": 0,
-   "seconds": 1.54,
+   "seconds": 1.55,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -627,7 +627,7 @@
     "flow_graph/regen_derived.py"
    ],
    "pass": 0,
-   "seconds": 15.93,
+   "seconds": 16.16,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -638,7 +638,7 @@
     "docs-authority/_design_check.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
@@ -649,7 +649,7 @@
     "docs-authority/_rev_stamp.py"
    ],
    "pass": 0,
-   "seconds": 0.29,
+   "seconds": 0.28,
    "status": "ok",
    "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   }

@@ -53,9 +53,9 @@ FAMILIES = [
     ('docs-authority/POWER_SIZING.md', 'AQS-ELEC-007', 'Plant power sizing (docs-authority/_power_sizing.py)',
      ['PV_ARRAY', 'ZNBR2', 'SOL_ARK_60K', 'BACKUP_GEN', 'FUEL_CELL']),
     ('docs-authority/POLYMER_HX_SIZING.md', 'AQS-DUTY-049', 'Polymer heat exchangers (docs-authority/_polymer_hx_study.py, X-MAT-11/12)', ['HX8']),
-    # Residuals NOT listed (docs size the equipment under a legacy name): RECTIFIER (RECT_EW.md 'RECT-EW'),
-    # LITHO_ALIGN (ALIGNER.md 'Contact aligner'), RF_HEAT (absent from FOUNDRY_LINE.md). One doc-line touch by the
-    # owning lane wires them in; left out until then (2026-10-20 note).
+    # Residuals NOT listed (docs size the equipment under a legacy name): RECTIFIER, LITHO_ALIGN
+    # and the rest of the task-02 tail retire through the per-unit sweep-doc pass below
+    # (2026-10-20 note stands only until AQS-SIZE-<UNIT>.md exists; the tail is now covered there).
 ]
 
 
@@ -76,16 +76,31 @@ def build():
             if u in cov:
                 problems.append(f'{u}: claimed by both {cov[u]["doc"]} and {doc}'); continue
             cov[u] = dict(doc=doc, docnum=num, family=fam)
-    return cov, problems
+    # Per-unit tail pass (2026-10-21): the unit sizing sweep owns docs-authority/sizing/<UNIT>.md for
+    # every unit still open on -02; where that doc exists and names the unit it is the sizing
+    # calculation's evidence line. Same assertions apply: doc names the unit, unit is present
+    # and non-boundary, no double claim.
+    swept = 0
+    for u in sorted(present - set(cov)):
+        doc = f'docs-authority/sizing/{u}.md'
+        p = os.path.join(ROOT, doc)
+        if not os.path.exists(p):
+            problems.append(f'{u}: no family doc and no per-unit sweep doc'); continue
+        if u not in open(p).read():
+            problems.append(f'{u}: per-unit doc {doc} does not name the unit'); continue
+        cov[u] = dict(doc=doc, docnum=f'AQS-SIZE-{u}',
+                      family='Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)')
+        swept += 1
+    return cov, problems, swept
 
 
 def main():
-    cov, problems = build()
+    cov, problems, swept = build()
     if problems:
         print('SIZING COVERAGE REFUSES TO BUILD:'); [print(' -', p) for p in problems]
         sys.exit(1)
     json.dump(cov, open(OUT, 'w'), indent=1, sort_keys=True)
-    print(f'{len(cov)} units with a unit task 02 sizing document -> {OUT}')
+    print(f'{len(cov)} units with a unit task 02 sizing document ({len(cov)-swept} family docs, {swept} per-unit sweep docs) -> {OUT}')
 
 
 if __name__ == '__main__':
