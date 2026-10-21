@@ -1,10 +1,10 @@
 """POLYMERS train parametric CAD (CadQuery, X-MFG-30 pattern). Reads params.design + params.envelope on the graph
-(written by flow_graph/param/foundry_poly.py AQS-DUTY-073 and fluoro_train.py A-M-283) and writes
+(written by flow_graph/param/foundry_poly.py AQS-DUTY-073 and fluoro_train.py A-M-289) and writes
 models/mfg/<UNIT>/export/<unit>.step and .stl, bom.csv, fasteners.csv and WORK_ORDER.md per unit. Live trains
 (polyolefin line; fluoro train: HF kiln, VDF/TFE synthesis skids, PVDF/PTFE polymerization kettle, film/powder
 formers) get machine geometry. POLY_COND stays standby (assay-gated, AQS-DES-POLY): envelope box only as a
 presence-consistent PLACEHOLDER, marked in bom.csv and the work order. Liveness is read from BOTH stamps:
-envelope.state, or live throughput rates in params.design (fluoro_train A-M-283 restamped units live whose older
+envelope.state, or live throughput rates in params.design (fluoro_train A-M-289 restamped units live whose older
 foundry_poly sizing notes still say F-blocked - the design rates win; the graph is authority and is not edited here).
 Run: /tmp/cqvenv/bin/python models/mfg/polymers.py [UNIT ...]"""
 import csv, json, math, os, sys
@@ -41,7 +41,7 @@ def box(x, y, z, L, W, H):
 
 
 def _live_rates(d):
-    """True when params.design carries live throughput rates (fluoro_train A-M-283 stamps these; the older
+    """True when params.design carries live throughput rates (fluoro_train A-M-289 stamps these; the older
     foundry_poly sizing.status_note may still read 'F-blocked' / 'installed standby' for the same unit).
     A design_case_* key is a design case, not a live rate - POLY_COND stays standby on it."""
     return any(k.endswith('_kg_d') and isinstance(v, (int, float)) and v > 0 and k != 'design_case_kg_d'
@@ -151,7 +151,7 @@ def build(U):
                 '1,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-80,12,lid flange at 80 mm pitch,study\n'
                 '2,M10 clamp,ISO 3506 A4-70,8,receiver bottle heads,study\n'
                 '3,M12 anchor,ISO 3506 A4-80,4,frame feet,study\n')
-        wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (Q-013 reopened; A-M-283). LIVE unit - feed landed.\n\n'
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (Q-013 reopened; A-M-289). LIVE unit - feed landed.\n\n'
               f'1. Fabricate the DN{D} x {Hv} mm kettle in {d["material"]}; fit the jacket band and 4-leg frame.\n'
               f'2. Set the agitator gland, the rupture disc seat and the monomer feed nozzle; drill the lid for 12 M10 bolts.\n'
               f'3. Plumb the VDF/TFE receiver heads with metering valves; set the reclaim pump to F_RECOVER.\n'
@@ -211,7 +211,7 @@ def build(U):
             fast = ('item,size,grade,qty,location,basis\n'
                     '1,M12 anchor,ISO 898-1 8.8,8,line feet to slab,study\n'
                     '2,M10 x 30 guard screws,ISO 3506 A4-70,16,guard covers,study\n')
-            wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (Q-013 reopened; A-M-283). LIVE unit - feed landed.\n\n'
+            wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (Q-013 reopened; A-M-289). LIVE unit - feed landed.\n\n'
                   f'1. Set the drive/extruder bed; align the D{d["extruder_D_mm"]} barrel to the {d["die_mm"]} mm die.\n'
                   f'2. Fit the D{d["chill_roll_D_mm"]} chill roll and pull roll with water circuits.\n'
                   f'3. Build the winder frame; set both shafts and the lay-on roll.\n'
@@ -246,7 +246,7 @@ def build(U):
             fast = ('item,size,grade,qty,location,basis\n'
                     '1,M12 anchor,ISO 898-1 8.8,6,frame feet to slab,study\n'
                     '2,M10 x 30 guard screws,ISO 3506 A4-70,12,guard covers,study\n')
-            wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (Q-013 reopened; A-M-283). LIVE unit - feed landed.\n\n'
+            wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (Q-013 reopened; A-M-289). LIVE unit - feed landed.\n\n'
                   f'1. Set the pin mill on its motor base; align the belt; guard it.\n'
                   f'2. Mount the cyclone classifier; connect the mill duct, fines drop and collector bin (PE liner).\n'
                   f'3. Fit the blower and oversize-return duct; wire the panel with interlocks.\n'
@@ -290,7 +290,7 @@ def build(U):
         fast = ('item,size,grade,qty,location,basis\n'
                 '1,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,hatch and hood flanges,study\n'
                 '2,M12 anchor,ISO 898-1 8.8,6,pedestals and chamber feet,study\n')
-        wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (A-M-283). LIVE unit - dock acid-spar landed.\n\n'
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (A-M-289). LIVE unit - dock acid-spar landed.\n\n'
               f'1. Set the trunnion pedestals and drive; roll and load the D{Dt} tube at {slope:g} deg ({d["rpm"]} rpm).\n'
               f'2. Build the indirect furnace chamber around the tube; cure the lining.\n'
               f'3. Fit the spar hopper/rotary valve and the acid day tank with metering pump.\n'
@@ -326,7 +326,7 @@ def build(U):
         fast = ('item,size,grade,qty,location,basis\n'
                 '1,M12 anchor,ISO 898-1 8.8,6,skid rails to slab,study\n'
                 '2,M10 x 30 jacket screws,ISO 3506 A4-70,16,jacketed heads,study\n')
-        wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (Q-013 reopened; A-M-283). LIVE unit - feed landed.\n\n'
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} fluoro train (Q-013 reopened; A-M-289). LIVE unit - feed landed.\n\n'
               f'1. Fabricate the D{D} jacketed shell; line the heads in PTFE (fluorocarbon service).\n'
               f'2. Fit the heater circuit, dip leg and the HCl-return pump skid module.\n'
               f'3. Wire interlocks: high-T, high-P, low circulation flow.\n'

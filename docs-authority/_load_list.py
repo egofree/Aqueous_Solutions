@@ -17,10 +17,10 @@ DC_BEHIND={r['cell'] for r in ew}
 TOK=('AQS-DUTY-','AQS-DSN-','AQS-NOTE-PV-REBASE','X-PAR-','X-MFG-','X-SAN-','roof_close','Faraday','DLI',
      'kWh/m3','kWh/kg','/ 24 h','house_scrubbers','NFPA 110','AQS-ELEC-008','AQS-ELEC-004','AQS-PWR-001','latent','COP')
 # Explicit residuals: honest study shares with the reason no calculation exists yet. X-ELS-02 stays open on these.
-# Rev C (A-M-286): every 2026-10-19 residual except the owner requirement locks now carries a calculated/cited
+# Rev C (A-M-301): every 2026-10-19 residual except the owner requirement locks now carries a calculated/cited
 # basis on its graph stamp (write_graph x_els_residuals: foundry duty cycles at the X-MFG-37 trial basis,
 # HABITATION equipment list, WAFER_FAB/WET_BENCH tool lists, AFTERBURNER blower, NUTRIENT_DOSE pumps) or moved
-# onto real units (litho tools A-M-284; REMIN/BLOW_MOLD/ELECTRODE_COAT designs A-M-285). Owner locks stay.
+# onto real units (litho tools A-M-287; REMIN/BLOW_MOLD/ELECTRODE_COAT designs A-M-291..294). Owner locks stay.
 PENDING={
  'FUEL_CELL':'owner requirement lock AQS-REQ-KW-001 REQ-FC-CONT; not a vendor nameplate (ELEC unit task 02)',
  'MEOH_FC':'owner requirement lock AQS-REQ-KW-001 REQ-MEOH-FC-CONT 0.5-2 kW_dc mid-band stand-in (SI-DMFC-01 class)',

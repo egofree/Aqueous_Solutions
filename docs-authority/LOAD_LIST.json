@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be",
+  "graph_sha256": "d231ffa0ccf1a8e163c33253a733a34c02c8dba79d591c3fc7879c361706f7d7",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
@@ -189,7 +189,7 @@
    "role": "load",
    "kw": 1.157,
    "calc_kw": 1.157,
-   "basis": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-286).",
+   "basis": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
    "sector": "HAB"
   },
@@ -270,7 +270,7 @@
    "role": "\u2014",
    "kw": 0.513,
    "calc_kw": 0.513,
-   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): chlorination 350 C + 142b cracking 650 C insulated losses (A-M-283).",
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): chlorination 350 C + 142b cracking 650 C insulated losses (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
   },
@@ -279,7 +279,7 @@
    "role": "\u2014",
    "kw": 0.5,
    "calc_kw": 0.5,
-   "basis": "AQS-DUTY-072 Kroll retort + chlorinator hold at 900/800 C under Ar (thermochemical reduction, no electrolysis; A-M-280 study hold).",
+   "basis": "AQS-DUTY-072 Kroll retort + chlorinator hold at 900/800 C under Ar (thermochemical reduction, no electrolysis; A-M-284 study hold).",
    "class": "calculated",
    "sector": "FOUNDRY"
   },
@@ -288,7 +288,7 @@
    "role": "\u2014",
    "kw": 0.5,
    "calc_kw": 0.5,
-   "basis": "AQS-DUTY-072 pattern injector + wax conditioning pot at 2.0 kg/d patterns (A-M-281 study).",
+   "basis": "AQS-DUTY-072 pattern injector + wax conditioning pot at 2.0 kg/d patterns (A-M-286 study).",
    "class": "calculated",
    "sector": "FOUNDRY"
   },
@@ -342,7 +342,7 @@
    "role": "\u2014",
    "kw": 0.399,
    "calc_kw": 0.399,
-   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): R-22 pyrolysis 750 C tube + quench circulation (A-M-283).",
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): R-22 pyrolysis 750 C tube + quench circulation (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
   },
@@ -360,7 +360,7 @@
    "role": "\u2014",
    "kw": 0.369,
    "calc_kw": 0.369,
-   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): extruder 2.2 kW + clamp/air duty over a 3.0 h/d campaign at 8.41 kg/d wax feed (AQS-EQP-MFG-001 / AQS-REQ-KW-001 SI-MFG-01; A-M-285).",
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): extruder 2.2 kW + clamp/air duty over a 3.0 h/d campaign at 8.41 kg/d wax feed (AQS-EQP-MFG-001 / AQS-REQ-KW-001 SI-MFG-01; A-M-285).",
    "class": "calculated",
    "sector": "MFG"
   },
@@ -378,7 +378,7 @@
    "role": "\u2014",
    "kw": 0.308,
    "calc_kw": 0.308,
-   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): rotary kiln at 250 C: insulated shell loss + endotherm 65.7 kJ/mol CaF2 + feed sensible (A-M-283).",
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): rotary kiln at 250 C: insulated shell loss + endotherm 65.7 kJ/mol CaF2 + feed sensible (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
   },
@@ -387,7 +387,7 @@
    "role": "\u2014",
    "kw": 0.3,
    "calc_kw": 0.3,
-   "basis": "AQS-DUTY-072 slurry mixer + stucco rainfall at 8.0 kg/d shell (A-M-281 study).",
+   "basis": "AQS-DUTY-072 slurry mixer + stucco rainfall at 8.0 kg/d shell (A-M-286 study).",
    "class": "calculated",
    "sector": "FOUNDRY"
   },
@@ -396,7 +396,7 @@
    "role": "\u2014",
    "kw": 0.25,
    "calc_kw": 0.25,
-   "basis": "AQS-DUTY-072 dewax/firebox at 900 C: shell sensible 8.0 kg/d offset by the 0.20 kg/d wax fire credit; 0.25 kW hold class (A-M-281 study).",
+   "basis": "AQS-DUTY-072 dewax/firebox at 900 C: shell sensible 8.0 kg/d offset by the 0.20 kg/d wax fire credit; 0.25 kW hold class (A-M-286 study).",
    "class": "calculated",
    "sector": "FOUNDRY"
   },
@@ -414,7 +414,7 @@
    "role": "load",
    "kw": 0.207,
    "calc_kw": 0.207,
-   "basis": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. | X-ELS-02 load-basis (A-M-286).",
+   "basis": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. | X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
    "sector": "FAB"
   },
@@ -441,7 +441,7 @@
    "role": "load",
    "kw": 0.133,
    "calc_kw": 0.133,
-   "basis": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-286).",
+   "basis": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
    "sector": "OIL"
   },
@@ -468,7 +468,7 @@
    "role": "\u2014",
    "kw": 0.109,
    "calc_kw": 0.109,
-   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): extruder barrel loss at 220 C + drive + melt sensible (A-M-283).",
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): extruder barrel loss at 220 C + drive + melt sensible (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
   },
@@ -504,7 +504,7 @@
    "role": "\u2014",
    "kw": 0.079,
    "calc_kw": 0.079,
-   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): booth exhaust 0.35 kW x 2 h/d + IR cure 1.2 kW x 1 h/d campaign at the 0.02 kg/d anode recoat loop (AQS-MFG-ELC-001 Rev B; A-M-285).",
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): booth exhaust 0.35 kW x 2 h/d + IR cure 1.2 kW x 1 h/d campaign at the 0.02 kg/d anode recoat loop (AQS-MFG-ELC-001 Rev B; A-M-285).",
    "class": "calculated",
    "sector": "MFG"
   },
@@ -513,7 +513,7 @@
    "role": "\u2014",
    "kw": 0.046,
    "calc_kw": 0.046,
-   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): 2 x 8 W metering pumps + 30 W UV at the 10 L/d drink basis (AQS-EQP-STUDY-001 sec.4; A-M-285).",
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): 2 x 8 W metering pumps + 30 W UV at the 10 L/d drink basis (AQS-EQP-STUDY-001 sec.4; A-M-285).",
    "class": "calculated",
    "sector": "WTR"
   },
@@ -522,7 +522,7 @@
    "role": "\u2014",
    "kw": 0.045,
    "calc_kw": 0.045,
-   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): emulsion kettle at 60 C: jacket loss + agitator (A-M-283).",
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): emulsion kettle at 60 C: jacket loss + agitator (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
   },
@@ -549,7 +549,7 @@
    "role": "\u2014",
    "kw": 0.025,
    "calc_kw": 0.025,
-   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-284).",
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287).",
    "class": "calculated",
    "sector": "FAB"
   },
@@ -594,7 +594,7 @@
    "role": "\u2014",
    "kw": 0.015,
    "calc_kw": 0.015,
-   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-283): pin-mill class 0.05 kWh/kg + classifier fan (A-M-283).",
+   "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): pin-mill class 0.05 kWh/kg + classifier fan (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
   },
@@ -612,7 +612,7 @@
    "role": "\u2014",
    "kw": 0.008,
    "calc_kw": 0.008,
-   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-284).",
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287).",
    "class": "calculated",
    "sector": "FAB"
   },
@@ -621,7 +621,7 @@
    "role": "\u2014",
    "kw": 0.004,
    "calc_kw": 0.004,
-   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-284).",
+   "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287).",
    "class": "calculated",
    "sector": "FAB"
   },
@@ -630,7 +630,7 @@
    "role": "load",
    "kw": 0,
    "calc_kw": 0.0,
-   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): preheat/sinter N+1 alternate: standby-zero on the design day (A-M-282); duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
+   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): preheat/sinter N+1 alternate: standby-zero on the design day (A-M-283); duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
    "class": "calculated",
    "sector": "FOUNDRY"
   },
@@ -639,7 +639,7 @@
    "role": "\u2014",
    "kw": 0,
    "calc_kw": 0.0,
-   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-282); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
+   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-283); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
    "class": "calculated",
    "sector": "FOUNDRY"
   },

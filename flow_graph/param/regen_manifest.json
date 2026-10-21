@@ -235,7 +235,7 @@
       ],
       "writes_graph": true,
       "quick": false,
-      "note": "Fluoro train activation (A-M-283): runs AFTER foundry_poly which zero-rates the F-blocked edges each pass; re-rates them from S31/S66+drivers; fixed point stable after two passes."
+      "note": "Fluoro train activation (A-M-289): runs AFTER foundry_poly which zero-rates the F-blocked edges each pass; re-rates them from S31/S66+drivers; fixed point stable after two passes."
     },
     {
       "name": "stub_activation",
@@ -253,7 +253,7 @@
       ],
       "writes_graph": true,
       "quick": false,
-      "note": "Stub activations (A-M-284/285): litho tools, study_stub conversions, GEO_ORC installed standby."
+      "note": "Stub activations (A-M-287..296): litho tools, study_stub conversions, GEO_ORC installed standby."
     },
     {
       "name": "sizing_heat_battery",

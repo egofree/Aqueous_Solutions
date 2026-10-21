@@ -43,7 +43,7 @@
   "acid_conc_design_wt": {
     "value": 0.2,
     "units": "mass fraction HCl on IA-ACID-01",
-    "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
+    "register": "X-PAR acid-loop decision (AQS-PAR-001 §Acid loop)",
     "needs_verification": true,
     "verification_test": "Bench leach of class A feed at 20 wt% HCl, 90-108 C (CARLETON_HCL_2023 basis is 38 %); ICP-OES extraction vs time",
     "published": "CARLETON_HCL_2023 38 % HCl; PERRY9_HCL azeotrope 20.2 wt% caps evaporative concentration"
@@ -194,7 +194,7 @@
   "base_conc_design_wt": {
     "value": 0.2,
     "units": "mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT",
-    "register": "X-PAR acid-loop decision (AQS-PAR-001 \u00a7Acid loop)",
+    "register": "X-PAR acid-loop decision (AQS-PAR-001 §Acid loop)",
     "needs_verification": true,
     "verification_test": "Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt%",
     "published": "Matches the acid side; no azeotrope limit on NaOH-water"
@@ -4429,42 +4429,42 @@
   "foundry_pot_export_frac": {
     "value": 0.25,
     "units": "kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products",
-    "register": "A-M-284",
+    "register": "A-M-285",
     "needs_verification": true,
     "verification_test": "metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals)"
   },
   "foundry_kroll_dragout_frac": {
     "value": 0.02,
     "units": "kg MgCl2-class salt drag-out per kg Kroll MgCl2 gross, to FLUX_PREP",
-    "register": "A-M-280",
+    "register": "A-M-284",
     "needs_verification": true,
     "verification_test": "retort condensate weigh per campaign: salt drag-out vs the 2 % study allowance"
   },
   "foundry_inv_shell_kg_per_kg": {
     "value": 4.0,
     "units": "kg green shell per kg casting (6-dip class; envelope 3-6)",
-    "register": "A-M-281",
+    "register": "A-M-286",
     "needs_verification": true,
     "verification_test": "first shell campaign: built shell mass per kg castings across the 6-dip schedule"
   },
   "foundry_inv_shell_reclaim_frac": {
     "value": 0.875,
     "units": "kg spent shell reclaimed to stucco/flour per kg spent shell",
-    "register": "A-M-281",
+    "register": "A-M-286",
     "needs_verification": true,
     "verification_test": "knock-out sieve yield: reclaimed stucco vs 0.5 kg/kg make-up balance (AQS-SIZE-FOUNDRY shell-waste line)"
   },
   "foundry_inv_wax_kg_per_kg": {
     "value": 1.0,
     "units": "kg wax pattern per kg casting (thin-wall cluster class)",
-    "register": "A-M-281",
+    "register": "A-M-286",
     "needs_verification": true,
     "verification_test": "pattern weigh vs casting weigh on the first article cluster"
   },
   "foundry_inv_wax_reclaim_frac": {
     "value": 0.9,
     "units": "kg dewax condensate reclaimed per kg wax pattern",
-    "register": "A-M-281",
+    "register": "A-M-286",
     "needs_verification": true,
     "verification_test": "dewax condensate weigh per campaign vs the 10 % burn/loss allowance"
   },
@@ -4609,22 +4609,22 @@
   "POLYMERS.fluoropolymer-train.vdf_monomer_kg_d": {
     "value": 0.15,
     "units": "kg/d",
-    "owner": "AQS-RATE-FP-MET design rate (PVDF linings and gaskets replacement; A-M-280) (A-M-283)"
+    "owner": "AQS-RATE-FP-MET design rate (PVDF linings and gaskets replacement; A-M-289)"
   },
   "POLYMERS.fluoropolymer-train.tfe_monomer_kg_d": {
     "value": 0.1,
     "units": "kg/d",
-    "owner": "AQS-RATE-FP-MET design rate (PTFE gaskets and small parts replacement; A-M-280) (A-M-283)"
+    "owner": "AQS-RATE-FP-MET design rate (PTFE gaskets and small parts replacement; A-M-289)"
   },
   "POLYMERS.fluoropolymer-train.pvdf_resin_kg_d": {
     "value": 0.14,
     "units": "kg/d",
-    "owner": "AQS-RATE-FP-MET design rate (~90-93 % of monomer at the reclaim loop; A-M-280) (A-M-283)"
+    "owner": "AQS-RATE-FP-MET design rate (~90-93 % of monomer at the reclaim loop; A-M-289)"
   },
   "POLYMERS.fluoropolymer-train.ptfe_resin_kg_d": {
     "value": 0.09,
     "units": "kg/d",
-    "owner": "AQS-RATE-FP-MET design rate (~90 % of monomer at the reclaim loop; A-M-280) (A-M-283)"
+    "owner": "AQS-RATE-FP-MET design rate (~90 % of monomer at the reclaim loop; A-M-289)"
   },
   "POLYMERS.fluoropolymer-train.H2SO4_wt": {
     "value": 0.98,
@@ -4635,76 +4635,76 @@
   "FAB.litho-train.starts_per_d": {
     "value": 5,
     "units": "wafer starts/d",
-    "owner": "AQS-AUD-001 labeled assumption 1-5/d, bounding value (A-M-282) (A-M-284)",
+    "owner": "AQS-AUD-001 labeled assumption 1-5/d, bounding value (A-M-288) (A-M-287)",
     "needs_verification": true,
     "verification_test": "lock the wafer starts rate at the fab product-basis task"
   },
   "FAB.litho-train.developer_mL_per_wafer": {
     "value": 40.0,
     "units": "mL/wafer",
-    "owner": "puddle-develop dispense class at 150 mm (AQS-LITH-001 rev C; A-M-282) (A-M-284)"
+    "owner": "puddle-develop dispense class at 150 mm (AQS-LITH-001 rev C; A-M-287) (A-M-288)"
   },
   "FAB.litho-train.spin_peak_kW": {
     "value": 0.75,
     "units": "kW",
-    "owner": "spin-chuck motor class (AQS-LITH-001 rev C; A-M-282) (A-M-284)"
+    "owner": "spin-chuck motor class (AQS-LITH-001 rev C; A-M-287) (A-M-288)"
   },
   "FAB.litho-train.softbake_kW": {
     "value": 0.3,
     "units": "kW",
-    "owner": "hotplate rating at 100 C hold (AQS-LITH-001 rev C; A-M-282) (A-M-284)"
+    "owner": "hotplate rating at 100 C hold (AQS-LITH-001 rev C; A-M-287) (A-M-288)"
   },
   "FAB.litho-train.uv_wall_W": {
     "value": 10.0,
     "units": "W",
-    "owner": "365 nm LED array 1 W optical at ~10 % wall plug (AQS-LITH-001 rev C; A-M-282) (A-M-284)"
+    "owner": "365 nm LED array 1 W optical at ~10 % wall plug (AQS-LITH-001 rev C; A-M-287) (A-M-288)"
   },
   "FAB.wet-bench-train.bath_L": {
     "value": 10.0,
     "units": "L",
-    "owner": "RCA/etch bath tank size (AQS-EQP-FAB-001 WET_BENCH row; A-M-283) (A-M-286)"
+    "owner": "RCA/etch bath tank size (AQS-EQP-FAB-001 WET_BENCH row; A-M-298) (A-M-301)"
   },
   "FAB.wet-bench-train.bath_C": {
     "value": 80.0,
     "units": "C",
-    "owner": "SC1/SC2 bath temperature (RCA class, AQS-EQP-FAB-001; A-M-283) (A-M-286)"
+    "owner": "SC1/SC2 bath temperature (RCA class, AQS-EQP-FAB-001; A-M-298) (A-M-301)"
   },
   "FAB.wet-bench-train.heated_baths": {
     "value": 2,
     "units": "count",
-    "owner": "SC1 + SC2 heated; DHF at ambient (AQS-EQP-FAB-001; A-M-283) (A-M-286)"
+    "owner": "SC1 + SC2 heated; DHF at ambient (AQS-EQP-FAB-001; A-M-298) (A-M-301)"
   },
   "FAB.wafer-line-train.campaign_d": {
     "value": 7.0,
     "units": "d",
-    "owner": "one CZ pull + tool campaign per week at 5 starts/d (A-M-282) (A-M-286)",
+    "owner": "one CZ pull + tool campaign per week at 5 starts/d (A-M-297) (A-M-301)",
     "needs_verification": true,
     "verification_test": "logged campaign schedule at the fab commissioning task"
   },
   "FAB.wafer-line-train.cz_charge_kg": {
     "value": 0.5,
     "units": "kg",
-    "owner": "small-ingot CZ charge per pull (AQS-EQP-FAB-001 CZ class; A-M-282) (A-M-286)"
+    "owner": "small-ingot CZ charge per pull (AQS-EQP-FAB-001 CZ class; A-M-297) (A-M-301)"
   },
   "OIL.afterburner-train.flue_fan_dP_Pa": {
     "value": 350.0,
     "units": "Pa",
-    "owner": "duct + stack draft loss class of a 100 mm bore flue run (A-M-282) (A-M-286)"
+    "owner": "duct + stack draft loss class of a 100 mm bore flue run (A-M-300) (A-M-301)"
   },
   "OIL.afterburner-train.flue_fan_eta": {
     "value": 0.35,
     "units": "fraction",
-    "owner": "small high-temperature centrifugal fan (A-M-282) (A-M-286)"
+    "owner": "small high-temperature centrifugal fan (A-M-300) (A-M-301)"
   },
   "NUT.nutrient-train.dose_head_m": {
     "value": 15.0,
     "units": "m",
-    "owner": "dose-header head to the grow beds (AQS-EQP-NUT-001; A-M-283) (A-M-286)"
+    "owner": "dose-header head to the grow beds (AQS-EQP-NUT-001; A-M-299) (A-M-301)"
   },
   "NUT.nutrient-train.pump_eta": {
     "value": 0.35,
     "units": "fraction",
-    "owner": "small metering-diaphragm pump class (A-M-283) (A-M-286)"
+    "owner": "small metering-diaphragm pump class (A-M-299) (A-M-301)"
   },
   "GEO.orc-train.eta_th": {
     "value": 0.1,
@@ -4731,7 +4731,7 @@
   "foundry_ca_add_frac": {
     "value": 0.0015,
     "units": "kg Ca deoxidizer/desulfurizer per kg melt charge",
-    "register": "A-M-284",
+    "register": "A-M-316",
     "needs_verification": true,
     "verification_test": "first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge",
     "published": "Ca treatment 0.10-0.20 % of charge class (steelmaking practice; the grease-thickener Ca(OH)2 draw of AQS-DUTY-GREASE rides the same line)"
@@ -4739,25 +4739,25 @@
   "HEAT.heat-battery-train.hb_oil_hold_kWh_th": {
     "value": 10,
     "units": "kWh_th sensible hold per oil store",
-    "register": "A-M-286",
+    "register": "A-M-302",
     "note": "Issued graph params.basis of the Q1/Q2 oil stores (AQS-HEAT-LADDER-001); reconciles to the AQS-DUTY-008 sec. 5 volume."
   },
   "HEAT.heat-battery-train.hb_oil_swing_K": {
     "value": 80,
     "units": "K swing",
-    "register": "A-M-286",
+    "register": "A-M-302",
     "note": "Issued oil-store swing (graph params.basis)."
   },
   "HEAT.heat-battery-train.hb_water_hold_kWh_th": {
     "value": 20,
     "units": "kWh_th sensible hold per water store",
-    "register": "A-M-286",
+    "register": "A-M-302",
     "note": "Issued graph params.basis of the Q3/Q4 water stores."
   },
   "HEAT.heat-battery-train.hb_q3_hold_kWh_th": {
     "value": 14,
     "units": "kWh_th",
-    "register": "A-M-300",
+    "register": "A-M-315",
     "needs_verification": true,
     "verification_test": "Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision",
     "note": "Q3 hold reconciled from the issued sec. 5 volume (0.407 m3 water at a 30 K swing = 13.9 kWh)."
@@ -4765,7 +4765,7 @@
   "HEAT.heat-battery-train.hb_water_swing_K": {
     "value": 30,
     "units": "K swing",
-    "register": "A-M-286",
+    "register": "A-M-302",
     "note": "Issued water-store swing (graph params.basis)."
   },
   "HEAT.heat-battery-train.hb_HD": {
@@ -4843,7 +4843,7 @@
   "HDR.headers-train.hdr_min_DN_gas": {
     "value": 25,
     "units": "DN minimum, gas headers",
-    "register": "A-M-287",
+    "register": "A-M-303",
     "needs_verification": true,
     "verification_test": "Take-off and instrument tapping check on the header GA at unit task 05",
     "note": "Smallest DN that seats take-off valves and instrument taps on a plant header; bores from velocity come out smaller at this scale."
@@ -4851,13 +4851,13 @@
   "HDR.headers-train.hdr_min_DN_water": {
     "value": 25,
     "units": "DN minimum, water headers",
-    "register": "A-M-287",
+    "register": "A-M-303",
     "note": "As gas; also keeps the bus drainable and roddable."
   },
   "HDR.headers-train.hdr_min_DN_flue": {
     "value": 100,
     "units": "DN minimum, afterburner flue",
-    "register": "A-M-288",
+    "register": "A-M-304",
     "needs_verification": true,
     "verification_test": "Natural-draft and condensate-drainage check on the flue routing drawing",
     "note": "Flue practice: keeps draft stable and condensate drained at this duty; velocity sizing alone gives DN20."
@@ -4895,7 +4895,7 @@
   "HDR.headers-train.hdr_rho_ncg": {
     "value": 0.5,
     "units": "kg/m3 pyrolysis NCG at 150-200 C",
-    "register": "A-M-289",
+    "register": "A-M-305",
     "needs_verification": true,
     "verification_test": "NCG composition from the pyrolysis assay at the OIL_FRAC unit task",
     "note": "Light pyrolysis gas class (H2/CH4/C2 rich) at header temperature."
@@ -4903,7 +4903,7 @@
   "HDR.headers-train.hdr_rho_flue": {
     "value": 0.75,
     "units": "kg/m3 flue gas at about 200 C",
-    "register": "A-M-289",
+    "register": "A-M-305",
     "note": "Air class at the flue temperature."
   },
   "HDR.headers-train.hdr_rho_water": {
@@ -4919,7 +4919,7 @@
   "HDR.headers-train.hdr_run_default_m": {
     "value": 20,
     "units": "m fallback manifold run when no isometric route exists",
-    "register": "A-M-290",
+    "register": "A-M-306",
     "needs_verification": true,
     "verification_test": "Header run lengths from the routed isometrics at the next AQS-ISO-002 regen",
     "note": "Volume-only fallback; all present headers have routed lines."
@@ -4928,7 +4928,7 @@
     "value": 35,
     "units": "W/m sustained per-metre bore capacity",
     "ref": "KAVANAUGH2014",
-    "register": "A-M-291",
+    "register": "A-M-307",
     "needs_verification": true,
     "verification_test": "Thermal response test on the first bore (ST-ORC-01)",
     "note": "Mid of the 30-50 W/m small-closed-loop band; survey values stay locked."
@@ -4942,31 +4942,31 @@
   "GEO.geo-loop.ghex_bore_spacing_m": {
     "value": 6,
     "units": "m bore spacing",
-    "register": "A-M-292",
+    "register": "A-M-308",
     "note": "Interference limit for small arrays; 8 h thermal diffusion at these rates."
   },
   "GEO.geo-loop.glycol_cp_kJ_kgK": {
     "value": 3.9,
     "units": "kJ/kg K 25 % propylene glycol",
-    "register": "A-M-293",
+    "register": "A-M-309",
     "note": "Manufacturer class data at 0-20 C."
   },
   "GEO.geo-loop.glycol_rho_kg_m3": {
     "value": 1030,
     "units": "kg/m3 25 % propylene glycol",
-    "register": "A-M-293",
+    "register": "A-M-309",
     "note": "Manufacturer class data."
   },
   "GEO.geo-loop.glycol_vol_pct": {
     "value": 25,
     "units": "vol % propylene glycol",
-    "register": "A-M-293",
+    "register": "A-M-309",
     "note": "Freeze protection to -10 C (Dallas design low -8 C, AQS-SITE-002)."
   },
   "GEO.geo-loop.glycol_dT_K": {
     "value": 3,
     "units": "K source-loop rise",
-    "register": "A-M-294",
+    "register": "A-M-310",
     "note": "Keeps the evaporator approach and the pump power balanced at these duties."
   },
   "GEO.geo-loop.glycol_v_m_s": {
@@ -4977,7 +4977,7 @@
   "GEO.geo-loop.loop_head_m": {
     "value": 25,
     "units": "m loop circuit head",
-    "register": "A-M-294",
+    "register": "A-M-310",
     "needs_verification": true,
     "verification_test": "Circuit head from the routed loop isometric",
     "note": "Buried header + U-tube circuit class estimate."
@@ -5022,7 +5022,7 @@
   "MEOH.synthesis-train.MEOH_COND.subcool_K": {
     "value": 20,
     "units": "K condensate subcool to 40 C",
-    "register": "A-M-295",
+    "register": "A-M-311",
     "note": "Condensate to ROOF_TANK below the tank class limit."
   },
   "MEOH.synthesis-train.MEOH_COND.U_kW_m2K": {
@@ -5040,7 +5040,7 @@
     "value": 0.6,
     "units": "V per cell at the design point",
     "ref": "IEC62282_3_100",
-    "register": "A-M-296",
+    "register": "A-M-312",
     "needs_verification": true,
     "verification_test": "Stack polarisation set at the first article",
     "note": "PEM module class design point."
@@ -5049,7 +5049,7 @@
     "value": 0.3,
     "units": "A/cm2 current density at the design point",
     "ref": "IEC62282_3_100",
-    "register": "A-M-296",
+    "register": "A-M-312",
     "needs_verification": true,
     "verification_test": "Stack polarisation set at the first article",
     "note": "PEM module class design point."
@@ -5092,7 +5092,7 @@
   "fire_pump_head_margin_kPa": {
     "value": 150,
     "units": "kPa design margin over static + friction to the remote area",
-    "register": "A-M-297",
+    "register": "A-M-313",
     "needs_verification": true,
     "verification_test": "Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record)",
     "note": "Carried until the hydraulic network calc issues."
@@ -5106,7 +5106,7 @@
   "fire_tank_refill_h": {
     "value": 8,
     "units": "h to refill the reserve from the normal supply",
-    "register": "A-M-298",
+    "register": "A-M-314",
     "needs_verification": true,
     "verification_test": "City/well fill-rate confirmation at X-BAS-03 (site utilities)",
     "note": "NFPA 22 class duration for a protected occupancy at this hazard level."

@@ -1,4 +1,4 @@
-"""Fluoropolymer train activation (AQS-DUTY-073 rev B, unit task 02 for the fluoro units; Q-013 reopen, A-M-283).
+"""Fluoropolymer train activation (AQS-DUTY-073 rev B, unit task 02 for the fluoro units; Q-013 reopen, A-M-289).
 
 Runs AFTER flow_graph.param.foundry_poly in each regen graph pass and turns the F-blocked standby train live:
 
@@ -13,8 +13,8 @@ Runs AFTER flow_graph.param.foundry_poly in each regen graph pass and turns the 
               internal):  VDF: 2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 H2O
                           TFE: 2 CH3OH + 4 Cl2 + 4 HF -> C2F4     + 8 HCl + 2 H2O
               Cl2 comes from the CRU chlorate finish (NaClO3 + 6 HCl -> 3 Cl2 + NaCl + 3 H2O): the dilute HCl
-              returns close the halogen loop and IA-CRU-01 re-solves on the CRU balance (A-M-283 supersedes the
-              no-internal-sink wording of the A-M-280 chlorine ruling for this 0.62 kg/d Cl2 draw).
+              returns close the halogen loop and IA-CRU-01 re-solves on the CRU balance (A-M-289 supersedes the
+              no-internal-sink wording of the A-M-290 chlorine ruling for this 0.62 kg/d Cl2 draw).
   Products  : PVDF -> FILM_CAST (gasket/lining sheet) -> POLY_STOCK; PTFE -> POWDER_RESIN -> POLY_STOCK;
               POLY_STOCK issues FLUORO_TO_MFG (0.23 kg/d) into the MFG_SHOP remnant, so the foundry_poly
               olefin draw P re-solves smaller and the shop closure, melt conservation and naphtha/ship split
@@ -30,7 +30,7 @@ from . import drivers as DR
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
-DOC_P, AM = 'AQS-DUTY-073', 'A-M-283'
+DOC_P, AM = 'AQS-DUTY-073', 'A-M-289'
 TAG = f'X-PAR-02 TF: fluoropolymer train activation ({DOC_P} sec. 3, {AM})'
 FP = 'POLYMERS.fluoropolymer-train.'
 
@@ -141,7 +141,7 @@ def apply(g=None, write=False):
         f'(PTFE) per the AQS-RATE-FP-MET demand table ({AM}).')
     put('CRU_TO_VDF', r['cl2_vdf'],
         f'Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen loop closes; '
-        f'AQS-SEL-FP; {AM} supersedes the A-M-280 no-internal-sink wording for this 0.62 kg/d Cl2 draw).')
+        f'AQS-SEL-FP; {AM} supersedes the A-M-290 no-internal-sink wording for this 0.62 kg/d Cl2 draw).')
     put('CRU_TO_TFE', r['cl2_tfe'], f'Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; {AM}).')
     put('IA-CRU-01', r['cru_01'],
         f'CRU liquor re-solved on the unit balance: S66 {r["s66"]:.4f} + dilute HCl returns '

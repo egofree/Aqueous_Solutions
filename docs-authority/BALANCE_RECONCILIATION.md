@@ -108,7 +108,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | Edge | Role | Closes unit | Rate kg/d | Basis |
 | --- | --- | --- | --- | --- |
 | CRU_TO_VDF | closure | CRU | 0.3322 | Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen |
-| FILM_TO_STOCK | closure | FILM_CAST | 0.1400 | PVDF cast film/sheet to stock (A-M-283). |
+| FILM_TO_STOCK | closure | FILM_CAST | 0.1400 | PVDF cast film/sheet to stock (A-M-289). |
 | F_RECOVER_TO_HF_GEN | closure | F_RECOVER | 1.5200 | Fluoride concentrate to the kiln = leach fluoride 1.500 (IA-HF-SRC) + POLY_F off-spec recl |
 | HF_GEN_TO_VDF | closure | HF_GEN | 0.0937 | Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 |
 | IA-COAT-OUT | closure | ELECTRODE_COAT | 0.0200 | Coated anode back to EW-1. Net zero. |
@@ -120,7 +120,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | IA-WIRE-LOSS | closure | WIRE_DRAW | 0.4400 | AQS-DUTY-012 Rev N. |
 | NCG_TO_AB | closure | AFTERBURNER | 5.0000 | AQS-DUTY-010: = IA-OIL-03 (header pass-through) |
 | POLYF_TO_POWDER | closure | POWDER_RESIN | 0.0900 | PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RA |
-| POWDER_TO_STOCK | closure | POLY_STOCK | 0.0900 | PTFE fine powder to stock (A-M-283). |
+| POWDER_TO_STOCK | closure | POLY_STOCK | 0.0900 | PTFE fine powder to stock (A-M-289). |
 | S07 | closure | NUTRIENT_DOSE | 2.5000 | Study BMED salt / nutrient dose mid-band (AQS-EQP-NUT-001 / AQS-AUD-001 §4.6) — not tote s |
 | S11 | closure | GROW_BED | 0.8000 | Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 §12) |
 | S32 | closure | WS_PEROX | 3.0000 | AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | value restored fr |
@@ -130,9 +130,9 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | S72B | closure | MET_SCRUB | 0.0158 | AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d |
 | S76 | closure | MEOH_FC | 5.0000 | Matches mid Source-A synth ~2–8 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC |
 | S77 | closure | MEOH_FERM | 0.0146 | AQS-DUTY-010: VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70% | value restored from grap |
-| TFE_TO_POLY_F | closure | TFE_SYN | 0.1000 | TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-283). |
-| VDF_TO_POLY_F | closure | VDF_SYN | 0.1500 | VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-283). |
-| CRU_TO_TFE | input | - | 0.2836 | Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-283). |
+| TFE_TO_POLY_F | closure | TFE_SYN | 0.1000 | TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-289). |
+| VDF_TO_POLY_F | closure | VDF_SYN | 0.1500 | VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-289). |
+| CRU_TO_TFE | input | - | 0.2836 | Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-289). |
 | HF_GEN_TO_TFE | input | - | 0.0800 | Aqueous HF to TFE: 0.10 kg/d TFE x 4 HF/TFE (R-22 route; AQS-SEL-FP, ULLMANN_FLUOROPOLY). |
 | IA-COAT-IN | input | - | 0.0200 | Daily average of a batch recoat. Returns on IA-COAT-OUT. Does not consume the EW nickel de |
 | IA-MEOH-REST | input | - | 1.2800 | AQS-DUTY-016. Each waste has a user. Each chemical has a source. |

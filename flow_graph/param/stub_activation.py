@@ -1,6 +1,6 @@
 """Stub-activation stage (X-PAR-02 / AQS-EQP-STUDY-001 rev G disposition): retires LITHO_STUB into the real
 litho tools, converts the five study_stub-class units to real classes with real designs, and wires
-SOLAR_PV_CELL to the existing X-MFG-38 cell-line sizing (A-M-284, A-M-285).
+SOLAR_PV_CELL to the existing X-MFG-38 cell-line sizing (A-M-287..296).
 
   LITHO_COAT  spin-coater line: spin bowl + vacuum chuck + softbake hotplate (AQS-LITH-001 rev C frame)
   LITHO_ALIGN contact aligner: 365 nm LED array, leadscrew stage (AQS-LITH-001 rev C)
@@ -21,7 +21,7 @@ from . import drivers as DR
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
-TAG = 'X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-284/285)'
+TAG = 'X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296)'
 LT = 'FAB.litho-train.'
 
 
@@ -70,16 +70,16 @@ def apply(g=None, write=False):
     litho_kW = coat_kW + align_kW + dev_kW
     node(g, N, 'LITHO_COAT', 'FAB', 'coater',
          'Spin-coater line: spin bowl, vacuum chuck, softbake hotplate. Parent LITHO_STUB retired into the real '
-         'tools (AQS-LITH-001 rev C; A-M-284).')
+         'tools (AQS-LITH-001 rev C; A-M-287).')
     node(g, N, 'LITHO_ALIGN', 'FAB', 'aligner',
-         'Contact aligner: 365 nm LED array over a 100 mm field, leadscrew stage (AQS-LITH-001 rev C; A-M-284). '
+         'Contact aligner: 365 nm LED array over a 100 mm field, leadscrew stage (AQS-LITH-001 rev C; A-M-287). '
          'Not a stepper.')
     node(g, N, 'LITHO_DEV', 'FAB', 'wet_bench',
          'Wet develop bench on the WET_BENCH chemistry class (TMAH/KOH developer fork, S38 resist-waste loop); '
-         'developer is a share of the fab resist/solvent issue (A-M-284).')
+         'developer is a share of the fab resist/solvent issue (A-M-287).')
     N['LITHO_COAT']['params'].update(
         equipment_id='LITHO-COAT-01', starts_d=starts, spin_peak_kW=spin_kW, softbake_kW=bake_kW,
-        kWh_d=round(coat_kWh, 4), size_mm=[1200, 800, 1400], size_note='L x W x H mm, issued envelope (A-M-284)',
+        kWh_d=round(coat_kWh, 4), size_mm=[1200, 800, 1400], size_note='L x W x H mm, issued envelope (A-M-287)',
         design=dict(machine='spin-coater line', chuck_mm=150, spin_rpm=5000, dispense_mL_per_wafer=2.0,
                     softbake_C=100, chemistry='novolac resist, 1 um (AQS-LITH-001)',
                     duty_kW=round(coat_kW, 4), peak_kW=spin_kW))
@@ -91,26 +91,26 @@ def apply(g=None, write=False):
                     mask='chrome on glass, 100 um pattern', duty_kW=round(align_kW, 4), peak_kW=0.25))
     N['LITHO_DEV']['params'].update(
         equipment_id='LITHO-DEV-01', starts_d=starts, developer_kg_d=round(dev_g, 4),
-        size_mm=[1200, 600, 900], size_note='L x W x H mm, issued envelope (A-M-284)',
+        size_mm=[1200, 600, 900], size_note='L x W x H mm, issued envelope (A-M-287)',
         design=dict(machine='wet develop bench', developer='TMAH 2.38 % class, shared WET_BENCH chemistry fork',
                     puddle_mL_per_wafer=val(LT + 'developer_mL_per_wafer'), waste='S38-class resist/solvent loop to OIL_FRAC',
                     duty_kW=round(dev_kW, 4), peak_kW=0.05))
     for u, kw in (('LITHO_COAT', coat_kW), ('LITHO_ALIGN', align_kW), ('LITHO_DEV', dev_kW)):
-        N[u]['continuous_kw'] = kwr(kw, f'{TAG}: tool duty at {starts} wafer starts/d (AQS-LITH-001 rev C; A-M-284).')
+        N[u]['continuous_kw'] = kwr(kw, f'{TAG}: tool duty at {starts} wafer starts/d (AQS-LITH-001 rev C; A-M-287).')
         feed(g, E, u, kw, f'Feed equal to {u} continuous_kw. | {TAG}.')
     # flows move to the real tools: fab issue -> COAT -> (wafer carry) -> DEV -> OIL_FRAC
     E['IA-LITHO-IN'].update(to_unit_id='LITHO_COAT', to_sector_id='FAB',
                             notes='Re-pointed from LITHO_STUB at its retirement: fab resist/solvent issue to the '
-                                  'coat line (A-M-284).')
+                                  'coat line (A-M-287).')
     E['IA-LITHO-OUT'].update(from_unit_id='LITHO_DEV', from_sector_id='FAB',
                              notes='Re-pointed from LITHO_STUB at its retirement: spent resist and solvent to the '
-                                   'oil line (A-M-284).')
+                                   'oil line (A-M-287).')
     if 'IA-LITHO-CARRY' not in E:
         src = json.loads(json.dumps(E['IA-LITHO-IN']))
         src.update(stream_id='IA-LITHO-CARRY', from_unit_id='LITHO_COAT', from_sector_id='FAB',
                    to_unit_id='LITHO_DEV', to_sector_id='FAB',
                    carries='resist/solvent carry (coat catch bowl + developer) to the develop bench',
-                   notes='Created at the LITHO_STUB retirement so each real tool closes (A-M-284).')
+                   notes='Created at the LITHO_STUB retirement so each real tool closes (A-M-287).')
         g['edges'].append(src); E['IA-LITHO-CARRY'] = src
     put('IA-LITHO-CARRY', float(E['IA-LITHO-IN']['rate']['value'] or 0),
         'Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool '
@@ -119,18 +119,18 @@ def apply(g=None, write=False):
     N['LITHO_STUB'].update({'presence': 'retired', 'class': 'study_stub',
                             'notes': 'Retired 2026-10-19: parent stub replaced by the real tools LITHO_COAT / '
                                      'LITHO_ALIGN / LITHO_DEV, which carry its flows and duty (AQS-EQP-STUDY-001 '
-                                     'rev G; A-M-284). Kept as a retired node for history; class value is historical.'})
+                                     'rev G; A-M-287). Kept as a retired node for history; class value is historical.'})
     if 'SF-LITHO_STUB' in E:
         E['SF-LITHO_STUB'].update(presence='retired')
         E['SF-LITHO_STUB']['rate'] = {'value': 0.0, 'unit': 'kW', 'status': 'study',
-                                      'note': 'Edge retired with LITHO_STUB; the real tools carry their own SF feeds (A-M-284).'}
+                                      'note': 'Edge retired with LITHO_STUB; the real tools carry their own SF feeds (A-M-287).'}
 
     # ---- SOLAR_PV_CELL: study_stub -> real tool wired to pv_cell_line (X-MFG-38) ----------------
     pv = N['SOLAR_PV_CELL']
     pv['class'] = 'tool'
     pv['notes'] = ('In-house PV cell line (X-MFG-38, AQS-DUTY-071, A-M-178): texture, POCl3 diffusion, PSG etch, '
                    'PECVD SiNx, screen print, fast firing, IV. Tool table in params.design; not the yard array '
-                   '(PV_ARRAY). Study_stub class retired at the A-M-285 disposition.')
+                   '(PV_ARRAY). Study_stub class retired at the A-M-295 disposition.')
     pv['params']['size_note'] = 'L x W x H mm, issued envelope (X-MFG-38 tool line)'
 
     # ---- REMIN: dosing skid from the water-train chemistry --------------------------------------

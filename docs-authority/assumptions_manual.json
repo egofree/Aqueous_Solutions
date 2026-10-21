@@ -150,7 +150,7 @@
     "verification_test": "Tank thermal check"
   },
   {
-    "value": "two concentric helices D 600/900 mm, 25 \u00d7 3 mm tube, 50 mm pitch",
+    "value": "two concentric helices D 600/900 mm, 25 × 3 mm tube, 50 mm pitch",
     "units": "geometry",
     "where": "LEACH_CSTR_1 params.json hx5_coil; WO; AQS-STD-002 3.3",
     "basis": "Fits 53.7 m inside 600 mm height below N6 at 700 mm",
@@ -451,7 +451,7 @@
   },
   {
     "value": "PBT 4-blade 45 deg, D 450 mm, 150 rpm, Np 1.27",
-    "units": "\u2014",
+    "units": "—",
     "where": "LEACH_CSTR_1 agitator",
     "basis": "Published Np range for pitched-blade turbines; P/V band for light solids",
     "sensitivity": "Power with N cubed and D to the fifth",
@@ -496,7 +496,7 @@
   },
   {
     "value": "C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3",
-    "units": "\u2014",
+    "units": "—",
     "where": "LEACH_CSTR_1 FRP belts",
     "basis": "Typical pultruded vinyl ester channel; allowable about a quarter of ultimate",
     "sensitivity": "Belt stress and deflection",
@@ -3986,8 +3986,8 @@
     "value": "H2O_ELYZ restored as the plant O2 source: BH rates on the graph IA-ELY-O2 85.166 + IA-ELY-H2 10.732 + IA-ELY-H2O 95.898 kg/d, SF-H2O_ELYZ 24.59 kW; TF re-basis sizes H2 = S45 + S49 + S74 gross pool draws = 11.226 kg/d H2 -> 89.090 kg/d O2, 100.316 kg/d water, 25.73 kW average / 102.9 kW rated on the 6 h PV window. O2 system closes: sources 89.799 (ELYZ 89.090 + bed S87 0.642 + ASU recovery IA-ASU-O2 0.067) vs draws 45.193 (HDR_O2 3.393: IA-FC-AIR 2.481 + IA-H2O2-SRC 0.176 + IA-GEN-O2 0.208 + IA-AB-O2 0.528; direct CRYO_O2 41.800: S02 crew 3.4 + S50 fuel cell 38.4); surplus 44.605 kg/d shipped on IA-O2-PROD/IA-O2-SHIP; CRYO_O2.params.o2_gap system_short 0.0, system_surplus 44.605",
     "units": "kg/d; kW",
     "where": "flow_graph/plant_flow_graph.json: H2O_ELYZ node (BH sector CRYO still extant) + edges IA-ELY-H2O (ROOF_TANK->H2O_ELYZ), IA-ELY-H2 (->CRYO_H2), IA-ELY-O2 (->CRYO_O2), SF-H2O_ELYZ (SOL_ARK_60K->H2O_ELYZ); SQ-H2O_ELYZ NOT restored (BH destination HEAT_SINK retired in Rev AC); flow_graph/param/o2_close.py: ELY tf section re-enabled and re-based, close_o2 S83 = src - direct CRYO_O2 draws - IA-O2-MAKE (S02/S50 were re-homed onto CRYO_O2 in Rev AC; the old BH formula left CRYO_O2 -41.8 kg/d)",
-    "basis": "Owner ruling 2026-10-18 (D-O2, recorded 9b742c4): restore H2O_ELYZ \u2014 the ASU proved to be a species-recovery box (no air intake, not an O2 source); the PEM electrolyser is the O2 source and with the crew-duty grow bed (A-M-229) restores the diverse N+1 O2 pair (P19): electric + biological. Node and edges restored verbatim from Rev BH (fa1b4db). ELY sized on gross H2 pool draws (genset S45, standby TF -> 0; fuel cell S49 4.8; methanol S74 6.426 post-TF): the stale EW cathode-H2 study rates (IA-HDR-H2-01/03/04 -> S64, 4.8 kg/d into CRYO_H2) are not credited \u2014 the BH Faraday basis routes cathode H2 to HCl synthesis, not the pool, and crediting the phantom would undersize the O2 source below the draws. O2 = 7.937 x H2, 55 kWh/kg H2 (IEA_GHR2023, A-M-133). Resolves the A-M-228 gap record (system gap 44.485 -> surplus 44.605).",
-    "sensitivity": "Residuals reported, not absorbed: (1) CRYO_H2 +4.8 kg/d = the stale EW cathode-H2 phantom arriving with no draw (L['ely']['h2_pool_resid_kg_d']; R10 owns the EW study-rate re-basis); HDR_H2 and H2_DRYER pass 4.8 in = 4.8 out coherently on the same stale rates. (2) Stack heat 7.30 kW computed and reported in H2O_ELYZ.params.stack_heat_kw \u2014 BH SQ-H2O_ELYZ destination HEAT_SINK is retired; re-home (e.g. Q4_BUS per AQS-HEAT-STUDY-002) is heat-ladder lane work, NOT done here. (3) SF-H2O_ELYZ adds 25.73 kW average to the SOL_ARK_60K bus; close_power nets IA-PV-01 242.07 -> 241.90 kW (other TF re-solutions offset); the PV nameplate chain stays owned by the D-PV derivation (A-M-209..216). (4) NORTH_DOCK export imbalance grows 38.9 -> 83.5 kg/d pre-reconcile with the O2 product shipped. Failure count (units out of balance before reconcile) 43 -> 41; no new failing units.",
+    "basis": "Owner ruling 2026-10-18 (D-O2, recorded 9b742c4): restore H2O_ELYZ — the ASU proved to be a species-recovery box (no air intake, not an O2 source); the PEM electrolyser is the O2 source and with the crew-duty grow bed (A-M-229) restores the diverse N+1 O2 pair (P19): electric + biological. Node and edges restored verbatim from Rev BH (fa1b4db). ELY sized on gross H2 pool draws (genset S45, standby TF -> 0; fuel cell S49 4.8; methanol S74 6.426 post-TF): the stale EW cathode-H2 study rates (IA-HDR-H2-01/03/04 -> S64, 4.8 kg/d into CRYO_H2) are not credited — the BH Faraday basis routes cathode H2 to HCl synthesis, not the pool, and crediting the phantom would undersize the O2 source below the draws. O2 = 7.937 x H2, 55 kWh/kg H2 (IEA_GHR2023, A-M-133). Resolves the A-M-228 gap record (system gap 44.485 -> surplus 44.605).",
+    "sensitivity": "Residuals reported, not absorbed: (1) CRYO_H2 +4.8 kg/d = the stale EW cathode-H2 phantom arriving with no draw (L['ely']['h2_pool_resid_kg_d']; R10 owns the EW study-rate re-basis); HDR_H2 and H2_DRYER pass 4.8 in = 4.8 out coherently on the same stale rates. (2) Stack heat 7.30 kW computed and reported in H2O_ELYZ.params.stack_heat_kw — BH SQ-H2O_ELYZ destination HEAT_SINK is retired; re-home (e.g. Q4_BUS per AQS-HEAT-STUDY-002) is heat-ladder lane work, NOT done here. (3) SF-H2O_ELYZ adds 25.73 kW average to the SOL_ARK_60K bus; close_power nets IA-PV-01 242.07 -> 241.90 kW (other TF re-solutions offset); the PV nameplate chain stays owned by the D-PV derivation (A-M-209..216). (4) NORTH_DOCK export imbalance grows 38.9 -> 83.5 kg/d pre-reconcile with the O2 product shipped. Failure count (units out of balance before reconcile) 43 -> 41; no new failing units.",
     "replaced_by": "R10 EW re-basis removing the stale cathode-H2 study rates (closes the CRYO_H2 +4.8 phantom); heat-ladder re-home of the 7.30 kW stack heat; measured PEM efficiency replacing the 55 kWh/kg driver; D-PV re-derivation absorbing the ELY feeder into the bounding load",
     "task": "R10",
     "files": [
@@ -4003,9 +4003,9 @@
     "value": "156.16 kW process base / 250.0 kW converged (note basis). Live graph 2026-10-18: 179.46 / 285.78 kW",
     "units": "kW",
     "where": "flow_graph/plant_flow_graph.json: mvs.electrical.need_kw, PV_ARRAY, IA-PV-01, S17, mvs.notes; docs-authority/_power_sizing.py (demand derivation)",
-    "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a72/\u00a74: Rev AC bounding electrical demand = max(node continuous_kw, elec edge) per unit; RECTIFIER at the node 12 kW basis (the S17 50.0 ELEC_NEED_KW_BASE seed rejected as circular \u2014 removed); EW_1..EW_9 DC behind the RECT-EW bounding AC row 38.66 kW (AQS-ELEC-004). Encoded per \u00a78 at the note basis (250.0 kW converged). Sensitivity \u00b120 % \u2192 2792/4144 kWp at the note basis.",
-    "sensitivity": "Live-scope deltas vs the note basis: +24.59 H2O_ELYZ (D-O2 restore, A-M-230), +1.66 CRYO_ASU at duty (A-M-238), \u22122.95 GROW_BED crew-duty LED re-base (A-M-229) \u2192 179.46 kW base / 285.78 kW converged when re-derived from the live graph",
-    "replaced_by": "each unit task 02 calculated load; write_graph power() re-derivation on the live scope (needs the RECT_EW node + S17-EW restored first, note \u00a710.4)",
+    "basis": "notes/pv_sizing_derivation_2026-10-18.md §2/§4: Rev AC bounding electrical demand = max(node continuous_kw, elec edge) per unit; RECTIFIER at the node 12 kW basis (the S17 50.0 ELEC_NEED_KW_BASE seed rejected as circular — removed); EW_1..EW_9 DC behind the RECT-EW bounding AC row 38.66 kW (AQS-ELEC-004). Encoded per §8 at the note basis (250.0 kW converged). Sensitivity ±20 % → 2792/4144 kWp at the note basis.",
+    "sensitivity": "Live-scope deltas vs the note basis: +24.59 H2O_ELYZ (D-O2 restore, A-M-230), +1.66 CRYO_ASU at duty (A-M-238), −2.95 GROW_BED crew-duty LED re-base (A-M-229) → 179.46 kW base / 285.78 kW converged when re-derived from the live graph",
+    "replaced_by": "each unit task 02 calculated load; write_graph power() re-derivation on the live scope (needs the RECT_EW node + S17-EW restored first, note §10.4)",
     "task": "D-PV encode lane 2026-10-18",
     "files": [
       "flow_graph/plant_flow_graph.json",
@@ -4020,8 +4020,8 @@
     "value": "45.0 kW flat (IND_MELT 25 / VAC_IND 15 / RF_HEAT 5), 24 h",
     "units": "kW",
     "where": "flow_graph/plant_flow_graph.json: IND_MELT/VAC_IND/RF_HEAT continuous_kw and SF-IND_MELT/SF-VAC_IND/SF-RF_HEAT edges",
-    "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a72/\u00a77: AQS-SIZE-FOUNDRY and notes/POWER_DUTIES.md rate these batch furnaces (10 kg crucible, 1-3 heats/d); carried at face value per the lane instruction \u2014 +1080 kWh/d vs a physical ~25-55 kWh/d (~1-2.3 kW avg)",
-    "sensitivity": "\u2212922 kWp if duty-cycled (note \u00a77 foundry-duty-cycled case 2544 kWp)",
+    "basis": "notes/pv_sizing_derivation_2026-10-18.md §2/§7: AQS-SIZE-FOUNDRY and notes/POWER_DUTIES.md rate these batch furnaces (10 kg crucible, 1-3 heats/d); carried at face value per the lane instruction — +1080 kWh/d vs a physical ~25-55 kWh/d (~1-2.3 kW avg)",
+    "sensitivity": "−922 kWp if duty-cycled (note §7 foundry-duty-cycled case 2544 kWp)",
     "replaced_by": "wired foundry elec edges at schedule averages from logged batches (first article)",
     "task": "D-PV encode lane 2026-10-18",
     "files": [
@@ -4029,14 +4029,14 @@
       "notes/pv_sizing_derivation_2026-10-18.md"
     ],
     "needs_verification": true,
-    "verification_test": "Foundry sensitivity case in the derivation note \u00a77; replaced when FOUNDRY_SIZING duty-cycle data lands on the graph"
+    "verification_test": "Foundry sensitivity case in the derivation note §7; replaced when FOUNDRY_SIZING duty-cycle data lands on the graph"
   },
   {
     "id": "A-M-233",
     "value": "312.5 kW",
     "units": "kW",
     "where": "flow_graph/plant_flow_graph.json: IA-PV-01 rate; PV_ARRAY.continuous_kw",
-    "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a78 (A-M-211 as drafted): IA-PV-01 set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator convention (242.0676) and resolves the \"nameplate class not continuous avg\" flag on PV_ARRAY.continuous_kw",
+    "basis": "notes/pv_sizing_derivation_2026-10-18.md §8 (A-M-211 as drafted): IA-PV-01 set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator convention (242.0676) and resolves the \"nameplate class not continuous avg\" flag on PV_ARRAY.continuous_kw",
     "sensitivity": "follows PV nameplate linearly (2.0 x balancing / 24 h)",
     "replaced_by": "write_graph power() bus-balance accumulator once the param chain re-runs on the live scope",
     "task": "D-PV encode lane 2026-10-18",
@@ -4052,7 +4052,7 @@
     "value": "need 250.0 kW / target 625.0 kW",
     "units": "kW",
     "where": "flow_graph/plant_flow_graph.json: mvs.electrical.need_kw / target_kw",
-    "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a78 (A-M-212 as drafted): need = converged bounding demand incl. the EXT_HALL extension (note basis 250.0); target = mean-day average generation at 2.0 x balancing (D75) = 2.5 x need incl. round trip. Replaces the ELEC_NEED 50 / ELEC_NEED x 1.4 = 70 seeds",
+    "basis": "notes/pv_sizing_derivation_2026-10-18.md §8 (A-M-212 as drafted): need = converged bounding demand incl. the EXT_HALL extension (note basis 250.0); target = mean-day average generation at 2.0 x balancing (D75) = 2.5 x need incl. round trip. Replaces the ELEC_NEED 50 / ELEC_NEED x 1.4 = 70 seeds",
     "sensitivity": "need re-derives to 285.78 kW at the live 2026-10-18 scope (ELYZ + ASU restored, GROW_BED re-based); target follows at 2.5x",
     "replaced_by": "write_graph power() on the live scope (mvs.electrical need/target refresh with the PV re-derivation)",
     "task": "D-PV encode lane 2026-10-18",
@@ -4068,8 +4068,8 @@
     "value": "0.5 kWp x 6932 @ 19 % eff / GCR 0.6 = 8.77 m2/kWp; 30 444 m2 array",
     "units": "kWp; m2",
     "where": "flow_graph/plant_flow_graph.json: PV_ARRAY.params (module_kw, count, nameplate_kw 3466, area_m2 30444, balance_kWp 1733, oversize_factor 2.0, roofEllipsis)",
-    "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a76/\u00a78 (A-M-213 as drafted): in-house module class (ST-SOLAR-01) at pv_module_eff 0.19 (NREL_PVWATTS8) x pv_roof_gcr 0.6 (A-M-103); carries A-M-103",
-    "sensitivity": "module class 0.55 \u2192 6302 modules / 0.6 \u2192 5777 (count only while eff is 0.19); a 0.55 kWp / 21.5 % commercial class cuts area to 7.75 m2/kWp but abandons the in-house basis",
+    "basis": "notes/pv_sizing_derivation_2026-10-18.md §6/§8 (A-M-213 as drafted): in-house module class (ST-SOLAR-01) at pv_module_eff 0.19 (NREL_PVWATTS8) x pv_roof_gcr 0.6 (A-M-103); carries A-M-103",
+    "sensitivity": "module class 0.55 → 6302 modules / 0.6 → 5777 (count only while eff is 0.19); a 0.55 kWp / 21.5 % commercial class cuts area to 7.75 m2/kWp but abandons the in-house basis",
     "replaced_by": "registered NSRDB TMY hourly run (A-M-109) fixing the PSH basis before freeze",
     "task": "D-PV encode lane 2026-10-18",
     "files": [
@@ -4084,9 +4084,9 @@
     "value": "93.84 kW / +32 832 m2 extension; building 198 x 168 m (33 264 m2 gross)",
     "units": "kW; m2",
     "where": "flow_graph/plant_flow_graph.json: PV_ARRAY.params.roof (extension_load_kW, extension_m2, footprint_mm, bays, roof_capacity_kWp 3470.7, arrays 20); mvs.notes building-basis line",
-    "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a74/\u00a76/\u00a78 (A-M-214 as drafted): roof_close air-source convergence (D77 carried) \u2014 lighting 28.89 + ventilation 40.95 + envelope 24.00 kW over the 32 832 m2 extension inside the converged demand; replaces the stale BH 93.839 kW study-share row that _power_sizing was double-counting",
+    "basis": "notes/pv_sizing_derivation_2026-10-18.md §4/§6/§8 (A-M-214 as drafted): roof_close air-source convergence (D77 carried) — lighting 28.89 + ventilation 40.95 + envelope 24.00 kW over the 32 832 m2 extension inside the converged demand; replaces the stale BH 93.839 kW study-share row that _power_sizing was double-counting",
     "sensitivity": "ext load scales with the converged bay grid (106.32 kW at the live 2026-10-18 scope re-derivation)",
-    "replaced_by": "EXT_HALL node + SF-EXT_HALL feed when write_graph power() re-runs (note \u00a78 EXT_HALL row); X-PAR-07",
+    "replaced_by": "EXT_HALL node + SF-EXT_HALL feed when write_graph power() re-runs (note §8 EXT_HALL row); X-PAR-07",
     "task": "D-PV encode lane 2026-10-18",
     "files": [
       "flow_graph/plant_flow_graph.json",
@@ -4101,9 +4101,9 @@
     "value": "1137 kW charge / 250 kW discharge / 3500 kWh; 49 x 60 kW inverters",
     "units": "kW; kWh",
     "where": "flow_graph/plant_flow_graph.json: ZNBR2.params (kW, kWh, charge_kW, discharge_kW, distribution), SOL_ARK_60K.params (count 49, kW 2940, dc_ac_ratio 1.2, interconnection, sections)",
-    "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a78 (A-M-215 as drafted): storage power is charge-governed (PV peak on the half-yield day less direct load); energy = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008): 71.4 kWh / 23.2 kW each",
+    "basis": "notes/pv_sizing_derivation_2026-10-18.md §8 (A-M-215 as drafted): storage power is charge-governed (PV peak on the half-yield day less direct load); energy = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008): 71.4 kWh / 23.2 kW each",
     "sensitivity": "follows converged P linearly (live scope: 4001 kWh / 1299 kW charge / 56 inverters)",
-    "replaced_by": "write_graph power() + _collection_bus.py re-run on the live scope (script currently crashes on the null-rated SF-HF_GEN feeder \u2014 plant_kW sum, pre-existing since 0ed33bb)",
+    "replaced_by": "write_graph power() + _collection_bus.py re-run on the live scope (script currently crashes on the null-rated SF-HF_GEN feeder — plant_kW sum, pre-existing since 0ed33bb)",
     "task": "D-PV encode lane 2026-10-18",
     "files": [
       "flow_graph/plant_flow_graph.json",
@@ -4118,8 +4118,8 @@
     "value": "CRYO_ASU critical at the 1.66 kW AQS-DUTY-069 duty; critical list 15.66 kW; generator stays 20 kW",
     "units": "kW",
     "where": "docs-authority/_power_sizing.py CRIT list (graph CRYO_ASU node); docs-authority/BACKUP_GEN_EQUIPMENT.md chain",
-    "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a79 item 8 (A-M-216 as drafted): on the 2026-10-18 ASU restore the legacy 18 kW critical value must not come back \u2014 the CRIT entry reads the graph node continuous_kw (1.66 kW)",
-    "sensitivity": "base demand +1.66 kW \u2192 PV +~28 kWp at the note basis (already inside the 179.46 kW live figure)",
+    "basis": "notes/pv_sizing_derivation_2026-10-18.md §9 item 8 (A-M-216 as drafted): on the 2026-10-18 ASU restore the legacy 18 kW critical value must not come back — the CRIT entry reads the graph node continuous_kw (1.66 kW)",
+    "sensitivity": "base demand +1.66 kW → PV +~28 kWp at the note basis (already inside the 179.46 kW live figure)",
     "replaced_by": "measured ASU duty at first article",
     "task": "D-PV encode lane 2026-10-18",
     "files": [
@@ -4128,15 +4128,15 @@
       "notes/pv_sizing_derivation_2026-10-18.md"
     ],
     "needs_verification": true,
-    "verification_test": "python3 docs-authority/_power_sizing.py \u2192 backup.critical_list == {HABITATION 3.0, CRYO_H2 4.0, CRYO_ASU 1.66, GROW_BED 5.0, controls 2.0}; critical_kW 15.66; gen_kW 20"
+    "verification_test": "python3 docs-authority/_power_sizing.py → backup.critical_list == {HABITATION 3.0, CRYO_H2 4.0, CRYO_ASU 1.66, GROW_BED 5.0, controls 2.0}; critical_kW 15.66; gen_kW 20"
   },
   {
     "id": "A-M-239",
     "value": "0.45",
-    "units": "COP_c per kW_th drive (silica-gel adsorption, 65 \u00b0C drive / 30 \u00b0C recool / 12 \u00b0C chilled)",
+    "units": "COP_c per kW_th drive (silica-gel adsorption, 65 °C drive / 30 °C recool / 12 °C chilled)",
     "where": "flow_graph/plant_flow_graph.json: ADS_CHILL node + IA-Q4-ADS / IA-ADS-CHW / IA-ADS-REJ edges",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a74/\u00a710.2: vendor class 0.4-0.6 at 55-90 \u00b0C (InvenSor/Mayekawa class datasheets; Wang & Oliveira 2006, Renew. Sustain. Energy Rev. 10:241-259)",
-    "sensitivity": "\u00b10.1 COP_c moves summer absorption \u00b11 kW",
+    "basis": "notes/heat_sink_study_2026-10-18.md §4/§10.2: vendor class 0.4-0.6 at 55-90 °C (InvenSor/Mayekawa class datasheets; Wang & Oliveira 2006, Renew. Sustain. Energy Rev. 10:241-259)",
+    "sensitivity": "±0.1 COP_c moves summer absorption ±1 kW",
     "replaced_by": "vendor selection datasheet at PO",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
     "files": [
@@ -4144,14 +4144,14 @@
       "notes/heat_sink_study_2026-10-18.md"
     ],
     "needs_verification": true,
-    "verification_test": "ADS_CHILL.params COP_c 0.45, kW_c 5.0, derated 3.5 at 65 \u00b0C; drive edge 5.0 kW_th, chilled 2.25 kW_c, recool 7.25 kW"
+    "verification_test": "ADS_CHILL.params COP_c 0.45, kW_c 5.0, derated 3.5 at 65 °C; drive edge 5.0 kW_th, chilled 2.25 kW_c, recool 7.25 kW"
   },
   {
     "id": "A-M-240",
     "value": "4.5 kW_c building summer cooling / 1.5 kW_e displaced at COP 3.0",
     "units": "kW_c; kW_e",
     "where": "flow_graph/plant_flow_graph.json: ADS_CHILL.params (displaced_kW_e), IA-ADS-CHW edge",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a74/\u00a710.2: ELECTRICAL.md \"HVAC / makeup 1.5 kW\"; AQS-THM-002. The adsorption branch serves part of this load (2.25 kW_c at the 5 kW_th drive); the existing compression chiller stays as N+1",
+    "basis": "notes/heat_sink_study_2026-10-18.md §4/§10.2: ELECTRICAL.md \"HVAC / makeup 1.5 kW\"; AQS-THM-002. The adsorption branch serves part of this load (2.25 kW_c at the 5 kW_th drive); the existing compression chiller stays as N+1",
     "sensitivity": "if cooling doubles, add a second chiller module (modular Q4_BUS branch)",
     "replaced_by": "AQS-THM-002 cooling load re-derivation at the Rev AC building scope",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
@@ -4168,7 +4168,7 @@
     "value": "6.65 kW/K make-up-air tempering (~23 900 m3/h); 12 kW coil at 1.8 K",
     "units": "kW/K; kW",
     "where": "flow_graph/plant_flow_graph.json: MAU_HX node + IA-Q4-MAU / IA-MAU-AIR edges",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a74/\u00a710.3: AQS-THM-002 extract/make-up table, 1.006 kJ/kgK; Q4 is already the documented winter tempering source",
+    "basis": "notes/heat_sink_study_2026-10-18.md §4/§10.3: AQS-THM-002 extract/make-up table, 1.006 kJ/kgK; Q4 is already the documented winter tempering source",
     "sensitivity": "coil kW scales linearly with chosen dT (winter sink effectively unbounded: 1.5 K alone absorbs 10 kW)",
     "replaced_by": "AQS-THM-002 ventilation re-derivation at the Rev AC building scope",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
@@ -4184,9 +4184,9 @@
     "id": "A-M-242",
     "value": "1.5 m3 per ladder; 43.5 kWh at 70/45 K swing; <=0.3 kW standing loss at 50 mm PIR",
     "units": "m3; kWh; kW",
-    "where": "notes/heat_sink_study_2026-10-18.md \u00a75/\u00a710.6 (companion buffer, adopted by the study recommendation; graph encode deferred to the heat-ladder follow-up)",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a75: DUTY-008 \u00a75 store table extended; smooths foundry batch spikes (<=11 kW) and the chiller/MAU seasonal handover so the terminal is sized at average, not peak",
-    "sensitivity": "\u00b10.5 m3 moves ride-through \u00b16 h",
+    "where": "notes/heat_sink_study_2026-10-18.md §5/§10.6 (companion buffer, adopted by the study recommendation; graph encode deferred to the heat-ladder follow-up)",
+    "basis": "notes/heat_sink_study_2026-10-18.md §5: DUTY-008 §5 store table extended; smooths foundry batch spikes (<=11 kW) and the chiller/MAU seasonal handover so the terminal is sized at average, not peak",
+    "sensitivity": "±0.5 m3 moves ride-through ±6 h",
     "replaced_by": "DUTY-008 Rev E store table when the buffer nodes land on the graph",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
     "files": [
@@ -4200,8 +4200,8 @@
     "id": "A-M-243",
     "value": "3.0 kW_th sustained injection ceiling; 0.7 kW normal recharge branch",
     "units": "kW_th",
-    "where": "notes/heat_sink_study_2026-10-18.md \u00a76/\u00a710.7; flow_graph/plant_flow_graph.json: GEO_GHEX.params (Q_GHEX_avail_kW_th 3.0, survey-locked)",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a76: GEO_GHEX params (k_ground 1.5 W/mK, T_source 285 K), design_survey_locked (ST-ORC-01); Rev M precedent S102 recharge was 0.67 kW \u2014 within class. The S102-class GHEX recharge branch is not re-encoded in this lane",
+    "where": "notes/heat_sink_study_2026-10-18.md §6/§10.7; flow_graph/plant_flow_graph.json: GEO_GHEX.params (Q_GHEX_avail_kW_th 3.0, survey-locked)",
+    "basis": "notes/heat_sink_study_2026-10-18.md §6: GEO_GHEX params (k_ground 1.5 W/mK, T_source 285 K), design_survey_locked (ST-ORC-01); Rev M precedent S102 recharge was 0.67 kW — within class. The S102-class GHEX recharge branch is not re-encoded in this lane",
     "sensitivity": "bore survey may raise the ceiling; keep 0.7 kW normal regardless",
     "replaced_by": "bore survey (ST-ORC-01 external measurement)",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
@@ -4214,11 +4214,11 @@
   },
   {
     "id": "A-M-244",
-    "value": "12 kW at 37.8 \u00b0C (0.4 % design); fan 0.6 kW",
+    "value": "12 kW at 37.8 °C (0.4 % design); fan 0.6 kW",
     "units": "kW",
     "where": "flow_graph/plant_flow_graph.json: DRY_COOLER node; HL-Q4-REJ edge (Q4_BUS -> DRY_COOLER, 9.3493 kW rated-case flow)",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a710.8/\u00a710.11: 0.4 % design temp AQS-SITE-002 via AQS-THM-002; LMTD ~15 K at 65/45 water; 0.05 kW_fan/kW_th class; sized to pass the 10.16 kW no-preheat upset with margin. Rated-case edge flow with the Rev M preheats restored: 13.1637 in \u2212 3.0 life \u2212 0.532 HX-9 \u2212 0.282 HX-10",
-    "sensitivity": "none \u2014 sized to the rated case + margin",
+    "basis": "notes/heat_sink_study_2026-10-18.md §10.8/§10.11: 0.4 % design temp AQS-SITE-002 via AQS-THM-002; LMTD ~15 K at 65/45 water; 0.05 kW_fan/kW_th class; sized to pass the 10.16 kW no-preheat upset with margin. Rated-case edge flow with the Rev M preheats restored: 13.1637 in − 3.0 life − 0.532 HX-9 − 0.282 HX-10",
+    "sensitivity": "none — sized to the rated case + margin",
     "replaced_by": "dry-cooler vendor selection at PO",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
     "files": [
@@ -4230,12 +4230,12 @@
   },
   {
     "id": "A-M-245",
-    "value": "1.7 kW average / 8-11 kW batch at 40-60 \u00b0C",
+    "value": "1.7 kW average / 8-11 kW batch at 40-60 °C",
     "units": "kW_th",
     "where": "flow_graph/plant_flow_graph.json: IND_HEAT_TO_HX (1.063 kW) / VAC_HEAT_TO_HX (0.638 kW) into MET_HX_Q4",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a77.2/\u00a710.10: foundry coil+shell reject = 20-30 % of 45 kW input x 15-20 % duty (FOUNDRY_SIZING.md batch basis); split pro-rata on connected furnace input (IND 25 / VAC 15 kW). Induction furnaces have no flue \u2014 coil water must stay <=60 \u00b0C, Q4-class by necessity",
+    "basis": "notes/heat_sink_study_2026-10-18.md §7.2/§10.10: foundry coil+shell reject = 20-30 % of 45 kW input x 15-20 % duty (FOUNDRY_SIZING.md batch basis); split pro-rata on connected furnace input (IND 25 / VAC 15 kW). Induction furnaces have no flue — coil water must stay <=60 °C, Q4-class by necessity",
     "sensitivity": "duty cycle dominates; rate from logged batches at first article",
-    "replaced_by": "logged batch thermal profile at first article; S63-class recovery extension to Al/Fe/SS casting streams (study \u00a710.10 remainder)",
+    "replaced_by": "logged batch thermal profile at first article; S63-class recovery extension to Al/Fe/SS casting streams (study §10.10 remainder)",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
     "files": [
       "flow_graph/plant_flow_graph.json",
@@ -4247,11 +4247,11 @@
   },
   {
     "id": "A-M-246",
-    "value": "0.5-1.0 kW at <=60 \u00b0C (bounding 1.0 kW encoded)",
+    "value": "0.5-1.0 kW at <=60 °C (bounding 1.0 kW encoded)",
     "units": "kW_th",
     "where": "flow_graph/plant_flow_graph.json: IA-RECT-Q4 edge; retired IA-Q3A-TRIM / IA-Q3B-TRIM; IA-TRIM-HX5 (15.882 kW) / IA-TRIM-HX6 (4.158 kW) process trim edges",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a77.1/\u00a710.9: 12 kW rectifier at 92-96 % efficiency (POWER_DUTIES.md) rejects 0.5-1.0 kW at <=60 \u00b0C \u2014 cannot heat an 85-100 \u00b0C store (second law; identical to the ruled HX-8 finding, AQS-DUTY-008 \u00a713.1). The 2 x 10.048 kW Q3 edges were the rated trim mis-booked into the stores: trim re-homed to LEACH_CSTR_1 / GLASS_DIGEST as electric process heat ((HX-5 6.353 + HX-6 1.663) x 1.25 per ladder)",
-    "sensitivity": "\u00b10.25 kW; confirm on the rectifier datasheet",
+    "basis": "notes/heat_sink_study_2026-10-18.md §7.1/§10.9: 12 kW rectifier at 92-96 % efficiency (POWER_DUTIES.md) rejects 0.5-1.0 kW at <=60 °C — cannot heat an 85-100 °C store (second law; identical to the ruled HX-8 finding, AQS-DUTY-008 §13.1). The 2 x 10.048 kW Q3 edges were the rated trim mis-booked into the stores: trim re-homed to LEACH_CSTR_1 / GLASS_DIGEST as electric process heat ((HX-5 6.353 + HX-6 1.663) x 1.25 per ladder)",
+    "sensitivity": "±0.25 kW; confirm on the rectifier datasheet",
     "replaced_by": "rectifier datasheet / first-article heat balance",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
     "files": [
@@ -4264,10 +4264,10 @@
   },
   {
     "id": "A-M-247",
-    "value": "0.5-1.0 kW at 45-60 \u00b0C (grease-kettle wax-hold stage)",
+    "value": "0.5-1.0 kW at 45-60 °C (grease-kettle wax-hold stage)",
     "units": "kW_th",
-    "where": "notes/heat_sink_study_2026-10-18.md \u00a74/\u00a710.5 (branch NOT encoded in this lane \u2014 temperature-class check required first)",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a74: wax C19-C28 melts 45-60 \u00b0C (notes/GREASE_LINES.md); saponification stays resistive (Li kettle >150 \u00b0C)",
+    "where": "notes/heat_sink_study_2026-10-18.md §4/§10.5 (branch NOT encoded in this lane — temperature-class check required first)",
+    "basis": "notes/heat_sink_study_2026-10-18.md §4: wax C19-C28 melts 45-60 °C (notes/GREASE_LINES.md); saponification stays resistive (Li kettle >150 °C)",
     "sensitivity": "verify kettle jacket class before wiring; saponification never moves to Q4",
     "replaced_by": "GREASE_LINES temperature-class check closing the branch",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
@@ -4280,10 +4280,10 @@
   },
   {
     "id": "A-M-248",
-    "value": "8.1 (to 85 \u00b0C) / 4.8 (to 100 \u00b0C) second-lift COP, 0.45 x Carnot from 65 \u00b0C",
+    "value": "8.1 (to 85 °C) / 4.8 (to 100 °C) second-lift COP, 0.45 x Carnot from 65 °C",
     "units": "COP",
-    "where": "notes/heat_sink_study_2026-10-18.md \u00a73 (deferred option b \u2014 rejected as baseline)",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a73: plant S43 convention (0.45 x Carnot); lifting Q4->Q3 breaks down-only + only-lift + GEO_HP scope (HEAT_LADDER.md rules) and is superseded by option (c) at current loads",
+    "where": "notes/heat_sink_study_2026-10-18.md §3 (deferred option b — rejected as baseline)",
+    "basis": "notes/heat_sink_study_2026-10-18.md §3: plant S43 convention (0.45 x Carnot); lifting Q4->Q3 breaks down-only + only-lift + GEO_HP scope (HEAT_LADDER.md rules) and is superseded by option (c) at current loads",
     "sensitivity": "not used in the recommended baseline; documented as the upgrade path if foundry/polymers growth re-inflates the trim bill (needs an owner rule change + Q3->Q4 interlock)",
     "replaced_by": "owner rule change if the trim bill re-inflates",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
@@ -4299,9 +4299,9 @@
     "value": "0.2-0.4 kW_e net",
     "units": "kW_e",
     "where": "flow_graph/plant_flow_graph.json: GEO_ORC.params.study_close (placeholder held at 0 kW_e)",
-    "basis": "notes/heat_sink_study_2026-10-18.md \u00a72/\u00a79 (A-M-249 closes the D-GEO_ORC record): micro-ORC endpoint on 10.16 kW_th at 65 \u00b0C = 30-45 % of Carnot 8.9 % (Quoilin et al. 2013, Renew. Sustain. Energy Rev. 22:168-186; Hettiarachchi et al. 2007, Energy); the old 0.08-0.12 absolute band was above Carnot and impossible on a 285 K GHEX source. Option (a) scored 7/20 and is rejected \u2014 the terminal sink can never be deleted",
+    "basis": "notes/heat_sink_study_2026-10-18.md §2/§9 (A-M-249 closes the D-GEO_ORC record): micro-ORC endpoint on 10.16 kW_th at 65 °C = 30-45 % of Carnot 8.9 % (Quoilin et al. 2013, Renew. Sustain. Energy Rev. 22:168-186; Hettiarachchi et al. 2007, Energy); the old 0.08-0.12 absolute band was above Carnot and impossible on a 285 K GHEX source. Option (a) scored 7/20 and is rejected — the terminal sink can never be deleted",
     "sensitivity": "near-zero endpoint dominated by better uses of the same heat (options c/d); re-study only if Q4 surplus grows x10",
-    "replaced_by": "Q4 surplus growth beyond the dry-cooler rating (re-study trigger in HS \u00a79)",
+    "replaced_by": "Q4 surplus growth beyond the dry-cooler rating (re-study trigger in HS §9)",
     "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
     "files": [
       "flow_graph/plant_flow_graph.json",
@@ -4796,5 +4796,504 @@
     "sensitivity": "Crew scaling moves food/O2/grey/wash and the grow-bed area 1:1 (A-M-229 constants); life-support backups (X-RED) follow the same crew basis",
     "replaced_by": "none - records the standing crew basis after the audit flag",
     "task": "none (ruling recorded); any future crew change re-opens X-RED redundancy sizing and the A-M-229 food chain together"
+  },
+  {
+    "id": "A-M-282",
+    "value": "terminal V per metal {al 3.8, mg 4.2, ca 4.2, mo 2.8, cr 2.8}; anode j 0.5 A/cm2 (graphite, chloride melt); CE 0.85 Al-pot class; bath hold 0.11 kW per cell (150 mm fibre, study)",
+    "units": "V, A/cm2, kW per cell",
+    "where": "drivers foundry_pot_voltage_V / foundry_pot_j_A_cm2 / foundry_pot_ce; pot-cell sizing in flow_graph/param/foundry_poly.py; AL_POT / MG_POT / CA_POT / MO_CELL / CR_CELL duties and work orders",
+    "basis": "AQS-DUTY-072 pot cells: decomposition + overpotential + bath ohmic terminal voltages per metal, graphite anode class at 0.5 A/cm2, Faraday line current at CE, fibre-insulation bath hold (molten AlCl3-(NaCl-KCl) and molten-salt classes; GREENWOOD/CRC stoichiometry)",
+    "sensitivity": "V and j size the pot DC bus and geometry; CE scales feed rates and Cl2 exports 1:1",
+    "replaced_by": "bench molten-chloride cell at the design current density (terminal voltage vs chemistry); bench cell anode polarization at 0.3-0.8 A/cm2 (graphite consumption rate)",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "bench molten-chloride cell at the design current density: terminal voltage vs charge",
+    "files": [
+      "flow_graph/param/foundry_poly.py",
+      "models/mfg/foundry.py"
+    ]
+  },
+  {
+    "id": "A-M-283",
+    "value": "N+1 alternates are real equipment at a standby-zero design-day rate; rated connected_kW envelope held in params.design; duty-cycle energization wiring at the X-MFG-37 trial class",
+    "units": "policy (connected envelope kW; 0 kW design-day draw)",
+    "where": "flow_graph/param/foundry_poly.py alternates block (VAC_IND / VAC_CAST / RF_HEAT / RES_HEAT / COMB_HEAT / SINTER / FORGE / EXTRUDE / DRAW); flow_graph/param/write_graph.py duty_cycle stamps",
+    "basis": "AGENTS.md redundancy rule; AQS-DUTY-072 rated envelopes per the melt/forming class; N+1 pairs may ride (VAC_CAST rides VAC_IND) or stand alone at equal melt duty",
+    "sensitivity": "energizing an alternate during an outage adds its connected rating to the AC bounding case; the design-day numbers are unchanged at 0 kW",
+    "replaced_by": "commissioning trials at the backup duties (X-MFG-37 logged batch schedule class)",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/foundry_poly.py",
+      "flow_graph/param/write_graph.py"
+    ]
+  },
+  {
+    "id": "A-M-284",
+    "value": "the dock imports any feedstock class (landfill reclaim, mining waste, regolith); the pot-blocked foundry trains live on dock chloride/oxide imports at the IA make-up rates",
+    "units": "ruling (kg/d make-up rates on each IA edge)",
+    "where": "flow_graph/param/foundry_poly.py IA-ALCL3-MU / IA-MGCL2-MU / IA-CACL2-MU / IA-TIO2-MU / IA-MOO3-MU / IA-CR2O3-MU / IA-WAX-MU / IA-SILICA-MU edges; models/mfg/foundry.py work orders",
+    "basis": "owner ruling D-DOCK (2026-10-18 work-order program, X-MFG-30 pattern): the dock imports any feedstock class, so the pot-blocked lines live on their dock feeds and the dock metal (IA-METAL-SHIP) is the stock loop net inlet",
+    "sensitivity": "import rates follow the line rates 1:1; NORTH_DOCK freight intake rises with each make-up",
+    "replaced_by": "contracted offtake and dock manifests at the first articles (X-MFG-30 work orders)",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/foundry_poly.py",
+      "models/mfg/foundry.py"
+    ]
+  },
+  {
+    "id": "A-M-285",
+    "value": 0.25,
+    "units": "kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products",
+    "where": "driver foundry_pot_export_frac; Al line 8 + 2.0 export surplus, Ti 0.40 line + export margin, Mo/Cr same class (flow_graph/param/foundry_poly.py); dock metal and chlorine edges (IA-METAL-SHIP, IA-CL2-SHIP, IA-CA-CL2-SHIP)",
+    "basis": "AQS-SIZE-FOUNDRY study margin: clean pot surplus exports on its own dock edge on top of the shipped products (O2, MeOH, oil cuts)",
+    "sensitivity": "the dock metal export follows the internal line at this margin",
+    "replaced_by": "metal dispatch study: contracted offtake vs the 25 % study margin",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals)",
+    "files": [
+      "flow_graph/param/foundry_poly.py"
+    ]
+  },
+  {
+    "id": "A-M-286",
+    "value": "wax reclaim 0.9 kg/kg pattern dewax condensate; shell reclaim 0.875 kg/kg spent shell to stucco/flour; make-up covers the balance on IA-WAX-MU / IA-SILICA-MU",
+    "units": "kg/kg reclaim fractions",
+    "where": "drivers foundry_inv_wax_reclaim_frac / foundry_inv_shell_reclaim_frac; flow_graph/param/foundry_poly.py investment train (WAX_PATTERN / SHELL_BUILD / INV_CAST)",
+    "basis": "AQS-SIZE-FOUNDRY investment knock-out split: dewax condensate and spent-shell recoveries split reclaim from burned/make-up at the drivers reclaim fractions (2.0 kg/d pattern wax -> 1.8 reclaim)",
+    "sensitivity": "reclaim fractions scale the dock make-ups 1:1",
+    "replaced_by": "campaign material balances on the reclaim streams (shell and wax weigh-in/weigh-out)",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/foundry_poly.py"
+    ]
+  },
+  {
+    "id": "A-M-287",
+    "value": "spin-coater line (spin bowl, vacuum chuck, softbake hotplate; envelope 1200x800x1400), contact aligner (365 nm LED array over a 100 mm field, leadscrew stage; not a stepper), wet develop bench on the WET_BENCH chemistry class (TMAH 2.38 wt%/KOH fork); LITHO_STUB retired 2026-10-19 into the three tools",
+    "units": "issued envelopes (mm) and tool classes at 5 wafer starts/d",
+    "where": "flow_graph/param/stub_activation.py LITHO_COAT / LITHO_ALIGN / LITHO_DEV; drivers FAB.litho-train.* (developer, spin peak kW, softbake kW, UV wall)",
+    "basis": "AQS-LITH-001 rev C: puddle-develop dispense 40 mL/wafer at 150 mm, spin-chuck motor 0.75 kW peak, softbake hotplate 0.3 kW at 100 C hold, 365 nm LED array 1 W optical at ~10 % wall plug; developer is a share of the fab resist/solvent issue",
+    "sensitivity": "starts/d scales tool duty and resist/solvent issue 1:1 (A-M-288 bounding)",
+    "replaced_by": "bench dispense and develop rates from the fab process sheet",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/stub_activation.py"
+    ]
+  },
+  {
+    "id": "A-M-288",
+    "value": "5 wafer starts/d (bounding)",
+    "units": "wafer starts/d",
+    "where": "driver FAB.litho-train.starts_per_d; tool duty rows in flow_graph/param/stub_activation.py",
+    "basis": "AQS-AUD-001 labeled assumption: 1-5 wafer starts/d, bounding value carried so the layout loads with the week top rate",
+    "sensitivity": "tool duty scales 1:1 with starts/d",
+    "replaced_by": "fab campaign schedule after the first tool runs",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/stub_activation.py"
+    ]
+  },
+  {
+    "id": "A-M-289",
+    "value": "VDF 0.15 kg/d + TFE 0.1 kg/d monomer demand -> PVDF film 0.14 kg/d + PTFE powder 0.09 kg/d at ~90 % polymer yield, 0.02 kg/d off-spec reclaim loop to F_RECOVER",
+    "units": "kg/d at the AQS-RATE-FP-MET design case",
+    "where": "drivers POLYMERS.fluoropolymer-train.*; flow_graph/param/fluoro_train.py; flow_graph/param/foundry_poly.py fluoro placeholders",
+    "basis": "AQS-RATE-FP-MET design case (PVDF linings and gaskets replacement; PTFE gaskets and small parts replacement); AQS-DUTY-073 rev B train activation, Q-013 reopened on dock fluorspar",
+    "sensitivity": "monomer rates scale the HF / Cl2 / methanol draws 1:1",
+    "replaced_by": "first-article HF / VDF / TFE / PVDF / PTFE runs at the trial campaign",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/fluoro_train.py",
+      "flow_graph/param/foundry_poly.py"
+    ]
+  },
+  {
+    "id": "A-M-290",
+    "value": "Cl2 for VDF/TFE comes from the CRU chlorate finish on the returned dilute HCl (NaClO3 + 6 HCl -> 3 Cl2 + NaCl + 3 H2O): 2 Cl2 per VDF + 4 Cl2 per TFE = 0.62 kg/d Cl2 draw; supersedes the retired no-internal-sink wording",
+    "units": "kg/d Cl2",
+    "where": "flow_graph/param/fluoro_train.py CRU_TO_VDF / CRU_TO_TFE / CRU re-solve; IA-VDF-HCL-TO-CRU / IA-TFE-HCL-TO-CRU returns",
+    "basis": "halogen loop closes on the CRU balance (AQS-SEL-FP): the dilute HCl returns regenerate the chlorate and IA-CRU-01 re-solves on the CRU balance",
+    "sensitivity": "Cl2 draw scales 1:1 with the monomer rates; the chlorate draw and NaCl output follow",
+    "replaced_by": "CRU campaign trial with the returned acids metered",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/fluoro_train.py"
+    ]
+  },
+  {
+    "id": "A-M-291",
+    "value": "remineralization dosing skid: Ca(OH)2 + MgCl2 metering into the potable stream, then UV at 30 W; WHO-class Ca 25 / Mg 10 mg/L targets on the 10 L/d drink basis",
+    "units": "mg/L and W at the 10 L/d drink case",
+    "where": "flow_graph/param/stub_activation.py REMIN (AQS-EQP-STUDY-001 sec. 4)",
+    "basis": "2 x 8 W metering pumps + 30 W UV sized from the dose chemistry at the 10 L/d drink basis",
+    "sensitivity": "dosing pump energy scales 1:1 with the drink basis",
+    "replaced_by": "potable hardness assay at the completed installation",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/stub_activation.py"
+    ]
+  },
+  {
+    "id": "A-M-292",
+    "value": "MVC still stack: evaporator/condenser HX + scroll compressor + separator, 2 x 100 % (X-RED-05); 17 kWh/m3 driver basis",
+    "units": "kWh/m3 distillate",
+    "where": "flow_graph/param/stub_activation.py VCD_TRAIN (AQS-EQP-STUDY-001 sec. 3)",
+    "basis": "vapor-compression distillation still stack sized on the 17 kWh/m3 driver class; scroll + separator pairs for the X-RED-05 diversity",
+    "sensitivity": "compressor duty scales 1:1 with distillate volume",
+    "replaced_by": "commissioning energy check at the first distillate run",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/stub_activation.py"
+    ]
+  },
+  {
+    "id": "A-M-293",
+    "value": "continuous-extrusion blow molder (Precious Plastic class): extruder 2.2 kW + clamp/air duty over a 3.0 h/d campaign at 8.41 kg/d wax/polymer feed",
+    "units": "kW over the campaign h/d",
+    "where": "flow_graph/param/stub_activation.py BLOW_MOLD (AQS-EQP-MFG-001 / AQS-REQ-KW-001 SI-MFG-01)",
+    "basis": "shop-goods wax/polymer articles for the goods loop on IA-BLOW-IN; scrap to the oil line",
+    "sensitivity": "campaign energy scales with the feed rate and h/d",
+    "replaced_by": "first-article run log at the campaign schedule",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/stub_activation.py"
+    ]
+  },
+  {
+    "id": "A-M-294",
+    "value": "electrode coating booth (non-precious M1 carbon/Ni class): exhaust 0.35 kW x 2 h/d + IR cure 1.2 kW x 1 h/d campaign at the 0.02 kg/d anode recoat loop",
+    "units": "kW x h/d at the recoat campaign",
+    "where": "flow_graph/param/stub_activation.py ELECTRODE_COAT (AQS-MFG-ELC-001 Rev B)",
+    "basis": "replaceable EW/BMED electrode recoat campaign; exhaust to MET_AHU; recoat loop IA-COAT-IN/OUT",
+    "sensitivity": "campaign energy scales with the recoat loop 1:1",
+    "replaced_by": "first-article recoat run (drying/cure verified)",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/stub_activation.py"
+    ]
+  },
+  {
+    "id": "A-M-295",
+    "value": "cell-line pilot workload (texture, POCl3 diffusion, PSG etch, PECVD SiNx, screen print, fast firing, IV) wired to the X-MFG-38 cell-line sizing; not the PV_ARRAY yard",
+    "units": "tool-table campaign at the X-MFG-38 class",
+    "where": "flow_graph/param/stub_activation.py SOLAR_PV_CELL; flow_graph/param/pv_cell_line.py (X-MFG-38)",
+    "basis": "study_stub class retired at the 2026-10-19 stub activation: the tool table in params.design carries the line; the yard array stays PV_ARRAY",
+    "sensitivity": "campaign energy follows the X-MFG-38 batch schedule",
+    "replaced_by": "X-MFG-38 trial runs on the pilot line",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/stub_activation.py"
+    ]
+  },
+  {
+    "id": "A-M-296",
+    "value": "binary ORC skid as INSTALLED STANDBY: design-day endpoint 0 kW_e; geometry seated at the A-M-244 12 kW dry-cooler context so the standby is real",
+    "units": "kW_e design-day endpoint (0), installed standby",
+    "where": "flow_graph/param/stub_activation.py GEO_ORC class + placement",
+    "basis": "D-GEO_ORC owner ruling 2026-10-18: the endpoint stays 0 kW_e with the Carnot study as record (AQS-HEAT-STUDY-002 Rev A); on any issued surplus-heat source the skid is placed, not designed",
+    "sensitivity": "placement only; no design-day numbers move",
+    "replaced_by": "first issued surplus-heat source (skid then designed)",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/stub_activation.py"
+    ]
+  },
+  {
+    "id": "A-M-297",
+    "value": "one CZ pull + tool campaign per week at 5 wafer starts/d: cz charge 0.5 kg per pull, campaign 7.0 d",
+    "units": "kg per pull; campaign d",
+    "where": "drivers FAB.wafer-line-train.cz_charge_kg / campaign_d; flow_graph/param/write_graph.py WAFER_FAB tool row",
+    "basis": "AQS-EQP-FAB-001 small-ingot CZ class: 0.42 kWh/pull (CRC_SI cp/L) over the campaign + tool-row parasitics; was the 2 kW PECVD+belt study share before the litho/stub split",
+    "sensitivity": "campaign energy scales 1:1 with starts/d and the pull mass",
+    "replaced_by": "fab campaign log at the first pull",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/write_graph.py"
+    ]
+  },
+  {
+    "id": "A-M-298",
+    "value": "2 heated baths at 10.0 L each (SC1/SC2 at 80.0 C), DHF at ambient; heat-up once daily + insulated hold (4.96 kWh/d)",
+    "units": "L and C per bath; kWh/d heat",
+    "where": "drivers FAB.wet-bench-train.*; flow_graph/param/write_graph.py WET_BENCH load row",
+    "basis": "AQS-EQP-FAB-001 WET_BENCH row; insulated hold on the ASTM_C680 method (X-MFG-38 pattern)",
+    "sensitivity": "bath heat scales 1:1 with bath volume and temperature",
+    "replaced_by": "wet-bench recipe from the fab process sheet",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/write_graph.py"
+    ]
+  },
+  {
+    "id": "A-M-299",
+    "value": "dose-header head 15 m to the grow beds; small metering-diaphragm pump class at eta 0.35; bleed transfer + 3 x 8 W metering pumps on the bed/fish splits",
+    "units": "m head; fraction; W per pump",
+    "where": "drivers NUT.nutrient-train.dose_head_m / pump_eta; flow_graph/param/write_graph.py NUTRIENT_DOSE row",
+    "basis": "AQS-EQP-NUT-001: bleed transfer 109.6 kg/d over a 2 h window at 15 m head, eta 0.35 (6.4 W), metering pumps on the bed/fish splits",
+    "sensitivity": "pump power scales 1:1 with head and flow",
+    "replaced_by": "pump performance curve at the first article",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/write_graph.py"
+    ]
+  },
+  {
+    "id": "A-M-300",
+    "value": "duct + stack draft loss 350.0 Pa over a 100 mm bore flue run; small high-temperature centrifugal fan class at eta 0.35",
+    "units": "Pa; fraction",
+    "where": "drivers OIL.afterburner-train.flue_fan_dP_Pa / flue_fan_eta; flow_graph/param/write_graph.py AFTERBURNER blower row",
+    "basis": "850 C chamber per X-SAN-01 with a cooled exit; the ignition transformer and burner management ride the combustion panel at < 50 W",
+    "sensitivity": "blower power scales 1:1 with flue draft loss",
+    "replaced_by": "sanitary-heat commissioning test at the burner run",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/write_graph.py"
+    ]
+  },
+  {
+    "id": "A-M-301",
+    "value": "every load-list residual row carries a calculated or cited basis; the owner requirement locks are the only explicit study locks left",
+    "units": "policy (load-list basis completeness)",
+    "where": "flow_graph/param/write_graph.py x_els_residuals; docs-authority/_load_list.py Rev C; docs-authority/LOAD_LIST.md",
+    "basis": "AQS-ELEC-003 Rev C load-list pass: residuals aligned to their citing calculations; owner locks (FUEL_CELL etc.) documented in the load list",
+    "sensitivity": "none (provenance policy)",
+    "replaced_by": "per-unit sizing as each owner class lands",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/write_graph.py",
+      "docs-authority/_load_list.py"
+    ]
+  },
+  {
+    "id": "A-M-302",
+    "value": "oil stores 10 kWh_th hold at 80 K swing (Q1/Q2); water stores 20 kWh_th at 30 K swing (Q3/Q4)",
+    "units": "kWh_th and K per store",
+    "where": "drivers HEAT.heat-battery-train.hb_oil_hold_kWh_th / hb_oil_swing_K / hb_water_hold_kWh_th / hb_water_swing_K; heat-battery sizing in flow_graph/param/heat_battery.py",
+    "basis": "issued graph params.basis of the Q1..Q4 stores (AQS-HEAT-LADDER-001); reconciles to the AQS-DUTY-008 sec. 5 volume",
+    "sensitivity": "hold energy scales 1:1 with store volume and swing",
+    "replaced_by": "next ladder revision of AQS-DUTY-008 sec. 5",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/heat_battery.py"
+    ]
+  },
+  {
+    "id": "A-M-303",
+    "value": "DN25 minimum on gas and water headers (take-off seating, instrument taps, drainable/roddable bus)",
+    "units": "DN minimum, gas headers",
+    "where": "drivers HDR.headers-train.hdr_min_DN_gas / hdr_min_DN_water; flow_graph/param/headers.py",
+    "basis": "header practice at this plant scale; velocity-sized bores come out smaller",
+    "sensitivity": "header bores floor at the DN minimum when velocity sizing comes out smaller",
+    "replaced_by": "Take-off and instrument tapping check on the header GA at unit task 05",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "Take-off and instrument tapping check on the header GA at unit task 05",
+    "files": [
+      "flow_graph/param/headers.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-304",
+    "value": "DN100 minimum on the afterburner flue (draft stability and condensate drainage; velocity sizing alone gives DN20)",
+    "units": "DN minimum, afterburner flue",
+    "where": "drivers HDR.headers-train.hdr_min_DN_flue; flow_graph/param/headers.py",
+    "basis": "flue practice at this duty",
+    "sensitivity": "flue bore floors at the DN minimum",
+    "replaced_by": "Natural-draft and condensate-drainage check on the flue routing drawing",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "Natural-draft and condensate-drainage check on the flue routing drawing",
+    "files": [
+      "flow_graph/param/headers.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-305",
+    "value": "pyrolysis NCG 0.5 kg/m3 at 150-200 C (H2/CH4/C2-rich light gas class); flue 0.75 kg/m3 at about 200 C (air class)",
+    "units": "kg/m3 at header temperature",
+    "where": "drivers HDR.headers-train.hdr_rho_ncg / hdr_rho_flue; flow_graph/param/headers.py",
+    "basis": "light pyrolysis gas class at header temperature; air-class flue at flue temperature",
+    "sensitivity": "header sizing scales inversely with the density",
+    "replaced_by": "NCG composition from the pyrolysis assay at the OIL_FRAC unit task",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "NCG composition from the pyrolysis assay at the OIL_FRAC unit task",
+    "files": [
+      "flow_graph/param/headers.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-306",
+    "value": "20 m fallback manifold run when no routed isometric exists (volume-only; all present headers have routed lines)",
+    "units": "m",
+    "where": "drivers HDR.headers-train.hdr_run_default_m; flow_graph/param/headers.py",
+    "basis": "volume-only fallback for unrouted runs",
+    "sensitivity": "unrouted-run volume scales 1:1 with the fallback length",
+    "replaced_by": "Header run lengths from the routed isometrics at the next AQS-ISO-002 regen",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "Header run lengths from the routed isometrics at the next AQS-ISO-002 regen",
+    "files": [
+      "flow_graph/param/headers.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-307",
+    "value": "35 W/m sustained per-metre bore capacity (mid of the 30-50 W/m small-closed-loop band)",
+    "units": "W/m",
+    "where": "drivers GEO.geo-loop.ghex_q_per_m_W; flow_graph/param/geo_loop.py",
+    "basis": "KAVANAUGH2014 small closed-loop band mid (30-50 W/m)",
+    "sensitivity": "bore count and depth scale inversely with W/m",
+    "replaced_by": "Thermal response test on the first bore (ST-ORC-01)",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "Thermal response test on the first bore (ST-ORC-01)",
+    "files": [
+      "flow_graph/param/geo_loop.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-308",
+    "value": "6 m bore spacing (interference limit for small arrays at these extraction rates)",
+    "units": "m",
+    "where": "drivers GEO.geo-loop.ghex_bore_spacing_m; flow_graph/param/geo_loop.py",
+    "basis": "thermal-interference limit for the small array",
+    "sensitivity": "array footprint scales 1:1 with spacing",
+    "replaced_by": "site survey at the first bore",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/geo_loop.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-309",
+    "value": "25 vol % propylene glycol loop fluid: cp 3.9 kJ/kg K, rho 1030 kg/m3 (manufacturer class data, 0-20 C; freeze protection to -10 C)",
+    "units": "vol %, kJ/kg K, kg/m3",
+    "where": "drivers GEO.geo-loop.glycol_*; flow_graph/param/geo_loop.py",
+    "basis": "manufacturer class data; freeze protection to -10 C at the Dallas design low -8 C (AQS-SITE-002)",
+    "sensitivity": "loop flow scales inversely with cp",
+    "replaced_by": "glycol property-table confirmation against the loop duty at the first fill",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/geo_loop.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-310",
+    "value": "source-loop rise 3 K (keeps evaporator approach and pump power balanced), loop circuit head 25 m (buried header + U-tube circuit class)",
+    "units": "K; m",
+    "where": "drivers GEO.geo-loop.glycol_dT_K / loop_head_m; flow_graph/param/geo_loop.py",
+    "basis": "loop balance class at these duties",
+    "sensitivity": "pump power scales with head; flow scales inversely with dT",
+    "replaced_by": "Circuit head from the routed loop isometric",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "Circuit head from the routed loop isometric",
+    "files": [
+      "flow_graph/param/geo_loop.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-311",
+    "value": "condensate subcool 20 K to 40 C (condensate to ROOF_TANK below the tank class liquid limit)",
+    "units": "K",
+    "where": "drivers MEOH.synthesis-train.MEOH_COND.subcool_K; flow_graph/param/meoh_train.py",
+    "basis": "tank-class liquid handling limit at ROOF_TANK",
+    "sensitivity": "condensing duty scales with the subcool",
+    "replaced_by": "ROOF_TANK liquid-limit check at the tank design review",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "files": [
+      "flow_graph/param/meoh_train.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-312",
+    "value": "PEM cell design point 0.6 V at 0.3 A/cm2 (IEC62282-3-100 module class)",
+    "units": "V per cell; A/cm2 at the design point",
+    "where": "drivers MEOH.synthesis-train.MEOH_FC.cell_V / j_A_cm2; flow_graph/param/meoh_train.py",
+    "basis": "PEM module class design point",
+    "sensitivity": "stack power scales linearly with cell count; efficiency follows cell voltage",
+    "replaced_by": "Stack polarisation set at the first article",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "Stack polarisation set at the first article",
+    "files": [
+      "flow_graph/param/meoh_train.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-313",
+    "value": "150 kPa design margin over static + friction to the hydraulically most remote sprinkler (carried until the network hydraulic calc issues)",
+    "units": "kPa",
+    "where": "driver fire_pump_head_margin_kPa; flow_graph/param/fire.py (X-FIR-01)",
+    "basis": "X-FIR-01 sprinkler design margin class (AQS-SAF-005 rev B)",
+    "sensitivity": "pump head scales 1:1 with the margin",
+    "replaced_by": "Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record)",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record)",
+    "files": [
+      "flow_graph/param/fire.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-314",
+    "value": "8 h to refill the fire reserve from the normal supply (NFPA 22 class duration for a protected occupancy at this hazard level)",
+    "units": "h",
+    "where": "driver fire_tank_refill_h; flow_graph/param/fire.py (X-FIR-01)",
+    "basis": "NFPA 22 refill-duration class",
+    "sensitivity": "reserve refill scales inversely with fill rate",
+    "replaced_by": "City/well fill-rate confirmation at X-BAS-03 (site utilities)",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "City/well fill-rate confirmation at X-BAS-03 (site utilities)",
+    "files": [
+      "flow_graph/param/fire.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-315",
+    "value": "14 kWh_th Q3 hold (reconciled from the issued sec. 5 volume, 0.407 m3 water at a 30 K swing = 13.9 kWh)",
+    "units": "kWh_th",
+    "where": "driver HEAT.heat-battery-train.hb_q3_hold_kWh_th; heat-battery Q3 sizing",
+    "basis": "AQS-DUTY-008 sec. 6.2 single-ladder sizing case of the issued sec. 5 volume",
+    "sensitivity": "Q3 hold scales 1:1 with the reconciled volume",
+    "replaced_by": "Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision",
+    "files": [
+      "flow_graph/param/heat_battery.py",
+      "flow_graph/param/drivers.json"
+    ]
+  },
+  {
+    "id": "A-M-316",
+    "value": 0.0015,
+    "units": "kg Ca deoxidizer/desulfurizer per kg melt charge",
+    "where": "driver foundry_ca_add_frac; Ca deoxidizer addition 0.0551 kg/d at 0.15 % of the melt charge (flow_graph/param/foundry_poly.py IA-CACL2-MU / CA_POT)",
+    "basis": "grease-thickener Ca line (AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2 class): Ca deoxidizer/desulfurizer addition on the melt charge under salt flux",
+    "sensitivity": "Ca draw scales 1:1 with the melt charge",
+    "replaced_by": "first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge",
+    "task": "reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where)",
+    "needs_verification": true,
+    "verification_test": "first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge",
+    "files": [
+      "flow_graph/param/foundry_poly.py"
+    ]
   }
 ]

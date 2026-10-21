@@ -21,7 +21,7 @@
         "value": 0.1332,
         "unit": "kW",
         "status": "study",
-        "note": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-286)."
+        "note": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-301)."
       },
       "modules": [],
       "params": {
@@ -353,7 +353,7 @@
         "value": 1.157,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-286)."
+        "note": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-301)."
       },
       "modules": [],
       "params": {
@@ -1181,7 +1181,7 @@
           "connected_kW": 15.0,
           "backup_of": "IND_MELT",
           "outage_d": 2.0,
-          "duty_note": "equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-282)"
+          "duty_note": "equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-283)"
         },
         "envelope": {
           "size_mm": [
@@ -1191,19 +1191,19 @@
           ],
           "style": "box_furnace",
           "state": "standby_rated",
-          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-282): real machine, standby-zero design-day rate"
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate"
         },
         "duty_cycle": {
           "avg_kW": 0.0,
           "connected_kW": 15.0,
-          "basis": "X-MFG-37 logged batch schedule class; standby-zero per A-M-282"
+          "basis": "X-MFG-37 logged batch schedule class; standby-zero per A-M-283"
         }
       },
       "continuous_kw": {
         "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-282); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02."
+        "note": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-283); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02."
       }
     },
     {

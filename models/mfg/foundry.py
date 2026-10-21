@@ -2,7 +2,7 @@
 (written by flow_graph/param/foundry_poly.py, AQS-DUTY-072 Rev B D-DOCK feedstock program) and writes
 models/mfg/<UNIT>/export/<unit>.step and .stl, bom.csv, fasteners.csv and WORK_ORDER.md per unit. Live trains
 (scrap-remelt melt-and-cast + roll + stock staging; D-DOCK pot/cell molten-chloride electrolysis, Kroll Ti train,
-investment casting on wax make-up + shell reclaim) get machine geometry; the standby_rated N+1 alternates (A-M-282)
+investment casting on wax make-up + shell reclaim) get machine geometry; the standby_rated N+1 alternates (A-M-283)
 keep the envelope box only as a presence-consistent PLACEHOLDER, marked in bom.csv and the work order.
 Run: /tmp/cqvenv/bin/python models/mfg/foundry.py [UNIT ...]"""
 import csv, json, math, os, sys
@@ -81,9 +81,9 @@ def build(U):
         dn = 150 if gas > 10 else (80 if gas > 1 else 50)
         if 'cl2_kg_d' in d:
             gasdesc = (f'{d["cl2_kg_d"]:g} kg/d Cl2 to the Kroll loop (AQS-BAL-KROLL)' if U == 'MG_POT'
-                       else f'{d["cl2_kg_d"]:g} kg/d Cl2 dock export at the CRU (A-M-280 ruling)')
+                       else f'{d["cl2_kg_d"]:g} kg/d Cl2 dock export at the CRU (A-M-290 ruling)')
         else:
-            gasdesc = f'anode-gas chlorine recycle, internal loop ({d.get("co2_kg_d", d.get("co_kg_d", 0)):g} kg/d COx, A-M-280)'
+            gasdesc = f'anode-gas chlorine recycle, internal loop ({d.get("co2_kg_d", d.get("co_kg_d", 0)):g} kg/d COx, A-M-290)'
         m = box(0, 0, 0, 800, 800, 1000).cut(box(70, 70, 60, 660, 660, 940))        # lined rectangular cell shell
         for i in range(nc):                                                          # anode bank, one row
             ax = 160 + i * (480 / (nc - 1)) if nc > 1 else 400
@@ -145,16 +145,16 @@ def build(U):
                 ('3', f'Mg reduction retort D200 x 520 mm in furnace box, {d["retort_T_C"]:.0f} C', 1,
                  'Inconel 601 retort, argon-latched', f'{d["mg_kg_d"]:g} kg/d Mg at {d["batch_kg"]:g} kg Ti batch campaigns'),
                 ('4', f'Mg charge hopper D110 with neck and metering valve', 1, 'CS',
-                 f'{DOC} section 4; A-M-280 Mg-pot loop'),
+                 f'{DOC} section 4; A-M-284 Mg-pot loop'),
                 ('5', 'TiCl4 transfer lines DN25, chlorinator -> condenser -> retort', 2, 'Hastelloy C-276',
                  f'{DOC} section 4'),
                 ('6', 'MgCl2 drag-out trough 640 x 110 x 90 mm, tapping spout', 1, 'CS, Monel-lined',
-                 f'{d["mgcl2_gross_kg_d"]:g} kg/d gross MgCl2; drag-out to FLUX_PREP (A-M-280)'),
+                 f'{d["mgcl2_gross_kg_d"]:g} kg/d gross MgCl2; drag-out to FLUX_PREP (A-M-284)'),
                 ('7', f'Retort hold furnace + SCR, {d["hold_kW"]} kW', 1, 'resistance, PID', f'{DOC} section 4; CO {d["co_kg_d"]:g} kg/d off-gas to burn')]
         fast = ('item,size,grade,qty,location,basis\n'
                 '1,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,retort and hopper flanges,study\n'
                 '2,M12 anchor,ISO 898-1 8.8,4,train stands to slab,study\n')
-        wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - D-DOCK rutile + carbon (A-M-280/284).\n\n'
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - D-DOCK rutile + carbon (A-M-284).\n\n'
               f'1. Set the three-vessel train: chlorinator (800 C), TiCl4 condenser, Mg reduction retort (900 C) in its furnace box.\n'
               f'2. Fit the charge hopper (TiO2 + C), the Mg charge hopper, and the DN25 transfer lines.\n'
               f'3. Weld and Monel-line the MgCl2 drag-out trough; route it to FLUX_PREP.\n'
@@ -178,15 +178,15 @@ def build(U):
             rows = [('1', 'Prep bench 800 x 600 x 900 mm, CS frame, lower shelf', 1, 'CS weldment, SS top',
                      f'{DOC} section 4; {d["bench"]}'),
                     ('2', f'Wax pot D220 x 260 mm, {d["pot_L"]:.0f} L, thermostatted', 1, 'SS 304, jacketed',
-                     f'{d["wax_kg_d"]:g} kg/d wax duty ({d["makeup_kg_d"]:g} make-up + {d["reclaim_kg_d"]:g} reclaim, A-M-281)'),
+                     f'{d["wax_kg_d"]:g} kg/d wax duty ({d["makeup_kg_d"]:g} make-up + {d["reclaim_kg_d"]:g} reclaim, A-M-286)'),
                     ('3', f'Pattern injector: 2-post frame, platen, plunger, die plate ({d["injector_kW"]} kW)', 1,
-                     'CS frame, pneumatic cylinder', f'{DOC} section 4; A-M-281 wax loop'),
+                     'CS frame, pneumatic cylinder', f'{DOC} section 4; A-M-286 wax loop'),
                     ('4', 'Reclaim-wax melter with filter bag, on the lower shelf', 1, 'SS 304',
-                     'SHELL_BURNOUT condensate return, 90 % reclaim (A-M-281)')]
+                     'SHELL_BURNOUT condensate return, 90 % reclaim (A-M-286)')]
             fast = ('item,size,grade,qty,location,basis\n'
                     '1,M10 x 30 bench bolts,ISO 898-1 8.8,12,legs and platen,study\n'
                     '2,M12 anchor,ISO 898-1 8.8,4,bench feet to slab,study\n')
-            wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - wax make-up import + 90 % reclaim (A-M-281).\n\n'
+            wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - wax make-up import + 90 % reclaim (A-M-286).\n\n'
                   f'1. Weld the bench; fit the SS top and lower shelf.\n'
                   f'2. Set the {d["pot_L"]:.0f} L wax pot with thermostat; plumb the reclaim melter beside it on the shelf.\n'
                   f'3. Build the injector frame; align plunger to die plate.\n'
@@ -202,7 +202,7 @@ def build(U):
         rows = [('1', 'Prep bench 800 x 600 x 900 mm, CS frame, lower shelf', 1, 'CS weldment, SS top',
                  f'{DOC} section 4; {d["bench"]}'),
                 ('2', f'Salt hopper D300 x 283 mm, {d["hopper_L"]:.0f} L, with lid', 1, 'SS 304',
-                 f'{d["salt_kg_d"]:g} kg/d salt-flux cover (Kroll MgCl2-class drag-out, A-M-280)'),
+                 f'{d["salt_kg_d"]:g} kg/d salt-flux cover (Kroll MgCl2-class drag-out, A-M-284)'),
                 ('3', f'Side-entry mixer {d["mixer_kW"]} kW with shaft and gland', 1, 'SS 304, PTFE gland',
                  f'{DOC} section 4'),
                 ('4', 'Mixing tub and salt day-bin (lower shelf)', 2, 'SS 304 / HDPE',
@@ -210,7 +210,7 @@ def build(U):
         fast = ('item,size,grade,qty,location,basis\n'
                 '1,M10 x 30 bench bolts,ISO 898-1 8.8,12,legs and hopper bracket,study\n'
                 '2,M12 anchor,ISO 898-1 8.8,4,bench feet to slab,study\n')
-        wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - Kroll drag-out landed (A-M-280).\n\n'
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - Kroll drag-out landed (A-M-284).\n\n'
               f'1. Weld the bench; fit the SS top and lower shelf.\n'
               f'2. Set the {d["hopper_L"]:.0f} L salt hopper with lid; mount the {d["mixer_kW"]} kW side-entry mixer.\n'
               f'3. Place the mixing tub and the day-bin on the shelf.\n'
@@ -233,17 +233,17 @@ def build(U):
             rows = [('1', f'Flash-dewax + fire chamber 1000 x 640 x 900 mm, {d["T_C"]:.0f} C, 60 mm lined', 1,
                      'CS casing, ceramic fibre', f'{DOC} section 4; {d["service"]}'),
                     ('2', 'Shell trolley deck with casters and stop', 1, 'CS, heat-resistant wheels',
-                     f'{d["shell_kg_d"]:g} kg/d fired shells (A-M-281)'),
+                     f'{d["shell_kg_d"]:g} kg/d fired shells (A-M-286)'),
                     ('3', 'Off-gas stack DN150 with dewax-air bias damper', 1, 'SA-240 304L',
                      f'{DOC} section 4; flash dewax stage'),
                     ('4', f'Wax condenser D120 x 360 mm with run, downcomer and receiver', 1, 'SA-240 304L, jacketed',
-                     f'{d["wax_reclaim_kg_d"]:g} kg/d wax reclaim to WAX_PATTERN; {d["burned_wax_kg_d"]:g} kg/d burned (A-M-281)'),
+                     f'{d["wax_reclaim_kg_d"]:g} kg/d wax reclaim to WAX_PATTERN; {d["burned_wax_kg_d"]:g} kg/d burned (A-M-286)'),
                     ('5', f'Control cabinet, SCR and {d["kW"]} kW elements, 2-zone', 1, 'CS enclosure, IP54',
                      f'{DOC} section 4; {d["condenser"]}')]
             fast = ('item,size,grade,qty,location,basis\n'
                     '1,M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,16,door frame and stack flange,study\n'
                     '2,M12 anchor,ISO 898-1 8.8,4,chamber and cabinet feet,study\n')
-            wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - IND_TO_INV castings train (A-M-281).\n\n'
+            wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - IND_TO_INV castings train (A-M-286).\n\n'
                   f'1. Fabricate the chamber; line 60 mm for {d["T_C"]:.0f} C; fit the door frame and trolley deck.\n'
                   f'2. Mount the DN150 stack with bias damper; set the wax condenser, run, downcomer and receiver.\n'
                   f'3. Wire the {d["kW"]} kW SCR zones; interlock door-open and stack draft.\n'
@@ -340,9 +340,9 @@ def build(U):
                     ('2', f'Eccentric vibrator drive, {d["table_kW"]} kW, with belt guard', 1, 'geared motor',
                      f'{DOC} section 4; A-M-199 forming class'),
                     ('3', f'Breakout bin 900 x 360 x 500 mm under the grid', 1, 'CS, lined',
-                     f'{d["spent_shell_kg_d"]:g} kg/d spent shells (A-M-281)'),
+                     f'{d["spent_shell_kg_d"]:g} kg/d spent shells (A-M-286)'),
                     ('4', f'Reclaim sieve deck 320 x 300 mm with fines pan', 1, 'SS mesh, CS pan',
-                     f'{d["reclaim_kg_d"]:g} kg/d reclaim to SHELL_BUILD; {d["export_kg_d"]:g} kg/d fines exported (A-M-281)'),
+                     f'{d["reclaim_kg_d"]:g} kg/d reclaim to SHELL_BUILD; {d["export_kg_d"]:g} kg/d fines exported (A-M-286)'),
                     ('5', 'Dust hood with DN120 offtake', 1, 'CS', 'knock-out dust to the baghouse')]
         elif U == 'SHELL_BUILD':                    # dip-coat + stucco rainfall booth
             m = box(100, 280, 100, 520, 340, 300).cut(box(120, 300, 100, 480, 300, 300))   # slurry tank (40 L)
@@ -360,12 +360,12 @@ def build(U):
             rows = [('1', f'Dip slurry tank 480 x 300 x 300 mm ({d["slurry_L"]:.0f} L), binder + flour', 1,
                      'SS 304, agitated', f'{DOC} section 4; {d["machine"]}'),
                     ('2', 'Rainfall stucco booth 420 x 480 x 880 mm with hopper top', 1, 'CS, recycled-stucco circuit',
-                     f'{d["dips"]} dips per shell at 4 kg/kg castings (A-M-281)'),
+                     f'{d["dips"]} dips per shell at 4 kg/kg castings (A-M-286)'),
                     ('3', 'Stucco blower / conveyor module', 1, 'CS', f'{DOC} section 4'),
                     ('4', 'Mold-handling gantry, 1000 mm span beam + hoist trolley', 1, 'CS beam, chain hoist',
                      f'{DOC} section 4'),
                     ('5', '3-tier drying rack 180 x 560 mm', 1, 'CS angle + mesh',
-                     f'{d["shell_kg_d"]:g} kg/d shells; silica make-up {d["silica_makeup_kg_d"]:g} + reclaim {d["reclaim_kg_d"]:g} kg/d (A-M-281)')]
+                     f'{d["shell_kg_d"]:g} kg/d shells; silica make-up {d["silica_makeup_kg_d"]:g} + reclaim {d["reclaim_kg_d"]:g} kg/d (A-M-286)')]
         elif U == 'INV_CAST':                       # investment casting tilt-pour station
             m = box(180, 300, 0, 320, 320, 700)                                      # tilt pedestal
             m = m.union(box(300, 440, 700, 150, 60, 60))                             # tilt bracket
@@ -383,9 +383,9 @@ def build(U):
             rows = [('1', 'Tilt-pour pedestal and bracket, 700 mm axis height', 1, 'CS weldment',
                      f'{DOC} section 4; {d["machine"]}'),
                     ('2', 'Pouring ladle D220 x 190 mm, trunnion-mounted', 1, 'CS, refractory lined',
-                     f'{d["pour_kg_d"]:g} kg/d pour from IND_MELT (A-M-281)'),
+                     f'{d["pour_kg_d"]:g} kg/d pour from IND_MELT (A-M-286)'),
                     ('3', f'Mold table with {d["molds_per_campaign"]} fired-shell seats', 1, 'CS, pinned',
-                     f'{d["shell_kg_d"]:g} kg/d shells at 8/campaign (A-M-281)'),
+                     f'{d["shell_kg_d"]:g} kg/d shells at 8/campaign (A-M-286)'),
                     ('4', 'Rollover frame and cross-beam for shell cooling', 1, 'CS', f'{DOC} section 4'),
                     ('5', 'Cool/quench bin and control pedestal', 2, 'CS / CS enclosure IP54', f'{DOC} section 4')]
         else:

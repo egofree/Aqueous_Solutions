@@ -167,7 +167,7 @@ def process():
             n['continuous_kw'] = rate(float(n['continuous_kw']),'kW',
                 f"study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md "
                 f"(IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02.")
-    x_els_residuals(g, N, E, d)   # X-ELS-02 rev C: the 13 load-list residuals get calculated/cited bases (A-M-286)
+    x_els_residuals(g, N, E, d)   # X-ELS-02 rev C: the 13 load-list residuals get calculated/cited bases (A-M-301)
     # SOL_ARK bus: PV average carries the change
     delta = bus_load(g) - before
     pv = E['IA-PV-01']['rate']['value'] + delta
@@ -177,11 +177,11 @@ def process():
     print(f'bus load change {delta:+.3f} kW; IA-PV-01 {pv:.3f} kW')
 
 def x_els_residuals(g, N, E, d):
-    """X-ELS-02 rev C (A-M-286): the load-list residual rows get calculated or cited bases so the load list
+    """X-ELS-02 rev C (A-M-301): the load-list residual rows get calculated or cited bases so the load list
     carries no 'basis pending' row beyond the owner requirement locks (FUEL_CELL, MEOH_FC). Single writer of
     these node stamps; the load list classifies from the note tokens."""
     v = lambda k: DR.val(d, k)
-    RT = 'X-ELS-02 load-basis (A-M-286)'
+    RT = 'X-ELS-02 load-basis (A-M-301)'
 
     def _st(u, kw, note, design=None):
         n = N.get(u)
@@ -207,15 +207,15 @@ def x_els_residuals(g, N, E, d):
                                      kWh_d=round(s['e_melt'], 3), heats_d=s['heats'], basis='X-MFG-37 logged batch schedule class')
     if 'SF-IND_MELT' in E:
         E['SF-IND_MELT']['rate'] = rate(round(s['e_melt'] / 24, 4), 'kW', 'Feed equal to IND_MELT continuous_kw. | X-ELS-02.')
-    for u, conn, why in (('VAC_IND', 15.0, 'N+1 diverse melt path: standby-zero on the design day (A-M-282); Ti Kroll train '
+    for u, conn, why in (('VAC_IND', 15.0, 'N+1 diverse melt path: standby-zero on the design day (A-M-283); Ti Kroll train '
                                               'feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class'),
-                         ('RF_HEAT', 5.0, 'preheat/sinter N+1 alternate: standby-zero on the design day (A-M-282); duty-cycle '
+                         ('RF_HEAT', 5.0, 'preheat/sinter N+1 alternate: standby-zero on the design day (A-M-283); duty-cycle '
                                           'wiring at the X-MFG-37 trial class')):
         n = N.get(u)
         if n is not None:
             n['continuous_kw'] = rate(0.0, 'kW', f'X-MFG-37 trial basis (AQS-DUTY-072): {why}. X-ELS-02.')
             n['params']['duty_cycle'] = dict(avg_kW=0.0, connected_kW=conn,
-                                             basis='X-MFG-37 logged batch schedule class; standby-zero per A-M-282')
+                                             basis='X-MFG-37 logged batch schedule class; standby-zero per A-M-283')
             f = E.get(f'SF-{u}')
             if f is not None and 'elec' in (f.get('layers') or []):
                 f['rate'] = rate(0.0, 'kW', f'Feed equal to {u} continuous_kw (standby-zero). | X-ELS-02.')
@@ -242,7 +242,7 @@ def x_els_residuals(g, N, E, d):
             dict(item='total connected (calculated)', kW=hab_kw),
             dict(item='critical-capacity lock (drivers, NFPA 110)', kW=v('ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW'))])
 
-    # 3) WAFER_FAB + WET_BENCH: tool lists from AQS-EQP-FAB-001 (litho now on its own real tools, A-M-284)
+    # 3) WAFER_FAB + WET_BENCH: tool lists from AQS-EQP-FAB-001 (litho now on its own real tools, A-M-287)
     cp_si, L_si, T_melt = 0.9, 1790.0, 1414.0                      # kJ/kg K, kJ/kg (CRC_SI)
     cz = v('FAB.wafer-line-train.cz_charge_kg') * (cp_si * (T_melt - 25) + L_si) / 3600   # kWh per pull
     camp = v('FAB.wafer-line-train.campaign_d')
@@ -255,7 +255,7 @@ def x_els_residuals(g, N, E, d):
     _st('WAFER_FAB', fab_kw,
         f"AQS-EQP-FAB-001 sec.3 tool train (CZ class) at {v('FAB.litho-train.starts_per_d')} wafer starts/d: CZ charge "
         f"{cz:.2f} kWh/pull (CRC_SI cp/L) over a {camp:.0f} d campaign + tool-row parasitics; litho moved to the real "
-        f"LITHO_* tools (A-M-284); was the 2 kW PECVD+belt study share.",
+        f"LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share.",
         design=[dict(item=i, kW=round(w, 4)) for i, w in fab] + [dict(item='total connected (calculated)', kW=fab_kw)])
     from .sizing import heat as HT
     bath_L, bath_C, n_b = v('FAB.wet-bench-train.bath_L'), v('FAB.wet-bench-train.bath_C'), int(v('FAB.wet-bench-train.heated_baths'))

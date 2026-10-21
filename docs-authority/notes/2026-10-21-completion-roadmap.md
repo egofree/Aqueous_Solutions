@@ -23,6 +23,16 @@ Author each as generated docs with an owning `_*.py` module, never prose:
 Family sweeps exactly like the T02 unit-sizing sweep already committed: one generator per task
 family, per-unit rows with stated bases, idempotent, scrub-self-healing. No hand-edits.
 
+Update 2026-10-21 (citation-integrity remediation, before the per-family sweeps): a full-tree
+scan found graph/driver rows citing register rows `A-M-282..300` from a dead lane that never
+landed its register rows. This was remediated by reconstruction from the self-describing citing
+sources: +35 register rows (`A-M-282..316`), 48 drivers-field remaps, 170 source-ref remaps,
+plus the regen self-heal of every generated artifact. Zero numeric value changes (3482-value
+multiset identity vs HEAD), all gates pass (pytest 43/43, regen --check 0-stale, authority
+contract projection=on-disk). Full record: `2026-10-21-dead-register-remediation.md`. The
+previously-blocked citation basis for the sweeps is now clean; the per-family sweeps continue
+with the register resolvable end-to-end.
+
 ## Wave 2 - Internals and materials (T06 171, T09 172)
 
 - T06: internals definition per unit class (trays/packing for scrubbers and columns, spargers,

@@ -12,10 +12,10 @@ landfill reclaim, mining waste, regolith; A-M-284). Live trains after this pass:
   investment train WAX_PATTERN .. SHELL_BREAK at 2 kg/d castings on wax make-up + foundry silica
                    imports, shell 87.5 % reclaimed, spent balance exported at the dock
   N+1 alternates   VAC_IND / VAC_CAST / RF_HEAT / RES_HEAT / COMB_HEAT / SINTER / FORGE / EXTRUDE /
-                   DRAW sized at their backup duty (AGENTS.md redundancy rule, A-M-282), standby-zero
+                   DRAW sized at their backup duty (AGENTS.md redundancy rule, A-M-283), standby-zero
                    on the design day, electrical edges connected
 
-Chlorine ruling (A-M-280): the EW anode gas is fully booked to the leach oxidation by the Faraday
+Chlorine ruling (A-M-290): the EW anode gas is fully booked to the leach oxidation by the Faraday
 balance (A-M-255 double-booking rule) - it stays the INITIAL chlorine inventory charge for the Kroll
 loops only. Steady state: Ti chlorination Cl2 returns from MG_POT exactly (AQS-BAL-KROLL closure);
 Mo/Cr cells recycle their anode gas internally; the AL_POT Cl2 byproduct (39.4 kg/d) and the CA_POT
@@ -125,7 +125,7 @@ def solve(g=None):
     ti = ti_i * (1 + xf)
     mo = mo_i * (1 + xf)
     cr = cr_i * (1 + xf)
-    potm = al + ti + mo + cr                      # total pot-metal throughput (A-M-280 block)
+    potm = al + ti + mo + cr                      # total pot-metal throughput (A-M-284 block)
     ca = val('foundry_ca_add_frac') * (K + potm)                # deoxidizer Ca on the melt charge
     alcl3 = al * (MM['Al'] + 3 * MM['Cl']) / MM['Al']
     al_cl2 = al * 3 * MM['Cl'] / MM['Al']
@@ -155,7 +155,7 @@ def solve(g=None):
     cont_roll, cont_stock = 10.0, cont - 10.0
     stock_in = 13.0 + cont_stock + inv            # = K + potm exactly
     assert abs(stock_in - (K + potm)) < 1e-9
-    # investment loop (A-M-281)
+    # investment loop (A-M-286)
     sh = val('foundry_inv_shell_kg_per_kg') * inv
     shr = val('foundry_inv_shell_reclaim_frac')
     sh_mu, sh_recl = sh * (1 - shr), sh * shr
@@ -254,7 +254,7 @@ def apply(g=None, write=False):
         f'continuous rate (the melt loop closes on MFG_SCRAP_TO_IND). | {TAG}.')
     put('CAST_TO_ROLL', 3.0, f'Cu cast stock to rolling (bus bar / winding strip, FOUNDRY_DESIGN machine table). | {TAG}.')
     put('CAST_TO_EXTRUDE', 0.0,
-        'EXTRUDE is ROLL\'s N+1 alternate (A-M-282): standby-zero on the design day; the Cu line rolls. | {TAG}.')
+        'EXTRUDE is ROLL\'s N+1 alternate (A-M-283): standby-zero on the design day; the Cu line rolls. | {TAG}.')
     put('CONT_TO_ROLL', s['cont_roll'], f'Fe billet to rolling (AQS-SIZE-FOUNDRY Fe 10). | {TAG}.')
     put('CONT_TO_STOCK', R(sS + spotm + sca + sflux) - 3.0 - R(s['inv']) - sslag - s['cont_roll'],
         f'As-cast stock by difference: Zn 1 + stainless base 1.5 + pot metal {s["potm"]:.4f} ingot to stock. | {TAG}.')
@@ -266,9 +266,9 @@ def apply(g=None, write=False):
     put('STOCK_TO_WIRE_DRAW', 0.0,
         'WIRE_DRAW (MFG) closes on S57 Cu from MET_MELT (A-M-177 line); no foundry wire draw at the '
         f'bounding case (A-M-257 by-difference pattern). | {TAG}.')
-    put('EXTRUDE_TO_STOCK', 0.0, f'EXTRUDE standby-zero: ROLL N+1 alternate (A-M-282), energized on a roll-stand outage. | {TAG}.')
-    put('DRAW_TO_STOCK', 0.0, f'DRAW standby-zero: ROLL N+1 alternate (A-M-282); wire sizing is MFG WIRE_DRAW S57. | {TAG}.')
-    put('SINTER_TO_STOCK', 0.0, f'SINTER standby-zero: consolidation N+1 alternate (A-M-282); powder path optional. | {TAG}.')
+    put('EXTRUDE_TO_STOCK', 0.0, f'EXTRUDE standby-zero: ROLL N+1 alternate (A-M-283), energized on a roll-stand outage. | {TAG}.')
+    put('DRAW_TO_STOCK', 0.0, f'DRAW standby-zero: ROLL N+1 alternate (A-M-283); wire sizing is MFG WIRE_DRAW S57. | {TAG}.')
+    put('SINTER_TO_STOCK', 0.0, f'SINTER standby-zero: consolidation N+1 alternate (A-M-283); powder path optional. | {TAG}.')
     put('ATOM_TO_STOCK', 0.0, f'Gas-atomizer powder path optional, not baseline (FOUNDRY_INTEGRATION). | {TAG}.')
     put('IND_TO_ATOM', 0.0, f'No powder demand on IND_MELT at the bounding case. | {TAG}.')
     # ---- pot cells: dock-imported chlorides (A-M-284) ---------------------------------------
@@ -280,20 +280,20 @@ def apply(g=None, write=False):
     put('AL_POT_TO_IND', s['al'],
         f'Al metal to the melt: molten AlCl3-(NaCl-KCl) electrolysis 2AlCl3 -> 2Al + 3Cl2 at 700 C, '
         f'{s["pot_e"]["AL_POT"]["I_A"]:.0f} A at CE {DR.val(s["d"], "foundry_pot_ce")} (A-M-282); '
-        f'{s["al_i"]:.0f} kg/d line + {s["al"] - s["al_i"]:.1f} export surplus (A-M-284). | {TAG}.')
+        f'{s["al_i"]:.0f} kg/d line + {s["al"] - s["al_i"]:.1f} export surplus (A-M-285). | {TAG}.')
     mk('IA-CL2-SHIP', 'AL_POT', 'NORTH_DOCK', 'DOCK', 'G', 'chlorine byproduct export (water-treatment class product)',
        s['al_cl2'],
        f'Pot Cl2 byproduct {3 * MM["Cl"] / MM["Al"]:.3f} kg/kg Al exports at the dock (D-DOCK outlet; CRU closes '
-       f'exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-280 chlorine ruling). | {TAG}.',
+       f'exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-290 chlorine ruling). | {TAG}.',
        layers=['mass', 'energy'])
     mk('IA-MGCL2-KROLL', 'TI_CELL', 'MG_POT', 'FOUNDRY', 'L', 'Kroll retort MgCl2 return (net of drag-out)',
        s['mgcl2_ret'],
        f'AQS-BAL-KROLL closure: {2 * (MM["Mg"] + 2 * MM["Cl"]) / MM["Ti"]:.3f} kg/kg Ti gross less the '
-       f'{s["kroll_flux"]:.4f} kg/d drag-out to FLUX_PREP (A-M-280). | {TAG}.')
+       f'{s["kroll_flux"]:.4f} kg/d drag-out to FLUX_PREP (A-M-284). | {TAG}.')
     mk('IA-KROLL-FLUX', 'TI_CELL', 'FLUX_PREP', 'FOUNDRY', 'S', 'MgCl2-class salt drag-out (flux cover source)',
        s['kroll_flux'],
        f'{DR.val(s["d"], "foundry_kroll_dragout_frac"):.0%} of the Kroll MgCl2 gross: the salt-flux cover for the '
-       f'Al-charged melt (A-M-280); unblocks FLUX_PREP from the SALT_FEED stub. | {TAG}.')
+       f'Al-charged melt (A-M-284); unblocks FLUX_PREP from the SALT_FEED stub. | {TAG}.')
     mk('IA-MGCL2-MU', 'NORTH_DOCK', 'MG_POT', 'FOUNDRY', 'L', 'CaCl2-MgCl2 brine concentrate (mining-waste class)',
        R(s['mg_ti']) + R(s['cl2_ti']) - R(s['mgcl2_ret']),
        f'D-DOCK feedstock import (A-M-284): restores the drag-out so MG_POT delivers the retort Mg exactly; '
@@ -306,7 +306,7 @@ def apply(g=None, write=False):
        s['cl2_ti'],
        f'Chlorine closes internally (AQS-BAL-KROLL): MG_POT returns exactly the {4 * MM["Cl"] / MM["Ti"]:.3f} kg/kg Ti '
        f'the chlorination draws; the EW anode gas stays booked to the leach (Faraday balance, A-M-255 pattern; '
-       f'A-M-280 ruling - it is the initial loop charge only). | {TAG}.')
+       f'A-M-284 ruling - it is the initial loop charge only). | {TAG}.')
     put('MG_POT_TO_IND', 0.0,
         f'MG_POT serves only the Kroll recycle at steady state (all Mg to the retort on IA-MG-TI); no Mg stock line '
         f'at the table. | {TAG}.')
@@ -321,42 +321,42 @@ def apply(g=None, write=False):
         f'Ca(OH)2 draw (AQS-DUTY-GREASE) when the P_CA param pass rates the cake. | {TAG}.')
     mk('IA-CA-CL2-SHIP', 'CA_POT', 'NORTH_DOCK', 'DOCK', 'G', 'chlorine byproduct export (water-treatment class)',
        s['ca_cl2'],
-       f'CA_POT Cl2 byproduct {2 * MM["Cl"] / MM["Ca"]:.3f} kg/kg Ca exports at the dock (A-M-280 chlorine ruling). | {TAG}.',
+       f'CA_POT Cl2 byproduct {2 * MM["Cl"] / MM["Ca"]:.3f} kg/kg Ca exports at the dock (A-M-290 chlorine ruling). | {TAG}.',
        layers=['mass', 'energy'])
-    # ---- Kroll cells: dock oxide concentrates + carbon, internal chlorine (A-M-280) ---------
+    # ---- Kroll cells: dock oxide concentrates + carbon, internal chlorine (A-M-290) ---------
     mk('IA-TIO2-MU', 'NORTH_DOCK', 'TI_CELL', 'FOUNDRY', 'S', 'TiO2-equivalent rutile concentrate (dock import class)',
        s['tio2'],
        f'D-DOCK feedstock import (A-M-284): {(MM["Ti"] + 2 * MM["O"]) / MM["Ti"]:.3f} kg/kg Ti on the oxide-equivalent '
-       f'basis (AQS-BAL-KROLL); concentrate grade envelope TiO2 90-97 wt%, design point 94 % (A-M-280 '
+       f'basis (AQS-BAL-KROLL); concentrate grade envelope TiO2 90-97 wt%, design point 94 % (A-M-284 '
        f'needs_verification: XRF assay of the accepted lot). | {TAG}.')
     mk('IA-C-TI', 'NORTH_DOCK', 'TI_CELL', 'FOUNDRY', 'S', 'carbon reductant (petcoke/char class)',
        s['c_ti'], f'2 C per TiO2 chlorinated (AQS-BAL-KROLL); plant pyro char is booked to MFG (IA-CHAR), so the Kroll '
        f'carbon rides the dock import class. | {TAG}.')
     put('METALS_TO_IND_MELT', s['ti'],
-        f'Ti sponge to the melt under salt flux: {s["ti"]:.2f} kg/d = 0.40 line + export margin (A-M-284); the vacuum '
-        f'consolidation path (VAC_IND_TI) is the N+1 quality route, standby-zero (A-M-282). | {TAG}.')
+        f'Ti sponge to the melt under salt flux: {s["ti"]:.2f} kg/d = 0.40 line + export margin (A-M-285); the vacuum '
+        f'consolidation path (VAC_IND_TI) is the N+1 quality route, standby-zero (A-M-283). | {TAG}.')
     put('TI_CELL_SLAG_RETURN', 0.0,
         'Oxide-equivalent feed leaves no grit slag on the design basis; the gangue/Fe terms are the assay-day task '
-        f'(A-M-280 envelope: the real concentrate assay re-points the feed to FLOAT_SINK grit when it lands). | {TAG}.')
+        f'(A-M-284 envelope: the real concentrate assay re-points the feed to FLOAT_SINK grit when it lands). | {TAG}.')
     put('TI_CELL_CL2_TO_CRU', 0.0, f'Kroll chlorine closes on the Mg pot loop (IA-CL2-MG-TI); the CRU tap is purge-only. | {TAG}.')
     mk('IA-KROLL-CO', 'TI_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO (fuel-gas class export)',
        R(s['tio2']) + R(s['c_ti']) + R(s['cl2_ti']) + R(s['mg_ti']) - R(s['ti']) - R(s['mgcl2_ret']) - R(s['kroll_flux']),
        f'{2 * (MM["C"] + MM["O"]) / MM["Ti"]:.3f} kg/kg Ti chlorinator CO to the dock fuel-gas class (IA-N2-VENT '
        f'precedent; no spare burner capacity at Rev AC scope - burner routing is an integration follow-up). | {TAG}.')
-    put('VAC_IND_TI', 0.0, f'VAC_IND is the N+1 diverse melt path (A-M-282): standby-zero on the design day. | {TAG}.')
-    put('VAC_IND_TO_VAC_CAST', 0.0, f'VAC_CAST rides VAC_IND (N+1 pair, A-M-282): standby-zero. | {TAG}.')
+    put('VAC_IND_TI', 0.0, f'VAC_IND is the N+1 diverse melt path (A-M-283): standby-zero on the design day. | {TAG}.')
+    put('VAC_IND_TO_VAC_CAST', 0.0, f'VAC_CAST rides VAC_IND (N+1 pair, A-M-283): standby-zero. | {TAG}.')
     mk('IA-MOO3-MU', 'NORTH_DOCK', 'MO_CELL', 'FOUNDRY', 'S', 'MoO3-equivalent concentrate (dock import class)',
        s['moo3'],
        f'D-DOCK feedstock import (A-M-284): {(MM["Mo"] + 3 * MM["O"]) / MM["Mo"]:.3f} kg/kg Mo oxide-equivalent; '
-       f'tech-oxide grade envelope 95-99 wt% MoO3, design 98 % (A-M-280 assay-verification task). | {TAG}.')
+       f'tech-oxide grade envelope 95-99 wt% MoO3, design 98 % (A-M-284 assay-verification task). | {TAG}.')
     mk('IA-C-MO', 'NORTH_DOCK', 'MO_CELL', 'FOUNDRY', 'S', 'carbon reductant (petcoke/char class)',
-       s['c_mo'], f'1.5 C per MoO3 on the Mo(III) chloride route (A-M-280). | {TAG}.')
+       s['c_mo'], f'1.5 C per MoO3 on the Mo(III) chloride route (A-M-284). | {TAG}.')
     put('MO_TO_IND', s['mo'],
         f'Mo metal to the melt: carbochlorination to MoCl3 then molten-salt electrolysis MoCl3 -> Mo + 1.5Cl2 with the '
-        f'anode gas recycled to the chlorination (internal chlorine loop, A-M-280); {s["mo_i"]:.2f} kg/d 316-class '
+        f'anode gas recycled to the chlorination (internal chlorine loop, A-M-290); {s["mo_i"]:.2f} kg/d 316-class '
         f'addition + export margin. | {TAG}.')
     put('MO_CELL_RAFFINATE', 0.0, 'Oxide feed has no liquor raffinate; the EW_9 stub stays retired (A-M-255). | {TAG}.')
-    put('MO_CELL_ANODE_GAS_TO_CRU', 0.0, f'Anode gas recycles to the cell chlorination step (A-M-280); CRU tap purge-only. | {TAG}.')
+    put('MO_CELL_ANODE_GAS_TO_CRU', 0.0, f'Anode gas recycles to the cell chlorination step (A-M-290); CRU tap purge-only. | {TAG}.')
     put('EW9_LIQUOR_TO_MO', 0.0,
         'A-M-255 alias retired: EW_9 liquor tail fully booked on IA-EW-09 to POLISH_BANK; the Mo feed is the dock '
         f'oxide import (IA-MOO3-MU, A-M-284). | {TAG}.')
@@ -364,64 +364,64 @@ def apply(g=None, write=False):
         'A-M-255 alias retired: EW_9 metal harvest fully booked on IA-EW-MET-9 and IA-EW-SHEET; the melt is fed on '
         f'shop scrap + pot metal. | {TAG}.')
     mk('IA-MO-VENT', 'MO_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO2 (vent class)',
-       R(s['moo3']) + R(s['c_mo']) - R(s['mo']), f'1.5 CO2 per Mo on the carbochlorination net (A-M-280); dock vent class. | {TAG}.')
+       R(s['moo3']) + R(s['c_mo']) - R(s['mo']), f'1.5 CO2 per Mo on the carbochlorination net (A-M-284); dock vent class. | {TAG}.')
     mk('IA-CR2O3-MU', 'NORTH_DOCK', 'CR_CELL', 'FOUNDRY', 'S', 'Cr2O3-equivalent chromite concentrate (dock import class)',
        s['cr2o3'],
        f'D-DOCK feedstock import (A-M-284): {(2 * MM["Cr"] + 3 * MM["O"]) / (2 * MM["Cr"]):.3f} kg/kg Cr '
-       f'oxide-equivalent; chromite class envelope 40-52 wt% Cr2O3, design 46 % (A-M-280 assay-verification task; the '
+       f'oxide-equivalent; chromite class envelope 40-52 wt% Cr2O3, design 46 % (A-M-284 assay-verification task; the '
        f'Fe/Mg/Al gangue balance is the assay-day follow-up). | {TAG}.')
     mk('IA-C-CR', 'NORTH_DOCK', 'CR_CELL', 'FOUNDRY', 'S', 'carbon reductant (petcoke/char class)',
-       s['c_cr'], f'3 C per Cr2O3 on the Cr(III) chloride route (A-M-280). | {TAG}.')
+       s['c_cr'], f'3 C per Cr2O3 on the Cr(III) chloride route (A-M-284). | {TAG}.')
     put('CR_TO_IND', s['cr'],
         f'Cr metal to the melt: carbochlorination to CrCl3 then molten-salt electrolysis 2CrCl3 -> 2Cr + 3Cl2 with the '
-        f'anode gas recycled internally (A-M-280); {s["cr_i"]:.2f} kg/d stainless addition + export margin. | {TAG}.')
+        f'anode gas recycled internally (A-M-284); {s["cr_i"]:.2f} kg/d stainless addition + export margin. | {TAG}.')
     put('FLOAT_SINK_GRIT_TO_TI', 0.0,
         'Internal dense-grit feed superseded by the dock rutile class at the design point; the assay-day task can '
-        f're-point the feed to the grit when AQS-ASSAY-TI-MO lands (A-M-280). | {TAG}.')
+        f're-point the feed to the grit when AQS-ASSAY-TI-MO lands (A-M-284). | {TAG}.')
     mk('IA-CR-VENT', 'CR_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO (fuel-gas class export)',
-       R(s['cr2o3']) + R(s['c_cr']) - R(s['cr']), f'3 CO per 2 Cr on the carbochlorination net (A-M-280); dock fuel-gas class. | {TAG}.')
-    # ---- investment casting: wax make-up + foundry silica imports (A-M-281) ----------------
+       R(s['cr2o3']) + R(s['c_cr']) - R(s['cr']), f'3 CO per 2 Cr on the carbochlorination net (A-M-284); dock fuel-gas class. | {TAG}.')
+    # ---- investment casting: wax make-up + foundry silica imports (A-M-286) ----------------
     mk('IA-WAX-MU', 'NORTH_DOCK', 'WAX_PATTERN', 'FOUNDRY', 'S', 'pattern wax make-up (petro-wax class import)',
        s['wx_mu'],
        f'D-DOCK feedstock import (A-M-284): {1 - DR.val(s["d"], "foundry_inv_wax_reclaim_frac"):.0%} of the '
-       f'{s["wx"]:.1f} kg/d pattern wax (reclaim {s["wx_recl"]:.1f} covers the rest, A-M-281). | {TAG}.')
+       f'{s["wx"]:.1f} kg/d pattern wax (reclaim {s["wx_recl"]:.1f} covers the rest, A-M-286). | {TAG}.')
     mk('IA-SILICA-MU', 'NORTH_DOCK', 'SHELL_BUILD', 'FOUNDRY', 'S', 'foundry silica (flour/stucco/binder make-up)',
        s['sh_mu'],
        f'D-DOCK feedstock import (A-M-284): shell make-up {1 - DR.val(s["d"], "foundry_inv_shell_reclaim_frac"):.1%} of '
        f'the {s["sh"]:.1f} kg/d green shell (the 0.5 kg/kg-casting registered waste line, AQS-SIZE-FOUNDRY); GLASS_DIGEST '
        f'stays fully committed (IA-GLASS-03 30.0 = S08G 26.7 + IA-SIL-SRC 3.3). | {TAG}.')
-    put('WAX_TO_SHELL', s['wx'], f'{s["wx"]:.1f} kg/d wax patterns at 1 kg/kg castings (A-M-281). | {TAG}.')
+    put('WAX_TO_SHELL', s['wx'], f'{s["wx"]:.1f} kg/d wax patterns at 1 kg/kg castings (A-M-286). | {TAG}.')
     put('SHELL_TO_BURNOUT', s['sh'] + s['wx'],
-        f'Green shell {s["sh"]:.1f} kg/d (6-dip class, 4 kg/kg castings) + patterns {s["wx"]:.1f} (A-M-281). | {TAG}.')
+        f'Green shell {s["sh"]:.1f} kg/d (6-dip class, 4 kg/kg castings) + patterns {s["wx"]:.1f} (A-M-286). | {TAG}.')
     put('WAX_RECLAIM_TO_PATTERN', s['wx_recl'],
-        f'Dewax condensate reclaim {DR.val(s["d"], "foundry_inv_wax_reclaim_frac"):.0%} of the pattern wax (A-M-281). | {TAG}.')
+        f'Dewax condensate reclaim {DR.val(s["d"], "foundry_inv_wax_reclaim_frac"):.0%} of the pattern wax (A-M-286). | {TAG}.')
     put('WAX_TO_OIL', 0.0,
-        f'Unrecovered wax ({s["wx_burn"]:.2f} kg/d) burns in the flash-dewax firebox (A-M-281); no oil-line draw. | {TAG}.')
+        f'Unrecovered wax ({s["wx_burn"]:.2f} kg/d) burns in the flash-dewax firebox (A-M-286); no oil-line draw. | {TAG}.')
     mk('IA-BURNOUT-VENT', 'SHELL_BURNOUT', 'NORTH_DOCK', 'DOCK', 'G', 'dewax/burnout off-gas (burned wax + steam)',
-       s['wx_burn'], f'Balance of the pattern wax at the burnout firebox (A-M-281); dock vent class. | {TAG}.')
-    put('BURNOUT_TO_CAST', s['sh'], f'Fired shell {s["sh"]:.1f} kg/d to the pour station (A-M-281). | {TAG}.')
+       s['wx_burn'], f'Balance of the pattern wax at the burnout firebox (A-M-286); dock vent class. | {TAG}.')
+    put('BURNOUT_TO_CAST', s['sh'], f'Fired shell {s["sh"]:.1f} kg/d to the pour station (A-M-286). | {TAG}.')
     put('IND_TO_INV', s['inv'],
         f'Melt to the investment pour: the live melt output at the {s["inv"]:.1f} kg/d castings line '
-        f'(AQS-SIZE-FOUNDRY; A-M-281). | {TAG}.')
-    put('VAC_TO_INV', 0.0, f'VAC_IND N+1 pour path (A-M-282): standby-zero on the design day. | {TAG}.')
-    put('INV_TO_BREAK', s['sh'] + s['inv'], f'Castings in shell to knock-out (A-M-281). | {TAG}.')
-    put('BREAK_TO_STOCK', s['inv'], f'Investment castings {s["inv"]:.1f} kg/d to stock (A-M-281). | {TAG}.')
+        f'(AQS-SIZE-FOUNDRY; A-M-286). | {TAG}.')
+    put('VAC_TO_INV', 0.0, f'VAC_IND N+1 pour path (A-M-283): standby-zero on the design day. | {TAG}.')
+    put('INV_TO_BREAK', s['sh'] + s['inv'], f'Castings in shell to knock-out (A-M-286). | {TAG}.')
+    put('BREAK_TO_STOCK', s['inv'], f'Investment castings {s["inv"]:.1f} kg/d to stock (A-M-286). | {TAG}.')
     mk('IA-SHELL-RECLAIM', 'SHELL_BREAK', 'SHELL_BUILD', 'FOUNDRY', 'S', 'reclaimed shell stucco/flour',
        s['sh_recl'], f'{DR.val(s["d"], "foundry_inv_shell_reclaim_frac"):.1%} of spent shell reclaimed to the backup '
-       f'coats (A-M-281). | {TAG}.')
+       f'coats (A-M-286). | {TAG}.')
     mk('IA-SHELL-EXPORT', 'SHELL_BREAK', 'NORTH_DOCK', 'DOCK', 'S', 'spent foundry silica (solids return class)',
        s['sh_mu'], f'Spent-shell balance = the 0.5 kg/kg-casting make-up (AQS-SIZE-FOUNDRY registered waste line; '
-       f'A-M-281); GLASS_MILL has no digest capacity (A-M-267). | {TAG}.')
+       f'A-M-286); GLASS_MILL has no digest capacity (A-M-267). | {TAG}.')
     put('SHELL_TO_GLASS', 0.0,
         'Spent shell reclaims internally (IA-SHELL-RECLAIM) and exports the balance at the dock: GLASS_DIGEST is fully '
         f'committed (A-M-267) so the solids line has no digest capacity for it. | {TAG}.')
-    # ---- alternates: N+1 standby-zero with rated envelopes (A-M-282) -----------------------
-    put('COMB_OFFGAS', 0.0, 'COMB_HEAT is the fuel-fired N+1 alternate (A-M-282): standby-zero; off-gas routes to '
+    # ---- alternates: N+1 standby-zero with rated envelopes (A-M-283) -----------------------
+    put('COMB_OFFGAS', 0.0, 'COMB_HEAT is the fuel-fired N+1 alternate (A-M-283): standby-zero; off-gas routes to '
       f'MET_SCRUB only when the alternate is energized. | {TAG}.')
     put('FLUX_TO_IND', s['kroll_flux'],
-        f'Salt-flux cover to the melt = the Kroll MgCl2-class drag-out (A-M-280); closes FLUX_PREP on '
+        f'Salt-flux cover to the melt = the Kroll MgCl2-class drag-out (A-M-284); closes FLUX_PREP on '
         f'IA-KROLL-FLUX. | {TAG}.')
-    put('SALT_TO_FLUX', 0.0, 'SALT_FEED stays a stub source: the flux feed is the Kroll drag-out (A-M-280). | {TAG}.')
+    put('SALT_TO_FLUX', 0.0, 'SALT_FEED stays a stub source: the flux feed is the Kroll drag-out (A-M-284). | {TAG}.')
     # ---- node continuous_kw + SF feeds ------------------------------------------------------
     def kw(u, v, note):
         N[u]['continuous_kw'] = {'value': round(v, 4), 'unit': 'kW', 'status': 'study', 'note': note}
@@ -448,7 +448,7 @@ def apply(g=None, write=False):
        f'{pe["CA_POT"]["dc_kW"]:.3f} kW + hold {pe["CA_POT"]["hold_kW"]:.2f} kW (A-M-282).')
     kw('TI_CELL', pe['TI_CELL']['kW'],
        f'{DOC_F} Kroll retort + chlorinator hold at 900/800 C under Ar (thermochemical reduction, no electrolysis; '
-       f'A-M-280 study hold).')
+       f'A-M-284 study hold).')
     kw('MO_CELL', pe['MO_CELL']['kW'],
        f'{DOC_F} Mo(III) molten-salt cell: {pe["MO_CELL"]["I_A"]:.2f} A x {pe["MO_CELL"]["V"]:.1f} V = '
        f'{pe["MO_CELL"]["dc_kW"]:.3f} kW + hold {pe["MO_CELL"]["hold_kW"]:.2f} kW (A-M-282).')
@@ -456,28 +456,28 @@ def apply(g=None, write=False):
        f'{DOC_F} Cr(III) molten-salt cell: {pe["CR_CELL"]["I_A"]:.2f} A x {pe["CR_CELL"]["V"]:.1f} V = '
        f'{pe["CR_CELL"]["dc_kW"]:.3f} kW + hold {pe["CR_CELL"]["hold_kW"]:.2f} kW (A-M-282).')
     kw('FLUX_PREP', 0.1, f'{DOC_F} flux bench agitator/mixer at the {s["kroll_flux"]:.3f} kg/d salt duty (study).')
-    kw('WAX_PATTERN', 0.5, f'{DOC_F} pattern injector + wax conditioning pot at {s["wx"]:.1f} kg/d patterns (A-M-281 study).')
-    kw('SHELL_BUILD', 0.3, f'{DOC_F} slurry mixer + stucco rainfall at {s["sh"]:.1f} kg/d shell (A-M-281 study).')
+    kw('WAX_PATTERN', 0.5, f'{DOC_F} pattern injector + wax conditioning pot at {s["wx"]:.1f} kg/d patterns (A-M-286 study).')
+    kw('SHELL_BUILD', 0.3, f'{DOC_F} slurry mixer + stucco rainfall at {s["sh"]:.1f} kg/d shell (A-M-286 study).')
     kw('SHELL_BURNOUT', 0.25,
        f'{DOC_F} dewax/firebox at 900 C: shell sensible {s["sh"]:.1f} kg/d offset by the {s["wx_burn"]:.2f} kg/d wax '
-       f'fire credit; 0.25 kW hold class (A-M-281 study).')
+       f'fire credit; 0.25 kW hold class (A-M-286 study).')
     kw('INV_CAST', 0.15, f'{DOC_F} tilt-pour station at {s["inv"]:.1f} kg/d castings (study).')
     kw('SHELL_BREAK', 0.4, f'{DOC_F} vibratory knock-out table at {s["sh"]:.1f} kg/d spent shell (study).')
-    for u, why in (('VAC_CAST', 'N+1 of CAST_LINE/CONT_CAST (vacuum tilt-pour, A-M-282)'),
-                   ('RES_HEAT', 'N+1 diverse heat of SHELL_BURNOUT/SINTER (resistance radiant, A-M-282)'),
-                   ('SINTER', 'N+1 consolidation of ROLL (press-and-sinter P/M route, A-M-282)'),
-                   ('FORGE', 'N+1 former of ROLL (open-die press, A-M-282)'),
-                   ('EXTRUDE', 'N+1 former of ROLL (profile press, A-M-282)'),
-                   ('DRAW', 'N+1 former of ROLL (wire/rod bench, A-M-282)')):
+    for u, why in (('VAC_CAST', 'N+1 of CAST_LINE/CONT_CAST (vacuum tilt-pour, A-M-283)'),
+                   ('RES_HEAT', 'N+1 diverse heat of SHELL_BURNOUT/SINTER (resistance radiant, A-M-283)'),
+                   ('SINTER', 'N+1 consolidation of ROLL (press-and-sinter P/M route, A-M-283)'),
+                   ('FORGE', 'N+1 former of ROLL (open-die press, A-M-283)'),
+                   ('EXTRUDE', 'N+1 former of ROLL (profile press, A-M-283)'),
+                   ('DRAW', 'N+1 former of ROLL (wire/rod bench, A-M-283)')):
         kw(u, 0.0, f'standby-zero on the design day: {why}; connected rating in params.design.')
     kw('COMB_HEAT', 0.05,
-       'standby-zero on the design day: N+1 fuel-fired heat of IND_MELT (A-M-282); 0.05 kW controls/blower '
+       'standby-zero on the design day: N+1 fuel-fired heat of IND_MELT (A-M-283); 0.05 kW controls/blower '
        'parasitic, fuel on the C5-C10 class when energized.')
     # ---- polymers --------------------------------------------------------------------------
     spf = R(sP * (1 + s['rej']))                 # grid-consistent naphtha feed from the rounded P
     put('OIL_TO_OLEFIN', 0.0,
         'Fractionator draw 0: the olefin feed draws as naphtha at the cut tank (IA-C5-POLY); the recovered-wax '
-        f'path (WAX_TO_OIL) is 0 with the wax loop closing on reclaim (A-M-281). OIL_FRAC closes. | {TAG}.')
+        f'path (WAX_TO_OIL) is 0 with the wax loop closing on reclaim (A-M-286). OIL_FRAC closes. | {TAG}.')
     put('MEOH_TO_OLEFIN', 0.0,
         'Methanol committed to the tank/ship balance (X-PAR-12 TF on S75); the olefin carbon source is the '
         f'on-site C5-C10 naphtha cut (AQS-DES-POLY: carbon source on site). | {TAG}.')
@@ -535,12 +535,12 @@ def apply(g=None, write=False):
                    carries='surplus foundry metal export (pot-line product, dispatch campaign)',
                    notes='Created by the foundry sizing pass: the pot/cell metal is the stock loop\'s only net inlet, '
                          'so at steady state the loop passes it and the full pot output leaves as the dock metal '
-                         'export (A-M-284).')
+                         'export (A-M-285).')
         g['edges'].append(src); E['IA-METAL-SHIP'] = src
     put('IA-METAL-SHIP', s['potm'],
         f'Pot-line metal export {s["potm"]:.4f} kg/d (Al {s["al"]:.1f} + Ti {s["ti"]:.2f} + Mo {s["mo"]:.4f} + Cr '
         f'{s["cr"]:.2f}): the stock loop is the only net inlet, so the loop passes it to the METAL_STORE dispatch '
-        f'(A-M-270 buffer) and the dock exports it (D-DOCK outlet; A-M-284). | {TAG}.')
+        f'(A-M-270 buffer) and the dock exports it (D-DOCK outlet; A-M-285). | {TAG}.')
     # ---- goods balance ---------------------------------------------------------------------
     # SF-HF_GEN: electrical feed of the F-blocked standby unit (0 duty; the power rollup sums 0)
     if 'SF-HF_GEN' in E:
@@ -553,7 +553,7 @@ def apply(g=None, write=False):
     put('DOCK_EXPORT_TBD', 0.0,
         'Goods balance (A-M-265 rev): the accounting placeholder stays 0.0 - the real surplus exports ride their own '
         'dock edges: foundry pot metal IA-METAL-SHIP ' f'{s["potm"]:.4f} kg/d + pot chlorine IA-CL2-SHIP/IA-CA-CL2-SHIP '
-        f'{s["al_cl2"] + s["ca_cl2"]:.3f} kg/d (A-M-284) on top of the shipped products (O2, MeOH, oil cuts); mfg goods '
+        f'{s["al_cl2"] + s["ca_cl2"]:.3f} kg/d (A-M-285) on top of the shipped products (O2, MeOH, oil cuts); mfg goods '
         'surplus net 0 (IA-MFG-OUT 596.863 = IA-WEAR worn return). THIS IS THE PLANT SURPLUS STATEMENT at Rev AC scope '
         'with the foundry feedstock program live: the plant is a net exporter of metal and chlorine through the dock.')
     E['DOCK_EXPORT_TBD']['rate']['note'] = (E['DOCK_EXPORT_TBD']['rate']['note'].split(f' | {TAG}')[0]) + f' | {TAG}.'
@@ -563,10 +563,10 @@ def apply(g=None, write=False):
     # document the remaining blocked edges (idempotent: one entry, replaced in place)
     gap = {'id': 'FOUNDRY_POLY_MISSING_EDGES', 'severity': 'low',
            'detail': 'Foundry/polymers sizing pass Rev B (AQS-DUTY-072/073): the D-DOCK feedstock program unblocked the '
-                     'pot/cell, Kroll and investment trains (A-M-280..284.281). Remaining absent/blocked: DRAW feed '
-                     '(CAST/ROLL->DRAW) and FORGE edges (both N+1 alternates at standby-zero, A-M-282), FILM_CAST feed, '
+                     'pot/cell, Kroll and investment trains (A-M-284.285). Remaining absent/blocked: DRAW feed '
+                     '(CAST/ROLL->DRAW) and FORGE edges (both N+1 alternates at standby-zero, A-M-283), FILM_CAST feed, '
                      'POLY_COND outlet to PELLET, SALT_FEED source (flux now fed from the Kroll drag-out), F_RECOVER '
-                     'feed (F recovery, Q-013). The Kroll gangue/Fe terms wait on the concentrate assays (A-M-280).'}
+                     'feed (F recovery, Q-013). The Kroll gangue/Fe terms wait on the concentrate assays (A-M-284).'}
     g['gaps'] = [x for x in g.get('gaps', []) if x.get('id') != gap['id']] + [gap]
     if write:
         open(GP, 'w').write(json.dumps(g, indent=2) + '\n')
@@ -605,36 +605,36 @@ def stamp(g, s):
     st('MG_POT', source=src_f, mg_kg_d=round(s['mg_ti'], 4), mgcl2_return_kg_d=round(s['mgcl2_ret'], 4),
        mgcl2_makeup_kg_d=round(s['mgcl2_mu'], 4), cl2_kg_d=round(s['cl2_ti'], 4), chemistry='MgCl2 -> Mg + Cl2, '
        '700 C (AQS-BAL-KROLL closure)', **pe['MG_POT'],
-       basis='Kroll Mg recycle at the 0.50 kg/d Ti line; CaCl2-MgCl2 brine make-up covers the drag-out (A-M-284/280)')
+       basis='Kroll Mg recycle at the 0.50 kg/d Ti line; CaCl2-MgCl2 brine make-up covers the drag-out (A-M-284)')
     st('CA_POT', source=src_f, ca_kg_d=round(s['ca'], 6), cacl2_kg_d=round(s['cacl2'], 6), cl2_kg_d=round(s['ca_cl2'], 6),
        chemistry='CaCl2 -> Ca + Cl2, 700 C', **pe['CA_POT'],
        basis='grease-thickener Ca line (AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2); brine import per A-M-284')
     st('TI_CELL', source=src_f, ti_kg_d=s['ti'], tio2_kg_d=round(s['tio2'], 4), c_kg_d=round(s['c_ti'], 4),
        cl2_kg_d=round(s['cl2_ti'], 4), mg_kg_d=round(s['mg_ti'], 4), mgcl2_gross_kg_d=round(s['mgcl2_g'], 4),
        co_kg_d=round(s['co_ti'], 4), chemistry='TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO; TiCl4 + 2Mg -> Ti + 2MgCl2 (AQS-BAL-KROLL)',
-       **pe['TI_CELL'], basis='dock rutile-equivalent + carbon + Mg-pot loop; A-M-280 (assay envelope on the concentrate)')
+       **pe['TI_CELL'], basis='dock rutile-equivalent + carbon + Mg-pot loop; A-M-284 (assay envelope on the concentrate)')
     st('MO_CELL', source=src_f, mo_kg_d=s['mo'], moo3_kg_d=round(s['moo3'], 4), c_kg_d=round(s['c_mo'], 4),
        co2_kg_d=round(s['co2_mo'], 4), chemistry='MoO3 + 1.5C + 1.5Cl2 -> MoCl3 + 1.5CO2; MoCl3 -> Mo + 1.5Cl2 '
        '(anode gas recycled)', **pe['MO_CELL'],
-       basis='dock tech-oxide import; internal chlorine loop; A-M-280 (grade envelope 95-99 % MoO3)')
+       basis='dock tech-oxide import; internal chlorine loop; A-M-290 (grade envelope 95-99 % MoO3)')
     st('CR_CELL', source=src_f, cr_kg_d=s['cr'], cr2o3_kg_d=round(s['cr2o3'], 4), c_kg_d=round(s['c_cr'], 4),
        co_kg_d=round(s['co_cr'], 4), chemistry='Cr2O3 + 3C + 3Cl2 -> 2CrCl3 + 3CO; 2CrCl3 -> 2Cr + 3Cl2 '
        '(anode gas recycled)', **pe['CR_CELL'],
-       basis='dock chromite-equivalent import; internal chlorine loop; A-M-280 (grade envelope 40-52 % Cr2O3)')
+       basis='dock chromite-equivalent import; internal chlorine loop; A-M-290 (grade envelope 40-52 % Cr2O3)')
     st('FLUX_PREP', source=src_f, salt_kg_d=round(s['kroll_flux'], 4),
-       basis='Kroll MgCl2-class drag-out (A-M-280); salt-flux cover for the Al-charged melt')
-    # investment train: live (A-M-281)
+       basis='Kroll MgCl2-class drag-out (A-M-284); salt-flux cover for the Al-charged melt')
+    # investment train: live (A-M-286)
     st('WAX_PATTERN', source=src_f, wax_kg_d=round(s['wx'], 4), makeup_kg_d=round(s['wx_mu'], 4),
-       reclaim_kg_d=round(s['wx_recl'], 4), basis='1 kg wax per kg castings, 90 % reclaim (A-M-281)')
+       reclaim_kg_d=round(s['wx_recl'], 4), basis='1 kg wax per kg castings, 90 % reclaim (A-M-286)')
     st('SHELL_BUILD', source=src_f, shell_kg_d=round(s['sh'], 4), silica_makeup_kg_d=round(s['sh_mu'], 4),
-       reclaim_kg_d=round(s['sh_recl'], 4), basis='6-dip shell 4 kg/kg castings, 87.5 % reclaim (A-M-281)')
+       reclaim_kg_d=round(s['sh_recl'], 4), basis='6-dip shell 4 kg/kg castings, 87.5 % reclaim (A-M-286)')
     st('SHELL_BURNOUT', source=src_f, shell_kg_d=round(s['sh'], 4), wax_reclaim_kg_d=round(s['wx_recl'], 4),
-       burned_wax_kg_d=round(s['wx_burn'], 4), T_C=900.0, basis='flash dewax + fire at 900 C (A-M-281)')
+       burned_wax_kg_d=round(s['wx_burn'], 4), T_C=900.0, basis='flash dewax + fire at 900 C (A-M-286)')
     st('INV_CAST', source=src_f, pour_kg_d=s['inv'], shell_kg_d=round(s['sh'], 4),
-       basis='live melt output 2 kg/d through the fired shell (A-M-281)')
+       basis='live melt output 2 kg/d through the fired shell (A-M-286)')
     st('SHELL_BREAK', source=src_f, castings_kg_d=s['inv'], spent_shell_kg_d=round(s['sh'], 4),
-       reclaim_kg_d=round(s['sh_recl'], 4), export_kg_d=round(s['sh_mu'], 4), basis='A-M-281 knock-out split')
-    # N+1 alternates: standby-zero with rated envelopes (A-M-282)
+       reclaim_kg_d=round(s['sh_recl'], 4), export_kg_d=round(s['sh_mu'], 4), basis='A-M-286 knock-out split')
+    # N+1 alternates: standby-zero with rated envelopes (A-M-283)
     st('VAC_IND', source=src_f, rate_kg_d=0.0, connected_kW=15.0, backup_of='IND_MELT (diverse: vacuum induction '
        'skull melt)', outage_basis='IND_MELT relining/repair outage 2 d (crucible life 20-50 heats, AQS-SIZE-FOUNDRY '
        'sec. Crucibles; AGENTS.md redundancy rule)', design_case='2 kg ISM skull melt (AQS-SIZE-FOUNDRY)')
@@ -642,7 +642,7 @@ def stamp(g, s):
        outage_basis='cast-line stoppage during the VAC_IND outage window (A-M-282)')
     st('RF_HEAT', source=src_f, duty_kg_d=0.0, connected_kW=5.0, backup_of='IND_MELT (N+1 at equal melt duty)',
        outage_basis='IND_MELT coil/PSU outage; 100-400 kHz through-coil at the 10 kg crucible class (A-M-232 rating '
-       'held; A-M-282 N+1 envelope)')
+       'held; A-M-283 N+1 envelope)')
     st('RES_HEAT', source=src_f, rate_kg_d=0.0, connected_kW=12.0, backup_of='SHELL_BURNOUT / SINTER heating duty '
        '(resistance radiant)', outage_basis='burnout-element outage during a shell campaign (A-M-282)')
     st('COMB_HEAT', source=src_f, rate_kg_d=0.0, connected_kW=30.0, backup_of='IND_MELT (tertiary, fuel-fired '
@@ -661,12 +661,12 @@ def stamp(g, s):
        T_C='150-250', P_MPa='1-5', heat_W=round(s['poly_feed'] * 2.1 * 175 / 86400, 4),
        basis='AQS-SIZE-OIL-POLY POLY_OLEFIN reactor; feed heating 25->200 C at 2.1 kJ/kg K, exotherm neglected (study)')
     st('PELLET', source=src_p, pellet_kg_d=round(s['poly_feed'], 6), form='2-4 mm pellets (AQS-DES-POLY)')
-    st('POWDER_RESIN', source=src_p, rate_kg_d=0.0, status_note='live via fluoro_train (Q-013 reopened on dock fluorspar, A-M-283); rates re-stamped by the fluoro stage each pass')
-    st('FILM_CAST', source=src_p, rate_kg_d=0.0, status_note='live via fluoro_train (A-M-283); PVDF film rates re-stamped by the fluoro stage')
+    st('POWDER_RESIN', source=src_p, rate_kg_d=0.0, status_note='live via fluoro_train (Q-013 reopened on dock fluorspar, A-M-289); rates re-stamped by the fluoro stage each pass')
+    st('FILM_CAST', source=src_p, rate_kg_d=0.0, status_note='live via fluoro_train (A-M-289); PVDF film rates re-stamped by the fluoro stage')
     st('POLY_STOCK', source=src_p, out_kg_d=round(s['P'], 6), to_wet_kg_d=round(s['poly_wet'], 6), to_fab_kg_d=0.0)
     fp = dict(hf_kg_d=0.5, vdf_kg_d=0.15, tfe_kg_d=0.10, pvdf_kg_d=0.14, ptfE_kg_d=0.09, source='AQS-RATE-FP-MET design case')
     for u in ('HF_GEN', 'VDF_SYN', 'TFE_SYN', 'POLY_F'):
-        st(u, source=src_p, rate_kg_d=0.0, design_case=fp, status_note='live via fluoro_train (Q-013 reopened, A-M-283); rates re-stamped by the fluoro stage')
+        st(u, source=src_p, rate_kg_d=0.0, design_case=fp, status_note='live via fluoro_train (Q-013 reopened, A-M-289); rates re-stamped by the fluoro stage')
     st('POLY_COND', source=src_p, rate_kg_d=0.0, status_note='recipe waits on the digester organic assay (AQS-DES-POLY)')
 
     # ---- CAD stamps (X-MFG-30 pattern): params.design + params.envelope per unit, read by
@@ -675,7 +675,7 @@ def stamp(g, s):
     # melt/forming/thermal minimums and the 7000/2000 kg/m3 densities are registered (A-M-199,
     # AQS-DUTY-064); cell minimums are study values from the AQS-DUTY-072 design cases (A-M-277).
     # state: 'live' = fed machine geometry; 'standby_rated' = real equipment at a standby-zero
-    # design-day rate (N+1 alternates, A-M-282). Only the POLYMERS placeholders remain (A-M-277 rev).
+    # design-day rate (N+1 alternates, A-M-283). Only the POLYMERS placeholders remain (A-M-277 rev).
     HD = DR.val(s['d'], 'atm_HD')
     MIN = {'melt': (1000, 1000, 1500), 'forming': (1500, 800, 1500), 'thermal': (600, 600, 1200),   # A-M-199
            'cell': (800, 800, 1600), 'reactor': (600, 600, 1200), 'prep': (800, 600, 1200),
@@ -767,73 +767,73 @@ def stamp(g, s):
         mgcl2_gross_kg_d=round(s['mgcl2_g'], 4), co_kg_d=round(s['co_ti'], 4), retort_T_C=900.0,
         chlorinator_T_C=800.0, hold_kW=pe['TI_CELL']['hold_kW'], batch_kg=1.0,
         basis='batch retort campaigns at the 0.5 kg/d Ti scale'),
-        'live', 'cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-280)')
+        'live', 'cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-284)')
     # foundry: investment train (live)
     cad('WAX_PATTERN', 'bench_prep', 'prep', D_hold(s['wx'], 1000.0, 1.0),
         dict(bench='wax pattern injection bench', wax_kg_d=round(s['wx'], 4), makeup_kg_d=round(s['wx_mu'], 4),
              reclaim_kg_d=round(s['wx_recl'], 4), injector_kW=0.5, pot_L=10),
-        'live', 'prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-281)')
+        'live', 'prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)')
     cad('SHELL_BUILD', 'line_machine', 'forming', D_hold(s['sh'], 1600.0, 1.0),
         dict(machine='dip-coat + stucco rainfall shell-building booth', shell_kg_d=round(s['sh'], 4),
              silica_makeup_kg_d=round(s['sh_mu'], 4), reclaim_kg_d=round(s['sh_recl'], 4), dips=6, slurry_L=40),
-        'live', 'A-M-199 forming class at the 4 kg/kg shell duty (A-M-281); 1 d slurry/flour staging at 1600 kg/m3')
+        'live', 'A-M-199 forming class at the 4 kg/kg shell duty (A-M-286); 1 d slurry/flour staging at 1600 kg/m3')
     cad('SHELL_BURNOUT', 'box_furnace', 'melt', D_hold(s['sh'], 2500.0, 1.0),
         dict(service='flash-dewax + shell fire furnace, 900 C', shell_kg_d=round(s['sh'], 4),
              wax_reclaim_kg_d=round(s['wx_recl'], 4), burned_wax_kg_d=round(s['wx_burn'], 4), T_C=900.0,
              kW=0.25, condenser='wax condensate to WAX_PATTERN'),
-        'live', 'A-M-199 melt class at the fired-shell duty (A-M-281)')
+        'live', 'A-M-199 melt class at the fired-shell duty (A-M-286)')
     cad('INV_CAST', 'line_machine', 'forming', D_hold(s['inv'], 7000.0, 1 / 24),
         dict(machine='investment casting tilt-pour station', pour_kg_d=s['inv'], shell_kg_d=round(s['sh'], 4),
              molds_per_campaign=8),
-        'live', 'A-M-199 forming class; live on IND_TO_INV (A-M-281)')
+        'live', 'A-M-199 forming class; live on IND_TO_INV (A-M-286)')
     cad('SHELL_BREAK', 'line_machine', 'forming', D_hold(s['sh'], 1600.0, 1.0),
         dict(machine='vibratory shell knock-out station with reclaim sieve', spent_shell_kg_d=round(s['sh'], 4),
              reclaim_kg_d=round(s['sh_recl'], 4), export_kg_d=round(s['sh_mu'], 4), table_kW=0.4),
-        'live', 'A-M-199 forming class at the spent-shell duty (A-M-281)')
+        'live', 'A-M-199 forming class at the spent-shell duty (A-M-286)')
     cad('FLUX_PREP', 'bench_prep', 'prep', D_hold(s['kroll_flux'], 1800.0, 2.0),
         dict(bench='salt flux cover preparation bench', salt_kg_d=round(s['kroll_flux'], 4), hopper_L=20,
              mixer_kW=0.1),
-        'live', 'prep-class study minimum; live on the Kroll drag-out (A-M-280)')
-    # foundry: N+1 alternates (real equipment, standby-zero design-day rate; A-M-282)
+        'live', 'prep-class study minimum; live on the Kroll drag-out (A-M-284)')
+    # foundry: N+1 alternates (real equipment, standby-zero design-day rate; A-M-283)
     cad('VAC_IND', 'box_furnace', 'melt', round(D_hold(2.0, 7000.0), -1),
         dict(service='vacuum induction skull melt (ISM), N+1 diverse of IND_MELT', design_case_kg=2.0,
              connected_kW=15.0, backup_of='IND_MELT', outage_d=2.0,
-             duty_note='equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-282)'),
-        'standby_rated', 'A-M-199 melt class; N+1 rated envelope (A-M-282): real machine, standby-zero design-day rate')
+             duty_note='equal-duty backup of the 25 kW melt at the 2 kg ISM batch class (A-M-283)'),
+        'standby_rated', 'A-M-199 melt class; N+1 rated envelope (A-M-283): real machine, standby-zero design-day rate')
     cad('VAC_CAST', 'line_machine', 'forming', D_hold(3.0, 7000.0, 1 / 24),
         dict(machine='vacuum tilt-pour casting station, N+1 of CAST_LINE', connected_kW=7.5, backup_of='CAST_LINE',
              outage_d=2.0, design_case_kg_d=3.0),
-        'standby_rated', 'A-M-199 forming class; N+1 rated envelope (A-M-282)')
+        'standby_rated', 'A-M-199 forming class; N+1 rated envelope (A-M-283)')
     cad('RF_HEAT', 'box_furnace', 'melt', round(D_hold(s['charge'], 7000.0), -1),
         dict(service='RF preheat/hold unit, N+1 at equal melt duty of IND_MELT', connected_kW=5.0,
              backup_of='IND_MELT', outage_d=2.0, crucible_kg=s['charge'], freq_kHz='100-400',
-             duty_note='equal-duty backup of the 10 kg crucible class (A-M-282; A-M-232 rating held)'),
-        'standby_rated', 'A-M-199 melt class; N+1 rated envelope (A-M-282)')
+             duty_note='equal-duty backup of the 10 kg crucible class (A-M-283; A-M-232 rating held)'),
+        'standby_rated', 'A-M-199 melt class; N+1 rated envelope (A-M-283)')
     cad('RES_HEAT', 'box_furnace', 'melt', D_hold(s['sh'] + 1.0, 2500.0, 1.0),
         dict(service='resistance radiant reheating furnace, N+1 of SHELL_BURNOUT/SINTER heating', connected_kW=12.0,
              backup_of='SHELL_BURNOUT/SINTER', outage_d=2.0, T_C=900.0),
-        'standby_rated', 'A-M-199 melt class; N+1 rated envelope (A-M-282)')
+        'standby_rated', 'A-M-199 melt class; N+1 rated envelope (A-M-283)')
     cad('COMB_HEAT', 'box_furnace', 'melt', round(D_hold(s['charge'], 7000.0), -1),
         dict(service='combustion reheating furnace (C5-C10 fuel class), tertiary N+1 of IND_MELT',
              connected_kW=0.05, thermal_kW=30.0, backup_of='IND_MELT', outage_d=2.0,
              offgas='to MET_SCRUB when energized (COMB_OFFGAS)'),
-        'standby_rated', 'A-M-199 melt class; N+1 rated envelope (A-M-282)')
+        'standby_rated', 'A-M-199 melt class; N+1 rated envelope (A-M-283)')
     cad('SINTER', 'box_furnace', 'melt', round(D_hold(0.5, 3000.0), -1),
         dict(service='Ti/Mo/Cr powder sinter furnace, N+1 consolidation of ROLL', connected_kW=8.0,
              backup_of='ROLL', outage_d=2.0, design_case_kg_d=0.5, T_C=1300.0),
-        'standby_rated', 'A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); N+1 rated envelope (A-M-282)')
+        'standby_rated', 'A-M-199 melt class at the powder-bulk density 3000 kg/m3 (study); N+1 rated envelope (A-M-283)')
     cad('FORGE', 'line_machine', 'forming', 0.0,
         dict(machine='open-die hydraulic press, N+1 former of ROLL', connected_kW=11.0, backup_of='ROLL',
              outage_d=2.0, press_t=25, ram_mm=200),
-        'standby_rated', 'A-M-199 forming class; N+1 rated envelope (A-M-282)')
+        'standby_rated', 'A-M-199 forming class; N+1 rated envelope (A-M-283)')
     cad('EXTRUDE', 'line_machine', 'forming', 0.0,
         dict(machine='horizontal profile press, N+1 former of ROLL', connected_kW=15.0, backup_of='ROLL',
              outage_d=2.0, press_t=50, container_mm=60),
-        'standby_rated', 'A-M-199 forming class; N+1 rated envelope (A-M-282)')
+        'standby_rated', 'A-M-199 forming class; N+1 rated envelope (A-M-283)')
     cad('DRAW', 'line_machine', 'forming', 0.0,
         dict(machine='bench wire/rod draw bench, N+1 former of ROLL', connected_kW=3.0, backup_of='ROLL',
              outage_d=2.0, bench_mm=1200, dies=6),
-        'standby_rated', 'A-M-199 forming class; N+1 rated envelope (A-M-282)')
+        'standby_rated', 'A-M-199 forming class; N+1 rated envelope (A-M-283)')
     # polymers: live polyolefin line
     Dp = max(150.0, D_hold(s['poly_feed'], 750.0))   # DN150 vessel minimum (house ABE precedent, AQS-DUTY-062)
     cad('POLY_OLEFIN', 'reactor', 'reactor', Dp,
