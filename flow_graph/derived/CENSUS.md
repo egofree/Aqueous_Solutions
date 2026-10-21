@@ -4,8 +4,8 @@ Source: AQS-FLOW-GRAPH-001 Rev AC
 Generated: 2026-10-21
 
 - nodes: **178** (present=175, placeholder=1)
-- edges: **557** (present=528, placeholder=6)
-- by namespace: {'IA': 398, 'TBD': 1, 'S': 157, 'SANDBOX': 1}
+- edges: **562** (present=533, placeholder=6)
+- by namespace: {'IA': 398, 'TBD': 1, 'S': 162, 'SANDBOX': 1}
 - locks: layered_views, full_depth_now, efd_three_layers, typed_graph_sole, present_plus_placeholders, site_lat_design_sandbox, true_closure_residuals_wp, reprap_bom_complete_c4, site_ghex_design_survey_locked, wp_l3_evidence_pack, wp_l4_claim_discipline, wp_ew_cascade_explode
 
 ## Gaps

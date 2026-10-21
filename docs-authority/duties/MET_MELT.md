@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 14.34 kg/d. Mass out 14.34 kg/d. Electrical duty 0.0000 kW. In: IA-EW-SHEET 13.99 kg/d (cathode sheet); IA-ATOM-REMELT 0.3556 kg/d (off-spec powder to remelt). Out: S57 6.839 kg/d (billet / melt / charge); IA-MELT-MILL 3.95 kg/d (melt to the mill); IA-MELT-ATOM 3.556 kg/d (melt to the atomizer).
+1. Basis. Mass in 14.34 kg/d. Mass out 14.34 kg/d. Electrical duty 0.2369 kW. In: IA-EW-SHEET 13.99 kg/d (cathode sheet); IA-ATOM-REMELT 0.3556 kg/d (off-spec powder to remelt). Out: S57 6.839 kg/d (billet / melt / charge); IA-MELT-MILL 3.95 kg/d (melt to the mill); IA-MELT-ATOM 3.556 kg/d (melt to the atomizer).
 
 2. Size.
 - V = (13.99/1000)×(1/24) = 0.0006 m³. 1 h charge. Density 1000 kg/m³.

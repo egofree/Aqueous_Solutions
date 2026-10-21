@@ -8,7 +8,7 @@ import json, math, os, subprocess, sys
 from . import solver, drivers as DR
 ROOT = solver.ROOT; GP = os.path.join(ROOT,'flow_graph/plant_flow_graph.json')
 TAG = 'X-PAR acid-loop decision (AQS-PAR-001 \u00a73)'
-ELEC_IN = ('S17-BMED','S17-EW','SF-EVAP_ACID','SF-EVAP_BASE','SF-EVAP_ACID_VS')
+ELEC_IN = ('S17-BMED','S17-EW','SF-EVAP_ACID','SF-EVAP_BASE','SF-EVAP_ACID_VS','SF-GEO_HP_CLOSED_LOOP')
 
 def rate(v, unit, note): return {'value': round(v,4), 'unit': unit, 'status': 'study', 'note': note}
 
@@ -128,7 +128,8 @@ def process():
     # listed as an explicit study share in the load list. This block aligns node stamps to the owning
     # calculation: driver-keyed nameplates, the calculated SF-* feeds (X-MFG-31 reactor design, X-SAN-01
     # sanitation, X-MFG-37 shop tool list) and the AQS-DUTY-050 agitator. Node kW changes only where the
-    # calculation says so (MFG_SHOP 12 -> tool-list average, LEACH_CSTR_1 2 -> motor, GLASS_DIGEST 1.5 ->
+    # calculation says so (MFG_SHOP 12 -> shop machine-tool average with the four metal tools split to their
+    # own stamps (AQS-MFG-010 rev C), LEACH_CSTR_1 2 -> motor, GLASS_DIGEST 1.5 ->
     # agitator, MEOH_SYNTH 0.5 -> feed preheat); feed edges follow their nodes so the bus balance rides along.
     LTAG = 'X-ELS-02 load-basis (A-M-275)'
     def _stamp(u, kw, note, feed=True):
@@ -137,9 +138,24 @@ def process():
         n['continuous_kw'] = rate(kw,'kW',note)
         if feed and f'SF-{u}' in E: E[f'SF-{u}']['rate'] = rate(kw,'kW',f'{LTAG}. Feed equal to {u} continuous_kw.')
     mf = json.loads(subprocess.run([sys.executable,'docs-authority/_mfg_tools.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)
-    _stamp('MFG_SHOP', round(mf['avg'],4),
-           f"X-MFG-37 (A-M-177): AQS-MFG-010 rev B tool list from graph throughputs, one 8 h shift; {mf['avg']*24:.1f} kWh/d / 24 h; "
-           f"connected {mf['connected']:.1f} kW, coincident peak {mf['peak']} kW sizes MCC-1 (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).")
+    _stamp('MFG_SHOP', round(mf['shop_avg'],4),
+           f"X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; {mf['shop_avg']*24:.1f} kWh/d / 24 h; "
+           f"shop connected {mf['shop_connected']:.1f} kW (roster connected {mf['connected']:.1f} kW, coincident peak {mf['peak']} kW frames MCC-1); "
+           f"rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).")
+    for mt in mf['metal']:   # X-ELS-02 rev C: per-tool stamps at the AQS-MFG-010 physics rows
+        u, a, kwh, npk = mt['unit'], mt['avg_kw'], mt['kwh_d'], mt['nameplate_kw']
+        nt = N.get(u)
+        if nt is not None: nt['electrical_role'] = nt.get('electrical_role') or 'load'
+        _stamp(u, round(a,4),
+               f"X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; {kwh:.1f} kWh/d / 24 h; "
+               f"batch nameplate {npk:.1f} kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).")
+        sid = f'SF-{u}'
+        if sid not in E:
+            e = json.loads(json.dumps(E['SF-MFG_SHOP']))
+            e.update(stream_id=sid, to_unit_id=u, to_sector_id=(N.get(u) or {}).get('sector_id') or 'MFG',
+                     notes='X-ELS-02 rev C: per-tool feeder for the AQS-MFG-010 rev C metering split')
+            g['edges'].append(e); E[sid] = e
+        E[sid]['rate'] = rate(round(a,4),'kW',f'{LTAG}. Feed equal to {u} continuous_kw.')
     lc = 'DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.'
     _shaft = DR.val(d,lc+'imp_Np')*DR.val(d,lc+'liquor_rho_kg_m3')*(DR.val(d,lc+'imp_N_rpm')/60)**3*DR.val(d,lc+'imp_D_m')**5
     _stamp('LEACH_CSTR_1', DR.val(d,lc+'motor_kW'),
@@ -168,6 +184,25 @@ def process():
                 f"study share - basis pending: AQS-SIZE-FOUNDRY batch nameplate carried flat at face value (A-M-232); calculated duty-cycle averages in docs-authority/sizing/FOUNDRY_LINE.md "
                 f"(IND_MELT 0.298 kW avg) are held for the logged batch schedule (X-MFG-37 trial class). X-ELS-02.")
     x_els_residuals(g, N, E, d)   # X-ELS-02 rev C: the 13 load-list residuals get calculated/cited bases (A-M-301)
+    # X-ELS-02 (A-M-317): the source-loop circulator is an electric load at its AQS-DUTY-076 pump draw,
+    # stamped here (read from sizing_geo_loop's params.design, which the graph already carries) so the bus
+    # rebalance below absorbs it; it rides the S44 lift dispatch (AQS-DUTY-010: lift only on the Q4 deficit)
+    # and is counted on the same bounding winter case as the GEO_HP lift itself (A-M-231 demand rule).
+    p_cl = N.get('GEO_HP_CLOSED_LOOP')
+    pw = ((p_cl.get('params') or {}).get('design') or {}).get('pump_W') if p_cl else None
+    if p_cl is not None and isinstance(pw,(int,float)) and pw > 0:
+        p_cl['electrical_role'] = p_cl.get('electrical_role') or 'load'
+        p_cl['continuous_kw'] = rate(pw/1000.0, 'kW',
+            f"AQS-DUTY-076 source-loop circulator: {pw:.1f} W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow "
+            f"against {((p_cl.get('params') or {}).get('design') or {}).get('head_m')} m head (sizing_geo_loop design block; drivers "
+            f"GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding "
+            f"winter case with it (AQS-DUTY-010, A-M-231, A-M-317).")
+        if 'SF-GEO_HP_CLOSED_LOOP' not in E:   # bus-fed like the EVAP_ACID_VS sump pump (same writer pattern)
+            se = edge('SF-GEO_HP_CLOSED_LOOP','SOL_ARK_60K','GEO_HP_CLOSED_LOOP','E',['elec'],'480 V AC',
+                      rate(pw/1000.0,'kW',f'{LTAG}. Feed equal to GEO_HP_CLOSED_LOOP continuous_kw (A-M-317).'),
+                      'ELEC','GEO','tray')
+            g['edges'].append(se); E['SF-GEO_HP_CLOSED_LOOP'] = se
+        E['SF-GEO_HP_CLOSED_LOOP']['rate']['value'] = round(pw/1000.0, 4)
     # SOL_ARK bus: PV average carries the change
     delta = bus_load(g) - before
     pv = E['IA-PV-01']['rate']['value'] + delta
@@ -366,8 +401,12 @@ def power():
         if N.get('GEO_HP') is not None:
             N['GEO_HP']['continuous_kw'] = rate(gkw,'kW',
                 f"X-ELS-02: Q4-bus lift S44 {s44:.4f} kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP "
-                f"{DR.val(d,'gsh_cop_h')} (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = {gkw:.4f} kW; 2 x 100 % units (X-RED-07). Ground-loop circulator not yet sized (X-ELS-02 residual).")
+                f"{DR.val(d,'gsh_cop_h')} (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = {gkw:.4f} kW; 2 x 100 % units (X-RED-07). "
+                f"Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).")
             if 'SF-GEO_HP' in E: E['SF-GEO_HP']['rate'] = rate(gkw,'kW','X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP continuous_kw.')
+    # X-ELS-02 (A-M-317): the source-loop circulator stamp is written by the process writer (the stage
+    # that owns the SOL_ARK bus rebalance), reading sizing_geo_loop's params.design; this writer only
+    # keeps the GEO_HP re-solve above current.
     # D1/D2 (2026-10-18): mvs.electrical is WRITTEN here from the live power-chain derivation (A-M-234 replaced_by; A-M-258
     # chain) instead of being a seed block that drifts from PV_ARRAY/ZNBR2/SOL_ARK params. Schema keys only
     # (design_tool ElectricalModel, extra=forbid). need = converged bounding demand incl. the EXT_HALL extension;

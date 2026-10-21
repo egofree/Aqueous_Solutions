@@ -69,6 +69,9 @@ def design(d, g):
 
 def write(g, R):
     N = {n['unit_id']: n for n in g['nodes']}
+    # X-ELS-02 (A-M-317): sizing here (params.design); the pump's continuous_kw DEMAND stamp is written by
+    # write_graph power() reading these params, so the SOL_ARK bus rebalance absorbs it in the same stage
+    # (a stamp written here would land after write_graph captures its before-delta and never reach IA-PV-01).
     for u, r in R.items():
         p = N[u].setdefault('params', {})
         p['design'] = {k: (round(x, 4) if isinstance(x, float) else x) for k, x in r.items()}

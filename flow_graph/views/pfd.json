@@ -4,7 +4,7 @@
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
   "node_count": 176,
-  "edge_count": 557,
+  "edge_count": 562,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -365,13 +365,18 @@
       "presence": "present",
       "class": "forming",
       "tags": [],
-      "electrical_role": null,
+      "electrical_role": "load",
       "diagram_gap": null,
       "notes": "Cold mill (S59)",
       "enabled": true,
       "modules": [],
       "params": {},
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.0191,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 2.2 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+      }
     },
     {
       "unit_id": "CONTINUOUS_RECYCLE",
@@ -1370,13 +1375,18 @@
       "presence": "present",
       "class": "forming",
       "tags": [],
-      "electrical_role": null,
+      "electrical_role": "load",
       "diagram_gap": null,
       "notes": "Powder production. Fed from FOUNDRY melt when powder stock required. Not baseline.",
       "enabled": true,
       "modules": [],
       "params": {},
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.0781,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 1.9 kWh/d / 24 h; batch nameplate 5.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+      }
     },
     {
       "unit_id": "GEO_GHEX",
@@ -1433,7 +1443,7 @@
         "value": 0.686,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: Q4-bus lift S44 2.1952 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = 0.6860 kW; 2 x 100 % units (X-RED-07). Ground-loop circulator not yet sized (X-ELS-02 residual)."
+        "note": "X-ELS-02: Q4-bus lift S44 2.1952 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = 0.6860 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
       },
       "modules": [],
       "params": {
@@ -1465,7 +1475,7 @@
       "presence": "present",
       "class": null,
       "tags": [],
-      "electrical_role": null,
+      "electrical_role": "load",
       "diagram_gap": null,
       "notes": null,
       "enabled": true,
@@ -1483,7 +1493,12 @@
         },
         "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
       },
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.1258,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-076 source-loop circulator: 125.8 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; drivers GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding winter case with it (AQS-DUTY-010, A-M-231, A-M-317)."
+      }
     },
     {
       "unit_id": "GEO_ORC",
@@ -2006,7 +2021,7 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2701.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 2515.0,
+        "vs_znbr2_kwh": 2517.0,
         "fraction_of_znbr2_study": 0.085,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -2249,13 +2264,18 @@
       "presence": "present",
       "class": "melt",
       "tags": [],
-      "electrical_role": null,
+      "electrical_role": "load",
       "diagram_gap": null,
       "notes": "Superseded for bulk melt by FOUNDRY IND_MELT. Retained as MFG hold/transfer only. Do not size as primary melt.",
       "enabled": true,
       "modules": [],
       "params": {},
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.2369,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.7 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+      }
     },
     {
       "unit_id": "MET_SCRUB",
@@ -2309,10 +2329,10 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 2.9,
+        "value": 2.55,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev B tool list from graph throughputs, one 8 h shift; 69.6 kWh/d / 24 h; connected 42.8 kW, coincident peak 24.5 kW sizes MCC-1 (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share)."
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 42.8 kW, coincident peak 24.5 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share)."
       },
       "modules": [],
       "params": {
@@ -2713,7 +2733,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 336.7016,
+        "value": 336.8304,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2721,9 +2741,9 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 4982,
+        "count": 4984,
         "presence": "present",
-        "nameplate_kw": 2491,
+        "nameplate_kw": 2492,
         "area_m2": 21986,
         "balance_kWp": 1246,
         "oversize_factor": 2.0,
@@ -2892,8 +2912,8 @@
         "count": 35,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 1920.4,
-          "export_kWh_d_clear": 5389,
+          "export_peak_kW": 1920.3,
+          "export_kWh_d_clear": 5392,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2923,9 +2943,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 150.7,
+          "bus_demand_kW": 150.8,
           "section_rating_A": 300,
-          "basis_A": 201.4,
+          "basis_A": 201.6,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -3033,13 +3053,18 @@
       "presence": "present",
       "class": "forming",
       "tags": [],
-      "electrical_role": null,
+      "electrical_role": "load",
       "diagram_gap": null,
       "notes": "Final wire sizing in MFG. Takes rod/wire stock from FOUNDRY DRAW via STOCK_OUT. Not the primary draw.",
       "enabled": true,
       "modules": [],
       "params": {},
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.0189,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+      }
     },
     {
       "unit_id": "WS_AMMONIA",
@@ -3289,25 +3314,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 179.6238,
+        "value": 179.7438,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.6 kW, charge 816.4 kW, 2515 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 817.0 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
         "kW": 817,
-        "kWh": 2515,
+        "kWh": 2517,
         "presence": "present",
         "charge_kW": 817,
         "discharge_kW": 180,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.376,
-          "purge_m3_h": 26.57,
+          "H2_m3_d": 6.38,
+          "purge_m3_h": 26.58,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1644.9
+          "electrode_area_m2": 1646.0
         }
       }
     },
@@ -10221,10 +10246,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 752.327603,
+        "value": 752.830205,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: HER 5.43 + open-circuit 0.95 m3/d H2 on 3592 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: HER 5.43 + open-circuit 0.95 m3/d H2 on 3595 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -10244,7 +10269,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 752.327603,
+        "value": 752.830205,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -13331,7 +13356,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 336.7016,
+        "value": 336.8304,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -17544,7 +17569,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 2.9,
+        "value": 2.55,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to MFG_SHOP continuous_kw."
@@ -22398,6 +22423,136 @@
         "O2": 0.99,
         "Ar": 0.01
       }
+    },
+    {
+      "stream_id": "SF-MET_MELT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MET_MELT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.2369,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02 load-basis (A-M-275). Feed equal to MET_MELT continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-ELS-02 rev C: per-tool feeder for the AQS-MFG-010 rev C metering split"
+    },
+    {
+      "stream_id": "SF-GAS_ATOMIZER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GAS_ATOMIZER",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0781,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02 load-basis (A-M-275). Feed equal to GAS_ATOMIZER continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-ELS-02 rev C: per-tool feeder for the AQS-MFG-010 rev C metering split"
+    },
+    {
+      "stream_id": "SF-COLD_MILL",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "COLD_MILL",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0191,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02 load-basis (A-M-275). Feed equal to COLD_MILL continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-ELS-02 rev C: per-tool feeder for the AQS-MFG-010 rev C metering split"
+    },
+    {
+      "stream_id": "SF-WIRE_DRAW",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "WIRE_DRAW",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
+      "header": "tray",
+      "forbidden": "battery Br\u2082 into CRU",
+      "claim_status": null,
+      "rate": {
+        "value": 0.0189,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02 load-basis (A-M-275). Feed equal to WIRE_DRAW continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": "X-ELS-02 rev C: per-tool feeder for the AQS-MFG-010 rev C metering split"
+    },
+    {
+      "stream_id": "SF-GEO_HP_CLOSED_LOOP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GEO_HP_CLOSED_LOOP",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.1258,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP_CLOSED_LOOP continuous_kw (A-M-317)."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GEO",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

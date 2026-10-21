@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "d231ffa0ccf1a8e163c33253a733a34c02c8dba79d591c3fc7879c361706f7d7",
+  "graph_sha256": "9186747d21cafb4a9daf9d0d026e932011402ced5629ba59bc3607b94f8788d5",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 336.702,
-   "calc_kw": 336.702,
+   "kw": 336.83,
+   "calc_kw": 336.83,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 179.624,
-   "calc_kw": 179.624,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.6 kW, charge 816.4 kW, 2515 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 179.744,
+   "calc_kw": 179.744,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 817.0 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -115,9 +115,9 @@
   {
    "unit": "MFG_SHOP",
    "role": "load",
-   "kw": 2.9,
-   "calc_kw": 2.9,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev B tool list from graph throughputs, one 8 h shift; 69.6 kWh/d / 24 h; connected 42.8 kW, coincident peak 24.5 kW sizes MCC-1 (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).",
+   "kw": 2.55,
+   "calc_kw": 2.55,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 42.8 kW, coincident peak 24.5 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).",
    "class": "calculated",
    "sector": "MFG"
   },
@@ -189,7 +189,7 @@
    "role": "load",
    "kw": 1.157,
    "calc_kw": 1.157,
-   "basis": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-301).",
+   "basis": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. / X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
    "sector": "HAB"
   },
@@ -252,7 +252,7 @@
    "role": "load",
    "kw": 0.686,
    "calc_kw": 0.686,
-   "basis": "X-ELS-02: Q4-bus lift S44 2.1952 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = 0.6860 kW; 2 x 100 % units (X-RED-07). Ground-loop circulator not yet sized (X-ELS-02 residual).",
+   "basis": "X-ELS-02: Q4-bus lift S44 2.1952 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = 0.6860 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
    "class": "calculated",
    "sector": "GEO"
   },
@@ -309,6 +309,15 @@
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
    "sector": "WET"
+  },
+  {
+   "unit": "WAFER_FAB",
+   "role": "load",
+   "kw": 0.442,
+   "calc_kw": 0.442,
+   "basis": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. / X-ELS-02 load-basis (A-M-301).",
+   "class": "calculated",
+   "sector": "FAB"
   },
   {
    "unit": "EW_5",
@@ -401,6 +410,15 @@
    "sector": "FOUNDRY"
   },
   {
+   "unit": "MET_MELT",
+   "role": "load",
+   "kw": 0.237,
+   "calc_kw": 0.237,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.7 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "class": "calculated",
+   "sector": "MFG"
+  },
+  {
    "unit": "VCD_TRAIN",
    "role": "\u2014",
    "kw": 0.236,
@@ -414,7 +432,7 @@
    "role": "load",
    "kw": 0.207,
    "calc_kw": 0.207,
-   "basis": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. | X-ELS-02 load-basis (A-M-301).",
+   "basis": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. / X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
    "sector": "FAB"
   },
@@ -441,9 +459,18 @@
    "role": "load",
    "kw": 0.133,
    "calc_kw": 0.133,
-   "basis": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. | X-ELS-02 load-basis (A-M-301).",
+   "basis": "ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition transformer and burner management ride the combustion panel at < 50 W. / X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
    "sector": "OIL"
+  },
+  {
+   "unit": "GEO_HP_CLOSED_LOOP",
+   "role": "load",
+   "kw": 0.126,
+   "calc_kw": 0.126,
+   "basis": "AQS-DUTY-076 source-loop circulator: 125.8 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; drivers GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding winter case with it (AQS-DUTY-010, A-M-231, A-M-317).",
+   "class": "calculated",
+   "sector": "GEO"
   },
   {
    "unit": "CA_POT",
@@ -509,6 +536,15 @@
    "sector": "MFG"
   },
   {
+   "unit": "GAS_ATOMIZER",
+   "role": "load",
+   "kw": 0.078,
+   "calc_kw": 0.078,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 1.9 kWh/d / 24 h; batch nameplate 5.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "class": "calculated",
+   "sector": "MFG"
+  },
+  {
    "unit": "REMIN",
    "role": "\u2014",
    "kw": 0.046,
@@ -554,6 +590,15 @@
    "sector": "FAB"
   },
   {
+   "unit": "NUTRIENT_DOSE",
+   "role": "load",
+   "kw": 0.025,
+   "calc_kw": 0.025,
+   "basis": "Dosing-skid pumps (AQS-EQP-NUT-001): bleed transfer 109.6 kg/d over a 2 h window at 15 m head, eta 0.35 (6.4 W) + 3 x 8 W metering pumps on the bed/fish splits. / X-ELS-02 load-basis (A-M-301).",
+   "class": "calculated",
+   "sector": "NUT"
+  },
+  {
    "unit": "EVAP_ACID_VS",
    "role": "load",
    "kw": 0.024,
@@ -579,6 +624,24 @@
    "basis": "X-MFG-39 (A-M-168): TSA regeneration 1.0 W / 0.7 + half the insulated loss.",
    "class": "calculated",
    "sector": "GAS"
+  },
+  {
+   "unit": "COLD_MILL",
+   "role": "load",
+   "kw": 0.019,
+   "calc_kw": 0.019,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 2.2 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "class": "calculated",
+   "sector": "MFG"
+  },
+  {
+   "unit": "WIRE_DRAW",
+   "role": "load",
+   "kw": 0.019,
+   "calc_kw": 0.019,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "class": "calculated",
+   "sector": "MFG"
   },
   {
    "unit": "BMED_UPW_POLISH",
@@ -626,30 +689,12 @@
    "sector": "FAB"
   },
   {
-   "unit": "RF_HEAT",
-   "role": "load",
-   "kw": 0,
-   "calc_kw": 0.0,
-   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): preheat/sinter N+1 alternate: standby-zero on the design day (A-M-283); duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
-   "class": "calculated",
-   "sector": "FOUNDRY"
-  },
-  {
-   "unit": "VAC_IND",
-   "role": "\u2014",
-   "kw": 0,
-   "calc_kw": 0.0,
-   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-283); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
-   "class": "calculated",
-   "sector": "FOUNDRY"
-  },
-  {
    "unit": "FUEL_CELL",
    "role": "generation",
    "kw": 4.0,
    "calc_kw": null,
-   "basis": "study share - basis pending: owner requirement lock AQS-REQ-KW-001 REQ-FC-CONT; not a vendor nameplate (ELEC unit task 02)",
-   "class": "pending",
+   "basis": "owner requirement lock (AQS-REQ-KW-001): AQS-REQ-KW-001 REQ-FC-CONT owner requirement lock; not a vendor nameplate (ELEC unit task 02)",
+   "class": "owner-lock",
    "sector": "ELEC"
   },
   {
@@ -657,36 +702,18 @@
    "role": "generation",
    "kw": 1.0,
    "calc_kw": null,
-   "basis": "study share - basis pending: owner requirement lock AQS-REQ-KW-001 REQ-MEOH-FC-CONT 0.5-2 kW_dc mid-band stand-in (SI-DMFC-01 class)",
-   "class": "pending",
+   "basis": "owner requirement lock (AQS-REQ-KW-001): AQS-REQ-KW-001 REQ-MEOH-FC-CONT owner requirement lock: 0.5-2 kW_dc mid-band stand-in (SI-DMFC-01 class)",
+   "class": "owner-lock",
    "sector": "MEOH"
-  },
-  {
-   "unit": "WAFER_FAB",
-   "role": "load",
-   "kw": 0.442,
-   "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
-   "sector": "FAB"
   },
   {
    "unit": "COMB_HEAT",
    "role": "\u2014",
    "kw": 0.05,
    "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
+   "basis": "standby-zero on the design day: N+1 fuel-fired heat of IND_MELT (A-M-283); 0.05 kW controls/blower parasitic, fuel on the C5-C10 class when energized.",
+   "class": "standby-zero",
    "sector": "FOUNDRY"
-  },
-  {
-   "unit": "NUTRIENT_DOSE",
-   "role": "load",
-   "kw": 0.025,
-   "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
-   "sector": "NUT"
   },
   {
    "unit": "HYDRO_SET",
@@ -707,12 +734,30 @@
    "sector": "MEOH"
   },
   {
+   "unit": "RF_HEAT",
+   "role": "load",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): preheat/sinter N+1 alternate: standby-zero on the design day (A-M-283); duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
+   "class": "standby-zero",
+   "sector": "FOUNDRY"
+  },
+  {
    "unit": "RES_HEAT",
    "role": "\u2014",
    "kw": 0,
    "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
+   "basis": "standby-zero on the design day: N+1 diverse heat of SHELL_BURNOUT/SINTER (resistance radiant, A-M-283); connected rating in params.design.",
+   "class": "standby-zero",
+   "sector": "FOUNDRY"
+  },
+  {
+   "unit": "VAC_IND",
+   "role": "\u2014",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "X-MFG-37 trial basis (AQS-DUTY-072): N+1 diverse melt path: standby-zero on the design day (A-M-283); Ti Kroll train feed now dock-supplied, duty-cycle wiring at the X-MFG-37 trial class. X-ELS-02.",
+   "class": "standby-zero",
    "sector": "FOUNDRY"
   },
   {
@@ -720,8 +765,8 @@
    "role": "\u2014",
    "kw": 0,
    "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
+   "basis": "standby-zero on the design day: N+1 of CAST_LINE/CONT_CAST (vacuum tilt-pour, A-M-283); connected rating in params.design.",
+   "class": "standby-zero",
    "sector": "FOUNDRY"
   },
   {
@@ -729,8 +774,8 @@
    "role": "\u2014",
    "kw": 0,
    "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
+   "basis": "standby-zero on the design day: N+1 former of ROLL (profile press, A-M-283); connected rating in params.design.",
+   "class": "standby-zero",
    "sector": "FOUNDRY"
   },
   {
@@ -738,8 +783,8 @@
    "role": "\u2014",
    "kw": 0,
    "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
+   "basis": "standby-zero on the design day: N+1 former of ROLL (wire/rod bench, A-M-283); connected rating in params.design.",
+   "class": "standby-zero",
    "sector": "FOUNDRY"
   },
   {
@@ -747,8 +792,8 @@
    "role": "\u2014",
    "kw": 0,
    "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
+   "basis": "standby-zero on the design day: N+1 former of ROLL (open-die press, A-M-283); connected rating in params.design.",
+   "class": "standby-zero",
    "sector": "FOUNDRY"
   },
   {
@@ -756,21 +801,25 @@
    "role": "\u2014",
    "kw": 0,
    "calc_kw": null,
-   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
-   "class": "pending",
+   "basis": "standby-zero on the design day: N+1 consolidation of ROLL (press-and-sinter P/M route, A-M-283); connected rating in params.design.",
+   "class": "standby-zero",
    "sector": "FOUNDRY"
   }
  ],
  "summary": {
-  "calculated": 71,
-  "pending": 11,
+  "calculated": 76,
+  "pending": 0,
+  "standby_zero": 9,
+  "owner_lock": 2,
   "null": 2,
-  "rows": 84,
-  "graph_sum_kW": 141.0,
-  "calc_sum_kW": 141.0,
-  "connected_load_kW": 141.0,
-  "connected_calculated_kW": 140.4,
-  "connected_calculated_pct": 99.6,
+  "rows": 89,
+  "graph_sum_kW": 141.08,
+  "calc_sum_kW": 141.08,
+  "connected_load_kW": 141.1,
+  "connected_calculated_kW": 141.0,
+  "connected_standby_kW": 0.1,
+  "connected_study_kW": 0.0,
+  "connected_calculated_pct": 100.0,
   "by_sector": {
    "CRYO": {
     "calculated": 4
@@ -780,24 +829,23 @@
    },
    "ELEC": {
     "calculated": 5,
-    "pending": 1
+    "owner-lock": 1
    },
    "FAB": {
-    "calculated": 6,
-    "pending": 1
+    "calculated": 7
    },
    "FARM": {
     "calculated": 1
    },
    "FOUNDRY": {
-    "calculated": 15,
-    "pending": 7
+    "calculated": 13,
+    "standby-zero": 9
    },
    "GAS": {
     "calculated": 4
    },
    "GEO": {
-    "calculated": 1
+    "calculated": 2
    },
    "GLASS": {
     "calculated": 1
@@ -807,14 +855,14 @@
    },
    "MEOH": {
     "calculated": 2,
-    "pending": 1,
+    "owner-lock": 1,
     "null": 1
    },
    "MFG": {
-    "calculated": 4
+    "calculated": 8
    },
    "NUT": {
-    "pending": 1
+    "calculated": 1
    },
    "OIL": {
     "calculated": 2

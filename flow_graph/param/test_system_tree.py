@@ -197,11 +197,13 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     gen = tree.aggregate(tree.resolve_units("ELEC.generation-train"), graph)
     assert gen["count"] == 3
     assert gen["kw_count"] == 3
-    # PV 336.7016 (placeholders-to-real fixed point 2026-10-19/20: foundry duty-cycled, fluoro live, loads promoted -
-    # MFG_SHOP 12 -> 2.9 tool-list average, LEACH_CSTR_1 2 -> 0.75 agitator, GLASS_DIGEST 1.5 -> 0.09,
-    # MEOH_SYNTH 0.5 -> 0.7388, GEO_HP 2 -> S44/COP 0.686 - took the demand 260.96 -> 240.99 kW, the
-    # converged EXT_HALL 97.49 -> 90.57 kW and the bus with it; fixed point in 3 passes)
-    assert gen["kw_sum"] == pytest.approx(336.7016 + 4.0 + 0.0082)   # PV 336.7016 at the placeholders-to-real fixed point (foundry duty-cycle + fluoro train live)
+    # PV 336.8304 (placeholders-to-real fixed point 2026-10-19/20; X-ELS-02 Rev C 2026-10-21 adds +0.1258:
+    # the GEO source-loop circulator enters the AC load at its AQS-DUTY-076 draw (A-M-317, own SF feed on
+    # the bus) and +0.0030: the AQS-MFG-010 rev C metering split's 4-dp quantisation (metal tools split out
+    # of the MFG_SHOP aggregate) - loads promoted - MFG_SHOP 12 -> tool-list average, LEACH_CSTR_1 2 ->
+    # 0.75 agitator, GLASS_DIGEST 1.5 -> 0.09, MEOH_SYNTH 0.5 -> 0.7388, GEO_HP 2 -> S44/COP 0.686 - took
+    # the demand 260.96 -> 240.99 kW, the converged EXT_HALL 97.49 -> 90.57 kW and the bus with it)
+    assert gen["kw_sum"] == pytest.approx(336.8304 + 4.0 + 0.0082)   # PV 336.8304 (X-ELS-02 rev C: circulator + metering split, A-M-317)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(
