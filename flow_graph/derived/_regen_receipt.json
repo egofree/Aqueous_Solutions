@@ -6,7 +6,7 @@
   "2"
  ],
  "quick": false,
- "graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d",
+ "graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be",
  "passes": 1,
  "converged": true,
  "stages": [
@@ -19,9 +19,9 @@
     "process"
    ],
    "pass": 1,
-   "seconds": 0.82,
+   "seconds": 0.81,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "sizing_cold_box",
@@ -32,9 +32,9 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.16,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "sizing_evap_design",
@@ -47,7 +47,7 @@
    "pass": 1,
    "seconds": 0.27,
    "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
+   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
   },
   {
    "name": "sizing_receivers",
@@ -60,7 +60,7 @@
    "pass": 1,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
+   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
   },
   {
    "name": "sizing_h2_compressor",
@@ -73,7 +73,7 @@
    "pass": 1,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
+   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
   },
   {
    "name": "sizing_h2_purifier",
@@ -84,9 +84,9 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
+   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
   },
   {
    "name": "sizing_house_scrubbers",
@@ -97,9 +97,9 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.16,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
+   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
   },
   {
    "name": "sizing_pv_cell_line",
@@ -112,7 +112,7 @@
    "pass": 1,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
+   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
   },
   {
    "name": "sizing_upw_polish",
@@ -125,7 +125,7 @@
    "pass": 1,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
+   "post_graph_sha256": "a5ed4a59ce527e0dd38db8426b311970b9100673254f85ba1e3f274971a19fe1"
   },
   {
    "name": "foundry_poly",
@@ -149,7 +149,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "b269e9aa34d523318159a0faf3fb03ed0b46e3e57bb9cd93bc42dee03021df87"
   },
@@ -162,7 +162,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.17,
    "status": "ok",
    "post_graph_sha256": "b269e9aa34d523318159a0faf3fb03ed0b46e3e57bb9cd93bc42dee03021df87"
   },
@@ -175,7 +175,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
@@ -188,7 +188,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "9ef0b13a22083ac0c0f40c486b6b80db8107a362e23d3b0830a4232d6738f865"
   },
@@ -277,9 +277,22 @@
     "power"
    ],
    "pass": 1,
-   "seconds": 0.3,
+   "seconds": 0.31,
    "status": "ok",
    "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+  },
+  {
+   "name": "balance_report",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.balance",
+    "--write"
+   ],
+   "pass": 1,
+   "seconds": 0.57,
+   "status": "ok",
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "sizing_bmed_stack",
@@ -292,19 +305,7 @@
    "pass": 0,
    "seconds": 0.21,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
-  },
-  {
-   "name": "balance_report",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.balance"
-   ],
-   "pass": 0,
-   "seconds": 0.57,
-   "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "load_list",
@@ -313,9 +314,9 @@
     "docs-authority/_load_list.py"
    ],
    "pass": 0,
-   "seconds": 0.31,
+   "seconds": 0.29,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "one_line",
@@ -324,9 +325,9 @@
     "docs-authority/_one_line.py"
    ],
    "pass": 0,
-   "seconds": 0.46,
+   "seconds": 0.43,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "ew_sizing_doc",
@@ -337,7 +338,7 @@
    "pass": 0,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "leach_sizing_doc",
@@ -348,7 +349,7 @@
    "pass": 0,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "reactor_design_doc",
@@ -361,7 +362,7 @@
    "pass": 0,
    "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "foundry_sizing_doc",
@@ -370,9 +371,9 @@
     "docs-authority/_foundry_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.16,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "polymers_sizing_doc",
@@ -381,9 +382,9 @@
     "docs-authority/_polymers_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.16,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "vent_scrubber_doc",
@@ -394,9 +395,9 @@
     "--write"
    ],
    "pass": 0,
-   "seconds": 0.21,
+   "seconds": 0.22,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "duty_basis",
@@ -407,7 +408,7 @@
    "pass": 0,
    "seconds": 0.17,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "nozzle_sched",
@@ -416,9 +417,9 @@
     "docs-authority/_nozzle_sched.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "unit_sizing_sweep",
@@ -427,9 +428,9 @@
     "docs-authority/_unit_sizing_sweep.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.16,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "line_list",
@@ -438,9 +439,9 @@
     "docs-authority/_line_list.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.16,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "pid_sheets",
@@ -449,9 +450,9 @@
     "docs-authority/_pid_sheets.py"
    ],
    "pass": 0,
-   "seconds": 1.59,
+   "seconds": 1.56,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "iso_routes",
@@ -462,7 +463,7 @@
    "pass": 0,
    "seconds": 0.17,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "iso_sheets",
@@ -473,7 +474,7 @@
    "pass": 0,
    "seconds": 0.2,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "supports",
@@ -484,7 +485,7 @@
    "pass": 0,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "insulation",
@@ -495,7 +496,7 @@
    "pass": 0,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "ew_busbar",
@@ -504,9 +505,9 @@
     "docs-authority/_ew_busbar.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "cable_schedule",
@@ -515,9 +516,9 @@
     "docs-authority/_cable_schedule.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "protection",
@@ -528,7 +529,7 @@
    "pass": 0,
    "seconds": 0.29,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "haz_area",
@@ -537,9 +538,9 @@
     "docs-authority/_haz_area.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.16,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "derived_excerpts",
@@ -550,7 +551,7 @@
    "pass": 0,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "loop_closure",
@@ -561,7 +562,7 @@
    "pass": 0,
    "seconds": 0.16,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "candidate_mvs",
@@ -572,7 +573,7 @@
    "pass": 0,
    "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "sizing_coverage",
@@ -582,9 +583,9 @@
     "flow_graph.param.sizing_coverage"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "task_plan",
@@ -595,7 +596,7 @@
    "pass": 0,
    "seconds": 0.2,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "model_workbook",
@@ -604,9 +605,9 @@
     "docs-authority/_model_workbook.py"
    ],
    "pass": 0,
-   "seconds": 1.53,
+   "seconds": 1.54,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "assumptions_register",
@@ -617,7 +618,7 @@
    "pass": 0,
    "seconds": 0.19,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "regen_derived",
@@ -628,7 +629,7 @@
    "pass": 0,
    "seconds": 16.06,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   },
   {
    "name": "rev_stamp",
@@ -637,9 +638,9 @@
     "docs-authority/_rev_stamp.py"
    ],
    "pass": 0,
-   "seconds": 0.29,
+   "seconds": 0.28,
    "status": "ok",
-   "post_graph_sha256": "8fc4a77ce9f3091509351cc37346699cad1e3b36f4d3421a235f459510db095d"
+   "post_graph_sha256": "c574534a6f1520b016129356bff301d6dbd8824ec94cf2ced7e8c28710ac36be"
   }
  ],
  "failed": [],

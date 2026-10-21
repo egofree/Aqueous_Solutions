@@ -22,7 +22,12 @@ Not allowed as steady import:
 - Fluoropolymer resin, monomers, or HF.  
 - Cr, Mo, Ti metal or stainless that the plant is required to make.  
 - Li grease, Ca grease, solvents, acids, bases.  
-- Fertilizer.
+- Fertilizer (the grow bed is sized to crew duty, A-M-229/A-M-281).
+
+Exception recorded 2026-10-21 (A-M-280): the IA-NAOH-MU 4.3936 kg/d NaOH edge is a bounding
+worst-case make-up ( demand 2521 mol/d less BMED 2412 mol/d, AQS-PAR-001 §3 ), not a ban case -
+the NaOH ban stands and the import retires when the silicate-liquor sodium return is credited.
+Crew basis: 4 persons (A-M-281); the crew is resident, never a steady import.
 
 Startup inventory (first fill of crucibles, anodes, seed wafers) is a one-time exception and is listed on the assumptions sheet, not as a dock duty.
 

@@ -116,7 +116,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/AL_POT/export/al_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/AL_POT.stl study envelope [800, 800, 1600]"
+      "notes": "P2+P3 2026-10-19: pot_cell (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/AL_POT/export/al_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/AL_POT.stl study envelope [800, 800, 1600]"
     },
     {
       "unit_id": "BACKUP_GEN",
@@ -307,7 +307,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/CA_POT/export/ca_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/CA_POT.stl study envelope [800, 800, 1600]"
+      "notes": "P2+P3 2026-10-19: pot_cell (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/CA_POT/export/ca_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/CA_POT.stl study envelope [800, 800, 1600]"
     },
     {
       "unit_id": "COLD_MILL",
@@ -337,7 +337,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/COMB_HEAT/export/comb_heat.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/COMB_HEAT.stl study envelope [1000, 1000, 1500]"
+      "notes": "P2+P3 2026-10-19: box_furnace (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/COMB_HEAT/export/comb_heat.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/COMB_HEAT.stl study envelope [1000, 1000, 1500]"
     },
     {
       "unit_id": "CONTINUOUS_RECYCLE",
@@ -535,7 +535,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/CR_CELL/export/cr_cell.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/CR_CELL.stl study envelope [800, 800, 1600]"
+      "notes": "P2+P3 2026-10-19: pot_cell (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/CR_CELL/export/cr_cell.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/CR_CELL.stl study envelope [800, 800, 1600]"
     },
     {
       "unit_id": "DRAW",
@@ -547,7 +547,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/DRAW/export/draw.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/DRAW.stl study envelope [1500, 800, 1500]"
+      "notes": "P2+P3 2026-10-19: line_machine (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/DRAW/export/draw.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/DRAW.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "ELECTRODE_COAT",
@@ -625,7 +625,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/EXTRUDE/export/extrude.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/EXTRUDE.stl study envelope [1500, 800, 1500]"
+      "notes": "P2+P3 2026-10-19: line_machine (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/EXTRUDE/export/extrude.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/EXTRUDE.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "FAB_UPW_TANK",
@@ -655,7 +655,7 @@
       "freecad_names": [],
       "builder": "mfg/polymers.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/FILM_CAST/export/film_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FILM_CAST.stl study envelope [1500, 800, 1500]"
+      "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/FILM_CAST/export/film_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FILM_CAST.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "FLOAT_SINK",
@@ -704,7 +704,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: bench_prep (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/FLUX_PREP/export/flux_prep.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FLUX_PREP.stl study envelope [800, 600, 1200]"
+      "notes": "P2+P3 2026-10-19: bench_prep (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/FLUX_PREP/export/flux_prep.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FLUX_PREP.stl study envelope [800, 600, 1200]"
     },
     {
       "unit_id": "FORGE",
@@ -716,7 +716,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/FORGE/export/forge.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FORGE.stl study envelope [1500, 800, 1500]"
+      "notes": "P2+P3 2026-10-19: line_machine (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/FORGE/export/forge.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FORGE.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "FUEL_CELL",
@@ -1035,7 +1035,7 @@
       "freecad_names": [],
       "builder": "mfg/polymers.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: reactor (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/HF_GEN/export/hf_gen.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/HF_GEN.stl study envelope [600, 600, 1200]"
+      "notes": "P2+P3 2026-10-19: reactor (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/HF_GEN/export/hf_gen.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/HF_GEN.stl study envelope [600, 600, 1200]"
     },
     {
       "unit_id": "HOPPER",
@@ -1095,7 +1095,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/INV_CAST/export/inv_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/INV_CAST.stl study envelope [1500, 800, 1500]"
+      "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/INV_CAST/export/inv_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/INV_CAST.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "LEACH_CSTR_1",
@@ -1307,7 +1307,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/MG_POT/export/mg_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/MG_POT.stl study envelope [800, 800, 1600]"
+      "notes": "P2+P3 2026-10-19: pot_cell (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/MG_POT/export/mg_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/MG_POT.stl study envelope [800, 800, 1600]"
     },
     {
       "unit_id": "MO_CELL",
@@ -1319,7 +1319,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/MO_CELL/export/mo_cell.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/MO_CELL.stl study envelope [800, 800, 1600]"
+      "notes": "P2+P3 2026-10-19: pot_cell (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/MO_CELL/export/mo_cell.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/MO_CELL.stl study envelope [800, 800, 1600]"
     },
     {
       "unit_id": "NORTH_DOCK",
@@ -1471,7 +1471,7 @@
       "freecad_names": [],
       "builder": "mfg/polymers.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: reactor (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POLY_F/export/poly_f.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POLY_F.stl study envelope [600, 600, 1200]"
+      "notes": "P2+P3 2026-10-19: reactor (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POLY_F/export/poly_f.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POLY_F.stl study envelope [600, 600, 1200]"
     },
     {
       "unit_id": "POLY_OLEFIN",
@@ -1507,7 +1507,7 @@
       "freecad_names": [],
       "builder": "mfg/polymers.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POWDER_RESIN/export/powder_resin.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POWDER_RESIN.stl study envelope [1500, 800, 1500]"
+      "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POWDER_RESIN/export/powder_resin.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POWDER_RESIN.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "PV_ARRAY",
@@ -1595,7 +1595,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/RES_HEAT/export/res_heat.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/RES_HEAT.stl study envelope [1000, 1000, 1500]"
+      "notes": "P2+P3 2026-10-19: box_furnace (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/RES_HEAT/export/res_heat.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/RES_HEAT.stl study envelope [1000, 1000, 1500]"
     },
     {
       "unit_id": "RF_HEAT",
@@ -1607,7 +1607,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/RF_HEAT/export/rf_heat.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/RF_HEAT.stl study envelope [1000, 1000, 1500]"
+      "notes": "P2+P3 2026-10-19: box_furnace (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/RF_HEAT/export/rf_heat.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/RF_HEAT.stl study envelope [1000, 1000, 1500]"
     },
     {
       "unit_id": "ROLL",
@@ -1685,7 +1685,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SHELL_BREAK/export/shell_break.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SHELL_BREAK.stl study envelope [1500, 800, 1500]"
+      "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SHELL_BREAK/export/shell_break.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SHELL_BREAK.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "SHELL_BUILD",
@@ -1697,7 +1697,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SHELL_BUILD/export/shell_build.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SHELL_BUILD.stl study envelope [1500, 800, 1500]"
+      "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SHELL_BUILD/export/shell_build.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SHELL_BUILD.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "SHELL_BURNOUT",
@@ -1709,7 +1709,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SHELL_BURNOUT/export/shell_burnout.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SHELL_BURNOUT.stl study envelope [1000, 1000, 1500]"
+      "notes": "P2+P3 2026-10-19: box_furnace (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SHELL_BURNOUT/export/shell_burnout.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SHELL_BURNOUT.stl study envelope [1000, 1000, 1500]"
     },
     {
       "unit_id": "SINTER",
@@ -1721,7 +1721,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SINTER/export/sinter.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SINTER.stl study envelope [1000, 1000, 1500]"
+      "notes": "P2+P3 2026-10-19: box_furnace (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/SINTER/export/sinter.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/SINTER.stl study envelope [1000, 1000, 1500]"
     },
     {
       "unit_id": "SOLAR_PV_CELL",
@@ -1792,7 +1792,7 @@
       "freecad_names": [],
       "builder": "mfg/polymers.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: reactor (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/TFE_SYN/export/tfe_syn.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/TFE_SYN.stl study envelope [600, 600, 1200]"
+      "notes": "P2+P3 2026-10-19: reactor (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/TFE_SYN/export/tfe_syn.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/TFE_SYN.stl study envelope [600, 600, 1200]"
     },
     {
       "unit_id": "TI_CELL",
@@ -1804,7 +1804,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: pot_cell (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/TI_CELL/export/ti_cell.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/TI_CELL.stl study envelope [800, 800, 1600]"
+      "notes": "P2+P3 2026-10-19: pot_cell (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/TI_CELL/export/ti_cell.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/TI_CELL.stl study envelope [800, 800, 1600]"
     },
     {
       "unit_id": "VAC_CAST",
@@ -1816,7 +1816,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: line_machine (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/VAC_CAST/export/vac_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VAC_CAST.stl study envelope [1500, 800, 1500]"
+      "notes": "P2+P3 2026-10-19: line_machine (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/VAC_CAST/export/vac_cast.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VAC_CAST.stl study envelope [1500, 800, 1500]"
     },
     {
       "unit_id": "VAC_IND",
@@ -1828,7 +1828,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: box_furnace (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/VAC_IND/export/vac_ind.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VAC_IND.stl study envelope [1000, 1000, 1500]"
+      "notes": "P2+P3 2026-10-19: box_furnace (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/VAC_IND/export/vac_ind.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VAC_IND.stl study envelope [1000, 1000, 1500]"
     },
     {
       "unit_id": "VCD_TRAIN",
@@ -1852,7 +1852,7 @@
       "freecad_names": [],
       "builder": "mfg/polymers.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: reactor (standby); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/VDF_SYN/export/vdf_syn.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VDF_SYN.stl study envelope [600, 600, 1200]"
+      "notes": "P2+P3 2026-10-19: reactor (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/VDF_SYN/export/vdf_syn.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VDF_SYN.stl study envelope [600, 600, 1200]"
     },
     {
       "unit_id": "WAFER_FAB",
@@ -1882,7 +1882,7 @@
       "freecad_names": [],
       "builder": "mfg/foundry.py",
       "group_path": [],
-      "notes": "P2+P3 2026-10-19: bench_prep (standby); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/WAX_PATTERN/export/wax_pattern.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/WAX_PATTERN.stl study envelope [800, 600, 1200]"
+      "notes": "P2+P3 2026-10-19: bench_prep (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/WAX_PATTERN/export/wax_pattern.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/WAX_PATTERN.stl study envelope [800, 600, 1200]"
     },
     {
       "unit_id": "WET_BENCH",
@@ -2199,5 +2199,5 @@
     }
   ],
   "rev_c_note": "Graph Rev K: FLUE_KO -> FLUE_CAP and RELIEF_H2 -> H2_STACK added. LOAD_AGG is class boundary on the graph. Units created on the placed copy from issued or study envelopes carry their own unit_id as the Feature name and are not listed here. Coverage block below is from the original inventory and is not recounted.",
-  "rev_d_note": "Graph Rev BH-era audit 2026-10-19, appended rows (P1 stores + P4 restored units, disjoint from the FOUNDRY/POLYMERS rows appended by the sibling lane): D-DOCK stores FOOD_STORE / METAL_STORE / AIR_RECEIVER massing (A-M-270, graph_dims now applies their design_storage), restored H2O_ELYZ PEM skid + CRYO_ASU TSA cold box in cryo.py (graph-driven dims, A-M-279), RELIEF_CRYO -> CRYO_VENT_STACK (H2_STACK pattern), and the PROD_O2 / PROD_MEOH AQS-DUTY-064 storage rows (A-M-278) recorded as unmapped until a CAD lane places them. Coverage block above is from the original Rev C inventory and is not recounted."
+  "rev_d_note": "Rev D unit map check 2026-10-21: 28 geometry-class \"(standby)\" note tokens refreshed from each unit's live params.envelope.state (pot/cells LIVE via foundry_poly; alternates standby_rated)."
 }

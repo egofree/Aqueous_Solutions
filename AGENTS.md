@@ -26,8 +26,8 @@ After any graph/drivers/TF change, in order: `pytest flow_graph/` (1% misfit gat
 
 ## Regenerator
 
-- `flow_graph/param/regen_manifest.json` is a 44-stage DAG; `--quick` runs only the five graph-writing stages (no docs, no receipt) for what-if passes.
-- **Graph-writing stages couple**: `foundry_poly` → `fluoro_train` → `stub_activation` mutate rates before the solver, and `balance_report` is currently report-only because `--write` couples with the post-2026-10-19 `_collection_bus` writer and the successive-substitution oscillates (reverted at `1aba493`; re-enable only with a designed convergence scheme). If the graph sha cycles across regen passes, suspect a new writer, not the solver.
+- `flow_graph/param/regen_manifest.json` is a 46-stage DAG; `--quick` runs only the graph-writing stages (no docs, no receipt) for what-if passes.
+- **Balance `--write` is the proven regime** (2026-10-21: instrumented pass-invariant probe, golden signature unchanged: IA-PV-01 336.7016, ark 35, sections 4). The 2026-10-19 oscillation report did not reproduce at this writer set. If the graph sha cycles after a writer change, instrument signature hashes (graph sha + PV_ARRAY/SOL_ARK/sections counts + PV feeder) across full passes BEFORE reverting - a quantized threshold flip shows as a 2-point cycle, and the manifest note carries the recipe.
 - Study-calculator coverage gaps hide in `docs-authority/_*.py`: missing duty/nozzle/instrument rows are usually a unit-list filter in the generator, not missing data. Extend the generator and rerun it - never hand-edit its output.
 
 ## Loop

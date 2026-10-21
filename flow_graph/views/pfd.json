@@ -18273,7 +18273,7 @@
         "value": 7.07675,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0539 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0539 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.2941 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
