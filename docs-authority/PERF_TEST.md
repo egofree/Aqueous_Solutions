@@ -28,6 +28,6 @@ Bounding case: AQS-ASSAY-001 class A feed at 102.68 kg/d. Run 72 h at steady sta
 | metal from EW_1 | IA-COAT-IN | EW_1 | 0.02 | kg/d | weighed cathode harvest | 0.018 - 0.022 |
 | H2 to bank | IA-ELY-H2 | H2O_ELYZ | 9.361 | kg/d | thermal mass flow meter | 8.425 - 10.3 |
 
-| Plant load (sum of consumer continuous kW; PV, fuel cells, genset, battery and ORC excluded) | - | - | 146.2 | kW | revenue-grade meter at LOAD_AGG | <= 160.8 |
+| Plant load (sum of consumer continuous kW; PV, fuel cells, genset, battery and ORC excluded) | - | - | 146.3 | kW | revenue-grade meter at LOAD_AGG | <= 161.0 |
 
 18 product guarantee points. A failed point is re-run once after a 24 h hold; a second failure opens a design query against the unit sizing module.
