@@ -932,6 +932,24 @@
       "note": "Layer views + 7 matplotlib PFDs + FreeCAD frames + ffmpeg mp4 + media/_generated.json graph-sha manifest. Slowest stage (FreeCAD + ffmpeg)."
     },
     {
+      "name": "design_check",
+      "argv": [
+        "python3",
+        "docs-authority/_design_check.py"
+      ],
+      "outputs": [
+        "docs-authority/DESIGN_CHECK.md",
+        "docs-authority/inventory/DESIGN_CHECK.csv"
+      ],
+      "depends_on": [
+        "assumptions_register",
+        "regen_derived"
+      ],
+      "writes_graph": false,
+      "quick": false,
+      "note": "QA independent recomputation (AQS-QA-002) moved into the DAG 2026-10-21: the record was a one-shotStudy and its QC-01/QC-05 rows were stale versus the live graph; regenerated every run so the design-check gate can never drift from the board again. The docstring says run last - placed before rev_stamp, which stamps it."
+    },
+    {
       "name": "rev_stamp",
       "argv": [
         "python3",
