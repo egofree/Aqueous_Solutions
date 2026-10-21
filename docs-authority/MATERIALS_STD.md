@@ -1,8 +1,8 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: K
-Date: 2026-10-15
+Revision: L
+Date: 2026-10-21
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
 | Rev | Description | Date |
@@ -18,6 +18,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | I | Material temperatures on thermoplastic inlets (X-MAT-09); HX-5 coil guard. | 2026-10-15 |
 | J | EW electrode materials in chloride (X-MAT-18). | 2026-10-15 |
 | K | Galvanic and stray-current design for the EW aisle (X-MAT-07). | 2026-10-15 |
+| L | Service-class selection guide across the assay envelope added as section 12 (X-MAT-01). Line-list class rules keyed to the guide families: the "aqueous process, default thermoplastic" catchall is retired, hydrocarbon/fuel cuts go to M2 (carbon steel, dry, per the issued duties), wet methanol and solvents to M1 (316L per the issued duties), melt pours become launder rows (not piped), and the fluoro synthesis train, dopant concentrates and molten-salt pot brines carry per-duty-sheet materials pending a PIP-003 Rev B class. Section 8 checker aligned: unit map equals the issued CPVC and PVDF members, and the BMED inlets are derived from the booked X-RSZ-04 trim duties with driver heat capacities; 0 exceed, 33 rows on the registered 40 °C ambient assumption (A-M-269). Also refreshes the section 10 trim table to the X-RSZ-04 booked duty and flow basis. | 2026-10-21 |
 
 ## 1. Rules
 
@@ -193,47 +194,45 @@ Decision (owner approval 2026-10-15). HX8 is a PVDF shell-and-tube bundle, 7.53 
 - The penalty is area and footprint (about nine times), which is acceptable at 7.5 m².
 Graphite is not clearly better, so the approved default stands. Section 4.1's open graphite option is closed.
 
-## 8. Material temperatures on thermoplastic inlets, Rev I
+## 8. Material temperatures on thermoplastic inlets, Rev I (table refreshed Rev L)
 
-X-MAT-09. Script `docs-authority/_material_temps.py` writes `params.T_C` and `T_basis` on every liquid edge into a thermoplastic unit that lacked one, from: the edge's own text; the upstream unit's other outlets; LEACH_CSTR_1 outlets at the band maximum 85 °C; otherwise 40 °C (assumption, the 0.4 % site dry bulb 37.8 °C of AQS-SITE-002 rounded up).
+X-MAT-09. Script `docs-authority/_material_temps.py` checks every liquid edge into a thermoplastic unit against the M5 limit of its material. The unit map is the issued section 12 material basis: CPVC for LEACH_CSTR_1, FLOAT_SINK, EW_1, ACID_POLISH_SCRUB and NOX_SCRUB (the section 8 85 °C draw resolution and section 7), PVDF for HX8, WS_NITRIC, WS_PEROX, HNO3 and WS_HF_ED, PVC-U elsewhere per section 2. The IA-BMED-03/04 inlet temperatures are derived: booked X-RSZ-04 trim duty minus flow times driver heat capacity (cp_hcl20_kJ_kgK 3.0, cp_naoh20_kJ_kgK 3.6, PERRY9). Where no temperature exists on or upstream of an edge the check prints 40 °C, the 0.4 % site dry bulb 37.8 °C of AQS-SITE-002 rounded up.
 
 | Edge | From | To | Material | T °C | Limit °C | Check | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| IA-SCRUB-SRC | LEACH_CSTR_1 | ACID_POLISH_SCRUB | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
-| IA-BMED-03 | LEACH_CSTR_1 | BMED_ACID | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
-| IA-BMED-04 | LEACH_CSTR_1 | BMED_BASE | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
-| IA-EW-04 | LEACH_CSTR_1 | EW_1 | PVC-U | 77.5 | 60 | EXCEEDS | edge T_C |
-| IA-SINK-01 | LEACH_CSTR_1 | FLOAT_SINK | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
-| IA-LEACH-NOX | LEACH_CSTR_1 | NOX_SCRUB | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
-| IA-CLOSE-1 | LEACH_CSTR_1 | NOX_SCRUB | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
-| IA-POT-01 | REMIN | ROOF_TANK | PVC-U | 25.0 | 60 | ok (X-RSZ-06) | edge T_C |
-| IA-HF-SRC | LEACH_CSTR_1 | WS_HF_ED | PVC-U | 85.0 | 60 | EXCEEDS | edge T_C |
-| IA-DIG-BLK | DIGESTER | BLACK_DIGEST | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-ESS-HYDRO-DIS | ROOF_TANK | CATCH_TANK | PVC-U | 25.0 | 60 | ok | edge T_C |
-| S41 | TERRACE_IRRIG | CATCH_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-POL-02 | POLISH_BANK | CONTINUOUS_RECYCLE | PVC-U | 50.0 | 60 | ok | edge T_C |
-| S66 | ACID_POLISH_SCRUB | CRU | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-EW-01 | EW_1 | EW_2 | PVC-U | 55.0 | 60 | ok | edge T_C |
-| IA-EW-02 | EW_2 | EW_3 | PVC-U | 55.0 | 60 | ok | edge T_C |
-| IA-EW-03 | EW_3 | EW_4 | PVC-U | 55.0 | 60 | ok | edge T_C |
-| IA-EW-10 | EW_4 | EW_5 | PVC-U | 55.0 | 60 | ok | edge T_C |
-| IA-EW-05 | EW_5 | EW_6 | PVC-U | 55.0 | 60 | ok | edge T_C |
-| IA-EW-06 | EW_6 | EW_7 | PVC-U | 55.0 | 60 | ok | edge T_C |
-| IA-EW-07 | EW_7 | EW_8 | PVC-U | 55.0 | 60 | ok | edge T_C |
-| IA-EW-08 | EW_8 | EW_9 | PVC-U | 55.0 | 60 | ok | edge T_C |
-| S42 | TERRACE_IRRIG | GREY_TREAT | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-SCRUB-SRC | LEACH_CSTR_1 | ACID_POLISH_SCRUB | CPVC | 85.0 | 93 | ok | edge T_C |
+| IA-BLK-01 | HABITATION | BLACK_DIGEST | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-URINE | HABITATION | BLACK_DIGEST | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-BMED-03 | LEACH_CSTR_1 | BMED_ACID | PVC-U | 35.1 | 60 | ok | LEACH liquor band maximum 85 C (liquor_T_C band); in-line water-cooled trim IA-BMED-03-TRIM (0.78 kW, cp 3.0 kJ/(kg K) per cp_hcl20_kJ_kgK, dT 49.9 K; X-MAT-19 section 10) |
+| IA-EVAP_ACID-COND | EVAP_ACID | BMED_ACID | PVC-U | 49.1 | 60 | ok | edge T_C |
+| IA-VS-SPENT | EVAP_ACID_VS | BMED_ACID | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-BMED-04 | LEACH_CSTR_1 | BMED_BASE | PVC-U | 35.7 | 60 | ok | LEACH liquor band maximum 85 C (liquor_T_C band); in-line water-cooled trim IA-BMED-04-TRIM (1.027 kW, cp 3.6 kJ/(kg K) per cp_naoh20_kJ_kgK, dT 49.3 K; X-MAT-19 section 10) |
+| IA-EVAP_BASE-COND | EVAP_BASE | BMED_BASE | PVC-U | 50.6 | 60 | ok | edge T_C |
+| IA-ESS-HYDRO-DIS | ROOF_TANK | CATCH_TANK | PVC-U | 25.0 | 60 | ok | upstream ROOF_TANK outlet IA-FLUE-QUENCH (edge conditions) |
+| S22 | ROOF_TANK | CATCH_TANK | PVC-U | 25.0 | 60 | ok | upstream ROOF_TANK outlet IA-FLUE-QUENCH (edge conditions) |
+| IA-POL-02 | POLISH_BANK | CONTINUOUS_RECYCLE | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S66 | ACID_POLISH_SCRUB | CRU | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| VDF_HCL_TO_CRU | VDF_SYN | CRU | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| TFE_HCL_TO_CRU | TFE_SYN | CRU | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-EW-04 | LEACH_CSTR_1 | EW_1 | CPVC | 85.0 | 93 | ok | LEACH liquor band maximum 85 C (liquor_T_C band) |
+| IA-EW-01 | EW_1 | EW_2 | PVC-U | 40 | 60 | ok | upstream EW_1 outlet IA-EW1-H2 (edge T_C) |
+| IA-EW-02 | EW_2 | EW_3 | PVC-U | 40 | 60 | ok | upstream EW_2 outlet IA-EW2-H2 (edge T_C) |
+| IA-EW-03 | EW_3 | EW_4 | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-EW-10 | EW_4 | EW_5 | PVC-U | 40 | 60 | ok | upstream EW_4 outlet IA-EW4-H2 (edge T_C) |
+| IA-EW-05 | EW_5 | EW_6 | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-EW-06 | EW_6 | EW_7 | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-EW-07 | EW_7 | EW_8 | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-EW-08 | EW_8 | EW_9 | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-SINK-01 | LEACH_CSTR_1 | FLOAT_SINK | CPVC | 85.0 | 93 | ok | edge T_C |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | PVC-U | 25.0 | 60 | ok | edge T_C |
-| IA-WASH-R | HAB_WASH | GREY_TREAT | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-NH3-NIT | WS_AMMONIA | HNO3 | PVDF | 40.0 | 120 | ok | edge T_C |
-| IA-O2-NIT | HDR_O2 | HNO3 | PVDF | 40.0 | 120 | ok | edge T_C |
-| IA-REC-01 | CONTINUOUS_RECYCLE | LEACH_CSTR_1 | CPVC | 35.0 | 93 | ok | edge T_C |
-| IA-WET-FLOAT-01 | FLOAT_SINK | LEACH_CSTR_1 | CPVC | 60.0 | 93 | ok | edge T_C |
-| S10 | WET_BENCH | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
-| S28 | VCD_TRAIN | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
-| S68 | CRYO_AHU | LEACH_CSTR_1 | CPVC | 10.0 | 93 | ok | edge T_C |
+| IA-BLK-GREY | BLACK_DIGEST | GREY_TREAT | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-REC-01 | CONTINUOUS_RECYCLE | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-WET-FLOAT-01 | FLOAT_SINK | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S10 | WET_BENCH | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S28 | VCD_TRAIN | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | upstream VCD_TRAIN outlet IA-VCD-BD (edge T_C) |
+| S68 | CRYO_AHU | LEACH_CSTR_1 | CPVC | 10.0 | 93 | ok | upstream CRYO_AHU outlet IA-HVAC-COND (edge T_C) |
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
-| IA-ACID-01 | BMED_ACID | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
 | IA-UPW-REJ | BMED_UPW_POLISH | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
 | IA-DIG-LIQ | GLASS_DIGEST | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
@@ -242,48 +241,41 @@ X-MAT-09. Script `docs-authority/_material_temps.py` writes `params.T_C` and `T_
 | IA-BAG-01 | BAGHOUSE | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
 | IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
 | IA-FC-LEACH | FUEL_CELL | LEACH_CSTR_1 | CPVC | 60.0 | 93 | ok | edge T_C |
-| IA-IL-BRINE | ACEX | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
 | IA-SIC-RET | NUTRIENT_DOSE | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | edge T_C |
-| S46 | BACKUP_GEN | NOX_SCRUB | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-FC-FIX | FUEL_CELL | NOX_SCRUB | PVC-U | 60.0 | 60 | ok | edge T_C |
-| IA-GLX-NOX | GLYOXAL | NOX_SCRUB | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-EW-09 | EW_9 | POLISH_BANK | PVC-U | 55.0 | 60 | ok | edge T_C |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | CPVC | 40.0 | 93 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-ACID-01 | EVAP_ACID | LEACH_CSTR_1 | CPVC | 49.1 | 93 | ok | edge T_C |
+| IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | CPVC | 50.6 | 93 | ok | edge T_C |
+| S46 | BACKUP_GEN | NOX_SCRUB | CPVC | 40.0 | 93 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-LEACH-NOX | LEACH_CSTR_1 | NOX_SCRUB | CPVC | 85.0 | 93 | ok | edge T_C |
+| IA-FC-FIX | FUEL_CELL | NOX_SCRUB | CPVC | 60.0 | 93 | ok | edge T_C |
+| IA-CLOSE-1 | LEACH_CSTR_1 | NOX_SCRUB | CPVC | 85.0 | 93 | ok | edge T_C |
+| IA-EW-09 | EW_9 | POLISH_BANK | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
 | IA-UPW-REMIN | BMED_UPW_POLISH | REMIN | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-ESS-HYDRO-CHG | CATCH_TANK | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-ESS-HYDRO-CHG | CATCH_TANK | ROOF_TANK | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S23 | CATCH_TANK | ROOF_TANK | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
 | IA-HVAC-COND | CRYO_AHU | ROOF_TANK | PVC-U | 10.0 | 60 | ok | edge T_C |
 | IA-GREY-RET | GREY_TREAT | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
+| IA-POT-01 | REMIN | ROOF_TANK | PVC-U | 25.0 | 60 | ok | edge T_C |
 | IA-NOX-H2O | NOX_SCRUB | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-AC-H2O | ACETOX | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-FORM-H2O | FORM | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-IMID-H2O | IMID | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-BUCL-H2O | BUCL | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-QUAT-H2O | QUAT | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-NIT-H2O | HNO3 | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-GLX-H2O | GLYOXAL | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-MEAM-H2O | MEAM | ROOF_TANK | PVC-U | 40.0 | 60 | ok | edge T_C |
-| S09 | BMED_ACID | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
-| S27 | FAB_UPW_TANK | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
-| S31 | WS_HF_ED | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
-| S32 | WS_PEROX | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
-| S33 | WS_AMMONIA | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
-| S35 | WS_KOH | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
-| S34 | WS_NITRIC | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
-| S34B | WS_PHOS | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
+| S09 | BMED_ACID | WET_BENCH | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S27 | FAB_UPW_TANK | WET_BENCH | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S31 | WS_HF_ED | WET_BENCH | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S32 | WS_PEROX | WET_BENCH | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S33 | WS_AMMONIA | WET_BENCH | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S35 | WS_KOH | WET_BENCH | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S34 | WS_NITRIC | WET_BENCH | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| S34B | WS_PHOS | WET_BENCH | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | PVC-U | 40.0 | 60 | ok | edge T_C |
 | IA-NH3-SRC | HDR_N2 | WS_AMMONIA | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-NH3-RET | MEAM | WS_AMMONIA | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-BMED-02 | BMED_BASE | WS_KOH | PVC-U | 40.0 | 60 | ok | edge T_C |
-| IA-BMED-01 | BMED_ACID | WS_NITRIC | PVDF | 40.0 | 120 | ok | edge T_C |
-| IA-HNO3 | HNO3 | WS_NITRIC | PVDF | 40.0 | 120 | ok | edge T_C |
+| IA-HF-PROD | HF_GEN | WS_HF_ED | PVDF | 40.0 | 120 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-BMED-02 | BMED_BASE | WS_KOH | PVC-U | 40.0 | 60 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
+| IA-BMED-01 | BMED_ACID | WS_NITRIC | PVDF | 40.0 | 120 | ok | assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up (A-M-269) |
 | IA-H2O2-SRC | HDR_O2 | WS_PEROX | PVDF | 40.0 | 120 | ok | edge T_C |
 | IA-PEROX-H2O | ROOF_TANK | WS_PEROX | PVDF | 25.0 | 120 | ok | edge T_C |
+73 edges; 0 exceed; 33 on the ambient assumption.
 
-78 edges; 9 exceed; 0 on the ambient assumption.
-
-Resolution of the exceedances:
-- CPVC per M5: FLOAT_SINK, EW_1 (EW_2 to EW_9 at 55 °C stay PVC-U), ACID_POLISH_SCRUB, NOX_SCRUB inlet and sump.
-- PVDF: WS_HF_ED (HF at 85 °C).
-- Cooling, not material: BMED_ACID, BMED_BASE (ion-exchange membranes) and ROOF_TANK (water) — X-MAT-19.
+Resolution of the former exceedances (the Rev K table ran at the Rev AC graph): the 85 °C hot-leach draws into FLOAT_SINK, EW_1, ACID_POLISH_SCRUB and NOX_SCRUB now run in CPVC (P2/M5, limit 93 °C, operated ≤88 °C); WS_HF_ED runs PVDF (limit 120 °C); BMED_ACID and BMED_BASE take the water-cooled trim exchangers of section 10 — the derived inlets 35.1 °C and 35.7 °C land at the 35 °C membrane target within the booked-duty margin of X-RSZ-04. EW_2 to EW_9 stay PVC-U at their 55 °C class temperature.
 
 HX-5 coil guard. The impeller (D 450 mm, AQS-DUTY-050) turns inside the coil (ID 575 mm), 62 mm radial clearance. The coil is clamped to four PVDF guide posts from the pads to the lid so it cannot move into the impeller; no separate guard sleeve, which would cut the flow across the coil.
 
@@ -306,10 +298,10 @@ S22. Trasatti S., "Electrocatalysis: understanding the success of DSA", Electroc
 
 Script `docs-authority/_hot_draw_coolers.py`.
 
-| Edge | kg/d | cp kJ/kgK | °C | Duty W | Target |
-| --- | --- | --- | --- | --- | --- |
-| IA-BMED-03 | 108.2 | 3.0 | 85 → 35 | 188 | BMED_ACID membrane inlet 35 C |
-| IA-BMED-04 | 118.7 | 3.6 | 85 → 35 | 247 | BMED_BASE membrane inlet 35 C |
+| Edge | kg/d | cp kJ/(kg K) | °C | Booked trim | Cooled inlet | Target |
+| --- | --- | --- | --- | --- | --- | --- |
+| IA-BMED-03 | 450.164 | 3.0 (cp_hcl20_kJ_kgK, PERRY9) | 85 → 35 | IA-BMED-03-TRIM 0.780 kW | 35.1 °C | BMED_ACID membrane inlet 35 C |
+| IA-BMED-04 | 500.131 | 3.6 (cp_naoh20_kJ_kgK, PERRY9) | 85 → 35 | IA-BMED-04-TRIM 1.027 kW | 35.7 °C | BMED_BASE membrane inlet 35 C |
 
 - IA-POT-01: superseded by X-RSZ-06. The potable makeup now comes from REMIN at 25 °C; the hot leach water bleed goes to VCD_TRAIN on IA-LEACH-VCD (123.296 kg/d, 85 °C), which is an evaporator duty, not a cooler. No coil. VCD_TRAIN wetted parts on this feed are Ti Gr 2 or PVDF-lined (acid chloride at 85 °C, §9 basis); the condensate is polished by BMED_UPW_POLISH before REMIN.
 - IA-BMED-03 and IA-BMED-04: air cannot reach 35 °C at the 37.8 °C design dry bulb. They take a water-cooled trim exchanger on the GEO_GHEX ground loop. X-RSZ-04 books it at the resized flows: IA-BMED-03-TRIM 0.780 kW and IA-BMED-04-TRIM 1.027 kW (1.81 kW), taken from IA-E-LEACH, rejected by IA-GHEX-REJ. Outlet 35 °C.
@@ -345,3 +337,69 @@ Routes from AQS-ISO-001. Required continuous electrolyte path for ≤ 1 % protec
 | IA-EW-07 | EW_7 | EW_8 | 13.8 | yes | air-break launder (kept; path alone would also do) |
 | IA-EW-08 | EW_8 | EW_9 | 11.1 | yes | air-break launder (kept; path alone would also do) |
 | IA-EW-10 | EW_4 | EW_5 | 10.0 | yes | air-break launder (kept; path alone would also do) |
+
+## 12. Service-class selection guide across the assay envelope, Rev L
+
+X-MAT-01. Done when: material per service class across the AQS-ASSAY-001 Rev C bounding cases, with source data.
+
+Method. Every present edge that is not a cable (the wetted census, 422 edges) is classed into exactly one family below by the rules in `docs-authority/_line_list.py` (AQS-PIP-004). `docs-authority/_service_census.py` regenerates the census table and exits nonzero if a wetted line still carries the retired "aqueous process, default thermoplastic" catchall or if a class letter contradicts its family. Status at this revision: 323 piped wetted lines, 22 declared families, 0 default catchalls (2026-10-21, current graph, census run committed with this revision).
+
+Bounding chemistry. The aqueous families are bounded by the feed envelope: phase classes per AQS-ASSAY-001 Rev C (section 1) and the leach/EW metal loading of ASSAY.md (Fe 20, Cu 8, Ni 3, Zn 4, Al 6, other 9 g/L). No family takes a vendor gauge figure. Every material statement below cites the reference set of this document ([S1] to [S12], plus [S21]/[S22] of section 9) or the registered PERRY9_MAT row (Perry's Chemical Engineers' Handbook, 9th ed., 2019, sec. 25, materials of construction, in `flow_graph/param/refs.py`). Per-unit shell materials remain governed by the unit duty sheets (section 3 of each) and, where stated, the issued graph `params.design.material`.
+
+### 12.1 Classed families (AQS-PIP-003 Rev A class letters)
+
+Census counts come from `_service_census.py` (regenerated with this revision). T note is the range of known edge Temperatures in the family; unstamped edges take the 40 °C ambient basis (A-M-269).
+
+| Service family | Class | Lines | T °C (known) | Wetted material and basis | Sources |
+| --- | --- | --- | --- | --- | --- |
+| Hot leach liquor | P2 | 46 | 40–85 | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C); the hot LEACH/CSTR draws and every P2 unit connection of section 2 | [S3], [S5] |
+| Acid or brine, at or below 60 °C | P1 | 54 | 10–50.6 | PVC-U Sch 80 P1; leach/EW metal-salt liquors in the ASSAY.md envelope; inter-cell EW links are free-fall launders (section 11) | [S10] |
+| Aqueous process liquor (AQS-ASSAY-001 envelope) | P1 | 13 | ambient | PVC-U Sch 80 P1; the non-keyword aqueous fallback family: every wetted line still lands in a named family, none in a catchall | [S10] |
+| Oxidizer, wet HF or PVDF unit | P3 | 13 | 25–85 | PVDF (P3); nitric and peroxide make-ups (section 5) and wet-HF product and make-up legs, including IA-HF-PROD (85 °C) into WS_HF_ED | [S1], [S11], [S12] |
+| Process vent gas | P3 | 31 | ambient | PVDF (P3) | [S1] |
+| Flue or acid gas | F1 | 10 | ambient | FRP/composite F1 per section 4.3 | section 4.3 |
+| Alkaline (NaOH/KOH base liquor) | P4 | 6 | 50.6 | PP-H to 80 °C (P4); BMED base product and caustic make-ups | [S4] |
+| Alkaline silica slurry | P4 | 3 | ambient | PP-H (P4); colloidal silica carrier to the wafer fab; the WS_SLURRY vessel itself stays 316L per its duty sheet | [S4] |
+| Water loops (protective, irrigation, UPW) | P5 | 13 | ambient | HDPE per PIP-003 P5 | section 2 audit |
+| Flue quench water | P5 | 1 | ambient | HDPE P5 | section 2 audit |
+| Propylene-glycol ground loop | P5 | 1 | ambient | HDPE DR-11 buried, 25 % PG freeze protection (node design, S43) | section 2 audit |
+| Q3/Q4 water loop | M1 | 20 | ambient | 316L loops | section 4.4 basis |
+| Dry gas, H₂/O₂/N₂/CO₂ | M1 | 47 | 20–30 | 316L with M6 dielectric breaks; AQS-REV-H2-001 holds the H₂ wetted basis | section 6 |
+| Wet methanol service | M1 | 11 | ambient | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study); covers crude MeOH, MeOH fuel, dock shipment and the VDF/TFE carbon-source lines | AQS-REV-H2-001 |
+| Organic liquid (solvent make-up) | M1 | 1 | ambient | 316L where wet per the WS_SOLV duty | duty sheets |
+| Q1/Q2 thermal oil | M2 | 12 | hold | Carbon steel A106 Gr B per section 4.4 | [S8] |
+| Hydrocarbon product, fuel or wax cut | M2 | 19 | ambient | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm); covers the fractionator cuts, C29 recycle, wax reclaim and the C5–C10 generator fuel | duty sheets |
+| 98 wt% H₂SO₄ make-up | M2 | 1 | ambient | Carbon steel: iron passivates above ≈ 93 wt% at ambient (PERRY9_MAT); velocity and temperature guards are unit-task-09 detail | PERRY9_MAT |
+
+### 12.2 Families without a PIP-003 class ("—")
+
+These families are governed by issued per-unit materials and are pending a PIP-003 Rev B class sheet (X-PIP-01 Rev B rows). Their AQS-PIP-004 rows carry class "—" with the family text, so no line is silently classed PVC where its chemistry forbids it.
+
+| Family | Lines | Issued wetted materials | Class status |
+| --- | --- | --- | --- |
+| Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours) | 7 | Not piped: launder/pour hot faces (M7); ISO route rows retained for geometry only | not piped |
+| Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs) | 9 | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions; VDF_SYN Hastelloy C-276 reactors, Ni cracking tube, PTFE-lined coolers; TFE_SYN Inconel 600 pyrolysis tube, Hastelloy C-276 coolers; POLY_F Hastelloy C-276 wetted, PTFE gasketed. The wet-HF and H₂SO₄ make-up legs into these units are classed separately (P3 and M2 above) | PIP-003 Rev B |
+| Dopant concentrates (S36, BBr₃/POCl₃ class) | 1 | PTFE/PFA handling per the semiconductor-reagent practice; flow 0.0 kg/d (nominally closed), no pipe class | PIP-003 Rev B |
+| CaCl₂/MgCl₂ brine concentrates to molten-salt pots | 3 | Unit task 09 wetted-material selection pending (MG_POT, CA_POT and F_RECOVER duty section 3, across the AQS-ASSAY-001 Rev C bounding cases); closes with the pot-cell material selection (X-MAT-06) | PIP-003 Rev B or unit-specific |
+
+### 12.3 Dispositions of the section 2 ambiguous list
+
+The 2026-10-15 audit items below were ambiguous then and are resolved by the sections shown. Not closed here: the molten-salt pot-cell wetted selection (12.2 last row) and the WS_SLURRY/WS_DOPE per-stream gasket detail (X-MAT-03).
+
+| Section 2 item | Disposition |
+| --- | --- |
+| HX8 (Ti in reducing chloride) | Sections 4.1 and 4.5: PVDF bundle, not Ti |
+| ZNBR2_BR2_REGEN (wet Br₂) | Section 3.1: PVC-U shell and sump with the headspace class ruling |
+| GLASS_DIGEST (liquor not characterized) | Duty sheet names chloride/scrub liquor; IA-DIG-LIQ and IA-DIG-BLK class P1/P2 aqueous families above |
+| WS_NITRIC, WS_PEROX (oxidizer limits) | Section 5 (Rev D) and the M1 PVDF rules of section 2 |
+| WS_SOLV, WS_DOPE, WS_SLURRY (compatibility not stated) | Duties name 316L where wet; lines class P1/P4/"—" families above; gasket detail stays X-MAT-03 |
+| ETOH_STILL, BUOH_STILL | Section 4.2 |
+| VCD_TRAIN, FAB_UPW_TANK, HDR_UPW, BMED_UPW_POLISH | Section 10 bullet (Ti Gr 2 / PVDF on the 85 °C draw) and the P5/M1 water families |
+| HDR_H2, RELIEF_H2, H2_DRYER | Section 6 (M6, AQS-REV-H2-001); HDR_H2 dielectric breaks in section 11 |
+| HDR_O2 | M7 dry oxygen row of section 2 (M1 class family above) |
+| FLUE_KO, BAGHOUSE, AFTERBURNER_FLUE | Section 4.3 (F1) |
+| Q1_A to Q4_B, GEO_*, and the water-loop list | Sections 4.4 (Q1/Q2) and the M1/P5 water families above |
+| MEOH_SYNTH, MEOH_TANK, MEOH_COND | Wet methanol family above; AQS-REV-H2-001 carries the synthesis wetted basis |
+| OIL sector (reducing, hot) | M7 hot faces on the pyrolysis units; M2 hydrocarbon family above for the cut, recycle and fuel lines |
+| MFG units with "316L where wet" | Duties name the wet streams per unit; classed into the families above; the pot-cell units sit in 12.2 |
+| EW_1 to EW_9 (dissolution and stray current) | Sections 9 and 11 (X-MAT-18/X-MAT-07) |
