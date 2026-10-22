@@ -7,7 +7,6 @@ IA-REC-01,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al
 IA-WET-FLOAT-01,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,9.89,180.2,,True,0.0139
 S10,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,33.14,603.9,,True,0.0464
 S28,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,21.84,398.0,,True,0.0306
-S39,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,33.02,1281.6,,True,0.0988
 S46,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,7.84,142.9,,True,0.011
 S66,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,14.69,267.7,,True,0.0206
 S68,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,13.14,239.5,,True,0.0184
@@ -32,7 +31,6 @@ IA-LEACH-HOP,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547),
 IA-FC-FIX,line,50,60.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,33.1,0.0464,21.88,16.32,357.0,,True,0.0489
 IA-FC-LEACH,line,15,60.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,31.9,0.0464,10.26,27.24,279.4,,True,0.0382
 IA-CLOSE-1,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,11.22,435.5,,True,0.0336
-IA-CLOSE-10,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,17.37,674.2,,True,0.052
 IA-LEACH-VCD,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,21.84,398.0,,True,0.0306
 IA-NA-PURGE,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,18.34,334.2,,True,0.0257
 IA-H2O-MU,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,24.14,439.9,,True,0.0338

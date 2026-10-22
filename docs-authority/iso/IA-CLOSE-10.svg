@@ -8,8 +8,8 @@
 <circle cx="412.9" cy="525.1" r="5" fill="none" stroke="black"/><text x="420.9" y="539.1">MEOH_FC</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-CLOSE-10</text>
-<text x="20" y="614">DN50  class P2  CPVC Sch 80 ASTM F441</text>
+<text x="20" y="614">DN50  class M1  316L ASTM A312</text>
 <text x="20" y="628">LEACH_CSTR_1 -> MEOH_FC</text>
-<text x="20" y="642">pipe 17.37 m in 5 pieces; cut 6000 370 5488 5240 270 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 9 solvent joints</text>
+<text x="20" y="642">pipe 17.09 m in 5 pieces; cut 6000 324 5396 5148 224 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 9 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-119 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-120 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -103,7 +103,7 @@
 <polygon points="1070,516 1061,512 1061,520" fill="#111"/>
 <text x="1476" y="497" font-size="9" fill="#666" text-anchor="end">HDR_H2</text>
 <text x="1476" y="511" font-size="11" font-weight="600" text-anchor="end">IA-HDR-H2-04</text>
-<text x="1476" y="529" font-size="10" text-anchor="end">0.5 kg/d · DN15 M1</text>
+<text x="1476" y="529" font-size="10" text-anchor="end">0.5 kg/d · DN15 P1</text>
 <text x="902" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="end">N3</text>
 <line x1="979.7" y1="516" x2="971.7" y2="516" stroke="#111" stroke-width="1.2"/>
 <polygon points="970.7,516 976.7,512.5 976.7,519.5" fill="#111"/>
@@ -121,7 +121,7 @@
 <g id="aqs-title-block"><rect x="1116" y="704" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="721" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-EW_9</text>
 <text x="1124" y="738" font-size="9">P&amp;ID EW_9 (ew_cell, DIGESTER sector)</text>
-<text x="1124" y="755" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev a855a85d   Issued 2026-10-19</text>
+<text x="1124" y="755" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 265c6e10   Issued 2026-10-19</text>
 <text x="1124" y="772" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="789" font-size="9">Graph SHA-256 9186747d21cafb4a   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="789" font-size="9">Graph SHA-256 c89af1e294f2a104   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

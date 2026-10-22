@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: L
+Revision: M
 Date: 2026-10-21
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -19,6 +19,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | J | EW electrode materials in chloride (X-MAT-18). | 2026-10-15 |
 | K | Galvanic and stray-current design for the EW aisle (X-MAT-07). | 2026-10-15 |
 | L | Service-class selection guide across the assay envelope added as section 12 (X-MAT-01). Line-list class rules keyed to the guide families: the "aqueous process, default thermoplastic" catchall is retired, hydrocarbon/fuel cuts go to M2 (carbon steel, dry, per the issued duties), wet methanol and solvents to M1 (316L per the issued duties), melt pours become launder rows (not piped), and the fluoro synthesis train, dopant concentrates and molten-salt pot brines carry per-duty-sheet materials pending a PIP-003 Rev B class. Section 8 checker aligned: unit map equals the issued CPVC and PVDF members, and the BMED inlets are derived from the booked X-RSZ-04 trim duties with driver heat capacities; 0 exceed, 33 rows on the registered 40 °C ambient assumption (A-M-269). Also refreshes the section 10 trim table to the X-RSZ-04 booked duty and flow basis. | 2026-10-21 |
+| M | Section 2 ambiguous audit list resolved (X-MAT-06): the two contradicting or out-of-class materials adjudicated (HDR_H2 is the PVC-U wet-acid header of AQS-REV-H2-001 - graph row corrected; Q3 heat batteries are SA-240 304L at the 100 C tier - PP-H is an 80 C class material [S4], graph row corrected); unstated temperatures given stated bases (edge T_C stamps, loop t_nom, or the registered 40 C ambient A-M-269); the 32 template-duty units covered by the generated per-unit table of section 13.2. Also: the 13 wet-HDR_H2 lines move to the new P1 wet-acid-header family (AQS-PIP-004 Rev C), updating the section 12 counts (dry gas 47 to 38, hot leach 46 to 44, acid or brine 54 to 52). Done-when evidence: docs-authority/_ambiguous_units.py --done (roster 77: 27 doc-section, 18 row of 13.1, 32 generated). | 2026-10-21 |
 
 ## 1. Rules
 
@@ -317,7 +318,7 @@ Busbars. Copper on non-conductive standoffs (glass-polyester or porcelain), cree
 
 Frames and earthing. Tanks and racks are CPVC or PVC-U (no metal frame, M3). Any metal structure near the aisle (crane rail, walkway steel) is earthed to the ring (AQS-ELEC-005) and kept 150 mm clear of liquor and bars. DC stays floating with an insulation monitor per channel; the first earth fault alarms and is cleared before a second can complete a shunt path.
 
-Metal piping. HDR_H2 (316L, class M1) leaves each H₂-making cell through a dielectric isolating flange and a condensate trap with a free-fall drain, so wet gas cannot carry liquor current into the header. Q4 water to HX8 is isolated by the PVDF bundle (section 4.5).
+Metal piping. The H2 header is PVC-U per AQS-REV-H2-001 (M3, wet acid + sweep air; X-MAT-06) rather than metal: each H2-making cell connects through a dielectric isolating flange and a condensate trap with a free-fall drain, so wet gas cannot carry liquor current into the header, and the plastic run carries no isolated conductors (M6: bonded metal parts only). Q4 water to HX8 is isolated by the PVDF bundle (section 4.5).
 
 Electrode dissolution. Mixed-metal-oxide anodes (section 9) wear by coating loss; life is a vendor figure at the cell current density, not assumed here. Titanium cathodes are passive. On shutdown a cell with metal on the cathode and Cl₂ on the anode is a galvanic cell; reverse current strips the deposit and damages the oxide coating. Rule: on rectifier trip, the channel holds a protection current of 1 % of rating (study) or the cell is drained within 30 minutes; anodes are never left wetted and unpolarized against a loaded cathode.
 
@@ -352,9 +353,10 @@ Census counts come from `_service_census.py` (regenerated with this revision). T
 
 | Service family | Class | Lines | T °C (known) | Wetted material and basis | Sources |
 | --- | --- | --- | --- | --- | --- |
-| Hot leach liquor | P2 | 46 | 40–85 | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C); the hot LEACH/CSTR draws and every P2 unit connection of section 2 | [S3], [S5] |
-| Acid or brine, at or below 60 °C | P1 | 54 | 10–50.6 | PVC-U Sch 80 P1; leach/EW metal-salt liquors in the ASSAY.md envelope; inter-cell EW links are free-fall launders (section 11) | [S10] |
+| Hot leach liquor | P2 | 44 | 40–85 | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C); the hot LEACH/CSTR draws and every P2 unit connection of section 2 | [S3], [S5] |
+| Acid or brine, at or below 60 C | P1 | 52 | 10–50.6 | PVC-U Sch 80 P1; leach/EW metal-salt liquors in the ASSAY.md envelope; inter-cell EW links are free-fall launders (section 11) | [S10] |
 | Aqueous process liquor (AQS-ASSAY-001 envelope) | P1 | 13 | ambient | PVC-U Sch 80 P1; the non-keyword aqueous fallback family: every wetted line still lands in a named family, none in a catchall | [S10] |
+| Wet acid H₂ + sweep air header | P1 | 13 | 40 | PVC-U, bonded (AQS-REV-H2-001 M3; X-MAT-06 adjudication, wet header): the 13 HDR_H2-wetted lines, the EW hood gas (cathode H2 + sweep air from EW_1 to EW_9) and the dryer return | AQS-REV-H2-001 |
 | Oxidizer, wet HF or PVDF unit | P3 | 13 | 25–85 | PVDF (P3); nitric and peroxide make-ups (section 5) and wet-HF product and make-up legs, including IA-HF-PROD (85 °C) into WS_HF_ED | [S1], [S11], [S12] |
 | Process vent gas | P3 | 31 | ambient | PVDF (P3) | [S1] |
 | Flue or acid gas | F1 | 10 | ambient | FRP/composite F1 per section 4.3 | section 4.3 |
@@ -364,7 +366,7 @@ Census counts come from `_service_census.py` (regenerated with this revision). T
 | Flue quench water | P5 | 1 | ambient | HDPE P5 | section 2 audit |
 | Propylene-glycol ground loop | P5 | 1 | ambient | HDPE DR-11 buried, 25 % PG freeze protection (node design, S43) | section 2 audit |
 | Q3/Q4 water loop | M1 | 20 | ambient | 316L loops | section 4.4 basis |
-| Dry gas, H₂/O₂/N₂/CO₂ | M1 | 47 | 20–30 | 316L with M6 dielectric breaks; AQS-REV-H2-001 holds the H₂ wetted basis | section 6 |
+| Dry gas, H2/O2/N2/CO2 | M1 | 38 | 20–30 | 316L with M6 dielectric breaks; AQS-REV-H2-001 holds the H₂ wetted basis | section 6 |
 | Wet methanol service | M1 | 11 | ambient | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study); covers crude MeOH, MeOH fuel, dock shipment and the VDF/TFE carbon-source lines | AQS-REV-H2-001 |
 | Organic liquid (solvent make-up) | M1 | 1 | ambient | 316L where wet per the WS_SOLV duty | duty sheets |
 | Q1/Q2 thermal oil | M2 | 12 | hold | Carbon steel A106 Gr B per section 4.4 | [S8] |
@@ -380,7 +382,7 @@ These families are governed by issued per-unit materials and are pending a PIP-0
 | Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours) | 7 | Not piped: launder/pour hot faces (M7); ISO route rows retained for geometry only | not piped |
 | Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs) | 9 | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions; VDF_SYN Hastelloy C-276 reactors, Ni cracking tube, PTFE-lined coolers; TFE_SYN Inconel 600 pyrolysis tube, Hastelloy C-276 coolers; POLY_F Hastelloy C-276 wetted, PTFE gasketed. The wet-HF and H₂SO₄ make-up legs into these units are classed separately (P3 and M2 above) | PIP-003 Rev B |
 | Dopant concentrates (S36, BBr₃/POCl₃ class) | 1 | PTFE/PFA handling per the semiconductor-reagent practice; flow 0.0 kg/d (nominally closed), no pipe class | PIP-003 Rev B |
-| CaCl₂/MgCl₂ brine concentrates to molten-salt pots | 3 | Unit task 09 wetted-material selection pending (MG_POT, CA_POT and F_RECOVER duty section 3, across the AQS-ASSAY-001 Rev C bounding cases); closes with the pot-cell material selection (X-MAT-06) | PIP-003 Rev B or unit-specific |
+| CaCl₂/MgCl₂ brine concentrates to molten-salt pots | 3 | Unit task 09 wetted-material selection pending (MG_POT, CA_POT and F_RECOVER duty section 3, across the AQS-ASSAY-001 Rev C bounding cases); selection stands open under unit task 09 (tracked on the X-MAT pot-cell follow-up) | PIP-003 Rev B or unit-specific |
 
 ### 12.3 Dispositions of the section 2 ambiguous list
 
@@ -403,3 +405,237 @@ The 2026-10-15 audit items below were ambiguous then and are resolved by the sec
 | OIL sector (reducing, hot) | M7 hot faces on the pyrolysis units; M2 hydrocarbon family above for the cut, recycle and fuel lines |
 | MFG units with "316L where wet" | Duties name the wet streams per unit; classed into the families above; the pot-cell units sit in 12.2 |
 | EW_1 to EW_9 (dissolution and stray current) | Sections 9 and 11 (X-MAT-18/X-MAT-07) |
+
+## 13. Ambiguous audit list, resolved. Rev M (X-MAT-06)
+
+X-MAT-06 Done when: each unit in the section 2 ambiguous list has a material with a stated stream and
+temperature. Method. Three dispositions cover the list: (a) the already-issued sections of this document
+that resolve their units (13.4 pointer list); (b) the hand adjudications below - the two material
+conflicts, the material selections the graph lacked, and the previously unstated temperatures, each
+carrying its basis ("no invented rates": every temperature here is an edge params.T_C stamp, a loop
+t_nom, or the registered 40 C ambient A-M-269); (c) the generated per-unit table of section 13.2 for
+every unit whose generated duty sheet still carries the unresolved section 3 template. The done-when
+check is machine: `python3 docs-authority/_ambiguous_units.py --done` prints the section 2 roster
+coverage and exits nonzero if any listed unit is uncovered (2026-10-21: roster 77 units - 27 covered by
+issued sections, 18 by 13.1, 32 by 13.2 - no misses).
+
+### 13.1 Hand adjudications
+
+| Unit | Material | Stream | Temperature (basis) | Notes |
+| --- | --- | --- | --- | --- |
+| Q3_A, Q3_B | SA-240 304L, welded (Rev M adjudication; replaces PP-H) | treated closed-loop water, Q3 tier | 100 C (node t_nom_C, AQS-DUTY-008 sec. 5 / AQS-HEAT-LADDER-001) | PP-H is an 80 C class material ([S4]); the 100 C tier would exceed it. Q4_A/B (70 C) keep PP-H; Q4_BUS keeps PP-H SDR 11 (80 C class covers 70 C) |
+| HDR_H2 | PVC-U, bonded (AQS-REV-H2-001 section 2: wet, reducing, acid, M3) | wet cathode H2 + hood sweep air from EW_1..EW_9, can carry HCl/Cl2 mist; dried return IA-H2-IN | 40 C edge stamps (A-M-269 where unstamped) | the graph design row ("316L tube") contradicted the issued review; corrected Rev M. Section 6 (PVC-U) and section 11 reworded to this one ruling; the 13 wetted header lines class P1 (AQS-PIP-004 Rev C) |
+| HDR_O2 | 316L, oxygen-clean per ASTM G93 (issued design row) | dry O2 header: ASU/receiver product and the fuel-cell, peroxide, genset, afterburner, product draws | ambient basis (A-M-269; header edges unstamped) | the M7 dry-oxygen ruling of section 2 stands; a future wet-O2 leg classes P3 per the section 12 families |
+| GLASS_DIGEST | 316L, CA 0 (duty section 3) | alkali digest + chloride carry of the foundry shell ("chloride or scrub liquor", duty section 3); leaves as IA-DIG-LIQ silicate liquor | digest heat on the Q3 tier (t_nom 100 C); NaOH make-up inlet 50.6 C (edge); liquor out 40 C (edge) | the section 2 "may be HF or alkali" question resolves to alkali per the duty text; lines class per the section 12 families |
+| RELIEF_H2 | 316L, annealed, grounded (AQS-REV-H2-001 section 2; M7 flame exposure) | S24 dry H2 contingency relief | ambient conduit; upstream dryer outlet 30 C (edge) | regeneration conditions of H2_DRYER stay a named hold |
+| H2_DRYER | inlet knock-out PVC-U; vessel and outlet 316L annealed (review) | wet H2 1.975 kg/d with ppm HCl in, dry H2 out to CRYO_H2 and RELIEF_H2 | 30-40 C (IA-H2-IN 30 C, hood legs 40 C edges) | regeneration temperature remains held (named in the review holds) |
+| MEOH_TANK | SA-240 304L, welded (issued design_storage row; supersedes the duty template) | crude MeOH, MeOH fuel, dock transfer | ambient basis (A-M-269) | 304L is sufficient for non-chloride methanol; the pipe class stays M1 (316L) |
+| MEOH_COND | 316L shell and coil (issued design row) | methanol/water traces from the synthesis loop and fuel cell (26.72 kg/d water) | ambient basis (A-M-269; edges unstamped, condensing duty 0.71 kW) | - |
+| WS_SOLV | SA-240 304L, welded (design_storage; template superseded) | solvent wash (ethanol and acetone; IA-SOLV-WB) | 40 C (edge stamp) | - |
+| WS_DOPE | PE, rotomoulded (design_storage; template superseded) | spent dopant and rinses (S36 nominally closed, 0.0 kg/d) | ambient basis | concentrate handling stays section 12.2 / X-MAT-03 |
+| WS_SLURRY | PE, rotomoulded (design_storage; template superseded) | colloidal silica slurry (S37, P4) | ambient basis | gasket detail stays X-MAT-03 |
+| FAB_UPW_TANK | PE, rotomoulded (design_storage) | UPW (S01, IA-UPW-FAB) | ambient basis | - |
+| HDR_UPW | PVDF SDR 21, fusion-welded (issued design row) | UPW distribution | ambient basis | - |
+| BMED_UPW_POLISH | PVC-U per the section 12 water families and [S10] (template superseded; neutral UPW loop) | S25 distillate in; UPW to FAB_UPW_TANK and REMIN out | 40 C (edge stamps IA-UPW-REMIN / IA-UPW-REJ) | - |
+| TERRACE_IRRIG | none - no wetted stream in the graph (0 kg/d basis; land allocation) | irrigation water delivered at the bed nodes | n/a | any future irrigation line classes P5 HDPE |
+| CURTAIL | none - heat-only stub (0 kg/d) | curtailment heat edges | n/a | duty basis 0 kg/d |
+| HEAT_SINK | none - heat-only stub (0 kg/d) | SQ-EVAP_ACID / _BASE / _VS reject edges | n/a | duty basis 0.2 kW electrical |
+| MET_HX_Q4 | shell side 316L where wet (duty template); furnace-side hot faces M7 | furnace coil + shell cooling water, named 40-60 C on the edges | 40-60 C (named in the edge carries) | node is a 0 kg/d / 0 kW study stub until the melt-heat recovery is sized; the statement activates with that sizing |
+| CRYO_HX_Q4 | 316L, condensation, no carbon steel (duty section 3) | S54 condensate; Q4 water | cryogenic condensation; Q4 tier 70 C | - |
+| GEO_GHEX / GEO_HP / GEO_HP_CLOSED_LOOP | HDPE DR-11 U-tubes (GHEX); 316L plates, R410A-class refrigerant (HP); HDPE DR-11 buried 25 % PG (closed loop) - all issued design rows | ground loop S43 | heat source 285 K (graph); PG freeze protection -10 C | - |
+| GEO_ORC | packaged ORC skid: the maker-package wetted materials govern (no plant piping class) | R245fa working fluid loop (graph carries) | maker-package data (applied machine, not plant pipework) | the piped census carries only the electrical edge for this unit |
+| MEOH_SYNTH | 316L (AQS-REV-H2-001 section 2; API 941 basis) | dry H2/CO2 synthesis gas; crude MeOH | 50 bar a, 250 C (review section 5 study) | resolved at Rev E; the duty-sheet "Held." lead is cosmetic only |
+
+### 13.2 Template-roster units (generated)
+
+Generated by `docs-authority/_ambiguous_units.py` from the graph and the regenerated line list at this
+revision; rerun it after any regen to refresh. "ambient (A-M-269)" is the registered 40 C ambient
+temperature basis for unstamped wetted lines.
+
+| Unit | Wetted stream (stream_id: carries) | Class | T °C | Node material (graph) |
+| --- | --- | --- | --- | --- |
+| BLOW_MOLD | IA-BLOW-IN: C11-C18 to the mold | solids (not piped) | ambient (A-M-269) | per service family |
+| BLOW_MOLD | IA-BLOW-OUT: blown parts | solids (not piped) | ambient (A-M-269) | per service family |
+| BOARD_MILL | no wetted stream (heat/electrical only, 0 kg/d basis) | — | ambient | duty sheet template |
+| COLD_MILL | S59: sheet / strip | solids (not piped) | ambient (A-M-269) | per service family |
+| COLD_MILL | IA-MELT-MILL: melt to the mill | solids (not piped) | ambient (A-M-269) | per service family |
+| CURTAIL | no wetted stream (heat/electrical only, 0 kg/d basis) | — | ambient | duty sheet template |
+| ELECTRODE_COAT | IA-COAT-IN: nickel sheet to the booth | solids (not piped) | ambient (A-M-269) | per service family |
+| ELECTRODE_COAT | IA-COAT-OUT: coated anode | solids (not piped) | ambient (A-M-269) | per service family |
+| GAS_ATOMIZER | S60: metal powder | solids (not piped) | ambient (A-M-269) | per service family |
+| GAS_ATOMIZER | IND_TO_ATOM: melt to atomizer when powder required | solids (not piped) | ambient (A-M-269) | per service family |
+| GAS_ATOMIZER | ATOM_TO_STOCK: powder stock | solids (not piped) | ambient (A-M-269) | per service family |
+| GAS_ATOMIZER | IA-MELT-ATOM: melt to the atomizer | solids (not piped) | ambient (A-M-269) | per service family |
+| GAS_ATOMIZER | IA-ATOM-REMELT: off-spec powder to remelt | solids (not piped) | ambient (A-M-269) | per service family |
+| GEO_GHEX | S43: geothermal loop fluid | P5 propylene-glycol ground loop (HDPE DR-11 per node de | ambient (A-M-269) | HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal |
+| GEO_HP_CLOSED_LOOP | S43: geothermal loop fluid | P5 propylene-glycol ground loop (HDPE DR-11 per node de | ambient (A-M-269) | HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C) |
+| GLASS_BURNOUT | HL-GLASS_BURNOUT-Q2-A: Q2 burnout, not Q4 | M2 Q1/Q2 thermal oil | ambient (A-M-269) | per service family |
+| GLASS_BURNOUT | HL-GLASS_BURNOUT-Q2-B: Q2 burnout, not Q4 | M2 Q1/Q2 thermal oil | ambient (A-M-269) | per service family |
+| GLASS_BURNOUT | IA-GLASS-02: milled cullet | solids (not piped) | ambient (A-M-269) | per service family |
+| GLASS_BURNOUT | IA-GLASS-03: burned cullet | solids (not piped) | ambient (A-M-269) | per service family |
+| GLASS_MILL | IA-GLASS-01: rinsed cullet | solids (not piped) | ambient (A-M-269) | per service family |
+| GLASS_MILL | IA-GLASS-02: milled cullet | solids (not piped) | ambient (A-M-269) | per service family |
+| GLASS_MILL | SHELL_TO_GLASS: spent ceramic shell to solids line | solids (not piped) | ambient (A-M-269) | per service family |
+| GLASS_MILL | GLASS_MILL_TO_DIGEST: milled shell into digest | solids (not piped) | ambient (A-M-269) | per service family |
+| GLASS_MILL | IA-MILL-LOSS: mill dust | solids (not piped) | ambient (A-M-269) | per service family |
+| GLASS_RINSE | IA-GLASS-01: rinsed cullet | solids (not piped) | ambient (A-M-269) | per service family |
+| GLASS_RINSE | IA-CULLET: cullet | P2 hot leach liquor | ambient (A-M-269) | per service family |
+| HABITATION | S02: O2 | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | per service family |
+| HABITATION | S12: grey/solids | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| HABITATION | S15: photosynthetic O2 | P3 process vent gas | ambient (A-M-269) | per service family |
+| HABITATION | S21: clean tower water | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| HABITATION | S26: potable | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| HABITATION | S78: ferment feed | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| HABITATION | FARM_O2_TO_HAB: farm O2 | P3 process vent gas | ambient (A-M-269) | per service family |
+| HABITATION | HAB_CO2_TO_HDR: habitation CO2 | P3 process vent gas | ambient (A-M-269) | per service family |
+| HABITATION | HAB_GREY: grey water | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| HABITATION | HAB_BLACK: black water | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| HABITATION | S90: metabolic CO2 (desorbed from the HAB CO2 sorbent bed) | P3 process vent gas | ambient (A-M-269) | per service family |
+| HABITATION | IA-Q4-LIFE: life heat | M1 Q3/Q4 water loop | ambient (A-M-269) | per service family |
+| HABITATION | IA-MFG-OUT: goods in service | solids (not piped) | ambient (A-M-269) | per service family |
+| HABITATION | IA-HAB-VAP: respired and evaporated water | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | per service family |
+| HABITATION | IA-UPW-HAB: potable makeup | P5 water | ambient (A-M-269) | per service family |
+| HABITATION | IA-NOX-HAB: scrubber water | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| HABITATION | IA-WEAR: worn goods | solids (not piped) | ambient (A-M-269) | per service family |
+| HABITATION | IA-BLK-01: vacuum-toilet blackwater | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| HABITATION | IA-URINE: urine to the blackwater barrier train | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| HABITATION | IA-FEC-01: fecal solids to the blackwater barrier train | solids (not piped) | ambient (A-M-269) | per service family |
+| HABITATION | IA-GAL: galley food waste to the blackwater barrier train | solids (not piped) | ambient (A-M-269) | per service family |
+| HABITATION | S14D: food | solids (not piped) | ambient (A-M-269) | per service family |
+| HDR_CO2 | S85: CO2 product after FLUE_KO | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | 316L tube |
+| HDR_CO2 | CO2_TO_FARM: CO2 enrichment | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | 316L tube |
+| HDR_CO2 | HAB_CO2_TO_HDR: habitation CO2 | P3 process vent gas | ambient (A-M-269) | 316L tube |
+| HDR_CO2 | S89: CO2 enrichment dose (FARM AHU supply) | M1 dry gas, H2/O2/N2/CO2 | 20 | 316L tube |
+| HDR_CO2 | S90: metabolic CO2 (desorbed from the HAB CO2 sorbent bed) | P3 process vent gas | ambient (A-M-269) | 316L tube |
+| HDR_CO2 | IA-HCO2-MEOH: CO2 not taken by the bed | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | 316L tube |
+| HDR_N2 | IA-AB-AIR: combustion air | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | 316L tube |
+| HDR_N2 | IA-AHU-AIR: outdoor air moisture | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | 316L tube |
+| HDR_N2 | IA-NH3-SRC: nitrogen to ammonia | P1 acid or brine, at or below 60 C | 40 | 316L tube |
+| HDR_N2 | IA-GEN-AIR: genset air | P1 aqueous process liquor (AQS-ASSAY-001 envelope) | ambient (A-M-269) | 316L tube |
+| HDR_N2 | IA-EW4-N2: sweep nitrogen | P1 acid or brine, at or below 60 C | ambient (A-M-269) | 316L tube |
+| HDR_N2 | IA-N2-RET: nitrogen return | solids (not piped) | ambient (A-M-269) | 316L tube |
+| HDR_N2 | IA-AIR-RX-OUT: plant air from the receiver bank | P3 process vent gas | ambient (A-M-269) | 316L tube |
+| LITHO_COAT | IA-LITHO-IN: spent resist and solvent | solids (not piped) | ambient (A-M-269) | per service family |
+| LITHO_COAT | IA-LITHO-CARRY: resist/solvent carry (coat catch bowl + developer) to the develop bench | solids (not piped) | ambient (A-M-269) | per service family |
+| LITHO_DEV | IA-LITHO-OUT: spent resist and solvent | solids (not piped) | ambient (A-M-269) | per service family |
+| LITHO_DEV | IA-LITHO-CARRY: resist/solvent carry (coat catch bowl + developer) to the develop bench | solids (not piped) | ambient (A-M-269) | per service family |
+| MET_AHU | S62: MFG metal-aisle capture feed | F1 flue or acid gas | ambient (A-M-269) | per service family |
+| MET_AHU | S71: metal-aisle fume / mist / dust | F1 flue or acid gas | ambient (A-M-269) | per service family |
+| MET_AHU | IA-MET-AIR-RET: scrubbed metal-aisle air returned to the hall | P3 process vent gas | ambient (A-M-269) | per service family |
+| MFG_SHOP | S08: metals/Si | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | S08G: glass/ceramic goods | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | S16: scrap | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | S58: wire product | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | S59: sheet / strip | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | S60: metal powder | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | S61: metal scrap | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | STOCK_TO_MFG: plate/rod/wire to manufacturing | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | MFG_SCRAP_TO_IND: manufacturing scrap return | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | POLY_TO_MFG: polymer feedstock to manufacturing | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | GREASE_CA_TO_MFG: Ca grease | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | GREASE_LI_TO_MFG: Li grease | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-EW-MET-1: plated sheet | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-EW-MET-2: plated sheet | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-EW-MET-3: plated sheet | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-EW-MET-4: plated sheet | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-EW-MET-5: plated sheet | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-EW-MET-6: plated sheet | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-EW-MET-7: plated sheet | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-EW-MET-8: plated sheet | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-EW-MET-9: plated sheet | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-POL-CAKE: recovered cake | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-MFG-OUT: goods in service | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-CHAR: char reductant | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | IA-BLOW-OUT: blown parts | solids (not piped) | ambient (A-M-269) | per service family |
+| MFG_SHOP | CUT-3-OUT: C19-C28 from the tank | M2 hydrocarbon product, fuel or wax cut (carbon steel p | ambient (A-M-269) | per service family |
+| MFG_SHOP | FLUORO_TO_MFG: fluoropolymer stock issue to the shop | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | DOCK_EXPORT_TBD: goods / cassettes / surplus freight (ID TBD) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-N2-VENT: nitrogen vent | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-NA-PURGE: sodium salt purge equal to the make-up mass | P2 hot leach liquor | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-H2O-MU: water make-up for H and O leaving as product | P2 hot leach liquor | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-C5-SHIP: C5-C10 product shipped | M2 hydrocarbon product, fuel or wax cut (carbon steel p | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-C11-SHIP: C11-C18 surplus shipped | M2 hydrocarbon product, fuel or wax cut (carbon steel p | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-C19-SHIP: C19-C28 surplus shipped | M2 hydrocarbon product, fuel or wax cut (carbon steel p | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-NAOH-MU: purchased NaOH flake make-up | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-AIR-IN: intake air | P5 water | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-O2-SHIP: O2 cylinders shipped at the dock | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-MEOH-SHIP: methanol shipped at the dock | M1 wet methanol service (316L per unit duty sheets) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-SOLV-MU: solvent resupply (ethanol and acetone) | M1 organic liquid (316L per unit duty sheets) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-CAF2-MU: fluorspar make-up, acid-spar class >= 97 % CaF2 | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-H2SO4-MU: 98 wt% sulfuric acid make-up | M2 98 wt% H2SO4 make-up; carbon steel passivates above  | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-GYPSUM-SHIP: fluorgypsum (anhydrite) cake byproduct | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-ALCL3-MU: anhydrous AlCl3 feed (mining-waste chloride class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-CL2-SHIP: chlorine byproduct export (water-treatment class product) | P3 process vent gas | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-MGCL2-MU: CaCl2-MgCl2 brine concentrate (mining-waste class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-CACL2-MU: CaCl2 brine concentrate (mining-waste class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-CA-CL2-SHIP: chlorine byproduct export (water-treatment class) | P3 process vent gas | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-TIO2-MU: TiO2-equivalent rutile concentrate (dock import class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-C-TI: carbon reductant (petcoke/char class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-KROLL-CO: chlorinator CO (fuel-gas class export) | P3 process vent gas | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-MOO3-MU: MoO3-equivalent concentrate (dock import class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-C-MO: carbon reductant (petcoke/char class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-MO-VENT: chlorinator CO2 (vent class) | P3 process vent gas | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-CR2O3-MU: Cr2O3-equivalent chromite concentrate (dock import class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-C-CR: carbon reductant (petcoke/char class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-CR-VENT: chlorinator CO (fuel-gas class export) | P3 process vent gas | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-WAX-MU: pattern wax make-up (petro-wax class import) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-SILICA-MU: foundry silica (flour/stucco/binder make-up) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-BURNOUT-VENT: dewax/burnout off-gas (burned wax + steam) | P3 process vent gas | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-SHELL-EXPORT: spent foundry silica (solids return class) | solids (not piped) | ambient (A-M-269) | per service family |
+| NORTH_DOCK | IA-METAL-SHIP: surplus foundry metal export (pot-line product, dispatch campaign) | solids (not piped) | ambient (A-M-269) | per service family |
+| NUTRIENT_DOSE | S07: nutrients | P5 water | ambient (A-M-269) | PE (rotomoulded / fabricated) |
+| NUTRIENT_DOSE | S30: digest liquor / nutrients | P1 acid or brine, at or below 60 C | ambient (A-M-269) | PE (rotomoulded / fabricated) |
+| NUTRIENT_DOSE | NUT_TO_BED: nutrient solution | P5 water | ambient (A-M-269) | PE (rotomoulded / fabricated) |
+| NUTRIENT_DOSE | IA-NUT-01: digest surplus | P5 water | ambient (A-M-269) | PE (rotomoulded / fabricated) |
+| NUTRIENT_DOSE | IA-LEACH-BD: bleed salts to nutrient | P2 hot leach liquor | ambient (A-M-269) | PE (rotomoulded / fabricated) |
+| NUTRIENT_DOSE | IA-NUT-LEACH: nutrient surplus | P2 hot leach liquor | 40 | PE (rotomoulded / fabricated) |
+| NUTRIENT_DOSE | IA-NOX-N: nitrate liquor | P2 hot leach liquor | ambient (A-M-269) | PE (rotomoulded / fabricated) |
+| NUTRIENT_DOSE | IA-NUT-BED: nitrate and bleed salts | P5 water | ambient (A-M-269) | PE (rotomoulded / fabricated) |
+| NUTRIENT_DOSE | IA-SIC-RET: compost carbon returned to the leach | P2 hot leach liquor | 40 | PE (rotomoulded / fabricated) |
+| NUTRIENT_DOSE | IA-BLK-NUT: released digest-liquor nutrient split | P1 acid or brine, at or below 60 C | ambient (A-M-269) | PE (rotomoulded / fabricated) |
+| SOLAR_PV_CELL | IA-PV-IN: dopant concentrate | solids (not piped) | ambient (A-M-269) | per service family |
+| SOLAR_PV_CELL | IA-PV-OUT: dopant into the wafer fab | solids (not piped) | ambient (A-M-269) | per service family |
+| TERRACE_IRRIG | no wetted stream (heat/electrical only, 0 kg/d basis) | — | ambient | duty sheet template |
+| VCD_TRAIN | S13: condensate | P5 water | ambient (A-M-269) | per service family |
+| VCD_TRAIN | S25: VCD distillate | P1 aqueous process liquor (AQS-ASSAY-001 envelope) | ambient (A-M-269) | per service family |
+| VCD_TRAIN | S28: VCD brine | P2 hot leach liquor | ambient (A-M-269) | per service family |
+| VCD_TRAIN | S29: treated grey | P1 acid or brine, at or below 60 C | ambient (A-M-269) | per service family |
+| VCD_TRAIN | S52: PEM product H2O | P1 aqueous process liquor (AQS-ASSAY-001 envelope) | ambient (A-M-269) | per service family |
+| VCD_TRAIN | IA-NUT-01: digest surplus | P5 water | ambient (A-M-269) | per service family |
+| VCD_TRAIN | IA-VCD-BD: still bottoms | P2 hot leach liquor | 40 | per service family |
+| VCD_TRAIN | IA-LEACH-VCD: leach liquor water bleed to vapour-compression distillation | P2 hot leach liquor | 85 | per service family |
+| VCD_TRAIN | IA-H2P-H2O: TSA regeneration condensate | P5 water | ambient (A-M-269) | per service family |
+| WAFER_FAB | S03: N2 | M1 dry gas, H2/O2/N2/CO2 | ambient (A-M-269) | per service family |
+| WAFER_FAB | S36: B/P/As concentrate; BBr₃ / POCl₃ class | solids (not piped) | ambient (A-M-269) | per service family |
+| WAFER_FAB | S37: colloidal silica slurry | P4 alkaline silica slurry (PP-H; SIMONA class data) | ambient (A-M-269) | per service family |
+| WAFER_FAB | S39: spent slurry and etch liquor | P4 alkaline silica slurry (PP-H; SIMONA class data) | ambient (A-M-269) | per service family |
+| WAFER_FAB | S39B: solvent and photoresist | M2 hydrocarbon product, fuel or wax cut (carbon steel p | ambient (A-M-269) | per service family |
+| WAFER_FAB | STOCK_TO_FAB: specialty stock to fab | solids (not piped) | ambient (A-M-269) | per service family |
+| WAFER_FAB | POLY_TO_FAB: polymer feedstock to fab | solids (not piped) | ambient (A-M-269) | per service family |
+| WAFER_FAB | IA-FAB-LOSS: kerf | solids (not piped) | ambient (A-M-269) | per service family |
+| WAFER_FAB | IA-UPW-USE: fab UPW | P5 water | ambient (A-M-269) | per service family |
+| WAFER_FAB | IA-FAB-SPENT: spent UPW | P2 hot leach liquor | 40 | per service family |
+| WAFER_FAB | IA-LITHO-IN: spent resist and solvent | solids (not piped) | ambient (A-M-269) | per service family |
+| WAFER_FAB | IA-PV-OUT: dopant into the wafer fab | solids (not piped) | ambient (A-M-269) | per service family |
+| WIRE_DRAW | S57: billet / melt / charge | solids (not piped) | ambient (A-M-269) | per service family |
+| WIRE_DRAW | S58: wire product | solids (not piped) | ambient (A-M-269) | per service family |
+| WIRE_DRAW | STOCK_TO_WIRE_DRAW: rod/wire for final sizing | solids (not piped) | ambient (A-M-269) | per service family |
+| WIRE_DRAW | IA-WIRE-LOSS: draw scrap | solids (not piped) | ambient (A-M-269) | per service family |
+| WIRE_DRAW | IA-DRAW-FUME: draw fume | solids (not piped) | ambient (A-M-269) | per service family |
+
+32 template-roster units, 165 wetted lines; every unit carries a material, stream and temperature statement.
+
+### 13.4 Sections that already resolved their ambiguous items
+
+| Section 2 item | Issued resolution |
+| --- | --- |
+| EW_1 to EW_9 | Sections 9 (Rev J, electrode materials) and 11 (Rev K, galvanic/stray current) |
+| HX8 | Sections 4.1 and 4.5 (PVDF bundle) |
+| ZNBR2_BR2_REGEN | Section 3.1 (PVC-U shell/sump; hypobromite coupon test remains the named verification) |
+| WS_NITRIC, WS_PEROX | Section 5 (Rev D, concentration-based limits) |
+| ETOH_STILL, BUOH_STILL | Section 4.2 |
+| VCD_TRAIN | Section 10 bullet (Ti Gr 2 / PVDF on the 85 C draw) |
+| FLUE_KO, BAGHOUSE, AFTERBURNER_FLUE | Section 4.3 (F1; quench edge is its own follow-up) |
+| Q1_A to Q2_B | Section 4.4 (A106 Gr B at 250/150 C) |
+| GEO_GHEX, GEO_HP, GEO_HP_CLOSED_LOOP | Section 12.1 glycol family + issued graph design rows (13.1 row) |
+| MEOH_SYNTH | Section 6 and AQS-REV-H2-001 (13.1 row confirms) |

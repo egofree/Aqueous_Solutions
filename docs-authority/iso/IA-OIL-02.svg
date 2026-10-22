@@ -6,8 +6,8 @@
 <circle cx="40.0" cy="580.0" r="5" fill="none" stroke="black"/><text x="48.0" y="594.0">OIL_FRAC</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-OIL-02</text>
-<text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="614">DN15  class M2  CS ASTM A106 Gr B</text>
 <text x="20" y="628">OIL_PYRO -> OIL_FRAC</text>
-<text x="20" y="642">pipe 1.88 m in 2 pieces; cut 939 939 mm</text>
-<text x="20" y="656">1 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 4 solvent joints</text>
+<text x="20" y="642">pipe 1.82 m in 2 pieces; cut 912 912 mm</text>
+<text x="20" y="656">1 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 4 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

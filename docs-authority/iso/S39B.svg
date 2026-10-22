@@ -8,7 +8,7 @@
 <circle cx="40.0" cy="558.4" r="5" fill="none" stroke="black"/><text x="48.0" y="572.4">OIL_FRAC</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S39B</text>
-<text x="20" y="614">DN15  class M1  316L ASTM A312</text>
+<text x="20" y="614">DN15  class M2  CS ASTM A106 Gr B</text>
 <text x="20" y="628">WAFER_FAB -> OIL_FRAC</text>
 <text x="20" y="642">pipe 22.92 m in 7 pieces; cut 1162 6000 6000 924 1924 6000 912 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 butt weld joints</text>

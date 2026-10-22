@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - No mass throughput. No volume is invented.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. 316L plates, R410A-class refrigerant, propylene-glycol brine source (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
 
 4. Nozzles. Origin -7000, 5200, 0 mm. Size 1600 × 800 × 1400 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, S06, outlet, +Y face center, -6200, 6000, 700 mm. Height 700 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

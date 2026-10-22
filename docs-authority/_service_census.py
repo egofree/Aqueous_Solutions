@@ -38,6 +38,7 @@ FAMILY = [
     ('dry gas', 'M1'),
     ('flue', 'F1'),
     ('process vent', 'P3'),
+    ('wet acid H2 + sweep air header', 'P1'),
     ('molten metal', '—'),
     ('fluoro synthesis', '—'),
     ('dopant', '—'),

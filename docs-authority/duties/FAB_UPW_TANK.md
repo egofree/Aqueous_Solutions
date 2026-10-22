@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - V = (60.00/1000)×(168/24) = 0.4200 m³. 7 days of throughput.
 
-3. Material. 316L if the stream is wet or chloride. Carbon steel only if the stream is a dry hydrocarbon or a dry gas. Corrosion allowance 0 mm on 316L, 1.5 mm on carbon steel. Pit rate is not measured.
+3. Material. PE (rotomoulded / fabricated) (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
 
 4. Nozzles. Origin 21000, 8200, 0 mm. Size 500 × 500 × 800 mm. Inlets are the center of the −Y face. Outlets are the center of the +Y face. Atmospheric joints are hose. DN is copied from the edge and is not recalculated.
 - N1, IA-UPW-FAB, inlet, -Y face center, 21250, 8200, 400 mm. Height 400 mm from the bottom. Bore not calculated. Rating hose, atmospheric.

@@ -27,7 +27,7 @@
 <circle cx="356" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="356" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="356" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="378" y="170" font-size="7">SIF-150 · SIL -</text>
+<text x="378" y="170" font-size="7">SIF-151 · SIL -</text>
 <text x="378" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="514" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="514" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -72,13 +72,13 @@
 <polygon points="586,424 577,420 577,428" fill="#111"/>
 <text x="24" y="405" font-size="9" fill="#666" text-anchor="start">WS_DOPE</text>
 <text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">S36</text>
-<text x="24" y="437" font-size="10" text-anchor="start">0.0 kg/d · DN15 P1</text>
+<text x="24" y="437" font-size="10" text-anchor="start">0.0 kg/d · DN15 —</text>
 <text x="598" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
 <line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,470 577,466 577,474" fill="#111"/>
 <text x="24" y="451" font-size="9" fill="#666" text-anchor="start">WS_SLURRY</text>
 <text x="24" y="465" font-size="11" font-weight="600" text-anchor="start">S37</text>
-<text x="24" y="483" font-size="10" text-anchor="start">3.3 kg/d · DN15 P1</text>
+<text x="24" y="483" font-size="10" text-anchor="start">3.3 kg/d · DN15 P4</text>
 <text x="598" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="start">N3</text>
 <line x1="430" y1="516" x2="577" y2="516" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,516 577,512 577,520" fill="#111"/>
@@ -121,7 +121,7 @@
 <polygon points="1070,378 1061,374 1061,382" fill="#111"/>
 <text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">LEACH_CSTR_1</text>
 <text x="1476" y="373" font-size="11" font-weight="600" text-anchor="end">S39</text>
-<text x="1476" y="391" font-size="10" text-anchor="end">3.3 kg/d · DN50 P2</text>
+<text x="1476" y="391" font-size="10" text-anchor="end">3.3 kg/d · DN50 P4</text>
 <text x="902" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
 <line x1="979.7" y1="378" x2="971.7" y2="378" stroke="#111" stroke-width="1.2"/>
 <polygon points="970.7,378 976.7,374.5 976.7,381.5" fill="#111"/>
@@ -135,7 +135,7 @@
 <polygon points="1070,424 1061,420 1061,428" fill="#111"/>
 <text x="1476" y="405" font-size="9" fill="#666" text-anchor="end">OIL_FRAC</text>
 <text x="1476" y="419" font-size="11" font-weight="600" text-anchor="end">S39B</text>
-<text x="1476" y="437" font-size="10" text-anchor="end">0.0 kg/d · DN15 M1</text>
+<text x="1476" y="437" font-size="10" text-anchor="end">0.0 kg/d · DN15 M2</text>
 <text x="902" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
 <line x1="979.7" y1="424" x2="971.7" y2="424" stroke="#111" stroke-width="1.2"/>
 <polygon points="970.7,424 976.7,420.5 976.7,427.5" fill="#111"/>
@@ -154,7 +154,7 @@
 <g id="aqs-title-block"><rect x="1116" y="765" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="782" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-WAFER_FAB</text>
 <text x="1124" y="799" font-size="9">P&amp;ID WAFER_FAB (fab, FAB sector)</text>
-<text x="1124" y="816" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev fa0848c0   Issued 2026-10-19</text>
+<text x="1124" y="816" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 8e48f256   Issued 2026-10-19</text>
 <text x="1124" y="833" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="850" font-size="9">Graph SHA-256 9186747d21cafb4a   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="850" font-size="9">Graph SHA-256 c89af1e294f2a104   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

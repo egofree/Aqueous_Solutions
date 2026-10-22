@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - Duct at 10 m/s. Gas 8.51 m³/h. Bore 17 mm, DN20. Not a packed tower.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. 316L tube (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
 
 4. Nozzles. Gas duct DN20 at 10 m/s. Bore from 8.51 m³/h is 17 mm. Drain DN15. No flange class. Atmospheric. Vent DN15 into the suction of this loop, not the room.
 

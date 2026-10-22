@@ -8,8 +8,8 @@
 <circle cx="40.0" cy="183.6" r="5" fill="none" stroke="black"/><text x="48.0" y="197.6">WAFER_FAB</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S37</text>
-<text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="614">DN15  class P4  PP-H ISO 15494</text>
 <text x="20" y="628">WS_SLURRY -> WAFER_FAB</text>
 <text x="20" y="642">pipe 8.59 m in 4 pieces; cut 2639 379 4379 1189 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 solvent joints</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

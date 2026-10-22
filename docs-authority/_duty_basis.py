@@ -96,6 +96,16 @@ def main():
             open(p, 'w').write(author(n, g, ins, outs, mi, mo, kw)); au += 1; continue
         s = open(p).read(); s0 = s
         s = re.sub(r'^1\. Basis\..*$', f'1. Basis. Mass in {f4(mi)} kg/d. Mass out {f4(mo)} kg/d. Electrical duty {kw:.4f} kW. In: {lst(ins)}. Out: {lst(outs)}.', s, count=1, flags=re.M)
+        # X-MAT-06: re-render section 3 only where it still carries a default template, so an
+        # issued graph design/design_storage material reaches the sheet; hand-written per-unit
+        # material texts (e.g. the AQS-REV-H2-001 rows) are never overwritten.
+        _ds = prm.get('design') or {}; _sto = prm.get('design_storage') or {}
+        _mat = _ds.get('material') or _sto.get('material')
+        if _mat:
+            _m3 = re.search(r'^3\. Material\..*$', s, flags=re.M)
+            if _m3 and _m3.group(0).startswith(('3. Material. 316L if the stream is wet', '3. Material. 316L where the stream is wet', '3. Material. Selection pending')):
+                _new = f'3. Material. {_mat} (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.'
+                if _new != _m3.group(0): s = s.replace(_m3.group(0), _new, 1)
         m = re.search(r'Envelope [\d×]+ mm, ([\d.]+) m³\. That box over this flow would be [\d.]+ h if it were full\.', s)
         if m and mi > 0: s = s.replace(m.group(0), re.sub(r'would be [\d.]+ h', f'would be {float(m.group(1))*1000/mi*24:.1f} h', m.group(0)))
         if s != s0: open(p, 'w').write(s); ch += 1

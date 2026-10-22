@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="691" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit CRYO_O2 · cold_box · sector CRYO · present</text>
 <text x="24" y="54" font-size="10.5">design 22000 kPa g · design T 25 C</text>
-<text x="24" y="72" font-size="10.5">Edges 3 in + 4 out · valves 4 placed / 1 unplaced · instruments 2 (0 SIF) · nozzles 9</text>
+<text x="24" y="72" font-size="10.5">Edges 3 in + 4 out · valves 4 placed / 1 unplaced · instruments 2 (1 SIF) · nozzles 9</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -17,9 +17,10 @@
 <text x="1234" y="134" font-size="8.5">instrument bubble (SIF: double)</text>
 <text x="24" y="152" font-size="10.5" font-weight="600">Instrument loops (tags are CRYO_O2-&lt;loop&gt;; range and signal per AQS-CTL-001)</text>
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
+<circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">PT-01</text>
-<text x="62" y="170" font-size="7">0-10 bar g</text>
-<text x="62" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
+<text x="62" y="170" font-size="7">SIF-013 · SIL 2</text>
+<text x="62" y="180" font-size="6.5" fill="#555">pressure low-low (leak) -&gt; close bank isolat</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">TE-01</text>
 <text x="220" y="170" font-size="7">-200 to 50 C</text>
@@ -82,7 +83,7 @@
 <g id="aqs-title-block"><rect x="1116" y="581" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="598" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRYO_O2</text>
 <text x="1124" y="615" font-size="9">P&amp;ID CRYO_O2 (cold_box, CRYO sector)</text>
-<text x="1124" y="632" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 2a47a868   Issued 2026-10-19</text>
+<text x="1124" y="632" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 8521f51d   Issued 2026-10-19</text>
 <text x="1124" y="649" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="666" font-size="9">Graph SHA-256 9186747d21cafb4a   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="666" font-size="9">Graph SHA-256 c89af1e294f2a104   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

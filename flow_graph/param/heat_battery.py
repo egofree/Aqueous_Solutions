@@ -30,6 +30,11 @@ TIER = {1: ('thermal oil', 'hb_oil_hold_kWh_th', 'hb_oil_swing_K', 250, 'hb_insu
 ISSUED = {1: (0.302, 0.200), 2: (0.302, 0.111), 3: (0.407, 0.174), 4: (0.602, 0.164)}
 MAT = {'thermal oil': ('SA-240 304L, welded', 'hb_rho_oil_kg_m3', 'hb_cp_oil_kJ_kgK'),
        'water': ('PP-H (fusion welded)', 'hb_rho_water_kg_m3', 'hb_cp_water_kJ_kgK')}
+# X-MAT-06 (2026-10-21): the Q3 tier holds 100 C water (t_nom), above the PP-H class limit of
+# 80 C ([S4], SIMONA PP tech.info; AQS-STD-002 section 13). The Q3 vessels are SA-240 304L welded
+# on the same hold basis; the Q4 vessels (70 C) keep PP-H.
+MAT_TIER = {('water', 3): 'SA-240 304L, welded (100 C tier is above the PP-H class of 80 C)',
+            ('water', 4): 'PP-H (fusion welded)'}
 INSUL = {1: ('microporous silica board', 'hb_k_micro_W_mK'), 2: ('microporous silica board', 'hb_k_micro_W_mK'),
          3: ('mineral wool', 'hb_k_wool_W_mK'), 4: ('PIR foam', 'hb_k_pir_W_mK')}
 AMBIENT_C, U_CONV = 20.0, 9.0          # hall air, W/m2 K combined surface film (ASTM_C680 class)
@@ -55,7 +60,7 @@ def design(d, g):
                       rho_kg_m3=rho, cp_kJ_kgK=cp, mass_kg=round(m, 1), V_req_m3=round(V_req, 4), V_m3=round(V, 4),
                       issued_V_m3=ISSUED[tier][0], D_mm=D, H_mm=H, insulation=f'{v(HB + ik):.0f} mm {INSUL[tier][0]}',
                       U_W_m2K=round(U, 2), area_m2=round(A, 3), standing_loss_kW=round(loss_kW, 3),
-                      issued_loss_kW=ISSUED[tier][1], wall_mm=wall, material=MAT[fluid][0],
+                      issued_loss_kW=ISSUED[tier][1], wall_mm=wall, material=MAT_TIER.get((fluid, tier), MAT[fluid][0]),
                       envelope=[800, 800, 1200], fits=bool(D <= 800 and H <= 1200))
     return out
 

@@ -8,8 +8,8 @@
 <circle cx="90.6" cy="160.9" r="5" fill="none" stroke="black"/><text x="98.6" y="174.9">OIL_PYRO</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  C29_TO_PYRO</text>
-<text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="614">DN15  class M2  CS ASTM A106 Gr B</text>
 <text x="20" y="628">C29_RECYCLE -> OIL_PYRO</text>
-<text x="20" y="642">pipe 7.51 m in 4 pieces; cut 3159 1979 1429 939 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 solvent joints</text>
+<text x="20" y="642">pipe 7.34 m in 4 pieces; cut 3132 1924 1374 912 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 8 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

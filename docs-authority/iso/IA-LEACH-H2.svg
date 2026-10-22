@@ -8,7 +8,7 @@
 <circle cx="220.1" cy="145.9" r="5" fill="none" stroke="black"/><text x="228.1" y="159.9">HDR_H2</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-LEACH-H2</text>
-<text x="20" y="614">DN50  class P2  CPVC Sch 80 ASTM F441</text>
+<text x="20" y="614">DN50  class P1  PVC-U Sch 80 ASTM D1785</text>
 <text x="20" y="628">LEACH_CSTR_1 -> HDR_H2</text>
 <text x="20" y="642">pipe 9.77 m in 4 pieces; cut 2470 4340 2040 920 mm</text>
 <text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 8 solvent joints</text>

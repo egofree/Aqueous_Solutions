@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 2. Size.
 - No mass throughput. No volume is invented.
 
-3. Material. 316L where the stream is wet. Corrosion allowance 0 mm. Pit rate is not measured.
+3. Material. PP-H SDR 11 (80 C class), fusion-welded (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
 
 4. Nozzles. Line list. Origin 12000, 0, 0 mm. Size 10000 × 80 × 80 mm. Atmospheric lines are hose. DN is copied from the edge and is not recalculated.
 

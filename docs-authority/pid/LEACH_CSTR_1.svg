@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-129 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-130 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -254,7 +254,7 @@
 <polygon points="586,1896 577,1892 577,1900" fill="#111"/>
 <text x="24" y="1877" font-size="9" fill="#666" text-anchor="start">WAFER_FAB</text>
 <text x="24" y="1891" font-size="11" font-weight="600" text-anchor="start">S39</text>
-<text x="24" y="1909" font-size="10" text-anchor="start">3.3 kg/d · DN50 P2</text>
+<text x="24" y="1909" font-size="10" text-anchor="start">3.3 kg/d · DN50 P4</text>
 <text x="598" y="1900" font-size="8" font-style="italic" fill="#555" text-anchor="start">N15</text>
 <line x1="430" y1="1942" x2="577" y2="1942" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1942 577,1938 577,1946" fill="#111"/>
@@ -317,7 +317,7 @@
 <polygon points="1070,470 1061,466 1061,474" fill="#111"/>
 <text x="1476" y="451" font-size="9" fill="#666" text-anchor="end">MEOH_FC</text>
 <text x="1476" y="465" font-size="11" font-weight="600" text-anchor="end">IA-CLOSE-10</text>
-<text x="1476" y="483" font-size="10" text-anchor="end">0.2 kg/d · DN50 P2</text>
+<text x="1476" y="483" font-size="10" text-anchor="end">0.2 kg/d · DN50 M1</text>
 <text x="902" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="end">N44</text>
 <path d="M 1023.6,464 L 1031.6,470 L 1023.6,476 Z M 1041.6,464 L 1033.6,470 L 1041.6,476 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="459.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
@@ -373,7 +373,7 @@
 <polygon points="1070,792 1061,788 1061,796" fill="#111"/>
 <text x="1476" y="773" font-size="9" fill="#666" text-anchor="end">HDR_H2</text>
 <text x="1476" y="787" font-size="11" font-weight="600" text-anchor="end">IA-LEACH-H2</text>
-<text x="1476" y="805" font-size="10" text-anchor="end">0.0 kg/d · DN50 P2</text>
+<text x="1476" y="805" font-size="10" text-anchor="end">0.0 kg/d · DN50 P1</text>
 <text x="902" y="796" font-size="8" font-style="italic" fill="#555" text-anchor="end">N41</text>
 <path d="M 1023.6,786 L 1031.6,792 L 1023.6,798 Z M 1041.6,786 L 1033.6,792 L 1041.6,798 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="781.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
@@ -454,7 +454,7 @@
 <g id="aqs-title-block"><rect x="1116" y="2283" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="2300" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-LEACH_CSTR_1</text>
 <text x="1124" y="2317" font-size="9">P&amp;ID LEACH_CSTR_1 (vessel, DIGESTER sector)</text>
-<text x="1124" y="2334" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 7accad50   Issued 2026-10-19</text>
+<text x="1124" y="2334" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev ab357575   Issued 2026-10-19</text>
 <text x="1124" y="2351" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="2368" font-size="9">Graph SHA-256 9186747d21cafb4a   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="2368" font-size="9">Graph SHA-256 c89af1e294f2a104   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

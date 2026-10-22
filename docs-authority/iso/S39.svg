@@ -8,8 +8,8 @@
 <circle cx="197.9" cy="580.0" r="5" fill="none" stroke="black"/><text x="205.9" y="594.0">LEACH_CSTR_1</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  S39</text>
-<text x="20" y="614">DN50  class P2  CPVC Sch 80 ASTM F441</text>
+<text x="20" y="614">DN50  class P4  PP-H ISO 15494</text>
 <text x="20" y="628">WAFER_FAB -> LEACH_CSTR_1</text>
 <text x="20" y="642">pipe 33.02 m in 8 pieces; cut 1170 6000 6000 4340 6000 1040 6000 2470 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 12 solvent joints</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 5/8 in; 12 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

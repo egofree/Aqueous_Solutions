@@ -8,8 +8,8 @@
 <circle cx="40.0" cy="201.9" r="5" fill="none" stroke="black"/><text x="48.0" y="215.9">PROD_C5_C10</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  CUT-1</text>
-<text x="20" y="614">DN15  class P1  PVC-U Sch 80 ASTM D1785</text>
+<text x="20" y="614">DN15  class M2  CS ASTM A106 Gr B</text>
 <text x="20" y="628">OIL_FRAC -> PROD_C5_C10</text>
-<text x="20" y="642">pipe 28.39 m in 7 pieces; cut 939 6000 6000 3279 6000 3329 2839 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 solvent joints</text>
+<text x="20" y="642">pipe 28.22 m in 7 pieces; cut 912 6000 6000 3224 6000 3274 2812 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 butt weld joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

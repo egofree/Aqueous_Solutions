@@ -8,8 +8,8 @@
 <circle cx="120.5" cy="499.6" r="5" fill="none" stroke="black"/><text x="128.5" y="513.6">NOX_SCRUB</text>
 <g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
 <text x="20" y="600">AQS-ISO-002  IA-NIT-VENT</text>
-<text x="20" y="614">DN15  class F1  FRP vinyl ester</text>
+<text x="20" y="614">DN15  class P3  PVDF SDR 21 ISO 10931</text>
 <text x="20" y="628">WS_NITRIC -> NOX_SCRUB</text>
 <text x="20" y="642">pipe 24.59 m in 6 pieces; cut 2639 6000 6000 4779 2579 2589 mm</text>
-<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 butt-and-strap joints</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 10 fusion joints</text>
 <text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text></svg>

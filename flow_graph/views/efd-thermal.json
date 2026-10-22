@@ -794,7 +794,7 @@
           "standing_loss_kW": 0.137,
           "issued_loss_kW": 0.174,
           "wall_mm": 29722,
-          "material": "PP-H (fusion welded)",
+          "material": "SA-240 304L, welded (100 C tier is above the PP-H class of 80 C)",
           "envelope": [
             800,
             800,
@@ -1011,7 +1011,7 @@
           "standing_loss_kW": 0.137,
           "issued_loss_kW": 0.174,
           "wall_mm": 29722,
-          "material": "PP-H (fusion welded)",
+          "material": "SA-240 304L, welded (100 C tier is above the PP-H class of 80 C)",
           "envelope": [
             800,
             800,

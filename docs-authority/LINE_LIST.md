@@ -69,10 +69,10 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-GLASS-01 | GLASS_RINSE | GLASS_MILL | solids | — | — | 1.4 | GLASS_RINSE → GLASS_MILL, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-GLASS-02 | GLASS_MILL | GLASS_BURNOUT | solids | — | — | 3.6 | GLASS_MILL → GLASS_BURNOUT, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-GLASS-03 | GLASS_BURNOUT | GLASS_DIGEST | solids | — | — | 9.8 | GLASS_BURNOUT → GLASS_DIGEST, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-HDR-H2-01 | EW_1 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 5.4 | EW_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-HDR-H2-02 | HDR_H2 | H2_DRYER | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 26.7 | HDR_H2 → H2_DRYER, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-HDR-H2-03 | EW_2 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 4.7 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-HDR-H2-04 | EW_9 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 9.7 | EW_9 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-HDR-H2-01 | EW_1 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 5.4 | EW_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-HDR-H2-02 | HDR_H2 | H2_DRYER | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 26.7 | HDR_H2 → H2_DRYER, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-HDR-H2-03 | EW_2 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 4.7 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-HDR-H2-04 | EW_9 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 9.7 | EW_9 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-HX8 | EW_1 | HX8 | DN15 | P3 | oxidizer, HF or PVDF unit | 7.4 | EW_1 → HX8, orthogonal × 1.2 (duty origin; duty origin) | heat loop 4.572 kW at ΔT 10 K, 1 m/s |
 | IA-OIL-01 | OIL_DRYER | OIL_PYRO | solids | — | — | 0.0 | OIL_DRYER → OIL_PYRO, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-OIL-02 | OIL_PYRO | OIL_FRAC | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 0.0 | OIL_PYRO → OIL_FRAC, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -352,14 +352,14 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-LEACH-NOX | LEACH_CSTR_1 | NOX_SCRUB | DN50 | P2 | hot leach liquor | 13.0 | LEACH_CSTR_1 → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-LEACH-FLUE | LEACH_CSTR_1 | FLUE_KO | DN50 | P2 | hot leach liquor | 23.2 | LEACH_CSTR_1 → FLUE_KO, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-LEACH-HOP | LEACH_CSTR_1 | HOPPER | DN50 | P2 | hot leach liquor | 9.7 | LEACH_CSTR_1 → HOPPER, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1100; min DN50 |
-| IA-EW1-H2 | EW_1 | HDR_H2 | DN50 | P2 | hot leach liquor | 5.4 | EW_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-EW2-H2 | EW_2 | HDR_H2 | DN50 | P1 | acid or brine, at or below 60 C | 4.7 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-EW4-H2 | EW_4 | HDR_H2 | DN50 | P1 | acid or brine, at or below 60 C | 12.4 | EW_4 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-EW1-H2 | EW_1 | HDR_H2 | DN50 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 5.4 | EW_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-EW2-H2 | EW_2 | HDR_H2 | DN50 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 4.7 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-EW4-H2 | EW_4 | HDR_H2 | DN50 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 12.4 | EW_4 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-EW4-N2 | EW_4 | HDR_N2 | DN50 | P1 | acid or brine, at or below 60 C | 23.8 | EW_4 → HDR_N2, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-O2-MAKE | CRYO_O2 | HDR_O2 | DN50 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 32.2 | CRYO_O2 → HDR_O2, orthogonal × 1.2 (placement_report + GA move + GA move + GA move; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-FC-FIX | FUEL_CELL | NOX_SCRUB | DN50 | P2 | hot leach liquor | 14.0 | FUEL_CELL → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-AHU-FIX | CRYO_N2 | CRYO_AHU | DN50 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 4.2 | CRYO_N2 → CRYO_AHU, orthogonal × 1.2 (placement_report + GA move + GA move; placement_report + GA move) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-LEACH-H2 | LEACH_CSTR_1 | HDR_H2 | DN50 | P2 | hot leach liquor | 9.7 | LEACH_CSTR_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
+| IA-LEACH-H2 | LEACH_CSTR_1 | HDR_H2 | DN50 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 9.7 | LEACH_CSTR_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-FC-LEACH | FUEL_CELL | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 27.0 | FUEL_CELL → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-PHOS-DOPE | WS_PHOS | WS_DOPE | DN15 | P1 | acid or brine, at or below 60 C | 11.3 | WS_PHOS → WS_DOPE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | DN15 | P1 | acid or brine, at or below 60 C | 12.3 | WS_SOLV → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -488,11 +488,11 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-DC-EW_7 | RECTIFIER | EW_7 | cable | — | — | 23.6 | RECTIFIER → EW_7, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-DC-EW_8 | RECTIFIER | EW_8 | cable | — | — | 29.8 | RECTIFIER → EW_8, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-DC-EW_9 | RECTIFIER | EW_9 | cable | — | — | 30.0 | RECTIFIER → EW_9, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
-| IA-EW3-H2B | EW_3 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 9.7 | EW_3 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
-| IA-EW5-H2B | EW_5 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 7.1 | EW_5 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
-| IA-EW6-H2B | EW_6 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 8.3 | EW_6 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
-| IA-EW7-H2B | EW_7 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 6.8 | EW_7 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
-| IA-EW8-H2B | EW_8 | HDR_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 9.5 | EW_8 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-EW3-H2B | EW_3 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 9.7 | EW_3 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-EW5-H2B | EW_5 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 7.1 | EW_5 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-EW6-H2B | EW_6 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 8.3 | EW_6 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-EW7-H2B | EW_7 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 6.8 | EW_7 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-EW8-H2B | EW_8 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 9.5 | EW_8 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
 | SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | cable | — | — | 137.3 | SOL_ARK_60K → EXT_HALL, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) |  | PROD_C5_C10 → POLY_OLEFIN, position missing for POLY_OLEFIN | velocity 1 m/s, ρ 1000; min DN15 |
 | SQ-EVAP_ACID | EVAP_ACID | HEAT_SINK | cable | — | — |  | EVAP_ACID → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |

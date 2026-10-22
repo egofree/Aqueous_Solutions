@@ -36,7 +36,7 @@
 <polygon points="586,286 577,282 577,290" fill="#111"/>
 <text x="24" y="267" font-size="9" fill="#666" text-anchor="start">PROD_C19_C28</text>
 <text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">WAX_TO_GREASE_CA</text>
-<text x="24" y="299" font-size="10" text-anchor="start">rate null (study) · DN15 M1</text>
+<text x="24" y="299" font-size="10" text-anchor="start">rate null (study) · DN15 M2</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">MFG_SHOP</text>
@@ -50,7 +50,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-GREASE_CA</text>
 <text x="1124" y="526" font-size="9">P&amp;ID GREASE_CA (kettle, OIL sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev e6d72955   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 6a15e017   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 9186747d21cafb4a   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 c89af1e294f2a104   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

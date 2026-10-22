@@ -21,7 +21,7 @@ TAG = f'header sizing (flow_graph/param/headers.py, {DOC})'
 HD = 'HDR.headers-train.'            # U4b: sizing literals single-sourced from drivers.json
 # unit: (service, kind, min DN key, velocity key, density kg/m3 key or Q4_BUS marker, material, note)
 SPEC = {
-    'HDR_H2':  ('H2 header (EW cathode gas in, dryer and trim draws out)', 'gas', 'hdr_min_DN_gas', 'hdr_v_gas_m_s', 'hdr_rho_H2', '316L tube, orbital-welded', None),
+    'HDR_H2':  ('H2 header (EW cathode gas in, dryer and trim draws out)', 'gas', 'hdr_min_DN_gas', 'hdr_v_gas_m_s', 'hdr_rho_H2', 'PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)', None),
     'HDR_O2':  ('O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws)', 'gas', 'hdr_min_DN_gas', 'hdr_v_gas_m_s', 'hdr_rho_air', '316L tube, oxygen-clean per ASTM_G93, socketless', None),
     'HDR_N2':  ('plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws)', 'gas', 'hdr_min_DN_gas', 'hdr_v_gas_m_s', 'hdr_rho_air', '316L tube', None),
     'HDR_CO2': ('CO2 header (crew and cold-box in; farm and methanol-synthesis draws)', 'gas', 'hdr_min_DN_gas', 'hdr_v_gas_m_s', 'hdr_rho_CO2', '316L tube', None),
