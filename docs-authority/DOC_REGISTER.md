@@ -115,7 +115,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-HSE-001 | `docs-authority/HAZARD_SEPARATION.md` | G | 2026-10-01 | Hazard separation and containment — design locks | canonical |
 | AQS-IF-009 | `docs-authority/PHASE9_INTERFACES.md` | C | 2026-10-09 | Phase 9 interfaces | canonical |
 | AQS-IF-FAB-WET-001 | `docs-authority/FAB_WET_INTERFACE.md` | A | 2026-09-27 | Fab ↔ wet-line interface | canonical |
-| AQS-INST-001 | `docs-authority/INSTRUMENT_LOOPS.md` | B | 2026-10-15 | Instrument loops | canonical |
+| AQS-INST-001 | `docs-authority/INSTRUMENT_LOOPS.md` | C | 2026-10-21 | Instrument loops | canonical |
 | AQS-ISO-000 | `docs-authority/ISO_DRAWING_INDEX.md` | A | 2026-09-27 | Isometric fabrication set | canonical |
 | AQS-LIFE-001 | `docs-authority/LIFE_FITOUT_PLAN.md` | B | 2026-10-01 | Habitation and farm fit-out plan | canonical |
 | AQS-LITH-001 | `docs-authority/ALIGNER.md` | C | 2026-10-11 | Contact aligner | canonical |

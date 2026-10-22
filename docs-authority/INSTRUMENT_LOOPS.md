@@ -1,14 +1,15 @@
 # Instrument loops
 
 Document number: AQS-INST-001
-Revision: B
-Date: 2026-10-15
+Revision: C
+Date: 2026-10-21
 Authority: graph Rev BH. Study. Not a PE stamp. Feed schema is AQS-ASSAY-001 Rev C.
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | Assay, digester, and farm loops. Dry reader. No sacrificial electrode. | 2026-10-15 |
 | B | Assay loop reports a lot against the seven-class schema. The reference point is not the feed. | 2026-10-15 |
+| C | Study loops registered against the plant-wide instrument system: loop membership per unit is carried by AQS-CTL-001 (722 tags, the per-unit extension complete 2026-10-20, no unit left without a loop in its sector index), per-loop set-points are carried by the AQS-CTL-004 program blocks (graph basis column, the A-M-188 margin class or the 90% -of-span LSH convention), and trips by AQS-CTL-003 (the digester high-level trip sits there as SIF-124). This page keeps the dry-reader engineering: the three study loops stand as issued, no longer partial. | 2026-10-21 |
 
 Assay, digester, and farm. One dry reader. The liquor never touches a glass electrode, a platinum pin, or a reference junction. No rate is changed. No edge is added. A band below is a study band, not a set point on the graph.
 
@@ -181,3 +182,14 @@ The potassium gap on the nutrient page is 1090 mg/d, sourced from the urine tank
 - They do not size a conductor, a bore, or a bed.
 - They do not claim free dissolved oxygen, ammonia, or nitrite.
 - Lead spots and silver spots are recycled as metal. The mass is not calculated here.
+
+## 7. Where the study loops sit in the instrument system
+
+Cross-references verified on the current artifacts (2026-10-21):
+
+| Study loop | Index / program registration |
+| --- | --- |
+| Digester (GLASS_DIGEST) | GLASS_DIGEST-TE-01 / -PT-01 / -LT-01 sit on PLC-GLASS in the AQS-CTL-001 index and as monitor blocks in the PLC-GLASS program of AQS-CTL-004; the liquid high-level trip is SIF-124 in AQS-CTL-003; spots (pigment, iodine, lead acetate) are consumables with no recorded channel |
+| Farm (the living-water loop) | The FARM sector carries 20 index loops on PLC-FARM (AQS-CTL-001) with program blocks in PLC-FARM.st; the hourly RTD and toroid readings are the recorded channels; the daily paper spots are not |
+| Assay (the lot station) | The electrical points (oven, balance, RTD where fitted) are shop equipment beside the index; the classes they fill are paper records against AQS-ASSAY-001, not continuous signals on the graph |
+
