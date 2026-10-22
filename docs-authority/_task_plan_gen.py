@@ -357,7 +357,7 @@ EVIDENCE_PASS={
  'X-PAR-10':'docs-authority/sizing/VENT_SCRUBBER.md',
  'X-STD-01':'docs-authority/GA_CHECK.md',
  'X-FIR-01':'docs-authority/FIRE_PROTECTION.md',
- 'X-MFG-31':'REOPEN',
+ 'X-MFG-31':'docs-authority/fab/VDF_SYN.md',
  'X-MFG-33':'docs-authority/sizing/COLD_BOX.md',
  'X-MFG-34':'PARTIAL:docs-authority/BENCH_TEST_UPW_POLISH.md|bench test procedure issued as AQS-TST-004; the run is hardware-gated on the first module (A-M-176 open)',
  'X-MFG-36':'PARTIAL:docs-authority/BENCH_TEST_H2_COMPRESSOR.md|first-article procedure issued as AQS-TST-005; the run is hardware-gated on the first article (A-M-169 open)',
@@ -425,12 +425,20 @@ EVIDENCE_PASS={
 'X-MAT-03':'docs-authority/MATERIALS_STD.md',
 }
 REOPEN_WHY={
- 'X-MFG-31':'HF_GEN, VDF_SYN, TFE_SYN, POLY_F, POLY_OLEFIN and POLY_COND have no mfg model or route yet (feed-blocked, AQS-DUTY-072/073); GLASS_DIGEST, OIL_PYRO, LEACH_CSTR_1, MEOH_* and BLACK_DIGEST do (AQS-DUTY-062/050, models/mfg)',
 }
-# X-FIR-01 left REOPEN_WHY on the 2026-10-19 pass; the entry is removed 2026-10-21 (see closure comment below).
+# X-FIR-01/X-MFG-31 left REOPEN_WHY on the 2026-10-19 pass; both entries are removed 2026-10-21 (see closure comments below).
 # X-SAF-01, X-MFG-34, X-MFG-36 and X-END-02 moved from REOPEN to PARTIAL in the 2026-10-19 closure pass: each now has
 # citable issued work (HAZOP regeneration + AQS-SAF-008 register; bench test procedures AQS-TST-004/005; AQS-END-002
 # Rev B classing) with the remaining gap named in the status note instead of claimed absent.
+# 2026-10-21 X-MFG-31 closed: the reopen basis is stale. All six named units already have full in-house mfg models
+# in models/mfg/<U>/ (parametric CadQuery source in models/mfg/polymers.py and reactors.py, STEP/STL exports,
+# bom.csv, fasteners, work orders); AQS-DUTY-072/073 (docs-authority/sizing/FOUNDRY_LINE.md and POLYMERS_LINE.md)
+# hold the per-kg design-case tables at the 0.0 production rate (A-M-267). This lane adds the missing production
+# routes docs-authority/fab/{HF_GEN,VDF_SYN,TFE_SYN,POLY_F,POLY_OLEFIN,POLY_COND}.md in the house route format, so
+# every reactor/digester/CSTR now carries model + route (unit task 13 auto-ticks for the six). Finding fixed: the
+# A-M-283 poly design wave books POLY_OLEFIN pressure in design.P_MPa, invisible to docs-authority/_asme_class.py;
+# the generator was extended and AQS-ASME-002 goes to Rev C - POLY_OLEFIN reclassifies to B31.3 piping component
+# (ID 142 mm <= 152 mm, U-1(c)(2)(j); UG-27 3.8 mm wall already checked in AQS-DUTY-073).
 # 2026-10-21 X-FIR-01 closed: the reopen basis is stale. The fire-water tank and fire-pump drivers landed in
 # 1aba493 (2026-10-19, the same commit as the reopen text): fire_tank_type/fire_tank_refill_h (A-M-314) and
 # fire_pump_type/fire_pump_churn_frac/fire_pump_150_flow_frac/fire_pump_head_margin_kPa (A-M-313). Arithmetic
