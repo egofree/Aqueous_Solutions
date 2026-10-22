@@ -88,6 +88,11 @@ for _l in open('docs-authority/LINE_LIST.md'):
 # units whose duty section 3 still reads "Selection pending" (the machines and pot cells; the
 # same set the AQS-END-002 EOL matrix holds) stay open.
 _UM=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'inventory','UNIT_MATERIALS.json'))) if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)),'inventory','UNIT_MATERIALS.json')) else {}
+# 2026-10-21 AQS-DSN-INT-001 internals register (unit task 06 sweep): a unit closes -06 where
+# the register disposes it - 'defined' (issued internals document, keyword-verified) or 'none'
+# (keyword-guarded class rule); units under the task 09 section 3 hold and units whose
+# internals are an un-issued design gap stay open, reason by reason.
+_IN=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'inventory','INTERNALS.json'))) if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)),'inventory','INTERNALS.json')) else {}
 def _ll_ok(u):
     for e in _EU.get(u,()):
         rows=_LL.get(e['stream_id'])
@@ -109,6 +114,7 @@ def status(n,k):
     if k=='02' and u in _SH: return '`docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064)'
     if k=='02' and u in _COV: return f"`{_COV[u]['doc']}` ({_COV[u]['docnum']})"
     if k=='09' and u in _UM.get('issued',[]): return f'`docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12)'
+    if k=='06' and (u in _IN.get('defined',{}) or u in _IN.get('none',{})): return f'`docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001)'
     if k=='01':
         v=_DUTY.get(u)
         if v and v[2]: return f'`{d}` §1; mass in = out {v[0]} kg/d, {v[1]} kW'

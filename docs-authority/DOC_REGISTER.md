@@ -50,6 +50,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | B | 2026-09-28 | Cryogenic cold-box internals — ALCRM | canonical |
 | AQS-DOC-001 | `docs-authority/DOCUMENTATION_STYLE.md` | A | 2026-10-01 | Documentation style — Aqueous house style | canonical |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | canonical |
+| AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | A | 2026-10-21 | Unit internals register: per-unit internals disposition for the task 06 sweep (issued evidence, keyword-guarded none rules, named open gaps) | canonical |
 | AQS-DUTY-008 | `docs-authority/HEAT_LADDER_DUTIES.md` | C | 2026-10-07 | Heat-ladder edge duties | canonical |
 | AQS-DUTY-009 | `docs-authority/CO2_HEADER_DUTY.md` | B | 2026-10-07 | HDR_CO2 consumer duty | canonical |
 | AQS-DUTY-010 | `docs-authority/EDGE_RATING_DUTY.md` | A | 2026-10-07 | Edge rating and node conservation | canonical |
