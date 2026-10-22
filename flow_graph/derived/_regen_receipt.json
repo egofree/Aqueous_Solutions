@@ -16,7 +16,7 @@
     "process"
    ],
    "pass": 1,
-   "seconds": 0.79,
+   "seconds": 0.8,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -68,7 +68,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "4375aad8f67e6f0f2bbb61b30fedbbb7d61cc7adb4bf0e4bd62472326d5b2710"
   },
@@ -81,7 +81,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "4375aad8f67e6f0f2bbb61b30fedbbb7d61cc7adb4bf0e4bd62472326d5b2710"
   },
@@ -94,7 +94,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "4375aad8f67e6f0f2bbb61b30fedbbb7d61cc7adb4bf0e4bd62472326d5b2710"
   },
@@ -120,7 +120,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "4375aad8f67e6f0f2bbb61b30fedbbb7d61cc7adb4bf0e4bd62472326d5b2710"
   },
@@ -133,7 +133,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "b509ba03a6ec0d09336f7bb94f8b0650c136bfbe9707e4fc38b634f168e41a11"
   },
@@ -146,7 +146,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "033bd1c079a6e1a02f4126bf869407a95befb3961cf72a21b7eb0c7a7a9bb0a2"
   },
@@ -159,7 +159,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "033bd1c079a6e1a02f4126bf869407a95befb3961cf72a21b7eb0c7a7a9bb0a2"
   },
@@ -172,7 +172,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "646410495853b4eb41f08ee8a0cae0d31d6b990bcd4c989015dea07dfced448f"
   },
@@ -198,7 +198,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "646410495853b4eb41f08ee8a0cae0d31d6b990bcd4c989015dea07dfced448f"
   },
@@ -224,7 +224,7 @@
     "heat"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "646410495853b4eb41f08ee8a0cae0d31d6b990bcd4c989015dea07dfced448f"
   },
@@ -237,7 +237,7 @@
     "relief"
    ],
    "pass": 1,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "ef144553cf4784bf1c5d906d669c57d2ee62e5323f77ecadb2d4796436f3c9ad"
   },
@@ -287,7 +287,7 @@
     "--write"
    ],
    "pass": 1,
-   "seconds": 0.59,
+   "seconds": 0.58,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -300,7 +300,7 @@
     "--write"
    ],
    "pass": 0,
-   "seconds": 0.21,
+   "seconds": 0.22,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -322,7 +322,7 @@
     "docs-authority/_one_line.py"
    ],
    "pass": 0,
-   "seconds": 0.44,
+   "seconds": 0.45,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -333,7 +333,7 @@
     "docs-authority/_ew_sizing.py"
    ],
    "pass": 0,
-   "seconds": 0.16,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -357,7 +357,7 @@
     "--doc-only"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.14,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -403,7 +403,7 @@
     "docs-authority/_duty_basis.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.18,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -414,7 +414,7 @@
     "docs-authority/_nozzle_sched.py"
    ],
    "pass": 0,
-   "seconds": 0.15,
+   "seconds": 0.16,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -425,7 +425,7 @@
     "docs-authority/_unit_sizing_sweep.py"
    ],
    "pass": 0,
-   "seconds": 0.16,
+   "seconds": 0.17,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -436,7 +436,7 @@
     "docs-authority/_line_list.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.18,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -447,7 +447,7 @@
     "docs-authority/_pid_sheets.py"
    ],
    "pass": 0,
-   "seconds": 1.56,
+   "seconds": 1.58,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -458,7 +458,7 @@
     "docs-authority/_iso_routes.py"
    ],
    "pass": 0,
-   "seconds": 0.17,
+   "seconds": 0.18,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -502,7 +502,7 @@
     "docs-authority/_ew_busbar.py"
    ],
    "pass": 0,
-   "seconds": 0.14,
+   "seconds": 0.15,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -524,7 +524,7 @@
     "docs-authority/_protection.py"
    ],
    "pass": 0,
-   "seconds": 0.29,
+   "seconds": 0.3,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -557,7 +557,7 @@
     "flow_graph/loop_closure.py"
    ],
    "pass": 0,
-   "seconds": 0.16,
+   "seconds": 0.17,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -602,7 +602,7 @@
     "docs-authority/_model_workbook.py"
    ],
    "pass": 0,
-   "seconds": 1.56,
+   "seconds": 1.58,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -613,7 +613,7 @@
     "docs-authority/_assumptions_register.py"
    ],
    "pass": 0,
-   "seconds": 0.19,
+   "seconds": 0.2,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -624,7 +624,7 @@
     "flow_graph/regen_derived.py"
    ],
    "pass": 0,
-   "seconds": 16.03,
+   "seconds": 16.25,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   },
@@ -646,7 +646,7 @@
     "docs-authority/_rev_stamp.py"
    ],
    "pass": 0,
-   "seconds": 0.28,
+   "seconds": 0.31,
    "status": "ok",
    "post_graph_sha256": "c89af1e294f2a104da153f9c24c1e9ee1c08a6185090a8e1f4288e025f6ee0b1"
   }
