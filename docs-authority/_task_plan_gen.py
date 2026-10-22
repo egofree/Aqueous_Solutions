@@ -82,6 +82,12 @@ for _l in open('docs-authority/LINE_LIST.md'):
     if _l.startswith('|'):
         _c=[x.strip() for x in _l.strip().strip('|').split('|')]
         if len(_c)>=9 and _c[0]!='Line' and not _c[0].startswith('-'): _LL[_c[0]].append((_c[3],_c[4]))
+# 2026-10-21 AQS-STD-005 per-unit material selections (AQS-STD-002 Rev L section 12 join): the
+# wetted-edge census of AQS-PIP-004 joins by family to the issued wetted materials; units whose
+# wetted edges all carry issued materials close task 09 on their sheet in UNIT_MATERIALS.md, and
+# units whose duty section 3 still reads "Selection pending" (the machines and pot cells; the
+# same set the AQS-END-002 EOL matrix holds) stay open.
+_UM=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'inventory','UNIT_MATERIALS.json'))) if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)),'inventory','UNIT_MATERIALS.json')) else {}
 def _ll_ok(u):
     for e in _EU.get(u,()):
         rows=_LL.get(e['stream_id'])
@@ -102,6 +108,7 @@ def status(n,k):
     if (u,k) in DONE_U: return DONE_U[(u,k)]
     if k=='02' and u in _SH: return '`docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064)'
     if k=='02' and u in _COV: return f"`{_COV[u]['doc']}` ({_COV[u]['docnum']})"
+    if k=='09' and u in _UM.get('issued',[]): return f'`docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12)'
     if k=='01':
         v=_DUTY.get(u)
         if v and v[2]: return f'`{d}` §1; mass in = out {v[0]} kg/d, {v[1]} kW'
