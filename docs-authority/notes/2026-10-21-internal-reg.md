@@ -68,3 +68,20 @@ scan (kept in the BOM scan), and unit-keying the evaporator/cold-box specials.
   gasket census OK; X-GOV-20 scan on touched files: 0 hits.
 - Desk P3 remainder: 68 × -06 (open, named) + 38 × -09 (open, named) + X-TOOL-04 = 107.
 - Next in triage order per TASK_PLAN: X-TOOL-04 (last non-unit desk-P3 item), then desk P4.
+
+## Addendum, same day: X-TOOL-04 closed (desk P3 top level now empty)
+
+X-TOOL-04's done-when reads "AQS-UI-001 phases beyond P0, P1, B-prime" — the deliverable is
+the phases themselves. AQS-UI-001 Rev D §9 issues them (forward phases A′/C/D/E with
+deliverables and exit criteria, aligned AQS-PLAN-UI-001 Rev N; historical P0/P1/B-prime rows
+closed there). A′ is executed (WP-Ap1 unified projection) and WP-C1 (export-from-graph) is
+done, so the phase definitions are live, not aspirational. Execution status stays on the §9
+rows: C2/C3 blocked pending the GitHub publish authorize (owner decision), D (P2 3D) and
+E (P3 cloud) planned with named paths — that is future-phase work, not this done-when.
+
+- Mechanics: DONE_X + EVIDENCE_PASS entry (dated closure comment in `_task_plan_gen.py`)
+  with evidence `docs-authority/DESIGN_TOOL_ARCHITECTURE.md`.
+- Board: desk P3 **107 → 106** = 68 × -06 + 38 × -09. The desk-P3 top-level X queue is
+  empty; what remains at P3 are the 106 named per-unit holds documented by AQS-STD-005 §4
+  and AQS-DSN-INT-001 §4.
+
