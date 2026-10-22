@@ -253,6 +253,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-TST-003 | `docs-authority/TEST_RIGS.md` | A | 2026-10-16 | In-house test rig build packages (X-MFG-35, X-MFG-41, X-MAT-21) | canonical |
 | AQS-INV-008 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | A | 2026-10-16 | Motor first-article drawings, traveller and type-test rig (X-INV-02B desk package) | canonical |
 | AQS-INV-006 | `docs-authority/PIPE_SPECS.md` | A | 2026-10-21 | Pipe family production plans (X-INV-04-PF-01..18): cut plan, fittings, WPS joints, class test | canonical |
+| AQS-INV-009 | `docs-authority/BLOCK_FAMILY_PLANS.md` | A | 2026-10-21 | Building-block family production plans (X-INV-05-OF-01..65); design side by reference to AQS-PRO-002 | canonical |
 | AQS-INV-007 | `docs-authority/WIRE_SPECS.md` | C | 2026-10-21 | Wire family specifications and production plans (X-INV-03-WF-01..26 desk package) | canonical |
 | AQS-BLD-018 | `docs-authority/ENCLOSURE_EGRESS.md` | A | 2026-10-16 | Enclosure, floor plates, stairs and egress (X-BLD-05) | canonical |
 | AQS-SITE-003 | `docs-authority/SITE_ACCESS_CHECK.md` | A | 2026-10-16 | Site access and dock check against vehicle and container sizes (X-BLD-07) | canonical |
