@@ -265,6 +265,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence, cold start from empty (X-COM-02) | canonical |
 | AQS-COM-001 | `docs-authority/COMMISSIONING.md` | A | 2026-10-16 | Commissioning plan: pressure test, loop check, water run, chemical run per system (X-COM-01) | canonical |
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up (X-PRO-01, partial) | canonical |
+| AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | A | 2026-10-21 | Bought-item specification sheets (X-PRO-02): standard-class datasheet per bought AQS-INV-004 family | canonical |
 | AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan per fabrication route (X-QA-01) | canonical |
 | AQS-END-002 | `docs-authority/EOL_RETURN.md` | B | 2026-10-19 | End-of-life material return by feed class (X-END-02); Rev B: no silently unassigned line | canonical |
 | AQS-OPS-002 | `docs-authority/MAINT_PLAN.md` | A | 2026-10-16 | Maintenance plan: inspection and replacement intervals per unit (X-OPS-02) | canonical |
