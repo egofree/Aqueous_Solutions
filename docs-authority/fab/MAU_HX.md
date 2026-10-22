@@ -4,13 +4,13 @@ Class: hx; sector HEAT. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: see the duty sheet section 1 basis
 
-Internals: open: same hold as task 09: duty section 3 selection pending (AQS-STD-005 section 4); internals cannot be detailed before the material is selected
-Material: Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+Internals: duty sheet: "3. Material. Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heat" [docs-authority/duties/MAU_HX.md]
+Material: Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating), 316L headers; PP condensate tray where any defrost condensate can form; water side on the issued Q3/Q4 M1 316L loop family. (continues on the duty sheet)
 
 Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
-tasks 10-12 close and, where named, the section 3 material selection lands):
+tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):
 1. Machine build: frame, coil/air side and standard rotating parts; no contacting process internals (internals register below).
 2. Connections and coil/media side per the duty sheet and nozzle schedule.
 3. Connections: per the scheduled nozzles when they exist; nothing invented here.

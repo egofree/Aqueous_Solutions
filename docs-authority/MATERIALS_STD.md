@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: N
+Revision: O
 Date: 2026-10-21
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -21,6 +21,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | L | Service-class selection guide across the assay envelope added as section 12 (X-MAT-01). Line-list class rules keyed to the guide families: the "aqueous process, default thermoplastic" catchall is retired, hydrocarbon/fuel cuts go to M2 (carbon steel, dry, per the issued duties), wet methanol and solvents to M1 (316L per the issued duties), melt pours become launder rows (not piped), and the fluoro synthesis train, dopant concentrates and molten-salt pot brines carry per-duty-sheet materials pending a PIP-003 Rev B class. Section 8 checker aligned: unit map equals the issued CPVC and PVDF members, and the BMED inlets are derived from the booked X-RSZ-04 trim duties with driver heat capacities; 0 exceed, 33 rows on the registered 40 °C ambient assumption (A-M-269). Also refreshes the section 10 trim table to the X-RSZ-04 booked duty and flow basis. | 2026-10-21 |
 | M | Section 2 ambiguous audit list resolved (X-MAT-06): the two contradicting or out-of-class materials adjudicated (HDR_H2 is the PVC-U wet-acid header of AQS-REV-H2-001 - graph row corrected; Q3 heat batteries are SA-240 304L at the 100 C tier - PP-H is an 80 C class material [S4], graph row corrected); unstated temperatures given stated bases (edge T_C stamps, loop t_nom, or the registered 40 C ambient A-M-269); the 32 template-duty units covered by the generated per-unit table of section 13.2. Also: the 13 wet-HDR_H2 lines move to the new P1 wet-acid-header family (AQS-PIP-004 Rev C), updating the section 12 counts (dry gas 47 to 38, hot leach 46 to 44, acid or brine 54 to 52). Done-when evidence: docs-authority/_ambiguous_units.py --done (roster 77: 27 doc-section, 18 row of 13.1, 32 generated). | 2026-10-21 |
 | N | Elastomer and gasket compatibility per service resolved (X-MAT-03): section 14 adds the per-class decision table (Parker O-Ring Handbook ORD 5700 [S23] alongside the registered PERRY9_MAT, ULLMANN_FLUOROPOLY and [S11]/[S12] rows) and the family-level exceptions, including the solvent families (EPDM: alcohols and ketones in its polar-solvent range; the exact FKM grade for a methanol or acetone duty stays a maker-table check), the EPDM special-compound row for the 100 C Q3 water, the wet-acid H2 header (FKM, bonded hardware), the 98 wt% H2SO4 leg (PTFE envelope) and the rapid-gas-decompression note for H2 soft goods. AQS-PIP-003 Rev B points its held line at section 14; the WS gasket-detail holds of sections 12.3/13 resolve there. Gate: docs-authority/_gasket_census.py. | 2026-10-21 |
+| O | Pot-cell and brine wetted materials issued (X-MAT-22): section 12.2 last row splits into the ambient import legs (PVDF wetted, anhydrous-handled concentrate) and the molten MgCl2 return (graphite/Ni-200 launder); AQS-PIP-004 service text updated through the regenerated line list. The per-unit duty section 3 material selections behind the pot cells, the metallurgy train and the 38 held units are issued in AQS-STD-006 (docs-authority/MATERIALS_SEC3.md) and render from the graph params.sec3_material; no measured rate is claimed anywhere. | 2026-10-21 |
 
 ## 1. Rules
 
@@ -383,11 +384,12 @@ These families are governed by issued per-unit materials and are pending a PIP-0
 | Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours) | 7 | Not piped: launder/pour hot faces (M7); ISO route rows retained for geometry only | not piped |
 | Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs) | 9 | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions; VDF_SYN Hastelloy C-276 reactors, Ni cracking tube, PTFE-lined coolers; TFE_SYN Inconel 600 pyrolysis tube, Hastelloy C-276 coolers; POLY_F Hastelloy C-276 wetted, PTFE gasketed. The wet-HF and H₂SO₄ make-up legs into these units are classed separately (P3 and M2 above) | PIP-003 Rev B |
 | Dopant concentrates (S36, BBr₃/POCl₃ class) | 1 | PTFE/PFA handling per the semiconductor-reagent practice; flow 0.0 kg/d (nominally closed), no pipe class | PIP-003 Rev B |
-| CaCl₂/MgCl₂ brine concentrates to molten-salt pots | 3 | Unit task 09 wetted-material selection pending (MG_POT, CA_POT and F_RECOVER duty section 3, across the AQS-ASSAY-001 Rev C bounding cases); selection stands open under unit task 09 (tracked on the X-MAT pot-cell follow-up) | PIP-003 Rev B or unit-specific |
+| CaCl₂/MgCl₂ brine concentrates to molten-salt pots (ambient import legs, NORTH_DOCK to MG_POT and CA_POT) | 2 | PVDF wetted handling at ambient, per the AQS-STD-006 pot-cell and brine selections (AQS-STD-002 section 12.1 P3 family practice); the dry concentrate is kept anhydrous to the pot feeder (hygroscopicity per ULLMANN_MAGNESIUM) | PIP-003 Rev B or unit-specific |
+| Molten MgCl₂ salt return (TI_CELL Kroll retort to MG_POT, ~700 °C) | 1 | Graphite/Ni-200 wetted launder, per the AQS-STD-006 pot-cell selections (molten-chloride physics: DING2018_CL_REVIEW, KRUIZENGA2012); not a thermoplastic or Fe-Cr-Ni wetted line | PIP-003 Rev B or unit-specific |
 
 ### 12.3 Dispositions of the section 2 ambiguous list
 
-The 2026-10-15 audit items below were ambiguous then and are resolved by the sections shown. Not closed here: the molten-salt pot-cell wetted selection (12.2 last row) and the WS_SLURRY/WS_DOPE per-stream gasket detail (X-MAT-03).
+The 2026-10-15 audit items below were ambiguous then and are resolved by the sections shown. The molten-salt pot-cell wetted selection was issued 2026-10-21 (X-MAT-22, AQS-STD-006; section 12.2 rows 4-5). Still not closed here: the WS_SLURRY/WS_DOPE per-stream gasket detail (X-MAT-03).
 
 | Section 2 item | Disposition |
 | --- | --- |

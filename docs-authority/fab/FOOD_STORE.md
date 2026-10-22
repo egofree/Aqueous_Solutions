@@ -10,7 +10,7 @@ Material: PE (rotomoulded / fabricated) (graph node material). Corrosion allowan
 Nozzles: 4 process connections per docs-authority/nozzles/FOOD_STORE.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
-tasks 10-12 close and, where named, the section 3 material selection lands):
+tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):
 1. Shell route: welded plate or polymer vessel per the duty sheet, no agitation internals (internals register below).
 2. Fittings: nozzles, manway and supports to the nozzle schedule and the duty sheet.
 3. Connections: nozzle stubs to the schedule; flange faces per AQS-PIP-003 class letters

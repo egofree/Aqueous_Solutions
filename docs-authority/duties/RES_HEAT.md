@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): rate_kg_d 0; connected_kW 12; backup_of SHELL_BURNOUT / SINTER heating duty (resistance radiant); outage_basis burnout-element outage during a shell campaign (A-M-282).
 - Graph design (AQS-PAR-001 sizing): service resistance radiant reheating furnace, N+1 of SHELL_BURNOUT/SINTER heating; connected_kW 12; backup_of SHELL_BURNOUT/SINTER; outage_d 2; T_C 900.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Ceramic-fibre module lining + 80Ni-20Cr resistance elements on a mild-steel casing at the 900 C box-furnace class. Basis: resistance radiant reheating, N+1 of SHELL_BURNOUT/SINTER heating at 900 C (graph design): element and lining class to 1100 C per ASM_V1; lining design per SCHACHT2004 ch. 13. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: MoSi2 elements if the duty class moves above 1100 C (cost up). dry hot air, M7; element life rides the first-article campaign. (X-MAT-22)
 
 4. Nozzles. No piped process connection on the graph (un-rated or non-mass edges only); no nozzle schedule is issued yet. Nothing to size a bore against.
 

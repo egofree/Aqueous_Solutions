@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): rate_kg_d 0; connected_kW 3; backup_of ROLL (wire/rod bench at the 3 kg/d class); outage_basis roll-stand outage on wire-class lots; wire sizing stays MFG WIRE_DRAW S57 (A-M-282).
 - Graph design (AQS-PAR-001 sizing): machine bench wire/rod draw bench, N+1 former of ROLL; connected_kW 3; backup_of ROLL; outage_d 2; bench_mm 1200; dies 6.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Tungsten-carbide drawing dies in tool-steel casings; steel bench; die capstan hardware carries the machine lubricant programme (no wetted stream). Basis: bench wire/rod draw N+1 of ROLL (graph design): carbide die class is the wire-drawing standard at this scale (DIETER1988 ch. 20/21). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: polished diamond die only for a fine-wire last pass if the product class demands it (cost up, exotic supply). dry process; wire stock stays inside the shop loop. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/DRAW.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

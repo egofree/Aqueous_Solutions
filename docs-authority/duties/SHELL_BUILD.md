@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): shell_kg_d 8; silica_makeup_kg_d 1; reclaim_kg_d 7; basis 6-dip shell 4 kg/kg castings, 87.5 % reclaim (A-M-281).
 - Graph design (AQS-PAR-001 sizing): machine dip-coat + stucco rainfall shell-building booth; shell_kg_d 8; silica_makeup_kg_d 1; reclaim_kg_d 7; dips 6; slurry_L 40.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. PP-H slurry tank and rainfall-sander housing; silica-flour wear faces in PE; PP slurry pump; steel frame isolated from the slurry. Basis: colloidal silica slurry at pH 9-10, 100 L class (graph design A-M-281; 1 d slurry staging at 1600 kg/m3): matches the issued alkaline silica slurry family PP-H (AQS-STD-002 section 12.1 P4 row). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: 316L tank if a binder chemistry change moves the pH below neutral. slurry stays in-house; reclaim dusts are the only loose silica. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/SHELL_BUILD.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-073 (study): out_kg_d 0.4974; fluoro_kg_d 0.23; to_wet_kg_d 0.02674; to_fab_kg_d 0.
 - Graph design (AQS-PAR-001 sizing): bin pellet tote bin; issue_kg_d 0.2674; to_wet_kg_d 0.02674; hold_d 1.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. HDPE tote bins and PP powder drums; steel rack; no wetted streams. Basis: 1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (graph design; A-M-264): dry resin storage, no process contact (AQS-DUTY-073 class). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: antistatic PP totes if the powder-drum fraction builds charge (a spares-check item). no corrosion load; stock loss is the managed quantity. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/POLY_STOCK.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

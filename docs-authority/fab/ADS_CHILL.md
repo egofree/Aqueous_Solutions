@@ -4,13 +4,13 @@ Class: adsorption_chiller; sector HEAT. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: see the duty sheet section 1 basis
 
-Internals: open: same hold as task 09: duty section 3 selection pending (AQS-STD-005 section 4); internals cannot be detailed before the material is selected
-Material: Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+Internals: duty sheet: "as N+1. 3. Material. 304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and head" [docs-authority/duties/ADS_CHILL.md]
+Material: 304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and headers; PP-H water legs on the P5 house water family; steel frame. Basis: silica gel-water adsorption chiller, drive 65 C, chilled 12 C (graph node params; A-M-239/240 COP class): the silica gel-water chiller drives at 55-90 C (WANG2006_ADS); bed shells are sealed vacuum-grade vessels. (continues on the duty sheet)
 
 Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
-tasks 10-12 close and, where named, the section 3 material selection lands):
+tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):
 1. Machine build: frame, coil/air side and standard rotating parts; no contacting process internals (internals register below).
 2. Connections and coil/media side per the duty sheet and nozzle schedule.
 3. Connections: per the scheduled nozzles when they exist; nothing invented here.

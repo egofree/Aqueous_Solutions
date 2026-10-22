@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): feed_kg_d 31.71; billet_kg_d 10; ingot_kg_d 21.71; mold water-cooled copper, horizontal (AQS-SIZE-FOUNDRY); basis pot metal + Zn + stainless base to the ingot line; Fe 10 rolled.
 - Graph design (AQS-PAR-001 sizing): machine two-strand horizontal semi-continuous caster; feed_kg_d 31.71; billet_kg_d 13.24; ingot_kg_d 21.71; strands 2; mould water-cooled copper (AQS-SIZE-FOUNDRY).
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Water-cooled copper mould (the graph-design primary), demineralized-water jacket on the issued Q3/Q4 M1 loop family; graphite feed launder; steel jacket casing. Basis: two-strand horizontal semi-continuous caster (graph design): the water-cooled copper mould is the caster hot face; the water side is already the issued M1 family (AQS-STD-002 section 12.1; A-M-199). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: Cu-Cr or Cu-Zr mould alloy if mould heat-cracking shows at the 31.7 kg/d feed (cost up). slab/billet leaves on conveyors; solids only thereafter. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/CONT_CAST.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

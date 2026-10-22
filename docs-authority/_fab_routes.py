@@ -9,11 +9,12 @@ issues those sheets in the house format from issued registers only:
   - envelope and service: the unit's own duty sheet (section 1 basis, section 2 size, the
     graph design row) - quoted, not recomputed;
   - internals line: AQS-DSN-INT-001 (inventory/INTERNALS.json) disposition;
-  - material line: the duty section 3 status verbatim - pending stays pending on the sheet;
+  - material line: the duty section 3 selection verbatim, cut at a sentence boundary - the full
+    text of record is the duty sheet (X-MAT-22 selections render since 2026-10-21; nothing
+    here re-selects, and a sheet without an issued selection keeps saying so);
   - nozzles: the unit's nozzle schedule (docs-authority/nozzles/<u>.csv) where it exists;
   - the fabrication hold rule: the route is issued for planning; fabrication does not start
-    before unit tasks 10-12 close (CAD accepted, real BOM) and, where named, the section 3
-    material selection lands.
+    before unit tasks 10-12 close (CAD accepted, real BOM).
 
 Nothing here sizes anything. Run: python3 docs-authority/_fab_routes.py
 """
@@ -76,8 +77,11 @@ for u in missing:
     mb = re.search(r'Graph design \(AQS-PAR-001 sizing\): (.*)', d)
     if mb: basis = re.sub(r'\s+', ' ', mb.group(1))[:140]
     m3 = re.search(r'3\. Material\. (.*)', d)
-    mat = re.sub(r'\s+', ' ', m3.group(1))[:220] if m3 else 'see duty sheet section 3'
-    mat_pending = 'pending' in mat.lower() or 'not chosen' in mat.lower()
+    mat = re.sub(r'\s+', ' ', m3.group(1)) if m3 else 'see duty sheet section 3'
+    if len(mat) > 400:                                   # cut at the last complete sentence inside 400
+        cut = mat.rfind('. ', 0, 400)
+        mat = mat[:cut + 1] + ' (continues on the duty sheet)' if cut > 0 else mat[:397] + '...'
+    mat_pending = mat.startswith('Selection pending') or 'Not chosen on this page' in mat
     disp = DISP.get(u, 'internals register entry pending (AQS-DSN-INT-001)')
     nzf = f'docs-authority/nozzles/{u}.csv'
     nzrows = list(csv.DictReader(open(nzf))) if os.path.exists(nzf) else []
@@ -90,7 +94,7 @@ for u in missing:
          f'Nozzles: {len(nzrows)} process connections per docs-authority/nozzles/{u}.csv' if nzrows
          else 'Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled', '',
          'Production route (issued ahead of the CAD build; fabrication does not start before unit',
-         'tasks 10-12 close and, where named, the section 3 material selection lands):',
+         'tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):',
          f'1. {a}.',
          f'2. {b}.',
          '3. Connections: nozzle stubs to the schedule; flange faces per AQS-PIP-003 class letters' if nzrows

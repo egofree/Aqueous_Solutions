@@ -9,13 +9,12 @@ per-unit view. This generator joins the issued tables; it selects nothing new:
 
   - a unit whose wetted edges all resolve to an issued family closes task 09 on its sheet here;
   - a unit with no wetted piped edge closes task 09 on 'no wetted streams' (edge census, nothing
-    selectable - AQS-STD-001 section 3 for such machines is construction-material work, tracked
-    by the fabrication routes and the AQS-END-002 EOL matrix, which holds those rows with the
-    named unit task 09 pointer until the section 3 selections are made);
-  - a unit whose duty sheet section 3 still reads 'Selection pending', or whose wetted edges
-    land in a section 12.2 family whose wetted material is itself pending (the CaCl2/MgCl2
-    brine family), stays open here with the reason and pointer - it is real remaining
-    material-selection work (the pot cells and the metallurgy train).
+    selectable - AQS-STD-001 section 3 for such machines is the construction-material selection,
+    issued for every roster unit with X-MAT-22 / AQS-STD-006 and rendered on the duty sheets);
+  - since X-MAT-22 issued the 38 former 'Selection pending' duty section 3s and split the
+    section 12.2 brine family into two issued rows (ambient PVDF import legs, molten MgCl2
+    graphite/Ni-200 return), the sweep has an empty open set; the open rule below stays for
+    honesty: a unit is open only where a wetted edge touching it lacks an issued family.
 
 Outputs docs-authority/UNIT_MATERIALS.md and inventory/UNIT_MATERIALS.json.
 Run: python3 docs-authority/_unit_materials.py
@@ -110,11 +109,11 @@ md = ['# Per-unit material selections (duty section 3 sweep)', '',
       'section 12.2 families); every one resolves to an issued family; none left in a catch-all.', '',
       'Rule: a unit closes task 09 where every wetted edge touching it carries a wetted material issued by '
       'AQS-STD-002 section 12 - the material column below is quoted from that family row, sources included. '
-      'A unit stays open where its own duty sheet section 3 still reads "Selection pending" (AQS-STD-001 '
-      'section 3 asks for the construction material of the unit itself, which is not a stream selection and '
-      'is real outstanding work for the machines and pot cells) or where its wetted edges fall in the '
-      'brine family whose wetted material is itself pending. The EOL matrix (AQS-END-002) holds those rows '
-      'under the same pointer and this doc names the same open set - no registry is contradicted.', '', '## 2. Families invoked', '']
+      'A unit stays open only where a wetted edge touching it lacks an issued family. With X-MAT-22 '
+      '(AQS-STD-006, 2026-10-21) the 38 former "Selection pending" duty section 3s are issued and the '
+      'section 12.2 brine family is split into two issued rows (ambient PVDF import legs; molten MgCl2 '
+      'graphite/Ni-200 return), so the sweep closes every roster unit with an empty open set. The EOL '
+      'matrix (AQS-END-002 Rev D) classes the corresponding rows - no registry is contradicted.', '', '## 2. Families invoked', '']
 seen_fam = collections.Counter((k, s2) for _, _, _, _, _, k, s2, _ in wets)
 for (k, s2), n in sorted(seen_fam.items(), key=lambda x: -x[1]):
     row = (F122 if s2 == '12.2' else F12)[k]

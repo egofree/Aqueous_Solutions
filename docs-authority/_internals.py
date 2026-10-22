@@ -211,9 +211,12 @@ for u in sorted(open_u):
     md.append(f'| {u} | {N[u]["class"]} | {open_u[u]} |')
 
 md += ['', '## 5. Explicitly not claimed', '',
-       '- Furnace hot faces, crucibles, launder linings and pot-cell electrode arrays inside the task 09 open set '
-       'wait on the section 3 material selections (AQS-STD-002 section 12.2 last row; AQS-END-02 holds the same '
-       'set).', '- The X-MFG-35 BMED bench run and X-MFG-41 ZNBR2 stack test own their testing open parts through '
+       '- The former task 09 open set (furnace hot faces, crucibles, launder linings, pot-cell electrode '
+       'arrays) closed with the X-MAT-22 duty section 3 selections (AQS-STD-006, A-M-318..328): the pot '
+       'cells close on the issued mfg-model BOMs, the melt-shop and service units on quoted duty section 3 '
+       'text; the internals detail that goes past a selection (muffle-class hot zones, element arrays) '
+       'stays a named open gap in section 4 and moves with the unit task 10-12 fabrication models.',
+       '- The X-MFG-35 BMED bench run and X-MFG-41 ZNBR2 stack test own their testing open parts through '
        'their own tasks; this register closes only the desk-level internal definition.']
 open('docs-authority/INTERNALS.md', 'w').write('\n'.join(md) + '\n')
 json.dump({'defined': defined, 'none': {u: NONE_REASON.get(c, NONE_REASON['None-class']) for u, c in none_u},

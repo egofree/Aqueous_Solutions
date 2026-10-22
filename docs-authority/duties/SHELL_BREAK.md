@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): castings_kg_d 2; spent_shell_kg_d 8; reclaim_kg_d 7; export_kg_d 1; basis A-M-281 knock-out split.
 - Graph design (AQS-PAR-001 sizing): machine vibratory shell knock-out station with reclaim sieve; spent_shell_kg_d 8; reclaim_kg_d 7; export_kg_d 1; table_kW 0.4.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Vibratory knock-out tray with UHMW-PE wear liner, 304 stainless reclaim sieve, open-steel frame housing the dry, noncombustible silica dust. Basis: shell knock-out + stucco reclaim, 8 kg shell/d (graph design A-M-281): wear selection per the mechanical-metallurgy wear text (DIETER1988 ch. 19); the 304 reclaim sieve keeps spent silica out of the cast surface (AQS-STD-002 silicate/ceramic class handling). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: rubber-lined tray where the noise budget dominates. reclaim split 7 kg stucco + 1 kg export per the graph closure. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/SHELL_BREAK.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

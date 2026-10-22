@@ -533,12 +533,12 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SF-REMIN | SOL_ARK_60K | REMIN | cable | — | — | 28.9 | SOL_ARK_60K → REMIN, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-ALCL3-MU | NORTH_DOCK | AL_POT | solids | — | — |  | NORTH_DOCK → AL_POT, position missing for AL_POT | solids: conveyor, bin or hand transfer; not piped |
 | IA-CL2-SHIP | AL_POT | NORTH_DOCK | DN15 | P3 | process vent gas |  | AL_POT → NORTH_DOCK, position missing for AL_POT | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-MGCL2-KROLL | TI_CELL | MG_POT | DN15 | — | CaCl2/MgCl2 brine concentrate to molten-salt pot; wetted material per unit task 09 (AQS-STD-002 section 12) |  | TI_CELL → MG_POT, position missing for TI_CELL, MG_POT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-MGCL2-KROLL | TI_CELL | MG_POT | DN15 | — | molten MgCl2 salt return (Kroll retort to MG_POT, ~700 C): graphite/Ni-200 wetted launder per AQS-STD-006 (AQS-STD-002 section 12.2) |  | TI_CELL → MG_POT, position missing for TI_CELL, MG_POT | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-KROLL-FLUX | TI_CELL | FLUX_PREP | solids | — | — |  | TI_CELL → FLUX_PREP, position missing for TI_CELL, FLUX_PREP | solids: conveyor, bin or hand transfer; not piped |
-| IA-MGCL2-MU | NORTH_DOCK | MG_POT | DN15 | — | CaCl2/MgCl2 brine concentrate to molten-salt pot; wetted material per unit task 09 (AQS-STD-002 section 12) |  | NORTH_DOCK → MG_POT, position missing for MG_POT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-MGCL2-MU | NORTH_DOCK | MG_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) |  | NORTH_DOCK → MG_POT, position missing for MG_POT | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-MG-TI | MG_POT | TI_CELL | solids | — | — |  | MG_POT → TI_CELL, position missing for MG_POT, TI_CELL | solids: conveyor, bin or hand transfer; not piped |
 | IA-CL2-MG-TI | MG_POT | TI_CELL | DN15 | P3 | process vent gas |  | MG_POT → TI_CELL, position missing for MG_POT, TI_CELL | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-CACL2-MU | NORTH_DOCK | CA_POT | DN15 | — | CaCl2/MgCl2 brine concentrate to molten-salt pot; wetted material per unit task 09 (AQS-STD-002 section 12) |  | NORTH_DOCK → CA_POT, position missing for CA_POT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-CACL2-MU | NORTH_DOCK | CA_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) |  | NORTH_DOCK → CA_POT, position missing for CA_POT | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | DN15 | P3 | process vent gas |  | CA_POT → NORTH_DOCK, position missing for CA_POT | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-TIO2-MU | NORTH_DOCK | TI_CELL | solids | — | — |  | NORTH_DOCK → TI_CELL, position missing for TI_CELL | solids: conveyor, bin or hand transfer; not piped |
 | IA-C-TI | NORTH_DOCK | TI_CELL | solids | — | — |  | NORTH_DOCK → TI_CELL, position missing for TI_CELL | solids: conveyor, bin or hand transfer; not piped |

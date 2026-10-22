@@ -68,7 +68,9 @@ def cls(e):
     if sid=='IA-FLUE-QUENCH': return 'P5','quench water'
     if sid=='IA-H2SO4-MU': return 'M2','98 wt% H2SO4 make-up; carbon steel passivates above 93 wt% and at ambient (PERRY9_MAT)'
     if sid=='S36': return '—','dopant concentrates (BBr₃/POCl₃ class): PTFE/PFA handling; class pending PIP-003 Rev B'
-    if 'mgcl' in car or 'cacl' in car: return '—','CaCl2/MgCl2 brine concentrate to molten-salt pot; wetted material per unit task 09 (AQS-STD-002 section 12)'
+    if 'mgcl' in car or 'cacl' in car:
+        if sid == 'IA-MGCL2-KROLL': return '—','molten MgCl2 salt return (Kroll retort to MG_POT, ~700 C): graphite/Ni-200 wetted launder per AQS-STD-006 (AQS-STD-002 section 12.2)'
+        return '—','CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2)'
     if ph!='G' and ('meoh' in car or 'methanol' in car): return 'M1','wet methanol service (316L per unit duty sheets)'
     if 'slurry' in car: return 'P4','alkaline silica slurry (PP-H; SIMONA class data)'
     if 'geothermal' in car or sid=='S43': return 'P5','propylene-glycol ground loop (HDPE DR-11 per node design)'

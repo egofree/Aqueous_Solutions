@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): rate_kg_d 0; connected_kW 15; backup_of ROLL (profile press at the Al/Cu profile class); outage_basis roll-stand outage on profile-class lots (A-M-282).
 - Graph design (AQS-PAR-001 sizing): machine horizontal profile press, N+1 former of ROLL; connected_kW 15; backup_of ROLL; outage_d 2; press_t 50; container_mm 60.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. H13 extrusion die + tool-steel container liner on a 50 t press (graph design press_t). Basis: horizontal profile press N+1 of ROLL (graph design): hot-work die steel class per ASM_V1 / DIETER1988. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: billet preheater induction sleeve if the profile class moves hot (a separate duty entry). Nitrided die land where galling is measured (first-article item). (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/EXTRUDE.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

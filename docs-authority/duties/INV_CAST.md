@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): pour_kg_d 2; shell_kg_d 8; basis live melt output 2 kg/d through the fired shell (A-M-281).
 - Graph design (AQS-PAR-001 sizing): machine investment casting tilt-pour station; pour_kg_d 2; shell_kg_d 8; molds_per_campaign 8.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Graphite crucible tilt-pour + alumina shell as the mould hot face; steel table and tilt hardware. Basis: investment casting at 2 kg/d castings through the 6-dip shell (graph design, A-M-281): the shell is a refractory hot face (SCHACHT2004); the crucible is the melt-contact part (DIETER1988). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: preheat-tunnel integration with SHELL_BURNOUT flue if heat economy dominates (work-order change, same materials). fired shell arrives from SHELL_BURNOUT at temperature. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/INV_CAST.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

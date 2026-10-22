@@ -1,7 +1,8 @@
 """AQS-STD-005 gate (unit task 09 sweep): UNIT_MATERIALS.md is the per-unit join of the
 AQS-PIP-004 wetted census to the issued AQS-STD-002 section 12 families - no new selection,
-every wetted edge resolved, no wetted row left in a catch-all, and the open set named with
-reasons that match the duty sheets and the pending brine family."""
+every wetted edge resolved, no wetted row left in a catch-all. Since X-MAT-22 (AQS-STD-006,
+A-M-318..328) issued the 38 formerly Selection-pending duty section 3s and the section 12.2
+brine family, the roster sweep open set is empty; this gate keeps it empty."""
 import json
 import os
 import re
@@ -69,13 +70,14 @@ def test_wetted_sheets_match_the_line_list():
 
 
 def test_the_open_set_is_the_named_pending_work():
+    """X-MAT-22: the roster sweep open set stays empty; the pot cells, the metallurgy train
+    and the service units are rendered as issued with their section 3 selections named."""
     src = open(DOC).read()
-    ## the pot cells and the pending brine family are open, by name, and nothing closes them
-    open_units = set(UM['open'])
-    assert 'CA_POT' in open_units and 'MG_POT' in open_units and 'TI_CELL' in open_units
+    assert UM['open'] == {}, UM['open']
+    assert 'pending brine family' not in src
+    ## every roster unit is rendered as issued
+    assert not [u for u in UNITS if f'### {u}\n' not in src], \
+        [u for u in UNITS if f'### {u}\n' not in src][:5]
+    ## the X-MAT-22 selections are visible on the sheet for the former brine trio
     for u in ('CA_POT', 'MG_POT', 'TI_CELL'):
-        assert 'pending brine family' in src.split(f'| {u} |', 1)[1], u
-    ## the open units are never rendered as issued
-    for u in open_units:
-        assert f'### {u}\n' not in src or src.split(f'### {u}\n', 1)[1].split('### ', 1)[0].startswith('\nNo wetted'), u
-    assert 'Nothing here selects for them' in src
+        assert 'AQS-STD-006' in src.split(f'### {u}\n', 1)[1].split('### ', 1)[0], u

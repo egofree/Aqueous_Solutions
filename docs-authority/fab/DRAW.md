@@ -4,13 +4,13 @@ Class: mill; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1500×800×1500 mm;
 service line: machine bench wire/rod draw bench, N+1 former of ROLL; connected_kW 3; backup_of ROLL; outage_d 2; bench_mm 1200; dies 6.
 
-Internals: open: same hold as task 09: duty section 3 selection pending (AQS-STD-005 section 4); internals cannot be detailed before the material is selected
-Material: Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+Internals: none with basis: a rolling mill; the stands are the design at unit tasks 10-13
+Material: Tungsten-carbide drawing dies in tool-steel casings; steel bench; die capstan hardware carries the machine lubricant programme (no wetted stream). Basis: bench wire/rod draw N+1 of ROLL (graph design): carbide die class is the wire-drawing standard at this scale (DIETER1988 ch. 20/21). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). (continues on the duty sheet)
 
 Nozzles: 3 process connections per docs-authority/nozzles/DRAW.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
-tasks 10-12 close and, where named, the section 3 material selection lands):
+tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):
 1. Machine build: welded frame plus standard drivetrain parts; sheet, plate and bar stock bought to the family standards (AQS-INV-004/006/007 desk packages).
 2. Tooling and working parts per the duty sheet size line; the full part set is the unit task 10-12 deliverables (CadQuery model, real BOM).
 3. Connections: nozzle stubs to the schedule; flange faces per AQS-PIP-003 class letters

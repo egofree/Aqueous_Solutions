@@ -51,7 +51,12 @@ def author(n, g, ins, outs, mi, mo, kw):
     o += s2
     o += ['']
     mat = ds.get('material') or sto.get('material')
-    o.append('3. Material. ' + (f'{mat} (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.' if mat else 'Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.'))
+    s3m = p.get('sec3_material') or {}
+    if s3m.get('mat'):   # X-MAT-22: the issued selection text, same composition as the refresh branch
+        o.append(f"3. Material. {s3m['mat']}. Basis: {s3m['basis']} Alternative: {s3m['alt']}. "
+                 f"{s3m['note']} ({s3m['task']})")
+    else:
+        o.append('3. Material. ' + (f'{mat} (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.' if mat else 'Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.'))
     if conns:
         n4 = f'4. Nozzles. Schedule at `nozzles/{u}.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`.'
     elif n.get('class') in _VESSEL_ZERO:
@@ -101,7 +106,21 @@ def main():
         # material texts (e.g. the AQS-REV-H2-001 rows) are never overwritten.
         _ds = prm.get('design') or {}; _sto = prm.get('design_storage') or {}
         _mat = _ds.get('material') or _sto.get('material')
-        if _mat:
+        _s3m = prm.get('sec3_material') or {}
+        # X-MAT-22: the issued duty section 3 material-selection text renders from
+        # params.sec3_material (mat/basis/alt/note/task, flow_graph/param/materials3.py) where a
+        # sheet still carries the Selection pending template. Generic graph-node-material
+        # sheets without a sec3_material keep the X-MAT-06 one-liner, so existing issued
+        # sheets stay byte-identical; hand-written per-unit material texts (the
+        # AQS-REV-H2-001 rows) are never overwritten.
+        if _s3m.get('mat'):
+            _m3 = re.search(r'^3\. Material\..*$', s, flags=re.M)
+            if _m3 and (_m3.group(0).startswith('3. Material. Selection pending')
+                        or _m3.group(0).rstrip().endswith('(X-MAT-22)')):
+                _sec3 = (f"3. Material. {_s3m['mat']}. Basis: {_s3m['basis']} "
+                         f"Alternative: {_s3m['alt']}. {_s3m['note']} ({_s3m['task']})")
+                if _sec3 != _m3.group(0): s = s.replace(_m3.group(0), _sec3, 1)
+        elif _mat:
             _m3 = re.search(r'^3\. Material\..*$', s, flags=re.M)
             if _m3 and _m3.group(0).startswith(('3. Material. 316L if the stream is wet', '3. Material. 316L where the stream is wet', '3. Material. Selection pending')):
                 _new = f'3. Material. {_mat} (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.'

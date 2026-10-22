@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): rolled_kg_d 13; kWh_d 0.416; basis 0.032 kWh/kg cold-rolling class (A-M-177 DIETER1988); hot rolling cheaper.
 - Graph design (AQS-PAR-001 sizing): machine two-high bench rolling mill; rolled_kg_d 13; rolls_D_mm 300; roll_L_mm 640; kWh_d 0.416.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Induction-hardened H13/D2-class alloy-steel rolls on cast-steel housings; planar roller bearings; steel frame. Basis: two-high bench mill, 13 kg/d plate/sheet incl. the Cu line (graph design; A-M-177 DIETER1988 energies): hot-work tool-steel roll class per ASM_V1/DIETER1988 ch. 20. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: cast-iron roll blanks for the short Cu runs (cost down, lighter surface class). dry metal contact - no corrosive stream; roll surface is the wear face (A-M-177). (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/ROLL.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

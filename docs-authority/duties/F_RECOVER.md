@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 2. Size.
 - Sizing study AQS-DUTY-073 (study): rate_kg_d 1.52; in_leach_kg_d 1.5; in_reclaim_kg_d 0.02; vessel HF-equivalent concentrate hold tank, PE, 1 d hold.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments. Basis: HF-equivalent fluoride concentrate hold, 1.52 kg/d (graph design AQS-DUTY-073 sizing: the vessel row itself names PE): hot legs (85 C) are the issued P3 PVDF family (AQS-STD-002 section 12.1; ULLMANN_HF handling). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: PTFE/PFA internals where the install layout needs a moulded part instead of sheet-fabricated PVDF. static hold tank: the drain is the only wetted moving face; no corrosion allowance claimed - fluoropolymer compatibility substitutes for measured rate. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/F_RECOVER.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

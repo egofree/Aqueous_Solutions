@@ -131,6 +131,13 @@
           "unit": "kW",
           "status": "study",
           "note": "X-PAR-12 TF: 6.08 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
+        },
+        "sec3_material": {
+          "mat": "PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family",
+          "basis": "PEM water electrolysis (X-PAR-12 note; relief basis A-M-19 blocked-outlet class): cell hardware is metal-as-electrode per M6 with the hydride/reverse-current guards of the house rule; Ir dissolution is the electrode basis at the anode (BERNT2018); construction follows the electrolyser standards (IEC62282_3_100, ISO22734_2019). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "carbon-composite bipolar plates as the stack replacement class (PEMFC-family hardware) with the same hydride check",
+          "note": "electrode degradation is the first-article bench basis: no rate claimed here; the P5 water feed legs are the issued house family.",
+          "task": "X-MAT-22"
         }
       }
     },
@@ -1143,6 +1150,13 @@
           "kWh_d": 21.249,
           "heats_d": 4,
           "basis": "X-MFG-37 logged batch schedule class"
+        },
+        "sec3_material": {
+          "mat": "Clay-graphite crucibles assigned per melt family (Cu/Zn/Fe/Al one each), ceramic-fibre hot face 150 mm + 4 mm CS casing; alumina castable hearth under the pour lip",
+          "basis": "coreless medium-frequency induction remelt of Cu/Fe/Zn/Al scrap + pot metal at the 10 kg class (graph design, A-M-282 energies): melting points bound the refractory class (CRC_CU/CRC_FE/CRC_ZN/CRC_AL); crucible and lining class per SCHACHT2004 ch. 8/10; coil hardware per INDUCT_SOCX. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "SiC crucibles for the Al family if attack is measured (cost up, better wetting resistance); alumina-liner swap when the charge is ferrous-only",
+          "note": "crucible life is a unit task 12 first-article measurement (crucible_kg 10, heats_d 4 in graph design); no rate claimed. Slag tap is basic-oxide wetted: alumina hot face.",
+          "task": "X-MAT-22"
         }
       },
       "continuous_kw": {
@@ -1202,6 +1216,13 @@
           "avg_kW": 0.0,
           "connected_kW": 15.0,
           "basis": "X-MFG-37 logged batch schedule class; standby-zero per A-M-283"
+        },
+        "sec3_material": {
+          "mat": "Water-cooled copper induction crucible (no wetted-refractory interface) + 304L vacuum chamber; ceramic-fibre insulation on the shell",
+          "basis": "vacuum induction skull/ISM melt of Ti sponge, N+1 diverse of IND_MELT, 2 kg batch class (graph design, A-M-282): the water-cooled copper face keeps the Ti melt out of contact with any refractory (CRC_TI melting point 1668 C; INDUCT_SOCX power class). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "graphite crucible inside the vacuum chamber if skull-melt power runs above the design (a different metal-contact duty class)",
+          "note": "no oxides, no salt: M7 vacuum-dry service; Ti sponge line is zero-rate at the design day.",
+          "task": "X-MAT-22"
         }
       },
       "continuous_kw": {
@@ -1231,7 +1252,14 @@
         "season": "summer",
         "drive_kW_th": 5.0,
         "displaced_kW_e": 1.5,
-        "basis": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.2 (A-M-239, A-M-240): vendor class 0.4-0.6 COP_c at 55-90 C (InvenSor/Mayekawa class; Wang & Oliveira 2006); building cooling 4.5 kW_c class, compression chiller draw 1.5 kW_e at COP 3.0 stays as N+1."
+        "basis": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.2 (A-M-239, A-M-240): vendor class 0.4-0.6 COP_c at 55-90 C (InvenSor/Mayekawa class; Wang & Oliveira 2006); building cooling 4.5 kW_c class, compression chiller draw 1.5 kW_e at COP 3.0 stays as N+1.",
+        "sec3_material": {
+          "mat": "304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and headers; PP-H water legs on the P5 house water family; steel frame",
+          "basis": "silica gel-water adsorption chiller, drive 65 C, chilled 12 C (graph node params; A-M-239/240 COP class): the silica gel-water chiller drives at 55-90 C (WANG2006_ADS); bed shells are sealed vacuum-grade vessels. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "13X zeolite bed if the drive temperature class climbs above 90 C (cost up, a different duty class)",
+          "note": "seal integrity is the durability item, not corrosion; the chilled/cooling water side stays on the house water materials.",
+          "task": "X-MAT-22"
+        }
       },
       "continuous_kw": null,
       "class": "adsorption_chiller"
@@ -1251,7 +1279,14 @@
         "kW_per_K": 6.65,
         "dT_K": 1.8,
         "season": "winter",
-        "basis": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.3 (A-M-241): 6.65 kW/K make-up air (~23 900 m3/h, AQS-THM-002) x 1.8 K = 12 kW; displaces 12 kW of winter resistance tempering."
+        "basis": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.3 (A-M-241): 6.65 kW/K make-up air (~23 900 m3/h, AQS-THM-002) x 1.8 K = 12 kW; displaces 12 kW of winter resistance tempering.",
+        "sec3_material": {
+          "mat": "Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating), 316L headers; PP condensate tray where any defrost condensate can form; water side on the issued Q3/Q4 M1 316L loop family",
+          "basis": "12 kW make-up-air coil at 1.8 K (graph params; A-M-241): heating-only coil stays above the air dew point (HAB air-handling class), so the corrosion driver is absent on the air side (PERRY9_HEAT air-cooled construction class). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "316L finned-tube coil if winter commissioning shows fin wetting (cost up)",
+          "note": "no wetted stream; the filter frames are the machine maintenance surface.",
+          "task": "X-MAT-22"
+        }
       },
       "continuous_kw": null,
       "class": "hx"
@@ -1276,7 +1311,14 @@
           45
         ],
         "fan_kW": 0.6,
-        "basis": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8 (A-M-244): 0.05 kW_fan/kW_th class; rated 12 kW to pass the 10.16 kW no-preheat upset with margin."
+        "basis": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.8 (A-M-244): 0.05 kW_fan/kW_th class; rated 12 kW to pass the 10.16 kW no-preheat upset with margin.",
+        "sec3_material": {
+          "mat": "Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop",
+          "basis": "12 kW dry rejection at the 37.8 C design bulb (graph params; A-M-244): air-sided fin-coil construction is the air-cooled exchanger class (PERRY9_HEAT); the loop side follows the issued water-loop families (AQS-STD-002 section 12.1). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "micro-channel all-aluminium coil (cost down) if galvanic behaviour in the dry service proves neutral",
+          "note": "no wetted stream; the fan is the only moving part.",
+          "task": "X-MAT-22"
+        }
       },
       "continuous_kw": null,
       "class": "dry_cooler"

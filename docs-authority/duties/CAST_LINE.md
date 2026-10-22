@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): pour_kg_d 3; products Cu ingot/billet, permanent mold; scrap_return_kg_d 0.
 - Graph design (AQS-PAR-001 sizing): machine permanent-mould cast line; pour_kg_d 3; moulds 2; table_L_mm 700.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Graphite permanent moulds with steel backing platens (Cu pour, melt 1085 C per CRC_CU); graphite launder; steel tilt table. Basis: permanent-mould Cu casting at the 3 kg/d pour (graph design; A-M-199 class): graphite is the standard Cu-mould hot face at the melt temperature and is chemically indifferent to the melt (SCHACHT2004 ch. 8; DIETER1988 tool class for the platens). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: cast-iron mould inserts if the run profile stays cold-metal short-batch (cost down, shorter mould life to be measured). mould change-out is a unit task 12 work order; no rate claimed. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/CAST_LINE.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

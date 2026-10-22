@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): rate_kg_d 0; connected_kW 11; backup_of ROLL (open-die press); outage_basis roll-stand outage at the 10 kg/d bar class (A-M-282).
 - Graph design (AQS-PAR-001 sizing): machine open-die hydraulic press, N+1 former of ROLL; connected_kW 11; backup_of ROLL; outage_d 2; press_t 25; ram_mm 200.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. H13 die blocks + cast-steel platens/ram on the open-die press (graph design ram_mm 200). Basis: open-die hydraulic press N+1 of ROLL at the bar class (graph design): die-steel class per ASM_V1; platens per DIETER1988. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: re-cuttable cast die blocks for short die lots through the fab-shop route. dry hot-work contact; no corrosive stream. (X-MAT-22)
 
 4. Nozzles. No piped process connection on the graph (un-rated or non-mass edges only); no nozzle schedule is issued yet. Nothing to size a bore against.
 

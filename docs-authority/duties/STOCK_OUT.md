@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): stock_out_kg_d 36.71; export_kg_d 10.81.
 - Graph design (AQS-PAR-001 sizing): rack three-tier bar/plate/ingot staging rack; issue_kg_d 25.9; export_kg_d 10.81; hold_d 1.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Mild-steel staging rack with HDPE wear pads and PE tote carts; no piped wetted service. Basis: bar/plate/ingot staging, 1 d hold at the METAL_STORE class (graph design; AQS-DUTY-064; A-M-261): dry solids storage; machine-marker class grounding (dry dust housing conductive rule M7 where chips fly). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: galvanized rack hardware for the imported-stock bay if atmospheric humidity rules. no corrosion load; wear at the pads is a spares item. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/STOCK_OUT.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

@@ -5312,5 +5312,203 @@
    "flow_graph/param/write_graph.py",
    "docs-authority/LOAD_LIST.md"
   ]
+ },
+ {
+  "id": "A-M-318",
+  "task": "X-MAT-22",
+  "title": "Pot-cell materials (fused-chloride electrolysis and carbochlorination cells)",
+  "value": "AL_POT, MG_POT, CA_POT, CR_CELL and MO_CELL select graphite wetted faces (liner/anodes; 10 mm allowance on AL_POT) + 90 % alumina backup linings + ceramic fibre + steel shell below the liner; steel or graphite cathodes per the pot class; dry-breathing headspaces (M7) and anhydrous/PVDF cold feed legs",
+  "units": "selection class",
+  "where": "graph params.sec3_material (flow_graph/param/materials3.py); duty sheets sections 3 of the five cells; AQS-STD-002 section 12.2 rows 4-5; AQS-PIP-004 IA-CACL2-MU/IA-MGCL2-MU/IA-MGCL2-KROLL",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/AL_POT.md"
+  ],
+  "needs_verification": true,
+  "basis": "molten-chloride corrosion physics at 650-700 C: Cr-selective loss from Fe-Cr-Ni alloys, impurity-driven attack in dry neutral melts, graphite inert to dry chloride melts (DING2018_CL_REVIEW, DING2021_ENG, KRUIZENGA2012); pot geometry per ULLMANN_MAGNESIUM; linings per SCHACHT2004; graph duty sections 1-2 (A-M-282/284)",
+  "sensitivity": "a duty-temperature or impurity-condition change moves the selection between graphite, SiC and Ni-200 classes; aggressive advances in salt purity re-open the alloy option",
+  "replaced_by": "the unit task 12 pot-cell verification (first-article campaign) replaces the qualitative basis with measured pot life and corrosion data",
+  "verification_test": "pot-cell verification: first-article liner and anode change-out data, bath analysis at change-out, and shell-liner inspection vs the 10 mm allowance"
+ },
+ {
+  "id": "A-M-319",
+  "task": "X-MAT-22",
+  "title": "Kroll-train materials (TI_CELL)",
+  "value": "TI_CELL: alumina-brick carbochlorinator at 800 C with graphite hot face, 316L TiCl4 condensation train, 310S reduction retort with graphite crucible insert at 900 C, graphite/Ni-200 molten MgCl2 return launder",
+  "units": "selection class",
+  "where": "graph params.sec3_material TI_CELL; duty sheet section 3; AQS-STD-002 section 12.2 molten-return row; AQS-PIP-004 IA-MGCL2-KROLL",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/TI_CELL.md"
+  ],
+  "needs_verification": true,
+  "basis": "Kroll batch retort practice (KROLL1940, ULLMANN_TITANIUM); refractory chlorinator classes per SCHACHT2004; molten-chloride launder physics per DING2018_CL_REVIEW; graph design (chlorinator 800 C, retort 900 C, 1 kg batch)",
+  "sensitivity": "service above 950 C moves the retort to the Mo-clad class; traced TiCl4 hydrolysis moves the condensation train to Hastelloy C-276",
+  "replaced_by": "the unit task 12 Kroll bench campaign replaces the literature basis with measured retort wall condition and sponge-adhesion practice",
+  "verification_test": "Kroll retort first-article: wall condition after the 1 kg batch, MgCl2 drain recovery, launder integrity"
+ },
+ {
+  "id": "A-M-320",
+  "task": "X-MAT-22",
+  "title": "Melt-shop furnace lining and element classes",
+  "value": "IND_MELT clay-graphite crucibles (one per Cu/Zn/Fe/Al family) + ceramic-fibre hot face 150 mm + CS casing + castable hearth; RF_HEAT same class; RES_HEAT ceramic-fibre modules + 80Ni-20Cr elements to 1100 C; COMB_HEAT alumina-silica brick + castable crown + 310S burner tube; VAC_IND water-cooled copper crucible + 304L chamber; VAC_CAST 304L chamber + graphite crucible; SINTER graphite elements + 95 % Al2O3 muffle under inert/vacuum at 1300 C",
+  "units": "selection class",
+  "where": "graph params.sec3_material for the seven units; duty sheets sections 3; AQS-DUTY-072 N+1 heater work orders",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/IND_MELT.md"
+  ],
+  "needs_verification": true,
+  "basis": "melting points bound the refractory classes (CRC_CU/CRC_FE/CRC_ZN/CRC_AL/CRC_TI); element and die classes per ASM_V1; sinter hot-zone practice per ASM_V7; linings per SCHACHT2004; coil class per INDUCT_SOCX; A-M-282/283 duty class",
+  "sensitivity": "a duty above 1100 C moves element class to MoSi2; ferrous-only charges move crucible liners to alumina; Al attack on clay-graphite moves to SiC",
+  "replaced_by": "the unit task 12 first-article campaigns (crucible life, element life, muffle life) replace the qualitative basis",
+  "verification_test": "first-article furnace campaign: crucible heats-to-failure, element hours at class temperature, muffle inspection at the SINTER and SHELL_BURNOUT class"
+ },
+ {
+  "id": "A-M-321",
+  "task": "X-MAT-22",
+  "title": "Investment-train and wax/shell-room materials",
+  "value": "WAX_PATTERN 304L melt tank (70-90 C) + PP-H bins (M5 80 C tier) + PE pans; SHELL_BUILD PP-H slurry plant on the issued alkaline-silica P4 family; SHELL_BREAK UHMW-PE wear liner + 304 reclaim sieve; SHELL_BURNOUT alumina-silica hot face + 80Ni-20Cr elements + 304L wax condenser; INV_CAST graphite crucible + alumina shell; FLUX_PREP PP-H drums + 304L bench in sealed anhydrous handling",
+  "units": "selection class",
+  "where": "graph params.sec3_material for the six units; duty sheets sections 3; AQS-STD-002 section 12.1 P4 row",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/WAX_PATTERN.md"
+  ],
+  "needs_verification": true,
+  "basis": "hot-melt practice per ULLMANN_WAX; slurry family per AQS-STD-002 section 12.1; wear classes per DIETER1988 ch. 19; kiln linings per SCHACHT2004; MgCl2 hygroscopicity per ULLMANN_MAGNESIUM; A-M-281/282 design rates",
+  "sensitivity": "a binder pH change below neutral moves SHELL_BUILD to 316L; wax melt band below 70 C re-opens the PP-H melt tank",
+  "replaced_by": "the unit task 12 shell-room campaign (slurry wear, tray liner life, kiln lining) replaces the qualitative basis",
+  "verification_test": "first-article shell-room wear and lining inspection vs the issued classes"
+ },
+ {
+  "id": "A-M-322",
+  "task": "X-MAT-22",
+  "title": "Forming-machine and caster materials",
+  "value": "ROLL induction-hardened H13/D2 rolls on cast-steel housings; DRAW tungsten-carbide dies in tool-steel casings; EXTRUDE H13 die + tool-steel container liner; FORGE H13 die blocks + cast-steel platens; CAST_LINE graphite permanent moulds (Cu, 1085 C) + steel platens; CONT_CAST water-cooled copper mould on the M1 demin family; STOCK_OUT CS rack + HDPE pads",
+  "units": "selection class",
+  "where": "graph params.sec3_material for the seven units; duty sheets sections 3; AQS-DUTY-064 store class",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/ROLL.md"
+  ],
+  "needs_verification": true,
+  "basis": "hot-work tool-steel classes per ASM_V1 and DIETER1988 ch. 20; Cu-mould temperature exceeds die-steel service (CRC_CU, SCHACHT2004 ch. 8 graphite class); mould/water classes per A-M-199",
+  "sensitivity": "heat-cracking at the mould moves CONT_CAST to Cu-Cr/Cu-Zr; a fine-wire product class moves DRAW to diamond dies for the last pass",
+  "replaced_by": "the unit task 12 die/roll/mould first-article campaigns replace the qualitative basis",
+  "verification_test": "die, roll and mould first-article wear measurement vs the issued tool-material classes"
+ },
+ {
+  "id": "A-M-323",
+  "task": "X-MAT-22",
+  "title": "Digestor service-unit materials (F_RECOVER, LI_RECOVER, P_CA)",
+  "value": "F_RECOVER PE hold tank at ambient + PVDF internals + P3 PVDF hot legs; LI_RECOVER PP-H carbonation vessel + PP agitator + PE lines (+ 316L frame outside wetted zone); P_CA PP-H precipitator + PP agitator + PE slurry lines",
+  "units": "selection class",
+  "where": "graph params.sec3_material for the three units; duty sheets sections 3; AQS-DUTY-073 vessel rows",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/F_RECOVER.md"
+  ],
+  "needs_verification": true,
+  "basis": "issued families: P3 PVDF for hot HF legs (ULLMANN_HF, AQS-STD-002 section 12.1), alkaline P4 PP-H behaviour for Li/Ca liquor classes (GREENWOOD basic-oxide chemistry)",
+  "sensitivity": "batch pH crossing neutral moves LI_RECOVER to 316L; liquor temperature above ambient moves P_CA to the mixed-build class",
+  "replaced_by": "unit task 02 sizing (all three unsized) comes first; the selection is issued at construction level only and re-checked when the sizing lands",
+  "verification_test": "construction-class re-check at the task 02 sizing gate of each unit"
+ },
+ {
+  "id": "A-M-324",
+  "task": "X-MAT-22",
+  "title": "Grease-kettle materials (GREASE_CA, GREASE_LI)",
+  "value": "316L jacketed soap kettles + 316L agitators for the Ca and Li soap saponification at the 95-120 C kettle class; jacket water side on the Q3/Q4 M1 family; 304L is the cost-down alternative if first articles show wax-only wetting",
+  "units": "selection class",
+  "where": "graph params.sec3_material for the two kettles; duty sheets sections 3",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/GREASE_CA.md"
+  ],
+  "needs_verification": true,
+  "basis": "grease manufacture practice: metal-soap saponification kettles in 304/316L contact (MANG2007 ch. 14.6); hot alkaline soap concentrate is outside the PP-H tier",
+  "sensitivity": "a measured saponification duty below 95 C with wax-only wetting moves the kettle to 304L",
+  "replaced_by": "the unit task 02 kettle sizing and the task 12 soap kettle first article replace the qualitative basis",
+  "verification_test": "kettle first-article: soaping campaign residue and cleanability, no pit-rate claim"
+ },
+ {
+  "id": "A-M-325",
+  "task": "X-MAT-22",
+  "title": "Heat-block materials (ADS_CHILL, DRY_COOLER, MAU_HX)",
+  "value": "ADS_CHILL 304L adsorber shells + silica-gel beds + 316L water coils (PP-H P5 legs); DRY_COOLER copper-tube/aluminium-fin coil + galvanized casing on the HDPE-class closed loop; MAU_HX aluminium-fin/copper-tube heating coil with 316L headers; water sides on the issued M1/P5 families",
+  "units": "selection class",
+  "where": "graph params.sec3_material for the three units; duty sheets sections 3",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/ADS_CHILL.md"
+  ],
+  "needs_verification": true,
+  "basis": "silica gel-water chiller class per WANG2006_ADS; air-cooled exchanger construction per PERRY9_HEAT; drive/chilled classes per A-M-239/240; rejection and make-up-air duties per A-M-244/A-M-241",
+  "sensitivity": "a drive temperature above 90 C moves ADS_CHILL to 13X zeolite; fin wetting at winter commissioning moves MAU_HX to 316L finned tube",
+  "replaced_by": "the unit task 12 commissioning/season trials replace the qualitative basis",
+  "verification_test": "season-commissioning trial: seal leak-down on the adsorbers, coil condition at the dry cooler and make-up-air coil"
+ },
+ {
+  "id": "A-M-326",
+  "task": "X-MAT-22",
+  "title": "PEM electrolyser stack hardware (H2O_ELYZ)",
+  "value": "Ti porous transport layers, Ir/Ru mixed-oxide anode + Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware + PTFE seals; product gas lines on the issued M1 316L family; wetted metal-as-electrode under M6 with AQS-REV-H2-001 hydride/reverse-current guards",
+  "units": "selection class",
+  "where": "graph params.sec3_material H2O_ELYZ; duty sheet section 3; graph internals",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/H2O_ELYZ.md"
+  ],
+  "needs_verification": true,
+  "basis": "PEM construction classes per IEC62282_3_100 and ISO22734_2019; anode Ir-dissolution basis per BERNT2018; house M6 rule for wetted metal in electrolytic service",
+  "sensitivity": "electrode loading or duty class moves the stack class (carbon-composite bipolar plates as the replacement stack, same guards)",
+  "replaced_by": "the unit task 12 PEM bench campaign (X-PAR-12 follow-ups) replaces the literature basis with stack degradation data",
+  "verification_test": "PEM stack first-article: voltage-hold degradation and membrane condition vs the rated class"
+ },
+ {
+  "id": "A-M-327",
+  "task": "X-MAT-22",
+  "title": "Polymer sizing-train materials (PELLET, POLY_STOCK)",
+  "value": "PELLET 316L die plate + cutter hub + UHMW-PE trough liner + PE/PP trough; POLY_STOCK HDPE tote bins + PP powder drums on a steel rack; both units have no corrosive wetted stream",
+  "units": "selection class",
+  "where": "graph params.sec3_material for the two units; duty sheets sections 3",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/PELLET.md"
+  ],
+  "needs_verification": true,
+  "basis": "wear-limited contact per DIETER1988 and PERRY9_MAT selection logic; store class per A-M-264 and AQS-DUTY-073",
+  "sensitivity": "measured die wear at the first article moves the cutter face to tungsten carbide; powder charge build moves totes to antistatic PP",
+  "replaced_by": "the unit task 12 pelletiser first article replaces the qualitative basis",
+  "verification_test": "pelletiser first-article die/cutter wear inspection"
+ },
+ {
+  "id": "A-M-328",
+  "task": "X-MAT-22",
+  "title": "SI_REDUCE construction class (GLASS-sector furnace)",
+  "value": "SI_REDUCE issues as a graphite hot-face carbothermic-reduction furnace + alumina brick backup + mild-steel casing, dry char/silica-class solids handling; the unit has solids-only graph edges and no wetted stream today; its process duty and rates stay a unit task 02 pending item",
+  "units": "selection class",
+  "where": "graph params.sec3_material SI_REDUCE; duty sheet section 3",
+  "files": [
+   "flow_graph/param/materials3.py",
+   "docs-authority/MATERIALS_SEC3.md",
+   "docs-authority/duties/SI_REDUCE.md"
+  ],
+  "needs_verification": true,
+  "basis": "carbonaceous hot-face class per SCHACHT2004 ch. 8; element benchmark CRC_SI for the reduction temperature class; graph closure shows CHAR_TO_SI as the only edge",
+  "sensitivity": "batch chemistry beyond the graphite class moves the hot face to SiC; the process change is a task 02 decision, not a materials trade",
+  "replaced_by": "the task 02 sizing and process closure for SI_REDUCE re-opens and owns the duty; at that gate the construction class is re-checked",
+  "verification_test": "construction-class re-check at the task 02 sizing gate"
  }
 ]

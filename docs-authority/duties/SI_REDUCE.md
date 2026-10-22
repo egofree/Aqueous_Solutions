@@ -7,7 +7,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 2. Size.
 - Sizing calculation pending (unit task 02). The graph node carries no design and no envelope.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7). Basis: GLASS-sector furnace unit with solids-only edges (CHAR_TO_SI on the graph design day at zero): the construction material is issued here at the lining level (SCHACHT2004 ch. 8 carbonaceous hot faces; CRC_SI is the element benchmark for the reduction duty class); process duty and its rates stay a unit task 02 pending item. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: Silicon-carbide hot face when batch chemistry reaches beyond the graphite class (a process-change decision, not a materials trade). no wetted stream on the graph; the selection is the construction class only. (X-MAT-22)
 
 4. Nozzles. No piped process connection on the graph (un-rated or non-mass edges only); no nozzle schedule is issued yet. Nothing to size a bore against.
 

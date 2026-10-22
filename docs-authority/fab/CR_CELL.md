@@ -4,13 +4,13 @@ Class: cell; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 800×800×1600 mm;
 service line: service Cr(III) molten-salt electrolysis cell with carbochlorination loop, 700 C; chemistry Cr2O3 + 3C + 3Cl2 -> 2CrCl3 + 3CO; 2CrCl3 -> 2Cr
 
-Internals: open: same hold as task 09: duty section 3 selection pending (AQS-STD-005 section 4); internals cannot be detailed before the material is selected
-Material: Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+Internals: issued mfg model BOM (1 internals part row): "5,Hood with gas offtake DN50 and dip leg,1,"CS hood, Hastelloy C-276 dip leg","anode-gas chlorine recycle, int" [models/mfg/CR_CELL/bom.csv]
+Material: Graphite liner and graphite anode for the carbochlorination melt (CrCl3 wetted), dry CO/CO2/Cl2 headspace; 90 % alumina brick backup in a mild-steel shell. Basis: Cr2O3 + 3C + 3Cl2 carbochlorination at 700 C with an internal anode-gas loop (graph design): the bed is a dry hot face (M7); the melt physics is the pot-cell class (DING2018_CL_REVIEW, KRUIZENGA2012). (continues on the duty sheet)
 
 Nozzles: 6 process connections per docs-authority/nozzles/CR_CELL.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
-tasks 10-12 close and, where named, the section 3 material selection lands):
+tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):
 1. Shell and hearth: plate or welded vessel per the section 3 material once selected; hot- or wet-face hardware is the AQS-STD-002 family material of the streams it touches.
 2. Working parts: the electrode/hearth/bottle hardware named on the sizing and duty sheets; electrode arrays stay per the internals register disposition below.
 3. Connections: nozzle stubs to the schedule; flange faces per AQS-PIP-003 class letters

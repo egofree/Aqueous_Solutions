@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): duty_kg_d 0; connected_kW 5; backup_of IND_MELT (N+1 at equal melt duty); outage_basis IND_MELT coil/PSU outage; 100-400 kHz through-coil at the 10 kg crucible class (A-M-232 rating held; A-M-282 N+1 envelope).
 - Graph design (AQS-PAR-001 sizing): service RF preheat/hold unit, N+1 at equal melt duty of IND_MELT; connected_kW 5; backup_of IND_MELT; outage_d 2; crucible_kg 10; freq_kHz 100-400; duty_note equal-duty backup of the 10 kg crucible class (A-M-282; A-M-232 rating held).
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Clay-graphite crucible + ceramic-fibre hot face + 4 mm CS casing (same melt-shop lining class as IND_MELT); the RF coil enclosure keeps the water-cooled copper coil out of the melt space. Basis: RF preheat/hold at equal melt duty of IND_MELT, 100-400 kHz through-coil (graph design, A-M-282): same refractory-chemistry environment as IND_MELT (SCHACHT2004, INDUCT_SOCX, CRC_* melting points). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: quartz isolation sleeve past the crucible wall if the coil sees flux vapours. N+1 diverse of IND_MELT (A-M-283); no melt contact at design-day zero. (X-MAT-22)
 
 4. Nozzles. No piped process connection on the graph (un-rated or non-mass edges only); no nozzle schedule is issued yet. Nothing to size a bore against.
 

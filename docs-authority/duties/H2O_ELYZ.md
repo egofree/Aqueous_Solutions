@@ -9,7 +9,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Internals (graph node): PEM stack, H2 and O2 gas-liquid separators, deoxo on H2, dryer.
 - Sizing calculation pending (unit task 02). The graph node carries no design and no envelope.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family. Basis: PEM water electrolysis (X-PAR-12 note; relief basis A-M-19 blocked-outlet class): cell hardware is metal-as-electrode per M6 with the hydride/reverse-current guards of the house rule; Ir dissolution is the electrode basis at the anode (BERNT2018); construction follows the electrolyser standards (IEC62282_3_100, ISO22734_2019). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: carbon-composite bipolar plates as the stack replacement class (PEMFC-family hardware) with the same hydride check. electrode degradation is the first-article bench basis: no rate claimed here; the P5 water feed legs are the issued house family. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/H2O_ELYZ.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 

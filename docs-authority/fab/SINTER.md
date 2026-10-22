@@ -4,13 +4,13 @@ Class: furnace; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1000×1000×1500 mm;
 service line: service Ti/Mo/Cr powder sinter furnace, N+1 consolidation of ROLL; connected_kW 8; backup_of ROLL; outage_d 2; design_case_kg_d 0.5; T_C 130
 
-Internals: open: same hold as task 09: duty section 3 selection pending (AQS-STD-005 section 4); internals cannot be detailed before the material is selected
-Material: Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+Internals: open: no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Material: Graphite resistance elements + 95 % alumina muffle under inert/vacuum atmosphere; nickel-free hot zone on a water-cooled steel jacket. Basis: Ti/Mo/Cr powder sinter at 1300 C, press-and-sinter consolidation N+1 of ROLL (graph design): reactive-powder sintering furnaces use inert/vacuum hot zones with graphite or MoSi2 elements (ASM_V7); Ti embrittles in air/N2 at the class (CRC_TI). (continues on the duty sheet)
 
 Nozzles: 3 process connections per docs-authority/nozzles/SINTER.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
-tasks 10-12 close and, where named, the section 3 material selection lands):
+tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):
 1. Shell and hearth: plate or welded vessel per the section 3 material once selected; hot- or wet-face hardware is the AQS-STD-002 family material of the streams it touches.
 2. Working parts: the electrode/hearth/bottle hardware named on the sizing and duty sheets; electrode arrays stay per the internals register disposition below.
 3. Connections: nozzle stubs to the schedule; flange faces per AQS-PIP-003 class letters

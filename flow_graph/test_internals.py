@@ -1,7 +1,8 @@
 """AQS-DSN-INT-001 gate (unit task 06 sweep): INTERNALS.md is the per-unit internals
 disposition register. Closes carry issued evidence (named document or quoted sized
 statement), the keyword-guarded 'none' class rules never swallow a booked internal, and
-the open set is the named design gap plus the task 09 hold - nothing invented."""
+the open set is named design gaps only - nothing invented. The former task 09 hold
+(Selection pending) is gone since X-MAT-22 (AQS-STD-006)."""
 import json
 import os
 import re
@@ -54,11 +55,13 @@ def test_closes_cite_real_issued_sources():
         assert needle in IN['defined'][u], (u, IN['defined'][u])
 
 
-def test_open_set_is_the_named_gap_and_task09_hold():
+def test_open_set_is_a_named_gap_after_xmat22():
     open_u = IN['open']
-    # the task 09 hold units stay open here under the same pointer
-    for u in ('AL_POT', 'MG_POT', 'CA_POT', 'TI_CELL', 'IND_MELT', 'H2O_ELYZ'):
-        assert 'same hold as task 09' in open_u[u], u
+    # X-MAT-22 (AQS-STD-006) closed the task 09 hold: the pot cells, the metallurgy train and
+    # the service units of that hold are now defined on issued section 3 / mfg-BOM evidence
+    assert not any('same hold as task 09' in b for b in open_u.values())
+    for u in ('AL_POT', 'MG_POT', 'CA_POT', 'TI_CELL', 'H2O_ELYZ'):
+        assert u in IN['defined'], u
     # the neither-defined-nor-held units name the real design gap per class
     for u in ('OIL_FRAC', 'VCD_TRAIN', 'Q1_A', 'H2_DRYER', 'ZNBR2', 'FUEL_CELL'):
         assert 'no issued internals basis' in open_u[u], u

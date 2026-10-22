@@ -10,7 +10,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 - Sizing study AQS-DUTY-072 (study): shell_kg_d 8; wax_reclaim_kg_d 1.8; burned_wax_kg_d 0.2; T_C 900; basis flash dewax + fire at 900 C (A-M-281).
 - Graph design (AQS-PAR-001 sizing): service flash-dewax + shell fire furnace, 900 C; shell_kg_d 8; wax_reclaim_kg_d 1.8; burned_wax_kg_d 0.2; T_C 900; kW 0.25; condenser wax condensate to WAX_PATTERN.
 
-3. Material. Selection pending (unit task 09, AQS-STD-002 across the AQS-ASSAY-001 Rev C bounding cases). Not chosen on this page.
+3. Material. Alumina-silica kiln hot face + castable hearth, 80Ni-20Cr elements, mild-steel casing; 304L wax condenser on the condensate leg. Basis: flash dewax + shell fire at 900 C (graph design; A-M-281): lining class per SCHACHT2004 ch. 4/13; element class to 1100 C per ASM_V1; condensate is recovered wax (ULLMANN_WAX). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: SiC elements if element-zone hot spotting appears at the first-article campaign. dewax off-gas books to IA-BURNOUT-VENT (dry hot M7); no measured rate claimed. (X-MAT-22)
 
 4. Nozzles. Schedule at `nozzles/SHELL_BURNOUT.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
 
