@@ -269,7 +269,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up (X-PRO-01, partial) | canonical |
 | AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | A | 2026-10-21 | Bought-item specification sheets (X-PRO-02): standard-class datasheet per bought AQS-INV-004 family | canonical |
 | AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan per fabrication route (X-QA-01) | canonical |
-| AQS-END-002 | `docs-authority/EOL_RETURN.md` | B | 2026-10-19 | End-of-life material return by feed class (X-END-02); Rev B: no silently unassigned line | canonical |
+| AQS-END-002 | `docs-authority/EOL_RETURN.md` | C | 2026-10-21 | End-of-life material return by feed class (X-END-02); Rev C: duty-sheet sweep, residual narrowed to unit task 09 | canonical |
 | AQS-OPS-002 | `docs-authority/MAINT_PLAN.md` | A | 2026-10-16 | Maintenance plan: inspection and replacement intervals per unit (X-OPS-02) | canonical |
 | AQS-OPS-003 | `docs-authority/SPARES.md` | A | 2026-10-16 | Critical spares list (X-OPS-03) | canonical |
 | AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP open-action register with owner tasks in plan terms (X-SAF-01) | canonical |

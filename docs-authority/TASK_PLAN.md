@@ -640,7 +640,7 @@ Sizing rule: AGENTS.md §Sizing. Sizing-driven rate and layout changes are appro
 ### X-END. Decommissioning and recycling loop closure
 
 - [x] **X-END-01** Decommissioning plan. Done when: drain, purge, and dismantle per system. Depends: X-OPS-01. Evidence: `docs-authority/DECOMMISSIONING.md`.
-- [ ] **X-END-02** End-of-life material return. Done when: each unit material assigned to a plant feed class under AQS-ASSAY-001. Depends: X-BAS-01, X-PRO-01. Start from `docs-authority/EOL_RETURN.md` (partial). Triage: desk P2. Status: Rev B classing: 931 of 1020 lines classed; 89 unassigned, each held with a named reason (88 pending unit task 09 duty sheets, 1 roll-up pointer); 199 held total (fluoropolymer, Ti, NdFeB, Pt-Rh holds unchanged).
+- [ ] **X-END-02** End-of-life material return. Done when: each unit material assigned to a plant feed class under AQS-ASSAY-001. Depends: X-BAS-01, X-PRO-01. Start from `docs-authority/EOL_RETURN.md` (partial). Triage: desk P2. Status: Rev C classing: 947 of 1020 lines classed; 73 unassigned, each held with a named reason (70 wait on the section-3 material selection at unit task 09 across the AQS-ASSAY-001 Rev C bounding cases, 2 wait on the HCL_BURNER duty sheet at unit task 01, 1 pointer row to the AQS-INV-004 fabricated-part roll-up); 159 held total (fluoropolymer 57, Ti 23, Nd/Dy 5, Pt-Rh 1, duty-sheet-pending 72, pointer 1).
 
 ### X-TOOL. Modeling tooling
 
