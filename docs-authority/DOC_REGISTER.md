@@ -34,6 +34,7 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-3D-BUILD-001 | `docs-authority/BUILD_3D_FROM_FLOW.md` | **G** | 2026-10-01 | Building 3D models from the plant flow graph | canonical |
 | AQS-3D-STACK-001 | `docs-authority/STACK_3D_DECISION.md` | **A** | 2026-10-01 | Stack decision — 3D and diagram surfaces | canonical |
 | AQS-ASM-001 | `docs-authority/ASME_CLASS_SHEETS.md` | C | 2026-10-01 | ASME vessel inventory & B31.3 piping class sheets (templates) | canonical |
+| AQS-ASM-002 | `docs-authority/INSTALL_SEQUENCE.md` | A | 2026-10-21 | Install sequence per level (X-ASM-01): ordered lifts and connections, heavy-lift roster | canonical |
 | AQS-ASSAY-001 | `docs-authority/FEED_ASSAY.md` | C | 2026-10-15 | Feed assay | canonical |
 | AQS-AUD-GRAPH-001 | `docs-authority/GRAPH_AUDIT.md` | — | 2026-10-02 | Graph audit | canonical |
 | AQS-AUTH-001 | `docs-authority/AUTHORITY.md` | X | 2026-10-01 | CAD authority lock | canonical |
