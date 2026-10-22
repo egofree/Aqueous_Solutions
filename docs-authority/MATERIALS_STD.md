@@ -1,7 +1,7 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: M
+Revision: N
 Date: 2026-10-21
 Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
 
@@ -20,6 +20,7 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | K | Galvanic and stray-current design for the EW aisle (X-MAT-07). | 2026-10-15 |
 | L | Service-class selection guide across the assay envelope added as section 12 (X-MAT-01). Line-list class rules keyed to the guide families: the "aqueous process, default thermoplastic" catchall is retired, hydrocarbon/fuel cuts go to M2 (carbon steel, dry, per the issued duties), wet methanol and solvents to M1 (316L per the issued duties), melt pours become launder rows (not piped), and the fluoro synthesis train, dopant concentrates and molten-salt pot brines carry per-duty-sheet materials pending a PIP-003 Rev B class. Section 8 checker aligned: unit map equals the issued CPVC and PVDF members, and the BMED inlets are derived from the booked X-RSZ-04 trim duties with driver heat capacities; 0 exceed, 33 rows on the registered 40 °C ambient assumption (A-M-269). Also refreshes the section 10 trim table to the X-RSZ-04 booked duty and flow basis. | 2026-10-21 |
 | M | Section 2 ambiguous audit list resolved (X-MAT-06): the two contradicting or out-of-class materials adjudicated (HDR_H2 is the PVC-U wet-acid header of AQS-REV-H2-001 - graph row corrected; Q3 heat batteries are SA-240 304L at the 100 C tier - PP-H is an 80 C class material [S4], graph row corrected); unstated temperatures given stated bases (edge T_C stamps, loop t_nom, or the registered 40 C ambient A-M-269); the 32 template-duty units covered by the generated per-unit table of section 13.2. Also: the 13 wet-HDR_H2 lines move to the new P1 wet-acid-header family (AQS-PIP-004 Rev C), updating the section 12 counts (dry gas 47 to 38, hot leach 46 to 44, acid or brine 54 to 52). Done-when evidence: docs-authority/_ambiguous_units.py --done (roster 77: 27 doc-section, 18 row of 13.1, 32 generated). | 2026-10-21 |
+| N | Elastomer and gasket compatibility per service resolved (X-MAT-03): section 14 adds the per-class decision table (Parker O-Ring Handbook ORD 5700 [S23] alongside the registered PERRY9_MAT, ULLMANN_FLUOROPOLY and [S11]/[S12] rows) and the family-level exceptions, including the solvent families (EPDM: alcohols and ketones in its polar-solvent range; the exact FKM grade for a methanol or acetone duty stays a maker-table check), the EPDM special-compound row for the 100 C Q3 water, the wet-acid H2 header (FKM, bonded hardware), the 98 wt% H2SO4 leg (PTFE envelope) and the rapid-gas-decompression note for H2 soft goods. AQS-PIP-003 Rev B points its held line at section 14; the WS gasket-detail holds of sections 12.3/13 resolve there. Gate: docs-authority/_gasket_census.py. | 2026-10-21 |
 
 ## 1. Rules
 
@@ -394,7 +395,7 @@ The 2026-10-15 audit items below were ambiguous then and are resolved by the sec
 | ZNBR2_BR2_REGEN (wet Br₂) | Section 3.1: PVC-U shell and sump with the headspace class ruling |
 | GLASS_DIGEST (liquor not characterized) | Duty sheet names chloride/scrub liquor; IA-DIG-LIQ and IA-DIG-BLK class P1/P2 aqueous families above |
 | WS_NITRIC, WS_PEROX (oxidizer limits) | Section 5 (Rev D) and the M1 PVDF rules of section 2 |
-| WS_SOLV, WS_DOPE, WS_SLURRY (compatibility not stated) | Duties name 316L where wet; lines class P1/P4/"—" families above; gasket detail stays X-MAT-03 |
+| WS_SOLV, WS_DOPE, WS_SLURRY (compatibility not stated) | Duties name 316L where wet; lines class P1/P4/"—" families above; gasket detail resolved in section 14 (Rev N) |
 | ETOH_STILL, BUOH_STILL | Section 4.2 |
 | VCD_TRAIN, FAB_UPW_TANK, HDR_UPW, BMED_UPW_POLISH | Section 10 bullet (Ti Gr 2 / PVDF on the 85 °C draw) and the P5/M1 water families |
 | HDR_H2, RELIEF_H2, H2_DRYER | Section 6 (M6, AQS-REV-H2-001); HDR_H2 dielectric breaks in section 11 |
@@ -432,8 +433,8 @@ issued sections, 18 by 13.1, 32 by 13.2 - no misses).
 | MEOH_TANK | SA-240 304L, welded (issued design_storage row; supersedes the duty template) | crude MeOH, MeOH fuel, dock transfer | ambient basis (A-M-269) | 304L is sufficient for non-chloride methanol; the pipe class stays M1 (316L) |
 | MEOH_COND | 316L shell and coil (issued design row) | methanol/water traces from the synthesis loop and fuel cell (26.72 kg/d water) | ambient basis (A-M-269; edges unstamped, condensing duty 0.71 kW) | - |
 | WS_SOLV | SA-240 304L, welded (design_storage; template superseded) | solvent wash (ethanol and acetone; IA-SOLV-WB) | 40 C (edge stamp) | - |
-| WS_DOPE | PE, rotomoulded (design_storage; template superseded) | spent dopant and rinses (S36 nominally closed, 0.0 kg/d) | ambient basis | concentrate handling stays section 12.2 / X-MAT-03 |
-| WS_SLURRY | PE, rotomoulded (design_storage; template superseded) | colloidal silica slurry (S37, P4) | ambient basis | gasket detail stays X-MAT-03 |
+| WS_DOPE | PE, rotomoulded (design_storage; template superseded) | spent dopant and rinses (S36 nominally closed, 0.0 kg/d) | ambient basis | concentrate handling stays section 12.2; gaskets per section 14 |
+| WS_SLURRY | PE, rotomoulded (design_storage; template superseded) | colloidal silica slurry (S37, P4) | ambient basis | gasket detail resolved in section 14 (Rev N) |
 | FAB_UPW_TANK | PE, rotomoulded (design_storage) | UPW (S01, IA-UPW-FAB) | ambient basis | - |
 | HDR_UPW | PVDF SDR 21, fusion-welded (issued design row) | UPW distribution | ambient basis | - |
 | BMED_UPW_POLISH | PVC-U per the section 12 water families and [S10] (template superseded; neutral UPW loop) | S25 distillate in; UPW to FAB_UPW_TANK and REMIN out | 40 C (edge stamps IA-UPW-REMIN / IA-UPW-REJ) | - |
@@ -639,3 +640,50 @@ temperature basis for unstamped wetted lines.
 | Q1_A to Q2_B | Section 4.4 (A106 Gr B at 250/150 C) |
 | GEO_GHEX, GEO_HP, GEO_HP_CLOSED_LOOP | Section 12.1 glycol family + issued graph design rows (13.1 row) |
 | MEOH_SYNTH | Section 6 and AQS-REV-H2-001 (13.1 row confirms) |
+
+## 14. Elastomer and gasket compatibility per service, Rev N (X-MAT-03)
+
+Done when: every AQS-PIP-003 Rev A class and every AQS-STD-002 section 12 service family carries a named
+primary elastomer or non-elastomeric gasket with a temperature ceiling and a registered basis. Basis: the
+Parker O-Ring Handbook, ORD 5700 (2022 ed.) [S23] — the same class of manufacturer engineering source as
+[S1] to [S4] — plus the registered PERRY9_MAT (impervious graphite; HCl at all concentrations to boiling),
+ULLMANN_FLUOROPOLY (PTFE chemical inertness), [S11]/[S12] (H₂O₂ handling) and S8 (oil heat service).
+
+### 14.1 Per-class decision table (AQS-PIP-003 Rev A classes)
+
+| Class | Primary elastomer / gasket | Elastomer T envelope | Decision basis | Sources |
+| --- | --- | --- | --- | --- |
+| P1 PVC-U ≤ 60 °C | FKM compound | FKM to 204 °C ≫ class 60 °C | FKM: excellent resistance to ozone, oxygen, mineral oil, fuels, aromatics and many organic solvents; special FKM compounds give improved acids resistance — the wet-acid families (chlor-alkali, HCl ≤ 60, brine, bromine scrub, wet-acid H₂ header) sit inside that range | [S23], [S3] |
+| P2 CPVC ≤ 88 °C | FKM compound | FKM 204 °C ≫ 88 °C | hot leach liquor (salts, no oxidizer, no aromatic solvent); same FKM chemistry as P1 at higher temperature | [S23], [S5] |
+| P3 PVDF ≤ 120 °C | FKM; PTFE envelope at the oxidizer make-ups | FKM 204 °C ≫ 120 °C | nitric ≤ 40 °C and peroxide services: the PTFE envelope keeps hydrocarbon-derived polymer out of oxidizer contact ([S11], [S12] storage rules; FKM envelope-backed where the peroxide line is Class 150) | [S23], [S11], [S12] |
+| P4 PP-H ≤ 80 °C | EPDM | EPDM to 150 °C (204 °C max in water/steam) ≫ 80 °C | EPDM chemical resistance names sodium and potassium alkalis, many acids and polar solvents; hot water and steam to 149 °C with special compounds | [S23], [S4] |
+| P5 HDPE ≤ 60 °C | EPDM | EPDM 150 °C ≫ 60 °C | water service (S01, tower, irrigation, quench spool): inside the EPDM hot-water range | [S23] |
+| M1 316L | spiral-wound 316/graphite at flanges; PTFE envelope for the O₂ legs | graphite to the class 400 °C ceiling | impervious graphite resists HCl at all concentrations to boiling (PERRY9_MAT); PTFE envelope for dry O₂ (polymers that ignited would fail M7; PTFE is the oxygen-clean soft good per ASTM G93) | PERRY9_MAT, [S23], ULLMANN_FLUOROPOLY |
+| M2 CS | spiral-wound 304/graphite | graphite to 400 °C | dry hydrocarbon and non-aqueous oil service per S8; no elastomer in the flange by design (oil 250 °C exceeds every elastomer ceiling) | [S8], PERRY9_MAT |
+| G1 glass ≤ 200 °C | PTFE soft inserts (couplings) | PTFE creep governs tightening, not chemistry | PTFE chemical inertness (ULLMANN_FLUOROPOLY); the ΔT 120 K shock rule of the class sheet bounds thermal seating | ULLMANN_FLUOROPOLY, [S23] |
+| F1 FRP ≤ 100 °C | FKM | FKM 204 °C ≫ 100 °C | flue/acid-gas ducts atmospheric; FKM nameplate range covers wet flue condensate | [S23], [S1] |
+
+### 14.2 Family-level exceptions and held checks
+
+| Service family / special | Elastomer decision | Basis and holds |
+| --- | --- | --- |
+| Wet methanol service (M1, 11 lines) and organic liquid (M1, ethanol + acetone resupply) | EPDM primary: alcohols and ketones are inside the EPDM polar-solvent range [S23]; FFKM alternate (polar solvents, acids, water/steam verified) [S23] | a standard-FKM grade is not ruled out on this page: the exact FKM compound for a methanol or acetone duty is chosen from the maker fluid-compatibility table before that line is accepted — held check, per-line |
+| Q3 water at 100 °C (304L vessels Rev M) | EPDM special compound (hot water/steam range 149 °C, to 260 °C special [S23]) | compounds at 100 °C water must be confirmed against the maker table at procurement — held check |
+| Wet acid H₂ + sweep air header (P1, 13 lines) | FKM at the Class 150 joints; bonded metal hardware | ignition governs per AQS-REV-H2-001 (M3/M6); FKM is the non-sparking soft good; header pressure relief-bounded (~17.8 kPa design), so no rapid-gas-decompression exposure at the flanges |
+| Dry H₂ (RELIEF_H2, H2_DRYER, M1) | FKM O-rings at equipment joints; PTFE soft goods acceptable | rapid gas decompression: smaller cross-sections resist explosive decompression better [S23 §2.5]; RGD-resistant compound grading remains a maker-table check when compressed H₂ duty (X-MAT-09 P/T) is sized |
+| 98 wt% H₂SO₄ make-up (M2) | PTFE envelope over an FKM base at the single flanged joint | passivating carbon steel pipe per PERRY9_MAT; the envelope keeps the elastomer out of direct 98 wt% contact where the FKM acid-compound grade would otherwise be necessary |
+| Fluoro synthesis train ("—") | issued duty-sheet rows govern (unfilled PTFE preferred over mineral-filled soft goods in HF service; the Br₂/HF contexts already name FKM/PTFE per issued sections 3.1/4.5 class sheets) | class sheet pending PIP-003 Rev B; no new elastomer selected here outside the issued rows |
+| Pot-brine "—" families (MG_POT, CA_POT, F_RECOVER, POLY_STOCK) | deferred with the wetted selection | unit task 09 (X-MAT pot-cell follow-up; section 12.2) |
+| Molten-metal launder pours ("—", not piped) | no flanges — no gaskets in the service | gas-phase exempt ruling of section 12 |
+| Q1/Q2 thermal-oil pump seals (M2, 250 °C oil) | no elastomer in the process flange (graphite); the pump seal is a mechanical-seal maker package | any elastomer would sit above its 204 °C ceiling [S23]; seal selection follows the pump maker's data — held check |
+| ZNBR2 wet bromine scrub (issued §3.1) | FKM (already issued) | Br₂ at 10 ppmv in air; consistent with the FKM halogen tolerance of its range [S23] |
+| WS_DOPE, WS_SLURRY PE-vessel connections | EPDM at vessel flanges (P4 alkaline / P4 slurry classes); the rotomoulded shells carry no flanged elastomer joints | section 13.1 rows; X-MAT-03 gasket hold resolves here |
+| ALK/acid/BMED scrubber wash and potable UPW legs | EPDM (P4/P5 rows above); potable-water-certified compound at the potable joints | compound listing confirmed at procurement — held check; chemistry basis is the EPDM row of the P4/P5 class entries [S23] |
+
+Rule reminder (M6 interlock): every metal-to-thermoplastic or metal-to-glass break in an electrolyte or
+water service keeps the dielectric isolating flange (AQS-PIP-003 section 2); the elastomer choice does not
+change that ruling.
+
+### References Rev N
+
+- [S23] Parker Hannifin O-Ring Division, Parker O-Ring Handbook, ORD 5700 (2022 ed.), https://www.parker.com/content/dam/Parker-com/Literature/O-Ring-Division-Literature/ORD-5700.pdf

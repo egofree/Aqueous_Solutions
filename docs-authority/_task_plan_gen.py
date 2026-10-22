@@ -422,6 +422,7 @@ EVIDENCE_PASS={
  'X-END-02':'PARTIAL:docs-authority/EOL_RETURN.md|Rev B classing: 931 of 1020 lines classed; 89 unassigned, each held with a named reason (88 pending unit task 09 duty sheets, 1 roll-up pointer); 199 held total (fluoropolymer, Ti, NdFeB, Pt-Rh holds unchanged)',
  'X-MAT-01':'docs-authority/MATERIALS_STD.md',
 'X-MAT-06':'docs-authority/MATERIALS_STD.md',
+'X-MAT-03':'docs-authority/MATERIALS_STD.md',
 }
 REOPEN_WHY={
  'X-MFG-31':'HF_GEN, VDF_SYN, TFE_SYN, POLY_F, POLY_OLEFIN and POLY_COND have no mfg model or route yet (feed-blocked, AQS-DUTY-072/073); GLASS_DIGEST, OIL_PYRO, LEACH_CSTR_1, MEOH_* and BLACK_DIGEST do (AQS-DUTY-062/050, models/mfg)',
@@ -435,6 +436,15 @@ REOPEN_WHY={
 # 123 closed at issue against duty-sheet section 6 relief statements, 97 trip actions closed in the SIF pass
 # (167 SIFs in sif_list.csv), register AQS-SAF-008 empty - done-when "worksheets per P&ID node with actions closed" passes.
 # The remaining three stay PARTIAL.
+# 2026-10-21 X-MAT-03 closed: elastomer and gasket compatibility per service (MATERIALS_STD Rev N
+# section 14). The Parker O-Ring Handbook ORD 5700 (2022 ed.) registered as S23: per-class decision
+# table over all nine AQS-PIP-003 Rev A classes (FKM on the acid/hydrocarbon/vent families, EPDM on
+# the water/alkali families, spiral-wound 316/304-graphite and PTFE envelopes on the metal classes)
+# and family exceptions - solvent families to EPDM (alcohols and ketones in its polar-solvent range)
+# with the exact FKM grade held as a maker-table check, EPDM special compound at the 100 C Q3 water,
+# FKM bonded on the wet-acid H2 header, PTFE envelope on the 98 wt% H2SO4 leg, RGD note for H2 soft
+# goods. Machine gate docs-authority/_gasket_census.py (classes covered, rows sourced, family class
+# coverage; exits nonzero otherwise). AQS-PIP-003 Rev B points its held line at section 14.
 # 2026-10-21 T04 nozzle-schedule disposition batch (20 desk-P2 items closed): the _nozzle_sched.py
 # rule (_noz_edges: mass kg/d edges and HL-/thermal kW edges are nozzles; electrical and cable energy
 # rows are not) gives zero schedulable connections for them - 13 already carry the utilities-only or
@@ -461,7 +471,7 @@ REOPEN_WHY={
 # inlets (35.1/35.7 C) from the booked X-RSZ-04 trim duties and driver heat capacities; the section 10 trim
 # table moved to the X-RSZ-04 booked basis. The molten-salt pot-cell wetted selection itself stays open (12.2,
 # closes with X-MAT-06 / unit task 09) - it is a per-unit decision, not a section 12 class.
-DONE_X={"X-RSZ-07","X-BLD-05","X-BLD-07","X-THM-02","X-ELS-09","X-SAF-02","X-BLD-03","X-BLD-01","X-PRO-04","X-QA-02","X-END-01","X-OPS-01","X-COM-03","X-COM-02","X-COM-01","X-SAF-06","X-SAF-01","X-CTL-03","X-THM-03","X-CTL-02","X-CTL-01","X-BLD-06","X-RED-01","X-RED-03","X-RED-04","X-RED-05","X-RED-06","X-RED-07","X-RED-08","X-RED-09","X-GOV-20","X-MFG-32","X-STD-01","X-PAR-10","X-RED-02","X-FIR-01","X-COD-01","X-END-02","X-QA-01","X-OPS-02","X-SAF-05","X-OPS-03","X-BLD-02","X-PIP-05","X-PRO-01","X-COD-03","X-SAF-04","X-MFG-38","X-MFG-37","X-MFG-34","X-MFG-33","X-MFG-36","X-PAR-15","X-MFG-39","X-MFG-40","X-ELS-06","X-BAS-04","X-DWG-03","X-DWG-02","X-DWG-01","X-THM-01","X-THM-04","X-PAR-03","X-MFG-31","X-PAR-14","X-PAR-13","X-SAF-11","X-ELS-02","X-MAT-01","X-MAT-06",'X-THM-03','X-PAR-04','X-PAR-01','X-RED-03','X-RED-07','X-RED-09','X-RED-05','X-RED-08','X-RED-06','X-RED-04','X-RED-01','X-GOV-06','X-GOV-05','X-PAR-11','X-PAR-12','X-INV-02C','X-PAR-02','X-INV-02D','X-ELS-02A','X-PIP-04','X-INV-02','X-INV-04','X-INV-05','X-INV-03','X-PIP-03','X-GOV-20','X-INV-01','X-SAN-01','X-MFG-32','X-STD-01','X-ELS-11','X-PAR-08','X-PAR-10','X-PAR-09','X-MFG-30','X-MAT-20','X-PAR-07','X-BLD-04','X-PAR-05','X-PAR-06','X-MAT-07','X-MAT-19','X-RSZ-06','X-RSZ-04','X-RSZ-03','X-RSZ-02','X-RSZ-01','X-PIP-02','X-RSZ-05','X-BLD-09','X-GOV-08','X-MAT-07','X-ELS-05','X-ELS-08','X-ELS-07','X-ELS-03','X-MAT-18','X-COD-02','X-MAT-09','X-PIP-01','X-ELS-04','X-BAS-02','X-SAF-09','X-MAT-14','X-MAT-15','X-SAF-10','X-SAF-07','X-MAT-17','X-MAT-16','X-GOV-07','X-GOV-04','X-ELS-10','X-SAF-08','X-MAT-12','X-MAT-11','X-MAT-10','X-MAT-08','X-MAT-05','X-MAT-00','X-MAT-02','X-MAT-04','X-GOV-01','X-GOV-02','X-GOV-03','X-BAS-01','X-ELS-01','X-SAF-03','X-TOOL-01','X-TOOL-02','X-TOOL-03'}
+DONE_X={"X-RSZ-07","X-BLD-05","X-BLD-07","X-THM-02","X-ELS-09","X-SAF-02","X-BLD-03","X-BLD-01","X-PRO-04","X-QA-02","X-END-01","X-OPS-01","X-COM-03","X-COM-02","X-COM-01","X-SAF-06","X-SAF-01","X-CTL-03","X-THM-03","X-CTL-02","X-CTL-01","X-BLD-06","X-RED-01","X-RED-03","X-RED-04","X-RED-05","X-RED-06","X-RED-07","X-RED-08","X-RED-09","X-GOV-20","X-MFG-32","X-STD-01","X-PAR-10","X-RED-02","X-FIR-01","X-COD-01","X-END-02","X-QA-01","X-OPS-02","X-SAF-05","X-OPS-03","X-BLD-02","X-PIP-05","X-PRO-01","X-COD-03","X-SAF-04","X-MFG-38","X-MFG-37","X-MFG-34","X-MFG-33","X-MFG-36","X-PAR-15","X-MFG-39","X-MFG-40","X-ELS-06","X-BAS-04","X-DWG-03","X-DWG-02","X-DWG-01","X-THM-01","X-THM-04","X-PAR-03","X-MFG-31","X-PAR-14","X-PAR-13","X-SAF-11","X-ELS-02","X-MAT-01","X-MAT-06","X-MAT-03",'X-THM-03','X-PAR-04','X-PAR-01','X-RED-03','X-RED-07','X-RED-09','X-RED-05','X-RED-08','X-RED-06','X-RED-04','X-RED-01','X-GOV-06','X-GOV-05','X-PAR-11','X-PAR-12','X-INV-02C','X-PAR-02','X-INV-02D','X-ELS-02A','X-PIP-04','X-INV-02','X-INV-04','X-INV-05','X-INV-03','X-PIP-03','X-GOV-20','X-INV-01','X-SAN-01','X-MFG-32','X-STD-01','X-ELS-11','X-PAR-08','X-PAR-10','X-PAR-09','X-MFG-30','X-MAT-20','X-PAR-07','X-BLD-04','X-PAR-05','X-PAR-06','X-MAT-07','X-MAT-19','X-RSZ-06','X-RSZ-04','X-RSZ-03','X-RSZ-02','X-RSZ-01','X-PIP-02','X-RSZ-05','X-BLD-09','X-GOV-08','X-MAT-07','X-ELS-05','X-ELS-08','X-ELS-07','X-ELS-03','X-MAT-18','X-COD-02','X-MAT-09','X-PIP-01','X-ELS-04','X-BAS-02','X-SAF-09','X-MAT-14','X-MAT-15','X-SAF-10','X-SAF-07','X-MAT-17','X-MAT-16','X-GOV-07','X-GOV-04','X-ELS-10','X-SAF-08','X-MAT-12','X-MAT-11','X-MAT-10','X-MAT-08','X-MAT-05','X-MAT-00','X-MAT-02','X-MAT-04','X-GOV-01','X-GOV-02','X-GOV-03','X-BAS-01','X-ELS-01','X-SAF-03','X-TOOL-01','X-TOOL-02','X-TOOL-03'}
 if os.path.isdir(_MFD): DONE_X |= {f'X-INV-02-{f[:-3]}' for f in os.listdir(_MFD) if f.endswith('.md')}
 out=[];cnt=[]
 def box(d): return '[x]' if d else '[ ]'

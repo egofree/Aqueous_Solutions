@@ -1,13 +1,14 @@
 # Piping class sheets
 
 Document number: AQS-PIP-003
-Revision: A
+Revision: B
 Date: 2026-10-15
-Authority: AQS-PLAN-007 X-PIP-01. Materials per AQS-STD-002 Rev H. Study. Not a PE stamp. Design code ASME B31.3 (process piping) for every class; thermoplastic classes also follow the manufacturer's installation guide. Values marked study are in AQS-REG-002 (A-M-045 to A-M-047).
+Authority: AQS-PLAN-007 X-PIP-01. Materials per AQS-STD-002 Rev N. Study. Not a PE stamp. Design code ASME B31.3 (process piping) for every class; thermoplastic classes also follow the manufacturer's installation guide. Values marked study are in AQS-REG-002 (A-M-045 to A-M-047).
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue. Nine classes, service map, limits, joints, gaskets, bolting, valves. | 2026-10-15 |
+| B | The held line resolves: elastomer selection per service is now AQS-STD-002 Rev N section 14 (per-class decision table over the Parker O-Ring Handbook ORD 5700 [registered in AQS-STD-002 as S23] and family-level exceptions; the WS gasket-detail hold closes there). Class sheets stay Rev A; X-MAT-03 closed. | 2026-10-21 |
 
 ## 1. Class sheets
 
@@ -41,4 +42,4 @@ A metal class meeting a thermoplastic, glass or FRP class in an electrolyte or w
 
 ## 3. Held
 
-Line-by-line class assignment of every edge is X-PIP-02. Elastomer selection per service is X-MAT-03. Pressure ratings at temperature need the manufacturer tables for the chosen brand.
+Line-by-line class assignment of every edge is X-PIP-02. Elastomer selection per service resolved 2026-10-21: AQS-STD-002 Rev N section 14 (X-MAT-03) holds the per-class elastomer decisions and family exceptions; the per-class sheet rows above stay the class-level defaults. Pressure ratings at temperature need the manufacturer tables for the chosen brand.
