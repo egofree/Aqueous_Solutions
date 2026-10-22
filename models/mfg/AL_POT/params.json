@@ -1,0 +1,99 @@
+{
+  "unit_id": "AL_POT",
+  "graph_revision": "AC",
+  "source": "flow_graph/plant_flow_graph.json node AL_POT (graph revision AC); docs-authority/duties/AL_POT.md sections 2, 3, 4 and 6; docs-authority/nozzles/AL_POT.csv (task 04 schedule); models/mfg/AL_POT/WORK_ORDER.md; models/mfg/AL_POT/bom.csv rows 1-7 (AQS-DUTY-072 basis)",
+  "size_mm": [800, 800, 1600],
+  "size_basis": "duty section 2 envelope (graph node): cell-class study minimum, bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)",
+  "origin_mm": null,
+  "class": "cell",
+  "acceptance_sets": ["A-core"],
+  "design": {
+    "service": "molten AlCl3-(NaCl-KCl) electrolysis cell, 700 C",
+    "chemistry": "2 AlCl3 -> 2 Al + 3 Cl2",
+    "I_A": 1460.77, "cell_V": 3.8, "dc_kW": 5.5509, "hold_kW": 0.1069,
+    "bath_T_C": 700.0, "anode_D_mm": 75, "anode_imm_mm": 400,
+    "feed_kg_d": 49.4192, "metal_kg_d": 10.0, "cl2_kg_d": 39.4192,
+    "design_kPa": null,
+    "note": "graph design row (AQS-PAR-001). Atmospheric dry-Cl2 headspace (M7); no design pressure and no relief case on the duty section 6 - the hood works at slight negative draft; hood draft interlock is the WO step 5 control item."
+  },
+  "bath": {
+    "salt": "NaCl-KCl-AlCl3 melt, 700 C",
+    "melt_top_mm": 500,
+    "metal_layer_mm": 30,
+    "rho_salt_kg_m3": 1700,
+    "rho_metal_kg_m3": 2375,
+    "basis": "melt level, freeboard and layer thicknesses are study assumptions for the assembly geometry (melt top below the z=600 Cl2 nozzles keeps the headspace dry, M7); the graph envelope basis states the 0.5 d bath hold at 1800 kg/m3 - no residence-time claim is made"
+  },
+  "anode": {
+    "count": 5, "D_mm": 75, "rodding": "z 100 .. 1000 (400 mm immersion from the melt top 500)",
+    "material": "graphite (chlorinated duty)",
+    "basis": "bom.csv row 2 and WORK_ORDER step 2: 5 x D75 at 400 mm immersion. Count is the issued BOM quantity; at the drawn geometry the anode current density is 1461 A / (5 sections) ~= 0.30 A/cm2, inside the A-M-282 class j 0.5 A/cm2 envelope stated on duty section 3 (conservative, no rate claimed)."
+  },
+  "cathode": {
+    "count": 5, "t_mm": 12, "w_mm": 110, "h_mm": 440, "plate_z_mm": [90, 530],
+    "material": "mild steel / clad",
+    "basis": "duty section 2 graph design row 'cathodes 5' (AQS-PAR-001). bom.csv row 3 and WORK_ORDER step 2 say 4 - corrected to the design row here, logged in build_log.md."
+  },
+  "busbar": {
+    "rails": 2, "rail_mm": [32, 31], "rail_x_span_mm": [20, 780],
+    "rail_y_mm": [200, 600], "class_mm2": 975, "material": "Cu ETP",
+    "current_A": 1460.77, "mount": "on the casing roof, frame-isolated (ceramic pads) per AQS-STD-002 section 11",
+    "basis": "bom.csv row 4; 32 x 31 mm = 992 mm2 drawn for the 975 mm2 class rail"
+  },
+  "hood": {
+    "hot_plate": "graphite t10 (expendable wetted face; the duty section 3 10 mm design allowance is the plate itself)",
+    "plate": "CS t6, z 510..570 + rim flange",
+    "offtake": "DN150 riser OD168.3 t4.0 (sch 10), CS, hood centre offset (+90,+90), top flange z 1160",
+    "dip_leg": "DN50 OD60.3, Hastelloy C-276, concentric downcomer inside the riser annulus, bottom z 250 (250 mm submerged)",
+    "basis": "bom.csv row 5; N4 Cl2 export 39.4192 kg/d at the CRU (A-M-280 ruling); dry hot gas above the AlCl3 dew point (M7)"
+  },
+  "nozzles": [
+    {"tag": "N1", "face": "+X", "height_mm": 600, "stream": "Al metal (product)",
+     "drawn": "metal siphon: carbon well tube DN80 (OD 88.9) from the bottom metal layer up over the siphon crest, discharge lip at +X z 600; heat-traced (WO step 6 trial electrolysis)",
+     "bore": "solids - bore not calculated",
+     "rating": "open launder discharge, not piped"},
+    {"tag": "N2", "face": "-Y", "height_mm": 600, "stream": "Cl2 return",
+     "drawn_bore": "DN15 OD21.3 t2.77 stub 40", "rating": "Class 150"},
+    {"tag": "N3", "face": "-X", "height_mm": 160, "stream": "anhydrous AlCl3 feed (mining-waste chloride class)",
+     "drawn_d": "side chute box 140(w) x 140(h) with hopper cone and rotary seal flange, refractory lance DN100 (OD 114.3 t4.0) into the melt, sub-surface feed",
+     "bore": "solids - bore not calculated",
+     "rating": "chute + rotary seal (WO step 4)"},
+    {"tag": "N4", "face": "+Y", "height_mm": 600, "stream": "chlorine byproduct export (water-treatment class product)",
+     "drawn_bore": "DN15 OD21.3 t2.77 stub 40", "rating": "Class 150"},
+    {"tag": "N5", "face": "bottom", "height_mm": 50, "stream": "drain",
+     "drawn_bore": "DN15 drain well: carbon tube OD60 through the base stack, sump face z 50, flush at z 0 (frozen-salt drain pig per WO step 6)",
+     "rating": "Class 150"},
+    {"tag": "N6", "face": "top", "height_mm": 800, "stream": "vent",
+     "drawn_bore": "DN15 OD21.3 t2.77 stub on the DN150 offtake riser at z 800", "rating": "Class 150"}
+  ],
+  "layout_note": "The task-04 schedule gives height, bore class and rating per connection but not the compass wall; the face assignment above is this layout's study choice, so the drawing register and the schedule never disagree.",
+  "parts_material": {
+    "casing": "carbon steel (CS class, duty section 3 mild-steel outer shell below the liner), t6, CA 0 (dry, outside the lining)",
+    "lining_fibre": "ceramic-fibre board t24 (backup lining per SCHACHT2004 class)",
+    "lining_ram": "graphite ramming paste t40 (wetted liner; duty section 3 design allowance 10 mm on wetted faces is inside this thickness)",
+    "hood_hot_plate": "graphite t10 (wetted, 10 mm allowance class)",
+    "hood": "carbon steel t6; Hastelloy C-276 dip leg; CS DN150 riser (dry hot Cl2, M7)",
+    "anodes": "graphite (A-M-282 class)",
+    "cathodes": "mild steel / clad",
+    "bus": "Cu ETP on ceramic isolation pads (AQS-STD-002 section 11)",
+    "product_layer": "Al (process inventory, shown as solids, not a BOM part)",
+    "melt": "NaCl-KCl-AlCl3 (process inventory, shown as solid, not a BOM part)"
+  },
+  "assumptions": {
+    "casing_t_mm": 6, "casing_steel": "CS (S235 class), 0 CA - outside the lining, dry",
+    "fibre_t_mm": 24, "fibre_rho_kg_m3": 128,
+    "ram_t_mm": 40, "ram_rho_kg_m3": 1550,
+    "melt_top_mm": 500, "metal_layer_mm": 30,
+    "DN15_OD_mm": 21.3, "DN15_wall_mm": 2.77, "DN15_stub_mm": 40,
+    "DN150_OD_mm": 168.3, "DN150_wall_mm": 4.0,
+    "DN80_OD_mm": 88.9, "DN80_wall_mm": 5.6,
+    "DN50_OD_mm": 60.3, "DN50_wall_mm": 4.0,
+    "DN100_OD_mm": 114.3, "DN100_wall_mm": 4.0,
+    "clamp_bar_mm": [110, 40, 24],
+    "strap_mm": [8, 20],
+    "well_rise_mm": 660,
+    "allowable_note": "shop proportions chosen inside size_mm to fit the duty envelope and the task-04 schedule; not measured, not a design calculation. Graph values (anode D/immersion, cathode count, bus class, bath T) are reproduced verbatim.",
+    "corr_allowance_note": "duty section 3: 10 mm design allowance on graphite wetted faces carried by the t40 ram liner and the t10 hood hot plate; no metal CA claimed (dry CS outside the lining, Hastelloy dip leg)."
+  },
+  "fasteners_ref": "models/mfg/AL_POT/fasteners.csv (clamp studs 10, hood rim bolts 16, casing anchors 4; torque in WORK_ORDER step 3)"
+}

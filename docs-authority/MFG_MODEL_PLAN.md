@@ -124,7 +124,7 @@ T0 gate, before tier 1:
 
 Generated from `flow_graph/plant_flow_graph.json` Rev BH, `flow_graph/placement_seed.json` Rev H, the `cad/stl` sizes, and AQS-MFG-001. 199 present units.
 
-Status codes. M0: `cad/stl` is an envelope box or boxes. M1: `cad/stl` has coarse internals, such as the cell plate racks or a packed section, but there is no manufacturing source. M2: parametric source in `models/mfg` builds. M3: accepted under section 5. Today: 166 at M0, 30 at M1, 1 at M2 (EXPANDER), 2 accounting nodes, none at M3.
+Status codes. M0: `cad/stl` is an envelope box or boxes. M1: `cad/stl` has coarse internals, such as the cell plate racks or a packed section, but there is no manufacturing source. M2: parametric source in `models/mfg` builds. M3: accepted under section 5. Today (2026-10-21): AL_POT is the first unit at M3 (AQS-PLAN-006 section 5 A-core accepted; `models/mfg/AL_POT/build_log.md`, 8-sheet drawing set at `models/mfg/AL_POT/drawings/`, `cad/stl/AL_POT.stl` replaced from the build in the X-PAR-04 registry form). EXPANDER and LEACH_CSTR_1 remain M2 (build + STEP + closed STL, no drawings); the rest of the table stays at the M0/M1 states shown.
 
 Facet counts are estimated from the ASCII STL file size. "Existing source" is an AQS-MFG-001 or `models/freecad` file that bears on the unit. None of them is accepted.
 

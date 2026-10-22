@@ -48,9 +48,11 @@ _COV=json.load(open('docs-authority/inventory/SIZING_COVERAGE.json')) if os.path
 # resolve per class in AQS-PIP-003 PIPING_CLASSES). T08: the unit owns at least one instrument loop in
 # the index (AQS-CTL-001, full CSV; the Done-when's AQS-INST-001 lists only the assay/digester/farm
 # study loops - X-CTL-05's partial resolved at Rev C 2026-10-21; loop membership is evidenced where the plant-wide index carries
-# it; trips/setpoints for SIFs live in AQS-CTL-003). T10 stays open for every unit: its Done-when is
-# acceptance M3 per AQS-PLAN-006 section 5 and no unit passes it (no drawings); the note names the real
-# state of models/mfg/<UNIT> (real BOM at M2 / standby envelope + PLACEHOLDER BOM / envelope STL only).
+# it; trips/setpoints for SIFs live in AQS-CTL-003). T10 was open for every unit until 2026-10-21:
+# FOUNDRY-AL_POT-10 is the first accepted unit (AQS-PLAN-006 section 5 A-core: build_log + drawings +
+# manifold-checked cad/stl/AL_POT.stl, so status() carries the acceptance evidence and the note
+# suppression branch keeps it off the partial list); every other unit stays open and the note names the
+# real state of models/mfg/<UNIT> (real BOM at M2 / standby envelope + PLACEHOLDER BOM / envelope STL only).
 import csv as _csv
 _EU=collections.defaultdict(list)   # present edges touching each unit
 for _e in g['edges']:
@@ -127,6 +129,8 @@ def status(n,k):
     if k=='08':
         v=_IIDX.get(u)
         if v: return f'`docs-authority/INSTRUMENT_INDEX.md` ({len(v)} loops; AQS-CTL-001)'
+    if k=='10' and ex(f'models/mfg/{u}/build_log.md') and ex(f'models/mfg/{u}/drawings') and ex(f'cad/stl/{u}.stl'):
+        return f'`models/mfg/{u}/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision)'
     if k=='12' and ex(f'models/mfg/{u}/bom.csv'): return f'`models/mfg/{u}/bom.csv`'
     if k=='13' and ex(f'docs-authority/fab/{u}.md'): return f'`docs-authority/fab/{u}.md` (study route)'
     return None
@@ -134,10 +138,14 @@ def note(n,k):
     u=n['unit_id']
     if k=='10':
         m=_MFG.get(u)
+        if ex(f'models/mfg/{u}/build_log.md') and ex(f'models/mfg/{u}/drawings') and ex(f'cad/stl/{u}.stl'):
+            return ''   # acceptance evidence carried by status(); nothing partial to name
         if m=='real': return f'partial: M2 at `models/mfg/{u}/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings)'
         if m=='standby': return f'partial: `models/mfg/{u}/` envelope + PLACEHOLDER BOM (standby style, machine design not started)'
         if ex(f'models/mfg/{u}'): return f'partial: M2 at `models/mfg/{u}/`, not accepted'
         if ex(f'cad/stl/{u}.stl'): return f'partial: envelope `cad/stl/{u}.stl`'
+    if k=='11' and ex(f'models/mfg/{u}/drawings'):
+        return f'partial: GA + nozzle orientation + part sheets in `models/mfg/{u}/drawings/` (weld callouts + ISO 2768-m tolerance notes); per-part dimension chains and the tolerance stack stay open'
     if k=='04':
         v=_NOZ.get(u)
         if v and v[1]: return f'partial: {v[0]} of {v[1]} process connections without a row'

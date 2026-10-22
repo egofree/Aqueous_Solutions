@@ -1,8 +1,17 @@
-item,description,qty,material,basis
-1,"Lined cell shell 800 x 800 x 1000 mm (70 mm casing + refractory), bath at 700 C",1,"CS casing, ceramic-fibre + ram lining","AQS-DUTY-072 section 4; molten AlCl3-(NaCl-KCl) electrolysis cell, 700 C"
-2,"Anode bank, 5 x D75 mm graphite anodes at 400 mm immersion",5,"graphite, chlorinated",Faraday I = 1461 A at CE 0.85 (A-M-282); 2 AlCl3 -> 2 Al + 3 Cl2
-3,"Cathode plate set, 4 x 110 x 12 mm with product pocket",4,mild steel / clad,10 kg/d metal on the D-DOCK chloride import (A-M-284)
-4,"Cu busbar ladder: 2 rails 32 x 31 mm (975 mm2 class), straps and DC drops",1,Cu ETP,1461 A at 3.8 V cell; 5.551 kW dc + 0.1069 kW hold of 7 kW connected
-5,Hood with gas offtake DN150 and dip leg,1,"CS hood, Hastelloy C-276 dip leg",39.4192 kg/d Cl2 dock export at the CRU (A-M-280 ruling)
-6,Feed chute with hopper cone and rotary seal,1,CS + refractory throat,49.419 kg/d feed (A-M-284 feedstock ruling)
-7,"Thyristor rectifier + bath hold heaters, 7 kW connected",1,"cabinet, IP54",AQS-DUTY-072 section 4; A-M-282 current class
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Lined cell shell 800 x 800 x 1600 mm: casing t6 (walls + roof + head plate 1154),1,carbon steel (CS class),314.0,make,"WORK_ORDER step 1; duty section 3 mild-steel outer shell below the liner, 700 C, dry outside the lining; envelope per duty section 2"
+2,"Ceramic-fibre backup lining kit, t24 (wall bands + floor board set)",1,ceramic-fibre board 128 kg/m3,16.6,make,"duty section 3 backup lining per SCHACHT2004 class; concentrate kept anhydrous (X-MAT-22, ULLMANN_MAGNESIUM)"
+3,"Graphite ram lining kit, t40, wetted faces (10 mm design allowance inside)",1,graphite ramming paste 1550 kg/m3,298.2,make,"duty section 3 graphite wetted faces; DING2018_CL_REVIEW, KRUIZENGA2012; liner change-out = unit task 12 work order"
+4,"Anode bank, 5 x D75 x 1064 mm, 400 mm immersion",5,graphite (chlorinated),41.8,buy,Faraday I = 1461 A at CE 0.85 (A-M-282); drawn j 0.30 A/cm2 inside the A-M-282 0.5 A/cm2 class
+5,"Cathode plate set, 5 x 110 x 12 x 440 mm (design row 'cathodes 5')",5,mild steel / clad,22.9,make,"duty section 2 graph design row; 10 kg/d metal on the D-DOCK chloride import (A-M-284); BOM qty corrected 4 -> 5, see build_log.md"
+6,Cu busbar ladder: 2 rails 32 x 31 (975 mm2 class) + riser straps + ceramic pads,1,Cu ETP + alumina pads,21.3,make,1461 A at 3.8 V cell; 5.551 kW dc + 0.1069 kW hold of 7 kW connected; frame-isolated per AQS-STD-002 section 11
+7,"Anode clamp bars 110 x 40 x 24 on the head plate (10 x M12 studs, fasteners.csv item 1)",5,carbon steel,4.1,make,WORK_ORDER step 2/3: torque and megger check
+8,"Hood group: CS hood plate t6 + perimeter rim lip, on the graphite hot plate",1,carbon steel,70.4,make,WO step 4; dry Cl2 headspace at 700 C (M7); A-M-280 ruling 39.4192 kg/d Cl2 export at the CRU
+9,"Hood hot plate, graphite t10 (expendable wetted face = the 10 mm allowance)",1,graphite,6.7,make,duty section 3: 10 mm design allowance on the wetted faces; change-out at the unit task 12 work order
+10,"Offtake riser DN150 OD168.3 t4.0 (sch 10), z 500..1594, flange + N6/N2/N4 DN15 stubs",1,carbon steel (dry hot Cl2),21.0,make,WO row 5; nozzles per the task-04 schedule (N6 top 800; N2/N4 Class 150 at 600)
+11,"Dip leg DN50 OD60.3, inside the riser annulus, bottom z 250 (250 mm submerged)",1,Hastelloy C-276,1.8,buy,WO row 5; melt-side seal leg per the duty section 3 dry-Cl2 class
+12,Metal siphon: well DN80 OD88.9 carbon + crest + discharge lip at +X z 600 (heat traced),1,carbon (ram class),5.5,make,"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial electrolysis tap"
+13,Feed chute group: chute box + hopper + rotary-seal flange + DN100 lance OD114.3 t4,1,"CS chute, carbon lance (refractory)",8.6,make,task-04 schedule N3; 49.419 kg/d feed (A-M-284 feedstock ruling); WO step 4 rotary seal
+14,"Drain well: carbon sump tube OD60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),0.2,make,task-04 schedule N5 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
+15,Ceramic lining sleeves for the N2/N4 ram passes,2,alumina (90 % class),0.1,buy,duty section 3 backup-lining class (SCHACHT2004)
+16,"Thyristor rectifier + bath hold heaters, 7 kW connected, IP54 cabinet",1,purchase item,,buy,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order

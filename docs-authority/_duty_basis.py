@@ -76,7 +76,11 @@ def author(n, g, ins, outs, mi, mo, kw):
     else:
         o.append('6. Relief. Relief case study pending (unit task 07). No set point is claimed on this page. Not to the room.')
     stl = f' The envelope is `cad/stl/{u}.stl`.' if os.path.exists(os.path.join(ROOT, f'cad/stl/{u}.stl')) else ' No CAD envelope issued yet.'
-    o += ['', f'7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule).{stl}', '']
+    _mfg_mod = sorted(glob.glob(os.path.join(ROOT, f'models/mfg/{u}/*.py')))
+    _mfg = ''
+    if _mfg_mod:
+        _mfg = f' Manufacturing model `models/mfg/{u}/{os.path.basename(_mfg_mod[0])}` (AQS-PLAN-006; build log and drawings in the same folder).'
+    o += ['', f'7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule).{stl}{_mfg}', '']
     oi = []
     if not (sz or sto): oi.append('Sizing calculation pending (unit task 02).')
     if not mat: oi.append('Material selection pending (unit task 09).')
@@ -127,6 +131,15 @@ def main():
                 if _new != _m3.group(0): s = s.replace(_m3.group(0), _new, 1)
         m = re.search(r'Envelope [\d×]+ mm, ([\d.]+) m³\. That box over this flow would be [\d.]+ h if it were full\.', s)
         if m and mi > 0: s = s.replace(m.group(0), re.sub(r'would be [\d.]+ h', f'would be {float(m.group(1))*1000/mi*24:.1f} h', m.group(0)))
+        # AQS-PLAN-006 A-core 10: a duty sheet whose unit owns a manufacturing model names it in
+        # section 7. Idempotent: the append fires only until the pointer text is present, so the
+        # EXPANDER/LEACH_CSTR_1 sheets that already name their model stay byte-identical.
+        _mfg_mod = sorted(glob.glob(os.path.join(ROOT, f'models/mfg/{u}/*.py')))
+        if _mfg_mod:
+            _m7 = re.search(r'^7\. Code\..*$', s, flags=re.M)
+            _tag = f'`models/mfg/{u}/{os.path.basename(_mfg_mod[0])}`'
+            if _m7 and _tag not in _m7.group(0):
+                s = s.replace(_m7.group(0), _m7.group(0) + f' Manufacturing model {_tag} (AQS-PLAN-006).', 1)
         if s != s0: open(p, 'w').write(s); ch += 1
     # R11 Rev AC regen: the graph is closed this lane, so params.duty is refreshed in memory only
     # (CRYO_ASU duty text trails its balanced rates; a graph-write lane picks it up). The manifest

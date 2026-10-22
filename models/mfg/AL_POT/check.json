@@ -1,0 +1,58 @@
+{
+  "shell_bbox_mm": [
+    800.3,
+    800.0,
+    1600.6
+  ],
+  "shell_bbox_abs": [
+    -0.3,
+    -0.0,
+    -0.1,
+    800.0,
+    800.0,
+    1600.4
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 50.0,
+    "+X": 44.5,
+    "-Y": 40.1,
+    "+Y": 40.1
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: metal_siphon, feed_chute_group, DN15_stubs)",
+  "external_parts": [
+    "metal_siphon",
+    "feed_chute_group",
+    "DN15_stubs"
+  ],
+  "cap_solids": 2,
+  "all_parts_valid": true,
+  "anode_j_A_cm2_drawn": 0.296,
+  "melt_volume_litres": 187.3,
+  "part_mass_kg": {
+    "casing": 296.1,
+    "fibre_lining": 16.6,
+    "ram_lining": 298.2,
+    "hood_hot_plate": 6.7,
+    "hood": 70.4,
+    "head_plate": 17.9,
+    "anodes": 41.8,
+    "anode_clamps": 4.1,
+    "cathodes": 22.9,
+    "ceramic_pads": 0.5,
+    "bus_rails": 13.5,
+    "bus_straps": 7.3,
+    "offtake_riser": 17.7,
+    "riser_flange": 3.1,
+    "dip_leg": 1.8,
+    "vent_stub": 0.1,
+    "metal_siphon": 5.5,
+    "feed_chute_group": 8.6,
+    "DN15_stubs": 0.1,
+    "ceramic_sleeves": 0.1,
+    "drain_well": 0.2
+  },
+  "cadquery": "2.8.0"
+}

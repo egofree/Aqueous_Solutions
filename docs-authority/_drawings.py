@@ -15,6 +15,13 @@ def files():
         b = os.path.basename(f)[:-4]; out.append((f, f'AQS-ISO-002-{b}', f'Piping isometric {b}', 'piping isometric', False))
     for f in sorted(glob.glob(os.path.join(R, 'models/motors/*/export/*.svg'))):
         mf = f.split('/')[-3]; out.append((f, f'AQS-INV-005-{mf}', f'Motor family {mf} assembly', 'assembly drawing', False))
+    # AQS-PLAN-006 W7 fabrication drawing sets (GA / nozzle orientation / part sheets per accepted
+    # model). The title carries the graph revision - the model source (models/mfg/<unit>/params.json)
+    # is the authority, so from_graph stays False (the content-hash revision governs per ASME_Y14_35).
+    for f in sorted(glob.glob(os.path.join(R, 'models/mfg/*/drawings/*.svg'))):
+        p = f.split(os.sep); mf = p[-3]; b = os.path.basename(f)[:-4].upper()
+        out.append((f, f'AQS-MFG-{mf}-{b}', f'{mf} fabrication drawing {b} (AQS-PLAN-006 M3; graph revision AC)',
+                    'fabrication drawing (GA / nozzle orientation / part sheet)', False))
     return out
 def box(svg):
     m = re.search(r'viewBox="([-0-9.]+)[ ,]+([-0-9.]+)[ ,]+([-0-9.]+)[ ,]+([-0-9.]+)"', svg)
