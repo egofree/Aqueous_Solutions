@@ -182,7 +182,7 @@ MEOH_TANK ── S76 ──► MEOH_FC (IEM) ── S79 ──► BATT DC (peer)
 
 ## 7.1 SCALE_M / ESS duty pointer (2026-10-01)
 
-No discrete MeOH tank/FC `SCALE_M` formula in AQS-SCALE-001 §6. Study sizing:
+No discrete MeOH tank/FC `SCALE_M` formula in AQS-SCALE-001 §9. Study sizing:
 **AQS-ESS-001** / **AQS-SCALE-UR-001** Rev B (bank 1–4 × 0.5 kW; synth ∝ surplus H₂).
 Hydro vs ZnBr₂ energy mismatch documented there — not MeOH-specific.
 

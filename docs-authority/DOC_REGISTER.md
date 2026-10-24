@@ -272,7 +272,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | A | 2026-10-16 | Gas detection | current |
 | AQS-SAF-007 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | A | 2026-10-16 | Hazard separation applied to the layout | current |
 | AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP action register | current |
-| AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | C | 2026-09-27 | Scale model — parametric building growth | current |
+| AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | D | 2026-10-24 | Scale model: parametric building growth | current |
 | AQS-SCALE-UR-001 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | E | 2026-10-24 | What goes unreclaimed when the plant is made smaller or a sector is switched off | current |
 | AQS-SEC-001 | `docs-authority/SECTOR_DEFINITIONS.md` | H | 2026-10-24 | Sector Definitions catalogue — plant sector_id map | current |
 | AQS-SEL-FP | `notes/MONOMER_ROUTE.md` | A | 2026-10-16 | Monomer route selection — VDF and TFE | current |
@@ -282,8 +282,8 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-SIDE-002 | `docs-authority/SIDE_FARM.md` | B | 2026-10-11 | Farm module bay | current |
 | AQS-SIDE-003 | `docs-authority/SIDE_CRYO.md` | C | 2026-10-12 | Cold box module | current |
 | AQS-SIGN-001 | `docs-authority/SIGN_SCHEDULE.md` | A | 2026-09-26 | Sign and label schedule | current |
-| AQS-SITE-001 | `docs-authority/SITE_ACCESS.md` | D | 2026-10-01 | Site access — orientation, north dock, service / egress | current |
-| AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | — | 2026-10-15 | Site basis — AQS-SITE-002 Rev A | current |
+| AQS-SITE-001 | `docs-authority/SITE_ACCESS.md` | E | 2026-10-24 | Site access: orientation, north dock, service entrance and egress | current |
+| AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | B | 2026-10-24 | Site basis | current |
 | AQS-SITE-003 | `docs-authority/SITE_ACCESS_CHECK.md` | A | 2026-10-16 | Site access and dock check | current |
 | AQS-SIZE-ACID_POLISH_SCRUB | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | A | 2026-10-20 | Sizing calculation - ACID_POLISH_SCRUB | current |
 | AQS-SIZE-ADS_CHILL | `docs-authority/sizing/ADS_CHILL.md` | A | 2026-10-20 | Sizing calculation - ADS_CHILL | current |

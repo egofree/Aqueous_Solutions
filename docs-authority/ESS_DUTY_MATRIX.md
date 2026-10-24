@@ -31,7 +31,7 @@ M1 hydro ≪ ZnBr₂ — without inventing nameplates.
 
 | ESS peer | Presence | Study power | Study energy / fuel | Continuous electrical model | Gap |
 |---|---|---|---|---|---|
-| **ZNBR2** | Required + enabled | **60 kW** class (`ZNBR_MODULE_KW` × count) | **120 kWh** class (2 h × 60 kW) | Storage role; charge preferred per AQS-SCALE-001 §6 | Cycle life / BMS listing **study**; vendor nameplate **unknown** |
+| **ZNBR2** | Required + enabled | **60 kW** class (`ZNBR_MODULE_KW` × count) | **120 kWh** class (2 h × 60 kW) | Storage role; charge preferred per AQS-SCALE-001 §9 | Cycle life / BMS listing **study**; vendor nameplate **unknown** |
 | **MEOH** | Required + enabled; process feed | **REQ-MEOH-FC-CONT 0.5–2 kW_dc** (mid **1.0**) | Synth **~2–8 kg/d** MeOH on surplus H₂ (AQS-MeOH-001); tank inventory study | MEOH_FC generation; MEOH_SYNTH load when priority allows | Dual-role vs process consumers **study**; bank stand-in ≠ purchase |
 | **PUMPED_HYDRO** | Required + enabled | Turbine-pump **study** — no continuous kW nameplate at M1 | Ideal **E=ρVgh ≈ 263.6 kWh** @ 2,707 m³ / 35.73 m (AQS-BLD-014 water tower, Q-009); 210.9 kWh recoverable study | HYDRO_SET storage; charge/discharge electrical **incomplete** at P0 | Redundancy **symbolic** at M1 vs ZnBr₂ 120 kWh |
 
@@ -50,7 +50,7 @@ invent M1 kWh equality. Omitting hydro → `unreclaimed_resource` on S22/S23.
 
 ### 2.2 MeOH SCALE_M note
 
-MeOH tank / FC bank have **no** discrete SCALE_M formula in AQS-SCALE-001 §6
+MeOH tank / FC bank have **no** discrete SCALE_M formula in AQS-SCALE-001 §9
 (unlike PV_COUNT / ZNBR_COUNT). Study rule (this doc):
 
 | Param | Study rule | Notes |

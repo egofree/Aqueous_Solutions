@@ -2,7 +2,7 @@
 """Electrical yard: rectifier, ATS, Sol-Ark, ZnBr2, PV, BACKUP_GEN, FUEL_CELL, GEO.
 
 Yard sits at L0 west of the **north** dock (AQS-SITE-001 / AQS-BLD-001 Rev D).
-Surplus policy (AQS-SCALE-001 §5): charge batteries → pump roof tank →
+Surplus policy (AQS-SCALE-001 §9): charge batteries → pump roof tank →
 controlled overflow to garden terraces when tank and batteries are full.
 
 Yard stubs include clearances, keep-outs, tags, and utility rough-ins

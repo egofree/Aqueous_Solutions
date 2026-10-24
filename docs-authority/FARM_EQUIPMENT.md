@@ -7,7 +7,7 @@ PFD: AQS-PFD-FRM-001 (`farm_pfd.png`); companion AQS-PFD-NUT-001,
 AQS-PFD-TRR-001 (`terrace_irrigation_pfd.png`)
 
 Authority: `05-organic-farm-nutrient.md`, AQS-LIFE-001 §3 / §8,
-`freecad/farm.py`, AQS-STR-001, AQS-MF-001, AQS-SCALE-001 §6–7,
+`freecad/farm.py`, AQS-STR-001, AQS-MF-001, AQS-SCALE-001 §9–10,
 AQS-TRR-001, AQS-WTR-001, AQS-PHF-001.
 
 | Rev | Change | Description | Date |
@@ -72,7 +72,7 @@ Salria into beds. Dirty liquor never drains uphill into FARM
 
 | Interface | Direction | Rule |
 |---|---|---|
-| Clean surplus (S40) | Roof overflow path → terrace drip / flood bands | Clean tower water only; AQS-SCALE-001 §6–7 |
+| Clean surplus (S40) | Roof overflow path → terrace drip / flood bands | Clean tower water only; AQS-SCALE-001 §9–10 |
 | Optional dilute fertigation | NUTRIENT_DOSE tote branch → enclosed greenhouse beds only | Never tee into ROOF_TANK / CATCH / S21 |
 | Farm loop bleed | Not used as landscape irrigation | FARM_SUMP liquor is HDR_GREY chemistry |
 | Potable S26 | Not used for terrace | Drinking remin path only (AQS-WTR-001) |
@@ -120,4 +120,4 @@ When a later CAD pass lands:
 6. Fertigation stub from `NUTRIENT_DOSE` only if enclosed food option
    is selected; drain stub to HDR_GREY (S42), never to CATCH.
 7. Restore `SCALE_M=1` and rebuild baseline M1 when shipping
-   (AQS-SCALE-001 §8) — separate from terrace landscape docs.
+   (AQS-SCALE-001 §11) — separate from terrace landscape docs.

@@ -1208,14 +1208,15 @@ Table 4.1. Document lines naming an assumption
 | A-D-53d897 |  |  | docs-authority/SCALE_DOWN_UNRECLAIMED.md:851 | The polymer train makes grams to a few hundred grams a day, far below the smallest continuous equipment, so it already runs in campaigns of one polymerization k |  | see page |
 | A-D-ac24bc |  |  | docs-authority/SCALE_DOWN_UNRECLAIMED.md:889 | ## 6. Assumptions |  | see page |
 | A-D-541452 |  |  | docs-authority/SCALE_DOWN_UNRECLAIMED.md:891 | / Id / Assumption / Test that confirms it / |  | see page |
-| A-D-f561f3 |  |  | docs-authority/SITE_BASIS.md:4 | Date 2026-10-15. Owner decision: study site at 33.0° N, Dallas–Fort Worth class. No parcel is chosen. Values marked assumption are in AQS-REG-002 and are replac |  | see page |
-| A-D-d3169c |  |  | docs-authority/SITE_BASIS.md:16 | / Wind, Risk II, 3 s gust / 105–115 mph band; 115 mph used / band published, value assumption / ASCE 7-22 map band for Dallas [B4] / |  | see page |
-| A-D-d4dd13 |  |  | docs-authority/SITE_BASIS.md:17 | / Seismic Ss / S1 / 0.10 g / 0.05 g / assumption / Pending ASCE Hazard Tool lookup at the parcel [B5] / |  | see page |
-| A-D-089829 |  |  | docs-authority/SITE_BASIS.md:18 | / Site class / D (default) / assumption / IBC 1613.2.2 default where soil is unknown / |  | see page |
-| A-D-5641d7 |  |  | docs-authority/SITE_BASIS.md:19 | / Seismic design category / A expected / assumption / Follows from the assumed Ss/S1 at class D; confirm with [B5] / |  | see page |
-| A-D-26c726 |  |  | docs-authority/SITE_BASIS.md:20 | / Ground snow / 5 psf (0.24 kPa) / assumption / Pending [B5] / |  | see page |
-| A-D-2d3182 |  |  | docs-authority/SITE_BASIS.md:21 | / Soil / expansive clay, allowable bearing 1500 psf (72 kPa) / assumption / IBC Table 1806.2 presumptive value for clay (CL, ML, MH, CH); corrected from 2000 ps |  | see page |
-| A-D-669354 |  |  | docs-authority/SITE_BASIS.md:22 | / Frost depth / 6 in (150 mm) / assumption / Local practice; replaced by the building official's value / |  | see page |
+| A-D-58293a |  |  | docs-authority/SITE_BASIS.md:14 | The design needs a site to fix its climate and structural loads. No parcel has been chosen. By owner decision, the study site is at 33.0° N, a Dallas–Fort Worth |  | see page |
+| A-D-f9f211 |  |  | docs-authority/SITE_BASIS.md:16 | Assumed values are also recorded in the assumptions register (AQS-REG-002). They will be replaced when a parcel is fixed. |  | see page |
+| A-D-d3169c |  |  | docs-authority/SITE_BASIS.md:46 | / Wind, Risk II, 3 s gust / 105–115 mph band; 115 mph used / band published, value assumption / ASCE 7-22 map band for Dallas [B4] / |  | see page |
+| A-D-d4dd13 |  |  | docs-authority/SITE_BASIS.md:47 | / Seismic Ss / S1 / 0.10 g / 0.05 g / assumption / Pending ASCE Hazard Tool lookup at the parcel [B5] / |  | see page |
+| A-D-089829 |  |  | docs-authority/SITE_BASIS.md:48 | / Site class / D (default) / assumption / IBC 1613.2.2 default where soil is unknown / |  | see page |
+| A-D-5641d7 |  |  | docs-authority/SITE_BASIS.md:49 | / Seismic design category / A expected / assumption / Follows from the assumed Ss/S1 at class D; confirm with [B5] / |  | see page |
+| A-D-26c726 |  |  | docs-authority/SITE_BASIS.md:50 | / Ground snow / 5 psf (0.24 kPa) / assumption / Pending [B5] / |  | see page |
+| A-D-c2a100 |  |  | docs-authority/SITE_BASIS.md:51 | / Soil / expansive clay, allowable bearing 1500 psf (72 kPa) / assumption / IBC Table 1806.2 presumptive value for clay and silt (Unified Soil Classification Sy |  | see page |
+| A-D-669354 |  |  | docs-authority/SITE_BASIS.md:52 | / Frost depth / 6 in (150 mm) / assumption / Local practice; replaced by the building official's value / |  | see page |
 | A-D-997f58 |  |  | docs-authority/STUDY_UNITS_STUB.md:326 | Pilot wafer starts **1–5 /d** (AQS-AUD-001 labeled assumption — not freeze). |  | see page |
 | A-D-c1b04f |  |  | docs-authority/STUDY_UNITS_STUB.md:343 | 1. AQS-AUD-001 FAB pilot starts assumption (1–5/d labeled). |  | see page |
 | A-D-fc24c1 |  |  | docs-authority/SURPLUS_PASS_THRESHOLDS.md:47 | ## 3. Drivers (study assumptions) |  | see page |

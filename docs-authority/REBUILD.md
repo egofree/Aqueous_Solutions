@@ -10,11 +10,19 @@ Date: 2026-10-24
 | A | Menu options and copy step to the published tree | 2026-09-28 |
 | B | Building scale setting (SCALE_M) | 2026-09-28 |
 | C | Rebuild described for the published tree layout | 2026-10-01 |
-| D | Rewritten for the single regeneration pipeline; the menu script and copy step no longer exist | 2026-10-24 |
+| D | Rewritten for the single regeneration pipeline; the menu script and copy step no longer exist; scope, terms and captions added | 2026-10-24 |
 
-## 1. Purpose
+## 1. Purpose and scope
 
 This page explains how to regenerate every derived file in the repository (sizing pages, inventories, drawings, views and 3D models) from the plant flow graph, `flow_graph/plant_flow_graph.json`. One command does it. The list of generators and the order they run in is data, kept in `flow_graph/param/regen_manifest.json`.
+
+It covers the regeneration command, the 3D model builds and the building scale setting. How each generator sizes its subject is described in that generator's own page.
+
+Terms used here:
+
+- Derived file: any file written by a generator from the graph; it is never edited by hand.
+- Stage: one generator command in the manifest.
+- Receipt: the record of which graph checksum each derived file was built from.
 
 ## 2. Regenerating the documents and data
 
@@ -49,9 +57,11 @@ Use only `/usr/bin/freecadcmd` (the FreeCAD 1.0 package build). See `docs-author
 
 SCALE_M sets the size of the building itself, not the scale of a drawing. It sets the bay counts, plate length and width, cassette class and the number of living and basement levels, as derived in `docs-authority/SCALE_MODEL.md` (AQS-SCALE-001). The value lives in one place, the line `SCALE_M = 1.0` in `models/freecad/params.py`.
 
+Table 4.1. Values of SCALE_M
+
 | Value | Use |
 |---|---|
-| 1.0 | Manufacturing baseline: 1 m in the model is 1 m built (24 m × 18 m plate) |
+| 1.0 | Manufacturing baseline: 1 m in the model is 1 m built (24 m × 18 m plate; see open question Q-015) |
 | 2.0 | Review only: denser packing with more bays and living plates |
 | other positive values | Custom; see the derivation in SCALE_MODEL |
 
@@ -61,9 +71,11 @@ After changing SCALE_M, run the full pipeline with `--cad` so that the documents
 
 ## 5. Exit status
 
-The pipeline stops at the first stage that fails, prints that stage's command and the end of its output, and exits non-zero. The receipt then records the failure and vouches for nothing.
+The pipeline stops at the first stage that fails, prints that stage's command and the end of its output, and exits non-zero. The receipt then records the failure and confirms no output as current.
 
 ## 6. Related documents
+
+Table 6.1. Related documents
 
 | Document | Role |
 |---|---|

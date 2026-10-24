@@ -8,7 +8,7 @@ PFDs: AQS-PFD-GEO-001 (`geothermal_pfd.png`), AQS-PFD-GEN-001 (`backup_gen_pfd.p
 Equipment: AQS-EQP-GEO-001, AQS-EQP-GEN-001
 
 Authority: `POWER/Power_System_overview.md`, hub `ELECTRICAL.md`,
-`FLOW_BATTERY.md`, AQS-GAP-001 §4 / §7 item 4, AQS-SCALE-001 §6,
+`FLOW_BATTERY.md`, AQS-GAP-001 §4 / §7 item 4, AQS-SCALE-001 §9,
 AQS-STR-001 / AQS-MF-001 (S43–S48), `freecad/electrical_yard.py`,
 `electrical_sld.png`, GAS_SYSTEM exhaust-recapture intent, root
 `06-energy-carbon-oxygen.md` (FC narrative remains separate).

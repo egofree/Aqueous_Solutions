@@ -210,7 +210,7 @@ Study load low (≈4); travel within tank room to nearest stair
 
 STAIR_SERVICE discharges via SERVICE_ENTRY → SERVICE_DOOR_N →
 **DOCK_APRON_N** (exterior). Apron shall remain free of ZnBr2 / H₂
-classified envelopes where practicable (AQS-SITE-001 §6; OSHA
+classified envelopes where practicable (AQS-SITE-001 §8; OSHA
 1910.36/37 theme). Quantitative apron staging counts **not** invented.
 
 ---
@@ -253,7 +253,7 @@ only; not sole public exit from an H room**. Pair with STAIR_SERVICE.
 | CMP-OSH-01 | Partial | **Partial** (same) | Maintenance program; outdoor discharge survey |
 | CMP-NEC-07 | Partial | unchanged | Exit sign / emergency lighting fixture schedule |
 
-Record this annex as the quantitative companion to AQS-SITE-001 §6.
+Record this annex as the quantitative companion to AQS-SITE-001 §8.
 
 ---
 

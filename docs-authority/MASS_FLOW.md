@@ -225,7 +225,7 @@ Gravity rule unchanged: dirty liquor does not drain uphill into life.
 
 Surplus clean tower water (batteries full + `ROOF_TANK` full) overflows
 to external garden terraces (`OVERFLOW_TERRACE_*` bands) via
-`OVERFLOW_SPILL_ROOF` / `OVERFLOW_DOWNCOMER_*` — see AQS-SCALE-001 §6–7
+`OVERFLOW_SPILL_ROOF` / `OVERFLOW_DOWNCOMER_*` — see AQS-SCALE-001 §9–10
 and AQS-TRR-001 (planting / open vs greenhouse / S40–S42). Not a
 process drain path. Clean terrace return is S41 → CATCH; fertigated
 enclosed-greenhouse drain is S42 → HDR_GREY — never mixed into CATCH.

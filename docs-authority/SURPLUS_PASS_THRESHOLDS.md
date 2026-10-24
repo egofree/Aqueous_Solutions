@@ -56,7 +56,7 @@ Self-sustainment alone is insufficient (AQS-UI-001 §3.2).
 | FARM makeup | **~50–140 L/d** | AQS-AUD-001 §11 |
 | FAB UPW makeup | **20–100 L/d** | AQS-AUD-001 §11 |
 | Wet feed / plated metals | 150 kg/d / ~4.5–42 kg/d | AQS-SCALE-001 / AQS-AUD-001 |
-| ELEC_NEED / TARGET | 50 / 70 kW | AQS-SCALE-001 §6 |
+| ELEC_NEED / TARGET | 50 / 70 kW | AQS-SCALE-001 §9 |
 | Study peak-sun-hours (SITE_LAT null) | **4.0 h/d** | Placeholder until SITE_LAT issued — **not** a climate claim |
 
 ---

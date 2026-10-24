@@ -5,7 +5,7 @@ Revision: B
 Date: 2026-09-27  
 PFD: AQS-PFD-TRR-001 (`terrace_irrigation_pfd.png`)
 
-Authority: AQS-SCALE-001 §6–7 (overflow massing + surplus policy),
+Authority: AQS-SCALE-001 §9–10 (overflow massing + surplus policy),
 AQS-BLD-001 (DRAIN_SEC / clean overflow), AQS-WTR-001 (clean inventory
 vs regeneration), AQS-STR-001 / AQS-MF-001 (S40–S42), AQS-EQP-FRM-001,
 `05-organic-farm-nutrient.md` §6.4 / §7.3 (greenhouse climate energy),
@@ -166,7 +166,7 @@ to SHAFT_PENSTOCK. Clean inventory and nutrient liquor stay separate.
 
 Underdrains sit above grade apron slabs (`OVERFLOW_APRON_*`). Clean
 return is a **side effect** of surplus dissipation, not a hydro power
-claim. ZnBr2 remains the electrical battery (AQS-SCALE-001 §6).
+claim. ZnBr2 remains the electrical battery (AQS-SCALE-001 §9).
 
 ---
 

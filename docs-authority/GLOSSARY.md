@@ -903,7 +903,7 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {NDE -- Nondestructive examination (ASME B31.3 chapter VI; ASME BPVC Section V).}
 
-{PED -- Pressure Equipment Directive of the European Union (2014/68/EU).}
+{PED -- Pressure Equipment Directive: Directive 2014/68/EU of the European Parliament and of the Council on the making available on the market of pressure equipment. Cited where EU conformity is compared with ASME practice.}
 
 {PWHT -- Postweld heat treatment.}
 
@@ -915,11 +915,25 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {BIPV -- Building-integrated photovoltaics: PV modules that form part of the facade or roof.}
 
-{CZ -- Czochralski: crystal-growth method that pulls a single-crystal silicon ingot from a melt (CZ puller).}
+{CZ -- Czochralski: the crystal-growth method that pulls a single-crystal silicon ingot from a melt; a CZ puller is the machine that does it (wafer fab).}
 
 {NP -- Not permitted (IBC tables).}
 
 {NS -- Non-sprinklered (IBC tables).}
+
+{CH -- Fat clay (high-plasticity clay), a group of the Unified Soil Classification System (ASTM D2487).}
+
+{CL -- Lean clay (low-plasticity clay), a group of the Unified Soil Classification System (ASTM D2487).}
+
+{MH -- Elastic silt (high-plasticity silt), a group of the Unified Soil Classification System (ASTM D2487).}
+
+{ML -- Silt (low-plasticity silt), a group of the Unified Soil Classification System (ASTM D2487).}
+
+{MCWB -- Mean coincident wet bulb: the average wet-bulb temperature that occurs with the cooling design dry-bulb temperature (ASHRAE Handbook—Fundamentals, climatic design conditions).}
+
+{ABA -- Architectural Barriers Act of 1968 (US): accessibility standards for federally funded facilities.}
+
+{ADA -- Americans with Disabilities Act of 1990 (US): accessibility requirements, with the 2010 ADA Standards for Accessible Design.}
 
 ## Legal
 

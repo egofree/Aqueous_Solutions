@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """AQS-PFD-TRR-001 — Terrace irrigation / open vs enclosed greenhouse.
 
-Authority: AQS-TRR-001, AQS-SCALE-001 §6–7, AQS-WTR-001, AQS-STR-001 S40–S42,
+Authority: AQS-TRR-001, AQS-SCALE-001 §9–10, AQS-WTR-001, AQS-STR-001 S40–S42,
 AQS-EQP-FRM-001. No invented mass rates.
 """
 from __future__ import annotations
@@ -42,7 +42,7 @@ def main():
            "RULE  ·  Clean overflow only for landscape (S40).  No FARM_SUMP liquor.  No potable S26.  Fertigation drain ≠ CATCH.")
 
     # ── Source ──
-    ax.text(2, 59.0, "1   CLEAN SURPLUS SOURCE  (AQS-SCALE-001 §6–7)",
+    ax.text(2, 59.0, "1   CLEAN SURPLUS SOURCE  (AQS-SCALE-001 §9–10)",
             fontsize=14.3, fontweight="bold", color="#1c1917")
     roof = S.unit(ax, 2, 48, 16, 7.5, "ROOF TANK", "clean tower\nS21–S23 inventory", fill="#e0f2fe", edge="#0369a1")
     znbr = S.iface(ax, 20, 48, 14, 7.5, "ZnBr2 FULL", "batteries accept\nno more charge", fill="#f3e8ff", edge="#6b21a8")

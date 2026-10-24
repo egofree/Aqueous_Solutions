@@ -314,7 +314,7 @@ Site access is covered by `docs-authority/SITE_ACCESS.md` (AQS-SITE-001).
 
 - Rebuild the building PFDs with `python3 flow_graph/exporters/matplotlib/building_stack_pfds.py`. It reads the current `models/freecad/params.py`; do not change `SCALE_M` in that pass.
 - Rebuild the campus, hazard and life sheets with `python3 flow_graph/exporters/matplotlib/campus_life_hazard_pfds.py`.
-- Rebuild the plant at the baseline `SCALE_M=1` with `/usr/bin/freecadcmd models/freecad/build_plant.py`. For `SCALE_M=2` see `docs-authority/SCALE_MODEL.md` §7.
+- Rebuild the plant at the baseline `SCALE_M=1` with `/usr/bin/freecadcmd models/freecad/build_plant.py`. For `SCALE_M=2` see `docs-authority/SCALE_MODEL.md` §11.
 
 ## 13. References
 

@@ -9,7 +9,7 @@ Streams: AQS-STR-001 S49–S53 (PEM); MeOH peer S73–S82 on AQS-MeOH-001
 
 Authority: `POWER/Power_System_overview.md` (legacy H₂/O₂ PEM narrative),
 hub `ELECTRICAL.md`, `FLOW_BATTERY.md`, AQS-PWR-002 (BACKUP_GEN ≠ FC),
-AQS-GAP-001 §7 item 3, AQS-SCALE-001 §6, AQS-STR-001 / AQS-MF-001,
+AQS-GAP-001 §7 item 3, AQS-SCALE-001 §9, AQS-STR-001 / AQS-MF-001,
 AQS-HSE-001 / AQS-EQP-CRY-001, AQS-REQ-KW-001, AQS-MeOH-001,
 `freecad/electrical_yard.py`, root `06-energy-carbon-oxygen.md`
 (MeOH path = **issued** at M1 via AQS-MeOH-001 — no longer deferred).

@@ -40,7 +40,7 @@ In scope: campus fire / H₂ / gas / ESS, electrical yard (Sol-Ark, ZnBr2,
 FC DC, GEN), OSHA egress & LEV hooks, ASME pressure/piping class notes,
 relevant ISO process/safety themes.  
 Out of scope: invented permits, PE stamps, root narrative folders.
-Egress study annex: AQS-EGR-001 (tracked under AQS-SITE-001 §6). Out of scope still includes
+Egress study annex: AQS-EGR-001 (tracked under AQS-SITE-001 §8). Out of scope still includes
 (`06-energy-…` etc.).
 
 Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.md`,
@@ -78,7 +78,7 @@ Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.m
 | CMP-NEC-06 | Fuel cell DC couple (not GEN AC) | NEC / product listing theme | FUEL_CELL → FC_DCDC → Sol-Ark **BATT DC**; ≠ BACKUP_GEN; AQS-FC-001 | Partial | FC continuous kW TBD; FC_DCDC listing in BATT window |
 | CMP-NEC-07 | Emergency lighting / exit signs | NEC Art. 700 | AQS-HSE-001 §8 | Partial | Fixture schedule with egress annex |
 | CMP-NEC-08 | Grounding / bonding / cable tray | NEC Art. 250 theme | `mfg_cable_tray.scad`, `freecad/pipe_services.py`; AQS-REM-001 §6.4 | Partial | Grounding electrode / equipotential plan |
-| CMP-NEC-09 | Working space about equipment | NEC 110.26 theme | SITE yard CLEAR_* / KO_* stubs (AQS-SITE-001 §4) | Partial | Dimensioned yard plan for AHJ |
+| CMP-NEC-09 | Working space about equipment | NEC 110.26 theme | SITE yard CLEAR_* / KO_* stubs (AQS-SITE-001 §6) | Partial | Dimensioned yard plan for AHJ |
 
 ---
 
@@ -86,7 +86,7 @@ Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.m
 
 | ID | Requirement theme | Citation theme | Aqueous control / doc | Status | Action |
 |---|---|---|---|---|---|
-| CMP-OSH-01 | Means of egress | 29 CFR 1910.36 / .37 | AQS-EGR-001; AQS-SITE-001 §6; AQS-HSE-001 §8; hab path ≠ H areas | Partial | AHJ verify; outdoor discharge survey |
+| CMP-OSH-01 | Means of egress | 29 CFR 1910.36 / .37 | AQS-EGR-001; AQS-SITE-001 §8; AQS-HSE-001 §8; hab path ≠ H areas | Partial | AHJ verify; outdoor discharge survey |
 | CMP-OSH-02 | Walking-working surfaces | 1910.22 / .29 | AQS-HSE-001 §7 mezzanine guardrails | Partial | Guardrail schedule on life / shop MEP |
 | CMP-OSH-03 | Permit-required confined spaces | 1910.146 | CSTR 1, fractionator, scrubber vessels listed | Partial | Written PRCS program + permits |
 | CMP-OSH-04 | LOTO | 1910.147 | Rectifiers, shredder, pyro, MET_MELT, Sol-Ark | Partial | Energy-isolation procedures |
