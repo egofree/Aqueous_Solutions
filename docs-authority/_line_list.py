@@ -18,7 +18,7 @@ try:
 except FileNotFoundError:
     # DEPRECATED markdown fallback (U2a, 2026-10-18): runs ONLY when duties/_origins.json is absent.
     # Regenerate the sidecar with: python3 docs-authority/_duty_basis.py — do not build on this path.
-    for f in glob.glob('docs-authority/duties/*.md'):
+    for f in sorted(glob.glob('docs-authority/duties/*.md')):
         u=os.path.basename(f)[:-3]; s=open(f).read().replace('−','-')
         m=re.search(r'[Oo]rigin (-?\d+), (-?\d+), (-?\d+) mm\. Size (\d+) [×x] (\d+) [×x] (\d+)',s)
         if m:

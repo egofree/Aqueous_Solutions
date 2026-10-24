@@ -1,7 +1,7 @@
 # Derived STREAM / MASS sync pointer — WP-Ap3
 
 Source graph: AQS-FLOW-GRAPH-001 Rev AC (`plant_flow_graph.json`)
-Generated: 2026-10-21
+Graph date: 2026-10-17 (output is a pure function of the graph; no run date, so regen is idempotent)
 Licence: CERN-OHL-S-2.0
 
 ## Generated (this directory)
@@ -16,8 +16,8 @@ Licence: CERN-OHL-S-2.0
 
 | CAD doc | Role after WP-Ap3 |
 |---|---|
-| `cad/STREAM_REGISTER.md` (AQS-STR-001) | **Sync target** — human narrative + inter-block S## table; compare to derived |
-| `cad/MASS_FLOW.md` (AQS-MF-001) | **Sync target** — claim-status narrative; compare to derived |
+| `docs-authority/STREAM_REGISTER.md` (AQS-STR-001) | **Sync target** — human narrative + inter-block S## table; compare to derived |
+| `docs-authority/MASS_FLOW.md` (AQS-MF-001) | **Sync target** — claim-status narrative; compare to derived |
 
 Prefer editing the graph, then:
 

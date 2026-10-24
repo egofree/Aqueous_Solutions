@@ -149,7 +149,7 @@ def main():
     # U2a sidecar: unit -> origin/size for every sheet in the directory (the same glob and regex
     # _line_list.py used on the markdown), so _line_list reads origins from here instead of the md.
     origins = {}
-    for f in glob.glob(os.path.join(D, '*.md')):
+    for f in sorted(glob.glob(os.path.join(D, '*.md'))):   # sorted: output must not depend on directory order
         s = open(f).read().replace('\u2212', '-')
         m = re.search(r'[Oo]rigin (-?\d+), (-?\d+), (-?\d+) mm\. Size (\d+) [×x] (\d+) [×x] (\d+)', s)
         if m: origins[os.path.basename(f)[:-3]] = {'origin_mm': [int(x) for x in m.groups()[:3]], 'size_mm': [int(x) for x in m.groups()[3:]]}

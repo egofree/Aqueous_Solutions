@@ -328,6 +328,16 @@ def create_app() -> FastAPI:
 # ----------------------------------------------------------------------
 
 
+def _last_run_passes(receipt_path):
+    """Graph-loop pass count of the last full regen, from the untracked run log beside the
+    receipt (the tracked receipt is deterministic and carries no run details). None if absent."""
+    try:
+        run = json.loads((receipt_path.parent / "_regen_run.json").read_text(encoding="utf-8"))
+        return run.get("passes")
+    except Exception:
+        return None
+
+
 def _repo_paths() -> tuple:
     """(repo_root, drivers.json, regen receipt, rev_stamp checker)."""
     from ..paths import FLOW_GRAPH_PACKAGE
@@ -530,7 +540,7 @@ def get_regen_status() -> dict:
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         status["last_receipt"] = {
             "graph_sha256": receipt.get("graph_sha256"),
-            "passes": receipt.get("passes"),
+            "passes": _last_run_passes(receipt_path),
             "converged": receipt.get("converged"),
             "vouched_count": len(receipt.get("vouched_patterns") or []),
             "failed": receipt.get("failed") or [],

@@ -68,10 +68,9 @@ It regenerates the register (AQS-REG-002) and fails on an incomplete entry.
    example `x-par-02-leach-balance` or `fix/line-list-dn`.
 3. Make the change in the model, the drivers, a generator or a calculator
    (`docs-authority/_*.py`, `flow_graph/param/`), not in its output.
-4. Regenerate and run the checks (below). All must pass. A full regen
-   currently also rewrites drawing title blocks and receipt timings in files
-   your change did not touch (see the known issue in the README); commit only
-   the files your change affects.
+4. Regenerate and run the checks (below). All must pass. Commit every file
+   the regen changed: on a clean tree a full regen changes nothing, so any
+   change it makes belongs to your change.
 5. Close the task only where a file in the repository proves it. Cite that file,
    rerun `python3 docs-authority/_task_plan_gen.py`, and update every page the
    change made untrue in the same commit. A change that leaves a contradicted
@@ -88,6 +87,16 @@ pytest flow_graph/                                  # tests, including the 1 % m
 python3 -m flow_graph.param.regen --check           # no stale derived file
 python3 flow_graph/check_authority_contract.py      # authority contract
 ```
+
+If you changed a generator, a pipeline stage or `regen_manifest.json`, also run
+
+```bash
+python3 flow_graph/check_regen_idempotent.py         # a full regen of HEAD changes nothing, twice
+```
+
+It runs the full pipeline twice in a temporary worktree of `HEAD`, so commit
+first. CI runs the toolchain-independent part (`--repeat-only`: a second run
+changes nothing) through `AQS_SLOW_TESTS=1 pytest flow_graph/param/test_regen.py`.
 
 Maintainers run the same checks on every pull request, and the CI workflow
 will run them automatically once it is enabled. A pull request that fails them

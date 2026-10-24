@@ -2,10 +2,10 @@
 
 Document number: AQS-MF-001-DERIVED
 Source: AQS-FLOW-GRAPH-001 Rev AC (`plant_flow_graph.json`)
-Generated: 2026-10-21
+Graph date: 2026-10-17 (output is a pure function of the graph; no run date, so regen is idempotent)
 Licence: CERN-OHL-S-2.0
 
-**Not** the legacy master while migration is incomplete — compare to `cad/MASS_FLOW.md`.
+**Not** the legacy master while migration is incomplete — compare to `docs-authority/MASS_FLOW.md`.
 Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 
 | ID | Route | Claim status | Presence | Rate | Notes |

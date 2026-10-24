@@ -203,7 +203,8 @@ open('docs-authority/pid/_generated.json', 'a').write('\n')
 lines = [l for l in open('docs-authority/DRAWING_REGISTER.md').read().splitlines() if not l.startswith('| AQS-PID-')]
 base = sum(1 for l in lines if l.startswith('| AQS-'))
 lines = [re.sub(r'^\d+ drawings\.', f'{base + len(recs)} drawings.', l) for l in lines]
-prov = 'The AQS-PID-001 series (unit P&amp;IDs) is appended by `docs-authority/_pid_sheets.py`, provenance `docs-authority/pid/_generated.json`; rerun it after `_drawings.py`.'
+lines = [l for l in lines if not l.startswith('The AQS-PID-001 series')]
+prov = 'The AQS-PID-001 series (unit P&amp;IDs) is appended by `docs-authority/_pid_sheets.py`, provenance `docs-authority/pid/_generated.json`; `_drawings.py` keeps these rows.'
 if prov not in lines: lines.insert(next(i for i, l in enumerate(lines) if l.startswith('| Number |')) - 1, prov)
 lines += [f"| {r['drawing']} | P&amp;ID {r['unit']} | P&amp;ID (ISO_10628_2) | {r['rev']} | {r['file']} |" for r in recs]
 open('docs-authority/DRAWING_REGISTER.md', 'w').write('\n'.join(lines) + '\n')

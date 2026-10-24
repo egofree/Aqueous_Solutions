@@ -193,11 +193,9 @@ python3 -m flow_graph.param.regen          # solve the graph and regenerate ever
 `python3 -m flow_graph.param.regen --quick` runs only the graph-writing stages
 for a what-if pass. A full run regenerates several hundred documents.
 
-> **Known issue.** A full run also rewrites some generated files your change
-> did not touch: drawing title blocks on the isometric and view SVGs are
-> dropped (they are stamped by `docs-authority/_drawings.py`, which is not yet
-> a pipeline stage), and the run receipt records new timings. Commit only the
-> files your change affects; restore the others with `git checkout -- <path>`.
+A full run on a clean tree changes nothing; `python3 flow_graph/check_regen_idempotent.py`
+verifies that (it runs the pipeline twice in a temporary worktree of `HEAD`).
+Run it before you push a change to a generator or to the pipeline.
 
 CAD (optional):
 

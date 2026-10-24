@@ -949,6 +949,24 @@
    "note": "Layer views + 7 matplotlib PFDs + FreeCAD frames + ffmpeg mp4 + media/_generated.json graph-sha manifest. Slowest stage (FreeCAD + ffmpeg)."
   },
   {
+   "name": "drawings",
+   "argv": [
+    "python3",
+    "docs-authority/_drawings.py"
+   ],
+   "depends_on": [
+    "iso_sheets",
+    "pid_sheets",
+    "regen_derived"
+   ],
+   "outputs": [
+    "docs-authority/DRAWING_REGISTER.md"
+   ],
+   "note": "AQS-DWG-001/002 title blocks on every SVG drawing (graph views, piping isometrics, motor and fabrication drawings) and the drawing register. Runs after the generators that write those SVGs unstamped, so a full regen leaves the stamped drawings byte-identical.",
+   "writes_graph": false,
+   "quick": false
+  },
+  {
    "name": "design_check",
    "argv": [
     "python3",
@@ -984,7 +1002,8 @@
     "regen_derived",
     "task_plan",
     "model_workbook",
-    "assumptions_register"
+    "assumptions_register",
+    "drawings"
    ],
    "writes_graph": false,
    "quick": false,

@@ -9,9 +9,12 @@ Executes flow_graph/param/regen_manifest.json (data, not code):
      This resolves the real power <-> pv_cell_line feedback the declared DAG must not carry.
   2. Doc phase, once, against the final graph: every remaining stage, so U2a sidecars and
      pattern manifests record the final graph sha and byte-identical regens stay current.
-  3. Receipt: flow_graph/derived/_regen_receipt.json (graph sha, per-stage status/duration,
+  3. Receipt: flow_graph/derived/_regen_receipt.json (graph sha, final per-stage status,
      vouched_patterns = output globs of stages that ran clean against the final sha).
-     docs-authority/_rev_stamp.py reads it as a provenance manifest.
+     docs-authority/_rev_stamp.py reads it as a provenance manifest. The receipt is tracked
+     and deterministic: it holds no timings, pass counts or argv, so a full run on a clean,
+     converged tree rewrites it byte-identically. Run details (durations, passes, per-pass
+     graph shas) go to the untracked run log flow_graph/derived/_regen_run.json.
 
 Modes: --quick = the write_graph solver stages only (what-if; no doc regen, no receipt write -- a
 partial run must not clobber the full-run provenance receipt). --check = staleness verification
@@ -31,6 +34,7 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 from flow_graph.param import _ps_cache
 
 MANIFEST_PATH = os.path.join(HERE, 'regen_manifest.json')
+RUN_LOG_NAME = '_regen_run.json'   # untracked (.gitignore): durations, passes, per-pass shas of the last run
 
 def load_manifest():
     m = json.load(open(MANIFEST_PATH))
@@ -88,7 +92,7 @@ def _last_line(out):
 def expand_outputs(stage, root):
     out = []
     for pat in stage.get('outputs', []):
-        out += glob.glob(os.path.join(root, pat), recursive=True)
+        out += sorted(glob.glob(os.path.join(root, pat), recursive=True))
     return out
 def main(argv=None):
     ap = argparse.ArgumentParser(prog='flow_graph.param.regen', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -199,19 +203,21 @@ def main(argv=None):
     except Exception:
         pass
     vouched = sorted(set(vouched) | prior)
+    final_status = {}
+    for e in entries: final_status[e['name']] = e['status']     # last pass wins
     receipt = {
         'generated_by': 'flow_graph/param/regen.py',
         'manifest': os.path.relpath(MANIFEST_PATH, ROOT),
-        'argv': sys.argv[1:],
-        'quick': bool(args.quick),
         'graph_sha256': final_sha,
-        'passes': passes,
         'converged': not failed,
-        'stages': entries,
+        'stages': [{'name': s['name'], 'status': final_status[s['name']]} for s in sel if s['name'] in final_status],
         'failed': failed,
         'vouched_patterns': sorted(set(vouched)),
     }
-    with open(receipt_path, 'w') as f: json.dump(receipt, f, indent=1)
+    with open(receipt_path, 'w') as f: json.dump(receipt, f, indent=1); f.write('\n')
+    run_log = {'argv': sys.argv[1:], 'graph_sha256': final_sha, 'passes': passes, 'seconds': round(total, 2),
+               'converged': not failed, 'failed': failed, 'stages': entries}
+    with open(os.path.join(os.path.dirname(receipt_path), RUN_LOG_NAME), 'w') as f: json.dump(run_log, f, indent=1)
     print(f"receipt: {os.path.relpath(receipt_path, ROOT)} ({len(receipt['vouched_patterns'])} vouched patterns)")
     return 1 if failed else 0
 

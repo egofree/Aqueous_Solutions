@@ -2,10 +2,10 @@
 
 Document number: AQS-STR-001-DERIVED
 Source: AQS-FLOW-GRAPH-001 Rev AC (`plant_flow_graph.json`)
-Generated: 2026-10-21
+Graph date: 2026-10-17 (output is a pure function of the graph; no run date, so regen is idempotent)
 Licence: CERN-OHL-S-2.0
 
-**Not** the legacy master while migration is incomplete — compare to `cad/STREAM_REGISTER.md`.
+**Not** the legacy master while migration is incomplete — compare to `docs-authority/STREAM_REGISTER.md`.
 Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 
 | ID | From | To | Ph | Layers | Presence | Carries | Rate | Gap flags |

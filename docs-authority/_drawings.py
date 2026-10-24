@@ -6,6 +6,8 @@ import glob, hashlib, json, os, re, subprocess
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TB = re.compile(r'\n?<g id="aqs-title-block".*?</g>\n?', re.S)
 DATE = '2026-10-15'
+FOREIGN_ROWS = ('| AQS-PID-',)   # register rows appended by other generators (pid_sheets)
+FOREIGN_NOTES = ('The AQS-PID-001 series',)   # their provenance note, kept with them
 def files():
     out = []
     for f in sorted(glob.glob(os.path.join(R, 'flow_graph/views/*.svg'))):
@@ -50,5 +52,14 @@ def main():
           f'{len(reg)} drawings. Revision for SVG drawings is the content hash in the title block (AQS-DWG-001 section 4); "git" is the file history; "graph" is the graph manifest (media/_generated.json).', '',
           '| Number | Title | Type | Revision | File |', '|---|---|---|---|---|']
     md += [f'| {a} | {b} | {c} | {d} | {e} |' for a, b, c, d, e in reg]
-    open(os.path.join(R, 'docs-authority/DRAWING_REGISTER.md'), 'w').write('\n'.join(md) + '\n'); print(len(reg), 'drawings')
+    # Rows of series owned by other generators (P&ID sheets, docs-authority/_pid_sheets.py) are kept
+    # as they are, so the register is the same whichever of the two generators ran last.
+    rp = os.path.join(R, 'docs-authority/DRAWING_REGISTER.md')
+    old = open(rp).read().splitlines() if os.path.exists(rp) else []
+    kept = [l for l in old if l.startswith(FOREIGN_ROWS)]
+    notes = [l for l in old if l.startswith(FOREIGN_NOTES)]
+    md = [re.sub(r'^\d+ drawings\.', f'{len(reg) + len(kept)} drawings.', l) for l in md]
+    i = md.index('| Number | Title | Type | Revision | File |')
+    md = md[:i - 1] + notes + md[i - 1:]          # same place _pid_sheets.py puts it: under the count line
+    open(rp, 'w').write('\n'.join(md + kept) + '\n'); print(len(reg) + len(kept), 'drawings;', len(kept), 'rows kept from other series')
 if __name__ == '__main__': main()

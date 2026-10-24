@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import argparse
 import json
-from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -30,10 +29,10 @@ def emit_stream_register(g: dict) -> str:
         "",
         "Document number: AQS-STR-001-DERIVED",
         f"Source: AQS-FLOW-GRAPH-001 Rev {g.get('revision')} (`plant_flow_graph.json`)",
-        f"Generated: {date.today().isoformat()}",
+        f"Graph date: {g.get('date')} (output is a pure function of the graph; no run date, so regen is idempotent)",
         "Licence: CERN-OHL-S-2.0",
         "",
-        "**Not** the legacy master while migration is incomplete — compare to `cad/STREAM_REGISTER.md`.",
+        "**Not** the legacy master while migration is incomplete — compare to `docs-authority/STREAM_REGISTER.md`.",
         "Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.",
         "",
         "| ID | From | To | Ph | Layers | Presence | Carries | Rate | Gap flags |",
@@ -60,10 +59,10 @@ def emit_mass_flow(g: dict) -> str:
         "",
         "Document number: AQS-MF-001-DERIVED",
         f"Source: AQS-FLOW-GRAPH-001 Rev {g.get('revision')} (`plant_flow_graph.json`)",
-        f"Generated: {date.today().isoformat()}",
+        f"Graph date: {g.get('date')} (output is a pure function of the graph; no run date, so regen is idempotent)",
         "Licence: CERN-OHL-S-2.0",
         "",
-        "**Not** the legacy master while migration is incomplete — compare to `cad/MASS_FLOW.md`.",
+        "**Not** the legacy master while migration is incomplete — compare to `docs-authority/MASS_FLOW.md`.",
         "Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).",
         "",
         "| ID | Route | Claim status | Presence | Rate | Notes |",
@@ -115,7 +114,7 @@ def emit_census(g: dict) -> str:
         "# Flow graph census — DERIVED",
         "",
         f"Source: AQS-FLOW-GRAPH-001 Rev {g.get('revision')}",
-        f"Generated: {date.today().isoformat()}",
+        f"Graph date: {g.get('date')} (output is a pure function of the graph; no run date, so regen is idempotent)",
         "",
         f"- nodes: **{len(nodes)}** (present={np}, placeholder={nph})",
         f"- edges: **{len(edges)}** (present={ep}, placeholder={eph})",
@@ -138,7 +137,7 @@ def emit_sync_pointer(g: dict) -> str:
             "# Derived STREAM / MASS sync pointer — WP-Ap3",
             "",
             f"Source graph: AQS-FLOW-GRAPH-001 Rev {g.get('revision')} (`plant_flow_graph.json`)",
-            f"Generated: {date.today().isoformat()}",
+            f"Graph date: {g.get('date')} (output is a pure function of the graph; no run date, so regen is idempotent)",
             "Licence: CERN-OHL-S-2.0",
             "",
             "## Generated (this directory)",
@@ -153,8 +152,8 @@ def emit_sync_pointer(g: dict) -> str:
             "",
             "| CAD doc | Role after WP-Ap3 |",
             "|---|---|",
-            "| `cad/STREAM_REGISTER.md` (AQS-STR-001) | **Sync target** — human narrative + inter-block S## table; compare to derived |",
-            "| `cad/MASS_FLOW.md` (AQS-MF-001) | **Sync target** — claim-status narrative; compare to derived |",
+            "| `docs-authority/STREAM_REGISTER.md` (AQS-STR-001) | **Sync target** — human narrative + inter-block S## table; compare to derived |",
+            "| `docs-authority/MASS_FLOW.md` (AQS-MF-001) | **Sync target** — claim-status narrative; compare to derived |",
             "",
             "Prefer editing the graph, then:",
             "",

@@ -91,7 +91,7 @@ def iso_orphans():
 
 def glob_iso():
     import glob as _g
-    return _g.glob(os.path.join(ROOT, 'docs-authority/iso', '*.svg'))
+    return sorted(_g.glob(os.path.join(ROOT, 'docs-authority/iso', '*.svg')))
 
 def main():
     rows, n, bad, rev, head_g = compute()

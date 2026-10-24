@@ -1,7 +1,7 @@
 # Flow graph census — DERIVED
 
 Source: AQS-FLOW-GRAPH-001 Rev AC
-Generated: 2026-10-21
+Graph date: 2026-10-17 (output is a pure function of the graph; no run date, so regen is idempotent)
 
 - nodes: **178** (present=175, placeholder=1)
 - edges: **562** (present=533, placeholder=6)

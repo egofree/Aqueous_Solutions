@@ -59,3 +59,15 @@ def test_quick_run_ok_and_outputs_non_empty():
 def test_check_green_at_head():
     r = _run('--check')
     assert r.returncode == 0, r.stdout[-3000:] + r.stderr[-3000:]
+
+
+def test_full_regen_is_idempotent():
+    """A full regen on a clean tree changes nothing, twice (flow_graph/check_regen_idempotent.py).
+    Slow (two full runs), so it runs only when AQS_SLOW_TESTS=1, as in CI; run the script directly
+    before you push a generator change."""
+    import pytest
+    if os.environ.get('AQS_SLOW_TESTS') != '1':
+        pytest.skip('set AQS_SLOW_TESTS=1 to run the full-regen idempotency check')
+    extra = ['--repeat-only'] if os.environ.get('AQS_REGEN_REPEAT_ONLY') == '1' else []
+    r = subprocess.run([sys.executable, 'flow_graph/check_regen_idempotent.py', *extra], cwd=ROOT, capture_output=True, text=True)
+    assert r.returncode == 0, r.stdout[-3000:] + r.stderr[-3000:]

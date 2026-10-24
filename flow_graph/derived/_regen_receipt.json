@@ -1,962 +1,232 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "argv": [],
- "quick": false,
  "graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c",
- "passes": 2,
  "converged": true,
  "stages": [
   {
    "name": "write_graph_process",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "process"
-   ],
-   "pass": 1,
-   "seconds": 1.39,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
-  },
-  {
-   "name": "sizing_cold_box",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.cold_box",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
-  },
-  {
-   "name": "sizing_evap_design",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.evap_design",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.86,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_receivers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.receivers",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_h2_compressor",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.h2_compressor",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_h2_purifier",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.h2_purifier",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_house_scrubbers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.house_scrubbers",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_pv_cell_line",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.pv_cell_line",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_upw_polish",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.upw_polish",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "foundry_poly",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.foundry_poly",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "6e1a0f343ac69ac04303e9308f03ff18024827d821cc56f9487c4123ab490e99"
-  },
-  {
-   "name": "fluoro_train",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.fluoro_train",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "bb819f3917641c9d0e2698e19ac325053039a522ee33d8737d3965428cf0f86d"
-  },
-  {
-   "name": "stub_activation",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.stub_activation",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "bb819f3917641c9d0e2698e19ac325053039a522ee33d8737d3965428cf0f86d"
-  },
-  {
-   "name": "sizing_heat_battery",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.heat_battery",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "sizing_headers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.headers",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "sizing_geo_loop",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.geo_loop",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "sizing_meoh_train",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.meoh_train",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "write_graph_heat",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "heat"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "write_graph_relief",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "relief"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "f5824ff238f340402550bfd964639409235fc05ca80c0a41df0278272e35ab6b"
-  },
-  {
-   "name": "write_graph_vent",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "vent"
-   ],
-   "pass": 1,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "317504a0bd502f514990543bf239fb88faf3ea57cd3c163217dccf803955e0b3"
-  },
-  {
-   "name": "sizing_materials3",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.materials3"
-   ],
-   "pass": 1,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "32ec2f0e1999637c27733e3b4062f77a62816f824c83fc9127bd9c1da1237d8a"
-  },
-  {
-   "name": "storage_sizing",
-   "argv": [
-    "python3",
-    "docs-authority/_storage_sizing.py"
-   ],
-   "pass": 1,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "32ec2f0e1999637c27733e3b4062f77a62816f824c83fc9127bd9c1da1237d8a"
-  },
-  {
-   "name": "write_graph_power",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "power"
-   ],
-   "pass": 1,
-   "seconds": 0.89,
-   "status": "ok",
-   "post_graph_sha256": "317504a0bd502f514990543bf239fb88faf3ea57cd3c163217dccf803955e0b3"
-  },
-  {
-   "name": "balance_report",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.balance",
-    "--write"
-   ],
-   "pass": 1,
-   "seconds": 1.17,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
-  },
-  {
-   "name": "write_graph_process",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "process"
-   ],
-   "pass": 2,
-   "seconds": 0.79,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
-  },
-  {
-   "name": "sizing_cold_box",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.cold_box",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
-  },
-  {
-   "name": "sizing_evap_design",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.evap_design",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.27,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_receivers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.receivers",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_h2_compressor",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.h2_compressor",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_h2_purifier",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.h2_purifier",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_house_scrubbers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.house_scrubbers",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_pv_cell_line",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.pv_cell_line",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "sizing_upw_polish",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.upw_polish",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8cffacc6b3512b84b7281c23a01c18a43d1877b23087b60cdf25787c1638240c"
-  },
-  {
-   "name": "foundry_poly",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.foundry_poly",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "6e1a0f343ac69ac04303e9308f03ff18024827d821cc56f9487c4123ab490e99"
-  },
-  {
-   "name": "fluoro_train",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.fluoro_train",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "bb819f3917641c9d0e2698e19ac325053039a522ee33d8737d3965428cf0f86d"
-  },
-  {
-   "name": "stub_activation",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.stub_activation",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "bb819f3917641c9d0e2698e19ac325053039a522ee33d8737d3965428cf0f86d"
-  },
-  {
-   "name": "sizing_heat_battery",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.heat_battery",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "sizing_headers",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.headers",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "sizing_geo_loop",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.geo_loop",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "sizing_meoh_train",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.meoh_train",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "write_graph_heat",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "heat"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "1507875e26ecf25e67a458da14d56614ba19f2892cefde30e0e2bf922036067d"
-  },
-  {
-   "name": "write_graph_relief",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "relief"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "f5824ff238f340402550bfd964639409235fc05ca80c0a41df0278272e35ab6b"
-  },
-  {
-   "name": "write_graph_vent",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "vent"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "317504a0bd502f514990543bf239fb88faf3ea57cd3c163217dccf803955e0b3"
-  },
-  {
-   "name": "sizing_materials3",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.materials3"
-   ],
-   "pass": 2,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "32ec2f0e1999637c27733e3b4062f77a62816f824c83fc9127bd9c1da1237d8a"
-  },
-  {
-   "name": "storage_sizing",
-   "argv": [
-    "python3",
-    "docs-authority/_storage_sizing.py"
-   ],
-   "pass": 2,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "32ec2f0e1999637c27733e3b4062f77a62816f824c83fc9127bd9c1da1237d8a"
-  },
-  {
-   "name": "write_graph_power",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.write_graph",
-    "power"
-   ],
-   "pass": 2,
-   "seconds": 0.3,
-   "status": "ok",
-   "post_graph_sha256": "317504a0bd502f514990543bf239fb88faf3ea57cd3c163217dccf803955e0b3"
-  },
-  {
-   "name": "balance_report",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.balance",
-    "--write"
-   ],
-   "pass": 2,
-   "seconds": 0.57,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "sizing_bmed_stack",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.bmed_stack",
-    "--write"
-   ],
-   "pass": 0,
-   "seconds": 0.21,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
+  },
+  {
+   "name": "sizing_cold_box",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_evap_design",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_receivers",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_h2_compressor",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_h2_purifier",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_house_scrubbers",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_pv_cell_line",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_upw_polish",
+   "status": "ok"
+  },
+  {
+   "name": "foundry_poly",
+   "status": "ok"
+  },
+  {
+   "name": "fluoro_train",
+   "status": "ok"
+  },
+  {
+   "name": "stub_activation",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_heat_battery",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_headers",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_geo_loop",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_meoh_train",
+   "status": "ok"
+  },
+  {
+   "name": "write_graph_heat",
+   "status": "ok"
+  },
+  {
+   "name": "write_graph_relief",
+   "status": "ok"
+  },
+  {
+   "name": "write_graph_vent",
+   "status": "ok"
+  },
+  {
+   "name": "sizing_materials3",
+   "status": "ok"
+  },
+  {
+   "name": "storage_sizing",
+   "status": "ok"
+  },
+  {
+   "name": "write_graph_power",
+   "status": "ok"
+  },
+  {
+   "name": "balance_report",
+   "status": "ok"
   },
   {
    "name": "load_list",
-   "argv": [
-    "python3",
-    "docs-authority/_load_list.py"
-   ],
-   "pass": 0,
-   "seconds": 0.3,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "one_line",
-   "argv": [
-    "python3",
-    "docs-authority/_one_line.py"
-   ],
-   "pass": 0,
-   "seconds": 0.44,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "ew_sizing_doc",
-   "argv": [
-    "python3",
-    "docs-authority/_ew_sizing.py"
-   ],
-   "pass": 0,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "leach_sizing_doc",
-   "argv": [
-    "python3",
-    "docs-authority/_leach_sizing.py"
-   ],
-   "pass": 0,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "reactor_design_doc",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.reactor_design",
-    "--doc-only"
-   ],
-   "pass": 0,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "foundry_sizing_doc",
-   "argv": [
-    "python3",
-    "docs-authority/_foundry_sizing.py"
-   ],
-   "pass": 0,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "polymers_sizing_doc",
-   "argv": [
-    "python3",
-    "docs-authority/_polymers_sizing.py"
-   ],
-   "pass": 0,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "vent_scrubber_doc",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.vent_scrubber",
-    "--write"
-   ],
-   "pass": 0,
-   "seconds": 0.21,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "duty_basis",
-   "argv": [
-    "python3",
-    "docs-authority/_duty_basis.py"
-   ],
-   "pass": 0,
-   "seconds": 0.18,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "nozzle_sched",
-   "argv": [
-    "python3",
-    "docs-authority/_nozzle_sched.py"
-   ],
-   "pass": 0,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "unit_sizing_sweep",
-   "argv": [
-    "python3",
-    "docs-authority/_unit_sizing_sweep.py"
-   ],
-   "pass": 0,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "line_list",
-   "argv": [
-    "python3",
-    "docs-authority/_line_list.py"
-   ],
-   "pass": 0,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "pid_sheets",
-   "argv": [
-    "python3",
-    "docs-authority/_pid_sheets.py"
-   ],
-   "pass": 0,
-   "seconds": 1.57,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "iso_routes",
-   "argv": [
-    "python3",
-    "docs-authority/_iso_routes.py"
-   ],
-   "pass": 0,
-   "seconds": 0.17,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "iso_sheets",
-   "argv": [
-    "python3",
-    "docs-authority/_iso_sheets.py"
-   ],
-   "pass": 0,
-   "seconds": 0.2,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "supports",
-   "argv": [
-    "python3",
-    "docs-authority/_supports.py"
-   ],
-   "pass": 0,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "insulation",
-   "argv": [
-    "python3",
-    "docs-authority/_insulation.py"
-   ],
-   "pass": 0,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "ew_busbar",
-   "argv": [
-    "python3",
-    "docs-authority/_ew_busbar.py"
-   ],
-   "pass": 0,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "cable_schedule",
-   "argv": [
-    "python3",
-    "docs-authority/_cable_schedule.py"
-   ],
-   "pass": 0,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "protection",
-   "argv": [
-    "python3",
-    "docs-authority/_protection.py"
-   ],
-   "pass": 0,
-   "seconds": 0.29,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "haz_area",
-   "argv": [
-    "python3",
-    "docs-authority/_haz_area.py"
-   ],
-   "pass": 0,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "derived_excerpts",
-   "argv": [
-    "python3",
-    "flow_graph/export_authority_md.py"
-   ],
-   "pass": 0,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "loop_closure",
-   "argv": [
-    "python3",
-    "flow_graph/loop_closure.py"
-   ],
-   "pass": 0,
-   "seconds": 0.16,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "candidate_mvs",
-   "argv": [
-    "python3",
-    "flow_graph/export_candidate_mvs.py"
-   ],
-   "pass": 0,
-   "seconds": 0.15,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "sizing_coverage",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.sizing_coverage"
-   ],
-   "pass": 0,
-   "seconds": 0.14,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "task_plan",
-   "argv": [
-    "python3",
-    "docs-authority/_task_plan_gen.py"
-   ],
-   "pass": 0,
-   "seconds": 0.2,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "model_workbook",
-   "argv": [
-    "python3",
-    "docs-authority/_model_workbook.py"
-   ],
-   "pass": 0,
-   "seconds": 1.57,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "assumptions_register",
-   "argv": [
-    "python3",
-    "docs-authority/_assumptions_register.py"
-   ],
-   "pass": 0,
-   "seconds": 0.19,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "regen_derived",
-   "argv": [
-    "python3",
-    "flow_graph/regen_derived.py"
-   ],
-   "pass": 0,
-   "seconds": 16.16,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
+  },
+  {
+   "name": "drawings",
+   "status": "ok"
   },
   {
    "name": "design_check",
-   "argv": [
-    "python3",
-    "docs-authority/_design_check.py"
-   ],
-   "pass": 0,
-   "seconds": 0.17,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   },
   {
    "name": "rev_stamp",
-   "argv": [
-    "python3",
-    "docs-authority/_rev_stamp.py"
-   ],
-   "pass": 0,
-   "seconds": 0.28,
-   "status": "ok",
-   "post_graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c"
+   "status": "ok"
   }
  ],
  "failed": [],
@@ -970,6 +240,7 @@
   "docs-authority/COLLECTION_BUS.md",
   "docs-authority/DERIVED_REVISIONS.md",
   "docs-authority/DESIGN_CHECK.md",
+  "docs-authority/DRAWING_REGISTER.md",
   "docs-authority/HAZ_AREA.md",
   "docs-authority/INSULATION_SCHEDULE.md",
   "docs-authority/ISO_ROUTES.json",
