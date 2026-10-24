@@ -120,7 +120,7 @@ def write_doc(d, R):
                f"(H2 {v(HD+'hdr_rho_H2')}, air class {v(HD+'hdr_rho_air')}, CO2 {v(HD+'hdr_rho_CO2')}, NCG {v(HD+'hdr_rho_ncg')}, flue {v(HD+'hdr_rho_flue')} kg/m3, "
                f'{cite("NIST_WEBBOOK")} class). The O2 header is degreased and bagged per {cite("ASTM_G93")}; its take-offs carry the no-oil rule of '
                'AQS-STD-002. Open: hydraulic network verification (pressure drops at the governing draws) folds into the line list calculation as the '
-               'connected line bores are re-derived at unit task 05.']
+               'connected line bores are derived again at unit task 05.']
     open(os.path.join(ROOT, 'docs-authority/sizing/HEADERS.md'), 'w').write('\n'.join(md) + '\n')
 
 

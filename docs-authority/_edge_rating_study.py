@@ -320,7 +320,7 @@ def rate_all(g):
     R.offg("WET_BENCH", "mass", "in", "resist from the litho track", s38, "ST-LITHO-01")
     R.set("S10", bench_in, "kg/d", "WS forwards sum completed: all bench inputs (S09, S27, S31-S35, S34B) + resist - S38", "AQS-AUD-001 s13 (spent = forwards)",
           "spent etch + rinse to REGEN LEACH", "ambient", kind="by_difference")
-    R.log.append(f"S10 re-derived {(R.E['S10'].get('params') or {}).get('rev_k_value', R.E['S10']['rate']['value'])} -> {bench_in:.2f} kg/d: Rev K value omitted S27 rinse and S09")
+    R.log.append(f"S10 derived again {(R.E['S10'].get('params') or {}).get('rev_k_value', R.E['S10']['rate']['value'])} -> {bench_in:.2f} kg/d: Rev K value omitted S27 rinse and S09")
 
     # ================================================================ MFG / metals
     cu_dep = diss["Cu"] * f_plate

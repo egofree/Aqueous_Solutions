@@ -2384,7 +2384,7 @@
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
   "title": "Still and toilet N+1",
-  "statement": "VCD_TRAIN and COMPOST_TOILET installed 2 x 100 %; VCD feed re-derived from present inflow (0.187 -> 0.383 m3/d) at 17 kWh/m3 (midpoint of the issued 14-20 band); roof-tank inventory 1520 d is the diverse water backup.",
+  "statement": "VCD_TRAIN and COMPOST_TOILET installed 2 x 100 %; VCD feed derived again from present inflow (0.187 -> 0.383 m3/d) at 17 kWh/m3 (midpoint of the issued 14-20 band); roof-tank inventory 1520 d is the diverse water backup.",
   "verification": "Changeover test duty to standby.",
   "replace_when": "Feed or crew use changes.",
   "doc": "AQS-PAR-003"
@@ -4004,7 +4004,7 @@
   "units": "kW",
   "where": "flow_graph/plant_flow_graph.json: mvs.electrical.need_kw, PV_ARRAY, IA-PV-01, S17, mvs.notes; docs-authority/_power_sizing.py (demand derivation)",
   "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a72/\u00a74: Rev AC bounding electrical demand = max(node continuous_kw, elec edge) per unit; RECTIFIER at the node 12 kW basis (the S17 50.0 ELEC_NEED_KW_BASE seed rejected as circular \u2014 removed); EW_1..EW_9 DC behind the RECT-EW bounding AC row 38.66 kW (AQS-ELEC-004). Encoded per \u00a78 at the note basis (250.0 kW converged). Sensitivity \u00b120 % \u2192 2792/4144 kWp at the note basis.",
-  "sensitivity": "Live-scope deltas vs the note basis: +24.59 H2O_ELYZ (D-O2 restore, A-M-230), +1.66 CRYO_ASU at duty (A-M-238), \u22122.95 GROW_BED crew-duty LED re-base (A-M-229) \u2192 179.46 kW base / 285.78 kW converged when re-derived from the live graph",
+  "sensitivity": "Live-scope deltas vs the note basis: +24.59 H2O_ELYZ (D-O2 restore, A-M-230), +1.66 CRYO_ASU at duty (A-M-238), \u22122.95 GROW_BED crew-duty LED re-base (A-M-229) \u2192 179.46 kW base / 285.78 kW converged when derived again from the live graph",
   "replaced_by": "each unit task 02 calculated load; write_graph power() re-derivation on the live scope (needs the RECT_EW node + S17-EW restored first, note \u00a710.4)",
   "task": "D-PV encode lane 2026-10-18",
   "files": [
@@ -4319,7 +4319,7 @@
   "basis": "R10a grey-water routing: BH crew-4 pattern 240.23 grey + 80.00 wash (graph 91d33f4) ride S12 because HAB_WASH is retired in Rev AC; the Rev AC diversion S12->NUTRIENT_DOSE at 110 kg/d is retired (the crew-duty bed takes nutrient flow only, A-M-229, and its by-difference closure was pumping the grey water into the leach - the reported +515.5 kg/d water-long). Closed by difference on live crew rates (S21 120.68, S14 4.20, S02 3.40 restored/held)",
   "sensitivity": "1:1 into IA-GREY-01 (grey sludge, leach make-up) and the NORTH_DOCK freight gap; +-10 % grey moves the leach make-up the same way",
   "replaced_by": "Sanitation re-barrier study (BLACK_DEWATER/PASTEUR/ALK_HOLD restoration) re-splitting wash vs black streams",
-  "task": "R10a water/wastewater closure lane 2026-10-18",
+  "task": "R10a water and wastewater closure, 2026-10-18",
   "files": [
    "flow_graph/plant_flow_graph.json",
    "flow_graph/param/balance.py"
@@ -4335,7 +4335,7 @@
   "basis": "R10a digester line: the X-SAN-01 barrier chain behind the digester (BLACK_DEWATER, BLACK_PASTEUR, BLACK_ALK_HOLD) is retired in Rev AC, so the BH exit splits are carried at the digester on live endpoints; urine 1.42 / fecal 0.13 / galley 1.18 (BH crew-4 verbatim) now discharge directly to the digester (COMPOST_TOILET/HAB_GALLEY retired; X-SAN-01: compost-toilet solids and urine pass the same barriers)",
   "sensitivity": "liquor/cake split moves IA-GREY-01 and the leach make-up 1:1; cake moves AFTERBURNER feed 1:1",
   "replaced_by": "X-SAN-01 barrier-train restoration: the released-liquor edge is a mass-balance fact today, not a Class-A compliance claim (40 CFR 503 / EPA503 re-check required)",
-  "task": "R10a water/wastewater closure lane 2026-10-18",
+  "task": "R10a water and wastewater closure, 2026-10-18",
   "files": [
    "flow_graph/plant_flow_graph.json",
    "flow_graph/param/balance.py"
@@ -4351,7 +4351,7 @@
   "basis": "R10a acid/base loop restore: BH topology verbatim (91d33f4: 449.52 / 502.98 from LEACH_CSTR_1); Rev AC had left both edges as unrated CRU placeholders with no CRU source basis. Brine by difference against the loop anchors IA-EVAP_ACID-FEED 1304.52 / IA-EVAP_BASE-FEED 1301.72 (X-PAR acid-loop decision, AQS-PAR-001 s3), side draws S09+IA-BMED-01 / IA-BMED-02, and condensate returns; k = 1 (BMED HCl make unchanged, X-PAR-12). EVAP_ACID closes on IA-ACID-01 (retired 0.03 vent rides the acid product), EVAP_BASE on IA-BASE-PPT (absorbs retired ACEX draw 0.23)",
   "sensitivity": "brine tracks the evaporator feed 1:1; the 2 M concentration basis of the anchors governs (87.90 kg/d HCl / 0.0707)",
   "replaced_by": "BMED loop re-sizing if leach acid/base duty changes (solver.leach_acid / X-PAR-12 k != 1)",
-  "task": "R10a water/wastewater closure lane 2026-10-18",
+  "task": "R10a water and wastewater closure, 2026-10-18",
   "files": [
    "flow_graph/plant_flow_graph.json",
    "flow_graph/param/o2_close.py"
@@ -4367,7 +4367,7 @@
   "basis": "R10a digester line: BH verbatim 26.20 (91d33f4, to MFG_SHOP) plus IA-SIC-IN 0.50 silica that BH sent GLASS_DIGEST->SIC_FURNACE (retired Rev AC; BH SIC return IA-SIC-OUT 0.33 and its 0.17 net residue also ride S08G); the Rev AC re-point to BOUNDARY_EXPORT at 30.00 broke MFG_SHOP (-26.94) and inflated site exports. AQS-AUD-001 4.1 silicate+grit ~=30 kg/d feed basis unchanged",
   "sensitivity": "+-0.5 kg/d on the MFG_SHOP pass-through pair (IA-MFG-OUT/IA-WEAR) and HOPPER",
   "replaced_by": "SIC_FURNACE restoration in the FOUNDRY scope (splits the silica back out)",
-  "task": "R10a water/wastewater closure lane 2026-10-18",
+  "task": "R10a water and wastewater closure, 2026-10-18",
   "files": [
    "flow_graph/plant_flow_graph.json"
   ],
@@ -4382,7 +4382,7 @@
   "basis": "R10a: NORTH_DOCK is the site boundary meter pair (products arrive = imports dispatch); with every mass edge internal, its residual is minus the sum of all other unit residuals. The gap is itemised in the ledger as the open R10 EW/H2/gas lane: EW cells +67.7 (Faraday side-Cl2/cathode-H2 outlets died with HCL_BURNER), CRYO_H2 +4.8 (S64 stale phantom), CRYO_ASU +5.3 (Ar return, CRYO_AR dead), NOX_SCRUB +5.0, WAFER_FAB -6.8, AFTERBURNER -2.2. Absorbing it would pre-empt the owner's parked EW cathode-H2 decision (HCl-burner vs H2 pool, A-M-230 note) - an invented rate; BH closed at 84.88 = 79.77 + 5.11 (91d33f4)",
   "sensitivity": "falls 1:1 with the EW/H2 re-basis; also closes if the retired dock feed import is re-instated (owner decision)",
   "replaced_by": "R10 EW Faraday / cathode-H2 re-basis lane (or dock feed import re-instatement ruling)",
-  "task": "R10a water/wastewater closure lane 2026-10-18",
+  "task": "R10a water and wastewater closure, 2026-10-18",
   "files": [
    "flow_graph/plant_flow_graph.json",
    "flow_graph/param/balance.py"
@@ -4439,7 +4439,7 @@
  },
  {
   "id": "A-M-258",
-  "value": "Power chain re-derived on the live graph: demand 281.99 kW bounding -> PV 3909 kWp (7818 x 0.5 kWp, 34328 m2 at 8.78 m2/kWp, roof 270 x 138 m), storage 1282 kW / 3948 kWh, inverters 55 x 60 kW in 5 sections",
+  "value": "Power chain derived again on the live graph: demand 281.99 kW bounding -> PV 3909 kWp (7818 x 0.5 kWp, 34328 m2 at 8.78 m2/kWp, roof 270 x 138 m), storage 1282 kW / 3948 kWh, inverters 55 x 60 kW in 5 sections",
   "units": "kW / kWp / kWh / m2",
   "where": "flow_graph/plant_flow_graph.json: PV_ARRAY.params, SOL_ARK_60K.params, ZNBR2.params, RECTIFIER.params, IA-PV-01; flow_graph/param/write_graph.py power()/process() (RECTIFIER remap); docs-authority/_power_sizing.py; docs-authority/COLLECTION_BUS.md",
   "basis": "R10b: write_graph power() re-run per A-M-231 replaced_by (live-scope re-derivation). RECT_EW remapped to the Rev AC RECTIFIER node: the solved 38.66 kW bounding AC input is stamped in RECTIFIER.params.rect_ac_input_kW and the node continuous_kw stays the 12 kW A-M-231 basis, so the EW DC load is counted once (behind the AQS-ELEC-004 bounding row in _power_sizing) - writing it onto S17 would double-count. Live demand re-derives 281.99 kW (A-M-231 recorded 285.78 at the D-PV encode; same class, the delta is later elec-scope moves); PV lands 3909 kWp vs the ~3962 expected from the A-M-238 sensitivity - same D75 class (2.0 x the 1955 kWp balancing nameplate). _collection_bus.py null-safe on unrated feeders (SF-HF_GEN) so X-ELS-11 sections are script-written again",
@@ -4462,7 +4462,7 @@
   "where": "flow_graph/plant_flow_graph.json: HL-Q1/Q2/Q3-*-DOWN, HL-Q3-*-HX4/5/6, HL-Q4-A/B-BUS, S44, HL-Q4-REJ (+ layers fixed to thermal); flow_graph/param/write_graph.py heat()",
   "basis": "R10b: the kW-unit ladder-family edges carried layer 'mass' (the X-THM-01 ledger counts thermal+kW), and the R6 heat-study branches (HX-9/HX-10, ADS_CHILL, MAU_HX, ELY stack heat, rectifier reject) were added without re-solving the transit - Q3_A/B sat -10.3 and Q4_BUS -18.1 kW. Transit re-solved by difference down the ladder (down-only, HEAT_LADDER.md Duties: Q3 fully drawn, shortfall is electric trim at the process, which stays on IA-TRIM-HX5/HX6); Q3 draws pro-rata on the rated profile frozen in Q3_A/B params.x_thm_rated_draws (no priority assumption); S44 lifts the remaining bus deficit per its AQS-DUTY-010 dispatch rule (lift only on deficit); HL-Q4-REJ is the terminal by difference - 0 on the design day, DRY_COOLER keeps its 12 kW upset rating (A-M-244). ADS (summer) and MAU (winter) both carried at duty as encoded R6: the seasonal split is the study's, not the graph's",
   "sensitivity": "every kW of branch duty moves REJ/S44 1:1; the GEO_HP source loop (S43/CLOSED_LOOP edge) is unrated Rev AC scope - the lift is booked at the HP only",
-  "replaced_by": "GEO loop rating (S43 + closed-loop edge) in heat work; seasonal branch profile if the owner wants an annual-average graph",
+  "replaced_by": "GEO loop rating (S43 + closed-loop edge) in heat work; seasonal branch profile if an annual-average graph is required",
   "task": "R10b heat-store lane 2026-10-18",
   "files": [
    "flow_graph/plant_flow_graph.json",
@@ -4626,7 +4626,7 @@
   "value": "see drivers.json keys (10)",
   "units": "various",
   "where": "flow_graph/param/pressure_nodes.py GAS dict; docs-authority/_shunt_current.py; _material_temps.py default",
-  "basis": "U4b wave 2 promotion of inline process conditions (P/T of gas nodes, liquor conductivity, shunt limits, no-heat default T); each drivers key carries needs_verification + verification_test",
+  "basis": "U4b promotion of inline process conditions (P/T of gas nodes, liquor conductivity, shunt limits, no-heat default T); each drivers key carries needs_verification + verification_test",
   "sensitivity": "per-key; see drivers.json",
   "replacing_test": "per-key verification_test fields",
   "task": "U4b",
@@ -4707,7 +4707,7 @@
   "value": "demand P 260.96 -> 240.99 kW; EXT_HALL 97.49 -> 90.57 kW; PV 3618 -> 3341 kWp; IA-PV-01 405.3506 -> 395.872 kW; inverters 51 -> 47; ZNBr2 3654 -> 3374 kWh, charge 1187 -> 1096 kW, discharge 261 -> 241 kW",
   "units": "kW / kWp / kWh",
   "where": "flow_graph/param/write_graph.py (process/power X-ELS-02 stamping); flow_graph/plant_flow_graph.json node continuous_kw + SF-* feeds; docs-authority/LOAD_LIST.md/.json Rev B",
-  "basis": "each row's own sizing authority: AQS-MFG-010 rev B tool list (X-MFG-37, A-M-177), AQS-DUTY-050 Rev B agitator (drivers motor_kW), X-MFG-31 reactor design AQS-DUTY-062, X-SAN-01 AQS-DUTY-063, AQS-DSN-OX-001 (X-ELS-10), A-M-231 RECTIFIER basis, AQS-ELEC-007/_power_sizing D75 chain (ZNBR2), AQS-DUTY-010 S44 dispatch + drivers gsh_cop_h (GEO_HP); power chain re-derived by the sanctioned writers to the fixed point (3 passes)",
+  "basis": "each row's own sizing authority: AQS-MFG-010 rev B tool list (X-MFG-37, A-M-177), AQS-DUTY-050 Rev B agitator (drivers motor_kW), X-MFG-31 reactor design AQS-DUTY-062, X-SAN-01 AQS-DUTY-063, AQS-DSN-OX-001 (X-ELS-10), A-M-231 RECTIFIER basis, AQS-ELEC-007/_power_sizing D75 chain (ZNBR2), AQS-DUTY-010 S44 dispatch + drivers gsh_cop_h (GEO_HP); power chain derived again by the sanctioned writers to the fixed point (3 passes)",
   "sensitivity": "connected AC load 202.3 kW of which 74.1% calculated; the residual 52.5 kW pending is 45 kW foundry face value (A-M-232) + 7.5 kW unbuilt/owner-TBD rows (A-M-276); removing the foundry face value lifts the calculated share to 95.2%",
   "replaced_by": "each remaining unit task 02 calculated load (A-M-276 list)",
   "replacing_test": "docs-authority/LOAD_LIST.json summary.connected_calculated_pct; tree golden gen kw_sum 399.8802 (test_system_tree); full regen green with --check 0"

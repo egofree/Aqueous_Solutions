@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Resolve the FreeCAD console and accept 1.0, 1.1, or 26.3.
 
-Does not import FreeCAD. Safe to run from system Python on the operator box.
+Does not import FreeCAD. Safe to run from system Python on a machine with FreeCAD installed.
 
     python3 freecad_host.py
     python3 freecad_host.py --require 1.1

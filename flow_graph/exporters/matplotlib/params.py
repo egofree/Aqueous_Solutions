@@ -207,7 +207,7 @@ RULES_FOOT = (
 from pathlib import Path
 
 # Write next to the generators. If this file lives in a pfd_scripts/
-# subfolder, PNGs go one level up (the project folder). If the user
+# subfolder, PNGs go one level up (the project folder). If you
 # copied everything into one directory (e.g. ~/dev/Aqueous/Diagrams),
 # PNGs land in that same directory. Never hard-code /home/workdir.
 _HERE = Path(__file__).resolve().parent

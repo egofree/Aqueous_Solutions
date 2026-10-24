@@ -20,7 +20,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Cell voltage, current, liquor temperature. High temperature or low flow trips the rectifier.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. Rack `cad/stl/EW_7.stl` is the plate rack. FreeCAD is not in this session.
+7. Code. Shop. Not stamped. Rack `cad/stl/EW_7.stl` is the plate rack. Nothing inside it is modelled yet.
 
 8. Open items. The sheet mass is undifferentiated plated metal. It is not an assay. The copper equivalent is the sizing rule, not a metal identification. Kilowatts at 2.5 V do not match the node.
 

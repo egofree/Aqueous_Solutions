@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Struvite settler. Run on the operator box: freecadcmd struvite.py"""
+"""Struvite settler. Run with FreeCAD: freecadcmd struvite.py"""
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))

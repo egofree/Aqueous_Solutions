@@ -170,7 +170,7 @@ def tf(g):
     #         absorbed the 13.79 kg/d gap every pass - a repulsive fixed point at 439.4 kg/d that pushed IA-ACID-01
     #         up +13.79/pass or collapsed it to the IA-BMED-03 -593.49 assert from below. Retired: write_graph
     #         re-solves those edges from the solver every pass.
-    #     (3) edges shared with write_graph are re-derived through solver.evap - the exact write_graph code path,
+    #     (3) edges shared with write_graph are derived again through solver.evap - the exact write_graph code path,
     #         on its 4-dp grid - behind a 1 g/d epsilon guard, so the 6-dp closure of 4-dp inputs can never
     #         ping-pong against the solver's own rounding (IA-BMED-04: closure 500.1312 vs write_graph 500.1311).
     #     IA-ACID-01 is SIZED to the leach HCl demand - its stated basis (AQS-DUTY-011 'sized to the continuous
@@ -188,7 +188,7 @@ def tf(g):
     if 'IA-VS-NAOH' in E: E['IA-VS-NAOH'].setdefault('params', {})['NaOH_mol_d'] = round(_u['naoh_mol_d'], 9)   # identical float to the write_graph stamp
     put('IA-ACID-01', _pin, f'acid product sized to the leach HCl demand: {_lac:.4f} kg/d / {_wo:.0%} = {_pin:.4f} kg/d (AQS-DUTY-011 sized-to-draw basis, X-RSZ-01 class A bound on current drivers; write-convergence fix 2026-10-19: the by-difference closure was an identity map that preserved a stale +1.57 % over-supply)')
     _fd = round(_ea['feed_kg_d'], 4)
-    if abs(_fd - v('IA-EVAP_ACID-FEED')) > 1e-3: put('IA-EVAP_ACID-FEED', _fd, 'EVAP_ACID feed re-derived on the sized acid product through solver.evap (column recycle, PERRY7_HCL_VLE); write_graph.process is the writer of record, epsilon guard 1 g/d (write-convergence fix 2026-10-19)')
+    if abs(_fd - v('IA-EVAP_ACID-FEED')) > 1e-3: put('IA-EVAP_ACID-FEED', _fd, 'EVAP_ACID feed derived again on the sized acid product through solver.evap (column recycle, PERRY7_HCL_VLE); write_graph.process is the writer of record, epsilon guard 1 g/d (write-convergence fix 2026-10-19)')
     _cd = round(_fd - _pin - v('IA-EVAP_ACID-VENT'), 4)
     if abs(_cd - v('IA-EVAP_ACID-COND')) > 1e-3: put('IA-EVAP_ACID-COND', _cd, f'condensate = water off {_ea["water_kg_d"]:.2f} kg/d less the X-PAR-10 vent, on the sized acid product (frozen-base re-stamp 864.9665 retired 2026-10-19: it fought the live solver writer 878.7551 and rattled the purge +13.79 kg/d per pass)')
     put('IA-BMED-03', v('IA-EVAP_ACID-FEED') + v('S09') + v('IA-BMED-01') - v('IA-EVAP_ACID-COND') - vv('IA-VS-SPENT'),

@@ -84,5 +84,5 @@ EW_9 closes exactly on its Rev BH rates: IA-EW-09 liquor 3520.316 to POLISH_BANK
 - DRAW feed edge, FORGE edges, FILM_CAST feed, POLY_COND outlet: absent at Rev AC; named on the graph gap list by this pass.
 - Wax make-up and shell-ceramic sources for the investment train (section 4).
 - Foundry forming-line kW (ROLL 0.4 kWh/d class) is below the electrical rollup floor; the power lane carries the furnace block at 45 kW flat (A-M-232) and re-derives on the logged batch schedule.
-- No rate on this page is a measurement: the live loop is closure-derived (section 2), the blocked trains are cited to their missing assays, and every design-case figure carries its source. Verification items are A-M-261/262/266.
+- No rate on this page is a measurement: the live loop is closuderived again (section 2), the blocked trains are cited to their missing assays, and every design-case figure carries its source. Verification items are A-M-261/262/266.
 

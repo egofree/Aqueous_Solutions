@@ -146,7 +146,7 @@ A('- DRAW feed edge, FORGE edges, FILM_CAST feed, POLY_COND outlet: absent at Re
 A('- Wax make-up and shell-ceramic sources for the investment train (section 4).')
 A('- Foundry forming-line kW (ROLL 0.4 kWh/d class) is below the electrical rollup floor; the power lane carries the '
   'furnace block at 45 kW flat (A-M-232) and re-derives on the logged batch schedule.')
-A('- No rate on this page is a measurement: the live loop is closure-derived (section 2), the blocked trains are cited '
+A('- No rate on this page is a measurement: the live loop is closuderived again (section 2), the blocked trains are cited '
   'to their missing assays, and every design-case figure carries its source. Verification items are A-M-261/262/266.')
 A('')
 open('docs-authority/sizing/FOUNDRY_LINE.md', 'w').write('\n'.join(L) + '\n')

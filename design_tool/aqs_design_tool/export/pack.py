@@ -504,7 +504,7 @@ def _emit_3d(
         f"({cov.get('present_coverage_pct')}%)",
         f"- Baseline sha256 keys: {', '.join(sha.keys()) or '(none beside bridge at export)'}",
         "",
-        "## Rebuild from this pack (share tree)",
+        "## Rebuild from this pack",
         "",
         "```bash",
         "# 0) Prerequisites: /usr/bin/freecadcmd 1.0 — see docs-authority/BUILD_3D_FROM_FLOW.md",

@@ -139,7 +139,7 @@ def tf(g, ps=None):
         s14 = E['S14']['rate']['value']; N['HAB_GALLEY']['params']['food_reserve'] = {'days': BVAD_TOM_TM, 'crew_food_fresh_kg_d': round(s14, 3),
             'reserve_dry_kg': round(s14*(1 - EDIBLE_W)*BVAD_TOM_TM, 1), 'basis': 'BVAD2022 Table 4-112 tomato time to harvest; dry store (X-RED-08, A-M-148); retune with the nutrition ration lock'}
     # X-RED-05 / X-RED-09 (A-M-149): water still and toilet each 2 x 100 % (duty + installed standby); the roof-tank inventory is the diverse
-    # water backup (AQS-RED-001). VCD feed and average load re-derived from the present inflow at the issued 14-20 kWh/m3 midpoint.
+    # water backup (AQS-RED-001). VCD feed and average load derived again from the present inflow at the issued 14-20 kWh/m3 midpoint.
     vin = sum(e['rate']['value'] for e in g['edges'] if e['to_unit_id'] == 'VCD_TRAIN' and 'mass' in e['layers'] and e['rate']['unit'] == 'kg/d')/1000
     P = N['VCD_TRAIN']['params']; P.update(feed_m3_d=round(vin, 4), avg_kw=round(vin*VCD_SEC/24, 4), units_installed=2, redundancy='2 x 100 %, standby still on the same feed header (X-RED-05)')
     N['VCD_TRAIN']['continuous_kw'] = {'value': round(vin*VCD_SEC/24, 4), 'unit': 'kW', 'status': 'study', 'note': f'{vin:.3f} m3/d x {VCD_SEC} kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)'}

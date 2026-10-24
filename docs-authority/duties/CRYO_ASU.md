@@ -14,7 +14,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Pressure and temperature. High pressure trips the feed.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CRYO_ASU.stl` is the box, not the internal. FreeCAD is not in this session.
+7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CRYO_ASU.stl` is the outer envelope only; nothing inside it is modelled yet.
 
 8. Open items. Tray efficiency is not measured.
 9. Balance (AQS-PAR-003 Rev C). IA-ASU-O2 31.087 kg/d; IA-LEACH-ASU 0.796 kg/d under the Henry bound (T5, T6).

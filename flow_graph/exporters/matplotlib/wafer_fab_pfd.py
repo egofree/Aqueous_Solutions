@@ -143,7 +143,7 @@ def main():
     arrow(ax, (cx(preclean), 18.5 + 6.5), T(sol), S.C_PRODUCT, lw=1.0, ls="--")
     arrow(ax, R(sol), L(koh), S.C_OX, lw=1.0, ls="--")
     arrow(ax, R(koh), L(pv), S.C_PRODUCT, lw=1.0, ls="--")
-    ax.text(60, 21.5, "Detail sheet + FreeCAD PV_* envelopes issued Wave 4. kW TBD.",
+    ax.text(60, 21.5, "Detail sheet and FreeCAD PV_* envelopes issued. Power to be determined.",
             fontsize=11.2, color="#78716c", style="italic")
 
     S.callout(ax, 2, 6.5, 56, 10.5, "MACHINE / PROCESS LIST", [

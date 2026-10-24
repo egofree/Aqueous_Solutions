@@ -27,7 +27,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Cell voltage, current, liquor temperature. High temperature or low flow trips the rectifier.
 
 6. Relief. Atmospheric. The vent is IA-EW1-H2 to HDR_H2. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. Rack `cad/stl/EW_1.stl` is the plate rack. FreeCAD is not in this session.
+7. Code. Shop. Not stamped. Rack `cad/stl/EW_1.stl` is the plate rack. Nothing inside it is modelled yet.
 
 8. Open items. The sheet mass is undifferentiated plated metal. It is not an assay. The copper equivalent is the sizing rule, not a metal identification. IA-E-RECT stays 4.57 kW and does not equal the 5.263 kW node. Current efficiency and cell voltage are assumed, not measured.
 

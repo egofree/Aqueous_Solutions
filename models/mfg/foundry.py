@@ -210,7 +210,7 @@ def build(U):
         fast = ('item,size,grade,qty,location,basis\n'
                 '1,M10 x 30 bench bolts,ISO 898-1 8.8,12,legs and hopper bracket,study\n'
                 '2,M12 anchor,ISO 898-1 8.8,4,bench feet to slab,study\n')
-        wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). LIVE unit - Kroll drag-out landed (A-M-284).\n\n'
+        wo = (f'# Work order {U}\n\nAuthority: {DOC} (X-MFG-30 pattern). Live unit: the Kroll drag-out stream is connected (A-M-284).\n\n'
               f'1. Weld the bench; fit the SS top and lower shelf.\n'
               f'2. Set the {d["hopper_L"]:.0f} L salt hopper with lid; mount the {d["mixer_kW"]} kW side-entry mixer.\n'
               f'3. Place the mixing tub and the day-bin on the shelf.\n'

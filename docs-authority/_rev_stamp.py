@@ -26,7 +26,7 @@ CLASS = {'iso/*': 'superseded by docs-authority/iso/*.svg (AQS-ISO-002, _iso_she
 # documented one-shots and blocked generators: derived files the U3 orchestrator does not regenerate, with the reason (U3 gated expansion)
 BY_DESIGN = {
     'docs-authority/sizing/SANITATION.md': 'X-SAN-01 graph-writer module (flow_graph/param/sanitation.py); owner-lane port pending (R11 close-out)',
-    'media/_generated.json': 'manifest mechanism itself (pattern vouching source, regen_derived.py)',
+    'media/_generated.json': 'the manifest that lists generated media and the graph each was made from (regen_derived.py)',
     'flow_graph/derived/_regen_receipt.json': 'manifest mechanism itself (U3 regen provenance receipt)'}
 FILE_MANIFESTS = ['docs-authority/sizing/REACTOR_DESIGN._generated.json']
 RECEIPT = 'flow_graph/derived/_regen_receipt.json'
@@ -43,7 +43,7 @@ def compute():
     head_g = graph[0]; rev = json.load(open(os.path.join(ROOT, GP)))['revision']; rows = []; bad = []
     dirty = set(git('status', '--porcelain').split())
     import hashlib; gsha = hashlib.sha256(open(os.path.join(ROOT, GP), 'rb').read()).hexdigest(); checked = []
-    for man in ('docs-authority/duties/_generated.json', 'media/_generated.json'):   # generators re-derived these outputs from this exact graph
+    for man in ('docs-authority/duties/_generated.json', 'media/_generated.json'):   # generators derived again these outputs from this exact graph
         m = os.path.join(ROOT, man)
         if os.path.exists(m) and json.load(open(m)).get('graph_sha256') == gsha: checked += json.load(open(m)).get('patterns', [])
     rp = os.path.join(ROOT, RECEIPT)                                                  # U3: regen receipt vouches stage output globs
@@ -75,7 +75,7 @@ def compute():
         bd = next((v for k, v in BY_DESIGN.items() if fnmatch.fnmatch(f, k)), None)
         if bd: rows.append((f, '-', 'by design: ' + bd)); continue
         if f in orphans: rows.append((f, '-', 'by design: sheet of a deleted/rerouted edge (not in regenerated iso/ISO_SHEETS.csv); retirement pending the graph lane')); continue
-        if any(fnmatch.fnmatch(f, k) for k in checked) or vouched.get(f) == gsha: rows.append((f, head_g[0][:7] + ' (re-derived, unchanged)', 'current')); continue
+        if any(fnmatch.fnmatch(f, k) for k in checked) or vouched.get(f) == gsha: rows.append((f, head_g[0][:7] + ' (regenerated, no change)', 'current')); continue
         made = next((g for g in graph if g[1] <= c[1]), None)
         st = 'current' if made and made[0] == head_g[0] else 'stale'
         rows.append((f, (made[0][:7] if made else '-'), st))

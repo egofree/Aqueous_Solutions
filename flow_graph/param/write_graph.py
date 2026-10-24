@@ -426,7 +426,7 @@ def power():
         'pv_module_kw': pv['module_kw'], 'pv_count': count,
         'znbr_module_kw': round(p['inv_kW']/p['inverters'], 6), 'znbr_count': p['inverters'],
         'rect_count': 1,
-        'notes': ('write_graph power() (single writer, D1/D2/D4): need/target/PV/storage chain re-derived per A-M-234 replaced_by / A-M-258 from '
+        'notes': ('write_graph power() (single writer, D1/D2/D4): need/target/PV/storage chain derived again per A-M-234 replaced_by / A-M-258 from '
                   'docs-authority/_power_sizing.py (demand = max(node continuous_kw, SOL_ARK feed) + RECT-EW bounding AC, A-M-231) and solver.roof_close; '
                   'pv_module_kw x pv_count = PV_ARRAY.params.nameplate_kw; znbr_* = the SOL_ARK hybrid-inverter block the ZNBR2 store is distributed over; '
                   'rect_count = the single nine-channel RECTIFIER (Rev AC; RECT_EW remap, A-M-255).')}
