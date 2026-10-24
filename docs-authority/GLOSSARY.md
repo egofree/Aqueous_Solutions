@@ -599,6 +599,218 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {ID fan -- Induced-draft fan. Pulls negative on dust or acid-gas headers after filtration/scrub.}
 
+## General abbreviations
+
+Abbreviations of standards bodies, materials, file formats and general engineering terms. Plant-specific terms are in the sections above.
+
+{ACGIH -- American Conference of Governmental Industrial Hygienists, publisher of threshold limit values for workplace exposure.}
+
+{ACH -- Air changes per hour: ventilation airflow divided by room volume.}
+
+{ACI -- American Concrete Institute, publisher of ACI 318 and other concrete design codes.}
+
+{ANSI -- American National Standards Institute.}
+
+{API -- In a standard number (API 650, API 941), the American Petroleum Institute. In the design tool, application programming interface: the HTTP interface of `design_tool/`.}
+
+{ASCE -- American Society of Civil Engineers, publisher of ASCE 7 (minimum design loads).}
+
+{ASCII -- American Standard Code for Information Interchange, the basic text character set.}
+
+{ASHRAE -- American Society of Heating, Refrigerating and Air-Conditioning Engineers.}
+
+{ASM -- ASM International, publisher of the ASM Handbook series on materials.}
+
+{ASTM -- ASTM International, publisher of material and test standards (formerly the American Society for Testing and Materials).}
+
+{ASU -- Air separation unit: equipment that separates air into oxygen, nitrogen and argon.}
+
+{AWG -- American Wire Gauge, the conductor size system used in NFPA 70.}
+
+{AWS -- American Welding Society, publisher of the AWS D1 structural welding codes.}
+
+{AWWA -- American Water Works Association, publisher of water system standards.}
+
+{BLDC -- Brushless direct-current motor: a permanent-magnet motor commutated electronically.}
+
+{BPVC -- Boiler and Pressure Vessel Code, published by ASME.}
+
+{CE -- Conformité Européenne: the European conformity marking on products sold in the European Economic Area.}
+
+{CERN -- European Organization for Nuclear Research, author of the CERN Open Hardware Licence used by this repository.}
+
+{CFR -- Code of Federal Regulations (United States); for example 29 CFR 1910 for workplace safety.}
+
+{CNC -- Computer numerical control: machine tools driven by a stored program.}
+
+{CO -- Carbon monoxide.}
+
+{COP -- Coefficient of performance: heat moved by a heat pump or chiller divided by the work put in.}
+
+{CPU -- Central processing unit; in a PLC, the processor module.}
+
+{CS -- Carbon steel.}
+
+{CSV -- Comma-separated values, a plain-text table format.}
+
+{DI -- Deionized (water).}
+
+{DLI -- Daily light integral: photosynthetic light received by a crop per day, in mol/(m² d).}
+
+{DN -- Nominal diameter, the metric pipe size designation of ISO 6708 (DN50 is about NPS 2).}
+
+{DSA -- Dimensionally stable anode: a titanium anode coated with mixed metal oxides.}
+
+{DVS -- Deutscher Verband für Schweißen und verwandte Verfahren (German Welding Society), publisher of the DVS 2207 guidelines for welding thermoplastics.}
+
+{EN -- European Norm: a standard adopted by the European standards bodies (for example EN 1090).}
+
+{EOL -- End of life: the point at which an item is retired and its materials returned to the plant.}
+
+{EPA -- Environmental Protection Agency (United States).}
+
+{EPDM -- Ethylene propylene diene monomer rubber.}
+
+{ERV -- Energy recovery ventilator: a ventilation unit that transfers heat and moisture between exhaust and supply air.}
+
+{EU -- European Union.}
+
+{FKM -- Fluoroelastomer (ASTM D1418 class designation), used for seals in hot or chemical service.}
+
+{FT -- Flow transmitter (instrument tag letters, ISA-5.1).}
+
+{GTAW -- Gas tungsten arc welding.}
+
+{HART -- Highway Addressable Remote Transducer: a digital protocol carried on 4 mA to 20 mA instrument loops.}
+
+{HER -- Hydrogen evolution reaction, the cathode reaction of water electrolysis.}
+
+{HETP -- Height equivalent to a theoretical plate, a measure of packed-column efficiency.}
+
+{HF -- Hydrogen fluoride; in water, hydrofluoric acid.}
+
+{HTU -- Height of a transfer unit, used with NTU to size a packed column.}
+
+{HX -- Heat exchanger.}
+
+{IC -- In a motor designation (IC 411), the cooling method code of IEC 60034-6. In chemical analysis, ion chromatography.}
+
+{IEC -- International Electrotechnical Commission.}
+
+{IECC -- International Energy Conservation Code.}
+
+{IEEE -- Institute of Electrical and Electronics Engineers.}
+
+{IFC -- International Fire Code.}
+
+{IPA -- Isopropyl alcohol.}
+
+{IR -- Infrared.}
+
+{ISO -- International Organization for Standardization.}
+
+{KO -- Knock-out (drum or pot): a vessel that separates liquid droplets from a gas stream.}
+
+{KOH -- Potassium hydroxide.}
+
+{LED -- Light-emitting diode.}
+
+{LFS -- Large File Storage: the Git extension that stores the CAD files of this repository.}
+
+{LHV -- Lower heating value of a fuel.}
+
+{LMTD -- Log mean temperature difference, used to size heat exchangers.}
+
+{LRFD -- Load and resistance factor design.}
+
+{LSH -- Level switch, high (instrument tag letters, ISA-5.1).}
+
+{MSW -- Municipal solid waste.}
+
+{MV -- Medium voltage.}
+
+{MVR -- Mechanical vapour recompression: evaporation driven by compressing the vapour it produces.}
+
+{NASA -- National Aeronautics and Space Administration (United States).}
+
+{NEMA -- National Electrical Manufacturers Association.}
+
+{NIOSH -- National Institute for Occupational Safety and Health (United States).}
+
+{NOAA -- National Oceanic and Atmospheric Administration (United States).}
+
+{NPS -- Nominal pipe size, the inch-based pipe size designation of ASME B36.10M.}
+
+{NREL -- National Renewable Energy Laboratory (United States).}
+
+{NSRDB -- National Solar Radiation Database, published by NREL.}
+
+{NTU -- Number of transfer units, used with HTU to size a packed column or an exchanger.}
+
+{OD -- Outside diameter.}
+
+{PBT -- Polybutylene terephthalate.}
+
+{PCB -- Printed circuit board.}
+
+{PDF -- Portable Document Format.}
+
+{PECVD -- Plasma-enhanced chemical vapour deposition.}
+
+{PFA -- Perfluoroalkoxy alkane, a melt-processable fluoropolymer.}
+
+{PIR -- Polyisocyanurate (rigid foam insulation).}
+
+{PLC -- Programmable logic controller.}
+
+{PSA -- Pressure swing adsorption.}
+
+{PSH -- Pressure switch, high (instrument tag letters, ISA-5.1).}
+
+{PSM -- Process safety management, the OSHA rule 29 CFR 1910.119.}
+
+{PT -- Pressure transmitter (instrument tag letters, ISA-5.1).}
+
+{PTFE -- Polytetrafluoroethylene.}
+
+{PVC -- Polyvinyl chloride.}
+
+{QA -- Quality assurance.}
+
+{RF -- Radio frequency.}
+
+{RTD -- Resistance temperature detector, such as a Pt100 element to IEC 60751.}
+
+{SDR -- Standard dimension ratio: pipe outside diameter divided by wall thickness.}
+
+{SDS -- Safety data sheet.}
+
+{SI -- International System of Units.}
+
+{SMAW -- Shielded metal arc welding.}
+
+{SS -- Stainless steel.}
+
+{STL -- Stereolithography file format: a triangulated surface, used here for unit envelopes and printable parts.}
+
+{SVG -- Scalable Vector Graphics, the drawing format of the generated diagrams.}
+
+{TE -- Temperature element (instrument tag letters, ISA-5.1).}
+
+{TFC -- Thin-film composite (membrane).}
+
+{TFE -- Tetrafluoroethylene, the monomer of PTFE.}
+
+{TMY -- Typical meteorological year: a year of hourly weather data used for energy simulation.}
+
+{TSA -- Temperature swing adsorption.}
+
+{US, USA -- United States.}
+
+{VDF -- Vinylidene fluoride, the monomer of PVDF.}
+
+{VPI -- Vacuum pressure impregnation of motor windings with resin.}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

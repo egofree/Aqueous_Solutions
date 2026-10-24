@@ -3332,9 +3332,10 @@
   {
    "role": "check",
    "scripts": [
-    "flow_graph/check_citations.py"
+    "flow_graph/check_citations.py",
+    "flow_graph/check_doc_style.py"
    ],
-   "reason": "A repository check run by flow_graph/test_citations.py. It writes files only when asked to (--fix rewrites stale citations in place), so it is not a regeneration stage."
+   "reason": "Repository checks run by tests (flow_graph/test_citations.py, flow_graph/test_doc_style.py). They write files only when asked to (check_citations --fix rewrites stale citations; check_doc_style --shrink drops clean pages from the pending list), so they are not regeneration stages."
   }
  ]
 }

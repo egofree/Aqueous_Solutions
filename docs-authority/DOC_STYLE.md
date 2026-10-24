@@ -38,7 +38,7 @@ The reader is the most important person (IET law 1). Assume the reader is an eng
 - Use short, common words. Write "use", not "utilize"; "help", not "facilitate"; "start", not "commence" (KSC-DF-107 3.1).
 - Call one thing by one name throughout a page, and use the names in the plant graph, on the drawings and on the equipment labels (KSC-DF-107 3.2).
 - Avoid long strings of nouns. Rewrite "heat store standing loss limit value" as "the limit set by the store's standing loss" (KSC-DF-107 3.8.1).
-- Do not write working jargon from the tools, chats or task lists used to produce the design. A reader outside the project cannot know what "landed", "wave 3", "the box" or "the hub" meant. Say what was done and where the result is. The terms that the check rejects are listed in `docs-authority/style_terms.json` (to be created).
+- Do not write working jargon from the tools, chats or task lists used to produce the design. A reader outside the project cannot know what "landed", "wave 3", "the box" or "the hub" meant. Say what was done and where the result is. The terms that the check rejects are listed in `docs-authority/style_terms.json` (section 16).
 - Do not record who asked for a change or how the work was organised. State the decision, its reason and its source. Decisions owned by the project are recorded in `docs-authority/OPEN_QUESTIONS.md`.
 - Write in English with consistent spelling within a page.
 
@@ -133,7 +133,16 @@ The face text of every plate is in `docs-authority/SIGN_SCHEDULE.md`. A safety s
 
 Generators write prose too. The text templates in a generator follow this guide in the same way as a hand-written page, and a change to a template is reviewed as a change to every page it writes.
 
-## 16. Related documents
+## 16. Automated check
+
+`python3 -m flow_graph.check_doc_style` checks two rules on every published page, and `flow_graph/test_doc_style.py` runs it with the other tests:
+
+1. Every abbreviation written in capitals is defined in `docs-authority/GLOSSARY.md` (section 7). Identifiers from the plant graph, unit folders, tokens containing a digit, code and revision letters are not counted.
+2. No page uses a term from the banned list in `docs-authority/style_terms.json` (section 4). Each entry gives the reason and what to write instead.
+
+The check is deliberately light: it cannot judge clarity, and passing it does not make a page follow this guide. Pages not yet brought to the guide are listed as pending in the same data file. They are reported but do not fail the check. When a pending page becomes clean, remove it with `python3 -m flow_graph.check_doc_style --shrink`. Do not add pages to the list; fix the page or the glossary instead.
+
+## 17. Related documents
 
 | Document | Role |
 |---|---|
