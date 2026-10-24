@@ -9,7 +9,7 @@ Authority: graph Rev BH. Not a PE stamp. A plan, not a model. No unit is modeled
 | --- | --- | --- |
 | A | First issue. Work order, order of work, acceptance, tooling, tracker for the 199 present units | 2026-10-15 |
 
-This is the sequence that turns every present unit from an envelope into a manufacturing model: a parametric source a shop can build from. It is phase 5 of AQS-PLAN-005 and step 4 of AQS-PLAN-002, written as a work order. AQS-MFG-001 (`DETAIL_MODEL_PLAN.md`) lists the shop-level OpenSCAD envelopes that already exist. They are inputs here. They are not accepted manufacturing models.
+This is the sequence that turns every present unit from an envelope into a manufacturing model: a parametric source a shop can build from. It is phase 5 of AQS-PLAN-005 and step 4 of AQS-PLAN-002, written as a work order. AQS-MFG-001 (`internal/DETAIL_MODEL_PLAN.md`) lists the shop-level OpenSCAD envelopes that already exist. They are inputs here. They are not accepted manufacturing models.
 
 ## 1. Rules
 

@@ -2,11 +2,11 @@
 
 Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only.
 
-Queue: `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004). This page is history.
+Queue: `docs-authority/internal/MASTER_PLAN.md` (AQS-PLAN-004). This page is history.
 
 Document: AQS-MVS-CHK-001
 Date: 2026-10-02; updated 2026-10-08 (graph Rev M)
-Plan: docs-authority/MVS_PLAN.md
+Plan: docs-authority/internal/MVS_PLAN.md
 Graph topology is the baseline. Check an item only when the solid or the number exists.
 
 ## Nodes

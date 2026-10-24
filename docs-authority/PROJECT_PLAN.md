@@ -10,7 +10,7 @@ Authority: graph Rev AC per `flow_graph/plant_flow_graph.json` (2026-10-17). Not
 | A | First issue | 2026-10-12 |
 | B | Authority restamped AC; limits updated for the closed balance, the D-DOCK trade-boundary ruling, and the D-PV derivation direction. No rate change. | 2026-10-19 |
 
-The status of these lines is `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004).
+The status of these lines is `docs-authority/internal/MASTER_PLAN.md` (AQS-PLAN-004).
 AQS-PLAN-003 is the module order against the tech tree. It is not this sequence.
 AQS-PLAN-002 is the definition of a buildable unit.
 AQS-PLAN-001, AQS-REM-001, and AQS-MVS-CHK-001 are history.

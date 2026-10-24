@@ -86,7 +86,7 @@ values that are no longer true.
 1. Read the plan. The master task list is `docs-authority/TASK_PLAN.md`
    (AQS-PLAN-007). Engineering limits and holds are in
    `docs-authority/PROJECT_PLAN.md`. The close-out record is
-   `docs-authority/MASTER_PLAN.md`. Tick a task only with a cited file, and rerun
+   `docs-authority/internal/MASTER_PLAN.md`. Tick a task only with a cited file, and rerun
    `docs-authority/_task_plan_gen.py`.
 2. Read only the authority the active item needs.
 3. Do that item. Stay inside what it asks.

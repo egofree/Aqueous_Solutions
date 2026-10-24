@@ -148,7 +148,7 @@ Wave-3 origins are frozen.
 
 ## Phase D — animation
 
-- [x] Brief: `docs-authority/ANIMATION_BRIEF.md` (D1–D6, cameras, bans)
+- [x] Brief: `docs-authority/internal/ANIMATION_BRIEF.md` (D1–D6, cameras, bans)
 - [x] Waypoints: `freecad/animate_shots.py` (D1–D6 + C29 + NCG)
 - [x] Schematic frames: `freecad/render_frames.py` → `cad/animation/`
 - [ ] Optional GUI 12 fps overlay on `plant.FCStd` — operator box only
@@ -172,7 +172,7 @@ Wave-3 origins are frozen.
 | `cad/detail/*.scad` | Phase B printable / importable parts |
 | `cad/detail/build_stls.sh` | OpenSCAD → `detail/stl/` |
 | `freecad/import_details.py` | mesh insert onto PLANT |
-| `docs-authority/ANIMATION_BRIEF.md` | Phase D shot list |
+| `docs-authority/internal/ANIMATION_BRIEF.md` | Phase D shot list |
 | `freecad/pipe_services.py` | racks, trays, ground ring |
 | `freecad/campus.py` | FARM / WAFER_FAB / HABITATION / CRYO boxes |
 | `docs-authority/FAN_STACK.md` | ID fans + stack heights |

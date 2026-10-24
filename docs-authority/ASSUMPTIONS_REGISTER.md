@@ -1099,7 +1099,6 @@ Counts: 328 curated, 667 graph, 46 model params, 148 document lines. Total 1189.
 | A-D-189334 |  |  | docs-authority/GLOSSARY.md:17 | {A-M-nnn -- Curated assumption, kept in assumptions_manual.json with its basis, sensitivity and the test that would replace it. ASSUMPTIONS_REGISTER.md also lis |  | see page |
 | A-D-dfb4a9 |  |  | docs-authority/GROUNDING.md:14 | Bare copper ring, 4/0 AWG (107 mm²), 0.75 m deep, round the placement extents (about 35 × 20 m, assumption), with twelve 16 mm × 3 m copper-clad rods at about 1 |  | see page |
 | A-D-d3cd3f |  |  | docs-authority/INSTRUMENT_LOOPS.md:98 | S08 and S16 keep the deposit table plus the 0.0021 kg/d silicate residual. That residual is an assumption. This station does not replace it with a measurement o |  | see page |
-| A-D-3c499a |  |  | docs-authority/MASTER_PLAN.md:54 | Graph Rev AC. Item 10 closure pass: assumption rates on 25 edges (notes/CLOSURE_PASS.md). loops_closed false. Cut-test script not in this workspace; line 0.2 re |  | see page |
 | A-D-5f8dac |  |  | docs-authority/MATERIALS_SEC3.md:86 | - A-M-318..328 register the selections per family in `assumptions_manual.json` (AQS-REG-002). |  | see page |
 | A-D-7272e1 |  |  | docs-authority/MATERIALS_STD.md:21 | / L / Service-class selection guide across the assay envelope added as section 12 (X-MAT-01). Line-list class rules keyed to the guide families: the "aqueous pr |  | see page |
 | A-D-ffa9aa |  |  | docs-authority/MATERIALS_STD.md:36 | M5. Thermoplastic limits. PVC-U to 60 °C. CPVC to 93 °C. These two limits are assumptions from published PVC-U and CPVC data, not measured in this plant. Above  |  | see page |
@@ -1159,8 +1158,7 @@ Counts: 328 curated, 667 graph, 46 model params, 148 document lines. Total 1189.
 | A-D-081902 |  |  | docs-authority/POLYMER_HX_SIZING.md:17 | - Fouling 0.0002 m²K/W (assumption). |  | see page |
 | A-D-92f652 |  |  | docs-authority/POLYMER_HX_SIZING.md:18 | - Tubes: HX-5 PVDF 25 × 1.9 mm. HX8 PVDF 16 × 1.5 mm, 3 tubes per pass, 0.79 m/s, Re 20 010. Both are assumptions. |  | see page |
 | A-D-2dc5ad |  |  | docs-authority/README.md:23 | - **Identifiers.** Task ids (`X-PAR-12`), assumption ids (`A-M-145`), stream |  | see page |
-| A-D-15d6d1 |  |  | docs-authority/README.md:70 | / [ASSUMPTIONS_REGISTER.md](ASSUMPTIONS_REGISTER.md) / AQS-REG-002 / Assumptions register / |  | see page |
-| A-D-69bb08 |  |  | docs-authority/REMAINING_BLD.md:142 | study throughputs with labeled assumptions; closed vs open loops from |  | see page |
+| A-D-15d6d1 |  |  | docs-authority/README.md:71 | / [ASSUMPTIONS_REGISTER.md](ASSUMPTIONS_REGISTER.md) / AQS-REG-002 / Assumptions register / |  | see page |
 | A-D-6a7771 |  |  | docs-authority/RESIZE_SWEEP.md:20 | / Unassigned class (MSW 35.0 kg/d) / held with reason / reports to FLOAT_SINK capacity / assumption / done / |  | see page |
 | A-D-f561f3 |  |  | docs-authority/SITE_BASIS.md:3 | Date 2026-10-15. Owner decision: study site at 33.0° N, Dallas–Fort Worth class. No parcel is chosen. Values marked assumption are in AQS-REG-002 and are replac |  | see page |
 | A-D-d3169c |  |  | docs-authority/SITE_BASIS.md:15 | / Wind, Risk II, 3 s gust / 105–115 mph band; 115 mph used / band published, value assumption / ASCE 7-22 map band for Dallas [B4] / |  | see page |
@@ -1206,6 +1204,8 @@ Counts: 328 curated, 667 graph, 46 model params, 148 document lines. Total 1189.
 | A-D-ec3b7e |  |  | docs-authority/duties/WS_NITRIC.md:18 | 5. Instruments. Level with high-high trip closing IA-HNO3 and IA-BMED-01. Temperature high trip 40 °C (assumption). Density or conductivity alarm above 2.0 M. B |  | see page |
 | A-D-f74c1b |  |  | docs-authority/duties/WS_PEROX.md:8 | - Storage (X-SAF-09): 1 d holdup at 2.94 L/d = 2.9 L net; tank 5 L nominal; own bund 6 L (≥110 %). Holdup days are an assumption: unstabilised peroxide decompos |  | see page |
 | A-D-31b056 |  |  | docs-authority/duties/WS_PEROX.md:21 | 8. Open items. Cell sized at 12.31 A, 246 cm², 30.8 W (AQS-DSN-OX-001 2.1, assumptions); anode held. IA-H2O2-SRC 3.0 kg/d against 0.176 kg/d O₂ needed: water so |  | see page |
+| A-D-b6ae12 |  |  | docs-authority/internal/MASTER_PLAN.md:54 | Graph Rev AC. Item 10 closure pass: assumption rates on 25 edges (notes/CLOSURE_PASS.md). loops_closed false. Cut-test script not in this workspace; line 0.2 re |  | see page |
+| A-D-f2178f |  |  | docs-authority/internal/REMAINING_BLD.md:142 | study throughputs with labeled assumptions; closed vs open loops from |  | see page |
 | A-D-cdec6f |  |  | docs-authority/notes/2026-10-19-closure-lane.md:50 | needs_verification until the data sheets are signed and the assumptions lane substitutes the values. |  | see page |
 | A-D-e61c7b |  |  | docs-authority/notes/2026-10-19-closure-lane.md:53 | Register observation (not fixed here - assumptions lane): `assumptions_manual.json` entries A-M-169 and A-M-176 have |  | see page |
 | A-D-940b1a |  |  | docs-authority/notes/2026-10-21-al-pot-cad-acceptance.md:14 | plate deck 1154, hopper/lance geometry, compass face assignments) are named `assumptions`/`layout_note` |  | see page |

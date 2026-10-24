@@ -22,10 +22,10 @@ A number belongs to one current page. A copy elsewhere is marked as a mirror (id
 | AQS-MOD-001 | AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` |
 | AQS-PLAN-001 | AQS-IF-009 | `docs-authority/PHASE9_INTERFACES.md` |
 | AQS-PWR-001 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` |
-| AQS-REM-001 | AQS-REM-002 | `docs-authority/REMAINING_CHECKLIST.md` |
+| AQS-REM-001 | AQS-REM-002 | `docs-authority/internal/REMAINING_CHECKLIST.md` |
 | AQS-STD-001 | AQS-STD-003 | `docs-authority/STANDARDS_BASIS.md` |
 
-Earlier references to the old number that meant these pages now read the new number. The pages that keep the old numbers are: AQS-CMP-001 `CAMPUS_PLAN.md`, AQS-ELEC-001 `ELECTRONICS.md`, AQS-MOD-001 `MODULE.md`, AQS-PLAN-001 `DESIGN_PLAN.md`, AQS-PWR-001 `POWER.md`, AQS-REM-001 `REMAINING.md`, and AQS-STD-001 `AQS-STD-001.md`. Cross references in other pages were not rewritten. A reader of an older reference uses this table.
+Earlier references to the old number that meant these pages now read the new number. The pages that keep the old numbers are: AQS-CMP-001 `CAMPUS_PLAN.md`, AQS-ELEC-001 `ELECTRONICS.md`, AQS-MOD-001 `MODULE.md`, AQS-PLAN-001 `internal/DESIGN_PLAN.md`, AQS-PWR-001 `POWER.md`, AQS-REM-001 `internal/REMAINING.md`, and AQS-STD-001 `AQS-STD-001.md`. Cross references in other pages were not rewritten. A reader of an older reference uses this table.
 
 ## 3. Register
 
@@ -110,25 +110,25 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-MEP-001 | `docs-authority/LIFE_MEP.md` | A | 2026-10-01 | Life MEP — Phase D (duct / fixture / one-line study) | canonical |
 | AQS-MF-001 | `docs-authority/MASS_FLOW.md` | J | 2026-10-01 | Mass-flow claim status | canonical |
 | AQS-MF-001-DERIVED | `flow_graph/derived/MASS_FLOW_DERIVED.md` | — | — | Mass-flow claim excerpt — DERIVED from flow_graph | canonical |
-| AQS-MFG-001 | `docs-authority/DETAIL_MODEL_PLAN.md` | A | 2026-09-26 | Manufacturing-detail model list | superseded by AQS-PLAN-007 |
+| AQS-MFG-001 | `docs-authority/internal/DETAIL_MODEL_PLAN.md` | A | 2026-09-26 | Manufacturing-detail model list | superseded by AQS-PLAN-007 |
 | AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | B | 2026-10-01 | Electrode fabrication / coating — architecture (in scope) | canonical |
 | AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | B | 2026-09-28 | Metal forming path — wire draw / cold mill / gas atomizer | canonical |
 | AQS-MFG-TEX-001 | `docs-authority/TEXTILES_HEPA.md` | A | 2026-10-01 | Textiles / HEPA media — architecture stub | canonical |
 | AQS-MOD-001 | `docs-authority/MODULE.md` | C | 2026-10-12 | Module standard | canonical |
 | AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` | C | 2026-10-11 | Frame system | canonical |
-| AQS-MVS-CHK-001 | `docs-authority/MVS_CHECKLIST.md` | — | 2026-10-02; updated 2026-10-07 (graph Rev L) | MVS checklist | superseded by AQS-PLAN-007 |
-| AQS-MVS-EQP-001 | `docs-authority/MVS_EQUIPMENT.md` | — | 2026-10-02; Rev K 2026-10-07; Rev L 2026-10-07 | MVS equipment issue | superseded by AQS-PLAN-007 |
-| AQS-MVS-PLAN-001 | `docs-authority/MVS_PLAN.md` | — | 2026-10-02 | MVS completion plan | superseded by AQS-PLAN-007 |
+| AQS-MVS-CHK-001 | `docs-authority/internal/MVS_CHECKLIST.md` | — | 2026-10-02; updated 2026-10-07 (graph Rev L) | MVS checklist | superseded by AQS-PLAN-007 |
+| AQS-MVS-EQP-001 | `docs-authority/internal/MVS_EQUIPMENT.md` | — | 2026-10-02; Rev K 2026-10-07; Rev L 2026-10-07 | MVS equipment issue | superseded by AQS-PLAN-007 |
+| AQS-MVS-PLAN-001 | `docs-authority/internal/MVS_PLAN.md` | — | 2026-10-02 | MVS completion plan | superseded by AQS-PLAN-007 |
 | AQS-NZ-001 | `docs-authority/CSTR_NOZZLE_SCHEDULE.md` | B | 2026-09-27 | LEACH CSTR 1 nozzle schedule | canonical |
 | AQS-NZ-002 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | A | 2026-09-27 | Campus unit nozzle schedule | canonical |
 | AQS-PATH-001 | `docs-authority/PATH_MODULES.md` | A | 2026-10-11 | Path modules on the frame | canonical |
 | AQS-PHF-001 | `docs-authority/PHASE_F_ENVELOPES.md` | A | 2026-09-27 | Phase F — farm / wafer fab / habitation / cryo envelopes | canonical |
 | AQS-PIP-002 | `docs-authority/LIFE_HEADERS.md` | A | 2026-09-27 | Life-header racks | canonical |
 | AQS-PLACE-SEED-001 | `docs-authority/MVS_PITCH_PASS.md` | — | 2026-10-02; updated 2026-10-07 | Pitch pass — yard through water stubs | canonical |
-| AQS-PLAN-001 | `docs-authority/DESIGN_PLAN.md` | B | 2026-10-09 | Design plan | superseded by AQS-PLAN-007 |
-| AQS-PLAN-002 | `docs-authority/BUILD_PLAN.md` | A | 2026-10-10 | Build plan | superseded by AQS-PLAN-007 |
-| AQS-PLAN-003 | `docs-authority/CRITICAL_PATH.md` | D | 2026-10-12 | Critical path against the tech tree | superseded by AQS-PLAN-007 |
-| AQS-PLAN-004 | `docs-authority/MASTER_PLAN.md` | A | 2026-10-12 | Status board | canonical |
+| AQS-PLAN-001 | `docs-authority/internal/DESIGN_PLAN.md` | B | 2026-10-09 | Design plan | superseded by AQS-PLAN-007 |
+| AQS-PLAN-002 | `docs-authority/internal/BUILD_PLAN.md` | A | 2026-10-10 | Build plan | superseded by AQS-PLAN-007 |
+| AQS-PLAN-003 | `docs-authority/internal/CRITICAL_PATH.md` | D | 2026-10-12 | Critical path against the tech tree | superseded by AQS-PLAN-007 |
+| AQS-PLAN-004 | `docs-authority/internal/MASTER_PLAN.md` | A | 2026-10-12 | Status board | canonical |
 | AQS-PLAN-005 | `docs-authority/PROJECT_PLAN.md` | C | 2026-10-12 | Project plan | canonical |
 | AQS-PLAN-006 | `docs-authority/MFG_MODEL_PLAN.md` | A | 2026-10-15 | Manufacturing model plan | canonical |
 | AQS-PLAN-007 | `docs-authority/TASK_PLAN.md` | A | 2026-10-15 | Task plan | canonical |
@@ -137,9 +137,9 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator — POWER gap close | canonical |
 | AQS-REB-001 | `docs-authority/REBUILD.md` | C | 2026-10-01 | Master rebuild tool | canonical |
 | AQS-REF-CSK-001 | `docs-authority/OSE_CSK_ALIGNMENT.md` | A | 2026-10-01 | OSE Civilization Starter Kit — Aqueous alignment map | canonical |
-| AQS-REM-001 | `docs-authority/REMAINING.md` | A | 2026-10-10 | Remaining designs | superseded by AQS-PLAN-007 |
-| AQS-REM-002 | `docs-authority/REMAINING_CHECKLIST.md` | E | 2026-10-01 | Remaining work checklist | superseded by AQS-PLAN-007 |
-| AQS-REM-BLD-001 | `docs-authority/REMAINING_BLD.md` | Y | 2026-10-01 | Remaining after BLD CAD pass (2026-09-27) | superseded by AQS-PLAN-007 |
+| AQS-REM-001 | `docs-authority/internal/REMAINING.md` | A | 2026-10-10 | Remaining designs | superseded by AQS-PLAN-007 |
+| AQS-REM-002 | `docs-authority/internal/REMAINING_CHECKLIST.md` | E | 2026-10-01 | Remaining work checklist | superseded by AQS-PLAN-007 |
+| AQS-REM-BLD-001 | `docs-authority/internal/REMAINING_BLD.md` | Y | 2026-10-01 | Remaining after BLD CAD pass (2026-09-27) | superseded by AQS-PLAN-007 |
 | AQS-REQ-KW-001 | `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md` | A | 2026-10-01 | Continuous kW requirements — GEN / FC / PECVD / belt fire / CRYO / MFG | canonical |
 | AQS-REV-H2-001 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | A | 2026-10-15 | Hydrogen embrittlement review | canonical |
 | AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | C | 2026-09-27 | Scale model — parametric building growth | canonical |

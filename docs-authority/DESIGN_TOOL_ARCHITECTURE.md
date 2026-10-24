@@ -296,7 +296,7 @@ Re-eval record (planning-only): `planning/STACK_REEVAL_2026-10-01.md`.
 
 1. `unit_id` **shall** be a stable string matching locked plant names
    with spaces/hyphens → `_` (same convention as
-   `SYSTEM_MODEL_PLAN.md`: `LEACH_CSTR_1`, `HDR_H2`, `SOL_ARK_60K`).
+   `internal/SYSTEM_MODEL_PLAN.md`: `LEACH_CSTR_1`, `HDR_H2`, `SOL_ARK_60K`).
 2. `unit_id` **shall** be unique within a design pack.
 3. Hierarchy fields **shall** place each unit under exactly one
    `sector_id` (and optional `area_id`).

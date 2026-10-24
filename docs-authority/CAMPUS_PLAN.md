@@ -59,7 +59,7 @@ those floors.
 
 ## 2. Locked campus names
 
-Pattern matches `SYSTEM_MODEL_PLAN.md`: equipment in SMALL CAPS,
+Pattern matches `internal/SYSTEM_MODEL_PLAN.md`: equipment in SMALL CAPS,
 CAD `Name` uses `_`.
 
 ### 2.1 Blocks (already on the plant tree)

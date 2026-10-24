@@ -50,6 +50,7 @@ identifiers used throughout.
 | [plc/](plc/) | Control program source per sector (IEC 61131-3 structured text) |
 | [data/](data/) | Input data such as the PV typical-meteorological-year series |
 | [notes/](notes/) | Dated change records, rulings and evidence notes |
+| [internal/](internal/README.md) | Working notes kept for history: handoffs, run logs, superseded plans and status boards. Not design authority |
 
 Scripts named `_*.py` in this folder are the study calculators and document
 generators; most run as stages of the regen pipeline
@@ -330,14 +331,9 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [AGENT_CAD_PROTOCOL.md](AGENT_CAD_PROTOCOL.md) | - | Agent protocol — parametric PFD to CAD |
 | [STL_MANIFEST.md](STL_MANIFEST.md) | AQS-STL-001 | STL rebuild manifest |
 | [DRAWING_REGISTER.md](DRAWING_REGISTER.md) | AQS-DWG-002 | Drawing register |
-| [SYSTEM_MODEL_PLAN.md](SYSTEM_MODEL_PLAN.md) | AQS-NZ-002 | System 3D model plan |
-| [DETAIL_MODEL_PLAN.md](DETAIL_MODEL_PLAN.md) | AQS-PLAN-007 | Manufacturing-detail model list |
 | [MFG_MODEL_PLAN.md](MFG_MODEL_PLAN.md) | AQS-PLAN-006 | Manufacturing model plan |
 | [DESIGN_TOOL_ARCHITECTURE.md](DESIGN_TOOL_ARCHITECTURE.md) | AQS-UI-001 | Design-tool architecture — Aqueous MVS sandbox |
-| [ANIMATION_BRIEF.md](ANIMATION_BRIEF.md) | AQS-ANM-001 | Phase D — animation brief |
 | [MVS_PITCH_PASS.md](MVS_PITCH_PASS.md) | AQS-PLACE-SEED-001 | Pitch pass — yard through water stubs |
-| [MVS_PLACEMENT_QUEUE.md](MVS_PLACEMENT_QUEUE.md) | - | MVS placement queue |
-| [MVS_RUN.md](MVS_RUN.md) | - | Operator-box stand-in |
 | [OSE_CSK_ALIGNMENT.md](OSE_CSK_ALIGNMENT.md) | AQS-REF-CSK-001 | OSE Civilization Starter Kit — Aqueous alignment map |
 
 ## Commissioning, operation and quality
@@ -355,24 +351,12 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 
 ## Planning and status (working documents)
 
-Task lists, status boards and handoff notes used to run the work. They change often and record history; they are not design authority.
+The live task list and the project plan. Older plans, status boards and handoff notes are in [internal/](internal/README.md); they record history and are not design authority.
 
 | Document | Number | Title |
 |---|---|---|
 | [TASK_PLAN.md](TASK_PLAN.md) | AQS-PLAN-007 | Task plan |
-| [CRITICAL_PATH.md](CRITICAL_PATH.md) | AQS-PLAN-007 | Critical path against the tech tree |
-| [MASTER_PLAN.md](MASTER_PLAN.md) | AQS-PLAN-004 | Status board |
 | [PROJECT_PLAN.md](PROJECT_PLAN.md) | AQS-PLAN-005 | Project plan |
-| [BUILD_PLAN.md](BUILD_PLAN.md) | AQS-PLAN-007 | Build plan |
-| [DESIGN_PLAN.md](DESIGN_PLAN.md) | AQS-PLAN-007 | Design plan |
-| [MVS_PLAN.md](MVS_PLAN.md) | AQS-PLAN-007 | MVS completion plan |
-| [MVS_CHECKLIST.md](MVS_CHECKLIST.md) | AQS-PLAN-007 | MVS checklist |
-| [MVS_EQUIPMENT.md](MVS_EQUIPMENT.md) | AQS-PLAN-007 | MVS equipment issue |
-| [REMAINING.md](REMAINING.md) | AQS-PLAN-007 | Remaining designs |
-| [REMAINING_BLD.md](REMAINING_BLD.md) | AQS-PLAN-007 | Remaining after BLD CAD pass (2026-09-27) |
-| [REMAINING_CHECKLIST.md](REMAINING_CHECKLIST.md) | AQS-PLAN-007 | Remaining work checklist |
-| [HANDOFF.md](HANDOFF.md) | - | CAD handoff |
-| [HANDOFF_2026-10-02.md](HANDOFF_2026-10-02.md) | AQS-BLD-001 | Handoff — 2026-10-02 |
 
 ## Licence
 

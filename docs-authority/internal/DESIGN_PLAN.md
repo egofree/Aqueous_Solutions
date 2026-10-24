@@ -2,7 +2,7 @@
 
 Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only.
 
-Queue: `docs-authority/MASTER_PLAN.md` (AQS-PLAN-004). This page is history.
+Queue: `docs-authority/internal/MASTER_PLAN.md` (AQS-PLAN-004). This page is history.
 
 Document number: AQS-PLAN-001
 Revision: B
