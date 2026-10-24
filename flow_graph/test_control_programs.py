@@ -68,3 +68,13 @@ def test_scan_simulation_zero_fails():
 def test_ai_cross_check_against_control_arch():
     sanity = scan_budget(_loops(), plc_table())
     assert all(d['diff'] == 0 for d in sanity.values())
+
+
+def test_redundancy_follows_the_architecture_decisions():
+    """CONTROL_ARCH lists a redundant pair exactly for the sectors of the critical set; HEAT stays single (Q-014)."""
+    import importlib.util, re
+    src = open(os.path.join(os.path.dirname(ST_DIR), 'CONTROL_ARCH.md')).read()
+    cpu = dict(re.findall(r'^\| PLC-(\w+) \| (?:[^|]*\|){6} (redundant pair|single) \|', src, re.M))
+    assert cpu.get('HEAT') == 'single'
+    listed = set(re.findall(r'^\| ([A-Z_]+) \| [^|]+ \|$', src.split('## Redundant CPU pairs')[1].split('##')[0], re.M)) - {'Sector'}
+    assert {s for s, c in cpu.items() if c == 'redundant pair'} == listed & set(cpu)
