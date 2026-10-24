@@ -15,7 +15,7 @@ Licence: CERN-OHL-S-2.0. No diffusion pictures.
 ## Authority (locked 2026-09-27)
 
 This file (AQS-BLD-001 Rev F) is the **active CAD authority** for
-levels, cores, shafts, and stacked masses. See `cad/AUTHORITY.md`.
+levels, cores, shafts, and stacked masses. See `docs-authority/AUTHORITY.md`.
 `PHASE_F_ENVELOPES.md` supplies keep-out sizes and utilities only;
 its flat Z=0 origins are not placement authority.
 
@@ -200,7 +200,7 @@ the lower reservoir, not a process sump.
 
 ## 4. Module scaling
 
-Full rules: `cad/SCALE_MODEL.md` (AQS-SCALE-001). Drivers:
+Full rules: `docs-authority/SCALE_MODEL.md` (AQS-SCALE-001). Drivers:
 `SCALE_M` (1 = 24 × 18 m) or `MODULE_BAYS_X` / `MODULE_BAYS_Y`.
 
 **Not everything scales the same way.**
@@ -339,9 +339,9 @@ Canopy is a separate frame to the core and perimeter columns.
 | `roof_water_pfd.png` | AQS-PFD-BLD-005 | L2 + hydro loop |
 | `core_plan_pfd.png` | AQS-PFD-BLD-006 | CORE_LIFE / CORE_PROCESS + perimeter |
 
-Site access: `cad/SITE_ACCESS.md` (AQS-SITE-001).
+Site access: `docs-authority/SITE_ACCESS.md` (AQS-SITE-001).
 Rebuild PFDs: `python3 pfd_scripts/building_stack_pfds.py`
-(reads live `cad/freecad/params.py`; do not change SCALE_M in that pass).
+(reads live `models/freecad/params.py`; do not change SCALE_M in that pass).
 Campus / hazard / life sheets: `python3 pfd_scripts/campus_life_hazard_pfds.py`.
-Rebuild plant (baseline `SCALE_M=1`): `/usr/bin/freecadcmd cad/freecad/build_plant.py`.
-For `SCALE_M=2` see `cad/SCALE_MODEL.md` §7.
+Rebuild plant (baseline `SCALE_M=1`): `/usr/bin/freecadcmd models/freecad/build_plant.py`.
+For `SCALE_M=2` see `docs-authority/SCALE_MODEL.md` §7.

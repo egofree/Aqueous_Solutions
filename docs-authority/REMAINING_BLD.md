@@ -14,10 +14,10 @@ generators, `iso_fab_drawings.pdf` from `cad/iso/*.png`.
 Completed 2026-09-27 layout pass: wet cassette XY inside SLAB_Lm1
 (`PROCESS_DX=5000`, `PROCESS_DY=4000`); CRYO on L-1 east of CORE with
 `FB_CRYO_PROCESS`; per-level fit-out massing (`fitout.py`); slab /
-envelope transparency; `cad/LIFE_FITOUT_PLAN.md` (AQS-LIFE-001).
+envelope transparency; `docs-authority/LIFE_FITOUT_PLAN.md` (AQS-LIFE-001).
 
 Completed 2026-09-27 scale pass (Rev B stack order: discrete life floors above L0; discrete `BASEMENT_LEVELS` for wet/CRYO; CATCH deepest; MFG always L0):
-Completed 2026-09-27 scale pass: `cad/SCALE_MODEL.md` (AQS-SCALE-001);
+Completed 2026-09-27 scale pass: `docs-authority/SCALE_MODEL.md` (AQS-SCALE-001);
 `params.py` drivers (`SCALE_M` / `MODULE_BAYS_*`); continuous tanks;
 discrete MFG/CRYO/FAB cassette jumps; paired life plates; electrical
 module counts; `OVERFLOW_TERRACE_*` stubs; plant rebuild at `SCALE_M=1`.
@@ -30,7 +30,7 @@ bands + roof spill/downcomer link; `plant.FCStd` rebuilt at scale 2
 
 Completed 2026-09-27 **high-fidelity building PFD** pass: upgraded
 `pfd_scripts/building_stack_pfds.py` and `campus_life_hazard_pfds.py`
-to read live `cad/freecad/params.py` (SCALE_M, plate, Z datums, cores,
+to read live `models/freecad/params.py` (SCALE_M, plate, Z datums, cores,
 tanks, terraces). Sheets now show full vertical stack (not flat Phase F),
 M1 keep-out envelopes on plans, FB_*/HA_* ratings, CORE_LIFE/PROCESS
 shaft sizes from AQS-BLD-001 §2.1. Doc nos AQS-PFD-BLD-001…006,
@@ -57,7 +57,7 @@ PNGs + process docs into share tree. No SCALE_M change; no FreeCAD
 rebuild; no git commit.
 
 Completed 2026-09-27 **hab / fab water PFD** pass (Rev H): authority
-`cad/WATER_PURIFICATION.md` (AQS-WTR-001 Rev A) already locked; wrote
+`docs-authority/WATER_PURIFICATION.md` (AQS-WTR-001 Rev A) already locked; wrote
 regenerable `hab_water_pfd.py` / `fab_upw_pfd.py`; softened HAB-001 /
 FAB-001 stubs to cite detail sheets; upgraded AQS-PFD-WTR-001
 (`water_cycle_pfd.png`) so roof–catch inventory and VCD/remin + FAB UPW
@@ -66,8 +66,8 @@ share. No SCALE_M change; no FreeCAD rebuild; no git commit. Fab forge→cut + r
 
 
 Completed 2026-09-27 **farm / terrace landscape** pass (Rev J): expanded
-`cad/process/FARM_EQUIPMENT.md` (AQS-EQP-FRM-001 Rev B) and
-`NUTRIENT_DOSE.md` (Rev B); new `cad/TERRACE_LANDSCAPE.md` (AQS-TRR-001)
+`docs-authority/process/FARM_EQUIPMENT.md` (AQS-EQP-FRM-001 Rev B) and
+`NUTRIENT_DOSE.md` (Rev B); new `docs-authority/TERRACE_LANDSCAPE.md` (AQS-TRR-001)
 with open-terrace vs enclosed-greenhouse climate decision rule and
 justified water source (S40 clean overflow primary; S21 makeup;
 FARM_SUMP / S26 forbidden); streams S40–S42 on AQS-STR-001 / AQS-MF-001
@@ -77,7 +77,7 @@ No SCALE_M change; no FreeCAD rebuild; no git commit. FreeCAD bed /
 greenhouse solids listed as follow-up.
 
 Completed 2026-09-27 **fab forge→cut + wet reagent forks** pass (Rev I):
-expanded `cad/process/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001 Rev B)
+expanded `docs-authority/process/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001 Rev B)
 ordered CZ train (cool/anneal → crop/grind → wire/ID saw → edge →
 lap/CMP → clean → PREP/BENCH/TOOL); **CZ recommended**, FBR alternate
 stub; new `FAB_WET_REAGENTS.md` (AQS-EQP-FAB-RGN-001) with issued WS_*
@@ -97,7 +97,7 @@ rebuilt; key PFDs regenerated against live params; share synced.
 No git commit.
 
 Completed 2026-09-27 **geothermal + backup genset** pass (Rev L): new
-`cad/GEOTHERMAL_BACKUP.md` (AQS-PWR-001); equipment lists
+`docs-authority/GEOTHERMAL_BACKUP.md` (AQS-PWR-001); equipment lists
 `GEOTHERMAL_EQUIPMENT.md` / `BACKUP_GEN_EQUIPMENT.md`; PFDs
 `geothermal_pfd.py` / `backup_gen_pfd.py`; Sol-Ark GEN port closed with
 plant-H₂ BACKUP_GEN (diesel contingency only); geothermal = closed-loop
@@ -107,7 +107,7 @@ S43–S48; electrical_sld + campus/building POWER callouts; optional
 plant FreeCAD rebuild; no git commit.
 
 Completed 2026-09-28 **PEM fuel cell** pass (Rev M): new
-`cad/FUEL_CELL.md` (AQS-FC-001); `process/FUEL_CELL_EQUIPMENT.md`
+`docs-authority/FUEL_CELL.md` (AQS-FC-001); `process/FUEL_CELL_EQUIPMENT.md`
 (AQS-EQP-FC-001); PFD `fuel_cell_pfd.py` (AQS-PFD-FC-001); chemistry =
 PEM on plant H₂ + O₂ (MeOH DMFC deferred); FC on Sol-Ark **BATT DC** via
 FC_DCDC (≠ BACKUP_GEN GEN port); heat → Q4 via FC_HX_Q4; streams
@@ -117,7 +117,7 @@ item 3 updates; `electrical_yard.py` FC envelope stubs. SCALE_M left
 **1.0**. No plant.FCStd rebuild; no git commit. kW nameplate TBD.
 
 Completed 2026-09-28 **CRYO cold-box internals** pass (Rev N): new
-`cad/CRYO_COLD_BOX.md` (AQS-CRY-002); `process/CRYO_EQUIPMENT.md` Rev C
+`docs-authority/CRYO_COLD_BOX.md` (AQS-CRY-002); `process/CRYO_EQUIPMENT.md` Rev C
 with Stirling / DIST_COL_* / REBOILER_COND / COMP_EXPAND / MOL_SIEVE /
 HEPA / CRYO_HX_Q4 / CRYO_DED_COOL / CRYO_AHU tags; regenerated
 `cryo_pfd.py` (AQS-PFD-CRY-001) showing internals + Q4/HVAC + GEN/FC/S24
@@ -127,7 +127,7 @@ Present/Partial. SCALE_M left **1.0**. No plant.FCStd rebuild; no git
 commit. Duties / holdup kg TBD.
 
 Completed 2026-09-28 **MFG metal forming** pass (Rev O): new
-`cad/METAL_FORMING.md` (AQS-MFG-MET-001); `process/METAL_FORMING_EQUIPMENT.md`
+`docs-authority/METAL_FORMING.md` (AQS-MFG-MET-001); `process/METAL_FORMING_EQUIPMENT.md`
 (AQS-EQP-MFG-MET-001); PFD `metal_forming_pfd.py` (AQS-PFD-MFG-MET-001);
 path = MET_MELT (electric induction) → WIRE_DRAW / COLD_MILL / GAS_ATOMIZER;
 MET_MELT ≠ INDUCTION_PYROLYZER; dedicated MET_AHU (no HAB return); Q4 via
@@ -145,7 +145,7 @@ Planning audit retained as local planning artefacts (not published). SCALE_M lef
 no git commit.
 
 Completed 2026-09-28 **site / yard / dock / egress** pass (Rev P): new
-`cad/SITE_ACCESS.md` (AQS-SITE-001); AQS-BLD-001 **Rev D** — site north =
+`docs-authority/SITE_ACCESS.md` (AQS-SITE-001); AQS-BLD-001 **Rev D** — site north =
 **+Y**; primary truck dock relocated to **north** (pole-facing) L0 with
 `DOCK_APRON_N` / `DOCK_DOOR_N`; `SERVICE_ENTRY` + `STAIR_SERVICE` (L0–L-2)
 as service access and basement secondary egress (hab sleeping stays on
@@ -157,7 +157,7 @@ next. No git commit.
 
 
 Completed 2026-09-28 **vent / stack closure** pass (Rev R): new
-`cad/VENT_CLOSURE.md` (AQS-VENT-001 Rev A) + `process/VENT_SCRUB_EQUIPMENT.md`
+`docs-authority/VENT_CLOSURE.md` (AQS-VENT-001 Rev A) + `process/VENT_SCRUB_EQUIPMENT.md`
 (AQS-EQP-VENT-001); owner lock — none of S24 / acid-gas / afterburner /
 Br₂ / S56 / S62 are “open by intent”; each → scrub+regen or CRYO.
 STREAM_REGISTER / MASS_FLOW **Rev I** (S64–S72); SECTOR_CAPACITY_AUDIT
@@ -233,7 +233,7 @@ truck counts remain explicitly open.
 
 
 Completed 2026-10-01 **design-tool architecture** pass (Rev Y): new
-`cad/DESIGN_TOOL_ARCHITECTURE.md` (**AQS-UI-001** Rev A) — MVS = smallest
+`docs-authority/DESIGN_TOOL_ARCHITECTURE.md` (**AQS-UI-001** Rev A) — MVS = smallest
 all-sector gold standard; sandbox scales up/down; never overwrite MVS
 (export design pack); schematic-first then 3D; unit_id+stream_id;
 ISA-95-ish hierarchy; mass-energy+electrical solver; sector toggles;

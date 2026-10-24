@@ -132,7 +132,7 @@ Headers exist as pipes. This phase gives them equipment.
 
 ## Phase F / G — campus (farm, fab, hab, cryo)
 
-Plan: `cad/CAMPUS_PLAN.md`. Do not start Wave-4 shop models until
+Plan: `docs-authority/CAMPUS_PLAN.md`. Do not start Wave-4 shop models until
 Wave-3 origins are frozen.
 
 - [x] F0 envelopes + F0_campus.png
@@ -148,7 +148,7 @@ Wave-3 origins are frozen.
 
 ## Phase D — animation
 
-- [x] Brief: `cad/ANIMATION_BRIEF.md` (D1–D6, cameras, bans)
+- [x] Brief: `docs-authority/ANIMATION_BRIEF.md` (D1–D6, cameras, bans)
 - [x] Waypoints: `freecad/animate_shots.py` (D1–D6 + C29 + NCG)
 - [x] Schematic frames: `freecad/render_frames.py` → `cad/animation/`
 - [ ] Optional GUI 12 fps overlay on `plant.FCStd` — operator box only
@@ -172,12 +172,12 @@ Wave-3 origins are frozen.
 | `cad/detail/*.scad` | Phase B printable / importable parts |
 | `cad/detail/build_stls.sh` | OpenSCAD → `detail/stl/` |
 | `freecad/import_details.py` | mesh insert onto PLANT |
-| `cad/ANIMATION_BRIEF.md` | Phase D shot list |
+| `docs-authority/ANIMATION_BRIEF.md` | Phase D shot list |
 | `freecad/pipe_services.py` | racks, trays, ground ring |
 | `freecad/campus.py` | FARM / WAFER_FAB / HABITATION / CRYO boxes |
-| `cad/FAN_STACK.md` | ID fans + stack heights |
-| `cad/WELD_MAP.md` | JW-001…029 joint register |
-| `cad/CSTR_NOZZLE_SCHEDULE.md` | N1–N12 + GF articles |
+| `docs-authority/FAN_STACK.md` | ID fans + stack heights |
+| `docs-authority/WELD_MAP.md` | JW-001…029 joint register |
+| `docs-authority/CSTR_NOZZLE_SCHEDULE.md` | N1–N12 + GF articles |
 | `freecad/animate_shots.py` | D1–D5 waypoints |
 | `assembly_wet.scad` | OpenSCAD twin of wet + later includes |
 
@@ -201,16 +201,16 @@ Rebuild: `leach_cstr.py` → `ew_cell.py` → `build_wet.py` →
 
 ## Authority lock (2026-09-27)
 
-**CAD truth = AQS-BLD-001 Rev B.** See `cad/AUTHORITY.md`.
+**CAD truth = AQS-BLD-001 Rev B.** See `docs-authority/AUTHORITY.md`.
 Phase F flat Z=0 envelopes are subordinate keep-outs only.
 
 | File | Owns |
 |---|---|
-| `cad/AUTHORITY.md` | Single active CAD authority |
-| `cad/BUILDING_STACK.md` | Levels, cores, shafts, masses |
+| `docs-authority/AUTHORITY.md` | Single active CAD authority |
+| `docs-authority/BUILDING_STACK.md` | Levels, cores, shafts, masses |
 | `freecad/building_stack.py` | SLAB_*, CORE_*, SHAFT_*, STAIR_*, ELEV_SVC, ROOF_TANK, CATCH_TANK, ARRAY_ROOF |
 | `freecad/fire_barriers.py` | FB_* + HA_L1_L0, HA_L0_Lm1, HA_Lm1_Lm2 |
-| `cad/MASS_FLOW.md` | AQS-MF-001 closed vs open streams |
+| `docs-authority/MASS_FLOW.md` | AQS-MF-001 closed vs open streams |
 
 Process cassette: wet_line local Z=0 = L-1 FFL; `build_plant.py` shifts by `Z_Lm1`.
 

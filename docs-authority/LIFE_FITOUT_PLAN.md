@@ -152,7 +152,7 @@ hab drains.
 | A | Envelopes + cores + shafts | Done (AQS-BLD-001 CAD) |
 | B | Corridor / toilet / lobby / partition stubs | This pass (`fitout.py`) |
 | C | Written life fit-out plan | This file |
-| D | Detailed MEP (duct sizes, fixture counts, one-line) | **Partial** — `cad/LIFE_MEP.md` (AQS-MEP-001) |
+| D | Detailed MEP (duct sizes, fixture counts, one-line) | **Partial** — `docs-authority/LIFE_MEP.md` (AQS-MEP-001) |
 | E | Shop interiors / furniture | Open |
 
 ---

@@ -7,7 +7,7 @@ Date: 2026-09-27
 Authority: subordinate to AQS-BLD-001 (`BUILDING_STACK.md`) for levels,
 cores, shafts, and fire ratings. This file defines *how* plan area,
 cassette count, life floors, basement depth, tanks, electrical modules,
-and overflow terraces grow. Millimetre truth: `cad/freecad/params.py`.
+and overflow terraces grow. Millimetre truth: `models/freecad/params.py`.
 
 Licence: CERN-OHL-S-2.0.
 
@@ -234,7 +234,7 @@ CAD massing (not planting / irrigation / full landscape):
 
 Grade reference `Z_L0`. Planting, irrigation, open vs enclosed
 greenhouse, and drain routing: **AQS-TRR-001**
-(`cad/TERRACE_LANDSCAPE.md`) — massing names above remain the CAD
+(`docs-authority/TERRACE_LANDSCAPE.md`) — massing names above remain the CAD
 anchors; landscape authority does not change band geometry.
 
 ---

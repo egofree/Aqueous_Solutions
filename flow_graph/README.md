@@ -65,7 +65,7 @@ python3 export_authority_md.py     # → derived/{STREAM_REGISTER,MASS_FLOW}_DER
 python3 render_layer_views.py      # layer stubs still graph-driven → views/
 ```
 
-`cad/STREAM_REGISTER.md` and `cad/MASS_FLOW.md` are **sync targets** (human +
+`docs-authority/STREAM_REGISTER.md` and `docs-authority/MASS_FLOW.md` are **sync targets** (human +
 derived hybrid). Prefer `derived/` as generated; do not overwrite CAD wholesale.
 Do not invent DOCK S## or fill null placeholder rates.
 
@@ -146,8 +146,8 @@ this graph. WP-C2 GitHub publish not started.
 ## Related
 
 - Audit: AQS-FLOW-AUD-001 (maintainer planning record, not in this repository)
-- Legacy CAD: `cad/STREAM_REGISTER.md`, `cad/MASS_FLOW.md` (sync targets)
-- Authority lock: `cad/AUTHORITY.md`
+- Legacy CAD: `docs-authority/STREAM_REGISTER.md`, `docs-authority/MASS_FLOW.md` (sync targets)
+- Authority lock: `docs-authority/AUTHORITY.md`
 - Plan: `planning/DESIGN_UI_COMPLETION_PLAN.md` (WP-Ap1…Ap3; A′ exit)
 - Contract: `check_authority_contract.py` / `test_authority_contract.py`
 - Derived sync: `derived/SYNC_POINTER.md`

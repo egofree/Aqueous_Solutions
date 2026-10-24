@@ -138,7 +138,7 @@ Rules:
 5. The tool **shall not** overwrite the locked MVS in place. Any sandbox
    edit **shall** export a **new design pack** (§8).
 6. On-disk plant baseline remains `SCALE_M = 1.0` in
-   `cad/freecad/params.py` as the **current manufacturing baseline**.
+   `models/freecad/params.py` as the **current manufacturing baseline**.
    Whether that exact envelope is the frozen MVS gold file is decided
    by applying §3.2 surplus + closure tests, not by bay count alone.
    Until an explicit freeze commit of `AQS-MVS-001`, the baseline is
@@ -570,8 +570,8 @@ a phase dependency.
 
 ## 10. Sync and authority
 
-- Pointer: `cad/AUTHORITY.md` (AQS-AUTH-001) → this file (**AQS-UI-001**).
-- Scale truth remains `cad/SCALE_MODEL.md` / `freecad/params.py`.
+- Pointer: `docs-authority/AUTHORITY.md` (AQS-AUTH-001) → this file (**AQS-UI-001**).
+- Scale truth remains `docs-authority/SCALE_MODEL.md` / `freecad/params.py`.
 - Share mirror via `rebuild.py --sync` into
   `share/aqueous-solutions/docs-authority/`.
 - Planning audits (local planning artefacts, not published) are separate from
@@ -598,7 +598,7 @@ a phase dependency.
 2. **Surplus numeric thresholds** — Study tolerances vs hard MVS pass
    criteria for food / water / goods / energy (tie to farm and
    AQS-REQ-KW-001).
-3. ~~**Complete Sector Definition catalogue**~~ — **Issued:** `cad/SECTOR_DEFINITIONS.md`
+3. ~~**Complete Sector Definition catalogue**~~ — **Issued:** `docs-authority/SECTOR_DEFINITIONS.md`
    (**AQS-SEC-001** Rev D). Class list remains AQS-UI-001 §3.1; ambiguities
    for the operator in AQS-SEC-001 §5 (schema worker reconcile).
 4. **3D path pick** — **Bias FreeCAD rebuild** (§3.3 / Phase D). Three.js /

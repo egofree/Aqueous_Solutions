@@ -107,7 +107,7 @@ S56 residual after KO = contingency only (AQS-VENT-001).
 
 Stubs attached (Wave 1): `gas_handling.py` ACID_POLISH_*; `cryo.py`
 CRYO_AHU_COND + FLUE_CAP; `mfg_shop.py` MET_SCRUB*; `electrical_yard.py`
-ZNBR2_BR2_REGEN. Rebuild: `/usr/bin/freecadcmd cad/freecad/build_plant.py`.
+ZNBR2_BR2_REGEN. Rebuild: `/usr/bin/freecadcmd models/freecad/build_plant.py`.
 
 ## 5. Regenerate related PFDs
 

@@ -240,5 +240,5 @@ python3 mass_flow_pfd.py
 python3 vent_closure_pfd.py
 ```
 
-Vent closure authority: `cad/VENT_CLOSURE.md` (AQS-VENT-001).
-Equipment stubs: `cad/process/VENT_SCRUB_EQUIPMENT.md` (AQS-EQP-VENT-001).
+Vent closure authority: `docs-authority/VENT_CLOSURE.md` (AQS-VENT-001).
+Equipment stubs: `docs-authority/process/VENT_SCRUB_EQUIPMENT.md` (AQS-EQP-VENT-001).

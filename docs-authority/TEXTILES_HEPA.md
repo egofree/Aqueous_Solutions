@@ -40,5 +40,5 @@ MFG story without inventing equipment IDs or rates.
 
 ## 5. Sync
 
-Canonical: cad/TEXTILES_HEPA.md  
+Canonical: docs-authority/TEXTILES_HEPA.md  
 Share: docs-authority/TEXTILES_HEPA.md

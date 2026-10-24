@@ -69,7 +69,7 @@ NP (not permitted) from Protection Level 1 into habitation. This plant has no Cl
 | CORE_LIFE | 2 h room | STAIR_P, ELEV_SVC, UTIL, PENSTOCK |
 | CORE_PROCESS | 2 h room | H2, acid, oil, dust risers. Not the elevator. |
 
-Vertical stack: `cad/BUILDING_STACK.md`. IBC 2024 Table 508.4 allows R over H-3 only if the building is sprinklered (2 h). Plant standard is 3 h. Non-sprinklered R over H is not permitted.
+Vertical stack: `docs-authority/BUILDING_STACK.md`. IBC 2024 Table 508.4 allows R over H-3 only if the building is sprinklered (2 h). Plant standard is 3 h. Non-sprinklered R over H is not permitted.
 
 No duct that carries process atmosphere through these walls. HVAC across a fire area is a listed damper + separate AHU or energy-recovery only on Q4 water.
 

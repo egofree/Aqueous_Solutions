@@ -12,7 +12,7 @@ not shop models.
 and utility columns in this table remain valid. Flat Z=0 origins below
 are **interim** — CAD placements follow building levels (life L1,
 process L-1, dock/fab/cryo/mfg/power L0, water L2, catch L-2).
-See `cad/AUTHORITY.md`.
+See `docs-authority/AUTHORITY.md`.
 
 Locked names only. Do not invent unit ops inside the boxes.
 
@@ -34,10 +34,10 @@ Rules:
    not a floor drain.
 4. Cryo is the Stirling + distillation / PSA skid from the system
    summary. It does not share a cold box with the ZnBr2 Br2 tower.
-5. Shop-level internals follow `cad/CAMPUS_PLAN.md` (AQS-CMP-001).
-   Streams: `cad/STREAM_REGISTER.md`. Overview PFD: `campus_pfd.png`.
-6. Fire areas and ratings: `cad/HAZARD_SEPARATION.md` (AQS-HSE-001).
+5. Shop-level internals follow `docs-authority/CAMPUS_PLAN.md` (AQS-CMP-001).
+   Streams: `docs-authority/STREAM_REGISTER.md`. Overview PFD: `campus_pfd.png`.
+6. Fire areas and ratings: `docs-authority/HAZARD_SEPARATION.md` (AQS-HSE-001).
    One roof is not one fire area. HABITATION does not share HVAC return
    with the recycle aisle.
 
-Generator: `cad/freecad/campus.py`.
+Generator: `models/freecad/campus.py`.

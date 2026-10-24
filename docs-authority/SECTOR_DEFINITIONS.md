@@ -4,7 +4,7 @@ Document number: AQS-SEC-001
 Revision: G  
 Date: 2026-10-01  
 Authority: AQS-AUTH-001; **class list owned by AQS-UI-001 Rev C §3.1**
-(`cad/DESIGN_TOOL_ARCHITECTURE.md`); hierarchy examples AQS-UI-001 §3.5;
+(`docs-authority/DESIGN_TOOL_ARCHITECTURE.md`); hierarchy examples AQS-UI-001 §3.5;
 scale AQS-SCALE-001 (`SCALE_M = 1.0` candidate MVS); streams AQS-STR-001;
 mass-flow AQS-MF-001; capacity study AQS-AUD-001; style AQS-DOC-001.  
 **Stage = catalogue lock.** Not FastAPI / JSON Schema code. Not a PE stamp.

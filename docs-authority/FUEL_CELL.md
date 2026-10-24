@@ -218,8 +218,8 @@ python3 backup_gen_pfd.py          # FC ≠ GEN note if regenerated
 Optional FreeCAD envelope only (no full plant rebuild this pass):
 
 ```bash
-# edit cad/freecad/electrical_yard.py stubs (FUEL_CELL, FC_*), then:
-# /usr/bin/freecadcmd cad/freecad/electrical_yard.py
+# edit models/freecad/electrical_yard.py stubs (FUEL_CELL, FC_*), then:
+# /usr/bin/freecadcmd models/freecad/electrical_yard.py
 # Full plant.FCStd rebuild REQUIRED before yard stubs appear in plant.
 ```
 

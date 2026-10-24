@@ -30,7 +30,7 @@ the share tree without fabricating permits or clause text.
 | Abbreviations; figure/table titles | Root narrative prose folders |
 | Record-of-revisions table | Git history as the revision record |
 
-Practical companion (warnings, signs): `cad/DOC_STYLE.md` (kept; points here).
+Practical companion (warnings, signs): `docs-authority/DOC_STYLE.md` (kept; points here).
 
 ## 3. Source standards (verified copies)
 
@@ -104,7 +104,7 @@ Locked names are **names**, not expandable abbreviations.
 - Metric first; do not split a value from its unit across a line.
 - Mark study estimates explicitly; never present them as vendor
   nameplates (AQS-AUD-001 rule).
-- WARNING / CAUTION / NOTE callouts follow `cad/DOC_STYLE.md`
+- WARNING / CAUTION / NOTE callouts follow `docs-authority/DOC_STYLE.md`
   (KSC §3.20 theme).
 
 ## 10. Authority hub — worst-offender checklist

@@ -210,5 +210,5 @@ tie this header to CRU or process Cl2.
 
 ---
 
-Building stack placements follow AQS-BLD-001 / `cad/AUTHORITY.md`.
+Building stack placements follow AQS-BLD-001 / `docs-authority/AUTHORITY.md`.
 Sign faces and locked names are unchanged by the vertical re-origin.

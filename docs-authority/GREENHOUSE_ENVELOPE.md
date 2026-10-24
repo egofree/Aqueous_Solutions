@@ -37,5 +37,5 @@ future FreeCAD pass. Open-terrace sites skip this file’s solids.
 
 ## 3. Sync
 
-Canonical: `cad/GREENHOUSE_ENVELOPE.md`  
+Canonical: `docs-authority/GREENHOUSE_ENVELOPE.md`  
 Share: `docs-authority/GREENHOUSE_ENVELOPE.md`

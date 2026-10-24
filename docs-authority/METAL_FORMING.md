@@ -206,8 +206,8 @@ python3 mfg_shop_pfd.py          # pointer callout if regenerated
 Optional FreeCAD envelope only (no full plant rebuild this pass):
 
 ```bash
-# edit cad/freecad/mfg_shop.py stubs (MET_*), then:
-# /usr/bin/freecadcmd cad/freecad/mfg_shop.py
+# edit models/freecad/mfg_shop.py stubs (MET_*), then:
+# /usr/bin/freecadcmd models/freecad/mfg_shop.py
 # Full plant.FCStd rebuild REQUIRED before stubs appear in plant.
 ```
 

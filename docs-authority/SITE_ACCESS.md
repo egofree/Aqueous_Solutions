@@ -189,14 +189,14 @@ Rebuild:
 # Optional — run only in a local working hub (not published):
 python3 pfd_scripts/building_stack_pfds.py
 python3 pfd_scripts/campus_life_hazard_pfds.py
-/usr/bin/freecadcmd cad/freecad/build_plant.py
+/usr/bin/freecadcmd models/freecad/build_plant.py
 ```
 
 ---
 
 ## 6. Compliance hooks
 
-Theme-level compliance status: **AQS-CMP-001**. Quantitative study annex: **AQS-EGR-001** (`cad/EGRESS_CALC.md`) — travel / exit width / basement two-exit at SCALE_M=1.0. **AHJ / PE verification required.** Still track:
+Theme-level compliance status: **AQS-CMP-001**. Quantitative study annex: **AQS-EGR-001** (`docs-authority/EGRESS_CALC.md`) — travel / exit width / basement two-exit at SCALE_M=1.0. **AHJ / PE verification required.** Still track:
 
 1. **NFPA 101 / IBC Ch. 10** — travel distance, common path, exit width,
    stair width, discharge, illumination (NEC 700), exit signs.

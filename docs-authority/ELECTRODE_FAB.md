@@ -51,5 +51,5 @@ Detail: AQS-EQP-STUDY-001 Rev E §10.
 
 ## 5. Sync
 
-Canonical: cad/ELECTRODE_FAB.md  
+Canonical: docs-authority/ELECTRODE_FAB.md  
 Share: docs-authority/ELECTRODE_FAB.md

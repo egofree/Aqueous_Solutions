@@ -4,7 +4,7 @@ Document number: AQS-EGR-001
 Revision: D
 Date: 2026-10-01  
 Authority: AQS-BLD-001 Rev E, AQS-SITE-001 Rev B, AQS-HSE-001, AQS-CMP-001
-(CMP-NFPA-04 / CMP-OSH-01), `cad/freecad/params.py` at **SCALE_M = 1.0**.  
+(CMP-NFPA-04 / CMP-OSH-01), `models/freecad/params.py` at **SCALE_M = 1.0**.  
 Jurisdiction assumed: USA (Dallas-class / Texas AHJ).  
 **Not a PE stamp. Not a permit set. AHJ / PE verification required.**
 

@@ -50,10 +50,10 @@ cad/params.scad              # OpenSCAD millimetres
 cad/leach_cstr.scad
 cad/ew_cell.scad
 cad/assembly_wet.scad
-cad/freecad/params.py        # must match params.scad
-cad/freecad/leach_cstr.py
-cad/freecad/ew_cell.py
-cad/freecad/build_wet.py
+models/freecad/params.py        # must match params.scad
+models/freecad/leach_cstr.py
+models/freecad/ew_cell.py
+models/freecad/build_wet.py
 ```
 
 Units are millimetres. Origin is the leach outer SW bottom corner:
@@ -224,7 +224,7 @@ massing model.
 
 ## 6. Adding a unit
 
-1. Put dimensions in `cad/params.scad` and `cad/freecad/params.py`.
+1. Put dimensions in `cad/params.scad` and `models/freecad/params.py`.
 2. OpenSCAD module in the file that owns the parent (tank extras stay in
    `leach_cstr.scad`; aisle extras stay in `assembly_wet.scad`).
 3. Matching `Part::Feature` in the matching `*.py`.

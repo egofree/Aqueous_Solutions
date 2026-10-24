@@ -37,7 +37,7 @@ including D6 cuts / C29 recycle / NCG.
 Schematic frames (plan token, not a GUI capture):
 
 ```
-python3 cad/freecad/render_frames.py
+python3 models/freecad/render_frames.py
 ```
 
 Output: `cad/animation/D0_overview.png`, `D1.png`…`D6.png`, `F0_campus.png`.

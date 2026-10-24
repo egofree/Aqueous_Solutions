@@ -171,8 +171,8 @@ Optional FreeCAD envelope only (no full plant rebuild required for
 doc issuance):
 
 ```bash
-# edit cad/freecad/electrical_yard.py stubs, then if desired:
-# /usr/bin/freecadcmd cad/freecad/electrical_yard.py
+# edit models/freecad/electrical_yard.py stubs, then if desired:
+# /usr/bin/freecadcmd models/freecad/electrical_yard.py
 ```
 
 Share mirror: `share/aqueous-solutions/docs-authority/`,

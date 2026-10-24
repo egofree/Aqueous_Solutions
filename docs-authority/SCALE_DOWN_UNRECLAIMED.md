@@ -3,7 +3,7 @@
 Document number: AQS-SCALE-UR-001  
 Revision: C  
 Date: 2026-10-01  
-Authority: AQS-SCALE-001 Rev C (`cad/SCALE_MODEL.md`); MVS framing
+Authority: AQS-SCALE-001 Rev C (`docs-authority/SCALE_MODEL.md`); MVS framing
 AQS-UI-001 Rev C §3.2; sector map AQS-SEC-001 Rev D; streams AQS-STR-001;
 mass-flow AQS-MF-001; vent AQS-VENT-001; continuous kW AQS-REQ-KW-001;
 planning gap audit AQS-MVS-GAP-001 (local planning artefacts, not published).  

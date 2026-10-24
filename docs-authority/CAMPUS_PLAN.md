@@ -22,15 +22,15 @@ BMED / gas / electrical aisle. Do not redraw that chemistry.
 | Names | `GLOSSARY.md` (locked strings) |
 | Plant PFD | `continuous_recycling_pfd.png` |
 | Line PFDs | wet, EW, oil, glass, BMED, polish, ZnBr2, SLD, container |
-| 3D | `cad/freecad/build_plant.py` → `plant.FCStd` |
+| 3D | `models/freecad/build_plant.py` → `plant.FCStd` |
 | Campus boxes | `PHASE_F_ENVELOPES.md`, `freecad/campus.py` |
-| Inter-block streams | `cad/STREAM_REGISTER.md` |
+| Inter-block streams | `docs-authority/STREAM_REGISTER.md` |
 
 Gaps this plan fills: farm, wafer fab, habitation, cryo internals;
 water / life-gas / nutrient cycles; PFDs and CAD that sit *outside*
 the four process gas headers.
 
-Vertical building (basement dirty → roof tank): `cad/BUILDING_STACK.md`
+Vertical building (basement dirty → roof tank): `docs-authority/BUILDING_STACK.md`
 and `building_section_pfd.png`. Plan-view envelopes still apply *on*
 those floors.
 
@@ -52,7 +52,7 @@ those floors.
    BMED salts — not from a new EW aisle.
 6. FR-4 still never enters INDUCTION PYROLYZER.
 7. One parameter file per model set. Campus mm live in
-   `cad/freecad/params.py` (envelopes already there via `campus.py`).
+   `models/freecad/params.py` (envelopes already there via `campus.py`).
    Do not fork a second `CSTR_L`.
 
 ---
@@ -229,9 +229,9 @@ to sewer, or put farm waste in INDUCTION PYROLYZER as FR-4.
 
 | File | Owns |
 |---|---|
-| `cad/CAMPUS_PLAN.md` | waves + campus names |
-| `cad/STREAM_REGISTER.md` | inter-block streams |
-| `cad/PHASE_F_ENVELOPES.md` | box sizes / origins |
+| `docs-authority/CAMPUS_PLAN.md` | waves + campus names |
+| `docs-authority/STREAM_REGISTER.md` | inter-block streams |
+| `docs-authority/PHASE_F_ENVELOPES.md` | box sizes / origins |
 | `pfd_scripts/campus_pfd.py` | overview sheet |
 | `freecad/campus.py` | four keep-out solids |
 | `GLOSSARY.md` | definitions once a name is drawn |

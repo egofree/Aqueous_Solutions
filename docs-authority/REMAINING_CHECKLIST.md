@@ -26,7 +26,7 @@ overlays locally.
 
 - [x] 1.1 EW fit-out on EW-1…9 (`import_mfg.py` loop)
 - [x] 1.2 Fit-out on PK cells except PK-4/5 CEM boxes
-- [x] 1.3 GF exact article numbers on N1–N12 — `cad/CSTR_NOZZLE_SCHEDULE.md` Rev B
+- [x] 1.3 GF exact article numbers on N1–N12 — `docs-authority/CSTR_NOZZLE_SCHEDULE.md` Rev B
 
 ## 2. BMED / CRU
 
@@ -55,26 +55,26 @@ overlays locally.
 
 - [x] 6.1 ZnBr2 tanks + Br2 tower — `mfg_znbr2_skid.scad`
 - [x] 6.2 Q4 skid — `mfg_q4_hvac.scad`
-- [x] 6.3 Fan curves / stack height — `cad/FAN_STACK.md` (AQS-GAS-003)
+- [x] 6.3 Fan curves / stack height — `docs-authority/FAN_STACK.md` (AQS-GAS-003)
 - [x] 6.4 Cable tray / grounding — `mfg_cable_tray.scad`, `freecad/pipe_services.py`
 
 ## 7. Plant-wide
 
 - [x] 7.1 Routed pipe racks — `mfg_pipe_rack.scad`, `freecad/pipe_services.py`
-- [x] 7.2 Weld / joint register — `cad/WELD_MAP.md` (AQS-WLD-001)
+- [x] 7.2 Weld / joint register — `docs-authority/WELD_MAP.md` (AQS-WLD-001)
 - [x] 7.3 Animation frames — schematic D0–D6 + F0 in `cad/animation/`. Generator `freecad/render_frames.py`. GUI 12 fps overlay remains operator-box.
 - [x] 7.4 Farm, wafer fab, habitation, cryo — envelopes. `PHASE_F_ENVELOPES.md`, `campus.py`, `cad/animation/F0_campus.png`. Internals out of this model set.
 
 ## 8. Data
 
-- [x] 8.1 Rebuild contract issued — `cad/STL_MANIFEST.md`, `cad/REBUILD.sh`. Compile + stamp is operator-box (`openscad` + `/usr/bin/freecadcmd`).
+- [x] 8.1 Rebuild contract issued — `docs-authority/STL_MANIFEST.md`, `cad/REBUILD.sh`. Compile + stamp is operator-box (`openscad` + `/usr/bin/freecadcmd`).
 - [x] 8.2 Refresh `materials_shopping_list.xlsx` from `cad/materials.csv`
 
 ## Operator box (not this sandbox)
 
 ```
 bash cad/REBUILD.sh
-python3 cad/freecad/render_frames.py
+python3 models/freecad/render_frames.py
 ```
 
 GUI capture of D1–D6 on `plant.FCStd` is optional overlay of the same
@@ -93,14 +93,14 @@ separate Phase F internals brief.
 
 ## Layout locks (2026-10-01 Rev X)
 
-See `cad/REMAINING_BLD.md` Rev X: equator PV tilt, life terraces+doors,
+See `docs-authority/REMAINING_BLD.md` Rev X: equator PV tilt, life terraces+doors,
 yard wall inset, dock+ELEV_DOCK discrete E–W jump, AQS-EGR-001 Rev B.
 
 ## Wave 2 doc pointers (2026-10-01)
 
-- Compliance themes: cad/COMPLIANCE_MATRIX.md (AQS-CMP-001)
-- House style: cad/DOCUMENTATION_STYLE.md (AQS-DOC-001)
-- OpenSCAD PATH: see cad/STL_MANIFEST.md (do not force install)
+- Compliance themes: docs-authority/COMPLIANCE_MATRIX.md (AQS-CMP-001)
+- House style: docs-authority/DOCUMENTATION_STYLE.md (AQS-DOC-001)
+- OpenSCAD PATH: see docs-authority/STL_MANIFEST.md (do not force install)
 - MeOH train: **issued** AQS-MeOH-001 / AQS-EQP-MEOH-001 / AQS-PFD-MEOH-001 (gap filled)
 - Continuous kW requirements: AQS-REQ-KW-001 (GEN/FC/CRYO/PECVD/belt/MFG/MeOH)
 - ASME study MAWP / relief / WPS class notes: AQS-ASM-001 Rev C
