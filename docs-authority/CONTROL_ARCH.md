@@ -37,7 +37,7 @@ Kept on a single CPU by decision:
 |---|---|---|---|---|---|---|---|---|
 | PLC-CRYO | 34 | 1 | 17 | 2 | 4 | 3/1/2/1 | redundant pair | 38 |
 | PLC-DIGESTER | 127 | 3 | 115 | 24 | 20 | 10/1/9/2 | single | 56 |
-| PLC-ELEC | 27 | 17 | 445 | 122 | 82 | 3/2/34/10 | redundant pair | 122 |
+| PLC-ELEC | 27 | 1 | 445 | 122 | 82 | 3/1/34/10 | redundant pair | 120 |
 | PLC-FAB | 62 | 3 | 74 | 11 | 17 | 5/1/6/1 | single | 38 |
 | PLC-FARM | 11 | 0 | 3 | 0 | 1 | 1/0/1/0 | redundant pair | 28 |
 | PLC-FOUNDRY | 76 | 0 | 19 | 0 | 6 | 6/0/2/0 | single | 28 |
@@ -53,6 +53,6 @@ Kept on a single CPU by decision:
 | PLC-POLYMERS | 34 | 0 | 18 | 4 | 2 | 3/0/2/1 | single | 24 |
 | PLC-PUMPED_HYDRO | 2 | 1 | 2 | 0 | 0 | 1/1/1/0 | redundant pair | 30 |
 | PLC-WTR | 42 | 0 | 57 | 8 | 17 | 4/0/5/1 | redundant pair | 44 |
-| Total | 598 | 34 | 956 | 208 | 195 | 166 modules | 9 redundant of 18 | 656 |
+| Total | 598 | 18 | 956 | 208 | 195 | 165 modules | 9 redundant of 18 | 654 |
 
-The control system draws about 0.66 kW on the 24 V supplies, inside the critical load of AQS-ELEC-007. The AQS-INV-004 module count (OF-07) is a different basis (points/16 with no spare) and is superseded by this table. DI adds the high-level switches to the inventory digital points; if the inventory already counts them the DI is high by 113 (conservative).
+The control system draws about 0.65 kW on the 24 V supplies, inside the critical load of AQS-ELEC-007. The AQS-INV-004 module count (OF-07) is a different basis (points/16 with no spare) and is superseded by this table. DI adds the high-level switches to the inventory digital points; if the inventory already counts them the DI is high by 113 (conservative).

@@ -126,6 +126,11 @@
    "motor_type": "hermetic induction (scroll)",
    "size": "0.75 kW hermetic",
    "voltage": "480 V 3-ph"
+  },
+  "MF-27": {
+   "motor_type": "EC (electronically commutated, permanent-magnet) fan motor",
+   "size": "1.1 kW EC fan, integrated drive",
+   "voltage": "480 V 3-ph"
   }
  }
 }

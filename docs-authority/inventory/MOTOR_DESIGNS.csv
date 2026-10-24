@@ -18,3 +18,4 @@ MF-19,stepper,NEMA 34 (86 mm),-,-,86,-,-,-,-,-,-
 MF-24,hermetic induction (scroll),15 kW hermetic,129,139,259,79,23.6,13 AWG (6.835 mm2),37.0,7.73,-
 MF-25,hermetic induction (scroll),1.1 kW hermetic,62,110,124,209,1.97,18 AWG (0.597 mm2),6.8,1.01,-
 MF-26,hermetic induction (scroll),0.75 kW hermetic,64,64,129,346,1.46,19 AWG (0.394 mm2),4.2,1.01,-
+MF-27,"EC (electronically commutated, permanent-magnet) fan motor","1.1 kW EC fan, integrated drive",-,-,-,-,-,-,-,-,-

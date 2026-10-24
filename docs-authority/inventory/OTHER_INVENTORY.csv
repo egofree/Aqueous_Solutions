@@ -767,7 +767,6 @@ DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl
 ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",48,AHU damper actuator (assumed size)
 ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
 ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
-ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",32,"heat pump condenser fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
 ELEC,EXT_HALL_N,EXT_HALL,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,24,AHU damper actuator
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,48,AHU damper actuator: run and fault (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,AHU exhaust fan: run and fault (assumed)
@@ -777,12 +776,10 @@ ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,3
 ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,15 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
 ELEC,EXT_HALL_N,EXT_HALL,electronics,motor starter (contactor + overload),1.1 kW,IEC 60947-4-1,8,AHU exhaust fan (assumed VFD at >= 0.75 kW)
 ELEC,EXT_HALL_N,EXT_HALL,electronics,motor starter (contactor + overload),1.1 kW,IEC 60947-4-1,8,AHU supply fan (assumed VFD at >= 0.75 kW)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,16,heat pump condenser fan (assumed VFD at >= 0.75 kW)
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",70 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,16,"NEC 430.52, from AQS-INV-002"
-ELEC,EXT_HALL_N,EXT_HALL,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",16,heat pump condenser fan: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",192,"electrolyte pump (anolyte, catholyte) per stack string: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
 ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-ZNBR-BD to GREY_TREAT (assumed size)
 ELEC,flow_battery,ZNBR2,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-ZNBR-BD to GREY_TREAT

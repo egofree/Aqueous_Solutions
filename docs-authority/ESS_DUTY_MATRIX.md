@@ -4,7 +4,7 @@ Document number: AQS-ESS-001
 Revision: B  
 Date: 2026-10-01  
 Authority: AQS-AUTH-001; AQS-UI-001 Rev C §3.2 (all three ESS peers);
-AQS-SEC-001; AQS-REQ-KW-001; AQS-MeOH-001; AQS-BLD-001 §3; FLOW_BATTERY.md;
+AQS-SEC-001; AQS-REQ-KW-001; AQS-MeOH-001; AQS-BLD-001 §6; FLOW_BATTERY.md;
 AQS-SCALE-001; AQS-SCALE-UR-001; planning AQS-MVS-GAP-001 §4.5.  
 Style: AQS-DOC-002.  
 **Stage = study duty sizing.** Not vendor nameplates. Not a PE stamp.
@@ -71,7 +71,7 @@ count formula remains P1 if discrete jumps are preferred.
 |---|---|
 | Continuous charge/discharge kW at M1 | **Incomplete** — no nameplate; HYDRO_SET `continuous_kw.value=null` |
 | Energy store M1 | 263.6 kWh ideal / 210.9 recoverable vs ZnBr₂ 3,501 kWh (**6 %**), from AQS-BLD-014 (rev 2026-10-16, X-QA-02) |
-| Scale-up path (AQS-BLD-001 §3) | Grow roof/catch **V×h** — not invent M1 kW equality |
+| Scale-up path (AQS-BLD-001 §6) | Grow roof/catch **V×h** — not invent M1 kW equality |
 
 | Volume (m³) | Head (m) | Ideal E=ρVgh (kWh) | Recoverable study | vs ZnBr₂ 120 kWh |
 |---|---|---|---|---|
@@ -108,7 +108,7 @@ Solver emits bottleneck `H2_pool_contended` when ≥2 of S45/S49/S74 present
 
 ## 5. Related / sync
 
-AQS-MVS-GAP-001 §4.5; AQS-BLD-001 §3; AQS-MeOH-001; AQS-REQ-KW-001;
+AQS-MVS-GAP-001 §4.5; AQS-BLD-001 §6; AQS-MeOH-001; AQS-REQ-KW-001;
 AQS-SCALE-UR-001.
 
 ```bash

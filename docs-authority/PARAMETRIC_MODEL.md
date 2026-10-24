@@ -1766,3 +1766,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-329 | below the baseline (scale factor s < 1) every mass and energ dimensionless | size one sub-baseline layout with the scale model and compare its feed with s x 150 kg/d |
 | A-M-330 | FOUNDRY molten-salt cells are kept at bath temperature (hold operating mode | lining inspection after a planned freeze-thaw trial on one cell |
 | A-M-331 | batch product = kettle volume x 0.7 fill x 1.1 kg/L latex de kg per batch | weigh the dried polymer from the first kettle batch |
+| A-M-332 | EXT_HALL heat-pump condenser fans: electronically commutated kW | Check the selected fan's nameplate or datasheet for motor type (EC or induction), rated power, supply voltage and speed-control method; update the motor inventory row and this entry |

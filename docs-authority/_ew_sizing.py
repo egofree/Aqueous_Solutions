@@ -6,7 +6,7 @@ import json, math, sys, os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flow_graph.param import drivers as DR
 from flow_graph.param.constants import M as _M
-from flow_graph.param.sizing import electrochem as EC
+from flow_graph.param.sizing import electrochem
 _d=DR.load(); MCU=_M['Cu']
 g=json.load(open('flow_graph/plant_flow_graph.json')); R={e['stream_id']:e['rate']['value'] for e in g['edges']}
 EL={1:('Au',196.97,3),2:('Ag',107.87,1),3:('Cu',63.546,2),4:('Pb',207.2,2),5:('Sn',118.71,2),
@@ -25,14 +25,14 @@ SUMP=DR.val(_d,'DIGESTER.ew-cascade-train.ew_tank_sump_m'); TOP=DR.val(_d,'DIGES
 rows=[]
 for n in range(1,10):
     m=R[f'IA-EW-MET-{n}']+(R['IA-EW-SHEET'] if n==9 else 0); el,M,z=EL[n]; dep=DEP[n]   # EW_9 also books IA-EW-SHEET
-    I=EC.faraday_current_A(m,MCU,2,FE)
-    Iel=EC.faraday_current_A(dep,M,z,1.0)
-    Nc=EC.cathode_count(I,J,AP); j=I/(Nc*AP)
+    I=electrochem.faraday_current_A(m,MCU,2,FE)
+    Iel=electrochem.faraday_current_A(dep,M,z,1.0)
+    Nc=electrochem.cathode_count(I,J,AP); j=I/(Nc*AP)
     Li=Nc*PITCH+2*END; Wi=PW+2*SIDE; Hi=SUMP+PH+TOP+FB
     Lo,Wo,Ho=[round((x+2*WALL)*1000) for x in (Li,Wi)]+[round((Hi+WALL)*1000)]
     Vl=Li*Wi*(SUMP+PH+TOP); Q=R[[e['stream_id'] for e in g['edges'] if e['to_unit_id']==f'EW_{n}' and e['stream_id'].startswith('IA-EW')][0]]/DR.val(_d,'DIGESTER.ew-cascade-train.ew_liquor_rho_kg_m3')   # A-M-029
     rows.append(dict(cell=f'EW_{n}',metal=el,edge_kg_d=m,I_A=I,I_elem_A=Iel,cathodes=Nc,anodes=Nc+1,j_A_m2=j,
-        size_mm=[Lo,Wo,Ho],V_liq_m3=Vl,tau_min=Vl/Q*1440,P_kW=EC.dc_power_kW(I,V)))
+        size_mm=[Lo,Wo,Ho],V_liq_m3=Vl,tau_min=Vl/Q*1440,P_kW=electrochem.dc_power_kW(I,V)))
 tot=dict(I_A=sum(r['I_A'] for r in rows),I_elem_A=sum(r['I_elem_A'] for r in rows),P_kW=sum(r['P_kW'] for r in rows))
 MD=os.path.join(os.path.dirname(os.path.abspath(__file__)),'sizing','EW_CELLS.md')
 def write_md():

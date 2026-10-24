@@ -839,7 +839,7 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {DR -- Dimension ratio of a plastic pipe: outside diameter divided by wall thickness (ASTM D3035).}
 
-{EC -- Electronically commutated: a fan motor with a built-in electronic drive.}
+{EC -- Electronically commutated, as in "EC motor" or "EC fan motor": a permanent-magnet motor with built-in electronics that commutate it and set its speed. Used here only for the heat-pump condenser fans (AQS-INV-001; A-M-332). The IEC 60034-30-1 efficiency classes (IE1 to IE4) do not apply to EC motors. Not used in this project as an abbreviation for electrical conductivity, which is always written out.}
 
 {EGC -- Equipment grounding conductor (NFPA 70).}
 
@@ -859,7 +859,7 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {NMN -- Nomex-Mylar-Nomex: a laminated slot liner for motor windings.}
 
-{PCC -- Power control centre: the main low-voltage switchgear fed from the transformer.}
+{PCC -- Point of common coupling: the point where the plant connects to the utility grid, with the lockable utility disconnect (NEC 705.20), overcurrent protection (NEC 705.30) and the bidirectional revenue meter. Interconnection and anti-islanding requirements apply here (NEC 705.40; IEEE 1547-2018).}
 
 {PFRP -- Process to further reduce pathogens: the class A sludge treatment of 40 CFR 503.}
 
@@ -912,6 +912,14 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {SCC -- Stress corrosion cracking.}
 
 {VJ -- Vacuum-jacketed (cryogenic pipe with an evacuated outer jacket).}
+
+{BIPV -- Building-integrated photovoltaics: PV modules that form part of the facade or roof.}
+
+{CZ -- Czochralski: crystal-growth method that pulls a single-crystal silicon ingot from a melt (CZ puller).}
+
+{NP -- Not permitted (IBC tables).}
+
+{NS -- Non-sprinklered (IBC tables).}
 
 ## Legal
 

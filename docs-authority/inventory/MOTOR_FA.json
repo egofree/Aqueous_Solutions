@@ -48,7 +48,7 @@
   "family": "MF-07",
   "type": "induction IE3",
   "rating": "IEC 90S / 1.1 kW",
-  "items": 39,
+  "items": 23,
   "P_kW": 1.1,
   "poles": 4,
   "Dg": 84.0,
@@ -406,5 +406,11 @@
   "ring_mm2": 36.7,
   "frame": "",
   "T_Nm": 2.1
+ },
+ {
+  "family": "MF-27",
+  "type": "EC (electronically commutated, permanent-magnet) fan motor",
+  "rating": "1.1 kW EC fan, integrated drive",
+  "items": 16
  }
 ]

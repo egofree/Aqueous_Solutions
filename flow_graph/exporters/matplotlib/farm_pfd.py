@@ -104,7 +104,7 @@ def main():
     arrow(ax, (terr[0], cy(terr)), L(terr), S.C_UTIL, lw=1.1)
     slabel(ax, 28, 31.0, "S40 surplus (not sump)", S.C_UTIL, size=6.6)
     S.rule(ax, 3, 18.5, 85, 3.2,
-           "RULE  ·  No Salria / etch / process H₂ in farm headers.  Dirty liquor never drains uphill into FARM (AQS-BLD-001 §0).  No FARM_SUMP → terrace.")
+           "RULE  ·  No Salria / etch / process H₂ in farm headers.  Dirty liquor never drains uphill into FARM (AQS-BLD-001 §3).  No FARM_SUMP → terrace.")
 
     S.callout(ax, 3, 8.5, 55, 8.5, "MACHINE / PROCESS LIST (locked CAD names)", [
         "FISH_TANK · BIOFILTER · GROW_BED · FARM_SUMP · NUTRIENT_DOSE · LED_CANOPY",

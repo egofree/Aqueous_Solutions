@@ -56,6 +56,7 @@ PLAN = {'induction': ['Laminations: laser-cut then stamped M400-50A (EN 10106) 0
         'BLDC': ['Stator: 0.35 mm NO20 or M270-35A laminations (EN 10106), 12 slots, concentrated tooth coils', 'Rotor: 8-pole surface magnets; NdFeB requires rare-earth supply (review item), bonded ferrite alternative at about 0.4 of the torque density', 'Hall sensors or sensorless back-EMF commutation; driver from the X-INV-05 BLDC driver family', 'Flange to NEMA ICS 16; housing extruded aluminium', 'Test: back-EMF constant, no-load current, torque-speed curve, hipot 500 V + 2U'],
         'stepper': ['Hybrid 2-phase 1.8 deg: 8-pole stator, 50-tooth rotor, axially magnetised NdFeB ring between two toothed caps', 'Laminations 0.35 mm (EN 10106); bifilar or unipolar windings from the wire line', 'Flange to NEMA ICS 16', 'Test: holding torque, step accuracy (+/- 5 %), resistance and inductance'],
         'solenoid': ['Coil: class H enamelled wire (IEC 60317-13) on a PA66-GF bobbin, 22 mm ISO 15218 interface', 'Plunger and frame: ferritic stainless 430F', 'Encapsulation in epoxy; DIN EN 175301-803 connector', 'Test: coil resistance, pull-in voltage at 85 % rated, insulation 1000 V'],
+        'ec_fan': ['Fan with its EC motor taken from the selected heat-pump condenser fan nameplate or datasheet (A-M-332); in-house motor design deferred until the fan is selected', 'Test: input power, speed range and speed-command response at rated airflow against the datasheet'],
         'actuator': ['BLDC motor of family MF-01 driving a worm gear (bronze wheel, steel worm)', 'Output to ISO 5211 F03 square, end stops and position switches', 'Housing PA66-GF or Al, IP67', 'Test: breakaway torque at the ISO 5211 F03 rating, travel time, cycle life sample']}
 MAG = {'NdFeB': dict(Br=1.30, Hc=1000, rho=7500, lm=3.0, grade='sintered N42, Br 1.29-1.32 T, Hcj >= 955 kA/m', RE=0.31),
        'ferrite': dict(Br=0.27, Hc=190, rho=3600, lm=6.0, grade='anisotropic polymer-bonded Sr-ferrite, Br 0.25-0.29 T, HcB 180-200 kA/m', RE=0.0)}   # COEY2010 table 11.4; IEC 60404-8-1
@@ -112,6 +113,11 @@ def main():
             fl = 57 if '57' in sz else 86; kind = 'stepper'; per = float(f['installed_shaft_kW'])/int(f['count'])
             L += ['| Quantity | Value | Basis |', '| --- | --- | --- |', f'| Rating | {per*1e3:.0f} W, {Vn:.0f} V DC chopper drive | AQS-INV-001 |', '| Step | 1.8 deg, 200 full steps | hybrid stepper |', f'| Flange | {fl} mm | NEMA ICS 16 |']
             rows.append(dict(family=fid, type=t, rating=sz, Dg_mm='-', L_mm='-', Dout_mm=fl, turns='-', current_A='-', conductor='-', steel_kg='-', copper_kg='-', fits='-'))
+        elif t.startswith('EC '):   # electronically commutated fan motor: permanent-magnet with integrated electronics (A-M-332)
+            kind = 'ec_fan'; kw = float(re.search(r'([\d.]+) kW', sz).group(1))
+            L += ['| Quantity | Value | Basis |', '| --- | --- | --- |', f'| Rating | {kw:g} kW, {V} | AQS-INV-001 (next rating >= 1.15 x shaft, A-M-117) |', '| Motor | Permanent-magnet motor with integrated commutation and speed-control electronics | A-M-332 |',
+                  '| Efficiency class | Not stated: the IEC 60034-30-1 efficiency classes cover line-start induction motors | IEC 60034-30-1 |', '| Electromagnetic design | Not sized here; taken from the selected fan nameplate or datasheet | A-M-332 |']
+            rows.append(dict(family=fid, type=t, rating=sz, Dg_mm='-', L_mm='-', Dout_mm='-', turns='-', current_A='-', conductor='-', steel_kg='-', copper_kg='-', fits='-'))
         elif t.startswith('solenoid'):
             per = float(f['installed_shaft_kW'])*1e3/int(f['count']); R = Vn**2/per; kind = 'solenoid'
             L += ['| Quantity | Value | Basis |', '| --- | --- | --- |', f'| Coil power | {per:.1f} W at {Vn:.0f} V DC | AQS-INV-001 |', f'| Coil resistance | {R:.0f} ohm at 20 C | R = V^2 / P |', f'| Current | {per/Vn:.2f} A | P / V |', '| Interface | 22 mm coil, ISO 15218 | ISO 15218 |']

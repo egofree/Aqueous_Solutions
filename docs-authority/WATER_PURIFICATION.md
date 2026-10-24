@@ -4,7 +4,7 @@ Document number: AQS-WTR-001
 Revision: B  
 Date: 2026-10-01  
 Authority: `SLINGSHOT/Water_Cycle_diagram.md`, `07-water-air-habitation.md`,
-`03-silicon-wafer-fabrication.md`, AQS-BLD-001 §3, AQS-STR-001,
+`03-silicon-wafer-fabrication.md`, AQS-BLD-001 §6, AQS-STR-001,
 AQS-MF-001, AQS-LIFE-001 §5, AQS-GAP-001 §5 / §7.1.
 Subordinate equipment lists: AQS-EQP-HAB-001, AQS-EQP-FAB-UPW-001.
 
@@ -280,7 +280,7 @@ after remin. S27 is the fab loop after dedicated polish.
 | FAB_UPW_* | L0 WAFER_FAB cassette or adjacent util chase |
 | ROOF / CATCH | Unchanged (L2 / L-2) |
 
-Dirty liquor does not drain uphill into life (AQS-BLD-001 §0).
+Dirty liquor does not drain uphill into life (AQS-BLD-001 §3).
 
 ---
 

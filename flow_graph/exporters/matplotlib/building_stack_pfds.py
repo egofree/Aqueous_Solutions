@@ -409,7 +409,7 @@ def perimeter_stairs(ax, pl, pw):
     label(ax, pl - sw / 2 - 0.3, 0.3 + sh / 2, "S2", size=5.5)
 
 
-# M1 keep-out masses from BUILDING_STACK §6 (m on 24×18), scaled to live plate
+# M1 keep-out masses from BUILDING_STACK §9 (m on 24×18), scaled to live plate
 def _xy_scale():
     return m(FP.PLATE_L) / 24.0, m(FP.PLATE_W) / 18.0
 
@@ -427,7 +427,7 @@ def basement(ax):
         ax,
         f"L-1 process (uppermost) + L-2 catch under  ·  CRYO east of CORE",
     )
-    # L-1 process blocks — M1 keep-out sizes at M1 origins (AQS-BLD-001 §6).
+    # L-1 process blocks — M1 keep-out sizes at M1 origins (AQS-BLD-001 §9).
     # Plate may grow with SCALE_M; keep-outs do not stretch.
     blocks = [
         (0, 4, 12, 8, "LEACH + EW aisle\n12×8 m keep-out\nF-1 / H-3", C_PROC),
@@ -759,7 +759,7 @@ def core(ax):
     label(ax, 6.5, 3, "E", size=7, weight="normal")
 
     label(ax, 6.5, -1.8,
-          "Authority sizes: AQS-BLD-001 §2.1  ·  ratings: AQS-HSE-001 locked barrier table",
+          "Authority sizes: AQS-BLD-001 §5.1  ·  ratings: AQS-HSE-001 locked barrier table",
           size=6, weight="normal", color=P.MUTED, ha="center")
 
 

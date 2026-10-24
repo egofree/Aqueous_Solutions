@@ -145,7 +145,7 @@ HAB into the recycle aisle.
 ### 3.4 Rating
 
 STAIR_SERVICE enclosure: **2 h**, same family as STAIR_MAINT /
-SHAFT_EGRESS (AQS-BLD-001 §2). No process-atmosphere duct in the stair.
+SHAFT_EGRESS (AQS-BLD-001 §5). No process-atmosphere duct in the stair.
 Doors at L-1 / L-2 are fire-rated stubs pending the compliance pass.
 
 ---

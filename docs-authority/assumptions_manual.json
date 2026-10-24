@@ -5561,5 +5561,21 @@
   "sensitivity": "batch size sets the days between campaigns and the feed buffer per campaign in proportion",
   "replaced_by": "the measured dry polymer mass from the first batch",
   "verification_test": "weigh the dried polymer from the first kettle batch"
+ },
+ {
+  "id": "A-M-332",
+  "title": "Heat-pump condenser fans are electronically commutated (EC) fan motors",
+  "value": "EXT_HALL heat-pump condenser fans: electronically commutated (EC) fan motor (permanent-magnet motor with integrated electronics), 0.75 kW shaft, rated 1.1 kW at the 1.15 x shaft step (A-M-117), 480 V 3-ph, duty S1, speed control by the integrated EC electronics. No efficiency class is claimed: the IEC 60034-30-1 classes (IE1 to IE4) apply to line-start induction motors",
+  "units": "kW",
+  "where": "AQS-INV-001 (EXT_HALL_N heat pump condenser fan); flow_graph/inventory/motors.py",
+  "basis": "Common practice for variable-speed condenser fans on air-source heat pumps; the earlier row listed the fan as an IE3 induction motor, which contradicted its EC speed control. Not taken from a selected product",
+  "sensitivity": "If the selected fan is an induction motor on a variable-frequency drive instead, the motor type, family and spares change; the shaft power and count do not",
+  "replaced_by": "Nameplate or datasheet of the selected heat-pump condenser fan",
+  "verification_test": "Check the selected fan's nameplate or datasheet for motor type (EC or induction), rated power, supply voltage and speed-control method; update the motor inventory row and this entry",
+  "task": "X-INV-01",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/inventory/motors.py"
+  ]
  }
 ]

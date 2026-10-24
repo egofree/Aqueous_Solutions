@@ -5,7 +5,7 @@ check(): mass/energy closure of the solved units (must pass) and misfit against 
 import json, math, os
 from . import drivers as DR
 from .constants import M, mw
-from .sizing import electrochem as EC
+from .sizing import electrochem
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 OX = {'Al2O3':{'Al':2,'O':3},'CaO':{'Ca':1,'O':1},'MgO':{'Mg':1,'O':1},'FeO':{'Fe':1,'O':1}}
 HCL = mw({'H':1,'Cl':1}); NAOH = mw({'Na':1,'O':1,'H':1}); H2O = mw({'H':2,'O':1})
@@ -86,9 +86,9 @@ def ew(d, g):
     out = {}
     for n in range(1,10):
         m = R[f'IA-EW-MET-{n}'] + (R.get('IA-EW-SHEET',0) if n==9 else 0)
-        I = EC.faraday_current_A(m, M['Cu'], 2, DR.val(d,'ew_current_efficiency_design'))
-        out[f'EW_{n}'] = dict(I_A=I, P_kW=EC.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')),
-                              P_bus_kW=EC.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')+DR.val(d,'ew_bus_drop_V')))
+        I = electrochem.faraday_current_A(m, M['Cu'], 2, DR.val(d,'ew_current_efficiency_design'))
+        out[f'EW_{n}'] = dict(I_A=I, P_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')),
+                              P_bus_kW=electrochem.dc_power_kW(I, DR.val(d,'ew_cell_voltage_V')+DR.val(d,'ew_bus_drop_V')))
     dc = sum(v['P_bus_kW'] for v in out.values())
     out['RECT_EW'] = dict(I_A=sum(v['I_A'] for v in out.values()), P_dc_kW=dc,
                           P_ac_kW=dc/DR.val(d,'rect_efficiency'), loss_kW=dc/DR.val(d,'rect_efficiency')-dc)

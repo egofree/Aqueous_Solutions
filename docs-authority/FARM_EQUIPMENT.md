@@ -64,7 +64,7 @@ second FISH_TANK.
 
 Forbidden on L1 farm headers: HDR_ACID_GAS, HDR_H2, HDR_OIL_VAPOR,
 Salria into beds. Dirty liquor never drains uphill into FARM
-(AQS-BLD-001 §0).
+(AQS-BLD-001 §3).
 
 ---
 

@@ -16,13 +16,13 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 50 | Owner decision or site investigation report |
-| T2 | In-house design tests and standard data | 31 | In-house test record or standard data filed against the item |
+| T2 | In-house design tests and standard data | 32 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 58 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
 | T5 | Design calculations and drawings | 387 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 579 items: 287 drivers, 292 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 580 items: 287 drivers, 293 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -114,6 +114,7 @@ Total 579 items: 287 drivers, 292 register entries. Classification rule: first m
 | A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x s kW | Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design | X-MFG-32 |
 | A-M-235 | 0.5 kWp x 6932 @ 19 % eff / GCR 0.6 = 8.77 m2/kWp; 30 444 m2 kWp; m2 | PV_ARRAY.params module_kw 0.5, count 6932, nameplate_kw 3466, area_m2 30444, balance_kWp 1733, oversize_factor 2.0; roof block footprint 198000 x 168000 mm, 33 x 28 bays, 33264 m2 gross | D-PV encode lane 2026-10-18 |
 | A-M-258 | Power chain derived again on the live graph: demand 281.99 k kW / kWp / kWh / m2 | python3 -m flow_graph.param.write_graph power exits 0; PV nameplate x 8.78 m2/kWp = area_m2 within rounding; nameplate <= roof capacity; sections breaker <= 1200 A (NEC 240.87) | R10b power-chain lane 2026-10-18 |
+| A-M-332 | EXT_HALL heat-pump condenser fans: electronically commutated kW | Check the selected fan's nameplate or datasheet for motor type (EC or induction), rated power, supply voltage and speed-control method; update the motor inventory row and this entry | X-INV-01 |
 
 ## 4. T3 Bench and laboratory tests
 

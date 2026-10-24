@@ -100,7 +100,7 @@ fire area is listed damper + separate AHU or Q4-only recovery.
 | Penstock | ROOF TANK → CATCH | Clean tower water only | Hydro set on L-2 |
 
 Dirty liquor cannot drain uphill into HABITATION or FARM
-(AQS-BLD-001 §0).
+(AQS-BLD-001 §3).
 
 ---
 

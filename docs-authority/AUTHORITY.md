@@ -37,7 +37,7 @@ Table 3.1. Placement sources and their roles
 | `PHASE_F_ENVELOPES.md` (AQS-PHF-001) | Subordinate: keep-out sizes and utility lists only. Its flat placements at Z = 0 are interim and are not placement authority |
 | Wet-line `*.FCStd` files | Cassette: local Z = 0 is the FFL of L-1. `build_plant.py` shifts the process cassette by `Z_Lm1` into world coordinates |
 
-There is only one campus model, the stacked building. Do not keep a second campus at Z = 0 beside it. Where a size in PHASE_F_ENVELOPES differs from BUILDING_STACK §6, the building stack controls the CAD envelope; PHASE_F_ENVELOPES remains the note on utilities and return paths.
+There is only one campus model, the stacked building. Do not keep a second campus at Z = 0 beside it. Where a size in PHASE_F_ENVELOPES differs from BUILDING_STACK §9, the building stack controls the CAD envelope; PHASE_F_ENVELOPES remains the note on utilities and return paths.
 
 ## 4. Process wet-line transform
 
