@@ -326,7 +326,7 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [STACK_3D_DECISION.md](STACK_3D_DECISION.md) | AQS-3D-STACK-001 | Stack decision — 3D and diagram surfaces |
 | [REBUILD.md](REBUILD.md) | AQS-REB-001 | Master rebuild tool |
 | [FREECAD_PROTOCOL.md](FREECAD_PROTOCOL.md) | AQS-CAD-002 | FreeCAD protocol — Aqueous wet line |
-| [AGENT_CAD_PROTOCOL.md](AGENT_CAD_PROTOCOL.md) | AQS-CAD-001 | Agent protocol — parametric PFD to CAD |
+| [CAD_SCRIPTING_PROTOCOL.md](CAD_SCRIPTING_PROTOCOL.md) | AQS-CAD-001 | Scripted CAD protocol: process flow diagram to rebuildable model |
 | [STL_MANIFEST.md](STL_MANIFEST.md) | AQS-STL-001 | STL rebuild manifest |
 | [DRAWING_REGISTER.md](DRAWING_REGISTER.md) | AQS-DWG-002 | Drawing register |
 | [MFG_MODEL_PLAN.md](MFG_MODEL_PLAN.md) | AQS-PLAN-006 | Manufacturing model plan |

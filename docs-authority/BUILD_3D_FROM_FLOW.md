@@ -5,7 +5,7 @@ Revision: **G**
 Date: 2026-10-01  
 Licence: CERN-OHL-S-2.0  
 Audience: Users of the published `aqueous-solutions` tree  
-Authority: Aligns with `AGENT_CAD_PROTOCOL.md` (design-agnostic pipeline) and
+Authority: Aligns with `CAD_SCRIPTING_PROTOCOL.md` (design-agnostic pipeline) and
 `STACK_3D_DECISION.md` (FreeCAD default). Not a PE stamp.
 
 | Rev | Change | Description | Date |

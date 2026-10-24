@@ -357,7 +357,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {IA / IA-* -- Intra-aisle stream identifiers on the typed graph (e.g. IA-EW-*, IA-ESS-*). Distinct from inter-block S## in STREAM_REGISTER. Required under lock full_depth_now; rates stay null until Present authority supplies them.}
 
-{CAD -- Computer-aided design. FreeCAD solids, campus placement, and parametric envelopes under AGENT_CAD_PROTOCOL / FREECAD_PROTOCOL. Topology authority remains the typed plant flow graph.}
+{CAD -- Computer-aided design. FreeCAD solids, campus placement, and parametric envelopes under CAD_SCRIPTING_PROTOCOL / FREECAD_PROTOCOL. Topology authority remains the typed plant flow graph.}
 
 {BOM -- Bill of materials. Self-copy critical-path list (AQS-BOM-SC-001) and export-pack bom artefacts from graph nodes/flags.}
 
@@ -890,6 +890,28 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {VLE -- Vapour-liquid equilibrium.}
 
 {WCB -- A cast carbon steel grade for valve bodies (ASTM A216 Grade WCB).}
+
+{RMIT -- RMIT University, Melbourne (formerly the Royal Melbourne Institute of Technology).}
+
+{GMAW -- Gas metal arc welding.}
+
+{GOX -- Gaseous oxygen.}
+
+{LIN -- Liquid nitrogen.}
+
+{LOX -- Liquid oxygen.}
+
+{NDE -- Nondestructive examination (ASME B31.3 chapter VI; ASME BPVC Section V).}
+
+{PED -- Pressure Equipment Directive of the European Union (2014/68/EU).}
+
+{PWHT -- Postweld heat treatment.}
+
+{RT -- Radiographic testing of welds.}
+
+{SCC -- Stress corrosion cracking.}
+
+{VJ -- Vacuum-jacketed (cryogenic pipe with an evacuated outer jacket).}
 
 ## Legal
 

@@ -13,13 +13,13 @@ Two rules, both driven by data in docs-authority/style_terms.json:
 
 A published page is a tracked Markdown file outside the agent-only paths. Pages
 listed under "exempt" are skipped for the reason given there. Pages listed under
-"pending" have not yet been brought to the guide; they are reported but do not
-fail, and an entry that has become clean must be removed (the test enforces it),
-so the list only shrinks.
+"pending" have not yet been rewritten to the guide; their findings do not fail.
+An entry is removed by hand after a genuine rewrite, not because the page passes;
+an entry whose page no longer exists is stale (the test enforces it).
 
 Usage: python3 -m flow_graph.check_doc_style [--all] [--shrink]
   --all     report findings in pending pages too
-  --shrink  remove pending entries that no longer have findings
+  --shrink  remove pending entries whose page no longer exists
 """
 from __future__ import annotations
 
@@ -150,7 +150,7 @@ def scan(d: dict | None = None, include_pending: bool = False) -> dict[str, list
 def stale_pending(d: dict | None = None) -> list[str]:
     d = d or data()
     pages = set(published_pages(d))
-    return [p for p in d["pending"] if p not in pages or not findings(p, d)]
+    return [p for p in d["pending"] if p not in pages]
 
 
 def main(argv: list[str]) -> int:
@@ -167,7 +167,7 @@ def main(argv: list[str]) -> int:
             print(f"{p} | {kind} | {t}")
     stale = stale_pending(d)
     for p in stale:
-        print(f"{p} | pending entry is clean or gone | run --shrink")
+        print(f"{p} | pending page no longer exists | run --shrink")
     print(f"{sum(len(f) for f in res.values())} findings")
     return 1 if (res and "--all" not in argv) or stale else 0
 

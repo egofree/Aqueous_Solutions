@@ -27,7 +27,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | --- | --- | --- | --- | --- | --- |
 | AQS-3D-BUILD-001 | `docs-authority/BUILD_3D_FROM_FLOW.md` | G | 2026-10-01 | Building 3D models from the plant flow graph | current |
 | AQS-3D-STACK-001 | `docs-authority/STACK_3D_DECISION.md` | A | 2026-10-01 | Stack decision — 3D and diagram surfaces | current |
-| AQS-ASM-001 | `docs-authority/ASME_CLASS_SHEETS.md` | C | 2026-10-01 | ASME vessel inventory & B31.3 piping class sheets (templates) | current |
+| AQS-ASM-001 | `docs-authority/ASME_CLASS_SHEETS.md` | D | 2026-10-24 | Pressure vessel inventory and process piping class sheets | current |
 | AQS-ASM-002 | `docs-authority/INSTALL_SEQUENCE.md` | A | 2026-10-21 | Install sequence | current |
 | AQS-ASM-003 | `docs-authority/RIGGING_PLANS.md` | A | 2026-10-21 | Rigging plans | current |
 | AQS-ASME-002 | `docs-authority/ASME_CODE_INTENT.md` | C | 2026-10-21 | In-house code intent per unit | current |
@@ -51,7 +51,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-BOM-SC-001 | `docs-authority/SELF_COPY_BOM.md` | G | 2026-10-02 | Self-copy critical-path BOM — parts × feedstock (RepRap-class) | current |
 | AQS-BOUND-001 | `notes/DOCK_BOUNDARY.md` | A | 2026-10-17 | Dock and boundary — item 9 | current |
 | AQS-BUS-001 | `docs-authority/BUSBAR.md` | C | 2026-10-16 | Rectifier bus | current |
-| AQS-CAD-001 | `docs-authority/AGENT_CAD_PROTOCOL.md` | — | — | Agent protocol — parametric PFD to CAD | current |
+| AQS-CAD-001 | `docs-authority/CAD_SCRIPTING_PROTOCOL.md` | B | 2026-10-24 | Scripted CAD protocol: from process flow diagram to rebuildable models | current |
 | AQS-CAD-002 | `docs-authority/FREECAD_PROTOCOL.md` | — | — | FreeCAD protocol — Aqueous wet line | current |
 | AQS-CLOSE-001 | `notes/CLOSURE_PASS.md` | A | 2026-10-17 | Closure pass — item 10 | current |
 | AQS-CMP-001 | `docs-authority/CAMPUS_PLAN.md` | B | 2026-09-27 | Campus plan — recycle core + farm + fab + habitation + cryo | current |
@@ -81,7 +81,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-DUTY-011 | `docs-authority/REV_M_CLOSURE_DUTY.md` | A | 2026-10-08 | Rev M closure: node balances, chloride loop, heater ratings and Q4 sinks | current |
 | AQS-DUTY-012 | `docs-authority/BALANCE_CLOSE_N.md` | A | 2026-10-09 | Balance close, remaining nodes | current |
 | AQS-DUTY-013 | `docs-authority/GREENHOUSE_WATER.md` | A | 2026-10-09 | Greenhouse water and battery margin | current |
-| AQS-DUTY-015 | `docs-authority/FARM_WASTE.md` | A | 2026-10-09 | Hydrochar and EAOP | current |
+| AQS-DUTY-015 | `docs-authority/FARM_WASTE.md` | B | 2026-10-24 | Farm waste: hydrochar composting and electrochemical pretreatment | current |
 | AQS-DUTY-016 | `notes/mass_disposition.md` | A | 2026-10-09 | Mass disposition | current |
 | AQS-DUTY-018 | `docs-authority/CRYO_ASU.md` | B | 2026-10-12 | Cold box gas rate | current |
 | AQS-DUTY-023 | `docs-authority/MASS_DISPOSITION.md` | A | 2026-10-09 | Residual close | current |

@@ -140,7 +140,7 @@ Generators write prose too. The text templates in a generator follow this guide 
 1. Every abbreviation written in capitals is defined in `docs-authority/GLOSSARY.md` (section 7). Identifiers from the plant graph, unit folders, tokens containing a digit, code and revision letters are not counted.
 2. No page uses a term from the banned list in `docs-authority/style_terms.json` (section 4). Each entry gives the reason and what to write instead.
 
-The check is deliberately light: it cannot judge clarity, and passing it does not make a page follow this guide. Pages not yet brought to the guide are listed as pending in the same data file. They are reported but do not fail the check. When a pending page becomes clean, remove it with `python3 -m flow_graph.check_doc_style --shrink`. Do not add pages to the list; fix the page or the glossary instead.
+The check is deliberately light: it cannot judge clarity, and passing it does not make a page follow this guide. Pages not yet rewritten to this guide are listed as pending in the same data file. Their findings are reported but do not fail the check. Remove a page from the list by hand only after rewriting it to this guide; passing the check is not enough. Do not add pages to the list; fix the page or the glossary instead.
 
 ## 17. Related documents
 

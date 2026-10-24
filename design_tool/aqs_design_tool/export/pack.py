@@ -536,7 +536,7 @@ def _emit_3d(
         "```",
         "",
         "Authority: pack `flow_graph_snapshot.json` (AQS-FLOW-GRAPH-001).",
-        "Protocol: `docs-authority/AGENT_CAD_PROTOCOL.md` + `FREECAD_PROTOCOL.md`.",
+        "Protocol: `docs-authority/CAD_SCRIPTING_PROTOCOL.md` + `FREECAD_PROTOCOL.md`.",
         "",
     ]
     (out / "README.md").write_text("\n".join(readme_lines), encoding="utf-8")

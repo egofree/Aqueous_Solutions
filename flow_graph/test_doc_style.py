@@ -9,9 +9,9 @@ def test_no_style_findings_outside_pending():
     assert res == {}, {p: f[:5] for p, f in list(res.items())[:10]}
 
 
-def test_pending_list_only_shrinks():
+def test_pending_entries_exist():
     stale = c.stale_pending()
-    assert stale == [], f"remove clean pages with python3 -m flow_graph.check_doc_style --shrink: {stale[:10]}"
+    assert stale == [], f"remove with python3 -m flow_graph.check_doc_style --shrink: {stale[:10]}"
 
 
 def test_style_data_valid():

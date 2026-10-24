@@ -36,7 +36,7 @@ whether matplotlib PNGs are authority.
 | Layer | Verdict | Disposition |
 |---|---|---|
 | **FreeCAD / `freecadcmd` 1.0 rebuild** | **Keep / prefer** | Default Phase D path. Params → builders → `.FCStd`. Binary: `/usr/bin/freecadcmd` (not AppImage 1.1). |
-| **OpenSCAD detail → STL → import** | **Keep** | Manufacturing detail under FreeCAD massing (AGENT_CAD_PROTOCOL §3.4–3.5). |
+| **OpenSCAD detail → STL → import** | **Keep** | Manufacturing detail under FreeCAD massing (CAD_SCRIPTING_PROTOCOL §5.4–5.5). |
 | **Three.js / live browser mesh / LOD campus** | **Defer** | Adopt **only** with a **later written decision** that revises this file (and notes `DESIGN_TOOL_ARCHITECTURE.md` §3.3). Default remains FreeCAD rebuild. |
 | **matplotlib PFD/SLD PNG** | **Optional / not authority** | Generators may live under `flow_graph/exporters/matplotlib/`. PNGs are **not** shipped in share. Topology authority is the typed graph + **`flow_graph/views/*.svg`**. |
 | **React + SVG graph-layer** | **Keep (2D UI)** | Schematic-first interactive surface; not a 3D stack. |
@@ -47,7 +47,7 @@ whether matplotlib PNGs are authority.
 1. **One params path.** FreeCAD builders already own millimetre geometry
    via `params.py`. A parallel Three.js campus would fork sizes unless
    deliberately designed as a consumer of the same params / export recipe.
-2. **Massing before mesh UI.** AGENT_CAD_PROTOCOL: correct box in the
+2. **Massing before mesh UI.** CAD_SCRIPTING_PROTOCOL: correct box in the
    right place before shop detail or animation; FreeCAD Part matches that.
 3. **Known limitation.** Graph→geometry is **not wired**. Prefer documenting
    rebuild of the baseline plant over claiming a browser 3D that also
@@ -83,7 +83,7 @@ started**.
 | Doc | Role |
 |---|---|
 | `BUILD_3D_FROM_FLOW.md` | End-to-end rebuild and limitations |
-| `AGENT_CAD_PROTOCOL.md` | Design-agnostic PFD→CAD pipeline |
+| `CAD_SCRIPTING_PROTOCOL.md` | Design-agnostic PFD→CAD pipeline |
 | `FREECAD_PROTOCOL.md` | Console binary / script rules |
 | `DESIGN_TOOL_ARCHITECTURE.md` | §3.3 schematic first; Phase D default |
 | `SCALE_MODEL.md` | `SCALE_M = 1.0` baseline |
