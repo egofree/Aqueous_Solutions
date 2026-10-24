@@ -5,4 +5,4 @@ item,description,qty,material,basis
 4,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
 5,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
 6,support: pipe clamp DN15,4,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-7,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+7,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004

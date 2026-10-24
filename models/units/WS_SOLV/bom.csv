@@ -1,6 +1,6 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/WS_SOLV.md
-2,Process nozzle DN15,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+1,Body / envelope 600 x 600 x 600 mm,1,"SA-240 304L, welded (graph node material).",docs-authority/duties/WS_SOLV.md
+2,Process nozzle DN15,2,"SA-240 304L, welded (graph node material).",one per mass edge; DN from AQS-INV-003
 3,"Motor: on/off valve IA-SOLV-WB (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: transfer pump IA-SOLV-WB to WET_BENCH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
@@ -8,42 +8,12 @@ item,description,qty,material,basis
 7,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 8,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 9,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
-10,fastener: anchor bolt M10,66,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-11,fastener: anchor bolt M10,70,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-12,fastener: anchor bolt M10,70,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-13,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-14,fastener: anchor bolt M10,82,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-15,fastener: anchor bolt M10,32,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-16,fastener: anchor bolt M10,52,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-17,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-18,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-19,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-20,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-21,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-22,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-23,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-24,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-25,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-26,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-27,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-28,support: U-bolt with guide DN15,16,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-29,support: U-bolt with guide DN15,26,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-30,support: pipe clamp DN15,33,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-31,support: pipe clamp DN15,35,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-32,support: pipe clamp DN15,35,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-33,support: pipe clamp DN15,14,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-34,support: pipe clamp DN15,41,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-35,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-36,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-37,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-38,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-39,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-40,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-41,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-42,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-43,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-44,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-45,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-46,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-47,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-48,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+10,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+11,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+12,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+13,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+14,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+15,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+16,support: pipe clamp DN15,14,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+17,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
+18,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004

@@ -26,7 +26,9 @@ def test_family_coverage():
     src = open(SPECS).read()
     for r in _bought_families():
         assert r['family'] in src and r['spec'] in src, r['family']
-    assert 'OF-13' in src and 'in-house work' in src   # the excluded fabricated-part family is named
+    fab = next(r['family'] for r in csv.DictReader(open(FAM))
+               if r['category'] == 'fabricated part')
+    assert f'the excluded one is {fab}' in src and 'in-house work' in src   # the excluded fabricated-part family is named
 
 
 def test_totals_match_the_inventory():
@@ -35,4 +37,7 @@ def test_totals_match_the_inventory():
     assert f'Bought families covered: {len(_bought_families())} of {len(_bought_families()) + 1}' in src
     ## the roster table must not leak the fabricated-part qty
     assert re.search(r'\| fabricated part \|', src) is None
-    assert total > 20000  # 25k-class rollup minus the 26 fabricated sheets
+    ## the datasheets carry every bought item of the inventory: the family quantities add up to the inventory's bought rows
+    inv = sum(int(r['qty']) for r in csv.DictReader(open(os.path.join(R, 'docs-authority/inventory/OTHER_INVENTORY.csv')))
+              if r['category'] != 'fabricated part')
+    assert total == inv

@@ -11,7 +11,7 @@ One production plan per other-building-block family in inventory/OTHER_FAMILIES.
     the assembly or installation work order, and the post-installation tie (loop check to
     AQS-CTL-001/002, seal class to AQS-STD-002 section 14, bolting to the class standard,
     spares per X-OPS-03);
-  - the one fabricated family (OF-13, fabricated part sets) is in-house work: its design and
+  - the one fabricated family (category "fabricated part") is in-house work: its design and
     production plan are the issued models/mfg/<unit>/bom.csv and WORK_ORDER.md sheets, and the
     plan points there rather than duplicating.
 
@@ -25,6 +25,8 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 
 FAM = list(csv.DictReader(open('docs-authority/inventory/OTHER_FAMILIES.csv')))
 assert FAM, 'no other families'
+FAB = next(f['family'] for f in FAM if f['category'] == 'fabricated part')   # the in-house family, by category (ids are stable, not positional)
+NBOUGHT = sum(1 for f in FAM if f['category'] != 'fabricated part')
 
 # the AQS-PRO-002 datasheet row per family (family id -> row tuple) and the section it sits in
 BS = {}
@@ -92,7 +94,7 @@ md += ['', '## 1. Summary and rules', '',
        'dry storage, the issue path to the assembly or installation work order, and the post-installation tie '
        '(loop check to AQS-CTL-001/002, seal class to AQS-STD-002 section 14, bolting to the joint standard, '
        'spares per X-OPS-03). Shop execution stays the open part of the work; nothing here books a run.',
-       '- **The fabricated family (OF-13)**: its design and production plan are the issued '
+       f'- **The fabricated family ({FAB})**: its design and production plan are the issued '
        'models/mfg/<unit>/bom.csv and WORK_ORDER.md sheets; this sheet points there.']
 
 md += ['', '## 2. Production plan by category', '']
@@ -113,7 +115,7 @@ for f in FAM:
 
 md += ['', '## 4. Coverage', '',
        f'- One plan per family: {len(FAM)} families, exactly the AQS-INV-004 roster.',
-       '- 64 bought families carry their design by reference to AQS-PRO-002; OF-13 points at the in-house sheets.',
+       f'- {NBOUGHT} bought families carry their design by reference to AQS-PRO-002; {FAB} points at the in-house sheets.',
        '- Open parts named: maker-table lines in AQS-STD-002 section 14 (ahead of valve/mseal order); shop '
        'execution and spares receipts are the open part of the work.']
 open('docs-authority/BLOCK_FAMILY_PLANS.md', 'w').write('\n'.join(md) + '\n')

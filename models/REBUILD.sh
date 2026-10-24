@@ -56,4 +56,7 @@ if [ "$PLANT_ONLY" = 1 ] || [ "$DO_STLS" = 0 ] || [ "$DO_STLS" = 1 ]; then
   cd "$FC"
   /usr/bin/freecadcmd build_plant.py
   echo "plant.FCStd rebuild done (SCALE_M from params.py; not from flow_graph)"
+  # Solid clash checks of the built plant; docs-authority/_cad_clash.py reports them in GA_CHECK.md.
+  /usr/bin/freecadcmd clash_check.py
+  /usr/bin/freecadcmd clash_equip.py
 fi

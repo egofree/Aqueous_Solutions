@@ -1,5 +1,5 @@
 step,activity,basis,point
-1,dimensional check against the unit drawing,ASME Y14.5,W
-2,bolting torque record,A-M-190,R
-3,function test,A-M-190,H
+1,material batch record,A-M-190,R
+2,visual and dimensional,A-M-190,W
+3,thermal or leak test at first heat-up,A-M-190,H
 4,loop check of every instrument,A-M-190,W

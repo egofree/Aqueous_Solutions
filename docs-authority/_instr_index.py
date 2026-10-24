@@ -18,6 +18,10 @@ def nice(x):
     k = 10**int(f'{x:e}'.split('e')[1]); return next(m*k for m in NICE + [10] if m*k >= x)
 LET = {'temperature element (SIF, independent)': 'TE', 'flow transmitter': 'FT', 'pressure transmitter': 'PT', 'temperature element': 'TE', 'level transmitter': 'LT', 'high-level switch': 'LSH'}
 rows = []; cnt = collections.Counter(); flags = []
+# Standard temperature-element bands: (top C, range, element). Pt100 to 600 C per IEC 60751; type K thermocouple to 1100 C and
+# type S to 1600 C per IEC 60584-1 (continuous-use limits of the base-metal and platinum thermocouples).
+TE_BANDS = [(150, '-20 to 150 C', 'IEC 60751, 316L thermowell'), (600, '0 to 600 C (Pt100 to 600 C, IEC 60751)', 'IEC 60751, 316L thermowell'),
+            (1100, '0 to 1100 C', 'type K thermocouple, IEC 60584, Inconel sheath'), (1600, '0 to 1600 C', 'type S thermocouple, IEC 60584, ceramic sheath')]
 for r in csv.DictReader(open('docs-authority/inventory/OTHER_INVENTORY.csv')):
     if r['category'] != 'instrument': continue
     if r['item'].startswith('gas detector'): continue          # gas detectors are listed in AQS-SAF-006, wired to the fire panel and SIS
@@ -28,14 +32,22 @@ for r in csv.DictReader(open('docs-authority/inventory/OTHER_INVENTORY.csv')):
         rho = ((e.get('params') or {}).get('density_kg_m3')) or 1000.0; lh = q/rho*1000/24
         rng = f'0-{nice(2*lh):g} L/h' if lh > 0 else '0-10 L/h (standby line)'; note = f'{sid} normal {lh:.2f} L/h'
     elif L == 'PT':
-        dk = p.get('design_kPa'); need = 1.25*dk/100 if dk else 0; inv = float(re.search(r'0-([0-9.]+)', r['size']).group(1))
+        d = p.get('design') or {}
+        dk = p.get('design_kPa') or d.get('design_kPa') or (d['P_MPa']*1000.0 if d.get('P_MPa') else None)   # either place on the graph
+        need = 1.25*dk/100 if dk else 0; inv = float(re.search(r'0-([0-9.]+)', r['size']).group(1))
         top = next((x for x in PR if x >= need), PR[-1]) if need > inv else inv
         rng = f'0-{top:g} bar g'; note = f"design {dk} kPa g" if dk else 'no design pressure on the graph'
-        if need > inv: flags.append((tag, r['size'], rng, f'design {dk/100:.0f} bar g'))
+        if need > inv:
+            flags.append((tag, r['size'], rng, f'design {dk/100:.0f} bar g'))
+            if top > 16: r = dict(r, spec='316L thin-film strain gauge, IEC 61298')   # same element rule as flow_graph/inventory/other.py
     elif L == 'TE':
         T = (p.get('design') or {}).get('T_C'); cry = u.startswith('CRYO') or 'cold' in (n.get('class') or '')
         hot = any(k in u for k in ('PYRO', 'FURNACE', 'MELT', 'AFTERBURN', 'HTC', 'SIC', 'DRYER', 'EVAP', 'DIGEST'))
         rng = '-200 to 50 C' if cry else ('0 to 600 C (Pt100 to 600 C, IEC 60751)' if hot else '-20 to 150 C'); note = f'design T {T} C' if T is not None else 'band by service'
+        if T is not None and not cry:   # the span must contain the design temperature with margin: smallest standard band whose top is >= 1.1 x T
+            band = next((b for b in TE_BANDS if b[0] >= 1.1*T), TE_BANDS[-1])
+            if band[0] > (150 if not hot else 600):
+                rng, r = band[1], dict(r, spec=band[2].replace('316L thermowell', 'own thermowell') if 'SIF' in r['item'] else band[2])
     else:
         m = re.search(r'\(([0-9.]+) m full', (p.get('relief_basis') or {}).get('design_case') or ''); h = float(m.group(1)) if m else None
         rng = f'0-100 % of {h:.2f} m' if h else '0-100 % of vessel height'; note = 'alarm at 90 %' if L == 'LSH' else 'A-M-182 liquid height'
@@ -195,7 +207,8 @@ for u, L, typ, spec, rng, sig, basis, sif in AUTH:
 _tags = [r['tag'] for r in rows]
 assert len(_tags) == len(set(_tags)), 'duplicate instrument tags'
 _no_loop = [n['unit_id'] for n in g['nodes'] if n['unit_id'] not in {r['unit'] for r in rows}]
-assert _no_loop == ['BOUNDARY_EXPORT'], f'graph units without a loop (extend AUTH or name the residual): {_no_loop}'
+_boundary = sorted(n['unit_id'] for n in g['nodes'] if n.get('class') == 'boundary')   # trade and bookkeeping boundaries, not process units
+assert set(_no_loop) <= set(_boundary), f'process units without a loop (extend AUTH): {sorted(set(_no_loop) - set(_boundary))}'
 with open('docs-authority/inventory/INSTRUMENT_INDEX.csv', 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
 S = collections.Counter(r['plc'] for r in rows); T = collections.Counter(r['type'] for r in rows)
@@ -213,8 +226,8 @@ md += ['', '## Per-unit extension (2026-10-20): loops authored from the graph fo
        'gas-detector row, listed in AQS-SAF-006 and excluded here by rule). The loops above the inventory section are authored in this',
        'generator from node design params, edge rates and cited inventory artifacts; the citation is the basis column of the CSV. Handoff:',
        'if AQS-INV-004 later issues a row with the same tag letters for one of these units, the inventory row wins and the authored row is',
-       'skipped (per-letters, no duplicate tags; asserted). Residual: BOUNDARY_EXPORT owns no loop - it is the DOCK-sector boundary',
-       'bookkeeping node for loss and curtailment splits, not a process unit.', '',
+       'skipped (per-letters, no duplicate tags; asserted). Units of graph class "boundary" own no loop: they are trade and',
+       f'bookkeeping boundaries (here {", ".join(_boundary)}), not process units.', '',
        '| Unit | Loops | Measured variables |', '|---|---|---|']
 md += [f"| {u} | {n} | {', '.join(sorted({r['tag'].split('-')[-2] for r in rows if r['unit'] == u}))} |" for u, n in sorted(_ext.items())]
 md += ['', '## Index (first 60 rows; all rows in the CSV)', '', '| Tag | Type | Range | Signal | Loop | Basis |', '|---|---|---|---|---|---|'] + [f"| {r['tag']} | {r['type']} | {r['range']} | {r['signal']} | {r['loop']} | {r['basis']} |" for r in rows[:60]]

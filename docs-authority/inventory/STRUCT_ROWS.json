@@ -51,8 +51,8 @@
 "unit": "WS_HF_ED",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 105.6,
-"test_kg": 105.6,
+"op_kg": 545.6,
+"test_kg": 809.6,
 "foot_m2": 0.64
 },
 {
@@ -107,8 +107,8 @@
 "unit": "WS_SOLV",
 "level": "L0",
 "empty_kg": 105.6,
-"op_kg": 105.6,
-"test_kg": 105.6,
+"op_kg": 545.6,
+"test_kg": 809.6,
 "foot_m2": 0.64
 },
 {
@@ -554,9 +554,9 @@
 {
 "unit": "CATCH_TANK",
 "level": "L-2",
-"empty_kg": 140931.4,
-"op_kg": 2342983.9,
-"test_kg": 3664215.4,
+"empty_kg": 142062.3,
+"op_kg": 2361786.3,
+"test_kg": 3693620.7,
 "foot_m2": 367.2
 },
 {
@@ -1240,12 +1240,28 @@
 "foot_m2": 0.103
 },
 {
+"unit": "ACID_POLISH_SCRUB",
+"level": "L-1",
+"empty_kg": 615.5,
+"op_kg": 615.5,
+"test_kg": 615.5,
+"foot_m2": 1.0
+},
+{
 "unit": "AFTERBURNER",
 "level": "L-1",
 "empty_kg": 64.8,
 "op_kg": 64.8,
 "test_kg": 64.8,
 "foot_m2": 0.36
+},
+{
+"unit": "ALK_SCRUBBER",
+"level": "L-1",
+"empty_kg": 615.5,
+"op_kg": 615.5,
+"test_kg": 615.5,
+"foot_m2": 1.0
 },
 {
 "unit": "BAGHOUSE",
@@ -1274,10 +1290,10 @@
 {
 "unit": "CRYO_CO2",
 "level": "L-1",
-"empty_kg": 240.0,
-"op_kg": 240.0,
-"test_kg": 240.0,
-"foot_m2": 0.64
+"empty_kg": 690.1,
+"op_kg": 690.1,
+"test_kg": 690.1,
+"foot_m2": 10.044
 },
 {
 "unit": "CRYO_DED_COOL",
@@ -1290,10 +1306,10 @@
 {
 "unit": "CRYO_H2",
 "level": "L-1",
-"empty_kg": 240.0,
-"op_kg": 240.0,
-"test_kg": 240.0,
-"foot_m2": 0.64
+"empty_kg": 5520.5,
+"op_kg": 5520.5,
+"test_kg": 5520.5,
+"foot_m2": 10.044
 },
 {
 "unit": "CRYO_N2",
@@ -1306,10 +1322,10 @@
 {
 "unit": "CRYO_O2",
 "level": "L-1",
-"empty_kg": 240.0,
-"op_kg": 240.0,
-"test_kg": 240.0,
-"foot_m2": 0.64
+"empty_kg": 2760.3,
+"op_kg": 2760.3,
+"test_kg": 2760.3,
+"foot_m2": 10.044
 },
 {
 "unit": "FLOAT_SINK",
@@ -1330,18 +1346,18 @@
 {
 "unit": "H2_DRYER",
 "level": "L-1",
-"empty_kg": 86.4,
-"op_kg": 86.4,
-"test_kg": 86.4,
-"foot_m2": 0.48
+"empty_kg": 37.0,
+"op_kg": 37.0,
+"test_kg": 37.0,
+"foot_m2": 0.24
 },
 {
 "unit": "HOPPER",
 "level": "L-1",
-"empty_kg": 240.2,
-"op_kg": 240.2,
-"test_kg": 240.2,
-"foot_m2": 1.02
+"empty_kg": 32.4,
+"op_kg": 32.4,
+"test_kg": 32.4,
+"foot_m2": 0.36
 },
 {
 "unit": "HYDRO_SET",
@@ -1358,6 +1374,14 @@
 "op_kg": 225.0,
 "test_kg": 225.0,
 "foot_m2": 1.0
+},
+{
+"unit": "NUTRIENT_DOSE",
+"level": "L1",
+"empty_kg": 32.4,
+"op_kg": 167.4,
+"test_kg": 248.4,
+"foot_m2": 0.36
 },
 {
 "unit": "OIL_DRYER",
@@ -1387,24 +1411,24 @@
 "unit": "HYDRO_RES_R1",
 "level": "R1",
 "empty_kg": 88128.0,
-"op_kg": 1212495.6,
-"test_kg": 1212495.6,
+"op_kg": 1210804.9,
+"test_kg": 1210804.9,
 "foot_m2": 367.2
 },
 {
 "unit": "HYDRO_RES_R2",
 "level": "R2",
 "empty_kg": 88128.0,
-"op_kg": 1212495.6,
-"test_kg": 1212495.6,
+"op_kg": 1210804.9,
+"test_kg": 1210804.9,
 "foot_m2": 367.2
 },
 {
 "unit": "HYDRO_RES_R3",
 "level": "R3",
 "empty_kg": 88128.0,
-"op_kg": 1212495.6,
-"test_kg": 1212495.6,
+"op_kg": 1210804.9,
+"test_kg": 1210804.9,
 "foot_m2": 367.2
 }
 ]

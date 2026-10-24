@@ -15,20 +15,23 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
-| T1 | Owner and site data | 32 | Owner decision or site investigation report |
-| T2 | In-house design tests and standard data | 14 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 37 | Bench test report with method, data and result |
+| T1 | Owner and site data | 50 | Owner decision or site investigation report |
+| T2 | In-house design tests and standard data | 31 | In-house test record or standard data filed against the item |
+| T3 | Bench and laboratory tests | 58 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 125 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 22 | Commissioning record |
+| T5 | Design calculations and drawings | 384 | Calculation or drawing issued under the named task |
+| T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 251 items: 120 drivers, 131 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 576 items: 287 drivers, 289 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
+| driver ELEC.distribution-train.gnd_soil_rho_ohm_m | 50.0 ohm m soil resistivity | Wenner four-electrode soil resistivity survey at the site | X-PAR |
+| driver crit_autonomy_d | 2.0 d of critical-load autonomy without sun | Owner outage-basis decision: NFPA 110/111 class vs the PV cloudy-day statistics of the site (AQS-SITE-002 NSRDB run) | X-PAR |
 | driver ext_hvac | "air" 'air', 'ground' or 'best' (lower converged footprint) | Owner review of the X-PAR-08 comparison | X-PAR |
+| driver gw_depth_m | 0.0 m below grade, groundwater (worst case at grade until measured) | Piezometer readings at the parcel through a wet season | X-PAR |
 | driver ifc_array_max_mm | 45720 mm | AHJ fire-code review | X-PAR |
 | driver ifc_axis_limit_mm | 76200 mm | AHJ fire-code review | X-PAR |
 | driver ifc_path_mm | 1219 mm | AHJ fire-code review | X-PAR |
@@ -40,6 +43,20 @@ Total 251 items: 120 drivers, 131 register entries. Classification rule: first m
 | driver san_compost_fraction | 0.25 share of excreta to compost toilets (daily average; each path sized for 100 %) | Owner HAB fit-out (number of each toilet type) and use log | X-PAR |
 | driver san_crew | 4 persons, HAB design occupancy (HABITATION params.crew_study) | Owner occupancy schedule | X-PAR |
 | driver san_farm_sep_m | 7.62 m minimum edge distance, sanitation units to any FARM unit, in addition to the HAB/FARM wall and separate ventilation | Owner and AHJ review; air-pressure cascade test FARM > HAB corridor > sanitation room | X-PAR |
+| driver soil_allow_kPa | 72.0 kPa allowable bearing, presumptive clay (CL/ML/MH/CH) | Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus | X-PAR |
+| driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist clay | Geotechnical report unit weight | X-PAR |
+| driver wt_Ie | 1.5 - importance factor, Risk Category IV (life-support energy) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_R | 3.0 - response modification, elevated-mass structure (conservative) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1, AQS-SITE-002 S1 0.05 g, site class D, Fv 2.4 (ASCE 7-22 Table 11.4-2) | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
+| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss, AQS-SITE-002 Ss 0.10 g, site class D, Fa 1.6 (ASCE 7-22 Table 11.4-1) | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
+| driver wt_TL_s | 8.0 s long-period transition | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_cell_len_m | 12.0 m max reservoir cell length (sloshing; min 2 cells per level) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_core_frac | 0.15 - plate fraction kept for stair, lift and penstock cores | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_freeboard_m | 0.5 m freeboard, lower reservoir | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_level_clear_mm | 6000 mm reservoir storey floor-to-floor | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_penstock_loss_frac | 0.05 - penstock friction as fraction of head | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_water_max_m | 4.5 m max water depth per reservoir level (slab load 44 kPa) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_wind_ms | 50.0 m/s basic wind speed (site unknown) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | A-M-013 | 115 mph 3 s gust | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-014 | Ss 0.10, S1 0.05 g | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-015 | D site class | Geotechnical report | X-BAS-03 |
@@ -60,42 +77,78 @@ Total 251 items: 120 drivers, 131 register entries. Classification rule: first m
 | A-M-113 | OWNER INPUT: utility interconnection study (service size, av - | Owner files the interconnection application; utility study results entered as drivers and the protection study re-run | X-PAR-09 |
 | A-M-114 | Collection at 480 V in sections with breakers <= 1000 A (NEC A, kVA, kV | Utility service voltage; short-circuit and coordination study with the utility source | X-ELS-11 |
 | A-M-115 | Hall classed general industrial ordinary hazard, sprinklered m, m2/person | Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model | X-STD-01 |
+| A-M-268 | backup_gen_rated_kW 40.0 / crit_autonomy_d 2.0 (drivers.json kW / d | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h; owner outage-basis decision vs AQS-SITE-002 NSRDB run | X-PAR |
 
 ## 3. T2 In-house design tests and standard data
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.bop_m2_per_kW | 0.015 m2 balance-of-plant plan area per kW rated (H2/O2 separators, deoxo, dryer per params.internals) | in-house skid GA at the fabrication-design task | X-PAR |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_H_mm | 2200 mm skid height incl. separator deck | in-house skid GA at the fabrication-design task | X-PAR |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_W_mm | 1050 mm skid width (fits the CRYO H2-bay aisle) | in-house skid GA at the fabrication-design task | X-PAR |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_m2_per_kW | 0.025 m2 skid plan area per kW rated stack (PEM stack enclosure) | in-house skid GA at the fabrication-design task | X-PAR |
+| driver atom_GMR | 2.5 kg Ar per kg metal | Trial run on the first article (X-MFG-37) | X-PAR |
+| driver cu_flow_stress_MPa | 250.0 MPa mean flow stress, Cu cold work | Trial run on the first article (X-MFG-37) | X-PAR |
 | driver evap_comp_eta | 0.7 isentropic efficiency, single-stage blower | Compressor map of the in-house blower | X-PAR |
+| driver hs_Cs_flood_m_s | 0.07 m/s capacity factor at flood, 25 mm cut rings | air-water flooding test of a 200 mm column of the in-house packing | X-PAR |
+| driver hs_dp_mm | 25.0 mm, in-house cut PP tube rings | in-house packing sample: count per m3 and void fraction | X-PAR |
+| driver melt_eta | 0.55 - coreless induction furnace, coil to melt | Trial run on the first article (X-MFG-37) | X-PAR |
 | driver pv_module_eff | 0.19 STC efficiency | Module datasheet of the in-house cell line (SOLAR_PV_CELL) at STC | X-PAR |
+| driver ro_A_LMH_bar | 3.0 L/(m2 h bar) water permeance, TFC low-pressure | Permeance of the in-house flat-sheet module on VCD distillate (X-MFG-34) | X-PAR |
 | driver san_cake_TS | 0.2 cake dry solids fraction after screw press | Cake TS on the in-house screw press | X-PAR |
 | driver san_flush_L | 1.0 L per flush, vacuum toilet | Flush volume on the in-house vacuum toilet prototype | X-PAR |
+| driver storage_round_trip | 0.7 - | ZNBR2 in-house stack test (X-MFG-41, AQS-TST-002): round trip at 20 mA/cm2 over the daily cycle; the 0.70 design value is held below the physics prediction until then | X-PAR |
+| driver struct_pv_kg_m2 | 17.0 kg/m2 PV modules plus ballasted racking on the roof | Weigh the in-house module and rack first article | X-PAR |
 | driver xfmr_Z_pu | 0.0575 pu pad-mount transformer impedance | Transformer nameplate | X-PAR |
+| driver znbr_ASR_ohm_cm2 | 5.0 ohm cm2 cell area-specific resistance | ZNBR2 stack test (X-MFG-41, AQS-TST-002) | X-PAR |
+| driver znbr_aux_frac | 0.03 - pump and control energy as a fraction of throughput | ZNBR2 stack test (X-MFG-41, AQS-TST-002) | X-PAR |
+| driver znbr_crossover_loss | 0.05 - coulombic loss to Br2 crossover and self-discharge over the day | ZNBR2 stack test (X-MFG-41, AQS-TST-002) | X-PAR |
 | A-M-034 | C203x56x6.4, allowable 50 MPa, E 17.2 GPa, 1900 kg/m3 — | In-house FRP coupon tests to ASTM D638/D790/D2344 (X-MAT-21) | MET-LEACH_CSTR_1-02 |
 | A-M-056 | 0.90 power factor | Motor and rectifier data sheets | X-ELS-03 |
 | A-M-057 | >= 1 kW on MCC-1 480 V; < 1 kW on PP-1 208/120 V assignment rule | Equipment nameplates | X-ELS-03 |
 | A-M-059 | 5x low instantaneous; electronic 1.5x / 0.1 s; main 1.25x /  settings | Chosen brand time-current curves | X-ELS-07 |
 | A-M-060 | 0.5 s | Device curves at the fault current | X-ELS-08 |
-| A-M-062 | derate 0.80; round trip 0.70 fraction | PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-41) | X-ELS-05 |
+| A-M-062 | derate 0.80; round trip 0.70 fraction | PVWatts run with the chosen modules; in-house ZNBR2 stack round-trip test (X-MFG-35) | X-ELS-05 |
 | A-M-071 | 1.4 kWh/Nm3 O2; 4.8 Nm3 air per Nm3 O2 kWh/Nm3 | In-house micro cold box design and commissioning measurement (X-MFG-33) | X-ELS-02 |
 | A-M-085 | melt 1.0 kWh/kg; atomise 3.0 kWh/kg; rolling 0.1, drawing 0. kWh/kg, kW | In-house tool design, trial runs and the production schedule (X-MFG-37) | X-ELS-02 |
 | A-M-117 | Motor rating = next IEC 60034-1 preferred rating >= 1.15 x s kW | Size each pump curve (flow, head, NPSH) and re-run _jellybean.py; check bearing L10 life (ISO 281) on the in-house motor design | X-MFG-32 |
+| A-M-235 | 0.5 kWp x 6932 @ 19 % eff / GCR 0.6 = 8.77 m2/kWp; 30 444 m2 kWp; m2 | PV_ARRAY.params module_kw 0.5, count 6932, nameplate_kw 3466, area_m2 30444, balance_kWp 1733, oversize_factor 2.0; roof block footprint 198000 x 168000 mm, 33 x 28 bays, 33264 m2 gross | D-PV encode lane 2026-10-18 |
+| A-M-258 | Power chain re-derived on the live graph: demand 281.99 kW b kW / kWp / kWh / m2 | python3 -m flow_graph.param.write_graph power exits 0; PV nameplate x 8.78 m2/kWp = area_m2 within rounding; nameplate <= roof capacity; sections breaker <= 1200 A (NEC 240.87) | R10b power-chain lane 2026-10-18 |
 
 ## 4. T3 Bench and laboratory tests
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
+| driver DIGESTER.ew-cascade-train.liquor_conductivity_S_m | 30.0 S/m | measure or cite chloride liquor conductivity at 1.4 M HCl | X-PAR |
+| driver HDR.headers-train.hdr_rho_ncg | 0.5 kg/m3 pyrolysis NCG at 150-200 C | NCG composition from the pyrolysis assay at the OIL_FRAC unit task | X-PAR |
+| driver MEOH.synthesis-train.MEOH_FC.cell_V | 0.6 V per cell at the design point | Stack polarisation set at the first article | X-PAR |
+| driver MEOH.synthesis-train.MEOH_FC.j_A_cm2 | 0.3 A/cm2 current density at the design point | Stack polarisation set at the first article | X-PAR |
 | driver acid_conc_design_wt | 0.2 mass fraction HCl on IA-ACID-01 | Bench leach of class A feed at 20 wt% HCl, 90-108 C (CARLETON_HCL_2023 basis is 38 %); ICP-OES extraction vs time | X-PAR |
 | driver base_conc_design_wt | 0.2 mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT | Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt% | X-PAR |
+| driver bmed_cell_area_m2 | 0.04 m2 active area per membrane (200 x 200 mm) | stack polarisation test on the first-article stack | X-PAR |
 | driver case_A_leach_extent | 1.0 fraction of listed oxides dissolved | Bench leach of class A feed in HCl at 85 C, ICP-OES of liquor for Al, Ca, Mg, Fe extraction | X-PAR |
 | driver case_A_oxide_fractions | {"Al2O3": 0.19, "CaO": 0.125, "MgO": 0.09, "FeO": 0.13} mass fraction of silicate_oxide | XRF major-oxide analysis of the accepted feed | X-PAR |
 | driver digest_naoh_per_sio2 | 2.0 mol NaOH per mol SiO2 dissolved | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet | X-PAR |
 | driver ew_cell_voltage_V | 2.12 V | Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage and energy per kg Cu | X-PAR |
 | driver ew_current_efficiency_design | 0.85 - | Bench chloride EW cell per metal: deposit mass vs charge (current efficiency) | X-PAR |
 | driver feed_case_A_silicate_oxide | 0.99 mass fraction | XRF/XRD assay of a representative class A lot | X-PAR |
+| driver foundry_pot_ce | 0.85 - current efficiency (Faraday) at the pot electrodes | bench molten-chloride cell: deposit mass vs charge | X-PAR |
+| driver foundry_pot_j_A_cm2 | 0.5 A/cm2 design anode current density (graphite, chloride melt) | bench cell anode polarization at 0.3-0.8 A/cm2 (graphite consumption rate) | X-PAR |
+| driver foundry_pot_voltage_V | {"al": 3.8, "mg": 4.2, "ca": 4.2, "mo": 2.8, "cr": 2.8} V cell terminal (decomposition + overpotential + bath ohmic) | bench molten-chloride cell at the design current density: terminal voltage vs charge | X-PAR |
+| driver h2c_eta_ad | 0.65 stage adiabatic efficiency incl. valve losses | bench run of the first-article head: indicator diagram and flow | X-PAR |
+| driver h2c_eta_v | 0.8 volumetric efficiency | same bench run | X-PAR |
 | driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES | X-PAR |
+| driver ro_feed_TDS_mg_L | 20.0 mg/L NaCl equivalent in VCD distillate | Conductivity of S25 at commissioning | X-PAR |
+| driver rx_bucl_T_C | 105 C | bench ZnCl2-catalysed n-butanol + HCl at reflux: conversion against time | X-PAR |
+| driver rx_bucl_tau_h | 6 h | same bench run | X-PAR |
 | driver rx_glass_d_um | 100.0 um milled cullet fines diameter to the digest | Sieve analysis of GLASS_MILL product | X-PAR |
 | driver rx_glass_k0_g_m2_s | 0.0002 g/(m2 s) zero-order glass dissolution in 3 M NaOH at 80 C; order 0.31 in [OH-] | Bench digest of milled cullet at 2 M / 20 wt% NaOH, 85 C: SiO2 in liquor vs time | X-PAR |
 | driver rx_glass_tau_min_h | 1.0 h practical minimum residence (mixing, heat-up, level control) | Bench digest | X-PAR |
+| driver rx_glyoxal_tau_h | 6 h | bench oxidation of acetaldehyde in 40 % HNO3 at 40 C: glyoxal yield against time | X-PAR |
+| driver rx_imid_T_C | 70 C | bench Debus-Radziszewski condensation of glyoxal, formaldehyde, methylamine and ammonia: conversion against T | X-PAR |
+| driver rx_imid_tau_h | 4 h | same bench run: 1-methylimidazole yield against time | X-PAR |
+| driver rx_meohferm_T_C | 35 C | same bench run | X-PAR |
+| driver rx_meohferm_tau_h | 48 h | bench ferment of habitation organics: methanol release (pectin demethylation) against time | X-PAR |
 | driver rx_tip_m_s | 2.5 m/s impeller tip speed for suspension | Just-suspended speed (Zwietering) at the bench | X-PAR |
 | driver slurry_min_DN | 50 DN | Deposition-velocity check of each slurry line at its solids loading (Durand/Wilson correlation) and a flow-loop trial with the plant solids | X-PAR |
 | driver vs_p_shell_case | "upset" design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported | Condensate titration during start-up before the column profile forms | X-PAR |
@@ -121,6 +174,9 @@ Total 251 items: 120 drivers, 131 register entries. Classification rule: first m
 | A-M-091 | 20 wt% NaOH on IA-BASE-01 and IA-BASE-PPT mass fraction | Bench hydroxide precipitation and glass digest with 20 wt% NaOH | X-PAR-04 |
 | A-M-094 | 1 mol NaOH per mol leached chloride, all of Al, Ca, Mg, Fe p mol/mol | Bench hydroxide precipitation of class A leach liquor: NaOH per mol chloride, Ca left in solution by ICP-OES | X-PAR-06 |
 | A-M-095 | dissolved cullet = IA-GLASS-03 less S08G, all as SiO2; 2 mol mol/mol | Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg | X-PAR-06 |
+| A-M-282 | terminal V per metal {al 3.8, mg 4.2, ca 4.2, mo 2.8, cr 2.8 V, A/cm2, kW per cell | bench molten-chloride cell at the design current density: terminal voltage vs charge | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-305 | pyrolysis NCG 0.5 kg/m3 at 150-200 C (H2/CH4/C2-rich light g kg/m3 at header temperature | NCG composition from the pyrolysis assay at the OIL_FRAC unit task | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-312 | PEM cell design point 0.6 V at 0.3 A/cm2 (IEC62282-3-100 mod V per cell; A/cm2 at the design point | Stack polarisation set at the first article | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
 
 ## 5. T4 Pilot runs
 
@@ -152,14 +208,56 @@ Total 251 items: 120 drivers, 131 register entries. Classification rule: first m
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
+| driver CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_h2_200bar_15C | 1.13 - H2 compressibility factor at 200 bar, 15 C | NIST isothermal pVT data check: H2 Z at 200 bar and 15 C (flagged verify in A-M-133) | X-PAR |
+| driver CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_o2_200bar_15C | 0.93 - O2 compressibility factor at 200 bar, 15 C | NIST isothermal pVT data check: O2 Z at 200 bar and 15 C (flagged verify in A-M-133) | X-PAR |
+| driver CRYO.cold-box-asu-recovery-train.cold-box.rcv_tube_kg_m | 28.3 kg/m receiver-tube linear mass (as-used) | mill certificate or a weighed stock length of the DN100 Sch 160 316L tube | X-PAR |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_MEOH.hold_d | 14 d hold time (D-DOCK shipped-product dispatch campaign, A-M-278) | dispatch log cadence at the dock | X-PAR |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.P_MPa | 20.0 MPa gauge design pressure (200 bar Type I cylinder-bank service, CRYO_O2 storage_mode) | cylinder bank datasheet at purchase | X-PAR |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.hold_d | 14 d hold time (D-DOCK shipped-product dispatch campaign, A-M-278) | dispatch log cadence at the dock | X-PAR |
+| driver DIGESTER.ew-cascade-train.max_shunt_dV_V | 6.0 V | worst-case pole-to-earth difference for the rectifier configuration | X-PAR |
+| driver DIGESTER.ew-cascade-train.stray_current_limit_A | 0.1 A | stray-current acceptance limit vs NFPA 70E / AQS-HSE basis | X-PAR |
+| driver DIGESTER.metals-leach-train.htc_header_P_bar | 15.55 bar a | steam heater design pressure vs heater duty sheet | X-PAR |
+| driver DIGESTER.metals-leach-train.htc_header_T_K | 473.15 K | steam heater temperature vs duty sheet | X-PAR |
+| driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task | X-PAR |
+| driver GAS.headers.meam_header_P_bar | 20.7 bar a | MeAM loop design pressure vs duty sheet | X-PAR |
+| driver GAS.headers.meam_header_T_K | 673.15 K | MeAM loop temperature vs duty sheet | X-PAR |
+| driver GAS.headers.methanol_synth_loop_P_bar | 50.0 bar a | loop reactor design pressure vs MEOH_SYNTH duty sheet | X-PAR |
+| driver GAS.headers.methanol_synth_loop_T_K | 523.15 K | loop reactor temperature vs MEOH_SYNTH duty sheet | X-PAR |
+| driver GEO.geo-loop.ghex_q_per_m_W | 35 W/m sustained per-metre bore capacity | Thermal response test on the first bore (ST-ORC-01) | X-PAR |
+| driver GEO.geo-loop.loop_head_m | 25 m loop circuit head | Circuit head from the routed loop isometric | X-PAR |
+| driver HDR.headers-train.hdr_min_DN_flue | 100 DN minimum, afterburner flue | Natural-draft and condensate-drainage check on the flue routing drawing | X-PAR |
+| driver HDR.headers-train.hdr_min_DN_gas | 25 DN minimum, gas headers | Take-off and instrument tapping check on the header GA at unit task 05 | X-PAR |
+| driver HDR.headers-train.hdr_run_default_m | 20 m fallback manifold run when no isometric route exists | Header run lengths from the routed isometrics at the next AQS-ISO-002 regen | X-PAR |
+| driver HEAT.heat-battery-train.hb_q3_hold_kWh_th | 14 kWh_th | Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision | X-PAR |
+| driver POLYMERS.fluoropolymer-train.hf_kiln.residence_min | 30.0 min | kiln exit HF strength vs residence at the first-article campaign | X-PAR |
 | driver ash_cop_c | 3.22 air-source heat pump cooling COP (EER 11.0), >= 19 kW | Selected unit rating | X-PAR |
 | driver ash_cop_h | 3.3 air-source heat pump heating COP at 8.3 C, >= 19 kW | Selected unit rating; low-ambient derate in bin-hour run | X-PAR |
+| driver atm_design_sg | 1.25 - liquid specific gravity for the hydrostatic case of atmospheric vessels (covers 20 wt% HCl 1.10 and 20 wt% NaOH 1.22) | Replace with the stored liquid density per unit at its unit sizing task | X-PAR |
+| driver atm_hold_d | {"store": 2.0, "process": 1.0} d of liquid inflow held: stores (tank, product, reagent, cut_tank, dock, ROOF_TANK, FAB_UPW_TANK) and process units | Replace with each unit's sized volume at unit task 02 | X-PAR |
+| driver atomizer_offspec_frac | 0.1 - | see A-M-139 | X-PAR |
+| driver backup_gen_rated_kW | 40.0 kW | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h | X-PAR |
 | driver base_bays_x | 4 bays | Structural grid review | X-PAR |
 | driver base_bays_y | 3 bays | Structural grid review | X-PAR |
 | driver bay_mm | 6000 mm structural bay | Structural grid review | X-PAR |
+| driver bed_DLI | 17.0 mol/m2/d | see A-M-133 | X-PAR |
+| driver bed_absorptance | 0.9 - | see A-M-133 | X-PAR |
+| driver bed_quantum_yield | 0.045 mol CO2/mol photon | see A-M-133 | X-PAR |
+| driver bmed_R_mono_ohm_cm2 | 3.0 ohm cm2 per monopolar membrane | Membrane area resistance by EIS in plant brine (X-MFG-35) | X-PAR |
+| driver bmed_V_bpm_V | 1.0 V per bipolar membrane at 200 A/m2 (reversible 0.83 V plus overpotential) | Bipolar membrane I-V curve on the first-article stack (X-MFG-35) | X-PAR |
+| driver bmed_V_end_per_stack_V | 3.0 V per stack for the end electrode pair (O2/H2 rinse cell) | Stack voltage minus sum of triplet voltages (X-MFG-35) | X-PAR |
+| driver bmed_cells_per_stack_max | 100 cell triplets per stack (manifold flow distribution) | same test: per-cell voltage spread | X-PAR |
 | driver bmed_sec_design_kWh_per_kg_pair | 2.1 kWh per kg acid+base (current graph basis) | Superseded: BMED energy now from bmed_sec_kWh_per_kg_base (X-PAR acid-loop decision) | X-PAR |
+| driver bmed_spacer_shadow | 1.5 - solution resistance multiplier for a woven mesh spacer | Stack ohmic resistance at three flow rates (X-MFG-35) | X-PAR |
+| driver cb_13x_CO2_mol_kg | 1.5 mol CO2 per kg 13X working capacity at about 6.6 kPa CO2, 25 C adsorb / 200 C regenerate | Breakthrough test of one 13X bed on the scrubbed flue gas (X-MFG-33) | X-PAR |
+| driver cb_chiller_COP | 2.5 - condenser chiller at -25 C evaporating | Chiller COP on the first article | X-PAR |
+| driver cb_dH_ads_kJ_mol | 36.0 kJ/mol CO2 on 13X | Regeneration energy measured on the first bed (X-MFG-33) | X-PAR |
+| driver cb_getter_W | 100.0 W heated Ar getter (Ar return from WAFER_FAB) | Getter heater power at temperature | X-PAR |
+| driver combustion_excess_O2 | 1.1 - | see A-M-133 | X-PAR |
 | driver cp_hcl20_kJ_kgK | 3.0 kJ/(kg K) | Check against the Perry sec. 2 aqueous HCl heat-capacity table at 20 wt% and 60 C | X-PAR |
 | driver cp_naoh20_kJ_kgK | 3.6 kJ/(kg K) | Check against the Perry sec. 2 aqueous NaOH heat-capacity table at 20 wt% and 60 C | X-PAR |
+| driver edi_CE | 0.1 - EDI current efficiency (water splitting carries the rest) | EDI stack current vs product resistivity (X-MFG-34) | X-PAR |
+| driver edi_V_cell | 4.0 V per EDI cell pair | EDI stack I-V | X-PAR |
+| driver ely_window_h | 6.0 h/d | see A-M-133 | X-PAR |
 | driver evap_U_ix | 2000.0 W/(m2 K) liquid-liquid interchanger (graphite block or nickel plate) | Thermal test of the interchanger | X-PAR |
 | driver evap_approach_K | 10.0 K interchanger cold-end approach | Interchanger thermal test | X-PAR |
 | driver evap_body_design_kPag | 100.0 kPa g body design (plus full vacuum) | Pressure test per ASME VIII-1 UG-99 / ISO 16528 | X-PAR |
@@ -176,6 +274,10 @@ Total 251 items: 120 drivers, 131 register entries. Classification rule: first m
 | driver evap_sump_h_mm | 400.0 mm liquid in the sump | Level control setpoint | X-PAR |
 | driver evap_tube_L_mm | 1500.0 mm | Envelope fit | X-PAR |
 | driver evap_tube_id_mm | 25.0 mm | Tube stock | X-PAR |
+| driver ew_anode_O2_frac | 0.02 - | see A-M-133 | X-PAR |
+| driver ew_bar_rise_K | 30.0 K bar temperature rise over 40 C ambient | Thermocouple on EW-7 bar at rated current (RECT-EW first article) | X-PAR |
+| driver ew_cathode_CE | 0.85 - | see A-M-133 | X-PAR |
+| driver ew_contact_drop_V | 0.05 V both bolted joints | Joint millivolt drop at rated current | X-PAR |
 | driver ext_F_slab | 1.264 W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3 | Slab edge detail | X-PAR |
 | driver ext_Ra_L_s_m2 | 0.3 L/(s m2) | Occupancy classification of the extension | X-PAR |
 | driver ext_T_design_c_C | 38.0 C cooling design dry bulb 0.4 % (DFW) | ASHRAE 2021 climatic data for the station | X-PAR |
@@ -190,36 +292,99 @@ Total 251 items: 120 drivers, 131 register entries. Classification rule: first m
 | driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension | X-PAR |
 | driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection | X-PAR |
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing | X-PAR |
+| driver fire_pump_head_margin_kPa | 150 kPa design margin over static + friction to the remote area | Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record) | X-PAR |
+| driver fire_tank_refill_h | 8 h to refill the reserve from the normal supply | City/well fill-rate confirmation at X-BAS-03 (site utilities) | X-PAR |
+| driver foundry_ca_add_frac | 0.0015 kg Ca deoxidizer/desulfurizer per kg melt charge | first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge | X-PAR |
+| driver foundry_inv_shell_kg_per_kg | 4.0 kg green shell per kg casting (6-dip class; envelope 3-6) | first shell campaign: built shell mass per kg castings across the 6-dip schedule | X-PAR |
+| driver foundry_inv_shell_reclaim_frac | 0.875 kg spent shell reclaimed to stucco/flour per kg spent shell | knock-out sieve yield: reclaimed stucco vs 0.5 kg/kg make-up balance (AQS-SIZE-FOUNDRY shell-waste line) | X-PAR |
+| driver foundry_inv_wax_kg_per_kg | 1.0 kg wax pattern per kg casting (thin-wall cluster class) | pattern weigh vs casting weigh on the first article cluster | X-PAR |
+| driver foundry_inv_wax_reclaim_frac | 0.9 kg dewax condensate reclaimed per kg wax pattern | dewax condensate weigh per campaign vs the 10 % burn/loss allowance | X-PAR |
+| driver foundry_kroll_dragout_frac | 0.02 kg MgCl2-class salt drag-out per kg Kroll MgCl2 gross, to FLUX_PREP | retort condensate weigh per campaign: salt drag-out vs the 2 % study allowance | X-PAR |
+| driver foundry_melt_loss_frac | 0.01 kg slag+dross per kg melt charge | weigh dross+slag per heat on the IND_MELT first article | X-PAR |
+| driver foundry_pot_export_frac | 0.25 kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products | metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals) | X-PAR |
+| driver foundry_stock_demand_kg_d | 25.9 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table | X-PAR |
 | driver gsh_bore_depth_m | 120.0 m bore depth | Drilling log | X-PAR |
 | driver gsh_bore_m_per_kWt | 55.0 m vertical bore per kW peak block load (mid of 43-65 m/kW typical range) | Thermal response test and ASHRAE bore-length method | X-PAR |
 | driver gsh_bore_spacing_m | 6.0 m bore spacing | Bore-field simulation (g-functions) | X-PAR |
 | driver gsh_cop_c | 4.13 ground-source heat pump cooling COP (EER 14.1 at 25 C entering fluid, ISO 13256-1) | Selected unit rating at design loop temperature | X-PAR |
 | driver gsh_cop_h | 3.2 ground-source heat pump heating COP at 0 C entering fluid (ISO 13256-1) | Selected unit rating at design loop temperature | X-PAR |
 | driver gsh_pump_W_per_kWt | 37.0 W loop pumping per kW thermal (5 hp per 100 tons, Kavanaugh grade A) | Loop hydraulic design | X-PAR |
+| driver h2c_P1_bar | 10.0 bar a suction (electrolyser outlet) | electrolyser outlet pressure log | X-PAR |
+| driver h2c_P2_bar | 200.0 bar a discharge (CRYO_H2 bank) | bank pressure log | X-PAR |
+| driver h2c_cavity_h_mm | 3.0 diaphragm cavity depth (spherical-cap profile) | cavity machining trial | X-PAR |
+| driver h2c_eta_motor | 0.9 motor and drive | motor test (AQS-INV-005 family) | X-PAR |
+| driver h2c_rpm | 300.0 crank speed | same | X-PAR |
+| driver h2c_run_h | 8.0 h/d at full rate (follows the electrolyser on PV hours) | hourly electrolyser log | X-PAR |
+| driver h2p_bed_margin | 3.0 bed mass margin over the cycle load (mass-transfer zone, ageing) | same | X-PAR |
+| driver h2p_cycle_h | 8.0 h adsorption half-cycle | same | X-PAR |
+| driver h2p_deoxo_ghsv_h | 5000.0 1/h over Pd/Al2O3 deoxo | outlet O2 below 5 ppm at the design rate on the first charge | X-PAR |
+| driver h2p_guard_cap | 0.1 kg HCl per kg promoted alumina | breakthrough test on a sample of the guard charge | X-PAR |
+| driver h2p_guard_days | 90.0 d between guard change-outs | same | X-PAR |
+| driver h2p_hcl_ppmv | 1.0 ppm v HCl in the feed (EW cathode gas trace) | HCl sampling of S49 (Draeger tube or IC) | X-PAR |
+| driver h2p_o2_ppmv | 1000.0 ppm v O2 in the purifier feed | O2 analyser on S49 in operation | X-PAR |
+| driver h2p_regen_T_C | 250.0 C TSA regeneration temperature | same | X-PAR |
+| driver h2p_sieve_work_cap | 0.1 kg water per kg 4A/13X sieve, working capacity at the cycle | breakthrough test on the sieve charge with a dew-point analyser | X-PAR |
+| driver hs_a_m2_m3 | 190.0 m2/m3 specific area of 25 mm cut rings | geometric area from the packing sample | X-PAR |
+| driver hs_dP_Pa_m | 400.0 Pa per m of bed at the design fraction of flood | pressure drop on the flooding test | X-PAR |
+| driver hs_fan_eff | 0.5 fan total efficiency | fan test | X-PAR |
+| driver hs_htu_m | 0.5 m, overall gas HTU | absorption test (NH3 or SO2 in air into water) on the same column | X-PAR |
+| driver hs_pump_eff | 0.4 small pump efficiency | pump test | X-PAR |
+| driver hs_pump_head_m | 10.0 m recirculation pump head | pump test | X-PAR |
+| driver ins_RH | 0.6 - | see A-M-158 | X-PAR |
+| driver ins_ambient_C | 25.0 C | see A-M-158 | X-PAR |
+| driver ins_h_surface_W_m2K | 10.0 W/(m2 K) combined outer coefficient | see A-M-158 | X-PAR |
+| driver ins_hot_surface_max_C | 50.0 C (below the ASTM C1055 60 C contact threshold) | see A-M-158 | X-PAR |
+| driver ins_hot_threshold_C | 50.0 C, lines above are insulated | see A-M-158 | X-PAR |
+| driver ins_k_elast | 0.04 W/(m K) elastomeric (C534 max) | see A-M-158 | X-PAR |
+| driver ins_k_mw_a | 0.037 W/(m K) mineral wool k at 0 C mean | see A-M-158 | X-PAR |
+| driver ins_k_mw_b | 0.00017 W/(m K2) slope | see A-M-158 | X-PAR |
+| driver ins_loss_frac_of_duty | 0.1 - | see A-M-158 | X-PAR |
+| driver ix_cycle_h | 24 h between regenerations | same breakthrough test | X-PAR |
+| driver ix_util | 0.5 fraction of total capacity used per cycle | breakthrough curve of [Bmim]Cl on the OH-form resin at the plant rate | X-PAR |
+| driver led_efficacy_umol_J | 2.8 umol/J | see A-M-133 | X-PAR |
+| driver maint_rotating | {"lube_mo": 6, "vibration_mo": 3, "bearing_y": 5, "seal_y": 3} months/years for motors, pumps, fans and compressors | Vibration and temperature trending; bearing L10 life from the motor design load | X-PAR |
+| driver meoh_cat_bulk_kg_L | 1.1 kg/L | see A-M-156 | X-PAR |
+| driver meoh_wty_margin | 3.0 - | see A-M-156 | X-PAR |
 | driver night_hours | 14.0 h/d served from storage | Hourly load and irradiance profile | X-PAR |
+| driver pem_kWh_kg_H2 | 55.0 kWh/kg | see A-M-133 | X-PAR |
+| driver poly_shop_reject_frac | 0.1 kg offcut to the wet line per kg polymer issued to MFG_SHOP | shop polymer offcut weigh at the first article (same class as the S58/S59/S60 10 % losses, AQS-DUTY-010) | X-PAR |
+| driver press_design_margin | 1.1 design / operating pressure | see A-M-156 | X-PAR |
 | driver pv_dc_ac_ratio | 1.2 DC kWp / inverter AC kW | Inverter clipping loss from the PVsyst/PVWatts hourly run at the chosen ratio | X-PAR |
 | driver pv_roof_gcr | 0.6 ground coverage ratio, low-tilt rows | Row-shading study (inter-row spacing at winter solstice noon) for the chosen tilt | X-PAR |
 | driver pv_roof_yield_factor | 1.0 roof yield / pv_yield_kWh_kWp_d | PVWatts run at the roof tilt and azimuth; replace 1.0 with the ratio | X-PAR |
 | driver pv_system_derate | 0.8 - | PVsyst loss tree for the selected modules and inverters | X-PAR |
 | driver pv_yield_kWh_kWp_d | 5.41 kWh/kWp/d before losses | PVsyst or measured site irradiance year at the chosen tilt | X-PAR |
+| driver pvl_diff_mass_kg | 20.0 kg heated mass (tube, boat, heater, hot-face insulation) | First-article tool run (X-MFG-38) | X-PAR |
+| driver pvl_pecvd_W_cm2 | 0.1 W/cm2 RF power density on the electrode | First-article tool run (X-MFG-38) | X-PAR |
+| driver raft_fc_MPa | 35.0 MPa concrete strength, raft and basement walls | Mix design and cylinder tests | X-PAR |
+| driver rcv_tube_len_m | 6.096 m, one random length per tube (as AQS-INV-003) | rack layout check against the CRYO bay | X-PAR |
 | driver roof_live_kPa | 0.96 kPa | Structural review | X-PAR |
 | driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 | X-PAR |
+| driver rx_ald_whsv_h | 1.0 1/h on ethanol (3.16 h-1 published / about 3) | see A-M-157 | X-PAR |
+| driver rx_cat_bulk_kg_L | 1.0 kg/L | see A-M-157 | X-PAR |
+| driver rx_hno3_absorber_tau_h | 2 h | NO absorption test of the HNO3 column at plant rate: outlet NOx | X-PAR |
 | driver rx_pyro_T_C | 500.0 C slow pyrolysis of oils and polymer residue | TGA of the dried float oil | X-PAR |
 | driver rx_pyro_cp_kJ_kgK | 2.5 kJ/(kg K) mean feed heat capacity 25-500 C | DSC | X-PAR |
 | driver rx_pyro_dH_MJ_kg | 1.3 MJ/kg endothermic heat of pyrolysis (upper end of polyolefin measurements) | DSC of the dried float oil | X-PAR |
 | driver rx_pyro_tau_h | 1.0 h solid/liquid residence, batch-equivalent | TGA conversion vs time at 500 C | X-PAR |
+| driver s_316L_400C_MPa_lower_bound | 80.0 MPa | read ASME II-D Table 1A for SA-312 TP316L at 400 C | X-PAR |
 | driver san_cover_dry | 0.3 dry fraction of compost-toilet cover and bed return | TS of cover material | X-PAR |
 | driver san_digest_srt_d | 15.0 d thermophilic SRT | Digester stability (VFA/alkalinity) at 15 d | X-PAR |
 | driver san_flushes_cap_d | 5.0 flushes per person per day | Flush counter on the HAB toilets for 30 days | X-PAR |
 | driver san_past_batches_d | 4 batches per day | Pasteuriser cycle log | X-PAR |
 | driver san_vs_destruction | 0.5 fraction of VS destroyed, thermophilic anaerobic | VS reduction across BLACK_DIGEST (Standard Methods 2540 G) | X-PAR |
 | driver san_vs_fraction | 0.85 VS / TS of faeces | TS/VS (Standard Methods 2540 G) on the digester feed | X-PAR |
-| driver storage_round_trip | 0.7 - | ZnBr2 vendor round-trip efficiency at the duty cycle | X-PAR |
+| driver storage.default_no_heat_input_T_C | 40.0 C | 0.4% site dry bulb 37.8 C (AQS-SITE-002) rounded up - confirm as the default | X-PAR |
+| driver struct_equip_density_kg_m3 | 150.0 kg/m3 empty equipment weight per envelope volume | Replace with CAD weights per unit as models are built | X-PAR |
+| driver struct_tank_kg_m3 | 40.0 kg/m3 empty storage tank weight per envelope volume (thin shell) | CAD weight per tank | X-PAR |
+| driver vent_dP_Pa | 500.0 Pa | see A-M-155 | X-PAR |
+| driver vent_transfer_h | 1.0 h | see A-M-155 | X-PAR |
 | driver vs_T_C | 40.0 C, vent condenser outlet | Vent condenser outlet temperature at design cooling water | X-PAR |
 | driver vs_dp_mm | 16.0 mm, nominal packing (in-house cut PVC tube rings) | Pressure drop and wetting test on the cut rings | X-PAR |
 | driver vs_margin | 1.5 packed height margin | as vs_htu_m | X-PAR |
 | driver vs_naoh_excess | 2.0 mol NaOH fed / mol HCl absorbed | Sump pH above 12 at the bleed rate | X-PAR |
 | driver vs_y_out_ppm | 1.0 ppmv HCl at the scrubber outlet (half the ACGIH TLV-C 2 ppm) | Outlet HCl by NIOSH 7903 sampling | X-PAR |
+| driver znbr_charge_h | 6.0 h/d | see A-M-135 | X-PAR |
 | A-M-005 | 300 / 1000 W/m2K | Agitator selection and coil test | X-MAT-11 |
 | A-M-006 | 1500 W/m2K | Exchanger maker rating | X-MAT-12 |
 | A-M-008 | 88 degC | Wall check at temperature (unit task 02) | MET-LEACH_CSTR_1-02 |
@@ -277,16 +442,174 @@ Total 251 items: 120 drivers, 131 register entries. Classification rule: first m
 | A-M-126 | Design coefficients inside published ranges: B_delta 0.75 T, T, kA/m, A/mm2 | IEC 60034-2-1 efficiency and IEC 60034-1 temperature-rise test on one first article per family; efficiency >= IE3, class F rise <= 105 K | X-INV-02 |
 | A-M-130 | Magnet comparison: NdFeB N42 Br 1.30 T, 3 mm; bonded anisotr T, mm, % | Build one NdFeB and one ferrite rotor of MF-02; measure back-EMF constant, torque at rated current and efficiency (IEC 60034-2-1 method adapted to BLDC); compare with the table within 10 % | X-INV-02D |
 | A-M-131 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-132 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-133 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-134 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-135 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-136 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-137 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-138 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-139 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-140 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-141 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-142 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-143 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-144 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-145 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-146 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-147 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-148 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-149 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-150 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-151 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-152 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-153 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-154 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-155 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-156 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-157 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-158 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-159 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-160 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-161 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-162 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-163 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-164 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-165 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-166 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-167 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-168 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-169 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-170 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-171 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-172 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-173 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-174 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-175 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-176 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-177 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-178 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-179 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-180 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-181 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-182 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-183 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-184 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-185 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-186 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-187 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-188 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-189 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-190 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-191 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-192 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-193 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-194 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-195 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-196 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-197 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-198 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-199 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-200 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-201 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-202 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-203 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-204 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-205 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-206 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-207 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-208 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-209 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-210 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-211 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-212 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-213 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-214 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-215 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-216 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-217 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-218 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-219 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-220 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-221 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-222 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-223 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-224 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-225 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-226 | Motor family models: envelope-correct parts from AQS-INV-005 mm | First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator | X-INV-02C |
+| A-M-227 | CRYO_ASU restored BH-verbatim: in 193.730075 kg/d N2 + 21.62 kg/d; kW | python3 -m flow_graph.param.balance runs physics+reconcile to completion with CRYO_ASU present (today it asserts at IA-EW4-N2); NOX_SCRUB/CRYO_N2/HDR_O2 residuals close (diagnostic 2026-10-18: -193.58/+217.30/+86.04 -> +5.04/0.00/0.00 kg/d) | R10 |
+| A-M-228 | -2.71 kg/d at the HDR_O2 header (0.684 supply vs 3.393 draws kg/d O2 | o2_close.close_o2 src >= draw (the 'O2 short' assert passes) and two independent O2 sources exist (P19); CRYO_O2 residual >= -1e-4 | R10 |
+| A-M-229 | GROW_BED crew duty: 29.12 m2 tomato-proxy bed (area = 4.2 kg m2; kg/d; kW | python3 -c "import json,sys; sys.path.insert(0,'.'); from flow_graph.param import balance as B; g=json.load(open(B.GP)); B.physics(g); R=B.reconcile(g)" runs to completion with no assert; GROW_BED residual 0.000 kg/d; TERRACE_IRRIG absent; python3 flow_graph/check_authority_contract.py exit 0 | R10 |
+| A-M-230 | H2O_ELYZ restored as the plant O2 source: BH rates on the gr kg/d; kW | python3 -c "import json,sys; sys.path.insert(0,'.'); from flow_graph.param import balance as B; g=json.load(open(B.GP)); B.physics(g); R=B.reconcile(g)" completes with no assert and no negative rates; CRYO_O2.params.o2_gap.system_short_kg_d == 0.0 and system_surplus_kg_d > 0 with IA-O2-PROD == IA-O2-SHIP == system_surplus; CRYO_O2, HDR_O2, H2O_ELYZ, ROOF_TANK unit residuals 0.000; two independent O2 sources present (P19: IA-ELY-O2 + S87); python3 flow_graph/check_authority_contract.py exit 0 | R10 |
+| A-M-231 | 156.16 kW process base / 250.0 kW converged (note basis). Li kW | python3 docs-authority/_power_sizing.py reports base demand 179.46 kW (156.16 class derivation, not the 309 kW stale-list figure); roof_close converges; schema keys unchanged for ess_tf/_one_line/solver/write_graph consumers | D-PV encode lane 2026-10-18 |
+| A-M-232 | 45.0 kW flat (IND_MELT 25 / VAC_IND 15 / RF_HEAT 5), 24 h kW | Foundry sensitivity case in the derivation note §7; replaced when FOUNDRY_SIZING duty-cycle data lands on the graph | D-PV encode lane 2026-10-18 |
+| A-M-233 | 312.5 kW kW | grep IA-PV-01 rate 312.5 and PV_ARRAY.continuous_kw 312.5 in plant_flow_graph.json; note cites A-M-233 | D-PV encode lane 2026-10-18 |
+| A-M-234 | need 250.0 kW / target 625.0 kW kW | mvs.electrical.need_kw.value == 250.0 and target_kw.value == 625.0 with notes citing A-M-234 and AQS-NOTE-PV-REBASE | D-PV encode lane 2026-10-18 |
+| A-M-236 | 93.84 kW / +32 832 m2 extension; building 198 x 168 m (33 26 kW; m2 | _power_sizing.py no longer carries the EXT_HALL subtraction no-op; roof_close ext total_kW is added exactly once to both cases | D-PV encode lane 2026-10-18 |
+| A-M-237 | 1137 kW charge / 250 kW discharge / 3500 kWh; 49 x 60 kW inv kW; kWh | ZNBR2.params kW 1137 / kWh 3500 / charge_kW 1137 / discharge_kW 250; SOL_ARK_60K.params count 49 / kW 2940; sections 5 x <=11 inverters (10,10,10,10,9), breakers 1000 A, 750 kVA transformers | D-PV encode lane 2026-10-18 |
+| A-M-238 | CRYO_ASU critical at the 1.66 kW AQS-DUTY-069 duty; critical kW | python3 docs-authority/_power_sizing.py → backup.critical_list == {HABITATION 3.0, CRYO_H2 4.0, CRYO_ASU 1.66, GROW_BED 5.0, controls 2.0}; critical_kW 15.66; gen_kW 20 | D-PV encode lane 2026-10-18 |
+| A-M-239 | 0.45 COP_c per kW_th drive (silica-gel adsorption, 65 °C drive / 30 °C recool / 12 °C chilled) | ADS_CHILL.params COP_c 0.45, kW_c 5.0, derated 3.5 at 65 °C; drive edge 5.0 kW_th, chilled 2.25 kW_c, recool 7.25 kW | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-240 | 4.5 kW_c building summer cooling / 1.5 kW_e displaced at COP kW_c; kW_e | IA-ADS-CHW note carries the 1.5 kW_e displaced-chiller basis; ADS_CHILL N+1 note names the compression chiller | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-241 | 6.65 kW/K make-up-air tempering (~23 900 m3/h); 12 kW coil a kW/K; kW | MAU_HX.params kW 12.0 / kW_per_K 6.65 / dT_K 1.8; IA-Q4-MAU 12.0 kW winter design; complementary-season note vs IA-Q4-ADS | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-242 | 1.5 m3 per ladder; 43.5 kWh at 70/45 K swing; <=0.3 kW stand m3; kWh; kW | Buffer module rows appear in HEAT_LADDER_DUTIES.md when the heat lane encodes Q4 buffer nodes (not in this lane write-set) | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-243 | 3.0 kW_th sustained injection ceiling; 0.7 kW normal recharg kW_th | GEO_GHEX.params.Q_GHEX_avail_kW_th == 3.0 and survey_status design_survey_locked unchanged; no Q4->GEO_GHEX branch added by this lane | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-244 | 12 kW at 37.8 °C (0.4 % design); fan 0.6 kW kW | HL-Q4-REJ to_unit_id == DRY_COOLER, rate 9.3493 kW with the derivation note; DRY_COOLER.params rated_kW 12.0 / fan_kW 0.6 / design_C 37.8; GEO_ORC stays placeholder with study_close citation | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-245 | 1.7 kW average / 8-11 kW batch at 40-60 °C kW_th | IND_HEAT_TO_HX + VAC_HEAT_TO_HX rates 1.063 + 0.638 kW, layers [thermal], params duty_batch_kW 8-11; edges land on MET_HX_Q4 | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-246 | 0.5-1.0 kW at <=60 °C (bounding 1.0 kW encoded) kW_th | IA-Q3A-TRIM/IA-Q3B-TRIM absent from the graph; IA-RECT-Q4 1.0 kW to Q4_BUS; IA-TRIM-HX5/HX6 from RECTIFIER to the process units with elec+thermal layers | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-247 | 0.5-1.0 kW at 45-60 °C (grease-kettle wax-hold stage) kW_th | No grease Q4 branch exists in the graph until the temperature-class check closes (grep Q4_BUS grease yields nothing this lane) | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-249 | 0.2-0.4 kW_e net kW_e | GEO_ORC presence stays placeholder, continuous_kw value None/0-class, params.study_close cites AQS-HEAT-STUDY-002; HL-Q4-REJ no longer terminates on GEO_ORC | AQS-HEAT-STUDY-002 implementation lane 2026-10-18 |
+| A-M-250 | S12 crew grey+wash to GREY_TREAT = habitation in-sum minus f kg/d | python3 -m flow_graph.param.balance (no --write): HABITATION and GREY_TREAT residuals < 0.5 kg/d post-physics | R10a water/wastewater closure lane 2026-10-18 |
+| A-M-251 | BLACK_DIGEST splits: biogas 0.10 (BH), cake to AFTERBURNER 0 kg/d | python3 -m flow_graph.param.balance (no --write): BLACK_DIGEST residual < 0.5 kg/d post-physics | R10a water/wastewater closure lane 2026-10-18 |
+| A-M-252 | IA-BMED-03 = 449.47 and IA-BMED-04 = 502.98 kg/d leach spent kg/d | python3 -m flow_graph.param.balance (no --write): BMED_ACID, BMED_BASE, EVAP_ACID, EVAP_BASE residuals < 0.5 kg/d post-physics; no vapor>feed inversion on either evaporator | R10a water/wastewater closure lane 2026-10-18 |
+| A-M-253 | S08G glass/ceramic goods to MFG_SHOP 26.70 kg/d (BH 26.20 +  kg/d | python3 -m flow_graph.param.balance (no --write): GLASS_DIGEST residual < 0.5 kg/d post-physics | R10a water/wastewater closure lane 2026-10-18 |
+| A-M-254 | NORTH_DOCK freight ledger reported, not force-closed: ships  kg/d | python3 -m flow_graph.param.balance (no --write): ledger residual equals NORTH_DOCK residual and minus the sum of all other unit residuals; all other named R10a units < 0.5 kg/d | R10a water/wastewater closure lane 2026-10-18 |
+| A-M-255 | EW Faraday cascade re-based on live endpoints: DC feeds IA-D kW / kg/d | python3 -m flow_graph.param.balance (no --write): EW_1..EW_9 residuals < 1e-3 kg/d; HDR_H2 residual < 1e-3; CRYO_H2 residual = 1.98 kg/d reported in L['ew']['h2_pool'] | R10b mass-failure reduction lane 2026-10-18 |
+| A-M-257 | WAFER_FAB closes: S03 rated 1.4998 kg/d (BH verbatim N2 purg kg/d | python3 -m flow_graph.param.balance: WAFER_FAB and HDR_N2 residuals < 1e-3 kg/d | R10b mass-failure reduction lane 2026-10-18 |
+| A-M-259 | Heat-ladder store ledgers re-solved and closed: Q1/Q2 down s kW | pytest flow_graph/test_heat_ladder.py (stores close within 0.01 kW); python3 -m flow_graph.param.write_graph heat prints stores CLOSE | R10b heat-store lane 2026-10-18 |
+| A-M-260 | Register reconciliation: EW_1..9 params.sizing re-stamped li - | python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors) | R10b register reconciliation 2026-10-18 |
+| A-M-261 | 14.0 kg/d formed stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1;  kg/d | python3 -m flow_graph.param.foundry_poly (idempotent re-derivation); shop stock-draw weigh at the first article | R12 foundry/polymers sizing lane 2026-10-18 |
+| A-M-262 | 1.0 % of melt charge to slag+dross (FOUNDRY_SLAG_TO_LEACH) kg/kg | weigh dross+slag per heat on the IND_MELT first article (X-MFG-37 trial class) | R12 foundry/polymers sizing lane 2026-10-18 |
+| A-M-263 | 10 % polymer offcut to the wet line per kg issued to MFG_SHO kg/kg | shop polymer offcut weigh at the first article | R12 foundry/polymers sizing lane 2026-10-18 |
+| A-M-266 | Shop polymer draw P = 0.377186 kg/d = -r0 + f*K/(1-f) (A-M-2 kg/d | python3 -m flow_graph.param.foundry_poly (idempotent closure re-derivation); shop polymer draw weigh at the first article | R12 foundry/polymers sizing lane 2026-10-18 |
+| A-M-270 | FOOD_STORE 80 d x 0.252 kg DM/d (rho 600); METAL_STORE 14 d  see value (d, kg/d, kg/m3, MPa) | X-INV-02C: confirm hold days against the dispatch cadence and crop-failure duration when the trade-logistics pass issues | X-PAR-02 |
+| A-M-285 | 0.25 kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products | metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals) | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-303 | DN25 minimum on gas and water headers (take-off seating, ins DN minimum, gas headers | Take-off and instrument tapping check on the header GA at unit task 05 | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-304 | DN100 minimum on the afterburner flue (draft stability and c DN minimum, afterburner flue | Natural-draft and condensate-drainage check on the flue routing drawing | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-306 | 20 m fallback manifold run when no routed isometric exists ( m | Header run lengths from the routed isometrics at the next AQS-ISO-002 regen | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-307 | 35 W/m sustained per-metre bore capacity (mid of the 30-50 W W/m | Thermal response test on the first bore (ST-ORC-01) | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-310 | source-loop rise 3 K (keeps evaporator approach and pump pow K; m | Circuit head from the routed loop isometric | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-313 | 150 kPa design margin over static + friction to the hydrauli kPa | Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record) | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-314 | 8 h to refill the fire reserve from the normal supply (NFPA  h | City/well fill-rate confirmation at X-BAS-03 (site utilities) | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-315 | 14 kWh_th Q3 hold (reconciled from the issued sec. 5 volume, kWh_th | Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-316 | 0.0015 kg Ca deoxidizer/desulfurizer per kg melt charge | first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
+| A-M-318 | AL_POT, MG_POT, CA_POT, CR_CELL and MO_CELL select graphite  selection class | pot-cell verification: first-article liner and anode change-out data, bath analysis at change-out, and shell-liner inspection vs the 10 mm allowance | X-MAT-22 |
+| A-M-319 | TI_CELL: alumina-brick carbochlorinator at 800 C with graphi selection class | Kroll retort first-article: wall condition after the 1 kg batch, MgCl2 drain recovery, launder integrity | X-MAT-22 |
+| A-M-320 | IND_MELT clay-graphite crucibles (one per Cu/Zn/Fe/Al family selection class | first-article furnace campaign: crucible heats-to-failure, element hours at class temperature, muffle inspection at the SINTER and SHELL_BURNOUT class | X-MAT-22 |
+| A-M-321 | WAX_PATTERN 304L melt tank (70-90 C) + PP-H bins (M5 80 C ti selection class | first-article shell-room wear and lining inspection vs the issued classes | X-MAT-22 |
+| A-M-322 | ROLL induction-hardened H13/D2 rolls on cast-steel housings; selection class | die, roll and mould first-article wear measurement vs the issued tool-material classes | X-MAT-22 |
+| A-M-323 | F_RECOVER PE hold tank at ambient + PVDF internals + P3 PVDF selection class | construction-class re-check at the task 02 sizing gate of each unit | X-MAT-22 |
+| A-M-324 | 316L jacketed soap kettles + 316L agitators for the Ca and L selection class | kettle first-article: soaping campaign residue and cleanability, no pit-rate claim | X-MAT-22 |
+| A-M-326 | Ti porous transport layers, Ir/Ru mixed-oxide anode + Pt cat selection class | PEM stack first-article: voltage-hold degradation and membrane condition vs the rated class | X-MAT-22 |
+| A-M-327 | PELLET 316L die plate + cutter hub + UHMW-PE trough liner +  selection class | pelletiser first-article die/cutter wear inspection | X-MAT-22 |
+| A-M-328 | SI_REDUCE issues as a graphite hot-face carbothermic-reducti selection class | construction-class re-check at the task 02 sizing gate | X-MAT-22 |
 
 ## 7. T6 Commissioning measurements
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
+| driver FAB.wafer-line-train.campaign_d | 7.0 d | logged campaign schedule at the fab commissioning task | X-PAR |
 | driver U_free_convection_W_m2K | 7.0 W/(m2 K) | Coil outlet temperature on the installed air cooler | X-PAR |
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus | X-PAR |
 | driver ew_bus_drop_V | 0.3 V | Measure bus-bar and contact drop on the installed DC bus at rated current | X-PAR |
+| driver exp_T_in_K | 300.0 K expander inlet after aftercooler | Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power | X-PAR |
+| driver exp_eta_comp | 0.7 - loop compressor isentropic efficiency | Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power | X-PAR |
+| driver exp_eta_s | 0.75 - expander isentropic efficiency | Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power | X-PAR |
+| driver exp_pr | 5.0 - reverse-Brayton N2 loop pressure ratio (backup refrigeration, Q-010) | Commissioning run of the EXPANDER loop on the condenser at rated CO2 load: outlet T, loop flow and net power | X-PAR |
 | driver ext_light_frac | 0.1 fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | Operating schedule and daylight study | X-PAR |
+| driver hs_removal | 0.99 fraction of the absorbable species removed | outlet sampling at commissioning | X-PAR |
+| driver maint_insert_life_y | {"BMED_ACID": 5, "BMED_BASE": 5, "BMED_UPW_POLISH": 5, "CRYO_ASU": 5, "CRYO_H2": 2, "H2_PURIFIER": 3, "MEOH_SYNTH": 3, "ALD": 2, "FORM": 1, "MEAM": 2, "HNO3": 0.5, "ACEX": 3, "ZNBR2": 5} years between replacements of the consumable insert of each unit (membranes, sorbent, catalyst, gauze, resin, diaphragms, stack) | Performance trending from the first operating year (pressure drop, conversion, current efficiency, breakthrough) sets the interval | X-PAR |
 | driver rect_efficiency | 0.8 - | Vendor efficiency curve for the selected rectifier at the operating current | X-PAR |
+| driver spares_rule | {"bearing": [0.1, 2], "seal": [0.2, 2], "electronics": [0.1, 1], "instrument": [0.1, 1], "valve": [0.05, 1], "protection": [0.1, 1], "fastener": [0.02, 4], "support": [0.0, 0], "fabricated part": [0.0, 0], "motor": [0.05, 1]} [fraction of installed, minimum] per category; motors per family | Replace with failure-rate data from the first operating year (X-OPS-02) | X-PAR |
 | driver vs_a_m2_m3 | 340.0 m2/m3 specific area of 16 mm rings | Measured ring geometry | X-PAR |
 | driver vs_air_mg_kg | 21.7 mg air per kg feed (N2 13.4 + O2 8.3 at 25 C, 101.3 kPa, air-saturated fresh water) | Vent gas flow meter on the column vent during commissioning | X-PAR |
 | A-M-007 | 0.0002 m2K/W | Operating record | X-MAT-11 |
@@ -301,6 +624,8 @@ Total 251 items: 120 drivers, 131 register entries. Classification rule: first m
 | A-M-118 | Sanitation train: 4 persons; 25 % of excreta via compost toi persons, L, kg/d, m | ISO 30500 challenge test (E. coli, MS2, C. perfringens, Ascaris suum) on three consecutive batches; per-batch E. coli / faecal coliform (Standard Methods 9223 B, EPA 1680) and Salmonella (EPA 1682) before release; flush counter 30 days; pressure-cascade smoke test FARM > HAB > sanitation room; afterburner residence-time and temperature survey at commissioning (EU IED Art. 50) | X-SAN-01 |
 | A-M-120 | Held study mass rates reconciled by minimum weighted least s kg/d | test_balance.py: zero units open and zero reconciled moves above 2 %; commissioning measurement T-PAR-02 (A-M-123) | X-PAR-02 |
 | A-M-123 | T1 terrace transpiration = irrigation - drains (37.176 kg/d; kg/d | T-PAR-02 commissioning measurement over 7 days at steady state: (a) S40 and S41/S42 by mag-flow meter and IA-HVAC-COND by tipping/weigh tank, closure within 2 %; (b) cold-box O2 product by thermal mass-flow meter against the summed HDR_O2 draws, closure within 2 %, IA-O2-RET valve shut; (c) terrace CO2 and O2 by NDIR and paramagnetic analysers to confirm zero net exchange; (d) leach dissolved gas by headspace GC against the Henry-law bound | X-PAR-02 |
-| A-M-127 | Route rule: rack elevation for a line is at least 300 mm abo mm | Installed-route survey of IA-ACOH, IA-ALD, IA-MEAM: riser >= 0.3 m, no support binding at the operating-temperature cycle (commissioning) | X-PIP-04 |
+| A-M-127 | Route rule: rack elevation for a line is at least 300 mm abo mm | Installed-route survey of IA-ACOH, IA-ALD, IA-MEAM: riser >= 0.3 m, no support binding at the operating-temperature cycle (commissioning) | X-PIP-06 |
 | A-M-128 | T6: all CO2 dosed to GROW_BED (S04 + S89 = 19.0 kg/d) is fix kg/d | T-PAR-03 commissioning measurement: grow-bed enclosure CO2 dose and exhaust CO2/O2 by NDIR and paramagnetic analysers over 7 days, O2 release within 10 % of 32/44 x CO2 fixed; leach off-gas by headspace GC, desorbed gas below the Henry bound | X-PAR-11 |
 | A-M-129 | O2 species ledger: C5-C10 cut as C7.5H17 (3.51 kg O2/kg), or kg/d | Commissioning O2 inventory test T-PAR-04: header pressure and cold-box O2 product logged over 7 days with the combustion units running; O2 make-up equal to the ledger deficit within 10 % | X-PAR-11 |
+| A-M-317 | 0.1258 kW continuous demand on the design-day bounding winter case | vendor pump curve check at the installed loop (AQS-DUTY-076 Open: none at the survey-locked basis; survey confirmation is the registered replacing test) | X-ELS-02 load list Rev C, 2026-10-21 |
+| A-M-325 | ADS_CHILL 304L adsorber shells + silica-gel beds + 316L wate selection class | season-commissioning trial: seal leak-down on the adsorbers, coil condition at the dry cooler and make-up-air coil | X-MAT-22 |

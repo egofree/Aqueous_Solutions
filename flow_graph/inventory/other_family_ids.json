@@ -1,0 +1,395 @@
+{
+ "_about": "Other building-block family id register (append-only). flow_graph/inventory/other.py looks a family up here by (category, item, spec) and allocates the next unused id for a new one. An id is never reused, even when its family no longer appears in the inventory.",
+ "families": {
+  "OF-01": {
+   "category": "bearing",
+   "item": "deep-groove ball bearing",
+   "spec": "ISO 15, normal class"
+  },
+  "OF-02": {
+   "category": "bearing",
+   "item": "deep-groove ball bearing",
+   "spec": "ISO 15 / ISO 492 normal class, C3"
+  },
+  "OF-03": {
+   "category": "electronics",
+   "item": "PLC digital I/O point",
+   "spec": "IEC 61131-2"
+  },
+  "OF-04": {
+   "category": "electronics",
+   "item": "PLC analog input point",
+   "spec": "IEC 61131-2"
+  },
+  "OF-05": {
+   "category": "electronics",
+   "item": "BLDC driver",
+   "spec": "IEC 61800-5-1"
+  },
+  "OF-06": {
+   "category": "electronics",
+   "item": "motor starter (contactor + overload)",
+   "spec": "IEC 60947-4-1"
+  },
+  "OF-07": {
+   "category": "electronics",
+   "item": "PLC I/O module, 16 channel",
+   "spec": "IEC 61131-2"
+  },
+  "OF-08": {
+   "category": "electronics",
+   "item": "variable-frequency drive",
+   "spec": "IEC 61800-5-1"
+  },
+  "OF-09": {
+   "category": "electronics",
+   "item": "solenoid driver channel",
+   "spec": "IEC 61131-2 DO"
+  },
+  "OF-10": {
+   "category": "electronics",
+   "item": "compressor contactor + overload",
+   "spec": "IEC 60947-4-1"
+  },
+  "OF-11": {
+   "category": "electronics",
+   "item": "stepper driver",
+   "spec": "IEC 61800-5-1"
+  },
+  "OF-12": {
+   "category": "electronics",
+   "item": "safety PLC (SIL 2 capable), CPU and I/O rack",
+   "spec": "IEC 61508 / IEC 61511"
+  },
+  "OF-13": {
+   "category": "fabricated part",
+   "item": "fabricated part set",
+   "spec": "models/mfg/<unit>/bom.csv"
+  },
+  "OF-14": {
+   "category": "fastener",
+   "item": "anchor bolt",
+   "spec": "ISO 3506 A4-70 wedge anchor"
+  },
+  "OF-15": {
+   "category": "fastener",
+   "item": "M10 x 40 lid bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-16": {
+   "category": "fastener",
+   "item": "M8 x 30 lid bolt",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-17": {
+   "category": "fastener",
+   "item": "M12 anchor",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-18": {
+   "category": "fastener",
+   "item": "M12x40 hex bolt + nut + 2 washers",
+   "spec": "PVDF"
+  },
+  "OF-19": {
+   "category": "fastener",
+   "item": "M16 stud + 2 nuts (ISO 4014 / ISO 4032)",
+   "spec": "ISO 3506 A4-70 outside the wetted zone"
+  },
+  "OF-20": {
+   "category": "fastener",
+   "item": "M16 stud + 2 nuts (ISO 4014 / ISO 4032)",
+   "spec": "ISO 898-1 8.8 zinc"
+  },
+  "OF-21": {
+   "category": "fastener",
+   "item": "1/2 in stud bolt",
+   "spec": "ASTM A193 B8M / A194 8M"
+  },
+  "OF-22": {
+   "category": "fastener",
+   "item": "5/8 in stud bolt",
+   "spec": "ASTM A193 B7 / A194 2H"
+  },
+  "OF-23": {
+   "category": "fastener",
+   "item": "M10 anchor",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-24": {
+   "category": "fastener",
+   "item": "3/4 in stud bolt",
+   "spec": "ASTM A193 B8M / A194 8M"
+  },
+  "OF-25": {
+   "category": "fastener",
+   "item": "M10",
+   "spec": "A4-70"
+  },
+  "OF-26": {
+   "category": "fastener",
+   "item": "M10 x 40 lid bolt",
+   "spec": "ASTM A193 B8"
+  },
+  "OF-27": {
+   "category": "fastener",
+   "item": "M12",
+   "spec": "A4-70"
+  },
+  "OF-28": {
+   "category": "fastener",
+   "item": "M8",
+   "spec": "A4-70"
+  },
+  "OF-29": {
+   "category": "fastener",
+   "item": "Flange gasket",
+   "spec": "PTFE envelope"
+  },
+  "OF-30": {
+   "category": "fastener",
+   "item": "Flange gasket",
+   "spec": "graphite sheet"
+  },
+  "OF-31": {
+   "category": "fastener",
+   "item": "M10 U-bolt for DN150",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-32": {
+   "category": "fastener",
+   "item": "Lid gasket 40 mm wide",
+   "spec": "FKM"
+  },
+  "OF-33": {
+   "category": "fastener",
+   "item": "Solvent cement",
+   "spec": "PVC-U per ASTM D2564"
+  },
+  "OF-34": {
+   "category": "instrument",
+   "item": "flow transmitter",
+   "spec": "electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456"
+  },
+  "OF-35": {
+   "category": "instrument",
+   "item": "pressure transmitter",
+   "spec": "ceramic diaphragm, IEC 61298"
+  },
+  "OF-36": {
+   "category": "instrument",
+   "item": "temperature element",
+   "spec": "IEC 60751, 316L thermowell"
+  },
+  "OF-37": {
+   "category": "instrument",
+   "item": "high-level switch",
+   "spec": "IEC 60947-5, 316L"
+  },
+  "OF-38": {
+   "category": "instrument",
+   "item": "level transmitter",
+   "spec": "IEC 62828, PTFE lens"
+  },
+  "OF-39": {
+   "category": "instrument",
+   "item": "gas detector, H2",
+   "spec": "alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling"
+  },
+  "OF-40": {
+   "category": "instrument",
+   "item": "gas detector, O2 deficiency",
+   "spec": "alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)"
+  },
+  "OF-41": {
+   "category": "instrument",
+   "item": "gas detector, Cl2 / HCl",
+   "spec": "alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low"
+  },
+  "OF-42": {
+   "category": "instrument",
+   "item": "temperature element (SIF, independent)",
+   "spec": "IEC 60751, own thermowell"
+  },
+  "OF-43": {
+   "category": "instrument",
+   "item": "gas detector, O2 enrichment",
+   "spec": "alarm 23.5 vol %, trip 25 vol %, breathing height"
+  },
+  "OF-44": {
+   "category": "instrument",
+   "item": "gas detector, CO",
+   "spec": "alarm 25 ppm, trip 50 ppm, breathing height"
+  },
+  "OF-45": {
+   "category": "instrument",
+   "item": "gas detector, NOx",
+   "spec": "alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height"
+  },
+  "OF-46": {
+   "category": "protection",
+   "item": "inverse-time circuit breaker, 3-pole",
+   "spec": "UL 489 / IEC 60947-2"
+  },
+  "OF-47": {
+   "category": "seal",
+   "item": "mechanical seal, single",
+   "spec": "SiC/SiC faces, FKM"
+  },
+  "OF-48": {
+   "category": "support",
+   "item": "pipe clamp",
+   "spec": "PP clamp with EPDM liner, MSS SP-58 Type 7"
+  },
+  "OF-49": {
+   "category": "support",
+   "item": "U-bolt with guide",
+   "spec": "316 U-bolt, MSS SP-58 Type 24"
+  },
+  "OF-50": {
+   "category": "valve",
+   "item": "isolation valve",
+   "spec": "PVC-U true-union ball valve, MSS SP-122, EPDM seals"
+  },
+  "OF-51": {
+   "category": "valve",
+   "item": "isolation valve",
+   "spec": "PP ball valve with HDPE stub ends, ISO 16135"
+  },
+  "OF-52": {
+   "category": "valve",
+   "item": "isolation valve",
+   "spec": "316L ball valve, ASME B16.34 Cl 150, RF flanged"
+  },
+  "OF-53": {
+   "category": "valve",
+   "item": "isolation valve",
+   "spec": "CPVC true-union ball valve, MSS SP-122, FKM seals"
+  },
+  "OF-54": {
+   "category": "valve",
+   "item": "check valve",
+   "spec": "PP swing/ball check valve with HDPE stub ends, ISO 16137"
+  },
+  "OF-55": {
+   "category": "valve",
+   "item": "check valve",
+   "spec": "PVC-U true-union swing/ball check valve, EPDM seals"
+  },
+  "OF-56": {
+   "category": "valve",
+   "item": "isolation valve",
+   "spec": "PVDF ball valve, ISO 16135, PTFE seats"
+  },
+  "OF-57": {
+   "category": "valve",
+   "item": "check valve",
+   "spec": "CPVC true-union swing/ball check valve, FKM seals"
+  },
+  "OF-58": {
+   "category": "valve",
+   "item": "check valve",
+   "spec": "PVDF swing/ball check valve, ISO 16137, PTFE seats"
+  },
+  "OF-59": {
+   "category": "valve",
+   "item": "isolation valve",
+   "spec": "CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged"
+  },
+  "OF-60": {
+   "category": "valve",
+   "item": "isolation valve",
+   "spec": "PVC-lined ball valve in FRP service, ISO 16135"
+  },
+  "OF-61": {
+   "category": "valve",
+   "item": "check valve",
+   "spec": "316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged"
+  },
+  "OF-62": {
+   "category": "valve",
+   "item": "isolation valve",
+   "spec": "PP-H ball valve, ISO 16135, EPDM seals"
+  },
+  "OF-63": {
+   "category": "valve",
+   "item": "ESD valve, spring-return actuator",
+   "spec": "316L, fail-safe, IEC 61511"
+  },
+  "OF-64": {
+   "category": "valve",
+   "item": "check valve",
+   "spec": "PP-H swing/ball check valve, ISO 16137, EPDM seals"
+  },
+  "OF-65": {
+   "category": "valve",
+   "item": "check valve",
+   "spec": "PVC-lined swing/ball check valve in FRP service, ISO 16137"
+  },
+  "OF-66": {
+   "category": "fastener",
+   "item": "M12 anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-67": {
+   "category": "fastener",
+   "item": "M10 x 30 hood bolts",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-68": {
+   "category": "fastener",
+   "item": "M16 T-bolt + nut (ISO 4014 / ISO 4032)",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-69": {
+   "category": "fastener",
+   "item": "M16 stud + 2 nuts (ISO 4014 / ISO 4032)",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-70": {
+   "category": "fastener",
+   "item": "M12 stud + nut (ISO 4014 / ISO 4032)",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-71": {
+   "category": "fastener",
+   "item": "M10 x 30 guard screws",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-72": {
+   "category": "fastener",
+   "item": "M10 x 30 jacket screws",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-73": {
+   "category": "fastener",
+   "item": "M10 x 30 bench bolts",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-74": {
+   "category": "fastener",
+   "item": "M10 x 40 lid bolt",
+   "spec": "ISO 3506 A4-80"
+  },
+  "OF-75": {
+   "category": "fastener",
+   "item": "M10 clamp",
+   "spec": "ISO 3506 A4-70"
+  },
+  "OF-76": {
+   "category": "fastener",
+   "item": "M12 anchor",
+   "spec": "ISO 3506 A4-80"
+  },
+  "OF-77": {
+   "category": "instrument",
+   "item": "pressure transmitter",
+   "spec": "316L thin-film strain gauge, IEC 61298"
+  },
+  "OF-78": {
+   "category": "valve",
+   "item": "check valve",
+   "spec": "CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged"
+  }
+ }
+}

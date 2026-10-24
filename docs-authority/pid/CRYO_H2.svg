@@ -72,13 +72,13 @@
 <text x="24" y="428" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="438" font-size="9">Every incident graph edge is drawn: 3 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="453" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/CRYO_H2.csv.</text>
-<text x="24" y="468" font-size="9">Valves not on a unit edge (inventory basis names no incident stream): ESD valve, spring-return actuator DN15 (SIF-003 one per bank half)</text>
+<text x="24" y="468" font-size="9">Valves not on a unit edge (inventory basis names no incident stream): ESD valve, spring-return actuator DN15 (SIF-011 one per bank half)</text>
 <text x="24" y="483" font-size="9">Nozzles with no matching graph edge (service text): N1 process H2; N4 drain; N5 vent</text>
 <text x="24" y="498" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
 <g id="aqs-title-block"><rect x="1116" y="535" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="552" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRYO_H2</text>
 <text x="1124" y="569" font-size="9">P&amp;ID CRYO_H2 (cold_box, CRYO sector)</text>
-<text x="1124" y="586" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 12a0ea6e   Issued 2026-10-19</text>
+<text x="1124" y="586" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev d9e8f1a0   Issued 2026-10-19</text>
 <text x="1124" y="603" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="620" font-size="9">Graph SHA-256 12f1602c68d17412   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

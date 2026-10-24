@@ -98,7 +98,7 @@ def duty(g):
     open(os.path.join(ROOT, 'docs-authority/O2_SOURCE.md'), 'w').write('\n'.join(X) + '\n')
     return src, hdr + direct, ship
 if __name__ == '__main__':
-    import subprocess; g = json.loads(subprocess.run(['git', 'show', '6537017:flow_graph/plant_flow_graph.json'], cwd=ROOT, capture_output=True, text=True, check=True).stdout); d = study(g); b, a = write(d)   # Rev A: frozen pre-X-PAR-12 graph
+    import subprocess; g = json.loads(subprocess.run(['git', 'show', '0b032251c3843ba8c70fc38d8c9584761b3d1bd9:flow_graph/plant_flow_graph.json'], cwd=ROOT, capture_output=True, text=True, check=True).stdout); d = study(g); b, a = write(d)   # Rev A: frozen pre-X-PAR-12 graph
     live = json.load(open(os.path.join(ROOT, 'flow_graph/plant_flow_graph.json'))); s = duty(live)   # Rev D: duty summary from the live graph (D-O2, A-M-230)
     print('before', round(b, 1), 'after', round(a, 1), 'A_need', round(d['A_need']), 'I', round(d['I']), 'ewh2A', round(d['ew_h2_A']), 'o2/m2', round(d['o2_m2'], 1), 'kwh/m2', round(d['kwh_m2'], 2))
     print('duty src', round(s[0], 2), 'draw', round(s[1], 2), 'surplus', round(s[2], 2))

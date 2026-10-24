@@ -1,54 +1,19 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WS_AMMONIA.md
+1,Body / envelope 600 x 600 x 600 mm,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WS_AMMONIA.md
 2,Process nozzle DN15,2,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 3,"Motor: on/off valve S33 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: transfer pump S33 to WET_BENCH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-6,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-7,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-8,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-9,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-10,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-11,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-12,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-13,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-14,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-15,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-16,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-17,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-18,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-19,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-20,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-21,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
-22,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
-23,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
-24,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
-25,fastener: anchor bolt M10,22,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-26,fastener: anchor bolt M10,58,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-27,fastener: anchor bolt M10,62,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-28,fastener: anchor bolt M10,46,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-29,fastener: anchor bolt M10,58,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-30,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-31,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-32,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-33,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-34,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-35,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-36,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-37,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-38,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-39,support: pipe clamp DN15,11,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-40,support: pipe clamp DN15,29,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-41,support: pipe clamp DN15,31,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-42,support: pipe clamp DN15,23,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-43,support: pipe clamp DN15,29,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-44,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-45,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-46,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-47,valve: check valve DN15,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",AQS-INV-004
-48,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-49,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-50,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-51,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
-52,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004
-53,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+6,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+7,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+8,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+9,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
+10,fastener: anchor bolt M10,22,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+11,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+12,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+13,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+14,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+15,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+16,support: pipe clamp DN15,11,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+17,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
+18,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004

@@ -1,12 +1,10 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/PROD_C11_C18.md
+1,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,docs-authority/duties/PROD_C11_C18.md
 2,Process nozzle DN15,3,Carbon steel.,one per mass edge; DN from AQS-INV-003
-3,"Motor: on/off valve IA-C11-SHIP (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
-4,"Motor: transfer pump IA-C11-SHIP to NORTH_DOCK (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-5,fastener: anchor bolt M10,20,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-6,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-7,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-8,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-9,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-10,support: pipe clamp DN15,10,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-11,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+3,fastener: anchor bolt M10,14,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+4,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+5,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+6,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+7,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+8,support: U-bolt with guide DN15,7,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+9,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

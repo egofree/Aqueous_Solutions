@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WS_KOH.md
+1,Body / envelope 600 x 600 x 600 mm,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/WS_KOH.md
 2,Process nozzle DN15,2,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 3,"Motor: on/off valve S35 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: transfer pump S35 to WET_BENCH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005

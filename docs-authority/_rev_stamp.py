@@ -17,11 +17,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); GP = 'flow_g
 DERIVED = ['docs-authority/iso/*', 'iso/*', 'media/*', 'media/pfd/*', 'flow_graph/views/*', 'flow_graph/derived/*', 'docs-authority/duties/*.md',
            'docs-authority/sizing/*.md', 'docs-authority/pid/*', 'docs-authority/LOAD_LIST.md', 'docs-authority/ONE_LINE.md', 'docs-authority/BALANCE_RECONCILIATION.md',
            'docs-authority/O2_SOURCE.md', 'docs-authority/ASSUMPTIONS_REGISTER.md', 'docs-authority/MODEL_WORKBOOK.xlsx', 'design_tool/aqs_design_tool/data/candidate_mvs.json']
+# Every file a default-run pipeline stage writes or amends is derived too, read from the manifest so a new stage is gated
+# without editing this list. The "cad" group is left out: it runs only with regen --cad on a machine with the CAD toolchains.
+_MAN = json.load(open(os.path.join(ROOT, 'flow_graph/param/regen_manifest.json')))
+DERIVED = sorted(set(DERIVED) | {g for st in _MAN['stages'] if st.get('group') != 'cad' for g in st.get('outputs', []) + st.get('amends', [])})
 CLASS = {'iso/*': 'superseded by docs-authority/iso/*.svg (AQS-ISO-002, _iso_sheets.py); generator pfd_scripts/iso_fab.py retired',
          'media/logo3.png': 'artwork, not derived', 'media/verify_view*.png': 'manual capture in GUI FreeCAD (models/freecad/verify_view_png.py)'}
 # documented one-shots and blocked generators: derived files the U3 orchestrator does not regenerate, with the reason (U3 gated expansion)
 BY_DESIGN = {
-    'docs-authority/O2_SOURCE.md': 'generator main is the frozen Rev A study (flow_graph/param/o2_source.py over git show 6537017); owner-lane port pending',
     'docs-authority/sizing/SANITATION.md': 'X-SAN-01 graph-writer module (flow_graph/param/sanitation.py); owner-lane port pending (R11 close-out)',
     'media/_generated.json': 'manifest mechanism itself (pattern vouching source, regen_derived.py)',
     'flow_graph/derived/_regen_receipt.json': 'manifest mechanism itself (U3 regen provenance receipt)'}

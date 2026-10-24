@@ -22,10 +22,23 @@ Basis: NEC 2023 110.26(A)(1)-(2); NFPA 101 (2024) 7.3.4.1.1 and IBC 2021 1018.5 
 
 | Row | Level | Faces with 914 mm clear |
 |---|---|---|
+| GROW_BED/R8 | L0 | none |
+| GROW_BED/R9 | L0 | none |
+| GROW_BED/R10 | L0 | none |
+| PEANUT/R1 | L0 | none |
+| PEANUT/R2 | L0 | none |
+| PEANUT/R3 | L0 | none |
+| CLOVER | L0 | none |
+| SUNFLOWER | L0 | none |
+| ACEX | L0 | none |
+| BUCL | L0 | none |
+| ALD | L0 | none |
+| FORM | L0 | none |
+| MEAM | L0 | none |
 
-Rows checked for access: 143; rows without a 914 mm face: 0.
+Rows checked for access: 153; rows without a 914 mm face: 13.
 
-Failing items: 0.
+Failing items: 13.
 
 ## Code basis (X-STD-01)
 

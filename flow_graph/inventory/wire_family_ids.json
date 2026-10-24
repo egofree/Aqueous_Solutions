@@ -1,0 +1,179 @@
+{
+ "_about": "Wire family id register (append-only). flow_graph/inventory/wire.py looks a family up here by (type, size, insulation, voltage_class) and allocates the next unused id for a new one. An id is never reused, even when its family no longer appears in the inventory.",
+ "families": {
+  "WF-01": {
+   "type": "PV DC",
+   "size": "10 AWG",
+   "insulation": "PV Wire, UL 4703, 2 kV",
+   "voltage_class": "2000 V DC"
+  },
+  "WF-02": {
+   "type": "control",
+   "size": "18 AWG",
+   "insulation": "TFFN 3-pair, shielded",
+   "voltage_class": "600 V"
+  },
+  "WF-03": {
+   "type": "power",
+   "size": "6 AWG",
+   "insulation": "THHN/THWN-2 Cu in EMT",
+   "voltage_class": "600 V"
+  },
+  "WF-04": {
+   "type": "equipment ground",
+   "size": "10 AWG",
+   "insulation": "bare Cu",
+   "voltage_class": "-"
+  },
+  "WF-05": {
+   "type": "power",
+   "size": "14 AWG",
+   "insulation": "XHHW-2 Cu, 600 V, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-06": {
+   "type": "bare grounding",
+   "size": "4/0 AWG",
+   "insulation": "bare soft-drawn Cu",
+   "voltage_class": "-"
+  },
+  "WF-07": {
+   "type": "control",
+   "size": "18 AWG",
+   "insulation": "shielded pair",
+   "voltage_class": "300 V"
+  },
+  "WF-08": {
+   "type": "DC power pair",
+   "size": "16 AWG",
+   "insulation": "TC-ER 2-cond",
+   "voltage_class": "600 V"
+  },
+  "WF-09": {
+   "type": "equipment ground",
+   "size": "14 AWG",
+   "insulation": "green XHHW-2 Cu",
+   "voltage_class": "600 V"
+  },
+  "WF-10": {
+   "type": "power",
+   "size": "3 AWG",
+   "insulation": "XHHW-2 Cu",
+   "voltage_class": "600 V"
+  },
+  "WF-11": {
+   "type": "power",
+   "size": "6 AWG",
+   "insulation": "XHHW-2 Cu, 600 V, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-12": {
+   "type": "MV power",
+   "size": "2 AWG",
+   "insulation": "MV-105 Cu, 133 % insulation, tape shield",
+   "voltage_class": "15 kV"
+  },
+  "WF-13": {
+   "type": "equipment ground",
+   "size": "8 AWG",
+   "insulation": "green XHHW-2 Cu",
+   "voltage_class": "600 V"
+  },
+  "WF-14": {
+   "type": "power",
+   "size": "400 kcmil",
+   "insulation": "XHHW-2 Cu",
+   "voltage_class": "600 V"
+  },
+  "WF-15": {
+   "type": "power",
+   "size": "14 AWG",
+   "insulation": "XHHW-2 Cu, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-16": {
+   "type": "power",
+   "size": "10 AWG",
+   "insulation": "XHHW-2 Cu, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-17": {
+   "type": "power",
+   "size": "6 AWG",
+   "insulation": "XHHW-2 Cu, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-18": {
+   "type": "power",
+   "size": "4/0 AWG",
+   "insulation": "XHHW-2 Cu, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-19": {
+   "type": "equipment ground",
+   "size": "2/0 AWG",
+   "insulation": "green XHHW-2 Cu",
+   "voltage_class": "600 V"
+  },
+  "WF-20": {
+   "type": "power",
+   "size": "3 AWG",
+   "insulation": "XHHW-2 Cu, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-21": {
+   "type": "DC power pair",
+   "size": "14 AWG",
+   "insulation": "TC-ER 2-cond",
+   "voltage_class": "600 V"
+  },
+  "WF-22": {
+   "type": "power",
+   "size": "2 AWG",
+   "insulation": "XHHW-2 Cu, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-23": {
+   "type": "power",
+   "size": "8 AWG",
+   "insulation": "XHHW-2 Cu, 600 V, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-24": {
+   "type": "equipment ground",
+   "size": "10 AWG",
+   "insulation": "green XHHW-2 Cu",
+   "voltage_class": "600 V"
+  },
+  "WF-25": {
+   "type": "power",
+   "size": "10 AWG",
+   "insulation": "XHHW-2 Cu, 600 V, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-26": {
+   "type": "equipment ground",
+   "size": "12 AWG",
+   "insulation": "green XHHW-2 Cu",
+   "voltage_class": "600 V"
+  },
+  "WF-27": {
+   "type": "power",
+   "size": "300 kcmil",
+   "insulation": "XHHW-2 Cu",
+   "voltage_class": "600 V"
+  },
+  "WF-28": {
+   "type": "power",
+   "size": "8 AWG",
+   "insulation": "XHHW-2 Cu, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-29": {
+   "type": "equipment ground",
+   "size": "1/0 AWG",
+   "insulation": "green XHHW-2 Cu",
+   "voltage_class": "600 V"
+  }
+ }
+}

@@ -16,17 +16,11 @@ The total-mass ledger closes (AQS-PAR-003). The O2 species does not: the cold bo
 
 | Edge | To | kg/d | Fate |
 | --- | --- | --- | --- |
-| S02 | HABITATION | 3.040 | crew respiration: to CO2 (S90, RQ 0.87) and metabolic water |
-| S50 | FUEL_CELL | 38.400 | fuel cell: O2 + 2 H2 -> 2 H2O (water to VCD on S52) |
-| IA-FC-AIR | MEOH_FC | 2.481 | methanol cell: to CO2 + H2O |
+| IA-FC-AIR | MEOH_FC | 9.407 | methanol cell: to CO2 + H2O |
 | IA-H2O2-SRC | WS_PEROX | 0.176 | peroxide (returns as H2O + 1/2 O2 on decomposition at the bench) |
-| IA-AC-O2 | ACETOX | 0.110 | acetic acid oxidation |
-| IA-O2-NIT | HNO3 | 0.500 | nitric acid: O into HNO3 |
-| IA-GLX-O2 | GLYOXAL | 0.139 | glyoxal oxidation |
-| IA-FORM-O2 | FORM | 0.060 | formaldehyde oxidation |
 | IA-GEN-O2 | BACKUP_GEN | 0.208 | genset combustion, 10 % excess |
-| IA-AB-O2 | AFTERBURNER | 0.821 | afterburner combustion, 10 % excess |
-| total | | 45.936 | |
+| IA-AB-O2 | AFTERBURNER | 0.528 | afterburner combustion, 10 % excess |
+| total | | 10.319 | |
 
 ## 2. Combustion oxidant not on the graph (units fed from HDR_N2)
 
@@ -34,21 +28,21 @@ The total-mass ledger closes (AQS-PAR-003). The O2 species does not: the cold bo
 | --- | --- | --- | --- | --- |
 | BACKUP_GEN | S45 H2 | 0.000 | 7.94 | 0.00 |
 | BACKUP_GEN | CUT-1-OUT C5-C10 fuel | 0.054 | 3.51 | 0.19 |
-| AFTERBURNER | IA-SIC-CO carbon monoxide | 0.466 | 0.571 | 0.27 |
+| AFTERBURNER | IA-SIC-CO carbon monoxide | 0.000 | 0.571 | 0.00 |
 | AFTERBURNER | S11 grow-bed organics (CH2O basis) | 0.800 | 1.066 | 0.85 |
 | total | | | | 0.00 |
 
 Not counted: NCG_TO_AB 5.00 kg/d (composition not on the graph); sanitation cake and biogas 0.32 kg/d O2, already taken on S02 (AQS-DUTY-063 Rev B).
-The 111.2 kg/d drawn as combustion air (IA-AB-AIR, IA-GEN-AIR) is N2 product; at 23.2 wt% O2 synthetic air it would carry 25.8 kg/d O2.
+The 110.3 kg/d drawn as combustion air (IA-AB-AIR, IA-GEN-AIR) is N2 product; at 23.2 wt% O2 synthetic air it would carry 25.6 kg/d O2.
 
 ## 3. O2 regeneration on the graph
 
 | Edge | Path | kg/d |
 | --- | --- | --- |
-| S87 | grow-bed photosynthesis | 0.617 |
-| IA-ASU-O2 | cold box: excess combustion O2 recovered (species-conserving) | 0.094 |
-| IA-ELY-O2 | PEM electrolyser | 90.404 |
+| S87 | grow-bed photosynthesis | 0.642 |
+| IA-ASU-O2 | cold box: excess combustion O2 recovered (species-conserving) | 0.067 |
+| IA-ELY-O2 | PEM electrolyser | 74.287 |
 
 ## 4. Result
 
-O2 drawn 45.94 (combustion included, on HDR_O2) against real sources 91.11: no species gap; surplus 45.18 kg/d O2 to PROD_O2 (X-PAR-12, AQS-PAR-005 Rev B).
+O2 drawn 10.32 (combustion included, on HDR_O2) against real sources 75.00: no species gap; surplus 64.68 kg/d O2 to PROD_O2 (X-PAR-12, AQS-PAR-005 Rev B).

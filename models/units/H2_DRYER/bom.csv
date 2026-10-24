@@ -1,25 +1,25 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Inlet knock-out PVC-U (wet).,docs-authority/duties/H2_DRYER.md
-2,Process nozzle DN15,5,Inlet knock-out PVC-U (wet).,one per mass edge; DN from AQS-INV-003
+1,Body D60 x 628 mm,1,Inlet knock-out PVC-U (wet).,docs-authority/duties/H2_DRYER.md
+2,Process nozzle DN15,6,Inlet knock-out PVC-U (wet).,one per mass edge; DN from AQS-INV-003
 3,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 4,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 5,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 6,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-7,fastener: anchor bolt M10,16,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-8,fastener: anchor bolt M10,30,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-9,fastener: anchor bolt M10,16,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-10,fastener: anchor bolt M10,18,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+7,fastener: anchor bolt M10,38,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+8,fastener: anchor bolt M10,38,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+9,fastener: anchor bolt M10,32,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+10,fastener: anchor bolt M10,62,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 11,"instrument: gas detector, H2 catalytic bead + IR backup",2,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",AQS-INV-004
 12,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
 13,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
 14,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
 15,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
 16,"instrument: temperature element (SIF, independent) Pt100 class A",1,"IEC 60751, own thermowell",AQS-INV-004
-17,support: U-bolt with guide DN15,8,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-18,support: U-bolt with guide DN15,15,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-19,support: U-bolt with guide DN15,8,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-20,support: U-bolt with guide DN15,9,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-21,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+17,support: U-bolt with guide DN15,19,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+18,support: U-bolt with guide DN15,16,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+19,support: pipe clamp DN15,19,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+20,support: pipe clamp DN15,31,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+21,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004
 22,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
 23,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-24,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+24,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004

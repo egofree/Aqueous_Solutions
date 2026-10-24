@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Body / envelope 800 x 800 x 1200 mm,1,316L if the stream is wet or chloride.,docs-authority/duties/Q4_A.md
+1,Body D800 x 1200 mm,1,PP-H (fusion welded) (graph node material).,docs-authority/duties/Q4_A.md
 2,fastener: anchor bolt M10,34,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 3,fastener: anchor bolt M10,30,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 4,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004

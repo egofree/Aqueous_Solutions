@@ -72,10 +72,11 @@ if m: U_, W_, F_ = [float(x.replace(',', '')) for x in m.groups()]; chk('QC-18',
 ws = {r['size']: r['R20'] for r in json.load(open('docs-authority/inventory/WIRE_SPECS.json'))}
 for sz, t8 in (('14 AWG', 3.14), ('10 AWG', 1.24), ('6 AWG', 0.491), ('4/0 AWG', 0.0608), ('400 kcmil', 0.0321)):
     if sz in ws: chk('QC-19', 'docs-authority/_wire_specs.py', f'{sz} R20 ohm/km vs NEC Ch. 9 Table 8', round(t8*3.2808/(1 + 0.00393*55), 4), ws[sz], 0.03)
-# 20 motor line current = P / (eta pf sqrt3 V), MF-10 sheet values
+# 20 motor line current = P / (eta pf sqrt3 V) for the 1.5 kW IE3 family (picked by rating, not by id; IE3 1.5 kW eta 0.865, pf 0.80)
 import csv as _csv
-md10 = {r['family']: r for r in _csv.DictReader(open('docs-authority/inventory/MOTOR_DESIGNS.csv'))}.get('MF-10')
-if md10: chk('QC-20', 'flow_graph/inventory/motor_designs.py', 'MF-10 line current A', float(md10['current_A']), 1500/(0.865*0.80*math.sqrt(3)*480), 0.02)
+md15 = next((r for r in _csv.DictReader(open('docs-authority/inventory/MOTOR_DESIGNS.csv'))
+             if r['type'] == 'induction IE3' and r['rating'].endswith('/ 1.5 kW')), None)
+if md15: chk('QC-20', 'flow_graph/inventory/motor_designs.py', f"{md15['family']} (1.5 kW IE3) line current A", float(md15['current_A']), 1500/(0.865*0.80*math.sqrt(3)*480), 0.02)
 # 21 first-article rated torque = 9549 P / n at 3 % slip
 fa = {r['family']: r for r in json.load(open('docs-authority/inventory/MOTOR_FA.json'))}
 if 'MF-18' in fa: chk('QC-21', 'docs-authority/_motor_fa.py', 'MF-18 rated torque N m', fa['MF-18']['T_Nm'], 9549*18.5/(1800*0.97), 0.01)

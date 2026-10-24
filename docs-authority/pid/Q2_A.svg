@@ -57,7 +57,7 @@
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">HL-Q2-X</text>
 <text x="1476" y="299" font-size="10" text-anchor="end">2.0 kW · DN15 M2 · absent</text>
 <path d="M 1023.6,280 L 1031.6,286 L 1023.6,292 Z M 1041.6,280 L 1033.6,286 L 1041.6,292 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="275.0" font-size="7.5" text-anchor="middle">2x isol DN20</text>
+<text x="1032.6" y="275.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="2.6" class="edge-out"/>
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">BOUNDARY_EXPORT</text>
@@ -74,7 +74,7 @@
 <g id="aqs-title-block"><rect x="1116" y="520" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="537" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-Q2_A</text>
 <text x="1124" y="554" font-size="9">P&amp;ID Q2_A (heat_battery, HEAT sector)</text>
-<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev b874b7c7   Issued 2026-10-19</text>
+<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 6e4ba5b1   Issued 2026-10-19</text>
 <text x="1124" y="588" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="605" font-size="9">Graph SHA-256 12f1602c68d17412   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

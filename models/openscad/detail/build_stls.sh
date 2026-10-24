@@ -9,4 +9,7 @@ for f in "$HERE"/*.scad; do
   echo "render $b"
   openscad -o "$OUT/$b.stl" "$f"
 done
-ls -l "$OUT"
+# Publish where models/freecad/import_mfg.py reads them (models/export/detail).
+PUB="$HERE/../../export/detail"
+mkdir -p "$PUB"
+cp -f "$OUT"/*.stl "$PUB"/

@@ -6,6 +6,8 @@ docs-authority/assumptions_manual.json (full fields; every new assumption is add
 Run: python3 docs-authority/_assumptions_register.py   (writes ASSUMPTIONS_REGISTER.md, exits 1 on a validation error)
 """
 import json, os, re, sys, glob, hashlib
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from flow_graph.param.indexes import is_index_output  # noqa: E402
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 REQ = ['id', 'value', 'units', 'where', 'basis', 'sensitivity', 'replaced_by', 'task']
 man = json.load(open('docs-authority/assumptions_manual.json'))
@@ -47,7 +49,7 @@ for p in sorted(glob.glob('models/mfg/*/params.json')):
         scan.append(dict(id=hid('A-P-', p + k), value=val, units='mm' if k.endswith('_mm') else '', where=f'{p} {k}', basis=note[:160], task=f'unit task 10 ({u})'))
 pat = re.compile(r'[^.|]*\(?[Aa]ssumption[^.|]*')
 for p in sorted(glob.glob('docs-authority/**/*.md', recursive=True)):
-    if p.endswith('ASSUMPTIONS_REGISTER.md') or p.endswith('TASK_PLAN.md'): continue
+    if is_index_output(p): continue   # other indexes (standards list, task plan, ...) are not sources
     for i, l in enumerate(open(p, errors='ignore'), 1):
         if 'ssumption' in l:
             scan.append(dict(id=hid('A-D-', f'{p}:{l.strip()}'), value='', units='', where=f'{p}:{i}', basis=l.strip()[:160].replace('|', '/'), task='see page'))

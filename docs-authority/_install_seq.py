@@ -62,8 +62,8 @@ def hoist_book():
     """Level -> (heaviest unit, empty kg, hoist rated t) from the generated AQS-BLD-015 table."""
     out = {}
     for line in open(os.path.join(R, 'docs-authority/LIFTING.md')):
-        m = re.match(r'^\| (L-?[\w]+) \| (\S+) \| ([\d.]+) \| \| ([\d.]+) \| ([\d.]+) \| (\d+) \|$', line.replace('/', '|', 1) if False else line)
-        m = re.match(r'^\| (L-?\d+|ROOF) \| (\S+?) \| ([\d.]+) \| .*? \| ([\d.]+) \| ([\d.]+) \| (\d+) \|$', line)
+        # heaviest-lift cell may carry a note, e.g. "CRYO_H2 (one bank half)"
+        m = re.match(r'^\| (L-?\d+|ROOF) \| ([^|]+?) \| ([\d.]+) \| [^|]*? \| ([\d.]+) \| ([\d.]+) \| (\d+) \|$', line)
         if m:
             out[m.group(1)] = dict(heaviest=m.group(2), empty_kg=float(m.group(3)),
                                    hoist_t=float(m.group(4)), test_t=float(m.group(5)), hoists=int(m.group(6)))
@@ -123,7 +123,7 @@ def main():
         hoisted_lv = [(k, u) for (llv, u, k, _s) in lifts if llv == lv]
         top_kg = max((k for k, _u in hoisted_lv), default=0.0)
         top_u = max(hoisted_lv, key=lambda x: x[0])[1] if hoisted_lv else None
-        if b and (top_u != b['heaviest'] or abs(top_kg - b['empty_kg']) > 0.5):
+        if b and (top_u != b['heaviest'].split(' (')[0] or abs(top_kg - b['empty_kg']) > 0.5):   # the book may annotate, e.g. "(one bank half)"
             diffs.append((lv, f"book names {b['heaviest']} {b['empty_kg']:.0f} kg; sequence top hoisted lift is {top_u} {top_kg:.0f} kg"))
         hl = '; '.join(f'{u} / {kg:.0f}{suf}' for u, kg, suf in sorted(heavy.get(lv, []), key=lambda x: -x[1]))
         if not hl and b:

@@ -9,7 +9,9 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 
 | Unit | Class | Tasks (interval) |
 |---|---|---|
+| ACID_POLISH_SCRUB | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | AFTERBURNER | thermal | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| AFTERBURNER_FLUE | flue_junction | external visual (1 y, A-M-189) |
 | ALK_SCRUBBER | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | BACKUP_GEN | genset | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B); inspection (1 wk, NFPA 110 8.4.1); load run 30 min (1 mo, NFPA 110 8.4.2) |
 | BMED_UPW_POLISH | skid | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (5 y, A-M-189 maint_insert_life_y) |
@@ -17,9 +19,9 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | CATCH_TANK | tank | external visual (1 y, A-M-189) |
 | CONTINUOUS_RECYCLE | recycle_pipe | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
 | CRYO_ASU | cold_box | external visual (1 y, A-M-189); internal inspection (10 y, A-M-189); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (5 y, A-M-189 maint_insert_life_y) |
-| CRYO_CO2 | cold_box | external visual (1 y, A-M-189) |
-| CRYO_H2 | cold_box | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (2 y, A-M-189 maint_insert_life_y) |
-| CRYO_O2 | cold_box | external visual (1 y, A-M-189) |
+| CRYO_CO2 | cold_box | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576) |
+| CRYO_H2 | cold_box | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (2 y, A-M-189 maint_insert_life_y) |
+| CRYO_O2 | cold_box | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (2 y, API 576) |
 | H2O_ELYZ | pem_electrolyser | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
 | EW_1 | ew_cell | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | EW_2 | ew_cell | external visual (1 y, A-M-189) |
@@ -30,27 +32,35 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | EW_7 | ew_cell | external visual (1 y, A-M-189) |
 | EW_8 | ew_cell | external visual (1 y, A-M-189) |
 | EW_9 | ew_cell | external visual (1 y, A-M-189) |
+| FAB_UPW_TANK | tank | external visual (1 y, A-M-189) |
 | FUEL_CELL | pem_fc | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
 | GEO_GHEX | ghex | external visual (1 y, A-M-189) |
 | GEO_HP | heat_pump | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| GEO_ORC | study_stub | external visual (1 y, A-M-189) |
+| GEO_HP_CLOSED_LOOP |  | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| GEO_ORC | orc | external visual (1 y, A-M-189) |
 | GLASS_DIGEST | digest | external visual (1 y, A-M-189) |
 | GROW_BED | farm | bed and nutrient line clean-down (3 mo, A-M-189) |
 | H2_DRYER | dryer | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | HABITATION | hab | external visual (1 y, A-M-189) |
+| HDR_CO2 | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
 | HDR_H2 | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
+| HDR_N2 | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
+| HDR_O2 | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
 | HDR_UPW | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
+| HOPPER | hopper | external visual (1 y, A-M-189) |
 | HX8 | hx | external visual (1 y, A-M-189) |
 | HYDRO_SET | hydro | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B); turbine-generator load run (1 mo, NFPA 111 8.4); reservoir cell drain-down inspection (one cell at a time) (5 y, A-M-189) |
 | LEACH_CSTR_1 | vessel | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | LOAD_AGG | load_agg | external visual (1 y, A-M-189) |
+| MEOH_COND | separator | external visual (1 y, A-M-189) |
 | MEOH_FC | iem_fc | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
-| MEOH_FERM | ferment | external visual (1 y, A-M-189) |
+| MEOH_FERM | ferment | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | MEOH_SYNTH | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189); replace process insert (3 y, A-M-189 maint_insert_life_y) |
 | MEOH_TANK | tank | external visual (1 y, A-M-189) |
+| MET_SCRUB | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | MFG_SHOP | shop | external visual (1 y, A-M-189) |
-| NORTH_DOCK | dock | external visual (1 y, A-M-189) |
-| NOX_SCRUB | scrubber | external visual (1 y, A-M-189) |
+| NCG_HEADER | header | thickness survey (10 y, API 570 class 2); external visual (5 y, API 570) |
+| NOX_SCRUB | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | NUTRIENT_DOSE | dose | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | OIL_FRAC | frac | external visual (1 y, A-M-189) |
 | PROD_C11_C18 | cut_tank | external visual (1 y, A-M-189) |
@@ -65,21 +75,29 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | SOL_ARK_60K | inverter | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B) |
 | WAFER_FAB | fab | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | WET_BENCH | wet_bench | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| WS_AMMONIA | reagent | external visual (1 y, A-M-189) |
+| WS_DOPE | reagent | external visual (1 y, A-M-189) |
+| WS_HF_ED | reagent | external visual (1 y, A-M-189) |
+| WS_KOH | reagent | external visual (1 y, A-M-189) |
+| WS_NITRIC | reagent | external visual (1 y, A-M-189) |
+| WS_PEROX | reagent | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| WS_SLURRY | reagent | external visual (1 y, A-M-189) |
+| WS_SOLV | reagent | external visual (1 y, A-M-189) |
 | ZNBR2 | flow_battery | infrared thermography (1 y, NFPA 70B); electrical service (torque, insulation resistance) (3 y, NFPA 70B); replace process insert (5 y, A-M-189 maint_insert_life_y) |
 | ZNBR2_BR2_REGEN | scrubber | external visual (1 y, A-M-189) |
 | WS_PHOS | reagent | external visual (1 y, A-M-189) |
 | GLASS_RINSE | intra | external visual (1 y, A-M-189) |
 | GLASS_MILL | intra | external visual (1 y, A-M-189) |
 | GLASS_BURNOUT | intra | external visual (1 y, A-M-189) |
-| VCD_TRAIN | study_stub | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| REMIN | study_stub | external visual (1 y, A-M-189) |
-| LITHO_COAT | tool | external visual (1 y, A-M-189) |
-| LITHO_ALIGN | tool | external visual (1 y, A-M-189) |
-| LITHO_DEV | tool | external visual (1 y, A-M-189) |
+| VCD_TRAIN | evaporator | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| REMIN | dose | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| LITHO_COAT | coater | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| LITHO_ALIGN | aligner | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| LITHO_DEV | wet_bench | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | LITHO_STUB | study_stub | external visual (1 y, A-M-189) |
-| ELECTRODE_COAT | study_stub | external visual (1 y, A-M-189) |
-| BLOW_MOLD | study_stub | external visual (1 y, A-M-189) |
-| SOLAR_PV_CELL | study_stub | external visual (1 y, A-M-189) |
+| ELECTRODE_COAT | coater | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| BLOW_MOLD | former | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| SOLAR_PV_CELL | tool | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | Q1_A | heat_battery | external visual (1 y, A-M-189) |
 | Q2_A | heat_battery | external visual (1 y, A-M-189) |
 | Q3_A | heat_battery | external visual (1 y, A-M-189) |
@@ -88,11 +106,57 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | Q2_B | heat_battery | external visual (1 y, A-M-189) |
 | Q3_B | heat_battery | external visual (1 y, A-M-189) |
 | Q4_B | heat_battery | external visual (1 y, A-M-189) |
+| F_RECOVER | separator | external visual (1 y, A-M-189) |
+| HF_GEN | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| VDF_SYN | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| TFE_SYN | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| POLY_F | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| CR_CELL | cell | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| TI_CELL | cell | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| MO_CELL | cell | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| IND_MELT | furnace | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| RF_HEAT | furnace | external visual (1 y, A-M-189) |
+| RES_HEAT | furnace | external visual (1 y, A-M-189) |
+| COMB_HEAT | furnace | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| CAST_LINE | caster | external visual (1 y, A-M-189) |
+| VAC_IND | furnace | external visual (1 y, A-M-189) |
+| VAC_CAST | caster | external visual (1 y, A-M-189) |
+| ROLL | mill | external visual (1 y, A-M-189) |
+| EXTRUDE | press | external visual (1 y, A-M-189) |
+| DRAW | mill | external visual (1 y, A-M-189) |
+| FORGE | press | external visual (1 y, A-M-189) |
+| SINTER | furnace | external visual (1 y, A-M-189) |
+| FLUX_PREP | prep | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| STOCK_OUT | store | external visual (1 y, A-M-189) |
+| CONT_CAST | caster | external visual (1 y, A-M-189) |
+| AL_POT | cell | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| MG_POT | cell | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| CA_POT | cell | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| WAX_PATTERN | prep | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| SHELL_BUILD | coater | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| SHELL_BURNOUT | furnace | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| INV_CAST | caster | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| SHELL_BREAK | separator | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| POLY_OLEFIN | reactor | external visual (1 y, A-M-189) |
+| POLY_COND | reactor | external visual (1 y, A-M-189) |
+| PELLET | former | external visual (1 y, A-M-189) |
+| POWDER_RESIN | former | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| FILM_CAST | former | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| POLY_STOCK | store | external visual (1 y, A-M-189) |
+| LI_RECOVER | separator | external visual (1 y, A-M-189) |
+| GREASE_CA | kettle | external visual (1 y, A-M-189) |
+| GREASE_LI | kettle | external visual (1 y, A-M-189) |
+| P_CA | precip | external visual (1 y, A-M-189) |
+| SI_REDUCE | furnace | external visual (1 y, A-M-189) |
 | EVAP_ACID | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | EVAP_BASE | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | ADS_CHILL | adsorption_chiller | external visual (1 y, A-M-189) |
 | MAU_HX | hx | external visual (1 y, A-M-189) |
 | DRY_COOLER | dry_cooler | external visual (1 y, A-M-189) |
 | PROD_MEOH | product | external visual (1 y, A-M-189) |
+| EVAP_ACID_VS | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| FOOD_STORE | store | external visual (1 y, A-M-189) |
+| METAL_STORE | store | external visual (1 y, A-M-189) |
+| AIR_RECEIVER | store | external visual (1 y, A-M-189) |
 
-85 units, 167 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+149 units, 344 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

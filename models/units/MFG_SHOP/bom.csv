@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/MFG_SHOP.md
-2,Process nozzle DN15,26,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,27,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 3,"Motor: Band saw: main drive (induction IE3, IEC 90L / 1.5 kW)",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: CNC vertical mill: axis drive (stepper, NEMA 34 (86 mm))",3,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: CNC vertical mill: main drive (induction IE3, IEC 132M / 7.5 kW)",1,-,AQS-INV-001 / AQS-INV-005
@@ -19,42 +19,34 @@ item,description,qty,material,basis
 18,bearing: deep-groove ball bearing 6204-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
 19,bearing: deep-groove ball bearing 6204-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
 20,bearing: deep-groove ball bearing 6204-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-21,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-22,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+21,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+22,electronics: PLC digital I/O point 24 V DC,6,IEC 61131-2,AQS-INV-004
 23,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-24,electronics: PLC digital I/O point 24 V DC,6,IEC 61131-2,AQS-INV-004
+24,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 25,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 26,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 27,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 28,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 29,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-30,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-31,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-32,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+30,electronics: motor starter (contactor + overload) 0.55 kW,1,IEC 60947-4-1,AQS-INV-004
+31,electronics: motor starter (contactor + overload) 0.55 kW,1,IEC 60947-4-1,AQS-INV-004
+32,electronics: motor starter (contactor + overload) 0.75 kW,1,IEC 60947-4-1,AQS-INV-004
 33,electronics: motor starter (contactor + overload) 0.55 kW,1,IEC 60947-4-1,AQS-INV-004
-34,electronics: motor starter (contactor + overload) 0.55 kW,1,IEC 60947-4-1,AQS-INV-004
-35,electronics: motor starter (contactor + overload) 0.75 kW,1,IEC 60947-4-1,AQS-INV-004
-36,electronics: motor starter (contactor + overload) 0.55 kW,1,IEC 60947-4-1,AQS-INV-004
-37,electronics: stepper driver 24/48 V DC,3,IEC 61800-5-1,AQS-INV-004
-38,electronics: variable-frequency drive 1.5 kW,1,IEC 61800-5-1,AQS-INV-004
-39,electronics: variable-frequency drive 7.5 kW,1,IEC 61800-5-1,AQS-INV-004
-40,electronics: variable-frequency drive 7.5 kW,1,IEC 61800-5-1,AQS-INV-004
-41,electronics: variable-frequency drive 4 kW,1,IEC 61800-5-1,AQS-INV-004
-42,fastener: anchor bolt M10,14,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-43,instrument: flow transmitter DN50,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-44,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-45,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-46,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-47,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+34,electronics: stepper driver 24/48 V DC,3,IEC 61800-5-1,AQS-INV-004
+35,electronics: variable-frequency drive 1.5 kW,1,IEC 61800-5-1,AQS-INV-004
+36,electronics: variable-frequency drive 7.5 kW,1,IEC 61800-5-1,AQS-INV-004
+37,electronics: variable-frequency drive 7.5 kW,1,IEC 61800-5-1,AQS-INV-004
+38,electronics: variable-frequency drive 4 kW,1,IEC 61800-5-1,AQS-INV-004
+39,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+40,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+41,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+42,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+43,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+44,"protection: inverse-time circuit breaker, 3-pole 60 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+45,"protection: inverse-time circuit breaker, 3-pole 30 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+46,"protection: inverse-time circuit breaker, 3-pole 30 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+47,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
 48,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-49,"protection: inverse-time circuit breaker, 3-pole 60 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-50,"protection: inverse-time circuit breaker, 3-pole 30 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-51,"protection: inverse-time circuit breaker, 3-pole 30 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-52,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-53,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-54,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-55,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-56,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
-57,support: pipe clamp DN50,7,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-58,valve: check valve DN50,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-59,valve: isolation valve DN50,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+49,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+50,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+51,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004

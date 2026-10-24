@@ -1,16 +1,18 @@
 """U3 one-command regeneration orchestrator (AQS-PAR-001 / AQS-PLAN-007).
 
-    python3 -m flow_graph.param.regen [--stage NAME]... [--quick] [--check] [--dry-run]
+    python3 -m flow_graph.param.regen [--stage NAME]... [--quick] [--check] [--dry-run] [--cad]
 
 Executes flow_graph/param/regen_manifest.json (data, not code):
 
   1. Graph phase, successive substitution: every writes_graph stage runs in manifest
      order, and the block repeats until the graph sha is stable (--max-passes, default 4).
      This resolves the real power <-> pv_cell_line feedback the declared DAG must not carry.
-  2. Doc phase, once, against the final graph: every remaining stage, so U2a sidecars and
-     pattern manifests record the final graph sha and byte-identical regens stay current.
+  2. Doc phase against the final graph: every remaining stage, so U2a sidecars and pattern
+     manifests record the final graph sha and byte-identical regens stay current. Some
+     documents read each other, so the phase repeats until no doc output or amended file
+     changes (same --max-passes cap).
   3. Receipt: flow_graph/derived/_regen_receipt.json (graph sha, final per-stage status,
-     vouched_patterns = output globs of stages that ran clean against the final sha).
+     vouched_patterns = output and amend globs of stages that ran clean against the final sha).
      docs-authority/_rev_stamp.py reads it as a provenance manifest. The receipt is tracked
      and deterministic: it holds no timings, pass counts or argv, so a full run on a clean,
      converged tree rewrites it byte-identically. Run details (durations, passes, per-pass
@@ -20,14 +22,16 @@ Modes: --quick = the write_graph solver stages only (what-if; no doc regen, no r
 partial run must not clobber the full-run provenance receipt). --check = staleness verification
 only (runs docs-authority/_rev_stamp.py --check: regenerates DERIVED_REVISIONS.md, exit 1 when a
 gated derived file is stale). --dry-run prints the plan. --stage runs exactly the named stages
-once each, in manifest order (expert mode; no loop, no receipt).
+once each, in manifest order (expert mode; no loop, no receipt). --cad adds the "cad" group
+(CadQuery, OpenSCAD and FreeCAD model builds). A stage whose `requires` toolchain is missing is
+skipped with a message and vouches nothing; its committed outputs are kept.
 
 Fail-fast: a stage that exits non-zero aborts the run with its name, command and output
 tail; the receipt records the failure and vouches nothing. Every child runs with the
 U3 single-flight _power_sizing cache active (flow_graph/param/_ps_cache.py via a
 PYTHONPATH sitecustomize shim; disabled outside this orchestrator).
 """
-import argparse, glob, hashlib, json, os, subprocess, sys, time
+import argparse, glob, hashlib, importlib.util, json, os, shutil, subprocess, sys, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
@@ -68,8 +72,31 @@ def child_env():
     env['AQS_REGEN_ROOT'] = ROOT
     return env
 
+def missing_tools(stage):
+    """Unmet `requires` entries of a stage: "python:<module>" (importable) or "cmd:<program>" (on PATH)."""
+    miss = []
+    for req in stage.get('requires', []):
+        kind, _, name = req.partition(':')
+        ok = importlib.util.find_spec(name) is not None if kind == 'python' else shutil.which(name) is not None
+        if not ok: miss.append(req)
+    return miss
+
+def doc_snapshot(stages):
+    """Content hashes of everything the doc stages write (outputs and amended files)."""
+    files = set()
+    for s in stages:
+        files.update(expand_outputs(s, ROOT))
+        files.update(os.path.join(ROOT, a) for a in s.get('amends', []))
+    return {f: gsha(f) for f in sorted(files) if os.path.isfile(f)}
+
 def run_one(stage, env, entries, graph_path, pass_no):
     """Run one stage, append its receipt entry (status, duration, pass, graph sha after the stage)."""
+    miss = missing_tools(stage)
+    if miss:
+        entries.append({'name': stage['name'], 'argv': stage['argv'], 'pass': pass_no, 'seconds': 0.0,
+                        'status': 'skipped', 'missing': miss, 'post_graph_sha256': gsha(graph_path)})
+        print(f"[{stage['name']}] skipped: needs {', '.join(miss)}; its committed outputs are kept", flush=True)
+        return True
     t0 = time.monotonic()
     r = subprocess.run(stage['argv'], cwd=ROOT, env=env, capture_output=True, text=True)
     dt = time.monotonic() - t0
@@ -100,13 +127,16 @@ def main(argv=None):
     ap.add_argument('--quick', action='store_true', help='solver + write_graph stages only (what-if; no doc regen)')
     ap.add_argument('--check', action='store_true', help='staleness verification only (rev_stamp full: writes DERIVED_REVISIONS.md, gates)')
     ap.add_argument('--dry-run', action='store_true', help='print the plan and exit')
-    ap.add_argument('--max-passes', type=int, default=4, metavar='N', help='graph-phase convergence cap (default 4; a converged tree needs 1, a drifted tree 2-3)')
+    ap.add_argument('--max-passes', type=int, default=4, metavar='N', help='graph- and doc-phase convergence cap (default 4; a converged tree needs 1, a drifted tree 2-3)')
+    ap.add_argument('--cad', action='store_true', help='also run the "cad" group (CadQuery, FreeCAD and OpenSCAD model builds; binary outputs)')
     args = ap.parse_args(argv)
 
     m = load_manifest()
     graph_path = os.path.join(ROOT, m['graph'])
     receipt_path = os.path.join(ROOT, m['receipt'])
     all_stages = {s['name']: s for s in m['stages']}
+    if not args.cad and not args.stage:
+        m['stages'] = [s for s in m['stages'] if s.get('group') != 'cad']
 
     if args.check:
         r = subprocess.run(['python3', 'docs-authority/_rev_stamp.py', '--check'], cwd=ROOT, capture_output=True, text=True)
@@ -162,10 +192,26 @@ def main(argv=None):
             print(f"regen: graph phase did NOT converge in {args.max_passes} passes (last sha {gsha(graph_path)[:12]})", flush=True)
             failed.append('(graph-convergence)')
 
-    if not failed:
-        for s in doc_stages:
-            if not run_one(s, env, entries, graph_path, 0):   # pass 0 = doc phase, after convergence
-                failed.append(s['name']); break
+    # Doc phase, against the final graph. Some documents feed each other (stage `feeds_back_from` in the
+    # manifest), so the phase repeats until no output changes, like the graph loop above.
+    doc_passes = 0
+    if not failed and doc_stages:
+        before = doc_snapshot(doc_stages)
+        for p in range(1, args.max_passes + 1):
+            doc_passes = p
+            for s in doc_stages:
+                if not run_one(s, env, entries, graph_path, 0):   # pass 0 = doc phase, after convergence
+                    failed.append(s['name']); break
+            if failed or args.stage: break
+            after = doc_snapshot(doc_stages)
+            changed = sorted(os.path.relpath(f, ROOT) for f in set(before) | set(after) if before.get(f) != after.get(f))
+            print(f"--- doc pass {p} done: {'stable' if not changed else str(len(changed)) + ' files changed'}", flush=True)
+            if changed and len(changed) <= 12: print('    changed: ' + ', '.join(changed), flush=True)
+            if not changed: break
+            before = after
+        else:
+            print(f"regen: doc phase did NOT converge in {args.max_passes} passes", flush=True)
+            failed.append('(doc-convergence)')
 
     total = time.monotonic() - t_start
     final_sha = gsha(graph_path)
@@ -189,8 +235,8 @@ def main(argv=None):
         # pipeline's own ordering, so per-stage post-sha equality is diagnostic only.
         for s in sel:
             ents = [e for e in entries if e['name'] == s['name']]
-            if ents and ents[-1]['status'] == 'ok' and ents[-1]['pass'] in (passes, 0):
-                vouched += s.get('outputs', [])
+            if ents and ents[-1]['status'] == 'ok' and ents[-1]['pass'] in (passes, 0):   # a skipped stage vouches nothing
+                vouched += s.get('outputs', []) + s.get('amends', [])
     # Monotonic vouch carry-over (U4b fix): a converged clean pass re-derives every output
     # byte-identically against the same final graph sha, so prior vouches remain true and must
     # survive the rewrite - zeroing them on an already-converged tree turns _rev_stamp red
@@ -215,7 +261,7 @@ def main(argv=None):
         'vouched_patterns': sorted(set(vouched)),
     }
     with open(receipt_path, 'w') as f: json.dump(receipt, f, indent=1); f.write('\n')
-    run_log = {'argv': sys.argv[1:], 'graph_sha256': final_sha, 'passes': passes, 'seconds': round(total, 2),
+    run_log = {'argv': sys.argv[1:], 'graph_sha256': final_sha, 'passes': passes, 'doc_passes': doc_passes, 'seconds': round(total, 2),
                'converged': not failed, 'failed': failed, 'stages': entries}
     with open(os.path.join(os.path.dirname(receipt_path), RUN_LOG_NAME), 'w') as f: json.dump(run_log, f, indent=1)
     print(f"receipt: {os.path.relpath(receipt_path, ROOT)} ({len(receipt['vouched_patterns'])} vouched patterns)")

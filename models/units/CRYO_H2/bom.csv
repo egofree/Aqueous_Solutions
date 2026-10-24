@@ -1,20 +1,20 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",docs-authority/duties/CRYO_H2.md
+1,Body D114 x 900 mm,1,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",docs-authority/duties/CRYO_H2.md
 2,Process nozzle DN15,5,"316L, annealed, nickel toward the top of the grade range; no ferritic or high-strength steel.",one per mass edge; DN from AQS-INV-003
-3,"Motor: air compressor (cold box feed) (induction IE3, IEC 112M / 4 kW)",1,-,AQS-INV-001 / AQS-INV-005
-4,"Motor: expander brake / generator (induction IE3, IEC 71 / 0.25 kW)",1,-,AQS-INV-001 / AQS-INV-005
+3,"Relief valve, 13.0 mm bore, DN15 body",2,316L,"AQS-SAF-005 (one per bank half, fire case)"
+4,"Motor: cryocooler compressor (hermetic induction (scroll), 1.1 kW hermetic)",1,-,AQS-INV-001 / AQS-INV-005
 5,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-6,electronics: compressor contactor + overload 0.75 kW hermetic,1,IEC 60947-4-1,AQS-INV-004
-7,fastener: anchor bolt M10,40,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-8,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-9,fastener: anchor bolt M10,50,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+6,electronics: compressor contactor + overload 1.1 kW hermetic,1,IEC 60947-4-1,AQS-INV-004
+7,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+8,fastener: anchor bolt M10,18,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+9,fastener: anchor bolt M10,36,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 10,"instrument: gas detector, H2 catalytic bead + IR backup",3,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",AQS-INV-004
-11,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+11,instrument: pressure transmitter 0-400 bar,1,"316L thin-film strain gauge, IEC 61298",AQS-INV-004
 12,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
 13,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
-14,support: U-bolt with guide DN15,20,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-15,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-16,support: U-bolt with guide DN15,25,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+14,support: U-bolt with guide DN15,14,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+15,support: U-bolt with guide DN15,9,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+16,support: U-bolt with guide DN15,18,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
 17,"valve: ESD valve, spring-return actuator DN15",2,"316L, fail-safe, IEC 61511",AQS-INV-004
 18,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
 19,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

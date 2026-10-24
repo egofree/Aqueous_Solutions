@@ -1,0 +1,110 @@
+{
+ "_about": "Pipe family id register (append-only). flow_graph/inventory/pipe.py looks a family up here by (piping class, material, DN) and allocates the next unused id for a new one. An id is never reused, even when its family no longer appears in the inventory.",
+ "families": {
+  "PF-01": {
+   "cls": "P1",
+   "material": "PVC-U Sch 80 ASTM D1785",
+   "DN": 15
+  },
+  "PF-02": {
+   "cls": "M1",
+   "material": "316L ASTM A312",
+   "DN": 15
+  },
+  "PF-03": {
+   "cls": "P2",
+   "material": "CPVC Sch 80 ASTM F441",
+   "DN": 15
+  },
+  "PF-04": {
+   "cls": "P2",
+   "material": "CPVC Sch 80 ASTM F441",
+   "DN": 50
+  },
+  "PF-05": {
+   "cls": "P3",
+   "material": "PVDF SDR 21 ISO 10931",
+   "DN": 15
+  },
+  "PF-06": {
+   "cls": "M2",
+   "material": "CS ASTM A106 Gr B",
+   "DN": 15
+  },
+  "PF-07": {
+   "cls": "P1",
+   "material": "PVC-U Sch 80 ASTM D1785",
+   "DN": 50
+  },
+  "PF-08": {
+   "cls": "P5",
+   "material": "HDPE PE4710 DR 11 (ASTM D3035)",
+   "DN": 15
+  },
+  "PF-09": {
+   "cls": "P5",
+   "material": "HDPE PE4710 DR 11 (ASTM D3035)",
+   "DN": 50
+  },
+  "PF-10": {
+   "cls": "F1",
+   "material": "FRP vinyl ester",
+   "DN": 15
+  },
+  "PF-11": {
+   "cls": "P3",
+   "material": "PVDF SDR 21 ISO 10931",
+   "DN": 50
+  },
+  "PF-12": {
+   "cls": "P4",
+   "material": "PP-H ISO 15494",
+   "DN": 15
+  },
+  "PF-13": {
+   "cls": "M1",
+   "material": "316L ASTM A312",
+   "DN": 25
+  },
+  "PF-14": {
+   "cls": "M1",
+   "material": "316L ASTM A312",
+   "DN": 20
+  },
+  "PF-15": {
+   "cls": "F1",
+   "material": "FRP vinyl ester",
+   "DN": 20
+  },
+  "PF-16": {
+   "cls": "F1",
+   "material": "FRP vinyl ester",
+   "DN": 250
+  },
+  "PF-17": {
+   "cls": "F1",
+   "material": "FRP vinyl ester",
+   "DN": 200
+  },
+  "PF-18": {
+   "cls": "P3",
+   "material": "PVDF SDR 21 ISO 10931",
+   "DN": 300
+  },
+  "PF-19": {
+   "cls": "P4",
+   "material": "PP-H ISO 15494",
+   "DN": 50
+  },
+  "PF-20": {
+   "cls": "M1",
+   "material": "316L ASTM A312",
+   "DN": 50
+  },
+  "PF-21": {
+   "cls": "P3",
+   "material": "PVDF SDR 21 ISO 10931",
+   "DN": 32
+  }
+ }
+}

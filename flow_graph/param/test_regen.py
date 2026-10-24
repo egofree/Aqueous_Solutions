@@ -32,8 +32,10 @@ def test_stage_argv_targets_exist():
     m = _manifest()
     for s in m['stages']:
         argv = s['argv']
-        assert argv and argv[0] == 'python3', f"{s['name']}: expected python3 argv, got {argv}"
-        if '-m' in argv:
+        assert argv and argv[0] in ('python3', 'bash'), f"{s['name']}: expected a python3 or bash argv, got {argv}"
+        if argv[0] == 'bash':
+            assert os.path.isfile(os.path.join(ROOT, argv[1])), f"{s['name']}: script {argv[1]} not found"
+        elif '-m' in argv:
             mod = argv[argv.index('-m') + 1]
             path = os.path.join(ROOT, *mod.split('.')) + '.py'
             assert os.path.isfile(path), f"{s['name']}: module {mod} not found at {path}"

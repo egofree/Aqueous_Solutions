@@ -176,6 +176,9 @@ def st_emission(loops, plcs):
         path = os.path.join(ST_DIR, f'{plc}.st')
         open(path, 'w').write(data)
         files[plc] = dict(path=path, n_ai=len(ai), n_sif=len(sif), n_di=len(di), st_lines=len(L))
+    for name in sorted(os.listdir(ST_DIR)):   # a PLC that left the architecture table (retired sector, no loops) loses its program
+        if name.endswith('.st') and name[:-3] not in files:
+            os.remove(os.path.join(ST_DIR, name))
     return files
 
 

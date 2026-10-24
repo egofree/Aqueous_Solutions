@@ -1,5 +1,6 @@
 step,activity,basis,point
-1,dimensional check against the unit drawing,ASME Y14.5,W
-2,bolting torque record,A-M-190,R
-3,function test,A-M-190,H
-4,loop check of every instrument,A-M-190,W
+1,resin and pipe certificates,ASTM D1785 and the AQS-WLD-002 material rows,R
+2,"WPS-03..07, fusion or solvent operator test",DVS 2207 / ASTM D2855,R
+3,"fusion bead visual 100 %, record of heater temperature and pressure per joint",DVS 2207,W
+4,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",ASME B31.3 A345,H
+5,loop check of every instrument,A-M-190,W

@@ -102,9 +102,12 @@ def write(R):
     for r in R:
         k = (r['category'], r['item'], r['spec'] if r['category'] != 'fabricated part' else 'models/mfg/<unit>/bom.csv')
         F[k][0] += r['qty']; F[k][1][r['size']] += r['qty']; F[k][2].add(r['unit'])
-    FF = sorted(F.items(), key=lambda kv: (kv[0][0], -kv[1][0]))
-    out = [dict(family=f'OF-{i:02d}', category=c, item=it, spec=sp, qty=q, sizes='; '.join(f'{s} x{n}' for s, n in cnt.most_common()), units=len(us))
-           for i, ((c, it, sp), (q, cnt, us)) in enumerate(FF, 1)]
+    from flow_graph.inventory.stable_ids import assign, number
+    ids = assign(os.path.join(ROOT, 'flow_graph/inventory/other_family_ids.json'), 'OF', ('category', 'item', 'spec'),
+                 [k for k, _ in sorted(F.items(), key=lambda kv: (kv[0][0], -kv[1][0]))])
+    FF = sorted(F.items(), key=lambda kv: number(ids[kv[0]]))
+    out = [dict(family=ids[(c, it, sp)], category=c, item=it, spec=sp, qty=q, sizes='; '.join(f'{s} x{n}' for s, n in cnt.most_common()), units=len(us))
+           for (c, it, sp), (q, cnt, us) in FF]
     with open(os.path.join(D, 'OTHER_FAMILIES.csv'), 'w', newline='') as fh: w = csv.DictWriter(fh, list(out[0].keys())); w.writeheader(); w.writerows(out)
     C = collections.Counter()
     for r in R: C[r['category']] += r['qty']

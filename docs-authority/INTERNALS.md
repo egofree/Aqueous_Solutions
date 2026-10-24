@@ -71,7 +71,7 @@ The class comes from the graph. Any unit whose sizing sheet, duty sheet, or issu
 | ACID_POLISH_SCRUB | scrubber | packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) | sizing/HOUSE_SCRUBBERS.md |
 | ADS_CHILL | adsorption_chiller | duty sheet: "as N+1. 3. Material. 304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and head" | docs-authority/duties/ADS_CHILL.md |
 | ALK_SCRUBBER | scrubber | packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) | sizing/HOUSE_SCRUBBERS.md |
-| AL_POT | cell | issued mfg model BOM (1 internals part row): "5,Hood with gas offtake DN150 and dip leg,1,"CS hood, Hastelloy C-276 dip leg",39.4192 kg/d Cl2 dock export at" | models/mfg/AL_POT/bom.csv |
+| AL_POT | cell | issued mfg model BOM (3 internals part row): "DER step 1; duty section 3 mild-steel outer shell below the liner, 700 C, dry outside the lining; envelope per" | models/mfg/AL_POT/bom.csv |
 | BMED_ACID | bmed | BMED triplet construction: PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode, 316L/Ni cathode end plates (A-M-170/171) | sizing/BMED_STACK.md |
 | BMED_BASE | bmed | BMED triplet construction: PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode, 316L/Ni cathode end plates (A-M-170/171) | sizing/BMED_STACK.md |
 | CAST_LINE | caster | duty sheet: "h design; A-M-199 class): graphite is the standard Cu-mould hot face at the melt temperature and is chemically" | docs-authority/duties/CAST_LINE.md |

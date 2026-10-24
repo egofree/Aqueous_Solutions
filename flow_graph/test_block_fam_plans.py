@@ -42,7 +42,8 @@ def test_one_row_per_family_with_plan_column():
 def test_design_joins_resolve():
     src = open(DOC).read()
     bought = [f for f in FAM if f['category'] != 'fabricated part']
-    assert len(bought) == 64
+    ## every bought family has a datasheet row, and AQS-PRO-002 has no row for a family the inventory lacks
+    assert {f['family'] for f in bought} == set(re.findall(r'^\| (OF-\d+) \|', BS, re.M))
     ## every bought family must find its id as a datasheet row in AQS-PRO-002
     for f in bought:
         m = re.search(rf'^\| {f["family"]} \| {re.escape(f["item"])} \| {re.escape(f["spec"])} \|', BS, re.M)

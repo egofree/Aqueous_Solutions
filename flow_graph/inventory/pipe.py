@@ -44,14 +44,19 @@ def write(R):
     with open(os.path.join(D, 'PIPE_INVENTORY.csv'), 'w', newline='') as f:
         w = csv.DictWriter(f, keys, extrasaction='ignore'); w.writeheader(); w.writerows(R)
     F = collections.defaultdict(lambda: dict(m=0.0, lines=0, cuts=[], el=0, fl=0, gk=0, sb=0, jt=0, jtype=set(), studs=set()))
+    NOCLASS = '\u2014'   # line list: no piping class (not piped, e.g. a molten-metal launder, or class still pending)
     for r in R:
+        if r['cls'] == NOCLASS: continue   # not bought or made as pipe; listed in section 2a
         f = F[(r['cls'], r['material'], r['DN'])]; f['m'] += r['pipe_m']; f['lines'] += 1; f['cuts'] += r['cuts']; f['el'] += r['elbows_90']; f['fl'] += r['flanges']
         f['gk'] += r['gaskets']; f['sb'] += r['stud_bolts']; f['jt'] += r['joints']; f['jtype'].add(r['joint_type']); f['studs'].add(r['stud_size'])
-    FF = sorted(F.items(), key=lambda kv: (-kv[1]['m']))
+    from flow_graph.inventory.stable_ids import assign, number
+    ids = assign(os.path.join(ROOT, 'flow_graph/inventory/pipe_family_ids.json'), 'PF', ('cls', 'material', 'DN'),
+                 [k for k, _ in sorted(F.items(), key=lambda kv: -kv[1]['m'])])
+    FF = sorted(F.items(), key=lambda kv: number(ids[kv[0]]))
     out = []
-    for i, ((c, mat, dn), f) in enumerate(FF, 1):
+    for (c, mat, dn), f in FF:
         ns, waste = pack(f['cuts']); el, fl, gk, sb = fit(c)
-        out.append(dict(family=f'PF-{i:02d}', cls=c, material=mat, DN=dn, pipe_m=round(f['m'], 1), lines=f['lines'], stock_lengths_6m=ns, offcut_m=round(waste/1000, 1),
+        out.append(dict(family=ids[(c, mat, dn)], cls=c, material=mat, DN=dn, pipe_m=round(f['m'], 1), lines=f['lines'], stock_lengths_6m=ns, offcut_m=round(waste/1000, 1),
                         elbows_90=f['el'], elbow_std=el, flanges=f['fl'], flange_std=fl, gaskets=f['gk'], stud_bolts=f['sb'], stud_size='/'.join(sorted(f['studs'])), joints=f['jt'], joint_type='/'.join(sorted(f['jtype']))))
     with open(os.path.join(D, 'PIPE_FAMILIES.csv'), 'w', newline='') as fh:
         w = csv.DictWriter(fh, list(out[0].keys())); w.writeheader(); w.writerows(out)
@@ -67,6 +72,12 @@ def write(R):
          '## 1. By material', '', '| Material | Pipe m |', '| --- | --- |'] + [f'| {k} | {v:.0f} |' for k, v in sorted(M.items(), key=lambda kv: -kv[1])] + [
          '', '## 2. Family rollup', '', '| Family | Class | Material | DN | Pipe m | Lines | 6 m lengths | Offcut m | Elbows | Flanges | Gaskets | Studs | Joints |', '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
     L += [f"| {o['family']} | {o['cls']} | {o['material']} | {o['DN']} | {o['pipe_m']} | {o['lines']} | {o['stock_lengths_6m']} | {o['offcut_m']} | {o['elbows_90']} | {o['flanges']} | {o['gaskets']} | {o['stud_bolts']} {o['stud_size']} | {o['joints']} {o['joint_type']} |" for o in out]
+    un = [r for r in R if r['cls'] == NOCLASS]
+    if un:
+        L += ['', '### 2a. Lines without a piping class', '',
+              'These lines have no class in the line list (AQS-PIP-004): either they are not piped (for example a molten-metal launder) or '
+              'their class is still pending. They are not grouped into pipe families; the line list states the material basis for each.', '',
+              '| Line | Unit | DN | Route m |', '| --- | --- | --- | --- |'] + [f"| {r['line']} | {r['unit']} | {r['DN']} | {r['pipe_m']} |" for r in un]
     L += ['', '## 3. Lines by sector > sub-system > unit', '']
     cur = None
     for r in R:

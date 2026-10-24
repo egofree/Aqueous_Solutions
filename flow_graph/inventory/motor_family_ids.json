@@ -1,0 +1,131 @@
+{
+ "_about": "Motor family id register (append-only). flow_graph/inventory/motors.py looks a family up here by (motor_type, size, voltage) and allocates the next unused id for a new one. An id is never reused, even when its family no longer appears in the inventory.",
+ "families": {
+  "MF-01": {
+   "motor_type": "BLDC",
+   "size": "42 mm (NEMA 17 flange)",
+   "voltage": "24 V DC"
+  },
+  "MF-02": {
+   "motor_type": "BLDC",
+   "size": "57 mm (NEMA 23 flange)",
+   "voltage": "24 V DC"
+  },
+  "MF-03": {
+   "motor_type": "BLDC actuator",
+   "size": "ISO 5211 F03 mount",
+   "voltage": "24 V DC"
+  },
+  "MF-04": {
+   "motor_type": "hermetic induction (scroll)",
+   "size": "30 kW hermetic",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-05": {
+   "motor_type": "hermetic induction (scroll)",
+   "size": "2.2 kW hermetic",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-06": {
+   "motor_type": "induction IE3",
+   "size": "IEC 71 / 0.37 kW",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-07": {
+   "motor_type": "induction IE3",
+   "size": "IEC 90S / 1.1 kW",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-08": {
+   "motor_type": "induction IE3",
+   "size": "IEC 90L / 1.5 kW",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-09": {
+   "motor_type": "induction IE3",
+   "size": "IEC 63 / 0.18 kW",
+   "voltage": "208 V 3-ph"
+  },
+  "MF-10": {
+   "motor_type": "induction IE3",
+   "size": "IEC 80 / 0.55 kW",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-11": {
+   "motor_type": "induction IE3",
+   "size": "IEC 100L / 2.2 kW",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-12": {
+   "motor_type": "induction IE3",
+   "size": "IEC 63 / 0.12 kW",
+   "voltage": "208 V 3-ph"
+  },
+  "MF-13": {
+   "motor_type": "induction IE3",
+   "size": "IEC 71 / 0.25 kW",
+   "voltage": "208 V 3-ph"
+  },
+  "MF-14": {
+   "motor_type": "induction IE3",
+   "size": "IEC 132M / 7.5 kW",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-15": {
+   "motor_type": "induction IE3",
+   "size": "IEC 112M / 4 kW",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-16": {
+   "motor_type": "induction IE3",
+   "size": "IEC 80 / 0.75 kW",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-17": {
+   "motor_type": "solenoid",
+   "size": "ISO 15218 coil, 22 mm",
+   "voltage": "24 V DC"
+  },
+  "MF-18": {
+   "motor_type": "stepper",
+   "size": "NEMA 23 (57 mm)",
+   "voltage": "48 V DC"
+  },
+  "MF-19": {
+   "motor_type": "stepper",
+   "size": "NEMA 34 (86 mm)",
+   "voltage": "48 V DC"
+  },
+  "MF-20": {
+   "retired": true,
+   "note": "folder models/motors/MF-20 exists from an earlier family set; the id is reserved and never reissued"
+  },
+  "MF-21": {
+   "retired": true,
+   "note": "folder models/motors/MF-21 exists from an earlier family set; the id is reserved and never reissued"
+  },
+  "MF-22": {
+   "retired": true,
+   "note": "folder models/motors/MF-22 exists from an earlier family set; the id is reserved and never reissued"
+  },
+  "MF-23": {
+   "retired": true,
+   "note": "folder models/motors/MF-23 exists from an earlier family set; the id is reserved and never reissued"
+  },
+  "MF-24": {
+   "motor_type": "hermetic induction (scroll)",
+   "size": "15 kW hermetic",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-25": {
+   "motor_type": "hermetic induction (scroll)",
+   "size": "1.1 kW hermetic",
+   "voltage": "480 V 3-ph"
+  },
+  "MF-26": {
+   "motor_type": "hermetic induction (scroll)",
+   "size": "0.75 kW hermetic",
+   "voltage": "480 V 3-ph"
+  }
+ }
+}

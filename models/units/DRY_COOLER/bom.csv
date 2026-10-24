@@ -1,2 +1,4 @@
 item,description,qty,material,basis
-1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/DRY_COOLER.md
+1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop.",docs-authority/duties/DRY_COOLER.md
+2,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+3,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

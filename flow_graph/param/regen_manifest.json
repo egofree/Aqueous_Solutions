@@ -1,6 +1,6 @@
 {
  "manifest_version": 1,
- "purpose": "U3 one-command regeneration: parameter change -> full regen. Data, not code: flow_graph/param/regen.py executes these stages topologically (manifest order must be a valid topological order; flow_graph/param/test_regen.py enforces it). Graph-writing stages (writes_graph true) run as a successive-substitution loop until the graph sha is stable, then every doc stage runs once against the final graph so its sidecar/manifest graph sha matches (U2a mechanism).",
+ "purpose": "One-command regeneration: parameter change -> full regen. Data, not code: flow_graph/param/regen.py executes these stages in manifest order, which must be a valid topological order of depends_on (flow_graph/param/test_regen.py enforces it). Graph-writing stages (writes_graph true) run as a successive-substitution loop until the graph sha is stable. The doc stages then run against the final graph, repeated until none of their outputs change, because some documents read each other (feeds_back_from lists those reverse edges; depends_on holds the forward ones). Stage keys: outputs = files the stage owns; amends = files it rewrites in part (another stage or a person owns the rest); invokes = scripts the stage runs; requires = toolchains it needs ('python:<module>' or 'cmd:<program>'; a missing one skips the stage and vouches nothing); group 'cad' = CAD model builds, run only with regen --cad. not_stages lists every other script that writes files, with its role and reason. flow_graph/test_generators.py fails when a tracked generated file or a file-writing script is not accounted for here.",
  "graph": "flow_graph/plant_flow_graph.json",
  "receipt": "flow_graph/derived/_regen_receipt.json",
  "notes": [
@@ -9,10 +9,11 @@
   "CORRECTION: _rect_ew_sizing.py is NOT a stage: it writes no doc (stdout JSON only) and is spawned internally by _power_sizing.py, _one_line.py and write_graph.process.",
   "CORRECTION: write_graph power runs LAST among graph writers: _power_sizing demand = max(node continuous_kw, SOL_ARK feed) over every stamp written by the sizing modules, and power then re-stamps PV/ZNBR2/EXT_HALL/mvs.electrical + runs _collection_bus (itself a graph writer).",
   "DECLARED-DAG NOTE: power -> pv_cell_line is a real feedback edge (PV array size sets the cell-line duty; the cell-line kW enters the demand). The manifest declares pv_cell_line -> power only so the dependency graph stays a DAG; regen.py resolves the cycle by looping the writes_graph block to its fixed point (observed: <= 3 passes from a drifted tree, 1 pass from a converged tree).",
-  "EXCLUDED (by design, with reason): flow_graph/param/sanitation.py --write (X-SAN-01 graph-writer; owner-lane port pending, R11 close-out; sizing/SANITATION.md stays classified by-design in _rev_stamp); flow_graph/param/o2_source.py (main is the frozen Rev A study over git-show 6537017; O2_SOURCE.md classified by-design); _mfg_tools --graph and _material_temps --write and _resize_sweep.py (one-shot stampers; their doc/report halves are covered where spawned); pressure_nodes.py (one-shot Rev A pressurised-node marker, superseded by write_graph relief).",
+  "NOT STAGES: see not_stages (role and reason per script group). flow_graph/param/sanitation.py --write stays a one-time migration (X-SAN-01; sizing/SANITATION.md is classified by-design in _rev_stamp until the module is ported to the current graph).",
   "--quick = the five write_graph stages only (solver + writer what-if mode): no doc regeneration and NO receipt write (a partial run must not clobber the full-run provenance receipt _rev_stamp vouches from).",
-  "2026-10-19: balance --write RE-RESTORED (write-convergence fix, same day): the regen acid/base loop had two writer disagreements, not a power<->balance oscillation - (1) the o2_close IA-BMED-04 purge missed the X-PAR-10 spent-return term IA-VS-NAOH (rattle +/-0.0006 kg/d per pass; the write_graph writer always carried it), and (2) the frozen x_par_12_base re-stamps (IA-EVAP_ACID-COND 864.9665, SF-EVAP_ACID, EVAP_ACID node kW) fought the live solver writer (cond 878.7551), a repulsive fixed point that pushed IA-ACID-01 +13.79 kg/d per pass or collapsed it into the IA-BMED-03 -593.49 assert. Fix: D8 single-writer rule in o2_close R10a (write_graph owns solver-solved edges; shared edges re-derived through solver.evap on its 4-dp grid behind a 1 g/d epsilon guard) and IA-ACID-01 sized to the leach HCl demand (AQS-DUTY-011 sized-to-draw basis; was a stale +1.57 % over-supply identity fixed point). Standalone settle: 3 passes to a byte-stable sha, moves < 1 g/d after the re-sizing jump; misfit + balance trio green.",
-  "2026-10-20: wired nozzle_sched + unit_sizing_sweep into the DAG after duty_basis (their ~195 gated files were only hand-runnable before)."
+  "2026-10-19: balance --write RE-RESTORED (write-convergence fix, same day): the regen acid/base loop had two writer disagreements, not a power<->balance oscillation - (1) the o2_close IA-BMED-04 purge missed the X-PAR-10 spent-return term IA-VS-NAOH (rattle +/-0.0006 kg/d per pass; the write_graph writer always carried it), and (2) the frozen x_par_12_base re-stamps (IA-EVAP_ACID-COND 864.9665, SF-EVAP_ACID, EVAP_ACID node kW) fought the live solver writer (cond 878.7551), a repulsive fixed point that pushed IA-ACID-01 +13.79 kg/d per pass or collapsed it into the IA-BMED-03 -593.49 assert. Fix: D8 single-writer rule in o2_close R10a (write_graph owns solver-solved edges; shared edges re-derived through solver.evap on its 4-dp grid behind a 1 g/d epsilon guard) and IA-ACID-01 sized to the leach HCl demand (AQS-DUTY-078 sized-to-draw basis; was a stale +1.57 % over-supply identity fixed point). Standalone settle: 3 passes to a byte-stable sha, moves < 1 g/d after the re-sizing jump; misfit + balance trio green.",
+  "2026-10-20: wired nozzle_sched + unit_sizing_sweep into the DAG after duty_basis (their ~195 gated files were only hand-runnable before).",
+  "2026-10-24: every generator unified into this manifest: the document generators that were run by hand became doc stages, the inventory, PLC-program and code-basis builders became stages, o2_source became a stage (its frozen Rev A input is read from the rewritten history commit), and the CAD builds became the 'cad' group. _rev_stamp reads its derived-file set from this manifest."
  ],
  "stages": [
   {
@@ -30,24 +31,6 @@
    "writes_graph": true,
    "quick": true,
    "note": "Solver -> graph: BMED/EVAP/vent-scrubber kW and rates, EW cell + RECT stamps, SOL_ARK bus delta. Spawns _ew_sizing/_rect_ew_sizing/_power_sizing (last via solver.solve for roof)."
-  },
-  {
-   "name": "sizing_bmed_stack",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.bmed_stack",
-    "--write"
-   ],
-   "outputs": [
-    "docs-authority/sizing/BMED_STACK.md"
-   ],
-   "depends_on": [
-    "write_graph_process"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "Doc-only sizing writer (AQS-DUTY-068)."
   },
   {
    "name": "sizing_cold_box",
@@ -442,7 +425,10 @@
    ],
    "writes_graph": true,
    "quick": true,
-   "note": "LAST graph writer: PV/ZNBR2/SOL_ARK/EXT_HALL/mvs.electrical/BACKUP_GEN from _power_sizing over every kW stamp; spawns _collection_bus (X-ELS-11 sections, another graph writer)."
+   "note": "LAST graph writer: PV/ZNBR2/SOL_ARK/EXT_HALL/mvs.electrical/BACKUP_GEN from _power_sizing over every kW stamp; spawns _collection_bus (X-ELS-11 sections, another graph writer).",
+   "invokes": [
+    "docs-authority/_collection_bus.py"
+   ]
   },
   {
    "name": "balance_report",
@@ -462,6 +448,24 @@
    "writes_graph": true,
    "quick": false,
    "note": "2026-10-21: balance --write proven stable at the balanced writer set. Evidence: instrumented 4-pass probe (PV_ARRAY count 4982, SOL_ARK count 35, sections 4, IA-PV-01 336.7016, need 179.62 kW) is pass-invariant; suite 43/43; regen --check rc=0. Diagnostic recipe if cycles reappear: capture per-pass signature hashes (graph sha + pv/ark/sections counts + pv feeder) over >=3 full passes BEFORE reverting - a quantized threshold flip (breaker/kVA tables) shows as a 2-point signature cycle, not a random walk. The 2026-10-19 oscillation report did not reproduce at this writer set."
+  },
+  {
+   "name": "sizing_bmed_stack",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.bmed_stack",
+    "--write"
+   ],
+   "outputs": [
+    "docs-authority/sizing/BMED_STACK.md"
+   ],
+   "depends_on": [
+    "write_graph_process"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "Doc-only sizing writer (AQS-DUTY-068)."
   },
   {
    "name": "load_list",
@@ -599,153 +603,6 @@
    "note": "AQS-DUTY-061 doc-only writer (no graph write in this module)."
   },
   {
-   "name": "duty_basis",
-   "argv": [
-    "python3",
-    "docs-authority/_duty_basis.py"
-   ],
-   "outputs": [
-    "docs-authority/duties/*.md"
-   ],
-   "depends_on": [
-    "write_graph_power"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "Section 1/2 refresh of every duty sheet + duties/_generated.json (graph-sha pattern manifest clearing all duties) + duties/_origins.json read by _line_list."
-  },
-  {
-   "name": "nozzle_sched",
-   "argv": [
-    "python3",
-    "docs-authority/_nozzle_sched.py"
-   ],
-   "writes_graph": false,
-   "note": "Unit task 04 appends: nozzle CSV rows for every present process connection (mass/HL edges, service==carries); hand rows preserved verbatim.",
-   "outputs": [
-    "docs-authority/nozzles/*.csv"
-   ],
-   "depends_on": [
-    "duty_basis"
-   ],
-   "quick": false
-  },
-  {
-   "name": "unit_sizing_sweep",
-   "argv": [
-    "python3",
-    "docs-authority/_unit_sizing_sweep.py"
-   ],
-   "writes_graph": false,
-   "note": "Unit task 02 sweep: AQS-SIZE-<UNIT> sizing docs for present units whose -02 box is open; graph-sha receipted; idempotent.",
-   "outputs": [
-    "docs-authority/sizing/*.md",
-    "docs-authority/sizing/_generated.json"
-   ],
-   "depends_on": [
-    "duty_basis"
-   ],
-   "quick": false
-  },
-  {
-   "name": "line_list",
-   "argv": [
-    "python3",
-    "docs-authority/_line_list.py"
-   ],
-   "outputs": [
-    "docs-authority/LINE_LIST.md"
-   ],
-   "depends_on": [
-    "duty_basis"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-PIP-004; unit centres from duties/_origins.json."
-  },
-  {
-   "name": "pid_sheets",
-   "argv": [
-    "python3",
-    "docs-authority/_pid_sheets.py"
-   ],
-   "outputs": [
-    "docs-authority/pid/*"
-   ],
-   "depends_on": [
-    "line_list"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-PID-001 unit P&ID sheets (unit task 03): pid/<UNIT>.svg + pid/_register.csv + pid/_generated.json (graph-sha manifest); reads the line list, instrument index, valve inventory, cause-effect SIFs and nozzle CSVs; appends its rows to DRAWING_REGISTER.md (owned by _drawings.py, which does not glob pid/)."
-  },
-  {
-   "name": "iso_routes",
-   "argv": [
-    "python3",
-    "docs-authority/_iso_routes.py"
-   ],
-   "outputs": [
-    "docs-authority/ISO_ROUTES.md",
-    "docs-authority/ISO_ROUTES.json"
-   ],
-   "depends_on": [
-    "line_list"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-ISO-001 + U2a JSON sidecar read by _supports."
-  },
-  {
-   "name": "iso_sheets",
-   "argv": [
-    "python3",
-    "docs-authority/_iso_sheets.py"
-   ],
-   "outputs": [
-    "docs-authority/iso/*"
-   ],
-   "depends_on": [
-    "iso_routes"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-ISO-002: iso/<LINE>.svg per routed line + ISO_SHEETS.csv (also the by-design orphan list source for _rev_stamp) + ISO_SHEETS.md."
-  },
-  {
-   "name": "supports",
-   "argv": [
-    "python3",
-    "docs-authority/_supports.py"
-   ],
-   "outputs": [
-    "docs-authority/SUPPORTS.md"
-   ],
-   "depends_on": [
-    "iso_routes"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-PIP-005; reads ISO_ROUTES.json."
-  },
-  {
-   "name": "insulation",
-   "argv": [
-    "python3",
-    "docs-authority/_insulation.py"
-   ],
-   "outputs": [
-    "docs-authority/INSULATION_SCHEDULE.md",
-    "docs-authority/insulation_schedule.csv"
-   ],
-   "depends_on": [
-    "iso_sheets"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "X-THM-03; reads iso/ISO_SHEETS.csv (no --graph: the T_C stamps are not rewritten)."
-  },
-  {
    "name": "ew_busbar",
    "argv": [
     "python3",
@@ -761,53 +618,6 @@
    "writes_graph": false,
    "quick": false,
    "note": "AQS-BUS-001 rev C + U2a JSON sidecar read by _cable_schedule."
-  },
-  {
-   "name": "cable_schedule",
-   "argv": [
-    "python3",
-    "docs-authority/_cable_schedule.py"
-   ],
-   "outputs": [
-    "docs-authority/CABLE_SCHEDULE.md"
-   ],
-   "depends_on": [
-    "one_line",
-    "ew_busbar"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-ELEC-010; demand from ONE_LINE.json, EW bars from BUSBAR.json."
-  },
-  {
-   "name": "protection",
-   "argv": [
-    "python3",
-    "docs-authority/_protection.py"
-   ],
-   "outputs": [],
-   "depends_on": [
-    "one_line"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-ELEC-006 study (stdout JSON; parses ONE_LINE.md); spawns _grounding_study."
-  },
-  {
-   "name": "haz_area",
-   "argv": [
-    "python3",
-    "docs-authority/_haz_area.py"
-   ],
-   "outputs": [
-    "docs-authority/HAZ_AREA.md"
-   ],
-   "depends_on": [
-    "write_graph_power"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "Terminal consumer (graph + committed inventory CSVs)."
   },
   {
    "name": "derived_excerpts",
@@ -861,73 +671,6 @@
    "note": "Single write path WP-Ap1; gated file (authority contract test reads it)."
   },
   {
-   "name": "sizing_coverage",
-   "argv": [
-    "python3",
-    "-m",
-    "flow_graph.param.sizing_coverage"
-   ],
-   "outputs": [
-    "docs-authority/inventory/SIZING_COVERAGE.json"
-   ],
-   "depends_on": [
-    "pid_sheets"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "Unit task 02 evidence registry (reads the sizing docs, asserts unit names); read by _task_plan_gen."
-  },
-  {
-   "name": "task_plan",
-   "argv": [
-    "python3",
-    "docs-authority/_task_plan_gen.py"
-   ],
-   "outputs": [
-    "docs-authority/TASK_PLAN.md"
-   ],
-   "depends_on": [
-    "storage_sizing",
-    "pid_sheets"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-PLAN-007 regen (AGENTS loop step 1); reads graph + STORAGE_HOLDUP.json + committed inventory CSVs + pid/<UNIT>.svg (unit task 03 evidence)."
-  },
-  {
-   "name": "model_workbook",
-   "argv": [
-    "python3",
-    "docs-authority/_model_workbook.py"
-   ],
-   "outputs": [
-    "docs-authority/MODEL_WORKBOOK.xlsx"
-   ],
-   "depends_on": [
-    "write_graph_power",
-    "task_plan"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "U5 Option A cascading parametric workbook: 24 sheets derived live from drivers.json (696 keys) + the graph + system_tree aggregate (README/DRIVERS/TREE/ELECTRICAL/HEAT_LEDGER + 19 sector sheets); subtotals/counts/store-balance are real SUM/COUNTA/SUMIF formulas; byte-stable (zip timestamps + docProps dates normalised, no wall clock)."
-  },
-  {
-   "name": "assumptions_register",
-   "argv": [
-    "python3",
-    "docs-authority/_assumptions_register.py"
-   ],
-   "outputs": [
-    "docs-authority/ASSUMPTIONS_REGISTER.md"
-   ],
-   "depends_on": [
-    "write_graph_power"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-REG-002 regen; fails on a bad assumptions_manual.json entry."
-  },
-  {
    "name": "regen_derived",
    "argv": [
     "python3",
@@ -946,7 +689,1101 @@
    ],
    "writes_graph": false,
    "quick": false,
-   "note": "Layer views + 7 matplotlib PFDs + FreeCAD frames + ffmpeg mp4 + media/_generated.json graph-sha manifest. Slowest stage (FreeCAD + ffmpeg)."
+   "note": "Layer views + 7 matplotlib PFDs + FreeCAD frames + ffmpeg mp4 + media/_generated.json graph-sha manifest. Slowest stage (FreeCAD + ffmpeg).",
+   "invokes": [
+    "flow_graph/render_layer_views.py",
+    "models/freecad/render_frames.py",
+    "flow_graph/exporters/matplotlib/completion_pfd.py",
+    "flow_graph/exporters/matplotlib/continuous_recycling_pfd.py",
+    "flow_graph/exporters/matplotlib/glass_ceramic_pfd.py",
+    "flow_graph/exporters/matplotlib/master_disassembly_pfd.py",
+    "flow_graph/exporters/matplotlib/oil_line_pfd.py",
+    "flow_graph/exporters/matplotlib/polish_bank_pfd.py",
+    "flow_graph/exporters/matplotlib/wet_line_factory_pfd.py"
+   ]
+  },
+  {
+   "name": "sector_definitions",
+   "argv": [
+    "python3",
+    "docs-authority/_sector_definitions.py"
+   ],
+   "depends_on": [
+    "balance_report"
+   ],
+   "outputs": [
+    "docs-authority/SECTOR_DEFINITIONS.md"
+   ],
+   "note": "AQS-SEC-001 sector catalogue, generated from graph mvs.sectors, the system tree (trains) and design_tool sector_definitions.py (classes, ESS peers, retired ids, aliases). Pure function of those inputs.",
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_compliance",
+   "argv": [
+    "python3",
+    "docs-authority/_compliance.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/COMPLIANCE_MATRIX.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_egress_env",
+   "argv": [
+    "python3",
+    "docs-authority/_egress_env.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/ENCLOSURE_EGRESS.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_fire",
+   "argv": [
+    "python3",
+    "docs-authority/_fire.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/FIRE_PROTECTION.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_gas_det",
+   "argv": [
+    "python3",
+    "docs-authority/_gas_det.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/GAS_DETECTION.md",
+    "docs-authority/inventory/GAS_DETECTORS.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_maint",
+   "argv": [
+    "python3",
+    "docs-authority/_maint.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/MAINT_PLAN.md",
+    "models/units/ACID_POLISH_SCRUB/maint.csv",
+    "models/units/ADS_CHILL/maint.csv",
+    "models/units/AFTERBURNER/maint.csv",
+    "models/units/AFTERBURNER_FLUE/maint.csv",
+    "models/units/ALK_SCRUBBER/maint.csv",
+    "models/units/BACKUP_GEN/maint.csv",
+    "models/units/BLOW_MOLD/maint.csv",
+    "models/units/BMED_UPW_POLISH/maint.csv",
+    "models/units/C29_RECYCLE/maint.csv",
+    "models/units/CATCH_TANK/maint.csv",
+    "models/units/CONTINUOUS_RECYCLE/maint.csv",
+    "models/units/CRYO_ASU/maint.csv",
+    "models/units/CRYO_CO2/maint.csv",
+    "models/units/CRYO_H2/maint.csv",
+    "models/units/CRYO_O2/maint.csv",
+    "models/units/DRY_COOLER/maint.csv",
+    "models/units/ELECTRODE_COAT/maint.csv",
+    "models/units/EVAP_ACID/maint.csv",
+    "models/units/EVAP_ACID_VS/maint.csv",
+    "models/units/EVAP_BASE/maint.csv",
+    "models/units/EW_1/maint.csv",
+    "models/units/EW_2/maint.csv",
+    "models/units/EW_3/maint.csv",
+    "models/units/EW_4/maint.csv",
+    "models/units/EW_5/maint.csv",
+    "models/units/EW_6/maint.csv",
+    "models/units/EW_7/maint.csv",
+    "models/units/EW_8/maint.csv",
+    "models/units/EW_9/maint.csv",
+    "models/units/FAB_UPW_TANK/maint.csv",
+    "models/units/FUEL_CELL/maint.csv",
+    "models/units/GEO_GHEX/maint.csv",
+    "models/units/GEO_HP/maint.csv",
+    "models/units/GEO_HP_CLOSED_LOOP/maint.csv",
+    "models/units/GEO_ORC/maint.csv",
+    "models/units/GLASS_BURNOUT/maint.csv",
+    "models/units/GLASS_DIGEST/maint.csv",
+    "models/units/GLASS_MILL/maint.csv",
+    "models/units/GLASS_RINSE/maint.csv",
+    "models/units/GROW_BED/maint.csv",
+    "models/units/H2O_ELYZ/maint.csv",
+    "models/units/H2_DRYER/maint.csv",
+    "models/units/HABITATION/maint.csv",
+    "models/units/HDR_CO2/maint.csv",
+    "models/units/HDR_H2/maint.csv",
+    "models/units/HDR_N2/maint.csv",
+    "models/units/HDR_O2/maint.csv",
+    "models/units/HDR_UPW/maint.csv",
+    "models/units/HOPPER/maint.csv",
+    "models/units/HX8/maint.csv",
+    "models/units/HYDRO_SET/maint.csv",
+    "models/units/LEACH_CSTR_1/maint.csv",
+    "models/units/LITHO_ALIGN/maint.csv",
+    "models/units/LITHO_COAT/maint.csv",
+    "models/units/LITHO_DEV/maint.csv",
+    "models/units/LITHO_STUB/maint.csv",
+    "models/units/LOAD_AGG/maint.csv",
+    "models/units/MAU_HX/maint.csv",
+    "models/units/MEOH_COND/maint.csv",
+    "models/units/MEOH_FC/maint.csv",
+    "models/units/MEOH_FERM/maint.csv",
+    "models/units/MEOH_SYNTH/maint.csv",
+    "models/units/MEOH_TANK/maint.csv",
+    "models/units/MET_SCRUB/maint.csv",
+    "models/units/MFG_SHOP/maint.csv",
+    "models/units/NCG_HEADER/maint.csv",
+    "models/units/NOX_SCRUB/maint.csv",
+    "models/units/NUTRIENT_DOSE/maint.csv",
+    "models/units/OIL_FRAC/maint.csv",
+    "models/units/PROD_C11_C18/maint.csv",
+    "models/units/PROD_C19_C28/maint.csv",
+    "models/units/PROD_C29/maint.csv",
+    "models/units/PROD_C5_C10/maint.csv",
+    "models/units/PROD_MEOH/maint.csv",
+    "models/units/PROD_O2/maint.csv",
+    "models/units/PV_ARRAY/maint.csv",
+    "models/units/Q1_A/maint.csv",
+    "models/units/Q1_B/maint.csv",
+    "models/units/Q2_A/maint.csv",
+    "models/units/Q2_B/maint.csv",
+    "models/units/Q3_A/maint.csv",
+    "models/units/Q3_B/maint.csv",
+    "models/units/Q4_A/maint.csv",
+    "models/units/Q4_B/maint.csv",
+    "models/units/Q4_BUS/maint.csv",
+    "models/units/RECTIFIER/maint.csv",
+    "models/units/REMIN/maint.csv",
+    "models/units/ROOF_TANK/maint.csv",
+    "models/units/SOLAR_PV_CELL/maint.csv",
+    "models/units/SOL_ARK_60K/maint.csv",
+    "models/units/VCD_TRAIN/maint.csv",
+    "models/units/WAFER_FAB/maint.csv",
+    "models/units/WET_BENCH/maint.csv",
+    "models/units/WS_AMMONIA/maint.csv",
+    "models/units/WS_DOPE/maint.csv",
+    "models/units/WS_HF_ED/maint.csv",
+    "models/units/WS_KOH/maint.csv",
+    "models/units/WS_NITRIC/maint.csv",
+    "models/units/WS_PEROX/maint.csv",
+    "models/units/WS_PHOS/maint.csv",
+    "models/units/WS_SLURRY/maint.csv",
+    "models/units/WS_SOLV/maint.csv",
+    "models/units/ZNBR2/maint.csv",
+    "models/units/ZNBR2_BR2_REGEN/maint.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_mfg_tools",
+   "argv": [
+    "python3",
+    "docs-authority/_mfg_tools.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/MFG_TOOLS.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_asme_class",
+   "argv": [
+    "python3",
+    "docs-authority/_asme_class.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/ASME_CODE_INTENT.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_hydro_siting",
+   "argv": [
+    "python3",
+    "docs-authority/_hydro_siting.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/HYDRO_SITING.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_jellybean",
+   "argv": [
+    "python3",
+    "docs-authority/_jellybean.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/JELLYBEAN.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_relief_register",
+   "argv": [
+    "python3",
+    "docs-authority/_relief_register.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/RELIEF_REGISTER.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_standards_list",
+   "argv": [
+    "python3",
+    "docs-authority/_standards_list.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/STANDARDS_LIST.md"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "index": true
+  },
+  {
+   "name": "doc_znbr_test",
+   "argv": [
+    "python3",
+    "docs-authority/_znbr_test.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/ZNBR2_STACK_TEST.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_egress_hall",
+   "argv": [
+    "python3",
+    "docs-authority/_egress_hall.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/HALL_EGRESS.md"
+   ],
+   "amends": [
+    "flow_graph/placement_seed.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_water_tower",
+   "argv": [
+    "python3",
+    "docs-authority/_water_tower.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/WATER_TOWER.md"
+   ],
+   "amends": [
+    "flow_graph/placement_seed.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_ga_check",
+   "argv": [
+    "python3",
+    "docs-authority/_ga_check.py"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower"
+   ],
+   "outputs": [
+    "docs-authority/GA_CHECK.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_hse_sep",
+   "argv": [
+    "python3",
+    "docs-authority/_hse_sep.py"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower"
+   ],
+   "outputs": [
+    "docs-authority/HAZARD_SEPARATION_LAYOUT.md",
+    "flow_graph/fire_rooms.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_site_access",
+   "argv": [
+    "python3",
+    "docs-authority/_site_access.py"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower"
+   ],
+   "outputs": [
+    "docs-authority/SITE_ACCESS_CHECK.md",
+    "docs-authority/inventory/SITE_ACCESS.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_struct_loads",
+   "argv": [
+    "python3",
+    "docs-authority/_struct_loads.py"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower"
+   ],
+   "outputs": [
+    "docs-authority/STRUCT_LOADS.md",
+    "docs-authority/inventory/STRUCT_ROWS.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_frame_check",
+   "argv": [
+    "python3",
+    "docs-authority/_frame_check.py"
+   ],
+   "depends_on": [
+    "doc_struct_loads"
+   ],
+   "outputs": [
+    "docs-authority/FRAME_CHECK.md",
+    "docs-authority/inventory/FRAME_CHECK.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_foundation",
+   "argv": [
+    "python3",
+    "docs-authority/_foundation.py"
+   ],
+   "depends_on": [
+    "doc_frame_check",
+    "doc_struct_loads"
+   ],
+   "outputs": [
+    "docs-authority/FOUNDATION.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_lifting",
+   "argv": [
+    "python3",
+    "docs-authority/_lifting.py"
+   ],
+   "depends_on": [
+    "doc_struct_loads"
+   ],
+   "outputs": [
+    "docs-authority/LIFTING.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_install_seq",
+   "argv": [
+    "python3",
+    "docs-authority/_install_seq.py"
+   ],
+   "depends_on": [
+    "doc_lifting",
+    "doc_struct_loads"
+   ],
+   "outputs": [
+    "docs-authority/INSTALL_SEQUENCE.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_rigging_plans",
+   "argv": [
+    "python3",
+    "docs-authority/_rigging_plans.py"
+   ],
+   "depends_on": [
+    "doc_lifting",
+    "doc_struct_loads"
+   ],
+   "outputs": [
+    "docs-authority/RIGGING_PLANS.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "access_check",
+   "argv": [
+    "python3",
+    "flow_graph/access_check.py"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower"
+   ],
+   "outputs": [
+    "docs-authority/ACCESS_CHECK.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "sep_check",
+   "argv": [
+    "python3",
+    "flow_graph/sep_check.py"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower"
+   ],
+   "outputs": [
+    "docs-authority/HAZMAT_SEPARATION.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "inventory_motors",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.inventory.motors"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_mfg_tools",
+    "doc_water_tower"
+   ],
+   "outputs": [
+    "docs-authority/inventory/MOTOR_FAMILIES.csv",
+    "docs-authority/inventory/MOTOR_INVENTORY.csv",
+    "docs-authority/inventory/MOTOR_INVENTORY.md"
+   ],
+   "amends": [
+    "flow_graph/inventory/motor_family_ids.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "inventory_motor_designs",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.inventory.motor_designs"
+   ],
+   "depends_on": [
+    "inventory_motors"
+   ],
+   "outputs": [
+    "docs-authority/inventory/motor_families/MF-*.md",
+    "docs-authority/inventory/MOTOR_DESIGNS.csv",
+    "docs-authority/inventory/MAGNET_COMPARISON.csv",
+    "docs-authority/inventory/MOTOR_DESIGNS.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_motor_fa",
+   "argv": [
+    "python3",
+    "docs-authority/_motor_fa.py"
+   ],
+   "depends_on": [
+    "inventory_motor_designs"
+   ],
+   "outputs": [
+    "docs-authority/drawings/motor_fa/*.svg",
+    "docs-authority/MOTOR_FIRST_ARTICLE.md",
+    "docs-authority/inventory/MOTOR_FA.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "gas_species",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.gas_species"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/GAS_SPECIES.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "o2_source",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.o2_source"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/O2_SOURCE.md",
+    "docs-authority/O2_SOURCE_AUDIT.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "foam_ew_cut_list",
+   "argv": [
+    "python3",
+    "models/openscad/foam_ew/generate.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "models/openscad/foam_ew/*.png",
+    "models/openscad/foam_ew/CUT_LIST.md",
+    "models/openscad/foam_ew/cut_list.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "duty_basis",
+   "argv": [
+    "python3",
+    "docs-authority/_duty_basis.py"
+   ],
+   "outputs": [
+    "docs-authority/duties/*.md",
+    "docs-authority/duties/_generated.json",
+    "docs-authority/duties/_origins.json"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "Section 1/2 refresh of every duty sheet + duties/_generated.json (graph-sha pattern manifest clearing all duties) + duties/_origins.json read by _line_list.",
+   "feeds_back_from": [
+    "doc_instr_index"
+   ]
+  },
+  {
+   "name": "unit_sizing_sweep",
+   "argv": [
+    "python3",
+    "docs-authority/_unit_sizing_sweep.py"
+   ],
+   "writes_graph": false,
+   "note": "Unit task 02 sweep: AQS-SIZE-<UNIT> sizing docs for present units whose -02 box is open; graph-sha receipted; idempotent.",
+   "outputs": [
+    "docs-authority/sizing/*.md",
+    "docs-authority/sizing/_generated.json"
+   ],
+   "depends_on": [
+    "duty_basis",
+    "leach_sizing_doc"
+   ],
+   "quick": false
+  },
+  {
+   "name": "line_list",
+   "argv": [
+    "python3",
+    "docs-authority/_line_list.py"
+   ],
+   "outputs": [
+    "docs-authority/LINE_LIST.md"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower",
+    "duty_basis"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-PIP-004; unit centres from duties/_origins.json."
+  },
+  {
+   "name": "nozzle_sched",
+   "argv": [
+    "python3",
+    "docs-authority/_nozzle_sched.py"
+   ],
+   "writes_graph": false,
+   "note": "Unit task 04 appends: nozzle CSV rows for every present process connection (mass/HL edges, service==carries); hand rows preserved verbatim.",
+   "outputs": [
+    "docs-authority/nozzles/*.csv"
+   ],
+   "depends_on": [
+    "duty_basis",
+    "line_list"
+   ],
+   "quick": false
+  },
+  {
+   "name": "iso_routes",
+   "argv": [
+    "python3",
+    "docs-authority/_iso_routes.py"
+   ],
+   "outputs": [
+    "docs-authority/ISO_ROUTES.md",
+    "docs-authority/ISO_ROUTES.json"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower",
+    "line_list"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-ISO-001 + U2a JSON sidecar read by _supports."
+  },
+  {
+   "name": "iso_sheets",
+   "argv": [
+    "python3",
+    "docs-authority/_iso_sheets.py"
+   ],
+   "outputs": [
+    "docs-authority/iso/*",
+    "docs-authority/ISO_SHEETS.md"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower",
+    "iso_routes"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-ISO-002: iso/<LINE>.svg per routed line + ISO_SHEETS.csv (also the by-design orphan list source for _rev_stamp) + ISO_SHEETS.md."
+  },
+  {
+   "name": "supports",
+   "argv": [
+    "python3",
+    "docs-authority/_supports.py"
+   ],
+   "outputs": [
+    "docs-authority/SUPPORTS.md"
+   ],
+   "depends_on": [
+    "iso_routes"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-PIP-005; reads ISO_ROUTES.json."
+  },
+  {
+   "name": "insulation",
+   "argv": [
+    "python3",
+    "docs-authority/_insulation.py"
+   ],
+   "outputs": [
+    "docs-authority/INSULATION_SCHEDULE.md",
+    "docs-authority/insulation_schedule.csv"
+   ],
+   "depends_on": [
+    "iso_sheets"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "X-THM-03; reads iso/ISO_SHEETS.csv (no --graph: the T_C stamps are not rewritten)."
+  },
+  {
+   "name": "doc_test_rigs",
+   "argv": [
+    "python3",
+    "docs-authority/_test_rigs.py"
+   ],
+   "depends_on": [
+    "ew_sizing_doc",
+    "unit_sizing_sweep"
+   ],
+   "outputs": [
+    "docs-authority/TEST_RIGS.md",
+    "docs-authority/inventory/TEST_RIGS.json"
+   ],
+   "amends": [
+    "docs-authority/sizing/EW_CELLS.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_unit_materials",
+   "argv": [
+    "python3",
+    "docs-authority/_unit_materials.py"
+   ],
+   "depends_on": [
+    "duty_basis",
+    "line_list"
+   ],
+   "outputs": [
+    "docs-authority/UNIT_MATERIALS.md",
+    "docs-authority/inventory/UNIT_MATERIALS.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_internals",
+   "argv": [
+    "python3",
+    "docs-authority/_internals.py"
+   ],
+   "depends_on": [
+    "doc_unit_materials",
+    "duty_basis",
+    "leach_sizing_doc",
+    "unit_sizing_sweep"
+   ],
+   "outputs": [
+    "docs-authority/INTERNALS.md",
+    "docs-authority/inventory/INTERNALS.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_fab_routes",
+   "argv": [
+    "python3",
+    "docs-authority/_fab_routes.py"
+   ],
+   "depends_on": [
+    "doc_internals",
+    "duty_basis",
+    "nozzle_sched"
+   ],
+   "outputs": [
+    "docs-authority/fab/ADS_CHILL.md",
+    "docs-authority/fab/AIR_RECEIVER.md",
+    "docs-authority/fab/AL_POT.md",
+    "docs-authority/fab/CAST_LINE.md",
+    "docs-authority/fab/CA_POT.md",
+    "docs-authority/fab/COMB_HEAT.md",
+    "docs-authority/fab/CONT_CAST.md",
+    "docs-authority/fab/CR_CELL.md",
+    "docs-authority/fab/DRAW.md",
+    "docs-authority/fab/DRY_COOLER.md",
+    "docs-authority/fab/EXTRUDE.md",
+    "docs-authority/fab/EXT_HALL.md",
+    "docs-authority/fab/FILM_CAST.md",
+    "docs-authority/fab/FLUX_PREP.md",
+    "docs-authority/fab/FOOD_STORE.md",
+    "docs-authority/fab/FORGE.md",
+    "docs-authority/fab/F_RECOVER.md",
+    "docs-authority/fab/GREASE_CA.md",
+    "docs-authority/fab/GREASE_LI.md",
+    "docs-authority/fab/H2O_ELYZ.md",
+    "docs-authority/fab/IND_MELT.md",
+    "docs-authority/fab/INV_CAST.md",
+    "docs-authority/fab/LI_RECOVER.md",
+    "docs-authority/fab/MAU_HX.md",
+    "docs-authority/fab/METAL_STORE.md",
+    "docs-authority/fab/MG_POT.md",
+    "docs-authority/fab/MO_CELL.md",
+    "docs-authority/fab/PELLET.md",
+    "docs-authority/fab/POLY_STOCK.md",
+    "docs-authority/fab/POWDER_RESIN.md",
+    "docs-authority/fab/PROD_MEOH.md",
+    "docs-authority/fab/PROD_O2.md",
+    "docs-authority/fab/P_CA.md",
+    "docs-authority/fab/RES_HEAT.md",
+    "docs-authority/fab/RF_HEAT.md",
+    "docs-authority/fab/ROLL.md",
+    "docs-authority/fab/SHELL_BREAK.md",
+    "docs-authority/fab/SHELL_BUILD.md",
+    "docs-authority/fab/SHELL_BURNOUT.md",
+    "docs-authority/fab/SINTER.md",
+    "docs-authority/fab/SI_REDUCE.md",
+    "docs-authority/fab/STOCK_OUT.md",
+    "docs-authority/fab/TI_CELL.md",
+    "docs-authority/fab/VAC_CAST.md",
+    "docs-authority/fab/VAC_IND.md",
+    "docs-authority/fab/WAX_PATTERN.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "inventory_pipe",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.inventory.pipe"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_water_tower",
+    "iso_sheets"
+   ],
+   "outputs": [
+    "docs-authority/inventory/PIPE_FAMILIES.csv",
+    "docs-authority/inventory/PIPE_INVENTORY.csv",
+    "docs-authority/inventory/PIPE_INVENTORY.md"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "amends": [
+    "flow_graph/inventory/pipe_family_ids.json"
+   ]
+  },
+  {
+   "name": "doc_wps",
+   "argv": [
+    "python3",
+    "docs-authority/_wps.py"
+   ],
+   "depends_on": [
+    "inventory_pipe"
+   ],
+   "outputs": [
+    "docs-authority/WPS_REGISTER.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_pipe_specs",
+   "argv": [
+    "python3",
+    "docs-authority/_pipe_specs.py"
+   ],
+   "depends_on": [
+    "doc_wps",
+    "inventory_pipe"
+   ],
+   "outputs": [
+    "docs-authority/PIPE_SPECS.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "parametric_model_report",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.report"
+   ],
+   "depends_on": [
+    "ew_sizing_doc",
+    "unit_sizing_sweep"
+   ],
+   "outputs": [
+    "docs-authority/PARAMETRIC_MODEL.md"
+   ],
+   "amends": [
+    "docs-authority/sizing/EW_CELLS.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "code_basis",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.code_basis"
+   ],
+   "depends_on": [
+    "access_check",
+    "doc_egress_hall",
+    "doc_ga_check",
+    "one_line",
+    "sep_check",
+    "unit_sizing_sweep",
+    "vent_scrubber_doc"
+   ],
+   "outputs": [
+    "docs-authority/CODE_BASIS.md"
+   ],
+   "amends": [
+    "docs-authority/ACCESS_CHECK.md",
+    "docs-authority/COLLECTION_BUS.md",
+    "docs-authority/GA_CHECK.md",
+    "docs-authority/HALL_EGRESS.md",
+    "docs-authority/HAZMAT_SEPARATION.md",
+    "docs-authority/ONE_LINE.md",
+    "docs-authority/POWER_SIZING.md",
+    "docs-authority/PROTECTION.md",
+    "docs-authority/sizing/EVAP_DESIGN.md",
+    "docs-authority/sizing/VENT_SCRUBBER.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "protection",
+   "argv": [
+    "python3",
+    "docs-authority/_protection.py"
+   ],
+   "outputs": [],
+   "depends_on": [
+    "code_basis",
+    "one_line"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-ELEC-006 study (stdout JSON; parses ONE_LINE.md); spawns _grounding_study."
+  },
+  {
+   "name": "inventory_wire",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.inventory.wire"
+   ],
+   "depends_on": [
+    "code_basis",
+    "doc_egress_hall",
+    "doc_water_tower",
+    "inventory_motors"
+   ],
+   "outputs": [
+    "docs-authority/inventory/WIRE_FAMILIES.csv",
+    "docs-authority/inventory/WIRE_INVENTORY.csv",
+    "docs-authority/inventory/WIRE_INVENTORY.md"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "amends": [
+    "flow_graph/inventory/wire_family_ids.json"
+   ]
+  },
+  {
+   "name": "cable_schedule",
+   "argv": [
+    "python3",
+    "docs-authority/_cable_schedule.py"
+   ],
+   "outputs": [
+    "docs-authority/CABLE_SCHEDULE.md"
+   ],
+   "depends_on": [
+    "ew_busbar",
+    "inventory_wire",
+    "one_line"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-ELEC-010; demand from ONE_LINE.json, EW bars from BUSBAR.json."
+  },
+  {
+   "name": "doc_wire_specs",
+   "argv": [
+    "python3",
+    "docs-authority/_wire_specs.py"
+   ],
+   "depends_on": [
+    "inventory_wire"
+   ],
+   "outputs": [
+    "docs-authority/WIRE_SPECS.md",
+    "docs-authority/drawings/wire/WF-01.svg",
+    "docs-authority/drawings/wire/WF-02.svg",
+    "docs-authority/drawings/wire/WF-03.svg",
+    "docs-authority/drawings/wire/WF-04.svg",
+    "docs-authority/drawings/wire/WF-05.svg",
+    "docs-authority/drawings/wire/WF-06.svg",
+    "docs-authority/drawings/wire/WF-07.svg",
+    "docs-authority/drawings/wire/WF-08.svg",
+    "docs-authority/drawings/wire/WF-09.svg",
+    "docs-authority/drawings/wire/WF-10.svg",
+    "docs-authority/drawings/wire/WF-11.svg",
+    "docs-authority/drawings/wire/WF-12.svg",
+    "docs-authority/drawings/wire/WF-13.svg",
+    "docs-authority/drawings/wire/WF-14.svg",
+    "docs-authority/drawings/wire/WF-15.svg",
+    "docs-authority/drawings/wire/WF-16.svg",
+    "docs-authority/drawings/wire/WF-17.svg",
+    "docs-authority/drawings/wire/WF-18.svg",
+    "docs-authority/drawings/wire/WF-19.svg",
+    "docs-authority/drawings/wire/WF-20.svg",
+    "docs-authority/drawings/wire/WF-21.svg",
+    "docs-authority/drawings/wire/WF-22.svg",
+    "docs-authority/drawings/wire/WF-23.svg",
+    "docs-authority/drawings/wire/WF-24.svg",
+    "docs-authority/drawings/wire/WF-25.svg",
+    "docs-authority/drawings/wire/WF-26.svg",
+    "docs-authority/inventory/WIRE_SPECS.json"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "pid_sheets",
+   "argv": [
+    "python3",
+    "docs-authority/_pid_sheets.py"
+   ],
+   "outputs": [
+    "docs-authority/pid/*"
+   ],
+   "depends_on": [
+    "line_list",
+    "nozzle_sched"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-PID-001 unit P&ID sheets (unit task 03): pid/<UNIT>.svg + pid/_register.csv + pid/_generated.json (graph-sha manifest); reads the line list, instrument index, valve inventory, cause-effect SIFs and nozzle CSVs; appends its rows to DRAWING_REGISTER.md (owned by _drawings.py, which does not glob pid/).",
+   "feeds_back_from": [
+    "doc_instr_index",
+    "doc_sif",
+    "inventory_other"
+   ]
   },
   {
    "name": "drawings",
@@ -967,20 +1804,1087 @@
    "quick": false
   },
   {
-   "name": "sector_definitions",
+   "name": "haz_area",
    "argv": [
     "python3",
-    "docs-authority/_sector_definitions.py"
-   ],
-   "depends_on": [
-    "balance_report"
+    "docs-authority/_haz_area.py"
    ],
    "outputs": [
-    "docs-authority/SECTOR_DEFINITIONS.md"
+    "docs-authority/HAZ_AREA.md"
    ],
-   "note": "AQS-SEC-001 sector catalogue, generated from graph mvs.sectors, the system tree (trains) and design_tool sector_definitions.py (classes, ESS peers, retired ids, aliases). Pure function of those inputs.",
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "Terminal consumer (graph + committed inventory CSVs).",
+   "feeds_back_from": [
+    "doc_instr_index",
+    "inventory_other"
+   ]
+  },
+  {
+   "name": "doc_block_fam_plans",
+   "argv": [
+    "python3",
+    "docs-authority/_block_fam_plans.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/BLOCK_FAMILY_PLANS.md"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "feeds_back_from": [
+    "doc_bought_specs",
+    "inventory_other"
+   ]
+  },
+  {
+   "name": "doc_commissioning",
+   "argv": [
+    "python3",
+    "docs-authority/_commissioning.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/COMMISSIONING.md",
+    "docs-authority/inventory/COMMISSIONING.csv"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "feeds_back_from": [
+    "doc_instr_index",
+    "doc_itp",
+    "doc_sif"
+   ]
+  },
+  {
+   "name": "doc_decom",
+   "argv": [
+    "python3",
+    "docs-authority/_decom.py"
+   ],
+   "depends_on": [
+    "doc_commissioning",
+    "doc_struct_loads"
+   ],
+   "outputs": [
+    "docs-authority/DECOMMISSIONING.md",
+    "docs-authority/inventory/DECOMMISSIONING.csv"
+   ],
    "writes_graph": false,
    "quick": false
+  },
+  {
+   "name": "doc_hvac",
+   "argv": [
+    "python3",
+    "docs-authority/_hvac.py"
+   ],
+   "depends_on": [
+    "doc_commissioning",
+    "doc_struct_loads"
+   ],
+   "outputs": [
+    "docs-authority/HVAC.md",
+    "docs-authority/inventory/HVAC_ROOMS.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_startup",
+   "argv": [
+    "python3",
+    "docs-authority/_startup.py"
+   ],
+   "depends_on": [
+    "doc_commissioning"
+   ],
+   "outputs": [
+    "docs-authority/STARTUP.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_eol",
+   "argv": [
+    "python3",
+    "docs-authority/_eol.py"
+   ],
+   "depends_on": [
+    "duty_basis"
+   ],
+   "outputs": [
+    "docs-authority/EOL_RETURN.md",
+    "docs-authority/inventory/EOL_RETURN.csv"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "feeds_back_from": [
+    "doc_plant_bom"
+   ]
+  },
+  {
+   "name": "doc_hazop",
+   "argv": [
+    "python3",
+    "docs-authority/_hazop.py"
+   ],
+   "depends_on": [
+    "duty_basis",
+    "inventory_motors"
+   ],
+   "outputs": [
+    "docs-authority/HAZOP.md",
+    "docs-authority/HAZOP_ACTION_REGISTER.md",
+    "docs-authority/hazop_actions.csv"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "feeds_back_from": [
+    "doc_instr_index",
+    "inventory_other"
+   ]
+  },
+  {
+   "name": "doc_instr_index",
+   "argv": [
+    "python3",
+    "docs-authority/_instr_index.py"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/INSTRUMENT_INDEX.md",
+    "docs-authority/inventory/INSTRUMENT_INDEX.csv"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "feeds_back_from": [
+    "inventory_other"
+   ]
+  },
+  {
+   "name": "doc_perf_test",
+   "argv": [
+    "python3",
+    "docs-authority/_perf_test.py"
+   ],
+   "depends_on": [
+    "doc_instr_index"
+   ],
+   "outputs": [
+    "docs-authority/PERF_TEST.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_sif",
+   "argv": [
+    "python3",
+    "docs-authority/_sif.py"
+   ],
+   "depends_on": [
+    "doc_hazop",
+    "doc_instr_index"
+   ],
+   "outputs": [
+    "docs-authority/CAUSE_EFFECT.md",
+    "docs-authority/sif_list.csv"
+   ],
+   "amends": [
+    "docs-authority/hazop_actions.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_op_proc",
+   "argv": [
+    "python3",
+    "docs-authority/_op_proc.py"
+   ],
+   "depends_on": [
+    "doc_commissioning",
+    "doc_sif"
+   ],
+   "outputs": [
+    "docs-authority/OPERATING_PROCEDURES.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "inventory_other",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.inventory.other"
+   ],
+   "depends_on": [
+    "doc_egress_hall",
+    "doc_gas_det",
+    "doc_sif",
+    "doc_water_tower",
+    "inventory_motors",
+    "inventory_wire",
+    "iso_sheets",
+    "supports"
+   ],
+   "outputs": [
+    "docs-authority/inventory/OTHER_FAMILIES.csv",
+    "docs-authority/inventory/OTHER_INVENTORY.csv",
+    "docs-authority/inventory/OTHER_INVENTORY.md"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "amends": [
+    "flow_graph/inventory/other_family_ids.json"
+   ]
+  },
+  {
+   "name": "doc_plc_arch",
+   "argv": [
+    "python3",
+    "docs-authority/_plc_arch.py"
+   ],
+   "depends_on": [
+    "doc_instr_index",
+    "inventory_other"
+   ],
+   "outputs": [
+    "docs-authority/CONTROL_ARCH.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_spares",
+   "argv": [
+    "python3",
+    "docs-authority/_spares.py"
+   ],
+   "depends_on": [
+    "inventory_motors",
+    "inventory_other"
+   ],
+   "outputs": [
+    "docs-authority/SPARES.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_unit_boms",
+   "argv": [
+    "python3",
+    "docs-authority/_unit_boms.py"
+   ],
+   "depends_on": [
+    "duty_basis",
+    "inventory_motors",
+    "inventory_other",
+    "inventory_pipe"
+   ],
+   "outputs": [
+    "models/units/ACID_POLISH_SCRUB/bom.csv",
+    "models/units/ADS_CHILL/bom.csv",
+    "models/units/AFTERBURNER/bom.csv",
+    "models/units/AFTERBURNER_FLUE/bom.csv",
+    "models/units/ALK_SCRUBBER/bom.csv",
+    "models/units/BACKUP_GEN/bom.csv",
+    "models/units/BAGHOUSE/bom.csv",
+    "models/units/BLOW_MOLD/bom.csv",
+    "models/units/BMED_ACID/bom.csv",
+    "models/units/BMED_BASE/bom.csv",
+    "models/units/BMED_UPW_POLISH/bom.csv",
+    "models/units/C29_RECYCLE/bom.csv",
+    "models/units/CATCH_TANK/bom.csv",
+    "models/units/COLD_MILL/bom.csv",
+    "models/units/CONTINUOUS_RECYCLE/bom.csv",
+    "models/units/CRU/bom.csv",
+    "models/units/CRYO_AHU/bom.csv",
+    "models/units/CRYO_AHU_COND_CONDENSABLE/bom.csv",
+    "models/units/CRYO_ASU/bom.csv",
+    "models/units/CRYO_CO2/bom.csv",
+    "models/units/CRYO_DED_COOL/bom.csv",
+    "models/units/CRYO_H2/bom.csv",
+    "models/units/CRYO_HX_Q4/bom.csv",
+    "models/units/CRYO_N2/bom.csv",
+    "models/units/CRYO_O2/bom.csv",
+    "models/units/DRY_COOLER/bom.csv",
+    "models/units/ELECTRODE_COAT/bom.csv",
+    "models/units/EW_1/bom.csv",
+    "models/units/EW_2/bom.csv",
+    "models/units/EW_3/bom.csv",
+    "models/units/EW_4/bom.csv",
+    "models/units/EW_5/bom.csv",
+    "models/units/EW_6/bom.csv",
+    "models/units/EW_7/bom.csv",
+    "models/units/EW_8/bom.csv",
+    "models/units/EW_9/bom.csv",
+    "models/units/EXT_HALL/bom.csv",
+    "models/units/FAB_UPW_TANK/bom.csv",
+    "models/units/FLOAT_SINK/bom.csv",
+    "models/units/FLUE_KO/bom.csv",
+    "models/units/FUEL_CELL/bom.csv",
+    "models/units/F_RECOVER/bom.csv",
+    "models/units/GAS_ATOMIZER/bom.csv",
+    "models/units/GEO_GHEX/bom.csv",
+    "models/units/GEO_HP/bom.csv",
+    "models/units/GEO_HP_CLOSED_LOOP/bom.csv",
+    "models/units/GLASS_BURNOUT/bom.csv",
+    "models/units/GLASS_MILL/bom.csv",
+    "models/units/GLASS_RINSE/bom.csv",
+    "models/units/GREASE_CA/bom.csv",
+    "models/units/GREASE_LI/bom.csv",
+    "models/units/GREY_TREAT/bom.csv",
+    "models/units/GROW_BED/bom.csv",
+    "models/units/H2O_ELYZ/bom.csv",
+    "models/units/H2_DRYER/bom.csv",
+    "models/units/HABITATION/bom.csv",
+    "models/units/HOPPER/bom.csv",
+    "models/units/HX8/bom.csv",
+    "models/units/HYDRO_SET/bom.csv",
+    "models/units/LITHO_ALIGN/bom.csv",
+    "models/units/LITHO_COAT/bom.csv",
+    "models/units/LITHO_DEV/bom.csv",
+    "models/units/LI_RECOVER/bom.csv",
+    "models/units/LOAD_AGG/bom.csv",
+    "models/units/MAU_HX/bom.csv",
+    "models/units/MEOH_COND/bom.csv",
+    "models/units/MEOH_FC/bom.csv",
+    "models/units/MEOH_TANK/bom.csv",
+    "models/units/MET_AHU/bom.csv",
+    "models/units/MET_HX_Q4/bom.csv",
+    "models/units/MET_MELT/bom.csv",
+    "models/units/MET_SCRUB/bom.csv",
+    "models/units/MFG_SHOP/bom.csv",
+    "models/units/NOX_SCRUB/bom.csv",
+    "models/units/NUTRIENT_DOSE/bom.csv",
+    "models/units/OIL_DRYER/bom.csv",
+    "models/units/OIL_FRAC/bom.csv",
+    "models/units/POLISH_BANK/bom.csv",
+    "models/units/PROD_C11_C18/bom.csv",
+    "models/units/PROD_C19_C28/bom.csv",
+    "models/units/PROD_C29/bom.csv",
+    "models/units/PROD_C5_C10/bom.csv",
+    "models/units/P_CA/bom.csv",
+    "models/units/Q1_A/bom.csv",
+    "models/units/Q1_B/bom.csv",
+    "models/units/Q2_A/bom.csv",
+    "models/units/Q2_B/bom.csv",
+    "models/units/Q3_A/bom.csv",
+    "models/units/Q3_B/bom.csv",
+    "models/units/Q4_A/bom.csv",
+    "models/units/Q4_B/bom.csv",
+    "models/units/RECTIFIER/bom.csv",
+    "models/units/RELIEF_CRYO/bom.csv",
+    "models/units/RELIEF_H2/bom.csv",
+    "models/units/REMIN/bom.csv",
+    "models/units/ROOF_TANK/bom.csv",
+    "models/units/SALT_FEED/bom.csv",
+    "models/units/SI_REDUCE/bom.csv",
+    "models/units/SOLAR_PV_CELL/bom.csv",
+    "models/units/SOL_ARK_60K/bom.csv",
+    "models/units/VCD_TRAIN/bom.csv",
+    "models/units/WAFER_FAB/bom.csv",
+    "models/units/WET_BENCH/bom.csv",
+    "models/units/WIRE_DRAW/bom.csv",
+    "models/units/WS_AMMONIA/bom.csv",
+    "models/units/WS_DOPE/bom.csv",
+    "models/units/WS_HF_ED/bom.csv",
+    "models/units/WS_KOH/bom.csv",
+    "models/units/WS_NITRIC/bom.csv",
+    "models/units/WS_PEROX/bom.csv",
+    "models/units/WS_PHOS/bom.csv",
+    "models/units/WS_SLURRY/bom.csv",
+    "models/units/WS_SOLV/bom.csv",
+    "models/units/ZNBR2/bom.csv",
+    "models/units/ZNBR2_BR2_REGEN/bom.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_itp",
+   "argv": [
+    "python3",
+    "docs-authority/_itp.py"
+   ],
+   "depends_on": [
+    "doc_unit_boms"
+   ],
+   "outputs": [
+    "models/units/*/itp.csv",
+    "docs-authority/ITP.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_plant_bom",
+   "argv": [
+    "python3",
+    "docs-authority/_plant_bom.py"
+   ],
+   "depends_on": [
+    "doc_unit_boms",
+    "inventory_motors",
+    "inventory_other",
+    "inventory_pipe",
+    "inventory_wire"
+   ],
+   "outputs": [
+    "docs-authority/PLANT_BOM.md",
+    "docs-authority/inventory/PLANT_BOM.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_sc_reconcile",
+   "argv": [
+    "python3",
+    "docs-authority/_sc_reconcile.py"
+   ],
+   "depends_on": [
+    "candidate_mvs",
+    "doc_plant_bom"
+   ],
+   "outputs": [
+    "docs-authority/SELF_COPY_BOM.md",
+    "docs-authority/inventory/SELF_COPY_RECON.csv"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "doc_bought_specs",
+   "argv": [
+    "python3",
+    "docs-authority/_bought_specs.py"
+   ],
+   "depends_on": [
+    "inventory_other"
+   ],
+   "outputs": [
+    "docs-authority/BOUGHT_SPECS.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "plc_programs",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.control.plc_programs"
+   ],
+   "depends_on": [
+    "doc_instr_index",
+    "doc_plc_arch"
+   ],
+   "outputs": [
+    "docs-authority/plc/*.st",
+    "docs-authority/CONTROL_SOFTWARE.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "cad_envelopes",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.envelopes"
+   ],
+   "requires": [
+    "python:cadquery"
+   ],
+   "outputs": [
+    "cad/stl/*.stl"
+   ],
+   "note": "Study envelope boxes (one STL per sized unit) from the graph envelopes.",
+   "group": "cad",
+   "writes_graph": false,
+   "quick": false,
+   "depends_on": []
+  },
+  {
+   "name": "cad_mfg_models",
+   "argv": [
+    "python3",
+    "models/mfg/build_all.py"
+   ],
+   "requires": [
+    "python:cadquery"
+   ],
+   "outputs": [
+    "models/mfg/*/export/*",
+    "models/mfg/*/drawings/*"
+   ],
+   "amends": [
+    "models/mfg/*/bom.csv"
+   ],
+   "invokes": [
+    "models/mfg/*.py",
+    "models/mfg/*/*.py"
+   ],
+   "note": "Every CadQuery manufacturing model under models/mfg, discovered by location.",
+   "group": "cad",
+   "writes_graph": false,
+   "quick": false,
+   "depends_on": []
+  },
+  {
+   "name": "cad_motors",
+   "argv": [
+    "python3",
+    "models/motors/build.py"
+   ],
+   "requires": [
+    "python:cadquery"
+   ],
+   "outputs": [
+    "models/motors/MF-*/export/*"
+   ],
+   "amends": [
+    "models/motors/MF-*/bom.csv",
+    "models/motors/MF-*/fasteners.csv"
+   ],
+   "note": "Motor family models, drawings and BOMs from AQS-INV-005.",
+   "group": "cad",
+   "writes_graph": false,
+   "quick": false,
+   "depends_on": [
+    "inventory_motor_designs"
+   ]
+  },
+  {
+   "name": "cad_detail_stls",
+   "argv": [
+    "bash",
+    "models/openscad/detail/build_stls.sh"
+   ],
+   "requires": [
+    "cmd:openscad"
+   ],
+   "outputs": [
+    "models/openscad/detail/stl/*.stl",
+    "models/export/detail/*.stl"
+   ],
+   "note": "OpenSCAD detail parts, published to models/export/detail.",
+   "group": "cad",
+   "writes_graph": false,
+   "quick": false,
+   "depends_on": []
+  },
+  {
+   "name": "cad_freecad",
+   "argv": [
+    "bash",
+    "models/REBUILD.sh",
+    "--plant-only"
+   ],
+   "requires": [
+    "cmd:freecadcmd"
+   ],
+   "outputs": [
+    "models/freecad/*.FCStd",
+    "models/freecad/*.step",
+    "docs-authority/inventory/CAD_CLASH*.json"
+   ],
+   "invokes": [
+    "models/freecad/*.py"
+   ],
+   "note": "FreeCAD 1.0 plant assembly, then the solid clash checks read by doc_cad_clash.",
+   "group": "cad",
+   "writes_graph": false,
+   "quick": false,
+   "depends_on": [
+    "cad_detail_stls",
+    "cad_mfg_models",
+    "cad_envelopes"
+   ]
+  },
+  {
+   "name": "doc_cad_clash",
+   "argv": [
+    "python3",
+    "docs-authority/_cad_clash.py"
+   ],
+   "depends_on": [
+    "cad_freecad",
+    "doc_ga_check"
+   ],
+   "outputs": [],
+   "amends": [
+    "docs-authority/GA_CHECK.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "test_plan",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.test_plan"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/TEST_PLAN.md"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-TST-001: every value marked needs_verification (drivers.json, assumptions_manual.json) mapped to a test."
+  },
+  {
+   "name": "sizing_coverage",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.sizing_coverage"
+   ],
+   "outputs": [
+    "docs-authority/inventory/SIZING_COVERAGE.json"
+   ],
+   "depends_on": [
+    "access_check",
+    "cable_schedule",
+    "candidate_mvs",
+    "code_basis",
+    "derived_excerpts",
+    "doc_asme_class",
+    "doc_block_fam_plans",
+    "doc_bought_specs",
+    "doc_cad_clash",
+    "doc_commissioning",
+    "doc_compliance",
+    "doc_decom",
+    "doc_egress_env",
+    "doc_egress_hall",
+    "doc_eol",
+    "doc_fab_routes",
+    "doc_fire",
+    "doc_foundation",
+    "doc_frame_check",
+    "doc_ga_check",
+    "doc_gas_det",
+    "doc_hazop",
+    "doc_hse_sep",
+    "doc_hvac",
+    "doc_hydro_siting",
+    "doc_install_seq",
+    "doc_instr_index",
+    "doc_internals",
+    "doc_itp",
+    "doc_jellybean",
+    "doc_lifting",
+    "doc_maint",
+    "doc_mfg_tools",
+    "doc_motor_fa",
+    "doc_op_proc",
+    "doc_perf_test",
+    "doc_pipe_specs",
+    "doc_plant_bom",
+    "doc_plc_arch",
+    "doc_relief_register",
+    "doc_rigging_plans",
+    "doc_sc_reconcile",
+    "doc_sif",
+    "doc_site_access",
+    "doc_spares",
+    "doc_standards_list",
+    "doc_startup",
+    "doc_struct_loads",
+    "doc_test_rigs",
+    "doc_unit_boms",
+    "doc_unit_materials",
+    "doc_water_tower",
+    "doc_wire_specs",
+    "doc_wps",
+    "doc_znbr_test",
+    "drawings",
+    "duty_basis",
+    "ew_busbar",
+    "ew_sizing_doc",
+    "foam_ew_cut_list",
+    "foundry_sizing_doc",
+    "gas_species",
+    "haz_area",
+    "insulation",
+    "inventory_motor_designs",
+    "inventory_motors",
+    "inventory_other",
+    "inventory_pipe",
+    "inventory_wire",
+    "iso_routes",
+    "iso_sheets",
+    "leach_sizing_doc",
+    "line_list",
+    "load_list",
+    "loop_closure",
+    "nozzle_sched",
+    "o2_source",
+    "one_line",
+    "parametric_model_report",
+    "pid_sheets",
+    "plc_programs",
+    "polymers_sizing_doc",
+    "protection",
+    "reactor_design_doc",
+    "regen_derived",
+    "sector_definitions",
+    "sep_check",
+    "sizing_bmed_stack",
+    "supports",
+    "unit_sizing_sweep",
+    "vent_scrubber_doc"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "Unit task 02 evidence registry (reads the sizing docs, asserts unit names); read by _task_plan_gen.",
+   "index": true
+  },
+  {
+   "name": "task_plan",
+   "argv": [
+    "python3",
+    "docs-authority/_task_plan_gen.py"
+   ],
+   "outputs": [
+    "docs-authority/TASK_PLAN.md"
+   ],
+   "depends_on": [
+    "storage_sizing",
+    "access_check",
+    "cable_schedule",
+    "candidate_mvs",
+    "code_basis",
+    "derived_excerpts",
+    "doc_asme_class",
+    "doc_block_fam_plans",
+    "doc_bought_specs",
+    "doc_cad_clash",
+    "doc_commissioning",
+    "doc_compliance",
+    "doc_decom",
+    "doc_egress_env",
+    "doc_egress_hall",
+    "doc_eol",
+    "doc_fab_routes",
+    "doc_fire",
+    "doc_foundation",
+    "doc_frame_check",
+    "doc_ga_check",
+    "doc_gas_det",
+    "doc_hazop",
+    "doc_hse_sep",
+    "doc_hvac",
+    "doc_hydro_siting",
+    "doc_install_seq",
+    "doc_instr_index",
+    "doc_internals",
+    "doc_itp",
+    "doc_jellybean",
+    "doc_lifting",
+    "doc_maint",
+    "doc_mfg_tools",
+    "doc_motor_fa",
+    "doc_op_proc",
+    "doc_perf_test",
+    "doc_pipe_specs",
+    "doc_plant_bom",
+    "doc_plc_arch",
+    "doc_relief_register",
+    "doc_rigging_plans",
+    "doc_sc_reconcile",
+    "doc_sif",
+    "doc_site_access",
+    "doc_spares",
+    "doc_standards_list",
+    "doc_startup",
+    "doc_struct_loads",
+    "doc_test_rigs",
+    "doc_unit_boms",
+    "doc_unit_materials",
+    "doc_water_tower",
+    "doc_wire_specs",
+    "doc_wps",
+    "doc_znbr_test",
+    "drawings",
+    "duty_basis",
+    "ew_busbar",
+    "ew_sizing_doc",
+    "foam_ew_cut_list",
+    "foundry_sizing_doc",
+    "gas_species",
+    "haz_area",
+    "insulation",
+    "inventory_motor_designs",
+    "inventory_motors",
+    "inventory_other",
+    "inventory_pipe",
+    "inventory_wire",
+    "iso_routes",
+    "iso_sheets",
+    "leach_sizing_doc",
+    "line_list",
+    "load_list",
+    "loop_closure",
+    "nozzle_sched",
+    "o2_source",
+    "one_line",
+    "parametric_model_report",
+    "pid_sheets",
+    "plc_programs",
+    "polymers_sizing_doc",
+    "protection",
+    "reactor_design_doc",
+    "regen_derived",
+    "sector_definitions",
+    "sep_check",
+    "sizing_bmed_stack",
+    "sizing_coverage",
+    "supports",
+    "unit_sizing_sweep",
+    "vent_scrubber_doc"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-PLAN-007 regen (AGENTS loop step 1); reads graph + STORAGE_HOLDUP.json + committed inventory CSVs + pid/<UNIT>.svg (unit task 03 evidence).",
+   "index": true
+  },
+  {
+   "name": "model_workbook",
+   "argv": [
+    "python3",
+    "docs-authority/_model_workbook.py"
+   ],
+   "outputs": [
+    "docs-authority/MODEL_WORKBOOK.xlsx"
+   ],
+   "depends_on": [
+    "write_graph_power",
+    "access_check",
+    "cable_schedule",
+    "candidate_mvs",
+    "code_basis",
+    "derived_excerpts",
+    "doc_asme_class",
+    "doc_block_fam_plans",
+    "doc_bought_specs",
+    "doc_cad_clash",
+    "doc_commissioning",
+    "doc_compliance",
+    "doc_decom",
+    "doc_egress_env",
+    "doc_egress_hall",
+    "doc_eol",
+    "doc_fab_routes",
+    "doc_fire",
+    "doc_foundation",
+    "doc_frame_check",
+    "doc_ga_check",
+    "doc_gas_det",
+    "doc_hazop",
+    "doc_hse_sep",
+    "doc_hvac",
+    "doc_hydro_siting",
+    "doc_install_seq",
+    "doc_instr_index",
+    "doc_internals",
+    "doc_itp",
+    "doc_jellybean",
+    "doc_lifting",
+    "doc_maint",
+    "doc_mfg_tools",
+    "doc_motor_fa",
+    "doc_op_proc",
+    "doc_perf_test",
+    "doc_pipe_specs",
+    "doc_plant_bom",
+    "doc_plc_arch",
+    "doc_relief_register",
+    "doc_rigging_plans",
+    "doc_sc_reconcile",
+    "doc_sif",
+    "doc_site_access",
+    "doc_spares",
+    "doc_standards_list",
+    "doc_startup",
+    "doc_struct_loads",
+    "doc_test_rigs",
+    "doc_unit_boms",
+    "doc_unit_materials",
+    "doc_water_tower",
+    "doc_wire_specs",
+    "doc_wps",
+    "doc_znbr_test",
+    "drawings",
+    "duty_basis",
+    "ew_busbar",
+    "ew_sizing_doc",
+    "foam_ew_cut_list",
+    "foundry_sizing_doc",
+    "gas_species",
+    "haz_area",
+    "insulation",
+    "inventory_motor_designs",
+    "inventory_motors",
+    "inventory_other",
+    "inventory_pipe",
+    "inventory_wire",
+    "iso_routes",
+    "iso_sheets",
+    "leach_sizing_doc",
+    "line_list",
+    "load_list",
+    "loop_closure",
+    "nozzle_sched",
+    "o2_source",
+    "one_line",
+    "parametric_model_report",
+    "pid_sheets",
+    "plc_programs",
+    "polymers_sizing_doc",
+    "protection",
+    "reactor_design_doc",
+    "regen_derived",
+    "sector_definitions",
+    "sep_check",
+    "sizing_bmed_stack",
+    "sizing_coverage",
+    "supports",
+    "task_plan",
+    "unit_sizing_sweep",
+    "vent_scrubber_doc"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "U5 Option A cascading parametric workbook: 24 sheets derived live from drivers.json (696 keys) + the graph + system_tree aggregate (README/DRIVERS/TREE/ELECTRICAL/HEAT_LEDGER + 19 sector sheets); subtotals/counts/store-balance are real SUM/COUNTA/SUMIF formulas; byte-stable (zip timestamps + docProps dates normalised, no wall clock).",
+   "index": true
+  },
+  {
+   "name": "assumptions_register",
+   "argv": [
+    "python3",
+    "docs-authority/_assumptions_register.py"
+   ],
+   "outputs": [
+    "docs-authority/ASSUMPTIONS_REGISTER.md"
+   ],
+   "depends_on": [
+    "write_graph_power",
+    "access_check",
+    "cable_schedule",
+    "candidate_mvs",
+    "code_basis",
+    "derived_excerpts",
+    "doc_asme_class",
+    "doc_block_fam_plans",
+    "doc_bought_specs",
+    "doc_cad_clash",
+    "doc_commissioning",
+    "doc_compliance",
+    "doc_decom",
+    "doc_egress_env",
+    "doc_egress_hall",
+    "doc_eol",
+    "doc_fab_routes",
+    "doc_fire",
+    "doc_foundation",
+    "doc_frame_check",
+    "doc_ga_check",
+    "doc_gas_det",
+    "doc_hazop",
+    "doc_hse_sep",
+    "doc_hvac",
+    "doc_hydro_siting",
+    "doc_install_seq",
+    "doc_instr_index",
+    "doc_internals",
+    "doc_itp",
+    "doc_jellybean",
+    "doc_lifting",
+    "doc_maint",
+    "doc_mfg_tools",
+    "doc_motor_fa",
+    "doc_op_proc",
+    "doc_perf_test",
+    "doc_pipe_specs",
+    "doc_plant_bom",
+    "doc_plc_arch",
+    "doc_relief_register",
+    "doc_rigging_plans",
+    "doc_sc_reconcile",
+    "doc_sif",
+    "doc_site_access",
+    "doc_spares",
+    "doc_standards_list",
+    "doc_startup",
+    "doc_struct_loads",
+    "doc_test_rigs",
+    "doc_unit_boms",
+    "doc_unit_materials",
+    "doc_water_tower",
+    "doc_wire_specs",
+    "doc_wps",
+    "doc_znbr_test",
+    "drawings",
+    "duty_basis",
+    "ew_busbar",
+    "ew_sizing_doc",
+    "foam_ew_cut_list",
+    "foundry_sizing_doc",
+    "gas_species",
+    "haz_area",
+    "insulation",
+    "inventory_motor_designs",
+    "inventory_motors",
+    "inventory_other",
+    "inventory_pipe",
+    "inventory_wire",
+    "iso_routes",
+    "iso_sheets",
+    "leach_sizing_doc",
+    "line_list",
+    "load_list",
+    "loop_closure",
+    "model_workbook",
+    "nozzle_sched",
+    "o2_source",
+    "one_line",
+    "parametric_model_report",
+    "pid_sheets",
+    "plc_programs",
+    "polymers_sizing_doc",
+    "protection",
+    "reactor_design_doc",
+    "regen_derived",
+    "sector_definitions",
+    "sep_check",
+    "sizing_bmed_stack",
+    "sizing_coverage",
+    "supports",
+    "task_plan",
+    "unit_sizing_sweep",
+    "vent_scrubber_doc"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-REG-002 regen; fails on a bad assumptions_manual.json entry.",
+   "feeds_back_from": [
+    "design_check",
+    "doc_register",
+    "rev_stamp"
+   ],
+   "index": true
   },
   {
    "name": "design_check",
@@ -993,8 +2897,101 @@
     "docs-authority/inventory/DESIGN_CHECK.csv"
    ],
    "depends_on": [
+    "access_check",
     "assumptions_register",
-    "regen_derived"
+    "cable_schedule",
+    "candidate_mvs",
+    "code_basis",
+    "derived_excerpts",
+    "doc_asme_class",
+    "doc_block_fam_plans",
+    "doc_bought_specs",
+    "doc_cad_clash",
+    "doc_commissioning",
+    "doc_compliance",
+    "doc_decom",
+    "doc_egress_env",
+    "doc_egress_hall",
+    "doc_eol",
+    "doc_fab_routes",
+    "doc_fire",
+    "doc_foundation",
+    "doc_frame_check",
+    "doc_ga_check",
+    "doc_gas_det",
+    "doc_hazop",
+    "doc_hse_sep",
+    "doc_hvac",
+    "doc_hydro_siting",
+    "doc_install_seq",
+    "doc_instr_index",
+    "doc_internals",
+    "doc_itp",
+    "doc_jellybean",
+    "doc_lifting",
+    "doc_maint",
+    "doc_mfg_tools",
+    "doc_motor_fa",
+    "doc_op_proc",
+    "doc_perf_test",
+    "doc_pipe_specs",
+    "doc_plant_bom",
+    "doc_plc_arch",
+    "doc_relief_register",
+    "doc_rigging_plans",
+    "doc_sc_reconcile",
+    "doc_sif",
+    "doc_site_access",
+    "doc_spares",
+    "doc_standards_list",
+    "doc_startup",
+    "doc_struct_loads",
+    "doc_test_rigs",
+    "doc_unit_boms",
+    "doc_unit_materials",
+    "doc_water_tower",
+    "doc_wire_specs",
+    "doc_wps",
+    "doc_znbr_test",
+    "drawings",
+    "duty_basis",
+    "ew_busbar",
+    "ew_sizing_doc",
+    "foam_ew_cut_list",
+    "foundry_sizing_doc",
+    "gas_species",
+    "haz_area",
+    "insulation",
+    "inventory_motor_designs",
+    "inventory_motors",
+    "inventory_other",
+    "inventory_pipe",
+    "inventory_wire",
+    "iso_routes",
+    "iso_sheets",
+    "leach_sizing_doc",
+    "line_list",
+    "load_list",
+    "loop_closure",
+    "model_workbook",
+    "nozzle_sched",
+    "o2_source",
+    "one_line",
+    "parametric_model_report",
+    "pid_sheets",
+    "plc_programs",
+    "polymers_sizing_doc",
+    "protection",
+    "reactor_design_doc",
+    "regen_derived",
+    "sector_definitions",
+    "sep_check",
+    "sizing_bmed_stack",
+    "sizing_coverage",
+    "supports",
+    "task_plan",
+    "unit_sizing_sweep",
+    "vent_scrubber_doc"
    ],
    "writes_graph": false,
    "quick": false,
@@ -1007,25 +3004,113 @@
     "docs-authority/_doc_register.py"
    ],
    "depends_on": [
-    "duty_basis",
-    "iso_sheets",
-    "derived_excerpts",
-    "loop_closure",
-    "candidate_mvs",
-    "regen_derived",
-    "task_plan",
-    "model_workbook",
+    "access_check",
     "assumptions_register",
+    "cable_schedule",
+    "candidate_mvs",
+    "code_basis",
+    "derived_excerpts",
+    "design_check",
+    "doc_asme_class",
+    "doc_block_fam_plans",
+    "doc_bought_specs",
+    "doc_cad_clash",
+    "doc_commissioning",
+    "doc_compliance",
+    "doc_decom",
+    "doc_egress_env",
+    "doc_egress_hall",
+    "doc_eol",
+    "doc_fab_routes",
+    "doc_fire",
+    "doc_foundation",
+    "doc_frame_check",
+    "doc_ga_check",
+    "doc_gas_det",
+    "doc_hazop",
+    "doc_hse_sep",
+    "doc_hvac",
+    "doc_hydro_siting",
+    "doc_install_seq",
+    "doc_instr_index",
+    "doc_internals",
+    "doc_itp",
+    "doc_jellybean",
+    "doc_lifting",
+    "doc_maint",
+    "doc_mfg_tools",
+    "doc_motor_fa",
+    "doc_op_proc",
+    "doc_perf_test",
+    "doc_pipe_specs",
+    "doc_plant_bom",
+    "doc_plc_arch",
+    "doc_relief_register",
+    "doc_rigging_plans",
+    "doc_sc_reconcile",
+    "doc_sif",
+    "doc_site_access",
+    "doc_spares",
+    "doc_standards_list",
+    "doc_startup",
+    "doc_struct_loads",
+    "doc_test_rigs",
+    "doc_unit_boms",
+    "doc_unit_materials",
+    "doc_water_tower",
+    "doc_wire_specs",
+    "doc_wps",
+    "doc_znbr_test",
     "drawings",
+    "duty_basis",
+    "ew_busbar",
+    "ew_sizing_doc",
+    "foam_ew_cut_list",
+    "foundry_sizing_doc",
+    "gas_species",
+    "haz_area",
+    "insulation",
+    "inventory_motor_designs",
+    "inventory_motors",
+    "inventory_other",
+    "inventory_pipe",
+    "inventory_wire",
+    "iso_routes",
+    "iso_sheets",
+    "leach_sizing_doc",
+    "line_list",
+    "load_list",
+    "loop_closure",
+    "model_workbook",
+    "nozzle_sched",
+    "o2_source",
+    "one_line",
+    "parametric_model_report",
+    "pid_sheets",
+    "plc_programs",
+    "polymers_sizing_doc",
+    "protection",
+    "reactor_design_doc",
+    "regen_derived",
     "sector_definitions",
-    "design_check"
+    "sep_check",
+    "sizing_bmed_stack",
+    "sizing_coverage",
+    "supports",
+    "task_plan",
+    "unit_sizing_sweep",
+    "vent_scrubber_doc"
    ],
    "outputs": [
     "docs-authority/DOC_REGISTER.md"
    ],
    "note": "AQS-REG-001 document register, generated from every tracked page's own Document number / Former number lines. Runs after every page-writing stage so it lists their current revision and date; --check fails on a duplicate or missing number.",
    "writes_graph": false,
-   "quick": false
+   "quick": false,
+   "feeds_back_from": [
+    "rev_stamp"
+   ],
+   "index": true
   },
   {
    "name": "rev_stamp",
@@ -1037,22 +3122,176 @@
     "docs-authority/DERIVED_REVISIONS.md"
    ],
    "depends_on": [
-    "duty_basis",
-    "iso_sheets",
-    "derived_excerpts",
-    "loop_closure",
-    "candidate_mvs",
-    "regen_derived",
-    "task_plan",
-    "model_workbook",
+    "access_check",
     "assumptions_register",
+    "cable_schedule",
+    "candidate_mvs",
+    "code_basis",
+    "derived_excerpts",
+    "design_check",
+    "doc_asme_class",
+    "doc_block_fam_plans",
+    "doc_bought_specs",
+    "doc_cad_clash",
+    "doc_commissioning",
+    "doc_compliance",
+    "doc_decom",
+    "doc_egress_env",
+    "doc_egress_hall",
+    "doc_eol",
+    "doc_fab_routes",
+    "doc_fire",
+    "doc_foundation",
+    "doc_frame_check",
+    "doc_ga_check",
+    "doc_gas_det",
+    "doc_hazop",
+    "doc_hse_sep",
+    "doc_hvac",
+    "doc_hydro_siting",
+    "doc_install_seq",
+    "doc_instr_index",
+    "doc_internals",
+    "doc_itp",
+    "doc_jellybean",
+    "doc_lifting",
+    "doc_maint",
+    "doc_mfg_tools",
+    "doc_motor_fa",
+    "doc_op_proc",
+    "doc_perf_test",
+    "doc_pipe_specs",
+    "doc_plant_bom",
+    "doc_plc_arch",
+    "doc_register",
+    "doc_relief_register",
+    "doc_rigging_plans",
+    "doc_sc_reconcile",
+    "doc_sif",
+    "doc_site_access",
+    "doc_spares",
+    "doc_standards_list",
+    "doc_startup",
+    "doc_struct_loads",
+    "doc_test_rigs",
+    "doc_unit_boms",
+    "doc_unit_materials",
+    "doc_water_tower",
+    "doc_wire_specs",
+    "doc_wps",
+    "doc_znbr_test",
     "drawings",
+    "duty_basis",
+    "ew_busbar",
+    "ew_sizing_doc",
+    "foam_ew_cut_list",
+    "foundry_sizing_doc",
+    "gas_species",
+    "haz_area",
+    "insulation",
+    "inventory_motor_designs",
+    "inventory_motors",
+    "inventory_other",
+    "inventory_pipe",
+    "inventory_wire",
+    "iso_routes",
+    "iso_sheets",
+    "leach_sizing_doc",
+    "line_list",
+    "load_list",
+    "loop_closure",
+    "model_workbook",
+    "nozzle_sched",
+    "o2_source",
+    "one_line",
+    "parametric_model_report",
+    "pid_sheets",
+    "plc_programs",
+    "polymers_sizing_doc",
+    "protection",
+    "reactor_design_doc",
+    "regen_derived",
     "sector_definitions",
-    "doc_register"
+    "sep_check",
+    "sizing_bmed_stack",
+    "sizing_coverage",
+    "supports",
+    "task_plan",
+    "unit_sizing_sweep",
+    "vent_scrubber_doc"
    ],
    "writes_graph": false,
    "quick": false,
-   "note": "LAST: X-GOV-06 derived-revision board incl. the regen receipt vouch and the gated set (U3 expansion)."
+   "note": "LAST: X-GOV-06 derived-revision board incl. the regen receipt vouch and the gated set (U3 expansion).",
+   "index": true
+  }
+ ],
+ "not_stages": [
+  {
+   "role": "pipeline",
+   "scripts": [
+    "flow_graph/param/regen.py"
+   ],
+   "reason": "The pipeline runner itself."
+  },
+  {
+   "role": "library",
+   "scripts": [
+    "flow_graph/param/_ps_cache.py",
+    "flow_graph/param/closure_tf.py",
+    "flow_graph/param/o2_close.py",
+    "flow_graph/exporters/matplotlib/sector_style.py",
+    "flow_graph/exporters/matplotlib/labels.py",
+    "models/freecad/*.py",
+    "flow_graph/inventory/stable_ids.py"
+   ],
+   "reason": "Imported by stages (closure_tf by balance_report; stable_ids by the inventory stages, which own the *_family_ids.json registers; the models/freecad modules by build_plant.py under cad_freecad). A command-line entry point, where present, rewrites files a stage already owns."
+  },
+  {
+   "role": "runtime",
+   "scripts": [
+    "design_tool/aqs_design_tool/**/*.py"
+   ],
+   "reason": "Design-tool server code: writes user sandboxes and export packs at run time, not repository files."
+  },
+  {
+   "role": "preview",
+   "scripts": [
+    "flow_graph/exporters/matplotlib/*.py"
+   ],
+   "reason": "Writes an untracked preview PNG beside the script. The sheets published in media/pfd are run by stage regen_derived."
+  },
+  {
+   "role": "study",
+   "scripts": [
+    "docs-authority/_*_study.py"
+   ],
+   "reason": "Prints the evidence for a dated study page; writes no repository file."
+  },
+  {
+   "role": "migration",
+   "scripts": [
+    "docs-authority/_balance_close_m.py",
+    "docs-authority/_balance_close_n.py",
+    "docs-authority/_resize_sweep.py",
+    "docs-authority/_material_temps.py",
+    "flow_graph/param/pressure_nodes.py",
+    "flow_graph/build_seed.py",
+    "flow_graph/param/sanitation.py"
+   ],
+   "reason": "One-time edit of the graph, already applied; the graph is the authority now. Re-running would rewrite the graph, and several no longer match it."
+  },
+  {
+   "role": "layout",
+   "scripts": [
+    "flow_graph/place_*.py",
+    "flow_graph/study_place.py",
+    "flow_graph/farm_rerow.py",
+    "flow_graph/clear_pairs.py",
+    "flow_graph/apply_placement.py",
+    "flow_graph/flow_to_cad.py"
+   ],
+   "reason": "Layout tools. They seed or move rows in the placement files, which were refined after the tool ran, so the placement files are inputs; re-running would discard that work."
   }
  ]
 }

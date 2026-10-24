@@ -24,6 +24,7 @@ TAB = lambda name, cols, rows: (
 def main():
     fams = [r for r in csv.DictReader(open(os.path.join(D, 'OTHER_FAMILIES.csv')))
             if r['category'] != 'fabricated part']
+    fab = next(r['family'] for r in csv.DictReader(open(os.path.join(D, 'OTHER_FAMILIES.csv'))) if r['category'] == 'fabricated part')
     bases = collections.defaultdict(set)
     for r in csv.DictReader(open(os.path.join(D, 'OTHER_INVENTORY.csv'))):
         bases[(r['category'], r['item'], r['spec'])].add(r['basis'][:80])
@@ -80,7 +81,7 @@ def main():
         n += 1
 
     L += ['', f'## {n}. Coverage gate', '',
-          f'- Bought families covered: {len(fams)} of {len(fams) + 1} (the excluded one is OF-13, the fabricated-part set:',
+          f'- Bought families covered: {len(fams)} of {len(fams) + 1} (the excluded one is {fab}, the fabricated-part set:',
           '  sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).',
           '- Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.']
     open(os.path.join(R, 'docs-authority/BOUGHT_SPECS.md'), 'w').write('\n'.join(L) + '\n')

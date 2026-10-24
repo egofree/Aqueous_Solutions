@@ -9,10 +9,18 @@ Vessel cases come from the graph (write_graph relief, API520). Machine interstag
 
 | Item | Kind | Set / design kPa g | Case | W kg/h | Bore req mm | Bore mm | Adequate |
 |---|---|---|---|---|---|---|---|
+| CRYO_CO2 | vessel | 2200.0 | - | 1.851 | 0.28 | 9.0 | yes |
+| CRYO_H2 | vessel | 22000.0 | - | 1.6424 | 0.21 | 13.0 | yes |
+| CRYO_O2 | vessel | 22000.0 | - | 12.4107 | 0.28 | 9.0 | yes |
 | H2O_ELYZ | vessel | 990.0 | blocked outlet at full inflow 1.789 kg/h (hydrogen side of the PEM stack at the compressor | 1.7886 | 0.98 | 3.3 | yes |
-| CO2 compressor stage 1 | interstage PSV | 131.3 | blocked discharge at 2.703 kg/h, 122 C | 2.703 | 1.06 | 6.0 | yes |
-| CO2 compressor stage 2 | interstage PSV | 390.6 | blocked discharge at 2.703 kg/h, 122 C | 2.703 | 0.79 | 6.0 | yes |
-| CO2 compressor stage 3 | interstage PSV | 939.0 | blocked discharge at 2.703 kg/h, 122 C | 2.703 | 0.57 | 6.0 | yes |
-| CO2 compressor stage 4 | interstage PSV | 2098.7 | blocked discharge at 2.703 kg/h, 122 C | 2.703 | 0.4 | 6.0 | yes |
+| H2 compressor stage 1 | interstage PSV | 1901.3 | blocked discharge at 1.417 kg/h, 125 C | 1.417 | 0.65 | 6.0 | yes |
+| H2 compressor stage 2 | interstage PSV | 3544.6 | blocked discharge at 1.417 kg/h, 125 C | 1.417 | 0.48 | 6.0 | yes |
+| H2 compressor stage 3 | interstage PSV | 6536.3 | blocked discharge at 1.417 kg/h, 125 C | 1.417 | 0.36 | 6.0 | yes |
+| H2 compressor stage 4 | interstage PSV | 11982.8 | blocked discharge at 1.417 kg/h, 125 C | 1.417 | 0.27 | 6.0 | yes |
+| H2 compressor stage 5 | interstage PSV | 21898.7 | blocked discharge at 1.417 kg/h, 125 C | 1.417 | 0.2 | 6.0 | yes |
+| CO2 compressor stage 1 | interstage PSV | 131.3 | blocked discharge at 2.718 kg/h, 122 C | 2.718 | 1.06 | 6.0 | yes |
+| CO2 compressor stage 2 | interstage PSV | 390.6 | blocked discharge at 2.718 kg/h, 122 C | 2.718 | 0.79 | 6.0 | yes |
+| CO2 compressor stage 3 | interstage PSV | 939.0 | blocked discharge at 2.718 kg/h, 122 C | 2.718 | 0.57 | 6.0 | yes |
+| CO2 compressor stage 4 | interstage PSV | 2098.7 | blocked discharge at 2.718 kg/h, 122 C | 2.718 | 0.4 | 6.0 | yes |
 
-1 pressurised vessels and 4 interstage valves; all adequate. Atmospheric units are open-vented per API 2000 (A-M-155, A-M-174). Fire case on the gas receivers (API 521 unwetted vessel) is carried to X-SAF-05.
+4 pressurised vessels and 9 interstage valves; all adequate. Atmospheric units are open-vented per API 2000 (A-M-155, A-M-174). Fire case on the gas receivers (API 521 unwetted vessel) is carried to X-SAF-05.

@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1113" font-family="sans-serif">
-<rect x="4" y="4" width="1492" height="1105" fill="white" stroke="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1098" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="1090" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit HDR_H2 · header · sector GAS · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 13 in + 1 out · valves 2 placed / 1 unplaced · instruments 1 (0 SIF) · nozzles 16</text>
+<text x="24" y="72" font-size="10.5">Edges 13 in + 1 out · valves 2 placed / 0 unplaced · instruments 1 (0 SIF) · nozzles 16</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -112,13 +112,12 @@
 <text x="24" y="888" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="898" font-size="9">Every incident graph edge is drawn: 13 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="913" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/HDR_H2.csv.</text>
-<text x="24" y="928" font-size="9">Valves not on a unit edge (inventory basis names no incident stream): isolation valve DN15 (IA-ALD-H2: one at each end nozzle (assumed))</text>
-<text x="24" y="943" font-size="9">Nozzles with no matching graph edge (service text): N6 drain; N7 vent</text>
-<text x="24" y="958" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
-<g id="aqs-title-block"><rect x="1116" y="995" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
-<text x="1124" y="1012" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-HDR_H2</text>
-<text x="1124" y="1029" font-size="9">P&amp;ID HDR_H2 (header, GAS sector)</text>
-<text x="1124" y="1046" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 1d31a9de   Issued 2026-10-19</text>
-<text x="1124" y="1063" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="1080" font-size="9">Graph SHA-256 12f1602c68d17412   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="24" y="928" font-size="9">Nozzles with no matching graph edge (service text): N6 drain; N7 vent</text>
+<text x="24" y="943" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="980" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="997" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-HDR_H2</text>
+<text x="1124" y="1014" font-size="9">P&amp;ID HDR_H2 (header, GAS sector)</text>
+<text x="1124" y="1031" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev c41b968a   Issued 2026-10-19</text>
+<text x="1124" y="1048" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="1065" font-size="9">Graph SHA-256 12f1602c68d17412   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

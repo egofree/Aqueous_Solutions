@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="929" font-family="sans-serif">
-<rect x="4" y="4" width="1492" height="921" fill="white" stroke="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="914" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="906" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit CRYO_ASU · cold_box · sector CRYO · present</text>
 <text x="24" y="54" font-size="10.5">design 17.5 kPa g · 1.6689 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 9 in + 3 out · valves 6 placed / 9 unplaced · instruments 2 (0 SIF) · nozzles 16</text>
+<text x="24" y="72" font-size="10.5">Edges 9 in + 3 out · valves 6 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 16</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -107,13 +107,12 @@
 <text x="24" y="704" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="714" font-size="9">Every incident graph edge is drawn: 9 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="729" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/CRYO_ASU.csv.</text>
-<text x="24" y="744" font-size="9">Valves not on a unit edge (inventory basis names no incident stream): isolation valve DN15 (IA-ASU-AR: one at each end nozzle (assumed)); isolation valve DN15 (IA-ASU-HE: one at each end nozzle (assumed)); isolation valve DN15 (IA-ASU-NE: one at each end nozzle (assumed)); isolation valve DN15 (IA-ASU-KR: one at each end nozzle (assumed)); isolation valve DN15 (IA-ASU-XE: one at each end nozzle (assumed)); isolation valve DN15 (IA-HE-RET: one at each end nozzle (assumed)) ...</text>
-<text x="24" y="759" font-size="9">Nozzles with no matching graph edge (service text): N3 argon return; N4 helium return; N8 argon; N9 drain; N10 vent</text>
-<text x="24" y="774" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
-<g id="aqs-title-block"><rect x="1116" y="811" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
-<text x="1124" y="828" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRYO_ASU</text>
-<text x="1124" y="845" font-size="9">P&amp;ID CRYO_ASU (cold_box, CRYO sector)</text>
-<text x="1124" y="862" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev a61a83bf   Issued 2026-10-19</text>
-<text x="1124" y="879" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="896" font-size="9">Graph SHA-256 12f1602c68d17412   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="24" y="744" font-size="9">Nozzles with no matching graph edge (service text): N3 argon return; N4 helium return; N8 argon; N9 drain; N10 vent</text>
+<text x="24" y="759" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="796" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="813" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRYO_ASU</text>
+<text x="1124" y="830" font-size="9">P&amp;ID CRYO_ASU (cold_box, CRYO sector)</text>
+<text x="1124" y="847" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev ca061f62   Issued 2026-10-19</text>
+<text x="1124" y="864" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="881" font-size="9">Graph SHA-256 12f1602c68d17412   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

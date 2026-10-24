@@ -18,5 +18,5 @@ item,description,qty,material,basis
 17,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
 18,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
 19,support: pipe clamp DN50,2,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-20,valve: check valve DN50,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
-21,valve: isolation valve DN50,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004
+20,valve: check valve DN50,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+21,valve: isolation valve DN50,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

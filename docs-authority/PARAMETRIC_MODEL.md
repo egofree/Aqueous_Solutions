@@ -41,32 +41,32 @@ All solved units close.
 
 | Item | Graph | Solved | Deviation | Reference |
 | --- | --- | --- | --- | --- |
-| IA-ACID-01 HCl content, kg/d | 87.910 | 87.923 | -0.0 % | GREENWOOD, LUNAR_SOURCEBOOK |
+| IA-ACID-01 HCl content, kg/d | 87.923 | 87.923 | +0.0 % | GREENWOOD, LUNAR_SOURCEBOOK |
 | BMED_ACID kW vs physics triplet voltage | 5.627 | 5.627 | +0.0 % | STRATHMANN2004 |
 | IA-BASE-PPT NaOH, kg/d | 96.457 | 96.457 | -0.0 % | GREENWOOD |
 | IA-BASE-01 NaOH, kg/d | 4.394 | 4.394 | +0.0 % | GREENWOOD |
 | IA-NAOH-MU make-up, kg/d | 4.394 | 4.394 | -0.0 % | NaOH balance |
 | EVAP_ACID kW | 1.498 | 1.498 | +0.0 % | X-MFG-30 in-house MVR design |
-| EVAP_ACID water off, kg/d | 865.053 | 865.053 | -0.0 % | PERRY9_HCL |
+| EVAP_ACID water off, kg/d | 865.174 | 865.174 | +0.0 % | PERRY9_HCL |
 | EVAP_BASE kW | 1.328 | 1.328 | +0.0 % | X-MFG-30 in-house MVR design |
 | EVAP_BASE water off, kg/d | 801.856 | 801.856 | -0.0 % | PERRY9_HCL |
-| IA-VS-NAOH NaOH, mol/d | 0.001 | 0.001 | -0.0 % | X-PAR-10, PERRY9_ABS |
+| IA-VS-NAOH NaOH, mol/d | 0.001 | 0.001 | +0.0 % | X-PAR-10, PERRY9_ABS |
 | EW_1 DC kW (cell + bus drop) | 5.991 | 5.991 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_2 DC kW (cell + bus drop) | 5.993 | 5.993 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_3 DC kW (cell + bus drop) | 2.249 | 2.249 | +0.0 % | CODATA2018, USBM_CL_EW |
+| EW_3 DC kW (cell + bus drop) | 2.249 | 2.250 | -0.0 % | CODATA2018, USBM_CL_EW |
 | EW_4 DC kW (cell + bus drop) | 0.485 | 0.485 | -0.0 % | CODATA2018, USBM_CL_EW |
-| EW_5 DC kW (cell + bus drop) | 0.502 | 0.502 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_5 DC kW (cell + bus drop) | 0.502 | 0.502 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_6 DC kW (cell + bus drop) | 0.547 | 0.547 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_7 DC kW (cell + bus drop) | 7.119 | 7.119 | +0.0 % | CODATA2018, USBM_CL_EW |
-| EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | -0.0 % | CODATA2018, USBM_CL_EW |
+| EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
-| RECT_EW AC kW (params stamp) | 38.663 | 38.663 | +0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3910.000 | 3909.344 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2492.000 | 2491.827 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
 1. BMED runs at 2 M product, inside the published EDBM limit of about 3.6 M acid (EDBM_WHEY_2021). Stack power 5.63 kW from 1.40 kWh/kg NaOH (triplet voltage 1.67 V, AQS-DUTY-068); the 2 M whey figure of 6.7 kWh/kg would give 26.93 kW. Study.
-2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1304.6 kg/d, water off 865.1 kg/d, 1.50 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
+2. EVAP_ACID concentrates HCl from 7.07 wt% to 20 wt%, below the HCl-water azeotrope 20.2 wt% (PERRY9_HCL): feed 1304.8 kg/d, water off 865.2 kg/d, 1.50 kW at 72.0 kWh/t (VOGELBUSCH_MVR upper bound). Study.
 3. EVAP_BASE concentrates NaOH from 7.41 wt% to 20 wt%: feed 1301.7 kg/d, water off 801.9 kg/d, 1.33 kW. Study.
 4. Condensate returns to the BMED stack as water make-up (IA-EVAP_ACID-COND, IA-EVAP_BASE-COND). Both evaporators have 480 V feeds (SF-EVAP_ACID, SF-EVAP_BASE) and heat edges to HEAT_SINK.
 5. EW at 2.12 V per cell and current efficiency 0.85 (USBM_CL_EW chloride EW basis), 0.3 V bus drop, rectifier efficiency 0.8: 12781 A, DC 30.93 kW, AC 38.66 kW.
@@ -470,7 +470,7 @@ All solved units close.
 | soil_unit_weight_kN_m3 | 18.0 | kN/m3 moist clay | A-M-208 | yes |
 | gw_depth_m | 0.0 | m below grade, groundwater (worst case at grade until measured) | A-M-208 | yes |
 | raft_fc_MPa | 35.0 | MPa concrete strength, raft and basement walls | A-M-208 | yes |
-| foundry_stock_demand_kg_d | 14.0 | kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1) | A-M-261 | yes |
+| foundry_stock_demand_kg_d | 25.9 | kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2) | A-M-261 | yes |
 | foundry_melt_loss_frac | 0.01 | kg slag+dross per kg melt charge | INDUCT_SOCX | yes |
 | poly_shop_reject_frac | 0.1 | kg offcut to the wet line per kg polymer issued to MFG_SHOP | A-M-263 | yes |
 | melt_fe_cp_solid_kJ_kgK | 0.49 | kJ/kg K mean Fe 25-1538 C | CRC_FE | — |
@@ -479,6 +479,433 @@ All solved units close.
 | melt_zn_cp_solid_kJ_kgK | 0.4 | kJ/kg K mean Zn 25-419.5 C | CRC_ZN | — |
 | melt_zn_L_kJ_kg | 112.0 | kJ/kg Zn fusion | CRC_ZN | — |
 | melt_zn_cp_liq_kJ_kgK | 0.48 | kJ/kg K liquid Zn | CRC_ZN | — |
+| DIGESTER.ew-cascade-train.ew_plate_height_m | 0.42 | m immersed cathode height | A-M-040 (AQS-EW-MOD-001 immersed plate 0.60 x 0.42 m) | — |
+| DIGESTER.ew-cascade-train.ew_plate_width_m | 0.6 | m immersed cathode width | A-M-040 (AQS-EW-MOD-001 immersed plate 0.60 x 0.42 m) | — |
+| DIGESTER.ew-cascade-train.ew_cathode_pitch_m | 0.1 | m cathode to cathode (anode between) | A-M-038 (cathode pitch and tank allowances, common EW practice) | — |
+| DIGESTER.ew-cascade-train.ew_tank_end_margin_m | 0.075 | m tank end allowance past the electrode pack | A-M-038 (cathode pitch and tank allowances, common EW practice) | — |
+| DIGESTER.ew-cascade-train.ew_tank_side_margin_m | 0.05 | m tank side allowance past the plate | A-M-038 (cathode pitch and tank allowances, common EW practice) | — |
+| DIGESTER.ew-cascade-train.ew_tank_sump_m | 0.15 | m sludge sump below the plate | A-M-038 (cathode pitch and tank allowances, common EW practice) | — |
+| DIGESTER.ew-cascade-train.ew_tank_cover_m | 0.1 | m cover allowance above the plate | A-M-038 (cathode pitch and tank allowances, common EW practice) | — |
+| DIGESTER.ew-cascade-train.ew_tank_freeboard_m | 0.08 | m freeboard above the cover allowance | A-M-038 (cathode pitch and tank allowances, common EW practice) | — |
+| DIGESTER.ew-cascade-train.ew_tank_wall_m | 0.01 | m thermoplastic tank wall | AQS-DUTY-051 Rev A tank wall (10 mm) | — |
+| DIGESTER.ew-cascade-train.ew_liquor_rho_kg_m3 | 1100 | kg/m3 cell liquor | A-M-029 (dilute HCl with dissolved metal chlorides; same liquor as LEACH_CSTR_1, AQS-DUTY-050) | — |
+| DIGESTER.ew-cascade-train.ew_s08_deposits_kg_d | {"1": 0.0063, "2": 0.0251, "3": 8.7841, "4": 0.7111, "5": 0.7111, "6": 0.7111, "7": 29.629, "8": 0.7111, "9": 0.7111} | kg/d S08 element deposit per EW_n (element-comparison column only; bounding current is from IA-EW-MET-n) | AQS-ASSAY-001 section 5 S08 deposits | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.envelope_mm | [2000, 1200, 1400] | mm L x W x H | AQS-DUTY-050 Rev A model envelope (graph envelope kept) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.header_zone_mm | 60 | mm per Y face | AQS-DUTY-050 Rev A model header zone per Y face | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.belt_web_mm | 56 | mm FRP channel web on the wall | A-M-034 (pultruded channel C203x56x6.4) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.wall_mm | 16 | mm CPVC wall | AQS-DUTY-050 Rev B wall sizing (16 mm against the A-M-032 allowable) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.level_mm | 1100 | mm working liquor level | A-M-030 (leaves 288 mm freeboard below the lid) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.liquor_rho_kg_m3 | 1100 | kg/m3 | A-M-029 (dilute HCl with dissolved metal chlorides) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.imp_Np | 1.27 | - turbulent power number | PERRY9_MIX | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.imp_D_m | 0.45 | m impeller diameter | A-M-031 (PBT 4-blade 45 deg, D 450 mm, 150 rpm) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.imp_N_rpm | 150 | rpm | A-M-031 | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.motor_kW | 0.75 | kW gearmotor nameplate | A-M-035 (shaft 403 W with gear, motor losses and start margin) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.belt_z_mm | [300, 560, 900] | mm belt centre heights Z | AQS-DUTY-050 Rev B belt layout (panels between belts) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.belt_h_mm | 203 | mm FRP channel depth | A-M-034 | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.belt_web_t_mm | 6.4 | mm FRP channel web thickness | A-M-034 | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.frp_E_MPa | 17200 | MPa flexural modulus | A-M-034 (E 17.2 GPa) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.frp_allow_MPa | 50 | MPa allowable bending stress | A-M-034 | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.cpvc_hds_psi | 2000 | psi hydrostatic design stress at 23 C | A-M-032 (CPVC HDS basis) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.cpvc_derate_85C | 0.22 | - strength derating at 85 C | A-M-032 (interpolated from manufacturer temperature-derating tables) | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.cpvc_creep_E_MPa | 700 | MPa long-term creep modulus | A-M-033 | — |
+| DIGESTER.metals-leach-train.brine-loop.LEACH_CSTR_1.hot_draw_T_C | 85.0 | C hot liquor draw temperature (X-MAT-19 cooler inlet) | AQS-DUTY-050 section 3 operating temperature (CPVC wall basis 85 C) | — |
+| storage_tank_fill_frac | 0.8 | - working volume fraction (20 % freeboard and dead volume) | A-M-225 | — |
+| storage_tank_HD | 1.5 | m/m nominal upright cylinder height over diameter | A-M-225 | — |
+| storage_pe_sd_MPa | 4.14 | MPa PE hydrostatic design stress (SD 600 psi at 23 C) | ASTM_D1998 | — |
+| storage_pe_min_wall_mm | 4.75 | mm minimum PE wall (0.187 in) | ASTM_D1998 | — |
+| storage_steel_allow_MPa | 115.0 | MPa SA-240 304L allowable stress | ASME_VIII_1_UG27 | — |
+| storage_steel_min_wall_mm | 3.0 | mm minimum steel wall | A-M-225 | — |
+| FAB.wet-reagent-train.bench.FAB_UPW_TANK.hold_d | 1.0 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.bench.FAB_UPW_TANK.rho_kg_m3 | 998 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| MEOH.synthesis-train.MEOH_TANK.hold_d | 14 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| MEOH.synthesis-train.MEOH_TANK.rho_kg_m3 | 792 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| WTR.potable-upw-train.REMIN.hold_d | 1.0 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| WTR.potable-upw-train.REMIN.rho_kg_m3 | 1000 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| FAB.wet-reagent-train.reagents.WS_AMMONIA.hold_d | 30 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.reagents.WS_AMMONIA.rho_kg_m3 | 900 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| FAB.wet-reagent-train.reagents.WS_DOPE.hold_d | 30 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.reagents.WS_DOPE.rho_kg_m3 | 1000 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| FAB.wet-reagent-train.reagents.WS_HF_ED.hold_d | 30 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.reagents.WS_HF_ED.rho_kg_m3 | 1150 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| FAB.wet-reagent-train.reagents.WS_KOH.hold_d | 30 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.reagents.WS_KOH.rho_kg_m3 | 1450 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| FAB.wet-reagent-train.reagents.WS_NITRIC.hold_d | 30 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.reagents.WS_NITRIC.rho_kg_m3 | 1400 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| FAB.wet-reagent-train.reagents.WS_PEROX.hold_d | 30 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.reagents.WS_PEROX.rho_kg_m3 | 1110 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| FAB.wet-reagent-train.reagents.WS_SLURRY.hold_d | 30 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.reagents.WS_SLURRY.rho_kg_m3 | 1200 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| FAB.wet-reagent-train.reagents.WS_SOLV.hold_d | 30 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.reagents.WS_SOLV.rho_kg_m3 | 790 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| FAB.wet-reagent-train.reagents.WS_PHOS.hold_d | 30 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| FAB.wet-reagent-train.reagents.WS_PHOS.rho_kg_m3 | 1690 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| OIL.pyro-fractionation-train.cuts-and-headers.PROD_C5_C10.hold_d | 14 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| OIL.pyro-fractionation-train.cuts-and-headers.PROD_C5_C10.rho_kg_m3 | 720 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| OIL.pyro-fractionation-train.cuts-and-headers.PROD_C11_C18.hold_d | 14 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| OIL.pyro-fractionation-train.cuts-and-headers.PROD_C11_C18.rho_kg_m3 | 770 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| OIL.pyro-fractionation-train.cuts-and-headers.PROD_C19_C28.hold_d | 14 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| OIL.pyro-fractionation-train.cuts-and-headers.PROD_C19_C28.rho_kg_m3 | 800 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| OIL.pyro-fractionation-train.cuts-and-headers.PROD_C29.hold_d | 3 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| OIL.pyro-fractionation-train.cuts-and-headers.PROD_C29.rho_kg_m3 | 850 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| NUT.dosing-train.NUTRIENT_DOSE.hold_d | 1.0 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| NUT.dosing-train.NUTRIENT_DOSE.rho_kg_m3 | 1050 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| OIL.pyro-fractionation-train.pyro-frac.HOPPER.hold_d | 1.0 | d hold time (A-M-225 basis: resupply interval or batch decoupling) | A-M-225 | — |
+| OIL.pyro-fractionation-train.pyro-frac.HOPPER.rho_kg_m3 | 500 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| MFG.tools-metal-forming-train.metal-forming.MET_MELT.charge_T_from_C | 25 | C cold-charge reference temperature | A-M-177 (melt study, cold charge) | — |
+| MFG.tools-metal-forming-train.metal-forming.MET_MELT.cu_T_melt_C | 1084.62 | C Cu melting point | CRC_CU | — |
+| MFG.tools-metal-forming-train.metal-forming.MET_MELT.hold_h | 0.5 | h hold per heat | A-M-177 | — |
+| MFG.tools-metal-forming-train.metal-forming.GAS_ATOMIZER.ar_T_K | 300 | K atomising argon temperature | A-M-177 (atomiser study) | — |
+| MFG.tools-metal-forming-train.metal-forming.GAS_ATOMIZER.tundish_h | 1.0 | h tundish heat per batch | A-M-177 | — |
+| MFG.tools-metal-forming-train.hall-services.MFG_SHOP.shift_h | 8 | h/d one shift | A-M-177 (one 8 h shift) | — |
+| MFG.tools-metal-forming-train.hall-services.MFG_SHOP.shop_tools | {"CNC vertical mill": {"kw": 7.5, "util": 0.3}, "Engine lathe": {"kw": 5.5, "util": 0.3}, "Band saw": {"kw": 1.5, "util": 0.1}, "Rotary-screw air compressor": {"kw": 4.0, "util": 0.5}, "TIG/MIG welder": {"kw": 6.0, "util": 0.2}, "Bench grinder, drill press, hand tools": {"kw": 2.0, "util": 0.2}} | kW nameplate and utilisation fraction per shop machine tool (study nameplates kept, A-M-177) | A-M-177 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.cooler_pipe_od_m | 0.032 | m PVDF DN25 pipe OD | X-MAT-19 passive air-cooled hot-draw coolers (PVDF DN25) | — |
+| POLYMERS.polyolefin-train.POLY_OLEFIN.feed_cp_kJ_kgK | 2.1 | kJ/(kg K) naphtha/polyolefin feed liquid cp | PERRY9_HEAT | — |
+| POLYMERS.polyolefin-train.POLY_OLEFIN.feed_dT_K | 175 | K feed temperature rise 25 -> 200 C | AQS-SIZE-OIL-POLY feed heating 25->200 C | — |
+| ELEC.storage-train.ZNBR2.h2_LFL_vol_frac | 0.04 | vol fraction H2 lower flammability limit in air | NFPA69_2019 | — |
+| ELEC.storage-train.ZNBR2.purge_air_rho_kg_m3 | 1.18 | kg/m3 purge air density | A-M-135 (X-PAR-02 ZNBR2 purge basis) | — |
+| PUMPED_HYDRO.hydro-train.recharge_window_h | 6.0 | h PV-window recharge | A-M-145 (diverse N+1 backup recharges over the PV surplus window) | — |
+| HAB.life-support-train.HABITATION.cdra_half_cycle_min | 144.0 | min adsorbent-bed half-cycle | NASA_CDRA2015 | — |
+| FARM.grow-bed-train.GROW_BED.crop_edible_water_frac | 0.94 | mass fraction water in edible fresh biomass (tomato proxy) | BVAD2022 | — |
+| FARM.grow-bed-train.GROW_BED.crop_inedible_water_frac | 0.9 | mass fraction water in inedible fresh biomass (tomato proxy) | BVAD2022 | — |
+| WTR.potable-upw-train.VCD_TRAIN.sec_kWh_m3 | 17 | kWh/m3 vapour-compression distillation specific energy (issued 14-20 band midpoint) | A-M-149 (X-RED-05) | — |
+| ELEC.distribution-train.SOL_ARK_60K.bus_V | 480 | V three-phase low-voltage bus | A-M-152 (X-RED-03 main-tie-main 480 V bus) | — |
+| ELEC.distribution-train.SOL_ARK_60K.nec_240_6_ratings_A | [100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200, 1600, 2000] | A standard ampere ratings for fuses and inverse-time breakers | NEC2023_240 | — |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.h2_hhv_kWh_kg | 39.4 | kWh/kg hydrogen higher heating value | CRC_H2 | — |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.hold_d | 14 | d hold time (D-DOCK shipped-product dispatch campaign, A-M-278) | A-M-278 | yes |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.rho_kg_m3 | 293.4 | kg/m3 O2 at 200 bar abs 15 C (Z 0.9105, Peng-Robinson check of the NIST isotherm) | NIST_WEBBOOK | — |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.P_MPa | 20.0 | MPa gauge design pressure (200 bar Type I cylinder-bank service, CRYO_O2 storage_mode) | A-M-278 | yes |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_MEOH.hold_d | 14 | d hold time (D-DOCK shipped-product dispatch campaign, A-M-278) | A-M-278 | yes |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_MEOH.rho_kg_m3 | 792 | kg/m3 stored liquid at 20 C | PERRY9 | — |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_m2_per_kW | 0.025 | m2 skid plan area per kW rated stack (PEM stack enclosure) | A-M-279 | yes |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.bop_m2_per_kW | 0.015 | m2 balance-of-plant plan area per kW rated (H2/O2 separators, deoxo, dryer per params.internals) | A-M-279 | yes |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_W_mm | 1050 | mm skid width (fits the CRYO H2-bay aisle) | A-M-279 | yes |
+| CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_H_mm | 2200 | mm skid height incl. separator deck | A-M-279 | yes |
+| ELEC.generation-train.BACKUP_GEN.exercise_load_frac | 0.3 | - nameplate fraction during monthly exercise | NFPA110_2022 | — |
+| ELEC.generation-train.BACKUP_GEN.exercise_h | 0.5 | h monthly exercise duration | NFPA110_2022 | — |
+| ELEC.generation-train.BACKUP_GEN.eta | 0.3 | - spark-ignition engine efficiency on the C5-C10 cut | A-M-134 (genset standby study) | — |
+| ELEC.generation-train.BACKUP_GEN.fuel_lhv_kWh_kg | 12.2 | kWh/kg C5-C10 cut LHV (about 44 MJ/kg) | A-M-134 | — |
+| FARM.grow-bed-train.GROW_BED.fallback_area_m2 | 28.0 | m2 fallback bed area (live area comes from GROW_BED params) | A-M-229 (fallback of the retired fixed-bed basis, A-M-133) | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.store_pressure_Pa | 20000000.0 | Pa gauge store pressure (200 bar) | A-M-133 (existing 200 bar basis) | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.store_T_K | 288.15 | K store reference temperature (15 C) | A-M-133 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_h2_200bar_15C | 1.13 | - H2 compressibility factor at 200 bar, 15 C | NIST_WEBBOOK | yes |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_o2_200bar_15C | 0.93 | - O2 compressibility factor at 200 bar, 15 C | NIST_WEBBOOK | yes |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.tsa_regen_start_C | 25 | C bed temperature at the start of regeneration | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.steel_cp_kJ_kgK | 0.5 | kJ/(kg K) bed shell steel cp | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.feed_T_K | 308.15 | K feed temperature (35 C) | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.blower_eta | 0.5 | - feed blower efficiency | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.co2_k | 1.29 | - CO2 isentropic exponent | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.comp_eta | 0.65 | - CO2 compressor adiabatic efficiency | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.motor_eta | 0.9 | - CO2 compressor motor efficiency | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.co2_liq_cp_kJ_kgK | 0.85 | kJ/(kg K) liquid CO2 cp | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.co2_subcool_K | 55 | K liquid CO2 subcooling to the store | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.sorbent_bulk_rho_kg_m3 | 650.0 | kg/m3 13X bulk density | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.bed_LD | 3 | m/m adsorbent bed length over diameter | A-M-175 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.exp_n2_k | 1.4 | - N2 isentropic exponent (reverse-Brayton backup loop) | A-M-186 (EXPANDER kept as chiller backup, Q-010) | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.exp_n2_cp_kJ_kgK | 1.04 | kJ/(kg K) N2 cp (PERRY9 sec. 2) | A-M-186 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_ASU.exp_warm_T_K | 248.15 | K N2 warms to at the condenser (-25 C) | A-M-186 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_latent_kJ_kg | 2257.0 | kJ/kg water latent heat at 100 C | IAPWS_IF97 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_pump_head_m | 4.0 | m recirculation pump head | A-M-106 (evaporator operating basis) | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_pump_eta | 0.4 | - recirculation pump efficiency | A-M-106 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_liquor_rho_kg_m3 | 1100 | kg/m3 liquor through the recirculation pump | A-M-029 (dilute HCl with dissolved metal chlorides) | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_cond_cp_kJ_kgK | 4.21 | kJ/(kg K) interchanger condensate cp | A-M-106 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_tube_pitch_ratio | 1.25 | - tube pitch over tube OD (triangular) | A-M-107 (evaporator geometry) | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_tube_wall_mm | 6 | mm graphite tube wall (2 mm Ni on the base unit) | A-M-107 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_bundle_margin | 1.1 | - bundle diameter margin in the shell | A-M-107 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_shell_pitch_allowance | 2 | - shell allowance in tube pitches beyond the bundle | A-M-107 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_head_h_mm | 300 | mm tube-sheet head allowance in vessel height | A-M-107 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_separator_h_mm | 900 | mm vapour separator allowance in vessel height | A-M-107 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_psv_orifice_D_in2 | 0.11 | in2 API 526 orifice D area | API526 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_col_skirt_mm | 800 | mm column skirt and distribution height above the packing | A-M-108 (counter-current column) | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_frame_len_mm | 900 | mm frame length allowance past the shell | AQS-DUTY-060 Rev B frame (body plus interchanger and compressor) | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_frame_wid_margin_mm | 400 | mm frame width allowance past the shell | AQS-DUTY-060 Rev B frame | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_frame_min_w_mm | 800 | mm minimum frame width | AQS-DUTY-060 Rev B frame | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_frame_col_mm | 250 | mm column footprint allowance in frame length | AQS-DUTY-060 Rev B frame | — |
+| DIGESTER.metals-leach-train.acid-base-regen.evap_frame_acid_w_mm | 500 | mm extra EVAP_ACID frame width (carries EVAP_ACID_VS) | AQS-DUTY-060 Rev B frame (X-PAR-10) | — |
+| storage_envelope_allowance_mm | 300 | mm access allowance on plan and height around the sized vessel | A-M-225 (sized vessel + 300 mm access becomes the unit envelope) | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.h2c_T_suction_K | 308.15 | K stage suction and intercooler outlet temperature (35 C) | A-M-169 (X-MFG-36, intercooled to 35 C after every stage) | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.h2c_units | 2 | - installed compressors, one standby (redundancy rule) | A-M-169 (X-MFG-36) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_sieve_bulk_kg_L | 0.7 | kg/L 4A/13X sieve bulk density | A-M-168 | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_guard_bulk_kg_L | 0.8 | kg/L promoted-alumina guard bulk density | A-M-168 | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_bed_min_L | 0.05 | L minimum bed volume | A-M-168 | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_tube_vol_switch_L | 0.25 | L bed volume at the 1 in / 2 in tube switch | A-M-168 | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_wall_small_mm | 3.38 | mm Sch 40 wall, 1 in NPS bed tube | ASME_B36_10M | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_wall_large_mm | 3.91 | mm Sch 40 wall, 2 in NPS bed tube | ASME_B36_10M | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_steel_wall_m | 0.0039 | m wall used in the regeneration steel mass (3.91 mm rounded) | A-M-168 | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_sieve_cp_kJ_kgK | 0.92 | kJ/(kg K) sieve specific heat in regeneration | A-M-168 | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_steel_cp_kJ_kgK | 0.5 | kJ/(kg K) steel specific heat in regeneration | A-M-168 | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_regen_heater_eta | 0.7 | - regeneration heater efficiency | A-M-168 | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_loss_hot_frac | 0.5 | - fraction of the cycle the TSA bed is hot (insulated-loss duty) | A-M-168 | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_tube_OD_small_mm | 33.4 | mm tube OD below the volume switch (1 in NPS) | ASME_B36_10M | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_tube_OD_large_mm | 60.3 | mm tube OD above the volume switch (2 in NPS) | ASME_B36_10M | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_bed_min_L_mm | 300 | mm minimum bed length | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_steel_rho_kg_m3 | 8000 | kg/m3 steel density for the regeneration sensible heat | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_sensible_ref_T_C | 25 | C reference temperature of the regeneration sensible heat | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_water_desorb_kJ_kg | 2500 | kJ/kg water desorption heat from the sieve (2.5 MJ/kg) | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_bed_count | 2 | - beds per stage, one in service while the other regenerates or is changed (redundancy rule) | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_envelope_D_mm | 60 | mm unit envelope diameter (largest bed tube) | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_envelope_top_mm | 300 | mm headroom allowance over the tallest bed | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_envelope_L_mm | 600 | mm unit envelope length | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_envelope_W_mm | 400 | mm unit envelope width | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.gas-headers.H2_DRYER.h2p_envelope_head_mm | 400 | mm height allowance over the bed stack in the envelope | A-M-168 (X-MFG-39) | — |
+| GAS.scrubbing-headers-train.scrubbing.hs_gas_rho_kg_m3 | 1.2 | kg/m3 gas density at ambient | A-M-164 (X-PAR-03) | — |
+| GAS.scrubbing-headers-train.scrubbing.hs_bed_min_m | 0.5 | m minimum packed bed (one distributor and support stage) | A-M-164 | — |
+| GAS.scrubbing-headers-train.scrubbing.hs_fixed_dP_Pa | 250.0 | Pa fixed losses: demister, distributor, ducts | A-M-164 | — |
+| GAS.scrubbing-headers-train.scrubbing.hs_vessel_allow_mm | 1500 | mm sump 600 + distributor and demister 900 in vessel height | A-M-164 | — |
+| GAS.scrubbing-headers-train.scrubbing.hs_envelope_side_mm | 400 | mm plan allowance past the shell on each side | A-M-164 | — |
+| GAS.scrubbing-headers-train.scrubbing.hs_envelope_top_mm | 300 | mm height allowance past the vessel | A-M-164 | — |
+| WTR.potable-upw-train.BMED_UPW_POLISH.ro_eval_T_K | 298.15 | K osmotic-pressure evaluation temperature (25 C) | A-M-176 (X-MFG-34) | — |
+| WTR.potable-upw-train.BMED_UPW_POLISH.ro_modules | 2 | - flat-sheet RO modules, one standby (redundancy rule) | A-M-176 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID_VS.vs_DN_ladder_mm | [100, 125, 150, 200] | mm DN pipe sizes available for the column | A-M-111 (X-PAR-10) | — |
+| DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID_VS.vs_sump_L | 20.0 | L sump charge of 2 M NaOH | A-M-111 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID_VS.vs_pump_head_m | 10.0 | m recirculation pump head | A-M-111 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID_VS.vs_pump_eta | 0.4 | - small pump efficiency | A-M-111 | — |
+| DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID_VS.vs_head_allowance_mm | 900 | mm sump, inlet and demister above the bed | A-M-111 | — |
+| PUMPED_HYDRO.hydro-train.HYDRO_SET.wt_catch_top_deduct_m | 0.5 | m deducted above the catchment top (L-1 slab 0.3 + 0.2 bund-sump recess) | A-M-187 (GA rev C) | — |
+| PUMPED_HYDRO.hydro-train.HYDRO_SET.wt_slab_m | 0.3 | m slab depth between reservoir levels | A-M-187 | — |
+| PUMPED_HYDRO.hydro-train.HYDRO_SET.wt_cells_min | 2 | - minimum cells per reservoir level (one drainable for inspection) | A-M-187 (redundancy rule) | — |
+| DIGESTER.metals-leach-train.acid-base-regen.bmed_spare_stacks | 1 | - spare BMED stacks beyond the duty set (redundancy rule) | A-M-170 (X-MFG-35) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_water_cp_kJ_kgK | 4.18 | kJ/(kg K) texture-bath water cp | A-M-178 (X-MFG-38) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_amb_T_C | 25 | C heat-up reference temperature | A-M-178 (X-MFG-38) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_tex_tank_D_mm | 250 | mm texture-bath tank diameter (10 L PP tank) | A-M-178 (X-MFG-38) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_tex_tank_H_m | 0.3 | m texture-bath tank height | A-M-178 (X-MFG-38) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_diff_cp_kJ_kgK | 1.0 | kJ/(kg K) diffusion-furnace heated mass (quartz tube and fixtures) | A-M-178 (X-MFG-38) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg | 5.0 | kg PECVD heated platen mass | A-M-178 (X-MFG-38) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_cp_kJ_kgK | 0.5 | kJ/(kg K) PECVD platen cp | A-M-178 (X-MFG-38) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_chamber_D_mm | 300 | mm PECVD chamber diameter | A-M-178 (X-MFG-38) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_chamber_H_m | 0.4 | m PECVD chamber height | A-M-178 (X-MFG-38) | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_heat_h | 0.5 | h platen heat-up time to the set point | A-M-178 (X-MFG-38) | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_tube_OD_mm | 114.3 | mm DN100 (NPS 4) receiver tube OD | ASME_B36_10M | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_tube_wall_mm | 13.49 | mm receiver tube wall (DN100 Sch 160 as-used) | A-M-167 (AQS-DUTY-065) | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_design_kPa_hp | 22000 | kPa design basis, CRYO_H2 and CRYO_O2 banks (22 MPa) | A-M-167 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_design_kPa_co2 | 2200 | kPa g design basis, CRYO_CO2 liquid store | A-M-180 (X-SAF-04) | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_wall_mill_factor | 0.875 | - fraction of nominal wall counted (12.5 % mill tolerance) | ASTM_A999 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_manifold_halves | 2 | - manifolded halves per bank, isolation redundancy | A-M-167 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_tubes_per_row | 8 | - tubes per rack row | A-M-167 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_row_pitch_mm | 150 | mm rack row pitch | A-M-167 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_rack_allow_mm | 300 | mm rack allowance beyond the tube stack (height and width) | A-M-167 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_rack_len_allow_mm | 600 | mm rack length allowance past the tubes | A-M-167 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_tube_kg_m | 28.3 | kg/m receiver-tube linear mass (as-used) | A-M-167 | yes |
+| CRYO.cold-box-asu-recovery-train.cold-box.rcv_T_amb_C | 25 | C receiver storage temperature on the design stamp | A-M-167 | — |
+| WTR.grey-black-train.BLACK_DIGEST.san_comb_O2_kg_d | 0.32 | kg/d combustion O2 for sanitation cake and biogas (already taken on S02) | AQS-DUTY-063 Rev B | — |
+| WTR.grey-black-train.san_biogas_ch4_frac | 0.65 | - CH4 volume fraction in digester biogas | METCALF5_BIOMASS | — |
+| WTR.grey-black-train.san_ab_flue_base_kg_d | 241.68 | kg/d base AFTERBURNER flue before sanitation fuel | AQS-DUTY-008 as-used at X-SAN-01 Rev B | — |
+| WTR.grey-black-train.san_air_rho20_kg_m3 | 1.2 | kg/m3 air density at 20 C (flue and vent superficials) | A-M-118 | — |
+| WTR.grey-black-train.san_ab_T_C | 850 | C afterburner chamber temperature | EU_IED2010 | — |
+| WTR.grey-black-train.san_ab_residence_s | 2.0 | s afterburner chamber residence time at temperature | EU_IED2010 | — |
+| WTR.grey-black-train.san_ab_DN_ladder_mm | [150, 200, 250, 300, 350, 400] | mm DN ladder for the afterburner chamber | A-M-118 | — |
+| WTR.grey-black-train.san_ab_LD | 3 | - afterburner chamber length over diameter | A-M-118 | — |
+| WTR.grey-black-train.san_lhv_ch4_MJ_kg | 50.0 | MJ/kg CH4 lower heating value | A-M-118 (study) | — |
+| WTR.grey-black-train.san_lhv_vs_MJ_kg | 20.0 | MJ/kg dry VS heating value (about) | A-M-118 (study) | — |
+| WTR.grey-black-train.san_evap_MJ_kg | 2.45 | MJ/kg evaporation heat in the chamber | A-M-118 (study) | — |
+| WTR.grey-black-train.san_ab_feed_base_kg_d | 6.2662 | kg/d base AFTERBURNER feed before cake and biogas | graph AFTERBURNER feed at X-SAN-01 Rev B (as-used) | — |
+| WTR.grey-black-train.san_ko_T_C | 80 | C FLUE_KO drum flue temperature | A-M-118 | — |
+| WTR.grey-black-train.san_ko_D_m | 0.3 | m FLUE_KO drum diameter (DN300) | A-M-118 | — |
+| WTR.grey-black-train.san_nox_feed_base_kg_d | 497.918 | kg/d base NOX_SCRUB feed before cake and biogas | AQS-DUTY-063 Rev B (as-used) | — |
+| WTR.grey-black-train.san_nox_D_m | 0.1 | m NOX_SCRUB inlet diameter (DN100) | A-M-118 | — |
+| WTR.grey-black-train.san_dig_fill | 0.8 | - BLACK_DIGEST working fill | A-M-118 | — |
+| WTR.grey-black-train.san_sigma_PP_MPa | 3.0 | MPa PP-H allowable stress (digester vessel) | A-M-118 | — |
+| WTR.grey-black-train.san_pp_t_min_mm | 5.0 | mm PP-H minimum wall (digester vessel) | A-M-118 | — |
+| WTR.grey-black-train.san_water_cp_kJ_kgK | 4.18 | kJ/(kg K) water cp for feed and liquor heat-up | A-M-118 | — |
+| WTR.grey-black-train.san_feed_T_C | 20 | C feed and urine reference temperature | A-M-118 | — |
+| WTR.grey-black-train.san_dig_U_W_m2K | 0.5 | W/(m2 K) digester loss coefficient through 50 mm PIR | A-M-118 | — |
+| WTR.grey-black-train.san_press_cool_K | 5 | K centrate cooling across the screw press | A-M-118 | — |
+| WTR.grey-black-train.san_past_loss_W | 30.0 | W pasteuriser hold losses (insulated) | A-M-118 | — |
+| WTR.grey-black-train.san_steel_t_min_mm | 2.0 | mm 316L minimum wall (pasteuriser) | A-M-118 | — |
+| WTR.grey-black-train.san_CA_mm | 0.0 | mm corrosion allowance (none, 316L) | A-M-118 | — |
+| WTR.grey-black-train.san_hold_fill | 0.9 | - BLACK_ALK_HOLD tank working fill | A-M-118 | — |
+| WTR.grey-black-train.san_sigma_HDPE_MPa | 5.0 | MPa HDPE allowable stress (hold tanks) | A-M-118 | — |
+| WTR.grey-black-train.san_hdpe_t_min_mm | 4.0 | mm HDPE minimum wall (hold tanks) | A-M-118 | — |
+| WTR.grey-black-train.san_naoh_dose_mol_L | 0.2 | mol/L NaOH dose when the standby alkaline barrier runs | A-M-118 (pH > 12, EPA503 503.32(a)(4)) | — |
+| WTR.grey-black-train.san_dig_aux_kW | 0.02 | kW BLACK_DIGEST auxiliary (mixing, controls) | A-M-118 | — |
+| WTR.grey-black-train.san_press_kW | 0.09 | kW screw-press motor | A-M-118 | — |
+| WTR.grey-black-train.san_press_run_h | 2.0 | h/d screw-press running | A-M-118 | — |
+| WTR.grey-black-train.san_past_aux_kW | 0.01 | kW BLACK_PASTEUR auxiliary | A-M-118 | — |
+| WTR.grey-black-train.san_hold_aux_kW | 0.02 | kW BLACK_ALK_HOLD auxiliary (dosing pump, probe) | A-M-118 | — |
+| WTR.grey-black-train.san_s11_kg_d | 0.8 | kg/d S11 grow-bed organics to the afterburner (restored rate) | X-SAN-01 Rev B | — |
+| WTR.grey-black-train.san_vessel_allow_mm | 300 | mm plan allowance past the vessel diameter | A-M-118 | — |
+| WTR.grey-black-train.san_height_allow_mm | 500 | mm height allowance past the vessel | A-M-118 | — |
+| WTR.grey-black-train.san_hold_gap_mm | 150 | mm spacing between the three hold tanks | A-M-118 | — |
+| WTR.grey-black-train.san_dewater_size_mm | [800, 600, 900] | mm L x W x H screw-press envelope | A-M-118 | — |
+| ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW | 3.0 | kW critical load, HABITATION (backup-gen autonomy list) | AQS-ELEC-007 critical load list | — |
+| ELEC.generation-train.BACKUP_GEN.crit_GROW_BED_kW | 5.0 | kW critical load, GROW_BED (grow lights on the autonomy list) | AQS-ELEC-007 critical load list | — |
+| ELEC.generation-train.BACKUP_GEN.crit_controls_kW | 2.0 | kW critical load, plant controls and instruments | AQS-ELEC-007 critical load list | — |
+| ELEC.distribution-train.RECTIFIER.ref_case_cell_V | 2.8 | V per EW cell in the reference (element-current) case | AQS-ELEC-007 reference case | — |
+| ELEC.distribution-train.RECTIFIER.ref_case_CE | 0.8 | - current efficiency in the reference (element-current) case | AQS-ELEC-007 reference case | — |
+| ELEC.distribution-train.gnd_soil_rho_ohm_m | 50.0 | ohm m soil resistivity | AQS-SITE-002 soil assumption (clay) | yes |
+| ELEC.distribution-train.gnd_west_yard_m | 10.0 | m west yard added to the building footprint for the grid | A-M-110 (D75) | — |
+| ELEC.distribution-train.gnd_depth_m | 0.75 | m grid burial depth | A-M-110 | — |
+| ELEC.distribution-train.gnd_mesh_spacing_m | 12.0 | m mesh spacing (every second 6 m column line) | A-M-110 | — |
+| ELEC.distribution-train.gnd_rod_pitch_m | 10 | m rod spacing along the ring | A-M-110 | — |
+| ELEC.distribution-train.gnd_rod_L_m | 3.0 | m ground-rod length | A-M-110 | — |
+| ELEC.distribution-train.gnd_target_ohm | 5.0 | ohm target grid resistance to earth | IEEE80 | — |
+| ELEC.distribution-train.haz_gas_classes | {"H2": {"group": "IIC (Group B)", "T_class": "T1", "AIT_C": 560, "R1_m": 1.0, "R2_m": 1.5, "kind": "buoyant gas"}, "CH3OH": {"group": "IIA (Group D)", "T_class": "T1", "AIT_C": 464, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}, "C5-C10": {"group": "IIA (Group D)", "T_class": "T3", "AIT_C": 280, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}, "C11-C18": {"group": "IIA (Group D)", "T_class": "T3", "AIT_C": 220, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}, "C19-C28": {"group": "IIA (Group D)", "T_class": "T3", "AIT_C": 210, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour (heated only)"}, "hydrocarbon": {"group": "IIA (Group D)", "T_class": "T3", "AIT_C": 210, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}, "AcOH": {"group": "IIA (Group D)", "T_class": "T1", "AIT_C": 485, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}} | per-substance gas group, T class, AIT and Zone 1/Zone 2 extents R1/R2 | A-M-210 (AIT NFPA 497 Table 4.4.2 class values) | — |
+| ELEC.distribution-train.haz_min_frac_H2 | 0.5 | - minimum H2 mass fraction for an edge to be an H2 release source | A-M-210 | — |
+| ELEC.distribution-train.haz_min_frac_vap | 0.2 | - minimum vapour mass fraction for an organic-liquid release source | A-M-210 | — |
+| ELEC.distribution-train.SOL_ARK_60K.cb_std_breaker_A | [100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000] | A standard breaker sizes | NEC2023 | — |
+| ELEC.distribution-train.SOL_ARK_60K.cb_std_kVA | [75, 112.5, 150, 225, 300, 500, 750, 1000, 1500, 2000, 2500] | kVA standard pad-mount transformer ratings | IEEE_C57_12_34 | — |
+| ELEC.distribution-train.SOL_ARK_60K.cb_mv_fuse_A | [10, 15, 20, 25, 30, 40, 50, 65, 80, 100] | A MV fuse ladder | A-M-114 | — |
+| ELEC.distribution-train.SOL_ARK_60K.cb_mv_fuse_margin | 1.5 | - MV fuse sized at 150 % of the section MV current | A-M-114 | — |
+| ELEC.distribution-train.SOL_ARK_60K.cb_bus_V | 480.0 | V plant AC bus (inverter output sections) | AQS-ELEC-002 480 V bus | — |
+| MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_cu_rho_ohm_mm2_m | 0.017241 | ohm mm2/m soft-annealed copper (100 % IACS) | ASTM_B3_2013 | — |
+| MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_cu_density_g_cm3 | 8.89 | g/cm3 copper density | A-M-217 | — |
+| MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_rod_D_mm | 8.0 | mm redraw-rod diameter | ASTM_B49_2020 | — |
+| MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_pass_reduction | 0.2 | - conductor area reduction per drawing pass | A-M-217 | — |
+| MFG.tools-metal-forming-train.mfa_slot_fill | 0.4 | - stator slot fill factor | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_tooth_T | 1.6 | T stator tooth flux density | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_yoke_T | 1.5 | T stator yoke flux density | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_stacking_factor | 0.97 | - lamination stacking factor (M400-50A) | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_pf_default | 0.85 | - power-factor fallback when the family sheet is blank | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_enamel_margin | 1.15 | - enamel 15 % over bare conductor area in the slot | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_od_tol | 1.02 | - OD check tolerance (2 % over the sheet OD flags a longer core) | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_bar_current_factor | 0.95 | - rotor bar current as a fraction of the phase current expression | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_bar_J_A_mm2 | 5.0 | A/mm2 die-cast aluminium rotor bar current density | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_line_hz | 60 | Hz line frequency (IEC 60034-30-1 60 Hz IE3 basis, AQS-INV-005) | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.mfa_rated_speed_frac | 0.97 | - rated speed as a fraction of synchronous (about 3 % slip) | A-M-218 (X-INV-02B) | — |
+| MFG.tools-metal-forming-train.hall-services.fc_Fy_MPa | 345.0 | MPa ASTM A992 plate yield strength | ASTM_A992 | — |
+| MFG.tools-metal-forming-train.hall-services.fc_live_loads_kPa | {"L-2": 0.0, "L-1": 6.0, "L0": 6.0, "L1": 4.79, "L2": 4.79, "R1": 0.0, "R2": 0.0, "R3": 0.0, "ROOF": 0.96} | kPa uniform live load per level (light manufacturing 125 psf, assembly 100 psf, water storeys F, roof 20 psf) | ASCE7_22 | — |
+| GAS.headers.methanol_synth_loop_P_bar | 50.0 | bar a | A-M-269 | yes |
+| GAS.headers.methanol_synth_loop_T_K | 523.15 | K | A-M-269 | yes |
+| CRYO.cold-box-asu-recovery-train.CRYO_H2_store_P_bar | 200.0 | bar a | A-M-133 | — |
+| CRYO.cold-box-asu-recovery-train.CRYO_H2_store_T_K | 313.15 | K | A-M-133 | — |
+| DIGESTER.metals-leach-train.htc_header_P_bar | 15.55 | bar a | A-M-269 | yes |
+| DIGESTER.metals-leach-train.htc_header_T_K | 473.15 | K | A-M-269 | yes |
+| GAS.headers.meam_header_P_bar | 20.7 | bar a | A-M-269 | yes |
+| GAS.headers.meam_header_T_K | 673.15 | K | A-M-269 | yes |
+| CRYO.cold-box-asu-recovery-train.CRYO_CO2_store_P_bar | 20.0 | bar a | A-M-134 | — |
+| CRYO.cold-box-asu-recovery-train.CRYO_CO2_store_T_K | 253.15 | K | A-M-134 | — |
+| CRYO.cold-box-asu-recovery-train.CRYO_O2_store_P_bar | 200.0 | bar a | A-M-133 | — |
+| CRYO.cold-box-asu-recovery-train.CRYO_O2_store_T_K | 313.15 | K | A-M-133 | — |
+| WTR.potable-upw-train.H2O_ELYZ_suction_P_bar | 9.0 | bar a | A-M-196 | — |
+| WTR.potable-upw-train.H2O_ELYZ_suction_T_K | 353.15 | K | A-M-196 | — |
+| DIGESTER.ew-cascade-train.liquor_conductivity_S_m | 30.0 | S/m | A-M-269 | yes |
+| DIGESTER.ew-cascade-train.intercell_bore_m | 0.0493 | m | A-M-036 | — |
+| DIGESTER.ew-cascade-train.max_shunt_dV_V | 6.0 | V | A-M-269 | yes |
+| DIGESTER.ew-cascade-train.stray_current_limit_A | 0.1 | A | A-M-269 | yes |
+| storage.default_no_heat_input_T_C | 40.0 | C | A-M-269 | yes |
+| FARM.grow-bed-train.FOOD_STORE.hold_d | 80 | d hold time (A-M-270 D-DOCK product-buffer basis) | A-M-270 | — |
+| FARM.grow-bed-train.FOOD_STORE.rho_kg_m3 | 600 | kg/m3 dry ration bulk density (X-RED-08 dry-matter reserve) | A-M-270 | — |
+| FOUNDRY.form-train.METAL_STORE.hold_d | 14 | d hold time (A-M-270 D-DOCK product-buffer basis) | A-M-270 | — |
+| FOUNDRY.form-train.METAL_STORE.rho_kg_m3 | 2000 | kg/m3 stacked metal product bulk (plate/rod/ingot with stacking voids; solid steel 7850 PERRY9) | A-M-270 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER.hold_d | 1.0 | d hold time (A-M-270 D-DOCK product-buffer basis) | A-M-270 | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER.rho_kg_m3 | 11.7 | kg/m3 N2 at 10 bar abs 15 C (ideal gas, Z 0.995, NIST_WEBBOOK) | NIST_WEBBOOK | — |
+| CRYO.cold-box-asu-recovery-train.cold-box.AIR_RECEIVER.P_MPa | 1.0 | MPa gauge design pressure (plant-air receiver, 10 bar service) | A-M-270 | — |
+| foundry_al_line_kg_d | 8.0 | kg/d Al stock (frames, housings) | A-M-261 (AQS-SIZE-FOUNDRY consumable-replacement table line) | — |
+| foundry_ss_line_kg_d | 1.5 | kg/d stainless stock (Cr 0.20 + Mo 0.05 additions in an Fe base) | A-M-261 (AQS-SIZE-FOUNDRY line) | — |
+| foundry_ti_line_kg_d | 0.4 | kg/d Ti stock (anode mesh, shells) | A-M-261 (AQS-RATE-FP-MET line) | — |
+| foundry_inv_line_kg_d | 2.0 | kg/d investment castings (complex parts, all alloys) | A-M-261 (AQS-SIZE-FOUNDRY line) | — |
+| foundry_mo_add_kg_d | 0.05 | kg/d Mo alloying addition (316-class stainless line) | A-M-261 (AQS-RATE-FP-MET line) | — |
+| foundry_cr_add_kg_d | 0.2 | kg/d Cr alloying addition (stainless line) | A-M-261 (AQS-RATE-FP-MET line) | — |
+| foundry_pot_export_frac | 0.25 | kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products | A-M-285 | yes |
+| foundry_kroll_dragout_frac | 0.02 | kg MgCl2-class salt drag-out per kg Kroll MgCl2 gross, to FLUX_PREP | A-M-284 | yes |
+| foundry_inv_shell_kg_per_kg | 4.0 | kg green shell per kg casting (6-dip class; envelope 3-6) | A-M-286 | yes |
+| foundry_inv_shell_reclaim_frac | 0.875 | kg spent shell reclaimed to stucco/flour per kg spent shell | A-M-286 | yes |
+| foundry_inv_wax_kg_per_kg | 1.0 | kg wax pattern per kg casting (thin-wall cluster class) | A-M-286 | yes |
+| foundry_inv_wax_reclaim_frac | 0.9 | kg dewax condensate reclaimed per kg wax pattern | A-M-286 | yes |
+| foundry_pot_voltage_V | {"al": 3.8, "mg": 4.2, "ca": 4.2, "mo": 2.8, "cr": 2.8} | V cell terminal (decomposition + overpotential + bath ohmic) | A-M-282 | yes |
+| foundry_pot_ce | 0.85 | - current efficiency (Faraday) at the pot electrodes | USBM_CL_EW | yes |
+| foundry_pot_j_A_cm2 | 0.5 | A/cm2 design anode current density (graphite, chloride melt) | A-M-282 | yes |
+| melt_al_cp_solid_kJ_kgK | 1.05 | kJ/kg K mean Al 25-660 C | CRC_AL | — |
+| melt_al_L_kJ_kg | 397.3 | kJ/kg Al fusion (10.7 kJ/mol) | CRC_AL | — |
+| melt_al_cp_liq_kJ_kgK | 1.18 | kJ/kg K liquid Al | CRC_AL | — |
+| melt_ti_cp_solid_kJ_kgK | 0.68 | kJ/kg K mean Ti 25-1668 C | CRC_TI | — |
+| melt_ti_L_kJ_kg | 295.7 | kJ/kg Ti fusion (14.15 kJ/mol) | CRC_TI | — |
+| melt_ti_cp_liq_kJ_kgK | 0.7 | kJ/kg K liquid Ti | CRC_TI | — |
+| fire_nfpa13_hazards | {"LH": [4.1, 139, 380, 30], "OH1": [6.1, 139, 950, 60], "OH2": [8.1, 139, 950, 90], "EH1": [12.2, 232, 1900, 90], "EH2": [16.3, 232, 1900, 120]} | per class: density mm/min, design area m2, hose allowance L/min, duration min | NFPA13_2022 | — |
+| fire_level_hazard | {"L-1": "OH2", "L0": "EH1", "L1": "OH1"} | NFPA 13 hazard class per level | NFPA13_2022 | — |
+| fire_sprinkler_margin | 1.1 | fraction | X-SAF-05 design margin on the sprinkler hydraulic demand (A-M-188) | — |
+| POLYMERS.fluoropolymer-train.fluorspar_CaF2_wt | 0.97 | mass fraction | ULLMANN_HF | — |
+| POLYMERS.fluoropolymer-train.hf_kiln.CaF2_conversion | 0.95 | fraction of charged CaF2 | ULLMANN_HF | — |
+| POLYMERS.fluoropolymer-train.hf_kiln.H2SO4_stoich_frac | 1.05 | fraction of stoichiometric | ULLMANN_HF | — |
+| POLYMERS.fluoropolymer-train.hf_kiln.T_C | 250.0 | C | ULLMANN_HF | — |
+| POLYMERS.fluoropolymer-train.hf_kiln.residence_min | 30.0 | min | ULLMANN_HF | yes |
+| POLYMERS.fluoropolymer-train.vdf_monomer_kg_d | 0.15 | kg/d | AQS-RATE-FP-MET design rate (PVDF linings and gaskets replacement; A-M-289) | — |
+| POLYMERS.fluoropolymer-train.tfe_monomer_kg_d | 0.1 | kg/d | AQS-RATE-FP-MET design rate (PTFE gaskets and small parts replacement; A-M-289) | — |
+| POLYMERS.fluoropolymer-train.pvdf_resin_kg_d | 0.14 | kg/d | AQS-RATE-FP-MET design rate (~90-93 % of monomer at the reclaim loop; A-M-289) | — |
+| POLYMERS.fluoropolymer-train.ptfe_resin_kg_d | 0.09 | kg/d | AQS-RATE-FP-MET design rate (~90 % of monomer at the reclaim loop; A-M-289) | — |
+| POLYMERS.fluoropolymer-train.H2SO4_wt | 0.98 | mass fraction | ULLMANN_HF | — |
+| FAB.litho-train.starts_per_d | 5 | wafer starts/d | AQS-AUD-001 labeled assumption 1-5/d, bounding value (A-M-288) (A-M-287) | yes |
+| FAB.litho-train.developer_mL_per_wafer | 40.0 | mL/wafer | puddle-develop dispense class at 150 mm (AQS-LITH-001 rev C; A-M-287) (A-M-288) | — |
+| FAB.litho-train.spin_peak_kW | 0.75 | kW | spin-chuck motor class (AQS-LITH-001 rev C; A-M-287) (A-M-288) | — |
+| FAB.litho-train.softbake_kW | 0.3 | kW | hotplate rating at 100 C hold (AQS-LITH-001 rev C; A-M-287) (A-M-288) | — |
+| FAB.litho-train.uv_wall_W | 10.0 | W | 365 nm LED array 1 W optical at ~10 % wall plug (AQS-LITH-001 rev C; A-M-287) (A-M-288) | — |
+| FAB.wet-bench-train.bath_L | 10.0 | L | RCA/etch bath tank size (AQS-EQP-FAB-001 WET_BENCH row; A-M-298) (A-M-301) | — |
+| FAB.wet-bench-train.bath_C | 80.0 | C | SC1/SC2 bath temperature (RCA class, AQS-EQP-FAB-001; A-M-298) (A-M-301) | — |
+| FAB.wet-bench-train.heated_baths | 2 | count | SC1 + SC2 heated; DHF at ambient (AQS-EQP-FAB-001; A-M-298) (A-M-301) | — |
+| FAB.wafer-line-train.campaign_d | 7.0 | d | one CZ pull + tool campaign per week at 5 starts/d (A-M-297) (A-M-301) | yes |
+| FAB.wafer-line-train.cz_charge_kg | 0.5 | kg | small-ingot CZ charge per pull (AQS-EQP-FAB-001 CZ class; A-M-297) (A-M-301) | — |
+| OIL.afterburner-train.flue_fan_dP_Pa | 350.0 | Pa | duct + stack draft loss class of a 100 mm bore flue run (A-M-300) (A-M-301) | — |
+| OIL.afterburner-train.flue_fan_eta | 0.35 | fraction | small high-temperature centrifugal fan (A-M-300) (A-M-301) | — |
+| NUT.nutrient-train.dose_head_m | 15.0 | m | dose-header head to the grow beds (AQS-EQP-NUT-001; A-M-299) (A-M-301) | — |
+| NUT.nutrient-train.pump_eta | 0.35 | fraction | small metering-diaphragm pump class (A-M-299) (A-M-301) | — |
+| GEO.orc-train.eta_th | 0.1 | fraction | binary ORC 0.08-0.12 study band mid (AQS-EQP-STUDY-001 sec.5; D-GEO_ORC) | — |
+| GEO.orc-train.q_sink_kW | 12.0 | kW thermal | dry-cooler rejection rating that bounds the ORC heat sink context (A-M-244; D-GEO_ORC) | — |
+| POLYMERS.fluoropolymer-train.hf_kiln.dHrxn_kJ_mol | 65.7 | kJ/mol CaF2 | NIST_WEBBOOK | — |
+| POLYMERS.fluoropolymer-train.hf_kiln.feed_cp_kJ_kgK | 1.1 | kJ/kg K | PERRY9 | — |
+| foundry_ca_add_frac | 0.0015 | kg Ca deoxidizer/desulfurizer per kg melt charge | A-M-316 | yes |
+| HEAT.heat-battery-train.hb_oil_hold_kWh_th | 10 | kWh_th sensible hold per oil store | A-M-302 | — |
+| HEAT.heat-battery-train.hb_oil_swing_K | 80 | K swing | A-M-302 | — |
+| HEAT.heat-battery-train.hb_water_hold_kWh_th | 20 | kWh_th sensible hold per water store | A-M-302 | — |
+| HEAT.heat-battery-train.hb_q3_hold_kWh_th | 14 | kWh_th | A-M-315 | yes |
+| HEAT.heat-battery-train.hb_water_swing_K | 30 | K swing | A-M-302 | — |
+| HEAT.heat-battery-train.hb_HD | 1.5 | H/D | ASTM_D1998 | — |
+| HEAT.heat-battery-train.hb_rho_oil_kg_m3 | 860 | kg/m3 mineral thermal oil at 180-250 C | PERRY9 | — |
+| HEAT.heat-battery-train.hb_cp_oil_kJ_kgK | 2.1 | kJ/kg K mineral thermal oil | PERRY9 | — |
+| HEAT.heat-battery-train.hb_rho_water_kg_m3 | 978 | kg/m3 water at the store temperature | IAPWS_IF97 | — |
+| HEAT.heat-battery-train.hb_cp_water_kJ_kgK | 4.186 | kJ/kg K water | IAPWS_IF97 | — |
+| HEAT.heat-battery-train.hb_wall_min_mm | 3 | mm minimum wall | ASME_VIII_1_UG27 | — |
+| HEAT.heat-battery-train.hb_allow_MPa | 115 | MPa allow, 304L at store temperature | ASME_VIII_1_UG27 | — |
+| HEAT.heat-battery-train.hb_insul_q12_mm | 90 | mm microporous silica board on Q1/Q2 stores | AQS-DUTY-008 sec. 5 issued store table (90 mm microporous, k 0.025) | — |
+| HEAT.heat-battery-train.hb_insul_q3_mm | 60 | mm mineral wool on Q3 stores | AQS-DUTY-008 sec. 5 issued store table (60 mm mineral wool) | — |
+| HEAT.heat-battery-train.hb_insul_q4_mm | 30 | mm PIR on Q4 stores | AQS-DUTY-008 sec. 5 issued store table (30 mm PIR) | — |
+| HEAT.heat-battery-train.hb_k_micro_W_mK | 0.025 | W/m K microporous board | AQS-DUTY-008 sec. 5 issued store table | — |
+| HEAT.heat-battery-train.hb_k_wool_W_mK | 0.035 | W/m K mineral wool at mean temperature | ASTM_C547 | — |
+| HEAT.heat-battery-train.hb_k_pir_W_mK | 0.025 | W/m K PIR foam | AQS-DUTY-008 sec. 5 issued store table | — |
+| HDR.headers-train.hdr_min_DN_gas | 25 | DN minimum, gas headers | A-M-303 | yes |
+| HDR.headers-train.hdr_min_DN_water | 25 | DN minimum, water headers | A-M-303 | — |
+| HDR.headers-train.hdr_min_DN_flue | 100 | DN minimum, afterburner flue | A-M-304 | yes |
+| HDR.headers-train.hdr_v_gas_m_s | 8.0 | m/s gas header design velocity | PERRY9 | — |
+| HDR.headers-train.hdr_v_water_m_s | 1.5 | m/s water header design velocity | PERRY9 | — |
+| HDR.headers-train.hdr_v_flue_m_s | 8.0 | m/s flue design velocity | PERRY9 | — |
+| HDR.headers-train.hdr_rho_H2 | 0.084 | kg/m3 hydrogen at 20 C 1 atm | NIST_WEBBOOK | — |
+| HDR.headers-train.hdr_rho_air | 1.2 | kg/m3 air / N2 class at 20 C | NIST_WEBBOOK | — |
+| HDR.headers-train.hdr_rho_CO2 | 1.84 | kg/m3 CO2 at 20 C 1 atm | NIST_WEBBOOK | — |
+| HDR.headers-train.hdr_rho_ncg | 0.5 | kg/m3 pyrolysis NCG at 150-200 C | A-M-305 | yes |
+| HDR.headers-train.hdr_rho_flue | 0.75 | kg/m3 flue gas at about 200 C | A-M-305 | — |
+| HDR.headers-train.hdr_rho_water | 983 | kg/m3 water at 60 C | IAPWS_IF97 | — |
+| HDR.headers-train.hdr_cp_water_kJ_kgK | 4.186 | kJ/kg K water | IAPWS_IF97 | — |
+| HDR.headers-train.hdr_run_default_m | 20 | m fallback manifold run when no isometric route exists | A-M-306 | yes |
+| GEO.geo-loop.ghex_q_per_m_W | 35 | W/m sustained per-metre bore capacity | KAVANAUGH2014 | yes |
+| GEO.geo-loop.ghex_bore_depth_m | 45 | m bore depth | KAVANAUGH2014 | — |
+| GEO.geo-loop.ghex_bore_spacing_m | 6 | m bore spacing | A-M-308 | — |
+| GEO.geo-loop.glycol_cp_kJ_kgK | 3.9 | kJ/kg K 25 % propylene glycol | A-M-309 | — |
+| GEO.geo-loop.glycol_rho_kg_m3 | 1030 | kg/m3 25 % propylene glycol | A-M-309 | — |
+| GEO.geo-loop.glycol_vol_pct | 25 | vol % propylene glycol | A-M-309 | — |
+| GEO.geo-loop.glycol_dT_K | 3 | K source-loop rise | A-M-310 | — |
+| GEO.geo-loop.glycol_v_m_s | 1.0 | m/s loop velocity | PERRY9 | — |
+| GEO.geo-loop.loop_head_m | 25 | m loop circuit head | A-M-310 | yes |
+| GEO.geo-loop.loop_pump_eff | 0.5 | fraction circulator wire-to-water | PERRY9 | — |
+| GEO.geo-loop.geo_hp_cop_design | 3.2 | COP at the winter design point | graph S44/SF-GEO_HP; AQS-HEAT-STUDY-002 sec. 6 (COP 3.43 at 285 K) | — |
+| GEO.geo-loop.geo_hp_module_min_kW | 2.2 | kW_th minimum module | scroll-class catalogue minimum near the issued lift (AQS-HEAT-STUDY-002 sec. 6 GEO_HP module basis) | — |
+| GEO.geo-loop.bp_ux_U_kW_m2K | 2.0 | kW/m2 K brazed-plate U | PERRY9 | — |
+| GEO.geo-loop.bp_ux_dT_K | 5 | K exchanger approach | PERRY9 | — |
+| MEOH.synthesis-train.MEOH_COND.latent_kJ_kg | 2257 | kJ/kg water latent at near-atmospheric dew | IAPWS_IF97 | — |
+| MEOH.synthesis-train.MEOH_COND.cp_vap_kJ_kgK | 1.9 | kJ/kg K water vapour | PERRY9 | — |
+| MEOH.synthesis-train.MEOH_COND.subcool_K | 20 | K condensate subcool to 40 C | A-M-311 | — |
+| MEOH.synthesis-train.MEOH_COND.U_kW_m2K | 1.2 | kW/m2 K water vapour condensing on water | PERRY9 | — |
+| MEOH.synthesis-train.MEOH_COND.drum_HD | 2.0 | H/D knock-out pot | PERRY9 | — |
+| MEOH.synthesis-train.MEOH_FC.cell_V | 0.6 | V per cell at the design point | IEC62282_3_100 | yes |
+| MEOH.synthesis-train.MEOH_FC.j_A_cm2 | 0.3 | A/cm2 current density at the design point | IEC62282_3_100 | yes |
+| MEOH.synthesis-train.MEOH_FC.cell_A_cm2 | 200 | cm2 active area per cell | IEC62282_3_100 | — |
+| MEOH.synthesis-train.MEOH_FC.meoh_LHV_MJ_kg | 19.9 | MJ/kg methanol LHV | PERRY9 | — |
+| fire_pump_type | "electric horizontal split-case, listed, NFPA 20; critical bus with the genset as second supply" | text | NFPA20_2022 | — |
+| fire_pump_churn_frac | 1.21 | fraction of rated head at shutoff (churn) | NFPA20_2022 | — |
+| fire_pump_150_flow_frac | 1.5 | fraction of rated flow at runout | NFPA20_2022 | — |
+| fire_pump_150_head_frac | 0.65 | fraction of rated head at 150 % flow | NFPA20_2022 | — |
+| fire_pump_head_margin_kPa | 150 | kPa design margin over static + friction to the remote area | A-M-313 | yes |
+| fire_tank_type | "gravity: water-tower dead storage (primary) + CATCH_TANK suction source for the pump (second supply)" | text | NFPA22_2023 | — |
+| fire_tank_refill_h | 8 | h to refill the reserve from the normal supply | A-M-314 | yes |
+| fire_pipe_schedule | "Sch 40 black steel ASTM A53, hydraulically designed (density/area); pipe-schedule method not used where EH1 is present" | text | NFPA13_2022 | — |
+| fire_zone_hazard | {"L-1 wet process": "OH2", "L0 shops/pyrolysis/oils/reagents/genset/flow battery": "EH1", "L0 electrical rooms": "pre-action, OH2 void", "L1 farm/digesters": "OH1", "L1 HAB west half": "LH", "H2/O2/CO2 receiver bays": "OH2 + NFPA 15 water spray", "ZNBR2 enclosure": "OH2 + NFPA 855 purge"} | NFPA 13 hazard class per zone | NFPA13_2022 | — |
 
 ## 6. References
 
@@ -500,6 +927,7 @@ All solved units close.
 | API510_2022 | API 510, Pressure Vessel Inspection Code, 11th ed. (2022): 6.4 external inspection at most 5 years; 6.5 internal or on-stream inspection at the lesser of half the remaining life or 10 years; 6.6 pressure-relieving devices per API 576. |
 | API520 | API Standard 520 Part I, Sizing, Selection, and Installation of Pressure-relieving Devices, 10th ed. (2020): liquid A = Q/(38 Kd Kw Kc Kv) sqrt(G/(p1-p2)) (US units, eq. 32); gas critical flow A = W/(C K P1 Kb Kc) sqrt(T Z/M) (US units, eq. 3), C = 520 sqrt(k (2/(k+1))^((k+1)/(k-1))). |
 | API521_2020 | API Standard 521, Pressure-relieving and Depressuring Systems, 7th ed. (2020): 4.4.13.2.4 fire on liquid-wetted vessels Q = 21,000 F A^0.82 Btu/h with drainage and fire-fighting; gas-filled vessels A = F' A'/sqrt(P1), F' = 0.1406/(C Kd) (Tw - T1)^1.25/T1^0.6625 (USC), Tw 1100 F recommended; 21 % fire overpressure; 5.20 depressuring to 50 % of design gauge pressure in about 15 min for walls under 25 mm. |
+| API526 | API Standard 526, Flanged Steel Pressure-relief Devices, 7th ed. (2017): effective orifice designations D through T; orifice D area 0.110 in2 (71 mm2), the smallest standard designation. |
 | API570_2016 | API 570, Piping Inspection Code, 4th ed. (2016): Table 2 thickness and external visual intervals by piping class (class 1: 5 years; class 2: 10 years; class 3: 10 years). |
 | API576_2017 | API 576, Inspection of Pressure-relieving Devices, 4th ed. (2017): interval set by service history, typically 5 years for clean service and shorter for fouling or corrosive service; maximum 10 years per API 510. |
 | API618 | API Standard 618, Reciprocating Compressors for Petroleum, Chemical, and Gas Industry Services, 5th ed. (2007), 6.1: predicted discharge temperature shall not exceed 150 C (300 F) at any specified operating condition, and 135 C (275 F) for hydrogen-rich service (molecular weight 12 or less). |
@@ -513,6 +941,7 @@ All solved units close.
 | ASME_B30_16 | ASME B30.16-2022, Overhead Underhung and Stationary Hoists. |
 | ASME_B30_2 | ASME B30.2-2022, Overhead and Gantry Cranes: rated load, load test at 125 % of rated load (2-2.2.2). |
 | ASME_B31_3 | ASME B31.3-2022, Process Piping: pressure design of piping components (304.1.2 straight pipe), applied to tube reactors and receivers below the Section VIII size limit; 341 examination; 345.4.2 hydrostatic leak test at not less than 1.5 x design pressure (temperature-corrected); piping carries no Code Certification Mark. |
+| ASME_B36_10M | ASME B36.10M-2018, Welded and Seamless Wrought Steel Pipe: NPS 1 (DN25) OD 33.4 mm and NPS 2 (DN50) OD 60.3 mm with Schedule 40 walls 3.38 and 3.91 mm; NPS 4 (DN100) OD 114.3 mm. |
 | ASME_II_D | ASME BPVC Section II Part D (2023): maximum allowable stress; carbon steel limited to 425 C in Section VIII-1 service; 304H/316H to 816 C. |
 | ASME_IX | ASME BPVC Section IX (2023), Welding, Brazing, and Fusing Qualifications: Part QW WPS/PQR and welder performance (QW-200, QW-300), P-numbers (QW-422: P-1 carbon steel, P-8 austenitic stainless), essential variables; Part QF polyethylene fusing procedure and fusing operator qualification (QF-200, QF-300). |
 | ASME_RTP1 | ASME RTP-1-2019, Reinforced Thermoset Plastic Corrosion-Resistant Equipment: secondary bond (butt-and-strap) laminate procedure, Part 7 fabricator and laminator qualification by demonstration laminate and shear test. |
@@ -525,7 +954,10 @@ All solved units close.
 | ASME_Y14_100 | ASME Y14.100-2017, Engineering Drawing Practices: drawing numbering, part identification, drawing types and data management. |
 | ASME_Y14_35 | ASME Y14.35-2014, Revision of Engineering Drawings and Associated Documents: revision letters, revision history block, change identification. |
 | ASME_Y14_5 | ASME Y14.5-2018, Dimensioning and Tolerancing: dimensioning and geometric tolerancing for fabrication drawings. |
+| ASM_V1 | ASM International, ASM Handbook Vol 1, Properties and Selection: Irons, Steels, and High-Performance Alloys (1990): AISI H13 hot-work tool steel (Cr-Mo-V) for hot-work dies, extrusion and forge tooling; heat-resisting Fe-Cr-Ni alloys incl. the 80Ni-20Cr electrical-resistance element class to about 1100 C. |
+| ASM_V7 | ASM International, ASM Handbook Vol 7, Powder Metal Technologies and Applications (1998): press-and-sinter consolidation practice; sintering-furnace construction with graphite or MoSi2 element hot zones under inert or vacuum atmosphere for reactive powders. |
 | ASTM_A992 | ASTM A992/A992M, Standard Specification for Structural Steel Shapes: Fy 345 MPa (50 ksi) minimum, Fu 450 MPa. |
+| ASTM_A999 | ASTM A999/A999M-19, Standard Specification for General Requirements for Alloy and Stainless Steel Pipe: pipe furnished to dimensional specifications may be ordered to minimum wall; the customary supplied-wall practice carries a 12.5 % under-tolerance on wall thickness (0.875 factor on nominal wall). |
 | ASTM_B193_2020 | ASTM B193-20, Resistivity of Electrical Conductor Materials: four-terminal resistance method. |
 | ASTM_B3_2013 | ASTM B3-13, Soft or Annealed Copper Wire: 100 % IACS, resistivity 0.017241 ohm mm2/m at 20 C, density 8.89 g/cm3, minimum elongation by size. |
 | ASTM_B49_2020 | ASTM B49-20, Copper Rod for Electrical Purposes: 8 mm (5/16 in) hot-rolled or continuous-cast redraw rod, 100 % IACS. |
@@ -559,14 +991,20 @@ All solved units close.
 | CODATA2018 | Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K). |
 | COEY2010 | Coey J.M.D., Magnetism and Magnetic Materials, Cambridge University Press (2010), ch. 11: properties of hard magnets (sintered Nd2Fe14B, sintered and bonded hexaferrite). |
 | COOPER1996 | Cooper A., The ABC of NFT, 2nd ed., Grower Books, London (1996): about 1 L/min per gully, half at planting, 2 L/min upper limit; slope 1:30-1:100; gully length under 10-15 m. |
+| CRC_AL | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Al melting point 660.3 C, enthalpy of fusion 10.7 kJ/mol (397.3 kJ/kg), cp about 0.90 kJ/(kg K) at 25 C rising to about 1.2 near the melting point (mean solid about 1.05), liquid cp 1.18 kJ/(kg K); density 2.70 g/cm3; molar mass 26.9815 g/mol. |
 | CRC_COND | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), Electrical conductivity of aqueous solutions (20 C): NaCl 2.5 % 39 and 5 % 70 mS/cm; NaOH 5 % 223 and 10 % 358 mS/cm; HCl 5 % 394 and 10 % 630 mS/cm. |
 | CRC_CU | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements and heat capacity of the elements: Cu melting point 1084.62 C, enthalpy of fusion 13.26 kJ/mol (208.7 kJ/kg), cp 24.44 J/(mol K) at 25 C rising to about 30 J/(mol K) near the melting point, liquid cp 32.8 J/(mol K); density 8.96 g/cm3. Ar molar mass 39.95 g/mol. |
 | CRC_FE | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Fe melting point 1538 C, enthalpy of fusion 13.8 kJ/mol (247 kJ/kg), cp about 0.45 kJ/(kg K) at 25 C rising to about 0.68 near the melting point (mean about 0.49 solid), liquid cp 0.82 kJ/(kg K); density 7.87 g/cm3. |
+| CRC_H2 | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of hydrogen: HHV 141.8 MJ/kg (39.4 kWh/kg), LHV 120.0 MJ/kg (33.3 kWh/kg). |
+| CRC_SI | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: silicon melting point 1414 C, enthalpy of fusion 50.21 kJ/mol (1790 kJ/kg), specific heat about 0.9 kJ/(kg K) averaged over 25-1414 C (0.71 solid at 25 C rising with temperature). |
+| CRC_TI | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Ti melting point 1668 C, enthalpy of fusion 14.15 kJ/mol (295.7 kJ/kg), cp about 0.52 kJ/(kg K) at 25 C rising to about 0.75 near the melting point (mean solid about 0.68), liquid cp 0.70 kJ/(kg K); density 4.51 g/cm3; molar mass 47.867 g/mol. Also used (bounding reactive/addition class): Mo melting point 2623 C, 36.5-37.5 kJ/mol; Cr melting point 1907 C, 16.9-21 kJ/mol. |
 | CRC_ZN | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Zn melting point 419.5 C, enthalpy of fusion 7.32 kJ/mol (112 kJ/kg), cp 0.388 kJ/(kg K) solid (mean to the melting point about 0.40), liquid cp 0.48 kJ/(kg K); density 7.14 g/cm3. |
 | CROPKING_NFT | CropKing, NFT production of lettuce (knowledge centre, citing Cooper 1996): 80 mm wide, 40 mm deep gullies at 1.5 % slope best in a comparison of 60-150 mm widths. |
 | CTC2020_CZA | (2020) CO2 Hydrogenation with Cu/ZnO/Al2O3: A Benchmark Study, ChemCatChem 12, doi:10.1002/cctc.202000195, Table: industrial Cu/ZnO/Al2O3 at 60 bar, 523 K, 17 vol% CO2 / 0 CO / 73.5 % H2: methanol weight-time yield 1.22 kg MeOH/(kg cat h). |
 | CUSIO2_ALD2023 | Ethanol Dehydrogenation over Copper-Silica Catalysts: From Sub-Nanometer Clusters to 15 nm Large Particles (2023), open access PMC10394689: Cu/SiO2 at 250-260 C, WHSV 2.37-4.73 h-1, 45-85 % ethanol conversion, acetaldehyde selectivity above 94 %. |
 | DIETER1988 | Dieter G.E., Mechanical Metallurgy, SI metric ed., McGraw-Hill (1988), ch. 17-21 metalworking: ideal work of plastic deformation per unit volume w = mean flow stress x true strain; rolling and wire drawing efficiencies (ideal over actual work) about 0.5-0.7; drawing true strain ln(A0/A1), maximum reduction per pass about 30-35 %. |
+| DING2018_CL_REVIEW | Ding W., Bonk A., Bauer T., Corrosion behavior of metallic alloys in molten chloride salts for thermal energy storage in concentrated solar power plants - A review, Frontiers of Chemical Science and Engineering 12(3) (2018) 564-576, DOI 10.1007/s11705-018-1720-0: molten-chloride hot-salt corrosion of Fe-Cr-Ni alloys 600-750 C, Cr-selective loss, impurity (oxyhydride/oxygen) driven attack, Mg-anode salt purification, and the emerging NaCl/KCl/MgCl2 ternary at 700 C. |
+| DING2021_ENG | Ding W., Bauer T., Progress in Research and Development of Molten Chloride Salt Technology for Next Generation Concentrated Solar Power Plants, Engineering 7 (2021) 334-347, DOI 10.1016/j.eng.2020.06.027: chloride-salt technology review above 650 C including corrosion control of structural alloys in molten chloride salts (alloy class and purification strategies). |
 | DOE_H2_COMP | Standard isothermal ideal-gas compression work W = (R T / M) ln(P2/P1), e.g. Perry's 9th ed. sec. 10; efficiency from the in-house compressor design and bench run (X-MFG-36). |
 | DOE_PSH | U.S. Department of Energy, Water Power Technologies Office, Pumped Storage Hydropower (energy.gov/eere/water/pumped-storage-hydropower, accessed 2026-10-15): round-trip efficiency 70-80 %. |
 | DVS2205 | DVS 2205-1 (2015) design of thermoplastic tanks: hoop stress from hydrostatic head with long-term creep factors; allowable stress CPVC and PVC-U at temperature. |
@@ -638,11 +1076,14 @@ All solved units close.
 | JMS2017_GLASSFIBRE | Kinetics of dissolution of glass fibre in hot alkaline solution, J. Materials Science 53 (2018) doi:10.1007/s10853-017-1627-z: NaOH 3 mol/L, zero-order k 2.0e-4 g/(m2 s) at 80 C, 4.3e-4 at 95 C; reaction order in hydroxide 0.31-0.44. |
 | JONES1986 | Jones, D.T., Woods, D.R. (1986) Acetone-butanol fermentation revisited, Microbiological Reviews 50, 484-524: batch Clostridium acetobutylicum solvent fermentation about 36-72 h at 35-37 C, strictly anaerobic. |
 | KAVANAUGH2014 | Kavanaugh S.P. and Rafferty K., Geothermal Heating and Cooling: Design of Ground-Source Heat Pump Systems, ASHRAE (2014): bore length method, typical bore length per kW, pumping grade A <= 5 hp per 100 tons. |
+| KROLL1940 | Kroll W.J., The production of ductile titanium, Transactions of the Electrochemical Society 78 (1940) 35-47, DOI 10.1149/1.3071290: carbochlorination of TiO2 with chlorine over carbon at ~800-1000 C gives TiCl4, then batch Mg reduction in a steel/Mo-clad retort near 900 C; the sponge binds to the retort wall and the MgCl2 reaction product is distilled off. |
+| KRUIZENGA2012 | Kruizenga A.M., Corrosion mechanisms in chloride and carbonate salts, SAND2012-7594 (2012), Sandia National Laboratories: chloride-salt corrosion mechanisms (moisture/oxygen impurity hydroxide attack dominates), material class corrosion behaviour in the 650-800 C region, and the purification logic that sets exotic-alloy limits. |
 | KUSUMA2020 | Kusuma P., Pattison P.M., Bugbee B., From physics to fixtures to food: current and potential LED efficacy, Horticulture Research 7:56 (2020): best horticultural LED fixtures about 2.8-3.0 umol/J. |
 | LAKHIAR2018 | Lakhiar I.A. et al., Modern plant cultivation technologies in agriculture under controlled environment: a review on aeroponics, J. Plant Interactions 13 (2018) 338-352, doi:10.1080/17429145.2018.1472308: droplets 30-100 um; spray schedules 2 s/2 min, 3 s/10 min (tomato, pea), 7 s/90 s, 10 s/3 min. |
 | LARSEN2013 | Larsen T.A., Udert K.M., Lienert J. (eds.), Source Separation and Decentralization for Wastewater Management, IWA Publishing (2013): vacuum toilets about 0.5-1.5 L per flush. |
 | LIBRA2011 | Libra, J.A. et al. (2011) Hydrothermal carbonization of biomass residuals: a comparative review of the chemistry, processes and applications of wet and dry pyrolysis, Biofuels 2(1), 71-106: HTC at 180-250 C, 1-12 h, under autogenous (saturated) pressure; mildly exothermic. |
 | LUNAR_SOURCEBOOK | Heiken G.H., Vaniman D.T., French B.M. (eds), Lunar Sourcebook, Cambridge University Press (1991), ch. 7 lunar soil chemistry (major-oxide ranges for mare and highland soils). |
+| MANG2007 | Mang T., Dresel W. (eds), Lubricants and Lubrication, 2nd ed., Wiley-VCH (2007), ISBN 978-3-527-31497-3, ch. 14 Lubricating Greases incl. 14.6 manufacture of metal soap-based greases: saponification kettle practice for Ca and Li soaps, kettle finishing in the ~95-120 C class; 304/316L is standard hot-soap-contact practice. |
 | MARAGHECHI2016 | Maraghechi H. et al., Effect of calcium on dissolution and precipitation reactions of amorphous silica at high alkalinity, Cement and Concrete Research 87 (2016) 1-13: soda-lime glass dissolves at constant rate in 1 M NaOH, 20-80 C. |
 | MCCABE7_DUHRING | McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation). |
 | METCALF5 | Metcalf & Eddy / Tchobanoglous G. et al., Wastewater Engineering: Treatment and Resource Recovery, 5th ed. (2014), ch. 13 anaerobic digestion: high-rate mesophilic SRT 15-20 d at 35 C. |
@@ -702,6 +1143,7 @@ All solved units close.
 | ROSE2015 | Rose C., Parker A., Jefferson B., Cartmell E., The characterization of feces and urine: a review of the literature to inform advanced treatment technology, Critical Reviews in Environmental Science and Technology 45 (2015) 1827-1879: median wet faeces 128 g/cap/d, dry about 28 g/cap/d, organic fraction 84-93 % of dry; urine 1.42 L/cap/d. |
 | SAND2000-0893 | Sandia National Laboratories SAND2000-0893, zinc/bromine battery technology: 1.82 V cell, H2 generation small in the absence of impurities, pH 1-3.5 operating window. |
 | SANDER2015 | Sander R., Compilation of Henry's law constants (version 4.0) for water as solvent, Atmos. Chem. Phys. 15 (2015) 4399-4981: O2, N2, CO2 solubility in water. |
+| SCHACHT2004 | Schacht C.A. (ed.), Refractories Handbook, Marcel Dekker / CRC Press (2004), DOI 10.1201/9780203026328: alumina-silica brick (ch. 4), carbonaceous/graphite hot faces (ch. 8), refractory castables (ch. 10), thermomechanical lining design (ch. 13) and installation practice (ch. 17) for melt-shop furnaces, kilns and chloride-cell backup linings. |
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
 | STRATHMANN2004 | Strathmann H., Ion-Exchange Membrane Separation Processes, Membrane Science and Technology Series 9, Elsevier (2004), ch. 4-5: reversible water-dissociation voltage of a bipolar membrane 0.059 V per pH unit (0.83 V at delta pH 14, 25 C); practical bipolar membrane voltage drop about 0.9-1.2 V at 100-200 A/m2; monopolar ion-exchange membrane area resistance about 2-5 ohm cm2 in 0.5 M NaCl; spacer shadow effect on solution resistance. |
 | SU2018_PYRO | Experimental study of thermal and catalytic pyrolysis of plastic waste components, Sustainability 10 (2018) 3979, doi:10.3390/su10113979: 460 C batch thermal pyrolysis oil, LDPE 24 % C7-C12 / 30 % C13-C20 / 46 % C21-C40; PP 44/33/23; liquid conversion 94 % LDPE, 86 % PP. |
@@ -717,14 +1159,20 @@ All solved units close.
 | UL66_2015 | UL 66, Fixture Wire (2015): type TFFN, PVC insulation with nylon jacket, 18 and 16 AWG. |
 | UL83_2017 | UL 83, Thermoplastic-Insulated Wires and Cables (2017): THHN/THWN-2 PVC insulation with nylon jacket and TFFN fixture wire, thickness tables and tests. |
 | UL891 | UL 891, Switchboards (12th ed., 2019). |
+| ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters: vinylidene fluoride (VDF, CH2=CF2) is made industrially by hydrofluorination of a chlorinated C2 feed to 1-chloro-1,1-difluoroethane (HCFC-142b) followed by dehydrochlorination/pyrolysis over Cr-base catalyst; tetrafluoroethylene (TFE, C2F4) by pyrolysis of chlorodifluoromethane (R-22, from chloroform + 2 HF) at 600-800 C with immediate quench (TFE autopolymerises/explosion hazard); both routes return HCl to the acid loop; PVDF by free-radical emulsion/suspension polymerization of VDF at 30-80 C; PTFE as granular/fine powder by suspension/dispersion polymerization of TFE (not melt-processable - finished as powder for compression sintering); per-pass conversions are held low with monomer recycle. |
 | ULLMANN_GLYOXAL | Mattioda G., Blanc A., Glyoxal, Ullmann's Encyclopedia of Industrial Chemistry (2011), doi:10.1002/14356007.a12_491.pub2: industrial routes are liquid-phase acetaldehyde oxidation with nitric acid and gas-phase ethylene glycol oxidation over silver. |
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): impregnated graphite, tantalum and fluoropolymer-lined equipment for hot HCl concentration and absorption. |
+| ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter: HF is produced from fluorspar (CaF2) and sulfuric acid in indirectly heated rotary kilns; acid-grade spar (acid-spar) is >= 97 % CaF2 with < 1.5 % SiO2 (SiF4 generation) and < 0.2 % carbonates; sulfuric acid is fed at 100-110 % of stoichiometric; kiln gases leave at about 150-350 C and are absorbed in water to aqueous HF; per kg HF about 1.95-2.0 kg CaF2 (97 %) and 2.45-2.6 kg H2SO4 (100 % basis) are charged; conversion of the spar CaF2 in well-run kilns is about 95 %; the by-product is anhydrite (CaSO4) cake (fluorgypsum) discharged with the unreacted spar, excess acid and gangue. |
+| ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds): industrial magnesium comes from fused-salt electrolysis of dehydrated MgCl2 at ~660-700 C in cells with graphite anodes and steel cathodes (Dow/Hydro class); MgCl2 is strongly hygroscopic and must be kept anhydrous in electrolyte service. |
 | ULLMANN_NITRIC | Thiemann M., Scheibler E., Wiegand K.W., Nitric Acid, Nitrous Acid, and Nitrogen Oxides, Ullmann's Encyclopedia of Industrial Chemistry (2000), doi:10.1002/14356007.a17_293: Ostwald process, NH3 oxidised over Pt-Rh gauze at about 850-950 C with 93-98 % NO yield, NO oxidised and absorbed in water in a stainless-steel absorption column. |
+| ULLMANN_TITANIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Titanium chapter (Titanium, Titanium Alloys, and Titanium Compounds): TiCl4 from carbochlorination of rutile/High-TiO2 feed at about 800-1000 C; titanium sponge via Kroll Mg reduction in batch steel retorts around 900 C; the MgCl2 product is collected and vacuum-distilled; the refractory-lined chlorinator and the hot face carry the bed. |
+| ULLMANN_WAX | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Waxes chapter (Waxes): paraffin wax families melt in the 50-95 C band; hot-melt handling is in jacketed stainless steel or polymer tanks with steam or hot-water heating; pattern shops melt on steam/hot-water jackets. |
 | US1875746 | US Patent 1,875,746 (1932), Production of methylamine: vapour phase over dehydration catalyst at 350-450 C (preferably about 400 C), gas space velocity 100-3500 h-1 with conversion falling above about 1100, NH3:MeOH about 2.2. |
 | US3429929 | US Patent 3,429,929 (1969), Production of glyoxal: acetaldehyde oxidised with nitric acid in homogeneous aqueous solution above 30 C initiated by nitrogen oxides; copper catalyst; prior-art yield at most about 45 % on acetaldehyde reacted; product 8-40 wt% glyoxal with 1-2 % residual HNO3. |
 | USBM_CL_EW | U.S. Bureau of Mines, electrowinning of copper from chloride solutions (Report of Investigations), https://stacks.cdc.gov/view/cdc/237351: energy 1.1 kWh/kg from cuprous and 2.1 kWh/kg from cupric chloride electrolyte; current efficiency 85-90 %; diaphragm cell to keep anode Cl2 from the catholyte. |
 | VOGELBUSCH_MVR | Vogelbusch Biocommodities, mechanical vapour recompression evaporators, manufacturer data table: specific power 19-72 kWh per t water evaporated, rising with boiling-point elevation and stage count. |
 | WALTON2015 | Walton A. et al., The use of hydrogen to separate and recycle neodymium-iron-boron-type magnets from electronic waste, Journal of Cleaner Production 104 (2015) 236-241. |
+| WANG2006_ADS | Wang R.Z., Oliveira R.G., Adsorption refrigeration - An efficient way to make good use of waste heat and solar energy, Progress in Energy and Combustion Science 32(4) (2006) 424-458, DOI 10.1016/j.pecs.2006.01.002: silica gel-water adsorption chillers driven by ~55-90 C hot water, COP 0.2-0.6 (commercial units to 0.7), beds housed as sealed adsorber shells. |
 | WEISS1970 | Weiss R.F., The solubility of nitrogen, oxygen and argon in water and seawater, Deep-Sea Research 17 (1970) 721-735 (fresh water at 25 C, air-saturated: about 13.4 mg/kg N2 and 8.3 mg/kg O2). |
 | WHEELER1996 | Wheeler R.M. et al., NASA Biomass Production Chamber: crop gas exchange of wheat, soybean, lettuce and potato at elevated CO2, Advances in Space Research 18(4/5) (1996) 215-224: canopy net photosynthesis versus PPF, canopy quantum yield. |
 | WHO2006_V4 | WHO, Guidelines for the safe use of wastewater, excreta and greywater, Vol. 4 Excreta and greywater use in agriculture (2006): multi-barrier approach, health-based target 1e-6 DALY per person per year; treated faeces and sludge < 1 helminth egg/g TS and < 1000 E. coli/g TS. |
@@ -976,9 +1424,54 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist clay | Geotechnical report unit weight |
 | driver gw_depth_m | 0.0 m below grade, groundwater (worst case at grade until measured) | Piezometer readings at the parcel through a wet season |
 | driver raft_fc_MPa | 35.0 MPa concrete strength, raft and basement walls | Mix design and cylinder tests |
-| driver foundry_stock_demand_kg_d | 14.0 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table |
+| driver foundry_stock_demand_kg_d | 25.9 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table |
 | driver foundry_melt_loss_frac | 0.01 kg slag+dross per kg melt charge | weigh dross+slag per heat on the IND_MELT first article |
 | driver poly_shop_reject_frac | 0.1 kg offcut to the wet line per kg polymer issued to MFG_SHOP | shop polymer offcut weigh at the first article (same class as the S58/S59/S60 10 % losses, AQS-DUTY-010) |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.hold_d | 14 d hold time (D-DOCK shipped-product dispatch campaign, A-M-278) | dispatch log cadence at the dock |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.P_MPa | 20.0 MPa gauge design pressure (200 bar Type I cylinder-bank service, CRYO_O2 storage_mode) | cylinder bank datasheet at purchase |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_MEOH.hold_d | 14 d hold time (D-DOCK shipped-product dispatch campaign, A-M-278) | dispatch log cadence at the dock |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_m2_per_kW | 0.025 m2 skid plan area per kW rated stack (PEM stack enclosure) | in-house skid GA at the fabrication-design task |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.bop_m2_per_kW | 0.015 m2 balance-of-plant plan area per kW rated (H2/O2 separators, deoxo, dryer per params.internals) | in-house skid GA at the fabrication-design task |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_W_mm | 1050 mm skid width (fits the CRYO H2-bay aisle) | in-house skid GA at the fabrication-design task |
+| driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_H_mm | 2200 mm skid height incl. separator deck | in-house skid GA at the fabrication-design task |
+| driver CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_h2_200bar_15C | 1.13 - H2 compressibility factor at 200 bar, 15 C | NIST isothermal pVT data check: H2 Z at 200 bar and 15 C (flagged verify in A-M-133) |
+| driver CRYO.cold-box-asu-recovery-train.cold-box.CRYO_H2.z_o2_200bar_15C | 0.93 - O2 compressibility factor at 200 bar, 15 C | NIST isothermal pVT data check: O2 Z at 200 bar and 15 C (flagged verify in A-M-133) |
+| driver CRYO.cold-box-asu-recovery-train.cold-box.rcv_tube_kg_m | 28.3 kg/m receiver-tube linear mass (as-used) | mill certificate or a weighed stock length of the DN100 Sch 160 316L tube |
+| driver ELEC.distribution-train.gnd_soil_rho_ohm_m | 50.0 ohm m soil resistivity | Wenner four-electrode soil resistivity survey at the site |
+| driver GAS.headers.methanol_synth_loop_P_bar | 50.0 bar a | loop reactor design pressure vs MEOH_SYNTH duty sheet |
+| driver GAS.headers.methanol_synth_loop_T_K | 523.15 K | loop reactor temperature vs MEOH_SYNTH duty sheet |
+| driver DIGESTER.metals-leach-train.htc_header_P_bar | 15.55 bar a | steam heater design pressure vs heater duty sheet |
+| driver DIGESTER.metals-leach-train.htc_header_T_K | 473.15 K | steam heater temperature vs duty sheet |
+| driver GAS.headers.meam_header_P_bar | 20.7 bar a | MeAM loop design pressure vs duty sheet |
+| driver GAS.headers.meam_header_T_K | 673.15 K | MeAM loop temperature vs duty sheet |
+| driver DIGESTER.ew-cascade-train.liquor_conductivity_S_m | 30.0 S/m | measure or cite chloride liquor conductivity at 1.4 M HCl |
+| driver DIGESTER.ew-cascade-train.max_shunt_dV_V | 6.0 V | worst-case pole-to-earth difference for the rectifier configuration |
+| driver DIGESTER.ew-cascade-train.stray_current_limit_A | 0.1 A | stray-current acceptance limit vs NFPA 70E / AQS-HSE basis |
+| driver storage.default_no_heat_input_T_C | 40.0 C | 0.4% site dry bulb 37.8 C (AQS-SITE-002) rounded up - confirm as the default |
+| driver foundry_pot_export_frac | 0.25 kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products | metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals) |
+| driver foundry_kroll_dragout_frac | 0.02 kg MgCl2-class salt drag-out per kg Kroll MgCl2 gross, to FLUX_PREP | retort condensate weigh per campaign: salt drag-out vs the 2 % study allowance |
+| driver foundry_inv_shell_kg_per_kg | 4.0 kg green shell per kg casting (6-dip class; envelope 3-6) | first shell campaign: built shell mass per kg castings across the 6-dip schedule |
+| driver foundry_inv_shell_reclaim_frac | 0.875 kg spent shell reclaimed to stucco/flour per kg spent shell | knock-out sieve yield: reclaimed stucco vs 0.5 kg/kg make-up balance (AQS-SIZE-FOUNDRY shell-waste line) |
+| driver foundry_inv_wax_kg_per_kg | 1.0 kg wax pattern per kg casting (thin-wall cluster class) | pattern weigh vs casting weigh on the first article cluster |
+| driver foundry_inv_wax_reclaim_frac | 0.9 kg dewax condensate reclaimed per kg wax pattern | dewax condensate weigh per campaign vs the 10 % burn/loss allowance |
+| driver foundry_pot_voltage_V | {"al": 3.8, "mg": 4.2, "ca": 4.2, "mo": 2.8, "cr": 2.8} V cell terminal (decomposition + overpotential + bath ohmic) | bench molten-chloride cell at the design current density: terminal voltage vs charge |
+| driver foundry_pot_ce | 0.85 - current efficiency (Faraday) at the pot electrodes | bench molten-chloride cell: deposit mass vs charge |
+| driver foundry_pot_j_A_cm2 | 0.5 A/cm2 design anode current density (graphite, chloride melt) | bench cell anode polarization at 0.3-0.8 A/cm2 (graphite consumption rate) |
+| driver POLYMERS.fluoropolymer-train.hf_kiln.residence_min | 30.0 min | kiln exit HF strength vs residence at the first-article campaign |
+| driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task |
+| driver FAB.wafer-line-train.campaign_d | 7.0 d | logged campaign schedule at the fab commissioning task |
+| driver foundry_ca_add_frac | 0.0015 kg Ca deoxidizer/desulfurizer per kg melt charge | first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge |
+| driver HEAT.heat-battery-train.hb_q3_hold_kWh_th | 14 kWh_th | Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision |
+| driver HDR.headers-train.hdr_min_DN_gas | 25 DN minimum, gas headers | Take-off and instrument tapping check on the header GA at unit task 05 |
+| driver HDR.headers-train.hdr_min_DN_flue | 100 DN minimum, afterburner flue | Natural-draft and condensate-drainage check on the flue routing drawing |
+| driver HDR.headers-train.hdr_rho_ncg | 0.5 kg/m3 pyrolysis NCG at 150-200 C | NCG composition from the pyrolysis assay at the OIL_FRAC unit task |
+| driver HDR.headers-train.hdr_run_default_m | 20 m fallback manifold run when no isometric route exists | Header run lengths from the routed isometrics at the next AQS-ISO-002 regen |
+| driver GEO.geo-loop.ghex_q_per_m_W | 35 W/m sustained per-metre bore capacity | Thermal response test on the first bore (ST-ORC-01) |
+| driver GEO.geo-loop.loop_head_m | 25 m loop circuit head | Circuit head from the routed loop isometric |
+| driver MEOH.synthesis-train.MEOH_FC.cell_V | 0.6 V per cell at the design point | Stack polarisation set at the first article |
+| driver MEOH.synthesis-train.MEOH_FC.j_A_cm2 | 0.3 A/cm2 current density at the design point | Stack polarisation set at the first article |
+| driver fire_pump_head_margin_kPa | 150 kPa design margin over static + friction to the remote area | Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record) |
+| driver fire_tank_refill_h | 8 h to refill the reserve from the normal supply | City/well fill-rate confirmation at X-BAS-03 (site utilities) |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -1242,3 +1735,29 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-263 | 10 % polymer offcut to the wet line per kg issued to MFG_SHO kg/kg | shop polymer offcut weigh at the first article |
 | A-M-266 | Shop polymer draw P = 0.377186 kg/d = -r0 + f*K/(1-f) (A-M-2 kg/d | python3 -m flow_graph.param.foundry_poly (idempotent closure re-derivation); shop polymer draw weigh at the first article |
 | A-M-268 | backup_gen_rated_kW 40.0 / crit_autonomy_d 2.0 (drivers.json kW / d | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h; owner outage-basis decision vs AQS-SITE-002 NSRDB run |
+| A-M-270 | FOOD_STORE 80 d x 0.252 kg DM/d (rho 600); METAL_STORE 14 d  see value (d, kg/d, kg/m3, MPa) | X-INV-02C: confirm hold days against the dispatch cadence and crop-failure duration when the trade-logistics pass issues |
+| A-M-282 | terminal V per metal {al 3.8, mg 4.2, ca 4.2, mo 2.8, cr 2.8 V, A/cm2, kW per cell | bench molten-chloride cell at the design current density: terminal voltage vs charge |
+| A-M-285 | 0.25 kg/d export per kg/d internal line on the Al/Ti/Mo/Cr pot products | metal dispatch study: contracted offtake vs the 25 % study margin (dock export meter totals) |
+| A-M-303 | DN25 minimum on gas and water headers (take-off seating, ins DN minimum, gas headers | Take-off and instrument tapping check on the header GA at unit task 05 |
+| A-M-304 | DN100 minimum on the afterburner flue (draft stability and c DN minimum, afterburner flue | Natural-draft and condensate-drainage check on the flue routing drawing |
+| A-M-305 | pyrolysis NCG 0.5 kg/m3 at 150-200 C (H2/CH4/C2-rich light g kg/m3 at header temperature | NCG composition from the pyrolysis assay at the OIL_FRAC unit task |
+| A-M-306 | 20 m fallback manifold run when no routed isometric exists ( m | Header run lengths from the routed isometrics at the next AQS-ISO-002 regen |
+| A-M-307 | 35 W/m sustained per-metre bore capacity (mid of the 30-50 W W/m | Thermal response test on the first bore (ST-ORC-01) |
+| A-M-310 | source-loop rise 3 K (keeps evaporator approach and pump pow K; m | Circuit head from the routed loop isometric |
+| A-M-312 | PEM cell design point 0.6 V at 0.3 A/cm2 (IEC62282-3-100 mod V per cell; A/cm2 at the design point | Stack polarisation set at the first article |
+| A-M-313 | 150 kPa design margin over static + friction to the hydrauli kPa | Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record) |
+| A-M-314 | 8 h to refill the fire reserve from the normal supply (NFPA  h | City/well fill-rate confirmation at X-BAS-03 (site utilities) |
+| A-M-315 | 14 kWh_th Q3 hold (reconciled from the issued sec. 5 volume, kWh_th | Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision |
+| A-M-316 | 0.0015 kg Ca deoxidizer/desulfurizer per kg melt charge | first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge |
+| A-M-317 | 0.1258 kW continuous demand on the design-day bounding winter case | vendor pump curve check at the installed loop (AQS-DUTY-076 Open: none at the survey-locked basis; survey confirmation is the registered replacing test) |
+| A-M-318 | AL_POT, MG_POT, CA_POT, CR_CELL and MO_CELL select graphite  selection class | pot-cell verification: first-article liner and anode change-out data, bath analysis at change-out, and shell-liner inspection vs the 10 mm allowance |
+| A-M-319 | TI_CELL: alumina-brick carbochlorinator at 800 C with graphi selection class | Kroll retort first-article: wall condition after the 1 kg batch, MgCl2 drain recovery, launder integrity |
+| A-M-320 | IND_MELT clay-graphite crucibles (one per Cu/Zn/Fe/Al family selection class | first-article furnace campaign: crucible heats-to-failure, element hours at class temperature, muffle inspection at the SINTER and SHELL_BURNOUT class |
+| A-M-321 | WAX_PATTERN 304L melt tank (70-90 C) + PP-H bins (M5 80 C ti selection class | first-article shell-room wear and lining inspection vs the issued classes |
+| A-M-322 | ROLL induction-hardened H13/D2 rolls on cast-steel housings; selection class | die, roll and mould first-article wear measurement vs the issued tool-material classes |
+| A-M-323 | F_RECOVER PE hold tank at ambient + PVDF internals + P3 PVDF selection class | construction-class re-check at the task 02 sizing gate of each unit |
+| A-M-324 | 316L jacketed soap kettles + 316L agitators for the Ca and L selection class | kettle first-article: soaping campaign residue and cleanability, no pit-rate claim |
+| A-M-325 | ADS_CHILL 304L adsorber shells + silica-gel beds + 316L wate selection class | season-commissioning trial: seal leak-down on the adsorbers, coil condition at the dry cooler and make-up-air coil |
+| A-M-326 | Ti porous transport layers, Ir/Ru mixed-oxide anode + Pt cat selection class | PEM stack first-article: voltage-hold degradation and membrane condition vs the rated class |
+| A-M-327 | PELLET 316L die plate + cutter hub + UHMW-PE trough liner +  selection class | pelletiser first-article die/cutter wear inspection |
+| A-M-328 | SI_REDUCE issues as a graphite hot-face carbothermic-reducti selection class | construction-class re-check at the task 02 sizing gate |

@@ -35,9 +35,9 @@ def test_all_units_sequenced_per_level():
         m = re.search(rf'^## {re.escape(lv)} \((\d+) units?, ', src, re.M)
         assert m, f'no section for {lv}'
         assert int(m.group(1)) == per_level[lv], f'{lv}: {m.group(1)} booked {per_level[lv]}'
-    ## the seat tables list 176 distinct units, one row each
+    ## the seat tables list every booked unit exactly once
     seq_units = re.findall(r'^\| \d+ \| ([A-Za-z0-9_/]+) \| \d+ \| \d+ \| (built in place|hoist) \|', src, re.M)
-    assert len(seq_units) == len(rows) == 176
+    assert len(seq_units) == len(rows)
     assert {u for u, _p in seq_units} == {r['unit'] for r in rows}
 
 

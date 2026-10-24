@@ -1,85 +1,67 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" font-family="sans-serif" font-size="10">
-<text x="10" y="16" font-weight="bold">MF-09 first article: stator / rotor lamination (M400-50A, 0.5 mm) and IEC 90S outline. AQS-INV-008 rev A, A-M-218. Not to scale outside the dimensions shown.</text>
+<text x="10" y="16" font-weight="bold">MF-09 first article: stator / rotor lamination (M400-50A, 0.5 mm) and IEC 63 outline. AQS-INV-008 rev A, A-M-218. Not to scale outside the dimensions shown.</text>
 <circle cx="170" cy="180" r="75.0" fill="#ccc" stroke="#000"/>
-<circle cx="170" cy="180" r="62.7" fill="none" stroke="#666" stroke-dasharray="3,2"/>
-<line x1="211.3" y1="180.0" x2="232.7" y2="180.0" stroke="#fff" stroke-width="3.7"/>
-<line x1="210.7" y1="187.2" x2="231.7" y2="190.9" stroke="#fff" stroke-width="3.7"/>
-<line x1="208.8" y1="194.1" x2="228.9" y2="201.4" stroke="#fff" stroke-width="3.7"/>
-<line x1="205.8" y1="200.7" x2="224.3" y2="211.3" stroke="#fff" stroke-width="3.7"/>
-<line x1="201.6" y1="206.6" x2="218.0" y2="220.3" stroke="#fff" stroke-width="3.7"/>
-<line x1="196.6" y1="211.6" x2="210.3" y2="228.0" stroke="#fff" stroke-width="3.7"/>
-<line x1="190.7" y1="215.8" x2="201.3" y2="234.3" stroke="#fff" stroke-width="3.7"/>
-<line x1="184.1" y1="218.8" x2="191.4" y2="238.9" stroke="#fff" stroke-width="3.7"/>
-<line x1="177.2" y1="220.7" x2="180.9" y2="241.7" stroke="#fff" stroke-width="3.7"/>
-<line x1="170.0" y1="221.3" x2="170.0" y2="242.7" stroke="#fff" stroke-width="3.7"/>
-<line x1="162.8" y1="220.7" x2="159.1" y2="241.7" stroke="#fff" stroke-width="3.7"/>
-<line x1="155.9" y1="218.8" x2="148.6" y2="238.9" stroke="#fff" stroke-width="3.7"/>
-<line x1="149.3" y1="215.8" x2="138.7" y2="234.3" stroke="#fff" stroke-width="3.7"/>
-<line x1="143.4" y1="211.6" x2="129.7" y2="228.0" stroke="#fff" stroke-width="3.7"/>
-<line x1="138.4" y1="206.6" x2="122.0" y2="220.3" stroke="#fff" stroke-width="3.7"/>
-<line x1="134.2" y1="200.7" x2="115.7" y2="211.3" stroke="#fff" stroke-width="3.7"/>
-<line x1="131.2" y1="194.1" x2="111.1" y2="201.4" stroke="#fff" stroke-width="3.7"/>
-<line x1="129.3" y1="187.2" x2="108.3" y2="190.9" stroke="#fff" stroke-width="3.7"/>
-<line x1="128.7" y1="180.0" x2="107.3" y2="180.0" stroke="#fff" stroke-width="3.7"/>
-<line x1="129.3" y1="172.8" x2="108.3" y2="169.1" stroke="#fff" stroke-width="3.7"/>
-<line x1="131.2" y1="165.9" x2="111.1" y2="158.6" stroke="#fff" stroke-width="3.7"/>
-<line x1="134.2" y1="159.3" x2="115.7" y2="148.7" stroke="#fff" stroke-width="3.7"/>
-<line x1="138.4" y1="153.4" x2="122.0" y2="139.7" stroke="#fff" stroke-width="3.7"/>
-<line x1="143.4" y1="148.4" x2="129.7" y2="132.0" stroke="#fff" stroke-width="3.7"/>
-<line x1="149.3" y1="144.2" x2="138.7" y2="125.7" stroke="#fff" stroke-width="3.7"/>
-<line x1="155.9" y1="141.2" x2="148.6" y2="121.1" stroke="#fff" stroke-width="3.7"/>
-<line x1="162.8" y1="139.3" x2="159.1" y2="118.3" stroke="#fff" stroke-width="3.7"/>
-<line x1="170.0" y1="138.7" x2="170.0" y2="117.3" stroke="#fff" stroke-width="3.7"/>
-<line x1="177.2" y1="139.3" x2="180.9" y2="118.3" stroke="#fff" stroke-width="3.7"/>
-<line x1="184.1" y1="141.2" x2="191.4" y2="121.1" stroke="#fff" stroke-width="3.7"/>
-<line x1="190.7" y1="144.2" x2="201.3" y2="125.7" stroke="#fff" stroke-width="3.7"/>
-<line x1="196.6" y1="148.4" x2="210.3" y2="132.0" stroke="#fff" stroke-width="3.7"/>
-<line x1="201.6" y1="153.4" x2="218.0" y2="139.7" stroke="#fff" stroke-width="3.7"/>
-<line x1="205.8" y1="159.3" x2="224.3" y2="148.7" stroke="#fff" stroke-width="3.7"/>
-<line x1="208.8" y1="165.9" x2="228.9" y2="158.6" stroke="#fff" stroke-width="3.7"/>
-<line x1="210.7" y1="172.8" x2="231.7" y2="169.1" stroke="#fff" stroke-width="3.7"/>
-<circle cx="170" cy="180" r="41.3" fill="#fff" stroke="#000"/>
-<circle cx="170" cy="180" r="41.0" fill="#bbb" stroke="#000"/>
-<circle cx="207.2" cy="184.2" r="3.5" fill="#999"/>
-<circle cx="205.3" cy="192.4" r="3.5" fill="#999"/>
-<circle cx="201.7" cy="199.9" r="3.5" fill="#999"/>
-<circle cx="196.5" cy="206.5" r="3.5" fill="#999"/>
-<circle cx="189.9" cy="211.7" r="3.5" fill="#999"/>
-<circle cx="182.4" cy="215.3" r="3.5" fill="#999"/>
-<circle cx="174.2" cy="217.2" r="3.5" fill="#999"/>
-<circle cx="165.8" cy="217.2" r="3.5" fill="#999"/>
-<circle cx="157.6" cy="215.3" r="3.5" fill="#999"/>
-<circle cx="150.1" cy="211.7" r="3.5" fill="#999"/>
-<circle cx="143.5" cy="206.5" r="3.5" fill="#999"/>
-<circle cx="138.3" cy="199.9" r="3.5" fill="#999"/>
-<circle cx="134.7" cy="192.4" r="3.5" fill="#999"/>
-<circle cx="132.8" cy="184.2" r="3.5" fill="#999"/>
-<circle cx="132.8" cy="175.8" r="3.5" fill="#999"/>
-<circle cx="134.7" cy="167.6" r="3.5" fill="#999"/>
-<circle cx="138.3" cy="160.1" r="3.5" fill="#999"/>
-<circle cx="143.5" cy="153.5" r="3.5" fill="#999"/>
-<circle cx="150.1" cy="148.3" r="3.5" fill="#999"/>
-<circle cx="157.6" cy="144.7" r="3.5" fill="#999"/>
-<circle cx="165.8" cy="142.8" r="3.5" fill="#999"/>
-<circle cx="174.2" cy="142.8" r="3.5" fill="#999"/>
-<circle cx="182.4" cy="144.7" r="3.5" fill="#999"/>
-<circle cx="189.9" cy="148.3" r="3.5" fill="#999"/>
-<circle cx="196.5" cy="153.5" r="3.5" fill="#999"/>
-<circle cx="201.7" cy="160.1" r="3.5" fill="#999"/>
-<circle cx="205.3" cy="167.6" r="3.5" fill="#999"/>
-<circle cx="207.2" cy="175.8" r="3.5" fill="#999"/>
-<circle cx="170" cy="180" r="11.8" fill="#555"/>
-<text x="360" y="50">Stator OD 153 mm (check 149.5 mm from slot + yoke: fits)</text>
-<text x="360" y="66">Bore 84.28 mm; rotor OD 83.72 mm; air gap 0.28 mm</text>
-<text x="360" y="82">Core length 52 mm, stacking factor 0.97</text>
-<text x="360" y="98">Stator 36 slots: area 124 mm2 at fill 0.4, depth 21.8 mm, parallel tooth 3.54 mm (1.6 T)</text>
-<text x="360" y="114">Yoke 10.8 mm (1.5 T)</text>
-<text x="360" y="130">Winding 657 turns/phase, 110 conductors/slot, 19 AWG (0.394 mm2) class 200 enamel</text>
-<text x="360" y="146">Rotor 28 die-cast Al bars 41 mm2, end ring 46 mm2, skew 1 slot</text>
-<text x="360" y="162">Frame IEC H 90, feet A 140 x B 100, holes K 10, shaft D 24 k6 x E 50</text>
-<text x="360" y="178">Rated torque 6.0 N m; bearings 2 x 6205-2Z</text>
-<rect x="360" y="260.1" width="103.2" height="91.8" fill="none" stroke="#000"/>
-<rect x="463.2" y="298.8" width="30.0" height="14.4" fill="#555"/>
-<line x1="340" y1="360" x2="511.2" y2="360" stroke="#000"/>
-<text x="499.2" y="306.0">shaft centre H 90</text>
+<circle cx="170" cy="180" r="61.9" fill="none" stroke="#666" stroke-dasharray="3,2"/>
+<line x1="211.5" y1="180.0" x2="231.9" y2="180.0" stroke="#fff" stroke-width="5.6"/>
+<line x1="210.1" y1="190.7" x2="229.8" y2="196.0" stroke="#fff" stroke-width="5.6"/>
+<line x1="206.0" y1="200.8" x2="223.6" y2="211.0" stroke="#fff" stroke-width="5.6"/>
+<line x1="199.4" y1="209.4" x2="213.8" y2="223.8" stroke="#fff" stroke-width="5.6"/>
+<line x1="190.8" y1="216.0" x2="201.0" y2="233.6" stroke="#fff" stroke-width="5.6"/>
+<line x1="180.7" y1="220.1" x2="186.0" y2="239.8" stroke="#fff" stroke-width="5.6"/>
+<line x1="170.0" y1="221.5" x2="170.0" y2="241.9" stroke="#fff" stroke-width="5.6"/>
+<line x1="159.3" y1="220.1" x2="154.0" y2="239.8" stroke="#fff" stroke-width="5.6"/>
+<line x1="149.2" y1="216.0" x2="139.0" y2="233.6" stroke="#fff" stroke-width="5.6"/>
+<line x1="140.6" y1="209.4" x2="126.2" y2="223.8" stroke="#fff" stroke-width="5.6"/>
+<line x1="134.0" y1="200.8" x2="116.4" y2="211.0" stroke="#fff" stroke-width="5.6"/>
+<line x1="129.9" y1="190.7" x2="110.2" y2="196.0" stroke="#fff" stroke-width="5.6"/>
+<line x1="128.5" y1="180.0" x2="108.1" y2="180.0" stroke="#fff" stroke-width="5.6"/>
+<line x1="129.9" y1="169.3" x2="110.2" y2="164.0" stroke="#fff" stroke-width="5.6"/>
+<line x1="134.0" y1="159.2" x2="116.4" y2="149.0" stroke="#fff" stroke-width="5.6"/>
+<line x1="140.6" y1="150.6" x2="126.2" y2="136.2" stroke="#fff" stroke-width="5.6"/>
+<line x1="149.2" y1="144.0" x2="139.0" y2="126.4" stroke="#fff" stroke-width="5.6"/>
+<line x1="159.3" y1="139.9" x2="154.0" y2="120.2" stroke="#fff" stroke-width="5.6"/>
+<line x1="170.0" y1="138.5" x2="170.0" y2="118.1" stroke="#fff" stroke-width="5.6"/>
+<line x1="180.7" y1="139.9" x2="186.0" y2="120.2" stroke="#fff" stroke-width="5.6"/>
+<line x1="190.8" y1="144.0" x2="201.0" y2="126.4" stroke="#fff" stroke-width="5.6"/>
+<line x1="199.4" y1="150.6" x2="213.8" y2="136.2" stroke="#fff" stroke-width="5.6"/>
+<line x1="206.0" y1="159.2" x2="223.6" y2="149.0" stroke="#fff" stroke-width="5.6"/>
+<line x1="210.1" y1="169.3" x2="229.8" y2="164.0" stroke="#fff" stroke-width="5.6"/>
+<circle cx="170" cy="180" r="41.5" fill="#fff" stroke="#000"/>
+<circle cx="170" cy="180" r="41.2" fill="#bbb" stroke="#000"/>
+<circle cx="206.7" cy="185.3" r="3.9" fill="#999"/>
+<circle cx="203.7" cy="195.4" r="3.9" fill="#999"/>
+<circle cx="198.0" cy="204.3" r="3.9" fill="#999"/>
+<circle cx="190.0" cy="211.2" r="3.9" fill="#999"/>
+<circle cx="180.4" cy="215.5" r="3.9" fill="#999"/>
+<circle cx="170.0" cy="217.0" r="3.9" fill="#999"/>
+<circle cx="159.6" cy="215.5" r="3.9" fill="#999"/>
+<circle cx="150.0" cy="211.2" r="3.9" fill="#999"/>
+<circle cx="142.0" cy="204.3" r="3.9" fill="#999"/>
+<circle cx="136.3" cy="195.4" r="3.9" fill="#999"/>
+<circle cx="133.3" cy="185.3" r="3.9" fill="#999"/>
+<circle cx="133.3" cy="174.7" r="3.9" fill="#999"/>
+<circle cx="136.3" cy="164.6" r="3.9" fill="#999"/>
+<circle cx="142.0" cy="155.7" r="3.9" fill="#999"/>
+<circle cx="150.0" cy="148.8" r="3.9" fill="#999"/>
+<circle cx="159.6" cy="144.5" r="3.9" fill="#999"/>
+<circle cx="170.0" cy="143.0" r="3.9" fill="#999"/>
+<circle cx="180.4" cy="144.5" r="3.9" fill="#999"/>
+<circle cx="190.0" cy="148.8" r="3.9" fill="#999"/>
+<circle cx="198.0" cy="155.7" r="3.9" fill="#999"/>
+<circle cx="203.7" cy="164.6" r="3.9" fill="#999"/>
+<circle cx="206.7" cy="174.7" r="3.9" fill="#999"/>
+<circle cx="170" cy="180" r="7.7" fill="#555"/>
+<text x="360" y="50">Stator OD 107 mm (check 103.6 mm from slot + yoke: fits)</text>
+<text x="360" y="66">Bore 59.23 mm; rotor OD 58.77 mm; air gap 0.23 mm</text>
+<text x="360" y="82">Core length 33 mm, stacking factor 0.97</text>
+<text x="360" y="98">Stator 24 slots: area 86 mm2 at fill 0.4, depth 14.6 mm, parallel tooth 3.73 mm (1.6 T)</text>
+<text x="360" y="114">Yoke 7.6 mm (1.5 T)</text>
+<text x="360" y="130">Winding 650 turns/phase, 162 conductors/slot, 21 AWG (0.184 mm2) class 200 enamel</text>
+<text x="360" y="146">Rotor 22 die-cast Al bars 24 mm2, end ring 21 mm2, skew 1 slot</text>
+<text x="360" y="162">Frame IEC H 63, feet A 100 x B 80, holes K 7, shaft D 11 k6 x E 23</text>
+<text x="360" y="178">Rated torque 1.0 N m; bearings 2 x 6201-2Z</text>
+<rect x="360" y="290.1" width="91.8" height="64.2" fill="none" stroke="#000"/>
+<rect x="451.8" y="318.9" width="13.8" height="6.6" fill="#555"/>
+<line x1="340" y1="360" x2="499.8" y2="360" stroke="#000"/>
+<text x="471.6" y="322.2">shaft centre H 63</text>
 </svg>

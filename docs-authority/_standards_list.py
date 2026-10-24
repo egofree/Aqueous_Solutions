@@ -3,6 +3,7 @@ and the places each key is cited in the repository. Run: python3 docs-authority/
 import os, re, subprocess, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, R)
 from flow_graph.param.refs import REFS
+from flow_graph.param.indexes import is_index_output  # noqa: E402
 CODE = re.compile(r'^(ANSI|API|ASCE|ASHRAE|ASME|ASTM|AWS|AWWA|CGA|DVS|IBC|IEC|IECC|IEEE|IFC|ISO|NEC|NFPA|UL)')
 DISC = [('Pressure equipment and piping', ('ASME_II', 'ASME_VIII', 'API', 'ISO4126', 'ISO16528', 'ISO23251', 'ASTM_D1785', 'ISO1452', 'CGA', 'DVS', 'AWS')),
         ('Drawings and documentation', ('ASME_Y14', 'ISO_7200', 'ISO_10628')),
@@ -17,7 +18,8 @@ def disc(k):
         if any(k.startswith(p) for p in pre) and not (name.startswith('Fire') and k.startswith(('NFPA70E', 'NFPA110', 'NFPA111', 'NFPA2_'))): return name
     return 'Other'
 def uses(k):
-    out = subprocess.run(['git', 'grep', '-l', '-w', k, '--', '*.py', '*.md', '*.json'], cwd=R, capture_output=True, text=True).stdout.split()
+    out = [f for f in subprocess.run(['git', 'grep', '-l', '-w', k, '--', '*.py', '*.md', '*.json'], cwd=R, capture_output=True, text=True).stdout.split()
+           if not is_index_output(f)]   # indexes are not citing sources
     return [f for f in out if f not in ('flow_graph/param/refs.py', 'docs-authority/STANDARDS_LIST.md')]
 def main():
     rows = {}
