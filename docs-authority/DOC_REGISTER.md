@@ -26,7 +26,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | Number | Page | Rev | Date | Title | Status |
 | --- | --- | --- | --- | --- | --- |
 | AQS-3D-BUILD-001 | `docs-authority/BUILD_3D_FROM_FLOW.md` | H | 2026-10-24 | Building 3D models from the plant flow graph | current |
-| AQS-3D-STACK-001 | `docs-authority/STACK_3D_DECISION.md` | A | 2026-10-01 | Stack decision — 3D and diagram surfaces | current |
+| AQS-3D-STACK-001 | `docs-authority/STACK_3D_DECISION.md` | B | 2026-10-24 | Software for 3D models and diagrams | current |
 | AQS-ASM-001 | `docs-authority/ASME_CLASS_SHEETS.md` | D | 2026-10-24 | Pressure vessel inventory and process piping class sheets | current |
 | AQS-ASM-002 | `docs-authority/INSTALL_SEQUENCE.md` | A | 2026-10-21 | Install sequence | current |
 | AQS-ASM-003 | `docs-authority/RIGGING_PLANS.md` | A | 2026-10-21 | Rigging plans | current |
@@ -453,7 +453,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-TST-003 | `docs-authority/TEST_RIGS.md` | A | 2026-10-16 | In-house test rigs: build packages | current |
 | AQS-TST-004 | `docs-authority/BENCH_TEST_UPW_POLISH.md` | A | 2026-10-19 | UPW polish module bench test (RO permeance, rejection, EDI resistivity) | current |
 | AQS-TST-005 | `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | A | 2026-10-19 | Hydrogen compressor first-article bench run | current |
-| AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | F | 2026-10-24 | Design-tool architecture — Aqueous MVS sandbox | current |
+| AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | G | 2026-10-24 | Design-tool architecture | current |
 | AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | current |
 | AQS-WLD-001 | `docs-authority/WELD_MAP.md` | A | 2026-09-27 | Weld and joint map | current |
 | AQS-WLD-002 | `docs-authority/WPS_REGISTER.md` | A | 2026-10-16 | WPS and PQR register | current |

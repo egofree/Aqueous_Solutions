@@ -970,6 +970,12 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 
 
+{AGPL -- GNU Affero General Public License, a copyleft software licence whose terms also cover use over a network}
+
+{ISA -- International Society of Automation; ISA-95 is its standard for the levels of an enterprise and control system hierarchy}
+
+{LOD -- Level of detail: simplified versions of a 3D model shown at a distance}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

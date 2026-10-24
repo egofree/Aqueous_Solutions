@@ -1,13 +1,11 @@
-# Design-tool architecture — Aqueous MVS sandbox
+# Design-tool architecture
 
 Document number: AQS-UI-001  
-Revision: F  
+Revision: G  
 Date: 2026-10-24  
-Authority: AQS-AUTH-001; style AQS-DOC-002; scale AQS-SCALE-001
-(`SCALE_M = 1.0`); streams AQS-STR-001; mass-flow AQS-MF-001;
-compliance themes AQS-COMPL-001; flow graph AQS-FLOW-GRAPH-001;
-plan AQS-PLAN-UI-001 Rev N (`unify_then_reshape`).  
-**Stage = architecture lock.** Not shipped software. Not a PE stamp.
+Basis: AQS-AUTH-001; style AQS-DOC-002; scale AQS-SCALE-001 (`SCALE_M = 1.0`); streams AQS-STR-001; mass flow AQS-MF-001; compliance themes AQS-COMPL-001; flow graph AQS-FLOW-GRAPH-001; plan AQS-PLAN-UI-001 Rev N (`unify_then_reshape`).  
+Status: architecture decisions. This is not shipped software and not a professional engineer's stamp.  
+Licence: CERN-OHL-S-2.0 for the CAD, the model, the authority documents, the design-tool interface and any public or cloud service. There is no separate interface or cloud licence.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
@@ -18,33 +16,20 @@ plan AQS-PLAN-UI-001 Rev N (`unify_then_reshape`).
 | D | unify_then_reshape | Typed plant graph = sole topology authority; fold/project `candidate_mvs`; matplotlib demoted to optional exporters; roadmap A′→B′→C→D→E; 3D FreeCAD bias (Three.js only with written decision); Odysseus out of runtime; stack re-eval the unpublished planning note STACK_REEVAL_2026-10-01 | 2026-10-01 |
 | E | Unified-engine wiring | Working UI on the unified parametric system: read-only `/system-tree`, `/params`, `/regen-status` endpoints; ParamsPanel / TreeTogglePanel / RegenStatusBadge; four-level sandbox toggles (sector/system/subsystem/unit) resolving most-specific-wins server-side; regen receipt as the provenance the badge reads (commits 5f77bee, f64ad84, fc083f8) | 2026-10-19 |
 | F | Sector names | Header revision brought in line with this table (it still said D). Examples use graph Rev AC sector ids (AQS-SEC-001 Rev H): DIGESTER for WET; PV_ARRAY, ZNBR2 and BACKUP_GEN are units in ELEC. No architecture change. | 2026-10-24 |
+| G | Plain language | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose and scope merged into §1, terms in §2, captions; counts removed from §13; an internal working rule removed from §10; Odysseus described only as the repository records it (open question Q-016). Decisions unchanged. | 2026-10-24 |
 
-Licence: **CERN-OHL-S-2.0** for CAD, MVS model, authority docs, design-tool UI, and public/cloud surfaces. Full freedom of information — no separate UI/cloud licence.
+## 1. Purpose and scope
 
----
+This document sets the architecture of an interactive design tool for the plant. The tool:
 
-## 1. Purpose
+1. Classifies every plant sector by its Sector Definition, that is, its role in the mass and energy graph.
+2. Treats the minimum viable system (MVS) as the smallest self-sustaining human colony, at Moon or Mars class intent. The MVS has full manufacturing and habitation, can make its own parts, can copy itself (RepRap class), can scale up (GVCS class) or down, closes all loops including all three energy storage peers, and still produces a surplus of food, clean water, raw materials or manufactured goods, and energy. The aim is overproduction and export, not only self-sustainment.
+3. Provides a sandbox in which any set of sectors or modules can be switched on or off, derated continuously where the scale rules allow it, and checked for gaps (missing roles, streams that do not close). The sandbox never invents closure.
+4. Never overwrites the locked MVS. Every sandbox result is exported as a new, modular design pack in which unused modules are switched off.
 
-Define the architecture of an interactive design tool that:
+Table 1.1 sets what is in and out of scope.
 
-1. Classifies every plant sector by a **Sector Definition** (role in the
-   mass–energy graph).
-2. Treats the **Minimum Viable System (MVS)** as the smallest **self-
-   sustaining human colony** (Moon/Mars class intent): full manufacturing
-   + habitation; can make its own parts; can **copy itself** (RepRap-
-   class); can **scale up** (GVCS-class) or **down**; **closes all loops**
-   including **all three ESS peers**; and still **produces a surplus** of
-   food, clean water, raw materials (or manufactured goods), and energy —
-   i.e. overproduction and export, not mere self-sustainment.
-3. Lets a **sandbox** enable or disable any subset of sectors/modules,
-   continuously derate where rules allow, and **flag gaps** (missing
-   roles, unclosed streams) without inventing closure.
-4. **Never overwrites** the locked MVS — every sandbox outcome exports a
-   new design pack (modular artefacts; unused modules off).
-
----
-
-## 2. Scope
+Table 1.1. Scope
 
 | In | Out |
 |---|---|
@@ -56,18 +41,28 @@ Define the architecture of an interactive design tool that:
 | Modular export pack; phased roadmap | Mixing Odysseus AGPL data into the MVS or UI tree |
 | Host path local → GitHub → cloud | Invented permits or clause quotations |
 
-Canonical in this tree: `docs-authority/DESIGN_TOOL_ARCHITECTURE.md`  
----
+The canonical copy of this document is `docs-authority/DESIGN_TOOL_ARCHITECTURE.md`.
 
-## 3. Locked decisions
+## 2. Terms
+
+- Sector Definition: the role a sector or unit plays in the mass and energy graph: source, load, storage, sink or export, or process (§3.1). The catalogue is AQS-SEC-001.
+- Minimum viable system (MVS): the smallest plant configuration that meets the closure and surplus tests of §3.2. Until a formal freeze of `AQS-MVS-001`, the on-disk baseline is the candidate MVS.
+- Energy storage system (ESS) peers: the three storage systems the MVS requires together, `ZNBR2` (zinc-bromide flow battery), `MEOH` (methanol store) and `PUMPED_HYDRO`.
+- Sandbox: an editable copy of the MVS with sectors switched on or off and parameters changed.
+- Gap: a missing Sector Definition, or a stream that no longer closes because of one.
+- Design pack: the exported result of a sandbox (§8).
+- Plant graph: the typed graph in `flow_graph/` (AQS-FLOW-GRAPH-001), the only source of units and streams.
+- `unify_then_reshape`: the plan (AQS-PLAN-UI-001) that first makes the plant graph the only topology source and then rebuilds the interface on it.
+
+Other abbreviations are in `docs-authority/GLOSSARY.md`.
+
+## 3. Decisions
 
 ### 3.1 Sector Definition (taxonomy)
 
-Every sector (and energy-relevant unit class) **shall** carry a
-**Sector Definition**: a role type that tells the solver whether the
-block is a source, a load, storage (charge/discharge), a sink/export, or
-a process transformer. Definitions are orthogonal to physical bay
-layout.
+Every sector, and every unit class that matters for energy, shall carry a Sector Definition. The definition tells the solver whether the block is a source, a load, storage that charges and discharges, a sink or export, or a process that transforms streams. Definitions are independent of the physical bay layout. Table 3.1 lists the classes.
+
+Table 3.1. Sector Definition classes
 
 | Sector Definition | Mode behaviour | Examples (illustrative) |
 |---|---|---|
@@ -83,91 +78,43 @@ layout.
 
 Rules:
 
-1. **Any or all** components may be missing in a sandbox. The solver
-   **shall** note **gaps** (absent Sector Definitions that the graph
-   still references) and **unclosed mass / energy streams** where those
-   gaps reappear — it **shall not** silently invent closure.
-2. Energy storage classes **shall** model both charge and discharge
-   modes on the same unit (or paired units) so electrical match and
-   mass balance stay consistent.
-3. Physical `SCALE_M` / bay / cassette rules (AQS-SCALE-001) remain the
-   **layout** driver; Sector Definition is the **role** driver. A
-   smaller envelope is valid MVS **only if** loops close (including all
-   required ESS peers) **and** surplus criteria in §3.2 are met — bay
-   count alone does not define MVS. Scaled-down omissions are modelled
-   as unreclaimed / incomplete closure (§3.2 item 2).
+1. Any or all components may be missing in a sandbox. The solver shall report gaps (Sector Definitions the graph still references but which are absent) and the mass or energy streams left unclosed by them. It shall not invent closure.
+2. Energy storage classes shall model both charge and discharge on the same unit, or on paired units, so that the electrical match and the mass balance agree.
+3. The physical rules of AQS-SCALE-001 (`SCALE_M`, bays, cassettes) drive the layout; the Sector Definition drives the role. A smaller envelope is a valid MVS only if its loops close, including all required storage peers, and it meets the surplus criteria of §3.2. Bay count alone does not define the MVS. Capabilities left out of a scaled-down plant are modelled as unreclaimed resources or incomplete closure (§3.2 item 2).
 
 ### 3.2 MVS and sandbox
 
-1. **MVS** **shall** be the smallest plant configuration that:
-   - constitutes a **self-sustaining human colony** at Moon/Mars class
-     intent: **full manufacturing + habitation**; ability to **make its
-     own parts**; ability to **copy itself** (RepRap-class self-
-     replication); and ability to **scale up** (GVCS-class) or **scale
-     down**;
-   - includes the Sector Definitions required to **close all loops**
-     (AQS-MF-001 / AQS-STR-001), including **all three** ESS peers
-     (**ZNBR2**, **MEOH**, **PUMPED_HYDRO**) enabled — **redundancy is a
-     core tenet**; MeOH also feeds other process streams (not ESS-only);
-   - still produces a **surplus** suitable for **export** of:
-     - food,
-     - clean water,
-     - raw materials **or** manufactured goods, and
-     - energy.
-   Self-sustainment alone is **not** sufficient; the goal remains
-   **overproduction and export**.
-2. **Scaled-down** configurations (capabilities omitted for practical
-   reasons) **may** be useful operationally, but the model **shall**
-   treat missing capabilities as **incompletely closed** loops /
-   **unreclaimed resource streams** — problems to solve — **not** as
-   accepted pollution, emissions, or silent losses.
-3. The **sandbox** **shall** allow:
-   - enable / disable any sector or module (checkbox),
-   - continuous derate where AQS-SCALE-001 continuous classes apply
-     (e.g. tank footprint ∝ plan),
-   - discrete jumps where those rules apply (cassette, dock, PV/ZnBr₂
-     modules).
-   When any **required** ESS peer (or other required sector) is off, the
-   solver **shall** emit an **unreclaimed-resource / incomplete-closure**
-   gap (`reason: unreclaimed_resource` for ESS peers) and **shall not**
-   invent storage or mass closure.
-4. Export **shall not** be blocked solely because a non-MVS sandbox has
-   sectors off. Instead the pack **shall** carry **gap and unclosed-
-   stream flags**. Blocking export is reserved for hard schema /
-   integrity failures (orphan IDs, corrupt model), not “incomplete vs
-   MVS.”
-5. The tool **shall not** overwrite the locked MVS in place. Any sandbox
-   edit **shall** export a **new design pack** (§8).
-6. On-disk plant baseline remains `SCALE_M = 1.0` in
-   `models/freecad/params.py` as the **current manufacturing baseline**.
-   Whether that exact envelope is the frozen MVS gold file is decided
-   by applying §3.2 surplus + closure tests, not by bay count alone.
-   Until an explicit freeze commit of `AQS-MVS-001`, the baseline is
-   **candidate MVS**.
+1. The MVS shall be the smallest plant configuration that:
+   - is a self-sustaining human colony at Moon or Mars class intent: full manufacturing and habitation, able to make its own parts, able to copy itself (RepRap-class self-replication), and able to scale up (GVCS class) or down;
+   - includes the Sector Definitions needed to close all loops (AQS-MF-001, AQS-STR-001), with all three storage peers (`ZNBR2`, `MEOH`, `PUMPED_HYDRO`) switched on. Redundancy is a core principle. Methanol also feeds other process streams; it is not storage only;
+   - still produces a surplus for export of food, clean water, raw materials or manufactured goods, and energy.
+   Self-sustainment alone is not enough; the goal is overproduction and export.
+2. Scaled-down configurations, with capabilities left out for practical reasons, may be useful in operation. The model shall treat each missing capability as an incompletely closed loop or an unreclaimed resource stream: a problem to solve, not accepted pollution, emissions or silent loss.
+3. The sandbox shall allow:
+   - switching any sector or module on or off;
+   - continuous derating where the continuous classes of AQS-SCALE-001 apply (for example, tank footprint proportional to plan area);
+   - discrete steps where those rules apply (cassettes, docks, PV and zinc-bromide modules).
+   When a required storage peer, or another required sector, is off, the solver shall report an unreclaimed-resource or incomplete-closure gap (`reason: unreclaimed_resource` for storage peers) and shall not invent storage or mass closure.
+4. Export shall not be blocked only because a sandbox has sectors switched off. The pack carries the gap and unclosed-stream flags instead. Export is blocked only for hard schema or integrity failures (orphan identifiers, a corrupt model), not for "incomplete compared with the MVS".
+5. The tool shall not overwrite the locked MVS. Every sandbox edit is exported as a new design pack (§8).
+6. The on-disk plant baseline remains `SCALE_M = 1.0` in `models/freecad/params.py`, the current manufacturing baseline. Whether that envelope becomes the frozen MVS is decided by the surplus and closure tests of this section, not by bay count. Until a commit explicitly freezes `AQS-MVS-001`, the baseline is the candidate MVS.
 
-### 3.3 Schematic first; 3D later
+### 3.3 Schematic first, 3D later
 
-1. The first interactive surface **shall** be a **2D schematic** (PFD /
-   SLD / layered graph views), not a free-orbit 3D editor. Under
-   **unify_then_reshape**, the schematic **shall** be a **graph-layer
-   viewer/editor** over the typed plant graph (Phase B′), not a second
-   topology store.
-2. 3D **shall** follow export-from-graph lock (Phase D). **Default bias:
-   FreeCAD rebuild** from the graph / `params` model (`freecadcmd` /
-   AQS-REB-001). Live parametric mesh, LOD campus mesh, and **Three.js**
-   remain candidates **only** if a **written decision** (Phase D plan item or
-   this file follow-on) selects them over FreeCAD rebuild.
+1. The first interactive surface shall be a 2D schematic (process flow diagram, single-line diagram and layered graph views), not a free-orbit 3D editor. Under `unify_then_reshape` the schematic is a viewer and editor over the layers of the plant graph (Phase B′), not a second store of topology.
+2. 3D follows once export from the graph is settled (Phase D). The default is a FreeCAD rebuild from the graph and the `params` model (`freecadcmd`, AQS-REB-001). A live parametric mesh, a campus mesh with levels of detail, or Three.js are used only if a written decision (a Phase D plan item, or a follow-on to this document) selects them over the FreeCAD rebuild. The decision record is AQS-3D-STACK-001 (`STACK_3D_DECISION.md`).
 
 ### 3.4 Identifiers
 
-1. Stable IDs **shall** be `unit_id` and `stream_id` only. Do **not** use
-   a generic `element` ID as the primary key.
-2. Optional plant tags (ISA / operator tags) **should** be added later as
-   aliases; they **shall not** replace `unit_id` / `stream_id`.
-3. Inter-block streams **shall** keep the existing `S##` register
-   (AQS-STR-001). Intra-aisle recycles remain on line PFDs.
+1. The stable identifiers shall be `unit_id` and `stream_id` only. A generic `element` identifier is not used as the primary key.
+2. Plant tags (ISA or operator tags) may be added later as aliases; they do not replace `unit_id` or `stream_id`.
+3. Streams between blocks keep the `S##` register (AQS-STR-001). Recycle streams within an aisle stay on the line process flow diagrams.
 
-### 3.5 Hierarchy (ISA-95-ish)
+### 3.5 Hierarchy
+
+The hierarchy follows the levels of ISA-95 (Figure 3.1, Table 3.2).
+
+Figure 3.1. Model hierarchy
 
 ```
 site
@@ -176,6 +123,8 @@ site
            └── equipment module
 ```
 
+Table 3.2. Hierarchy levels
+
 | Level | Examples (locked names stay names) |
 |---|---|
 | Site | One campus; `SITE_LAT` input |
@@ -183,21 +132,20 @@ site
 | Unit | `LEACH_CSTR_1`, `EW_1`, `SOL_ARK_60K`, `ZNBR2`, `PUMPED_HYDRO` |
 | Equipment module | Cassette, PV string, ZnBr2 skid cell, dock bay |
 
-Each sector row **shall** declare `sector_definition` per §3.1.
+Each sector row shall declare its `sector_definition` under §3.1.
 
 ### 3.6 Solver
 
-1. A solver **shall** close **mass-energy** balances and **electrical
-   match** (generation / storage / load) against the typed MVS model.
-2. The solver **shall** integrate with the larger Aqueous system
-   (stream register, SCALE_M rules, ELECTRICAL / AQS-REQ-KW-001 themes).
-3. The solver **shall** flag **bottlenecks**, **redundant parallel
-   paths**, **missing Sector Definitions**, and **unclosed streams**.
-4. Surplus metrics **shall** be reported for food, clean water, materials /
-   goods, and energy (sign and magnitude; study tolerances until
-   AQS-REQ / farm balances freeze).
+1. A solver shall close the mass and energy balances and the electrical match (generation, storage and load) against the typed model.
+2. The solver shall work with the rest of the Aqueous system: the stream register, the `SCALE_M` rules, and the electrical and continuous-power themes (AQS-REQ-KW-001).
+3. The solver shall flag bottlenecks, redundant parallel paths, missing Sector Definitions and unclosed streams.
+4. Surplus shall be reported for food, clean water, materials or goods, and energy, with sign and magnitude. These are study tolerances until the power requirements and farm balances are frozen.
 
-### 3.7 UI behaviours (locked)
+### 3.7 Interface behaviour
+
+Table 3.3 sets the required behaviour of the interface.
+
+Table 3.3. Interface behaviour
 
 | Behaviour | Rule |
 |---|---|
@@ -210,29 +158,21 @@ Each sector row **shall** declare `sector_definition` per §3.1.
 | `SITE_LAT` | UI input (climate / insolation / geothermal context) |
 | Gap panel | List missing Sector Definitions and unclosed `stream_id`s |
 
-### 3.8 Host path
+### 3.8 Hosting
 
-Deployment **shall** progress: **local → GitHub → cloud**. Local remains
-the authoring authority until a published remote exists.
+Deployment proceeds from a local install to GitHub to a cloud service. The local install remains the authoring authority until a published remote exists.
 
-### 3.9 Single machine-readable model (typed plant graph sole)
+### 3.9 One machine-readable model
 
-1. One typed **plant graph** (JSON preferred; YAML allowed as isomorphic
-   view), presently `flow_graph/`
-   (**AQS-FLOW-GRAPH-001**), **shall** be the **sole topology authority**
-   for units and streams (`typed_graph_sole`). Design-tool
-   `candidate_mvs` **shall** be **folded into** that graph **or** exposed
-   only as a **projection** of it — never a competing master
-   (AQS-PLAN-UI-001 Phase A′ / WP-Ap1).
-2. Sector / surplus / sandbox **MVS criteria** fields may travel with the
-   design-tool schema, but **topology** (units, streams, layer membership)
-   **shall** resolve from the plant graph (or its projection).
-3. Markdown notes, matplotlib `pfd_scripts` (optional exporters), and
-   FreeCAD scripts **shall** be **consumers or generators** secondary to
-   that graph — not competing authorities once the graph is issued.
-   `STREAM_REGISTER` / `MASS_FLOW` **shall** be derived or kept in sync.
+1. One typed plant graph (JSON preferred; YAML allowed as an equivalent view), currently `flow_graph/` (AQS-FLOW-GRAPH-001), shall be the only source of topology for units and streams (`typed_graph_sole`). The design tool's `candidate_mvs` is either folded into that graph or produced only as a projection of it, never a competing master (AQS-PLAN-UI-001 Phase A′, WP-Ap1).
+2. Sector, surplus and sandbox criteria may be stored with the design-tool schema, but topology (units, streams, layer membership) shall come from the plant graph or its projection.
+3. Markdown pages, the optional matplotlib exporters (`pfd_scripts`) and the FreeCAD scripts are consumers or generators of the graph, never competing authorities. `STREAM_REGISTER` and `MASS_FLOW` are derived from it or kept in step with it.
 
-### 3.10 Scale rules (align AQS-SCALE-001)
+### 3.10 Scale rules
+
+The scale classes follow AQS-SCALE-001 (Table 3.4).
+
+Table 3.4. Scale classes
 
 | Class | Rule |
 |---|---|
@@ -241,25 +181,21 @@ the authoring authority until a published remote exists.
 | Module PV / ZnBr2 | Discrete module counts |
 | Dock | Discrete by cassette (`DOCK_COUNT = CASSETTE_COUNT`) |
 
-### 3.11 Odysseus (internal meta only)
+### 3.11 Odysseus
 
-1. Odysseus (**AQS-ORG-001**) **shall** remain a **separate**, local-only
-   planning and research layer for the **meta project** (designing the design
-   system).
-2. The **end-user design UI** **shall not** depend on Odysseus at runtime
-   (no required deep-links, no shared database, no AGPL data in the MVS
-   or UI tree).
-3. Optional human navigation between spaces is fine for the Aqueous team;
-   it is **out of scope** for the shipped design tool.
+1. Odysseus (AQS-ORG-001) is an external source whose data is licensed under the AGPL. It is kept separate from this repository: no AGPL data enters the model or the interface tree.
+2. The design tool shall not depend on Odysseus at run time: no required links into it and no shared database.
+3. What Odysseus is, and how the project uses it, is open question Q-016 in `docs-authority/OPEN_QUESTIONS.md`.
 
 ### 3.12 Licence
 
-**CERN-OHL-S-2.0** applies to CAD, MVS model, authority docs, design-tool
-UI source, and public/cloud distributions. No alternate UI/cloud licence.
-
----
+CERN-OHL-S-2.0 applies to the CAD, the model, the authority documents, the design-tool source and any public or cloud distribution. There is no alternative interface or cloud licence.
 
 ## 4. Recommended stack
+
+Table 4.1 gives the recommended software for each layer.
+
+Table 4.1. Recommended stack
 
 | Layer | Recommendation | Notes |
 |---|---|---|
@@ -270,11 +206,13 @@ UI source, and public/cloud distributions. No alternate UI/cloud licence.
 | PFD PNG / matplotlib | **Optional exporters** | `pfd_scripts` demoted; bridge from graph only; rewrite optional |
 | 3D (later) | **FreeCAD rebuild (bias)** | Three.js / live mesh / LOD only with **written decision** (§3.3) |
 | Host | Local process → GitHub package → cloud API | §3.8; Phase C blocked until graph unify |
-| Meta tracker | Odysseus **out** of runtime | AQS-ORG-001 local meta only; CERN-OHL-S for product |
+| External data source | Odysseus kept out of the runtime | AQS-ORG-001; AGPL data kept out of the model and interface tree (open question Q-016); CERN-OHL-S for the product |
 
-Re-eval record (planning-only): the unpublished planning note STACK_REEVAL_2026-10-01.
+The reasoning is recorded in the unpublished planning note STACK_REEVAL_2026-10-01.
 
-### 4.1 Alternatives weighed (brief)
+### 4.1 Alternatives considered
+
+Table 4.2. Alternatives considered
 
 | Option | Pros | Cons | Verdict |
 |---|---|---|---|
@@ -288,49 +226,33 @@ Re-eval record (planning-only): the unpublished planning note STACK_REEVAL_2026-
 | matplotlib as topology authority | Existing PFD scripts | Diverges from typed graph | **Reject** — exporters only |
 | Dual `candidate_mvs` + `flow_graph` masters | Fast interim | Silent divergence | **Reject** — unify (fold or projection) |
 
----
-
-## 5. `unit_id` / `stream_id` rules
+## 5. Rules for `unit_id` and `stream_id`
 
 ### 5.1 `unit_id`
 
-1. `unit_id` **shall** be a stable string matching locked plant names
-   with spaces/hyphens → `_` (same convention as
-   `internal/SYSTEM_MODEL_PLAN.md`: `LEACH_CSTR_1`, `HDR_H2`, `SOL_ARK_60K`).
-2. `unit_id` **shall** be unique within a design pack.
-3. Hierarchy fields **shall** place each unit under exactly one
-   `sector_id` (and optional `area_id`).
-4. Renaming a locked PFD name **shall** be a revisioned model change,
-   not a silent alias swap.
+1. A `unit_id` shall be a stable string that matches the locked plant name, with spaces and hyphens replaced by `_` (for example `LEACH_CSTR_1`, `HDR_H2`, `SOL_ARK_60K`).
+2. A `unit_id` shall be unique within a design pack.
+3. Each unit sits under exactly one `sector_id`, with an optional `area_id`.
+4. Renaming a locked process flow diagram name is a model change with a new revision, not a silent alias swap.
 
 ### 5.2 `stream_id`
 
-1. Inter-block streams **shall** use `S##` from AQS-STR-001 (`S01`…);
-   new routes get the next free ID — **never** reuse an ID for a
-   different route.
-2. Intra-sector streams **should** use `S_<sector>_##` or keep line-PFD
-   local IDs until promoted to the register.
-3. Each stream **shall** declare `from_unit_id`, `to_unit_id` (or
-   header/boundary nodes), phase (`S`/`L`/`G`/`E`), and optional species
-   vector for the solver.
-4. Electrical “streams” on the SLD **shall** still carry `stream_id`
-   values (existing `S17`, `S20`, …) so mass-energy and electrical match
-   share one graph.
+1. Streams between blocks shall use the `S##` identifiers of AQS-STR-001 (`S01` and onwards). A new route takes the next free identifier; an identifier is never reused for a different route.
+2. Streams within a sector should use `S_<sector>_##`, or keep their local identifiers from the line process flow diagram until they are added to the register.
+3. Each stream shall declare `from_unit_id` and `to_unit_id` (or header or boundary nodes), its phase (`S`, `L`, `G` or `E`) and, optionally, a species vector for the solver.
+4. Electrical streams on the single-line diagram shall still carry `stream_id` values (for example `S17`, `S20`), so that the mass and energy balance and the electrical match share one graph.
 
-### 5.3 Forbidden
+### 5.3 Not allowed
 
-- Primary key named `element` or `element_id`.
-- Reusing `S##` for a new route.
-- Orphan streams with neither endpoint resolvable in the unit table
-  (unless explicitly marked as a **gap / open boundary** for sandbox
-  incompleteness).
+- A primary key named `element` or `element_id`.
+- Reusing an `S##` identifier for a new route.
+- Orphan streams with neither end found in the unit table, unless explicitly marked as a gap or open boundary because the sandbox is incomplete.
 
----
+## 6. Model schema (sketch)
 
-## 6. MVS JSON / YAML schema sketch
+Figure 6.1 is an informative sketch, not a frozen JSON Schema file. The field names show the intended form; topology comes from the plant graph, and the schema version may advance.
 
-Informative sketch — not yet a frozen JSON Schema file. Field names are
-normative intent through Rev D (topology authority = plant graph; schema version may advance).
+Figure 6.1. Model schema sketch
 
 ```json
 {
@@ -417,19 +339,15 @@ normative intent through Rev D (topology authority = plant graph; schema version
 }
 ```
 
-YAML **shall** round-trip to the same typed objects. Consumers:
-markdown exporters, PFD generators, FreeCAD `params` writers, BOM CSV.
+YAML shall round-trip to the same typed objects. The consumers are the Markdown exporters, the process flow diagram generators, the FreeCAD `params` writers and the bill-of-materials CSV.
 
-`required_for_mvs_closure` marks sectors the **gold MVS** needs for loop
-closure + surplus (including **all three** ESS peers). Sandbox may turn
-them off; the solver then flags **unreclaimed-resource / incomplete-
-closure** gaps rather than pretending the pack is still MVS.
+`required_for_mvs_closure` marks the sectors the MVS needs for loop closure and surplus, including all three storage peers. A sandbox may switch them off; the solver then reports unreclaimed-resource or incomplete-closure gaps rather than treating the pack as an MVS.
 
----
+## 7. Solver interface (sketch)
 
-## 7. Solver API sketch
+The solver is served by FastAPI (informative). All paths are under `/api/v1` (Table 7.1).
 
-FastAPI surface (informative). All paths under `/api/v1`.
+Table 7.1. Solver endpoints
 
 | Method | Path | Role |
 |---|---|---|
@@ -444,7 +362,9 @@ FastAPI surface (informative). All paths under `/api/v1`.
 | `GET` | `/params` | **Rev E** — `drivers.json` listing with citations and sha (read-only) |
 | `GET` | `/regen-status` | **Rev E** — derived-artefact staleness (`_rev_stamp.py --check-only`) + last regen receipt (read-only) |
 
-### 7.1 Solve request / response (sketch)
+### 7.1 Solve request and response (sketch)
+
+Figure 7.1. Solve request and response
 
 ```json
 {
@@ -497,23 +417,19 @@ FastAPI surface (informative). All paths under `/api/v1`.
 }
 ```
 
-The solver **should** call into shared Python modules that already encode
-AQS-SCALE-001 / AQS-REQ-KW-001 / AQS-STR-001 rules rather than
-re-implementing them in the UI.
+The solver should call the shared Python modules that already encode the rules of AQS-SCALE-001, AQS-REQ-KW-001 and AQS-STR-001, rather than reimplementing them in the interface.
 
----
+## 8. Design pack contents
 
-## 8. Export pack contents
+Each export shall produce a new directory or archive and shall not replace the MVS tree. The content is modular: the person exporting, or the `export_modules` list of the interface, may leave out artefacts that are not needed (Table 8.1).
 
-Each export **shall** produce a new directory (or archive) that does
-**not** replace the MVS tree. Content is **modular**: the user (or API
-`export_modules` list) **may** omit artefacts they do not need.
+Table 8.1. Design pack contents
 
 | Artefact | Module key | Role |
 |---|---|---|
 | `mvs_snapshot.json` | always | Frozen copy of source MVS revision used |
 | `design.json` / `.yaml` | always | Sandbox model as exported (includes gap flags) |
-| `README.md` | always | Pack identity, parent MVS rev, date CT, enabled modules |
+| `README.md` | always | Pack identity, parent MVS rev, date (US Central time), enabled modules |
 | `params_overlay.py` or `params.json` | `params` | SCALE_M / bay / module overlays |
 | `streams.csv` | `streams` | Stream register slice for this pack |
 | `sld.svg` / `sld.json` | `sld` | Electrical single-line (**graph** `views/efd-elec`; WP-C1) |
@@ -523,12 +439,11 @@ Each export **shall** produce a new directory (or archive) that does
 | `3d/` | `3d` | Mesh / FreeCAD export or rebuild recipe (when available) |
 | `gaps.md` | always | Missing Sector Definitions + unclosed streams |
 
----
+## 9. Phased roadmap (`unify_then_reshape`)
 
-## 9. Phased roadmap (**unify_then_reshape**)
+The roadmap follows AQS-PLAN-UI-001 Rev N. The early evidence phase (Phase A, P0) and the interface scaffold (Phase B, P1) are complete. Table 9.1 lists the forward phases and Table 9.2 the completed ones.
 
-Aligned to AQS-PLAN-UI-001 Rev N. Historical P0 evidence (Phase A) and P1
-scaffold (Phase B) are **complete**. Forward phases:
+Table 9.1. Forward phases
 
 | Phase | Code | Deliverable | Exit criteria |
 |---|---|---|---|
@@ -538,64 +453,52 @@ scaffold (Phase B) are **complete**. Forward phases:
 | **D — P2 3D** | D | Campus 3D from same model | **FreeCAD rebuild bias**; Three.js only with written decision |
 | **E — P3 Cloud** | E | Hosted API/UI under CERN-OHL-S | Auth, pack storage; MVS still immutable |
 
-**Historical (closed):**
+Table 9.2. Completed phases
 
 | Phase | Status | Path |
 |---|---|---|
 | **P0 — Schema + solver / evidence** | **done** | `design_tool/` schema aqs-mvs-0.3; FastAPI; Phase A WPs; ESS peers required |
-| **P1 — Schematic UI scaffold** | **done**; **B′ done** | `design_tool/web/` Vite+React+TS; Phase B exit + B′ exit 2026-10-01 CT |
+| **P1 — Schematic UI scaffold** | **done**; **B′ done** | `design_tool/web/` Vite+React+TS; Phase B exit + B′ exit 2026-10-01 (US Central time) |
 
-**Graph seed:** `flow_graph/` (AQS-FLOW-GRAPH-001);
-adapter + layer SVG + process PFD bridges issued (WP-A10 Closed). Unify of
-`candidate_mvs` **WP-Ap1 done** — generated projection of `plant_flow_graph.json` (`export_candidate_mvs.py`).
+The plant graph is in `flow_graph/` (AQS-FLOW-GRAPH-001). Its adapter, layer SVG and process flow diagram bridges are issued (WP-A10, closed). Folding `candidate_mvs` into the graph is done (WP-Ap1): it is now a generated projection of `plant_flow_graph.json` (`export_candidate_mvs.py`).
 
-Planning: the unpublished planning note DESIGN_UI_COMPLETION_PLAN (AQS-PLAN-UI-001 Rev N);
-stack re-eval the unpublished planning note STACK_REEVAL_2026-10-01.
+Planning is in the unpublished planning notes DESIGN_UI_COMPLETION_PLAN (AQS-PLAN-UI-001 Rev N) and STACK_REEVAL_2026-10-01.
 
-Local host **shall** remain usable at every phase. Odysseus is **not**
-a phase dependency.
+The local install shall stay usable at every phase. Odysseus is not a dependency of any phase.
 
----
+## 10. Authority and synchronisation
 
-## 10. Sync and authority
+- `docs-authority/AUTHORITY.md` (AQS-AUTH-001) points to this document (AQS-UI-001).
+- The scale authority remains `docs-authority/SCALE_MODEL.md` and `models/freecad/params.py`.
+- Planning audits are local planning records. They are separate from the CAD authority and are not published.
+- Odysseus (AQS-ORG-001) is not an authority for the model or the interface (§3.11).
 
-- Pointer: `docs-authority/AUTHORITY.md` (AQS-AUTH-001) → this file (**AQS-UI-001**).
-- Scale truth remains `docs-authority/SCALE_MODEL.md` / `freecad/params.py`.
-- Planning audits (local planning artefacts, not published) are separate from
-  CAD authority and are not mirrored into the public share tree.
-- No git commit from agent passes unless the operator explicitly requests one.
-- Odysseus board (**AQS-ORG-001**) may track meta tasks for building this
-  tool; it is not an authority for the MVS model or UI runtime.
+## 11. Decided questions
 
----
+Table 11.1 records questions decided in Rev C.
 
-## 11. Closed questions (Rev C)
+Table 11.1. Decided questions
 
 | # | Question | Decision |
 |---|---|---|
 | 1–3 | MVS footprint / downsizing / ESS | Reframed (Rev C): MVS = **self-sustaining colony** (manufacture, habit, self-copy, scale) + **closed loops + surplus export**. **All three** ESS peers (ZNBR2, MEOH, PUMPED_HYDRO) **required in MVS**; sandbox may disable → **unreclaimed-resource / incomplete-closure** gaps (not accepted emissions). Bay count alone does not freeze MVS. |
 | 4 | Export pack minimum | Confirmed modular set in §8; always include model snapshot, design JSON, gaps, README; other modules optional. |
-| 5 | Odysseus | **Separate.** Meta planning only. Design UI **shall not** rely on it. |
+| 5 | Odysseus | Separate. The design tool shall not rely on it, and its AGPL data stays out of the model and interface tree (§3.11). What it is: open question Q-016. |
 | 6 | Licence | **CERN-OHL-S-2.0** for UI, model, CAD, and cloud. |
 
-### 11.1 Remaining open (do not invent)
+### 11.1 Open questions
 
-1. **Formal freeze of `AQS-MVS-001`** — Which on-disk revision first
-   passes the §3.2 surplus + closure tests with evidence tables?
-2. **Surplus numeric thresholds** — Study tolerances vs hard MVS pass
-   criteria for food / water / goods / energy (tie to farm and
-   AQS-REQ-KW-001).
-3. ~~**Complete Sector Definition catalogue**~~ — **Issued:** `docs-authority/SECTOR_DEFINITIONS.md`
-   (**AQS-SEC-001** Rev D). Class list remains AQS-UI-001 §3.1; ambiguities
-   for the operator in AQS-SEC-001 §5 (schema worker reconcile).
-4. **3D path pick** — **Bias FreeCAD rebuild** (§3.3 / Phase D). Three.js /
-   live mesh / LOD only with a **written decision** revising the 3D stack.
-5. **`candidate_mvs` unify** — **WP-Ap1 done** (graph write + projection).
-   Phase C remains blocked until A′ exit (WP-Ap2 contract tests).
+These are not to be answered by assumption.
 
----
+1. Formal freeze of `AQS-MVS-001`: which on-disk revision first passes the surplus and closure tests of §3.2, with evidence tables?
+2. Surplus thresholds: study tolerances compared with hard pass criteria for food, water, goods and energy, tied to the farm and to AQS-REQ-KW-001. Study thresholds are issued in AQS-SUR-001 (`SURPLUS_PASS_THRESHOLDS.md`).
+3. Sector Definition catalogue: closed. The catalogue is `docs-authority/SECTOR_DEFINITIONS.md` (AQS-SEC-001). The class list remains in §3.1 of this document; questions on how sectors map to classes are in AQS-SEC-001 §5.
+4. Choice of 3D path: FreeCAD rebuild by default (§3.3, Phase D). Three.js, a live mesh or levels of detail only with a written decision that revises the 3D stack.
+5. Folding `candidate_mvs` into the graph: done (WP-Ap1, graph write and projection). Phase C remains blocked until Phase A′ is complete (WP-Ap2 contract tests).
 
 ## 12. Related documents
+
+Table 12.1. Related documents
 
 | Doc | ID | Role |
 |---|---|---|
@@ -612,18 +515,12 @@ a phase dependency.
 | MeOH_TRAIN.md | AQS-MeOH-001 | MeOH ESS / process peer |
 | Local planning artefacts (not published): MVS_GAP / SECTOR_CAPACITY / LEGACY_PROFILE audits | AQS-MVS-GAP-001 / AQS-AUD-001 / AQS-GAP-001 | Planning audits; not CAD authority |
 
----
+## 13. Implementation status of the unified engine
 
-## 13. Unified-engine implementation status (Rev E, 2026-10-19)
+The three endpoints added in Rev E (§7, Table 7.1) are implemented in `design_tool/aqs_design_tool/api/app.py`, and the web panels (ParamsPanel, TreeTogglePanel, RegenStatusBadge) in `design_tool/web/src/components/`.
 
-Issued, not sketch. The three §7 Rev E endpoints are implemented in
-`design_tool/aqs_design_tool/api/app.py`; the web panels (ParamsPanel, TreeTogglePanel,
-RegenStatusBadge) in `design_tool/web/src/components/`. Sandbox toggles now exist at four
-levels — `sector_enabled`, `system_enabled`, `subsystem_enabled`, `unit_enabled` — resolved
-most-specific-wins server-side (`store.apply_overrides`) against
-`flow_graph/system_tree.yaml` (AQS-SYS-TREE-001: 19 sectors / 30 trains / 178 leaves).
-`/regen-status` reads `flow_graph/derived/_regen_receipt.json`, written by
-`python3 -m flow_graph.param.regen`, and checks staleness through the same evaluator
-(`--check-only`) so a GET stays side-effect free. Panel and precedence details:
-`design_tool/README.md` and `design_tool/web/README.md`. Implementation commits:
-5f77bee (tree), f64ad84 (regen), fc083f8 (UI).
+Sandbox switches exist at four levels: `sector_enabled`, `system_enabled`, `subsystem_enabled` and `unit_enabled`. The server resolves them with the most specific level winning (`store.apply_overrides`), against the sector, train and unit tree in `flow_graph/system_tree.yaml` (AQS-SYS-TREE-001).
+
+`/regen-status` reads `flow_graph/derived/_regen_receipt.json`, which `python3 -m flow_graph.param.regen` writes. It checks staleness with the same evaluator (`--check-only`), so a GET request has no side effects.
+
+Details of the panels and of the precedence rule are in `design_tool/README.md` and `design_tool/web/README.md`. The implementing commits are 5f77bee (tree), f64ad84 (regeneration) and fc083f8 (interface).
