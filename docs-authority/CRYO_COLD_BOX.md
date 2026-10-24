@@ -1,4 +1,4 @@
-# Cryogenic cold-box internals — ALCRM
+# Cryogenic cold-box internals
 
 Document number: AQS-CRY-002  
 Revision: B  

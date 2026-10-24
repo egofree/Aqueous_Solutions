@@ -1,4 +1,4 @@
-# Geothermal loop and backup generator — POWER gap close
+# Geothermal loop and backup generator
 
 Document number: AQS-PWR-002  
 Renumbered 2026-10-15 from AQS-PWR-001 to clear a duplicate (AQS-REG-001).

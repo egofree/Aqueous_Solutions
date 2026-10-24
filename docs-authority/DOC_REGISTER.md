@@ -60,7 +60,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence (cold start from empty) | current |
 | AQS-COM-003 | `docs-authority/PERF_TEST.md` | A | 2026-10-16 | Performance test | current |
 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | D | 2026-10-16 | Compliance matrix — design intent vs code themes | current |
-| AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | B | 2026-09-28 | Cryogenic cold-box internals — ALCRM | current |
+| AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | B | 2026-09-28 | Cryogenic cold-box internals | current |
 | AQS-CRY-003 | `docs-authority/COLD_BOX.md` | — | — | Cold box | current |
 | AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | A | 2026-10-16 | Instrument index | current |
 | AQS-CTL-002 | `docs-authority/CONTROL_ARCH.md` | A | 2026-10-16 | Control philosophy and PLC architecture | current |
@@ -145,7 +145,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-END-001 | `docs-authority/DECOMMISSIONING.md` | A | 2026-10-16 | Decommissioning plan | current |
 | AQS-END-002 | `docs-authority/EOL_RETURN.md` | D | 2026-10-21 | End-of-life material return | current |
 | AQS-ENV-FP-MET | `notes/VESSEL_ENVELOPES.md` | A | 2026-10-16 | Vessel envelopes — fluoropolymer train and critical-metal cells | current |
-| AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | E | 2026-10-01 | Cryo / ALCRM equipment list | current |
+| AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | E | 2026-10-01 | Cryogenic equipment list | current |
 | AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | B | 2026-09-27 | Wafer fab equipment / process list | current |
 | AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | B | 2026-10-01 | Solar-cell branch — equipment schedule (architecture Partial) | current |
 | AQS-EQP-FAB-RGN-001 | `docs-authority/FAB_WET_REAGENTS.md` | B | 2026-10-01 | Fab wet reagents — wet-line synth forks | current |
@@ -248,7 +248,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | A | 2026-10-21 | Bought-item specification sheets | current |
 | AQS-PV-001 | `docs-authority/PV_CELL_MOD.md` | C | 2026-10-11 | Photovoltaic cell | current |
 | AQS-PWR-001 | `docs-authority/POWER.md` | A | 2026-10-17 | Power | current |
-| AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator — POWER gap close | current |
+| AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator | current |
 | AQS-PWR-ROLLUP | `notes/LOAD_ROLLUP.md` | A | 2026-10-17 | Load rollup — foundry, polymers, grease | current |
 | AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan | current |
 | AQS-QA-002 | `docs-authority/DESIGN_CHECK.md` | A | 2026-10-16 | Independent design check record | current |

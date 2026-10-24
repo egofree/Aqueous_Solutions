@@ -151,8 +151,8 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [VENT_CLOSURE.md](VENT_CLOSURE.md) | AQS-VENT-001 | Vent and stack closure — scrub / regen or CRYO |
 | [VENT_SCRUB_EQUIPMENT.md](VENT_SCRUB_EQUIPMENT.md) | AQS-EQP-VENT-001 | Vent / scrub / regenerator equipment stubs |
 | [CRYO_ASU.md](CRYO_ASU.md) | AQS-DUTY-018 | Cold box gas rate |
-| [CRYO_COLD_BOX.md](CRYO_COLD_BOX.md) | AQS-CRY-002 | Cryogenic cold-box internals — ALCRM |
-| [CRYO_EQUIPMENT.md](CRYO_EQUIPMENT.md) | AQS-EQP-CRY-001 | Cryo / ALCRM equipment list |
+| [CRYO_COLD_BOX.md](CRYO_COLD_BOX.md) | AQS-CRY-002 | Cryogenic cold-box internals |
+| [CRYO_EQUIPMENT.md](CRYO_EQUIPMENT.md) | AQS-EQP-CRY-001 | Cryogenic equipment list |
 | [COLD_BOX.md](COLD_BOX.md) | AQS-CRY-003 | Cold box |
 | [SIDE_CRYO.md](SIDE_CRYO.md) | AQS-SIDE-003 | Cold box module |
 
@@ -206,7 +206,7 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [FUEL_CELL.md](FUEL_CELL.md) | AQS-FC-001 | PEM fuel cell — plant H₂ / O₂ on Sol-Ark DC bus |
 | [FUEL_CELL_EQUIPMENT.md](FUEL_CELL_EQUIPMENT.md) | AQS-EQP-FC-001 | Fuel-cell equipment list |
 | [BACKUP_GEN_EQUIPMENT.md](BACKUP_GEN_EQUIPMENT.md) | AQS-EQP-GEN-001 | Backup generator equipment list |
-| [GEOTHERMAL_BACKUP.md](GEOTHERMAL_BACKUP.md) | AQS-PWR-002 | Geothermal loop and backup generator — POWER gap close |
+| [GEOTHERMAL_BACKUP.md](GEOTHERMAL_BACKUP.md) | AQS-PWR-002 | Geothermal loop and backup generator |
 | [GEOTHERMAL_EQUIPMENT.md](GEOTHERMAL_EQUIPMENT.md) | AQS-EQP-GEO-001 | Geothermal equipment list |
 | [HYDRO_SITING.md](HYDRO_SITING.md) | AQS-RED-002 | Pumped-hydro reservoir siting trade study |
 | [WATER_TOWER.md](WATER_TOWER.md) | AQS-BLD-014 | Water tower: pumped-hydro reservoirs in the building |

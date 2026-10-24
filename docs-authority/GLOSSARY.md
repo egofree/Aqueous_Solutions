@@ -811,6 +811,18 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {VPI -- Vacuum pressure impregnation of motor windings with resin.}
 
+{DIY -- Do it yourself: built by the user from published instructions rather than bought.}
+
+{EAOP -- Electrochemical advanced oxidation process: oxidation of organic matter at an electrode, used here as a low-voltage pretreatment of woody waste.}
+
+{HTTP -- Hypertext Transfer Protocol, used by the design tool's interface.}
+
+{IET -- The Institution of Engineering and Technology (United Kingdom), publisher of the guide to technical report writing cited in DOC_STYLE.md.}
+
+{KSC -- Kennedy Space Center (NASA), publisher of the KSC-DF-107 documentation style guide cited in DOC_STYLE.md.}
+
+{URL -- Uniform resource locator: a web address.}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

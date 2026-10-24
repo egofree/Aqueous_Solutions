@@ -5,7 +5,7 @@ Two rules, both driven by data in docs-authority/style_terms.json:
 1. Every abbreviation written in capitals in a published page is defined in
    docs-authority/GLOSSARY.md (DOC_STYLE section 7). Identifiers from the plant
    graph (and unit folders under models/units/ and duty sheets), tokens containing a digit (formulas, stream ids, standard numbers),
-   text in code spans or code blocks, link targets, revision and annex letters
+   text in code spans or code blocks, link targets, file names and paths, revision and annex letters
    (Rev BH, Annex AA) and the words listed under
    "not_abbreviations" are not abbreviations.
 2. No published page uses a term from the "banned" list: working jargon from
@@ -37,7 +37,8 @@ GLOSSARY = ROOT / "docs-authority" / "GLOSSARY.md"
 GRAPH = ROOT / "flow_graph" / "plant_flow_graph.json"
 
 _FENCE = re.compile(r"^(```|~~~).*?^\1", re.S | re.M)
-_CODE = re.compile(r"`[^`\n]*`")
+_CODE = re.compile(r"(`+)[^`\n]*?\1")
+_FILENAME = re.compile(r"[\w./-]*\w\.(?:md|py|json|csv|stl|svg|png|yml|yaml|txt|FCStd|scad|xlsx|mp4)\b|\b[\w-]+/[\w./-]*")
 _LINK_TARGET = re.compile(r"\]\([^)]*\)|<https?://[^>]*>|https?://\S+")
 _LETTER_LABEL = re.compile(r"\b(?:Rev|Revision|Revs|Annex|Appendix|Supplement|Class|Grade|Type|Zone|Level)\.?[ -]+[A-Z]{1,3}\b")
 _COMMENT = re.compile(r"<!--.*?-->", re.S)
@@ -90,7 +91,7 @@ def graph_identifiers() -> frozenset[str]:
 
 def prose(text: str) -> str:
     """The text a reader reads as prose: code, comments and link targets removed."""
-    for rx in (_FENCE, _COMMENT, _CODE, _LINK_TARGET, _LETTER_LABEL):
+    for rx in (_FENCE, _COMMENT, _CODE, _LINK_TARGET, _FILENAME, _LETTER_LABEL):
         text = rx.sub(" ", text)
     return text
 

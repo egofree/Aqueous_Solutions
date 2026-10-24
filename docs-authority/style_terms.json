@@ -98,7 +98,12 @@
   "LIVE",
   "HOLD",
   "TBD",
-  "NA"
+  "NA",
+  "GET",
+  "POST",
+  "PUT",
+  "PATCH",
+  "DELETE"
  ],
  "long_abbreviations": [
   "ASHRAE",
@@ -121,11 +126,6 @@
   }
  ],
  "pending": [
-  "CONTRIBUTING.md",
-  "DEPENDENCIES.md",
-  "README.md",
-  "design_tool/README.md",
-  "design_tool/web/README.md",
   "docs-authority/AGENT_CAD_PROTOCOL.md",
   "docs-authority/ASME_CLASS_SHEETS.md",
   "docs-authority/ASME_CODE_INTENT.md",
@@ -228,7 +228,6 @@
   "docs-authority/POWER_SIZING.md",
   "docs-authority/PROJECT_PLAN.md",
   "docs-authority/PROTECTION.md",
-  "docs-authority/README.md",
   "docs-authority/REBUILD.md",
   "docs-authority/RECT_EW.md",
   "docs-authority/RED_AUDIT.md",
@@ -338,7 +337,6 @@
   "docs-authority/sizing/UPW_POLISH.md",
   "docs-authority/sizing/VAC_IND.md",
   "docs-authority/sizing/VCD_TRAIN.md",
-  "flow_graph/README.md",
   "flow_graph/derived/MASS_FLOW_DERIVED.md",
   "flow_graph/exporters/matplotlib/README.md",
   "models/mfg/AL_POT/build_log.md",
@@ -368,7 +366,6 @@
   "notes/GREASE_LINES.md",
   "notes/KROLL_BALANCE.md",
   "notes/LIT_ASSAY.md",
-  "notes/LOAD_ROLLUP.md",
   "notes/MONOMER_ROUTE.md",
   "notes/TI_MO_DUTIES.md",
   "notes/TI_MO_SELECTION.md",

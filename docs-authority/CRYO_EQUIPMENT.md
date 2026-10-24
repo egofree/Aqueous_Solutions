@@ -1,4 +1,4 @@
-# Cryo / ALCRM equipment list
+# Cryogenic equipment list
 
 Document number: AQS-EQP-CRY-001  
 Revision: E  

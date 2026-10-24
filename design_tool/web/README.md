@@ -1,43 +1,35 @@
-# Aqueous design tool — web UI (P1 / B′ / U6)
+# Aqueous design tool: web interface
 
-Document: `design_tool/web/` — React + Vite + TypeScript front-end for the
-Aqueous design tool API (AQS-UI-001). Licence: **CERN-OHL-S-2.0**.
+A browser interface to the design tool API (`design_tool/README.md`, architecture AQS-UI-001), written in React, Vite and TypeScript. Licence: CERN-OHL-S-2.0.
 
-## Run
+## 1. Run
+
+Start the API first (see `design_tool/README.md`), then:
 
 ```bash
-# Terminal 1 — API (from design_tool/)
-uvicorn aqs_design_tool.api.app:app --host 127.0.0.1 --port 8000
-
-# Terminal 2 — UI
-cd web && npm install && npm run dev   # http://127.0.0.1:5173 (proxies /api → :8000)
-
-npm run build                          # gate: tsc -b && vite build
+cd design_tool/web
+npm install
+npm run dev      # serves http://127.0.0.1:5173 and forwards /api to port 8000
+npm run build    # type check and production build
 ```
 
-## Components (`src/`)
+## 2. Components
+
+Table 2.1. Components in `src/`
 
 | Component | Role |
 |---|---|
-| `App.tsx` | Boot: graph meta + topology, system tree, drivers, MVS projection, sandbox create + first solve |
-| `SchematicCanvas` | SVG schematic over graph layer views (PFD/MFD/EFD-*) |
-| `LayerFilters` | Layer view switch (pfd / mfd / efd-elec / efd-thermal / efd-ess) |
-| `SectorToggles` | Sector-row enables (PATCH `sector_enabled`) |
-| `TreeTogglePanel` | **U6** — AQS-SYS-TREE-001 4-level tree with checkboxes (indeterminate parents); root → `sector_enabled`, train → `system_enabled`, subsystem → `subsystem_enabled`, leaf → `unit_enabled`. Most-specific wins is resolved **server-side** (`store.apply_overrides`); the graph stays authority. Verified over HTTP at issue: a train off flags exactly that train's units; a unit flag beats the train flag |
-| `SiteInputs` | Crew / SITE_LAT sandbox inputs |
-| `GapPanel` | Solve status, **electrical envelope** (gen/storage/load/need/target + status badge), gaps, unclosed streams |
-| `ParamsPanel` | **U6** — drivers.json table (key/value/units/ref badge/nv badge), searchable + filterable, **read-only** |
-| `RegenStatusBadge` | **U6** — green/red derived-artefact staleness indicator; auto re-checks after every solve |
-| `ExportButton` | Modular export pack writer |
+| `App.tsx` | Loads the graph, system tree, drivers and MVS model; creates a sandbox and solves it once |
+| `SchematicCanvas` | Draws the schematic from the graph's diagram layer views |
+| `LayerFilters` | Switches between the process, mass and energy flow layers |
+| `SectorToggles` | Switches sectors on and off in the sandbox |
+| `TreeTogglePanel` | The system tree (AQS-SYS-TREE-001) with a check box per sector, train, subsystem and unit |
+| `SiteInputs` | Crew size and site latitude for the sandbox |
+| `GapPanel` | Solve status, the electrical balance (generation, storage, load, need and target), gaps and unclosed streams |
+| `ParamsPanel` | The design drivers, searchable and read-only |
+| `RegenStatusBadge` | Shows whether generated files are current; checks again after every solve |
+| `ExportButton` | Writes an export pack |
 
-## Endpoints consumed (U6 additions, all read-only)
+## 3. What the interface does not do
 
-| Method | Path | Role |
-|---|---|---|
-| GET | `/api/v1/system-tree` | Tree nodes with resolved unit sets + kW/presence aggregates from `flow_graph/system_tree.yaml` + graph |
-| GET | `/api/v1/params` | `flow_graph/param/drivers.json` listing (key/value/units/ref/register/needs_verification) |
-| GET | `/api/v1/regen-status` | Subprocess staleness check (`docs-authority/_rev_stamp.py --check-only` — the same evaluator `python3 -m flow_graph.param.regen --check` runs, minus its `DERIVED_REVISIONS.md` rewrite, so the GET stays side-effect free) + last regen receipt (graph sha / passes / vouched) |
-| PATCH | `/api/v1/sandbox/{id}` | Sandbox-only mutations (sector/system/subsystem/unit overrides) |
-
-Nothing in this UI writes the graph, drivers, tree, or authority docs: the
-write path is edit → `python3 -m flow_graph.param.regen`.
+Nothing in the interface writes the graph, the drivers, the system tree or the design documents. Changes to the design are made in those files and followed by `python3 -m flow_graph.param.regen`. The interface changes sandboxes only, through `PATCH /api/v1/sandbox/{id}`.

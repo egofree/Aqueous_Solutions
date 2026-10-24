@@ -126,7 +126,7 @@ Legacy PFD/SLD scripts: `LEGACY_PFD_SCRIPTS.md`.
 - **MeOH S73–S82** on graph + bridged mass_flow claim sheet; S79 on electrical_sld; MF table claim rows still end S72.
 - **PUMPED_HYDRO / DOCK** covered by dedicated `hydro_dock_pfd.png` (graph-bridged); HYDRO elec still rate null on SLD; DOCK_EXPORT_TBD remains TBD.
 - **IA-*** for EW / continuous recycle / glass / BMED / polish — placeholder rates; **overlaid on corresponding line PFDs**.
-- Study stubs (VCD, LITHO, ORC, BLOW, REMIN, ELECTRODE_COAT, SOLAR_PV_CELL, GEO_ORC):
+- Study units (VCD_TRAIN, LITHO_STUB, GEO_ORC, BLOW_MOLD, REMIN, ELECTRODE_COAT, SOLAR_PV_CELL):
   `presence=placeholder`, rates null.
 
 ## Matplotlib bridge
