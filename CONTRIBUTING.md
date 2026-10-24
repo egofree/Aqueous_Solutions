@@ -68,7 +68,10 @@ It regenerates the register (AQS-REG-002) and fails on an incomplete entry.
    example `x-par-02-leach-balance` or `fix/line-list-dn`.
 3. Make the change in the model, the drivers, a generator or a calculator
    (`docs-authority/_*.py`, `flow_graph/param/`), not in its output.
-4. Regenerate and run the checks (below). All must pass.
+4. Regenerate and run the checks (below). All must pass. A full regen
+   currently also rewrites drawing title blocks and receipt timings in files
+   your change did not touch (see the known issue in the README); commit only
+   the files your change affects.
 5. Close the task only where a file in the repository proves it. Cite that file,
    rerun `python3 docs-authority/_task_plan_gen.py`, and update every page the
    change made untrue in the same commit. A change that leaves a contradicted
@@ -86,14 +89,19 @@ python3 -m flow_graph.param.regen --check           # no stale derived file
 python3 flow_graph/check_authority_contract.py      # authority contract
 ```
 
-The same checks run in CI on every pull request. A pull request that fails them
+Maintainers run the same checks on every pull request, and the CI workflow
+will run them automatically once it is enabled. A pull request that fails them
 is not merged.
 
 ### Large files
 
-STL and other CAD exports under `cad/stl/` are stored with Git LFS. Install Git
-LFS and run `git lfs pull` before CAD work. Do not commit build outputs, caches,
-virtual environments, archives or editor files; `.gitignore` lists them.
+STL, FreeCAD and other CAD exports (`cad/stl/`, `models/`) are stored with Git
+LFS, about 110 MB in total. The tests need only `cad/stl/` (about 4 MB). Clone
+with `GIT_LFS_SKIP_SMUDGE=1`, then run `git lfs pull --include="cad/stl/*"`;
+run a plain `git lfs pull` only when you need the full CAD models. Every LFS
+download counts against the project's monthly bandwidth quota. Do not commit
+build outputs, caches, virtual environments, archives or editor files;
+`.gitignore` lists them.
 
 ## Writing style
 
