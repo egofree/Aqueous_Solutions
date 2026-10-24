@@ -65,6 +65,35 @@ re-uses heat before it is rejected; water treatment; an electrolyser for oxygen;
 a cryogenic gas plant; a farm and habitat; and in-house manufacturing (foundry,
 polymers, glass, wafer fabrication) so the plant can make its own parts.
 
+The model groups the plant's 178 units into 19 sectors, the top level of
+`flow_graph/system_tree.yaml`:
+
+| Kind | Sectors |
+|---|---|
+| Process | DIGESTER (leach, electrowinning, acid and base regeneration), OIL, GLASS, GAS, FOUNDRY, POLYMERS, FAB, MFG, NUT |
+| Utilities | CRYO, WTR, ELEC, HEAT, GEO |
+| Energy storage | MEOH, PUMPED_HYDRO (with the ZnBr2 flow battery under ELEC) |
+| Life support | HAB, FARM |
+| Export | DOCK |
+
+The [glossary](docs-authority/GLOSSARY.md) defines each sector and the
+project's acronyms and identifiers.
+
+## Where to start
+
+1. Read this page, then the [documentation map](docs-authority/README.md),
+   which lists every design document by topic.
+2. Keep the [glossary](docs-authority/GLOSSARY.md) open: it explains unit and
+   sector names, acronyms, and identifiers such as `AQS-SEC-001`, `X-PAR-12`,
+   `A-M-145`, `S64` and `Rev AC`.
+3. Open `docs-authority/MODEL_WORKBOOK.xlsx` for the whole model in one place,
+   or pick one unit and follow it through its duty sheet, sizing sheet and
+   P&ID (see [How to read the outputs](#how-to-read-the-outputs)).
+4. Run the model (see [Quickstart](#quickstart)).
+5. To help, read [CONTRIBUTING.md](CONTRIBUTING.md). Open design questions are
+   in `docs-authority/OPEN_QUESTIONS.md`; open tasks are in
+   `docs-authority/TASK_PLAN.md`.
+
 ## Authority chain
 
 The plant is one parametric system, not a folder of documents. Information
@@ -121,8 +150,12 @@ models/freecad/       FreeCAD builders for the plant general arrangement
 models/mfg/           CadQuery unit builders with STEP/STL exports, drawings and BOMs
 models/motors/        motor family models
 cad/                  STL envelopes (Git LFS) and study solids
-media/  iso/  tables/ rendered process sheets, isometric PDF set, BOM tables
-notes/                audit notes and owner rulings
+media/                rendered process sheets, overview images and animation
+iso/                  early isometric fabrication set (PNG/PDF); the current
+                      isometrics are generated in docs-authority/iso/
+tables/               cut lists, materials and BOM tables
+notes/                design notes, audits and owner rulings (dated change
+                      records are in docs-authority/notes/)
 ```
 
 ## Quickstart
@@ -130,24 +163,41 @@ notes/                audit notes and owner rulings
 Requirements: Git with Git LFS, Python 3.11 or later. FreeCAD 1.0 and CadQuery
 are needed only for the CAD builders; Node.js only for the web UI.
 
+The CAD files (about 110 MB) are stored in Git LFS. The model and its tests
+need only the unit envelopes in `cad/stl/` (about 4 MB), so clone without the
+rest:
+
 ```bash
-git clone https://github.com/egofree/Aqueous_Solutions.git
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/egofree/Aqueous_Solutions.git
 cd Aqueous_Solutions
-git lfs pull                       # STL envelopes; needed only for CAD work
+git lfs pull --include="cad/stl/*"         # unit envelopes used by the tests
 
 python3 -m venv .venv
 . .venv/bin/activate
 pip install -r requirements.txt
 
-python3 -m flow_graph.param.regen          # solve the graph and regenerate every derived file
 pytest flow_graph/                         # tests, including the 1 % misfit gate
 python3 -m flow_graph.param.regen --check  # staleness gates: no derived file lags the graph
 python3 flow_graph/check_authority_contract.py
 ```
 
+These three checks must pass on every pull request. Run `git lfs pull` later
+if you need the full CAD models.
+
+To change the design, edit an input or a generator, then rerun the pipeline:
+
+```bash
+python3 -m flow_graph.param.regen          # solve the graph and regenerate every derived file
+```
+
 `python3 -m flow_graph.param.regen --quick` runs only the graph-writing stages
-for a what-if pass. A full run regenerates several hundred documents; run it
-before you commit.
+for a what-if pass. A full run regenerates several hundred documents.
+
+> **Known issue.** A full run also rewrites some generated files your change
+> did not touch: drawing title blocks on the isometric and view SVGs are
+> dropped (they are stamped by `docs-authority/_drawings.py`, which is not yet
+> a pipeline stage), and the run receipt records new timings. Commit only the
+> files your change affects; restore the others with `git checkout -- <path>`.
 
 CAD (optional):
 
@@ -161,6 +211,9 @@ serves the graph read-only on the local machine; nothing in the UI writes the
 graph, the drivers or the tree.
 
 ## How to read the outputs
+
+The [documentation map](docs-authority/README.md) lists every document by
+topic. The usual entry points:
 
 - **Start with the workbook.** `docs-authority/MODEL_WORKBOOK.xlsx` has drivers
   with citations, the system tree with rolled-up power, per-sector unit and
