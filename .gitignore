@@ -57,7 +57,7 @@ archive/
 *.pem
 id_rsa*
 
-# Local-only planning / Odysseus / bot handoff (never ship even if re-synced)
+# Local-only planning notes (never ship even if re-synced)
 ODYSSEUS_PLANNING.md
 **/ODYSSEUS_PLANNING.md
 ODYSSEUS*
@@ -72,3 +72,25 @@ models/detail/
 # WP-D2 generated fork (never gold params.py)
 models/freecad/params_overlay.py
 **/params_overlay.py
+
+# Example and scratch output (CLI examples write to out/)
+out/
+
+# Model write lock (AGENTS.md, Concurrency)
+.aqs-design.lock
+*.lock
+!**/package-lock.json
+
+# Agent, editor and session scratch (never ship)
+.opencode/
+.sisyphus/
+.cursor/
+.claude/
+.aider*
+agent-tools/
+*.swp
+*~
+.env.*
+!.env.example
+*.key
+credentials*.json

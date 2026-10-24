@@ -1,2 +1,24 @@
 *.FCStd filter=lfs diff=lfs merge=lfs -text
 *.stl filter=lfs diff=lfs merge=lfs -text
+
+# Binary formats: no text diff or merge
+*.xlsx binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.mp4 binary
+*.step -diff
+*.STEP -diff
+
+# Generated outputs: collapsed in pull request diffs (regenerate, never hand-edit)
+docs-authority/duties/** linguist-generated=true
+docs-authority/sizing/** linguist-generated=true
+docs-authority/pid/** linguist-generated=true
+docs-authority/iso/** linguist-generated=true
+docs-authority/nozzles/** linguist-generated=true
+docs-authority/TASK_PLAN.md linguist-generated=true
+docs-authority/DERIVED_REVISIONS.md linguist-generated=true
+docs-authority/ASSUMPTIONS_REGISTER.md linguist-generated=true
+docs-authority/MODEL_WORKBOOK.xlsx linguist-generated=true
+flow_graph/views/** linguist-generated=true
+flow_graph/derived/** linguist-generated=true
