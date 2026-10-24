@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 31 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 58 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 384 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 387 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 576 items: 287 drivers, 289 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 579 items: 287 drivers, 292 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -592,6 +592,9 @@ Total 576 items: 287 drivers, 289 register entries. Classification rule: first m
 | A-M-326 | Ti porous transport layers, Ir/Ru mixed-oxide anode + Pt cat selection class | PEM stack first-article: voltage-hold degradation and membrane condition vs the rated class | X-MAT-22 |
 | A-M-327 | PELLET 316L die plate + cutter hub + UHMW-PE trough liner +  selection class | pelletiser first-article die/cutter wear inspection | X-MAT-22 |
 | A-M-328 | SI_REDUCE issues as a graphite hot-face carbothermic-reducti selection class | construction-class re-check at the task 02 sizing gate | X-MAT-22 |
+| A-M-329 | below the baseline (scale factor s < 1) every mass and energ dimensionless | size one sub-baseline layout with the scale model and compare its feed with s x 150 kg/d | X-SCALE-UR |
+| A-M-330 | FOUNDRY molten-salt cells are kept at bath temperature (hold operating mode | lining inspection after a planned freeze-thaw trial on one cell | X-SCALE-UR |
+| A-M-331 | batch product = kettle volume x 0.7 fill x 1.1 kg/L latex de kg per batch | weigh the dried polymer from the first kettle batch | X-SCALE-UR |
 
 ## 7. T6 Commissioning measurements
 

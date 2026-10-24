@@ -5510,5 +5510,56 @@
   "sensitivity": "batch chemistry beyond the graphite class moves the hot face to SiC; the process change is a task 02 decision, not a materials trade",
   "replaced_by": "the task 02 sizing and process closure for SI_REDUCE re-opens and owns the duty; at that gate the construction class is re-checked",
   "verification_test": "construction-class re-check at the task 02 sizing gate"
+ },
+ {
+  "task": "X-SCALE-UR",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/scale_down.py",
+   "docs-authority/SCALE_DOWN_UNRECLAIMED.md"
+  ],
+  "id": "A-M-329",
+  "title": "Throughput proportional to the scale factor below the baseline",
+  "value": "below the baseline (scale factor s < 1) every mass and energy stream scales in proportion to s",
+  "units": "dimensionless",
+  "where": "AQS-SCALE-UR-001 section 4; flow_graph/param/scale_down.py",
+  "basis": "AQS-SCALE-001 gives feed 150, 300 and 500 kg/d at cassettes M1, M2 and M3 (close to proportional above the baseline); no layout below the baseline has been sized",
+  "sensitivity": "if a sub-baseline layout keeps some fixed loads (lighting, life support) the effective s for process sectors is lower and the limits in Tables 4.1 to 4.4 are reached sooner",
+  "replaced_by": "a sized sub-baseline layout from the scale model",
+  "verification_test": "size one sub-baseline layout with the scale model and compare its feed with s x 150 kg/d"
+ },
+ {
+  "task": "X-SCALE-UR",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/scale_down.py",
+   "docs-authority/SCALE_DOWN_UNRECLAIMED.md"
+  ],
+  "id": "A-M-330",
+  "title": "Molten-salt cells held molten between runs",
+  "value": "FOUNDRY molten-salt cells are kept at bath temperature (hold power) rather than frozen and remelted between runs",
+  "units": "operating mode",
+  "where": "AQS-SCALE-UR-001 Table 4.2; graph params.sizing.hold_kW of the FOUNDRY cells",
+  "basis": "freeze-thaw cycling of a lined cell imposes repeated thermal stress on the refractory (SCHACHT2004 ch. 13); cell heat balance per GRJOTHEIM1988",
+  "sensitivity": "if a cell tolerates freeze-thaw, campaign operation removes the energy penalty in Table 4.2 at small s",
+  "replaced_by": "lining condition after a planned freeze-thaw trial",
+  "verification_test": "lining inspection after a planned freeze-thaw trial on one cell"
+ },
+ {
+  "task": "X-SCALE-UR",
+  "needs_verification": true,
+  "files": [
+   "flow_graph/param/scale_down.py",
+   "docs-authority/SCALE_DOWN_UNRECLAIMED.md"
+  ],
+  "id": "A-M-331",
+  "title": "Polymer kettle batch size",
+  "value": "batch product = kettle volume x 0.7 fill x 1.1 kg/L latex density x 0.25 polymer solids",
+  "units": "kg per batch",
+  "where": "AQS-SCALE-UR-001 Table 4.4; flow_graph/param/scale_down.py BATCH_FILL, LATEX_DENSITY_KG_L, LATEX_SOLIDS",
+  "basis": "emulsion polymerization of fluoromonomers in a stirred kettle (ULLMANN_FLUOROPOLY); fill and solids fraction are study values",
+  "sensitivity": "batch size sets the days between campaigns and the feed buffer per campaign in proportion",
+  "replaced_by": "the measured dry polymer mass from the first batch",
+  "verification_test": "weigh the dried polymer from the first kettle batch"
  }
 ]

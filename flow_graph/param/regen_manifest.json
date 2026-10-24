@@ -737,6 +737,24 @@
    "quick": false
   },
   {
+   "name": "scale_down",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.scale_down"
+   ],
+   "outputs": [
+    "design_tool/aqs_design_tool/data/scale_down.json",
+    "docs-authority/SCALE_DOWN_UNRECLAIMED.md"
+   ],
+   "depends_on": [
+    "edge_sectors"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-SCALE-UR-001: balance on each sector for the switched-off lists, and scale-down limits for HEAT, FOUNDRY and POLYMERS."
+  },
+  {
    "name": "doc_compliance",
    "argv": [
     "python3",

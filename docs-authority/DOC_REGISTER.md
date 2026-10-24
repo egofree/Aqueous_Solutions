@@ -274,7 +274,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-SAF-007 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | A | 2026-10-16 | Hazard separation applied to the layout | current |
 | AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP action register | current |
 | AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | C | 2026-09-27 | Scale model — parametric building growth | current |
-| AQS-SCALE-UR-001 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | D | 2026-10-24 | Scale-down → unreclaimed-resource map | current |
+| AQS-SCALE-UR-001 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | E | 2026-10-24 | What goes unreclaimed when the plant is made smaller or a sector is switched off | current |
 | AQS-SEC-001 | `docs-authority/SECTOR_DEFINITIONS.md` | H | 2026-10-24 | Sector Definitions catalogue — plant sector_id map | current |
 | AQS-SEL-FP | `notes/MONOMER_ROUTE.md` | A | 2026-10-16 | Monomer route selection — VDF and TFE | current |
 | AQS-SEL-TI-MO | `notes/TI_MO_SELECTION.md` | A | 2026-10-16 | TI_CELL and MO_CELL process selection | current |

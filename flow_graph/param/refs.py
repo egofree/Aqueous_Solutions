@@ -275,6 +275,8 @@ REFS = {
  'SCHACHT2004': "Schacht C.A. (ed.), Refractories Handbook, Marcel Dekker / CRC Press (2004), DOI 10.1201/9780203026328: alumina-silica brick (ch. 4), carbonaceous/graphite hot faces (ch. 8), refractory castables (ch. 10), thermomechanical lining design (ch. 13) and installation practice (ch. 17) for melt-shop furnaces, kilns and chloride-cell backup linings.",
  'ASM_V1': "ASM International, ASM Handbook Vol 1, Properties and Selection: Irons, Steels, and High-Performance Alloys (1990): AISI H13 hot-work tool steel (Cr-Mo-V) for hot-work dies, extrusion and forge tooling; heat-resisting Fe-Cr-Ni alloys incl. the 80Ni-20Cr electrical-resistance element class to about 1100 C.",
  'ASM_V7': "ASM International, ASM Handbook Vol 7, Powder Metal Technologies and Applications (1998): press-and-sinter consolidation practice; sintering-furnace construction with graphite or MoSi2 element hot zones under inert or vacuum atmosphere for reactive powders.",
+ 'TOWLER2013': 'Towler G., Sinnott R., Chemical Engineering Design: Principles, Practice and Economics of Plant and Process Design, 2nd ed., Butterworth-Heinemann (2013): choice between batch and continuous operation; batch and campaign operation suit small production rates and multi-product trains.',
+ 'GRJOTHEIM1988': 'Grjotheim K., Welch B.J., Aluminium Smelter Technology: A Pure and Applied Approach, 2nd ed., Aluminium-Verlag, Duesseldorf (1988): heat balance of electrolysis cells; the cell voltage above the thermoneutral voltage supplies the heat lost through the lining, so a reduced current needs added heat to keep the bath molten.',
 }
 
 def cite(k):
