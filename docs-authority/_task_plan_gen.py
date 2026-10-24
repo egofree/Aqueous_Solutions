@@ -686,8 +686,8 @@ for code,title in SYS:
             if not ev: TRI[tri_u(k)]=TRI.get(tri_u(k),0)+1
     cnt.append((code,title,T,D))
 us='\n'.join(out)
-import pathlib; pathlib.Path('/tmp/tp').mkdir(parents=True, exist_ok=True)   # QA R3 sibling fix: hardcoded tmp dir
-json.dump(cnt,open('/tmp/tp/cnt.json','w'))
+import pathlib, tempfile; _tp = pathlib.Path(tempfile.gettempdir()) / 'tp'; _tp.mkdir(parents=True, exist_ok=True)   # scratch counts, outside the repo
+json.dump(cnt,open(_tp / 'cnt.json','w'))
 tab='\n'.join(f'| {c} | {t} | {a} | {b} |' for c,t,a,b in cnt)
 TA=sum(c[2] for c in cnt);TD=sum(c[3] for c in cnt)
 TRT='\n'.join(f'| {k} | {v} |' for k,v in sorted(TRI.items()))

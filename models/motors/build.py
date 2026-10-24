@@ -1,7 +1,7 @@
 """X-INV-02C motor family models, drawings and BOMs. Geometry from AQS-INV-005 (docs-authority/inventory/MOTOR_DESIGNS.csv, MAGNET_COMPARISON.csv)
 and IEC 60072-1 frame dimensions; writes models/motors/<MF-nn>/export/<mf>.step, .stl, drawing.svg, bom.csv, fasteners.csv, WORK_ORDER.md.
 Study models: envelope-correct parts (lamination stack with slots, rotor, shaft, frame or flange housing), not production tolerancing.
-Run: /tmp/cqvenv/bin/python models/motors/build.py (A-M-131)"""
+Run: $CADQUERY_PYTHON models/motors/build.py (A-M-131)"""
 import csv, math, os, sys
 import cadquery as cq
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

@@ -62,7 +62,7 @@ consolidation dropped graph data that the closed-balance stack depends on.
   (`test_roof_carries_pv` shares the `solver.py KeyError 'IA-ACID-01'` root cause).
 - **Newly recorded gaps**:
   - `_task_plan_gen.py` cannot regenerate TASK_PLAN: (1) hardcoded
-    `os.chdir('/tmp/aqs.dFW2/Aqueous_Solutions')`, (2) 53 present nodes carry
+    `os.chdir('<temporary clone>')`, (2) 53 present nodes carry
     sector_ids unmapped in its `sysof()` (DIGESTER 23, FOUNDRY 20, POLYMERS 10).
     Committed TASK_PLAN.md still names Rev BH / 212 nodes.
   - `_assumptions_register.py` exit 1: 18 stale keys (LEACH_CSTR_1 hx5/liquor_T,
@@ -98,7 +98,7 @@ Wave 1 — independent, parallelizable (small, verifiable):
   written outside `exports/`; normal export 200.
 - R2 atomic `store._mirror` (tmp + `os.replace`), corrupt-mirror `get()`→KeyError
   (404), `threading.Lock` on mutations. Accept: truncation test yields 404, not 500.
-- R3 `_task_plan_gen.py`: drop hardcoded `/tmp/aqs.dFW2` chdir, resolve root from
+- R3 `_task_plan_gen.py`: drop hardcoded `<temporary clone>` chdir, resolve root from
   `__file__`. Accept: runs from repo root.
 - R4 `_rev_stamp.py`: split check() from write; governance test uses check-only.
   Accept: pytest leaves the working tree clean.

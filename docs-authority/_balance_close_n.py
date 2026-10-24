@@ -4,7 +4,7 @@ import json
 from copy import deepcopy
 from pathlib import Path
 
-GRAPH = Path("/tmp/Aqueous_Solutions/flow_graph/plant_flow_graph.json")
+GRAPH = Path(__file__).resolve().parents[1] / "flow_graph/plant_flow_graph.json"
 NOTE = "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor."
 
 

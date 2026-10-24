@@ -4,7 +4,7 @@ models/mfg/<UNIT>/export/<unit>.step and .stl, bom.csv, fasteners.csv and WORK_O
 (scrap-remelt melt-and-cast + roll + stock staging; D-DOCK pot/cell molten-chloride electrolysis, Kroll Ti train,
 investment casting on wax make-up + shell reclaim) get machine geometry; the standby_rated N+1 alternates (A-M-283)
 keep the envelope box only as a presence-consistent PLACEHOLDER, marked in bom.csv and the work order.
-Run: /tmp/cqvenv/bin/python models/mfg/foundry.py [UNIT ...]"""
+Run: $CADQUERY_PYTHON models/mfg/foundry.py [UNIT ...]"""
 import csv, json, math, os, sys
 import cadquery as cq
 

@@ -1,5 +1,5 @@
 """X-INV-02C dimensional check: each STEP assembly against IEC 60072-1 (shaft height H = axis to foot face, shaft diameter, extension E,
-foot centres A x B) or NEMA ICS 16 flange width; exits non-zero on a failure. Run: /tmp/cqvenv/bin/python models/motors/check.py"""
+foot centres A x B) or NEMA ICS 16 flange width; exits non-zero on a failure. Run: $CADQUERY_PYTHON models/motors/check.py"""
 import csv, os, sys
 import cadquery as cq
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); sys.path.insert(0, ROOT)

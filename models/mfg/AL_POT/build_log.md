@@ -4,15 +4,15 @@ Date: 2026-10-21. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MOD
 Model source: `models/mfg/AL_POT/al_pot.py` + `params.json`; drawing set `models/mfg/AL_POT/drawings/`;
 build script chain run headless (~45 s wall on the agent box):
 
-    /tmp/cqvenv/bin/python al_pot.py         # build + checks + bom.csv + STEP/STL
-    /tmp/cqvenv/bin/python draw_al_pot.py    # 8 SVG sheet sources (notes bands, no title block yet)
+    $CADQUERY_PYTHON al_pot.py         # build + checks + bom.csv + STEP/STL
+    $CADQUERY_PYTHON draw_al_pot.py    # 8 SVG sheet sources (notes bands, no title block yet)
     python3 docs-authority/_drawings.py      # AQS-DWG-001 title blocks + DRAWING_REGISTER.md rows
     python3 docs-authority/_pid_sheets.py    # re-appends the AQS-PID-001 register section
-    /tmp/cqvenv/bin/python draw_al_pot.py    # PDF pass from the stamped SVGs
+    $CADQUERY_PYTHON draw_al_pot.py    # PDF pass from the stamped SVGs
 
 ## Tool versions (recorded per A-PLAN-006 5.1)
 
-- CadQuery 2.8.0 (reinstalled in /tmp/cqvenv this session; the plan's 2.8.0 pick holds), python 3.13.
+- CadQuery 2.8.0 (in a dedicated virtual environment; the plan's 2.8.0 pick holds), python 3.13.
 - trimesh 5.1.1 for the STL manifold check; cairosvg for the SVG -> PDF pass.
 
 ## A-core evidence (check.json is the machine-checked copy)

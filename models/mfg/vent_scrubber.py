@@ -1,6 +1,6 @@
 """X-PAR-10 parametric vent scrubber EVAP_ACID_VS (CadQuery). Reads params on the graph (written by flow_graph/param/write_graph.py
 from flow_graph/param/vent_scrubber.py) and writes models/mfg/EVAP_ACID_VS/export/evap_acid_vs.step and .stl, bom.csv, fasteners.csv.
-Run: /tmp/cqvenv/bin/python models/mfg/vent_scrubber.py"""
+Run: $CADQUERY_PYTHON models/mfg/vent_scrubber.py"""
 import json, os
 import cadquery as cq
 U = 'EVAP_ACID_VS'

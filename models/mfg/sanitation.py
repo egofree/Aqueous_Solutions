@@ -1,6 +1,6 @@
 """X-SAN-01 sanitation train (CadQuery): BLACK_DIGEST, BLACK_DEWATER, BLACK_PASTEUR, BLACK_ALK_HOLD. Reads params.design written by
 flow_graph/param/sanitation.py; writes models/mfg/<UNIT>/export STEP/STL, bom.csv, fasteners.csv, WORK_ORDER.md.
-Run: /tmp/cqvenv/bin/python models/mfg/sanitation.py"""
+Run: $CADQUERY_PYTHON models/mfg/sanitation.py"""
 import json, os
 import cadquery as cq
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}

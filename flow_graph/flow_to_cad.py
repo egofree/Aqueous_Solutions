@@ -13,7 +13,7 @@ existing Feature already is (bounding-box origin) and is never written.
 
     python3 flow_to_cad.py --graph plant_flow_graph.json \\
         --map unit_freecad_map.json --placements placement_seed.json \\
-        --out /tmp/apply_placement.py --report /tmp/placement_report.json
+        --out out/apply_placement.py --report out/placement_report.json
 
 CERN-OHL-S-2.0. Aligns with AQS-3D-BUILD-001 Rev G: applicator was
 deferred; this is that applicator, still without an edge auto-router.

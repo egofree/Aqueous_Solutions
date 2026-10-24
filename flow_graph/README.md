@@ -145,7 +145,7 @@ this graph. WP-C2 GitHub publish not started.
 
 ## Related
 
-- Audit: `/home/user/dev/Aqueous/planning/FLOW_DIAGRAM_AUDIT.md` (AQS-FLOW-AUD-001)
+- Audit: AQS-FLOW-AUD-001 (maintainer planning record, not in this repository)
 - Legacy CAD: `cad/STREAM_REGISTER.md`, `cad/MASS_FLOW.md` (sync targets)
 - Authority lock: `cad/AUTHORITY.md`
 - Plan: `planning/DESIGN_UI_COMPLETION_PLAN.md` (WP-Ap1…Ap3; A′ exit)

@@ -6,7 +6,7 @@ formers) get machine geometry. POLY_COND stays standby (assay-gated, AQS-DES-POL
 presence-consistent PLACEHOLDER, marked in bom.csv and the work order. Liveness is read from BOTH stamps:
 envelope.state, or live throughput rates in params.design (fluoro_train A-M-289 restamped units live whose older
 foundry_poly sizing notes still say F-blocked - the design rates win; the graph is authority and is not edited here).
-Run: /tmp/cqvenv/bin/python models/mfg/polymers.py [UNIT ...]"""
+Run: $CADQUERY_PYTHON models/mfg/polymers.py [UNIT ...]"""
 import csv, json, math, os, sys
 import cadquery as cq
 

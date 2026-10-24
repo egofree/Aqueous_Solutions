@@ -1,6 +1,6 @@
 """X-MFG-30 parametric MVR falling-film evaporator (CadQuery). Reads the design from the graph (params.design written by
 flow_graph/param/evap_design.py) and writes models/mfg/<UNIT>/export/<unit>.step and .stl, bom.csv, fasteners.csv.
-Run: /tmp/cqvenv/bin/python models/mfg/evap_mvr.py EVAP_ACID"""
+Run: $CADQUERY_PYTHON models/mfg/evap_mvr.py EVAP_ACID"""
 import json, math, os, sys
 import cadquery as cq
 U = sys.argv[1]; acid = U == 'EVAP_ACID'

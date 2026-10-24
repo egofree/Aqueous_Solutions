@@ -2,7 +2,7 @@
 Method: class mass at each case = 102.68 kg/d x class fraction. The increment over the
 reference point is added to the edge that carries that class (incremental), except the
 organic line, which scales with the organic ratio. Prints a markdown table."""
-import json
+import json, os, tempfile
 F=102.68
 C={'A':dict(water=0,silicate_oxide=0.99,organic=0,unassigned=0,other_inorganic=0.005),
    'B':dict(water=0.03,silicate_oxide=0.30,organic=0.25,unassigned=0.09905,other_inorganic=0),
@@ -28,4 +28,4 @@ acid=R['IA-ACID-01']*0.20
 print('| Class | Unit | Edge | Graph kg/d | Case A | Case B | MSW | Method |\n| --- | --- | --- | --- | --- | --- | --- | --- |')
 for r in rows: print(f"| {r[0]} | {r[1]} | {r[2]} | {r[3]:.2f} | {r[4]:.2f} | {r[5]:.2f} | {r[6]:.2f} | {r[7]} |")
 print(f"\nAcid. IA-ACID-01 carries {R['IA-ACID-01']:.2f} kg/d of 20 wt% HCl = {acid:.2f} kg/d HCl. Case A with Al2O3 0.19, CaO 0.125, MgO 0.09, FeO 0.13 of the silicate fully leached needs {hcl:.1f} kg/d HCl, {hcl/acid:.1f} times the edge. TiO2 and SiO2 are taken as not leached.")
-json.dump({'rows':rows,'hcl_A':hcl,'hcl_edge':acid},open('/tmp/bc.json','w'))
+json.dump({'rows':rows,'hcl_A':hcl,'hcl_edge':acid},open(os.path.join(tempfile.gettempdir(),'bc.json'),'w'))

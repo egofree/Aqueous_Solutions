@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-VIEWS = Path("/tmp/Aqueous_Solutions/flow_graph/views")
+VIEWS = Path(__file__).resolve().parent / "views"
 
 
 def svg_for(name):

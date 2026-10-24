@@ -16,7 +16,7 @@ on the first real execution. Everything else — git calls, other scripts, non-c
 passes through untouched. With AQS_PS_CACHE_DIR unset (any process outside a regen pass)
 install() is a no-op, so interactive runs are never cached.
 
-The cache lives outside the repo (default /tmp/opencode/aqs-ps-cache) so `git status` stays
+The cache lives outside the repo (default <system temp dir>/aqs-ps-cache) so `git status` stays
 clean; it is disposable at any time.
 """
 import functools, glob, hashlib, json, os, subprocess, sys
@@ -24,7 +24,7 @@ import functools, glob, hashlib, json, os, subprocess, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 TARGET = '_power_sizing.py'
 ENV_CACHE = 'AQS_PS_CACHE_DIR'
-DEFAULT_CACHE_DIR = '/tmp/opencode/aqs-ps-cache'
+DEFAULT_CACHE_DIR = os.path.join(__import__('tempfile').gettempdir(), 'aqs-ps-cache')
 
 def _key_paths(root):
     """Every file whose bytes can change _power_sizing stdout for a given (drivers, graph)."""

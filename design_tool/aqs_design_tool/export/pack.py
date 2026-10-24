@@ -529,7 +529,7 @@ def _emit_3d(
         "python3 graph_geometry_bridge.py \\",
         "  --graph /path/to/this-pack/flow_graph_snapshot.json \\",
         "  --apply-presence --fcstd plant.FCStd \\",
-        "  --fcstd-out /tmp/plant_filtered.FCStd",
+        "  --fcstd-out out/plant_filtered.FCStd",
         "",
         "# 5) Filter tests (no FreeCAD geometry invention)",
         "python3 graph_geometry_bridge.py --self-test",

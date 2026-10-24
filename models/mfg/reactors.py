@@ -1,6 +1,6 @@
 """X-MFG-31 parametric in-house reaction chambers (CadQuery): GLASS_DIGEST, DIGESTER, OIL_PYRO. Reads params.design on the graph
 (written by flow_graph/param/reactor_design.py) and writes models/mfg/<UNIT>/export/<unit>.step and .stl, bom.csv, fasteners.csv and
-WORK_ORDER.md. Run: /tmp/cqvenv/bin/python models/mfg/reactors.py"""
+WORK_ORDER.md. Run: $CADQUERY_PYTHON models/mfg/reactors.py"""
 import json, os
 import cadquery as cq
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}

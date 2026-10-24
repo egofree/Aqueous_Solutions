@@ -8,14 +8,14 @@ recipe, and optionally triggers baseline rebuild.
 
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json
     python3 graph_geometry_bridge.py --graph /path/to/flow_graph_snapshot.json \
-        --params /path/to/params.json --out /tmp/3d_recipe.json
+        --params /path/to/params.json --out out/3d_recipe.json
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \
         --map unit_freecad_map.json --coverage
     python3 graph_geometry_bridge.py --params /path/to/params.json --apply-overlay
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \
         --presence-report
     python3 graph_geometry_bridge.py --graph snapshot.json --apply-presence \
-        --fcstd plant.FCStd --fcstd-out /tmp/plant_filtered.FCStd
+        --fcstd plant.FCStd --fcstd-out out/plant_filtered.FCStd
     python3 graph_geometry_bridge.py --self-test
     python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \
         --rebuild-baseline

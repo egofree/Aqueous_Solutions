@@ -4,7 +4,7 @@ import json
 from copy import deepcopy
 from pathlib import Path
 
-ROOT = Path("/tmp/Aqueous_Solutions")
+ROOT = Path(__file__).resolve().parents[1]   # repository root
 GRAPH = ROOT / "flow_graph/plant_flow_graph.json"
 
 H2_FC = 4.8          # continuous fuel cell, authority

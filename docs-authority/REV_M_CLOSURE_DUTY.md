@@ -471,7 +471,7 @@ Status: closed = within ±1 % with independently derived terms; closed (one term
 
 ```
 cd docs-authority
-python3 _rev_m_closure_study.py --json /tmp/revm.json          # report from Rev L base d9cd071
+python3 _rev_m_closure_study.py --json out/revm.json          # report from Rev L base d9cd071
 python3 _rev_m_closure_study.py --write ../flow_graph/plant_flow_graph.json
 cd ../flow_graph && python3 export_candidate_mvs.py && python3 check_authority_contract.py
 ```

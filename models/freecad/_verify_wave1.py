@@ -25,6 +25,6 @@ out.append("SCALE_M=%.1f FAB=%dx%d MFG=%dx%d CRYO=%dx%d DOCK_Y=%d CRYO_X=%d" % (
     P.SCALE_M, P.FAB_L, P.FAB_W, P.MFG_L, P.MFG_W, P.CRYO_L, P.CRYO_W, P.DOCK_Y, P.CRYO_X))
 out.append("object_count=%d" % len(names))
 out.append("VERIFY_END")
-Path("/tmp/wave1_verify.txt").write_text("\n".join(out) + "\n")
+Path(__import__("tempfile").gettempdir(), "wave1_verify.txt").write_text("\n".join(out) + "\n")
 print("\n".join(out))
 App.closeDocument(doc.Name)

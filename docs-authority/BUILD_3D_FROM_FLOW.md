@@ -178,7 +178,7 @@ python3 graph_geometry_bridge.py \
 python3 graph_geometry_bridge.py \
   --graph /path/to/export/flow_graph_snapshot.json \
   --params /path/to/export/params.json \
-  --out /tmp/3d_recipe.json
+  --out out/3d_recipe.json
 
 # Safe overlay → params_overlay.py (allow-list only; gold untouched)
 python3 graph_geometry_bridge.py \
@@ -192,7 +192,7 @@ python3 graph_geometry_bridge.py --allow-list
 python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json \
   --presence-report
 python3 graph_geometry_bridge.py --graph /path/to/export/flow_graph_snapshot.json \
-  --apply-presence --fcstd plant.FCStd --fcstd-out /tmp/plant_filtered.FCStd
+  --apply-presence --fcstd plant.FCStd --fcstd-out out/plant_filtered.FCStd
 python3 graph_geometry_bridge.py --self-test
 ```
 
