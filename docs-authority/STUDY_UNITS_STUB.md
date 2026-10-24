@@ -24,7 +24,7 @@ unreclaimed or sub-MVS endpoint. Sandbox stays modular as studies close.
 
 Licence: **CERN-OHL-S-2.0**.
 
-Canonical in this tree: `docs-authority/process/STUDY_UNITS_STUB.md`
+Canonical in this tree: `docs-authority/STUDY_UNITS_STUB.md`
 
 ---
 

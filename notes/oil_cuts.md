@@ -1,3 +1,5 @@
+# Oil-line cuts — consumers first
+
 Finished design and rates: notes/OIL_SECTOR.md (graph Rev V). Cut structure below is unchanged.
 
 Written 2026-10-05. Not a drawing. The column is sized to what the rest of the plant burns, washes with, and greases with.

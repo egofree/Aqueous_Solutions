@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c",
+  "graph_sha256": "12f1602c68d17412533f22795ad93fda886036438e350e4de3736333dec9a70e",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
@@ -56,7 +56,7 @@
    "calc_kw": 6.604,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "EW_7",
@@ -65,7 +65,7 @@
    "calc_kw": 6.236,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "AL_POT",
@@ -92,7 +92,7 @@
    "calc_kw": 5.25,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "EW_1",
@@ -110,7 +110,7 @@
    "calc_kw": 5.248,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "MFG_SHOP",
@@ -146,7 +146,7 @@
    "calc_kw": 1.971,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "CRYO_ASU",
@@ -299,7 +299,7 @@
    "calc_kw": 0.48,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "EW_8",
@@ -308,7 +308,7 @@
    "calc_kw": 0.443,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "WAFER_FAB",
@@ -326,7 +326,7 @@
    "calc_kw": 0.44,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "EW_4",
@@ -335,7 +335,7 @@
    "calc_kw": 0.425,
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
-   "sector": "WET"
+   "sector": "DIGESTER"
   },
   {
    "unit": "SHELL_BREAK",
@@ -825,7 +825,7 @@
     "calculated": 4
    },
    "DIGESTER": {
-    "calculated": 6
+    "calculated": 15
    },
    "ELEC": {
     "calculated": 5,
@@ -872,9 +872,6 @@
    },
    "PUMPED_HYDRO": {
     "null": 1
-   },
-   "WET": {
-    "calculated": 9
    },
    "WTR": {
     "calculated": 4

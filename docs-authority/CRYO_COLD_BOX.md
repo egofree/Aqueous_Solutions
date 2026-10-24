@@ -201,4 +201,4 @@ python3 cryo_pfd.py
 ```
 
 Share mirror: `share/aqueous-solutions/docs-authority/CRYO_COLD_BOX.md`,
-`docs-authority/process/CRYO_EQUIPMENT.md`, `pfd/images/cryo_pfd.png`.
+`docs-authority/CRYO_EQUIPMENT.md`, `pfd/images/cryo_pfd.png`.

@@ -48,7 +48,7 @@ for n in g['nodes']:
     rows.append({'unit':u,'sector':n.get('sector_id') or '—','role':n.get('electrical_role') or '—','kw':kw,
                  'calc':(kw if cls=='calculated' else None),'cls':cls,'basis':b})
 for r in ew:   # EW cells: DC at the electrode, behind the RECTIFIER bounding AC row (AQS-ELEC-004)
-    rows.append({'unit':r['cell'],'sector':'WET','role':'load','kw':(N.get(r['cell'],{}).get('continuous_kw') or {}).get('value') if isinstance(N.get(r['cell'],{}).get('continuous_kw'),dict) else None,
+    rows.append({'unit':r['cell'],'sector':N.get(r['cell'],{}).get('sector_id') or 'DIGESTER','role':'load','kw':(N.get(r['cell'],{}).get('continuous_kw') or {}).get('value') if isinstance(N.get(r['cell'],{}).get('continuous_kw'),dict) else None,
                  'calc':r['P_kW'],'cls':'calculated','basis':'AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)'})
 have={r['unit'] for r in rows}
 for e in g['edges']:   # bus-fed loads whose node carries no continuous_kw stamp (study stubs): visible via their SF-* feed

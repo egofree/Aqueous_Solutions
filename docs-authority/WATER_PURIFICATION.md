@@ -314,8 +314,8 @@ PNG as evidence that VCD was deleted.
 | Doc | Script | PNG |
 |---|---|---|
 | AQS-WTR-001 | this file | — |
-| AQS-EQP-HAB-001 | `docs-authority/process/HAB_WATER.md` | — |
-| AQS-EQP-FAB-UPW-001 | `docs-authority/process/FAB_UPW.md` | — |
+| AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | — |
+| AQS-EQP-FAB-UPW-001 | `docs-authority/FAB_UPW.md` | — |
 | AQS-PFD-HAB-001 | `habitation_pfd.py` | `habitation_pfd.png` |
 | AQS-PFD-HAB-WTR-001 | `hab_water_pfd.py` | `hab_water_pfd.png` |
 | AQS-PFD-FAB-001 | `wafer_fab_pfd.py` | `wafer_fab_pfd.png` |

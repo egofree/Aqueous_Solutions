@@ -1,10 +1,10 @@
 # Scale-down → unreclaimed-resource map
 
 Document number: AQS-SCALE-UR-001  
-Revision: C  
-Date: 2026-10-01  
+Revision: D  
+Date: 2026-10-24  
 Authority: AQS-SCALE-001 Rev C (`docs-authority/SCALE_MODEL.md`); MVS framing
-AQS-UI-001 Rev C §3.2; sector map AQS-SEC-001 Rev D; streams AQS-STR-001;
+AQS-UI-001 Rev C §3.2; sector map AQS-SEC-001; streams AQS-STR-001;
 mass-flow AQS-MF-001; vent AQS-VENT-001; continuous kW AQS-REQ-KW-001;
 planning gap audit AQS-MVS-GAP-001 (local planning artefacts, not published).  
 Style: AQS-DOC-001.  
@@ -15,6 +15,7 @@ Style: AQS-DOC-001.
 | A | — | First map: SCALE_M / sector / module offs → stream_id unreclaimed | 2026-10-01 |
 | B | 1 | MeOH / hydro SCALE_M notes; energy-mismatch study; VCD/litho/ORC study-unit streams | 2026-10-01 |
 | C | 2 | Unit-level off→stream map; solver `UNIT_OFF_UNRECLAIMED` + `unit_enabled` (WP-A7) | 2026-10-01 |
+| D | 3 | Sector names to graph Rev AC (AQS-SEC-001 Rev H): WET → DIGESTER; ZNBR2, ELEC_PV, BACKUP_GEN and FUEL_CELL rows are unit-off rows inside ELEC; TRR retired. No stream mapping changed. FOUNDRY, POLYMERS and HEAT have no row yet (open). | 2026-10-24 |
 
 Licence: **CERN-OHL-S-2.0**.
 
@@ -55,10 +56,10 @@ Study / stand-in rates remain labeled. No vendor nameplates invented.
 
 | Sector off | Sector Definition | Stream IDs reopened as unreclaimed | Notes |
 |---|---|---|---|
-| **ZNBR2** | Energy Storage System (Electrochemical) | S69, S17 | Br₂ regen; DC storage path |
+| **ZNBR2** unit (in ELEC) | Energy Storage System (Electrochemical) | S69, S17 | Br₂ regen; DC storage path |
 | **MEOH** | Energy Storage System (Electrochemical) | S73, S74, S76, S79 | Synth feeds + MEOH_FC DC (also process) |
 | **PUMPED_HYDRO** | Energy Storage System (Gravity) | S22, S23 | Roof↔catch penstock |
-| **WET** | Process (Mass transform) | S08, S05, S64 | Metals crib; Faraday H₂ generation |
+| **DIGESTER** | Process (Mass transform) | S08, S05, S64 | Metals crib; Faraday H₂ generation |
 | **OIL** | Process (Mass transform) | S11, S18, S67, S67B | Organics; afterburner→CRYO (carbon on S67/S67B since graph Rev J; S18 is the claim id) |
 | **GLASS** | Process (Mass transform) | S08G | Silicate/ceramic goods export |
 | **GAS** | Process (Mass transform) | S05, S64, S65, S24 | Dryer / polish / contingency |
@@ -70,12 +71,14 @@ Study / stand-in rates remain labeled. No vendor nameplates invented.
 | **CRYO** | Utility / header | S02–S04, S64, S45, S49, S50, S73, S74 | Product gases + H₂/CO₂ consumers |
 | **WTR** | Utility / header | S01, S21–S23, S40 | UPW / roof–catch / terrace |
 | **ELEC** | Utility / header | S17, S47, S51, S79 | Hub AC/DC injectors |
-| **ELEC_PV** | Energy Production (Electrical) | S17, S20 | PV generation / load bus |
+| **PV_ARRAY** unit (in ELEC) | Energy Production (Electrical) | S17, S20 | PV generation / load bus |
 | **DOCK** | Export / dock | S14X, S08G | Surplus export boundaries |
-| TRR (optional) | Utility / header | S40 | Clean terrace overflow |
-| BACKUP_GEN (optional) | Energy Production (Combustion Engine) | S45, S47 | H₂→GEN AC |
-| FUEL_CELL (optional) | Energy Production (Electrochemical) | S49, S50, S51 | PEM path |
+| TRR (retired 2026-10-18) | — | S40 | Terrace overflow retired with TERRACE_IRRIG |
+| BACKUP_GEN unit (in ELEC, optional) | Energy Production (Combustion Engine) | S45, S47 | H₂→GEN AC |
+| FUEL_CELL unit (in ELEC, optional) | Energy Production (Electrochemical) | S49, S50, S51 | PEM path |
 | GEO (optional) | Utility / header | S06 | Q4 heat (ORC TBD) |
+
+FOUNDRY, POLYMERS and HEAT became sectors at graph Rev AC and have no row in this table yet; which streams reopen when each is off is an open item. The sector list itself is the graph's (AQS-SEC-001).
 
 **Module-level (within sector):** disabling a required ESS or process
 module that carries the only closure path for a listed stream **shall**
@@ -118,7 +121,7 @@ Baseline manufacturing MVS candidate: **`SCALE_M = 1.0`** (M1 cassette,
 
 | Rule id | Trigger | Streams flagged | Sectors implicated | Rationale |
 |---|---|---|---|---|
-| `below_m1_scale` | `scale_m` &lt; 1.0 | S08, S05, S64, S14, S21 | WET, FARM, WTR | Below M1: wet-feed / Faraday / food / water inventory rules no longer close |
+| `below_m1_scale` | `scale_m` &lt; 1.0 | S08, S05, S64, S14, S21 | DIGESTER, FARM, WTR | Below M1: wet-feed / Faraday / food / water inventory rules no longer close |
 | `life_levels_collapse` | `scale_m` &lt; 1.0 | S14, S02, S12 | FARM, HAB | Discrete life plates cannot shrink below one HAB∥FARM pair without unreclaimed life streams |
 
 **Scale-up** (SCALE_M ≥ 1, cassette M2/M3) remains governed by AQS-SCALE-001
@@ -136,7 +139,7 @@ close S21–S23 when WTR + PUMPED_HYDRO are enabled.
 
 | Capability | SCALE_M formula in AQS-SCALE-001 §6? | Study rule (this map) | Unreclaimed if omitted |
 |---|---|---|---|
-| PV / ZnBr₂ / RECT | Yes — module counts | Unchanged | ELEC_PV / ZNBR2 streams |
+| PV / ZnBr₂ / RECT | Yes — module counts | Unchanged | PV_ARRAY / ZNBR2 streams |
 | MeOH tank / FC bank | **No** discrete formula | AQS-ESS-001 §2.2: bank 1–4 × 0.5 kW cells; tank ≥3 d @ mid synth; synth tracks Faraday H₂ not bay stretch | S73, S74, S76, S79 |
 | Pumped hydro energy | Geometry from roof/catch V×h (AQS-BLD-001 §3) | M1 ~9.8 kWh ideal ≪ ZnBr₂ 120 kWh — **study sizing asymmetry**; grow V×h for material hydro | S22, S23 |
 

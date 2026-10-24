@@ -967,6 +967,22 @@
    "quick": false
   },
   {
+   "name": "sector_definitions",
+   "argv": [
+    "python3",
+    "docs-authority/_sector_definitions.py"
+   ],
+   "depends_on": [
+    "balance_report"
+   ],
+   "outputs": [
+    "docs-authority/SECTOR_DEFINITIONS.md"
+   ],
+   "note": "AQS-SEC-001 sector catalogue, generated from graph mvs.sectors, the system tree (trains) and design_tool sector_definitions.py (classes, ESS peers, retired ids, aliases). Pure function of those inputs.",
+   "writes_graph": false,
+   "quick": false
+  },
+  {
    "name": "design_check",
    "argv": [
     "python3",
@@ -1003,7 +1019,8 @@
     "task_plan",
     "model_workbook",
     "assumptions_register",
-    "drawings"
+    "drawings",
+    "sector_definitions"
    ],
    "writes_graph": false,
    "quick": false,

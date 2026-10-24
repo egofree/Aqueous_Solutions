@@ -6,6 +6,8 @@ Not a PE stamp. Replaces the ghost edges that dumped Q1/Q2/Q3 onto Q4_BUS.
 
 Checked against graph Rev BH on 2026-10-12. HL-HX8-Q4-A and HL-HX8-Q4-B are present, HX8 to Q4_A and Q4_B, 2.286 kW each. HL-Q3-A/B-HX4, HX5, and HX6 are present. No present edge from Q1, Q2, or Q3 lands on Q4_BUS. The date line records the Rev K text. `HEAT_LADDER_DUTIES.md` is still the Rev C note for graph Rev K. It was not re-issued. Edge duties are the graph. No rate change.
 
+Checked against graph Rev AC on 2026-10-24: HL-HX8-Q3-A/B are retired and HL-HX8-Q4-A/B are present, so HX-8 feeds Q4, not Q3. New melt heat is recovered at Q4 through MET_HX_Q4 (stream S63 to Q4_BUS), not lifted into a hotter tier (notes/LOAD_ROLLUP.md). The tier rules below are enforced by `flow_graph/test_doc_consistency.py` (heat moves down only; HX-8 never feeds Q3; nothing from Q1–Q3 lands on Q4_BUS). This page was merged from a second, older copy at the repository root, which said Q3's source was HX-8; that copy was removed.
+
 ## Tiers
 
 Heat moves down only. A valve is not a heat pump.

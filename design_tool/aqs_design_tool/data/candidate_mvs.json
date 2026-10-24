@@ -140,7 +140,7 @@
       "sector_definition": "Utility / header",
       "enabled": true,
       "required_for_mvs_closure": true,
-      "notes": "Sol-Ark / ATS / RECT / MCC hub \u2014 distinct from ELEC_PV"
+      "notes": "Sol-Ark / ATS / RECT / MCC hub; PV_ARRAY, ZNBR2, BACKUP_GEN and FUEL_CELL are units here since the Rev AC sector pivot"
     },
     {
       "sector_id": "HEAT",

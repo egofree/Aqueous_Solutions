@@ -72,43 +72,27 @@ Earlier references to the old number that meant these pages now read the new num
 | AQS-ELEC-001 | `docs-authority/ELECTRONICS.md` | C | 2026-10-11 | Electronics bay | canonical |
 | AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | C | 2026-10-15 | One line | canonical |
 | AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | E | 2026-10-01 | Cryo / ALCRM equipment list | canonical |
-| AQS-EQP-CRY-001 | `docs-authority/process/CRYO_EQUIPMENT.md` | E | 2026-10-01 | Cryo / ALCRM equipment list | mirror of docs-authority/CRYO_EQUIPMENT.md (identical) |
 | AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | B | 2026-09-27 | Wafer fab equipment / process list | canonical |
-| AQS-EQP-FAB-001 | `docs-authority/process/WAFER_FAB_EQUIPMENT.md` | B | 2026-09-27 | Wafer fab equipment / process list | mirror of docs-authority/WAFER_FAB_EQUIPMENT.md (superseded, diverged) |
 | AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | B | 2026-10-01 | Solar-cell branch — equipment schedule (architecture Partial) | canonical |
-| AQS-EQP-FAB-PV-001 | `docs-authority/process/SOLAR_CELL_EQUIPMENT.md` | B | 2026-10-01 | Solar-cell branch — equipment schedule (architecture Partial) | mirror of docs-authority/SOLAR_CELL_EQUIPMENT.md (identical) |
 | AQS-EQP-FAB-RGN-001 | `docs-authority/FAB_WET_REAGENTS.md` | B | 2026-10-01 | Fab wet reagents — wet-line synth forks | canonical |
-| AQS-EQP-FAB-RGN-001 | `docs-authority/process/FAB_WET_REAGENTS.md` | A | 2026-09-27 | Fab wet reagents — wet-line synth forks | mirror of docs-authority/FAB_WET_REAGENTS.md (superseded, diverged) |
 | AQS-EQP-FAB-UPW-001 | `docs-authority/FAB_UPW.md` | B | 2026-09-27 | Fab UPW — equipment list | canonical |
-| AQS-EQP-FAB-UPW-001 | `docs-authority/process/FAB_UPW.md` | B | 2026-09-27 | Fab UPW — equipment list | mirror of docs-authority/FAB_UPW.md (superseded, diverged) |
 | AQS-EQP-FC-001 | `docs-authority/FUEL_CELL_EQUIPMENT.md` | C | 2026-10-01 | Fuel-cell equipment list | canonical |
-| AQS-EQP-FC-001 | `docs-authority/process/FUEL_CELL_EQUIPMENT.md` | C | 2026-10-01 | Fuel-cell equipment list | mirror of docs-authority/FUEL_CELL_EQUIPMENT.md (identical) |
 | AQS-EQP-FRM-001 | `docs-authority/FARM_EQUIPMENT.md` | C | 2026-10-01 | Farm equipment / process list | canonical |
-| AQS-EQP-FRM-001 | `docs-authority/process/FARM_EQUIPMENT.md` | B | 2026-09-27 | Farm equipment / process list | mirror of docs-authority/FARM_EQUIPMENT.md (superseded, diverged) |
 | AQS-EQP-GEN-001 | `docs-authority/BACKUP_GEN_EQUIPMENT.md` | B | 2026-10-01 | Backup generator equipment list | canonical |
-| AQS-EQP-GEN-001 | `docs-authority/process/BACKUP_GEN_EQUIPMENT.md` | B | 2026-10-01 | Backup generator equipment list | mirror of docs-authority/BACKUP_GEN_EQUIPMENT.md (identical) |
 | AQS-EQP-GEO-001 | `docs-authority/GEOTHERMAL_EQUIPMENT.md` | C | 2026-10-01 | Geothermal equipment list | canonical |
-| AQS-EQP-GEO-001 | `docs-authority/process/GEOTHERMAL_EQUIPMENT.md` | A | 2026-09-27 | Geothermal equipment list | mirror of docs-authority/GEOTHERMAL_EQUIPMENT.md (superseded, diverged) |
 | AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | B | 2026-09-27 | Habitation water — equipment list | canonical |
-| AQS-EQP-HAB-001 | `docs-authority/process/HAB_WATER.md` | B | 2026-09-27 | Habitation water — equipment list | mirror of docs-authority/HAB_WATER.md (identical) |
 | AQS-EQP-MEOH-001 | `docs-authority/MEOH_EQUIPMENT.md` | A | 2026-10-01 | Methanol train equipment list | canonical |
-| AQS-EQP-MEOH-001 | `docs-authority/process/MEOH_EQUIPMENT.md` | A | 2026-10-01 | Methanol train equipment list | mirror of docs-authority/MEOH_EQUIPMENT.md (identical) |
 | AQS-EQP-MFG-001 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | C | 2026-09-28 | MFG shop equipment list | canonical |
-| AQS-EQP-MFG-001 | `docs-authority/process/MFG_SHOP_EQUIPMENT.md` | B | 2026-09-28 | MFG shop equipment list | mirror of docs-authority/MFG_SHOP_EQUIPMENT.md (superseded, diverged) |
 | AQS-EQP-MFG-MET-001 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | D | 2026-10-01 | Metal-forming equipment list | canonical |
-| AQS-EQP-MFG-MET-001 | `docs-authority/process/METAL_FORMING_EQUIPMENT.md` | D | 2026-10-01 | Metal-forming equipment list | mirror of docs-authority/METAL_FORMING_EQUIPMENT.md (identical) |
 | AQS-EQP-NUT-001 | `docs-authority/NUTRIENT_DOSE.md` | B | 2026-09-27 | Nutrient dose / N-P process list | canonical |
-| AQS-EQP-NUT-001 | `docs-authority/process/NUTRIENT_DOSE.md` | B | 2026-09-27 | Nutrient dose / N-P process list | mirror of docs-authority/NUTRIENT_DOSE.md (identical) |
 | AQS-EQP-STUDY-001 | `docs-authority/STUDY_UNITS_STUB.md` | F | 2026-10-01 | Study / deferred units — VCD·remin, ORC, litho, solar, blow-mold, electrode coat | canonical |
 | AQS-EQP-VENT-001 | `docs-authority/VENT_SCRUB_EQUIPMENT.md` | B | 2026-10-01 | Vent / scrub / regenerator equipment stubs | canonical |
-| AQS-EQP-VENT-001 | `docs-authority/process/VENT_SCRUB_EQUIPMENT.md` | A | 2026-09-28 | Vent / scrub / regenerator equipment stubs | mirror of docs-authority/VENT_SCRUB_EQUIPMENT.md (superseded, diverged) |
 | AQS-ESS-001 | `docs-authority/ESS_DUTY_MATRIX.md` | B | 2026-10-01 | ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study) | canonical |
 | AQS-EW-MOD-001 | `docs-authority/EW_MODULE.md` | C | 2026-10-11 | Electrowinning module | canonical |
 | AQS-FC-001 | `docs-authority/FUEL_CELL.md` | B | 2026-10-01 | PEM fuel cell — plant H₂ / O₂ on Sol-Ark DC bus | canonical |
 | AQS-FLOW-GRAPH-001 | `flow_graph/LEGACY_PFD_SCRIPTS.md` | — | 2026-10-01 | Legacy PFD / SLD scripts vs flow-graph renders | annex |
 | AQS-FLOW-GRAPH-001 | `flow_graph/README.md` | — | 2026-10-01 | Plant flow graph — sole typed authority | canonical |
-| AQS-FOAM-001 | `docs-authority/CUT_LIST.md` | A | 2026-09-27 | Foam EW cascade — cut list | canonical |
-| AQS-FOAM-001 | `models/openscad/foam_ew/CUT_LIST.md` | A | 2026-09-27 | Foam EW cascade — cut list | mirror of docs-authority/CUT_LIST.md (identical) |
+| AQS-FOAM-001 | `models/openscad/foam_ew/CUT_LIST.md` | A | 2026-09-27 | Foam EW cascade — cut list | canonical |
 | AQS-FONT-001 | `docs-authority/FONTS.md` | Basic issue | 2026-09-26 | Fonts for 3D sign glyphs | canonical |
 | AQS-FURN-001 | `docs-authority/FURNACE.md` | C | 2026-10-11 | Induction furnace module | canonical |
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Basic issue | 2026-09-27 | Scrubber chemistry | canonical |

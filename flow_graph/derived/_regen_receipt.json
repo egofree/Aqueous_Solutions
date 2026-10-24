@@ -1,7 +1,7 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "graph_sha256": "8e7e76ae4e55666687fdb47f76bff542b9ba1cdc5e7c8ef41d92ab183ef1104c",
+ "graph_sha256": "12f1602c68d17412533f22795ad93fda886036438e350e4de3736333dec9a70e",
  "converged": true,
  "stages": [
   {
@@ -221,6 +221,10 @@
    "status": "ok"
   },
   {
+   "name": "sector_definitions",
+   "status": "ok"
+  },
+  {
    "name": "design_check",
    "status": "ok"
   },
@@ -251,6 +255,7 @@
   "docs-authority/MODEL_WORKBOOK.xlsx",
   "docs-authority/ONE_LINE.json",
   "docs-authority/ONE_LINE.md",
+  "docs-authority/SECTOR_DEFINITIONS.md",
   "docs-authority/SUPPORTS.md",
   "docs-authority/TASK_PLAN.md",
   "docs-authority/duties/*.md",

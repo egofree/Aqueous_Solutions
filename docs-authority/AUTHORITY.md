@@ -79,13 +79,13 @@ Free continuous roof dump is not design intent (AQS-VENT-001).
 Mass-flow claim status: `docs-authority/MASS_FLOW.md` (AQS-MF-001 Rev I).
 Vent / stack closure authority: `docs-authority/VENT_CLOSURE.md` (**AQS-VENT-001**) —
 former outdoor dumps → scrub+regen or CRYO; equipment stubs
-`docs-authority/process/VENT_SCRUB_EQUIPMENT.md` (AQS-EQP-VENT-001).
+`docs-authority/VENT_SCRUB_EQUIPMENT.md` (AQS-EQP-VENT-001).
 Parametric scale: `docs-authority/SCALE_MODEL.md` (AQS-SCALE-001 Rev C) — subordinate growth rules for bays, cassettes, life plates, tanks, electrical modules, overflow terraces. On-disk plant baseline is `SCALE_M = 1.0` (M1).
 Scale-down → unreclaimed map: `docs-authority/SCALE_DOWN_UNRECLAIMED.md` (**AQS-SCALE-UR-001** Rev C) — SCALE_M / sector/module offs → `stream_id` / Sector Definition `unreclaimed_resource` gaps; solver `design_tool/.../solver/scale_down_map.py`. Subordinate to AQS-SCALE-001 and AQS-UI-001 §3.2.
 Surplus study pass thresholds: `docs-authority/SURPLUS_PASS_THRESHOLDS.md` (**AQS-SUR-001** Rev B) — food/water/goods/energy numeric study bars; solver `pass_study`.
 ESS duty matrix: `docs-authority/ESS_DUTY_MATRIX.md` (**AQS-ESS-001** Rev B) — ZnBr₂ / MeOH / hydro study duties + H₂ contention; hydro≪ZnBr₂ energy mismatch documented.
 Self-copy critical-path BOM: `docs-authority/SELF_COPY_BOM.md` (**AQS-BOM-SC-001** Rev D) — Partial; litho/blow/electrode required for MVS; open studies ST-* queued (not accepted unreclaimed).
-Study/deferred units: `cad/process/STUDY_UNITS_STUB.md` (**AQS-EQP-STUDY-001** Rev F) — first-principles + plan study queue toward MVS; sandbox tracks progress.
+Study/deferred units: `docs-authority/STUDY_UNITS_STUB.md` (**AQS-EQP-STUDY-001** Rev F) — first-principles + plan study queue toward MVS; sandbox tracks progress.
 Equipment mfr/model gaps + commercial interim→OSS policy: `planning/UNIT_EQUIPMENT_SPEC_GAP.md` (**AQS-EQ-GAP-001**) — planning-only; not mirrored to share.
 Terrace landscape / irrigation: `docs-authority/TERRACE_LANDSCAPE.md` (AQS-TRR-001) — subordinate to AQS-SCALE-001 massing and AQS-WTR-001 clean-water rules.
 
@@ -112,11 +112,11 @@ Electrical hub identity: `ELECTRICAL.md` (**AQS-ELC-001**).
 MeOH DMFC remains deferred (AQS-FC-001).
 
 Design-tool architecture: `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` (**AQS-UI-001** Rev D) — Sector Definitions; MVS = self-sustaining colony + closed loops + surplus export; all three ESS peers required; unreclaimed-resource gaps; **typed plant graph sole topology authority** (`flow_graph/` / AQS-FLOW-GRAPH-001); `candidate_mvs` fold or projection (**unify_then_reshape**); schematic-first **graph-layer** UI (React+SVG); matplotlib optional exporters only; modular CERN-OHL-S export; Odysseus not in UI runtime; Phase D **FreeCAD rebuild bias** (Three.js only with written decision). Does not overwrite MVS. **P0+P1 scaffold code:** `design_tool/` (+ `web/`). Flow-graph topology via `flow_graph_adapter`; sandboxes merge graph units/streams; never mvs_equivalent from topology alone. Planning completion plan AQS-PLAN-UI-001 **Rev N** (A′ unify → B′ layer UI → C export-from-graph→GitHub → D → E); stack re-eval `planning/STACK_REEVAL_2026-10-01.md` (planning-only). **WP-Ap1…Ap3 done**; **WP-Bp1…Bp4 done**; **WP-C1 done** (local pfd/sld/bom from graph; matplotlib optional). A′/B′ exit Yes; **C2/C3 blocked** pending GitHub publish authorize (C2 not started). Plan Rev R.
-Sector Definitions catalogue: `docs-authority/SECTOR_DEFINITIONS.md` (**AQS-SEC-001** Rev G) — every plant `sector_id` → exactly one AQS-UI-001 §3.1 class; `required_for_mvs_closure` (ZNBR2/MEOH/PUMPED_HYDRO all true); aliases in §4.1. Class list remains owned by AQS-UI-001 §3.1.
+Sector Definitions catalogue: `docs-authority/SECTOR_DEFINITIONS.md` (**AQS-SEC-001**, generated from the graph's `mvs.sectors` by `docs-authority/_sector_definitions.py`) — every plant `sector_id` → exactly one AQS-UI-001 §3.1 class, with its MVS-closure flag, ESS peers, retired ids and aliases. Class list remains owned by AQS-UI-001 §3.1.
 
 Egress study annex: `docs-authority/EGRESS_CALC.md` (**AQS-EGR-001**).
 ASME vessel / B31.3 class templates: `docs-authority/ASME_CLASS_SHEETS.md` (**AQS-ASM-001**).
 Life MEP Phase D: `docs-authority/LIFE_MEP.md` (**AQS-MEP-001**).
-Solar-cell schedule: `docs-authority/process/SOLAR_CELL_EQUIPMENT.md` (**AQS-EQP-FAB-PV-001** Rev B) — PFD AQS-PFD-FAB-PV-001; FreeCAD `PV_*` east-strip envelopes.
+Solar-cell schedule: `docs-authority/SOLAR_CELL_EQUIPMENT.md` (**AQS-EQP-FAB-PV-001** Rev B) — PFD AQS-PFD-FAB-PV-001; FreeCAD `PV_*` east-strip envelopes.
 Optional GH envelopes: `docs-authority/GREENHOUSE_ENVELOPE.md` (**AQS-TRR-GH-001** Rev B) — `GH_ENV_*` / `GH_AHU` / `GH_IRRIG_HDR` / `GH_DOOR_AIRLOCK` in `building_stack.py`.
 CRYO VJ line envelopes: AQS-ASM-001 §6 tags `VJ_001`…`VJ_005` in `freecad/cryo.py` (not fabricator isos; MAWP/WPS still open).

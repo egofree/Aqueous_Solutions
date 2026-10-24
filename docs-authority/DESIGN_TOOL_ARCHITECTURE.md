@@ -1,8 +1,8 @@
 # Design-tool architecture — Aqueous MVS sandbox
 
 Document number: AQS-UI-001  
-Revision: D  
-Date: 2026-10-01  
+Revision: F  
+Date: 2026-10-24  
 Authority: AQS-AUTH-001; style AQS-DOC-001; scale AQS-SCALE-001
 (`SCALE_M = 1.0`); streams AQS-STR-001; mass-flow AQS-MF-001;
 compliance themes AQS-CMP-001; flow graph AQS-FLOW-GRAPH-001;
@@ -17,6 +17,7 @@ plan AQS-PLAN-UI-001 Rev N (`unify_then_reshape`).
 | C | Colony MVS + all ESS | MVS = self-sustaining colony (manufacture, habit, self-copy, scale); all three ESS peers required; disabled ESS → unreclaimed-resource / incomplete-closure gaps | 2026-10-01 |
 | D | unify_then_reshape | Typed plant graph = sole topology authority; fold/project `candidate_mvs`; matplotlib demoted to optional exporters; roadmap A′→B′→C→D→E; 3D FreeCAD bias (Three.js only with written decision); Odysseus out of runtime; stack re-eval `planning/STACK_REEVAL_2026-10-01.md` | 2026-10-01 |
 | E | Unified-engine wiring | Working UI on the unified parametric system: read-only `/system-tree`, `/params`, `/regen-status` endpoints; ParamsPanel / TreeTogglePanel / RegenStatusBadge; four-level sandbox toggles (sector/system/subsystem/unit) resolving most-specific-wins server-side; regen receipt as the provenance the badge reads (commits eedb79f, d44e7de, 5024743) | 2026-10-19 |
+| F | Sector names | Header revision brought in line with this table (it still said D). Examples use graph Rev AC sector ids (AQS-SEC-001 Rev H): DIGESTER for WET; PV_ARRAY, ZNBR2 and BACKUP_GEN are units in ELEC. No architecture change. | 2026-10-24 |
 
 Licence: **CERN-OHL-S-2.0** for CAD, MVS model, authority docs, design-tool UI, and public/cloud surfaces. Full freedom of information — no separate UI/cloud licence.
 
@@ -75,7 +76,7 @@ layout.
 | **Energy Production (Electrical)** | Source (generation); may be intermittent | Solar PV |
 | **Energy Production (Combustion Engine)** | Source when fuelled; load on fuel / oxidizer streams | Backup H₂ genset |
 | **Energy Production (Electrochemical)** | Source when reactants available | PEM FC; IEM MeOH FC |
-| **Process (Mass transform)** | Transforms streams; usually a load electrically | WET, OIL, GLASS, FAB wet, MFG |
+| **Process (Mass transform)** | Transforms streams; usually a load electrically | DIGESTER, OIL, GLASS, FOUNDRY, POLYMERS, FAB, MFG |
 | **Life support / habitat** | Load + export opportunity (food, water, waste return) | HAB, FARM |
 | **Utility / header** | Distributes; rarely a net source | CRYO cold-box, HVAC/geo Q4, headers |
 | **Export / dock** | Boundary sink or source for surplus goods / freight | North dock, freight elevator |
@@ -178,7 +179,7 @@ site
 | Level | Examples (locked names stay names) |
 |---|---|
 | Site | One campus; `SITE_LAT` input |
-| Area / sector | WET, OIL, GLASS, CRYO, FAB, MFG, FARM, HAB, ELEC, TRR, MEOH, … |
+| Area / sector | The graph's `mvs.sectors` (AQS-SEC-001), for example DIGESTER, OIL, CRYO, FARM, ELEC, MEOH |
 | Unit | `LEACH_CSTR_1`, `EW_1`, `SOL_ARK_60K`, `ZNBR2`, `PUMPED_HYDRO` |
 | Equipment module | Cassette, PV string, ZnBr2 skid cell, dock bay |
 
@@ -350,20 +351,14 @@ normative intent through Rev D (topology authority = plant graph; schema version
   },
   "sectors": [
     {
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "sector_definition": "Process (Mass transform)",
       "enabled": true,
       "required_for_mvs_closure": true
     },
     {
-      "sector_id": "ELEC_PV",
-      "sector_definition": "Energy Production (Electrical)",
-      "enabled": true,
-      "required_for_mvs_closure": true
-    },
-    {
-      "sector_id": "ZNBR2",
-      "sector_definition": "Energy Storage System (Electrochemical)",
+      "sector_id": "ELEC",
+      "sector_definition": "Utility / header",
       "enabled": true,
       "required_for_mvs_closure": true
     },
@@ -378,18 +373,12 @@ normative intent through Rev D (topology authority = plant graph; schema version
       "sector_definition": "Energy Storage System (Gravity)",
       "enabled": true,
       "required_for_mvs_closure": true
-    },
-    {
-      "sector_id": "BACKUP_GEN",
-      "sector_definition": "Energy Production (Combustion Engine)",
-      "enabled": true,
-      "required_for_mvs_closure": false
     }
   ],
   "units": [
     {
       "unit_id": "LEACH_CSTR_1",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "class": "vessel",
       "tags": [],
       "params": { "V_m3": null },

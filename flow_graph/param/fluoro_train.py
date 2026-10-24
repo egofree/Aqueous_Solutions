@@ -101,9 +101,9 @@ def _mk(g, E, sid, a, b, ph, carries, v, why, layers=('mass',)):
         E[sid].update(from_unit_id=a, to_unit_id=b, presence='present', rate=rate(v, f'{why} | {TAG}.'))
     else:
         src = json.loads(json.dumps(E['F_RECOVER_TO_HF_GEN']))
-        sec = {n['unit_id']: (n.get('sector_id') or 'WET') for n in g['nodes']}
-        src.update(stream_id=sid, from_unit_id=a, to_unit_id=b, from_sector_id=sec.get(a, 'WET'),
-                   to_sector_id=sec.get(b, 'WET'), phase=ph, layers=list(layers), carries=carries,
+        sec = {n['unit_id']: (n.get('sector_id') or 'DIGESTER') for n in g['nodes']}
+        src.update(stream_id=sid, from_unit_id=a, to_unit_id=b, from_sector_id=sec.get(a, 'DIGESTER'),
+                   to_sector_id=sec.get(b, 'DIGESTER'), phase=ph, layers=list(layers), carries=carries,
                    presence='present', open_boundary=False,
                    notes=f'Created by the fluoropolymer train activation (Q-013 reopen; {AM}).')
         src['rate'] = rate(v, f'{why} | {TAG}.')

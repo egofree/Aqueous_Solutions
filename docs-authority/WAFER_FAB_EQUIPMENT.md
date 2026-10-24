@@ -105,7 +105,7 @@ out of this pass.
 polished wafers: alkaline texture (KOH) → POCl₃ emitter → SiNₓ ARC →
 Ag/Al contact → belt fire → IV test.
 
-**Equipment schedule:** `docs-authority/process/SOLAR_CELL_EQUIPMENT.md`
+**Equipment schedule:** `docs-authority/SOLAR_CELL_EQUIPMENT.md`
 (**AQS-EQP-FAB-PV-001** Rev A) — named PV_TEXTURE … PV_IV train.
 
 | Item | Status |
@@ -139,7 +139,7 @@ Mass rates: TBD (no invented balance this pass).
 ## 6. Wet-line reagent interface
 
 Dedicated synth forks and reagent map: **AQS-EQP-FAB-RGN-001**
-(`docs-authority/process/FAB_WET_REAGENTS.md`) and optional interface note
+(`docs-authority/FAB_WET_REAGENTS.md`) and optional interface note
 `docs-authority/FAB_WET_INTERFACE.md`. PFD: AQS-PFD-FAB-RGN-001.
 
 SEM-Tech / IEM membrane work remains **link-only**

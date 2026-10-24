@@ -1,199 +1,125 @@
 # Sector Definitions catalogue — plant sector_id map
 
 Document number: AQS-SEC-001  
-Revision: G  
-Date: 2026-10-01  
-Authority: AQS-AUTH-001; **class list owned by AQS-UI-001 Rev C §3.1**
-(`docs-authority/DESIGN_TOOL_ARCHITECTURE.md`); hierarchy examples AQS-UI-001 §3.5;
-scale AQS-SCALE-001 (`SCALE_M = 1.0` candidate MVS); streams AQS-STR-001;
-mass-flow AQS-MF-001; capacity study AQS-AUD-001; style AQS-DOC-001.  
-**Stage = catalogue lock.** Not FastAPI / JSON Schema code. Not a PE stamp.
+Revision: H  
+Date: 2026-10-24  
+Authority: generated from AQS-FLOW-GRAPH-001 `mvs.sectors` (graph Rev AC, 2026-10-17) and AQS-SYS-TREE-001 by `docs-authority/_sector_definitions.py`. Do not edit this page; change the graph, the system tree or `design_tool/aqs_design_tool/sector_definitions.py`, then run the pipeline. The Sector Definition class list is owned by AQS-UI-001 §3.1. Not a PE stamp.
 
-| Rev | Change | Description | Date |
-|---|---|---|---|
-| A | — | Census every known plant sector_id; map each to exactly one Sector Definition; MVS-closure flags | 2026-10-01 |
-| B | A2 decision closed; FAB and MFG required | Project decision 2026-10-01: goods surplus requires FAB and MFG; set both `required_for_mvs_closure` to true. | 2026-10-01 |
-| C | A3 decision closed; ESS ≥1 peer | Project decision 2026-10-01: electrical MVS requires ≥1 enabled ESS among ZNBR2 / MEOH / PUMPED_HYDRO; individual ESS peers stay `required_for_mvs_closure` false; all off → gap (do not claim closure). | 2026-10-01 |
-| D | A3 reframed; all three ESS in MVS | Project reframe 2026-10-01: MVS requires **all three** ESS peers (ZNBR2, MEOH, PUMPED_HYDRO) `required_for_mvs_closure: true`; redundancy is a core tenet; MeOH also feeds processes; sandbox off → unreclaimed-resource / incomplete-closure gaps (not accepted emissions). | 2026-10-01 |
-| E | A4–A9 catalogue defaults | Reasoned defaults for ELEC split, WTR, NUT, GEO, GAS, FUEL_CELL; operator-decision TBD only where truly ambiguous (none blocking). | 2026-10-01 |
-| F | Sector cross-use note | Boundaries organisational not absolute; missing-sector parts may live inside present sectors (Project decision 2026-10-01) | 2026-10-01 |
-| G | Framing | Cross-use ≠ accepted gap; open studies queued; sandbox tracks MVS progress | 2026-10-01 |
+| Rev | Change | Date |
+|---|---|---|
+| A–G | Hand-written catalogue and its ambiguity locks (A1–A9). Text in git history. | 2026-10-01 |
+| H | Generated from the graph after the Rev AC sector pivot: WET renamed DIGESTER; ELEC_PV, ZNBR2, BACKUP_GEN and FUEL_CELL became units in ELEC; TRR retired; FOUNDRY, POLYMERS and HEAT added. | 2026-10-24 |
 
-Licence: **CERN-OHL-S-2.0**.
-
-Canonical in this tree: `docs-authority/SECTOR_DEFINITIONS.md`  
----
+Licence: CERN-OHL-S-2.0.
 
 ## 1. Purpose
 
-Give the design-tool / MVS schema a single authority table that maps every
-known plant `sector_id` to **exactly one** Sector Definition from
-AQS-UI-001 §3.1, with `required_for_mvs_closure` and notes for dual-role
-blocks. Schema / solver workers **shall** reconcile typed fields to this
-table; they **shall not** add a tenth Sector Definition class without
-Project decision (see §5).
+Map every plant `sector_id` to exactly one Sector Definition, with its MVS-closure flag, so that the design tool, the solver and the documents use one sector list. The list is the graph's; this page only presents it. `flow_graph/test_doc_consistency.py` fails when the design-tool catalogue or the README sector table drifts from the graph.
 
----
+## 2. Sector Definition classes
 
-## 2. Scope
+Owned by AQS-UI-001 §3.1; do not add a class without a project decision. "In use" lists the sectors that currently carry the class.
 
-| In | Out |
+| Class | In use by |
 |---|---|
-| One row per known `sector_id` (locked CAD / PFD / audit names) | FastAPI, JSON Schema files, solver implementation |
-| Primary Sector Definition + optional secondary note | Rewriting AQS-UI-001 §3.1 class list |
-| `required_for_mvs_closure` = true / false / study | Vendor nameplates; PE / AHJ permits |
-| Alias / non-sector / TBD rows for orphans | Overwriting MVS gold; fabricating closure |
+| Energy Storage System (Gravity) | PUMPED_HYDRO |
+| Energy Storage System (Electrochemical) | MEOH |
+| Energy Production (Electrical) | — |
+| Energy Production (Combustion Engine) | — |
+| Energy Production (Electrochemical) | — |
+| Process (Mass transform) | DIGESTER, OIL, GLASS, POLYMERS, GAS, FAB, MFG, FOUNDRY, NUT |
+| Life support / habitat | FARM, HAB |
+| Utility / header | CRYO, WTR, ELEC, HEAT, GEO |
+| Export / dock | DOCK |
 
-Census sources (deduplicated): `freecad/params.py`, `freecad/plant_groups.py`,
-`SYSTEM_MODEL_PLAN.md`, `STREAM_REGISTER.md`, `BUILDING_STACK.md`,
-`MASS_FLOW.md`, local planning SECTOR_CAPACITY_AUDIT (not published), `CAMPUS_PLAN.md`,
-`ELECTRICAL.md`, `MEOH_TRAIN.md`, `FUEL_CELL.md`, `GEOTHERMAL_BACKUP.md`,
-`WATER_PURIFICATION.md`, `TERRACE_LANDSCAPE.md`, `SCALE_MODEL.md`,
-AQS-UI-001 §3.5 / §6 schema sketch, line PFDs under `pfd_scripts/`.
+## 3. Catalogue
 
----
+One row per graph sector, in graph order. `required` is `required_for_mvs_closure`. Units are counted from the graph nodes; trains are the first level of the system tree.
 
-## 3. Sector Definition class list (pointer only)
+| sector_id | Sector Definition | required | enabled | units | trains | notes (graph) |
+|---|---|---|---|---|---|---|
+| DIGESTER | Process (Mass transform) | true | true | 25 | ew-cascade-train, metals-leach-train | Leach / EW / BMED / polish; renamed from WET at the Rev AC sector pivot (AQS-SEC-001 lineage; first_principles_audit_2026-10-17 §sector definitions). 150 kg/d wet feed basis carried. |
+| OIL | Process (Mass transform) | true | true | 13 | pyro-fractionation-train | Organics / oil loop; AFTERBURNER → CRYO |
+| GLASS | Process (Mass transform) | true | true | 5 | glass-recycle-train | Silicate / ceramic; materials surplus path (AQS-SEC-001) |
+| POLYMERS | Process (Mass transform) | true | true | 10 | fluoropolymer-train, forming-train, polyolefin-train | Fluoropolymer synthesis, film, resins — Rev AC scope (HF_GEN/VDF_SYN/TFE_SYN/POLY_F/FILM_CAST/...). |
+| GAS | Process (Mass transform) | true | true | 10 | scrubbing-headers-train | Scrub / vent closure (AQS-VENT-001); secondary Utility |
+| FAB | Process (Mass transform) | true | true | 17 | litho-train, wafer-line-train, wet-reagent-train | Wafer / solar-cell fab + LITHO required for MVS (ST-LITHO-01/ST-SOLAR-01 until Present). Sandbox tracks progress toward MVS. |
+| MFG | Process (Mass transform) | true | true | 10 | tools-metal-forming-train | Shop + metal forming + BLOW_MOLD + ELECTRODE_COAT required for MVS (open studies ST-BLOW-01/ST-ELC-01 until Present). Sandbox tracks progress; not accepted sub-MVS. Cross-use OK (AQS-SEC-001 §3.1). |
+| FOUNDRY | Process (Mass transform) | true | true | 27 | form-train, investment-casting-train, melt-and-cast-train, pot-cell-train | Smelting pots, casting, forging, rolling — Rev AC scope (notes/FOUNDRY_SIZING.md); goods-surplus train with MFG/FAB (A2 lineage). |
+| NUT | Process (Mass transform) | true | true | 1 | dosing-train | Nutrient dose; [catalogue-proposed] sector (AQS-SEC-001) |
+| FARM | Life support / habitat | true | true | 2 | grow-bed-train | Grow beds; food surplus (CAD name FARM not FRM) |
+| HAB | Life support / habitat | true | true | 3 | life-support-train | Habitation / life support |
+| CRYO | Utility / header | true | true | 14 | cold-box-asu-recovery-train | Cold-box O2/N2/CO2/H2; not a generation class |
+| WTR | Utility / header | true | true | 8 | grey-black-train, potable-upw-train | Roof/catch/VCD/UPW (AQS-WTR-001); was WATER in early seed |
+| ELEC | Utility / header | true | true | 9 | distribution-train, generation-train, storage-train | Sol-Ark / ATS / RECT / MCC hub; PV_ARRAY, ZNBR2, BACKUP_GEN and FUEL_CELL are units here since the Rev AC sector pivot |
+| HEAT | Utility / header | false | true | 12 | ladder-train | Heat ladder batteries Q1-Q4 (AQS-HEAT-LADDER-001), Q4_BUS header, Q4 branches (HX-9/HX-10, ADS_CHILL, MAU_HX, DRY_COOLER per AQS-HEAT-STUDY-002). |
+| MEOH | Energy Storage System (Electrochemical) | true | true | 5 | synthesis-train | MeOH — required ESS peer in MVS; also feeds other processes (AQS-SEC-001 A1 secondary). Sandbox off → unreclaimed_resource. |
+| PUMPED_HYDRO | Energy Storage System (Gravity) | true | true | 1 | hydro-train | Roof–catch penstock — required ESS peer in MVS (redundancy). Sandbox off → unreclaimed_resource gap (AQS-SEC-001 Rev D). |
+| GEO | Utility / header | false | true | 4 | ground-loop-train | GEO HP→Q4; GEO_ORC heat→electric. Carnot study band issued; ST-ORC-01 survey queued before kW freeze. required_for_mvs_closure false until evidence (AQS-SEC-001 A7). |
+| DOCK | Export / dock | true | true | 2 | boundary-train | North dock / freight; surplus export boundary |
 
-**AQS-UI-001 Rev C §3.1 owns the class list.** This catalogue does not
-extend it. Classes:
+### 3.1 System tree descriptions
 
-1. Energy Storage System (Gravity)
-2. Energy Storage System (Electrochemical)
-3. Energy Production (Electrical)
-4. Energy Production (Combustion Engine)
-5. Energy Production (Electrochemical)
-6. Process (Mass transform)
-7. Life support / habitat
-8. Utility / header
-9. Export / dock
+| sector_id | Description (AQS-SYS-TREE-001) |
+|---|---|
+| DIGESTER | Process (Mass transform) — leach / EW / BMED / polish; 150 kg/d wet feed basis. |
+| OIL | Process (Mass transform) — organics / oil loop; afterburner to CRYO. |
+| GLASS | Process (Mass transform) — silicate / ceramic; materials surplus path. |
+| POLYMERS | Process (Mass transform) — fluoropolymer synthesis, polyolefin, form factors. |
+| GAS | Process (Mass transform) — scrub / vent closure; secondary Utility. |
+| FAB | Process (Mass transform) — wafer / solar-cell fab; litho required for MVS. |
+| MFG | Process (Mass transform) — shop, metal forming, blow mold, electrode coat. |
+| FOUNDRY | Process (Mass transform) — smelting pots, casting, forging, rolling (goods-surplus train with MFG/FAB). |
+| NUT | Process (Mass transform) — nutrient dose. |
+| FARM | Life support / habitat — grow beds; food surplus. |
+| HAB | Life support / habitat — habitation and life support. |
+| CRYO | Utility / header — cold-box O2/N2/CO2/H2; not a generation class. |
+| WTR | Utility / header — roof / catch / VCD / UPW / grey / black water. |
+| ELEC | Utility / header — Sol-Ark / ATS / RECT / MCC hub. |
+| HEAT | Utility / header — heat ladder batteries Q1-Q4, Q4_BUS, Q4 services. |
+| MEOH | Energy Storage System (Electrochemical) — MeOH ESS peer; also feeds processes. |
+| PUMPED_HYDRO | Energy Storage System (Gravity) — roof-catch penstock ESS peer. |
+| GEO | Utility / header — ground loop HP to Q4; ORC study. |
+| DOCK | Export / dock — north dock / freight; surplus export boundary. |
 
-Rules echoed from §3.1 / §3.2: any sector may be off in a sandbox with
-**gap / unclosed-stream flags** (missing required ESS → **unreclaimed-
-resource / incomplete-closure** language); MVS = self-sustaining colony
-+ closed loops **plus** surplus export (food, clean water, materials/
-goods, energy); **all three** ESS peers required in MVS; physical
-`SCALE_M` remains the layout driver.
+## 4. Energy storage peers
 
-### 3.1 Sector cross-use (Project decision 2026-10-01)
+MVS requires every ESS peer. Peers that are sectors: MEOH, PUMPED_HYDRO. Peers that are units inside a sector: ZNBR2 (ELEC). A sandbox may disable a peer; the solver then reports `unreclaimed_resource` for it and does not claim closure.
 
-Sector boundaries are **organisational, not absolute**. A design may host
-parts of a capability that “belongs” to a missing or deferred sector
-**inside** present sectors when physics and HSE allow — example: electrode
-coating (required for MVS) lives in **MFG** with MET substrates and may
-borrow FAB wet-bench practice without adding a new Sector Definition
-class. Catalogue rows still name a **primary** `sector_id` for toggles/gaps;
-UI / sandbox models combinations/footprints and **tracks progress toward
-MVS**. Missing capability inside a present sector is still an **open study
-queued in the plan** — not an accepted unreclaimed or sub-MVS endpoint.
-Document cross-use in unit notes / BOM.
+## 5. Retired sector ids
 
----
+Older documents and dated notes may use these names. Read them as the current sector shown.
 
-## 4. Catalogue table
-
-`required_for_mvs_closure`: **true** = gold MVS needs the sector (or an
-equivalent peer noted) to close loops and meet surplus; **false** =
-optional / peer redundancy (gaps flagged if referenced streams remain);
-**study** = architecture present but operator / evidence table still decides
-MVS inclusion.
-
-**ESS peer set (MVS — all three required):** ZNBR2, MEOH, and
-PUMPED_HYDRO are each `required_for_mvs_closure` = **true**. Project reframe
-2026-10-01 (A3 → Rev D): **redundancy is a core tenet**; MeOH also feeds
-other process streams. Sandbox **may** disable any peer; the design-tool /
-solver **shall** then emit gap reason `unreclaimed_resource` for **each**
-disabled required ESS (incomplete closure — **not** accepted pollution /
-emissions) and **shall not** claim electrical-storage or mass closure without evidence.
-
-Rows marked **[catalogue-proposed]** are stable strings chosen here to
-match plant names where AQS-UI-001 §6 sketch did not yet list them;
-schema worker **shall** reconcile IDs, not silently rename CAD units.
-
-| sector_id | Sector Definition | required_for_mvs_closure | Notes | Authority refs |
-|---|---|---|---|---|
-| WET | Process (Mass transform) | true | L-1 leach / EW / BMED / CRU / polish; 150 kg/d feed basis; primary mass recycle. | AQS-BLD-001; AQS-MF-001; AQS-AUD-001 §4.1; AQS-UI-001 §6 |
-| OIL | Process (Mass transform) | true | Dryer → pyro → frac → cuts; AFTERBURNER flue → CRYO (S67). Closes organics / oil loop. | AQS-STR-001; AQS-MF-001; AQS-VENT-001; SYSTEM_MODEL A3 |
-| GLASS | Process (Mass transform) | true | Rinse → burnout → mill → digest; silicate / ceramic products. Materials surplus path. | AQS-STR-001; SYSTEM_MODEL A4; AQS-AUD-001 |
-| GAS | Process (Mass transform) | true | Scrub / demister / baghouse / stacks; closes acid-gas and dust returns (S65–S66, S19). Secondary: Utility / header (HDR_*). **Rev E lock:** Process primary (A8). | AQS-VENT-001; AQS-EQP-VENT-001; FAN_STACK; AQS-AUD-001 §4.2 |
-| FAB | Process (Mass transform) | true | WAFER_FAB + UPW + WS_* reagents + solar-cell stub. Goods surplus path; wafers/d and UPW L/d TBD. Required by Project decision 2026-10-01 for MVS goods surplus. | AQS-EQP-FAB-001; AQS-EQP-FAB-UPW-001; AQS-EQP-FAB-RGN-001; AQS-AUD-001 §4.4 |
-| MFG | Process (Mass transform) | true | MFG_SHOP + polymer line + MET forming (S57–S63). Goods surplus path; kg/h TBD. Required by Project decision 2026-10-01 for MVS goods surplus. MET is **not** a separate sector_id. | AQS-EQP-MFG-001; AQS-MFG-MET-001; AQS-AUD-001 §4.5 |
-| NUT | Process (Mass transform) | true | NUTRIENT_DOSE / P-Al·Mg·Ca / BMED salts → farm (S07). Secondary: Life support / habitat (serves FARM). **Rev E lock:** keep as sector (A6). | AQS-EQP-NUT-001; AQS-AUD-001 §4.6; AQS-STR-001 |
-| FARM | Life support / habitat | true | Grow beds / fish / LED; food surplus (S14). CAD name `FARM` (not FRM). | AQS-LIFE-001; AQS-EQP-FRM-001; AQS-AUD-001 §4.7; AQS-UI-001 §3.1 |
-| HAB | Life support / habitat | true | Habitation / galley / sleep / grey-waste return; crew load driver. | AQS-LIFE-001; AQS-MEP-001; AQS-AUD-001 §4.8 |
-| CRYO | Utility / header | true | Cold box + product receivers (O₂/N₂/CO₂/H₂); S64 H₂ normal; S54–S56 / S70. Not a generation class. | AQS-CRY-002; AQS-EQP-CRY-001; AQS-VENT-001; AQS-UI-001 §3.1 |
-| WTR | Utility / header | true | Roof / catch tanks, VCD / remin / UPW polish, grey treat (AQS-WTR-001). Clean-water surplus + fab/hab water. **Rev E lock:** keep as sector (A5). | AQS-WTR-001; AQS-SCALE-001; AQS-AUD-001 §4.10 |
-| TRR | Utility / header | false | Terrace overflow / irrigation (S40–S42); optional GH envelopes. Event-driven surplus water; not required for loop closure. Secondary: Life support if enclosed GH enabled. | AQS-TRR-001; AQS-TRR-GH-001; AQS-UI-001 §3.5 |
-| ELEC | Utility / header | true | Sol-Ark / ATS / RECT / MCC / trays — electrical **distribution** hub. Distinct from ELEC_PV generation. **Rev E lock:** keep split (A4); reject composite POWER. | AQS-ELC-001; ELECTRICAL.md; FLOW_BATTERY.md; AQS-UI-001 §3.5 |
-| ELEC_PV | Energy Production (Electrical) | true | PV_ARRAY / ARRAY_ROOF; discrete `PV_COUNT`. Primary electrical source for match + energy surplus. | AQS-ELC-001; AQS-SCALE-001; AQS-UI-001 §3.1 / §6 |
-| ZNBR2 | Energy Storage System (Electrochemical) | true | ZnBr₂ flow battery + Br₂ scrub/regen (S69). **Required** ESS peer in MVS (redundancy). Sandbox off → gap `unreclaimed_resource` (incomplete closure). | FLOW_BATTERY.md; AQS-VENT-001; AQS-UI-001 §3.1 / §6 |
-| MEOH | Energy Storage System (Electrochemical) | true | MeOH store + IEM/DMFC path (S73–S82). **Required** ESS peer in MVS; also feeds other processes. Secondary: Process (Mass transform); Energy Production (Electrochemical) on MEOH_FC discharge. Sandbox off → `unreclaimed_resource`. Not a 10th class. | AQS-MeOH-001; AQS-EQP-MEOH-001; AQS-REQ-KW-001; AQS-UI-001 §3.1 |
-| PUMPED_HYDRO | Energy Storage System (Gravity) | true | Roof↔CATCH turbine-pump; side effect of water tower (AQS-BLD-001 §3). **Required** ESS peer in MVS (redundancy). Unit tag `HYDRO_SET` / hydro formula. Sandbox off → `unreclaimed_resource`. | AQS-BLD-001 §3; AQS-SCALE-001; AQS-AUD-001 §4.10; AQS-UI-001 §6 |
-| BACKUP_GEN | Energy Production (Combustion Engine) | false | H₂ genset on Sol-Ark GEN (S45/S47). Island / redundancy; not required if PV+ESS close electrical match. | AQS-PWR-001; AQS-EQP-GEN-001; AQS-REQ-KW-001; AQS-UI-001 §6 |
-| FUEL_CELL | Energy Production (Electrochemical) | false | PEM FC on BATT DC (S49–S53). ≠ BACKUP_GEN; ≠ MEOH_FC (MEOH sector). Optional generation peer. **Rev E lock:** own sector_id (A9). | AQS-FC-001; AQS-EQP-FC-001; ELECTRICAL.md |
-| GEO | Utility / header | study | GEO_GHEX / GEO_HP → Q4 (S43–S44). Secondary: Energy Production (Electrical) **only if** GEO_ORC (S48) enabled — ORC rating TBD (no unverified kW). | AQS-PWR-001; AQS-EQP-GEO-001; AQS-AUD-001 §10.4; [catalogue-proposed] |
-| DOCK | Export / dock | true | North dock + `ELEV_DOCK` pairs (`DOCK_COUNT = CASSETTE_COUNT`). Boundary for surplus goods / freight export. | AQS-SITE-001; AQS-BLD-001 §4; AQS-UI-001 §3.1 / §3.2 |
-
-### 4.1 Alias / non-sector rows (not toggleable sector_ids)
-
-| Name | Status | Notes | Authority refs |
+| Former id | Now | Since | Note |
 |---|---|---|---|
-| POWER | alias (composite) | Physical yard west of north dock. **Not** a sector_id — split into ELEC, ELEC_PV, ZNBR2, BACKUP_GEN, FUEL_CELL, GEO (and MEOH when sited in yard). Schema worker: reject `POWER` as sector_id or map→children. | AQS-AUD-001 §4.9; AQS-BLD-001; ELECTRICAL.md |
-| LIFE | alias (composite) | Narrative life plate — use FARM + HAB (+ WTR/TRR as listed). | AQS-BLD-001; AQS-LIFE-001 |
-| OIL_GLASS | alias (FreeCAD group) | `plant_groups.py` Process/Oil_Glass — catalogue keeps **OIL** and **GLASS** separate per AQS-UI-001 §3.5. | freecad/plant_groups.py |
-| FRM | alias | Audit shorthand → **FARM**. | AQS-AUD-001 |
-| CRY | alias | Audit shorthand → **CRYO**. | AQS-AUD-001 |
-| MET | folded | Metal forming under **MFG** (AQS-MFG-MET-001). | AQS-MFG-MET-001 |
-| SLINGSHOT | non-sector | Interface / legacy water-cycle decisions only; no envelope. Do not emit as sector_id. | AQS-AUD-001 §4.11; AQS-WTR-001; AQS-GAP-001 |
-| CORE | non-sector (building) | CORE_PROCESS / shafts / stairs — building distribution, not a mass–energy sector toggle. Shaft streams remain on owning process/utility sectors. | AQS-BLD-001; AQS-HSE-001 |
+| BACKUP_GEN | ELEC | graph Rev AC (2026-10-17) | the standby H2 genset is a unit in ELEC |
+| ELEC_PV | ELEC | graph Rev AC (2026-10-17) | PV_ARRAY is a unit in ELEC |
+| FUEL_CELL | ELEC | graph Rev AC (2026-10-17) | the PEM fuel cell is a unit in ELEC |
+| TRR | retired | 2026-10-18 | terrace irrigation retired with the TERRACE_IRRIG unit |
+| WET | DIGESTER | graph Rev AC (2026-10-17) | renamed; the same leach / EW / BMED / polish line |
+| ZNBR2 | ELEC | graph Rev AC (2026-10-17) | the flow battery is a unit in ELEC; still an ESS peer by unit (ESS_PEER_UNIT_IDS) |
 
----
+## 6. Aliases and non-sector names
 
-## 5. Ambiguities / catalogue locks (schema reconcile)
+Not sector ids. Reject them as `sector_id`; map them as shown.
 
-Do **not** add a 10th Sector Definition. Prefer deciding among existing
-nine classes or confirming the primary below.
-
-| # | Topic | Status (Rev E) | Decision / default | Blocking? |
-|---|---|---|---|---|
-| A1 | MEOH dual role | **Closed** | Keep primary ESS (Electrochemical); synth/FC Notes secondary. | No |
-| A2 | FAB / MFG MVS required | **Closed — true** | Project decision 2026-10-01: both required for goods surplus. | No |
-| A3 | ESS required set | **Closed — all three** | Project Rev D: ZNBR2/MEOH/PUMPED_HYDRO each required; off → unreclaimed. | No |
-| A4 | ELEC vs ELEC_PV | **Locked default** | **Keep split:** ELEC = Utility/header (distribution hub); ELEC_PV = Energy Production (Electrical). Rationale: toggles/gaps and electrical match need generation distinct from bus. Schema shall reject composite `POWER`. Operator TBD only if a future UI forces a single switch — not required now. | No |
-| A5 | WTR sector | **Locked default** | **Keep WTR** as Utility/header sector_id. Rationale: clean-tower / VCD / UPW / surplus-water ontology is shared across HAB+FAB+SCALE tanks; folding hides WTR-off unreclaimed on S01/S21–S23/S40. [catalogue-proposed] tag retired as ambiguity. | No |
-| A6 | NUT vs FARM | **Locked default** | **Keep NUT** as Process (Mass transform) sector. Rationale: dose chemistry (S07) is mass-transform of BMED salts ≠ life plate; FARM-off and NUT-off must flag different unreclaimed streams. | No |
-| A7 | GEO primary | **Study — default retained** | Primary remains **Utility / header** (GEO_HP→Q4) until ORC rated. `required_for_mvs_closure: study` / seed false. If GEO_ORC ships with issued kW, the project may re-primary to Energy Production (Electrical) or keep Utility + secondary note — **operator-decision TBD** only at that evidence gate. | Study (ORC TBD) |
-| A8 | GAS vs Utility | **Locked default** | Primary **Process (Mass transform)** — scrub transforms liquor/gas (S65–S66, S19). Secondary Utility/header note retained. | No |
-| A9 | FUEL_CELL sector | **Locked default** | **Own sector_id** (AQS-FC-001 Present). Rationale: optional generation peer toggles/gaps distinct from ELEC hub and from MEOH_FC. `required_for_mvs_closure: false`. | No |
-
----
-
-## 6. Census summary
-
-| Metric | Count |
+| Name | Meaning |
 |---|---|
-| Mapped sector_id rows (§4) | **21** |
-| Alias / non-sector rows (§4.1) | **8** |
-| `required_for_mvs_closure` = true | **17** — WET, OIL, GLASS, GAS, FAB, MFG, NUT, FARM, HAB, CRYO, WTR, ELEC, ELEC_PV, ZNBR2, MEOH, PUMPED_HYDRO, DOCK |
-| = false | **3** — TRR, BACKUP_GEN, FUEL_CELL |
-| = study | **1** — GEO |
-| [catalogue-proposed] IDs (Rev E defaults locked) | NUT, WTR, ELEC (hub split), FUEL_CELL kept; GEO remains study |
-
----
+| CORE | building shafts — not a sector toggle |
+| CRY | alias → CRYO |
+| FRM | alias → FARM |
+| LIFE | composite → FARM + HAB (+ WTR) |
+| MET | folded under MFG |
+| OIL_GLASS | FreeCAD group → OIL + GLASS |
+| POWER | composite → ELEC (PV / ZNBR2 / FC / genset units) + GEO, MEOH |
+| SLINGSHOT | non-sector interface |
+| WATER | legacy seed id → WTR (AQS-SEC-001) |
 
 ## 7. Related documents
 
 | Doc | ID | Role |
 |---|---|---|
-| DESIGN_TOOL_ARCHITECTURE.md | AQS-UI-001 Rev C | **Owns** Sector Definition class list §3.1; colony MVS + ESS redundancy rules |
-| AUTHORITY.md | AQS-AUTH-001 | Hub pointer |
-| Local planning (not published): SECTOR_CAPACITY_AUDIT | AQS-AUD-001 | Footprint / throughput study at SCALE_M=1.0 |
-| STREAM_REGISTER.md | AQS-STR-001 | Inter-block `S##` |
-| MASS_FLOW.md | AQS-MF-001 | Closed-loop claims |
-| SCALE_MODEL.md | AQS-SCALE-001 | Growth / discrete jumps |
-| BUILDING_STACK.md | AQS-BLD-001 | Levels / masses / dock |
-| MeOH_TRAIN.md | AQS-MeOH-001 | MEOH ESS / process peer |
-| FUEL_CELL.md | AQS-FC-001 | PEM path |
-| GEOTHERMAL_BACKUP.md | AQS-PWR-001 | GEO + BACKUP_GEN |
-| ELECTRICAL.md | AQS-ELC-001 | Hub / PV / ZnBr2 / GEN / FC interconnect |
-| DOCUMENTATION_STYLE.md | AQS-DOC-001 | House style |
+| `flow_graph/plant_flow_graph.json` | AQS-FLOW-GRAPH-001 | Sole topology authority; `mvs.sectors` is the sector list |
+| `flow_graph/system_tree.yaml` | AQS-SYS-TREE-001 | Sector → train → unit decomposition |
+| [DESIGN_TOOL_ARCHITECTURE.md](DESIGN_TOOL_ARCHITECTURE.md) | AQS-UI-001 | Owns the Sector Definition class list (§3.1) |
+| [GLOSSARY.md](GLOSSARY.md) | — | Sector and unit terms |

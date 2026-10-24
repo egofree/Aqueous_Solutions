@@ -216,7 +216,7 @@ surplus reporting, and electrical match hooks.
 | Doc | Role |
 |---|---|
 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` (**AQS-UI-001** Rev C) | Architecture lock — colony MVS §3.2, schema §6, API §7, Sector Definitions §3.1 |
-| `docs-authority/SECTOR_DEFINITIONS.md` (**AQS-SEC-001** Rev D) | Authoritative `sector_id` map — reconciled into `sector_definitions.py` / seed |
+| `docs-authority/SECTOR_DEFINITIONS.md` (**AQS-SEC-001**, generated from the graph) | Authoritative `sector_id` map — reconciled into `sector_definitions.py` / seed |
 | `docs-authority/STREAM_REGISTER.md` (**AQS-STR-001**) | `stream_id` / `S##` seed |
 | `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md` (**AQS-REQ-KW-001**) | Electrical continuous-kW study inputs |
 | `models/freecad/params.py` | `SCALE_M = 1.0` electrical module counts |
@@ -335,7 +335,7 @@ streams. Surplus-export goal retained.
   as `study`/`authority` (not treated as closed balances).
 - Surplus values now study-computed vs **AQS-SUR-001** thresholds; `pass_study` may be true while freeze of AQS-MVS-001 remains open.
 - Self-copy checklist flags on `mvs_criteria.self_copy` (Partial).
-- Sector catalogue is **AQS-SEC-001** Rev E (`docs-authority/SECTOR_DEFINITIONS.md`).
+- Sector catalogue is **AQS-SEC-001** (`docs-authority/SECTOR_DEFINITIONS.md`), generated from the graph's `mvs.sectors`.
 - Candidate MVS ≠ frozen `AQS-MVS-001` gold file.
 - PFD/SLD/BOM export modules done (graph-driven); pack `3d/` + presence filter done; GitHub pack publish not started.
 

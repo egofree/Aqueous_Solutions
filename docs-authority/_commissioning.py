@@ -21,7 +21,10 @@ for e in g['edges']:
     for s, x in (e.get('composition') or {}).items():
         if x and x > 0.001 and s != 'water': reag[b].add(s)
         if s in ('H2', 'O2') and x and x > 0.01: gas.add(b)
-ORDER = ['ELEC', 'ELEC_PV', 'ZNBR2', 'BACKUP_GEN', 'FUEL_CELL', 'PUMPED_HYDRO', 'WTR', 'HEAT', 'GAS', 'CRYO', 'GEO', 'WET', 'MEOH', 'OIL', 'GLASS', 'NUT', 'TRR', 'FARM', 'HAB', 'MFG', 'FAB', 'DOCK']
+ORDER = ['ELEC', 'PUMPED_HYDRO', 'WTR', 'HEAT', 'GAS', 'CRYO', 'GEO', 'DIGESTER', 'MEOH', 'OIL', 'GLASS', 'NUT', 'FARM', 'HAB', 'MFG', 'FAB', 'DOCK', 'FOUNDRY', 'POLYMERS']
+# Every graph sector must have a place in the order: fail loudly instead of sorting an unknown sector last.
+_missing = sorted({s['sector_id'] for s in json.load(open('flow_graph/plant_flow_graph.json'))['mvs']['sectors']} - set(ORDER))
+if _missing: raise SystemExit(f'_commissioning.py: graph sectors without a commissioning position: {_missing}')
 def ptest(u):
     p = f'models/units/{u}/itp.csv'
     if not os.path.exists(p): return 'fill or function test per AQS-QA-001 R8'

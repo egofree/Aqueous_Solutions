@@ -66,7 +66,7 @@ share. No SCALE_M change; no FreeCAD rebuild; no git commit. Fab forge→cut + r
 
 
 Completed 2026-09-27 **farm / terrace landscape** pass (Rev J): expanded
-`docs-authority/process/FARM_EQUIPMENT.md` (AQS-EQP-FRM-001 Rev B) and
+`docs-authority/FARM_EQUIPMENT.md` (AQS-EQP-FRM-001 Rev B) and
 `NUTRIENT_DOSE.md` (Rev B); new `docs-authority/TERRACE_LANDSCAPE.md` (AQS-TRR-001)
 with open-terrace vs enclosed-greenhouse climate decision rule and
 justified water source (S40 clean overflow primary; S21 makeup;
@@ -77,7 +77,7 @@ No SCALE_M change; no FreeCAD rebuild; no git commit. FreeCAD bed /
 greenhouse solids listed as follow-up.
 
 Completed 2026-09-27 **fab forge→cut + wet reagent forks** pass (Rev I):
-expanded `docs-authority/process/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001 Rev B)
+expanded `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001 Rev B)
 ordered CZ train (cool/anneal → crop/grind → wire/ID saw → edge →
 lap/CMP → clean → PREP/BENCH/TOOL); **CZ recommended**, FBR alternate
 stub; new `FAB_WET_REAGENTS.md` (AQS-EQP-FAB-RGN-001) with issued WS_*
@@ -107,7 +107,7 @@ S43–S48; electrical_sld + campus/building POWER callouts; optional
 plant FreeCAD rebuild; no git commit.
 
 Completed 2026-09-28 **PEM fuel cell** pass (Rev M): new
-`docs-authority/FUEL_CELL.md` (AQS-FC-001); `process/FUEL_CELL_EQUIPMENT.md`
+`docs-authority/FUEL_CELL.md` (AQS-FC-001); `FUEL_CELL_EQUIPMENT.md`
 (AQS-EQP-FC-001); PFD `fuel_cell_pfd.py` (AQS-PFD-FC-001); chemistry =
 PEM on plant H₂ + O₂ (MeOH DMFC deferred); FC on Sol-Ark **BATT DC** via
 FC_DCDC (≠ BACKUP_GEN GEN port); heat → Q4 via FC_HX_Q4; streams
@@ -117,7 +117,7 @@ item 3 updates; `electrical_yard.py` FC envelope stubs. SCALE_M left
 **1.0**. No plant.FCStd rebuild; no git commit. kW nameplate TBD.
 
 Completed 2026-09-28 **CRYO cold-box internals** pass (Rev N): new
-`docs-authority/CRYO_COLD_BOX.md` (AQS-CRY-002); `process/CRYO_EQUIPMENT.md` Rev C
+`docs-authority/CRYO_COLD_BOX.md` (AQS-CRY-002); `CRYO_EQUIPMENT.md` Rev C
 with Stirling / DIST_COL_* / REBOILER_COND / COMP_EXPAND / MOL_SIEVE /
 HEPA / CRYO_HX_Q4 / CRYO_DED_COOL / CRYO_AHU tags; regenerated
 `cryo_pfd.py` (AQS-PFD-CRY-001) showing internals + Q4/HVAC + GEN/FC/S24
@@ -127,7 +127,7 @@ Present/Partial. SCALE_M left **1.0**. No plant.FCStd rebuild; no git
 commit. Duties / holdup kg TBD.
 
 Completed 2026-09-28 **MFG metal forming** pass (Rev O): new
-`docs-authority/METAL_FORMING.md` (AQS-MFG-MET-001); `process/METAL_FORMING_EQUIPMENT.md`
+`docs-authority/METAL_FORMING.md` (AQS-MFG-MET-001); `METAL_FORMING_EQUIPMENT.md`
 (AQS-EQP-MFG-MET-001); PFD `metal_forming_pfd.py` (AQS-PFD-MFG-MET-001);
 path = MET_MELT (electric induction) → WIRE_DRAW / COLD_MILL / GAS_ATOMIZER;
 MET_MELT ≠ INDUCTION_PYROLYZER; dedicated MET_AHU (no HAB return); Q4 via
@@ -157,7 +157,7 @@ next. No git commit.
 
 
 Completed 2026-09-28 **vent / stack closure** pass (Rev R): new
-`docs-authority/VENT_CLOSURE.md` (AQS-VENT-001 Rev A) + `process/VENT_SCRUB_EQUIPMENT.md`
+`docs-authority/VENT_CLOSURE.md` (AQS-VENT-001 Rev A) + `VENT_SCRUB_EQUIPMENT.md`
 (AQS-EQP-VENT-001); owner lock — none of S24 / acid-gas / afterburner /
 Br₂ / S56 / S62 are “open by intent”; each → scrub+regen or CRYO.
 STREAM_REGISTER / MASS_FLOW **Rev I** (S64–S72); SECTOR_CAPACITY_AUDIT

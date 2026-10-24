@@ -1,8 +1,8 @@
 # Surplus pass thresholds — study freeze criteria (MVS)
 
 Document number: AQS-SUR-001  
-Revision: B  
-Date: 2026-10-01  
+Revision: C  
+Date: 2026-10-24  
 Authority: AQS-AUTH-001; MVS criteria AQS-UI-001 Rev C §3.2 / §11.1 item 2;
 capacity study AQS-AUD-001 §11–12; scale AQS-SCALE-001; electrical
 AQS-REQ-KW-001 / AQS-ELC-001; sector map AQS-SEC-001; streams AQS-STR-001;
@@ -16,6 +16,7 @@ Project locks berth count, SITE_LAT, and wafer starts.
 |---|---|---|---|
 | A | — | First numeric study pass thresholds for food / water / goods / energy | 2026-10-01 |
 | B | 1 | Seed upper-band FARM path (S14=4.2) so food pass_study can clear ≥0.5 bar | 2026-10-01 |
+| C | 2 | Sector names to graph Rev AC (AQS-SEC-001 Rev H): WET → DIGESTER, ELEC_PV → PV_ARRAY in ELEC. No threshold changed. | 2026-10-24 |
 
 Licence: **CERN-OHL-S-2.0**.
 
@@ -39,7 +40,7 @@ Self-sustainment alone is insufficient (AQS-UI-001 §3.2).
 | In | Out |
 |---|---|
 | Study min export / headroom for food, clean water, goods, energy at SCALE_M=1, crew=4 | Issued berth count; SITE_LAT insolation map; vendor nameplates |
-| Solver wiring from FARM / WTR / WET+MFG+FAB / ELEC_PV | Claiming `loops_closed=true` or frozen MVS |
+| Solver wiring from FARM / WTR / DIGESTER+MFG+FAB / PV_ARRAY (ELEC) | Claiming `loops_closed=true` or frozen MVS |
 
 ---
 
@@ -66,7 +67,7 @@ Self-sustainment alone is insufficient (AQS-UI-001 §3.2).
 |---|---|---|---|---|
 | **food** | kg/d | **≥ 0.5** export-capable after crew ration | `max(0, S14_rate − crew×0.6)` vs threshold; S14X study = same residual | Mid production 2.8 − 2.4 crew = 0.4; floor **0.5** requires upper-band or yield improvement — **study bar**, not freeze |
 | **clean_water** | L/d (kg/d ≈) | **≥ 50** export-capable above internal demand | Internal demand study = potable 130 + farm mid 95 + fab mid 60 ≈ **285 L/d**; roof inventory ≫ demand; pass if makeup/inventory headroom ≥ 50 L/d **and** WTR enabled | AQS-AUD-001 §11; S40 remains event-driven (no continuous L/d invent) |
-| **materials_or_goods** | kg/d | **≥ 5.0** export-capable | Mid plated metals share exportable (~0.25× mid metals) + polymer continuous-equiv mid + glass stub; seed uses study **8 kg/d** envelope when WET+MFG+FAB+GLASS on | Goods surplus requires FAB+MFG (A2); magnitudes study |
+| **materials_or_goods** | kg/d | **≥ 5.0** export-capable | Mid plated metals share exportable (~0.25× mid metals) + polymer continuous-equiv mid + glass stub; seed uses study **8 kg/d** envelope when DIGESTER+MFG+FAB+GLASS on | Goods surplus requires FAB+MFG (A2); magnitudes study |
 | **energy** | kWh/d | **≥ 20** study export headroom | `(target_kw − need_kw) × study_sun_h` with sun_h=4 → (70−50)×4 = **80** kWh/d gross; pass ≥ **20** | STC ≠ continuous; SITE_LAT null → insolation **unknown** — threshold is study only |
 
 **Pass language:** solver reports `surplus.<key>.value` (study) and

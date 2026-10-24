@@ -197,5 +197,5 @@ python3 mass_flow_pfd.py
 python3 vent_closure_pfd.py
 ```
 
-Share: `docs-authority/MEOH_TRAIN.md`, `process/MEOH_EQUIPMENT.md`,
+Share: `docs-authority/MEOH_TRAIN.md`, `MEOH_EQUIPMENT.md`,
 `pfd/scripts/meoh_train_pfd.py`, `pfd/images/meoh_train_pfd.png`.

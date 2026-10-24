@@ -95,4 +95,4 @@ Br₂ / ZnBr2 stay outdoor.
 
 ## 7. Sync
 
-Canonical in this tree: `docs-authority/process/SOLAR_CELL_EQUIPMENT.md`  
+Canonical in this tree: `docs-authority/SOLAR_CELL_EQUIPMENT.md`  

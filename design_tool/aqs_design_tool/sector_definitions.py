@@ -2,8 +2,11 @@
 # Copyright 2026 Mike Matthews.
 """Sector Definition taxonomy — AQS-UI-001 Rev C §3.1 + AQS-SEC-001 catalogue.
 
-Authoritative plant ``sector_id`` map: ``cad/SECTOR_DEFINITIONS.md``
-(**AQS-SEC-001** Rev E). Class list remains owned by AQS-UI-001 §3.1.
+The graph's ``mvs.sectors`` is the authority for sector ids. This module mirrors
+it for the design tool (``flow_graph/test_doc_consistency.py`` fails on drift)
+and holds the retired and alias names. ``docs-authority/SECTOR_DEFINITIONS.md``
+(AQS-SEC-001) is generated from both by ``docs-authority/_sector_definitions.py``.
+Class list remains owned by AQS-UI-001 §3.1.
 
 Project locks (2026-10-01):
 - FAB and MFG ``required_for_mvs_closure=true`` for goods surplus (A2 closed).
@@ -38,7 +41,7 @@ class SectorDefinition(str, Enum):
 # Aliases rejected as sector_id (AQS-SEC-001 §4.1)
 NON_SECTOR_ALIASES = {
     "POWER": "composite → ELEC (PV / ZNBR2 / FC / genset units) + GEO, MEOH",
-    "LIFE": "composite → FARM + HAB (+ WTR/TRR)",
+    "LIFE": "composite → FARM + HAB (+ WTR)",
     "OIL_GLASS": "FreeCAD group → OIL + GLASS",
     "FRM": "alias → FARM",
     "CRY": "alias → CRYO",
@@ -46,6 +49,23 @@ NON_SECTOR_ALIASES = {
     "SLINGSHOT": "non-sector interface",
     "CORE": "building shafts — not a sector toggle",
     "WATER": "legacy seed id → WTR (AQS-SEC-001)",
+}
+
+# Sector ids that existed in earlier graph revisions and are no longer sectors.
+# ``now`` lists the current sector(s) holding their units (empty when retired outright).
+RETIRED_SECTOR_IDS = {
+    "WET": {"now": ["DIGESTER"], "when": "graph Rev AC (2026-10-17)",
+            "note": "renamed; the same leach / EW / BMED / polish line"},
+    "ELEC_PV": {"now": ["ELEC"], "when": "graph Rev AC (2026-10-17)",
+                "note": "PV_ARRAY is a unit in ELEC"},
+    "ZNBR2": {"now": ["ELEC"], "when": "graph Rev AC (2026-10-17)",
+              "note": "the flow battery is a unit in ELEC; still an ESS peer by unit (ESS_PEER_UNIT_IDS)"},
+    "BACKUP_GEN": {"now": ["ELEC"], "when": "graph Rev AC (2026-10-17)",
+                   "note": "the standby H2 genset is a unit in ELEC"},
+    "FUEL_CELL": {"now": ["ELEC"], "when": "graph Rev AC (2026-10-17)",
+                  "note": "the PEM fuel cell is a unit in ELEC"},
+    "TRR": {"now": [], "when": "2026-10-18",
+            "note": "terrace irrigation retired with the TERRACE_IRRIG unit"},
 }
 
 

@@ -557,7 +557,7 @@ def _surplus_stub(model: MvsModel) -> dict[str, SurplusItem]:
     goods_val = None
     goods_pass = None
     goods_note = "DIGESTER/MFG off — materials gap."
-    if "WET" in enabled or "MFG" in enabled:
+    if "DIGESTER" in enabled or "WET" in enabled or "MFG" in enabled:
         s08 = rates.get("S08")
         if s08 is not None:
             goods_val = 0.25 * float(s08) + (12.0 if "MFG" in enabled else 0.0)

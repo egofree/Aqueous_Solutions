@@ -43,7 +43,7 @@ identifiers used throughout.
 | [nozzles/](nozzles/) | Per-unit nozzle schedules (generated) |
 | [pid/](pid/) | Unit P&ID sheets (generated) |
 | [iso/](iso/) | Piping isometric sheets (generated) |
-| [process/](process/) | Equipment lists carried over from the earlier process documents; several now duplicate files in this folder, which take precedence |
+| [process/](process/) | Retired: its copies of equipment lists were removed; the current lists are in this folder ([process/README.md](process/README.md)) |
 | [fab/](fab/) | Per-unit fabrication routes |
 | [inventory/](inventory/) | Building-block inventories (motors, wire, pipe, parts) |
 | [drawings/](drawings/) | Drawing sheets (SVG) |
@@ -63,7 +63,7 @@ The documents that explain how the design is organised and where its numbers com
 |---|---|---|
 | [AUTHORITY.md](AUTHORITY.md) | AQS-AUTH-001 | CAD authority lock |
 | [PARAMETRIC_MODEL.md](PARAMETRIC_MODEL.md) | AQS-PAR-001 | Parametric model |
-| [SECTOR_DEFINITIONS.md](SECTOR_DEFINITIONS.md) | AQS-SEC-001 | Sector Definitions catalogue — plant sector_id map |
+| [SECTOR_DEFINITIONS.md](SECTOR_DEFINITIONS.md) | AQS-SEC-001 | Sector Definitions catalogue — plant sector_id map (generated from the graph) |
 | [STREAM_REGISTER.md](STREAM_REGISTER.md) | AQS-STR-001 | Stream register — inter-block only |
 | [GLOSSARY.md](GLOSSARY.md) | AQS-DUTY-008 | Glossary |
 | [DOC_REGISTER.md](DOC_REGISTER.md) | AQS-REG-001 | Document number register |
@@ -133,8 +133,8 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [EW_MODULE.md](EW_MODULE.md) | AQS-EW-MOD-001 | Electrowinning module |
 | [RECT_EW.md](RECT_EW.md) | AQS-ELEC-004 | EW rectifier sizing (RECT-EW) |
 | [BUSBAR.md](BUSBAR.md) | AQS-BUS-001 | Rectifier bus |
-| [CUT_LIST.md](CUT_LIST.md) | AQS-FOAM-001 | Foam EW cascade — cut list |
-| [DECISIONS.md](DECISIONS.md) | - | Decisions — foam-board EW cascade |
+| [CUT_LIST.md](../models/openscad/foam_ew/CUT_LIST.md) | AQS-FOAM-001 | Foam EW cascade — cut list (generated in `models/openscad/foam_ew/`) |
+| [DECISIONS.md](../models/openscad/foam_ew/DECISIONS.md) | - | Decisions — foam-board EW cascade (in `models/openscad/foam_ew/`) |
 | [INTERNALS.md](INTERNALS.md) | AQS-DSN-INT-001 | Unit internals register |
 | [ELECTRODE_FAB.md](ELECTRODE_FAB.md) | AQS-MFG-ELC-001 | Electrode fabrication / coating — architecture (in scope) |
 | [OXIDIZER_REAGENTS.md](OXIDIZER_REAGENTS.md) | AQS-DSN-OX-001 | Nitric acid and hydrogen peroxide systems |

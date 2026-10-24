@@ -399,6 +399,8 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {HEAT -- Utility sector: heat-ladder batteries Q1–Q4, Q4_BUS and Q4 services (AQS-HEAT-LADDER-001).}
 
+{MEOH -- Energy storage sector (electrochemical): methanol synthesis, store and the MEOH_FC fuel cell. An ESS peer; also feeds other processes.}
+
 {PUMPED_HYDRO -- Energy storage sector (gravity): roof reservoir to catch tank through a penstock turbine-pump. One of the three ESS peers.}
 
 {OIL -- Process sector: dryer → pyro → fractionator hydrocarbon cuts; afterburner flue to CRYO.}
@@ -421,11 +423,11 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {WTR -- Utility sector: roof/catch tanks, VCD / REMIN / UPW polish, grey treat (AQS-WTR-001).}
 
-{TRR -- Utility sector: terrace overflow / irrigation; optional greenhouse envelopes. Not required for loop closure.}
+{TRR -- Former utility sector for terrace overflow / irrigation, retired 2026-10-18 with the TERRACE_IRRIG unit. AQS-TRR-001 keeps its document number.}
 
-{ELEC -- Utility sector: Sol-Ark / ATS / RECT / MCC distribution hub. Distinct from ELEC_PV.}
+{ELEC -- Utility sector: Sol-Ark / ATS / RECT / MCC distribution hub, plus the PV array, the ZnBr2 flow battery, the standby genset and the fuel cell as units since graph Rev AC.}
 
-{ELEC_PV -- Energy Production (Electrical): PV array / roof array generation.}
+{ELEC_PV -- Former sector for PV generation; since graph Rev AC the PV_ARRAY unit sits in ELEC. Panel and PLC tags such as LP-ELEC_PV keep the old name.}
 
 {GEO -- Utility sector (study): ground heat exchanger and heat pump to Q4; optional GEO_ORC electric stub.}
 
@@ -489,9 +491,9 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {IEM -- Ion-exchange membrane. Generic SEM-Tech membrane family (CEM/AEM style) used on EW, BMED, ZnBr₂, and MeOH FC paths.}
 
-{FC -- Fuel cell. Sector FUEL_CELL (PEM) or MEOH_FC discharge; electrical offtake to BATT DC, not GEN.}
+{FC -- Fuel cell. The FUEL_CELL unit (PEM, in ELEC) or MEOH_FC discharge; electrical offtake to BATT DC, not GEN.}
 
-{PV -- Photovoltaic. Roof/yard array generation (ELEC_PV).}
+{PV -- Photovoltaic. Roof/yard array generation (PV_ARRAY, in ELEC).}
 
 {ATS -- Automatic transfer switch. Selects utility vs Sol-Ark LOAD for plant main; service bypass path.}
 

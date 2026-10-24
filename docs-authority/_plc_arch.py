@@ -8,7 +8,7 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sy
 from flow_graph.param.refs import cite
 for k in ('IEC62439_2', 'IEC61131_3', 'IEC61131_2', 'NFPA72_2022'): cite(k)
 SPARE, CH, W_MOD, W_CPU = 0.20, 16, 2.0, 12.0
-CRIT = {'HAB', 'WTR', 'CRYO', 'FUEL_CELL', 'PUMPED_HYDRO', 'ELEC', 'ELEC_PV', 'ZNBR2', 'BACKUP_GEN', 'GAS', 'FARM', 'NUT', 'GEO'}
+CRIT = {'HAB', 'WTR', 'CRYO', 'PUMPED_HYDRO', 'ELEC', 'GAS', 'FARM', 'NUT', 'GEO'}   # PV, ZnBr2, genset and fuel cell are ELEC units since graph Rev AC
 io = collections.defaultdict(collections.Counter)
 for r in csv.DictReader(open('docs-authority/inventory/INSTRUMENT_INDEX.csv')): io[r['sector']]['AI' if 'AI' in r['signal'] else 'DI'] += 1
 MAP = {'PLC digital I/O point': 'DI', 'motor starter (contactor + overload)': 'DO', 'compressor contactor + overload': 'DO', 'solenoid driver channel': 'DO', 'variable-frequency drive': 'AO', 'BLDC driver': 'BUS', 'stepper driver': 'BUS'}

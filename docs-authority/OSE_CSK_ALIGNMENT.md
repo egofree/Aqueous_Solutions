@@ -1,8 +1,8 @@
 # OSE Civilization Starter Kit — Aqueous alignment map
 
 Document number: AQS-REF-CSK-001  
-Revision: A  
-Date: 2026-10-01  
+Revision: B  
+Date: 2026-10-24  
 Authority: AQS-SEC-001 (`SECTOR_DEFINITIONS.md`); AQS-EQP-MFG-001;
 AQS-EQP-MFG-MET-001; AQS-EQP-FRM-001; AQS-EQP-FAB-001; AQS-BOM-SC-001;
 AQS-EQP-STUDY-001; `DEPENDENCIES.md`.  
@@ -11,6 +11,7 @@ Style: AQS-DOC-001.
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | Initial CSK / GVCS → Aqueous sector and unit mapping | 2026-10-01 |
+| B | Sector names | Sector names to graph Rev AC (AQS-SEC-001 Rev H): WET → DIGESTER; ELEC_PV → PV_ARRAY in ELEC; BACKUP_GEN is a unit in ELEC; TRR retired, so outdoor farm machinery maps to "external". No candidate status changed. | 2026-10-24 |
 
 Licence: CERN-OHL-S-2.0. This document is an Aqueous alignment study; it does
 not redistribute OSE content and does not claim OSE endorsement.
@@ -82,10 +83,10 @@ noted.
 
 | GVCS machine | Candidate Aqueous sector / role | Status | Notes / authority |
 |---|---|---|---|
-| Tractor / Microtractor | TRR / external farm (not L1 FARM plate) | candidate | No tractor unit in flow_graph. |
-| Seeder / Spader / Soil Pulverizer / Rototiller | TRR / external soil prep | candidate | Indoor GROW_BED ≠ field tillage. |
-| Hay Rake / Hay Cutter / Baler / Microcombine | TRR / external forage | candidate | Out of indoor FARM scope. |
-| Trencher | Site utilities / TRR | candidate | — |
+| Tractor / Microtractor | External farm (not L1 FARM plate) | candidate | No tractor unit in flow_graph. |
+| Seeder / Spader / Soil Pulverizer / Rototiller | External soil prep | candidate | Indoor GROW_BED ≠ field tillage. |
+| Hay Rake / Hay Cutter / Baler / Microcombine | External forage | candidate | Out of indoor FARM scope. |
+| Trencher | Site utilities | candidate | — |
 | Well-Drilling Rig | WTR source development | candidate | WTR authority is roof/catch/VCD/UPW (AQS-WTR-001); well path not issued. |
 | Bakery Oven | HAB galley | candidate | HAB fit-out narrative; no bakery unit tag. |
 | Dairy Milker | FARM livestock (optional) | candidate | Present FARM is fish + grow beds; dairy not issued. |
@@ -112,7 +113,7 @@ noted.
 | 3D Scanner | MFG / FAB metrology | candidate | — |
 | CNC Circuit Mill | FAB PCB / electronics assist | candidate | Distinct from `WAFER_FAB` / `LITHO_STUB` (semiconductor path). |
 | Chipper Hammermill | OIL / GLASS size reduction | candidate | Oil/glass have own mills; OSE chipper not mapped to a unit_id. |
-| Aluminum Extractor | WET electrowin / PROD_METALS | already covered | Conceptual overlap with leach–EW metals path; not an OSE aluminum-from-clay Present unit. |
+| Aluminum Extractor | DIGESTER electrowin / PROD_METALS | already covered | Conceptual overlap with leach–EW metals path; not an OSE aluminum-from-clay Present unit. |
 
 ---
 
@@ -125,8 +126,8 @@ noted.
 | Electric Motor Generator | ELEC rotating machine | candidate | — |
 | Hydraulic Motor | ELEC / MFG actuator peer | candidate | — |
 | Universal Power Supply | ELEC distribution | candidate | Overlaps ELEC hub role conceptually only. |
-| Solar Concentrator | ELEC_PV / thermal study | candidate | Campus PV is flat-plate class (ELEC_PV); concentrator not issued. |
-| Wind Turbine | Energy Production (Electrical) peer | candidate | No wind sector_id; ELEC_PV is the Present generation primary. |
+| Solar Concentrator | PV_ARRAY (ELEC) / thermal study | candidate | Campus PV is flat-plate class (PV_ARRAY in ELEC); concentrator not issued. |
+| Wind Turbine | Energy Production (Electrical) peer | candidate | No wind sector_id or unit; PV_ARRAY (ELEC) is the Present generation primary. |
 | Gasifier Burner | OIL pyro / thermal | study | Oil train exists; gasifier-as-OSE-machine not a named study unit. |
 | Steam Engine / Steam Generator | BACKUP_GEN class peer | candidate | Present backup is H₂ genset (AQS-EQP-GEN-001), not steam. |
 | Pelletizer | OIL / MFG densification | candidate | — |
@@ -138,7 +139,7 @@ noted.
 
 | GVCS machine | Candidate Aqueous sector / role | Status | Notes / authority |
 |---|---|---|---|
-| Aluminum Extractor | WET (see §7) | already covered | Conceptual metals path only. |
+| Aluminum Extractor | DIGESTER (see §7) | already covered | Conceptual metals path only. |
 | Bioplastic Extruder | MFG (see §7) | already covered | — |
 | Car / Truck | DOCK logistics / site mobility | candidate | Outside process mass–energy units. |
 
@@ -153,7 +154,7 @@ noted.
 | AQS-EQP-FRM-001 / AQS-EQP-NUT-001 | FARM is aquaponic; Agriculture-class GVCS mostly external. |
 | AQS-EQP-FAB-001 / AQS-EQP-STUDY-001 (`LITHO_STUB`, `SOLAR_PV_CELL`) | Electronics/PV paths; CNC Circuit Mill remains candidate only. |
 | AQS-BOM-SC-001 | Self-copy RepRap path cites MFG polymer + CNC massing; OSE is upstream reference, not BOM substitute. |
-| AQS-SEC-001 sector table | MFG, FAB, FARM, HAB, WTR, ELEC, ELEC_PV, OIL, GLASS, WET, DOCK, BACKUP_GEN as above. |
+| AQS-SEC-001 sector table | MFG, FAB, FOUNDRY, FARM, HAB, WTR, ELEC (with PV_ARRAY and BACKUP_GEN), OIL, GLASS, DIGESTER, DOCK as above. |
 
 ---
 

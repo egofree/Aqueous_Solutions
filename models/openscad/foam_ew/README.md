@@ -21,3 +21,7 @@ python3 generate.py
 
 Buy **two** 4×8 × 6 mm sheets. Change `SCALE` or `T` only in `params.py`
 and `params.scad`, then rerun the generator.
+
+This folder is the only copy. `generate.py` writes `CUT_LIST.md` and
+`cut_list.csv` here. Copies that used to sit in `docs-authority/` and `tables/`
+were removed on 2026-10-24; they are in git history.
