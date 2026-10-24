@@ -9,7 +9,7 @@ ns=runpy.run_path('docs-authority/_line_list.py'); C=ns['C']; rows=ns['rows']
 seed=json.load(open('flow_graph/placement_seed.json')); D=seed['datums_mm']
 def lvl(z): return min(D,key=lambda k:abs(z-D[k]) if z>=D[k] else 1e9)
 RACK=3200
-MINRISE=300   # mm, X-PIP-04 minimum riser / expansion offset (A-M-127)
+MINRISE=300   # mm, X-PIP-06 minimum riser / expansion offset (A-M-127)
 out=["""# Isometric route data
 
 Document number: AQS-ISO-001
@@ -27,7 +27,7 @@ for r in rows:
     a,b=C.get(r[1]),C.get(r[2])
     if not a or not b: miss+=1; continue
     (x1,y1,z1),(x2,y2,z2)=a[0],b[0]
-    zr=max(D[lvl(z1)]+RACK,max(z1,z2)+MINRISE)   # X-PIP-04: risers at least MINRISE so each route has a flexible leg
+    zr=max(D[lvl(z1)]+RACK,max(z1,z2)+MINRISE)   # X-PIP-06: risers at least MINRISE so each route has a flexible leg
     legs=[zr-z1,x2-x1,y2-y1,z2-zr]
     L=sum(abs(v) for v in legs)/1000; el=max(sum(1 for v in legs if abs(v)>1)-1,0)
     tab.append(f"| {r[0]} | {r[3]} | {r[4]} | {r[1]} | {r[2]} | {legs[0]:.0f} | {legs[1]:.0f} | {legs[2]:.0f} | {legs[3]:.0f} | {L:.1f} | {el} |")

@@ -229,6 +229,10 @@
    "status": "ok"
   },
   {
+   "name": "doc_register",
+   "status": "ok"
+  },
+  {
    "name": "rev_stamp",
    "status": "ok"
   }
@@ -244,6 +248,7 @@
   "docs-authority/COLLECTION_BUS.md",
   "docs-authority/DERIVED_REVISIONS.md",
   "docs-authority/DESIGN_CHECK.md",
+  "docs-authority/DOC_REGISTER.md",
   "docs-authority/DRAWING_REGISTER.md",
   "docs-authority/HAZ_AREA.md",
   "docs-authority/INSULATION_SCHEDULE.md",

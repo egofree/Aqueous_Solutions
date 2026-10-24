@@ -1001,6 +1001,33 @@
    "note": "QA independent recomputation (AQS-QA-002) moved into the DAG 2026-10-21: the record was a one-shotStudy and its QC-01/QC-05 rows were stale versus the live graph; regenerated every run so the design-check gate can never drift from the board again. The docstring says run last - placed before rev_stamp, which stamps it."
   },
   {
+   "name": "doc_register",
+   "argv": [
+    "python3",
+    "docs-authority/_doc_register.py"
+   ],
+   "depends_on": [
+    "duty_basis",
+    "iso_sheets",
+    "derived_excerpts",
+    "loop_closure",
+    "candidate_mvs",
+    "regen_derived",
+    "task_plan",
+    "model_workbook",
+    "assumptions_register",
+    "drawings",
+    "sector_definitions",
+    "design_check"
+   ],
+   "outputs": [
+    "docs-authority/DOC_REGISTER.md"
+   ],
+   "note": "AQS-REG-001 document register, generated from every tracked page's own Document number / Former number lines. Runs after every page-writing stage so it lists their current revision and date; --check fails on a duplicate or missing number.",
+   "writes_graph": false,
+   "quick": false
+  },
+  {
    "name": "rev_stamp",
    "argv": [
     "python3",
@@ -1020,7 +1047,8 @@
     "model_workbook",
     "assumptions_register",
     "drawings",
-    "sector_definitions"
+    "sector_definitions",
+    "doc_register"
    ],
    "writes_graph": false,
    "quick": false,

@@ -122,4 +122,4 @@ Not sector ids. Reject them as `sector_id`; map them as shown.
 | `flow_graph/plant_flow_graph.json` | AQS-FLOW-GRAPH-001 | Sole topology authority; `mvs.sectors` is the sector list |
 | `flow_graph/system_tree.yaml` | AQS-SYS-TREE-001 | Sector → train → unit decomposition |
 | [DESIGN_TOOL_ARCHITECTURE.md](DESIGN_TOOL_ARCHITECTURE.md) | AQS-UI-001 | Owns the Sector Definition class list (§3.1) |
-| [GLOSSARY.md](GLOSSARY.md) | — | Sector and unit terms |
+| [GLOSSARY.md](GLOSSARY.md) | AQS-GLO-001 | Sector and unit terms |

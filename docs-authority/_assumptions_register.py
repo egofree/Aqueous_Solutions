@@ -51,6 +51,12 @@ for p in sorted(glob.glob('docs-authority/**/*.md', recursive=True)):
     for i, l in enumerate(open(p, errors='ignore'), 1):
         if 'ssumption' in l:
             scan.append(dict(id=hid('A-D-', f'{p}:{l.strip()}'), value='', units='', where=f'{p}:{i}', basis=l.strip()[:160].replace('|', '/'), task='see page'))
+# Scanned ids are content hashes; identical lines (repeated table headers on one page) would share an id.
+# Later repeats take a -2, -3 ... suffix in scan order, so every id is unique and stable while the page is.
+_seen = {}
+for s in scan:
+    n = _seen.get(s['id'], 0) + 1; _seen[s['id']] = n
+    if n > 1: s['id'] = f"{s['id']}-{n}"
 comp = json.load(open('docs-authority/assumptions_complete.json')) if os.path.exists('docs-authority/assumptions_complete.json') else {}
 byw = {x['where']: x for x in scan}
 for w, c in comp.items():

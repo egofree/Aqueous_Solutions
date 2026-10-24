@@ -1,5 +1,7 @@
 # ZnBr2 flow battery
 
+Document number: AQS-ESS-002  
+
 Sized to the Sol-Ark 60K-3P-480V battery window. Membranes are the same SEM Tech IEM family as the EW aisle (sulfonated / aminated PS–PVC on PP felt). This is a hybrid flow battery: energy lives in plated zinc plus stored bromine complex, not only in tank volume.
 
 `znbr2_flow_pfd.png` is the PFD.

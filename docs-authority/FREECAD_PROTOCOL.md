@@ -1,5 +1,7 @@
 # FreeCAD protocol — Aqueous wet line
 
+Document number: AQS-CAD-002  
+
 For any agent building or editing the 3D model. Read this before touching
 `models/freecad/` (or hub `cad/freecad/`). Process authority is `GLOSSARY.md`
 and related docs-authority equipment / process notes. This file is only how

@@ -1,5 +1,7 @@
 # Documentation style (practical application)
 
+Document number: AQS-DOC-002  
+
 Applies to engineering notes, sign schedules, handoffs, and new
 markdown in this repository. Not a claim of KSC or IET issuance.
 

@@ -1,5 +1,7 @@
 # Cathode size from the sheet
 
+Document number: AQS-DUTY-080  
+
 200 A/m2. 0.02844 kg/d per A as copper.
 
 EW_1: 59.87 kg/d, 2105 A, 10.53 m2, 21 plates of 0.6 x 0.42 m both sides.

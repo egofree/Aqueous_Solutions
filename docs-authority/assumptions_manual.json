@@ -1955,7 +1955,7 @@
  },
  {
   "id": "A-M-127",
-  "task": "X-PIP-04",
+  "task": "X-PIP-06",
   "needs_verification": true,
   "files": [
    "docs-authority/_iso_routes.py",

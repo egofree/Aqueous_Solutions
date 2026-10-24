@@ -41,6 +41,14 @@ map.
    regenerate. A list that must agree with the graph is generated from it or
    checked by a test, never kept in step by hand; enforce invariants with
    checks, not prose.
+8. **Identifiers are allocated, never reused.** A new page under
+   `docs-authority/` states `Document number:` in its first lines, using the
+   next free number from
+   `python3 docs-authority/_doc_register.py --next AQS-SERIES`. If a page is
+   renumbered, its old number stays on a `Former number:` line. The register
+   (`DOC_REGISTER.md`) is generated from these lines. Task, assumption,
+   open-question, unit and stream ids also take the next unused id. The tests
+   fail on a duplicate.
 
 ## Assumptions register
 

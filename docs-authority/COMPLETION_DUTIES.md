@@ -1,5 +1,7 @@
 # Completion duties
 
+Document number: AQS-DUTY-007  
+
 AQS-DUTY-007. Plant rate is the assumptions-sheet point: leach discharge 2 m³/h at 2 g/L dissolved metal. Concentrate to EW-1 is 0.17 m³/h at 20 g/L. Energy may be external. Mass in is waste or natural feedstock only.
 
 These units are parallel where the feeds differ. They are not a second electrowinning aisle.

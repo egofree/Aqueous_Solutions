@@ -14,7 +14,7 @@ BOLT = {15: (4, '1/2'), 20: (4, '1/2'), 25: (4, '1/2'), 32: (4, '1/2'), 40: (4, 
 MAT = {'P1': 'PVC-U Sch 80 ASTM D1785', 'P2': 'CPVC Sch 80 ASTM F441', 'P3': 'PVDF SDR 21 ISO 10931', 'P4': 'PP-H ISO 15494', 'P5': 'HDPE PE4710 DR 11 (ASTM D3035)', 'M1': '316L ASTM A312', 'M2': 'CS ASTM A106 Gr B', 'F1': 'FRP vinyl ester', 'G1': 'borosilicate 3.3'}
 JOINT = {'P1': 'solvent', 'P2': 'solvent', 'P3': 'fusion', 'P4': 'fusion', 'P5': 'fusion', 'M1': 'butt weld', 'M2': 'butt weld', 'F1': 'butt-and-strap', 'G1': 'coupling'}
 RACK = 3200
-MINRISE = 300   # mm, X-PIP-04 (A-M-127); os.makedirs('docs-authority/iso', exist_ok=True)
+MINRISE = 300   # mm, X-PIP-06 (A-M-127); os.makedirs('docs-authority/iso', exist_ok=True)
 def svg(name, legs, dn, cl, a, b, info):
     pts = [(0.0, 0.0, 0.0)]
     for k, v in zip('zxyz', legs):

@@ -1,6 +1,7 @@
 # Power
 
-Document number: AQS-PWR-002  
+Document number: AQS-PWR-001  
+Former number: AQS-PWR-002 (on this page 2026-10-17 to 2026-10-24 in error; AQS-PWR-002 is GEOTHERMAL_BACKUP.md)  
 Revision: A  
 Date: 2026-10-17  
 Authority: graph Rev AC. Not a PE stamp.  

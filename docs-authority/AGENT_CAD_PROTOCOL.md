@@ -1,5 +1,7 @@
 # Agent protocol — parametric PFD to CAD
 
+Document number: AQS-CAD-001  
+
 Audience: operators and automation that generate or edit process
 drawings and 3D CAD with the user. This file is design-agnostic: do not
 assume a plant type, tank size, CAD version, or licence from another

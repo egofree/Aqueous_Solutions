@@ -1,5 +1,7 @@
 # Glossary
 
+Document number: AQS-GLO-001  
+
 Locked names are in SMALL CAPS as they appear on the drawings. Do not invent synonyms.
 
 Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, design-tool UI, PFDs/MFD/EFD layers, sector taxonomy, and authority docs are listed here with expansion and plant role. No invented rates or nameplates.

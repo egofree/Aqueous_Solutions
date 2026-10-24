@@ -48,6 +48,14 @@ check in `pytest flow_graph/` or the pipeline, not with a sentence. Do not add
 fixed limits or fixed numbers to these rules; they would bind later work to
 values that are no longer true.
 
+Identifiers are allocated, not chosen. A new page states `Document number:` in
+its first lines, taking the next free number from
+`python3 docs-authority/_doc_register.py --next AQS-SERIES`; a renumbered page
+keeps its old number on a `Former number:` line. `DOC_REGISTER.md` is generated
+from those lines. Task, assumption, open-question, unit and stream ids take the
+next unused id in their sequence. `flow_graph/test_doc_numbers.py` fails on a
+duplicate or a missing number.
+
 ## Environment
 
 - STLs and FreeCAD files are stored with Git LFS. Run `git lfs pull` before CAD

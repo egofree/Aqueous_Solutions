@@ -1,7 +1,5 @@
 # Documentation map
 
-Document number: AQS-AUTH-001 (folder index)
-
 This folder holds the plant's authority documents and everything generated
 from the plant flow graph. Use this page to find your way in. The repository
 [README](../README.md) explains the project, the authority chain and how to run
@@ -66,7 +64,7 @@ The documents that explain how the design is organised and where its numbers com
 | [PARAMETRIC_MODEL.md](PARAMETRIC_MODEL.md) | AQS-PAR-001 | Parametric model |
 | [SECTOR_DEFINITIONS.md](SECTOR_DEFINITIONS.md) | AQS-SEC-001 | Sector Definitions catalogue — plant sector_id map (generated from the graph) |
 | [STREAM_REGISTER.md](STREAM_REGISTER.md) | AQS-STR-001 | Stream register — inter-block only |
-| [GLOSSARY.md](GLOSSARY.md) | AQS-DUTY-008 | Glossary |
+| [GLOSSARY.md](GLOSSARY.md) | AQS-GLO-001 | Glossary |
 | [DOC_REGISTER.md](DOC_REGISTER.md) | AQS-REG-001 | Document number register |
 | [ASSUMPTIONS_REGISTER.md](ASSUMPTIONS_REGISTER.md) | AQS-REG-002 | Assumptions register |
 | [OPEN_QUESTIONS.md](OPEN_QUESTIONS.md) | AQS-OQ-001 | Open questions |
@@ -77,14 +75,14 @@ The documents that explain how the design is organised and where its numbers com
 | Document | Number | Title |
 |---|---|---|
 | [AQS-STD-001.md](AQS-STD-001.md) | AQS-STD-001 | Unit duty standard |
-| [AQS-STD-002_CODE_BASIS.md](AQS-STD-002_CODE_BASIS.md) | AQS-STD-002 | Code basis |
+| [CODE_BASIS.md](CODE_BASIS.md) | AQS-STD-007 | Code basis |
 | [STANDARDS_BASIS.md](STANDARDS_BASIS.md) | AQS-STD-003 | Standards basis for the audit fixes |
 | [STANDARDS_LIST.md](STANDARDS_LIST.md) | AQS-STD-004 | Codes and standards list |
 | [COMPLIANCE_MATRIX.md](COMPLIANCE_MATRIX.md) | AQS-COMPL-001 | Compliance matrix — design intent vs code themes |
 | [PERMITS.md](PERMITS.md) | AQS-COD-002 | Permit list |
 | [SITE_BASIS.md](SITE_BASIS.md) | AQS-SITE-002 | Site basis — AQS-SITE-002 Rev A |
 | [FEED_ASSAY.md](FEED_ASSAY.md) | AQS-ASSAY-001 | Feed assay |
-| [ASSAY.md](ASSAY.md) | - | Assay |
+| [ASSAY.md](ASSAY.md) | AQS-ASSAY-002 | Assay |
 | [MATERIALS_STD.md](MATERIALS_STD.md) | AQS-STD-002 | Materials standard |
 | [MATERIALS_SEC3.md](MATERIALS_SEC3.md) | AQS-STD-006 | Duty section 3 material selections, batch issue (AQS-STD-006) |
 | [UNIT_MATERIALS.md](UNIT_MATERIALS.md) | AQS-STD-005 | Per-unit material selections (duty section 3 sweep) |
@@ -92,7 +90,7 @@ The documents that explain how the design is organised and where its numbers com
 | [ASME_CLASS_SHEETS.md](ASME_CLASS_SHEETS.md) | AQS-ASM-001 | ASME vessel inventory & B31.3 piping class sheets (templates) |
 | [H2_EMBRITTLEMENT_REVIEW.md](H2_EMBRITTLEMENT_REVIEW.md) | AQS-REV-H2-001 | Hydrogen embrittlement review |
 | [DOCUMENTATION_STYLE.md](DOCUMENTATION_STYLE.md) | AQS-DOC-001 | Documentation style — Aqueous house style |
-| [DOC_STYLE.md](DOC_STYLE.md) | AQS-DOC-001 | Documentation style (practical application) |
+| [DOC_STYLE.md](DOC_STYLE.md) | AQS-DOC-002 | Documentation style (practical application) |
 | [DRAWING_STANDARD.md](DRAWING_STANDARD.md) | AQS-DWG-001 | Drawing standard and title block |
 | [FONTS.md](FONTS.md) | AQS-FONT-001 | Fonts for 3D sign glyphs |
 
@@ -103,7 +101,7 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | Document | Number | Title |
 |---|---|---|
 | [BALANCE_RECONCILIATION.md](BALANCE_RECONCILIATION.md) | AQS-PAR-003 | Mass balance reconciliation |
-| [BALANCE_CLOSE.md](BALANCE_CLOSE.md) | AQS-DUTY-011 | Balance close |
+| [BALANCE_CLOSE.md](BALANCE_CLOSE.md) | AQS-DUTY-078 | Balance close |
 | [BALANCE_CLOSE_N.md](BALANCE_CLOSE_N.md) | AQS-DUTY-012 | Balance close, remaining nodes |
 | [REV_M_CLOSURE_DUTY.md](REV_M_CLOSURE_DUTY.md) | AQS-DUTY-011 | Rev M closure: node balances, chloride loop, heater ratings and Q4 sin |
 | [EDGE_RATING_DUTY.md](EDGE_RATING_DUTY.md) | AQS-DUTY-010 | Edge rating and node conservation |
@@ -113,10 +111,10 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [O2_SOURCE.md](O2_SOURCE.md) | AQS-PAR-005 | O2 source duty summary |
 | [O2_SOURCE_AUDIT.md](O2_SOURCE_AUDIT.md) | AQS-PAR-005A | O2 source study |
 | [CO2_HEADER_DUTY.md](CO2_HEADER_DUTY.md) | AQS-DUTY-009 | HDR_CO2 consumer duty |
-| [S83_S88.md](S83_S88.md) | AQS-DUTY-009 | S83–S88 endpoints |
+| [S83_S88.md](S83_S88.md) | AQS-DUTY-082 | S83–S88 endpoints |
 | [COMPLETION_DUTIES.md](COMPLETION_DUTIES.md) | AQS-DUTY-007 | Completion duties |
-| [DUTY_CALC.md](DUTY_CALC.md) | - | Duty calculation |
-| [CHECKS.md](CHECKS.md) | - | Cathode size from the sheet |
+| [DUTY_CALC.md](DUTY_CALC.md) | AQS-DUTY-081 | Duty calculation |
+| [CHECKS.md](CHECKS.md) | AQS-DUTY-080 | Cathode size from the sheet |
 | [PATHWAY_AUDIT.md](PATHWAY_AUDIT.md) | AQS-DUTY-024 | No placeholders |
 | [GRAPH_AUDIT.md](GRAPH_AUDIT.md) | AQS-AUD-GRAPH-001 | Graph audit |
 | [RESIZE_SWEEP.md](RESIZE_SWEEP.md) | AQS-PLAN-010 | Bounding-case resize sweep |
@@ -155,7 +153,7 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [CRYO_ASU.md](CRYO_ASU.md) | AQS-DUTY-018 | Cold box gas rate |
 | [CRYO_COLD_BOX.md](CRYO_COLD_BOX.md) | AQS-CRY-002 | Cryogenic cold-box internals — ALCRM |
 | [CRYO_EQUIPMENT.md](CRYO_EQUIPMENT.md) | AQS-EQP-CRY-001 | Cryo / ALCRM equipment list |
-| [COLD_BOX.md](COLD_BOX.md) | - | Cold box |
+| [COLD_BOX.md](COLD_BOX.md) | AQS-CRY-003 | Cold box |
 | [SIDE_CRYO.md](SIDE_CRYO.md) | AQS-SIDE-003 | Cold box module |
 
 ## Wafer fab, PV cells and fab utilities
@@ -197,13 +195,13 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 
 | Document | Number | Title |
 |---|---|---|
-| [POWER.md](POWER.md) | AQS-PWR-002 | Power |
+| [POWER.md](POWER.md) | AQS-PWR-001 | Power |
 | [POWER_SIZING.md](POWER_SIZING.md) | AQS-ELEC-007 | Storage and generation sizing |
 | [CONTINUOUS_KW_REQUIREMENTS.md](CONTINUOUS_KW_REQUIREMENTS.md) | AQS-REQ-KW-001 | Continuous kW requirements — GEN / FC / PECVD / belt fire / CRYO / M |
 | [ESS_DUTY_MATRIX.md](ESS_DUTY_MATRIX.md) | AQS-ESS-001 | ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study) |
-| [FLOW_BATTERY.md](FLOW_BATTERY.md) | AQS-VENT-001 | ZnBr2 flow battery |
+| [FLOW_BATTERY.md](FLOW_BATTERY.md) | AQS-ESS-002 | ZnBr2 flow battery |
 | [ZNBR2_STACK_TEST.md](ZNBR2_STACK_TEST.md) | AQS-TST-002 | ZNBR2 stack test |
-| [MEOH_TRAIN.md](MEOH_TRAIN.md) | AQS-M | Methanol train — diverse MeOH sources + IEM fuel cell (gap fill) |
+| [MEOH_TRAIN.md](MEOH_TRAIN.md) | AQS-MeOH-001 | Methanol train — diverse MeOH sources + IEM fuel cell (gap fill) |
 | [MEOH_EQUIPMENT.md](MEOH_EQUIPMENT.md) | AQS-EQP-MEOH-001 | Methanol train equipment list |
 | [FUEL_CELL.md](FUEL_CELL.md) | AQS-FC-001 | PEM fuel cell — plant H₂ / O₂ on Sol-Ark DC bus |
 | [FUEL_CELL_EQUIPMENT.md](FUEL_CELL_EQUIPMENT.md) | AQS-EQP-FC-001 | Fuel-cell equipment list |
@@ -239,13 +237,13 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [LINE_LIST.md](LINE_LIST.md) | AQS-PIP-004 | Plant line list |
 | [PIPING_CLASSES.md](PIPING_CLASSES.md) | AQS-PIP-003 | Piping class sheets |
 | [PIPE_SPECS.md](PIPE_SPECS.md) | AQS-INV-006 | Pipe family production plans |
-| [PIPES.md](PIPES.md) | - | Pipe junctions |
+| [PIPES.md](PIPES.md) | AQS-PIP-006 | Pipe junctions |
 | [SUPPORTS.md](SUPPORTS.md) | AQS-PIP-005 | Pipe supports and thermal flexibility |
-| [ISOMETRIC.md](ISOMETRIC.md) | - | Close-pipe isometrics |
+| [ISOMETRIC.md](ISOMETRIC.md) | AQS-ISO-003 | Close-pipe isometrics |
 | [ISO_DRAWING_INDEX.md](ISO_DRAWING_INDEX.md) | AQS-ISO-000 | Isometric fabrication set |
 | [ISO_ROUTES.md](ISO_ROUTES.md) | AQS-ISO-001 | Isometric route data |
 | [ISO_SHEETS.md](ISO_SHEETS.md) | AQS-ISO-002 | Isometric sheets |
-| [RELIEF.md](RELIEF.md) | - | Relief |
+| [RELIEF.md](RELIEF.md) | AQS-REL-001 | Relief |
 | [RELIEF_REGISTER.md](RELIEF_REGISTER.md) | AQS-SAF-004 | Relief register |
 | [INSTRUMENT_INDEX.md](INSTRUMENT_INDEX.md) | AQS-CTL-001 | Instrument index |
 | [INSTRUMENT_LOOPS.md](INSTRUMENT_LOOPS.md) | AQS-INST-001 | Instrument loops |
@@ -327,8 +325,8 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [BUILD_3D_FROM_FLOW.md](BUILD_3D_FROM_FLOW.md) | AQS-3D-BUILD-001 | Building 3D models from the plant flow graph |
 | [STACK_3D_DECISION.md](STACK_3D_DECISION.md) | AQS-3D-STACK-001 | Stack decision — 3D and diagram surfaces |
 | [REBUILD.md](REBUILD.md) | AQS-REB-001 | Master rebuild tool |
-| [FREECAD_PROTOCOL.md](FREECAD_PROTOCOL.md) | - | FreeCAD protocol — Aqueous wet line |
-| [AGENT_CAD_PROTOCOL.md](AGENT_CAD_PROTOCOL.md) | - | Agent protocol — parametric PFD to CAD |
+| [FREECAD_PROTOCOL.md](FREECAD_PROTOCOL.md) | AQS-CAD-002 | FreeCAD protocol — Aqueous wet line |
+| [AGENT_CAD_PROTOCOL.md](AGENT_CAD_PROTOCOL.md) | AQS-CAD-001 | Agent protocol — parametric PFD to CAD |
 | [STL_MANIFEST.md](STL_MANIFEST.md) | AQS-STL-001 | STL rebuild manifest |
 | [DRAWING_REGISTER.md](DRAWING_REGISTER.md) | AQS-DWG-002 | Drawing register |
 | [MFG_MODEL_PLAN.md](MFG_MODEL_PLAN.md) | AQS-PLAN-006 | Manufacturing model plan |

@@ -1,5 +1,6 @@
 # Site basis — AQS-SITE-002 Rev A
 
+Document number: AQS-SITE-002  
 Date 2026-10-15. Owner decision: study site at 33.0° N, Dallas–Fort Worth class. No parcel is chosen. Values marked assumption are in AQS-REG-002 and are replaced when a parcel is fixed.
 
 | Item | Value | Status | Source |

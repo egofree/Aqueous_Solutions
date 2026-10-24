@@ -33,7 +33,7 @@ FAMILIES = [
     ('docs-authority/sizing/COLD_BOX.md', 'AQS-DUTY-069', 'Micro cold box (flow_graph/param/cold_box.py)', ['CRYO_ASU']),
     ('docs-authority/sizing/GAS_RECEIVERS.md', 'AQS-DUTY-065', 'Gas receiver banks (flow_graph/param/receivers.py)', ['CRYO_H2', 'CRYO_O2', 'CRYO_CO2']),
     ('docs-authority/sizing/H2_PURIFIER_BEDS.md', 'AQS-DUTY-066', 'H2 purifier / dryer beds (flow_graph/param/h2_purifier.py)', ['H2_DRYER']),
-    ('docs-authority/sizing/HOUSE_SCRUBBERS.md', 'AQS-DUTY-064', 'House scrubbers (flow_graph/param/house_scrubbers.py)',
+    ('docs-authority/sizing/HOUSE_SCRUBBERS.md', 'AQS-DUTY-079', 'House scrubbers (flow_graph/param/house_scrubbers.py)',
      ['ALK_SCRUBBER', 'ACID_POLISH_SCRUB', 'NOX_SCRUB', 'MET_SCRUB']),
     ('docs-authority/sizing/BMED_STACK.md', 'AQS-DUTY-068', 'BMED stacks (flow_graph/param/bmed_stack.py)', ['BMED_ACID', 'BMED_BASE']),
     ('docs-authority/sizing/SANITATION.md', 'AQS-DUTY-063', 'Sanitation train (flow_graph/param/sanitation.py)', ['BLACK_DIGEST']),

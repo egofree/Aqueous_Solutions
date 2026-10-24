@@ -1,6 +1,7 @@
 # Balance close
 
-Document number: AQS-DUTY-011
+Document number: AQS-DUTY-078  
+Former number: AQS-DUTY-011 (shared with REV_M_CLOSURE_DUTY.md until 2026-10-24; that page keeps it)
 Revision: A
 Date: 2026-10-09
 Authority: graph Rev M. Not a PE stamp.

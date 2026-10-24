@@ -1,7 +1,7 @@
 {
  "ACID_POLISH_SCRUB": {
   "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
-  "docnum": "AQS-DUTY-064",
+  "docnum": "AQS-DUTY-079",
   "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
  },
  "ADS_CHILL": {
@@ -26,7 +26,7 @@
  },
  "ALK_SCRUBBER": {
   "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
-  "docnum": "AQS-DUTY-064",
+  "docnum": "AQS-DUTY-079",
   "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
  },
  "AL_POT": {
@@ -506,7 +506,7 @@
  },
  "MET_SCRUB": {
   "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
-  "docnum": "AQS-DUTY-064",
+  "docnum": "AQS-DUTY-079",
   "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
  },
  "MFG_SHOP": {
@@ -531,7 +531,7 @@
  },
  "NOX_SCRUB": {
   "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
-  "docnum": "AQS-DUTY-064",
+  "docnum": "AQS-DUTY-079",
   "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
  },
  "NUTRIENT_DOSE": {
