@@ -131,9 +131,9 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-DWG-002 | `docs-authority/DRAWING_REGISTER.md` | A | 2026-10-15 | Drawing register | current |
 | AQS-EGR-001 | `docs-authority/EGRESS_CALC.md` | D | 2026-10-01 | Means of egress — study calculation (NFPA 101 / IBC Ch. 10 themes) | current |
 | AQS-EGR-002 | `docs-authority/HALL_EGRESS.md` | A | 2026-10-15 | Extension hall egress | current |
-| AQS-ELC-001 | `docs-authority/ELECTRICAL.md` | C | 2026-10-08 | Electrical analysis | current |
+| AQS-ELC-001 | `docs-authority/ELECTRICAL.md` | D | 2026-10-24 | Electrical analysis | current |
 | AQS-ELEC-001 | `docs-authority/ELECTRONICS.md` | C | 2026-10-11 | Electronics bay | current |
-| AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | D | 2026-10-15 | One line | current |
+| AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | E | 2026-10-24 | Single-line diagram | current |
 | AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | C | 2026-10-21 | Load list | current |
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | B | 2026-10-15 | EW rectifier sizing (RECT-EW) | current |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | A | 2026-10-15 | Grounding and bonding | current |
@@ -176,7 +176,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
 | AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | — | 2026-10-02 | Dual heat ladder | current |
 | AQS-HEAT-STUDY-002 | `notes/heat_sink_study_2026-10-18.md` | A | 2026-10-18 | HL-Q4-REJ heat-sink study — resolving D-GEO_ORC | current |
-| AQS-HSE-001 | `docs-authority/HAZARD_SEPARATION.md` | G | 2026-10-01 | Hazard separation and containment — design locks | current |
+| AQS-HSE-001 | `docs-authority/HAZARD_SEPARATION.md` | H | 2026-10-24 | Hazard separation and containment | current |
 | AQS-IF-009 | `docs-authority/PHASE9_INTERFACES.md` | C | 2026-10-09 | Phase 9 interfaces | current |
 | AQS-IF-FAB-WET-001 | `docs-authority/FAB_WET_INTERFACE.md` | A | 2026-09-27 | Fab ↔ wet-line interface | current |
 | AQS-INST-001 | `docs-authority/INSTRUMENT_LOOPS.md` | C | 2026-10-21 | Instrument loops | current |

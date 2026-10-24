@@ -60,7 +60,7 @@ Doc 09 primary/secondary reboiler–condenser kW and COP figures are
 2. Acid-gas and oil vapor do not enter COLD_BOX.
 3. ZnBr2 Br₂ tower does not share a cold box or header with CRYO.
 4. S18 flue-cap CO₂ is Claimed — not raw AFTERBURNER into HDR_CO2.
-5. No shared HVAC return HAB ↔ CRYO / process (AQS-HSE-001 §6).
+5. No shared HVAC return HAB ↔ CRYO / process (AQS-HSE-001 §8).
 
 ## 4. CRYO_H2 consumer interface (sizing)
 
@@ -73,8 +73,8 @@ CRYO_H2 product hold shall be sized for concurrent consumers:
 | H₂ dryer normal | S64 | AQS-VENT-001 Partial |
 | Roof contingency | S24 | AQS-VENT-001 emergency only |
 
-Oxidizer to FC is CRYO_O2 (S50). **Study operating holdup ~5–10 kg** (1–2 d × ~4.8 kg/d H₂). MAQ design cap remains AQS-HSE-001 §3 (< 150 lb class). GEN and FC branches: separate
-isolation + flame arrestors (AQS-HSE-001 §8a).
+Oxidizer to FC is CRYO_O2 (S50). **Study operating holdup ~5–10 kg** (1–2 d × ~4.8 kg/d H₂). MAQ design cap remains AQS-HSE-001 §5 (< 150 lb class). GEN and FC branches: separate
+isolation + flame arrestors (AQS-HSE-001 §11).
 
 ## 5. Heat rejection / utility cooling
 

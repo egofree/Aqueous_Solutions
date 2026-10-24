@@ -935,6 +935,36 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {ADA -- Americans with Disabilities Act of 1990 (US): accessibility requirements, with the 2010 ADA Standards for Accessible Design.}
 
+{CWA -- Clean Water Act (US federal water pollution control law, 33 U.S.C. 1251 and following).}
+
+{EPO -- Emergency power-off: a manually operated control that disconnects an energy storage system or equipment (NFPA 855; NEC Article 706).}
+
+{GFCI -- Ground-fault circuit interrupter (NEC 210.8): a device that opens a circuit when current leaks to ground.}
+
+{IPC -- International Plumbing Code (International Code Council).}
+
+{UPC -- Uniform Plumbing Code (IAPMO).}
+
+{UFC -- Uniform Fire Code, the former name of NFPA 1 Fire Code.}
+
+{RMP -- Risk management program: the EPA chemical accident prevention rule, 40 CFR Part 68.}
+
+{PL -- Protection level: the NFPA 400 hazard category equivalent to an IBC high-hazard (H) occupancy group.}
+
+{XP -- Explosion-proof: an enclosure that contains an internal explosion without igniting the surrounding atmosphere (NEC 500.2).}
+
+{FE -- Faradaic efficiency: the share of the charge passed that drives the intended electrode reaction; the same quantity as current efficiency (CE).}
+
+{MPPT -- Maximum power point tracker: the inverter input stage that holds a PV string at the voltage giving the most power.}
+
+{STC -- Standard test conditions for PV modules: 1000 W/m² irradiance, 25 °C cell temperature, air mass 1.5 (IEC 61215).}
+
+{SB -- Supplement SB of UL 1741: the grid-support test requirements that demonstrate conformance with IEEE 1547-2018 (via IEEE 1547.1-2020).}
+
+{TBM -- Tunnel boring machine; in this project, one used to excavate a landfill for feed.}
+
+{OCPD -- Overcurrent protective device: a breaker or fuse that opens a circuit on overload or short circuit (NEC Article 240).}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

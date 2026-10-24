@@ -69,7 +69,7 @@ Require scrub+regen or CRYO end states for former outdoor dumps; no free dump as
 | Consumers | S45 BACKUP_GEN; S49 FUEL_CELL (isolated manifolds + flame arrestors) |
 | Contingency | S24 roof via SHAFT_H2 — trip / overpressure / MAQ relief only |
 | Forbidden | Hab air; HDR_O2; intentional continuous roof dump |
-| HSE | NFPA 2; MAQ AQS-HSE-001 §3; < 25% LFL capture |
+| HSE | NFPA 2; MAQ AQS-HSE-001 §5; < 25% LFL capture |
 
 Do not invent GEN / FC continuous kW this pass. Closing quantitative
 balance = size CRYO_H2 + consumers so dryer holdup stays under MAQ and
@@ -174,7 +174,7 @@ Study figures are **not** vendor nameplates. See AQS-EQP-VENT-001 §2.
 5. Upset stacks (acid polish residual, S24 contingency, S56 residual)
    remain available for AHJ / life-safety — labeled contingency, not
    normal product discharge.
-6. MAQ / PSM caps unchanged (AQS-HSE-001 §3).
+6. MAQ / PSM caps unchanged (AQS-HSE-001 §5).
 
 ---
 

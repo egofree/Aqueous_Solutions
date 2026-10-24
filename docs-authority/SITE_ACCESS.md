@@ -128,7 +128,7 @@ Table 5.2. Stairs and their occupants
 | `STAIR_MAINT` | L0–L-2 | **No** | Operators only; not credited as public egress |
 | `STAIR_SERVICE` | L0–L-2 | **No** for hab | Basement **secondary egress** + service; discharge to exterior at L0 north — does **not** walk hab occupants through H areas |
 
-WARNING: Escape from the habitation sleeping areas shall reach grade by `STAIR_P` or `STAIR_S*` without entering the L-1 process areas or the CRYO rooms (IBC 1016 and NFPA 101 principles; AQS-HSE-001 §8). `STAIR_SERVICE` serves basement occupants and service staff leaving outwards to the north apron. It is not a route from the habitation into the recycling aisle.
+WARNING: Escape from the habitation sleeping areas shall reach grade by `STAIR_P` or `STAIR_S*` without entering the L-1 process areas or the CRYO rooms (IBC 1016 and NFPA 101 principles; AQS-HSE-001 §10). `STAIR_SERVICE` serves basement occupants and service staff leaving outwards to the north apron. It is not a route from the habitation into the recycling aisle.
 
 ### 5.4 Fire rating
 

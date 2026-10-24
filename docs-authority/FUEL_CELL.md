@@ -175,7 +175,7 @@ cryo pass; this document locks the **interface only**.
 ## 7. MAQ / HSE notes
 
 1. H₂ inventory: CRYO_H2 + H2_DRYER + FC / GEN manifolds stay under
-   AQS-HSE-001 §3 design cap (< 150 lb class holdup target).
+   AQS-HSE-001 §5 design cap (< 150 lb class holdup target).
 2. Class I / Div 2 / Group B envelopes extend to FC H₂ flanges and
    manifolds (same family as H2_DRYER / CRYO_H2).
 3. O₂ manifolds: keep oxidizer separation from H₂ and organics

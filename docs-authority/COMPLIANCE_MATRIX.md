@@ -55,14 +55,14 @@ Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.m
 |---|---|---|---|---|---|
 | CMP-NFPA-01 | H₂ generation, storage, use; separation / detection | NFPA 2 (2026 design basis in AQS-HSE-001) | AQS-HSE-001; AQS-VENT-001; CRYO_EGRESS_DOOR/LOBBY stubs; CRYO_H2 MAQ cap | Compliant-intent | Confirm AHJ edition; shop-rate CRYO lobby; holdup kg TBD |
 | CMP-NFPA-02 | Compressed / cryogenic gases; O₂ / N₂ / Ar product | NFPA 55 (2026 design basis) | AQS-CRY-002; AQS-EQP-CRY-001; FB_CRYO / FB_CRYO_PROCESS; no shared HVAC return | Compliant-intent | VJ isometrics + Stirling duties TBD |
-| CMP-NFPA-03 | NEC cross-ref for classified areas / emergency power | NFPA 70 → see §4 | AQS-HSE-001 §4 Div system; ELECTRICAL.md SLD | Partial | Formal area classification drawings for permit |
+| CMP-NFPA-03 | NEC cross-ref for classified areas / emergency power | NFPA 70 → see §4 | AQS-HSE-001 §6 Div system; ELECTRICAL.md SLD | Partial | Formal area classification drawings for permit |
 | CMP-NFPA-04 | Means of egress concepts (travel, exits, discharge) | NFPA 101 + most-restrictive rule (AQS-EGR-001 §2.1) | AQS-EGR-001 Rev B; STAIR_*; CRYO_EGRESS_*; dock ELEV_DOCK | Partial | AHJ verify clear widths; CRYO lobby rating; NEC 700 fixtures |
 | CMP-NFPA-05 | Oxidizer / corrosive occupancy & MAQ | NFPA 400 / mixed-use with IBC overlays | AQS-HSE-001 §§1–3; fire areas; FB_* ratings | Compliant-intent | Document control-area vs H upgrade when MAQ hit |
-| CMP-NFPA-06 | Explosion prevention (H₂ < 25% LFL) | NFPA 69 | AQS-HSE-001 §6; detection trips rectifiers / H₂ isolation | Compliant-intent | Commissioning setpoints + SIL/reliability TBD |
+| CMP-NFPA-06 | Explosion prevention (H₂ < 25% LFL) | NFPA 69 | AQS-HSE-001 §8; detection trips rectifiers / H₂ isolation | Compliant-intent | Commissioning setpoints + SIL/reliability TBD |
 | CMP-NFPA-07 | Flow-battery ESS outdoor preference | NFPA 855-2026 | ZnBr2 outdoor skid; FB_ESS; FLOW_BATTERY.md | Compliant-intent | BMS gateway + listing package with AHJ |
 | CMP-NFPA-08 | Flammable liquids / oil line | NFPA 30 | OIL fire area; quench → afterburner; diked cuts | Compliant-intent | Indoor MAQ ledger for fractionator holdup |
-| CMP-NFPA-09 | Sprinklers | NFPA 13 | AQS-HSE-001 §8: throughout except outdoor ESS / AHJ exceptions | Partial | Hydraulic calc + oxidizer-room special design |
-| CMP-NFPA-10 | Electrical safety work practices (arc flash) | NFPA 70E | AQS-HSE-001 §7 (labels on 480 V); ELECTRICAL.md | Partial | Arc-flash study / labels after final SLD |
+| CMP-NFPA-09 | Sprinklers | NFPA 13 | AQS-HSE-001 §10: throughout except outdoor ESS / AHJ exceptions | Partial | Hydraulic calc + oxidizer-room special design |
+| CMP-NFPA-10 | Electrical safety work practices (arc flash) | NFPA 70E | AQS-HSE-001 §9 (labels on 480 V); ELECTRICAL.md | Partial | Arc-flash study / labels after final SLD |
 
 ---
 
@@ -73,10 +73,10 @@ Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.m
 | CMP-NEC-01 | Service, disconnects, overcurrent | NEC 2026 Art. 110 / 230 (theme) | ELECTRICAL.md: 480Y/277 → meter → 200 A fused disco → Sol-Ark GRID / ATS | Compliant-intent | Short-circuit / coordination study |
 | CMP-NEC-02 | Interactive inverter / DER interconnection | UL 1741 SB / IEEE 1547 cited on Sol-Ark 60K | ELECTRICAL.md interconnect; `electrical_sld.png` | Compliant-intent | Utility interconnection agreement (site-specific) |
 | CMP-NEC-03 | Energy storage / battery systems | NEC Art. 706 theme; NFPA 855 for ZnBr2 | ZnBr2 on BATT DC 160–700 V; outdoor ESS; CAN BMS gateway | Partial | Listing / BMS protocol proof; working clearances on yard plan |
-| CMP-NEC-04 | Class I Div 2 Group B (H₂) wiring | NEC Art. 500 / 501 (Div; 505 optional) | AQS-HSE-001 §4 envelopes; XP / purged instruments on H₂ train | Partial | Seal-off / tray schedule on construction drawings |
+| CMP-NEC-04 | Class I Div 2 Group B (H₂) wiring | NEC Art. 500 / 501 (Div; 505 optional) | AQS-HSE-001 §6 envelopes; XP / purged instruments on H₂ train | Partial | Seal-off / tray schedule on construction drawings |
 | CMP-NEC-05 | Generators / transfer equipment | NEC Art. 445 / 700 theme | BACKUP_GEN on Sol-Ark **GEN** port; break-before-make ATS; diesel external contingency only | Partial | Vendor continuous kW; GEN set listing; exhaust scrub path S46 |
 | CMP-NEC-06 | Fuel cell DC couple (not GEN AC) | NEC / product listing theme | FUEL_CELL → FC_DCDC → Sol-Ark **BATT DC**; ≠ BACKUP_GEN; AQS-FC-001 | Partial | FC continuous kW TBD; FC_DCDC listing in BATT window |
-| CMP-NEC-07 | Emergency lighting / exit signs | NEC Art. 700 | AQS-HSE-001 §8 | Partial | Fixture schedule with egress annex |
+| CMP-NEC-07 | Emergency lighting / exit signs | NEC Art. 700 | AQS-HSE-001 §10 | Partial | Fixture schedule with egress annex |
 | CMP-NEC-08 | Grounding / bonding / cable tray | NEC Art. 250 theme | `mfg_cable_tray.scad`, `freecad/pipe_services.py`; AQS-REM-001 §6.4 | Partial | Grounding electrode / equipotential plan |
 | CMP-NEC-09 | Working space about equipment | NEC 110.26 theme | SITE yard CLEAR_* / KO_* stubs (AQS-SITE-001 §6) | Partial | Dimensioned yard plan for AHJ |
 
@@ -86,15 +86,15 @@ Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.m
 
 | ID | Requirement theme | Citation theme | Aqueous control / doc | Status | Action |
 |---|---|---|---|---|---|
-| CMP-OSH-01 | Means of egress | 29 CFR 1910.36 / .37 | AQS-EGR-001; AQS-SITE-001 §8; AQS-HSE-001 §8; hab path ≠ H areas | Partial | AHJ verify; outdoor discharge survey |
-| CMP-OSH-02 | Walking-working surfaces | 1910.22 / .29 | AQS-HSE-001 §7 mezzanine guardrails | Partial | Guardrail schedule on life / shop MEP |
+| CMP-OSH-01 | Means of egress | 29 CFR 1910.36 / .37 | AQS-EGR-001; AQS-SITE-001 §8; AQS-HSE-001 §10; hab path ≠ H areas | Partial | AHJ verify; outdoor discharge survey |
+| CMP-OSH-02 | Walking-working surfaces | 1910.22 / .29 | AQS-HSE-001 §9 mezzanine guardrails | Partial | Guardrail schedule on life / shop MEP |
 | CMP-OSH-03 | Permit-required confined spaces | 1910.146 | CSTR 1, fractionator, scrubber vessels listed | Partial | Written PRCS program + permits |
 | CMP-OSH-04 | LOTO | 1910.147 | Rectifiers, shredder, pyro, MET_MELT, Sol-Ark | Partial | Energy-isolation procedures |
 | CMP-OSH-05 | Respiratory protection | 1910.134 | Salria / Cl₂ / Br₂ tasks | Partial | IH survey + written program |
-| CMP-OSH-06 | Hazard communication | 1910.1200 | SDS at gate; AQS-HSE-001 §2 incompatibles | Compliant-intent | Keep SDS set current with chemistry locks |
+| CMP-OSH-06 | Hazard communication | 1910.1200 | SDS at gate; AQS-HSE-001 §4 incompatibles | Compliant-intent | Keep SDS set current with chemistry locks |
 | CMP-OSH-07 | Local exhaust / process ventilation | 1910.94 / industry LEV practice | Hoods → HDR_*; MET_AHU → MET_SCRUB (S71–S72); ACID_POLISH; CRYO_AHU_COND; AQS-VENT-001 | Partial | Capture velocities / duct balances (study duties exist; vendor curves TBD) |
-| CMP-OSH-08 | PSM threshold awareness | 1910.119 | AQS-HSE-001 §3 inventory caps intentionally under triggers | Compliant-intent | Re-check if CRYO_H2 / Br₂ holdup grows |
-| CMP-OSH-09 | Electrical / arc flash | 1910.303 / .305 / .333 + 70E | AQS-HSE-001 §7 | Partial | Same as CMP-NFPA-10 / CMP-NEC-* |
+| CMP-OSH-08 | PSM threshold awareness | 1910.119 | AQS-HSE-001 §5 inventory caps intentionally under triggers | Compliant-intent | Re-check if CRYO_H2 / Br₂ holdup grows |
+| CMP-OSH-09 | Electrical / arc flash | 1910.303 / .305 / .333 + 70E | AQS-HSE-001 §9 | Partial | Same as CMP-NFPA-10 / CMP-NEC-* |
 | CMP-OSH-10 | Machine guarding / noise | 1910.212 / .219 / .95 | Shredder / induction called out | Partial | Guarding drawings + noise survey |
 
 ---

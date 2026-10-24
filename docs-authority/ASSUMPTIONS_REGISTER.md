@@ -1126,7 +1126,7 @@ Table 4.1. Document lines naming an assumption
 | A-D-74032d |  |  | docs-authority/EGRESS_CALC.md:114 | ## 4. Occupant-load assumptions (study) |  | see page |
 | A-D-7e05b5 |  |  | docs-authority/EGRESS_CALC.md:119 | factors below are labeled assumptions, not clause text): |  | see page |
 | A-D-d1dcee |  |  | docs-authority/EGRESS_CALC.md:220 | **Assumption (theme):** sprinklered stair capacity ≈ **7.6 mm clear |  | see page |
-| A-D-b3894d |  |  | docs-authority/ELECTRICAL.md:103 | 2.205 m² per cell (7 cathodes, two faces, 0.35 × 0.45 m; assumption, RS-EW-AREA), leach ORP 1.05 V vs SHE (Fe(III) fraction |  | see page |
+| A-D-ba31bb |  |  | docs-authority/ELECTRICAL.md:105 | Basis: mass-transfer coefficient k_m 2.2 × 10⁻⁵ m/s (range 1.1 to 3.3 × 10⁻⁵; Griffiths et al. 2005, AIChE J. 51, doi 10.1002/aic.10311); cathode area 2.205 m²  |  | see page |
 | A-D-00ca55 |  |  | docs-authority/FAB_WET_REAGENTS.md:17 | / B / 1 / Order-of-magnitude study rates (pilot wafer assumption) / 2026-10-01 / |  | see page |
 | A-D-53462f |  |  | docs-authority/FAB_WET_REAGENTS.md:34 | for WS_* modules remain deferred. **Study** mass rates in §4.1 (labeled assumptions — not vendor schedules). |  | see page |
 | A-D-5a58b7 |  |  | docs-authority/FAB_WET_REAGENTS.md:108 | Wafer starts/day are **not issued**. Study assumption: **pilot 1–5 |  | see page |

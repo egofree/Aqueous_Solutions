@@ -29,7 +29,7 @@ Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002.
 
 Hab sleeping egress lands at L0 via STAIR_P / STAIR_S1 without walking
 L-1. Process operators use STAIR_MAINT. No shared HVAC return between
-HABITATION and the recycle aisle (AQS-HSE-001 §6).
+HABITATION and the recycle aisle (AQS-HSE-001 §8).
 
 ---
 
