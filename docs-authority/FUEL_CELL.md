@@ -149,7 +149,7 @@ appear in the assembled plant model — stub only this pass.
 S24 (EW cathode / H2_DRYER → roof vent or CRYO) remains Open /
 Recapturable. Closing path now includes **FC + GEN** consumers so
 dryer holdup stays under MAQ and roof vent is contingency only
-(AQS-MF-001 §5).
+(AQS-MF-001 §6).
 
 ---
 

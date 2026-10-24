@@ -107,13 +107,13 @@ def main():
     block(ax, 69, 26, 28, 9.5, "ORC ELECTRIC S48", "GEO_ORC → Sol-Ark AC\nClaimed stub · kW TBD", "#fff3e0", CLAIMED)
 
     # Row 6 — MeOH from graph (S73–S82)
-    # Group by MASS_FLOW §6 narrative without inventing Closed for unlisted claims.
+    # Group by MASS_FLOW §7 narrative without inventing Closed for unlisted claims.
     def meoh_line(sid: str) -> str:
         e = meoh.get(sid)
         if e is None:
             return f"{sid} missing from graph"
         cl = claim_label(e)
-        # MASS_FLOW §6 supplies Partial (S78) / Claimed (S82) language when
+        # MASS_FLOW §7 supplies Partial (S78) / Claimed (S82) language when
         # the MF table has no per-stream claim_status row (ends S72).
         if cl == "—" and sid == "S78":
             cl = "Partial (MF §6 biogenic)"

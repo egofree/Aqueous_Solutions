@@ -1,18 +1,9 @@
 # Mass-flow claim status
 
 Document number: AQS-MF-001  
-Revision: J
-Date: 2026-10-01  
-Authority: AQS-BLD-001 + AQS-STR-001 + AQS-HSE-001
-
-> **WP-Ap3 derived sync:** Generated excerpt lives at
-> `flow_graph/derived/MASS_FLOW_DERIVED.md` (from `plant_flow_graph.json`
-> via `flow_graph/export_authority_md.py`). This CAD file remains the human
-> claim-status narrative sync target (hybrid — not overwritten wholesale).
-> Prefer `derived/` as generated; see `flow_graph/derived/SYNC_POINTER.md`.
-> Do not invent DOCK S## or fill null placeholder rates.
->
-> **Graph Rev M (2026-10-08):** every edge is rated and every node balance closes (AQS-DUTY-011, `REV_M_CLOSURE_DUTY.md`). New streams S91–S102 and IA-BMED-05..10; S05, S86, S87, S88 retired; S16 is harvest rinse liquor (12.6 kg/d); S68 is CRYO AHU coil condensate. Rates in `flow_graph/derived/MASS_FLOW_DERIVED.md` govern over the claim-status rows below.
+Revision: K  
+Date: 2026-10-24  
+Basis: AQS-BLD-001, AQS-STR-001 and AQS-HSE-001. End states of gas streams: AQS-VENT-001.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
@@ -25,19 +16,22 @@ Authority: AQS-BLD-001 + AQS-STR-001 + AQS-HSE-001
 | G | 1 | S54–S56 CRYO Q4 / dedicated cool / room vent (AQS-CRY-002) | 2026-09-28 |
 | H | 1 | S57–S63 metal forming (AQS-MFG-MET-001) | 2026-09-28 |
 | I | 1 | Vent closure S64–S72 (AQS-VENT-001); reclassify former open dumps | 2026-09-28 |
+| J | 1 | Graph Rev M (2026-10-08): every edge rated and every node balance closed (AQS-DUTY-011, `REV_M_CLOSURE_DUTY.md`); new streams S91–S102 and IA-BMED-05..10; S05, S86, S87 and S88 retired; S16 is harvest rinse liquor (12.6 kg/d); S68 is CRYO AHU coil condensate | 2026-10-08 |
+| K | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, terms, captions; split closure table joined; statuses unchanged | 2026-10-24 |
 
-Professional engineering note: “closed” here means the design routes
-the stream to a named recovery or recycle unit with a locked header.
-It is not a measured plant balance. Per AQS-VENT-001, free outdoor dump
-is **not** design intent — former vents are **Unclosed → Closure
-required** (scrub+regen or CRYO) until hardware and permits finish the
-path. Contingency / upset relief may remain for AHJ and life safety.
+## 1. Purpose and scope
 
-Sheet: `mass_flow_pfd.png` (generator `flow_graph/exporters/matplotlib/mass_flow_pfd.py`).
+The plant is meant to recover or recycle every material stream rather than release it. This page records, for each named stream, whether that claim is met: whether the design routes the stream to a named recovery or recycle unit, and how far that route is proven. It is a status record, not a measured mass balance.
 
----
+The flow rates are not here. They are generated from the plant graph into `flow_graph/derived/MASS_FLOW_DERIVED.md` by `flow_graph/export_authority_md.py`, and those rates take precedence over anything on this page. This page is the human-maintained status narrative kept in step with that file (see `flow_graph/derived/SYNC_POINTER.md`). Do not invent dock stream numbers or fill placeholder rates that the graph leaves empty.
 
-## 1. Legend
+The drawing is `mass_flow_pfd.png`, made by `flow_graph/exporters/matplotlib/mass_flow_pfd.py`.
+
+## 2. Terms
+
+"Closed" means the design sends the stream to a named recovery or recycle unit through a locked header. It does not mean a measured balance. Under AQS-VENT-001, continuous release to open air is not design intent: former vents are "Closure required" (scrubbing and regeneration, or the cryogenic plant) until hardware and permits complete the route. Relief for upsets and contingencies may remain where the authority having jurisdiction and life safety require it. Table 2.1 defines the status tags.
+
+Table 2.1. Status tags
 
 | Tag | Meaning |
 |---|---|
@@ -47,9 +41,11 @@ Sheet: `mass_flow_pfd.png` (generator `flow_graph/exporters/matplotlib/mass_flow
 | **Closure required** | Unclosed — must finish scrub+regen or CRYO path (AQS-VENT-001); not “open by intent” |
 | **Recapturable** | Legacy synonym for Closure required where hardware path already named |
 
----
+Stream numbers (S01 and so on) and unit names are those of the plant graph and the stream register (AQS-STR-001). Other abbreviations are in `docs-authority/GLOSSARY.md`.
 
-## 2. Stream register S01–S72
+## 3. Stream status S01 to S72
+
+Table 3.1. Status of streams S01 to S72
 
 | ID | Route (short) | Status | Notes |
 |---|---|---|---|
@@ -65,7 +61,7 @@ Sheet: `mass_flow_pfd.png` (generator `flow_graph/exporters/matplotlib/mass_flow
 | S10 | WET BENCH → REGEN LEACH | Closed | HDR_ETCH; no floor drain |
 | S11 | GROW / GALLEY → HOPPER or OIL | Closed | HDR_ORG |
 | S12 | HAB WASTE → SALT FEED / dose / HOPPER | Closed | HDR_GREY + HDR_ORG |
-| S13 | FARM SUMP + HVAC condensate → VCD / polish / salt | Closed | HDR_GREY; VCD_FEED primary |
+| S13 | Farm sump + HVAC condensate → VCD / polish / salt | Closed | HDR_GREY; VCD_FEED primary |
 | S14 | GROW → HAB food | Closed | tote |
 | S15 | GROW → HDR_O2 | Closed | photosynthetic O₂ |
 | S16 | MFG scrap → HOPPER | Closed | no FR-4 to pyro |
@@ -94,7 +90,7 @@ Sheet: `mass_flow_pfd.png` (generator `flow_graph/exporters/matplotlib/mass_flow
 | S39 | spent slurry/solvent/PR → leach/oil | Closed | with S10 pattern; no floor drain |
 | S40 | Roof surplus → terrace irrig | Closed | intermittent; clean only; AQS-TRR-001 |
 | S41 | Terrace clean drain → CATCH | Closed | never process bund |
-| S42 | Fertigated GH drain → HDR_GREY | Closed / Claimed | only if enclosed food option |
+| S42 | Fertigated greenhouse drain → HDR_GREY | Closed / Claimed | only if enclosed food option |
 | S43 | GEO_GHEX ↔ GEO_HP | Closed | dedicated loop; not UPW |
 | S44 | GEO_HP → Q4 | Closed | same Q4 rule as S06 |
 | S45 | CRYO_H2 → BACKUP_GEN | Claimed / Partial | MAQ / NFPA 2; closes S64 with S49 |
@@ -114,24 +110,23 @@ Sheet: `mass_flow_pfd.png` (generator `flow_graph/exporters/matplotlib/mass_flow
 | S59 | COLD_MILL → sheet bin / crib | Closed | product sheet |
 | S60 | GAS_ATOMIZER → powder crib / FAB | Closed / Claimed | N₂ blanketed hold |
 | S61 | Forming scrap → HOPPER / leach | Closed | S16 class; no FR-4 / pyro |
-| S62 | MET_AHU → MET_SCRUB / BH (S71) | Partial / Claimed | dedicated aisle capture; never HAB return; not free outdoor dump |
+| S62 | MET_AHU → MET_SCRUB / baghouse (S71) | Partial / Claimed | dedicated aisle capture; never HAB return; not free outdoor dump |
 | S63 | MET_HX_Q4 → Q4 | Closed | warm residual only; peer S06/S44/S53/S54 |
 | S64 | H2_DRYER → CRYO_H2 | Partial | Normal H₂ path; closes continuous roof dump |
-| S65 | ALK residual → ACID_POLISH_SCRUB | Partial / Claimed | Post-alkali polish feed; PFD path named |
-| S66 | Acid polish / ALK liquor → CRU | Claimed | Regenerable scrub return |
+| S65 | ALK_SCRUBBER residual → ACID_POLISH_SCRUB | Partial / Claimed | Post-alkali polish feed; PFD path named |
+| S66 | Acid polish / ALK_SCRUBBER liquor → CRU | Claimed | Regenerable scrub return |
 | S67 | AFTERBURNER flue → FLUE_CAP / CRYO | Partial / Claimed | Extends S18; destruction upstream remains; PFD path named |
 | S68 | Flue / AHU condensate → S13 class | Claimed | Not potable |
 | S69 | ZNBR2_BR2_REGEN → pos. tank | Partial / Claimed | Br⁻ return; never CRU; PFD path named |
 | S70 | CRYO_AHU_COND → COLD_BOX | Partial | Condensable return from S56 train; PFD path named |
 | S71 | MET_AHU → MET_SCRUB / baghouse | Partial / Claimed | Capture train (feeds from S62); PFD path named |
-| S72 | MET scrub / BH → CSTR / OIL / ORG | Claimed | Fines S19 class; mist to oil/org |
+| S72 | MET scrub / baghouse → CSTR / OIL / ORG | Claimed | Fines S19 class; mist to oil/org |
 
+## 4. Process gas and scrubber paths
 
----
+The end states are set by AQS-VENT-001; continuous release to open air is not design intent (Table 4.1).
 
-## 3. Process gas and scrubber paths (HSE)
-
-Authority for end states: **AQS-VENT-001**. Free outdoor dump ≠ design intent.
+Table 4.1. Gas paths
 
 | Path | Header / unit | Status | End state / discharge |
 |---|---|---|---|
@@ -142,11 +137,11 @@ Authority for end states: **AQS-VENT-001**. Free outdoor dump ≠ design intent.
 | ZnBr2 Br₂ | ZNBR2_BR2_SCRUBBER → ZNBR2_BR2_REGEN | Closure required / Claimed | S69 Br⁻ → pos. tank; not CRU; no continuous dump |
 | Hab / farm air | dedicated AHU | Closed vs process | No process-atmosphere duct |
 | CRYO room | CRYO_AHU → CRYO_AHU_COND (S70) / S56 residual | Closure required / Partial | Condensables to CRYO; residual contingency; not HAB return |
-| MFG metal aisle | MET_AHU → MET_SCRUB / BH (S71–S72) | Closure required / Claimed | Scrub/baghouse returns; not HAB return |
+| MFG metal aisle | MET_AHU → MET_SCRUB / baghouse (S71–S72) | Closure required / Claimed | Scrub/baghouse returns; not HAB return |
 
----
+## 5. Liquid loops
 
-## 4. Closed / claimed liquid loops
+Table 5.1. Closed and claimed liquid loops
 
 | Loop | Path | Status |
 |---|---|---|
@@ -172,23 +167,22 @@ Authority for end states: **AQS-VENT-001**. Free outdoor dump ≠ design intent.
 | EW liquor cascade | CSTR 1 → EW-1…9 → precip / polish | Closed |
 | Float / sink liquor | dewater return → CSTR 1 | Closed |
 
----
+## 6. Former open releases
 
-## 5. Former opens → Partial / Claimed (AQS-VENT-001)
+None of these is open by intent. The process flow diagrams name a scrubbing and regeneration route or a return to the cryogenic plant for each. Study duties, flows in Nm³/h and power bounds are issued in AQS-EQP-VENT-001 Rev B and AQS-AUD-001 Rev D; they are labelled study estimates, not supplier nameplates.
 
-**None are “open by intent.”** PFD architecture names scrub+regen or CRYO returns.
-Study duties / Nm³/h / kW bounds issued in AQS-EQP-VENT-001 Rev B and AQS-AUD-001 Rev D (labeled study estimates — not vendor nameplates).
+1. Hydrogen (S24, S64), Partial: the normal route is S64 to `CRYO_H2`, then S45 and S49; the roof outlet S24 is a contingency only. The generator and fuel-cell ratings remain to be finished within the MAQ.
+2. Acid gas, Partial / Claimed: `ALK_SCRUBBER` and `ACID_POLISH_SCRUB` to the CRU (S65 to S66). An upset stack may remain for the AHJ; there is no continuous release.
+3. Afterburner flue, Partial / Claimed: destruction remains; the flue products go to `FLUE_CAP` or CRYO (S67, S18), the condensate to S68, and the heat to Q1.
+4. Bromine, Partial / Claimed: `ZNBR2_BR2_REGEN` returns bromide to the positive tank by S69. The outdoor skid stays; continuous stack release does not.
+5. `CRYO_AHU` (S56), Partial: condensables go through `CRYO_AHU_COND` (S70); the residual is a contingency only.
+6. `MET_AHU` (S62), Partial / Claimed: to `MET_SCRUB` and the baghouse (S71 to S72); never to habitation return air.
 
-1. **H₂ (S24 / S64)** — **Partial**: normal S64 → CRYO_H2 → S45+S49; S24 roof = contingency only. Finish GEN/FC kW within MAQ.
-2. **Acid-gas** — **Partial / Claimed**: ALK + ACID_POLISH → CRU (S65–S66). Upset stack may remain for AHJ; not continuous dump.
-3. **Afterburner flue** — **Partial / Claimed**: destruction remains; flue products → FLUE_CAP / CRYO (S67/S18); condensate S68; heat to Q1.
-4. **Br₂** — **Partial / Claimed**: ZNBR2_BR2_REGEN → S69 pos. tank. Outdoor skid stays; continuous stack dump does not.
-5. **CRYO_AHU (S56)** — **Partial**: condensables via CRYO_AHU_COND (S70); residual contingency only.
-6. **MET_AHU (S62)** — **Partial / Claimed**: MET_SCRUB / baghouse (S71–S72); never HAB return.
+## 7. Closure routes
 
----
+Table 7.1 gives the route that closes each remaining open or partial stream, and its constraint.
 
-## 6. Closure paths (scrub / regen or CRYO)
+Table 7.1. Closure routes
 
 | Unclosed / Partial | Closure path (AQS-VENT-001) | Constraint |
 |---|---|---|
@@ -197,21 +191,20 @@ Study duties / Nm³/h / kW bounds issued in AQS-EQP-VENT-001 Rev B and AQS-AUD-0
 | Afterburner flue products | S67 / S18 → CRYO; S68 condensate | Destruction upstream remains |
 | Br₂ residual | ZNBR2_BR2_REGEN → S69 | Never CRU; outdoor skid OK |
 | CRYO room condensables | S70 → COLD_BOX | S56 residual contingency only |
-| MET aisle capture | S71–S72 scrub / BH returns | Not HAB return; not acid-gas primary |
+| MET aisle capture | S71–S72 scrub / baghouse returns | Not HAB return; not acid-gas primary |
 | Condensate / grey | already S12/S13 | keep off Salria |
 | Tank overflow (process) | DRAIN_SEC → CATCH / HDR_GREY | clean water only |
 | Roof surplus overflow | ROOF_TANK → OVERFLOW → TERRACE | clean only; never process bund |
 | WS_* spent | S10 / S39 → leach / oil / org | OoM study AQS-AUD-001 §13; synth vs seed TBD |
-
 | MeOH CO₂ / H₂ feed | S73 / S74 | Surplus H₂ only; PEM/GEN priority (AQS-REQ-KW-001) |
 | MeOH product / fuel | S75–S77 / S76 | MEOH_TANK inventory; PC-11 |
 | MeOH ferment feed | S78 | Farm/hab organics — Partial biogenic |
 | MeOH FC power / heat / returns | S79–S82 | BATT DC peer; Q4; Claimed CO₂; condensate |
 | ORC electric | S48 → Sol-Ark AC | method TBD after GHEX survey (AQS-AUD-001 §10.4) |
 
----
+## 8. Where mass rests, by level
 
-## 7. Building level map (mass resting place)
+Table 8.1. Mass by building level
 
 | Level | Mass role |
 |---|---|
@@ -221,24 +214,17 @@ Study duties / Nm³/h / kW bounds issued in AQS-EQP-VENT-001 Rev B and AQS-AUD-0
 | L-1 | Wet / oil / glass / BMED / scrubbers — dirty liquor |
 | L-2 | CATCH TANK clean lower reservoir; hydro set; process sumps (separate) |
 
-Gravity rule unchanged: dirty liquor does not drain uphill into life.
+The gravity rule is unchanged: dirty liquor does not drain uphill into the living floors.
 
-Surplus clean tower water (batteries full + `ROOF_TANK` full) overflows
-to external garden terraces (`OVERFLOW_TERRACE_*` bands) via
-`OVERFLOW_SPILL_ROOF` / `OVERFLOW_DOWNCOMER_*` — see AQS-SCALE-001 §9–10
-and AQS-TRR-001 (planting / open vs greenhouse / S40–S42). Not a
-process drain path. Clean terrace return is S41 → CATCH; fertigated
-enclosed-greenhouse drain is S42 → HDR_GREY — never mixed into CATCH.
+Surplus clean tower water (batteries full and `ROOF_TANK` full) overflows to the outdoor garden terraces (`OVERFLOW_TERRACE_*` bands) through `OVERFLOW_SPILL_ROOF` and `OVERFLOW_DOWNCOMER_*`; see AQS-SCALE-001 §9–10 and AQS-TRR-001 (planting, open or greenhouse beds, S40 to S42). This is not a process drain. Clean terrace water returns by S41 to the catch tank. Fertigated drain from an enclosed greenhouse goes by S42 to `HDR_GREY` and is never mixed into the catch tank.
 
----
+## 9. Rebuilding the drawings
 
-## 8. Rebuild
+Run from the repository root:
 
 ```bash
-cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
-python3 mass_flow_pfd.py
-python3 vent_closure_pfd.py
+python3 flow_graph/exporters/matplotlib/mass_flow_pfd.py
+python3 flow_graph/exporters/matplotlib/vent_closure_pfd.py
 ```
 
-Vent closure authority: `docs-authority/VENT_CLOSURE.md` (AQS-VENT-001).
-Equipment stubs: `docs-authority/VENT_SCRUB_EQUIPMENT.md` (AQS-EQP-VENT-001).
+The authority for vent closure is `docs-authority/VENT_CLOSURE.md` (AQS-VENT-001). Equipment stubs are in `docs-authority/VENT_SCRUB_EQUIPMENT.md` (AQS-EQP-VENT-001).

@@ -139,7 +139,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | A | 2026-10-15 | Grounding and bonding | current |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | D | 2026-10-15 | Protection and coordination | current |
 | AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | F | 2026-10-15 | Storage and generation sizing | current |
-| AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | A | 2026-10-15 | Collection bus sections | current |
+| AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | B | 2026-10-24 | Collection bus sections | current |
 | AQS-ELEC-009 | `docs-authority/HAZ_AREA.md` | A | 2026-10-16 | Hazardous area classification | current |
 | AQS-ELEC-010 | `docs-authority/CABLE_SCHEDULE.md` | A | 2026-10-15 | Cable and busbar schedule | current |
 | AQS-END-001 | `docs-authority/DECOMMISSIONING.md` | A | 2026-10-16 | Decommissioning plan | current |
@@ -199,7 +199,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-LIT-ASSAY | `notes/LIT_ASSAY.md` | A | 2026-10-16 | Literature compositions for missing assays | current |
 | AQS-LITH-001 | `docs-authority/ALIGNER.md` | C | 2026-10-11 | Contact aligner | current |
 | AQS-MEP-001 | `docs-authority/LIFE_MEP.md` | A | 2026-10-01 | Life MEP — Phase D (duct / fixture / one-line study) | current |
-| AQS-MF-001 | `docs-authority/MASS_FLOW.md` | J | 2026-10-01 | Mass-flow claim status | current |
+| AQS-MF-001 | `docs-authority/MASS_FLOW.md` | K | 2026-10-24 | Mass-flow claim status | current |
 | AQS-MF-001-DERIVED | `flow_graph/derived/MASS_FLOW_DERIVED.md` | — | — | Mass-flow claim excerpt — DERIVED from flow_graph | current |
 | AQS-MFG-001 | `docs-authority/internal/DETAIL_MODEL_PLAN.md` | A | 2026-09-26 | Manufacturing-detail model list | superseded by AQS-PLAN-007 |
 | AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | C | 2026-10-21 | MFG_SHOP tool list | current |
@@ -437,7 +437,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-STD-006 | `docs-authority/MATERIALS_SEC3.md` | A | 2026-10-21 | Duty section 3 material selections, batch issue (AQS-STD-006) | current |
 | AQS-STD-007 | `docs-authority/CODE_BASIS.md` | B | 2026-10-24 | Code basis | current |
 | AQS-STL-001 | `docs-authority/STL_MANIFEST.md` | A | 2026-09-27 | STL rebuild manifest | current |
-| AQS-STR-001 | `docs-authority/STREAM_REGISTER.md` | K | 2026-10-01 | Stream register — inter-block only | current |
+| AQS-STR-001 | `docs-authority/STREAM_REGISTER.md` | L | 2026-10-24 | Stream register: streams between blocks | current |
 | AQS-STR-001-DERIVED | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | — | — | Stream register excerpt — DERIVED from flow_graph | current |
 | AQS-STUDY-CLOSE-001 | `docs-authority/MVS_STUDY_CLOSE.md` | — | 2026-10-02 | Study close — the 15 skipped nodes | current |
 | AQS-SUR-001 | `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | C | 2026-10-24 | Surplus pass thresholds — study freeze criteria (MVS) | current |

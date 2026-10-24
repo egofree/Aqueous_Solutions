@@ -118,7 +118,7 @@ plate at `Z_L0`, Y-aligned to `DOCK_Y` (AQS-BLD-001 Rev D / AQS-SITE-001). Propo
 **WARNING**
 
 H₂ equipment outdoors shall observe MAQ / classified-area rules already
-noted for S24 (AQS-MF-001 §5). Do not route HDR_H2 process capture
+noted for S24 (AQS-MF-001 §6). Do not route HDR_H2 process capture
 header into the genset fuel manifold without flame arrestors and
 isolation from the EW cathode header.
 

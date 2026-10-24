@@ -965,6 +965,11 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {OCPD -- Overcurrent protective device: a breaker or fuse that opens a circuit on overload or short circuit (NEC Article 240).}
 
+{NMP -- N-methyl-2-pyrrolidone, a polar solvent used in photoresist stripping}
+
+
+
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}
