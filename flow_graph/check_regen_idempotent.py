@@ -11,7 +11,7 @@ committed derived file is stale.
 
 The default (strict) mode requires both: the first run reproduces the committed tree, and the
 second run reproduces the first. --repeat-only checks determinism alone. Use it where the
-toolchain differs from the one that produced the committed renders (e.g. CI with another
+toolchain differs from the one that produced the committed renders (for example a machine with another
 matplotlib or ffmpeg build), so raster and video bytes may legitimately differ from HEAD.
 
 Exit 0 when the checked runs leave no difference; exit 1 and list the changed files otherwise.

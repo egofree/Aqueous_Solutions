@@ -96,27 +96,36 @@ It regenerates the register (AQS-REG-002) and fails on an incomplete entry.
 
 ### Required checks
 
-Run from the repository root:
+The project uses no hosted build service: you run the checks on your own
+machine before you submit. One command runs them all from the repository root:
 
 ```bash
-pytest flow_graph/                                  # tests, including the 1 % misfit gate
-python3 -m flow_graph.param.regen --check           # no stale derived file
-python3 flow_graph/check_authority_contract.py      # authority contract
+scripts/check_all.sh            # or: make check
 ```
 
-Before you push, also run
+It runs, in order:
 
 ```bash
-python3 flow_graph/check_regen_idempotent.py         # a full regen of HEAD changes nothing, twice
+pytest flow_graph/                              # tests, including the 1 % misfit gate
+python3 -m flow_graph.param.regen --check       # no generated file lags its inputs
+python3 flow_graph/check_authority_contract.py  # the design tool matches the graph
+python3 -m flow_graph.check_citations           # no stale document number, sector, path or commit
+python3 -m flow_graph.check_doc_style           # abbreviations defined, no working jargon
 ```
 
-It runs the full pipeline twice in a temporary worktree of `HEAD`, so commit
-first. CI runs the toolchain-independent part (`--repeat-only`: a second run
-changes nothing) through `AQS_SLOW_TESTS=1 pytest flow_graph/param/test_regen.py`.
+Before you push, commit and run the full set, which adds a check that a full
+regeneration of `HEAD` changes nothing, twice (slow):
 
-Maintainers run the same checks on every pull request, and the CI workflow
-will run them automatically once it is enabled. A pull request that fails them
-is not merged.
+```bash
+scripts/check_all.sh --full     # or: make check-full
+```
+
+To run the checks automatically before every push from your clone, install
+the optional local Git hook with `scripts/install_pre_push_hook.sh` (or
+`make install-hooks`).
+
+Maintainers run the same script on every pull request before merging. A pull
+request that fails it is not merged.
 
 ### Large files
 

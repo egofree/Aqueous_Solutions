@@ -8,9 +8,7 @@
 
 ## Checklist
 
-- [ ] `pytest flow_graph/` passes
-- [ ] `python3 -m flow_graph.param.regen --check` passes (no stale derived files)
-- [ ] `python3 flow_graph/check_authority_contract.py` passes
+- [ ] `scripts/check_all.sh --full` passes on my machine (tests, staleness, authority contract, citations, documentation style, full regeneration)
 - [ ] Generated files were regenerated, not hand-edited
 - [ ] New numbers cite a reference registered in `flow_graph/param/refs.py` or an entry in `docs-authority/assumptions_manual.json`
 - [ ] TASK_PLAN regenerated if a task closed (`python3 docs-authority/_task_plan_gen.py`)

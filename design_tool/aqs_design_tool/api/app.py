@@ -118,7 +118,7 @@ def projection_check() -> dict:
     """WP-Ap2: fail (HTTP 409) if on-disk candidate_mvs drifts from graph.
 
     Solve/mvs/sandbox always load the graph; this endpoint makes dual-master
-    drift visible to CI and operators.
+    drift visible to contributors and operators.
     """
     try:
         from ..flow_graph_adapter import projection_contract_status

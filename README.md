@@ -178,12 +178,13 @@ python3 -m venv .venv
 . .venv/bin/activate
 pip install -r requirements.txt
 
-pytest flow_graph/                         # tests, including the 1 % misfit gate
-python3 -m flow_graph.param.regen --check  # staleness gates: no derived file lags the graph
-python3 flow_graph/check_authority_contract.py
+scripts/check_all.sh    # or: make check
 ```
 
-These checks must pass on every pull request. Run `git lfs pull` later
+`scripts/check_all.sh` runs the tests, the staleness check, the authority
+contract, the citation check and the documentation style check. They run on
+your machine; the project uses no hosted build service. They must pass before
+you submit a pull request (see CONTRIBUTING.md). Run `git lfs pull` later
 if you need the full CAD models.
 
 To change the design, edit an input or a generator, then rerun the pipeline:

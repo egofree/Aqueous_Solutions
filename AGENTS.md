@@ -20,14 +20,11 @@ a second list of exceptions.
 
 ## Verification
 
-After any graph, drivers or transfer-function change, in order:
-
-1. `pytest flow_graph/` (includes the 1 % misfit gate)
-2. `python3 -m flow_graph.param.regen --check` (staleness gates)
-3. `python3 flow_graph/check_authority_contract.py` (authority contract)
-
-Before pushing, also run `python3 flow_graph/check_regen_idempotent.py`: a full
-regen of the committed tree must change nothing.
+After any graph, drivers or transfer-function change, run `scripts/check_all.sh` (tests including the 1 % misfit gate, staleness
+gates, authority contract, citation check, documentation style check). Before
+pushing, run `scripts/check_all.sh --full`, which adds a full regeneration of
+the committed tree that must change nothing. The project uses no hosted CI; do
+not add workflow files.
 
 All of them must pass before a commit. Each change carries a dated change record in
 `notes/` or `docs-authority/notes/`; the task plan's evidence pass reads them.

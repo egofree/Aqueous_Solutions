@@ -65,7 +65,7 @@ def test_check_green_at_head():
 
 def test_full_regen_is_idempotent():
     """A full regen on a clean tree changes nothing, twice (flow_graph/check_regen_idempotent.py).
-    Slow (two full runs), so it runs only when AQS_SLOW_TESTS=1, as in CI; run the script directly
+    Slow (two full runs), so it runs only when AQS_SLOW_TESTS=1; run the script directly
     before you push a generator change."""
     import pytest
     if os.environ.get('AQS_SLOW_TESTS') != '1':
