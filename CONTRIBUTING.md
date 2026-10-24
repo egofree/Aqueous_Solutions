@@ -33,6 +33,14 @@ map.
    looks surplus to the daily balance.
 6. **The plant sustains itself.** Production is sized for internal demand plus a
    saleable surplus, and every surplus stream has a defined outlet.
+7. **Documents describe structure, not current counts.** Do not write how many
+   files, units, sectors, documents, tests, stale files or commits there are,
+   how large the repository is, or the current value of a driver: those facts
+   go stale on the next change. Point to the authority or the command that
+   reports them. Generated outputs may state their own counts, since they
+   regenerate. A list that must agree with the graph is generated from it or
+   checked by a test, never kept in step by hand; enforce invariants with
+   checks, not prose.
 
 ## Assumptions register
 
@@ -88,7 +96,7 @@ python3 -m flow_graph.param.regen --check           # no stale derived file
 python3 flow_graph/check_authority_contract.py      # authority contract
 ```
 
-If you changed a generator, a pipeline stage or `regen_manifest.json`, also run
+Before you push, also run
 
 ```bash
 python3 flow_graph/check_regen_idempotent.py         # a full regen of HEAD changes nothing, twice
@@ -105,7 +113,7 @@ is not merged.
 ### Large files
 
 STL, FreeCAD and other CAD exports (`cad/stl/`, `models/`) are stored with Git
-LFS, about 110 MB in total. The tests need only `cad/stl/` (about 4 MB). Clone
+LFS. The tests need only the unit envelopes in `cad/stl/`, a small part of it. Clone
 with `GIT_LFS_SKIP_SMUDGE=1`, then run `git lfs pull --include="cad/stl/*"`;
 run a plain `git lfs pull` only when you need the full CAD models. Every LFS
 download counts against the project's monthly bandwidth quota. Do not commit

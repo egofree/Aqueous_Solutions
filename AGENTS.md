@@ -26,8 +26,27 @@ After any graph, drivers or transfer-function change, in order:
 2. `python3 -m flow_graph.param.regen --check` (staleness gates)
 3. `python3 flow_graph/check_authority_contract.py` (authority contract)
 
-All three must pass before a commit. Each change carries a dated change record in
+Before pushing, also run `python3 flow_graph/check_regen_idempotent.py`: a full
+regen of the committed tree must change nothing.
+
+All of them must pass before a commit. Each change carries a dated change record in
 `notes/` or `docs-authority/notes/`; the task plan's evidence pass reads them.
+
+## Parametric documentation
+
+Documents never hard-code current counts or other over-specific facts that go
+stale on the next change: numbers of files, units, sectors, documents, tests,
+stale files or commits, repository or LFS sizes, or the current value of a
+driver. Name the authority instead (the graph, `drivers.json`, a generated
+register, or the command that reports the figure). Generated outputs may state
+their own counts, because they regenerate with the model.
+
+Structure stays parametric and scalable. A list that must agree with the graph
+(sectors, units, document numbers, ids) is generated from it or checked against
+it by a test; it is never kept in step by prose. Enforce an invariant with a
+check in `pytest flow_graph/` or the pipeline, not with a sentence. Do not add
+fixed limits or fixed numbers to these rules; they would bind later work to
+values that are no longer true.
 
 ## Environment
 
@@ -111,7 +130,7 @@ staleness gates in `docs-authority/_rev_stamp.py` prove the tree is current.
 The plant produces commodities beyond its internal needs, so it sustains itself
 in money as well as in material. Production, power and storage are sized for
 internal demand plus a saleable surplus, and every surplus stream has a defined
-outlet (product store, export meter). PV is sized at `pv_oversize_factor` (2.0)
+outlet (product store, export meter). PV is sized at `pv_oversize_factor` (set in `drivers.json`)
 times the nameplate that closes the daily balance.
 
 ## Redundancy

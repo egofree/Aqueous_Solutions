@@ -65,14 +65,16 @@ re-uses heat before it is rejected; water treatment; an electrolyser for oxygen;
 a cryogenic gas plant; a farm and habitat; and in-house manufacturing (foundry,
 polymers, glass, wafer fabrication) so the plant can make its own parts.
 
-The model groups the plant's 178 units into 19 sectors, the top level of
-`flow_graph/system_tree.yaml`:
+The model groups the plant's units into sectors, the top level of
+`flow_graph/system_tree.yaml` (a test keeps this table in step with it):
 
 | Kind | Sectors |
 |---|---|
 | Process | DIGESTER (leach, electrowinning, acid and base regeneration), OIL, GLASS, GAS, FOUNDRY, POLYMERS, FAB, MFG, NUT |
+| Life support | FARM, HAB |
 | Utilities | CRYO, WTR, ELEC, HEAT, GEO |
 | Energy storage | MEOH, PUMPED_HYDRO (with the ZnBr2 flow battery under ELEC) |
+| Export | DOCK |
 | Life support | HAB, FARM |
 | Export | DOCK |
 
@@ -163,9 +165,9 @@ notes/                design notes, audits and owner rulings (dated change
 Requirements: Git with Git LFS, Python 3.11 or later. FreeCAD 1.0 and CadQuery
 are needed only for the CAD builders; Node.js only for the web UI.
 
-The CAD files (about 110 MB) are stored in Git LFS. The model and its tests
-need only the unit envelopes in `cad/stl/` (about 4 MB), so clone without the
-rest:
+The CAD files are stored in Git LFS and make up most of the repository. The
+model and its tests need only the unit envelopes in `cad/stl/`, so clone without
+the rest:
 
 ```bash
 GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/egofree/Aqueous_Solutions.git
@@ -181,7 +183,7 @@ python3 -m flow_graph.param.regen --check  # staleness gates: no derived file la
 python3 flow_graph/check_authority_contract.py
 ```
 
-These three checks must pass on every pull request. Run `git lfs pull` later
+These checks must pass on every pull request. Run `git lfs pull` later
 if you need the full CAD models.
 
 To change the design, edit an input or a generator, then rerun the pipeline:
@@ -236,7 +238,7 @@ topic. The usual entry points:
 Contributions are welcome: calculations, corrections with a cited basis,
 generators, CAD, tests and reviews. Read [CONTRIBUTING.md](CONTRIBUTING.md)
 before you open a pull request. The short version: change inputs or generators,
-never generated files; cite every number; run the three checks; and keep every
+never generated files; cite every number; run the checks; and keep every
 page consistent with the graph in the same commit. Participation is governed by
 the [Code of Conduct](CODE_OF_CONDUCT.md). Report security issues privately as
 described in [SECURITY.md](SECURITY.md).
