@@ -1,65 +1,217 @@
 # Aqueous Solutions
 
-Closed-loop plant that takes any feed, from silicate and oxide regolith to metal-rich scrap (AQS-ASSAY-001), and returns metals, salts, silica, hydrocarbons, and regenerated acid. Energy may be external. A second plant is the replication bar: the mass input is waste or feedstock, not a purchased reagent kit.
+An open design for a closed-loop, feedstock-agnostic plant that sustains
+itself. It takes any feed, from silicate and oxide regolith to metal-rich scrap
+and mixed waste (AQS-ASSAY-001), and returns metals, salts, silica,
+hydrocarbons and regenerated acid. It makes its own reagents, recovers its own
+water and air, grows food for its crew, and sells a surplus. The aim is a
+design that a shop can build from the files in this repository alone, using
+open-source designs, and that is complete enough to build a second plant.
 
-License: CERN-OHL-S-2.0.
+> **Status.** This is a study-grade engineering design under active
+> development. Nothing here is stamped by a licensed engineer. Do not build or
+> operate any part of it without independent engineering review against the
+> codes that apply where you are.
+
+SPDX-License-Identifier: CERN-OHL-S-2.0. See [Licence](#licence).
+
+## Principles
+
+- **Closed loop.** Every mass stream closes: what enters leaves as product,
+  recycle or a defined boundary flow. Reagents (HCl, NaOH, chlorate) are
+  regenerated inside the plant, not bought as a kit.
+- **Feedstock-agnostic.** Units are sized for the bounding case across the
+  assay envelope, not for one feed.
+- **Size from need.** Every unit, rate and space is sized from actual demand by
+  a cited method. A layout restriction that blocks a sized design is revised.
+- **Self-sustaining.** Production, power and storage are sized for internal
+  demand plus a saleable surplus. PV is oversized (2.0x) so storage still fills
+  on a poor day.
+- **Redundancy.** Energy and life-support systems (power, O2, water, CO2
+  removal, thermal, food, sanitation) carry N+1 or diverse backups, sized for a
+  defined outage from a cited code or reliability basis.
+- **Open and traceable.** Built from open-source designs (see
+  [DEPENDENCIES.md](DEPENDENCIES.md)). Every number is solved by the model,
+  cites a published reference, or is a registered assumption with the test that
+  would replace it. No supplier quotations as a design basis.
 
 ## What the plant does
 
-One leach tank. Hydrochloric acid and sodium chlorate dissolve the feed at 70–85 °C. Three streams leave that tank.
+One leach tank. Hydrochloric acid and sodium chlorate dissolve the feed at
+70–85 °C. Three streams leave that tank.
 
-- Sink solids leave on the floor auger, then a vibratory split. Dense plastic joins the dryer. Glass and ceramic are rinsed, burned out, milled, and digested in sodium hydroxide. Quartz that does not open goes to alkali fusion. Silica is dropped, calcined, and reduced with pyrolyzer char.
-- Float leaves over the wall weir, is dried, and is cracked in an induction pyrolyzer. The condensate is split into naphtha (C5–C10), fuel oil (C11–C18), and wax (C19–C32). Bottoms return to the auger. Char is the silicon reductant.
-- Liquor is coalesced, filtered, and concentrated on a cation-exchange stack, then electrowon in order from gold through zinc. Lithium and the rare earths are bled before the hydroxide cuts. Aluminum, magnesium, and calcium leave as hydroxides and are reduced in chloride pots. Rare-earth oxides are reduced in a separate calcium retort. Boron oxide is reduced in its own retort, not in the silicon arc.
+- **Sink solids** leave on the floor auger, then a vibratory split. Dense
+  plastic joins the dryer. Glass and ceramic are rinsed, burned out, milled and
+  digested in sodium hydroxide. Quartz that does not open goes to alkali fusion.
+  Silica is dropped, calcined and reduced with pyrolyzer char.
+- **Float** leaves over the wall weir, is dried, and is cracked in an induction
+  pyrolyzer. The condensate is split into naphtha (C5–C10), fuel oil (C11–C18)
+  and wax (C19–C32). Bottoms return to the auger. Char is the silicon reductant.
+- **Liquor** is coalesced, filtered and concentrated on a cation-exchange stack,
+  then electrowon in order from gold through zinc. Lithium and the rare earths
+  are bled before the hydroxide cuts. Aluminium, magnesium and calcium leave as
+  hydroxides and are reduced in chloride pots. Rare-earth oxides and boron oxide
+  are reduced in their own retorts.
 
-Spent brine is raised to pH 9. An anion-exchange stack concentrates borate, phosphate, sulfate, and fluoride. The cuts are after the stack. Diluate goes to a potassium chloride crystallizer, then to bipolar-membrane electrodialysis, which makes the hydrochloric acid and the sodium hydroxide. Chlorine from the anodes and the pots is absorbed to sodium chlorate and returned with the acid. Aqueous cells do not make aluminum, magnesium, calcium, lithium, titanium, silicon, or the rare earths.
+Spent brine is raised to pH 9. An anion-exchange stack concentrates borate,
+phosphate, sulfate and fluoride. Diluate goes to a potassium chloride
+crystallizer, then to bipolar-membrane electrodialysis, which makes the
+hydrochloric acid and the sodium hydroxide. Chlorine from the anodes and the
+pots is absorbed to sodium chlorate and returned with the acid.
 
-## The spine
+Around this process line sit the utilities and life support: roof PV with
+electrochemical, gravity (pumped hydro) and methanol storage; a heat ladder that
+re-uses heat before it is rejected; water treatment; an electrolyser for oxygen;
+a cryogenic gas plant; a farm and habitat; and in-house manufacturing (foundry,
+polymers, glass, wafer fabrication) so the plant can make its own parts.
 
-The plant is one parametric system, not a folder of documents that disagree.
+## Authority chain
 
-- `flow_graph/plant_flow_graph.json` (AQS-FLOW-GRAPH-001, Rev AC) is the sole topology authority: 178 nodes, 493 edges, solved rates and duties on the edges. Every mass-closing unit balances to ≤ 1e-4 kg/d (43 failing units at the Rev AC pivot, 0 now; suite 43/43).
-- `flow_graph/param/drivers.json` (AQS-PAR-001) holds every independent number — 700-plus keys under dotted tree paths, each with units and a basis: a published reference, a register id, or a named owner ruling. One number, one door. The loader refuses a value with no basis.
-- `flow_graph/system_tree.yaml` (AQS-SYS-TREE-001) is the decomposition: 19 sectors, 30 trains, 249 nodes, 178 unit leaves. Sandboxing resolves through it at four levels (sector / system / subsystem / unit), most specific wins.
-- `python3 -m flow_graph.param.regen` is the one command. 44 stages in dependency order, graph convergence by successive substitution, then every derived document against the final graph sha: duties, sizing sheets, ISO sheets, line lists, P&IDs, views, load list, one-line, workbook, and the task plan. It writes a receipt (`flow_graph/derived/_regen_receipt.json`) and the staleness gates in `docs-authority/_rev_stamp.py` turn red if any of the ~876 derived files lags the graph.
-- `docs-authority/MODEL_WORKBOOK.xlsx` is the generated 24-sheet view of the same system: drivers with citations, the tree with rolled-up kW, per-sector unit and stream sheets, the electrical chain, and the heat ledger.
-- `docs-authority/TASK_PLAN.md` (AQS-PLAN-007) is the work list: 2871 tasks with done-when checks; a task is checked only where a cited file proves it (evidence pass 2026-10-19, `docs-authority/notes/2026-10-19-evidence-pass.md`).
-
-Owner rulings that fixed the blocking decisions (D-AIR, D-O2, D-FARM, D-GEO_ORC, D-PV, D-DOCK) are recorded in `notes/first_principles_audit_2026-10-17.md`: the electrolyzer is the oxygen source with the grow bed as the diverse N+1 pair; the dock is the inter-plant trade boundary with a reported trade statement, not a closure constraint; PV is derived from the bounding load at 2.0× oversize and the roof footprint derives from it; heat is re-used before it is rejected.
-
-## Layout
+The plant is one parametric system, not a folder of documents. Information
+flows one way:
 
 ```
-flow_graph/         the graph, system tree, drivers, solver, regen, SVG views
-docs-authority/     authority documents, generated duties/sheets, MODEL_WORKBOOK,
-                    TASK_PLAN, notes/ (rulings and change records)
-design_tool/        FastAPI + React design UI on the unified engine
-models/freecad/     FreeCAD builders. SCALE_M = 1.0 is the build size
-models/mfg/         CadQuery unit builders (foundry, polymers, reactors, ...) with
-                    per-unit export/ STEP, STL, BOM
-cad/                STL envelopes and study solids
-iso/                ISO sheets
-media/pfd/          rendered process sheets
-tables/             BOM and material lists
-notes/              audit notes and owner rulings
+drivers.json + refs.py + assumptions_manual.json      (inputs, each with a basis)
+        │
+        ▼
+flow_graph/plant_flow_graph.json                       (topology authority: units, streams,
+        │                                               solved rates and duties)
+        ▼
+python3 -m flow_graph.param.regen                      (parametric pipeline: solve, size,
+        │                                               converge, then generate)
+        ▼
+generated outputs                                      (duty sheets, sizing sheets, line list,
+                                                        isometrics, P&IDs, views, load list,
+                                                        one-line, workbook, task plan)
 ```
 
-Graph SVG views under `flow_graph/views/` are the topology export. They are not a substitute for the equipment sheets. The process sheets in `media/pfd/` are the current disassembly-line drawing set; generators live in `flow_graph/exporters/matplotlib/`. Unit P&IDs are generated (AQS-PID-001-<unit>, 174 sheets, `docs-authority/_pid_sheets.py`) and registered in the drawing register.
+- `flow_graph/plant_flow_graph.json` (AQS-FLOW-GRAPH-001) is the sole topology
+  authority. Where a document and the graph disagree, the graph wins and the
+  document is regenerated.
+- `flow_graph/param/drivers.json` (AQS-PAR-001) holds every independent number
+  with units and a basis: a reference key in `flow_graph/param/refs.py`, an
+  assumption id (A-M-nnn) in `docs-authority/assumptions_manual.json`, or a
+  recorded owner ruling. The loader refuses a value with no basis.
+- `flow_graph/system_tree.yaml` (AQS-SYS-TREE-001) is the decomposition:
+  sectors, trains, subsystems and units.
+- `python3 -m flow_graph.param.regen` runs the pipeline stages in dependency
+  order (`flow_graph/param/regen_manifest.json`), writes a receipt
+  (`flow_graph/derived/_regen_receipt.json`), and the staleness gates in
+  `docs-authority/_rev_stamp.py` fail if any derived file lags the graph.
+- `docs-authority/AUTHORITY.md` is the lock list of authority documents.
 
-## Design tool
+## Repository map
 
-`design_tool/` serves the graph read-only: `GET /api/v1/system-tree`, `GET /api/v1/params`, `GET /api/v1/regen-status` (staleness via the same evaluator regen `--check` runs, so a GET never mutates authority docs). The web UI (`design_tool/web/`) renders the tree with four-level toggles, the drivers table with citation badges, and a regen staleness badge. Nothing in the UI writes the graph, the drivers, or the tree; the write path is edit → `python3 -m flow_graph.param.regen`.
+```
+flow_graph/           the graph, system tree, schema, solver and regen pipeline
+  param/              drivers.json, refs.py, solver, sizing functions, regen manifest
+  views/              generated SVG topology views
+  exporters/          process-sheet (PFD) generators
+docs-authority/       authority documents and everything generated from the graph
+  duties/  sizing/    per-unit duty sheets and sizing calculations (generated)
+  pid/  iso/          P&IDs and piping isometrics (generated)
+  nozzles/  fab/      nozzle schedules and fabrication routes
+  inventory/          building-block inventories (motors, wire, pipe, parts)
+  notes/              dated change records and rulings
+  _*.py               study calculators and document generators
+  TASK_PLAN.md        the master task list (AQS-PLAN-007, generated)
+  MODEL_WORKBOOK.xlsx the generated workbook view of the model
+design_tool/          read-only design API (FastAPI) and web UI (React/Vite)
+models/freecad/       FreeCAD builders for the plant general arrangement
+models/mfg/           CadQuery unit builders with STEP/STL exports, drawings and BOMs
+models/motors/        motor family models
+cad/                  STL envelopes (Git LFS) and study solids
+media/  iso/  tables/ rendered process sheets, isometric PDF set, BOM tables
+notes/                audit notes and owner rulings
+```
 
-## Rebuild
+## Quickstart
+
+Requirements: Git with Git LFS, Python 3.11 or later. FreeCAD 1.0 and CadQuery
+are needed only for the CAD builders; Node.js only for the web UI.
 
 ```bash
-python3 -m flow_graph.param.regen          # graph + every derived document
-cd models && bash REBUILD.sh               # solids
-cd models/freecad && /usr/bin/freecadcmd build_plant.py
+git clone https://github.com/egofree/Aqueous_Solutions.git
+cd Aqueous_Solutions
+git lfs pull                       # STL envelopes; needed only for CAD work
+
+python3 -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
+
+python3 -m flow_graph.param.regen          # solve the graph and regenerate every derived file
+pytest flow_graph/                         # tests, including the 1 % misfit gate
+python3 -m flow_graph.param.regen --check  # staleness gates: no derived file lags the graph
+python3 flow_graph/check_authority_contract.py
 ```
 
-FreeCAD 1.0 and OpenSCAD are required for the solids; CadQuery for the `models/mfg/` unit builders. This tree does not vendor those binaries. `SCALE_M = 1.0` in `models/freecad/params.py` is the manufacturing size. `2.0` is a review scale only. Level datums and the building stack are in `docs-authority/`. See `docs-authority/REBUILD.md` and `docs-authority/BUILD_3D_FROM_FLOW.md`.
+`python3 -m flow_graph.param.regen --quick` runs only the graph-writing stages
+for a what-if pass. A full run regenerates several hundred documents; run it
+before you commit.
 
-## Authority
+CAD (optional):
 
-`docs-authority/AUTHORITY.md` is the lock list. The typed plant graph in `flow_graph/plant_flow_graph.json` is the topology source. Equipment duties written on the process sheets are the drawing source for the disassembly line. Where a sheet and an older note disagree, the sheet is the later drawing. Where a document and the graph disagree, the graph wins and the document is regenerated.
+```bash
+cd models/freecad && freecadcmd build_plant.py      # plant general arrangement
+python -m flow_graph.param.envelopes --all          # CadQuery unit envelopes (needs cadquery)
+```
+
+Design tool (optional): see [design_tool/README.md](design_tool/README.md). It
+serves the graph read-only on the local machine; nothing in the UI writes the
+graph, the drivers or the tree.
+
+## How to read the outputs
+
+- **Start with the workbook.** `docs-authority/MODEL_WORKBOOK.xlsx` has drivers
+  with citations, the system tree with rolled-up power, per-sector unit and
+  stream sheets, the electrical chain and the heat ledger.
+- **One unit:** its duty sheet `docs-authority/duties/<UNIT>.md` (mass and
+  energy in and out, nozzles, relief case), its sizing sheet under
+  `docs-authority/sizing/`, its P&ID under `docs-authority/pid/`, and, where
+  it exists, its CAD model, drawings and BOM under `models/mfg/<UNIT>/`.
+- **Document numbers.** Every document carries an `AQS-...` number, a revision
+  and a date; `docs-authority/DOC_REGISTER.md` lists them.
+- **Assumptions.** `docs-authority/ASSUMPTIONS_REGISTER.md` (AQS-REG-002) lists
+  every A-M-nnn assumption with its basis, sensitivity and the test that would
+  replace it.
+- **Progress.** `docs-authority/TASK_PLAN.md` lists every task with a "Done
+  when" check. A task is ticked only where a cited file proves it. Each open
+  task carries a triage tag: desk, hardware or owner.
+- **Study, not stamped.** Values marked study are the model's current best
+  calculation, not certified figures.
+
+## Contributing
+
+Contributions are welcome: calculations, corrections with a cited basis,
+generators, CAD, tests and reviews. Read [CONTRIBUTING.md](CONTRIBUTING.md)
+before you open a pull request. The short version: change inputs or generators,
+never generated files; cite every number; run the three checks; and keep every
+page consistent with the graph in the same commit. Participation is governed by
+the [Code of Conduct](CODE_OF_CONDUCT.md). Report security issues privately as
+described in [SECURITY.md](SECURITY.md).
+
+## Licence
+
+Aqueous Solutions is licensed under the **CERN Open Hardware Licence Version 2 –
+Strongly Reciprocal** (CERN-OHL-S-2.0). The full text is in [LICENSE](LICENSE).
+
+```
+SPDX-License-Identifier: CERN-OHL-S-2.0
+Copyright 2026 Mike Matthews and contributors.
+Source Location: https://github.com/egofree/Aqueous_Solutions
+```
+
+The licence is inherited from the SEM-Tech open membrane project
+(S.E.M Technology / Rowow), whose membranes, cell and stack architectures are
+released under CERN-OHL-S and which this plant uses in its wet line (chlorate
+leach, electrowinning, bipolar-membrane regeneration). Using the same strongly
+reciprocal licence keeps the combined design compatible with that work: anyone
+who conveys a modified design, or a product built from it, must make the
+complete corresponding source available under CERN-OHL-S-2.0 and state where it
+is. This project is not a Rowow product, and the licence does not grant use of
+the Rowow name or imply its endorsement. Other open designs the plant draws on
+keep their own licences and are linked, not bundled; see
+[DEPENDENCIES.md](DEPENDENCIES.md).
+
+The design is provided without warranty of any kind; see section 6 of the
+licence.
