@@ -16,7 +16,7 @@ practice + stand-in vessel ratings — not purchased U-stamp data.
 | B | Wave 4 | VJ_001…005 FreeCAD envelope stubs (not fabricator isos); MAWP still TBD | 2026-10-01 |
 | C | Req fill | Study MAWP / relief ≤ MAWP margins; WPS class notes; MeOH PC-11; stand-ins | 2026-10-01 |
 
-Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001. `SCALE_M = 1.0`.
+Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. `SCALE_M = 1.0`.
 
 ---
 

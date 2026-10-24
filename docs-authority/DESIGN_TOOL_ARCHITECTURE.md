@@ -3,7 +3,7 @@
 Document number: AQS-UI-001  
 Revision: F  
 Date: 2026-10-24  
-Authority: AQS-AUTH-001; style AQS-DOC-001; scale AQS-SCALE-001
+Authority: AQS-AUTH-001; style AQS-DOC-002; scale AQS-SCALE-001
 (`SCALE_M = 1.0`); streams AQS-STR-001; mass-flow AQS-MF-001;
 compliance themes AQS-COMPL-001; flow graph AQS-FLOW-GRAPH-001;
 plan AQS-PLAN-UI-001 Rev N (`unify_then_reshape`).  
@@ -600,7 +600,7 @@ a phase dependency.
 | Doc | ID | Role |
 |---|---|---|
 | AUTHORITY.md | AQS-AUTH-001 | Hub pointer |
-| DOCUMENTATION_STYLE.md | AQS-DOC-001 | House style |
+| DOCUMENTATION_STYLE.md | AQS-DOC-002 | House style |
 | SCALE_MODEL.md | AQS-SCALE-001 | Growth rules |
 | STREAM_REGISTER.md | AQS-STR-001 | `S##` IDs |
 | MASS_FLOW.md | AQS-MF-001 | Closed-loop claims |

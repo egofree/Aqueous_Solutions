@@ -13,7 +13,7 @@ AQS-EQP-FAB-RGN-001 (`WS_KOH`), AQS-WTR-001 / FAB UPW, AQS-ELC-001
 | A | — | Close open solar-cell path with named train; no invented kW / belt solids | 2026-10-01 |
 | B | Wave 4 | Dedicated PFD + FreeCAD PV_* east-strip envelopes; kW still TBD | 2026-10-01 |
 
-Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001. `SCALE_M = 1.0`.
+Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. `SCALE_M = 1.0`.
 
 ---
 

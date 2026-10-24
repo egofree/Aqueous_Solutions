@@ -2,6 +2,14 @@
  "_about": "Retired repository paths and names, with what replaced them. flow_graph/check_citations.py reads this file: live text must not cite a retired path, and `python3 -m flow_graph.check_citations --fix` rewrites a citation to the first replacement that exists. A renumbered page's old number is often still held by the page that kept it (the renumber cleared a duplicate). For those, reissued_numbers gives the context words that show a citation meant the renumbered page; the check flags only those citations (and not lines that also match the optional \"unless\" words, used where two pages swapped numbers), and every reissued number must have an entry. Retired sector ids are kept in design_tool/aqs_design_tool/sector_definitions.py (RETIRED_SECTOR_IDS) and former document numbers on the renumbered pages themselves (\"Former number:\" lines, listed in DOC_REGISTER.md).",
  "paths": [
   {
+   "old": "docs-authority/DOCUMENTATION_STYLE.md",
+   "now": [
+    "docs-authority/DOC_STYLE.md"
+   ],
+   "when": "2026-10-24 style guide merge",
+   "note": "the house style (AQS-DOC-001) merged into the single style guide AQS-DOC-002"
+  },
+  {
    "old": "notes/",
    "now": [
     "docs-authority/notes/"

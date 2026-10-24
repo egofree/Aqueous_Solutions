@@ -7,7 +7,7 @@ Authority: AQS-AUTH-001; MVS criteria AQS-UI-001 Rev C §3.2 / §11.1 item 2;
 capacity study AQS-AUD-001 §11–12; scale AQS-SCALE-001; electrical
 AQS-REQ-KW-001 / AQS-ELC-001; sector map AQS-SEC-001; streams AQS-STR-001;
 planning gap audit AQS-MVS-GAP-001.  
-Style: AQS-DOC-001.  
+Style: AQS-DOC-002.  
 **Stage = study pass thresholds.** Not a PE stamp. Not vendor nameplates.
 Does **not** freeze `AQS-MVS-001`. Numbers are labeled **study** until
 Project locks berth count, SITE_LAT, and wafer starts.

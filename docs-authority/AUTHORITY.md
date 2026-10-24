@@ -107,7 +107,7 @@ docs-authority/ tree.
 Rebuild: `python3 -m flow_graph.param.regen` (add `--cad` for the 3D models), described in `docs-authority/REBUILD.md` (**AQS-REB-001**), including **SCALE_M** (actual building size in `models/freecad/params.py`; manufacturing 1.0; 2.0 review-only).
 
 Compliance theme matrix: `docs-authority/COMPLIANCE_MATRIX.md` (**AQS-COMPL-001**).
-House documentation style: `docs-authority/DOCUMENTATION_STYLE.md` (**AQS-DOC-001**).
+House documentation style: `docs-authority/DOC_STYLE.md` (**AQS-DOC-002**).
 Electrical hub identity: `ELECTRICAL.md` (**AQS-ELC-001**).
 MeOH DMFC remains deferred (AQS-FC-001).
 

@@ -239,7 +239,9 @@ Contributions are welcome: calculations, corrections with a cited basis,
 generators, CAD, tests and reviews. Read [CONTRIBUTING.md](CONTRIBUTING.md)
 before you open a pull request. The short version: change inputs or generators,
 never generated files; cite every number; run the checks; and keep every
-page consistent with the graph in the same commit. Participation is governed by
+page consistent with the graph in the same commit. Documents follow the
+[style guide](docs-authority/DOC_STYLE.md), which is distilled from NASA
+KSC-DF-107 and the IET guide to technical report writing. Participation is governed by
 the [Code of Conduct](CODE_OF_CONDUCT.md). Report security issues privately as
 described in [SECURITY.md](SECURITY.md).
 

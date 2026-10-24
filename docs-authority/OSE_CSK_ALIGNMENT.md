@@ -6,7 +6,7 @@ Date: 2026-10-24
 Authority: AQS-SEC-001 (`SECTOR_DEFINITIONS.md`); AQS-EQP-MFG-001;
 AQS-EQP-MFG-MET-001; AQS-EQP-FRM-001; AQS-EQP-FAB-001; AQS-BOM-SC-001;
 AQS-EQP-STUDY-001; `DEPENDENCIES.md`.  
-Style: AQS-DOC-001.
+Style: AQS-DOC-002.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|

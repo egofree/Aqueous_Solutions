@@ -3,7 +3,7 @@
 Document number: AQS-STR-001  
 Revision: K  
 Date: 2026-10-01  
-Authority: AQS-MF-001, sector AQS-EQP-*; style AQS-DOC-001; compliance AQS-COMPL-001 (vent/H₂ themes).
+Authority: AQS-MF-001, sector AQS-EQP-*; style AQS-DOC-002; compliance AQS-COMPL-001 (vent/H₂ themes).
 
 > **WP-Ap3 derived sync:** Generated excerpt lives at
 > `flow_graph/derived/STREAM_REGISTER_DERIVED.md` (from `plant_flow_graph.json`

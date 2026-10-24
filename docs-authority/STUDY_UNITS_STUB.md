@@ -7,7 +7,7 @@ Authority: AQS-WTR-001; AQS-EQP-GEO-001; AQS-EQP-FAB-001; AQS-EQP-FAB-PV-001;
 AQS-EQP-MFG-001; AQS-MFG-ELC-001; AQS-GAP-001; AQS-MVS-GAP-001 §4.1.3;
 AQS-AUD-001 §10.4 / §11; seed `candidate_mvs.json`; Project decision 2026-10-01;
 the unpublished planning note UNIT_EQUIPMENT_SPEC_GAP (**AQS-EQ-GAP-001**).  
-Style: AQS-DOC-001.  
+Style: AQS-DOC-002.  
 **Stage = first-principles study + stubs toward MVS (Rev F: gap-register pointer).** Not Present CAD yet.
 Not vendor nameplates. Not PE stamps. Numbers below are **study** with cited
 method. Each open blocker is a **queued study in the plan** — not an accepted

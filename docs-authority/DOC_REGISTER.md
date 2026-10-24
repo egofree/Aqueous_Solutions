@@ -71,8 +71,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-DES-LIFE | `notes/LIFE_SUPPORT.md` | A | 2026-10-17 | Farm, nutrient, habitation, water — item 7 | current |
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
-| AQS-DOC-001 | `docs-authority/DOCUMENTATION_STYLE.md` | A | 2026-10-01 | Documentation style — Aqueous house style | current |
-| AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | — | — | Documentation style (practical application) | current |
+| AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | B | 2026-10-24 | Documentation style guide | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | A | 2026-10-21 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -467,6 +466,7 @@ Older documents may cite these numbers. Read them as the current number shown.
 | Former | Current | Page | Former number still held by | Note |
 | --- | --- | --- | --- | --- |
 | AQS-CMP-001 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | `docs-authority/CAMPUS_PLAN.md` | AQS-CMP-001 to clear a duplicate (AQS-REG-001). |
+| AQS-DOC-001 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | — | AQS-DOC-001 (the separate house-style page DOCUMENTATION_STYLE.md, merged into this guide on 2026-10-24) |
 | AQS-DUTY-011 | AQS-DUTY-078 | `docs-authority/BALANCE_CLOSE.md` | `docs-authority/REV_M_CLOSURE_DUTY.md` | AQS-DUTY-011 (shared with REV_M_CLOSURE_DUTY.md until 2026-10-24; that page keeps it) |
 | AQS-DUTY-064 | AQS-DUTY-079 | `docs-authority/sizing/HOUSE_SCRUBBERS.md` | `docs-authority/sizing/STORAGE_HOLDUP.md` | AQS-DUTY-064 (shared with sizing/STORAGE_HOLDUP.md until 2026-10-24; that page keeps it) |
 | AQS-ELEC-001 | AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | `docs-authority/ELECTRONICS.md` | AQS-ELEC-001 (renumbered 2026-10-15 to clear a duplicate) |

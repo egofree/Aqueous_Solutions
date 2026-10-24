@@ -45,7 +45,7 @@ Egress study annex: AQS-EGR-001 (tracked under AQS-SITE-001 §6). Out of scope s
 
 Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.md`,
 `ELECTRICAL.md` (hub), `docs-authority/VENT_CLOSURE.md`, `docs-authority/WELD_MAP.md`,
-`docs-authority/DOCUMENTATION_STYLE.md` (AQS-DOC-001).
+`docs-authority/DOC_STYLE.md` (AQS-DOC-002).
 
 ---
 
@@ -118,7 +118,7 @@ status is **TBD / Gap** — class ratings are not assigned without verified basi
 
 | ID | Theme | Typical standard (reference only) | Aqueous relevance | Status | Action |
 |---|---|---|---|---|---|
-| CMP-ISO-01 | Quality / document control | ISO 9001 | House style AQS-DOC-001; doc numbers / revs | Partial | Apply style to authority hub; not a certified QMS |
+| CMP-ISO-01 | Quality / document control | ISO 9001 | House style AQS-DOC-002; doc numbers / revs | Partial | Apply style to authority hub; not a certified QMS |
 | CMP-ISO-02 | Occupational H&S management | ISO 45001 | Complements OSHA hooks; not adopted as system | Gap | Optional management-system decision — not claimed |
 | CMP-ISO-03 | Risk / HAZOP-style process safety | ISO 31000 / IEC 61511 themes | Inventory caps, Class I envelopes, vent closure | Partial | Formal HAZOP / LOPA before construction |
 | CMP-ISO-04 | Environmental management | ISO 14001 | Closed vent / scrub end states; no outdoor dump intent | Partial | Optional EMS; AEROD/site modeling deferred |
@@ -176,7 +176,7 @@ nameplates are not fabricated to clear them:
 | AQS-HSE-001 | §10 pointer to this matrix; LEV / MET_SCRUB row explicit |
 | AQS-SITE-001 | §6 points here for compliance tracking |
 | `ELECTRICAL.md` | Header + CMP-NEC-* pointer |
-| AQS-AUTH-001 | Lists AQS-CMP-001 / AQS-DOC-001 |
+| AQS-AUTH-001 | Lists AQS-CMP-001 / AQS-DOC-002 |
 
 ## 10. Sync
 

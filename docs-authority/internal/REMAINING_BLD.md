@@ -5,7 +5,7 @@ Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as
 Document number: AQS-REM-BLD-001  
 Revision: Y
 Date: 2026-10-01  
-Authority: AQS-AUTH-001; style AQS-DOC-001.
+Authority: AQS-AUTH-001; style AQS-DOC-002.
 
 Completed this pass: authority lock, building/fire CAD, campus re-origin,
 plant rebuild, mass-flow doc + PFD, simplified building/campus/hazard PFD
@@ -188,7 +188,7 @@ PFDs regenerated; share sync. SCALE_M left **1.0**. No git commit.
 
 
 Completed 2026-10-01 **Wave 2** (Rev U): **AQS-COMPL-001** compliance matrix
-(NFPA/NEC/OSHA/ASME/ISO themes; permits not fabricated); **AQS-DOC-001**
+(NFPA/NEC/OSHA/ASME/ISO themes; permits not fabricated); **AQS-DOC-002**
 house style + authority header fixes (ELECTRICAL as AQS-ELC-001; Purpose on
 FC/CRYO/GEO; HSE Rev G; SITE Rev B); textiles/HEPA + ELECTRODE_FAB
 Partial architecture stubs; OpenSCAD PATH install note (no forced

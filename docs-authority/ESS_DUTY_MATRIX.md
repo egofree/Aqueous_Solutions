@@ -6,7 +6,7 @@ Date: 2026-10-01
 Authority: AQS-AUTH-001; AQS-UI-001 Rev C §3.2 (all three ESS peers);
 AQS-SEC-001; AQS-REQ-KW-001; AQS-MeOH-001; AQS-BLD-001 §3; FLOW_BATTERY.md;
 AQS-SCALE-001; AQS-SCALE-UR-001; planning AQS-MVS-GAP-001 §4.5.  
-Style: AQS-DOC-001.  
+Style: AQS-DOC-002.  
 **Stage = study duty sizing.** Not vendor nameplates. Not a PE stamp.
 
 | Rev | Change | Description | Date |

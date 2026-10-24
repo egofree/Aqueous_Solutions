@@ -12,7 +12,7 @@ AQS-CRY-002 / AQS-MFG-MET-001 / AQS-EQP-FAB-PV-001, AQS-MeOH-001.
 |---|---|---|---|
 | A | — | First-principles continuous kW + labeled stand-in products | 2026-10-01 |
 
-Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001.
+Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002.
 
 ---
 

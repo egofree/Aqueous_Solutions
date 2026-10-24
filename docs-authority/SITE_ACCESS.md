@@ -14,7 +14,7 @@ or locked process names.
 | C | 1 | §6 → AQS-EGR-001 study annex (Wave 3) | 2026-10-01 |
 | D | 1 | Dock+ELEV_DOCK discrete jump; PV equator tilt evidence; yard inset | 2026-10-01 |
 
-Style: AQS-DOC-001. Compliance: AQS-COMPL-001.
+Style: AQS-DOC-002. Compliance: AQS-COMPL-001.
 
 Licence: CERN-OHL-S-2.0. No diffusion pictures. Not a PE stamp.
 

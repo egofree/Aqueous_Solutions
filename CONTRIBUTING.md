@@ -130,9 +130,20 @@ build outputs, caches, virtual environments, archives or editor files;
 
 ## Writing style
 
-Documents are engineering records. Write in plain, professional language:
-short declarative sentences, SI units (with customary units in brackets where a
-code uses them), one idea per sentence, no marketing language. State what is a
+Documents are engineering records. Follow the style guide,
+[docs-authority/DOC_STYLE.md](docs-authority/DOC_STYLE.md) (AQS-DOC-002). It is
+distilled from two published guides, linked from the style guide:
+
+- NASA KSC-DF-107 Rev F, *Technical Documentation Style Guide*:
+  <https://standards.nasa.gov/sites/default/files/standards/KSC/F/0/ksc-df-107_rev_f_07082017.pdf>
+- IET, *A Guide to Technical Report Writing*:
+  <https://ias.ieee.org/wp-content/uploads/2023/06/2020-01-16_IET_Technical_Report_Writing_Guidelines.pdf>
+
+In short: write for an engineer who does not know the project; put the answer
+first; use short, plain sentences and SI units; define every abbreviation in
+the glossary; use shall, should, will and must as the guide defines them; and
+leave out working jargon from the tools used to produce the design. Generator
+text templates follow the same guide. State what is a
 study value and what is checked. Every design here is a study; nothing is
 stamped by a licensed engineer, and documents must not claim otherwise.
 

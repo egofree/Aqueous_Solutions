@@ -13,7 +13,7 @@ Status: **Study duty issued** (ST-ELC-01); Present booth CAD + lab formula = ext
 | B | 1 | Project decision: coating **IN SCOPE**; seed `ELECTRODE_COAT`; MFG primary; sector cross-use OK | 2026-10-01 |
 | C | 2 | ST-ELC-01: 0.3 kW_e avg; non-precious M1 formulation class; RuO₂–IrO₂ deferred | 2026-10-01 |
 
-Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001. SCALE_M = 1.0.
+Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. SCALE_M = 1.0.
 
 ## 1. Purpose
 

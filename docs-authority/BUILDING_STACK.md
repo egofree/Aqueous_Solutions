@@ -3,7 +3,7 @@
 Document number: AQS-BLD-001  
 Revision: F
 Date: 2026-10-01  
-Authority: AQS-AUTH-001 (active CAD levels/cores/shafts). Compliance themes: AQS-COMPL-001. Style: AQS-DOC-001.
+Authority: AQS-AUTH-001 (active CAD levels/cores/shafts). Compliance themes: AQS-COMPL-001. Style: AQS-DOC-002.
 
 One structural module. Chemistry and locked names do not change.
 Horizontal campus envelopes in `PHASE_F_ENVELOPES.md` remain the

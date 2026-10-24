@@ -11,7 +11,7 @@ Status: **Partial** (architecture only — no CAD bay, no PFD, no duties).
 |---|---|---|---|
 | A | — | Wave 2 stub: Missing to Partial architecture | 2026-10-01 |
 
-Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001. SCALE_M = 1.0.
+Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. SCALE_M = 1.0.
 
 ## 1. Purpose
 

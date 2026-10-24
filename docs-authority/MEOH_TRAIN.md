@@ -14,7 +14,7 @@ AQS-STR-001 / AQS-MF-001, DEPENDENCIES.md (SEM-Tech IEM), AQS-GAP-001 §4.
 |---|---|---|---|
 | A | — | Close MeOH DMFC gap: dual sources + IEM-FC coexist with PEM | 2026-10-01 |
 
-Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001. `SCALE_M = 1.0`. No git.
+Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. `SCALE_M = 1.0`. No git.
 
 ---
 

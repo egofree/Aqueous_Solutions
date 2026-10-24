@@ -15,7 +15,7 @@ Jurisdiction assumed: USA (Dallas-class / Texas AHJ).
 | C | 1 | Freeze-blocker pointer to AQS-MVS-GAP-001 §4.8 | 2026-10-01 |
 | D | 1 | X-STD-01: extension hall egress in AQS-EGR-002 (`HALL_EGRESS.md`); this document keeps the base plate. | 2026-10-15 |
 
-Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001. No invented permits.
+Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. No invented permits.
 
 ---
 

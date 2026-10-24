@@ -10,7 +10,7 @@ Mike lock 2026-10-01 (litho / blow-mold / electrode coating in MVS);
 Mike authorize C4 2026-10-02 (reprap_bom_complete when matrix warrants);
 shopping lists under hub `manufacturing_bom.xlsx` / `materials_shopping_list.xlsx`
 (procurement ≠ this); graph equipment_ids on ST-* units.  
-Style: AQS-DOC-001.  
+Style: AQS-DOC-002.  
 **Stage = critical-path matrix complete at study-doc level (Rev F).** Every
 MVS-required self-copy capability has feedstock × making-unit × equipment-ID
 × study-rate evidence from WP-L2 / STUDIES_COMPLETE. **Not** vendor purchase

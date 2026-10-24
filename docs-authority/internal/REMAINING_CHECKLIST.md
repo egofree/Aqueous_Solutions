@@ -99,7 +99,7 @@ yard wall inset, dock+ELEV_DOCK discrete E–W jump, AQS-EGR-001 Rev B.
 ## Wave 2 doc pointers (2026-10-01)
 
 - Compliance themes: docs-authority/COMPLIANCE_MATRIX.md (AQS-COMPL-001)
-- House style: docs-authority/DOCUMENTATION_STYLE.md (AQS-DOC-001)
+- House style: docs-authority/DOC_STYLE.md (AQS-DOC-002)
 - OpenSCAD PATH: see docs-authority/STL_MANIFEST.md (do not force install)
 - MeOH train: **issued** AQS-MeOH-001 / AQS-EQP-MEOH-001 / AQS-PFD-MEOH-001 (gap filled)
 - Continuous kW requirements: AQS-REQ-KW-001 (GEN/FC/CRYO/PECVD/belt/MFG/MeOH)

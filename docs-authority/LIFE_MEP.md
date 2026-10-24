@@ -12,7 +12,7 @@ Companion bump: AQS-LIFE-001 Rev B §9 Phase D → **Partial**.
 |---|---|---|---|
 | A | — | Phase D study: fixture counts, duct OD from headers, one-line | 2026-10-01 |
 
-Licence: CERN-OHL-S-2.0. Style: AQS-DOC-001. **Not a PE stamp.**
+Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. **Not a PE stamp.**
 No invented vendor kW.
 
 ---

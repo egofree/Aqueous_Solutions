@@ -235,5 +235,5 @@ PEM on plant H₂ + O₂ remains the primary Faraday-limited FC path.
 MeOH IEM-FC is a **peer** on BATT DC. See AQS-REQ-KW-001 for continuous
 kW requirements and stand-in table.
 
-Style: AQS-DOC-001. Compliance: AQS-COMPL-001 (NEC FC DC / NFPA 2 / NFPA 30 MeOH themes).
+Style: AQS-DOC-002. Compliance: AQS-COMPL-001 (NEC FC DC / NFPA 2 / NFPA 30 MeOH themes).
 

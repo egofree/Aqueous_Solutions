@@ -56,6 +56,17 @@ from those lines. Task, assumption, open-question, unit and stream ids take the
 next unused id in their sequence. `flow_graph/test_doc_numbers.py` fails on a
 duplicate or a missing number.
 
+## Writing style
+
+Write every published page, generator text template, docstring, commit message
+and pull request description to `docs-authority/DOC_STYLE.md` (AQS-DOC-002),
+distilled from NASA KSC-DF-107 Rev F and the IET guide to technical report
+writing. Write for an outside engineer: plain words, the answer first, every
+abbreviation defined in `docs-authority/GLOSSARY.md`. Do not put working
+jargon from agent sessions, chats or task tracking into published text, and do
+not record who asked for a change; state the decision, its reason and its
+source. Agent-only instructions stay in this file and `docs-authority/internal/`.
+
 ## Environment
 
 - STLs and FreeCAD files are stored with Git LFS. Run `git lfs pull` before CAD
