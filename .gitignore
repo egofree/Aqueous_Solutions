@@ -97,3 +97,7 @@ credentials*.json
 
 # Untracked log of the last full regen (durations, passes); the tracked receipt is deterministic
 flow_graph/derived/_regen_run.json
+
+# Scratch outputs of flow_graph/regen_derived.py (removed at the end of the run)
+models/animation
+media/.frames.txt

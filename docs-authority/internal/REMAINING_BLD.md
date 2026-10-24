@@ -9,7 +9,7 @@ Authority: AQS-AUTH-001; style AQS-DOC-001.
 
 Completed this pass: authority lock, building/fire CAD, campus re-origin,
 plant rebuild, mass-flow doc + PFD, simplified building/campus/hazard PFD
-generators, `iso_fab_drawings.pdf` from `cad/iso/*.png`.
+generators, `iso_fab_drawings.pdf` from `iso/*.png`.
 
 Completed 2026-09-27 layout pass: wet cassette XY inside SLAB_Lm1
 (`PROCESS_DX=5000`, `PROCESS_DY=4000`); CRYO on L-1 east of CORE with
@@ -29,7 +29,7 @@ bands + roof spill/downcomer link; `plant.FCStd` rebuilt at scale 2
 (documented in `SCALE_MODEL.md` §8). No commit.
 
 Completed 2026-09-27 **high-fidelity building PFD** pass: upgraded
-`pfd_scripts/building_stack_pfds.py` and `campus_life_hazard_pfds.py`
+`flow_graph/exporters/matplotlib/building_stack_pfds.py` and `campus_life_hazard_pfds.py`
 to read live `models/freecad/params.py` (SCALE_M, plate, Z datums, cores,
 tanks, terraces). Sheets now show full vertical stack (not flat Phase F),
 M1 keep-out envelopes on plans, FB_*/HA_* ratings, CORE_LIFE/PROCESS
@@ -51,8 +51,8 @@ missing regenerable scripts (orphaned Wave-2 PNGs replaced):
 | AQS-PFD-NUT-001 | `nutrient_pfd.py` | `nutrient_pfd.png` |
 | AQS-PFD-WET-001 | `wet_line_factory_pfd.py` (machine-list callout) | `wet_line_factory_pfd.png` |
 
-Shared helper: `pfd_scripts/sector_style.py`. Process lists under
-`cad/process/` (AQS-EQP-FRM/HAB/CRY/FAB/MFG/NUT-001). Synced scripts +
+Shared helper: `flow_graph/exporters/matplotlib/sector_style.py`. Process lists under
+`docs-authority/` (AQS-EQP-FRM/HAB/CRY/FAB/MFG/NUT-001). Synced scripts +
 PNGs + process docs into share tree. No SCALE_M change; no FreeCAD
 rebuild; no git commit.
 
@@ -170,7 +170,7 @@ Plant rebuild optional/note only; no git commit.
 
 
 Completed 2026-09-28 **vent closure PFD end-to-end** pass (Rev S): new
-`pfd_scripts/vent_closure_pfd.py` (AQS-PFD-VENT-001); updated cryo, mass_flow,
+`flow_graph/exporters/matplotlib/vent_closure_pfd.py` (AQS-PFD-VENT-001); updated cryo, mass_flow,
 metal_forming, znbr2, oil (FLUE_CAP), wet (ACID_POLISH), backup_gen, fuel_cell,
 geothermal (ORC Claimed), fab_reagent_forks, building_stack, container_layout,
 campus hazard/gas. All six former opens + claimed-incomplete (H₂→GEN/FC, CO₂,
@@ -187,7 +187,7 @@ AQS-BLD-001 Rev E; FreeCAD scrub/terrace stubs; plant.FCStd rebuild;
 PFDs regenerated; share sync. SCALE_M left **1.0**. No git commit.
 
 
-Completed 2026-10-01 **Wave 2** (Rev U): **AQS-CMP-001** compliance matrix
+Completed 2026-10-01 **Wave 2** (Rev U): **AQS-COMPL-001** compliance matrix
 (NFPA/NEC/OSHA/ASME/ISO themes; permits not fabricated); **AQS-DOC-001**
 house style + authority header fixes (ELECTRICAL as AQS-ELC-001; Purpose on
 FC/CRYO/GEO; HSE Rev G; SITE Rev B); textiles/HEPA + ELECTRODE_FAB
@@ -283,7 +283,7 @@ membership, export minimum, Odysseus link, UI licence). AUTHORITY
     Enclosed GH envelope solids **Done Wave 4** (AQS-TRR-GH-001 Rev B).
 
 12. ~~**Geothermal + backup generator (docs/PFD)**~~ — **Done Rev L**:
-    AQS-PWR-001 + AQS-EQP-GEO/GEN-001 + AQS-PFD-GEO/GEN-001;
+    AQS-PWR-002 + AQS-EQP-GEO/GEN-001 + AQS-PFD-GEO/GEN-001;
     S43–S48; GEN port closed (H₂). Remaining: ORC rating after
     site survey; genset kW nameplate; yard stubs rebuilt Rev P
     (`plant.FCStd` — confirm in success report).

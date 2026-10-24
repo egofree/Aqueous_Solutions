@@ -3,7 +3,7 @@
 Document number: AQS-DUTY-048
 Revision: A
 Date: 2026-10-09
-Authority: farm model a532d2e. Four people. Study. Not a PE stamp.
+Authority: farm model efd8c6f. Four people. Study. Not a PE stamp.
 
 | Nutrient | Farm supply | Missing | Close |
 |---|---|---|---|

@@ -9,7 +9,7 @@ Authority: graph Rev BH. Tech tree egofree/TechTree. OSE GVCS. Not a PE stamp.
 
 Revision A said the lathe, the mill, and the frame did not exist. The pages now exist: FRAME_SYSTEM.md, POWER.md, LATHE.md, MILL.md, WELDER.md, EW_MODULE.md, FURNACE.md, SILICON.md, ALIGNER.md, ELECTRONICS.md, PV_CELL_MOD.md. The side pages are SIDE_ASSAY.md, SIDE_FARM.md, SIDE_CRYO.md. What is still open is named on those pages, not a missing machine.
 
-The end state is a set of modules that can be arranged to any node on the tech tree, and that can copy themselves. The frame standard is the parameter set in AQS-MOD-001: envelope, tube section, wall, and material. It is not one weldment that later machines bolt to. A lathe bay and a cell bay are two calls. The power connector is common. The envelope is not. The Aqueous plant is a closed mass graph. It is not that set yet.
+The end state is a set of modules that can be arranged to any node on the tech tree, and that can copy themselves. The frame standard is the parameter set in AQS-MOD-002: envelope, tube section, wall, and material. It is not one weldment that later machines bolt to. A lathe bay and a cell bay are two calls. The power connector is common. The envelope is not. The Aqueous plant is a closed mass graph. It is not that set yet.
 
 ## Completeness
 

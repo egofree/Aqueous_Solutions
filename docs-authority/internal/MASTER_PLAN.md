@@ -12,8 +12,8 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 | Item | Where |
 | --- | --- |
 | Present kg/d nodes, \|in − out\| ≤ 1e-4 | `flow_graph/plant_flow_graph.json`, 169 nodes, 0 off |
-| Synthesis reactions | `docs-authority/SOLVENT_ROUTE.md`, commit 682b64e |
-| Both air returns | commit c8eb942 |
+| Synthesis reactions | `docs-authority/SOLVENT_ROUTE.md`, commit b40a87c |
+| Both air returns | commit b323f23 |
 | Copper-equivalent electrowinning. Assay left open. | `docs-authority/CHECKS.md` |
 | Frame parameter set | `docs-authority/PATH_MODULES.md` |
 | One duty page per present unit | `docs-authority/duties/` |
@@ -23,23 +23,23 @@ This is the work order for AQS-PLAN-005. A line closes only when the cited file 
 
 | Item | Where |
 | --- | --- |
-| D-AIR: CRYO_ASU restored verbatim as the species-conserving recovery box (not an O2 source) | commit 0ed33bb; ruling in `notes/first_principles_audit_2026-10-17.md` |
-| D-O2: H2O_ELYZ restored as the oxygen source; diverse N+1 pair with GROW_BED | ruling commit 9b742c4, implementation commit 8189cd1 |
-| D-FARM: GROW_BED re-based to crew duty (29.12 m², BVAD2022 DLI-17); TERRACE_IRRIG deleted | commit aba0c4b |
-| D-GEO_ORC: heat study encoded reuse-first (HX-9/10 restored, DRY_COOLER rated sink, MET_HX_Q4 rated) | commit 1854208 |
-| D-PV: PV parametric from live demand at 2.0× oversize, footprint derived from the array; fixed point 3910 kWp | commits 1854208, ea55066; ruling D-PV 2026-10-18 |
-| D-DOCK: dock reclassified as the inter-plant trade boundary (closure-exempt, reported trade statement +0.003 kg/d net); buffer stores AIR_RECEIVER / FOOD_STORE / METAL_STORE | ruling commit b9f3b55, implementation commit 66187cc |
-| Balance closed: failing units 43 → 0; `balance --write` convergent and restored in the regen manifest | commits 66187cc, ffbfd90 |
-| One governed number: 700+ cited driver keys under dotted tree paths (`flow_graph/param/drivers.json`) | commits dfa2c0a, 8dc0a49 |
-| System tree AQS-SYS-TREE-001: 19 sectors / 30 trains / 178 leaves, most-specific-wins toggles | commit eedb79f, `flow_graph/system_tree.yaml` |
-| One-command regeneration: 44-stage manifest, successive substitution, receipt + staleness gates | commit d44e7de, `flow_graph/param/regen.py` |
-| Generated model workbook (24 sheets, zero hand-maintained numbers) | commit b79ac62, `docs-authority/MODEL_WORKBOOK.xlsx` |
-| Working design UI on the unified engine (system-tree / params / regen-status endpoints; tree, drivers, staleness panels) | commit 5024743, `design_tool/web/` |
-| T03 P&IDs: 174 graph-derived sheets, AQS-PID-001 series | commits ba310b7, bfea3c8, `docs-authority/_pid_sheets.py` |
-| FOUNDRY / POLYMERS study-grade sizing from live demand | commit 882e87a (AQS-DUTY-072/073) |
+| D-AIR: CRYO_ASU restored verbatim as the species-conserving recovery box (not an O2 source) | commit 3408108; ruling in `notes/first_principles_audit_2026-10-17.md` |
+| D-O2: H2O_ELYZ restored as the oxygen source; diverse N+1 pair with GROW_BED | ruling commit db43602, implementation commit 6a4aced |
+| D-FARM: GROW_BED re-based to crew duty (29.12 m², BVAD2022 DLI-17); TERRACE_IRRIG deleted | commit f202487 |
+| D-GEO_ORC: heat study encoded reuse-first (HX-9/10 restored, DRY_COOLER rated sink, MET_HX_Q4 rated) | commit 7625989 |
+| D-PV: PV parametric from live demand at 2.0× oversize, footprint derived from the array; fixed point 3910 kWp | commits 7625989, bcbf2f7; ruling D-PV 2026-10-18 |
+| D-DOCK: dock reclassified as the inter-plant trade boundary (closure-exempt, reported trade statement +0.003 kg/d net); buffer stores AIR_RECEIVER / FOOD_STORE / METAL_STORE | ruling commit c369bda, implementation commit e348e62 |
+| Balance closed: failing units 43 → 0; `balance --write` convergent and restored in the regen manifest | commits e348e62, 4993875 |
+| One governed number: 700+ cited driver keys under dotted tree paths (`flow_graph/param/drivers.json`) | commits 0065a9a, caf2421 |
+| System tree AQS-SYS-TREE-001: 19 sectors / 30 trains / 178 leaves, most-specific-wins toggles | commit 5f77bee, `flow_graph/system_tree.yaml` |
+| One-command regeneration: 44-stage manifest, successive substitution, receipt + staleness gates | commit f64ad84, `flow_graph/param/regen.py` |
+| Generated model workbook (24 sheets, zero hand-maintained numbers) | commit 6f194b2, `docs-authority/MODEL_WORKBOOK.xlsx` |
+| Working design UI on the unified engine (system-tree / params / regen-status endpoints; tree, drivers, staleness panels) | commit fc083f8, `design_tool/web/` |
+| T03 P&IDs: 174 graph-derived sheets, AQS-PID-001 series | commits ef53895, 3fd9582, `docs-authority/_pid_sheets.py` |
+| FOUNDRY / POLYMERS study-grade sizing from live demand | commit bba867f (AQS-DUTY-072/073) |
 | FOUNDRY / POLYMERS CadQuery builders (live trains + standby placeholders) | `models/mfg/foundry.py`, `models/mfg/polymers.py` — pending commit |
-| Suite green: 43 passed / 0 failed, first fully green suite since the Rev AC pivot | commits 049c93e, 2f96524 |
-| Evidence honesty pass: 62 tasks cited, 6 reopened, zero `Evidence: None` | commit 66187cc, `docs-authority/notes/2026-10-19-evidence-pass.md` |
+| Suite green: 43 passed / 0 failed, first fully green suite since the Rev AC pivot | commits 456f6a6, 0d9920d |
+| Evidence honesty pass: 62 tasks cited, 6 reopened, zero `Evidence: None` | commit e348e62, `docs-authority/notes/2026-10-19-evidence-pass.md` |
 
 ## Open
 

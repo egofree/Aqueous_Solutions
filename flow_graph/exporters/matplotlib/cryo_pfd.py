@@ -171,7 +171,7 @@ def main():
         "COLD_BOX children: STIRLING, DIST_COL_*, REBOILER_COND,",
         "  COMP_EXPAND, MOL_SIEVE, HEPA, CRYO_HX_Q4, CRYO_DED_COOL, CRYO_AHU_COND",
         "Receivers: CRYO_H2/O2/N2/CO2  (freecad/cryo.py stubs)",
-        "Detail: cad/CRYO_COLD_BOX.md + process/CRYO_EQUIPMENT.md",
+        "Detail: docs-authority/CRYO_COLD_BOX.md + process/CRYO_EQUIPMENT.md",
         "L-1 east of CORE; plant.FCStd rebuild to show children.",
     ], fill="#e0f2fe", edge="#0284c7")
 

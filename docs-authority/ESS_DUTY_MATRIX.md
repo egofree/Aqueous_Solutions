@@ -112,5 +112,5 @@ AQS-MVS-GAP-001 §4.5; AQS-BLD-001 §3; AQS-MeOH-001; AQS-REQ-KW-001;
 AQS-SCALE-UR-001.
 
 ```bash
-# local hub: python3 rebuild.py --sync  (not in this repo)
+python3 -m flow_graph.param.regen
 ```

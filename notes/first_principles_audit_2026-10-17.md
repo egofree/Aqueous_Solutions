@@ -13,7 +13,7 @@
 - D-PV: PV size parametrically derived from the plant's required power; minimum 200% of required load (battery charge secured on cloudy days); roof area and building footprint DERIVED FROM the PV size. The 70 kWp / 242 kW / 60 kW in-graph numbers are stale; re-derive from current-scope bounding demand (do not assume the BH-era 3394 kWp).
 - D-O2 (2026-10-18, follows D-AIR): RESTORE H2O_ELYZ. The ASU proved to be a species-recovery box (no air intake, not an O2 source); the electrolyzer (85.2 kg/d O2 + H2) is the plant's oxygen source. With the grow bed this restores the diverse N+1 O2 pair (electric + biological). Pending implementation behind the farm re-base lane.
 
-# First-principles audit — 2026-10-17 (post 8d1e918)
+# First-principles audit — 2026-10-17 (post 50fc06f)
 
 Three-lane audit: planning-doc principles (40 testable rules), graph structure,
 engineering coherence. Full lane outputs in session logs; findings merged below.

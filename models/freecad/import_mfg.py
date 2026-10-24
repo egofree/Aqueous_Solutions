@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replace massing boxes with manufacturing STLs from cad/detail/stl/.
+"""Replace massing boxes with manufacturing STLs from models/openscad/detail/stl/.
 
     bash ../detail/build_stls.sh
     /usr/bin/freecadcmd import_mfg.py

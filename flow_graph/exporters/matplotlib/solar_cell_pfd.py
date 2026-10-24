@@ -143,7 +143,7 @@ def main():
         "  PV_CONTACT · PV_FIRE · PV_IV · PV_HX_Q4 stub",
         "CAD envelopes: freecad/wafer_fab.py (PV_* east strip)",
         "Reagents: WS_KOH (S35) · WS_SOLV · POCl₃ via WS_DOPE class",
-        "Detail: cad/process/SOLAR_CELL_EQUIPMENT.md (AQS-EQP-FAB-PV-001)",
+        "Detail: docs-authority/SOLAR_CELL_EQUIPMENT.md (AQS-EQP-FAB-PV-001)",
         "Parent fab: AQS-PFD-FAB-001 §5 points here",
     ], fill="#fffbeb", edge="#b45309")
 

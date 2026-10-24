@@ -149,7 +149,7 @@ def main():
     S.callout(ax, 2, 5.5, 60, 5.5, "MACHINE / PROCESS LIST (locked tags)", [
         "GREY_SCREEN · GREY_BIO · GREY_MED · GREY_BUFF · BLACK_COLLECT · BLACK_DIGEST · BLACK_MED",
         "VCD_FEED · VCD_HX · VCD_EVAP · VCD_COMP · VCD_COND · HAB_ED_POLISH · REMIN · POTABLE_TANK · HAB_UV · HAB_BOOST",
-        "CAD rooms: HAB_WATER · HAB_WASTE · WETROOM_HAB_NW  ·  Detail: cad/process/HAB_WATER.md",
+        "CAD rooms: HAB_WATER · HAB_WASTE · WETROOM_HAB_NW  ·  Detail: docs-authority/HAB_WATER.md",
     ], fill="#e0f2fe", edge="#0369a1")
 
     S.legend(ax, 2.0, 0.6)

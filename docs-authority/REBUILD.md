@@ -1,137 +1,74 @@
-# Master rebuild tool
+# Rebuilding the design from the plant graph
 
 Document number: AQS-REB-001  
-Revision: C  
-Date: 2026-10-01
+Revision: D  
+Date: 2026-10-24
 
-| Rev | Change | Description | Date |
-|---|---|---|---|
-| — | — | Basic issue — hub `rebuild.py` menu | 2026-09-28 |
-| A | — | Menu options 1–7 + share sync | 2026-09-28 |
-| B | SCALE_M | Menu 8 / `--scale` — actual building size | 2026-09-28 |
-| C | Share scrub | Document rebuild from this publish-tree layout | 2026-10-01 |
+| Rev | Description | Date |
+|---|---|---|
+| — | First issue: menu-driven rebuild script in a private working copy | 2026-09-28 |
+| A | Menu options and copy step to the published tree | 2026-09-28 |
+| B | Building scale setting (SCALE_M) | 2026-09-28 |
+| C | Rebuild described for the published tree layout | 2026-10-01 |
+| D | Rewritten for the single regeneration pipeline; the menu script and copy step no longer exist | 2026-10-24 |
 
 ## 1. Purpose
 
-Regenerate FreeCAD plant geometry, optional OpenSCAD STLs, and (from a
-local working hub, not this repo) PFD sheets — then refresh this publish
-tree.
+This page explains how to regenerate every derived file in the repository (sizing pages, inventories, drawings, views and 3D models) from the plant flow graph, `flow_graph/plant_flow_graph.json`. One command does it. The list of generators and the order they run in is data, kept in `flow_graph/param/regen_manifest.json`.
 
-**This repository** is the CERN-OHL-S publish tree. Day-to-day CAD editing
-may live in a separate **local working hub** (not published). Commands
-below prefer paths that exist **in this repo**.
+## 2. Regenerating the documents and data
 
-## 2. SCALE_M — actual building size
+Run from the repository root:
 
-**SCALE_M is not drawing/plot/PDF zoom.** It sizes the real building:
-bay counts, plate L×W, cassette class, LIFE_LEVELS, BASEMENT_LEVELS
-per `docs-authority/SCALE_MODEL.md` (AQS-SCALE-001). Manufacturing baseline
-`SCALE_M = 1.0` is **1 m : 1 m** (24 × 18 m plate).
+```bash
+python3 -m flow_graph.param.regen            # full run: graph, then documents
+python3 -m flow_graph.param.regen --check    # report stale derived files; changes nothing else
+python3 -m flow_graph.param.regen --dry-run  # print the plan
+```
 
-| Value | Role |
+A full run has two phases.
+
+1. Graph phase. Every stage that writes the graph runs in manifest order. The block repeats until the graph stops changing, because some sizing results feed back into others (for example, power demand and photovoltaic array size).
+2. Document phase. Every other stage runs against the final graph. Some documents read each other, so this phase also repeats until no output changes.
+
+The run writes a receipt, `flow_graph/derived/_regen_receipt.json`, that records the graph checksum each output was built from. `--check` uses it to report any derived file that is out of date. Pull requests must pass `--check`.
+
+## 3. Rebuilding the 3D models
+
+The model builds need FreeCAD 1.0 (`/usr/bin/freecadcmd`), OpenSCAD and, for the manufacturing models, CadQuery. They are a separate group so that a machine without those tools can still regenerate the documents:
+
+```bash
+python3 -m flow_graph.param.regen --cad
+```
+
+A stage whose tool is missing is skipped with a message, and its committed outputs are kept. `models/REBUILD.sh` runs the FreeCAD plant build and the clash checks on their own; `--stls` adds the OpenSCAD detail parts.
+
+Use only `/usr/bin/freecadcmd` (the FreeCAD 1.0 package build). See `docs-authority/FREECAD_PROTOCOL.md`.
+
+## 4. Building scale (SCALE_M)
+
+SCALE_M sets the size of the building itself, not the scale of a drawing. It sets the bay counts, plate length and width, cassette class and the number of living and basement levels, as derived in `docs-authority/SCALE_MODEL.md` (AQS-SCALE-001). The value lives in one place, the line `SCALE_M = 1.0` in `models/freecad/params.py`.
+
+| Value | Use |
 |---|---|
-| `1.0` | Manufacturing baseline (default on disk) |
-| `2.0` | **Review-only** denser packing (more bays / life plates) |
-| other `> 0` | Custom; see SCALE_MODEL derivation |
+| 1.0 | Manufacturing baseline: 1 m in the model is 1 m built (24 m × 18 m plate) |
+| 2.0 | Review only: denser packing with more bays and living plates |
+| other positive values | Custom; see the derivation in SCALE_MODEL |
 
-### Persistence (single source of truth)
+WARNING: SCALE_M = 2.0 is for review only. Do not commit it as the default.
 
-In this tree:
+After changing SCALE_M, run the full pipeline with `--cad` so that the documents and the model geometry agree.
 
-```
-models/freecad/params.py
-```
+## 5. Exit status
 
-Assignment line:
+The pipeline stops at the first stage that fails, prints that stage's command and the end of its output, and exits non-zero. The receipt then records the failure and vouches for nothing.
 
-```python
-SCALE_M = 1.0
-```
+## 6. Related documents
 
-`build_plant.py` imports this module. Changing SCALE_M **writes that line**,
-then rebuild FreeCAD plant geometry so solids match the new footprints.
-
-**WARNING**
-
-`SCALE_M = 2.0` is review-only. Do not leave it as the manufacturing
-default.
-
-## 3. How to run (this repository)
-
-```bash
-cd models
-bash REBUILD.sh            # FreeCAD plant via freecadcmd
-bash REBUILD.sh --stls     # optional OpenSCAD STLs first
-```
-
-Plant only:
-
-```bash
-cd models/freecad
-/usr/bin/freecadcmd build_plant.py
-```
-
-Optional OpenSCAD (when `openscad` is on PATH):
-
-```bash
-cd models/openscad/detail   # or the detail/ layout shipped here
-bash build_stls.sh          # if present; see docs-authority/STL_MANIFEST.md
-```
-
-Flow-graph views:
-
-```bash
-cd flow_graph
-python3 render_layer_views.py
-```
-
-## 4. Local working hub (optional; not in this repo)
-
-Operators with a separate hub checkout may use a menu-driven `rebuild.py`
-there (PFD groups, SCALE_M write, plant rebuild, sync into this publish
-tree). That hub is **not published**. Do not hard-code workstation absolute
-paths in this tree.
-
-Typical hub menu actions (when present locally):
-
-| # | Action |
+| Document | Role |
 |---|---|
-| 1 | All PFDs |
-| 2 | Electrical SLD only |
-| 3 | FreeCAD plant — `/usr/bin/freecadcmd build_plant.py` |
-| 4 | PFD groups |
-| 5 | Sync publish tree |
-| 6 | Everything safe — all PFDs + plant; optional share sync |
-| 7 | List discovered scripts / groups |
-| 8 | **Set SCALE_M** → write params.py → optional plant+PFDs |
-| 0 | Quit |
-
-## 5. FreeCAD binary
-
-Use **only** `/usr/bin/freecadcmd` (apt 1.0). Not a mismatched AppImage
-named `freecad`. See `docs-authority/FREECAD_PROTOCOL.md`.
-
-## 6. Share sync
-
-When using a local hub, sync copies hub → this publish tree. Includes the
-current `params.py` (hence SCALE_M). Do not copy hub PFD PNGs into share.
-Git commit/push remains a separate operator step.
-
-## 7. Exit codes
-
-Non-zero if any selected step fails. Each step prints the command used.
-
-## 8. Related
-
-| Doc | Role |
-|---|---|
-| `docs-authority/SCALE_MODEL.md` | AQS-SCALE-001 — what SCALE_M drives |
-| `docs-authority/FREECAD_PROTOCOL.md` | FreeCAD 1.0 binary / template |
-| `docs-authority/STL_MANIFEST.md` | OpenSCAD STL contract |
-| `docs-authority/AUTHORITY.md` | CAD authority lock |
-| `docs-authority/BUILD_3D_FROM_FLOW.md` | Graph → 3D rebuild path and limitations |
-
-## OpenSCAD availability
-
-If `openscad` is missing from PATH, see `docs-authority/STL_MANIFEST.md`.
-Do not force an install from an unattended agent.
+| `docs-authority/SCALE_MODEL.md` (AQS-SCALE-001) | What SCALE_M changes |
+| `docs-authority/FREECAD_PROTOCOL.md` | FreeCAD version and template |
+| `docs-authority/STL_MANIFEST.md` | OpenSCAD part list |
+| `docs-authority/BUILD_3D_FROM_FLOW.md` | How the 3D model follows the graph, and its limits |
+| `docs-authority/DERIVED_REVISIONS.md` | Generated list of derived files and whether each is current |

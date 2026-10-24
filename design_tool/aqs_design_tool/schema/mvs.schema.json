@@ -108,7 +108,7 @@
               "type": "null"
             }
           ],
-          "default": "Study values from cad/freecad/params.py and AQS-REQ-KW-001; not vendor nameplates.",
+          "default": "Study values from models/freecad/params.py and AQS-REQ-KW-001; not vendor nameplates.",
           "title": "Notes"
         }
       },

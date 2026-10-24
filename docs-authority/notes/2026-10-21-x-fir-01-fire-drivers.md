@@ -6,7 +6,7 @@ Date: 2026-10-21. Item: X-FIR-01 (closed). Depends: X-STD-01 (done). Triage: des
 
 X-FIR-01 was closed 2026-10-16 ("X-FIR-01 closed by AQS-SAF-005", plan history row 118) and reopened
 2026-10-19 as "no cited evidence ... the fire water tank and fire pump are not drivers in
-drivers.json". The reopen is stale: the same-day commit `1aba493` landed the fire drivers, and the
+drivers.json". The reopen is stale: the same-day commit `3321f37` landed the fire drivers, and the
 issued design AQS-SAF-005 Rev B (2026-10-20) names X-FIR-01 in its revision row. No new engineering
 was required — this lane verifies the Done-against elements and re-ticks the board.
 
@@ -52,4 +52,4 @@ added. Desk P2 open count 9 → 8 → 7 across this triage day (X-MAT-03 then X-
 ## Verification
 
 - `pytest -q` 43 passed; `regen --check` 920 files 0 stale (no graph writes this lane; the
-  fire module and drivers were regenerated and committed in `1aba493`).
+  fire module and drivers were regenerated and committed in `3321f37`).

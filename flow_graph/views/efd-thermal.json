@@ -97,7 +97,7 @@
       "tags": [],
       "electrical_role": "load",
       "diagram_gap": null,
-      "notes": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
+      "notes": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
         "value": 21.4517,
@@ -1815,7 +1815,7 @@
         "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "GEO",
@@ -1843,7 +1843,7 @@
         "value": 2.1952,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.195 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.195 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HEAT",
@@ -1871,7 +1871,7 @@
         "value": 1.1419,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "HEAT",
@@ -1899,7 +1899,7 @@
         "value": 0.5448,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058 | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058 | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HEAT",
@@ -1928,7 +1928,7 @@
         "value": 4.2838,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak) | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak) | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -1956,7 +1956,7 @@
         "value": 0.0171,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water) | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water) | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "HEAT",
@@ -1984,7 +1984,7 @@
         "value": 0.3689,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "HEAT",
@@ -2075,7 +2075,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Replaces HL-HX8-Q3-A (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Replaces HL-HX8-Q3-A (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 5.715,
@@ -2120,7 +2120,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Replaces HL-HX8-Q3-B (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Replaces HL-HX8-Q3-B (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 5.715,
@@ -2165,7 +2165,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 0.302,
@@ -2215,7 +2215,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 7.941,
@@ -2265,7 +2265,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 2.079,
@@ -2315,7 +2315,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 0.302,
@@ -2365,7 +2365,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 7.941,
@@ -2415,7 +2415,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-008 Rev B",
         "duty_rated_kw": 2.079,
@@ -2465,7 +2465,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged Re-homed from GEO_ORC to DRY_COOLER per AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a79/\u00a710.8 (D-GEO_ORC ruling 2026-10-18).",
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged Re-homed from GEO_ORC to DRY_COOLER per AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a79/\u00a710.8 (D-GEO_ORC ruling 2026-10-18).",
       "params": {}
     },
     {
@@ -2492,7 +2492,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
     },
     {
       "stream_id": "IA-ZNBR-HEAT",
@@ -2518,7 +2518,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
     },
     {
       "stream_id": "IA-Q4A-TRIM",
@@ -2544,7 +2544,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
     },
     {
       "stream_id": "IA-Q4B-TRIM",
@@ -2570,7 +2570,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
     },
     {
       "stream_id": "IA-Q1A-LOSS",
@@ -2596,7 +2596,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
     },
     {
       "stream_id": "IA-Q1B-LOSS",
@@ -2622,7 +2622,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
     },
     {
       "stream_id": "IA-Q2A-LOSS",
@@ -2648,7 +2648,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
     },
     {
       "stream_id": "IA-Q2B-LOSS",
@@ -2674,7 +2674,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
     },
     {
       "stream_id": "IA-BMED-03-TRIM",
@@ -2700,7 +2700,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "assay_g_L": {
         "Fe": 20,
         "Cu": 8,
@@ -2734,7 +2734,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "assay_g_L": {
         "Fe": 20,
         "Cu": 8,
@@ -2771,7 +2771,7 @@
         "rate_kind": "derived",
         "duty_normal_kw": 0.5322,
         "duty_rated_kw": 0.665,
-        "restored": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.1; Rev M (ef58c30) values verbatim"
+        "restored": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.1; Rev M (f1029dc) values verbatim"
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "DIGESTER"
@@ -2803,7 +2803,7 @@
         "rate_kind": "derived",
         "duty_normal_kw": 0.2822,
         "duty_rated_kw": 0.353,
-        "restored": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.1; Rev M (ef58c30) values verbatim"
+        "restored": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a710.1; Rev M (f1029dc) values verbatim"
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "GLASS"

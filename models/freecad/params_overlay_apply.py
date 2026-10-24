@@ -44,7 +44,7 @@ Usage::
     python3 params_overlay_apply.py --params pack/params.json -o params_overlay.py
     python3 params_overlay_apply.py --self-test
 
-Licence: CERN-OHL-S-2.0. See planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md WP-D2.
+Licence: CERN-OHL-S-2.0. See the unpublished planning note GRAPH_TO_3D_IMPLEMENTATION_PLAN WP-D2.
 """
 from __future__ import annotations
 
@@ -461,7 +461,7 @@ def self_test() -> int:
             "pv_znbr2": "module",
             "dock": "by_cassette",
         },
-        "note": "Overlay only — does not rewrite cad/freecad/params.py",
+        "note": "Overlay only — does not rewrite models/freecad/params.py",
         "topology_authority": "AQS-FLOW-GRAPH-001",
     }
     ok, detail = roundtrip_equal_gold(baseline)

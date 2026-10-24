@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """High-fidelity building PFDs from AQS-BLD-001 Rev C + live freecad params.
 
-    python3 pfd_scripts/building_stack_pfds.py
+    python3 flow_graph/exporters/matplotlib/building_stack_pfds.py
 
 Produces:
   building_section_pfd.png   AQS-PFD-BLD-001
@@ -11,7 +11,7 @@ Produces:
   roof_water_pfd.png         AQS-PFD-BLD-005
   core_plan_pfd.png          AQS-PFD-BLD-006
 
-Authority: cad/BUILDING_STACK.md, cad/HAZARD_SEPARATION.md, cad/freecad/params.py.
+Authority: docs-authority/BUILDING_STACK.md, docs-authority/HAZARD_SEPARATION.md, models/freecad/params.py.
 Does not invent process equipment lists — massing, levels, cores, fire, tanks only.
 """
 from __future__ import annotations

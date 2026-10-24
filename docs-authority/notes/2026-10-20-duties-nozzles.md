@@ -1,8 +1,8 @@
 # Duty sheets and nozzle schedules: residual authoring, 2026-10-20
 
 Document number: AQS-PLAN-007 note (working record; no new AQS number).
-Authority: AQS-PLAN-007 unit tasks 01 and 04. Companion to `notes/2026-10-20-evidence-audit.md`,
-which named these residuals. Graph state: Rev AC (`flow_graph/plant_flow_graph.json`), HEAD ff4ac7e,
+Authority: AQS-PLAN-007 unit tasks 01 and 04. Companion to `docs-authority/notes/2026-10-20-evidence-audit.md`,
+which named these residuals. Graph state: Rev AC (`flow_graph/plant_flow_graph.json`), HEAD 845e9a7,
 suite 43/43 before and after, `regen --check` green (875 files 0 stale) before and after.
 Scope: task-plan residuals part 1 — the 51 missing duty sheets, the 286 missing nozzle rows in
 existing csvs, and the 55 absent nozzle csvs. No commits; the parent lane does the final
@@ -14,7 +14,7 @@ their write sets (INSTRUMENT_INDEX*, CAUSE_EFFECT, HAZOP*, sif_list) were not to
 Root cause of the gap: `_duty_basis.py` line 20 did `if not os.path.exists(p): continue` — the
 generator only ever REFRESHED existing sheets; no code path authored a missing one. The 51 units
 (FOUNDRY 27, POLYMERS 10, CRYO 4, DIGESTER 3, HEAT 3, OIL 2, GLASS 1, FARM 1) were made present by
-the placeholders-to-real program (23d849f) and the CAD program (b41e0c4/ff4ac7e) without a
+the placeholders-to-real program (55d1033) and the CAD program (5f75bdb/845e9a7) without a
 duty-sheet pass following.
 
 Fix: the generator now AUTHORES a sheet when a present unit has none (`author()` in
@@ -77,8 +77,8 @@ exist). Rules:
 
 Result: 48 csvs created (55 absent − 6 machines with nothing piped − EXT_HALL), 592 rows appended
 total: 177 process rows in the created csvs (+ 96 drain/vent utility rows) and 319 rows across the
-82 existing csvs the check finds short. The audit's 286 was counted at the 23d849f tree; the graph
-moved to ff4ac7e underneath (Cl2 offtake edges et al.), and the same-carries counting rule counts
+82 existing csvs the check finds short. The audit's 286 was counted at the 55d1033 tree; the graph
+moved to 845e9a7 underneath (Cl2 offtake edges et al.), and the same-carries counting rule counts
 parallel connections per row (e.g. LEACH_CSTR_1's three "anode Cl2 (+ O2 side)" lines).
 
 T04 after: 153 ticked / 20 open. Every open box is a unit with ZERO piped process connections:
@@ -96,7 +96,7 @@ a hall). No csv anywhere is short of its unit's connections (verified with the e
   (+51 T01, +125 T04, +51 T07 side effect). TASK_PLAN.md restored — parent does the final regen.
 - `python3 -m pytest -q`: 43 passed.
 - `python3 -m flow_graph.param.regen --check`: rc=0, 875 files 0 stale (before and after;
-  note the check itself rewrites DERIVED_REVISIONS.md's "last graph commit" line 23d849f → ff4ac7e
+  note the check itself rewrites DERIVED_REVISIONS.md's "last graph commit" line 55d1033 → 845e9a7
   — restored, it is not this lane's write).
 - Write set of this lane: `docs-authority/_duty_basis.py` (authoring branch),
   `docs-authority/_nozzle_sched.py` (new), `docs-authority/duties/*.md` (51 new) +

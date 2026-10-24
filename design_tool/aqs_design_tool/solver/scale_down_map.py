@@ -6,16 +6,11 @@ When sandbox disables a required sector / ESS peer, or derates SCALE_M
 below M1 closure rules, the solver emits ``unreclaimed_resource`` gaps
 tied to ``stream_id`` / ``sector_id``. Does **not** invent mass closure.
 
-Canonical prose: ``cad/SCALE_DOWN_UNRECLAIMED.md`` (Rev C unit-level).
+Canonical prose: ``docs-authority/SCALE_DOWN_UNRECLAIMED.md`` (Rev C unit-level).
 
-2026-10-18 re-key (first-principles audit §sector definitions, Rev AC
-ontology): ``SECTOR_OFF_UNRECLAIMED`` keys now match the 19-sector
-``SECTOR_CATALOGUE`` exactly. WET→DIGESTER rename; FOUNDRY / POLYMERS /
-HEAT rows added; the six deleted-sector rows (ZNBR2 / WET / ELEC_PV /
-TRR / BACKUP_GEN / FUEL_CELL) removed, with their still-relevant content
-moved to ``UNIT_OFF_UNRECLAIMED`` (PV_ARRAY / ZNBR2 / FUEL_CELL /
-BACKUP_GEN are units in ELEC since the Rev AC pivot). Stream ids
-refreshed to the live graph: S05 / S14X / S40 / S06 are retired.
+``SECTOR_OFF_UNRECLAIMED`` has one key per sector in ``SECTOR_CATALOGUE``.
+Units that can be switched off inside a sector that stays on (PV_ARRAY,
+ZNBR2, FUEL_CELL and BACKUP_GEN in ELEC) are in ``UNIT_OFF_UNRECLAIMED``.
 """
 
 from __future__ import annotations
@@ -34,7 +29,7 @@ class UnreclaimedEntry(TypedDict):
 # sector refresh). Stream ids verified against plant_flow_graph.json Rev AC.
 SECTOR_OFF_UNRECLAIMED: dict[str, UnreclaimedEntry] = {
     "DIGESTER": {
-        # Renamed from WET at the Rev AC sector pivot (graph Rev AC, 6e25619).
+        # Renamed from WET at the Rev AC sector pivot (graph Rev AC, 6cf96eb).
         "stream_ids": [
             "S08",            # leach → MFG metals/Si crib (42 kg/d)
             "S16",            # MFG scrap return (12 kg/d)
@@ -213,18 +208,13 @@ SCALE_DERATE_RULES: list[dict] = [
 
 # unit_id → streams reopened when unit disabled while parent sector may stay on
 # (AQS-SCALE-UR-001 Rev C / WP-A7). P0/P1 consume-ready.
-# 2026-10-18: PV_ARRAY / FUEL_CELL / BACKUP_GEN rows moved in from the deleted
-# ELEC_PV / FUEL_CELL / BACKUP_GEN sector rows (Rev AC: units in ELEC); ZNBR2
-# row refreshed to its current graph edges; GROW_BED / ROOF_TANK dropped their
-# retired S14X / S40 ties.
 UNIT_OFF_UNRECLAIMED: dict[str, UnreclaimedEntry] = {
     "PV_ARRAY": {
         "stream_ids": ["IA-PV-01", "IA-ESS-ZNBR2-SRC"],
         "sector_definition": "Energy Production (Electrical)",
         "detail": (
             "PV_ARRAY unit off — PV generation to the bus / ZnBr2 charge "
-            "share unreclaimed (ELEC_PV sector deleted at Rev AC; PV is a "
-            "unit in ELEC)"
+            "share unreclaimed (PV_ARRAY is a unit in ELEC)"
         ),
     },
     "FUEL_CELL": {

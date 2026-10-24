@@ -4,7 +4,7 @@ X-PAR-12 rate from those bases on each run.
   EW   Faraday, per cell: I = P_dc / 2.12 V (AQS-DUTY-051); cathode CE 0.85, the rest H2; anode 98 % Cl2 + 2 % O2 (O_BRIEN2005).
        Main anode Cl2 (+ its O2) returns to LEACH_CSTR_1 as the leach oxidant (Cl2 + M -> MCl2, chloride EW practice, USBM_CL_EW).
        R10b re-base 2026-10-18 (A-M-255): the DC cell feeds IA-DC-EW_n are restored on the live RECTIFIER (Rev AC renamed RECT_EW;
-       BH fa1b4db kW = solver P_bus at the held metal harvests). HCL_BURNER is retired in Rev AC, so the full anode Cl2 (+ O2) goes to
+       BH 91d33f4 kW = solver P_bus at the held metal harvests). HCL_BURNER is retired in Rev AC, so the full anode Cl2 (+ O2) goes to
        the leach oxidant line and the cathode H2 goes to the H2 pool (HDR_H2 -> H2_DRYER -> CRYO_H2). The electrolyser stays sized on
        the gross pool draws (A-M-230): the pool surplus accumulates at CRYO_H2 and is reported (L['ew']['h2_pool']), not absorbed.
        The EW_9 foundry stubs (EW9_LIQUOR_TO_MO, EW_METALS_TO_IND) stay unrated: they double-book the IA-EW-09 liquor tail and the
@@ -31,7 +31,7 @@ PSH_STORE_D = _D['crit_autonomy_d']['value']   # D7: AQS-ELEC-007 AUT_CRIT auton
 CO2_M2 = DLI*ABS*QY*44.01                # g CO2/m2/d
 CELLS = [(1, 'IA-EW-01'), (2, 'IA-EW-02'), (3, 'IA-EW-03'), (4, 'IA-EW-10'), (5, 'IA-EW-05'), (6, 'IA-EW-06'), (7, 'IA-EW-07'), (8, 'IA-EW-08'), (9, 'IA-EW-09')]
 # D8 (2026-10-18): the DC cell-feed kW table is RE-SOLVED from the solver's Faraday currents (solver.ew: I from the held
-# metal harvests, P_bus = I x (ew_cell_voltage_V + ew_bus_drop_V) from drivers) instead of the frozen BH fa1b4db values.
+# metal harvests, P_bus = I x (ew_cell_voltage_V + ew_bus_drop_V) from drivers) instead of the frozen BH 91d33f4 values.
 # Single-writer rule for IA-DC-EW_n: flow_graph/param/write_graph.py process() is the writer on the committed graph;
 # o2_close.tf() only fills gaps (a missing edge on a not-yet-written graph) using these live solver values, so a gap fill
 # can never disagree with the writer. EW plate GEOMETRY ownership (calculator owns geometry, graph stamps outputs):
@@ -86,9 +86,9 @@ def patch(g):
            _edge('IA-MEOH-PROD', 'MEOH_TANK', 'PROD_MEOH', 'L', ['mass'], 'methanol product', 0, 'kg/d', 'CRYO', 'CRYO', {'CH3OH': 1.0}),
            _edge('IA-C5-SHIP', 'PROD_C5_C10', 'NORTH_DOCK', 'L', ['mass'], 'C5-C10 product shipped', 0, 'kg/d', 'CRYO', 'DOCK', {'C5-C10': 1.0}),
            _edge('IA-MEOH-SHIP', 'PROD_MEOH', 'NORTH_DOCK', 'L', ['mass'], 'methanol shipped at the dock', 0, 'kg/d', 'CRYO', 'DOCK', {'CH3OH': 1.0}),
-           _edge('IA-H2O-MU', 'NORTH_DOCK', 'LEACH_CSTR_1', 'L', ['mass'], 'water make-up for H and O leaving as product', 0, 'kg/d', 'DOCK', 'WET', {'water': 1.0})]
+           _edge('IA-H2O-MU', 'NORTH_DOCK', 'LEACH_CSTR_1', 'L', ['mass'], 'water make-up for H and O leaving as product', 0, 'kg/d', 'DOCK', 'DIGESTER', {'water': 1.0})]
     for k, _ in CELLS:
-        add += [_edge(f'IA-EW{k}-CL2', f'EW_{k}', 'LEACH_CSTR_1', 'G', ['mass'], 'anode Cl2 (+ O2 side) to leach oxidation', 0, 'kg/d', 'WET', 'WET')]
+        add += [_edge(f'IA-EW{k}-CL2', f'EW_{k}', 'LEACH_CSTR_1', 'G', ['mass'], 'anode Cl2 (+ O2 side) to leach oxidation', 0, 'kg/d', 'DIGESTER', 'DIGESTER')]
     add = [e for e in add if e['stream_id'] not in E and e['from_unit_id'] in alive and e['to_unit_id'] in alive]   # R8: no duplicate stream_ids, no dead endpoints
     g['edges'] += add
     # R8: the OLD_H2 zeroing, IA-CO2-RET zeroing and the balance_rev_l term rewrites belong to the retired
@@ -153,7 +153,7 @@ def tf(g):
     if N['BMED_ACID'].get('continuous_kw') and B.get('BMED_kW') is not None: N['BMED_ACID']['continuous_kw']['value'] = round(B['BMED_kW']*kb, 4)   # R8: node kW absent in Rev AC
     _s17 = round(B['S17-BMED']*kb, 4)
     if abs(_s17 - v('S17-BMED')) > 1e-3: put('S17-BMED', _s17, f'BMED HCl make {prod+need:.2f} of {prod+regen:.2f} kg/d (k {kb:.3f})')   # epsilon guard (write-convergence fix 2026-10-19): write_graph owns the edge (it re-syncs B['S17-BMED'] every pass); an unconditional put re-appended the TF note each pass and put the balance-last and process-last orderings on different note attractors, so regen --quick broke --check
-    # R10a 2026-10-18: the acid/base regen loop is restored to the BH topology (fa1b4db) - IA-BMED-03/04 were Rev AC unrated
+    # R10a 2026-10-18: the acid/base regen loop is restored to the BH topology (91d33f4) - IA-BMED-03/04 were Rev AC unrated
     # CRU placeholders with no CRU source basis. Each BMED closes by difference on its leach spent-liquor purge against
     # the loop anchor IA-EVAP_*-FEED (X-PAR acid-loop decision, AQS-PAR-001 s3), the side draws, the condensate return
     # and the X-PAR-10 vent-scrubber tie pair (IA-VS-SPENT into BMED_ACID, IA-VS-NAOH out of BMED_BASE). EVAP_BASE
@@ -192,12 +192,12 @@ def tf(g):
     _cd = round(_fd - _pin - v('IA-EVAP_ACID-VENT'), 4)
     if abs(_cd - v('IA-EVAP_ACID-COND')) > 1e-3: put('IA-EVAP_ACID-COND', _cd, f'condensate = water off {_ea["water_kg_d"]:.2f} kg/d less the X-PAR-10 vent, on the sized acid product (frozen-base re-stamp 864.9665 retired 2026-10-19: it fought the live solver writer 878.7551 and rattled the purge +13.79 kg/d per pass)')
     put('IA-BMED-03', v('IA-EVAP_ACID-FEED') + v('S09') + v('IA-BMED-01') - v('IA-EVAP_ACID-COND') - vv('IA-VS-SPENT'),
-        f"leach spent-acid purge closes BMED_ACID: feed {v('IA-EVAP_ACID-FEED'):.2f} + S09 {v('S09'):.2f} + IA-BMED-01 {v('IA-BMED-01'):.2f} - condensate {v('IA-EVAP_ACID-COND'):.2f} - vent-scrubber spent return {vv('IA-VS-SPENT'):.4f} (X-PAR-10 term, restored 2026-10-19 after it rattled the loop +0.0006 kg/d per pass); BH 449.52 (fa1b4db)")
+        f"leach spent-acid purge closes BMED_ACID: feed {v('IA-EVAP_ACID-FEED'):.2f} + S09 {v('S09'):.2f} + IA-BMED-01 {v('IA-BMED-01'):.2f} - condensate {v('IA-EVAP_ACID-COND'):.2f} - vent-scrubber spent return {vv('IA-VS-SPENT'):.4f} (X-PAR-10 term, restored 2026-10-19 after it rattled the loop +0.0006 kg/d per pass); BH 449.52 (91d33f4)")
     _b4 = v('IA-EVAP_BASE-FEED') + v('IA-BMED-02') + vv('IA-VS-NAOH') - v('IA-EVAP_BASE-COND')
     if abs(_b4 - v('IA-BMED-04')) > 1e-3: put('IA-BMED-04', _b4,
-        f"leach spent-base purge closes BMED_BASE: feed {v('IA-EVAP_BASE-FEED'):.2f} + IA-BMED-02 {v('IA-BMED-02'):.2f} + vent-scrubber NaOH bleed {vv('IA-VS-NAOH'):.4f} - condensate {v('IA-EVAP_BASE-COND'):.2f} (the X-PAR-10 spent-return term IA-VS-NAOH was missing from the formula, which rattled the loop +0.0006 kg/d per pass once --write resumed; restored 2026-10-19 to match the write_graph writer); BH 502.98 verbatim (fa1b4db); write_graph owns the 4-dp grid, epsilon guard 1 g/d")
+        f"leach spent-base purge closes BMED_BASE: feed {v('IA-EVAP_BASE-FEED'):.2f} + IA-BMED-02 {v('IA-BMED-02'):.2f} + vent-scrubber NaOH bleed {vv('IA-VS-NAOH'):.4f} - condensate {v('IA-EVAP_BASE-COND'):.2f} (the X-PAR-10 spent-return term IA-VS-NAOH was missing from the formula, which rattled the loop +0.0006 kg/d per pass once --write resumed; restored 2026-10-19 to match the write_graph writer); BH 502.98 verbatim (91d33f4); write_graph owns the 4-dp grid, epsilon guard 1 g/d")
     _bp = v('IA-BASE-PPT') + resid('EVAP_BASE')
-    if abs(_bp - v('IA-BASE-PPT')) > 1e-3: put('IA-BASE-PPT', _bp, 'base ppt by difference; absorbs the retired ACEX caustic draw (BH IA-ACEX-NAOH 0.23, fa1b4db)')   # epsilon guard (write-convergence fix 2026-10-19): identity closure at the fixed point - an unconditional put churned the note against the write_graph writer
+    if abs(_bp - v('IA-BASE-PPT')) > 1e-3: put('IA-BASE-PPT', _bp, 'base ppt by difference; absorbs the retired ACEX caustic draw (BH IA-ACEX-NAOH 0.23, 91d33f4)')   # epsilon guard (write-convergence fix 2026-10-19): identity closure at the fixed point - an unconditional put churned the note against the write_graph writer
     _kw = round(_ea['kW'], 4)
     if N['EVAP_ACID'].get('continuous_kw') and abs(_kw - N['EVAP_ACID']['continuous_kw']['value']) > 1e-3:
         N['EVAP_ACID']['continuous_kw']['value'] = _kw   # re-sized family: the live solver kW, identical to the write_graph stamp (frozen-base re-stamp retired)

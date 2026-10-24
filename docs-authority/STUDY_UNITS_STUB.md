@@ -6,7 +6,7 @@ Date: 2026-10-01
 Authority: AQS-WTR-001; AQS-EQP-GEO-001; AQS-EQP-FAB-001; AQS-EQP-FAB-PV-001;
 AQS-EQP-MFG-001; AQS-MFG-ELC-001; AQS-GAP-001; AQS-MVS-GAP-001 §4.1.3;
 AQS-AUD-001 §10.4 / §11; seed `candidate_mvs.json`; Project decision 2026-10-01;
-`planning/UNIT_EQUIPMENT_SPEC_GAP.md` (**AQS-EQ-GAP-001**).  
+the unpublished planning note UNIT_EQUIPMENT_SPEC_GAP (**AQS-EQ-GAP-001**).  
 Style: AQS-DOC-001.  
 **Stage = first-principles study + stubs toward MVS (Rev F: gap-register pointer).** Not Present CAD yet.
 Not vendor nameplates. Not PE stamps. Numbers below are **study** with cited
@@ -34,7 +34,7 @@ Keep `loops_closed` accurate by **naming** deferred capabilities as study
 units/streams in the candidate MVS graph — not silent omissions — and by
 recording **first-principles** duty methods (system fit → standards/physics
 → practicality → cost metrics) with citations. Decision trail:
-`planning/DECISION_LOG_A3_A5.md`.
+the unpublished planning note DECISION_LOG_A3_A5.
 
 ---
 
@@ -203,7 +203,7 @@ dose into potable (AQS-WTR-001).
 
 GHEX closed loop (S43) → GEO_HP → Q4 life priority (S44). ORC taps
 **surplus** heat after life priority, AC-couples via S48 (AQS-EQP-GEO-001;
-AQS-PWR-001). Forbidden: loop fluid into potable / Salria.
+AQS-PWR-002). Forbidden: loop fluid into potable / Salria.
 
 ### 5.2 Physics
 
@@ -253,7 +253,7 @@ force `required_for_mvs_closure` true on GEO until ORC evidence (AQS-SEC-001 A7)
 
 ### 5.5 Citations
 
-1. AQS-AUD-001 §10.4 method lock; AQS-EQP-GEO-001; AQS-PWR-001 §2.1.
+1. AQS-AUD-001 §10.4 method lock; AQS-EQP-GEO-001; AQS-PWR-002 §2.1.
 2. Hettiarachchi et al., *Energy* — low-T geothermal ORC ~5–9% (70–100 °C).
 3. Guo / Shengjun et al. — subcritical ORC thermal efficiency ~11% class
    at 80–100 °C optimized fluids (illustrative, not M1 nameplate).
@@ -422,7 +422,7 @@ Manufacturer / model inventory, OSS target policy, and researched **commercial
 interim** shortlists for ST-* / P0 underspecified units live in planning
 (not cad):
 
-**`planning/UNIT_EQUIPMENT_SPEC_GAP.md`** — document **AQS-EQ-GAP-001**.
+the unpublished planning note UNIT_EQUIPMENT_SPEC_GAP — document **AQS-EQ-GAP-001**.
 
 Commercial interim never freezes as final MVS Present authority; open-source
 replacement tracked as `OSS-REP-*` work items. Physics / duty in §§3–10 of
@@ -430,5 +430,4 @@ this stub remain controlling for study numbers.
 
 ## 12. Sync
 
-Part of cad/process — include in `rebuild.py --sync` docs-authority copy.
-Decision log planning-only: `planning/DECISION_LOG_A3_A5.md`.
+This page lives in docs-authority/ and needs no copy step. The decision log is the unpublished planning note DECISION_LOG_A3_A5.

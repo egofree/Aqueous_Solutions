@@ -5,7 +5,7 @@
 X-ELS-02 (AQS-PLAN-007, desktop P1): "Every node continuous_kw from a calculation,
 not a study share. Start from `docs-authority/LOAD_LIST.md` (partial)."
 
-## Start state (from the dead-register precursor, commit `ebaa959`)
+## Start state (from the dead-register precursor, commit `560f938`)
 
 Load census: 71/84 rows calculated, 11 "study share - basis pending" rows
 (FUEL_CELL, MEOH_FC, WAFER_FAB, COMB_HEAT, NUTRIENT_DOSE, RES_HEAT, VAC_CAST,

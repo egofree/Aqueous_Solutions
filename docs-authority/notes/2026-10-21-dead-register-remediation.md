@@ -53,7 +53,7 @@ verified: all 281 pre-existing rows byte-identical and in place).
    `_load_list.py` (3), `models/mfg/foundry.py` (21), `models/mfg/polymers.py` (8),
    `regen_manifest.json` (2)
 4. **Regen**: `python3 -m flow_graph.param.regen` (multi-pass fixed point) self-heals
-   all generated notes/duties/views/P&IDs/LOAD_LIST/registers/receipts
+   all generated notes, duty pages, views, P&IDs, LOAD_LIST, registers and receipts
 5. **Gates**: `regen --check` 0-stale (920 files), `check_authority_contract.py`
    projection=on-disk (178/557), `pytest` 43/43 — all pass
 

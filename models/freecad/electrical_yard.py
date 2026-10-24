@@ -149,7 +149,7 @@ def attach(doc):
         label_plate(doc, "PV_ARRAY%s" % suffix, px, y0 - 200, z=z + 2200)
     print("  PV_ARRAY tilt=%+.1f deg about +X (equator-facing)" % tilt)
 
-    # Backup genset + geothermal + FC (AQS-PWR-001 / AQS-FC-001)
+    # Backup genset + geothermal + FC (AQS-PWR-002 / AQS-FC-001)
     # Layout lock: entire GEN/FC train stays west of ENV_WALL_W (X=0).
     # Prior placement put BACKUP_GEN / FUEL_CELL straddling the west wall and
     # FC_DCDC / FC_HX inside the plate — punch-through. Place west of rectifier.

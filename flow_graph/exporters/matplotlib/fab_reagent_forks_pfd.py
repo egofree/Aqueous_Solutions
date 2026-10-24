@@ -148,8 +148,8 @@ def main():
         "NEW: WS_HF_ED · WS_PEROX · WS_AMMONIA · WS_NITRIC · WS_PHOS · WS_KOH",
         "NEW: WS_DOPE · WS_SLURRY · WS_SOLV",
         "Streams: S09 (existing) · S31–S39 (this sheet) · S10/S27/S08",
-        "Authority: cad/process/FAB_WET_REAGENTS.md",
-        "Interface: cad/FAB_WET_INTERFACE.md",
+        "Authority: docs-authority/FAB_WET_REAGENTS.md",
+        "Interface: docs-authority/FAB_WET_INTERFACE.md",
         "Parent fab train: AQS-PFD-FAB-001 · Wet factory: AQS-PFD-WET-001",
     ], fill="#fffbeb", edge="#b45309")
 

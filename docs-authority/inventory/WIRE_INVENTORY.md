@@ -247,6 +247,7 @@ Rejected by less than 5 kg of copper (kept separate under the rule; a panel encl
 | genset | BACKUP_GEN | starter motor control | 18 AWG | TFFN 3-pair, shielded | 6 | 12.1 | 1 | 72.5 | start/stop, run, fault (assumed) |
 | genset | BACKUP_GEN | starter motor feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 12.1 | 1 | 36.2 | NEC 430.22: 1.25 x 3.4 A FLC; routed tray from panel LP-ELEC (Manhattan x 1.1 + 3 m drop, assumed) |
 | grounding | GROUND_GRID | ring and mesh conductors | 4/0 AWG | bare soft-drawn Cu | 1 | 4416.0 | 1 | 4416.0 | AQS-ELEC-005 ring 644 m + mesh 3772 m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS) |
+| hall | EXT_HALL | lighting branch circuit 277 V | 6 AWG | THHN/THWN-2 Cu in EMT | 3 | 120.0 | 47 | 16920.0 | installed 208 kW (average 20.75 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06) |
 | inverter | SOL_ARK_60K | cooling fan power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 48 | 960.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | inverter | SOL_ARK_60K | cooling fan signal | 18 AWG | shielded pair | 2 | 10.0 | 48 | 960.0 | speed/position feedback (assumed) |
 | pem_fc | FUEL_CELL | cathode air blower EGC | 14 AWG | green XHHW-2 Cu | 1 | 8.1 | 1 | 8.1 | NEC 250.122 at 15 A OCPD |
@@ -260,18 +261,12 @@ Rejected by less than 5 kg of copper (kept separate under the rule; a panel encl
 | pem_fc | FUEL_CELL | transfer pump S52 to VCD_TRAIN signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | rectifier | RECTIFIER | cooling fan power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 4 | 80.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | rectifier | RECTIFIER | cooling fan signal | 18 AWG | shielded pair | 2 | 10.0 | 4 | 80.0 | speed/position feedback (assumed) |
+| roof array | PV_ARRAY | PV source circuit home run (+/-) | 10 AWG | PV Wire, UL 4703, 2 kV | 2 | 60.0 | 277 | 33240.0 | 4984 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 277 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed) |
+| roof array | PV_ARRAY | array EGC | 10 AWG | bare Cu | 1 | 60.0 | 277 | 16620.0 | NEC 690.45 / 250.122 |
 | scrubber | ZNBR2_BR2_REGEN | induced-draft fan power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | scrubber | ZNBR2_BR2_REGEN | induced-draft fan signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
-
-### ELEC_PV
-
-| Sub-system | Unit | Circuit | Size | Insulation | Cond. | Length m | Qty | Total m | Basis |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| hall | EXT_HALL | lighting branch circuit 277 V | 6 AWG | THHN/THWN-2 Cu in EMT | 3 | 120.0 | 47 | 16920.0 | installed 208 kW (average 20.75 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06) |
-| roof array | PV_ARRAY | PV source circuit home run (+/-) | 10 AWG | PV Wire, UL 4703, 2 kV | 2 | 60.0 | 277 | 33240.0 | 4984 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 277 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed) |
-| roof array | PV_ARRAY | array EGC | 10 AWG | bare Cu | 1 | 60.0 | 277 | 16620.0 | NEC 690.45 / 250.122 |
 
 ### FAB
 

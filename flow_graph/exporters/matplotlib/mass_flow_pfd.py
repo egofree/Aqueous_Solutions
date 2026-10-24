@@ -150,7 +150,7 @@ def main():
     ax.text(72, 6.0,
             "Authority: AQS-VENT-001 + AQS-MF-001 + AQS-STR-001\n"
             "MeOH/DOCK blocks read flow_graph only\n"
-            "Detail: cad/MASS_FLOW.md · Sheet: AQS-PFD-VENT-001",
+            "Detail: docs-authority/MASS_FLOW.md · Sheet: AQS-PFD-VENT-001",
             ha="left", va="center", fontsize=10.5, color=P.MUTED)
 
     fig.tight_layout()

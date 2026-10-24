@@ -1,4 +1,4 @@
-"""AQS-BLD-016 building frame member check (X-BLD-01, A-M-207). The 6 m grid of AQS-MOD-001 / params.py (PLATE_L x PLATE_W, BAY) is
+"""AQS-BLD-016 building frame member check (X-BLD-01, A-M-207). The 6 m grid of AQS-MOD-002 / params.py (PLATE_L x PLATE_W, BAY) is
 framed in welded steel (ASTM A992 plate, Fy 345 MPa): box columns at every grid node, secondary beams at 3 m, girders on the grid,
 concentric X-braced bays for the lateral load. Member sizes are found from need: the smallest welded section that passes AISC 360-22.
 Gravity: slab self-weight (SLAB_THK) + equipment and water from AQS-BLD-013 per level + ASCE 7 Table 4.3-1 live by occupancy.

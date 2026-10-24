@@ -71,7 +71,7 @@ def test_divergent_master_detected(graph: dict, tmp_path: Path) -> None:
     drifted["units"].append(
         {
             "unit_id": "FAKE_DIVERGENT_UNIT",
-            "sector_id": "WET",
+            "sector_id": "DIGESTER",
             "enabled": True,
             "class": None,
             "tags": [],

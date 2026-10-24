@@ -10,11 +10,11 @@ or locked process names.
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | First issue: site north = +Y; north (pole-facing) L0 dock; SERVICE_ENTRY / STAIR_SERVICE; yard clearances / keep-outs / rough-ins; NFPA/OSHA egress hooks | 2026-09-28 |
-| B | 1 | Point §6 at AQS-CMP-001; Wave 2 compliance cross-ref | 2026-10-01 |
+| B | 1 | Point §6 at AQS-COMPL-001; Wave 2 compliance cross-ref | 2026-10-01 |
 | C | 1 | §6 → AQS-EGR-001 study annex (Wave 3) | 2026-10-01 |
 | D | 1 | Dock+ELEV_DOCK discrete jump; PV equator tilt evidence; yard inset | 2026-10-01 |
 
-Style: AQS-DOC-001. Compliance: AQS-CMP-001.
+Style: AQS-DOC-001. Compliance: AQS-COMPL-001.
 
 Licence: CERN-OHL-S-2.0. No diffusion pictures. Not a PE stamp.
 
@@ -83,7 +83,7 @@ MFG SHOP remains east-south (`MFG_X = PLATE_L/2`, `MFG_Y = 0`). WAFER
 FAB remains east-north and does **not** overlap the west DOCK bay
 (FAB starts at `X = PLATE_L/2`). POWER yard / ZnBr2 remain **west** of
 the plate, Y-aligned to `DOCK_Y` so ESS and GEN/FC sit beside the NW
-apron (AQS-PWR-001 / AQS-FC-001).
+apron (AQS-PWR-002 / AQS-FC-001).
 
 ### 2.2 Occupancy / ops
 
@@ -179,16 +179,16 @@ Do not place yard consumers straddling the west wall into the plate.
 | Params | `freecad/params.py` — `SITE_NORTH_AXIS`, `DOCK_*`, `SERVICE_*`, `STAIR_SERVICE_*` |
 | Solids | `freecad/building_stack.py`, `freecad/electrical_yard.py` |
 | Groups | `freecad/plant_groups.py` — SERVICE_/DOCK*/YARD_/CLEAR_/KO_/UTIL_ROUGH_ |
-| Building PFDs | `pfd_scripts/building_stack_pfds.py` — L0 plan + core orientation |
-| Campus PFD | `pfd_scripts/campus_life_hazard_pfds.py` — north dock + yard |
+| Building PFDs | `flow_graph/exporters/matplotlib/building_stack_pfds.py` — L0 plan + core orientation |
+| Campus PFD | `flow_graph/exporters/matplotlib/campus_life_hazard_pfds.py` — north dock + yard |
 | Stack authority | `BUILDING_STACK.md` AQS-BLD-001 Rev D |
 
 Rebuild:
 
 ```bash
 # Optional — run only in a local working hub (not published):
-python3 pfd_scripts/building_stack_pfds.py
-python3 pfd_scripts/campus_life_hazard_pfds.py
+python3 flow_graph/exporters/matplotlib/building_stack_pfds.py
+python3 flow_graph/exporters/matplotlib/campus_life_hazard_pfds.py
 /usr/bin/freecadcmd models/freecad/build_plant.py
 ```
 
@@ -196,7 +196,7 @@ python3 pfd_scripts/campus_life_hazard_pfds.py
 
 ## 6. Compliance hooks
 
-Theme-level compliance status: **AQS-CMP-001**. Quantitative study annex: **AQS-EGR-001** (`docs-authority/EGRESS_CALC.md`) — travel / exit width / basement two-exit at SCALE_M=1.0. **AHJ / PE verification required.** Still track:
+Theme-level compliance status: **AQS-COMPL-001**. Quantitative study annex: **AQS-EGR-001** (`docs-authority/EGRESS_CALC.md`) — travel / exit width / basement two-exit at SCALE_M=1.0. **AHJ / PE verification required.** Still track:
 
 1. **NFPA 101 / IBC Ch. 10** — travel distance, common path, exit width,
    stair width, discharge, illumination (NEC 700), exit signs.

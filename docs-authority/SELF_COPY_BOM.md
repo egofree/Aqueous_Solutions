@@ -182,7 +182,7 @@ CAD (C3). Sandbox tracks progress toward MVS as Present studies finish.
 ## 6. Related / licence
 
 AQS-MVS-GAP-001 §4.3; AQS-GAP-001; AQS-EQP-STUDY-001; AQS-STUDY-L2-001;
-AQS-STUDY-PRESENT-001; planning/DECISION_LOG_A3_A5.md; CERN-OHL-S-2.0.
+AQS-STUDY-PRESENT-001; the unpublished planning note DECISION_LOG_A3_A5; CERN-OHL-S-2.0.
 
 <!-- X-PRO-04 BEGIN -->
 ## 7. Reconciliation with the unit BOMs (rev G, X-PRO-04, A-M-206)

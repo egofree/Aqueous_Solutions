@@ -154,12 +154,12 @@ to “simplify” campus air.
 
 One sheet per cycle. Boxes and labelled arrows only. No internals.
 
+The campus overview, water-cycle and life-gas sheets were drawn by scripts that were not carried into this repository. The process flow diagram generated from the plant graph (`flow_graph/views/pfd.svg`, from `flow_graph/render_layer_views.py`) now shows the same blocks and streams.
+
 | Sheet | Script | Output |
 |---|---|---|
-| Campus overview | `pfd_scripts/campus_pfd.py` | `campus_pfd.png` |
-| Water cycle | `pfd_scripts/water_cycle_pfd.py` | `water_cycle_pfd.png` |
-| Life gas | `pfd_scripts/life_gas_pfd.py` | `life_gas_pfd.png` |
-| Nutrient / N-P | `pfd_scripts/nutrient_pfd.py` | `nutrient_pfd.png` |
+| Plant process flow (campus, water, life gas) | `flow_graph/render_layer_views.py` | `flow_graph/views/pfd.svg` |
+| Nutrient / N-P | `flow_graph/exporters/matplotlib/nutrient_pfd.py` | `nutrient_pfd.png` |
 
 Recycle-core PFDs already exist. Wave 1 does not replace them.
 
@@ -197,7 +197,7 @@ Object names = §2 strings with `_`. Labels via `labels.py`.
 - [x] FreeCAD stubs `campus_shop.py` (operator rebuilds STLs)
 
 OpenSCAD `mfg_*` only after the Wave-3 origin of that unit is frozen.
-Foam-board 1:3 EW (`cad/foam_ew/`) stays a coupon model. It does not
+Foam-board 1:3 EW (`models/openscad/foam_ew/`) stays a coupon model. It does not
 replace plant EW cells.
 
 ### Wave 5 — routed utilities between blocks
@@ -232,8 +232,7 @@ to sewer, or put farm waste in INDUCTION PYROLYZER as FR-4.
 | `docs-authority/CAMPUS_PLAN.md` | waves + campus names |
 | `docs-authority/STREAM_REGISTER.md` | inter-block streams |
 | `docs-authority/PHASE_F_ENVELOPES.md` | box sizes / origins |
-| `pfd_scripts/campus_pfd.py` | overview sheet |
-| `freecad/campus.py` | four keep-out solids |
+| `flow_graph/render_layer_views.py` | overview sheet |
 | `GLOSSARY.md` | definitions once a name is drawn |
 
-Rebuild overview: `python3 pfd_scripts/campus_pfd.py`.
+Rebuild overview: `python3 -m flow_graph.param.regen` (the `regen_derived` stage runs `flow_graph/render_layer_views.py`).

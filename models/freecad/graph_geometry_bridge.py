@@ -21,7 +21,7 @@ recipe, and optionally triggers baseline rebuild.
         --rebuild-baseline
 
 CERN-OHL-S-2.0. See docs-authority/BUILD_3D_FROM_FLOW.md;
-planning/GRAPH_TO_3D_IMPLEMENTATION_PLAN.md (AQS-PLAN-3D-001).
+the unpublished planning note GRAPH_TO_3D_IMPLEMENTATION_PLAN (AQS-PLAN-3D-001).
 """
 from __future__ import annotations
 

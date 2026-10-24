@@ -1,6 +1,6 @@
 """AQS-DUTY-011 Rev A. Rev M closure study (graph Rev L -> Rev M).
 
-Starts from the Rev L graph (commit d9cd071, or --base FILE), reproduces the AQS-DUTY-010 rating pass, then applies
+Starts from the Rev L graph (commit c4e1818, or --base FILE), reproduces the AQS-DUTY-010 rating pass, then applies
 the Rev M changes: Faraday H2 basis, alias retirements, CRYO_H2 dispatch, grey/nutrient routing, the BMED / CRU /
 chloride loop, leach and digest heater ratings, Q4 surplus sinks, electrical bus closure and the S87/S88 outcome.
 Daily-average design day as AQS-DUTY-010. A_RM_* are Rev M study decisions, each stated in REV_M_CLOSURE_DUTY.md.
@@ -22,7 +22,7 @@ import _hl_edges_study as hl  # noqa: E402
 import _co2_header_study as co2  # noqa: E402
 
 REPO = os.path.abspath(os.path.join(HERE, ".."))
-BASE_REF = "d9cd071"          # Rev L commit on main
+BASE_REF = "c4e1818"          # Rev L commit on main
 M = er.M
 N_E = er.N_E
 EW_METALS = er.EW_METALS

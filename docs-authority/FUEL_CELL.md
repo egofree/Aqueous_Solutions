@@ -8,7 +8,7 @@ Equipment: AQS-EQP-FC-001
 Streams: AQS-STR-001 S49–S53 (PEM); MeOH peer S73–S82 on AQS-MeOH-001
 
 Authority: `POWER/Power_System_overview.md` (legacy H₂/O₂ PEM narrative),
-hub `ELECTRICAL.md`, `FLOW_BATTERY.md`, AQS-PWR-001 (BACKUP_GEN ≠ FC),
+hub `ELECTRICAL.md`, `FLOW_BATTERY.md`, AQS-PWR-002 (BACKUP_GEN ≠ FC),
 AQS-GAP-001 §7 item 3, AQS-SCALE-001 §6, AQS-STR-001 / AQS-MF-001,
 AQS-HSE-001 / AQS-EQP-CRY-001, AQS-REQ-KW-001, AQS-MeOH-001,
 `freecad/electrical_yard.py`, root `06-energy-carbon-oxygen.md`
@@ -31,7 +31,7 @@ Document the PEM fuel-cell path on plant H₂/O₂ into the Sol-Ark BATT DC bus,
 
 Closes the POWER legacy gap called **Missing** in AQS-GAP-001 §4 / §7
 item 3: H₂/O₂ PEM fuel-cell path on the plant DC side, distinct from
-the Sol-Ark **GEN**-port AC genset (AQS-PWR-001).
+the Sol-Ark **GEN**-port AC genset (AQS-PWR-002).
 
 | In scope | Out of scope this pass |
 |---|---|
@@ -70,7 +70,7 @@ may be a vendor option later; do not invent it here).
 
 | Path | Port | Role |
 |---|---|---|
-| **BACKUP_GEN** (AQS-PWR-001) | Sol-Ark **GEN** (AC, S47) | Islanded AC failover when PV + ZnBr2 + grid unavailable |
+| **BACKUP_GEN** (AQS-PWR-002) | Sol-Ark **GEN** (AC, S47) | Islanded AC failover when PV + ZnBr2 + grid unavailable |
 | **FUEL_CELL** (this doc) | Sol-Ark **BATT DC** bus (S51) | DC contribution into the documented 160–700 V battery window |
 
 Do not treat the genset as a substitute for the fuel cell, or the
@@ -194,7 +194,7 @@ Add consumers only with tree evidence.
 
 | Consumer | Class | Evidence | Fuel / oxidizer | Stream / note |
 |---|---|---|---|---|
-| **BACKUP_GEN** | **Present** | AQS-PWR-001 / AQS-EQP-GEN-001 / AQS-PFD-GEN-001 | Plant H₂ primary; diesel contingency | S45 / S47 |
+| **BACKUP_GEN** | **Present** | AQS-PWR-002 / AQS-EQP-GEN-001 / AQS-PFD-GEN-001 | Plant H₂ primary; diesel contingency | S45 / S47 |
 | **FUEL_CELL** | **Present** (docs/PFD) | AQS-FC-001 / AQS-EQP-FC-001 / AQS-PFD-FC-001 | Plant H₂ + O₂ (PEM) | S49–S53 |
 | **MEOH_FC** | **Present** (docs/PFD) | AQS-MeOH-001 / AQS-EQP-MEOH-001 / AQS-PFD-MEOH-001 | MeOH (IEM-DMFC preferred) | S73–S82 |
 | **AFTERBURNER** | **Present** | `oil_line.py`, AQS-PFD oil line, FAN_STACK, S18 | Oil-line **NCG** / tar destruction (thermal oxidizer); not a named plant-H₂ power consumer | HDR_OIL_VAPOR → AFTERBURNER; flue = Q1 / SHAFT_OIL |
@@ -235,5 +235,5 @@ PEM on plant H₂ + O₂ remains the primary Faraday-limited FC path.
 MeOH IEM-FC is a **peer** on BATT DC. See AQS-REQ-KW-001 for continuous
 kW requirements and stand-in table.
 
-Style: AQS-DOC-001. Compliance: AQS-CMP-001 (NEC FC DC / NFPA 2 / NFPA 30 MeOH themes).
+Style: AQS-DOC-001. Compliance: AQS-COMPL-001 (NEC FC DC / NFPA 2 / NFPA 30 MeOH themes).
 

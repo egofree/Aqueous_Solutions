@@ -30,5 +30,5 @@ HDR_ORG is a tote / conveyor path, not a pipe on this rack.
 | RACK_LIFE_W | X = −2000, Y = −4000 → 16000 |
 | RACK_LIFE_E | X = 11800, Y = −6000 → 16000 (FAB — FARM) |
 
-Generators: `cad/detail/mfg_life_rack.scad`, `freecad/pipe_services.py`.
+Generators: `models/openscad/detail/mfg_life_rack.scad`, `freecad/pipe_services.py`.
 Sheet: `life_headers_pfd.png`.

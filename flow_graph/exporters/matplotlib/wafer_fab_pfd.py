@@ -151,7 +151,7 @@ def main():
         "  CROP_GRIND · ID_WIRE_SAW · EDGE_PROFILE · LAP_CMP · PRE_CLEAN",
         "CAD locked: FAB_PREP · WET_BENCH · FAB_TOOL · ETCH_RETURN",
         "UPW: FAB_UPW_* (FAB-UPW-001)   Reagents: WS_* (FAB-RGN-001)",
-        "Detail: cad/process/WAFER_FAB_EQUIPMENT.md Rev B",
+        "Detail: docs-authority/WAFER_FAB_EQUIPMENT.md Rev B",
         "  + FAB_WET_REAGENTS.md + FAB_WET_INTERFACE.md",
     ], fill="#fffbeb", edge="#b45309")
 

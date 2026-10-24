@@ -4,7 +4,7 @@
  "graph": "flow_graph/plant_flow_graph.json",
  "receipt": "flow_graph/derived/_regen_receipt.json",
  "notes": [
-  "CORRECTION vs the U3 audit order (verified against code 2026-10-18, commit 0847940): _load_list/_one_line moved AFTER the graph writers. U1 (A-M-231) made _power_sizing.py graph-native (it no longer reads the load list), and the U2a sidecars (LOAD_LIST.json/ONE_LINE.json) record the graph sha at run time, so both must run after the last graph write or they vouch an intermediate sha.",
+  "CORRECTION vs the U3 audit order (verified against code 2026-10-18, commit dc7fe77): _load_list/_one_line moved AFTER the graph writers. U1 (A-M-231) made _power_sizing.py graph-native (it no longer reads the load list), and the U2a sidecars (LOAD_LIST.json/ONE_LINE.json) record the graph sha at run time, so both must run after the last graph write or they vouch an intermediate sha.",
   "CORRECTION: foundry_poly --write runs BEFORE write_graph heat (it stamps FOUNDRY/POLYMERS rates; heat re-solves the ladder against them) and before the balance report.",
   "CORRECTION: _rect_ew_sizing.py is NOT a stage: it writes no doc (stdout JSON only) and is spawned internally by _power_sizing.py, _one_line.py and write_graph.process.",
   "CORRECTION: write_graph power runs LAST among graph writers: _power_sizing demand = max(node continuous_kw, SOL_ARK feed) over every stamp written by the sizing modules, and power then re-stamps PV/ZNBR2/EXT_HALL/mvs.electrical + runs _collection_bus (itself a graph writer).",
@@ -450,6 +450,24 @@
    "note": "2026-10-21: balance --write proven stable at the balanced writer set. Evidence: instrumented 4-pass probe (PV_ARRAY count 4982, SOL_ARK count 35, sections 4, IA-PV-01 336.7016, need 179.62 kW) is pass-invariant; suite 43/43; regen --check rc=0. Diagnostic recipe if cycles reappear: capture per-pass signature hashes (graph sha + pv/ark/sections counts + pv feeder) over >=3 full passes BEFORE reverting - a quantized threshold flip (breaker/kVA tables) shows as a 2-point signature cycle, not a random walk. The 2026-10-19 oscillation report did not reproduce at this writer set."
   },
   {
+   "name": "edge_sectors",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.edge_sectors",
+    "--write"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "balance_report"
+   ],
+   "writes_graph": true,
+   "quick": true,
+   "note": "Copies each unit's sector from its node onto the edges at that unit, so an edge never names a sector its unit has left."
+  },
+  {
    "name": "sizing_bmed_stack",
    "argv": [
     "python3",
@@ -478,7 +496,7 @@
     "docs-authority/LOAD_LIST.json"
    ],
    "depends_on": [
-    "balance_report"
+    "edge_sectors"
    ],
    "writes_graph": false,
    "quick": false,
@@ -709,7 +727,7 @@
     "docs-authority/_sector_definitions.py"
    ],
    "depends_on": [
-    "balance_report"
+    "edge_sectors"
    ],
    "outputs": [
     "docs-authority/SECTOR_DEFINITIONS.md"
@@ -1403,7 +1421,7 @@
    ],
    "writes_graph": false,
    "quick": false,
-   "note": "AQS-ISO-002: iso/<LINE>.svg per routed line + ISO_SHEETS.csv (also the by-design orphan list source for _rev_stamp) + ISO_SHEETS.md."
+   "note": "AQS-ISO-002: docs-authority/iso/<LINE>.svg per routed line + docs-authority/iso/ISO_SHEETS.csv (also the by-design orphan list source for _rev_stamp) + ISO_SHEETS.md."
   },
   {
    "name": "supports",
@@ -1436,7 +1454,7 @@
    ],
    "writes_graph": false,
    "quick": false,
-   "note": "X-THM-03; reads iso/ISO_SHEETS.csv (no --graph: the T_C stamps are not rewritten)."
+   "note": "X-THM-03; reads docs-authority/iso/ISO_SHEETS.csv (no --graph: the T_C stamps are not rewritten)."
   },
   {
    "name": "doc_test_rigs",
@@ -3292,6 +3310,13 @@
     "flow_graph/flow_to_cad.py"
    ],
    "reason": "Layout tools. They seed or move rows in the placement files, which were refined after the tool ran, so the placement files are inputs; re-running would discard that work."
+  },
+  {
+   "role": "check",
+   "scripts": [
+    "flow_graph/check_citations.py"
+   ],
+   "reason": "A repository check run by flow_graph/test_citations.py. It writes files only when asked to (--fix rewrites stale citations in place), so it is not a regeneration stage."
   }
  ]
 }

@@ -10,12 +10,12 @@ Measurement: metric
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | — | — | Basic issue. 1.3 conveyor. | 2026-09-26 |
-| A | — | Remaining units as `cad/detail/mfg_*.scad`. | 2026-09-26 |
+| A | — | Remaining units as `models/openscad/detail/mfg_*.scad`. | 2026-09-26 |
 
 ## Import into FreeCAD
 
 ```bash
-cd cad/detail && bash build_stls.sh
+cd models/openscad/detail && bash build_stls.sh
 cd ../freecad && /usr/bin/freecadcmd import_mfg.py
 ```
 

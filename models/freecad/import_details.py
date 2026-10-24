@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Insert Phase B OpenSCAD STLs as Mesh children on the plant.
 
-    openscad via cad/detail/build_stls.sh first.
+    openscad via models/openscad/detail/build_stls.sh first.
     /usr/bin/freecadcmd import_details.py   # standalone, opens plant.FCStd
     or attach(doc) from build_plant.py
 """

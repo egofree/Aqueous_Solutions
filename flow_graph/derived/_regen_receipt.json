@@ -1,7 +1,7 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "graph_sha256": "12f1602c68d17412533f22795ad93fda886036438e350e4de3736333dec9a70e",
+ "graph_sha256": "8f5733d774593ecaaf06d17bf01fb43b70529b6b6b78f803488da3498e90b6f1",
  "converged": true,
  "stages": [
   {
@@ -94,6 +94,10 @@
   },
   {
    "name": "balance_report",
+   "status": "ok"
+  },
+  {
+   "name": "edge_sectors",
    "status": "ok"
   },
   {

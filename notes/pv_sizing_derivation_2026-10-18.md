@@ -3,7 +3,7 @@
 Document number: AQS-NOTE-PV-REBASE
 Revision: A
 Date: 2026-10-18
-Authority: owner rule 2026-10-18 (D-PV / MASTER_PLAN D75), AGENTS.md "Self-sustaining plant"; graph Rev AC @ `eacaf47`; machinery `docs-authority/_power_sizing.py`, `flow_graph/param/solver.py roof_close`, `flow_graph/param/sizing/power.py`, drivers in `flow_graph/param/drivers.json`. Analysis lane only: no graph edits, no commits, no derived-doc regeneration (tree left clean at `eacaf47`). Study. Not a PE stamp.
+Authority: owner rule 2026-10-18 (D-PV / MASTER_PLAN D75), AGENTS.md "Self-sustaining plant"; graph Rev AC @ `64c8239`; machinery `docs-authority/_power_sizing.py`, `flow_graph/param/solver.py roof_close`, `flow_graph/param/sizing/power.py`, drivers in `flow_graph/param/drivers.json`. Analysis lane only: no graph edits, no commits, no derived-doc regeneration (tree left clean at `64c8239`). Study. Not a PE stamp.
 
 Owner rule being implemented: *PV size is parametrically derived from the plant's required power at ≥ 200 % of required load (batteries still charge on cloudy days); roof area and building footprint are then derived from the PV size.* This is exactly the D75 chain already encoded in `pv_oversize_factor` (2.0) and `PW.oversized()`.
 
@@ -174,4 +174,4 @@ mean-day multiple of need 2.00× at PSH 5.41 → 1.66× at 4.5 → 1.48× at 4.0
 5. Graph seeds that contradict D75 until re-encoded: `mvs.electrical` need 50 / target 70 / `pv_module_kw` 70 × 1; `PV_ARRAY` 70 kWp seed; ZNBR2 60 kW/120 kWh + IA-ESS-ZNBR2-CHG 6.67 / DIS 5.0 BH-restored seeds; IA-PV-CURTAIL 4.645; S17 50.0.
 6. `solver.check()` R8 RECTIFIER↔RECT_EW fallback conflates the 48 V rail unit with the EW rectifier (false −69 % misfit) — fix before the gate is meaningful.
 
-— End of note. Tree left clean at `eacaf47`; only this file written.
+— End of note. Tree left clean at `64c8239`; only this file written.

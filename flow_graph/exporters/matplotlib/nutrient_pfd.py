@@ -98,7 +98,7 @@ def main():
         "Dose: NUTRIENT_DOSE (freecad/farm.py)",
         "Precip: P-Al · P-Mg · P-Ca (wet_line_factory_pfd)",
         "Loop: FISH_TANK · BIOFILTER · GROW_BED · FARM_SUMP",
-        "Detail: cad/process/NUTRIENT_DOSE.md (Rev B)",
+        "Detail: docs-authority/NUTRIENT_DOSE.md (Rev B)",
         "Companion: AQS-PFD-FRM-001 · terrace fertigation: AQS-PFD-TRR-001",
     ], fill="#f0fdf4", edge="#166534")
 

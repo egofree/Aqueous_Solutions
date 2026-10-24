@@ -4,7 +4,7 @@ Document number: AQS-EQP-GEN-001
 Revision: B  
 Date: 2026-10-01  
 PFD: AQS-PFD-GEN-001 (`backup_gen_pfd.png`)  
-Authority: AQS-PWR-001, `ELECTRICAL.md` (Sol-Ark GEN port),
+Authority: AQS-PWR-002, `ELECTRICAL.md` (Sol-Ark GEN port),
 `POWER/Power_System_overview.md`, GAS_SYSTEM exhaust-recapture intent,
 AQS-STR-001 S45–S47, AQS-HSE-001 / AQS-MF-001 (H₂ MAQ).
 

@@ -1,4 +1,4 @@
-"""Millimetre parameters. Keep in lockstep with cad/params.scad."""
+"""Millimetre parameters. Keep in lockstep with models/openscad/params.scad."""
 
 WALL = 12
 FLOOR = 16
@@ -153,7 +153,7 @@ PV_H = 80
 # Building stack levels (AQS-BLD-001) + scale model (AQS-SCALE-001).
 # World Z = 0 is L0 grade FFL. Wet-line FCStd remains L-1-local
 # (local Z=0 = L-1 FFL); build_plant shifts the process cassette by Z_Lm1.
-# Scale rules: cad/SCALE_MODEL.md. Not everything scales the same way.
+# Scale rules: docs-authority/SCALE_MODEL.md. Not everything scales the same way.
 #
 # Vertical order (top → bottom), always:
 #   ROOF_TANK → discrete LIFE floors (HAB∥FARM) → L0 MFG/grade →

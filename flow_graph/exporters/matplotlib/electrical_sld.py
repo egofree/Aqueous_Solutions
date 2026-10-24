@@ -213,7 +213,7 @@ gen = box(ax, 51.5, 34.0, 10.0, 10.2, C_AC_F, C_AC, "BACKUP_GEN",
           gen_sub, ts=16.1, ss=11.5)
 arrow(ax, L(gen), (50.4, cy(gen)), C_AC, lw=1.8)
 slabel(ax, 51.7, 45.0, "GEN port", C_AC, ha="left", size=7.8)
-ax.text(51.5, 32.6, "AQS-PWR-001 · diesel contingency only",
+ax.text(51.5, 32.6, "AQS-PWR-002 · diesel contingency only",
         ha="left", va="top", fontsize=11.2, color=P.MUTED)
 
 # PEM fuel cell — graph S51

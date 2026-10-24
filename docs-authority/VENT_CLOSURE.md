@@ -5,7 +5,7 @@ Revision: C
 Date: 2026-10-01  
 Authority: AQS-AUTH-001, AQS-MF-001, AQS-STR-001, AQS-HSE-001,
 AQS-GAS-002 / AQS-GAS-003, AQS-CRY-002, AQS-MFG-MET-001,
-AQS-PWR-001 / AQS-FC-001, FLOW_BATTERY.md, AQS-AUD-001.
+AQS-PWR-002 / AQS-FC-001, FLOW_BATTERY.md, AQS-AUD-001.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
@@ -13,7 +13,7 @@ AQS-PWR-001 / AQS-FC-001, FLOW_BATTERY.md, AQS-AUD-001.
 | B | 1 | PFD end-to-end Partial/Claimed; AQS-PFD-VENT-001 issued | 2026-09-28 |
 | C | 1 | Study-estimate duties for polish/regen/AHU_COND/MET_SCRUB | 2026-10-01 |
 
-Style: AQS-DOC-001. Compliance themes: AQS-CMP-001.
+Style: AQS-DOC-001. Compliance themes: AQS-COMPL-001.
 
 Licence: CERN-OHL-S-2.0. No invented nameplates. `SCALE_M = 1.0`.
 No plant rebuild this pass. No git commit.

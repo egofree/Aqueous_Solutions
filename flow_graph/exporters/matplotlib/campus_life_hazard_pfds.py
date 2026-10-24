@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """High-fidelity campus / hazard / life overview PFDs.
 
-    python3 pfd_scripts/campus_life_hazard_pfds.py
+    python3 flow_graph/exporters/matplotlib/campus_life_hazard_pfds.py
 
 Sheets:
   campus_pfd.png              AQS-PFD-CMP-001

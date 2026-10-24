@@ -2,7 +2,7 @@
 """Standing-height label plates and safety signs.
 
 Face text comes from SIGN_LEGEND / LABEL_LEGEND (same strings as
-cad/SIGN_SCHEDULE.md). Glyphs are cut with Part.makeWireString when a
+docs-authority/SIGN_SCHEDULE.md). Glyphs are cut with Part.makeWireString when a
 sans-bold TTF exists. If no font is found the plate is blank and the
 schedule is the readable source.
 """

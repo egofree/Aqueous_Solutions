@@ -98,7 +98,7 @@ def main():
         "CAD envelope: MFG_SHOP · MFG_CRIB · MFG_FLOOR (freecad/mfg_shop.py)",
         "Polymer (PP-class): SHREDDER · WASH/DRY · EXTRUSION · INJECTION · SHEETPRESS / COMPRESSION",
         "Metals: crib · CNC/MILL · WELD/ASSY  ·  forming detail: AQS-PFD-MFG-MET-001 (wire/cold-mill/atomizer · S57–S63)",
-        "Detail: cad/process/MFG_SHOP_EQUIPMENT.md + METAL_FORMING_EQUIPMENT.md",
+        "Detail: docs-authority/MFG_SHOP_EQUIPMENT.md + METAL_FORMING_EQUIPMENT.md",
     ], fill="#fffbeb", edge="#a16207")
 
     S.legend(ax, 2.0, 1.0)

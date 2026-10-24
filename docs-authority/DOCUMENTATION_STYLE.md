@@ -4,7 +4,7 @@ Document number: AQS-DOC-001
 Revision: A  
 Date: 2026-10-01  
 Authority: AQS-AUTH-001. Applies to **authority hub** markdown under
-`cad/*.md`, `cad/process/*.md`, and hub sheets named in AUTHORITY.md
+`docs-authority/*.md`, `docs-authority/*.md`, and hub sheets named in AUTHORITY.md
 (e.g. `ELECTRICAL.md`). Does **not** mandate a rewrite of root narrative
 folders (`01-…`–`09-…`, POWER/, GAS_SYSTEM/, etc.).
 

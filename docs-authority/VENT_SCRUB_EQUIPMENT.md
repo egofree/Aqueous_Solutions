@@ -112,10 +112,7 @@ ZNBR2_BR2_REGEN. Rebuild: `/usr/bin/freecadcmd models/freecad/build_plant.py`.
 ## 5. Regenerate related PFDs
 
 ```bash
-# Optional — run only in a local working hub (not published):
-python3 rebuild.py --group vent
-python3 rebuild.py --group power
-python3 rebuild.py --group cryo
-python3 rebuild.py --group mfg
-python3 rebuild.py --sync
+python3 -m flow_graph.param.regen
 ```
+
+The process flow diagrams are regenerated from the plant graph with the rest of the derived files.

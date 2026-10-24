@@ -2411,7 +2411,7 @@
         "value": 67.300214,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d | X-PAR-02 TF: UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, fa1b4db; Rev AC 95.00 overdrew the header) (AQS-PAR-003)."
+        "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d | X-PAR-02 TF: UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, 91d33f4; Rev AC 95.00 overdrew the header) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -2466,7 +2466,7 @@
         "value": 1.499799,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b A-M-257: BH fa1b4db verbatim (AQS-DUTY-010: 10.0 slm x 40.0 min x 3 starts at 1.25 g/L) - the fab N2 purge, re-pointed Rev AC to draw CRYO_N2 directly; exactly the WAFER_FAB deficit after the IA-AR-RET retirement. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "R10b A-M-257: BH 91d33f4 verbatim (AQS-DUTY-010: 10.0 slm x 40.0 min x 3 starts at 1.25 g/L) - the fab N2 purge, re-pointed Rev AC to draw CRYO_N2 directly; exactly the WAFER_FAB deficit after the IA-AR-RET retirement. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "composition": {
         "N2": 1.0
@@ -2570,7 +2570,7 @@
         "value": 26.7,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary | X-PAR-02 TF R10a: glass/ceramic goods to the shop = BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 26.20 + IA-SIC-IN 0.50 silica (SIC_FURNACE retired, rides S08G); BOUNDARY_EXPORT re-point retired (AQS-AUD-001 4.1 silicate+grit ~=30 kg/d basis)"
+        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary | X-PAR-02 TF R10a: glass/ceramic goods to the shop = BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 26.20 + IA-SIC-IN 0.50 silica (SIC_FURNACE retired, rides S08G); BOUNDARY_EXPORT re-point retired (AQS-AUD-001 4.1 silicate+grit ~=30 kg/d basis)"
       },
       "from_sector_id": "GLASS",
       "to_sector_id": "MFG",
@@ -2674,7 +2674,7 @@
         "value": 319.60396,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; fa1b4db) (AQS-PAR-003)."
+        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4) (AQS-PAR-003)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "WTR",
@@ -2700,7 +2700,7 @@
         "value": 3.799494,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Fiber taken from the still feed. Still resized. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): endpoints alive on the crew-duty bed (GROW_BED present, VCD_TRAIN present); placeholder flipped, BH rate held"
+        "note": "AQS-DUTY-014. Fiber taken from the still feed. Still resized. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): endpoints alive on the crew-duty bed (GROW_BED present, VCD_TRAIN present); placeholder flipped, BH rate held"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
@@ -2806,7 +2806,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev J: the 15.0 kg/d afterburner CO2 basis moved to S67; the CRYO_CO2 credit is S67B. S18 kept as the OIL->CRYO claim id (BH fa1b4db verbatim; Rev AC had re-rated it 15.0 on a revived pre-Rev-J basis)"
+        "note": "Rev J: the 15.0 kg/d afterburner CO2 basis moved to S67; the CRYO_CO2 credit is S67B. S18 kept as the OIL->CRYO claim id (BH 91d33f4 verbatim; Rev AC had re-rated it 15.0 on a revived pre-Rev-J basis)"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "CRYO",
@@ -2832,7 +2832,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-BAG-01 | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-BAG-01 | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "DIGESTER",
@@ -2860,7 +2860,7 @@
         "value": 120.68,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 FARM/HAB clean-tower draw ~50\u2013140 L/d | X-PAR-02 TF R10a: crew-4 potable draw; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 120.68 (Rev AC had cut it to 95 with the grey outlet dead)"
+        "note": "Mid of AQS-AUD-001 \u00a711 FARM/HAB clean-tower draw ~50\u2013140 L/d | X-PAR-02 TF R10a: crew-4 potable draw; BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 120.68 (Rev AC had cut it to 95 with the grey outlet dead)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
@@ -2935,7 +2935,7 @@
         "value": 10.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: REMIN drink_L_d 10 | X-PAR-02 TF R10a: remineralised potable to habitation; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 10.00 (placeholder edge re-activated)"
+        "note": "AQS-DUTY-010: REMIN drink_L_d 10 | X-PAR-02 TF R10a: remineralised potable to habitation; BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 10.00 (placeholder edge re-activated)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
@@ -2961,7 +2961,7 @@
         "value": 60.000181,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: fab UPW 20-100 L/d for 1-5 starts, at 3 starts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: fab UPW 20-100 L/d for 1-5 starts, at 3 starts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -2989,7 +2989,7 @@
         "value": 17.877059,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: VCD brine 10% of feed | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: VCD brine 10% of feed | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "DIGESTER",
@@ -3015,7 +3015,7 @@
         "value": 104.499999,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Still feed restored. Grey is not the greenhouse return. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-013. Still feed restored. Grey is not the greenhouse return. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -3071,7 +3071,7 @@
         "value": 1.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 band 0.5-2.5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 band 0.5-2.5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -3099,7 +3099,7 @@
         "value": 3.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -3127,7 +3127,7 @@
         "value": 3.008739,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -3155,7 +3155,7 @@
         "value": 0.2701,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -3183,7 +3183,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT. | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -3211,7 +3211,7 @@
         "value": 3.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 1-5 L/d makeup at 3 starts = 3.0 L/d x 1.1 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 1-5 L/d makeup at 3 starts = 3.0 L/d x 1.1 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -3310,7 +3310,7 @@
         "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "GEO",
@@ -3439,7 +3439,7 @@
         "value": 42.876623,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WTR",
@@ -3466,7 +3466,7 @@
         "value": 4.2838,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak) | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak) | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -3517,7 +3517,7 @@
         "value": 6.8389,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -3548,7 +3548,7 @@
         "value": 3.9389,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: S57 less 10% draw swarf | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: S57 less 10% draw swarf | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -3576,7 +3576,7 @@
         "value": 3.950359,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -3604,7 +3604,7 @@
         "value": 3.200359,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -3635,7 +3635,7 @@
         "value": 1.197099,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: swarf/trim/off-spec from draw, mill and atomizer (less LEV fines) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: swarf/trim/off-spec from draw, mill and atomizer (less LEV fines) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "OIL",
@@ -3663,7 +3663,7 @@
         "value": 51145.68,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -3739,7 +3739,7 @@
         "value": 27.372033,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: Cl2 slip 1% of 219.0 kg/d EW anode Cl2 -> NaCl + NaOCl 4.10 kg/d at 15% salts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: Cl2 slip 1% of 219.0 kg/d EW anode Cl2 -> NaCl + NaOCl 4.10 kg/d at 15% salts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "DIGESTER",
@@ -3907,7 +3907,7 @@
         "value": 20458.32,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -4089,7 +4089,7 @@
         "value": 0.0146,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70% | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70% | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -4117,7 +4117,7 @@
         "value": 0.36,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: food waste 15% of ration | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: food waste 15% of ration | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "MEOH",
@@ -4395,7 +4395,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "Only consumer of HDR_CO2. CO2 only: no tee to HDR_O2, hab air, the HAB return or the dock. Farm AHU is not the HAB AHU. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Only consumer of HDR_CO2. CO2 only: no tee to HDR_O2, hab air, the HAB return or the dock. Farm AHU is not the HAB AHU. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-009 Rev B",
         "medium": "CO2 gas",
@@ -4452,7 +4452,7 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": "Rev L. CO2 only, from the sealed-hab sorbent (S02 supplies the O2). Joins S85 on HDR_CO2; S89 carries both to the farm AHU dose. No tee to hab air or the dock. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Rev L. CO2 only, from the sealed-hab sorbent (S02 supplies the O2). Joins S85 on HDR_CO2; S89 carries both to the farm AHU dose. No tee to hab air or the dock. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "doc": "AQS-DUTY-010",
         "rate_basis": "AQS-DUTY-010: S02 3.36 kg/d O2 x RQ 0.87 x 44.01/32.00",

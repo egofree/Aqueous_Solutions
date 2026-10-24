@@ -45,7 +45,7 @@ Licence: CERN-OHL-S-2.0.
 | Quantity | Value | Source |
 |---|---|---|
 | Legacy campus electric claim | 100 kW baseload | `POWER/Power_System_overview.md` (narrative) |
-| M1 electric claim this pass | **TBD** — ORC stub only | AQS-PWR-001 §2.1 |
+| M1 electric claim this pass | **TBD** — ORC stub only | AQS-PWR-002 §2.1 |
 | Heat-pump thermal | **TBD** | Do not invent kW |
 | HVAC AC load context | 1.5 kW class | `ELECTRICAL.md` |
 

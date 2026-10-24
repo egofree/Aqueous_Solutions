@@ -15,9 +15,9 @@ Licence: CERN-OHL-S-2.0.
 
 AQS-DUTY-010 (Rev L) rated every present edge and left eleven node balances and one species check open (§6 of that note), together with six topology decisions, two heater ratings, the Q4 surplus and the S87/S88 hold. This note resolves each item from first principles and records the result in graph Rev M.
 
-The calculation is `docs-authority/_rev_m_closure_study.py`. It reads the Rev L graph from commit d9cd071 (or `--base FILE`), reruns the AQS-DUTY-010 rating pass, applies the Rev M topology and rates, and checks conservation at every node. `--write` produces the Rev M graph; a rerun reproduces it byte for byte. Each Rev M rate carries `rate_status: study`, a note beginning `AQS-DUTY-011:` and the Rev L value in `params.rev_l_value`. Node off-graph terms move from `params.balance_rev_l` to `params.balance_rev_m`. Retargeted edges carry `params.rev_l_from` / `params.rev_l_to`.
+The calculation is `docs-authority/_rev_m_closure_study.py`. It reads the Rev L graph from commit c4e1818 (or `--base FILE`), reruns the AQS-DUTY-010 rating pass, applies the Rev M topology and rates, and checks conservation at every node. `--write` produces the Rev M graph; a rerun reproduces it byte for byte. Each Rev M rate carries `rate_status: study`, a note beginning `AQS-DUTY-011:` and the Rev L value in `params.rev_l_value`. Node off-graph terms move from `params.balance_rev_l` to `params.balance_rev_m`. Retargeted edges carry `params.rev_l_from` / `params.rev_l_to`.
 
-AQS-DUTY-010 remains reproducible against its Rev L base: run on a Rev M working tree, `_edge_rating_study.py` loads d9cd071 automatically.
+AQS-DUTY-010 remains reproducible against its Rev L base: run on a Rev M working tree, `_edge_rating_study.py` loads c4e1818 automatically.
 
 ## 2. Result
 
@@ -263,7 +263,7 @@ Both are retired; neither carries a physical flow.
 1. Energy surplus: the design day imports 40.0 kW average from the utility.
 2. REQ-MEOH-FC 0.5–2 kW is not met (MEOH_FC 0.1007 kW, H₂-limited).
 3. The provisional decisions in §5 and the required studies in §6.
-4. CAD clearance on the Rev M placement copy. Seed Rev I (`placement_seed.json`) moves 24 origins: 71 seed boxes, 2485 pairs, 0 intersections and 0 pairs under 600 mm within a level (1100 mm at BACKUP_GEN and FUEL_CELL); Rev L had 20 pairs under 600 mm. `plant_placed_2026-10-08_revM.FCStd` is derived from the revK copy by `apply_placement.py` (39 applied, 9 resized, 0 gaps); `plant.FCStd` is not touched. Every moved Feature has 0 intersections and at least 600 mm to same-level equipment, except MET_AHU and MET_SCRUB, which sit on OVERFLOW_APRON_E as drawn. An all-pairs common-volume check on the copy (423 solids) gives 1016 intersecting pairs (1075 on revK): 598 allowed (assembly, nozzle, penetration, containment), 210 for review and 208 clashes (245 on revK). The remaining clashes are legacy massing in RS-CAD-HYDRO, RS-CAD-YARD and RS-CAD-LEGACY (§6); details in `planning/studies/REV_M_CLOSURE.md`.
+4. CAD clearance on the Rev M placement copy. Seed Rev I (`placement_seed.json`) moves 24 origins: 71 seed boxes, 2485 pairs, 0 intersections and 0 pairs under 600 mm within a level (1100 mm at BACKUP_GEN and FUEL_CELL); Rev L had 20 pairs under 600 mm. `plant_placed_2026-10-08_revM.FCStd` is derived from the revK copy by `apply_placement.py` (39 applied, 9 resized, 0 gaps); `plant.FCStd` is not touched. Every moved Feature has 0 intersections and at least 600 mm to same-level equipment, except MET_AHU and MET_SCRUB, which sit on OVERFLOW_APRON_E as drawn. An all-pairs common-volume check on the copy (423 solids) gives 1016 intersecting pairs (1075 on revK): 598 allowed (assembly, nozzle, penetration, containment), 210 for review and 208 clashes (245 on revK). The remaining clashes are legacy massing in RS-CAD-HYDRO, RS-CAD-YARD and RS-CAD-LEGACY (§6); details in the unpublished planning note REV_M_CLOSURE.
 
 ## 8. Node balances
 
@@ -471,7 +471,7 @@ Status: closed = within ±1 % with independently derived terms; closed (one term
 
 ```
 cd docs-authority
-python3 _rev_m_closure_study.py --json out/revm.json          # report from Rev L base d9cd071
+python3 _rev_m_closure_study.py --json out/revm.json          # report from Rev L base c4e1818
 python3 _rev_m_closure_study.py --write ../flow_graph/plant_flow_graph.json
 cd ../flow_graph && python3 export_candidate_mvs.py && python3 check_authority_contract.py
 ```

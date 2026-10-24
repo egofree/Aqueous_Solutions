@@ -119,9 +119,8 @@ nutritionist lock; retune when berth/ration is issued.
 
 ---
 
-## 8. Sync
+## 8. Regenerate
 
 ```bash
-# Optional — run only in a local working hub (not published):
-python3 rebuild.py --sync
+python3 -m flow_graph.param.regen
 ```

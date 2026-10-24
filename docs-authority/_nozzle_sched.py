@@ -1,6 +1,6 @@
 """Unit task 04: nozzle schedules with full process coverage (AQS-PLAN-007; AQS-STD-001 section 4).
 
-The issued schedules in docs-authority/nozzles/<UNIT>.csv (hand rows, commit fc93bc9 era) are
+The issued schedules in docs-authority/nozzles/<UNIT>.csv (hand rows, commit 03f3ed5 era) are
 preserved verbatim; this generator only APPENDS rows missing for coverage. Coverage rule (the
 T04 check in _task_plan_gen.py, the same connection set): every present process connection of
 the unit - mass kg/d edges plus HL-/thermal kW edges (cables are not nozzles) - has a row whose

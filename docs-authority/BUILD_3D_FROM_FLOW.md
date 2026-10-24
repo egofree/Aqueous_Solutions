@@ -137,9 +137,8 @@ cd models/freecad
 /usr/bin/freecad wet_line.FCStd   # GUI
 ```
 
-**Local hub operators** (not this repo) may use a hub `rebuild.py`
-and `cad/REBUILD.sh` (absolute hub paths). `docs-authority/REBUILD.md`
-documents that menu; it is not required for share-tree rebuild.
+To rebuild everything, documents and models together, run `python3 -m flow_graph.param.regen --cad`
+from the repository root; see `docs-authority/REBUILD.md`.
 
 ---
 
@@ -253,11 +252,11 @@ python3 graph_geometry_bridge.py --graph ../../flow_graph/plant_flow_graph.json 
 | `AGENT_CAD_PROTOCOL.md` | Design-agnostic PFD→CAD agent protocol (pipeline source) |
 | `STACK_3D_DECISION.md` | FreeCAD default; Three.js / matplotlib disposition |
 | `FREECAD_PROTOCOL.md` | Binary, script template, failure modes |
-| `REBUILD.md` | Hub master menu (AQS-REB-001) |
+| `REBUILD.md` | Regeneration pipeline (AQS-REB-001) |
 | `SCALE_MODEL.md` | What `SCALE_M` changes |
 | `STL_MANIFEST.md` | OpenSCAD STL contract |
 | `DESIGN_TOOL_ARCHITECTURE.md` | Phase D FreeCAD default; pack layout (§3.3) |
-| *(hub planning only)* | Phase D plan **AQS-PLAN-3D-001** Rev G + placement study `planning/PLACEMENT_SCHEMA_STUDY.md` — not shipped here |
+| *(hub planning only)* | Phase D plan **AQS-PLAN-3D-001** Rev G + placement study the unpublished planning note PLACEMENT_SCHEMA_STUDY — not shipped here |
 | `../models/REBUILD.sh` | Share-tree rebuild |
 | `../models/freecad/graph_geometry_bridge.py` | Bridge (inventory + name map + overlay + presence + recipe 1.0) |
 | `../models/freecad/params_overlay_apply.py` | Allow-list overlay → `params_overlay.py` fork |

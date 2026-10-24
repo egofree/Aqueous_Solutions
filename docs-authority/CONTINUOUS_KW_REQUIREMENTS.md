@@ -4,7 +4,7 @@ Document number: AQS-REQ-KW-001
 Revision: A  
 Date: 2026-10-01  
 Authority: AQS-SCALE-001 (`SCALE_M = 1.0`), AQS-AUD-001, AQS-ELC-001
-(`ELECTRICAL.md`), AQS-GAS-003 Faraday check, AQS-FC-001 / AQS-PWR-001 /
+(`ELECTRICAL.md`), AQS-GAS-003 Faraday check, AQS-FC-001 / AQS-PWR-002 /
 AQS-CRY-002 / AQS-MFG-MET-001 / AQS-EQP-FAB-PV-001, AQS-MeOH-001.  
 **Stage = define requirements.** Not a purchase order. Not stamped nameplates.
 

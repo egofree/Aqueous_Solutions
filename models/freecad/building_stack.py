@@ -7,7 +7,7 @@ World Z=0 is L0 grade FFL. Site north = +Y (AQS-SITE-001).
 North dock + paired ELEV_DOCK (discrete E–W jump) + SERVICE_ENTRY /
 STAIR_SERVICE to basement. Life-floor terraces on S/E/W with floor doors.
 ARRAY_ROOF / PV tilt toward equator (south in NH). SHAFT_H2: no traps.
-Scale: cad/SCALE_MODEL.md.
+Scale: docs-authority/SCALE_MODEL.md.
 """
 from pathlib import Path
 import math

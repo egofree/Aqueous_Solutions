@@ -181,9 +181,8 @@ P0 solver consumes sector-level **and** unit-level maps (Rev C). Blow-mold remai
 
 ---
 
-## 7. Sync
+## 7. Regenerate
 
 ```bash
-cd models   # or local hub root
-python3 rebuild.py --sync
+python3 -m flow_graph.param.regen
 ```

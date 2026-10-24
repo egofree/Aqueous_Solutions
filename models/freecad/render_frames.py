@@ -3,7 +3,7 @@
 
     python3 render_frames.py
 
-Writes cad/animation/*.png. Token is an 80 mm stand-in. No workers,
+Writes models/animation/*.png, a scratch folder that flow_graph/regen_derived.py empties into media/ and then deletes. Token is an 80 mm stand-in. No workers,
 flames, mixed headers, or FR-4 on the pyro path.
 """
 from pathlib import Path

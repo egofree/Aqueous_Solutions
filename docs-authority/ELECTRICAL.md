@@ -4,8 +4,8 @@ Document number: AQS-ELC-001
 Revision: C  
 Date: 2026-10-08  
 Authority: AQS-AUTH-001; Sol-Ark / ZnBr2 / GEN / FC interconnect themes in
-AQS-PWR-001, AQS-FC-001, FLOW_BATTERY.md; classified areas AQS-HSE-001 §4;
-compliance themes **AQS-CMP-001** §4 (NEC).  
+AQS-PWR-002, AQS-FC-001, FLOW_BATTERY.md; classified areas AQS-HSE-001 §4;
+compliance themes **AQS-COMPL-001** §4 (NEC).  
 PFD/SLD: `electrical_sld.png`
 
 | Rev | Change | Description | Date |
@@ -46,7 +46,7 @@ Inverter is a Sol-Ark 60K-3P-480V. Native 277/480 V 3φ, 60 kW continuous, 72.3 
 - Break-before-make. Do not parallel S1 and S2.
 - Ground-mount PV ~70 kW STC into four MPPTs (inverter allows 78 kW STC, 150–850 V).
 - ZnBr2 flow battery, SEM Tech CEM/AEM, ~330 series cells to sit in the 160–700 V battery window, ~120 kWh usable / 60 kW, two 50 A ports. CAN BMS gateway required — the 60K speaks lithium CAN, not raw flow-battery telemetry.
-- GEN port → **BACKUP_GEN** (plant H₂ AC genset, AQS-PWR-001 / AQS-EQP-GEN-001).
+- GEN port → **BACKUP_GEN** (plant H₂ AC genset, AQS-PWR-002 / AQS-EQP-GEN-001).
   Continuous kW **TBD** vendor; **study** continuous from process H₂ ~2.3–2.7 kW_e;
   capacity class upper = module peak ~50 kW / inverter 60 kW (AQS-AUD-001 §10.2).
   Diesel remains external contingency only. Geothermal thermal path: AQS-EQP-GEO-001;

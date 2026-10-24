@@ -62,18 +62,18 @@ overlays locally.
 
 - [x] 7.1 Routed pipe racks — `mfg_pipe_rack.scad`, `freecad/pipe_services.py`
 - [x] 7.2 Weld / joint register — `docs-authority/WELD_MAP.md` (AQS-WLD-001)
-- [x] 7.3 Animation frames — schematic D0–D6 + F0 in `cad/animation/`. Generator `freecad/render_frames.py`. GUI 12 fps overlay remains operator-box.
-- [x] 7.4 Farm, wafer fab, habitation, cryo — envelopes. `PHASE_F_ENVELOPES.md`, `campus.py`, `cad/animation/F0_campus.png`. Internals out of this model set.
+- [x] 7.3 Animation frames — schematic D0–D6 + F0 in `models/freecad/animation/`. Generator `freecad/render_frames.py`. GUI 12 fps overlay remains operator-box.
+- [x] 7.4 Farm, wafer fab, habitation, cryo — envelopes. `PHASE_F_ENVELOPES.md`, `campus.py`, `media/F0_campus.png`. Internals out of this model set.
 
 ## 8. Data
 
-- [x] 8.1 Rebuild contract issued — `docs-authority/STL_MANIFEST.md`, `cad/REBUILD.sh`. Compile + stamp is operator-box (`openscad` + `/usr/bin/freecadcmd`).
-- [x] 8.2 Refresh `materials_shopping_list.xlsx` from `cad/materials.csv`
+- [x] 8.1 Rebuild contract issued — `docs-authority/STL_MANIFEST.md`, `models/REBUILD.sh`. Compile + stamp is operator-box (`openscad` + `/usr/bin/freecadcmd`).
+- [x] 8.2 Refresh `materials_shopping_list.xlsx` from `tables/materials.csv`
 
 ## Operator box (not this sandbox)
 
 ```
-bash cad/REBUILD.sh
+bash models/REBUILD.sh
 python3 models/freecad/render_frames.py
 ```
 
@@ -98,7 +98,7 @@ yard wall inset, dock+ELEV_DOCK discrete E–W jump, AQS-EGR-001 Rev B.
 
 ## Wave 2 doc pointers (2026-10-01)
 
-- Compliance themes: docs-authority/COMPLIANCE_MATRIX.md (AQS-CMP-001)
+- Compliance themes: docs-authority/COMPLIANCE_MATRIX.md (AQS-COMPL-001)
 - House style: docs-authority/DOCUMENTATION_STYLE.md (AQS-DOC-001)
 - OpenSCAD PATH: see docs-authority/STL_MANIFEST.md (do not force install)
 - MeOH train: **issued** AQS-MeOH-001 / AQS-EQP-MEOH-001 / AQS-PFD-MEOH-001 (gap filled)

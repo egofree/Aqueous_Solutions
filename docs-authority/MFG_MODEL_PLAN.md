@@ -116,8 +116,8 @@ Authoring is CadQuery, because it runs headless, writes STEP directly, and insta
 T0 gate, before tier 1:
 
 1. Install CadQuery and the OCP wheel in a project virtual environment. Record the versions in `DEPENDENCIES.md`.
-2. Shared library `models/mfg/lib/`: nozzle and flange stubs DN15 to DN50, hose barbs, the AQS-MOD-001 frame members, the fastener table, the material table.
-3. Tracker tool `models/mfg/tracker.py`: reads the graph, writes every `params.json`, regenerates section 7 of this page, and runs the A-core checks that can run on files: bounding box, nozzle count, manifold STL, STEP present, BOM complete.
+2. Shared library `models/mfg/lib/` (to be created): nozzle and flange stubs DN15 to DN50, hose barbs, the AQS-MOD-002 frame members, the fastener table, the material table.
+3. Tracker tool `models/mfg/tracker.py` (to be created): reads the graph, writes every `params.json`, regenerates section 7 of this page, and runs the A-core checks that can run on files: bounding box, nozzle count, manifold STL, STEP present, BOM complete.
 4. Smoke test: one box with one DN15 nozzle, built, exported, and checked. The test passes before the EXPANDER is started.
 
 ## 7. Tracker
@@ -131,16 +131,16 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 | Seq | Unit | Sector | Class | Tier | Internal on node | Seed origin | `cad/stl` now | Existing source | Route | Acceptance | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | EXPANDER | CRYO | tool | 1 | none | yes | envelope, ~23 f | `models/mfg/EXPANDER/expander.py` | F-MACH | A-core, A-MACH, A-P | M2. Builds, STEP, one closed STL, `cad/stl` replaced. No drawings |
-| 2 | LEACH_CSTR_1 | WET | vessel | 2 | none | yes | envelope, ~23 f | `models/mfg/LEACH_CSTR_1/leach_cstr_1.py` | F-VES | A-core, A-VES | M2. Builds, STEP, one closed STL, `cad/stl` replaced. CPVC per AQS-STD-002 Rev F. No drawings |
-| 3 | EW_1 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
-| 4 | EW_2 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
-| 5 | EW_3 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~106 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
-| 6 | EW_4 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~35 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
-| 7 | EW_5 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~35 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
-| 8 | EW_6 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~35 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
-| 9 | EW_7 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~308 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
-| 10 | EW_8 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~35 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
-| 11 | EW_9 | WET | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
+| 2 | LEACH_CSTR_1 | DIGESTER | vessel | 2 | none | yes | envelope, ~23 f | `models/mfg/LEACH_CSTR_1/leach_cstr_1.py` | F-VES | A-core, A-VES | M2. Builds, STEP, one closed STL, `cad/stl` replaced. CPVC per AQS-STD-002 Rev F. No drawings |
+| 3 | EW_1 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
+| 4 | EW_2 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
+| 5 | EW_3 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~106 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
+| 6 | EW_4 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~35 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
+| 7 | EW_5 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~35 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
+| 8 | EW_6 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~35 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
+| 9 | EW_7 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~308 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
+| 10 | EW_8 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~35 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
+| 11 | EW_9 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
 | 12 | CRYO_ASU | CRYO | cold_box | 3 | packed section, vacuum jacket | no | coarse internal, ~106 f | mfg_cold_box.scad | F-COL | A-core, A-COL | M1 |
 | 13 | CRYO_O2 | CRYO | cold_box | 3 | packed section, vacuum jacket | no | coarse internal, ~106 f | none | F-COL | A-core, A-COL | M1 |
 | 14 | CRYO_N2 | CRYO | cold_box | 3 | packed section, vacuum jacket | no | coarse internal, ~106 f | none | F-COL | A-core, A-COL | M1 |
@@ -155,7 +155,7 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 | 23 | ETOH_STILL | FARM | farm | 3 | none | yes | envelope, ~23 f | none | F-FARM | A-core, A-FARM | M0 |
 | 24 | BUOH_STILL | FARM | farm | 3 | none | yes | envelope, ~23 f | none | F-FARM | A-core, A-FARM | M0 |
 | 25 | HOPPER | OIL | hopper | 4 | none | no | envelope, ~11 f | mfg_hopper.scad | F-VES | A-core, A-VES | M0 |
-| 26 | FLOAT_SINK | WET | separator | 4 | weir and launder | no | envelope, ~12 f | mfg_dewater.scad | F-VES | A-core, A-VES | M0 |
+| 26 | FLOAT_SINK | DIGESTER | separator | 4 | weir and launder | no | envelope, ~12 f | mfg_dewater.scad | F-VES | A-core, A-VES | M0 |
 | 27 | NOX_SCRUB | GAS | scrubber | 4 | pall-ring bed, distributor, demister | yes | coarse internal, ~71 f | mfg_scrubber_train.scad | F-COL | A-core, A-COL | M1 |
 | 28 | BLACK_DIGEST | WTR | digest | 4 | pitched-blade agitator | yes | envelope, ~23 f | none | F-VES | A-core, A-VES | M0 |
 | 29 | CATCH_TANK | WTR | tank | 4 | dip pipe, stilling well | yes | envelope, ~23 f | none | F-VES | A-core, A-VES | M0 |
@@ -164,8 +164,8 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 | 32 | FAB_UPW_TANK | FAB | tank | 4 | dip pipe, stilling well | yes | envelope, ~23 f | none | F-VES | A-core, A-VES | M0 |
 | 33 | FLUE_KO | GAS | separator | 4 | weir and launder | yes | envelope, ~11 f | none | F-VES | A-core, A-VES | M0 |
 | 34 | GEO_ORC | GEO | hx | 4 | plate pack | yes | coarse internal, ~83 f | none | F-HX | A-core, A-HX | M1 |
-| 35 | HX8 | WET | hx | 4 | plate pack | yes | coarse internal, ~83 f | none | F-HX | A-core, A-HX | M1 |
-| 36 | MEOH_COND | ELEC | separator | 4 | weir and launder | yes | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
+| 35 | HX8 | DIGESTER | hx | 4 | plate pack | yes | coarse internal, ~83 f | none | F-HX | A-core, A-HX | M1 |
+| 36 | MEOH_COND | MEOH | separator | 4 | weir and launder | yes | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
 | 37 | MEOH_TANK | MEOH | tank | 4 | dip pipe, stilling well | yes | envelope, ~23 f | none | F-VES | A-core, A-VES | M0 |
 | 38 | MET_HX_Q4 | MFG | hx | 4 | plate pack | yes | coarse internal, ~83 f | none | F-HX | A-core, A-HX | M1 |
 | 39 | MET_SCRUB | MFG | scrubber | 4 | pall-ring bed, distributor, demister | yes | coarse internal, ~71 f | none | F-COL | A-core, A-COL | M1 |
@@ -194,13 +194,13 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 | 62 | GLASS_MILL | GLASS | intra | 5 | none | yes | envelope, ~12 f | mfg_mill.scad | F-PIPE | A-PIPE | M0 |
 | 63 | GLASS_RINSE | GLASS | intra | 5 | none | yes | envelope, ~12 f | mfg_rinse.scad | F-PIPE | A-PIPE | M0 |
 | 64 | C29_RECYCLE | OIL | recycle_pipe | 5 | pipe only | yes | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
-| 65 | CONTINUOUS_RECYCLE | WET | recycle_pipe | 5 | pipe only | yes | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
+| 65 | CONTINUOUS_RECYCLE | DIGESTER | recycle_pipe | 5 | pipe only | yes | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
 | 66 | NCG_HEADER | OIL | header | 5 | pipe only | yes | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
-| 67 | Q4_BUS | HAB | header | 5 | pipe only | yes | envelope, ~11 f | none | F-PIPE | A-PIPE | M0 |
+| 67 | Q4_BUS | HEAT | header | 5 | pipe only | yes | envelope, ~11 f | none | F-PIPE | A-PIPE | M0 |
 | 68 | RELIEF_CRYO | CRYO | relief | 5 | none | yes | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
 | 69 | RELIEF_H2 | GAS | relief | 5 | none | yes | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
-| 70 | TERRACE_IRRIG | TRR | header | 5 | pipe only | yes | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
-| 71 | AFTERBURNER_FLUE | WET | header | 5 | pipe only | no | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
+| 70 | TERRACE_IRRIG (retired 2026-10-18 with terrace irrigation; not modeled) | — | header | 5 | pipe only | yes | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
+| 71 | AFTERBURNER_FLUE | GAS | header | 5 | pipe only | no | envelope, ~12 f | none | F-PIPE | A-PIPE | M0 |
 | 72 | HDR_CO2 | HAB | header | 5 | pipe only | no | envelope, ~11 f | none | F-PIPE | A-PIPE | M0 |
 | 73 | HDR_H2 | GAS | header | 5 | pipe only | no | envelope, ~11 f | none | F-PIPE | A-PIPE | M0 |
 | 74 | HDR_N2 | HAB | header | 5 | pipe only | no | envelope, ~11 f | none | F-PIPE | A-PIPE | M0 |
@@ -214,7 +214,7 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 | 82 | MEOH_FERM | MEOH | ferment | 6 | none | yes | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
 | 83 | MEOH_SYNTH | MEOH | reactor | 6 | none | yes | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
 | 84 | MET_AHU | MFG | ahu | 6 | none | yes | envelope, ~11 f | none | F-HX | A-core, A-HX | M0 |
-| 85 | S13_CLASS_TREAT | WET | treat | 6 | none | yes | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
+| 85 | S13_CLASS_TREAT | DIGESTER | treat | 6 | none | yes | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
 | 86 | VCD_TRAIN | WTR | vessel | 6 | none | yes | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
 | 87 | WS_AMMONIA | FAB | reagent | 6 | none | yes | envelope, ~12 f | none | F-MACH | A-core, A-MACH | M0 |
 | 88 | WS_DOPE | FAB | reagent | 6 | none | yes | envelope, ~11 f | none | F-MACH | A-core, A-MACH | M0 |
@@ -227,9 +227,9 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 | 95 | WS_SOLV | FAB | reagent | 6 | none | yes | envelope, ~11 f | none | F-MACH | A-core, A-MACH | M0 |
 | 96 | AFTERBURNER | OIL | thermal | 6 | none | no | envelope, ~12 f | mfg_afterburner.scad | F-HX | A-core, A-HX | M0 |
 | 97 | BAGHOUSE | GAS | baghouse | 6 | none | no | envelope, ~12 f | mfg_baghouse.scad | F-MACH | A-core, A-MACH | M0 |
-| 98 | BMED_ACID | WET | bmed | 6 | none | no | envelope, ~12 f | bmed_cell.scad, mfg_bmed_stack.scad | F-CELL | A-core, A-CELL | M0 |
-| 99 | BMED_BASE | WET | bmed | 6 | none | no | envelope, ~12 f | bmed_cell.scad, mfg_bmed_stack.scad | F-CELL | A-core, A-CELL | M0 |
-| 100 | CRU | WET | cru | 6 | none | no | envelope, ~11 f | mfg_cru.scad | F-VES | A-core, A-VES | M0 |
+| 98 | BMED_ACID | DIGESTER | bmed | 6 | none | no | envelope, ~12 f | bmed_cell.scad, mfg_bmed_stack.scad | F-CELL | A-core, A-CELL | M0 |
+| 99 | BMED_BASE | DIGESTER | bmed | 6 | none | no | envelope, ~12 f | bmed_cell.scad, mfg_bmed_stack.scad | F-CELL | A-core, A-CELL | M0 |
+| 100 | CRU | DIGESTER | cru | 6 | none | no | envelope, ~11 f | mfg_cru.scad | F-VES | A-core, A-VES | M0 |
 | 101 | H2_DRYER | GAS | dryer | 6 | none | no | envelope, ~12 f | mfg_h2_dryer.scad | F-MACH | A-core, A-MACH | M0 |
 | 102 | NUTRIENT_DOSE | NUT | dose | 6 | none | no | envelope, ~12 f | mfg_nutrient_dose.scad | F-VES | A-core, A-VES | M0 |
 | 103 | OIL_DRYER | OIL | dryer | 6 | none | no | envelope, ~12 f | mfg_dryer.scad | F-MACH | A-core, A-MACH | M0 |
@@ -238,8 +238,8 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 | 106 | CRYO_AHU | CRYO | ahu | 6 | none | no | envelope, ~12 f | none | F-HX | A-core, A-HX | M0 |
 | 107 | CRYO_DED_COOL | CRYO | cool | 6 | none | no | envelope, ~12 f | none | F-HX | A-core, A-HX | M0 |
 | 108 | EMETH | FARM | cell | 6 | none | no | envelope, ~11 f | none | F-CELL | A-core, A-CELL | M0 |
-| 109 | POLISH_BANK | WET | polish | 6 | none | no | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
-| 110 | SALT_FEED | WET | feed | 6 | none | no | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
+| 109 | POLISH_BANK | DIGESTER | polish | 6 | none | no | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
+| 110 | SALT_FEED | DIGESTER | feed | 6 | none | no | envelope, ~12 f | none | F-VES | A-core, A-VES | M0 |
 | 111 | BLOW_MOLD | MFG | forming | 7 | none | yes | envelope, ~12 f | none | F-MACH | A-core, A-MACH, A-SC | M0 |
 | 112 | ELECTRODE_COAT | MFG | tool | 7 | none | yes | envelope, ~12 f | none | F-MACH | A-core, A-MACH, A-SC | M0 |
 | 113 | LITHO_ALIGN | FAB | tool | 7 | none | yes | envelope, ~12 f | none | F-MACH | A-core, A-MACH, A-SC | M0 |
@@ -258,13 +258,13 @@ Facet counts are estimated from the ASCII STL file size. "Existing source" is an
 | 126 | WIRE_DRAW | MFG | forming | 7 | none | no | envelope, ~12 f | none | F-MACH | A-core, A-MACH, A-SC | M0 |
 | 127 | RECTIFIER | ELEC | rectifier | 8 | none | yes | envelope, ~12 f | mfg_electrical.scad | F-MACH | A-core, A-MACH | M0 |
 | 128 | SOL_ARK_60K | ELEC | inverter | 8 | none | yes | envelope, ~12 f | mfg_electrical.scad | F-MACH | A-core, A-MACH | M0 |
-| 129 | ZNBR2 | ZNBR2 | flow_battery | 8 | none | yes | envelope, ~11 f | znbr2_iem.scad, mfg_znbr2_skid.scad | F-CELL | A-core, A-CELL | M0 |
-| 130 | BACKUP_GEN | BACKUP_GEN | genset | 8 | none | yes | envelope, ~12 f | none | F-MACH | A-core, A-MACH | M0 |
+| 129 | ZNBR2 | ELEC | flow_battery | 8 | none | yes | envelope, ~11 f | znbr2_iem.scad, mfg_znbr2_skid.scad | F-CELL | A-core, A-CELL | M0 |
+| 130 | BACKUP_GEN | ELEC | genset | 8 | none | yes | envelope, ~12 f | none | F-MACH | A-core, A-MACH | M0 |
 | 131 | BOUNDARY_EXPORT | DOCK | boundary | 8 | none | yes | envelope, ~12 f | none | none | A-ACC | accounting node. No solid |
-| 132 | FUEL_CELL | FUEL_CELL | pem_fc | 8 | none | yes | envelope, ~12 f | none | F-CELL | A-core, A-CELL | M0 |
+| 132 | FUEL_CELL | ELEC | pem_fc | 8 | none | yes | envelope, ~12 f | none | F-CELL | A-core, A-CELL | M0 |
 | 133 | LOAD_AGG | ELEC | boundary | 8 | none | yes | envelope, ~12 f | none | none | A-ACC | accounting node. No solid |
 | 134 | MEOH_FC | MEOH | iem_fc | 8 | none | yes | envelope, ~11 f | none | F-CELL | A-core, A-CELL | M0 |
-| 135 | PV_ARRAY | ELEC_PV | pv | 8 | none | yes | envelope, ~12 f | none | F-MACH | A-core, A-MACH | M0 |
+| 135 | PV_ARRAY | ELEC | pv | 8 | none | yes | envelope, ~12 f | none | F-MACH | A-core, A-MACH | M0 |
 | 136 | HYDRO_SET | PUMPED_HYDRO | hydro | 8 | none | no | envelope, ~12 f | none | F-MACH | A-core, A-MACH | M0 |
 | 137 | NORTH_DOCK | DOCK | dock | 8 | none | no | envelope, ~12 f | none | F-MACH | A-core, A-MACH | M0 |
 | 138 | ASH | FARM | farm | 9 | none | yes | envelope, ~23 f | none | F-FARM | A-core, A-FARM | M0 |

@@ -179,7 +179,7 @@ python3 ../models/freecad/graph_geometry_bridge.py --self-test
 
 The UI runs on the unified parametric system (graph + `flow_graph/system_tree.yaml` +
 `flow_graph/param/drivers.json` + regen). Three read-only endpoints were added
-(`design_tool/aqs_design_tool/api/app.py`; commit 5024743):
+(`design_tool/aqs_design_tool/api/app.py`; commit fc083f8):
 
 | Method | Path | Role |
 |---|---|---|
@@ -251,7 +251,7 @@ design_tool/
 ```
 
 Package location: **`design_tool/`** (this repository)
-(hub sibling to `cad/`), not `cad/design_tool/`, so CAD rebuild scripts
+(beside `models/`, not inside it), so CAD rebuild scripts
 stay separate from the API package.
 
 ## Install / run

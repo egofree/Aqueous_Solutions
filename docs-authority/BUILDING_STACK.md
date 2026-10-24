@@ -3,7 +3,7 @@
 Document number: AQS-BLD-001  
 Revision: F
 Date: 2026-10-01  
-Authority: AQS-AUTH-001 (active CAD levels/cores/shafts). Compliance themes: AQS-CMP-001. Style: AQS-DOC-001.
+Authority: AQS-AUTH-001 (active CAD levels/cores/shafts). Compliance themes: AQS-COMPL-001. Style: AQS-DOC-001.
 
 One structural module. Chemistry and locked names do not change.
 Horizontal campus envelopes in `PHASE_F_ENVELOPES.md` remain the
@@ -340,8 +340,8 @@ Canopy is a separate frame to the core and perimeter columns.
 | `core_plan_pfd.png` | AQS-PFD-BLD-006 | CORE_LIFE / CORE_PROCESS + perimeter |
 
 Site access: `docs-authority/SITE_ACCESS.md` (AQS-SITE-001).
-Rebuild PFDs: `python3 pfd_scripts/building_stack_pfds.py`
+Rebuild PFDs: `python3 flow_graph/exporters/matplotlib/building_stack_pfds.py`
 (reads live `models/freecad/params.py`; do not change SCALE_M in that pass).
-Campus / hazard / life sheets: `python3 pfd_scripts/campus_life_hazard_pfds.py`.
+Campus / hazard / life sheets: `python3 flow_graph/exporters/matplotlib/campus_life_hazard_pfds.py`.
 Rebuild plant (baseline `SCALE_M=1`): `/usr/bin/freecadcmd models/freecad/build_plant.py`.
 For `SCALE_M=2` see `docs-authority/SCALE_MODEL.md` §7.

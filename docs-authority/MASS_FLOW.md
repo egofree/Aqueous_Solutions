@@ -20,7 +20,7 @@ Authority: AQS-BLD-001 + AQS-STR-001 + AQS-HSE-001
 | B | 1 | S25–S30 water purification (AQS-WTR-001); VCD ≠ roof–catch | 2026-09-27 |
 | C | 1 | S31–S39 fab wet-reagent forks (qualitative) | 2026-09-27 |
 | D | 1 | S40–S42 terrace irrigation / return (AQS-TRR-001) | 2026-09-27 |
-| E | 1 | S43–S48 geothermal / backup genset (AQS-PWR-001) | 2026-09-27 |
+| E | 1 | S43–S48 geothermal / backup genset (AQS-PWR-002) | 2026-09-27 |
 | F | 1 | S49–S53 PEM fuel cell (AQS-FC-001); S24 closing via FC+GEN | 2026-09-28 |
 | G | 1 | S54–S56 CRYO Q4 / dedicated cool / room vent (AQS-CRY-002) | 2026-09-28 |
 | H | 1 | S57–S63 metal forming (AQS-MFG-MET-001) | 2026-09-28 |
@@ -33,7 +33,7 @@ is **not** design intent — former vents are **Unclosed → Closure
 required** (scrub+regen or CRYO) until hardware and permits finish the
 path. Contingency / upset relief may remain for AHJ and life safety.
 
-Sheet: `mass_flow_pfd.png` (generator `pfd_scripts/mass_flow_pfd.py`).
+Sheet: `mass_flow_pfd.png` (generator `flow_graph/exporters/matplotlib/mass_flow_pfd.py`).
 
 ---
 

@@ -89,7 +89,7 @@ def duty(g):
     X += [f'| **draws** | | | **{hdr + direct:.2f}** |', f'| surplus shipped (IA-O2-PROD = IA-O2-SHIP, cylinders at NORTH_DOCK) | `IA-O2-SHIP` | PROD_O2 | **{ship:.2f}** |', '',
           f'Balance: sources {src:.2f} - direct CRYO_O2 draws {direct:.2f} = {s83:.2f} passed to the header on S83; S83 {s83:.2f} - header draws {hdr:.2f} = {ship:.2f} shipped. '
           f"CRYO_O2 params o2_gap (A-M-230): src {og.get('src_kg_d')}, header draw {og.get('hdr_draw_kg_d')}, direct draw {og.get('direct_draw_kg_d')}, system short {og.get('system_short_kg_d')}, surplus {og.get('system_surplus_kg_d')}. The surplus is product, not a vent (no-vent rule, AQS-DUTY-019).", '',
-          '## 2. N+1 (owner ruling D-O2, 2026-10-18, recorded 9b742c4; A-M-230)', '',
+          '## 2. N+1 (owner ruling D-O2, 2026-10-18, recorded db43602; A-M-230)', '',
           'The PEM electrolyser is the plant O2 source. The cold box is a species-recovery box, not a source: it has no air intake, and IA-ASU-O2 is recovered combustion excess only. With the crew-duty grow bed (A-M-229) the electrolyser restores the diverse N+1 O2 pair (P19): electric + biological. Air intake stays excluded (it breaks the no-vent rule, AQS-DUTY-019). The backup that looks surplus to the daily balance is intentional (redundancy rule, X-RED).', '',
           f"Store redundancy: 200 bar cylinder bank, {st.get('store_kg')} kg O2 ({st.get('store_water_volume_m3')} m³ water volume), stoichiometric partner of the CRYO_H2 store, separate from H2 (NFPA 2 ch. 7). Separate crew reserve bank {st.get('crew_reserve_kg')} kg = crew draw {v('S02'):.2f} kg/d × 2 d (NFPA 99 reserve ≥ 1 average day; AQS-ELEC-007 2-d autonomy governs; not drawn by FUEL_CELL; X-RED-04, A-M-146).", '',
           '## 3. Basis', '',

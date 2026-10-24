@@ -934,12 +934,12 @@ if __name__ == "__main__":
         import subprocess
         import tempfile
         txt = subprocess.check_output(["git", "-C", os.path.join(HERE, ".."), "show",
-                                       "d9cd071:flow_graph/plant_flow_graph.json"])
+                                       "c4e1818:flow_graph/plant_flow_graph.json"])
         tmp = tempfile.NamedTemporaryFile("wb", suffix=".json", delete=False)
         tmp.write(txt)
         tmp.close()
         gp = tmp.name
-        print("note: graph is past Rev L; AQS-DUTY-010 rerun on Rev L base d9cd071", file=sys.stderr)
+        print("note: graph is past Rev L; AQS-DUTY-010 rerun on Rev L base c4e1818", file=sys.stderr)
     rep, g = main(gp, wr)
     if "--json" in sys.argv:
         json.dump(rep, open(sys.argv[sys.argv.index("--json") + 1], "w"), indent=1)

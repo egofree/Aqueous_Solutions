@@ -6,7 +6,7 @@ Date: 2026-10-01
 PFD: AQS-PFD-CRY-001 (`cryo_pfd.png`)  
 Authority: AQS-CRY-002, `09-air-liquefaction-cryogenic.md`,
 `freecad/cryo.py`, AQS-PHF-001, AQS-STR-001, AQS-HSE-001,
-AQS-PWR-001 / AQS-FC-001 (CRYO_H2 consumers), AQS-EQP-GEO-001 (Q4 peer).
+AQS-PWR-002 / AQS-FC-001 (CRYO_H2 consumers), AQS-EQP-GEO-001 (Q4 peer).
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
@@ -68,7 +68,7 @@ CRYO_H2 product hold shall be sized for concurrent consumers:
 
 | Consumer | Stream | Authority |
 |---|---|---|
-| BACKUP_GEN | S45 | AQS-PWR-001 / AQS-EQP-GEN-001 |
+| BACKUP_GEN | S45 | AQS-PWR-002 / AQS-EQP-GEN-001 |
 | FUEL_CELL (PEM) | S49 | AQS-FC-001 / AQS-EQP-FC-001 |
 | H₂ dryer normal | S64 | AQS-VENT-001 Partial |
 | Roof contingency | S24 | AQS-VENT-001 emergency only |

@@ -5,7 +5,7 @@ Authority: graph Rev AC (`flow_graph/plant_flow_graph.json`). Owner-session hand
 
 ## What happened
 
-Commit `6e25619` ("Update to graph Rev AC") pushed a scope pivot (farm/bio out,
+Commit `6cf96eb` ("Update to graph Rev AC") pushed a scope pivot (farm/bio out,
 foundry/polymers in: 212 -> 165 units) **without running any check**: the projection,
 derived registers, param pipeline and task plan were all left at Rev BH state, and the
 consolidation dropped graph data that the closed-balance stack depends on.
@@ -13,7 +13,7 @@ consolidation dropped graph data that the closed-balance stack depends on.
 ## Recovered this session (commits through this note)
 
 1. **Rate keys**: 159 of 247 edges lost their `rate` key entirely. 70 restored verbatim
-   from Rev BH (`fa1b4db`) on identical topology; 89 new Rev AC edges given explicit
+   from Rev BH (`91d33f4`) on identical topology; 89 new Rev AC edges given explicit
    null-rate objects (`status: null`, note names them "unrated pending param pass").
 2. **Rate values**: 42 edges kept the key but had `value: null` on identical topology;
    BH values restored with provenance notes. 7 deliberate typed nulls

@@ -1,0 +1,208 @@
+{
+ "_about": "Retired repository paths and names, with what replaced them. flow_graph/check_citations.py reads this file: live text must not cite a retired path, and `python3 -m flow_graph.check_citations --fix` rewrites a citation to the first replacement that exists. A renumbered page's old number is often still held by the page that kept it (the renumber cleared a duplicate). For those, reissued_numbers gives the context words that show a citation meant the renumbered page; the check flags only those citations (and not lines that also match the optional \"unless\" words, used where two pages swapped numbers), and every reissued number must have an entry. Retired sector ids are kept in design_tool/aqs_design_tool/sector_definitions.py (RETIRED_SECTOR_IDS) and former document numbers on the renumbered pages themselves (\"Former number:\" lines, listed in DOC_REGISTER.md).",
+ "paths": [
+  {
+   "old": "notes/",
+   "now": [
+    "docs-authority/notes/"
+   ],
+   "when": "2026-10 repository restructure",
+   "note": "dated working notes moved to docs-authority/notes/; notes/ keeps the older study notes"
+  },
+  {
+   "old": "cad/process/",
+   "now": [
+    "docs-authority/"
+   ],
+   "when": "2026-10 repository restructure",
+   "note": "process pages joined the document set"
+  },
+  {
+   "old": "cad/detail/stl/",
+   "now": [
+    "models/openscad/detail/stl/",
+    "models/export/detail/"
+   ],
+   "when": "2026-10 repository restructure"
+  },
+  {
+   "old": "cad/detail/",
+   "now": [
+    "models/openscad/detail/"
+   ],
+   "when": "2026-10 repository restructure"
+  },
+  {
+   "old": "cad/foam_ew/",
+   "now": [
+    "models/openscad/foam_ew/"
+   ],
+   "when": "2026-10 repository restructure"
+  },
+  {
+   "old": "cad/animation/",
+   "now": [
+    "models/freecad/animation/",
+    "media/"
+   ],
+   "when": "2026-10 repository restructure"
+  },
+  {
+   "old": "cad/freecad/",
+   "now": [
+    "models/freecad/"
+   ],
+   "when": "2026-10 repository restructure"
+  },
+  {
+   "old": "cad/iso/",
+   "now": [
+    "iso/"
+   ],
+   "when": "2026-10 repository restructure"
+  },
+  {
+   "old": "cad/materials.csv",
+   "now": [
+    "tables/materials.csv"
+   ],
+   "when": "2026-10 repository restructure"
+  },
+  {
+   "old": "cad/REBUILD.sh",
+   "now": [
+    "models/REBUILD.sh"
+   ],
+   "when": "2026-10 repository restructure"
+  },
+  {
+   "old": "cad/",
+   "now": [
+    "docs-authority/",
+    "models/freecad/",
+    "models/openscad/",
+    "models/"
+   ],
+   "keep": [
+    "cad/stl/"
+   ],
+   "when": "2026-10 repository restructure",
+   "note": "the old CAD hub; only cad/stl (generated envelope STLs) remains"
+  },
+  {
+   "old": "pfd_scripts/",
+   "now": [
+    "flow_graph/exporters/matplotlib/"
+   ],
+   "when": "2026-10 repository restructure",
+   "note": "plotting scripts for process flow diagrams"
+  },
+  {
+   "old": "planning/",
+   "now": [],
+   "when": "2026-10 repository restructure",
+   "note": "planning notes stayed in the private working repository; cite the docs-authority page that carries the decision instead"
+  }
+ ],
+ "reissued_numbers": [
+  {
+   "number": "AQS-PWR-001",
+   "moved_to": "AQS-PWR-002",
+   "page": "docs-authority/GEOTHERMAL_BACKUP.md",
+   "context": "geotherm|genset|BACKUP_GEN|backup gen|GEN[- ]port|GEN peer|\\bGEO\\b|GEO_|AQS-FC-001|S4[3-8]|diesel|\\bORC\\b|loop fluid|EQP-GEO|EQP-GEN"
+  },
+  {
+   "number": "AQS-CMP-001",
+   "moved_to": "AQS-COMPL-001",
+   "page": "docs-authority/COMPLIANCE_MATRIX.md",
+   "context": "[Cc]omplian|CMP-[A-Z]|[Cc]ode (themes?|flags)|EGR-001"
+  },
+  {
+   "number": "AQS-MOD-001",
+   "moved_to": "AQS-MOD-002",
+   "page": "docs-authority/FRAME_SYSTEM.md",
+   "context": "[Ff]rame (system|members|standard)|building frame"
+  },
+  {
+   "number": "AQS-DUTY-064",
+   "moved_to": "AQS-DUTY-079",
+   "page": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
+   "context": "[Ss]crubber|house_scrubbers"
+  },
+  {
+   "number": "AQS-DUTY-011",
+   "moved_to": "AQS-DUTY-078",
+   "page": "docs-authority/BALANCE_CLOSE.md",
+   "context": "BALANCE_CLOSE|[Bb]alance close"
+  },
+  {
+   "number": "AQS-STD-002",
+   "moved_to": "AQS-STD-007",
+   "page": "docs-authority/CODE_BASIS.md",
+   "context": "[Cc]ode basis|CODE_BASIS|[Ee]ditions"
+  },
+  {
+   "number": "AQS-ELEC-001",
+   "moved_to": "AQS-ELEC-002",
+   "page": "docs-authority/ONE_LINE.md",
+   "context": "[Oo]ne-line|ONE_LINE|single-line"
+  },
+  {
+   "number": "AQS-PLAN-001",
+   "moved_to": "AQS-IF-009",
+   "page": "docs-authority/PHASE9_INTERFACES.md",
+   "context": "PHASE9|[Pp]hase 9 interface"
+  },
+  {
+   "number": "AQS-STD-001",
+   "moved_to": "AQS-STD-003",
+   "page": "docs-authority/STANDARDS_BASIS.md",
+   "context": "STANDARDS_BASIS|[Ss]tandards basis"
+  },
+  {
+   "number": "AQS-REM-001",
+   "moved_to": "AQS-REM-002",
+   "page": "docs-authority/internal/REMAINING_CHECKLIST.md",
+   "context": "REMAINING_CHECKLIST|[Cc]hecklist"
+  },
+  {
+   "number": "AQS-PWR-002",
+   "moved_to": "AQS-PWR-001",
+   "page": "docs-authority/POWER.md",
+   "context": "POWER\\.md|[Pp]ower overview|48 V rail",
+   "unless": "geotherm|genset|BACKUP_GEN|backup gen|GEN[- ]port|GEN peer|\\bGEO\\b|GEO_|AQS-FC-001|S4[3-8]|diesel|\\bORC\\b|loop fluid|EQP-GEO|EQP-GEN"
+  }
+ ],
+ "sector_use": {
+  "_about": "A retired sector id that is also an ordinary word (WET bench, 40HC WET module) is stale only where it is used as a sector id. The patterns mark those uses; {id} stands for the sector id. Any other retired id is stale wherever it appears outside a line that states the history. A table row giving the retired id and then the sector that now holds it is the alias table itself and is allowed.",
+  "word_ids": [
+   "WET"
+  ],
+  "patterns": [
+   "['\"]{id}['\"]",
+   "\\| {id} \\|",
+   "^#+ {id}\\s*$",
+   "[Ss]ector[_ ]?(id)?[\\s:=`]+{id}\\b",
+   "(?<![\\w)])\\({id}\\)",
+   "\\b{id} (sector|line)\\b",
+   "/ {id} polish"
+  ],
+  "history_words": "(?i:renamed|pre-rename|deleted|former|→|->|became|no longer|replaced|stale|removed)"
+ },
+ "names": [
+  {
+   "old": "rebuild.py",
+   "pattern": "\\brebuild\\.py\\b",
+   "now": "python3 -m flow_graph.param.regen",
+   "when": "2026-10-24",
+   "note": "the menu script lived in a private working copy; the regeneration pipeline replaced it"
+  },
+  {
+   "old": "write_view_svg.py",
+   "pattern": "\\bwrite_view_svg\\.py\\b",
+   "now": "flow_graph/render_layer_views.py",
+   "when": "2026-10-24",
+   "note": "duplicate view writer removed when the generators were unified"
+  }
+ ]
+}

@@ -7523,7 +7523,7 @@
         "value": 450.164184,
         "unit": "kg/d",
         "status": "study",
-        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders) | X-PAR-02 TF R10a: leach spent-acid purge to the BMED acid regen loop, by difference (see o2_close.py); BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 449.52, CRU placeholder re-point retired | X-PAR-12 TF: leach spent-acid purge closes BMED_ACID: feed 1304.79 + S09 9.28 + IA-BMED-01 1.25 - condensate 865.14 - vent-scrubber spent return 0.0006 (X-PAR-10 term, restored 2026-10-19 after it rattled the loop +0.0006 kg/d per pass); BH 449.52 (fa1b4db) (AQS-PAR-005)."
+        "note": "placeholder \u2014 no invented rate (lock present_plus_placeholders) | X-PAR-02 TF R10a: leach spent-acid purge to the BMED acid regen loop, by difference (see o2_close.py); BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 449.52, CRU placeholder re-point retired | X-PAR-12 TF: leach spent-acid purge closes BMED_ACID: feed 1304.79 + S09 9.28 + IA-BMED-01 1.25 - condensate 865.14 - vent-scrubber spent return 0.0006 (X-PAR-10 term, restored 2026-10-19 after it rattled the loop +0.0006 kg/d per pass); BH 449.52 (91d33f4) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -7644,12 +7644,12 @@
         "value": 6.6667,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid) | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid) | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
       "open_boundary": false,
-      "note": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18; gap_flags=ess_layer; namespace=IA; layers=elec,ess"
+      "note": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (91d33f4) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18; gap_flags=ess_layer; namespace=IA; layers=elec,ess"
     },
     {
       "stream_id": "IA-ESS-ZNBR2-DIS",
@@ -7661,12 +7661,12 @@
         "value": 5.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: 120.0 kWh one cycle/d averaged over 24 h | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: 120.0 kWh one cycle/d averaged over 24 h | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
       "open_boundary": false,
-      "note": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18; gap_flags=ess_layer; namespace=IA; layers=elec,ess"
+      "note": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (91d33f4) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18; gap_flags=ess_layer; namespace=IA; layers=elec,ess"
     },
     {
       "stream_id": "IA-EW-01",
@@ -7984,7 +7984,7 @@
         "value": 33.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: dry plastic + paper float 0.22 x 150.0 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: dry plastic + paper float 0.22 x 150.0 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -8053,7 +8053,7 @@
         "value": 3302.941356,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev BH (fa1b4db) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-principles audit correction 3, owner rulings 2026-10-18 | X-PAR-12 TF: polish return by difference (AQS-PAR-005)."
+        "note": "Rev BH (91d33f4) edge IA-POL-02 study rate restored on the BH endpoint POLISH_BANK->CONTINUOUS_RECYCLE, replacing the degenerate self-loop stub; per first-principles audit correction 3, owner rulings 2026-10-18 | X-PAR-12 TF: polish return by difference (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -8087,7 +8087,7 @@
         "value": 343.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17 | X-PAR-02 TF R10a: float-sink wet heavy fraction back to the leach = IA-SINK-01 376.10 - IA-PLAST-01 33.00; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 343.10; FLOAT_SINK_GRIT_TO_TI stays unrated (TI_CELL ilmenite route is FOUNDRY scope, no basis yet)"
+        "note": "AQS-DUTY-010: slurry liquor 363.8 (20 wt % on 90.94 kg/d undissolved) less cake moisture float 7.5 + sink 13.17 | X-PAR-02 TF R10a: float-sink wet heavy fraction back to the leach = IA-SINK-01 376.10 - IA-PLAST-01 33.00; BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 343.10; FLOAT_SINK_GRIT_TO_TI stays unrated (TI_CELL ilmenite route is FOUNDRY scope, no basis yet)"
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -8121,7 +8121,7 @@
         "value": 67.300214,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d | X-PAR-02 TF: UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, fa1b4db; Rev AC 95.00 overdrew the header) (AQS-PAR-003)."
+        "note": "Mid of AQS-AUD-001 \u00a711 FARM_SUMP / UPW makeup S01/S21 ~50\u2013140 L/d | X-PAR-02 TF: UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, 91d33f4; Rev AC 95.00 overdrew the header) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -8155,7 +8155,7 @@
         "value": 1.499799,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b A-M-257: BH fa1b4db verbatim (AQS-DUTY-010: 10.0 slm x 40.0 min x 3 starts at 1.25 g/L) - the fab N2 purge, re-pointed Rev AC to draw CRYO_N2 directly; exactly the WAFER_FAB deficit after the IA-AR-RET retirement. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "R10b A-M-257: BH 91d33f4 verbatim (AQS-DUTY-010: 10.0 slm x 40.0 min x 3 starts at 1.25 g/L) - the fab N2 purge, re-pointed Rev AC to draw CRYO_N2 directly; exactly the WAFER_FAB deficit after the IA-AR-RET retirement. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "FAB",
@@ -8223,7 +8223,7 @@
         "value": 26.7,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary | X-PAR-02 TF R10a: glass/ceramic goods to the shop = BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 26.20 + IA-SIC-IN 0.50 silica (SIC_FURNACE retired, rides S08G); BOUNDARY_EXPORT re-point retired (AQS-AUD-001 4.1 silicate+grit ~=30 kg/d basis)"
+        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary | X-PAR-02 TF R10a: glass/ceramic goods to the shop = BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 26.20 + IA-SIC-IN 0.50 silica (SIC_FURNACE retired, rides S08G); BOUNDARY_EXPORT re-point retired (AQS-AUD-001 4.1 silicate+grit ~=30 kg/d basis)"
       },
       "from_sector_id": "GLASS",
       "to_sector_id": "MFG",
@@ -8291,7 +8291,7 @@
         "value": 319.60396,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; fa1b4db) (AQS-PAR-003)."
+        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4) (AQS-PAR-003)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "WTR",
@@ -8308,7 +8308,7 @@
         "value": 3.799494,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-014. Fiber taken from the still feed. Still resized. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): endpoints alive on the crew-duty bed (GROW_BED present, VCD_TRAIN present); placeholder flipped, BH rate held"
+        "note": "AQS-DUTY-014. Fiber taken from the still feed. Still resized. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): endpoints alive on the crew-duty bed (GROW_BED present, VCD_TRAIN present); placeholder flipped, BH rate held"
       },
       "from_sector_id": "FARM",
       "to_sector_id": "WTR",
@@ -8393,7 +8393,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev J: the 15.0 kg/d afterburner CO2 basis moved to S67; the CRYO_CO2 credit is S67B. S18 kept as the OIL->CRYO claim id (BH fa1b4db verbatim; Rev AC had re-rated it 15.0 on a revived pre-Rev-J basis)"
+        "note": "Rev J: the 15.0 kg/d afterburner CO2 basis moved to S67; the CRYO_CO2 credit is S67B. S18 kept as the OIL->CRYO claim id (BH 91d33f4 verbatim; Rev AC had re-rated it 15.0 on a revived pre-Rev-J basis)"
       },
       "from_sector_id": "OIL",
       "to_sector_id": "CRYO",
@@ -8410,7 +8410,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-BAG-01 | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: IA-BAG-01 | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "DIGESTER",
@@ -8444,7 +8444,7 @@
         "value": 120.68,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 FARM/HAB clean-tower draw ~50\u2013140 L/d | X-PAR-02 TF R10a: crew-4 potable draw; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 120.68 (Rev AC had cut it to 95 with the grey outlet dead)"
+        "note": "Mid of AQS-AUD-001 \u00a711 FARM/HAB clean-tower draw ~50\u2013140 L/d | X-PAR-02 TF R10a: crew-4 potable draw; BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 120.68 (Rev AC had cut it to 95 with the grey outlet dead)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
@@ -8529,7 +8529,7 @@
         "value": 10.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: REMIN drink_L_d 10 | X-PAR-02 TF R10a: remineralised potable to habitation; BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 10.00 (placeholder edge re-activated)"
+        "note": "AQS-DUTY-010: REMIN drink_L_d 10 | X-PAR-02 TF R10a: remineralised potable to habitation; BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 10.00 (placeholder edge re-activated)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
@@ -8546,7 +8546,7 @@
         "value": 60.000181,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: fab UPW 20-100 L/d for 1-5 starts, at 3 starts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: fab UPW 20-100 L/d for 1-5 starts, at 3 starts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -8563,7 +8563,7 @@
         "value": 17.877059,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: VCD brine 10% of feed | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: VCD brine 10% of feed | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "DIGESTER",
@@ -8580,7 +8580,7 @@
         "value": 104.499999,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-013. Still feed restored. Grey is not the greenhouse return. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-013. Still feed restored. Grey is not the greenhouse return. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -8615,7 +8615,7 @@
         "value": 1.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 band 0.5-2.5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 band 0.5-2.5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -8632,7 +8632,7 @@
         "value": 3.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -8649,7 +8649,7 @@
         "value": 3.008739,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -8666,7 +8666,7 @@
         "value": 0.2701,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -8683,7 +8683,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT. | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -8700,7 +8700,7 @@
         "value": 3.3,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: AUD s13 1-5 L/d makeup at 3 starts = 3.0 L/d x 1.1 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: AUD s13 1-5 L/d makeup at 3 starts = 3.0 L/d x 1.1 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -8768,7 +8768,7 @@
         "value": 0.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GEO",
       "to_sector_id": "GEO",
@@ -8785,7 +8785,7 @@
         "value": 2.1952,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.195 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.195 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HEAT",
@@ -8922,7 +8922,7 @@
         "value": 42.876623,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: S49 4.8 kg/d H2 x 18.015/2.016 | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "WTR",
@@ -8939,7 +8939,7 @@
         "value": 1.1419,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: FC heat 2.664 kW (LHV 6.664 - S51) x (60.0-45)/(60.0-25) above Q4 return | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "HEAT",
@@ -8956,7 +8956,7 @@
         "value": 0.5448,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058 | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: ASU air 200.5 kg/d, 2-stage to 6.0 bar a (eta_is 0.7): shaft 0.580 kW x 0.839 above Q4 return + sieve TSA 0.058 | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HEAT",
@@ -8973,7 +8973,7 @@
         "value": 4.2838,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak) | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: Stirling reject = electric 4.0 + lift 0.284 kW (O2 + N2 liquefaction + 40% leak) | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
@@ -9007,7 +9007,7 @@
         "value": 6.8389,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -9024,7 +9024,7 @@
         "value": 3.9389,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: S57 less 10% draw swarf | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: S57 less 10% draw swarf | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -9041,7 +9041,7 @@
         "value": 3.950359,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -9058,7 +9058,7 @@
         "value": 3.200359,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -9075,7 +9075,7 @@
         "value": 1.197099,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: swarf/trim/off-spec from draw, mill and atomizer (less LEV fines) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: swarf/trim/off-spec from draw, mill and atomizer (less LEV fines) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "OIL",
@@ -9092,7 +9092,7 @@
         "value": 51145.68,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -9109,7 +9109,7 @@
         "value": 0.0171,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water) | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: Cu melt sensible + latent on 4.392 kg/d x 0.55 recovered (mold/coil water) | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "HEAT",
@@ -9160,7 +9160,7 @@
         "value": 27.372033,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: Cl2 slip 1% of 219.0 kg/d EW anode Cl2 -> NaCl + NaOCl 4.10 kg/d at 15% salts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: Cl2 slip 1% of 219.0 kg/d EW anode Cl2 -> NaCl + NaOCl 4.10 kg/d at 15% salts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "DIGESTER",
@@ -9279,7 +9279,7 @@
         "value": 20458.32,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -9398,7 +9398,7 @@
         "value": 0.0146,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70% | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70% | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
@@ -9415,7 +9415,7 @@
         "value": 0.36,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: food waste 15% of ration | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: food waste 15% of ration | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "MEOH",
@@ -9449,7 +9449,7 @@
         "value": 0.3689,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: DMFC heat 0.861 kW x 0.4286 above Q4 return | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "HEAT",
@@ -11099,7 +11099,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Replaces HL-HX8-Q3-A (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "Replaces HL-HX8-Q3-A (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-HX8-Q4-B",
@@ -11116,7 +11116,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "Replaces HL-HX8-Q3-B (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "Replaces HL-HX8-Q3-B (Rev J). Water 45 -> 49 C from the Q4 return; liquor 55 -> 51 C. Exchanger, not EW-1. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-A-HX4",
@@ -11133,7 +11133,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-A-HX5",
@@ -11150,7 +11150,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-A-HX6",
@@ -11167,7 +11167,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "GLASS",
       "open_boundary": false,
-      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-B-HX4",
@@ -11184,7 +11184,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-B-HX5",
@@ -11201,7 +11201,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "HL-Q3-B-HX6",
@@ -11218,7 +11218,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "GLASS",
       "open_boundary": false,
-      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "Pumped pressurized-water jacket loop from the Q3 battery. Process draw; reduces Q3 -> Q4 one for one. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-ESS-ZNBR2-SRC",
@@ -11235,7 +11235,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
       "open_boundary": false,
-      "note": "Not additional generation. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; gap_flags=ess_layer; namespace=IA; layers=ess"
+      "note": "Not additional generation. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; gap_flags=ess_layer; namespace=IA; layers=ess"
     },
     {
       "stream_id": "S89",
@@ -11252,7 +11252,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "FARM",
       "open_boundary": false,
-      "note": "Only consumer of HDR_CO2. CO2 only: no tee to HDR_O2, hab air, the HAB return or the dock. Farm AHU is not the HAB AHU. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=mass"
+      "note": "Only consumer of HDR_CO2. CO2 only: no tee to HDR_O2, hab air, the HAB return or the dock. Farm AHU is not the HAB AHU. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=mass"
     },
     {
       "stream_id": "S90",
@@ -11269,7 +11269,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "HAB",
       "open_boundary": false,
-      "note": "Rev L. CO2 only, from the sealed-hab sorbent (S02 supplies the O2). Joins S85 on HDR_CO2; S89 carries both to the farm AHU dose. No tee to hab air or the dock. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=mass"
+      "note": "Rev L. CO2 only, from the sealed-hab sorbent (S02 supplies the O2). Joins S85 on HDR_CO2; S89 carries both to the farm AHU dose. No tee to hab air or the dock. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=mass"
     },
     {
       "stream_id": "IA-GREY-01",
@@ -11286,7 +11286,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-CRU-01",
@@ -11303,7 +11303,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "HL-Q4-REJ",
@@ -11320,7 +11320,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged Re-homed from GEO_ORC to DRY_COOLER per AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a79/\u00a710.8 (D-GEO_ORC ruling 2026-10-18).; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged Re-homed from GEO_ORC to DRY_COOLER per AQS-HEAT-STUDY-002 Rev A 2026-10-18 \u00a79/\u00a710.8 (D-GEO_ORC ruling 2026-10-18).; layers=thermal"
     },
     {
       "stream_id": "IA-PV-01",
@@ -11337,7 +11337,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec"
     },
     {
       "stream_id": "IA-ZNBR-BD",
@@ -11354,7 +11354,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-NUT-01",
@@ -11371,7 +11371,7 @@
       "from_sector_id": "NUT",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-UPW-FAB",
@@ -11388,7 +11388,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-UPW-REMIN",
@@ -11405,7 +11405,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-UPW-REJ",
@@ -11422,7 +11422,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-Q4-LIFE",
@@ -11439,7 +11439,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "HAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-AB-FLUE",
@@ -11456,7 +11456,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ZNBR-MU",
@@ -11473,7 +11473,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "ELEC",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-MET-1",
@@ -11490,7 +11490,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-MET-2",
@@ -11507,7 +11507,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-MET-3",
@@ -11524,7 +11524,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-MET-4",
@@ -11541,7 +11541,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-MET-5",
@@ -11558,7 +11558,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-MET-6",
@@ -11575,7 +11575,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-MET-7",
@@ -11592,7 +11592,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-MET-8",
@@ -11609,7 +11609,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-MET-9",
@@ -11626,7 +11626,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-POL-CAKE",
@@ -11643,7 +11643,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-AB-AIR",
@@ -11660,7 +11660,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-FLUE-EXH",
@@ -11677,7 +11677,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-DIG-LIQ",
@@ -11694,7 +11694,7 @@
       "from_sector_id": "GLASS",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-MILL-LOSS",
@@ -11711,7 +11711,7 @@
       "from_sector_id": "GLASS",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-MFG-OUT",
@@ -11728,7 +11728,7 @@
       "from_sector_id": "MFG",
       "to_sector_id": "HAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-BED-H2O",
@@ -11745,7 +11745,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "FARM",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-MEOH-H2O",
@@ -11762,7 +11762,7 @@
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-FC-AIR",
@@ -11779,7 +11779,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "MEOH",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-LEACH-BD",
@@ -11796,7 +11796,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "NUT",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-VCD-BD",
@@ -11813,7 +11813,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-CHAR",
@@ -11830,7 +11830,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-FC-EXH",
@@ -11847,7 +11847,7 @@
       "from_sector_id": "MEOH",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ZNBR-HEAT",
@@ -11864,7 +11864,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-Q4A-TRIM",
@@ -11881,7 +11881,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-Q4B-TRIM",
@@ -11898,7 +11898,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "HEAT",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-FAB-LOSS",
@@ -11915,7 +11915,7 @@
       "from_sector_id": "FAB",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-WIRE-LOSS",
@@ -11932,7 +11932,7 @@
       "from_sector_id": "MFG",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-Q1A-LOSS",
@@ -11949,7 +11949,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-Q1B-LOSS",
@@ -11966,7 +11966,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-Q2A-LOSS",
@@ -11983,7 +11983,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-Q2B-LOSS",
@@ -12000,7 +12000,7 @@
       "from_sector_id": "HEAT",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-BED-VAP",
@@ -12017,7 +12017,7 @@
       "from_sector_id": "FARM",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-HAB-VAP",
@@ -12034,7 +12034,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-HVAC-COND",
@@ -12051,7 +12051,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-PV-CURTAIL",
@@ -12068,7 +12068,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec"
     },
     {
       "stream_id": "IA-AHU-AIR",
@@ -12085,7 +12085,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ZNBR-LOSS",
@@ -12102,7 +12102,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec,ess"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec,ess"
     },
     {
       "stream_id": "IA-GREY-RET",
@@ -12119,7 +12119,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-NUT-LEACH",
@@ -12136,7 +12136,7 @@
       "from_sector_id": "NUT",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-FEED-01",
@@ -12153,7 +12153,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "Feedstock-agnostic. Composition is the AQS-ASSAY-001 Rev C reference point in seven phase classes, carried because the held rates were built on it. It is not the feed. params.assay_envelope holds the bounding cases, regolith-like through metal-rich PCB. Not a weighed sample. Rate stays 102.68 kg/d. The 150 kg/d dock feed is not restored. Do not resize. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "Feedstock-agnostic. Composition is the AQS-ASSAY-001 Rev C reference point in seven phase classes, carried because the held rates were built on it. It is not the feed. params.assay_envelope holds the bounding cases, regolith-like through metal-rich PCB. Not a weighed sample. Rate stays 102.68 kg/d. The 150 kg/d dock feed is not restored. Do not resize. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-POT-01",
@@ -12170,7 +12170,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Rerouted from LEACH_CSTR_1. Rate unchanged. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Rerouted from LEACH_CSTR_1. Rate unchanged. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-UPW-HAB",
@@ -12187,7 +12187,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-BAG-01",
@@ -12204,7 +12204,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-UPW-USE",
@@ -12221,7 +12221,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-MEOH-REST",
@@ -12238,7 +12238,7 @@
       "from_sector_id": "MEOH",
       "to_sector_id": "MEOH",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-SINK-01",
@@ -12255,7 +12255,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-PLAST-01",
@@ -12272,7 +12272,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-CULLET",
@@ -12289,7 +12289,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GLASS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-SCRUB-SRC",
@@ -12306,7 +12306,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-SIL-SRC",
@@ -12323,7 +12323,7 @@
       "from_sector_id": "GLASS",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-HF-SRC",
@@ -12357,7 +12357,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-H2O2-SRC",
@@ -12374,7 +12374,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-NOX-H2O",
@@ -12391,7 +12391,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-NOX-N",
@@ -12408,7 +12408,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "NUT",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-FAB-SPENT",
@@ -12425,7 +12425,7 @@
       "from_sector_id": "FAB",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-GEN-AIR",
@@ -12442,7 +12442,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "ELEC",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-NOX-HAB",
@@ -12459,7 +12459,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "HAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-NUT-BED",
@@ -12476,7 +12476,7 @@
       "from_sector_id": "NUT",
       "to_sector_id": "FARM",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-N2-VENT",
@@ -12493,7 +12493,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-HOP-01",
@@ -12510,7 +12510,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-WEAR",
@@ -12527,7 +12527,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-MEOH-COND",
@@ -12544,7 +12544,7 @@
       "from_sector_id": "MEOH",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-H2-IN",
@@ -12561,7 +12561,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW-SHEET",
@@ -12578,7 +12578,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "Not an element split. Composition is metal 1.0. The copper-equivalent sizing rule is not an assay. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "Not an element split. Composition is metal 1.0. The copper-equivalent sizing rule is not an assay. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-PHOS-SRC",
@@ -12595,7 +12595,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-MELT-MILL",
@@ -12612,7 +12612,7 @@
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-MELT-ATOM",
@@ -12629,7 +12629,7 @@
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-DRAW-FUME",
@@ -12646,7 +12646,7 @@
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-AHU-POT",
@@ -12663,7 +12663,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-LEACH-NOX",
@@ -12680,7 +12680,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-LEACH-FLUE",
@@ -12697,7 +12697,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-LEACH-HOP",
@@ -12714,7 +12714,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW1-H2",
@@ -12731,7 +12731,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW2-H2",
@@ -12748,7 +12748,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW4-H2",
@@ -12765,7 +12765,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW4-N2",
@@ -12782,7 +12782,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "HAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-O2-MAKE",
@@ -12799,7 +12799,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-FC-FIX",
@@ -12816,7 +12816,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-AHU-FIX",
@@ -12833,7 +12833,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-LEACH-H2",
@@ -12850,7 +12850,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-FC-LEACH",
@@ -12867,7 +12867,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-PHOS-DOPE",
@@ -12884,7 +12884,7 @@
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-SOLV-WB",
@@ -12901,7 +12901,7 @@
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-CLOSE-1",
@@ -12918,7 +12918,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-CLOSE-10",
@@ -12935,7 +12935,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MEOH",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-LITHO-IN",
@@ -12986,7 +12986,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-BLOW-OUT",
@@ -13003,7 +13003,7 @@
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-COAT-IN",
@@ -13020,7 +13020,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-COAT-OUT",
@@ -13037,7 +13037,7 @@
       "from_sector_id": "MFG",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-PV-IN",
@@ -13054,7 +13054,7 @@
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-PV-OUT",
@@ -13071,7 +13071,7 @@
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-MET-AIR-RET",
@@ -13088,7 +13088,7 @@
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ACID-AIR-RET",
@@ -13105,7 +13105,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "CUT-1-OUT",
@@ -13122,7 +13122,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "ELEC",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "CUT-3-OUT",
@@ -13139,7 +13139,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-SIC-RET",
@@ -13156,7 +13156,7 @@
       "from_sector_id": "NUT",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-NIT-VENT",
@@ -13173,7 +13173,7 @@
       "from_sector_id": "FAB",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "AQS-DSN-OX-001 vent. Breathing and upset only. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "AQS-DSN-OX-001 vent. Breathing and upset only. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-FLUE-QUENCH",
@@ -13190,7 +13190,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "X-SAF-07. Spray quench of S67 at the FLUE_KO inlet spool. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "X-SAF-07. Spray quench of S67 at the FLUE_KO inlet spool. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-PEROX-H2O",
@@ -13207,7 +13207,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "X-SAF-10. Make-up water for the 5 wt% product. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "X-SAF-10. Make-up water for the 5 wt% product. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "S17-BMED",
@@ -13224,7 +13224,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "IA-BMED-03-TRIM",
@@ -13241,7 +13241,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GEO",
       "open_boundary": false,
-      "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-BMED-04-TRIM",
@@ -13258,7 +13258,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GEO",
       "open_boundary": false,
-      "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
+      "note": "X-RSZ-04 (AQS-MAT-001 \u00a710 water-cooled trim, 85 to 35 C) | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=thermal"
     },
     {
       "stream_id": "IA-LEACH-VCD",
@@ -13275,7 +13275,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN) | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN) | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "SF-ALK_SCRUBBER",
@@ -13292,7 +13292,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-BMED_UPW_POLISH",
@@ -13309,7 +13309,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-CRYO_H2",
@@ -13326,7 +13326,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-GEO_HP",
@@ -13343,7 +13343,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "GEO",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-GLASS_DIGEST",
@@ -13360,7 +13360,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "GLASS",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-H2_DRYER",
@@ -13377,7 +13377,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-LEACH_CSTR_1",
@@ -13394,7 +13394,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-MEOH_SYNTH",
@@ -13411,7 +13411,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "MEOH",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-MFG_SHOP",
@@ -13428,7 +13428,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-NUTRIENT_DOSE",
@@ -13445,7 +13445,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "NUT",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-WAFER_FAB",
@@ -13462,7 +13462,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-WET_BENCH",
@@ -13479,7 +13479,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-LITHO_STUB",
@@ -13496,7 +13496,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-ELECTRODE_COAT",
@@ -13513,7 +13513,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-BLOW_MOLD",
@@ -13530,7 +13530,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-SOLAR_PV_CELL",
@@ -13547,7 +13547,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "FAB",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "IA-NA-PURGE",
@@ -13564,7 +13564,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "SF-OIL_PYRO",
@@ -13581,7 +13581,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "IA-BLK-01",
@@ -13598,7 +13598,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-BLK-GAS",
@@ -13615,7 +13615,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "SF-BLACK_DIGEST",
@@ -13632,7 +13632,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "WTR",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "IA-GEN-O2",
@@ -13649,7 +13649,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "ELEC",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-AB-O2",
@@ -13666,7 +13666,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "OIL",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-HCO2-MEOH",
@@ -13683,7 +13683,7 @@
       "from_sector_id": "HAB",
       "to_sector_id": "MEOH",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-H2O-MU",
@@ -13700,7 +13700,7 @@
       "from_sector_id": "DOCK",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW1-CL2",
@@ -13717,7 +13717,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW2-CL2",
@@ -13734,7 +13734,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW3-CL2",
@@ -13751,7 +13751,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW4-CL2",
@@ -13768,7 +13768,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW5-CL2",
@@ -13785,7 +13785,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW6-CL2",
@@ -13802,7 +13802,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW7-CL2",
@@ -13819,7 +13819,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW8-CL2",
@@ -13836,7 +13836,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-EW9-CL2",
@@ -13853,7 +13853,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-C5-SHIP",
@@ -13870,7 +13870,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-C11-SHIP",
@@ -13887,7 +13887,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-C19-SHIP",
@@ -13904,7 +13904,7 @@
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ATOM-REMELT",
@@ -13921,7 +13921,7 @@
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
       "stream_id": "SF-CRYO_AHU",
@@ -13938,7 +13938,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=elec"
     },
     {
       "stream_id": "SF-MEOH_FERM",
@@ -13955,7 +13955,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "MEOH",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-ACID_POLISH_SCRUB",
@@ -13972,7 +13972,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-NOX_SCRUB",
@@ -13989,7 +13989,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "GAS",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "SF-MET_SCRUB",
@@ -14006,7 +14006,7 @@
       "from_sector_id": "ELEC",
       "to_sector_id": "MFG",
       "open_boundary": false,
-      "note": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
+      "note": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; layers=elec"
     },
     {
       "stream_id": "IA-ACID-01",
@@ -14020,7 +14020,7 @@
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl: +341.25 kg/d. | X-PAR-12 TF: acid product sized to the leach HCl demand: 87.9225 kg/d / 20% = 439.6127 kg/d (AQS-DUTY-011 sized-to-draw basis, X-RSZ-01 class A bound on current drivers; write-convergence fix 2026-10-19: the by-difference closure was an identity map that preserved a stale +1.57 % over-supply) (AQS-PAR-005)."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
@@ -14037,7 +14037,7 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 109.8 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2, bounding; GREENWOOD), as 20 wt%."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "GLASS",
       "open_boundary": false,
       "note": "restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
@@ -14054,7 +14054,7 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%."
       },
-      "from_sector_id": "WET",
+      "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "X-RSZ-01: class A (regolith-like) bound, AQS-ASSAY-001 Rev D \u00a78, 87.9 kg/d HCl | restored verbatim from graph Rev BH per owner decision 2026-10-17 (R8): books still size this equipment; namespace=IA; layers=mass"
@@ -14188,12 +14188,12 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: startup inventory, not a flow | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: startup inventory, not a flow | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-NOX-CO2",
@@ -14210,7 +14210,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-NOX-N2",
@@ -14227,7 +14227,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ASU-N2",
@@ -14244,7 +14244,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ASU-O2",
@@ -14261,7 +14261,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ASU-CO2",
@@ -14278,7 +14278,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-H2-AIR",
@@ -14290,12 +14290,12 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-N2-RET",
@@ -14307,12 +14307,12 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-O2-RET",
@@ -14329,7 +14329,7 @@
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-CO2-RET",
@@ -14346,7 +14346,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-LEACH-ASU",
@@ -14363,7 +14363,7 @@
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "SF-CRYO_ASU",
@@ -14375,12 +14375,12 @@
         "value": 1.6689,
         "unit": "kW",
         "status": "study",
-        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; layers=elec"
+      "note": "X-RSZ-07 feed edges for unfed loads | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; layers=elec"
     },
     {
       "stream_id": "IA-ELY-H2O",
@@ -14397,7 +14397,7 @@
       "from_sector_id": "WTR",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ELY-H2",
@@ -14414,7 +14414,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-ELY-O2",
@@ -14431,7 +14431,7 @@
       "from_sector_id": "CRYO",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=mass"
     },
     {
       "stream_id": "SF-H2O_ELYZ",
@@ -14443,12 +14443,12 @@
         "value": 21.4517,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
+        "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=elec"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230); namespace=IA; layers=elec"
     },
     {
       "stream_id": "IA-O2-PROD",
@@ -14460,12 +14460,12 @@
         "value": 22.876217,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-O2-SHIP",
@@ -14477,12 +14477,12 @@
         "value": 22.876217,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "DOCK",
       "open_boundary": false,
-      "note": "restored verbatim from Rev BH (fa1b4db) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
+      "note": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope; namespace=IA; layers=mass"
     },
     {
       "stream_id": "SF-IND_MELT",
@@ -14749,7 +14749,7 @@
         "value": 1.42,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 1.42 (crew-4, was HABITATION->COMPOST_TOILET; X-SAN-01: compost-toilet solids and urine pass the same barriers, BLACK_DIGEST is the surviving barrier 1)"
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 1.42 (crew-4, was HABITATION->COMPOST_TOILET; X-SAN-01: compost-toilet solids and urine pass the same barriers, BLACK_DIGEST is the surviving barrier 1)"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "WTR",
@@ -14766,7 +14766,7 @@
         "value": 0.13,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 0.13 (was HABITATION->COMPOST_TOILET; rides the blackwater line, X-SAN-01)"
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 0.13 (was HABITATION->COMPOST_TOILET; rides the blackwater line, X-SAN-01)"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "WTR",
@@ -14783,7 +14783,7 @@
         "value": 1.18,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 1.18 (was HABITATION->HAB_GALLEY; HAB_GALLEY retired Rev AC, organics to barrier 1)"
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 1.18 (was HABITATION->HAB_GALLEY; HAB_GALLEY retired Rev AC, organics to barrier 1)"
       },
       "from_sector_id": "HAB",
       "to_sector_id": "WTR",
@@ -14800,7 +14800,7 @@
         "value": 0.67,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 0.67 (was BLACK_DEWATER->AFTERBURNER; dewater retired Rev AC, cake split carried at the digester)"
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 0.67 (was BLACK_DEWATER->AFTERBURNER; dewater retired Rev AC, cake split carried at the digester)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "OIL",
@@ -14817,7 +14817,7 @@
         "value": 0.9,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF R10a: BH verbatim (graph fa1b4db, X-PAR-02 R10a restore 2026-10-18) 0.90 (was BLACK_ALK_HOLD->NUTRIENT_DOSE; alk-hold retired Rev AC, split carried at the digester)"
+        "note": "X-PAR-02 TF R10a: BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 0.90 (was BLACK_ALK_HOLD->NUTRIENT_DOSE; alk-hold retired Rev AC, split carried at the digester)"
       },
       "from_sector_id": "WTR",
       "to_sector_id": "NUT",
@@ -14834,7 +14834,7 @@
         "value": 21.0508,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF R10a: digest liquor by difference (TF); BH 18.43 (was BLACK_ALK_HOLD->GREY_TREAT) + the urine/fecal water now direct (COMPOST_TOILET retirement) | X-PAR-02 TF: released digest liquor by difference (BH 18.43 from the retired BLACK_ALK_HOLD + direct urine/fecal water, fa1b4db) (AQS-PAR-003)."
+        "note": "X-PAR-02 TF R10a: digest liquor by difference (TF); BH 18.43 (was BLACK_ALK_HOLD->GREY_TREAT) + the urine/fecal water now direct (COMPOST_TOILET retirement) | X-PAR-02 TF: released digest liquor by difference (BH 18.43 from the retired BLACK_ALK_HOLD + direct urine/fecal water, 91d33f4) (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -14853,7 +14853,7 @@
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: methanol product by difference (AQS-PAR-005)."
       },
-      "from_sector_id": "CRYO",
+      "from_sector_id": "MEOH",
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -15041,7 +15041,7 @@
         "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 1061 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15058,7 +15058,7 @@
         "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 237 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15075,7 +15075,7 @@
         "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 258 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15092,7 +15092,7 @@
         "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 3358 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15109,7 +15109,7 @@
         "note": "R10b X-PAR-12: cathode-H2 outlet on the live pool - HCL_BURNER retired in Rev AC (A-M-255). | X-PAR-12 TF: cathode H2 = I(1-CE)/2F, I = 238 A, CE 0.85; to the H2 pool (HCL_BURNER retired, A-M-255) (AQS-PAR-005)."
       },
       "from_sector_id": "DIGESTER",
-      "to_sector_id": "CRYO",
+      "to_sector_id": "GAS",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
     },
@@ -15738,7 +15738,7 @@
         "note": "Feed equal to REMIN continuous_kw. | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296)."
       },
       "from_sector_id": "ELEC",
-      "to_sector_id": "FAB",
+      "to_sector_id": "WTR",
       "open_boundary": false,
       "note": "REMIN feed (stub activation); layers=elec"
     },
@@ -15771,7 +15771,7 @@
         "status": "study",
         "note": "Pot Cl2 byproduct 3.942 kg/kg Al exports at the dock (D-DOCK outlet; CRU closes exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-290 chlorine ruling). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass,energy"
@@ -15788,7 +15788,7 @@
         "status": "study",
         "note": "AQS-BAL-KROLL closure: 3.978 kg/kg Ti gross less the 0.0398 kg/d drag-out to FLUX_PREP (A-M-284). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -15805,7 +15805,7 @@
         "status": "study",
         "note": "2% of the Kroll MgCl2 gross: the salt-flux cover for the Al-charged melt (A-M-284); unblocks FLUX_PREP from the SALT_FEED stub. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -15839,7 +15839,7 @@
         "status": "study",
         "note": "1.016 kg Mg per kg Ti (AQS-BAL-KROLL); MG_POT electrolysis of the returned MgCl2 at 55 A (A-M-282). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -15856,7 +15856,7 @@
         "status": "study",
         "note": "Chlorine closes internally (AQS-BAL-KROLL): MG_POT returns exactly the 2.963 kg/kg Ti the chlorination draws; the EW anode gas stays booked to the leach (Faraday balance, A-M-255 pattern; A-M-284 ruling - it is the initial loop charge only). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -15890,7 +15890,7 @@
         "status": "study",
         "note": "CA_POT Cl2 byproduct 1.769 kg/kg Ca exports at the dock (A-M-290 chlorine ruling). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass,energy"
@@ -15941,7 +15941,7 @@
         "status": "study",
         "note": "1.170 kg/kg Ti chlorinator CO to the dock fuel-gas class (IA-N2-VENT precedent; no spare burner capacity at Rev AC scope - burner routing is an integration follow-up). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -15992,7 +15992,7 @@
         "status": "study",
         "note": "1.5 CO2 per Mo on the carbochlorination net (A-M-284); dock vent class. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -16043,7 +16043,7 @@
         "status": "study",
         "note": "3 CO per 2 Cr on the carbochlorination net (A-M-284); dock fuel-gas class. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -16094,7 +16094,7 @@
         "status": "study",
         "note": "Balance of the pattern wax at the burnout firebox (A-M-286); dock vent class. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -16111,7 +16111,7 @@
         "status": "study",
         "note": "87.5% of spent shell reclaimed to the backup coats (A-M-286). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -16128,7 +16128,7 @@
         "status": "study",
         "note": "Spent-shell balance = the 0.5 kg/kg-casting make-up (AQS-SIZE-FOUNDRY registered waste line; A-M-286); GLASS_MILL has no digest capacity (A-M-267). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
@@ -16468,7 +16468,7 @@
         "status": "study",
         "note": "Pot-line metal export 10.8125 kg/d (Al 10.0 + Ti 0.50 + Mo 0.0625 + Cr 0.25): the stock loop is the only net inlet, so the loop passes it to the METAL_STORE dispatch (A-M-270 buffer) and the dock exports it (D-DOCK outlet; A-M-285). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "MFG",
+      "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "Created by the foundry sizing pass: the pot/cell metal is the stock loop's only net inlet, so at steady state the loop passes it and the full pot output leaves as the dock metal export (A-M-284).; namespace=IA; layers=mass"

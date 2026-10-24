@@ -104,7 +104,7 @@ Sit outside both process atmospheres. See `electrical_sld.png`,
 Small parts that Part scripting is bad at. Export STL/STEP, `Part.insert`
 or mesh-proxy in FreeCAD. Do not rebuild the plant in OpenSCAD.
 
-- [x] `cad/detail/` one part per file, includes `../params.scad`
+- [x] `models/openscad/detail/` one part per file, includes `../params.scad`
 - [x] `cstr3_flight.scad` — true helix (not yet swapped into the FC tank)
 - [x] `cem_cassette.scad`
 - [x] `funnel_valve.scad`
@@ -112,7 +112,7 @@ or mesh-proxy in FreeCAD. Do not rebuild the plant in OpenSCAD.
 - [x] `bmed_cell.scad`
 - [x] `znbr2_iem.scad`
 - [x] `import_details.py` places STLs as `DETAIL_*` meshes on the plant
-      after `cad/detail/build_stls.sh`. Missing STL is a skip, not a crash.
+      after `models/openscad/detail/build_stls.sh`. Missing STL is a skip, not a crash.
 
 ---
 
@@ -150,7 +150,7 @@ Wave-3 origins are frozen.
 
 - [x] Brief: `docs-authority/internal/ANIMATION_BRIEF.md` (D1–D6, cameras, bans)
 - [x] Waypoints: `freecad/animate_shots.py` (D1–D6 + C29 + NCG)
-- [x] Schematic frames: `freecad/render_frames.py` → `cad/animation/`
+- [x] Schematic frames: `freecad/render_frames.py` → `models/freecad/animation/`
 - [ ] Optional GUI 12 fps overlay on `plant.FCStd` — operator box only
 
 ---
@@ -169,8 +169,8 @@ Wave-3 origins are frozen.
 | `freecad/electrical_yard.py` | rectifier through PV |
 | `freecad/build_plant.py` | assembly document `PLANT` |
 | `freecad/gas_handling.py` | demister, scrubber, baghouse, H2, HX-7 jacket |
-| `cad/detail/*.scad` | Phase B printable / importable parts |
-| `cad/detail/build_stls.sh` | OpenSCAD → `detail/stl/` |
+| `models/openscad/detail/*.scad` | Phase B printable / importable parts |
+| `models/openscad/detail/build_stls.sh` | OpenSCAD → `detail/stl/` |
 | `freecad/import_details.py` | mesh insert onto PLANT |
 | `docs-authority/internal/ANIMATION_BRIEF.md` | Phase D shot list |
 | `freecad/pipe_services.py` | racks, trays, ground ring |
@@ -182,7 +182,7 @@ Wave-3 origins are frozen.
 | `assembly_wet.scad` | OpenSCAD twin of wet + later includes |
 
 Rebuild: `leach_cstr.py` → `ew_cell.py` → `build_wet.py` →
-`bash cad/detail/build_stls.sh` → `build_plant.py`.
+`bash models/openscad/detail/build_stls.sh` → `build_plant.py`.
 
 ---
 
@@ -223,5 +223,5 @@ Process cassette: wet_line local Z=0 = L-1 FFL; `build_plant.py` shifts by `Z_Lm
 - [x] FB_* + HA_* horizontal assemblies
 - [x] Campus re-origin to BLD levels
 - [ ] Building / campus / life / hazard PFD generators restored under `pfd_scripts/`
-- [ ] `iso_fab_drawings.pdf` recreated from `cad/iso/*.png`
+- [ ] `iso_fab_drawings.pdf` recreated from `iso/*.png`
 

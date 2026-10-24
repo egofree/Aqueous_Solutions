@@ -274,8 +274,8 @@ file. Rebuild with the console path the user named.
 ```
 params.py / params.scad
 pfd/                  # 2D generators + output png
-cad/freecad/          # massing and assembly generators
-cad/detail/           # OpenSCAD parts + stl export
+models/freecad/          # massing and assembly generators
+models/openscad/detail/           # OpenSCAD parts + stl export
 DECISIONS.md
 NAMES.md
 SIGN_SCHEDULE.md      # if signs exist

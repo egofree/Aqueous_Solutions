@@ -139,7 +139,7 @@ class ElectricalModel(BaseModel):
     znbr_count: Optional[int] = None
     rect_count: Optional[int] = None
     notes: Optional[str] = (
-        "Study values from cad/freecad/params.py and AQS-REQ-KW-001; "
+        "Study values from models/freecad/params.py and AQS-REQ-KW-001; "
         "not vendor nameplates."
     )
 

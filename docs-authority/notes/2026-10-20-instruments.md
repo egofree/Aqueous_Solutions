@@ -3,7 +3,7 @@
 Document number: AQS-PLAN-007 note (working record; no new AQS number).
 
 Authority: X-CTL-01 (AQS-CTL-001 instrument index), X-CTL-03 (AQS-CTL-003 SIF/cause-and-effect) and X-SAF-01 (AQS-SAF-001/008
-HAZOP closure evidence). Graph state: Rev AC fixed point, HEAD ff4ac7e at lane start. Concurrent lanes in the same tree while this
+HAZOP closure evidence). Graph state: Rev AC fixed point, HEAD 845e9a7 at lane start. Concurrent lanes in the same tree while this
 ran: duties (§1/§6 sheets), nozzles (csvs), task-plan evidence. No commits (lane order).
 
 ## Why the 62 units owned no loop
@@ -14,7 +14,7 @@ boundary/header/relief classes outright. So: FOUNDRY 27 and POLYMERS 10 machines
 AQS-INV-004 regen; headers (HDR_CO2/H2/N2/O2/UPW, NCG_HEADER, Q4_BUS), relief stacks (RELIEF_H2/CRYO) and the boundary node are
 class-skipped; the stores (FOOD/METAL/POLY_STOCK, PROD_O2/PROD_MEOH, AIR_RECEIVER) fail the class/liquid gate; and EVAP_ACID_VS
 holds only a gas-detector row, which AQS-CTL-001 excludes by rule (gas detection is AQS-SAF-006, wired to the fire panel and SIS).
-The evidence audit (notes/2026-10-20-evidence-audit.md, T08 residual) named this as X-CTL-01 per-unit authoring work; this lane
+The evidence audit (docs-authority/notes/2026-10-20-evidence-audit.md, T08 residual) named this as X-CTL-01 per-unit authoring work; this lane
 did it in the docs-side generator (`_instr_index.py`), not in `other.py`, per the lane write scopes.
 
 ## What was authored — 123 loops, 599 -> 722 tags, 138 -> 199 units

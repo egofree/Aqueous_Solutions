@@ -40,8 +40,8 @@ def process():
     for t in (N['GLASS_DIGEST']['params'].get('balance_rev_l') or {}).get('terms', []):
         if t['layer']=='mass' and ('digest liquor' in t['label'] or 'silicate liquor' in t['label']):
             t['value'] = round(nb['digest_mol']/DR.val(d,'bmed_product_molarity')*1.081, 3); t['basis'] = f"{nb['digest_mol']:.1f} mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); {NT}"
-    mk = [edge('IA-NAOH-MU','NORTH_DOCK','EVAP_BASE','S',['mass'],'purchased NaOH flake make-up',rate(nb['makeup_kg_d'],'kg/d',f"{NT}. Demand {nb['ppt_mol']+nb['digest_mol']:.0f} mol/d less BMED {nb['bmed_mol']:.0f} mol/d; worst case, no credit for sodium returned in the silicate liquor."),'DOCK','WET'),
-          edge('IA-NA-PURGE','LEACH_CSTR_1','NORTH_DOCK','L',['mass'],'sodium salt purge equal to the make-up mass',rate(nb['makeup_kg_d'],'kg/d',f'{NT}. Sodium brought in on IA-NAOH-MU leaves the loop as salt; mass equal to the make-up (study).'),'WET','DOCK')]
+    mk = [edge('IA-NAOH-MU','NORTH_DOCK','EVAP_BASE','S',['mass'],'purchased NaOH flake make-up',rate(nb['makeup_kg_d'],'kg/d',f"{NT}. Demand {nb['ppt_mol']+nb['digest_mol']:.0f} mol/d less BMED {nb['bmed_mol']:.0f} mol/d; worst case, no credit for sodium returned in the silicate liquor."),'DOCK','DIGESTER'),
+          edge('IA-NA-PURGE','LEACH_CSTR_1','NORTH_DOCK','L',['mass'],'sodium salt purge equal to the make-up mass',rate(nb['makeup_kg_d'],'kg/d',f'{NT}. Sodium brought in on IA-NAOH-MU leaves the loop as salt; mass equal to the make-up (study).'),'DIGESTER','DOCK')]
     for e in mk:
         if e['stream_id'] in E: E[e['stream_id']]['rate'] = e['rate']
         else: g['edges'].append(e); E[e['stream_id']] = e
@@ -51,7 +51,7 @@ def process():
         note = (f"{TAG}. MVR evaporator, {sa} from 2 M ({DR.val(d,'bmed_product_wt_'+side.lower())*100:.2f} wt%) to {w*100:.0f} wt%"
                 + (f" (below the HCl azeotrope {DR.val(d,'hcl_azeotrope_wt')*100:.1f} wt%, PERRY9_HCL)" if side=='ACID' else '')
                 + f"; water off {v['water_kg_d']:.1f} kg/d x {v['design']['kWh_per_t']} kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower {v['design']['comp_elec_kW']:.3f} kW, recirculation {v['design']['pump_kW']:.3f} kW, trim {v['design']['trim_kW']:.3f} kW) = {v['kW']:.2f} kW. Study.")
-        node = N.get(u) or {'unit_id': u, 'sector_id': 'WET', 'presence': 'present', 'class': 'evaporator', 'tags': [], 'electrical_role': 'load',
+        node = N.get(u) or {'unit_id': u, 'sector_id': 'DIGESTER', 'presence': 'present', 'class': 'evaporator', 'tags': [], 'electrical_role': 'load',
                             'diagram_gap': None, 'enabled': True, 'modules': [], 'params': {}}
         node['notes'] = f'{sa} concentrator after {src} ({TAG}). Wetted parts per ULLMANN_HCL (impregnated graphite or fluoropolymer-lined; study).' if side=='ACID' else f'{sa} concentrator after {src} ({TAG}). Nickel or fluoropolymer-lined wetted parts (study).'
         node['continuous_kw'] = rate(v['kW'],'kW',note)
@@ -59,20 +59,20 @@ def process():
                                'mvr_kWh_per_t':v['design']['kWh_per_t'],'size_mm':node['params'].get('size_mm',[1200,900,2000]),'doc':'AQS-PAR-001, AQS-DUTY-060'})
         node['params'].setdefault('size_note','L x W x H mm, set by flow_graph/param/evap_design.py (X-MFG-30)')
         if u not in N: g['nodes'].append(node); N[u] = node
-        new = [edge(f'IA-{u}-FEED', src, u, 'L', ['mass'], f'{sa} 2 M from BMED', rate(v['feed_kg_d'],'kg/d',f'{TAG}. {v["solute_kg_d"]:.2f} kg/d {sa} / {DR.val(d,"bmed_product_wt_"+side.lower())}.'),'WET','WET'),
-               edge(f'IA-{u}-COND', u, src, 'L', ['mass'], 'evaporator condensate return (BMED water make-up)', rate(v['water_kg_d'],'kg/d',f'{TAG}. Water evaporated, condensed and returned to {src}.'),'WET','WET'),
-               edge(f'SF-{u}', 'SOL_ARK_60K', u, 'E', ['elec'], '480 V AC', rate(v['kW'],'kW',f'{TAG}. 480 V feed equal to {u} continuous_kw.'),'ELEC','WET','tray'),
-               edge(f'SQ-{u}', u, 'HEAT_SINK', 'E', ['energy'], 'electrical input leaving as heat', rate(v['kW'],'kW',f'{TAG}. Compressor work leaves as heat (A-M-086).'),'WET','GEO','tray')]
+        new = [edge(f'IA-{u}-FEED', src, u, 'L', ['mass'], f'{sa} 2 M from BMED', rate(v['feed_kg_d'],'kg/d',f'{TAG}. {v["solute_kg_d"]:.2f} kg/d {sa} / {DR.val(d,"bmed_product_wt_"+side.lower())}.'),'DIGESTER','DIGESTER'),
+               edge(f'IA-{u}-COND', u, src, 'L', ['mass'], 'evaporator condensate return (BMED water make-up)', rate(v['water_kg_d'],'kg/d',f'{TAG}. Water evaporated, condensed and returned to {src}.'),'DIGESTER','DIGESTER'),
+               edge(f'SF-{u}', 'SOL_ARK_60K', u, 'E', ['elec'], '480 V AC', rate(v['kW'],'kW',f'{TAG}. 480 V feed equal to {u} continuous_kw.'),'ELEC','DIGESTER','tray'),
+               edge(f'SQ-{u}', u, 'HEAT_SINK', 'E', ['energy'], 'electrical input leaving as heat', rate(v['kW'],'kW',f'{TAG}. Compressor work leaves as heat (A-M-086).'),'DIGESTER','GEO','tray')]
         for e in new:
             if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries')})
             else: g['edges'].append(e); E[e['stream_id']] = e
         for p in prods:
             # R8-style presence gate: IA-ACEX-NAOH was retired with the ACEX train re-homes; only re-point
             # product edges that exist (the graph no longer carries every BASE_DEMAND member).
-            if p in E: E[p]['from_unit_id'] = u; E[p]['from_sector_id'] = 'WET'
+            if p in E: E[p]['from_unit_id'] = u; E[p]['from_sector_id'] = 'DIGESTER'
     # X-PAR-10 vent scrubber on the EVAP_ACID column vent (owner decision 2026-10-15; AQS-DUTY-061)
     vs = s['vs']; up = vs['upset']; VT = f'{TAG}; X-PAR-10 vent scrubber (AQS-DUTY-061)'
-    nd = N.get('EVAP_ACID_VS') or {'unit_id': 'EVAP_ACID_VS', 'sector_id': 'WET', 'presence': 'present', 'class': 'scrubber', 'tags': [], 'electrical_role': 'load',
+    nd = N.get('EVAP_ACID_VS') or {'unit_id': 'EVAP_ACID_VS', 'sector_id': 'DIGESTER', 'presence': 'present', 'class': 'scrubber', 'tags': [], 'electrical_role': 'load',
                                     'diagram_gap': None, 'enabled': True, 'modules': [], 'params': {}}
     nd['notes'] = 'Packed PVC alkali scrubber on the EVAP_ACID column vent; NaOH bleed from BMED_BASE; spent liquor to BMED_ACID. Duty sheet docs-authority/duties/EVAP_ACID_VS.md.'
     nd['continuous_kw'] = rate(vs['pump_kW'],'kW',f"{VT}. Sump recirculation pump {up['recirc_m3_h']*1000:.0f} L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study).")
@@ -80,12 +80,12 @@ def process():
                          'y_in_ppm_design':round(up['y_in_ppm'],1),'y_out_ppm':up['y_out_ppm'],'design_case':'upset: column bypassed (A-M-111)',
                          'size_mm':[400, 400, vs['height_mm']],'size_note':'L x W x H mm, set by flow_graph/param/vent_scrubber.py (X-PAR-10)','doc':'AQS-DUTY-061'})
     if 'EVAP_ACID_VS' not in N: g['nodes'].append(nd); N['EVAP_ACID_VS'] = nd
-    vn = [edge('IA-EVAP_ACID-VENT','EVAP_ACID','EVAP_ACID_VS','G',['mass'],'column vent: non-condensables, water vapour, trace HCl',rate(up['vent_kg_d'],'kg/d',f"{VT}. Air from the feed (WEISS1970) saturated at the vent condenser; design case {up['y_in_ppm']:.0f} ppmv HCl."),'WET','WET'),
-          edge('IA-VS-NAOH','BMED_BASE','EVAP_ACID_VS','L',['mass'],'NaOH 2 M bleed',rate(up['naoh_soln_kg_d'],'kg/d',f"{VT}. {vs['upset']['naoh_mol_d']*1000:.3f} mmol/d = {DR.val(d,'vs_naoh_excess')} x HCl absorbed."),'WET','WET'),
-          edge('IA-VS-SPENT','EVAP_ACID_VS','BMED_ACID','L',['mass'],'spent scrub liquor (NaCl in NaOH) to the BMED brine',rate(up['spent_kg_d'],'kg/d',f'{VT}. Bleed plus HCl absorbed.'),'WET','WET'),
-          edge('IA-VS-OFF','EVAP_ACID_VS','ALK_SCRUBBER','G',['mass'],'scrubbed vent to the house acid-gas header',rate(up['offgas_kg_d'],'kg/d',f"{VT}. {up['y_out_ppm']} ppmv HCl."),'WET','GAS'),
-          edge('SF-EVAP_ACID_VS','SOL_ARK_60K','EVAP_ACID_VS','E',['elec'],'480 V AC',rate(vs['pump_kW'],'kW',f'{VT}. Feed equal to continuous_kw.'),'ELEC','WET','tray'),
-          edge('SQ-EVAP_ACID_VS','EVAP_ACID_VS','HEAT_SINK','E',['energy'],'electrical input leaving as heat',rate(vs['pump_kW'],'kW',f'{VT}. Pump work leaves as heat.'),'WET','GEO','tray')]
+    vn = [edge('IA-EVAP_ACID-VENT','EVAP_ACID','EVAP_ACID_VS','G',['mass'],'column vent: non-condensables, water vapour, trace HCl',rate(up['vent_kg_d'],'kg/d',f"{VT}. Air from the feed (WEISS1970) saturated at the vent condenser; design case {up['y_in_ppm']:.0f} ppmv HCl."),'DIGESTER','DIGESTER'),
+          edge('IA-VS-NAOH','BMED_BASE','EVAP_ACID_VS','L',['mass'],'NaOH 2 M bleed',rate(up['naoh_soln_kg_d'],'kg/d',f"{VT}. {vs['upset']['naoh_mol_d']*1000:.3f} mmol/d = {DR.val(d,'vs_naoh_excess')} x HCl absorbed."),'DIGESTER','DIGESTER'),
+          edge('IA-VS-SPENT','EVAP_ACID_VS','BMED_ACID','L',['mass'],'spent scrub liquor (NaCl in NaOH) to the BMED brine',rate(up['spent_kg_d'],'kg/d',f'{VT}. Bleed plus HCl absorbed.'),'DIGESTER','DIGESTER'),
+          edge('IA-VS-OFF','EVAP_ACID_VS','ALK_SCRUBBER','G',['mass'],'scrubbed vent to the house acid-gas header',rate(up['offgas_kg_d'],'kg/d',f"{VT}. {up['y_out_ppm']} ppmv HCl."),'DIGESTER','GAS'),
+          edge('SF-EVAP_ACID_VS','SOL_ARK_60K','EVAP_ACID_VS','E',['elec'],'480 V AC',rate(vs['pump_kW'],'kW',f'{VT}. Feed equal to continuous_kw.'),'ELEC','DIGESTER','tray'),
+          edge('SQ-EVAP_ACID_VS','EVAP_ACID_VS','HEAT_SINK','E',['energy'],'electrical input leaving as heat',rate(vs['pump_kW'],'kW',f'{VT}. Pump work leaves as heat.'),'DIGESTER','GEO','tray')]
     vn[1]['params'] = {'NaOH_mol_d': round(up['naoh_mol_d'], 9)}
     for e in vn:
         if e['stream_id'] in E: E[e['stream_id']].update({k: e[k] for k in ('rate','from_unit_id','to_unit_id','carries')}); E[e['stream_id']].setdefault('params',{}).update(e.get('params') or {})

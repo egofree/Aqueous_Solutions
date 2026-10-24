@@ -551,7 +551,7 @@
         "value": 6.6667,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid) | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: discharge / round trip 0.75 (FLOW_BATTERY 70-80 % mid) | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -560,7 +560,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18"
+      "notes": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (91d33f4) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18"
     },
     {
       "stream_id": "IA-ESS-ZNBR2-DIS",
@@ -580,7 +580,7 @@
         "value": 5.0,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: 120.0 kWh one cycle/d averaged over 24 h | value restored from graph Rev BH (fa1b4db): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: 120.0 kWh one cycle/d averaged over 24 h | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -589,7 +589,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (fa1b4db) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18"
+      "notes": "EFD chemical-storage / charge-discharge typing. presence placeholder->present, Rev BH (91d33f4) rate already restored; per first-principles audit correction 5, owner rulings 2026-10-18"
     },
     {
       "stream_id": "S22",
@@ -723,7 +723,7 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "Not additional generation. | restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "notes": "Not additional generation. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "params": {
         "rate_basis": "6.6667 - 5.0",
         "rate_source": "IA-ESS-ZNBR2-CHG minus IA-ESS-ZNBR2-DIS",
@@ -758,7 +758,7 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (fa1b4db) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

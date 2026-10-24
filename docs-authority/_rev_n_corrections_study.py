@@ -1,7 +1,7 @@
 """AQS-DUTY-012 Rev A. Rev N model corrections (graph Rev M -> Rev N).
 
 Applies the AQS-STUDY-SSE-001 Rev A work packages to the Rev M closure model (AQS-DUTY-011). The Rev M pipeline is
-re-run from the Rev L graph (commit d9cd071, or --base FILE) with these replacements:
+re-run from the Rev L graph (commit c4e1818, or --base FILE) with these replacements:
   WP-EC-REDOX  leach ORP stated vs SHE; Fe leaves the leach as Fe(III), Cu as Cu(II); oxidation states carried through
                the electron balance (returning Fe(II)/Cu(I) re-oxidised in the leach).
   WP-EC-CE     per-cell current partition: deposition + Fe(III) reduction + Cu(II) reduction + H2 evolution, with the
@@ -43,7 +43,7 @@ from _rev_m_closure_study import (A_RM_CE, A_RM_H2_CATCH, A_RM_ENTRAIN, A_RM_RIN
                                   CP_L, DHE, RevM, ceil_step, h2o_sat_per_kg_gas)
 
 REPO = os.path.abspath(os.path.join(HERE, ".."))
-REVM_REF = "57cb484"          # Rev M commit (local, share main)
+REVM_REF = "fa9ac07"          # Rev M commit (local, share main)
 M = er.M
 N_E = er.N_E
 EW_METALS = er.EW_METALS

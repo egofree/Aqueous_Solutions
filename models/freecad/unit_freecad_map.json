@@ -72,7 +72,7 @@
     },
     {
       "unit_id": "AFTERBURNER_FLUE",
-      "sector_id": "WET",
+      "sector_id": "GAS",
       "presence": "present",
       "enabled": true,
       "class": null,
@@ -120,7 +120,7 @@
     },
     {
       "unit_id": "BACKUP_GEN",
-      "sector_id": "BACKUP_GEN",
+      "sector_id": "ELEC",
       "presence": "present",
       "enabled": true,
       "class": "genset",
@@ -185,7 +185,7 @@
     },
     {
       "unit_id": "BMED_ACID",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "bmed",
@@ -203,7 +203,7 @@
     },
     {
       "unit_id": "BMED_BASE",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "bmed",
@@ -251,7 +251,7 @@
     },
     {
       "unit_id": "C29_RECYCLE",
-      "sector_id": "WET",
+      "sector_id": "OIL",
       "presence": "placeholder",
       "enabled": true,
       "class": "recycle",
@@ -341,7 +341,7 @@
     },
     {
       "unit_id": "CONTINUOUS_RECYCLE",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "placeholder",
       "enabled": true,
       "class": "recycle",
@@ -365,7 +365,7 @@
     },
     {
       "unit_id": "CRU",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "cru",
@@ -563,7 +563,7 @@
     },
     {
       "unit_id": "EW_1",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "ew_cell",
@@ -581,7 +581,7 @@
     },
     {
       "unit_id": "EW_2",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "ew_cell",
@@ -599,7 +599,7 @@
     },
     {
       "unit_id": "EW_9",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "ew_cell",
@@ -659,7 +659,7 @@
     },
     {
       "unit_id": "FLOAT_SINK",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "separator",
@@ -720,7 +720,7 @@
     },
     {
       "unit_id": "FUEL_CELL",
-      "sector_id": "FUEL_CELL",
+      "sector_id": "ELEC",
       "presence": "present",
       "enabled": true,
       "class": "pem_fc",
@@ -1099,7 +1099,7 @@
     },
     {
       "unit_id": "LEACH_CSTR_1",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "vessel",
@@ -1427,7 +1427,7 @@
     },
     {
       "unit_id": "POLISH_BANK",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "polish",
@@ -1511,7 +1511,7 @@
     },
     {
       "unit_id": "PV_ARRAY",
-      "sector_id": "ELEC_PV",
+      "sector_id": "ELEC",
       "presence": "present",
       "enabled": true,
       "class": "pv",
@@ -1528,7 +1528,7 @@
     },
     {
       "unit_id": "Q4_BUS",
-      "sector_id": "HAB",
+      "sector_id": "HEAT",
       "presence": "present",
       "enabled": true,
       "class": "header",
@@ -1641,7 +1641,7 @@
     },
     {
       "unit_id": "S13_CLASS_TREAT",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": null,
@@ -1659,7 +1659,7 @@
     },
     {
       "unit_id": "SALT_FEED",
-      "sector_id": "WET",
+      "sector_id": "DIGESTER",
       "presence": "present",
       "enabled": true,
       "class": "feed",
@@ -1766,11 +1766,11 @@
     },
     {
       "unit_id": "TERRACE_IRRIG",
-      "sector_id": "TRR",
-      "presence": "present",
-      "enabled": true,
+      "sector_id": null,
+      "presence": "retired",
+      "enabled": false,
       "class": "header",
-      "status": "mapped",
+      "status": "unmapped",
       "freecad_names": [
         "TERRACE_IRRIG_HDR_S"
       ],
@@ -1780,7 +1780,7 @@
         "Building",
         "Terraces"
       ],
-      "notes": "alias: graph TERRACE_IRRIG \u2192 TERRACE_IRRIG_HDR_S; related GH_IRRIG_HDR"
+      "notes": "unit retired 2026-10-18 with terrace irrigation; building_stack.py still draws TERRACE_IRRIG_HDR_S (open item)"
     },
     {
       "unit_id": "TFE_SYN",
@@ -2066,7 +2066,7 @@
     },
     {
       "unit_id": "ZNBR2",
-      "sector_id": "ZNBR2",
+      "sector_id": "ELEC",
       "presence": "present",
       "enabled": true,
       "class": "flow_battery",

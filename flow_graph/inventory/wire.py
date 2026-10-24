@@ -88,12 +88,12 @@ def rows(local=None, pmap=None):
         add('ELEC', 'MV', name, 'transformer MV to the PCC switchgear', 'MV power, 3 ph', '2 AWG', 'MV-105 Cu, 133 % insulation, tape shield', '15 kV', 3, 100.0, '34.7 A; minimum practical 15 kV size; 100 m (assumed)')
     # PV source circuits
     pv = N['PV_ARRAY']['params']; nmod = pv['count']; per = 18; ns = math.ceil(nmod/per)
-    add('ELEC_PV', 'roof array', 'PV_ARRAY', 'PV source circuit home run (+/-)', 'PV DC', '10 AWG', 'PV Wire, UL 4703, 2 kV', '2000 V DC', 2, 60.0, f'{nmod} modules / {per} per string (Voc x 1.1 < 1000 V, assumed) = {ns} strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)', ns)
-    add('ELEC_PV', 'roof array', 'PV_ARRAY', 'array EGC', 'equipment ground', '10 AWG', 'bare Cu', '-', 1, 60.0, 'NEC 690.45 / 250.122', ns)
+    add(N['PV_ARRAY']['sector_id'], 'roof array', 'PV_ARRAY', 'PV source circuit home run (+/-)', 'PV DC', '10 AWG', 'PV Wire, UL 4703, 2 kV', '2000 V DC', 2, 60.0, f'{nmod} modules / {per} per string (Voc x 1.1 < 1000 V, assumed) = {ns} strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)', ns)
+    add(N['PV_ARRAY']['sector_id'], 'roof array', 'PV_ARRAY', 'array EGC', 'equipment ground', '10 AWG', 'bare Cu', '-', 1, 60.0, 'NEC 690.45 / 250.122', ns)
     # hall lighting
     h = N['EXT_HALL']['params']['hvac']; inst = h['light_kW']/0.10; nc = math.ceil(inst/(0.8*20*277/1000))
     lsz = next(z for z in SIZES[1:] if 2*16.0*120.0/1000*RKM[z]/277*100 <= 3.0)    # X-ELS-06: 16 A (80 % of 20 A) over 120 m, single-phase drop <= 3 % (NEC 210.19 IN No. 4)
-    add('ELEC_PV', 'hall', 'EXT_HALL', 'lighting branch circuit 277 V', 'power, 1 ph + N + EGC', lsz, 'THHN/THWN-2 Cu in EMT', '600 V', 3, 120.0, f'installed {inst:.0f} kW (average {h["light_kW"]} kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); {lsz} for 3 % drop (X-ELS-06)', nc)
+    add(N['EXT_HALL']['sector_id'], 'hall', 'EXT_HALL', 'lighting branch circuit 277 V', 'power, 1 ph + N + EGC', lsz, 'THHN/THWN-2 Cu in EMT', '600 V', 3, 120.0, f'installed {inst:.0f} kW (average {h["light_kW"]} kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); {lsz} for 3 % drop (X-ELS-06)', nc)
     # grounding grid
     gs = json.loads(os.popen(f'cd {ROOT} && python3 docs-authority/_grounding_study.py').read().strip().splitlines()[-1])
     add('ELEC', 'grounding', 'GROUND_GRID', 'ring and mesh conductors', 'bare grounding', '4/0 AWG', 'bare soft-drawn Cu', '-', 1, gs['ring_m'] + gs['mesh_m'], f"AQS-ELEC-005 ring {gs['ring_m']:.0f} m + mesh {gs['mesh_m']:.0f} m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS)")

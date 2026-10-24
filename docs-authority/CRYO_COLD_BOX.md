@@ -10,7 +10,7 @@ Streams: AQS-STR-001 S02–S05 / S18 / S24 / S45 / S49–S50 / **S54–S56** / *
 Authority: root `09-air-liquefaction-cryogenic.md` (ALCRM narrative),
 `GAS_SYSTEM/Gas_System_overview.md`, AQS-EQP-CRY-001, AQS-BLD-001
 (L-1 east of CORE; FB_CRYO_PROCESS), AQS-HSE-001 (NFPA 2/55; MAQ),
-AQS-PHF-001, AQS-PWR-001 / AQS-FC-001 (CRYO_H2 consumers), AQS-EQP-GEO-001
+AQS-PHF-001, AQS-PWR-002 / AQS-FC-001 (CRYO_H2 consumers), AQS-EQP-GEO-001
 (Q4 peer), `freecad/cryo.py`, AQS-GAP-001 §7 item 5.
 
 | Rev | Change | Description | Date |
@@ -78,7 +78,7 @@ AQS-HSE-001 §3 — do not invent holdup kg):
 
 | Consumer | Stream | Authority |
 |---|---|---|
-| BACKUP_GEN | S45 | AQS-PWR-001 / AQS-EQP-GEN-001 |
+| BACKUP_GEN | S45 | AQS-PWR-002 / AQS-EQP-GEN-001 |
 | FUEL_CELL (PEM) | S49 | AQS-FC-001 / AQS-EQP-FC-001 |
 | H₂ dryer normal feed | S64 | AQS-VENT-001 Partial (closes continuous roof dump) |
 | Roof vent contingency | S24 | AQS-VENT-001 emergency only — not design dump |
@@ -157,7 +157,7 @@ See AQS-EQP-CRY-001 Rev C for the full equipment table. Summary:
 | Source | Stream | Role vs CRYO |
 |---|---|---|
 | Building HVAC | S06 | Q4 water into FARM / HAB — peer header |
-| GEO_HP | S44 | Same Q4 header (AQS-PWR-001) |
+| GEO_HP | S44 | Same Q4 header (AQS-PWR-002) |
 | FC_HX_Q4 | S53 | Same Q4 header (AQS-FC-001) |
 | **CRYO_HX_Q4** | **S54** | CRYO warm-reject contribution — **named HX only** |
 | CRYO_DED_COOL | S55 | **Not** on Q4 — dedicated loop |

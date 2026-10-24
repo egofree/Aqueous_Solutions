@@ -131,7 +131,7 @@ def emit_census(g: dict) -> str:
 
 
 def emit_sync_pointer(g: dict) -> str:
-    """Document hybrid: derived/ is generated; cad/STREAM+MASS remain sync targets."""
+    """Pointer text: derived/ is generated; STREAM_REGISTER.md and MASS_FLOW.md in docs-authority/ stay in step with it."""
     return "\n".join(
         [
             "# Derived STREAM / MASS sync pointer — WP-Ap3",

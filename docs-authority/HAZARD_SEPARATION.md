@@ -16,7 +16,7 @@ Texas note: as of late Sept 2026 several states including Texas enforce NEC 2026
 | D | 1 | MFG metal-aisle MET_AHU S62 + MET_HX_Q4 S63 (AQS-MFG-MET-001) | 2026-09-28 |
 | E | 1 | North dock + STAIR_SERVICE egress separation (AQS-SITE-001) | 2026-09-28 |
 | F | 1 | Vent closure: scrub/CRYO end states (AQS-VENT-001); no outdoor dump intent | 2026-09-28 |
-| G | 1 | AQS-CMP-001 compliance matrix; LEV/MET_SCRUB + CMP cross-ref | 2026-10-01 |
+| G | 1 | AQS-COMPL-001 compliance matrix; LEV/MET_SCRUB + CMP cross-ref | 2026-10-01 |
 
 ---
 
@@ -107,7 +107,7 @@ Stay under OSHA 1910.119 and EPA RMP where the process allows. If a cap is hit, 
 | NaClO3 solid | NFPA 400 Class 3 oxidizer MAQ | Store wet or in solution in CRU. No dry bag warehouse next to oil line |
 | Oil cuts | NFPA 30 / 1910.106 | Fractionator holdup + product totes; indoor flammable liquid < MAQ or H-3 room |
 
-Hydrogen generated at the cathode is a rate, not a tank, until CRYO_H2. Size the dryer, **BACKUP_GEN**, and **FUEL_CELL** so combined holdup stays under the cap (AQS-PWR-001 / AQS-FC-001).
+Hydrogen generated at the cathode is a rate, not a tank, until CRYO_H2. Size the dryer, **BACKUP_GEN**, and **FUEL_CELL** so combined holdup stays under the cap (AQS-PWR-002 / AQS-FC-001).
 
 ---
 
@@ -205,7 +205,7 @@ NFPA 69: keep H2 < 25% LFL by capture + dilution. Detection trips rectifiers and
 
 ## 8a. POWER yard H₂ consumers (GEN + FC + CRYO_H2)
 
-Co-located on L0 POWER yard (AQS-PWR-001 / AQS-FC-001):
+Co-located on L0 POWER yard (AQS-PWR-002 / AQS-FC-001):
 
 1. **CRYO_H2** hold feeds isolated branches to BACKUP_GEN (S45) and
    FUEL_CELL (S49). Do not common a single unisolated manifold into

@@ -334,7 +334,7 @@ def _emit_matplotlib(
 
 
 def _freecad_dir() -> Path | None:
-    """Hub cad/freecad or share models/freecad beside design_tool parent."""
+    """Hub models/freecad or share models/freecad beside design_tool parent."""
     parent = TOOL_ROOT.parent
     for c in (parent / "models" / "freecad", parent / "cad" / "freecad"):
         if c.is_dir():
@@ -703,7 +703,7 @@ Exported: {datetime.now(CT).strftime("%Y-%m-%d %H:%M:%S CT")}
             "site": rec.model.site.model_dump(mode="json"),
             "electrical": rec.model.electrical.model_dump(mode="json"),
             "scale_rules": rec.model.scale_rules.model_dump(mode="json"),
-            "note": "Overlay only — does not rewrite cad/freecad/params.py",
+            "note": "Overlay only — does not rewrite models/freecad/params.py",
             "topology_authority": "AQS-FLOW-GRAPH-001",
         }
         (pack_dir / "params.json").write_text(

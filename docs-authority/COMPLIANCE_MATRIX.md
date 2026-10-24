@@ -43,9 +43,9 @@ Out of scope: invented permits, PE stamps, root narrative folders.
 Egress study annex: AQS-EGR-001 (tracked under AQS-SITE-001 §6). Out of scope still includes
 (`06-energy-…` etc.).
 
-Cross-refs: `cad/HAZARD_SEPARATION.md`, `cad/SITE_ACCESS.md`,
-`ELECTRICAL.md` (hub), `cad/VENT_CLOSURE.md`, `cad/WELD_MAP.md`,
-`cad/DOCUMENTATION_STYLE.md` (AQS-DOC-001).
+Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.md`,
+`ELECTRICAL.md` (hub), `docs-authority/VENT_CLOSURE.md`, `docs-authority/WELD_MAP.md`,
+`docs-authority/DOCUMENTATION_STYLE.md` (AQS-DOC-001).
 
 ---
 

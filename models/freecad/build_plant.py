@@ -3,7 +3,7 @@
 
     /usr/bin/freecadcmd build_plant.py
 
-CAD authority: AQS-BLD-001 (cad/AUTHORITY.md). Wet-line local Z=0 is
+CAD authority: AQS-BLD-001 (docs-authority/AUTHORITY.md). Wet-line local Z=0 is
 L-1 FFL; this script shifts the process cassette by (PROCESS_DX,
 PROCESS_DY, Z_Lm1) into world coords (Z=0 = L0 grade). XY keeps the
 wet line inside SLAB_Lm1 (same bay grid as the plate).

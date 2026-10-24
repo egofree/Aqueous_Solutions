@@ -3,7 +3,7 @@
 Document number: AQS-CAD-002  
 
 For any agent building or editing the 3D model. Read this before touching
-`models/freecad/` (or hub `cad/freecad/`). Process authority is `GLOSSARY.md`
+`models/freecad/` (or hub `models/freecad/`). Process authority is `GLOSSARY.md`
 and related docs-authority equipment / process notes. This file is only how
 to drive FreeCAD 1.0 on the build host without repeating the failures from
 2026-09-26.
@@ -48,10 +48,10 @@ Do not debug the AppImage. Use 1.0.
 ## 2. Working directory and params
 
 ```
-cad/params.scad              # OpenSCAD millimetres
-cad/leach_cstr.scad
-cad/ew_cell.scad
-cad/assembly_wet.scad
+models/openscad/params.scad              # OpenSCAD millimetres
+models/openscad/leach_cstr.scad
+models/openscad/ew_cell.scad
+models/openscad/assembly_wet.scad
 models/freecad/params.py        # must match params.scad
 models/freecad/leach_cstr.py
 models/freecad/ew_cell.py
@@ -73,7 +73,7 @@ hyphens where FreeCAD forbids them): `LEACH_CSTR_1`, `EW_1`,
 ## 3. How to run a script
 
 ```bash
-cd models/freecad   # this repo; or hub cad/freecad/
+cd models/freecad   # this repo; or hub models/freecad/
 /usr/bin/freecadcmd leach_cstr.py
 ```
 
@@ -108,8 +108,8 @@ console; do not stare at the GUI.
 OpenSCAD is the independent check:
 
 ```bash
-openscad cad/leach_cstr.scad
-openscad cad/assembly_wet.scad
+openscad models/openscad/leach_cstr.scad
+openscad models/openscad/assembly_wet.scad
 ```
 
 Keep the two geometries the same topology. OpenSCAD may use `hull` and
@@ -120,7 +120,7 @@ the part.
 
 ## 4. Script template
 
-Every new generator in `cad/freecad/` starts from this. Do not “improve”
+Every new generator in `models/freecad/` starts from this. Do not “improve”
 the entry point.
 
 ```python
@@ -226,7 +226,7 @@ massing model.
 
 ## 6. Adding a unit
 
-1. Put dimensions in `cad/params.scad` and `models/freecad/params.py`.
+1. Put dimensions in `models/openscad/params.scad` and `models/freecad/params.py`.
 2. OpenSCAD module in the file that owns the parent (tank extras stay in
    `leach_cstr.scad`; aisle extras stay in `assembly_wet.scad`).
 3. Matching `Part::Feature` in the matching `*.py`.
@@ -244,7 +244,7 @@ exist — they do, as of Phase A 6. Build order is positional; see §6–§7.
 ## 7. Current rebuild sequence
 
 ```bash
-cd models/freecad   # this repo; or hub cad/freecad/
+cd models/freecad   # this repo; or hub models/freecad/
 /usr/bin/freecadcmd leach_cstr.py    # vessel, feed train, fork stubs
 /usr/bin/freecadcmd ew_cell.py       # one funnel cell
 /usr/bin/freecadcmd build_wet.py     # load tank, instance EW-1..9, bund,

@@ -160,7 +160,7 @@ hab drains.
 ## 10. Rebuild
 
 ```bash
-cd cad/freecad
+cd models/freecad
 /usr/bin/freecadcmd build_plant.py
 ```
 

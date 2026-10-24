@@ -47,5 +47,6 @@ sector ids are not live.
 - SCALE_DOWN_UNRECLAIMED has no rows yet for FOUNDRY, POLYMERS and HEAT.
 - Generators outside the pipeline (for example `_plc_arch.py`, `_commissioning.py`,
   `_startup.py`, `flow_graph/inventory/*.py`, `_instr_index.py`) leave outputs
-  that can lag the graph; CONTROL_ARCH and MOTOR_INVENTORY still show ELEC_PV.
-  Bringing them into `regen_manifest.json` is a separate change.
+  that can lag the graph; at the time of this note CONTROL_ARCH and MOTOR_INVENTORY
+  still used the old PV sector name. Resolved the same day: every generator now runs
+  from `regen_manifest.json`, and both pages name the ELEC sector.

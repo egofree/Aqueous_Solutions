@@ -108,7 +108,7 @@ def main():
 
     S.callout(ax, 3, 8.5, 55, 8.5, "MACHINE / PROCESS LIST (locked CAD names)", [
         "FISH_TANK · BIOFILTER · GROW_BED · FARM_SUMP · NUTRIENT_DOSE · LED_CANOPY",
-        "CAD: freecad/farm.py (per life plate). Detail: cad/process/FARM_EQUIPMENT.md (Rev B)",
+        "CAD: freecad/farm.py (per life plate). Detail: docs-authority/FARM_EQUIPMENT.md (Rev B)",
         "Nutrient chemistry sheet: AQS-PFD-NUT-001  ·  Terrace: AQS-PFD-TRR-001 / AQS-TRR-001",
         "FreeCAD bed / greenhouse solids = follow-up (not this pass).",
     ], fill="#f0fdf4", edge="#166534")

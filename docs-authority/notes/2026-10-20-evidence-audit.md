@@ -7,7 +7,7 @@ Scope: the five unit tasks whose evidence detection read a graph-side stand-in o
 test while the real plant-wide artifacts sat unread: 01 (closure duty §1), 04 (nozzle csv), 05 (line list
 bores), 08 (instrument loop membership), 10 (mfg model). Detection now lives in
 `docs-authority/_task_plan_gen.py` and reads the per-unit artifact itself on every regeneration.
-Graph state: Rev AC (`flow_graph/plant_flow_graph.json`), HEAD 23d849f, suite 43/43 before and after.
+Graph state: Rev AC (`flow_graph/plant_flow_graph.json`), HEAD 55d1033, suite 43/43 before and after.
 
 ## Method
 
@@ -60,7 +60,7 @@ Honest residual:
 ## T04 — nozzle schedule
 
 Old check: `nozzles/<UNIT>.csv` exists → tick "(bores not calculated)". Existence said nothing about
-coverage: the csvs are hand-issued static artifacts (commit fc93bc9, 2026-10-10; no generator in the
+coverage: the csvs are hand-issued static artifacts (commit 03f3ed5, 2026-10-10; no generator in the
 tree) and most list a subset of the unit's connections plus drain/vent utilities.
 New check: every process connection of the unit — present kg/d mass edges plus HL-/thermal kW edges
 (cables are not nozzles) — must have a row, counting a row for an edge where its service text equals

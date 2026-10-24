@@ -6,7 +6,7 @@ Date: 2026-10-01
 PFD: AQS-PFD-FC-001 (`fuel_cell_pfd.png`)  
 Authority: AQS-FC-001, `ELECTRICAL.md` (Sol-Ark BATT DC 160–700 V),
 `POWER/Power_System_overview.md` (legacy PEM narrative only),
-AQS-PWR-001 (BACKUP_GEN ≠ FC), AQS-STR-001 S49–S53,
+AQS-PWR-002 (BACKUP_GEN ≠ FC), AQS-STR-001 S49–S53,
 AQS-HSE-001 / AQS-MF-001 (H₂ MAQ; S24 closing), AQS-EQP-CRY-001,
 AQS-EQP-GEO-001 (Q4 peer).
 

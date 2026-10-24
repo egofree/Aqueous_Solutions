@@ -13,13 +13,13 @@ OpenSCAD: any `openscad` on PATH (AppImage or distro package). FreeCAD: `/usr/bi
 cd models/openscad/detail && bash build_stls.sh   # when script present
 cd ../../freecad && /usr/bin/freecadcmd build_plant.py
 
-# Local hub layout (not published): cad/detail + cad/freecad
+# Local hub layout (not published): models/openscad/detail + models/freecad
 ```
 
 `import_mfg.py` skips a missing STL. `stamp_materials.py` runs from
-`build_plant.py` against materials CSV in the models/tables tree.
+`build_plant.py` against `tables/materials.csv`.
 
-## Expected outputs (`models/export/detail/` or hub `cad/detail/stl/`)
+## Expected outputs (`models/export/detail/` or hub `models/openscad/detail/stl/`)
 
 Every detail `*.scad` compiles to a same-name `.stl`.
 
@@ -92,7 +92,7 @@ When OpenSCAD is available on the **build host** (AppImage or package on
 `PATH`), compile STLs before the FreeCAD plant import:
 
 ```
-cd models/openscad/detail   # or cad/detail/ in a local hub layout
+cd models/openscad/detail   # or models/openscad/detail/ in a local hub layout
 bash build_stls.sh
 ```
 

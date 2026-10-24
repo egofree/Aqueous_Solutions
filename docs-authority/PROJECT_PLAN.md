@@ -49,7 +49,7 @@ A missing measurement stays named on the open line.
 
 Aqueous cells do not make aluminum, magnesium, calcium, lithium, titanium, silicon, or the rare earths. Anodes do not use iridium.
 
-The frame standard is the parameter set in AQS-MOD-001.
+The frame standard is the parameter set in AQS-MOD-002.
 
 Section 8 of a duty is the gap list. A unit with a gap in section 8 is not finished.
 

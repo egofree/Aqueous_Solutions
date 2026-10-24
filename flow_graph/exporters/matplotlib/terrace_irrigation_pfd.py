@@ -115,7 +115,7 @@ def main():
     S.callout(ax, 2, 3.5, 54, 7.0, "MACHINE / MASSING NAMES", [
         "OVERFLOW_SPILL_ROOF · OVERFLOW_DOWNCOMER_* · OVERFLOW_OUTFALL_*",
         "OVERFLOW_TERRACE_{S|N|E|W}_B{n} · OVERFLOW_APRON_*",
-        "Detail: cad/TERRACE_LANDSCAPE.md (AQS-TRR-001)  ·  Farm: AQS-EQP-FRM-001",
+        "Detail: docs-authority/TERRACE_LANDSCAPE.md (AQS-TRR-001)  ·  Farm: AQS-EQP-FRM-001",
         "FreeCAD solids for beds / greenhouse = later pass (REMAINING_BLD).",
     ], fill="#f0fdf4", edge="#166534")
 

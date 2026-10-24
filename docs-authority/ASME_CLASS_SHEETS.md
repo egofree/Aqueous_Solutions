@@ -3,9 +3,9 @@
 Document number: AQS-ASM-001  
 Revision: C  
 Date: 2026-10-01  
-Authority: AQS-WLD-001, AQS-CMP-001 (CMP-ASM-*), AQS-EQP-* equipment
+Authority: AQS-WLD-001, AQS-COMPL-001 (CMP-ASM-*), AQS-EQP-* equipment
 lists, AQS-VENT-001 / AQS-CRY-002 / AQS-WTR-001, AQS-MeOH-001,
-AQS-REQ-KW-001, `cad/process/*`.  
+AQS-REQ-KW-001, `docs-authority/*`.  
 **Not a PE stamp. Not a U-stamp package.** Study MAWP / relief below are
 **labeled study requirements** from first principles + typical ASME
 practice + stand-in vessel ratings — not purchased U-stamp data.

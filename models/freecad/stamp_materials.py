@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Stamp Material / Form / Spec from cad/materials.csv onto FreeCAD objects.
+"""Stamp Material / Form / Spec from tables/materials.csv onto FreeCAD objects.
 
 STL has no materials. This is the embed path: custom properties on
 Part::Feature and Mesh::Feature. Combo View → Data after a rebuild.

@@ -5,7 +5,7 @@ Revision: F
 Date: 2026-10-24  
 Authority: AQS-AUTH-001; style AQS-DOC-001; scale AQS-SCALE-001
 (`SCALE_M = 1.0`); streams AQS-STR-001; mass-flow AQS-MF-001;
-compliance themes AQS-CMP-001; flow graph AQS-FLOW-GRAPH-001;
+compliance themes AQS-COMPL-001; flow graph AQS-FLOW-GRAPH-001;
 plan AQS-PLAN-UI-001 Rev N (`unify_then_reshape`).  
 **Stage = architecture lock.** Not shipped software. Not a PE stamp.
 
@@ -15,8 +15,8 @@ plan AQS-PLAN-UI-001 Rev N (`unify_then_reshape`).
 | B | Sector taxonomy + surplus MVS | Sector Definition classes; MVS = closed loops + surplus export; modular export; Odysseus internal-only; CERN-OHL-S for UI+model | 2026-10-01 |
 | B+ | Catalogue pointer | AQS-SEC-001 Rev A issued (`SECTOR_DEFINITIONS.md`); §11.1 item 3 closed by catalogue | 2026-10-01 |
 | C | Colony MVS + all ESS | MVS = self-sustaining colony (manufacture, habit, self-copy, scale); all three ESS peers required; disabled ESS → unreclaimed-resource / incomplete-closure gaps | 2026-10-01 |
-| D | unify_then_reshape | Typed plant graph = sole topology authority; fold/project `candidate_mvs`; matplotlib demoted to optional exporters; roadmap A′→B′→C→D→E; 3D FreeCAD bias (Three.js only with written decision); Odysseus out of runtime; stack re-eval `planning/STACK_REEVAL_2026-10-01.md` | 2026-10-01 |
-| E | Unified-engine wiring | Working UI on the unified parametric system: read-only `/system-tree`, `/params`, `/regen-status` endpoints; ParamsPanel / TreeTogglePanel / RegenStatusBadge; four-level sandbox toggles (sector/system/subsystem/unit) resolving most-specific-wins server-side; regen receipt as the provenance the badge reads (commits eedb79f, d44e7de, 5024743) | 2026-10-19 |
+| D | unify_then_reshape | Typed plant graph = sole topology authority; fold/project `candidate_mvs`; matplotlib demoted to optional exporters; roadmap A′→B′→C→D→E; 3D FreeCAD bias (Three.js only with written decision); Odysseus out of runtime; stack re-eval the unpublished planning note STACK_REEVAL_2026-10-01 | 2026-10-01 |
+| E | Unified-engine wiring | Working UI on the unified parametric system: read-only `/system-tree`, `/params`, `/regen-status` endpoints; ParamsPanel / TreeTogglePanel / RegenStatusBadge; four-level sandbox toggles (sector/system/subsystem/unit) resolving most-specific-wins server-side; regen receipt as the provenance the badge reads (commits 5f77bee, f64ad84, fc083f8) | 2026-10-19 |
 | F | Sector names | Header revision brought in line with this table (it still said D). Examples use graph Rev AC sector ids (AQS-SEC-001 Rev H): DIGESTER for WET; PV_ARRAY, ZNBR2 and BACKUP_GEN are units in ELEC. No architecture change. | 2026-10-24 |
 
 Licence: **CERN-OHL-S-2.0** for CAD, MVS model, authority docs, design-tool UI, and public/cloud surfaces. Full freedom of information — no separate UI/cloud licence.
@@ -205,7 +205,7 @@ Each sector row **shall** declare `sector_definition` per §3.1.
 | Continuous derate | Allowed on continuous scale classes; discrete classes jump |
 | Energy storage trade | MeOH / ZnBr₂ / pumped hydro = **all three required in MVS** (redundancy); sandbox may disable → unreclaimed-resource gaps |
 | Cycle views | C, O, H₂O, … with greying of off-cycle geometry and line-weight emphasis on the active cycle |
-| Code flags | Flag the **most-restrictive** applicable NFPA / IBC / ISO theme on footprint and height (AQS-CMP-001 / AQS-EGR-001 themes; not clause text) |
+| Code flags | Flag the **most-restrictive** applicable NFPA / IBC / ISO theme on footprint and height (AQS-COMPL-001 / AQS-EGR-001 themes; not clause text) |
 | Crew | UI input (occupancy / life-load driver) |
 | `SITE_LAT` | UI input (climate / insolation / geothermal context) |
 | Gap panel | List missing Sector Definitions and unclosed `stream_id`s |
@@ -244,7 +244,7 @@ the authoring authority until a published remote exists.
 ### 3.11 Odysseus (internal meta only)
 
 1. Odysseus (**AQS-ORG-001**) **shall** remain a **separate**, local-only
-   planning/research layer for the **meta project** (designing the design
+   planning and research layer for the **meta project** (designing the design
    system).
 2. The **end-user design UI** **shall not** depend on Odysseus at runtime
    (no required deep-links, no shared database, no AGPL data in the MVS
@@ -272,7 +272,7 @@ UI source, and public/cloud distributions. No alternate UI/cloud licence.
 | Host | Local process → GitHub package → cloud API | §3.8; Phase C blocked until graph unify |
 | Meta tracker | Odysseus **out** of runtime | AQS-ORG-001 local meta only; CERN-OHL-S for product |
 
-Re-eval record (planning-only): `planning/STACK_REEVAL_2026-10-01.md`.
+Re-eval record (planning-only): the unpublished planning note STACK_REEVAL_2026-10-01.
 
 ### 4.1 Alternatives weighed (brief)
 
@@ -490,7 +490,7 @@ FastAPI surface (informative). All paths under `/api/v1`.
       {
         "theme": "IBC_height_or_NFPA_footprint",
         "controlling": "most_restrictive",
-        "refs": ["AQS-CMP-001", "AQS-EGR-001"]
+        "refs": ["AQS-COMPL-001", "AQS-EGR-001"]
       }
     ]
   }
@@ -549,8 +549,8 @@ scaffold (Phase B) are **complete**. Forward phases:
 adapter + layer SVG + process PFD bridges issued (WP-A10 Closed). Unify of
 `candidate_mvs` **WP-Ap1 done** — generated projection of `plant_flow_graph.json` (`export_candidate_mvs.py`).
 
-Planning: `planning/DESIGN_UI_COMPLETION_PLAN.md` (AQS-PLAN-UI-001 Rev N);
-stack re-eval `planning/STACK_REEVAL_2026-10-01.md`.
+Planning: the unpublished planning note DESIGN_UI_COMPLETION_PLAN (AQS-PLAN-UI-001 Rev N);
+stack re-eval the unpublished planning note STACK_REEVAL_2026-10-01.
 
 Local host **shall** remain usable at every phase. Odysseus is **not**
 a phase dependency.
@@ -561,8 +561,6 @@ a phase dependency.
 
 - Pointer: `docs-authority/AUTHORITY.md` (AQS-AUTH-001) → this file (**AQS-UI-001**).
 - Scale truth remains `docs-authority/SCALE_MODEL.md` / `freecad/params.py`.
-- Share mirror via `rebuild.py --sync` into
-  `share/aqueous-solutions/docs-authority/`.
 - Planning audits (local planning artefacts, not published) are separate from
   CAD authority and are not mirrored into the public share tree.
 - No git commit from agent passes unless the operator explicitly requests one.
@@ -606,10 +604,10 @@ a phase dependency.
 | SCALE_MODEL.md | AQS-SCALE-001 | Growth rules |
 | STREAM_REGISTER.md | AQS-STR-001 | `S##` IDs |
 | MASS_FLOW.md | AQS-MF-001 | Closed-loop claims |
-| COMPLIANCE_MATRIX.md | AQS-CMP-001 | Code themes |
+| COMPLIANCE_MATRIX.md | AQS-COMPL-001 | Code themes |
 | CONTINUOUS_KW_REQUIREMENTS.md | AQS-REQ-KW-001 | Electrical match inputs |
 | ODYSSEUS_PLANNING.md | AQS-ORG-001 | Separate meta planning (not UI runtime) |
-| REBUILD.md | AQS-REB-001 | PFD / plant / share sync |
+| REBUILD.md | AQS-REB-001 | Regeneration pipeline |
 | SECTOR_DEFINITIONS.md | AQS-SEC-001 | sector_id → Sector Definition catalogue |
 | MeOH_TRAIN.md | AQS-MeOH-001 | MeOH ESS / process peer |
 | Local planning artefacts (not published): MVS_GAP / SECTOR_CAPACITY / LEGACY_PROFILE audits | AQS-MVS-GAP-001 / AQS-AUD-001 / AQS-GAP-001 | Planning audits; not CAD authority |
@@ -628,4 +626,4 @@ most-specific-wins server-side (`store.apply_overrides`) against
 `python3 -m flow_graph.param.regen`, and checks staleness through the same evaluator
 (`--check-only`) so a GET stays side-effect free. Panel and precedence details:
 `design_tool/README.md` and `design_tool/web/README.md`. Implementation commits:
-eedb79f (tree), d44e7de (regen), 5024743 (UI).
+5f77bee (tree), f64ad84 (regen), fc083f8 (UI).

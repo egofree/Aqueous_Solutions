@@ -26,7 +26,7 @@ if [ ! -x /usr/bin/freecadcmd ]; then
   exit 1
 fi
 
-# Path shims: builders assume hub-style cad/materials.csv and cad/detail/stl/
+# Path shims: builders assume hub-style tables/materials.csv and models/openscad/detail/stl/
 if [ -f "$SHARE/tables/materials.csv" ]; then
   ln -sfn ../tables/materials.csv "$MODELS/materials.csv"
   echo "linked models/materials.csv -> tables/materials.csv"

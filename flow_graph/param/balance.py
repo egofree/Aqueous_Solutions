@@ -98,16 +98,16 @@ def physics(g):
     # T7 crew water and the grey/black train (R10a, 2026-10-18): Rev AC cut HABITATION's crew-4 outputs when the farm rebase
     #    killed their endpoints (HAB_WASH, COMPOST_TOILET, HAB_GALLEY) and diverted the grey water into NUTRIENT_DOSE, where the
     #    by-difference closure pumped it into the leach (the reported water-long +515 kg/d). Restored on live endpoints, BH crew-4
-    #    values verbatim (fa1b4db): urine/fecal/galley organics to BLACK_DIGEST (X-SAN-01: the blackwater digester is the surviving
+    #    values verbatim (91d33f4): urine/fecal/galley organics to BLACK_DIGEST (X-SAN-01: the blackwater digester is the surviving
     #    barrier 1; the COMPOST_TOILET pre-stage is retired), grey + wash water on S12 to GREY_TREAT (HAB_WASH retired, the wash
     #    rides S12). Closures: HABITATION on S12, BLACK_DIGEST on IA-BLK-GREY (gas 0.10 / cake 0.67 / nutrient split 0.90 are BH
     #    verbatim graph rates; dewater/pasteur/alk-hold barriers retired, splits carried at the digester), GREY_TREAT on IA-GREY-01
     #    (grey sludge to the leach, Rev M pattern), the treated-water draw S29 stays the BH still feed 104.50.
     if all(k in E for k in ('S12', 'IA-BLK-GREY', 'IA-GREY-01')):
         put('S12', v('S12') + _unit_resid(g, 'HABITATION'),
-            'crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; fa1b4db)')
+            'crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4)')
         put('IA-BLK-GREY', v('IA-BLK-GREY') + _unit_resid(g, 'BLACK_DIGEST'),
-            'released digest liquor by difference (BH 18.43 from the retired BLACK_ALK_HOLD + direct urine/fecal water, fa1b4db)')
+            'released digest liquor by difference (BH 18.43 from the retired BLACK_ALK_HOLD + direct urine/fecal water, 91d33f4)')
         put('IA-GREY-01', v('IA-GREY-01') + _unit_resid(g, 'GREY_TREAT'),
             'grey sludge to the leach by difference (Rev M: sized to the continuous neighbor draw; was 242.65 at BH)')
     for u, k, why in (('GROW_BED', 'IA-BED-COMP', 'trim less the photosynthetic O2'), ('COMPOST', 'IA-COMP-OUT', 'compost passes the trim'), ('NUTRIENT_DOSE', 'IA-NUT-LEACH', 'nutrient surplus by difference')):
@@ -140,7 +140,7 @@ def physics(g):
     if 'S01' in E:
         # R10a: the UPW header passes its draws (BH 67.30 = IA-UPW-HAB 0.80 + IA-UPW-USE 66.50; Rev AC had 95.00). Runs after
         # the T4 shift so the header tracks the distillate/remin splits; d cancels (S25 and IA-UPW-REMIN shift together).
-        put('S01', v('S01') + _unit_resid(g, 'BMED_UPW_POLISH'), 'UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, fa1b4db; Rev AC 95.00 overdrew the header)')
+        put('S01', v('S01') + _unit_resid(g, 'BMED_UPW_POLISH'), 'UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, 91d33f4; Rev AC 95.00 overdrew the header)')
     a = _unit_resid(g, 'CRYO_ASU')
     if 'IA-LEACH-ASU' in E:
         # R8: the leach dissolved-gas edge and its Henry bound died with CRYO_ASU in Rev AC; the assert stays for the live path

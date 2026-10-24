@@ -29,6 +29,7 @@ from ..models import (
 )
 from ..sector_definitions import (
     ESS_PEER_SECTOR_IDS,
+    RETIRED_SECTOR_IDS,
     SECTOR_CATALOGUE,
     UNRECLAIMED_RESOURCE_REASON,
 )
@@ -47,7 +48,9 @@ _PARALLEL_H2_CONSUMERS = ["S45", "S49", "S74"]
 
 
 def _enabled_sector_ids(model: MvsModel) -> set[str]:
-    return {s.sector_id for s in model.sectors if s.enabled}
+    """Enabled sector ids; a saved sandbox that still uses a retired id enables the sectors that now hold its units."""
+    ids = {s.sector_id for s in model.sectors if s.enabled}
+    return ids | {now for sid in ids for now in RETIRED_SECTOR_IDS.get(sid, {}).get("now", [])}
 
 
 def _enabled_units(model: MvsModel) -> set[str]:
@@ -256,12 +259,9 @@ def _report_gaps(model: MvsModel) -> list[GapModel]:
             )
 
     # Missing Sector Definition classes that the enabled graph may still need.
-    # Re-derived from SECTOR_CATALOGUE (AQS-SEC-001 Rev E + Rev AC sector
-    # refresh, 2026-10-18): every definition carried by a required sector
-    # must be present on some enabled sector. The former hardcoded list kept
-    # demanding 'Energy Production (Electrical)' after its only sector
-    # (ELEC_PV) became the PV_ARRAY unit in ELEC, leaving the all-on
-    # baseline permanently infeasible via missing_sector_definition.
+    # Derived from SECTOR_CATALOGUE (AQS-SEC-001): every definition carried
+    # by a required sector must be present on some enabled sector. Deriving
+    # the list, rather than typing it, keeps it in step with the catalogue.
     present_defs = {
         str(s.sector_definition) for s in model.sectors if s.enabled
     }
@@ -424,8 +424,8 @@ def _electrical_match(model: MvsModel) -> tuple[dict[str, Any], list[ResidualIte
     pv_kw = None
     if elec.pv_count is not None and elec.pv_module_kw is not None:
         pv_kw = elec.pv_count * elec.pv_module_kw
-        # PV is counted only when its unit is on (ELEC_PV sector deleted at
-        # the Rev AC pivot; PV_ARRAY is a generation-role unit in ELEC). A
+        # PV is counted only when its unit is on (PV_ARRAY is a
+        # generation-role unit in ELEC). A
         # model without a PV_ARRAY unit row has nothing to disable, so the
         # module product stands. Double-count guard kept: when PV_ARRAY
         # already books its nameplate as a generation-role unit, the
@@ -496,8 +496,7 @@ def _electrical_match(model: MvsModel) -> tuple[dict[str, Any], list[ResidualIte
 def _surplus_stub(model: MvsModel) -> dict[str, SurplusItem]:
     """Surplus from FARM/WTR/DIGESTER·MFG·FAB/PV_ARRAY vs AQS-SUR-001 study thresholds.
 
-    Energy gate is the PV_ARRAY unit (ELEC_PV sector deleted at the Rev AC
-    pivot; PV is a unit in ELEC).
+    Energy gate is the PV_ARRAY unit in ELEC.
     """
     enabled = _enabled_sector_ids(model)
     thr = model.mvs_criteria.surplus_thresholds
@@ -552,12 +551,10 @@ def _surplus_stub(model: MvsModel) -> dict[str, SurplusItem]:
             water_note = "WTR on but S01/S21 rates null — water surplus unknown."
 
     # Goods: study exportable from metals/polymer when DIGESTER·MFG(+FAB)
-    # (WET renamed DIGESTER at the Rev AC sector pivot; the WET test is
-    # kept for legacy sandboxes)
     goods_val = None
     goods_pass = None
     goods_note = "DIGESTER/MFG off — materials gap."
-    if "DIGESTER" in enabled or "WET" in enabled or "MFG" in enabled:
+    if "DIGESTER" in enabled or "MFG" in enabled:
         s08 = rates.get("S08")
         if s08 is not None:
             goods_val = 0.25 * float(s08) + (12.0 if "MFG" in enabled else 0.0)
@@ -576,8 +573,7 @@ def _surplus_stub(model: MvsModel) -> dict[str, SurplusItem]:
         else:
             goods_note = "DIGESTER/MFG on; S08 null — goods surplus unknown."
 
-    # Energy: (target−need)×study_sun_h — gated on the PV_ARRAY unit
-    # (ELEC_PV sector deleted at Rev AC; PV_ARRAY is a unit in ELEC).
+    # Energy: (target−need)×study_sun_h — gated on the PV_ARRAY unit in ELEC.
     pv_unit_on = next(
         (
             bool(getattr(u, "enabled", True))
@@ -859,7 +855,7 @@ def solve(model: MvsModel, request: SolveRequest | None = None, sandbox_id: str 
         "P0 solver stub — residuals/gaps/surplus structure only.",
         "Does not claim full plant balance closure.",
         "Study / stand-in / authority-doc rates labeled; not PE-stamped nameplates.",
-        "Scale-down map: AQS-SCALE-UR-001 (cad/SCALE_DOWN_UNRECLAIMED.md).",
+        "Scale-down map: AQS-SCALE-UR-001 (docs-authority/SCALE_DOWN_UNRECLAIMED.md).",
     ]
 
     mvs_equivalent = False  # WP-A8: never true while incomplete / Partial self-copy
@@ -946,7 +942,7 @@ def solve(model: MvsModel, request: SolveRequest | None = None, sandbox_id: str 
         CodeFlagModel(
             theme="IBC_height_or_NFPA_footprint",
             controlling="most_restrictive",
-            refs=["AQS-CMP-001", "AQS-EGR-001"],
+            refs=["AQS-COMPL-001", "AQS-EGR-001"],
         )
     ]
 

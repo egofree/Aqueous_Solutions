@@ -3,7 +3,7 @@
 Document number: AQS-STR-001  
 Revision: K  
 Date: 2026-10-01  
-Authority: AQS-MF-001, sector AQS-EQP-*; style AQS-DOC-001; compliance AQS-CMP-001 (vent/H₂ themes).
+Authority: AQS-MF-001, sector AQS-EQP-*; style AQS-DOC-001; compliance AQS-COMPL-001 (vent/H₂ themes).
 
 > **WP-Ap3 derived sync:** Generated excerpt lives at
 > `flow_graph/derived/STREAM_REGISTER_DERIVED.md` (from `plant_flow_graph.json`
@@ -34,7 +34,7 @@ Out: intra-aisle recycle (EW overflow, float return, C29) — remain on line PFD
 | B | 1 | Add S25–S30 water purification (AQS-WTR-001) | 2026-09-27 |
 | C | 1 | Add S31–S39 fab wet-reagent forks (AQS-EQP-FAB-RGN-001) | 2026-09-27 |
 | D | 1 | Add S40–S42 terrace irrigation / return (AQS-TRR-001) | 2026-09-27 |
-| E | 1 | Add S43–S48 geothermal / backup genset (AQS-PWR-001) | 2026-09-27 |
+| E | 1 | Add S43–S48 geothermal / backup genset (AQS-PWR-002) | 2026-09-27 |
 | F | 1 | Add S49–S53 PEM fuel cell (AQS-FC-001) | 2026-09-28 |
 | G | 1 | Add S54–S56 CRYO heat / dedicated cool / room vent (AQS-CRY-002) | 2026-09-28 |
 | H | 1 | Add S57–S63 metal forming (AQS-MFG-MET-001) | 2026-09-28 |
@@ -135,7 +135,7 @@ Water purification authority: AQS-WTR-001. Roof–catch (S21–S23) is
 inventory; VCD (S25/S28) is regeneration — both required.
 Terrace landscape: AQS-TRR-001. S40–S41 are clean overflow / return;
 S42 is fertigated greenhouse drain only (not open-landscape irrigation).
-Geothermal / backup power: AQS-PWR-001. S43–S44 thermal loop; S45–S47 H₂ genset;
+Geothermal / backup power: AQS-PWR-002. S43–S44 thermal loop; S45–S47 H₂ genset;
 S48 ORC electric stub (method TBD after GHEX survey — AQS-AUD-001 §10.4; no invent kW).
 PEM fuel cell: AQS-FC-001. S49–S50 H₂/O₂ to FC; S51 DC to Sol-Ark BATT;
 S52 product water; S53 FC heat → Q4. FC ≠ BACKUP_GEN (S47).

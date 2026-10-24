@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """AQS-PFD-GEO-001 — Geothermal GHEX + heat pump; ORC electric stub.
 
-Authority: AQS-PWR-001, AQS-EQP-GEO-001, POWER overview (100 kW narrative),
+Authority: AQS-PWR-002, AQS-EQP-GEO-001, POWER overview (100 kW narrative),
 ELECTRICAL.md (Q4 HVAC). No invented M1 electric kW.
 """
 from __future__ import annotations
@@ -98,7 +98,7 @@ def main():
 
     S.callout(ax, 2, 3.5, 96, 7.0, "MACHINE / DOC NAMES", [
         "GEO_GHEX · GEO_LOOP_PUMP · GEO_HP · GEO_ORC (stub) · GEO_HDR",
-        "AQS-PWR-001 · AQS-EQP-GEO-001 · POWER/Power_System_overview.md · ELECTRICAL.md HVAC 1.5 kW class",
+        "AQS-PWR-002 · AQS-EQP-GEO-001 · POWER/Power_System_overview.md · ELECTRICAL.md HVAC 1.5 kW class",
         "SCALE_M=1.0  ·  no invented M1 electric kW  ·  CERN-OHL-S-2.0",
     ], fill="#fafaf9", edge="#57534e")
 

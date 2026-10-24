@@ -242,7 +242,7 @@ anchors; landscape authority does not change band geometry.
 ## 8. Rebuild
 
 ```bash
-cd cad/freecad
+cd models/freecad
 /usr/bin/freecadcmd build_plant.py
 ```
 

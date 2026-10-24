@@ -308,7 +308,7 @@ Script `docs-authority/_hot_draw_coolers.py`.
 
 - IA-POT-01: superseded by X-RSZ-06. The potable makeup now comes from REMIN at 25 °C; the hot leach water bleed goes to VCD_TRAIN on IA-LEACH-VCD (123.296 kg/d, 85 °C), which is an evaporator duty, not a cooler. No coil. VCD_TRAIN wetted parts on this feed are Ti Gr 2 or PVDF-lined (acid chloride at 85 °C, §9 basis); the condensate is polished by BMED_UPW_POLISH before REMIN.
 - IA-BMED-03 and IA-BMED-04: air cannot reach 35 °C at the 37.8 °C design dry bulb. They take a water-cooled trim exchanger on the GEO_GHEX ground loop. X-RSZ-04 books it at the resized flows: IA-BMED-03-TRIM 0.780 kW and IA-BMED-04-TRIM 1.027 kW (1.81 kW), taken from IA-E-LEACH, rejected by IA-GHEX-REJ. Outlet 35 °C.
-- The IA-BMED-03/04 conditions and the IA-POT-01 composition were corrected (5c311be, X-RSZ-06).
+- The IA-BMED-03/04 conditions and the IA-POT-01 composition were corrected (21160ce, X-RSZ-06).
 
 ## 11. Galvanic and stray current, EW aisle, Rev K
 

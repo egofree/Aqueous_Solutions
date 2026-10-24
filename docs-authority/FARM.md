@@ -3,7 +3,7 @@
 Document number: AQS-DUTY-044
 Revision: A
 Date: 2026-10-09
-Authority: farm model a532d2e. Study. Not a PE stamp.
+Authority: farm model efd8c6f. Study. Not a PE stamp.
 
 The enzyme is nitrogenase. It reduces N₂ to ammonia at 16 ATP per N₂, and it is killed by oxygen. The legume hides it in the nodule with leghemoglobin. Azolla hides it in the leaf cavity with Anabaena. Free-living fixers in the compost are the third and the smallest.
 

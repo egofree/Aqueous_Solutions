@@ -124,7 +124,7 @@ def main():
 
     S.callout(ax, 2, 2.8, 96, 6.2, "MACHINE / DOC NAMES", [
         "FUEL_CELL · FC_H2_MANIFOLD · FC_O2_MANIFOLD · FC_DCDC · FC_HX_Q4 · FC_PRODUCT_H2O · FC_PURGE · FC_HUMIDIFIER",
-        "AQS-FC-001 · AQS-EQP-FC-001 · ELECTRICAL.md · AQS-PWR-001 (GEN peer) · AQS-GAP-001 §7 item 3",
+        "AQS-FC-001 · AQS-EQP-FC-001 · ELECTRICAL.md · AQS-PWR-002 (GEN peer) · AQS-GAP-001 §7 item 3",
         "Placement: L0 POWER yard near SOL_ARK_60K / ZnBr2  ·  SCALE_M=1.0  ·  CERN-OHL-S-2.0",
     ], fill="#fafaf9", edge="#57534e")
 

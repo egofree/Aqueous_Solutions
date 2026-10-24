@@ -10,6 +10,6 @@ Not a stamped shop pack. No WPS, tolerance stack, or ballooned BOM.
 Nozzle tags match AQS-NZ-001 / AQS-NZ-002. Joints stay on AQS-WLD-001.
 
 PDF: `iso_fab_drawings.pdf`  
-PNGs: `cad/iso/AQS-ISO-000.png` … `013.png`
+PNGs: `iso/AQS-ISO-000.png` … `013.png`
 
-Rebuild: `python3 pfd_scripts/iso_fab.py`
+Rebuild: none. The script that drew this set was retired with it, so the set is not regenerated.

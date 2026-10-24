@@ -114,7 +114,7 @@ def main():
     S.callout(ax, 2, 7.5, 52, 7.5, "QUALITY TARGETS (doc 03 — grounded)", [
         "Resistivity > 18 MΩ·cm   ·   TOC < 5 ppb   ·   particles > 0.5 µm < 100 / L",
         "Feed conductivity < 1 µS/cm class (S01).  Silica / boron / metals suite = TBD placeholder.",
-        "Mass rates TBD — no invented balance.  Equip list: cad/process/FAB_UPW.md",
+        "Mass rates TBD — no invented balance.  Equip list: docs-authority/FAB_UPW.md",
     ], fill="#fffbeb", edge="#b45309")
 
     S.callout(ax, 56, 7.5, 42, 7.5, "SHEETS / NAMING", [

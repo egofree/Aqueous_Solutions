@@ -11,7 +11,7 @@ markdown in this repository. Not a claim of KSC or IET issuance.
   Guide, Kennedy Space Center.
 - IET, *A Guide to Technical Report Writing* (© The IET 2015; box PDF).
 - **House style authority:** `docs-authority/DOCUMENTATION_STYLE.md` (**AQS-DOC-001**).
-- Compliance theme map: `docs-authority/COMPLIANCE_MATRIX.md` (**AQS-CMP-001**).
+- Compliance theme map: `docs-authority/COMPLIANCE_MATRIX.md` (**AQS-COMPL-001**).
 
 KSC-DF-107 governs wording of WARNING / CAUTION / NOTE and general
 engineering prose. The IET guide governs report structure when a

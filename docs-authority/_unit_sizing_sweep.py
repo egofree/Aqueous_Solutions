@@ -48,7 +48,7 @@ for line in open('docs-authority/TASK_PLAN.md'):
     if m and cur and not cur.startswith('X-'):
         open_units.add(m.group(1))
 # ownership: the sweep also owns any AQS-SIZE doc of a present unit still carrying a graph-dump
-# strike (the 1aba493 leak) - otherwise units whose -02 box closed get orphaned, poisoned docs
+# strike (the 3321f37 leak) - otherwise units whose -02 box closed get orphaned, poisoned docs
 DUMP_MARKERS = ('"stream_id"', "'stream_id'", 'notes_rev_', '"schema_version"', "'schema_version'")
 owned_units = set(open_units)
 for uid, u in N.items():
@@ -119,7 +119,7 @@ for uid, cls, L, W, H, V, Dv, Hc, mat, bas in rows:
             f"## 3. Material\n{mat}.\n\n## 4. Fit\nEnvelope-consistent by construction; check vs cad/stl envelope STL (test_envelopes gate).\n")
     open(f'docs-authority/sizing/{uid}.md', 'w').write(body)
 # self-scrub: an embedded graph dump marks every doc here - and once committed, poisons
-# every diff that touches the file (1aba493 exhaust; found 2026-10-21, fixed in-generator)
+# every diff that touches the file (3321f37 exhaust; found 2026-10-21, fixed in-generator)
 for uid, *_ in rows:
     body = open(f'docs-authority/sizing/{uid}.md').read()
     hit = [m for m in DUMP_MARKERS if m in body]

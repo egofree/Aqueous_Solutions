@@ -148,6 +148,6 @@ this graph. WP-C2 GitHub publish not started.
 - Audit: AQS-FLOW-AUD-001 (maintainer planning record, not in this repository)
 - Legacy CAD: `docs-authority/STREAM_REGISTER.md`, `docs-authority/MASS_FLOW.md` (sync targets)
 - Authority lock: `docs-authority/AUTHORITY.md`
-- Plan: `planning/DESIGN_UI_COMPLETION_PLAN.md` (WP-Ap1…Ap3; A′ exit)
+- Plan: the unpublished planning note DESIGN_UI_COMPLETION_PLAN (WP-Ap1…Ap3; A′ exit)
 - Contract: `check_authority_contract.py` / `test_authority_contract.py`
 - Derived sync: `derived/SYNC_POINTER.md`

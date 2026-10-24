@@ -1,6 +1,6 @@
 """Production route sheets for the units missing docs-authority/fab/<UNIT>.md (unit task 13).
 
-The house fab format was established by commit 3e6ac9b (one sheet per unit) and re-grounded
+The house fab format was established by commit d4af263 (one sheet per unit) and re-grounded
 by the X-MFG-31 lane (fab routes for the six feed-blocked reaction chambers, grounded in duty
 sections, graph design rows and nozzles). 46 roster units never got a sheet - exactly the set
 whose duty sheets arrived later or whose design state is standby/pending. This generator
