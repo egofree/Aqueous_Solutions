@@ -128,7 +128,6 @@
  "pending": [
   "docs-authority/ASME_CODE_INTENT.md",
   "docs-authority/ASSUMPTIONS_REGISTER.md",
-  "docs-authority/AUTHORITY.md",
   "docs-authority/BACKUP_GEN_EQUIPMENT.md",
   "docs-authority/BALANCE_RECONCILIATION.md",
   "docs-authority/BENCH_TEST_H2_COMPRESSOR.md",
@@ -136,7 +135,6 @@
   "docs-authority/BLOCK_FAMILY_PLANS.md",
   "docs-authority/BOUGHT_SPECS.md",
   "docs-authority/BUILDING_STACK.md",
-  "docs-authority/BUILD_3D_FROM_FLOW.md",
   "docs-authority/CAMPUS_PLAN.md",
   "docs-authority/CO2_HEADER_DUTY.md",
   "docs-authority/CODE_BASIS.md",

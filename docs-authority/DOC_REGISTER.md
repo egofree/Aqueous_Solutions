@@ -25,7 +25,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 
 | Number | Page | Rev | Date | Title | Status |
 | --- | --- | --- | --- | --- | --- |
-| AQS-3D-BUILD-001 | `docs-authority/BUILD_3D_FROM_FLOW.md` | G | 2026-10-01 | Building 3D models from the plant flow graph | current |
+| AQS-3D-BUILD-001 | `docs-authority/BUILD_3D_FROM_FLOW.md` | H | 2026-10-24 | Building 3D models from the plant flow graph | current |
 | AQS-3D-STACK-001 | `docs-authority/STACK_3D_DECISION.md` | A | 2026-10-01 | Stack decision — 3D and diagram surfaces | current |
 | AQS-ASM-001 | `docs-authority/ASME_CLASS_SHEETS.md` | D | 2026-10-24 | Pressure vessel inventory and process piping class sheets | current |
 | AQS-ASM-002 | `docs-authority/INSTALL_SEQUENCE.md` | A | 2026-10-21 | Install sequence | current |
@@ -36,7 +36,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-ASSAY-TI-MO | `notes/ASSAY_TI_MO.md` | A | 2026-10-16 | Missing assays — TI_CELL and MO_CELL | current |
 | AQS-AUD-GRAPH-001 | `docs-authority/GRAPH_AUDIT.md` | — | 2026-10-02 | Graph audit | current |
 | AQS-AUDIT-001 | `notes/pathway_audit.md` | A | 2026-10-09 | Pathway audit | current |
-| AQS-AUTH-001 | `docs-authority/AUTHORITY.md` | X | 2026-10-01 | CAD authority lock | current |
+| AQS-AUTH-001 | `docs-authority/AUTHORITY.md` | Y | 2026-10-24 | CAD authority lock | current |
 | AQS-BAL-KROLL | `notes/KROLL_BALANCE.md` | A | 2026-10-16 | Kroll loop — placeholder balance | current |
 | AQS-BLD-001 | `docs-authority/BUILDING_STACK.md` | F | 2026-10-01 | Building stack — vertical campus | current |
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | A | 2026-10-15 | General arrangement clash check | current |
@@ -258,7 +258,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-RED-002 | `docs-authority/HYDRO_SITING.md` | B | 2026-10-16 | Pumped-hydro reservoir siting trade study | current |
 | AQS-REF-CSK-001 | `docs-authority/OSE_CSK_ALIGNMENT.md` | B | 2026-10-24 | OSE Civilization Starter Kit — Aqueous alignment map | current |
 | AQS-REG-001 | `docs-authority/DOC_REGISTER.md` | B | 2026-10-24 | Document number register | current |
-| AQS-REG-002 | `docs-authority/ASSUMPTIONS_REGISTER.md` | A | 2026-10-15 | Assumptions register | current |
+| AQS-REG-002 | `docs-authority/ASSUMPTIONS_REGISTER.md` | B | 2026-10-24 | Assumptions register | current |
 | AQS-REL-001 | `docs-authority/RELIEF.md` | — | — | Relief | current |
 | AQS-REM-001 | `docs-authority/internal/REMAINING.md` | A | 2026-10-10 | Remaining designs | superseded by AQS-PLAN-007 |
 | AQS-REM-002 | `docs-authority/internal/REMAINING_CHECKLIST.md` | E | 2026-10-01 | Remaining work checklist | superseded by AQS-PLAN-007 |
