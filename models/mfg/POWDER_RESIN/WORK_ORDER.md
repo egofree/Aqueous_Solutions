@@ -1,6 +1,6 @@
 # Work order POWDER_RESIN
 
-Authority: AQS-DUTY-073 fluoro train (Q-013 reopened; A-M-283). LIVE unit - feed landed.
+Authority: AQS-DUTY-073 fluoro train (Q-013 reopened; A-M-283). Live unit: its feed stream is connected.
 
 1. Set the pin mill on its motor base; align the belt; guard it.
 2. Mount the cyclone classifier; connect the mill duct, fines drop and collector bin (PE liner).

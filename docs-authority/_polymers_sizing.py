@@ -80,7 +80,7 @@ A('| F_RECOVER (DIGESTER) -> HF_GEN | F_RECOVER has no in-edge at Rev AC; no flu
 A('| HF_GEN | feed blocked (above) | HF 0.5 kg/d |')
 A('| VDF_SYN / TFE_SYN | monomer route needs HF + Cl2 from CRU (AQS-SEL-FP); F feed blocked | VDF 0.15 / TFE 0.10 kg/d |')
 A('| POLY_F | monomers 0 | PVDF 0.14 / PTFE 0.09 kg/d at ~90 % yield |')
-A('| POWDER_RESIN / (POLYF share of PELLET) | feed 0 | powder 0.15 kg/d lining stock |')
+A('| POWDER_RESIN / (the POLY_F share of PELLET) | feed 0 | powder 0.15 kg/d lining stock |')
 A('')
 A('The Cl2 loop for the monomer route closes on CRU (CRU_TO_VDF/TFE 0 with the train idle); wet-bench HF rides '
   'IA-HF-SRC 1.5 kg/d from the leach (AQS-DUTY-016).')

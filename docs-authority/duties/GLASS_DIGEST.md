@@ -18,4 +18,4 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 8. Open items. The vessel has not been built, so this is not a measured volume.
 
-9. Revision (NaOH balance, owner decision 2026-10-15; AQS-PAR-001). NaOH draw re-derived from SiO2 + 2 NaOH -> Na2SiO3 + H2O (GREENWOOD) on the dissolved cullet (IA-GLASS-03 30.0 less S08G 26.2 kg/d, all as SiO2, bounding): 126.5 mol/d, IA-BASE-01 25.30 kg/d at 20 wt% (was 593 mol/d, 118.43 kg/d, no stated basis). IA-DIG-LIQ follows.
+9. Revision (NaOH balance, owner decision 2026-10-15; AQS-PAR-001). NaOH draw derived again from SiO2 + 2 NaOH -> Na2SiO3 + H2O (GREENWOOD) on the dissolved cullet (IA-GLASS-03 30.0 less S08G 26.2 kg/d, all as SiO2, bounding): 126.5 mol/d, IA-BASE-01 25.30 kg/d at 20 wt% (was 593 mol/d, 118.43 kg/d, no stated basis). IA-DIG-LIQ follows.

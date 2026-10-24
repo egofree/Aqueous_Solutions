@@ -6,7 +6,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.
-- CO₂ + 3 H₂ → CH₃OH + H₂O. MW 44.009, 2.016, 32.042, 18.015. CO₂ limits. Methanol is S75. Water is IA-MEOH-H2O. Hydrogen that does not react does not enter; it is S45.
+- CO₂ + 3 H₂ → CH₃OH + H₂O. Molar masses 44.009, 2.016, 32.042 and 18.015 g/mol. CO₂ limits. Methanol is S75. Water is IA-MEOH-H2O. Hydrogen that does not react does not enter; it is S45.
 
 3. Material. Held. Pressure and temperature are not on the graph. Above 200 °C with H₂ partial pressure, API 941 applies: no carbon steel; 316L or Cr-Mo from the Nelson curves. AQS-REV-H2-001. Synthesis 50 bar a, 250 °C (study); 316L per API 941 (AQS-REV-H2-001 section 5).
 

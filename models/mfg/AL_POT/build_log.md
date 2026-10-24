@@ -2,7 +2,7 @@
 
 Date: 2026-10-21. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
 Model source: `models/mfg/AL_POT/al_pot.py` + `params.json`; drawing set `models/mfg/AL_POT/drawings/`;
-build script chain run headless (~45 s wall on the agent box):
+build script chain run headless (about 45 s elapsed on the build machine):
 
     $CADQUERY_PYTHON al_pot.py         # build + checks + bom.csv + STEP/STL
     $CADQUERY_PYTHON draw_al_pot.py    # 8 SVG sheet sources (notes bands, no title block yet)

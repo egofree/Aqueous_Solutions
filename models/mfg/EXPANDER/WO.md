@@ -11,7 +11,7 @@ Status: M2. The source builds and exports one closed solid. Not accepted (M3): n
 | W4 Nozzles | N1 and N2 drawn at DN15 because the bore is not calculated. Relief boss on +Z with a 3.6 mm bore |
 | W5 Fasteners | `fasteners.csv`. Sizes are assumptions. Crankcase holes not drawn |
 | W6 Materials | 316L throughout, corrosion allowance 0 mm, from duty section 3 |
-| W7 Drawings | Not made. Needs FreeCAD TechDraw on the operator box |
+| W7 Drawings | Not made. Needs a machine with FreeCAD TechDraw |
 | W8 Exports | `export/expander.step`, 13 parts. `export/expander.stl`, ASCII, 2472 facets: the parts fused into one valid solid, closed and manifold (one outer shell, two internal cavities), 8.17 L. Stored through Git LFS. `cad/stl/EXPANDER.stl` is replaced with it |
 | W9 BOM | `bom.csv`, generated, mass from 7.99 g/cm³ |
 | W10 Route | F-MACH. Cut and drill baseplate, fabricate crankcase box, bore and hone cylinder, turn piston, shaft, and flywheel, weld nozzle lines, pressure test the cylinder and head at 1.3 × 550 kPa (assumption, test factor not on the graph) |

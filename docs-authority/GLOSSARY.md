@@ -823,6 +823,74 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {URL -- Uniform resource locator: a web address.}
 
+{BPE -- Boiling point elevation: the rise in boiling point of a solution over that of the pure solvent.}
+
+{CA -- Corrosion allowance: extra wall thickness added to a pressure design for metal lost in service.}
+
+{CMP -- Chemical-mechanical planarization: polishing a wafer flat with an abrasive slurry.}
+
+{CW -- Cooling water.}
+
+{DFW -- Dallas/Fort Worth: the NOAA weather station whose degree-day data are used for heating and cooling.}
+
+{DIN -- Deutsches Institut für Normung, the German standards body.}
+
+{DOT -- The graph description language of Graphviz, one of the published diagram formats.}
+
+{DR -- Dimension ratio of a plastic pipe: outside diameter divided by wall thickness (ASTM D3035).}
+
+{EC -- Electronically commutated: a fan motor with a built-in electronic drive.}
+
+{EGC -- Equipment grounding conductor (NFPA 70).}
+
+{FLC -- Full-load current of a motor (NFPA 70 article 430).}
+
+{GF -- Georg Fischer, a maker of plastic valves and fittings.}
+
+{ISM -- Induction skull melting: melting in a water-cooled segmented copper crucible, in which a solid skin of the charge protects the melt from the crucible.}
+
+{KI -- Potassium iodide.}
+
+{MAU -- Makeup air unit: conditions the outdoor air that replaces exhaust.}
+
+{MSS -- Manufacturers Standardization Society of the Valve and Fittings Industry, publisher of MSS SP-58 for pipe supports.}
+
+{MVC -- Mechanical vapour compression: evaporation driven by compressing the vapour produced.}
+
+{NMN -- Nomex-Mylar-Nomex: a laminated slot liner for motor windings.}
+
+{PCC -- Power control centre: the main low-voltage switchgear fed from the transformer.}
+
+{PFRP -- Process to further reduce pathogens: the class A sludge treatment of 40 CFR 503.}
+
+{POE -- Polyolester: a synthetic refrigeration compressor oil.}
+
+{PSG -- Phosphosilicate glass: the phosphorus-doped oxide left on a solar cell after diffusion and removed by etching.}
+
+{PSU -- Power supply unit.}
+
+{SCR -- Silicon-controlled rectifier (thyristor), used for heater power control.}
+
+{SD -- Hydrostatic design stress of a polyethylene tank wall (ASTM D1998).}
+
+{SFP -- Specific fan power: fan electrical power per unit airflow (ISO 16798-3).}
+
+{SRT -- Solids retention time: the mean time solids stay in a digester or reactor.}
+
+{TDS -- Total dissolved solids.}
+
+{TFFN -- A fixture wire type of NFPA 70: thermoplastic insulation with a nylon jacket.}
+
+{TMAH -- Tetramethylammonium hydroxide, a photoresist developer.}
+
+{TS -- Total solids: the dry mass fraction of a sludge or slurry.}
+
+{USBM -- United States Bureau of Mines.}
+
+{VLE -- Vapour-liquid equilibrium.}
+
+{WCB -- A cast carbon steel grade for valve bodies (ASTM A216 Grade WCB).}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

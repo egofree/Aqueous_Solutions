@@ -4,7 +4,7 @@ Class: press; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1500×800×1500 mm;
 service line: machine horizontal profile press, N+1 former of ROLL; connected_kW 15; backup_of ROLL; outage_d 2; press_t 50; container_mm 60.
 
-Internals: duty sheet: "60. 3. Material. H13 extrusion die + tool-steel container liner on a 50 t press (graph design press_t). Basis:" [docs-authority/duties/EXTRUDE.md]
+Internals: duty sheet: "3. Material. H13 extrusion die + tool-steel container liner on a 50 t press (graph design press_t). Basis: hor" [docs-authority/duties/EXTRUDE.md]
 Material: H13 extrusion die + tool-steel container liner on a 50 t press (graph design press_t). Basis: horizontal profile press N+1 of ROLL (graph design): hot-work die steel class per ASM_V1 / DIETER1988. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: billet preheater induction sleeve if the profile class moves hot (a separate duty entry). (continues on the duty sheet)
 
 Nozzles: 4 process connections per docs-authority/nozzles/EXTRUDE.csv

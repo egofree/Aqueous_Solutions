@@ -169,7 +169,10 @@ for u in UNITS:
     if hit:
         path, kind, s, rx = hit
         ctx = rx.search(s)
-        frag = re.sub(r'\s+', ' ', s[max(0, ctx.start() - 60): ctx.end() + 80]).strip()
+        lo, hi = max(0, ctx.start() - 60), min(len(s), ctx.end() + 80)
+        frag = re.sub(r'\s+', ' ', s[lo:hi]).strip()
+        if lo > 0 and ' ' in frag: frag = frag.split(' ', 1)[1]        # quote whole words only
+        if hi < len(s) and ' ' in frag: frag = frag.rsplit(' ', 1)[0]
         defined[u] = f'{kind}: "{frag[0:110]}" [{path}]'
         continue
     # rule 3: class-level none with basis (keyword-guarded - the scan above precedes)

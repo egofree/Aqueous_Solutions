@@ -4,7 +4,7 @@ Class: caster; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1500×800×1500 mm;
 service line: machine two-strand horizontal semi-continuous caster; feed_kg_d 31.71; billet_kg_d 13.24; ingot_kg_d 21.71; strands 2; mould water-cooled co
 
-Internals: duty sheet: "(graph design): the water-cooled copper mould is the caster hot face; the water side is already the issued M1 " [docs-authority/duties/CONT_CAST.md]
+Internals: duty sheet: "design): the water-cooled copper mould is the caster hot face; the water side is already the issued M1 family " [docs-authority/duties/CONT_CAST.md]
 Material: Water-cooled copper mould (the graph-design primary), demineralized-water jacket on the issued Q3/Q4 M1 loop family; graphite feed launder; steel jacket casing. Basis: two-strand horizontal semi-continuous caster (graph design): the water-cooled copper mould is the caster hot face; the water side is already the issued M1 family (AQS-STD-002 section 12.1; A-M-199). (continues on the duty sheet)
 
 Nozzles: 5 process connections per docs-authority/nozzles/CONT_CAST.csv

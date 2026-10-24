@@ -17,7 +17,7 @@ Graph-bridged via `../../pfd_bridge.py` where noted in
 
 - **Not required** to consume the share package.
 - **PNGs are not shipped** in this publish tree.
-- Working PNG copies may exist in a local hub (not published); do not
+- Working PNG copies may exist in a local working folder (not published); do not
   copy them into this tree when refreshing share.
 
 ## Optional local regenerate

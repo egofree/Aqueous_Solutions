@@ -4,7 +4,7 @@ Class: furnace; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1000×1000×1500 mm;
 service line: service vacuum induction skull melt (ISM), N+1 diverse of IND_MELT; design_case_kg 2; connected_kW 15; backup_of IND_MELT; outage_d 2; duty_
 
-Internals: duty sheet: "ll melt); outage_basis IND_MELT relining/repair outage 2 d (crucible life 20-50 heats, AQS-SIZE-FOUNDRY sec. C" [docs-authority/duties/VAC_IND.md]
+Internals: duty sheet: "melt); outage_basis IND_MELT relining/repair outage 2 d (crucible life 20-50 heats, AQS-SIZE-FOUNDRY sec. Cruc" [docs-authority/duties/VAC_IND.md]
 Material: Water-cooled copper induction crucible (no wetted-refractory interface) + 304L vacuum chamber; ceramic-fibre insulation on the shell. Basis: vacuum induction skull/ISM melt of Ti sponge, N+1 diverse of IND_MELT, 2 kg batch class (graph design, A-M-282): the water-cooled copper face keeps the Ti melt out of contact with any refractory (CRC_TI melting point 1668 C; INDUCT_SOCX power class). (continues on the duty sheet)
 
 Nozzles: 5 process connections per docs-authority/nozzles/VAC_IND.csv

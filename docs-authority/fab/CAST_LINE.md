@@ -4,7 +4,7 @@ Class: caster; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1500×800×1500 mm;
 service line: machine permanent-mould cast line; pour_kg_d 3; moulds 2; table_L_mm 700.
 
-Internals: duty sheet: "h design; A-M-199 class): graphite is the standard Cu-mould hot face at the melt temperature and is chemically" [docs-authority/duties/CAST_LINE.md]
+Internals: duty sheet: "design; A-M-199 class): graphite is the standard Cu-mould hot face at the melt temperature and is chemically i" [docs-authority/duties/CAST_LINE.md]
 Material: Graphite permanent moulds with steel backing platens (Cu pour, melt 1085 C per CRC_CU); graphite launder; steel tilt table. Basis: permanent-mould Cu casting at the 3 kg/d pour (graph design; A-M-199 class): graphite is the standard Cu-mould hot face at the melt temperature and is chemically indifferent to the melt (SCHACHT2004 ch. 8; DIETER1988 tool class for the platens). (continues on the duty sheet)
 
 Nozzles: 6 process connections per docs-authority/nozzles/CAST_LINE.csv

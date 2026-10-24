@@ -4,7 +4,7 @@ Class: furnace; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1000×1000×1500 mm;
 service line: service RF preheat/hold unit, N+1 at equal melt duty of IND_MELT; connected_kW 5; backup_of IND_MELT; outage_d 2; crucible_kg 10; freq_kHz 1
 
-Internals: sizing sheet: "D_MELT, connected_kW=5.0, backup_of=IND_MELT, outage_d=2.0, crucible_kg=10.0, freq_kHz=100-400 | envelope 1000" [docs-authority/sizing/RF_HEAT.md]
+Internals: sizing sheet: "connected_kW=5.0, backup_of=IND_MELT, outage_d=2.0, crucible_kg=10.0, freq_kHz=100-400 | envelope 1000 x 1000 " [docs-authority/sizing/RF_HEAT.md]
 Material: Clay-graphite crucible + ceramic-fibre hot face + 4 mm CS casing (same melt-shop lining class as IND_MELT); the RF coil enclosure keeps the water-cooled copper coil out of the melt space. Basis: RF preheat/hold at equal melt duty of IND_MELT, 100-400 kHz through-coil (graph design, A-M-282): same refractory-chemistry environment as IND_MELT (SCHACHT2004, INDUCT_SOCX, CRC_* melting points). (continues on the duty sheet)
 
 Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled

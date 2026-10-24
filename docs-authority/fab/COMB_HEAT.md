@@ -4,7 +4,7 @@ Class: furnace; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1000×1000×1500 mm;
 service line: service combustion reheating furnace (C5-C10 fuel class), tertiary N+1 of IND_MELT; connected_kW 0.05; thermal_kW 30; backup_of IND_MELT; ou
 
-Internals: duty sheet: "FFGAS). 3. Material. Alumina-silica brick + castable crown hot face on a mild-steel shell; 310S burner tube; f" [docs-authority/duties/COMB_HEAT.md]
+Internals: duty sheet: "3. Material. Alumina-silica brick + castable crown hot face on a mild-steel shell; 310S burner tube; flue path" [docs-authority/duties/COMB_HEAT.md]
 Material: Alumina-silica brick + castable crown hot face on a mild-steel shell; 310S burner tube; flue path dry above the acid dew point into MET_SCRUB. Basis: tertiary N+1 fuel-fired melt heat (graph design): combustion hot-face class per SCHACHT2004 ch. 10; the fuel class is the plant C5-C10 product (duty section 1); combustion stoichiometry per TURNS2012. (continues on the duty sheet)
 
 Nozzles: 3 process connections per docs-authority/nozzles/COMB_HEAT.csv

@@ -1,6 +1,6 @@
 # Work order FILM_CAST
 
-Authority: AQS-DUTY-073 fluoro train (Q-013 reopened; A-M-283). LIVE unit - feed landed.
+Authority: AQS-DUTY-073 fluoro train (Q-013 reopened; A-M-283). Live unit: its feed stream is connected.
 
 1. Set the drive/extruder bed; align the D25 barrel to the 200 mm die.
 2. Fit the D150 chill roll and pull roll with water circuits.
