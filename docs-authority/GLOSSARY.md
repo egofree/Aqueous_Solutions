@@ -4,6 +4,36 @@ Locked names are in SMALL CAPS as they appear on the drawings. Do not invent syn
 
 Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, design-tool UI, PFDs/MFD/EFD layers, sector taxonomy, and authority docs are listed here with expansion and plant role. No invented rates or nameplates.
 
+## Project identifiers and conventions
+
+{AQS-xxx-nnn -- Document number. Every controlled document carries one, with a revision letter and a date (e.g. AQS-SEC-001 Rev H). DOC_REGISTER.md lists them.}
+
+{Rev (graph) -- Revision of the plant flow graph, AQS-FLOW-GRAPH-001. Letters run A … Z, then AA, AB, AC. Rev AC is current. A document that says "checked against graph Rev X" was last reconciled at that graph revision. Document revisions are separate and also use letters.}
+
+{X-xxx-nn -- Task id in TASK_PLAN.md (AQS-PLAN-007). The middle part is the work group, e.g. X-PAR parametric model, X-PIP piping, X-SAF safety, X-MAT materials, X-INV building-block inventories, X-ELS electrical, X-GOV governance. TASK_PLAN.md lists all groups.}
+
+{Triage tag -- Every open task in TASK_PLAN.md is tagged desk (can be closed from files in this repository), hardware (needs a built item, a test or a site measurement) or owner (waits on a project decision recorded in OPEN_QUESTIONS.md).}
+
+{A-M-nnn -- Curated assumption, kept in assumptions_manual.json with its basis, sensitivity and the test that would replace it. ASSUMPTIONS_REGISTER.md also lists scanned entries: A-G-xxxxxx (study and assumed values in the graph), A-P-xxxxxx (model parameters in models/mfg/*/params.json) and A-D-xxxxxx (document lines that name an assumption).}
+
+{Q-nnn -- Open question in OPEN_QUESTIONS.md, with the default the work proceeded on.}
+
+{S## -- Inter-block stream id from the stream register (AQS-STR-001), e.g. S64. Intra-block edges in the graph use prefixed ids: IA-* (intra-aisle process edges, e.g. IA-ACID-01) and HL-* (heat-ladder edges, e.g. HL-HX8-Q4-A).}
+
+{Unit id -- Upper-case name of a unit in the graph, e.g. LEACH_CSTR_1. It names the duty sheet (duties/LEACH_CSTR_1.md), the sizing sheet, the P&ID and any CAD model. Unit ids are locked; see the Locked units section.}
+
+{Sector id -- Upper-case name of a sector, the top level of the system tree (flow_graph/system_tree.yaml). The current sectors are listed in Plant sectors and systems below.}
+
+{Study -- A value or document that is the model's current best calculation, not a certified or stamped figure.}
+
+{By design -- A derived file that is intentionally not regenerated from the current graph, with the reason recorded in DERIVED_REVISIONS.md.}
+
+{Owner ruling / project decision -- A design choice made by the project owner and recorded with its date, usually in OPEN_QUESTIONS.md, a dated note under notes/ or the document it affects. It is the basis for a value where no reference or calculation applies.}
+
+{MVS -- Minimum viable system: the smallest set of sectors that closes every loop (mass, energy, life support) and still exports a surplus. See SECTOR_DEFINITIONS.md and DESIGN_TOOL_ARCHITECTURE.md.}
+
+{Bounding case -- The feed assay or operating case that sets the largest duty for a unit. Units are sized for it so the plant stays feedstock-agnostic.}
+
 ## Process and chemistry
 
 {Anolyte -- Oxidizing chloride liquor on the anode side of an EW or CRU cell. In this plant it is Salria (HCl + NaClO₃, high ORP). Wall: CPVC or PVDF. Not PP, not HDPE, not bare metal.}
@@ -359,7 +389,17 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {MF / AQS-MF -- Mass-flow authority (AQS-MF-001). Closed-loop claims and surplus language for mass paths.}
 
-{WET -- Process sector: L-1 leach / EW / BMED / CRU / polish wet line. Primary mass recycle.}
+{DIGESTER -- Process sector: L-1 leach / EW / BMED / CRU / polish line; 150 kg/d feed basis. Primary mass recycle. Named WET before graph Rev AC.}
+
+{WET -- Former name of the DIGESTER sector, renamed at graph Rev AC. Older documents and dated notes still use it.}
+
+{FOUNDRY -- Process sector: smelting pots, casting, forging and rolling. Goods-surplus train with MFG and FAB.}
+
+{POLYMERS -- Process sector: fluoropolymer synthesis, polyolefin and form factors.}
+
+{HEAT -- Utility sector: heat-ladder batteries Q1–Q4, Q4_BUS and Q4 services (AQS-HEAT-LADDER-001).}
+
+{PUMPED_HYDRO -- Energy storage sector (gravity): roof reservoir to catch tank through a penstock turbine-pump. One of the three ESS peers.}
 
 {OIL -- Process sector: dryer → pyro → fractionator hydrocarbon cuts; afterburner flue to CRYO.}
 
@@ -470,6 +510,24 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {HSE -- Health, safety, and environment. Hazard separation and fire-area authority (AQS-HSE-001).}
 
 ## Compliance and codes
+
+{HAZOP -- Hazard and operability study. Worksheets in HAZOP.md, actions in HAZOP_ACTION_REGISTER.md.}
+
+{SIF / SIL -- Safety instrumented function and its safety integrity level (IEC 61511). Listed in CAUSE_EFFECT.md.}
+
+{P&ID -- Piping and instrumentation diagram. One sheet per unit under pid/.}
+
+{ITP -- Inspection and test plan (ITP.md).}
+
+{WPS / PQR -- Welding procedure specification and the procedure qualification record that supports it (WPS_REGISTER.md).}
+
+{VFD -- Variable-frequency drive.}
+
+{ESD -- Emergency shutdown.}
+
+{GA -- General arrangement: the plant layout model and drawings.}
+
+{RO / EDI -- Reverse osmosis and electrodeionization, the UPW polish steps.}
 
 {AHJ -- Authority Having Jurisdiction. Local building/fire official whose edition and amendments govern permits; design docs are not a PE stamp.}
 
