@@ -1,0 +1,18 @@
+## What this changes
+
+<!-- One or two sentences. Name the TASK_PLAN item(s) (e.g. X-PAR-02, FOUNDRY-AL_POT-11) or the issue. -->
+
+## Evidence
+
+<!-- The file(s) that prove the change: calculation, generated document, test. -->
+
+## Checklist
+
+- [ ] `pytest flow_graph/` passes
+- [ ] `python3 -m flow_graph.param.regen --check` passes (no stale derived files)
+- [ ] `python3 flow_graph/check_authority_contract.py` passes
+- [ ] Generated files were regenerated, not hand-edited
+- [ ] New numbers cite a reference registered in `flow_graph/param/refs.py` or an entry in `docs-authority/assumptions_manual.json`
+- [ ] TASK_PLAN regenerated if a task closed (`python3 docs-authority/_task_plan_gen.py`)
+- [ ] No secrets, personal data, machine-specific paths, or agent scratch files added
+- [ ] I agree that this contribution is made under CERN-OHL-S-2.0 (see CONTRIBUTING.md)

@@ -1,0 +1,35 @@
+name: Design defect
+description: A number, sizing, material, safety case, or drawing that is wrong or unsupported.
+labels: ["design"]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: Unit id, stream id, document number (AQS-...), or file path.
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What is wrong
+      description: State the value or statement in the repository and what it should be.
+    validations:
+      required: true
+  - type: textarea
+    id: basis
+    attributes:
+      label: Basis
+      description: The calculation, standard clause, or published reference that supports the correction. Give the edition and clause or page.
+    validations:
+      required: true
+  - type: dropdown
+    id: safety
+    attributes:
+      label: Safety relevance
+      options:
+        - None
+        - Could make a built unit unsafe
+        - Code or standard non-compliance
+    validations:
+      required: true

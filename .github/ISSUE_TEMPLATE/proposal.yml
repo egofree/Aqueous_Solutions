@@ -1,0 +1,23 @@
+name: Proposal
+description: Propose a new unit, a process change, a new task, or a change to the design rules.
+labels: ["proposal"]
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change, and which sector, unit, or task it affects (TASK_PLAN id if one exists).
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: The need it meets, with numbers where possible (mass, energy, cost, redundancy).
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Published references, standards, or open designs it would rely on.
