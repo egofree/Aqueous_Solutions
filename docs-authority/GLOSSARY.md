@@ -998,6 +998,12 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {QMS -- Quality management system, for example one certified to ISO 9001}
 
+{OEM -- Original equipment manufacturer}
+
+{HVDC -- High-voltage direct current}
+
+{LVDC -- Low-voltage direct current}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}
