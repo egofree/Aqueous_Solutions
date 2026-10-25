@@ -13,9 +13,14 @@ Authority: AQS-WTR-001, `07-water-air-habitation.md`,
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | Stub list; purification design is next pass | 2026-09-27 |
-| B | 1 | Schedule grey / black / VCD / ED / remin; align AQS-WTR-001 | 2026-09-27 |
+| B | 1 | Schedule grey / black / VCD / ED / remin; align AQS-WTR-001 |
+| C | Rewritten to the documentation style guide (AQS-DOC-002): purpose and scope added. No unit, stream or rate changed. | 2026-10-25 | 2026-09-27 |
 
-## 1. Locked CAD units (habitation)
+## 1. Purpose and scope
+
+This page lists the habitation water equipment: the locked CAD units inside the HABITATION envelope, the water-purification units they share with the WTR sector, the streams between them, and the regeneration command. Unit designs are AQS-WTR-001; streams are AQS-STR-001.
+
+## 2. Locked CAD units (habitation)
 
 | Tag | Duty |
 |---|---|
@@ -26,7 +31,7 @@ Authority: AQS-WTR-001, `07-water-air-habitation.md`,
 | HAB_WASTE | Grey / black collect → treatment |
 | WETROOM_HAB_NW | Toilet + shower bank (fitout) |
 
-## 2. Water purification units (AQS-WTR-001)
+## 3. Water purification units (AQS-WTR-001)
 
 ### 2.1 Grey
 
@@ -70,7 +75,7 @@ Authority: AQS-WTR-001, `07-water-air-habitation.md`,
 Do not confuse with EW `POLISH BANK` (metal cells). Farm nutrient dose
 remains S07 — separate from REMIN.
 
-## 3. Streams
+## 4. Streams
 
 | ID | Role |
 |---|---|
@@ -87,7 +92,7 @@ remains S07 — separate from REMIN.
 | S29 | Treated grey → VCD / salt |
 | S30 | Black digest → nutrient / salt |
 
-## 4. Regenerate
+## 5. Regenerate
 
 ```bash
 cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/

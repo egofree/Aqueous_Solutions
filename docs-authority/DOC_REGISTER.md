@@ -176,7 +176,7 @@ Table 3.1. Document numbers in use
 | AQS-FONT-001 | `docs-authority/FONTS.md` | A | 2026-10-25 | Fonts for 3D sign glyphs | current |
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Basic | 2026-09-27 | Scrubber chemistry | current |
 | AQS-GAS-003 | `docs-authority/FAN_STACK.md` | B | 2026-09-27 | Fan curves and stack heights | current |
-| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | — | — | Glossary | current |
+| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | B | 2026-10-25 | Glossary | current |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | B | — | Derived file revisions | current |
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
 | AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | A | 2026-10-25 | Dual heat ladder | current |
