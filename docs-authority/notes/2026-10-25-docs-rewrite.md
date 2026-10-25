@@ -73,3 +73,8 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 
 - `HAZMAT_SEPARATION.md` (AQS-BLD-011) Rev B, `MFG_TOOLS.md` (AQS-MFG-010) Rev D and `ENCLOSURE_EGRESS.md` (AQS-BLD-018) Rev B rewritten through their generators (`flow_graph/sep_check.py`, `_mfg_tools.py`, `_egress_env.py`). No value changed.
 - `GLOSSARY.md`: CAMEO, GMR and UA added.
+
+## Batch 13
+
+- `PERF_TEST.md` (AQS-COM-003) Rev B and `DESIGN_CHECK.md` (AQS-QA-002) Rev B rewritten through their generators (`_perf_test.py`, `_design_check.py`). No guarantee point, check or result changed.
+- `GLOSSARY.md`: FS added.

@@ -53,6 +53,8 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/HAZMAT_SEPARATION.md` | Rev B, through `flow_graph/sep_check.py`. Revision record, purpose, rule and numbered table added. No pair changed. |
 | `docs-authority/MFG_TOOLS.md` | Rev D, through `docs-authority/_mfg_tools.py`. Purpose added; totals in sentences; the hard-coded tool count removed. The tool table is unchanged, because `flow_graph/inventory/motors.py` parses it. |
 | `docs-authority/ENCLOSURE_EGRESS.md` | Rev B, through `docs-authority/_egress_env.py`. Revision record, purpose, pass rule and numbered sections added. No value changed. |
+| `docs-authority/PERF_TEST.md` | Rev B, through `docs-authority/_perf_test.py`. Purpose, criteria and numbered table added; the plant load row, which sat in a table of its own with no header, is now the last row of Table 3.1. See section 6. |
+| `docs-authority/DESIGN_CHECK.md` | Rev B, through `docs-authority/_design_check.py`. Purpose, numbered sections and table title added; failures stated in a sentence, and the result "FAIL" is now written "fail". No check changed. |
 
 ## 3. In progress
 
@@ -83,7 +85,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/CONTROL_SOFTWARE.md` | |
 | `docs-authority/CRYO_COLD_BOX.md` | |
 | `docs-authority/DERIVED_REVISIONS.md` | |
-| `docs-authority/DESIGN_CHECK.md` | |
 | `docs-authority/EDGE_RATING_DUTY.md` | |
 | `docs-authority/EGRESS_CALC.md` | |
 | `docs-authority/FAB_WET_INTERFACE.md` | |
@@ -130,7 +131,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/O2_SOURCE_AUDIT.md` | |
 | `docs-authority/OSE_CSK_ALIGNMENT.md` | |
 | `docs-authority/PARAMETRIC_MODEL.md` | |
-| `docs-authority/PERF_TEST.md` | |
 | `docs-authority/PIPE_SPECS.md` | |
 | `docs-authority/POWER_SIZING.md` | |
 | `docs-authority/PROTECTION.md` | |
@@ -314,3 +314,5 @@ Table 6.1. Pages kept pending a decision
 
 | `docs-authority/RECT_EW.md` (AQS-ELEC-004) | Finding 1 names node RECT_EW, streams S17-EW and IA-RECT-EW-LOSS (7.73 kW) and a 38.66 kW AC input. The graph now has node RECTIFIER, supply S17 at 12.0 kW (A-M-231) and loss IA-RECT-Q4 at 1.0 kW; the channel streams IA-DC-EW_1 to IA-DC-EW_9 still match Table 2.1. Which AC input is correct? |
 | `docs-authority/ELECTRODE_FAB.md` (AQS-MFG-ELC-001) | Study ST-ELC-01 gives about 0.3 kW average; the graph supplies ELECTRODE_COAT with 0.0792 kW (SF-ELECTRODE_COAT). Which is correct? |
+
+| `docs-authority/PERF_TEST.md` (AQS-COM-003) | `_perf_test.py` takes every solid stream leaving an electrowinning cell as harvested metal, so IA-COAT-IN (0.02 kg/d, EW_1 to ELECTRODE_COAT, the electrode sent for coating) appears as a guarantee point measured by weighed cathode harvest. Should the selection exclude streams that do not go to a product? |

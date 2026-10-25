@@ -8,7 +8,7 @@ for k in ('ASME_B31_3', 'PERRY9'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}; P = lambda u: (N.get(u) or {}).get('params') or {}
 C = []
 def chk(cid, module, what, model, indep, tol):
-    ok = abs(model - indep) <= tol*max(abs(indep), 1e-9); C.append(dict(check=cid, module=module, item=what, model=round(model, 4), independent=round(indep, 4), tol=f'{tol*100:g} %', result='pass' if ok else 'FAIL'))
+    ok = abs(model - indep) <= tol*max(abs(indep), 1e-9); C.append(dict(check=cid, module=module, item=what, model=round(model, 4), independent=round(indep, 4), tol=f'{tol*100:g} %', result='pass' if ok else 'fail'))
 # 1 mass balance per unit (kg/d edges only)
 bad = 0; nb = 0
 for u, n in N.items():
@@ -17,8 +17,8 @@ for u, n in N.items():
     o = sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == u and e['presence'] == 'present' and e['rate'].get('unit') == 'kg/d')
     if i > 0.01 or o > 0.01:
         nb += 1; ok = abs(i - o) <= 0.01*max(i, o) + 0.01; bad += not ok
-        if not ok: C.append(dict(check='QC-01', module='flow_graph/param/balance.py', item=f'mass balance {u}', model=round(o, 3), independent=round(i, 3), tol='1 %', result='FAIL'))
-C.append(dict(check='QC-01', module='flow_graph/param/balance.py', item=f'mass balance, {nb} units (in = out)', model=nb - bad, independent=nb, tol='1 % per unit', result='pass' if not bad else f'{bad} FAIL'))
+        if not ok: C.append(dict(check='QC-01', module='flow_graph/param/balance.py', item=f'mass balance {u}', model=round(o, 3), independent=round(i, 3), tol='1 %', result='fail'))
+C.append(dict(check='QC-01', module='flow_graph/param/balance.py', item=f'mass balance, {nb} units (in = out)', model=nb - bad, independent=nb, tol='1 % per unit', result='pass' if not bad else f'{bad} fail'))
 # 2 hydro energy rho g V h
 h = P('HYDRO_SET'); chk('QC-02', 'flow_graph/param/water_tower.py', 'hydro ideal energy kWh = rho g V h', h.get('energy_kwh_ideal_study') or 0, 1000*9.81*h['volume_m3_m1']*h['head_m_m1']/3.6e6, 0.01)
 # 3 receiver tube wall, ASME B31.3 304.1.2 t = P D / (2 (S E W + P Y))
@@ -42,7 +42,7 @@ for e in g['edges']:
     nb7 += 1; t = sum(v for v in c.values() if isinstance(v, (int, float)))
     note = ((e.get('rate') or {}).get('note') or '') + ' ' + str(e.get('label') or '') + ' ' + str(e.get('carries') or '')
     if abs(t - 1) > 0.02 or (('water' in note.lower() and 'H2' in c and c['H2'] > 0.5 and 'H2 x 18.015' in note)): bad7.append(e['stream_id'])
-C.append(dict(check='QC-07', module='flow_graph/param/write_graph.py', item=f'stream compositions sum to 1 and match their note ({nb7} streams)', model=nb7 - len(bad7), independent=nb7, tol='2 %', result='pass' if not bad7 else 'FAIL ' + ' '.join(bad7[:8])))
+C.append(dict(check='QC-07', module='flow_graph/param/write_graph.py', item=f'stream compositions sum to 1 and match their note ({nb7} streams)', model=nb7 - len(bad7), independent=nb7, tol='2 %', result='pass' if not bad7 else 'fail ' + ' '.join(bad7[:8])))
 # 9 H2 bank inventory = tube water volume x density at 200 bar (Q-004: 19 kg)
 d9 = P('CRYO_H2').get('design') or {}
 if d9.get('tubes'): chk('QC-09', 'flow_graph/param/receivers.py', 'H2 bank kg at 200 bar (Q-004 basis 19 kg)', 19.0, d9['tubes']*math.pi/4*(d9['ID_mm']/1000)**2*d9['tube_m']*14.9, 0.05)
@@ -90,7 +90,7 @@ if od is None:
 if od: chk('QC-23', 'docs-authority/_resize_sweep.py', 'OIL_DRYER capacity kg/d at MSW', od['value'], 33.0*0.30/0.22, 0.01)
 # 24 CAD clash gate
 cc = json.load(open('docs-authority/inventory/CAD_CLASH.json'))
-C.append(dict(check='QC-24', module='models/freecad/clash_check.py', item=f"CAD clashes, {cc['new']} new elements vs {cc['others']} solids", model=len(cc['clashes']), independent=0, tol='0', result='pass' if not cc['clashes'] else f"FAIL {len(cc['clashes'])}"))
+C.append(dict(check='QC-24', module='models/freecad/clash_check.py', item=f"CAD clashes, {cc['new']} new elements vs {cc['others']} solids", model=len(cc['clashes']), independent=0, tol='0', result='pass' if not cc['clashes'] else f"fail {len(cc['clashes'])}"))
 # 25 PV Wire 2 kV insulation wall = UL 4703 75 mil
 w1 = next(r for r in json.load(open('docs-authority/inventory/WIRE_SPECS.json')) if r['fam'] == 'WF-01')
 chk('QC-25', 'docs-authority/_wire_specs.py', 'WF-01 core OD mm = stranded OD + 2 x 1.905 mm', w1['Dc'] + 2*1.905, w1['D'], 0.01)
@@ -99,25 +99,42 @@ w5 = next(r for r in json.load(open('docs-authority/inventory/WIRE_SPECS.json'))
 chk('QC-26', 'docs-authority/_wire_specs.py', 'WF-05 4/c 14 AWG TC-ER OD mm vs published 10.4 mm', 10.4, w5['Dj'], 0.05)
 # 27 equipment clash and corridor gate
 ce = json.load(open('docs-authority/inventory/CAD_CLASH_EQUIP.json'))
-C.append(dict(check='QC-27', module='models/freecad/clash_equip.py', item=f"equipment overlaps and corridor intrusions ({ce['solids']} solids)", model=len(ce['clashes']) + len(ce['in_corridor']), independent=0, tol='0', result='pass' if not (ce['clashes'] or ce['in_corridor']) else 'FAIL'))
+C.append(dict(check='QC-27', module='models/freecad/clash_equip.py', item=f"equipment overlaps and corridor intrusions ({ce['solids']} solids)", model=len(ce['clashes']) + len(ce['in_corridor']), independent=0, tol='0', result='pass' if not (ce['clashes'] or ce['in_corridor']) else 'fail'))
 # 28 motor slots and yoke fit the lamination OD
 fa2 = json.load(open('docs-authority/inventory/MOTOR_FA.json')); bad = [r['family'] for r in fa2 if 'od_ok' in r and not r['od_ok']]
-C.append(dict(check='QC-28', module='flow_graph/inventory/motor_designs.py', item='induction slot + yoke fit the sheet OD (AQS-INV-008 re-derivation)', model=len(bad), independent=0, tol='0', result='pass' if not bad else 'FAIL ' + ' '.join(bad)))
+C.append(dict(check='QC-28', module='flow_graph/inventory/motor_designs.py', item='induction slot + yoke fit the sheet OD (AQS-INV-008 re-derivation)', model=len(bad), independent=0, tol='0', result='pass' if not bad else 'fail ' + ' '.join(bad)))
 # 29 catch tank top below the L-1 slab
-C.append(dict(check='QC-29', module='flow_graph/param/water_tower.py', item='catch tank top below L-1 FFL - slab (mm)', model=FP.CATCH_TANK_Z + FP.CATCH_TANK_H, independent=FP.Z_Lm1 - FP.SLAB_THK, tol='<=', result='pass' if FP.CATCH_TANK_Z + FP.CATCH_TANK_H <= FP.Z_Lm1 - FP.SLAB_THK else 'FAIL'))
+C.append(dict(check='QC-29', module='flow_graph/param/water_tower.py', item='catch tank top below L-1 FFL - slab (mm)', model=FP.CATCH_TANK_Z + FP.CATCH_TANK_H, independent=FP.Z_Lm1 - FP.SLAB_THK, tol='<=', result='pass' if FP.CATCH_TANK_Z + FP.CATCH_TANK_H <= FP.Z_Lm1 - FP.SLAB_THK else 'fail'))
 # 30 L-1 flow adjacency did not get worse after the regroup
 rg_ = json.load(open('docs-authority/inventory/CAD_REGROUP.json'))
-C.append(dict(check='QC-30', module='models/freecad/regroup.py', item=f"L-1 flow adjacency m ({rg_['units']} units, {rg_['moves']} moves)", model=rg_['adjacency_after_m'], independent=rg_['adjacency_before_m'], tol='<=', result='pass' if rg_['adjacency_after_m'] <= rg_['adjacency_before_m'] else 'FAIL'))
+C.append(dict(check='QC-30', module='models/freecad/regroup.py', item=f"L-1 flow adjacency m ({rg_['units']} units, {rg_['moves']} moves)", model=rg_['adjacency_after_m'], independent=rg_['adjacency_before_m'], tol='<=', result='pass' if rg_['adjacency_after_m'] <= rg_['adjacency_before_m'] else 'fail'))
 covered = {c['module'] for c in C}
 mods = sorted([m for m in glob.glob('flow_graph/param/*.py') + glob.glob('flow_graph/param/sizing/*.py') + glob.glob('docs-authority/_*.py') if not os.path.basename(m).startswith(('test_', '__'))])
 rec = [dict(module=m, independent_check=', '.join(sorted({c['check'] for c in C if c['module'] == m})) or '-', status=('auto-checked' if m in covered else 'second-person review required'), checker='') for m in mods]
 with open('docs-authority/inventory/DESIGN_CHECK.csv', 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=list(rec[0])); w.writeheader(); w.writerows(rec)
 fails = [c for c in C if c['result'] != 'pass']
-md = ['# Independent design check record', '', 'Document number: AQS-QA-002', 'Revision: A', 'Date: 2026-10-16', 'Authority: AQS-PLAN-007 X-QA-02. Generated by `docs-authority/_design_check.py`. Study; not a PE review. A-M-205.', '',
-      '## Closed-form checks (recomputed by a different route)', '', '| Check | Module | Item | Model | Independent | Tol | Result |', '|---|---|---|---|---|---|---|']
+md = ['# Independent design check record', '', 'Document number: AQS-QA-002', 'Revision: B', 'Date: 2026-10-25',
+      'Authority: AQS-PLAN-007 task X-QA-02; assumption A-M-205. Generated by `docs-authority/_design_check.py`; do not edit this page by hand. Study; this record is not a review by a Professional Engineer (PE).', '',
+      '| Rev | Description | Date |', '|---|---|---|', '| A | First issue | 2026-10-16 |',
+      '| B | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). No check, tolerance or result changed. | 2026-10-25 |', '',
+      '## 1. Purpose and scope', '',
+      'A design calculation is more trustworthy when a second, independent calculation gives the same answer. This page records such checks '
+      'for the calculation modules of the plant. Where a closed-form result exists, it is recomputed here by a different route from the module, '
+      'by hand formula rather than by the code of the module, and the two values are compared against a stated tolerance. The page also records '
+      'the review status of every calculation module.', '',
+      '## 2. Closed-form checks', '',
+      'Table 2.1 lists the checks. "Model" is the value from the module, "Independent" is the recomputed value, and "Tol" is the tolerance. '
+      'Where the tolerance is "<=", the check passes if the model value does not exceed the independent limit.', '',
+      'Table 2.1. Closed-form checks', '',
+      '| Check | Module | Item | Model | Independent | Tol | Result |', '|---|---|---|---|---|---|---|']
 md += [f"| {c['check']} | `{c['module']}` | {c['item']} | {c['model']} | {c['independent']} | {c['tol']} | {c['result']} |" for c in C]
-md += ['', '## Findings', '', '- QC-05 also found that AQS-COM-003 rev draft summed generator output (PV_ARRAY, fuel cells) into plant load; the performance test now sums consumers only.', '- QC-07 (added 2026-10-16) checks every stream composition; the S52 fuel-cell water had been labelled 98 % H2 (fixed in h2_purifier.py).', '- QC-02 found the HYDRO_SET energy keys still at the pre-Q-009 200 m3 x 18 m value (9.8 kWh); fixed in `flow_graph/param/ess_tf.py`, now from the water-tower V and head.', '',
-       f'## Record per calculation module', '', f"{len(rec)} modules: {sum(1 for r in rec if r['status'] == 'auto-checked')} auto-checked, {sum(1 for r in rec if r['status'] != 'auto-checked')} need a second-person review (checker blank). Per module: `docs-authority/inventory/DESIGN_CHECK.csv`.", '',
-       f'Failures: {len(fails)}.' + (' ' + '; '.join(f"{c['item']} model {c['model']} vs {c['independent']}" for c in fails[:10]) if fails else '')]
+md += ['', ('No check fails.' if not fails else ('One check fails: ' if len(fails) == 1 else f'{len(fails)} checks fail: ') + '; '.join(f"{c['item']}, where the model gives {c['model']} and the independent value is {c['independent']}" for c in fails[:10]) + '.'),
+       '', '## 3. Findings', '',
+       'The checks have found and led to the correction of the following errors.', '',
+       '- Check QC-05 found that the draft of the performance test AQS-COM-003 added the output of the generators (PV_ARRAY and the fuel cells) to the plant load. The performance test now sums the consumers only.',
+       '- Check QC-07, added on 2026-10-16, checks the composition of every stream. It found that the fuel-cell water stream S52 had been labelled as 98 % hydrogen; this was corrected in `h2_purifier.py`.',
+       '- Check QC-02 found that the HYDRO_SET energy values were still those used before decision Q-009, 200 m3 at 18 m (9.8 kWh). They were corrected in `flow_graph/param/ess_tf.py` and are now calculated from the volume and head of the water tower.', '',
+       '## 4. Review status of the calculation modules', '',
+       f"The record covers {len(rec)} calculation modules. Of these, {sum(1 for r in rec if r['status'] == 'auto-checked')} are checked automatically by the checks of Table 2.1, and {sum(1 for r in rec if r['status'] != 'auto-checked')} still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`."]
 open('docs-authority/DESIGN_CHECK.md', 'w').write('\n'.join(md) + '\n'); print(len(C), len(fails), [ (c['item'],c['model'],c['independent']) for c in fails][:12])

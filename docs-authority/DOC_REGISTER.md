@@ -68,7 +68,7 @@ Table 3.1. Document numbers in use
 | AQS-COD-002 | `docs-authority/PERMITS.md` | B | 2026-10-25 | Permit list | current |
 | AQS-COM-001 | `docs-authority/COMMISSIONING.md` | B | 2026-10-24 | Commissioning plan | current |
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence (cold start from empty) | current |
-| AQS-COM-003 | `docs-authority/PERF_TEST.md` | A | 2026-10-16 | Performance test | current |
+| AQS-COM-003 | `docs-authority/PERF_TEST.md` | B | 2026-10-25 | Performance test | current |
 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | F | 2026-10-24 | Compliance matrix: design intent against code themes | current |
 | AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | C | 2026-10-24 | Cryogenic cold-box internals | current |
 | AQS-CRY-003 | `docs-authority/COLD_BOX.md` | — | — | Cold box | current |
@@ -260,7 +260,7 @@ Table 3.1. Document numbers in use
 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator | current |
 | AQS-PWR-ROLLUP | `notes/LOAD_ROLLUP.md` | A | 2026-10-17 | Load rollup — foundry, polymers, grease | current |
 | AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan | current |
-| AQS-QA-002 | `docs-authority/DESIGN_CHECK.md` | A | 2026-10-16 | Independent design check record | current |
+| AQS-QA-002 | `docs-authority/DESIGN_CHECK.md` | B | 2026-10-25 | Independent design check record | current |
 | AQS-RATE-FP-MET | `notes/DESIGN_RATES.md` | A | 2026-10-16 | Design rates — fluoropolymer and critical metals | current |
 | AQS-REB-001 | `docs-authority/REBUILD.md` | D | 2026-10-24 | Rebuilding the design from the plant graph | current |
 | AQS-RED-001 | `docs-authority/RED_AUDIT.md` | C | 2026-10-25 | Redundancy audit, energy and life support | current |

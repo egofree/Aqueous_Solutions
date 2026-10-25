@@ -581,6 +581,8 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {UA -- The product of thermal transmittance (U-value) and area, summed over a building envelope, in W/K.}
 
+{FS -- Full scale: an instrument accuracy stated as a percentage of the top of its range.}
+
 {NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
 
 {ASME -- American Society of Mechanical Engineers. Vessel and B31.3 piping class sheets (AQS-ASM-001).}
