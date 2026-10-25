@@ -70,7 +70,7 @@ Table 3.1. Document numbers in use
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence (cold start from empty) | current |
 | AQS-COM-003 | `docs-authority/PERF_TEST.md` | B | 2026-10-25 | Performance test | current |
 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | F | 2026-10-24 | Compliance matrix: design intent against code themes | current |
-| AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | C | 2026-10-24 | Cryogenic cold-box internals | current |
+| AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | D | 2026-10-25 | Air liquefaction cold box: internals and heat rejection | current |
 | AQS-CRY-003 | `docs-authority/COLD_BOX.md` | — | — | Cold box | current |
 | AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | A | 2026-10-16 | Instrument index | current |
 | AQS-CTL-002 | `docs-authority/CONTROL_ARCH.md` | B | 2026-10-25 | Control philosophy and PLC architecture | current |

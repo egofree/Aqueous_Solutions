@@ -1,205 +1,126 @@
-# Cryogenic cold-box internals
+# Air liquefaction cold box: internals and heat rejection
 
-Document number: AQS-CRY-002  
-Revision: C  
-Date: 2026-10-24  
-PFD: AQS-PFD-CRY-001 (`cryo_pfd.png`)  
-Equipment: AQS-EQP-CRY-001  
-Streams: AQS-STR-001 S02–S05 / S18 / S24 / S45 / S49–S50 / **S54–S56** / **S64** / **S67** / **S70**
+Document number: AQS-CRY-002
+Revision: D
+Date: 2026-10-25
+PFD: AQS-PFD-CRY-001 (`cryo_pfd.png`)
+Streams: AQS-STR-001, S02 to S04, S18, S24, S44, S45, S49, S50, S53 to S56, S64, S67, S70
 
-Authority: root `09-air-liquefaction-cryogenic.md` (air liquefaction narrative),
-`GAS_SYSTEM/Gas_System_overview.md`, AQS-EQP-CRY-001, AQS-BLD-001
-(L-1 east of CORE; FB_CRYO_PROCESS), AQS-HSE-001 (NFPA 2/55; MAQ),
-AQS-PHF-001, AQS-PWR-002 / AQS-FC-001 (CRYO_H2 consumers), AQS-EQP-GEO-001
-(Q4 peer), `freecad/cryo.py`, AQS-GAP-001 §7 item 5.
+Authority: `09-air-liquefaction-cryogenic.md` (air liquefaction narrative; topology only, its figures are not issued), `GAS_SYSTEM/Gas_System_overview.md`, AQS-EQP-CRY-001, AQS-BLD-001 (level L-1, east of the recycle core; fire barriers FB_CRYO and FB_CRYO_PROCESS), AQS-HSE-001 (NFPA 2 and NFPA 55; maximum allowable quantities), AQS-PHF-001, AQS-PWR-002 and AQS-FC-001 (CRYO_H2 consumers), AQS-EQP-GEO-001 (Q4 peer), `models/freecad/cryo.py`.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
-| A | — | Basic issue: cold-box internals + HVAC/geo heat-rejection split | 2026-09-28 |
-| B | 1 | Vent closure: S64 H₂ normal; S67 flue-cap; S70 AHU condensable (AQS-VENT-001) | 2026-09-28 |
-| C | 2 | Unexplained label ALCRM replaced by "air liquefaction cold box" (open question Q-017 closed) | 2026-10-24 |
+| A | — | First issue: cold-box internals plus the HVAC and geothermal heat-rejection split | 2026-09-28 |
+| B | Vent closure | S64 hydrogen as the normal path; S67 flue-cap CO2; S70 AHU condensable return (AQS-VENT-001) | 2026-09-28 |
+| C | Label | The unexplained label of revision B replaced by "air liquefaction cold box" (Q-017 closed) | 2026-10-24 |
+| D | All | Rewritten to the documentation style guide (AQS-DOC-002). Section numbering repaired; session wording removed; stream list corrected to the present graph (S05 and S06 are retired; S54 feeds Q4_BUS among S44/S53/S63/S80 and the rectifier and electrolyser contributions). No design decision changed. | 2026-10-25 |
 
 Licence: CERN-OHL-S-2.0.
 
----
+## 1. Purpose and scope
 
-## 1. Purpose
+This page fixes the air liquefaction cold-box internals, the split of its rejected heat between the life-side Q4 water loop and the dedicated cooling loop, and the normal hydrogen path, consistent with the vent closure of AQS-VENT-001. It turns the keep-out envelope of the earlier narrative into a named internals schedule with consumer branches. The duty figures (kilowatts, kilograms per hour) are not issued here; they wait on the heat and mass balance (Section 9). The narrative document 09 is cited for topology only; its column and coefficient-of-performance figures are legacy study narrative, not issued nameplates. The ZnBr2 bromine tower stays a separate outdoor skid and is out of scope.
 
-Lock the air liquefaction cold-box internals, heat-rejection split, and H₂ normal path consistent with vent closure.
+## 2. Placement
 
-## 2. Scope
-
-Closes the GAS_SYSTEM / AQS-GAP-001 §7 item 5 gap: promote doc 09 /
-AQS-EQP-CRY-001 hardware from a keep-out envelope into a **named
-internals schedule** with HVAC / geothermal heat-rejection hooks and
-CRYO_H2 consumer branches (GEN + FC + vent).
-
-| In scope | Out of scope this pass |
+| Item | Decision |
 |---|---|
-| Stirling 77–90 K cold-head + distillation / PSA train tags | Invented M1 kW / kg/hr / L/d nameplates |
-| Intake: centrifugal + demister, mol sieves, HEPA | Full plant.FCStd rebuild |
-| Compressors / expanders / reboiler–condenser | ZnBr2 Br₂ tower (separate outdoor skid) |
-| Vacuum-jacketed product lines (schedule note) | Acid-gas / oil vapor into cold box |
-| Receivers CRYO_H2 / O2 / N2 / CO2 + consumer draws | SCALE_M change / git commit |
-| HVAC / Q4 / dedicated cooling / vent split (named HX) | Quantitative MAQ holdup (still AQS-HSE-001 §5) |
+| Level | L-1 process basement (`Z_Lm1`); replicas `_B2...` if `BASEMENT_LEVELS` is greater than 1 |
+| Plan position | East of the recycle core (`CRYO_X`, `CRYO_Y` in `models/freecad/params.py`), opposite the wet aisle |
+| Fire | Fire barriers FB_CRYO and FB_CRYO_PROCESS are 2 h; no process-air duct passes through (AQS-BLD-001, AQS-HSE-001) |
+| Envelope | The campus `CRYO` keep-out of 6 x 6 x 4 m; the internals sit inside it |
 
-**NOTE**
+## 3. Separation rules
 
-`SCALE_M` stays **1.0**. Doc 09 column / reboiler / COP figures are
-**legacy study narrative only** — cite for topology, do not issue as
-M1 nameplates. Duties = **TBD** pending heat/mass balance.
+1. CRYO_H2 is not HDR_H2. CRYO_H2 is the product hold that feeds the consumers; HDR_H2 is the aisle capture header feeding the dryer.
+2. Acid gas, oil vapour and the ZnBr2 bromine stream never enter the cold box.
+3. The S18 and S67 flue-cap CO2 is claimed capture (AQS-VENT-001), not raw afterburner flow into HDR_CO2; a flue dump is not the end state.
+4. No shared HVAC return exists between the hab and farm air and the cryo or process air (AQS-HSE-001 section 8).
 
----
+## 4. CRYO_H2 consumers
 
-## 3. Decisions (locked this pass)
-
-### 2.1 Placement — L-1 east of CORE
-
-| Item | Lock |
-|---|---|
-| Level | L-1 process basement (`Z_Lm1`); replicas `_B2…` if `BASEMENT_LEVELS > 1` |
-| XY | East of CORE (`CRYO_X/Y` in `params.py`); opposite wet aisle |
-| Fire | `FB_CRYO` / `FB_CRYO_PROCESS` **2 h**; **no process-air duct** through (AQS-BLD-001 / AQS-HSE-001) |
-| Envelope | Campus `CRYO` keep-out 6 × 6 × 4 m; internals sit inside |
-
-### 2.2 Separation (unchanged, restated)
-
-1. **CRYO_H2 ≠ HDR_H2** — product hold / fuel only; HDR_H2 is the
-   aisle capture header to dryer / SHAFT_H2.
-2. Acid-gas, oil vapor, and ZnBr2 Br₂ **never** enter COLD_BOX.
-3. S18 / **S67** flue-cap CO₂ is **Claimed** capture (AQS-VENT-001) — not
-   raw AFTERBURNER into HDR_CO2; flue dump is not the end state.
-4. No shared HVAC **return** between HAB / FARM and CRYO / process
-   (AQS-HSE-001 §8).
-
-### 2.3 CRYO_H2 consumers (sizing interface)
-
-Hold shall be sized for concurrent draws (MAQ design cap remains
-AQS-HSE-001 §5 — do not invent holdup kg):
+The hold is sized for concurrent draws. The maximum allowable quantity cap of AQS-HSE-001 section 5 stays; no holdup mass is invented here.
 
 | Consumer | Stream | Authority |
 |---|---|---|
 | BACKUP_GEN | S45 | AQS-PWR-002 / AQS-EQP-GEN-001 |
 | FUEL_CELL (PEM) | S49 | AQS-FC-001 / AQS-EQP-FC-001 |
-| H₂ dryer normal feed | S64 | AQS-VENT-001 Partial (closes continuous roof dump) |
-| Roof vent contingency | S24 | AQS-VENT-001 emergency only — not design dump |
+| Normal dryer feed | S64 (H2_DRYER to CRYO_H2) | AQS-VENT-001 partial closure (ends the continuous roof dump) |
+| Roof vent contingency | S24 | AQS-VENT-001, emergency only, not a design dump |
 
-Oxidizer to FC = CRYO_O2 (S50). Branches to GEN and FC shall be
-**separately isolated** with flame arrestors (AQS-HSE-001 §11).
+The fuel-cell oxidiser is CRYO_O2 on S50. The generator and fuel-cell branches are separately isolated with flame arrestors (AQS-HSE-001 section 11).
 
-### 2.4 Heat rejection — three destinations (named only)
+## 5. Heat rejection: three destinations
 
-| Destination | Tag / stream | What goes there | What does **not** |
+| Destination | Tag / stream | What goes there | What does not |
 |---|---|---|---|
-| **Q4** (life HVAC water) | `CRYO_HX_Q4` → **S54** | Recoverable **warm** reject after pinch: compressor intercooler residual and mol-sieve TSA cool-down that can meet **< 80 °C** water class (peer to S06 / S44 / S53) | Stirling deep reject; cryogenic condenser boil-off; flue gas; GEN exhaust |
-| **Dedicated cryo cooling** | `CRYO_DED_COOL` → **S55** | Closed utility loop for Stirling cold-head reject, deep condenser / expander heat that **cannot** enter life air | HDR_UPW, CATCH, Salria, hab AHU |
-| **Vent / room exhaust** | `CRYO_AHU` → `CRYO_AHU_COND` → **S70** / **S56** | NFPA 2 / 55 AHU; **condensables return to COLD_BOX (S70)**; S56 = non-condensable contingency only — not continuous outdoor dump | Shared return with HAB / FARM; process acid-gas header |
+| Q4 life water loop | `CRYO_HX_Q4` to S54 | Recoverable warm reject after the pinch: compressor intercooler residual and molecular-sieve TSA cool-down that meets the below-80 C water class (peer to S44, S53 and the other Q4_BUS contributors) | Stirling deep reject; cryogenic condenser boil-off; flue gas; generator exhaust |
+| Dedicated cryo cooling | `CRYO_DED_COOL` to S55 (closed utility loop) | Stirling cold-head reject and deep condenser or expander heat that cannot enter life air | Polished water, the catch tank, blackwater, the hab air handler |
+| Vent and room exhaust | `CRYO_AHU` and `CRYO_AHU_COND`, to S56 and S70 | The NFPA 2/55 room air handler; condensables return through S70 to FLUE_KO and the cold-box CO2 train; S56 is the non-condensable contingency, not a continuous outdoor dump | A shared return with hab or farm air; the process acid-gas header |
 
-**WARNING**
+Flue gas from the afterburner and generator exhaust (S46) never routes through `CRYO_HX_Q4` or the life air handler. Q4 stays water-only into FARM and HABITATION.
 
-Never route Q1 flue, AFTERBURNER, or BACKUP_GEN exhaust (S46) through
-`CRYO_HX_Q4` or life AHU. Q4 remains water-only into FARM / HAB.
-
-### 2.5 Process scheme (topology)
+## 6. Process scheme
 
 ```
-Ambient air → AIR_INTAKE → MOL_SIEVE → HEPA_BANK ─┐
-H2_DRYER (S05) ──────────────────────────────────┤→ COLD_BOX
-S18 CO₂ claim (optional) ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─┘
-         │
-         ├─ STIRLING_COLD_HEAD (77–90 K)
-         ├─ DIST_COL_PRI / SEC / TER (+ PSA where issued)
-         ├─ REBOILER_COND (column heat integration)
-         ├─ COMP_EXPAND (VFD compressors + expanders)
-         └─ VJ_LINES → CRYO_O2 / N2 / CO2 / H2 receivers
+Ambient air -> AIR_INTAKE -> MOL_SIEVE -> HEPA_BANK --+
+H2_DRYER (S64) ---------------------------------------+-> COLD_BOX
+S18 CO2 claim (optional) - - - - - - - - - - - - - - -+
+         |
+         +- STIRLING_COLD_HEAD (77-90 K)
+         +- DIST_COL_PRI / SEC / TER (+ PSA where issued)
+         +- REBOILER_COND (column heat integration)
+         +- COMP_EXPAND (variable-speed compressors + expanders)
+         +- VJ_LINES -> CRYO_O2 / N2 / CO2 / H2 receivers
 ```
 
-PSA may share the cold-box envelope where distillation is not the
-sole path; do not invent a second outdoor gas plant.
+The pressure-swing adsorption train may share the cold-box envelope where distillation is not the sole path; no second outdoor gas plant is created.
 
----
+## 7. Internals schedule
 
-## 4. Internals schedule (tags)
-
-See AQS-EQP-CRY-001 Rev C for the full equipment table. Summary:
+AQS-EQP-CRY-001 Rev C carries the full equipment table. The tags:
 
 | Tag | Role |
 |---|---|
-| COLD_BOX | Parent envelope (Stirling + distillation / PSA) |
-| AIR_INTAKE | Centrifugal + demister |
-| MOL_SIEVE | CO₂ / H₂O drying (5Å TSA class) |
+| COLD_BOX | Parent envelope (Stirling plus distillation / PSA) |
+| AIR_INTAKE | Centrifugal inlet plus demister |
+| MOL_SIEVE | CO2 and H2O drying (5A TSA class) |
 | HEPA_BANK | Final particulate polish |
-| STIRLING_COLD_HEAD | Cryocooler 77–90 K |
-| DIST_COL_PRI / SEC / TER | Cryogenic distillation train |
-| REBOILER_COND | Reboiler / condenser heat integration |
-| COMP_EXPAND | Variable-speed compressors + expanders |
-| VJ_LINES | Vacuum-jacketed transfer (schedule; CAD stub optional) |
-| CRYO_HX_Q4 | Named HX → Q4 (S54) |
+| STIRLING_COLD_HEAD | Cryocooler, 77 to 90 K |
+| DIST_COL_PRI / SEC / TER | Cryogenic distillation train (primary, secondary, tertiary columns) |
+| REBOILER_COND | Reboiler and condenser heat integration |
+| COMP_EXPAND | Variable-speed compressors and expanders |
+| VJ_LINES | Vacuum-jacketed transfer lines (schedule; CAD stub optional) |
+| CRYO_HX_Q4 | Named heat exchanger to Q4 (S54) |
 | CRYO_DED_COOL | Dedicated utility cooling loop (S55) |
-| CRYO_AHU / CRYO_AHU_COND | Room AHU + condensate KO (S56 / S70) |
+| CRYO_AHU / CRYO_AHU_COND | Room air handler plus condensate knock-out (S56 / S70) |
 | CRYO_H2 / O2 / N2 / CO2 | Product receivers |
 
----
+## 8. Room ventilation and the Q4 loop
 
-## 5. HVAC / geothermal integration
-
-### 4.1 CRYO room ventilation (NFPA 2 / 55)
+### 8.1 CRYO room ventilation (NFPA 2 / 55)
 
 | Requirement | Design intent |
 |---|---|
-| Mechanical ventilation | Dedicated `CRYO_AHU` serving CRYO fire area only |
-| Discharge | Condensables → S70 COLD_BOX; residual S56 contingency; **not** HAB / FARM return; not continuous dump (AQS-VENT-001) |
-| Detection | H₂ at **25% LFL** trip → isolate H₂ trains + freeze cold-box feed (AQS-HSE-001 §8) |
-| Fire barrier | No process-atmosphere duct through `FB_CRYO_PROCESS` |
-| Makeup | Outdoor air or listed energy recovery on **Q4 water** only — never process-air ERV into life |
+| Mechanical ventilation | Dedicated `CRYO_AHU` serving the CRYO fire area only |
+| Discharge | Condensables to S70 and the cold box; S56 as the residual contingency; never the hab or farm return; no continuous dump (AQS-VENT-001) |
+| Detection | Hydrogen at 25 % of the lower flammable limit trips: isolate the hydrogen trains and freeze the cold-box feed (AQS-HSE-001 section 8) |
+| Fire barrier | No process-atmosphere duct through FB_CRYO_PROCESS |
+| Make-up | Outdoor air, or listed energy recovery on Q4 water only; never a process-air energy-recovery wheel into life air |
 
-### 4.2 Building HVAC + geothermal Q4
+### 8.2 The Q4 water loop
 
-| Source | Stream | Role vs CRYO |
-|---|---|---|
-| Building HVAC | S06 | Q4 water into FARM / HAB — peer header |
-| GEO_HP | S44 | Same Q4 header (AQS-PWR-002) |
-| FC_HX_Q4 | S53 | Same Q4 header (AQS-FC-001) |
-| **CRYO_HX_Q4** | **S54** | CRYO warm-reject contribution — **named HX only** |
-| CRYO_DED_COOL | S55 | **Not** on Q4 — dedicated loop |
-| CRYO room exhaust | S70 / S56 | Condensable return / residual contingency — not Q4 |
+The Q4_BUS contributors in the present graph are S44 (GEO_HP), S53 (FUEL_CELL), S54 (CRYO_HX_Q4), S63 (MET_HX_Q4), S80 (MEOH_FC), the ZNBR2 heat edge, the rectifier loss edge and the electrolyser heat edge. The former building-HVAC stream S06 is retired. The cryo contribution to Q4 is only the warm residual from `CRYO_HX_Q4` that meets the Q4 temperature class; deep cryo heat stays on S55. Geothermal remains the primary building Q4 thermal path.
 
-Geothermal remains the primary **building** Q4 thermal path at M1;
-CRYO contributes only the warm residual that meets the Q4 temperature
-class. Deep cryo heat stays on S55.
+## 9. Remaining gaps
 
----
+1. Quantitative cold-box, Stirling and column duties (kilowatts, kilograms per hour) are not issued; the document-09 numbers are narrative only.
+2. The CRYO_H2 holdup mass against the maximum allowable quantity is not issued (the AQS-HSE-001 section 5 cap remains the limit).
+3. A `plant.FCStd` rebuild on the build machine is needed before the child envelopes and any `_Bn` replicas appear in the assembled plant.
+4. The detailed vacuum-jacket-line isometric and nozzle schedule wait for the piping pass.
+5. The molecular-sieve regeneration heat balance (how much residual truly meets Q4) waits for the first heat and mass model.
+6. The `CRYO_AHU_COND` / S70 duty and the S67 flue-cap condenser are not issued (AQS-VENT-001).
 
-## 6. FreeCAD
+## 10. Regenerating the diagram
 
-`freecad/cryo.py` issues parent `COLD_BOX` + receiver solids and
-**internal envelope stubs** (children listed in AQS-EQP-CRY-001).
-
-**NOTE:** `plant.FCStd` rebuild is **required** before new child
-envelopes appear in the assembled plant. This pass does **not**
-rebuild `plant.FCStd` (prefer docs + PFD + authority first).
-
----
-
-## 7. Remaining gaps
-
-1. Quantitative cold-box / Stirling / column duties (kW, kg/hr) — TBD;
-   doc 09 numbers are narrative only.
-2. CRYO_H2 holdup kg under MAQ — TBD (AQS-HSE-001 §5 cap remains).
-3. `plant.FCStd` rebuild to show child envelopes + any `_Bn` replicas.
-4. Detailed VJ isometric / nozzle schedule — later piping pass.
-5. Mol-sieve regen heat balance (how much residual truly meets Q4) —
-   after first heat/mass model.
-6. CRYO_AHU_COND / S70 duty and S67 flue-cap condenser — TBD (AQS-VENT-001).
-
----
-
-## 8. Regenerate
-
-```bash
-cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
-python3 cryo_pfd.py
-```
-
-Share mirror: `share/aqueous-solutions/docs-authority/CRYO_COLD_BOX.md`,
-`docs-authority/CRYO_EQUIPMENT.md`, `pfd/images/cryo_pfd.png`.
+Run `python3 flow_graph/exporters/matplotlib/cryo_pfd.py` from the repository root.
