@@ -26,7 +26,7 @@ Every value in sections 6 to 9 cites a published source. A value enters the mode
 ## 2. Summary
 
 - The site is not yet an input. The study site values are in AQS-SITE-002 (`docs-authority/SITE_BASIS.md`) and in `flow_graph/param/drivers.json`, mixed with process drivers. Several facts about the surface of the Earth are constants in code: standard gravity, standard atmospheric pressure, the composition and density of air, and the use of outside air as a heat sink, an oxidant and a vent destination.
-- A site profile per locale, `flow_graph/param/sites/<site_id>.json`, will hold every environmental input in the same form as a driver (value, units, reference or register id, verification test). The driver loader applies the selected profile. The baseline profile carries the present values, so the baseline output does not change.
+- A site profile per locale, `flow_graph/param/sites/<site_id>.json` (to be created), will hold every environmental input in the same form as a driver (value, units, reference or register id, verification test). The driver loader applies the selected profile. The baseline profile carries the present values, so the baseline output does not change.
 - Each unit will state its environmental needs, such as a minimum gravity for buoyant separation, outside air for heat rejection, or ground contact. A check compares those needs with the selected profile and requires a recorded decision for every unit whose needs are not met: keep, use an alternate unit, or retire with a stated replacement. The table of these decisions is the answer to the question of what the plant must change to work in each place.
 - Death Valley keeps the architecture and stresses heat rejection, water supply and material temperatures. Antarctica stresses a dark season, freezing, and a treaty that forbids mineral resource activity. Mars needs pressurised process spaces, works at partial gravity, and can use the carbon dioxide atmosphere, ground ice and regolith as feed. Low Earth orbit removes gravity, air and ground together and needs the largest set of alternate units.
 - The build order is: profile and loader with the baseline unchanged; code constants moved into the profile; site selection and output namespaces; unit needs and capability decisions; then the locales in order of increasing departure from the baseline: Death Valley, Antarctica, Mars, low Earth orbit.
@@ -87,7 +87,7 @@ These are the places where the model assumes the surface of the Earth without sa
 
 ### 4.1 File and schema
 
-Each locale has one file, `flow_graph/param/sites/<site_id>.json`, validated against `flow_graph/schema/site_profile.schema.json`. Every entry has the form of a driver: `value`, `units`, and a `ref` (a key in `flow_graph/param/refs.py`) or a `register` id, with `needs_verification` and `verification_test` where no published value fixes it. The loader rejects an entry without a basis in the same way as a driver.
+Each locale has one file, `flow_graph/param/sites/<site_id>.json` (to be created), validated against `flow_graph/schema/site_profile.schema.json` (to be created). Every entry has the form of a driver: `value`, `units`, and a `ref` (a key in `flow_graph/param/refs.py`) or a `register` id, with `needs_verification` and `verification_test` where no published value fixes it. The loader rejects an entry without a basis in the same way as a driver.
 
 Table 4.1 lists the groups the profile carries. A group that does not apply at a locale is present and marked not applicable with its reason, so that a missing value is always an error and never a silent default.
 
@@ -113,9 +113,9 @@ Table 4.1. Site profile groups
 
 ### 4.2 Binding to the drivers
 
-The profile does not duplicate drivers. Each environmental driver in `drivers.json` gains a `site` field naming the profile entry that supplies it, and `drivers.load()` resolves it from the selected profile. Entries with no driver today, such as gravity and the atmosphere, become new drivers bound in the same way, and the literals in section 3.2 are replaced by reads of those drivers. Quantities that follow from the environment, such as an air density at a given temperature, are computed from the profile in a new module `flow_graph/param/site.py`, not entered a second time.
+The profile does not duplicate drivers. Each environmental driver in `drivers.json` gains a `site` field naming the profile entry that supplies it, and `drivers.load()` resolves it from the selected profile. Entries with no driver today, such as gravity and the atmosphere, become new drivers bound in the same way, and the literals in section 3.2 are replaced by reads of those drivers. Quantities that follow from the environment, such as an air density at a given temperature, are computed from the profile in a new module `flow_graph/param/site.py` (to be created), not entered a second time.
 
-The baseline profile, `flow_graph/param/sites/baseline.json`, carries the present values with their present references and register ids (AQS-SITE-002 and the A-M entries). With it selected, the resolved driver set equals the present `drivers.json` value for value, and `python3 -m flow_graph.param.regen --check` stays clean.
+The baseline profile, `flow_graph/param/sites/baseline.json` (to be created), carries the present values with their present references and register ids (AQS-SITE-002 and the A-M entries). With it selected, the resolved driver set equals the present `drivers.json` value for value, and `python3 -m flow_graph.param.regen --check` stays clean.
 
 ### 4.3 Selecting a profile
 
@@ -128,7 +128,7 @@ The baseline profile, `flow_graph/param/sites/baseline.json`, carries the presen
 - Baseline outputs stay where they are, so existing paths and citations do not change.
 - Every other locale writes under `sites/<site_id>/`, which mirrors the repository paths of the outputs, for example `sites/<site_id>/flow_graph/plant_flow_graph.json` and `sites/<site_id>/docs-authority/duties/`. Each stage in `flow_graph/param/regen_manifest.json` still declares its outputs once; one path function adds the prefix.
 - The base graph stays the sole topology authority. A locale graph is the base graph with the locale's capability decisions applied (section 5); it is a generated output and is never hand-edited.
-- `regen --check --site <site_id>` checks one locale. A new `--all-sites` option runs every profile in `flow_graph/param/sites/`.
+- `regen --check --site <site_id>` checks one locale. A new `--all-sites` option runs every profile in `flow_graph/param/sites/` (to be created).
 
 ### 4.5 Document numbers and identifiers
 
@@ -144,7 +144,7 @@ Each row of the EDITIONS table in `flow_graph/param/code_basis.py` gains a famil
 
 ### 5.1 What a unit needs
 
-Each unit states its environmental needs in `flow_graph/param/sites/unit_needs.json`. Needs are given by unit class, with a unit-level override, so units need not be edited one by one. Table 5.1 lists the needs used in this plan.
+Each unit states its environmental needs in `flow_graph/param/sites/unit_needs.json` (to be created). Needs are given by unit class, with a unit-level override, so units need not be edited one by one. Table 5.1 lists the needs used in this plan.
 
 Table 5.1. Environmental needs
 
@@ -162,7 +162,7 @@ Table 5.1. Environmental needs
 
 The profile's capability decisions name, for a sector or a unit, one of: keep; alternate, naming the unit that performs the same function; or retire, with the reason and the unit that takes over its role. Resizing is not a decision: the solver resizes every kept unit from the profile.
 
-A check, `flow_graph/param/test_site_capability.py`, fails when a unit's needs are not met by the profile and no decision is recorded, and when a decision retires an energy or life-support unit without naming a diverse replacement (AGENTS.md, Redundancy). A generated table per locale lists every decision with its reason. Comparing those tables across locales gives the record of what the plant changes in each place.
+A check, `flow_graph/param/test_site_capability.py` (to be created), fails when a unit's needs are not met by the profile and no decision is recorded, and when a decision retires an energy or life-support unit without naming a diverse replacement (AGENTS.md, Redundancy). A generated table per locale lists every decision with its reason. Comparing those tables across locales gives the record of what the plant changes in each place.
 
 ## 6. Death Valley
 
@@ -373,7 +373,7 @@ These checks are added with the phase that needs them and run in `scripts/check_
 - A profile that lacks a required entry, or has an entry without a basis, fails the loader.
 - With the baseline profile, the resolved drivers equal `drivers.json` and `regen --check` changes nothing.
 - No script reads `drivers.json` except through the loader, and no sizing module contains a gravity or atmospheric pressure literal.
-- Every profile in `flow_graph/param/sites/` regenerates, and its loop closure and mass and energy balance checks pass within the misfit gate.
+- Every profile in `flow_graph/param/sites/` (to be created) regenerates, and its loop closure and mass and energy balance checks pass within the misfit gate.
 - Every unit whose needs a profile does not meet has a decision, and no energy or life-support unit is retired without a diverse replacement.
 - Document numbers are unique as number and site pairs, and every locale page has a number from the register tool.
 - Every check document in a locale cites a governing clause from that locale's code families or is reported open.
