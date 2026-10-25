@@ -1,7 +1,7 @@
 # Localization plan: site profiles and locale variants
 
 Document number: AQS-PLAN-011
-Revision: F
+Revision: G
 Date: 2026-10-25
 
 | Rev | Description | Date |
@@ -12,6 +12,7 @@ Date: 2026-10-25
 | D | Section 4.5 states the number and site pair rules as built | 2026-10-25 |
 | E | Section 3.2 records the gravity, pressure and air values now read from the profile, and Q-032 | 2026-10-25 |
 | F | Q-032 closed; every gravity and air density reads the profile | 2026-10-25 |
+| G | Sections 4.3 and 4.4 describe locale selection and the per-site output folders as built | 2026-10-25 |
 
 ## 1. Purpose and scope
 
@@ -130,16 +131,18 @@ The baseline profile, `flow_graph/param/sites/baseline.json`, carries the presen
 
 ### 4.3 Selecting a profile
 
-- Set the environment variable `AQS_SITE=<site_id>`, or pass `--site <site_id>` to `python3 -m flow_graph.param.regen`. The flag sets the variable for every child stage, which already inherits the environment.
-- With neither set, the baseline profile is used. An unknown site id fails before any stage runs.
-- Every generated file records the site id and a hash of the resolved profile in its header, and the regeneration receipt records both.
+- Pass `--site <site_id>` to `python3 -m flow_graph.param.regen`. With no flag the baseline profile is used. An unknown or invalid profile fails before any stage runs.
+- `--all-sites` regenerates the baseline in place and then every locale profile in `flow_graph/param/sites/`. With `--check`, each locale is regenerated and compared with its folder, and nothing is written.
+- The environment variable `AQS_SITE` selects the profile for a script run on its own. Regeneration in this working tree refuses a locale set this way, so a locale can never overwrite the baseline outputs.
 
 ### 4.4 Output namespaces
 
 - Baseline outputs stay where they are, so existing paths and citations do not change.
-- Every other locale writes under `sites/<site_id>/`, which mirrors the repository paths of the outputs, for example `sites/<site_id>/flow_graph/plant_flow_graph.json` and `sites/<site_id>/docs-authority/duties/`. Each stage in `flow_graph/param/regen_manifest.json` still declares its outputs once; one path function adds the prefix.
+- A locale is regenerated in a temporary git worktree of the current commit, by `flow_graph/param/site_outputs.py`, with the locale's profile selected. The profile must be committed. The outputs that differ from the baseline are copied to `sites/<site_id>/` under their repository paths, for example `sites/<site_id>/docs-authority/duties/`. Every path is checked to stay inside that folder, and the folder is the only place written.
+- `sites/<site_id>/SITE_OUTPUTS.json` lists the copied outputs, the outputs the locale removes, and the hash of the profile. An output not listed is the same as the baseline output at the same commit. The derived revisions register is not copied, because its content names commits.
+- No generator script needs a locale path: the worktree isolates each run, and the collection step adds the prefix.
 - The base graph stays the sole topology authority. A locale graph is the base graph with the locale's scaling actions applied (section 5); it is a generated output and is never hand-edited.
-- `regen --check --site <site_id>` checks one locale. A new `--all-sites` option runs every profile in `flow_graph/param/sites/`.
+- `flow_graph/param/test_site_outputs.py` checks the path guard, the refusal of an in-place locale run, the document number suffix and the collection step.
 
 ### 4.5 Document numbers and identifiers
 

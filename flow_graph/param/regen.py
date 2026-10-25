@@ -128,13 +128,25 @@ def main(argv=None):
     ap.add_argument('--check', action='store_true', help='staleness verification only (rev_stamp full: writes DERIVED_REVISIONS.md, gates)')
     ap.add_argument('--dry-run', action='store_true', help='print the plan and exit')
     ap.add_argument('--max-passes', type=int, default=4, metavar='N', help='graph- and doc-phase convergence cap (default 4; a converged tree needs 1, a drifted tree 2-3)')
+    ap.add_argument('--site', metavar='SITE_ID', help='site profile (flow_graph/param/sites/); a locale writes its outputs under sites/<site_id>/')
+    ap.add_argument('--all-sites', action='store_true', help='the baseline in place, then every locale profile')
     ap.add_argument('--cad', action='store_true', help='also run the "cad" group (CadQuery, FreeCAD and OpenSCAD model builds; binary outputs)')
     args = ap.parse_args(argv)
+    from . import site_outputs as SO
+    if args.site and args.all_sites: raise SystemExit('give --site or --all-sites, not both')
+    if args.site == 'baseline': os.environ['AQS_SITE'] = 'baseline'
+    elif args.site:                                   # a locale: temporary worktree, outputs to sites/<site_id>/
+        return SO.run(args.site, check=args.check)
+    if args.all_sites:
+        rest = [a for a in (argv if argv is not None else sys.argv[1:]) if a != '--all-sites']
+        rc = main(rest + ['--site', 'baseline'])
+        for sid in SO.locales():
+            rc = SO.run(sid, check=args.check) or rc
+        return rc
     site = os.environ.get('AQS_SITE') or 'baseline'
-    if site != 'baseline' and not args.dry_run:
-        # Outputs are not yet written under sites/<site_id>/ (X-LOC-04, AQS-PLAN-011 section 4.4); a
-        # locale regen now would overwrite the baseline outputs.
-        raise SystemExit(f'AQS_SITE={site}: locale regeneration waits for the per-site output tree (X-LOC-04)')
+    if site != 'baseline' and not args.dry_run and not SO.in_locale_worktree(ROOT):
+        # A locale run in this tree would overwrite the baseline outputs (AQS-PLAN-011 section 4.4).
+        raise SystemExit(f'AQS_SITE={site}: run "python3 -m flow_graph.param.regen --site {site}"; it regenerates in a temporary worktree and writes sites/{site}/')
 
     m = load_manifest()
     graph_path = os.path.join(ROOT, m['graph'])

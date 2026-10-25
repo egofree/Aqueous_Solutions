@@ -3266,9 +3266,10 @@
   {
    "role": "pipeline",
    "scripts": [
-    "flow_graph/param/regen.py"
+    "flow_graph/param/regen.py",
+    "flow_graph/param/site_outputs.py"
    ],
-   "reason": "The pipeline runner itself."
+   "reason": "The pipeline runner itself, and its locale runner (--site), which writes only under sites/<site_id>/."
   },
   {
    "role": "library",
