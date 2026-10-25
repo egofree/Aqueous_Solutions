@@ -160,7 +160,7 @@
       "entries": {
         "SDS_g": {
           "value": 0.5,
-          "units": "g design short-period spectral acceleration = 2/3 Fa Ss, interim bounding (A-M-386)",
+          "units": "g design short-period spectral acceleration = 2/3 Fa Ss",
           "ref": "ASCE7_22",
           "needs_verification": true,
           "verification_test": "ASCE Hazard Tool lookup at the parcel and site class from the geotechnical report",
@@ -168,7 +168,7 @@
         },
         "SD1_g": {
           "value": 0.27,
-          "units": "g design 1 s spectral acceleration = 2/3 Fv S1, interim bounding (A-M-386)",
+          "units": "g design 1 s spectral acceleration = 2/3 Fv S1",
           "ref": "ASCE7_22",
           "needs_verification": true,
           "verification_test": "ASCE Hazard Tool lookup at the parcel and site class from the geotechnical report",
@@ -187,7 +187,7 @@
       "entries": {
         "allowable_bearing_kPa": {
           "value": 144.0,
-          "units": "kPa allowable bearing, presumptive sandy gravel (SW/GW/GM)",
+          "units": "kPa allowable bearing, presumptive",
           "ref": "IBC2027_1806",
           "needs_verification": true,
           "verification_test": "Geotechnical investigation per IBC 1803 at the parcel: borings, allowable bearing and modulus (A-M-387)",
@@ -195,7 +195,7 @@
         },
         "unit_weight_kN_m3": {
           "value": 19.0,
-          "units": "kN/m3 moist sandy gravel",
+          "units": "kN/m3 moist soil",
           "register": "A-M-387",
           "needs_verification": true,
           "verification_test": "Geotechnical report unit weight",
