@@ -67,3 +67,20 @@ not depend on outdoor humidity and does not fall at a dry site; the intake
 solves to 0 kg/d in the present run because no site water deficit is booked
 yet, and the deficit that does belong to this profile is the evaporative
 rejection charge of X-LOC-13.
+
+## Addendum 4: X-LOC-13 built; X-LOC-07 (Death Valley) done
+
+The evaporative rejection water charge is built as designed. The graph gains
+the ATMOS bookkeeping boundary and the IA-DC-SPRAY / IA-DC-EVAP edge pair at
+zero; `balance.physics()` books the charge where the site's low-grade rejection
+mode is evaporative: spray = rejected kW x 86400 s x 1000 W/kW / 2.454 MJ per
+kg (NIST_WEBBOOK), the evaporated fraction leaves to ATMOS, and GW_INTAKE
+closes the roof-tank balance by difference. Design-pass answer on ordering:
+every write_graph_heat sizing stage precedes balance_report in the
+regeneration manifest, so the mass closure reads final heat-edge rates and no
+iteration is needed. GW_INTAKE and ATMOS joined the boundary-meter exemption
+set (in does not equal out by design). Baseline solved values are unchanged
+(the edges book zero at air-rejection sites); the tree count pins follow the
+new leaf. The Death Valley run books 255.257 kg/d (the 7.25 kW rejected duty)
+end to end, and AQS-SITE-006 Rev B records it. X-LOC-07 and X-LOC-13 are
+ticked with evidence.

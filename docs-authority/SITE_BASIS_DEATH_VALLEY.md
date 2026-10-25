@@ -9,6 +9,7 @@ Plan: AQS-PLAN-011 section 6; open question Q-033 (the parcel)
 | Rev | Description | Date |
 |---|---|---|
 | A | First issue with the first locale run: profile, environment, design consequences and closure result | 2026-10-25 |
+| B | The evaporative rejection charge is booked (X-LOC-13): the site run carries 255.257 kg/d of spray consumed at DRY_COOLER, evaporated to ATMOS, closed by the groundwater intake GW_INTAKE at the same rate. Section 4 count replaced by its authority; section 5 item 1 closed. | 2026-10-25 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -33,7 +34,7 @@ This page records the Death Valley variant: the bounding hot-desert environment 
 ## 3. Design consequences as built
 
 - Heat rejection: the low-grade water loop rejects evaporatively through DRY_COOLER (mode `evaporative`, charged against the water balance), because outside air sits above the low-grade return for much of the summer; the ground loop keeps GEO_GHEX in ground mode. Night rejection into the thermal stores and a heat-pump lift remain design options on this profile and are not drawn by the run.
-- Water: rain is negligible, so the make-up source is groundwater with sand separation and reverse osmosis for silica, fluoride and arsenic; the reject is a plant stream with a defined outlet. The intake unit GW_INTAKE is in the graph and in the site run; its rate solves to 0 kg/d because the condensate harvest is indoor-air recovery and the evaporative rejection charge is not yet booked (Section 5, open item 1, task X-LOC-13).
+- Water: rain is negligible, so the make-up source is groundwater with sand separation and reverse osmosis for silica, fluoride and arsenic; the reject is a plant stream with a defined outlet. The evaporative rejection charge is booked (X-LOC-13): the site run carries 255.257 kg/d of spray consumed at DRY_COOLER (the 7.25 kW rejected duty divided by the latent heat of water), evaporated to ATMOS, and the groundwater intake GW_INTAKE closes the roof-tank balance at the same rate. The intake skid is sized for this duty at the unit task 02 sizing.
 - PV: the resource is higher than the baseline (6.3 against 5.41 kWh/kWp/d before losses, NREL_PVWATTS class basis), with cell-temperature and soiling losses to be applied by the parcel-hourly run. The sizing rule is unchanged: PV is sized at the oversize factor times the nameplate that closes the daily balance.
 - Storage and coverage: the worst stretch stays the night. The first locale run reports a plant demand of 165.87 kW, 2322.2 kWh drawn over the stretch and a coverage of 1.09 (AQS-SITE-005, the site copy under `sites/death_valley/`).
 - Crew and ventilation: outdoor work follows the state heat illness rules (CA_TITLE8_3395). Cooling dominates the ventilation load at the interim design dry bulb.
@@ -42,7 +43,7 @@ This page records the Death Valley variant: the bounding hot-desert environment 
 
 ## 4. What the run produced
 
-The first locale run regenerated 269 outputs that differ from the baseline into `sites/death_valley/`, including the site copies of the power and scaling pages, the design check, the load list, the wire inventory and the self-copy bill of materials. The baseline tree is unchanged by a locale run.
+The locale run writes the outputs that differ from the baseline into `sites/death_valley/` - the site copies of the power and scaling pages, the design check, the load list, the wire inventory and the self-copy bill of materials among them; the run receipt lists the count. The baseline tree is unchanged by a locale run.
 
 ## 5. Closure result and open items
 
@@ -50,7 +51,6 @@ The mass balance closes at the site. The site design check passes: the former QC
 
 Open items, in order:
 
-1. Evaporative rejection water charge. The condensate harvest is indoor-air recovery (greenhouse and habitation vapour condensed on the coils), so it does not depend on outdoor humidity and does not fall at a dry site; the intake therefore solves to 0 kg/d in the present run. The site water charge that does belong to this profile is the spray the evaporative rejection consumes: rejected duty divided by the latent heat of water. Booking it against the roof-tank balance is a design pass of its own - it must state the ordering between the heat solve and the mass closure - and is recorded as task X-LOC-13. Until it is built the intake stays at zero and the page does not claim a site water deficit.
-2. ASHRAE climatic design conditions for the nearest listed station replace the interim design temperatures (A-M-385).
-3. The ASCE Hazard Tool lookups (wind, seismic, snow) and the geotechnical report at the parcel replace the interim bounding values (A-M-386, A-M-387).
-4. The parcel itself (Q-033); every parcel-bound value in this page is a station-climate interim until it is chosen.
+1. ASHRAE climatic design conditions for the nearest listed station replace the interim design temperatures (A-M-385).
+2. The ASCE Hazard Tool lookups (wind, seismic, snow) and the geotechnical report at the parcel replace the interim bounding values (A-M-386, A-M-387).
+3. The parcel itself (Q-033); every parcel-bound value in this page is a station-climate interim until it is chosen.
