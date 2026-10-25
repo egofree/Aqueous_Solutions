@@ -1,238 +1,111 @@
-# Campus plan — recycle core + farm + fab + habitation + cryo
+# Campus plan - recycle core, farm, fab, habitation and cryo blocks
 
-Document number: AQS-CMP-001  
-Revision: B  
-Date: 2026-09-27
+Document number: AQS-CMP-001
+Revision: C
+Date: 2026-10-25
 
-Waves. Broad strokes first. Do not invent synonyms for names already
-in `GLOSSARY.md`. New names in §2 are locked by this file unless the
-operator strikes them.
-
-Licence: CERN-OHL-S-2.0. No diffusion plant pictures.
-
----
-
-## 0. What already exists
-
-Recycle core PFDs and CAD are the authority for the wet / oil / glass /
-BMED / gas / electrical aisle. Do not redraw that chemistry.
-
-| Layer | Where |
-|---|---|
-| Names | `GLOSSARY.md` (locked strings) |
-| Plant PFD | `continuous_recycling_pfd.png` |
-| Line PFDs | wet, EW, oil, glass, BMED, polish, ZnBr2, SLD, container |
-| 3D | `models/freecad/build_plant.py` → `plant.FCStd` |
-| Campus boxes | `PHASE_F_ENVELOPES.md`, `freecad/campus.py` |
-| Inter-block streams | `docs-authority/STREAM_REGISTER.md` |
-
-Gaps this plan fills: farm, wafer fab, habitation, cryo internals;
-water / life-gas / nutrient cycles; PFDs and CAD that sit *outside*
-the four process gas headers.
-
-Vertical building (basement dirty → roof tank): `docs-authority/BUILDING_STACK.md`
-and `building_section_pfd.png`. Plan-view envelopes still apply *on*
-those floors.
-
----
-
-## 1. Rules that do not move
-
-1. Four process headers stay on the recycle aisle: HDR_DUST,
-   HDR_ACID_GAS, HDR_H2, HDR_OIL_VAPOR. HDR_CAUSTIC stays with digest /
-   BMED BASE. None of these enter FARM, WAFER_FAB, or HABITATION.
-2. Life-support gases are separate objects: HDR_O2, HDR_N2, HDR_CO2.
-   Process cathode H₂ may feed CRYO or fuel *after* H2_DRYER. It does
-   not tee into HDR_O2.
-3. ZnBr2 Br₂ tower does not share a header or a cold box with CRYO.
-4. WAFER_FAB etchant and metals return in a closed line to REGEN LEACH
-   / LEACH CSTR 1. No floor drain.
-5. Al, Mg, Ca, Li, REE are not electrowon from this chloride liquor.
-   Farm nutrients come from P-Al / P-Mg / P-Ca cakes, struvite, and
-   BMED salts — not from a new EW aisle.
-6. FR-4 still never enters INDUCTION PYROLYZER.
-7. One parameter file per model set. Campus mm live in
-   `models/freecad/params.py` (envelopes already there via `campus.py`).
-   Do not fork a second `CSTR_L`.
-
----
-
-## 2. Locked campus names
-
-Pattern matches `internal/SYSTEM_MODEL_PLAN.md`: equipment in SMALL CAPS,
-CAD `Name` uses `_`.
-
-### 2.1 Blocks (already on the plant tree)
-
-| Drawing | CAD `Name` | Envelope (mm) |
+| Rev | Description | Date |
 |---|---|---|
-| FARM | `FARM` | 12 000 × 18 000 × 4 500 on **L1** (AQS-BLD-001) |
-| WAFER FAB | `WAFER_FAB` | 12 000 × 8 000 × 4 000 on **L0** |
-| HABITATION | `HABITATION` | 12 000 × 18 000 × 3 200 on **L1** |
-| CRYO | `CRYO` | 6 000 × 6 000 × 4 000 on **L-1** east of CORE (18, 6) |
-| MFG SHOP | `MFG_SHOP` | 12 000 × 10 000 × 5 000 on **L0** |
+| A | First issue: campus blocks, header split and phase plan | 2026-09-27 |
+| B | Block envelopes re-stated from `models/freecad/params.py`; wave checkboxes updated | 2026-09-27 |
+| C | Rewritten to the documentation style guide (AQS-DOC-002). Planning jargon removed; the invented label "Salria" replaced by plain wording (the same ruling as the retired invented label in Q-017); each locked name marked present or retired against graph Rev AC. No rule or envelope changed. | 2026-10-25 |
 
-### 2.2 New headers (life / utility — not process gas)
+Licence: CERN-OHL-S-2.0. Plant artwork is the scripted diagrams and the parametric CAD; no rendered imagery is used.
 
-| Header | Carries | Must not carry |
+## 1. Purpose and scope
+
+This page records the campus plan that grew the plant from the recycle aisle to the full block layout: the standing rules for what may share a header, the locked block names and envelopes, and the phase order in which the diagrams and the CAD were built. The plant flow graph is now the authority for what exists; `docs-authority/BUILDING_STACK.md` and `docs-authority/PHASE_F_ENVELOPES.md` are the authorities for floors and envelope sizes. This page keeps the rules and the plan history.
+
+## 2. Standing rules
+
+1. The four process headers stay on the recycle aisle: HDR_DUST, HDR_ACID_GAS, HDR_H2 and HDR_OIL_VAPOR. HDR_CAUSTIC stays with the digest and BMED base duty. None of them enters FARM, WAFER_FAB or HABITATION.
+2. Life-support gases are separate headers: HDR_O2, HDR_N2 and HDR_CO2. Process cathode hydrogen may feed the cold box or the fuel cell after H2_DRYER; it never tees into HDR_O2.
+3. The ZnBr2 bromine tower shares no header and no cold box with the CRYO trains.
+4. Wafer-fab etchant and metals return in a closed line to the leach: stream S10 carries WET_BENCH to LEACH_CSTR_1. There is no floor drain.
+5. Aluminium, magnesium, calcium, lithium and the rare earths are not electrowon from the chloride liquor. Farm nutrients come from the P-Al, P-Mg and P-Ca cakes, struvite and the BMED salts, not from a new electrowinning aisle.
+6. FR-4 never enters INDUCTION PYROLYZER.
+7. One parameter file per model set. Campus dimensions live in `models/freecad/params.py` (the envelopes are placed by `models/freecad/campus.py`). No second copy of a dimension constant is forked.
+
+## 3. Locked block names and envelopes
+
+Table 3.1 states the blocks as locked at revision A, with their envelope and their state in graph Rev AC.
+
+Table 3.1. Campus blocks
+
+| Block | CAD name | Envelope (mm) | Floor | In graph Rev AC |
+|---|---|---|---|---|
+| Recycle core aisle | (existing plant) | per `PHASE_F_ENVELOPES.md` | L-1/L0 | yes (sector CORE units) |
+| Farm | `FARM` | 12 000 x 18 000 x 4 500 | L1 | block retired as a unit; the grow bed (GROW_BED, 29.12 m2) and NUTRIENT_DOSE are the graph units |
+| Wafer fab | `WAFER_FAB` | 12 000 x 8 000 x 4 000 | L0 | yes |
+| Habitation | `HABITATION` | 12 000 x 18 000 x 3 200 | L1 | yes |
+| Cryo | `CRYO` | 6 000 x 6 000 x 4 000 | L-1, east of CORE | yes (CRYO_ASU, CRYO_H2, CRYO_O2, CRYO_N2, CRYO_CO2) |
+| Manufacturing shop | `MFG_SHOP` | 12 000 x 10 000 x 5 000 | L0 | yes |
+
+## 4. Life and utility headers
+
+Table 4.1 records the header split at issue. The names are the locked strings; the graph carries the live edge list.
+
+Table 4.1. Life and utility headers locked at revision A
+
+| Header | Carries | Must never carry |
 |---|---|---|
-| HDR_UPW | ED / polish water < 1 µS/cm | leach, etch, grey |
-| HDR_O2 | CRYO / farm O₂ to HABITATION | process H₂, acid gas |
-| HDR_N2 | CRYO N₂ to FAB / FARM | air in-leak into acid header |
-| HDR_CO2 | CRYO + hab return → FARM | afterburner flue as a raw duct |
-| HDR_GREY | hab / farm condensate and wash | Salria |
-| HDR_ORG | plant waste + hab organics → HOPPER or OIL LINE | FR-4, glass |
-| HDR_ETCH | fab spent etch → REGEN LEACH | sewer |
+| HDR_UPW | Electrodeionised and polished water below 1 microS/cm | leach liquor, etchant, grey water |
+| HDR_O2 | Cold-box and farm oxygen to HABITATION | process hydrogen, acid gas |
+| HDR_N2 | Cold-box nitrogen to WAFER_FAB and FARM | air in-leak into the acid header |
+| HDR_CO2 | Cold-box CO2 and the hab return to FARM | afterburner flue as a raw duct |
+| HDR_GREY | Hab and farm condensate and wash water | blackwater (the blackwater barrier train owns that duty) |
+| HDR_ORG | Plant waste and hab organics to the hopper or the oil line | FR-4, glass |
+| HDR_ETCH | Fab spent etchant to the leach | sewer discharge |
 
-### 2.3 Wave-2 units (locked here so PFDs can start)
+## 5. Unit names locked at revision A, and what became of them
 
-**FARM**
+Revision A locked the first unit names per block so the diagrams could start. Table 5.1 records each name and its state in graph Rev AC; the graph node list is the current authority.
 
-| Name | Role |
+Table 5.1. Locked names and their present state
+
+| Name locked at Rev A | State in graph Rev AC |
 |---|---|
-| FISH TANK | aquaponics livestock |
-| BIOFILTER | NH₄⁺ → NO₃⁻ |
-| GROW BED | hydroponic / aeroponic |
-| FARM SUMP | water loop with HDR_GREY / HDR_UPW makeup |
-| LED CANOPY | DC from yard |
-| NUTRIENT DOSE | struvite, NH₄ salts, chelates from core |
+| FISH_TANK, BIOFILTER, FARM_SUMP, LED_CANOPY | retired; the aquaponic loop left the design and the grow bed is GROW_BED |
+| GROW_BED | present as GROW_BED |
+| NUTRIENT_DOSE | present as NUTRIENT_DOSE |
+| FAB_PREP, FAB_TOOL, ETCH_RETURN | retired; the fab duty is carried by WET_BENCH and the tools of the FAB sector (see AQS-IF-FAB-WET-001 review) |
+| WET_BENCH | present as WET_BENCH |
+| HAB_AIR, HAB_WATER, HAB_WASTE, GALLEY, SLEEP | retired as separate units; the duties are HABITATION internals and the blackwater barrier train (AQS-DUTY-063) |
+| COLD_BOX | present as CRYO_ASU ("air liquefaction cold box", the plain wording per Q-017) |
+| CRYO_H2, CRYO_O2, CRYO_N2, CRYO_CO2 | present as CRYO_H2, CRYO_O2, CRYO_N2, CRYO_CO2 |
+| ED, UPW POLISH, CONDENSATE | retired as named units; the water utility is the RO/EDI train of the WTR sector |
 
-**WAFER FAB**
+No second leach tank, no pre-leach filter and no shared campus stack were added.
 
-| Name | Role |
-|---|---|
-| FAB PREP | Si from core + recovered Al / Cu / Fe |
-| WET BENCH | clean / etch, UPW + HCl / NaOH from BMED |
-| FAB TOOL | dry tools, N₂ purge |
-| ETCH RETURN | HDR_ETCH to REGEN LEACH |
+## 6. Phase record
 
-**HABITATION**
+The build proceeded in phases. All phases are complete; the outputs listed here are the current artifacts.
 
-| Name | Role |
-|---|---|
-| HAB AIR | O₂ in, CO₂ out, Q4 HVAC |
-| HAB WATER | UPW / grey split |
-| HAB WASTE | solids / liquor to core (HDR_ORG + SALT FEED path) |
-| GALLEY | food from FARM |
-| SLEEP | berth envelope |
+- Phase 0, register: block names and envelopes (Table 3.1), the inter-block stream table (`docs-authority/STREAM_REGISTER.md`) and the process-versus-life header split (Table 4.1).
+- Phase 1, overview diagrams: the plant process flow diagram generated from the graph (`flow_graph/views/pfd.svg`, from `flow_graph/render_layer_views.py`) and the nutrient diagram (`nutrient_pfd.png`, from `flow_graph/exporters/matplotlib/nutrient_pfd.py`). The hand-drawn campus overview, water-cycle and life-gas sheets of revision A were superseded by these generated views.
+- Phase 2, block diagrams: the farm, wafer-fab, habitation, cryo and manufacturing-shop process flow diagrams.
+- Phase 3, CAD massing: `models/freecad/campus.py` (four keep-out boxes from `params.py`), `farm.py`, `wafer_fab.py`, `habitation.py`, `cryo.py`, `mfg_shop.py`, attached by `models/freecad/build_plant.py`. Object names are the Table 5.1 strings with underscores.
+- Phase 4, shop detail: the life-support nozzle schedule (`docs-authority/LIFE_NOZZLE_SCHEDULE.md`, AQS-NZ-002) and the first-article models of the farm, fab, habitation water and cryo units. The OpenSCAD unit models follow only after a unit's phase-3 origin is frozen. The foam-board electrowinning coupon model (`models/openscad/foam_ew/`) is a coupon model; it does not stand in for the plant cells.
+- Phase 5, routed utilities: the life-header tier table (`docs-authority/LIFE_HEADERS.md`, AQS-PIP-002), the life racks (`_life_racks` in `models/freecad/pipe_services.py`: RACK_LIFE_N/S/W/E) and `mfg_life_rack.scad`. HDR_ORG stays a tote and conveyor path with no tee onto the four process headers.
 
-**CRYO**
+## 7. Work order inside a phase
 
-| Name | Role |
-|---|---|
-| COLD BOX | Stirling 77–90 K + distillation / PSA |
-| CRYO H2 | product, not HDR_H2 |
-| CRYO O2 | to HDR_O2 |
-| CRYO N2 | to HDR_N2 |
-| CRYO CO2 | to HDR_CO2 |
-
-**WATER** (shared utility, sits with BMED / Q4)
-
-| Name | Role |
-|---|---|
-| ED | already implied by BMED middle / polish water |
-| UPW POLISH | conductivity spec for FAB / HAB |
-| CONDENSATE | HVAC + dryer + farm |
-
-Do not add a second leach tank, a pre-leach filter, or a shared stack
-to “simplify” campus air.
-
----
-
-## 3. Waves
-
-### Wave 0 — register  ← this file
-
-- [x] Block names and envelopes
-- [x] Inter-block stream table (`STREAM_REGISTER.md`)
-- [x] Header split (process vs life)
-
-### Wave 1 — board-stroke PFDs
-
-- [x] Campus overview
-- [x] Water / life-gas / nutrient sheets
-
-One sheet per cycle. Boxes and labelled arrows only. No internals.
-
-The campus overview, water-cycle and life-gas sheets were drawn by scripts that were not carried into this repository. The process flow diagram generated from the plant graph (`flow_graph/views/pfd.svg`, from `flow_graph/render_layer_views.py`) now shows the same blocks and streams.
-
-| Sheet | Script | Output |
-|---|---|---|
-| Plant process flow (campus, water, life gas) | `flow_graph/render_layer_views.py` | `flow_graph/views/pfd.svg` |
-| Nutrient / N-P | `flow_graph/exporters/matplotlib/nutrient_pfd.py` | `nutrient_pfd.png` |
-
-Recycle-core PFDs already exist. Wave 1 does not replace them.
-
-### Wave 2 — block PFDs
-
-- [x] `farm_pfd.png`
-- [x] `wafer_fab_pfd.png`
-- [x] `habitation_pfd.png`
-- [x] `cryo_pfd.png`
-- [x] `mfg_shop_pfd.png`
-
-### Wave 3 — CAD massing
-
-- [x] Scripts written. Rebuild on the operator box (`build_plant.py`).
-
-Same order as the recycle line: envelope, then nozzles, then feed.
-
-| Script | Adds |
-|---|---|
-| `freecad/campus.py` | four keep-out boxes from `params.py` |
-| `freecad/farm.py` | farm units inside `FARM` |
-| `freecad/wafer_fab.py` | fab units inside `WAFER_FAB` |
-| `freecad/habitation.py` | hab units inside `HABITATION` |
-| `freecad/cryo.py` | cold box + CRYO_H2/O2/N2/CO2 |
-| `freecad/mfg_shop.py` | `MFG_SHOP` at (2000, 9000) |
-| `freecad/build_plant.py` | attach after `campus.attach` |
-
-Object names = §2 strings with `_`. Labels via `labels.py`.
-
-### Wave 4 — shop detail
-
-- [x] Nozzle schedule `LIFE_NOZZLE_SCHEDULE.md` (AQS-NZ-002)
-- [x] `mfg_fish_tank` / `biofilter` / `grow_bed` / `farm_sump` / `nutrient_dose`
-- [x] `mfg_wet_bench` / `etch_return` / `hab_water` / `hab_waste` / `cold_box`
-- [x] FreeCAD stubs `campus_shop.py` (operator rebuilds STLs)
-
-OpenSCAD `mfg_*` only after the Wave-3 origin of that unit is frozen.
-Foam-board 1:3 EW (`models/openscad/foam_ew/`) stays a coupon model. It does not
-replace plant EW cells.
-
-### Wave 5 — routed utilities between blocks
-
-- [x] `LIFE_HEADERS.md` (AQS-PIP-002) tier table
-- [x] `pipe_services.py` `_life_racks` — RACK_LIFE_N/S/W/E
-- [x] `mfg_life_rack.scad`
-- [x] `life_headers_pfd.png`
-
-HDR_ORG stays a tote / conveyor path. No tee onto the four process
-headers.
-
----
-
-## 4. Work order inside a wave
-
-1. Update `STREAM_REGISTER.md` if a new stream appears.
-2. Draw or edit the PFD. Operator reads names and forbidden mixes.
+1. Update `docs-authority/STREAM_REGISTER.md` if a new stream appears.
+2. Draw or edit the diagram; the reader checks names and forbidden mixes against Section 2 and Table 4.1.
 3. Place or move the CAD envelope.
 4. Add nozzles on that envelope.
 5. Only then internals.
 
-Stop if a stream would mix HDR_ACID_GAS with HDR_O2, or send fab etch
-to sewer, or put farm waste in INDUCTION PYROLYZER as FR-4.
+A change that would mix HDR_ACID_GAS with HDR_O2, send fab etchant to a sewer, or feed FR-4 to INDUCTION PYROLYZER stops.
 
----
-
-## 5. File ownership
+## 8. File ownership
 
 | File | Owns |
 |---|---|
-| `docs-authority/CAMPUS_PLAN.md` | waves + campus names |
+| `docs-authority/CAMPUS_PLAN.md` | phases and campus names (this page) |
 | `docs-authority/STREAM_REGISTER.md` | inter-block streams |
-| `docs-authority/PHASE_F_ENVELOPES.md` | box sizes / origins |
+| `docs-authority/PHASE_F_ENVELOPES.md` | envelope sizes and origins |
 | `flow_graph/render_layer_views.py` | overview sheet |
 | `GLOSSARY.md` | definitions once a name is drawn |
 
-Rebuild overview: `python3 -m flow_graph.param.regen` (the `regen_derived` stage runs `flow_graph/render_layer_views.py`).
+Rebuild the overview with `python3 -m flow_graph.param.regen` (the `regen_derived` stage runs `flow_graph/render_layer_views.py`).

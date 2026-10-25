@@ -46,6 +46,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/GREENHOUSE_ENVELOPE.md` | Rev C. Purpose and numbered table added; records that S40 and S42 are not graph edges. See section 6. |
 | `docs-authority/MEOH_EQUIPMENT.md` | Rev B. Purpose added; new column shows which tags are graph nodes. No tag or rating changed. See section 6. |
 | `docs-authority/CO2_HEADER_DUTY.md` | Rev D. Rewritten to the guide and updated to graph Rev AC through `_co2_header_study.py`: S85 is 0, the header runs on hab metabolic CO2, the bed dose is on S89 and the remainder goes to MEOH_SYNTH on IA-HCO2-MEOH (study extended; balance closes at 0). Setpoint question recorded as Q-020. |
+| `docs-authority/CAMPUS_PLAN.md` | Rev C. Rewritten to the guide: purpose first, phases named in plain words, the invented label "Salria" replaced by plain wording (Q-017 ruling), every locked name marked present or retired against graph Rev AC, rule 4 aligned to stream S10 (WET_BENCH to LEACH_CSTR_1). No rule or envelope changed. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -89,7 +90,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/BALANCE_RECONCILIATION.md` | |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | |
 | `docs-authority/BOUGHT_SPECS.md` | |
-| `docs-authority/CAMPUS_PLAN.md` | |
 | `docs-authority/CONTROL_SOFTWARE.md` | |
 | `docs-authority/CRYO_COLD_BOX.md` | |
 | `docs-authority/DERIVED_REVISIONS.md` | |

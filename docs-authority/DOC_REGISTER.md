@@ -64,7 +64,7 @@ Table 3.1. Document numbers in use
 | AQS-CAD-001 | `docs-authority/CAD_SCRIPTING_PROTOCOL.md` | B | 2026-10-24 | Scripted CAD protocol: from process flow diagram to rebuildable models | current |
 | AQS-CAD-002 | `docs-authority/FREECAD_PROTOCOL.md` | B | 2026-10-24 | Running FreeCAD for the wet-line model | current |
 | AQS-CLOSE-001 | `notes/CLOSURE_PASS.md` | A | 2026-10-17 | Closure pass — item 10 | current |
-| AQS-CMP-001 | `docs-authority/CAMPUS_PLAN.md` | B | 2026-09-27 | Campus plan — recycle core + farm + fab + habitation + cryo | current |
+| AQS-CMP-001 | `docs-authority/CAMPUS_PLAN.md` | C | 2026-10-25 | Campus plan - recycle core, farm, fab, habitation and cryo blocks | current |
 | AQS-COD-002 | `docs-authority/PERMITS.md` | B | 2026-10-25 | Permit list | current |
 | AQS-COM-001 | `docs-authority/COMMISSIONING.md` | B | 2026-10-24 | Commissioning plan | current |
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence (cold start from empty) | current |
