@@ -23,6 +23,7 @@ The register covers every tracked Markdown page that states a document number in
 - Every page directly under `docs-authority/` has a number. Folder indexes (`README.md`) do not.
 - A new page takes the next free number in its series. Run `python3 docs-authority/_doc_register.py --next AQS-XXX` to find it.
 - A page that is renumbered keeps its old number on a `Former number:` line, so that older citations can still be resolved (section 4). A former number is never issued again. Where two pages once shared a number, a citation of that number dated before 2026-10-24 may refer to either page; section 4 names both.
+- When a page is deleted, its number is withdrawn and listed in section 6. A withdrawn number is never issued again.
 - A number followed by a qualifier, for example `AQS-INV-005 sheet MF-01`, names a part of that document and is listed in section 5.
 - The test `flow_graph/test_doc_numbers.py` fails if a number is claimed twice or if a page that needs a number has none.
 
@@ -125,7 +126,6 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-078 | `docs-authority/BALANCE_CLOSE.md` | A | 2026-10-09 | Balance close | current |
 | AQS-DUTY-079 | `docs-authority/sizing/HOUSE_SCRUBBERS.md` | A | 2026-10-15 | House scrubbers | current |
 | AQS-DUTY-080 | `docs-authority/CHECKS.md` | — | — | Cathode size from the sheet | current |
-| AQS-DUTY-081 | `docs-authority/DUTY_CALC.md` | — | — | Duty calculation | current |
 | AQS-DUTY-082 | `docs-authority/S83_S88.md` | — | 2026-10-02 | S83–S88 endpoints | current |
 | AQS-DUTY-CR | `notes/CR_CELL_DUTY.md` | A | 2026-10-16 | CR_CELL duty — chromium metal | current |
 | AQS-DUTY-FOUNDRY | `notes/FOUNDRY_DUTY.md` | A | 2026-10-16 | FOUNDRY sector | current |
@@ -204,7 +204,6 @@ Table 3.1. Document numbers in use
 | AQS-ISO-000 | `docs-authority/ISO_DRAWING_INDEX.md` | A | 2026-09-27 | Isometric fabrication set | current |
 | AQS-ISO-001 | `docs-authority/ISO_ROUTES.md` | A | 2026-10-15 | Isometric route data | current |
 | AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | A | 2026-10-15 | Isometric sheets | current |
-| AQS-ISO-003 | `docs-authority/ISOMETRIC.md` | — | — | Close-pipe isometrics | current |
 | AQS-LIFE-001 | `docs-authority/LIFE_FITOUT_PLAN.md` | B | 2026-10-01 | Habitation and farm fit-out plan | current |
 | AQS-LIT-ASSAY | `notes/LIT_ASSAY.md` | A | 2026-10-16 | Literature compositions for missing assays | current |
 | AQS-LITH-001 | `docs-authority/ALIGNER.md` | C | 2026-10-11 | Contact aligner | current |
@@ -531,3 +530,14 @@ Table 5.1. Parts of numbered documents
 | AQS-PLAN-007 | note (working record; no new AQS number) | `docs-authority/notes/2026-10-20-duties-nozzles.md` |
 | AQS-PLAN-007 | note (no new AQS number; this is a working record) | `docs-authority/notes/2026-10-20-evidence-audit.md` |
 | AQS-PLAN-007 | note (working record; no new AQS number) | `docs-authority/notes/2026-10-20-instruments.md` |
+
+## 6. Withdrawn numbers
+
+Table 6.1 lists the numbers of pages that have been deleted from the repository. A withdrawn number is never issued again. The deleted page remains in the git history.
+
+Table 6.1. Withdrawn numbers
+
+| Number | Former page | Withdrawn | Reason |
+| --- | --- | --- | --- |
+| AQS-DUTY-081 | `docs-authority/DUTY_CALC.md` | 2026-10-25 | Orphaned snapshot of a retired duty calculation at an earlier graph revision; no generator writes it and no document cites it. The unit duty sheets in docs-authority/duties/ replace it. |
+| AQS-ISO-003 | `docs-authority/ISOMETRIC.md` | 2026-10-25 | Orphaned list of close-pipe isometrics for IA-CLOSE edges, most of which are no longer in the graph; no generator writes it. The per-line isometric set AQS-ISO-002 replaces it. |

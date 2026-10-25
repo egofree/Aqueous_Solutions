@@ -112,7 +112,6 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [CO2_HEADER_DUTY.md](CO2_HEADER_DUTY.md) | AQS-DUTY-009 | HDR_CO2 consumer duty |
 | [S83_S88.md](S83_S88.md) | AQS-DUTY-082 | S83–S88 endpoints |
 | [COMPLETION_DUTIES.md](COMPLETION_DUTIES.md) | AQS-DUTY-007 | Completion duties |
-| [DUTY_CALC.md](DUTY_CALC.md) | AQS-DUTY-081 | Duty calculation |
 | [CHECKS.md](CHECKS.md) | AQS-DUTY-080 | Cathode size from the sheet |
 | [PATHWAY_AUDIT.md](PATHWAY_AUDIT.md) | AQS-DUTY-024 | No placeholders |
 | [GRAPH_AUDIT.md](GRAPH_AUDIT.md) | AQS-AUD-GRAPH-001 | Graph audit |
@@ -238,7 +237,6 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [PIPE_SPECS.md](PIPE_SPECS.md) | AQS-INV-006 | Pipe family production plans |
 | [PIPES.md](PIPES.md) | AQS-PIP-006 | Pipe junctions |
 | [SUPPORTS.md](SUPPORTS.md) | AQS-PIP-005 | Pipe supports and thermal flexibility |
-| [ISOMETRIC.md](ISOMETRIC.md) | AQS-ISO-003 | Close-pipe isometrics |
 | [ISO_DRAWING_INDEX.md](ISO_DRAWING_INDEX.md) | AQS-ISO-000 | Isometric fabrication set |
 | [ISO_ROUTES.md](ISO_ROUTES.md) | AQS-ISO-001 | Isometric route data |
 | [ISO_SHEETS.md](ISO_SHEETS.md) | AQS-ISO-002 | Isometric sheets |

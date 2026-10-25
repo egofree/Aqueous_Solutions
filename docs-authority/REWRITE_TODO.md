@@ -275,6 +275,21 @@ Table 4.2. Pending pages in subfolders
 
 Table 5.1. Pages and entries removed
 
-| Item | Reason |
+| Removed item | Reason |
 | --- | --- |
+| `docs-authority/DUTY_CALC.md` (AQS-DUTY-081, number withdrawn) | Orphaned snapshot of a retired duty calculation at an earlier graph revision (it states a unit count that no longer holds); no generator writes it and no document cites it. The duty sheets in `docs-authority/duties/` replace it. |
+| `docs-authority/ISOMETRIC.md` (AQS-ISO-003, number withdrawn) | Orphaned list of close-pipe isometrics; most of its IA-CLOSE edges and several of its units are no longer in the graph, and no generator writes it. The per-line isometric set AQS-ISO-002 (`ISO_SHEETS.md`) replaces it. |
 | Row for `DOCUMENTATION_STYLE.md` in the documentation map (`docs-authority/README.md`) | The page was merged into `DOC_STYLE.md` on 2026-10-24 and no longer exists; its number is a former number of AQS-DOC-002. |
+
+## 6. Questions for the project owner
+
+Table 6.1 lists pages that look abandoned or out of date but are kept until the project owner decides. Each is a candidate for deletion or for a full update.
+
+Table 6.1. Pages kept pending a decision
+
+| Page | Finding |
+|---|---|
+| `docs-authority/MVS_SIZE.md` (AQS-DUTY-038) | Not cited by any page or generator. It records the crop floor at graph Rev BD and the 24 m × 24 m module plate, which is the subject of open question Q-015. |
+| `docs-authority/MASS_DISPOSITION.md` (AQS-DUTY-023), `docs-authority/GREENHOUSE_WATER.md` (AQS-DUTY-013), `docs-authority/BALANCE_CLOSE_N.md` (AQS-DUTY-012) | Short records of balance closures at early graph revisions (Rev Y, Rev O and Rev N). They are cited by notes in the graph and by the assumptions register, so they are kept as history. They could move to `docs-authority/internal/` as records. |
+| `docs-authority/ISO_DRAWING_INDEX.md` (AQS-ISO-000) | Marked superseded by AQS-ISO-002 and kept for its PNG and PDF history; cited by `_iso_routes.py` and the task plan. |
+| `docs-authority/FARM_WASTE.md`, `docs-authority/HAB_FIXTURES.md`, `docs-authority/NUTRIENT_BALANCE.md`, `docs-authority/NUTRIENT_GAPS.md` | Not cited by any other page or generator. Not yet reviewed for whether their content is current. |

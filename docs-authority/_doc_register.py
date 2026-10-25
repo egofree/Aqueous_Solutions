@@ -36,6 +36,15 @@ FORMER = re.compile(r'^(?:\**Former numbers?\**:?\**\s*|Renumbered \S+ from )(.+
 PART_WORDS = ('sheet', 'annex', 'note', 'part', 'companion', '(folder')
 HEAD_LINES = 30
 REV, DATE = 'C', '2026-10-25'   # this register's own revision (it lists itself)
+# Numbers of pages that were deleted. They are never issued again (next_free skips them) and no page may claim them.
+WITHDRAWN = {
+    'AQS-DUTY-081': ('docs-authority/DUTY_CALC.md', '2026-10-25',   # retired path
+                     'Orphaned snapshot of a retired duty calculation at an earlier graph revision; no generator writes it '
+                     'and no document cites it. The unit duty sheets in docs-authority/duties/ replace it.'),
+    'AQS-ISO-003': ('docs-authority/ISOMETRIC.md', '2026-10-25',   # retired path
+                    'Orphaned list of close-pipe isometrics for IA-CLOSE edges, most of which are no longer in the graph; '
+                    'no generator writes it. The per-line isometric set AQS-ISO-002 replaces it.'),
+}
 
 
 def tracked_md():
@@ -77,7 +86,9 @@ def scan():
                     old = re.match(r'\W*(' + NUM + ')', fm.group(1))
                     if old:
                         formers.append(dict(old=old.group(1), new=m.group(1), path=p, note=fm.group(1).strip()))
-        elif required(p):
+        if m and m.group(1) in WITHDRAWN:
+            problems.append(f'{p}: claims withdrawn number {m.group(1)}')
+        if not m and required(p):
             problems.append(f'{p}: no "Document number:" line in its first {HEAD_LINES} lines')
     for num, pages in claims.items():
         if len(pages) > 1:
@@ -92,7 +103,7 @@ def series_of(num):
 
 def next_free(series):
     claims, parts, formers, _ = scan()
-    used = set(claims) | {f['old'] for f in formers} | {p['number'] for p in parts}
+    used = set(claims) | {f['old'] for f in formers} | {p['number'] for p in parts} | set(WITHDRAWN)
     n = max([series_of(x)[1] for x in used if series_of(x)[0] == series] + [0]) + 1
     while f'{series}-{n:03d}' in used:
         n += 1
@@ -131,6 +142,8 @@ def render(claims, parts, formers):
          '- A page that is renumbered keeps its old number on a `Former number:` line, so that older citations can '
          'still be resolved (section 4). A former number is never issued again. Where two pages once shared a number, '
          'a citation of that number dated before 2026-10-24 may refer to either page; section 4 names both.',
+         '- When a page is deleted, its number is withdrawn and listed in section 6. A withdrawn number is never '
+         'issued again.',
          '- A number followed by a qualifier, for example `AQS-INV-005 sheet MF-01`, names a part of that document '
          'and is listed in section 5.',
          '- The test `flow_graph/test_doc_numbers.py` fails if a number is claimed twice or if a page that needs a '
@@ -157,6 +170,12 @@ def render(claims, parts, formers):
           'Table 5.1. Parts of numbered documents', '', '| Number | Part | Page |', '| --- | --- | --- |']
     for p in sorted(parts, key=lambda p: (p['number'], p['path'])):
         L.append(f'| {p["number"]} | {cell(p["qualifier"])} | `{p["path"]}` |')
+    L += ['', '## 6. Withdrawn numbers', '',
+          'Table 6.1 lists the numbers of pages that have been deleted from the repository. A withdrawn number is never '
+          'issued again. The deleted page remains in the git history.', '',
+          'Table 6.1. Withdrawn numbers', '', '| Number | Former page | Withdrawn | Reason |', '| --- | --- | --- | --- |']
+    for num, (path, when, why) in sorted(WITHDRAWN.items()):
+        L.append(f'| {num} | `{path}` | {when} | {cell(why)} |')
     return '\n'.join(L) + '\n'
 
 

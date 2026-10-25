@@ -18,6 +18,22 @@
    "note": "the house style (AQS-DOC-001) merged into the single style guide AQS-DOC-002"
   },
   {
+   "old": "docs-authority/DUTY_CALC.md",
+   "now": [
+    "docs-authority/duties/"
+   ],
+   "when": "2026-10-25 documentation triage",
+   "note": "orphaned snapshot of a retired duty calculation; number AQS-DUTY-081 withdrawn"
+  },
+  {
+   "old": "docs-authority/ISOMETRIC.md",
+   "now": [
+    "docs-authority/ISO_SHEETS.md"
+   ],
+   "when": "2026-10-25 documentation triage",
+   "note": "orphaned close-pipe isometric list; number AQS-ISO-003 withdrawn; the per-line set AQS-ISO-002 replaces it"
+  },
+  {
    "old": "notes/",
    "now": [
     "docs-authority/notes/"

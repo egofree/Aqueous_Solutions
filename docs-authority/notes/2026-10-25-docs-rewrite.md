@@ -23,3 +23,11 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 - `SELF_COPY_BOM.md` (AQS-BOM-SC-001) Rev H: rewritten in full. Every row, rate and identifier is kept. Section 4 stated `reprap_bom_complete` as true (the revision F value); the graph and the seed model hold false since revision G, and the table now says so. The pointer to a canonical copy outside this repository was removed. The generated reconciliation, now section 8, is rewritten in `docs-authority/_sc_reconcile.py`, which also labels a gap with no stated reason instead of leaving the cell blank.
 - `docs-authority/_polymers_sizing.py` and `sizing/POLYMERS_LINE.md`: citation of the reconciliation section updated to section 8 of Rev H.
 - `GLOSSARY.md`: EDC and VCM added.
+
+## Batch 4: removed pages
+
+- `docs-authority/DUTY_CALC.md` (AQS-DUTY-081) deleted. It was a snapshot of a retired duty calculation at an earlier graph revision, stated a unit count that no longer holds, was written by no generator and was cited by no document. The unit duty sheets in `docs-authority/duties/` replace it.
+- `docs-authority/ISOMETRIC.md` (AQS-ISO-003) deleted; the path is retired. It listed close-pipe isometrics for IA-CLOSE edges, most of which are no longer in the graph, and was written by no generator. The per-line isometric set AQS-ISO-002 (`ISO_SHEETS.md`) replaces it.
+- `docs-authority/_doc_register.py`: a page that is deleted now has its number withdrawn. The register lists withdrawn numbers in a new section 6, `--next` never issues them again, and `--check` fails if a page claims one.
+- `docs-authority/retired_names.json`: the two deleted paths added with their successors, so that the citation check rejects them in live text.
+- Documentation map: rows for the two pages removed.
