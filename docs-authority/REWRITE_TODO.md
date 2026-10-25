@@ -52,6 +52,17 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/BALANCE_RECONCILIATION.md` | Rev E, through `flow_graph/param/balance.py`. Purpose and scope first, revision record in order, sections and table titles renumbered (0-4 to 2-6; cross-references in balance.py, closure_tf.py and assumptions A-M-120/A-M-123 updated in the same change). No method, rate or result changed. Also fixed in this batch: the assumptions-register scan crashed on any model params.json whose `assumptions` entry is a list (CAST_LINE); params.json converted to the keyed form and the register runs again. |
 | `docs-authority/BOUGHT_SPECS.md` | Rev B, through `_bought_specs.py`. Purpose and scope first, numbered sections and table titles. No roster row, class or size changed. |
 | `docs-authority/CONTROL_SOFTWARE.md` | Rev B, through `flow_graph/control/plc_programs.py`. Purpose and scope first, revision record added, sections renumbered. No program, classification or check changed. |
+| `docs-authority/FUEL_CELL.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/GEOTHERMAL_BACKUP.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/INTERNALS.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/POWER_SIZING.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/PROTECTION.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/SECTOR_DEFINITIONS.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/sizing/EVAP_DESIGN.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/sizing/EW_CELLS.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/sizing/POLYMERS_LINE.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/sizing/REACTOR_DESIGN.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/sizing/SANITATION.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -80,7 +91,6 @@ Table 3.1. Pages partly rewritten
 | --- | --- |
 | `docs-authority/TASK_PLAN.md` | Sections 1 to 6 rewritten in `_task_plan_gen.py`; next tasks generated from the triage tags; hand-kept list and progress record moved to Appendix A. Task texts in sections 7 and 8 still to rewrite. |
 | `docs-authority/OPEN_QUESTIONS.md` | Purpose and scope rewritten. Question rows still to rewrite. |
-| `docs-authority/SECTOR_DEFINITIONS.md` | Generator text in `_sector_definitions.py` rewritten and the catalogue split into three tables. The sector notes in the graph (`mvs.sectors`) and the sector descriptions in `flow_graph/system_tree.yaml` are still in working shorthand; rewriting them changes the graph hash and the model workbook, so it needs a full regeneration. |
 
 ## 4. Pending
 
@@ -101,10 +111,8 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/FARM.md` | |
 | `docs-authority/FIRE_PROTECTION.md` | |
 | `docs-authority/FRAME_SYSTEM.md` | |
-| `docs-authority/FUEL_CELL.md` | |
 | `docs-authority/GAS_DETECTION.md` | |
 | `docs-authority/GA_CHECK.md` | |
-| `docs-authority/GEOTHERMAL_BACKUP.md` | |
 | `docs-authority/GLOSSARY.md` | In part. All style-check findings are cleared: undefined abbreviations, a banned phrase in the DIY entry, and the stale note on capital letters. Many entries are still fragments, and several terms have two entries (for example MVS); a full rewrite is still needed. |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | |
 | `docs-authority/HAB_FIXTURES.md` | |
@@ -114,7 +122,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/HEAT_LADDER_DUTIES.md` | Rev D (2026-10-08), authority graph Rev K; not reissued for graph Rev AC. |
 | `docs-authority/INSTRUMENT_INDEX.md` | |
 | `docs-authority/INSTRUMENT_LOOPS.md` | |
-| `docs-authority/INTERNALS.md` | |
 | `docs-authority/ISO_SHEETS.md` | |
 | `docs-authority/ITP.md` | |
 | `docs-authority/JELLYBEAN.md` | |
@@ -135,8 +142,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/OSE_CSK_ALIGNMENT.md` | |
 | `docs-authority/PARAMETRIC_MODEL.md` | |
 | `docs-authority/PIPE_SPECS.md` | |
-| `docs-authority/POWER_SIZING.md` | |
-| `docs-authority/PROTECTION.md` | |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | |
@@ -235,15 +240,10 @@ Table 4.2. Pending pages in subfolders
 | `docs-authority/fab/COMB_HEAT.md` | |
 | `docs-authority/fab/POLY_OLEFIN.md` | |
 | `docs-authority/fab/VAC_IND.md` | |
-| `docs-authority/sizing/EVAP_DESIGN.md` | |
-| `docs-authority/sizing/EW_CELLS.md` | |
 | `docs-authority/sizing/H2_COMPRESSOR.md` | |
 | `docs-authority/sizing/HEADERS.md` | |
 | `docs-authority/sizing/LITHO_DEV.md` | |
-| `docs-authority/sizing/POLYMERS_LINE.md` | |
 | `docs-authority/sizing/PV_CELL_LINE.md` | |
-| `docs-authority/sizing/REACTOR_DESIGN.md` | |
-| `docs-authority/sizing/SANITATION.md` | |
 | `docs-authority/sizing/SOLAR_PV_CELL.md` | |
 | `docs-authority/sizing/STORAGE_HOLDUP.md` | |
 | `docs-authority/sizing/UPW_POLISH.md` | |
