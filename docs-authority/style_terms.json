@@ -126,7 +126,6 @@
     }
   ],
   "pending": [
-    "docs-authority/ASME_CODE_INTENT.md",
     "docs-authority/ASSUMPTIONS_REGISTER.md",
     "docs-authority/BALANCE_RECONCILIATION.md",
     "docs-authority/BLOCK_FAMILY_PLANS.md",

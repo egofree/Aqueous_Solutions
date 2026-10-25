@@ -631,6 +631,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {LFL -- Lower flammable limit. NFPA 69 explosion-prevention theme (H₂ < 25% LFL class).}
 
+{SG -- Specific gravity (relative density, water = 1). Used for the liquid head term of the atmospheric design pressure (A-M-174).}
 {PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
 
 {UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}
