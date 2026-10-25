@@ -1040,6 +1040,32 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {RTA -- Rapid thermal anneal, a short high-temperature wafer heat treatment}
 
+{DOSIS -- Dose Distribution within the ISS, a radiation measurement experiment in the Columbus laboratory of the International Space Station.}
+
+{ECSS -- European Cooperation for Space Standardization, publisher of the European space engineering standards.}
+
+{ESA -- European Space Agency.}
+
+{IAPWS -- International Association for the Properties of Water and Steam.}
+
+{ISRU -- In-situ resource utilization: making supplies from materials found at the site.}
+
+{ISS -- International Space Station.}
+
+{MAE -- Materials Adherence Experiment, the dust-settling instrument on Mars Pathfinder.}
+
+{MOXIE -- Mars Oxygen ISRU Experiment, the solid oxide electrolysis demonstration on the Perseverance rover.}
+
+{NCEI -- National Centers for Environmental Information (United States, part of NOAA).}
+
+{NID -- NASA Interim Directive.}
+
+{SAM -- Sample Analysis at Mars, the gas analysis instrument suite on the Curiosity rover.}
+
+{SMAD -- Space Mission Analysis and Design, the space systems engineering reference series.}
+
+{USAP -- United States Antarctic Program.}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}
