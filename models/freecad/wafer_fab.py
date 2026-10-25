@@ -19,7 +19,7 @@ OUT = Path(__file__).resolve().parent
 def _pv_strip(doc, x, y, z, suffix):
     """East-strip PV train keep-outs (cassette 0 / primary only).
 
-    Layout intent AQS-EQP-FAB-PV-001 §5: south or east strip inside FAB
+    Layout intent AQS-EQP-FAB-PV-001 §5: east strip inside FAB
     without relocating CZ train. Place east of FAB_TOOL (~x+8000).
     """
     px = x + 8000

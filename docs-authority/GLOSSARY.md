@@ -1032,6 +1032,14 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {HMI -- Human-machine interface, the operator screens of the control system}
 
+{PPFD -- Photosynthetic photon flux density, the plant-usable light reaching a surface, in umol per m2 per s}
+
+{FBR -- Fluidized-bed reactor; here, the granular polysilicon process that is an alternate silicon feedstock}
+
+{RCA -- RCA clean, the standard two-step wet clean for silicon wafers, named for the company that developed it}
+
+{RTA -- Rapid thermal anneal, a short high-temperature wafer heat treatment}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

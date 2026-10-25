@@ -146,12 +146,12 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-END-002 | `docs-authority/EOL_RETURN.md` | D | 2026-10-21 | End-of-life material return | current |
 | AQS-ENV-FP-MET | `notes/VESSEL_ENVELOPES.md` | A | 2026-10-16 | Vessel envelopes — fluoropolymer train and critical-metal cells | current |
 | AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | F | 2026-10-24 | Cryogenic equipment list | current |
-| AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | B | 2026-09-27 | Wafer fab equipment / process list | current |
+| AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | C | 2026-10-24 | Wafer fab equipment and process list | current |
 | AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | C | 2026-10-24 | Solar-cell line equipment | current |
 | AQS-EQP-FAB-RGN-001 | `docs-authority/FAB_WET_REAGENTS.md` | B | 2026-10-01 | Fab wet reagents — wet-line synth forks | current |
 | AQS-EQP-FAB-UPW-001 | `docs-authority/FAB_UPW.md` | B | 2026-09-27 | Fab UPW — equipment list | current |
 | AQS-EQP-FC-001 | `docs-authority/FUEL_CELL_EQUIPMENT.md` | D | 2026-10-24 | Fuel-cell equipment list | current |
-| AQS-EQP-FRM-001 | `docs-authority/FARM_EQUIPMENT.md` | C | 2026-10-01 | Farm equipment / process list | current |
+| AQS-EQP-FRM-001 | `docs-authority/FARM_EQUIPMENT.md` | D | 2026-10-24 | Farm equipment and process list | current |
 | AQS-EQP-GEN-001 | `docs-authority/BACKUP_GEN_EQUIPMENT.md` | C | 2026-10-24 | Backup generator equipment list | current |
 | AQS-EQP-GEO-001 | `docs-authority/GEOTHERMAL_EQUIPMENT.md` | D | 2026-10-24 | Geothermal equipment list | current |
 | AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | B | 2026-09-27 | Habitation water — equipment list | current |

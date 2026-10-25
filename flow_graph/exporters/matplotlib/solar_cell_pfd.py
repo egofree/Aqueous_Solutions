@@ -63,7 +63,7 @@ def main():
                  "S03 / S02\npurge / oxidize",
                  fill="#dbeafe", edge="#1d4ed8")
     fab = S.iface(ax, 72, 57.5, 26, 7.5, "L0 FAB ENVELOPE",
-                  "south/east strip\nAQS-EQP-FAB-PV-001 §5",
+                  "east strip\nAQS-EQP-FAB-PV-001 §5",
                   fill="#fafaf9", edge="#57534e")
 
     ax.text(2, 55.0, "2   CELL TRAIN  (AQS-EQP-FAB-PV-001 tags)",
