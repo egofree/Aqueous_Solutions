@@ -56,7 +56,7 @@ Table 3.1. Document numbers in use
 | AQS-BLD-014 | `docs-authority/WATER_TOWER.md` | A | 2026-10-16 | Water tower: pumped-hydro reservoirs in the building | current |
 | AQS-BLD-015 | `docs-authority/LIFTING.md` | B | 2026-10-25 | Lifting and cranes | current |
 | AQS-BLD-016 | `docs-authority/FRAME_CHECK.md` | B | 2026-10-25 | Building frame member check | current |
-| AQS-BLD-017 | `docs-authority/FOUNDATION.md` | A | 2026-10-16 | Foundation design | current |
+| AQS-BLD-017 | `docs-authority/FOUNDATION.md` | B | 2026-10-25 | Foundation design | current |
 | AQS-BLD-018 | `docs-authority/ENCLOSURE_EGRESS.md` | B | 2026-10-25 | Enclosure, floor plates, stairs and egress | current |
 | AQS-BOM-SC-001 | `docs-authority/SELF_COPY_BOM.md` | H | 2026-10-25 | Self-copy bill of materials: critical-path parts and their on-site feedstock | current |
 | AQS-BOUND-001 | `notes/DOCK_BOUNDARY.md` | A | 2026-10-17 | Dock and boundary — item 9 | current |

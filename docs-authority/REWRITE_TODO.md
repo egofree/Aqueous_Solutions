@@ -57,6 +57,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/DESIGN_CHECK.md` | Rev B, through `docs-authority/_design_check.py`. Purpose, numbered sections and table title added; failures stated in a sentence, and the result "FAIL" is now written "fail". No check changed. |
 | `docs-authority/CONTROL_ARCH.md` | Rev B, through `docs-authority/_plc_arch.py`. Purpose, numbered sections and table titles added. See section 6. |
 | `docs-authority/FRAME_CHECK.md` | Rev B, through `docs-authority/_frame_check.py`. Purpose, basis, symbol definitions and table titles added; the beam span heading now comes from the bay size. No load or section changed. |
+| `docs-authority/FOUNDATION.md` | Rev B, through `docs-authority/_foundation.py`. Purpose, basis, symbol definitions and numbered table added. The uplift row is unchanged because `_design_check.py` check QC-18 parses it. The plate size is still subject to question Q-015. |
 
 ## 3. In progress
 
@@ -93,7 +94,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/FAN_STACK.md` | |
 | `docs-authority/FARM.md` | |
 | `docs-authority/FIRE_PROTECTION.md` | |
-| `docs-authority/FOUNDATION.md` | |
 | `docs-authority/FRAME_SYSTEM.md` | |
 | `docs-authority/FUEL_CELL.md` | |
 | `docs-authority/FURNACE.md` | |
@@ -318,3 +318,5 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/PERF_TEST.md` (AQS-COM-003) | `_perf_test.py` takes every solid stream leaving an electrowinning cell as harvested metal, so IA-COAT-IN (0.02 kg/d, EW_1 to ELECTRODE_COAT, the electrode sent for coating) appears as a guarantee point measured by weighed cathode harvest. Should the selection exclude streams that do not go to a product? |
 
 | `docs-authority/CONTROL_ARCH.md` (AQS-CTL-002) | The closing note says that, if the inventory already counts the high-level switches, the DI count is 113 too high. The figure 113 is a fixed number in `_plc_arch.py`; the instrument index now has 82 digital-input rows (`24 V DC discrete (DI)`). Should the note be computed from the index? |
+
+| `docs-authority/O2_SOURCE.md` (AQS-PAR-005) | Not rewritten. Two generators write this page: `flow_graph/param/o2_source.py` (the current Rev D duty summary) and `flow_graph/param/o2_close.py` report(), whose Rev C closure report would overwrite it if run. The page says the Rev C sections regenerate at the next balance run. Which generator owns the page? Once that is settled, the template can be rewritten without the risk of the other writer restoring the old text. |

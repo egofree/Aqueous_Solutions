@@ -83,3 +83,8 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 
 - `CONTROL_ARCH.md` (AQS-CTL-002) Rev B and `FRAME_CHECK.md` (AQS-BLD-016) Rev B rewritten through their generators (`_plc_arch.py`, `_frame_check.py`). No value changed. `flow_graph/test_control_programs.py` now finds the redundant-pair table by its heading text, which is numbered.
 - `GLOSSARY.md`: AI, AO, MRP, PI, AISC and KL added; the DI entry also gives the control meaning, digital input.
+
+## Batch 15
+
+- `FOUNDATION.md` (AQS-BLD-017) Rev B rewritten through `_foundation.py`. No value changed.
+- `O2_SOURCE.md` reviewed; it has two generators, recorded in `REWRITE_TODO.md` section 6. Not changed.
