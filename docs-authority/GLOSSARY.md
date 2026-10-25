@@ -632,6 +632,9 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {LFL -- Lower flammable limit. NFPA 69 explosion-prevention theme (H₂ < 25% LFL class).}
 
 {SG -- Specific gravity (relative density, water = 1). Used for the liquid head term of the atmospheric design pressure (A-M-174).}
+{AUD -- The plant audit document AQS-AUD-001, whose numbered sections carry the study bands cited by the closure transfer functions.}
+{BH -- Graph revision BH, the revision whose rates were restored verbatim into CRYO_ASU and its edges (owner ruling 2026-10-18, D-AIR).}
+{PQ -- Photosynthetic quotient, the mol CO2 fixed per mol O2 released by the grow bed (1.0 in the closure layer, TAIZ2015).}
 {PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
 
 {UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}

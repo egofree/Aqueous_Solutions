@@ -1854,7 +1854,7 @@
   "files": [
    "flow_graph/param/balance.py"
   ],
-  "value": "Held study mass rates reconciled by minimum weighted least squares after the physics transfer functions T1-T5 (balance.physics); every reconciled move within the 2 % measurement tolerance (max move < 0.1 g/d at Rev B). Rev A gross moves (IA-TERR-VAP -2.824, IA-O2-RET +2.824) withdrawn: root cause X-SAF-10 propagation; closure layer complete: 117 study edges are closure transfer functions (balance of a named unit, elimination order) and 57 are design inputs with their stated basis (AQS-PAR-003 section 5)",
+  "value": "Held study mass rates reconciled by minimum weighted least squares after the physics transfer functions T1-T5 (balance.physics); every reconciled move within the 2 % measurement tolerance (max move < 0.1 g/d at Rev B). Rev A gross moves (IA-TERR-VAP -2.824, IA-O2-RET +2.824) withdrawn: root cause X-SAF-10 propagation; closure layer complete: 117 study edges are closure transfer functions (balance of a named unit, elimination order) and 57 are design inputs with their stated basis (AQS-PAR-003 section 1)",
   "units": "kg/d",
   "where": "AQS-PAR-003",
   "basis": "NARASIMHAN2000",
@@ -1902,7 +1902,7 @@
   ],
   "value": "T1 terrace transpiration = irrigation - drains (37.176 kg/d; no terrace CO2 supply or harvest, net fixation 0); T2 AHU condensate = greenhouse vapour in (53.876 kg/d); T3 cold-box O2 product = HDR_O2 draw (44.906 kg/d), no O2 return; T4 roof shortfall 2.824 kg/d by difference on IA-POT-01, IA-UPW-REMIN, S25, IA-LEACH-VCD; T5 IA-LEACH-ASU 17.44 -> 14.616 kg/d, still above the Henry-law bound (X-PAR-11)",
   "units": "kg/d",
-  "where": "AQS-PAR-003 section 0",
+  "where": "AQS-PAR-003 section 2",
   "basis": "TAIZ2015 (photosynthesis and transpiration stoichiometry); SANDER2015 (Henry constants); AQS-DUTY-013/017/019; X-SAF-10 Faraday cell O2",
   "sensitivity": "T5 carries the cross-species link; the leach dissolved-gas rate is the least certain figure in the chain",
   "replaced_by": "Gas-exchange species layer X-PAR-11",

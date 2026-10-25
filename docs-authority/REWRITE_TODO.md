@@ -49,6 +49,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/CAMPUS_PLAN.md` | Rev C. Rewritten to the guide: purpose first, phases named in plain words, the invented label "Salria" replaced by plain wording (Q-017 ruling), every locked name marked present or retired against graph Rev AC, rule 4 aligned to stream S10 (WET_BENCH to LEACH_CSTR_1). No rule or envelope changed. |
 | `docs-authority/CRYO_COLD_BOX.md` | Rev D. Rewritten to the guide: numbering repaired, session wording removed, stream list corrected to the present graph (S05 and S06 retired; Q4_BUS contributors named from the graph, S70 endpoint corrected to FLUE_KO). No design decision changed. |
 | `docs-authority/ASME_CODE_INTENT.md` | Rev D, through `_asme_class.py`. Purpose and scope first, numbered sections and table titles; the truncated authority line repaired. No class, stamp or test changed. |
+| `docs-authority/BALANCE_RECONCILIATION.md` | Rev E, through `flow_graph/param/balance.py`. Purpose and scope first, revision record in order, sections and table titles renumbered (0-4 to 2-6; cross-references in balance.py, closure_tf.py and assumptions A-M-120/A-M-123 updated in the same change). No method, rate or result changed. Also fixed in this batch: the assumptions-register scan crashed on any model params.json whose `assumptions` entry is a list (CAST_LINE); params.json converted to the keyed form and the register runs again. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -88,7 +89,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | Page | Note |
 | --- | --- |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | |
-| `docs-authority/BALANCE_RECONCILIATION.md` | |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | |
 | `docs-authority/BOUGHT_SPECS.md` | |
 | `docs-authority/CONTROL_SOFTWARE.md` | |

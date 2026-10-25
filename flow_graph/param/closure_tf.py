@@ -1,4 +1,4 @@
-"""X-PAR-02 remaining transfer functions (AQS-PAR-003 section 5). Every reconciled (study) mass edge gets one role:
+"""X-PAR-02 remaining transfer functions (AQS-PAR-003 section 1). Every reconciled (study) mass edge gets one role:
   closure TF  rate = the balance of one named unit (inputs minus other outputs), solved in elimination order; or
   design input  an independent rate with its stated basis (duty sheet, audit band, crew ration), which a unit sizing task replaces.
 Assignment: edges whose basis says they are sized to the neighbour, by difference or pass-through are offered as closures first; leaf-first

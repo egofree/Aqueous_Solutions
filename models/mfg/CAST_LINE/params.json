@@ -62,15 +62,29 @@
     }
   },
   "layout_note": "Connection faces are generic in the task-04 schedule (inlet/outlet/bottom/top), so the compass assignment is a registered study choice: the line runs +X from the melt-inlet tail to the discharge head (N3 roll lane y 300, N4 extrude lane y 600 share the +X face at the roller-table end, hand-deflected lanes); N1 enters at the -X face feeding the under-deck refractory trough, which bottom-fills both mould stations through risers; N2 scrap drops at the -Y face beside the mould table back to IND_MELT; N5 is the trough drain well and N6 the vent tap on the pour-zone hood plenum. The machine envelope 1500 x 800 x 1500 is the A-M-199 forming-class seat; the mould-change gantry and the rear guard pick the Z top, the roller-table guide rail and rear guard plane pick Y, and the tail plate and shear/stop block pick X. No schedule value was resized.",
-  "assumptions": [
-    "Cavity size 110 x 70 x 60 mm per mould (0.462 L, ~3.7 kg Cu at 8.0 g/cm3 melt class): fits the daily 3 kg/d pour (graph sizing, AQS-DUTY-072) in one cast; no rate or cycle time is claimed.",
-    "Runout roller table length 700 mm = the graph design row table_L_mm 700 (x 800..1500); the mould-table deck spans x 60..800 ahead of it.",
-    "Ladle working shell D280 x 240 t25 with refractory lining: rated 12 kg (AQS-DUTY-072 section 3); the drawn cavity headroom (~10 L vs 1.5 L of 12 kg Cu) is a fit choice for tilting margin, not a rate claim.",
-    "Electrical duty 0 kW on the graph node: the line is manual (hand-tilt ladle, hand-fed rollers, static shear); the cooling-water circuits on the mould jackets are utility loops without a graph edge, sized at the unit task 12 first articles - no cooling rate is claimed.",
-    "Mould-change gantry with SWL 250 kg chain hoist purchased item: mould change-out is the unit task 12 work order; SWL is a fit choice for the heaviest seat assembly (platen + jacket + graphite insert, << 100 kg per the model mass report).",
-    "Materials per docs-authority/duties/CAST_LINE.md section 3 (X-MAT-22): fine-graphite mould hot faces with steel backing platens, graphite launder/refractory trough, CS structure below/away from the hot faces; corrosion allowance 0 on CS members (dry machine members; hot faces are the graphite class).",
-    "Bearing/bushing hardware (2-bolt flange bearings, 25 mm bore class) is a purchased utility item; the rating is a fit choice for the hand-run roller loads, no load calc is claimed."
-  ],
+  "assumptions": {
+    "cavity_class": {
+      "note": "Cavity size 110 x 70 x 60 mm per mould (0.462 L, ~3.7 kg Cu at 8.0 g/cm3 melt class): fits the daily 3 kg/d pour (graph sizing, AQS-DUTY-072) in one cast; no rate or cycle time is claimed."
+    },
+    "table_length": {
+      "note": "Runout roller table length 700 mm = the graph design row table_L_mm 700 (x 800..1500); the mould-table deck spans x 60..800 ahead of it."
+    },
+    "ladle_class": {
+      "note": "Ladle working shell D280 x 240 t25 with refractory lining: rated 12 kg (AQS-DUTY-072 section 3); the drawn cavity headroom (~10 L vs 1.5 L of 12 kg Cu) is a fit choice for tilting margin, not a rate claim."
+    },
+    "electrical_duty": {
+      "note": "Electrical duty 0 kW on the graph node: the line is manual (hand-tilt ladle, hand-fed rollers, static shear); the cooling-water circuits on the mould jackets are utility loops without a graph edge, sized at the unit task 12 first articles - no cooling rate is claimed."
+    },
+    "gantry_swl": {
+      "note": "Mould-change gantry with SWL 250 kg chain hoist purchased item: mould change-out is the unit task 12 work order; SWL is a fit choice for the heaviest seat assembly (platen + jacket + graphite insert, << 100 kg per the model mass report)."
+    },
+    "materials_xmat22": {
+      "note": "Materials per docs-authority/duties/CAST_LINE.md section 3 (X-MAT-22): fine-graphite mould hot faces with steel backing platens, graphite launder/refractory trough, CS structure below/away from the hot faces; corrosion allowance 0 on CS members (dry machine members; hot faces are the graphite class)."
+    },
+    "bearing_class": {
+      "note": "Bearing/bushing hardware (2-bolt flange bearings, 25 mm bore class) is a purchased utility item; the rating is a fit choice for the hand-run roller loads, no load calc is claimed."
+    }
+  },
   "holds": [
     "X-MAT-21 / A-M-318 class verification campaign (mould life, liner wear) remains open; no mould life or campaign length is claimed.",
     "Unit task 12 first articles (mould set, ladle lining) govern change-out; mould change-out procedure is a task-12 work order.",

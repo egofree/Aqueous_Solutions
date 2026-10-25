@@ -233,7 +233,7 @@ Table 3.1. Document numbers in use
 | AQS-OPS-003 | `docs-authority/SPARES.md` | A | 2026-10-16 | Critical spares list | current |
 | AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | B | 2026-10-25 | Open questions | current |
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | B | 2026-10-15 | Parametric model | current |
-| AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | D | 2026-10-19 | Mass balance reconciliation | current |
+| AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | E | 2026-10-25 | Mass balance reconciliation | current |
 | AQS-PAR-004 | `docs-authority/GAS_SPECIES.md` | B | 2026-10-15 | Oxygen species ledger | current |
 | AQS-PAR-005 | `docs-authority/O2_SOURCE.md` | D | 2026-10-18 | O2 source duty summary | current |
 | AQS-PAR-005A | `docs-authority/O2_SOURCE_AUDIT.md` | A | 2026-10-15 | O2 source study | current |
