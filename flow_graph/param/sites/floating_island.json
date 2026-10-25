@@ -1,0 +1,437 @@
+{
+  "site_id": "floating_island",
+  "site_code": "FI",
+  "groups": {
+    "identity": {
+      "entries": {
+        "name": {
+          "value": "Floating island variant (moored, tropical waters; Q-030, Q-031)",
+          "units": "-",
+          "register": "AQS-SITE-007"
+        },
+        "body": {
+          "value": "earth_surface",
+          "units": "-",
+          "register": "AQS-SITE-002"
+        },
+        "latitude_deg": {
+          "value": 5.0,
+          "units": "deg N",
+          "ref": "OTEC_GRADIENT",
+          "note": "generic tropical mooring within the ocean-thermal band; the parcel is a mooring decision, not a land parcel"
+        },
+        "longitude_deg": {
+          "value": -140.0,
+          "units": "deg E",
+          "ref": "OTEC_GRADIENT"
+        },
+        "elevation_m": {
+          "value": 0.0,
+          "units": "m",
+          "ref": "OTEC_GRADIENT",
+          "note": "sea-level datum; the deck freeboard is a hull-design output, not a site input"
+        },
+        "site_basis": {
+          "value": "AQS-SITE-007",
+          "units": "document number",
+          "register": "AQS-SITE-007"
+        }
+      }
+    },
+    "gravity": {
+      "entries": {
+        "g_m_s2": {
+          "value": 9.80665,
+          "units": "m/s2",
+          "ref": "CGPM1901_GN",
+          "note": "standard gravity; local gravity at the study site differs by about 0.1 %"
+        }
+      }
+    },
+    "atmosphere": {
+      "entries": {
+        "pressure_Pa": {
+          "value": 101325,
+          "units": "Pa absolute",
+          "ref": "CGPM1954_ATM",
+          "needs_verification": true,
+          "verification_test": "Site barometric pressure for the station elevation (ASHRAE climatic design conditions, AQS-SITE-002 [B1]); the study uses the standard atmosphere"
+        },
+        "composition_mole_fraction": {
+          "value": {
+            "N2": 0.7808,
+            "O2": 0.2095
+          },
+          "units": "mole fraction, dry air, rounded to four places",
+          "ref": "USSA1976"
+        },
+        "breathable": {
+          "value": true,
+          "units": "-",
+          "ref": "USSA1976"
+        },
+        "vent_sink": {
+          "value": true,
+          "units": "-",
+          "register": "AQS-SITE-002 (open site; vents and stacks discharge to outside air)"
+        },
+        "oxidant": {
+          "value": true,
+          "units": "-",
+          "ref": "USSA1976",
+          "note": "air carries O2 at the composition above"
+        },
+        "molar_mass_kg_kmol": {
+          "value": 28.9644,
+          "units": "kg/kmol, dry air",
+          "ref": "USSA1976"
+        }
+      }
+    },
+    "thermal": {
+      "entries": {
+        "cooling_dry_bulb_C": {
+          "value": 32.0,
+          "units": "C",
+          "ref": "OTEC_GRADIENT",
+          "needs_verification": true,
+          "verification_test": "Metocean record at the mooring site; the interim tropical maritime value is replaced per A-M-389",
+          "binds": "site_design_dry_bulb_C"
+        },
+        "heating_dry_bulb_C": {
+          "value": 22.0,
+          "units": "C",
+          "needs_verification": true,
+          "verification_test": "Metocean record at the mooring site; heating is not governing in the tropical band",
+          "register": "A-M-389"
+        },
+        "insulation_ambient_C": {
+          "value": 27.0,
+          "units": "C",
+          "needs_verification": true,
+          "verification_test": "Sea-surface temperature record at the mooring site",
+          "register": "A-M-389"
+        }
+      }
+    },
+    "solar": {
+      "entries": {
+        "pv_yield_kWh_kWp_d": {
+          "value": 5.6,
+          "units": "kWh/kWp/d before losses",
+          "ref": "NREL_PVWATTS",
+          "needs_verification": true,
+          "verification_test": "PVWatts run at the mooring latitude with marine soiling and cell-temperature losses; deck area limits the nameplate (AQS-PLAN-011 section 10.2)",
+          "binds": "pv_yield_kWh_kWp_d"
+        },
+        "night_hours": {
+          "value": 12.0,
+          "units": "h/d served from storage",
+          "ref": "OTEC_GRADIENT",
+          "needs_verification": true,
+          "verification_test": "Hourly load and irradiance profile at the mooring latitude",
+          "binds": "night_hours"
+        }
+      }
+    },
+    "wind": {
+      "entries": {
+        "basic_wind_speed_m_s": {
+          "value": 70.0,
+          "units": "m/s basic wind speed (Saffir-Simpson Category 5 survival on the moorings)",
+          "ref": "SAFFIR_CAT5",
+          "needs_verification": true,
+          "verification_test": "Class environmental load method with site metocean data (CLASS_RULES); the ride-out strategy (Q-031) makes the design storm the survival case",
+          "binds": "wt_wind_ms"
+        }
+      }
+    },
+    "snow": {
+      "entries": {
+        "roof_snow_kPa": {
+          "value": 0.0,
+          "units": "kPa flat-roof snow",
+          "ref": "OTEC_GRADIENT"
+        }
+      }
+    },
+    "seismic": {
+      "not_applicable": "Offshore moored platform: wave, wind and mooring loads per the class environmental method govern; seismic ground motion does not apply (AQS-PLAN-011 section 10.2)"
+    },
+    "ground": {
+      "not_applicable": "No ground contact at a floating site: the hull structure and moorings follow the class rules (CLASS_RULES); earthing is to the sea through the hull with cathodic protection"
+    },
+    "radiation": {
+      "not_applicable": "Earth surface under the atmosphere: natural background only, no shielding design case"
+    },
+    "water_sources": {
+      "entries": {
+        "sources": {
+          "value": [
+            {
+              "name": "seawater_surface",
+              "kind": "sea",
+              "unit": "WTR",
+              "temperature_C": 28.0,
+              "composition_note": "salinity 35.165 g/kg; sodium 10.78, chloride 19.35, magnesium 1.284, bromide 0.067 g/kg; lithium about 0.18 mg/kg",
+              "treatment": "reverse-osmosis desalination (least energy 1.06 kWh/m3 at 50 % recovery, DESAL_MIN_ENERGY); the reject brine feeds salt, magnesium, bromine and lithium recovery, each needing an assay feed case (AQS-PLAN-011 section 10.2)",
+              "ref": "SEAWATER_MILLERO"
+            },
+            {
+              "name": "precipitation",
+              "kind": "rain",
+              "note": "tropical rain is a bonus, not a designed source; the intake is the designed make-up",
+              "ref": "OTEC_GRADIENT"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 10.2"
+        }
+      }
+    },
+    "local_feedstocks": {
+      "entries": {
+        "feed_cases": {
+          "value": [],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 10.2 (candidates: seawater minerals - salt, magnesium, bromine, lithium - floating plastic debris, seaweed and ship-delivered waste; each enters only after mapping to an assay case)"
+        }
+      }
+    },
+    "logistics": {
+      "entries": {
+        "arrival_mode": {
+          "value": "ship berth with cranes; transfers limited by sea state",
+          "units": "-",
+          "ref": "SOLAS",
+          "needs_verification": true,
+          "verification_test": "Berth design and the weather-window study set the hold times (AQS-PLAN-011 section 10.2)"
+        },
+        "resupply_interval_d": {
+          "value": 30.0,
+          "units": "d between berths, weather window pending",
+          "register": "A-M-225 (hold-time basis)",
+          "needs_verification": true,
+          "verification_test": "Weather-window study at the mooring site; the interval sets store hold times"
+        }
+      }
+    },
+    "electrical": {
+      "entries": {
+        "ac_frequency_Hz": {
+          "value": 60,
+          "units": "Hz line frequency (IEC 60034-30-1 60 Hz IE3 basis, AQS-INV-005)",
+          "register": "A-M-218 (X-INV-02B)",
+          "binds": "MFG.tools-metal-forming-train.mfa_line_hz"
+        },
+        "earthing_method": {
+          "value": "hull as earth electrode with sea return and cathodic protection",
+          "units": "-",
+          "ref": "CLASS_RULES",
+          "note": "no soil; the grounding study reruns for a sea-return geometry"
+        }
+      }
+    },
+    "jurisdiction": {
+      "entries": {
+        "code_families": {
+          "value": [
+            "marine_offshore"
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 10.2 (class rules, SOLAS, MARPOL, the MODU code as the model for a manned floating installation, and the intact stability code; the flag or coastal state decides which apply, Q-030)"
+        }
+      }
+    },
+    "motion": {
+      "entries": {
+        "heel_deg": {
+          "value": 5.0,
+          "units": "deg design static heel",
+          "register": "A-M-388",
+          "needs_verification": true,
+          "verification_test": "Metocean data and the class environmental load method, with model tests"
+        },
+        "roll_deg": {
+          "value": 8.0,
+          "units": "deg design roll amplitude",
+          "register": "A-M-388",
+          "needs_verification": true,
+          "verification_test": "Metocean data and the class environmental load method, with model tests"
+        },
+        "pitch_deg": {
+          "value": 5.0,
+          "units": "deg design pitch amplitude",
+          "register": "A-M-388",
+          "needs_verification": true,
+          "verification_test": "Metocean data and the class environmental load method, with model tests"
+        },
+        "heave_m_s2": {
+          "value": 1.5,
+          "units": "m/s2 design heave acceleration",
+          "register": "A-M-388",
+          "needs_verification": true,
+          "verification_test": "Metocean data and the class environmental load method, with model tests"
+        },
+        "packed_bed_rule": {
+          "value": "bed height two to three column diameters; packing-height margin 1.1 to 2.0",
+          "units": "-",
+          "ref": "PACKED_COL_MOTION",
+          "note": "applies to every packed column of the variant (X-LOC-11 design pass)"
+        }
+      }
+    },
+    "power_portfolio": {
+      "entries": {
+        "sources": {
+          "value": [
+            {
+              "id": "pv",
+              "kind": "pv",
+              "unit": "PV_ARRAY",
+              "role": "primary",
+              "share": 1.0,
+              "stretch_output_frac": 0.0,
+              "resource": "solar.pv_yield_kWh_kWp_d",
+              "register": "AQS-DUTY-012; Q-024 (sources chosen per site); deck area limits the nameplate (AQS-PLAN-011 section 10.2)"
+            },
+            {
+              "id": "backup_gen",
+              "kind": "engine",
+              "unit": "BACKUP_GEN",
+              "role": "backup",
+              "register": "AQS-ELEC-007; A-M-383 (hydrogen first)"
+            },
+            {
+              "id": "fuel_cell",
+              "kind": "fuel_cell",
+              "unit": "FUEL_CELL",
+              "role": "backup",
+              "register": "AQS-FC-001"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 10.2 (wave and ocean thermal are flagged options, entered where the site supports them and their sizing exists)"
+        },
+        "storage": {
+          "value": [
+            {
+              "kind": "electrochemical",
+              "unit": "ZNBR2",
+              "energy_param": "kWh"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 10.2: pumped hydro on a hull has little head and costs stability, so it is eliminated with ZNBR2 plus the hydrogen bank and fuel cell as the different-technology storage pair"
+        },
+        "worst_stretch": {
+          "value": {
+            "kind": "night",
+            "hours_entry": "solar.night_hours"
+          },
+          "units": "-",
+          "register": "AQS-PLAN-011 section 5.5"
+        },
+        "oversize_factor": {
+          "value": 2.0,
+          "units": "PV nameplate / PV needed to close the daily balance",
+          "needs_verification": true,
+          "verification_test": "NSRDB hourly run for the mooring band plus the deck-area limit",
+          "binds": "pv_oversize_factor",
+          "register": "A-M-109 (deck area limits the nameplate; AQS-PLAN-011 section 10.2)"
+        }
+      }
+    },
+    "scaling": {
+      "entries": {
+        "actions": {
+          "value": [
+            {
+              "action": "eliminate",
+              "target": "HYDRO_SET",
+              "replacement": "ZNBR2",
+              "register": "AQS-PLAN-011 section 10.2: pumped hydro on a hull has little head and costs stability; ZNBR2 with the hydrogen bank and fuel cell is the different-technology storage pair"
+            },
+            {
+              "action": "eliminate",
+              "target": "GEO_GHEX",
+              "replacement": "DRY_COOLER",
+              "register": "AQS-PLAN-011 section 10.2: seawater-source heat exchange through the DRY_COOLER pair (mode seawater) replaces the ground loop"
+            },
+            {
+              "action": "eliminate",
+              "target": "GEO_HP",
+              "replacement": "DRY_COOLER",
+              "register": "AQS-PLAN-011 section 10.2: seawater-source heat exchange on the Q4 loop (DRY_COOLER seawater mode) replaces the ground-loop heat pump"
+            },
+            {
+              "action": "duplicate",
+              "target": "DRY_COOLER",
+              "count": 2,
+              "register": "the seawater rejection pair is the second heat-rejection source after the ground loop is gone (redundancy rule)"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 10.2"
+        }
+      }
+    },
+    "capabilities": {
+      "entries": {
+        "buoyant_separation": {
+          "value": true,
+          "units": "-",
+          "register": "AQS-SITE-002; gravity.g_m_s2 above zero, steady in direction (fixed foundation)"
+        },
+        "free_surface": {
+          "value": true,
+          "units": "-",
+          "register": "AQS-SITE-002; gravity.g_m_s2 above zero"
+        },
+        "air_heat_sink": {
+          "value": true,
+          "units": "-",
+          "register": "AQS-SITE-002; open site; cooling design dry bulb AQS-SITE-002"
+        },
+        "air_oxidant": {
+          "value": true,
+          "units": "-",
+          "register": "AQS-SITE-002; atmosphere.oxidant"
+        },
+        "vent_sink": {
+          "value": true,
+          "units": "-",
+          "register": "AQS-SITE-002; atmosphere.vent_sink"
+        },
+        "ground_contact": {
+          "value": false,
+          "units": "-",
+          "register": "AQS-SITE-007; a floating hull has no ground: the ground loop and soil-bearing functions are replaced or eliminated"
+        },
+        "liquid_water_at_ambient": {
+          "value": true,
+          "units": "-",
+          "register": "AQS-SITE-002; atmosphere.pressure_Pa above the triple point of water",
+          "note": "seawater at 28 C at the surface (SEAWATER_MILLERO); the seawater heat-rejection mode and any evaporative charge draw from it"
+        }
+      }
+    },
+    "heat_rejection": {
+      "entries": {
+        "levels": {
+          "value": [
+            {
+              "level": "low-grade water loop",
+              "unit": "DRY_COOLER",
+              "mode": "seawater",
+              "duty_param": "rated_kW",
+              "register": "AQS-PLAN-011 section 10.2 (seawater exchangers replace the dry cooler; deep cold water where the intake reaches it also serves ventilation)"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 10.2"
+        }
+      }
+    }
+  }
+}
