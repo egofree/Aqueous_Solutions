@@ -92,16 +92,13 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-011 | `docs-authority/REV_M_CLOSURE_DUTY.md` | A | 2026-10-08 | Rev M closure: node balances, chloride loop, heater ratings and Q4 sinks | current |
 | AQS-DUTY-012 | `docs-authority/BALANCE_CLOSE_N.md` | A | 2026-10-09 | Balance close, remaining nodes | current |
 | AQS-DUTY-013 | `docs-authority/GREENHOUSE_WATER.md` | A | 2026-10-09 | Greenhouse water and battery margin | current |
-| AQS-DUTY-015 | `docs-authority/FARM_WASTE.md` | B | 2026-10-24 | Farm waste: hydrochar composting and electrochemical pretreatment | current |
 | AQS-DUTY-016 | `notes/mass_disposition.md` | A | 2026-10-09 | Mass disposition | current |
 | AQS-DUTY-018 | `docs-authority/CRYO_ASU.md` | C | 2026-10-25 | Cold box gas rate | current |
 | AQS-DUTY-023 | `docs-authority/MASS_DISPOSITION.md` | A | 2026-10-09 | Residual close | current |
 | AQS-DUTY-024 | `docs-authority/PATHWAY_AUDIT.md` | A | 2026-10-09 | No placeholders | current |
 | AQS-DUTY-026 | `docs-authority/SOLVENT_ROUTE.md` | C | 2026-10-12 | Sugar and reagent stores | current |
-| AQS-DUTY-034 | `docs-authority/NUTRIENT_BALANCE.md` | A | 2026-10-09 | Nutrient balance by stage | current |
 | AQS-DUTY-038 | `docs-authority/MVS_SIZE.md` | D | 2026-10-12 | Sector size and MVS | current |
 | AQS-DUTY-044 | `docs-authority/FARM.md` | A | 2026-10-09 | Nitrogen fixation | current |
-| AQS-DUTY-048 | `docs-authority/NUTRIENT_GAPS.md` | A | 2026-10-09 | Nutrient gaps | current |
 | AQS-DUTY-049 | `docs-authority/POLYMER_HX_SIZING.md` | A | 2026-10-15 | Polymer exchanger sizing, HX-5 and HX8 | current |
 | AQS-DUTY-050 | `docs-authority/sizing/LEACH_CSTR_1.md` | B | 2026-10-18 | LEACH_CSTR_1 sizing | current |
 | AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | C | 2026-10-18 | EW_1 to EW_9 cell sizing | current |
@@ -178,7 +175,6 @@ Table 3.1. Document numbers in use
 | AQS-FLOW-GRAPH-001 | `flow_graph/README.md` | — | 2026-10-01 | Plant flow graph — sole typed authority | current |
 | AQS-FOAM-001 | `models/openscad/foam_ew/CUT_LIST.md` | A | 2026-09-27 | Foam EW cascade — cut list | current |
 | AQS-FONT-001 | `docs-authority/FONTS.md` | A | 2026-10-25 | Fonts for 3D sign glyphs | current |
-| AQS-FURN-001 | `docs-authority/FURNACE.md` | C | 2026-10-11 | Induction furnace module | current |
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Basic | 2026-09-27 | Scrubber chemistry | current |
 | AQS-GAS-003 | `docs-authority/FAN_STACK.md` | B | 2026-09-27 | Fan curves and stack heights | current |
 | AQS-GLO-001 | `docs-authority/GLOSSARY.md` | — | — | Glossary | current |
@@ -215,7 +211,6 @@ Table 3.1. Document numbers in use
 | AQS-MFG-011 | `docs-authority/JELLYBEAN.md` | A | 2026-10-15 | Jellybean parts: standard sizes and in-house lines | current |
 | AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | D | 2026-10-25 | Electrode fabrication and coating | current |
 | AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | B | 2026-09-28 | Metal forming path — wire draw / cold mill / gas atomizer | current |
-| AQS-MFG-TEX-001 | `docs-authority/TEXTILES_HEPA.md` | A | 2026-10-01 | Textiles / HEPA media — architecture stub | current |
 | AQS-MOD-001 | `docs-authority/MODULE.md` | C | 2026-10-12 | Module standard | current |
 | AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` | C | 2026-10-11 | Frame system | current |
 | AQS-MVS-CHK-001 | `docs-authority/internal/MVS_CHECKLIST.md` | — | 2026-10-02 | MVS checklist | superseded by AQS-PLAN-007 |
@@ -289,7 +284,6 @@ Table 3.1. Document numbers in use
 | AQS-SEL-TI-MO | `notes/TI_MO_SELECTION.md` | A | 2026-10-16 | TI_CELL and MO_CELL process selection | current |
 | AQS-SI-001 | `docs-authority/SILICON.md` | C | 2026-10-11 | Silicon reduction | current |
 | AQS-SIDE-001 | `docs-authority/SIDE_ASSAY.md` | C | 2026-10-12 | Assay and relief | current |
-| AQS-SIDE-002 | `docs-authority/SIDE_FARM.md` | B | 2026-10-11 | Farm module bay | current |
 | AQS-SIDE-003 | `docs-authority/SIDE_CRYO.md` | C | 2026-10-12 | Cold box module | current |
 | AQS-SIGN-001 | `docs-authority/SIGN_SCHEDULE.md` | A | 2026-09-26 | Sign and label schedule | current |
 | AQS-SITE-001 | `docs-authority/SITE_ACCESS.md` | E | 2026-10-24 | Site access: orientation, north dock, service entrance and egress | current |
@@ -298,6 +292,7 @@ Table 3.1. Document numbers in use
 | AQS-SITE-004 | `docs-authority/SITE_SCALING.md` | A | 2026-10-25 | Site scaling | current |
 | AQS-SITE-005 | `docs-authority/SITE_POWER.md` | A | 2026-10-25 | Site power portfolio and redundancy | current |
 | AQS-SITE-006 | `docs-authority/SITE_BASIS_DEATH_VALLEY.md` | A | 2026-10-25 | Death Valley site basis | current |
+| AQS-SITE-007 | `docs-authority/SITE_BASIS_FLOATING_ISLAND.md` | A | 2026-10-25 | Floating island site basis | current |
 | AQS-SIZE-ACID_POLISH_SCRUB | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | A | 2026-10-20 | Sizing calculation - ACID_POLISH_SCRUB | current |
 | AQS-SIZE-ADS_CHILL | `docs-authority/sizing/ADS_CHILL.md` | A | 2026-10-20 | Sizing calculation - ADS_CHILL | current |
 | AQS-SIZE-AFTERBURNER | `docs-authority/sizing/AFTERBURNER.md` | A | 2026-10-20 | Sizing calculation - AFTERBURNER | current |
@@ -544,5 +539,11 @@ Table 6.1. Withdrawn numbers
 
 | Number | Former page | Withdrawn | Reason |
 | --- | --- | --- | --- |
+| AQS-DUTY-015 | `docs-authority/FARM_WASTE.md` | 2026-10-25 | Set duties for hydrochar composting and electrochemical pretreatment; neither process is in the graph and its units (LIGNO_PRE, COMPOST) are no longer graph nodes. No other page cites it. |
+| AQS-DUTY-034 | `docs-authority/NUTRIENT_BALANCE.md` | 2026-10-25 | Balanced nutrients through a fish, larvae, duckweed and azolla loop; those units are no longer graph nodes. No other page cites it. |
+| AQS-DUTY-048 | `docs-authority/NUTRIENT_GAPS.md` | 2026-10-25 | Its supply column relied on fish, a urine tank and farm animals that are not in the graph, and it miscited AQS-DUTY-049 for nutrient recovery. No other page cites it; the nutrient rows of AQS-DUTY-063 and NUTRIENT_DOSE carry the live duty. |
 | AQS-DUTY-081 | `docs-authority/DUTY_CALC.md` | 2026-10-25 | Orphaned snapshot of a retired duty calculation at an earlier graph revision; no generator writes it and no document cites it. The unit duty sheets in docs-authority/duties/ replace it. |
+| AQS-FURN-001 | `docs-authority/FURNACE.md` | 2026-10-25 | Sized a 10 kW induction furnace for 50 kg of steel; the graph melting unit is IND_MELT in FOUNDRY and the progress record gives the 7.5 kW coreless furnace (X-MFG-37). Superseded; no other page cites it. |
 | AQS-ISO-003 | `docs-authority/ISOMETRIC.md` | 2026-10-25 | Orphaned list of close-pipe isometrics for IA-CLOSE edges, most of which are no longer in the graph; no generator writes it. The per-line isometric set AQS-ISO-002 replaces it. |
+| AQS-MFG-TEX-001 | `docs-authority/TEXTILES_HEPA.md` | 2026-10-25 | Placeholder for a filter-media line with no equipment, streams, duties or model; two of its authorities are not documents in this repository. Only the glossary HEPA entry cited it and stands without it. |
+| AQS-SIDE-002 | `docs-authority/SIDE_FARM.md` | 2026-10-25 | Framed the biofilter and a fish tank; BIOFILTER and the fish units are no longer graph nodes. No other page cites it. |

@@ -319,7 +319,7 @@ membership, export minimum, external-source link, UI licence). AUTHORITY
 
 AQS-REM-001 closed ≠ this list. REM was shop-envelope; this is BLD stack.
 
-20. ~~**Textiles / HEPA architecture**~~ — **Partial Rev U**: AQS-MFG-TEX-001 stub. CAD/PFD still open.
+20. ~~**Textiles / HEPA architecture**~~ — withdrawn 2026-10-25: the AQS-MFG-TEX-001 stub had no equipment, streams or duties behind it; the number is withdrawn. CAD/PFD closed with it.
 21. ~~**ASME vessel / B31.3 piping class sheets**~~ — **Partial Wave 4**:
     AQS-ASM-001 Rev B + VJ envelopes; CMP-ASM-01 Partial. MAWP / WPS still TBD/Gap.
 22. ~~**OpenSCAD on PATH**~~ — **Done Wave 3**: build-host `openscad` (AppImage or package)

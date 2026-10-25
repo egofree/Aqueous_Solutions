@@ -47,6 +47,23 @@ WITHDRAWN = {
     'AQS-ISO-003': ('docs-authority/ISOMETRIC.md', '2026-10-25',   # retired path
                     'Orphaned list of close-pipe isometrics for IA-CLOSE edges, most of which are no longer in the graph; '
                     'no generator writes it. The per-line isometric set AQS-ISO-002 replaces it.'),
+    'AQS-DUTY-015': ('docs-authority/FARM_WASTE.md', '2026-10-25',   # retired path
+                     'Set duties for hydrochar composting and electrochemical pretreatment; neither process is in the graph and '
+                     'its units (LIGNO_PRE, COMPOST) are no longer graph nodes. No other page cites it.'),
+    'AQS-DUTY-034': ('docs-authority/NUTRIENT_BALANCE.md', '2026-10-25',   # retired path
+                     'Balanced nutrients through a fish, larvae, duckweed and azolla loop; those units are no longer graph nodes. '
+                     'No other page cites it.'),
+    'AQS-DUTY-048': ('docs-authority/NUTRIENT_GAPS.md', '2026-10-25',   # retired path
+                     'Its supply column relied on fish, a urine tank and farm animals that are not in the graph, and it miscited '
+                     'AQS-DUTY-049 for nutrient recovery. No other page cites it; the nutrient rows of AQS-DUTY-063 and NUTRIENT_DOSE carry the live duty.'),
+    'AQS-SIDE-002': ('docs-authority/SIDE_FARM.md', '2026-10-25',   # retired path
+                     'Framed the biofilter and a fish tank; BIOFILTER and the fish units are no longer graph nodes. No other page cites it.'),
+    'AQS-MFG-TEX-001': ('docs-authority/TEXTILES_HEPA.md', '2026-10-25',   # retired path
+                        'Placeholder for a filter-media line with no equipment, streams, duties or model; two of its authorities are not '
+                        'documents in this repository. Only the glossary HEPA entry cited it and stands without it.'),
+    'AQS-FURN-001': ('docs-authority/FURNACE.md', '2026-10-25',   # retired path
+                     'Sized a 10 kW induction furnace for 50 kg of steel; the graph melting unit is IND_MELT in FOUNDRY and the '
+                     'progress record gives the 7.5 kW coreless furnace (X-MFG-37). Superseded; no other page cites it.'),
 }
 
 

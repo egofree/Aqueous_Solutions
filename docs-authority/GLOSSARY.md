@@ -469,7 +469,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {RPZ -- Reduced-pressure-zone backflow preventer. Required theme on HDR_UPW at potable taps.}
 
-{HEPA -- High-efficiency particulate air filtration. Life / clean-space filtration theme (TEXTILES_HEPA and related).}
+{HEPA -- High-efficiency particulate air filtration. Life and clean-space filtration theme.}
 
 {MEP -- Mechanical, electrical, and plumbing. Life-plate utility fit-out (AQS-MEP-001).}
 

@@ -102,7 +102,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/FIRE_PROTECTION.md` | |
 | `docs-authority/FRAME_SYSTEM.md` | |
 | `docs-authority/FUEL_CELL.md` | |
-| `docs-authority/FURNACE.md` | |
 | `docs-authority/GAS_DETECTION.md` | |
 | `docs-authority/GA_CHECK.md` | |
 | `docs-authority/GEOTHERMAL_BACKUP.md` | |
@@ -131,7 +130,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | |
 | `docs-authority/MVS_PITCH_PASS.md` | |
 | `docs-authority/MVS_STUDY_CLOSE.md` | |
-| `docs-authority/NUTRIENT_GAPS.md` | |
 | `docs-authority/O2_SOURCE.md` | |
 | `docs-authority/O2_SOURCE_AUDIT.md` | |
 | `docs-authority/OSE_CSK_ALIGNMENT.md` | |
@@ -142,7 +140,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | |
-| `docs-authority/SIDE_FARM.md` | |
 | `docs-authority/SIGN_SCHEDULE.md` | |
 | `docs-authority/SOLVENT_ROUTE.md` | |
 | `docs-authority/STANDARDS_LIST.md` | |
@@ -151,7 +148,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/STUDY_UNITS_STUB.md` | |
 | `docs-authority/TERRACE_LANDSCAPE.md` | |
 | `docs-authority/TEST_PLAN.md` | |
-| `docs-authority/TEXTILES_HEPA.md` | |
 | `docs-authority/UNIT_MATERIALS.md` | |
 | `docs-authority/VENT_CLOSURE.md` | |
 | `docs-authority/WATER_PURIFICATION.md` | |
@@ -260,6 +256,12 @@ Table 5.1. Pages and entries removed
 
 | Removed item | Reason |
 | --- | --- |
+| `docs-authority/FARM_WASTE.md` (AQS-DUTY-015, number withdrawn) | set duties for processes (hydrochar composting, electrochemical pretreatment) that are not in the graph, with units no longer on the graph; no citations |
+| `docs-authority/NUTRIENT_BALANCE.md` (AQS-DUTY-034, number withdrawn) | balanced a fish/larvae/duckweed/azolla loop whose units are no longer graph nodes; no citations |
+| `docs-authority/NUTRIENT_GAPS.md` (AQS-DUTY-048, number withdrawn) | supply column relied on retired units and miscited AQS-DUTY-049; no citations |
+| `docs-authority/SIDE_FARM.md` (AQS-SIDE-002, number withdrawn) | framed the biofilter and a fish tank, both no longer graph nodes; no citations |
+| `docs-authority/TEXTILES_HEPA.md` (AQS-MFG-TEX-001, number withdrawn) | placeholder with no equipment, streams, duties or model; two authorities not in the repository |
+| `docs-authority/FURNACE.md` (AQS-FURN-001, number withdrawn) | superseded by IND_MELT in FOUNDRY and the 7.5 kW coreless furnace of X-MFG-37; no citations |
 | `docs-authority/DUTY_CALC.md` (AQS-DUTY-081, number withdrawn) | Orphaned snapshot of a retired duty calculation at an earlier graph revision (it states a unit count that no longer holds); no generator writes it and no document cites it. The duty sheets in `docs-authority/duties/` replace it. |
 | `docs-authority/ISOMETRIC.md` (AQS-ISO-003, number withdrawn) | Orphaned list of close-pipe isometrics; most of its IA-CLOSE edges and several of its units are no longer in the graph, and no generator writes it. The per-line isometric set AQS-ISO-002 (`ISO_SHEETS.md`) replaces it. |
 | Row for `DOCUMENTATION_STYLE.md` in the documentation map (`docs-authority/README.md`) | The page was merged into `DOC_STYLE.md` on 2026-10-24 and no longer exists; its number is a former number of AQS-DOC-002. |
@@ -275,12 +277,7 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/MVS_SIZE.md` (AQS-DUTY-038) | Not cited by any page or generator. It records the crop floor at graph Rev BD and the 24 m × 24 m module plate, which is the subject of open question Q-015. |
 | `docs-authority/MASS_DISPOSITION.md` (AQS-DUTY-023), `docs-authority/GREENHOUSE_WATER.md` (AQS-DUTY-013), `docs-authority/BALANCE_CLOSE_N.md` (AQS-DUTY-012) | Short records of balance closures at early graph revisions (Rev Y, Rev O and Rev N). They are cited by notes in the graph and by the assumptions register, so they are kept as history. They could move to `docs-authority/internal/` as records. |
 | `docs-authority/ISO_DRAWING_INDEX.md` (AQS-ISO-000) | Marked superseded by AQS-ISO-002 and kept for its PNG and PDF history; cited by `_iso_routes.py` and the task plan. |
-| `docs-authority/FARM_WASTE.md` (AQS-DUTY-015) | Reviewed 2026-10-25. Cited by no other page. It sets duties for hydrochar composting and electrochemical pretreatment, but neither process appears in the graph, and its units LIGNO_PRE and COMPOST are no longer graph nodes. Proposed for deletion. |
-| `docs-authority/NUTRIENT_BALANCE.md` (AQS-DUTY-034) | Reviewed 2026-10-25. Cited by no other page. It balances nutrients through a fish, larvae, duckweed and azolla loop; FISH, BSFL, DUCKWEED and AZOLLA are no longer graph nodes. Proposed for deletion. |
-| `docs-authority/NUTRIENT_GAPS.md` (AQS-DUTY-048) | Reviewed 2026-10-25. Cited by no other page. Its supply column relies on fish, a urine tank and farm animals that are not in the graph, and it cites AQS-DUTY-049 for nutrient recovery, but AQS-DUTY-049 is the polymer exchanger sizing. Proposed for deletion, or a rewrite against NUTRIENT_DOSE if a farm nutrient gap list is still wanted. |
 | `docs-authority/HAB_FIXTURES.md` (AQS-HAB-001) | Reviewed 2026-10-25. The number is cited by the graph and the load list, so the page cannot simply be deleted. Its content is out of date: COMPOST_TOILET is no longer a graph node (sanitation is now the blackwater train of AQS-DUTY-063), the edge IA-WASH no longer exists, and S12 now carries 319.6 kg/d, not 339 kg/d. Needs an update against `duties/HAB_WASH.md` and `sizing/SANITATION.md`, or a renumbering decision. |
-| `docs-authority/FURNACE.md` (AQS-FURN-001) | Reviewed 2026-10-25. Cited by no other page. It sizes a 10 kW induction furnace for 50 kg of steel; the graph unit for melting is IND_MELT in FOUNDRY, and the progress record in the task plan gives a 7.5 kW coreless furnace (X-MFG-37). Probably superseded; update or delete. |
-| `docs-authority/SIDE_FARM.md` (AQS-SIDE-002) | Reviewed 2026-10-25. Cited by no other page. It frames the biofilter and a fish tank; BIOFILTER and the fish units are no longer graph nodes. Proposed for deletion. |
 | `docs-authority/FARM.md` (AQS-DUTY-044) | Reviewed 2026-10-25. Cited by no other page. Its nitrogen-fixation duty relies on the fish loop and on clover and seed-bank pages (AQS-DUTY-045 to AQS-DUTY-047); the fish units are no longer graph nodes. Update against the current farm or delete. |
 | `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | Reviewed 2026-10-25. It describes the route to the ionic liquid [Bmim] acetate through 1-methylimidazole; the units IMID and QUAT are no longer graph nodes. The number is cited elsewhere, so it is kept until a decision. |
 | `docs-authority/RED_AUDIT.md` (AQS-RED-001) | Rewritten, but two rows need a factual update: the sanitation row names COMPOST_TOILET and the cold-box row names EXPANDER, and neither is a graph node now. |
@@ -291,7 +288,6 @@ Table 6.1. Pages kept pending a decision
 
 | `docs-authority/GREENHOUSE_ENVELOPE.md` (AQS-TRR-GH-001) | Streams S40 (overflow to terrace irrigation) and S42 (fertigation return) are named here, in AQS-TRR-001 and in the stream register, but neither is an edge of the plant flow graph. Should they be added to the graph or removed from the pages? |
 | `docs-authority/MEOH_EQUIPMENT.md` (AQS-EQP-MEOH-001) | Only MEOH_SYNTH, MEOH_COND, MEOH_TANK and MEOH_FC are graph nodes. The graph has one MEOH_FERM where the list has MEOH_FERM_DIG and MEOH_FERM_STILL, and the remaining tags are on the list only. Should the list be cut to the graph, or the graph extended? |
-| `docs-authority/TEXTILES_HEPA.md` (AQS-MFG-TEX-001) | Not rewritten; proposed for deletion. It is a placeholder for a filter media line with no equipment, streams, duties or model. Two of its authorities, AQS-GAP-001 and AQS-AUD-001, are not documents in the repository. Only the glossary entry for HEPA cites it, and that entry can stand without it. |
 
 | `docs-authority/RECT_EW.md` (AQS-ELEC-004) | Finding 1 names node RECT_EW, streams S17-EW and IA-RECT-EW-LOSS (7.73 kW) and a 38.66 kW AC input. The graph now has node RECTIFIER, supply S17 at 12.0 kW (A-M-231) and loss IA-RECT-Q4 at 1.0 kW; the channel streams IA-DC-EW_1 to IA-DC-EW_9 still match Table 2.1. Which AC input is correct? |
 | `docs-authority/ELECTRODE_FAB.md` (AQS-MFG-ELC-001) | Study ST-ELC-01 gives about 0.3 kW average; the graph supplies ELECTRODE_COAT with 0.0792 kW (SF-ELECTRODE_COAT). Which is correct? |

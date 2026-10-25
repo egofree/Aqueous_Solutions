@@ -142,7 +142,6 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [OXIDIZER_REAGENTS.md](OXIDIZER_REAGENTS.md) | AQS-DSN-OX-001 | Nitric acid and hydrogen peroxide systems |
 | [SOLVENT_ROUTE.md](SOLVENT_ROUTE.md) | AQS-DUTY-026 | Sugar and reagent stores |
 | [SILICON.md](SILICON.md) | AQS-SI-001 | Silicon reduction |
-| [FURNACE.md](FURNACE.md) | AQS-FURN-001 | Induction furnace module |
 | [POLYMER_HX_SIZING.md](POLYMER_HX_SIZING.md) | AQS-DUTY-049 | Polymer exchanger sizing, HX-5 and HX8 |
 
 ## Gas handling and cryogenics
@@ -177,11 +176,7 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 |---|---|---|
 | [FARM.md](FARM.md) | AQS-DUTY-044 | Nitrogen fixation |
 | [FARM_EQUIPMENT.md](FARM_EQUIPMENT.md) | AQS-EQP-FRM-001 | Farm equipment / process list |
-| [FARM_WASTE.md](FARM_WASTE.md) | AQS-DUTY-015 | Hydrochar and EAOP |
-| [SIDE_FARM.md](SIDE_FARM.md) | AQS-SIDE-002 | Farm module bay |
-| [NUTRIENT_BALANCE.md](NUTRIENT_BALANCE.md) | AQS-DUTY-034 | Nutrient balance by stage |
 | [NUTRIENT_DOSE.md](NUTRIENT_DOSE.md) | AQS-EQP-NUT-001 | Nutrient dose / N-P process list |
-| [NUTRIENT_GAPS.md](NUTRIENT_GAPS.md) | AQS-DUTY-048 | Nutrient gaps |
 | [GREENHOUSE_ENVELOPE.md](GREENHOUSE_ENVELOPE.md) | AQS-TRR-GH-001 | Enclosed greenhouse envelope — schedule stub (optional FreeCAD) |
 | [GREENHOUSE_WATER.md](GREENHOUSE_WATER.md) | AQS-DUTY-013 | Greenhouse water and battery margin |
 | [TERRACE_LANDSCAPE.md](TERRACE_LANDSCAPE.md) | AQS-TRR-001 | Terrace landscape — planting, irrigation, open vs greenhouse |
@@ -309,7 +304,6 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [BLOCK_FAMILY_PLANS.md](BLOCK_FAMILY_PLANS.md) | AQS-INV-009 | Building-block family production plans |
 | [WIRE_SPECS.md](WIRE_SPECS.md) | AQS-INV-007 | Wire family specifications and production plans |
 | [MOTOR_FIRST_ARTICLE.md](MOTOR_FIRST_ARTICLE.md) | AQS-INV-008 | Motor first articles: drawings, traveller and type-test rig |
-| [TEXTILES_HEPA.md](TEXTILES_HEPA.md) | AQS-MFG-TEX-001 | Textiles / HEPA media — architecture stub |
 | [BOUGHT_SPECS.md](BOUGHT_SPECS.md) | AQS-PRO-002 | Bought-item specification sheets |
 | [PLANT_BOM.md](PLANT_BOM.md) | AQS-PRO-001 | Plant BOM roll-up |
 | [SPARES.md](SPARES.md) | AQS-OPS-003 | Critical spares list |

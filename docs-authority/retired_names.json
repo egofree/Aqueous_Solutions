@@ -134,6 +134,50 @@
    "now": [],
    "when": "2026-10 repository restructure",
    "note": "planning notes stayed in the private working repository; cite the docs-authority page that carries the decision instead"
+  },
+  {
+   "old": "docs-authority/FARM_WASTE.md",
+   "now": [
+    "docs-authority/NUTRIENT_DOSE.md"
+   ],
+   "when": "2026-10-25 documentation triage",
+   "note": "duties for processes not in the graph, on retired units; number AQS-DUTY-015 withdrawn"
+  },
+  {
+   "old": "docs-authority/NUTRIENT_BALANCE.md",
+   "now": [
+    "docs-authority/NUTRIENT_DOSE.md"
+   ],
+   "when": "2026-10-25 documentation triage",
+   "note": "balanced a retired aquaculture loop; number AQS-DUTY-034 withdrawn"
+  },
+  {
+   "old": "docs-authority/NUTRIENT_GAPS.md",
+   "now": [
+    "docs-authority/NUTRIENT_DOSE.md"
+   ],
+   "when": "2026-10-25 documentation triage",
+   "note": "relied on retired units and miscited AQS-DUTY-049; number AQS-DUTY-048 withdrawn"
+  },
+  {
+   "old": "docs-authority/SIDE_FARM.md",
+   "now": [],
+   "when": "2026-10-25 documentation triage",
+   "note": "framed retired biofilter and fish units; number AQS-SIDE-002 withdrawn"
+  },
+  {
+   "old": "docs-authority/TEXTILES_HEPA.md",
+   "now": [],
+   "when": "2026-10-25 documentation triage",
+   "note": "placeholder with no equipment behind it; number AQS-MFG-TEX-001 withdrawn"
+  },
+  {
+   "old": "docs-authority/FURNACE.md",
+   "now": [
+    "docs-authority/sizing/FOUNDRY_LINE.md"
+   ],
+   "when": "2026-10-25 documentation triage",
+   "note": "superseded by IND_MELT and the X-MFG-37 coreless furnace; number AQS-FURN-001 withdrawn"
   }
  ],
  "reissued_numbers": [
@@ -219,7 +263,7 @@
    "\\b{id} (sector|line)\\b",
    "/ {id} polish"
   ],
-  "history_words": "(?i:renamed|pre-rename|deleted|former|→|->|became|no longer|replaced|stale|removed)"
+  "history_words": "(?i:renamed|pre-rename|deleted|former|\u2192|->|became|no longer|replaced|stale|removed)"
  },
  "names": [
   {
