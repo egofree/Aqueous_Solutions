@@ -191,10 +191,10 @@ Table 3.1. Document numbers in use
 | AQS-IF-FAB-WET-001 | `docs-authority/FAB_WET_INTERFACE.md` | A | 2026-09-27 | Fab ↔ wet-line interface | current |
 | AQS-INST-001 | `docs-authority/INSTRUMENT_LOOPS.md` | C | 2026-10-21 | Instrument loops | current |
 | AQS-INT-FOUNDRY | `notes/FOUNDRY_INTEGRATION.md` | B | 2026-10-16 | FOUNDRY role fixes — Rev O | current |
-| AQS-INV-001 | `docs-authority/inventory/MOTOR_INVENTORY.md` | A | 2026-10-15 | Motor and actuator inventory | current |
-| AQS-INV-002 | `docs-authority/inventory/WIRE_INVENTORY.md` | C | 2026-10-15 | Wire inventory | current |
-| AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | A | 2026-10-15 | Pipe inventory | current |
-| AQS-INV-004 | `docs-authority/inventory/OTHER_INVENTORY.md` | A | 2026-10-15 | Other building blocks inventory | current |
+| AQS-INV-001 | `docs-authority/inventory/MOTOR_INVENTORY.md` | B | 2026-10-25 | Motor and actuator inventory | current |
+| AQS-INV-002 | `docs-authority/inventory/WIRE_INVENTORY.md` | D | 2026-10-25 | Wire inventory | current |
+| AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | B | 2026-10-25 | Pipe inventory | current |
+| AQS-INV-004 | `docs-authority/inventory/OTHER_INVENTORY.md` | B | 2026-10-25 | Other building blocks inventory | current |
 | AQS-INV-005 | `docs-authority/inventory/MOTOR_DESIGNS.md` | A | 2026-10-15 | Motor family designs | current |
 | AQS-INV-006 | `docs-authority/PIPE_SPECS.md` | A | 2026-10-21 | Pipe family production plans | current |
 | AQS-INV-007 | `docs-authority/WIRE_SPECS.md` | C | 2026-10-21 | Wire family specifications and production plans | current |

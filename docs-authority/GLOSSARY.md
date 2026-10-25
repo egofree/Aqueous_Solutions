@@ -599,6 +599,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {VSA -- Vacuum swing adsorption: gas separation by adsorbing a component under pressure and releasing it under vacuum.}
 
+{EMT -- Electrical metallic tubing, a thin-wall steel conduit for electrical conductors.}
 {NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
 
 {ASME -- American Society of Mechanical Engineers. Vessel and B31.3 piping class sheets (AQS-ASM-001).}

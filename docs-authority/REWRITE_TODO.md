@@ -60,6 +60,10 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/FOUNDATION.md` | Rev B, through `docs-authority/_foundation.py`. Purpose, basis, symbol definitions and numbered table added. The uplift row is unchanged because `_design_check.py` check QC-18 parses it. The plate size is still subject to question Q-015. |
 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | Rev B, through `docs-authority/_motor_fa.py`. Purpose, table titles and rig description in sentences added. The paragraph on flagged families printed an empty list of required core lengths when no family was flagged; it is now written only when a family is flagged. |
 | `docs-authority/inventory/motor_families/` (every MF sheet) | Rev B, through `flow_graph/inventory/motor_designs.py`. Revision record, purpose, table title, manufacturing steps in full sentences and open items in prose added. No design value changed. `docs-authority/_motor_fa.py` now reads the motor count from the new purpose sentence. |
+| `docs-authority/inventory/MOTOR_INVENTORY.md` | Rev B, through `flow_graph/inventory/motors.py`. Revision record, purpose, counting and motor-type rules in sentences, table titles. No motor changed. |
+| `docs-authority/inventory/OTHER_INVENTORY.md` | Rev B, through `flow_graph/inventory/other.py`. Revision record, purpose, totals in sentences, table titles. No item changed. |
+| `docs-authority/inventory/PIPE_INVENTORY.md` | Rev B, through `flow_graph/inventory/pipe.py`. Revision record, purpose, totals in sentences, table titles. No line changed. |
+| `docs-authority/inventory/WIRE_INVENTORY.md` | Rev D, through `flow_graph/inventory/wire.py`. Revision record, purpose, sizing basis and panel-merge rule in sentences, table title. Electrical metallic tubing is defined in the glossary. No circuit changed. |
 
 ## 3. In progress
 
@@ -235,10 +239,6 @@ Table 4.2. Pending pages in subfolders
 | `docs-authority/fab/COMB_HEAT.md` | |
 | `docs-authority/fab/POLY_OLEFIN.md` | |
 | `docs-authority/fab/VAC_IND.md` | |
-| `docs-authority/inventory/MOTOR_INVENTORY.md` | |
-| `docs-authority/inventory/OTHER_INVENTORY.md` | |
-| `docs-authority/inventory/PIPE_INVENTORY.md` | |
-| `docs-authority/inventory/WIRE_INVENTORY.md` | |
 | `docs-authority/sizing/EVAP_DESIGN.md` | |
 | `docs-authority/sizing/EW_CELLS.md` | |
 | `docs-authority/sizing/H2_COMPRESSOR.md` | |

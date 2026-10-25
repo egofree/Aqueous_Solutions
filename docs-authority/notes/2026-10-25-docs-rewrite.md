@@ -100,3 +100,7 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 ## Batch 18
 
 - Motor family sheets (`docs-authority/inventory/motor_families/`, AQS-INV-005) rewritten to Rev B through `flow_graph/inventory/motor_designs.py`: revision record, purpose, table title, manufacturing steps as full sentences, open items as prose. No design value changed. `_motor_fa.py` reads the motor count from the new purpose sentence, so `MOTOR_FIRST_ARTICLE.md` is unchanged.
+
+## Batch 19
+
+- The four inventory pages (`MOTOR_INVENTORY.md`, `OTHER_INVENTORY.md`, `PIPE_INVENTORY.md` and `WIRE_INVENTORY.md`) were rewritten through their generators in `flow_graph/inventory/`. Each page now has a revision record, a purpose and scope section, totals in full sentences and table titles. No inventory value changed. The heading `## 1. Family rollup` in the wire page is kept, because `wire.py` inserts the panel-merge section in front of it.
