@@ -7,6 +7,7 @@ braced lines per direction, two braced bays per line, tension-only diagonals. Ru
 import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R); sys.path.insert(0, os.path.join(R, 'models/freecad'))
 from flow_graph.param.refs import cite
+from flow_graph.param import site as SITE   # apparent gravity from the site profile
 from flow_graph.param import drivers as DR   # U4b: frame check literals single-sourced from drivers.json (A-M-207)
 _d = DR.load(); v = lambda k: DR.val(_d, k)
 for k in ('AISC360_22', 'ASTM_A992', 'ASCE7_22'): cite(k)
@@ -44,7 +45,7 @@ def ibeam(Mu, wL, Lm, Lim=360):
 beams = []
 for k in lev:
     w = q[k]['qu']*BAY/2; Mu = w*BAY**2/8; sb = ibeam(Mu, q[k]['qL']*BAY/2, BAY)
-    Pg = w*BAY; Mg = Pg*BAY/4 + 1.2*(sb['kg_m']*9.81e-3)*BAY**2/8; gd = ibeam(Mg, q[k]['qL']*BAY/2*2*0.8, BAY)
+    Pg = w*BAY; Mg = Pg*BAY/4 + 1.2*(sb['kg_m']*SITE.g()*1e-3)*BAY**2/8; gd = ibeam(Mg, q[k]['qL']*BAY/2*2*0.8, BAY)
     beams.append((k, q[k], Mu, sb, Mg, gd))
 cols = []; acc = {'interior': 0.0, 'edge': 0.0, 'corner': 0.0}; TR = {'interior': BAY*BAY, 'edge': BAY*BAY/2, 'corner': BAY*BAY/4}
 for i, k in enumerate(reversed(lev)):

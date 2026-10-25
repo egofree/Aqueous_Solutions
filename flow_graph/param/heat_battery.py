@@ -12,6 +12,7 @@ edges change on the graph (the ladder losses are already carried on IA-Q*A-LOSS 
 ladder closure, test_heat_ladder.py). Run: python3 -m flow_graph.param.heat_battery [--write]"""
 import json, math, os, sys
 from . import drivers as DR
+from . import site as SITE
 from .refs import cite
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -55,7 +56,7 @@ def design(d, g):
         thick, k = v(HB + ik) / 1000.0, v(HB + INSUL[tier][1])
         U = 1.0 / (thick / k + 1.0 / U_CONV)                   # W/m2 K, series film over insulation
         loss_kW = U * A * (t_nom - AMBIENT_C) / 1000.0
-        wall = max(v(HB + 'hb_wall_min_mm'), math.ceil(rho * 9.81 * H / 1000 * D / 1000 / (2 * v(HB + 'hb_allow_MPa')) * 1000))
+        wall = max(v(HB + 'hb_wall_min_mm'), math.ceil(rho * SITE.g() * H / 1000 * D / 1000 / (2 * v(HB + 'hb_allow_MPa')) * 1000))
         out[u] = dict(tier=f'Q{tier}', ladder=u[-1], fluid=fluid, t_nom_C=t_nom, hold_kWh_th=v(HB + ek), swing_K=dT,
                       rho_kg_m3=rho, cp_kJ_kgK=cp, mass_kg=round(m, 1), V_req_m3=round(V_req, 4), V_m3=round(V, 4),
                       issued_V_m3=ISSUED[tier][0], D_mm=D, H_mm=H, insulation=f'{v(HB + ik):.0f} mm {INSUL[tier][0]}',

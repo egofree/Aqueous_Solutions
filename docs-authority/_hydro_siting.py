@@ -2,9 +2,11 @@
 V = E / (rho g h eta); the head is the decision variable; structural numbers are loads, not designs (AWWA D100 for welded steel tanks,
 ACI 350 for concrete environmental structures, penstock pressure = rho g h)."""
 import json, os
+import sys; sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from flow_graph.param import site as SITE   # apparent gravity from the site profile
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 g = json.load(open(os.path.join(ROOT, 'flow_graph/plant_flow_graph.json'))); N = {n['unit_id']: n for n in g['nodes']}
-b = N['HYDRO_SET']['params']['backup_basis']; E = b['energy_kWh_bus']; eta = b['eta_turbine_generator']; RHO, G = 1000.0, 9.81
+b = N['HYDRO_SET']['params']['backup_basis']; E = b['energy_kWh_bus']; eta = b['eta_turbine_generator']; RHO, G = 1000.0, SITE.g()
 V = lambda h: E*3.6e6/(RHO*G*h*eta)
 rows = []
 for name, hs, note in (('A. Roof tank (present)', [18], 'roof carries the full water mass'),

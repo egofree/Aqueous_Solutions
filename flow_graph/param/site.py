@@ -125,6 +125,14 @@ def p_atm_kPa(sid=None):
     return p_atm_Pa(sid) / 1000
 
 
+R_GAS = 8.314462618   # J/(mol K) [CODATA2018]
+
+
+def air_density(T_C, sid=None):
+    """External air density at temperature T_C, kg/m3, ideal gas at the site pressure."""
+    return p_atm_Pa(sid) * val('atmosphere.molar_mass_kg_kmol', sid) / 1000 / (R_GAS * (T_C + 273.15))
+
+
 def air_fraction(gas, sid=None):
     """Mole fraction of a gas in the external atmosphere; 0 when the profile lists none."""
     return val('atmosphere.composition_mole_fraction', sid).get(gas, 0.0)

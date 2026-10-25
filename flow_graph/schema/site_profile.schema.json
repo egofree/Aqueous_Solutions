@@ -17,7 +17,7 @@
   "x-groups": {
     "identity": {"always": true, "entries": ["name", "body", "latitude_deg", "longitude_deg", "elevation_m", "site_basis"]},
     "gravity": {"always": true, "entries": ["g_m_s2"]},
-    "atmosphere": {"always": true, "entries": ["pressure_Pa", "composition_mole_fraction", "breathable", "vent_sink", "oxidant"]},
+    "atmosphere": {"always": true, "entries": ["pressure_Pa", "composition_mole_fraction", "molar_mass_kg_kmol", "breathable", "vent_sink", "oxidant"]},
     "thermal": {"always": true, "entries": ["cooling_dry_bulb_C", "heating_dry_bulb_C", "insulation_ambient_C"]},
     "solar": {"always": false, "entries": ["pv_yield_kWh_kWp_d", "night_hours"]},
     "wind": {"always": false, "entries": ["basic_wind_speed_m_s"]},

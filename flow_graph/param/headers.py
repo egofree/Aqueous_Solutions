@@ -11,7 +11,7 @@ HX-10 + GHEX recharge + MAU_HX coil) on the 10 K loop swing (drivers heat_loop_d
 (ADS_CHILL in place of MAU) is checked lower. No rates change on the graph.
 Run: python3 -m flow_graph.param.headers [--write]"""
 import csv, json, math, os, sys
-from . import drivers as DR
+from . import drivers as DR, site as SITE
 from .refs import cite
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -54,6 +54,11 @@ def _flow_kg_s(g, u, mode):
     return 'kg/d', max(tin, tout)
 
 
+def air_rho(d):
+    """Air and nitrogen class gas density from the site atmosphere at the header gas temperature."""
+    return SITE.air_density(DR.val(d, HD + 'hdr_air_T_C'))
+
+
 def design(d, g):
     v = lambda k: DR.val(d, k)
     iso = {}
@@ -74,7 +79,7 @@ def design(d, g):
             rho = v(HD + 'hdr_rho_water'); Q = m_kg_s / rho
         else:
             m_kg_s = x / 86400.0; duty_kW = None
-            rho = v(HD + rhok) if rhok.startswith('hdr_rho') else v(HD + rhok)
+            rho = air_rho(d) if rhok == 'hdr_rho_air' else v(HD + rhok)   # air class from the site atmosphere
             Q = m_kg_s / rho
         vel = v(HD + velk); id_req = math.sqrt(4 * Q / (math.pi * vel)) * 1000 if Q else 0.0
         dn = next(dn for dn in DN_LIST if ID_OF[dn] >= max(id_req, 0.0) and dn >= v(HD + mink))
@@ -117,7 +122,7 @@ def write_doc(d, R):
         md.append(f"| {u} | {r['service']} | DN{r['DN']} | {r['id_req_mm']} | {r['length_m']} | {r['volume_m3']} | {r['hold_kg']} | {r['connections']} | {r['material']} |")
     md += ['', 'Q4_BUS design duty ' + (f"{R['Q4_BUS']['duty_kW']:.2f} kW winter concurrent" if R['Q4_BUS']['duty_kW'] else 'n/a') +
                f" -> {R['Q4_BUS']['flow_kg_s']:.3f} kg/s at {DR.val(d, 'heat_loop_dT_K')} K swing. Gas densities at header conditions "
-               f"(H2 {v(HD+'hdr_rho_H2')}, air class {v(HD+'hdr_rho_air')}, CO2 {v(HD+'hdr_rho_CO2')}, NCG {v(HD+'hdr_rho_ncg')}, flue {v(HD+'hdr_rho_flue')} kg/m3, "
+               f"(H2 {v(HD+'hdr_rho_H2')}, air class {air_rho(d):.3g} at {v(HD+'hdr_air_T_C'):g} C, CO2 {v(HD+'hdr_rho_CO2')}, NCG {v(HD+'hdr_rho_ncg')}, flue {v(HD+'hdr_rho_flue')} kg/m3, "
                f'{cite("NIST_WEBBOOK")} class). The O2 header is degreased and bagged per {cite("ASTM_G93")}; its take-offs carry the no-oil rule of '
                'AQS-STD-002. Open: hydraulic network verification (pressure drops at the governing draws) folds into the line list calculation as the '
                'connected line bores are derived again at unit task 05.']

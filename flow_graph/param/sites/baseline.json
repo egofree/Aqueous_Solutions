@@ -78,6 +78,11 @@
      "units": "-",
      "ref": "USSA1976",
      "note": "air carries O2 at the composition above"
+    },
+    "molar_mass_kg_kmol": {
+     "value": 28.9644,
+     "units": "kg/kmol, dry air",
+     "ref": "USSA1976"
     }
    }
   },

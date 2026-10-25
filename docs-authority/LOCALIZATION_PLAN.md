@@ -1,7 +1,7 @@
 # Localization plan: site profiles and locale variants
 
 Document number: AQS-PLAN-011
-Revision: E
+Revision: F
 Date: 2026-10-25
 
 | Rev | Description | Date |
@@ -11,6 +11,7 @@ Date: 2026-10-25
 | C | Section 4 matches the built profile: entries bind drivers, snow group added, pending groups, locale regeneration refused until section 4.4 exists | 2026-10-25 |
 | D | Section 4.5 states the number and site pair rules as built | 2026-10-25 |
 | E | Section 3.2 records the gravity, pressure and air values now read from the profile, and Q-032 | 2026-10-25 |
+| F | Q-032 closed; every gravity and air density reads the profile | 2026-10-25 |
 
 ## 1. Purpose and scope
 
@@ -70,9 +71,9 @@ Table 3.1. Environmental inputs in the current model
 
 These are the places where the model assumes the surface of the Earth without saying so. Each must become a profile value, or a value derived from the profile, before a locale off the Earth's surface can be represented.
 
-- Gravity. The profile entry `gravity.g_m_s2` holds standard gravity, and the tank, storage, structural load and graph writer modules read it through `flow_graph/param/site.py`. The rounded value 9.81 m/s² remains a literal in reactor, evaporator, scrubber, heat battery, geothermal loop and motor sizing and in the foundation, fire, hydro and water tower calculators, pending Q-032. `flow_graph/param/test_site_constants.py` fails on a new standard gravity literal and keeps the rounded list from growing.
+- Gravity. The profile entry `gravity.g_m_s2` holds the apparent gravity, and every sizing module and calculator reads it through `flow_graph/param/site.py` (Q-032 closed). `flow_graph/param/test_site_constants.py` fails on a gravity literal in model code. Concrete in the foundation calculator is still entered as a unit weight in kN/m³, which holds Earth gravity; it becomes a density times the profile gravity in a later step.
 - Atmospheric pressure. The profile entry `atmosphere.pressure_Pa` holds the external pressure, and the balance, evaporator, scrubber, fire, cold box, pressure node, graph writer and relief modules read it through `site.py`. Two literals stay, each with its reason in the test: the carbon dioxide solubility bound in the balance (pure gas at one standard atmosphere) and the unit conversion in the scrubber's diffusivity correlation. The one-shot studies in `docs-authority/` that are not regeneration stages keep their literals.
-- Air. The balance takes the partial pressures of oxygen and nitrogen from the profile entry `atmosphere.composition_mole_fraction` and the external pressure (`HENRY` in `flow_graph/param/balance.py`). Drivers carry air densities for purges, vents and headers and the air carried in with the feed (`hdr_rho_air`, `WTR.grey-black-train.san_air_rho20_kg_m3`, `ELEC.storage-train.ZNBR2.purge_air_rho_kg_m3`, `vs_air_mg_kg`).
+- Air. The balance takes the partial pressures of oxygen and nitrogen from the profile entry `atmosphere.composition_mole_fraction` and the external pressure (`HENRY` in `flow_graph/param/balance.py`). Air densities for the gas headers, the sanitation superficials and the zinc-bromine battery purge are computed by `site.air_density()` from the profile pressure and molar mass at a driver temperature; no driver holds an air density. The air carried in with the feed (`vs_air_mg_kg`) remains a feed property.
 - Outside air as a heat sink. DRY_COOLER (HEAT) rejects heat to outside air, and coolers and ventilation are rated at the cooling design dry bulb. There is no radiative or ground-only heat rejection.
 - Outside air as an oxidant and a vent. AFTERBURNER, COMB_HEAT, BACKUP_GEN and the sanitation combustion step burn with air. Vents, relief devices and scrubber stacks discharge to the atmosphere.
 - Free liquid surfaces and buoyancy. Pumped hydro (HYDRO_SET), the roof and catch tanks, atmospheric tanks, stirred tanks with a gas space, packed scrubbers, flotation (FLOAT_SINK) and the separation of the bromine phase in ZNBR2 depend on gravity to keep gas and liquid apart.
@@ -475,7 +476,7 @@ The questions below are logged in AQS-OQ-001 with the default the work will proc
 - Q-029. Crew size per locale. Default: the baseline crew at every locale.
 - Q-030. The floating island site and jurisdiction: moored or free-floating, and under which flag or coastal state. Default: moored in tropical waters with an ocean thermal gradient; class society rules with SOLAS and MARPOL.
 - Q-031. Storm strategy for the floating island: ride out the design storm on the moorings, or relocate ahead of it. Default: ride it out, with relocation as an option.
-- Q-032. Whether the modules that use the rounded gravity 9.81 m/s² read the profile value, and whether the baseline uses the local gravity and barometric pressure instead of the standard values. Default: keep both until the owner decides.
+- Q-032. Closed (owner, 2026-10-25): hard-coded values are a gap; every module reads the profile gravity, and the baseline keeps the standard values, flagged for verification.
 
 ## 15. References
 

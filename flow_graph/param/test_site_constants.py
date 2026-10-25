@@ -3,9 +3,8 @@
 """Earth-surface constants come from the site profile (AQS-PLAN-011 section 3.2, task X-LOC-03).
 
 Model code (flow_graph, models/freecad and the docs-authority generators named in the regeneration
-manifest) holds no standard gravity or standard pressure literal. The exceptions are listed below with
-their reason. The modules that use the rounded gravity 9.81 wait for the owner's decision in Q-032;
-the list is frozen so that no new module adds one."""
+manifest) holds no gravity, standard pressure or air composition literal, and no air density driver.
+The exceptions are listed below with their reason (Q-032 closed: every module reads the profile gravity)."""
 import json, os, re, subprocess
 from flow_graph.param import site as S
 
@@ -20,15 +19,7 @@ P_ALLOWED = {
     'flow_graph/param/balance.py': 'HENRY CO2 bound: pure CO2 at one standard atmosphere, not the external air',
     'flow_graph/param/sizing/scrubber.py': 'Fuller diffusivity correlation: pressure in standard atmospheres (unit conversion)',
 }
-G_ALLOWED = {'flow_graph/param/report.py': 'text naming the equation constants of the baseline'}
-G_ROUND_PENDING = {   # Q-032: replace 9.81 by the profile gravity (outputs change) or keep
-    'flow_graph/inventory/motors.py', 'flow_graph/param/ess_tf.py', 'flow_graph/param/evap_design.py',
-    'flow_graph/param/geo_loop.py', 'flow_graph/param/heat_battery.py', 'flow_graph/param/house_scrubbers.py',
-    'flow_graph/param/reactor_design.py', 'flow_graph/param/vent_scrubber.py', 'flow_graph/param/water_tower.py',
-    'flow_graph/param/write_graph.py', 'flow_graph/param/report.py', 'models/freecad/frame.py', 'docs-authority/_design_check.py',
-    'docs-authority/_ew_busbar.py', 'docs-authority/_fire.py', 'docs-authority/_foundation.py',
-    'docs-authority/_frame_check.py', 'docs-authority/_hydro_siting.py', 'docs-authority/_water_tower.py',
-}
+G_ALLOWED = {}
 
 
 def _model_files():
@@ -59,8 +50,21 @@ def test_no_standard_pressure_or_air_literal():
     assert bad == {}, 'read the external pressure and air from flow_graph/param/site.py: ' + repr(bad)
 
 
-def test_rounded_gravity_list_does_not_grow():
-    assert set(_hits(G_ROUND)) <= G_ROUND_PENDING, set(_hits(G_ROUND)) - G_ROUND_PENDING
+def test_no_rounded_gravity_literal():
+    assert _hits(G_ROUND) == {}, 'read gravity from flow_graph/param/site.py: ' + repr(_hits(G_ROUND))
+
+
+def test_no_air_density_driver():
+    from flow_graph.param import drivers as DR
+    bad = [k for k in DR.raw() if re.search(r'rho_air|air_rho', k)]
+    assert bad == [], 'derive air density with site.air_density(): ' + repr(bad)
+
+
+def test_air_density_from_profile(monkeypatch):
+    monkeypatch.delenv(S.ENV, raising=False)
+    rho = S.air_density(20.0)
+    assert abs(rho - S.p_atm_Pa() * 0.0289644 / (8.314462618 * 293.15)) < 1e-12
+    assert S.air_density(40.0) < rho
 
 
 def test_baseline_constants_equal_the_old_literals(monkeypatch):

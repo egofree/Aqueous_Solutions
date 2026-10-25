@@ -9,9 +9,10 @@ FARM: D-FARM owner ruling 2026-10-18 - GROW_BED re-based to crew duty (A-M-229):
 BVAD2022 tomato per-m2 carbon chain scaled to the DLI-17 light-limited CO2 flux; the BH farm neighbourhood (DUAL_ROOT, VEG_BED,
 BSFL, FISH_SUMP, NFT, MISTER) and TERRACE_IRRIG stay retired/deleted; the farm gate is GROW_BED presence alone."""
 import json, os, subprocess, sys
+from . import site as SITE   # apparent gravity from the site profile
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from . import drivers as _drv0; _D = _drv0.load()   # X-PAR-01: constants live in drivers.json
-F = 96485.0; VZB = _D['znbr_cell_V']['value']; J = _D['znbr_j_mA_cm2']['value']; F_HER = _D['znbr_her_mL_h_cm2']['value']/(J/1000/(2*F)*22414*3600); OC = _D['znbr_oc_corr_mL_h_cm2']['value']; LFL25 = _D['ELEC.storage-train.ZNBR2.h2_LFL_vol_frac']['value']*_D['h2_purge_frac_of_LFL']['value']; RHO_AIR = _D['ELEC.storage-train.ZNBR2.purge_air_rho_kg_m3']['value']
+F = 96485.0; VZB = _D['znbr_cell_V']['value']; J = _D['znbr_j_mA_cm2']['value']; F_HER = _D['znbr_her_mL_h_cm2']['value']/(J/1000/(2*F)*22414*3600); OC = _D['znbr_oc_corr_mL_h_cm2']['value']; LFL25 = _D['ELEC.storage-train.ZNBR2.h2_LFL_vol_frac']['value']*_D['h2_purge_frac_of_LFL']['value']; RHO_AIR = SITE.air_density(_D['ELEC.storage-train.ZNBR2.purge_air_T_C']['value'])
 CHG_H = _D['znbr_charge_h']['value']; GULLY_PITCH = _D['nft_gully_pitch_m']['value']; GULLY_LPM = _D['nft_gully_L_min']['value']
 NOZ_M2 = _D['hpa_nozzles_m2']['value']; NOZ_LPM = _D['hpa_nozzle_L_min']['value']; T_ON = _D['hpa_on_s']['value']; T_OFF = _D['hpa_off_s']['value']; DRAIN = _D['substrate_drain_frac']['value']; SWARF = _D['atomizer_offspec_frac']['value']; ZEO_LOAD = _D['zeolite5A_CO2_wt_frac']['value']; BVAD_TOM_TM = _D['bvad_tomato_tM_d']['value']
 BVAD_TOM_T, BVAD_TOM_CO2, BVAD_TOM_C, BVAD_TOM_HI = _D['bvad_tomato_T_kg_m2_d']['value'], _D['bvad_tomato_CO2_g_m2_d']['value'], _D['bvad_tomato_C_frac']['value'], _D['bvad_tomato_HI']['value']
@@ -57,7 +58,7 @@ def tf(g, ps=None):
     from . import water_tower as WT
     wt = WT.solve(e_bus, FP.PLATE_L, FP.PLATE_W, FP.HYDRO_RES_Z0, FP.basement_z(FP.BASEMENT_LEVELS - 1), V_dead=FP.FIRE_RESERVE_M3); h = round(wt['head_m'], 2); vol = wt['V_m3']
     N['HYDRO_SET']['params']['head_m_m1'] = h; N['HYDRO_SET']['params']['volume_m3_m1'] = round(vol, 0)
-    _ei = 1000*9.81*vol*h/3.6e6; _zk = float(N['ZNBR2']['params'].get('kWh') or 0)          # X-QA-02 finding: legacy M1 energy keys were stale (200 m3 x 18 m)
+    _ei = 1000*SITE.g()*vol*h/3.6e6; _zk = float(N['ZNBR2']['params'].get('kWh') or 0)          # X-QA-02 finding: legacy M1 energy keys were stale (200 m3 x 18 m)
     N['HYDRO_SET']['params'].update(energy_kwh_ideal_study=round(_ei, 1), energy_kwh_recoverable_study=round(_ei*ETA_TURB, 1), vs_znbr2_kwh=round(_zk, 1), fraction_of_znbr2_study=round(_ei*ETA_TURB/_zk, 3) if _zk else None)
     for _k in ('scale_up_volume_path_m3', 'scale_up_head_m', 'scale_up_energy_kwh_ideal', 'scale_up_note'): N['HYDRO_SET']['params'].pop(_k, None)   # superseded by the Q-009 water tower
     for k in ('IA-ESS-HYDRO-CHG', 'IA-ESS-HYDRO-DIS', 'S22', 'S23', 'IA-ESS-HYDRO-ELEC'):

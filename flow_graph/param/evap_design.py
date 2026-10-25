@@ -16,7 +16,7 @@ def design(d, e, unit):
     Q = V*LAT; A = Q*1000/(v('evap_U_ff')*v('evap_dT_drive_K'))
     di = v('evap_tube_id_mm')/1000; L = v('evap_tube_L_mm')/1000; n = math.ceil(A/(math.pi*di*L))
     rec = v('evap_wet_min')*n*math.pi*di   # kg/s
-    pump_kW = rec/v(EVK+'evap_liquor_rho_kg_m3')*9.81*v(EVK+'evap_pump_head_m')*v(EVK+'evap_liquor_rho_kg_m3')/v(EVK+'evap_pump_eta')/1000   # 4 m head, 40 % (PERRY9_PUMP)
+    pump_kW = rec/v(EVK+'evap_liquor_rho_kg_m3')*SITE.g()*v(EVK+'evap_pump_head_m')*v(EVK+'evap_liquor_rho_kg_m3')/v(EVK+'evap_pump_eta')/1000   # 4 m head, 40 % (PERRY9_PUMP)
     cpP = v('evap_cp_acid_prod' if acid else 'evap_cp_base_prod')
     ix = EV.interchanger(F, v('evap_cp_feed'), v('evap_feed_T_C'), V, v(EVK+'evap_cond_cp_kJ_kgK'), Tc, P, cpP, Tb, v('evap_approach_K'))
     A_ix = ix['Q_kW']*1000/(v('evap_U_ix')*ix['LMTD_K'])

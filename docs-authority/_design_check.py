@@ -4,6 +4,7 @@ recorded as 'second-person review required' with the checker field blank. A chec
 import glob, json, math, os, sys, csv
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
+from flow_graph.param import site as SITE   # apparent gravity from the site profile
 for k in ('ASME_B31_3', 'PERRY9'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}; P = lambda u: (N.get(u) or {}).get('params') or {}
 C = []
@@ -20,7 +21,7 @@ for u, n in N.items():
         if not ok: C.append(dict(check='QC-01', module='flow_graph/param/balance.py', item=f'mass balance {u}', model=round(o, 3), independent=round(i, 3), tol='1 %', result='FAIL'))
 C.append(dict(check='QC-01', module='flow_graph/param/balance.py', item=f'mass balance, {nb} units (in = out)', model=nb - bad, independent=nb, tol='1 % per unit', result='pass' if not bad else f'{bad} FAIL'))
 # 2 hydro energy rho g V h
-h = P('HYDRO_SET'); chk('QC-02', 'flow_graph/param/water_tower.py', 'hydro ideal energy kWh = rho g V h', h.get('energy_kwh_ideal_study') or 0, 1000*9.81*h['volume_m3_m1']*h['head_m_m1']/3.6e6, 0.01)
+h = P('HYDRO_SET'); chk('QC-02', 'flow_graph/param/water_tower.py', 'hydro ideal energy kWh = rho g V h', h.get('energy_kwh_ideal_study') or 0, 1000*SITE.g()*h['volume_m3_m1']*h['head_m_m1']/3.6e6, 0.01)
 # 3 receiver tube wall, ASME B31.3 304.1.2 t = P D / (2 (S E W + P Y))
 for u in ('CRYO_H2', 'CRYO_O2', 'CRYO_CO2'):
     d = P(u).get('design') or {}
@@ -61,7 +62,7 @@ for line in open('docs-authority/STRUCT_LOADS.md'):
     if len(c) > 8 and c[1][:1] in 'LR' and c[1] != 'Level':
         try: lv[c[1]] = float(c[5])
         except ValueError: pass
-rs = sum(r['op_kg'] for r in SR)*9.81/1000
+rs = sum(r['op_kg'] for r in SR)*SITE.g()/1000
 if lv: chk('QC-17', 'docs-authority/_struct_loads.py', 'plant operating kN: level table vs row sum', sum(lv.values()), rs, 0.01)
 # 18 foundation uplift: recompute from the document numbers
 fd = open('docs-authority/FOUNDATION.md').read()

@@ -322,7 +322,7 @@ def x_els_residuals(g, N, E, d):
     # 5) NUTRIENT_DOSE: metering pumps from the liquor duties (AQS-EQP-NUT-001)
     bd = float(E['IA-LEACH-BD']['rate']['value'] or 0)
     q_t = bd / 1000.0 / 7200.0                                        # bleed transfer over a 2 h window, m3/s
-    p_t = 1000.0 * 9.81 * q_t * v('NUT.nutrient-train.dose_head_m') / v('NUT.nutrient-train.pump_eta')
+    p_t = 1000.0 * SITE.g() * q_t * v('NUT.nutrient-train.dose_head_m') / v('NUT.nutrient-train.pump_eta')
     nut_kw = (p_t / 1000.0) * (2.0 / 24.0) + 3 * 8 / 1000.0           # transfer window + 3 x 8 W metering pumps
     _st('NUTRIENT_DOSE', round(nut_kw, 4),
         f"Dosing-skid pumps (AQS-EQP-NUT-001): bleed transfer {bd:.1f} kg/d over a 2 h window at "
