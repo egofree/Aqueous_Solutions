@@ -453,7 +453,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-TST-003 | `docs-authority/TEST_RIGS.md` | A | 2026-10-16 | In-house test rigs: build packages | current |
 | AQS-TST-004 | `docs-authority/BENCH_TEST_UPW_POLISH.md` | B | 2026-10-24 | UPW polish module bench test (RO permeance, rejection, EDI resistivity) | current |
 | AQS-TST-005 | `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | B | 2026-10-24 | Hydrogen compressor first-article bench run | current |
-| AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | G | 2026-10-24 | Design-tool architecture | current |
+| AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | H | 2026-10-24 | Design-tool architecture | current |
 | AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | current |
 | AQS-WLD-001 | `docs-authority/WELD_MAP.md` | A | 2026-09-27 | Weld and joint map | current |
 | AQS-WLD-002 | `docs-authority/WPS_REGISTER.md` | A | 2026-10-16 | WPS and PQR register | current |

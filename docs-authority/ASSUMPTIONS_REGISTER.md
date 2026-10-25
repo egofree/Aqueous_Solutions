@@ -1122,7 +1122,7 @@ Table 4.1. Document lines naming an assumption
 | A-D-5a08c2 |  |  | docs-authority/COLLECTION_BUS.md:6 | Basis: AQS-PLAN-007 task X-ELS-11; assumption A-M-114. |  | see page |
 | A-D-2ac2aa |  |  | docs-authority/COMMISSIONING.md:6 | Basis: AQS-PLAN-007 task X-COM-01; assumption A-M-200; AQS-QA-001, AQS-CTL-001 and AQS-CTL-003. |  | see page |
 | A-D-bafc40 |  |  | docs-authority/COMPLETION_DUTIES.md:5 | AQS-DUTY-007. Plant rate is the assumptions-sheet point: leach discharge 2 m³/h at 2 g/L dissolved metal. Concentrate to EW-1 is 0.17 m³/h at 20 g/L. Energy may |  | see page |
-| A-D-5863c2 |  |  | docs-authority/DESIGN_TOOL_ARCHITECTURE.md:491 | These are not to be answered by assumption. |  | see page |
+| A-D-5863c2 |  |  | docs-authority/DESIGN_TOOL_ARCHITECTURE.md:483 | These are not to be answered by assumption. |  | see page |
 | A-D-d266d1 |  |  | docs-authority/DOC_STYLE.md:79 | Unit ids (LEACH_CSTR_1), stream ids (S64), sector ids (FOUNDRY), document numbers (AQS-SEC-001), task ids (X-PAR-02) and assumption ids (A-M-329) are names, not |  | see page |
 | A-D-19f6da |  |  | docs-authority/DOC_STYLE.md:87 | - Give a value with the precision its basis supports, and name the basis: a solved value, a cited source or a registered assumption. |  | see page |
 | A-D-11657a |  |  | docs-authority/EGRESS_CALC.md:26 | assumptions where code factors are not locked in authority docs. |  | see page |

@@ -240,7 +240,7 @@ ISA-95-ish hierarchy; mass-energy+electrical solver; sector toggles;
 cycle views; most-restrictive NFPA/IBC/ISO flags; crew+SITE_LAT inputs;
 stack FastAPI+typed JSON+React/SVG (Three.js later); phased roadmap;
 six open questions (MVS freeze size, downsize semantics, pumped hydro
-membership, export minimum, Odysseus link, UI licence). AUTHORITY
+membership, export minimum, external-source link, UI licence). AUTHORITY
 **Rev F** pointer. Share sync. SCALE_M left **1.0**. No git commit.
 
 ## Still open

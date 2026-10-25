@@ -1,7 +1,7 @@
 # Design-tool architecture
 
 Document number: AQS-UI-001  
-Revision: G  
+Revision: H  
 Date: 2026-10-24  
 Basis: AQS-AUTH-001; style AQS-DOC-002; scale AQS-SCALE-001 (`SCALE_M = 1.0`); streams AQS-STR-001; mass flow AQS-MF-001; compliance themes AQS-COMPL-001; flow graph AQS-FLOW-GRAPH-001; plan AQS-PLAN-UI-001 Rev N (`unify_then_reshape`).  
 Status: architecture decisions. This is not shipped software and not a professional engineer's stamp.  
@@ -10,13 +10,14 @@ Licence: CERN-OHL-S-2.0 for the CAD, the model, the authority documents, the des
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | Basic issue: MVS/sandbox rules, schema, solver, UI stack, roadmap | 2026-10-01 |
-| B | Sector taxonomy + surplus MVS | Sector Definition classes; MVS = closed loops + surplus export; modular export; Odysseus internal-only; CERN-OHL-S for UI+model | 2026-10-01 |
+| B | Sector taxonomy + surplus MVS | Sector Definition classes; MVS = closed loops + surplus export; modular export; CERN-OHL-S for UI+model | 2026-10-01 |
 | B+ | Catalogue pointer | AQS-SEC-001 Rev A issued (`SECTOR_DEFINITIONS.md`); §11.1 item 3 closed by catalogue | 2026-10-01 |
 | C | Colony MVS + all ESS | MVS = self-sustaining colony (manufacture, habit, self-copy, scale); all three ESS peers required; disabled ESS → unreclaimed-resource / incomplete-closure gaps | 2026-10-01 |
-| D | unify_then_reshape | Typed plant graph = sole topology authority; fold/project `candidate_mvs`; matplotlib demoted to optional exporters; roadmap A′→B′→C→D→E; 3D FreeCAD bias (Three.js only with written decision); Odysseus out of runtime; stack re-eval the unpublished planning note STACK_REEVAL_2026-10-01 | 2026-10-01 |
+| D | unify_then_reshape | Typed plant graph = sole topology authority; fold/project `candidate_mvs`; matplotlib demoted to optional exporters; roadmap A′→B′→C→D→E; 3D FreeCAD bias (Three.js only with written decision); stack re-eval the unpublished planning note STACK_REEVAL_2026-10-01 | 2026-10-01 |
 | E | Unified-engine wiring | Working UI on the unified parametric system: read-only `/system-tree`, `/params`, `/regen-status` endpoints; ParamsPanel / TreeTogglePanel / RegenStatusBadge; four-level sandbox toggles (sector/system/subsystem/unit) resolving most-specific-wins server-side; regen receipt as the provenance the badge reads (commits 5f77bee, f64ad84, fc083f8) | 2026-10-19 |
 | F | Sector names | Header revision brought in line with this table (it still said D). Examples use graph Rev AC sector ids (AQS-SEC-001 Rev H): DIGESTER for WET; PV_ARRAY, ZNBR2 and BACKUP_GEN are units in ELEC. No architecture change. | 2026-10-24 |
-| G | Plain language | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose and scope merged into §1, terms in §2, captions; counts removed from §13; an internal working rule removed from §10; Odysseus described only as the repository records it (open question Q-016). Decisions unchanged. | 2026-10-24 |
+| G | Plain language | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose and scope merged into §1, terms in §2, captions; counts removed from §13; an internal working rule removed from §10. Decisions unchanged. | 2026-10-24 |
+| H | External source removed | The section on an outdated external planning source and every reference to it removed (open question Q-016 closed by the owner); the licence section is now §3.11. Other decisions unchanged. | 2026-10-24 |
 
 ## 1. Purpose and scope
 
@@ -37,8 +38,8 @@ Table 1.1. Scope
 | Typed JSON/YAML MVS schema sketch | Vendor nameplates as issued ratings |
 | Mass-energy + electrical match solver API | Live PE / AHJ permit issuance |
 | Schematic-first UI (React/SVG graph-layer); 3D later (FreeCAD bias) | Overwriting MVS files in place |
-| Sector toggles; gap / unclosed-stream flags; cycle views; code-flag hooks | Any runtime dependency on Odysseus |
-| Modular export pack; phased roadmap | Mixing Odysseus AGPL data into the MVS or UI tree |
+| Sector toggles; gap / unclosed-stream flags; cycle views; code-flag hooks | Any runtime dependency on an external data source |
+| Modular export pack; phased roadmap | Data under a licence incompatible with CERN-OHL-S in the MVS or UI tree |
 | Host path local → GitHub → cloud | Invented permits or clause quotations |
 
 The canonical copy of this document is `docs-authority/DESIGN_TOOL_ARCHITECTURE.md`.
@@ -181,13 +182,7 @@ Table 3.4. Scale classes
 | Module PV / ZnBr2 | Discrete module counts |
 | Dock | Discrete by cassette (`DOCK_COUNT = CASSETTE_COUNT`) |
 
-### 3.11 Odysseus
-
-1. Odysseus (AQS-ORG-001) is an external source whose data is licensed under the AGPL. It is kept separate from this repository: no AGPL data enters the model or the interface tree.
-2. The design tool shall not depend on Odysseus at run time: no required links into it and no shared database.
-3. What Odysseus is, and how the project uses it, is open question Q-016 in `docs-authority/OPEN_QUESTIONS.md`.
-
-### 3.12 Licence
+### 3.11 Licence
 
 CERN-OHL-S-2.0 applies to the CAD, the model, the authority documents, the design-tool source and any public or cloud distribution. There is no alternative interface or cloud licence.
 
@@ -206,7 +201,6 @@ Table 4.1. Recommended stack
 | PFD PNG / matplotlib | **Optional exporters** | `pfd_scripts` demoted; bridge from graph only; rewrite optional |
 | 3D (later) | **FreeCAD rebuild (bias)** | Three.js / live mesh / LOD only with **written decision** (§3.3) |
 | Host | Local process → GitHub package → cloud API | §3.8; Phase C blocked until graph unify |
-| External data source | Odysseus kept out of the runtime | AQS-ORG-001; AGPL data kept out of the model and interface tree (open question Q-016); CERN-OHL-S for the product |
 
 The reasoning is recorded in the unpublished planning note STACK_REEVAL_2026-10-01.
 
@@ -464,14 +458,13 @@ The plant graph is in `flow_graph/` (AQS-FLOW-GRAPH-001). Its adapter, layer SVG
 
 Planning is in the unpublished planning notes DESIGN_UI_COMPLETION_PLAN (AQS-PLAN-UI-001 Rev N) and STACK_REEVAL_2026-10-01.
 
-The local install shall stay usable at every phase. Odysseus is not a dependency of any phase.
+The local install shall stay usable at every phase.
 
 ## 10. Authority and synchronisation
 
 - `docs-authority/AUTHORITY.md` (AQS-AUTH-001) points to this document (AQS-UI-001).
 - The scale authority remains `docs-authority/SCALE_MODEL.md` and `models/freecad/params.py`.
 - Planning audits are local planning records. They are separate from the CAD authority and are not published.
-- Odysseus (AQS-ORG-001) is not an authority for the model or the interface (§3.11).
 
 ## 11. Decided questions
 
@@ -483,8 +476,7 @@ Table 11.1. Decided questions
 |---|---|---|
 | 1–3 | MVS footprint / downsizing / ESS | Reframed (Rev C): MVS = **self-sustaining colony** (manufacture, habit, self-copy, scale) + **closed loops + surplus export**. **All three** ESS peers (ZNBR2, MEOH, PUMPED_HYDRO) **required in MVS**; sandbox may disable → **unreclaimed-resource / incomplete-closure** gaps (not accepted emissions). Bay count alone does not freeze MVS. |
 | 4 | Export pack minimum | Confirmed modular set in §8; always include model snapshot, design JSON, gaps, README; other modules optional. |
-| 5 | Odysseus | Separate. The design tool shall not rely on it, and its AGPL data stays out of the model and interface tree (§3.11). What it is: open question Q-016. |
-| 6 | Licence | **CERN-OHL-S-2.0** for UI, model, CAD, and cloud. |
+| 5 | Licence | **CERN-OHL-S-2.0** for UI, model, CAD, and cloud. |
 
 ### 11.1 Open questions
 
@@ -509,7 +501,6 @@ Table 12.1. Related documents
 | MASS_FLOW.md | AQS-MF-001 | Closed-loop claims |
 | COMPLIANCE_MATRIX.md | AQS-COMPL-001 | Code themes |
 | CONTINUOUS_KW_REQUIREMENTS.md | AQS-REQ-KW-001 | Electrical match inputs |
-| ODYSSEUS_PLANNING.md | AQS-ORG-001 | Separate meta planning (not UI runtime) |
 | REBUILD.md | AQS-REB-001 | Regeneration pipeline |
 | SECTOR_DEFINITIONS.md | AQS-SEC-001 | sector_id → Sector Definition catalogue |
 | MeOH_TRAIN.md | AQS-MeOH-001 | MeOH ESS / process peer |
