@@ -273,7 +273,7 @@ Table 3.1. Document numbers in use
 | AQS-SAF-001 | `docs-authority/HAZOP.md` | A | 2026-10-16 | HAZOP worksheets | current |
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register | current |
 | AQS-SAF-005 | `docs-authority/FIRE_PROTECTION.md` | B | 2026-10-20 | Fire protection and detection | current |
-| AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | A | 2026-10-16 | Gas detection | current |
+| AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | B | 2026-10-25 | Gas detection | current |
 | AQS-SAF-007 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | A | 2026-10-16 | Hazard separation applied to the layout | current |
 | AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP action register | current |
 | AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | D | 2026-10-24 | Scale model: parametric building growth | current |
