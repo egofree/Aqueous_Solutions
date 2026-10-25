@@ -73,8 +73,8 @@ rejection charge of X-LOC-13.
 The evaporative rejection water charge is built as designed. The graph gains
 the ATMOS bookkeeping boundary and the IA-DC-SPRAY / IA-DC-EVAP edge pair at
 zero; `balance.physics()` books the charge where the site's low-grade rejection
-mode is evaporative: spray = rejected kW x 86400 s x 1000 W/kW / 2.454 MJ per
-kg (2.454 MJ per kg; NIST_WEBBOOK), the evaporated fraction leaves to ATMOS, and GW_INTAKE
+mode is evaporative: spray = rejected kW x 86400 s x 1000 W/kW / 2.454 MJ per kg
+(NIST_WEBBOOK), the evaporated fraction leaves to ATMOS, and GW_INTAKE
 closes the roof-tank balance by difference. Design-pass answer on ordering:
 every write_graph_heat sizing stage precedes balance_report in the
 regeneration manifest, so the mass closure reads final heat-edge rates and no
