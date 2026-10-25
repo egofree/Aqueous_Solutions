@@ -1,13 +1,26 @@
 # Permit list
 
 Document number: AQS-COD-002
-Revision: A
-Date: 2026-10-15
-Authority: AQS-PLAN-007 X-COD-02. Study site at 33.0° N, Dallas–Fort Worth class (AQS-SITE-002). Study. Not legal advice. Each line names the authority and the trigger to confirm; thresholds are checked against the final inventory under the owning task.
+Revision: B
+Date: 2026-10-25
+Authority: AQS-PLAN-007 task X-COD-02. Study site at 33.0° N, of the Dallas–Fort Worth class (AQS-SITE-002). Study; this page is not legal advice.
 
 | Rev | Description | Date |
 | --- | --- | --- |
-| A | First issue. Building, electrical, fire, pressure, air, water, waste, chemical reporting. | 2026-10-15 |
+| A | First issue. Building, electrical, fire, pressure, air, water, waste and chemical reporting permits. | 2026-10-15 |
+| B | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). No permit added or removed. | 2026-10-25 |
+
+## 1. Purpose and scope
+
+Building and operating the plant requires permits, inspections and regulatory filings from city, state and federal authorities. This page lists each permit or filing that the plant is expected to need at the study site, the authority that issues it, the feature of the plant that triggers it, the task in the task plan (AQS-PLAN-007) that owns it, and its present status.
+
+Each entry names the authority and the trigger so that they can be confirmed with that authority. Quantity thresholds are checked against the final chemical inventory under the owning task.
+
+## 2. Permits and filings
+
+Table 2.1 lists the permits and filings in the order in which they are expected to arise.
+
+Table 2.1. Permits and filings
 
 | # | Permit or filing | Authority | Trigger in this plant | Owning task | Status |
 | --- | --- | --- | --- | --- | --- |
@@ -26,4 +39,6 @@ Authority: AQS-PLAN-007 X-COD-02. Study site at 33.0° N, Dallas–Fort Worth cl
 | 13 | EPA Risk Management Program (40 CFR 68) and OSHA PSM (29 CFR 1910.119) | EPA, OSHA | Listed substances above threshold (e.g. H₂ 10 000 lb as flammable); expected below at this scale | X-SAF-02 | Check thresholds |
 | 14 | Certificate of occupancy | City building official | After final inspections | X-COM-01 | End of build |
 
-Held. The parcel, the jurisdiction's adopted code editions, and the final chemical inventory.
+## 3. Held items
+
+The list cannot be confirmed until three things are known: the parcel, the code editions adopted by the jurisdiction, and the final chemical inventory.

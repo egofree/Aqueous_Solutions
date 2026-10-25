@@ -39,6 +39,10 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/LIFTING.md` | Rev B, through `docs-authority/_lifting.py`. Revision record, purpose and sizing rule added. The closing sentence is now generated from the table; the old fixed text said level L-2 had no lifted equipment while the table listed HYDRO_SET on L-2. |
 | `docs-authority/WPS_REGISTER.md` | Rev B, through `docs-authority/_wps.py`. Revision record and purpose added; pipe lines with no stated material are reported in words instead of as a raw tuple. See section 6. |
 | `docs-authority/HAZ_AREA.md` | Rev B, through `docs-authority/_haz_area.py`. Revision record, purpose, basis and numbered table added. No zone changed. |
+| `docs-authority/FONTS.md` | Rev A. Purpose added; both label scripts named. Policy unchanged. |
+| `docs-authority/GROUNDING.md` | Rev B. Values of revision A kept; section 5 records that the grid has been superseded. See section 6. |
+| `docs-authority/PERMITS.md` | Rev B. Purpose, numbered table and held items added. No permit changed. |
+| `docs-authority/LIFE_HEADERS.md` | Rev B. Tier elevations stated relative to the level 1 floor, as `models/freecad/pipe_services.py` builds them (revision A said above grade). Fixed spine coordinates of revision A kept as history; the parametric placement in `models/freecad/params.py` is described. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 
@@ -81,7 +85,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/FAN_STACK.md` | |
 | `docs-authority/FARM.md` | |
 | `docs-authority/FIRE_PROTECTION.md` | |
-| `docs-authority/FONTS.md` | |
 | `docs-authority/FOUNDATION.md` | |
 | `docs-authority/FRAME_CHECK.md` | |
 | `docs-authority/FRAME_SYSTEM.md` | |
@@ -92,7 +95,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/GEOTHERMAL_BACKUP.md` | |
 | `docs-authority/GLOSSARY.md` | |
 | `docs-authority/GREENHOUSE_ENVELOPE.md` | |
-| `docs-authority/GROUNDING.md` | |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | |
 | `docs-authority/HAB_FIXTURES.md` | |
 | `docs-authority/HAB_WATER.md` | |
@@ -107,7 +109,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/ITP.md` | |
 | `docs-authority/JELLYBEAN.md` | |
 | `docs-authority/LIFE_FITOUT_PLAN.md` | |
-| `docs-authority/LIFE_HEADERS.md` | |
 | `docs-authority/LIFE_MEP.md` | |
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | |
 | `docs-authority/LOAD_LIST.md` | |
@@ -128,7 +129,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/OSE_CSK_ALIGNMENT.md` | |
 | `docs-authority/PARAMETRIC_MODEL.md` | |
 | `docs-authority/PERF_TEST.md` | |
-| `docs-authority/PERMITS.md` | |
 | `docs-authority/PIPE_SPECS.md` | |
 | `docs-authority/PIPING_CLASSES.md` | |
 | `docs-authority/POWER_SIZING.md` | |
@@ -304,3 +304,6 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | Reviewed 2026-10-25. It describes the route to the ionic liquid [Bmim] acetate through 1-methylimidazole; the units IMID and QUAT are no longer graph nodes. The number is cited elsewhere, so it is kept until a decision. |
 | `docs-authority/RED_AUDIT.md` (AQS-RED-001) | Rewritten, but two rows need a factual update: the sanitation row names COMPOST_TOILET and the cold-box row names EXPANDER, and neither is a graph node now. |
 | `docs-authority/inventory/PIPE_INVENTORY.csv` (AQS-INV-003) | Lines S36 (WS_DOPE, FAB) and S57 (MET_MELT, MFG) have no piping class, material or joint type ("—" and "-"), so `WPS_REGISTER.md` cannot assign them a procedure. The class and material need to be set in the pipe inventory generator. |
+
+| `docs-authority/GROUNDING.md` (AQS-ELEC-005) | Sections 1 and 4 describe the revision A grid (35 × 20 m ring, 12 rods, 1.14 Ω; GPR 494 V). AQS-ELEC-006 section 4 describes grid Rev B (196 × 174 m, 74 rods, 0.128 Ω, GPR 887 V), and `docs-authority/_grounding_study.py` now prints 0.150 Ω with 65 rods (area 25 392 m²). The three need to be reconciled before section 1 is restated. |
+| `docs-authority/FAB_WET_INTERFACE.md` (AQS-IF-FAB-WET-001) | Not rewritten. Much of it no longer matches the graph: FAB_PREP, FAB_TOOL, ETCH_RETURN and CORE_PROCESS are not graph nodes; S10 runs WET_BENCH to LEACH_CSTR_1 (the page says REGEN LEACH); S08 runs LEACH_CSTR_1 to MFG_SHOP (the page lists it as crib solids crossing to the fab); S38 runs WET_BENCH to OIL_FRAC (the page lists it among reagents to the fab); S21 runs ROOF_TANK to HABITATION (the page gives it as a fab ultrapure water feed). It is cited by `WAFER_FAB_EQUIPMENT.md` and two exporters. Proposal: rewrite it from the graph edges between the FAB sector and the wet line, or fold it into `WAFER_FAB_EQUIPMENT.md` and retire the number. |

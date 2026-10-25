@@ -65,7 +65,7 @@ Table 3.1. Document numbers in use
 | AQS-CAD-002 | `docs-authority/FREECAD_PROTOCOL.md` | B | 2026-10-24 | Running FreeCAD for the wet-line model | current |
 | AQS-CLOSE-001 | `notes/CLOSURE_PASS.md` | A | 2026-10-17 | Closure pass — item 10 | current |
 | AQS-CMP-001 | `docs-authority/CAMPUS_PLAN.md` | B | 2026-09-27 | Campus plan — recycle core + farm + fab + habitation + cryo | current |
-| AQS-COD-002 | `docs-authority/PERMITS.md` | A | 2026-10-15 | Permit list | current |
+| AQS-COD-002 | `docs-authority/PERMITS.md` | B | 2026-10-25 | Permit list | current |
 | AQS-COM-001 | `docs-authority/COMMISSIONING.md` | B | 2026-10-24 | Commissioning plan | current |
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence (cold start from empty) | current |
 | AQS-COM-003 | `docs-authority/PERF_TEST.md` | A | 2026-10-16 | Performance test | current |
@@ -146,7 +146,7 @@ Table 3.1. Document numbers in use
 | AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | E | 2026-10-24 | Single-line diagram | current |
 | AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | C | 2026-10-21 | Load list | current |
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | B | 2026-10-15 | EW rectifier sizing (RECT-EW) | current |
-| AQS-ELEC-005 | `docs-authority/GROUNDING.md` | A | 2026-10-15 | Grounding and bonding | current |
+| AQS-ELEC-005 | `docs-authority/GROUNDING.md` | B | 2026-10-25 | Grounding and bonding | current |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | D | 2026-10-15 | Protection and coordination | current |
 | AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | F | 2026-10-15 | Storage and generation sizing | current |
 | AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | B | 2026-10-24 | Collection bus sections | current |
@@ -177,7 +177,7 @@ Table 3.1. Document numbers in use
 | AQS-FC-001 | `docs-authority/FUEL_CELL.md` | B | 2026-10-01 | PEM fuel cell — plant H₂ / O₂ on Sol-Ark DC bus | current |
 | AQS-FLOW-GRAPH-001 | `flow_graph/README.md` | — | 2026-10-01 | Plant flow graph — sole typed authority | current |
 | AQS-FOAM-001 | `models/openscad/foam_ew/CUT_LIST.md` | A | 2026-09-27 | Foam EW cascade — cut list | current |
-| AQS-FONT-001 | `docs-authority/FONTS.md` | Basic | 2026-09-26 | Fonts for 3D sign glyphs | current |
+| AQS-FONT-001 | `docs-authority/FONTS.md` | A | 2026-10-25 | Fonts for 3D sign glyphs | current |
 | AQS-FURN-001 | `docs-authority/FURNACE.md` | C | 2026-10-11 | Induction furnace module | current |
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Basic | 2026-09-27 | Scrubber chemistry | current |
 | AQS-GAS-003 | `docs-authority/FAN_STACK.md` | B | 2026-09-27 | Fan curves and stack heights | current |
@@ -239,7 +239,7 @@ Table 3.1. Document numbers in use
 | AQS-PAR-005A | `docs-authority/O2_SOURCE_AUDIT.md` | A | 2026-10-15 | O2 source study | current |
 | AQS-PATH-001 | `docs-authority/PATH_MODULES.md` | A | 2026-10-11 | Path modules on the frame | current |
 | AQS-PHF-001 | `docs-authority/PHASE_F_ENVELOPES.md` | A | 2026-09-27 | Phase F — farm / wafer fab / habitation / cryo envelopes | current |
-| AQS-PIP-002 | `docs-authority/LIFE_HEADERS.md` | A | 2026-09-27 | Life-header racks | current |
+| AQS-PIP-002 | `docs-authority/LIFE_HEADERS.md` | B | 2026-10-25 | Life-header racks | current |
 | AQS-PIP-003 | `docs-authority/PIPING_CLASSES.md` | B | 2026-10-15 | Piping class sheets | current |
 | AQS-PIP-004 | `docs-authority/LINE_LIST.md` | C | 2026-10-21 | Plant line list | current |
 | AQS-PIP-005 | `docs-authority/SUPPORTS.md` | A | 2026-10-15 | Pipe supports and thermal flexibility | current |

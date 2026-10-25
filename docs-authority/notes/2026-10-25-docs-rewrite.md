@@ -51,3 +51,9 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 
 - `LIFTING.md` (AQS-BLD-015), `WPS_REGISTER.md` (AQS-WLD-002) and `HAZ_AREA.md` (AQS-ELEC-009) rewritten to Rev B through their generators (`_lifting.py`, `_wps.py`, `_haz_area.py`). No value changed. The lifting page no longer states that level L-2 has no lifted equipment, which contradicted its own table.
 - `GLOSSARY.md`: CMAA, QF, QW, IIA and IIC added.
+
+## Batch 9
+
+- `FONTS.md` (AQS-FONT-001) Rev A, `GROUNDING.md` (AQS-ELEC-005) Rev B, `PERMITS.md` (AQS-COD-002) Rev B and `LIFE_HEADERS.md` (AQS-PIP-002) Rev B rewritten. No value removed. `LIFE_HEADERS.md` now states tier elevations relative to the level 1 floor, as the model builds them.
+- `GLOSSARY.md`: FAQ, GNU, GPR, OFL, CGP, EPCRA, LEPC, NSR, POTW, TAC, TCEQ and TPDES added.
+- `FAB_WET_INTERFACE.md` reviewed and recorded in `REWRITE_TODO.md` section 6; not changed.

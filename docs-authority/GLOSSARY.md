@@ -545,9 +545,27 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {MAWP -- Maximum Allowable Working Pressure. Vessel/piping design pressure; relief set ≤ MAWP (study values in AQS-ASM-001 until PE/AHJ).}
 
+{OFL -- SIL Open Font License, the licence of the Liberation fonts (SPDX identifier OFL-1.1).}
+
 {PE -- Professional Engineer. Stamp/permit role; architecture docs state Compliant-intent or study until PE confirmation.}
 
 {NFPA -- National Fire Protection Association. Fire/H₂/ESS/oxidizer themes (e.g. NFPA 2, 13, 30, 55, 400, 855).}
+
+{CGP -- Construction General Permit, the TPDES general permit for stormwater from construction sites.}
+
+{EPCRA -- Emergency Planning and Community Right-to-Know Act, the United States law that requires Tier II chemical inventory reports.}
+
+{LEPC -- Local Emergency Planning Committee, which receives EPCRA Tier II reports.}
+
+{NSR -- New Source Review, the air permit programme for new or modified emission sources.}
+
+{POTW -- Publicly owned treatment works, a municipal sewage treatment plant.}
+
+{TAC -- Texas Administrative Code.}
+
+{TCEQ -- Texas Commission on Environmental Quality, the state environmental regulator.}
+
+{TPDES -- Texas Pollutant Discharge Elimination System, the TCEQ water discharge permit programme.}
 
 {NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
 
@@ -598,6 +616,8 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {THF -- Tetrahydrofuran. Component of Weld-On 724 class CPVC cement.}
 
 {MEK -- Methyl ethyl ketone. Component of Weld-On 724 class CPVC cement.}
+
+{FAQ -- Frequently asked questions; used here for the published OFL FAQ of SIL International.}
 
 {FRP -- Fiber-reinforced plastic. Induced-draft fan and scrubber duct class on HDR_ACID_GAS.}
 
@@ -716,6 +736,10 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {IIA -- Gas group IIA of IEC 60079-20-1, the least easily ignited group of flammable gases (for example methane and propane); North American Group D.}
 
 {IIC -- Gas group IIC of IEC 60079-20-1, the most easily ignited group of flammable gases (hydrogen and acetylene); hydrogen is North American Group B.}
+
+{GNU -- The GNU Project of the Free Software Foundation, publisher of the GNU General Public License and of GNU FreeFont.}
+
+{GPR -- Ground potential rise, the voltage that the earthing grid reaches relative to remote earth during an earth fault.}
 
 {IEEE -- Institute of Electrical and Electronics Engineers.}
 
