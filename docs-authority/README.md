@@ -89,7 +89,6 @@ The documents that explain how the design is organised and where its numbers com
 | [ASME_CODE_INTENT.md](ASME_CODE_INTENT.md) | AQS-ASME-002 | In-house code intent per unit |
 | [ASME_CLASS_SHEETS.md](ASME_CLASS_SHEETS.md) | AQS-ASM-001 | ASME vessel inventory & B31.3 piping class sheets (templates) |
 | [H2_EMBRITTLEMENT_REVIEW.md](H2_EMBRITTLEMENT_REVIEW.md) | AQS-REV-H2-001 | Hydrogen embrittlement review |
-| [DOCUMENTATION_STYLE.md](DOCUMENTATION_STYLE.md) | AQS-DOC-002 | Documentation style — Aqueous house style |
 | [DOC_STYLE.md](DOC_STYLE.md) | AQS-DOC-002 | Documentation style (practical application) |
 | [DRAWING_STANDARD.md](DRAWING_STANDARD.md) | AQS-DWG-001 | Drawing standard and title block |
 | [FONTS.md](FONTS.md) | AQS-FONT-001 | Fonts for 3D sign glyphs |
@@ -355,6 +354,7 @@ The live task list and the project plan. Older plans, status boards and handoff 
 |---|---|---|
 | [TASK_PLAN.md](TASK_PLAN.md) | AQS-PLAN-007 | Task plan |
 | [PROJECT_PLAN.md](PROJECT_PLAN.md) | AQS-PLAN-005 | Project plan |
+| [REWRITE_TODO.md](REWRITE_TODO.md) | AQS-DOC-003 | Documentation rewrite status |
 
 ## Licence
 

@@ -631,6 +631,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {AWWA -- American Water Works Association, publisher of water system standards.}
 
+{BLD -- Building. The series code of the building documents (AQS-BLD-nnn) and the short name of the building CAD work in older records.}
+
 {BLDC -- Brushless direct-current motor: a permanent-magnet motor commutated electronically.}
 
 {BPVC -- Boiler and Pressure Vessel Code, published by ASME.}

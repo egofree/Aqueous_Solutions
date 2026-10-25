@@ -1,10 +1,25 @@
 # Open questions
 
 Document number: AQS-OQ-001
-Revision: A
-Date: 2026-10-15
+Revision: B
+Date: 2026-10-25
 
-Questions logged while the owner is away. Each names the default the work proceeded on.
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue | 2026-10-15 |
+| B | Purpose and scope added; introduction rewritten to the documentation style guide (AQS-DOC-002). No question or default changed. | 2026-10-25 |
+
+## 1. Purpose and scope
+
+Some design choices cannot be settled by calculation or by a published source and need a decision by the project owner. This page records each such question, the task it belongs to, and the default that the design work follows until the owner decides. Recording the default lets the work continue without settling the question silently.
+
+A question stays on this page after it is decided. Its last column then reads "-", and the question text starts with CLOSED, names who decided and when, and states the decision. The task identifiers refer to `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). A new question takes the next unused Q number.
+
+## 2. Questions
+
+Table 2.1 lists the questions with their tasks and defaults.
+
+Table 2.1. Open and closed questions
 
 | # | Task | Question | Default proceeded on |
 | --- | --- | --- | --- |
