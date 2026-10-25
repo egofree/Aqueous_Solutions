@@ -60,7 +60,6 @@ Table 3. Unit needs and status
 | EW_7 | ew_cell | process | buoyant_separation | kept |
 | EW_8 | ew_cell | process | buoyant_separation | kept |
 | EW_9 | ew_cell | process | buoyant_separation | kept |
-| EXT_HALL | building | energy | ground_contact | kept |
 | FAB_UPW_TANK | tank | process | buoyant_separation, free_surface, liquid_water_at_ambient | kept |
 | FLOAT_SINK | separator | process | buoyant_separation | kept |
 | FLUE_KO | separator | process | buoyant_separation | kept |

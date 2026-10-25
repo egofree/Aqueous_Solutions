@@ -63,6 +63,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/sizing/POLYMERS_LINE.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
 | `docs-authority/sizing/REACTOR_DESIGN.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
 | `docs-authority/sizing/SANITATION.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
+| `docs-authority/ASSUMPTIONS_REGISTER.md` | Rev C, through `_assumptions_register.py`. Already guide-structured; the document-line mining section removed as index noise (the curated assumptions and the graph/parameter scans stay). |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -100,7 +101,6 @@ Table 4.1. Pending pages directly under docs-authority/
 
 | Page | Note |
 | --- | --- |
-| `docs-authority/ASSUMPTIONS_REGISTER.md` | |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | |
 | `docs-authority/DERIVED_REVISIONS.md` | |
 | `docs-authority/EDGE_RATING_DUTY.md` | |

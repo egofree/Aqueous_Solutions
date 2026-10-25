@@ -679,6 +679,11 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {GCR -- Ground coverage ratio: photovoltaic array area divided by the ground or roof area it occupies; PVWatts applies a default when the site has none.}
 {HDS -- Hydrostatic design stress: the long-term rated stress of a thermoplastic pipe material (CPVC 2000 psi class; manufacturer derating tables apply at temperature).}
 {SIC -- Silicon carbide (the SIC_FURNACE deoxidation-carbon charge and its CO return).}
+{HD -- Harmonization document of CENELEC (HD 231 harmonizes motor frame dimensions to IEC 60072-1).}
+{HI -- Harvest index: the edible fraction of the total dry biomass that the crop line produces.}
+{PO -- Purchase-order document: the buying document. The applicable standard class, never the maker sheet, is the design basis (AQS-PLAN-006 rule).}
+{HDR -- Plant header prefix (HDR_H2, HDR_O2, HDR_CO2, HDR_UPW, HDR_N2): the gas and fluid collection lines.}
+{IND -- Shorthand for the induction melt chain (IND_MELT and its 25 kW share of the foundry feed).}
 {PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
 
 {UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}

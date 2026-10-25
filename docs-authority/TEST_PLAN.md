@@ -56,7 +56,7 @@ Total 635 items: 290 drivers, 345 register entries. Classification rule: first m
 | driver wt_level_clear_mm | 6000 mm reservoir storey floor-to-floor | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_penstock_loss_frac | 0.05 - penstock friction as fraction of head | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_water_max_m | 4.5 m max water depth per reservoir level (slab load 44 kPa) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
-| driver wt_wind_ms | 50.0 m/s basic wind speed (site unknown) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
+| driver wt_wind_ms | 50.0 m/s basic wind speed | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | A-M-013 | 115 mph 3 s gust | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-014 | Ss 0.10, S1 0.05 g | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-015 | D site class | Geotechnical report | X-BAS-03 |

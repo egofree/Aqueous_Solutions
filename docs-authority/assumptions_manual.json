@@ -4118,7 +4118,7 @@
   "value": "CRYO_ASU critical at the 1.66 kW AQS-DUTY-069 duty; critical list 15.66 kW; generator stays 20 kW",
   "units": "kW",
   "where": "docs-authority/_power_sizing.py `CRIT` list (graph CRYO_ASU node); docs-authority/BACKUP_GEN_EQUIPMENT.md chain",
-  "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a79 item 8 (A-M-216 as drafted): on the 2026-10-18 ASU restore the legacy 18 kW critical value must not come back \u2014 the CRIT entry reads the graph node continuous_kw (1.66 kW)",
+  "basis": "notes/pv_sizing_derivation_2026-10-18.md \u00a79 item 8 (A-M-216 as drafted): on the 2026-10-18 ASU restore the legacy 18 kW critical value must not come back \u2014 the `CRIT` entry reads the graph node continuous_kw (1.66 kW)",
   "sensitivity": "base demand +1.66 kW \u2192 PV +~28 kWp at the note basis (already inside the 179.46 kW live figure)",
   "replaced_by": "measured ASU duty at first article",
   "task": "D-PV encode lane 2026-10-18",
@@ -4301,7 +4301,7 @@
   "where": "flow_graph/plant_flow_graph.json: GEO_ORC.params.study_close (placeholder held at 0 kW_e)",
   "basis": "notes/heat_sink_study_2026-10-18.md \u00a72/\u00a79 (A-M-249 closes the D-GEO_ORC record): micro-ORC endpoint on 10.16 kW_th at 65 \u00b0C = 30-45 % of Carnot 8.9 % (Quoilin et al. 2013, Renew. Sustain. Energy Rev. 22:168-186; Hettiarachchi et al. 2007, Energy); the old 0.08-0.12 absolute band was above Carnot and impossible on a 285 K GHEX source. Option (a) scored 7/20 and is rejected \u2014 the terminal sink can never be deleted",
   "sensitivity": "near-zero endpoint dominated by better uses of the same heat (options c/d); re-study only if Q4 surplus grows x10",
-  "replaced_by": "Q4 surplus growth beyond the dry-cooler rating (re-study trigger in HS \u00a79)",
+  "replaced_by": "Q4 surplus growth beyond the dry-cooler rating (re-study trigger in AQS-HEAT-STUDY-002 section 9)",
   "task": "AQS-HEAT-STUDY-002 implementation lane 2026-10-18",
   "files": [
    "flow_graph/plant_flow_graph.json",

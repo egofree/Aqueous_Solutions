@@ -263,7 +263,7 @@ Table 3.1. Document numbers in use
 | AQS-RED-002 | `docs-authority/HYDRO_SITING.md` | B | 2026-10-16 | Pumped-hydro reservoir siting trade study | current |
 | AQS-REF-CSK-001 | `docs-authority/OSE_CSK_ALIGNMENT.md` | B | 2026-10-24 | OSE Civilization Starter Kit — Aqueous alignment map | current |
 | AQS-REG-001 | `docs-authority/DOC_REGISTER.md` | C | 2026-10-25 | Document number register | current |
-| AQS-REG-002 | `docs-authority/ASSUMPTIONS_REGISTER.md` | B | 2026-10-24 | Assumptions register | current |
+| AQS-REG-002 | `docs-authority/ASSUMPTIONS_REGISTER.md` | C | 2026-10-25 | Assumptions register | current |
 | AQS-REL-001 | `docs-authority/RELIEF.md` | B | 2026-10-25 | Relief | current |
 | AQS-REM-001 | `docs-authority/internal/REMAINING.md` | A | 2026-10-10 | Remaining designs | superseded by AQS-PLAN-007 |
 | AQS-REM-002 | `docs-authority/internal/REMAINING_CHECKLIST.md` | E | 2026-10-01 | Remaining work checklist | superseded by AQS-PLAN-007 |
