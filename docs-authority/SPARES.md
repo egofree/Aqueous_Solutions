@@ -84,6 +84,8 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-76 | fastener: M12 anchor (M12 anchor x7) | 7 | 4 | 2 % min 4 |
 | building block | OF-77 | instrument: pressure transmitter (0-400 bar x2; 0-40 bar x1) | 3 | 1 | 10 % min 1 |
 | building block | OF-78 | valve: check valve (DN15 x11) | 11 | 1 | 5 % min 1 |
+| building block | OF-79 | fastener: M12 hex socket head cap screw (ISO 4762) (M12 hex socket head cap screw (ISO 4762) x28) | 28 | 4 | 2 % min 4 |
+| building block | OF-80 | fastener: M8 hex socket head cap screw (ISO 4762) (M8 hex socket head cap screw (ISO 4762) x8) | 8 | 4 | 2 % min 4 |
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 106 | 6 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 58 | 3 | 5 % min 1 |
 | motor | MF-03 | BLDC actuator ISO 5211 F03 mount 24 V DC | 27 | 2 | 5 % min 1 |
@@ -121,4 +123,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-111 lines; 36 spare motors, 747 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+113 lines; 36 spare motors, 755 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

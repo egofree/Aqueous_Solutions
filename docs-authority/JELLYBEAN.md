@@ -41,6 +41,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M12 | anchor | ISO 3506 A4-70 | 37 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | anchor | ISO 3506 A4-80 | 7 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | anchor | ISO 898-1 8.8 | 160 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | hex bolt | ISO 898-1 8.8 | 28 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF | 36 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | stud | ISO 898-1 8.8 | 50 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | hex bolt | ISO 898-1 8.8 | 72 | ISO 4014 / ISO 4032 / ISO 7089 |
@@ -49,6 +50,7 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | M16 | stud | ISO 898-1 8.8 zinc | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M8 | hex bolt | A4-70 | 4 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M8 | hex bolt | ISO 3506 A4-70 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 898-1 8.8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
 
 ## 3. Seals and gaskets
 

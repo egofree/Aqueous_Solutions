@@ -67,10 +67,21 @@ BUCL,Legs 40x40 x 300 mm,3,glass-lined carbon steel (ISO 28721),Closed,GLASS / s
 BUCL,Mineral wool insulation with SS cladding; boiling at reflux,1,mineral wool,Closed,GLASS / silicate melt,
 BUCL,Heater mat 7 W with thermostat,1,silicone,Partial,OIL/MEOH chemistry,monomer route not yet in the graph
 BUCL,"Reflux condenser, glass, Q1 cooling water",1,borosilicate 3.3,Partial,GLASS,boron not recovered; soda-lime or high-silica glass from GLASS is the substitute study
-CAST_LINE,"Permanent-mould table, 2 mould seats, water-cooled inserts",1,"CS weldment, Cu inserts",Closed,Fe EW -> MET_MELT -> mill/draw,
-CAST_LINE,Pouring ladle 12 kg with tilt bracket,1,"CS, refractory lined",Closed,GLASS / silicate melt,
-CAST_LINE,Runout roller table 700 mm with 2 legs,1,CS rollers,Closed,Fe EW -> MET_MELT -> mill/draw,
-CAST_LINE,Static shear / stop block at the line end,1,CS + tool steel knife,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,"Machine frame weldment 1500 x 800 x 1500: 6 legs SHS 80 x 80 x 5, rails 100 x 30",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,"Mould-table deck t10, x 60..800 (seat passes, pour pocket, trough/drain passes c",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,Mould seats x2: steel backing platen 240 x 180 x 46 + seat frame (4 x M12 per se,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,"Permanent-mould inserts x2, 160 x 120 x 110, open-top cavity 110 x 70 x 60 (0.46",2,fine graphite,Partial,OIL_PYRO char,"graphitisation above 2,500 C not in the heat ladder"
+CAST_LINE,Water-cooled jacket assemblies x2 (shell t6 + rear CW stubs toward the machine-s,2,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,Melt path: refractory trough + steel base + trough head + distribution header + ,1,graphite + refractory ram in steel channel,Partial,OIL_PYRO char,"graphitisation above 2,500 C not in the heat ladder"
+CAST_LINE,Pouring ladle 12 kg: shell OD280 x 240 t25 with two trunnion lugs + D115 x t25 r,1,carbon steel + alumina ram lining,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,"Tilt post + arm + saddle on the deck, carriage-bolted to the shell lugs (2 x M16",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,"Runout roller table 700 mm: 5 solid rollers D70 x 500 on D20 end shafts, press-f",1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,Static shear / stop block at the line end: CS pedestal to the floor + tool-steel,1,carbon steel + tool steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,Guards: rear hot-zone panel frame + mesh opening (AQS-BLD-012 class) on floor po,1,carbon steel + mesh,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,Vent hood plenum 500 x 200 over the pour zone + N6 DN15 Class 150 flanged tap at,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,Scheduled connection hardware: N1/N5/N6 DN15 Class 150 flanges OD95 + spigots (A,1,carbon steel,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,"Mould-change gantry: 2 columns SHS 80 x 80 to 1500, top beam, trolley body, hook",1,carbon steel (gantry); hoist = purchase item,Closed,Fe EW -> MET_MELT -> mill/draw,
+CAST_LINE,"Bolt kit per fasteners.csv: item 1 M16 T-bolts x12, item 2 M12 anchors x6, M12 S",1,steel fasteners,Closed,Fe EW -> MET_MELT -> mill/draw,
 CA_POT,"Lined cell shell 800 x 800 x 1000 mm (70 mm casing + refractory), bath at 700 C",1,"CS casing, ceramic-fibre + ram lining",Closed,Fe EW -> MET_MELT -> mill/draw,
 CA_POT,"Anode bank, 3 x D50 mm graphite anodes at 250 mm immersion",3,"graphite, chlorinated",Partial,OIL_PYRO char,"graphitisation above 2,500 C not in the heat ladder"
 CA_POT,"Cathode plate set, 2 x 110 x 12 mm with product pocket",2,mild steel / clad,Closed,Fe EW -> MET_MELT -> mill/draw,
@@ -1218,3 +1229,5 @@ OF-75,fastener: M10 clamp (ISO 3506 A4-70),12,,Unstated,-,material not stated on
 OF-76,fastener: M12 anchor (ISO 3506 A4-80),7,,Unstated,-,material not stated on the unit BOM line
 OF-77,"instrument: pressure transmitter (316L thin-film strain gauge, IEC 61298)",3,,Unstated,-,material not stated on the unit BOM line
 OF-78,"valve: check valve (CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF f",11,,Unstated,-,material not stated on the unit BOM line
+OF-79,fastener: M12 hex socket head cap screw (ISO 4762) (ISO 898-1 8.8),28,,Unstated,-,material not stated on the unit BOM line
+OF-80,fastener: M8 hex socket head cap screw (ISO 4762) (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line

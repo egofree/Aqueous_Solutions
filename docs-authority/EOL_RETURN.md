@@ -17,9 +17,9 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 546 | 45 % |
-| organic | 496 | 41 % |
-| metal_reactive | 80 | 7 % |
+| metal_plateable | 557 | 45 % |
+| organic | 498 | 40 % |
+| metal_reactive | 80 | 6 % |
 | silicate_oxide | 52 | 4 % |
 | unassigned | 45 | 4 % |
 
@@ -77,7 +77,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | BUCL | 0 | 2 | 0 | 5 | 0 |
 | BUOH_STILL | 0 | 0 | 0 | 3 | 0 |
 | C29_RECYCLE | 2 | 0 | 0 | 0 | 0 |
-| CAST_LINE | 3 | 2 | 0 | 1 | 0 |
+| CAST_LINE | 12 | 4 | 0 | 1 | 0 |
 | CATCH_TANK | 0 | 2 | 0 | 0 | 0 |
 | CA_POT | 3 | 3 | 0 | 2 | 1 |
 | CHICKENS | 0 | 3 | 0 | 0 | 0 |
@@ -321,6 +321,8 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | OF-76 | 1 | 0 | 0 | 0 | 0 |
 | OF-77 | 1 | 0 | 0 | 0 | 0 |
 | OF-78 | 1 | 0 | 0 | 0 | 0 |
+| OF-79 | 1 | 0 | 0 | 0 | 0 |
+| OF-80 | 1 | 0 | 0 | 0 | 0 |
 | OIL_DRYER | 2 | 0 | 0 | 0 | 0 |
 | OIL_FRAC | 2 | 0 | 0 | 0 | 0 |
 | OIL_PYRO | 4 | 1 | 0 | 2 | 0 |

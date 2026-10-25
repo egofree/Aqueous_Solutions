@@ -1151,9 +1151,11 @@ FARM,FARM,GROW_BED,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE 
 FARM,FARM,GROW_BED,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-BED-VAP: one at each end nozzle (assumed)
 FARM,store,FOOD_STORE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,store,FOOD_STORE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,caster,CAST_LINE,fabricated part,fabricated part set,4 BOM lines,models/mfg/CAST_LINE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,caster,CAST_LINE,fabricated part,fabricated part set,15 BOM lines,models/mfg/CAST_LINE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,caster,CAST_LINE,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/CAST_LINE/fasteners.csv
+FOUNDRY,caster,CAST_LINE,fastener,M12 hex socket head cap screw (ISO 4762),M12 hex socket head cap screw (ISO 4762),ISO 898-1 8.8,28,models/mfg/CAST_LINE/fasteners.csv
 FOUNDRY,caster,CAST_LINE,fastener,M16 T-bolt + nut (ISO 4014 / ISO 4032),M16 T-bolt + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/CAST_LINE/fasteners.csv
+FOUNDRY,caster,CAST_LINE,fastener,M8 hex socket head cap screw (ISO 4762),M8 hex socket head cap screw (ISO 4762),ISO 898-1 8.8,8,models/mfg/CAST_LINE/fasteners.csv
 FOUNDRY,caster,CAST_LINE,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,caster,CAST_LINE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,caster,CAST_LINE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure

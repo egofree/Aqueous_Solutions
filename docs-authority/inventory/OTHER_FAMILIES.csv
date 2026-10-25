@@ -11,7 +11,7 @@ OF-09,electronics,solenoid driver channel,IEC 61131-2 DO,36,24 V DC x36,18
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,10,15 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1,3
 OF-11,electronics,stepper driver,IEC 61800-5-1,3,24/48 V DC x3,1
 OF-12,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",IEC 61508 / IEC 61511,2,- x2,1
-OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,62,7 BOM lines x17; 6 BOM lines x12; 1 BOM lines x10; 5 BOM lines x7; 4 BOM lines x5; 8 BOM lines x3; 9 BOM lines x2; 3 BOM lines x2; 11 BOM lines x1; 17 BOM lines x1; 16 BOM lines x1; 13 BOM lines x1,62
+OF-13,fabricated part,fabricated part set,models/mfg/<unit>/bom.csv,62,7 BOM lines x17; 6 BOM lines x12; 1 BOM lines x10; 5 BOM lines x7; 4 BOM lines x4; 8 BOM lines x3; 9 BOM lines x2; 3 BOM lines x2; 11 BOM lines x1; 17 BOM lines x1; 15 BOM lines x1; 16 BOM lines x1; 13 BOM lines x1,62
 OF-14,fastener,anchor bolt,ISO 3506 A4-70 wedge anchor,8194,M10 x8194,96
 OF-15,fastener,M10 x 40 lid bolt,ISO 3506 A4-70,100,M10 x 40 lid bolt with nut and washers x100,11
 OF-16,fastener,M8 x 30 lid bolt,ISO 3506 A4-70,48,M8 x 30 lid bolt with nut and washers x48,4
@@ -77,3 +77,5 @@ OF-75,fastener,M10 clamp,ISO 3506 A4-70,12,M10 clamp x12,2
 OF-76,fastener,M12 anchor,ISO 3506 A4-80,7,M12 anchor x7,2
 OF-77,instrument,pressure transmitter,"316L thin-film strain gauge, IEC 61298",3,0-400 bar x2; 0-40 bar x1,3
 OF-78,valve,check valve,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",11,DN15 x11,6
+OF-79,fastener,M12 hex socket head cap screw (ISO 4762),ISO 898-1 8.8,28,M12 hex socket head cap screw (ISO 4762) x28,1
+OF-80,fastener,M8 hex socket head cap screw (ISO 4762),ISO 898-1 8.8,8,M8 hex socket head cap screw (ISO 4762) x8,1

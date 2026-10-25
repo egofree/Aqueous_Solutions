@@ -390,6 +390,16 @@
    "category": "valve",
    "item": "check valve",
    "spec": "CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged"
+  },
+  "OF-79": {
+   "category": "fastener",
+   "item": "M12 hex socket head cap screw (ISO 4762)",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-80": {
+   "category": "fastener",
+   "item": "M8 hex socket head cap screw (ISO 4762)",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }

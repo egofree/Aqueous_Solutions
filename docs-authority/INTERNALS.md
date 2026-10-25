@@ -74,7 +74,7 @@ The class comes from the graph. Any unit whose sizing sheet, duty sheet, or issu
 | AL_POT | cell | issued mfg model BOM (3 internals part row): "step 1; duty section 3 mild-steel outer shell below the liner, 700 C, dry outside the lining; envelope per dut" | models/mfg/AL_POT/bom.csv |
 | BMED_ACID | bmed | BMED triplet construction: PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode, 316L/Ni cathode end plates (A-M-170/171) | sizing/BMED_STACK.md |
 | BMED_BASE | bmed | BMED triplet construction: PP frames 300 x 300 mm, 0.8 mm PE mesh spacers, Ti/MMO anode, 316L/Ni cathode end plates (A-M-170/171) | sizing/BMED_STACK.md |
-| CAST_LINE | caster | duty sheet: "design; A-M-199 class): graphite is the standard Cu-mould hot face at the melt temperature and is chemically i" | docs-authority/duties/CAST_LINE.md |
+| CAST_LINE | caster | issued mfg model BOM (2 internals part row): "section 3: steel backing platens around the graphite hot faces (DIETER1988 tool class) 4,"Permanent-mould inse" | models/mfg/CAST_LINE/bom.csv |
 | CA_POT | cell | issued mfg model BOM (1 internals part row): "5,Hood with gas offtake DN50 and dip leg,1,"CS hood, Hastelloy C-276 dip leg",0.0974 kg/d Cl2 dock export at t" | models/mfg/CA_POT/bom.csv |
 | COMB_HEAT | furnace | duty sheet: "3. Material. Alumina-silica brick + castable crown hot face on a mild-steel shell; 310S burner tube; flue path" | docs-authority/duties/COMB_HEAT.md |
 | CONT_CAST | caster | duty sheet: "design): the water-cooled copper mould is the caster hot face; the water side is already the issued M1 family " | docs-authority/duties/CONT_CAST.md |
