@@ -24,7 +24,7 @@ continuous free outdoor dump as the design end state. Acid train
 normal end = ALK + ACID_POLISH → CRU; Br₂ = regen → pos. tank; H₂ =
 CRYO_H2 consumers; oil NCG = AFTERBURNER then FLUE_CAP → CRYO.
 
-## 1. Design flows
+## 2. Design flows
 
 In-leak and hood capture dominate volume. Process generation does not.
 
@@ -44,7 +44,7 @@ and 80 % cathode efficiency leaves ~0.2 kg/h H2 if the rest goes to
 water reduction. That is ~2.2 Nm³/h H2. Dilute to 1 % v/v → ~220 Nm³/h
 sweep. 900 m³/h is 4× that number and covers nine hoods plus leaks.
 
-## 2. System resistance (dirty)
+## 3. System resistance (dirty)
 
 | Train | Pack / bags | Duct + hoods | Stack | Total SP | Fan after |
 |---|---|---|---|---|---|
@@ -55,7 +55,7 @@ sweep. 900 m³/h is 4× that number and covers nine hoods plus leaks.
 
 Add 20 % margin on SP for damper and future hoods.
 
-## 3. Fan selection (class, not a PO)
+## 4. Fan selection (bought to class, not a maker type)
 
 | Train | Q | SP | Wheel | Inlet | Shaft power @ 60 % | Motor |
 |---|---|---|---|---|---|---|
@@ -80,7 +80,7 @@ Set the VFD so the hood faces stay at −50 to −120 Pa. Do not size the
 fan from this table without the vendor curve stamped against the
 actual duct takeoff.
 
-## 4. Stack heights
+## 5. Stack heights
 
 Building assumption for the factory (not the 40HC shipping box):
 eave 8 m, ridge 10 m, no adjacent high-rise. Acid stack is the tallest
