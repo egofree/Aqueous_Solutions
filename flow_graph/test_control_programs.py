@@ -76,5 +76,5 @@ def test_redundancy_follows_the_architecture_decisions():
     src = open(os.path.join(os.path.dirname(ST_DIR), 'CONTROL_ARCH.md')).read()
     cpu = dict(re.findall(r'^\| PLC-(\w+) \| (?:[^|]*\|){6} (redundant pair|single) \|', src, re.M))
     assert cpu.get('HEAT') == 'single'
-    listed = set(re.findall(r'^\| ([A-Z_]+) \| [^|]+ \|$', src.split('## Redundant CPU pairs')[1].split('##')[0], re.M)) - {'Sector'}
+    listed = set(re.findall(r'^\| ([A-Z_]+) \| [^|]+ \|$', src.split('Redundant CPU pairs\n')[1].split('##')[0], re.M)) - {'Sector'}
     assert {s for s, c in cpu.items() if c == 'redundant pair'} == listed & set(cpu)

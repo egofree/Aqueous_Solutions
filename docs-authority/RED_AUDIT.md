@@ -1,11 +1,27 @@
 # Redundancy audit, energy and life support
 
 Document number: AQS-RED-001
-Revision: B
-Date: 2026-10-16
-Authority: AQS-PLAN-007 X-RED-01; owner redundancy rule (AGENTS.md, Mike Matthews 2026-10-15). Graph Rev BH. Study.
+Revision: C
+Date: 2026-10-25
+Authority: AQS-PLAN-007 task X-RED-01; the redundancy rule in `AGENTS.md`, section "Redundancy". Graph Rev BH. Study.
 
-Each system is listed with its primary source, the backups now on the graph and the single points of failure (SPOF). A SPOF gets a follow-up task that sizes an N+1 or diverse backup by calculation.
+| Rev | Description | Date |
+|---|---|---|
+| A | First issue | Not recorded |
+| B | Water tower, EXPANDER backup, fire water N+1 and receiver halves added | 2026-10-16 |
+| C | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). No row changed. | 2026-10-25 |
+
+## 1. Purpose and scope
+
+The plant supports a crew, so every system that supplies energy or keeps the crew alive must keep working when one of its parts fails. The project rule is that each such system has either a spare unit of the same kind (N+1) or a second source of a different kind (a diverse backup), sized by calculation for a defined outage of the primary.
+
+This audit lists each energy and life-support system with its primary source, the backups present in the graph and the cover they give. It names each single point of failure (SPOF), meaning a part whose failure alone stops the system, and the task that closed it. A backup that looks surplus to the daily balance is intentional and is not removed on need alone.
+
+## 2. Audit
+
+Table 2.1 gives the result for each system. "Action" names the task (X-RED, X-SAF) or open question (Q) that closed the single point of failure.
+
+Table 2.1. Redundancy of energy and life-support systems
 
 | System | Primary | Backups on the graph | Calculated cover | SPOF found | Action |
 |---|---|---|---|---|---|

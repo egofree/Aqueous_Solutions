@@ -2,7 +2,7 @@
 
 Document number: AQS-GLO-001  
 
-Locked names are in SMALL CAPS as they appear on the drawings. Do not invent synonyms.
+Fixed names are written in capital letters, exactly as they appear on the drawings, and no other names are used for them.
 
 Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, design-tool UI, PFDs/MFD/EFD layers, sector taxonomy, and authority docs are listed here with expansion and plant role. No invented rates or nameplates.
 
@@ -10,7 +10,7 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {AQS-xxx-nnn -- Document number. Every controlled document carries one, with a revision letter and a date (e.g. AQS-SEC-001 Rev H). DOC_REGISTER.md lists them.}
 
-{Rev (graph) -- Revision of the plant flow graph, AQS-FLOW-GRAPH-001. Letters run A … Z, then AA, AB, AC. Rev AC is current. A document that says "checked against graph Rev X" was last reconciled at that graph revision. Document revisions are separate and also use letters.}
+{Rev (graph) -- Revision of the plant flow graph, AQS-FLOW-GRAPH-001. The letters run from A to Z and then continue as Rev AA, Rev AB, Rev AC and so on. The current revision is stated in the `revision` field of `flow_graph/plant_flow_graph.json` (Rev AC at the time of writing). A document that says "checked against graph Rev X" was last reconciled at that graph revision. Document revisions are separate and also use letters.}
 
 {X-xxx-nn -- Task id in TASK_PLAN.md (AQS-PLAN-007). The middle part is the work group, e.g. X-PAR parametric model, X-PIP piping, X-SAF safety, X-MAT materials, X-INV building-block inventories, X-ELS electrical, X-GOV governance. TASK_PLAN.md lists all groups.}
 
@@ -65,6 +65,8 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 {Float–sink -- Density split inside the leach liquor. Light organics float; metals, glass, ceramic, FR-4, and dense plastic sink.}
 
 {FR-4 -- Glass-epoxy circuit-board laminate. Must not enter the induction pyrolyzer. Leaves at VIBRATORY SPLIT → BURNOUT ROTARY.}
+{FRM -- Former short name for the FARM sector, still found in older CAD files. It is not a sector identifier; read it as FARM.}
+
 
 {Leach / Salria -- Oxidative chloride leach: HCl + NaClO₃, 70–85 °C, ORP > 1.5 V, pH ≈ 0. Dissolves metals. Doubles as the float–sink medium.}
 
@@ -230,7 +232,7 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {S89 -- HDR_CO2 → GROW_BED CO₂ enrichment dose through the FARM AHU, 3.0 bar a, DN15 316L. 11.616 kg/d at Rev K; 15.637 kg/d at Rev L (S85 + S90); 16.101 kg/d from Rev M (S11 carbon in the afterburner basis). Only consumer of HDR_CO2. CO₂ only: no tee to HDR_O2, hab air, the HAB return or the dock. AQS-DUTY-009.}
 
-{S90 -- HABITATION → HDR_CO2, 4.021 kg/d metabolic CO₂ (S02 3.36 kg/d O₂ × RQ 0.87 × 44/32), desorbed from the hab CO₂ sorbent bed. CO₂ only; hab air never enters the header. Rev L, AQS-DUTY-010.}
+{S90 -- HABITATION → HDR_CO2, 4.021 kg/d metabolic CO₂ (S02 3.36 kg/d O₂ × respiratory quotient 0.87 × 44/32), desorbed from the hab CO₂ sorbent bed. CO₂ only; hab air never enters the header. Rev L, AQS-DUTY-010.}
 
 {rate_basis / rate_source -- Edge params from Rev L. rate_basis is the derivation in one line; rate_source is the document or graph value it rests on. With medium, conditions and rate_kind (derived or by_difference). AQS-DUTY-010.}
 
@@ -264,15 +266,15 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {S100 / S101 / S102 -- Q4_BUS sinks: HX-9 leach make-up preheat, HX-10 caustic preheat, and borefield recharge to GEO_GHEX (by difference). Rev M. AQS-DUTY-011.}
 
-{IA-BMED-05..10 -- Rev M chloride-loop edges: brine bleed POLISH_BANK → SALT_FEED (05), BMED HCl → CONTINUOUS_RECYCLE (06), NaOH to ALK_SCRUBBER (07), ALK liquor to CRU (08), CRU liquor to CONTINUOUS_RECYCLE (09), NaOH to SALT_FEED (10). AQS-DUTY-011 §4.6.}
+{IA-BMED-05..10 -- Rev M chloride-loop edges: brine bleed POLISH_BANK → SALT_FEED (05), BMED HCl → CONTINUOUS_RECYCLE (06), NaOH to ALK_SCRUBBER (07), alkaline scrubber liquor to CRU (08), CRU liquor to CONTINUOUS_RECYCLE (09), NaOH to SALT_FEED (10). AQS-DUTY-011 §4.6.}
 
-{Option B (chloride) -- Rev M provisional decision: anode Cl₂ is sparged back into LEACH_CSTR_1 as oxidant (0.95 absorbed), the remainder goes ALK_SCRUBBER → CRU → CONTINUOUS_RECYCLE, and BMED regenerates HCl from the brine bleed. Option A (all Cl₂ to ALK) needs about 16 kW of BMED. AQS-DUTY-011.}
+{Option B (chloride) -- Rev M provisional decision: anode Cl₂ is sparged back into LEACH_CSTR_1 as oxidant (0.95 absorbed), the remainder goes ALK_SCRUBBER → CRU → CONTINUOUS_RECYCLE, and BMED regenerates HCl from the brine bleed. Option A (all Cl₂ to ALK_SCRUBBER) needs about 16 kW of BMED. AQS-DUTY-011.}
 
 {Utility import -- The GRID-port term that closes the SOL_ARK_60K balance by difference on the design day. Rev M: about 40 kW average; the MVS energy-surplus criterion is not met. AQS-DUTY-011 §4.9.}
 
 {CO₂ enrichment -- Farm air held at 1000 ppm in the 16 h photoperiod. GROW_BED fixes S04 (1.109 kg/d); the S89 carbon leaves with farm exhaust air. Use, not sequestration.}
 
-{CO2-rich cut -- S67B. FLUE_KO VSA product, ≥ 90 mol % CO2, dry. N2, O2, and NOx are rejected at FLUE_KO. Not raw flue. The only CRYO_CO2 credit for afterburner carbon; S18 carries none since Rev J.}
+{CO2-rich cut -- S67B. The product of the vacuum swing adsorption (VSA) unit at FLUE_KO, ≥ 90 mol % CO2, dry. N2, O2, and NOx are rejected at FLUE_KO. Not raw flue. The only CRYO_CO2 credit for afterburner carbon; S18 carries none since Rev J.}
 
 ## Gas headers
 
@@ -421,7 +423,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {HAB -- Life-support sector: habitation, galley, sleep, grey/black return; crew load driver.}
 
-{CRYO -- Utility sector: cold box and O₂/N₂/CO₂/H₂ receivers; H₂ normal path S64. Alias CRY.}
+{CRYO -- Utility sector: cold box and O₂/N₂/CO₂/H₂ receivers; H₂ normal path S64. Former alias: `CRY`.}
 
 {WTR -- Utility sector: roof/catch tanks, VCD / REMIN / UPW polish, grey treat (AQS-WTR-001).}
 
@@ -443,7 +445,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {UPW -- Ultrapure water. Plant HDR_UPW / S01 class (< 1 µS/cm post-ED polish); fab further polishes to S27. Pre-remin water serves farm/fab; drinking uses REMIN.}
 
-{VCD -- Vapor-compression distillation. Regenerates clean distillate from condensate and treated grey (VCD_HX → EVAP → COMP → COND). VCD_TRAIN is class vessel. Rates are on the graph.}
+{VCD -- Vapor-compression distillation. Regenerates clean distillate from condensate and treated grey (heat exchanger `VCD_HX`, then evaporator `EVAP`, compressor `COMP` and condenser `COND`). VCD_TRAIN is class vessel. Rates are on the graph.}
 
 {REMIN -- Remineralization. Doses Ca²⁺ / Mg²⁺ / K⁺ (and related) from core salt inventory into drinking water (S26). For potable only — not farm nutrient dose S07.}
 
@@ -456,6 +458,8 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {UF -- Ultrafiltration. Particulate / colloidal barrier on FAB_UPW_UF.}
 
 {NF -- Nanofiltration. Potable integrity check class after remin (with UF/UV).}
+
+{VCM -- Vinyl chloride monomer, the monomer polymerized to make polyvinyl chloride (PVC).}
 
 {UV -- Ultraviolet disinfection / TOC destruction on potable finish and fab UPW.}
 
@@ -489,6 +493,8 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {PEM -- Proton-exchange membrane. H₂/O₂ fuel-cell chemistry on FUEL_CELL (AQS-FC-001); couples BATT DC via FC_DCDC. Not the Sol-Ark GEN AC port.}
 
+{DM -- Dry matter: the mass of a food or biomass sample after its water is removed.}
+
 {DMFC -- Direct methanol fuel cell. MeOH discharge path; IEM-based preferred over conventional packaging. Distinct from PEM H₂ FC.}
 
 {IEM -- Ion-exchange membrane. Generic SEM-Tech membrane family (CEM/AEM style) used on EW, BMED, ZnBr₂, and MeOH FC paths.}
@@ -503,13 +509,13 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {RECT -- Rectifier skid. Process DC for EW / BMED / polish (RECT-EW, RECT-BMED, RECT-PK).}
 
-{DC -- Direct current. BATT bus, rectifiers, FC/MeOH DCDC offtakes.}
+{DC -- Direct current. BATT bus, rectifiers, the DC-to-DC converter outputs of the fuel cells and the methanol fuel cell.}
 
 {AC -- Alternating current. Utility, Sol-Ark LOAD/GEN, MCC, ORC couple stubs.}
 
 {GEN -- Sol-Ark generator AC port. BACKUP_GEN (H₂ genset) only — not FC or RECT hard-tee.}
 
-{BATT -- Sol-Ark battery DC window. ZnBr₂ and fuel-cell DCDC peers land here.}
+{BATT -- Sol-Ark battery DC window. The zinc–bromine battery and the DC-to-DC converters of the fuel cells connect here.}
 
 {HSE -- Health, safety, and environment. Hazard separation and fire-area authority (AQS-HSE-001).}
 
@@ -539,10 +545,61 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {MAWP -- Maximum Allowable Working Pressure. Vessel/piping design pressure; relief set ≤ MAWP (study values in AQS-ASM-001 until PE/AHJ).}
 
+{OFL -- SIL Open Font License, the licence of the Liberation fonts (SPDX identifier OFL-1.1).}
+
 {PE -- Professional Engineer. Stamp/permit role; architecture docs state Compliant-intent or study until PE confirmation.}
 
 {NFPA -- National Fire Protection Association. Fire/H₂/ESS/oxidizer themes (e.g. NFPA 2, 13, 30, 55, 400, 855).}
 
+{CGP -- Construction General Permit, the TPDES general permit for stormwater from construction sites.}
+
+{EPCRA -- Emergency Planning and Community Right-to-Know Act, the United States law that requires Tier II chemical inventory reports.}
+
+{LEPC -- Local Emergency Planning Committee, which receives EPCRA Tier II reports.}
+
+{NSR -- New Source Review, the air permit programme for new or modified emission sources.}
+
+{POTW -- Publicly owned treatment works, a municipal sewage treatment plant.}
+
+{TAC -- Texas Administrative Code.}
+
+{TCEQ -- Texas Commission on Environmental Quality, the state environmental regulator.}
+
+{TPDES -- Texas Pollutant Discharge Elimination System, the TCEQ water discharge permit programme.}
+
+{VOC -- Volatile organic compound.}
+
+{ORD -- Prefix of Parker Hannifin handbook numbers; ORD 5700 is the Parker O-Ring Handbook.}
+
+{WPB -- Wrought pipe, grade B: the carbon steel butt-weld fitting grade of ASTM A234.}
+
+{WS -- Wet synthesis: the reagent units (WS_*) that make fab chemicals such as hydrofluoric acid, peroxide, ammonia, nitric acid and potassium hydroxide.}
+
+{CAMEO -- Computer-Aided Management of Emergency Operations; CAMEO Chemicals is the NOAA database of chemical hazards and reactivity groups.}
+
+{GMR -- Gas-to-metal ratio: the mass of atomising gas used per unit mass of metal powder produced.}
+
+{UA -- The product of thermal transmittance (U-value) and area, summed over a building envelope, in W/K.}
+
+{FS -- Full scale: an instrument accuracy stated as a percentage of the top of its range.}
+
+{AI -- Analogue input: a controller input channel that reads a continuous signal such as 4-20 mA.}
+
+{AO -- Analogue output: a controller output channel that sends a continuous signal, such as a speed reference to a variable-frequency drive.}
+
+{MRP -- Media Redundancy Protocol of IEC 62439-2, which recovers an Ethernet ring after a single break.}
+
+{PI -- Proportional-integral: a feedback control loop that acts on the error and on its integral over time.}
+
+{AISC -- American Institute of Steel Construction, publisher of AISC 360, the specification for structural steel buildings.}
+
+{KL -- Effective length of a column: the actual length L multiplied by the effective length factor K for its end conditions.}
+
+{AG -- Aktiengesellschaft, a German public limited company; part of company names such as SFC Energy AG.}
+
+{VSA -- Vacuum swing adsorption: gas separation by adsorbing a component under pressure and releasing it under vacuum.}
+
+{EMT -- Electrical metallic tubing, a thin-wall steel conduit for electrical conductors.}
 {NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
 
 {ASME -- American Society of Mechanical Engineers. Vessel and B31.3 piping class sheets (AQS-ASM-001).}
@@ -593,6 +650,8 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {MEK -- Methyl ethyl ketone. Component of Weld-On 724 class CPVC cement.}
 
+{FAQ -- Frequently asked questions; used here for the published OFL FAQ of SIL International.}
+
 {FRP -- Fiber-reinforced plastic. Induced-draft fan and scrubber duct class on HDR_ACID_GAS.}
 
 {HDPE -- High-density polyethylene. Explicitly wrong for hot Salria anolyte walls.}
@@ -631,6 +690,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {AWWA -- American Water Works Association, publisher of water system standards.}
 
+{BLD -- Building. The series code of the building documents (AQS-BLD-nnn) and the short name of the building CAD work in older records.}
+
 {BLDC -- Brushless direct-current motor: a permanent-magnet motor commutated electronically.}
 
 {BPVC -- Boiler and Pressure Vessel Code, published by ASME.}
@@ -640,6 +701,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {CERN -- European Organization for Nuclear Research, author of the CERN Open Hardware Licence used by this repository.}
 
 {CFR -- Code of Federal Regulations (United States); for example 29 CFR 1910 for workplace safety.}
+
+{CMAA -- Crane Manufacturers Association of America, publisher of CMAA 70, the specification for overhead travelling cranes.}
 
 {CNC -- Computer numerical control: machine tools driven by a stored program.}
 
@@ -653,7 +716,7 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {CSV -- Comma-separated values, a plain-text table format.}
 
-{DI -- Deionized (water).}
+{DI -- Deionized (water). In control documents, also digital input: a controller input channel that reads an on-off signal.}
 
 {DLI -- Daily light integral: photosynthetic light received by a crop per day, in mol/(m² d).}
 
@@ -662,6 +725,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {DSA -- Dimensionally stable anode: a titanium anode coated with mixed metal oxides.}
 
 {DVS -- Deutscher Verband für Schweißen und verwandte Verfahren (German Welding Society), publisher of the DVS 2207 guidelines for welding thermoplastics.}
+
+{EDC -- Ethylene dichloride (1,2-dichloroethane), the intermediate from which vinyl chloride monomer and then polyvinyl chloride are made.}
 
 {EN -- European Norm: a standard adopted by the European standards bodies (for example EN 1090).}
 
@@ -691,6 +756,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {HTU -- Height of a transfer unit, used with NTU to size a packed column.}
 
+{HP -- Heat pump. Used in the GEO sector, where the ground-loop heat pump lifts heat to the Q4 store.}
+
 {HX -- Heat exchanger.}
 
 {IC -- In a motor designation (IC 411), the cooling method code of IEC 60034-6. In chemical analysis, ion chromatography.}
@@ -698,6 +765,14 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {IEC -- International Electrotechnical Commission.}
 
 {IECC -- International Energy Conservation Code.}
+
+{IIA -- Gas group IIA of IEC 60079-20-1, the least easily ignited group of flammable gases (for example methane and propane); North American Group D.}
+
+{IIC -- Gas group IIC of IEC 60079-20-1, the most easily ignited group of flammable gases (hydrogen and acetylene); hydrogen is North American Group B.}
+
+{GNU -- The GNU Project of the Free Software Foundation, publisher of the GNU General Public License and of GNU FreeFont.}
+
+{GPR -- Ground potential rise, the voltage that the earthing grid reaches relative to remote earth during an earth fault.}
 
 {IEEE -- Institute of Electrical and Electronics Engineers.}
 
@@ -775,6 +850,10 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {PVC -- Polyvinyl chloride.}
 
+{QF -- Prefix of the paragraphs of ASME BPVC Section IX that cover the fusing of plastic pipe (for example QF-200, QF-300).}
+
+{QW -- Prefix of the paragraphs of ASME BPVC Section IX that cover welding (for example QW-300, QW-451).}
+
 {QA -- Quality assurance.}
 
 {RF -- Radio frequency.}
@@ -786,6 +865,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {SDS -- Safety data sheet.}
 
 {SI -- International System of Units.}
+
+{SPOF -- Single point of failure: a part whose failure alone stops a system. The redundancy audit AQS-RED-001 lists them.}
 
 {SMAW -- Shielded metal arc welding.}
 
@@ -811,7 +892,7 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {VPI -- Vacuum pressure impregnation of motor windings with resin.}
 
-{DIY -- Do it yourself: built by the user from published instructions rather than bought.}
+{DIY -- Do it yourself: built by the plant builders from published instructions rather than bought.}
 
 {EAOP -- Electrochemical advanced oxidation process: oxidation of organic matter at an electrode, used here as a low-voltage pretreatment of woody waste.}
 

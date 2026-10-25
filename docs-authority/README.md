@@ -89,7 +89,6 @@ The documents that explain how the design is organised and where its numbers com
 | [ASME_CODE_INTENT.md](ASME_CODE_INTENT.md) | AQS-ASME-002 | In-house code intent per unit |
 | [ASME_CLASS_SHEETS.md](ASME_CLASS_SHEETS.md) | AQS-ASM-001 | ASME vessel inventory & B31.3 piping class sheets (templates) |
 | [H2_EMBRITTLEMENT_REVIEW.md](H2_EMBRITTLEMENT_REVIEW.md) | AQS-REV-H2-001 | Hydrogen embrittlement review |
-| [DOCUMENTATION_STYLE.md](DOCUMENTATION_STYLE.md) | AQS-DOC-002 | Documentation style — Aqueous house style |
 | [DOC_STYLE.md](DOC_STYLE.md) | AQS-DOC-002 | Documentation style (practical application) |
 | [DRAWING_STANDARD.md](DRAWING_STANDARD.md) | AQS-DWG-001 | Drawing standard and title block |
 | [FONTS.md](FONTS.md) | AQS-FONT-001 | Fonts for 3D sign glyphs |
@@ -113,7 +112,6 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [CO2_HEADER_DUTY.md](CO2_HEADER_DUTY.md) | AQS-DUTY-009 | HDR_CO2 consumer duty |
 | [S83_S88.md](S83_S88.md) | AQS-DUTY-082 | S83–S88 endpoints |
 | [COMPLETION_DUTIES.md](COMPLETION_DUTIES.md) | AQS-DUTY-007 | Completion duties |
-| [DUTY_CALC.md](DUTY_CALC.md) | AQS-DUTY-081 | Duty calculation |
 | [CHECKS.md](CHECKS.md) | AQS-DUTY-080 | Cathode size from the sheet |
 | [PATHWAY_AUDIT.md](PATHWAY_AUDIT.md) | AQS-DUTY-024 | No placeholders |
 | [GRAPH_AUDIT.md](GRAPH_AUDIT.md) | AQS-AUD-GRAPH-001 | Graph audit |
@@ -239,7 +237,6 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [PIPE_SPECS.md](PIPE_SPECS.md) | AQS-INV-006 | Pipe family production plans |
 | [PIPES.md](PIPES.md) | AQS-PIP-006 | Pipe junctions |
 | [SUPPORTS.md](SUPPORTS.md) | AQS-PIP-005 | Pipe supports and thermal flexibility |
-| [ISOMETRIC.md](ISOMETRIC.md) | AQS-ISO-003 | Close-pipe isometrics |
 | [ISO_DRAWING_INDEX.md](ISO_DRAWING_INDEX.md) | AQS-ISO-000 | Isometric fabrication set |
 | [ISO_ROUTES.md](ISO_ROUTES.md) | AQS-ISO-001 | Isometric route data |
 | [ISO_SHEETS.md](ISO_SHEETS.md) | AQS-ISO-002 | Isometric sheets |
@@ -355,6 +352,7 @@ The live task list and the project plan. Older plans, status boards and handoff 
 |---|---|---|
 | [TASK_PLAN.md](TASK_PLAN.md) | AQS-PLAN-007 | Task plan |
 | [PROJECT_PLAN.md](PROJECT_PLAN.md) | AQS-PLAN-005 | Project plan |
+| [REWRITE_TODO.md](REWRITE_TODO.md) | AQS-DOC-003 | Documentation rewrite status |
 
 ## Licence
 

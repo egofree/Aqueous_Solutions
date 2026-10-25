@@ -51,13 +51,36 @@ def pm(kw, rpm, Dmax):
     T = kw*1e3/(rpm*2*math.pi/60); A, B = 15e3, 0.8; DL = T/(math.pi/2*A*B)
     Dg = min(Dmax*0.5, (DL/1.0)**(1/3)); L = DL/Dg**2
     return dict(T=T, Dg=Dg*1e3, L=L*1e3, A=A, B=B)
-PLAN = {'induction': ['Laminations: laser-cut then stamped M400-50A (EN 10106) 0.5 mm, stacked and welded/cleated', 'Stator winding: Grade 2 enamelled Cu round wire (IEC 60317-13, class 200) from the wire line; single-layer concentric, class F insulation system (IEC 60085), slot liner NMN', 'VPI in polyester resin, cure', 'Rotor: die-cast aluminium cage (in-house melt), skewed one slot pitch', 'Shaft: C45 (EN 10083-2) turned and ground; keyway to IEC 60072-1', 'Frame: cast aluminium (A356) or cast iron above IEC 132, machined; end shields; IP55 (IEC 60034-5); IC 411 fan cooling (IEC 60034-6)', 'Bearings from the X-INV-05 bearing families; balance to ISO 21940-11 G2.5', 'Routine test IEC 60034-1: winding resistance, no-load, locked-rotor, hipot 2U + 1000 V; first-article type test IEC 60034-2-1 (efficiency) and IEC 60034-9 (noise)'],
-        'hermetic': ['Stator and rotor as the induction plan, without frame, shaft and fan; 2-pole; winding varnish and lead insulation compatible with the refrigerant and POE oil (UL 60335-2-34 / IEC 60335-2-34 Annex AA)', 'Shrink-fit into the compressor shell (scroll line X-MFG-35)', 'Hipot and insulation resistance after shell welding; locked-rotor and thermal protector test per IEC 60335-2-34'],
-        'BLDC': ['Stator: 0.35 mm NO20 or M270-35A laminations (EN 10106), 12 slots, concentrated tooth coils', 'Rotor: 8-pole surface magnets; NdFeB requires rare-earth supply (review item), bonded ferrite alternative at about 0.4 of the torque density', 'Hall sensors or sensorless back-EMF commutation; driver from the X-INV-05 BLDC driver family', 'Flange to NEMA ICS 16; housing extruded aluminium', 'Test: back-EMF constant, no-load current, torque-speed curve, hipot 500 V + 2U'],
-        'stepper': ['Hybrid 2-phase 1.8 deg: 8-pole stator, 50-tooth rotor, axially magnetised NdFeB ring between two toothed caps', 'Laminations 0.35 mm (EN 10106); bifilar or unipolar windings from the wire line', 'Flange to NEMA ICS 16', 'Test: holding torque, step accuracy (+/- 5 %), resistance and inductance'],
-        'solenoid': ['Coil: class H enamelled wire (IEC 60317-13) on a PA66-GF bobbin, 22 mm ISO 15218 interface', 'Plunger and frame: ferritic stainless 430F', 'Encapsulation in epoxy; DIN EN 175301-803 connector', 'Test: coil resistance, pull-in voltage at 85 % rated, insulation 1000 V'],
-        'ec_fan': ['Fan with its EC motor taken from the selected heat-pump condenser fan nameplate or datasheet (A-M-332); in-house motor design deferred until the fan is selected', 'Test: input power, speed range and speed-command response at rated airflow against the datasheet'],
-        'actuator': ['BLDC motor of family MF-01 driving a worm gear (bronze wheel, steel worm)', 'Output to ISO 5211 F03 square, end stops and position switches', 'Housing PA66-GF or Al, IP67', 'Test: breakaway torque at the ISO 5211 F03 rating, travel time, cycle life sample']}
+PLAN = {'induction': ['The stator and rotor laminations are laser-cut, and later stamped, from M400-50A electrical steel (EN 10106) 0.5 mm thick, then stacked and welded or cleated',
+                      'The stator is wound with Grade 2 enamelled copper round wire (IEC 60317-13, class 200) from the plant wire line, as a single-layer concentric winding with a class F insulation system (IEC 60085) and NMN slot liners (Nomex–Mylar–Nomex laminate)',
+                      'The wound stator is vacuum-pressure impregnated (VPI) with polyester resin and cured',
+                      'The rotor cage is die-cast in aluminium from the in-house melt and skewed by one slot pitch',
+                      'The shaft is turned and ground from C45 steel (EN 10083-2), with a keyway to IEC 60072-1',
+                      'The frame is cast aluminium (A356), or cast iron above frame IEC 132, and is machined and fitted with end shields. It gives IP55 protection (IEC 60034-5) and IC 411 fan cooling (IEC 60034-6)',
+                      'Bearings are taken from the bearing families of task X-INV-05, and the rotor is balanced to grade G2.5 of ISO 21940-11',
+                      'Each motor receives the routine tests of IEC 60034-1: winding resistance, no-load, locked rotor, and a high-voltage (hipot) test at 2U + 1000 V. The first article is also type-tested for efficiency (IEC 60034-2-1) and noise (IEC 60034-9)'],
+        'hermetic': ['The stator and rotor are made as in the induction plan, without frame, shaft or fan, as a 2-pole motor. The winding varnish and lead insulation are compatible with the refrigerant and with POE (polyol ester) oil (UL 60335-2-34 and IEC 60335-2-34 Annex AA)',
+                     'The motor is shrink-fitted into the compressor shell on the scroll compressor line (task X-MFG-35)',
+                     'After the shell is welded, the motor receives a high-voltage test and an insulation resistance test, and a locked-rotor and thermal protector test to IEC 60335-2-34'],
+        'BLDC': ['The stator uses 0.35 mm NO20 or M270-35A laminations (EN 10106) with 12 slots and concentrated coils on each tooth',
+                 'The rotor has 8 poles of surface magnets. NdFeB magnets need a supply of rare earths, which is a review item; bonded ferrite is the alternative, at about 0.4 of the torque density',
+                 'Commutation uses Hall sensors or sensorless back-EMF detection, with a driver from the BLDC driver family of task X-INV-05',
+                 'The flange follows NEMA ICS 16, and the housing is extruded aluminium',
+                 'Each motor is tested for back-EMF constant, no-load current and torque-speed curve, with a high-voltage test at 500 V + 2U'],
+        'stepper': ['The motor is a 2-phase hybrid stepper with 1.8 degree steps: an 8-pole stator and a 50-tooth rotor with an axially magnetised NdFeB ring between two toothed caps',
+                    'The laminations are 0.35 mm thick (EN 10106), and the bifilar or unipolar windings are wound from the plant wire line',
+                    'The flange follows NEMA ICS 16',
+                    'Each motor is tested for holding torque, step accuracy (within 5 %), resistance and inductance'],
+        'solenoid': ['The coil is wound with class H enamelled wire (IEC 60317-13) on a bobbin of glass-filled polyamide (PA66-GF), with the 22 mm interface of ISO 15218',
+                     'The plunger and frame are ferritic stainless steel 430F',
+                     'The coil is encapsulated in epoxy and fitted with a DIN EN 175301-803 connector',
+                     'Each solenoid is tested for coil resistance, pull-in at 85 % of rated voltage, and insulation at 1000 V'],
+        'ec_fan': ['The fan and its EC motor are taken from the nameplate or datasheet of the selected heat-pump condenser fan (A-M-332). An in-house motor design is deferred until the fan is selected',
+                   'Each fan is tested for input power, speed range and response to the speed command at rated airflow, against the datasheet'],
+        'actuator': ['A BLDC motor of family MF-01 drives a worm gear with a bronze wheel and a steel worm',
+                     'The output is the square drive of ISO 5211 F03, with end stops and position switches',
+                     'The housing is glass-filled polyamide (PA66-GF) or aluminium, with IP67 protection',
+                     'Each actuator is tested for breakaway torque at the ISO 5211 F03 rating and for travel time, and a sample is tested for cycle life']}
 MAG = {'NdFeB': dict(Br=1.30, Hc=1000, rho=7500, lm=3.0, grade='sintered N42, Br 1.29-1.32 T, Hcj >= 955 kA/m', RE=0.31),
        'ferrite': dict(Br=0.27, Hc=190, rho=3600, lm=6.0, grade='anisotropic polymer-bonded Sr-ferrite, Br 0.25-0.29 T, HcB 180-200 kA/m', RE=0.0)}   # COEY2010 table 11.4; IEC 60404-8-1
 GAP, MUR, LEAK, BSAT, PFE = 0.5, 1.05, 0.9, 0.8, 0.05
@@ -87,8 +110,13 @@ def magnets(fam):
 def main():
     fam = list(csv.DictReader(open(os.path.join(D, 'MOTOR_FAMILIES.csv')))); rows = []
     for f in fam:
-        t, sz, V = f['motor_type'], f['size'], f['voltage']; fid = f['family']; L = [f'# Motor family {fid}: {t}, {sz}, {V}', '', f'Document: AQS-INV-005 sheet {fid}. Generated by `flow_graph/inventory/motor_designs.py`. Study design basis, not a type-tested design. A-M-126.', '',
-                                                                               f"Population: {f['count']} items in {f['units']} units, {f['installed_shaft_kW']} kW installed shaft power (AQS-INV-001).", '', '## 1. Electromagnetic design basis', '']
+        t, sz, V = f['motor_type'], f['size'], f['voltage']; fid = f['family']; L = [f'# Motor family {fid}: {t}, {sz}, {V}', '', f'Document: AQS-INV-005 sheet {fid}', 'Revision: B', 'Date: 2026-10-25',
+                                                                               'Authority: AQS-PLAN-007 task X-INV-02; assumption A-M-126. Generated by `flow_graph/inventory/motor_designs.py`; do not edit this page by hand. This is a study design basis; the design has not been type-tested.', '',
+                                                                               '| Rev | Description | Date |', '| --- | --- | --- |', '| A | First issue | 2026-10-15 |',
+                                                                               '| B | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). No design value changed. | 2026-10-25 |', '',
+                                                                               '## Purpose and scope', '',
+                                                                               f'The plant makes its own motors, and motors of similar design are grouped into families. This sheet gives the design basis of family {fid}, the steps by which it is made in-house, and the work still open before it can be built. The family covers {f["count"]} motors in {f["units"]} units, with {f["installed_shaft_kW"]} kW of installed shaft power in total (motor inventory AQS-INV-001).', '',
+                                                                               '## 1. Electromagnetic design basis', '', 'Table 1.1 gives the design quantities and the basis of each.', '', f'Table 1.1. Design basis of {fid}', '']
         Vn = float(re.match(r'(\d+)', V).group(1))
         if t.startswith('induction') or t.startswith('hermetic'):
             m = re.search(r'([\d.]+) kW', sz); kw = float(m.group(1)); fr = re.search(r'IEC (\d+[SLM]?)', sz); fr = fr.group(1) if fr else None
@@ -126,7 +154,7 @@ def main():
             kind = 'actuator'
             L += ['| Quantity | Value | Basis |', '| --- | --- | --- |', '| Output | quarter turn, ISO 5211 F03, flange torque limit 32 N m | ISO 5211 |', '| Drive | MF-01 BLDC + worm gear | this sheet |']
             rows.append(dict(family=fid, type=t, rating=sz, Dg_mm='-', L_mm='-', Dout_mm='-', turns='-', current_A='-', conductor='-', steel_kg='-', copper_kg='-', fits='-'))
-        L += ['', '## 2. Manufacturing plan (in-house)', ''] + [f'{i}. {s}' for i, s in enumerate(PLAN[kind], 1)] + ['', '## 3. Open items', '', '- First-article build and type test (X-INV-02B).', '- Drawings, CadQuery model and BOM (X-INV-02C).\n- Coefficients inside the published ranges (A-M-126) are replaced by the type-test result.']
+        L += ['', '## 2. Manufacturing plan', '', 'The motor is made in-house in the following steps.', ''] + [f'{i}. {_s.rstrip(".")}.' for i, _s in enumerate(PLAN[kind], 1)] + ['', '## 3. Open items', '', 'Three items remain open. A first article must be built and type-tested (task X-INV-02B). The drawings, the CadQuery model and the bill of materials must be produced (task X-INV-02C). The coefficients that are now taken from within published ranges (A-M-126) are then replaced by the type-test results.']
         open(os.path.join(D, 'motor_families', f'{fid}.md'), 'w').write('\n'.join(L) + '\n')
     with open(os.path.join(D, 'MOTOR_DESIGNS.csv'), 'w', newline='') as fh: w = csv.DictWriter(fh, list(rows[0].keys())); w.writeheader(); w.writerows(rows)
     bad = [r['family'] for r in rows if r['fits'] is False]
