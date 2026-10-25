@@ -133,7 +133,7 @@
       "entries": {
         "basic_wind_speed_m_s": {
           "value": 50.0,
-          "units": "m/s basic wind speed (site unknown)",
+          "units": "m/s basic wind speed",
           "register": "A-M-187",
           "needs_verification": true,
           "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study",

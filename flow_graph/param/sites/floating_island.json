@@ -138,7 +138,7 @@
       "entries": {
         "basic_wind_speed_m_s": {
           "value": 70.0,
-          "units": "m/s basic wind speed (Saffir-Simpson Category 5 survival on the moorings)",
+          "units": "m/s basic wind speed",
           "ref": "SAFFIR_CAT5",
           "needs_verification": true,
           "verification_test": "Class environmental load method with site metocean data (CLASS_RULES); the ride-out strategy (Q-031) makes the design storm the survival case",
