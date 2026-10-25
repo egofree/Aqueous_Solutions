@@ -130,6 +130,11 @@ def main(argv=None):
     ap.add_argument('--max-passes', type=int, default=4, metavar='N', help='graph- and doc-phase convergence cap (default 4; a converged tree needs 1, a drifted tree 2-3)')
     ap.add_argument('--cad', action='store_true', help='also run the "cad" group (CadQuery, FreeCAD and OpenSCAD model builds; binary outputs)')
     args = ap.parse_args(argv)
+    site = os.environ.get('AQS_SITE') or 'baseline'
+    if site != 'baseline' and not args.dry_run:
+        # Outputs are not yet written under sites/<site_id>/ (X-LOC-04, AQS-PLAN-011 section 4.4); a
+        # locale regen now would overwrite the baseline outputs.
+        raise SystemExit(f'AQS_SITE={site}: locale regeneration waits for the per-site output tree (X-LOC-04)')
 
     m = load_manifest()
     graph_path = os.path.join(ROOT, m['graph'])

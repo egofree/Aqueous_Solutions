@@ -1,13 +1,14 @@
 # Localization plan: site profiles and locale variants
 
 Document number: AQS-PLAN-011
-Revision: B
+Revision: C
 Date: 2026-10-25
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue | 2026-10-25 |
 | B | Scaling model replaces keep, alternate and retire; per-site power portfolio; floating island locale added; build order updated | 2026-10-25 |
+| C | Section 4 matches the built profile: entries bind drivers, snow group added, pending groups, locale regeneration refused until section 4.4 exists | 2026-10-25 |
 
 ## 1. Purpose and scope
 
@@ -46,16 +47,16 @@ Table 3.1. Environmental inputs in the current model
 | Input | Held in | Used by |
 | --- | --- | --- |
 | Cooling design dry bulb | driver `site_design_dry_bulb_C`; AQS-SITE-002 | `docs-authority/_hot_draw_coolers.py`; make-up air text in `docs-authority/_hvac.py` |
-| Heating design dry bulb | AQS-SITE-002 text and `_hvac.py` text only | heating, ventilation and air conditioning (AQS-THM-002) |
+| Heating design dry bulb | site profile entry `thermal.heating_dry_bulb_C`; AQS-SITE-002 text and `_hvac.py` text | heating, ventilation and air conditioning (AQS-THM-002) |
 | Ambient temperature for insulation | driver `ins_ambient_C` | `docs-authority/_insulation.py` |
 | Solar resource | drivers `pv_yield_kWh_kWp_d`, `pv_roof_yield_factor`, `pv_system_derate`, `night_hours`, `crit_autonomy_d`; hourly data in `docs-authority/data/` | roof closure in `flow_graph/param/solver.py`; power in `flow_graph/param/write_graph.py`; storage in `flow_graph/param/ess_tf.py` |
 | Photovoltaic (PV) oversize | driver `pv_oversize_factor` | `solver.py` |
 | Wind | driver `wt_wind_ms` | `flow_graph/param/water_tower.py`, `solver.py` |
 | Snow | driver `roof_snow_kPa` | roof loads in `solver.py` |
-| Seismic | AQS-SITE-002 text only | no sizing function |
+| Seismic | drivers `wt_SDS`, `wt_SD1`, `wt_TL_s` | `flow_graph/param/water_tower.py` |
 | Soil bearing and unit weight | drivers `soil_allow_kPa`, `soil_unit_weight_kN_m3` | `docs-authority/_foundation.py` (AQS-BLD-017) |
 | Soil resistivity | driver `ELEC.distribution-train.gnd_soil_rho_ohm_m` | `docs-authority/_grounding_study.py` |
-| Frost depth | AQS-SITE-002 text only | foundation text |
+| Frost depth | site profile entry `ground.frost_depth_m`; AQS-SITE-002 | foundation text |
 | Ground heat exchange | drivers `GEO.geo-loop.ghex_*` | `flow_graph/param/geo_loop.py` |
 | Latitude and orientation | AQS-SITE-002; AQS-SITE-001 (the dock faces the pole) | site access, array tilt |
 | Water make-up | dock make-up stream (Q-002) | balance |
@@ -91,9 +92,9 @@ These are the places where the model assumes the surface of the Earth without sa
 
 ### 4.1 File and schema
 
-Each locale has one file, `flow_graph/param/sites/<site_id>.json` (to be created), validated against `flow_graph/schema/site_profile.schema.json` (to be created). Every entry has the form of a driver: `value`, `units`, and a `ref` (a key in `flow_graph/param/refs.py`) or a `register` id, with `needs_verification` and `verification_test` where no published value fixes it. The loader rejects an entry without a basis in the same way as a driver.
+Each locale has one file, `flow_graph/param/sites/<site_id>.json`, validated against `flow_graph/schema/site_profile.schema.json`. Every entry has the form of a driver: `value`, `units`, and a `ref` (a key in `flow_graph/param/refs.py`) or a `register` id, with `needs_verification` and `verification_test` where no published value fixes it. The loader rejects an entry without a basis in the same way as a driver.
 
-Table 4.1 lists the groups the profile carries. A group that does not apply at a locale is present and marked not applicable with its reason, so that a missing value is always an error and never a silent default.
+Table 4.1 lists the groups the profile carries. A group that does not apply at a locale is present and marked not applicable with its reason, so that a missing value is always an error and never a silent default. A group that a later task will fill is marked pending with that task's id. Identity, thermal environment, electrical and jurisdiction carry entries at every site. The schema's `x-groups` list holds the entries each group must carry; the list grows as each task in section 12 adds the entries its sizing functions read, so the table states the full scope and the schema states the entries in use.
 
 Table 4.1. Site profile groups
 
@@ -105,6 +106,7 @@ Table 4.1. Site profile groups
 | Thermal environment | cooling and heating design dry bulb, coincident wet bulb, effective radiative sink temperature, ground temperature at depth, freezing risk |
 | Solar | resource model (hourly series file, orbit model or monthly table), irradiance above the atmosphere, mean and worst-period yield, longest dark period, soiling or dust loss rate, snow and frost loss |
 | Wind | basic wind speed for structures, mean wind speed for generation, air density for dynamic pressure |
+| Snow | roof snow load, or the source showing that no snow load applies |
 | Seismic | mapped accelerations and site class, or the source showing that no seismic code applies |
 | Ground | allowable bearing, unit weight, frost or active-layer depth, permafrost or ice-sheet flag, electrical resistivity, thermal conductivity |
 | Radiation | ambient dose rate and the shielding basis |
@@ -119,9 +121,9 @@ Table 4.1. Site profile groups
 
 ### 4.2 Binding to the drivers
 
-The profile does not duplicate drivers. Each environmental driver in `drivers.json` gains a `site` field naming the profile entry that supplies it, and `drivers.load()` resolves it from the selected profile. Entries with no driver today, such as gravity and the atmosphere, become new drivers bound in the same way, and the literals in section 3.2 are replaced by reads of those drivers. Quantities that follow from the environment, such as an air density at a given temperature, are computed from the profile in a new module `flow_graph/param/site.py` (to be created), not entered a second time.
+The profile does not duplicate drivers. A profile entry that supplies an environmental driver carries a `binds` field naming that `drivers.json` key, and `drivers.load()` replaces the driver with the entry from the selected profile. The units of the entry and the driver must match, or the load fails. `drivers.json` keeps the baseline entry, so the file itself does not change. Entries with no driver today, such as gravity and the atmosphere, are read through `flow_graph/param/site.py` and do not enter the driver set, so the model workbook and the driver listing do not change; the literals in section 3.2 are replaced by those reads. Quantities that follow from the environment, such as an air density at a given temperature, are computed in `site.py` from the profile, not entered a second time.
 
-The baseline profile, `flow_graph/param/sites/baseline.json` (to be created), carries the present values with their present references and register ids (AQS-SITE-002 and the A-M entries). With it selected, the resolved driver set equals the present `drivers.json` value for value, and `python3 -m flow_graph.param.regen --check` stays clean.
+The baseline profile, `flow_graph/param/sites/baseline.json`, carries the present values with their present references and register ids (AQS-SITE-002 and the A-M entries). With it selected, the resolved driver set equals the present `drivers.json` value for value, and `python3 -m flow_graph.param.regen --check` stays clean. The test `flow_graph/param/test_site_profile.py` checks this equality, the failure on a missing group or entry, the failure on an entry without a basis, the failure on an unknown site, and that no script opens `drivers.json` except the loader. Until the output namespaces of section 4.4 exist, regeneration with a site other than the baseline is refused, so that a locale run cannot overwrite the baseline outputs.
 
 ### 4.3 Selecting a profile
 

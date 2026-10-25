@@ -207,7 +207,9 @@ CASSETTE_ID = ("M1", "M2", "M3")[CASSETTE_COUNT - 1]
 # Owner rule (Q-009): as the building grows, HAB/FARM levels are added at wt_life_per_shop x the rate of shop levels.
 import json as _json, os as _os, sys as _sys
 _ROOT = _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
-_DRV = _json.load(open(_os.path.join(_ROOT, 'flow_graph/param/drivers.json')))
+if _ROOT not in _sys.path: _sys.path.insert(0, _ROOT)
+from flow_graph.param import drivers as _DR
+_DRV = _DR.load()                          # drivers for the selected site (AQS_SITE)
 SHOP_LEVELS = max(1, int(math.floor(SCALE_M + 1e-12)))
 LIFE_LEVELS = 1 + int(round(_DRV['wt_life_per_shop']['value'])) * (SHOP_LEVELS - 1)
 BASEMENT_LEVELS = max(1, int(math.floor(SCALE_M + 1e-12)))

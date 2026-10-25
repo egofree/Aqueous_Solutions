@@ -4,9 +4,9 @@ the lower-reservoir floor. Run: python3 docs-authority/_water_tower.py"""
 import json, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R); sys.path.insert(0, os.path.join(R, 'models/freecad'))
 import params as P
-from flow_graph.param import water_tower as WT
+from flow_graph.param import water_tower as WT, drivers as DR
 from flow_graph.param.refs import cite
-r = P.HYDRO; s = WT.seismic_wind(r, P.PLATE_L, P.PLATE_W); d = json.load(open('flow_graph/param/drivers.json')); v = lambda k: d[k]['value']
+r = P.HYDRO; s = WT.seismic_wind(r, P.PLATE_L, P.PLATE_W); d = DR.load(); v = lambda k: d[k]['value']
 sp = 'flow_graph/placement_seed.json'; S = json.load(open(sp)); D = S['datums_mm']; old = dict(D)
 D['L-2'] = P.Z_Lm2; D['ROOF'] = P.Z_ROOF
 for i in range(r['levels']): D[f'R{i+1}'] = P.HYDRO_RES_Z0 + i*P.HYDRO_RES_CLEAR

@@ -6,6 +6,7 @@ gas sized by API 520 critical flow [API520]. Run: python3 docs-authority/_relief
 import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, R)
 from flow_graph.param.sizing import relief as RL
+from flow_graph.param import drivers as DR
 g = json.load(open(os.path.join(R, 'flow_graph/plant_flow_graph.json'))); N = {n['unit_id']: n for n in g['nodes']}
 rows = []
 for n in sorted(g['nodes'], key=lambda n: n['unit_id']):
@@ -20,7 +21,7 @@ def stage_rows(tag, stages, W_kg_h, M, k):
         A = RL.gas_area_in2(W_kg_h*2.20462, k, P1/6.894757, T*1.8, 1.0, M); b = RL.equiv_bore_mm(A)
         rows.append((f"{tag} stage {s['stage']}", 'interstage PSV', round(Pset - 101.325, 1), f"blocked discharge at {W_kg_h:.3f} kg/h, {s['T_out_C']:.0f} C", round(W_kg_h, 3), round(b, 2), next(x for x in STD if x >= b), True))
 cd = N['CRYO_H2']['params'].get('compressor_design') or {}
-if cd: stage_rows('H2 compressor', cd['stages'], cd['H2_kg_d']/json.load(open(os.path.join(R, 'flow_graph/param/drivers.json')))['h2c_run_h']['value'], 2.016, 1.41)
+if cd: stage_rows('H2 compressor', cd['stages'], cd['H2_kg_d']/DR.load()['h2c_run_h']['value'], 2.016, 1.41)
 cb = (N['CRYO_ASU']['params'].get('design') or {})
 if cb.get('comp_ratio_per_stage'):
     r = cb['comp_ratio_per_stage']; st = [dict(stage=i + 1, P_out_bar=r**(i + 1), T_out_C=cb['comp_T_out_C']) for i in range(cb['comp_stages'])]
