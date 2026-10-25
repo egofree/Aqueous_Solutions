@@ -87,7 +87,7 @@ Table 3.1. Document numbers in use
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
 | AQS-DUTY-008 | `docs-authority/HEAT_LADDER_DUTIES.md` | D | 2026-10-08 | Heat-ladder edge duties | current |
-| AQS-DUTY-009 | `docs-authority/CO2_HEADER_DUTY.md` | C | 2026-10-07 | HDR_CO2 consumer duty | current |
+| AQS-DUTY-009 | `docs-authority/CO2_HEADER_DUTY.md` | D | 2026-10-25 | HDR_CO2 consumer duty | current |
 | AQS-DUTY-010 | `docs-authority/EDGE_RATING_DUTY.md` | A | 2026-10-07 | Edge rating and node conservation | current |
 | AQS-DUTY-011 | `docs-authority/REV_M_CLOSURE_DUTY.md` | A | 2026-10-08 | Rev M closure: node balances, chloride loop, heater ratings and Q4 sinks | current |
 | AQS-DUTY-012 | `docs-authority/BALANCE_CLOSE_N.md` | A | 2026-10-09 | Balance close, remaining nodes | current |
