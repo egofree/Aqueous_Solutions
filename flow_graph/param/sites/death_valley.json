@@ -30,9 +30,9 @@
           "ref": "NOAA_NORMALS_DV"
         },
         "site_basis": {
-          "value": "AQS-SITE-002/DV",
+          "value": "AQS-SITE-006",
           "units": "document number",
-          "register": "AQS-SITE-002/DV"
+          "register": "AQS-SITE-006"
         }
       }
     },
