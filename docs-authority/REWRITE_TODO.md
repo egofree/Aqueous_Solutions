@@ -32,6 +32,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/DOC_REGISTER.md` | Purpose and scope added; generator text in `_doc_register.py` rewritten; part qualifiers no longer truncated mid-path. |
 | `docs-authority/PROJECT_PLAN.md` | Rewritten in full; phases, limits and values unchanged. |
 | `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | Rewritten in full; thresholds and inputs unchanged. |
+| `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 
 ## 3. In progress
@@ -52,6 +53,7 @@ Table 4.1. Pending pages directly under docs-authority/
 
 | Page | Note |
 | --- | --- |
+| `docs-authority/FEED_ASSAY.md` | Not on the pending list in `style_terms.json`, but its record of revisions is out of order and parts of the text are fragments. To be rewritten next. |
 | `docs-authority/ASME_CODE_INTENT.md` | |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | |
 | `docs-authority/BALANCE_RECONCILIATION.md` | |
@@ -93,7 +95,7 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/HAZMAT_SEPARATION.md` | |
 | `docs-authority/HAZOP.md` | |
 | `docs-authority/HAZ_AREA.md` | |
-| `docs-authority/HEAT_LADDER_DUTIES.md` | |
+| `docs-authority/HEAT_LADDER_DUTIES.md` | Rev C, written for graph Rev K and not reissued since. |
 | `docs-authority/INSTRUMENT_INDEX.md` | |
 | `docs-authority/INSTRUMENT_LOOPS.md` | |
 | `docs-authority/INTERNALS.md` | |

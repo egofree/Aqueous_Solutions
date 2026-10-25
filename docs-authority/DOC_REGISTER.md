@@ -184,7 +184,7 @@ Table 3.1. Document numbers in use
 | AQS-GLO-001 | `docs-authority/GLOSSARY.md` | — | — | Glossary | current |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | A | — | Derived file revisions | current |
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
-| AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | — | 2026-10-02 | Dual heat ladder | current |
+| AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | A | 2026-10-25 | Dual heat ladder | current |
 | AQS-HEAT-STUDY-002 | `notes/heat_sink_study_2026-10-18.md` | A | 2026-10-18 | HL-Q4-REJ heat-sink study — resolving D-GEO_ORC | current |
 | AQS-HSE-001 | `docs-authority/HAZARD_SEPARATION.md` | H | 2026-10-24 | Hazard separation and containment | current |
 | AQS-IF-009 | `docs-authority/PHASE9_INTERFACES.md` | C | 2026-10-09 | Phase 9 interfaces | current |

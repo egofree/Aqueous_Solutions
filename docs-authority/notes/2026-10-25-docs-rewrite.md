@@ -31,3 +31,7 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 - `docs-authority/_doc_register.py`: a page that is deleted now has its number withdrawn. The register lists withdrawn numbers in a new section 6, `--next` never issues them again, and `--check` fails if a page claims one.
 - `docs-authority/retired_names.json`: the two deleted paths added with their successors, so that the citation check rejects them in live text.
 - Documentation map: rows for the two pages removed.
+
+## Batch 5
+
+- `HEAT_LADDER.md` (AQS-HEAT-LADDER-001) Rev A: rewritten in full and given a revision letter and a record of revisions for the first time. Every edge, temperature, rating, elevation and envelope is kept. The page was not on the pending list of the style check.
