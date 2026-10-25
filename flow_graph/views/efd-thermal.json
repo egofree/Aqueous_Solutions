@@ -433,7 +433,7 @@
       "sector_id": "DIGESTER",
       "presence": "present",
       "class": "hx",
-      "notes": "EW aisle exchanger to Q3. Not an EW cell.",
+      "notes": "EW aisle exchanger to the Q4 stores (HL-HX8-Q4-A, HL-HX8-Q4-B). Not an EW cell.",
       "enabled": true,
       "modules": [],
       "params": {
