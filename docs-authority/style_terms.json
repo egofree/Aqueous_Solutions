@@ -113,7 +113,8 @@
   ],
   "agent_only": [
     "AGENTS.md",
-    "docs-authority/internal/*"
+    "docs-authority/internal/*",
+    "docs-authority/notes/*"
   ],
   "exempt": [
     {
