@@ -1,255 +1,129 @@
 # Aqueous Solutions
 
-An open design for a closed-loop, feedstock-agnostic plant that sustains
-itself. It takes any feed, from silicate and oxide regolith to metal-rich scrap
-and mixed waste (AQS-ASSAY-001), and returns metals, salts, silica,
-hydrocarbons and regenerated acid. It makes its own reagents, recovers its own
-water and air, grows food for its crew, and sells a surplus. The aim is a
-design that a shop can build from the files in this repository alone, using
-open-source designs, and that is complete enough to build a second plant.
+Aqueous Solutions is an open engineering design for a small industrial plant that recycles mixed waste and mineral feed into refined materials, and that also houses and feeds the people who run it. This repository holds the whole design: a model of every unit in the plant and every stream between units, the code that sizes each unit from published sources, and the engineering documents and computer-aided design (CAD) models generated from that model. The design is released under the CERN Open Hardware Licence Version 2, Strongly Reciprocal (CERN-OHL-S-2.0).
 
-> **Status.** This is a study-grade engineering design under active
-> development. Nothing here is stamped by a licensed engineer. Do not build or
-> operate any part of it without independent engineering review against the
-> codes that apply where you are.
+The design is a study. No part of the plant has been built or tested, and no licensed engineer has reviewed or stamped any part of it. Do not build or operate any part of it without an independent engineering review against the codes that apply where you are.
 
-SPDX-License-Identifier: CERN-OHL-S-2.0. See [Licence](#licence).
+## 1. What the plant does
 
-## Principles
+### 1.1 Feed and products
 
-- **Closed loop.** Every mass stream closes: what enters leaves as product,
-  recycle or a defined boundary flow. Reagents (HCl, NaOH, chlorate) are
-  regenerated inside the plant, not bought as a kit.
-- **Feedstock-agnostic.** Units are sized for the bounding case across the
-  assay envelope, not for one feed.
-- **Size from need.** Every unit, rate and space is sized from actual demand by
-  a cited method. A layout restriction that blocks a sized design is revised.
-- **Self-sustaining.** Production, power and storage are sized for internal
-  demand plus a saleable surplus. PV is oversized (2.0x) so storage still fills
-  on a poor day.
-- **Redundancy.** Energy and life-support systems (power, O2, water, CO2
-  removal, thermal, food, sanitation) carry N+1 or diverse backups, sized for a
-  defined outage from a cited code or reliability basis.
-- **Open and traceable.** Built from open-source designs (see
-  [DEPENDENCIES.md](DEPENDENCIES.md)). Every number is solved by the model,
-  cites a published reference, or is a registered assumption with the test that
-  would replace it. No supplier quotations as a design basis.
+The plant is designed to accept solid feed whose composition is uncertain and changes from lot to lot. The feed can be crushed silicate or oxide rock, metal-rich scrap such as printed circuit boards, mixed waste, or any mixture of these. The feed assay schema in `docs-authority/FEED_ASSAY.md` (AQS-ASSAY-001) describes each feed lot as mass fractions in a fixed set of classes, for example free water, metals that can be plated from solution, reactive metals, and silicates and oxides. Each unit is sized for the feed in that range that places the largest load on it.
 
-## What the plant does
+The products are refined metals, salts, silica and silicon, glass, hydrocarbon fuels and waxes, and polymers. The plant's own workshops turn these materials into parts. The plant also makes clean water, food and electricity for its own use.
 
-One leach tank. Hydrochloric acid and sodium chlorate dissolve the feed at
-70–85 °C. Three streams leave that tank.
+### 1.2 The process line
 
-- **Sink solids** leave on the floor auger, then a vibratory split. Dense
-  plastic joins the dryer. Glass and ceramic are rinsed, burned out, milled and
-  digested in sodium hydroxide. Quartz that does not open goes to alkali fusion.
-  Silica is dropped, calcined and reduced with pyrolyzer char.
-- **Float** leaves over the wall weir, is dried, and is cracked in an induction
-  pyrolyzer. The condensate is split into naphtha (C5–C10), fuel oil (C11–C18)
-  and wax (C19–C32). Bottoms return to the auger. Char is the silicon reductant.
-- **Liquor** is coalesced, filtered and concentrated on a cation-exchange stack,
-  then electrowon in order from gold through zinc. Lithium and the rare earths
-  are bled before the hydroxide cuts. Aluminium, magnesium and calcium leave as
-  hydroxides and are reduced in chloride pots. Rare-earth oxides and boron oxide
-  are reduced in their own retorts.
+Feed enters a heated leach tank, where hydrochloric acid and sodium chlorate dissolve the metals. The material then separates into three streams:
 
-Spent brine is raised to pH 9. An anion-exchange stack concentrates borate,
-phosphate, sulfate and fluoride. Diluate goes to a potassium chloride
-crystallizer, then to bipolar-membrane electrodialysis, which makes the
-hydrochloric acid and the sodium hydroxide. Chlorine from the anodes and the
-pots is absorbed to sodium chlorate and returned with the acid.
+1. Solids that sink to the floor of the tank are removed and sorted. Glass and ceramic are milled and dissolved in sodium hydroxide to recover silica. The silica is reduced to silicon with carbon char from the pyrolysis reactor described in item 2.
+2. Material that floats is mostly plastic and other organic matter. It is dried and then heated without air in a pyrolysis reactor. The vapour is condensed and separated into naphtha, fuel oil and wax.
+3. The liquid carries the dissolved metals. It passes through a series of electrowinning cells, each of which plates one group of metals onto a cathode. Aluminium, magnesium and calcium cannot be plated from a water solution, so they are precipitated as hydroxides and then reduced to metal in cells that run on molten chloride salt.
 
-Around this process line sit the utilities and life support: roof PV with
-electrochemical, gravity (pumped hydro) and methanol storage; a heat ladder that
-re-uses heat before it is rejected; water treatment; an electrolyser for oxygen;
-a cryogenic gas plant; a farm and habitat; and in-house manufacturing (foundry,
-polymers, glass, wafer fabrication) so the plant can make its own parts.
+After the metals are removed, the remaining salt solution is split back into hydrochloric acid and sodium hydroxide by bipolar-membrane electrodialysis (BMED). BMED is a membrane stack that uses electric current to separate a salt solution into an acid and a base. Chlorine gas released at the electrowinning and BMED anodes is converted to sodium chlorate in the chlorate regeneration unit and returned to the leach tank. In this way the plant makes its main reagents again from its own spent solution.
 
-The model groups the plant's units into sectors, the top level of
-`flow_graph/system_tree.yaml` (a test keeps this table in step with it):
+### 1.3 Utilities and life support
+
+A roof photovoltaic (PV) array supplies the electricity. Three energy stores hold it for use at night and on dull days: a zinc-bromine flow battery, a methanol system that makes methanol from hydrogen and carbon dioxide and turns it back into electricity in a fuel cell, and a pumped-hydro set that moves water between a roof reservoir and a catch tank. A hydrogen fuel cell runs on the plant's own process hydrogen, and a standby generator supplies the critical loads during an outage.
+
+Heat released by the hot processes is collected in a series of thermal stores, each kept at a lower temperature than the one before it. Heat from a hot process is therefore used again by cooler processes before it is finally rejected. This arrangement, the heat ladder, is described in `docs-authority/HEAT_LADDER.md` (AQS-HEAT-LADDER-001).
+
+Water is recovered from process condensate and from the crew's waste water, then treated, distilled and stored in tanks on the roof and at ground level. An electrolyser splits water into hydrogen and oxygen, and a gas plant purifies and stores oxygen, nitrogen, carbon dioxide and hydrogen. A farm grows food for the crew, and the crew's living quarters are part of the plant. The plant's workshops include a foundry, a polymer line, a glass line and a wafer fabrication line, which make spare parts and new equipment.
+
+### 1.4 Why the plant is meant to sustain itself
+
+The plant is designed to keep running on its own feed and energy, and to produce more food, clean water, materials and energy than it uses. The surplus is sold through the plant's dock, so that the plant earns an income as well as supplying itself. `docs-authority/SURPLUS_PASS_THRESHOLDS.md` (AQS-SUR-001) sets the minimum surplus of each kind that the design must reach.
+
+Every system that keeps the crew alive has a spare unit or a second source that works in a different way. These systems are power, oxygen, water, carbon dioxide removal, heating and cooling, food and sanitation. The spare capacity is sized for an outage of a stated length, taken from a cited code or reliability basis.
+
+The long-term goal is a plant that can make the parts needed to build a second plant from the same kinds of feed. `docs-authority/SELF_COPY_BOM.md` (AQS-BOM-SC-001) records which of those parts the plant can make today and which it cannot.
+
+## 2. How the design is built
+
+### 2.1 Sectors
+
+The model groups the plant's units into sectors. A sector is a set of units that do one job, such as metal recovery or water treatment, and it has an upper-case identifier that is used in file names and on drawings. Table 2.1 lists the sectors by kind. A test (`flow_graph/test_doc_consistency.py`) compares this table with the sector list in the plant graph and fails if the two differ. `docs-authority/SECTOR_DEFINITIONS.md` (AQS-SEC-001) defines each sector in full.
+
+Table 2.1. Plant sectors by kind
 
 | Kind | Sectors |
 |---|---|
-| Process | DIGESTER (leach, electrowinning, acid and base regeneration), OIL, GLASS, GAS, FOUNDRY, POLYMERS, FAB, MFG, NUT |
-| Life support | FARM, HAB |
-| Utilities | CRYO, WTR, ELEC, HEAT, GEO |
-| Energy storage | MEOH, PUMPED_HYDRO (with the ZnBr2 flow battery under ELEC) |
-| Export | DOCK |
-| Life support | HAB, FARM |
-| Export | DOCK |
+| Process | DIGESTER (leach tank, electrowinning, and acid and base regeneration), OIL (drying, pyrolysis and separation of hydrocarbons), GLASS (glass and ceramic recovery, and silicon reduction), GAS (gas cleaning and the hydrogen and oxygen headers), FOUNDRY (melting, casting, forming and molten-salt metal cells), POLYMERS (polymer synthesis and forming), FAB (wafer and solar cell fabrication), MFG (machine shop and metal working), NUT (nutrient dosing for the farm) |
+| Life support | FARM (grow beds and food store), HAB (living quarters) |
+| Utilities | CRYO (gas separation and storage), WTR (water collection and treatment), ELEC (PV array, flow battery, standby generator, fuel cell and power distribution), HEAT (the heat ladder), GEO (ground heat exchanger and heat pump) |
+| Energy storage | MEOH (methanol synthesis, storage and fuel cell), PUMPED_HYDRO (roof reservoir and turbine-pump) |
+| Export | DOCK (the dock through which surplus is shipped and feed is received) |
 
-The [glossary](docs-authority/GLOSSARY.md) defines each sector and the
-project's acronyms and identifiers.
+### 2.2 The plant graph and its inputs
 
-## Where to start
+The plant graph, `flow_graph/plant_flow_graph.json` (AQS-FLOW-GRAPH-001), is the single record of the plant's layout. It lists every unit and every stream that connects two units, with the solved flow rate, composition and energy duty of each. Where a document disagrees with the graph, the graph is correct and the document is regenerated. `flow_graph/system_tree.yaml` (AQS-SYS-TREE-001) arranges the units into sectors, trains and subsystems.
 
-1. Read this page, then the [documentation map](docs-authority/README.md),
-   which lists every design document by topic.
-2. Keep the [glossary](docs-authority/GLOSSARY.md) open: it explains unit and
-   sector names, acronyms, and identifiers such as `AQS-SEC-001`, `X-PAR-12`,
-   `A-M-145`, `S64` and `Rev AC`.
-3. Open `docs-authority/MODEL_WORKBOOK.xlsx` for the whole model in one place,
-   or pick one unit and follow it through its duty sheet, sizing sheet and
-   P&ID (see [How to read the outputs](#how-to-read-the-outputs)).
-4. Run the model (see [Quickstart](#quickstart)).
-5. To help, read [CONTRIBUTING.md](CONTRIBUTING.md). Open design questions are
-   in `docs-authority/OPEN_QUESTIONS.md`; open tasks are in
-   `docs-authority/TASK_PLAN.md`.
+Every independent number in the model is stored once, with its unit and its basis, in `flow_graph/param/drivers.json` (AQS-PAR-001). The basis is one of three kinds. It can be a published source registered in `flow_graph/param/refs.py`, an assumption with an identifier of the form A-M-nnn recorded in `docs-authority/assumptions_manual.json` together with the test that would replace it, or a recorded decision by the project owner. The loader refuses a number that has no basis. The editions of the codes and standards that the design cites are kept in a single table in `flow_graph/param/code_basis.py`, and a test fails if any file cites a different edition.
 
-## Authority chain
+### 2.3 Sizing and generated outputs
 
-The plant is one parametric system, not a folder of documents. Information
-flows one way:
+The command `python3 -m flow_graph.param.regen` runs the design pipeline. It solves the mass and energy balances on the graph, sizes each unit from its duty by a cited method, repeats until the results stop changing, and then writes the documents. The generated documents include a duty sheet and a sizing sheet for each unit, piping and instrumentation diagrams (P&IDs), piping isometrics, the line list, the electrical load list and one-line diagram, the model workbook `docs-authority/MODEL_WORKBOOK.xlsx`, and the task plan. A generated file is never edited by hand. To change it, change the input or the generator and run the pipeline again.
 
-```
-drivers.json + refs.py + assumptions_manual.json      (inputs, each with a basis)
-        │
-        ▼
-flow_graph/plant_flow_graph.json                       (topology authority: units, streams,
-        │                                               solved rates and duties)
-        ▼
-python3 -m flow_graph.param.regen                      (parametric pipeline: solve, size,
-        │                                               converge, then generate)
-        ▼
-generated outputs                                      (duty sheets, sizing sheets, line list,
-                                                        isometrics, P&IDs, views, load list,
-                                                        one-line, workbook, task plan)
-```
+The CAD models are also built by code. The FreeCAD scripts in `models/freecad/` build the general arrangement of the plant, and the CadQuery scripts in `models/mfg/` build individual units with drawings, parts lists, and STEP and STL export files.
 
-- `flow_graph/plant_flow_graph.json` (AQS-FLOW-GRAPH-001) is the sole topology
-  authority. Where a document and the graph disagree, the graph wins and the
-  document is regenerated.
-- `flow_graph/param/drivers.json` (AQS-PAR-001) holds every independent number
-  with units and a basis: a reference key in `flow_graph/param/refs.py`, an
-  assumption id (A-M-nnn) in `docs-authority/assumptions_manual.json`, or a
-  recorded owner ruling. The loader refuses a value with no basis.
-- `flow_graph/system_tree.yaml` (AQS-SYS-TREE-001) is the decomposition:
-  sectors, trains, subsystems and units.
-- `python3 -m flow_graph.param.regen` runs the pipeline stages in dependency
-  order (`flow_graph/param/regen_manifest.json`), writes a receipt
-  (`flow_graph/derived/_regen_receipt.json`), and the staleness gates in
-  `docs-authority/_rev_stamp.py` fail if any derived file lags the graph.
-- `docs-authority/AUTHORITY.md` is the lock list of authority documents.
+## 3. What is in the repository
 
-## Repository map
+Table 3.1. Top-level folders
 
-```
-flow_graph/           the graph, system tree, schema, solver and regen pipeline
-  param/              drivers.json, refs.py, solver, sizing functions, regen manifest
-  views/              generated SVG topology views
-  exporters/          process-sheet (PFD) generators
-docs-authority/       authority documents and everything generated from the graph
-  duties/  sizing/    per-unit duty sheets and sizing calculations (generated)
-  pid/  iso/          P&IDs and piping isometrics (generated)
-  nozzles/  fab/      nozzle schedules and fabrication routes
-  inventory/          building-block inventories (motors, wire, pipe, parts)
-  notes/              dated change records and rulings
-  _*.py               study calculators and document generators
-  TASK_PLAN.md        the master task list (AQS-PLAN-007, generated)
-  MODEL_WORKBOOK.xlsx the generated workbook view of the model
-design_tool/          read-only design API (FastAPI) and web UI (React/Vite)
-models/freecad/       FreeCAD builders for the plant general arrangement
-models/mfg/           CadQuery unit builders with STEP/STL exports, drawings and BOMs
-models/motors/        motor family models
-cad/                  STL envelopes (Git LFS) and study solids
-media/                rendered process sheets, overview images and animation
-iso/                  early isometric fabrication set (PNG/PDF); the current
-                      isometrics are generated in docs-authority/iso/
-tables/               cut lists, materials and BOM tables
-notes/                design notes, audits and owner rulings (dated change
-                      records are in docs-authority/notes/)
-```
+| Folder | Contents |
+|---|---|
+| `flow_graph/` | The plant graph, the system tree, the solver, the sizing code and the regeneration pipeline |
+| `docs-authority/` | The design documents, both hand-written and generated, and the registers of documents, assumptions, open questions and tasks |
+| `models/` | The FreeCAD and CadQuery scripts and the unit and motor models they build |
+| `cad/` | Unit envelope meshes and study solids, stored with Git Large File Storage (LFS) |
+| `design_tool/` | A local web application that displays the plant graph and cannot change it |
+| `media/` | Rendered process sheets, overview images and an animation |
+| `iso/` | An early set of isometric fabrication drawings, which the generated isometrics in `docs-authority/iso/` replace |
+| `tables/` | Cut lists, material lists and parts tables |
+| `notes/` | Design notes, audits and recorded decisions by the project owner |
+| `scripts/` | The command that runs all of the checks |
 
-## Quickstart
+The [documentation map](docs-authority/README.md) lists the design documents by topic, and the [glossary](docs-authority/GLOSSARY.md) defines the sector names, abbreviations and identifiers used in them.
 
-Requirements: Git with Git LFS, Python 3.11 or later. FreeCAD 1.0 and CadQuery
-are needed only for the CAD builders; Node.js only for the web UI.
+## 4. Current status
 
-The CAD files are stored in Git LFS and make up most of the repository. The
-model and its tests need only the unit envelopes in `cad/stl/`, so clone without
-the rest:
+The design is at study level. The mass and energy balances close in the model. The graph's `loops_closed` flag stays false, because no measurement from a built plant yet confirms the model. `docs-authority/PROJECT_PLAN.md` (AQS-PLAN-005) defines when a unit is ready to build and sets the order of the remaining work. The duty sheets do not yet meet that definition. The list of parts that the plant must make to build a copy of itself is incomplete.
+
+The work still to do is recorded in two files. `docs-authority/TASK_PLAN.md` (AQS-PLAN-007) lists each task with the check that proves it is done. `docs-authority/OPEN_QUESTIONS.md` lists the design decisions that are still open and the default that the work proceeds on until each is decided.
+
+## 5. Getting started
+
+You need Git with Git LFS and Python 3.11 or later. FreeCAD and CadQuery are needed only to build the CAD models, and Node.js only to run the design tool.
+
+The CAD files make up most of the repository's size. The model and its tests need only the unit envelopes in `cad/stl/`, so clone without the other CAD files:
 
 ```bash
 GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/egofree/Aqueous_Solutions.git
 cd Aqueous_Solutions
-git lfs pull --include="cad/stl/*"         # unit envelopes used by the tests
+git lfs pull --include="cad/stl/*"
 
 python3 -m venv .venv
 . .venv/bin/activate
 pip install -r requirements.txt
 
-scripts/check_all.sh    # or: make check
+scripts/check_all.sh
 ```
 
-`scripts/check_all.sh` runs the tests, the staleness check, the authority
-contract, the citation check and the documentation style check. They run on
-your machine; the project uses no hosted build service. They must pass before
-you submit a pull request (see CONTRIBUTING.md). Run `git lfs pull` later
-if you need the full CAD models.
+`scripts/check_all.sh` runs the tests, the check that every generated file is up to date, the citation check and the documentation style check. `scripts/check_all.sh --full` also runs the whole pipeline on the committed files and fails if the pipeline changes anything. The project uses no hosted build service, so you run these checks on your own computer. Run `git lfs pull` later if you need the full CAD models. The design tool's setup is described in [design_tool/README.md](design_tool/README.md).
 
-To change the design, edit an input or a generator, then rerun the pipeline:
+## 6. Contributing
 
-```bash
-python3 -m flow_graph.param.regen          # solve the graph and regenerate every derived file
-```
+Contributions of calculations, corrections with a cited source, generators, CAD models, tests and reviews are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before you open a pull request. It explains how to change an input or a generator, how to cite a source, and which checks must pass. Write documents to the [documentation style guide](docs-authority/DOC_STYLE.md) (AQS-DOC-002), which is based on NASA KSC-DF-107 and the IET guide to technical report writing. To find work, read the task plan and the open questions described in section 4. Participation is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
 
-`python3 -m flow_graph.param.regen --quick` runs only the graph-writing stages
-for a what-if pass. A full run regenerates several hundred documents.
+## 7. Questions, problems and security
 
-A full run on a clean tree changes nothing; `python3 flow_graph/check_regen_idempotent.py`
-verifies that (it runs the pipeline twice in a temporary worktree of `HEAD`).
-Run it before you push a change to a generator or to the pipeline.
+Ask a question or suggest a change by opening an issue on GitHub with the Proposal template. Report a fault in the code with the Tooling bug template. Report an error in the engineering, such as an unsafe relief case or an unsuitable material, with the Design defect template.
 
-CAD (optional):
+Do not open a public issue for a security problem or a committed secret. Report it privately through the repository's Security tab, as described in [SECURITY.md](SECURITY.md).
 
-```bash
-cd models/freecad && freecadcmd build_plant.py      # plant general arrangement
-python -m flow_graph.param.envelopes --all          # CadQuery unit envelopes (needs cadquery)
-```
+## 8. Licence
 
-Design tool (optional): see [design_tool/README.md](design_tool/README.md). It
-serves the graph read-only on the local machine; nothing in the UI writes the
-graph, the drivers or the tree.
-
-## How to read the outputs
-
-The [documentation map](docs-authority/README.md) lists every document by
-topic. The usual entry points:
-
-- **Start with the workbook.** `docs-authority/MODEL_WORKBOOK.xlsx` has drivers
-  with citations, the system tree with rolled-up power, per-sector unit and
-  stream sheets, the electrical chain and the heat ledger.
-- **One unit:** its duty sheet `docs-authority/duties/<UNIT>.md` (mass and
-  energy in and out, nozzles, relief case), its sizing sheet under
-  `docs-authority/sizing/`, its P&ID under `docs-authority/pid/`, and, where
-  it exists, its CAD model, drawings and BOM under `models/mfg/<UNIT>/`.
-- **Document numbers.** Every document carries an `AQS-...` number, a revision
-  and a date; `docs-authority/DOC_REGISTER.md` lists them.
-- **Assumptions.** `docs-authority/ASSUMPTIONS_REGISTER.md` (AQS-REG-002) lists
-  every A-M-nnn assumption with its basis, sensitivity and the test that would
-  replace it.
-- **Progress.** `docs-authority/TASK_PLAN.md` lists every task with a "Done
-  when" check. A task is ticked only where a cited file proves it. Each open
-  task carries a triage tag: desk, hardware or owner.
-- **Study, not stamped.** Values marked study are the model's current best
-  calculation, not certified figures.
-
-## Contributing
-
-Contributions are welcome: calculations, corrections with a cited basis,
-generators, CAD, tests and reviews. Read [CONTRIBUTING.md](CONTRIBUTING.md)
-before you open a pull request. The short version: change inputs or generators,
-never generated files; cite every number; run the checks; and keep every
-page consistent with the graph in the same commit. Documents follow the
-[style guide](docs-authority/DOC_STYLE.md), which is distilled from NASA
-KSC-DF-107 and the IET guide to technical report writing. Participation is governed by
-the [Code of Conduct](CODE_OF_CONDUCT.md). Report security issues privately as
-described in [SECURITY.md](SECURITY.md).
-
-## Licence
-
-Aqueous Solutions is licensed under the **CERN Open Hardware Licence Version 2 –
-Strongly Reciprocal** (CERN-OHL-S-2.0). The full text is in [LICENSE](LICENSE).
+Aqueous Solutions is licensed under the CERN Open Hardware Licence Version 2, Strongly Reciprocal (CERN-OHL-S-2.0). The full text is in [LICENSE](LICENSE).
 
 ```
 SPDX-License-Identifier: CERN-OHL-S-2.0
@@ -257,17 +131,6 @@ Copyright 2026 Mike Matthews and contributors.
 Source Location: https://github.com/egofree/Aqueous_Solutions
 ```
 
-The licence is inherited from the SEM-Tech open membrane project
-(S.E.M Technology / Rowow), whose membranes, cell and stack architectures are
-released under CERN-OHL-S and which this plant uses in its wet line (chlorate
-leach, electrowinning, bipolar-membrane regeneration). Using the same strongly
-reciprocal licence keeps the combined design compatible with that work: anyone
-who conveys a modified design, or a product built from it, must make the
-complete corresponding source available under CERN-OHL-S-2.0 and state where it
-is. This project is not a Rowow product, and the licence does not grant use of
-the Rowow name or imply its endorsement. Other open designs the plant draws on
-keep their own licences and are linked, not bundled; see
-[DEPENDENCIES.md](DEPENDENCIES.md).
+The leach, electrowinning and BMED stages use membranes, cells and stack designs from the SEM-Tech open membrane project of S.E.M Technology (Rowow), which are released under CERN-OHL-S. This project uses the same licence so that the combined design stays compatible with that work. Anyone who distributes a modified design, or a product built from it, must make the complete source available under CERN-OHL-S-2.0 and state where it is. This project is not a Rowow product, and the licence does not grant use of the Rowow name or imply its endorsement. Other open designs that the plant uses keep their own licences and are linked from [DEPENDENCIES.md](DEPENDENCIES.md).
 
-The design is provided without warranty of any kind; see section 6 of the
-licence.
+The design is provided without warranty of any kind, as section 6 of the licence states.
