@@ -52,7 +52,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-BOUND-001 | `notes/DOCK_BOUNDARY.md` | A | 2026-10-17 | Dock and boundary — item 9 | current |
 | AQS-BUS-001 | `docs-authority/BUSBAR.md` | C | 2026-10-16 | Rectifier bus | current |
 | AQS-CAD-001 | `docs-authority/CAD_SCRIPTING_PROTOCOL.md` | B | 2026-10-24 | Scripted CAD protocol: from process flow diagram to rebuildable models | current |
-| AQS-CAD-002 | `docs-authority/FREECAD_PROTOCOL.md` | — | — | FreeCAD protocol — Aqueous wet line | current |
+| AQS-CAD-002 | `docs-authority/FREECAD_PROTOCOL.md` | B | 2026-10-24 | Running FreeCAD for the wet-line model | current |
 | AQS-CLOSE-001 | `notes/CLOSURE_PASS.md` | A | 2026-10-17 | Closure pass — item 10 | current |
 | AQS-CMP-001 | `docs-authority/CAMPUS_PLAN.md` | B | 2026-09-27 | Campus plan — recycle core + farm + fab + habitation + cryo | current |
 | AQS-COD-002 | `docs-authority/PERMITS.md` | A | 2026-10-15 | Permit list | current |
@@ -435,7 +435,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-STD-004 | `docs-authority/STANDARDS_LIST.md` | A | 2026-10-15 | Codes and standards list | current |
 | AQS-STD-005 | `docs-authority/UNIT_MATERIALS.md` | A | 2026-10-21 | Per-unit material selections (duty section 3 sweep) | current |
 | AQS-STD-006 | `docs-authority/MATERIALS_SEC3.md` | A | 2026-10-21 | Duty section 3 material selections, batch issue (AQS-STD-006) | current |
-| AQS-STD-007 | `docs-authority/CODE_BASIS.md` | B | 2026-10-24 | Code basis | current |
+| AQS-STD-007 | `docs-authority/CODE_BASIS.md` | C | 2026-10-24 | Code basis | current |
 | AQS-STL-001 | `docs-authority/STL_MANIFEST.md` | A | 2026-09-27 | STL rebuild manifest | current |
 | AQS-STR-001 | `docs-authority/STREAM_REGISTER.md` | L | 2026-10-24 | Stream register: streams between blocks | current |
 | AQS-STR-001-DERIVED | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | — | — | Stream register excerpt — DERIVED from flow_graph | current |

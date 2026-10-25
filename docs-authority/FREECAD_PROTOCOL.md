@@ -1,20 +1,36 @@
-# FreeCAD protocol — Aqueous wet line
+# Running FreeCAD for the wet-line model
 
 Document number: AQS-CAD-002  
+Revision: B  
+Date: 2026-10-24  
+Licence: CERN-OHL-S-2.0  
+Basis: process names and equipment from `docs-authority/GLOSSARY.md` and the equipment and process pages in `docs-authority/`.
 
-For any agent building or editing the 3D model. Read this before touching
-`models/freecad/` (or hub `models/freecad/`). Process authority is `GLOSSARY.md`
-and related docs-authority equipment / process notes. This file is only how
-to drive FreeCAD 1.0 on the build host without repeating the failures from
-2026-09-26.
+| Rev | Description | Date |
+|---|---|---|
+| A | Issued without a revision table | — |
+| B | Rewritten to DOC_STYLE (AQS-DOC-002) for a contributor new to the project: purpose and scope, terms, captions; sections renumbered; a stale note on Phase C and D stubs removed (the stubs exist). Rules and commands unchanged. | 2026-10-24 |
 
-Licence: CERN-OHL-S-2.0. No photoreal / diffusion images.
+## 1. Purpose and scope
 
----
+This page tells a contributor how to run FreeCAD 1.0 to build or edit the 3D model of the wet line in `models/freecad/`, and how to avoid failures already met on the build host (first recorded on 2026-09-26). Read it before changing anything in `models/freecad/`.
 
-## 1. Which binary
+It covers the FreeCAD program to use, the files and parameters, how to run and check a script, the script template, what not to model, how to add a unit, the rebuild sequence and what to do when a script fails. It does not define the process: process names and equipment come from the glossary and the equipment pages. Photorealistic or AI-generated images are not part of the model.
 
-The machine has two FreeCAD installs. They are not interchangeable.
+## 2. Terms
+
+- `freecadcmd`: the FreeCAD console program, which runs a Python script without the graphical interface.
+- AppImage: a self-contained Linux package of a program. Here, the FreeCAD 1.1.1 AppImage, which must not be used.
+- `.FCStd`: the FreeCAD document format. STEP (`.step`): the ISO 10303 exchange format for 3D solids, used here as the integrity check.
+- `Part::Feature`: a FreeCAD object that stores one solid shape.
+- Massing model: the overall boxes and cylinders of the equipment, placed and sized correctly, without fine detail.
+- Generator script: a Python file in `models/freecad/` that builds part of the model and writes `.FCStd` and `.step` files.
+
+## 3. Which FreeCAD to use
+
+The build host has two FreeCAD installs, and they are not interchangeable (Table 3.1).
+
+Table 3.1. FreeCAD installs
 
 | Invoke | What it is | Use |
 |---|---|---|
@@ -22,19 +38,16 @@ The machine has two FreeCAD installs. They are not interchangeable.
 | `/usr/bin/freecad` | apt 1.0.0 GUI | Open `.FCStd` and `.step` |
 | `freecad` / `FreeCADCmd` | 1.1.1 AppImage on PATH | Do not use |
 
-Check before you run anything:
+Check before running anything:
 
 ```bash
 type -a freecad freecadcmd
 /usr/bin/freecadcmd --version
 ```
 
-You want `FreeCAD 1.0.0`. If the banner says `1.1.1` or the path is
-`/tmp/.mount_freeca…`, you invoked the AppImage. Stop.
+The version shown should be `FreeCAD 1.0.0`. If it says `1.1.1`, or the path begins `/tmp/.mount_freeca…`, the AppImage was started instead. Stop.
 
-The AppImage loads `~/.local/share/FreeCAD/v1-1/Mod/FreeCAD-Ribbon` and
-dies on a missing `RibbonStructure.json`, then SIGSEGV on shutdown. If
-someone must use 1.1.1:
+The AppImage loads `~/.local/share/FreeCAD/v1-1/Mod/FreeCAD-Ribbon`, fails on a missing `RibbonStructure.json`, and then crashes (SIGSEGV) on shutdown. If 1.1.1 must be used, disable that add-on:
 
 ```bash
 mv ~/.local/share/FreeCAD/v1-1/Mod/FreeCAD-Ribbon \
@@ -43,9 +56,11 @@ mv ~/.local/share/FreeCAD/v1-1/Mod/FreeCAD-Ribbon \
 
 Do not debug the AppImage. Use 1.0.
 
----
+## 4. Files and parameters
 
-## 2. Working directory and params
+Figure 4.1 lists the model files.
+
+Figure 4.1. Model files
 
 ```
 models/openscad/params.scad              # OpenSCAD millimetres
@@ -58,33 +73,31 @@ models/freecad/ew_cell.py
 models/freecad/build_wet.py
 ```
 
-Units are millimetres. Origin is the leach outer SW bottom corner:
-+X down the tank, +Y across, +Z up.
+Units are millimetres. The origin is the bottom corner of the leach tank on its outer south-west side: +X runs along the tank, +Y across it, and +Z up.
 
-A dimension exists in **both** param files. Change both in the same edit.
-Do not invent a third params module.
+Every dimension is in both parameter files. Change both in the same edit, and do not add a third parameter module.
 
-Object names are the locked plant names (underscores instead of spaces /
-hyphens where FreeCAD forbids them): `LEACH_CSTR_1`, `EW_1`,
-`FLOAT_DEWATER`, `HDR_ACID_GAS`. Do not rename for style.
+Object names are the locked plant names, with underscores where FreeCAD does not allow spaces or hyphens: `LEACH_CSTR_1`, `EW_1`, `FLOAT_DEWATER`, `HDR_ACID_GAS`. Do not rename them for style.
 
----
+## 5. Running a script
 
-## 3. How to run a script
+Run a generator script from `models/freecad/`:
 
 ```bash
-cd models/freecad   # this repo; or hub models/freecad/
+cd models/freecad
 /usr/bin/freecadcmd leach_cstr.py
 ```
 
-Success looks like:
+A successful run prints:
 
 ```
 wrote .../leach_cstr.FCStd
 wrote .../leach_cstr.step
 ```
 
-Failure modes already seen:
+Table 5.1 lists failures already seen and their fixes.
+
+Table 5.1. Known failures
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -96,14 +109,13 @@ Failure modes already seen:
 | `freecadcmd: command not found` | Wrong case / PATH | `/usr/bin/freecadcmd` |
 | Ribbon `FileNotFoundError` | AppImage + broken addon | `/usr/bin/freecad`, not `freecad` |
 
-Open the check file:
+Open the STEP file to check the result:
 
 ```bash
 /usr/bin/freecad leach_cstr.step
 ```
 
-If the STEP is empty, the script failed before `Part.export`. Read the
-console; do not stare at the GUI.
+If the STEP file is empty, the script failed before `Part.export`. Read the console output rather than the graphical interface.
 
 OpenSCAD is the independent check:
 
@@ -112,16 +124,13 @@ openscad models/openscad/leach_cstr.scad
 openscad models/openscad/assembly_wet.scad
 ```
 
-Keep the two geometries the same topology. OpenSCAD may use `hull` and
-`linear_extrude` twists; FreeCAD 1.0 may not. Approximate, do not skip
-the part.
+Keep the two geometries topologically the same. OpenSCAD may use `hull` and twisted `linear_extrude`; FreeCAD 1.0 may not. Approximate the part rather than leave it out.
 
----
+## 6. Script template
 
-## 4. Script template
+Every new generator script in `models/freecad/` starts from Figure 6.1. Do not change its entry point.
 
-Every new generator in `models/freecad/` starts from this. Do not “improve”
-the entry point.
+Figure 6.1. Generator script template
 
 ```python
 #!/usr/bin/env python3
@@ -178,19 +187,14 @@ if any(Path(a).name == Path(__file__).name for a in sys.argv):
 
 Rules inside `build()`:
 
-1. One `Part::Feature` per named plant item. Do not fuse the whole plant
-   into one solid.
-2. `box_at` and `cyl` only unless you have already tested the alternative
-   on `/usr/bin/freecadcmd`. Banned until proven: `makePipe`, `makeHelix`
-   + sweep, `makeLoft` of open wires, `Part.show`.
-3. Augers, screws, flights: shaft cylinder + discrete paddle boxes, as in
-   `helix_flight()` in `leach_cstr.py`.
-4. Funnels: already implemented in `ew_cell.make_cell()` with `makeLoft`
-   of *closed* polygons. Copy that; do not rewrite it.
-5. After `add`, `doc.recompute()`, then `saveAs` **and** `Part.export`
-   STEP. The STEP is the integrity check.
-6. Assembly scripts load an existing `.FCStd`. They do not call another
-   file’s `build()` if that file already wrote a document.
+1. One `Part::Feature` per named plant item. Do not fuse the whole plant into one solid.
+2. Use only `box_at` and `cyl` unless an alternative has already been tested with `/usr/bin/freecadcmd`. Not allowed until proven: `makePipe`, `makeHelix` with a sweep, `makeLoft` of open wires, and `Part.show`.
+3. Augers, screws and flights: a shaft cylinder with separate paddle boxes, as in `helix_flight()` in `leach_cstr.py`.
+4. Funnels: already implemented in `ew_cell.make_cell()` with `makeLoft` of closed polygons. Copy that; do not rewrite it.
+5. After adding objects, call `doc.recompute()`, then both `saveAs` and `Part.export` to STEP. The STEP file is the integrity check.
+6. Assembly scripts load an existing `.FCStd`. They do not call another file's `build()` if that file has already written a document (Figure 6.2).
+
+Figure 6.2. Loading an existing document
 
 ```python
 existing = OUT / "leach_cstr.FCStd"
@@ -203,48 +207,38 @@ else:
     doc = App.ActiveDocument
 ```
 
-7. Print `wrote <path>` so a human (or the next agent) can see success
-   without opening the GUI.
+7. Print `wrote <path>`, so that success is visible without opening the graphical interface.
 
----
+## 7. What not to model in FreeCAD Part
 
-## 5. What not to model in FreeCAD Part
+- Photorealistic plant views.
+- Threads, fasteners and gasket details.
+- Full cable trays, or every instrument.
+- A second leach tank.
+- A filter between the shredder and CSTR 1.
+- FR-4 in the induction pyrolysis pipe.
+- Shared gas headers: dust, acid gas, hydrogen and oil vapour stay in separate headers.
+- Titanium walls: CPVC or PVDF on oxidiser service, PP on caustic service.
 
-- Photoreal plant views
-- Threads, fasteners, gasket details
-- Full cable trays or every instrument
-- A second leach tank
-- A filter between shredder and CSTR 1
-- FR-4 in the induction pyro pipe
-- Shared gas headers (dust ≠ acid gas ≠ H₂ ≠ oil vapor)
-- Titanium walls (CPVC/PVDF on oxidizer; PP on caustic)
+These belong on the process flow diagram or a later detailed drawing, not in this parametric massing model.
 
-Those belong in the PFD or a later detailed drawing, not this parametric
-massing model.
+## 8. Adding a unit
 
----
-
-## 6. Adding a unit
-
-1. Put dimensions in `models/openscad/params.scad` and `models/freecad/params.py`.
-2. OpenSCAD module in the file that owns the parent (tank extras stay in
-   `leach_cstr.scad`; aisle extras stay in `assembly_wet.scad`).
-3. Matching `Part::Feature` in the matching `*.py`.
+1. Put the dimensions in `models/openscad/params.scad` and `models/freecad/params.py`.
+2. Add the OpenSCAD module to the file that owns the parent: tank extras stay in `leach_cstr.scad`, aisle extras in `assembly_wet.scad`.
+3. Add the matching `Part::Feature` in the matching `*.py` file.
 4. Run `/usr/bin/freecadcmd` on that file only.
-5. Open the new `.step`. Fit all. Confirm the new body sits on the
-   locked face (weir lip, lift outlet, lid slot, EW pitch).
-6. Only then instance it from `build_wet.py`.
+5. Open the new `.step` file and fit all. Confirm the new body sits on the locked face (weir lip, lift outlet, lid slot, electrowinning cell pitch).
+6. Only then add it to `build_wet.py`.
 
-Build order is positional. Later parts locate off earlier faces. See
-Do not start Phase C/D solids until the OIL LINE and GLASS / CERAMIC stubs
-exist — they do, as of Phase A 6. Build order is positional; see §6–§7.
+Build order matters: later parts are located from faces of earlier ones (§9).
 
----
+## 9. Rebuild sequence
 
-## 7. Current rebuild sequence
+Figure 9.1. Rebuild sequence
 
 ```bash
-cd models/freecad   # this repo; or hub models/freecad/
+cd models/freecad
 /usr/bin/freecadcmd leach_cstr.py    # vessel, feed train, fork stubs
 /usr/bin/freecadcmd ew_cell.py       # one funnel cell
 /usr/bin/freecadcmd build_wet.py     # load tank, instance EW-1..9, bund,
@@ -252,21 +246,17 @@ cd models/freecad   # this repo; or hub models/freecad/
 /usr/bin/freecad wet_line.FCStd
 ```
 
-If `leach_cstr.py` errors, fix that before `build_wet.py`. An old
-`leach_cstr.FCStd` will be loaded silently and you will think the new
-code ran.
+If `leach_cstr.py` fails, fix it before running `build_wet.py`. Otherwise an old `leach_cstr.FCStd` is loaded without warning and the new code appears to have run.
 
----
+## 10. When a script fails
 
-## 8. When a script throws
+1. Copy the `sErrMsg` or `sfunction` line, not the Qt shutdown stack.
+2. A `Null shape` error in `TopoShapeExpansion.cpp` means a Boolean operation received a null shape. Comment out the last `fuse` or `cut` and bisect.
+3. Do not switch to the AppImage to see whether 1.1 behaves better.
+4. Do not replace the weir with a second tank to simplify the model.
+5. After a fix, delete the stale `.FCStd` if `openDocument` would hide the failure (Figure 10.1).
 
-1. Copy the `sErrMsg` / `sfunction` line, not the Qt shutdown stack.
-2. If it is `Null shape` in `TopoShapeExpansion.cpp`, a boolean got a
-   null. Comment out the last `fuse`/`cut` and bisect.
-3. Do not switch to the AppImage “to see if 1.1 is better.”
-4. Do not replace the weir with a second tank to “simplify.”
-5. After a fix, delete the stale `.FCStd` if `openDocument` would hide
-   the failure:
+Figure 10.1. Clearing stale documents
 
 ```bash
 rm -f leach_cstr.FCStd wet_line.FCStd
