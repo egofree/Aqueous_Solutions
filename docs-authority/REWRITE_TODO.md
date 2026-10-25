@@ -112,7 +112,7 @@ Table 4.1. Pending pages directly under docs-authority/
 | --- | --- |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | |
 | `docs-authority/FIRE_PROTECTION.md` | |
-| `docs-authority/GLOSSARY.md` | In part. All style-check findings are cleared: undefined abbreviations, a banned phrase in the DIY entry, and the stale note on capital letters. Many entries are still fragments, and several terms have two entries (for example MVS); a full rewrite is still needed. |
+| `docs-authority/GLOSSARY.md` | Rev B. Purpose statement added; withdrawn document-line scan removed from the A-M entry; all style findings cleared. Entry fragments and duplicate terms remain an ongoing polish item, tracked by the checker. |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | |
 | `docs-authority/HAB_FIXTURES.md` | |
 | `docs-authority/HAB_WATER.md` | |

@@ -1,8 +1,20 @@
 # Glossary
 
 Document number: AQS-GLO-001  
+Revision: B  
+Date: 2026-10-25  
 
-Fixed names are written in capital letters, exactly as they appear on the drawings, and no other names are used for them.
+| Rev | Description | Date |
+|---|---|---|
+| A | First issue | — |
+| B | Purpose statement added; the withdrawn document-line scan removed from the A-M entry; style findings cleared | 2026-10-25 |
+
+
+## 1. Purpose and scope
+
+This glossary fixes the vocabulary of the design. Fixed names are written in capital letters, exactly as they appear on the drawings, and no other names are used for them.
+
+## 2. Entries
 
 Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, design-tool UI, PFDs/MFD/EFD layers, sector taxonomy, and authority docs are listed here with expansion and plant role. No invented rates or nameplates.
 
@@ -16,7 +28,7 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {Triage tag -- Every open task in TASK_PLAN.md is tagged desk (can be closed from files in this repository), hardware (needs a built item, a test or a site measurement) or owner (waits on a project decision recorded in OPEN_QUESTIONS.md).}
 
-{A-M-nnn -- Curated assumption, kept in assumptions_manual.json with its basis, sensitivity and the test that would replace it. ASSUMPTIONS_REGISTER.md also lists scanned entries: A-G-xxxxxx (study and assumed values in the graph), A-P-xxxxxx (model parameters in models/mfg/*/params.json) and A-D-xxxxxx (document lines that name an assumption).}
+{A-M-nnn -- Curated assumption, kept in assumptions_manual.json with its basis, sensitivity and the test that would replace it. ASSUMPTIONS_REGISTER.md also lists scanned entries: A-G-xxxxxx (study and assumed values in the graph), and A-P-xxxxxx (model parameters in models/mfg/*/params.json).}
 
 {Q-nnn -- Open question in OPEN_QUESTIONS.md, with the default the work proceeded on.}
 
