@@ -13,6 +13,24 @@ _d = DR.load(); v = lambda k: DR.val(_d, k)
 for k in ('AISC360_22', 'ASTM_A992', 'ASCE7_22'): cite(k)
 import params as P
 from flow_graph.param import water_tower as WT
+# Site gate (X-LOC-11): on a floating site the plant is a hull. The slab, foundations and
+# brace-to-slab basis of this check do not exist there; structure follows the class rules
+# (AQS-PLAN-011 section 10.2) and the frame member check re-enters with the hull design pass.
+_prof = SITE.load_profile()
+_caps = {k for k, e in (_prof['groups'].get('capabilities', {}).get('entries') or {}).items() if e['value'] is True}
+if 'ground_contact' not in _caps:
+    md = ['# Building frame member check', '', 'Document number: AQS-BLD-016', 'Revision: B', 'Date: 2026-10-25', '',
+          '| Rev | Description | Date |', '|---|---|---|', '| A | First issue | 2026-10-16 |',
+          '| B | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). No load or section changed. | 2026-10-25 |', '',
+          '## 1. Purpose and scope', '',
+          'This page states the welded-steel frame member check for the land building: box columns, secondary beams, girders and concentric X-braced bays on the 6 m grid, sized from need to AISC 360-22.',
+          '', '## 2. Superseded at this site', '',
+          'At this site the plant is a hull: there is no slab, no foundations and no brace-to-slab load path, so this check has no basis here. Hull structure, stability and freeboard follow the class rules (AQS-PLAN-011 section 10.2) and are the hull design pass (task X-LOC-11 remainder).',
+          '', '## 3. Land check', '',
+          'The land check of record is the baseline copy of this page at the repository root; this site copy states only the supersession.']
+    open('docs-authority/FRAME_CHECK.md', 'w').write('\n'.join(md) + '\n')
+    print('frame check superseded at this site (hull); land check unchanged at the root')
+    sys.exit(0)
 E_ = 200e3; FY = v('MFG.tools-metal-forming-train.hall-services.fc_Fy_MPa'); G_C = 24.0                                   # MPa; concrete kN/m3
 BAY = P.BAY/1000; Lp, Wp = P.PLATE_L/1000, P.PLATE_W/1000; A_pl = Lp*Wp; nx, ny = round(Lp/BAY), round(Wp/BAY)
 LIVE = v('MFG.tools-metal-forming-train.hall-services.fc_live_loads_kPa')   # kPa: light manufacturing 125 psf, assembly/corridors 100 psf, water storeys (F), roof 20 psf
