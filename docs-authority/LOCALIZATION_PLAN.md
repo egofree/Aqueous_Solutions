@@ -1,35 +1,39 @@
 # Localization plan: site profiles and locale variants
 
 Document number: AQS-PLAN-011
-Revision: A
+Revision: B
 Date: 2026-10-25
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue | 2026-10-25 |
+| B | Scaling model replaces keep, alternate and retire; per-site power portfolio; floating island locale added; build order updated | 2026-10-25 |
 
 ## 1. Purpose and scope
 
-The plant is meant to work wherever it can be built. This plan sets out how the parametric model will take the site as an input, so that one design produces a variant for each locale and the differences between locales are a generated result. It covers the first locales to be studied: Death Valley (hot desert), Antarctica (polar), Mars (planetary surface) and low Earth orbit.
+The plant is meant to work wherever it can be built. This plan sets out how the parametric model will take the site as an input, so that one design produces a variant for each locale and the differences between locales are a generated result. It covers the first locales to be studied: Death Valley (hot desert), Antarctica (polar), a floating island (open sea), Mars (planetary surface) and low Earth orbit.
+
+The full single-building plant in the base graph is the reference ideal: every function the design can perform, each sized for the baseline site. It is not a build target. A real plant is the reference with each sector and unit sized up, sized down, duplicated or eliminated to suit the power and resources of its site. The extreme locales test whether the parametric model can make all of those changes; the same method applies to any real site on Earth and, later, off it.
 
 This page is the investigation and the plan. It does not change the plant graph, the drivers or any generated output. It records:
 
 - how the model represents the site today, and where conditions on the surface of the Earth are fixed in code (section 3);
 - the site profile, one data file per locale that carries every environmental input (section 4);
-- how a unit states what it needs from its surroundings, and how a locale keeps, replaces or retires it (section 5);
-- the environmental values and the design consequences for each locale (sections 6 to 9);
-- the gaps in the current architecture and how to close them parametrically (section 10);
-- the build order (section 11), the acceptance checks (section 12) and the decisions the owner must take (section 13).
+- how each sector and unit is scaled to a site, and how the power sources are chosen (section 5);
+- the environmental values and the design consequences for each locale (sections 6 to 10);
+- the gaps in the current architecture and how to close them parametrically (section 11);
+- the build order (section 12), the acceptance checks (section 13) and the decisions the owner must take (section 14).
 
-Every value in sections 6 to 9 cites a published source. A value enters the model only through a site profile entry that carries that source, or through an entry in the assumptions register (AQS-REG-002) with the test that will confirm it.
+Every value in sections 6 to 10 cites a published source. A value enters the model only through a site profile entry that carries that source, or through an entry in the assumptions register (AQS-REG-002) with the test that will confirm it.
 
 ## 2. Summary
 
 - The site is not yet an input. The study site values are in AQS-SITE-002 (`docs-authority/SITE_BASIS.md`) and in `flow_graph/param/drivers.json`, mixed with process drivers. Several facts about the surface of the Earth are constants in code: standard gravity, standard atmospheric pressure, the composition and density of air, and the use of outside air as a heat sink, an oxidant and a vent destination.
 - A site profile per locale, `flow_graph/param/sites/<site_id>.json` (to be created), will hold every environmental input in the same form as a driver (value, units, reference or register id, verification test). The driver loader applies the selected profile. The baseline profile carries the present values, so the baseline output does not change.
-- Each unit will state its environmental needs, such as a minimum gravity for buoyant separation, outside air for heat rejection, or ground contact. A check compares those needs with the selected profile and requires a recorded decision for every unit whose needs are not met: keep, use an alternate unit, or retire with a stated replacement. The table of these decisions is the answer to the question of what the plant must change to work in each place.
-- Death Valley keeps the architecture and stresses heat rejection, water supply and material temperatures. Antarctica stresses a dark season, freezing, and a treaty that forbids mineral resource activity. Mars needs pressurised process spaces, works at partial gravity, and can use the carbon dioxide atmosphere, ground ice and regolith as feed. Low Earth orbit removes gravity, air and ground together and needs the largest set of alternate units.
-- The build order is: profile and loader with the baseline unchanged; code constants moved into the profile; site selection and output namespaces; unit needs and capability decisions; then the locales in order of increasing departure from the baseline: Death Valley, Antarctica, Mars, low Earth orbit.
+- The full building is the reference ideal, not a build target. A profile scales each sector and unit: sized up, sized down, duplicated, replaced by a unit of another technology, or eliminated. Eliminating a function needs an import path or a replacement of a different technology. Each unit states its environmental needs, such as a minimum gravity for buoyant separation, outside air for heat rejection, or ground contact; an unmet need forces a replacement or an elimination. The generated table of these scaling actions is the record of what the plant changes to work in each place.
+- Power sources are chosen per site from what the local resource supports: PV, wind, geothermal, hydro, wave and ocean thermal energy where cited, fuel cells on plant-made fuels, and storage. Fission and other sources enter only as flagged options with their own studies. The generation that closes the energy balance through the worst stretch at the site is oversized by `pv_oversize_factor`, and redundancy is kept.
+- Death Valley keeps the architecture and stresses heat rejection, water supply and material temperatures. Antarctica stresses a dark season, freezing, and a treaty that forbids mineral resource activity. Mars needs pressurised process spaces, works at partial gravity, and can use the carbon dioxide atmosphere, ground ice and regolith as feed. A floating island loses the ground and gains the sea: seawater for cooling, water and minerals, wave and ocean thermal energy, but every kilogram counts against buoyancy and stability, and motion disturbs gravity separation. Low Earth orbit removes gravity, air and ground together and needs the most replacement units.
+- The build order is: profile and loader with the baseline unchanged; code constants moved into the profile; site selection and output namespaces; sector and unit scaling with the power portfolio; then the locales, Earth sites first: Death Valley, the floating island, Antarctica, Mars and low Earth orbit.
 
 ## 3. How the model represents the site today
 
@@ -109,7 +113,9 @@ Table 4.1. Site profile groups
 | Logistics | arrival mode (truck, ship, launch, lander), resupply interval, mass cost class, export outlets |
 | Electrical | external grid present or not, alternating current frequency or direct current bus voltage, earthing method (earth electrode, floating, structure bonding) |
 | Jurisdiction | code families that apply (section 4.6) |
-| Capability decisions | per sector or unit: keep, alternate, retire (section 5) |
+| Power portfolio | candidate sources with their resource basis, the worst stretch, the oversize factor and the redundancy rule (section 5.5) |
+| Motion | for floating sites: design heel, roll and pitch angles, periods and heave acceleration |
+| Scaling | per sector or unit: size factor, unit count, replacement, elimination with its import path (section 5) |
 
 ### 4.2 Binding to the drivers
 
@@ -127,30 +133,49 @@ The baseline profile, `flow_graph/param/sites/baseline.json` (to be created), ca
 
 - Baseline outputs stay where they are, so existing paths and citations do not change.
 - Every other locale writes under `sites/<site_id>/`, which mirrors the repository paths of the outputs, for example `sites/<site_id>/flow_graph/plant_flow_graph.json` and `sites/<site_id>/docs-authority/duties/`. Each stage in `flow_graph/param/regen_manifest.json` still declares its outputs once; one path function adds the prefix.
-- The base graph stays the sole topology authority. A locale graph is the base graph with the locale's capability decisions applied (section 5); it is a generated output and is never hand-edited.
+- The base graph stays the sole topology authority. A locale graph is the base graph with the locale's scaling actions applied (section 5); it is a generated output and is never hand-edited.
 - `regen --check --site <site_id>` checks one locale. A new `--all-sites` option runs every profile in `flow_graph/param/sites/` (to be created).
 
 ### 4.5 Document numbers and identifiers
 
 - A generated document in a locale namespace keeps its base number with the site code as a suffix, for example `AQS-THM-002/MARS`. `docs-authority/_doc_register.py` is extended to register each number and site pair, and `flow_graph/test_doc_numbers.py` fails on a duplicate pair. The alternative, a fresh number for every locale copy, is put to the owner in Q-028.
 - A hand-written locale page, such as the site basis of a locale, takes a new number from `python3 docs-authority/_doc_register.py --next AQS-SITE`.
-- An alternate unit gets a new unit id in the base graph, present only where a profile selects it. Unit, stream, assumption, task and question ids take the next unused id in their sequence and are never reused.
+- A replacement unit gets a new unit id in the base graph, present only where a profile selects it. Unit, stream, assumption, task and question ids take the next unused id in their sequence and are never reused.
 
 ### 4.6 Code basis per jurisdiction
 
 Each row of the EDITIONS table in `flow_graph/param/code_basis.py` gains a family: building on land in the United States (the present rows), the Antarctic Treaty system, crewed spacecraft, and planetary surface operations. The profile lists the families that apply. A check document cites only codes in the selected families, and a check with no governing clause in those families is reported as open rather than passing. Editions follow the latest-edition rule recorded in Q-018 and are confirmed when a family is added.
 
-## 5. Unit needs and capability decisions
+## 5. Sector and unit scaling
 
-### 5.1 What a unit needs
+### 5.1 The reference plant
 
-Each unit states its environmental needs in `flow_graph/param/sites/unit_needs.json` (to be created). Needs are given by unit class, with a unit-level override, so units need not be edited one by one. Table 5.1 lists the needs used in this plan.
+The base graph describes the full single-building plant: every function the design can perform, each sized for the baseline site. It is the reference ideal and the source of every unit's design, not a plan to be built as drawn. A plant for a real site is the reference with each sector and unit scaled to the power and resources available there.
 
-Table 5.1. Environmental needs
+### 5.2 Scaling actions
+
+Table 5.1 lists the actions a profile may apply to a sector or a unit.
+
+Table 5.1. Scaling actions
+
+| Action | Meaning | Rule |
+| --- | --- | --- |
+| size up or size down | the solver sizes the unit from local demand and resource; an optional factor biases the result, for example for a saleable surplus | the factor is a profile entry with a stated basis |
+| duplicate | the unit is built as a number of parallel units, for capacity or for redundancy | the count is a profile entry; it is never below the count the redundancy rule needs |
+| replace | a unit of a different technology performs the same function, for example a radiator for DRY_COOLER | the replacement is a unit in the base graph with its own sizing function |
+| eliminate | the function is not performed at the site | the profile names an import path (a boundary stream with its resupply interval and holding) or a replacement of a different technology |
+
+For an energy or life-support function, eliminating or replacing a unit must leave the function with at least the sources the redundancy rule needs: a spare unit, or a second source of a different technology, sized for a defined outage (AGENTS.md, Redundancy). An import path counts as a source only when the holding covers the resupply interval plus that outage.
+
+### 5.3 What a unit needs
+
+Each unit states its environmental needs in `flow_graph/param/sites/unit_needs.json` (to be created). Needs are given by unit class, with a unit-level override, so units need not be edited one by one. A need the profile does not meet forces a replacement or an elimination; every other action is a free design choice. Table 5.2 lists the needs used in this plan.
+
+Table 5.2. Environmental needs
 
 | Need | Meaning | Examples |
 | --- | --- | --- |
-| buoyant separation | a minimum apparent gravity to separate gas from liquid or solids from liquid | flotation, settlers, packed columns, stirred tanks with a gas space, electrowinning gas release |
+| buoyant separation | a minimum apparent gravity, steady in direction, to separate gas from liquid or solids from liquid | flotation, settlers, packed columns, stirred tanks with a gas space, electrowinning gas release |
 | free surface | a liquid surface open to a gas space | atmospheric tanks, pumped hydro, roof and catch tanks |
 | air heat sink | outside air at a usable temperature | DRY_COOLER, air-cooled condensers |
 | air oxidant | outside air with oxygen | AFTERBURNER, COMB_HEAT, BACKUP_GEN |
@@ -158,11 +183,15 @@ Table 5.1. Environmental needs
 | ground contact | soil or rock for bearing, earthing or heat exchange | foundation, earthing grid, GEO_GHEX |
 | liquid water at ambient | external pressure above the triple point of water | any open water surface |
 
-### 5.2 Decisions in the profile
+### 5.4 Scaling in the profile and its check
 
-The profile's capability decisions name, for a sector or a unit, one of: keep; alternate, naming the unit that performs the same function; or retire, with the reason and the unit that takes over its role. Resizing is not a decision: the solver resizes every kept unit from the profile.
+The profile's scaling map gives, for a sector or a unit, a size factor, a unit count, a replacement unit, or an elimination with its import path or replacement. A check, `flow_graph/param/test_site_scaling.py` (to be created), fails when a unit's needs are not met and it is neither replaced nor eliminated, when an elimination has neither an import path nor a replacement, and when an energy or life-support function is left with fewer sources than the redundancy rule needs. A generated table per locale lists every scaling action with its reason. Comparing those tables across locales gives the record of what the plant changes in each place.
 
-A check, `flow_graph/param/test_site_capability.py` (to be created), fails when a unit's needs are not met by the profile and no decision is recorded, and when a decision retires an energy or life-support unit without naming a diverse replacement (AGENTS.md, Redundancy). A generated table per locale lists every decision with its reason. Comparing those tables across locales gives the record of what the plant changes in each place.
+### 5.5 Power portfolio
+
+Each profile lists the power sources the local resource supports, each with its resource basis: PV, wind, geothermal power and heat, hydro where the terrain allows, wave energy and ocean thermal energy conversion where a cited resource exists, fuel cells and engines on plant-made fuels, and storage (electrochemical, hydrogen, thermal, and pumped hydro where the terrain allows). Fission and other sources enter only as flagged options, each with its own study before it enters a balance.
+
+The portfolio is sized by one rule at every site. The solver finds the generation that closes the energy balance through the worst stretch the site presents: a night, a dark season, a calm, a dust storm, an eclipse or a storm at sea. The installed generation is that amount times the oversize factor (`pv_oversize_factor` at the baseline, generalised to the whole portfolio). Storage covers the worst stretch. Every energy function keeps a spare or a source of a different technology. The share of each source is a profile entry with a stated basis; the default is the least installed capacity that meets the rule.
 
 ## 6. Death Valley
 
@@ -199,7 +228,7 @@ The 0.4 % cooling dry bulb for the profile comes from the American Society of He
 - Structure. The region has active faults, so seismic loads come from the hazard tool at the parcel. Saline and sulfate soils set the concrete exposure class (ACI 318, sulfate exposure category, edition per AQS-STD-007). Alluvial fans need flash-flood drainage.
 - Local feedstocks. Evaporite minerals (borates, halite, gypsum) and scrap from mining districts are candidate feeds, each mapped to an assay case before use.
 - Logistics and codes. The truck dock and the United States building family apply unchanged, with the state codes of the parcel.
-- Sectors. None is retired. HEAT, WTR, ELEC and FARM are resized, and a water intake unit is added.
+- Scaling. No sector is eliminated. HEAT, WTR, ELEC and FARM are sized up, and a water intake unit is added.
 
 ## 7. Antarctica
 
@@ -228,7 +257,7 @@ Table 7.1. Antarctic environment
 
 ### 7.2 Design consequences
 
-- Power. PV produces nothing through the dark season, so a daily night-hours basis fails. Storage becomes seasonal. The candidates are the plant's own hydrogen with the fuel cell, sized for the dark season, wind generation as a diverse winter source, and imported fuel as the last resort. The basis for the 200 % PV rule at such a site is an owner decision (Q-024).
+- Power. PV produces nothing through the dark season, so a daily night-hours basis fails. Storage becomes seasonal. The candidates are the plant's own hydrogen with the fuel cell, sized for the dark season, wind generation as a diverse winter source, and imported fuel as the last resort. The power portfolio (section 5.5) applies the oversize rule to the dark season.
 - Heat. Heating dominates. Process waste heat becomes a resource: DRY_COOLER becomes a heat recovery coil, and the seawater intake is warmed with waste heat as at McMurdo [12]. All water lines need freeze protection.
 - Materials. The material temperature check gains a minimum design temperature. Metals follow the low-temperature limits and impact tests of ASME B31.3-2024 paragraph 323.2.2 [14]. Thermoplastics outside heated space are excluded.
 - Water. Seawater reverse osmosis is the default, with snow melt as the diverse second source. Brine and treated waste water discharges follow Annex III [13].
@@ -239,7 +268,7 @@ Table 7.1. Antarctic environment
 - Crew. No evacuation is possible for months, so the backup duration for energy and life support is set by the dark season rather than the hours in NFPA 110. At a plateau site the low pressure makes oxygen enrichment of rooms from the plant's own oxygen an option, limited by the fire rules for enriched atmospheres.
 - Logistics. Ships and aircraft arrive in the summer season. The resupply interval sets the product `hold_d` values and the spares holding, and products leave once a year.
 - Codes. The Antarctic Treaty family is added on top of the operating state's own law; for the United States this is the Antarctic Conservation Act and 45 CFR Part 670 [15].
-- Sectors. PUMPED_HYDRO needs heated enclosed reservoirs and is a candidate for an alternate; GEO changes from heat source to heat store; a wind generation unit, a seawater intake unit and seasonal hydrogen storage are added.
+- Scaling. PUMPED_HYDRO needs heated enclosed reservoirs and is a candidate for elimination with hydrogen storage as the replacement; GEO changes from heat source to heat store; a wind generation unit, a seawater intake unit and seasonal hydrogen storage are added.
 
 ## 8. Mars
 
@@ -273,11 +302,11 @@ Table 8.1. Mars environment
 ### 8.2 Design consequences
 
 - What a building is. The mean surface pressure is close to the triple point of water, so open liquid water cannot be kept. Habitat and process halls are pressurised shells whose structure is governed by internal pressure, not gravity. Regolith cover gives shielding and part of the load to balance the pressure. A process hall can run at a lower pressure in a carbon dioxide and nitrogen buffer gas, enough to keep water liquid; that pressure is a profile driver so that its effect on structure and safety can be swept.
-- Atmosphere as a resource. Carbon dioxide feeds MEOH (methanol synthesis) and a new methanation alternate for propellant. Nitrogen and argon for buffer gas come from separating the atmosphere in CRYO. Solid oxide electrolysis of carbon dioxide [28] is the diverse second oxygen source behind water electrolysis. Taking the atmosphere in needs a compressor or a freezing collector from a fraction of a kilopascal; this is a new unit.
+- Atmosphere as a resource. Carbon dioxide feeds MEOH (methanol synthesis) and a new methanation unit for propellant. Nitrogen and argon for buffer gas come from separating the atmosphere in CRYO. Solid oxide electrolysis of carbon dioxide [28] is the diverse second oxygen source behind water electrolysis. Taking the atmosphere in needs a compressor or a freezing collector from a fraction of a kilopascal; this is a new unit.
 - Heat rejection. The thin atmosphere gives weak convection, so radiators and ground heat exchange replace air coolers. The cold surroundings lower the lift for carbon dioxide condensing and oxygen liquefaction.
 - Water. Ground ice extraction and melting is a new unit, with perchlorate removal. Recycling closure matters more than on Earth.
 - Feedstock. Regolith enters through the silicate and oxide feed case of AQS-ASSAY-001. Perchlorate is both a hazard and an oxygen source. Imported hardware and packaging are further feeds. Each needs an assay case before use.
-- PV and storage. Storage covers the sol night and a dust storm. Array cleaning or a soiling allowance follows the settling rate. A non-solar primary is an owner decision (Q-024).
+- PV and storage. Storage covers the sol night and a dust storm. Array cleaning or a soiling allowance follows the settling rate. Non-solar sources enter through the power portfolio (section 5.5).
 - Thermal stores. Insulation thickness follows from the profile; stores can be buried in regolith.
 - Vents and relief. Nothing vents to an atmosphere that cannot take it. Vents go to recovery. Relief devices discharge against a low back pressure, so the relief register is recalculated with the profile pressure.
 - Combustion. The atmosphere has no usable oxygen. AFTERBURNER and BACKUP_GEN run on plant oxygen or are replaced by catalytic oxidation and fuel cells.
@@ -287,7 +316,7 @@ Table 8.1. Mars environment
 - Crew. Radiation shielding uses regolith and water. Life support follows the crewed spacecraft family.
 - Logistics. A landing pad replaces the dock. Resupply follows the transfer windows [16]. Surplus is used locally, stored or made into propellant (Q-026).
 - Codes. The Outer Space Treaty [29], the COSPAR policy on planetary protection [30] and the NASA interim directive for crewed Mars missions [31] apply, with NASA-STD-3001 for crew health [32]. Ground ice may lie in a special region under [30] (Q-027).
-- Sectors. PUMPED_HYDRO and the roof and catch tanks become alternates or are retired. GEO becomes regolith heat exchange. DOCK becomes a landing pad. Atmosphere intake, ice extraction and methanation are added. FARM moves into a pressurised grow room with a perchlorate-free substrate.
+- Scaling. PUMPED_HYDRO and the roof and catch tanks are replaced or eliminated. GEO becomes regolith heat exchange. DOCK becomes a landing pad. Atmosphere intake, ice extraction and methanation are added. FARM moves into a pressurised grow room with a perchlorate-free substrate.
 
 ## 9. Low Earth orbit
 
@@ -312,7 +341,7 @@ Table 9.1. Low Earth orbit environment
 
 - What a building is. Crew and liquid processes are in pressurised modules. PV, radiators and processes that want a vacuum (vacuum casting and melting, the PV cell line deposition steps, vacuum distillation) are on an unpressurised truss. Launch mass and volume drive plant density.
 - Heat rejection. Radiators are the only sink. Each rejected kilowatt is sized from radiation at the rejection temperature against the sink [37], so heat is rejected at the highest level of the heat ladder that will take it, and heat pumps lift low-grade heat to the radiator temperature.
-- Power. An eclipse occurs on most orbits, so storage cycles many times a day and cycle life governs. The bromine phase in ZNBR2 separates by gravity, so ZNBR2 needs an alternate. PV is sized on the sunlit fraction of the orbit.
+- Power. An eclipse occurs on most orbits, so storage cycles many times a day and cycle life governs. The bromine phase in ZNBR2 separates by gravity, so ZNBR2 needs a replacement. PV is sized on the sunlit fraction of the orbit.
 - Fluids. With no buoyancy, gas and liquid are separated by rotation or membranes, tanks use bladders or surface-tension devices, boiling and condensing need forced flow, packed scrubbers become rotating packed beds, flotation becomes centrifugal separation, and electrolysis and electrowinning cells remove gas by forced flow. Pumped hydro and the water tower are retired.
 - Combustion and fire. Open combustion is avoided: AFTERBURNER becomes a catalytic oxidiser and BACKUP_GEN a fuel cell, with a diverse backup of a different type. Water sprinklers do not apply; fire protection follows the crewed spacecraft family.
 - Materials. Exposed polymers are eroded by atomic oxygen, so exposed surfaces are chosen for that.
@@ -323,13 +352,54 @@ Table 9.1. Low Earth orbit environment
 - Logistics. A docking port replaces the dock. Products used in orbit include propellant from water, radiation shielding and structural parts; the plant can make the propellant that keeps the orbit up against drag.
 - Gravity by rotation. A rotating section gives a chosen apparent gravity at its working radius. Apparent gravity is a profile value, so this choice can be swept (Q-023).
 - Codes. The Outer Space Treaty [29] and the crewed spacecraft family apply, with debris mitigation standards.
-- Sectors. PUMPED_HYDRO, GEO and the dock are retired or replaced. DRY_COOLER becomes a radiator. The air separation in CRYO has no air to take and becomes cabin air processing. GAS scrubbers, FLOAT_SINK, ZNBR2 and the melting and casting units of FOUNDRY need alternates.
+- Scaling. PUMPED_HYDRO, GEO and the dock are eliminated or replaced. DRY_COOLER becomes a radiator. The air separation in CRYO has no air to take and becomes cabin air processing. GAS scrubbers, FLOAT_SINK, ZNBR2 and the melting and casting units of FOUNDRY need replacements.
 
-## 10. Architecture gaps
+## 10. Floating island
 
-Table 10.1 lists each gap found in section 3, the locales it blocks, and the parametric way to close it.
+### 10.1 Site and environment
 
-Table 10.1. Architecture gaps and their parametric handling
+The floating island is a self-contained platform at sea, moored or free-floating. The default is a moored platform in tropical waters deep enough for an ocean thermal gradient (Q-030), designed to ride out the design storm on its moorings, with relocation as an option (Q-031). Table 10.1 lists the values.
+
+Table 10.1. Floating island environment
+
+| Quantity | Value | Source |
+| --- | --- | --- |
+| Reference salinity of standard seawater | 35.165 g/kg at practical salinity 35 | [40] |
+| Sodium and chloride | 10.78 g/kg and 19.35 g/kg | [40] |
+| Magnesium | 1.284 g/kg | [40] |
+| Bromide | 0.067 g/kg | [40] |
+| Lithium | about 0.18 mg/kg | [41] |
+| Ocean thermal gradient | at least about 20 °C between the surface and about 1000 m depth is needed; it is found year-round in tropical waters | [42] |
+| Wave power | about 2.11 TW crossing the world's coasts and open-ocean contours, unevenly spread | [43] |
+| Least energy to desalinate seawater | 1.06 kWh/m³ at 50 % recovery | [44] |
+| Strongest hurricanes | Category 5, sustained wind of 70 m/s (157 mph) or more | [45] |
+| Atmospheric corrosivity | offshore category CX | [46] |
+| Packed columns in motion | static tilt harms liquid distribution more than motion of the same amplitude; a bed height of two to three column diameters is recommended; published packing height margins range from 1.1 to 2.0 | [47] |
+| Columns in roll | structured packing keeps a loss of efficiency under motion; random packing recovers at higher motion frequency | [48] |
+| Wind, wave, current and design storm at the site | metocean data and the class society's environmental load method | [49] |
+
+### 10.2 Design consequences
+
+- What a building is. The plant is a hull. Its whole mass, including structure, equipment, liquid inventories and ballast, is limited by the displacement, and its centre of gravity and the free surfaces of its liquids set its stability and freeboard. Mass and centre of gravity become sizing outputs summed over the scaled units, with stability and freeboard as checks under the class rules [50], [49]. Liquid inventories are divided into compartments to limit the free-surface effect, and building height is limited by stability.
+- Loads. Wave, wind and current act on the hull and the moorings, with salt spray and green water on deck. Exposed steel follows the offshore corrosivity category [46].
+- Motion. Roll, pitch and heave tilt and vary the apparent gravity. Settlers, flotation, open tanks, stirred tanks, electrowinning cells and the bromine phase in ZNBR2 are checked against the design heel and motion. Packed columns are sized with a motion margin and a limited bed height [47], [48]. Tanks are checked for sloshing. Motion is a profile group so that every sizing function that uses gravity also sees the tilt.
+- Seawater as a resource. Seawater is the cooling medium, the water source and a mineral feed. Desalination replaces the dock water make-up. The reject brine feeds salt by evaporation, magnesium as the hydroxide, bromine by oxidation and stripping, and lithium by sorption [40], [41]; sodium chloride brine also feeds the existing bipolar membrane electrodialysis units (BMED_ACID, BMED_BASE) for acid and base. Each needs a feed case in AQS-ASSAY-001.
+- Heat rejection. Seawater exchangers replace DRY_COOLER. Deep cold water, where an intake reaches it, cools to a lower temperature and can also serve ventilation. Seawater wetted parts need materials for chloride and fouling.
+- Power. Deck area limits PV. Wind, wave energy and ocean thermal energy conversion [42] enter the power portfolio where the site supports them. Pumped hydro on a hull has little head and costs stability, so it is a candidate for elimination with another storage technology as the replacement. The ground loop is replaced by seawater-source heat exchange.
+- Feedstock. Seawater minerals, floating plastic debris, seaweed and waste delivered by ship are candidate feeds, each mapped to an assay case before use.
+- Farm. The grow bed is soilless and suits a platform. Aquaculture and the nutrients in deep water are options for a later study.
+- Structure and earthing. There is no soil. Hull structure and moorings follow the class society's rules. Earthing is to the sea through the hull, with cathodic protection.
+- Logistics. A berth with cranes replaces the truck dock. Transfers are limited by sea state, so the resupply interval and the weather window set the hold times. Products leave by ship.
+- Safety and discharges. Fire protection, life-saving appliances and evacuation follow the Safety of Life at Sea convention [51]. Discharges of oil, sewage, garbage and air emissions follow MARPOL [52].
+- Codes. The marine family is added: the class society's rules [49], SOLAS [51], MARPOL [52], the Code for the Construction and Equipment of Mobile Offshore Drilling Units as the model for a manned floating installation [53], the International Code on Intact Stability [50], and the port facility and ship security code where the platform trades internationally [54]. The flag or coastal state decides which apply (Q-030).
+- Crew. Habitability under motion is a check, and the crew has a sea evacuation route.
+- Scaling. PUMPED_HYDRO is eliminated with a replacement storage; GEO is replaced by seawater exchange; the roof and catch tanks are sized down for mass and free surface; DOCK becomes a berth; heavy FOUNDRY units are sized down for mass; seawater intake, desalination, mineral recovery, wave and ocean thermal units are added.
+
+## 11. Architecture gaps
+
+Table 11.1 lists each gap found in sections 3 and 10, the locales it blocks, and the parametric way to close it.
+
+Table 11.1. Architecture gaps and their parametric handling
 
 | Gap | Blocks | Handling |
 | --- | --- | --- |
@@ -337,21 +407,25 @@ Table 10.1. Architecture gaps and their parametric handling
 | Atmospheric pressure and air are literals | Antarctic plateau, Mars, orbit | atmosphere group in the profile; densities and partial pressures computed in `site.py` |
 | Only an air heat sink exists | Death Valley summer, Mars, orbit | heat rejection mode per heat ladder level (air, evaporative, ground, radiative, heat pump lift); radiator sizing function |
 | Solar model is one mean day | Antarctica, Mars, orbit | resource model in the profile; storage sized for the longest dark or low period; PV rule basis per Q-024 |
-| Free surfaces and buoyancy assumed | orbit, partly Mars | buoyant separation and free surface needs; alternate units |
-| Combustion and vents use air | Mars, orbit | air oxidant and vent sink needs; recovery and catalytic alternates |
-| Ground contact assumed | orbit, partly Mars and Antarctica | ground group may be not applicable; foundation, earthing and GEO read it |
+| Free surfaces and buoyancy assumed | orbit, partly Mars and the floating island | buoyant separation and free surface needs; replacement units |
+| Apparent gravity assumed steady and vertical | floating island | motion group in the profile; tilt and motion margins in the sizing functions; sloshing checks |
+| Mass, centre of gravity and stability not modelled | floating island, orbit | operating mass and centre of gravity summed over the scaled units; stability and freeboard checks |
+| Seawater is not a feed or a heat sink | floating island, coastal Antarctica | seawater intake, desalination and mineral recovery units; seawater feed case |
+| Combustion and vents use air | Mars, orbit | air oxidant and vent sink needs; recovery and catalytic replacements |
+| Ground contact assumed | floating island, orbit, partly Mars and Antarctica | ground group may be not applicable; foundation, earthing and GEO read it |
 | Open liquid water assumed | Mars, orbit | liquid water at ambient need; hall pressure driver |
-| Truck logistics assumed | Antarctica, Mars, orbit | logistics group sets hold times, spares and outlets |
-| One jurisdiction | Antarctica, Mars, orbit | code families per row of the editions table |
+| Truck logistics assumed | Antarctica, floating island, Mars, orbit | logistics group sets hold times, spares and outlets |
+| One jurisdiction | Antarctica, floating island, Mars, orbit | code families per row of the editions table |
 | Feed cases are terrestrial | all | local feedstock group mapped to new assay cases |
-| Graph is single-site | all | capability decisions applied to the base graph into a locale namespace |
+| Graph is single-site | all | scaling actions applied to the base graph into a locale namespace |
+| Power sized from PV and one mean day | all | power portfolio solved through the worst stretch with the oversize factor (section 5.5) |
 | Scripts read `drivers.json` directly | all | every read goes through `drivers.load()`; a test rejects a direct read |
 
-## 11. Build order
+## 12. Build order
 
-The work is split into phases, each closed by its own check. Tasks X-LOC-01 to X-LOC-10 in AQS-PLAN-007 track them. Table 11.1 gives the order.
+The work is split into phases, each closed by its own check. Tasks X-LOC-01 to X-LOC-12 in AQS-PLAN-007 track them. Earth sites come before off-world sites. Table 12.1 gives the order.
 
-Table 11.1. Build phases
+Table 12.1. Build phases
 
 | Task | Phase | Done when |
 | --- | --- | --- |
@@ -359,14 +433,16 @@ Table 11.1. Build phases
 | X-LOC-02 | Profile schema, baseline profile and loader | schema and baseline profile committed; `drivers.load()` applies the profile; every script reads drivers through the loader; baseline regeneration unchanged |
 | X-LOC-03 | Constants into the profile | gravity, pressure, air composition and air densities read from the profile; baseline regeneration unchanged |
 | X-LOC-04 | Site selection and namespaces | `--site`, `AQS_SITE`, `--all-sites`; outputs under `sites/<site_id>/`; register handles locale numbers |
-| X-LOC-05 | Unit needs and capability decisions | needs table, decision check and per-locale decision table generated |
-| X-LOC-06 | Heat rejection, solar and storage models | rejection modes, radiator sizing and the solar resource model in the solver |
+| X-LOC-05 | Sector and unit scaling | needs table, scaling map, scaling check and per-locale scaling table generated |
+| X-LOC-06 | Power portfolio, heat rejection and storage models | portfolio solved through the worst stretch with the oversize factor; rejection modes and radiator sizing; solar and other resource models in the solver |
 | X-LOC-07 | Death Valley variant | profile, site basis page, regeneration and closure pass |
+| X-LOC-11 | Floating island variant | as X-LOC-07, with the motion group, mass and stability checks, seawater feed case and the marine code family |
 | X-LOC-08 | Antarctic variant | as X-LOC-07, with the treaty code family |
-| X-LOC-09 | Mars variant | as X-LOC-07, with in-situ feed cases and alternate units |
-| X-LOC-10 | Low Earth orbit variant and cross-locale comparison | as X-LOC-07, with microgravity alternates; a generated comparison of decisions and sizes across locales |
+| X-LOC-09 | Mars variant | as X-LOC-07, with in-situ feed cases and replacement units |
+| X-LOC-10 | Low Earth orbit variant | as X-LOC-07, with microgravity replacements and radiators |
+| X-LOC-12 | Cross-locale comparison | a generated comparison of scaling actions, power portfolios and unit sizes across every profile |
 
-## 12. Acceptance checks
+## 13. Acceptance checks
 
 These checks are added with the phase that needs them and run in `scripts/check_all.sh`.
 
@@ -374,11 +450,12 @@ These checks are added with the phase that needs them and run in `scripts/check_
 - With the baseline profile, the resolved drivers equal `drivers.json` and `regen --check` changes nothing.
 - No script reads `drivers.json` except through the loader, and no sizing module contains a gravity or atmospheric pressure literal.
 - Every profile in `flow_graph/param/sites/` (to be created) regenerates, and its loop closure and mass and energy balance checks pass within the misfit gate.
-- Every unit whose needs a profile does not meet has a decision, and no energy or life-support unit is retired without a diverse replacement.
+- Every unit whose needs a profile does not meet is replaced or eliminated; every elimination has an import path or a replacement; no energy or life-support function is left with fewer sources than the redundancy rule needs.
+- Each profile's power portfolio closes the energy balance through its worst stretch with the oversize factor applied.
 - Document numbers are unique as number and site pairs, and every locale page has a number from the register tool.
 - Every check document in a locale cites a governing clause from that locale's code families or is reported open.
 
-## 13. Owner decisions
+## 14. Owner decisions
 
 The questions below are logged in AQS-OQ-001 with the default the work will proceed on.
 
@@ -386,14 +463,16 @@ The questions below are logged in AQS-OQ-001 with the default the work will proc
 - Q-021. The Antarctic site class: coastal or plateau. Default: coastal, McMurdo class; plateau as a second profile.
 - Q-022. The Mars site: mid-latitude ice or equatorial. Default: mid-latitude with shallow ice, Arcadia Planitia class.
 - Q-023. The orbit and gravity: station-class orbit or a sun-synchronous orbit with little eclipse, and whether a rotating section supplies gravity. Default: station-class orbit, no rotation.
-- Q-024. The PV rule and non-solar primaries where sunlight fails for long periods. Default: the 200 % rule applied to the worst period the storage must bridge; wind added where a resource is cited; nuclear power recorded as an option only.
+- Q-024. Closed by the owner: power sources are chosen per site from the local resource (section 5.5); the oversize rule applies per site to the worst stretch; fission and other sources are flagged options with their own studies.
 - Q-025. Waste processing under the Antarctic Treaty. Default: treat the plant as a waste processing facility that needs a comprehensive environmental evaluation.
 - Q-026. Surplus outlets where export is impractical. Default: local use, storage and propellant.
 - Q-027. Planetary protection at Mars ice. Default: site outside special regions.
 - Q-028. Document numbers for locale copies. Default: base number with a site suffix.
 - Q-029. Crew size per locale. Default: the baseline crew at every locale.
+- Q-030. The floating island site and jurisdiction: moored or free-floating, and under which flag or coastal state. Default: moored in tropical waters with an ocean thermal gradient; class society rules with SOLAS and MARPOL.
+- Q-031. Storm strategy for the floating island: ride out the design storm on the moorings, or relocate ahead of it. Default: ride it out, with relocation as an option.
 
-## 14. References
+## 15. References
 
 1. National Centers for Environmental Information (NCEI), Summary of Monthly Normals 1991–2020, station Death Valley NP, CA US (USC00042319). <https://www.ncei.noaa.gov/access/services/data/v1?dataset=normals-monthly-1991-2020&stations=USC00042319&format=pdf&startDate=0001-01-01&endDate=9996-12-31>
 2. World Meteorological Organization, World Weather and Climate Extremes Archive, highest recorded temperature (Furnace Creek, 1913-07-10). <https://wmo.asu.edu/>
@@ -434,3 +513,18 @@ The questions below are logged in AQS-OQ-001 with the default the work will proc
 37. European Cooperation for Space Standardization (ECSS), ECSS-E-ST-31C, Space engineering: Thermal control general requirements (2008).
 38. NASA, NASA achieves water recovery milestone on International Space Station, news release 2023-06-20.
 39. European Space Agency (ESA) Space Debris Office, ESA's Annual Space Environment Report, latest issue.
+40. Millero F.J. et al., The composition of Standard Seawater and the definition of the Reference-Composition Salinity Scale, Deep-Sea Research I 55 (2008) 50–72.
+41. Wright D.G. et al., Absolute Salinity, "Density Salinity" and the Reference-Composition Salinity Scale: present and future use in the seawater standard TEOS-10, Ocean Science 7 (2011) 1–26, section 3.1.
+42. NOAA Office for Coastal Management, Ocean Thermal Energy Conversion (OTEC) Technology, technical fact sheet. <https://coast.noaa.gov/data/czm/media/technicalfactsheet.pdf>
+43. Gunn K., Stock-Williams C., Quantifying the global wave power resource, Renewable Energy 44 (2012) 296–304.
+44. Elimelech M., Phillip W.A., The future of seawater desalination: energy, technology, and the environment, Science 333 (2011) 712–717.
+45. NOAA National Hurricane Center, Saffir-Simpson Hurricane Wind Scale. <https://www.nhc.noaa.gov/aboutsshws.php>
+46. ISO 12944-2:2017, Paints and varnishes — Corrosion protection of steel structures by protective paint systems — Part 2: Classification of environments.
+47. Effects of Tower Motion on Packing Efficiency, Society of Petroleum Engineers paper 143766 (2011). <https://doi.org/10.2118/143766-MS>
+48. Schultes M., Marinization of mass transfer columns for floating liquefied natural gas applications, Distillation and Absorption 2018 conference. <https://skoge.folk.ntnu.no/prost/proceedings/Distillation&Absorption-2018/papers/17schultes.pdf>
+49. A classification society's offshore rules for stability and watertight integrity, position mooring and environmental loads (for example the DNV offshore standards and recommended practices), latest editions.
+50. International Maritime Organization, International Code on Intact Stability, 2008 (2008 IS Code).
+51. International Maritime Organization, International Convention for the Safety of Life at Sea, 1974, as amended (SOLAS).
+52. International Maritime Organization, International Convention for the Prevention of Pollution from Ships (MARPOL), Annexes I to VI.
+53. International Maritime Organization, Code for the Construction and Equipment of Mobile Offshore Drilling Units, 2009 (2009 MODU Code).
+54. International Maritime Organization, International Ship and Port Facility Security Code (ISPS Code).

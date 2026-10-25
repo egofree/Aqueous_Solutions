@@ -1066,6 +1066,20 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {USAP -- United States Antarctic Program.}
 
+{DNV -- Det Norske Veritas, a classification society that publishes offshore standards and recommended practices.}
+
+{ISPS -- International Ship and Port Facility Security Code of the International Maritime Organization.}
+
+{MARPOL -- International Convention for the Prevention of Pollution from Ships.}
+
+{MODU -- Mobile offshore drilling unit; the IMO MODU Code sets construction and equipment rules for such units.}
+
+{OTEC -- Ocean thermal energy conversion: power from the temperature difference between warm surface and cold deep seawater.}
+
+{SOLAS -- International Convention for the Safety of Life at Sea.}
+
+{TW -- Terawatt, 10^12 W.}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}
