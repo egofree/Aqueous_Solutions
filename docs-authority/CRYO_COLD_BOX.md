@@ -1,13 +1,13 @@
 # Cryogenic cold-box internals
 
 Document number: AQS-CRY-002  
-Revision: B  
-Date: 2026-09-28  
+Revision: C  
+Date: 2026-10-24  
 PFD: AQS-PFD-CRY-001 (`cryo_pfd.png`)  
 Equipment: AQS-EQP-CRY-001  
 Streams: AQS-STR-001 S02–S05 / S18 / S24 / S45 / S49–S50 / **S54–S56** / **S64** / **S67** / **S70**
 
-Authority: root `09-air-liquefaction-cryogenic.md` (ALCRM narrative),
+Authority: root `09-air-liquefaction-cryogenic.md` (air liquefaction narrative),
 `GAS_SYSTEM/Gas_System_overview.md`, AQS-EQP-CRY-001, AQS-BLD-001
 (L-1 east of CORE; FB_CRYO_PROCESS), AQS-HSE-001 (NFPA 2/55; MAQ),
 AQS-PHF-001, AQS-PWR-002 / AQS-FC-001 (CRYO_H2 consumers), AQS-EQP-GEO-001
@@ -17,6 +17,7 @@ AQS-PHF-001, AQS-PWR-002 / AQS-FC-001 (CRYO_H2 consumers), AQS-EQP-GEO-001
 |---|---|---|---|
 | A | — | Basic issue: cold-box internals + HVAC/geo heat-rejection split | 2026-09-28 |
 | B | 1 | Vent closure: S64 H₂ normal; S67 flue-cap; S70 AHU condensable (AQS-VENT-001) | 2026-09-28 |
+| C | 2 | Unexplained label ALCRM replaced by "air liquefaction cold box" (open question Q-017 closed) | 2026-10-24 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -24,7 +25,7 @@ Licence: CERN-OHL-S-2.0.
 
 ## 1. Purpose
 
-Lock ALCRM cold-box internals, heat-rejection split, and H₂ normal path consistent with vent closure.
+Lock the air liquefaction cold-box internals, heat-rejection split, and H₂ normal path consistent with vent closure.
 
 ## 2. Scope
 

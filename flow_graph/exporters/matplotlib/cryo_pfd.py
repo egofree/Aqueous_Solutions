@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AQS-PFD-CRY-001 — CRYO / ALCRM cold-box internals + Q4/HVAC hooks.
+"""AQS-PFD-CRY-001 — CRYO / air liquefaction cold-box internals + Q4/HVAC hooks.
 
 Authority: AQS-CRY-002, AQS-EQP-CRY-001, doc 09, freecad/cryo.py,
 STREAM_REGISTER S02–S05/S18/S24/S45/S49–S50/S54–S56/S64/S67/S70. AQS-VENT-001.
@@ -36,7 +36,7 @@ def main():
     _REG = ia_register_lines(_SEC.values())
     fig, ax = S.new_fig(18.5, 13.5)
     S.title_block(
-        ax, DOC, "CRYO  /  ALCRM  COLD BOX",
+        ax, DOC, "CRYO  /  AIR LIQUEFACTION  COLD BOX",
         "Intake → Stirling 77–90 K + distillation  →  CRYO H2/O2/N2/CO2  ·  "
         "Q4 / dedicated cool / AHU condensable return  ·  L-1 east of CORE",
     )

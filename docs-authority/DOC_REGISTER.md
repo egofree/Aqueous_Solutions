@@ -60,7 +60,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence (cold start from empty) | current |
 | AQS-COM-003 | `docs-authority/PERF_TEST.md` | A | 2026-10-16 | Performance test | current |
 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | E | 2026-10-24 | Compliance matrix: design intent against code themes | current |
-| AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | B | 2026-09-28 | Cryogenic cold-box internals | current |
+| AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | C | 2026-10-24 | Cryogenic cold-box internals | current |
 | AQS-CRY-003 | `docs-authority/COLD_BOX.md` | — | — | Cold box | current |
 | AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | A | 2026-10-16 | Instrument index | current |
 | AQS-CTL-002 | `docs-authority/CONTROL_ARCH.md` | A | 2026-10-16 | Control philosophy and PLC architecture | current |
