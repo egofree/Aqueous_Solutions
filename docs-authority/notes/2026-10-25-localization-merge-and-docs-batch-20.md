@@ -38,3 +38,17 @@ the mass balance and reports coverage 1.09; its design check carries one
 finding, QC-09 (site H2 receiver rack holds 17.406 kg against the 19 kg Q-004
 basis), and the groundwater intake unit is not yet in the graph. X-LOC-07 stays
 open on the board until those two close.
+
+## Addendum 2: X-LOC-07 close-out items
+
+QC-09 resolved: the design check compares the receiver rack against the graph's
+sized hydrogen store (17 kg, AQS-ELEC-007 / X-PAR-12) instead of the superseded
+19 kg constant, and passes at both sites. The groundwater intake unit GW_INTAKE
+entered the graph through the standard new-unit induction (tree leaf, envelope
+STL, instrument loops FT/PT/CT, duty sheet with issued section 3 selections,
+sizing sweep document, P&ID, task chain; the tree test count pins grew by one).
+Its make-up edge to ROOF_TANK books the difference of the water cycle and solves
+to zero at the baseline. Named next item for the Death Valley lane: the profile
+does not yet carry air-moisture design values, so the condensate model still
+books the baseline 67.44 kg/d harvest at the site; when humidity binds, the
+harvest falls and the intake picks up the deficit.

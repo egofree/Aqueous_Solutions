@@ -33,7 +33,7 @@ This page records the Death Valley variant: the bounding hot-desert environment 
 ## 3. Design consequences as built
 
 - Heat rejection: the low-grade water loop rejects evaporatively through DRY_COOLER (mode `evaporative`, charged against the water balance), because outside air sits above the low-grade return for much of the summer; the ground loop keeps GEO_GHEX in ground mode. Night rejection into the thermal stores and a heat-pump lift remain design options on this profile and are not drawn by the run.
-- Water: rain is negligible, so the make-up source is groundwater with sand separation and reverse osmosis for silica, fluoride and arsenic; the reject is a plant stream with a defined outlet. The graph does not yet carry the intake unit, so the run shows the shortfall instead of a fed make-up line (Section 5).
+- Water: rain is negligible, so the make-up source is groundwater with sand separation and reverse osmosis for silica, fluoride and arsenic; the reject is a plant stream with a defined outlet. The intake unit GW_INTAKE is in the graph and in the site run; its rate solves to 0 kg/d until the profile carries the air-moisture design values and the condensate model reads them (Section 5, open item 1).
 - PV: the resource is higher than the baseline (6.3 against 5.41 kWh/kWp/d before losses, NREL_PVWATTS class basis), with cell-temperature and soiling losses to be applied by the parcel-hourly run. The sizing rule is unchanged: PV is sized at the oversize factor times the nameplate that closes the daily balance.
 - Storage and coverage: the worst stretch stays the night. The first locale run reports a plant demand of 165.87 kW, 2322.2 kWh drawn over the stretch and a coverage of 1.09 (AQS-SITE-005, the site copy under `sites/death_valley/`).
 - Crew and ventilation: outdoor work follows the state heat illness rules (CA_TITLE8_3395). Cooling dominates the ventilation load at the interim design dry bulb.
@@ -46,13 +46,11 @@ The first locale run regenerated 269 outputs that differ from the baseline into 
 
 ## 5. Closure result and open items
 
-The mass balance closes at the site. One design check fails and is recorded, not silently resolved:
-
-1. QC-09 (H2 bank mass at 200 bar): the site-run receiver rack holds 17.406 kg against the 19 kg basis of Q-004, outside the 5 percent band. The bank either re-sizes for the site or the basis moves; the decision belongs with the receiver first-article chain (Q-004, unit task 12 for the receivers).
+The mass balance closes at the site. The site design check passes: the former QC-09 finding is resolved by making the check read the graph's sized hydrogen store (17 kg, AQS-ELEC-007 / X-PAR-12) instead of a frozen 19 kg constant that the store basis had superseded; the rack holds the store within the band at both sites.
 
 Open items, in order:
 
-1. The groundwater intake unit (well, sand separator, reverse osmosis, defined reject outlet) joins the graph; until then the water shortfall is visible only as the absent make-up line (the baseline books the peroxide make-up shortfall on IA-POT-01, a line the site run does not carry).
+1. Site humidity. The profile does not yet carry an air-moisture entry, so the hab air-handler condensate model still books the baseline harvest of 67.44 kg/d at this site. Death Valley's dew points are far below the coil temperatures; when the profile carries the humidity design values and the condensate model reads them, the harvest falls, the roof-tank balance shows the deficit, and the groundwater intake (GW_INTAKE, now in the graph and the site run at 0 kg/d) picks the make-up up by difference. This is the named next task of the Death Valley lane.
 2. ASHRAE climatic design conditions for the nearest listed station replace the interim design temperatures (A-M-385).
 3. The ASCE Hazard Tool lookups (wind, seismic, snow) and the geotechnical report at the parcel replace the interim bounding values (A-M-386, A-M-387).
 4. The parcel itself (Q-033); every parcel-bound value in this page is a station-climate interim until it is chosen.

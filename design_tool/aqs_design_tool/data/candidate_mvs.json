@@ -3489,6 +3489,26 @@
       }
     },
     {
+      "unit_id": "GW_INTAKE",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "intake",
+      "tags": [],
+      "params": {
+        "equipment_id": "GW_INTAKE-01",
+        "size_mm": [
+          900,
+          700,
+          1800
+        ],
+        "size_note": "L x W x H mm study envelope for the well pump, sand separator and RO rack; unit task 02 sizing pending",
+        "design_note": "RO reject leaves as a defined plant stream; the well source and quality basis is USGS_DV_GW for the Death Valley variant and the local well record at any other dry site"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
       "unit_id": "REMIN",
       "sector_id": "WTR",
       "enabled": true,
@@ -12183,6 +12203,23 @@
       "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "note": "Feedstock-agnostic. Composition is the AQS-ASSAY-001 Rev C reference point in seven phase classes, carried because the held rates were built on it. It is not the feed. params.assay_envelope holds the bounding cases, regolith-like through metal-rich PCB. Not a weighed sample. Rate stays 102.68 kg/d. The 150 kg/d dock feed is not restored. Do not resize. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-GW-MAKEUP",
+      "from_unit_id": "GW_INTAKE",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "liquid",
+      "carries": "groundwater make-up, reverse-osmosis treated",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "tbd",
+        "note": "closure TF: make-up by difference of the roof-tank balance (X-PAR-02 difference-type role)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "Water-cycle make-up by difference: carries what the atmospheric harvest (IA-HVAC-COND) and the internal recycling cannot supply. Solves to zero at the baseline site.; namespace=IA; layers=mass"
     },
     {
       "stream_id": "IA-POT-01",
