@@ -6734,5 +6734,35 @@
   ],
   "needs_verification": true,
   "verification_test": "Compare with the HVAC design room and line temperatures"
+ },
+ {
+  "id": "A-M-385",
+  "value": "47.4",
+  "units": "C dry bulb",
+  "where": "site profile death_valley thermal.cooling_dry_bulb_C (binds site_design_dry_bulb_C)",
+  "basis": "NOAA_NORMALS_DV July mean daily maximum, station USC00042319 (1991-2020). Interim: the ASHRAE 0.4 % cooling design dry bulb for the nearest listed station is higher; the interim value understates the design cooling load.",
+  "sensitivity": "Cooling-rejection sizing, DRY_COOLER approach and the evaporative water charge at the Death Valley variant scale with the design dry bulb.",
+  "replaced_by": "ASHRAE climatic design conditions (ASHRAE_FUND_2021 ch. 14) for the nearest listed station, or the NSRDB hourly record at the chosen parcel (AQS-PLAN-011 section 6)",
+  "task": "X-LOC-07"
+ },
+ {
+  "id": "A-M-386",
+  "value": "SDS 0.5 g; SD1 0.27 g; TL 8 s",
+  "units": "g; s",
+  "where": "site profile death_valley seismic (binds wt_SDS, wt_SD1)",
+  "basis": "Interim bounding study values for the Death Valley variant: the Eastern California shear zone is active and the parcel is unfixed, so the interim values are set at about twice the baseline study accelerations until the ASCE Hazard Tool lookup at the parcel replaces them.",
+  "sensitivity": "Seismic base shear, tank sloshing and anchorage of the variant grow with the spectral accelerations.",
+  "replaced_by": "ASCE Hazard Tool at the chosen parcel with the site class from the geotechnical report (ASCE7_22)",
+  "task": "X-LOC-07"
+ },
+ {
+  "id": "A-M-387",
+  "value": "bearing 144 kPa; unit weight 19 kN/m3; bore 20 W/m",
+  "units": "kPa; kN/m3; W/m",
+  "where": "site profile death_valley ground (binds soil_allow_kPa, soil_unit_weight_kN_m3, ghex capacity)",
+  "basis": "Interim study values for alluvial-fan ground at the Death Valley variant: presumptive bearing for sandy gravel (IBC 1806 class), moist sandy-gravel unit weight, and the low end of the small-diameter bore band of KAVANAUGH2014 for warm ground.",
+  "sensitivity": "Foundations, the grounding grid and the ground-loop rejection capacity of the variant.",
+  "replaced_by": "Geotechnical investigation per IBC 1803 and a thermal response test on the first bore at the parcel",
+  "task": "X-LOC-07"
  }
 ]

@@ -223,7 +223,7 @@ The profile's `heat_rejection` group lists, per level of the heat ladder, the un
 
 ### 6.1 Site and environment
 
-Death Valley is a national park, and an industrial plant would sit outside it. The profile uses the climate record at Furnace Creek as the bounding hot desert climate; the parcel is an owner decision (Q-020). Table 6.1 lists the values.
+Death Valley is a national park, and an industrial plant would sit outside it. The profile uses the climate record at Furnace Creek as the bounding hot desert climate; the parcel is an owner decision (Q-033). Table 6.1 lists the values.
 
 Table 6.1. Death Valley environment
 
@@ -485,7 +485,7 @@ These checks are added with the phase that needs them and run in `scripts/check_
 
 The questions below are logged in AQS-OQ-001 with the default the work will proceed on.
 
-- Q-020. The Death Valley parcel: Furnace Creek climate with a parcel outside the park. Default: climate of station USC00042319; parcel to be chosen; United States codes with the state's own.
+- Q-033. The Death Valley parcel: Furnace Creek climate with a parcel outside the park. Default: climate of station USC00042319; parcel to be chosen; United States codes with the state's own.
 - Q-021. The Antarctic site class: coastal or plateau. Default: coastal, McMurdo class; plateau as a second profile.
 - Q-022. The Mars site: mid-latitude ice or equatorial. Default: mid-latitude with shallow ice, Arcadia Planitia class.
 - Q-023. The orbit and gravity: station-class orbit or a sun-synchronous orbit with little eclipse, and whether a rotating section supplies gravity. Default: station-class orbit, no rotation.
