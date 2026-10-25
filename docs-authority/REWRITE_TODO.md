@@ -50,6 +50,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/CRYO_COLD_BOX.md` | Rev D. Rewritten to the guide: numbering repaired, session wording removed, stream list corrected to the present graph (S05 and S06 retired; Q4_BUS contributors named from the graph, S70 endpoint corrected to FLUE_KO). No design decision changed. |
 | `docs-authority/ASME_CODE_INTENT.md` | Rev D, through `_asme_class.py`. Purpose and scope first, numbered sections and table titles; the truncated authority line repaired. No class, stamp or test changed. |
 | `docs-authority/BALANCE_RECONCILIATION.md` | Rev E, through `flow_graph/param/balance.py`. Purpose and scope first, revision record in order, sections and table titles renumbered (0-4 to 2-6; cross-references in balance.py, closure_tf.py and assumptions A-M-120/A-M-123 updated in the same change). No method, rate or result changed. Also fixed in this batch: the assumptions-register scan crashed on any model params.json whose `assumptions` entry is a list (CAST_LINE); params.json converted to the keyed form and the register runs again. |
+| `docs-authority/BOUGHT_SPECS.md` | Rev B, through `_bought_specs.py`. Purpose and scope first, numbered sections and table titles. No roster row, class or size changed. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -90,7 +91,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | --- | --- |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | |
-| `docs-authority/BOUGHT_SPECS.md` | |
 | `docs-authority/CONTROL_SOFTWARE.md` | |
 | `docs-authority/DERIVED_REVISIONS.md` | |
 | `docs-authority/EDGE_RATING_DUTY.md` | |

@@ -250,7 +250,7 @@ Table 3.1. Document numbers in use
 | AQS-PLAN-010 | `docs-authority/RESIZE_SWEEP.md` | B | 2026-10-16 | Bounding-case resize sweep | current |
 | AQS-PLAN-011 | `docs-authority/LOCALIZATION_PLAN.md` | J | 2026-10-25 | Localization plan: site profiles and locale variants | current |
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up | current |
-| AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | A | 2026-10-21 | Bought-item specification sheets | current |
+| AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | B | 2026-10-25 | Bought-item specification sheets | current |
 | AQS-PV-001 | `docs-authority/PV_CELL_MOD.md` | C | 2026-10-11 | Photovoltaic cell | current |
 | AQS-PWR-001 | `docs-authority/POWER.md` | A | 2026-10-17 | Power | current |
 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator | current |
