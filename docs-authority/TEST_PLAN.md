@@ -39,16 +39,16 @@ Total 635 items: 290 drivers, 345 register entries. Classification rule: first m
 | driver ifc_perim_small_mm | 1219 mm | AHJ fire-code review | X-PAR |
 | driver mv_kV | 12.47 kV collection and point of common coupling | Utility interconnection study (owner input A-M-113): service voltage | X-PAR |
 | driver pv_oversize_factor | 2.0 PV nameplate / PV needed to close the daily balance | NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility | X-PAR |
-| driver roof_snow_kPa | 0.24 kPa flat-roof snow (study) | ASCE 7 Hazard Tool ground snow load at the site | X-PAR |
+| driver roof_snow_kPa | 0.24 kPa flat-roof snow | ASCE 7 Hazard Tool ground snow load at the site | X-PAR |
 | driver san_compost_fraction | 0.25 share of excreta to compost toilets (daily average; each path sized for 100 %) | Owner HAB fit-out (number of each toilet type) and use log | X-PAR |
 | driver san_crew | 4 persons, HAB design occupancy (HABITATION params.crew_study) | Owner occupancy schedule | X-PAR |
 | driver san_farm_sep_m | 7.62 m minimum edge distance, sanitation units to any FARM unit, in addition to the HAB/FARM wall and separate ventilation | Owner and AHJ review; air-pressure cascade test FARM > HAB corridor > sanitation room | X-PAR |
-| driver soil_allow_kPa | 72.0 kPa allowable bearing, presumptive clay (CL/ML/MH/CH) | Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus | X-PAR |
-| driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist clay | Geotechnical report unit weight | X-PAR |
+| driver soil_allow_kPa | 72.0 kPa allowable bearing, presumptive | Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus | X-PAR |
+| driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist soil | Geotechnical report unit weight | X-PAR |
 | driver wt_Ie | 1.5 - importance factor, Risk Category IV (life-support energy) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_R | 3.0 - response modification, elevated-mass structure (conservative) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
-| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1, AQS-SITE-002 S1 0.05 g, site class D, Fv 2.4 (ASCE 7-22 Table 11.4-2) | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
-| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss, AQS-SITE-002 Ss 0.10 g, site class D, Fa 1.6 (ASCE 7-22 Table 11.4-1) | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
+| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1 | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
+| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
 | driver wt_TL_s | 8.0 s long-period transition | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_cell_len_m | 12.0 m max reservoir cell length (sloshing; min 2 cells per level) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_core_frac | 0.15 - plate fraction kept for stair, lift and penstock cores | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |

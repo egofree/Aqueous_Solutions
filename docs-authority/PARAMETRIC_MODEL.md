@@ -138,7 +138,7 @@ All solved units close.
 | ext_U_roof | 0.199 | W/(m2 K) | IECC2021_C402 | yes |
 | roof_pv_dead_kPa | 0.15 | kPa PV modules and ballasted racking | A-M-105 | yes |
 | roof_live_kPa | 0.96 | kPa | ASCE7_22 | yes |
-| roof_snow_kPa | 0.24 | kPa flat-roof snow (study) | A-M-105 | yes |
+| roof_snow_kPa | 0.24 | kPa flat-roof snow | A-M-105 | yes |
 | ext_conditioned | 1.0 | 1 conditioned, 0 unconditioned hall | A-M-104 (owner decision 2026-10-15: conditioned) | yes |
 | ext_U_wall | 0.534 | W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | IECC2021_C402 | yes |
 | ext_wall_h_mm | 6000 | mm eave height of the extension (EXT_HALL block height) | A-M-104 | yes |
@@ -457,8 +457,8 @@ All solved units close.
 | wt_penstock_loss_frac | 0.05 | - penstock friction as fraction of head | A-M-187 | yes |
 | wt_freeboard_m | 0.5 | m freeboard, lower reservoir | A-M-187 | yes |
 | wt_cell_len_m | 12.0 | m max reservoir cell length (sloshing; min 2 cells per level) | A-M-187 | yes |
-| wt_SDS | 0.107 | g design short-period spectral acceleration = 2/3 Fa Ss, AQS-SITE-002 Ss 0.10 g, site class D, Fa 1.6 (ASCE 7-22 Table 11.4-1) | ASCE7_22 | yes |
-| wt_SD1 | 0.08 | g design 1 s spectral acceleration = 2/3 Fv S1, AQS-SITE-002 S1 0.05 g, site class D, Fv 2.4 (ASCE 7-22 Table 11.4-2) | ASCE7_22 | yes |
+| wt_SDS | 0.107 | g design short-period spectral acceleration = 2/3 Fa Ss | ASCE7_22 | yes |
+| wt_SD1 | 0.08 | g design 1 s spectral acceleration = 2/3 Fv S1 | ASCE7_22 | yes |
 | wt_TL_s | 8.0 | s long-period transition | A-M-187 | yes |
 | wt_R | 3.0 | - response modification, elevated-mass structure (conservative) | A-M-187 | yes |
 | wt_Ie | 1.5 | - importance factor, Risk Category IV (life-support energy) | A-M-187 | yes |
@@ -466,8 +466,8 @@ All solved units close.
 | wt_life_per_shop | 2 | - HAB/FARM levels added per added shop level as the building grows (owner rule, Q-009) | A-M-187 | — |
 | maint_insert_life_y | {"BMED_ACID": 5, "BMED_BASE": 5, "BMED_UPW_POLISH": 5, "CRYO_ASU": 5, "CRYO_H2": 2, "H2_PURIFIER": 3, "MEOH_SYNTH": 3, "ALD": 2, "FORM": 1, "MEAM": 2, "HNO3": 0.5, "ACEX": 3, "ZNBR2": 5} | years between replacements of the consumable insert of each unit (membranes, sorbent, catalyst, gauze, resin, diaphragms, stack) | A-M-189 | yes |
 | maint_rotating | {"lube_mo": 6, "vibration_mo": 3, "bearing_y": 5, "seal_y": 3} | months/years for motors, pumps, fans and compressors | A-M-189 | yes |
-| soil_allow_kPa | 72.0 | kPa allowable bearing, presumptive clay (CL/ML/MH/CH) | IBC2027_1806 | yes |
-| soil_unit_weight_kN_m3 | 18.0 | kN/m3 moist clay | A-M-208 | yes |
+| soil_allow_kPa | 72.0 | kPa allowable bearing, presumptive | IBC2027_1806 | yes |
+| soil_unit_weight_kN_m3 | 18.0 | kN/m3 moist soil | A-M-208 | yes |
 | gw_depth_m | 0.0 | m below grade, groundwater (worst case at grade until measured) | A-M-208 | yes |
 | raft_fc_MPa | 35.0 | MPa concrete strength, raft and basement walls | A-M-208 | yes |
 | foundry_stock_demand_kg_d | 25.9 | kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2) | A-M-261 | yes |
@@ -985,6 +985,7 @@ All solved units close.
 | BVAD2022 | Anderson M.S. et al., Life Support Baseline Values and Assumptions Document, NASA/TP-2015-218570 Rev 2 (Feb 2022), Tables 4-90 and 4-91: per-crop harvest index, edible and inedible productivity and water content (inedible 90 % water), carbon content, O2 production, CO2 uptake and transpiration (tomato HI 45 %, edible 94 % water, C 43 %, CO2 36.24 g/m2/d, transpiration 2.77 kg/m2/d). |
 | CAMEO_REACT | NOAA CAMEO Chemicals reactivity groups: Peroxides, inorganic (H2O2) incompatible with Bases (KOH, NH3 aq) and with Hydrocarbons/solvents; Acids, strong oxidizing (HNO3) incompatible with Bases and Amines; Acids, strong non-oxidizing (HF, H3PO4) incompatible with Bases. |
 | CARLETON_HCL_2023 | Carleton University thesis, HCl leaching of lunar regolith simulant, doi:10.22215/etd/2023-15477: 38 % HCl, 90-108 C, 4 h, 150 % of stoichiometric acid. |
+| CA_TITLE8_3395 | California Code of Regulations, Title 8, sections 3395-3396: outdoor and indoor heat illness prevention (water, shade, cool-down periods, acclimatisation, high-heat procedures) binding site operations. |
 | CDA_PUB22 | Copper Development Association, Publication 22, Copper for Busbars (2014): high-conductivity copper C101 resistivity 1.724e-8 ohm m at 20 C, temperature coefficient 0.00393 /K; heat dissipation by convection and radiation from bar surfaces, emissivity about 0.4 for dull bright and 0.7-0.9 for oxidised or painted bars; laminated bars spaced one thickness apart; standard flat bar thicknesses 6.3 and 10 mm. |
 | CEAT2010_FORM | Determination of Optimum Conditions and the Kinetics of Methanol Oxidation, Chemical Engineering & Technology (2010), doi:10.1002/ceat.200900349: iron molybdate (Mo/Fe 1.5-5) fixed bed, 250-375 C, space times 20.25-50.63 g cat/(mol MeOH/h). |
 | CGA_S1_1 | CGA S-1.1, Pressure Relief Device Standards Part 1: Cylinders for Compressed Gases (2021): each high-pressure cylinder carries its own pressure relief device sized to this standard. |
@@ -1096,6 +1097,7 @@ All solved units close.
 | NARASIMHAN2000 | Narasimhan S., Jordache C., Data Reconciliation and Gross Error Detection, Gulf Publishing (2000), ch. 3: linear steady-state reconciliation, minimum weighted least-squares adjustment subject to the balance constraints. |
 | NASA_5A1998 | Mulloth L.M., Finn J.E., Carbon Dioxide Adsorption on a 5A Zeolite Designed for CO2 Removal in Spacecraft Cabins, NASA/TM-1998-208752: ASRT 5A isotherms 0-250 C, about 1.0 wt% CO2 at 0.4 kPa (3 torr), 25 C. |
 | NASA_CDRA2015 | Knox J.C. et al., Optimization of the Carbon Dioxide Removal Assembly (CDRA-4EU), NTRS 20150016500 (2015): two desiccant and two adsorbent beds, one pair adsorbing while the other regenerates at 204 C, nominal half-cycle 144 min, 34.7 m3/h. |
+| NCEI_DV_EXTREMES | NOAA NCEI station all-time records, Death Valley NP (USC00042319): highest recorded air temperature 56.7 C on 1913-07-10 (world record, WMO assessed); lowest about -9.4 C. Station extremes are interim bounding design values until the ASHRAE climatic design conditions for the nearest listed station are entered. |
 | NEC2026 | NFPA 70, National Electrical Code (2026): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
 | NEC2026_240 | NFPA 70-2026 240.6(A) standard ampere ratings; 240.87 arc energy reduction for breakers rated or adjustable to 1200 A or higher. |
 | NEC2026_705 | NFPA 70-2026 Article 705 Interconnected Electric Power Production Sources: 705.11 supply-side connection, 705.12 load-side 120 % rule, 705.20 disconnect, 705.30 overcurrent protection, 705.40 loss of primary source. |
@@ -1124,6 +1126,7 @@ All solved units close.
 | NIOSH7903 | NIOSH Manual of Analytical Methods 7903, Acids, inorganic (HCl by ion chromatography). |
 | NIST_WEBBOOK | NIST Chemistry WebBook, SRD 69, thermophysical properties of fluid systems (H2, O2 isotherms); NIST-JANAF standard enthalpy of formation of HCl(g) -92.31 kJ/mol. |
 | NOAA_NORMALS_DFW | NOAA NCEI U.S. Climate Normals 1991-2020, Dallas-Fort Worth Intl Airport (USW00003927): annual heating degree days base 65 F about 2272, cooling degree days about 2878. |
+| NOAA_NORMALS_DV | NOAA NCEI U.S. Climate Normals 1991-2020, Death Valley NP (USC00042319), 36.46 N 116.87 W, elevation -59 m: July mean daily maximum 47.4 C, July mean daily minimum 32.8 C, mean annual precipitation 56 mm (AQS-PLAN-011 section 6). |
 | NREL_NSRDB | Sengupta M. et al., The National Solar Radiation Data Base (NSRDB), Renewable and Sustainable Energy Reviews 89 (2018) 51-60; TMY hourly irradiance used by PVWatts v8. |
 | NREL_PVWATTS | NREL PVWatts Calculator v8, site run recorded in AQS-SITE-002 (5.41 kWh/kWp/d). |
 | NREL_PVWATTS8 | Dobos A.P., PVWatts Version 5 Manual, NREL/TP-6A20-62641 (2014), and NREL PVWatts Version 8 documentation (2022): module types standard (nominal efficiency about 19 %) and premium (about 21 %); ground coverage ratio input. |
@@ -1176,6 +1179,7 @@ All solved units close.
 | US1875746 | US Patent 1,875,746 (1932), Production of methylamine: vapour phase over dehydration catalyst at 350-450 C (preferably about 400 C), gas space velocity 100-3500 h-1 with conversion falling above about 1100, NH3:MeOH about 2.2. |
 | US3429929 | US Patent 3,429,929 (1969), Production of glyoxal: acetaldehyde oxidised with nitric acid in homogeneous aqueous solution above 30 C initiated by nitrogen oxides; copper catalyst; prior-art yield at most about 45 % on acetaldehyde reacted; product 8-40 wt% glyoxal with 1-2 % residual HNO3. |
 | USBM_CL_EW | U.S. Bureau of Mines, electrowinning of copper from chloride solutions (Report of Investigations), https://stacks.cdc.gov/view/cdc/237351: energy 1.1 kWh/kg from cuprous and 2.1 kWh/kg from cupric chloride electrolyte; current efficiency 85-90 %; diaphragm cell to keep anode Cl2 from the catholyte. |
+| USGS_DV_GW | United States Geological Survey, Death Valley regional groundwater system: wells on the alluvial fan yield water at about 30 C, moderately mineralised, with high silica, fluoride and arsenic; reverse-osmosis pretreatment is the common route (AQS-PLAN-011 section 6). |
 | USSA1976 | NOAA, NASA and USAF, U.S. Standard Atmosphere, 1976, NOAA-S/T 76-1562, U.S. Government Printing Office (1976): sea-level composition of dry air by volume (N2 0.78084, O2 0.209476, Ar 0.00934) and the sea-level pressure 101 325 Pa. |
 | VOGELBUSCH_MVR | Vogelbusch Biocommodities, mechanical vapour recompression evaporators, manufacturer data table: specific power 19-72 kWh per t water evaporated, rising with boiling-point elevation and stage count. |
 | WALTON2015 | Walton A. et al., The use of hydrogen to separate and recycle neodymium-iron-boron-type magnets from electronic waste, Journal of Cleaner Production 104 (2015) 236-241. |
@@ -1239,7 +1243,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver ext_U_roof | 0.199 W/(m2 K) | Roof assembly design |
 | driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 |
 | driver roof_live_kPa | 0.96 kPa | Structural review |
-| driver roof_snow_kPa | 0.24 kPa flat-roof snow (study) | ASCE 7 Hazard Tool ground snow load at the site |
+| driver roof_snow_kPa | 0.24 kPa flat-roof snow | ASCE 7 Hazard Tool ground snow load at the site |
 | driver ext_conditioned | 1.0 1 conditioned, 0 unconditioned hall | Bin-hour load calculation on TMY3 for the hall programme |
 | driver ext_U_wall | 0.534 W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | Wall assembly design |
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing |
@@ -1419,16 +1423,16 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver wt_penstock_loss_frac | 0.05 - penstock friction as fraction of head | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver wt_freeboard_m | 0.5 m freeboard, lower reservoir | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver wt_cell_len_m | 12.0 m max reservoir cell length (sloshing; min 2 cells per level) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
-| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss, AQS-SITE-002 Ss 0.10 g, site class D, Fa 1.6 (ASCE 7-22 Table 11.4-1) | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) |
-| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1, AQS-SITE-002 S1 0.05 g, site class D, Fv 2.4 (ASCE 7-22 Table 11.4-2) | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) |
+| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) |
+| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1 | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) |
 | driver wt_TL_s | 8.0 s long-period transition | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver wt_R | 3.0 - response modification, elevated-mass structure (conservative) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver wt_Ie | 1.5 - importance factor, Risk Category IV (life-support energy) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver wt_wind_ms | 50.0 m/s basic wind speed (site unknown) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver maint_insert_life_y | {"BMED_ACID": 5, "BMED_BASE": 5, "BMED_UPW_POLISH": 5, "CRYO_ASU": 5, "CRYO_H2": 2, "H2_PURIFIER": 3, "MEOH_SYNTH": 3, "ALD": 2, "FORM": 1, "MEAM": 2, "HNO3": 0.5, "ACEX": 3, "ZNBR2": 5} years between replacements of the consumable insert of each unit (membranes, sorbent, catalyst, gauze, resin, diaphragms, stack) | Performance trending from the first operating year (pressure drop, conversion, current efficiency, breakthrough) sets the interval |
 | driver maint_rotating | {"lube_mo": 6, "vibration_mo": 3, "bearing_y": 5, "seal_y": 3} months/years for motors, pumps, fans and compressors | Vibration and temperature trending; bearing L10 life from the motor design load |
-| driver soil_allow_kPa | 72.0 kPa allowable bearing, presumptive clay (CL/ML/MH/CH) | Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus |
-| driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist clay | Geotechnical report unit weight |
+| driver soil_allow_kPa | 72.0 kPa allowable bearing, presumptive | Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus |
+| driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist soil | Geotechnical report unit weight |
 | driver gw_depth_m | 0.0 m below grade, groundwater (worst case at grade until measured) | Piezometer readings at the parcel through a wet season |
 | driver raft_fc_MPa | 35.0 MPa concrete strength, raft and basement walls | Mix design and cylinder tests |
 | driver foundry_stock_demand_kg_d | 25.9 kg/d stock to MFG_SHOP (Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2) | shop article schedule at the first article: formed-stock draw vs the AQS-SIZE-FOUNDRY consumable-replacement table |

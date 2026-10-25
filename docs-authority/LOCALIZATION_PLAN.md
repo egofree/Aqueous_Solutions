@@ -461,7 +461,7 @@ Table 12.1. Build phases
 | X-LOC-04 | Site selection and namespaces | `--site`, `AQS_SITE`, `--all-sites`; outputs under `sites/<site_id>/`; register handles locale numbers | done |
 | X-LOC-05 | Sector and unit scaling | needs table, scaling map, scaling check and per-locale scaling table generated | done |
 | X-LOC-06 | Power portfolio, heat rejection and storage models | portfolio solved through the worst stretch with the oversize factor; rejection modes and radiator sizing; solar and other resource models in the solver | done |
-| X-LOC-07 | Death Valley variant | profile, site basis page, regeneration and closure pass | open |
+| X-LOC-07 | Death Valley variant | profile, site basis page, regeneration and closure pass | open (profile, basis page AQS-SITE-006 and the first locale run are in; the site design check carries the H2-bank finding QC-09 and the groundwater intake unit is not yet in the graph) |
 | X-LOC-11 | Floating island variant | as X-LOC-07, with the motion group, mass and stability checks, seawater feed case and the marine code family | open |
 | X-LOC-08 | Antarctic variant | as X-LOC-07, with the treaty code family | open |
 | X-LOC-09 | Mars variant | as X-LOC-07, with in-situ feed cases and replacement units | open |

@@ -149,8 +149,7 @@
           "register": "A-M-105",
           "needs_verification": true,
           "verification_test": "ASCE 7 Hazard Tool ground snow load at the site",
-          "binds": "roof_snow_kPa",
-          "note": ""
+          "binds": "roof_snow_kPa"
         }
       }
     },
@@ -162,8 +161,7 @@
           "needs_verification": true,
           "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
           "ref": "ASCE7_22",
-          "binds": "wt_SDS",
-          "note": ""
+          "binds": "wt_SDS"
         },
         "SD1_g": {
           "value": 0.08,
@@ -171,8 +169,7 @@
           "needs_verification": true,
           "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
           "ref": "ASCE7_22",
-          "binds": "wt_SD1",
-          "note": ""
+          "binds": "wt_SD1"
         },
         "TL_s": {
           "value": 8.0,
@@ -192,8 +189,7 @@
           "ref": "IBC2027_1806",
           "needs_verification": true,
           "verification_test": "Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus",
-          "binds": "soil_allow_kPa",
-          "note": ""
+          "binds": "soil_allow_kPa"
         },
         "unit_weight_kN_m3": {
           "value": 18.0,
@@ -201,8 +197,7 @@
           "register": "A-M-208",
           "needs_verification": true,
           "verification_test": "Geotechnical report unit weight",
-          "binds": "soil_unit_weight_kN_m3",
-          "note": ""
+          "binds": "soil_unit_weight_kN_m3"
         },
         "resistivity_ohm_m": {
           "value": 50.0,
