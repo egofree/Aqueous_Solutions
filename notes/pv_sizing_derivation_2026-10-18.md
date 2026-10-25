@@ -16,7 +16,7 @@ With drivers: `night_hours` N = 14 h, `storage_round_trip` η_rt = 0.70 (A-M-179
 - night storage: **P × 14 h** out, P × 14/0.7 = P × 20 in
 - half-yield-day check (cloudy = 0.5 × mean): array delivers base × PSH × derate = exactly the daily need (direct P·10 + store-in P·20), by construction; charge power = PV·derate/2 − P
 - inverters: `ceil(max(PV/1.2, P)/60)`; export at noon (store full) = inverter AC − P; clear-day export = (2.0−1) × balancing energy
-- footprint: `solver.roof_close` iterates the 6 m bay grid until the roof, after IFC 2021 1205.3 / NFPA 1 11.12 pathways, carries the PV — the extension's own loads (lighting/ventilation/envelope, air-source per D77) feed back into P.
+- footprint: `solver.roof_close` iterates the 6 m bay grid until the roof, after IFC 2027 1205.3 / NFPA 1 11.12 pathways, carries the PV — the extension's own loads (lighting/ventilation/envelope, air-source per D77) feed back into P.
 
 ## 2. Bounding electrical demand from the graph (Rev AC scope)
 
@@ -112,7 +112,7 @@ The near-wash hides large offsetting moves. Drivers of the +2.7 kW base delta: f
 
 - Area-per-kWp basis is `roof_kWp = array_m² × pv_module_eff (0.19, NREL_PVWATTS8) × pv_roof_gcr (0.6, A-M-103)` → **8.77 m²/kWp**; identical to BH (3394 kWp / 29 783 m²).
 - 0.5 kWp module at 19 % = 2.63 m² module; at GCR 0.6 → 4.39 m² roof per module, 8.77 m²/kWp; 6932 modules.
-- IFC 2021 1205.3 / NFPA 1 11.12 pathways cut the gross roof to 20 arrays of ≤ 45.7 m (30 444 m² usable of 33 264 m² gross).
+- IFC 2027 1205.3 / NFPA 1 11.12 pathways cut the gross roof to 20 arrays of ≤ 45.7 m (30 444 m² usable of 33 264 m² gross).
 - The footprint is therefore **derived**: PV 3466 kWp → 30 444 m² array → 33 264 m² gross → 198 × 168 m → hall extension 32 832 m² whose own 93.84 kW load is inside P (converged).
 
 ## 7. Sensitivity
