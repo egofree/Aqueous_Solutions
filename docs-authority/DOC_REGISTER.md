@@ -94,7 +94,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-013 | `docs-authority/GREENHOUSE_WATER.md` | A | 2026-10-09 | Greenhouse water and battery margin | current |
 | AQS-DUTY-015 | `docs-authority/FARM_WASTE.md` | B | 2026-10-24 | Farm waste: hydrochar composting and electrochemical pretreatment | current |
 | AQS-DUTY-016 | `notes/mass_disposition.md` | A | 2026-10-09 | Mass disposition | current |
-| AQS-DUTY-018 | `docs-authority/CRYO_ASU.md` | B | 2026-10-12 | Cold box gas rate | current |
+| AQS-DUTY-018 | `docs-authority/CRYO_ASU.md` | C | 2026-10-25 | Cold box gas rate | current |
 | AQS-DUTY-023 | `docs-authority/MASS_DISPOSITION.md` | A | 2026-10-09 | Residual close | current |
 | AQS-DUTY-024 | `docs-authority/PATHWAY_AUDIT.md` | A | 2026-10-09 | No placeholders | current |
 | AQS-DUTY-026 | `docs-authority/SOLVENT_ROUTE.md` | C | 2026-10-12 | Sugar and reagent stores | current |
@@ -263,12 +263,12 @@ Table 3.1. Document numbers in use
 | AQS-QA-002 | `docs-authority/DESIGN_CHECK.md` | A | 2026-10-16 | Independent design check record | current |
 | AQS-RATE-FP-MET | `notes/DESIGN_RATES.md` | A | 2026-10-16 | Design rates — fluoropolymer and critical metals | current |
 | AQS-REB-001 | `docs-authority/REBUILD.md` | D | 2026-10-24 | Rebuilding the design from the plant graph | current |
-| AQS-RED-001 | `docs-authority/RED_AUDIT.md` | B | 2026-10-16 | Redundancy audit, energy and life support | current |
+| AQS-RED-001 | `docs-authority/RED_AUDIT.md` | C | 2026-10-25 | Redundancy audit, energy and life support | current |
 | AQS-RED-002 | `docs-authority/HYDRO_SITING.md` | B | 2026-10-16 | Pumped-hydro reservoir siting trade study | current |
 | AQS-REF-CSK-001 | `docs-authority/OSE_CSK_ALIGNMENT.md` | B | 2026-10-24 | OSE Civilization Starter Kit — Aqueous alignment map | current |
 | AQS-REG-001 | `docs-authority/DOC_REGISTER.md` | C | 2026-10-25 | Document number register | current |
 | AQS-REG-002 | `docs-authority/ASSUMPTIONS_REGISTER.md` | B | 2026-10-24 | Assumptions register | current |
-| AQS-REL-001 | `docs-authority/RELIEF.md` | — | — | Relief | current |
+| AQS-REL-001 | `docs-authority/RELIEF.md` | B | 2026-10-25 | Relief | current |
 | AQS-REM-001 | `docs-authority/internal/REMAINING.md` | A | 2026-10-10 | Remaining designs | superseded by AQS-PLAN-007 |
 | AQS-REM-002 | `docs-authority/internal/REMAINING_CHECKLIST.md` | E | 2026-10-01 | Remaining work checklist | superseded by AQS-PLAN-007 |
 | AQS-REM-BLD-001 | `docs-authority/internal/REMAINING_BLD.md` | Y | 2026-10-01 | Remaining after BLD CAD pass (2026-09-27) | superseded by AQS-PLAN-007 |

@@ -493,6 +493,8 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {PEM -- Proton-exchange membrane. H₂/O₂ fuel-cell chemistry on FUEL_CELL (AQS-FC-001); couples BATT DC via FC_DCDC. Not the Sol-Ark GEN AC port.}
 
+{DM -- Dry matter: the mass of a food or biomass sample after its water is removed.}
+
 {DMFC -- Direct methanol fuel cell. MeOH discharge path; IEM-based preferred over conventional packaging. Distinct from PEM H₂ FC.}
 
 {IEM -- Ion-exchange membrane. Generic SEM-Tech membrane family (CEM/AEM style) used on EW, BMED, ZnBr₂, and MeOH FC paths.}
@@ -796,6 +798,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {SDS -- Safety data sheet.}
 
 {SI -- International System of Units.}
+
+{SPOF -- Single point of failure: a part whose failure alone stops a system. The redundancy audit AQS-RED-001 lists them.}
 
 {SMAW -- Shielded metal arc welding.}
 

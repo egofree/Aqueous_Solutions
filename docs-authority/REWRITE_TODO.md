@@ -33,6 +33,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/PROJECT_PLAN.md` | Rewritten in full; phases, limits and values unchanged. |
 | `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | Rewritten in full; thresholds and inputs unchanged. |
 | `docs-authority/FEED_ASSAY.md` | Rewritten in full; record of revisions put in order and revision E added. Section numbers 1 to 8 kept because other pages and `drivers.json` cite them, so the purpose and scope section is unnumbered. |
+| `docs-authority/CRYO_ASU.md` | Rewritten in full. The undefined code class "shop" is recorded as an open item. |
+| `docs-authority/RELIEF.md` | Rewritten in full. |
+| `docs-authority/RED_AUDIT.md` | Purpose, scope and record of revisions added; the audit table is unchanged. Two rows name units that are no longer graph nodes (COMPOST_TOILET, EXPANDER); see section 6. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 
@@ -63,7 +66,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/CO2_HEADER_DUTY.md` | |
 | `docs-authority/CONTROL_ARCH.md` | |
 | `docs-authority/CONTROL_SOFTWARE.md` | |
-| `docs-authority/CRYO_ASU.md` | |
 | `docs-authority/CRYO_COLD_BOX.md` | |
 | `docs-authority/DERIVED_REVISIONS.md` | |
 | `docs-authority/DESIGN_CHECK.md` | |
@@ -131,8 +133,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/POWER_SIZING.md` | |
 | `docs-authority/PROTECTION.md` | |
 | `docs-authority/RECT_EW.md` | |
-| `docs-authority/RED_AUDIT.md` | |
-| `docs-authority/RELIEF.md` | |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | |
@@ -298,3 +298,8 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/NUTRIENT_BALANCE.md` (AQS-DUTY-034) | Reviewed 2026-10-25. Cited by no other page. It balances nutrients through a fish, larvae, duckweed and azolla loop; FISH, BSFL, DUCKWEED and AZOLLA are no longer graph nodes. Proposed for deletion. |
 | `docs-authority/NUTRIENT_GAPS.md` (AQS-DUTY-048) | Reviewed 2026-10-25. Cited by no other page. Its supply column relies on fish, a urine tank and farm animals that are not in the graph, and it cites AQS-DUTY-049 for nutrient recovery, but AQS-DUTY-049 is the polymer exchanger sizing. Proposed for deletion, or a rewrite against NUTRIENT_DOSE if a farm nutrient gap list is still wanted. |
 | `docs-authority/HAB_FIXTURES.md` (AQS-HAB-001) | Reviewed 2026-10-25. The number is cited by the graph and the load list, so the page cannot simply be deleted. Its content is out of date: COMPOST_TOILET is no longer a graph node (sanitation is now the blackwater train of AQS-DUTY-063), the edge IA-WASH no longer exists, and S12 now carries 319.6 kg/d, not 339 kg/d. Needs an update against `duties/HAB_WASH.md` and `sizing/SANITATION.md`, or a renumbering decision. |
+| `docs-authority/FURNACE.md` (AQS-FURN-001) | Reviewed 2026-10-25. Cited by no other page. It sizes a 10 kW induction furnace for 50 kg of steel; the graph unit for melting is IND_MELT in FOUNDRY, and the progress record in the task plan gives a 7.5 kW coreless furnace (X-MFG-37). Probably superseded; update or delete. |
+| `docs-authority/SIDE_FARM.md` (AQS-SIDE-002) | Reviewed 2026-10-25. Cited by no other page. It frames the biofilter and a fish tank; BIOFILTER and the fish units are no longer graph nodes. Proposed for deletion. |
+| `docs-authority/FARM.md` (AQS-DUTY-044) | Reviewed 2026-10-25. Cited by no other page. Its nitrogen-fixation duty relies on the fish loop and on clover and seed-bank pages (AQS-DUTY-045 to AQS-DUTY-047); the fish units are no longer graph nodes. Update against the current farm or delete. |
+| `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | Reviewed 2026-10-25. It describes the route to the ionic liquid [Bmim] acetate through 1-methylimidazole; the units IMID and QUAT are no longer graph nodes. The number is cited elsewhere, so it is kept until a decision. |
+| `docs-authority/RED_AUDIT.md` (AQS-RED-001) | Rewritten, but two rows need a factual update: the sanitation row names COMPOST_TOILET and the cold-box row names EXPANDER, and neither is a graph node now. |

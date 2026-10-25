@@ -40,3 +40,9 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 
 - `FEED_ASSAY.md` (AQS-ASSAY-001) Rev F: rewritten. The record of revisions listed B, D, C and omitted E, which was recorded only in section 8; it now lists B to F in order. The page stated Revision C although revisions D and E had been issued. Section numbers are kept because other pages and `flow_graph/param/drivers.json` cite them. No value changed.
 - Review of four pages cited by no other page (`FARM_WASTE.md`, `NUTRIENT_BALANCE.md`, `NUTRIENT_GAPS.md`, `HAB_FIXTURES.md`); findings recorded in `REWRITE_TODO.md` section 6 for a decision. Nothing deleted.
+
+## Batch 7
+
+- `CRYO_ASU.md` (AQS-DUTY-018) Rev C, `RELIEF.md` (AQS-REL-001) Rev B and `RED_AUDIT.md` (AQS-RED-001) Rev C rewritten. No value changed. The redundancy audit no longer records who set the redundancy rule; it cites `AGENTS.md`.
+- `GLOSSARY.md`: DM and SPOF added.
+- Further pages reviewed and recorded in `REWRITE_TODO.md` section 6: `FURNACE.md`, `SIDE_FARM.md`, `FARM.md`, `SOLVENT_ROUTE.md`.
