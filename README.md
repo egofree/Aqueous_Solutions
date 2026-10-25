@@ -127,10 +127,9 @@ Aqueous Solutions is licensed under the CERN Open Hardware Licence Version 2, St
 
 ```
 SPDX-License-Identifier: CERN-OHL-S-2.0
-Copyright 2026 Mike Matthews and contributors.
 Source Location: https://github.com/egofree/Aqueous_Solutions
 ```
 
-The leach, electrowinning and BMED stages use membranes, cells and stack designs from the SEM-Tech open membrane project of S.E.M Technology (Rowow), which are released under CERN-OHL-S. This project uses the same licence so that the combined design stays compatible with that work. Anyone who distributes a modified design, or a product built from it, must make the complete source available under CERN-OHL-S-2.0 and state where it is. This project is not a Rowow product, and the licence does not grant use of the Rowow name or imply its endorsement. Other open designs that the plant uses keep their own licences and are linked from [DEPENDENCIES.md](DEPENDENCIES.md).
+The project uses this licence because it is the licence of the open membrane work that the design builds on, as [CONTRIBUTING.md](CONTRIBUTING.md) explains. That work is the open-sourced off-the-shelf ion-exchange membrane project of SEM-Tech, the electrochemical separation platform of Rowow, which releases its core membranes, cells and general methods under CERN-OHL-S. The plant uses it as the design and fabrication reference for the membranes in the wet line, the BMED stacks and the methanol fuel cell. Its files are linked from [DEPENDENCIES.md](DEPENDENCIES.md) and are not copied into this repository. This project is not a Rowow product.
 
-The design is provided without warranty of any kind, as section 6 of the licence states.
+CERN-OHL-S requires anyone who conveys a modified design, or a product made from it, to make the complete source available under the same licence and to state where it is. Other open designs that the plant uses keep their own licences and are listed in [DEPENDENCIES.md](DEPENDENCIES.md). The design is provided without warranty of any kind, as section 6 of the licence states.
