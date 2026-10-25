@@ -2,7 +2,7 @@
 
 Document number: AQS-GLO-001  
 
-Locked names are in SMALL CAPS as they appear on the drawings. Do not invent synonyms.
+Fixed names are written in capital letters, exactly as they appear on the drawings, and no other names are used for them.
 
 Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, design-tool UI, PFDs/MFD/EFD layers, sector taxonomy, and authority docs are listed here with expansion and plant role. No invented rates or nameplates.
 
@@ -10,7 +10,7 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {AQS-xxx-nnn -- Document number. Every controlled document carries one, with a revision letter and a date (e.g. AQS-SEC-001 Rev H). DOC_REGISTER.md lists them.}
 
-{Rev (graph) -- Revision of the plant flow graph, AQS-FLOW-GRAPH-001. Letters run A … Z, then AA, AB, AC. Rev AC is current. A document that says "checked against graph Rev X" was last reconciled at that graph revision. Document revisions are separate and also use letters.}
+{Rev (graph) -- Revision of the plant flow graph, AQS-FLOW-GRAPH-001. The letters run from A to Z and then continue as Rev AA, Rev AB, Rev AC and so on. The current revision is stated in the `revision` field of `flow_graph/plant_flow_graph.json` (Rev AC at the time of writing). A document that says "checked against graph Rev X" was last reconciled at that graph revision. Document revisions are separate and also use letters.}
 
 {X-xxx-nn -- Task id in TASK_PLAN.md (AQS-PLAN-007). The middle part is the work group, e.g. X-PAR parametric model, X-PIP piping, X-SAF safety, X-MAT materials, X-INV building-block inventories, X-ELS electrical, X-GOV governance. TASK_PLAN.md lists all groups.}
 
@@ -232,7 +232,7 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {S89 -- HDR_CO2 → GROW_BED CO₂ enrichment dose through the FARM AHU, 3.0 bar a, DN15 316L. 11.616 kg/d at Rev K; 15.637 kg/d at Rev L (S85 + S90); 16.101 kg/d from Rev M (S11 carbon in the afterburner basis). Only consumer of HDR_CO2. CO₂ only: no tee to HDR_O2, hab air, the HAB return or the dock. AQS-DUTY-009.}
 
-{S90 -- HABITATION → HDR_CO2, 4.021 kg/d metabolic CO₂ (S02 3.36 kg/d O₂ × RQ 0.87 × 44/32), desorbed from the hab CO₂ sorbent bed. CO₂ only; hab air never enters the header. Rev L, AQS-DUTY-010.}
+{S90 -- HABITATION → HDR_CO2, 4.021 kg/d metabolic CO₂ (S02 3.36 kg/d O₂ × respiratory quotient 0.87 × 44/32), desorbed from the hab CO₂ sorbent bed. CO₂ only; hab air never enters the header. Rev L, AQS-DUTY-010.}
 
 {rate_basis / rate_source -- Edge params from Rev L. rate_basis is the derivation in one line; rate_source is the document or graph value it rests on. With medium, conditions and rate_kind (derived or by_difference). AQS-DUTY-010.}
 
@@ -266,15 +266,15 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {S100 / S101 / S102 -- Q4_BUS sinks: HX-9 leach make-up preheat, HX-10 caustic preheat, and borefield recharge to GEO_GHEX (by difference). Rev M. AQS-DUTY-011.}
 
-{IA-BMED-05..10 -- Rev M chloride-loop edges: brine bleed POLISH_BANK → SALT_FEED (05), BMED HCl → CONTINUOUS_RECYCLE (06), NaOH to ALK_SCRUBBER (07), ALK liquor to CRU (08), CRU liquor to CONTINUOUS_RECYCLE (09), NaOH to SALT_FEED (10). AQS-DUTY-011 §4.6.}
+{IA-BMED-05..10 -- Rev M chloride-loop edges: brine bleed POLISH_BANK → SALT_FEED (05), BMED HCl → CONTINUOUS_RECYCLE (06), NaOH to ALK_SCRUBBER (07), alkaline scrubber liquor to CRU (08), CRU liquor to CONTINUOUS_RECYCLE (09), NaOH to SALT_FEED (10). AQS-DUTY-011 §4.6.}
 
-{Option B (chloride) -- Rev M provisional decision: anode Cl₂ is sparged back into LEACH_CSTR_1 as oxidant (0.95 absorbed), the remainder goes ALK_SCRUBBER → CRU → CONTINUOUS_RECYCLE, and BMED regenerates HCl from the brine bleed. Option A (all Cl₂ to ALK) needs about 16 kW of BMED. AQS-DUTY-011.}
+{Option B (chloride) -- Rev M provisional decision: anode Cl₂ is sparged back into LEACH_CSTR_1 as oxidant (0.95 absorbed), the remainder goes ALK_SCRUBBER → CRU → CONTINUOUS_RECYCLE, and BMED regenerates HCl from the brine bleed. Option A (all Cl₂ to ALK_SCRUBBER) needs about 16 kW of BMED. AQS-DUTY-011.}
 
 {Utility import -- The GRID-port term that closes the SOL_ARK_60K balance by difference on the design day. Rev M: about 40 kW average; the MVS energy-surplus criterion is not met. AQS-DUTY-011 §4.9.}
 
 {CO₂ enrichment -- Farm air held at 1000 ppm in the 16 h photoperiod. GROW_BED fixes S04 (1.109 kg/d); the S89 carbon leaves with farm exhaust air. Use, not sequestration.}
 
-{CO2-rich cut -- S67B. FLUE_KO VSA product, ≥ 90 mol % CO2, dry. N2, O2, and NOx are rejected at FLUE_KO. Not raw flue. The only CRYO_CO2 credit for afterburner carbon; S18 carries none since Rev J.}
+{CO2-rich cut -- S67B. The product of the vacuum swing adsorption (VSA) unit at FLUE_KO, ≥ 90 mol % CO2, dry. N2, O2, and NOx are rejected at FLUE_KO. Not raw flue. The only CRYO_CO2 credit for afterburner carbon; S18 carries none since Rev J.}
 
 ## Gas headers
 
@@ -423,7 +423,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {HAB -- Life-support sector: habitation, galley, sleep, grey/black return; crew load driver.}
 
-{CRYO -- Utility sector: cold box and O₂/N₂/CO₂/H₂ receivers; H₂ normal path S64. Alias CRY.}
+{CRYO -- Utility sector: cold box and O₂/N₂/CO₂/H₂ receivers; H₂ normal path S64. Former alias: `CRY`.}
 
 {WTR -- Utility sector: roof/catch tanks, VCD / REMIN / UPW polish, grey treat (AQS-WTR-001).}
 
@@ -445,7 +445,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {UPW -- Ultrapure water. Plant HDR_UPW / S01 class (< 1 µS/cm post-ED polish); fab further polishes to S27. Pre-remin water serves farm/fab; drinking uses REMIN.}
 
-{VCD -- Vapor-compression distillation. Regenerates clean distillate from condensate and treated grey (VCD_HX → EVAP → COMP → COND). VCD_TRAIN is class vessel. Rates are on the graph.}
+{VCD -- Vapor-compression distillation. Regenerates clean distillate from condensate and treated grey (heat exchanger `VCD_HX`, then evaporator `EVAP`, compressor `COMP` and condenser `COND`). VCD_TRAIN is class vessel. Rates are on the graph.}
 
 {REMIN -- Remineralization. Doses Ca²⁺ / Mg²⁺ / K⁺ (and related) from core salt inventory into drinking water (S26). For potable only — not farm nutrient dose S07.}
 
@@ -509,13 +509,13 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {RECT -- Rectifier skid. Process DC for EW / BMED / polish (RECT-EW, RECT-BMED, RECT-PK).}
 
-{DC -- Direct current. BATT bus, rectifiers, FC/MeOH DCDC offtakes.}
+{DC -- Direct current. BATT bus, rectifiers, the DC-to-DC converter outputs of the fuel cells and the methanol fuel cell.}
 
 {AC -- Alternating current. Utility, Sol-Ark LOAD/GEN, MCC, ORC couple stubs.}
 
 {GEN -- Sol-Ark generator AC port. BACKUP_GEN (H₂ genset) only — not FC or RECT hard-tee.}
 
-{BATT -- Sol-Ark battery DC window. ZnBr₂ and fuel-cell DCDC peers land here.}
+{BATT -- Sol-Ark battery DC window. The zinc–bromine battery and the DC-to-DC converters of the fuel cells connect here.}
 
 {HSE -- Health, safety, and environment. Hazard separation and fire-area authority (AQS-HSE-001).}
 
@@ -594,6 +594,10 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {AISC -- American Institute of Steel Construction, publisher of AISC 360, the specification for structural steel buildings.}
 
 {KL -- Effective length of a column: the actual length L multiplied by the effective length factor K for its end conditions.}
+
+{AG -- Aktiengesellschaft, a German public limited company; part of company names such as SFC Energy AG.}
+
+{VSA -- Vacuum swing adsorption: gas separation by adsorbing a component under pressure and releasing it under vacuum.}
 
 {NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
 
@@ -887,7 +891,7 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {VPI -- Vacuum pressure impregnation of motor windings with resin.}
 
-{DIY -- Do it yourself: built by the user from published instructions rather than bought.}
+{DIY -- Do it yourself: built by the plant builders from published instructions rather than bought.}
 
 {EAOP -- Electrochemical advanced oxidation process: oxidation of organic matter at an electrode, used here as a low-voltage pretreatment of woody waste.}
 

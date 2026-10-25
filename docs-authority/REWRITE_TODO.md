@@ -101,7 +101,7 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/GAS_DETECTION.md` | |
 | `docs-authority/GA_CHECK.md` | |
 | `docs-authority/GEOTHERMAL_BACKUP.md` | |
-| `docs-authority/GLOSSARY.md` | |
+| `docs-authority/GLOSSARY.md` | In part. All style-check findings are cleared: undefined abbreviations, a banned phrase in the DIY entry, and the stale note on capital letters. Many entries are still fragments, and several terms have two entries (for example MVS); a full rewrite is still needed. |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | |
 | `docs-authority/HAB_FIXTURES.md` | |
 | `docs-authority/HAB_WATER.md` | |

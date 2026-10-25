@@ -92,3 +92,7 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 ## Batch 16
 
 - `MOTOR_FIRST_ARTICLE.md` (AQS-INV-008) Rev B rewritten through `_motor_fa.py`. No dimension, step or rig item changed.
+
+## Batch 17
+
+- `GLOSSARY.md`: every style-check finding cleared. The revision-letter entry now points to the `revision` field of the graph file. Short forms that were used without definition in the entries are now written out or defined, the opening note on capital letters is rewritten, and the DIY entry no longer uses a banned phrase. AG and VSA added. The page stays on the pending list for a full rewrite.
