@@ -284,7 +284,7 @@ Table 3.1. Document numbers in use
 | AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP action register | current |
 | AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | D | 2026-10-24 | Scale model: parametric building growth | current |
 | AQS-SCALE-UR-001 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | E | 2026-10-24 | What goes unreclaimed when the plant is made smaller or a sector is switched off | current |
-| AQS-SEC-001 | `docs-authority/SECTOR_DEFINITIONS.md` | H | 2026-10-24 | Sector Definitions catalogue — plant sector_id map | current |
+| AQS-SEC-001 | `docs-authority/SECTOR_DEFINITIONS.md` | I | 2026-10-25 | Sector definitions | current |
 | AQS-SEL-FP | `notes/MONOMER_ROUTE.md` | A | 2026-10-16 | Monomer route selection — VDF and TFE | current |
 | AQS-SEL-TI-MO | `notes/TI_MO_SELECTION.md` | A | 2026-10-16 | TI_CELL and MO_CELL process selection | current |
 | AQS-SI-001 | `docs-authority/SILICON.md` | C | 2026-10-11 | Silicon reduction | current |
@@ -450,7 +450,7 @@ Table 3.1. Document numbers in use
 | AQS-STR-001 | `docs-authority/STREAM_REGISTER.md` | L | 2026-10-24 | Stream register: streams between blocks | current |
 | AQS-STR-001-DERIVED | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | — | — | Stream register excerpt — DERIVED from flow_graph | current |
 | AQS-STUDY-CLOSE-001 | `docs-authority/MVS_STUDY_CLOSE.md` | — | 2026-10-02 | Study close — the 15 skipped nodes | current |
-| AQS-SUR-001 | `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | C | 2026-10-24 | Surplus pass thresholds — study freeze criteria (MVS) | current |
+| AQS-SUR-001 | `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | D | 2026-10-25 | Surplus pass thresholds for the minimum viable system study | current |
 | AQS-THM-002 | `docs-authority/HVAC.md` | A | 2026-10-16 | Ventilation and HVAC design | current |
 | AQS-THM-003 | `docs-authority/INSULATION_SCHEDULE.md` | B | 2026-10-24 | Insulation schedule | current |
 | AQS-TOOL-001 | `docs-authority/LATHE.md` | C | 2026-10-11 | Lathe module | current |

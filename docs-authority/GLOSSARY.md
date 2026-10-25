@@ -65,6 +65,8 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 {Float–sink -- Density split inside the leach liquor. Light organics float; metals, glass, ceramic, FR-4, and dense plastic sink.}
 
 {FR-4 -- Glass-epoxy circuit-board laminate. Must not enter the induction pyrolyzer. Leaves at VIBRATORY SPLIT → BURNOUT ROTARY.}
+{FRM -- Former short name for the FARM sector, still found in older CAD files. It is not a sector identifier; read it as FARM.}
+
 
 {Leach / Salria -- Oxidative chloride leach: HCl + NaClO₃, 70–85 °C, ORP > 1.5 V, pH ≈ 0. Dissolves metals. Doubles as the float–sink medium.}
 
@@ -692,6 +694,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {HF -- Hydrogen fluoride; in water, hydrofluoric acid.}
 
 {HTU -- Height of a transfer unit, used with NTU to size a packed column.}
+
+{HP -- Heat pump. Used in the GEO sector, where the ground-loop heat pump lifts heat to the Q4 store.}
 
 {HX -- Heat exchanger.}
 

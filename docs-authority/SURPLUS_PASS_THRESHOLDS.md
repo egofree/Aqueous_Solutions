@@ -1,126 +1,128 @@
-# Surplus pass thresholds — study freeze criteria (MVS)
+# Surplus pass thresholds for the minimum viable system study
 
 Document number: AQS-SUR-001  
-Revision: C  
-Date: 2026-10-24  
-Authority: AQS-AUTH-001; MVS criteria AQS-UI-001 Rev C §3.2 / §11.1 item 2;
-capacity study AQS-AUD-001 §11–12; scale AQS-SCALE-001; electrical
-AQS-REQ-KW-001 / AQS-ELC-001; sector map AQS-SEC-001; streams AQS-STR-001;
-planning gap audit AQS-MVS-GAP-001.  
-Style: AQS-DOC-002.  
-**Stage = study pass thresholds.** Not a PE stamp. Not vendor nameplates.
-Does **not** freeze `AQS-MVS-001`. Numbers are labeled **study** until
-Project locks berth count, SITE_LAT, and wafer starts.
+Revision: D  
+Date: 2026-10-25  
+Authority: AQS-AUTH-001. The criteria for the minimum viable system are in AQS-UI-001 Rev C, sections 3.2 and 11.1. Other sources are listed in section 8. Not a PE stamp.
 
-| Rev | Change | Description | Date |
+| Rev | Description | Date |
+|---|---|---|
+| A | First numeric study thresholds for food, water, goods and energy | 2026-10-01 |
+| B | Seed model set to the upper end of the FARM food production band (S14 = 4.2 kg/d), so that the food surplus can meet the 0.5 kg/d threshold | 2026-10-01 |
+| C | Sector names brought into line with graph revision AC (AQS-SEC-001 Rev H): WET became DIGESTER, and ELEC_PV became the PV_ARRAY unit in ELEC. No threshold changed. | 2026-10-24 |
+| D | Rewritten to the documentation style guide (AQS-DOC-002). No threshold or driver changed. | 2026-10-25 |
+
+Licence: CERN-OHL-S-2.0.
+
+## 1. Purpose and scope
+
+The plant is designed to produce more than it consumes, so that it can export food, clean water, goods and energy as well as support its own crew. The minimum viable system (MVS) is the smallest set of sectors that closes every mass, energy and life-support loop. AQS-UI-001, section 3.2, states that supporting the crew alone is not enough for the MVS: the plant must also export a surplus.
+
+This page sets, for each of the four surplus products, the smallest daily export that counts as a pass in the current design study. These values are the study pass thresholds. The design tool's solver compares its calculated surplus against them and reports the result for each product. The page closes item 2 of AQS-UI-001, section 11.1.
+
+The thresholds apply at the baseline scale, with the manufacturing scale factor `SCALE_M` equal to 1.0 and a crew of four. They are study values. They do not fix the design of the MVS (AQS-MVS-001), they are not taken from vendor nameplates, and no professional engineer (PE) has reviewed them. They stay study values until the number of crew berths, the site latitude and the number of wafer starts per day are fixed by the project.
+
+This page does not set the berth count, map the solar resource at the site, or allow the solver to report that the loops are closed (`loops_closed = true`) or that the MVS design is fixed.
+
+## 2. Where the thresholds are used
+
+The thresholds are held in the model field `MvsCriteriaModel.surplus_thresholds` (`design_tool/aqs_design_tool/models.py`). The solver function `_surplus_stub` in `design_tool/aqs_design_tool/solver/stub.py` calculates each surplus and compares it with the threshold. If no threshold is set in the model, the function uses the values in Table 4.1.
+
+For each product the solver reports `surplus.<key>.value`, the calculated study surplus, and `surplus.<key>.note`. The note includes `pass_study=true`, `pass_study=false` or `pass_study=unknown`. A surplus result alone never sets `mvs_equivalent=true` while any loop is open or any rate is incomplete (`rate_incomplete`).
+
+## 3. Study inputs
+
+Table 3.1 lists the inputs used to set the thresholds. Each is a study assumption. AQS-AUD-001 is a capacity study held in local planning files; it is not published in this repository.
+
+Table 3.1. Study inputs
+
+| Input | Study value | Source |
+|---|---|---|
+| Crew | 4 | Seed model and AQS-AUD-001 section 11; berth count not yet fixed |
+| Manufacturing scale factor `SCALE_M` | 1.0 | AQS-SCALE-001 manufacturing baseline |
+| Fresh food production | 1.4 kg/d to 4.2 kg/d; seed model midpoint 2.8 kg/d on stream S14 | AQS-AUD-001 section 12 |
+| Food ration per crew member, as fresh-food equivalent | 0.6 kg per person per day | Study placeholder; not set by a nutritionist |
+| Drinking and hygiene water | about 130 L/d | AQS-AUD-001 section 11 |
+| FARM make-up water | about 50 L/d to 140 L/d | AQS-AUD-001 section 11 |
+| Ultrapure water (UPW) make-up for FAB | 20 L/d to 100 L/d | AQS-AUD-001 section 11 |
+| Wet feed | 150 kg/d | AQS-SCALE-001 |
+| Plated metals | about 4.5 kg/d to 42 kg/d | AQS-AUD-001 |
+| Electrical need and target (`ELEC_NEED`, `ELEC_TARGET`) | 50 kW and 70 kW | AQS-SCALE-001 section 9 |
+| Peak sun hours | 4.0 h/d | Placeholder while the site latitude (`site_lat_deg`) is not set; not a statement about the climate |
+
+## 4. Thresholds
+
+Table 4.1 gives the threshold for each surplus product and how the solver calculates the surplus that is compared with it. Section 4.1 to section 4.4 explain each row.
+
+Table 4.1. Study pass thresholds at `SCALE_M` = 1.0
+
+| Surplus key | Unit | Pass threshold (minimum) | Surplus compared with the threshold |
 |---|---|---|---|
-| A | — | First numeric study pass thresholds for food / water / goods / energy | 2026-10-01 |
-| B | 1 | Seed upper-band FARM path (S14=4.2) so food pass_study can clear ≥0.5 bar | 2026-10-01 |
-| C | 2 | Sector names to graph Rev AC (AQS-SEC-001 Rev H): WET → DIGESTER, ELEC_PV → PV_ARRAY in ELEC. No threshold changed. | 2026-10-24 |
+| `food` | kg/d | 0.5 | Food produced on stream S14 less the crew ration: `max(0, S14 − crew × 0.6)` |
+| `clean_water` | L/d (1 L/d is about 1 kg/d) | 50 | Water available for export above internal demand, when WTR is enabled |
+| `materials_or_goods` | kg/d | 5.0 | Exportable metals, polymer and glass, when DIGESTER, MFG, FAB and GLASS are enabled |
+| `energy` | kWh/d | 20 | `(ELEC_TARGET − ELEC_NEED) × peak sun hours` |
 
-Licence: **CERN-OHL-S-2.0**.
+### 4.1 Food
 
-Canonical in this tree: `docs-authority/SURPLUS_PASS_THRESHOLDS.md`  
-Solver: `design_tool/.../solver/stub.py` `_surplus_stub` + `MvsCriteriaModel.surplus_thresholds`
+At the midpoint of the production band, the food surplus is 2.8 kg/d less 2.4 kg/d for the crew, which is 0.4 kg/d. The threshold of 0.5 kg/d therefore needs either the upper end of the production band or a better crop yield. The stream S14 carries food from GROW_BED to FOOD_STORE.
 
----
+The seed model uses the upper end of the band, S14 = 4.2 kg/d (AQS-AUD-001 section 12, band 1.4 kg/d to 4.2 kg/d). The study value for the food export stream S14X is the same residual. The study food export is then 4.2 kg/d less 4 × 0.6 kg/d, which is 1.8 kg/d, and the food surplus passes. A design study that uses the midpoint of 2.8 kg/d is valid but fails the threshold. The yield and the berth count are study assumptions; retune them when the berth count and the ration are fixed.
 
-## 1. Purpose
+### 4.2 Clean water
 
-Close AQS-UI-001 §11.1 item 2 with **numeric study pass thresholds** so the
-P0 solver can report surplus values and pass/fail vs colony self-sustainment
-**plus** export — without inventing freeze gold or PE claims.
+The internal demand used in the study is 285 L/d: 130 L/d for drinking and hygiene, 95 L/d for FARM (the middle of its range) and 60 L/d for FAB (the middle of its range). The water held in the roof tank is much larger than this daily demand. The surplus passes if the make-up and storage margin is at least 50 L/d and the WTR sector is enabled.
 
-Self-sustainment alone is insufficient (AQS-UI-001 §3.2).
+The terrace irrigation stream S40 runs only when it is needed. The study does not assume a continuous flow on it.
 
----
+### 4.3 Materials and goods
 
-## 2. Scope
+The study counts as exportable about one quarter of the midpoint plated-metal output, plus the continuous equivalent of the midpoint polymer output, plus a provisional glass value. When DIGESTER, MFG, FAB and GLASS are all enabled, the seed model uses a study envelope of 8 kg/d. A goods surplus needs both FAB and MFG (ruling A2 in AQS-SEC-001). The quantities are study values.
 
-| In | Out |
+### 4.4 Energy
+
+With 4 peak sun hours, the export margin is (70 kW − 50 kW) × 4 h/d, which is 80 kWh/d gross. The surplus passes at 20 kWh/d or more. Photovoltaic (PV) ratings are given at standard test conditions (STC), which are not continuous output. While the site latitude is not set, the solar resource is unknown, so this threshold is a study value only.
+
+## 5. Unknowns
+
+Table 5.1 lists the facts the thresholds depend on that are not yet known. Do not invent values for them.
+
+Table 5.1. Unknowns and what they block
+
+| Unknown | What it blocks |
 |---|---|
-| Study min export / headroom for food, clean water, goods, energy at SCALE_M=1, crew=4 | Issued berth count; SITE_LAT insolation map; vendor nameplates |
-| Solver wiring from FARM / WTR / DIGESTER+MFG+FAB / PV_ARRAY (ELEC) | Claiming `loops_closed=true` or frozen MVS |
+| Number of crew berths and the food ration | Retuning the food threshold |
+| Site latitude and typical meteorological year (TMY) solar data | Stating the energy surplus as a fact about the site |
+| Wafer starts per day and glass output in kg/d | The size of the goods surplus |
+| Power demand of the vapor-compression distillation (VCD) unit, and whether remineralization (REMIN) is in service | A claim that drinking water can be exported; water in storage is not the same as drinking water fit for export |
+| A continuous flow on terrace stream S40 | Not needed; the stream runs on demand |
 
----
+## 6. Next measurements and decisions
 
-## 3. Drivers (study assumptions)
+1. The project sets the berth count and the ration table.
+2. The project sets the site latitude, so that the energy surplus can be stated for the site climate.
+3. The equipment identifiers for VCD and REMIN are confirmed in service before any claim of drinking-water export.
+4. The thresholds are retuned in a new revision of this page when the measurements are available. They keep the study label until the evidence for fixing the MVS design exists.
 
-| Driver | Study value | Source |
-|---|---|---|
-| Crew | **4** | Seed / AQS-AUD-001 §11 (berth count TBD) |
-| SCALE_M | **1.0** | AQS-SCALE-001 manufacturing baseline |
-| Food production band | 1.4–4.2 kg/d fresh | AQS-AUD-001 §12; seed S14 mid **2.8 kg/d** |
-| Crew food ration (fresh-equiv) | **0.6 kg/person·d** | Study placeholder — not nutritionist lock |
-| Potable + hygiene | **~130 L/d** | AQS-AUD-001 §11 |
-| FARM makeup | **~50–140 L/d** | AQS-AUD-001 §11 |
-| FAB UPW makeup | **20–100 L/d** | AQS-AUD-001 §11 |
-| Wet feed / plated metals | 150 kg/d / ~4.5–42 kg/d | AQS-SCALE-001 / AQS-AUD-001 |
-| ELEC_NEED / TARGET | 50 / 70 kW | AQS-SCALE-001 §9 |
-| Study peak-sun-hours (SITE_LAT null) | **4.0 h/d** | Placeholder until SITE_LAT issued — **not** a climate claim |
+## 7. Regeneration
 
----
-
-## 4. Study pass thresholds (SCALE_M = 1.0)
-
-| Surplus key | Unit | Study pass threshold (min) | How computed (solver) | Rationale |
-|---|---|---|---|---|
-| **food** | kg/d | **≥ 0.5** export-capable after crew ration | `max(0, S14_rate − crew×0.6)` vs threshold; S14X study = same residual | Mid production 2.8 − 2.4 crew = 0.4; floor **0.5** requires upper-band or yield improvement — **study bar**, not freeze |
-| **clean_water** | L/d (kg/d ≈) | **≥ 50** export-capable above internal demand | Internal demand study = potable 130 + farm mid 95 + fab mid 60 ≈ **285 L/d**; roof inventory ≫ demand; pass if makeup/inventory headroom ≥ 50 L/d **and** WTR enabled | AQS-AUD-001 §11; S40 remains event-driven (no continuous L/d invent) |
-| **materials_or_goods** | kg/d | **≥ 5.0** export-capable | Mid plated metals share exportable (~0.25× mid metals) + polymer continuous-equiv mid + glass stub; seed uses study **8 kg/d** envelope when DIGESTER+MFG+FAB+GLASS on | Goods surplus requires FAB+MFG (A2); magnitudes study |
-| **energy** | kWh/d | **≥ 20** study export headroom | `(target_kw − need_kw) × study_sun_h` with sun_h=4 → (70−50)×4 = **80** kWh/d gross; pass ≥ **20** | STC ≠ continuous; SITE_LAT null → insolation **unknown** — threshold is study only |
-
-**Pass language:** solver reports `surplus.<key>.value` (study) and
-`surplus.<key>.note` including `pass_study=true|false|unknown` vs these
-thresholds. **Never** sets `mvs_equivalent=true` from surplus alone while
-loops/`rate_incomplete` remain.
-
----
-
-
-## 4.1 Seed FARM path (Rev B / WP-A2)
-
-Candidate seed uses **upper-band** S14 = **4.2 kg/d** (AQS-AUD-001 §12 band
-1.4–4.2) so study food export = 4.2 − crew×0.6 = **1.8 kg/d** at crew=4 →
-`pass_study=true` vs ≥0.5. Mid-band 2.8 remains a valid alternate sandbox
-path but fails the study bar. **Yield/berth assumption = study** — not a
-nutritionist lock; retune when berth/ration is issued.
-
-## 5. Explicit unknowns (do not invent)
-
-| Unknown | Blocks |
-|---|---|
-| Issued berth / nutrition ration | Food threshold retune |
-| SITE_LAT / TMY insolation | Energy kWh/d as climate fact |
-| Wafer starts/d; glass kg/d | Goods magnitude |
-| VCD duty kW; potable remin online | Clean-water **potable** export claim (inventory surplus ≠ drinking export) |
-| Continuous terrace S40 L/d | Not required — event path remains |
-
----
-
-## 6. Next measurement / decision
-
-1. Lock berth count and ration table (operator decision).
-2. Issue SITE_LAT for energy surplus climate band.
-3. Confirm VCD/remin equipment IDs online before claiming potable export.
-4. Retune thresholds in Rev B when measurements land — keep study label until freeze evidence table exists.
-
----
-
-## 7. Related documents
-
-| Doc | ID | Role |
-|---|---|---|
-| DESIGN_TOOL_ARCHITECTURE.md | AQS-UI-001 | §11.1.2 open item |
-| Local planning (not published): SECTOR_CAPACITY_AUDIT | AQS-AUD-001 | Bands |
-| Local planning (not published): MVS_GAP_AUDIT | AQS-MVS-GAP-001 | Gap §4.2 |
-| SCALE_MODEL.md | AQS-SCALE-001 | Overprod policy |
-| AUTHORITY.md | AQS-AUTH-001 | Hub |
-
----
-
-## 8. Regenerate
+The solver results that use these thresholds are refreshed by the pipeline:
 
 ```bash
 python3 -m flow_graph.param.regen
 ```
+
+## 8. Related documents
+
+Table 8.1. Related documents
+
+| Document | Number | Role |
+|---|---|---|
+| `DESIGN_TOOL_ARCHITECTURE.md` | AQS-UI-001 | Sets the MVS criteria (section 3.2) and the open item closed by this page (section 11.1, item 2) |
+| `SCALE_MODEL.md` | AQS-SCALE-001 | Scale factor, wet feed basis and electrical need and target |
+| `AUTHORITY.md` | AQS-AUTH-001 | Authority for the CAD and design documents |
+| `SECTOR_DEFINITIONS.md` | AQS-SEC-001 | Sector list and ruling A2 |
+| Electrical requirement pages | AQS-REQ-KW-001, AQS-ELC-001 | Electrical demand basis |
+| Stream register | AQS-STR-001 | Stream identifiers |
+| Capacity study, local planning file, not published | AQS-AUD-001 | Production and demand bands (sections 4, 11 and 12) |
+| Gap audit of the MVS plan, local planning file, not published | AQS-MVS-GAP-001 | Gap list (section 4.2) |

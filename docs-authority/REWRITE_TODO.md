@@ -31,6 +31,7 @@ Table 2.1. Pages rewritten in full
 | --- | --- |
 | `docs-authority/DOC_REGISTER.md` | Purpose and scope added; generator text in `_doc_register.py` rewritten; part qualifiers no longer truncated mid-path. |
 | `docs-authority/PROJECT_PLAN.md` | Rewritten in full; phases, limits and values unchanged. |
+| `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | Rewritten in full; thresholds and inputs unchanged. |
 
 ## 3. In progress
 
@@ -40,6 +41,7 @@ Table 3.1. Pages partly rewritten
 | --- | --- |
 | `docs-authority/TASK_PLAN.md` | Sections 1 to 6 rewritten in `_task_plan_gen.py`; next tasks generated from the triage tags; hand-kept list and progress record moved to Appendix A. Task texts in sections 7 and 8 still to rewrite. |
 | `docs-authority/OPEN_QUESTIONS.md` | Purpose and scope rewritten. Question rows still to rewrite. |
+| `docs-authority/SECTOR_DEFINITIONS.md` | Generator text in `_sector_definitions.py` rewritten and the catalogue split into three tables. The sector notes in the graph (`mvs.sectors`) and the sector descriptions in `flow_graph/system_tree.yaml` are still in working shorthand; rewriting them changes the graph hash and the model workbook, so it needs a full regeneration. |
 
 ## 4. Pending
 
@@ -49,8 +51,6 @@ Table 4.1. Pending pages directly under docs-authority/
 
 | Page | Note |
 | --- | --- |
-| `docs-authority/SECTOR_DEFINITIONS.md` | |
-| `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | |
 | `docs-authority/SELF_COPY_BOM.md` | |
 | `docs-authority/ASME_CODE_INTENT.md` | |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | |

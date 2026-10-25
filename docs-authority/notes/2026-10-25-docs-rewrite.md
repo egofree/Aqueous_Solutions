@@ -11,3 +11,9 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 - `REWRITE_TODO.md` (AQS-DOC-003): new page, number from `_doc_register.py --next AQS-DOC`.
 - `GLOSSARY.md`: BLD added.
 - `README.md` (documentation map): the row for `DOCUMENTATION_STYLE.md`, which was merged into `DOC_STYLE.md` on 2026-10-24 and no longer exists, was removed.
+
+## Batch 2
+
+- `SECTOR_DEFINITIONS.md` (AQS-SEC-001) Rev I: generator text in `docs-authority/_sector_definitions.py` rewritten, the catalogue split into a data table, a table of system tree descriptions and a table of graph notes, and the alias names set in code format. The notes in the graph and the descriptions in the system tree are unchanged.
+- `SURPLUS_PASS_THRESHOLDS.md` (AQS-SUR-001) Rev D: rewritten in full. Thresholds, inputs and sources unchanged. The stale pointer to a canonical copy outside this repository was removed.
+- `GLOSSARY.md`: FRM and HP added.
