@@ -186,6 +186,21 @@
           ],
           "units": "-",
           "register": "AQS-PLAN-011 section 10.2"
+        },
+        "seawater_surface": {
+          "name": "seawater_surface",
+          "kind": "sea",
+          "unit": "WTR",
+          "temperature_C": 28.0,
+          "composition_note": "salinity 35.165 g/kg; sodium 10.78, chloride 19.35, magnesium 1.284, bromide 0.067 g/kg; lithium about 0.18 mg/kg",
+          "treatment": "reverse-osmosis desalination (least energy 1.06 kWh/m3 at 50 % recovery, DESAL_MIN_ENERGY); the reject brine feeds salt, magnesium, bromine and lithium recovery, each needing an assay feed case (AQS-PLAN-011 section 10.2)",
+          "ref": "SEAWATER_MILLERO"
+        },
+        "precipitation": {
+          "name": "precipitation",
+          "kind": "rain",
+          "note": "tropical rain is a bonus, not a designed source; the intake is the designed make-up",
+          "ref": "OTEC_GRADIENT"
         }
       }
     },
