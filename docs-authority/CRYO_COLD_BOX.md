@@ -87,7 +87,7 @@ AQS-EQP-CRY-001 Rev C carries the full equipment table. The tags:
 | MOL_SIEVE | CO2 and H2O drying (5A TSA class) |
 | HEPA_BANK | Final particulate polish |
 | STIRLING_COLD_HEAD | Cryocooler, 77 to 90 K |
-| DIST_COL_PRI / SEC / TER | Cryogenic distillation train (primary, secondary, tertiary columns) |
+| DIST_COL_PRI / SEC / TER | Cryogenic distillation train: the primary (PRI), secondary (SEC) and tertiary (TER) columns |
 | REBOILER_COND | Reboiler and condenser heat integration |
 | COMP_EXPAND | Variable-speed compressors and expanders |
 | VJ_LINES | Vacuum-jacketed transfer lines (schedule; CAD stub optional) |
