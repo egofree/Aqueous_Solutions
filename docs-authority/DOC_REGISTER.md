@@ -75,7 +75,7 @@ Table 3.1. Document numbers in use
 | AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | A | 2026-10-16 | Instrument index | current |
 | AQS-CTL-002 | `docs-authority/CONTROL_ARCH.md` | B | 2026-10-25 | Control philosophy and PLC architecture | current |
 | AQS-CTL-003 | `docs-authority/CAUSE_EFFECT.md` | A | 2026-10-16 | Safety instrumented functions and cause and effect | current |
-| AQS-CTL-004 | `docs-authority/CONTROL_SOFTWARE.md` | A | 2026-10-21 | Control program source and scan simulation | current |
+| AQS-CTL-004 | `docs-authority/CONTROL_SOFTWARE.md` | B | 2026-10-25 | Control program source and scan simulation | current |
 | AQS-DES-FAB | `notes/FAB_DESIGN.md` | A | 2026-10-17 | FAB — item 6 | current |
 | AQS-DES-FOUNDRY | `notes/FOUNDRY_DESIGN.md` | A | 2026-10-16 | FOUNDRY sector — process and machine design | current |
 | AQS-DES-LIFE | `notes/LIFE_SUPPORT.md` | A | 2026-10-17 | Farm, nutrient, habitation, water — item 7 | current |

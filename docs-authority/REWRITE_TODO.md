@@ -51,6 +51,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/ASME_CODE_INTENT.md` | Rev D, through `_asme_class.py`. Purpose and scope first, numbered sections and table titles; the truncated authority line repaired. No class, stamp or test changed. |
 | `docs-authority/BALANCE_RECONCILIATION.md` | Rev E, through `flow_graph/param/balance.py`. Purpose and scope first, revision record in order, sections and table titles renumbered (0-4 to 2-6; cross-references in balance.py, closure_tf.py and assumptions A-M-120/A-M-123 updated in the same change). No method, rate or result changed. Also fixed in this batch: the assumptions-register scan crashed on any model params.json whose `assumptions` entry is a list (CAST_LINE); params.json converted to the keyed form and the register runs again. |
 | `docs-authority/BOUGHT_SPECS.md` | Rev B, through `_bought_specs.py`. Purpose and scope first, numbered sections and table titles. No roster row, class or size changed. |
+| `docs-authority/CONTROL_SOFTWARE.md` | Rev B, through `flow_graph/control/plc_programs.py`. Purpose and scope first, revision record added, sections renumbered. No program, classification or check changed. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -91,7 +92,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | --- | --- |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | |
-| `docs-authority/CONTROL_SOFTWARE.md` | |
 | `docs-authority/DERIVED_REVISIONS.md` | |
 | `docs-authority/EDGE_RATING_DUTY.md` | |
 | `docs-authority/EGRESS_CALC.md` | |

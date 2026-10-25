@@ -19,7 +19,7 @@ def test_doc_header():
     src = open(SPECS).read()
     assert src.startswith('# Bought-item specification sheets')
     assert 'Document number: AQS-PRO-002' in src
-    assert 'Revision: A' in src
+    assert 'Revision: B' in src
 
 
 def test_family_coverage():
