@@ -684,6 +684,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {PO -- Purchase-order document: the buying document. The applicable standard class, never the maker sheet, is the design basis (AQS-PLAN-006 rule).}
 {HDR -- Plant header prefix (HDR_H2, HDR_O2, HDR_CO2, HDR_UPW, HDR_N2): the gas and fluid collection lines.}
 {IND -- Shorthand for the induction melt chain (IND_MELT and its 25 kW share of the foundry feed).}
+{CHG -- Charge: the charging-side quantity of a storage pair, against the discharge quantity DIS.}
 {PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
 
 {UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}
