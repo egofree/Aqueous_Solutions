@@ -9,9 +9,12 @@ Measurement: SI
 |---|---|---|
 | A | First issue. Module 150 kg/day, factory roof ~8 m eave | 2026-09-27 |
 | B | Note: stack = upset/contingency; closure per AQS-VENT-001 | 2026-09-28 |
+| C | Rewritten to the documentation style guide (AQS-DOC-002): purpose first, sections and table titles, above ground level spelled out. No height, curve or duty changed. | 2026-10-25 |
 
 Site wind rose and building height still govern the final permit stack.
-These numbers size the ID fans and freeze the CAD stack solids.
+## 1. Purpose and scope
+
+These numbers size the induced-draft fans and freeze the CAD stack solids. The stacks are the upset and contingency path only; continuous vent closure is AQS-VENT-001.
 
 Headers stay four objects. No common fan, no common stack.
 
@@ -92,7 +95,7 @@ starved.
 | Caustic | **6 000 mm** | 160 mm | PP | yes | Short. Discharge is wet air + CO2 |
 | Afterburner | unit stack on AFTERBURNER | 300 mm | 304 / CS | no | Not an ID stack. Q1 flue |
 
-Shipping-module variant: stub each stack at 2 400 mm AGL with a
+Shipping-module variant: stub each stack at 2 400 mm above ground level with a
 companion-flange for the factory riser. The 40HC roof is not the
 dispersion height.
 
