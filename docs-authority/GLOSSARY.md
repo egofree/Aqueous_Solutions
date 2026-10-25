@@ -976,6 +976,28 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {LOD -- Level of detail: simplified versions of a 3D model shown at a distance}
 
+{LEV -- Local exhaust ventilation: extraction that captures a contaminant at its source, such as a hood}
+
+{DAC -- Direct air capture: removing carbon dioxide from ambient air}
+
+{EFOY -- Product name of the direct methanol fuel cells made by SFC Energy AG}
+
+{SFC -- SFC Energy AG, the maker of the EFOY fuel cells (a company name)}
+
+{GT -- Part of the model name AMETEK Sunpower CryoTel GT, a Stirling cryocooler}
+
+{ESP -- Emergency standby power: a generator rating for supply during an outage of the normal source (ISO 8528-1)}
+
+{PRP -- Prime power: a generator rating for unlimited hours a year at variable load (ISO 8528-1)}
+
+{MTPA -- Metric tonnes per annum}
+
+{NETL -- National Energy Technology Laboratory, a United States Department of Energy laboratory}
+
+{LOPA -- Layer of protection analysis: a semi-quantitative method that checks whether the independent safeguards against a hazard are enough (IEC 61511-3)}
+
+{QMS -- Quality management system, for example one certified to ISO 9001}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

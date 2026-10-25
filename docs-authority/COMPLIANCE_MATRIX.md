@@ -1,27 +1,39 @@
-# Compliance matrix — design intent vs code themes
+# Compliance matrix: design intent against code themes
 
 Document number: AQS-COMPL-001  
-Renumbered 2026-10-15 from AQS-CMP-001 to clear a duplicate (AQS-REG-001).
-Revision: D
-Date: 2026-10-16  
-Authority: AQS-AUTH-001, AQS-HSE-001, AQS-SITE-001, hub `ELECTRICAL.md`,
-AQS-VENT-001, AQS-WLD-001, AQS-AUD-001.  
-Jurisdiction assumed: USA (Dallas-class / Texas AHJ).  
-**Not a PE stamp. Not a permit set.** Permits and clause quotations are not invented here.
+Former number: AQS-CMP-001 (renumbered 2026-10-15 to clear a duplicate; see AQS-REG-001)  
+Revision: E  
+Date: 2026-10-24  
+Basis: AQS-AUTH-001, AQS-HSE-001, AQS-SITE-001, AQS-ELC-001 (`docs-authority/ELECTRICAL.md`), AQS-VENT-001, AQS-WLD-001, AQS-AUD-001.  
+Jurisdiction assumed: USA (a Dallas, Texas class authority having jurisdiction).  
+Status: not a professional engineer's stamp and not a permit set. No permit or clause quotation is invented here.  
+Licence: CERN-OHL-S-2.0. `SCALE_M = 1.0`.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | Basic issue: NFPA / NEC / OSHA / ASME / ISO theme map | 2026-10-01 |
-| B | 1 | Wave 3: AQS-EGR-001 + AQS-ASM-001; CMP-ASM-01 Gap→Partial; egress annex | 2026-10-01 |
+| B | 1 | Third review: AQS-EGR-001 + AQS-ASM-001; CMP-ASM-01 Gap→Partial; egress annex | 2026-10-01 |
 | C | 1 | Egress controlling-code rule; CRYO_EGRESS stubs; layout locks (PV/terrace/dock) | 2026-10-01 |
 | D | 11 | X-COD-01: every row closed to a state with evidence (section 11) | 2026-10-16 |
+| E | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose and scope merged into §1, terms in §2, captions; row counts removed from §8 and §11; edition conflict raised as open question Q-018. Rows, citations and states unchanged. | 2026-10-24 |
 
-Licence: CERN-OHL-S-2.0. `SCALE_M = 1.0`.
+## 1. Purpose and scope
 
-## 1. Purpose
+This matrix maps each design theme of the plant to the codes and standards already cited in the authority pages, and records how far the design meets each one. Sections 3 to 7 hold one table per family of codes; each row (CMP-…) names the requirement theme, the edition cited, the plant control or page that answers it, a status and the next action. Section 11 records, for every row, the evidence now available and its closure state; where §11 and the status columns of §3 to §7 differ, §11 is current and the earlier columns record the first design-intent assessment.
 
-Map Aqueous plant design **themes** to the codes already referenced in
-authority docs. Status is design-intent only:
+In scope: fire, hydrogen, gas and energy-storage themes across the campus; the electrical yard (Sol-Ark inverter, zinc-bromide battery, fuel-cell DC, generator); OSHA egress and local exhaust ventilation; ASME pressure-vessel and piping classes; and the relevant ISO process and safety themes. The egress study is AQS-EGR-001, tracked under AQS-SITE-001 §8.
+
+Out of scope: permits, professional engineers' stamps, and the narrative folders at the repository root (`01-…` to `09-…`).
+
+Editions: the editions cited are those set in AQS-HSE-001, ELECTRICAL and SITE (an NFPA and NEC 2026 design basis). The edition register AQS-STD-007 (`CODE_BASIS.md`) lists earlier editions for several of the same standards; which set governs is open question Q-018. The City of Dallas amendments and the edition adopted by the authority having jurisdiction must be confirmed before a permit. The matrix is not clause text.
+
+Related pages: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.md`, `docs-authority/ELECTRICAL.md`, `docs-authority/VENT_CLOSURE.md`, `docs-authority/WELD_MAP.md` and `docs-authority/DOC_STYLE.md` (AQS-DOC-002).
+
+## 2. Terms
+
+Table 2.1 defines the design-intent status used in §3 to §7. The closure states of §11 are defined there.
+
+Table 2.1. Design-intent status
 
 | Status | Meaning |
 |---|---|
@@ -29,27 +41,16 @@ authority docs. Status is design-intent only:
 | **Partial** | Hooks, envelopes, or programs exist; quantitative calc, detail, or vendor proof missing |
 | **Gap** | Theme acknowledged; no credible plant control yet |
 
-Editions cited are those already locked in AQS-HSE-001 / ELECTRICAL /
-SITE (notably NEC / NFPA family **2026** design basis). Confirm City of
-Dallas amendments and AHJ edition before permit. Do **not** treat this
-matrix as clause text.
+- Authority having jurisdiction (AHJ): the official or office that enforces the codes for a project and issues permits.
+- Theme: the subject of a requirement, named without quoting the clause.
+- Local exhaust ventilation (LEV): extraction that captures a contaminant at its source, such as a hood.
+- Maximum allowable quantity (MAQ): the most of a hazardous material allowed in a control area before stricter occupancy rules apply.
 
-## 2. Scope
+Other abbreviations are in `docs-authority/GLOSSARY.md`.
 
-In scope: campus fire / H₂ / gas / ESS, electrical yard (Sol-Ark, ZnBr2,
-FC DC, GEN), OSHA egress & LEV hooks, ASME pressure/piping class notes,
-relevant ISO process/safety themes.  
-Out of scope: invented permits, PE stamps, root narrative folders.
-Egress study annex: AQS-EGR-001 (tracked under AQS-SITE-001 §8). Out of scope still includes
-(`06-energy-…` etc.).
+## 3. NFPA: fire, hydrogen, gases, energy storage and life safety
 
-Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.md`,
-`ELECTRICAL.md` (hub), `docs-authority/VENT_CLOSURE.md`, `docs-authority/WELD_MAP.md`,
-`docs-authority/DOC_STYLE.md` (AQS-DOC-002).
-
----
-
-## 3. NFPA (fire, hydrogen, gases, ESS, life safety hooks)
+Table 3.1. NFPA themes
 
 | ID | Requirement theme | Edition / note | Aqueous control / doc | Status | Action |
 |---|---|---|---|---|---|
@@ -64,14 +65,14 @@ Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.m
 | CMP-NFPA-09 | Sprinklers | NFPA 13 | AQS-HSE-001 §10: throughout except outdoor ESS / AHJ exceptions | Partial | Hydraulic calc + oxidizer-room special design |
 | CMP-NFPA-10 | Electrical safety work practices (arc flash) | NFPA 70E | AQS-HSE-001 §9 (labels on 480 V); ELECTRICAL.md | Partial | Arc-flash study / labels after final SLD |
 
----
+## 4. NEC (NFPA 70): electrical yard, Sol-Ark, zinc-bromide battery, fuel-cell DC and generator
 
-## 4. NEC / NFPA 70 (electrical yard, Sol-Ark, ZnBr2, FC DC, GEN)
+Table 4.1. NEC themes
 
 | ID | Requirement theme | Edition / note | Aqueous control / doc | Status | Action |
 |---|---|---|---|---|---|
 | CMP-NEC-01 | Service, disconnects, overcurrent | NEC 2026 Art. 110 / 230 (theme) | ELECTRICAL.md: 480Y/277 → meter → 200 A fused disco → Sol-Ark GRID / ATS | Compliant-intent | Short-circuit / coordination study |
-| CMP-NEC-02 | Interactive inverter / DER interconnection | UL 1741 SB / IEEE 1547 cited on Sol-Ark 60K | ELECTRICAL.md interconnect; `electrical_sld.png` | Compliant-intent | Utility interconnection agreement (site-specific) |
+| CMP-NEC-02 | Interactive inverter / distributed energy resource interconnection | UL 1741 SB / IEEE 1547 cited on Sol-Ark 60K | ELECTRICAL.md interconnect; `electrical_sld.png` | Compliant-intent | Utility interconnection agreement (site-specific) |
 | CMP-NEC-03 | Energy storage / battery systems | NEC Art. 706 theme; NFPA 855 for ZnBr2 | ZnBr2 on BATT DC 160–700 V; outdoor ESS; CAN BMS gateway | Partial | Listing / BMS protocol proof; working clearances on yard plan |
 | CMP-NEC-04 | Class I Div 2 Group B (H₂) wiring | NEC Art. 500 / 501 (Div; 505 optional) | AQS-HSE-001 §6 envelopes; XP / purged instruments on H₂ train | Partial | Seal-off / tray schedule on construction drawings |
 | CMP-NEC-05 | Generators / transfer equipment | NEC Art. 445 / 700 theme | BACKUP_GEN on Sol-Ark **GEN** port; break-before-make ATS; diesel external contingency only | Partial | Vendor continuous kW; GEN set listing; exhaust scrub path S46 |
@@ -80,26 +81,26 @@ Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.m
 | CMP-NEC-08 | Grounding / bonding / cable tray | NEC Art. 250 theme | `mfg_cable_tray.scad`, `freecad/pipe_services.py`; AQS-REM-001 §6.4 | Partial | Grounding electrode / equipotential plan |
 | CMP-NEC-09 | Working space about equipment | NEC 110.26 theme | SITE yard CLEAR_* / KO_* stubs (AQS-SITE-001 §6) | Partial | Dimensioned yard plan for AHJ |
 
----
+## 5. OSHA: egress, local exhaust ventilation and hazardous areas
 
-## 5. OSHA (egress, LEV / MET_SCRUB, H areas)
+Table 5.1. OSHA themes
 
 | ID | Requirement theme | Citation theme | Aqueous control / doc | Status | Action |
 |---|---|---|---|---|---|
 | CMP-OSH-01 | Means of egress | 29 CFR 1910.36 / .37 | AQS-EGR-001; AQS-SITE-001 §8; AQS-HSE-001 §10; hab path ≠ H areas | Partial | AHJ verify; outdoor discharge survey |
 | CMP-OSH-02 | Walking-working surfaces | 1910.22 / .29 | AQS-HSE-001 §9 mezzanine guardrails | Partial | Guardrail schedule on life / shop MEP |
-| CMP-OSH-03 | Permit-required confined spaces | 1910.146 | CSTR 1, fractionator, scrubber vessels listed | Partial | Written PRCS program + permits |
+| CMP-OSH-03 | Permit-required confined spaces | 1910.146 | CSTR 1, fractionator, scrubber vessels listed | Partial | Written permit-required confined space program + permits |
 | CMP-OSH-04 | LOTO | 1910.147 | Rectifiers, shredder, pyro, MET_MELT, Sol-Ark | Partial | Energy-isolation procedures |
-| CMP-OSH-05 | Respiratory protection | 1910.134 | Salria / Cl₂ / Br₂ tasks | Partial | IH survey + written program |
+| CMP-OSH-05 | Respiratory protection | 1910.134 | Salria / Cl₂ / Br₂ tasks | Partial | Industrial hygiene survey + written program |
 | CMP-OSH-06 | Hazard communication | 1910.1200 | SDS at gate; AQS-HSE-001 §4 incompatibles | Compliant-intent | Keep SDS set current with chemistry locks |
 | CMP-OSH-07 | Local exhaust / process ventilation | 1910.94 / industry LEV practice | Hoods → HDR_*; MET_AHU → MET_SCRUB (S71–S72); ACID_POLISH; CRYO_AHU_COND; AQS-VENT-001 | Partial | Capture velocities / duct balances (study duties exist; vendor curves TBD) |
 | CMP-OSH-08 | PSM threshold awareness | 1910.119 | AQS-HSE-001 §5 inventory caps intentionally under triggers | Compliant-intent | Re-check if CRYO_H2 / Br₂ holdup grows |
 | CMP-OSH-09 | Electrical / arc flash | 1910.303 / .305 / .333 + 70E | AQS-HSE-001 §9 | Partial | Same as CMP-NFPA-10 / CMP-NEC-* |
 | CMP-OSH-10 | Machine guarding / noise | 1910.212 / .219 / .95 | Shredder / induction called out | Partial | Guarding drawings + noise survey |
 
----
+## 6. ASME: pressure vessels and piping
 
-## 6. ASME (pressure vessels / piping)
+Table 6.1. ASME themes
 
 | ID | Requirement theme | Edition / note | Aqueous control / doc | Status | Action |
 |---|---|---|---|---|---|
@@ -107,56 +108,39 @@ Cross-refs: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.m
 | CMP-ASM-02 | Process piping metallic | ASME B31.3 theme | AQS-ASM-001 PC-01…10 templates; materials from AQS-WLD-001; P/T TBD | **Partial** | Numeric P/T; hydro procedures |
 | CMP-ASM-03 | Nonmetallic / thermoplastic piping | B31.3 nonmetallic / manufacturer rules | Salria CPVC/PVDF; BMED PP fusion (AQS-WLD-001) | Partial | Formal thermoplastic joining procedure + hydro |
 | CMP-ASM-04 | Weld map / WPS / PQR | ASME IX / AWS themes | AQS-WLD-001 is joint **register only** — explicitly not stamped | Gap | Fabricator WPS/PQR package outside this repo |
-| CMP-ASM-05 | Relief / overpressure | BPVC / B31.3 + process relief practice | FAB/CRY relief noted Wave 1; upset stacks AHJ residuals (AQS-VENT-001) | Partial | Relief device schedule with set pressures |
+| CMP-ASM-05 | Relief / overpressure | BPVC / B31.3 + process relief practice | FAB/CRY relief noted in the first review; upset stacks AHJ residuals (AQS-VENT-001) | Partial | Relief device schedule with set pressures |
 
-**NOTE:** Where piping class or MAWP is not detailed in authority docs,
-status is **TBD / Gap** — class ratings are not assigned without verified basis.
+Where the piping class or maximum allowable working pressure is not set in an authority page, the status is TBD or Gap: no class rating is assigned without a verified basis.
 
----
+## 7. ISO: process and safety applicability
 
-## 7. ISO (process / safety — applicability)
+Table 7.1. ISO themes
 
 | ID | Theme | Typical standard (reference only) | Aqueous relevance | Status | Action |
 |---|---|---|---|---|---|
-| CMP-ISO-01 | Quality / document control | ISO 9001 | House style AQS-DOC-002; doc numbers / revs | Partial | Apply style to authority hub; not a certified QMS |
-| CMP-ISO-02 | Occupational H&S management | ISO 45001 | Complements OSHA hooks; not adopted as system | Gap | Optional management-system decision — not claimed |
-| CMP-ISO-03 | Risk / HAZOP-style process safety | ISO 31000 / IEC 61511 themes | Inventory caps, Class I envelopes, vent closure | Partial | Formal HAZOP / LOPA before construction |
-| CMP-ISO-04 | Environmental management | ISO 14001 | Closed vent / scrub end states; no outdoor dump intent | Partial | Optional EMS; AEROD/site modeling deferred |
+| CMP-ISO-01 | Quality / document control | ISO 9001 | House style AQS-DOC-002; doc numbers / revs | Partial | Apply style to the authority pages; not a certified quality management system |
+| CMP-ISO-02 | Occupational health and safety management | ISO 45001 | Complements OSHA hooks; not adopted as system | Gap | Optional management-system decision — not claimed |
+| CMP-ISO-03 | Risk / HAZOP-style process safety | ISO 31000 / IEC 61511 themes | Inventory caps, Class I envelopes, vent closure | Partial | Formal HAZOP and layer of protection analysis before construction |
+| CMP-ISO-04 | Environmental management | ISO 14001 | Closed vent / scrub end states; no outdoor dump intent | Partial | Optional environmental management system; AEROD/site modeling deferred |
 | CMP-ISO-05 | Hydrogen technologies vocabulary / safety | ISO/TR 15916 & related H₂ docs | Aligns with NFPA 2 design intent; not primary US code | Partial | Prefer NFPA 2/55 for AHJ; use ISO as reference only |
 | CMP-ISO-06 | Cleanrooms / fab airborne | ISO 14644 | Wafer fab H-5 analog; UPW / wet benches | Partial | Cleanliness class TBD if fab tooling proceeds |
 | CMP-ISO-07 | Pressure equipment (EU) | PED / ISO vessel norms | **Not applicable** as primary US design code | Gap / N/A | US = ASME; do not claim PED |
 
-Do **not** claim ISO certification. Prefer US NFPA / NEC / OSHA / ASME
-for permit. ISO rows are applicability mapping only.
+ISO certification is not claimed. For permits the US codes (NFPA, NEC, OSHA, ASME) are preferred; the ISO rows only map where a standard applies.
 
----
+## 8. Gaps and blockers
 
-## 8. Gap count (this Rev B)
+The rows with status Gap in §3 to §7 are CMP-ASM-04, CMP-ISO-02 and CMP-ISO-07 (not applicable as a primary code). CMP-ASM-01 moved from Gap to Partial when the vessel inventory was issued; its maximum allowable working pressures were then still to be set. CMP-NFPA-04 and CMP-OSH-01 stay Partial, with the egress study AQS-EGR-001 for the AHJ to verify. The current state of every row is in §11.
 
-| Status | Count |
-|---|---|---|
-| Compliant-intent | 10 |
-| Partial | 26 |
-| Gap (incl. N/A recorded as gap) | 4 |
-| **Total rows** | **39** |
+The main construction blockers are AHJ verification of egress, vessel maximum allowable working pressures and relief set pressures, and vendor nameplates.
 
-**Gap IDs:** CMP-ASM-04, CMP-ISO-02, CMP-ISO-07 (N/A primary), and
-remaining gaps above. CMP-ASM-01 moved Gap → Partial (inventory
-issued; MAWP still TBD). CMP-NFPA-04 / CMP-OSH-01 remain Partial with
-AQS-EGR-001 study annex (AHJ verify).
+### 8.1 Blockers to a design freeze
 
-Primary construction blockers now: AHJ verification of egress, vessel
-MAWP / relief set pressures, vendor nameplates.
+Professional engineers' stamps and permits remain out of scope. The items in Table 8.1 block any statement that the design, or `AQS-MVS-001`, is frozen until evidence tables exist. The checklist is held in the unpublished planning audit `MVS_GAP_AUDIT.md` (AQS-MVS-GAP-001) §4.8. Stamps and vendor nameplates are not invented to clear them.
 
-### 8.1 Blocks design-freeze language (pointer)
+Table 8.1. Blockers to a design freeze
 
-Formal PE stamp / permits remain **out of scope**. The
-following still **block “design freeze” / AQS-MVS-001 freeze
-language** until evidence tables exist — checklist owned by planning
-`MVS_GAP_AUDIT.md` (AQS-MVS-GAP-001) §4.8; PE stamps and vendor
-nameplates are not fabricated to clear them:
-
-| Blocker class | CMP / EGR refs | Study status |
+| Blocker class | Matrix and egress references | Study status |
 |---|---|---|
 | AHJ egress clear widths / CRYO lobby | CMP-NFPA-04, CMP-OSH-01; AQS-EGR-001 | Partial |
 | Controlling code edition | §2; AQS-EGR-001 §2.1 | Study |
@@ -167,9 +151,9 @@ nameplates are not fabricated to clear them:
 | CRYO holdup vs MAQ | CMP-NFPA-01 | Study |
 | SITE_LAT / potable VCD·remin | seed / AQS-WTR-001 | Unknown / Missing |
 
----
+## 9. Pages that point to this matrix
 
-## 9. Cross-ref updates (Wave 2)
+Table 9.1. Pages that point to this matrix
 
 | Doc | Update |
 |---|---|
@@ -178,13 +162,15 @@ nameplates are not fabricated to clear them:
 | `ELECTRICAL.md` | Header + CMP-NEC-* pointer |
 | AQS-AUTH-001 | Lists AQS-CMP-001 / AQS-DOC-002 |
 
-## 10. Sync
+## 10. Canonical copy
 
-Canonical in this tree: `docs-authority/COMPLIANCE_MATRIX.md`
+The canonical copy of this matrix is `docs-authority/COMPLIANCE_MATRIX.md`.
 
-## 11. Closure per item (X-COD-01, rev D)
+## 11. Closure per item (X-COD-01)
 
-Generated by `docs-authority/_compliance.py`. States: Closed (study) = evidence exists in a generated document, AHJ/PE confirmation still applies; Open (design) = deliverable missing, closing task named; Open (external) = site, AHJ, utility, fire engineer or physical test; Open (owner) = programme or management-system decision.
+This section is generated by `docs-authority/_compliance.py` and records the current state of every row. The states are: Closed (study), the design evidence exists in a generated document and confirmation by the authority having jurisdiction or a professional engineer still applies; Open (design), a deliverable is missing and the task that closes it is named; Open (external), the item needs the site, the authority having jurisdiction, the utility, a fire engineer or a physical test; Open (owner), the item needs a programme or management-system decision; N/A, not applicable.
+
+Table 11.1. Closure state of each row
 
 | ID | Evidence | State | Remaining |
 |---|---|---|---|
@@ -229,5 +215,3 @@ Generated by `docs-authority/_compliance.py`. States: Closed (study) = evidence 
 | CMP-ISO-05 | NFPA 2 primary | Closed (study) | - |
 | CMP-ISO-06 | wafer fab, UPW | Open (design) | cleanliness class with the fab tool set |
 | CMP-ISO-07 | US basis is ASME | N/A | - |
-
-Closed (study): 23, Open (design): 9, Open (owner): 5, Open (external): 3, N/A: 1 (of 41).

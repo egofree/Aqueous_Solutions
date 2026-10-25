@@ -59,7 +59,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-COM-001 | `docs-authority/COMMISSIONING.md` | A | 2026-10-16 | Commissioning plan | current |
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence (cold start from empty) | current |
 | AQS-COM-003 | `docs-authority/PERF_TEST.md` | A | 2026-10-16 | Performance test | current |
-| AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | D | 2026-10-16 | Compliance matrix — design intent vs code themes | current |
+| AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | E | 2026-10-24 | Compliance matrix: design intent against code themes | current |
 | AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | B | 2026-09-28 | Cryogenic cold-box internals | current |
 | AQS-CRY-003 | `docs-authority/COLD_BOX.md` | — | — | Cold box | current |
 | AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | A | 2026-10-16 | Instrument index | current |
@@ -264,7 +264,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-REM-002 | `docs-authority/internal/REMAINING_CHECKLIST.md` | E | 2026-10-01 | Remaining work checklist | superseded by AQS-PLAN-007 |
 | AQS-REM-BLD-001 | `docs-authority/internal/REMAINING_BLD.md` | Y | 2026-10-01 | Remaining after BLD CAD pass (2026-09-27) | superseded by AQS-PLAN-007 |
 | AQS-REQ-001 | `notes/BINDING_REQ_2026-10-16.md` | A | 2026-10-16 | Binding requirements — fluoropolymers, critical metals, cost basis | current |
-| AQS-REQ-KW-001 | `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md` | A | 2026-10-01 | Continuous kW requirements — GEN / FC / PECVD / belt fire / CRYO / MFG | current |
+| AQS-REQ-KW-001 | `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md` | B | 2026-10-24 | Continuous power requirements for generation, fuel cells, PV fabrication, cryogenics and manufacturing | current |
 | AQS-REV-H2-001 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | B | 2026-10-15 | Hydrogen embrittlement review | current |
 | AQS-SAF-001 | `docs-authority/HAZOP.md` | A | 2026-10-16 | HAZOP worksheets | current |
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register | current |
@@ -465,7 +465,7 @@ Older documents may cite these numbers. Read them as the current number shown.
 
 | Former | Current | Page | Former number still held by | Note |
 | --- | --- | --- | --- | --- |
-| AQS-CMP-001 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | `docs-authority/CAMPUS_PLAN.md` | AQS-CMP-001 to clear a duplicate (AQS-REG-001). |
+| AQS-CMP-001 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | `docs-authority/CAMPUS_PLAN.md` | AQS-CMP-001 (renumbered 2026-10-15 to clear a duplicate; see AQS-REG-001) |
 | AQS-DOC-001 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | — | AQS-DOC-001 (the separate house-style page DOCUMENTATION_STYLE.md, merged into this guide on 2026-10-24) |
 | AQS-DUTY-011 | AQS-DUTY-078 | `docs-authority/BALANCE_CLOSE.md` | `docs-authority/REV_M_CLOSURE_DUTY.md` | AQS-DUTY-011 (shared with REV_M_CLOSURE_DUTY.md until 2026-10-24; that page keeps it) |
 | AQS-DUTY-064 | AQS-DUTY-079 | `docs-authority/sizing/HOUSE_SCRUBBERS.md` | `docs-authority/sizing/STORAGE_HOLDUP.md` | AQS-DUTY-064 (shared with sizing/STORAGE_HOLDUP.md until 2026-10-24; that page keeps it) |

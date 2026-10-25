@@ -1,38 +1,45 @@
-# Continuous kW requirements — GEN / FC / PECVD / belt fire / CRYO / MFG
+# Continuous power requirements for generation, fuel cells, PV fabrication, cryogenics and manufacturing
 
 Document number: AQS-REQ-KW-001  
-Revision: A  
-Date: 2026-10-01  
-Authority: AQS-SCALE-001 (`SCALE_M = 1.0`), AQS-AUD-001, AQS-ELC-001
-(`ELECTRICAL.md`), AQS-GAS-003 Faraday check, AQS-FC-001 / AQS-PWR-002 /
-AQS-CRY-002 / AQS-MFG-MET-001 / AQS-EQP-FAB-PV-001, AQS-MeOH-001.  
-**Stage = define requirements.** Not a purchase order. Not stamped nameplates.
+Revision: B  
+Date: 2026-10-24  
+Basis: AQS-SCALE-001 (`SCALE_M = 1.0`), AQS-AUD-001, AQS-ELC-001 (`ELECTRICAL.md`), the AQS-GAS-003 Faraday check, AQS-FC-001, AQS-PWR-002, AQS-CRY-002, AQS-MFG-MET-001, AQS-EQP-FAB-PV-001 and AQS-MeOH-001.  
+Status: design requirements. Not a purchase order and not a set of stamped nameplates.  
+Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | First-principles continuous kW + labeled stand-in products | 2026-10-01 |
+| B | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, scope and terms added to §1, captions. Section numbers, requirements, ranges and stand-ins unchanged. | 2026-10-24 |
 
-Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002.
+## 1. Purpose, scope and method
 
----
+This page sets the continuous electrical power each of the following must deliver or may draw at the baseline plant size (`SCALE_M = 1.0`): the backup generator, the PEM fuel cell, the methanol fuel cell, the Stirling cryocooler bank, the PV-cell fabrication tools (PECVD and belt firing) and the manufacturing shop. These requirements feed the electrical design (AQS-ELC-001) and the energy-storage duties.
 
-## 1. Method
+In scope: continuous and capacity-class power, the hydrogen they share, and the commercial products used as stand-ins to bound them. Out of scope: purchase decisions and vendor nameplates, which stay to be decided at procurement.
 
-1. **First principles** from issued plant streams (H₂ Faraday, module bus,
-   wet feed 150 kg/d, life/basement at `SCALE_M = 1.0`).
-2. Where a commercial class is needed for calculation envelope, cite a
-   **stand-in** (vendor / model / URL or datasheet). Stand-ins are **not**
-   BOM and are **not** purchased equipment.
-3. **Continuous kW** = duty expected under normal steady operation on
-   process streams alone. **Capacity class** = upper electrical envelope
-   allowed by Sol-Ark / ZnBr2 / module peak — may exceed continuous when
-   fueled from holdup or contingency fuel.
-4. Do **not** hard-code legacy campus narratives (280 / 336 / 400 /
-   100–200 kW stacks) as M1 issued ratings.
+Terms:
 
----
+- Continuous power: the power expected in normal steady operation, fed by the plant's own process streams alone.
+- Capacity class: the upper electrical envelope allowed by the Sol-Ark inverter, the zinc-bromide battery or the module peak. It may exceed the continuous power when running on stored or contingency fuel.
+- Stand-in: a cited commercial product (vendor, model and datasheet or URL) used to bound a calculation. A stand-in is not part of the bill of materials and is not purchased equipment.
+- kW_e, kW_dc, kW_th: electrical (AC), direct-current electrical and thermal power.
+- M1: the first module of the plant at the baseline size.
+- PRP, ESP: prime power and emergency standby power, the two standard generator ratings (ISO 8528-1).
 
-## 2. Stand-in product table (labeled — not BOM)
+Other abbreviations are in `docs-authority/GLOSSARY.md`.
+
+Method:
+
+1. Requirements are derived from first principles using the plant's issued streams: the Faraday hydrogen yield, the module bus, the wet feed of 150 kg/d, and the life and basement loads at `SCALE_M = 1.0`.
+2. Where a commercial class is needed to bound a calculation, a stand-in is cited (Table 2.1).
+3. The older campus figures (280 / 336 / 400 kW and 100–200 kW stacks) are not used as issued ratings for M1.
+
+## 2. Stand-in products
+
+These products bound the calculations; they are not a bill of materials (Table 2.1).
+
+Table 2.1. Stand-in products
 
 | ID | Use in Aqueous | Stand-in (vendor / model) | Cited continuous / rated | Source | Role |
 |---|---|---|---|---|---|
@@ -49,11 +56,13 @@ Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002.
 | SI-MEOH-02 | Air-to-MeOH pilot class | **Air Company Air2Fuel / CO₂ hydrogenation** | Pilot **280 MTPA** MeOH class; bench 100–400 mL/d | NETL AIR2FUEL (DE-FE0032405); Air Company public pilots | DAC+H₂ path stand-in |
 | SI-IEM-01 | Preferred IEM membrane fab | **Open-sourced-off-the-shelf-ion-exchange-membrane** (SEM-Tech lineage) | Open membrane fab reference | DEPENDENCIES.md (egofree fork CC0; Rowow-LLC CERN-OHL-S-2.0) | Preferred membrane for MeOH IEM-FC / synthesis cells |
 
----
+## 3. Continuous power requirements at `SCALE_M = 1.0`
 
-## 3. Continuous kW requirements (SCALE_M = 1.0)
+### 3.0 Shared hydrogen supply
 
-### 3.0 Shared H₂ pool (first principles)
+All the hydrogen users draw on one process supply (Table 3.1).
+
+Table 3.1. Shared hydrogen supply
 
 | Quantity | Value | Basis |
 |---|---|---|
@@ -62,11 +71,11 @@ Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002.
 | Chemical power | **~6.7 kW_th** | 0.2 × 33.3 |
 | Consumers sharing pool | BACKUP_GEN (S45), PEM FC (S49), MeOH synth (S74), S24/S64 contingency | Cannot all draw Faraday max simultaneously |
 
-**H₂ priority (requirements lock):** (1) MAQ / dryer holdup, (2) PEM FC continuous baseload,
-(3) BACKUP_GEN islanded peaks from holdup, (4) MeOH synthesis when ZnBr2 SOC and
-PV surplus allow (AQS-MeOH-001).
+Hydrogen priority (requirement): (1) the maximum allowable quantity and dryer hold-up; (2) the PEM fuel cell's continuous base load; (3) the backup generator's islanded peaks, from hold-up; (4) methanol synthesis, when the zinc-bromide battery's state of charge and the PV surplus allow it (AQS-MeOH-001).
 
-### 3.1 BACKUP_GEN (AQS-EQP-GEN-001)
+### 3.1 Backup generator (`BACKUP_GEN`, AQS-EQP-GEN-001)
+
+Table 3.2. Backup generator requirements
 
 | Requirement | Continuous | Capacity class | Basis |
 |---|---|---|---|
@@ -75,7 +84,9 @@ PV surplus allow (AQS-MeOH-001).
 | Cont. fuel rate @ REQ-GEN-CONT | **~0.15 kg/h H₂** | — | Scale from SI-GEN-01 ~0.5 kg/h @ 11 kW → ~0.11–0.15 kg/h @ 2.5 kW |
 | Diesel | Contingency only | — | Not continuous requirement |
 
-### 3.2 PEM FUEL_CELL (AQS-FC-001 / AQS-EQP-FC-001)
+### 3.2 PEM fuel cell (`FUEL_CELL`, AQS-FC-001 and AQS-EQP-FC-001)
+
+Table 3.3. PEM fuel cell requirements
 
 | Requirement | Continuous | Capacity class | Basis |
 |---|---|---|---|
@@ -84,12 +95,11 @@ PV surplus allow (AQS-MeOH-001).
 | Cont. fuel @ REQ-FC-CONT | **~0.20 kg/h H₂** (full Faraday) | — | If GEN idle; split with GEN/MeOH per §3.0 |
 | Oxidizer | CRYO_O2 (S50) | — | Not ambient air as named M1 stream |
 
-### 3.3 CRYO Stirling (AQS-CRY-002 / AQS-EQP-CRY-001)
+### 3.3 Stirling cryocoolers (AQS-CRY-002 and AQS-EQP-CRY-001)
 
-First principles: life O₂/N₂/CO₂ product rates are headcount-limited (study
-4 persons — AQS-AUD-001 §11). Product gas liquefaction / 77–90 K sink is
-dominated by cold-box heat leak + distillation reboil/condense, not by
-detector-scale lift alone.
+From first principles, the oxygen, nitrogen and carbon dioxide needed for life support are limited by headcount (a study crew of 4, AQS-AUD-001 §11). The cooling needed to liquefy product gas, a sink at 77–90 K, is dominated by the heat leak of the cold box and by distillation reboil and condensing, not by lift at detector scale.
+
+Table 3.4. Cryocooler requirements
 
 | Requirement | Continuous | Basis |
 |---|---|---|
@@ -97,14 +107,13 @@ detector-scale lift alone.
 | Legacy 15–25 kW cryo bus | **Superseded** | AQS-GAP-001 — folded into module bus |
 | Dedicated cool S55 | Sized to Stirling + deep reject | Not Q4 life air |
 
-**NOTE:** A single CryoTel GT is **instrumentation class**, not plant air-sep.
-Requirement is a **bank / commercial cold-box** whose electric input lands in
-the 2–8 kW_e study band; SI-CRY-01 is the labeled COP/stand-in cell.
+A single CryoTel GT is an instrument-class cooler, not a plant air-separation unit. The requirement is for a bank of units, or a commercial cold box, whose electrical input falls within the study band of 2–8 kW_e. SI-CRY-01 is the stand-in unit cell that shows the coefficient of performance.
 
-### 3.4 PECVD / belt fire (AQS-EQP-FAB-PV-001)
+### 3.4 PECVD and belt firing (AQS-EQP-FAB-PV-001)
 
-Pilot wafer starts **1–5 /d** (AQS-AUD-001 §13) → tools are **intermittent**,
-not 24 h continuous at industrial wph.
+The pilot line starts 1–5 wafers a day (AQS-AUD-001 §13), so the tools run intermittently, not continuously at industrial wafers per hour (Table 3.5).
+
+Table 3.5. PECVD and belt-firing requirements
 
 | Requirement | Continuous-equivalent | Peak intermittent | Basis |
 |---|---|---|---|
@@ -112,7 +121,9 @@ not 24 h continuous at industrial wph.
 | **REQ-BELT-CONT** | **0.5–2 kW_e** avg | **10–25 kW_e** while firing | SI-BELT-01 IR/belt class; heat reject → PV_HX_Q4 (S53 peer) |
 | Combined FAB PV strip budget | **≤ 20 kW_e** coincident peak | — | Inside module ~50 kW peak; staged so CZ + PECVD + belt not all peak together |
 
-### 3.5 MFG (polymer + metal forming)
+### 3.5 Manufacturing (polymer and metal forming)
+
+Table 3.6. Manufacturing requirements
 
 | Requirement | Continuous | Peak | Basis |
 |---|---|---|---|
@@ -121,7 +132,11 @@ not 24 h continuous at industrial wph.
 | **REQ-MFG-FORM-CONT** | **1–5 kW_e** draw/mill/atomize share | — | Throughput 0.2–2 kg/h (AQS-AUD-001 §10.6) |
 | **REQ-MFG-TOTAL-CONT** | **~8–20 kW_e** plant share | **≤ 30 kW_e** coincident | Must remain inside module peak with wet/FAB |
 
-### 3.6 MeOH IEM-FC (AQS-MeOH-001) — new continuous path
+### 3.6 Methanol fuel cell with ion-exchange membrane (AQS-MeOH-001)
+
+This is a continuous power path added alongside the PEM fuel cell (Table 3.7). Both the PEM hydrogen fuel cell and the methanol fuel cell exist (AQS-FC-001 Rev B, AQS-MeOH-001).
+
+Table 3.7. Methanol fuel cell requirements
 
 | Requirement | Continuous | Capacity class | Basis |
 |---|---|---|---|
@@ -129,11 +144,9 @@ not 24 h continuous at industrial wph.
 | MeOH burn rate @ 1 kW | **~0.9 L/h ≈ 0.71 kg/h** | — | SI-DMFC-01 0.9 L/kWh; ρ_MeOH ≈ 0.79 kg/L |
 | Electrical tie | Sol-Ark **BATT DC** via **MEOH_DCDC** (peer to FC_DCDC) | — | ≠ GEN port; ≠ RECT process DC |
 
-PEM H₂ FC and MeOH IEM-FC **both exist** (AQS-FC-001 Rev B / AQS-MeOH-001).
+## 4. Summary of requirements
 
----
-
-## 4. Summary requirements board
+Table 4.1. Summary of requirements
 
 | Tag | Continuous kW (requirement) | Capacity / peak | Stand-in IDs |
 |---|---|---|---|
@@ -145,11 +158,8 @@ PEM H₂ FC and MeOH IEM-FC **both exist** (AQS-FC-001 Rev B / AQS-MeOH-001).
 | PV_FIRE (belt) | 0.5–2 avg / 10–25 peak | ≤ 25 peak | SI-BELT-01 |
 | MFG total | **8–20 kW_e** | ≤ 30 coincident | SI-MFG-01 / SI-MFG-02 |
 
-All rows = **study requirements** for design. Vendor purchase nameplates remain
-TBD until procurement. CERN-OHL-S-friendly cites in §2.
+All rows are study requirements for design. Vendor nameplates remain to be decided at procurement. The stand-ins are cited in §2.
 
----
+## 5. Canonical copy
 
-## 5. Sync
-
-Canonical in this tree: `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md`  
+The canonical copy of this page is `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md`.
