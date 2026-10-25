@@ -567,6 +567,8 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {TPDES -- Texas Pollutant Discharge Elimination System, the TCEQ water discharge permit programme.}
 
+{VOC -- Volatile organic compound.}
+
 {NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
 
 {ASME -- American Society of Mechanical Engineers. Vessel and B31.3 piping class sheets (AQS-ASM-001).}

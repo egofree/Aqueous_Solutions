@@ -57,3 +57,9 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 - `FONTS.md` (AQS-FONT-001) Rev A, `GROUNDING.md` (AQS-ELEC-005) Rev B, `PERMITS.md` (AQS-COD-002) Rev B and `LIFE_HEADERS.md` (AQS-PIP-002) Rev B rewritten. No value removed. `LIFE_HEADERS.md` now states tier elevations relative to the level 1 floor, as the model builds them.
 - `GLOSSARY.md`: FAQ, GNU, GPR, OFL, CGP, EPCRA, LEPC, NSR, POTW, TAC, TCEQ and TPDES added.
 - `FAB_WET_INTERFACE.md` reviewed and recorded in `REWRITE_TODO.md` section 6; not changed.
+
+## Batch 10
+
+- `GREENHOUSE_ENVELOPE.md` (AQS-TRR-GH-001) Rev C and `MEOH_EQUIPMENT.md` (AQS-EQP-MEOH-001) Rev B rewritten. No tag, duty or rating changed.
+- `GLOSSARY.md`: VOC added.
+- `TEXTILES_HEPA.md` reviewed and proposed for deletion in `REWRITE_TODO.md` section 6; not changed.

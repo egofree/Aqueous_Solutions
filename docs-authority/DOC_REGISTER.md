@@ -165,7 +165,7 @@ Table 3.1. Document numbers in use
 | AQS-EQP-GEN-001 | `docs-authority/BACKUP_GEN_EQUIPMENT.md` | D | 2026-10-24 | Backup generator equipment list | current |
 | AQS-EQP-GEO-001 | `docs-authority/GEOTHERMAL_EQUIPMENT.md` | D | 2026-10-24 | Geothermal equipment list | current |
 | AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | B | 2026-09-27 | Habitation water — equipment list | current |
-| AQS-EQP-MEOH-001 | `docs-authority/MEOH_EQUIPMENT.md` | A | 2026-10-01 | Methanol train equipment list | current |
+| AQS-EQP-MEOH-001 | `docs-authority/MEOH_EQUIPMENT.md` | B | 2026-10-25 | Methanol train equipment list | current |
 | AQS-EQP-MFG-001 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | C | 2026-09-28 | MFG shop equipment list | current |
 | AQS-EQP-MFG-MET-001 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | D | 2026-10-01 | Metal-forming equipment list | current |
 | AQS-EQP-NUT-001 | `docs-authority/NUTRIENT_DOSE.md` | B | 2026-09-27 | Nutrient dose / N-P process list | current |
@@ -456,7 +456,7 @@ Table 3.1. Document numbers in use
 | AQS-TOOL-002 | `docs-authority/MILL.md` | A | 2026-10-11 | Mill module | current |
 | AQS-TOOL-003 | `docs-authority/WELDER.md` | A | 2026-10-11 | Welder module | current |
 | AQS-TRR-001 | `docs-authority/TERRACE_LANDSCAPE.md` | B | 2026-09-27 | Terrace landscape — planting, irrigation, open vs greenhouse | current |
-| AQS-TRR-GH-001 | `docs-authority/GREENHOUSE_ENVELOPE.md` | B | 2026-10-01 | Enclosed greenhouse envelope — schedule stub (optional FreeCAD) | current |
+| AQS-TRR-GH-001 | `docs-authority/GREENHOUSE_ENVELOPE.md` | C | 2026-10-25 | Enclosed greenhouse envelope | current |
 | AQS-TST-001 | `docs-authority/TEST_PLAN.md` | A | 2026-10-15 | Testing and prototyping rollout plan | current |
 | AQS-TST-002 | `docs-authority/ZNBR2_STACK_TEST.md` | B | 2026-10-24 | Zinc-bromide battery stack test | current |
 | AQS-TST-003 | `docs-authority/TEST_RIGS.md` | A | 2026-10-16 | In-house test rigs: build packages | current |

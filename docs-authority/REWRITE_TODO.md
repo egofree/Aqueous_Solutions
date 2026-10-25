@@ -43,6 +43,8 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/GROUNDING.md` | Rev B. Values of revision A kept; section 5 records that the grid has been superseded. See section 6. |
 | `docs-authority/PERMITS.md` | Rev B. Purpose, numbered table and held items added. No permit changed. |
 | `docs-authority/LIFE_HEADERS.md` | Rev B. Tier elevations stated relative to the level 1 floor, as `models/freecad/pipe_services.py` builds them (revision A said above grade). Fixed spine coordinates of revision A kept as history; the parametric placement in `models/freecad/params.py` is described. |
+| `docs-authority/GREENHOUSE_ENVELOPE.md` | Rev C. Purpose and numbered table added; records that S40 and S42 are not graph edges. See section 6. |
+| `docs-authority/MEOH_EQUIPMENT.md` | Rev B. Purpose added; new column shows which tags are graph nodes. No tag or rating changed. See section 6. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 
@@ -94,7 +96,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/GA_CHECK.md` | |
 | `docs-authority/GEOTHERMAL_BACKUP.md` | |
 | `docs-authority/GLOSSARY.md` | |
-| `docs-authority/GREENHOUSE_ENVELOPE.md` | |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | |
 | `docs-authority/HAB_FIXTURES.md` | |
 | `docs-authority/HAB_WATER.md` | |
@@ -114,7 +115,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/LOAD_LIST.md` | |
 | `docs-authority/MATERIALS_SEC3.md` | |
 | `docs-authority/MATERIALS_STD.md` | |
-| `docs-authority/MEOH_EQUIPMENT.md` | |
 | `docs-authority/MEOH_TRAIN.md` | |
 | `docs-authority/METAL_FORMING.md` | |
 | `docs-authority/MFG_MODEL_PLAN.md` | |
@@ -307,3 +307,7 @@ Table 6.1. Pages kept pending a decision
 
 | `docs-authority/GROUNDING.md` (AQS-ELEC-005) | Sections 1 and 4 describe the revision A grid (35 × 20 m ring, 12 rods, 1.14 Ω; GPR 494 V). AQS-ELEC-006 section 4 describes grid Rev B (196 × 174 m, 74 rods, 0.128 Ω, GPR 887 V), and `docs-authority/_grounding_study.py` now prints 0.150 Ω with 65 rods (area 25 392 m²). The three need to be reconciled before section 1 is restated. |
 | `docs-authority/FAB_WET_INTERFACE.md` (AQS-IF-FAB-WET-001) | Not rewritten. Much of it no longer matches the graph: FAB_PREP, FAB_TOOL, ETCH_RETURN and CORE_PROCESS are not graph nodes; S10 runs WET_BENCH to LEACH_CSTR_1 (the page says REGEN LEACH); S08 runs LEACH_CSTR_1 to MFG_SHOP (the page lists it as crib solids crossing to the fab); S38 runs WET_BENCH to OIL_FRAC (the page lists it among reagents to the fab); S21 runs ROOF_TANK to HABITATION (the page gives it as a fab ultrapure water feed). It is cited by `WAFER_FAB_EQUIPMENT.md` and two exporters. Proposal: rewrite it from the graph edges between the FAB sector and the wet line, or fold it into `WAFER_FAB_EQUIPMENT.md` and retire the number. |
+
+| `docs-authority/GREENHOUSE_ENVELOPE.md` (AQS-TRR-GH-001) | Streams S40 (overflow to terrace irrigation) and S42 (fertigation return) are named here, in AQS-TRR-001 and in the stream register, but neither is an edge of the plant flow graph. Should they be added to the graph or removed from the pages? |
+| `docs-authority/MEOH_EQUIPMENT.md` (AQS-EQP-MEOH-001) | Only MEOH_SYNTH, MEOH_COND, MEOH_TANK and MEOH_FC are graph nodes. The graph has one MEOH_FERM where the list has MEOH_FERM_DIG and MEOH_FERM_STILL, and the remaining tags are on the list only. Should the list be cut to the graph, or the graph extended? |
+| `docs-authority/TEXTILES_HEPA.md` (AQS-MFG-TEX-001) | Not rewritten; proposed for deletion. It is a placeholder for a filter media line with no equipment, streams, duties or model. Two of its authorities, AQS-GAP-001 and AQS-AUD-001, are not documents in the repository. Only the glossary entry for HEPA cites it, and that entry can stand without it. |
