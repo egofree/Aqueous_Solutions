@@ -84,3 +84,21 @@ set (in does not equal out by design). Baseline solved values are unchanged
 new leaf. The Death Valley run books 255.257 kg/d (the 7.25 kW rejected duty)
 end to end, and AQS-SITE-006 Rev B records it. X-LOC-07 and X-LOC-13 are
 ticked with evidence.
+
+## Addendum 5: X-LOC-11 first pass (floating island)
+
+The floating-island profile is in: tropical moored platform (Q-030/Q-031),
+seawater as coolant, water source and mineral feed (Millero composition; RO
+desalination at the least-energy basis), a motion envelope as interim assumption
+A-M-388, Category 5 survival wind on the moorings, the marine code family, and
+the scaling actions (pumped hydro and the ground loop eliminated with recorded
+different-technology replacements; DRY_COOLER duplicated as the seawater
+rejection pair). The locale run closes with no design-check failures. Two real
+findings are recorded: the building class no longer claims ground contact as a
+site service (bearing is structural - the hull deck per class rules at sea), and
+the worst-stretch storage coverage is exactly 1.00 with no margin. X-LOC-11
+stays open on its named remainder: the hull design pass (mass, centre of
+gravity, stability, freeboard, motion-coupled sizing checks), the seawater
+intake/desalination/mineral-recovery units, and the assay feed case. A
+gitignore regression that silently ignored flow_graph/param/sites/ was found and
+fixed (pattern anchored to the repo root).

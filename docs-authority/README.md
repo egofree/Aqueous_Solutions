@@ -83,6 +83,7 @@ The documents that explain how the design is organised and where its numbers com
 | [SITE_BASIS.md](SITE_BASIS.md) | AQS-SITE-002 | Site basis — AQS-SITE-002 Rev A |
 | [LOCALIZATION_PLAN.md](LOCALIZATION_PLAN.md) | AQS-PLAN-011 | Localization plan: site profiles and locale variants |
 | [SITE_BASIS_DEATH_VALLEY.md](SITE_BASIS_DEATH_VALLEY.md) | AQS-SITE-006 | Death Valley site basis - environment, design consequences and first locale-run closure |
+| [SITE_BASIS_FLOATING_ISLAND.md](SITE_BASIS_FLOATING_ISLAND.md) | AQS-SITE-007 | Floating island site basis - seawater environment, scaling actions and first locale-run closure |
 | [SITE_POWER.md](SITE_POWER.md) | AQS-SITE-005 | Site power portfolio and redundancy of energy and life-support functions (generated) |
 | [SITE_SCALING.md](SITE_SCALING.md) | AQS-SITE-004 | Site scaling: capabilities, scaling actions and unit needs for the selected site (generated) |
 | [FEED_ASSAY.md](FEED_ASSAY.md) | AQS-ASSAY-001 | Feed assay |
