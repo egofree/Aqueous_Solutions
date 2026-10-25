@@ -1,5 +1,5 @@
 """X-BLD-04 L1 farm re-row (AQS-BLD-012). Re-packs every L1 row east of the HAB rows so that every path between farm rows is at least
-914 mm (NFPA 101 (2024) 7.3.4.1.1 / IBC 2021 1018.5 minimum clear width), and 600 mm (maint_clear_mm) to HAB rows. Envelope sizes are
+914 mm (NFPA 101 (2027) 7.3.4.1.1 / IBC 2027 1018.5 minimum clear width), and 600 mm (maint_clear_mm) to HAB rows. Envelope sizes are
 issued sizes and are not changed (rotation by 90 deg allowed). Bottom-left greedy on a 100 mm grid, largest first, inside the plate
 (y 0..18000, x up to 24000); the FARM/HAB boundary moves west only as far as needed (owner standing rule, A-M-102).
 --write updates placement_seed.json / placement_study.json; block rows are not resized."""

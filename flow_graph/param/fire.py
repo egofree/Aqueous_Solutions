@@ -1,5 +1,5 @@
 """X-SAF-05 fire water demand (A-M-188); X-FIR-01 tank/pump drivers + zone map (AQS-SAF-005 rev B).
-NFPA13_2022 ch. 19 density/area method per hazard class, design area capped at the level
+NFPA13_2025 ch. 19 density/area method per hazard class, design area capped at the level
 footprint, plus the Table 19.2.3.1.1 hose allowance and duration. The governing level sets the
 fire reserve, held as dead storage in the water tower below the hydro outlet (NFPA22_2023
 gravity tank) so the energy store can never draw it. U4b: the hazard table, level and zone
@@ -57,7 +57,7 @@ def zones():
 
 
 def supply(rows, Vf, static_head_kPa=None):
-    """Fire water tank and fire pump from the drivers basis (NFPA22_2023 / NFPA20_2022).
+    """Fire water tank and fire pump from the drivers basis (NFPA22_2023 / NFPA20_2025).
     Tank: the governing volume as gravity dead storage in the tower plus the CATCH_TANK suction
     source (two supplies). Pump: listed rating step at the governing sprinkler + hose demand,
     head = static shortfall + design margin over the remote-area hydraulics, churn <= 121 %."""

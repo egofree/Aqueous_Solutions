@@ -92,7 +92,7 @@
   "continuous_load_factor": {
     "value": 1.25,
     "units": "-",
-    "ref": "NEC2023"
+    "ref": "NEC2026"
   },
   "pvc_u_max_C": {
     "value": 60.0,
@@ -245,7 +245,7 @@
   "backup_gen_rated_kW": {
     "value": 40.0,
     "units": "kW",
-    "ref": "NFPA110_2022",
+    "ref": "NFPA110_2025",
     "basis": "AQS-ELEC-007 / AQS-RED-001 rule: standby generator at 125 % of the critical load list, rounded up in 5 kW steps (32 kW issued critical list -> 40 kW); BACKUP_GEN runs standby on the 8.4.2 monthly-exercise basis only. Single governed source (D3 unification 2026-10-18): read by docs-authority/_power_sizing.py, flow_graph/param/o2_close.py and stamped onto the graph by flow_graph/param/write_graph.py power()",
     "needs_verification": true,
     "verification_test": "Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h"
@@ -325,35 +325,35 @@
   "ifc_perim_small_mm": {
     "value": 1219,
     "units": "mm",
-    "ref": "IFC2021_1205",
+    "ref": "IFC2027_1205",
     "needs_verification": true,
     "verification_test": "AHJ fire-code review"
   },
   "ifc_perim_large_mm": {
     "value": 1829,
     "units": "mm",
-    "ref": "IFC2021_1205",
+    "ref": "IFC2027_1205",
     "needs_verification": true,
     "verification_test": "AHJ fire-code review"
   },
   "ifc_axis_limit_mm": {
     "value": 76200,
     "units": "mm",
-    "ref": "IFC2021_1205",
+    "ref": "IFC2027_1205",
     "needs_verification": true,
     "verification_test": "AHJ fire-code review"
   },
   "ifc_array_max_mm": {
     "value": 45720,
     "units": "mm",
-    "ref": "IFC2021_1205",
+    "ref": "IFC2027_1205",
     "needs_verification": true,
     "verification_test": "AHJ fire-code review"
   },
   "ifc_path_mm": {
     "value": 1219,
     "units": "mm",
-    "ref": "IFC2021_1205",
+    "ref": "IFC2027_1205",
     "needs_verification": true,
     "verification_test": "AHJ fire-code review"
   },
@@ -812,7 +812,7 @@
   "sec_ocpd_max_A": {
     "value": 1000,
     "units": "A, largest section breaker (stays below the NEC 240.87 1200 A arc-energy-reduction threshold)",
-    "ref": "NEC2023_240",
+    "ref": "NEC2026_240",
     "needs_verification": false
   },
   "mv_kV": {
@@ -1056,7 +1056,7 @@
   "h2_purge_frac_of_LFL": {
     "value": 0.25,
     "units": "-",
-    "ref": "NFPA69_2019"
+    "ref": "NFPA69_2024"
   },
   "znbr_charge_h": {
     "value": 6.0,
@@ -2533,7 +2533,7 @@
   "soil_allow_kPa": {
     "value": 72.0,
     "units": "kPa allowable bearing, presumptive clay (CL/ML/MH/CH)",
-    "ref": "IBC2021_1806",
+    "ref": "IBC2027_1806",
     "needs_verification": true,
     "verification_test": "Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus"
   },
@@ -3066,7 +3066,7 @@
   "ELEC.storage-train.ZNBR2.h2_LFL_vol_frac": {
     "value": 0.04,
     "units": "vol fraction H2 lower flammability limit in air",
-    "ref": "NFPA69_2019"
+    "ref": "NFPA69_2024"
   },
   "ELEC.storage-train.ZNBR2.purge_air_rho_kg_m3": {
     "value": 1.18,
@@ -3126,7 +3126,7 @@
       2000
     ],
     "units": "A standard ampere ratings for fuses and inverse-time breakers",
-    "ref": "NEC2023_240"
+    "ref": "NEC2026_240"
   },
   "CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.h2_hhv_kWh_kg": {
     "value": 39.4,
@@ -3195,12 +3195,12 @@
   "ELEC.generation-train.BACKUP_GEN.exercise_load_frac": {
     "value": 0.3,
     "units": "- nameplate fraction during monthly exercise",
-    "ref": "NFPA110_2022"
+    "ref": "NFPA110_2025"
   },
   "ELEC.generation-train.BACKUP_GEN.exercise_h": {
     "value": 0.5,
     "units": "h monthly exercise duration",
-    "ref": "NFPA110_2022"
+    "ref": "NFPA110_2025"
   },
   "ELEC.generation-train.BACKUP_GEN.eta": {
     "value": 0.3,
@@ -4106,7 +4106,7 @@
       6000
     ],
     "units": "A standard breaker sizes",
-    "ref": "NEC2023"
+    "ref": "NEC2026"
   },
   "ELEC.distribution-train.SOL_ARK_60K.cb_std_kVA": {
     "value": [
@@ -4560,8 +4560,8 @@
       ]
     },
     "units": "per class: density mm/min, design area m2, hose allowance L/min, duration min",
-    "ref": "NFPA13_2022",
-    "note": "NFPA 13-2022 density/area method, Table 19.2.3.1.1 hazard classes with the Table 19.2.3.1.1 hose allowance and 19.2.3.1.2-duration; moved from flow_graph/param/fire.py module constants by the X-FIR-01 reopen (single governed source, drivers.json)."
+    "ref": "NFPA13_2025",
+    "note": "NFPA 13-2025 density/area method, Table 19.2.3.1.1 hazard classes with the Table 19.2.3.1.1 hose allowance and 19.2.3.1.2-duration; moved from flow_graph/param/fire.py module constants by the X-FIR-01 reopen (single governed source, drivers.json)."
   },
   "fire_level_hazard": {
     "value": {
@@ -4570,7 +4570,7 @@
       "L1": "OH1"
     },
     "units": "NFPA 13 hazard class per level",
-    "ref": "NFPA13_2022",
+    "ref": "NFPA13_2025",
     "note": "Occupancy ruling per level (X-SAF-05, A-M-188): L-1 wet process/EW/cold box OH2; L0 shops/pyrolysis/oils/genset/flow battery EH1; L1 farm and digesters OH1 (HAB west half LH). Reservoir and roof levels are unoccupied water/PV (no sprinklered hazard)."
   },
   "fire_sprinkler_margin": {
@@ -5068,25 +5068,25 @@
   "fire_pump_type": {
     "value": "electric horizontal split-case, listed, NFPA 20; critical bus with the genset as second supply",
     "units": "text",
-    "ref": "NFPA20_2022",
+    "ref": "NFPA20_2025",
     "note": "X-FIR-01: boosts the gravity supply where the static head is short of the remote-area hydraulics; jockey pump holds the riser."
   },
   "fire_pump_churn_frac": {
     "value": 1.21,
     "units": "fraction of rated head at shutoff (churn)",
-    "ref": "NFPA20_2022",
+    "ref": "NFPA20_2025",
     "note": "4.16 curve limit at zero flow."
   },
   "fire_pump_150_flow_frac": {
     "value": 1.5,
     "units": "fraction of rated flow at runout",
-    "ref": "NFPA20_2022",
+    "ref": "NFPA20_2025",
     "note": "4.18: not less than 150 % rated flow."
   },
   "fire_pump_150_head_frac": {
     "value": 0.65,
     "units": "fraction of rated head at 150 % flow",
-    "ref": "NFPA20_2022",
+    "ref": "NFPA20_2025",
     "note": "4.18 minimum at runout."
   },
   "fire_pump_head_margin_kPa": {
@@ -5114,7 +5114,7 @@
   "fire_pipe_schedule": {
     "value": "Sch 40 black steel ASTM A53, hydraulically designed (density/area); pipe-schedule method not used where EH1 is present",
     "units": "text",
-    "ref": "NFPA13_2022",
+    "ref": "NFPA13_2025",
     "note": "7.4 pipe schedule limits to LH/OH; the L0 EH1 areas require hydraulic design."
   },
   "fire_zone_hazard": {
@@ -5128,7 +5128,7 @@
       "ZNBR2 enclosure": "OH2 + NFPA 855 purge"
     },
     "units": "NFPA 13 hazard class per zone",
-    "ref": "NFPA13_2022",
+    "ref": "NFPA13_2025",
     "note": "Zone map refined from AQS-ELEC-009 release sources and AQS-SAF-007 separation layout; hazard class flagged pending the owner hall programme (X-FIR-01 Done-when)."
   }
 }

@@ -6,7 +6,7 @@ Run: python3 docs-authority/_plc_arch.py"""
 import csv, math, os, sys, collections, json
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('IEC62439_2', 'IEC61131_3', 'IEC61131_2', 'NFPA72_2022'): cite(k)
+for k in ('IEC62439_2', 'IEC61131_3', 'IEC61131_2', 'NFPA72_2025'): cite(k)
 SPARE, CH, W_MOD, W_CPU = 0.20, 16, 2.0, 12.0
 # Sectors whose PLC gets a redundant CPU pair, each with the reason. A sector is here when losing its controller would put the
 # occupants, their air, water or food, or the plant power at risk before the controller can be repaired.
@@ -42,7 +42,7 @@ md = ['# Control philosophy and PLC architecture', '', 'Document number: AQS-CTL
       '## Philosophy', '',
       '- One PLC per sector, so a sector fault stays in its sector. The plant runs from the graph set-points; every loop is single-input single-output PI unless the unit design names a cascade.',
       '- A sector whose controller loss would put the occupants, their air, water or food, or the plant power at risk before repair has a redundant CPU pair with bumpless switchover and dual 24 V supplies fed from the critical bus (NFPA 111 store behind it). The sectors and reasons are listed below. Every other sector has a single CPU.',
-      '- Safety trips are not in the basic control PLCs: they go to the safety functions of X-CTL-03 after the HAZOP (X-SAF-01). Fire alarm is a separate NFPA72_2022 panel that signals the PLCs, never the reverse.',
+      '- Safety trips are not in the basic control PLCs: they go to the safety functions of X-CTL-03 after the HAZOP (X-SAF-01). Fire alarm is a separate NFPA72_2025 panel that signals the PLCs, never the reverse.',
       '- Network: all PLCs, HMIs and the historian on one IEC62439_2 MRP fibre ring (a single cut recovers within 200 ms); BLDC and stepper drivers on a sector fieldbus.',
       '- Programs in IEC61131_3 structured text in the repository, simulated against the graph before download (X-CTL-04).', '',
       '## Redundant CPU pairs', '', '| Sector | Why its controller is redundant |', '|---|---|'] + [f'| {s} | {why} |' for s, why in sorted(CRIT.items())] + [

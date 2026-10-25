@@ -35,7 +35,7 @@ Core: the central structural bay holding the fire-rated stairs, lift and shafts.
 
 Horizontal assembly: a fire-rated floor and ceiling between two levels, named `HA_<upper>_<lower>`.
 
-Occupancy groups (IBC 2024 chapter 3): R-2 residential, F-1 and F-2 factory, S-1 and S-2 storage, H-2 to H-5 high hazard, U utility. MAQ is the maximum allowable quantity of a hazardous material per control area; above it a space becomes an H occupancy. NS means non-sprinklered and NP means not permitted.
+Occupancy groups (IBC 2027 chapter 3): R-2 residential, F-1 and F-2 factory, S-1 and S-2 storage, H-2 to H-5 high hazard, U utility. MAQ is the maximum allowable quantity of a hazardous material per control area; above it a space becomes an H occupancy. NS means non-sprinklered and NP means not permitted.
 
 Unit names in capitals (for example `HDR_H2`, `CRYO`) are plant graph ids; stream numbers such as S24 refer to the stream register. Other abbreviations are defined in `docs-authority/GLOSSARY.md`.
 
@@ -48,9 +48,9 @@ The order of the floors lets gravity do work that should not depend on pumps.
 - Solids arrive at grade and drop into the hopper and LEACH CSTR 1.
 - Hydrogen is lighter than air. It is generated in the basement, at the electrowinning cathodes, but does not collect there: `HDR_H2` is a vertical riser with no traps to the roof vent, CRYO or fuel use. The zinc-bromide (ZnBr2) storage skid stays outdoors at grade (NFPA 855). CRYO is on L-1, east of the core, in a 2 h rated room with its own ventilation to NFPA 2 and NFPA 55. It is not a shared process pit, and no process-air duct passes through its fire barrier `FB_CRYO_PROCESS`.
 
-The building is sprinklered throughout (NFPA 13). Table 3.1 gives the fire-resistance ratings that IBC 2024 Table 508.4 requires between a residential floor and the floors below it.
+The building is sprinklered throughout (NFPA 13). Table 3.1 gives the fire-resistance ratings that IBC 2027 Table 508.4 requires between a residential floor and the floors below it.
 
-Table 3.1. Required separation between residential and other occupancies (IBC 2024 Table 508.4, sprinklered)
+Table 3.1. Required separation between residential and other occupancies (IBC 2027 Table 508.4, sprinklered)
 
 | Pair | Horizontal assembly |
 |---|---|
@@ -318,7 +318,7 @@ Site access is covered by `docs-authority/SITE_ACCESS.md` (AQS-SITE-001).
 
 ## 13. References
 
-- International Code Council. International Building Code 2024, chapter 3 and Table 508.4.
+- International Code Council. International Building Code 2027, chapter 3 and Table 508.4.
 - NFPA 13, Standard for the Installation of Sprinkler Systems.
 - NFPA 2, Hydrogen Technologies Code; NFPA 55, Compressed Gases and Cryogenic Fluids Code.
 - NFPA 101, Life Safety Code.

@@ -485,7 +485,7 @@
           "pump_rated_head_kPa": 150,
           "pump_kW": 2.1,
           "refill_h": 8,
-          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2022 / NFPA20_2022 / NFPA22_2023"
+          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2025 / NFPA20_2025 / NFPA22_2023"
         }
       },
       "modules": [],
@@ -1546,7 +1546,7 @@
         "value": 0.686,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: Q4-bus lift S44 2.1952 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = 0.6860 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
+        "note": "X-ELS-02: Q4-bus lift S44 2.1952 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6860 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
       }
     },
     {
@@ -2772,7 +2772,7 @@
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
           },
-          "basis": "flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
+          "basis": "flow_graph/param/solver.py roof_close (IFC 2027 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
         }
       },
       "modules": [],
@@ -2879,7 +2879,7 @@
           "pump_rated_head_kPa": 150,
           "pump_kW": 2.1,
           "refill_h": 8,
-          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2022 / NFPA20_2022 / NFPA22_2023"
+          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2025 / NFPA20_2025 / NFPA22_2023"
         }
       },
       "modules": [],
@@ -2922,7 +2922,7 @@
         "interconnection": {
           "export_peak_kW": 1920.3,
           "export_kWh_d_clear": 5392,
-          "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
+          "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
         "sections": {
@@ -6856,7 +6856,7 @@
         "value": 68.2838,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 23580 m2; lighting 20.75 kW (IECC 2021 C405, 10 % lit), ventilation 29.41 kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope 18.12 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating 42.3 kW and cooling 83.3 kW thermal average after internal gains 29.6 kW and slab edge 2.73 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 23580 m2; lighting 20.75 kW (IECC 2021 C405, 10 % lit), ventilation 29.41 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 18.12 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 42.3 kW and cooling 83.3 kW thermal average after internal gains 29.6 kW and slab edge 2.73 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       }
     },
     {

@@ -4,7 +4,7 @@ and R (record review) points. Writes models/units/<U>/itp.csv. Run: python3 docs
 import csv, glob, json, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('ASME_B31_3', 'ASME_VIII1_UG', 'ASME_IX', 'ASTM_D2855', 'DVS_2207', 'ASME_RTP1', 'ASTM_G93', 'IEC60034_30_1', 'UL891', 'NEC2023', 'ISO_14687', 'API576_2017'): cite(k)
+for k in ('ASME_B31_3', 'ASME_VIII1_UG', 'ASME_IX', 'ASTM_D2855', 'DVS_2207', 'ASME_RTP1', 'ASTM_G93', 'IEC60034_30_1', 'UL891', 'NEC2026', 'ISO_14687', 'API576_2017'): cite(k)
 ROUTES = {
  'R1 high-pressure tube bank': [('material certificates and PMI of every tube', 'ASME B31.3 323, A-M-190', 'R'), ('WPS-01 welder qualification', 'ASME IX QW', 'R'),
    ('100 % visual and 100 % radiography of girth welds', 'ASME B31.3 K341 (high pressure)', 'H'), ('hydrostatic test at 1.5 x design, 10 min hold', 'ASME B31.3 345.4.2', 'H'),
@@ -20,7 +20,7 @@ ROUTES = {
  'R6 titanium and electrode sheet': [('Grade 2 certificates', 'A-M-190', 'R'), ('flatness and edge check of each cathode', 'A-M-190', 'W'), ('cell bus contact resistance', 'A-M-190', 'W'), ('bund and tank fill test', 'A-M-190', 'H')],
  'R7 glass, graphite and refractory': [('material batch record', 'A-M-190', 'R'), ('visual and dimensional', 'A-M-190', 'W'), ('thermal or leak test at first heat-up', 'A-M-190', 'H')],
  'R8 assembled equipment (structure, enclosures, mechanisms)': [('dimensional check against the unit drawing', 'ASME Y14.5', 'W'), ('bolting torque record', 'A-M-190', 'R'), ('function test', 'A-M-190', 'H')]}
-COMMON = [('motors: routine test (winding resistance, insulation resistance, no-load run)', 'IEC 60034', 'W'), ('electrical panels: dielectric and continuity test', 'UL 891 / NEC 2023', 'H'), ('loop check of every instrument', 'A-M-190', 'W')]
+COMMON = [('motors: routine test (winding resistance, insulation resistance, no-load run)', 'IEC 60034', 'W'), ('electrical panels: dielectric and continuity test', 'UL 891 / NEC 2026', 'H'), ('loop check of every instrument', 'A-M-190', 'W')]
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
 def route(u, mat):
     p = (N.get(u) or {}).get('params') or {}

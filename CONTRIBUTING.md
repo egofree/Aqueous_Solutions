@@ -67,8 +67,8 @@ It regenerates the register (AQS-REG-002) and fails on an incomplete entry.
 
 - Register each reference once in `flow_graph/param/refs.py` and cite it by key
   with `cite('KEY')`. Give the edition year and the clause, table or page.
-- Name standards by body, number and edition (for example ASME B31.3-2022,
-  NFPA 30-2024, IEC 60034-1). Quote no copyrighted standard text beyond a short
+- Name standards by body, number and edition (for example ASME B31.3-2024,
+  NFPA 30-2027, IEC 60034-1). Quote no copyrighted standard text beyond a short
   clause reference.
 - Open-source designs that the plant builds on are attributed in
   [DEPENDENCIES.md](DEPENDENCIES.md). Link to them; do not copy their files into

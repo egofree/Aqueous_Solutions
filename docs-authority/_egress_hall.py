@@ -1,4 +1,4 @@
-"""AQS-EGR-002 extension hall egress (X-STD-01). Most restrictive of NFPA 101-2024 and IBC 2021 governs (AQS-EGR-001 2.1).
+"""AQS-EGR-002 extension hall egress (X-STD-01). Most restrictive of NFPA 101-2027 and IBC 2027 governs (AQS-EGR-001 2.1).
 Occupancy: general industrial, ordinary hazard (hall programme open; NFPA 101 40.1.4.1.1 / IBC F-1), sprinklered throughout to NFPA 13.
 Limits: travel 76.2 m (NFPA 101 Table 40.2.6 ordinary hazard sprinklered 250 ft; IBC 1017.2.2 would allow 122 m at 7.3 m clear, so NFPA governs);
 common path 30.5 m (NFPA 101 40.2.5, 100 ft sprinklered); occupant load 9.29 m2/person gross (NFPA 101 Table 7.3.1.2 industrial, 100 ft2;
@@ -63,7 +63,7 @@ Authority: AQS-PLAN-007 X-STD-01; AQS-EGR-001 Rev C 2.1 (most restrictive code g
 
 | Item | Value | Clause |
 | --- | --- | --- |
-| Occupancy | general industrial, ordinary hazard; sprinklered throughout | NFPA 101-2024 40.1.4.1.1; NFPA 13-2022; IBC 2021 306.2 F-1 |
+| Occupancy | general industrial, ordinary hazard; sprinklered throughout | NFPA 101-2027 40.1.4.1.1; NFPA 13-2025; IBC 2027 306.2 F-1 |
 | Occupant load factor | 9.29 m2/person gross | NFPA 101 Table 7.3.1.2; IBC Table 1004.5 |
 | Travel distance | 76.2 m | NFPA 101 Table 40.2.6 (governs; IBC 1017.2.2 allows 122 m at 7.3 m clear height) |
 | Common path | 30.5 m | NFPA 101 40.2.5 |

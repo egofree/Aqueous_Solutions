@@ -6,7 +6,7 @@ W, D = rf['footprint_mm']; p = rf['perimeter_pathway_mm']
 P = 'flow_graph/placement_seed.json'; s = json.load(open(P)); z = s['datums_mm'].setdefault('ROOF', 14400)
 r = next(r for r in s['units'] if r['unit_id'] == 'PV_ARRAY')
 r.update(level='ROOF', origin_mm=[p, p, z], size_mm=[W-2*p, D-2*p, 300])
-r['source'] = (f"X-PAR-07 roof-only PV (ground field removed). Envelope of {rf['arrays']} arrays inside the IFC 2021 1205.3 {p} mm perimeter pathway "
+r['source'] = (f"X-PAR-07 roof-only PV (ground field removed). Envelope of {rf['arrays']} arrays inside the IFC 2027 1205.3 {p} mm perimeter pathway "
                f"of the {W/1000:.0f} x {D/1000:.0f} m roof (solver.roof_close); 1219 mm interior pathways; array area {pv['area_m2']} m2. ROOF datum {z} mm is a study value (A-M-103).")
 s['blocks'] = [b for b in s['blocks'] if not b['block_id'].startswith('EXT_HALL')] + [
     dict(block_id='EXT_HALL_E', level='L0', origin_mm=[24000, 0], size_mm=[W-24000, D, 6000], unit_ids=['EXT_HALL'],

@@ -104,7 +104,7 @@ Units: AIR_RECEIVER, AL_POT, BACKUP_GEN, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST
 | Activity | Basis | Point |
 |---|---|---|
 | motors: routine test (winding resistance, insulation resistance, no-load run) | IEC 60034 | W |
-| electrical panels: dielectric and continuity test | UL 891 / NEC 2023 | H |
+| electrical panels: dielectric and continuity test | UL 891 / NEC 2026 | H |
 | loop check of every instrument | A-M-190 | W |
 
 222 units assigned. Hold points marked A-M-190 are study practice until the owner quality manual (X-COD-01) adopts them.

@@ -3,5 +3,5 @@ step,activity,basis,point
 2,bolting torque record,A-M-190,R
 3,function test,A-M-190,H
 4,"motors: routine test (winding resistance, insulation resistance, no-load run)",IEC 60034,W
-5,electrical panels: dielectric and continuity test,UL 891 / NEC 2023,H
+5,electrical panels: dielectric and continuity test,UL 891 / NEC 2026,H
 6,loop check of every instrument,A-M-190,W

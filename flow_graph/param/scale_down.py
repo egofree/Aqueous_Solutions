@@ -381,7 +381,7 @@ def page(a, units_off, hand_rules):
     w('1. Ullmann\'s Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers chapter (ULLMANN_FLUOROPOLY).')
     w('2. Towler G., Sinnott R., Chemical Engineering Design, 2nd ed., Butterworth-Heinemann (2013): choice of batch or continuous operation (TOWLER2013).')
     w('3. Bergman T.L., Lavine A.S., Incropera F.P., DeWitt D.P., Fundamentals of Heat and Mass Transfer, 7th ed., Wiley (2011): conduction through insulation (INCROPERA7).')
-    w('4. ASTM C680-23, Standard Practice for Estimate of the Heat Gain or Loss and the Surface Temperatures of Insulated Flat, Cylindrical, and Spherical Systems (ASTM_C680).')
+    w('4. ASTM C680-24, Standard Practice for Estimate of the Heat Gain or Loss and the Surface Temperatures of Insulated Flat, Cylindrical, and Spherical Systems (ASTM_C680).')
     w('5. Grjotheim K., Welch B.J., Aluminium Smelter Technology, 2nd ed., Aluminium-Verlag (1988): heat balance of electrolysis cells (GRJOTHEIM1988).')
     w('6. Schacht C.A. (ed.), Refractories Handbook, CRC Press (2004), ch. 13 thermomechanical lining design (SCHACHT2004).')
     w('7. Small coreless induction furnace practice: melt energy from cold charge (INDUCT_SOCX).')

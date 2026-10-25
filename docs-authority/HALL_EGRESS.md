@@ -13,7 +13,7 @@ Authority: AQS-PLAN-007 X-STD-01; AQS-EGR-001 Rev C 2.1 (most restrictive code g
 
 | Item | Value | Clause |
 | --- | --- | --- |
-| Occupancy | general industrial, ordinary hazard; sprinklered throughout | NFPA 101-2024 40.1.4.1.1; NFPA 13-2022; IBC 2021 306.2 F-1 |
+| Occupancy | general industrial, ordinary hazard; sprinklered throughout | NFPA 101-2027 40.1.4.1.1; NFPA 13-2025; IBC 2027 306.2 F-1 |
 | Occupant load factor | 9.29 m2/person gross | NFPA 101 Table 7.3.1.2; IBC Table 1004.5 |
 | Travel distance | 76.2 m | NFPA 101 Table 40.2.6 (governs; IBC 1017.2.2 allows 122 m at 7.3 m clear height) |
 | Common path | 30.5 m | NFPA 101 40.2.5 |
@@ -51,7 +51,7 @@ Door pairs give two paths from any point within about 42 m along the wall line, 
 
 | Check | Governing clause |
 | --- | --- |
-| Means of egress | NFPA 101-2024 ch. 7 and 40; IBC 2021 ch. 10 (most restrictive governs) |
-| Sprinklers | NFPA 13-2022 |
-| Emergency lighting | NFPA 101-2024 7.9; NFPA 70-2023 Art. 700 |
+| Means of egress | NFPA 101-2027 ch. 7 and 40; IBC 2027 ch. 10 (most restrictive governs) |
+| Sprinklers | NFPA 13-2025 |
+| Emergency lighting | NFPA 101-2027 7.9; NFPA 70-2026 Art. 700 |
 | Escape signs | ISO 7010:2019 E001/E002; ISO 16069:2017 safety way guidance |

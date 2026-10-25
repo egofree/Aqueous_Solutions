@@ -433,7 +433,7 @@
         170342,
         300
       ],
-      "source": "X-PAR-07 roof-only PV (ground field removed). Envelope of 16 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 186 x 174 m roof (solver.roof_close); 1219 mm interior pathways; array area 29784 m2. ROOF datum 14400 mm is a study value (A-M-103)."
+      "source": "X-PAR-07 roof-only PV (ground field removed). Envelope of 16 arrays inside the IFC 2027 1205.3 1829 mm perimeter pathway of the 186 x 174 m roof (solver.roof_close); 1219 mm interior pathways; array area 29784 m2. ROOF datum 14400 mm is a study value (A-M-103)."
     },
     {
       "unit_id": "WS_HF_ED",
@@ -495,7 +495,7 @@
         800,
         1100
       ],
-      "source": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
+      "source": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2027 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "source_doc": " X-BLD-04: moved from (15200, 9400) to (15200, 10800) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
@@ -511,7 +511,7 @@
         800,
         1100
       ],
-      "source": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
+      "source": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2027 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "source_doc": " X-BLD-04: moved from (16200, 9400) to (15800, 9400) for the 600 mm maintenance clearance (flow_graph/clear_pairs.py)."
     },
     {
@@ -1876,7 +1876,7 @@
   "notes_rev_c5": "Twenty envelopes placed in the sector block. AZOLLA_BED keeps 18000 by 5000 by 400 mm with the long side on the farm block. CURTAIL and HEAT_SINK have envelopes and no GEO block, so they were not placed. Sixty-two others have no envelope. The plate did not grow.",
   "notes_rev_i": "2026-10-15, X-RSZ-03, re-run for the X-PAR acid-loop decision (CE 0.85, AQS-PAR-001). EW_1..EW_9 at sized envelopes 370-3270 mm long (cathode count per AQS-DUTY-051) and RECT_EW placed in LEACH_EW; 600 mm clear, 914 mm access aisle between cells (Rev K, AQS-BLD-012). Supersedes the 750 mm pitch rows.",
   "notes_rev_j": "2026-10-15, X-BLD-04. 12 rows moved the smallest distance to clear maint_clear_mm 600 (flow_graph/clear_pairs.py); partition sides kept.",
-  "notes_rev_k": "2026-10-15, X-BLD-04. WS_AMMONIA to (15200, 15200) and WS_KOH to (16600, 15200): 6400 mm edge gap to WS_PEROX for incompatible separation (IFC 2021 5003.9.8, NFPA 400 6.1.12.1; AQS-BLD-011). EW aisle re-packed by flow_graph/place_ew_aisle.py with 914 mm between cells (NFPA 101 7.3.4.1.1) and 1219 mm round RECT_EW (NEC 110.26(A)(1) Condition 3); AQS-BLD-012. L1 hab rows ASH, IODIDE and MISTER (600 mm bed paths, no 914 mm face) left for review.",
+  "notes_rev_k": "2026-10-15, X-BLD-04. WS_AMMONIA to (15200, 15200) and WS_KOH to (16600, 15200): 6400 mm edge gap to WS_PEROX for incompatible separation (IFC 2027 5003.9.8, NFPA 400 6.1.12.1; AQS-BLD-011). EW aisle re-packed by flow_graph/place_ew_aisle.py with 914 mm between cells (NFPA 101 7.3.4.1.1) and 1219 mm round RECT_EW (NEC 110.26(A)(1) Condition 3); AQS-BLD-012. L1 hab rows ASH, IODIDE and MISTER (600 mm bed paths, no 914 mm face) left for review.",
   "notes_rev_k_farm": "2026-10-15, X-BLD-04 farm re-row: farm rows occupy x 10600..24000 on L1, west of the AQS-BLD-001 FARM/HAB line at x=12000; HAB rows displaced: ['COMPOST_TOILET']. 914 mm between farm rows (A-M-102).",
   "notes_rev_l": "2026-10-15, X-PAR-07: building grown to 186 x 174 m (31 x 29 bays of 6 m, conditioned extension) so the roof carries the full PV array; EXT_HALL_E/N blocks; PV_ARRAY on ROOF; ground field removed. Base-plate rows not moved: no sizing driver warrants it."
 }

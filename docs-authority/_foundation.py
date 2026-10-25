@@ -7,7 +7,7 @@ import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R); sys.path.insert(0, os.path.join(R, 'models/freecad'))
 from flow_graph.param.refs import cite
 from flow_graph.param import drivers as DR, water_tower as WT
-for k in ('IBC2021_1806', 'ACI318_19', 'ASCE7_22'): cite(k)
+for k in ('IBC2027_1806', 'ACI318_19', 'ASCE7_22'): cite(k)
 import params as P
 d = DR.load(); v = lambda k: DR.val(d, k); qa = v('soil_allow_kPa'); gs = v('soil_unit_weight_kN_m3'); gw = v('gw_depth_m'); fc = v('raft_fc_MPa')
 Lp, Wp = P.PLATE_L/1000, P.PLATE_W/1000; A = Lp*Wp

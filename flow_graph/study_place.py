@@ -45,7 +45,7 @@ def boxes(seed,rep):
     return B
 def hit(a,b,c=CLR):
     return a[1]<b[1]+b[3]+c and b[1]<a[1]+a[3]+c and a[2]<b[2]+b[4]+c and b[2]<a[2]+a[4]+c
-AISLE={'FARM':914,'FARM_EXT':914}   # farm rows are walked: NFPA 101 (2024) 7.3.4.1.1 / IBC 2021 1018.5 914 mm clear (as farm_rerow.py, A-M-102)
+AISLE={'FARM':914,'FARM_EXT':914}   # farm rows are walked: NFPA 101 (2027) 7.3.4.1.1 / IBC 2027 1018.5 914 mm clear (as farm_rerow.py, A-M-102)
 def main():
     seed=json.load(open(SEED)); rep=json.load(open(REP)); g=json.load(open(G))
     blk={b['block_id']:b for b in seed['blocks']+EXTRA}

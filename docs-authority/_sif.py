@@ -7,7 +7,7 @@ to trip. Closes the HAZOP trip actions. Run after _hazop.py: python3 docs-author
 import csv, json, os, sys, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('IEC61511_2016', 'NFPA2_2023', 'NFPA69_2019'): cite(k)
+for k in ('IEC61511_2016', 'NFPA2_2026', 'NFPA69_2024'): cite(k)
 A = list(csv.DictReader(open('docs-authority/hazop_actions.csv'))); I = list(csv.DictReader(open('docs-authority/inventory/INSTRUMENT_INDEX.csv')))
 tags = collections.defaultdict(dict)
 for r in I:

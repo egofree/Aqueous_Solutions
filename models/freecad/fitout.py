@@ -121,7 +121,7 @@ def _process_corridor_lm1(doc):
 
 LM1_ROUTE = [  # Rev B (2026-10-16): L-1 corridors routed through free floor found by the equipment clash check
     # (CAD_CLASH_EQUIP). The old E-W spine at y 4.2-6.0 m and N-S spine at x 6.2-8.0 m ran through the pyrolysis, BMED and
-    # leach lines. Widths >= 1,200 mm (IBC 2021 1020.2, 44 in for occupant load >= 50; L-1 occupant load is under 10).
+    # leach lines. Widths >= 1,200 mm (IBC 2027 1020.2, 44 in for occupant load >= 50; L-1 occupant load is under 10).
     ("CORR_Lm1_EW", 1000, 200, 22000, 1200),          # south aisle, plate width, under every process row
     ("CORR_Lm1_NS", 1000, 200, 1800, 9700),           # west aisle up to the link
     ("CORR_Lm1_LINK", 1000, 8600, 4500, 1300),        # west aisle to the stair approach

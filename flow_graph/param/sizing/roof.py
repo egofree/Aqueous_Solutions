@@ -1,6 +1,6 @@
 """Roof PV and building-extension loads (X-PAR-07).
 Roof PV layout: perimeter pathway 1219 mm when both building axes <= 76.2 m (250 ft), else 1829 mm; arrays no larger than
-45.72 m (150 ft) in either axis with 1219 mm pathways between them [IFC2021_1205, NFPA1_2021_11_12].
+45.72 m (150 ft) in either axis with 1219 mm pathways between them [IFC2027_1205, NFPA1_2027_11_12].
 Array power = array area x module STC efficiency x 1 kW/m2 x ground-cover ratio [NREL_PVWATTS8].
 Extension loads on the added floor area (single-storey extension):
   lighting  = LPD x area x lit fraction (occupant-sensor control, IECC 2021 C405.2.1) [IECC2021_C405]
@@ -9,7 +9,7 @@ Extension loads on the added floor area (single-storey extension):
 Roof structural load = PV dead + max(roof live, snow) with ASCE 7-22 LRFD 1.2D + 1.6(Lr or S) [ASCE7_22]."""
 import math
 from ..refs import cite
-REF = tuple(cite(k) for k in ('IFC2021_1205','NFPA1_2021_11_12','NREL_PVWATTS8','IECC2021_C405','ASHRAE621_2019','ISO16798_3','IECC2021_C402','ASCE7_22'))
+REF = tuple(cite(k) for k in ('IFC2027_1205','NFPA1_2027_11_12','NREL_PVWATTS8','IECC2021_C405','ASHRAE621_2019','ISO16798_3','IECC2021_C402','ASCE7_22'))
 def _segments(L_mm, max_mm, path_mm):
     """Split a clear length into arrays no longer than max_mm separated by path_mm; returns array length total."""
     n = max(1, math.ceil((L_mm + path_mm)/(max_mm + path_mm)))

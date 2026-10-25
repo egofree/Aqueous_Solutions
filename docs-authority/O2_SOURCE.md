@@ -42,6 +42,6 @@ Store redundancy: 200 bar cylinder bank, 134.9 kg O2 (0.47 m³ water volume), st
 
 ## 3. Basis
 
-Electrolyser sized by H2 demand, not by the O2 gap (Rev B decision): IA-ELY-H2 9.36 kg/d = gross pool draws (genset S45 0.00 at NFPA 110 standby, fuel cell S49 4.80, methanol S74 6.54); O2 = 7.937 × H2, 55 kWh/kg H2 (IEA_GHR2023); 21.5 kW average on SF-H2O_ELYZ, rated 85.8 kW on a 6 h PV window (H2O_ELYZ continuous_kw). H2 and O2 are generated, stored and piped separately; no mixed (HHO) gas anywhere (NFPA 2 ch. 7 and 10, ISO 22734:2019, IEC 62282-3-100).
+Electrolyser sized by H2 demand, not by the O2 gap (Rev B decision): IA-ELY-H2 9.36 kg/d = gross pool draws (genset S45 0.00 at NFPA 110 standby, fuel cell S49 4.80, methanol S74 6.54); O2 = 7.937 × H2, 55 kWh/kg H2 (IEA_GHR2023); 21.5 kW average on SF-H2O_ELYZ, rated 85.8 kW on a 6 h PV window (H2O_ELYZ continuous_kw). H2 and O2 are generated, stored and piped separately; no mixed (HHO) gas anywhere (NFPA 2 ch. 7 and 10, ISO 22734-1:2025, IEC 62282-3-100).
 
 Superseded Rev C sections 2-5 (Cl2 and CO2 ledgers, electrolyser/fuel-cell detail, power and roof) regenerate from `flow_graph/param/o2_close.py` report() at the next balance-pipeline run; the frozen pre-X-PAR-12 audit remains in O2_SOURCE_AUDIT.md.

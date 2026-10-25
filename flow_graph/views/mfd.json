@@ -1810,7 +1810,7 @@
           "pump_rated_head_kPa": 150,
           "pump_kW": 2.1,
           "refill_h": 8,
-          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2022 / NFPA20_2022 / NFPA22_2023"
+          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2025 / NFPA20_2025 / NFPA22_2023"
         }
       }
     },

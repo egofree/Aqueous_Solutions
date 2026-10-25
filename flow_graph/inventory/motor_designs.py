@@ -1,7 +1,7 @@
 """X-INV-02 motor family designs (AQS-INV-005). One open design basis and manufacturing plan per family in MOTOR_FAMILIES.csv.
 Induction (IEC frames, hermetic): output equation S = C D^2 L n_s with C = (pi^2/sqrt 2) k_w B_delta A [PYRHONEN2014 eq. 6.1-6.3], aspect
 chi = L/D = (pi/4p) sqrt(p) [PYRHONEN2014 eq. 6.2], turns from E = 4.44 f k_w N Phi, conductor at J = 5 A/mm2 (TEFC range 3-8 A/mm2,
-PYRHONEN2014 table 6.4); IEC 60072-1 frame dimensions; IE3 minimum efficiency IEC 60034-30-1:2014 60 Hz table (2-pole hermetic, 4-pole IEC frames). PM BLDC: T = (pi/2) D^2 L A B [HENDERSHOT2010 ch. 2]. Hybrid steppers NEMA ICS 16 flanges. Solenoids: coil
+PYRHONEN2014 table 6.4); IEC 60072-1 frame dimensions; IE3 minimum efficiency IEC 60034-30-1:2025 60 Hz table (2-pole hermetic, 4-pole IEC frames). PM BLDC: T = (pi/2) D^2 L A B [HENDERSHOT2010 ch. 2]. Hybrid steppers NEMA ICS 16 flanges. Solenoids: coil
 resistance R = V^2/P. Quarter-turn actuator: ISO 5211 flange torque limit. Coefficients chosen inside the published ranges are A-M-126.
 Writes docs-authority/inventory/MOTOR_DESIGNS.md, MOTOR_DESIGNS.csv and motor_families/MF-nn.md. Run: python3 -m flow_graph.inventory.motor_designs"""
 import csv, math, os, re
@@ -9,7 +9,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 D = os.path.join(ROOT, 'docs-authority/inventory')
 IEC72 = {'63': (63, 11, 23, 100, 80, 7), '71': (71, 14, 30, 112, 90, 7), '80': (80, 19, 40, 125, 100, 10), '90S': (90, 24, 50, 140, 100, 10), '90L': (90, 24, 50, 140, 125, 10),
          '100L': (100, 28, 60, 160, 140, 12), '112M': (112, 28, 60, 190, 140, 12), '132M': (132, 38, 80, 216, 178, 12), '180M': (180, 48, 110, 279, 241, 15)}   # H, D, E, A, B, K mm
-IE3_60 = {   # IEC 60034-30-1:2014 Table for 60 Hz IE3 (kW: 2-pole, 4-pole) [IEC60034_30_1]; intermediate ratings interpolated linearly (A-M-126; the standard's 5.4.7 formula to be applied on the type test)
+IE3_60 = {   # IEC 60034-30-1:2025 Table for 60 Hz IE3 (kW: 2-pole, 4-pole) [IEC60034_30_1]; intermediate ratings interpolated linearly (A-M-126; the standard's 5.4.7 formula to be applied on the type test)
     0.12: (62.0, 66.0), 0.18: (65.6, 69.5), 0.25: (69.5, 73.4), 0.37: (73.4, 78.2), 0.55: (76.8, 81.1), 0.75: (77.0, 83.5), 1.1: (84.0, 86.5), 1.5: (85.5, 86.5),
     2.2: (86.5, 89.5), 3.7: (88.5, 89.5), 5.5: (89.5, 91.7), 7.5: (90.2, 91.7), 11: (91.0, 92.4), 15: (91.0, 93.0), 18.5: (91.7, 93.6), 22: (91.7, 93.6)}
 def ie3(kw, p):
@@ -94,7 +94,7 @@ def main():
             m = re.search(r'([\d.]+) kW', sz); kw = float(m.group(1)); fr = re.search(r'IEC (\d+[SLM]?)', sz); fr = fr.group(1) if fr else None
             p = 2 if t.startswith('induction') else 1; d = induction(kw, Vn, p, fr); kind = 'induction' if p == 2 else 'hermetic'
             L += ['| Quantity | Value | Basis |', '| --- | --- | --- |', f'| Rating | {kw} kW, {Vn:.0f} V 3-ph 60 Hz, {2*p} poles, {d["rpm"]} rpm sync | AQS-INV-001 |',
-                  f'| Efficiency target | {d["eta"]*100:.1f} % (IE3, 60 Hz, {2*p}-pole) | IEC 60034-30-1:2014 60 Hz table |', f'| Power factor | {d["pf"]:.2f} | assumed (A-M-126) |',
+                  f'| Efficiency target | {d["eta"]*100:.1f} % (IE3, 60 Hz, {2*p}-pole) | IEC 60034-30-1:2025 60 Hz table |', f'| Power factor | {d["pf"]:.2f} | assumed (A-M-126) |',
                   f'| Air-gap flux density | {B_D} T | PYRHONEN2014 table 6.3, 0.7-0.9 T |', f'| Linear current density | {d["A"]/1e3:.0f} kA/m | PYRHONEN2014 table 6.3 |',
                   f'| Air-gap diameter x core length | {d["Dg"]:.0f} x {d["L"]:.0f} mm | output equation |', f'| Stator outer diameter | {d["Dout"]:.0f} mm | split ratio 0.55 (4-pole) / 0.50 (2-pole) |',
                   f'| Slots stator / rotor | {d["Qs"]} / {d["Qr"]} | PYRHONEN2014 slot-combination rules |', f'| Turns per phase | {d["N"]} | E = 4.44 f k_w N Phi, E = 0.95 V_ph |',

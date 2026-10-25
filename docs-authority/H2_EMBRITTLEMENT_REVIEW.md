@@ -77,5 +77,5 @@ Titanium blanks on EW_1, EW_2, EW_4 and EW_9 make side-reaction H₂. Hydride be
 - [S14] ASME B31.12 Hydrogen Piping and Pipelines, https://www.asme.org/codes-standards/find-codes-standards/b31-12-hydrogen-piping-pipelines
 - [S15] Sandia/OSTI, Materials Qualification for Hydrogen Service using CSA CHMC1, https://www.osti.gov/servlets/purl/1673694
 - S18. API RP 941, Steels for Hydrogen Service at Elevated Temperatures and Pressures in Petroleum Refineries and Petrochemical Plants, 8th ed., 2016.
-- S19. ISO 14687:2019, Hydrogen fuel quality — Product specification.
+- S19. ISO 14687:2025, Hydrogen fuel quality — Product specification.
 - S20. Bertau M. et al. (eds.), Methanol: The Basic Chemical and Energy Feedstock of the Future, Springer, 2014.

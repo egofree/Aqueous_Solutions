@@ -6,7 +6,7 @@ Run after _commissioning.py: python3 docs-authority/_startup.py"""
 import json, os, sys, math, csv
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('NFPA2_2023', 'NFPA855_2023', 'NIST_WEBBOOK', 'PERRY9', 'API521_2020', 'NFPA25_2023'): cite(k)
+for k in ('NFPA2_2026', 'NFPA855_2026', 'NIST_WEBBOOK', 'PERRY9', 'API521_2020', 'NFPA25_2026'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}; P = lambda u: (N.get(u) or {}).get('params') or {}
 z = P('ZNBR2'); kwh = float(z.get('kWh') or 0); ck = float(z.get('charge_kW') or 1); t_bat = kwh*0.8/ck
 FL = {'thermal oil': (850, 2.2), 'water': (1000, 4.18)}           # PERRY9 typical properties

@@ -41,7 +41,7 @@ The earlier CATCH_TANK was a fixed 12 x 8 x 4 m box scaled by plate area (384 m3
 
 Seismic governs over wind by 2 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 crack control. Site SDS, SD1 and wind speed are assumptions until the geotechnical report (A-M-187).
 
-## Egress and access (IBC2021_CH10, NFPA101_2024)
+## Egress and access (IBC2027_CH10, NFPA101_2027)
 
 The reservoir levels are unoccupied: maintenance access only. The two exit stairs (IBC 1006.3.3) continue through the reservoir storeys to the roof for PV service (IBC 1011.12), in the core fraction above. Each cell has a hatch, ladder and confined-space entry procedure. The reservoir floors add no occupant load and no travel distance to the life floors.
 

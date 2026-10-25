@@ -7,7 +7,7 @@ Run after _itp.py, _instr_index.py and _sif.py: python3 docs-authority/_commissi
 import csv, json, os, sys, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('ASME_B31_3', 'IEC61511_2016', 'NFPA70E_2024', 'NFPA855_2023', 'NFPA2_2023', 'ASTM_G93'): cite(k)
+for k in ('ASME_B31_3', 'IEC61511_2016', 'NFPA70E_2027', 'NFPA855_2026', 'NFPA2_2026', 'ASTM_G93'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
 SKIP = ('header', 'building', 'dock', 'boundary')
 I = collections.Counter(r['unit'] for r in csv.DictReader(open('docs-authority/inventory/INSTRUMENT_INDEX.csv')))

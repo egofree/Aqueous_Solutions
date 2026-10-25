@@ -2,7 +2,7 @@
 
 Document number: AQS-COMPL-001  
 Former number: AQS-CMP-001 (renumbered 2026-10-15 to clear a duplicate; see AQS-REG-001)  
-Revision: E  
+Revision: F  
 Date: 2026-10-24  
 Basis: AQS-AUTH-001, AQS-HSE-001, AQS-SITE-001, AQS-ELC-001 (`docs-authority/ELECTRICAL.md`), AQS-VENT-001, AQS-WLD-001, AQS-AUD-001.  
 Jurisdiction assumed: USA (a Dallas, Texas class authority having jurisdiction).  
@@ -16,6 +16,7 @@ Licence: CERN-OHL-S-2.0. `SCALE_M = 1.0`.
 | C | 1 | Egress controlling-code rule; CRYO_EGRESS stubs; layout locks (PV/terrace/dock) | 2026-10-01 |
 | D | 11 | X-COD-01: every row closed to a state with evidence (section 11) | 2026-10-16 |
 | E | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose and scope merged into §1, terms in §2, captions; row counts removed from §8 and §11; edition conflict raised as open question Q-018. Rows, citations and states unchanged. | 2026-10-24 |
+| F | 2 | Editions brought to the latest published versions; AQS-STD-007 Table 3.1 is the single edition source (open question Q-018 closed). | 2026-10-24 |
 
 ## 1. Purpose and scope
 
@@ -25,7 +26,7 @@ In scope: fire, hydrogen, gas and energy-storage themes across the campus; the e
 
 Out of scope: permits, professional engineers' stamps, and the narrative folders at the repository root (`01-…` to `09-…`).
 
-Editions: the editions cited are those set in AQS-HSE-001, ELECTRICAL and SITE (an NFPA and NEC 2026 design basis). The edition register AQS-STD-007 (`CODE_BASIS.md`) lists earlier editions for several of the same standards; which set governs is open question Q-018. The City of Dallas amendments and the edition adopted by the authority having jurisdiction must be confirmed before a permit. The matrix is not clause text.
+Editions: the latest published edition of each standard applies, and the most recent revision governs a conflict (owner decision Q-018). Every citation names the edition given in Table 3.1 of AQS-STD-007 (`CODE_BASIS.md`), the single source of editions. Clauses carried over from earlier editions are listed as assumptions to verify. The City of Dallas amendments and the edition adopted by the authority having jurisdiction must be confirmed before a permit. The matrix is not clause text.
 
 Related pages: `docs-authority/HAZARD_SEPARATION.md`, `docs-authority/SITE_ACCESS.md`, `docs-authority/ELECTRICAL.md`, `docs-authority/VENT_CLOSURE.md`, `docs-authority/WELD_MAP.md` and `docs-authority/DOC_STYLE.md` (AQS-DOC-002).
 
@@ -54,8 +55,8 @@ Table 3.1. NFPA themes
 
 | ID | Requirement theme | Edition / note | Aqueous control / doc | Status | Action |
 |---|---|---|---|---|---|
-| CMP-NFPA-01 | H₂ generation, storage, use; separation / detection | NFPA 2 (2026 design basis in AQS-HSE-001) | AQS-HSE-001; AQS-VENT-001; CRYO_EGRESS_DOOR/LOBBY stubs; CRYO_H2 MAQ cap | Compliant-intent | Confirm AHJ edition; shop-rate CRYO lobby; holdup kg TBD |
-| CMP-NFPA-02 | Compressed / cryogenic gases; O₂ / N₂ / Ar product | NFPA 55 (2026 design basis) | AQS-CRY-002; AQS-EQP-CRY-001; FB_CRYO / FB_CRYO_PROCESS; no shared HVAC return | Compliant-intent | VJ isometrics + Stirling duties TBD |
+| CMP-NFPA-01 | H₂ generation, storage, use; separation / detection | NFPA 2-2026 | AQS-HSE-001; AQS-VENT-001; CRYO_EGRESS_DOOR/LOBBY stubs; CRYO_H2 MAQ cap | Compliant-intent | Confirm AHJ edition; shop-rate CRYO lobby; holdup kg TBD |
+| CMP-NFPA-02 | Compressed / cryogenic gases; O₂ / N₂ / Ar product | NFPA 55 (2027 design basis) | AQS-CRY-002; AQS-EQP-CRY-001; FB_CRYO / FB_CRYO_PROCESS; no shared HVAC return | Compliant-intent | VJ isometrics + Stirling duties TBD |
 | CMP-NFPA-03 | NEC cross-ref for classified areas / emergency power | NFPA 70 → see §4 | AQS-HSE-001 §6 Div system; ELECTRICAL.md SLD | Partial | Formal area classification drawings for permit |
 | CMP-NFPA-04 | Means of egress concepts (travel, exits, discharge) | NFPA 101 + most-restrictive rule (AQS-EGR-001 §2.1) | AQS-EGR-001 Rev B; STAIR_*; CRYO_EGRESS_*; dock ELEV_DOCK | Partial | AHJ verify clear widths; CRYO lobby rating; NEC 700 fixtures |
 | CMP-NFPA-05 | Oxidizer / corrosive occupancy & MAQ | NFPA 400 / mixed-use with IBC overlays | AQS-HSE-001 §§1–3; fire areas; FB_* ratings | Compliant-intent | Document control-area vs H upgrade when MAQ hit |

@@ -1920,7 +1920,7 @@
         300
       ],
       "source": "PV_ARRAY",
-      "source_doc": "X-PAR-07 roof-only PV (ground field removed). Envelope of 9 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 120 x 108 m roof (solver.roof_close); 1219 mm interior pathways; array area 11607 m2. ROOF datum 14400 mm is a study value (A-M-103).",
+      "source_doc": "X-PAR-07 roof-only PV (ground field removed). Envelope of 9 arrays inside the IFC 2027 1205.3 1829 mm perimeter pathway of the 120 x 108 m roof (solver.roof_close); 1219 mm interior pathways; array area 11607 m2. ROOF datum 14400 mm is a study value (A-M-103).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -2227,7 +2227,7 @@
         1100
       ],
       "source": "WS_AMMONIA",
-      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
+      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2027 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -2299,7 +2299,7 @@
         1100
       ],
       "source": "WS_KOH",
-      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
+      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2027 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -3967,7 +3967,7 @@
         300
       ],
       "source": "PV_ARRAY",
-      "source_doc": "X-PAR-07 roof-only PV (ground field removed). Envelope of 9 arrays inside the IFC 2021 1205.3 1829 mm perimeter pathway of the 120 x 108 m roof (solver.roof_close); 1219 mm interior pathways; array area 11607 m2. ROOF datum 14400 mm is a study value (A-M-103).",
+      "source_doc": "X-PAR-07 roof-only PV (ground field removed). Envelope of 9 arrays inside the IFC 2027 1205.3 1829 mm perimeter pathway of the 120 x 108 m roof (solver.roof_close); 1219 mm interior pathways; array area 11607 m2. ROOF datum 14400 mm is a study value (A-M-103).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -4086,7 +4086,7 @@
         1100
       ],
       "source": "WS_AMMONIA",
-      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
+      "source_doc": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2027 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,
@@ -4158,7 +4158,7 @@
         1100
       ],
       "source": "WS_KOH",
-      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2021 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
+      "source_doc": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2027 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011).",
       "issued_size_mm": null,
       "apply": true,
       "fixed_feature": false,

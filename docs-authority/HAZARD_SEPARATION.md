@@ -97,7 +97,7 @@ Table 3.2. Locked barrier objects
 | CORE_LIFE | 2 h room | STAIR_P, ELEV_SVC, SHAFT_UTIL, SHAFT_PENSTOCK |
 | CORE_PROCESS | 2 h room | H2, acid, oil, dust risers. Not the elevator. |
 
-The vertical stack is in `docs-authority/BUILDING_STACK.md`. IBC 2024 Table 508.4 allows a residential floor over an H-3 occupancy only if the building is sprinklered, with a 2 h separation. The plant standard is 3 h. A residential floor over an H occupancy without sprinklers is not permitted.
+The vertical stack is in `docs-authority/BUILDING_STACK.md`. IBC 2027 Table 508.4 allows a residential floor over an H-3 occupancy only if the building is sprinklered, with a 2 h separation. The plant standard is 3 h. A residential floor over an H occupancy without sprinklers is not permitted.
 
 No duct carrying process atmosphere passes through these barriers. Ventilation across a fire area uses a listed damper and a separate air-handling unit, or energy recovery through the Q4 water loop only.
 

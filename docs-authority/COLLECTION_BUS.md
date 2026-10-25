@@ -26,7 +26,7 @@ The plant's PV inverters are too many to land on one 480 V bus without very larg
 
 ## 1. Basis
 
-Inverter AC output 60 kW = 72.2 A at 480 V. A section breaker is kept at or below 1000 A so that no breaker reaches the 1200 A arc-energy-reduction threshold of NEC 2023 240.87; breakers at 125 % of continuous current to NEC 240.6(A). At most 11 inverters per section. Each section feeds a standard pad-mount transformer (IEEE C57.12.34, 5.75 % Z) to the 12.47 kV collection bus; the MV bus carries the point of common coupling (AQS-ELEC-002 item 5, owner input A-M-113 for the service voltage). Switchboards to UL 891. Storage energy is allocated electrically over the hybrid inverters, so each section charges and discharges its own share; the ZnBr2 stacks stay physically in the outdoor ZNBR2 yard under NFPA 855-2023 (outdoor installation, separation and the 3 ft spacing between groups apply to the stack layout).
+Inverter AC output 60 kW = 72.2 A at 480 V. A section breaker is kept at or below 1000 A so that no breaker reaches the 1200 A arc-energy-reduction threshold of NEC 2026 240.87; breakers at 125 % of continuous current to NEC 240.6(A). At most 11 inverters per section. Each section feeds a standard pad-mount transformer (IEEE C57.12.34, 5.75 % Z) to the 12.47 kV collection bus; the MV bus carries the point of common coupling (AQS-ELEC-002 item 5, owner input A-M-113 for the service voltage). Switchboards to UL 891. Storage energy is allocated electrically over the hybrid inverters, so each section charges and discharges its own share; the ZnBr2 stacks stay physically in the outdoor ZNBR2 yard under NFPA 855-2026 (outdoor installation, separation and the 3 ft spacing between groups apply to the stack layout).
 
 ## 2. Sections
 
@@ -53,8 +53,8 @@ Every 480 V section sees its own inverters plus the others through two transform
 
 | Check | Governing clause |
 | --- | --- |
-| Arc energy reduction threshold | NFPA 70-2023 240.87 |
-| Switchboards | UL 891; NFPA 70-2023 Art. 408 |
-| Transformers | IEEE C57.12.34-2015; NFPA 70-2023 450.3 |
-| Energy storage installation | NFPA 855-2023 (outdoor ZNBR2 yard) |
+| Arc energy reduction threshold | NFPA 70-2026 240.87 |
+| Switchboards | UL 891; NFPA 70-2026 Art. 408 |
+| Transformers | IEEE C57.12.34-2022; NFPA 70-2026 450.3 |
+| Energy storage installation | NFPA 855-2026 (outdoor ZNBR2 yard) |
 | Microgrid control | IEEE 2030.7-2017 |

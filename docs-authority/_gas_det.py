@@ -1,12 +1,12 @@
 """AQS-SAF-006 gas detection (X-SAF-06, A-M-198). Sources from the graph: units on present gas edges carrying the species, plus the stated
 sources below. Two detectors per source unit (one failed head still covers it, redundancy rule), three where a SIF votes 2oo3 on them
-(AQS-CTL-003). Set points: H2 10 % / 25 % LFL (LFL 4.0 vol %, NFPA2_2023, NFPA69_2019); O2 deficiency 19.5 % and enrichment 23.5 %
+(AQS-CTL-003). Set points: H2 10 % / 25 % LFL (LFL 4.0 vol %, NFPA2_2026, NFPA69_2024); O2 deficiency 19.5 % and enrichment 23.5 %
 (OSHA_1910_146); toxic at the ACGIH_TLV_2024 TWA (alarm) and 2 x TWA or the ceiling (trip). Mounting: H2 at the ceiling, CO2/Ar/N2 and Cl2 low,
 others at breathing height. Writes docs-authority/inventory/GAS_DETECTORS.csv (read by flow_graph/inventory/other.py). Run: python3 docs-authority/_gas_det.py"""
 import csv, json, os, re, sys, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('NFPA2_2023', 'NFPA69_2019', 'OSHA_1910_146', 'ACGIH_TLV_2024', 'NFPA72_2022'): cite(k)
+for k in ('NFPA2_2026', 'NFPA69_2024', 'OSHA_1910_146', 'ACGIH_TLV_2024', 'NFPA72_2025'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
 SP = {'H2': (r'\bH2\b|hydrogen', 'catalytic bead + IR backup', 'ceiling', '0.4 vol % (10 % LFL)', '1.0 vol % (25 % LFL)', set()),
       'O2 deficiency': (r'\bN2\b|nitrogen|\bCO2\b|\bAr\b|argon', 'electrochemical O2', 'low (dense gases)', '19.5 vol %', '18.0 vol %', {'CRYO_HE', 'CRYO_NE', 'CRYO_KR', 'CRYO_XE'}),
@@ -39,6 +39,6 @@ md = ['# Gas detection', '', 'Document number: AQS-SAF-006', 'Revision: A', 'Dat
       '| Gas | Source units | Detectors | Detector | Mounting | Alarm | Trip |', '|---|---|---|---|---|---|---|']
 md += [f"| {k} | {G[k]} | {Q[k]} | {v[1]} | {v[2]} | {v[3]} | {v[4]} |" for k, v in SP.items()]
 md += ['', f"{sum(Q.values())} detectors at {len(rows)} source points. HF: no present gas edge carries HF; no HF source in the plant while fluoropolymer end-of-life stays held (Q-011, AQS-END-002). If Q-011 picks the HF scrubber route, HF detection is added at OIL_PYRO and the scrubber.",
-       'Alarms go to the fire alarm panel (NFPA72_2022) and the HMI; trips go to the safety PLC (AQS-CTL-003). Calibration and bump test intervals are in AQS-OPS-002 (quarterly bump test, 6-monthly calibration, A-M-198).', '',
+       'Alarms go to the fire alarm panel (NFPA72_2025) and the HMI; trips go to the safety PLC (AQS-CTL-003). Calibration and bump test intervals are in AQS-OPS-002 (quarterly bump test, 6-monthly calibration, A-M-198).', '',
        '| Unit | Gas | Qty | Voting |', '|---|---|---|---|'] + [f"| {r['unit']} | {r['gas']} | {r['qty']} | {r['voting']} |" for r in rows]
 open('docs-authority/GAS_DETECTION.md', 'w').write('\n'.join(md) + '\n'); print(sum(Q.values()), dict(G))

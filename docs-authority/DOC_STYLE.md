@@ -111,7 +111,7 @@ Use decimal section numbers (1, 1.1, 1.1.1) and no more than four levels (IET se
 ## 12. References
 
 - Every reference is correct in all details (IET law 4). Register each published source once in `flow_graph/param/refs.py` and cite it by key. Give the edition year and the clause, table or page.
-- Name a standard by its body, number and edition, for example ASME B31.3-2022. Quote no copyrighted standard text beyond a short clause reference.
+- Name a standard by its body, number and edition, for example ASME B31.3-2024. Quote no copyrighted standard text beyond a short clause reference.
 - Number the references at the end of a page in the order they are first cited.
 - Link to external documents. Do not commit copies of them.
 

@@ -5,7 +5,7 @@ Dismantled mass = empty weight, routed per AQS-END-002. Run after _commissioning
 import csv, json, os, sys, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('NFPA2_2023', 'NFPA69_2019', 'OSHA_1910_146', 'NFPA70E_2024'): cite(k)
+for k in ('NFPA2_2026', 'NFPA69_2024', 'OSHA_1910_146', 'NFPA70E_2027'): cite(k)
 C = list(csv.DictReader(open('docs-authority/inventory/COMMISSIONING.csv')))
 SR = {r['unit']: r for r in json.load(open('docs-authority/inventory/STRUCT_ROWS.json'))}
 order = list(dict.fromkeys(r['system'] for r in C))[::-1]

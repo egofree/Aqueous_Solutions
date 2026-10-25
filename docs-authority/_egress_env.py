@@ -6,7 +6,7 @@ AQS-SITE-002 99.6 % heating dry bulb. Floor plates from AQS-BLD-016. Run after _
 import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R); sys.path.insert(0, os.path.join(R, 'models/freecad'))
 from flow_graph.param.refs import cite
-for k in ('IBC2021_CH10', 'IECC2021_C402', 'NFPA101_2024'): cite(k)
+for k in ('IBC2027_CH10', 'IECC2021_C402', 'NFPA101_2027'): cite(k)
 import params as P
 Lp, Wp = P.PLATE_L, P.PLATE_W; A = Lp*Wp/1e6; z0r = P.HYDRO_RES_Z0; clr = P.HYDRO_RES_CLEAR
 LV = [('L-2', P.Z_Lm2, 'lower reservoir and catch (maintenance only)', 27.9, 0.15), ('L-1', P.Z_Lm1, 'process (industrial)', 9.3, 1.0),

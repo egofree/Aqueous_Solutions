@@ -42,7 +42,7 @@ Below 2 wt% the Perry fits are not tabulated; the 2 wt% row is used, which over-
 
 | Check | Governing clause |
 | --- | --- |
-| Vapour exhaust duct | NFPA 91-2020 |
-| Corrosive liquid handling | NFPA 400-2022 ch. 13 |
+| Vapour exhaust duct | NFPA 91-2026 |
+| Corrosive liquid handling | NFPA 400-2025 ch. 13 |
 | PVC-U pipe | ISO 1452-2:2009 (ASTM D1785 sizes) |
 | Exposure limit basis | ACGIH TLV-C 2 ppm HCl; ISO 16000 / NIOSH 7903 sampling |

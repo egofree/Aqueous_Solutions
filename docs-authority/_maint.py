@@ -1,14 +1,14 @@
 """AQS-OPS-002 maintenance plan (X-OPS-02, A-M-189): inspection and replacement intervals per unit, from the unit's attributes on the graph.
 Pressurised (relief case with P1): API510_2022 external 5 y, internal min(half remaining life, 10 y); relief device API576_2017 at 5 y (2 y in
 fouling/corrosive or oxygen service). Atmospheric vessels and tanks: annual external visual, 10 y internal (A-M-189). Piping: API570_2016
-class by fluid. Powered units: rotating rule (maint_rotating). Electrical: NFPA70B_2023 annual thermography, 36-month service. Standby power:
-NFPA110_2022 weekly inspection, monthly load run. Fire water: NFPA25_2023. Inserts: maint_insert_life_y. Also writes models/units/<U>/maint.csv.
+class by fluid. Powered units: rotating rule (maint_rotating). Electrical: NFPA70B_2026 annual thermography, 36-month service. Standby power:
+NFPA110_2025 weekly inspection, monthly load run. Fire water: NFPA25_2026. Inserts: maint_insert_life_y. Also writes models/units/<U>/maint.csv.
 Run: python3 docs-authority/_maint.py"""
 import csv, json, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param import drivers as DR
 from flow_graph.param.refs import cite
-for k in ('API510_2022', 'API570_2016', 'API576_2017', 'NFPA25_2023', 'NFPA70B_2023', 'NFPA110_2022', 'NFPA111_2022'): cite(k)
+for k in ('API510_2022', 'API570_2016', 'API576_2017', 'NFPA25_2026', 'NFPA70B_2026', 'NFPA110_2025', 'NFPA111_2025'): cite(k)
 d = DR.load(); life = DR.val(d, 'maint_insert_life_y'); rot = DR.val(d, 'maint_rotating')
 g = json.load(open('flow_graph/plant_flow_graph.json'))
 ELEC = {'rectifier', 'inverter', 'pv', 'flow_battery', 'pem_fc', 'iem_fc', 'pem_electrolyser', 'genset', 'hydro'}

@@ -84,6 +84,6 @@ Adopted: option d, the smallest complete system. The feed enters the top of a pa
 | Check | Governing clause |
 | --- | --- |
 | Pressure relief, fire case | ISO 23251:2019 (API 521); ISO 4126-1:2013 (API 520) |
-| Corrosive liquid handling | NFPA 400-2022 ch. 13 |
+| Corrosive liquid handling | NFPA 400-2025 ch. 13 |
 | Fasteners | ISO 898-1:2013; ISO 3506-1:2020 |
 | Pressure equipment practice | ISO 16528-1:2007 (ASME VIII-1 study basis) |

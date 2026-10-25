@@ -7,7 +7,7 @@ the graph (species on present edges, unit class). Positions: placement_seed + pl
 import json, math, os, sys, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('NFPA2_2023', 'NFPA400_2022', 'IFC2021_5003'): cite(k)
+for k in ('NFPA2_2026', 'NFPA400_2025', 'IFC2027_5003'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
 SEP = 7620; PART_X = [15000]
 U = {}

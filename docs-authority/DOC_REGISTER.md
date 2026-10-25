@@ -59,7 +59,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-COM-001 | `docs-authority/COMMISSIONING.md` | B | 2026-10-24 | Commissioning plan | current |
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence (cold start from empty) | current |
 | AQS-COM-003 | `docs-authority/PERF_TEST.md` | A | 2026-10-16 | Performance test | current |
-| AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | E | 2026-10-24 | Compliance matrix: design intent against code themes | current |
+| AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | F | 2026-10-24 | Compliance matrix: design intent against code themes | current |
 | AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | C | 2026-10-24 | Cryogenic cold-box internals | current |
 | AQS-CRY-003 | `docs-authority/COLD_BOX.md` | — | — | Cold box | current |
 | AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | A | 2026-10-16 | Instrument index | current |
@@ -435,7 +435,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-STD-004 | `docs-authority/STANDARDS_LIST.md` | A | 2026-10-15 | Codes and standards list | current |
 | AQS-STD-005 | `docs-authority/UNIT_MATERIALS.md` | A | 2026-10-21 | Per-unit material selections (duty section 3 sweep) | current |
 | AQS-STD-006 | `docs-authority/MATERIALS_SEC3.md` | A | 2026-10-21 | Duty section 3 material selections, batch issue (AQS-STD-006) | current |
-| AQS-STD-007 | `docs-authority/CODE_BASIS.md` | C | 2026-10-24 | Code basis | current |
+| AQS-STD-007 | `docs-authority/CODE_BASIS.md` | D | 2026-10-24 | Code basis | current |
 | AQS-STL-001 | `docs-authority/STL_MANIFEST.md` | A | 2026-09-27 | STL rebuild manifest | current |
 | AQS-STR-001 | `docs-authority/STREAM_REGISTER.md` | L | 2026-10-24 | Stream register: streams between blocks | current |
 | AQS-STR-001-DERIVED | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | — | — | Stream register excerpt — DERIVED from flow_graph | current |

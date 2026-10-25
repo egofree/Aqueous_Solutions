@@ -16,7 +16,7 @@ items=[(r['cell'],r['size_mm']) for r in ew]+[('RECT_EW',[2400,800,2000])]
 items.sort(key=lambda t:-t[1][0]*t[1][1])
 out={}; placed=[]
 AISLE=914   # NFPA 101 7.3.4.1.1 / IBC 1018.5 minimum clear width between cells (AQS-BLD-012)
-NEC=1219     # NEC 2023 Table 110.26(A)(1), 151-600 V, Condition 3, all faces of RECT_EW (face not yet fixed)
+NEC=1219     # NEC 2026 Table 110.26(A)(1), 151-600 V, Condition 3, all faces of RECT_EW (face not yet fixed)
 def aisle(a,b,g=AISLE): return a[1]<b[1]+b[3]+g and b[1]<a[1]+a[3]+g and a[2]<b[2]+b[4]+g and b[2]<a[2]+a[4]+g
 for u,sz in items:
     ok=None

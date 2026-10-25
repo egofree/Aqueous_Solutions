@@ -4,7 +4,7 @@ Stop is the reverse of start; emergency is the trip set of the system plus the p
 import csv, json, os, sys, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('OSHA_1910_119', 'IEC61511_2016', 'NFPA70E_2024'): cite(k)
+for k in ('OSHA_1910_119', 'IEC61511_2016', 'NFPA70E_2027'): cite(k)
 C = list(csv.DictReader(open('docs-authority/inventory/COMMISSIONING.csv'))); SIF = list(csv.DictReader(open('docs-authority/sif_list.csv')))
 sys_u = collections.defaultdict(list)
 for r in C: sys_u[r['system']].append(r)

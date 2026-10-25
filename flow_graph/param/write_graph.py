@@ -344,25 +344,25 @@ def power():
                         'extension_m2': rf['added_m2'], 'roof_capacity_kWp': round(rf['pv_roof_kWp'], 1), 'perimeter_pathway_mm': rf['layout']['perimeter_mm'],
                         'arrays': rf['layout']['arrays'], 'extension_load_kW': round(rf['ext']['total_kW'], 2),
                         'roof_load_kPa': {k: round(v, 3) for k, v in rf['load'].items()},
-                        'basis': 'flow_graph/param/solver.py roof_close (IFC 2021 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)'}})
+                        'basis': 'flow_graph/param/solver.py roof_close (IFC 2027 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)'}})
     N['ZNBR2']['params'].update({'kW': math.ceil(p['store_kW']), 'kWh': math.ceil(p['store_kWh']), 'charge_kW': math.ceil(p['charge_kW']), 'discharge_kW': math.ceil(p['discharge_kW']),
         'charge_basis': f"D75 cloudy-day case: yield {p['cloudy_yield_frac']:.2f} x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load"})
     N['SOL_ARK_60K']['params'].update({'count': p['inverters'], 'kW': p['inv_kW'], 'dc_ac_ratio': DR.val(DR.load(), 'pv_dc_ac_ratio'),
         'interconnection': {'export_peak_kW': round(p['export_peak_kW'], 1), 'export_kWh_d_clear': round(p['export_kWh_d_clear']),
-            'standards': 'IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2023 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter', 'decision': 'D75'}})
+            'standards': 'IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter', 'decision': 'D75'}})
     pv['oversize_factor'] = DR.val(DR.load(), 'pv_oversize_factor'); pv['balance_kWp'] = math.ceil(p['pv_base_kWp'])
     # X-PAR-07: extension hall load on the graph (unconditioned until the owner decides; A-M-104)
     kw = round(rf['ext']['total_kW'], 4); E = {x['stream_id']: x for x in g['edges']}
     cond = "conditioned" if DR.val(DR.load(), "ext_conditioned") else "unconditioned"
     note = (f"X-PAR-07 solver.roof_close: {cond} extension {rf['added_m2']:.0f} m2; lighting {rf['ext']['light_kW']:.2f} kW (IECC 2021 C405, 10 % lit), "
-            f"ventilation {rf['ext']['vent_kW']:.2f} kW (ASHRAE 62.1-2019 air at COP per ASHRAE 90.1-2019 Table 6.8.1-2, ISO 16798-3 fans), envelope {rf['ext']['envelope_kW']:.2f} kW (IECC 2021 C402 roof and walls, NOAA DFW degree days).")
+            f"ventilation {rf['ext']['vent_kW']:.2f} kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope {rf['ext']['envelope_kW']:.2f} kW (IECC 2021 C402 roof and walls, NOAA DFW degree days).")
     if 'EXT_HALL' not in N:
         n = dict(unit_id='EXT_HALL', sector_id='ELEC', presence='present', class_='building', tags=[], electrical_role='load', diagram_gap=None,
                  notes='Single-storey extension carrying the roof PV (X-PAR-07). Duty sheet docs-authority/duties/EXT_HALL.md.', enabled=True, modules=[], params={}, continuous_kw=None)
         n['class'] = n.pop('class_'); g['nodes'].append(n); N['EXT_HALL'] = n
     x = rf['ext']
     if x.get('mode'):
-        note += (f" X-PAR-08: {x['mode']}-source heat pumps (ASHRAE 90.1-2019 Table 6.8.1-2), heating {x['Qh_kW']:.1f} kW and cooling {x['Qc_kW']:.1f} kW thermal average after"
+        note += (f" X-PAR-08: {x['mode']}-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating {x['Qh_kW']:.1f} kW and cooling {x['Qc_kW']:.1f} kW thermal average after"
                  f" internal gains {x['gains_kW']:.1f} kW and slab edge {x['slab_kW']:.2f} kW (IECC F-factor); loop pumping {x['pump_kW']:.2f} kW. Comparison: "
                  + '; '.join(f"{m} {c['footprint_m2']:.0f} m2, {c['ext_kW']:.2f} kW" for m, c in rf.get('compare', {}).items()) + '.')
         N['EXT_HALL'].setdefault('params', {})['hvac'] = {k: (round(v, 3) if isinstance(v, float) else v) for k, v in x.items()}
@@ -401,7 +401,7 @@ def power():
         if N.get('GEO_HP') is not None:
             N['GEO_HP']['continuous_kw'] = rate(gkw,'kW',
                 f"X-ELS-02: Q4-bus lift S44 {s44:.4f} kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP "
-                f"{DR.val(d,'gsh_cop_h')} (drivers gsh_cop_h, ASHRAE 90.1-2019 class) = {gkw:.4f} kW; 2 x 100 % units (X-RED-07). "
+                f"{DR.val(d,'gsh_cop_h')} (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = {gkw:.4f} kW; 2 x 100 % units (X-RED-07). "
                 f"Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).")
             if 'SF-GEO_HP' in E: E['SF-GEO_HP']['rate'] = rate(gkw,'kW','X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP continuous_kw.')
     # X-ELS-02 (A-M-317): the source-loop circulator stamp is written by the process writer (the stage

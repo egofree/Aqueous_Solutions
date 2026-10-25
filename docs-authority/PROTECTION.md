@@ -14,7 +14,7 @@ Authority: AQS-PLAN-007 X-ELS-07; one-line AQS-ELEC-002 Rev C. Script `docs-auth
 
 ## 1. Available fault current
 
-All plant AC sources sit behind SOL_ARK_60K, 48 × 60 kW = 2880 kW (X-PAR-09 D75, X-PAR-08 D77; was 4 × 60 kW). Rated 3464 A at 480 V; fault contribution 2 × rated = 6928 A (study; AQS-ELEC-002 Rev B method). The utility connection for export (AQS-ELEC-002 Rev D item 5) adds the utility's available fault current, which is not known until the interconnection study (A-M-110); this study is redone with it. Export protection: UL 1741 SB inverters with IEEE 1547-2018 Category III voltage/frequency ride-through and trip settings, unintentional islanding cleared within 2 s; NEC 2023 705.30 overcurrent device and 705.20 lockable disconnect at the PCC; loss of utility (705.40) trips export and leaves the plant islanded on storage. The inverters are split into five 480 V collection sections (10, 10, 10, 9, 9 inverters), each with a 1000 A breaker (below the NEC 240.87 1200 A threshold) and a 750 kVA transformer to the 12.47 kV collection bus (AQS-ELEC-008, X-ELS-11). The plant bus hangs on CB-1.
+All plant AC sources sit behind SOL_ARK_60K, 48 × 60 kW = 2880 kW (X-PAR-09 D75, X-PAR-08 D77; was 4 × 60 kW). Rated 3464 A at 480 V; fault contribution 2 × rated = 6928 A (study; AQS-ELEC-002 Rev B method). The utility connection for export (AQS-ELEC-002 Rev D item 5) adds the utility's available fault current, which is not known until the interconnection study (A-M-110); this study is redone with it. Export protection: UL 1741 SB inverters with IEEE 1547-2018 Category III voltage/frequency ride-through and trip settings, unintentional islanding cleared within 2 s; NEC 2026 705.30 overcurrent device and 705.20 lockable disconnect at the PCC; loss of utility (705.40) trips export and leaves the plant islanded on storage. The inverters are split into five 480 V collection sections (10, 10, 10, 9, 9 inverters), each with a 1000 A breaker (below the NEC 240.87 1200 A threshold) and a 750 kVA transformer to the 12.47 kV collection bus (AQS-ELEC-008, X-ELS-11). The plant bus hangs on CB-1.
 
 ## 2. Device rule
 
@@ -151,7 +151,7 @@ Inverter fault data from the vendor; device time-current curves of the chosen br
 
 | Check | Governing clause |
 | --- | --- |
-| Overcurrent and coordination | NFPA 70-2023 Art. 240; 240.87 |
-| Short-circuit method | IEC 60909-0:2016 (inverter-limited study) |
-| Grounding, touch and step | IEEE 80-2013; NFPA 70-2023 Art. 250 |
-| Arc flash | NFPA 70E-2024 130.5 |
+| Overcurrent and coordination | NFPA 70-2026 Art. 240; 240.87 |
+| Short-circuit method | IEC 60909-0:2026 (inverter-limited study) |
+| Grounding, touch and step | IEEE 80-2013; NFPA 70-2026 Art. 250 |
+| Arc flash | NFPA 70E-2027 130.5 |

@@ -5,5 +5,5 @@ step,activity,basis,point
 4,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",ASME B31.3 345.4 / ASME VIII-1 UG-99,H
 5,passivation and ferroxyl test,A-M-190,W
 6,"motors: routine test (winding resistance, insulation resistance, no-load run)",IEC 60034,W
-7,electrical panels: dielectric and continuity test,UL 891 / NEC 2023,H
+7,electrical panels: dielectric and continuity test,UL 891 / NEC 2026,H
 8,loop check of every instrument,A-M-190,W

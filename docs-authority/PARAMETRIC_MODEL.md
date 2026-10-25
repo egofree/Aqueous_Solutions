@@ -89,7 +89,7 @@ All solved units close.
 | ew_current_efficiency_design | 0.85 | - | USBM_CL_EW | yes |
 | ew_cell_voltage_V | 2.12 | V | USBM_CL_EW | yes |
 | site_design_dry_bulb_C | 37.8 | C | AQS-SITE-002 | — |
-| continuous_load_factor | 1.25 | - | NEC2023 | — |
+| continuous_load_factor | 1.25 | - | NEC2026 | — |
 | pvc_u_max_C | 60.0 | C | ASTM_D1785 | — |
 | cp_hcl20_kJ_kgK | 3.0 | kJ/(kg K) | PERRY9 | yes |
 | cp_naoh20_kJ_kgK | 3.6 | kJ/(kg K) | PERRY9 | yes |
@@ -113,7 +113,7 @@ All solved units close.
 | storage_round_trip | 0.7 | - | A-M-179 | yes |
 | night_hours | 14.0 | h/d served from storage | A-M-060 | yes |
 | crit_autonomy_d | 2.0 | d of critical-load autonomy without sun | AQS-ELEC-007 AUT_CRIT (single governed source, D7 unification 2026-10-18); read by docs-authority/_power_sizing.py and flow_graph/param/o2_close.py (was AUT_CRIT / PSH_STORE_D 2.0 in two homes) | yes |
-| backup_gen_rated_kW | 40.0 | kW | NFPA110_2022 | yes |
+| backup_gen_rated_kW | 40.0 | kW | NFPA110_2025 | yes |
 | bus_power_factor | 0.9 | - | AQS-ELEC-002 PF (study) | yes |
 | ppt_naoh_per_cl | 1.0 | mol NaOH per mol chloride precipitated as hydroxide | GREENWOOD | yes |
 | digest_naoh_per_sio2 | 2.0 | mol NaOH per mol SiO2 dissolved | GREENWOOD | yes |
@@ -124,11 +124,11 @@ All solved units close.
 | pv_module_eff | 0.19 | STC efficiency | NREL_PVWATTS8 | yes |
 | pv_roof_gcr | 0.6 | ground coverage ratio, low-tilt rows | A-M-103 | yes |
 | pv_roof_yield_factor | 1.0 | roof yield / pv_yield_kWh_kWp_d | A-M-103 | yes |
-| ifc_perim_small_mm | 1219 | mm | IFC2021_1205 | yes |
-| ifc_perim_large_mm | 1829 | mm | IFC2021_1205 | yes |
-| ifc_axis_limit_mm | 76200 | mm | IFC2021_1205 | yes |
-| ifc_array_max_mm | 45720 | mm | IFC2021_1205 | yes |
-| ifc_path_mm | 1219 | mm | IFC2021_1205 | yes |
+| ifc_perim_small_mm | 1219 | mm | IFC2027_1205 | yes |
+| ifc_perim_large_mm | 1829 | mm | IFC2027_1205 | yes |
+| ifc_axis_limit_mm | 76200 | mm | IFC2027_1205 | yes |
+| ifc_array_max_mm | 45720 | mm | IFC2027_1205 | yes |
+| ifc_path_mm | 1219 | mm | IFC2027_1205 | yes |
 | ext_lpd_W_m2 | 8.8 | W/m2 | IECC2021_C405 | yes |
 | ext_light_frac | 0.1 | fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | A-M-104 | yes |
 | ext_Ra_L_s_m2 | 0.3 | L/(s m2) | ASHRAE621_2019 | yes |
@@ -193,7 +193,7 @@ All solved units close.
 | ext_T_design_h_C | -5.0 | C heating design dry bulb 99.6 % (DFW) | ASHRAE_FUND_2021 | yes |
 | ext_T_design_c_C | 38.0 | C cooling design dry bulb 0.4 % (DFW) | ASHRAE_FUND_2021 | yes |
 | ext_T_in_C | 18.3 | C balance (65 F, degree-day base) | NOAA_NORMALS_DFW | — |
-| sec_ocpd_max_A | 1000 | A, largest section breaker (stays below the NEC 240.87 1200 A arc-energy-reduction threshold) | NEC2023_240 | — |
+| sec_ocpd_max_A | 1000 | A, largest section breaker (stays below the NEC 240.87 1200 A arc-energy-reduction threshold) | NEC2026_240 | — |
 | mv_kV | 12.47 | kV collection and point of common coupling | A-M-114 | yes |
 | xfmr_Z_pu | 0.0575 | pu pad-mount transformer impedance | IEEE_C57_12_34 | yes |
 | rx_glass_k0_g_m2_s | 0.0002 | g/(m2 s) zero-order glass dissolution in 3 M NaOH at 80 C; order 0.31 in [OH-] | JMS2017_GLASSFIBRE | yes |
@@ -230,7 +230,7 @@ All solved units close.
 | znbr_her_mL_h_cm2 | 0.055 | mL/h/cm2 at 20 mA/cm2 | ZBFB_REVIEW2023 | — |
 | znbr_oc_corr_mL_h_cm2 | 0.0032 | mL/h/cm2 | ZBFB_REVIEW2023 | — |
 | znbr_j_mA_cm2 | 20.0 | mA/cm2 | ZBFB_REVIEW2023 | — |
-| h2_purge_frac_of_LFL | 0.25 | - | NFPA69_2019 | — |
+| h2_purge_frac_of_LFL | 0.25 | - | NFPA69_2024 | — |
 | znbr_charge_h | 6.0 | h/d | A-M-135 | yes |
 | nft_gully_pitch_m | 0.2 | m | CROPKING_NFT | — |
 | nft_gully_L_min | 1.0 | L/min | COOPER1996 | — |
@@ -466,7 +466,7 @@ All solved units close.
 | wt_life_per_shop | 2 | - HAB/FARM levels added per added shop level as the building grows (owner rule, Q-009) | A-M-187 | — |
 | maint_insert_life_y | {"BMED_ACID": 5, "BMED_BASE": 5, "BMED_UPW_POLISH": 5, "CRYO_ASU": 5, "CRYO_H2": 2, "H2_PURIFIER": 3, "MEOH_SYNTH": 3, "ALD": 2, "FORM": 1, "MEAM": 2, "HNO3": 0.5, "ACEX": 3, "ZNBR2": 5} | years between replacements of the consumable insert of each unit (membranes, sorbent, catalyst, gauze, resin, diaphragms, stack) | A-M-189 | yes |
 | maint_rotating | {"lube_mo": 6, "vibration_mo": 3, "bearing_y": 5, "seal_y": 3} | months/years for motors, pumps, fans and compressors | A-M-189 | yes |
-| soil_allow_kPa | 72.0 | kPa allowable bearing, presumptive clay (CL/ML/MH/CH) | IBC2021_1806 | yes |
+| soil_allow_kPa | 72.0 | kPa allowable bearing, presumptive clay (CL/ML/MH/CH) | IBC2027_1806 | yes |
 | soil_unit_weight_kN_m3 | 18.0 | kN/m3 moist clay | A-M-208 | yes |
 | gw_depth_m | 0.0 | m below grade, groundwater (worst case at grade until measured) | A-M-208 | yes |
 | raft_fc_MPa | 35.0 | MPa concrete strength, raft and basement walls | A-M-208 | yes |
@@ -561,7 +561,7 @@ All solved units close.
 | DIGESTER.metals-leach-train.acid-base-regen.cooler_pipe_od_m | 0.032 | m PVDF DN25 pipe OD | X-MAT-19 passive air-cooled hot-draw coolers (PVDF DN25) | — |
 | POLYMERS.polyolefin-train.POLY_OLEFIN.feed_cp_kJ_kgK | 2.1 | kJ/(kg K) naphtha/polyolefin feed liquid cp | PERRY9_HEAT | — |
 | POLYMERS.polyolefin-train.POLY_OLEFIN.feed_dT_K | 175 | K feed temperature rise 25 -> 200 C | AQS-SIZE-OIL-POLY feed heating 25->200 C | — |
-| ELEC.storage-train.ZNBR2.h2_LFL_vol_frac | 0.04 | vol fraction H2 lower flammability limit in air | NFPA69_2019 | — |
+| ELEC.storage-train.ZNBR2.h2_LFL_vol_frac | 0.04 | vol fraction H2 lower flammability limit in air | NFPA69_2024 | — |
 | ELEC.storage-train.ZNBR2.purge_air_rho_kg_m3 | 1.18 | kg/m3 purge air density | A-M-135 (X-PAR-02 ZNBR2 purge basis) | — |
 | PUMPED_HYDRO.hydro-train.recharge_window_h | 6.0 | h PV-window recharge | A-M-145 (diverse N+1 backup recharges over the PV surplus window) | — |
 | HAB.life-support-train.HABITATION.cdra_half_cycle_min | 144.0 | min adsorbent-bed half-cycle | NASA_CDRA2015 | — |
@@ -569,7 +569,7 @@ All solved units close.
 | FARM.grow-bed-train.GROW_BED.crop_inedible_water_frac | 0.9 | mass fraction water in inedible fresh biomass (tomato proxy) | BVAD2022 | — |
 | WTR.potable-upw-train.VCD_TRAIN.sec_kWh_m3 | 17 | kWh/m3 vapour-compression distillation specific energy (issued 14-20 band midpoint) | A-M-149 (X-RED-05) | — |
 | ELEC.distribution-train.SOL_ARK_60K.bus_V | 480 | V three-phase low-voltage bus | A-M-152 (X-RED-03 main-tie-main 480 V bus) | — |
-| ELEC.distribution-train.SOL_ARK_60K.nec_240_6_ratings_A | [100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200, 1600, 2000] | A standard ampere ratings for fuses and inverse-time breakers | NEC2023_240 | — |
+| ELEC.distribution-train.SOL_ARK_60K.nec_240_6_ratings_A | [100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200, 1600, 2000] | A standard ampere ratings for fuses and inverse-time breakers | NEC2026_240 | — |
 | CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.h2_hhv_kWh_kg | 39.4 | kWh/kg hydrogen higher heating value | CRC_H2 | — |
 | CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.hold_d | 14 | d hold time (D-DOCK shipped-product dispatch campaign, A-M-278) | A-M-278 | yes |
 | CRYO.cold-box-asu-recovery-train.feed-and-recovery.PROD_O2.rho_kg_m3 | 293.4 | kg/m3 O2 at 200 bar abs 15 C (Z 0.9105, Peng-Robinson check of the NIST isotherm) | NIST_WEBBOOK | — |
@@ -580,8 +580,8 @@ All solved units close.
 | CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.bop_m2_per_kW | 0.015 | m2 balance-of-plant plan area per kW rated (H2/O2 separators, deoxo, dryer per params.internals) | A-M-279 | yes |
 | CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_W_mm | 1050 | mm skid width (fits the CRYO H2-bay aisle) | A-M-279 | yes |
 | CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_H_mm | 2200 | mm skid height incl. separator deck | A-M-279 | yes |
-| ELEC.generation-train.BACKUP_GEN.exercise_load_frac | 0.3 | - nameplate fraction during monthly exercise | NFPA110_2022 | — |
-| ELEC.generation-train.BACKUP_GEN.exercise_h | 0.5 | h monthly exercise duration | NFPA110_2022 | — |
+| ELEC.generation-train.BACKUP_GEN.exercise_load_frac | 0.3 | - nameplate fraction during monthly exercise | NFPA110_2025 | — |
+| ELEC.generation-train.BACKUP_GEN.exercise_h | 0.5 | h monthly exercise duration | NFPA110_2025 | — |
 | ELEC.generation-train.BACKUP_GEN.eta | 0.3 | - spark-ignition engine efficiency on the C5-C10 cut | A-M-134 (genset standby study) | — |
 | ELEC.generation-train.BACKUP_GEN.fuel_lhv_kWh_kg | 12.2 | kWh/kg C5-C10 cut LHV (about 44 MJ/kg) | A-M-134 | — |
 | FARM.grow-bed-train.GROW_BED.fallback_area_m2 | 28.0 | m2 fallback bed area (live area comes from GROW_BED params) | A-M-229 (fallback of the retired fixed-bed basis, A-M-133) | — |
@@ -741,7 +741,7 @@ All solved units close.
 | ELEC.distribution-train.haz_gas_classes | {"H2": {"group": "IIC (Group B)", "T_class": "T1", "AIT_C": 560, "R1_m": 1.0, "R2_m": 1.5, "kind": "buoyant gas"}, "CH3OH": {"group": "IIA (Group D)", "T_class": "T1", "AIT_C": 464, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}, "C5-C10": {"group": "IIA (Group D)", "T_class": "T3", "AIT_C": 280, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}, "C11-C18": {"group": "IIA (Group D)", "T_class": "T3", "AIT_C": 220, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}, "C19-C28": {"group": "IIA (Group D)", "T_class": "T3", "AIT_C": 210, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour (heated only)"}, "hydrocarbon": {"group": "IIA (Group D)", "T_class": "T3", "AIT_C": 210, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}, "AcOH": {"group": "IIA (Group D)", "T_class": "T1", "AIT_C": 485, "R1_m": 1.5, "R2_m": 3.0, "kind": "vapour"}} | per-substance gas group, T class, AIT and Zone 1/Zone 2 extents R1/R2 | A-M-210 (AIT NFPA 497 Table 4.4.2 class values) | — |
 | ELEC.distribution-train.haz_min_frac_H2 | 0.5 | - minimum H2 mass fraction for an edge to be an H2 release source | A-M-210 | — |
 | ELEC.distribution-train.haz_min_frac_vap | 0.2 | - minimum vapour mass fraction for an organic-liquid release source | A-M-210 | — |
-| ELEC.distribution-train.SOL_ARK_60K.cb_std_breaker_A | [100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000] | A standard breaker sizes | NEC2023 | — |
+| ELEC.distribution-train.SOL_ARK_60K.cb_std_breaker_A | [100, 125, 150, 175, 200, 225, 250, 300, 350, 400, 450, 500, 600, 700, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000] | A standard breaker sizes | NEC2026 | — |
 | ELEC.distribution-train.SOL_ARK_60K.cb_std_kVA | [75, 112.5, 150, 225, 300, 500, 750, 1000, 1500, 2000, 2500] | kVA standard pad-mount transformer ratings | IEEE_C57_12_34 | — |
 | ELEC.distribution-train.SOL_ARK_60K.cb_mv_fuse_A | [10, 15, 20, 25, 30, 40, 50, 65, 80, 100] | A MV fuse ladder | A-M-114 | — |
 | ELEC.distribution-train.SOL_ARK_60K.cb_mv_fuse_margin | 1.5 | - MV fuse sized at 150 % of the section MV current | A-M-114 | — |
@@ -810,8 +810,8 @@ All solved units close.
 | melt_ti_cp_solid_kJ_kgK | 0.68 | kJ/kg K mean Ti 25-1668 C | CRC_TI | — |
 | melt_ti_L_kJ_kg | 295.7 | kJ/kg Ti fusion (14.15 kJ/mol) | CRC_TI | — |
 | melt_ti_cp_liq_kJ_kgK | 0.7 | kJ/kg K liquid Ti | CRC_TI | — |
-| fire_nfpa13_hazards | {"LH": [4.1, 139, 380, 30], "OH1": [6.1, 139, 950, 60], "OH2": [8.1, 139, 950, 90], "EH1": [12.2, 232, 1900, 90], "EH2": [16.3, 232, 1900, 120]} | per class: density mm/min, design area m2, hose allowance L/min, duration min | NFPA13_2022 | — |
-| fire_level_hazard | {"L-1": "OH2", "L0": "EH1", "L1": "OH1"} | NFPA 13 hazard class per level | NFPA13_2022 | — |
+| fire_nfpa13_hazards | {"LH": [4.1, 139, 380, 30], "OH1": [6.1, 139, 950, 60], "OH2": [8.1, 139, 950, 90], "EH1": [12.2, 232, 1900, 90], "EH2": [16.3, 232, 1900, 120]} | per class: density mm/min, design area m2, hose allowance L/min, duration min | NFPA13_2025 | — |
+| fire_level_hazard | {"L-1": "OH2", "L0": "EH1", "L1": "OH1"} | NFPA 13 hazard class per level | NFPA13_2025 | — |
 | fire_sprinkler_margin | 1.1 | fraction | X-SAF-05 design margin on the sprinkler hydraulic demand (A-M-188) | — |
 | POLYMERS.fluoropolymer-train.fluorspar_CaF2_wt | 0.97 | mass fraction | ULLMANN_HF | — |
 | POLYMERS.fluoropolymer-train.hf_kiln.CaF2_conversion | 0.95 | fraction of charged CaF2 | ULLMANN_HF | — |
@@ -897,15 +897,15 @@ All solved units close.
 | MEOH.synthesis-train.MEOH_FC.j_A_cm2 | 0.3 | A/cm2 current density at the design point | IEC62282_3_100 | yes |
 | MEOH.synthesis-train.MEOH_FC.cell_A_cm2 | 200 | cm2 active area per cell | IEC62282_3_100 | — |
 | MEOH.synthesis-train.MEOH_FC.meoh_LHV_MJ_kg | 19.9 | MJ/kg methanol LHV | PERRY9 | — |
-| fire_pump_type | "electric horizontal split-case, listed, NFPA 20; critical bus with the genset as second supply" | text | NFPA20_2022 | — |
-| fire_pump_churn_frac | 1.21 | fraction of rated head at shutoff (churn) | NFPA20_2022 | — |
-| fire_pump_150_flow_frac | 1.5 | fraction of rated flow at runout | NFPA20_2022 | — |
-| fire_pump_150_head_frac | 0.65 | fraction of rated head at 150 % flow | NFPA20_2022 | — |
+| fire_pump_type | "electric horizontal split-case, listed, NFPA 20; critical bus with the genset as second supply" | text | NFPA20_2025 | — |
+| fire_pump_churn_frac | 1.21 | fraction of rated head at shutoff (churn) | NFPA20_2025 | — |
+| fire_pump_150_flow_frac | 1.5 | fraction of rated flow at runout | NFPA20_2025 | — |
+| fire_pump_150_head_frac | 0.65 | fraction of rated head at 150 % flow | NFPA20_2025 | — |
 | fire_pump_head_margin_kPa | 150 | kPa design margin over static + friction to the remote area | A-M-313 | yes |
 | fire_tank_type | "gravity: water-tower dead storage (primary) + CATCH_TANK suction source for the pump (second supply)" | text | NFPA22_2023 | — |
 | fire_tank_refill_h | 8 | h to refill the reserve from the normal supply | A-M-314 | yes |
-| fire_pipe_schedule | "Sch 40 black steel ASTM A53, hydraulically designed (density/area); pipe-schedule method not used where EH1 is present" | text | NFPA13_2022 | — |
-| fire_zone_hazard | {"L-1 wet process": "OH2", "L0 shops/pyrolysis/oils/reagents/genset/flow battery": "EH1", "L0 electrical rooms": "pre-action, OH2 void", "L1 farm/digesters": "OH1", "L1 HAB west half": "LH", "H2/O2/CO2 receiver bays": "OH2 + NFPA 15 water spray", "ZNBR2 enclosure": "OH2 + NFPA 855 purge"} | NFPA 13 hazard class per zone | NFPA13_2022 | — |
+| fire_pipe_schedule | "Sch 40 black steel ASTM A53, hydraulically designed (density/area); pipe-schedule method not used where EH1 is present" | text | NFPA13_2025 | — |
+| fire_zone_hazard | {"L-1 wet process": "OH2", "L0 shops/pyrolysis/oils/reagents/genset/flow battery": "EH1", "L0 electrical rooms": "pre-action, OH2 void", "L1 farm/digesters": "OH1", "L1 HAB west half": "LH", "H2/O2/CO2 receiver bays": "OH2 + NFPA 15 water spray", "ZNBR2 enclosure": "OH2 + NFPA 855 purge"} | NFPA 13 hazard class per zone | NFPA13_2025 | — |
 
 ## 6. References
 
@@ -921,7 +921,7 @@ All solved units close.
 | AHRI340_ASHRAE901 | ANSI/ASHRAE/IES Standard 90.1-2019 Table 6.8.1-2: minimum efficiency of air-cooled heat pumps (heating COP about 3.2-3.4 at 47 F), ratings per AHRI 340/360. |
 | AISC360_22 | ANSI/AISC 360-22, Specification for Structural Steel Buildings: E3 flexural buckling Fcr = 0.658^(Fy/Fe) Fy for KL/r <= 4.71 sqrt(E/Fy), else 0.877 Fe, phi_c 0.90; F2 compact doubly symmetric I-members Mn = Fy Zx, phi_b 0.90; D2 tension yielding phi_t 0.90; Table B4.1 width-thickness limits; E = 200 GPa. |
 | ALVARADO2014 | Alvarado L., Chen A., Electrodeionization: principles, strategies and applications, Electrochimica Acta 132 (2014) 583-597: EDI polishes RO permeate to 10-18 MOhm cm with continuous electrochemical resin regeneration; current carried partly by water splitting, so current efficiency is low. |
-| ANSI_C12_20 | ANSI C12.20-2015, Electricity Meters 0.1, 0.2 and 0.5 Accuracy Classes (bidirectional revenue metering). |
+| ANSI_C12_20 | ANSI C12.1-2026, Electricity Meters 0.1, 0.2 and 0.5 Accuracy Classes (bidirectional revenue metering). |
 | ANUAR2016 | Anuar Sharuddin S.D. et al., A review on pyrolysis of plastic wastes, Energy Conversion and Management 115 (2016) 308-326: 400-550 C, residence 30-90 min in batch and semi-batch reactors. |
 | API2000_2020 | API Standard 2000, Venting Atmospheric and Low-pressure Storage Tanks, 7th ed. (2014, reaffirmed 2020), 3.3.2: normal out-breathing V_out = V_pf + Y V_tk^0.9 R_i, in-breathing V_in = V_pe + C V_tk^0.7 R_i (Nm3/h air, V_tk m3); Table 1 Y 0.32 below 42 deg latitude; Table 2 C 6.5 for vapour pressure above hexane or unknown below 42 deg; volatile out-breathing pump-in term doubled. |
 | API510_2022 | API 510, Pressure Vessel Inspection Code, 11th ed. (2022): 6.4 external inspection at most 5 years; 6.5 internal or on-stream inspection at the lesser of half the remaining life or 10 years; 6.6 pressure-relieving devices per API 576. |
@@ -933,46 +933,46 @@ All solved units close.
 | API618 | API Standard 618, Reciprocating Compressors for Petroleum, Chemical, and Gas Industry Services, 5th ed. (2007), 6.1: predicted discharge temperature shall not exceed 150 C (300 F) at any specified operating condition, and 135 C (275 F) for hydrogen-rich service (molecular weight 12 or less). |
 | ASCE7_22 | ASCE/SEI 7-22, Minimum Design Loads: Table 4.3-1 ordinary flat roof live load 20 psf (0.96 kPa); 4.17 roofs with solar panels; Chapter 7 snow; 2.3.1 LRFD combination 1.2D + 1.6(Lr or S or R); 1.5 risk categories and Table 1.5-2 importance factors; 11.4 SDS = 2/3 Fa Ss, SD1 = 2/3 Fv S1, Tables 11.4-1/11.4-2 site class D Fa 1.6 (Ss <= 0.25), Fv 2.4 (S1 <= 0.1); 12.8 equivalent lateral force Cs = SDS/(R/Ie); 15.7.6 tanks and vessels, 15.7.6.1.2 sloshing height 0.42 D Sac; chapters 26-27 wind, Table 26.10-1 Kz. |
 | ASHRAE621_2019 | ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1: area outdoor air rate Ra 0.06 cfm/ft2 (0.30 L/s m2) for warehouses and similar storage areas. |
-| ASHRAE901_2019_T6812 | ANSI/ASHRAE/IES 90.1-2019 Table 6.8.1-2: air-cooled heat pumps >= 65 kBtu/h cooling EER 11.0, heating COP 3.3 at 47 F; ground-source (water-to-air, ISO 13256-1) cooling EER 14.1 at 77 F entering, heating COP 3.2 at 32 F entering. |
+| ASHRAE901_2019_T6812 | ANSI/ASHRAE/IES 90.1-2025 Table 6.8.1-2: air-cooled heat pumps >= 65 kBtu/h cooling EER 11.0, heating COP 3.3 at 47 F; ground-source (water-to-air, ISO 13256-1) cooling EER 14.1 at 77 F entering, heating COP 3.2 at 32 F entering. |
 | ASHRAE901_2022 | ANSI/ASHRAE/IES Standard 90.1-2022, Table 6.8.1-3: air-cooled chillers below 150 tons, full-load minimum 10.1 EER (COP 2.96). |
 | ASHRAE_FUND2021_PSY | ASHRAE Handbook - Fundamentals (2021), Ch. 1 Psychrometrics: dew point of moist air from dry-bulb temperature and relative humidity. |
 | ASHRAE_FUND_2021 | ASHRAE Handbook - Fundamentals (2021), ch. 14 climatic design data and ch. 18 nonresidential load calculation. |
 | ASHRAE_SYS2020 | ASHRAE Handbook, HVAC Systems and Equipment (2020), ch. 13 hydronic heating and cooling: design temperature difference about 10-11 K (20 F) for chilled/condenser water loops. |
 | ASME_B30_16 | ASME B30.16-2022, Overhead Underhung and Stationary Hoists. |
 | ASME_B30_2 | ASME B30.2-2022, Overhead and Gantry Cranes: rated load, load test at 125 % of rated load (2-2.2.2). |
-| ASME_B31_3 | ASME B31.3-2022, Process Piping: pressure design of piping components (304.1.2 straight pipe), applied to tube reactors and receivers below the Section VIII size limit; 341 examination; 345.4.2 hydrostatic leak test at not less than 1.5 x design pressure (temperature-corrected); piping carries no Code Certification Mark. |
+| ASME_B31_3 | ASME B31.3-2024, Process Piping: pressure design of piping components (304.1.2 straight pipe), applied to tube reactors and receivers below the Section VIII size limit; 341 examination; 345.4.2 hydrostatic leak test at not less than 1.5 x design pressure (temperature-corrected); piping carries no Code Certification Mark. |
 | ASME_B36_10M | ASME B36.10M-2018, Welded and Seamless Wrought Steel Pipe: NPS 1 (DN25) OD 33.4 mm and NPS 2 (DN50) OD 60.3 mm with Schedule 40 walls 3.38 and 3.91 mm; NPS 4 (DN100) OD 114.3 mm. |
-| ASME_II_D | ASME BPVC Section II Part D (2023): maximum allowable stress; carbon steel limited to 425 C in Section VIII-1 service; 304H/316H to 816 C. |
-| ASME_IX | ASME BPVC Section IX (2023), Welding, Brazing, and Fusing Qualifications: Part QW WPS/PQR and welder performance (QW-200, QW-300), P-numbers (QW-422: P-1 carbon steel, P-8 austenitic stainless), essential variables; Part QF polyethylene fusing procedure and fusing operator qualification (QF-200, QF-300). |
-| ASME_RTP1 | ASME RTP-1-2019, Reinforced Thermoset Plastic Corrosion-Resistant Equipment: secondary bond (butt-and-strap) laminate procedure, Part 7 fabricator and laminator qualification by demonstration laminate and shear test. |
-| ASME_VIII1_U1 | ASME BPVC Section VIII Division 1 (2023), U-1 Scope: U-1(c)(2)(c) pressure containers that are integral parts of rotating or reciprocating mechanical devices (pumps, compressors, turbines, engines) are outside the scope; U-1(c)(2)(h) vessels for internal or external pressure not exceeding 15 psi (103 kPa) are outside the scope; U-1(c)(2)(j) vessels with inside diameter, width, height or cross-section diagonal not exceeding 6 in (152 mm), any length, are outside the scope. |
-| ASME_VIII1_UG | ASME BPVC Section VIII Division 1 (2023): UG-99(b) standard hydrostatic test at 1.3 x MAWP x stress ratio; UG-116 Certification Mark with U designator applied by a Certificate Holder; National Board registration where the jurisdiction requires it. |
-| ASME_VIII1_UG16 | ASME BPVC VIII-1 (2023) UG-16(b): minimum shell thickness 1.5 mm exclusive of corrosion allowance. |
-| ASME_VIII1_UG27 | ASME BPVC Section VIII Division 1 (2023), UG-27(c)(1): cylindrical shell under internal pressure, circumferential stress t = P R / (S E - 0.6 P). |
+| ASME_II_D | ASME BPVC Section II Part D (2025): maximum allowable stress; carbon steel limited to 425 C in Section VIII-1 service; 304H/316H to 816 C. |
+| ASME_IX | ASME BPVC Section IX (2025), Welding, Brazing, and Fusing Qualifications: Part QW WPS/PQR and welder performance (QW-200, QW-300), P-numbers (QW-422: P-1 carbon steel, P-8 austenitic stainless), essential variables; Part QF polyethylene fusing procedure and fusing operator qualification (QF-200, QF-300). |
+| ASME_RTP1 | ASME RTP-1-2025, Reinforced Thermoset Plastic Corrosion-Resistant Equipment: secondary bond (butt-and-strap) laminate procedure, Part 7 fabricator and laminator qualification by demonstration laminate and shear test. |
+| ASME_VIII1_U1 | ASME BPVC Section VIII Division 1 (2025), U-1 Scope: U-1(c)(2)(c) pressure containers that are integral parts of rotating or reciprocating mechanical devices (pumps, compressors, turbines, engines) are outside the scope; U-1(c)(2)(h) vessels for internal or external pressure not exceeding 15 psi (103 kPa) are outside the scope; U-1(c)(2)(j) vessels with inside diameter, width, height or cross-section diagonal not exceeding 6 in (152 mm), any length, are outside the scope. |
+| ASME_VIII1_UG | ASME BPVC Section VIII Division 1 (2025): UG-99(b) standard hydrostatic test at 1.3 x MAWP x stress ratio; UG-116 Certification Mark with U designator applied by a Certificate Holder; National Board registration where the jurisdiction requires it. |
+| ASME_VIII1_UG16 | ASME BPVC VIII-1 (2025) UG-16(b): minimum shell thickness 1.5 mm exclusive of corrosion allowance. |
+| ASME_VIII1_UG27 | ASME BPVC Section VIII Division 1 (2025), UG-27(c)(1): cylindrical shell under internal pressure, circumferential stress t = P R / (S E - 0.6 P). |
 | ASME_VIII_1_UG27 | ASME BPVC Section VIII Division 1 UG-27 (cylindrical shell t = P R / (S E - 0.6 P)); Section II Part D allowable stress for SA-240 304L, 115 MPa at 40 C. |
 | ASME_Y14_1 | ASME Y14.1-2020, Decimal Inch Drawing Sheet Size and Format (and Y14.1M metric): sheet sizes A-E / A0-A4, borders, zones, title block and revision block locations. |
 | ASME_Y14_100 | ASME Y14.100-2017, Engineering Drawing Practices: drawing numbering, part identification, drawing types and data management. |
-| ASME_Y14_35 | ASME Y14.35-2014, Revision of Engineering Drawings and Associated Documents: revision letters, revision history block, change identification. |
+| ASME_Y14_35 | ASME Y14.35-2025, Revision of Engineering Drawings and Associated Documents: revision letters, revision history block, change identification. |
 | ASME_Y14_5 | ASME Y14.5-2018, Dimensioning and Tolerancing: dimensioning and geometric tolerancing for fabrication drawings. |
 | ASM_V1 | ASM International, ASM Handbook Vol 1, Properties and Selection: Irons, Steels, and High-Performance Alloys (1990): AISI H13 hot-work tool steel (Cr-Mo-V) for hot-work dies, extrusion and forge tooling; heat-resisting Fe-Cr-Ni alloys incl. the 80Ni-20Cr electrical-resistance element class to about 1100 C. |
 | ASM_V7 | ASM International, ASM Handbook Vol 7, Powder Metal Technologies and Applications (1998): press-and-sinter consolidation practice; sintering-furnace construction with graphite or MoSi2 element hot zones under inert or vacuum atmosphere for reactive powders. |
 | ASTM_A992 | ASTM A992/A992M, Standard Specification for Structural Steel Shapes: Fy 345 MPa (50 ksi) minimum, Fu 450 MPa. |
 | ASTM_A999 | ASTM A999/A999M-19, Standard Specification for General Requirements for Alloy and Stainless Steel Pipe: pipe furnished to dimensional specifications may be ordered to minimum wall; the customary supplied-wall practice carries a 12.5 % under-tolerance on wall thickness (0.875 factor on nominal wall). |
-| ASTM_B193_2020 | ASTM B193-20, Resistivity of Electrical Conductor Materials: four-terminal resistance method. |
+| ASTM_B193_2020 | ASTM B193-25, Resistivity of Electrical Conductor Materials: four-terminal resistance method. |
 | ASTM_B3_2013 | ASTM B3-13, Soft or Annealed Copper Wire: 100 % IACS, resistivity 0.017241 ohm mm2/m at 20 C, density 8.89 g/cm3, minimum elongation by size. |
 | ASTM_B49_2020 | ASTM B49-20, Copper Rod for Electrical Purposes: 8 mm (5/16 in) hot-rolled or continuous-cast redraw rod, 100 % IACS. |
 | ASTM_B8_2023 | ASTM B8-23, Concentric-Lay-Stranded Copper Conductors, Hard, Medium-Hard, or Soft: class B wire counts (14-2 AWG 7 wires, 1-4/0 AWG 19, 250-500 kcmil 37) and lay lengths. |
 | ASTM_C1055 | ASTM C1055-20, Standard Guide for Heated System Surface Conditions that Produce Contact Burn Injuries: about 60 C for a 5 s contact with a metallic surface as the burn threshold; personnel-protection insulation targets a lower surface temperature. |
 | ASTM_C534 | ASTM C534/C534M-22, Standard Specification for Preformed Flexible Elastomeric Cellular Thermal Insulation in Sheet and Tubular Form: closed-cell, -40 to 105 C service, vapour retarder for cold lines. |
-| ASTM_C547 | ASTM C547-22, Standard Specification for Mineral Fiber Pipe Insulation: preformed mineral wool pipe sections, Types I-V to 454-650 C, apparent thermal conductivity rising with mean temperature. |
-| ASTM_C680 | ASTM C680-23, Standard Practice for Estimate of the Heat Gain or Loss and the Surface Temperatures of Insulated Flat, Cylindrical, and Spherical Systems: radial conduction through the insulation in series with the surface coefficient. |
-| ASTM_D1785 | ASTM D1785-15, Standard Specification for PVC Plastic Pipe, Schedules 40, 80 and 120; maximum service 60 C (140 F). |
+| ASTM_C547 | ASTM C547-25, Standard Specification for Mineral Fiber Pipe Insulation: preformed mineral wool pipe sections, Types I-V to 454-650 C, apparent thermal conductivity rising with mean temperature. |
+| ASTM_C680 | ASTM C680-24, Standard Practice for Estimate of the Heat Gain or Loss and the Surface Temperatures of Insulated Flat, Cylindrical, and Spherical Systems: radial conduction through the insulation in series with the surface coefficient. |
+| ASTM_D1785 | ASTM D1785-21a, Standard Specification for PVC Plastic Pipe, Schedules 40, 80 and 120; maximum service 60 C (140 F). |
 | ASTM_D1998 | ASTM D1998-21, Standard Specification for Polyethylene Upright Storage Tanks (hoop wall T = P OD / (2 SD), SD 600 psi (4.14 MPa) at 23 C; minimum wall 0.187 in (4.75 mm)). |
 | ASTM_D2344_22 | ASTM D2344/D2344M-22, Short-Beam Strength of Polymer Matrix Composites: span 4 x thickness, width 2 x thickness, length 6 x thickness, 1.0 mm/min, F_sbs = 0.75 P / (b h). |
-| ASTM_D2855 | ASTM D2855-15, Standard Practice for the Two-Step (Primer and Solvent Cement) Method of Joining PVC or CPVC Pipe and Piping Components with Tapered Sockets; with ASTM F493 (CPVC cement) and D2564 (PVC cement). |
+| ASTM_D2855 | ASTM D2855-20, Standard Practice for the Two-Step (Primer and Solvent Cement) Method of Joining PVC or CPVC Pipe and Piping Components with Tapered Sockets; with ASTM F493 (CPVC cement) and D2564 (PVC cement). |
 | ASTM_D618_21 | ASTM D618-21, Conditioning Plastics for Testing: procedure A, 40 h at 23 C and 50 % RH. |
 | ASTM_D638_22 | ASTM D638-22, Tensile Properties of Plastics: Type I specimen 165 mm overall, 13 mm narrow width, 50 mm gauge, 5 mm/min; five specimens per direction. |
-| ASTM_D790_17 | ASTM D790-17, Flexural Properties of Unreinforced and Reinforced Plastics: three-point bending, span-to-depth 16:1 (32:1 or 40:1 for high-modulus composites), 0.01 /min strain rate, 5 % strain limit. |
+| ASTM_D790_17 | ASTM D790-25, Flexural Properties of Unreinforced and Reinforced Plastics: three-point bending, span-to-depth 16:1 (32:1 or 40:1 for high-modulus composites), 0.01 /min strain rate, 5 % strain limit. |
 | ASTM_D792_20 | ASTM D792-20, Density and Specific Gravity of Plastics by Displacement: method A in water at 23 C. |
 | ASTM_G93 | ASTM G93/G93M-19, Standard Guide for Cleanliness Levels and Cleaning Methods for Materials and Equipment Used in Oxygen-Enriched Environments. |
 | AWS_A2_4 | AWS A2.4:2020, Standard Symbols for Welding, Brazing, and Nondestructive Examination. |
@@ -1026,32 +1026,32 @@ All solved units close.
 | HOTANAHALLI1972 | Hotanahalli S.S., Chandalia S.B., Oxidation of acetaldehyde to glyoxal by nitric acid, J. Appl. Chem. Biotechnol. 22 (1972) 1243-1252, doi:10.1002/jctb.5020221207: liquid phase in aqueous HNO3, nitrous acid required as initiator, 30-45 C, acetic and glyoxylic acids the main by-products. |
 | HPA_PRACTICE | High-pressure aeroponics practice (theyieldgrid.com aeroponic timer calculator; mistculture.com HPA manifold; plant-calculator.com aeroponics calculator, accessed 2026-10-15): 4-8 nozzles per m2, 0.3 mm anti-drip nozzle 0.015 gal/min at 80 psi, 3-5 s on / 3-5 min off (0.9-1.7 % duty). |
 | IAPWS_IF97 | IAPWS, Revised Release on the IAPWS Industrial Formulation 1997 for the Thermodynamic Properties of Water and Steam (2007): region 4 saturation equation; latent heat of vaporisation 2257 kJ/kg at 100 C. |
-| IBC2021_1806 | IBC 2021 Table 1806.2 presumptive load-bearing values: clay, sandy clay, silty clay (CL, ML, MH, CH) 1,500 psf vertical (72 kPa) allowable, raised for depth/width per 1806.3; 1803 geotechnical investigation, 1808.6 expansive soils. |
-| IBC2021_CH10 | IBC 2021 ch. 10 means of egress (1004.5, 1005.3.2, 1006.3.3, 1017.2, 1017.2.2, 1018.5, 1024, 1028). |
+| IBC2027_1806 | IBC 2027 Table 1806.2 presumptive load-bearing values: clay, sandy clay, silty clay (CL, ML, MH, CH) 1,500 psf vertical (72 kPa) allowable, raised for depth/width per 1806.3; 1803 geotechnical investigation, 1808.6 expansive soils. |
+| IBC2027_CH10 | IBC 2027 ch. 10 means of egress (1004.5, 1005.3.2, 1006.3.3, 1017.2, 1017.2.2, 1018.5, 1024, 1028). |
 | IEA_GHR2023 | International Energy Agency, Global Hydrogen Review 2023: PEM and alkaline electrolyser system electricity consumption about 50-55 kWh/kg H2. |
-| IEC60034_1_2022 | IEC 60034-1:2022, Rotating electrical machines - Rating and performance: routine tests, temperature-rise limits by thermal class, withstand voltage 1000 V + 2 U for one minute. |
-| IEC60034_2_1_2014 | IEC 60034-2-1:2014, Standard methods for determining losses and efficiency from tests: method 2-1-1B, summation of losses with load test and residual-loss regression. |
-| IEC60034_30_1 | IEC 60034-30-1:2014, Rotating electrical machines - Efficiency classes of line operated AC motors (IE code): nominal efficiency limits, 60 Hz IE3 table; 5.4.7 interpolation for intermediate ratings. |
+| IEC60034_1_2022 | IEC 60034-1:2026, Rotating electrical machines - Rating and performance: routine tests, temperature-rise limits by thermal class, withstand voltage 1000 V + 2 U for one minute. |
+| IEC60034_2_1_2014 | IEC 60034-2-1:2024, Standard methods for determining losses and efficiency from tests: method 2-1-1B, summation of losses with load test and residual-loss regression. |
+| IEC60034_30_1 | IEC 60034-30-1:2025, Rotating electrical machines - Efficiency classes of line operated AC motors (IE code): nominal efficiency limits, 60 Hz IE3 table; 5.4.7 interpolation for intermediate ratings. |
 | IEC60034_9_2021 | IEC 60034-9:2021, Rotating electrical machines - Noise limits: sound power test method and limits by frame size. |
-| IEC60072_1_1991 | IEC 60072-1:1991, Dimensions and output series for rotating electrical machines - frame numbers 56 to 400: shaft height H, fixing A x B, hole K, shaft end D x E. |
+| IEC60072_1_1991 | IEC 60072-1:2022, Dimensions and output series for rotating electrical machines - frame numbers 56 to 400: shaft height H, fixing A x B, hole K, shaft end D x E. |
 | IEC60079_10_1 | IEC 60079-10-1:2020, Explosive atmospheres, classification of areas, explosive gas atmospheres: grades of release (continuous, primary, secondary) giving Zone 0, 1, 2; ventilation degree and availability; Annex C/D hazardous-area extent from release rate; gas groups IIA, IIB, IIC and temperature classes T1-T6 (IEC 60079-20-1 data). |
-| IEC60909_0 | IEC 60909-0:2016 short-circuit currents in three-phase AC systems. |
+| IEC60909_0 | IEC 60909-0:2026 short-circuit currents in three-phase AC systems. |
 | IEC61131_2 | IEC 61131-2:2017, Programmable controllers, equipment requirements: 4-20 mA analogue inputs, 24 V DC digital inputs. |
-| IEC61131_3 | IEC 61131-3:2013, Programmable controllers, programming languages (structured text, function block diagram). |
+| IEC61131_3 | IEC 61131-3:2025, Programmable controllers, programming languages (structured text, function block diagram). |
 | IEC61511_2016 | IEC 61511-1:2016, Functional safety, safety instrumented systems for the process industry sector. |
 | IEC61882_2016 | IEC 61882:2016, Hazard and operability studies (HAZOP studies), application guide: nodes, parameters, guide words, deviations, causes, consequences, safeguards, actions. |
 | IEC62282_3_100 | IEC 62282-3-100:2019, Fuel cell technologies, stationary fuel cell power systems: safety. |
-| IEC62439_2 | IEC 62439-2:2016, Industrial communication networks, high availability: Media Redundancy Protocol (MRP) ring, recovery within 200 ms. |
+| IEC62439_2 | IEC 62439-2:2021, Industrial communication networks, high availability: Media Redundancy Protocol (MRP) ring, recovery within 200 ms. |
 | IECC2021_C402 | International Energy Conservation Code (2021) Table C402.1.4: opaque roof assembly maximum U-factors, metal building roof, climate zone 3: U-0.035 Btu/h ft2 F (0.199 W/m2 K); Table C402.1.4 metal building wall U-0.094 Btu/h ft2 F (0.534 W/m2 K). |
 | IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method: Manufacturing facility 0.82 W/ft2 (8.8 W/m2). |
 | IEEE1547_2018 | IEEE 1547-2018, Standard for Interconnection and Interoperability of Distributed Energy Resources with Associated Electric Power Systems Interfaces (with 1547a-2020): abnormal-voltage Category II/III, ride-through, anti-islanding 2 s. |
 | IEEE2030_7 | IEEE 2030.7-2017, Standard for the Specification of Microgrid Controllers (planned and unplanned islanding, reconnection). |
 | IEEE80 | IEEE Std 80-2013, Guide for Safety in AC Substation Grounding: eq. 29 (step), eq. 32 (touch), Cs eq. 27. |
 | IEEE80_2013 | IEEE 80-2013 guide for safety in AC substation grounding. |
-| IEEE_C57_12_34 | IEEE C57.12.34-2015, pad-mounted three-phase distribution transformers 2500 kVA and smaller: standard kVA ratings 75 to 2500; typical %Z 5.75 at 750 kVA. |
-| IFC2021_1205 | International Fire Code (2021) 1205.3: rooftop PV on buildings other than Group R-3: 1205.3.1 perimeter pathway 6 ft (1829 mm), reduced to 4 ft (1219 mm) where either axis is 250 ft (76.2 m) or less; 1205.3.2 interior pathways 4 ft (1219 mm) so that no array exceeds 150 ft (45.72 m) in either axis; 1205.3.3 smoke-ventilation access. |
-| IFC2021_5003 | International Fire Code (2021) 5003.9.8: incompatible materials in storage and use above 5 lb (2.3 kg) or 0.5 gal (2 L) separated by not less than 20 ft (6096 mm), a 1-hour fire barrier, or approved hazardous materials storage cabinets. |
-| IFC2021_5004_3 | International Fire Code (2021) 5004.3 / IMC 502.8: mechanical exhaust for indoor storage and use of hazardous materials at not less than 1 cfm/ft2 (5.08 L/s m2) of floor area, continuous, inlet within 12 in of the floor (vapours heavier than air). |
+| IEEE_C57_12_34 | IEEE C57.12.34-2022, pad-mounted three-phase distribution transformers 2500 kVA and smaller: standard kVA ratings 75 to 2500; typical %Z 5.75 at 750 kVA. |
+| IFC2027_1205 | International Fire Code (2027) 1205.3: rooftop PV on buildings other than Group R-3: 1205.3.1 perimeter pathway 6 ft (1829 mm), reduced to 4 ft (1219 mm) where either axis is 250 ft (76.2 m) or less; 1205.3.2 interior pathways 4 ft (1219 mm) so that no array exceeds 150 ft (45.72 m) in either axis; 1205.3.3 smoke-ventilation access. |
+| IFC2027_5003 | International Fire Code (2027) 5003.9.8: incompatible materials in storage and use above 5 lb (2.3 kg) or 0.5 gal (2 L) separated by not less than 20 ft (6096 mm), a 1-hour fire barrier, or approved hazardous materials storage cabinets. |
+| IFC2027_5004_3 | International Fire Code (2027) 5004.3 / IMC 502.8: mechanical exhaust for indoor storage and use of hazardous materials at not less than 1 cfm/ft2 (5.08 L/s m2) of floor area, continuous, inlet within 12 in of the floor (vapours heavier than air). |
 | INCROPERA7 | Bergman T.L., Lavine A.S., Incropera F.P., DeWitt D.P., Fundamentals of Heat and Mass Transfer, 7th ed., Wiley (2011): sensible duty Q = m cp dT (ch. 1); LMTD method (sec. 11.3); free convection h about 2-25 W/(m2 K) for gases (table 1.1). |
 | INDUCT_SOCX | Small coreless induction furnaces (10-50 kW class for charges under 20 kg): 2-3 kHz for steel/Cu charges, specific connected power about 2.5 kW/kg of steel-equivalent charge; melt energy to tap 0.7-0.9 kWh/kg steel, 0.5-0.6 kWh/kg Al/Cu from cold charge; dross/slag make on clean scrap remelt 1-2 % of charge (published small-furnace practice as summarised in notes/FOUNDRY_SIZING.md, AQS-SIZE-FOUNDRY). |
 | ISA5_1_2022 | ANSI/ISA-5.1-2022, Instrumentation and Control Symbols and Identification: first letter measured variable (F, P, T, L), succeeding letters function (T transmitter, E element, S switch, H high). |
@@ -1060,18 +1060,18 @@ All solved units close.
 | ISO1452_2 | ISO 1452-2:2009 PVC-U piping systems, pipes. |
 | ISO16069 | ISO 16069:2017 safety way guidance systems. |
 | ISO16528_1 | ISO 16528-1:2007 boilers and pressure vessels, performance requirements. |
-| ISO16798_3 | ISO 16798-3:2017 / EN 16798-3, Energy performance of buildings, ventilation: specific fan power categories, SFP 3 = 750 to 1250 W/(m3/s). |
+| ISO16798_3 | EN 16798-3:2017 / EN 16798-3, Energy performance of buildings, ventilation: specific fan power categories, SFP 3 = 750 to 1250 W/(m3/s). |
 | ISO21940_11_2016 | ISO 21940-11:2016, Mechanical vibration - Rotor balancing - Part 11: procedures and tolerances for rotors with rigid behaviour, grade G2.5. |
-| ISO22734_2019 | ISO 22734:2019, Hydrogen generators using water electrolysis: industrial, commercial and residential applications (separate H2 and O2 gas paths, gas purity monitoring). |
-| ISO23251 | ISO 23251:2006 / API Std 521, Pressure-relieving and depressuring systems: fire case heat input Q = 21000 F A^0.82 Btu/h with adequate drainage and fire fighting, A wetted area to 7.6 m above grade. |
-| ISO30500 | ISO 30500:2018 Non-sewered sanitation systems: prefabricated integrated treatment units: log reduction for treated outputs: E. coli >= 6, MS2 coliphage >= 7, Clostridium perfringens spores >= 6, Ascaris suum eggs >= 4. |
+| ISO22734_2019 | ISO 22734-1:2025, Hydrogen generators using water electrolysis: industrial, commercial and residential applications (separate H2 and O2 gas paths, gas purity monitoring). |
+| ISO23251 | ISO 23251:2019 / API Std 521, Pressure-relieving and depressuring systems: fire case heat input Q = 21000 F A^0.82 Btu/h with adequate drainage and fire fighting, A wetted area to 7.6 m above grade. |
+| ISO30500 | ISO 30500:2025 Non-sewered sanitation systems: prefabricated integrated treatment units: log reduction for treated outputs: E. coli >= 6, MS2 coliphage >= 7, Clostridium perfringens spores >= 6, Ascaris suum eggs >= 4. |
 | ISO4126_1 | ISO 4126-1:2013, Safety devices for protection against excessive pressure, Part 1: safety valves (set pressure, overpressure, discharge capacity). |
 | ISO45001 | ISO 45001:2018 occupational health and safety management. |
 | ISO668_2020 | ISO 668:2020, Series 1 freight containers, external dimensions: 1AA 40 ft 12,192 x 2,438 x 2,591 mm; 1AAA high cube 2,896 mm high; 1CC 20 ft 6,058 x 2,438 x 2,591 mm; max gross 30,480 kg (1AA, 1CC). |
 | ISO7010 | ISO 7010:2019 graphical symbols, registered safety signs. |
 | ISO7500_1_2018 | ISO 7500-1:2018, Metallic materials - Calibration and verification of static uniaxial testing machines - Part 1: force-measuring system, class 1. |
 | ISO_10628_2 | ISO 10628-2:2012, Diagrams for the chemical and petrochemical industry, Part 2: Graphical symbols: process flow and P&I diagram symbols. |
-| ISO_14687 | ISO 14687:2019, Hydrogen fuel quality, Product specification: Grade D (PEM fuel cells) limits water and O2 at 5 umol/mol and total halogenated compounds at 0.05 umol/mol. |
+| ISO_14687 | ISO 14687:2025, Hydrogen fuel quality, Product specification: Grade D (PEM fuel cells) limits water and O2 at 5 umol/mol and total halogenated compounds at 0.05 umol/mol. |
 | ISO_7200 | ISO 7200:2004, Technical product documentation, Data fields in title blocks and document headers: mandatory fields legal owner, identification number, revision index, date of issue, title, document type, approval and creator. |
 | JAE2022_AERO | Aeroponic systems design: considerations and challenges, Journal of Agricultural Engineering 53 (2022) 1387, doi:10.4081/jae.2022.1387: PD pump plus pressure tank and solenoid-timed short sprays; high-pressure swirl nozzles. |
 | JMS2017_GLASSFIBRE | Kinetics of dissolution of glass fibre in hot alkaline solution, J. Materials Science 53 (2018) doi:10.1007/s10853-017-1627-z: NaOH 3 mol/L, zero-order k 2.0e-4 g/(m2 s) at 80 C, 4.3e-4 at 95 C; reaction order in hydroxide 0.31-0.44. |
@@ -1092,31 +1092,31 @@ All solved units close.
 | NARASIMHAN2000 | Narasimhan S., Jordache C., Data Reconciliation and Gross Error Detection, Gulf Publishing (2000), ch. 3: linear steady-state reconciliation, minimum weighted least-squares adjustment subject to the balance constraints. |
 | NASA_5A1998 | Mulloth L.M., Finn J.E., Carbon Dioxide Adsorption on a 5A Zeolite Designed for CO2 Removal in Spacecraft Cabins, NASA/TM-1998-208752: ASRT 5A isotherms 0-250 C, about 1.0 wt% CO2 at 0.4 kPa (3 torr), 25 C. |
 | NASA_CDRA2015 | Knox J.C. et al., Optimization of the Carbon Dioxide Removal Assembly (CDRA-4EU), NTRS 20150016500 (2015): two desiccant and two adsorbent beds, one pair adsorbing while the other regenerates at 204 C, nominal half-cycle 144 min, 34.7 m3/h. |
-| NEC2023 | NFPA 70, National Electrical Code (2023): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
-| NEC2023_240 | NFPA 70-2023 240.6(A) standard ampere ratings; 240.87 arc energy reduction for breakers rated or adjustable to 1200 A or higher. |
-| NEC2023_705 | NFPA 70-2023 Article 705 Interconnected Electric Power Production Sources: 705.11 supply-side connection, 705.12 load-side 120 % rule, 705.20 disconnect, 705.30 overcurrent protection, 705.40 loss of primary source. |
-| NEC2023_706 | NFPA 70-2023 Article 706 Energy Storage Systems; NFPA 855-2023 installation of stationary ESS. |
-| NFPA101_2024 | NFPA 101-2024, Life Safety Code: ch. 7 means of egress (7.2.6 exit passageways, Table 7.3.1.2, Table 7.3.3.1, 7.4.1.2, 7.9, 7.10), ch. 40 industrial (Table 40.2.6, 40.2.5). |
-| NFPA110_2022 | NFPA 110, Standard for Emergency and Standby Power Systems, 2022 ed.: 8.4.2 generator sets exercised at least monthly for a minimum of 30 minutes under operating temperature conditions or at not less than 30 % of the EPS nameplate kW rating; 8.4.9 Level 1 load test at least once every 36 months for 4 h. |
-| NFPA111_2022 | NFPA 111, Standard on Stored Electrical Energy Emergency and Standby Power Systems, 2022 ed., sec. 4.3 Table 4.3 (Class = minimum reserve time at rated load; Class X as required by the application) and 4.5.1 (Level 1 where failure could cause loss of life). |
-| NFPA13_2022 | NFPA 13-2022, Standard for the Installation of Sprinkler Systems. |
-| NFPA15_2022 | NFPA 15-2022, Water Spray Fixed Systems for Fire Protection: exposure protection of vessels, minimum 10.2 L/min/m2 (0.25 gpm/ft2). |
-| NFPA1_2021_11_12 | NFPA 1, Fire Code (2021) 11.12.3: rooftop PV access, pathways and ventilation for buildings other than one- and two-family dwellings (same perimeter and interior pathway rules as IFC 1205.3). |
-| NFPA20_2022 | NFPA 20-2022, Installation of Stationary Pumps for Fire Protection. |
+| NEC2026 | NFPA 70, National Electrical Code (2026): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
+| NEC2026_240 | NFPA 70-2026 240.6(A) standard ampere ratings; 240.87 arc energy reduction for breakers rated or adjustable to 1200 A or higher. |
+| NEC2026_705 | NFPA 70-2026 Article 705 Interconnected Electric Power Production Sources: 705.11 supply-side connection, 705.12 load-side 120 % rule, 705.20 disconnect, 705.30 overcurrent protection, 705.40 loss of primary source. |
+| NEC2026_706 | NFPA 70-2026 Article 706 Energy Storage Systems; NFPA 855-2026 installation of stationary ESS. |
+| NFPA101_2027 | NFPA 101-2027, Life Safety Code: ch. 7 means of egress (7.2.6 exit passageways, Table 7.3.1.2, Table 7.3.3.1, 7.4.1.2, 7.9, 7.10), ch. 40 industrial (Table 40.2.6, 40.2.5). |
+| NFPA110_2025 | NFPA 110, Standard for Emergency and Standby Power Systems, 2025 ed.: 8.4.2 generator sets exercised at least monthly for a minimum of 30 minutes under operating temperature conditions or at not less than 30 % of the EPS nameplate kW rating; 8.4.9 Level 1 load test at least once every 36 months for 4 h. |
+| NFPA111_2025 | NFPA 111, Standard on Stored Electrical Energy Emergency and Standby Power Systems, 2025 ed., sec. 4.3 Table 4.3 (Class = minimum reserve time at rated load; Class X as required by the application) and 4.5.1 (Level 1 where failure could cause loss of life). |
+| NFPA13_2025 | NFPA 13-2025, Standard for the Installation of Sprinkler Systems. |
+| NFPA15_2027 | NFPA 15-2027, Water Spray Fixed Systems for Fire Protection: exposure protection of vessels, minimum 10.2 L/min/m2 (0.25 gpm/ft2). |
+| NFPA1_2027_11_12 | NFPA 1, Fire Code (2027) 11.12.3: rooftop PV access, pathways and ventilation for buildings other than one- and two-family dwellings (same perimeter and interior pathway rules as IFC 1205.3). |
+| NFPA20_2025 | NFPA 20-2025, Installation of Stationary Pumps for Fire Protection. |
 | NFPA22_2023 | NFPA 22-2023, Water Tanks for Private Fire Protection: gravity tanks, dedicated fire reserve below other draw-offs. |
-| NFPA25_2023 | NFPA 25-2023, Inspection, Testing, and Maintenance of Water-Based Fire Protection Systems: quarterly valve and alarm tests, annual inspection, weekly fire pump churn test, 5-year internal pipe and tank inspection. |
-| NFPA2_2023 | NFPA 2, Hydrogen Technologies Code, 2023 ed.: ch. 7 gaseous hydrogen storage and separation from oxidizers, ch. 10 fuel cells, ch. 13 electrolysers. |
-| NFPA30_2024 | NFPA 30-2024, Flammable and Combustible Liquids Code, chapter 21 (storage tank construction: steel or other approved non-combustible material for flammable liquids). |
-| NFPA400_2022 | NFPA 400, Hazardous Materials Code (2022) 6.1.12.1: separation of incompatible materials, same three options as IFC 5003.9.8. |
-| NFPA497_2024 | NFPA 497-2024, Recommended Practice for the Classification of Flammable Liquids, Gases, or Vapors and of Hazardous (Classified) Locations: Table 4.4.2 material groups (hydrogen Group B / IIC, methanol Group D / IIA) and autoignition temperatures; Chapter 5 extent diagrams. |
-| NFPA69_2019 | NFPA 69, Standard on Explosion Prevention Systems, 2019 ed.: combustible concentration maintained at or below 25 % of the LFL. |
-| NFPA704_2022 | NFPA 704-2022 hazard identification. |
-| NFPA70B_2023 | NFPA 70B-2023, Standard for Electrical Equipment Maintenance: intervals by equipment condition 12, 36 or 60 months; annual infrared thermography. |
-| NFPA70E_2024 | NFPA 70E-2024, Electrical Safety in the Workplace (130.5 arc flash risk assessment). |
-| NFPA72_2022 | NFPA 72-2022, National Fire Alarm and Signaling Code: smoke, heat and flame detector application and spacing. |
-| NFPA855_2023 | NFPA 855-2023, Installation of Stationary Energy Storage Systems. |
-| NFPA91_2020 | NFPA 91-2020, Exhaust Systems for Air Conveying of Vapors, Gases, Mists and Particulate Solids. |
-| NFPA99_2021 | NFPA 99, Health Care Facilities Code, 2021 ed., 5.1.3.5: bulk medical gas systems carry a reserve supply of at least one average day's supply. |
+| NFPA25_2026 | NFPA 25-2026, Inspection, Testing, and Maintenance of Water-Based Fire Protection Systems: quarterly valve and alarm tests, annual inspection, weekly fire pump churn test, 5-year internal pipe and tank inspection. |
+| NFPA2_2026 | NFPA 2, Hydrogen Technologies Code, 2026 ed.: ch. 7 gaseous hydrogen storage and separation from oxidizers, ch. 10 fuel cells, ch. 13 electrolysers. |
+| NFPA30_2027 | NFPA 30-2027, Flammable and Combustible Liquids Code, chapter 21 (storage tank construction: steel or other approved non-combustible material for flammable liquids). |
+| NFPA400_2025 | NFPA 400, Hazardous Materials Code (2025) 6.1.12.1: separation of incompatible materials, same three options as IFC 5003.9.8. |
+| NFPA497_2027 | NFPA 497-2027, Recommended Practice for the Classification of Flammable Liquids, Gases, or Vapors and of Hazardous (Classified) Locations: Table 4.4.2 material groups (hydrogen Group B / IIC, methanol Group D / IIA) and autoignition temperatures; Chapter 5 extent diagrams. |
+| NFPA69_2024 | NFPA 69, Standard on Explosion Prevention Systems, 2024 ed.: combustible concentration maintained at or below 25 % of the LFL. |
+| NFPA704_2027 | NFPA 704-2027 hazard identification. |
+| NFPA70B_2026 | NFPA 70B-2026, Standard for Electrical Equipment Maintenance: intervals by equipment condition 12, 36 or 60 months; annual infrared thermography. |
+| NFPA70E_2027 | NFPA 70E-2027, Electrical Safety in the Workplace (130.5 arc flash risk assessment). |
+| NFPA72_2025 | NFPA 72-2025, National Fire Alarm and Signaling Code: smoke, heat and flame detector application and spacing. |
+| NFPA855_2026 | NFPA 855-2026, Installation of Stationary Energy Storage Systems. |
+| NFPA91_2026 | NFPA 91-2026, Exhaust Systems for Air Conveying of Vapors, Gases, Mists and Particulate Solids. |
+| NFPA99_2027 | NFPA 99, Health Care Facilities Code, 2027 ed., 5.1.3.5: bulk medical gas systems carry a reserve supply of at least one average day's supply. |
 | NIOSH7903 | NIOSH Manual of Analytical Methods 7903, Acids, inorganic (HCl by ion chromatography). |
 | NIST_WEBBOOK | NIST Chemistry WebBook, SRD 69, thermophysical properties of fluid systems (H2, O2 isotherms); NIST-JANAF standard enthalpy of formation of HCl(g) -92.31 kJ/mol. |
 | NOAA_NORMALS_DFW | NOAA NCEI U.S. Climate Normals 1991-2020, Dallas-Fort Worth Intl Airport (USW00003927): annual heating degree days base 65 F about 2272, cooling degree days about 2878. |
@@ -1583,7 +1583,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-107 | Evaporator geometry and pressure: tubes ID 25 x 1500 mm, sum mm, kPa g | Hydrotest at 1.43 x design; wall-thickness calculation for the selected materials |
 | A-M-108 | EVAP_ACID counter-current column, feed at the top, no reflux wt%, mm, m/s | Pilot: titrate condensate and column bottoms; flooding check with the packing C_s |
 | A-M-109 | PV nameplate = 2.0 x balancing nameplate; design cloudy day  -, kW, kWh | NSRDB TMY hourly run at the site: fraction of days below 0.5 x mean yield; peak charge power on those days; clipping at DC/AC 1.2 |
-| A-M-110 | Grid export through a supply-side connection (NEC 2023 705.1 - | Utility interconnection application (available fault, export limit, protection settings); Wenner four-pin soil resistivity; fall-of-potential test of the installed grid |
+| A-M-110 | Grid export through a supply-side connection (NEC 2026 705.1 - | Utility interconnection application (available fault, export limit, protection settings); Wenner four-pin soil resistivity; fall-of-potential test of the installed grid |
 | A-M-111 | Vent = air dissolved in the feed (21.7 mg/kg) saturated at a mg/kg, C, ppmv, m, L | Vent flow meter; outlet HCl by NIOSH 7903; sump pH trend at the bleed rate |
 | A-M-112 | Hall loads by degree-day split (heating 3.46 K, cooling 4.38 K, W/(m K), -, m/kW, m, C | TMY3 bin-hour run; thermal response test on a pilot bore; ASHRAE climatic data for the station |
 | A-M-113 | OWNER INPUT: utility interconnection study (service size, av - | Owner files the interconnection application; utility study results entered as drivers and the protection study re-run |
@@ -1767,3 +1767,53 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-330 | FOUNDRY molten-salt cells are kept at bath temperature (hold operating mode | lining inspection after a planned freeze-thaw trial on one cell |
 | A-M-331 | batch product = kettle volume x 0.7 fill x 1.1 kg/L latex de kg per batch | weigh the dried polymer from the first kettle batch |
 | A-M-332 | EXT_HALL heat-pump condenser fans: electronically commutated kW | Check the selected fan's nameplate or datasheet for motor type (EC or induction), rated power, supply voltage and speed-control method; update the motor inventory row and this entry |
+| A-M-333 | NFPA 70B-2026; ASME Y14.1-2020; ASME Y14.5-2018; ASME Y14.35 edition | Open each standard on the publisher site (astm.org, asme.org, ashrae.org, webstore.ansi.org, webstore.iec.ch, nfpa.org, cen.eu) and confirm it is the current edition; update EDITIONS and rerun regen |
+| A-M-334 | NFPA 1-2027 (previously 2021): clause numbers, tables and va clause | For each listed file, look up every clause, table and value cited with NFPA 1 in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-335 | NFPA 2-2026 (previously 2023): clause numbers, tables and va clause | For each listed file, look up every clause, table and value cited with NFPA 2 in the 2026 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-336 | NFPA 13-2025 (previously 2022): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 13 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-337 | NFPA 15-2027 (previously 2022): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 15 in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-338 | NFPA 20-2025 (previously 2022): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 20 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-339 | NFPA 25-2026 (previously 2023): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 25 in the 2026 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-340 | NFPA 30-2027 (previously 2024): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 30 in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-341 | NFPA 55-2027 (previously 2026): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 55 in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-342 | NFPA 69-2024 (previously 2019): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 69 in the 2024 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-343 | NFPA 70-2026 (previously 2023): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 70 in the 2026 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-344 | NFPA 70B-2026 (previously 2023): clause numbers, tables and  clause | For each listed file, look up every clause, table and value cited with NFPA 70B in the 2026 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-345 | NFPA 70E-2027 (previously 2024): clause numbers, tables and  clause | For each listed file, look up every clause, table and value cited with NFPA 70E in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-346 | NFPA 72-2025 (previously 2022): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 72 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-347 | NFPA 91-2026 (previously 2020): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 91 in the 2026 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-348 | NFPA 99-2027 (previously 2021): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with NFPA 99 in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-349 | NFPA 101-2027 (previously 2024): clause numbers, tables and  clause | For each listed file, look up every clause, table and value cited with NFPA 101 in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-350 | NFPA 110-2025 (previously 2022): clause numbers, tables and  clause | For each listed file, look up every clause, table and value cited with NFPA 110 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-351 | NFPA 111-2025 (previously 2022): clause numbers, tables and  clause | For each listed file, look up every clause, table and value cited with NFPA 111 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-352 | NFPA 400-2025 (previously 2022): clause numbers, tables and  clause | For each listed file, look up every clause, table and value cited with NFPA 400 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-353 | NFPA 497-2027 (previously 2024): clause numbers, tables and  clause | For each listed file, look up every clause, table and value cited with NFPA 497 in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-354 | NFPA 704-2027 (previously 2022): clause numbers, tables and  clause | For each listed file, look up every clause, table and value cited with NFPA 704 in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-355 | NFPA 855-2026 (previously 2023): clause numbers, tables and  clause | For each listed file, look up every clause, table and value cited with NFPA 855 in the 2026 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-356 | IBC 2027 (previously 2021): clause numbers, tables and value clause | For each listed file, look up every clause, table and value cited with IBC in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-357 | IFC 2027 (previously 2021): clause numbers, tables and value clause | For each listed file, look up every clause, table and value cited with IFC in the 2027 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-358 | ASME BPVC 2025 (previously 2023): clause numbers, tables and clause | For each listed file, look up every clause, table and value cited with ASME BPVC in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-359 | ASME B31.3-2024 (previously 2022): clause numbers, tables an clause | For each listed file, look up every clause, table and value cited with ASME B31.3 in the 2024 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-360 | ASME RTP-1-2025 (previously 2019): clause numbers, tables an clause | For each listed file, look up every clause, table and value cited with ASME RTP-1 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-361 | ASME Y14.35-2025 (previously 2014): clause numbers, tables a clause | For each listed file, look up every clause, table and value cited with ASME Y14.35 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-362 | IEEE C57.12.34-2022 (previously 2015): clause numbers, table clause | For each listed file, look up every clause, table and value cited with IEEE C57.12.34 in the 2022 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-363 | ASHRAE 90.1-2025 (previously 2019): clause numbers, tables a clause | For each listed file, look up every clause, table and value cited with ASHRAE 90.1 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-364 | ASHRAE 62.1-2025 (previously 2019): clause numbers, tables a clause | For each listed file, look up every clause, table and value cited with ASHRAE 62.1 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-365 | ANSI C12.1-2026 (previously 2015): clause numbers, tables an clause | For each listed file, look up every clause, table and value cited with ANSI C12.1 in the 2026 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-366 | ISO 14687:2025 (previously 2019): clause numbers, tables and clause | For each listed file, look up every clause, table and value cited with ISO 14687 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-367 | ISO 22734-1:2025 (previously 2019): clause numbers, tables a clause | For each listed file, look up every clause, table and value cited with ISO 22734-1 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-368 | ISO 23251:2019 (previously 2006): clause numbers, tables and clause | For each listed file, look up every clause, table and value cited with ISO 23251 in the 2019 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-369 | ISO 30500:2025 (previously 2018): clause numbers, tables and clause | For each listed file, look up every clause, table and value cited with ISO 30500 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-370 | IEC 60034-1:2026 (previously 2022): clause numbers, tables a clause | For each listed file, look up every clause, table and value cited with IEC 60034-1 in the 2026 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-371 | IEC 60034-2-1:2024 (previously 2014): clause numbers, tables clause | For each listed file, look up every clause, table and value cited with IEC 60034-2-1 in the 2024 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-372 | IEC 60034-30-1:2025 (previously 2014): clause numbers, table clause | For each listed file, look up every clause, table and value cited with IEC 60034-30-1 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-373 | IEC 60072-1:2022 (previously 1991): clause numbers, tables a clause | For each listed file, look up every clause, table and value cited with IEC 60072-1 in the 2022 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-374 | IEC 60909-0:2026 (previously 2016): clause numbers, tables a clause | For each listed file, look up every clause, table and value cited with IEC 60909-0 in the 2026 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-375 | IEC 61131-3:2025 (previously 2013): clause numbers, tables a clause | For each listed file, look up every clause, table and value cited with IEC 61131-3 in the 2025 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-376 | IEC 62439-2:2021 (previously 2016): clause numbers, tables a clause | For each listed file, look up every clause, table and value cited with IEC 62439-2 in the 2021 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-377 | ASTM B193-25 (previously 20): clause numbers, tables and val clause | For each listed file, look up every clause, table and value cited with ASTM B193 in the 25 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-378 | ASTM C547-25 (previously 22): clause numbers, tables and val clause | For each listed file, look up every clause, table and value cited with ASTM C547 in the 25 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-379 | ASTM C680-24 (previously 23): clause numbers, tables and val clause | For each listed file, look up every clause, table and value cited with ASTM C680 in the 24 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-380 | ASTM D790-25 (previously 17): clause numbers, tables and val clause | For each listed file, look up every clause, table and value cited with ASTM D790 in the 25 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-381 | ASTM D1785-21a (previously 15): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with ASTM D1785 in the 21a text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-382 | ASTM D2855-20 (previously 15): clause numbers, tables and va clause | For each listed file, look up every clause, table and value cited with ASTM D2855 in the 20 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |

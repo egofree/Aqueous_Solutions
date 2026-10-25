@@ -7,7 +7,7 @@ negative). Fan kW = Q dp / eta, dp 500 Pa extract, 400 Pa make-up, eta 0.6, duty
 import csv, json, os, sys, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R)
 from flow_graph.param.refs import cite
-for k in ('ASHRAE621_2019', 'IFC2021_5004_3', 'NFPA2_2023', 'IEC60079_10_1'): cite(k)
+for k in ('ASHRAE621_2019', 'IFC2027_5004_3', 'NFPA2_2026', 'IEC60079_10_1'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
 SR = json.load(open('docs-authority/inventory/STRUCT_ROWS.json')); HZ = {r['unit']: r for r in csv.DictReader(open('docs-authority/inventory/HAZ_AREA.csv'))}
 CM = {r['unit']: r for r in csv.DictReader(open('docs-authority/inventory/COMMISSIONING.csv'))}
