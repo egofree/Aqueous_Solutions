@@ -55,7 +55,7 @@ Table 3.1. Document numbers in use
 | AQS-BLD-013 | `docs-authority/STRUCT_LOADS.md` | A | 2026-10-16 | Equipment structural loads | current |
 | AQS-BLD-014 | `docs-authority/WATER_TOWER.md` | A | 2026-10-16 | Water tower: pumped-hydro reservoirs in the building | current |
 | AQS-BLD-015 | `docs-authority/LIFTING.md` | B | 2026-10-25 | Lifting and cranes | current |
-| AQS-BLD-016 | `docs-authority/FRAME_CHECK.md` | A | 2026-10-16 | Building frame member check | current |
+| AQS-BLD-016 | `docs-authority/FRAME_CHECK.md` | B | 2026-10-25 | Building frame member check | current |
 | AQS-BLD-017 | `docs-authority/FOUNDATION.md` | A | 2026-10-16 | Foundation design | current |
 | AQS-BLD-018 | `docs-authority/ENCLOSURE_EGRESS.md` | B | 2026-10-25 | Enclosure, floor plates, stairs and egress | current |
 | AQS-BOM-SC-001 | `docs-authority/SELF_COPY_BOM.md` | H | 2026-10-25 | Self-copy bill of materials: critical-path parts and their on-site feedstock | current |
@@ -73,7 +73,7 @@ Table 3.1. Document numbers in use
 | AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | C | 2026-10-24 | Cryogenic cold-box internals | current |
 | AQS-CRY-003 | `docs-authority/COLD_BOX.md` | — | — | Cold box | current |
 | AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | A | 2026-10-16 | Instrument index | current |
-| AQS-CTL-002 | `docs-authority/CONTROL_ARCH.md` | A | 2026-10-16 | Control philosophy and PLC architecture | current |
+| AQS-CTL-002 | `docs-authority/CONTROL_ARCH.md` | B | 2026-10-25 | Control philosophy and PLC architecture | current |
 | AQS-CTL-003 | `docs-authority/CAUSE_EFFECT.md` | A | 2026-10-16 | Safety instrumented functions and cause and effect | current |
 | AQS-CTL-004 | `docs-authority/CONTROL_SOFTWARE.md` | A | 2026-10-21 | Control program source and scan simulation | current |
 | AQS-DES-FAB | `notes/FAB_DESIGN.md` | A | 2026-10-17 | FAB — item 6 | current |

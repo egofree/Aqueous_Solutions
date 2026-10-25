@@ -55,6 +55,8 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/ENCLOSURE_EGRESS.md` | Rev B, through `docs-authority/_egress_env.py`. Revision record, purpose, pass rule and numbered sections added. No value changed. |
 | `docs-authority/PERF_TEST.md` | Rev B, through `docs-authority/_perf_test.py`. Purpose, criteria and numbered table added; the plant load row, which sat in a table of its own with no header, is now the last row of Table 3.1. See section 6. |
 | `docs-authority/DESIGN_CHECK.md` | Rev B, through `docs-authority/_design_check.py`. Purpose, numbered sections and table title added; failures stated in a sentence, and the result "FAIL" is now written "fail". No check changed. |
+| `docs-authority/CONTROL_ARCH.md` | Rev B, through `docs-authority/_plc_arch.py`. Purpose, numbered sections and table titles added. See section 6. |
+| `docs-authority/FRAME_CHECK.md` | Rev B, through `docs-authority/_frame_check.py`. Purpose, basis, symbol definitions and table titles added; the beam span heading now comes from the bay size. No load or section changed. |
 
 ## 3. In progress
 
@@ -81,7 +83,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/BOUGHT_SPECS.md` | |
 | `docs-authority/CAMPUS_PLAN.md` | |
 | `docs-authority/CO2_HEADER_DUTY.md` | |
-| `docs-authority/CONTROL_ARCH.md` | |
 | `docs-authority/CONTROL_SOFTWARE.md` | |
 | `docs-authority/CRYO_COLD_BOX.md` | |
 | `docs-authority/DERIVED_REVISIONS.md` | |
@@ -93,7 +94,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/FARM.md` | |
 | `docs-authority/FIRE_PROTECTION.md` | |
 | `docs-authority/FOUNDATION.md` | |
-| `docs-authority/FRAME_CHECK.md` | |
 | `docs-authority/FRAME_SYSTEM.md` | |
 | `docs-authority/FUEL_CELL.md` | |
 | `docs-authority/FURNACE.md` | |
@@ -316,3 +316,5 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/ELECTRODE_FAB.md` (AQS-MFG-ELC-001) | Study ST-ELC-01 gives about 0.3 kW average; the graph supplies ELECTRODE_COAT with 0.0792 kW (SF-ELECTRODE_COAT). Which is correct? |
 
 | `docs-authority/PERF_TEST.md` (AQS-COM-003) | `_perf_test.py` takes every solid stream leaving an electrowinning cell as harvested metal, so IA-COAT-IN (0.02 kg/d, EW_1 to ELECTRODE_COAT, the electrode sent for coating) appears as a guarantee point measured by weighed cathode harvest. Should the selection exclude streams that do not go to a product? |
+
+| `docs-authority/CONTROL_ARCH.md` (AQS-CTL-002) | The closing note says that, if the inventory already counts the high-level switches, the DI count is 113 too high. The figure 113 is a fixed number in `_plc_arch.py`; the instrument index now has 82 digital-input rows (`24 V DC discrete (DI)`). Should the note be computed from the index? |

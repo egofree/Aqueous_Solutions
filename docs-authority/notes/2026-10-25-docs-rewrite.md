@@ -78,3 +78,8 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 
 - `PERF_TEST.md` (AQS-COM-003) Rev B and `DESIGN_CHECK.md` (AQS-QA-002) Rev B rewritten through their generators (`_perf_test.py`, `_design_check.py`). No guarantee point, check or result changed.
 - `GLOSSARY.md`: FS added.
+
+## Batch 14
+
+- `CONTROL_ARCH.md` (AQS-CTL-002) Rev B and `FRAME_CHECK.md` (AQS-BLD-016) Rev B rewritten through their generators (`_plc_arch.py`, `_frame_check.py`). No value changed. `flow_graph/test_control_programs.py` now finds the redundant-pair table by its heading text, which is numbered.
+- `GLOSSARY.md`: AI, AO, MRP, PI, AISC and KL added; the DI entry also gives the control meaning, digital input.

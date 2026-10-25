@@ -583,6 +583,18 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {FS -- Full scale: an instrument accuracy stated as a percentage of the top of its range.}
 
+{AI -- Analogue input: a controller input channel that reads a continuous signal such as 4-20 mA.}
+
+{AO -- Analogue output: a controller output channel that sends a continuous signal, such as a speed reference to a variable-frequency drive.}
+
+{MRP -- Media Redundancy Protocol of IEC 62439-2, which recovers an Ethernet ring after a single break.}
+
+{PI -- Proportional-integral: a feedback control loop that acts on the error and on its integral over time.}
+
+{AISC -- American Institute of Steel Construction, publisher of AISC 360, the specification for structural steel buildings.}
+
+{KL -- Effective length of a column: the actual length L multiplied by the effective length factor K for its end conditions.}
+
 {NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
 
 {ASME -- American Society of Mechanical Engineers. Vessel and B31.3 piping class sheets (AQS-ASM-001).}
@@ -699,7 +711,7 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {CSV -- Comma-separated values, a plain-text table format.}
 
-{DI -- Deionized (water).}
+{DI -- Deionized (water). In control documents, also digital input: a controller input channel that reads an on-off signal.}
 
 {DLI -- Daily light integral: photosynthetic light received by a crop per day, in mol/(m² d).}
 
