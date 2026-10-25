@@ -1,16 +1,27 @@
 # Piping class sheets
 
 Document number: AQS-PIP-003
-Revision: B
-Date: 2026-10-15
-Authority: AQS-PLAN-007 X-PIP-01. Materials per AQS-STD-002 Rev N. Study. Not a PE stamp. Design code ASME B31.3 (process piping) for every class; thermoplastic classes also follow the manufacturer's installation guide. Values marked study are in AQS-REG-002 (A-M-045 to A-M-047).
+Revision: C
+Date: 2026-10-25
+Authority: AQS-PLAN-007 task X-PIP-01. Materials are selected in accordance with AQS-STD-002 Rev N. The design code for every class is ASME B31.3 (process piping); the thermoplastic classes also follow the installation guide of the pipe manufacturer. Values marked "study" are recorded in the assumptions register AQS-REG-002 (A-M-045 to A-M-047). Study; this page is not stamped by a Professional Engineer (PE).
 
 | Rev | Description | Date |
 | --- | --- | --- |
-| A | First issue. Nine classes, service map, limits, joints, gaskets, bolting, valves. | 2026-10-15 |
-| B | The held line resolves: elastomer selection per service is now AQS-STD-002 Rev N section 14 (per-class decision table over the Parker O-Ring Handbook ORD 5700 [registered in AQS-STD-002 as S23] and family-level exceptions; the WS gasket-detail hold closes there). Class sheets stay Rev A; X-MAT-03 closed. | 2026-10-21 |
+| A | First issue. Nine classes, service map, limits, joints, gaskets, bolting and valves. | 2026-10-15 |
+| B | The held item on elastomers is resolved. Elastomer selection for each service is now given in AQS-STD-002 Rev N section 14, a decision table for each class based on the Parker O-Ring Handbook ORD 5700 (registered in AQS-STD-002 as source S23), with exceptions for some equipment families; the hold on gasket details for the wet synthesis (WS) units closes there. The class sheets stay at revision A, and task X-MAT-03 is closed. | 2026-10-21 |
+| C | Purpose and scope added; text rewritten to the documentation style guide (AQS-DOC-002). No class, limit or service changed. | 2026-10-25 |
+
+## Purpose and scope
+
+A piping class is a named specification that fixes, for every line assigned to it, the pipe material and standard, the temperature limit, the basis of the pressure rating, the joint method, the gasket, the bolting and the valves. Assigning each line to a class means that these choices are made once for each type of service rather than line by line. This page defines the nine piping classes of the plant and maps each process service to a class.
+
+The class letters are P for thermoplastic, M for metal, G for glass and F for fibre-reinforced plastic (FRP). References such as M2, M4, M5, M6 and M7 in the tables are the material rules of AQS-STD-002.
 
 ## 1. Class sheets
+
+Table 1.1 gives the sheet for each class. The temperature factors are the derating factors that the manufacturers apply to the pressure rating at temperature.
+
+Table 1.1. Piping classes
 
 | Class | Material and standard | T limit | Pressure basis | Joints | Gasket | Bolting | Valves |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -26,6 +37,10 @@ Authority: AQS-PLAN-007 X-PIP-01. Materials per AQS-STD-002 Rev N. Study. Not a 
 
 ## 2. Service map
 
+Table 2.1 assigns each process service to a class, with the section of AQS-STD-002 that gives the reason.
+
+Table 2.1. Service map
+
 | Service | Class | Basis |
 | --- | --- | --- |
 | Chlor-alkali, acid regeneration, HCl ≤ 60 °C, brine, bromine scrub | P1 | AQS-STD-002 M2, section 3.1 |
@@ -38,8 +53,8 @@ Authority: AQS-PLAN-007 X-PIP-01. Materials per AQS-STD-002 Rev N. Study. Not a 
 | HX-5 coil, FLUE_KO inlet quench spool | G1 | AQS-STD-002 sections 3.3, 4.3 |
 | Flue and acid-gas ducts, NOX_SCRUB, FLUE_KO body | F1 | AQS-STD-002 section 4.3 |
 
-A metal class meeting a thermoplastic, glass or FRP class in an electrolyte or water service gets a dielectric isolating flange at the break (M6).
+Where a metal class meets a thermoplastic, glass or FRP class in an electrolyte or water service, a dielectric isolating flange is fitted at the break (rule M6).
 
-## 3. Held
+## 3. Held items
 
-Line-by-line class assignment of every edge is X-PIP-02. Elastomer selection per service resolved 2026-10-21: AQS-STD-002 Rev N section 14 (X-MAT-03) holds the per-class elastomer decisions and family exceptions; the per-class sheet rows above stay the class-level defaults. Pressure ratings at temperature need the manufacturer tables for the chosen brand.
+The assignment of a class to every line of the flow graph, edge by edge, is task X-PIP-02. Elastomer selection for each service was resolved on 2026-10-21: AQS-STD-002 Rev N section 14 (task X-MAT-03) holds the elastomer decision for each class and the exceptions for equipment families, and the gasket entries in Table 1.1 remain the defaults for each class. The pressure ratings at temperature need the tables of the manufacturer of the chosen brand.

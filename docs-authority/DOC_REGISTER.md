@@ -145,7 +145,7 @@ Table 3.1. Document numbers in use
 | AQS-ELEC-001 | `docs-authority/ELECTRONICS.md` | C | 2026-10-11 | Electronics bay | current |
 | AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | E | 2026-10-24 | Single-line diagram | current |
 | AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | C | 2026-10-21 | Load list | current |
-| AQS-ELEC-004 | `docs-authority/RECT_EW.md` | B | 2026-10-15 | EW rectifier sizing (RECT-EW) | current |
+| AQS-ELEC-004 | `docs-authority/RECT_EW.md` | C | 2026-10-25 | Electrowinning rectifier sizing (RECT-EW) | current |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | B | 2026-10-25 | Grounding and bonding | current |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | D | 2026-10-15 | Protection and coordination | current |
 | AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | F | 2026-10-15 | Storage and generation sizing | current |
@@ -213,7 +213,7 @@ Table 3.1. Document numbers in use
 | AQS-MFG-001 | `docs-authority/internal/DETAIL_MODEL_PLAN.md` | A | 2026-09-26 | Manufacturing-detail model list | superseded by AQS-PLAN-007 |
 | AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | C | 2026-10-21 | MFG_SHOP tool list | current |
 | AQS-MFG-011 | `docs-authority/JELLYBEAN.md` | A | 2026-10-15 | Jellybean parts: standard sizes and in-house lines | current |
-| AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | B | 2026-10-01 | Electrode fabrication / coating — architecture (in scope) | current |
+| AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | D | 2026-10-25 | Electrode fabrication and coating | current |
 | AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | B | 2026-09-28 | Metal forming path — wire draw / cold mill / gas atomizer | current |
 | AQS-MFG-TEX-001 | `docs-authority/TEXTILES_HEPA.md` | A | 2026-10-01 | Textiles / HEPA media — architecture stub | current |
 | AQS-MOD-001 | `docs-authority/MODULE.md` | C | 2026-10-12 | Module standard | current |
@@ -240,7 +240,7 @@ Table 3.1. Document numbers in use
 | AQS-PATH-001 | `docs-authority/PATH_MODULES.md` | A | 2026-10-11 | Path modules on the frame | current |
 | AQS-PHF-001 | `docs-authority/PHASE_F_ENVELOPES.md` | A | 2026-09-27 | Phase F — farm / wafer fab / habitation / cryo envelopes | current |
 | AQS-PIP-002 | `docs-authority/LIFE_HEADERS.md` | B | 2026-10-25 | Life-header racks | current |
-| AQS-PIP-003 | `docs-authority/PIPING_CLASSES.md` | B | 2026-10-15 | Piping class sheets | current |
+| AQS-PIP-003 | `docs-authority/PIPING_CLASSES.md` | C | 2026-10-25 | Piping class sheets | current |
 | AQS-PIP-004 | `docs-authority/LINE_LIST.md` | C | 2026-10-21 | Plant line list | current |
 | AQS-PIP-005 | `docs-authority/SUPPORTS.md` | A | 2026-10-15 | Pipe supports and thermal flexibility | current |
 | AQS-PIP-006 | `docs-authority/PIPES.md` | — | — | Pipe junctions | current |

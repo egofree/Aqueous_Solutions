@@ -47,6 +47,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/MEOH_EQUIPMENT.md` | Rev B. Purpose added; new column shows which tags are graph nodes. No tag or rating changed. See section 6. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
+| `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
+| `docs-authority/PIPING_CLASSES.md` | Rev C. Purpose, class-letter key and table titles added. Table rows unchanged, because `_pipe_specs.py`, `_gasket_census.py` and `flow_graph/test_pipe_specs.py` parse them. |
+| `docs-authority/ELECTRODE_FAB.md` | Rev D. The revision line said B although revision C had been issued; corrected. Section 5 records the coating load in the graph. See section 6. |
 
 ## 3. In progress
 
@@ -80,7 +83,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/DESIGN_CHECK.md` | |
 | `docs-authority/EDGE_RATING_DUTY.md` | |
 | `docs-authority/EGRESS_CALC.md` | |
-| `docs-authority/ELECTRODE_FAB.md` | |
 | `docs-authority/ENCLOSURE_EGRESS.md` | |
 | `docs-authority/FAB_WET_INTERFACE.md` | |
 | `docs-authority/FAB_WET_REAGENTS.md` | |
@@ -130,10 +132,8 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/PARAMETRIC_MODEL.md` | |
 | `docs-authority/PERF_TEST.md` | |
 | `docs-authority/PIPE_SPECS.md` | |
-| `docs-authority/PIPING_CLASSES.md` | |
 | `docs-authority/POWER_SIZING.md` | |
 | `docs-authority/PROTECTION.md` | |
-| `docs-authority/RECT_EW.md` | |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | |
@@ -311,3 +311,6 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/GREENHOUSE_ENVELOPE.md` (AQS-TRR-GH-001) | Streams S40 (overflow to terrace irrigation) and S42 (fertigation return) are named here, in AQS-TRR-001 and in the stream register, but neither is an edge of the plant flow graph. Should they be added to the graph or removed from the pages? |
 | `docs-authority/MEOH_EQUIPMENT.md` (AQS-EQP-MEOH-001) | Only MEOH_SYNTH, MEOH_COND, MEOH_TANK and MEOH_FC are graph nodes. The graph has one MEOH_FERM where the list has MEOH_FERM_DIG and MEOH_FERM_STILL, and the remaining tags are on the list only. Should the list be cut to the graph, or the graph extended? |
 | `docs-authority/TEXTILES_HEPA.md` (AQS-MFG-TEX-001) | Not rewritten; proposed for deletion. It is a placeholder for a filter media line with no equipment, streams, duties or model. Two of its authorities, AQS-GAP-001 and AQS-AUD-001, are not documents in the repository. Only the glossary entry for HEPA cites it, and that entry can stand without it. |
+
+| `docs-authority/RECT_EW.md` (AQS-ELEC-004) | Finding 1 names node RECT_EW, streams S17-EW and IA-RECT-EW-LOSS (7.73 kW) and a 38.66 kW AC input. The graph now has node RECTIFIER, supply S17 at 12.0 kW (A-M-231) and loss IA-RECT-Q4 at 1.0 kW; the channel streams IA-DC-EW_1 to IA-DC-EW_9 still match Table 2.1. Which AC input is correct? |
+| `docs-authority/ELECTRODE_FAB.md` (AQS-MFG-ELC-001) | Study ST-ELC-01 gives about 0.3 kW average; the graph supplies ELECTRODE_COAT with 0.0792 kW (SF-ELECTRODE_COAT). Which is correct? |

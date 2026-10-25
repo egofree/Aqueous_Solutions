@@ -569,6 +569,12 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {VOC -- Volatile organic compound.}
 
+{ORD -- Prefix of Parker Hannifin handbook numbers; ORD 5700 is the Parker O-Ring Handbook.}
+
+{WPB -- Wrought pipe, grade B: the carbon steel butt-weld fitting grade of ASTM A234.}
+
+{WS -- Wet synthesis: the reagent units (WS_*) that make fab chemicals such as hydrofluoric acid, peroxide, ammonia, nitric acid and potassium hydroxide.}
+
 {NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
 
 {ASME -- American Society of Mechanical Engineers. Vessel and B31.3 piping class sheets (AQS-ASM-001).}

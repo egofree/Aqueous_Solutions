@@ -63,3 +63,8 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 - `GREENHOUSE_ENVELOPE.md` (AQS-TRR-GH-001) Rev C and `MEOH_EQUIPMENT.md` (AQS-EQP-MEOH-001) Rev B rewritten. No tag, duty or rating changed.
 - `GLOSSARY.md`: VOC added.
 - `TEXTILES_HEPA.md` reviewed and proposed for deletion in `REWRITE_TODO.md` section 6; not changed.
+
+## Batch 11
+
+- `RECT_EW.md` (AQS-ELEC-004) Rev C, `PIPING_CLASSES.md` (AQS-PIP-003) Rev C and `ELECTRODE_FAB.md` (AQS-MFG-ELC-001) Rev D rewritten. No rating, class or study result changed. The table rows of `PIPING_CLASSES.md` are unchanged because three scripts parse them.
+- `GLOSSARY.md`: ORD, WPB and WS added.
