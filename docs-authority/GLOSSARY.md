@@ -1004,6 +1004,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {LVDC -- Low-voltage direct current}
 
+{SP -- Static pressure, the pressure drop a fan must overcome}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

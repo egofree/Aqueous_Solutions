@@ -92,5 +92,5 @@ python3 metal_forming_pfd.py
 |---|---|---|
 | Wire / sheet / powder | **~0.2–2 kg/h** continuous equiv. | Plated metals 4.5–42 kg/d at 150 kg/d feed (ELECTRICAL yields × 0.15 t) |
 | MET_MELT electric | **~5–15 kW** class | Share of induction 0–25 kW; ≠ INDUCTION_PYROLYZER |
-| MET_SCRUB capture | **540–900 m³/h** | AQS-EQP-VENT-001 §2.4 |
+| MET_SCRUB capture | **540–900 m³/h** | AQS-EQP-VENT-001 §4.4 |
 | Vendor kg/h / kW | **TBD** | — |

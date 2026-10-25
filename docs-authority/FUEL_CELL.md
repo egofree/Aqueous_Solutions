@@ -75,7 +75,7 @@ may be a vendor option later; do not invent it here).
 
 Do not treat the genset as a substitute for the fuel cell, or the
 reverse. Size CRYO_H2 against **GEN + FC + vent contingency**
-(AQS-EQP-CRY-001 §5).
+(AQS-EQP-CRY-001 §6).
 
 ### 2.3 Electrical tie — Sol-Ark BATT DC
 

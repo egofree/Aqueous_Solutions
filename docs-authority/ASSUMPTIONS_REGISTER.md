@@ -1224,14 +1224,13 @@ Table 4.1. Document lines naming an assumption
 | A-D-fc24c1 |  |  | docs-authority/SURPLUS_PASS_THRESHOLDS.md:47 | ## 3. Drivers (study assumptions) |  | see page |
 | A-D-ab5b99 |  |  | docs-authority/SURPLUS_PASS_THRESHOLDS.md:86 | path but fails the study bar. **Yield/berth assumption = study** — not a |  | see page |
 | A-D-b41ff2 |  |  | docs-authority/TEST_PLAN.md:570 | / A-M-260 / Register reconciliation: EW_1..9 params.sizing re-stamped li - / python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors) / R10 |  | see page |
-| A-D-344917 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:13 | / B / 1 / Study-estimate duties (formula + assumptions); FreeCAD stubs / 2026-10-01 / |  | see page |
-| A-D-370b6e |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:16 | formula and assumptions from issued plant throughputs. They are **not** |  | see page |
-| A-D-dceace |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:34 | ## 2. Study estimates (formula + assumptions) |  | see page |
-| A-D-c8df27 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:42 | / Parameter / Study estimate / Formula / assumption / |  | see page |
-| A-D-c8df27-2 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:59 | / Parameter / Study estimate / Formula / assumption / |  | see page |
-| A-D-c8df27-3 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:71 | / Parameter / Study estimate / Formula / assumption / |  | see page |
-| A-D-c8df27-4 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:82 | / Parameter / Study estimate / Formula / assumption / |  | see page |
-| A-D-c8df27-5 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:91 | / Parameter / Study estimate / Formula / assumption / |  | see page |
+| A-D-344917 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:12 | / B / 1 / Study-estimate duties (formula + assumptions); FreeCAD stubs / 2026-10-01 / |  | see page |
+| A-D-5eb913 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:19 | Each duty is a study estimate: a formula with its assumptions, applied to issued plant throughputs. Study estimates are not vendor nameplates; pack heights and  |  | see page |
+| A-D-c8df27 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:59 | / Parameter / Study estimate / Formula / assumption / |  | see page |
+| A-D-c8df27-2 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:74 | / Parameter / Study estimate / Formula / assumption / |  | see page |
+| A-D-c8df27-3 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:87 | / Parameter / Study estimate / Formula / assumption / |  | see page |
+| A-D-c8df27-4 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:100 | / Parameter / Study estimate / Formula / assumption / |  | see page |
+| A-D-c8df27-5 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:111 | / Parameter / Study estimate / Formula / assumption / |  | see page |
 | A-D-ce84e1 |  |  | docs-authority/WATER_PURIFICATION.md:351 | Authority cross-ref: AQS-AUD-001 Rev D §11. **Study assumptions** — |  | see page |
 | A-D-c60ca9 |  |  | docs-authority/WATER_TOWER.md:42 | Seismic governs over wind by 2 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 c |  | see page |
 | A-D-4060a8 |  |  | docs-authority/duties/FLUE_KO.md:10 | 3. Material. FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.3 inlet spool (AQS-STD-002 section 4.3). No metal wetted part. S67 at 300 °C |  | see page |

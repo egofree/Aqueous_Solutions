@@ -153,7 +153,7 @@ dust + oil patterns better than cold-box chemistry.
 
 | Tag | Role | Status |
 |---|---|---|
-| ACID_POLISH_SCRUB | Post-alkali polish pack; lean NaOH | **Study estimate** — 1 500 m³/h train; pack/liquor in AQS-EQP-VENT-001 §2.1 |
+| ACID_POLISH_SCRUB | Post-alkali polish pack; lean NaOH | **Study estimate** — 1 500 m³/h train; pack/liquor in AQS-EQP-VENT-001 §4.1 |
 | ACID_POLISH_REGEN / liquor to CRU | Regenerable media / blowdown → CRU | **Study estimate** — with SCRUBBER_TO_CRU |
 | ZNBR2_BR2_REGEN | Hold + ORP + Br⁻ return to pos. tank | **Study estimate** — extends issued 200 mm / 5–10 L/min tower |
 | CRYO_AHU_COND | Condensate knockout on S56 train | **Study estimate** — 6–12 ACH on 216 m³; ~2–5 kW KO |
@@ -161,7 +161,7 @@ dust + oil patterns better than cold-box chemistry.
 | MET_SCRUB_REGEN | Liquor / media regen toward S72 returns | **Study estimate** |
 | FLUE_CAP (existing claim) | AFTERBURNER → CRYO CO₂ capture HX / KO | Claimed — capture η TBD; NCG 180 m³/h issued |
 
-Study figures are **not** vendor nameplates. See AQS-EQP-VENT-001 §2.
+Study figures are **not** vendor nameplates. See AQS-EQP-VENT-001 §4.
 
 ---
 

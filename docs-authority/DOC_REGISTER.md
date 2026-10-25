@@ -145,9 +145,9 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-END-001 | `docs-authority/DECOMMISSIONING.md` | A | 2026-10-16 | Decommissioning plan | current |
 | AQS-END-002 | `docs-authority/EOL_RETURN.md` | D | 2026-10-21 | End-of-life material return | current |
 | AQS-ENV-FP-MET | `notes/VESSEL_ENVELOPES.md` | A | 2026-10-16 | Vessel envelopes — fluoropolymer train and critical-metal cells | current |
-| AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | E | 2026-10-01 | Cryogenic equipment list | current |
+| AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | F | 2026-10-24 | Cryogenic equipment list | current |
 | AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | B | 2026-09-27 | Wafer fab equipment / process list | current |
-| AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | B | 2026-10-01 | Solar-cell branch — equipment schedule (architecture Partial) | current |
+| AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | C | 2026-10-24 | Solar-cell line equipment | current |
 | AQS-EQP-FAB-RGN-001 | `docs-authority/FAB_WET_REAGENTS.md` | B | 2026-10-01 | Fab wet reagents — wet-line synth forks | current |
 | AQS-EQP-FAB-UPW-001 | `docs-authority/FAB_UPW.md` | B | 2026-09-27 | Fab UPW — equipment list | current |
 | AQS-EQP-FC-001 | `docs-authority/FUEL_CELL_EQUIPMENT.md` | D | 2026-10-24 | Fuel-cell equipment list | current |
@@ -160,7 +160,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-EQP-MFG-MET-001 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | D | 2026-10-01 | Metal-forming equipment list | current |
 | AQS-EQP-NUT-001 | `docs-authority/NUTRIENT_DOSE.md` | B | 2026-09-27 | Nutrient dose / N-P process list | current |
 | AQS-EQP-STUDY-001 | `docs-authority/STUDY_UNITS_STUB.md` | F | 2026-10-01 | Study / deferred units — VCD·remin, ORC, litho, solar, blow-mold, electrode coat | current |
-| AQS-EQP-VENT-001 | `docs-authority/VENT_SCRUB_EQUIPMENT.md` | B | 2026-10-01 | Vent / scrub / regenerator equipment stubs | current |
+| AQS-EQP-VENT-001 | `docs-authority/VENT_SCRUB_EQUIPMENT.md` | C | 2026-10-24 | Vent, scrubber and regenerator equipment | current |
 | AQS-ESS-001 | `docs-authority/ESS_DUTY_MATRIX.md` | B | 2026-10-01 | ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study) | current |
 | AQS-ESS-002 | `docs-authority/FLOW_BATTERY.md` | — | — | ZnBr2 flow battery | current |
 | AQS-EW-MOD-001 | `docs-authority/EW_MODULE.md` | D | 2026-10-15 | Electrowinning module | current |

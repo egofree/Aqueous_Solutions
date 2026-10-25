@@ -52,10 +52,10 @@ Units by layer: mass in kg/d (kg/h for air streams sized in m³/h), thermal in k
 | DMFC | 0.9 L MeOH per kWh | EFOY class |
 | Wafer starts | 3/d; AUD §13 bands interpolated at 3 of 1–5 | ST-LITHO-01; AUD §13 |
 | BMED | 12 kWh/d at 2.1 kWh/kg pair; products 2 M | ELECTRICAL |
-| Acid polish | Cl₂ slip 1 %, blowdown at 15 % salts; 1500 m³/h at 50 °C | VENT_SCRUB_EQUIPMENT §2.1 |
-| Br₂ regen purge | 30 m³/h, 10 ppmv Br₂ | VENT_SCRUB_EQUIPMENT §2.2 |
+| Acid polish | Cl₂ slip 1 %, blowdown at 15 % salts; 1500 m³/h at 50 °C | VENT_SCRUB_EQUIPMENT §4.1 |
+| Br₂ regen purge | 30 m³/h, 10 ppmv Br₂ | VENT_SCRUB_EQUIPMENT §4.2 |
 | CRYO AHU | 2592 m³/h, coil dew 10 °C | RELIEF_CRYO basis; §2.3 |
-| MET LEV / aisle | 720 m³/h; 6 ACH × 300 m³ | VENT_SCRUB_EQUIPMENT §2.4 |
+| MET LEV / aisle | 720 m³/h; 6 ACH × 300 m³ | VENT_SCRUB_EQUIPMENT §4.4 |
 | Forming | Cu 50/50 wire/sheet; 10 % swarf; melt fume 0.3 %; atomizer fines 1 %; scrub 2 % solids; mist 2 g/kg | practice |
 | Baghouse catch | 0.5 % of feed | shredder fines class |
 | GEO_HP | COP 0.45 × Carnot 285 → 328 K = 3.43; lift only on Q4 deficit | HEAT_LADDER |
