@@ -52,3 +52,18 @@ to zero at the baseline. Named next item for the Death Valley lane: the profile
 does not yet carry air-moisture design values, so the condensate model still
 books the baseline 67.44 kg/d harvest at the site; when humidity binds, the
 harvest falls and the intake picks up the deficit.
+
+## Addendum 3: correction of the site-water mechanism; task X-LOC-13 scoped
+
+Two unpushed commits that booked an evaporative spray charge inside
+`balance.physics()` were discarded before they reached the origin: the work
+expanded past its task (a new boundary node, runtime edge creation and a
+second water-closure path) and is replaced by a scoped task, X-LOC-13, with
+the design-pass requirement stated (ordering between the heat solve and the
+mass closure; baseline output unchanged). The record also corrects a wrong
+mechanism claim this lane made on AQS-SITE-006: the air-handler condensate
+harvest is indoor-air recovery (greenhouse and habitation vapour), so it does
+not depend on outdoor humidity and does not fall at a dry site; the intake
+solves to 0 kg/d in the present run because no site water deficit is booked
+yet, and the deficit that does belong to this profile is the evaporative
+rejection charge of X-LOC-13.

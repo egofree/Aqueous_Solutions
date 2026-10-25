@@ -57,7 +57,7 @@ Table 2.1. Tasks by group
 | X-OPS | Operations and maintenance | 3 | 3 |
 | X-QA | QA and verification | 3 | 2 |
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
-| X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 12 | 6 |
+| X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 6 |
 | X-TOOL | Modeling tooling | 4 | 4 |
 | FOUNDRY | Process (Mass transform) | 405 | 296 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2934** | **2061** |
+| | **Total** | **2935** | **2061** |
 
 ## 3. Triage of open tasks
 
@@ -102,7 +102,7 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P2 | 7 |
+| desk P2 | 8 |
 | desk P3 | 33 |
 | desk P4 | 475 |
 | desk P5 | 174 |
@@ -164,6 +164,7 @@ Table 6.1. Next cross-cutting desk tasks
 | X-LOC-10 | Low Earth orbit variant | desk P2 |
 | X-LOC-11 | Floating island variant | desk P2 |
 | X-LOC-12 | Cross-locale comparison | desk P2 |
+| X-LOC-13 | Evaporative rejection water charge | desk P2 |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
 
@@ -561,6 +562,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-LOC-09** Mars variant. Done when: as X-LOC-07, with pressurised halls, atmosphere intake, ice extraction, regolith and perchlorate feed cases in AQS-ASSAY-001, and planetary protection family. Depends: X-LOC-08. Triage: desk P2.
 - [ ] **X-LOC-10** Low Earth orbit variant. Done when: as X-LOC-07, with microgravity replacements and radiators. Depends: X-LOC-09. Triage: desk P2.
 - [ ] **X-LOC-12** Cross-locale comparison. Done when: a generated comparison of scaling actions, power portfolios and unit sizes across every profile. Depends: X-LOC-10. Triage: desk P2.
+- [ ] **X-LOC-13** Evaporative rejection water charge. Done when: at sites whose low-grade rejection mode is evaporative (AQS-PLAN-011 section 6.2), the spray consumed is booked against the water balance as rejected duty divided by the latent heat of water, and the groundwater intake closes the deficit by difference; the design pass states the ordering between the heat solve and the mass closure and the baseline output stays unchanged. Depends: X-LOC-07. Triage: desk P2.
 
 ### X-TOOL. Modeling tooling
 

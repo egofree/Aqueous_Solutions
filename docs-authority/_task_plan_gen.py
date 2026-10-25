@@ -347,7 +347,8 @@ X=[
 ('X-LOC-08','Antarctic variant','as X-LOC-07, with the Antarctic Treaty code family, seasonal storage, freeze protection and minimum design temperature checks','X-LOC-11',None),
 ('X-LOC-09','Mars variant','as X-LOC-07, with pressurised halls, atmosphere intake, ice extraction, regolith and perchlorate feed cases in AQS-ASSAY-001, and planetary protection family','X-LOC-08',None),
 ('X-LOC-10','Low Earth orbit variant','as X-LOC-07, with microgravity replacements and radiators','X-LOC-09',None),
-('X-LOC-12','Cross-locale comparison','a generated comparison of scaling actions, power portfolios and unit sizes across every profile','X-LOC-10',None)]),
+('X-LOC-12','Cross-locale comparison','a generated comparison of scaling actions, power portfolios and unit sizes across every profile','X-LOC-10',None),
+('X-LOC-13','Evaporative rejection water charge','at sites whose low-grade rejection mode is evaporative (AQS-PLAN-011 section 6.2), the spray consumed is booked against the water balance as rejected duty divided by the latent heat of water, and the groundwater intake closes the deficit by difference; the design pass states the ordering between the heat solve and the mass closure and the baseline output stays unchanged','X-LOC-07',None)]),
 ('TOOL','Modeling tooling',[
 ('X-TOOL-01','Manufacturing model plan','AQS-PLAN-006 issued with tracker (D5)','—','docs-authority/MFG_MODEL_PLAN.md'),
 ('X-TOOL-02','CadQuery installed and proven','EXPANDER and LEACH_CSTR_1 at M2 (D6, D7)','X-TOOL-01','models/mfg/EXPANDER/expander.py'),
