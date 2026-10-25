@@ -83,7 +83,7 @@ The batteries are Q1_A, Q1_B, Q2_A, Q2_B, Q3_A, Q3_B, Q4_A and Q4_B. Q4_BUS is t
 
 ## 6. Duties
 
-The duty, medium, supply and return temperatures, flow and line size of every heat-ladder edge are in AQS-DUTY-008 (`HEAT_LADDER_DUTIES.md`, Rev C, for graph Rev K) and are written to each `HL-*` edge in the graph. When the Q3 process draws are running, Q3 is fully used and the step from Q3 to Q4 carries 0 kW. The shortfall is met by electric trim heaters at the process (AQS-DUTY-008 section 13).
+The duty, medium, supply and return temperatures, flow and line size of every heat-ladder edge are in AQS-DUTY-008 (`HEAT_LADDER_DUTIES.md`, Rev D, which states graph Rev K as its authority and adds the graph Rev M ratings in section 15) and are written to each `HL-*` edge in the graph. When the Q3 process draws are running, Q3 is fully used and the step from Q3 to Q4 carries 0 kW. The shortfall is met by electric trim heaters at the process (AQS-DUTY-008 section 13).
 
 Each downhill step is a gravity-loop thermosyphon. The evaporator is high in the hotter store and the condenser is low in the cooler store. The cooler store is raised so that the condensate leg rises at least 0.30 m. The base elevations are Q1 at −6000 mm, Q2 at −5150 mm, Q3 at −4250 mm and Q4 at −3350 mm (AQS-DUTY-008 section 14.2). Each cross-tie is a pumped single-phase loop, XL-Q1 to XL-Q4. It is normally off and runs only when the two ladders differ by more than 5 K (AQS-DUTY-008 section 14.3).
 
@@ -95,6 +95,6 @@ The eight batteries have rows in `flow_graph/placement_seed.json` (AQS-PLACE-SEE
 
 ## 8. Related documents
 
-- AQS-DUTY-008 (`HEAT_LADDER_DUTIES.md`): edge duties of the heat ladder. Its current text is Rev C, written for graph Rev K, and it has not been reissued since.
+- AQS-DUTY-008 (`HEAT_LADDER_DUTIES.md`): edge duties of the heat ladder. Its current text is Rev D (2026-10-08); it has not been reissued for graph Rev AC.
 - `flow_graph/plant_flow_graph.json`: the `HL-*` and `XL-*` edges and their duties.
 - `flow_graph/test_doc_consistency.py`: the test that enforces the tier rules.

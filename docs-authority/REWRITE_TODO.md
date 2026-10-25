@@ -95,7 +95,7 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/HAZMAT_SEPARATION.md` | |
 | `docs-authority/HAZOP.md` | |
 | `docs-authority/HAZ_AREA.md` | |
-| `docs-authority/HEAT_LADDER_DUTIES.md` | Rev C, written for graph Rev K and not reissued since. |
+| `docs-authority/HEAT_LADDER_DUTIES.md` | Rev D (2026-10-08), authority graph Rev K; not reissued for graph Rev AC. |
 | `docs-authority/INSTRUMENT_INDEX.md` | |
 | `docs-authority/INSTRUMENT_LOOPS.md` | |
 | `docs-authority/INTERNALS.md` | |
