@@ -98,7 +98,7 @@ REFS = {
  'NFPA400_2025': 'NFPA 400, Hazardous Materials Code (2025) 6.1.12.1: separation of incompatible materials, same three options as IFC 5003.9.8.',
  'CAMEO_REACT': 'NOAA CAMEO Chemicals reactivity groups: Peroxides, inorganic (H2O2) incompatible with Bases (KOH, NH3 aq) and with Hydrocarbons/solvents; Acids, strong oxidizing (HNO3) incompatible with Bases and Amines; Acids, strong non-oxidizing (HF, H3PO4) incompatible with Bases.',
 
- 'CODATA2018': 'Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K).',
+ 'CODATA2018': 'Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K); sigma = 5.670374419e-8 W/(m2 K4).',
  'CIAAW2021': 'IUPAC CIAAW, Standard atomic weights 2021, Pure Appl. Chem. 94(5), 573-600 (2022).',
  'SCHLESINGER2011': 'Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92.',
  'INCROPERA7': 'Bergman T.L., Lavine A.S., Incropera F.P., DeWitt D.P., Fundamentals of Heat and Mass Transfer, 7th ed., Wiley (2011): sensible duty Q = m cp dT (ch. 1); LMTD method (sec. 11.3); free convection h about 2-25 W/(m2 K) for gases (table 1.1).',

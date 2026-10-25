@@ -20,7 +20,7 @@ life-support unit is eliminated only with a replacement of a different technolog
 
     python3 -m flow_graph.param.portfolio --write    # docs-authority/SITE_POWER.md for the selected site"""
 import json, os, sys
-from . import site as S, scaling as SC
+from . import site as S, scaling as SC, heat_rejection as HR
 from . import drivers as DR
 from .refs import REFS
 
@@ -101,6 +101,8 @@ def validate(prof, units=None, plan=None):
     for i, st in enumerate(pf['storage']):
         if st.get('kind') not in STORAGE_KINDS: err.append(f'power_portfolio.storage[{i}]: kind {st.get("kind")!r} is not one of {", ".join(STORAGE_KINDS)}')
         if st.get('unit') not in units: err.append(f'power_portfolio.storage[{i}]: unit {st.get("unit")!r} is not in the graph')
+        elif not isinstance(units[st['unit']].get('params', {}).get(st.get('energy_param')), (int, float)):
+            err.append(f'power_portfolio.storage[{i}]: energy parameter {st.get("energy_param")!r} is not a number on {st["unit"]}')
     ws = pf['worst_stretch']; he = _e(prof, str(ws.get('hours_entry', '')))
     if not he: err.append(f'power_portfolio.worst_stretch: hours entry {ws.get("hours_entry")!r} is not in the profile')
     elif not (0 < he['value'] <= 24):
@@ -130,7 +132,7 @@ def redundancy(prof, units=None, plan=None, red=None):
 def check(sid=None):
     prof = S.load_profile(sid); units = SC.graph_units()
     plan, err = SC.resolve(prof, units)
-    err += validate(prof, units, plan) + redundancy(prof, units, plan)[1]
+    err += validate(prof, units, plan) + redundancy(prof, units, plan)[1] + HR.validate(prof, units, plan)
     if err: raise SystemExit('site power: ' + '; '.join(err))
     return plan
 
@@ -163,7 +165,16 @@ def render(sid=None):
         gen = f"{s['share'] * G:.4f}" if prim else '-'
         role = s['role'] + (' (flagged)' if s.get('flagged_option') else '')
         L.append(f"| {s['id']} | {s['kind']} | {s['unit']} | {role} | {share} | {fr} | {gen} | {s.get('ref') or s.get('register') or s.get('owner')} |")
-    L += ['', 'Table 3. Storage', '', '| Kind | Unit |', '| --- | --- |'] + [f'| {st["kind"]} | {st["unit"]} |' for st in pf['storage']]
+    P = json.load(open(os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')))['mvs']['electrical']['need_kw']['value']
+    need = (1 - f * G) * h * P
+    L += ['', 'Table 3 compares the stored energy with the energy the worst stretch draws from storage at the plant demand '
+          '(graph `mvs.electrical.need_kw`). Coverage below 1 means the storage does not carry the stretch.', '',
+          'Table 3. Storage and coverage of the worst stretch', '', '| Kind | Unit | Stored kWh | Graph parameter |', '| --- | --- | --- | --- |']
+    tot = 0.0
+    for st in pf['storage']:
+        e = units[st['unit']]['params'][st['energy_param']]; tot += e
+        L.append(f'| {st["kind"]} | {st["unit"]} | {e:g} | `{st["energy_param"]}` |')
+    L += [f'| all | - | {tot:g} | - |', '', f'Plant demand {P:g} kW; energy drawn over the stretch {need:.1f} kWh; coverage {tot / need:.2f}.']
     rows, _ = redundancy(prof, units, plan)
     red = json.load(open(RED))
     L += ['', '## 3. Redundancy of energy and life-support functions', '',
@@ -174,6 +185,11 @@ def render(sid=None):
         spec = red['functions'][fn]
         L.append(f'| {fn.replace("_", " ")} | {spec["class"].replace("_", " ")} | ' + ', '.join(f'{u} x{n}' + ('' if how == 'kept' else f' ({how})') for u, n, how in rr)
                  + f' | {sum(r[1] for r in rr)} | {spec["basis"]} |')
+    L += ['', '## 4. Heat rejection', '',
+          'Each level of the heat ladder rejects through a unit in a mode the site supports (`flow_graph/param/heat_rejection.py`). '
+          'A radiator is sized by the Stefan-Boltzmann law [CODATA2018]; a heat pump states its lift and the Carnot bound on its COP.', '',
+          'Table 5. Heat rejection modes', '', '| Level | Unit | Mode | Duty kW | Sizing | Basis |', '| --- | --- | --- | --- | --- | --- |']
+    L += [f'| {a} | {u} | {m.replace("_", " ")} | {q:g} | {n} | {b} |' for a, u, m, q, n, b in HR.rows(prof, units)]
     return '\n'.join(L) + '\n'
 
 

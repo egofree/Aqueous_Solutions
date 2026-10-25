@@ -318,11 +318,13 @@
      "value": [
       {
        "kind": "electrochemical",
-       "unit": "ZNBR2"
+       "unit": "ZNBR2",
+       "energy_param": "kWh"
       },
       {
        "kind": "pumped_hydro",
-       "unit": "HYDRO_SET"
+       "unit": "HYDRO_SET",
+       "energy_param": "energy_kwh_recoverable_study"
       }
      ],
      "units": "-",
@@ -392,6 +394,30 @@
      "value": true,
      "units": "-",
      "register": "AQS-SITE-002; atmosphere.pressure_Pa above the triple point of water"
+    }
+   }
+  },
+  "heat_rejection": {
+   "entries": {
+    "levels": {
+     "value": [
+      {
+       "level": "low-grade water loop",
+       "unit": "DRY_COOLER",
+       "mode": "air",
+       "duty_param": "rated_kW",
+       "register": "AQS-HEAT-STUDY-002 section 10.8 (A-M-244)"
+      },
+      {
+       "level": "ground loop",
+       "unit": "GEO_GHEX",
+       "mode": "ground",
+       "duty_param": "Q_GHEX_avail_kW_th",
+       "register": "AQS-DUTY-076"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5"
     }
    }
   }

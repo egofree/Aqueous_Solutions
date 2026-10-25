@@ -3,7 +3,7 @@
 """Power portfolio and function redundancy (AQS-PLAN-011 section 5.5, X-LOC-06)."""
 import copy, json
 import pytest
-from flow_graph.param import portfolio as PF, scaling as SC, site as S
+from flow_graph.param import portfolio as PF, scaling as SC, site as S, heat_rejection as HR
 from flow_graph.param.sizing import power as PW
 
 UNITS = SC.graph_units()
@@ -97,3 +97,73 @@ def test_replacement_keeps_the_count(base):
 def test_power_document_renders():
     t = PF.render()
     assert 'Document number: AQS-SITE-005' in t and '| PV factor on the reference balance | 1 |' in t
+
+
+def _hr(p):
+    return p['groups']['heat_rejection']['entries']
+
+
+def _hrerr(p):
+    plan = SC.resolve(p, UNITS)[0]
+    return ' | '.join(HR.validate(p, UNITS, plan))
+
+
+def test_radiator_area_follows_stefan_boltzmann():
+    # a black surface at 300 K facing a sink at 0 K radiates sigma * 300**4 W per m2
+    assert HR.radiator_m2_per_kW(300.0, 0.0, 1.0) == pytest.approx(1000 / (5.670374419e-8 * 300.0 ** 4), rel=1e-12)
+    assert HR.radiator_m2_per_kW(300.0, 200.0, 0.5) == pytest.approx(2 * 1000 / (5.670374419e-8 * (300.0 ** 4 - 200.0 ** 4)))
+    with pytest.raises(ValueError):
+        HR.radiator_m2_per_kW(250.0, 250.0, 0.9)
+
+
+def test_carnot_bound():
+    assert HR.carnot_cop(300.0, 330.0) == pytest.approx(11.0)
+
+
+def test_baseline_heat_rejection_holds(base):
+    assert _hrerr(base) == ''
+
+
+def test_mode_needs_its_capabilities(base):
+    base['groups']['capabilities']['entries']['air_heat_sink']['value'] = False
+    assert 'needs the capabilities air_heat_sink' in _hrerr(base)
+    _hr(base)['levels']['value'][0]['mode'] = 'seawater'
+    assert 'seawater entry in water_sources' in _hrerr(base)
+
+
+def test_radiative_mode_needs_its_entries_and_sizes(base):
+    lv = _hr(base)['levels']['value'][0]
+    lv['mode'] = 'radiative'; lv['radiator_K'] = 330.0
+    assert 'heat_rejection.radiator_emissivity' in _hrerr(base)
+    _hr(base)['radiator_emissivity'] = {'value': 0.9, 'units': '-', 'owner': 'test'}
+    _hr(base)['radiative_sink_K'] = {'value': 250.0, 'units': 'K', 'owner': 'test'}
+    assert _hrerr(base) == ''
+    assert 'm2 per kW' in HR.rows(base, UNITS)[0][4]
+    lv['radiator_K'] = 240.0
+    assert 'above the sink temperature' in _hrerr(base)
+
+
+def test_heat_pump_states_its_lift(base):
+    lv = _hr(base)['levels']['value'][0]
+    lv.update(mode='heat_pump', sink_mode='air', source_K=300.0, reject_K=330.0)
+    assert _hrerr(base) == ''
+    assert 'lift 30 K' in HR.rows(base, UNITS)[0][4]
+    lv['reject_K'] = 290.0
+    assert 'source_K below reject_K' in _hrerr(base)
+
+
+def test_every_remaining_rejection_unit_needs_a_mode(base):
+    _hr(base)['levels']['value'].pop()
+    assert 'GEO_GHEX rejects heat at this site' in _hrerr(base)
+
+
+def test_a_replacement_brings_its_own_mode(base):
+    base['groups']['scaling']['entries']['actions']['value'] = [
+        {'target': 'DRY_COOLER', 'action': 'replace', 'replacement': 'GEO_HP', 'register': 'test'}]
+    e = _hrerr(base)
+    assert 'DRY_COOLER does not remain' in e and 'GEO_HP rejects heat at this site' in e
+
+
+def test_power_document_reports_storage_coverage_and_rejection():
+    t = PF.render()
+    assert 'coverage' in t and '## 4. Heat rejection' in t and '| DRY_COOLER | air |' in t

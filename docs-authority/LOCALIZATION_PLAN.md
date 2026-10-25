@@ -1,7 +1,7 @@
 # Localization plan: site profiles and locale variants
 
 Document number: AQS-PLAN-011
-Revision: I
+Revision: J
 Date: 2026-10-25
 
 | Rev | Description | Date |
@@ -15,6 +15,7 @@ Date: 2026-10-25
 | G | Sections 4.3 and 4.4 describe locale selection and the per-site output folders as built | 2026-10-25 |
 | H | Section 5.4 describes the scaling actions, capabilities and checks as built; capabilities group added to Table 4.1 | 2026-10-25 |
 | I | Section 5.5 describes the power portfolio and function redundancy as built; an import path no longer counts as an energy or life-support source | 2026-10-25 |
+| J | Section 5.5 adds storage coverage of the worst stretch and the heat rejection modes as built; X-LOC-06 done | 2026-10-25 |
 
 ## 1. Purpose and scope
 
@@ -214,7 +215,9 @@ The portfolio is sized by one rule at every site. The solver finds the generatio
 
 As built, the profile's `power_portfolio` group lists the sources (primary, backup, or flagged option, each with its unit and basis), the storage, the worst stretch (kind and the profile entry that gives its hours) and the oversize factor, which binds `pv_oversize_factor`. `flow_graph/param/portfolio.py` solves the daily balance through the worst stretch: primary sources share the mean generation, each gives a stated fraction of its mean rate during the stretch, and storage carries the rest at the storage round trip. With PV alone and no output in the stretch this is the reference balance, so the PV correction it passes to the roof closure in `flow_graph/param/solver.py` and to `docs-authority/_power_sizing.py` is exactly 1 at the baseline. A primary source other than PV needs a capacity factor with its basis; fission and other new technologies are refused unless they are flagged options. A stretch longer than a day needs the seasonal storage model, which comes with the first polar locale.
 
-`flow_graph/param/redundancy.json` lists the source units of each energy and life-support function (power, power storage, thermal storage, heat rejection, oxygen, water, carbon dioxide removal, food, sanitation). After the scaling actions, each function must keep at least two source units, counting a unit's stated parallel trains and replacements. Units named there are energy or life-support units for the scaling rules of section 5.4. Regeneration writes `docs-authority/SITE_POWER.md` (AQS-SITE-005) for the selected site, and `flow_graph/param/test_site_power.py` checks each rule. Sizing primary sources other than PV in the power sizing, and the heat rejection modes, follow in X-LOC-06.
+`flow_graph/param/redundancy.json` lists the source units of each energy and life-support function (power, power storage, thermal storage, heat rejection, oxygen, water, carbon dioxide removal, food, sanitation). After the scaling actions, each function must keep at least two source units, counting a unit's stated parallel trains and replacements. Units named there are energy or life-support units for the scaling rules of section 5.4. Regeneration writes `docs-authority/SITE_POWER.md` (AQS-SITE-005) for the selected site, and `flow_graph/param/test_site_power.py` checks each rule. Each storage entry names the graph parameter that gives its stored energy, and the document compares the total with the energy the worst stretch draws at the plant demand. Sizing a primary source other than PV in the power sizing comes with the first locale that selects one; until then the power sizing stops on such a portfolio.
+
+The profile's `heat_rejection` group lists, per level of the heat ladder, the unit that rejects the heat, its mode (air, evaporative, ground, seawater, radiative, or heat pump with a sink mode) and the graph parameter that gives its duty. `flow_graph/param/heat_rejection.py` checks each mode against the site capabilities: air needs an air heat sink; evaporative also needs a vent sink and liquid water; ground needs ground contact; seawater needs liquid water and a seawater source. A radiative level needs the radiator emissivity and the sink temperature in the group, and is sized by the Stefan-Boltzmann law with the constant from CODATA 2018 [55]. A heat pump states its source and rejection temperatures, and the document gives its lift and the Carnot bound on its coefficient of performance. Every heat rejection unit that remains after the scaling actions needs a level, so a replacement brings its own mode. The modes appear in `docs-authority/SITE_POWER.md`.
 
 ## 6. Death Valley
 
@@ -457,7 +460,7 @@ Table 12.1. Build phases
 | X-LOC-03 | Constants into the profile | gravity, pressure, air composition and air densities read from the profile; baseline regeneration unchanged | done |
 | X-LOC-04 | Site selection and namespaces | `--site`, `AQS_SITE`, `--all-sites`; outputs under `sites/<site_id>/`; register handles locale numbers | done |
 | X-LOC-05 | Sector and unit scaling | needs table, scaling map, scaling check and per-locale scaling table generated | done |
-| X-LOC-06 | Power portfolio, heat rejection and storage models | portfolio solved through the worst stretch with the oversize factor; rejection modes and radiator sizing; solar and other resource models in the solver | open |
+| X-LOC-06 | Power portfolio, heat rejection and storage models | portfolio solved through the worst stretch with the oversize factor; rejection modes and radiator sizing; solar and other resource models in the solver | done |
 | X-LOC-07 | Death Valley variant | profile, site basis page, regeneration and closure pass | open |
 | X-LOC-11 | Floating island variant | as X-LOC-07, with the motion group, mass and stability checks, seawater feed case and the marine code family | open |
 | X-LOC-08 | Antarctic variant | as X-LOC-07, with the treaty code family | open |
@@ -552,3 +555,4 @@ The questions below are logged in AQS-OQ-001 with the default the work will proc
 52. International Maritime Organization, International Convention for the Prevention of Pollution from Ships (MARPOL), Annexes I to VI.
 53. International Maritime Organization, Code for the Construction and Equipment of Mobile Offshore Drilling Units, 2009 (2009 MODU Code).
 54. International Maritime Organization, International Ship and Port Facility Security Code (ISPS Code).
+55. Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Reviews of Modern Physics 93 (2021) 025010.
