@@ -1,5 +1,5 @@
 {
- "_basis": "AQS-PLAN-011 section 5.3 and Table 5.2; functions from AGENTS.md (Redundancy: power, O2, water, CO2 removal, thermal, food, sanitation)",
+ "_basis": "AQS-PLAN-011 section 5.3 and Table 5.2; functions from AGENTS.md (Redundancy: power, O2, water, CO2 removal, thermal, food, sanitation) | 2026-10-25 (X-LOC-11): ground_contact removed from the building class - bearing and earthing are structural matters (foundations on land, the hull deck per class rules at sea), not an environmental service the site profile provides.",
  "needs": {
   "buoyant_separation": "a minimum apparent gravity, steady in direction, to separate gas from liquid or solids from liquid",
   "free_surface": "a liquid surface open to a gas space",
@@ -10,35 +10,92 @@
   "liquid_water_at_ambient": "external pressure above the triple point of water"
  },
  "by_class": {
-  "separator": ["buoyant_separation"],
-  "scrubber": ["buoyant_separation", "vent_sink"],
-  "ew_cell": ["buoyant_separation"],
-  "cell": ["buoyant_separation"],
-  "flow_battery": ["buoyant_separation"],
-  "evaporator": ["buoyant_separation"],
-  "digest": ["buoyant_separation"],
-  "vessel": ["buoyant_separation"],
-  "frac": ["buoyant_separation"],
-  "ferment": ["buoyant_separation"],
-  "tank": ["buoyant_separation", "free_surface", "liquid_water_at_ambient"],
-  "cut_tank": ["buoyant_separation", "free_surface"],
-  "hydro": ["buoyant_separation", "free_surface", "liquid_water_at_ambient"],
-  "dry_cooler": ["air_heat_sink"],
-  "thermal": ["air_oxidant", "vent_sink"],
-  "genset": ["air_oxidant", "vent_sink"],
-  "relief": ["vent_sink"],
-  "flue_junction": ["vent_sink"],
-  "ghex": ["ground_contact"],
-  "building": ["ground_contact"]
+  "separator": [
+   "buoyant_separation"
+  ],
+  "scrubber": [
+   "buoyant_separation",
+   "vent_sink"
+  ],
+  "ew_cell": [
+   "buoyant_separation"
+  ],
+  "cell": [
+   "buoyant_separation"
+  ],
+  "flow_battery": [
+   "buoyant_separation"
+  ],
+  "evaporator": [
+   "buoyant_separation"
+  ],
+  "digest": [
+   "buoyant_separation"
+  ],
+  "vessel": [
+   "buoyant_separation"
+  ],
+  "frac": [
+   "buoyant_separation"
+  ],
+  "ferment": [
+   "buoyant_separation"
+  ],
+  "tank": [
+   "buoyant_separation",
+   "free_surface",
+   "liquid_water_at_ambient"
+  ],
+  "cut_tank": [
+   "buoyant_separation",
+   "free_surface"
+  ],
+  "hydro": [
+   "buoyant_separation",
+   "free_surface",
+   "liquid_water_at_ambient"
+  ],
+  "dry_cooler": [
+   "air_heat_sink"
+  ],
+  "thermal": [
+   "air_oxidant",
+   "vent_sink"
+  ],
+  "genset": [
+   "air_oxidant",
+   "vent_sink"
+  ],
+  "relief": [
+   "vent_sink"
+  ],
+  "flue_junction": [
+   "vent_sink"
+  ],
+  "ghex": [
+   "ground_contact"
+  ],
+  "building": []
  },
  "by_unit": {
-  "COMB_HEAT": {"needs": ["air_oxidant", "vent_sink"]}
+  "COMB_HEAT": {
+   "needs": [
+    "air_oxidant",
+    "vent_sink"
+   ]
+  }
  },
  "function_by_sector": {
-  "ELEC": "energy", "HEAT": "energy", "GEO": "energy", "PUMPED_HYDRO": "energy",
-  "HAB": "life_support", "WTR": "life_support", "FARM": "life_support"
+  "ELEC": "energy",
+  "HEAT": "energy",
+  "GEO": "energy",
+  "PUMPED_HYDRO": "energy",
+  "HAB": "life_support",
+  "WTR": "life_support",
+  "FARM": "life_support"
  },
  "function_by_unit": {
-  "H2O_ELYZ": "life_support", "HDR_O2": "life_support"
+  "H2O_ELYZ": "life_support",
+  "HDR_O2": "life_support"
  }
 }
