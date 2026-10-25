@@ -2603,6 +2603,23 @@
    "quick": false
   },
   {
+   "name": "site_power",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.portfolio",
+    "--write"
+   ],
+   "depends_on": [
+    "site_scaling"
+   ],
+   "outputs": [
+    "docs-authority/SITE_POWER.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
    "name": "task_plan",
    "argv": [
     "python3",

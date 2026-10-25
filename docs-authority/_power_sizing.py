@@ -41,11 +41,14 @@ cases={'bounding':round(sum(B.values())+rect['Pac_kW'],2),'reference':round(sum(
 from flow_graph.param import solver as SV
 roof=SV.roof_close(_d,cases['bounding'])   # X-PAR-07: roof-only PV; the extension load (incl. EXT_HALL) is added by roof_close, counted once
 cases={k:P+roof['ext']['total_kW'] for k,P in cases.items()}
+from flow_graph.param import portfolio as PF
+PVF=PF.pv_factor(eta=RT)   # site portfolio: PV share and worst-stretch correction (1 at the baseline); scales the PV balance through its yield
+if PVF <= 0: raise SystemExit('site portfolio has no PV primary; power sizing for other primary sources is not built yet (AQS-PLAN-011 section 5.5)')
 out={}
 for k,P in cases.items():
     E=P*24                         # flat profile, continuous process (study)
     Edirect=P*(24-NIGHT); Estore=P*NIGHT
-    o=PW.oversized(P,NIGHT,RT,PSH*DR.val(_d,'pv_roof_yield_factor'),DER,DR.val(_d,'pv_oversize_factor'),DR.val(_d,'pv_dc_ac_ratio'),INV)   # D75
+    o=PW.oversized(P,NIGHT,RT,PSH*DR.val(_d,'pv_roof_yield_factor')/PVF,DER,DR.val(_d,'pv_oversize_factor'),DR.val(_d,'pv_dc_ac_ratio'),INV)   # D75
     out[k]=dict(P_kW=P,E_kWh_d=E,**o)
 out['roof']=roof
 crit=sum(CRIT.values())

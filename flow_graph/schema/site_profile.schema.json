@@ -31,7 +31,7 @@
     "electrical": {"always": true, "entries": ["ac_frequency_Hz", "earthing_method"]},
     "jurisdiction": {"always": true, "entries": ["code_families"]},
     "motion": {"always": false, "entries": ["heel_deg", "roll_deg", "pitch_deg", "heave_m_s2"]},
-    "power_portfolio": {"always": false, "entries": ["sources", "worst_stretch"]},
+    "power_portfolio": {"always": true, "entries": ["sources", "storage", "worst_stretch", "oversize_factor"]},
     "scaling": {"always": true, "entries": ["actions"]},
     "capabilities": {"always": true, "entries": ["buoyant_separation", "free_surface", "air_heat_sink", "air_oxidant", "vent_sink", "ground_contact", "liquid_water_at_ambient"]}
   },

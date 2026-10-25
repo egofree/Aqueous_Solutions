@@ -42,8 +42,14 @@ def unit_needs(u, node, nt):
     return sorted(over['needs'] if 'needs' in over else nt['by_class'].get(node.get('class'), []))
 
 
+def _red_sources():
+    r = json.load(open(os.path.join(HERE, 'redundancy.json')))
+    return {u: f['class'] for f in r['functions'].values() for u in f['sources']}
+
+
 def function(u, node, nt):
-    return nt['function_by_unit'].get(u) or nt['function_by_sector'].get(node.get('sector_id')) or 'process'
+    """energy, life_support or process: the unit map, then the units named in redundancy.json, then the sector."""
+    return nt['function_by_unit'].get(u) or _red_sources().get(u) or nt['function_by_sector'].get(node.get('sector_id')) or 'process'
 
 
 def capabilities(prof):

@@ -268,7 +268,84 @@
    "not_applicable": "fixed foundation on land"
   },
   "power_portfolio": {
-   "pending": "X-LOC-06"
+   "entries": {
+    "sources": {
+     "value": [
+      {
+       "id": "pv",
+       "kind": "pv",
+       "unit": "PV_ARRAY",
+       "role": "primary",
+       "share": 1.0,
+       "stretch_output_frac": 0.0,
+       "resource": "solar.pv_yield_kWh_kWp_d",
+       "register": "AQS-DUTY-012; Q-024 (sources chosen per site)"
+      },
+      {
+       "id": "backup_gen",
+       "kind": "engine",
+       "unit": "BACKUP_GEN",
+       "role": "backup",
+       "register": "AQS-ELEC-007; A-M-383 (hydrogen first)"
+      },
+      {
+       "id": "fuel_cell",
+       "kind": "fuel_cell",
+       "unit": "FUEL_CELL",
+       "role": "backup",
+       "register": "AQS-ELEC-007"
+      },
+      {
+       "id": "methanol_fuel_cell",
+       "kind": "fuel_cell",
+       "unit": "MEOH_FC",
+       "role": "backup",
+       "register": "AQS-ELEC-007"
+      },
+      {
+       "id": "geothermal_orc",
+       "kind": "geothermal",
+       "unit": "GEO_ORC",
+       "role": "option",
+       "flagged_option": true,
+       "register": "owner ruling D-GEO_ORC (installed standby at 0 kW electric)"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5"
+    },
+    "storage": {
+     "value": [
+      {
+       "kind": "electrochemical",
+       "unit": "ZNBR2"
+      },
+      {
+       "kind": "pumped_hydro",
+       "unit": "HYDRO_SET"
+      }
+     ],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5; AQS-ELEC-007; Q-009"
+    },
+    "worst_stretch": {
+     "value": {
+      "kind": "night",
+      "hours_entry": "solar.night_hours"
+     },
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.5 (the baseline worst stretch is the night)"
+    },
+    "oversize_factor": {
+     "value": 2.0,
+     "units": "PV nameplate / PV needed to close the daily balance",
+     "register": "A-M-109",
+     "needs_verification": true,
+     "verification_test": "NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility",
+     "published": "Owner decision, Mike Matthews 2026-10-15 (D75): 200 % of plant requirement; storage still charges on a day at half the mean yield, surplus exported",
+     "binds": "pv_oversize_factor"
+    }
+   }
   },
   "scaling": {
    "entries": {

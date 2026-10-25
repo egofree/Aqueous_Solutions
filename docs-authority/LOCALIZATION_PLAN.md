@@ -1,7 +1,7 @@
 # Localization plan: site profiles and locale variants
 
 Document number: AQS-PLAN-011
-Revision: H
+Revision: I
 Date: 2026-10-25
 
 | Rev | Description | Date |
@@ -14,6 +14,7 @@ Date: 2026-10-25
 | F | Q-032 closed; every gravity and air density reads the profile | 2026-10-25 |
 | G | Sections 4.3 and 4.4 describe locale selection and the per-site output folders as built | 2026-10-25 |
 | H | Section 5.4 describes the scaling actions, capabilities and checks as built; capabilities group added to Table 4.1 | 2026-10-25 |
+| I | Section 5.5 describes the power portfolio and function redundancy as built; an import path no longer counts as an energy or life-support source | 2026-10-25 |
 
 ## 1. Purpose and scope
 
@@ -175,7 +176,7 @@ Table 5.1. Scaling actions
 | replace | a unit of a different technology performs the same function, for example a radiator for DRY_COOLER | the replacement is a unit in the base graph with its own sizing function |
 | eliminate | the function is not performed at the site | the profile names an import path (a boundary stream with its resupply interval and holding) or a replacement of a different technology |
 
-For an energy or life-support function, eliminating or replacing a unit must leave the function with at least the sources the redundancy rule needs: a spare unit, or a second source of a different technology, sized for a defined outage (AGENTS.md, Redundancy). An import path counts as a source only when the holding covers the resupply interval plus that outage.
+For an energy or life-support function, eliminating or replacing a unit must leave the function with at least the sources the redundancy rule needs: a spare unit, or a second source of a different technology, sized for a defined outage (AGENTS.md, Redundancy). An import path does not count as a source: an energy or life-support unit is eliminated only with a replacement of a different technology (owner, 2026-10-25).
 
 ### 5.3 What a unit needs
 
@@ -210,6 +211,10 @@ The profile's `scaling` group lists the actions, each on a unit or on a sector (
 Each profile lists the power sources the local resource supports, each with its resource basis: PV, wind, geothermal power and heat, hydro where the terrain allows, wave energy and ocean thermal energy conversion where a cited resource exists, fuel cells and engines on plant-made fuels, and storage (electrochemical, hydrogen, thermal, and pumped hydro where the terrain allows). Fission and other sources enter only as flagged options, each with its own study before it enters a balance.
 
 The portfolio is sized by one rule at every site. The solver finds the generation that closes the energy balance through the worst stretch the site presents: a night, a dark season, a calm, a dust storm, an eclipse or a storm at sea. The installed generation is that amount times the oversize factor (`pv_oversize_factor` at the baseline, generalised to the whole portfolio). Storage covers the worst stretch. Every energy function keeps a spare or a source of a different technology. The share of each source is a profile entry with a stated basis; the default is the least installed capacity that meets the rule.
+
+As built, the profile's `power_portfolio` group lists the sources (primary, backup, or flagged option, each with its unit and basis), the storage, the worst stretch (kind and the profile entry that gives its hours) and the oversize factor, which binds `pv_oversize_factor`. `flow_graph/param/portfolio.py` solves the daily balance through the worst stretch: primary sources share the mean generation, each gives a stated fraction of its mean rate during the stretch, and storage carries the rest at the storage round trip. With PV alone and no output in the stretch this is the reference balance, so the PV correction it passes to the roof closure in `flow_graph/param/solver.py` and to `docs-authority/_power_sizing.py` is exactly 1 at the baseline. A primary source other than PV needs a capacity factor with its basis; fission and other new technologies are refused unless they are flagged options. A stretch longer than a day needs the seasonal storage model, which comes with the first polar locale.
+
+`flow_graph/param/redundancy.json` lists the source units of each energy and life-support function (power, power storage, thermal storage, heat rejection, oxygen, water, carbon dioxide removal, food, sanitation). After the scaling actions, each function must keep at least two source units, counting a unit's stated parallel trains and replacements. Units named there are energy or life-support units for the scaling rules of section 5.4. Regeneration writes `docs-authority/SITE_POWER.md` (AQS-SITE-005) for the selected site, and `flow_graph/param/test_site_power.py` checks each rule. Sizing primary sources other than PV in the power sizing, and the heat rejection modes, follow in X-LOC-06.
 
 ## 6. Death Valley
 
