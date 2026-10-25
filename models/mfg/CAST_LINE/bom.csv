@@ -1,5 +1,16 @@
-item,description,qty,material,basis
-1,"Permanent-mould table, 2 mould seats, water-cooled inserts",1,"CS weldment, Cu inserts",AQS-DUTY-072 section 3; pour 3.0 kg/d Cu class
-2,Pouring ladle 12 kg with tilt bracket,1,"CS, refractory lined",AQS-DUTY-072 section 3
-3,Runout roller table 700 mm with 2 legs,1,CS rollers,AQS-DUTY-072 section 3
-4,Static shear / stop block at the line end,1,CS + tool steel knife,sprue/runner campaign returns
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Machine frame weldment 1500 x 800 x 1500: 6 legs SHS 80 x 80 x 5, rails 100 x 30, cross members, tail plate, feet 160 x 160 x 12 with M12 anchor bosses (fasteners.csv item 2: 6 x M12 anchors)",1,carbon steel,365.0,make,WORK_ORDER step 1; envelope per duty section 2 (A-M-199 forming-class seat); level and shim at the feet
+2,"Mould-table deck t10, x 60..800 (seat passes, pour pocket, trough/drain passes cut)",1,carbon steel,24.6,make,WORK_ORDER step 2; deck plane is the z 600 outlet datum of the task-04 schedule
+3,Mould seats x2: steel backing platen 240 x 180 x 46 + seat frame (4 x M12 per seat to the deck underside),2,carbon steel,15.4,make,Duty section 3: steel backing platens around the graphite hot faces (DIETER1988 tool class)
+4,"Permanent-mould inserts x2, 160 x 120 x 110, open-top cavity 110 x 70 x 60 (0.462 L, about 3.7 kg Cu class)",2,fine graphite,5.8,buy,"Duty section 3 (X-MAT-22): graphite hot face, chemically indifferent to the Cu melt (SCHACHT2004 ch. 8); change-out is the unit task 12 work order"
+5,Water-cooled jacket assemblies x2 (shell t6 + rear CW stubs toward the machine-side manifold),2,carbon steel,10.3,make,Utility loop: no graph edge and no cooling rate; sized and commissioned at the task 12 first articles (params.json holds)
+6,Melt path: refractory trough + steel base + trough head + distribution header + graphite bottom-fill risers x2 (D28) + drain well OD75,1,graphite + refractory ram in steel channel,4.8,make,Duty section 3 graphite launder class (SCHACHT2004 ch. 8); bottom fill is the registered layout choice (params.json layout_note); N1/N5 per the task-04 schedule
+7,Pouring ladle 12 kg: shell OD280 x 240 t25 with two trunnion lugs + D115 x t25 refractory working lining (relining is a buy item),1,carbon steel + alumina ram lining,43.3,make,"AQS-DUTY-072 section 3 (12 kg); hand tilt, no actuator; lining replaced at the task 12 traveller"
+8,"Tilt post + arm + saddle on the deck, carriage-bolted to the shell lugs (2 x M16 T-bolts, fasteners.csv item 1)",1,carbon steel,35.5,make,WORK_ORDER step 2; manual tilt bracket
+9,"Runout roller table 700 mm: 5 solid rollers D70 x 500 on D20 end shafts, press-fitted 2-bolt pillow blocks (25 mm bore class) + bearer rails + front guide rail on floor posts",1,carbon steel,182.2,make,Graph design row table_L_mm 700; hand-fed (0 kW node duty); the guide rail is the +Y face pick (params.json layout_note)
+10,Static shear / stop block at the line end: CS pedestal to the floor + tool-steel knife insert + block head + strike bar,1,carbon steel + tool steel,84.2,make,Sprue/runner campaign-return prep (prior BOM basis); the shear campaign is a task 12 traveller item; also the +X face pick
+11,"Guards: rear hot-zone panel frame + mesh opening (AQS-BLD-012 class) on floor posts + channel, fixed knife cover",1,carbon steel + mesh,73.9,make,A-MACH: guard drawn; mesh fitted at fabrication
+12,Vent hood plenum 500 x 200 over the pour zone + N6 DN15 Class 150 flanged tap at top z 800,1,carbon steel,13.4,make,Task-04 schedule N6; ties to the plant vent header at detail design
+13,Scheduled connection hardware: N1/N5/N6 DN15 Class 150 flanges OD95 + spigots (AQS-PIP-003 PIPING_CLASSES),1,carbon steel,2.1,buy,Ratings named from the task-04 schedule (A-MACH)
+14,"Mould-change gantry: 2 columns SHS 80 x 80 to 1500, top beam, trolley body, hook lug; SWL 250 kg manual chain hoist",1,carbon steel (gantry); hoist = purchase item,169.0,make (hoist: buy),"Mould change-out is the unit task 12 work order; SWL 250 kg is a fit choice against the model seat mass, no load calc claimed"
+15,"Bolt kit per fasteners.csv: item 1 M16 T-bolts x12, item 2 M12 anchors x6, M12 SHCS x28 (seats, pillow blocks, knife, trolley lug), M8 SHCS x8 (jacket covers)",1,steel fasteners,,buy,A-core 7: every bolted joint holds a row; fasteners.csv is the unit record
