@@ -71,6 +71,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/FAB_WET_REAGENTS.md` | Rev C. Style pass: narrative references spelled out, deferred-placement wording aligned with the FreeCAD pass. Forks, IDs and study rates unchanged; study rates stay labeled. |
 | `docs-authority/FAN_STACK.md` | Rev C. Purpose first, above-ground-level spelled out; stacks stay the upset/contingency path with closure at AQS-VENT-001. No height, curve or duty changed. |
 | `docs-authority/GAS_DETECTION.md` | Rev B, through `_gas_det.py`. Purpose and scope added, table titles, per-unit detail section numbered. No detector, mounting or set point changed. |
+| `docs-authority/FRAME_SYSTEM.md` | Rev D. Purpose first, numbered sections and table titles; the former-number line carries the AQS-MOD-001 duplicate clear. No parameter, class, size or load rule changed. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -110,7 +111,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | --- | --- |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | |
 | `docs-authority/FIRE_PROTECTION.md` | |
-| `docs-authority/FRAME_SYSTEM.md` | |
 | `docs-authority/GA_CHECK.md` | |
 | `docs-authority/GLOSSARY.md` | In part. All style-check findings are cleared: undefined abbreviations, a banned phrase in the DIY entry, and the stale note on capital letters. Many entries are still fragments, and several terms have two entries (for example MVS); a full rewrite is still needed. |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | |

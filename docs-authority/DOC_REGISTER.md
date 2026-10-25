@@ -211,7 +211,7 @@ Table 3.1. Document numbers in use
 | AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | D | 2026-10-25 | Electrode fabrication and coating | current |
 | AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | B | 2026-09-28 | Metal forming path — wire draw / cold mill / gas atomizer | current |
 | AQS-MOD-001 | `docs-authority/MODULE.md` | C | 2026-10-12 | Module standard | current |
-| AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` | C | 2026-10-11 | Frame system | current |
+| AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` | D | 2026-10-25 | Frame system | current |
 | AQS-MVS-CHK-001 | `docs-authority/internal/MVS_CHECKLIST.md` | — | 2026-10-02 | MVS checklist | superseded by AQS-PLAN-007 |
 | AQS-MVS-EQP-001 | `docs-authority/internal/MVS_EQUIPMENT.md` | — | 2026-10-02 | MVS equipment issue | superseded by AQS-PLAN-007 |
 | AQS-MVS-PLAN-001 | `docs-authority/internal/MVS_PLAN.md` | — | 2026-10-02 | MVS completion plan | superseded by AQS-PLAN-007 |
@@ -480,7 +480,7 @@ Table 4.1. Former numbers and their current equivalents
 | AQS-DUTY-011 | AQS-DUTY-078 | `docs-authority/BALANCE_CLOSE.md` | `docs-authority/REV_M_CLOSURE_DUTY.md` | AQS-DUTY-011 (shared with REV_M_CLOSURE_DUTY.md until 2026-10-24; that page keeps it) |
 | AQS-DUTY-064 | AQS-DUTY-079 | `docs-authority/sizing/HOUSE_SCRUBBERS.md` | `docs-authority/sizing/STORAGE_HOLDUP.md` | AQS-DUTY-064 (shared with sizing/STORAGE_HOLDUP.md until 2026-10-24; that page keeps it) |
 | AQS-ELEC-001 | AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | `docs-authority/ELECTRONICS.md` | AQS-ELEC-001 (renumbered 2026-10-15 to clear a duplicate) |
-| AQS-MOD-001 | AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` | `docs-authority/MODULE.md` | AQS-MOD-001 to clear a duplicate (AQS-REG-001). |
+| AQS-MOD-001 | AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` | `docs-authority/MODULE.md` | AQS-MOD-001 (duplicate cleared 2026-10-15, AQS-REG-001) |
 | AQS-PLAN-001 | AQS-IF-009 | `docs-authority/PHASE9_INTERFACES.md` | `docs-authority/internal/DESIGN_PLAN.md` | AQS-PLAN-001 to clear a duplicate (AQS-REG-001). |
 | AQS-PWR-001 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | `docs-authority/POWER.md` | AQS-PWR-001 to clear a duplicate (AQS-REG-001). |
 | AQS-PWR-002 | AQS-PWR-001 | `docs-authority/POWER.md` | `docs-authority/GEOTHERMAL_BACKUP.md` | AQS-PWR-002 (on this page 2026-10-17 to 2026-10-24 in error; AQS-PWR-002 is GEOTHERMAL_BACKUP.md) |
