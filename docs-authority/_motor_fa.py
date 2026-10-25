@@ -14,7 +14,7 @@ def sheet(fam):
     return t, g
 out = []
 for d in D:
-    fam = d['family']; t, g = sheet(fam); rat = g('Rating'); pop = (re.search(r'Population: (\d+) items', t) or [0, '0'])[1]
+    fam = d['family']; t, g = sheet(fam); rat = g('Rating'); pop = (re.search(r'The family covers (\d+) motors', t) or [0, '0'])[1]
     r = dict(family=fam, type=d['type'], rating=d['rating'], items=int(pop))
     if 'induction' in d['type']:
         P = float(re.search(r'([\d.]+) kW', rat).group(1))*1000; poles = int(re.search(r'(\d+) poles', rat).group(1)); p = poles//2

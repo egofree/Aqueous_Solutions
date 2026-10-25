@@ -59,6 +59,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/FRAME_CHECK.md` | Rev B, through `docs-authority/_frame_check.py`. Purpose, basis, symbol definitions and table titles added; the beam span heading now comes from the bay size. No load or section changed. |
 | `docs-authority/FOUNDATION.md` | Rev B, through `docs-authority/_foundation.py`. Purpose, basis, symbol definitions and numbered table added. The uplift row is unchanged because `_design_check.py` check QC-18 parses it. The plate size is still subject to question Q-015. |
 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | Rev B, through `docs-authority/_motor_fa.py`. Purpose, table titles and rig description in sentences added. The paragraph on flagged families printed an empty list of required core lengths when no family was flagged; it is now written only when a family is flagged. |
+| `docs-authority/inventory/motor_families/` (every MF sheet) | Rev B, through `flow_graph/inventory/motor_designs.py`. Revision record, purpose, table title, manufacturing steps in full sentences and open items in prose added. No design value changed. `docs-authority/_motor_fa.py` now reads the motor count from the new purpose sentence. |
 
 ## 3. In progress
 
@@ -238,26 +239,6 @@ Table 4.2. Pending pages in subfolders
 | `docs-authority/inventory/OTHER_INVENTORY.md` | |
 | `docs-authority/inventory/PIPE_INVENTORY.md` | |
 | `docs-authority/inventory/WIRE_INVENTORY.md` | |
-| `docs-authority/inventory/motor_families/MF-04.md` | |
-| `docs-authority/inventory/motor_families/MF-05.md` | |
-| `docs-authority/inventory/motor_families/MF-06.md` | |
-| `docs-authority/inventory/motor_families/MF-07.md` | |
-| `docs-authority/inventory/motor_families/MF-08.md` | |
-| `docs-authority/inventory/motor_families/MF-09.md` | |
-| `docs-authority/inventory/motor_families/MF-10.md` | |
-| `docs-authority/inventory/motor_families/MF-11.md` | |
-| `docs-authority/inventory/motor_families/MF-12.md` | |
-| `docs-authority/inventory/motor_families/MF-13.md` | |
-| `docs-authority/inventory/motor_families/MF-14.md` | |
-| `docs-authority/inventory/motor_families/MF-15.md` | |
-| `docs-authority/inventory/motor_families/MF-16.md` | |
-| `docs-authority/inventory/motor_families/MF-17.md` | |
-| `docs-authority/inventory/motor_families/MF-18.md` | |
-| `docs-authority/inventory/motor_families/MF-20.md` | |
-| `docs-authority/inventory/motor_families/MF-21.md` | |
-| `docs-authority/inventory/motor_families/MF-24.md` | |
-| `docs-authority/inventory/motor_families/MF-25.md` | |
-| `docs-authority/inventory/motor_families/MF-26.md` | |
 | `docs-authority/sizing/EVAP_DESIGN.md` | |
 | `docs-authority/sizing/EW_CELLS.md` | |
 | `docs-authority/sizing/H2_COMPRESSOR.md` | |
