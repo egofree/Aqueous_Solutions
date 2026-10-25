@@ -16,6 +16,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
 6. Relief. None. Not a pressure unit.
 
-7. Code. Shop. Not stamped. The envelope is `cad/stl/RECT_EW.stl`.
+7. Code. Shop. Not stamped. The unit is retired from the graph; no envelope is issued.
 
 8. Open items. Vendor channel data.

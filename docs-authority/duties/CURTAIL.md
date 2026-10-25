@@ -14,6 +14,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. Both outlet temperatures. High hot-side outlet trips the hot feed.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The solid is still an envelope. `cad/stl/CURTAIL.stl` is the outer envelope only; nothing inside it is modelled yet.
+7. Code. Shop. Not stamped. The solid is still an envelope.The unit is retired from the graph; no envelope is issued.
 
 8. Open items. The approach and the coefficient are not measured.

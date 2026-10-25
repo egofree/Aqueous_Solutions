@@ -23,6 +23,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 - Result. A = 65.65 / (0.02703 × 0.975 × 605 × 1 × 1) × √(150 / 28.96) = 9.37 mm². Bore 3.45 mm.
 - relief_mm 3.6 is 10.18 mm². It meets the case with 8.6 % area margin. It stays. On a gauge basis P1 is 706 kPa a and the area is 8.03 mm², so the absolute basis governs. The smallest API 526 letter orifice, D at 71 mm², also covers it. No valve is selected.
 
-7. Code. Shop. Not stamped. The solid is `cad/stl/EXPANDER.stl`, from `models/mfg/EXPANDER/expander.py` (AQS-PLAN-006). Drawings are not made.
+7. Code. Shop. Not stamped.The unit is retired from the graph; no envelope is issued.py` (AQS-PLAN-006). Drawings are not made.
 
 8. Open items. Isentropic efficiency 70% is assumed. Relief: k, Z, the absolute set basis, and a supply that is not limited below the edge rate are assumed. IA-EXP-IN composition is the liquid stencil, water 0.97; the molar mass is taken from the edge density, not from it.

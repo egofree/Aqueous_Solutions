@@ -12,7 +12,7 @@ Status: M2. The source builds and exports one closed solid. Not accepted (M3): n
 | W5 Fasteners | `fasteners.csv`. Sizes are assumptions. Crankcase holes not drawn |
 | W6 Materials | 316L throughout, corrosion allowance 0 mm, from duty section 3 |
 | W7 Drawings | Not made. Needs a machine with FreeCAD TechDraw |
-| W8 Exports | `export/expander.step`, 13 parts. `export/expander.stl`, ASCII, 2472 facets: the parts fused into one valid solid, closed and manifold (one outer shell, two internal cavities), 8.17 L. Stored through Git LFS. `cad/stl/EXPANDER.stl` is replaced with it |
+| W8 Exports | `export/expander.step`, 13 parts. `export/expander.stl`, ASCII, 2472 facets: the parts fused into one valid solid, closed and manifold (one outer shell, two internal cavities), 8.17 L. Stored through Git LFS. The `cad/stl/EXPANDER.stl` registry envelope was withdrawn when the unit retired from the graph |
 | W9 BOM | `bom.csv`, generated, mass from 7.99 g/cm³ |
 | W10 Route | F-MACH. Cut and drill baseplate, fabricate crankcase box, bore and hone cylinder, turn piston, shaft, and flywheel, weld nozzle lines, pressure test the cylinder and head at 1.3 × 550 kPa (assumption, test factor not on the graph) |
 | W11 Self-copy | Not a shop tool. Lathe, mill, and welder on site make every part; the cylinder bore needs a hone that is not on the shop list |

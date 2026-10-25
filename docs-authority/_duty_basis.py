@@ -75,7 +75,10 @@ def author(n, g, ins, outs, mi, mo, kw):
         o.append('6. Relief. ' + f"Vent edge {' and '.join(e['stream_id'] for e in vents)} on the graph (to {' and '.join(sorted(set(e['to_unit_id'] for e in vents)))}). Atmospheric operation is not claimed beyond this edge. Not to the room.")
     else:
         o.append('6. Relief. Relief case study pending (unit task 07). No set point is claimed on this page. Not to the room.')
-    stl = f' The envelope is `cad/stl/{u}.stl`.' if os.path.exists(os.path.join(ROOT, f'cad/stl/{u}.stl')) else ' No CAD envelope issued yet.'
+    _pres = (N.get(u) or {}).get('presence', 'present')
+    if _pres == 'absent': stl = ' The unit is retired from the graph; no envelope is issued.'
+    elif os.path.exists(os.path.join(ROOT, f'cad/stl/{u}.stl')): stl = f' The envelope is `cad/stl/{u}.stl` (a thick-walled tray at the claimed envelope; X-PAR-04).'
+    else: stl = ' No CAD envelope issued yet.'
     _mfg_mod = sorted(glob.glob(os.path.join(ROOT, f'models/mfg/{u}/*.py')))
     _mfg = ''
     if _mfg_mod:

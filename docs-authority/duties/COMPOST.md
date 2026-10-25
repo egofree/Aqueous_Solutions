@@ -14,7 +14,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 5. Instruments. No trip is specified.
 
 6. Relief. Atmospheric. No vent edge. Not to the room. Stored design_kPa is the old head-plus-10 figure. It is not a set point.
-7. Code. Shop. Not stamped. The envelope is `cad/stl/COMPOST.stl`.
+7. Code. Shop. Not stamped. The unit is retired from the graph; no envelope is issued.
 
 8. Open items. No holdup basis for this class.
 9. Balance (AQS-PAR-003 Rev C). IA-COMP-OUT 126.431 kg/d passes the trim (T6).
