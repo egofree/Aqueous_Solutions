@@ -178,7 +178,7 @@ Table 3.1. Document numbers in use
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Basic | 2026-09-27 | Scrubber chemistry | current |
 | AQS-GAS-003 | `docs-authority/FAN_STACK.md` | B | 2026-09-27 | Fan curves and stack heights | current |
 | AQS-GLO-001 | `docs-authority/GLOSSARY.md` | — | — | Glossary | current |
-| AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | A | — | Derived file revisions | current |
+| AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | B | — | Derived file revisions | current |
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
 | AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | A | 2026-10-25 | Dual heat ladder | current |
 | AQS-HEAT-STUDY-002 | `notes/heat_sink_study_2026-10-18.md` | A | 2026-10-18 | HL-Q4-REJ heat-sink study — resolving D-GEO_ORC | current |
