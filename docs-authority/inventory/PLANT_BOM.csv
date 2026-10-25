@@ -548,6 +548,7 @@ unit envelope BOM,CURTAIL,Open vent DN25,1,316L if the stream is wet or chloride
 unit envelope BOM,DRAW,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/DRAW.md
 unit envelope BOM,DRAW,Process nozzle DN15,1,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
 unit envelope BOM,DRY_COOLER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop.",docs-authority/duties/DRY_COOLER.md
+unit envelope BOM,DRY_COOLER,Process nozzle DN15,2,"Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,DUAL_ROOT,Body / envelope 6000 x 2000 x 600 mm,1,HDPE or PVC for the water.,docs-authority/duties/DUAL_ROOT.md
 unit envelope BOM,DUAL_ROOT,Process nozzle DN15,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,DUAL_ROOT,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
@@ -813,7 +814,7 @@ unit envelope BOM,RF_HEAT,Body / envelope per duty sheet section 2 (not yet dime
 unit envelope BOM,ROLL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/ROLL.md
 unit envelope BOM,ROLL,Process nozzle DN15,3,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ROOF_TANK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U or HDPE, per AQS-STD-002 rule M1.",docs-authority/duties/ROOF_TANK.md
-unit envelope BOM,ROOF_TANK,Process nozzle DN15,14,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,ROOF_TANK,Process nozzle DN15,15,"PVC-U or HDPE, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,S13_CLASS_TREAT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/S13_CLASS_TREAT.md
 unit envelope BOM,S13_CLASS_TREAT,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.","API 2000, A-M-155"
 unit envelope BOM,SALT_FEED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/SALT_FEED.md

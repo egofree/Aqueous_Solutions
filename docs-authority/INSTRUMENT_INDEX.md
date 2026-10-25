@@ -45,7 +45,7 @@ gas-detector row, listed in AQS-SAF-006 and excluded here by rule). The loops ab
 generator from node design params, edge rates and cited inventory artifacts; the citation is the basis column of the CSV. Handoff:
 if AQS-INV-004 later issues a row with the same tag letters for one of these units, the inventory row wins and the authored row is
 skipped (per-letters, no duplicate tags; asserted). Units of graph class "boundary" own no loop: they are trade and
-bookkeeping boundaries (here BOUNDARY_EXPORT, NORTH_DOCK), not process units.
+bookkeeping boundaries (here ATMOS, BOUNDARY_EXPORT, NORTH_DOCK), not process units.
 
 | Unit | Loops | Measured variables |
 |---|---|---|

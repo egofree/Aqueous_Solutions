@@ -6813,6 +6813,19 @@
       "continuous_kw": null
     },
     {
+      "unit_id": "ATMOS",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "boundary",
+      "tags": [],
+      "params": {
+        "equipment_id": "ATMOS"
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
       "unit_id": "DRY_COOLER",
       "sector_id": "HEAT",
       "enabled": true,
@@ -12205,6 +12218,40 @@
       "note": "Feedstock-agnostic. Composition is the AQS-ASSAY-001 Rev C reference point in seven phase classes, carried because the held rates were built on it. It is not the feed. params.assay_envelope holds the bounding cases, regolith-like through metal-rich PCB. Not a weighed sample. Rate stays 102.68 kg/d. The 150 kg/d dock feed is not restored. Do not resize. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged; namespace=IA; layers=mass"
     },
     {
+      "stream_id": "IA-DC-EVAP",
+      "from_unit_id": "DRY_COOLER",
+      "to_unit_id": "ATMOS",
+      "phase": "vapour",
+      "carries": "evaporated spray water to air",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "tbd",
+        "note": "closure TF: equals IA-DC-SPRAY where the site mode is evaporative (X-PAR-02 difference-type role) | X-PAR-02 TF: nothing evaporates at the cooler at this site (AQS-PAR-003)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "The sprayed fraction that evaporates leaves the cycle to the atmosphere. Booked only where the site rejection mode is evaporative; zero elsewhere.; namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-DC-SPRAY",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "DRY_COOLER",
+      "phase": "liquid",
+      "carries": "evaporative spray make-up",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "tbd",
+        "note": "closure TF: rejected kW x 86400 s x 1000 W/kW / 2.454 MJ per kg (NIST_WEBBOOK) | X-PAR-02 TF: no site evaporative charge: the low-grade loop rejects on air at this site (AQS-PAR-003)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "HEAT",
+      "open_boundary": false,
+      "note": "Spray water the site evaporative rejection consumes (AQS-PLAN-011 section 6.2, X-LOC-13). Rate is booked by the balance only where the site rejection mode is evaporative; zero at air-rejection sites.; namespace=IA; layers=mass"
+    },
+    {
       "stream_id": "IA-GW-MAKEUP",
       "from_unit_id": "GW_INTAKE",
       "to_unit_id": "ROOF_TANK",
@@ -12214,7 +12261,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "tbd",
-        "note": "closure TF: make-up by difference of the roof-tank balance (X-PAR-02 difference-type role)"
+        "note": "closure TF: make-up by difference of the roof-tank balance (X-PAR-02 difference-type role) | X-PAR-02 TF: make-up closed at zero: the atmospheric harvest covers the water cycle at this site (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",

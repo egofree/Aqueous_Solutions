@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: IA-DC-SPRAY 0 kg/d (evaporative spray make-up). Out: IA-DC-EVAP 0 kg/d (evaporated spray water to air).
 
 2. Size.
 - Node params (AQS-PAR-001): rated_kW 12; design_C 37.8; design_basis 0.4 % summer design temp (AQS-SITE-002 via AQS-THM-002); LMTD_K 15; fan_kW 0.6.

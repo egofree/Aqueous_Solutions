@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-563 edges: 324 piped, 124 solids transfers, 115 electrical. Piped edges without a length (unit position missing): 60.
+565 edges: 326 piped, 124 solids transfers, 115 electrical. Piped edges without a length (unit position missing): 62.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 33: AIR_RECEIVER, AL_POT, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 34: AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -320,6 +320,8 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-GREY-RET | GREY_TREAT | ROOF_TANK | DN15 | P1 | acid or brine, at or below 60 C | 31.1 | GREY_TREAT → ROOF_TANK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-NUT-LEACH | NUTRIENT_DOSE | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 39.7 | NUTRIENT_DOSE → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-FEED-01 | HOPPER | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 9.7 | HOPPER → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-DC-EVAP | DRY_COOLER | ATMOS | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | DRY_COOLER → ATMOS, position missing for DRY_COOLER, ATMOS | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-DC-SPRAY | ROOF_TANK | DRY_COOLER | DN15 | P1 | acid or brine, at or below 60 C |  | ROOF_TANK → DRY_COOLER, position missing for DRY_COOLER | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-GW-MAKEUP | GW_INTAKE | ROOF_TANK | DN15 | P1 | acid or brine, at or below 60 C |  | GW_INTAKE → ROOF_TANK, position missing for GW_INTAKE | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-POT-01 | REMIN | ROOF_TANK | DN15 | P1 | acid or brine, at or below 60 C | 24.7 | REMIN → ROOF_TANK, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-UPW-HAB | HDR_UPW | HABITATION | DN50 | P5 | water | 19.1 | HDR_UPW → HABITATION, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |

@@ -3,8 +3,8 @@
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 177,
-  "edge_count": 563,
+  "node_count": 178,
+  "edge_count": 565,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -6966,6 +6966,18 @@
       },
       "continuous_kw": null,
       "class": "hx"
+    },
+    {
+      "unit_id": "ATMOS",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "boundary",
+      "notes": "Atmospheric exchange boundary (bookkeeping, not a process unit): water that leaves the cycle as vapour is booked here - today only the site evaporative rejection spray at DRY_COOLER (AQS-PLAN-011 section 6.2, task X-LOC-13). In does not equal out by design; the unit is exempt from closure like the dock and relief meters.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "equipment_id": "ATMOS"
+      }
     },
     {
       "unit_id": "DRY_COOLER",
@@ -15363,6 +15375,48 @@
       }
     },
     {
+      "stream_id": "IA-DC-EVAP",
+      "from_unit_id": "DRY_COOLER",
+      "to_unit_id": "ATMOS",
+      "phase": "vapour",
+      "presence": "present",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "carries": "evaporated spray water to air",
+      "notes": "The sprayed fraction that evaporates leaves the cycle to the atmosphere. Booked only where the site rejection mode is evaporative; zero elsewhere.",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "note": "closure TF: equals IA-DC-SPRAY where the site mode is evaporative (X-PAR-02 difference-type role) | X-PAR-02 TF: nothing evaporates at the cooler at this site (AQS-PAR-003)."
+      },
+      "from_sector_id": "HEAT",
+      "to_sector_id": "WTR"
+    },
+    {
+      "stream_id": "IA-DC-SPRAY",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "DRY_COOLER",
+      "phase": "liquid",
+      "presence": "present",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "carries": "evaporative spray make-up",
+      "notes": "Spray water the site evaporative rejection consumes (AQS-PLAN-011 section 6.2, X-LOC-13). Rate is booked by the balance only where the site rejection mode is evaporative; zero at air-rejection sites.",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "note": "closure TF: rejected kW x 86400 s x 1000 W/kW / 2.454 MJ per kg (NIST_WEBBOOK) | X-PAR-02 TF: no site evaporative charge: the low-grade loop rejects on air at this site (AQS-PAR-003)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "HEAT"
+    },
+    {
       "stream_id": "IA-GW-MAKEUP",
       "from_unit_id": "GW_INTAKE",
       "to_unit_id": "ROOF_TANK",
@@ -15378,7 +15432,7 @@
       "rate": {
         "value": 0.0,
         "unit": "kg/d",
-        "note": "closure TF: make-up by difference of the roof-tank balance (X-PAR-02 difference-type role)"
+        "note": "closure TF: make-up by difference of the roof-tank balance (X-PAR-02 difference-type role) | X-PAR-02 TF: make-up closed at zero: the atmospheric harvest covers the water cycle at this site (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR"

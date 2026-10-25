@@ -17,15 +17,15 @@ Rule: a unit closes task 09 where every wetted edge touching it carries a wetted
 
 ## 2. Families invoked
 
-- Acid or brine, at or below 60 C (53 edge ends)
+- Acid or brine, at or below 60 C (54 edge ends)
 - Hot leach liquor (44 edge ends)
 - Dry gas, H2/O2/N2/CO2 (38 edge ends)
 - Process vent gas (32 edge ends)
 - Q3/Q4 water loop (20 edge ends)
 - Hydrocarbon product, fuel or wax cut (19 edge ends)
+- Aqueous process liquor (AQS-ASSAY-001 envelope) (14 edge ends)
 - Oxidizer, wet HF or PVDF unit (13 edge ends)
 - Wet acid H₂ + sweep air header (13 edge ends)
-- Aqueous process liquor (AQS-ASSAY-001 envelope) (13 edge ends)
 - Water loops (protective, irrigation, UPW) (13 edge ends)
 - Q1/Q2 thermal oil (12 edge ends)
 - Wet methanol service (11 edge ends)
@@ -333,6 +333,8 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | M1 | 12.1 q3/q4 water loop | 316L loops |
+| IA-DC-EVAP | DRY_COOLER | ATMOS | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
+| IA-DC-SPRAY | ROOF_TANK | DRY_COOLER | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 
 ### ELECTRODE_COAT
 
@@ -1283,6 +1285,7 @@ No wetted piped stream: every edge of this unit is a solids transfer or an elect
 | IA-BED-H2O | ROOF_TANK | GROW_BED | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-HVAC-COND | CRYO_AHU | ROOF_TANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-GREY-RET | GREY_TREAT | ROOF_TANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+| IA-DC-SPRAY | ROOF_TANK | DRY_COOLER | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-GW-MAKEUP | GW_INTAKE | ROOF_TANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-POT-01 | REMIN | ROOF_TANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-NOX-H2O | NOX_SCRUB | ROOF_TANK | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |

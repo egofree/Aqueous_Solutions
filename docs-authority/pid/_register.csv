@@ -33,7 +33,7 @@ CRYO_N2,AQS-PID-001-CRYO_N2,a3270216,docs-authority/pid/CRYO_N2.svg,CRYO,cold_bo
 CRYO_O2,AQS-PID-001-CRYO_O2,30cb5a56,docs-authority/pid/CRYO_O2.svg,CRYO,cold_box,3,4,8,1,2,1,9
 CR_CELL,AQS-PID-001-CR_CELL,914d6658,docs-authority/pid/CR_CELL.svg,FOUNDRY,cell,3,2,0,0,4,0,6
 DRAW,AQS-PID-001-DRAW,089da736,docs-authority/pid/DRAW.svg,FOUNDRY,mill,1,1,0,0,2,0,3
-DRY_COOLER,AQS-PID-001-DRY_COOLER,dc46f02e,docs-authority/pid/DRY_COOLER.svg,HEAT,dry_cooler,2,0,0,0,2,0,3
+DRY_COOLER,AQS-PID-001-DRY_COOLER,00150cbe,docs-authority/pid/DRY_COOLER.svg,HEAT,dry_cooler,3,1,0,0,2,0,5
 ELECTRODE_COAT,AQS-PID-001-ELECTRODE_COAT,023d5235,docs-authority/pid/ELECTRODE_COAT.svg,MFG,coater,2,1,0,0,2,0,4
 EVAP_ACID,AQS-PID-001-EVAP_ACID,939a7c62,docs-authority/pid/EVAP_ACID.svg,DIGESTER,evaporator,2,4,9,0,8,2,6
 EVAP_ACID_VS,AQS-PID-001-EVAP_ACID_VS,78306333,docs-authority/pid/EVAP_ACID_VS.svg,DIGESTER,scrubber,3,3,6,0,9,2,6
@@ -142,7 +142,7 @@ REMIN,AQS-PID-001-REMIN,96f05919,docs-authority/pid/REMIN.svg,WTR,dose,2,2,6,0,6
 RES_HEAT,AQS-PID-001-RES_HEAT,51ec9c4d,docs-authority/pid/RES_HEAT.svg,FOUNDRY,furnace,1,0,0,0,2,0,0
 RF_HEAT,AQS-PID-001-RF_HEAT,709d5299,docs-authority/pid/RF_HEAT.svg,FOUNDRY,furnace,1,0,0,0,1,0,0
 ROLL,AQS-PID-001-ROLL,eb6b167d,docs-authority/pid/ROLL.svg,FOUNDRY,mill,2,1,0,0,2,0,5
-ROOF_TANK,AQS-PID-001-ROOF_TANK,9bf67831,docs-authority/pid/ROOF_TANK.svg,WTR,tank,8,8,21,0,11,1,20
+ROOF_TANK,AQS-PID-001-ROOF_TANK,ed0fd064,docs-authority/pid/ROOF_TANK.svg,WTR,tank,8,9,21,0,11,1,21
 SALT_FEED,AQS-PID-001-SALT_FEED,93a4a3e5,docs-authority/pid/SALT_FEED.svg,DIGESTER,feed,0,1,0,0,2,0,3
 SHELL_BREAK,AQS-PID-001-SHELL_BREAK,da942aaa,docs-authority/pid/SHELL_BREAK.svg,FOUNDRY,separator,2,4,0,0,4,1,7
 SHELL_BUILD,AQS-PID-001-SHELL_BUILD,dd016785,docs-authority/pid/SHELL_BUILD.svg,FOUNDRY,coater,4,1,0,0,3,1,6

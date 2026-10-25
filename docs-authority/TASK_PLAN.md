@@ -26,7 +26,7 @@ This list supersedes `internal/MASTER_PLAN.md` (AQS-PLAN-004) as the list of wor
 
 AQS-PLAN-001 to AQS-PLAN-003, AQS-MFG-001, AQS-REM-001, AQS-REM-BLD-001, AQS-MVS-PLAN-001 and AQS-MVS-CHK-001 are earlier plans kept as history.
 
-The tasks are of two kinds. Cross-cutting tasks (section 7) apply to the plant as a whole and carry identifiers of the form X-GOV-04. Unit tasks (section 8) apply to one unit of the plant. The units are the 176 present nodes of `flow_graph/plant_flow_graph.json`, grouped by system. An accounting node, which records a plant boundary and has no equipment, carries task 01 only.
+The tasks are of two kinds. Cross-cutting tasks (section 7) apply to the plant as a whole and carry identifiers of the form X-GOV-04. Unit tasks (section 8) apply to one unit of the plant. The units are the 177 present nodes of `flow_graph/plant_flow_graph.json`, grouped by system. An accounting node, which records a plant boundary and has no equipment, carries task 01 only.
 
 ## 2. Counts
 
@@ -66,10 +66,10 @@ Table 2.1. Tasks by group
 | OIL | Process (Mass transform) | 195 | 128 |
 | HEAT | Utility / header | 180 | 112 |
 | GAS | Process (Mass transform) | 150 | 98 |
+| WTR | Utility / header | 136 | 87 |
 | MFG | Process (Mass transform) | 150 | 99 |
 | POLYMERS | Process (Mass transform) | 150 | 109 |
 | ELEC | Utility / header | 135 | 88 |
-| WTR | Utility / header | 135 | 87 |
 | GLASS | Process (Mass transform) | 75 | 50 |
 | MEOH | Energy Storage System (Electrochemical) | 75 | 50 |
 | GEO | Utility / header | 45 | 30 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2935** | **2061** |
+| | **Total** | **2936** | **2061** |
 
 ## 3. Triage of open tasks
 
@@ -102,6 +102,7 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
+| desk P1 | 1 |
 | desk P2 | 8 |
 | desk P3 | 33 |
 | desk P4 | 475 |
@@ -2114,8 +2115,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HEAT-DRY_COOLER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DRY_COOLER.md` §1; mass in = out 0 kg/d, 0.0000 kW.
   - [x] HEAT-DRY_COOLER-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: HEAT-DRY_COOLER-01. Evidence: `docs-authority/sizing/DRY_COOLER.md` (AQS-SIZE-DRY_COOLER).
   - [x] HEAT-DRY_COOLER-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: HEAT-DRY_COOLER-01, HEAT-DRY_COOLER-02. Evidence: `docs-authority/pid/DRY_COOLER.svg` (AQS-PID-001).
-  - [x] HEAT-DRY_COOLER-04 Nozzle schedule. Done when: docs-authority/nozzles/DRY_COOLER.csv, one row per edge. Depends: HEAT-DRY_COOLER-03. Evidence: `docs-authority/nozzles/DRY_COOLER.csv` (all 1 process connections listed).
-  - [x] HEAT-DRY_COOLER-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HEAT-DRY_COOLER-04, HEAT-DRY_COOLER-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 2 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] HEAT-DRY_COOLER-04 Nozzle schedule. Done when: docs-authority/nozzles/DRY_COOLER.csv, one row per edge. Depends: HEAT-DRY_COOLER-03. Evidence: `docs-authority/nozzles/DRY_COOLER.csv` (all 3 process connections listed).
+  - [x] HEAT-DRY_COOLER-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HEAT-DRY_COOLER-04, HEAT-DRY_COOLER-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] HEAT-DRY_COOLER-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: HEAT-DRY_COOLER-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] HEAT-DRY_COOLER-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HEAT-DRY_COOLER-02, HEAT-DRY_COOLER-03. Evidence: `docs-authority/duties/DRY_COOLER.md` §6 (C7 closed on MASTER_PLAN).
   - [x] HEAT-DRY_COOLER-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: HEAT-DRY_COOLER-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -2449,6 +2450,155 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-RELIEF_H2-13 Fabrication route. Done when: docs-authority/fab/RELIEF_H2.md. Depends: GAS-RELIEF_H2-10, GAS-RELIEF_H2-12. Evidence: `docs-authority/fab/RELIEF_H2.md` (study route).
   - [ ] GAS-RELIEF_H2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: GAS-RELIEF_H2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] GAS-RELIEF_H2-15 Test and commission. Done when: test procedure and acceptance record. Depends: GAS-RELIEF_H2-14, X-COM-01. Triage: hardware.
+
+### WTR. Utility / header
+
+- **WTR-ATMOS** (boundary, sector WTR)
+  - [ ] WTR-ATMOS-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Triage: desk P1.
+- **WTR-BLACK_DIGEST** (digest, sector WTR)
+  - [x] WTR-BLACK_DIGEST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BLACK_DIGEST.md` §1; mass in = out 22.72 kg/d, 0.1052 kW.
+  - [x] WTR-BLACK_DIGEST-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-BLACK_DIGEST-01. Evidence: `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063).
+  - [x] WTR-BLACK_DIGEST-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-BLACK_DIGEST-01, WTR-BLACK_DIGEST-02. Evidence: `docs-authority/pid/BLACK_DIGEST.svg` (AQS-PID-001).
+  - [x] WTR-BLACK_DIGEST-04 Nozzle schedule. Done when: docs-authority/nozzles/BLACK_DIGEST.csv, one row per edge. Depends: WTR-BLACK_DIGEST-03. Evidence: `docs-authority/nozzles/BLACK_DIGEST.csv` (all 10 process connections listed).
+  - [x] WTR-BLACK_DIGEST-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-BLACK_DIGEST-04, WTR-BLACK_DIGEST-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 13 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] WTR-BLACK_DIGEST-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-BLACK_DIGEST-02. Triage: desk P3.
+  - [x] WTR-BLACK_DIGEST-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-BLACK_DIGEST-02, WTR-BLACK_DIGEST-03. Evidence: `docs-authority/duties/BLACK_DIGEST.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-BLACK_DIGEST-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-BLACK_DIGEST-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
+  - [x] WTR-BLACK_DIGEST-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-BLACK_DIGEST-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-BLACK_DIGEST-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BLACK_DIGEST/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-BLACK_DIGEST-02, WTR-BLACK_DIGEST-04, WTR-BLACK_DIGEST-06, WTR-BLACK_DIGEST-09. Status: partial: M2 at `models/mfg/BLACK_DIGEST/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
+  - [ ] WTR-BLACK_DIGEST-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-BLACK_DIGEST-10, X-DWG-01. Triage: desk P4.
+  - [x] WTR-BLACK_DIGEST-12 BOM. Done when: models/mfg/BLACK_DIGEST/bom.csv. Depends: WTR-BLACK_DIGEST-10. Evidence: `models/mfg/BLACK_DIGEST/bom.csv`.
+  - [x] WTR-BLACK_DIGEST-13 Fabrication route. Done when: docs-authority/fab/BLACK_DIGEST.md. Depends: WTR-BLACK_DIGEST-10, WTR-BLACK_DIGEST-12. Evidence: `docs-authority/fab/BLACK_DIGEST.md` (study route).
+  - [ ] WTR-BLACK_DIGEST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BLACK_DIGEST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-BLACK_DIGEST-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-BLACK_DIGEST-14, X-COM-01. Triage: hardware.
+- **WTR-BMED_UPW_POLISH** (skid, sector WTR)
+  - [x] WTR-BMED_UPW_POLISH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §1; mass in = out 308.5 kg/d, 0.0180 kW.
+  - [x] WTR-BMED_UPW_POLISH-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-BMED_UPW_POLISH-01. Evidence: `docs-authority/sizing/UPW_POLISH.md` (AQS-DUTY-070).
+  - [x] WTR-BMED_UPW_POLISH-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-BMED_UPW_POLISH-01, WTR-BMED_UPW_POLISH-02. Evidence: `docs-authority/pid/BMED_UPW_POLISH.svg` (AQS-PID-001).
+  - [x] WTR-BMED_UPW_POLISH-04 Nozzle schedule. Done when: docs-authority/nozzles/BMED_UPW_POLISH.csv, one row per edge. Depends: WTR-BMED_UPW_POLISH-03. Evidence: `docs-authority/nozzles/BMED_UPW_POLISH.csv` (all 5 process connections listed).
+  - [x] WTR-BMED_UPW_POLISH-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-BMED_UPW_POLISH-04, WTR-BMED_UPW_POLISH-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] WTR-BMED_UPW_POLISH-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-BMED_UPW_POLISH-02. Triage: desk P3.
+  - [x] WTR-BMED_UPW_POLISH-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-BMED_UPW_POLISH-02, WTR-BMED_UPW_POLISH-03. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-BMED_UPW_POLISH-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-BMED_UPW_POLISH-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (8 loops; AQS-CTL-001).
+  - [x] WTR-BMED_UPW_POLISH-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-BMED_UPW_POLISH-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-BMED_UPW_POLISH-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BMED_UPW_POLISH/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-BMED_UPW_POLISH-02, WTR-BMED_UPW_POLISH-04, WTR-BMED_UPW_POLISH-06, WTR-BMED_UPW_POLISH-09. Status: partial: envelope `cad/stl/BMED_UPW_POLISH.stl`. Triage: desk P4.
+  - [ ] WTR-BMED_UPW_POLISH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-BMED_UPW_POLISH-10, X-DWG-01. Triage: desk P4.
+  - [ ] WTR-BMED_UPW_POLISH-12 BOM. Done when: models/mfg/BMED_UPW_POLISH/bom.csv. Depends: WTR-BMED_UPW_POLISH-10. Triage: desk P4.
+  - [x] WTR-BMED_UPW_POLISH-13 Fabrication route. Done when: docs-authority/fab/BMED_UPW_POLISH.md. Depends: WTR-BMED_UPW_POLISH-10, WTR-BMED_UPW_POLISH-12. Evidence: `docs-authority/fab/BMED_UPW_POLISH.md` (study route).
+  - [ ] WTR-BMED_UPW_POLISH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BMED_UPW_POLISH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-BMED_UPW_POLISH-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-BMED_UPW_POLISH-14, X-COM-01. Triage: hardware.
+- **WTR-CATCH_TANK** (tank, sector WTR)
+  - [x] WTR-CATCH_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CATCH_TANK.md` §1; mass in = out 0 kg/d, 0.0000 kW.
+  - [x] WTR-CATCH_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-CATCH_TANK-01. Evidence: `docs-authority/WATER_TOWER.md` (AQS-BLD-014).
+  - [x] WTR-CATCH_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-CATCH_TANK-01, WTR-CATCH_TANK-02. Evidence: `docs-authority/pid/CATCH_TANK.svg` (AQS-PID-001).
+  - [x] WTR-CATCH_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/CATCH_TANK.csv, one row per edge. Depends: WTR-CATCH_TANK-03. Evidence: `docs-authority/nozzles/CATCH_TANK.csv` (all 2 process connections listed).
+  - [x] WTR-CATCH_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-CATCH_TANK-04, WTR-CATCH_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] WTR-CATCH_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-CATCH_TANK-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] WTR-CATCH_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-CATCH_TANK-02, WTR-CATCH_TANK-03. Evidence: `docs-authority/duties/CATCH_TANK.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-CATCH_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-CATCH_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
+  - [x] WTR-CATCH_TANK-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-CATCH_TANK-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-CATCH_TANK-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/CATCH_TANK/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-CATCH_TANK-02, WTR-CATCH_TANK-04, WTR-CATCH_TANK-06, WTR-CATCH_TANK-09. Status: partial: envelope `cad/stl/CATCH_TANK.stl`. Triage: desk P4.
+  - [ ] WTR-CATCH_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-CATCH_TANK-10, X-DWG-01. Triage: desk P4.
+  - [ ] WTR-CATCH_TANK-12 BOM. Done when: models/mfg/CATCH_TANK/bom.csv. Depends: WTR-CATCH_TANK-10. Triage: desk P4.
+  - [x] WTR-CATCH_TANK-13 Fabrication route. Done when: docs-authority/fab/CATCH_TANK.md. Depends: WTR-CATCH_TANK-10, WTR-CATCH_TANK-12. Evidence: `docs-authority/fab/CATCH_TANK.md` (study route).
+  - [ ] WTR-CATCH_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-CATCH_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-CATCH_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-CATCH_TANK-14, X-COM-01. Triage: hardware.
+- **WTR-GREY_TREAT** (treat, sector WTR)
+  - [x] WTR-GREY_TREAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GREY_TREAT.md` §1; mass in = out 349.1 kg/d, 0.0000 kW.
+  - [x] WTR-GREY_TREAT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-GREY_TREAT-01. Evidence: `docs-authority/sizing/GREY_TREAT.md` (AQS-SIZE-GREY_TREAT).
+  - [x] WTR-GREY_TREAT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-GREY_TREAT-01, WTR-GREY_TREAT-02. Evidence: `docs-authority/pid/GREY_TREAT.svg` (AQS-PID-001).
+  - [x] WTR-GREY_TREAT-04 Nozzle schedule. Done when: docs-authority/nozzles/GREY_TREAT.csv, one row per edge. Depends: WTR-GREY_TREAT-03. Evidence: `docs-authority/nozzles/GREY_TREAT.csv` (all 6 process connections listed).
+  - [x] WTR-GREY_TREAT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-GREY_TREAT-04, WTR-GREY_TREAT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] WTR-GREY_TREAT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-GREY_TREAT-02. Triage: desk P3.
+  - [x] WTR-GREY_TREAT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-GREY_TREAT-02, WTR-GREY_TREAT-03. Evidence: `docs-authority/duties/GREY_TREAT.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-GREY_TREAT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-GREY_TREAT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
+  - [x] WTR-GREY_TREAT-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-GREY_TREAT-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-GREY_TREAT-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GREY_TREAT/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-GREY_TREAT-02, WTR-GREY_TREAT-04, WTR-GREY_TREAT-06, WTR-GREY_TREAT-09. Status: partial: envelope `cad/stl/GREY_TREAT.stl`. Triage: desk P4.
+  - [ ] WTR-GREY_TREAT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-GREY_TREAT-10, X-DWG-01. Triage: desk P4.
+  - [ ] WTR-GREY_TREAT-12 BOM. Done when: models/mfg/GREY_TREAT/bom.csv. Depends: WTR-GREY_TREAT-10. Triage: desk P4.
+  - [x] WTR-GREY_TREAT-13 Fabrication route. Done when: docs-authority/fab/GREY_TREAT.md. Depends: WTR-GREY_TREAT-10, WTR-GREY_TREAT-12. Evidence: `docs-authority/fab/GREY_TREAT.md` (study route).
+  - [ ] WTR-GREY_TREAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GREY_TREAT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-GREY_TREAT-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-GREY_TREAT-14, X-COM-01. Triage: hardware.
+- **WTR-GW_INTAKE** (intake, sector WTR)
+  - [x] WTR-GW_INTAKE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GW_INTAKE.md` §1; mass in = out 0 kg/d, 0.0000 kW.
+  - [x] WTR-GW_INTAKE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-GW_INTAKE-01. Evidence: `docs-authority/sizing/GW_INTAKE.md` (AQS-SIZE-GW_INTAKE).
+  - [x] WTR-GW_INTAKE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-GW_INTAKE-01, WTR-GW_INTAKE-02. Evidence: `docs-authority/pid/GW_INTAKE.svg` (AQS-PID-001).
+  - [x] WTR-GW_INTAKE-04 Nozzle schedule. Done when: docs-authority/nozzles/GW_INTAKE.csv, one row per edge. Depends: WTR-GW_INTAKE-03. Evidence: `docs-authority/nozzles/GW_INTAKE.csv` (all 1 process connections listed).
+  - [x] WTR-GW_INTAKE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-GW_INTAKE-04, WTR-GW_INTAKE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 1 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] WTR-GW_INTAKE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-GW_INTAKE-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] WTR-GW_INTAKE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-GW_INTAKE-02, WTR-GW_INTAKE-03. Evidence: `docs-authority/duties/GW_INTAKE.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-GW_INTAKE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-GW_INTAKE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
+  - [x] WTR-GW_INTAKE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-GW_INTAKE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-GW_INTAKE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GW_INTAKE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-GW_INTAKE-02, WTR-GW_INTAKE-04, WTR-GW_INTAKE-06, WTR-GW_INTAKE-09. Status: partial: envelope `cad/stl/GW_INTAKE.stl`. Triage: desk P4.
+  - [ ] WTR-GW_INTAKE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-GW_INTAKE-10, X-DWG-01. Triage: desk P4.
+  - [ ] WTR-GW_INTAKE-12 BOM. Done when: models/mfg/GW_INTAKE/bom.csv. Depends: WTR-GW_INTAKE-10. Triage: desk P4.
+  - [x] WTR-GW_INTAKE-13 Fabrication route. Done when: docs-authority/fab/GW_INTAKE.md. Depends: WTR-GW_INTAKE-10, WTR-GW_INTAKE-12. Evidence: `docs-authority/fab/GW_INTAKE.md` (study route).
+  - [ ] WTR-GW_INTAKE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GW_INTAKE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-GW_INTAKE-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-GW_INTAKE-14, X-COM-01. Triage: hardware.
+- **WTR-HDR_UPW** (header, sector WTR)
+  - [x] WTR-HDR_UPW-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_UPW.md` §1; mass in = out 67.3 kg/d, 0.0000 kW.
+  - [x] WTR-HDR_UPW-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-HDR_UPW-01. Evidence: `docs-authority/sizing/HEADERS.md` (AQS-DUTY-075).
+  - [x] WTR-HDR_UPW-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-HDR_UPW-01, WTR-HDR_UPW-02. Evidence: `docs-authority/pid/HDR_UPW.svg` (AQS-PID-001).
+  - [x] WTR-HDR_UPW-04 Nozzle schedule. Done when: docs-authority/nozzles/HDR_UPW.csv, one row per edge. Depends: WTR-HDR_UPW-03. Evidence: `docs-authority/nozzles/HDR_UPW.csv` (all 3 process connections listed).
+  - [x] WTR-HDR_UPW-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-HDR_UPW-04, WTR-HDR_UPW-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] WTR-HDR_UPW-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-HDR_UPW-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] WTR-HDR_UPW-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-HDR_UPW-02, WTR-HDR_UPW-03. Evidence: `docs-authority/duties/HDR_UPW.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-HDR_UPW-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-HDR_UPW-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] WTR-HDR_UPW-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-HDR_UPW-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-HDR_UPW-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/HDR_UPW/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-HDR_UPW-02, WTR-HDR_UPW-04, WTR-HDR_UPW-06, WTR-HDR_UPW-09. Status: partial: envelope `cad/stl/HDR_UPW.stl`. Triage: desk P4.
+  - [ ] WTR-HDR_UPW-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-HDR_UPW-10, X-DWG-01. Triage: desk P4.
+  - [ ] WTR-HDR_UPW-12 BOM. Done when: models/mfg/HDR_UPW/bom.csv. Depends: WTR-HDR_UPW-10. Triage: desk P4.
+  - [x] WTR-HDR_UPW-13 Fabrication route. Done when: docs-authority/fab/HDR_UPW.md. Depends: WTR-HDR_UPW-10, WTR-HDR_UPW-12. Evidence: `docs-authority/fab/HDR_UPW.md` (study route).
+  - [ ] WTR-HDR_UPW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-HDR_UPW-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-HDR_UPW-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-HDR_UPW-14, X-COM-01. Triage: hardware.
+- **WTR-REMIN** (dose, sector WTR)
+  - [x] WTR-REMIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REMIN.md` §1; mass in = out 175.2 kg/d, 0.0460 kW.
+  - [x] WTR-REMIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-REMIN-01. Evidence: `docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064).
+  - [x] WTR-REMIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-REMIN-01, WTR-REMIN-02. Evidence: `docs-authority/pid/REMIN.svg` (AQS-PID-001).
+  - [x] WTR-REMIN-04 Nozzle schedule. Done when: docs-authority/nozzles/REMIN.csv, one row per edge. Depends: WTR-REMIN-03. Evidence: `docs-authority/nozzles/REMIN.csv` (all 3 process connections listed).
+  - [x] WTR-REMIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-REMIN-04, WTR-REMIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] WTR-REMIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-REMIN-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] WTR-REMIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-REMIN-02, WTR-REMIN-03. Evidence: `docs-authority/duties/REMIN.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-REMIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-REMIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (6 loops; AQS-CTL-001).
+  - [x] WTR-REMIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-REMIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-REMIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/REMIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-REMIN-02, WTR-REMIN-04, WTR-REMIN-06, WTR-REMIN-09. Status: partial: envelope `cad/stl/REMIN.stl`. Triage: desk P4.
+  - [ ] WTR-REMIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-REMIN-10, X-DWG-01. Triage: desk P4.
+  - [ ] WTR-REMIN-12 BOM. Done when: models/mfg/REMIN/bom.csv. Depends: WTR-REMIN-10. Triage: desk P4.
+  - [x] WTR-REMIN-13 Fabrication route. Done when: docs-authority/fab/REMIN.md. Depends: WTR-REMIN-10, WTR-REMIN-12. Evidence: `docs-authority/fab/REMIN.md` (study route).
+  - [ ] WTR-REMIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-REMIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-REMIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-REMIN-14, X-COM-01. Triage: hardware.
+- **WTR-ROOF_TANK** (tank, sector WTR)
+  - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; mass in = out 480.9 kg/d, 0.0000 kW.
+  - [x] WTR-ROOF_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-ROOF_TANK-01. Evidence: `docs-authority/WATER_TOWER.md` (AQS-BLD-014).
+  - [x] WTR-ROOF_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-ROOF_TANK-01, WTR-ROOF_TANK-02. Evidence: `docs-authority/pid/ROOF_TANK.svg` (AQS-PID-001).
+  - [x] WTR-ROOF_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/ROOF_TANK.csv, one row per edge. Depends: WTR-ROOF_TANK-03. Evidence: `docs-authority/nozzles/ROOF_TANK.csv` (all 15 process connections listed).
+  - [x] WTR-ROOF_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-ROOF_TANK-04, WTR-ROOF_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 17 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] WTR-ROOF_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-ROOF_TANK-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] WTR-ROOF_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-ROOF_TANK-02, WTR-ROOF_TANK-03. Evidence: `docs-authority/duties/ROOF_TANK.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-ROOF_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-ROOF_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (11 loops; AQS-CTL-001).
+  - [x] WTR-ROOF_TANK-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-ROOF_TANK-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-ROOF_TANK-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/ROOF_TANK/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-ROOF_TANK-02, WTR-ROOF_TANK-04, WTR-ROOF_TANK-06, WTR-ROOF_TANK-09. Status: partial: envelope `cad/stl/ROOF_TANK.stl`. Triage: desk P4.
+  - [ ] WTR-ROOF_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-ROOF_TANK-10, X-DWG-01. Triage: desk P4.
+  - [ ] WTR-ROOF_TANK-12 BOM. Done when: models/mfg/ROOF_TANK/bom.csv. Depends: WTR-ROOF_TANK-10. Triage: desk P4.
+  - [x] WTR-ROOF_TANK-13 Fabrication route. Done when: docs-authority/fab/ROOF_TANK.md. Depends: WTR-ROOF_TANK-10, WTR-ROOF_TANK-12. Evidence: `docs-authority/fab/ROOF_TANK.md` (study route).
+  - [ ] WTR-ROOF_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-ROOF_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-ROOF_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-ROOF_TANK-14, X-COM-01. Triage: hardware.
+- **WTR-VCD_TRAIN** (evaporator, sector WTR)
+  - [x] WTR-VCD_TRAIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VCD_TRAIN.md` §1; mass in = out 333.1 kg/d, 0.2359 kW.
+  - [x] WTR-VCD_TRAIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-VCD_TRAIN-01. Evidence: `docs-authority/sizing/VCD_TRAIN.md` (AQS-SIZE-VCD_TRAIN).
+  - [x] WTR-VCD_TRAIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-VCD_TRAIN-01, WTR-VCD_TRAIN-02. Evidence: `docs-authority/pid/VCD_TRAIN.svg` (AQS-PID-001).
+  - [x] WTR-VCD_TRAIN-04 Nozzle schedule. Done when: docs-authority/nozzles/VCD_TRAIN.csv, one row per edge. Depends: WTR-VCD_TRAIN-03. Evidence: `docs-authority/nozzles/VCD_TRAIN.csv` (all 9 process connections listed).
+  - [x] WTR-VCD_TRAIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-VCD_TRAIN-04, WTR-VCD_TRAIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 9 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] WTR-VCD_TRAIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-VCD_TRAIN-02. Triage: desk P3.
+  - [x] WTR-VCD_TRAIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-VCD_TRAIN-02, WTR-VCD_TRAIN-03. Evidence: `docs-authority/duties/VCD_TRAIN.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-VCD_TRAIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-VCD_TRAIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
+  - [x] WTR-VCD_TRAIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-VCD_TRAIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-VCD_TRAIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/VCD_TRAIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-VCD_TRAIN-02, WTR-VCD_TRAIN-04, WTR-VCD_TRAIN-06, WTR-VCD_TRAIN-09. Status: partial: envelope `cad/stl/VCD_TRAIN.stl`. Triage: desk P4.
+  - [ ] WTR-VCD_TRAIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-VCD_TRAIN-10, X-DWG-01. Triage: desk P4.
+  - [ ] WTR-VCD_TRAIN-12 BOM. Done when: models/mfg/VCD_TRAIN/bom.csv. Depends: WTR-VCD_TRAIN-10. Triage: desk P4.
+  - [x] WTR-VCD_TRAIN-13 Fabrication route. Done when: docs-authority/fab/VCD_TRAIN.md. Depends: WTR-VCD_TRAIN-10, WTR-VCD_TRAIN-12. Evidence: `docs-authority/fab/VCD_TRAIN.md` (study route).
+  - [ ] WTR-VCD_TRAIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-VCD_TRAIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-VCD_TRAIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-VCD_TRAIN-14, X-COM-01. Triage: hardware.
 
 ### MFG. Process (Mass transform)
 
@@ -2922,153 +3072,6 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-ZNBR2_BR2_REGEN-13 Fabrication route. Done when: docs-authority/fab/ZNBR2_BR2_REGEN.md. Depends: ELEC-ZNBR2_BR2_REGEN-10, ELEC-ZNBR2_BR2_REGEN-12. Evidence: `docs-authority/fab/ZNBR2_BR2_REGEN.md` (study route).
   - [ ] ELEC-ZNBR2_BR2_REGEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2_BR2_REGEN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-ZNBR2_BR2_REGEN-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-ZNBR2_BR2_REGEN-14, X-COM-01. Triage: hardware.
-
-### WTR. Utility / header
-
-- **WTR-BLACK_DIGEST** (digest, sector WTR)
-  - [x] WTR-BLACK_DIGEST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BLACK_DIGEST.md` §1; mass in = out 22.72 kg/d, 0.1052 kW.
-  - [x] WTR-BLACK_DIGEST-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-BLACK_DIGEST-01. Evidence: `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063).
-  - [x] WTR-BLACK_DIGEST-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-BLACK_DIGEST-01, WTR-BLACK_DIGEST-02. Evidence: `docs-authority/pid/BLACK_DIGEST.svg` (AQS-PID-001).
-  - [x] WTR-BLACK_DIGEST-04 Nozzle schedule. Done when: docs-authority/nozzles/BLACK_DIGEST.csv, one row per edge. Depends: WTR-BLACK_DIGEST-03. Evidence: `docs-authority/nozzles/BLACK_DIGEST.csv` (all 10 process connections listed).
-  - [x] WTR-BLACK_DIGEST-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-BLACK_DIGEST-04, WTR-BLACK_DIGEST-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 13 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] WTR-BLACK_DIGEST-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-BLACK_DIGEST-02. Triage: desk P3.
-  - [x] WTR-BLACK_DIGEST-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-BLACK_DIGEST-02, WTR-BLACK_DIGEST-03. Evidence: `docs-authority/duties/BLACK_DIGEST.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] WTR-BLACK_DIGEST-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-BLACK_DIGEST-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
-  - [x] WTR-BLACK_DIGEST-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-BLACK_DIGEST-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] WTR-BLACK_DIGEST-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BLACK_DIGEST/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-BLACK_DIGEST-02, WTR-BLACK_DIGEST-04, WTR-BLACK_DIGEST-06, WTR-BLACK_DIGEST-09. Status: partial: M2 at `models/mfg/BLACK_DIGEST/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
-  - [ ] WTR-BLACK_DIGEST-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-BLACK_DIGEST-10, X-DWG-01. Triage: desk P4.
-  - [x] WTR-BLACK_DIGEST-12 BOM. Done when: models/mfg/BLACK_DIGEST/bom.csv. Depends: WTR-BLACK_DIGEST-10. Evidence: `models/mfg/BLACK_DIGEST/bom.csv`.
-  - [x] WTR-BLACK_DIGEST-13 Fabrication route. Done when: docs-authority/fab/BLACK_DIGEST.md. Depends: WTR-BLACK_DIGEST-10, WTR-BLACK_DIGEST-12. Evidence: `docs-authority/fab/BLACK_DIGEST.md` (study route).
-  - [ ] WTR-BLACK_DIGEST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BLACK_DIGEST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] WTR-BLACK_DIGEST-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-BLACK_DIGEST-14, X-COM-01. Triage: hardware.
-- **WTR-BMED_UPW_POLISH** (skid, sector WTR)
-  - [x] WTR-BMED_UPW_POLISH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §1; mass in = out 308.5 kg/d, 0.0180 kW.
-  - [x] WTR-BMED_UPW_POLISH-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-BMED_UPW_POLISH-01. Evidence: `docs-authority/sizing/UPW_POLISH.md` (AQS-DUTY-070).
-  - [x] WTR-BMED_UPW_POLISH-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-BMED_UPW_POLISH-01, WTR-BMED_UPW_POLISH-02. Evidence: `docs-authority/pid/BMED_UPW_POLISH.svg` (AQS-PID-001).
-  - [x] WTR-BMED_UPW_POLISH-04 Nozzle schedule. Done when: docs-authority/nozzles/BMED_UPW_POLISH.csv, one row per edge. Depends: WTR-BMED_UPW_POLISH-03. Evidence: `docs-authority/nozzles/BMED_UPW_POLISH.csv` (all 5 process connections listed).
-  - [x] WTR-BMED_UPW_POLISH-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-BMED_UPW_POLISH-04, WTR-BMED_UPW_POLISH-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] WTR-BMED_UPW_POLISH-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-BMED_UPW_POLISH-02. Triage: desk P3.
-  - [x] WTR-BMED_UPW_POLISH-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-BMED_UPW_POLISH-02, WTR-BMED_UPW_POLISH-03. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] WTR-BMED_UPW_POLISH-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-BMED_UPW_POLISH-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (8 loops; AQS-CTL-001).
-  - [x] WTR-BMED_UPW_POLISH-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-BMED_UPW_POLISH-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] WTR-BMED_UPW_POLISH-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BMED_UPW_POLISH/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-BMED_UPW_POLISH-02, WTR-BMED_UPW_POLISH-04, WTR-BMED_UPW_POLISH-06, WTR-BMED_UPW_POLISH-09. Status: partial: envelope `cad/stl/BMED_UPW_POLISH.stl`. Triage: desk P4.
-  - [ ] WTR-BMED_UPW_POLISH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-BMED_UPW_POLISH-10, X-DWG-01. Triage: desk P4.
-  - [ ] WTR-BMED_UPW_POLISH-12 BOM. Done when: models/mfg/BMED_UPW_POLISH/bom.csv. Depends: WTR-BMED_UPW_POLISH-10. Triage: desk P4.
-  - [x] WTR-BMED_UPW_POLISH-13 Fabrication route. Done when: docs-authority/fab/BMED_UPW_POLISH.md. Depends: WTR-BMED_UPW_POLISH-10, WTR-BMED_UPW_POLISH-12. Evidence: `docs-authority/fab/BMED_UPW_POLISH.md` (study route).
-  - [ ] WTR-BMED_UPW_POLISH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BMED_UPW_POLISH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] WTR-BMED_UPW_POLISH-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-BMED_UPW_POLISH-14, X-COM-01. Triage: hardware.
-- **WTR-CATCH_TANK** (tank, sector WTR)
-  - [x] WTR-CATCH_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CATCH_TANK.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] WTR-CATCH_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-CATCH_TANK-01. Evidence: `docs-authority/WATER_TOWER.md` (AQS-BLD-014).
-  - [x] WTR-CATCH_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-CATCH_TANK-01, WTR-CATCH_TANK-02. Evidence: `docs-authority/pid/CATCH_TANK.svg` (AQS-PID-001).
-  - [x] WTR-CATCH_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/CATCH_TANK.csv, one row per edge. Depends: WTR-CATCH_TANK-03. Evidence: `docs-authority/nozzles/CATCH_TANK.csv` (all 2 process connections listed).
-  - [x] WTR-CATCH_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-CATCH_TANK-04, WTR-CATCH_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] WTR-CATCH_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-CATCH_TANK-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] WTR-CATCH_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-CATCH_TANK-02, WTR-CATCH_TANK-03. Evidence: `docs-authority/duties/CATCH_TANK.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] WTR-CATCH_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-CATCH_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
-  - [x] WTR-CATCH_TANK-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-CATCH_TANK-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] WTR-CATCH_TANK-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/CATCH_TANK/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-CATCH_TANK-02, WTR-CATCH_TANK-04, WTR-CATCH_TANK-06, WTR-CATCH_TANK-09. Status: partial: envelope `cad/stl/CATCH_TANK.stl`. Triage: desk P4.
-  - [ ] WTR-CATCH_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-CATCH_TANK-10, X-DWG-01. Triage: desk P4.
-  - [ ] WTR-CATCH_TANK-12 BOM. Done when: models/mfg/CATCH_TANK/bom.csv. Depends: WTR-CATCH_TANK-10. Triage: desk P4.
-  - [x] WTR-CATCH_TANK-13 Fabrication route. Done when: docs-authority/fab/CATCH_TANK.md. Depends: WTR-CATCH_TANK-10, WTR-CATCH_TANK-12. Evidence: `docs-authority/fab/CATCH_TANK.md` (study route).
-  - [ ] WTR-CATCH_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-CATCH_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] WTR-CATCH_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-CATCH_TANK-14, X-COM-01. Triage: hardware.
-- **WTR-GREY_TREAT** (treat, sector WTR)
-  - [x] WTR-GREY_TREAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GREY_TREAT.md` §1; mass in = out 349.1 kg/d, 0.0000 kW.
-  - [x] WTR-GREY_TREAT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-GREY_TREAT-01. Evidence: `docs-authority/sizing/GREY_TREAT.md` (AQS-SIZE-GREY_TREAT).
-  - [x] WTR-GREY_TREAT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-GREY_TREAT-01, WTR-GREY_TREAT-02. Evidence: `docs-authority/pid/GREY_TREAT.svg` (AQS-PID-001).
-  - [x] WTR-GREY_TREAT-04 Nozzle schedule. Done when: docs-authority/nozzles/GREY_TREAT.csv, one row per edge. Depends: WTR-GREY_TREAT-03. Evidence: `docs-authority/nozzles/GREY_TREAT.csv` (all 6 process connections listed).
-  - [x] WTR-GREY_TREAT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-GREY_TREAT-04, WTR-GREY_TREAT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] WTR-GREY_TREAT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-GREY_TREAT-02. Triage: desk P3.
-  - [x] WTR-GREY_TREAT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-GREY_TREAT-02, WTR-GREY_TREAT-03. Evidence: `docs-authority/duties/GREY_TREAT.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] WTR-GREY_TREAT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-GREY_TREAT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
-  - [x] WTR-GREY_TREAT-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-GREY_TREAT-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] WTR-GREY_TREAT-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GREY_TREAT/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-GREY_TREAT-02, WTR-GREY_TREAT-04, WTR-GREY_TREAT-06, WTR-GREY_TREAT-09. Status: partial: envelope `cad/stl/GREY_TREAT.stl`. Triage: desk P4.
-  - [ ] WTR-GREY_TREAT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-GREY_TREAT-10, X-DWG-01. Triage: desk P4.
-  - [ ] WTR-GREY_TREAT-12 BOM. Done when: models/mfg/GREY_TREAT/bom.csv. Depends: WTR-GREY_TREAT-10. Triage: desk P4.
-  - [x] WTR-GREY_TREAT-13 Fabrication route. Done when: docs-authority/fab/GREY_TREAT.md. Depends: WTR-GREY_TREAT-10, WTR-GREY_TREAT-12. Evidence: `docs-authority/fab/GREY_TREAT.md` (study route).
-  - [ ] WTR-GREY_TREAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GREY_TREAT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] WTR-GREY_TREAT-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-GREY_TREAT-14, X-COM-01. Triage: hardware.
-- **WTR-GW_INTAKE** (intake, sector WTR)
-  - [x] WTR-GW_INTAKE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GW_INTAKE.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] WTR-GW_INTAKE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-GW_INTAKE-01. Evidence: `docs-authority/sizing/GW_INTAKE.md` (AQS-SIZE-GW_INTAKE).
-  - [x] WTR-GW_INTAKE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-GW_INTAKE-01, WTR-GW_INTAKE-02. Evidence: `docs-authority/pid/GW_INTAKE.svg` (AQS-PID-001).
-  - [x] WTR-GW_INTAKE-04 Nozzle schedule. Done when: docs-authority/nozzles/GW_INTAKE.csv, one row per edge. Depends: WTR-GW_INTAKE-03. Evidence: `docs-authority/nozzles/GW_INTAKE.csv` (all 1 process connections listed).
-  - [x] WTR-GW_INTAKE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-GW_INTAKE-04, WTR-GW_INTAKE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 1 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] WTR-GW_INTAKE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-GW_INTAKE-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] WTR-GW_INTAKE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-GW_INTAKE-02, WTR-GW_INTAKE-03. Evidence: `docs-authority/duties/GW_INTAKE.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] WTR-GW_INTAKE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-GW_INTAKE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
-  - [x] WTR-GW_INTAKE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-GW_INTAKE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] WTR-GW_INTAKE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GW_INTAKE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-GW_INTAKE-02, WTR-GW_INTAKE-04, WTR-GW_INTAKE-06, WTR-GW_INTAKE-09. Status: partial: envelope `cad/stl/GW_INTAKE.stl`. Triage: desk P4.
-  - [ ] WTR-GW_INTAKE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-GW_INTAKE-10, X-DWG-01. Triage: desk P4.
-  - [ ] WTR-GW_INTAKE-12 BOM. Done when: models/mfg/GW_INTAKE/bom.csv. Depends: WTR-GW_INTAKE-10. Triage: desk P4.
-  - [x] WTR-GW_INTAKE-13 Fabrication route. Done when: docs-authority/fab/GW_INTAKE.md. Depends: WTR-GW_INTAKE-10, WTR-GW_INTAKE-12. Evidence: `docs-authority/fab/GW_INTAKE.md` (study route).
-  - [ ] WTR-GW_INTAKE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GW_INTAKE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] WTR-GW_INTAKE-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-GW_INTAKE-14, X-COM-01. Triage: hardware.
-- **WTR-HDR_UPW** (header, sector WTR)
-  - [x] WTR-HDR_UPW-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_UPW.md` §1; mass in = out 67.3 kg/d, 0.0000 kW.
-  - [x] WTR-HDR_UPW-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-HDR_UPW-01. Evidence: `docs-authority/sizing/HEADERS.md` (AQS-DUTY-075).
-  - [x] WTR-HDR_UPW-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-HDR_UPW-01, WTR-HDR_UPW-02. Evidence: `docs-authority/pid/HDR_UPW.svg` (AQS-PID-001).
-  - [x] WTR-HDR_UPW-04 Nozzle schedule. Done when: docs-authority/nozzles/HDR_UPW.csv, one row per edge. Depends: WTR-HDR_UPW-03. Evidence: `docs-authority/nozzles/HDR_UPW.csv` (all 3 process connections listed).
-  - [x] WTR-HDR_UPW-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-HDR_UPW-04, WTR-HDR_UPW-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] WTR-HDR_UPW-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-HDR_UPW-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] WTR-HDR_UPW-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-HDR_UPW-02, WTR-HDR_UPW-03. Evidence: `docs-authority/duties/HDR_UPW.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] WTR-HDR_UPW-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-HDR_UPW-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] WTR-HDR_UPW-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-HDR_UPW-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] WTR-HDR_UPW-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/HDR_UPW/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-HDR_UPW-02, WTR-HDR_UPW-04, WTR-HDR_UPW-06, WTR-HDR_UPW-09. Status: partial: envelope `cad/stl/HDR_UPW.stl`. Triage: desk P4.
-  - [ ] WTR-HDR_UPW-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-HDR_UPW-10, X-DWG-01. Triage: desk P4.
-  - [ ] WTR-HDR_UPW-12 BOM. Done when: models/mfg/HDR_UPW/bom.csv. Depends: WTR-HDR_UPW-10. Triage: desk P4.
-  - [x] WTR-HDR_UPW-13 Fabrication route. Done when: docs-authority/fab/HDR_UPW.md. Depends: WTR-HDR_UPW-10, WTR-HDR_UPW-12. Evidence: `docs-authority/fab/HDR_UPW.md` (study route).
-  - [ ] WTR-HDR_UPW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-HDR_UPW-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] WTR-HDR_UPW-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-HDR_UPW-14, X-COM-01. Triage: hardware.
-- **WTR-REMIN** (dose, sector WTR)
-  - [x] WTR-REMIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REMIN.md` §1; mass in = out 175.2 kg/d, 0.0460 kW.
-  - [x] WTR-REMIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-REMIN-01. Evidence: `docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064).
-  - [x] WTR-REMIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-REMIN-01, WTR-REMIN-02. Evidence: `docs-authority/pid/REMIN.svg` (AQS-PID-001).
-  - [x] WTR-REMIN-04 Nozzle schedule. Done when: docs-authority/nozzles/REMIN.csv, one row per edge. Depends: WTR-REMIN-03. Evidence: `docs-authority/nozzles/REMIN.csv` (all 3 process connections listed).
-  - [x] WTR-REMIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-REMIN-04, WTR-REMIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] WTR-REMIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-REMIN-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] WTR-REMIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-REMIN-02, WTR-REMIN-03. Evidence: `docs-authority/duties/REMIN.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] WTR-REMIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-REMIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (6 loops; AQS-CTL-001).
-  - [x] WTR-REMIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-REMIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] WTR-REMIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/REMIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-REMIN-02, WTR-REMIN-04, WTR-REMIN-06, WTR-REMIN-09. Status: partial: envelope `cad/stl/REMIN.stl`. Triage: desk P4.
-  - [ ] WTR-REMIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-REMIN-10, X-DWG-01. Triage: desk P4.
-  - [ ] WTR-REMIN-12 BOM. Done when: models/mfg/REMIN/bom.csv. Depends: WTR-REMIN-10. Triage: desk P4.
-  - [x] WTR-REMIN-13 Fabrication route. Done when: docs-authority/fab/REMIN.md. Depends: WTR-REMIN-10, WTR-REMIN-12. Evidence: `docs-authority/fab/REMIN.md` (study route).
-  - [ ] WTR-REMIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-REMIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] WTR-REMIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-REMIN-14, X-COM-01. Triage: hardware.
-- **WTR-ROOF_TANK** (tank, sector WTR)
-  - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; mass in = out 480.9 kg/d, 0.0000 kW.
-  - [x] WTR-ROOF_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-ROOF_TANK-01. Evidence: `docs-authority/WATER_TOWER.md` (AQS-BLD-014).
-  - [x] WTR-ROOF_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-ROOF_TANK-01, WTR-ROOF_TANK-02. Evidence: `docs-authority/pid/ROOF_TANK.svg` (AQS-PID-001).
-  - [x] WTR-ROOF_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/ROOF_TANK.csv, one row per edge. Depends: WTR-ROOF_TANK-03. Evidence: `docs-authority/nozzles/ROOF_TANK.csv` (all 14 process connections listed).
-  - [x] WTR-ROOF_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-ROOF_TANK-04, WTR-ROOF_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 16 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] WTR-ROOF_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-ROOF_TANK-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] WTR-ROOF_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-ROOF_TANK-02, WTR-ROOF_TANK-03. Evidence: `docs-authority/duties/ROOF_TANK.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] WTR-ROOF_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-ROOF_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (11 loops; AQS-CTL-001).
-  - [x] WTR-ROOF_TANK-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-ROOF_TANK-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] WTR-ROOF_TANK-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/ROOF_TANK/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-ROOF_TANK-02, WTR-ROOF_TANK-04, WTR-ROOF_TANK-06, WTR-ROOF_TANK-09. Status: partial: envelope `cad/stl/ROOF_TANK.stl`. Triage: desk P4.
-  - [ ] WTR-ROOF_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-ROOF_TANK-10, X-DWG-01. Triage: desk P4.
-  - [ ] WTR-ROOF_TANK-12 BOM. Done when: models/mfg/ROOF_TANK/bom.csv. Depends: WTR-ROOF_TANK-10. Triage: desk P4.
-  - [x] WTR-ROOF_TANK-13 Fabrication route. Done when: docs-authority/fab/ROOF_TANK.md. Depends: WTR-ROOF_TANK-10, WTR-ROOF_TANK-12. Evidence: `docs-authority/fab/ROOF_TANK.md` (study route).
-  - [ ] WTR-ROOF_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-ROOF_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] WTR-ROOF_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-ROOF_TANK-14, X-COM-01. Triage: hardware.
-- **WTR-VCD_TRAIN** (evaporator, sector WTR)
-  - [x] WTR-VCD_TRAIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VCD_TRAIN.md` §1; mass in = out 333.1 kg/d, 0.2359 kW.
-  - [x] WTR-VCD_TRAIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-VCD_TRAIN-01. Evidence: `docs-authority/sizing/VCD_TRAIN.md` (AQS-SIZE-VCD_TRAIN).
-  - [x] WTR-VCD_TRAIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-VCD_TRAIN-01, WTR-VCD_TRAIN-02. Evidence: `docs-authority/pid/VCD_TRAIN.svg` (AQS-PID-001).
-  - [x] WTR-VCD_TRAIN-04 Nozzle schedule. Done when: docs-authority/nozzles/VCD_TRAIN.csv, one row per edge. Depends: WTR-VCD_TRAIN-03. Evidence: `docs-authority/nozzles/VCD_TRAIN.csv` (all 9 process connections listed).
-  - [x] WTR-VCD_TRAIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-VCD_TRAIN-04, WTR-VCD_TRAIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 9 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] WTR-VCD_TRAIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-VCD_TRAIN-02. Triage: desk P3.
-  - [x] WTR-VCD_TRAIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-VCD_TRAIN-02, WTR-VCD_TRAIN-03. Evidence: `docs-authority/duties/VCD_TRAIN.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] WTR-VCD_TRAIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-VCD_TRAIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
-  - [x] WTR-VCD_TRAIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-VCD_TRAIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] WTR-VCD_TRAIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/VCD_TRAIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-VCD_TRAIN-02, WTR-VCD_TRAIN-04, WTR-VCD_TRAIN-06, WTR-VCD_TRAIN-09. Status: partial: envelope `cad/stl/VCD_TRAIN.stl`. Triage: desk P4.
-  - [ ] WTR-VCD_TRAIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-VCD_TRAIN-10, X-DWG-01. Triage: desk P4.
-  - [ ] WTR-VCD_TRAIN-12 BOM. Done when: models/mfg/VCD_TRAIN/bom.csv. Depends: WTR-VCD_TRAIN-10. Triage: desk P4.
-  - [x] WTR-VCD_TRAIN-13 Fabrication route. Done when: docs-authority/fab/VCD_TRAIN.md. Depends: WTR-VCD_TRAIN-10, WTR-VCD_TRAIN-12. Evidence: `docs-authority/fab/VCD_TRAIN.md` (study route).
-  - [ ] WTR-VCD_TRAIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-VCD_TRAIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] WTR-VCD_TRAIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-VCD_TRAIN-14, X-COM-01. Triage: hardware.
 
 ### GLASS. Process (Mass transform)
 

@@ -589,6 +589,9 @@ nodes:
   - id: WTR
     description: >-
       Utility / header — roof / catch / VCD / UPW / grey / black water.
+  - id: WTR.ATMOS
+    parent: WTR
+    unit_id: ATMOS
   - id: WTR.potable-upw-train
     parent: WTR
     description: >-

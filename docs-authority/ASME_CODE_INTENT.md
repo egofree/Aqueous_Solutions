@@ -25,7 +25,7 @@ Table 2.1. Unit count per class
 | Atmospheric | 3 |
 | B31.3 piping component | 4 |
 | Section VIII-1 (ID not yet sized) | 1 |
-| not a vessel (no design pressure on the graph) | 171 |
+| not a vessel (no design pressure on the graph) | 172 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 0 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
@@ -54,6 +54,7 @@ Table 4.1. Code intent per unit
 | AIR_RECEIVER | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ALK_SCRUBBER | GAS |  |  | 600 | not a vessel (no design pressure on the graph) | - | - | - |
 | AL_POT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| ATMOS | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BACKUP_GEN | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BAGHOUSE | GAS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BLACK_DIGEST | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

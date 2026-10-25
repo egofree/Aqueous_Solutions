@@ -19,7 +19,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 |---|---|---|
 | metal_plateable | 557 | 45 % |
 | organic | 498 | 40 % |
-| metal_reactive | 80 | 6 % |
+| metal_reactive | 81 | 7 % |
 | silicate_oxide | 52 | 4 % |
 | unassigned | 47 | 4 % |
 
@@ -119,7 +119,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | CURTAIL | 2 | 0 | 0 | 0 | 0 |
 | DIGESTER | 0 | 6 | 0 | 0 | 0 |
 | DRAW | 2 | 0 | 0 | 0 | 1 |
-| DRY_COOLER | 0 | 0 | 1 | 0 | 0 |
+| DRY_COOLER | 0 | 0 | 2 | 0 | 0 |
 | DUAL_ROOT | 0 | 3 | 0 | 0 | 0 |
 | DUCKWEED | 0 | 3 | 0 | 0 | 0 |
 | ELECTRODE_COAT | 2 | 0 | 0 | 0 | 0 |

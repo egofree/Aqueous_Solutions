@@ -7,7 +7,7 @@ import json, os, sys
 import numpy as np
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
-SINK = {'RELIEF_H2', 'RELIEF_CRYO', 'BOUNDARY_EXPORT', 'NORTH_DOCK'}   # boundary meters: in != out by design (losses, curtailment, exports) — per first-principles audit correction 5, owner rulings 2026-10-18. NORTH_DOCK joined 2026-10-19 per owner ruling D-DOCK: the dock is the inter-plant trade boundary (feedstock imports, surplus-product exports), not a balance-constrained sector — its ledger is reported as a trade statement (params.trade_statement), exempt from unit closure.
+SINK = {'RELIEF_H2', 'RELIEF_CRYO', 'BOUNDARY_EXPORT', 'NORTH_DOCK', 'GW_INTAKE', 'ATMOS'}   # GW_INTAKE joined for X-LOC-13: the well head is a resource boundary (its ledger is the make-up supplied); ATMOS is the evaporation sink. Both report in != out by design.   # boundary meters: in != out by design (losses, curtailment, exports) — per first-principles audit correction 5, owner rulings 2026-10-18. NORTH_DOCK joined 2026-10-19 per owner ruling D-DOCK: the dock is the inter-plant trade boundary (feedstock imports, surplus-product exports), not a balance-constrained sector — its ledger is reported as a trade statement (params.trade_statement), exempt from unit closure.
 MARK = ('X-PAR', 'X-SAN', 'X-MFG', 'AQS-DUTY-06', 'X-SAF-10', 'X-ELS')
 STOICH = {'S49': 'H2 to the fuel cell (load)', 'S50': 'O2 = 8 x H2 by mass', 'S02': 'crew O2 0.84 kg/p.d', 'IA-FC-AIR': 'MEOH_FC oxidant',
           'IA-AC-O2': 'acetic acid oxidation', 'IA-O2-NIT': 'nitric acid', 'IA-GLX-O2': 'net one O2 per acetaldehyde via NO recycle (X-PAR-13)', 'IA-FORM-O2': 'one O2 per methanol at 10/10 mol% (X-SAF-11)', 'IA-FORM-N2': 'FORM N2 diluent', 'IA-FORM-TAIL': 'FORM tail gas', 'IA-AB-AIR': 'afterburner dilution air less FORM N2',
@@ -135,6 +135,30 @@ def physics(g):
     E['SF-CRYO_AHU']['rate']['value'] = round(we, 4)
     if 'SQ-CRYO_AHU' in E: E['SQ-CRYO_AHU']['rate']['value'] = round(ql + we, 4)
     N_['CRYO_AHU']['continuous_kw'] = {'value': round(we, 4), 'unit': 'kW', 'status': 'study', 'note': f'latent {ql:.2f} kW (condensate {v("IA-HVAC-COND"):.1f} kg/d x 2.454 MJ/kg) / COP {COP} (A-M-153)'}
+    # Site evaporative rejection charge (AQS-PLAN-011 section 6.2, X-LOC-13). Where the site's
+    # low-grade rejection mode is evaporative, the spray water that evaporates to air leaves the
+    # water cycle: spray = rejected kW x 86400 s x 1000 W/kW / 2.454 MJ per kg (NIST_WEBBOOK, the
+    # A-M-153 latent basis). The heat edges are final at this point: every write_graph_heat sizing
+    # stage precedes balance_report in the regeneration order. The groundwater intake then closes
+    # the roof-tank balance by difference. Air-rejection sites book zero everywhere; the baseline
+    # solved values are unchanged.
+    from . import site as _site
+    prof = _site.load_profile()
+    _levels = (prof['groups'].get('heat_rejection', {}).get('entries') or {}).get('levels', {}).get('value') or []
+    if any(lv.get('mode') == 'evaporative' for lv in _levels) and 'DRY_COOLER' in N_:
+        q_kw = sum((e.get('rate') or {}).get('value') or 0 for e in g['edges']
+                   if e.get('to_unit_id') == 'DRY_COOLER' and e.get('presence', 'present') == 'present'
+                   and (e.get('rate') or {}).get('unit') == 'kW')
+        spray = round(q_kw * 86400.0 * 1000.0 / 2.454e6, 3)
+        put('IA-DC-SPRAY', spray,
+            f'evaporation of the {q_kw:.2f} kW rejected duty x 86400 s x 1000 W/kW / 2.454 MJ per kg (NIST_WEBBOOK); site mode evaporative (AQS-PLAN-011 section 6.2, X-LOC-13)')
+        put('IA-DC-EVAP', spray, 'the spray evaporates at the cooler and leaves the cycle to ATMOS; equal to IA-DC-SPRAY (X-LOC-13)')
+        put('IA-GW-MAKEUP', v('IA-GW-MAKEUP') + max(0.0, -_unit_resid(g, 'ROOF_TANK')),
+            'groundwater make-up by difference of the roof-tank balance after the evaporative charge (GW_INTAKE; X-LOC-13)')
+    else:
+        put('IA-DC-SPRAY', 0.0, 'no site evaporative charge: the low-grade loop rejects on air at this site')
+        put('IA-DC-EVAP', 0.0, 'nothing evaporates at the cooler at this site')
+        put('IA-GW-MAKEUP', 0.0, 'make-up closed at zero: the atmospheric harvest covers the water cycle at this site')
     src, draw = o2_close.close_o2(g); o2_close.LAST['storage'] = o2_close.storage(g)     # T3; H2/O2 banks re-sized every pass (X-PAR-12): O2 product = cold-box O2 in + bed + electrolyser; surplus to PROD_O2. No O2 from CO2.
     d = -_unit_resid(g, 'ROOF_TANK')
     for k in ('IA-POT-01', 'IA-UPW-REMIN', 'S25', 'IA-LEACH-VCD'):

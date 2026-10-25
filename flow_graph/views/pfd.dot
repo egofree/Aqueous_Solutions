@@ -254,6 +254,7 @@ digraph G {
     "VCD_TRAIN" [fillcolor="#ffffff", label="VCD_TRAIN"];
     "GW_INTAKE" [fillcolor="#ffffff", label="GW_INTAKE"];
     "REMIN" [fillcolor="#ffffff", label="REMIN"];
+    "ATMOS" [fillcolor="#ffffff", label="ATMOS"];
   }
   "PROD_C29" -> "C29_RECYCLE" [label="C29_RECYCLE\\n5.873266 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "C29_RECYCLE" -> "OIL_PYRO" [label="C29_TO_PYRO\\n5.873266 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -558,6 +559,8 @@ digraph G {
   "GREY_TREAT" -> "ROOF_TANK" [label="IA-GREY-RET\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NUTRIENT_DOSE" -> "LEACH_CSTR_1" [label="IA-NUT-LEACH\\n82.317318 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HOPPER" -> "LEACH_CSTR_1" [label="IA-FEED-01\\n102.680001 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DRY_COOLER" -> "ATMOS" [label="IA-DC-EVAP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ROOF_TANK" -> "DRY_COOLER" [label="IA-DC-SPRAY\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GW_INTAKE" -> "ROOF_TANK" [label="IA-GW-MAKEUP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "REMIN" -> "ROOF_TANK" [label="IA-POT-01\\n165.174239 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_UPW" -> "HABITATION" [label="IA-UPW-HAB\\n0.800001 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];

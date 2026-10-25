@@ -4854,6 +4854,24 @@
      "carries": "digester organics"
     },
     {
+     "stream_id": "IA-DC-EVAP",
+     "from": "DRY_COOLER",
+     "to": "ATMOS",
+     "other_sector": "HEAT",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "evaporated spray water to air"
+    },
+    {
+     "stream_id": "IA-DC-SPRAY",
+     "from": "ROOF_TANK",
+     "to": "DRY_COOLER",
+     "other_sector": "HEAT",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "evaporative spray make-up"
+    },
+    {
      "stream_id": "IA-H2P-H2O",
      "from": "H2_DRYER",
      "to": "VCD_TRAIN",
@@ -6087,7 +6105,26 @@
      "carries": "store trim"
     }
    ],
-   "inactive": []
+   "inactive": [
+    {
+     "stream_id": "IA-DC-EVAP",
+     "from": "DRY_COOLER",
+     "to": "ATMOS",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "evaporated spray water to air"
+    },
+    {
+     "stream_id": "IA-DC-SPRAY",
+     "from": "ROOF_TANK",
+     "to": "DRY_COOLER",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "evaporative spray make-up"
+    }
+   ]
   },
   "MEOH": {
    "no_sink": [

@@ -313,6 +313,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-RET | GREY_TREAT | ROOF_TANK | L | mass | present | treated grey to the water cycle | 0.0 kg/d | — |
 | IA-NUT-LEACH | NUTRIENT_DOSE | LEACH_CSTR_1 | L | mass | present | nutrient surplus | 82.317318 kg/d | — |
 | IA-FEED-01 | HOPPER | LEACH_CSTR_1 | L | mass | present | plant feedstock, any class | 102.680001 kg/d | — |
+| IA-DC-EVAP | DRY_COOLER | ATMOS | vapour | mass | present | evaporated spray water to air | 0.0 kg/d | — |
+| IA-DC-SPRAY | ROOF_TANK | DRY_COOLER | liquid | mass | present | evaporative spray make-up | 0.0 kg/d | — |
 | IA-GW-MAKEUP | GW_INTAKE | ROOF_TANK | liquid | mass | present | groundwater make-up, reverse-osmosis treated | 0.0 kg/d | — |
 | IA-POT-01 | REMIN | ROOF_TANK | L | mass | present | potable makeup, remineralised | 165.174239 kg/d | — |
 | IA-UPW-HAB | HDR_UPW | HABITATION | S/L | mass | present | potable makeup | 0.800001 kg/d | — |
