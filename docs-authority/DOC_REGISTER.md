@@ -244,7 +244,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-PLAN-006 | `docs-authority/MFG_MODEL_PLAN.md` | A | 2026-10-15 | Manufacturing model plan | current |
 | AQS-PLAN-007 | `docs-authority/TASK_PLAN.md` | B | 2026-10-15 | Task plan | current |
 | AQS-PLAN-010 | `docs-authority/RESIZE_SWEEP.md` | B | 2026-10-16 | Bounding-case resize sweep | current |
-| AQS-PLAN-011 | `docs-authority/LOCALIZATION_PLAN.md` | G | 2026-10-25 | Localization plan: site profiles and locale variants | current |
+| AQS-PLAN-011 | `docs-authority/LOCALIZATION_PLAN.md` | H | 2026-10-25 | Localization plan: site profiles and locale variants | current |
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up | current |
 | AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | A | 2026-10-21 | Bought-item specification sheets | current |
 | AQS-PV-001 | `docs-authority/PV_CELL_MOD.md` | C | 2026-10-11 | Photovoltaic cell | current |
@@ -286,6 +286,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-SITE-001 | `docs-authority/SITE_ACCESS.md` | E | 2026-10-24 | Site access: orientation, north dock, service entrance and egress | current |
 | AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | B | 2026-10-24 | Site basis | current |
 | AQS-SITE-003 | `docs-authority/SITE_ACCESS_CHECK.md` | A | 2026-10-16 | Site access and dock check | current |
+| AQS-SITE-004 | `docs-authority/SITE_SCALING.md` | A | 2026-10-25 | Site scaling | current |
 | AQS-SIZE-ACID_POLISH_SCRUB | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | A | 2026-10-20 | Sizing calculation - ACID_POLISH_SCRUB | current |
 | AQS-SIZE-ADS_CHILL | `docs-authority/sizing/ADS_CHILL.md` | A | 2026-10-20 | Sizing calculation - ADS_CHILL | current |
 | AQS-SIZE-AFTERBURNER | `docs-authority/sizing/AFTERBURNER.md` | A | 2026-10-20 | Sizing calculation - AFTERBURNER | current |
