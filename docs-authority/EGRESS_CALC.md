@@ -89,8 +89,8 @@ From `params.py` / AQS-BLD-001 / AQS-SITE-001 (mm → m):
 | Object | Plan box (m) | Levels | Hab sleeping credit? | Basement egress credit? |
 |---|---|---|---|---|
 | STAIR_P | 2.4 × 4.8 | L2–L0 (**no L-1 door**) | **Yes** (primary) | No |
-| STAIR_S1 | 2.4 × 2.4 | L1–L0 (NW) | **Yes** (secondary) | No |
-| STAIR_S2 | 2.4 × 2.4 | L1–L0 (SE) | **Yes** (secondary; farm side) | No |
+| STAIR_S1 | 2.4 × 2.4 | L1–L0 (north-west corner) | **Yes** (secondary) | No |
+| STAIR_S2 | 2.4 × 2.4 | L1–L0 (south-east corner) | **Yes** (secondary; farm side) | No |
 | STAIR_SERVICE | 2.4 × 3.6 | L0–L-2; doors Lm1/Lm2 | **No** | **Yes** (secondary + service) |
 | STAIR_MAINT | 1.2 × 2.4 | L0–L-2 | **No** | **Yes** (operators; not sole public H exit) |
 | SERVICE_DOOR_N | 1.8 m clear massing | L0 discharge to apron | N/A | Discharge for STAIR_SERVICE |
@@ -154,8 +154,8 @@ east life). Discharge at L0 grade; no basement walk.
 
 | From (HAB corner) | Nearest credited stair | Manhattan (m) | Straight-line (m) |
 |---|---|---|---|
-| (0, 0) SW | STAIR_P ≈ (9.1, 6.1) | **15.2** | **11.0** |
-| (0, 18) NW | STAIR_S1 ≈ (0.2, 15.4) | **2.8** | **2.6** |
+| (0, 0) south-west | STAIR_P ≈ (9.1, 6.1) | **15.2** | **11.0** |
+| (0, 18) north-west | STAIR_S1 ≈ (0.2, 15.4) | **2.8** | **2.6** |
 | (12, 0) SE-of-HAB | STAIR_P | **9.0** | **6.8** |
 | (12, 18) NE-of-HAB | STAIR_S1 or CORE | **≤ 6** | **≤ 5** |
 
@@ -168,9 +168,9 @@ for the final occupancy mix.
 
 | From | Nearest | Manhattan (m) |
 |---|---|---|
-| (24, 0) SE | STAIR_S2 ≈ (21.4, 0.2) | **≈ 2.8** |
+| (24, 0) south-east | STAIR_S2 ≈ (21.4, 0.2) | **≈ 2.8** |
 | (12, 18) | STAIR_P / CORE | **≈ 12** |
-| (24, 18) NE | STAIR_S2 via south then east, or CORE | **≤ 20** |
+| (24, 18) north-east | STAIR_S2 via south then east, or CORE | **≤ 20** |
 
 ### 5.3 Basement L-1 — two exits
 
@@ -184,12 +184,12 @@ Approximate door locations:
 | STAIR_SERVICE | ≈ (4.0, 14.4) |
 | STAIR_MAINT | ≈ (9.1, 11.0) |
 
-| From (plate corner) | To SERVICE | To MAINT | Nearest |
+| From (plate corner) | To STAIR_SERVICE | To STAIR_MAINT | Nearest |
 |---|---|---|---|
-| (0, 0) SW | 18.4 | 20.1 | SERVICE **18.4** |
-| (24, 0) SE | 38.4 | 25.9 | MAINT **25.9** |
-| (0, 18) NW | 7.6 | 16.1 | SERVICE **7.6** |
-| (24, 18) NE | 23.6 | 21.9 | MAINT **21.9** |
+| (0, 0) south-west | 18.4 | 20.1 | SERVICE **18.4** |
+| (24, 0) south-east | 38.4 | 25.9 | STAIR_MAINT **25.9** |
+| (0, 18) north-west | 7.6 | 16.1 | SERVICE **7.6** |
+| (24, 18) north-east | 23.6 | 21.9 | MAINT **21.9** |
 
 **Study max L-1 travel to nearest of the two ≈ 26 m.** Separated
 exits on north face vs CORE — not clustered at one wall.
@@ -235,7 +235,7 @@ width per occupant**; other egress doors ≈ **5.1 mm/occ** (common IBC
 |---|---|
 | L1 life 36 occ → STAIR_P + STAIR_S1 (or S2) | 276 + 276 ≫ 36 — **OK study** |
 | L0 grade ~41 occ → multiple grade doors / stairs | Multiple 2.1 m stairs + dock door — **OK study** |
-| L-1 47 occ → SERVICE + MAINT | 276 + 118 = **394** ≫ 47 — **OK study** |
+| L-1 47 occ → STAIR_SERVICE + STAIR_MAINT | 276 + 118 = **394** ≫ 47 — **OK study** |
 
 Minimum stair clear themes often cite **1120 mm** (44 in) for
 occupant loads ≥50 in some editions. STAIR_MAINT study clear
