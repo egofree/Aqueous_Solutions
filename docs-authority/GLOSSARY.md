@@ -459,6 +459,8 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {NF -- Nanofiltration. Potable integrity check class after remin (with UF/UV).}
 
+{VCM -- Vinyl chloride monomer, the monomer polymerized to make polyvinyl chloride (PVC).}
+
 {UV -- Ultraviolet disinfection / TOC destruction on potable finish and fab UPW.}
 
 {TOC -- Total organic carbon. Fab rinse target class on UPW.}
@@ -666,6 +668,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {DSA -- Dimensionally stable anode: a titanium anode coated with mixed metal oxides.}
 
 {DVS -- Deutscher Verband für Schweißen und verwandte Verfahren (German Welding Society), publisher of the DVS 2207 guidelines for welding thermoplastics.}
+
+{EDC -- Ethylene dichloride (1,2-dichloroethane), the intermediate from which vinyl chloride monomer and then polyvinyl chloride are made.}
 
 {EN -- European Norm: a standard adopted by the European standards bodies (for example EN 1090).}
 

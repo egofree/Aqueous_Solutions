@@ -32,6 +32,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/DOC_REGISTER.md` | Purpose and scope added; generator text in `_doc_register.py` rewritten; part qualifiers no longer truncated mid-path. |
 | `docs-authority/PROJECT_PLAN.md` | Rewritten in full; phases, limits and values unchanged. |
 | `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | Rewritten in full; thresholds and inputs unchanged. |
+| `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 
 ## 3. In progress
 
@@ -51,7 +52,6 @@ Table 4.1. Pending pages directly under docs-authority/
 
 | Page | Note |
 | --- | --- |
-| `docs-authority/SELF_COPY_BOM.md` | |
 | `docs-authority/ASME_CODE_INTENT.md` | |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | |
 | `docs-authority/BALANCE_RECONCILIATION.md` | |

@@ -17,3 +17,9 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 - `SECTOR_DEFINITIONS.md` (AQS-SEC-001) Rev I: generator text in `docs-authority/_sector_definitions.py` rewritten, the catalogue split into a data table, a table of system tree descriptions and a table of graph notes, and the alias names set in code format. The notes in the graph and the descriptions in the system tree are unchanged.
 - `SURPLUS_PASS_THRESHOLDS.md` (AQS-SUR-001) Rev D: rewritten in full. Thresholds, inputs and sources unchanged. The stale pointer to a canonical copy outside this repository was removed.
 - `GLOSSARY.md`: FRM and HP added.
+
+## Batch 3
+
+- `SELF_COPY_BOM.md` (AQS-BOM-SC-001) Rev H: rewritten in full. Every row, rate and identifier is kept. Section 4 stated `reprap_bom_complete` as true (the revision F value); the graph and the seed model hold false since revision G, and the table now says so. The pointer to a canonical copy outside this repository was removed. The generated reconciliation, now section 8, is rewritten in `docs-authority/_sc_reconcile.py`, which also labels a gap with no stated reason instead of leaving the cell blank.
+- `docs-authority/_polymers_sizing.py` and `sizing/POLYMERS_LINE.md`: citation of the reconciliation section updated to section 8 of Rev H.
+- `GLOSSARY.md`: EDC and VCM added.

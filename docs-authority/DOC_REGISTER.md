@@ -57,7 +57,7 @@ Table 3.1. Document numbers in use
 | AQS-BLD-016 | `docs-authority/FRAME_CHECK.md` | A | 2026-10-16 | Building frame member check | current |
 | AQS-BLD-017 | `docs-authority/FOUNDATION.md` | A | 2026-10-16 | Foundation design | current |
 | AQS-BLD-018 | `docs-authority/ENCLOSURE_EGRESS.md` | A | 2026-10-16 | Enclosure, floor plates, stairs and egress | current |
-| AQS-BOM-SC-001 | `docs-authority/SELF_COPY_BOM.md` | G | 2026-10-02 | Self-copy critical-path BOM — parts × feedstock (RepRap-class) | current |
+| AQS-BOM-SC-001 | `docs-authority/SELF_COPY_BOM.md` | H | 2026-10-25 | Self-copy bill of materials: critical-path parts and their on-site feedstock | current |
 | AQS-BOUND-001 | `notes/DOCK_BOUNDARY.md` | A | 2026-10-17 | Dock and boundary — item 9 | current |
 | AQS-BUS-001 | `docs-authority/BUSBAR.md` | C | 2026-10-16 | Rectifier bus | current |
 | AQS-CAD-001 | `docs-authority/CAD_SCRIPTING_PROTOCOL.md` | B | 2026-10-24 | Scripted CAD protocol: from process flow diagram to rebuildable models | current |
