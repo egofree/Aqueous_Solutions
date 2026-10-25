@@ -5,7 +5,7 @@ Stage 'power' (after the load list, one line and AQS-ELEC-007 are regenerated) w
 and inverter sizes from docs-authority/_power_sizing.py.
 Run: python3 -m flow_graph.param.write_graph [process|power]"""
 import json, math, os, subprocess, sys
-from . import solver, drivers as DR
+from . import solver, drivers as DR, site as SITE
 ROOT = solver.ROOT; GP = os.path.join(ROOT,'flow_graph/plant_flow_graph.json')
 TAG = 'X-PAR acid-loop decision (AQS-PAR-001 \u00a73)'
 ELEC_IN = ('S17-BMED','S17-EW','SF-EVAP_ACID','SF-EVAP_BASE','SF-EVAP_ACID_VS','SF-GEO_HP_CLOSED_LOOP')
@@ -308,7 +308,7 @@ def x_els_residuals(g, N, E, d):
 
     # 4) AFTERBURNER: ID blower from the flue duty (AQS-SAN-01 850 C chamber, cooled exit duct 300 C class)
     flue = float(E['IA-AB-FLUE']['rate']['value'] or 0)
-    V = flue / 29.0 * 8314.0 * (273.15 + 300.0) / 101325.0 / 86400.0    # m3/s wet flue at MW 29, 300 C
+    V = flue / 29.0 * 8314.0 * (273.15 + 300.0) / SITE.p_atm_Pa() / 86400.0    # m3/s wet flue at MW 29, 300 C
     ab_kw = V * 1000.0 * v('OIL.afterburner-train.flue_fan_dP_Pa') / v('OIL.afterburner-train.flue_fan_eta') / 1000.0
     _st('AFTERBURNER', round(ab_kw, 4),
         f"ID blower on the {flue:.3f} kg/d flue (IA-AB-FLUE): {V * 1000:.1f} L/s at the 300 C exit duct class "
@@ -557,7 +557,7 @@ def vent():
                 kind = 'store' if (cl in ('tank', 'product', 'reagent', 'cut_tank', 'dock') or u['unit_id'] in ('ROOF_TANK', 'FAB_UPW_TANK')) else 'process'
                 Vh = qi*TH*DV.val(D, 'atm_hold_d')[kind]; HD = DV.val(D, 'atm_HD'); Dh = (4*Vh/(math.pi*HD))**(1/3); H = HD*Dh
                 hold = f'{kind} hold-up {DV.val(D, "atm_hold_d")[kind]:.0f} d = {Vh:.3f} m3, H/D {HD}'
-        P_vap = 4*dp/1000; P_liq = SG*1000*9.80665*H/1000
+        P_vap = 4*dp/1000; P_liq = SG*1000*SITE.g()*H/1000
         p['design_kPa'] = math.ceil((P_vap + P_liq)*2)/2
         rb['relief_mm_status'] = 'atmospheric; no relief orifice, open vent per API 2000'
         rb['design_case'] = (f"vapour {P_vap:.1f} kPa (4 x vent dP) + hydrostatic {P_liq:.1f} kPa ({H:.2f} m full at SG {SG}{'; ' + hold + ', A-M-182' if hold else ''}) = {p['design_kPa']} kPa g (A-M-174)" if H else

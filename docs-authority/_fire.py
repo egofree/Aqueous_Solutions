@@ -8,7 +8,7 @@ import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R); sys.path.insert(0, os.path.join(R, 'models/freecad'))
 import params as P
 from flow_graph.param import fire as F
-from flow_graph.param import receivers as RC, pressure_nodes as PN, drivers as DRp
+from flow_graph.param import receivers as RC, pressure_nodes as PN, drivers as DRp, site as SITE
 from flow_graph.param.sizing import relief as RL
 from flow_graph.param.refs import cite
 for k in ('NFPA13_2025', 'NFPA72_2025', 'NFPA20_2025', 'NFPA22_2023', 'NFPA15_2027', 'NFPA2_2026', 'NFPA855_2026', 'API521_2020', 'API520', 'NIST_WEBBOOK'): cite(k)
@@ -62,7 +62,7 @@ _RR = RC.design(_dp, g)   # R11 Rev AC regen: the receiver design/relief params 
 for u in F.GAS_FIRE:
     c = PN.GAS[u]; p = N[u]['params']; des = c['P_bar'] * _mg * 100
     W = sum((e['rate']['value'] or 0) / (_win if e['from_unit_id'] == 'H2O_ELYZ' else 24) for e in g['edges'] if e['to_unit_id'] == u and e['presence'] == 'present' and (e['rate'] or {}).get('unit') == 'kg/d')
-    P1 = 1.10 * des + 101.325
+    P1 = 1.10 * des + SITE.p_atm_kPa()
     p['design'] = _RR[u]; p['design_kPa'] = round(des, 1); p.setdefault('relief_mm', 3.3)
     p['relief_basis'] = {'P1_kPa_abs': round(P1, 1), 'T_K': c['T_K'], 'M_kg_kmol': c['M'], 'k': c['k'], 'Z': c['Z'], 'W_kg_h': round(W, 4),
                          'bore_req_mm': round(RL.equiv_bore_mm(RL.gas_area_in2(W * 2.20462, c['k'], P1 / 6.894757, c['T_K'] * 1.8, c['Z'], c['M'])), 2)}

@@ -1079,6 +1079,9 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {SOLAS -- International Convention for the Safety of Life at Sea.}
 
 {TW -- Terawatt, 10^12 W.}
+{BIPM -- Bureau International des Poids et Mesures (International Bureau of Weights and Measures).}
+{CGPM -- Conférence générale des poids et mesures (General Conference on Weights and Measures).}
+{USAF -- United States Air Force.}
 
 ## Legal
 

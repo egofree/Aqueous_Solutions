@@ -277,6 +277,9 @@ REFS = {
  'ASM_V7': "ASM International, ASM Handbook Vol 7, Powder Metal Technologies and Applications (1998): press-and-sinter consolidation practice; sintering-furnace construction with graphite or MoSi2 element hot zones under inert or vacuum atmosphere for reactive powders.",
  'TOWLER2013': 'Towler G., Sinnott R., Chemical Engineering Design: Principles, Practice and Economics of Plant and Process Design, 2nd ed., Butterworth-Heinemann (2013): choice between batch and continuous operation; batch and campaign operation suit small production rates and multi-product trains.',
  'GRJOTHEIM1988': 'Grjotheim K., Welch B.J., Aluminium Smelter Technology: A Pure and Applied Approach, 2nd ed., Aluminium-Verlag, Duesseldorf (1988): heat balance of electrolysis cells; the cell voltage above the thermoneutral voltage supplies the heat lost through the lining, so a reduced current needs added heat to keep the bath molten.',
+ 'CGPM1901_GN': 'BIPM, The International System of Units (SI Brochure), 9th ed. (2019), Appendix 1: declaration of the 3rd CGPM (1901) fixing the standard acceleration of gravity g_n = 980.665 cm/s2 (9.80665 m/s2).',
+ 'CGPM1954_ATM': 'BIPM, The International System of Units (SI Brochure), 9th ed. (2019), Appendix 1: Resolution 4 of the 10th CGPM (1954) defining the standard atmosphere as 1 013 250 dyn/cm2 (101 325 Pa).',
+ 'USSA1976': 'NOAA, NASA and USAF, U.S. Standard Atmosphere, 1976, NOAA-S/T 76-1562, U.S. Government Printing Office (1976): sea-level composition of dry air by volume (N2 0.78084, O2 0.209476, Ar 0.00934) and the sea-level pressure 101 325 Pa.',
 }
 
 def cite(k):

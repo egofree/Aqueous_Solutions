@@ -30,7 +30,9 @@ def _unit_resid(g, u):
 
 CO2_EDGES = ('S04', 'S67B', 'S73', 'S85', 'S89', 'S90', 'IA-COMP-CO2', 'IA-NOX-CO2', 'IA-ASU-CO2', 'IA-CO2-RET', 'IA-COMP-FIX', 'IA-YEAST-CO2', 'IA-ABE-CO2')
 LEACH_SOLIDS = ('IA-FEED-01', 'IA-HOP-01', 'S16', 'IA-BAG-01', 'IA-SIC-RET', 'IA-REC-01')     # solids and the equilibrated EW recycle carry no fresh dissolved gas
-HENRY = {'CO2': (3.3e-4, 101325.0, 44.01), 'O2': (1.3e-5, 0.2095*101325, 32.00), 'N2': (6.4e-6, 0.7808*101325, 28.01)}   # Hcp mol/(m3 Pa) at 298 K [SANDER2015], partial pressure Pa, g/mol
+from flow_graph.param import site as _site   # external atmosphere from the site profile (AQS-PLAN-011 section 3.2)
+_PA = _site.p_atm_Pa()
+HENRY = {'CO2': (3.3e-4, 101325.0, 44.01), 'O2': (1.3e-5, _site.air_fraction('O2')*_PA, 32.00), 'N2': (6.4e-6, _site.air_fraction('N2')*_PA, 28.01)}   # Hcp mol/(m3 Pa) at 298 K [SANDER2015], partial pressure Pa (CO2: pure gas at one standard atmosphere, the bound), g/mol
 
 def henry_bound(g):
     """Upper bound on gas desorbed from the leach liquor: every fresh liquid inflow saturated at 25 C under 1 atm CO2 (bounding) plus air O2/N2."""

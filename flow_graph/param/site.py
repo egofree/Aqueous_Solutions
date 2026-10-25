@@ -5,7 +5,7 @@ carries every environmental input in the form of a driver. The groups and the en
 carry are listed once, in flow_graph/schema/site_profile.schema.json ("x-groups"). An entry with
 "binds" supplies that drivers.json key; drivers.load() applies it through apply(). The profile is
 chosen by the AQS_SITE environment variable; without it the baseline profile is used."""
-import json, os, re
+import functools, json, os, re
 from .refs import REFS
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -65,6 +65,11 @@ def validate(prof, name='profile'):
 def load_profile(sid=None):
     sid = sid or site_id()
     p = path(sid)
+    return _load(sid, p, os.path.getmtime(p) if os.path.exists(p) else None)
+
+
+@functools.lru_cache(maxsize=None)
+def _load(sid, p, _mtime):
     if not os.path.exists(p):
         raise SystemExit(f'site profile {sid!r} not found ({ENV}); available: {", ".join(available())}')
     prof = json.load(open(p))
@@ -102,3 +107,24 @@ def val(key, sid=None):
     grp = load_profile(sid)['groups'][gk]
     if 'entries' not in grp: raise SystemExit(f'site profile: {gk} is {"not applicable" if grp.get("not_applicable") else "pending " + grp.get("pending", "")} at this site; {key} has no value')
     return grp['entries'][ek]['value']
+
+
+# Earth-surface constants (AQS-PLAN-011 section 3.2), read from the selected profile.
+def g(sid=None):
+    """Apparent gravity, m/s2."""
+    return val('gravity.g_m_s2', sid)
+
+
+def p_atm_Pa(sid=None):
+    """External absolute pressure, Pa."""
+    return val('atmosphere.pressure_Pa', sid)
+
+
+def p_atm_kPa(sid=None):
+    """External absolute pressure, kPa (adds to a gauge pressure)."""
+    return p_atm_Pa(sid) / 1000
+
+
+def air_fraction(gas, sid=None):
+    """Mole fraction of a gas in the external atmosphere; 0 when the profile lists none."""
+    return val('atmosphere.composition_mole_fraction', sid).get(gas, 0.0)

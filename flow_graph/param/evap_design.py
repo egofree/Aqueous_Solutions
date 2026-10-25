@@ -2,7 +2,7 @@
 (params.design, outlet temperatures, relief_basis, size_mm) and docs-authority/sizing/EVAP_DESIGN.md (AQS-DUTY-060).
 Run: python3 -m flow_graph.param.evap_design [--write]"""
 import json, math, sys
-from . import solver, drivers as DR
+from . import solver, drivers as DR, site as SITE
 from .sizing import evaporator as EV, relief as RL, power as PW, hcl_vle as VLE
 from .refs import cite
 _D = DR.load(); EVK = 'DIGESTER.metals-leach-train.acid-base-regen.'   # U4b: sizing literals single-sourced from drivers.json (A-M-106/107/108)
@@ -27,16 +27,16 @@ def design(d, e, unit):
     # fire case on the body (ISO 23251 / API 521), set at body design, 21 % overpressure
     Aw = math.pi*Dsh/1000*v('evap_sump_h_mm')/1000 + math.pi*(Dsh/1000)**2/4
     Wf, Qf = EV.fire_relief_kg_h(Aw, LAT)
-    P1f = 1.21*v('evap_body_design_kPag') + 101.325; Tf = EV.tsat_C(P1f) + (Tb - 100)
+    P1f = 1.21*v('evap_body_design_kPag') + SITE.p_atm_kPa(); Tf = EV.tsat_C(P1f) + (Tb - 100)
     Af = RL.gas_area_in2(Wf*2.20462, v('evap_k_steam'), P1f/6.894757, (Tf+273.15)*1.8, 1.0, 18.02)
     # shell side blocked outlet: compressor at 120 % of design flow, 10 % overpressure
-    Wb = 1.2*V*3600; P1b = 1.1*v('evap_shell_design_kPag') + 101.325; Tbk = EV.tsat_C(P1b)
+    Wb = 1.2*V*3600; P1b = 1.1*v('evap_shell_design_kPag') + SITE.p_atm_kPa(); Tbk = EV.tsat_C(P1b)
     Ab = RL.gas_area_in2(Wb*2.20462, v('evap_k_steam'), P1b/6.894757, (Tbk+273.15)*1.8, 1.0, 18.02)
     D_letter = v(EVK+'evap_psv_orifice_D_in2')   # in2, API 526 orifice D (smallest letter)
     col = None
     if acid:   # counter-current column on the body, feed at the top (X-MFG-30 option d, AQS-DUTY-060 section 7)
         c = e['cond_hcl_wt']*100; ns = VLE.strip_stages(F, v('bmed_product_wt_acid')*100, P, v('acid_conc_design_wt')*100, V, c)
-        rho = 101.325*18.02/(8.314*(Tb+273.15)); Dc = math.sqrt(4*V/rho/v('evap_col_u_m_s')/math.pi)*1000
+        rho = SITE.p_atm_kPa()*18.02/(8.314*(Tb+273.15)); Dc = math.sqrt(4*V/rho/v('evap_col_u_m_s')/math.pi)*1000
         DN = next(x for x in (50, 80, 100, 150, 200, 250, 300) if x >= Dc)
         col = dict(ideal_stages_incl_body=ns, column_stages=ns-1, cond_hcl_wt_pct=c, y_eq_feed_pct=round(VLE.bubble(v('bmed_product_wt_acid')*100)[1], 3),
                    y_eq_body_pct=round(VLE.bubble(v('acid_conc_design_wt')*100)[1], 2), packed_mm=round((ns-1)*v('evap_col_hetp_mm')*v('evap_col_margin')),
