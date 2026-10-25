@@ -50,6 +50,7 @@ for p in sorted(glob.glob('models/mfg/*/params.json')):
 pat = re.compile(r'[^.|]*\(?[Aa]ssumption[^.|]*')
 for p in sorted(glob.glob('docs-authority/**/*.md', recursive=True)):
     if is_index_output(p): continue   # other indexes (standards list, task plan, ...) are not sources
+    if '/notes/' in p or '/internal/' in p: continue   # working records are not assumption sources (REWRITE_TODO section 1)
     for i, l in enumerate(open(p, errors='ignore'), 1):
         if 'ssumption' in l:
             scan.append(dict(id=hid('A-D-', f'{p}:{l.strip()}'), value='', units='', where=f'{p}:{i}', basis=l.strip()[:160].replace('|', '/'), task='see page'))
