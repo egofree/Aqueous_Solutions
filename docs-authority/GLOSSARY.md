@@ -575,6 +575,12 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {WS -- Wet synthesis: the reagent units (WS_*) that make fab chemicals such as hydrofluoric acid, peroxide, ammonia, nitric acid and potassium hydroxide.}
 
+{CAMEO -- Computer-Aided Management of Emergency Operations; CAMEO Chemicals is the NOAA database of chemical hazards and reactivity groups.}
+
+{GMR -- Gas-to-metal ratio: the mass of atomising gas used per unit mass of metal powder produced.}
+
+{UA -- The product of thermal transmittance (U-value) and area, summed over a building envelope, in W/K.}
+
 {NEC -- National Electrical Code. Service, disconnect, and working-space themes.}
 
 {ASME -- American Society of Mechanical Engineers. Vessel and B31.3 piping class sheets (AQS-ASM-001).}

@@ -50,6 +50,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
 | `docs-authority/PIPING_CLASSES.md` | Rev C. Purpose, class-letter key and table titles added. Table rows unchanged, because `_pipe_specs.py`, `_gasket_census.py` and `flow_graph/test_pipe_specs.py` parse them. |
 | `docs-authority/ELECTRODE_FAB.md` | Rev D. The revision line said B although revision C had been issued; corrected. Section 5 records the coating load in the graph. See section 6. |
+| `docs-authority/HAZMAT_SEPARATION.md` | Rev B, through `flow_graph/sep_check.py`. Revision record, purpose, rule and numbered table added. No pair changed. |
+| `docs-authority/MFG_TOOLS.md` | Rev D, through `docs-authority/_mfg_tools.py`. Purpose added; totals in sentences; the hard-coded tool count removed. The tool table is unchanged, because `flow_graph/inventory/motors.py` parses it. |
+| `docs-authority/ENCLOSURE_EGRESS.md` | Rev B, through `docs-authority/_egress_env.py`. Revision record, purpose, pass rule and numbered sections added. No value changed. |
 
 ## 3. In progress
 
@@ -83,7 +86,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/DESIGN_CHECK.md` | |
 | `docs-authority/EDGE_RATING_DUTY.md` | |
 | `docs-authority/EGRESS_CALC.md` | |
-| `docs-authority/ENCLOSURE_EGRESS.md` | |
 | `docs-authority/FAB_WET_INTERFACE.md` | |
 | `docs-authority/FAB_WET_REAGENTS.md` | |
 | `docs-authority/FAN_STACK.md` | |
@@ -102,7 +104,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/HAB_FIXTURES.md` | |
 | `docs-authority/HAB_WATER.md` | |
 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | |
-| `docs-authority/HAZMAT_SEPARATION.md` | |
 | `docs-authority/HAZOP.md` | |
 | `docs-authority/HEAT_LADDER_DUTIES.md` | Rev D (2026-10-08), authority graph Rev K; not reissued for graph Rev AC. |
 | `docs-authority/INSTRUMENT_INDEX.md` | |
@@ -121,7 +122,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/METAL_FORMING.md` | |
 | `docs-authority/MFG_MODEL_PLAN.md` | |
 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | |
-| `docs-authority/MFG_TOOLS.md` | |
 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | |
 | `docs-authority/MVS_PITCH_PASS.md` | |
 | `docs-authority/MVS_STUDY_CLOSE.md` | |

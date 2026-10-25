@@ -68,3 +68,8 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 
 - `RECT_EW.md` (AQS-ELEC-004) Rev C, `PIPING_CLASSES.md` (AQS-PIP-003) Rev C and `ELECTRODE_FAB.md` (AQS-MFG-ELC-001) Rev D rewritten. No rating, class or study result changed. The table rows of `PIPING_CLASSES.md` are unchanged because three scripts parse them.
 - `GLOSSARY.md`: ORD, WPB and WS added.
+
+## Batch 12
+
+- `HAZMAT_SEPARATION.md` (AQS-BLD-011) Rev B, `MFG_TOOLS.md` (AQS-MFG-010) Rev D and `ENCLOSURE_EGRESS.md` (AQS-BLD-018) Rev B rewritten through their generators (`flow_graph/sep_check.py`, `_mfg_tools.py`, `_egress_env.py`). No value changed.
+- `GLOSSARY.md`: CAMEO, GMR and UA added.

@@ -50,14 +50,14 @@ Table 3.1. Document numbers in use
 | AQS-BAL-KROLL | `notes/KROLL_BALANCE.md` | A | 2026-10-16 | Kroll loop — placeholder balance | current |
 | AQS-BLD-001 | `docs-authority/BUILDING_STACK.md` | G | 2026-10-24 | Building stack: the vertical campus | current |
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | A | 2026-10-15 | General arrangement clash check | current |
-| AQS-BLD-011 | `docs-authority/HAZMAT_SEPARATION.md` | — | — | Incompatible hazardous-material separation | current |
+| AQS-BLD-011 | `docs-authority/HAZMAT_SEPARATION.md` | B | 2026-10-25 | Incompatible hazardous-material separation | current |
 | AQS-BLD-012 | `docs-authority/ACCESS_CHECK.md` | — | — | Access and electrical working-space check | current |
 | AQS-BLD-013 | `docs-authority/STRUCT_LOADS.md` | A | 2026-10-16 | Equipment structural loads | current |
 | AQS-BLD-014 | `docs-authority/WATER_TOWER.md` | A | 2026-10-16 | Water tower: pumped-hydro reservoirs in the building | current |
 | AQS-BLD-015 | `docs-authority/LIFTING.md` | B | 2026-10-25 | Lifting and cranes | current |
 | AQS-BLD-016 | `docs-authority/FRAME_CHECK.md` | A | 2026-10-16 | Building frame member check | current |
 | AQS-BLD-017 | `docs-authority/FOUNDATION.md` | A | 2026-10-16 | Foundation design | current |
-| AQS-BLD-018 | `docs-authority/ENCLOSURE_EGRESS.md` | A | 2026-10-16 | Enclosure, floor plates, stairs and egress | current |
+| AQS-BLD-018 | `docs-authority/ENCLOSURE_EGRESS.md` | B | 2026-10-25 | Enclosure, floor plates, stairs and egress | current |
 | AQS-BOM-SC-001 | `docs-authority/SELF_COPY_BOM.md` | H | 2026-10-25 | Self-copy bill of materials: critical-path parts and their on-site feedstock | current |
 | AQS-BOUND-001 | `notes/DOCK_BOUNDARY.md` | A | 2026-10-17 | Dock and boundary — item 9 | current |
 | AQS-BUS-001 | `docs-authority/BUSBAR.md` | C | 2026-10-16 | Rectifier bus | current |
@@ -211,7 +211,7 @@ Table 3.1. Document numbers in use
 | AQS-MF-001 | `docs-authority/MASS_FLOW.md` | K | 2026-10-24 | Mass-flow claim status | current |
 | AQS-MF-001-DERIVED | `flow_graph/derived/MASS_FLOW_DERIVED.md` | — | — | Mass-flow claim excerpt — DERIVED from flow_graph | current |
 | AQS-MFG-001 | `docs-authority/internal/DETAIL_MODEL_PLAN.md` | A | 2026-09-26 | Manufacturing-detail model list | superseded by AQS-PLAN-007 |
-| AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | C | 2026-10-21 | MFG_SHOP tool list | current |
+| AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | D | 2026-10-25 | Manufacturing shop tool list | current |
 | AQS-MFG-011 | `docs-authority/JELLYBEAN.md` | A | 2026-10-15 | Jellybean parts: standard sizes and in-house lines | current |
 | AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | D | 2026-10-25 | Electrode fabrication and coating | current |
 | AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | B | 2026-09-28 | Metal forming path — wire draw / cold mill / gas atomizer | current |
