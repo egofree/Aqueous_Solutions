@@ -8,13 +8,14 @@ AQS-PFD-FAB-001; wet factory AQS-PFD-WET-001
 
 Authority: `03-silicon-wafer-fabrication.md`,
 `MANUFACTURING/SILICON_FAB/Silicon_Fab_overview.md`, root `01-…` /
-`02-…` (SEM TECH / BMED / CRU), AQS-STR-001, AQS-MF-001,
+`02-…` (the SEM Tech BMED and CRU narratives), AQS-STR-001, AQS-MF-001,
 AQS-EQP-FAB-001, AQS-WTR-001, DEPENDENCIES.md (SEM-Tech / IEM link-only).
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | First issue; proposed WS_* synth fork IDs; stream S31–S39 | 2026-09-27 |
 | B | 1 | Order-of-magnitude study rates (pilot wafer assumption) | 2026-10-01 |
+| C | Style-guide pass (AQS-DOC-002): narrative references spelled out, deferred placement wording aligned with the FreeCAD pass. No fork, ID or rate changed. | 2026-10-25 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -56,7 +57,7 @@ SEM-Tech / open IEM membrane designs support BMED / CEM fabrication
 ## 3. New dedicated synth forks (proposed module IDs)
 
 Mark **NEW** clearly. Location intent: L-1 wet / regen aisle or
-adjacent util bay east of BMED — exact XY TBD (no FreeCAD this pass).
+adjacent utility bay east of BMED; the exact bay coordinates are set in the FreeCAD placement pass (deferred there, not here).
 
 | Module ID | Product | Fab use | Synthesis / regen basis (evidence) | Status |
 |---|---|---|---|---|
