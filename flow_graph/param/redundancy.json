@@ -1,0 +1,15 @@
+{
+ "_basis": "AGENTS.md, Redundancy: every energy and life-support function (power, O2, water, CO2 removal, thermal, food, sanitation) keeps N+1 or a source of a diverse technology. AQS-PLAN-011 sections 5.2 and 5.5. The source lists are the reference plant's; the owner confirms them (AQS-PLAN-011 section 14).",
+ "rule": "a function needs at least 2 source units after the site's scaling actions; a unit's internal parallel trains count when the unit states them",
+ "functions": {
+  "power": {"class": "energy", "sources": {"PV_ARRAY": 1, "BACKUP_GEN": 1, "FUEL_CELL": 1, "MEOH_FC": 1}, "basis": "AQS-ELEC-007 (backup generation and critical autonomy)"},
+  "power_storage": {"class": "energy", "sources": {"ZNBR2": 1, "HYDRO_SET": 1}, "basis": "AQS-ELEC-007; Q-009 pumped hydro as the second storage"},
+  "thermal_storage": {"class": "energy", "sources": {"Q1_A": 1, "Q1_B": 1, "Q2_A": 1, "Q2_B": 1, "Q3_A": 1, "Q3_B": 1, "Q4_A": 1, "Q4_B": 1}, "basis": "AQS-HEAT-STUDY-002 (A and B heat batteries per ladder level)"},
+  "heat_rejection": {"class": "energy", "sources": {"DRY_COOLER": 1, "GEO_GHEX": 1}, "basis": "AQS-HEAT-STUDY-002 section 10.8 (dry cooler); geothermal loop as the ground path"},
+  "oxygen": {"class": "life_support", "sources": {"H2O_ELYZ": 1, "CRYO_ASU": 1}, "basis": "AQS-PAR-005 (oxygen from water electrolysis; air separation as the second source)"},
+  "water": {"class": "life_support", "sources": {"VCD_TRAIN": 2, "GREY_TREAT": 1}, "basis": "VCD_TRAIN 2 x 100 % (graph note); grey treatment (S29)"},
+  "co2_removal": {"class": "life_support", "sources": {"HABITATION": 1, "GROW_BED": 1}, "basis": "driver HAB.life-support-train.HABITATION.cdra_half_cycle_min (ISS CO2 removal basis); plant uptake in the grow bed"},
+  "food": {"class": "life_support", "sources": {"GROW_BED": 1, "FOOD_STORE": 1}, "basis": "grow bed; food buffer store (D-DOCK owner ruling 2026-10-19)"},
+  "sanitation": {"class": "life_support", "sources": {"BLACK_DIGEST": 1, "HABITATION": 1}, "basis": "A-M-118: black digest and compost toilets, each path sized for 100 %"}
+ }
+}

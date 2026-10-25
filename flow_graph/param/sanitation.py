@@ -6,7 +6,7 @@ and urine go through the same barriers. Targets: ISO 30500 log reductions [ISO30
 [EPA503] and WHO 2006 Vol. 4 [WHO2006_V4]. Writes nodes, edges, placement rows (HAB sanitation room), AQS-DUTY-063
 docs-authority/sizing/SANITATION.md. Run: python3 -m flow_graph.param.sanitation [--write]"""
 import json, math, os, sys
-from . import drivers as DR
+from . import drivers as DR, site as SITE
 from .reactor_design import vessel
 from .write_graph import edge, rate
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -31,12 +31,12 @@ def design(d, g):
     comb = {'CO2': co2g + ch4*44/16 + vs_rem*220/113, 'H2O': w_cake + ch4*36/16 + vs_rem*63/113, 'O2': ch4*64/16 + vs_rem*184/113, 'N': vs_rem*14/113, 'ash': ash}
     comb['check'] = comb['CO2'] + comb['H2O'] - comb['O2'] + comb['N'] + comb['ash'] - (cake + G)
     # AFTERBURNER chamber: >= 850 C for >= 2 s [EU_IED2010]; flue = DUTY-008 241.68 kg/d + sanitation fuel
-    flue = v(SAN+'san_ab_flue_base_kg_d') + cake + G; rho = v(SAN+'san_air_rho20_kg_m3')*293/(v(SAN+'san_ab_T_C') + 273); Q = flue/86400/rho; Vc = Q*v(SAN+'san_ab_residence_s')
+    flue = v(SAN+'san_ab_flue_base_kg_d') + cake + G; rho = SITE.air_density(v(SAN+'san_ab_T_C')); Q = flue/86400/rho; Vc = Q*v(SAN+'san_ab_residence_s')
     Dc = next(x for x in v(SAN+'san_ab_DN_ladder_mm') if v(SAN+'san_ab_LD')*(x/1000) >= (4*Vc/math.pi/(x/1000)**2) or x == 400); Lc = 4*Vc/math.pi/(Dc/1000)**2
     q_extra = (ch4*v(SAN+'san_lhv_ch4_MJ_kg') + vs_rem*v(SAN+'san_lhv_vs_MJ_kg') - w_cake*v(SAN+'san_evap_MJ_kg'))/86.4      # kW: LHV CH4 50 MJ/kg, dry VS about 20 MJ/kg, evaporation 2.45 MJ/kg (study)
     ab = dict(flue_kg_h=flue/24, Q_m3_s_850C=Q, V_m3=Vc, D_mm=Dc, L_mm=math.ceil(Lc*1000/50)*50, net_heat_kW=q_extra, feed_kg_d=v(SAN+'san_ab_feed_base_kg_d') + cake + G)
-    ko_v = (flue/24/3600)/(v(SAN+'san_air_rho20_kg_m3')*293/(v(SAN+'san_ko_T_C') + 273))/(math.pi*v(SAN+'san_ko_D_m')**2/4)            # FLUE_KO DN300 at 80 C
-    nox_v = (v(SAN+'san_nox_feed_base_kg_d') + cake + G)/86400/v(SAN+'san_air_rho20_kg_m3')/(math.pi*v(SAN+'san_nox_D_m')**2/4)           # NOX_SCRUB DN100 superficial
+    ko_v = (flue/24/3600)/SITE.air_density(v(SAN+'san_ko_T_C'))/(math.pi*v(SAN+'san_ko_D_m')**2/4)            # FLUE_KO DN300 at 80 C
+    nox_v = (v(SAN+'san_nox_feed_base_kg_d') + cake + G)/86400/SITE.air_density(v(SAN+'san_air_T_C'))/(math.pi*v(SAN+'san_nox_D_m')**2/4)           # NOX_SCRUB DN100 superficial
     # vessels
     Vd = dig_in/1000*v('san_digest_srt_d'); dg = vessel(Vd, v(SAN+'san_dig_fill'), 1000.0, sigma_MPa=v(SAN+'san_sigma_PP_MPa'), t_min=v(SAN+'san_pp_t_min_mm'))
     A = math.pi*dg['D_mm']/1000*dg['H_mm']/1000 + math.pi*(dg['D_mm']/1000)**2/2

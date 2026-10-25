@@ -1793,7 +1793,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M565.51,-11344.89C621.46,-11351.02 745.46,-11357.93 836,-11313.92 867.12,-11298.79 892.97,-11267.9 908.75,-11245.44"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="911.76,-11247.24 914.49,-11237 905.98,-11243.3 911.76,-11247.24"/>
-<text text-anchor="middle" x="760.5" y="-11350.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n336.8121 kW</text>
+<text text-anchor="middle" x="760.5" y="-11350.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n336.8116 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node44" class="node">
@@ -2306,14 +2306,14 @@
 <title>SOL_ARK_60K&#45;&gt;ACID_POLISH_SCRUB</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M966.7,-11201.32C982.19,-11194.74 1000.25,-11187.51 1017,-11181.92 1053.79,-11169.65 1330.41,-11124.91 1355,-11094.92 1406.51,-11032.11 1320.9,-10790.52 1375,-10729.92 1428.14,-10670.4 1500.45,-10760.83 1552,-10699.92 1580.69,-10666.03 1532.57,-4337.29 1564,-4305.92 1648.3,-4221.78 1747.35,-4222.13 1832,-4305.92 1851.44,-4325.16 1849.19,-6247.72 1852,-6274.92 1915.24,-6887.77 2105.82,-7620.22 2146.36,-7771.7"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="2143.05,-7772.84 2149.02,-7781.59 2149.81,-7771.02 2143.05,-7772.84"/>
-<text text-anchor="middle" x="1463.5" y="-10732.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ACID_POLISH_SCRUB\n1.1123 kW</text>
+<text text-anchor="middle" x="1463.5" y="-10732.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ACID_POLISH_SCRUB\n1.1122 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;ALK_SCRUBBER -->
 <g id="edge370" class="edge">
 <title>SOL_ARK_60K&#45;&gt;ALK_SCRUBBER</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M931,-11200.59C941.92,-11143.07 975.84,-10960.87 997,-10808.92 1002.64,-10768.41 990.43,-10657.03 1017,-10625.92 1067.56,-10566.74 1304.77,-10593.39 1355,-10533.92 1384.39,-10499.13 1344.31,-10363.58 1375,-10329.92 1428.98,-10270.73 1500.92,-10357.63 1552,-10295.92 1582.45,-10259.13 1530.2,-3451.67 1564,-3417.92 1702.92,-3279.25 1875.43,-3294.47 2005,-3441.92 2046.22,-3488.83 1991.54,-5637.2 2025,-5689.92 2095.84,-5801.53 2221.78,-5707.56 2293,-5818.92 2315.75,-5854.5 2278.51,-6546.04 2305,-6578.92 2346.53,-6630.47 2408.59,-6561.28 2450,-6612.92 2480.88,-6651.44 2447.12,-8346.18 2470,-8389.92 2477.67,-8404.58 2490.82,-8416.41 2504.43,-8425.51"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="2502.58,-8428.48 2512.91,-8430.83 2506.29,-8422.55 2502.58,-8428.48"/>
-<text text-anchor="middle" x="1702" y="-3420.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ALK_SCRUBBER\n1.1123 kW</text>
+<text text-anchor="middle" x="1702" y="-3420.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ALK_SCRUBBER\n1.1122 kW</text>
 </g>
 <!-- H2_DRYER -->
 <g id="node100" class="node">
@@ -2359,7 +2359,7 @@
 <title>SOL_ARK_60K&#45;&gt;GEO_HP_CLOSED_LOOP</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M931.54,-11200.66C944.03,-11143.32 982.05,-10961.61 997,-10808.92 1000.96,-10768.44 990.85,-10108.09 1017,-10076.92 1065.4,-10019.23 1127.35,-10093.66 1183,-10042.92 1205.65,-10022.27 1180.74,-9998 1203,-9976.92 1260.14,-9922.82 1297.94,-9950.84 1375,-9934.92 1414.07,-9926.85 1526.23,-9935.38 1552,-9904.92 1569.85,-9883.83 1544.44,-1965.45 1564,-1945.92 1714.69,-1795.46 2006.74,-1929.08 2113.59,-1986.1"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="2111.99,-1989.21 2122.45,-1990.88 2115.31,-1983.05 2111.99,-1989.21"/>
-<text text-anchor="middle" x="1463.5" y="-9937.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;GEO_HP_CLOSED_LOOP\n0.1258 kW</text>
+<text text-anchor="middle" x="1463.5" y="-9937.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;GEO_HP_CLOSED_LOOP\n0.1257 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;GLASS_DIGEST -->
 <g id="edge374" class="edge">
@@ -2432,7 +2432,7 @@
 <title>SOL_ARK_60K&#45;&gt;MET_SCRUB</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M931.56,-11200.66C944.09,-11143.32 982.21,-10961.63 997,-10808.92 1001.25,-10765 988.68,-10048.76 1017,-10014.92 1065.34,-9957.18 1128.38,-10032.77 1183,-9980.92 1208.64,-9956.58 1178.65,-9929.56 1203,-9903.92 1259.01,-9844.97 1503.87,-9859.47 1552,-9793.92 1571.24,-9767.72 1541,-454.89 1564,-431.92 1704.14,-291.97 2255.78,-510.18 2293,-558.92 2317.3,-590.75 2286.47,-6289.43 2305,-6324.92 2503.26,-6704.65 2897.75,-6490.38 3102,-6866.92 3129.42,-6917.47 3088.72,-8890.03 3122,-8936.92 3126.26,-8942.92 3132.31,-8947.29 3138.97,-8950.47"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="3137.72,-8953.74 3148.31,-8954.11 3140.27,-8947.22 3137.72,-8953.74"/>
-<text text-anchor="middle" x="2155" y="-561.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MET_SCRUB\n2.1234 kW</text>
+<text text-anchor="middle" x="2155" y="-561.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MET_SCRUB\n2.1232 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;MFG_SHOP -->
 <g id="edge378" class="edge">
@@ -2612,7 +2612,7 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1306.11,-11152.8C1332.97,-11166.02 1371.39,-11184.8 1375,-11185.92 1399.65,-11193.59 1551.38,-11215.27 1638.89,-11227.42"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1638.59,-11230.91 1648.97,-11228.81 1639.55,-11223.97 1638.59,-11230.91"/>
-<text text-anchor="middle" x="1463.5" y="-11217.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n752.788322 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11217.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n755.229337 kg/d</text>
 </g>
 <!-- ZNBR2&#45;&gt;Q4_BUS -->
 <g id="edge286" class="edge">
@@ -2639,7 +2639,7 @@
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1648.97,-11240.78C1568.33,-11247.23 1417.97,-11254.63 1375,-11224.92 1355.99,-11211.78 1370.81,-11193.78 1355,-11176.92 1344.37,-11165.59 1329.52,-11157.27 1315.83,-11151.42"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1316.74,-11148.01 1306.15,-11147.59 1314.16,-11154.52 1316.74,-11148.01"/>
-<text text-anchor="middle" x="1463.5" y="-11248.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n752.788322 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11248.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n755.229337 kg/d</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node49" class="node">
@@ -5051,5 +5051,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="2906.4" y="12534.7" width="1952.1" height="520.6" fill="white" stroke="black" stroke-width="5.42"/><text x="2939.0" y="12621.4" font-family="sans-serif" font-size="48.8">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="2939.0" y="12713.6" font-family="sans-serif" font-size="48.8">Process flow diagram</text><text x="2939.0" y="12805.8" font-family="sans-serif" font-size="48.8">Type: flow diagram (ISO_10628_2)   Rev a9194797   Issued 2026-10-15</text><text x="2939.0" y="12898.0" font-family="sans-serif" font-size="48.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="2939.0" y="12990.2" font-family="sans-serif" font-size="48.8">Graph SHA-256 07baa51a068d0211   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="2906.4" y="12534.7" width="1952.1" height="520.6" fill="white" stroke="black" stroke-width="5.42"/><text x="2939.0" y="12621.4" font-family="sans-serif" font-size="48.8">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="2939.0" y="12713.6" font-family="sans-serif" font-size="48.8">Process flow diagram</text><text x="2939.0" y="12805.8" font-family="sans-serif" font-size="48.8">Type: flow diagram (ISO_10628_2)   Rev 8d20d891   Issued 2026-10-15</text><text x="2939.0" y="12898.0" font-family="sans-serif" font-size="48.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="2939.0" y="12990.2" font-family="sans-serif" font-size="48.8">Graph SHA-256 ed22ff1bb3835551   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

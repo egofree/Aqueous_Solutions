@@ -3068,10 +3068,12 @@
     "units": "vol fraction H2 lower flammability limit in air",
     "ref": "NFPA69_2024"
   },
-  "ELEC.storage-train.ZNBR2.purge_air_rho_kg_m3": {
-    "value": 1.18,
-    "units": "kg/m3 purge air density",
-    "register": "A-M-135 (X-PAR-02 ZNBR2 purge basis)"
+  "ELEC.storage-train.ZNBR2.purge_air_T_C": {
+    "value": 25.0,
+    "units": "C purge air temperature",
+    "register": "A-M-384",
+    "needs_verification": true,
+    "verification_test": "Compare with the HVAC design room and line temperatures"
   },
   "PUMPED_HYDRO.hydro-train.recharge_window_h": {
     "value": 6.0,
@@ -3748,10 +3750,12 @@
     "units": "kg/d base AFTERBURNER flue before sanitation fuel",
     "register": "AQS-DUTY-008 as-used at X-SAN-01 Rev B"
   },
-  "WTR.grey-black-train.san_air_rho20_kg_m3": {
-    "value": 1.2,
-    "units": "kg/m3 air density at 20 C (flue and vent superficials)",
-    "register": "A-M-118"
+  "WTR.grey-black-train.san_air_T_C": {
+    "value": 20.0,
+    "units": "C reference air temperature for the NOX_SCRUB superficial",
+    "register": "A-M-384",
+    "needs_verification": true,
+    "verification_test": "Compare with the HVAC design room and line temperatures"
   },
   "WTR.grey-black-train.san_ab_T_C": {
     "value": 850,
@@ -4882,10 +4886,12 @@
     "units": "kg/m3 hydrogen at 20 C 1 atm",
     "ref": "NIST_WEBBOOK"
   },
-  "HDR.headers-train.hdr_rho_air": {
-    "value": 1.2,
-    "units": "kg/m3 air / N2 class at 20 C",
-    "ref": "NIST_WEBBOOK"
+  "HDR.headers-train.hdr_air_T_C": {
+    "value": 20.0,
+    "units": "C air / N2 class gas temperature for header density",
+    "register": "A-M-384",
+    "needs_verification": true,
+    "verification_test": "Compare with the HVAC design room and line temperatures"
   },
   "HDR.headers-train.hdr_rho_CO2": {
     "value": 1.84,

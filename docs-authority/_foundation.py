@@ -6,6 +6,7 @@ heaviest interior column (ACI 318-19 22.6.5.2) from AQS-BLD-016. Run after _fram
 import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sys.path.insert(0, R); sys.path.insert(0, os.path.join(R, 'models/freecad'))
 from flow_graph.param.refs import cite
+from flow_graph.param import site as SITE   # apparent gravity from the site profile
 from flow_graph.param import drivers as DR, water_tower as WT
 for k in ('IBC2027_1806', 'ACI318_19', 'ASCE7_22'): cite(k)
 import params as P
@@ -21,7 +22,7 @@ for line in open('docs-authority/STRUCT_LOADS.md'):
 r = P.HYDRO; depth = -r['z_catch_floor_m'] + P.SLAB_THK/1000                                                       # m below grade to the raft underside (approx. catch floor)
 slab = P.SLAB_THK/1000*24.0; nlev = 8                                   # suspended levels L-1..ROOF
 LIVE = {'L-1': 6.0, 'L0': 6.0, 'L1': 4.79, 'L2': 4.79, 'ROOF': 0.96}
-frame_kN = sum(sum(x[2][c][1]['kg_m'] for c in x[2]) / 3 * x[1] for x in FC['cols']) * 20 * 9.81e-3   # column steel, 20 columns (average of the three types)
+frame_kN = sum(sum(x[2][c][1]['kg_m'] for c in x[2]) / 3 * x[1] for x in FC['cols']) * 20 * SITE.g()*1e-3   # column steel, 20 columns (average of the three types)
 walls_kN = 2*(Lp + Wp)*depth*0.6*24.0                                  # 600 mm basement walls
 def raft_t():
     for t in [x/100 for x in range(60, 400, 5)]:
@@ -31,10 +32,10 @@ t_raft, phiVc = raft_t(); raft_kN = A*t_raft*24.0
 D_eq = sum(s['empty'] for s in SL.values()); OP = sum(s['op'] for s in SL.values())
 W_srv = nlev*slab*A + frame_kN + walls_kN + raft_kN + OP + sum(LIVE.values())*A
 W_empty = nlev*slab*A + frame_kN + walls_kN + raft_kN + D_eq
-U = 9.81*max(0.0, depth - gw)*A; t_shear = t_raft
-dt = max(0.0, (1.10*U - W_empty)/(A*(24.0 - 1.10*9.81)))               # thicken the raft downward until FS 1.10 (ballast from need)
+U = SITE.g()*max(0.0, depth - gw)*A; t_shear = t_raft
+dt = max(0.0, (1.10*U - W_empty)/(A*(24.0 - 1.10*SITE.g())))               # thicken the raft downward until FS 1.10 (ballast from need)
 dt = math.ceil(dt*20)/20; t_raft += dt; depth += dt; raft_kN += A*dt*24.0; W_empty += A*dt*24.0; W_srv += A*dt*24.0
-U = 9.81*max(0.0, depth - gw)*A; FSu = W_empty/U if U else float('inf')
+U = SITE.g()*max(0.0, depth - gw)*A; FSu = W_empty/U if U else float('inf')
 qa_d = min(3*qa, qa*(1 + 0.2*(depth/0.3048 - 1)))                    # IBC 1806.3.1 depth increase, max 3 x table
 q_gross = W_srv/A; q_over = gs*depth; q_net = q_gross - q_over
 sw = WT.seismic_wind(r, P.PLATE_L, P.PLATE_W); M = sw['M_seis_kNm'] + sw['V_seis_kN']*depth

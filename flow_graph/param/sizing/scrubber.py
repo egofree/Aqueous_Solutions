@@ -2,6 +2,7 @@
 the packing vendor; the functions do not supply defaults."""
 import math
 from ..refs import cite
+from .. import site as SITE
 REF = cite('PERRY9_ABS')
 def flood_velocity_m_s(Cs_m_s, rho_L, rho_G): return Cs_m_s*math.sqrt((rho_L-rho_G)/rho_G)
 def diameter_m(Q_gas_m3_s, u_flood_m_s, frac_flood):
@@ -29,7 +30,7 @@ def vent_scrubber(feed_kg_d, air_mg_kg, T_vent_C, p_hcl_kPa, psat_vent_kPa, y_ou
     equilibrium partial pressure over the condensate [PERRY7_HCL_VLE]. NaOH absorbs HCl irreversibly, NTU = ln(y_in/y_out) [PERRY9_ABS].
     Diameter from the column-to-packing ratio (wall channelling) [PERRY9_ABS]; liquid recirculation from the minimum wetting rate;
     NaOH bleed = HCl absorbed x excess, as the BMED 2 M base."""
-    P = 101.325; air_mol = feed_kg_d*air_mg_kg/1e6/28.96*1000          # mol/d
+    P = SITE.p_atm_kPa(); air_mol = feed_kg_d*air_mg_kg/1e6/28.96*1000          # mol/d
     n_dry = air_mol; y_w = psat_vent_kPa/P; y_h = p_hcl_kPa/P
     n_tot = n_dry/(1 - y_w - y_h); hcl_mol = n_tot*y_h; w_mol = n_tot*y_w
     vent_kg_d = (air_mol*28.96 + w_mol*18.015 + hcl_mol*36.461)/1000

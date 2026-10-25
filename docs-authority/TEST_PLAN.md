@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 32 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 58 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 438 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 442 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 631 items: 287 drivers, 344 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 635 items: 290 drivers, 345 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -219,6 +219,7 @@ Total 631 items: 287 drivers, 344 register entries. Classification rule: first m
 | driver DIGESTER.ew-cascade-train.stray_current_limit_A | 0.1 A | stray-current acceptance limit vs NFPA 70E / AQS-HSE basis | X-PAR |
 | driver DIGESTER.metals-leach-train.htc_header_P_bar | 15.55 bar a | steam heater design pressure vs heater duty sheet | X-PAR |
 | driver DIGESTER.metals-leach-train.htc_header_T_K | 473.15 K | steam heater temperature vs duty sheet | X-PAR |
+| driver ELEC.storage-train.ZNBR2.purge_air_T_C | 25.0 C purge air temperature | Compare with the HVAC design room and line temperatures | X-PAR |
 | driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task | X-PAR |
 | driver GAS.headers.meam_header_P_bar | 20.7 bar a | MeAM loop design pressure vs duty sheet | X-PAR |
 | driver GAS.headers.meam_header_T_K | 673.15 K | MeAM loop temperature vs duty sheet | X-PAR |
@@ -226,11 +227,13 @@ Total 631 items: 287 drivers, 344 register entries. Classification rule: first m
 | driver GAS.headers.methanol_synth_loop_T_K | 523.15 K | loop reactor temperature vs MEOH_SYNTH duty sheet | X-PAR |
 | driver GEO.geo-loop.ghex_q_per_m_W | 35 W/m sustained per-metre bore capacity | Thermal response test on the first bore (ST-ORC-01) | X-PAR |
 | driver GEO.geo-loop.loop_head_m | 25 m loop circuit head | Circuit head from the routed loop isometric | X-PAR |
+| driver HDR.headers-train.hdr_air_T_C | 20.0 C air / N2 class gas temperature for header density | Compare with the HVAC design room and line temperatures | X-PAR |
 | driver HDR.headers-train.hdr_min_DN_flue | 100 DN minimum, afterburner flue | Natural-draft and condensate-drainage check on the flue routing drawing | X-PAR |
 | driver HDR.headers-train.hdr_min_DN_gas | 25 DN minimum, gas headers | Take-off and instrument tapping check on the header GA at unit task 05 | X-PAR |
 | driver HDR.headers-train.hdr_run_default_m | 20 m fallback manifold run when no isometric route exists | Header run lengths from the routed isometrics at the next AQS-ISO-002 regen | X-PAR |
 | driver HEAT.heat-battery-train.hb_q3_hold_kWh_th | 14 kWh_th | Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision | X-PAR |
 | driver POLYMERS.fluoropolymer-train.hf_kiln.residence_min | 30.0 min | kiln exit HF strength vs residence at the first-article campaign | X-PAR |
+| driver WTR.grey-black-train.san_air_T_C | 20.0 C reference air temperature for the NOX_SCRUB superficial | Compare with the HVAC design room and line temperatures | X-PAR |
 | driver ash_cop_c | 3.22 air-source heat pump cooling COP (EER 11.0), >= 19 kW | Selected unit rating | X-PAR |
 | driver ash_cop_h | 3.3 air-source heat pump heating COP at 8.3 C, >= 19 kW | Selected unit rating; low-ambient derate in bin-hour run | X-PAR |
 | driver atm_design_sg | 1.25 - liquid specific gravity for the hydrostatic case of atmospheric vessels (covers 20 wt% HCl 1.10 and 20 wt% NaOH 1.22) | Replace with the stored liquid density per unit at its unit sizing task | X-PAR |
@@ -647,6 +650,7 @@ Total 631 items: 287 drivers, 344 register entries. Classification rule: first m
 | A-M-381 | ASTM D1785-21a (previously 15): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with ASTM D1785 in the 21a text (publisher free-access reader where offered) and correct the number or value; close this entry when all match | X-STD-01 |
 | A-M-382 | ASTM D2855-20 (previously 15): clause numbers, tables and va clause | For each listed file, look up every clause, table and value cited with ASTM D2855 in the 20 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match | X-STD-01 |
 | A-M-383 | Dual-fuel spark-ignition engine: 30 % efficiency on hydrogen - ; kWh/kg | Exercise run on hydrogen at 30 % load: measure fuel mass and electrical output; confirm efficiency within 10 % of 0.30 | X-PAR-12 |
+| A-M-384 | Gas headers (air and nitrogen class) and the sanitation flue °C | Compare with the HVAC design room and line temperatures | X-LOC-03 |
 
 ## 7. T6 Commissioning measurements
 

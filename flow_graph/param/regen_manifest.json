@@ -2588,6 +2588,38 @@
    "index": true
   },
   {
+   "name": "site_scaling",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.scaling",
+    "--write"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/SITE_SCALING.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
+   "name": "site_power",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.portfolio",
+    "--write"
+   ],
+   "depends_on": [
+    "site_scaling"
+   ],
+   "outputs": [
+    "docs-authority/SITE_POWER.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
    "name": "task_plan",
    "argv": [
     "python3",
@@ -3266,9 +3298,10 @@
   {
    "role": "pipeline",
    "scripts": [
-    "flow_graph/param/regen.py"
+    "flow_graph/param/regen.py",
+    "flow_graph/param/site_outputs.py"
    ],
-   "reason": "The pipeline runner itself."
+   "reason": "The pipeline runner itself, and its locale runner (--site), which writes only under sites/<site_id>/."
   },
   {
    "role": "library",

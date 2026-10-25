@@ -386,7 +386,8 @@ def build():
     from flow_graph.system_tree import load as load_tree
 
     g = json.load(open(GRAPH))
-    drivers = json.load(open(DRIVERS))
+    from flow_graph.param import drivers as DR
+    drivers = DR.load()                                 # drivers for the selected site (AQS_SITE)
     tree = load_tree()                                  # raises on a broken/drifted tree
     report = tree.validate()                            # ... and on graph drift
     node_of = {n['unit_id']: n for n in g['nodes']}

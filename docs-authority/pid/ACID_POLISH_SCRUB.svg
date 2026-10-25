@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="638" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="630" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit ACID_POLISH_SCRUB · scrubber · sector GAS · present</text>
-<text x="24" y="54" font-size="10.5">1.1123 kW continuous</text>
+<text x="24" y="54" font-size="10.5">1.1122 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 3 in + 2 out · valves 6 placed / 0 unplaced · instruments 6 (1 SIF) · nozzles 6</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -89,7 +89,7 @@
 <g id="aqs-title-block"><rect x="1116" y="520" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="537" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-ACID_POLISH_SCRUB</text>
 <text x="1124" y="554" font-size="9">P&amp;ID ACID_POLISH_SCRUB (scrubber, GAS sector)</text>
-<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 2f9d6848   Issued 2026-10-19</text>
+<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 33e5a3bf   Issued 2026-10-19</text>
 <text x="1124" y="588" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="605" font-size="9">Graph SHA-256 07baa51a068d0211   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="605" font-size="9">Graph SHA-256 ed22ff1bb3835551   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

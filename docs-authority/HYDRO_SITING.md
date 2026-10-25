@@ -9,18 +9,18 @@ Backup store 202 kWh at the bus (NFPA 111 Class X, 14.0 h x 14.46 kW, A-M-145), 
 
 | Option | Head m | Water m3 | Water t (load) | Reservoir shape | Penstock / casing pressure MPa | Structural note |
 |---|---|---|---|---|---|---|
-| A. Roof tank (present) | 18 | 5158 | 5158 | 25.6 m dia x 10 m | 0.18 | roof carries the full water mass |
-| B. Elevated tank on a tower | 25 | 3714 | 3714 | 21.7 m dia x 10 m | 0.25 | tower + foundation carry the water mass; AWWA D100 wind/seismic |
-| B. Elevated tank on a tower | 30 | 3095 | 3095 | 19.9 m dia x 10 m | 0.29 | tower + foundation carry the water mass; AWWA D100 wind/seismic |
-| B. Elevated tank on a tower | 40 | 2321 | 2321 | 17.2 m dia x 10 m | 0.39 | tower + foundation carry the water mass; AWWA D100 wind/seismic |
-| B. Elevated tank on a tower | 50 | 1857 | 1857 | 15.4 m dia x 10 m | 0.49 | tower + foundation carry the water mass; AWWA D100 wind/seismic |
-| C. Hillside upper reservoir | 50 | 1857 | 1857 | 19.3 m square x 5 m deep | 0.49 | lined pond at grade on site terrain; penstock down the slope; no elevated mass |
-| C. Hillside upper reservoir | 100 | 928 | 928 | 13.6 m square x 5 m deep | 0.98 | lined pond at grade on site terrain; penstock down the slope; no elevated mass |
+| A. Roof tank (present) | 18 | 5160 | 5160 | 25.6 m dia x 10 m | 0.18 | roof carries the full water mass |
+| B. Elevated tank on a tower | 25 | 3715 | 3715 | 21.7 m dia x 10 m | 0.25 | tower + foundation carry the water mass; AWWA D100 wind/seismic |
+| B. Elevated tank on a tower | 30 | 3096 | 3096 | 19.9 m dia x 10 m | 0.29 | tower + foundation carry the water mass; AWWA D100 wind/seismic |
+| B. Elevated tank on a tower | 40 | 2322 | 2322 | 17.2 m dia x 10 m | 0.39 | tower + foundation carry the water mass; AWWA D100 wind/seismic |
+| B. Elevated tank on a tower | 50 | 1858 | 1858 | 15.4 m dia x 10 m | 0.49 | tower + foundation carry the water mass; AWWA D100 wind/seismic |
+| C. Hillside upper reservoir | 50 | 1858 | 1858 | 19.3 m square x 5 m deep | 0.49 | lined pond at grade on site terrain; penstock down the slope; no elevated mass |
+| C. Hillside upper reservoir | 100 | 929 | 929 | 13.6 m square x 5 m deep | 0.98 | lined pond at grade on site terrain; penstock down the slope; no elevated mass |
 | C. Hillside upper reservoir | 200 | 464 | 464 | 9.6 m square x 5 m deep | 1.96 | lined pond at grade on site terrain; penstock down the slope; no elevated mass |
-| D. Surface upper + deep-shaft / cavern lower reservoir | 100 | 928 | 928 | 13.6 m square x 5 m deep | 0.98 | upper pond at grade; lower reservoir excavated; shaft depth = head |
+| D. Surface upper + deep-shaft / cavern lower reservoir | 100 | 929 | 929 | 13.6 m square x 5 m deep | 0.98 | upper pond at grade; lower reservoir excavated; shaft depth = head |
 | D. Surface upper + deep-shaft / cavern lower reservoir | 200 | 464 | 464 | 9.6 m square x 5 m deep | 1.96 | upper pond at grade; lower reservoir excavated; shaft depth = head |
-| D. Surface upper + deep-shaft / cavern lower reservoir | 300 | 309 | 309 | 7.9 m square x 5 m deep | 2.94 | upper pond at grade; lower reservoir excavated; shaft depth = head |
-| D. Surface upper + deep-shaft / cavern lower reservoir | 500 | 186 | 186 | 6.1 m square x 5 m deep | 4.91 | upper pond at grade; lower reservoir excavated; shaft depth = head |
+| D. Surface upper + deep-shaft / cavern lower reservoir | 300 | 310 | 310 | 7.9 m square x 5 m deep | 2.94 | upper pond at grade; lower reservoir excavated; shaft depth = head |
+| D. Surface upper + deep-shaft / cavern lower reservoir | 500 | 186 | 186 | 6.1 m square x 5 m deep | 4.90 | upper pond at grade; lower reservoir excavated; shaft depth = head |
 
 Reading the table:
 - A on the roof needs the roof to carry about 11,400 t; not credible on the hall structure.

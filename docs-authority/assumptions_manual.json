@@ -6716,5 +6716,23 @@
   ],
   "needs_verification": true,
   "verification_test": "Exercise run on hydrogen at 30 % load: measure fuel mass and electrical output; confirm efficiency within 10 % of 0.30"
+ },
+ {
+  "id": "A-M-384",
+  "title": "Air density temperatures for gas headers, sanitation superficials and the ZNBR2 purge",
+  "value": "Gas headers (air and nitrogen class) and the sanitation flue and vent superficials at 20 \u00b0C; ZNBR2 purge air at 25 \u00b0C. Densities follow from the site pressure and air molar mass by the ideal gas law (flow_graph/param/site.py air_density).",
+  "units": "\u00b0C",
+  "where": "flow_graph/param/drivers.json HDR.headers-train.hdr_air_T_C, WTR.grey-black-train.san_air_T_C, ELEC.storage-train.ZNBR2.purge_air_T_C",
+  "basis": "The former density drivers were stated at 20 \u00b0C (headers, sanitation); the purge density had no stated temperature and is taken at the 25 \u00b0C indoor basis used for insulation.",
+  "sensitivity": "Density scales with absolute temperature; 5 K changes it by under 2 %.",
+  "replaced_by": "Operating temperatures from the HVAC design (AQS-THM-002) and the header line lists.",
+  "task": "X-LOC-03",
+  "files": [
+   "flow_graph/param/headers.py",
+   "flow_graph/param/sanitation.py",
+   "flow_graph/param/ess_tf.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "Compare with the HVAC design room and line temperatures"
  }
 ]

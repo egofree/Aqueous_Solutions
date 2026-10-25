@@ -5,6 +5,9 @@ sizing params (EXT_HALL hvac, design dicts); (4) rules on the graph edges and no
 24 V DC BLDC in a standard flange size; solenoids and valve actuators 24 V DC. Writes docs-authority/inventory/MOTOR_INVENTORY.md,
 MOTOR_INVENTORY.csv and MOTOR_FAMILIES.csv. Run: python3 -m flow_graph.inventory.motors"""
 import csv, glob, json, math, os, re, collections
+import os as _os_s, sys as _sys_s; _R_s = _os_s.path.dirname(_os_s.path.dirname(_os_s.path.dirname(_os_s.path.abspath(__file__))))
+if _R_s not in _sys_s.path: _sys_s.path.insert(0, _R_s)
+from flow_graph.param import site as SITE   # apparent gravity from the site profile
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 IEC = [(0.09, '56'), (0.12, '63'), (0.18, '63'), (0.25, '71'), (0.37, '71'), (0.55, '80'), (0.75, '80'), (1.1, '90S'), (1.5, '90L'), (2.2, '100L'),
        (3.0, '100L'), (4.0, '112M'), (5.5, '132S'), (7.5, '132M'), (11.0, '160M'), (15.0, '160L'), (18.5, '180M'), (22.0, '180L'), (30.0, '200L'), (37.0, '225S')]
@@ -99,7 +102,7 @@ def build():
         if c not in NO_PUMP and not str(c).startswith('cold'):
             for e in E[u]:
                 if e['phase'] in ('L', 'S/L', 'L/S') and N.get(e['to_unit_id'], {}).get('class') not in ('header', 'boundary'):
-                    kw = e['rate']['value']/86400*9.81*H_PUMP/ETA_PUMP/1000
+                    kw = e['rate']['value']/86400*SITE.g()*H_PUMP/ETA_PUMP/1000
                     add(u, f"transfer pump {e['stream_id']} to {e['to_unit_id']}", 'motor', kw, 'S1' if e['rate']['value'] > 500 else 'S3', f"{e['rate']['value']:.1f} kg/d at {H_PUMP:.0f} m, eff {ETA_PUMP} (assumed; gravity not credited)")
                     if c in ('reagent', 'dose', 'tank', 'cut_tank'): add(u, f"on/off valve {e['stream_id']}", 'solenoid', 0.008, 'S3', 'assumed one per dosed line')
             sol = [e for e in E[u] if e['phase'] == 'S' and e['rate']['value'] >= 50]

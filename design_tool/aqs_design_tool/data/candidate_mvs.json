@@ -197,8 +197,8 @@
           "recirc_m3_h": 3.89,
           "dP_Pa": 1171.034,
           "fan_W": 847.3248,
-          "pump_W": 265.006,
-          "kW": 1.1123,
+          "pump_W": 264.9155,
+          "kW": 1.1122,
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
@@ -211,7 +211,7 @@
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
-        "value": 1.1123,
+        "value": 1.1122,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
@@ -297,8 +297,8 @@
           "recirc_m3_h": 3.89,
           "dP_Pa": 1171.034,
           "fan_W": 847.3248,
-          "pump_W": 265.006,
-          "kW": 1.1123,
+          "pump_W": 264.9155,
+          "kW": 1.1122,
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
@@ -311,7 +311,7 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 1.1123,
+        "value": 1.1122,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
@@ -1529,7 +1529,7 @@
           "loop_flow_kg_s": 0.2564,
           "loop_dT_K": 3,
           "loop_fluid": "25 % propylene glycol",
-          "circ_pump_W": 125.8,
+          "circ_pump_W": 125.7,
           "status": "design_survey_locked (ST-ORC-01)",
           "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal"
         },
@@ -1589,7 +1589,7 @@
           "DN": 32,
           "dT_K": 3,
           "head_m": 25,
-          "pump_W": 125.8,
+          "pump_W": 125.7,
           "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
           "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
         },
@@ -1598,10 +1598,10 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 0.1258,
+        "value": 0.1257,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-076 source-loop circulator: 125.8 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; drivers GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding winter case with it (AQS-DUTY-010, A-M-231, A-M-317)."
+        "note": "AQS-DUTY-076 source-loop circulator: 125.7 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; drivers GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding winter case with it (AQS-DUTY-010, A-M-231, A-M-317)."
       }
     },
     {
@@ -1960,8 +1960,8 @@
           "kind": "gas",
           "flow_kg_s": 0.0022,
           "duty_kW": null,
-          "rho_kg_m3": 1.2,
-          "Q_m3_s": 0.0019,
+          "rho_kg_m3": 1.2041,
+          "Q_m3_s": 0.0018,
           "v_m_s": 8.0,
           "id_req_mm": 17.2,
           "DN": 32,
@@ -1989,7 +1989,7 @@
           "kind": "gas",
           "flow_kg_s": 0.0004,
           "duty_kW": null,
-          "rho_kg_m3": 1.2,
+          "rho_kg_m3": 1.2041,
           "Q_m3_s": 0.0003,
           "v_m_s": 8.0,
           "id_req_mm": 7.1,
@@ -2082,10 +2082,10 @@
       "class": "hydro",
       "tags": [],
       "params": {
-        "energy_kwh_ideal_study": 266.4,
+        "energy_kwh_ideal_study": 266.3,
         "energy_kwh_recoverable_study": 213.1,
         "ref": "AQS-ESS-001",
-        "volume_m3_m1": 2699.0,
+        "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
         "vs_znbr2_kwh": 2517.0,
         "fraction_of_znbr2_study": 0.085,
@@ -2102,7 +2102,7 @@
           "eta_turbine_generator": 0.8,
           "eta_pump_motor": 0.85,
           "round_trip": 0.68,
-          "upper_reservoir_m3": 2699.0,
+          "upper_reservoir_m3": 2700.0,
           "rated_kW_discharge": 14.46,
           "recharge_kW_over_PV_window": 49.6,
           "A-M": "A-M-145",
@@ -2360,8 +2360,8 @@
           "recirc_m3_h": 7.4258,
           "dP_Pa": 1171.034,
           "fan_W": 1617.4908,
-          "pump_W": 505.8802,
-          "kW": 2.1234,
+          "pump_W": 505.7074,
+          "kW": 2.1232,
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
@@ -2374,7 +2374,7 @@
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
-        "value": 2.1234,
+        "value": 2.1232,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 1617 W, pump 506 W."
@@ -2502,7 +2502,7 @@
           "recirc_m3_h": 0.4775,
           "dP_Pa": 1171.034,
           "fan_W": 5.96,
-          "pump_W": 32.5312,
+          "pump_W": 32.5201,
           "kW": 0.0385,
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
@@ -2807,7 +2807,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 336.8121,
+        "value": 336.8116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -3325,16 +3325,16 @@
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.38,
+          "H2_m3_d": 6.379,
           "purge_m3_h": 26.58,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1645.9
+          "electrode_area_m2": 1645.8
         }
       },
       "modules": [],
       "electrical_role": "storage",
       "continuous_kw": {
-        "value": 179.7338,
+        "value": 179.7238,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
@@ -3874,7 +3874,7 @@
           "area_m2": 2.604,
           "standing_loss_kW": 0.161,
           "issued_loss_kW": 0.2,
-          "wall_mm": 22651,
+          "wall_mm": 22643,
           "material": "SA-240 304L, welded",
           "envelope": [
             800,
@@ -3928,7 +3928,7 @@
           "area_m2": 2.604,
           "standing_loss_kW": 0.112,
           "issued_loss_kW": 0.111,
-          "wall_mm": 22651,
+          "wall_mm": 22643,
           "material": "SA-240 304L, welded",
           "envelope": [
             800,
@@ -3987,7 +3987,7 @@
           "area_m2": 3.122,
           "standing_loss_kW": 0.137,
           "issued_loss_kW": 0.174,
-          "wall_mm": 29722,
+          "wall_mm": 29711,
           "material": "SA-240 304L, welded (100 C tier is above the PP-H class of 80 C)",
           "envelope": [
             800,
@@ -4041,7 +4041,7 @@
           "area_m2": 4.021,
           "standing_loss_kW": 0.153,
           "issued_loss_kW": 0.164,
-          "wall_mm": 40046,
+          "wall_mm": 40032,
           "material": "PP-H (fusion welded)",
           "envelope": [
             800,
@@ -4095,7 +4095,7 @@
           "area_m2": 2.604,
           "standing_loss_kW": 0.161,
           "issued_loss_kW": 0.2,
-          "wall_mm": 22651,
+          "wall_mm": 22643,
           "material": "SA-240 304L, welded",
           "envelope": [
             800,
@@ -4149,7 +4149,7 @@
           "area_m2": 2.604,
           "standing_loss_kW": 0.112,
           "issued_loss_kW": 0.111,
-          "wall_mm": 22651,
+          "wall_mm": 22643,
           "material": "SA-240 304L, welded",
           "envelope": [
             800,
@@ -4208,7 +4208,7 @@
           "area_m2": 3.122,
           "standing_loss_kW": 0.137,
           "issued_loss_kW": 0.174,
-          "wall_mm": 29722,
+          "wall_mm": 29711,
           "material": "SA-240 304L, welded (100 C tier is above the PP-H class of 80 C)",
           "envelope": [
             800,
@@ -4262,7 +4262,7 @@
           "area_m2": 4.021,
           "standing_loss_kW": 0.153,
           "issued_loss_kW": 0.164,
-          "wall_mm": 40046,
+          "wall_mm": 40032,
           "material": "PP-H (fusion welded)",
           "envelope": [
             800,
@@ -9254,10 +9254,10 @@
       "phase": "G",
       "carries": "Br2 vapor",
       "rate": {
-        "value": 752.788322,
+        "value": 755.229337,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: HER 5.43 + open-circuit 0.95 m3/d H2 on 3595 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: HER 5.43 + open-circuit 0.95 m3/d H2 on 3594 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -9271,7 +9271,7 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 752.788322,
+        "value": 755.229337,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -11358,7 +11358,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 336.8121,
+        "value": 336.8116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -13313,7 +13313,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 1.1123,
+        "value": 1.1122,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
@@ -13993,7 +13993,7 @@
       "phase": "E",
       "carries": "480 V AC",
       "rate": {
-        "value": 1.1123,
+        "value": 1.1122,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
@@ -14027,7 +14027,7 @@
       "phase": "E",
       "carries": "480 V AC",
       "rate": {
-        "value": 2.1234,
+        "value": 2.1232,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
@@ -16577,7 +16577,7 @@
       "phase": "E",
       "carries": "480 V AC",
       "rate": {
-        "value": 0.1258,
+        "value": 0.1257,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP_CLOSED_LOOP continuous_kw (A-M-317)."
@@ -16600,13 +16600,13 @@
       "PUMPED_HYDRO"
     ],
     "need_kw": {
-      "value": 179.73,
+      "value": 179.72,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 29x23 bays, ext 68.28 kW)."
     },
     "target_kw": {
-      "value": 449.33,
+      "value": 449.31,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."

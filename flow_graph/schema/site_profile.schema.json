@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "flow_graph/schema/site_profile.schema.json",
+  "title": "Site profile (AQS-PLAN-011 section 4)",
+  "description": "One file per locale in flow_graph/param/sites/<site_id>.json. Every entry has the form of a driver in flow_graph/param/drivers.json. An entry with 'binds' supplies the named driver; the loader in flow_graph/param/site.py applies it. A group is either a set of entries, or marked not applicable with its reason, or marked pending with the task that will fill it.",
+  "type": "object",
+  "required": ["site_id", "groups"],
+  "additionalProperties": false,
+  "properties": {
+    "site_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+    "site_code": {"type": "string", "pattern": "^[A-Z][A-Z0-9]*$", "description": "suffix used on locale document numbers (AQS-PLAN-011 section 4.5)"},
+    "groups": {
+      "type": "object",
+      "additionalProperties": {"$ref": "#/$defs/group"}
+    }
+  },
+  "x-groups": {
+    "identity": {"always": true, "entries": ["name", "body", "latitude_deg", "longitude_deg", "elevation_m", "site_basis"]},
+    "gravity": {"always": true, "entries": ["g_m_s2"]},
+    "atmosphere": {"always": true, "entries": ["pressure_Pa", "composition_mole_fraction", "molar_mass_kg_kmol", "breathable", "vent_sink", "oxidant"]},
+    "thermal": {"always": true, "entries": ["cooling_dry_bulb_C", "heating_dry_bulb_C", "insulation_ambient_C"]},
+    "solar": {"always": false, "entries": ["pv_yield_kWh_kWp_d", "night_hours"]},
+    "wind": {"always": false, "entries": ["basic_wind_speed_m_s"]},
+    "snow": {"always": false, "entries": ["roof_snow_kPa"]},
+    "seismic": {"always": false, "entries": ["SDS_g", "SD1_g", "TL_s"]},
+    "ground": {"always": false, "entries": ["allowable_bearing_kPa", "unit_weight_kN_m3", "resistivity_ohm_m", "ghex_capacity_W_m", "frost_depth_m"]},
+    "radiation": {"always": false, "entries": ["dose_rate_mSv_d"]},
+    "water_sources": {"always": false, "entries": ["sources"]},
+    "local_feedstocks": {"always": false, "entries": ["feed_cases"]},
+    "logistics": {"always": false, "entries": ["arrival_mode", "resupply_interval_d"]},
+    "electrical": {"always": true, "entries": ["ac_frequency_Hz", "earthing_method"]},
+    "jurisdiction": {"always": true, "entries": ["code_families"]},
+    "motion": {"always": false, "entries": ["heel_deg", "roll_deg", "pitch_deg", "heave_m_s2"]},
+    "heat_rejection": {"always": true, "entries": ["levels"]},
+    "power_portfolio": {"always": true, "entries": ["sources", "storage", "worst_stretch", "oversize_factor"]},
+    "scaling": {"always": true, "entries": ["actions"]},
+    "capabilities": {"always": true, "entries": ["buoyant_separation", "free_surface", "air_heat_sink", "air_oxidant", "vent_sink", "ground_contact", "liquid_water_at_ambient"]}
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": ["value", "units"],
+      "properties": {
+        "value": {},
+        "units": {"type": "string"},
+        "ref": {"type": "string"},
+        "register": {"type": "string"},
+        "owner": {"type": "string"},
+        "needs_verification": {"type": "boolean"},
+        "verification_test": {"type": "string"},
+        "binds": {"type": "string", "description": "the drivers.json key this entry supplies"}
+      },
+      "anyOf": [{"required": ["ref"]}, {"required": ["register"]}, {"required": ["owner"]}]
+    },
+    "group": {
+      "type": "object",
+      "oneOf": [
+        {"required": ["entries"], "properties": {"entries": {"type": "object", "additionalProperties": {"$ref": "#/$defs/entry"}}}},
+        {"required": ["not_applicable"], "properties": {"not_applicable": {"type": "string", "minLength": 1}}},
+        {"required": ["pending"], "properties": {"pending": {"type": "string", "pattern": "^X-[A-Z]+-[0-9]+$"}}}
+      ]
+    }
+  }
+}

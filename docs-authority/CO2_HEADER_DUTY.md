@@ -63,7 +63,7 @@ Hab air is not a consumer (CO2 in hab air is a hazard). BOUNDARY_EXPORT is forbi
 
 Revision B sized the dose to hold 1000 ppm CO2 in the farm air against the minimum outdoor-air rate, with a CO2-controlled outdoor-air damper; that sizing (693.5 to 961.2 m3/h of outdoor air in the photoperiod) belonged to the earlier farm decision and stays in the revision history.
 
-In the present graph the dose is the grow-bed demand rate: the bed (29.12 m2, crew-duty basis A-M-229) takes 0.882 kg/d on S89. At that dose the setpoint of revision B is not held at the minimum outdoor-air rate (the study puts the holding dose at 4.209 kg/d); the setpoint-and-damper basis is therefore not claimed for the present farm. If a setpoint is wanted again, the header needs a source larger than the hab metabolic flow, and S85 (cold-box CO2, only on demand) is the candidate. The question is recorded in `docs-authority/OPEN_QUESTIONS.md`.
+In the present graph the dose is the grow-bed demand rate: the bed (29.12 m2, crew-duty basis A-M-229) takes 0.882 kg/d on S89. At that dose the setpoint of revision B is not held at the minimum outdoor-air rate (the study puts the holding dose at 4.209 kg/d); the setpoint-and-damper basis is therefore not claimed for the present farm. If a setpoint is wanted again, the header needs a source larger than the hab metabolic flow, and S85 (cold-box CO2, only on demand) is the candidate. The question is recorded in `docs-authority/OPEN_QUESTIONS.md` (Q-033).
 
 ## 6. Open items
 

@@ -7,11 +7,12 @@ Run: python3 docs-authority/_ew_busbar.py"""
 import os, re, sys, json
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, R)
 from flow_graph.param import drivers as DR
+from flow_graph.param import site as SITE   # apparent gravity from the site profile
 d = DR.load(); v = lambda k: DR.val(d, k)
 SIG = 5.670e-8; Ta = 313.15
 def shed(w, t, n, dT):
     T = Ta + dT; Tf = (T + Ta)/2; nu = 1.6e-5*(Tf/300)**1.75; k = 0.0263*(Tf/300)**0.8; Pr = 0.71   # air, INCROPERA7 table A.4 fit
-    Ra = 9.81/Tf*dT*w**3/nu**2*Pr; h = 0.59*Ra**0.25*k/w
+    Ra = SITE.g()/Tf*dT*w**3/nu**2*Pr; h = 0.59*Ra**0.25*k/w
     P_out = 2*(w + n*t + (n - 1)*t); P_conv = 2*n*w + 2*n*t                    # outer surface radiates; every face convects
     return h*P_conv*dT + v('ew_bar_emissivity')*SIG*(T**4 - Ta**4)*P_out
 def size(I):

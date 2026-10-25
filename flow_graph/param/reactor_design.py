@@ -10,6 +10,7 @@ byte-identical from an unchanged graph, which cannot clear commit-based stalenes
 Run: python3 -m flow_graph.param.reactor_design [--write | --doc-only]   (--doc-only: doc + manifest, no graph write)"""
 import json, math, os, sys
 from . import drivers as DR
+from . import site as SITE
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
 DN = (25, 32, 40, 50, 65, 80, 100, 125, 150, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000, 1200)
@@ -18,7 +19,7 @@ def vessel(V_work, fill, rho, sigma_MPa=None, t_min=3.0, CA=0.0, steel=False):
     V = V_work/fill; T = (4*V/math.pi)**(1/3); H = T
     Dn = next((x for x in DN if x/1000 >= T), DN[-1]); T = Dn/1000; H = 4*V/(math.pi*T**2); H = max(H, T*0.8)
     if steel: t = max(t_min, 1.5) + CA
-    else: t = max(t_min, rho*9.81*H*fill*T/(2*sigma_MPa*1e6)*1000)
+    else: t = max(t_min, rho*SITE.g()*H*fill*T/(2*sigma_MPa*1e6)*1000)
     return dict(V_work_L=V_work*1000, V_L=V*1000, D_mm=Dn, H_mm=math.ceil(H*1000/10)*10, wall_mm=math.ceil(t*2)/2)
 
 def agitator(D_tank_m, rho, tip, Np):

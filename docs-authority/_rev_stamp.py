@@ -69,6 +69,7 @@ def compute():
     orphans = iso_orphans()   # sheets of deleted/rerouted edges: present as svg, absent from the regenerated route table
     for f in sorted(files):
         c = last.get(f)
+        if f == 'docs-authority/DERIVED_REVISIONS.md': rows.append((f, '-', 'this register (its own row would change with each write)')); continue
         if c is None or f in dirty: rows.append((f, 'working tree', 'current' if f in dirty else 'untracked')); continue
         cl = next((v for k, v in CLASS.items() if fnmatch.fnmatch(f, k)), None)
         if cl: rows.append((f, '-', cl)); continue

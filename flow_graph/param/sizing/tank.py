@@ -1,8 +1,9 @@
 """Tank, agitator and pump sizing. Plates and beams [ROARK8]; agitator power [PERRY9_MIX]; pump power [PERRY9_PUMP]."""
 import math
 from ..refs import cite
+from .. import site as SITE
 REF = (cite('ROARK8'), cite('PERRY9_MIX'), cite('PERRY9_PUMP'))
-G = 9.80665
+G = SITE.g()   # apparent gravity from the site profile
 def hydrostatic_MPa(rho, depth_mm): return rho*G*depth_mm*1e-9
 def volume_m3(L_mm, W_mm, h_mm): return L_mm*W_mm*h_mm*1e-9
 def residence_h(V_m3, Q_m3_d): return V_m3/Q_m3_d*24

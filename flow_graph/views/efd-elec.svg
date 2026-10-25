@@ -254,7 +254,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M176.78,-4008.65C226.26,-4001.25 328.43,-3985.22 414,-3967 417.2,-3966.32 420.5,-3965.58 423.81,-3964.81"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="424.84,-3968.17 433.75,-3962.44 423.21,-3961.36 424.84,-3968.17"/>
-<text text-anchor="middle" x="355" y="-3991.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n336.8121 kW</text>
+<text text-anchor="middle" x="355" y="-3991.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n336.8116 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node23" class="node">
@@ -849,7 +849,7 @@
 <title>SOL_ARK_60K&#45;&gt;ACID_POLISH_SCRUB</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M474.9,-3933.78C473.92,-3737.18 467.28,-2014.18 534,-1932 574.74,-1881.82 651.24,-1871.23 706.32,-1870.85"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="706.33,-1874.35 716.34,-1870.89 706.35,-1867.35 706.33,-1874.35"/>
-<text text-anchor="middle" x="612.5" y="-1934.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ACID_POLISH_SCRUB\n1.1123 kW</text>
+<text text-anchor="middle" x="612.5" y="-1934.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ACID_POLISH_SCRUB\n1.1122 kW</text>
 </g>
 <!-- ALK_SCRUBBER -->
 <g id="node58" class="node">
@@ -862,7 +862,7 @@
 <title>SOL_ARK_60K&#45;&gt;ALK_SCRUBBER</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.19,-3933.94C477.36,-3731.68 498.05,-1897.67 534,-1856 578.62,-1804.28 662.89,-1801.48 717.98,-1806.22"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="717.96,-1809.74 728.25,-1807.22 718.63,-1802.77 717.96,-1809.74"/>
-<text text-anchor="middle" x="612.5" y="-1858.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ALK_SCRUBBER\n1.1123 kW</text>
+<text text-anchor="middle" x="612.5" y="-1858.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ALK_SCRUBBER\n1.1122 kW</text>
 </g>
 <!-- H2_DRYER -->
 <g id="node59" class="node">
@@ -914,7 +914,7 @@
 <title>SOL_ARK_60K&#45;&gt;GEO_HP_CLOSED_LOOP</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.13,-3933.72C476.75,-3716.65 493.27,-1637.98 534,-1591 574.32,-1544.5 646.85,-1538.3 701.09,-1541.4"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="701.12,-1544.91 711.34,-1542.11 701.6,-1537.93 701.12,-1544.91"/>
-<text text-anchor="middle" x="612.5" y="-1593.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;GEO_HP_CLOSED_LOOP\n0.1258 kW</text>
+<text text-anchor="middle" x="612.5" y="-1593.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;GEO_HP_CLOSED_LOOP\n0.1257 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;GLASS_DIGEST -->
 <g id="edge19" class="edge">
@@ -999,7 +999,7 @@
 <title>SOL_ARK_60K&#45;&gt;MET_SCRUB</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.02,-3933.64C475.38,-3680.3 480.53,-889.36 534,-826 580.44,-770.98 671.39,-769.56 726.13,-774.57"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="725.93,-778.07 736.24,-775.6 726.64,-771.1 725.93,-778.07"/>
-<text text-anchor="middle" x="612.5" y="-828.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MET_SCRUB\n2.1234 kW</text>
+<text text-anchor="middle" x="612.5" y="-828.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MET_SCRUB\n2.1232 kW</text>
 </g>
 <!-- MFG_SHOP -->
 <g id="node72" class="node">
@@ -1260,5 +1260,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="770.2" y="4724.5" width="517.3" height="137.9" fill="white" stroke="black" stroke-width="1.44"/><text x="778.8" y="4747.5" font-family="sans-serif" font-size="12.9">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ELEC</text><text x="778.8" y="4771.9" font-family="sans-serif" font-size="12.9">Electrical flow diagram</text><text x="778.8" y="4796.4" font-family="sans-serif" font-size="12.9">Type: flow diagram (ISO_10628_2)   Rev 84aaec53   Issued 2026-10-15</text><text x="778.8" y="4820.8" font-family="sans-serif" font-size="12.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="778.8" y="4845.2" font-family="sans-serif" font-size="12.9">Graph SHA-256 07baa51a068d0211   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="770.2" y="4724.5" width="517.3" height="137.9" fill="white" stroke="black" stroke-width="1.44"/><text x="778.8" y="4747.5" font-family="sans-serif" font-size="12.9">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ELEC</text><text x="778.8" y="4771.9" font-family="sans-serif" font-size="12.9">Electrical flow diagram</text><text x="778.8" y="4796.4" font-family="sans-serif" font-size="12.9">Type: flow diagram (ISO_10628_2)   Rev bb575d6c   Issued 2026-10-15</text><text x="778.8" y="4820.8" font-family="sans-serif" font-size="12.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="778.8" y="4845.2" font-family="sans-serif" font-size="12.9">Graph SHA-256 ed22ff1bb3835551   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

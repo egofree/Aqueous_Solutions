@@ -1,7 +1,7 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "graph_sha256": "07baa51a068d02113977edac6338b19d56d0f4048a03bbf3001ce3c259774160",
+ "graph_sha256": "ed22ff1bb3835551b4aa1d64459cb688a3688229d7ac1f18f05386b0cb165366",
  "converged": true,
  "stages": [
   {
@@ -477,6 +477,14 @@
    "status": "ok"
   },
   {
+   "name": "site_scaling",
+   "status": "ok"
+  },
+  {
+   "name": "site_power",
+   "status": "ok"
+  },
+  {
    "name": "task_plan",
    "status": "ok"
   },
@@ -576,6 +584,8 @@
   "docs-authority/SECTOR_DEFINITIONS.md",
   "docs-authority/SELF_COPY_BOM.md",
   "docs-authority/SITE_ACCESS_CHECK.md",
+  "docs-authority/SITE_POWER.md",
+  "docs-authority/SITE_SCALING.md",
   "docs-authority/SPARES.md",
   "docs-authority/STANDARDS_LIST.md",
   "docs-authority/STARTUP.md",

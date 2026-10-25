@@ -141,8 +141,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | 117.42759 kg/d | — |
 | S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 14.050492 kg/d | — |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | 78.987901 kg/d | — |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 752.788322 kg/d | — |
-| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 752.788322 kg/d | — |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 755.229337 kg/d | — |
+| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 755.229337 kg/d | — |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | L | mass | present | condensables | 0.0521 kg/d | — |
 | S71 | MET_AHU | MET_SCRUB | G | mass | present | metal-aisle fume / mist / dust | 20458.32 kg/d | absent_from_candidate_mvs |
 | S72 | MET_SCRUB | LEACH_CSTR_1 | L/S | mass | present | metal fines and aqueous scrub liquor | 2.4442 kg/d | — |
@@ -264,7 +264,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.641602 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.509975 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 336.8121 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 336.8116 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
@@ -379,7 +379,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-BMED-03-TRIM | LEACH_CSTR_1 | GEO_GHEX | E | thermal | present | trim cooler heat from IA-BMED-03 (to BMED_ACID) | 0.78 kW | — |
 | IA-BMED-04-TRIM | LEACH_CSTR_1 | GEO_GHEX | E | thermal | present | trim cooler heat from IA-BMED-04 (to BMED_BASE) | 1.027 kW | — |
 | IA-LEACH-VCD | LEACH_CSTR_1 | VCD_TRAIN | L | mass | present | leach liquor water bleed to vapour-compression distillation | 167.999678 kg/d | — |
-| SF-ALK_SCRUBBER | SOL_ARK_60K | ALK_SCRUBBER | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.1123 kW | — |
+| SF-ALK_SCRUBBER | SOL_ARK_60K | ALK_SCRUBBER | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.1122 kW | — |
 | SF-BMED_UPW_POLISH | SOL_ARK_60K | BMED_UPW_POLISH | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.018 kW | — |
 | SF-CRYO_H2 | SOL_ARK_60K | CRYO_H2 | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.9325 kW | — |
 | SF-GEO_HP | SOL_ARK_60K | GEO_HP | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.6866 kW | — |
@@ -419,9 +419,9 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-ATOM-REMELT | GAS_ATOMIZER | MET_MELT | S | mass | present | off-spec powder to remelt | 0.355595 kg/d | — |
 | SF-CRYO_AHU | SOL_ARK_60K | CRYO_AHU | E | elec | present | AHU coil chiller | 0.6472 kW | — |
 | SF-MEOH_FERM | SOL_ARK_60K | MEOH_FERM | E | elec | present | 480 V AC | 0.0207 kW | — |
-| SF-ACID_POLISH_SCRUB | SOL_ARK_60K | ACID_POLISH_SCRUB | E | elec | present | 480 V AC | 1.1123 kW | — |
+| SF-ACID_POLISH_SCRUB | SOL_ARK_60K | ACID_POLISH_SCRUB | E | elec | present | 480 V AC | 1.1122 kW | — |
 | SF-NOX_SCRUB | SOL_ARK_60K | NOX_SCRUB | E | elec | present | 480 V AC | 0.0385 kW | — |
-| SF-MET_SCRUB | SOL_ARK_60K | MET_SCRUB | E | elec | present | 480 V AC | 2.1234 kW | — |
+| SF-MET_SCRUB | SOL_ARK_60K | MET_SCRUB | E | elec | present | 480 V AC | 2.1232 kW | — |
 | IA-ACID-01 | EVAP_ACID | LEACH_CSTR_1 | L | mass | present | regen HCl, 20 wt% | 439.6127 kg/d | — |
 | IA-BASE-01 | EVAP_BASE | GLASS_DIGEST | L | mass | present | digest NaOH, 20 wt% | 21.968 kg/d | — |
 | IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | L | mass | present | NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A) | 482.2861 kg/d | — |
@@ -571,4 +571,4 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-GAS_ATOMIZER | SOL_ARK_60K | GAS_ATOMIZER | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0781 kW | — |
 | SF-COLD_MILL | SOL_ARK_60K | COLD_MILL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0191 kW | — |
 | SF-WIRE_DRAW | SOL_ARK_60K | WIRE_DRAW | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0189 kW | — |
-| SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K | GEO_HP_CLOSED_LOOP | E | elec | present | 480 V AC | 0.1258 kW | — |
+| SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K | GEO_HP_CLOSED_LOOP | E | elec | present | 480 V AC | 0.1257 kW | — |

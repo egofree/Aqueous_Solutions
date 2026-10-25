@@ -195,13 +195,15 @@ def roof_close(d, P_base_kW, mode=None):
         return b
     bay = v('bay_mm'); bx0, by0 = int(v('base_bays_x')), int(v('base_bays_y'))
     A0 = bx0*by0*bay*bay/1e6; best = None
+    from . import portfolio as PF
+    pvf = PF.pv_factor(eta=v('storage_round_trip'))   # PV share and worst-stretch correction from the site portfolio (1 at the baseline)
     for nx in range(bx0, bx0+60):
         for ny in range(by0, by0+60):
             W, D = nx*bay, ny*bay; A = W*D/1e6
             if best and A > best['footprint_m2']: continue
             ext = _ext(d, A-A0, W, D, mode)
             P = P_base_kW + ext['total_kW']
-            need = PW.pv_kWp(P, v('night_hours'), v('storage_round_trip'), v('pv_yield_kWh_kWp_d')*v('pv_roof_yield_factor'), v('pv_system_derate'))*v('pv_oversize_factor')   # D75: 200 % of requirement
+            need = PW.pv_kWp(P, v('night_hours'), v('storage_round_trip'), v('pv_yield_kWh_kWp_d')*v('pv_roof_yield_factor'), v('pv_system_derate'))*v('pv_oversize_factor')*pvf   # D75: 200 % of requirement
             arr, lay = RF.array_area_m2(W, D, v('ifc_perim_small_mm'), v('ifc_perim_large_mm'), v('ifc_axis_limit_mm'), v('ifc_array_max_mm'), v('ifc_path_mm'))
             have = RF.roof_kWp(arr, v('pv_module_eff'), v('pv_roof_gcr'))
             if have >= need and (best is None or A < best['footprint_m2'] or (A == best['footprint_m2'] and abs(nx*1.0/ny-4/3) < abs(best['bays_x']/best['bays_y']-4/3))):

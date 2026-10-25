@@ -25,7 +25,7 @@ def main():
          "| `_hot_draw_coolers.py` | heat | cp HCl/NaOH, design dry bulb, free-convection U |",
          "| `_line_list.py` (AQS-PIP-004) | lines | liquid/gas velocity, slurry and minimum DN; heat loops now sized from kW at ΔT 10 K (was a DN25 default) |",
          "| `_rect_ew_sizing.py` (AQS-ELEC-004) | power.rectifier_channel | cell voltage, bus drop, rectifier efficiency |",
-         "| `_leach_sizing.py` (AQS-DUTY-050) | tank (ROARK8 plates and beams, PERRY9_MIX agitator) | equations only; g = 9.80665 (was 9.81, results within 0.04 %) |",
+         "| `_leach_sizing.py` (AQS-DUTY-050) | tank (ROARK8 plates and beams, PERRY9_MIX agitator) | equations only; g from the site profile |",
          "| `_polymer_hx_study.py` (AQS-DUTY-049, HX-5 and HX8) | heat (Dittus-Boelter, series U, LMTD) | equations only; results unchanged |",
          "| `_power_sizing.py` (AQS-ELEC-007), `_one_line.py` (AQS-ELEC-002) | power (PV kWp, 3-phase amps, NEC breaker) | PV yield, derate, round trip, night hours, bus power factor; results unchanged |",
          "| relief (`write_graph.py relief`) | relief (API520 liquid and gas area) | EXPANDER blocked-discharge case recomputed: 9.36 mm², 3.45 mm required against the 3.6 mm orifice (D4: 9.37 mm²). The other 199 nodes are atmospheric: relief_basis marks relief_mm as the older study figure and venting as an API 2000 case at unit task 07 |",

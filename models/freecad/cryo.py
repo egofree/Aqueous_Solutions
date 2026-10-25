@@ -33,7 +33,8 @@ def _graph_nodes():
 
 
 def _drivers():
-    return json.load(open(_ROOT / "flow_graph" / "param" / "drivers.json"))
+    from flow_graph.param import drivers as _DR   # repo root is on sys.path via params
+    return _DR.load()
 
 
 def _edge_rate(g, sid):

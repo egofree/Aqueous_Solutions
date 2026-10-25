@@ -442,7 +442,10 @@ def get_params() -> dict:
             status_code=404, detail=f"drivers.json not found: {drivers_path}"
         )
     raw = drivers_path.read_bytes()
-    data = json.loads(raw)
+    _flow_graph_on_path()
+    from flow_graph.param import drivers as _drivers
+
+    data = _drivers.load()  # drivers.json with the selected site profile applied
     rows = []
     for key in sorted(data):
         e = data[key] if isinstance(data[key], dict) else {"value": data[key]}

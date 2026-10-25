@@ -6,11 +6,11 @@ Hold times are the A-M-225 basis (resupply interval or batch decoupling per serv
 and docs-authority/inventory/STORAGE_HOLDUP.json."""
 import json, math, re, os, sys
 sys.path.insert(0, '.')
-from flow_graph.param import drivers as DR
+from flow_graph.param import drivers as DR, site as SITE
 from flow_graph.param.refs import cite
 _d = DR.load()   # U4b: hold times, densities and vessel rules single-sourced from drivers.json
 g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n for n in g['nodes']}
-G = 9.80665
+G = SITE.g()   # apparent gravity from the site profile
 SD = DR.val(_d,'storage_pe_sd_MPa'); TMIN = DR.val(_d,'storage_pe_min_wall_mm'); FILL = DR.val(_d,'storage_tank_fill_frac'); HD = DR.val(_d,'storage_tank_HD')
 SS = DR.val(_d,'storage_steel_allow_MPa'); TMIN_S = DR.val(_d,'storage_steel_min_wall_mm')
 # unit: (dotted tree path, service, phase); hold days (A-M-225) and density (PERRY9) per unit in drivers.json

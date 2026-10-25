@@ -98,7 +98,7 @@ REFS = {
  'NFPA400_2025': 'NFPA 400, Hazardous Materials Code (2025) 6.1.12.1: separation of incompatible materials, same three options as IFC 5003.9.8.',
  'CAMEO_REACT': 'NOAA CAMEO Chemicals reactivity groups: Peroxides, inorganic (H2O2) incompatible with Bases (KOH, NH3 aq) and with Hydrocarbons/solvents; Acids, strong oxidizing (HNO3) incompatible with Bases and Amines; Acids, strong non-oxidizing (HF, H3PO4) incompatible with Bases.',
 
- 'CODATA2018': 'Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K).',
+ 'CODATA2018': 'Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K); sigma = 5.670374419e-8 W/(m2 K4).',
  'CIAAW2021': 'IUPAC CIAAW, Standard atomic weights 2021, Pure Appl. Chem. 94(5), 573-600 (2022).',
  'SCHLESINGER2011': 'Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92.',
  'INCROPERA7': 'Bergman T.L., Lavine A.S., Incropera F.P., DeWitt D.P., Fundamentals of Heat and Mass Transfer, 7th ed., Wiley (2011): sensible duty Q = m cp dT (ch. 1); LMTD method (sec. 11.3); free convection h about 2-25 W/(m2 K) for gases (table 1.1).',
@@ -277,6 +277,9 @@ REFS = {
  'ASM_V7': "ASM International, ASM Handbook Vol 7, Powder Metal Technologies and Applications (1998): press-and-sinter consolidation practice; sintering-furnace construction with graphite or MoSi2 element hot zones under inert or vacuum atmosphere for reactive powders.",
  'TOWLER2013': 'Towler G., Sinnott R., Chemical Engineering Design: Principles, Practice and Economics of Plant and Process Design, 2nd ed., Butterworth-Heinemann (2013): choice between batch and continuous operation; batch and campaign operation suit small production rates and multi-product trains.',
  'GRJOTHEIM1988': 'Grjotheim K., Welch B.J., Aluminium Smelter Technology: A Pure and Applied Approach, 2nd ed., Aluminium-Verlag, Duesseldorf (1988): heat balance of electrolysis cells; the cell voltage above the thermoneutral voltage supplies the heat lost through the lining, so a reduced current needs added heat to keep the bath molten.',
+ 'CGPM1901_GN': 'BIPM, The International System of Units (SI Brochure), 9th ed. (2019), Appendix 1: declaration of the 3rd CGPM (1901) fixing the standard acceleration of gravity g_n = 980.665 cm/s2 (9.80665 m/s2).',
+ 'CGPM1954_ATM': 'BIPM, The International System of Units (SI Brochure), 9th ed. (2019), Appendix 1: Resolution 4 of the 10th CGPM (1954) defining the standard atmosphere as 1 013 250 dyn/cm2 (101 325 Pa).',
+ 'USSA1976': 'NOAA, NASA and USAF, U.S. Standard Atmosphere, 1976, NOAA-S/T 76-1562, U.S. Government Printing Office (1976): sea-level composition of dry air by volume (N2 0.78084, O2 0.209476, Ar 0.00934) and the sea-level pressure 101 325 Pa.',
 }
 
 def cite(k):

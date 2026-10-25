@@ -7,6 +7,8 @@ See docs-authority/FRAME_SYSTEM.md.
 from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from flow_graph.param import site as SITE   # apparent gravity from the site profile
 
 import FreeCAD as App
 import Part
@@ -34,7 +36,7 @@ def deflection(L, section, wall, load_kg):
     E = 200000.0  # N/mm2
     outer, inner = section, section - 2 * wall
     I = (outer**4 - inner**4) / 12.0
-    W = load_kg * 9.81  # N, on one rail
+    W = load_kg * SITE.g()  # N, on one rail
     d = W * L**3 / (48 * E * I)
     limit = L / 240.0
     return d, limit, d <= limit

@@ -11,6 +11,7 @@ at U 2.0 kW/m2 K (PERRY9 sec. 11 plate class) and 5 K approach. No rates change 
 Run: python3 -m flow_graph.param.geo_loop [--write]"""
 import json, math, os, sys
 from . import drivers as DR
+from . import site as SITE
 from .refs import cite
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -40,7 +41,7 @@ def design(d, g):
     Q_loop = m_loop / rho_g
     id_req = math.sqrt(4 * Q_loop / (math.pi * v(GL + 'glycol_v_m_s'))) * 1000
     dn = next(dn for dn in (25, 32, 40, 50, 65, 80) if dn - 8 >= id_req)
-    pump_w = rho_g * 9.81 * Q_loop * v(GL + 'loop_head_m') / v(GL + 'loop_pump_eff')
+    pump_w = rho_g * SITE.g() * Q_loop * v(GL + 'loop_head_m') / v(GL + 'loop_pump_eff')
     ghex = dict(Q_ceiling_kW_th=q_ghex, k_ground_W_mK=(N['GEO_GHEX'].get('params') or {}).get('k_ground_W_mK', 1.5),
                 T_source_K=(N['GEO_GHEX'].get('params') or {}).get('T_source_K', 285.0), q_per_m_W=qm_w_m,
                 bore_metres_req=round(bore_m, 1), bores=n_bore, bore_depth_m=depth, bore_metres_installed=m_total,

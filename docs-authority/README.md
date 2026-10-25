@@ -81,6 +81,9 @@ The documents that explain how the design is organised and where its numbers com
 | [COMPLIANCE_MATRIX.md](COMPLIANCE_MATRIX.md) | AQS-COMPL-001 | Compliance matrix — design intent vs code themes |
 | [PERMITS.md](PERMITS.md) | AQS-COD-002 | Permit list |
 | [SITE_BASIS.md](SITE_BASIS.md) | AQS-SITE-002 | Site basis — AQS-SITE-002 Rev A |
+| [LOCALIZATION_PLAN.md](LOCALIZATION_PLAN.md) | AQS-PLAN-011 | Localization plan: site profiles and locale variants |
+| [SITE_POWER.md](SITE_POWER.md) | AQS-SITE-005 | Site power portfolio and redundancy of energy and life-support functions (generated) |
+| [SITE_SCALING.md](SITE_SCALING.md) | AQS-SITE-004 | Site scaling: capabilities, scaling actions and unit needs for the selected site (generated) |
 | [FEED_ASSAY.md](FEED_ASSAY.md) | AQS-ASSAY-001 | Feed assay |
 | [ASSAY.md](ASSAY.md) | AQS-ASSAY-002 | Assay |
 | [MATERIALS_STD.md](MATERIALS_STD.md) | AQS-STD-002 | Materials standard |

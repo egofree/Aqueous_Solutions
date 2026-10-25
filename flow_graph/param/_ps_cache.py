@@ -35,11 +35,14 @@ def _key_paths(root):
           os.path.join(root, 'flow_graph/plant_flow_graph.json')]
     ps += sorted(glob.glob(os.path.join(root, 'flow_graph/param/*.py')))
     ps += sorted(glob.glob(os.path.join(root, 'flow_graph/param/sizing/*.py')))
+    ps += sorted(glob.glob(os.path.join(root, 'flow_graph/param/sites/*.json')))     # site profiles (AQS-PLAN-011)
+    ps += [os.path.join(root, 'flow_graph/schema/site_profile.schema.json')]
     return ps
 
 def cache_key(root=None):
     root = root or ROOT
     h = hashlib.sha256()
+    h.update(('site=' + (os.environ.get('AQS_SITE') or 'baseline')).encode()); h.update(b'\0')   # selected site profile
     for p in _key_paths(root):
         h.update(p.encode()); h.update(b'\0')
         try: h.update(open(p, 'rb').read())

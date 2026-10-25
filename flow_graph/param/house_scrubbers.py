@@ -4,6 +4,7 @@ d/dp 8; bed = HTU x NTU for the removal target (irreversible absorption); liquid
 fixed losses (demister, distributor, ducts at 250 Pa); pump on head. Run: python3 -m flow_graph.param.house_scrubbers [--write]"""
 import json, math, os, sys
 from . import drivers as DR
+from . import site as SITE
 from .sizing import scrubber as S
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
@@ -24,7 +25,7 @@ def design(d, g):
         Z = max(v(HSK+'hs_bed_min_m'), S.packed_height_m(v('hs_htu_m'), 1.0, 1 - v('hs_removal')))
         L = S.min_liquid_m3_h(D, v('hs_a_m2_m3'), v('vs_mwr'))
         dP = v('hs_dP_Pa_m')*Z + v(HSK+'hs_fixed_dP_Pa')
-        fan = Q*dP/v('hs_fan_eff'); pump = L/3600*1000*9.81*v('hs_pump_head_m')/v('hs_pump_eff')
+        fan = Q*dP/v('hs_fan_eff'); pump = L/3600*1000*SITE.g()*v('hs_pump_head_m')/v('hs_pump_eff')
         Dmm = math.ceil(D*1000/50)*50; H = round(Z*1000) + v(HSK+'hs_vessel_allow_mm')      # sump 600, distributor and demister 900
         out[u] = dict(duty=duty, gas_kg_d=gas, Q_m3_s=Q, u_flood_m_s=uf, D_mm=Dmm, packed_mm=round(Z*1000), H_mm=H, recirc_m3_h=L, dP_Pa=dP,
                       fan_W=fan, pump_W=pump, kW=round((fan + pump)/1000, 4), material='PP-H shell and in-house cut PP rings; PP mesh demister')
