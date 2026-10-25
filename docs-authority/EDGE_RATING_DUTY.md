@@ -8,6 +8,7 @@ Authority: AQS-FLOW-GRAPH-001 Rev L; AQS-DUTY-008 Rev C; AQS-DUTY-009 Rev B. Not
 | Rev | Change | Description | Date |
 |---|---|---|---|
 | A | — | First issue. Every present edge rated; placeholders closed; node conservation run | 2026-10-07 |
+| B | Rewritten to the documentation style guide (AQS-DOC-002). This note stays the record of the Rev L edge rating; for graph Rev M and later, AQS-DUTY-011 and the regenerated duty sheets carry the live balances. No rating value changed. | 2026-10-25 |
 
 Superseded for graph Rev M by AQS-DUTY-011 (`REV_M_CLOSURE_DUTY.md`), which closes the §6 balances and the §7 blockers. This note and `_edge_rating_study.py` remain reproducible against the Rev L graph (commit c4e1818); run on a Rev M tree, the script loads that base.
 
@@ -23,7 +24,7 @@ Each rated edge carries `rate_basis`, `rate_source`, `medium`, `conditions` and 
 
 - Edges: 165 (163 present, 2 placeholder). Present edges with no rate: 0.
 - Placeholders: 16 made present, 4 retired, S87/S88 demoted to placeholder on HOLD.
-- New edge S90 HABITATION → HDR_CO2. Fixes to rated edges: S10 re-derived 10.0 -> 78.34 kg/d: Rev K value omitted S27 rinse and S09; S02 corrected 3.4 -> 3.36 kg/d (0.84 x 4); S79 corrected 1.0 -> 0.292 kW (fuel-limited by S76); S21 corrected 95 -> 120 kg/d (95 was the farm sump band); S14 corrected 4.2 -> 2.4 kg/d (S14X governs the surplus).
+- New edge S90 HABITATION → HDR_CO2. Fixes to rated edges: S10 recomputed 10.0 -> 78.34 kg/d: Rev K value omitted S27 rinse and S09; S02 corrected 3.4 -> 3.36 kg/d (0.84 x 4); S79 corrected 1.0 -> 0.292 kW (fuel-limited by S76); S21 corrected 95 -> 120 kg/d (95 was the farm sump band); S14 corrected 4.2 -> 2.4 kg/d (S14X governs the surplus).
 - Node conservation at ±1 %: 88 node-layer balances checked. 68 close with independently derived terms, 9 close with one term set by difference, and 11 do not close (§6). Species checks: CRYO_CO2, HDR_CO2 and GROW_BED CO₂ close. AFTERBURNER CO₂ and H2_DRYER H₂ do not close.
 - `loops_closed` and every `*_on_site` flag stay false.
 
@@ -105,7 +106,7 @@ Units by layer: mass in kg/d (kg/h for air streams sized in m³/h), thermal in k
 - S56, S86, S24 = 0 (contingency). S70 = 1 %/d of the 5.21 kg dark buffer = 0.052 kg/d.
 
 ### Power / electrical / ESS
-- IA-ESS-ZNBR2-DIS = 120/24 = 5.0 kW; CHG = 5.0/0.75 = 6.667 kW. IA-ESS-HYDRO-ELEC = 7/24 = 0.292 kW.
+- IA-ESS-ZNBR2-DIS = 120/24 = 5.0 kW; the charge side CHG = 5.0/0.75 = 6.667 kW. IA-ESS-HYDRO-ELEC = 7/24 = 0.292 kW.
 - S79 = 1.153 kW MeOH LHV × 0.254 = 0.292 kW. S20 = 5.0 kW (graph GROW_BED continuous_kw, LED canopy share; LED check 3.06 kW in the photoperiod, 2.04 kW daily average).
 - S69 = 852.5 kg/d purge; S69B = 8.49 kg/d scrub liquor. S81 = 5.622 kg/d.
 
