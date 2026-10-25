@@ -6764,5 +6764,25 @@
   "sensitivity": "Foundations, the grounding grid and the ground-loop rejection capacity of the variant.",
   "replaced_by": "Geotechnical investigation per IBC 1803 and a thermal response test on the first bore at the parcel",
   "task": "X-LOC-07"
+ },
+ {
+  "id": "A-M-388",
+  "value": "heel 5 deg; roll 8 deg; pitch 5 deg; heave 1.5 m/s2",
+  "units": "deg; m/s2",
+  "where": "site profile floating_island motion group (read by every sizing function that uses apparent gravity)",
+  "basis": "Interim bounding motion envelope for a moored tropical platform riding out the design storm on its moorings (Q-030/Q-031); magnitudes are class-rule order-of-magnitude placeholders pending site metocean data.",
+  "sensitivity": "Settlers, flotation, open and stirred tanks, electrowinning cells, the ZNBR2 bromine phase, packed-column bed heights and tank sloshing checks all scale with the motion envelope.",
+  "replaced_by": "Site metocean data with the class society's environmental load method (CLASS_RULES) and model tests",
+  "task": "X-LOC-11"
+ },
+ {
+  "id": "A-M-389",
+  "value": "cooling dry bulb 32 C; heating dry bulb 22 C; insulation ambient 27 C",
+  "units": "C",
+  "where": "site profile floating_island thermal group (binds site_design_dry_bulb_C)",
+  "basis": "Interim tropical maritime design values for an open-ocean mooring; the ocean moderates both extremes. Understates the humid latent load and is replaced by station or metocean data at the mooring site.",
+  "sensitivity": "Ventilation and cooling loads, PV cell temperature and the seawater rejection approach temperature of the variant.",
+  "replaced_by": "Metocean record at the mooring site (CLASS_RULES); ASHRAE climatic data where a coastal station applies",
+  "task": "X-LOC-11"
  }
 ]
