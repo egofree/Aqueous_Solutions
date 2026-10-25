@@ -32,6 +32,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/DOC_REGISTER.md` | Purpose and scope added; generator text in `_doc_register.py` rewritten; part qualifiers no longer truncated mid-path. |
 | `docs-authority/PROJECT_PLAN.md` | Rewritten in full; phases, limits and values unchanged. |
 | `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | Rewritten in full; thresholds and inputs unchanged. |
+| `docs-authority/FEED_ASSAY.md` | Rewritten in full; record of revisions put in order and revision E added. Section numbers 1 to 8 kept because other pages and `drivers.json` cite them, so the purpose and scope section is unnumbered. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 
@@ -53,7 +54,6 @@ Table 4.1. Pending pages directly under docs-authority/
 
 | Page | Note |
 | --- | --- |
-| `docs-authority/FEED_ASSAY.md` | Not on the pending list in `style_terms.json`, but its record of revisions is out of order and parts of the text are fragments. To be rewritten next. |
 | `docs-authority/ASME_CODE_INTENT.md` | |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | |
 | `docs-authority/BALANCE_RECONCILIATION.md` | |
@@ -294,4 +294,7 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/MVS_SIZE.md` (AQS-DUTY-038) | Not cited by any page or generator. It records the crop floor at graph Rev BD and the 24 m × 24 m module plate, which is the subject of open question Q-015. |
 | `docs-authority/MASS_DISPOSITION.md` (AQS-DUTY-023), `docs-authority/GREENHOUSE_WATER.md` (AQS-DUTY-013), `docs-authority/BALANCE_CLOSE_N.md` (AQS-DUTY-012) | Short records of balance closures at early graph revisions (Rev Y, Rev O and Rev N). They are cited by notes in the graph and by the assumptions register, so they are kept as history. They could move to `docs-authority/internal/` as records. |
 | `docs-authority/ISO_DRAWING_INDEX.md` (AQS-ISO-000) | Marked superseded by AQS-ISO-002 and kept for its PNG and PDF history; cited by `_iso_routes.py` and the task plan. |
-| `docs-authority/FARM_WASTE.md`, `docs-authority/HAB_FIXTURES.md`, `docs-authority/NUTRIENT_BALANCE.md`, `docs-authority/NUTRIENT_GAPS.md` | Not cited by any other page or generator. Not yet reviewed for whether their content is current. |
+| `docs-authority/FARM_WASTE.md` (AQS-DUTY-015) | Reviewed 2026-10-25. Cited by no other page. It sets duties for hydrochar composting and electrochemical pretreatment, but neither process appears in the graph, and its units LIGNO_PRE and COMPOST are no longer graph nodes. Proposed for deletion. |
+| `docs-authority/NUTRIENT_BALANCE.md` (AQS-DUTY-034) | Reviewed 2026-10-25. Cited by no other page. It balances nutrients through a fish, larvae, duckweed and azolla loop; FISH, BSFL, DUCKWEED and AZOLLA are no longer graph nodes. Proposed for deletion. |
+| `docs-authority/NUTRIENT_GAPS.md` (AQS-DUTY-048) | Reviewed 2026-10-25. Cited by no other page. Its supply column relies on fish, a urine tank and farm animals that are not in the graph, and it cites AQS-DUTY-049 for nutrient recovery, but AQS-DUTY-049 is the polymer exchanger sizing. Proposed for deletion, or a rewrite against NUTRIENT_DOSE if a farm nutrient gap list is still wanted. |
+| `docs-authority/HAB_FIXTURES.md` (AQS-HAB-001) | Reviewed 2026-10-25. The number is cited by the graph and the load list, so the page cannot simply be deleted. Its content is out of date: COMPOST_TOILET is no longer a graph node (sanitation is now the blackwater train of AQS-DUTY-063), the edge IA-WASH no longer exists, and S12 now carries 319.6 kg/d, not 339 kg/d. Needs an update against `duties/HAB_WASH.md` and `sizing/SANITATION.md`, or a renumbering decision. |

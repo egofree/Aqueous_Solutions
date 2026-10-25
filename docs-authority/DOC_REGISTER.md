@@ -41,7 +41,7 @@ Table 3.1. Document numbers in use
 | AQS-ASM-002 | `docs-authority/INSTALL_SEQUENCE.md` | A | 2026-10-21 | Install sequence | current |
 | AQS-ASM-003 | `docs-authority/RIGGING_PLANS.md` | A | 2026-10-21 | Rigging plans | current |
 | AQS-ASME-002 | `docs-authority/ASME_CODE_INTENT.md` | C | 2026-10-21 | In-house code intent per unit | current |
-| AQS-ASSAY-001 | `docs-authority/FEED_ASSAY.md` | C | 2026-10-15 | Feed assay | current |
+| AQS-ASSAY-001 | `docs-authority/FEED_ASSAY.md` | F | 2026-10-25 | Feed assay | current |
 | AQS-ASSAY-002 | `docs-authority/ASSAY.md` | — | — | Leach and electrowinning assay split | current |
 | AQS-ASSAY-TI-MO | `notes/ASSAY_TI_MO.md` | A | 2026-10-16 | Missing assays — TI_CELL and MO_CELL | current |
 | AQS-AUD-GRAPH-001 | `docs-authority/GRAPH_AUDIT.md` | — | 2026-10-02 | Graph audit | current |

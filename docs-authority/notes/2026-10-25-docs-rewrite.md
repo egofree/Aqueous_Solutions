@@ -35,3 +35,8 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 ## Batch 5
 
 - `HEAT_LADDER.md` (AQS-HEAT-LADDER-001) Rev A: rewritten in full and given a revision letter and a record of revisions for the first time. Every edge, temperature, rating, elevation and envelope is kept. The page was not on the pending list of the style check.
+
+## Batch 6
+
+- `FEED_ASSAY.md` (AQS-ASSAY-001) Rev F: rewritten. The record of revisions listed B, D, C and omitted E, which was recorded only in section 8; it now lists B to F in order. The page stated Revision C although revisions D and E had been issued. Section numbers are kept because other pages and `flow_graph/param/drivers.json` cite them. No value changed.
+- Review of four pages cited by no other page (`FARM_WASTE.md`, `NUTRIENT_BALANCE.md`, `NUTRIENT_GAPS.md`, `HAB_FIXTURES.md`); findings recorded in `REWRITE_TODO.md` section 6 for a decision. Nothing deleted.

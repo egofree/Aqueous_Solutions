@@ -1,37 +1,49 @@
 # Feed assay
 
 Document number: AQS-ASSAY-001
-Revision: C
-Date: 2026-10-15
+Revision: F
+Date: 2026-10-25
 Authority: graph Rev BH. Not a PE stamp. Not a weighed sample.
 
 | Rev | Description | Date |
 | --- | --- | --- |
-| B | Study fractions on IA-FEED-01, S08, and S16 | 2026-10-14 |
+| B | Study fractions on IA-FEED-01, S08 and S16 | 2026-10-14 |
+| C | Basis made independent of any one feedstock: class schema, bounding cases, and the list of bounded and held lines. IA-FEED-01 carries a class point and the envelope. S08 and S16 carry the entrained silicate fraction. | 2026-10-15 |
 | D | Held rates recalculated at the bounding cases (X-BAS-02). No rate change. | 2026-10-15 |
-| C | Feedstock-agnostic basis. Class schema, bounding cases, bounded and held list. IA-FEED-01 carries a class point and the envelope. S08 and S16 carry the entrained silicate fraction. | 2026-10-15 |
+| E | Acid system resized to the case A bound (X-RSZ-01); the acid line is no longer held (section 8). | 2026-10-15 |
+| F | Rewritten to the documentation style guide (AQS-DOC-002); record of revisions put in order and revision E, previously recorded only in section 8, added to it. No value changed. | 2026-10-25 |
 
-The plant feed is not one material. It can be anything from a silicate and oxide regolith to a metal-rich printed circuit board, and any mixture between. This page is the schema every feed is characterized against, and the check of the held design across the range. No rate changes. Nothing is resized.
+## Purpose and scope
+
+The plant takes in mixed waste and raw materials and recovers metals, glass, polymers and other products from them. Its feed is not one material. It can be anything from a regolith-like silicate and oxide soil to a metal-rich printed circuit board (PCB), or any mixture of the two. An assay is a measurement of what a material contains.
+
+This page defines the classes in which every feed lot is reported (section 1) and the bounding cases that span the range of possible feeds (section 2). It then checks whether the plant as currently sized, called the held design, can take every case. For each element or class it says whether the held design covers the case ("bounded") or whether the affected units would need resizing before such a feed is accepted ("held"). No rate is changed on this page and no unit is resized.
+
+The values on this page were calculated on the dates in the record of revisions. The current rates are held in the plant flow graph and may have moved since; the graph governs.
 
 ## 1. Schema
 
-Every feed lot is reported as mass fractions, as received, in these seven phase classes. The classes sum to 1.0. A lot that cannot be reported this way is not a characterized feed.
+Every feed lot is reported as mass fractions, as received, in the seven phase classes of Table 1.1. The fractions sum to 1.0. A lot that cannot be reported in this way has not been characterized and is not accepted as feed.
+
+Table 1.1. Feed classes
 
 | Class | What it holds | Where it goes in the plant |
 | --- | --- | --- |
-| `water` | Free moisture. Not bound water of hydration | OIL_DRYER, leach water balance |
+| `water` | Free moisture; water bound as hydrate is not included | OIL_DRYER, leach water balance |
 | `metal_plateable` | Metallic or acid-soluble Fe, Cu, Ni, Zn, Sn, Pb, Cd, Co, Ag, Au | LEACH_CSTR_1, EW_1 to EW_9 |
-| `metal_reactive` | Metallic Al, Mg, Ca, Ti, Li, rare earths | Precipitate cake. Not electrowon |
+| `metal_reactive` | Metallic Al, Mg, Ca, Ti, Li and rare earths | Precipitate cake; these metals are not recovered by electrowinning |
 | `silicate_oxide` | SiO₂, silicate glass, ceramic, and oxide minerals, including oxide-bound Fe, Al, Ca, Mg, Ti | IA-SINK-01 to FLOAT_SINK, IA-CULLET to GLASS_RINSE, the glass line, BMED caustic |
 | `organic` | Polymer, resin, paper, wood | OIL_DRYER, OIL_PYRO |
-| `other_inorganic` | Sulfide, halide, phosphate, salts | Not in the leach basis |
-| `unassigned` | Remainder | Named. Not identified |
+| `other_inorganic` | Sulfides, halides, phosphates and salts | Not included in the basis of the leach design |
+| `unassigned` | The remainder | Recorded as a class but not identified |
 
-Each lot also reports, as element mass fractions of the whole lot: Fe, Cu, Ni, Zn, Sn, Pb, Cd, Co, Ag, Au, Al, Si, and the leachable fraction of the oxide-bound Fe and Al. Si is reported as the element. SiO₂ is 0.4675 Si by mass (28.09 / 60.08).
+Each lot also reports the mass fractions of these elements in the whole lot: Fe, Cu, Ni, Zn, Sn, Pb, Cd, Co, Ag, Au, Al and Si, and the fraction of the oxide-bound Fe and Al that can be leached. Si is reported as the element. SiO₂ is 0.4675 Si by mass (28.09 / 60.08).
 
 ## 2. Bounding cases
 
-These are the cases the held design is checked against. None of them is the design feed.
+Table 2.1 lists the cases against which the held design is checked. None of them is the design feed. Waste electrical and electronic equipment (WEEE) and municipal solid waste (MSW) rows are taken from the published working averages in `ELECTRICAL.md`.
+
+Table 2.1. Bounding cases
 
 | Case | Source | Status |
 | --- | --- | --- |
@@ -40,7 +52,9 @@ These are the cases the held design is checked against. None of them is the desi
 | Reference point | `ELECTRICAL.md`, mixed WEEE row. The held rates were built on it | Carried only because the held rates were built on it. It is not the feed |
 | Intermediate | `ELECTRICAL.md` rows: MSW, landfill bulk, landfill WEEE cell, Cu tailings, Au tailings | Published working averages. Soil is booked to `silicate_oxide`. Tailings Fe is booked as published to `metal_plateable`; most of it is oxide |
 
-Class fractions:
+Table 2.2 gives the class fractions of each case.
+
+Table 2.2. Class fractions of the bounding cases
 
 | Case | water | metal_plateable | metal_reactive | silicate_oxide | organic | other_inorganic | unassigned |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -53,19 +67,23 @@ Class fractions:
 | Cu tailings | 0.15 | 0.0835 | 0.03 | 0.70 | 0 | 0 | 0.0365 |
 | Au tailings | 0.18 | 0.0505 | 0.02 | 0.75 | 0 | 0 | 0 |
 
-The published Au tailings row sums to 1.0005. Its `unassigned` is set to 0.
+The published row for Au tailings sums to 1.0005, so its `unassigned` fraction is set to 0.
 
-Envelope, minimum to maximum over all cases: water 0 to 0.25, metal_plateable 0.005 to 0.35025, metal_reactive 0 to 0.05, silicate_oxide 0.05 to 0.99, organic 0 to 0.30, other_inorganic 0 to 0.005, unassigned 0 to 0.341.
+The envelope, from the minimum to the maximum over all cases, is: water 0 to 0.25, metal_plateable 0.005 to 0.35025, metal_reactive 0 to 0.05, silicate_oxide 0.05 to 0.99, organic 0 to 0.30, other_inorganic 0 to 0.005, unassigned 0 to 0.341.
 
 ## 3. IA-FEED-01
 
-HOPPER to LEACH_CSTR_1, 102.68 kg/d. The rate stays. The 150 kg/d dock feed is not restored. The edge carries `plant feedstock, any class`. The composition object is the reference point in the seven classes. `params.assay_envelope` on the edge holds every case above and the bounds.
+IA-FEED-01 carries the feed from HOPPER to LEACH_CSTR_1 at 102.68 kg/d. This page does not change that rate, and the earlier dock feed of 150 kg/d is not restored. The edge is labelled `plant feedstock, any class`. Its composition is the reference point, given in the seven classes. The edge parameter `params.assay_envelope` holds every case in section 2 and the envelope bounds.
 
 ## 4. Check across the range
 
-Rate held at 102.68 kg/d. Every case is taken at that rate. Leach recovery is taken as 1.0, which is the upper bound on what reaches a cell.
+The feed rate is held at 102.68 kg/d and every case is taken at that rate. Leach recovery is taken as 1.0, which is the upper bound on the metal that can reach a cell.
+
+Table 4.1 lists the elements that the held design covers in every case. For each one it gives the largest fraction found in any case, the resulting mass flow, the electrowinning cell that recovers it, and the rate of that cell's sheet edge.
 
 ### Bounded by the held design
+
+Table 4.1. Elements bounded by the held design
 
 | Element | Largest fraction, case | kg/d | Cell | Sheet edge, kg/d | Result |
 | --- | --- | --- | --- | --- | --- |
@@ -77,9 +95,13 @@ Rate held at 102.68 kg/d. Every case is taken at that rate. Leach recovery is ta
 | Ni, Zn, Sn, Pb, Cd, all in one element | 0.04, B | 4.107 | smallest of EW_4, 5, 6, 8, 9 | IA-EW-MET-4, 4.85 | bounded |
 | metal_reactive | 0.05, reference | 5.13 | precipitate | reference | bounded |
 
-The sheet edges are copper-equivalent study rates, not element splits. They bound the element mass. They do not identify it.
+The sheet edge rates are copper-equivalent study rates, not splits by element. They bound the mass of each element but do not identify it.
 
 ### Held
+
+Table 4.2 lists the classes for which the envelope exceeds what the held design was sized for, and the units that are not covered.
+
+Table 4.2. Classes held
 
 | Class | Reference kg/d | Envelope maximum kg/d | Ratio | Units not bounded |
 | --- | --- | --- | --- | --- |
@@ -90,15 +112,17 @@ The sheet edges are copper-equivalent study rates, not element splits. They boun
 | other_inorganic | 0 | 0.51, A | — | Not in the leach basis |
 | Oxide-bound Al, Ca, Mg, Ti | not on the reference | A | — | Acid consumption and BMED caustic. Leachability not measured |
 
-These units are not resized. A held class stays held until a lot is characterized against section 1 and the rate is set from it.
+These units are not resized. A class stays held until a lot is characterized against section 1 and the rate is set from that lot.
 
 ## 5. S08
 
-LEACH_CSTR_1 to MFG_SHOP, 42.0021 kg/d, phase S. The rate stays. The edge carries metals and entrained silicate.
+S08 carries solids from LEACH_CSTR_1 to MFG_SHOP at 42.0021 kg/d. This page does not change that rate. The edge carries the harvested metals and some entrained silicate.
 
-Source: `EDGE_RATING_DUTY.md` cathode deposits booked on S08. The nine deposits sum to 42.0000 kg/d. The edge is 42.0021 kg/d. The 0.0021 kg/d the deposits do not account for is booked as entrained silicate, SiO₂, carried on the harvested crib.
+The source is the list of cathode deposits booked on S08 in `EDGE_RATING_DUTY.md`. The nine deposits sum to 42.0000 kg/d, and the edge carries 42.0021 kg/d. The remaining 0.0021 kg/d is booked as entrained silicate, SiO₂, carried on the harvested cathode crib.
 
-That silicate line is an assumption, not a measurement. It is sourced from the rate residual and from section 2: every case of the envelope carries `silicate_oxide`, 0.05 to 0.99, and the leach solids are in contact with the cathodes. Aqueous cells do not make silicon. The silicon here is carried, not plated.
+The silicate line is an assumption, not a measurement. It rests on the rate residual and on section 2: every case of the envelope carries `silicate_oxide` at 0.05 to 0.99, and the leach solids are in contact with the cathodes. Aqueous cells do not deposit silicon, so this silicon is carried over with the solids and is not plated. Table 5.1 gives the composition.
+
+Table 5.1. Composition of S08
 
 | Component | kg/d | Fraction | Source |
 | --- | --- | --- | --- |
@@ -113,21 +137,23 @@ That silicate line is an assumption, not a measurement. It is sourced from the r
 | Zn | 0.7111 | 0.01693011 | deposit |
 | SiO₂, entrained | 0.0021 | 0.00005000 | rate residual, assumption |
 
-Fractions are on the 42.0021 kg/d rate and sum to 1.0. Si as the element is 0.4675 × 0.0021 = 0.00098 kg/d, fraction 0.0000234. The entrained fraction at the regolith-like end of the envelope is not known. It is held, not resized. `assay_g_L` on this edge is the 50 g/L liquor stencil. It was not used.
+The fractions are on the 42.0021 kg/d rate and sum to 1.0. Si as the element is 0.4675 × 0.0021 = 0.00098 kg/d, a fraction of 0.0000234. The entrained fraction at the regolith-like end of the envelope is not known; it is held and nothing is resized for it. The field `assay_g_L` on this edge is the generic 50 g/L liquor template and was not used.
 
 ## 6. S16
 
-MFG_SHOP to LEACH_CSTR_1, 12.0 kg/d, phase S. The rate stays.
+S16 returns solids from MFG_SHOP to LEACH_CSTR_1 at 12.0 kg/d. This page does not change that rate.
 
-`EDGE_RATING_DUTY.md` says the composition is unstated and S08 governs. The fractions are the S08 fractions, including the entrained silicate. The rate note calls the stream a polymer and metal band. No polymer fraction was added.
+`EDGE_RATING_DUTY.md` states that the composition of S16 is not given and that S08 governs. The S16 fractions are therefore the S08 fractions, including the entrained silicate. The note on the rate describes the stream as a mix of polymer and metal, but no polymer fraction was added.
 
-## 7. What this is not
+## 7. Limits of this page
 
-Not a weighed sample. Not a design feed. Not a reason to change a bore, a cell, or a holdup. `assay_g_L` is not this assay. A characterized lot replaces the reference point. It does not resize in the same commit. The station that reports a lot against section 1 is `docs-authority/INSTRUMENT_LOOPS.md`.
+This page is not a weighed sample and does not define a design feed. It is not a reason to change a bore, a cell or a holdup. The edge field `assay_g_L` is not this assay. When a lot is characterized, it replaces the reference point, and any resizing that follows is made in a separate change. The station that reports a lot against section 1 is described in `docs-authority/INSTRUMENT_LOOPS.md`.
 
 ## 8. Held rates at the bounding cases, Rev D
 
-X-BAS-02. From `docs-authority/_bounding_case_study.py`. Feed held at 102.68 kg/d. Rates are what the edge would carry at each case. Nothing is resized here; rate changes are not approved for this task.
+This section records task X-BAS-02, calculated by `docs-authority/_bounding_case_study.py`. The feed is held at 102.68 kg/d. Table 8.1 gives the rate each edge would carry in each case. Nothing is resized here, because the task did not approve rate changes.
+
+Table 8.1. Edge rates at the bounding cases
 
 | Class | Unit | Edge | Graph kg/d | Case A | Case B | MSW | Method |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -136,20 +162,22 @@ X-BAS-02. From `docs-authority/_bounding_case_study.py`. Feed held at 102.68 kg/
 | organic | OIL_DRYER | IA-PLAST-01 | 33.00 | 0.00 | 37.50 | 45.00 | scales with organic fraction |
 | organic | OIL_PYRO | IA-OIL-01 | 33.00 | 0.00 | 37.50 | 45.00 | scales with organic fraction |
 
-Acid. IA-ACID-01 carries 98.27 kg/d of 20 wt% HCl = 19.65 kg/d HCl. Case A with Al2O3 0.19, CaO 0.125, MgO 0.09, FeO 0.13 of the silicate fully leached needs 87.9 kg/d HCl, 4.5 times the edge. TiO2 and SiO2 are taken as not leached.
+At revision D, IA-ACID-01 carried 98.27 kg/d of 20 wt% HCl, which is 19.65 kg/d of HCl. Case A, with Al₂O₃ at 0.19, CaO at 0.125, MgO at 0.09 and FeO at 0.13 of the silicate fully leached, needs 87.9 kg/d of HCl, 4.5 times what the edge carried. TiO₂ and SiO₂ are taken as not leached.
 
-Result per held line:
+Table 8.2 gives the result for each held line at revision D.
+
+Table 8.2. Result for each held line (revision D)
 
 | Line | Worst case | Change | Status |
 | --- | --- | --- | --- |
 | FLOAT_SINK solids (IA-SINK-01) | A | +22 % | Held. FLOAT_SINK sizing must take 459 kg/d if regolith-like feed is accepted. |
 | Leach liquor water (IA-EW-04) | MSW | +0.5 % | Bounded. Inside the rounding of the liquor balance. |
 | OIL_DRYER, OIL_PYRO (IA-PLAST-01, IA-OIL-01) | MSW | +36 % | Held. 45 kg/d at MSW; zero at A. |
-| Acid demand (IA-ACID-01) | A | ×4.5 | Held, governing. Regolith-like feed cannot be leached on the present BMED_ACID regeneration. Accepting class A feed needs a BMED_ACID resize or a cap on silicate fraction. |
+| Acid demand (IA-ACID-01) | A | ×4.5 | Held, governing. Regolith-like feed could not be leached with the BMED_ACID acid regeneration as then sized. Accepting class A feed needed either a larger BMED_ACID or a cap on the silicate fraction. Resolved at revision E. |
 | Glass train (IA-CULLET, IA-GLASS-01) | — | — | Held with reason. Cullet is glass from WEEE, not class silicate; regolith silicate is taken to report to sink (assumption). |
 | unassigned | MSW 35.0 kg/d | ×2.3 | Held with reason. Not identified, so no unit can be assigned. |
 | other_inorganic | A 0.51 kg/d | — | Bounded. Reports to sink, inside the FLOAT_SINK line. |
 
-Rev E (X-RSZ-01, 2026-10-15): acid system resized to the case A bound. IA-ACID-01 439.52 kg/d (87.9 kg/d HCl), IA-BMED-03 449.50 kg/d, IA-BMED-04 493.08 kg/d, new IA-BASE-PPT 374.38 kg/d NaOH 20 wt% to hydroxide precipitation, BMED_ACID 16.13 kW. The acid line is no longer held.
+Acid demand was the governing bound. At revision D the choice was either to cap the accepted feed at the silicate fraction that the acid regeneration could cover, about 0.22 of the feed at full leaching of the case A oxides (by ratio), or to resize the acid system.
 
-The governing bound was acid. The owner choice is either to cap accepted feed at the silicate fraction the regeneration covers (about 0.22 of feed at full leach of the case A oxides, by ratio) or to approve an acid-system resize.
+At revision E (task X-RSZ-01, 2026-10-15) the acid system was resized to the case A bound. The rates set then were IA-ACID-01 at 439.52 kg/d (87.9 kg/d of HCl), IA-BMED-03 at 449.50 kg/d and IA-BMED-04 at 493.08 kg/d, with a new edge IA-BASE-PPT carrying 374.38 kg/d of 20 wt% NaOH to hydroxide precipitation, and BMED_ACID at 16.13 kW. The acid line is no longer held.
