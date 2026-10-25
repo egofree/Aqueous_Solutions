@@ -198,7 +198,7 @@ Table 3.1. Document numbers in use
 | AQS-INV-005 | `docs-authority/inventory/MOTOR_DESIGNS.md` | A | 2026-10-15 | Motor family designs | current |
 | AQS-INV-006 | `docs-authority/PIPE_SPECS.md` | A | 2026-10-21 | Pipe family production plans | current |
 | AQS-INV-007 | `docs-authority/WIRE_SPECS.md` | C | 2026-10-21 | Wire family specifications and production plans | current |
-| AQS-INV-008 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | A | 2026-10-16 | Motor first articles: drawings, traveller and type-test rig | current |
+| AQS-INV-008 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | B | 2026-10-25 | Motor first articles: drawings, traveller and type-test rig | current |
 | AQS-INV-009 | `docs-authority/BLOCK_FAMILY_PLANS.md` | A | 2026-10-21 | Building-block family production plans | current |
 | AQS-IO-FOUNDRY | `notes/FOUNDRY_IO.md` | A | 2026-10-16 | FOUNDRY sector — inputs and outputs | current |
 | AQS-ISO-000 | `docs-authority/ISO_DRAWING_INDEX.md` | A | 2026-09-27 | Isometric fabrication set | current |

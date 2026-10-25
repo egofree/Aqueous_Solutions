@@ -58,6 +58,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/CONTROL_ARCH.md` | Rev B, through `docs-authority/_plc_arch.py`. Purpose, numbered sections and table titles added. See section 6. |
 | `docs-authority/FRAME_CHECK.md` | Rev B, through `docs-authority/_frame_check.py`. Purpose, basis, symbol definitions and table titles added; the beam span heading now comes from the bay size. No load or section changed. |
 | `docs-authority/FOUNDATION.md` | Rev B, through `docs-authority/_foundation.py`. Purpose, basis, symbol definitions and numbered table added. The uplift row is unchanged because `_design_check.py` check QC-18 parses it. The plate size is still subject to question Q-015. |
+| `docs-authority/MOTOR_FIRST_ARTICLE.md` | Rev B, through `docs-authority/_motor_fa.py`. Purpose, table titles and rig description in sentences added. The paragraph on flagged families printed an empty list of required core lengths when no family was flagged; it is now written only when a family is flagged. |
 
 ## 3. In progress
 
@@ -123,7 +124,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/METAL_FORMING.md` | |
 | `docs-authority/MFG_MODEL_PLAN.md` | |
 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | |
-| `docs-authority/MOTOR_FIRST_ARTICLE.md` | |
 | `docs-authority/MVS_PITCH_PASS.md` | |
 | `docs-authority/MVS_STUDY_CLOSE.md` | |
 | `docs-authority/NUTRIENT_GAPS.md` | |

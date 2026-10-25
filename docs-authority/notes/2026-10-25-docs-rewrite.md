@@ -88,3 +88,7 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 
 - `FOUNDATION.md` (AQS-BLD-017) Rev B rewritten through `_foundation.py`. No value changed.
 - `O2_SOURCE.md` reviewed; it has two generators, recorded in `REWRITE_TODO.md` section 6. Not changed.
+
+## Batch 16
+
+- `MOTOR_FIRST_ARTICLE.md` (AQS-INV-008) Rev B rewritten through `_motor_fa.py`. No dimension, step or rig item changed.
