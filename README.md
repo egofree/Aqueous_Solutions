@@ -66,6 +66,12 @@ The command `python3 -m flow_graph.param.regen` runs the design pipeline. It sol
 
 The CAD models are also built by code. The FreeCAD scripts in `models/freecad/` build the general arrangement of the plant, and the CadQuery scripts in `models/mfg/` build individual units with drawings, parts lists, and STEP and STL export files.
 
+### 2.4 Site profiles
+
+The plant is designed to be built in more than one place. Every number that assumes a location on Earth, such as gravity, outside air pressure and composition, sunlight, wind, ground conditions and water availability, is read from a site profile in `flow_graph/param/sites/` instead of being fixed in the sizing code. Every value in a profile carries a cited source. The present design is the baseline profile, and its outputs are unchanged by the profile system. A locale run selects a profile with the `--site` option or the `AQS_SITE` environment variable and writes only the outputs that differ from the baseline into `sites/<site_id>/`, so a locale run can never overwrite the baseline.
+
+Each unit class states what it needs from its surroundings. A profile declares what it can supply, and each locale scales units up or down, duplicates them, replaces them, or eliminates them, where elimination requires an import route or a replacement of a different technology. Each profile also carries its own power portfolio, storage and heat-rejection modes, sized through that site's worst stretch without sun. `docs-authority/SITE_SCALING.md` (AQS-SITE-004) and `docs-authority/SITE_POWER.md` (AQS-SITE-005) record what changes and why. The locale studies now in progress are Death Valley, the Antarctic coast, Mars, low Earth orbit and a self-contained floating island; `docs-authority/LOCALIZATION_PLAN.md` (AQS-PLAN-011) states the order and the checks for each.
+
 ## 3. What is in the repository
 
 Table 3.1. Top-level folders
@@ -87,7 +93,7 @@ The [documentation map](docs-authority/README.md) lists the design documents by 
 
 ## 4. Current status
 
-The design is at study level. The mass and energy balances close in the model. The graph's `loops_closed` flag stays false, because no measurement from a built plant yet confirms the model. `docs-authority/PROJECT_PLAN.md` (AQS-PLAN-005) defines when a unit is ready to build and sets the order of the remaining work. The duty sheets do not yet meet that definition. The list of parts that the plant must make to build a copy of itself is incomplete.
+The design is at study level. The mass and energy balances close in the model. The graph's `loops_closed` flag stays false, because no measurement from a built plant yet confirms the model. `docs-authority/PROJECT_PLAN.md` (AQS-PLAN-005) defines when a unit is ready to build and sets the order of the remaining work. The duty sheets do not yet meet that definition. The list of parts that the plant must make to build a copy of itself is incomplete. The site-profile system is built and the baseline is its first profile; the other locale variants are studies in progress (Section 2.4).
 
 The work still to do is recorded in two files. `docs-authority/TASK_PLAN.md` (AQS-PLAN-007) lists each task with the check that proves it is done. `docs-authority/OPEN_QUESTIONS.md` lists the design decisions that are still open and the default that the work proceeds on until each is decided.
 
