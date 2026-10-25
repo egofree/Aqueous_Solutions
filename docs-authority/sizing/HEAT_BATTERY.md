@@ -9,14 +9,14 @@ Unit task 02 for the 8 heat batteries (Q1_A, Q1_B, Q2_A, Q2_B, Q3_A, Q3_B, Q4_A,
 
 | Unit | Tier | Fluid | T nom C | Hold kWh_th | Swing K | Mass kg | V req m3 | V m3 (issued) | D mm | H mm | Insulation | U W/m2K | Loss kW (issued) | Wall mm | Fits envelope |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Q1_A | Q1 | thermal oil | 250 | 10 | 80 | 214.3 | 0.2492 | 0.302 (0.302) | 650 | 950 | 90 mm microporous silica board | 0.27 | 0.161 (0.2) | 22651 | yes |
-| Q1_B | Q1 | thermal oil | 250 | 10 | 80 | 214.3 | 0.2492 | 0.302 (0.302) | 650 | 950 | 90 mm microporous silica board | 0.27 | 0.161 (0.2) | 22651 | yes |
-| Q2_A | Q2 | thermal oil | 180 | 10 | 80 | 214.3 | 0.2492 | 0.302 (0.302) | 650 | 950 | 90 mm microporous silica board | 0.27 | 0.112 (0.111) | 22651 | yes |
-| Q2_B | Q2 | thermal oil | 180 | 10 | 80 | 214.3 | 0.2492 | 0.302 (0.302) | 650 | 950 | 90 mm microporous silica board | 0.27 | 0.112 (0.111) | 22651 | yes |
-| Q3_A | Q3 | water | 100 | 14 | 30 | 401.3 | 0.4104 | 0.4104 (0.407) | 750 | 950 | 60 mm mineral wool | 0.55 | 0.137 (0.174) | 29722 | yes |
-| Q3_B | Q3 | water | 100 | 14 | 30 | 401.3 | 0.4104 | 0.4104 (0.407) | 750 | 950 | 60 mm mineral wool | 0.55 | 0.137 (0.174) | 29722 | yes |
-| Q4_A | Q4 | water | 70 | 20 | 30 | 573.3 | 0.5862 | 0.602 (0.602) | 800 | 1200 | 30 mm PIR foam | 0.76 | 0.153 (0.164) | 40046 | yes |
-| Q4_B | Q4 | water | 70 | 20 | 30 | 573.3 | 0.5862 | 0.602 (0.602) | 800 | 1200 | 30 mm PIR foam | 0.76 | 0.153 (0.164) | 40046 | yes |
+| Q1_A | Q1 | thermal oil | 250 | 10 | 80 | 214.3 | 0.2492 | 0.302 (0.302) | 650 | 950 | 90 mm microporous silica board | 0.27 | 0.161 (0.2) | 22643 | yes |
+| Q1_B | Q1 | thermal oil | 250 | 10 | 80 | 214.3 | 0.2492 | 0.302 (0.302) | 650 | 950 | 90 mm microporous silica board | 0.27 | 0.161 (0.2) | 22643 | yes |
+| Q2_A | Q2 | thermal oil | 180 | 10 | 80 | 214.3 | 0.2492 | 0.302 (0.302) | 650 | 950 | 90 mm microporous silica board | 0.27 | 0.112 (0.111) | 22643 | yes |
+| Q2_B | Q2 | thermal oil | 180 | 10 | 80 | 214.3 | 0.2492 | 0.302 (0.302) | 650 | 950 | 90 mm microporous silica board | 0.27 | 0.112 (0.111) | 22643 | yes |
+| Q3_A | Q3 | water | 100 | 14 | 30 | 401.3 | 0.4104 | 0.4104 (0.407) | 750 | 950 | 60 mm mineral wool | 0.55 | 0.137 (0.174) | 29711 | yes |
+| Q3_B | Q3 | water | 100 | 14 | 30 | 401.3 | 0.4104 | 0.4104 (0.407) | 750 | 950 | 60 mm mineral wool | 0.55 | 0.137 (0.174) | 29711 | yes |
+| Q4_A | Q4 | water | 70 | 20 | 30 | 573.3 | 0.5862 | 0.602 (0.602) | 800 | 1200 | 30 mm PIR foam | 0.76 | 0.153 (0.164) | 40032 | yes |
+| Q4_B | Q4 | water | 70 | 20 | 30 | 573.3 | 0.5862 | 0.602 (0.602) | 800 | 1200 | 30 mm PIR foam | 0.76 | 0.153 (0.164) | 40032 | yes |
 
 Reconciliation: the required volumes reproduce the issued sec. 5 shapes within the 50 mm construction grid (Q1/Q2 0.2492 vs 0.302 m3, Q4 0.5862 vs 0.602 m3); Q3 keeps the larger issued shape. Standing losses land within 25 % of the issued column (edge and support effects excluded here, included there). All eight fit the 800 x 800 x 1200 mm placement envelope (AQS-PLACE-SEED-001 Rev H rows unchanged).
 

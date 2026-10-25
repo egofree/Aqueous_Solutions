@@ -30,8 +30,8 @@
           "recirc_m3_h": 3.89,
           "dP_Pa": 1171.034,
           "fan_W": 847.3248,
-          "pump_W": 265.006,
-          "kW": 1.1123,
+          "pump_W": 264.9155,
+          "kW": 1.1122,
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
@@ -42,7 +42,7 @@
         "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
       },
       "continuous_kw": {
-        "value": 1.1123,
+        "value": 1.1122,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
@@ -59,7 +59,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 1.1123,
+        "value": 1.1122,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W."
@@ -78,8 +78,8 @@
           "recirc_m3_h": 3.89,
           "dP_Pa": 1171.034,
           "fan_W": 847.3248,
-          "pump_W": 265.006,
-          "kW": 1.1123,
+          "pump_W": 264.9155,
+          "kW": 1.1122,
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
@@ -981,17 +981,17 @@
           "DN": 32,
           "dT_K": 3,
           "head_m": 25,
-          "pump_W": 125.8,
+          "pump_W": 125.7,
           "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
           "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
         },
         "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
       },
       "continuous_kw": {
-        "value": 0.1258,
+        "value": 0.1257,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-076 source-loop circulator: 125.8 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; drivers GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding winter case with it (AQS-DUTY-010, A-M-231, A-M-317)."
+        "note": "AQS-DUTY-076 source-loop circulator: 125.7 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; drivers GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding winter case with it (AQS-DUTY-010, A-M-231, A-M-317)."
       }
     },
     {
@@ -1224,10 +1224,10 @@
       },
       "modules": [],
       "params": {
-        "energy_kwh_ideal_study": 266.4,
+        "energy_kwh_ideal_study": 266.3,
         "energy_kwh_recoverable_study": 213.1,
         "ref": "AQS-ESS-001",
-        "volume_m3_m1": 2699.0,
+        "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
         "vs_znbr2_kwh": 2517.0,
         "fraction_of_znbr2_study": 0.085,
@@ -1244,7 +1244,7 @@
           "eta_turbine_generator": 0.8,
           "eta_pump_motor": 0.85,
           "round_trip": 0.68,
-          "upper_reservoir_m3": 2699.0,
+          "upper_reservoir_m3": 2700.0,
           "rated_kW_discharge": 14.46,
           "recharge_kW_over_PV_window": 49.6,
           "A-M": "A-M-145",
@@ -1416,8 +1416,8 @@
           "recirc_m3_h": 7.4258,
           "dP_Pa": 1171.034,
           "fan_W": 1617.4908,
-          "pump_W": 505.8802,
-          "kW": 2.1234,
+          "pump_W": 505.7074,
+          "kW": 2.1232,
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
         "size_mm": [
@@ -1428,7 +1428,7 @@
         "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
       },
       "continuous_kw": {
-        "value": 2.1234,
+        "value": 2.1232,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 1617 W, pump 506 W."
@@ -1476,7 +1476,7 @@
           "recirc_m3_h": 0.4775,
           "dP_Pa": 1171.034,
           "fan_W": 5.96,
-          "pump_W": 32.5312,
+          "pump_W": 32.5201,
           "kW": 0.0385,
           "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
         },
@@ -1573,7 +1573,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 336.8121,
+        "value": 336.8116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1820,7 +1820,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 179.7338,
+        "value": 179.7238,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
@@ -1835,10 +1835,10 @@
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.38,
+          "H2_m3_d": 6.379,
           "purge_m3_h": 26.58,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1645.9
+          "electrode_area_m2": 1645.8
         }
       }
     },
@@ -4581,7 +4581,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 336.8121,
+        "value": 336.8116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -4686,7 +4686,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 1.1123,
+        "value": 1.1122,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
@@ -5207,7 +5207,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.1123,
+        "value": 1.1122,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
@@ -5259,7 +5259,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.1234,
+        "value": 2.1232,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164)."
@@ -6668,7 +6668,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.1258,
+        "value": 0.1257,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP_CLOSED_LOOP continuous_kw (A-M-317)."

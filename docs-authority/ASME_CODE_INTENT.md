@@ -163,14 +163,14 @@ Pressurised nodes needing a U stamp: 1. Every pressurised node is a B31.3 compon
 | PROD_O2 | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | PV_ARRAY | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | P_CA | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
-| Q1_A | HEAT |  |  | -44652 | not a vessel (no design pressure on the graph) | - | - | - |
-| Q1_B | HEAT |  |  | -44652 | not a vessel (no design pressure on the graph) | - | - | - |
-| Q2_A | HEAT |  |  | -44652 | not a vessel (no design pressure on the graph) | - | - | - |
-| Q2_B | HEAT |  |  | -44652 | not a vessel (no design pressure on the graph) | - | - | - |
-| Q3_A | HEAT |  |  | -58694 | not a vessel (no design pressure on the graph) | - | - | - |
-| Q3_B | HEAT |  |  | -58694 | not a vessel (no design pressure on the graph) | - | - | - |
-| Q4_A | HEAT |  |  | -79292 | not a vessel (no design pressure on the graph) | - | - | - |
-| Q4_B | HEAT |  |  | -79292 | not a vessel (no design pressure on the graph) | - | - | - |
+| Q1_A | HEAT |  |  | -44636 | not a vessel (no design pressure on the graph) | - | - | - |
+| Q1_B | HEAT |  |  | -44636 | not a vessel (no design pressure on the graph) | - | - | - |
+| Q2_A | HEAT |  |  | -44636 | not a vessel (no design pressure on the graph) | - | - | - |
+| Q2_B | HEAT |  |  | -44636 | not a vessel (no design pressure on the graph) | - | - | - |
+| Q3_A | HEAT |  |  | -58672 | not a vessel (no design pressure on the graph) | - | - | - |
+| Q3_B | HEAT |  |  | -58672 | not a vessel (no design pressure on the graph) | - | - | - |
+| Q4_A | HEAT |  |  | -79264 | not a vessel (no design pressure on the graph) | - | - | - |
+| Q4_B | HEAT |  |  | -79264 | not a vessel (no design pressure on the graph) | - | - | - |
 | Q4_BUS | HEAT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RECTIFIER | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RELIEF_CRYO | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

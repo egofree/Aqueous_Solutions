@@ -24,9 +24,9 @@ Order: process systems first, utilities last (reverse of AQS-COM-001), so power,
 | 13 | CRYO | 14 | 0.00 | Ar, CH3OH, CO2, H2, N2, O2, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2 | 10.78 |
 | 14 | GAS | 8 | 0.29 | Fe, HCl, N2, other_metals, solute | air purge | 1.65 |
 | 15 | HEAT | 11 | 0.00 |  | - | 0.92 |
-| 16 | WTR | 7 | 2221.99 | Fe, HCl, other_metals, solids, solute | air purge | 142.89 |
+| 16 | WTR | 7 | 2222.68 | Fe, HCl, other_metals, solids, solute | air purge | 142.93 |
 | 17 | PUMPED_HYDRO | 1 | 0.00 |  | - | 0.17 |
 | 18 | ELEC | 8 | 4.16 | Ar, Fe, HCl, N2, O2, other_metals | N2/air to 19.5-23.5 % O2; air purge | 529.89 |
 
-Totals: drain 2245.8 t, dismantle 695.9 t (equipment; building and water tower excluded). Liquids go to the plant's own recovery units while they still run (acid to HCl regeneration, metal liquor to EW), else to licensed treatment. Per unit: `docs-authority/inventory/DECOMMISSIONING.csv`.
+Totals: drain 2246.5 t, dismantle 696.0 t (equipment; building and water tower excluded). Liquids go to the plant's own recovery units while they still run (acid to HCl regeneration, metal liquor to EW), else to licensed treatment. Per unit: `docs-authority/inventory/DECOMMISSIONING.csv`.
 Last steps: H2/O2/CO2 banks drawn down into process use first, the rest vented at controlled rate through the relief headers (AQS-SAF-004) and N2 purged; ZnBr2 electrolyte drained to sealed drums for return (AQS-END-002); water tower drawn down last and kept for fire cover until the end.

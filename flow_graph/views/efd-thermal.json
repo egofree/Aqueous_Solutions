@@ -251,7 +251,7 @@
           "loop_flow_kg_s": 0.2564,
           "loop_dT_K": 3,
           "loop_fluid": "25 % propylene glycol",
-          "circ_pump_W": 125.8,
+          "circ_pump_W": 125.7,
           "status": "design_survey_locked (ST-ORC-01)",
           "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal"
         },
@@ -317,17 +317,17 @@
           "DN": 32,
           "dT_K": 3,
           "head_m": 25,
-          "pump_W": 125.8,
+          "pump_W": 125.7,
           "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
           "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
         },
         "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
       },
       "continuous_kw": {
-        "value": 0.1258,
+        "value": 0.1257,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-076 source-loop circulator: 125.8 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; drivers GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding winter case with it (AQS-DUTY-010, A-M-231, A-M-317)."
+        "note": "AQS-DUTY-076 source-loop circulator: 125.7 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; drivers GEO.geo-loop loop_head_m / pump eff, registered); runs with the S44 lift dispatch and is counted on the bounding winter case with it (AQS-DUTY-010, A-M-231, A-M-317)."
       }
     },
     {
@@ -605,7 +605,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 179.7338,
+        "value": 179.7238,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
@@ -620,10 +620,10 @@
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.38,
+          "H2_m3_d": 6.379,
           "purge_m3_h": 26.58,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1645.9
+          "electrode_area_m2": 1645.8
         }
       }
     },
@@ -689,7 +689,7 @@
           "area_m2": 2.604,
           "standing_loss_kW": 0.161,
           "issued_loss_kW": 0.2,
-          "wall_mm": 22651,
+          "wall_mm": 22643,
           "material": "SA-240 304L, welded",
           "envelope": [
             800,
@@ -742,7 +742,7 @@
           "area_m2": 2.604,
           "standing_loss_kW": 0.112,
           "issued_loss_kW": 0.111,
-          "wall_mm": 22651,
+          "wall_mm": 22643,
           "material": "SA-240 304L, welded",
           "envelope": [
             800,
@@ -800,7 +800,7 @@
           "area_m2": 3.122,
           "standing_loss_kW": 0.137,
           "issued_loss_kW": 0.174,
-          "wall_mm": 29722,
+          "wall_mm": 29711,
           "material": "SA-240 304L, welded (100 C tier is above the PP-H class of 80 C)",
           "envelope": [
             800,
@@ -853,7 +853,7 @@
           "area_m2": 4.021,
           "standing_loss_kW": 0.153,
           "issued_loss_kW": 0.164,
-          "wall_mm": 40046,
+          "wall_mm": 40032,
           "material": "PP-H (fusion welded)",
           "envelope": [
             800,
@@ -906,7 +906,7 @@
           "area_m2": 2.604,
           "standing_loss_kW": 0.161,
           "issued_loss_kW": 0.2,
-          "wall_mm": 22651,
+          "wall_mm": 22643,
           "material": "SA-240 304L, welded",
           "envelope": [
             800,
@@ -959,7 +959,7 @@
           "area_m2": 2.604,
           "standing_loss_kW": 0.112,
           "issued_loss_kW": 0.111,
-          "wall_mm": 22651,
+          "wall_mm": 22643,
           "material": "SA-240 304L, welded",
           "envelope": [
             800,
@@ -1017,7 +1017,7 @@
           "area_m2": 3.122,
           "standing_loss_kW": 0.137,
           "issued_loss_kW": 0.174,
-          "wall_mm": 29722,
+          "wall_mm": 29711,
           "material": "SA-240 304L, welded (100 C tier is above the PP-H class of 80 C)",
           "envelope": [
             800,
@@ -1070,7 +1070,7 @@
           "area_m2": 4.021,
           "standing_loss_kW": 0.153,
           "issued_loss_kW": 0.164,
-          "wall_mm": 40046,
+          "wall_mm": 40032,
           "material": "PP-H (fusion welded)",
           "envelope": [
             800,

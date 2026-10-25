@@ -430,6 +430,7 @@ Table 1.1. Curated assumptions
 | A-M-381 | ASTM D1785-21a (previously 15): clause numbers, tables and values cited in the listed files | clause | AQS-STD-007; the listed files | Owner decision Q-018 (2026-10-24): citations moved to the latest edition. The clause numbers and values were read from the earlier edition and have not been checked against the new text | A renumbered clause makes the citation point to the wrong requirement; a changed value changes the check result | Clause-by-clause check against ASTM D1785-21a | X-STD-01 |
 | A-M-382 | ASTM D2855-20 (previously 15): clause numbers, tables and values cited in the listed files | clause | AQS-STD-007; the listed files | Owner decision Q-018 (2026-10-24): citations moved to the latest edition. The clause numbers and values were read from the earlier edition and have not been checked against the new text | A renumbered clause makes the citation point to the wrong requirement; a changed value changes the check result | Clause-by-clause check against ASTM D2855-20 | X-STD-01 |
 | A-M-383 | Dual-fuel spark-ignition engine: 30 % efficiency on hydrogen (the same as on the C5-C10 cut, A-M-134); hydrogen LHV 33.33 kWh/kg (120 MJ/kg) | - ; kWh/kg | flow_graph/param/drivers.json ELEC.generation-train.BACKUP_GEN.eta_h2 and h2_lhv_kWh_kg; flow_graph/param/backup_fuel.py | Owner decision 2026-10-24: the generator is the backup and stays; hydrogen first, another plant fuel when hydrogen is short. Hydrogen LHV is a property value (about 120 MJ/kg); the efficiency is taken equal to the C5-C10 value pending an engine selection | Hydrogen draw S45 and the electrolyser load scale inversely with the efficiency; the C5-C10 reserve does not depend on it | Selected dual-fuel engine data sheet (efficiency at 30 % load on hydrogen) | X-PAR-12 |
+| A-M-384 | Gas headers (air and nitrogen class) and the sanitation flue and vent superficials at 20 °C; ZNBR2 purge air at 25 °C. Densities follow from the site pressure and air molar mass by the ideal gas law (flow_graph/param/site.py air_density). | °C | flow_graph/param/drivers.json HDR.headers-train.hdr_air_T_C, WTR.grey-black-train.san_air_T_C, ELEC.storage-train.ZNBR2.purge_air_T_C | The former density drivers were stated at 20 °C (headers, sanitation); the purge density had no stated temperature and is taken at the 25 °C indoor basis used for insulation. | Density scales with absolute temperature; 5 K changes it by under 2 %. | Operating temperatures from the HVAC design (AQS-THM-002) and the header line lists. | X-LOC-03 |
 
 ## 2. Graph study and assumed values
 
@@ -437,9 +438,9 @@ Table 2.1. Graph study and assumed values
 
 | ID | Value | Units | Where used | Basis | Replaced by | Task |
 | --- | --- | --- | --- | --- | --- | --- |
-| A-G-74ec02 | 1.1123 | kW | graph ACID_POLISH_SCRUB continuous_kw | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W. |  | unit task 02 (ACID_POLISH_SCRUB) |
+| A-G-74ec02 | 1.1122 | kW | graph ACID_POLISH_SCRUB continuous_kw | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W. |  | unit task 02 (ACID_POLISH_SCRUB) |
 | A-G-b35306 | 0.1332 | kW | graph AFTERBURNER continuous_kw | ID blower on the 7.097 kg/d flue (IA-AB-FLUE): 0.1 L/s at the 300 C exit duct class (850 C chamber per X-SAN-01, cooled exit), 350 Pa at eta 0.35 - the ignition |  | unit task 02 (AFTERBURNER) |
-| A-G-c7f9cf | 1.1123 | kW | graph ALK_SCRUBBER continuous_kw | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W. |  | unit task 02 (ALK_SCRUBBER) |
+| A-G-c7f9cf | 1.1122 | kW | graph ALK_SCRUBBER continuous_kw | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W. |  | unit task 02 (ALK_SCRUBBER) |
 | A-G-ac4d3a | 0.0082 | kW | graph BACKUP_GEN continuous_kw | X-PAR-12 TF: standby, NFPA 110 exercise average |  | unit task 02 (BACKUP_GEN) |
 | A-G-0f4492 | 0.1052 | kW | graph BLACK_DIGEST continuous_kw | X-ELS-02: node aligned to its calculated SF-BLACK_DIGEST feed; sizing module flow_graph/param/sanitation.py (X-SAN-01, AQS-DUTY-063). Feed basis: X-ELS-02 load- |  | unit task 02 (BLACK_DIGEST) |
 | A-G-df21a0 | 5.6267 | kW | graph BMED_ACID continuous_kw | X-PAR acid-loop decision (AQS-PAR-001 §3). BMED stack: 96.46 kg/d NaOH x 1.40 kWh/kg from triplet voltage 1.67 V at CE 0.8 (STRATHMANN2004, CRC_COND, EDBM_PILOT |  | unit task 02 (BMED_ACID) |
@@ -463,7 +464,7 @@ Table 2.1. Graph study and assumed values
 | A-G-d62103 | 4.0 | kW | graph FUEL_CELL continuous_kw | REQ-FC-CONT |  | unit task 02 (FUEL_CELL) |
 | A-G-98c3d8 | 0.0781 | kW | graph GAS_ATOMIZER continuous_kw | X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 1.9 kWh/d / 24 h; batch nameplate 5.5 kW (rev B metered this tool |  | unit task 02 (GAS_ATOMIZER) |
 | A-G-410af3 | 0.6866 | kW | graph GEO_HP continuous_kw | X-ELS-02: Q4-bus lift S44 2.1972 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, |  | unit task 02 (GEO_HP) |
-| A-G-d6ba1d | 0.1258 | kW | graph GEO_HP_CLOSED_LOOP continuous_kw | AQS-DUTY-076 source-loop circulator: 125.8 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; dr |  | unit task 02 (GEO_HP_CLOSED_LOOP) |
+| A-G-d6ba1d | 0.1257 | kW | graph GEO_HP_CLOSED_LOOP continuous_kw | AQS-DUTY-076 source-loop circulator: 125.7 W pump work (rho x g x Q x H / eta) at the GHEX-ceiling loop flow against 25 m head (sizing_geo_loop design block; dr |  | unit task 02 (GEO_HP_CLOSED_LOOP) |
 | A-G-e0e0d9 | 0.09 | kW | graph GLASS_DIGEST continuous_kw | X-ELS-02: node aligned to its calculated SF-GLASS_DIGEST feed (agitator motor); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed  |  | unit task 02 (GLASS_DIGEST) |
 | A-G-5c2513 | 2.0463 | kW | graph GROW_BED continuous_kw | LED 29.12 m2 x 70.3 W/m2 (DLI 17.0, 2.8 umol/J, A-M-133/A-M-144); crew duty (A-M-229) |  | unit task 02 (GROW_BED) |
 | A-G-0c2a03 | 0.0205 | kW | graph H2_DRYER continuous_kw | X-MFG-39 (A-M-168): TSA regeneration 1.0 W / 0.7 + half the insulated loss. |  | unit task 02 (H2_DRYER) |
@@ -475,18 +476,18 @@ Table 2.1. Graph study and assumed values
 | A-G-5004f9 | 0.7388 | kW | graph MEOH_SYNTH continuous_kw | X-ELS-02: node aligned to its calculated SF-MEOH_SYNTH feed (feed preheat, no interchanger credit); sizing module flow_graph/param/reactor_design.py (X-MFG-31,  |  | unit task 02 (MEOH_SYNTH) |
 | A-G-070d82 | None | kW | graph MEOH_TANK continuous_kw | Inventory store; no continuous kW — fuel to MEOH_FC |  | unit task 02 (MEOH_TANK) |
 | A-G-f0b135 | 0.2369 | kW | graph MET_MELT continuous_kw | X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.7 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool |  | unit task 02 (MET_MELT) |
-| A-G-1c34c3 | 2.1234 | kW | graph MET_SCRUB continuous_kw | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 1617 W, pump 506 W. |  | unit task 02 (MET_SCRUB) |
+| A-G-1c34c3 | 2.1232 | kW | graph MET_SCRUB continuous_kw | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 1617 W, pump 506 W. |  | unit task 02 (MET_SCRUB) |
 | A-G-4a144b | 2.55 | kW | graph MFG_SHOP continuous_kw | X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 42.8 kW, coincident pea |  | unit task 02 (MFG_SHOP) |
 | A-G-c8e676 | 0.0385 | kW | graph NOX_SCRUB continuous_kw | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W. |  | unit task 02 (NOX_SCRUB) |
 | A-G-3a2c73 | 0.0245 | kW | graph NUTRIENT_DOSE continuous_kw | Dosing-skid pumps (AQS-EQP-NUT-001): bleed transfer 109.6 kg/d over a 2 h window at 15 m head, eta 0.35 (6.4 W) + 3 x 8 W metering pumps on the bed/fish splits. |  | unit task 02 (NUTRIENT_DOSE) |
 | A-G-9552a6 | 1.664 | kW | graph OIL_PYRO continuous_kw | X-ELS-02: node aligned to its calculated SF-OIL_PYRO feed (retort heat / heater efficiency); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUT |  | unit task 02 (OIL_PYRO) |
-| A-G-dddba0 | 336.8121 | kW | graph PV_ARRAY continuous_kw | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg — resolved (A-M-233). |  | unit task 02 (PV_ARRAY) |
+| A-G-dddba0 | 336.8116 | kW | graph PV_ARRAY continuous_kw | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg — resolved (A-M-233). |  | unit task 02 (PV_ARRAY) |
 | A-G-18e3f1 | 12.0 | kW | graph RECTIFIER continuous_kw | A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the AQS-ELEC |  | unit task 02 (RECTIFIER) |
 | A-G-c0d11f | 0.4417 | kW | graph WAFER_FAB continuous_kw | AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to |  | unit task 02 (WAFER_FAB) |
 | A-G-80b832 | 0.2066 | kW | graph WET_BENCH continuous_kw | RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); D |  | unit task 02 (WET_BENCH) |
 | A-G-e58fa0 | 0.0189 | kW | graph WIRE_DRAW continuous_kw | X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool |  | unit task 02 (WIRE_DRAW) |
 | A-G-dd83c0 | 0.0308 | kW | graph WS_PEROX continuous_kw | X-ELS-10 (AQS-DSN-OX-001): peroxide electrolytic cell 12.31 A x 2.5 V = 0.0308 kW from the S32 duty; DC behind the RECTIFIER AC sum. |  | unit task 02 (WS_PEROX) |
-| A-G-9b7b1e | 179.7338 | kW | graph ZNBR2 continuous_kw | X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7  |  | unit task 02 (ZNBR2) |
+| A-G-9b7b1e | 179.7238 | kW | graph ZNBR2 continuous_kw | X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7  |  | unit task 02 (ZNBR2) |
 | A-G-ee0b63 | 0.2359 | kW | graph VCD_TRAIN continuous_kw | 0.333 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149) |  | unit task 02 (VCD_TRAIN) |
 | A-G-5014df | 0.046 | kW | graph REMIN continuous_kw | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): 2 x 8 W metering pumps + 30 W UV at the 10 L/d drink basis (AQS-EQP-STUDY-001 sec.4; A-M-285). |  | unit task 02 (REMIN) |
 | A-G-f420c2 | 0.0254 | kW | graph LITHO_COAT continuous_kw | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287). |  | unit task 02 (LITHO_COAT) |
@@ -685,8 +686,8 @@ Table 2.1. Graph study and assumed values
 | A-G-09568e | 117.42759 | kg/d | graph S67 rate | Flue includes the silicon-carbide CO. / X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. / X-PAR-12 TF: flue junction passes burner flue |  | X-BAS-02 |
 | A-G-121660 | 14.050492 | kg/d | graph S67B rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR-12 TF: bound O2 in |  | X-BAS-02 |
 | A-G-e2f3f4 | 78.987901 | kg/d | graph S68 rate | AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-b66bb4 | 752.788322 | kg/d | graph S69 rate | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 / X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: H |  | X-BAS-02 |
-| A-G-ec8519 | 752.788322 | kg/d | graph S69B rate | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. / X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in th |  | X-BAS-02 |
+| A-G-b66bb4 | 755.229337 | kg/d | graph S69 rate | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 / X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: H |  | X-BAS-02 |
+| A-G-ec8519 | 755.229337 | kg/d | graph S69B rate | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. / X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in th |  | X-BAS-02 |
 | A-G-5863c6 | 0.0521 | kg/d | graph S70 rate | AQS-DUTY-010: CRYO_CO2 boil-off 1%/d of the 5.21 kg dark buffer, vented via the cryo AHU condensables box / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-7073c8 | 20458.32 | kg/d | graph S71 rate | AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. / value r |  | X-BAS-02 |
 | A-G-14c1dd | 2.4442 | kg/d | graph S72 rate | AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -795,7 +796,7 @@ Table 2.1. Graph study and assumed values
 | A-G-75b109 | 244.641602 | kg/d | graph IA-GREY-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. / X-PAR-02 TF: grey sludge to the leach by difference (Rev M: |  | X-BAS-02 |
 | A-G-c27d95 | 27.509975 | kg/d | graph IA-CRU-01 rate | CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 drawn 0.6158 = 27.5100 kg/d (chlorate consumed, NaCl + reaction water +  |  | X-BAS-02 |
 | A-G-ec5c10 | 0.0 | kW | graph HL-Q4-REJ rate | AQS-HEAT-STUDY-002 Rev A 2026-10-18 §10.8/§10.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored — 13.1637 in - 3.0 life - 0.532 HX-9 - 0.2 |  | X-BAS-02 |
-| A-G-a59b7e | 336.8121 | kW | graph IA-PV-01 rate | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension  |  | X-BAS-02 |
+| A-G-a59b7e | 336.8116 | kW | graph IA-PV-01 rate | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension  |  | X-BAS-02 |
 | A-G-181fa6 | 8.486841 | kg/d | graph IA-ZNBR-BD rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-3a0716 | 13.930007 | kg/d | graph IA-NUT-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-225194 | 60.000181 | kg/d | graph IA-UPW-FAB rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -911,7 +912,7 @@ Table 2.1. Graph study and assumed values
 | A-G-cd06f5 | 0.78 | kW | graph IA-BMED-03-TRIM rate | X-RSZ-04 (AQS-MAT-001 §10 water-cooled trim, 85 to 35 C). 449.5 kg/d x 4.18 kJ/kgK x 50 K. |  | X-BAS-02 |
 | A-G-6ccfa8 | 1.027 | kW | graph IA-BMED-04-TRIM rate | X-RSZ-04 (AQS-MAT-001 §10 water-cooled trim, 85 to 35 C). 493.1 kg/d x 4.18 kJ/kgK x 50 K. |  | X-BAS-02 |
 | A-G-8e1110 | 167.999678 | kg/d | graph IA-LEACH-VCD rate | X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. / X-PAR-02 TF: roof-tank shortfall -0.0000 kg |  | X-BAS-02 |
-| A-G-021147 | 1.1123 | kW | graph SF-ALK_SCRUBBER rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
+| A-G-021147 | 1.1122 | kW | graph SF-ALK_SCRUBBER rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
 | A-G-1184e8 | 0.018 | kW | graph SF-BMED_UPW_POLISH rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-438768 | 0.9325 | kW | graph SF-CRYO_H2 rate | X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study). |  | X-BAS-02 |
 | A-G-c0aaee | 0.6866 | kW | graph SF-GEO_HP rate | X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP continuous_kw. |  | X-BAS-02 |
@@ -951,9 +952,9 @@ Table 2.1. Graph study and assumed values
 | A-G-8a2c06 | 0.355595 | kg/d | graph IA-ATOM-REMELT rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-02 TF: 10% off-spec remelted (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-031879 | 0.6472 | kW | graph SF-CRYO_AHU rate | X-PAR-12 TF (AQS-PAR-005). |  | X-BAS-02 |
 | A-G-d041f1 | 0.0207 | kW | graph SF-MEOH_FERM rate | X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_FERM continuous_kw. |  | X-BAS-02 |
-| A-G-174d4b | 1.1123 | kW | graph SF-ACID_POLISH_SCRUB rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
+| A-G-174d4b | 1.1122 | kW | graph SF-ACID_POLISH_SCRUB rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
 | A-G-4eb992 | 0.0385 | kW | graph SF-NOX_SCRUB rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
-| A-G-6d1e08 | 2.1234 | kW | graph SF-MET_SCRUB rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
+| A-G-6d1e08 | 2.1232 | kW | graph SF-MET_SCRUB rate | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). |  | X-BAS-02 |
 | A-G-db23aa | 439.6127 | kg/d | graph IA-ACID-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Acid not taken by the wet bench or the resin exchange. X-RSZ-01: class A (regolith-like) bound, AQS-A |  | X-BAS-02 |
 | A-G-45a156 | 21.968 | kg/d | graph IA-BASE-01 rate | X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). 109.8 mol/d NaOH = 2 x SiO2 dissolved (IA-GLASS-03 less S08G, all as SiO2,  |  | X-BAS-02 |
 | A-G-59112c | 482.2861 | kg/d | graph IA-BASE-PPT rate | X-PAR acid-loop decision (AQS-PAR-001 §3); NaOH balance (owner decision 2026-10-15). 2412 mol/d NaOH, one per leached chloride (GREENWOOD), as 20 wt%. |  | X-BAS-02 |
@@ -1103,7 +1104,7 @@ Table 2.1. Graph study and assumed values
 | A-G-67a3b3 | 0.0781 | kW | graph SF-GAS_ATOMIZER rate | X-ELS-02 load-basis (A-M-275). Feed equal to GAS_ATOMIZER continuous_kw. |  | X-BAS-02 |
 | A-G-7ec3d8 | 0.0191 | kW | graph SF-COLD_MILL rate | X-ELS-02 load-basis (A-M-275). Feed equal to COLD_MILL continuous_kw. |  | X-BAS-02 |
 | A-G-b8f703 | 0.0189 | kW | graph SF-WIRE_DRAW rate | X-ELS-02 load-basis (A-M-275). Feed equal to WIRE_DRAW continuous_kw. |  | X-BAS-02 |
-| A-G-ea3ecb | 0.1258 | kW | graph SF-GEO_HP_CLOSED_LOOP rate | X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP_CLOSED_LOOP continuous_kw (A-M-317). |  | X-BAS-02 |
+| A-G-ea3ecb | 0.1257 | kW | graph SF-GEO_HP_CLOSED_LOOP rate | X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP_CLOSED_LOOP continuous_kw (A-M-317). |  | X-BAS-02 |
 
 ## 3. Model parameters
 
@@ -1202,10 +1203,10 @@ Table 4.1. Document lines naming an assumption
 | A-D-dfb4a9 |  |  | docs-authority/GROUNDING.md:14 | Bare copper ring, 4/0 AWG (107 mm²), 0.75 m deep, round the placement extents (about 35 × 20 m, assumption), with twelve 16 mm × 3 m copper-clad rods at about 1 |  | see page |
 | A-D-d3cd3f |  |  | docs-authority/INSTRUMENT_LOOPS.md:98 | S08 and S16 keep the deposit table plus the 0.0021 kg/d silicate residual. That residual is an assumption. This station does not replace it with a measurement o |  | see page |
 | A-D-f52049 |  |  | docs-authority/INSULATION_SCHEDULE.md:6 | Basis: AQS-PLAN-007 task X-THM-03; AQS-ISO-002; inputs in assumption A-M-158. |  | see page |
-| A-D-ed2529 |  |  | docs-authority/LOCALIZATION_PLAN.md:30 | Every value in sections 6 to 10 cites a published source. A value enters the model only through a site profile entry that carries that source, or through an ent |  | see page |
-| A-D-634b16 |  |  | docs-authority/LOCALIZATION_PLAN.md:147 | - A replacement unit gets a new unit id in the base graph, present only where a profile selects it. Unit, stream, assumption, task and question ids take the nex |  | see page |
-| A-D-565640 |  |  | docs-authority/LOCALIZATION_PLAN.md:219 | / Soil / geotechnical report at the parcel / assumption until then / |  | see page |
-| A-D-31a71c |  |  | docs-authority/LOCALIZATION_PLAN.md:221 | The 0.4 % cooling dry bulb for the profile comes from the American Society of Heating, Refrigerating and Air-Conditioning Engineers (ASHRAE) climatic design con |  | see page |
+| A-D-ed2529 |  |  | docs-authority/LOCALIZATION_PLAN.md:31 | Every value in sections 6 to 10 cites a published source. A value enters the model only through a site profile entry that carries that source, or through an ent |  | see page |
+| A-D-634b16 |  |  | docs-authority/LOCALIZATION_PLAN.md:148 | - A replacement unit gets a new unit id in the base graph, present only where a profile selects it. Unit, stream, assumption, task and question ids take the nex |  | see page |
+| A-D-565640 |  |  | docs-authority/LOCALIZATION_PLAN.md:220 | / Soil / geotechnical report at the parcel / assumption until then / |  | see page |
+| A-D-31a71c |  |  | docs-authority/LOCALIZATION_PLAN.md:222 | The 0.4 % cooling dry bulb for the profile comes from the American Society of Heating, Refrigerating and Air-Conditioning Engineers (ASHRAE) climatic design con |  | see page |
 | A-D-5f8dac |  |  | docs-authority/MATERIALS_SEC3.md:86 | - A-M-318..328 register the selections per family in `assumptions_manual.json` (AQS-REG-002). |  | see page |
 | A-D-7272e1 |  |  | docs-authority/MATERIALS_STD.md:21 | / L / Service-class selection guide across the assay envelope added as section 12 (X-MAT-01). Line-list class rules keyed to the guide families: the "aqueous pr |  | see page |
 | A-D-ffa9aa |  |  | docs-authority/MATERIALS_STD.md:36 | M5. Thermoplastic limits. PVC-U to 60 °C. CPVC to 93 °C. These two limits are assumptions from published PVC-U and CPVC data, not measured in this plant. Above  |  | see page |
@@ -1262,7 +1263,7 @@ Table 4.1. Document lines naming an assumption
 | A-D-4a9ed5 |  |  | docs-authority/PARAMETRIC_MODEL.md:734 | / ELEC.distribution-train.gnd_soil_rho_ohm_m / 50.0 / ohm m soil resistivity / AQS-SITE-002 soil assumption (clay) / yes / |  | see page |
 | A-D-82d2c0 |  |  | docs-authority/PARAMETRIC_MODEL.md:826 | / FAB.litho-train.starts_per_d / 5 / wafer starts/d / AQS-AUD-001 labeled assumption 1-5/d, bounding value (A-M-288) (A-M-287) / yes / |  | see page |
 | A-D-294840 |  |  | docs-authority/PARAMETRIC_MODEL.md:985 | / BVAD2022 / Anderson M.S. et al., Life Support Baseline Values and Assumptions Document, NASA/TP-2015-218570 Rev 2 (Feb 2022), Tables 4-90 and 4-91: per-crop h |  | see page |
-| A-D-44d11a |  |  | docs-authority/PARAMETRIC_MODEL.md:1739 | / A-M-260 / Register reconciliation: EW_1..9 params.sizing re-stamped li - / python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors) / |  | see page |
+| A-D-44d11a |  |  | docs-authority/PARAMETRIC_MODEL.md:1742 | / A-M-260 / Register reconciliation: EW_1..9 params.sizing re-stamped li - / python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors) / |  | see page |
 | A-D-974105 |  |  | docs-authority/POLYMER_HX_SIZING.md:15 | - PVDF conductivity 0.17 W/mK, the low end of the Kynar 740 data sheet (0.17–0.19, ASTM D433) [S16]. Borosilicate 3.3 1.2 W/mK (ISO 3585 typical). Graphite 100  |  | see page |
 | A-D-07f279 |  |  | docs-authority/POLYMER_HX_SIZING.md:16 | - Film coefficients: tube side Dittus–Boelter with water properties from steam tables. The liquor is taken as water; that is an assumption. Outside films are as |  | see page |
 | A-D-081902 |  |  | docs-authority/POLYMER_HX_SIZING.md:17 | - Fouling 0.0002 m²K/W (assumption). |  | see page |
@@ -1288,7 +1289,7 @@ Table 4.1. Document lines naming an assumption
 | A-D-c1b04f |  |  | docs-authority/STUDY_UNITS_STUB.md:343 | 1. AQS-AUD-001 FAB pilot starts assumption (1–5/d labeled). |  | see page |
 | A-D-fc24c1 |  |  | docs-authority/SURPLUS_PASS_THRESHOLDS.md:47 | ## 3. Drivers (study assumptions) |  | see page |
 | A-D-ab5b99 |  |  | docs-authority/SURPLUS_PASS_THRESHOLDS.md:86 | path but fails the study bar. **Yield/berth assumption = study** — not a |  | see page |
-| A-D-b41ff2 |  |  | docs-authority/TEST_PLAN.md:570 | / A-M-260 / Register reconciliation: EW_1..9 params.sizing re-stamped li - / python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors) / R10 |  | see page |
+| A-D-b41ff2 |  |  | docs-authority/TEST_PLAN.md:573 | / A-M-260 / Register reconciliation: EW_1..9 params.sizing re-stamped li - / python3 docs-authority/_assumptions_register.py exits 0 (no stale-key errors) / R10 |  | see page |
 | A-D-344917 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:12 | / B / 1 / Study-estimate duties (formula + assumptions); FreeCAD stubs / 2026-10-01 / |  | see page |
 | A-D-5eb913 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:19 | Each duty is a study estimate: a formula with its assumptions, applied to issued plant throughputs. Study estimates are not vendor nameplates; pack heights and  |  | see page |
 | A-D-c8df27 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:59 | / Parameter / Study estimate / Formula / assumption / |  | see page |
@@ -1318,6 +1319,7 @@ Table 4.1. Document lines naming an assumption
 | A-D-07c2b5 |  |  | docs-authority/notes/2026-10-21-x-mat-01-service-classes.md:39 | exceed, 33 rows on the registered 40 °C ambient assumption (A-M-269)**. No `--write` |  | see page |
 | A-D-8850f8 |  |  | docs-authority/notes/2026-10-21-x-mat-22-sec3-selections.md:60 | - Assumptions: **A-M-318..328** (11 entries, task X-MAT-22, `needs_verification` true with named |  | see page |
 | A-D-7bd313 |  |  | docs-authority/notes/2026-10-21-x-saf-01-hazop.md:37 | - No new engineering assumptions: all outputs re-derived from the existing graph, AQS-CTL-001 instrument index, |  | see page |
+| A-D-5ef09b |  |  | docs-authority/notes/2026-10-25-gravity-air-density-profile.md:21 | - The former purge air density driver cited A-M-135, which is a motor model assumption; the replacement temperature driver cites A-M-384. |  | see page |
 | A-D-ba1bb4 |  |  | docs-authority/sizing/COLD_BOX.md:21 | The regeneration heat is electric in this revision. Taking it from the Q2 ladder (200-250 C) is the first saving to study. Sorbent capacity, heat of adsorption  |  | see page |
 | A-D-a8fa6c |  |  | docs-authority/sizing/H2_COMPRESSOR.md:18 | Material: head and plates 17-4PH H1150 / 316L (hydrogen service), triple-layer 301 SS diaphragm with leak detection between layers. Rev B replaces the two-stage |  | see page |
 | A-D-1e06be |  |  | docs-authority/sizing/H2_PURIFIER_BEDS.md:18 | Guard charge 32 g; sieve 353 g per TSA bed. Regeneration 1.0 W average at 250.0 C, insulation 38 mm (loss 38 W while hot); electric load 20 W. Every bed is dupl |  | see page |

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 3.754e+04 kg/d. Mass out 3.754e+04 kg/d. Electrical duty 1.1123 kW. In: S65 3.751e+04 kg/d (acid-gas residual); IA-SCRUB-SRC 27.34 kg/d (scrub feed). Out: S66 27.37 kg/d (scrub liquor → chlorate finish); IA-ACID-AIR-RET 3.751e+04 kg/d (acid-gas dilution air returned to the alkaline scrubber).
+1. Basis. Mass in 3.754e+04 kg/d. Mass out 3.754e+04 kg/d. Electrical duty 1.1122 kW. In: S65 3.751e+04 kg/d (acid-gas residual); IA-SCRUB-SRC 27.34 kg/d (scrub feed). Out: S66 27.37 kg/d (scrub liquor → chlorate finish); IA-ACID-AIR-RET 3.751e+04 kg/d (acid-gas dilution air returned to the alkaline scrubber).
 
 2. Size.
 - Gas 1500.0 m³/h. Tower area at 1.5 m/s = 1500.0/3600/1.5 = 0.2778 m². Diameter 595 mm.

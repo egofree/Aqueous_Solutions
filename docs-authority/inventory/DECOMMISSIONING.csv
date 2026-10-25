@@ -150,7 +150,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 15,HEAT,Q4_B,0,,-,115,no
 16,WTR,BLACK_DIGEST,953,solids,-,229,yes
 16,WTR,BMED_UPW_POLISH,1733,,-,416,yes
-16,WTR,CATCH_TANK,2218118,,-,141960,yes
+16,WTR,CATCH_TANK,2218806,,-,142004,yes
 16,WTR,GREY_TREAT,440,solute,-,106,no
 16,WTR,REMIN,120,solute,-,29,no
 16,WTR,ROOF_TANK,0,solute,-,0,no
