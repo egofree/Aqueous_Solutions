@@ -18,3 +18,4 @@ N16,DN50,Class 150,scrubber condensate,inlet,160
 N17,DN15,Class 150,scrubber water,outlet,600
 N18,solids,Class 150,methanol condensate,inlet,160
 N19,DN15,Class 150,electrolyser feed water,outlet,600
+N20,DN15,Class 150,"groundwater make-up, reverse-osmosis treated",inlet,160

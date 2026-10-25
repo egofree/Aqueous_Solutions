@@ -3,8 +3,8 @@
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 176,
-  "edge_count": 562,
+  "node_count": 177,
+  "edge_count": 563,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -3513,6 +3513,25 @@
         "unit": "kW",
         "status": "study",
         "note": "0.333 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
+      }
+    },
+    {
+      "unit_id": "GW_INTAKE",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "intake",
+      "notes": "Groundwater intake skid: well pump, sand separator and reverse-osmosis rack for silica, fluoride and arsenic; the RO reject is a plant stream with a defined outlet. Make-up source of the water cycle, parallel to the atmospheric harvest (AHU condensate), which a dry site cannot provide (AQS-PLAN-011 section 6.2; USGS_DV_GW). Rate is the water-cycle make-up by difference; it solves to zero where the harvest suffices (baseline).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "equipment_id": "GW_INTAKE-01",
+        "size_mm": [
+          900,
+          700,
+          1800
+        ],
+        "size_note": "L x W x H mm study envelope for the well pump, sand separator and RO rack; unit task 02 sizing pending",
+        "design_note": "RO reject leaves as a defined plant stream; the well source and quality basis is USGS_DV_GW for the Death Valley variant and the local well record at any other dry site"
       }
     },
     {
@@ -15342,6 +15361,27 @@
         "T_C": 40.0,
         "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
       }
+    },
+    {
+      "stream_id": "IA-GW-MAKEUP",
+      "from_unit_id": "GW_INTAKE",
+      "to_unit_id": "ROOF_TANK",
+      "phase": "liquid",
+      "presence": "present",
+      "carries": "groundwater make-up, reverse-osmosis treated",
+      "notes": "Water-cycle make-up by difference: carries what the atmospheric harvest (IA-HVAC-COND) and the internal recycling cannot supply. Solves to zero at the baseline site.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "note": "closure TF: make-up by difference of the roof-tank balance (X-PAR-02 difference-type role)"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "WTR"
     },
     {
       "stream_id": "IA-POT-01",

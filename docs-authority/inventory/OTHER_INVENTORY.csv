@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,102,1622 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,752,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,102,1624 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,754,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 163 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -2499,6 +2499,8 @@ WTR,evaporator,VCD_TRAIN,valve,check valve,DN15,"CPVC true-union swing/ball chec
 WTR,evaporator,VCD_TRAIN,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S25: one at each end nozzle (assumed)
 WTR,evaporator,VCD_TRAIN,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,S28: one at each end nozzle (assumed)
 WTR,evaporator,VCD_TRAIN,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-VCD-BD: one at each end nozzle (assumed)
+WTR,intake,GW_INTAKE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+WTR,intake,GW_INTAKE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,treat,GREY_TREAT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-GREY-01 to LEACH_CSTR_1 (assumed size)
 WTR,treat,GREY_TREAT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S29 to VCD_TRAIN (assumed size)
 WTR,treat,GREY_TREAT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-GREY-01 to LEACH_CSTR_1

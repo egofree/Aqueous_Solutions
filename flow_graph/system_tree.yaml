@@ -609,6 +609,9 @@ nodes:
   - id: WTR.potable-upw-train.REMIN
     parent: WTR.potable-upw-train
     unit_id: REMIN
+  - id: WTR.potable-upw-train.GW_INTAKE
+    parent: WTR.potable-upw-train
+    unit_id: GW_INTAKE
   - id: WTR.potable-upw-train.VCD_TRAIN
     parent: WTR.potable-upw-train
     unit_id: VCD_TRAIN

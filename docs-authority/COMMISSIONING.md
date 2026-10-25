@@ -44,7 +44,7 @@ Table 4.1. Commissioning sequence
 |---|---|---|---|---|---|---|
 | 1 | ELEC | 8 | 29 | 5 | 2 | Ar, Fe, HCl, N2, O2, other_metals |
 | 2 | PUMPED_HYDRO | 1 | 2 | 0 | 0 |  |
-| 3 | WTR | 7 | 47 | 7 | 6 | Fe, HCl, other_metals, solids, solute |
+| 3 | WTR | 8 | 51 | 7 | 6 | Fe, HCl, other_metals, solids, solute |
 | 4 | HEAT | 11 | 21 | 5 | 0 |  |
 | 5 | GAS | 8 | 34 | 9 | 1 | Fe, HCl, N2, other_metals, solute |
 | 6 | CRYO | 14 | 37 | 10 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |

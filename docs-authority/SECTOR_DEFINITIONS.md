@@ -59,7 +59,7 @@ Table 3.1. Sectors
 | FARM | Life support / habitat | true | true | 2 | grow-bed-train |
 | HAB | Life support / habitat | true | true | 3 | life-support-train |
 | CRYO | Utility / header | true | true | 14 | cold-box-asu-recovery-train |
-| WTR | Utility / header | true | true | 8 | grey-black-train, potable-upw-train |
+| WTR | Utility / header | true | true | 9 | grey-black-train, potable-upw-train |
 | ELEC | Utility / header | true | true | 9 | distribution-train, generation-train, storage-train |
 | HEAT | Utility / header | false | true | 12 | ladder-train |
 | MEOH | Energy Storage System (Electrochemical) | true | true | 5 | synthesis-train |

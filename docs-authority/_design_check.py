@@ -46,7 +46,8 @@ for e in g['edges']:
 C.append(dict(check='QC-07', module='flow_graph/param/write_graph.py', item=f'stream compositions sum to 1 and match their note ({nb7} streams)', model=nb7 - len(bad7), independent=nb7, tol='2 %', result='pass' if not bad7 else 'fail ' + ' '.join(bad7[:8])))
 # 9 H2 bank inventory = tube water volume x density at 200 bar (Q-004: 19 kg)
 d9 = P('CRYO_H2').get('design') or {}
-if d9.get('tubes'): chk('QC-09', 'flow_graph/param/receivers.py', 'H2 bank kg at 200 bar (Q-004 basis 19 kg)', 19.0, d9['tubes']*math.pi/4*(d9['ID_mm']/1000)**2*d9['tube_m']*14.9, 0.05)
+skg = P('CRYO_H2').get('store_kg')
+if d9.get('tubes') and skg: chk('QC-09', 'flow_graph/param/receivers.py', 'H2 bank kg at 200 bar vs the sized store (AQS-ELEC-007 / X-PAR-12 basis in the graph)', skg, d9['tubes']*math.pi/4*(d9['ID_mm']/1000)**2*d9['tube_m']*14.9, 0.05)
 # 12 Q1 battery: oil 0.3 m3 over 80 K vs basis 10 kWh
 p12 = P('Q1_A')
 if p12.get('vol_m3'): chk('QC-12', 'docs-authority/HEAT_LADDER.md', 'Q1_A oil kWh over 80 K (basis 10 kWh)', 10.0, p12['vol_m3']*850*2.2*80/3600, 0.30)

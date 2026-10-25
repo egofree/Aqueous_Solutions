@@ -72,6 +72,7 @@
   "GREASE_LI",
   "GREY_TREAT",
   "GROW_BED",
+  "GW_INTAKE",
   "H2O_ELYZ",
   "H2_DRYER",
   "HABITATION",
@@ -178,6 +179,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 323,
- "units": 176
+ "tot_wetted_rows": 324,
+ "units": 177
 }

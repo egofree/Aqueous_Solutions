@@ -24,7 +24,7 @@ Order: process systems first, utilities last (reverse of AQS-COM-001), so power,
 | 13 | CRYO | 14 | 0.00 | Ar, CH3OH, CO2, H2, N2, O2, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2 | 10.78 |
 | 14 | GAS | 8 | 0.29 | Fe, HCl, N2, other_metals, solute | air purge | 1.65 |
 | 15 | HEAT | 11 | 0.00 |  | - | 0.92 |
-| 16 | WTR | 7 | 2222.68 | Fe, HCl, other_metals, solids, solute | air purge | 142.93 |
+| 16 | WTR | 8 | 2222.68 | Fe, HCl, other_metals, solids, solute | air purge | 142.93 |
 | 17 | PUMPED_HYDRO | 1 | 0.00 |  | - | 0.17 |
 | 18 | ELEC | 8 | 4.16 | Ar, Fe, HCl, N2, O2, other_metals | N2/air to 19.5-23.5 % O2; air purge | 529.89 |
 

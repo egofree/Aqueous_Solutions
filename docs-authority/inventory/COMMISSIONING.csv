@@ -12,6 +12,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 3,WTR,BMED_UPW_POLISH,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",8,SIF-086,308.52,
 3,WTR,CATCH_TANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",4,SIF-089,,
 3,WTR,GREY_TREAT,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",7,SIF-112,29.54,solute
+3,WTR,GW_INTAKE,function test,4,-,,
 3,WTR,REMIN,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-140,175.17,solute
 3,WTR,ROOF_TANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",11,SIF-141,232.62,solute
 3,WTR,VCD_TRAIN,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",7,SIF-144,333.11,Fe HCl other_metals solute

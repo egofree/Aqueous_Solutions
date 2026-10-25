@@ -70,6 +70,7 @@ GREASE_CA,AQS-PID-001-GREASE_CA,eeedb275,docs-authority/pid/GREASE_CA.svg,OIL,ke
 GREASE_LI,AQS-PID-001-GREASE_LI,8953d4e9,docs-authority/pid/GREASE_LI.svg,OIL,kettle,2,1,0,0,3,0,2
 GREY_TREAT,AQS-PID-001-GREY_TREAT,07a7f932,docs-authority/pid/GREY_TREAT.svg,WTR,treat,4,3,9,0,7,1,8
 GROW_BED,AQS-PID-001-GROW_BED,848a844a,docs-authority/pid/GROW_BED.svg,FARM,farm,9,7,15,0,9,1,19
+GW_INTAKE,AQS-PID-001-GW_INTAKE,2e1ae252,docs-authority/pid/GW_INTAKE.svg,WTR,intake,0,1,0,0,4,0,3
 H2O_ELYZ,AQS-PID-001-H2O_ELYZ,400f2c6f,docs-authority/pid/H2O_ELYZ.svg,CRYO,pem_electrolyser,2,3,0,0,4,1,5
 H2_DRYER,AQS-PID-001-H2_DRYER,cffa4889,docs-authority/pid/H2_DRYER.svg,GAS,dryer,2,5,8,0,5,2,9
 HABITATION,AQS-PID-001-HABITATION,b57a8b6d,docs-authority/pid/HABITATION.svg,HAB,hab,12,12,18,0,4,1,22
@@ -141,7 +142,7 @@ REMIN,AQS-PID-001-REMIN,96f05919,docs-authority/pid/REMIN.svg,WTR,dose,2,2,6,0,6
 RES_HEAT,AQS-PID-001-RES_HEAT,51ec9c4d,docs-authority/pid/RES_HEAT.svg,FOUNDRY,furnace,1,0,0,0,2,0,0
 RF_HEAT,AQS-PID-001-RF_HEAT,709d5299,docs-authority/pid/RF_HEAT.svg,FOUNDRY,furnace,1,0,0,0,1,0,0
 ROLL,AQS-PID-001-ROLL,eb6b167d,docs-authority/pid/ROLL.svg,FOUNDRY,mill,2,1,0,0,2,0,5
-ROOF_TANK,AQS-PID-001-ROOF_TANK,5834b094,docs-authority/pid/ROOF_TANK.svg,WTR,tank,7,8,21,0,11,1,19
+ROOF_TANK,AQS-PID-001-ROOF_TANK,9bf67831,docs-authority/pid/ROOF_TANK.svg,WTR,tank,8,8,21,0,11,1,20
 SALT_FEED,AQS-PID-001-SALT_FEED,93a4a3e5,docs-authority/pid/SALT_FEED.svg,DIGESTER,feed,0,1,0,0,2,0,3
 SHELL_BREAK,AQS-PID-001-SHELL_BREAK,da942aaa,docs-authority/pid/SHELL_BREAK.svg,FOUNDRY,separator,2,4,0,0,4,1,7
 SHELL_BUILD,AQS-PID-001-SHELL_BUILD,dd016785,docs-authority/pid/SHELL_BUILD.svg,FOUNDRY,coater,4,1,0,0,3,1,6

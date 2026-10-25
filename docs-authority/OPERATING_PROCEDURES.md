@@ -31,9 +31,9 @@ Units: HYDRO_SET.
 
 ## 3. WTR
 
-Units: BLACK_DIGEST, BMED_UPW_POLISH, CATCH_TANK, GREY_TREAT, REMIN, ROOF_TANK, VCD_TRAIN.
+Units: BLACK_DIGEST, BMED_UPW_POLISH, CATCH_TANK, GREY_TREAT, GW_INTAKE, REMIN, ROOF_TANK, VCD_TRAIN.
 
-- **Normal:** 47 loops on PLC-WTR in auto; operator rounds per shift on levels and temperatures of BLACK_DIGEST, BMED_UPW_POLISH, GREY_TREAT, REMIN, ROOF_TANK, VCD_TRAIN; alarm response per AQS-CTL-001.
+- **Normal:** 51 loops on PLC-WTR in auto; operator rounds per shift on levels and temperatures of BLACK_DIGEST, BMED_UPW_POLISH, GREY_TREAT, REMIN, ROOF_TANK, VCD_TRAIN; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-2 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 4-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
 - **Emergency:** 7 trips: SIF-083 level high-high → close feed valve / stop feed pump; SIF-086 level high-high → close feed valve / stop feed pump; SIF-089 level high-high → close feed valve / stop feed pump; SIF-112 level high-high → close feed valve / stop feed pump; SIF-140 level high-high → close feed valve / stop feed pump; SIF-141 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.

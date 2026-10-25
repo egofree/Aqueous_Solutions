@@ -360,6 +360,7 @@ Table 3.1. Document numbers in use
 | AQS-SIZE-GREASE_LI | `docs-authority/sizing/GREASE_LI.md` | A | 2026-10-20 | Sizing calculation - GREASE_LI | current |
 | AQS-SIZE-GREY_TREAT | `docs-authority/sizing/GREY_TREAT.md` | A | 2026-10-20 | Sizing calculation - GREY_TREAT | current |
 | AQS-SIZE-GROW_BED | `docs-authority/sizing/GROW_BED.md` | A | 2026-10-20 | Sizing calculation - GROW_BED | current |
+| AQS-SIZE-GW_INTAKE | `docs-authority/sizing/GW_INTAKE.md` | A | 2026-10-20 | Sizing calculation - GW_INTAKE | current |
 | AQS-SIZE-H2O_ELYZ | `docs-authority/sizing/H2O_ELYZ.md` | A | 2026-10-20 | Sizing calculation - H2O_ELYZ | current |
 | AQS-SIZE-H2_DRYER | `docs-authority/sizing/H2_DRYER.md` | A | 2026-10-20 | Sizing calculation - H2_DRYER | current |
 | AQS-SIZE-HABITATION | `docs-authority/sizing/HABITATION.md` | A | 2026-10-20 | Sizing calculation - HABITATION | current |

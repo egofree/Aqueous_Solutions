@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="860" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit ROOF_TANK · tank · sector WTR · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 7 in + 8 out · valves 21 placed / 0 unplaced · instruments 11 (1 SIF) · nozzles 19</text>
+<text x="24" y="72" font-size="10.5">Edges 8 in + 8 out · valves 21 placed / 0 unplaced · instruments 11 (1 SIF) · nozzles 20</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -50,34 +50,40 @@
 <text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N14</text>
 <line x1="430" y1="332" x2="577" y2="332" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,332 577,328 577,336" fill="#111"/>
-<text x="24" y="313" font-size="9" fill="#666" text-anchor="start">CRYO_AHU</text>
-<text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">IA-HVAC-COND</text>
-<text x="24" y="345" font-size="10" text-anchor="start">67.4 kg/d · DN15 P1</text>
-<text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N3</text>
-<line x1="430" y1="378" x2="577" y2="378" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<text x="24" y="313" font-size="9" fill="#666" text-anchor="start">GW_INTAKE</text>
+<text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">IA-GW-MAKEUP</text>
+<text x="24" y="345" font-size="10" text-anchor="start">0.0 kg/d · DN15 P1</text>
+<text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N20</text>
+<line x1="430" y1="378" x2="577" y2="378" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,378 577,374 577,382" fill="#111"/>
-<text x="24" y="359" font-size="9" fill="#666" text-anchor="start">MEOH_COND</text>
-<text x="24" y="373" font-size="11" font-weight="600" text-anchor="start">IA-MEOH-COND</text>
-<text x="24" y="391" font-size="10" text-anchor="start">26.7 kg/d · solids transfer</text>
-<text x="598" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="start">N18</text>
+<text x="24" y="359" font-size="9" fill="#666" text-anchor="start">CRYO_AHU</text>
+<text x="24" y="373" font-size="11" font-weight="600" text-anchor="start">IA-HVAC-COND</text>
+<text x="24" y="391" font-size="10" text-anchor="start">67.4 kg/d · DN15 P1</text>
+<text x="598" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="start">N3</text>
 <line x1="430" y1="424" x2="577" y2="424" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,424 577,420 577,428" fill="#111"/>
-<text x="24" y="405" font-size="9" fill="#666" text-anchor="start">NOX_SCRUB</text>
-<text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">IA-NOX-H2O</text>
-<text x="24" y="437" font-size="10" text-anchor="start">221.6 kg/d · DN50 P2</text>
-<text x="598" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="start">N16</text>
-<line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<text x="24" y="405" font-size="9" fill="#666" text-anchor="start">MEOH_COND</text>
+<text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">IA-MEOH-COND</text>
+<text x="24" y="437" font-size="10" text-anchor="start">26.7 kg/d · solids transfer</text>
+<text x="598" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="start">N18</text>
+<line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,470 577,466 577,474" fill="#111"/>
-<text x="24" y="451" font-size="9" fill="#666" text-anchor="start">REMIN</text>
-<text x="24" y="465" font-size="11" font-weight="600" text-anchor="start">IA-POT-01</text>
-<text x="24" y="483" font-size="10" text-anchor="start">165.2 kg/d · DN15 P1</text>
-<text x="598" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="start">N15</text>
+<text x="24" y="451" font-size="9" fill="#666" text-anchor="start">NOX_SCRUB</text>
+<text x="24" y="465" font-size="11" font-weight="600" text-anchor="start">IA-NOX-H2O</text>
+<text x="24" y="483" font-size="10" text-anchor="start">221.6 kg/d · DN50 P2</text>
+<text x="598" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="start">N16</text>
 <line x1="430" y1="516" x2="577" y2="516" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,516 577,512 577,520" fill="#111"/>
-<text x="24" y="497" font-size="9" fill="#666" text-anchor="start">CATCH_TANK</text>
-<text x="24" y="511" font-size="11" font-weight="600" text-anchor="start">S23</text>
-<text x="24" y="529" font-size="10" text-anchor="start">0.0 kg/d · DN15 P1</text>
-<text x="598" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
+<text x="24" y="497" font-size="9" fill="#666" text-anchor="start">REMIN</text>
+<text x="24" y="511" font-size="11" font-weight="600" text-anchor="start">IA-POT-01</text>
+<text x="24" y="529" font-size="10" text-anchor="start">165.2 kg/d · DN15 P1</text>
+<text x="598" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="start">N15</text>
+<line x1="430" y1="562" x2="577" y2="562" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<polygon points="586,562 577,558 577,566" fill="#111"/>
+<text x="24" y="543" font-size="9" fill="#666" text-anchor="start">CATCH_TANK</text>
+<text x="24" y="557" font-size="11" font-weight="600" text-anchor="start">S23</text>
+<text x="24" y="575" font-size="10" text-anchor="start">0.0 kg/d · DN15 P1</text>
+<text x="598" y="566" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">GROW_BED</text>
@@ -183,14 +189,14 @@
 <circle cx="995.12" cy="562" r="12" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="995.12" y="565" font-size="7" text-anchor="middle">FT-03</text>
 <text x="24" y="658" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="668" font-size="9">Every incident graph edge is drawn: 7 in, 8 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="668" font-size="9">Every incident graph edge is drawn: 8 in, 8 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="683" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/ROOF_TANK.csv.</text>
 <text x="24" y="698" font-size="9">Nozzles with no matching graph edge (service text): N4 treated water makeup; N8 clean overflow; N9 drain; N10 vent</text>
 <text x="24" y="713" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
 <g id="aqs-title-block"><rect x="1116" y="750" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="767" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-ROOF_TANK</text>
 <text x="1124" y="784" font-size="9">P&amp;ID ROOF_TANK (tank, WTR sector)</text>
-<text x="1124" y="801" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 5834b094   Issued 2026-10-19</text>
+<text x="1124" y="801" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 9bf67831   Issued 2026-10-19</text>
 <text x="1124" y="818" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="835" font-size="9">Graph SHA-256 ed22ff1bb3835551   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="835" font-size="9">Graph SHA-256 54183eb7f6220988   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

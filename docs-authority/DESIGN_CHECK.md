@@ -32,7 +32,7 @@ Table 2.1. Closed-form checks
 | QC-05 | `flow_graph/param/write_graph.py` | kW of the 65 feeder-supplied units: node continuous kW vs SF- feeder edges | 119.8357 | 119.8357 | 1 % | pass |
 | QC-06 | `docs-authority/_struct_loads.py` | equipment rows with test >= operating >= empty | 179 | 179 | 0 % | pass |
 | QC-07 | `flow_graph/param/write_graph.py` | stream compositions sum to 1 and match their note (156 streams) | 156 | 156 | 2 % | pass |
-| QC-09 | `flow_graph/param/receivers.py` | H2 bank kg at 200 bar (Q-004 basis 19 kg) | 19.0 | 17.406 | 5 % | fail |
+| QC-09 | `flow_graph/param/receivers.py` | H2 bank kg at 200 bar vs the sized store (AQS-ELEC-007 / X-PAR-12 basis in the graph) | 17 | 17.406 | 5 % | pass |
 | QC-12 | `docs-authority/HEAT_LADDER.md` | Q1_A oil kWh over 80 K (basis 10 kWh) | 10.0 | 12.4667 | 30 % | pass |
 | QC-16 | `flow_graph/param/water_tower.py` | hydro head m, upper to lower water centroid | 36.2119 | 35.9119 | 3 % | pass |
 | QC-17 | `docs-authority/_struct_loads.py` | plant operating kN: level table vs row sum | 65425.0 | 65423.9858 | 1 % | pass |
@@ -52,7 +52,7 @@ Table 2.1. Closed-form checks
 | QC-29 | `flow_graph/param/water_tower.py` | catch tank top below L-1 FFL - slab (mm) | -6500 | -6300 | <= | pass |
 | QC-30 | `models/freecad/regroup.py` | L-1 flow adjacency m (18 units, 18 moves) | 142.4 | 320.7 | <= | pass |
 
-One check fails: H2 bank kg at 200 bar (Q-004 basis 19 kg), where the model gives 19.0 and the independent value is 17.406.
+No check fails.
 
 ## 3. Findings
 

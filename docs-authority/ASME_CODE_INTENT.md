@@ -25,7 +25,7 @@ Table 2.1. Unit count per class
 | Atmospheric | 3 |
 | B31.3 piping component | 4 |
 | Section VIII-1 (ID not yet sized) | 1 |
-| not a vessel (no design pressure on the graph) | 170 |
+| not a vessel (no design pressure on the graph) | 171 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 0 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
@@ -120,6 +120,7 @@ Table 4.1. Code intent per unit
 | GREASE_LI | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GREY_TREAT | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GROW_BED | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| GW_INTAKE | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | H2O_ELYZ | CRYO | 990.0 |  |  | Section VIII-1 (ID not yet sized) | 990 kPa g > 103; size from its unit design | U stamp pending size | UG-99(b) pending size |
 | H2_DRYER | GAS |  | 250.0 | 52 | not a vessel (no design pressure on the graph) | - | - | - |
 | HABITATION | HAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

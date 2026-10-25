@@ -21,16 +21,16 @@ At end of life each part goes back into the plant as feed of its class, through 
 | organic | 498 | 40 % |
 | metal_reactive | 80 | 6 % |
 | silicate_oxide | 52 | 4 % |
-| unassigned | 45 | 4 % |
+| unassigned | 47 | 4 % |
 
-Unassigned: 45 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 47 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
 | fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 85 |
-| held - material not identified on the line | 41 |
+| held - material not identified on the line | 43 |
 | Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 25 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
 | held - material pending: no duty sheet yet; assigned at unit task 09 under AQS-STD-002 | 2 |
@@ -168,6 +168,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | GREASE_LI | 2 | 0 | 0 | 0 | 0 |
 | GREY_TREAT | 0 | 3 | 0 | 0 | 0 |
 | GROW_BED | 0 | 2 | 0 | 0 | 0 |
+| GW_INTAKE | 0 | 0 | 0 | 0 | 2 |
 | H2O_ELYZ | 1 | 2 | 0 | 0 | 0 |
 | H2_DRYER | 0 | 2 | 0 | 0 | 0 |
 | H2_PURIFIER | 3 | 0 | 0 | 0 | 0 |

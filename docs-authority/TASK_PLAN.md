@@ -26,7 +26,7 @@ This list supersedes `internal/MASTER_PLAN.md` (AQS-PLAN-004) as the list of wor
 
 AQS-PLAN-001 to AQS-PLAN-003, AQS-MFG-001, AQS-REM-001, AQS-REM-BLD-001, AQS-MVS-PLAN-001 and AQS-MVS-CHK-001 are earlier plans kept as history.
 
-The tasks are of two kinds. Cross-cutting tasks (section 7) apply to the plant as a whole and carry identifiers of the form X-GOV-04. Unit tasks (section 8) apply to one unit of the plant. The units are the 175 present nodes of `flow_graph/plant_flow_graph.json`, grouped by system. An accounting node, which records a plant boundary and has no equipment, carries task 01 only.
+The tasks are of two kinds. Cross-cutting tasks (section 7) apply to the plant as a whole and carry identifiers of the form X-GOV-04. Unit tasks (section 8) apply to one unit of the plant. The units are the 176 present nodes of `flow_graph/plant_flow_graph.json`, grouped by system. An accounting node, which records a plant boundary and has no equipment, carries task 01 only.
 
 ## 2. Counts
 
@@ -69,7 +69,7 @@ Table 2.1. Tasks by group
 | MFG | Process (Mass transform) | 150 | 99 |
 | POLYMERS | Process (Mass transform) | 150 | 109 |
 | ELEC | Utility / header | 135 | 88 |
-| WTR | Utility / header | 120 | 77 |
+| WTR | Utility / header | 135 | 87 |
 | GLASS | Process (Mass transform) | 75 | 50 |
 | MEOH | Energy Storage System (Electrochemical) | 75 | 50 |
 | GEO | Utility / header | 45 | 30 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2919** | **2051** |
+| | **Total** | **2934** | **2061** |
 
 ## 3. Triage of open tasks
 
@@ -104,9 +104,9 @@ Table 3.1. Open tasks by triage tag
 | --- | --- |
 | desk P2 | 7 |
 | desk P3 | 33 |
-| desk P4 | 472 |
-| desk P5 | 173 |
-| hardware | 181 |
+| desk P4 | 475 |
+| desk P5 | 174 |
+| hardware | 182 |
 | owner | 2 |
 
 ## 4. Unit task template
@@ -315,7 +315,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-01** Building-block family OF-01: bearing, deep-groove ball bearing. Done when: open design and production plan for 388 items (ISO 15, normal class) in 69 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-02** Building-block family OF-02: bearing, deep-groove ball bearing. Done when: open design and production plan for 358 items (ISO 15 / ISO 492 normal class, C3) in 49 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-03** Building-block family OF-03: electronics, PLC digital I/O point. Done when: open design and production plan for 870 items (IEC 61131-2) in 96 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-04** Building-block family OF-04: electronics, PLC analog input point. Done when: open design and production plan for 752 items (IEC 61131-2) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-04** Building-block family OF-04: electronics, PLC analog input point. Done when: open design and production plan for 754 items (IEC 61131-2) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-05** Building-block family OF-05: electronics, BLDC driver. Done when: open design and production plan for 191 items (IEC 61800-5-1) in 68 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-06** Building-block family OF-06: electronics, motor starter (contactor + overload). Done when: open design and production plan for 161 items (IEC 60947-4-1) in 39 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-07** Building-block family OF-07: electronics, PLC I/O module, 16 channel. Done when: open design and production plan for 102 items (IEC 61131-2) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -346,8 +346,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-32** Building-block family OF-32: fastener, Lid gasket 40 mm wide. Done when: open design and production plan for 1 items (FKM) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-33** Building-block family OF-33: fastener, Solvent cement. Done when: open design and production plan for 1 items (PVC-U per ASTM D2564) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-34** Building-block family OF-34: instrument, flow transmitter. Done when: open design and production plan for 139 items (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456) in 54 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-35** Building-block family OF-35: instrument, pressure transmitter. Done when: open design and production plan for 157 items (ceramic diaphragm, IEC 61298) in 157 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-36** Building-block family OF-36: instrument, temperature element. Done when: open design and production plan for 160 items (IEC 60751, 316L thermowell) in 160 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-35** Building-block family OF-35: instrument, pressure transmitter. Done when: open design and production plan for 158 items (ceramic diaphragm, IEC 61298) in 158 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-36** Building-block family OF-36: instrument, temperature element. Done when: open design and production plan for 161 items (IEC 60751, 316L thermowell) in 161 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-37** Building-block family OF-37: instrument, high-level switch. Done when: open design and production plan for 80 items (IEC 60947-5, 316L) in 80 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-38** Building-block family OF-38: instrument, level transmitter. Done when: open design and production plan for 80 items (IEC 62828, PTFE lens) in 80 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-39** Building-block family OF-39: instrument, gas detector, H2. Done when: open design and production plan for 30 items (alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling) in 14 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -2987,6 +2987,22 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-GREY_TREAT-13 Fabrication route. Done when: docs-authority/fab/GREY_TREAT.md. Depends: WTR-GREY_TREAT-10, WTR-GREY_TREAT-12. Evidence: `docs-authority/fab/GREY_TREAT.md` (study route).
   - [ ] WTR-GREY_TREAT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GREY_TREAT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] WTR-GREY_TREAT-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-GREY_TREAT-14, X-COM-01. Triage: hardware.
+- **WTR-GW_INTAKE** (intake, sector WTR)
+  - [x] WTR-GW_INTAKE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GW_INTAKE.md` §1; mass in = out 0 kg/d, 0.0000 kW.
+  - [x] WTR-GW_INTAKE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-GW_INTAKE-01. Evidence: `docs-authority/sizing/GW_INTAKE.md` (AQS-SIZE-GW_INTAKE).
+  - [x] WTR-GW_INTAKE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-GW_INTAKE-01, WTR-GW_INTAKE-02. Evidence: `docs-authority/pid/GW_INTAKE.svg` (AQS-PID-001).
+  - [x] WTR-GW_INTAKE-04 Nozzle schedule. Done when: docs-authority/nozzles/GW_INTAKE.csv, one row per edge. Depends: WTR-GW_INTAKE-03. Evidence: `docs-authority/nozzles/GW_INTAKE.csv` (all 1 process connections listed).
+  - [x] WTR-GW_INTAKE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-GW_INTAKE-04, WTR-GW_INTAKE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 1 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] WTR-GW_INTAKE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-GW_INTAKE-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] WTR-GW_INTAKE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-GW_INTAKE-02, WTR-GW_INTAKE-03. Evidence: `docs-authority/duties/GW_INTAKE.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] WTR-GW_INTAKE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-GW_INTAKE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
+  - [x] WTR-GW_INTAKE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-GW_INTAKE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] WTR-GW_INTAKE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GW_INTAKE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: WTR-GW_INTAKE-02, WTR-GW_INTAKE-04, WTR-GW_INTAKE-06, WTR-GW_INTAKE-09. Status: partial: envelope `cad/stl/GW_INTAKE.stl`. Triage: desk P4.
+  - [ ] WTR-GW_INTAKE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: WTR-GW_INTAKE-10, X-DWG-01. Triage: desk P4.
+  - [ ] WTR-GW_INTAKE-12 BOM. Done when: models/mfg/GW_INTAKE/bom.csv. Depends: WTR-GW_INTAKE-10. Triage: desk P4.
+  - [x] WTR-GW_INTAKE-13 Fabrication route. Done when: docs-authority/fab/GW_INTAKE.md. Depends: WTR-GW_INTAKE-10, WTR-GW_INTAKE-12. Evidence: `docs-authority/fab/GW_INTAKE.md` (study route).
+  - [ ] WTR-GW_INTAKE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-GW_INTAKE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] WTR-GW_INTAKE-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-GW_INTAKE-14, X-COM-01. Triage: hardware.
 - **WTR-HDR_UPW** (header, sector WTR)
   - [x] WTR-HDR_UPW-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_UPW.md` §1; mass in = out 67.3 kg/d, 0.0000 kW.
   - [x] WTR-HDR_UPW-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-HDR_UPW-01. Evidence: `docs-authority/sizing/HEADERS.md` (AQS-DUTY-075).
@@ -3023,8 +3039,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; mass in = out 480.9 kg/d, 0.0000 kW.
   - [x] WTR-ROOF_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-ROOF_TANK-01. Evidence: `docs-authority/WATER_TOWER.md` (AQS-BLD-014).
   - [x] WTR-ROOF_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-ROOF_TANK-01, WTR-ROOF_TANK-02. Evidence: `docs-authority/pid/ROOF_TANK.svg` (AQS-PID-001).
-  - [x] WTR-ROOF_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/ROOF_TANK.csv, one row per edge. Depends: WTR-ROOF_TANK-03. Evidence: `docs-authority/nozzles/ROOF_TANK.csv` (all 13 process connections listed).
-  - [x] WTR-ROOF_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-ROOF_TANK-04, WTR-ROOF_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 15 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] WTR-ROOF_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/ROOF_TANK.csv, one row per edge. Depends: WTR-ROOF_TANK-03. Evidence: `docs-authority/nozzles/ROOF_TANK.csv` (all 14 process connections listed).
+  - [x] WTR-ROOF_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-ROOF_TANK-04, WTR-ROOF_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 16 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] WTR-ROOF_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-ROOF_TANK-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] WTR-ROOF_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-ROOF_TANK-02, WTR-ROOF_TANK-03. Evidence: `docs-authority/duties/ROOF_TANK.md` §6 (C7 closed on MASTER_PLAN).
   - [x] WTR-ROOF_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-ROOF_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (11 loops; AQS-CTL-001).

@@ -252,6 +252,7 @@ digraph G {
     "HDR_UPW" [fillcolor="#ffffff", label="HDR_UPW"];
     "ROOF_TANK" [fillcolor="#ffffff", label="ROOF_TANK"];
     "VCD_TRAIN" [fillcolor="#ffffff", label="VCD_TRAIN"];
+    "GW_INTAKE" [fillcolor="#ffffff", label="GW_INTAKE"];
     "REMIN" [fillcolor="#ffffff", label="REMIN"];
   }
   "PROD_C29" -> "C29_RECYCLE" [label="C29_RECYCLE\\n5.873266 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -557,6 +558,7 @@ digraph G {
   "GREY_TREAT" -> "ROOF_TANK" [label="IA-GREY-RET\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NUTRIENT_DOSE" -> "LEACH_CSTR_1" [label="IA-NUT-LEACH\\n82.317318 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HOPPER" -> "LEACH_CSTR_1" [label="IA-FEED-01\\n102.680001 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GW_INTAKE" -> "ROOF_TANK" [label="IA-GW-MAKEUP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "REMIN" -> "ROOF_TANK" [label="IA-POT-01\\n165.174239 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_UPW" -> "HABITATION" [label="IA-UPW-HAB\\n0.800001 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BAGHOUSE" -> "LEACH_CSTR_1" [label="IA-BAG-01\\n7.77 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];

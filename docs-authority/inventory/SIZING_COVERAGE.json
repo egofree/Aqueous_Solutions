@@ -354,6 +354,11 @@
   "docnum": "AQS-SIZE-GROW_BED",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
+ "GW_INTAKE": {
+  "doc": "docs-authority/sizing/GW_INTAKE.md",
+  "docnum": "AQS-SIZE-GW_INTAKE",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "H2O_ELYZ": {
   "doc": "docs-authority/sizing/H2O_ELYZ.md",
   "docnum": "AQS-SIZE-H2O_ELYZ",

@@ -154,6 +154,10 @@ A('MAU_HX', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermow
 A('DRY_COOLER', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', '0 to 100 C', 'recooling: IA-ADS-REJ 7.25 kW + HL-Q4-REJ Q4 surplus')
 A('Q4_BUS', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', '0 to 100 C', 'Q4 hot-water bus supply (IA-Q4-ADS/IA-Q4-MAU 65 C design)')
 A('Q4_BUS', 'PT', 'pressure transmitter', 'ceramic diaphragm, IEC 61298', '0-10 bar g', 'hot-water bus; no design pressure on the graph')
+# WTR: groundwater intake skid (make-up source; X-LOC-07, AQS-PLAN-011 section 6.2)
+A('GW_INTAKE', 'FT', 'flow transmitter', 'electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456', f"0-{nice(2*_lph('IA-GW-MAKEUP')):g} L/h", f"make-up to ROOF_TANK: IA-GW-MAKEUP {(E['IA-GW-MAKEUP']['rate']['value'] or 0):.2f} kg/d ({_lph('IA-GW-MAKEUP'):.2f} L/h)")
+A('GW_INTAKE', 'PT', 'pressure transmitter', 'ceramic diaphragm, IEC 61298', '0-10 bar g', 'RO membrane feed; no design pressure on the graph')
+A('GW_INTAKE', 'CT', 'conductivity transmitter', 'inductive conductivity, IEC 60746-1', '0-2000 uS/cm', 'RO product quality watch; well water moderately mineralised with high silica, fluoride and arsenic (USGS_DV_GW)')
 # DIGESTER: acid vent scrubber (pH/ORP + level + recirc flow), recovery separators
 A('EVAP_ACID_VS', 'AE', 'pH analyzer', 'glass electrode pH, IEC 60746-2', '0-14 pH', 'scrub liquor: NaOH 2 M bleed IA-VS-NAOH 0.5 g/d')
 A('EVAP_ACID_VS', 'AE', 'ORP analyzer', 'ORP electrode, IEC 60746-2', '-1000 to +1000 mV', 'acid-gas breakthrough watch: IA-VS-OFF 0.029 kg/d scrubbed vent')

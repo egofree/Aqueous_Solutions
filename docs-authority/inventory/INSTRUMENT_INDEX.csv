@@ -624,6 +624,8 @@ VCD_TRAIN-LSH-01,VCD_TRAIN,WTR,high-level switch,"IEC 60947-5, 316L",trip at 90 
 VCD_TRAIN-LT-01,VCD_TRAIN,WTR,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),VCD_TRAINLT-01,PLC-WTR,A-M-182 liquid height
 VCD_TRAIN-PT-01,VCD_TRAIN,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),VCD_TRAINPT-01,PLC-WTR,no design pressure on the graph
 VCD_TRAIN-TE-01,VCD_TRAIN,WTR,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),VCD_TRAINTE-01,PLC-WTR,band by service
+GW_INTAKE-PT-01,GW_INTAKE,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GW_INTAKEPT-01,PLC-WTR,no design pressure on the graph
+GW_INTAKE-TE-01,GW_INTAKE,WTR,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GW_INTAKETE-01,PLC-WTR,band by service
 GREY_TREAT-FT-01,GREY_TREAT,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),GREY_TREATFT-01,PLC-WTR,S29 normal 4.35 L/h
 GREY_TREAT-FT-02,GREY_TREAT,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-25 L/h,4-20 mA HART (AI),GREY_TREATFT-02,PLC-WTR,IA-GREY-01 normal 10.19 L/h
 GREY_TREAT-FT-03,GREY_TREAT,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),GREY_TREATFT-03,PLC-WTR,IA-GREY-RET normal 0.00 L/h
@@ -661,6 +663,8 @@ ADS_CHILL-TE-02,ADS_CHILL,HEAT,temperature element,"Pt100 class A, IEC 60751, 31
 MAU_HX-TE-01,MAU_HX,HEAT,temperature element,"Pt100 class A, IEC 60751, 316L thermowell",0 to 100 C,4-20 mA HART (AI),MAU_HXTE-01,PLC-HEAT,Q4 coil: IA-Q4-MAU 12 kW Q4 water 65/45 C (winter design)
 Q4_BUS-TE-01,Q4_BUS,HEAT,temperature element,"Pt100 class A, IEC 60751, 316L thermowell",0 to 100 C,4-20 mA HART (AI),Q4_BUSTE-01,PLC-HEAT,Q4 hot-water bus supply (IA-Q4-ADS/IA-Q4-MAU 65 C design)
 Q4_BUS-PT-01,Q4_BUS,HEAT,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),Q4_BUSPT-01,PLC-HEAT,hot-water bus; no design pressure on the graph
+GW_INTAKE-FT-01,GW_INTAKE,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),GW_INTAKEFT-01,PLC-WTR,make-up to ROOF_TANK: IA-GW-MAKEUP 0.00 kg/d (0.00 L/h)
+GW_INTAKE-CT-01,GW_INTAKE,WTR,conductivity transmitter,"inductive conductivity, IEC 60746-1",0-2000 uS/cm,4-20 mA HART (AI),GW_INTAKECT-01,PLC-WTR,"RO product quality watch; well water moderately mineralised with high silica, fluoride and arsenic (USGS_DV_GW)"
 EVAP_ACID_VS-AE-01,EVAP_ACID_VS,DIGESTER,pH analyzer,"glass electrode pH, IEC 60746-2",0-14 pH,4-20 mA HART (AI),EVAP_ACID_VSAE-01,PLC-DIGESTER,scrub liquor: NaOH 2 M bleed IA-VS-NAOH 0.5 g/d
 EVAP_ACID_VS-AE-02,EVAP_ACID_VS,DIGESTER,ORP analyzer,"ORP electrode, IEC 60746-2",-1000 to +1000 mV,4-20 mA HART (AI),EVAP_ACID_VSAE-02,PLC-DIGESTER,acid-gas breakthrough watch: IA-VS-OFF 0.029 kg/d scrubbed vent
 P_CA-LT-01,P_CA,DIGESTER,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),P_CALT-01,PLC-DIGESTER,standby Ca precipitator: PCA_TO_GREASE (rate pending assay)

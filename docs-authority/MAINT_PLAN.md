@@ -90,6 +90,7 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | GLASS_MILL | intra | external visual (1 y, A-M-189) |
 | GLASS_BURNOUT | intra | external visual (1 y, A-M-189) |
 | VCD_TRAIN | evaporator | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| GW_INTAKE | intake | external visual (1 y, A-M-189) |
 | REMIN | dose | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | LITHO_COAT | coater | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | LITHO_ALIGN | aligner | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
@@ -159,4 +160,4 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | METAL_STORE | store | external visual (1 y, A-M-189) |
 | AIR_RECEIVER | store | external visual (1 y, A-M-189) |
 
-149 units, 344 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+150 units, 345 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
