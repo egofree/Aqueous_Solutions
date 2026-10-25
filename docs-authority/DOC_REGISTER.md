@@ -56,7 +56,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-CLOSE-001 | `notes/CLOSURE_PASS.md` | A | 2026-10-17 | Closure pass — item 10 | current |
 | AQS-CMP-001 | `docs-authority/CAMPUS_PLAN.md` | B | 2026-09-27 | Campus plan — recycle core + farm + fab + habitation + cryo | current |
 | AQS-COD-002 | `docs-authority/PERMITS.md` | A | 2026-10-15 | Permit list | current |
-| AQS-COM-001 | `docs-authority/COMMISSIONING.md` | A | 2026-10-16 | Commissioning plan | current |
+| AQS-COM-001 | `docs-authority/COMMISSIONING.md` | B | 2026-10-24 | Commissioning plan | current |
 | AQS-COM-002 | `docs-authority/STARTUP.md` | A | 2026-10-16 | Startup sequence (cold start from empty) | current |
 | AQS-COM-003 | `docs-authority/PERF_TEST.md` | A | 2026-10-16 | Performance test | current |
 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | E | 2026-10-24 | Compliance matrix: design intent against code themes | current |
@@ -442,14 +442,14 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-STUDY-CLOSE-001 | `docs-authority/MVS_STUDY_CLOSE.md` | — | 2026-10-02 | Study close — the 15 skipped nodes | current |
 | AQS-SUR-001 | `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | C | 2026-10-24 | Surplus pass thresholds — study freeze criteria (MVS) | current |
 | AQS-THM-002 | `docs-authority/HVAC.md` | A | 2026-10-16 | Ventilation and HVAC design | current |
-| AQS-THM-003 | `docs-authority/INSULATION_SCHEDULE.md` | A | 2026-10-15 | Insulation schedule | current |
+| AQS-THM-003 | `docs-authority/INSULATION_SCHEDULE.md` | B | 2026-10-24 | Insulation schedule | current |
 | AQS-TOOL-001 | `docs-authority/LATHE.md` | C | 2026-10-11 | Lathe module | current |
 | AQS-TOOL-002 | `docs-authority/MILL.md` | A | 2026-10-11 | Mill module | current |
 | AQS-TOOL-003 | `docs-authority/WELDER.md` | A | 2026-10-11 | Welder module | current |
 | AQS-TRR-001 | `docs-authority/TERRACE_LANDSCAPE.md` | B | 2026-09-27 | Terrace landscape — planting, irrigation, open vs greenhouse | current |
 | AQS-TRR-GH-001 | `docs-authority/GREENHOUSE_ENVELOPE.md` | B | 2026-10-01 | Enclosed greenhouse envelope — schedule stub (optional FreeCAD) | current |
 | AQS-TST-001 | `docs-authority/TEST_PLAN.md` | A | 2026-10-15 | Testing and prototyping rollout plan | current |
-| AQS-TST-002 | `docs-authority/ZNBR2_STACK_TEST.md` | A | 2026-10-16 | ZNBR2 stack test | current |
+| AQS-TST-002 | `docs-authority/ZNBR2_STACK_TEST.md` | B | 2026-10-24 | Zinc-bromide battery stack test | current |
 | AQS-TST-003 | `docs-authority/TEST_RIGS.md` | A | 2026-10-16 | In-house test rigs: build packages | current |
 | AQS-TST-004 | `docs-authority/BENCH_TEST_UPW_POLISH.md` | B | 2026-10-24 | UPW polish module bench test (RO permeance, rejection, EDI resistivity) | current |
 | AQS-TST-005 | `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | B | 2026-10-24 | Hydrogen compressor first-article bench run | current |

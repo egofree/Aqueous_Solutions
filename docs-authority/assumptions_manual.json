@@ -240,10 +240,10 @@
   "verification_test": "ASCE Hazard Tool at the parcel"
  },
  {
-  "value": "2000",
-  "units": "psf allowable bearing",
+  "value": "72",
+  "units": "kPa allowable bearing (1500 psf); read from the site driver soil_allow_kPa",
   "where": "AQS-SITE-002",
-  "basis": "IBC Table 1806.2 presumptive clay value",
+  "basis": "Site input soil_allow_kPa in flow_graph/param/drivers.json, which the footing sizing in docs-authority/_foundation.py reads; IBC 2021 Table 1806.2 presumptive value for clay and silt (CL, ML, MH, CH); the earlier 2000 psf was the sand value",
   "sensitivity": "Footing size for tanks and slabs",
   "replaced_by": "Geotechnical report",
   "task": "X-BAS-03",

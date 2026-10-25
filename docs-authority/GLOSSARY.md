@@ -1026,6 +1026,12 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {RCD -- Residual-current device, which disconnects a circuit on earth leakage}
 
+{RH -- Relative humidity, the water vapour in air as a percentage of saturation at the same temperature}
+
+{ASR -- Area-specific resistance, the cell resistance per unit electrode area, in ohm cm2}
+
+{HMI -- Human-machine interface, the operator screens of the control system}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

@@ -1490,7 +1490,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-014 | Ss 0.10, S1 0.05 g | ASCE Hazard Tool at the parcel |
 | A-M-015 | D site class | Geotechnical report |
 | A-M-016 | 5 psf ground snow | ASCE Hazard Tool at the parcel |
-| A-M-017 | 2000 psf allowable bearing | Geotechnical report |
+| A-M-017 | 72 kPa allowable bearing (1500 psf); read from the site driver soil_allow_kPa | Geotechnical report |
 | A-M-018 | 150 mm frost depth | Building official value |
 | A-M-019 | 2.0 spray / evaporation ratio | Quench outlet temperature and drain flow on commissioning |
 | A-M-020 | 60 C quench outlet; cp 1.08 kJ/kgK; water 25 C C, kJ/kgK | Flue analysis and quench outlet temperature |

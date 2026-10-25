@@ -61,7 +61,7 @@ Total 580 items: 287 drivers, 293 register entries. Classification rule: first m
 | A-M-014 | Ss 0.10, S1 0.05 g | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-015 | D site class | Geotechnical report | X-BAS-03 |
 | A-M-016 | 5 psf ground snow | ASCE Hazard Tool at the parcel | X-BAS-03 |
-| A-M-017 | 2000 psf allowable bearing | Geotechnical report | X-BAS-03 |
+| A-M-017 | 72 kPa allowable bearing (1500 psf); read from the site driver soil_allow_kPa | Geotechnical report | X-BAS-03 |
 | A-M-018 | 150 mm frost depth | Building official value | X-BAS-03 |
 | A-M-025 | 14 d | Owner operating policy and absorber availability | X-SAF-09 |
 | A-M-050 | 50 ohm m | Wenner four-pin test at the parcel | X-ELS-08 |

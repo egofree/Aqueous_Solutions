@@ -63,7 +63,7 @@ Table 1.1. Curated assumptions
 | A-M-014 | Ss 0.10, S1 0.05 | g | AQS-SITE-002 | Low-hazard North Texas; no lookup run | Sets SDC; SDC A exempts nonstructural components | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-015 | D | site class | AQS-SITE-002 | IBC 1613.2.2 default | Site amplification factors | Geotechnical report | X-BAS-03 |
 | A-M-016 | 5 | psf ground snow | AQS-SITE-002 | Low North Texas value; not looked up | Roof loads only | ASCE Hazard Tool at the parcel | X-BAS-03 |
-| A-M-017 | 2000 | psf allowable bearing | AQS-SITE-002 | IBC Table 1806.2 presumptive clay value | Footing size for tanks and slabs | Geotechnical report | X-BAS-03 |
+| A-M-017 | 72 | kPa allowable bearing (1500 psf); read from the site driver soil_allow_kPa | AQS-SITE-002 | Site input soil_allow_kPa in flow_graph/param/drivers.json, which the footing sizing in docs-authority/_foundation.py reads; IBC 2021 Table 1806.2 presumptive value for clay and silt (CL, ML, MH, CH); the earlier 2000 psf was the sand value | Footing size for tanks and slabs | Geotechnical report | X-BAS-03 |
 | A-M-018 | 150 | mm frost depth | AQS-SITE-002 | Local practice | Buried water lines | Building official value | X-BAS-03 |
 | A-M-019 | 2.0 | spray / evaporation ratio | IA-FLUE-QUENCH rate | Keeps the quench spool wetted; common wet-quench practice, not measured | Edge rate linear; 12.15 kg/d is the evaporative minimum | Quench outlet temperature and drain flow on commissioning | X-SAF-07 |
 | A-M-020 | 60 C quench outlet; cp 1.08 kJ/kgK; water 25 C | C, kJ/kgK | IA-FLUE-QUENCH energy balance | Approximate adiabatic saturation of the S67 flue; mean cp of N2/CO2/H2O mix | Evaporation scales with (300 - T_out) | Flue analysis and quench outlet temperature | X-SAF-07 |
@@ -1120,6 +1120,7 @@ Table 4.1. Document lines naming an assumption
 | A-D-0902c7 |  |  | docs-authority/BENCH_TEST_UPW_POLISH.md:13 | Status: study procedure, issued 2026-10-19; the test has not been run. The run needs hardware: the first RO/EDI module built to the AQS-DUTY-070 design (0.27 m2 |  | see page |
 | A-D-7f4182 |  |  | docs-authority/BENCH_TEST_UPW_POLISH.md:73 | The record closes A-M-176 when every row of the data sheets in section 6 is filled and signed; the assumptions register then sets `needs_verification` to false  |  | see page |
 | A-D-5a08c2 |  |  | docs-authority/COLLECTION_BUS.md:6 | Basis: AQS-PLAN-007 task X-ELS-11; assumption A-M-114. |  | see page |
+| A-D-2ac2aa |  |  | docs-authority/COMMISSIONING.md:6 | Basis: AQS-PLAN-007 task X-COM-01; assumption A-M-200; AQS-QA-001, AQS-CTL-001 and AQS-CTL-003. |  | see page |
 | A-D-bafc40 |  |  | docs-authority/COMPLETION_DUTIES.md:5 | AQS-DUTY-007. Plant rate is the assumptions-sheet point: leach discharge 2 m³/h at 2 g/L dissolved metal. Concentrate to EW-1 is 0.17 m³/h at 20 g/L. Energy may |  | see page |
 | A-D-5863c2 |  |  | docs-authority/DESIGN_TOOL_ARCHITECTURE.md:491 | These are not to be answered by assumption. |  | see page |
 | A-D-d266d1 |  |  | docs-authority/DOC_STYLE.md:79 | Unit ids (LEACH_CSTR_1), stream ids (S64), sector ids (FOUNDRY), document numbers (AQS-SEC-001), task ids (X-PAR-02) and assumption ids (A-M-329) are names, not |  | see page |
@@ -1144,6 +1145,7 @@ Table 4.1. Document lines naming an assumption
 | A-D-189334 |  |  | docs-authority/GLOSSARY.md:19 | {A-M-nnn -- Curated assumption, kept in assumptions_manual.json with its basis, sensitivity and the test that would replace it. ASSUMPTIONS_REGISTER.md also lis |  | see page |
 | A-D-dfb4a9 |  |  | docs-authority/GROUNDING.md:14 | Bare copper ring, 4/0 AWG (107 mm²), 0.75 m deep, round the placement extents (about 35 × 20 m, assumption), with twelve 16 mm × 3 m copper-clad rods at about 1 |  | see page |
 | A-D-d3cd3f |  |  | docs-authority/INSTRUMENT_LOOPS.md:98 | S08 and S16 keep the deposit table plus the 0.0021 kg/d silicate residual. That residual is an assumption. This station does not replace it with a measurement o |  | see page |
+| A-D-f52049 |  |  | docs-authority/INSULATION_SCHEDULE.md:6 | Basis: AQS-PLAN-007 task X-THM-03; AQS-ISO-002; inputs in assumption A-M-158. |  | see page |
 | A-D-5f8dac |  |  | docs-authority/MATERIALS_SEC3.md:86 | - A-M-318..328 register the selections per family in `assumptions_manual.json` (AQS-REG-002). |  | see page |
 | A-D-7272e1 |  |  | docs-authority/MATERIALS_STD.md:21 | / L / Service-class selection guide across the assay envelope added as section 12 (X-MAT-01). Line-list class rules keyed to the guide families: the "aqueous pr |  | see page |
 | A-D-ffa9aa |  |  | docs-authority/MATERIALS_STD.md:36 | M5. Thermoplastic limits. PVC-U to 60 °C. CPVC to 93 °C. These two limits are assumptions from published PVC-U and CPVC data, not measured in this plant. Above  |  | see page |
@@ -1235,6 +1237,8 @@ Table 4.1. Document lines naming an assumption
 | A-D-c8df27-5 |  |  | docs-authority/VENT_SCRUB_EQUIPMENT.md:111 | / Parameter / Study estimate / Formula / assumption / |  | see page |
 | A-D-ce84e1 |  |  | docs-authority/WATER_PURIFICATION.md:351 | Authority cross-ref: AQS-AUD-001 Rev D §11. **Study assumptions** — |  | see page |
 | A-D-c60ca9 |  |  | docs-authority/WATER_TOWER.md:42 | Seismic governs over wind by 2 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 c |  | see page |
+| A-D-8375c6 |  |  | docs-authority/ZNBR2_STACK_TEST.md:6 | Basis: AQS-PLAN-007 task X-MFG-41; assumption A-M-179, which replaces the battery-vendor basis of A-M-062. |  | see page |
+| A-D-ce26a8 |  |  | docs-authority/ZNBR2_STACK_TEST.md:16 | The plant stores energy in an in-house zinc-bromide flow battery (`ZNBR2`). Its round-trip efficiency is predicted from published cell data, not measured. This  |  | see page |
 | A-D-4060a8 |  |  | docs-authority/duties/FLUE_KO.md:10 | 3. Material. FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.3 inlet spool (AQS-STD-002 section 4.3). No metal wetted part. S67 at 300 °C |  | see page |
 | A-D-35e730 |  |  | docs-authority/duties/H2_PURIFIER.md:8 | - Deoxo bed, chloride guard, TSA pair for 5.03 kg/d H2 at 1.5 bar a to ISO 14687 Grade D. Study skid 600 × 400 × 1200 mm (assumption). |  | see page |
 | A-D-508618 |  |  | docs-authority/duties/LEACH_CSTR_1.md:10 | 3. Material. CPVC wetted, per AQS-STD-002 rules M2 and M5: liquor 70–85 °C (graph liquor_T_C 77.5 °C) is above PVC-U 60 °C and inside CPVC 93 °C. No metal wette |  | see page |
