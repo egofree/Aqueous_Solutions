@@ -22,6 +22,7 @@ Rules (checked by --check and flow_graph/test_doc_numbers.py):
 - every page directly under docs-authority/ (except README.md) has a number;
 - a former number is never issued again (--next skips it); it may still be held by the page that shared it.
 """
+import json
 import os
 import re
 import subprocess
@@ -31,7 +32,9 @@ from collections import defaultdict
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = 'docs-authority/DOC_REGISTER.md'
 NUM = r'AQS-[A-Za-z0-9_]+(?:-[A-Za-z0-9_]+)*'
-CLAIM = re.compile(r'^\**Document(?: number)?\**:?\**\s*\**`?(' + NUM + r')`?\**\s*(.*)$', re.M)
+SITE = r'/[A-Z][A-Z0-9]*'      # locale suffix, e.g. AQS-THM-002/MARS (AQS-PLAN-011 section 4.5)
+CLAIM = re.compile(r'^\**Document(?: number)?\**:?\**\s*\**`?(' + NUM + r'(?:' + SITE + r')?)`?\**\s*(.*)$', re.M)
+SITES_DIR = 'flow_graph/param/sites'   # site profiles: site_id -> site_code
 FORMER = re.compile(r'^(?:\**Former numbers?\**:?\**\s*|Renumbered \S+ from )(.+)$', re.M)
 PART_WORDS = ('sheet', 'annex', 'note', 'part', 'companion', '(folder')
 HEAD_LINES = 30
@@ -79,10 +82,41 @@ def scan():
                         formers.append(dict(old=old.group(1), new=m.group(1), path=p, note=fm.group(1).strip()))
         elif required(p):
             problems.append(f'{p}: no "Document number:" line in its first {HEAD_LINES} lines')
+    problems += pair_problems(claims, site_codes())
+    return claims, parts, formers, problems
+
+
+def site_codes():
+    """site_id -> site_code from the site profiles."""
+    d = os.path.join(ROOT, SITES_DIR); out = {}
+    for f in sorted(os.listdir(d)) if os.path.isdir(d) else []:
+        if f.endswith('.json'):
+            prof = json.load(open(os.path.join(d, f)))
+            out[prof.get('site_id', f[:-5])] = prof.get('site_code')
+    return out
+
+
+def pair_problems(claims, codes, baseline='baseline'):
+    """Problems with number and site pairs. claims: 'NUM' or 'NUM/CODE' -> [page dicts with 'path'].
+    Each pair is claimed once; a suffix names a known locale (not the baseline) and its base number is
+    claimed by a baseline page; a page under sites/<site_id>/ carries that site's code."""
+    problems = []
+    known = {c: s for s, c in codes.items() if c and s != baseline}
     for num, pages in claims.items():
         if len(pages) > 1:
             problems.append(f'{num} is claimed by {len(pages)} pages: ' + ', '.join(x["path"] for x in pages))
-    return claims, parts, formers, problems
+        base, _, code = num.partition('/')
+        for pg in pages:
+            m = re.match(r'^sites/([^/]+)/', pg['path'])
+            if code and code not in known:
+                problems.append(f'{pg["path"]}: {num} names site code {code}, which no locale profile in {SITES_DIR} carries')
+            elif code and base not in claims:
+                problems.append(f'{pg["path"]}: {num} has no baseline page claiming {base}')
+            if m and codes.get(m.group(1)) != code:
+                problems.append(f'{pg["path"]}: a page under sites/{m.group(1)}/ is numbered with that site\'s code ({codes.get(m.group(1))}), not {num}')
+            elif code and not m:
+                problems.append(f'{pg["path"]}: {num} carries a site code but the page is not under sites/{known.get(code, "<site_id>")}/')
+    return problems
 
 
 def series_of(num):

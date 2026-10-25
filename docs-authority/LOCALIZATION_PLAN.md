@@ -1,7 +1,7 @@
 # Localization plan: site profiles and locale variants
 
 Document number: AQS-PLAN-011
-Revision: C
+Revision: D
 Date: 2026-10-25
 
 | Rev | Description | Date |
@@ -9,6 +9,7 @@ Date: 2026-10-25
 | A | First issue | 2026-10-25 |
 | B | Scaling model replaces keep, alternate and retire; per-site power portfolio; floating island locale added; build order updated | 2026-10-25 |
 | C | Section 4 matches the built profile: entries bind drivers, snow group added, pending groups, locale regeneration refused until section 4.4 exists | 2026-10-25 |
+| D | Section 4.5 states the number and site pair rules as built | 2026-10-25 |
 
 ## 1. Purpose and scope
 
@@ -136,12 +137,12 @@ The baseline profile, `flow_graph/param/sites/baseline.json`, carries the presen
 - Baseline outputs stay where they are, so existing paths and citations do not change.
 - Every other locale writes under `sites/<site_id>/`, which mirrors the repository paths of the outputs, for example `sites/<site_id>/flow_graph/plant_flow_graph.json` and `sites/<site_id>/docs-authority/duties/`. Each stage in `flow_graph/param/regen_manifest.json` still declares its outputs once; one path function adds the prefix.
 - The base graph stays the sole topology authority. A locale graph is the base graph with the locale's scaling actions applied (section 5); it is a generated output and is never hand-edited.
-- `regen --check --site <site_id>` checks one locale. A new `--all-sites` option runs every profile in `flow_graph/param/sites/` (to be created).
+- `regen --check --site <site_id>` checks one locale. A new `--all-sites` option runs every profile in `flow_graph/param/sites/`.
 
 ### 4.5 Document numbers and identifiers
 
-- A generated document in a locale namespace keeps its base number with the site code as a suffix, for example `AQS-THM-002/MARS`. `docs-authority/_doc_register.py` is extended to register each number and site pair, and `flow_graph/test_doc_numbers.py` fails on a duplicate pair. The alternative, a fresh number for every locale copy, is put to the owner in Q-028.
-- A hand-written locale page, such as the site basis of a locale, takes a new number from `python3 docs-authority/_doc_register.py --next AQS-SITE`.
+- A generated document in a locale namespace keeps its base number with the site code as a suffix, for example `AQS-THM-002/MARS`. `docs-authority/_doc_register.py` registers each number and site pair. The register reports a problem, and `flow_graph/test_doc_numbers.py` fails, when a pair is claimed twice, when a suffix is not the `site_code` of a locale profile, when a suffix is used for the baseline, when no baseline page claims the base number, or when a page under `sites/<site_id>/` does not carry that site's code. The alternative, a fresh number for every locale copy, is put to the owner in Q-028.
+- A hand-written locale page, such as the site basis of a locale, is kept in `docs-authority/` and takes a new number from `python3 docs-authority/_doc_register.py --next AQS-SITE`.
 - A replacement unit gets a new unit id in the base graph, present only where a profile selects it. Unit, stream, assumption, task and question ids take the next unused id in their sequence and are never reused.
 
 ### 4.6 Code basis per jurisdiction
