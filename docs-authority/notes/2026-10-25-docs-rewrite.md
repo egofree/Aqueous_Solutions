@@ -46,3 +46,8 @@ This record covers the rewrite of pages under `docs-authority/` to the documenta
 - `CRYO_ASU.md` (AQS-DUTY-018) Rev C, `RELIEF.md` (AQS-REL-001) Rev B and `RED_AUDIT.md` (AQS-RED-001) Rev C rewritten. No value changed. The redundancy audit no longer records who set the redundancy rule; it cites `AGENTS.md`.
 - `GLOSSARY.md`: DM and SPOF added.
 - Further pages reviewed and recorded in `REWRITE_TODO.md` section 6: `FURNACE.md`, `SIDE_FARM.md`, `FARM.md`, `SOLVENT_ROUTE.md`.
+
+## Batch 8
+
+- `LIFTING.md` (AQS-BLD-015), `WPS_REGISTER.md` (AQS-WLD-002) and `HAZ_AREA.md` (AQS-ELEC-009) rewritten to Rev B through their generators (`_lifting.py`, `_wps.py`, `_haz_area.py`). No value changed. The lifting page no longer states that level L-2 has no lifted equipment, which contradicted its own table.
+- `GLOSSARY.md`: CMAA, QF, QW, IIA and IIC added.

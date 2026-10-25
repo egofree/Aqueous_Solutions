@@ -36,6 +36,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/CRYO_ASU.md` | Rewritten in full. The undefined code class "shop" is recorded as an open item. |
 | `docs-authority/RELIEF.md` | Rewritten in full. |
 | `docs-authority/RED_AUDIT.md` | Purpose, scope and record of revisions added; the audit table is unchanged. Two rows name units that are no longer graph nodes (COMPOST_TOILET, EXPANDER); see section 6. |
+| `docs-authority/LIFTING.md` | Rev B, through `docs-authority/_lifting.py`. Revision record, purpose and sizing rule added. The closing sentence is now generated from the table; the old fixed text said level L-2 had no lifted equipment while the table listed HYDRO_SET on L-2. |
+| `docs-authority/WPS_REGISTER.md` | Rev B, through `docs-authority/_wps.py`. Revision record and purpose added; pipe lines with no stated material are reported in words instead of as a raw tuple. See section 6. |
+| `docs-authority/HAZ_AREA.md` | Rev B, through `docs-authority/_haz_area.py`. Revision record, purpose, basis and numbered table added. No zone changed. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 
@@ -96,7 +99,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | |
 | `docs-authority/HAZMAT_SEPARATION.md` | |
 | `docs-authority/HAZOP.md` | |
-| `docs-authority/HAZ_AREA.md` | |
 | `docs-authority/HEAT_LADDER_DUTIES.md` | Rev D (2026-10-08), authority graph Rev K; not reissued for graph Rev AC. |
 | `docs-authority/INSTRUMENT_INDEX.md` | |
 | `docs-authority/INSTRUMENT_LOOPS.md` | |
@@ -108,7 +110,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/LIFE_HEADERS.md` | |
 | `docs-authority/LIFE_MEP.md` | |
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | |
-| `docs-authority/LIFTING.md` | |
 | `docs-authority/LOAD_LIST.md` | |
 | `docs-authority/MATERIALS_SEC3.md` | |
 | `docs-authority/MATERIALS_STD.md` | |
@@ -151,7 +152,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/WATER_PURIFICATION.md` | |
 | `docs-authority/WELD_MAP.md` | |
 | `docs-authority/WIRE_SPECS.md` | |
-| `docs-authority/WPS_REGISTER.md` | |
 
 Table 4.2. Pending pages in subfolders
 
@@ -303,3 +303,4 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/FARM.md` (AQS-DUTY-044) | Reviewed 2026-10-25. Cited by no other page. Its nitrogen-fixation duty relies on the fish loop and on clover and seed-bank pages (AQS-DUTY-045 to AQS-DUTY-047); the fish units are no longer graph nodes. Update against the current farm or delete. |
 | `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | Reviewed 2026-10-25. It describes the route to the ionic liquid [Bmim] acetate through 1-methylimidazole; the units IMID and QUAT are no longer graph nodes. The number is cited elsewhere, so it is kept until a decision. |
 | `docs-authority/RED_AUDIT.md` (AQS-RED-001) | Rewritten, but two rows need a factual update: the sanitation row names COMPOST_TOILET and the cold-box row names EXPANDER, and neither is a graph node now. |
+| `docs-authority/inventory/PIPE_INVENTORY.csv` (AQS-INV-003) | Lines S36 (WS_DOPE, FAB) and S57 (MET_MELT, MFG) have no piping class, material or joint type ("—" and "-"), so `WPS_REGISTER.md` cannot assign them a procedure. The class and material need to be set in the pipe inventory generator. |

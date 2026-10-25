@@ -54,7 +54,7 @@ Table 3.1. Document numbers in use
 | AQS-BLD-012 | `docs-authority/ACCESS_CHECK.md` | — | — | Access and electrical working-space check | current |
 | AQS-BLD-013 | `docs-authority/STRUCT_LOADS.md` | A | 2026-10-16 | Equipment structural loads | current |
 | AQS-BLD-014 | `docs-authority/WATER_TOWER.md` | A | 2026-10-16 | Water tower: pumped-hydro reservoirs in the building | current |
-| AQS-BLD-015 | `docs-authority/LIFTING.md` | A | 2026-10-16 | Lifting and cranes | current |
+| AQS-BLD-015 | `docs-authority/LIFTING.md` | B | 2026-10-25 | Lifting and cranes | current |
 | AQS-BLD-016 | `docs-authority/FRAME_CHECK.md` | A | 2026-10-16 | Building frame member check | current |
 | AQS-BLD-017 | `docs-authority/FOUNDATION.md` | A | 2026-10-16 | Foundation design | current |
 | AQS-BLD-018 | `docs-authority/ENCLOSURE_EGRESS.md` | A | 2026-10-16 | Enclosure, floor plates, stairs and egress | current |
@@ -150,7 +150,7 @@ Table 3.1. Document numbers in use
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | D | 2026-10-15 | Protection and coordination | current |
 | AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | F | 2026-10-15 | Storage and generation sizing | current |
 | AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | B | 2026-10-24 | Collection bus sections | current |
-| AQS-ELEC-009 | `docs-authority/HAZ_AREA.md` | A | 2026-10-16 | Hazardous area classification | current |
+| AQS-ELEC-009 | `docs-authority/HAZ_AREA.md` | B | 2026-10-25 | Hazardous area classification | current |
 | AQS-ELEC-010 | `docs-authority/CABLE_SCHEDULE.md` | A | 2026-10-15 | Cable and busbar schedule | current |
 | AQS-END-001 | `docs-authority/DECOMMISSIONING.md` | A | 2026-10-16 | Decommissioning plan | current |
 | AQS-END-002 | `docs-authority/EOL_RETURN.md` | D | 2026-10-21 | End-of-life material return | current |
@@ -465,7 +465,7 @@ Table 3.1. Document numbers in use
 | AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | H | 2026-10-24 | Design-tool architecture | current |
 | AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | current |
 | AQS-WLD-001 | `docs-authority/WELD_MAP.md` | A | 2026-09-27 | Weld and joint map | current |
-| AQS-WLD-002 | `docs-authority/WPS_REGISTER.md` | A | 2026-10-16 | WPS and PQR register | current |
+| AQS-WLD-002 | `docs-authority/WPS_REGISTER.md` | B | 2026-10-25 | Welding procedure register | current |
 | AQS-WTR-001 | `docs-authority/WATER_PURIFICATION.md` | B | 2026-10-01 | Water purification — habitation and fab UPW | current |
 
 ## 4. Former numbers

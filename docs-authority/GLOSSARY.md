@@ -649,6 +649,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {CFR -- Code of Federal Regulations (United States); for example 29 CFR 1910 for workplace safety.}
 
+{CMAA -- Crane Manufacturers Association of America, publisher of CMAA 70, the specification for overhead travelling cranes.}
+
 {CNC -- Computer numerical control: machine tools driven by a stored program.}
 
 {CO -- Carbon monoxide.}
@@ -710,6 +712,10 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {IEC -- International Electrotechnical Commission.}
 
 {IECC -- International Energy Conservation Code.}
+
+{IIA -- Gas group IIA of IEC 60079-20-1, the least easily ignited group of flammable gases (for example methane and propane); North American Group D.}
+
+{IIC -- Gas group IIC of IEC 60079-20-1, the most easily ignited group of flammable gases (hydrogen and acetylene); hydrogen is North American Group B.}
 
 {IEEE -- Institute of Electrical and Electronics Engineers.}
 
@@ -786,6 +792,10 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {PTFE -- Polytetrafluoroethylene.}
 
 {PVC -- Polyvinyl chloride.}
+
+{QF -- Prefix of the paragraphs of ASME BPVC Section IX that cover the fusing of plastic pipe (for example QF-200, QF-300).}
+
+{QW -- Prefix of the paragraphs of ASME BPVC Section IX that cover welding (for example QW-300, QW-451).}
 
 {QA -- Quality assurance.}
 
