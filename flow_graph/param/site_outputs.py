@@ -99,6 +99,8 @@ def run(sid, check=False, extra=()):
     """Regenerate locale sid in a temporary worktree of HEAD; write sites/<sid>/, or with check=True compare
     the fresh outputs with sites/<sid>/ and write nothing. Returns 0 or 1."""
     S.load_profile(sid)                                   # fails on an unknown or invalid profile
+    from . import scaling as SC
+    SC.check(sid)                                         # fails on an unmet need or a scaling rule
     rel = f'flow_graph/param/sites/{sid}.json'
     if git('status', '--porcelain', '--', rel).strip():
         raise SystemExit(f'{rel} has uncommitted changes; a locale runs from HEAD, so commit the profile first')

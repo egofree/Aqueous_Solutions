@@ -271,7 +271,52 @@
    "pending": "X-LOC-06"
   },
   "scaling": {
-   "pending": "X-LOC-05"
+   "entries": {
+    "actions": {
+     "value": [],
+     "units": "-",
+     "register": "AQS-PLAN-011 section 5.1 (the baseline is the reference plant)"
+    }
+   }
+  },
+  "capabilities": {
+   "entries": {
+    "buoyant_separation": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; gravity.g_m_s2 above zero, steady in direction (fixed foundation)"
+    },
+    "free_surface": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; gravity.g_m_s2 above zero"
+    },
+    "air_heat_sink": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; open site; cooling design dry bulb AQS-SITE-002"
+    },
+    "air_oxidant": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; atmosphere.oxidant"
+    },
+    "vent_sink": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; atmosphere.vent_sink"
+    },
+    "ground_contact": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; land site, soil per AQS-SITE-002"
+    },
+    "liquid_water_at_ambient": {
+     "value": true,
+     "units": "-",
+     "register": "AQS-SITE-002; atmosphere.pressure_Pa above the triple point of water"
+    }
+   }
   }
  }
 }

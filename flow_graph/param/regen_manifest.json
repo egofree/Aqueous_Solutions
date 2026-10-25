@@ -2588,6 +2588,21 @@
    "index": true
   },
   {
+   "name": "site_scaling",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.scaling",
+    "--write"
+   ],
+   "depends_on": [],
+   "outputs": [
+    "docs-authority/SITE_SCALING.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
    "name": "task_plan",
    "argv": [
     "python3",

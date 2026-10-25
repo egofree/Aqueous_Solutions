@@ -1,7 +1,7 @@
 # Localization plan: site profiles and locale variants
 
 Document number: AQS-PLAN-011
-Revision: G
+Revision: H
 Date: 2026-10-25
 
 | Rev | Description | Date |
@@ -13,6 +13,7 @@ Date: 2026-10-25
 | E | Section 3.2 records the gravity, pressure and air values now read from the profile, and Q-032 | 2026-10-25 |
 | F | Q-032 closed; every gravity and air density reads the profile | 2026-10-25 |
 | G | Sections 4.3 and 4.4 describe locale selection and the per-site output folders as built | 2026-10-25 |
+| H | Section 5.4 describes the scaling actions, capabilities and checks as built; capabilities group added to Table 4.1 | 2026-10-25 |
 
 ## 1. Purpose and scope
 
@@ -122,6 +123,7 @@ Table 4.1. Site profile groups
 | Power portfolio | candidate sources with their resource basis, the worst stretch, the oversize factor and the redundancy rule (section 5.5) |
 | Motion | for floating sites: design heel, roll and pitch angles, periods and heave acceleration |
 | Scaling | per sector or unit: size factor, unit count, replacement, elimination with its import path (section 5) |
+| Capabilities | for each environmental need in Table 5.2, whether the site provides it (section 5.4) |
 
 ### 4.2 Binding to the drivers
 
@@ -177,7 +179,7 @@ For an energy or life-support function, eliminating or replacing a unit must lea
 
 ### 5.3 What a unit needs
 
-Each unit states its environmental needs in `flow_graph/param/sites/unit_needs.json` (to be created). Needs are given by unit class, with a unit-level override, so units need not be edited one by one. A need the profile does not meet forces a replacement or an elimination; every other action is a free design choice. Table 5.2 lists the needs used in this plan.
+Each unit states its environmental needs in `flow_graph/param/unit_needs.json`. Needs are given by unit class, with a unit-level override, so units need not be edited one by one. A need the profile does not meet forces a replacement or an elimination; every other action is a free design choice. Table 5.2 lists the needs used in this plan.
 
 Table 5.2. Environmental needs
 
@@ -193,7 +195,15 @@ Table 5.2. Environmental needs
 
 ### 5.4 Scaling in the profile and its check
 
-The profile's scaling map gives, for a sector or a unit, a size factor, a unit count, a replacement unit, or an elimination with its import path or replacement. A check, `flow_graph/param/test_site_scaling.py` (to be created), fails when a unit's needs are not met and it is neither replaced nor eliminated, when an elimination has neither an import path nor a replacement, and when an energy or life-support function is left with fewer sources than the redundancy rule needs. A generated table per locale lists every scaling action with its reason. Comparing those tables across locales gives the record of what the plant changes in each place.
+The profile's `scaling` group lists the actions, each on a unit or on a sector (`sector:<SECTOR_ID>`) and each with its basis. The `capabilities` group states, for each need in Table 5.2, whether the site provides it; a capability may not claim more than the profile's physical values allow (no buoyant separation or free surface without gravity, no liquid water at or below the triple point pressure, the vent and oxidant flags as in the atmosphere group). `flow_graph/param/scaling.py` resolves the actions against the graph and fails when:
+
+- a present unit has a need the site does not provide and is neither replaced nor eliminated, or a replacement has such a need;
+- an elimination has neither an import path nor a replacement;
+- a replacement is the same technology (the same unit class) as the unit it replaces, or does not perform the same function;
+- an energy or life-support unit is eliminated without a replacement of a different technology; an import path alone does not keep the function;
+- a size factor is not above zero, a duplicate count is below 2, or an action has no basis.
+
+`flow_graph/param/test_site_scaling.py` checks each rule. Regeneration writes `docs-authority/SITE_SCALING.md` (AQS-SITE-004) for the selected site: its capabilities, its actions and the status of every unit with a need. A locale's copy under `sites/<site_id>/` is its scaling table, and comparing those tables across locales gives the record of what the plant changes in each place. The redundancy count per function (section 5.2) is checked when the power portfolio and the life-support sources are modelled (X-LOC-06).
 
 ### 5.5 Power portfolio
 
@@ -431,24 +441,24 @@ Table 11.1. Architecture gaps and their parametric handling
 
 ## 12. Build order
 
-The work is split into phases, each closed by its own check. Tasks X-LOC-01 to X-LOC-12 in AQS-PLAN-007 track them. Earth sites come before off-world sites. Table 12.1 gives the order.
+The work is split into phases, each closed by its own check. Tasks X-LOC-01 to X-LOC-12 in AQS-PLAN-007 track them, and the status column below follows that task plan. Earth sites come before off-world sites. Table 12.1 gives the order.
 
 Table 12.1. Build phases
 
-| Task | Phase | Done when |
-| --- | --- | --- |
-| X-LOC-01 | This plan | AQS-PLAN-011 issued; owner questions logged |
-| X-LOC-02 | Profile schema, baseline profile and loader | schema and baseline profile committed; `drivers.load()` applies the profile; every script reads drivers through the loader; baseline regeneration unchanged |
-| X-LOC-03 | Constants into the profile | gravity, pressure, air composition and air densities read from the profile; baseline regeneration unchanged |
-| X-LOC-04 | Site selection and namespaces | `--site`, `AQS_SITE`, `--all-sites`; outputs under `sites/<site_id>/`; register handles locale numbers |
-| X-LOC-05 | Sector and unit scaling | needs table, scaling map, scaling check and per-locale scaling table generated |
-| X-LOC-06 | Power portfolio, heat rejection and storage models | portfolio solved through the worst stretch with the oversize factor; rejection modes and radiator sizing; solar and other resource models in the solver |
-| X-LOC-07 | Death Valley variant | profile, site basis page, regeneration and closure pass |
-| X-LOC-11 | Floating island variant | as X-LOC-07, with the motion group, mass and stability checks, seawater feed case and the marine code family |
-| X-LOC-08 | Antarctic variant | as X-LOC-07, with the treaty code family |
-| X-LOC-09 | Mars variant | as X-LOC-07, with in-situ feed cases and replacement units |
-| X-LOC-10 | Low Earth orbit variant | as X-LOC-07, with microgravity replacements and radiators |
-| X-LOC-12 | Cross-locale comparison | a generated comparison of scaling actions, power portfolios and unit sizes across every profile |
+| Task | Phase | Done when | Status |
+| --- | --- | --- | --- |
+| X-LOC-01 | This plan | AQS-PLAN-011 issued; owner questions logged | done |
+| X-LOC-02 | Profile schema, baseline profile and loader | schema and baseline profile committed; `drivers.load()` applies the profile; every script reads drivers through the loader; baseline regeneration unchanged | done |
+| X-LOC-03 | Constants into the profile | gravity, pressure, air composition and air densities read from the profile; baseline regeneration unchanged | done |
+| X-LOC-04 | Site selection and namespaces | `--site`, `AQS_SITE`, `--all-sites`; outputs under `sites/<site_id>/`; register handles locale numbers | done |
+| X-LOC-05 | Sector and unit scaling | needs table, scaling map, scaling check and per-locale scaling table generated | done |
+| X-LOC-06 | Power portfolio, heat rejection and storage models | portfolio solved through the worst stretch with the oversize factor; rejection modes and radiator sizing; solar and other resource models in the solver | open |
+| X-LOC-07 | Death Valley variant | profile, site basis page, regeneration and closure pass | open |
+| X-LOC-11 | Floating island variant | as X-LOC-07, with the motion group, mass and stability checks, seawater feed case and the marine code family | open |
+| X-LOC-08 | Antarctic variant | as X-LOC-07, with the treaty code family | open |
+| X-LOC-09 | Mars variant | as X-LOC-07, with in-situ feed cases and replacement units | open |
+| X-LOC-10 | Low Earth orbit variant | as X-LOC-07, with microgravity replacements and radiators | open |
+| X-LOC-12 | Cross-locale comparison | a generated comparison of scaling actions, power portfolios and unit sizes across every profile | open |
 
 ## 13. Acceptance checks
 
