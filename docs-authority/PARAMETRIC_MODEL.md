@@ -992,7 +992,7 @@ All solved units close.
 | CGPM1954_ATM | BIPM, The International System of Units (SI Brochure), 9th ed. (2019), Appendix 1: Resolution 4 of the 10th CGPM (1954) defining the standard atmosphere as 1 013 250 dyn/cm2 (101 325 Pa). |
 | CIAAW2021 | IUPAC CIAAW, Standard atomic weights 2021, Pure Appl. Chem. 94(5), 573-600 (2022). |
 | CMAA70_2020 | CMAA Specification 70-2020, Top Running Bridge and Gantry Type Multiple Girder Electric Overhead Traveling Cranes: service classes A-F by load spectrum and cycles. |
-| CODATA2018 | Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K). |
+| CODATA2018 | Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K); sigma = 5.670374419e-8 W/(m2 K4). |
 | COEY2010 | Coey J.M.D., Magnetism and Magnetic Materials, Cambridge University Press (2010), ch. 11: properties of hard magnets (sintered Nd2Fe14B, sintered and bonded hexaferrite). |
 | COOPER1996 | Cooper A., The ABC of NFT, 2nd ed., Grower Books, London (1996): about 1 L/min per gully, half at planting, 2 L/min upper limit; slope 1:30-1:100; gully length under 10-15 m. |
 | CRC_AL | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Al melting point 660.3 C, enthalpy of fusion 10.7 kJ/mol (397.3 kJ/kg), cp about 0.90 kJ/(kg K) at 25 C rising to about 1.2 near the melting point (mean solid about 1.05), liquid cp 1.18 kJ/(kg K); density 2.70 g/cm3; molar mass 26.9815 g/mol. |

@@ -42,12 +42,17 @@ Table 2. Power sources
 | methanol_fuel_cell | fuel_cell | MEOH_FC | backup | - | - | - | AQS-ELEC-007 |
 | geothermal_orc | geothermal | GEO_ORC | option (flagged) | - | - | - | owner ruling D-GEO_ORC (installed standby at 0 kW electric) |
 
-Table 3. Storage
+Table 3 compares the stored energy with the energy the worst stretch draws from storage at the plant demand (graph `mvs.electrical.need_kw`). Coverage below 1 means the storage does not carry the stretch.
 
-| Kind | Unit |
-| --- | --- |
-| electrochemical | ZNBR2 |
-| pumped_hydro | HYDRO_SET |
+Table 3. Storage and coverage of the worst stretch
+
+| Kind | Unit | Stored kWh | Graph parameter |
+| --- | --- | --- | --- |
+| electrochemical | ZNBR2 | 2517 | `kWh` |
+| pumped_hydro | HYDRO_SET | 213.1 | `energy_kwh_recoverable_study` |
+| all | - | 2730.1 | - |
+
+Plant demand 179.72 kW; energy drawn over the stretch 2516.1 kWh; coverage 1.09.
 
 ## 3. Redundancy of energy and life-support functions
 
@@ -66,3 +71,14 @@ Table 4. Sources per function
 | co2 removal | life support | HABITATION x1, GROW_BED x1 | 2 | driver HAB.life-support-train.HABITATION.cdra_half_cycle_min (ISS CO2 removal basis); plant uptake in the grow bed |
 | food | life support | GROW_BED x1, FOOD_STORE x1 | 2 | grow bed; food buffer store (D-DOCK owner ruling 2026-10-19) |
 | sanitation | life support | BLACK_DIGEST x1, HABITATION x1 | 2 | A-M-118: black digest and compost toilets, each path sized for 100 % |
+
+## 4. Heat rejection
+
+Each level of the heat ladder rejects through a unit in a mode the site supports (`flow_graph/param/heat_rejection.py`). A radiator is sized by the Stefan-Boltzmann law [CODATA2018]; a heat pump states its lift and the Carnot bound on its COP.
+
+Table 5. Heat rejection modes
+
+| Level | Unit | Mode | Duty kW | Sizing | Basis |
+| --- | --- | --- | --- | --- | --- |
+| low-grade water loop | DRY_COOLER | air | 12 | - | AQS-HEAT-STUDY-002 section 10.8 (A-M-244) |
+| ground loop | GEO_GHEX | ground | 3 | - | AQS-DUTY-076 |
