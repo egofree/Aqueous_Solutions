@@ -49,7 +49,7 @@ Table 3.1. Document numbers in use
 | AQS-AUTH-001 | `docs-authority/AUTHORITY.md` | Y | 2026-10-24 | CAD authority lock | current |
 | AQS-BAL-KROLL | `notes/KROLL_BALANCE.md` | A | 2026-10-16 | Kroll loop — placeholder balance | current |
 | AQS-BLD-001 | `docs-authority/BUILDING_STACK.md` | G | 2026-10-24 | Building stack: the vertical campus | current |
-| AQS-BLD-010 | `docs-authority/GA_CHECK.md` | A | 2026-10-15 | General arrangement clash check | current |
+| AQS-BLD-010 | `docs-authority/GA_CHECK.md` | B | 2026-10-25 | General arrangement clash check | current |
 | AQS-BLD-011 | `docs-authority/HAZMAT_SEPARATION.md` | B | 2026-10-25 | Incompatible hazardous-material separation | current |
 | AQS-BLD-012 | `docs-authority/ACCESS_CHECK.md` | — | — | Access and electrical working-space check | current |
 | AQS-BLD-013 | `docs-authority/STRUCT_LOADS.md` | A | 2026-10-16 | Equipment structural loads | current |
