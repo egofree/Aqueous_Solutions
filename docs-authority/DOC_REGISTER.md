@@ -217,7 +217,7 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-NOTE-CAST | `notes/ADVANCED_CASTING.md` | A | 2026-10-16 | Advanced casting techniques — foundry applicability | current |
 | AQS-NOTE-PV-REBASE | `notes/pv_sizing_derivation_2026-10-18.md` | A | 2026-10-18 | PV / storage / inverter / roof parametric derivation — Rev AC re-base | current |
 | AQS-NOTE-REVAC-RECOVERY | `notes/rev_ac_recovery_2026-10-17.md` | — | — | Rev AC recovery state — 2026-10-17 | current |
-| AQS-NZ-001 | `docs-authority/CSTR_NOZZLE_SCHEDULE.md` | B | 2026-09-27 | LEACH CSTR 1 nozzle schedule | current |
+| AQS-NZ-001 | `docs-authority/CSTR_NOZZLE_SCHEDULE.md` | C | 2026-10-24 | Nozzle schedule for leach tank CSTR 1 | current |
 | AQS-NZ-002 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | A | 2026-09-27 | Campus unit nozzle schedule | current |
 | AQS-OPS-001 | `docs-authority/OPERATING_PROCEDURES.md` | A | 2026-10-16 | Operating procedures | current |
 | AQS-OPS-002 | `docs-authority/MAINT_PLAN.md` | A | 2026-10-16 | Maintenance plan | current |
@@ -451,8 +451,8 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-TST-001 | `docs-authority/TEST_PLAN.md` | A | 2026-10-15 | Testing and prototyping rollout plan | current |
 | AQS-TST-002 | `docs-authority/ZNBR2_STACK_TEST.md` | A | 2026-10-16 | ZNBR2 stack test | current |
 | AQS-TST-003 | `docs-authority/TEST_RIGS.md` | A | 2026-10-16 | In-house test rigs: build packages | current |
-| AQS-TST-004 | `docs-authority/BENCH_TEST_UPW_POLISH.md` | A | 2026-10-19 | UPW polish module bench test (RO permeance, rejection, EDI resistivity) | current |
-| AQS-TST-005 | `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | A | 2026-10-19 | Hydrogen compressor first-article bench run | current |
+| AQS-TST-004 | `docs-authority/BENCH_TEST_UPW_POLISH.md` | B | 2026-10-24 | UPW polish module bench test (RO permeance, rejection, EDI resistivity) | current |
+| AQS-TST-005 | `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | B | 2026-10-24 | Hydrogen compressor first-article bench run | current |
 | AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | G | 2026-10-24 | Design-tool architecture | current |
 | AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | current |
 | AQS-WLD-001 | `docs-authority/WELD_MAP.md` | A | 2026-09-27 | Weld and joint map | current |

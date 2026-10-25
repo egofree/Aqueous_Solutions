@@ -1,13 +1,22 @@
 # UPW polish module bench test (RO permeance, rejection, EDI resistivity)
 
-Document number: AQS-TST-004
-Revision: A
-Date: 2026-10-19
-Authority: AQS-PLAN-007 X-MFG-34. Test procedure for A-M-176 ("Module permeance and EDI resistivity bench test"), design basis AQS-DUTY-070 (`docs-authority/sizing/UPW_POLISH.md`). Study procedure, not run.
+Document number: AQS-TST-004  
+Revision: B  
+Date: 2026-10-24  
+Basis: design basis AQS-DUTY-070 (`docs-authority/sizing/UPW_POLISH.md`); AQS-PLAN-007 task X-MFG-34; assumption A-M-176 ("Module permeance and EDI resistivity bench test").
 
-Status: **issued 2026-10-19; the run is hardware-gated** - it needs the first RO/EDI module built to the AQS-DUTY-070 design (0.27 m2 flat-sheet TFC element and one 10-cell-pair EDI stack). No test record exists yet; A-M-176 stays `needs_verification` until the data sheets below are completed and the register entry is updated by the assumptions lane.
+| Rev | Description | Date |
+|---|---|---|
+| A | First issue | 2026-10-19 |
+| B | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: scope and terms, captions. Procedure and limits unchanged. | 2026-10-24 |
 
-## 1. Purpose and prediction
+Status: study procedure, issued 2026-10-19; the test has not been run. The run needs hardware: the first RO/EDI module built to the AQS-DUTY-070 design (0.27 m2 flat-sheet TFC element and one 10-cell-pair EDI stack). No test record exists yet. A-M-176 stays `needs_verification` until the data sheets of §6 are completed and the assumptions register is updated with the measured values.
+
+## 1. Purpose, scope and prediction
+
+This procedure tests the first reverse-osmosis (RO) module and electrodeionisation (EDI) stack built for the plant's ultrapure water polish, to replace the assumed membrane and stack values in its design with measured ones. It covers the preconditions, instruments, procedure, acceptance limits, data sheets and safety rules for the bench test. It does not cover the plant installation.
+
+Terms: TFC, thin-film composite membrane. Permeance A: permeate flux per unit pressure. LMH: litres per square metre per hour, the unit of flux. Current efficiency (CE): the fraction of the stack current that moves ions. PT, FT, CT, TE, TT, EI and PI are the instrument tags for pressure, flow, conductivity, temperature, voltage and current, and power. DMM: digital multimeter. RCD: residual-current device. PSV: pressure safety valve. Other abbreviations are in `docs-authority/GLOSSARY.md`.
 
 The design rests on four assumed values that only this test replaces (A-M-176): membrane permeance A = 3 L/(m2 h bar), RO rejection 0.98, EDI current efficiency CE = 0.10, RO pump efficiency 0.40. Predicted duty at the design point (AQS-DUTY-070): flux 20 LMH at 6.9 bar feed (osmotic correction 192 mbar), RO+EDI specific energy 0.55 kWh/m3 of RO feed, 18 W whole train including the 15 W UV-TOC lamp.
 
@@ -23,6 +32,8 @@ The run measures the real values on one module and one stack of the plant design
 6. Calibration: conductivity cells and the DC shunt within certificate; feed pressure gauge deadweight-checked.
 
 ## 3. Instrumentation
+
+Table 3.1. Instruments
 
 | Tag | Measurement | Range | Notes |
 |---|---|---|---|
@@ -48,6 +59,8 @@ The run measures the real values on one module and one stack of the plant design
 
 ## 5. Acceptance limits (from the A-M-176 bases)
 
+Table 5.1. Acceptance limits
+
 | Quantity | Design value (assumed) | Acceptance band | If outside |
 |---|---|---|---|
 | Permeance A | 3 L/(m2 h bar) | >= 2.4 | re-solve area or feed pressure through the pipeline; module count is the lever |
@@ -57,11 +70,13 @@ The run measures the real values on one module and one stack of the plant design
 | Pump efficiency | 0.40 | >= 0.35 | load-list update (AQS-ELEC-007 path) |
 | Train energy | 0.55 kWh/m3 RO feed (no UV) | record and substitute | BMED_UPW_POLISH load re-solved |
 
-The record closes A-M-176 when every row of the data sheets in section 6 is filled and signed; the assumptions lane then sets `needs_verification` false with the measured values and the solver re-runs (driver/register writes are outside the docs lane - handoff).
+The record closes A-M-176 when every row of the data sheets in section 6 is filled and signed; the assumptions register then sets `needs_verification` to false with the measured values, and the solver is re-run.
 
 ## 6. Data sheets
 
-Run header: date, operator, element and stack serials, feed batch TDS, calibration due dates.
+Table 6.1 lists the data sheets. Each run starts with a header: date, operator, element and stack serials, feed batch TDS, calibration due dates.
+
+Table 6.1. Data sheets
 
 | Sheet | Columns |
 |---|---|

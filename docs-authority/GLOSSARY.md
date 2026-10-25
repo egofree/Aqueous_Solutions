@@ -1006,6 +1006,26 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {SP -- Static pressure, the pressure drop a fan must overcome}
 
+{MTO -- Material take-off: the list of parts and quantities taken from the drawings for purchase}
+
+{NPT -- American National Standard taper pipe thread (ASME B1.20.1)}
+
+{TU -- True union: a valve end connection that can be undone without turning the pipe, as in the Spears TU 2000 valve}
+
+{TT -- Temperature transmitter (instrument tag)}
+
+{EI -- Electrical indicator (instrument tag); here the motor or stack power and voltage readings}
+
+{SR -- Speed recorder (instrument tag)}
+
+{CT -- Conductivity transmitter (instrument tag)}
+
+{DMM -- Digital multimeter}
+
+{LMH -- Litres per square metre per hour, the unit of membrane flux}
+
+{RCD -- Residual-current device, which disconnects a circuit on earth leakage}
+
 ## Legal
 
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}

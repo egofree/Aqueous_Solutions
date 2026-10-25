@@ -1,30 +1,47 @@
-# LEACH CSTR 1 nozzle schedule
+# Nozzle schedule for leach tank CSTR 1
 
 Document number: AQS-NZ-001  
-Revision: B  
-Date: 2026-09-27  
+Revision: C  
+Date: 2026-10-24  
 Measurement: metric
 
 | Rev | Change | Date |
 |---|---|---|
 | — | Basic issue | 2026-09-27 |
 | A | GF Type 546 / 546 Pro article numbers (family only) | 2026-09-27 |
-| B | N1–N12 locked. Vented PVC-C FKM SKUs from GF 546 Pro V ASTM list | 2026-09-27 |
+| B | N1–N12 locked. Vented PVC-C FKM article numbers from GF 546 Pro V ASTM list | 2026-09-27 |
+| C | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, scope and terms, captions. Nozzles, positions and article numbers unchanged. | 2026-10-24 |
+
+## 1. Purpose and scope
+
+`LEACH_CSTR_1` is the first stirred leach tank of the wet line. This page fixes each of its nozzles, N1 to N12: service, size, face, position and the isolation valve fitted. It also fixes the valve article numbers used on the material take-off. Valves on other equipment are out of scope, apart from a note on the electrowinning harvest valves.
+
+## 2. Terms
+
+- Nozzle: a connection through the tank wall, floor or lid.
+- DN: nominal diameter in millimetres; "Inch" is the matching nominal pipe size and d the outside diameter of the pipe.
+- Vented ball valve: a ball valve whose ball is drilled to relieve gas trapped in the closed cavity, needed where hypochlorite or Salria liquor gives off gas.
+- FKM: fluoroelastomer seal material; older GF lists use the ISO 1629 code for it.
+- NPT: American taper pipe thread (ASME B1.20.1).
+- Material take-off (MTO): the list of parts and quantities taken from the drawings for purchase.
+- `WALL`, `L`, `W`, `CSTR_H`, `DROP_X` and the other capitals in the position columns are parameters in `models/freecad/params.py`.
+
+Other abbreviations are in `docs-authority/GLOSSARY.md`.
+
+## 3. Materials
 
 Wall: CPVC sheet 16 mm with three FRP belts (AQS-DUTY-050; 12 mm superseded), floor 16 mm, per AQS-STD-002 Rev F (liquor 70–85 °C exceeds PVC-U; the 316L on the duty is withdrawn). HX-5 is a borosilicate glass 3.3 coil, 4.22 m² (AQS-DUTY-049 natural-convection case, 7.941 kW rated), two concentric helices of 25 × 3 mm tube, 53.7 m, on PTFE pads, entering through CPVC stubs at N6a/N6b with FKM gaskets (AQS-STD-002 section 3.3); the Q3 metal piping ends at a dielectric isolating flange outside the tank.
 Not PP, not 316L, not Ti. Cement: Weld-On 724 family on CPVC.
 
-Oxidizer isolation valves are **vented-ball PVC-C FKM** (hypochlorite /
-Salria out-gassing). Non-vented balls are forbidden on N4, N5, N8, N9,
-N12.
+Oxidiser isolation valves are vented-ball PVC-C with FKM seals, because hypochlorite and Salria liquor give off gas. Non-vented balls are not allowed on N4, N5, N8, N9 or N12.
 
-## Article-number lock
+## 4. Valve article numbers
 
-Generation used on the MTO: **Type 546 Pro V**, PVC-C body, PTFE seats,
-FKM O-rings, ASTM solvent-cement sockets + two NPT union ends, vented
-ball. Codes from GF datasheet 2126007 (2026-06).
+The material take-off uses GF Type 546 Pro V: PVC-C body, PTFE seats, FKM O-rings, ASTM solvent-cement sockets with two NPT union ends, vented ball. The codes are from GF datasheet 2126007 (2026-06) (Table 4.1).
 
-| DN | Inch | d (mm) | 546 Pro V PVC-C ASTM FKM | Legacy 546 CPVC FPM vented |
+Table 4.1. Valve article numbers
+
+| DN | Inch | d (mm) | 546 Pro V PVC-C ASTM FKM | Earlier 546 CPVC FKM vented |
 |---|---|---|---|---|
 | 15 | 1/2 | 20 | 163 546 352V | V163 546 352 |
 | 20 | 3/4 | 25 | 163 546 353V | V163 546 353 |
@@ -34,17 +51,15 @@ ball. Codes from GF datasheet 2126007 (2026-06).
 | 50 | 2 | 63 | 163 546 357V | V163 546 357 |
 | 80 | 3 | 90 | 163 546 359V | V163 546 359 |
 
-546 Pro non-vented PVC-C ASTM FKM (utility water / HX only, never
-Salria): 163 546 353 … 163 546 359, same size column.
+The 546 Pro non-vented PVC-C ASTM FKM valves, 163 546 353 to 163 546 359 in the same size order, are for utility water and the heat exchanger only, never Salria.
 
-Codes move between 546 and 546 Pro. Confirm the current GF list against
-this table before a PO. Alternate harvest valve if GF lead time is
-bad: Spears TU 2000 2 in CPVC FKM, vented ball.
+Codes move between the 546 and 546 Pro ranges. Check the current GF list against Table 4.1 before ordering. If the GF lead time is too long, the alternative harvest valve is the Spears true-union valve model "TU 2000", 2 in, CPVC with FKM seals and a vented ball.
 
-## N1–N12
+## 5. Nozzles N1 to N12
 
-Origin: leach outer SW bottom corner. Z is above inner floor unless
-noted. Valve column is empty when the nozzle is a flanged stub only.
+The origin is the bottom corner of the leach tank on its outer south-west side. Z is measured above the inner floor unless noted. The valve column is empty when the nozzle is a flanged stub only (Table 5.1).
+
+Table 5.1. Nozzles
 
 | Tag | Service | DN | Face | X mm | Y mm | Z mm | Valve article | Notes |
 |---|---|---|---|---|---|---|---|---|
@@ -63,6 +78,4 @@ noted. Valve column is empty when the nozzle is a flanged stub only.
 | N11 | Level well | 20 | +Y | WALL+0.40 L | W+2 WALL | 200 | — | PVDF well. |
 | N12 | Spare / sample | 40 | −Y | WALL+0.15 L | 0 | 700 | 163 546 356V | Capped. Vented ball on the cap spool. |
 
-N7 is the weir. It stays on this sheet so the twelve-tag list matches
-the tank faces. EW harvest valves are not CSTR nozzles; they are
-163 546 357V × 9 on the funnel cells (see `mfg_ew_fitout.scad`).
+N7 is the weir. It stays in this table so that the tag list N1 to N12 matches the tank faces. The electrowinning harvest valves are not tank nozzles: they are 163 546 357V × 9 on the funnel cells (see `mfg_ew_fitout.scad`).

@@ -1,17 +1,28 @@
 # Hydrogen compressor first-article bench run
 
-Document number: AQS-TST-005
-Revision: A
-Date: 2026-10-19
-Authority: AQS-PLAN-007 X-MFG-36. Test procedure for A-M-169 ("first-article bench run"), design basis AQS-DUTY-067 Rev B (`docs-authority/sizing/H2_COMPRESSOR.md`). Study procedure, not run.
+Document number: AQS-TST-005  
+Revision: B  
+Date: 2026-10-24  
+Basis: AQS-PLAN-007 task X-MFG-36; assumption A-M-169 ("first-article bench run"); design basis AQS-DUTY-067 Rev B (`docs-authority/sizing/H2_COMPRESSOR.md`).
 
-Status: **issued 2026-10-19; the run is hardware-gated** - it needs the first-article 5-stage diaphragm compressor built to the AQS-DUTY-067 Rev B design. No test record exists yet; A-M-169 stays `needs_verification` until the data sheets below are completed and the register entry is updated by the assumptions lane.
+| Rev | Description | Date |
+|---|---|---|
+| A | First issue | 2026-10-19 |
+| B | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: scope and terms, captions. Procedure and limits unchanged. | 2026-10-24 |
 
-## 1. Purpose and prediction
+Status: study procedure, issued 2026-10-19; the test has not been run. The run needs hardware: the first-article five-stage diaphragm compressor built to the AQS-DUTY-067 Rev B design. No test record exists yet. A-M-169 stays `needs_verification` until the data sheets of §6 are completed and the assumptions register is updated with the measured values.
+
+## 1. Purpose, scope and prediction
+
+This procedure tests the first hydrogen compressor built for the plant, to replace the assumed efficiencies in its design with measured ones. It covers the preconditions, instruments, test phases, acceptance limits, data sheets and safety rules for the bench run. It does not cover installation in the plant.
+
+Terms: PT, TT, FT, EI and SR are the instrument tags for pressure, temperature, flow, motor electrical power and speed. PSV: pressure safety valve. ESD: emergency shutdown. CW: cooling water. LFL: lower flammable limit. Specific work: electrical energy per kilogram of hydrogen compressed. Other abbreviations are in `docs-authority/GLOSSARY.md`.
 
 The Rev B design rests on assumed values that only this run replaces (A-M-169): adiabatic efficiency 0.65, volumetric efficiency 0.80, motor efficiency 0.90, speed 300 rpm, cavity depth 3 mm. Predicted duty (AQS-DUTY-067 Rev B): 11.34 kg/d H2, 10 to 200 bar in 5 stages at ratio 1.821, every stage intercooled to 35 C, stage discharge at or below 125 C against the 135 C API 618 limit for hydrogen-rich service, specific work 1.97 kWh/kg, average 0.933 kW, peak 2.798 kW.
 
-Design stage table (acceptance reference):
+Table 1.1 gives the design stages, the reference for acceptance.
+
+Table 1.1. Design stages
 
 | Stage | In bar | Out bar | Swept cm3/stroke | Diaphragm D mm |
 |---|---|---|---|---|
@@ -36,6 +47,8 @@ Materials as designed: head and plates 17-4PH H1150 / 316L (hydrogen service, M6
 
 ## 3. Instrumentation
 
+Table 3.1. Instruments
+
 | Tag | Measurement | Range | Notes |
 |---|---|---|---|
 | PT-1..5 | stage discharge pressure | 0-25 / 40 / 70 / 125 / 250 bar | one per stage |
@@ -57,6 +70,8 @@ Materials as designed: head and plates 17-4PH H1150 / 316L (hydrogen service, M6
 
 ## 5. Acceptance limits (from the A-M-169 / AQS-DUTY-067 Rev B bases)
 
+Table 5.1. Acceptance limits
+
 | Quantity | Design value (assumed) | Acceptance band | If outside |
 |---|---|---|---|
 | Specific work | 1.97 kWh/kg | <= 2.2 kWh/kg on H2 | stage count/ratio re-solve (Rev B path); below 1.97 substitutes directly |
@@ -67,11 +82,13 @@ Materials as designed: head and plates 17-4PH H1150 / 316L (hydrogen service, M6
 | Average / peak power | 0.933 / 2.798 kW | record and substitute | load-list update (AQS-ELEC-007 path) |
 | Motor efficiency | 0.90 | >= 0.85 | motor spec update (X-INV-02 basis) |
 
-The record closes A-M-169 when every row of the data sheets in section 6 is filled and signed for phases B-D; the assumptions lane then sets `needs_verification` false with the measured values and the solver re-runs (driver/register writes are outside the docs lane - handoff).
+The record closes A-M-169 when every row of the data sheets in section 6 is filled and signed for phases B-D; the assumptions register then sets `needs_verification` to false with the measured values, and the solver is re-run.
 
 ## 6. Data sheets
 
-Run header: date, operators, machine serial, gas and bottle IDs, calibration due dates, cell ventilation checks.
+Table 6.1 lists the data sheets. Each run starts with a header: date, operators, machine serial, gas and bottle IDs, calibration due dates, cell ventilation checks.
+
+Table 6.1. Data sheets
 
 | Sheet | Columns |
 |---|---|

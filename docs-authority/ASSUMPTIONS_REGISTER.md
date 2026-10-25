@@ -1113,10 +1113,12 @@ Table 4.1. Document lines naming an assumption
 
 | ID | Value | Units | Where used | Basis | Replaced by | Task |
 | --- | --- | --- | --- | --- | --- | --- |
-| A-D-b677c3 |  |  | docs-authority/BENCH_TEST_H2_COMPRESSOR.md:8 | Status: **issued 2026-10-19; the run is hardware-gated** - it needs the first-article 5-stage diaphragm compressor built to the AQS-DUTY-067 Rev B design. No te |  | see page |
-| A-D-b79fe2 |  |  | docs-authority/BENCH_TEST_H2_COMPRESSOR.md:70 | The record closes A-M-169 when every row of the data sheets in section 6 is filled and signed for phases B-D; the assumptions lane then sets `needs_verification |  | see page |
-| A-D-893ea5 |  |  | docs-authority/BENCH_TEST_UPW_POLISH.md:8 | Status: **issued 2026-10-19; the run is hardware-gated** - it needs the first RO/EDI module built to the AQS-DUTY-070 design (0.27 m2 flat-sheet TFC element and |  | see page |
-| A-D-7e88cd |  |  | docs-authority/BENCH_TEST_UPW_POLISH.md:60 | The record closes A-M-176 when every row of the data sheets in section 6 is filled and signed; the assumptions lane then sets `needs_verification` false with th |  | see page |
+| A-D-07ec66 |  |  | docs-authority/BENCH_TEST_H2_COMPRESSOR.md:6 | Basis: AQS-PLAN-007 task X-MFG-36; assumption A-M-169 ("first-article bench run"); design basis AQS-DUTY-067 Rev B (`docs-authority/sizing/H2_COMPRESSOR.md`). |  | see page |
+| A-D-8db6a5 |  |  | docs-authority/BENCH_TEST_H2_COMPRESSOR.md:13 | Status: study procedure, issued 2026-10-19; the test has not been run. The run needs hardware: the first-article five-stage diaphragm compressor built to the AQ |  | see page |
+| A-D-97845c |  |  | docs-authority/BENCH_TEST_H2_COMPRESSOR.md:85 | The record closes A-M-169 when every row of the data sheets in section 6 is filled and signed for phases B-D; the assumptions register then sets `needs_verifica |  | see page |
+| A-D-391777 |  |  | docs-authority/BENCH_TEST_UPW_POLISH.md:6 | Basis: design basis AQS-DUTY-070 (`docs-authority/sizing/UPW_POLISH.md`); AQS-PLAN-007 task X-MFG-34; assumption A-M-176 ("Module permeance and EDI resistivity  |  | see page |
+| A-D-0902c7 |  |  | docs-authority/BENCH_TEST_UPW_POLISH.md:13 | Status: study procedure, issued 2026-10-19; the test has not been run. The run needs hardware: the first RO/EDI module built to the AQS-DUTY-070 design (0.27 m2 |  | see page |
+| A-D-7f4182 |  |  | docs-authority/BENCH_TEST_UPW_POLISH.md:73 | The record closes A-M-176 when every row of the data sheets in section 6 is filled and signed; the assumptions register then sets `needs_verification` to false  |  | see page |
 | A-D-5a08c2 |  |  | docs-authority/COLLECTION_BUS.md:6 | Basis: AQS-PLAN-007 task X-ELS-11; assumption A-M-114. |  | see page |
 | A-D-bafc40 |  |  | docs-authority/COMPLETION_DUTIES.md:5 | AQS-DUTY-007. Plant rate is the assumptions-sheet point: leach discharge 2 m³/h at 2 g/L dissolved metal. Concentrate to EW-1 is 0.17 m³/h at 20 g/L. Energy may |  | see page |
 | A-D-5863c2 |  |  | docs-authority/DESIGN_TOOL_ARCHITECTURE.md:491 | These are not to be answered by assumption. |  | see page |
