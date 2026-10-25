@@ -67,6 +67,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/DERIVED_REVISIONS.md` | Rev B, through `_rev_stamp.py`. Purpose and scope added; the count line states its authority (the regeneration command). Tracking rule unchanged. |
 | `docs-authority/EDGE_RATING_DUTY.md` | Rev B. Rewritten to the guide; stays the record of the Rev L edge rating (the Rev M balances live in AQS-DUTY-011 and the regenerated sheets). Banned phrase removed; CHG defined at first use. No rating changed. |
 | `docs-authority/EGRESS_CALC.md` | Rev B. Has the guide structure; study assumptions stay labeled as such and the stair tags are written whole (STAIR_MAINT, not a bare fragment). No width, occupancy or factor changed. |
+| `docs-authority/FAB_WET_INTERFACE.md` | Rev B. Rewritten from the graph: retired units removed, crossings restated with rates from the live edges (S10 WET_BENCH to LEACH_CSTR_1; returns S39/S39B/IA-FAB-SPENT from WAFER_FAB), wet-chemical supply train stated, POLISH_BANK / FAB_UPW / WS_* naming disambiguation kept. Chases and nozzles stay the piping-pass open item. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -105,7 +106,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | Page | Note |
 | --- | --- |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | |
-| `docs-authority/FAB_WET_INTERFACE.md` | |
 | `docs-authority/FAB_WET_REAGENTS.md` | |
 | `docs-authority/FAN_STACK.md` | |
 | `docs-authority/FARM.md` | |
@@ -284,7 +284,6 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/inventory/PIPE_INVENTORY.csv` (AQS-INV-003) | Lines S36 (WS_DOPE, FAB) and S57 (MET_MELT, MFG) have no piping class, material or joint type ("—" and "-"), so `WPS_REGISTER.md` cannot assign them a procedure. The class and material need to be set in the pipe inventory generator. |
 
 | `docs-authority/GROUNDING.md` (AQS-ELEC-005) | Sections 1 and 4 describe the revision A grid (35 × 20 m ring, 12 rods, 1.14 Ω; GPR 494 V). AQS-ELEC-006 section 4 describes grid Rev B (196 × 174 m, 74 rods, 0.128 Ω, GPR 887 V), and `docs-authority/_grounding_study.py` now prints 0.150 Ω with 65 rods (area 25 392 m²). The three need to be reconciled before section 1 is restated. |
-| `docs-authority/FAB_WET_INTERFACE.md` (AQS-IF-FAB-WET-001) | Not rewritten. Much of it no longer matches the graph: FAB_PREP, FAB_TOOL, ETCH_RETURN and CORE_PROCESS are not graph nodes; S10 runs WET_BENCH to LEACH_CSTR_1 (the page says REGEN LEACH); S08 runs LEACH_CSTR_1 to MFG_SHOP (the page lists it as crib solids crossing to the fab); S38 runs WET_BENCH to OIL_FRAC (the page lists it among reagents to the fab); S21 runs ROOF_TANK to HABITATION (the page gives it as a fab ultrapure water feed). It is cited by `WAFER_FAB_EQUIPMENT.md` and two exporters. Proposal: rewrite it from the graph edges between the FAB sector and the wet line, or fold it into `WAFER_FAB_EQUIPMENT.md` and retire the number. |
 
 | `docs-authority/GREENHOUSE_ENVELOPE.md` (AQS-TRR-GH-001) | Streams S40 (overflow to terrace irrigation) and S42 (fertigation return) are named here, in AQS-TRR-001 and in the stream register, but neither is an edge of the plant flow graph. Should they be added to the graph or removed from the pages? |
 | `docs-authority/MEOH_EQUIPMENT.md` (AQS-EQP-MEOH-001) | Only MEOH_SYNTH, MEOH_COND, MEOH_TANK and MEOH_FC are graph nodes. The graph has one MEOH_FERM where the list has MEOH_FERM_DIG and MEOH_FERM_STILL, and the remaining tags are on the list only. Should the list be cut to the graph, or the graph extended? |

@@ -184,7 +184,7 @@ Table 3.1. Document numbers in use
 | AQS-HEAT-STUDY-002 | `notes/heat_sink_study_2026-10-18.md` | A | 2026-10-18 | HL-Q4-REJ heat-sink study — resolving D-GEO_ORC | current |
 | AQS-HSE-001 | `docs-authority/HAZARD_SEPARATION.md` | H | 2026-10-24 | Hazard separation and containment | current |
 | AQS-IF-009 | `docs-authority/PHASE9_INTERFACES.md` | C | 2026-10-09 | Phase 9 interfaces | current |
-| AQS-IF-FAB-WET-001 | `docs-authority/FAB_WET_INTERFACE.md` | A | 2026-09-27 | Fab ↔ wet-line interface | current |
+| AQS-IF-FAB-WET-001 | `docs-authority/FAB_WET_INTERFACE.md` | B | 2026-10-25 | Fab to wet-line interface | current |
 | AQS-INST-001 | `docs-authority/INSTRUMENT_LOOPS.md` | C | 2026-10-21 | Instrument loops | current |
 | AQS-INT-FOUNDRY | `notes/FOUNDRY_INTEGRATION.md` | B | 2026-10-16 | FOUNDRY role fixes — Rev O | current |
 | AQS-INV-001 | `docs-authority/inventory/MOTOR_INVENTORY.md` | B | 2026-10-25 | Motor and actuator inventory | current |
