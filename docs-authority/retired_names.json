@@ -178,6 +178,14 @@
    ],
    "when": "2026-10-25 documentation triage",
    "note": "superseded by IND_MELT and the X-MFG-37 coreless furnace; number AQS-FURN-001 withdrawn"
+  },
+  {
+   "old": "docs-authority/FARM.md",
+   "now": [
+    "docs-authority/duties/GROW_BED.md"
+   ],
+   "when": "2026-10-25 documentation triage",
+   "note": "nitrogen-fixation study of the retired fish/clover/azolla model; number AQS-DUTY-044 withdrawn"
   }
  ],
  "reissued_numbers": [

@@ -108,7 +108,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | Page | Note |
 | --- | --- |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | |
-| `docs-authority/FARM.md` | |
 | `docs-authority/FIRE_PROTECTION.md` | |
 | `docs-authority/FRAME_SYSTEM.md` | |
 | `docs-authority/GAS_DETECTION.md` | |
@@ -262,6 +261,7 @@ Table 5.1. Pages and entries removed
 | `docs-authority/SIDE_FARM.md` (AQS-SIDE-002, number withdrawn) | framed the biofilter and a fish tank, both no longer graph nodes; no citations |
 | `docs-authority/TEXTILES_HEPA.md` (AQS-MFG-TEX-001, number withdrawn) | placeholder with no equipment, streams, duties or model; two authorities not in the repository |
 | `docs-authority/FURNACE.md` (AQS-FURN-001, number withdrawn) | superseded by IND_MELT in FOUNDRY and the 7.5 kW coreless furnace of X-MFG-37; no citations |
+| `docs-authority/FARM.md` (AQS-DUTY-044, number withdrawn) | Nitrogen-fixation study of the retired fish/clover/azolla farm model; no graph unit or page cites it. The live farm units carry their own duty sheets. |
 | `docs-authority/DUTY_CALC.md` (AQS-DUTY-081, number withdrawn) | Orphaned snapshot of a retired duty calculation at an earlier graph revision (it states a unit count that no longer holds); no generator writes it and no document cites it. The duty sheets in `docs-authority/duties/` replace it. |
 | `docs-authority/ISOMETRIC.md` (AQS-ISO-003, number withdrawn) | Orphaned list of close-pipe isometrics; most of its IA-CLOSE edges and several of its units are no longer in the graph, and no generator writes it. The per-line isometric set AQS-ISO-002 (`ISO_SHEETS.md`) replaces it. |
 | Row for `DOCUMENTATION_STYLE.md` in the documentation map (`docs-authority/README.md`) | The page was merged into `DOC_STYLE.md` on 2026-10-24 and no longer exists; its number is a former number of AQS-DOC-002. |
@@ -278,7 +278,6 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/MASS_DISPOSITION.md` (AQS-DUTY-023), `docs-authority/GREENHOUSE_WATER.md` (AQS-DUTY-013), `docs-authority/BALANCE_CLOSE_N.md` (AQS-DUTY-012) | Short records of balance closures at early graph revisions (Rev Y, Rev O and Rev N). They are cited by notes in the graph and by the assumptions register, so they are kept as history. They could move to `docs-authority/internal/` as records. |
 | `docs-authority/ISO_DRAWING_INDEX.md` (AQS-ISO-000) | Marked superseded by AQS-ISO-002 and kept for its PNG and PDF history; cited by `_iso_routes.py` and the task plan. |
 | `docs-authority/HAB_FIXTURES.md` (AQS-HAB-001) | Reviewed 2026-10-25. The number is cited by the graph and the load list, so the page cannot simply be deleted. Its content is out of date: COMPOST_TOILET is no longer a graph node (sanitation is now the blackwater train of AQS-DUTY-063), the edge IA-WASH no longer exists, and S12 now carries 319.6 kg/d, not 339 kg/d. Needs an update against `duties/HAB_WASH.md` and `sizing/SANITATION.md`, or a renumbering decision. |
-| `docs-authority/FARM.md` (AQS-DUTY-044) | Reviewed 2026-10-25. Cited by no other page. Its nitrogen-fixation duty relies on the fish loop and on clover and seed-bank pages (AQS-DUTY-045 to AQS-DUTY-047); the fish units are no longer graph nodes. Update against the current farm or delete. |
 | `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | Reviewed 2026-10-25. It describes the route to the ionic liquid [Bmim] acetate through 1-methylimidazole; the units IMID and QUAT are no longer graph nodes. The number is cited elsewhere, so it is kept until a decision. |
 | `docs-authority/RED_AUDIT.md` (AQS-RED-001) | Rewritten, but two rows need a factual update: the sanitation row names COMPOST_TOILET and the cold-box row names EXPANDER, and neither is a graph node now. |
 | `docs-authority/inventory/PIPE_INVENTORY.csv` (AQS-INV-003) | Lines S36 (WS_DOPE, FAB) and S57 (MET_MELT, MFG) have no piping class, material or joint type ("—" and "-"), so `WPS_REGISTER.md` cannot assign them a procedure. The class and material need to be set in the pipe inventory generator. |

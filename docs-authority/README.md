@@ -174,7 +174,6 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 
 | Document | Number | Title |
 |---|---|---|
-| [FARM.md](FARM.md) | AQS-DUTY-044 | Nitrogen fixation |
 | [FARM_EQUIPMENT.md](FARM_EQUIPMENT.md) | AQS-EQP-FRM-001 | Farm equipment / process list |
 | [NUTRIENT_DOSE.md](NUTRIENT_DOSE.md) | AQS-EQP-NUT-001 | Nutrient dose / N-P process list |
 | [GREENHOUSE_ENVELOPE.md](GREENHOUSE_ENVELOPE.md) | AQS-TRR-GH-001 | Enclosed greenhouse envelope — schedule stub (optional FreeCAD) |

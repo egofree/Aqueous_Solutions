@@ -98,7 +98,6 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-024 | `docs-authority/PATHWAY_AUDIT.md` | A | 2026-10-09 | No placeholders | current |
 | AQS-DUTY-026 | `docs-authority/SOLVENT_ROUTE.md` | C | 2026-10-12 | Sugar and reagent stores | current |
 | AQS-DUTY-038 | `docs-authority/MVS_SIZE.md` | D | 2026-10-12 | Sector size and MVS | current |
-| AQS-DUTY-044 | `docs-authority/FARM.md` | A | 2026-10-09 | Nitrogen fixation | current |
 | AQS-DUTY-049 | `docs-authority/POLYMER_HX_SIZING.md` | A | 2026-10-15 | Polymer exchanger sizing, HX-5 and HX8 | current |
 | AQS-DUTY-050 | `docs-authority/sizing/LEACH_CSTR_1.md` | B | 2026-10-18 | LEACH_CSTR_1 sizing | current |
 | AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | C | 2026-10-18 | EW_1 to EW_9 cell sizing | current |
@@ -541,6 +540,7 @@ Table 6.1. Withdrawn numbers
 | --- | --- | --- | --- |
 | AQS-DUTY-015 | `docs-authority/FARM_WASTE.md` | 2026-10-25 | Set duties for hydrochar composting and electrochemical pretreatment; neither process is in the graph and its units (LIGNO_PRE, COMPOST) are no longer graph nodes. No other page cites it. |
 | AQS-DUTY-034 | `docs-authority/NUTRIENT_BALANCE.md` | 2026-10-25 | Balanced nutrients through a fish, larvae, duckweed and azolla loop; those units are no longer graph nodes. No other page cites it. |
+| AQS-DUTY-044 | `docs-authority/FARM.md` | 2026-10-25 | Nitrogen-fixation study against the retired fish/clover/azolla farm model; those units are no longer graph nodes. The live farm units (GROW_BED, NUTRIENT_DOSE) carry their own duty sheets. |
 | AQS-DUTY-048 | `docs-authority/NUTRIENT_GAPS.md` | 2026-10-25 | Its supply column relied on fish, a urine tank and farm animals that are not in the graph, and it miscited AQS-DUTY-049 for nutrient recovery. No other page cites it; the nutrient rows of AQS-DUTY-063 and NUTRIENT_DOSE carry the live duty. |
 | AQS-DUTY-081 | `docs-authority/DUTY_CALC.md` | 2026-10-25 | Orphaned snapshot of a retired duty calculation at an earlier graph revision; no generator writes it and no document cites it. The unit duty sheets in docs-authority/duties/ replace it. |
 | AQS-FURN-001 | `docs-authority/FURNACE.md` | 2026-10-25 | Sized a 10 kW induction furnace for 50 kg of steel; the graph melting unit is IND_MELT in FOUNDRY and the progress record gives the 7.5 kW coreless furnace (X-MFG-37). Superseded; no other page cites it. |

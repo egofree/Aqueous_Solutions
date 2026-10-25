@@ -61,6 +61,9 @@ WITHDRAWN = {
     'AQS-MFG-TEX-001': ('docs-authority/TEXTILES_HEPA.md', '2026-10-25',   # retired path
                         'Placeholder for a filter-media line with no equipment, streams, duties or model; two of its authorities are not '
                         'documents in this repository. Only the glossary HEPA entry cited it and stands without it.'),
+    'AQS-DUTY-044': ('docs-authority/FARM.md', '2026-10-25',   # retired path
+                     'Nitrogen-fixation study against the retired fish/clover/azolla farm model; those units are no longer '
+                     'graph nodes. The live farm units (GROW_BED, NUTRIENT_DOSE) carry their own duty sheets.'),
     'AQS-FURN-001': ('docs-authority/FURNACE.md', '2026-10-25',   # retired path
                      'Sized a 10 kW induction furnace for 50 kg of steel; the graph melting unit is IND_MELT in FOUNDRY and the '
                      'progress record gives the 7.5 kW coreless furnace (X-MFG-37). Superseded; no other page cites it.'),
