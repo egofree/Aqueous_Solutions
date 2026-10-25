@@ -47,13 +47,6 @@ for p in sorted(glob.glob('models/mfg/*/params.json')):
         val = v.get('value') if isinstance(v, dict) else v
         note = v.get('note', '') if isinstance(v, dict) else 'assumption'
         scan.append(dict(id=hid('A-P-', p + k), value=val, units='mm' if k.endswith('_mm') else '', where=f'{p} {k}', basis=note[:160], task=f'unit task 10 ({u})'))
-pat = re.compile(r'[^.|]*\(?[Aa]ssumption[^.|]*')
-for p in sorted(glob.glob('docs-authority/**/*.md', recursive=True)):
-    if is_index_output(p): continue   # other indexes (standards list, task plan, ...) are not sources
-    if '/notes/' in p or '/internal/' in p: continue   # working records are not assumption sources (REWRITE_TODO section 1)
-    for i, l in enumerate(open(p, errors='ignore'), 1):
-        if 'ssumption' in l:
-            scan.append(dict(id=hid('A-D-', f'{p}:{l.strip()}'), value='', units='', where=f'{p}:{i}', basis=l.strip()[:160].replace('|', '/'), task='see page'))
 # Scanned ids are content hashes; identical lines (repeated table headers on one page) would share an id.
 # Later repeats take a -2, -3 ... suffix in scan order, so every id is unique and stable while the page is.
 _seen = {}
@@ -95,7 +88,7 @@ Assumption: a value used in the design that is not yet confirmed by measurement,
 
 Curated entry: an assumption written into `assumptions_manual.json` with its full record (Table A). Curated entries have IDs beginning `A-M-`.
 
-Scanned entry: a value the generator finds automatically because it is marked as a study or assumed value. IDs beginning `A-G-` come from the plant graph, `A-P-` from model parameter files and `A-D-` from document lines. A scanned entry has no sensitivity assessment of its own; the owning task assesses it when the task closes. Where `assumptions_complete.json` gives a basis and replacing test for a scanned entry (matched on the Where column), the register shows them.
+Scanned entry: a value the generator finds automatically because it is marked as a study or assumed value. IDs beginning `A-G-` come from the plant graph, `A-P-` from model parameter files and A scanned entry has no sensitivity assessment of its own; the owning task assesses it when the task closes. Where `assumptions_complete.json` gives a basis and replacing test for a scanned entry (matched on the Where column), the register shows them.
 
 Table A. Columns of the register
 
@@ -121,7 +114,7 @@ Table 1.1. Curated assumptions
 | --- | --- | --- | --- | --- | --- | --- | --- |''']
 for m in man:
     out.append('| ' + ' | '.join(cell(m[k]) for k in REQ) + ' |')
-for title, pre in (('2. Graph study and assumed values', 'A-G-'), ('3. Model parameters', 'A-P-'), ('4. Document lines naming an assumption', 'A-D-')):
+for title, pre in (('2. Graph study and assumed values', 'A-G-'), ('3. Model parameters', 'A-P-')):
     out += ['', f'## {title}', '', f'Table {title[0]}.1. {title[3:]}', '', '| ID | Value | Units | Where used | Basis | Replaced by | Task |', '| --- | --- | --- | --- | --- | --- | --- |']
     out += ['| ' + ' | '.join(cell(s.get(k, '')) for k in ('id', 'value', 'units', 'where', 'basis', 'replaced_by', 'task')) + ' |' for s in scan if s['id'].startswith(pre)]
 open('docs-authority/ASSUMPTIONS_REGISTER.md', 'w').write('\n'.join(out) + '\n')

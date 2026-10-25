@@ -636,6 +636,49 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {BH -- Graph revision BH, the revision whose rates were restored verbatim into CRYO_ASU and its edges (owner ruling 2026-10-18, D-AIR).}
 {PQ -- Photosynthetic quotient, the mol CO2 fixed per mol O2 released by the grow bed (1.0 in the closure layer, TAIZ2015).}
 {MJ -- Megajoule, 10^6 joule. The latent heat of vaporisation of water is 2.454 MJ/kg at 20 C (NIST_WEBBOOK); the basis of the AHU latent load and the site evaporative rejection charge.}
+{TF -- Transfer function: the rate rule that sets a graph edge's flow (closure by difference, stoichiometry or a published relation), tagged in the rate note (X-PAR-02).}
+{LT -- Level transmitter (ISA 5.1).}
+{TEFC -- Totally enclosed fan-cooled: motor enclosure class (IEC 60034).}
+{BOD -- Biochemical oxygen demand: the biodegradable-organic load of a water stream.}
+{FOG -- Fats, oils and grease: the floatable organic fraction of a waste water stream.}
+{CIP -- Clean-in-place: recirculated chemical cleaning of equipment without opening it.}
+{CGA -- Compressed Gas Association: the US cylinder-valve and gas-equipment standard body.}
+{NIST -- National Institute of Standards and Technology, source of the property tables cited in the balance layer.}
+{BVAD -- Baseline Values and Assumptions Document, NASA/TP-2015-218570: the life-support baseline values source (BVAD2022).}
+{EDBM -- Electrodialysis with bipolar membranes: the BMED process class.}
+{OA -- Outside air (ventilation intake).}
+{DHF -- Dilute hydrofluoric acid: the wet-bench oxide etch class.}
+{ASF -- Anderson-Schulz-Flory: the chain-growth distribution that sets the hydrocarbon cut spread of an oligomerization or synthesis product.}
+{WC -- Water column: pressure head unit (mmWC).}
+{SW -- Seawater (site profiles: the seawater source and rejection mode).}
+{ALK -- The alkaline house scrubber class (ALK_SCRUBBER).}
+{GPM -- Gallons per minute (US liquid flow unit).}
+{TIG -- Tungsten inert gas welding (GTAW).}
+{HCFC -- Hydrochlorofluorocarbon.}
+{ADS -- The adsorption chiller class (ADS_CHILL): driver heat, chilled-water output.}
+{CDRA -- Carbon dioxide removal assembly: the sorbent-bed CO2 removal train of the habitation air loop.}
+{NOX -- Nitrogen oxides (NO and NO2, reported as NO2): combustion and scrubber chemistry species.}
+{ORR -- Oxygen reduction reaction: the fuel-cell cathode reaction.}
+{RQ -- Respiratory quotient: mol CO2 exhaled per mol O2 consumed (0.87 study crew value).}
+{SF -- Supply feed: the electrical feed edge prefix of the load list (SF-<UNIT>).}
+{SWL -- Safe working load: the rated capacity of a hoist or lifting device.}
+{LSHH -- High-high level switch: the 90 percent overfill trip element (ISA 5.1).}
+{TL -- Long-period transition period of the design response spectrum (ASCE 7-22 Chapter 22 maps).}
+{HE -- Helium (CRYO_HE noble-gas stream).}
+{VAC -- Vacuum (the vacuum melting and casting chain: VAC_IND, VAC_CAST).}
+{WO -- Work order (the per-unit fabrication document).}
+{GDE -- Gas diffusion electrode: the porous gas-side electrode class of the peroxide and fuel cells.}
+{STOI -- Stoichiometric: the exact reaction proportion, used in rate-note derivations.}
+{SDC -- Seismic design category (IBC 1613 assignment from the design spectral accelerations).}
+{ICC -- International Code Council, publisher of the IBC.}
+{ELYZ -- The electrolyser plant unit tag (H2O_ELYZ node and its SF feed).}
+{POLYF -- The fluoropolymer resin stream prefix (POLY_F outputs).}
+{QPL -- Qualified products list: the buyer's subset of a standard class.}
+{CEA -- Controlled environment agriculture: indoor crop production under artificial light and climate control (the Cornell CEA lettuce handbook is the DLI and efficacy source).}
+{DLC -- DesignLights Consortium: the horticultural lighting qualification programme whose QPL lists LED efficacy ranges.}
+{GCR -- Ground coverage ratio: photovoltaic array area divided by the ground or roof area it occupies; PVWatts applies a default when the site has none.}
+{HDS -- Hydrostatic design stress: the long-term rated stress of a thermoplastic pipe material (CPVC 2000 psi class; manufacturer derating tables apply at temperature).}
+{SIC -- Silicon carbide (the SIC_FURNACE deoxidation-carbon charge and its CO return).}
 {PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
 
 {UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}
