@@ -72,7 +72,7 @@ This is a design-derived study HAZOP: deviations, causes and safeguards come fro
 | temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
 | level | High | inflow above outflow, outlet blocked | overflow to the bund | LSH trip of the feed | - |
 | level | Low | outlet pump runs on, leak | pump dry-running | LT low alarm | - |
-| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | check valve at the pump discharge of PROD_C5_C10 | - |
+| flow | Reverse | downstream pressure above upstream on a pump stop | back-flow of incompatible liquor | gravity or vented inlets: no back-pressure source | - |
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### BAGHOUSE (baghouse)

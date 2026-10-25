@@ -32,7 +32,7 @@ VAR
   REMINLT-01_PV : REAL ;  (* A-M-182 liquid height )
   REMINPT-01_PV : REAL ;  (* no design pressure on the graph )
   REMINTE-01_PV : REAL ;  (* band by service )
-  VCD_TRAINFT-01_PV : REAL ;  (* S25 normal 12.86 L/h )
+  VCD_TRAINFT-01_PV : REAL ;  (* S25 normal 12.85 L/h )
   VCD_TRAINFT-02_PV : REAL ;  (* S28 normal 0.74 L/h )
   VCD_TRAINFT-03_PV : REAL ;  (* IA-VCD-BD normal 0.28 L/h )
   VCD_TRAINLT-01_PV : REAL ;  (* A-M-182 liquid height )
@@ -185,10 +185,10 @@ END_VAR
   REMINTE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  VCD_TRAINFT-01_SP := 12.86 ;  (* graph basis: S25 normal 12.86 L/h )
+  VCD_TRAINFT-01_SP := 12.85 ;  (* graph basis: S25 normal 12.85 L/h )
   FB_PI_VCD_TRAINFT-01( PV := VCD_TRAINFT-01_PV, SP := VCD_TRAINFT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  VCD_TRAINFT-01_ALARM_HI := 14.146 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  VCD_TRAINFT-01_ALARM_LO := 11.574 ;
+  VCD_TRAINFT-01_ALARM_HI := 14.135000000000002 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  VCD_TRAINFT-01_ALARM_LO := 11.565 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   VCD_TRAINFT-02_SP := 0.74 ;  (* graph basis: S28 normal 0.74 L/h )

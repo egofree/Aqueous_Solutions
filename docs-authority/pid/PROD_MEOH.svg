@@ -44,13 +44,13 @@
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">MEOH_TANK</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">IA-MEOH-PROD</text>
-<text x="24" y="253" font-size="10" text-anchor="start">28.1 kg/d · DN15 M1</text>
+<text x="24" y="253" font-size="10" text-anchor="start">28.0 kg/d · DN15 M1</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">NORTH_DOCK</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-MEOH-SHIP</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">28.1 kg/d · DN15 M1</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">28.0 kg/d · DN15 M1</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N2</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 1 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
@@ -60,7 +60,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-PROD_MEOH</text>
 <text x="1124" y="526" font-size="9">P&amp;ID PROD_MEOH (product, CRYO sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev e127b409   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 37f7a58c   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 9bffd7c81c83fa7e   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 786ca74b25967382   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

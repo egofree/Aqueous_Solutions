@@ -1,20 +1,20 @@
 seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
-1,ELEC,BACKUP_GEN,function test; then helium sensitive leak test (ASME B31.3 345.8),4,SIF-082,0.06,Ar N2 O2
+1,ELEC,BACKUP_GEN,function test; then helium sensitive leak test (ASME B31.3 345.8),4,SIF-082,0.01,Ar N2 O2
 1,ELEC,FUEL_CELL,function test,5,SIF-014,,
 1,ELEC,LOAD_AGG,function test,2,-,,
 1,ELEC,PV_ARRAY,fill or function test per AQS-QA-001 R8,2,-,,
 1,ELEC,RECTIFIER,function test,2,-,,
 1,ELEC,SOL_ARK_60K,function test,2,-,,
-1,ELEC,ZNBR2,function test,7,SIF-158 SIF-163,761.32,Fe HCl other_metals
+1,ELEC,ZNBR2,function test,7,SIF-158 SIF-163,761.27,Fe HCl other_metals
 1,ELEC,ZNBR2_BR2_REGEN,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",5,SIF-159,,
 2,PUMPED_HYDRO,HYDRO_SET,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,-,,
 3,WTR,BLACK_DIGEST,fill or function test per AQS-QA-001 R8,4,SIF-083,21.06,solids
-3,WTR,BMED_UPW_POLISH,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",8,SIF-086,308.58,
+3,WTR,BMED_UPW_POLISH,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",8,SIF-086,308.52,
 3,WTR,CATCH_TANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",4,SIF-089,,
 3,WTR,GREY_TREAT,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",7,SIF-112,29.54,solute
-3,WTR,REMIN,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-140,175.23,solute
-3,WTR,ROOF_TANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",11,SIF-141,232.68,solute
-3,WTR,VCD_TRAIN,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",7,SIF-144,333.16,Fe HCl other_metals solute
+3,WTR,REMIN,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-140,175.17,solute
+3,WTR,ROOF_TANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",11,SIF-141,232.62,solute
+3,WTR,VCD_TRAIN,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",7,SIF-144,333.11,Fe HCl other_metals solute
 4,HEAT,ADS_CHILL,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,SIF-073,,
 4,HEAT,DRY_COOLER,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,SIF-075,,
 4,HEAT,MAU_HX,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",1,SIF-074,,
@@ -44,8 +44,8 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 6,CRYO,CRYO_HX_Q4,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,-,,
 6,CRYO,CRYO_N2,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,SIF-012,,N2
 6,CRYO,CRYO_O2,"hydrostatic test at 1.5 x design, 10 min hold; then helium sensitive leak test (ASME B31.3 345.8)",2,SIF-013,,Ar O2
-6,CRYO,H2O_ELYZ,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-114,83.65,
-6,CRYO,PROD_MEOH,fill or function test per AQS-QA-001 R8,5,SIF-139,28.15,CH3OH
+6,CRYO,H2O_ELYZ,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-114,83.62,
+6,CRYO,PROD_MEOH,fill or function test per AQS-QA-001 R8,5,SIF-139,28.03,CH3OH
 6,CRYO,PROD_O2,fill or function test per AQS-QA-001 R8; then helium sensitive leak test (ASME B31.3 345.8),2,-,,Ar O2
 6,CRYO,RELIEF_CRYO,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",1,-,,
 7,GEO,GEO_GHEX,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,SIF-016,,
@@ -70,16 +70,16 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 8,DIGESTER,FLOAT_SINK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-108,,Fe HCl other_metals
 8,DIGESTER,F_RECOVER,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",4,SIF-045 SIF-110,0.02,Fe HCl other_metals
 8,DIGESTER,HX8,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,SIF-022,,
-8,DIGESTER,LEACH_CSTR_1,fill or function test per AQS-QA-001 R8,4,SIF-119,5122.91,Cl2 Fe HCl O2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned
+8,DIGESTER,LEACH_CSTR_1,fill or function test per AQS-QA-001 R8,4,SIF-119,5122.86,Cl2 Fe HCl O2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned
 8,DIGESTER,LI_RECOVER,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-120,,
 8,DIGESTER,POLISH_BANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-132,3520.31,
 8,DIGESTER,P_CA,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",3,-,,
 8,DIGESTER,SALT_FEED,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,-,,
-9,MEOH,MEOH_COND,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-121,26.72,solute
+9,MEOH,MEOH_COND,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-121,26.65,solute
 9,MEOH,MEOH_FC,function test; then helium sensitive leak test (ASME B31.3 345.8),7,SIF-122,5.0,Ar Fe HCl O2 other_metals solute
 9,MEOH,MEOH_FERM,fill or function test per AQS-QA-001 R8,2,SIF-023,,
 9,MEOH,MEOH_SYNTH,fill or function test per AQS-QA-001 R8,5,SIF-024,,CO2
-9,MEOH,MEOH_TANK,function test,6,SIF-123,34.64,
+9,MEOH,MEOH_TANK,function test,6,SIF-123,34.52,
 10,OIL,AFTERBURNER,pressure test as R2; then helium sensitive leak test (ASME B31.3 345.8),3,SIF-001 SIF-002,,Ar O2
 10,OIL,C29_RECYCLE,pressure test as R2,4,SIF-087,5.87,
 10,OIL,GREASE_CA,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",3,-,,

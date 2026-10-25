@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2492.000 | 2491.827 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2492.000 | 2491.688 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -906,6 +906,8 @@ All solved units close.
 | fire_tank_refill_h | 8 | h to refill the reserve from the normal supply | A-M-314 | yes |
 | fire_pipe_schedule | "Sch 40 black steel ASTM A53, hydraulically designed (density/area); pipe-schedule method not used where EH1 is present" | text | NFPA13_2025 | — |
 | fire_zone_hazard | {"L-1 wet process": "OH2", "L0 shops/pyrolysis/oils/reagents/genset/flow battery": "EH1", "L0 electrical rooms": "pre-action, OH2 void", "L1 farm/digesters": "OH1", "L1 HAB west half": "LH", "H2/O2/CO2 receiver bays": "OH2 + NFPA 15 water spray", "ZNBR2 enclosure": "OH2 + NFPA 855 purge"} | NFPA 13 hazard class per zone | NFPA13_2025 | — |
+| ELEC.generation-train.BACKUP_GEN.eta_h2 | 0.3 | - spark-ignition engine efficiency on hydrogen (same engine, dual-fuel) | A-M-383 | — |
+| ELEC.generation-train.BACKUP_GEN.h2_lhv_kWh_kg | 33.33 | kWh/kg hydrogen lower heating value (120 MJ/kg) | A-M-383 | — |
 
 ## 6. References
 
@@ -1817,3 +1819,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-380 | ASTM D790-25 (previously 17): clause numbers, tables and val clause | For each listed file, look up every clause, table and value cited with ASTM D790 in the 25 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
 | A-M-381 | ASTM D1785-21a (previously 15): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with ASTM D1785 in the 21a text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
 | A-M-382 | ASTM D2855-20 (previously 15): clause numbers, tables and va clause | For each listed file, look up every clause, table and value cited with ASTM D2855 in the 20 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
+| A-M-383 | Dual-fuel spark-ignition engine: 30 % efficiency on hydrogen - ; kWh/kg | Exercise run on hydrogen at 30 % load: measure fuel mass and electrical output; confirm efficiency within 10 % of 0.30 |

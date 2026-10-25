@@ -3,9 +3,9 @@ CRYO,-,CRYO_AHU_COND_CONDENSABLE,transfer pump S70 to FLUE_KO,BLDC,42 mm (NEMA 1
 CRYO,CRYO,CRYO_AHU,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 CRYO,CRYO,CRYO_AHU,transfer pump IA-HVAC-COND to ROOF_TANK,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,BLDC driver,1,"67.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 CRYO,CRYO,CRYO_AHU,transfer pump S68 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,BLDC driver,1,"79.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-CRYO,CRYO,CRYO_ASU,air compressor (cold box feed),induction IE3,IEC 100L / 2.2 kW,1.4186,480 V 3-ph,S1,fixed speed,1,graph continuous_kw x 0.85 (assumed)
-CRYO,CRYO,CRYO_ASU,expander brake / generator,induction IE3,IEC 63 / 0.12 kW,0.0834,208 V 3-ph,S1,fixed speed,1,assumed
-CRYO,CRYO,CRYO_H2,cryocooler compressor,hermetic induction (scroll),1.1 kW hermetic,0.9327,480 V 3-ph,S1,fixed speed,1,graph continuous_kw (assumed all compressor)
+CRYO,CRYO,CRYO_ASU,air compressor (cold box feed),induction IE3,IEC 100L / 2.2 kW,1.4086,480 V 3-ph,S1,fixed speed,1,graph continuous_kw x 0.85 (assumed)
+CRYO,CRYO,CRYO_ASU,expander brake / generator,induction IE3,IEC 63 / 0.12 kW,0.0829,208 V 3-ph,S1,fixed speed,1,assumed
+CRYO,CRYO,CRYO_H2,cryocooler compressor,hermetic induction (scroll),1.1 kW hermetic,0.9325,480 V 3-ph,S1,fixed speed,1,graph continuous_kw (assumed all compressor)
 DIGESTER,BMED_CRU,BMED_ACID,"stack loop pumps (acid, base, salt)",induction IE3,IEC 71 / 0.37 kW,0.25,480 V 3-ph,S1,fixed speed,3,assumed 3 per stack
 DIGESTER,BMED_CRU,BMED_ACID,transfer pump IA-BMED-01 to WS_NITRIC,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"1.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 DIGESTER,BMED_CRU,BMED_ACID,transfer pump IA-EVAP_ACID-FEED to EVAP_ACID,BLDC,42 mm (NEMA 17 flange),0.0037,24 V DC,S1,BLDC driver,1,"1304.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
@@ -112,25 +112,25 @@ GAS,SCRUB,BAGHOUSE,pulse-jet solenoid valve,solenoid,"ISO 15218 coil, 22 mm",0.0
 GAS,SCRUB,BAGHOUSE,transfer pump IA-BAG-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"7.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 GAS,SCRUB,H2_DRYER,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"2.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 GAS,scrubber,NOX_SCRUB,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
-GAS,scrubber,NOX_SCRUB,transfer pump IA-NOX-CO2 to CRYO_ASU,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"21.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-GAS,scrubber,NOX_SCRUB,transfer pump IA-NOX-H2O to ROOF_TANK,BLDC,42 mm (NEMA 17 flange),0.0006,24 V DC,S3,BLDC driver,1,"221.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+GAS,scrubber,NOX_SCRUB,transfer pump IA-NOX-CO2 to CRYO_ASU,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"21.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+GAS,scrubber,NOX_SCRUB,transfer pump IA-NOX-H2O to ROOF_TANK,BLDC,42 mm (NEMA 17 flange),0.0006,24 V DC,S3,BLDC driver,1,"221.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 GAS,scrubber,NOX_SCRUB,transfer pump IA-NOX-N to NUTRIENT_DOSE,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"20.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 GAS,scrubber,NOX_SCRUB,transfer pump IA-NOX-N2 to CRYO_ASU,BLDC,42 mm (NEMA 17 flange),0.0006,24 V DC,S3,BLDC driver,1,"196.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 GEO,heat_pump,GEO_HP,ground-loop circulator,induction IE3,IEC 63 / 0.12 kW,0.1,208 V 3-ph,S1,fixed speed,1,assumed
-GEO,heat_pump,GEO_HP,heat pump compressor,hermetic induction (scroll),0.75 kW hermetic,0.6174,480 V 3-ph,S1,fixed speed,1,graph continuous_kw x 0.9 (assumed)
+GEO,heat_pump,GEO_HP,heat pump compressor,hermetic induction (scroll),0.75 kW hermetic,0.6179,480 V 3-ph,S1,fixed speed,1,graph continuous_kw x 0.9 (assumed)
 GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09",induction IE3,IEC 63 / 0.12 kW,0.09,208 V 3-ph,S1,fixed speed,1,BOM (sized)
 MEOH,ferment,MEOH_FERM,PIR insulation 50 mm with PE cladding; daily recirculation p,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 MEOH,iem_fc,MEOH_FC,cathode air blower,BLDC,57 mm (NEMA 23 flange),0.05,24 V DC,S1,BLDC driver,1,assumed 5 % parasitic
 MEOH,iem_fc,MEOH_FC,coolant pump,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,assumed 1 %
 MEOH,iem_fc,MEOH_FC,transfer pump S81 to MEOH_COND,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"7.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-MEOH,reactor,MEOH_SYNTH,transfer pump IA-MEOH-H2O to MEOH_COND,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"19.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-MEOH,reactor,MEOH_SYNTH,transfer pump S75 to MEOH_TANK,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"34.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+MEOH,reactor,MEOH_SYNTH,transfer pump IA-MEOH-H2O to MEOH_COND,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"19.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+MEOH,reactor,MEOH_SYNTH,transfer pump S75 to MEOH_TANK,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"34.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 MEOH,tank,MEOH_TANK,on/off valve IA-MEOH-PROD,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,on/off,1,assumed one per dosed line
 MEOH,tank,MEOH_TANK,on/off valve IA-MEOH-REST,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,on/off,1,assumed one per dosed line
 MEOH,tank,MEOH_TANK,on/off valve MEOH_TO_TFE,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,on/off,1,assumed one per dosed line
 MEOH,tank,MEOH_TANK,on/off valve MEOH_TO_VDF,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,on/off,1,assumed one per dosed line
 MEOH,tank,MEOH_TANK,on/off valve S76,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,on/off,1,assumed one per dosed line
-MEOH,tank,MEOH_TANK,transfer pump IA-MEOH-PROD to PROD_MEOH,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"28.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+MEOH,tank,MEOH_TANK,transfer pump IA-MEOH-PROD to PROD_MEOH,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"28.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 MEOH,tank,MEOH_TANK,transfer pump IA-MEOH-REST to MEOH_FC,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"1.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 MEOH,tank,MEOH_TANK,transfer pump MEOH_TO_TFE to TFE_SYN,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 MEOH,tank,MEOH_TANK,transfer pump MEOH_TO_VDF to VDF_SYN,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"0.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
@@ -185,9 +185,7 @@ OIL,cut_tank,PROD_C19_C28,on/off valve CUT-3-OUT,solenoid,"ISO 15218 coil, 22 mm
 OIL,cut_tank,PROD_C19_C28,transfer pump CUT-3-OUT to MFG_SHOP,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"3.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,cut_tank,PROD_C29,on/off valve C29_RECYCLE,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,on/off,1,assumed one per dosed line
 OIL,cut_tank,PROD_C29,transfer pump C29_RECYCLE to C29_RECYCLE,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"5.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-OIL,cut_tank,PROD_C5_C10,on/off valve CUT-1-OUT,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,on/off,1,assumed one per dosed line
 OIL,cut_tank,PROD_C5_C10,on/off valve IA-C5-POLY,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S3,on/off,1,assumed one per dosed line
-OIL,cut_tank,PROD_C5_C10,transfer pump CUT-1-OUT to BACKUP_GEN,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 OIL,cut_tank,PROD_C5_C10,transfer pump IA-C5-POLY to POLY_OLEFIN,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"0.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 POLYMERS,former,POWDER_RESIN,Blower with oversize-return duct to the hopper,BLDC,57 mm (NEMA 23 flange),0.02,24 V DC,S1,BLDC driver,1,BOM; shaft assumed (A-M-119)
 POLYMERS,reactor,HF_GEN,Acid day tank D160 x 300 mm with metering pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
@@ -217,7 +215,7 @@ WTR,dose,REMIN,on/off valve S26,solenoid,"ISO 15218 coil, 22 mm",0.008,24 V DC,S
 WTR,dose,REMIN,transfer pump IA-POT-01 to ROOF_TANK,BLDC,42 mm (NEMA 17 flange),0.0005,24 V DC,S3,BLDC driver,1,"165.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,dose,REMIN,transfer pump S26 to HABITATION,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"10.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,evaporator,VCD_TRAIN,transfer pump IA-VCD-BD to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"6.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
-WTR,evaporator,VCD_TRAIN,transfer pump S25 to BMED_UPW_POLISH,BLDC,42 mm (NEMA 17 flange),0.0009,24 V DC,S3,BLDC driver,1,"308.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+WTR,evaporator,VCD_TRAIN,transfer pump S25 to BMED_UPW_POLISH,BLDC,42 mm (NEMA 17 flange),0.0009,24 V DC,S3,BLDC driver,1,"308.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,evaporator,VCD_TRAIN,transfer pump S28 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"17.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,treat,GREY_TREAT,transfer pump IA-GREY-01 to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0007,24 V DC,S3,BLDC driver,1,"244.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 WTR,treat,GREY_TREAT,transfer pump S29 to VCD_TRAIN,BLDC,42 mm (NEMA 17 flange),0.0003,24 V DC,S3,BLDC driver,1,"104.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"

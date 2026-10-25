@@ -466,12 +466,8 @@ OIL,cut_tank,PROD_C29,on/off valve C29_RECYCLE power,DC power pair,16 AWG,TC-ER 
 OIL,cut_tank,PROD_C29,on/off valve C29_RECYCLE signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 OIL,cut_tank,PROD_C29,transfer pump C29_RECYCLE to C29_RECYCLE power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 OIL,cut_tank,PROD_C29,transfer pump C29_RECYCLE to C29_RECYCLE signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-OIL,cut_tank,PROD_C5_C10,on/off valve CUT-1-OUT power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
-OIL,cut_tank,PROD_C5_C10,on/off valve CUT-1-OUT signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 OIL,cut_tank,PROD_C5_C10,on/off valve IA-C5-POLY power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 OIL,cut_tank,PROD_C5_C10,on/off valve IA-C5-POLY signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-OIL,cut_tank,PROD_C5_C10,transfer pump CUT-1-OUT to BACKUP_GEN power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
-OIL,cut_tank,PROD_C5_C10,transfer pump CUT-1-OUT to BACKUP_GEN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 OIL,cut_tank,PROD_C5_C10,transfer pump IA-C5-POLY to POLY_OLEFIN power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 OIL,cut_tank,PROD_C5_C10,transfer pump IA-C5-POLY to POLY_OLEFIN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 POLYMERS,former,POWDER_RESIN,Blower with oversize-return duct to the hopper power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"

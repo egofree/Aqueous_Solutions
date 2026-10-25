@@ -37,7 +37,7 @@ flowchart LR
   BACKUP_GEN["BACKUP_GEN 0.01 kW"] -->|S47| BUS
   FUEL_CELL["FUEL_CELL 4.00 kW"] -->|S51| BUS
   MEOH_FC["MEOH_FC 1.00 kW"] -->|S79| BUS
-  PV_ARRAY["PV_ARRAY 336.83 kW"] -->|IA-PV-01| BUS
+  PV_ARRAY["PV_ARRAY 336.81 kW"] -->|IA-PV-01| BUS
   BUS(["SOL_ARK_60K 480 V 3φ, 35 × 60 = 2100 kW inverters"])
   BUS --> MCC["MCC-1 480 V 1.2 kW"]
   BUS --> XF["T-1 15 kVA 480–208/120 V"] --> PP["PP-1 0.4 kW"]
@@ -71,8 +71,8 @@ flowchart LR
   BUS -->|SF-MET_SCRUB| MET_SCRUB["MET_SCRUB 2.12 kW"]
   BUS -->|SF-EVAP_ACID| EVAP_ACID["EVAP_ACID 1.50 kW"]
   BUS -->|SF-EVAP_BASE| EVAP_BASE["EVAP_BASE 1.33 kW"]
-  BUS -->|SF-CRYO_ASU| CRYO_ASU["CRYO_ASU 1.67 kW"]
-  BUS -->|SF-H2O_ELYZ| H2O_ELYZ["H2O_ELYZ 21.45 kW"]
+  BUS -->|SF-CRYO_ASU| CRYO_ASU["CRYO_ASU 1.66 kW"]
+  BUS -->|SF-H2O_ELYZ| H2O_ELYZ["H2O_ELYZ 21.44 kW"]
   BUS -->|SF-IND_MELT| IND_MELT["IND_MELT 0.89 kW"]
   BUS -->|SF-VAC_IND| VAC_IND["VAC_IND 0.00 kW"]
   BUS -->|SF-RF_HEAT| RF_HEAT["RF_HEAT 0.00 kW"]
@@ -132,7 +132,7 @@ Table 1. Loads on the main bus, largest first
 | PP-1 208/120 V | WS_PEROX | 0.03 | 0.1 | 15 | AQS-ELEC-003 calculated |
 | SOL_ARK 480 V | EXT_HALL | 68.28 | 91.3 | 125 | graph SF-EXT_HALL |
 | SOL_ARK 480 V | RECT-EW (EW_1–EW_9) | 38.66 | 51.7 | 70 | AQS-ELEC-004 bounding AC |
-| SOL_ARK 480 V | H2O_ELYZ | 21.45 | 28.7 | 40 | graph SF-H2O_ELYZ |
+| SOL_ARK 480 V | H2O_ELYZ | 21.44 | 28.7 | 40 | graph SF-H2O_ELYZ |
 | SOL_ARK 480 V | RECTIFIER | 12.00 | 16.0 | 25 | graph S17 |
 | SOL_ARK 480 V | ZNBR2 | 6.67 | 8.9 | 15 | graph IA-ESS-ZNBR2-CHG |
 | SOL_ARK 480 V | AL_POT | 5.66 | 7.6 | 15 | graph SF-AL_POT |
@@ -140,8 +140,8 @@ Table 1. Loads on the main bus, largest first
 | SOL_ARK 480 V | MFG_SHOP | 2.55 | 3.4 | 15 | graph SF-MFG_SHOP |
 | SOL_ARK 480 V | MET_SCRUB | 2.12 | 2.8 | 15 | graph SF-MET_SCRUB |
 | SOL_ARK 480 V | GROW_BED | 2.05 | 2.7 | 15 | graph S20 |
-| SOL_ARK 480 V | CRYO_ASU | 1.67 | 2.2 | 15 | graph SF-CRYO_ASU |
 | SOL_ARK 480 V | OIL_PYRO | 1.66 | 2.2 | 15 | graph SF-OIL_PYRO |
+| SOL_ARK 480 V | CRYO_ASU | 1.66 | 2.2 | 15 | graph SF-CRYO_ASU |
 | SOL_ARK 480 V | EVAP_ACID | 1.50 | 2.0 | 15 | graph SF-EVAP_ACID |
 | SOL_ARK 480 V | EVAP_BASE | 1.33 | 1.8 | 15 | graph SF-EVAP_BASE |
 | SOL_ARK 480 V | ALK_SCRUBBER | 1.11 | 1.5 | 15 | graph SF-ALK_SCRUBBER |
@@ -208,11 +208,11 @@ Table 2. Bus totals
 
 | Item | kW |
 | --- | --- |
-| Sources on the bus (graph edges) | 346.84 |
-| Demand on the bus (this page) | 186.41 |
+| Sources on the bus (graph edges) | 346.82 |
+| Demand on the bus (this page) | 186.40 |
 | Inverter rating (SOL_ARK_60K) | 2100.0 |
 | Shortfall against sources | -160.42 |
-| Shortfall against inverter | -1913.59 |
+| Shortfall against inverter | -1913.60 |
 
 ## Findings
 

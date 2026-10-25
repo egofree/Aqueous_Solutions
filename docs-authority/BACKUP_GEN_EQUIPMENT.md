@@ -1,7 +1,7 @@
 # Backup generator equipment list
 
 Document number: AQS-EQP-GEN-001  
-Revision: C  
+Revision: D  
 Date: 2026-10-24  
 Process flow diagram: AQS-PFD-GEN-001 (`backup_gen_pfd.png`)  
 Basis: AQS-PWR-002; `ELECTRICAL.md` (AQS-ELC-001, Sol-Ark generator port); `POWER/Power_System_overview.md`; the exhaust-recapture intent of the gas system; AQS-STR-001 streams S45 to S47; AQS-HSE-001 and AQS-MF-001 (hydrogen maximum allowable quantity).  
@@ -12,6 +12,7 @@ Licence: CERN-OHL-S-2.0.
 | A | — | Basic issue: H₂ genset closes Sol-Ark GEN spare | 2026-09-27 |
 | B | 1 | Study continuous / capacity bounds from Faraday + ELECTRICAL | 2026-10-01 |
 | C | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, scope and terms, captions; sections renumbered. Tags, ratings and rules unchanged. | 2026-10-24 |
+| D | 2 | Dual fuel restored (owner decision 2026-10-24): hydrogen first from CRYO_H2 (S45), the C5-C10 cut as fallback (CUT-1-OUT) with a reserve sized for the outage edge case; the retired S05 source removed. | 2026-10-24 |
 
 ## 1. Purpose and scope
 
@@ -41,16 +42,18 @@ Table 3.1. Backup generator units
 
 ## 4. Fuel
 
-Plant hydrogen is the primary fuel (Table 4.1).
+The generator is a backup, and it is dual-fuel so that a shortage of one fuel does not take it out of service. It burns plant hydrogen first and the C5-C10 cut from the oil line when hydrogen is short (Table 4.1). The selection rule and the fallback reserve are computed by `flow_graph/param/backup_fuel.py` and written on the plant graph: the priority list on `BACKUP_GEN` (`fuel_selection`) and the reserve on `PROD_C5_C10` (`genset_reserve_kg`).
 
-Table 4.1. Fuel options
+Table 4.1. Fuel priority
 
-| Fuel | Role |
-|---|---|
-| **Plant H₂** (S05 / CRYO_H2 / S24 holdup) | **Primary** — closes GEN with on-site stream |
-| Diesel / biodiesel | External contingency only — not named M1 duty |
-| Biogas (S30) | Deferred — no gas-cleanup schedule |
-| Methanol (root 06 DMFC) | Fuel-cell path — not this genset |
+| Priority | Fuel | Stream and source | When it is used |
+|---|---|---|---|
+| 1 | Plant H₂ | S45 from CRYO_H2 | Whenever the store holds hydrogen. The monthly NFPA 110 exercise runs on it. |
+| 2 | C5-C10 cut | CUT-1-OUT from PROD_C5_C10 | When hydrogen is short. Zero in normal operation. |
+| 3 | Methanol or digester gas | Not piped to the generator | Candidates only, if both fuels above are short. |
+| — | Diesel or biodiesel | External delivery | Outside contingency; not a design fuel. |
+
+The fallback reserve is sized for the edge case in which the hydrogen store is empty when an outage starts. The generator then carries the whole critical list (AQS-ELEC-007) for the critical-autonomy period (driver `crit_autonomy_d`) on the C5-C10 cut. The reserve is that energy divided by the engine efficiency and the heating value of the cut (A-M-134). It stays in PROD_C5_C10 and is not shipped; the stock turns over because the tank receives the fractionator cut continuously. Assumption A-M-383 records the engine efficiency on hydrogen.
 
 ## 5. Electrical connection
 

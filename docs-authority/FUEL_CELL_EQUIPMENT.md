@@ -1,7 +1,7 @@
 # Fuel-cell equipment list
 
 Document number: AQS-EQP-FC-001  
-Revision: D  
+Revision: E  
 Date: 2026-10-24  
 Process flow diagram: AQS-PFD-FC-001 (`fuel_cell_pfd.png`)  
 Basis: AQS-FC-001; `ELECTRICAL.md` (AQS-ELC-001, Sol-Ark battery DC port, 160–700 V); `POWER/Power_System_overview.md` (older PEM narrative only); AQS-PWR-002 (the backup generator is not the fuel cell); AQS-STR-001 streams S49 to S53; AQS-HSE-001 and AQS-MF-001 (hydrogen maximum allowable quantity; closing S24); AQS-EQP-CRY-001; AQS-EQP-GEO-001 (Q4 header).  
@@ -13,6 +13,7 @@ Licence: CERN-OHL-S-2.0.
 | B | 1 | Study continuous bounds | 2026-10-01 |
 | C | 1 | REQ-FC-CONT 4 kW_dc; MeOH peer; stand-in SI-FC-01 | 2026-10-01 |
 | D | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, scope and terms, captions; the study bounds given a section number. Tags, ratings and rules unchanged. | 2026-10-24 |
+| E | 2 | Fuel stream corrected to S49 from CRYO_H2 (S05 is retired). | 2026-10-24 |
 
 ## 1. Purpose and scope
 
@@ -55,7 +56,7 @@ Table 4.1. Chemistry and fluids
 | Item | Spec intent |
 |---|---|
 | Stack chemistry | **PEM** (proton-exchange membrane) |
-| Fuel | Dried process H₂ (S05 / CRYO_H2 / S24 holdup) |
+| Fuel | Dried process H₂, S49 from CRYO_H2 |
 | Oxidizer | CRYO_O2 (S02 class); air-breathing = deferred vendor option |
 | Coolant / heat | Closed stack loop → FC_HX_Q4 → Q4 (< 80 °C into life air) |
 | Product water | Liquid to condensate class; not potable without remin + UV |

@@ -203,7 +203,9 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     # of the MFG_SHOP aggregate) - loads promoted - MFG_SHOP 12 -> tool-list average, LEACH_CSTR_1 2 ->
     # 0.75 agitator, GLASS_DIGEST 1.5 -> 0.09, MEOH_SYNTH 0.5 -> 0.7388, GEO_HP 2 -> S44/COP 0.686 - took
     # the demand 260.96 -> 240.99 kW, the converged EXT_HALL 97.49 -> 90.57 kW and the bus with it)
-    assert gen["kw_sum"] == pytest.approx(336.8304 + 4.0 + 0.0082)   # PV 336.8304 (X-ELS-02 rev C: circulator + metering split, A-M-317)
+    # PV 336.8304 -> 336.8121 (2026-10-24): the BACKUP_GEN exercise burns hydrogen first (S45), which needs less O2
+    # than the C5-C10 cut, so CRYO_ASU and H2O_ELYZ draw less and the balancing PV average follows (A-M-383)
+    assert gen["kw_sum"] == pytest.approx(336.8121 + 4.0 + 0.0082)   # PV 336.8121 (hydrogen-first genset exercise, A-M-383)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(

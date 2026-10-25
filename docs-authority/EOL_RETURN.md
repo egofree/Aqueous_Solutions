@@ -208,7 +208,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_HX_Q4 | 1 | 0 | 0 | 0 | 0 |
 | MET_MELT | 0 | 3 | 0 | 0 | 0 |
 | MET_SCRUB | 0 | 4 | 0 | 0 | 0 |
-| MF-01 x 107 | 3 | 1 | 2 | 0 | 0 |
+| MF-01 x 106 | 3 | 1 | 2 | 0 | 0 |
 | MF-02 x 58 | 3 | 1 | 2 | 0 | 0 |
 | MF-03 x 27 | 5 | 1 | 2 | 0 | 0 |
 | MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |
@@ -224,7 +224,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-14 x 3 | 7 | 0 | 3 | 0 | 0 |
 | MF-15 x 1 | 7 | 0 | 3 | 0 | 0 |
 | MF-16 x 1 | 7 | 0 | 3 | 0 | 0 |
-| MF-17 x 37 | 7 | 0 | 3 | 0 | 0 |
+| MF-17 x 36 | 7 | 0 | 3 | 0 | 0 |
 | MF-18 x 0 | 7 | 0 | 3 | 0 | 0 |
 | MF-19 x 3 | 7 | 0 | 3 | 0 | 0 |
 | MF-20 x 0 | 7 | 0 | 3 | 0 | 0 |

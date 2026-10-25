@@ -22,6 +22,7 @@ X-PAR-12 rate from those bases on each run.
 import math
 F = 96485.0; MOL_A = 86400/F             # mol e- per A-day
 from . import drivers as _drv1; _D = _drv1.load()   # X-PAR-01
+from . import backup_fuel as _BF   # BACKUP_GEN fuel priority (hydrogen first) and fallback reserve
 CE, FO2, VCELL = _D['ew_cathode_CE']['value'], _D['ew_anode_O2_frac']['value'], _D['ew_cell_voltage_V']['value']   # D8: cell voltage single-sourced from drivers (was a 2.12 hardcode)
 KWH_H2 = _D['pem_kWh_kg_H2']['value']; HHV_H2 = _D['CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.h2_hhv_kWh_kg']['value']; PSH_ELY = _D['ely_window_h']['value']   # PEM system kWh/kg; HHV kWh/kg (CRC_H2); electrolyser runs on the PV window (A-M-133, ely_window_h)
 QY, ABS, LED, DLI = (_D[k]['value'] for k in ('bed_quantum_yield', 'bed_absorptance', 'led_efficacy_umol_J', 'bed_DLI')); BED_M2 = _D['FARM.grow-bed-train.GROW_BED.fallback_area_m2']['value']   # BED_M2 fallback only; live area comes from GROW_BED params (A-M-229)
@@ -209,13 +210,16 @@ def tf(g):
         B['gen_full'] = {k: v(k) for k in ('CUT-1-OUT', 'S45', 'S47', 'S46', 'CUT-1')}
     gf = B['gen_full']; kw_gen = float(N['BACKUP_GEN']['params'].get('rated_kW', GEN_KW))
     e_ex = kw_gen*EX_LOAD*EX_H*12/365                         # kWh/d average
-    fuel = e_ex/(GEN_ETA*LHV_C5)                               # kg/d C5-C10
-    N['BACKUP_GEN']['params'].update(rated_kW=kw_gen, duty_basis=f'standby; NFPA 110 8.4.2 monthly exercise {EX_H} h at {EX_LOAD:.0%} load = {e_ex:.3f} kWh/d average; fuel {fuel:.3f} kg/d at {GEN_ETA:.0%} on {LHV_C5} kWh/kg LHV (TURNS2012)')
+    _fp = _BF.plan(N, _D, e_ex)                                # owner 2026-10-24: hydrogen first (S45), C5-C10 cut as fallback
+    fuel, h2f = _fp['cut_kg_d'], _fp['h2_kg_d']                # normal operation: the exercise burns hydrogen; the cut is held in reserve
+    N['BACKUP_GEN']['params'].update(rated_kW=kw_gen, duty_basis=f'standby; NFPA 110 8.4.2 monthly exercise {EX_H} h at {EX_LOAD:.0%} load = {e_ex:.3f} kWh/d average; hydrogen first: {h2f:.4f} kg/d H2 at {_fp["eta_h2"]:.0%} on {_fp["lhv_h2"]} kWh/kg LHV; C5-C10 cut as fallback, {_fp["reserve_cut_kg"]:.0f} kg reserve in PROD_C5_C10 (flow_graph/param/backup_fuel.py)', fuel_selection=_BF.selection(_fp))
+    N['PROD_C5_C10'].setdefault('params', {}).update(genset_reserve_kg=round(_fp['reserve_cut_kg'], 1), genset_reserve_basis='BACKUP_GEN fallback fuel, not shipped: ' + _BF.selection(_fp)[1]['reserve_basis'])
     N['BACKUP_GEN']['continuous_kw'] = {'value': round(e_ex/24, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: standby, NFPA 110 exercise average'}
-    put('CUT-1-OUT', fuel, 'genset exercise fuel (NFPA 110 8.4.2)'); put('S45', 0.0, 'genset runs on the C5-C10 cut only'); put('S47', e_ex/24, 'exercise energy, daily average')
+    put('CUT-1-OUT', fuel, 'genset fallback fuel (priority 2): zero in normal operation; drawn when hydrogen is short'); put('S45', h2f, 'genset fuel priority 1: hydrogen for the NFPA 110 8.4.2 exercise'); put('S47', e_ex/24, 'exercise energy, daily average')
     poly = v('IA-C5-POLY') if 'IA-C5-POLY' in E else 0.0        # olefin feed drawn at the cut tank (AQS-DUTY-073)
     put('IA-C5-SHIP', v('CUT-1') - fuel - poly, f'C5-C10 product not burned: shipped at the dock less the olefin draw {poly:.4f} kg/d (AQS-DUTY-073)')
-    r = fuel/gf['CUT-1-OUT']
+    e_full = gf['CUT-1-OUT']*GEN_ETA*LHV_C5 + gf['S45']*_fp['eta_h2']*_fp['lhv_h2']
+    r = e_ex/e_full if e_full > 0 else 0.0                     # exercise share of the old full-duty fuel energy (equals fuel/gf cut when the cut was the fuel)
     # --- combustion O2
     gen_b = v('S45')*7.937 + v('CUT-1-OUT')*(11.75*32.0/107.2); og = EXC*gen_b
     og_full = EXC*(gf['S45']*7.937 + gf['CUT-1-OUT']*(11.75*32.0/107.2))
@@ -223,7 +227,7 @@ def tf(g):
     x_air = (B['IA-GEN-AIR'] - og_full)*r
     if x_air > -1e-6: put('IA-GEN-AIR', x_air, 'N2 diluent, scaled with the exercise fuel')   # R8: Rev AC froze S45 pre-standby but IA-GEN-AIR post-standby; re-basis is R10's
     put('S46', v('IA-GEN-AIR') + og + v('CUT-1-OUT') + v('S45'), 'genset exhaust = inputs')
-    dn2 = B['IA-GEN-AIR'] - v('IA-GEN-AIR'); dC = gf['CUT-1-OUT']*(1 - r)*90.0/107.2; dH = gf['CUT-1-OUT']*(1 - r)*17.2/107.2 + gf['S45']   # fuel mass that left on the old graph as C and H
+    dn2 = B['IA-GEN-AIR'] - v('IA-GEN-AIR'); dC = (gf['CUT-1-OUT'] - v('CUT-1-OUT'))*90.0/107.2; dH = (gf['CUT-1-OUT'] - v('CUT-1-OUT'))*17.2/107.2 + gf['S45'] - v('S45')   # fuel C and H no longer burned, relative to the old graph
     gco2 = v('CUT-1-OUT')*(7.5*32.0/107.2); gh2o = gen_b - gco2
     ab_co, ab_org = vv('IA-SIC-CO')*0.5711, v('NCG_TO_AB')*0.03*1.066 + 0.3195 + v('S11')*0.001*1.066
     oa = EXC*(ab_co + ab_org); put('IA-AB-O2', oa, f'1.10 x (CO {ab_co:.3f} + organics {ab_org:.3f}); S11 is 99.8 % water')
@@ -416,7 +420,7 @@ def report(gb, ga, L, S):
          f"| process draws from HDR_O2 | {lb['sink']:.2f} | {drawa - Ea['IA-GEN-O2'] - Ea['IA-AB-O2']:.2f} |",
          f"| combustion O2 (genset {c['gen']:.2f}, afterburner {c['ab']:.2f}, 10 % excess) | {lb['need']:.2f} not on graph (burned in N2) | {c['gen'] + c['ab']:.2f} on IA-GEN-O2, IA-AB-O2 |",
          f"| species gap | **{before_gap:.1f}** | **0.0** |", f"| surplus to PROD_O2 (cylinders, shipped) | - | {Ea['IA-O2-PROD']:.2f} |", '',
-         f"BACKUP_GEN is standby (owner Q-003): NFPA 110 8.4.2 monthly 30 min exercise at 30 % of {GEN_KW:.0f} kW, {Ea['CUT-1-OUT']:.3f} kg/d fuel daily average (was {Eb['CUT-1-OUT']:.2f} continuous); {Ea['IA-C5-SHIP']:.2f} kg/d C5-C10 shipped as product.", '',
+         f"BACKUP_GEN is standby (owner Q-003): NFPA 110 8.4.2 monthly 30 min exercise at 30 % of {GEN_KW:.0f} kW, {Ea['S45']:.4f} kg/d hydrogen daily average (fuel priority 1; the C5-C10 cut, {Ea['CUT-1-OUT']:.3f} kg/d, is the fallback; was {Eb['CUT-1-OUT']:.2f} kg/d cut continuous); {Ea['IA-C5-SHIP']:.2f} kg/d C5-C10 shipped as product.", '',
          f"The electrolyser is sized by H2 demand (fuel cell {Ea['S49']:.2f}, genset {Ea['S45']:.2f}, methanol {Ea['S74']:.2f} kg/d), not by the O2 gap; its O2 exceeds the corrected gap and the surplus is product, not vent.", '',
          '## 2. Chlorine and EW hydrogen (kg/d)', '', '| | before | after |', '| --- | --- | --- |',
          f"| EW current, A-cell (P_dc / 2.12 V) | {ew['I']:,.0f} | same |",

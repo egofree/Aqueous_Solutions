@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 7.425 kg/d. Mass out 7.425 kg/d. Electrical duty 0.0000 kW. In: CUT-1 7.425 kg/d (fractionator cut). Out: CUT-1-OUT 0.0539 kg/d (C5-C10 fuel from the tank); IA-C5-SHIP 7.077 kg/d (C5-C10 product shipped); IA-C5-POLY 0.2941 kg/d (C5-C10 naphtha olefin feed).
+1. Basis. Mass in 7.425 kg/d. Mass out 7.425 kg/d. Electrical duty 0.0000 kW. In: CUT-1 7.425 kg/d (fractionator cut). Out: CUT-1-OUT 0 kg/d (C5-C10 fuel from the tank); IA-C5-SHIP 7.131 kg/d (C5-C10 product shipped); IA-C5-POLY 0.2941 kg/d (C5-C10 naphtha olefin feed).
 
 2. Size.
 - V = (11.16/1000)×(168/24) = 0.0781 m³. 7 days of the cut.

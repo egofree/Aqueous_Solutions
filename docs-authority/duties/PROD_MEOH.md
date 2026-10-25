@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 28.15 kg/d. Mass out 28.15 kg/d. Electrical duty 0.0000 kW. In: IA-MEOH-PROD 28.15 kg/d (methanol product). Out: IA-MEOH-SHIP 28.15 kg/d (methanol shipped at the dock).
+1. Basis. Mass in 28.03 kg/d. Mass out 28.03 kg/d. Electrical duty 0.0000 kW. In: IA-MEOH-PROD 28.03 kg/d (methanol product). Out: IA-MEOH-SHIP 28.03 kg/d (methanol shipped at the dock).
 
 2. Size.
-- Envelope 1150×1150×1450 mm, 1.918 m³. That box over this flow would be 1635.3 h if it were full. It is not a residence time.
+- Envelope 1150×1150×1450 mm, 1.918 m³. That box over this flow would be 1642.3 h if it were full. It is not a residence time.
 - Envelope: L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064).
 - Storage sizing (AQS-DUTY-064, graph design_storage): hold_d 14; V_nom_m3 0.6267; D_mm 850; H_mm 1150; wall_mm 3.
 - Node note: X-PAR-12: methanol product store (carbon leaves the plant as product, no vent).

@@ -1,4 +1,5 @@
 unit,sector,gas,type,mounting,alarm,trip,qty,voting
+BACKUP_GEN,ELEC,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
 CRYO_H2,CRYO,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),3,2oo3 to SIF (AQS-CTL-003)
 EW_1,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
 EW_2,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2

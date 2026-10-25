@@ -5130,5 +5130,15 @@
     "units": "NFPA 13 hazard class per zone",
     "ref": "NFPA13_2025",
     "note": "Zone map refined from AQS-ELEC-009 release sources and AQS-SAF-007 separation layout; hazard class flagged pending the owner hall programme (X-FIR-01 Done-when)."
+  },
+  "ELEC.generation-train.BACKUP_GEN.eta_h2": {
+    "value": 0.3,
+    "units": "- spark-ignition engine efficiency on hydrogen (same engine, dual-fuel)",
+    "register": "A-M-383"
+  },
+  "ELEC.generation-train.BACKUP_GEN.h2_lhv_kWh_kg": {
+    "value": 33.33,
+    "units": "kWh/kg hydrogen lower heating value (120 MJ/kg)",
+    "register": "A-M-383"
   }
 }

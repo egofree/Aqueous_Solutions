@@ -6698,5 +6698,23 @@
   ],
   "needs_verification": true,
   "verification_test": "For each listed file, look up every clause, table and value cited with ASTM D2855 in the 20 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match"
+ },
+ {
+  "id": "A-M-383",
+  "title": "BACKUP_GEN runs on hydrogen first; engine efficiency and hydrogen LHV",
+  "value": "Dual-fuel spark-ignition engine: 30 % efficiency on hydrogen (the same as on the C5-C10 cut, A-M-134); hydrogen LHV 33.33 kWh/kg (120 MJ/kg)",
+  "units": "- ; kWh/kg",
+  "where": "flow_graph/param/drivers.json ELEC.generation-train.BACKUP_GEN.eta_h2 and h2_lhv_kWh_kg; flow_graph/param/backup_fuel.py",
+  "basis": "Owner decision 2026-10-24: the generator is the backup and stays; hydrogen first, another plant fuel when hydrogen is short. Hydrogen LHV is a property value (about 120 MJ/kg); the efficiency is taken equal to the C5-C10 value pending an engine selection",
+  "sensitivity": "Hydrogen draw S45 and the electrolyser load scale inversely with the efficiency; the C5-C10 reserve does not depend on it",
+  "replaced_by": "Selected dual-fuel engine data sheet (efficiency at 30 % load on hydrogen)",
+  "task": "X-PAR-12",
+  "files": [
+   "flow_graph/param/backup_fuel.py",
+   "flow_graph/param/o2_close.py",
+   "docs-authority/BACKUP_GEN_EQUIPMENT.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Exercise run on hydrogen at 30 % load: measure fuel mass and electrical output; confirm efficiency within 10 % of 0.30"
  }
 ]

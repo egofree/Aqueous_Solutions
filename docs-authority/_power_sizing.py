@@ -9,6 +9,7 @@ import json, math, os, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from flow_graph.param import drivers as DR
 from flow_graph.param.sizing import power as PW
+from flow_graph.param import backup_fuel as BF
 _d = DR.load()   # X-PAR-03: yield, derate, round trip, night hours from drivers.json
 ew=json.loads(subprocess.run(['python3','docs-authority/_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
@@ -16,10 +17,7 @@ _g=json.load(open('flow_graph/plant_flow_graph.json')); _gc={n['unit_id']:n for 
 PSH=DR.val(_d,'pv_yield_kWh_kWp_d'); DER=DR.val(_d,'pv_system_derate'); RT=DR.val(_d,'storage_round_trip'); NIGHT=DR.val(_d,'night_hours'); AUT_CRIT=DR.val(_d,'crit_autonomy_d')   # D7: single drivers source (was a 2.0 hardcode duplicated in o2_close PSH_STORE_D); PSH from AQS-SITE-002 (NREL PVWatts)
 GEN_KW=DR.val(_d,'backup_gen_rated_kW')   # D3: single governed source (AQS-ELEC-007/AQS-RED-001 NFPA 110 rule; replaces the local ceil(crit x 1.25 / 5) x 5 formula, one of four drifting BACKUP_GEN sizes)
 INV=_gc['SOL_ARK_60K']['params']['kW']/max(_gc['SOL_ARK_60K']['params'].get('count',1),1)   # inverter block = graph kW / SOL_ARK count (49 x 60 kW), not a single-inverter hardcode
-CRIT={'HABITATION':DR.val(_d,'ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW'),'CRYO_H2':round(_gc['CRYO_H2']['params'].get('compressor_design',{}).get('P_peak_kW',4.0),2)}   # CRYO_H2 peak (AQS-DUTY-067) from the graph
-if 'CRYO_ASU' in _gc: CRIT['CRYO_ASU']=round(_gc['CRYO_ASU']['continuous_kw']['value'],2)   # AQS-DUTY-069 duty 1.66 kW — NOT the legacy 18 kW critical value (A-M-238)
-if 'GROW_BED' in _gc: CRIT['GROW_BED']=DR.val(_d,'ELEC.generation-train.BACKUP_GEN.crit_GROW_BED_kW')
-CRIT['controls and instruments']=DR.val(_d,'ELEC.generation-train.BACKUP_GEN.crit_controls_kW')
+CRIT=BF.critical_list(_gc,_d)   # single source of the critical list (flow_graph/param/backup_fuel.py), also used for the BACKUP_GEN fallback-fuel reserve
 # Graph-native bounding demand (A-M-231): max(node continuous_kw, SOL_ARK_60K elec feed) per unit;
 # EW_1..EW_9 cell DC is covered by the RECT-EW bounding AC row below; storage-charge, curtailment and
 # generation (bus, PV, FC, DMFC, standby genset, ZNBR2) are not demand.

@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "9bffd7c81c83fa7e8acb973528cc08647f5bd03a58fea6dcfd338168c2f9bb87",
+  "graph_sha256": "786ca74b25967382c55c1ad4b6fccb7334b11ebc1931d32c37302f538091a5b5",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 336.83,
-   "calc_kw": 336.83,
+   "kw": 336.812,
+   "calc_kw": 336.812,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 179.744,
-   "calc_kw": 179.744,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 817.0 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 179.734,
+   "calc_kw": 179.734,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -34,8 +34,8 @@
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 21.452,
-   "calc_kw": 21.452,
+   "kw": 21.445,
+   "calc_kw": 21.445,
    "basis": "X-PAR-12 TF: 9.36 kg/d H2 x 55.0 kWh/kg / 24 h; rated 85.8 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
@@ -149,15 +149,6 @@
    "sector": "DIGESTER"
   },
   {
-   "unit": "CRYO_ASU",
-   "role": "\u2014",
-   "kw": 1.669,
-   "calc_kw": 1.669,
-   "basis": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.41 + blower 0.044 + CO2 compressor 0.082 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake).",
-   "class": "calculated",
-   "sector": "CRYO"
-  },
-  {
    "unit": "OIL_PYRO",
    "role": "\u2014",
    "kw": 1.664,
@@ -165,6 +156,15 @@
    "basis": "X-ELS-02: node aligned to its calculated SF-OIL_PYRO feed (retort heat / heater efficiency); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to OIL_PYRO continuous_kw..",
    "class": "calculated",
    "sector": "OIL"
+  },
+  {
+   "unit": "CRYO_ASU",
+   "role": "\u2014",
+   "kw": 1.657,
+   "calc_kw": 1.657,
+   "basis": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.40 + blower 0.044 + CO2 compressor 0.081 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake).",
+   "class": "calculated",
+   "sector": "CRYO"
   },
   {
    "unit": "EVAP_ACID",
@@ -214,9 +214,9 @@
   {
    "unit": "CRYO_H2",
    "role": "load",
-   "kw": 0.933,
-   "calc_kw": 0.933,
-   "basis": "X-MFG-36 (A-M-169): 11.34 kg/d x 1.97 kWh/kg; peak 2.80 kW over the run hours.",
+   "kw": 0.932,
+   "calc_kw": 0.932,
+   "basis": "X-MFG-36 (A-M-169): 11.33 kg/d x 1.97 kWh/kg; peak 2.80 kW over the run hours.",
    "class": "calculated",
    "sector": "CRYO"
   },
@@ -250,9 +250,9 @@
   {
    "unit": "GEO_HP",
    "role": "load",
-   "kw": 0.686,
-   "calc_kw": 0.686,
-   "basis": "X-ELS-02: Q4-bus lift S44 2.1952 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6860 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
+   "kw": 0.687,
+   "calc_kw": 0.687,
+   "basis": "X-ELS-02: Q4-bus lift S44 2.1972 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6866 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
    "class": "calculated",
    "sector": "GEO"
   },
@@ -813,8 +813,8 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 89,
-  "graph_sum_kW": 141.08,
-  "calc_sum_kW": 141.08,
+  "graph_sum_kW": 141.07,
+  "calc_sum_kW": 141.07,
   "connected_load_kW": 141.1,
   "connected_calculated_kW": 141.0,
   "connected_standby_kW": 0.1,

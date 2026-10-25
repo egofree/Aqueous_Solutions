@@ -30,7 +30,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S19 | BAGHOUSE→LEACH_CSTR_1 | Closed | present | 0.0 kg/d | From register: BAGHOUSE fines → LEACH CSTR 1 |
 | S21 | ROOF_TANK→HABITATION | Closed | present | 120.68 kg/d | — |
 | S24 | H2_DRYER→RELIEF_H2 | — | present | 0.0 kg/d | NFPA 2 relief. Not freight. |
-| S25 | VCD_TRAIN→BMED_UPW_POLISH | Closed | present | 308.578502 kg/d | presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18 |
+| S25 | VCD_TRAIN→BMED_UPW_POLISH | Closed | present | 308.519678 kg/d | presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18 |
 | S26 | REMIN→HABITATION | Closed | present | 10.0 kg/d | — |
 | S27 | FAB_UPW_TANK→WET_BENCH | Closed | present | 60.000181 kg/d | From register: FAB_UPW_TANK → WET_BENCH |
 | S28 | VCD_TRAIN→LEACH_CSTR_1 | Closed | present | 17.877059 kg/d | presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18 |
@@ -46,8 +46,8 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S39 | WAFER_FAB→LEACH_CSTR_1 | — | present | 3.310001 kg/d | NFPA 400: no organics into chlorate leach. |
 | S39B | WAFER_FAB→OIL_FRAC | — | present | 0.0 kg/d | Organics to the oil line. |
 | S43 | GEO_GHEX→GEO_HP_CLOSED_LOOP | Closed | present | 0.0 kW | From register: GEO_GHEX → GEO_HP (closed loop) |
-| S45 | CRYO_H2→BACKUP_GEN | Claimed / Partial | present | 0.0 kg/d | — |
-| S46 | BACKUP_GEN→NOX_SCRUB | — | present | 0.267975 kg/d | NFPA 37 exhaust. Not life water. |
+| S45 | CRYO_H2→BACKUP_GEN | Claimed / Partial | present | 0.019728 kg/d | — |
+| S46 | BACKUP_GEN→NOX_SCRUB | — | present | 0.198104 kg/d | NFPA 37 exhaust. Not life water. |
 | S49 | CRYO_H2→FUEL_CELL | Claimed / Partial | present | 4.8 kg/d | — |
 | S50 | CRYO_O2→FUEL_CELL | Claimed | present | 38.4 kg/d | — |
 | S52 | FUEL_CELL→VCD_TRAIN | Claimed | present | 42.876623 kg/d | presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18 |
@@ -65,21 +65,21 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S67 | AFTERBURNER_FLUE→FLUE_KO | — | present | 117.42759 kg/d | Knockout before any CO2 claim. |
 | S67B | FLUE_KO→CRYO_CO2 | — | present | 14.050492 kg/d | Only the CO2-rich cut. Reject N2/O2/NOx. |
 | S68 | CRYO_AHU→LEACH_CSTR_1 | — | present | 78.987901 kg/d | Acid condensate stays process. |
-| S69 | ZNBR2→ZNBR2_BR2_REGEN | — | present | 752.830205 kg/d | Own tower. |
-| S69B | ZNBR2_BR2_REGEN→ZNBR2 | — | present | 752.830205 kg/d | Return to the bromine tank only. |
+| S69 | ZNBR2→ZNBR2_BR2_REGEN | — | present | 752.788322 kg/d | Own tower. |
+| S69B | ZNBR2_BR2_REGEN→ZNBR2 | — | present | 752.788322 kg/d | Return to the bromine tank only. |
 | S70 | CRYO_AHU_COND_CONDENSABLE→FLUE_KO | — | present | 0.0521 kg/d | Not into the hydrogen box. |
 | S71 | MET_AHU→MET_SCRUB | Partial / Claimed | present | 20458.32 kg/d | From register: MET_AHU → MET_SCRUB / baghouse |
 | S72 | MET_SCRUB→LEACH_CSTR_1 | — | present | 2.4442 kg/d | Fines only. |
 | S72B | MET_SCRUB→OIL_FRAC | — | present | 0.0158 kg/d | Organics off the metal scrub, to oil. |
-| S73 | CRYO_CO2→MEOH_SYNTH | — | present | 44.423559 kg/d | — |
-| S74 | CRYO_H2→MEOH_SYNTH | — | present | 6.536155 kg/d | — |
-| S75 | MEOH_SYNTH→MEOH_TANK | — | present | 34.6293 kg/d | — |
+| S73 | CRYO_CO2→MEOH_SYNTH | — | present | 44.257647 kg/d | — |
+| S74 | CRYO_H2→MEOH_SYNTH | — | present | 6.513355 kg/d | — |
+| S75 | MEOH_SYNTH→MEOH_TANK | — | present | 34.508502 kg/d | — |
 | S76 | MEOH_TANK→MEOH_FC | — | present | 5.0 kg/d | — |
 | S77 | MEOH_FERM→MEOH_TANK | — | present | 0.0146 kg/d | From register: MEOH_FERM_STILL → MEOH_TANK |
 | S78 | HABITATION→MEOH_FERM | — | present | 0.36 kg/d | From register: Farm/hab organics (S12/S30 class) → MEOH_FERM_DIG |
 | S81 | MEOH_FC→MEOH_COND | — | present | 7.251023 kg/d | Methanol residual stays process. |
 | S82 | MEOH_FC→CRYO_CO2 | — | present | 8.625641 kg/d | From register: MEOH_FC / MEOH_VENT_KO → CRYO_CO2 / FARM (Claimed) |
-| S83 | CRYO_O2→HDR_O2 | — | present | 33.195501 kg/d | Life header fill. Not the dock. |
+| S83 | CRYO_O2→HDR_O2 | — | present | 33.167875 kg/d | Life header fill. Not the dock. |
 | S84 | CRYO_N2→AIR_RECEIVER | — | present | 191.989014 kg/d | Life header fill. Not the dock. |
 | S85 | CRYO_CO2→HDR_CO2 | — | present | 0.0 kg/d | Life header fill. Not the dock. |
 | S86 | CRYO_AHU→RELIEF_CRYO | — | present | 0.0 kg/d | Same sink as S56. Issued so the old dock edge has a number and a legal end. |

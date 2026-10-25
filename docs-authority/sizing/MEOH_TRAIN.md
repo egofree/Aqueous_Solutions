@@ -7,7 +7,7 @@ Authority: AQS-PLAN-007 unit tasks (MEOH)-02; MEOH_SYNTH and MEOH_FERM are sized
 
 ## MEOH_COND - water-recovery condenser and knock-out pot
 
-Recovers 26.7201 kg/d water (IA-MEOH-H2O (synthesis loop) + S81 (fuel cell)) to ROOF_TANK on IA-MEOH-COND. Duty = m (cp dT + latent) with latent 2257 kJ/kg (IAPWS_IF97 class at the near-atmospheric dew) and 20 K subcool: 0.7098 kW. Area at U 1.2 kW/m2 K (water vapour on water, PERRY9 sec. 11) and LMTD 19.6 K (60/40 C condensing against 25/35 C cooling water): 0.0302 m2 = 1 x 10 mm x 1 m coil. Knock-out pot 71.37 L (30 s vapour residence or the daily condensate, PERRY9 entrainment class), D400 x 600 mm (H/D 2.0). knock-out pot + condenser on the same skid.
+Recovers 26.6522 kg/d water (IA-MEOH-H2O (synthesis loop) + S81 (fuel cell)) to ROOF_TANK on IA-MEOH-COND. Duty = m (cp dT + latent) with latent 2257 kJ/kg (IAPWS_IF97 class at the near-atmospheric dew) and 20 K subcool: 0.7079 kW. Area at U 1.2 kW/m2 K (water vapour on water, PERRY9 sec. 11) and LMTD 19.6 K (60/40 C condensing against 25/35 C cooling water): 0.0301 m2 = 1 x 10 mm x 1 m coil. Knock-out pot 71.19 L (30 s vapour residence or the daily condensate, PERRY9 entrainment class), D400 x 600 mm (H/D 2.0). knock-out pot + condenser on the same skid.
 
 ## MEOH_FC - indirect methanol fuel cell
 

@@ -49,10 +49,10 @@ Kept on a single CPU by decision:
 | PLC-MEOH | 21 | 0 | 35 | 6 | 10 | 2/0/3/1 | single | 24 |
 | PLC-MFG | 27 | 9 | 62 | 11 | 10 | 3/1/5/1 | single | 32 |
 | PLC-NUT | 9 | 0 | 21 | 5 | 5 | 1/0/2/1 | redundant pair | 32 |
-| PLC-OIL | 50 | 0 | 44 | 6 | 12 | 4/0/4/1 | single | 30 |
+| PLC-OIL | 50 | 0 | 40 | 5 | 11 | 4/0/3/1 | single | 28 |
 | PLC-POLYMERS | 34 | 0 | 18 | 4 | 2 | 3/0/2/1 | single | 24 |
 | PLC-PUMPED_HYDRO | 2 | 1 | 2 | 0 | 0 | 1/1/1/0 | redundant pair | 30 |
 | PLC-WTR | 42 | 0 | 57 | 8 | 17 | 4/0/5/1 | redundant pair | 44 |
-| Total | 598 | 18 | 956 | 208 | 195 | 165 modules | 9 redundant of 18 | 654 |
+| Total | 598 | 18 | 952 | 207 | 194 | 164 modules | 9 redundant of 18 | 652 |
 
 The control system draws about 0.65 kW on the 24 V supplies, inside the critical load of AQS-ELEC-007. The AQS-INV-004 module count (OF-07) is a different basis (points/16 with no spare) and is superseded by this table. DI adds the high-level switches to the inventory digital points; if the inventory already counts them the DI is high by 113 (conservative).

@@ -166,7 +166,7 @@
 <polygon points="586,1206 577,1202 577,1210" fill="#111"/>
 <text x="24" y="1187" font-size="9" fill="#666" text-anchor="start">NORTH_DOCK</text>
 <text x="24" y="1201" font-size="11" font-weight="600" text-anchor="start">IA-H2O-MU</text>
-<text x="24" y="1219" font-size="10" text-anchor="start">64.5 kg/d · DN15 P2</text>
+<text x="24" y="1219" font-size="10" text-anchor="start">64.4 kg/d · DN15 P2</text>
 <text x="598" y="1210" font-size="8" font-style="italic" fill="#555" text-anchor="start">N48</text>
 <line x1="430" y1="1252" x2="577" y2="1252" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1252 577,1248 577,1256" fill="#111"/>
@@ -395,7 +395,7 @@
 <polygon points="1070,930 1061,926 1061,934" fill="#111"/>
 <text x="1476" y="911" font-size="9" fill="#666" text-anchor="end">VCD_TRAIN</text>
 <text x="1476" y="925" font-size="11" font-weight="600" text-anchor="end">IA-LEACH-VCD</text>
-<text x="1476" y="943" font-size="10" text-anchor="end">168.1 kg/d · DN15 P2</text>
+<text x="1476" y="943" font-size="10" text-anchor="end">168.0 kg/d · DN15 P2</text>
 <text x="902" y="934" font-size="8" font-style="italic" fill="#555" text-anchor="end">N46</text>
 <path d="M 1023.6,924 L 1031.6,930 L 1023.6,936 Z M 1041.6,924 L 1033.6,930 L 1041.6,936 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="919.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
@@ -451,7 +451,7 @@
 <g id="aqs-title-block"><rect x="1116" y="2268" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="2285" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-LEACH_CSTR_1</text>
 <text x="1124" y="2302" font-size="9">P&amp;ID LEACH_CSTR_1 (vessel, DIGESTER sector)</text>
-<text x="1124" y="2319" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 348e3f80   Issued 2026-10-19</text>
+<text x="1124" y="2319" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 8e862388   Issued 2026-10-19</text>
 <text x="1124" y="2336" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="2353" font-size="9">Graph SHA-256 9bffd7c81c83fa7e   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="2353" font-size="9">Graph SHA-256 786ca74b25967382   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

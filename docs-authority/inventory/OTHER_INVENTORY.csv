@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,102,1624 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,750,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,102,1622 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,752,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 163 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -815,6 +815,7 @@ ELEC,genset,BACKUP_GEN,electronics,motor starter (contactor + overload),0.37 kW,
 ELEC,genset,BACKUP_GEN,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,1,starter motor (assumed VFD at >= 0.75 kW)
 ELEC,genset,BACKUP_GEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,S46: 2 per support (assumed)
 ELEC,genset,BACKUP_GEN,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
+ELEC,genset,BACKUP_GEN,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 ELEC,genset,BACKUP_GEN,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 ELEC,genset,BACKUP_GEN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 ELEC,genset,BACKUP_GEN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2170,15 +2171,10 @@ OIL,cut_tank,PROD_C29,instrument,temperature element,Pt100 class A,"IEC 60751, 3
 OIL,cut_tank,PROD_C29,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",7,C29_RECYCLE: AQS-PIP-005 span count
 OIL,cut_tank,PROD_C29,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,C29_RECYCLE: pump discharge (assumed)
 OIL,cut_tank,PROD_C29,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,C29_RECYCLE: one at each end nozzle (assumed)
-OIL,cut_tank,PROD_C5_C10,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump CUT-1-OUT to BACKUP_GEN (assumed size)
 OIL,cut_tank,PROD_C5_C10,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-C5-POLY to POLY_OLEFIN (assumed size)
-OIL,cut_tank,PROD_C5_C10,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump CUT-1-OUT to BACKUP_GEN
 OIL,cut_tank,PROD_C5_C10,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-C5-POLY to POLY_OLEFIN
-OIL,cut_tank,PROD_C5_C10,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve CUT-1-OUT: run and fault (assumed)
 OIL,cut_tank,PROD_C5_C10,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-C5-POLY: run and fault (assumed)
-OIL,cut_tank,PROD_C5_C10,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump CUT-1-OUT to BACKUP_GEN: run and fault (assumed)
 OIL,cut_tank,PROD_C5_C10,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-C5-POLY to POLY_OLEFIN: run and fault (assumed)
-OIL,cut_tank,PROD_C5_C10,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve CUT-1-OUT
 OIL,cut_tank,PROD_C5_C10,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-C5-POLY
 OIL,cut_tank,PROD_C5_C10,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,CUT-1-OUT: 2 per support (assumed)
 OIL,cut_tank,PROD_C5_C10,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,IA-C5-SHIP: 2 per support (assumed)

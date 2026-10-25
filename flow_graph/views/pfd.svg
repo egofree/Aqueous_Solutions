@@ -199,7 +199,7 @@
 <title>CRYO_ASU&#45;&gt;CRYO_CO2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1311.21,-11738.86C1326.22,-11734.49 1343.42,-11727.14 1355,-11714.92 1374.05,-11694.83 1354.43,-11674.45 1375,-11655.92 1434.93,-11601.95 1494.59,-11672.57 1552,-11615.92 1568.27,-11599.87 1547.74,-11581.98 1564,-11565.92 1589,-11541.25 1629.23,-11534.53 1659.64,-11533.37"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1660.02,-11536.86 1669.95,-11533.17 1659.88,-11529.86 1660.02,-11536.86"/>
-<text text-anchor="middle" x="1463.5" y="-11658.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ASU&#45;CO2\n21.747426 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11658.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ASU&#45;CO2\n21.581514 kg/d</text>
 </g>
 <!-- CRYO_N2 -->
 <g id="node8" class="node">
@@ -212,7 +212,7 @@
 <title>CRYO_ASU&#45;&gt;CRYO_N2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1311.11,-11746.24C1363.08,-11747.33 1469.94,-11744.74 1552,-11710.92 1601.99,-11690.33 1649.59,-11648.32 1677.02,-11621.18"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1679.64,-11623.51 1684.21,-11613.95 1674.68,-11618.58 1679.64,-11623.51"/>
-<text text-anchor="middle" x="1463.5" y="-11747.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ASU&#45;N2\n196.588593 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11747.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ASU&#45;N2\n196.588594 kg/d</text>
 </g>
 <!-- CRYO_O2 -->
 <g id="node9" class="node">
@@ -225,7 +225,7 @@
 <title>CRYO_ASU&#45;&gt;CRYO_O2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1311.26,-11739.78C1326.67,-11735.63 1344.21,-11728.2 1355,-11714.92 1387.18,-11675.35 1341.77,-11640.62 1375,-11601.92 1429.12,-11538.91 1493.65,-11601.05 1552,-11541.92 1564.14,-11529.62 1551.23,-11516.58 1564,-11504.92 1590.66,-11480.58 1632.31,-11474.03 1662.68,-11472.83"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1663,-11476.32 1672.92,-11472.61 1662.84,-11469.32 1663,-11476.32"/>
-<text text-anchor="middle" x="1463.5" y="-11604.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ASU&#45;O2\n0.066929 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11604.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ASU&#45;O2\n0.063683 kg/d</text>
 </g>
 <!-- CRYO_CO2&#45;&gt;CRYO_ASU -->
 <g id="edge432" class="edge">
@@ -264,7 +264,7 @@
 <title>CRYO_CO2&#45;&gt;MEOH_SYNTH</title>
 <path fill="none" stroke="#1b5e20" stroke-width="2.2" d="M1669.9,-11537.01C1638.83,-11537.29 1591.82,-11532.54 1564,-11504.92 1546.86,-11487.91 1564.56,-11472.55 1552,-11451.92 1498.53,-11364.09 1426.17,-11392.11 1375,-11302.92 1348.96,-11257.55 1367.59,-11237.7 1355,-11186.92 1336.57,-11112.57 1306.33,-11027.43 1290.47,-10984.6"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="2.2" points="1293.72,-10983.29 1286.94,-10975.15 1287.16,-10985.74 1293.72,-10983.29"/>
-<text text-anchor="middle" x="1463.5" y="-11454.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S73\n44.423559 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11454.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S73\n44.257647 kg/d</text>
 </g>
 <!-- CRYO_DED_COOL -->
 <g id="node5" class="node">
@@ -296,7 +296,7 @@
 <title>CRYO_H2&#45;&gt;BACKUP_GEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1672.79,-11414.15C1643.62,-11414.16 1597.72,-11410.57 1564,-11390.92 1556.62,-11386.63 1559.31,-11380.33 1552,-11375.92 1483.41,-11334.54 1430.62,-11399.58 1375,-11341.92 1334.72,-11300.17 1393.58,-11256.25 1355,-11212.92 1308.39,-11160.58 1249.77,-11223.12 1203,-11170.92 1165.75,-11129.35 1225.5,-11083.12 1183,-11046.92 1098.08,-10974.6 787.32,-11065.5 685,-11109.92 637.43,-11130.57 590.48,-11168.66 562.36,-11193.89"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="559.98,-11191.32 554.94,-11200.64 564.69,-11196.5 559.98,-11191.32"/>
-<text text-anchor="middle" x="1100" y="-11049.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S45\n0.0 kg/d</text>
+<text text-anchor="middle" x="1100" y="-11049.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S45\n0.019728 kg/d</text>
 </g>
 <!-- FUEL_CELL -->
 <g id="node42" class="node">
@@ -316,7 +316,7 @@
 <title>CRYO_H2&#45;&gt;MEOH_SYNTH</title>
 <path fill="none" stroke="#1b5e20" stroke-width="2.2" d="M1672.96,-11417.29C1641.72,-11420.42 1591.93,-11419.88 1564,-11390.92 1533.84,-11359.66 1582.02,-11325.32 1552,-11293.92 1496.86,-11236.25 1433.8,-11317.86 1375,-11263.92 1348.94,-11240.02 1364.93,-11220.86 1355,-11186.92 1333.43,-11113.22 1304.41,-11027.47 1289.59,-10984.48"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="2.2" points="1292.89,-10983.3 1286.31,-10974.99 1286.27,-10985.59 1292.89,-10983.3"/>
-<text text-anchor="middle" x="1463.5" y="-11296.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S74\n6.536155 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11296.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S74\n6.513355 kg/d</text>
 </g>
 <!-- CRYO_HX_Q4 -->
 <g id="node7" class="node">
@@ -367,9 +367,9 @@
 <!-- CRYO_N2&#45;&gt;NORTH_DOCK -->
 <g id="edge323" class="edge">
 <title>CRYO_N2&#45;&gt;NORTH_DOCK</title>
-<path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1672.9,-11598.88C1640.89,-11600.34 1590.47,-11597 1564,-11565.92 1409.18,-11384.19 1437.25,-9658.94 1447.5,-9420.42 1473.41,-8817.2 1310.2,-8614.77 1564,-8066.92 1586.5,-8018.35 1633.52,-7976.95 1666.39,-7952.27"/>
-<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1668.85,-7954.81 1674.83,-7946.06 1664.7,-7949.17 1668.85,-7954.81"/>
-<text text-anchor="middle" x="1463.5" y="-9423.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;N2&#45;VENT\n3.099779 kg/d</text>
+<path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1672.89,-11598.89C1640.87,-11600.35 1590.45,-11597.01 1564,-11565.92 1409.29,-11384.11 1439.97,-9658.94 1450,-9420.42 1475.36,-8817.27 1310.75,-8614.92 1564,-8066.92 1586.46,-8018.33 1633.48,-7976.93 1666.37,-7952.26"/>
+<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1668.83,-7954.8 1674.82,-7946.06 1664.69,-7949.16 1668.83,-7954.8"/>
+<text text-anchor="middle" x="1463.5" y="-9423.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;N2&#45;VENT\n3.09978 kg/d</text>
 </g>
 <!-- WAFER_FAB -->
 <g id="node50" class="node">
@@ -402,7 +402,7 @@
 <title>CRYO_O2&#45;&gt;HDR_O2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1731.07,-11476.48C1761.31,-11477.49 1808.27,-11473.67 1832,-11443.92 1870.95,-11395.1 1807.74,-6990.99 1852,-6946.92 1900.19,-6898.95 1956.41,-6899.35 2005,-6946.92 2042.52,-6983.66 1991.91,-7851.15 2025,-7891.92 2046.9,-7918.91 2087.92,-7924.49 2117.84,-7924.53"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2117.98,-7928.03 2127.91,-7924.34 2117.85,-7921.03 2117.98,-7928.03"/>
-<text text-anchor="middle" x="1928.5" y="-6949.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S83\n33.195501 kg/d</text>
+<text text-anchor="middle" x="1928.5" y="-6949.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S83\n33.167875 kg/d</text>
 </g>
 <!-- CRYO_O2&#45;&gt;HDR_O2 -->
 <g id="edge341" class="edge">
@@ -428,21 +428,21 @@
 <title>H2O_ELYZ&#45;&gt;CRYO_H2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1310.01,-11522.91C1337.81,-11511.79 1374.89,-11496.95 1375,-11496.92 1451.81,-11475.32 1487.48,-11513.86 1552,-11466.92 1561.32,-11460.14 1554.86,-11450.96 1564,-11443.92 1592.34,-11422.1 1633.19,-11415.11 1662.91,-11413.11"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1663.11,-11416.61 1672.91,-11412.6 1662.75,-11409.62 1663.11,-11416.61"/>
-<text text-anchor="middle" x="1463.5" y="-11499.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ELY&#45;H2\n9.360747 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11499.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ELY&#45;H2\n9.357675 kg/d</text>
 </g>
 <!-- H2O_ELYZ&#45;&gt;CRYO_O2 -->
 <g id="edge437" class="edge">
 <title>H2O_ELYZ&#45;&gt;CRYO_O2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1310.33,-11532.74C1360.72,-11528.88 1464.78,-11519.9 1552,-11505.92 1589.98,-11499.84 1632.86,-11490.35 1662.84,-11483.28"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1663.96,-11486.61 1672.88,-11480.89 1662.34,-11479.8 1663.96,-11486.61"/>
-<text text-anchor="middle" x="1463.5" y="-11529.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ELY&#45;O2\n74.287 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11529.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ELY&#45;O2\n74.26262 kg/d</text>
 </g>
 <!-- H2O_ELYZ&#45;&gt;Q4_BUS -->
 <g id="edge455" class="edge">
 <title>H2O_ELYZ&#45;&gt;Q4_BUS</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" d="M1310.18,-11539.4C1326.28,-11543.47 1344.82,-11551.21 1355,-11565.92 1394.79,-11623.42 1324.78,-12146.27 1375,-12194.92 1431.5,-12249.66 1496.33,-12250.5 1552,-12194.92 1569.45,-12177.5 1547.68,-5110.41 1564,-5091.92 1603.73,-5046.92 1777.42,-5082.92 1832,-5057.92 1842.87,-5052.94 1841.1,-5044.84 1852,-5039.92 2030.83,-4959.21 2154.04,-4881.41 2293,-5019.92 2311.4,-5038.27 2286.6,-8743.58 2305,-8761.92 2324.53,-8781.39 2619.09,-8785.58 2646,-8760.92 2667.23,-8741.48 2636.72,-8651.32 2658,-8631.92 2704.98,-8589.12 2755.68,-8587.37 2801,-8631.92 2847.32,-8677.46 2783.21,-9748.09 2821,-9800.92 2826.99,-9809.3 2836.49,-9814.5 2846.23,-9817.72"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="2845.36,-9821.11 2855.92,-9820.33 2847.18,-9814.36 2845.36,-9821.11"/>
-<text text-anchor="middle" x="2155" y="-5022.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">SQ&#45;H2O_ELYZ&#45;Q4\n6.0845 kW</text>
+<text text-anchor="middle" x="2155" y="-5022.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">SQ&#45;H2O_ELYZ&#45;Q4\n6.0825 kW</text>
 </g>
 <!-- PROD_O2 -->
 <g id="node11" class="node">
@@ -455,7 +455,7 @@
 <title>PROD_O2&#45;&gt;NORTH_DOCK</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1308.77,-11470.3C1325.24,-11466.6 1344.64,-11459.1 1355,-11443.92 1394.12,-11386.64 1335.21,-9003.74 1375,-8946.92 1423.16,-8878.15 1503.53,-8949.48 1552,-8880.92 1574.84,-8848.62 1553.57,-8207.08 1564,-8168.92 1587.33,-8083.58 1647.8,-7996.53 1680.04,-7954.23"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1682.94,-7956.2 1686.28,-7946.14 1677.4,-7951.93 1682.94,-7956.2"/>
-<text text-anchor="middle" x="1463.5" y="-8949.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;O2&#45;SHIP\n22.876217 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-8949.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;O2&#45;SHIP\n22.884294 kg/d</text>
 </g>
 <!-- PROD_MEOH -->
 <g id="node13" class="node">
@@ -468,7 +468,7 @@
 <title>PROD_MEOH&#45;&gt;NORTH_DOCK</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1315.7,-11590.55C1330.4,-11586.39 1346.06,-11579.01 1355,-11565.92 1395.36,-11506.8 1328.74,-9043.56 1375,-8988.92 1426.61,-8927.97 1500.17,-9018.68 1552,-8957.92 1566.23,-8941.25 1558.24,-8190.07 1564,-8168.92 1587.26,-8083.56 1647.76,-7996.52 1680.02,-7954.23"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1682.93,-7956.2 1686.27,-7946.14 1677.39,-7951.92 1682.93,-7956.2"/>
-<text text-anchor="middle" x="1463.5" y="-8991.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;MEOH&#45;SHIP\n28.149712 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-8991.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;MEOH&#45;SHIP\n28.028914 kg/d</text>
 </g>
 <!-- HDR_N2 -->
 <g id="node116" class="node">
@@ -1344,7 +1344,7 @@
 <title>LEACH_CSTR_1&#45;&gt;VCD_TRAIN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1321.57,-10195.08C1334.26,-10192.04 1346.97,-10186.36 1355,-10175.92 1381.06,-10142.05 1344.39,-9436.75 1375,-9406.92 1403.17,-9379.47 1523.87,-9379.43 1552,-9406.92 1572.86,-9427.32 1546,-9908.96 1564,-9931.92 1585.92,-9959.88 1626.61,-9968.08 1657.98,-9969.91"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1658.09,-9973.42 1668.21,-9970.31 1658.36,-9966.43 1658.09,-9973.42"/>
-<text text-anchor="middle" x="1463.5" y="-9409.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;LEACH&#45;VCD\n168.058502 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-9409.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;LEACH&#45;VCD\n167.999678 kg/d</text>
 </g>
 <!-- POLISH_BANK&#45;&gt;CONTINUOUS_RECYCLE -->
 <g id="edge63" class="edge">
@@ -1564,7 +1564,7 @@
 <title>NORTH_DOCK&#45;&gt;LEACH_CSTR_1</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1686.35,-7946.16C1656.51,-7984.58 1589.37,-8077.82 1564,-8168.92 1557.17,-8193.44 1568.68,-8607.7 1552,-8626.92 1499.72,-8687.2 1426.89,-8596.31 1375,-8656.92 1320.11,-8721.03 1406.03,-10108.7 1355,-10175.92 1349.09,-10183.7 1340.58,-10188.85 1331.39,-10192.22"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1330.22,-10188.92 1321.65,-10195.14 1332.23,-10195.63 1330.22,-10188.92"/>
-<text text-anchor="middle" x="1463.5" y="-8659.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;H2O&#45;MU\n64.471934 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-8659.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;H2O&#45;MU\n64.41311 kg/d</text>
 </g>
 <!-- NORTH_DOCK&#45;&gt;EVAP_BASE -->
 <g id="edge422" class="edge">
@@ -1738,7 +1738,7 @@
 <title>BACKUP_GEN&#45;&gt;NOX_SCRUB</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M554.35,-11200.7C585.86,-11167.97 649.18,-11095.54 673,-11019.92 686.62,-10976.68 660.21,-9425.88 685,-9387.92 718.15,-9337.16 1148.66,-9214.89 1183,-9164.92 1402.61,-8845.43 1282.48,-2463.47 1564,-2196.92 1661.79,-2104.33 2220.43,-2166.23 2293,-2246.92 2318.7,-2275.5 2289.59,-7746.71 2305,-7781.92 2345.11,-7873.54 2388.09,-7877.54 2470,-7934.92 2605.45,-8029.81 2713.95,-7964.31 2801,-8104.92 2848.75,-8182.07 2769.46,-9663.25 2821,-9737.92 2825.22,-9744.04 2831.26,-9748.6 2837.91,-9752"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2836.68,-9755.27 2847.25,-9755.94 2839.41,-9748.83 2836.68,-9755.27"/>
-<text text-anchor="middle" x="1702" y="-2199.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S46\n0.267975 kg/d</text>
+<text text-anchor="middle" x="1702" y="-2199.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S46\n0.198104 kg/d</text>
 </g>
 <!-- FUEL_CELL&#45;&gt;LEACH_CSTR_1 -->
 <g id="edge345" class="edge">
@@ -1793,7 +1793,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M565.51,-11344.89C621.46,-11351.02 745.46,-11357.93 836,-11313.92 867.12,-11298.79 892.97,-11267.9 908.75,-11245.44"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="911.76,-11247.24 914.49,-11237 905.98,-11243.3 911.76,-11247.24"/>
-<text text-anchor="middle" x="760.5" y="-11350.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n336.8304 kW</text>
+<text text-anchor="middle" x="760.5" y="-11350.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n336.8121 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node44" class="node">
@@ -1904,21 +1904,21 @@
 <title>SOL_ARK_60K&#45;&gt;CRYO_ASU</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M930.36,-11237.27C938.31,-11284.66 963.73,-11414.05 1017,-11507.92 1078.04,-11615.49 1101.6,-11644.11 1203,-11714.92 1213.33,-11722.14 1225.65,-11727.98 1237.28,-11732.53"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1236.25,-11735.88 1246.84,-11736.05 1238.66,-11729.31 1236.25,-11735.88"/>
-<text text-anchor="middle" x="1100" y="-11700.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_ASU\n1.6689 kW</text>
+<text text-anchor="middle" x="1100" y="-11700.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_ASU\n1.6572 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;CRYO_H2 -->
 <g id="edge372" class="edge">
 <title>SOL_ARK_60K&#45;&gt;CRYO_H2</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M966.84,-11202.33C1021.93,-11182.01 1122.14,-11156.13 1183,-11206.92 1221.15,-11238.76 1171.14,-11278.79 1203,-11316.92 1249.26,-11372.29 1305.06,-11321.85 1355,-11373.92 1374.75,-11394.52 1351.9,-11418.18 1375,-11434.92 1419.97,-11467.5 1586.84,-11437.38 1662.85,-11421.41"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1663.9,-11424.76 1672.95,-11419.26 1662.44,-11417.92 1663.9,-11424.76"/>
-<text text-anchor="middle" x="1279" y="-11376.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_H2\n0.9327 kW</text>
+<text text-anchor="middle" x="1279" y="-11376.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;CRYO_H2\n0.9325 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;H2O_ELYZ -->
 <g id="edge438" class="edge">
 <title>SOL_ARK_60K&#45;&gt;H2O_ELYZ</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M936.44,-11237.35C950.82,-11265.84 981.15,-11321.44 1017,-11360.92 1087.28,-11438.33 1112.26,-11453.01 1203,-11504.92 1214.03,-11511.23 1226.65,-11516.84 1238.35,-11521.44"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1237.32,-11524.79 1247.91,-11525.07 1239.8,-11518.25 1237.32,-11524.79"/>
-<text text-anchor="middle" x="1100" y="-11495.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;H2O_ELYZ\n21.4517 kW</text>
+<text text-anchor="middle" x="1100" y="-11495.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;H2O_ELYZ\n21.4447 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;BMED_ACID -->
 <g id="edge366" class="edge">
@@ -2346,7 +2346,7 @@
 <title>SOL_ARK_60K&#45;&gt;GEO_HP</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M931.53,-11200.66C943.97,-11143.31 981.86,-10961.59 997,-10808.92 1000.68,-10771.87 993.03,-10167.42 1017,-10138.92 1065.48,-10081.29 1119.14,-10144.84 1183,-10104.92 1195.36,-10097.2 1191.16,-10087.43 1203,-10078.92 1268.64,-10031.78 1296.9,-10040.71 1375,-10019.92 1452.41,-9999.32 1500.93,-10047.64 1552,-9985.92 1587.05,-9943.56 1529.49,-2110.74 1564,-2067.92 1587.61,-2038.63 1632.64,-2033.77 1664.62,-2034.52"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1664.78,-2038.03 1674.92,-2034.96 1665.08,-2031.04 1664.78,-2038.03"/>
-<text text-anchor="middle" x="1279" y="-10081.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;GEO_HP\n0.686 kW</text>
+<text text-anchor="middle" x="1279" y="-10081.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;GEO_HP\n0.6866 kW</text>
 </g>
 <!-- GEO_HP_CLOSED_LOOP -->
 <g id="node107" class="node">
@@ -2612,7 +2612,7 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1306.11,-11152.8C1332.97,-11166.02 1371.39,-11184.8 1375,-11185.92 1399.65,-11193.59 1551.38,-11215.27 1638.89,-11227.42"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1638.59,-11230.91 1648.97,-11228.81 1639.55,-11223.97 1638.59,-11230.91"/>
-<text text-anchor="middle" x="1463.5" y="-11217.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n752.830205 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11217.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n752.788322 kg/d</text>
 </g>
 <!-- ZNBR2&#45;&gt;Q4_BUS -->
 <g id="edge286" class="edge">
@@ -2639,7 +2639,7 @@
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1648.97,-11240.78C1568.33,-11247.23 1417.97,-11254.63 1375,-11224.92 1355.99,-11211.78 1370.81,-11193.78 1355,-11176.92 1344.37,-11165.59 1329.52,-11157.27 1315.83,-11151.42"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1316.74,-11148.01 1306.15,-11147.59 1314.16,-11154.52 1316.74,-11148.01"/>
-<text text-anchor="middle" x="1463.5" y="-11248.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n752.830205 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11248.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n752.788322 kg/d</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node49" class="node">
@@ -3481,14 +3481,14 @@
 <title>HDR_O2&#45;&gt;PROD_O2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2127.84,-7917.82C2056.1,-7906.44 1860.92,-7874.63 1852,-7863.92 1806.67,-7809.49 1882.28,-5363.82 1832,-5313.92 1789.72,-5271.98 1606.15,-5271.85 1564,-5313.92 1529.02,-5348.84 1586.98,-12396.01 1552,-12430.92 1496.33,-12486.5 1431.22,-12485.95 1375,-12430.92 1338.22,-12394.93 1384.06,-11547.39 1355,-11504.92 1346.61,-11492.67 1332.41,-11485.25 1318.61,-11480.76"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1319.3,-11477.32 1308.73,-11477.98 1317.41,-11484.06 1319.3,-11477.32"/>
-<text text-anchor="middle" x="1702" y="-5316.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;O2&#45;PROD\n22.876217 kg/d</text>
+<text text-anchor="middle" x="1702" y="-5316.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;O2&#45;PROD\n22.884294 kg/d</text>
 </g>
 <!-- HDR_O2&#45;&gt;BACKUP_GEN -->
 <g id="edge391" class="edge">
 <title>HDR_O2&#45;&gt;BACKUP_GEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2127.85,-7922.64C2099.3,-7922.02 2053.84,-7916.75 2025,-7891.92 2005.25,-7874.92 1856.97,-7481.5 1852,-7455.92 1843.65,-7412.98 1863.03,-4336.76 1832,-4305.92 1747.51,-4221.97 1648.3,-4221.78 1564,-4305.92 1532.92,-4336.95 1583.08,-10598.9 1552,-10629.92 1524.16,-10657.71 1403.23,-10657.31 1375,-10629.92 1348.59,-10604.3 1360.9,-10004.24 1355,-9967.92 1312.4,-9705.47 1396.34,-9553.63 1183,-9394.92 1093.23,-9328.15 755.32,-9381.9 685,-9468.92 671.46,-9485.68 679.48,-10999.38 673,-11019.92 650.84,-11090.22 594.56,-11157.76 561.44,-11193.22"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="558.68,-11191.04 554.34,-11200.7 563.76,-11195.85 558.68,-11191.04"/>
-<text text-anchor="middle" x="1279" y="-9970.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;GEN&#45;O2\n0.207942 kg/d</text>
+<text text-anchor="middle" x="1279" y="-9970.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;GEN&#45;O2\n0.172239 kg/d</text>
 </g>
 <!-- HDR_O2&#45;&gt;WS_PEROX -->
 <g id="edge316" class="edge">
@@ -3514,14 +3514,14 @@
 <title>NOX_SCRUB&#45;&gt;CRYO_ASU</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2847.28,-9755.92C2837.16,-9752.4 2827.17,-9746.8 2821,-9737.92 2785.51,-9686.81 2845.4,-8661.53 2801,-8617.92 2755.66,-8573.39 2704.09,-8574.16 2658,-8617.92 2639.36,-8635.62 2660.34,-8827.6 2646,-8848.92 2602.21,-8914.06 2360.59,-8996.33 2305,-8940.92 2286.35,-8922.34 2311.65,-5168.51 2293,-5149.92 2266.75,-5123.76 1904.03,-5124.85 1852,-5157.92 1835.89,-5168.16 1846.74,-5183.8 1832,-5195.92 1735.99,-5274.88 1638.35,-5176.31 1564,-5275.92 1548.88,-5296.18 1569.89,-12537.07 1552,-12554.92 1524.16,-12582.71 1403.46,-12582.07 1375,-12554.92 1357.94,-12538.65 1357.81,-12154.34 1355,-12130.92 1338.76,-11995.73 1302.3,-11836.88 1286.98,-11773.31"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1290.3,-11772.15 1284.55,-11763.25 1283.5,-11773.8 1290.3,-11772.15"/>
-<text text-anchor="middle" x="2155" y="-5152.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;NOX&#45;CO2\n21.747426 kg/d</text>
+<text text-anchor="middle" x="2155" y="-5152.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;NOX&#45;CO2\n21.581514 kg/d</text>
 </g>
 <!-- NOX_SCRUB&#45;&gt;CRYO_ASU -->
 <g id="edge425" class="edge">
 <title>NOX_SCRUB&#45;&gt;CRYO_ASU</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2847.28,-9755.93C2837.15,-9752.4 2827.16,-9746.81 2821,-9737.92 2784.26,-9684.97 2846.97,-8623.11 2801,-8577.92 2755.67,-8533.37 2714.85,-8549.5 2658,-8577.92 2650.05,-8581.9 2652.6,-8587.97 2646,-8593.92 2570.54,-8662.08 2547.97,-8684.71 2450,-8711.92 2387.91,-8729.17 2350.65,-8757.42 2305,-8711.92 2269.62,-8676.67 2328.38,-5151.18 2293,-5115.92 2235.3,-5058.42 1614.82,-5130.25 1564,-5193.92 1548.13,-5213.81 1570.01,-12503.95 1552,-12521.92 1524.16,-12549.71 1403.51,-12549.02 1375,-12521.92 1343.46,-12491.96 1360.27,-12174.1 1355,-12130.92 1338.5,-11995.76 1302.18,-11836.89 1286.94,-11773.31"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1290.27,-11772.16 1284.52,-11763.26 1283.46,-11773.8 1290.27,-11772.16"/>
-<text text-anchor="middle" x="2155" y="-5118.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;NOX&#45;N2\n196.655522 kg/d</text>
+<text text-anchor="middle" x="2155" y="-5118.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;NOX&#45;N2\n196.652277 kg/d</text>
 </g>
 <!-- NOX_SCRUB&#45;&gt;NUTRIENT_DOSE -->
 <g id="edge318" class="edge">
@@ -3542,7 +3542,7 @@
 <title>GEO_HP&#45;&gt;Q4_BUS</title>
 <path fill="none" stroke="#b45309" stroke-width="1.2" stroke-dasharray="5,2" d="M1729.11,-2038.67C1756.79,-2040.6 1800.73,-2047.05 1832,-2067.92 1905.11,-2116.73 2266.01,-2627.26 2293,-2710.92 2304.74,-2747.31 2287.75,-8182.8 2305,-8216.92 2346.15,-8298.31 2383.38,-8310.38 2470,-8338.92 2544.29,-8363.41 2576.55,-8374.91 2646,-8338.92 2654.21,-8334.67 2649.79,-8326.18 2658,-8321.92 2714.43,-8292.68 2755.76,-8277.29 2801,-8321.92 2830.25,-8350.78 2797.16,-9767.46 2821,-9800.92 2826.98,-9809.31 2836.47,-9814.52 2846.21,-9817.74"/>
 <polygon fill="#b45309" stroke="#b45309" stroke-width="1.2" points="2845.34,-9821.13 2855.91,-9820.35 2847.16,-9814.37 2845.34,-9821.13"/>
-<text text-anchor="middle" x="2377.5" y="-8334.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S44\n2.1952 kW</text>
+<text text-anchor="middle" x="2377.5" y="-8334.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#b45309">S44\n2.1972 kW</text>
 </g>
 <!-- GEO_ORC -->
 <g id="node108" class="node">
@@ -4078,7 +4078,7 @@
 <title>MEOH_COND&#45;&gt;ROOF_TANK</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2574.52,-10884.76C2596.45,-10862.97 2630.93,-10824.18 2646,-10782.92 2654.89,-10758.57 2641.15,-10569.62 2658,-10549.92 2700.22,-10500.58 2757.87,-10568.47 2801,-10519.92 2834.34,-10482.4 2790.36,-10334.68 2821,-10294.92 2825.58,-10288.98 2831.92,-10284.64 2838.78,-10281.47"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2840.25,-10284.65 2848.35,-10277.83 2837.76,-10278.11 2840.25,-10284.65"/>
-<text text-anchor="middle" x="2729.5" y="-10552.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;MEOH&#45;COND\n26.720075 kg/d</text>
+<text text-anchor="middle" x="2729.5" y="-10552.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;MEOH&#45;COND\n26.652161 kg/d</text>
 </g>
 <!-- MEOH_FC&#45;&gt;CRYO_CO2 -->
 <g id="edge147" class="edge">
@@ -4147,7 +4147,7 @@
 <title>MEOH_SYNTH&#45;&gt;MEOH_COND</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1283.49,-10974.98C1291.77,-11012.24 1316.47,-11097.1 1375,-11131.92 1408.8,-11152.04 1513.18,-11138.27 1552,-11131.92 1681.55,-11110.76 1737.19,-11128.72 1832,-11037.92 1849.88,-11020.8 1832.44,-11001.11 1852,-10985.92 1878.42,-10965.41 2416.8,-10919.96 2450,-10915.92 2468.55,-10913.67 2488.96,-10911.11 2506.69,-10908.86"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2507.3,-10912.31 2516.78,-10907.58 2506.42,-10905.37 2507.3,-10912.31"/>
-<text text-anchor="middle" x="1928.5" y="-10988.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;MEOH&#45;H2O\n19.469052 kg/d</text>
+<text text-anchor="middle" x="1928.5" y="-10988.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;MEOH&#45;H2O\n19.401138 kg/d</text>
 </g>
 <!-- MEOH_SYNTH&#45;&gt;MEOH_TANK -->
 <g id="edge37" class="edge">
@@ -4161,7 +4161,7 @@
 <title>MEOH_SYNTH&#45;&gt;MEOH_TANK</title>
 <path fill="none" stroke="#1b5e20" stroke-width="2.2" d="M1289.94,-10975.28C1304.7,-11000.34 1335,-11044.17 1375,-11061.92 1446.9,-11093.83 1482.64,-11099.04 1552,-11061.92 1560.48,-11057.39 1556.19,-11049.54 1564,-11043.92 1590.99,-11024.52 1627.59,-11015.29 1656.17,-11010.9"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="2.2" points="1656.88,-11014.34 1666.3,-11009.5 1655.92,-11007.4 1656.88,-11014.34"/>
-<text text-anchor="middle" x="1463.5" y="-11089.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S75\n34.6293 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11089.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S75\n34.508502 kg/d</text>
 </g>
 <!-- POLY_OLEFIN -->
 <g id="node162" class="node">
@@ -4181,7 +4181,7 @@
 <title>MEOH_TANK&#45;&gt;PROD_MEOH</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1684.54,-11025.16C1658.89,-11052.46 1606.62,-11103.76 1552,-11131.92 1479.76,-11169.18 1426.36,-11114.93 1375,-11177.92 1320.44,-11244.84 1405.23,-11495.7 1355,-11565.92 1347.86,-11575.9 1336.84,-11582.57 1325.43,-11587.01"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1324.18,-11583.74 1315.82,-11590.25 1326.42,-11590.37 1324.18,-11583.74"/>
-<text text-anchor="middle" x="1463.5" y="-11180.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;MEOH&#45;PROD\n28.149712 kg/d</text>
+<text text-anchor="middle" x="1463.5" y="-11180.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;MEOH&#45;PROD\n28.028914 kg/d</text>
 </g>
 <!-- MEOH_TANK&#45;&gt;MEOH_FC -->
 <g id="edge141" class="edge">
@@ -4623,16 +4623,16 @@
 <!-- PROD_C5_C10&#45;&gt;NORTH_DOCK -->
 <g id="edge404" class="edge">
 <title>PROD_C5_C10&#45;&gt;NORTH_DOCK</title>
-<path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1661.87,-9421.21C1631.45,-9422.17 1590.49,-9418.25 1564,-9394.92 1431.06,-9277.85 1477.14,-9187.77 1452,-9012.42 1418.77,-8780.69 1411.73,-8142.74 1564,-7964.92 1568.34,-7959.85 1573.29,-7955.44 1578.68,-7951.6"/>
-<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1580.9,-7954.34 1587.48,-7946.03 1577.16,-7948.43 1580.9,-7954.34"/>
-<text text-anchor="middle" x="1463.5" y="-9006.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;C5&#45;SHIP\n7.07675 kg/d</text>
+<path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1661.91,-9421.16C1631.51,-9422.1 1590.56,-9418.17 1564,-9394.92 1430.47,-9278.05 1475.22,-9188 1449.5,-9012.42 1415.57,-8780.73 1411.48,-8142.61 1564,-7964.92 1568.35,-7959.86 1573.3,-7955.45 1578.7,-7951.62"/>
+<polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1580.92,-7954.35 1587.5,-7946.05 1577.18,-7948.44 1580.92,-7954.35"/>
+<text text-anchor="middle" x="1463.5" y="-9006.02" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;C5&#45;SHIP\n7.130646 kg/d</text>
 </g>
 <!-- PROD_C5_C10&#45;&gt;BACKUP_GEN -->
 <g id="edge360" class="edge">
 <title>PROD_C5_C10&#45;&gt;BACKUP_GEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1661.84,-9413.86C1630.12,-9413.76 1587.05,-9419.52 1564,-9447.92 1536.27,-9482.09 1583.35,-10209.04 1552,-10239.92 1523.98,-10267.53 1403.12,-10267.43 1375,-10239.92 1339.25,-10204.95 1386.7,-9378.61 1355,-9339.92 1311.12,-9286.38 1246.9,-9359.45 1203,-9305.92 1172.52,-9268.76 1217.38,-8474.52 1183,-8440.92 1130.23,-8389.36 1069.61,-8389.2 1017,-8440.92 970.64,-8486.5 1035.16,-9558.29 997,-9610.92 910.87,-9729.72 770.66,-9599.79 685,-9718.92 663.9,-9748.27 683.89,-10985.46 673,-11019.92 650.79,-11090.2 594.53,-11157.75 561.42,-11193.22"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="558.67,-11191.03 554.33,-11200.7 563.75,-11195.85 558.67,-11191.03"/>
-<text text-anchor="middle" x="1100" y="-8443.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">CUT&#45;1&#45;OUT\n0.053896 kg/d</text>
+<text text-anchor="middle" x="1100" y="-8443.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">CUT&#45;1&#45;OUT\n0.0 kg/d</text>
 </g>
 <!-- PROD_C5_C10&#45;&gt;POLY_OLEFIN -->
 <g id="edge479" class="edge">
@@ -4894,7 +4894,7 @@
 <title>BMED_UPW_POLISH&#45;&gt;REMIN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2208.21,-9935.45C2237.98,-9940.41 2273.2,-9951.85 2293,-9977.92 2308.41,-9998.21 2286.52,-10189.38 2305,-10206.92 2328.37,-10229.1 2424.98,-10227.23 2450,-10206.92 2483.51,-10179.74 2459.09,-10153.67 2470,-10111.92 2492.87,-10024.36 2526.83,-9922.72 2543.32,-9874.73"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2546.7,-9875.66 2546.65,-9865.06 2540.09,-9873.37 2546.7,-9875.66"/>
-<text text-anchor="middle" x="2377.5" y="-10224.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;UPW&#45;REMIN\n175.233102 kg/d</text>
+<text text-anchor="middle" x="2377.5" y="-10224.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;UPW&#45;REMIN\n175.174278 kg/d</text>
 </g>
 <!-- CATCH_TANK -->
 <g id="node171" class="node">
@@ -4963,7 +4963,7 @@
 <title>ROOF_TANK&#45;&gt;H2O_ELYZ</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2854.06,-10254.9C2838.87,-10245.75 2819.45,-10235.08 2801,-10227.92 2740.1,-10204.28 2698.58,-10245.12 2658,-10193.92 2641.25,-10172.8 2660.33,-6334.76 2646,-6311.92 2556.4,-6169.15 2395.44,-6288.17 2305,-6145.92 2280.97,-6108.13 2323.1,-5373.08 2293,-5339.92 2252.72,-5295.55 2066.8,-5352.87 2025,-5309.92 1988.29,-5272.21 2043.76,-5109.53 2005,-5073.92 1954.93,-5027.92 1914.82,-5047.9 1852,-5073.92 1840.39,-5078.73 1841.69,-5085.91 1832,-5093.92 1721.05,-5185.68 1631.5,-5148.75 1564,-5275.92 1552.25,-5298.06 1569.73,-12475.22 1552,-12492.92 1524.16,-12520.71 1403.11,-12520.44 1375,-12492.92 1338.18,-12456.89 1384.09,-11608.43 1355,-11565.92 1346.87,-11554.04 1333.28,-11546.71 1319.88,-11542.18"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1320.82,-11538.81 1310.24,-11539.36 1318.85,-11545.53 1320.82,-11538.81"/>
-<text text-anchor="middle" x="2155" y="-5342.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ELY&#45;H2O\n83.647747 kg/d</text>
+<text text-anchor="middle" x="2155" y="-5342.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;ELY&#45;H2O\n83.620295 kg/d</text>
 </g>
 <!-- ROOF_TANK&#45;&gt;WS_PEROX -->
 <g id="edge365" class="edge">
@@ -5033,7 +5033,7 @@
 <title>VCD_TRAIN&#45;&gt;BMED_UPW_POLISH</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1735.8,-9966.23C1810.58,-9960.1 1994.74,-9944.99 2091.81,-9937.03"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2092.1,-9940.51 2101.78,-9936.21 2091.53,-9933.54 2092.1,-9940.51"/>
-<text text-anchor="middle" x="1928.5" y="-9957.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S25\n308.578502 kg/d</text>
+<text text-anchor="middle" x="1928.5" y="-9957.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S25\n308.519678 kg/d</text>
 </g>
 <!-- REMIN&#45;&gt;HABITATION -->
 <g id="edge91" class="edge">
@@ -5047,9 +5047,9 @@
 <title>REMIN&#45;&gt;ROOF_TANK</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M2563.39,-9865.04C2582.43,-9907.22 2628.61,-10015.71 2646,-10111.92 2650.42,-10136.37 2640.2,-10541.59 2658,-10558.92 2680.77,-10581.09 2777.7,-10580.53 2801,-10558.92 2844.15,-10518.92 2785.39,-10341.76 2821,-10294.92 2825.54,-10288.95 2831.86,-10284.59 2838.72,-10281.42"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2840.18,-10284.61 2848.29,-10277.78 2837.69,-10278.06 2840.18,-10284.61"/>
-<text text-anchor="middle" x="2729.5" y="-10577.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;POT&#45;01\n165.233063 kg/d</text>
+<text text-anchor="middle" x="2729.5" y="-10577.52" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;POT&#45;01\n165.174239 kg/d</text>
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="2906.4" y="12534.7" width="1952.1" height="520.6" fill="white" stroke="black" stroke-width="5.42"/><text x="2939.0" y="12621.4" font-family="sans-serif" font-size="48.8">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="2939.0" y="12713.6" font-family="sans-serif" font-size="48.8">Process flow diagram</text><text x="2939.0" y="12805.8" font-family="sans-serif" font-size="48.8">Type: flow diagram (ISO_10628_2)   Rev d81bcacf   Issued 2026-10-15</text><text x="2939.0" y="12898.0" font-family="sans-serif" font-size="48.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="2939.0" y="12990.2" font-family="sans-serif" font-size="48.8">Graph SHA-256 9bffd7c81c83fa7e   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="2906.4" y="12534.7" width="1952.1" height="520.6" fill="white" stroke="black" stroke-width="5.42"/><text x="2939.0" y="12621.4" font-family="sans-serif" font-size="48.8">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="2939.0" y="12713.6" font-family="sans-serif" font-size="48.8">Process flow diagram</text><text x="2939.0" y="12805.8" font-family="sans-serif" font-size="48.8">Type: flow diagram (ISO_10628_2)   Rev a9194797   Issued 2026-10-15</text><text x="2939.0" y="12898.0" font-family="sans-serif" font-size="48.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="2939.0" y="12990.2" font-family="sans-serif" font-size="48.8">Graph SHA-256 786ca74b25967382   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

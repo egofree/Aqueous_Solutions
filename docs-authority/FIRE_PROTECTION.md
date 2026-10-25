@@ -51,7 +51,7 @@ Two independent supplies per the redundancy rule: the tower gravity reserve and 
 ## Water supplies (two independent sources, redundancy rule)
 
 1. Gravity: 451 m3 fire reserve held as dead storage in the bottom of the water tower, below the hydro outlet nozzles (NFPA22_2023), so a hydro discharge can never draw it. Static head at L0 16.8 m (165 kPa), at the top life floor 10.8 m. The reserve is split across the cells; each cell has its own fire outlet, so one cell drained for inspection leaves the rest.
-2. Pumped: the NFPA20_2025 fire pump above draws from CATCH_TANK (lower reservoir, 3368 m3 when full; it also takes the sprinkler run-off) and is fed from the critical bus with the genset as its second supply. It boosts the gravity supply where hydraulics need more than the static head.
+2. Pumped: the NFPA20_2025 fire pump above draws from CATCH_TANK (lower reservoir, 3366 m3 when full; it also takes the sprinkler run-off) and is fed from the critical bus with the genset as its second supply. It boosts the gravity supply where hydraulics need more than the static head.
 The lower reservoir is sized to hold the hydro volume plus the fire reserve (AQS-BLD-014), so a fire after a hydro discharge still has a full supply in one of the two reservoirs.
 
 ## Detection and special hazards (NFPA72_2025)

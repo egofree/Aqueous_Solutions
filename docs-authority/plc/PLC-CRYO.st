@@ -37,7 +37,7 @@ VAR
   PROD_O2TE-01_PV : REAL ;  (* band by service )
   AIR_RECEIVERPT-01_PV : REAL ;  (* no design pressure on the graph )
   AIR_RECEIVERTE-01_PV : REAL ;  (* band by service )
-  PROD_MEOHFT-01_PV : REAL ;  (* methanol product: IA-MEOH-PROD 28.15 kg/d (1.48 L/h at 792 kg/m3) )
+  PROD_MEOHFT-01_PV : REAL ;  (* methanol product: IA-MEOH-PROD 28.15 kg/d (1.47 L/h at 792 kg/m3) )
 END_VAR
 
   (* FLOW control loop - set-point from the graph basis *)

@@ -150,9 +150,9 @@ Status is "superseded by" when the page opens with a `Superseded by ...` line na
 | AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | C | 2026-10-24 | Solar-cell line equipment | current |
 | AQS-EQP-FAB-RGN-001 | `docs-authority/FAB_WET_REAGENTS.md` | B | 2026-10-01 | Fab wet reagents — wet-line synth forks | current |
 | AQS-EQP-FAB-UPW-001 | `docs-authority/FAB_UPW.md` | B | 2026-09-27 | Fab UPW — equipment list | current |
-| AQS-EQP-FC-001 | `docs-authority/FUEL_CELL_EQUIPMENT.md` | D | 2026-10-24 | Fuel-cell equipment list | current |
+| AQS-EQP-FC-001 | `docs-authority/FUEL_CELL_EQUIPMENT.md` | E | 2026-10-24 | Fuel-cell equipment list | current |
 | AQS-EQP-FRM-001 | `docs-authority/FARM_EQUIPMENT.md` | D | 2026-10-24 | Farm equipment and process list | current |
-| AQS-EQP-GEN-001 | `docs-authority/BACKUP_GEN_EQUIPMENT.md` | C | 2026-10-24 | Backup generator equipment list | current |
+| AQS-EQP-GEN-001 | `docs-authority/BACKUP_GEN_EQUIPMENT.md` | D | 2026-10-24 | Backup generator equipment list | current |
 | AQS-EQP-GEO-001 | `docs-authority/GEOTHERMAL_EQUIPMENT.md` | D | 2026-10-24 | Geothermal equipment list | current |
 | AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | B | 2026-09-27 | Habitation water — equipment list | current |
 | AQS-EQP-MEOH-001 | `docs-authority/MEOH_EQUIPMENT.md` | A | 2026-10-01 | Methanol train equipment list | current |

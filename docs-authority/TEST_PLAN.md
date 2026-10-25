@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 32 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 58 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 437 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 438 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 630 items: 287 drivers, 343 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 631 items: 287 drivers, 344 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -646,6 +646,7 @@ Total 630 items: 287 drivers, 343 register entries. Classification rule: first m
 | A-M-380 | ASTM D790-25 (previously 17): clause numbers, tables and val clause | For each listed file, look up every clause, table and value cited with ASTM D790 in the 25 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match | X-STD-01 |
 | A-M-381 | ASTM D1785-21a (previously 15): clause numbers, tables and v clause | For each listed file, look up every clause, table and value cited with ASTM D1785 in the 21a text (publisher free-access reader where offered) and correct the number or value; close this entry when all match | X-STD-01 |
 | A-M-382 | ASTM D2855-20 (previously 15): clause numbers, tables and va clause | For each listed file, look up every clause, table and value cited with ASTM D2855 in the 20 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match | X-STD-01 |
+| A-M-383 | Dual-fuel spark-ignition engine: 30 % efficiency on hydrogen - ; kWh/kg | Exercise run on hydrogen at 30 % load: measure fuel mass and electrical output; confirm efficiency within 10 % of 0.30 | X-PAR-12 |
 
 ## 7. T6 Commissioning measurements
 

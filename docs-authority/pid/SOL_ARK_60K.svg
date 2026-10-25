@@ -244,7 +244,7 @@
 <polygon points="1070,1712 1061,1708 1061,1716" fill="#111"/>
 <text x="1476" y="1693" font-size="9" fill="#666" text-anchor="end">H2O_ELYZ</text>
 <text x="1476" y="1707" font-size="11" font-weight="600" text-anchor="end">SF-H2O_ELYZ</text>
-<text x="1476" y="1725" font-size="10" text-anchor="end">21.5 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="1725" font-size="10" text-anchor="end">21.4 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="1758" x2="1061" y2="1758" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,1758 1061,1754 1061,1762" fill="#111"/>
 <text x="1476" y="1739" font-size="9" fill="#666" text-anchor="end">H2_DRYER</text>
@@ -443,7 +443,7 @@
 <g id="aqs-title-block"><rect x="1116" y="3648" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="3665" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-SOL_ARK_60K</text>
 <text x="1124" y="3682" font-size="9">P&amp;ID SOL_ARK_60K (inverter, ELEC sector)</text>
-<text x="1124" y="3699" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev e8f92a93   Issued 2026-10-19</text>
+<text x="1124" y="3699" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev a5dad49e   Issued 2026-10-19</text>
 <text x="1124" y="3716" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="3733" font-size="9">Graph SHA-256 9bffd7c81c83fa7e   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="3733" font-size="9">Graph SHA-256 786ca74b25967382   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

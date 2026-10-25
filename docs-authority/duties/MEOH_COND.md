@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 26.72 kg/d. Mass out 26.72 kg/d. Electrical duty 0.0000 kW. In: S81 7.251 kg/d (MeOH FC condensate); IA-MEOH-H2O 19.47 kg/d (synthesis water). Out: IA-MEOH-COND 26.72 kg/d (methanol condensate).
+1. Basis. Mass in 26.65 kg/d. Mass out 26.65 kg/d. Electrical duty 0.0000 kW. In: S81 7.251 kg/d (MeOH FC condensate); IA-MEOH-H2O 19.4 kg/d (synthesis water). Out: IA-MEOH-COND 26.65 kg/d (methanol condensate).
 
 2. Size.
-- Envelope 400×400×600 mm, 0.0960 m³. That box over this flow would be 86.2 h if it were full. It is not a residence time.
+- Envelope 400×400×600 mm, 0.0960 m³. That box over this flow would be 86.4 h if it were full. It is not a residence time.
 - Seven-day charge V = (4.48/1000)×(168/24) = 0.0314 m³.
 
 3. Material. 316L shell and coil (methanol/water traces) (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
