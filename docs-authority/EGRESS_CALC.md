@@ -189,7 +189,7 @@ Approximate door locations:
 | (0, 0) south-west | 18.4 | 20.1 | SERVICE **18.4** |
 | (24, 0) south-east | 38.4 | 25.9 | STAIR_MAINT **25.9** |
 | (0, 18) north-west | 7.6 | 16.1 | SERVICE **7.6** |
-| (24, 18) north-east | 23.6 | 21.9 | MAINT **21.9** |
+| (24, 18) north-east | 23.6 | 21.9 | STAIR_MAINT **21.9** |
 
 **Study max L-1 travel to nearest of the two ≈ 26 m.** Separated
 exits on north face vs CORE — not clustered at one wall.
