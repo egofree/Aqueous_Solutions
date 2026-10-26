@@ -375,3 +375,16 @@ gantry frame) and the PTFE powder line (pin mill, cyclone classifier, PE-lined
 collector on a post-and-rail frame). The M2 foundry export is retired for
 both. With POLY_F and SHELL_BURNOUT earlier, all five legacy non-watertight
 models are rebuilt; the mfg export audit is watertight across the roster.
+
+## Addendum 27: the FOUNDRY/POLYMERS M3 roster is complete
+
+FILM_CAST and POWDER_RESIN close the roster: every live FOUNDRY and POLYMERS
+unit now has an accepted M3 build (check.json A-core, 8-sheet stamped drawing
+sets, X-PAR-04 registry solids). The five legacy non-watertight M2 compounds
+(SHELL_BURNOUT, POLY_F, FILM_CAST, POWDER_RESIN, TI_CELL) are all superseded;
+the mfg export audit reads 80 of 82 watertight, the two exceptions being
+ROLL's export and its in-envelope copy, whose single tessellation-seam edge is
+recorded in ROLL's check.json (non_manifold_note). The standby_rated units
+(EXTRUDE, DRAW, FORGE, SINTER, VAC_IND, VAC_CAST, RF_HEAT, RES_HEAT,
+COMB_HEAT) keep the envelope-only placeholder per the A-M-283 ruling and
+accept at their own M3 passes when the owner issues their duty.
