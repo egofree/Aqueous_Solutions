@@ -290,20 +290,21 @@
               "kind": "wind",
               "unit": "PV_ARRAY",
               "role": "primary",
-              "share": 0.6,
+              "share": 1.0,
+              "capacity_factor": 0.35,
               "stretch_output_frac": 0.7,
               "resource": "wind.basic_wind_speed_m_s",
-              "register": "AQS-PLAN-011 section 7.2 (wind is the diverse winter source at McMurdo-class sites)"
+              "register": "AQS-PLAN-011 section 7.2 (wind is the primary and diverse winter source; capacity factor 0.35 study for a 6.2 m/s mean)"
             },
             {
               "id": "pv",
               "kind": "pv",
               "unit": "PV_ARRAY",
-              "role": "supplement",
-              "share": 0.4,
+              "role": "option",
+              "share": 0.0,
               "stretch_output_frac": 0.0,
               "resource": "solar.pv_yield_kWh_kWp_d",
-              "register": "AQS-PLAN-011 section 7.2 (PV produces nothing through the dark season)"
+              "register": "AQS-PLAN-011 section 7.2 (PV is a summer option, not a winter source; zero through the dark season)"
             },
             {
               "id": "backup_gen",
@@ -437,13 +438,6 @@
               "mode": "air",
               "duty_param": "rated_kW",
               "register": "AQS-PLAN-011 section 7.2 (the dry cooler becomes a heat-recovery coil: rejected heat is a resource at this site)"
-            },
-            {
-              "level": "ground loop",
-              "unit": "GEO_GHEX",
-              "mode": "ground",
-              "duty_param": "Q_GHEX_avail_kW_th",
-              "register": "AQS-DUTY-076 (ground loop eliminated; kept for the redundancy count)"
             }
           ],
           "units": "-",
