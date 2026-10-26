@@ -86,9 +86,9 @@
       "entries": {
         "cooling_dry_bulb_C": {
           "value": -100.0,
-          "units": "C (radiative sink temperature; no convection)",
+          "units": "C",
           "ref": "NASA_MARS_FACT",
-          "note": "cooling is radiative only; the Stefan-Boltzmann law governs",
+          "note": "radiative sink temperature; no convection",
           "binds": "site_design_dry_bulb_C"
         },
         "heating_dry_bulb_C": {
@@ -108,17 +108,18 @@
       "entries": {
         "pv_yield_kWh_kWp_d": {
           "value": 5.8,
-          "units": "kWh/kWp/d (about 90 min eclipse per 92-min orbit; solar exposure is high but eclipse losses are real)",
+          "units": "kWh/kWp/d before losses",
           "ref": "NREL_PVWATTS",
           "needs_verification": true,
           "verification_test": "Orbital solar geometry with eclipse fraction and radiation degradation",
-          "binds": "pv_yield_kWh_kWp_d"
+          "binds": "pv_yield_kWh_kWp_d",
+          "note": "about 90 min eclipse per 92-min orbit; solar exposure is high but eclipse losses are real"
         },
         "night_hours": {
           "value": 0.56,
-          "units": "h per 92-min orbit in eclipse (36 min sun + 36 min eclipse cycles)",
+          "units": "h/d served from storage",
           "ref": "NASA_MARS_FACT",
-          "note": "the station sees about 16 orbits per day, each with a 36-minute eclipse; the storage cycles every orbit, not daily",
+          "note": "the station sees about 16 orbits per day, each with a 36-minute eclipse; storage cycles every orbit, not daily",
           "binds": "night_hours"
         }
       }
