@@ -56,11 +56,11 @@ Table 3.1. Sectors
 | MFG | Process (Mass transform) | true | true | 10 | tools-metal-forming-train |
 | FOUNDRY | Process (Mass transform) | true | true | 28 | form-train, investment-casting-train, melt-and-cast-train, pot-cell-train |
 | NUT | Process (Mass transform) | true | true | 1 | dosing-train |
-| FARM | Life support / habitat | true | true | 2 | grow-bed-train |
+| FARM | Life support / habitat | true | true | 3 | grow-bed-train |
 | HAB | Life support / habitat | true | true | 3 | life-support-train |
 | CRYO | Utility / header | true | true | 14 | cold-box-asu-recovery-train |
-| WTR | Utility / header | true | true | 11 | grey-black-train, potable-upw-train |
-| ELEC | Utility / header | true | true | 9 | distribution-train, generation-train, storage-train |
+| WTR | Utility / header | true | true | 13 | grey-black-train, potable-upw-train |
+| ELEC | Utility / header | true | true | 10 | distribution-train, generation-train, storage-train |
 | HEAT | Utility / header | false | true | 13 | ladder-train |
 | MEOH | Energy Storage System (Electrochemical) | true | true | 5 | synthesis-train |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | true | true | 1 | hydro-train |

@@ -164,6 +164,9 @@
   "GREY_TREAT": "no issued internals basis for a treat unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "H2_DRYER": "no issued internals basis for a dryer unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "HF_GEN": "no issued internals basis for a reactor unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
+  "HYDRO_GROW": "no issued internals basis for a hydroponics unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
+  "LIO_BAT": "no issued internals basis for a li_ion unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
+  "MEM_DIST": "no issued internals basis for a membrane unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "MEOH_FC": "no issued internals basis for a iem_fc unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "MEOH_FERM": "no issued internals basis for a ferment unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "MET_HX_Q4": "no issued internals basis for a hx unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
@@ -185,7 +188,8 @@
   "SI_REDUCE": "no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "TANK_BLD": "no issued internals basis for a press_tank unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "VCD_TRAIN": "no issued internals basis for a evaporator unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
+  "WET_OX": "no issued internals basis for a wet_ox unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "ZNBR2": "no issued internals basis for a flow_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)"
  },
- "units": 182
+ "units": 186
 }

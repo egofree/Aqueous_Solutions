@@ -6924,5 +6924,70 @@
   ],
   "needs_verification": true,
   "verification_test": "Shell environment specification at the Mars shell design pass"
+ },
+ {
+  "id": "A-M-402",
+  "value": "2517",
+  "units": "kWh (storage, interim)",
+  "where": "LIO_BAT params; sites/leo.json power_portfolio.storage",
+  "basis": "Interim carries the reference storage duty (ZNBR2 params.kWh) at the unit swap; the eclipse energy of the station re-sizes it",
+  "sensitivity": "Pack mass and count scale linearly with the stored energy",
+  "replaced_by": "Eclipse-energy sizing at the LEO storage design pass",
+  "task": "X-LOC-10",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "flow_graph/param/sites/leo.json",
+   "docs-authority/SITE_BASIS_LEO.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Eclipse-energy sizing at the LEO storage design pass"
+ },
+ {
+  "id": "A-M-403",
+  "value": "374 C and 22.1 MPa",
+  "units": "C; MPa (water critical point)",
+  "where": "WET_OX design",
+  "basis": "Wet oxidation above the water critical point oxidises organic solids without settling; reactor class at the published SCWO operating window",
+  "sensitivity": "Reactor duty and material rating scale with the operating pressure; solids loading sets the residence time",
+  "replaced_by": "Reactor integration test on the station black-water mix",
+  "task": "X-LOC-10",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/SITE_BASIS_LEO.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Reactor integration test on the station black-water mix"
+ },
+ {
+  "id": "A-M-404",
+  "value": "capillary wick; no free liquid surface",
+  "units": "-",
+  "where": "HYDRO_GROW design",
+  "basis": "Capillary and membrane nutrient delivery holds the root zone without gravity drainage; photon duty follows the chamber area",
+  "sensitivity": "Areal productivity sets the chamber area and the LED duty for the food and CO2-removal functions",
+  "replaced_by": "Chamber growth trial at the LEO food design pass",
+  "task": "X-LOC-10",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/SITE_BASIS_LEO.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Chamber growth trial at the LEO food design pass"
+ },
+ {
+  "id": "A-M-405",
+  "value": "hydrophobic membrane; feed-permeate temperature difference",
+  "units": "-",
+  "where": "MEM_DIST design",
+  "basis": "Membrane distillation recovers water across a hydrophobic membrane with no boiling pool and no buoyant separation",
+  "sensitivity": "Membrane area scales with the grey-water duty and the temperature difference",
+  "replaced_by": "Membrane module trial on the station grey-water mix",
+  "task": "X-LOC-10",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/SITE_BASIS_LEO.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Membrane module trial on the station grey-water mix"
  }
 ]

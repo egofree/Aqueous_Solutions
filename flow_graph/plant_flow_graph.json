@@ -7373,6 +7373,89 @@
       },
       "notes": "Electric resistance trim heat (X-LOC-09): carries the N+1 melt heat duty on the grid where combustion has no atmospheric oxidant.",
       "continuous_kw": null
+    },
+    {
+      "unit_id": "LIO_BAT",
+      "sector_id": "ELEC",
+      "presence": "placeholder",
+      "class": "li_ion",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "chemistry": "sealed Li-ion NMC packs, rack modules with battery management",
+          "service": "station storage through each eclipse; charges on the sunlit part of the orbit",
+          "energy_kWh": 2517,
+          "kwh_basis": "interim carries the reference storage duty (ZNBR2 params.kWh); re-sized at the locale design pass from the eclipse energy (A-M-402)",
+          "basis": "A-M-402"
+        },
+        "kWh": 2517
+      },
+      "notes": "Sealed lithium-ion storage (X-LOC-10): carries the storage function where the flow-battery electrolyte has no buoyant management. Sealed cells need no site capability.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WET_OX",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "wet_ox",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "wet oxidation of black water: organic solids oxidise in water at high temperature and pressure, no settling step",
+          "design": "supercritical class, 374 C and 22.1 MPa water critical point; reactor and heat-recovery duty sized at the locale design pass",
+          "basis": "A-M-403"
+        }
+      },
+      "notes": "Wet-oxidation sanitation (X-LOC-10): replaces anaerobic digestion, whose settling and floating cover need gravity. The reactor is a closed pressure system; no site capability.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "HYDRO_GROW",
+      "sector_id": "FARM",
+      "presence": "placeholder",
+      "class": "hydroponics",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "soilless growth chamber: capillary and membrane nutrient delivery to the root zone, LED photon supply, chamber air loops to the habitat CO2 management",
+          "design": "nutrient-film trays with wick delivery (no free liquid surface); areal productivity and photon duty sized at the locale design pass",
+          "basis": "A-M-404"
+        }
+      },
+      "notes": "Hydroponic growth chamber (X-LOC-10): replaces the soil grow bed, whose drainage and irrigation distribution need gravity, for both the food and CO2-removal functions.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MEM_DIST",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "membrane",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "water recovery by hydrophobic membrane distillation: vapour crosses the membrane at a feed-permeate temperature difference, no boiling pool",
+          "design": "feed and permeate loops with heat recovery from the product water; membrane area sized at the locale design pass from the grey-water duty",
+          "basis": "A-M-405"
+        }
+      },
+      "notes": "Membrane-distillation water recovery (X-LOC-10): replaces the VCD still, whose vapour-liquid separation and film flow need gravity.",
+      "continuous_kw": null
     }
   ],
   "edges": [

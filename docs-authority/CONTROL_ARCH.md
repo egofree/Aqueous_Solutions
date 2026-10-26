@@ -54,9 +54,9 @@ Table 4.1. I/O and modules by PLC
 |---|---|---|---|---|---|---|---|---|
 | PLC-CRYO | 34 | 1 | 17 | 2 | 4 | 3/1/2/1 | redundant pair | 38 |
 | PLC-DIGESTER | 127 | 3 | 115 | 24 | 20 | 10/1/9/2 | single | 56 |
-| PLC-ELEC | 27 | 1 | 445 | 122 | 82 | 3/1/34/10 | redundant pair | 120 |
+| PLC-ELEC | 28 | 1 | 445 | 122 | 82 | 3/1/34/10 | redundant pair | 120 |
 | PLC-FAB | 62 | 3 | 74 | 11 | 17 | 5/1/6/1 | single | 38 |
-| PLC-FARM | 11 | 0 | 3 | 0 | 1 | 1/0/1/0 | redundant pair | 28 |
+| PLC-FARM | 12 | 0 | 3 | 0 | 1 | 1/0/1/0 | redundant pair | 28 |
 | PLC-FOUNDRY | 77 | 0 | 19 | 0 | 6 | 6/0/2/0 | single | 28 |
 | PLC-GAS | 31 | 0 | 36 | 6 | 9 | 3/0/3/1 | redundant pair | 38 |
 | PLC-GEO | 8 | 0 | 4 | 2 | 0 | 1/0/1/1 | redundant pair | 30 |
@@ -69,8 +69,8 @@ Table 4.1. I/O and modules by PLC
 | PLC-OIL | 51 | 0 | 40 | 5 | 11 | 4/0/3/1 | single | 28 |
 | PLC-POLYMERS | 34 | 0 | 18 | 4 | 2 | 3/0/2/1 | single | 24 |
 | PLC-PUMPED_HYDRO | 2 | 1 | 2 | 0 | 0 | 1/1/1/0 | redundant pair | 30 |
-| PLC-WTR | 47 | 0 | 57 | 8 | 17 | 4/0/5/1 | redundant pair | 44 |
-| Total | 607 | 18 | 952 | 207 | 194 | 164 modules | 9 redundant of 18 | 652 |
+| PLC-WTR | 49 | 0 | 57 | 8 | 17 | 4/0/5/1 | redundant pair | 44 |
+| Total | 611 | 18 | 952 | 207 | 194 | 164 modules | 9 redundant of 18 | 652 |
 
 The control system draws about 0.65 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 

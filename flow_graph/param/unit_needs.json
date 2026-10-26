@@ -1,5 +1,5 @@
 {
- "_basis": "AQS-PLAN-011 section 5.3 and Table 5.2; functions from AGENTS.md (Redundancy: power, O2, water, CO2 removal, thermal, food, sanitation) | 2026-10-25 (X-LOC-11): ground_contact removed from the building class - bearing and earthing are structural matters (foundations on land, the hull deck per class rules at sea), not an environmental service the site profile provides. | 2026-10-26 (X-LOC-09): locale-replacement classes radiator, press_tank, recovery_header, catalytic and resistance_heater carry no site capability (closed or line-powered hardware); ZNBR2_BR2_REGEN moves from the scrubber-class blanket to a by-unit entry (closed electrolytic bromine-regen loop, no atmospheric discharge; FLOW_BATTERY.md)",
+ "_basis": "AQS-PLAN-011 section 5.3 and Table 5.2; functions from AGENTS.md (Redundancy: power, O2, water, CO2 removal, thermal, food, sanitation) | 2026-10-25 (X-LOC-11): ground_contact removed from the building class - bearing and earthing are structural matters (foundations on land, the hull deck per class rules at sea), not an environmental service the site profile provides. | 2026-10-26 (X-LOC-09): locale-replacement classes radiator, press_tank, recovery_header, catalytic and resistance_heater carry no site capability (closed or line-powered hardware); ZNBR2_BR2_REGEN moves from the scrubber-class blanket to a by-unit entry (closed electrolytic bromine-regen loop, no atmospheric discharge; FLOW_BATTERY.md) | 2026-10-26 (X-LOC-10): microgravity-replacement classes li_ion, wet_ox, hydroponics and membrane carry no site capability (sealed, pressure-bound or capillary hardware)",
  "needs": {
   "buoyant_separation": "a minimum apparent gravity, steady in direction, to separate gas from liquid or solids from liquid",
   "free_surface": "a liquid surface open to a gas space",
@@ -80,7 +80,11 @@
   "press_tank": [],
   "recovery_header": [],
   "catalytic": [],
-  "resistance_heater": []
+  "resistance_heater": [],
+  "li_ion": [],
+  "wet_ox": [],
+  "hydroponics": [],
+  "membrane": []
  },
  "by_unit": {
   "COMB_HEAT": {

@@ -86,10 +86,12 @@
   "HF_GEN",
   "HOPPER",
   "HX8",
+  "HYDRO_GROW",
   "HYDRO_SET",
   "IND_MELT",
   "INV_CAST",
   "LEACH_CSTR_1",
+  "LIO_BAT",
   "LITHO_ALIGN",
   "LITHO_COAT",
   "LITHO_DEV",
@@ -97,6 +99,7 @@
   "LI_RECOVER",
   "LOAD_AGG",
   "MAU_HX",
+  "MEM_DIST",
   "MEOH_COND",
   "MEOH_FC",
   "MEOH_FERM",
@@ -170,6 +173,7 @@
   "WAFER_FAB",
   "WAX_PATTERN",
   "WET_BENCH",
+  "WET_OX",
   "WIRE_DRAW",
   "WS_AMMONIA",
   "WS_DOPE",
@@ -185,5 +189,5 @@
  ],
  "open": {},
  "tot_wetted_rows": 326,
- "units": 182
+ "units": 186
 }

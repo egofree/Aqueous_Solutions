@@ -7139,6 +7139,77 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": null
+    },
+    {
+      "unit_id": "LIO_BAT",
+      "sector_id": "ELEC",
+      "enabled": true,
+      "class": "li_ion",
+      "tags": [],
+      "params": {
+        "design": {
+          "chemistry": "sealed Li-ion NMC packs, rack modules with battery management",
+          "service": "station storage through each eclipse; charges on the sunlit part of the orbit",
+          "energy_kWh": 2517,
+          "kwh_basis": "interim carries the reference storage duty (ZNBR2 params.kWh); re-sized at the locale design pass from the eclipse energy (A-M-402)",
+          "basis": "A-M-402"
+        },
+        "kWh": 2517
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WET_OX",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "wet_ox",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "wet oxidation of black water: organic solids oxidise in water at high temperature and pressure, no settling step",
+          "design": "supercritical class, 374 C and 22.1 MPa water critical point; reactor and heat-recovery duty sized at the locale design pass",
+          "basis": "A-M-403"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "HYDRO_GROW",
+      "sector_id": "FARM",
+      "enabled": true,
+      "class": "hydroponics",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "soilless growth chamber: capillary and membrane nutrient delivery to the root zone, LED photon supply, chamber air loops to the habitat CO2 management",
+          "design": "nutrient-film trays with wick delivery (no free liquid surface); areal productivity and photon duty sized at the locale design pass",
+          "basis": "A-M-404"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MEM_DIST",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "membrane",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "water recovery by hydrophobic membrane distillation: vapour crosses the membrane at a feed-permeate temperature difference, no boiling pool",
+          "design": "feed and permeate loops with heat recovery from the product water; membrane area sized at the locale design pass from the grey-water duty",
+          "basis": "A-M-405"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
     }
   ],
   "streams": [

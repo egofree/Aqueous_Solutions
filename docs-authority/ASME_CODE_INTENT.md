@@ -25,7 +25,7 @@ Table 2.1. Unit count per class
 | Atmospheric | 3 |
 | B31.3 piping component | 4 |
 | Section VIII-1 (ID not yet sized) | 1 |
-| not a vessel (no design pressure on the graph) | 177 |
+| not a vessel (no design pressure on the graph) | 181 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 0 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
@@ -135,10 +135,12 @@ Table 4.1. Code intent per unit
 | HF_GEN | POLYMERS |  | 250.0 |  | not a vessel (no design pressure on the graph) | - | - | - |
 | HOPPER | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | HX8 | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| HYDRO_GROW | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | HYDRO_SET | PUMPED_HYDRO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | IND_MELT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | INV_CAST | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | LEACH_CSTR_1 | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| LIO_BAT | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | LITHO_ALIGN | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | LITHO_COAT | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | LITHO_DEV | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -146,6 +148,7 @@ Table 4.1. Code intent per unit
 | LI_RECOVER | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | LOAD_AGG | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MAU_HX | HEAT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| MEM_DIST | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MEOH_COND | MEOH |  |  | 400 | not a vessel (no design pressure on the graph) | - | - | - |
 | MEOH_FC | MEOH |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MEOH_FERM | MEOH |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -220,6 +223,7 @@ Table 4.1. Code intent per unit
 | WAFER_FAB | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | WAX_PATTERN | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | WET_BENCH | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| WET_OX | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | WIRE_DRAW | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | WS_AMMONIA | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | WS_DOPE | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

@@ -280,8 +280,9 @@
           "value": [
             {
               "kind": "electrochemical",
-              "unit": "ZNBR2",
-              "energy_param": "kWh"
+              "unit": "LIO_BAT",
+              "energy_param": "kWh",
+              "register": "A-M-402 (sealed Li-ion carries the eclipse energy; interim duty from the reference storage)"
             }
           ],
           "units": "-",
@@ -312,361 +313,337 @@
           "value": [
             {
               "action": "eliminate",
-              "target": "PUMPED_HYDRO",
-              "replacement": "ZNBR2",
-              "register": "AQS-PLAN-011 section 9 (no gravity for pumped hydro in orbit)"
+              "target": "ZNBR2",
+              "register": "AQS-SITE-010 section 3: the flow-battery electrolyte has no buoyant management; sealed lithium-ion carries storage (A-M-402)",
+              "replacement": "LIO_BAT"
             },
             {
               "action": "eliminate",
-              "target": "GEO_GHEX",
-              "replacement": "DRY_COOLER",
-              "register": "AQS-PLAN-011 section 9 (no ground; radiators replace all ground-coupled systems)"
-            },
-            {
-              "action": "eliminate",
-              "target": "GEO_HP",
-              "replacement": "DRY_COOLER",
-              "register": "AQS-PLAN-011 section 9 (no ground; radiative rejection only)"
-            },
-            {
-              "action": "eliminate",
-              "target": "ACID_POLISH_SCRUB",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported scrubber module or chemical absorption at the berth"
-            },
-            {
-              "action": "eliminate",
-              "target": "AFTERBURNER",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "replacement": "FUEL_CELL"
-            },
-            {
-              "action": "eliminate",
-              "target": "AFTERBURNER_FLUE",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "flue recovery: the combustion products are contained and processed"
-            },
-            {
-              "action": "eliminate",
-              "target": "ALK_SCRUBBER",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported scrubber module"
-            },
-            {
-              "action": "eliminate",
-              "target": "BACKUP_GEN",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "replacement": "FUEL_CELL"
-            },
-            {
-              "action": "eliminate",
-              "target": "BLACK_DIGEST",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported waste-processing module (anaerobic digestion needs gravity for settling)"
-            },
-            {
-              "action": "eliminate",
-              "target": "CATCH_TANK",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "closed pressurised water tanks with bladder management replace open catch tanks"
-            },
-            {
-              "action": "eliminate",
-              "target": "COMB_HEAT",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "replacement": "FUEL_CELL"
-            },
-            {
-              "action": "eliminate",
-              "target": "CR_CELL",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrolysis module (molten-salt cells need gravity for salt distribution)"
-            },
-            {
-              "action": "eliminate",
-              "target": "DRY_COOLER",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "radiative heat-rejection panels replace convective coolers in vacuum"
-            },
-            {
-              "action": "eliminate",
-              "target": "EVAP_ACID",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported evaporator module (falling-film evaporation needs gravity for distribution)"
-            },
-            {
-              "action": "eliminate",
-              "target": "EVAP_ACID_VS",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported vent scrubber module"
-            },
-            {
-              "action": "eliminate",
-              "target": "EVAP_BASE",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported evaporator module"
-            },
-            {
-              "action": "eliminate",
-              "target": "EW_1",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrowinning module (cell electrolyte distribution needs gravity or membrane management)"
-            },
-            {
-              "action": "eliminate",
-              "target": "EW_2",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrowinning module"
-            },
-            {
-              "action": "eliminate",
-              "target": "EW_3",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrowinning module"
-            },
-            {
-              "action": "eliminate",
-              "target": "EW_4",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrowinning module"
-            },
-            {
-              "action": "eliminate",
-              "target": "EW_5",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrowinning module"
-            },
-            {
-              "action": "eliminate",
-              "target": "EW_6",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrowinning module"
-            },
-            {
-              "action": "eliminate",
-              "target": "EW_7",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrowinning module"
-            },
-            {
-              "action": "eliminate",
-              "target": "EW_8",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrowinning module"
-            },
-            {
-              "action": "eliminate",
-              "target": "EW_9",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrowinning module"
-            },
-            {
-              "action": "eliminate",
-              "target": "F_RECOVER",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "closed pressurised receiver with bladder management"
-            },
-            {
-              "action": "eliminate",
-              "target": "FLUE_KO",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "closed knock-out with membrane separation replaces gravity knock-out"
-            },
-            {
-              "action": "eliminate",
-              "target": "FLOAT_SINK",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "centrifuge density separation replaces gravity float-sink in microgravity"
-            },
-            {
-              "action": "eliminate",
-              "target": "FLUE_KO",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "closed knock-out"
-            },
-            {
-              "action": "eliminate",
-              "target": "GLASS_DIGEST",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported digest module (caustic digestion needs gravity for mixing and settling)"
-            },
-            {
-              "action": "eliminate",
-              "target": "GROW_BED",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported grow-chamber module (soilless, but irrigation distribution needs pressure management in microgravity)"
+              "target": "ZNBR2_BR2_REGEN",
+              "register": "AQS-SITE-010 section 3: the bromine loop goes with the flow-battery chemistry; sealed cells need no regeneration loop (A-M-402)",
+              "replacement": "LIO_BAT"
             },
             {
               "action": "eliminate",
               "target": "HYDRO_SET",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "replacement": "ZNBR2"
+              "register": "AQS-SITE-010 section 3: no pumped-hydro water bodies in orbit; sealed lithium-ion carries storage (A-M-402)",
+              "replacement": "LIO_BAT"
             },
             {
               "action": "eliminate",
-              "target": "LEACH_CSTR_1",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported leach module (stirred-tank mixing needs impeller management in microgravity)"
+              "target": "GEO_GHEX",
+              "register": "AQS-SITE-010 section 3: no ground in orbit; the loop rejects radiatively to the sky view (A-M-396, A-M-397)",
+              "replacement": "RAD_PANEL"
             },
             {
               "action": "eliminate",
-              "target": "LITHO_COAT",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported coating module"
+              "target": "GEO_HP",
+              "register": "AQS-SITE-010 section 3: no ground source for the lift in orbit; the ground-coupled heat pump goes (A-M-396)",
+              "replacement": "RAD_PANEL"
             },
             {
               "action": "eliminate",
-              "target": "LITHO_ALIGN",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported alignment module"
+              "target": "DRY_COOLER",
+              "register": "AQS-SITE-010 section 3: no air heat sink in vacuum; the low-grade loop rejects radiatively (A-M-396, A-M-397)",
+              "replacement": "RAD_PANEL"
             },
             {
               "action": "eliminate",
-              "target": "LITHO_DEV",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported develop module"
+              "target": "BACKUP_GEN",
+              "register": "AQS-SITE-010 section 3: no atmospheric oxidant and no combustion air; the fuel cell is the diverse second source (AQS-FC-001)",
+              "replacement": "FUEL_CELL"
             },
             {
               "action": "eliminate",
-              "target": "MEOH_COND",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "closed pressurised condenser with capillary or membrane water management"
+              "target": "AFTERBURNER",
+              "register": "AQS-SITE-010 section 3: no atmospheric oxidant; waste CO and organics oxidise on a plant-oxygen bleed in the catalytic bed (A-M-399)",
+              "replacement": "CAT_OX"
             },
             {
               "action": "eliminate",
-              "target": "MEOH_FERM",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported ferment module (fermentation needs gravity for yeast settling)"
+              "target": "AFTERBURNER_FLUE",
+              "register": "AQS-SITE-010 section 3: nothing vents to vacuum; the stream returns through the closed recovery header (A-M-398)",
+              "replacement": "REC_HDR"
             },
             {
               "action": "eliminate",
-              "target": "MEOH_TANK",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "closed pressurised tank with bladder management"
+              "target": "COMB_HEAT",
+              "register": "AQS-SITE-010 section 3: no atmospheric oxidant; the N+1 melt trim heat is electric resistance at the A-M-283 30 kW connected duty",
+              "replacement": "E_HEAT"
+            },
+            {
+              "action": "eliminate",
+              "target": "CATCH_TANK",
+              "register": "AQS-SITE-010 section 3: no stable free surface; the pumped fire supply and treated-water buffer sit in closed bladder tanks (A-M-400)",
+              "replacement": "TANK_BLD"
+            },
+            {
+              "action": "eliminate",
+              "target": "ROOF_TANK",
+              "register": "AQS-SITE-010 section 3: no stable free surface and no gravity reserve; the reserve re-pumps from bladder tanks (A-M-400)",
+              "replacement": "TANK_BLD"
+            },
+            {
+              "action": "eliminate",
+              "target": "BLACK_DIGEST",
+              "register": "AQS-SITE-010 section 3: anaerobic digestion needs settling and a floating cover; wet oxidation carries sanitation (A-M-403)",
+              "replacement": "WET_OX"
+            },
+            {
+              "action": "eliminate",
+              "target": "GROW_BED",
+              "register": "AQS-SITE-010 section 3: soil drainage and irrigation distribution need gravity; the soilless chamber with capillary delivery carries food and CO2 removal (A-M-404)",
+              "replacement": "HYDRO_GROW"
+            },
+            {
+              "action": "eliminate",
+              "target": "VCD_TRAIN",
+              "register": "AQS-SITE-010 section 3: vapour-liquid separation and film flow need buoyancy; membrane distillation carries water recovery (A-M-405)",
+              "replacement": "MEM_DIST"
+            },
+            {
+              "action": "eliminate",
+              "target": "RELIEF_CRYO",
+              "register": "AQS-SITE-010 section 3: nothing vents to vacuum; the stream returns through the closed recovery header (A-M-398)",
+              "replacement": "REC_HDR"
+            },
+            {
+              "action": "eliminate",
+              "target": "RELIEF_H2",
+              "register": "AQS-SITE-010 section 3: nothing vents to vacuum; the stream returns through the closed recovery header (A-M-398)",
+              "replacement": "REC_HDR"
+            },
+            {
+              "action": "eliminate",
+              "target": "ACID_POLISH_SCRUB",
+              "register": "AQS-SITE-010 section 3: nothing vents to vacuum; the stream returns through the closed recovery header (A-M-398)",
+              "replacement": "REC_HDR"
+            },
+            {
+              "action": "eliminate",
+              "target": "ALK_SCRUBBER",
+              "register": "AQS-SITE-010 section 3: nothing vents to vacuum; the stream returns through the closed recovery header (A-M-398)",
+              "replacement": "REC_HDR"
             },
             {
               "action": "eliminate",
               "target": "MET_SCRUB",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported scrubber module"
-            },
-            {
-              "action": "eliminate",
-              "target": "MO_CELL",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrolysis module"
+              "register": "AQS-SITE-010 section 3: nothing vents to vacuum; the stream returns through the closed recovery header (A-M-398)",
+              "replacement": "REC_HDR"
             },
             {
               "action": "eliminate",
               "target": "NOX_SCRUB",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported scrubber module"
+              "register": "AQS-SITE-010 section 3: nothing vents to vacuum; the stream returns through the closed recovery header (A-M-398)",
+              "replacement": "REC_HDR"
+            },
+            {
+              "action": "eliminate",
+              "target": "EVAP_ACID_VS",
+              "register": "AQS-SITE-010 section 3: nothing vents to vacuum; the stream returns through the closed recovery header (A-M-398)",
+              "replacement": "REC_HDR"
+            },
+            {
+              "action": "eliminate",
+              "target": "FAB_UPW_TANK",
+              "register": "AQS-SITE-010 section 3: no ambient-pressure open water; UPW storage is closed and pressurised (imported hardware)",
+              "import_path": "closed pressurised UPW tank"
+            },
+            {
+              "action": "eliminate",
+              "target": "MEOH_TANK",
+              "register": "AQS-SITE-010 section 3: no ambient-pressure open water; methanol storage is closed and pressurised (imported hardware)",
+              "import_path": "closed pressurised methanol tank"
+            },
+            {
+              "action": "eliminate",
+              "target": "LI_RECOVER",
+              "register": "AQS-SITE-010 section 3: ion exchange on a pumped feed replaces the gravity settler (imported module)",
+              "import_path": "imported lithium-recovery module (ion exchange on a pumped feed)"
+            },
+            {
+              "action": "eliminate",
+              "target": "FLOAT_SINK",
+              "register": "AQS-SITE-010 section 3: centrifuge density separation replaces the gravity float-sink bath (imported module)",
+              "import_path": "imported centrifuge module (density separation by centrifugal field)"
             },
             {
               "action": "eliminate",
               "target": "OIL_FRAC",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported fractionator module (distillation needs gravity for phase separation)"
+              "register": "AQS-SITE-010 section 3: capillary or membrane distribution replaces gravity-settled distribution (imported module)",
+              "import_path": "imported fractionator module (centrifugal or packed column at pumped reflux)"
+            },
+            {
+              "action": "eliminate",
+              "target": "MEOH_FERM",
+              "register": "AQS-SITE-010 section 3: fermentation needs gravity for yeast settling; an immobilised-bed fermenter replaces the tank (imported module)",
+              "import_path": "imported immobilised-bed fermenter module"
+            },
+            {
+              "action": "eliminate",
+              "target": "MEOH_COND",
+              "register": "AQS-SITE-010 section 3: a closed pressurised condenser with capillary water recovery replaces the gravity knock-out",
+              "import_path": "closed pressurised condenser with membrane water recovery"
+            },
+            {
+              "action": "eliminate",
+              "target": "FLUE_KO",
+              "register": "AQS-SITE-010 section 3: a closed knock-out with membrane separation replaces the gravity knock-out",
+              "import_path": "closed knock-out with membrane separation"
+            },
+            {
+              "action": "eliminate",
+              "target": "SHELL_BREAK",
+              "register": "AQS-SITE-010 section 3: a closed knock-out replaces the gravity shell breaker",
+              "import_path": "imported knock-out module"
+            },
+            {
+              "action": "eliminate",
+              "target": "F_RECOVER",
+              "register": "AQS-SITE-010 section 3: a closed pressurised receiver with bladder management replaces the open receiver",
+              "import_path": "closed pressurised receiver with bladder management"
+            },
+            {
+              "action": "eliminate",
+              "target": "GLASS_DIGEST",
+              "register": "AQS-SITE-010 section 3: caustic digestion needs gravity for solids suspension; a pumped-loop digester replaces the tank (imported module)",
+              "import_path": "imported pumped-loop digest module"
+            },
+            {
+              "action": "eliminate",
+              "target": "LEACH_CSTR_1",
+              "register": "AQS-SITE-010 section 3: stirred-tank mixing needs impeller mass transfer at gravity; a pumped-loop leach reactor replaces the CSTR (imported module)",
+              "import_path": "imported pumped-loop leach module"
+            },
+            {
+              "action": "eliminate",
+              "target": "EVAP_ACID",
+              "register": "AQS-SITE-010 section 3: falling-film evaporation and condensation need film stability; a capillary-distributed evaporator replaces the open train (imported module)",
+              "import_path": "imported capillary-distributed evaporator module"
+            },
+            {
+              "action": "eliminate",
+              "target": "EVAP_BASE",
+              "register": "AQS-SITE-010 section 3: falling-film evaporation needs film stability; a capillary-distributed evaporator replaces the open train (imported module)",
+              "import_path": "imported capillary-distributed evaporator module"
+            },
+            {
+              "action": "eliminate",
+              "target": "PROD_C5_C10",
+              "register": "AQS-SITE-010 section 3: a closed pressurised product store with bladder management replaces the open cut tank",
+              "import_path": "closed pressurised product store with bladder management"
             },
             {
               "action": "eliminate",
               "target": "PROD_C11_C18",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
+              "register": "AQS-SITE-010 section 3: a closed pressurised product store with bladder management replaces the open cut tank",
               "import_path": "closed pressurised product store with bladder management"
             },
             {
               "action": "eliminate",
               "target": "PROD_C19_C28",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
+              "register": "AQS-SITE-010 section 3: a closed pressurised product store with bladder management replaces the open cut tank",
               "import_path": "closed pressurised product store with bladder management"
             },
             {
               "action": "eliminate",
               "target": "PROD_C29",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
+              "register": "AQS-SITE-010 section 3: a closed pressurised product store with bladder management replaces the open cut tank",
               "import_path": "closed pressurised product store with bladder management"
             },
             {
               "action": "eliminate",
-              "target": "PROD_C5_C10",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "closed pressurised product store with bladder management"
+              "target": "EW_1",
+              "register": "AQS-SITE-010 section 3: electrolyte distribution and gas release need buoyancy; a capillary-gap cell replaces the open cell (imported module)",
+              "import_path": "imported capillary-gap electrowinning module"
             },
             {
               "action": "eliminate",
-              "target": "RELIEF_CRYO",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "recovery-based relief: nothing vents to vacuum; the relief stream is captured and processed"
+              "target": "EW_2",
+              "register": "AQS-SITE-010 section 3: electrolyte distribution and gas release need buoyancy; a capillary-gap cell replaces the open cell (imported module)",
+              "import_path": "imported capillary-gap electrowinning module"
             },
             {
               "action": "eliminate",
-              "target": "RELIEF_H2",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "recovery-based relief: nothing vents to vacuum"
+              "target": "EW_3",
+              "register": "AQS-SITE-010 section 3: electrolyte distribution and gas release need buoyancy; a capillary-gap cell replaces the open cell (imported module)",
+              "import_path": "imported capillary-gap electrowinning module"
             },
             {
               "action": "eliminate",
-              "target": "ROOF_TANK",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "closed pressurised water tank with bladder management"
+              "target": "EW_4",
+              "register": "AQS-SITE-010 section 3: electrolyte distribution and gas release need buoyancy; a capillary-gap cell replaces the open cell (imported module)",
+              "import_path": "imported capillary-gap electrowinning module"
             },
             {
               "action": "eliminate",
-              "target": "SHELL_BREAK",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported knock-out module"
+              "target": "EW_5",
+              "register": "AQS-SITE-010 section 3: electrolyte distribution and gas release need buoyancy; a capillary-gap cell replaces the open cell (imported module)",
+              "import_path": "imported capillary-gap electrowinning module"
             },
             {
               "action": "eliminate",
-              "target": "VCD_TRAIN",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported VCD module (evaporation and condensation need gravity or capillary management)"
+              "target": "EW_6",
+              "register": "AQS-SITE-010 section 3: electrolyte distribution and gas release need buoyancy; a capillary-gap cell replaces the open cell (imported module)",
+              "import_path": "imported capillary-gap electrowinning module"
             },
             {
               "action": "eliminate",
-              "target": "ZNBR2",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported flow-battery module (electrolyte distribution needs pump management in microgravity)"
+              "target": "EW_7",
+              "register": "AQS-SITE-010 section 3: electrolyte distribution and gas release need buoyancy; a capillary-gap cell replaces the open cell (imported module)",
+              "import_path": "imported capillary-gap electrowinning module"
             },
             {
               "action": "eliminate",
-              "target": "ZNBR2_BR2_REGEN",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported Br2 regeneration module"
+              "target": "EW_8",
+              "register": "AQS-SITE-010 section 3: electrolyte distribution and gas release need buoyancy; a capillary-gap cell replaces the open cell (imported module)",
+              "import_path": "imported capillary-gap electrowinning module"
             },
             {
               "action": "eliminate",
-              "target": "CA_POT",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrolysis module (molten-salt cells need gravity for salt distribution)"
+              "target": "EW_9",
+              "register": "AQS-SITE-010 section 3: electrolyte distribution and gas release need buoyancy; a capillary-gap cell replaces the open cell (imported module)",
+              "import_path": "imported capillary-gap electrowinning module"
             },
             {
               "action": "eliminate",
-              "target": "AL_POT",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrolysis module"
-            },
-            {
-              "action": "eliminate",
-              "target": "MG_POT",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrolysis module"
-            },
-            {
-              "action": "eliminate",
-              "target": "TI_CELL",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrolysis module"
+              "target": "CR_CELL",
+              "register": "AQS-SITE-010 section 3: molten-salt and chloride cells need buoyant gas release and settled feed; a capillary-gap cell module replaces the pot (imported module)",
+              "import_path": "imported capillary-gap electrolysis module"
             },
             {
               "action": "eliminate",
               "target": "MO_CELL",
-              "register": "AQS-PLAN-011 section 9 (microgravity)",
-              "import_path": "imported electrolysis module"
+              "register": "AQS-SITE-010 section 3: molten-salt and chloride cells need buoyant gas release and settled feed; a capillary-gap cell module replaces the pot (imported module)",
+              "import_path": "imported capillary-gap electrolysis module"
+            },
+            {
+              "action": "eliminate",
+              "target": "AL_POT",
+              "register": "AQS-SITE-010 section 3: molten-salt and chloride cells need buoyant gas release and settled feed; a capillary-gap cell module replaces the pot (imported module)",
+              "import_path": "imported capillary-gap electrolysis module"
+            },
+            {
+              "action": "eliminate",
+              "target": "MG_POT",
+              "register": "AQS-SITE-010 section 3: molten-salt and chloride cells need buoyant gas release and settled feed; a capillary-gap cell module replaces the pot (imported module)",
+              "import_path": "imported capillary-gap electrolysis module"
+            },
+            {
+              "action": "eliminate",
+              "target": "CA_POT",
+              "register": "AQS-SITE-010 section 3: molten-salt and chloride cells need buoyant gas release and settled feed; a capillary-gap cell module replaces the pot (imported module)",
+              "import_path": "imported capillary-gap electrolysis module"
+            },
+            {
+              "action": "eliminate",
+              "target": "TI_CELL",
+              "register": "AQS-SITE-010 section 3: molten-salt and chloride cells need buoyant gas release and settled feed; a capillary-gap cell module replaces the pot (imported module)",
+              "import_path": "imported capillary-gap electrolysis module"
             }
           ],
           "units": "-",
-          "register": "AQS-PLAN-011 section 9"
+          "register": "AQS-PLAN-011 section 9 and AQS-SITE-010 section 3 (X-LOC-10 design pass: every unit that rests on gravity or vents to space is eliminated with a designed different-technology replacement or a named import path)"
         }
       }
     },
@@ -718,15 +695,29 @@
           "value": [
             {
               "level": "low-grade water loop",
-              "unit": "DRY_COOLER",
+              "unit": "RAD_PANEL",
               "mode": "radiative",
               "duty_param": "rated_kW",
-              "radiator_K": 300,
-              "register": "AQS-PLAN-011 section 9 (radiators are the only heat sink in vacuum; the Stefan-Boltzmann law governs)"
+              "radiator_K": 300.0,
+              "register": "A-M-397 (emissivity 0.90); loop at 300 K; sink per the LEO radiative basis below"
             }
           ],
           "units": "-",
-          "register": "AQS-PLAN-011 section 9"
+          "register": "AQS-PLAN-011 section 9 (radiators are the only heat sink in vacuum)"
+        },
+        "radiator_emissivity": {
+          "value": 0.9,
+          "units": "-",
+          "register": "A-M-397",
+          "needs_verification": true,
+          "verification_test": "Coating coupon exposure test on an external rack"
+        },
+        "radiative_sink_K": {
+          "value": 200.0,
+          "units": "K",
+          "register": "AQS-SITE-010 section 3 (Earth infrared and albedo in the station view factor)",
+          "needs_verification": true,
+          "verification_test": "In-flight radiometric measurement of the effective sink"
         }
       }
     }

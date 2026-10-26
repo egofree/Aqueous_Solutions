@@ -630,6 +630,9 @@ nodes:
   - id: WTR.potable-upw-train.VCD_TRAIN
     parent: WTR.potable-upw-train
     unit_id: VCD_TRAIN
+  - id: WTR.potable-upw-train.MEM_DIST
+    parent: WTR.potable-upw-train
+    unit_id: MEM_DIST
   - id: WTR.grey-black-train
     parent: WTR
     description: >-
@@ -640,6 +643,9 @@ nodes:
   - id: WTR.grey-black-train.BLACK_DIGEST
     parent: WTR.grey-black-train
     unit_id: BLACK_DIGEST
+  - id: WTR.grey-black-train.WET_OX
+    parent: WTR.grey-black-train
+    unit_id: WET_OX
   - id: ELEC
     description: >-
       Utility / header — Sol-Ark / ATS / RECT / MCC hub.
@@ -663,6 +669,9 @@ nodes:
   - id: ELEC.storage-train.ZNBR2
     parent: ELEC.storage-train
     unit_id: ZNBR2
+  - id: ELEC.storage-train.LIO_BAT
+    parent: ELEC.storage-train
+    unit_id: LIO_BAT
   - id: ELEC.storage-train.ZNBR2_BR2_REGEN
     parent: ELEC.storage-train
     unit_id: ZNBR2_BR2_REGEN
@@ -808,6 +817,9 @@ nodes:
   - id: FARM.grow-bed-train.GROW_BED
     parent: FARM.grow-bed-train
     unit_id: GROW_BED
+  - id: FARM.grow-bed-train.HYDRO_GROW
+    parent: FARM.grow-bed-train
+    unit_id: HYDRO_GROW
   - id: FARM.grow-bed-train.FOOD_STORE
     parent: FARM.grow-bed-train
     unit_id: FOOD_STORE

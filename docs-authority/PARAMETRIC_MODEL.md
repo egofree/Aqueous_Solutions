@@ -1863,3 +1863,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-399 | 450 C | Catalyst integration test on the plant waste-gas mix |
 | A-M-400 | 200 kPa design pressure (gauge) | Shell environment specification at the Mars shell design pass |
 | A-M-401 | 101.325 kPa; N2 0.7808, O2 0.2095, Ar 0.0093, CO2 0.0004 kPa absolute; mole fraction | Shell environment specification at the Mars shell design pass |
+| A-M-402 | 2517 kWh (storage, interim) | Eclipse-energy sizing at the LEO storage design pass |
+| A-M-403 | 374 C and 22.1 MPa C; MPa (water critical point) | Reactor integration test on the station black-water mix |
+| A-M-404 | capillary wick; no free liquid surface - | Chamber growth trial at the LEO food design pass |
+| A-M-405 | hydrophobic membrane; feed-permeate temperature difference - | Membrane module trial on the station grey-water mix |

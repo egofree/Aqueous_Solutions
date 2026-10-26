@@ -24,6 +24,15 @@ SOLAR_PV_CELL to the existing X-MFG-38 cell-line sizing (A-M-287..296).
               atmospheric oxidant (replaces the air-fired AFTERBURNER)
   E_HEAT      class resistance_heater: electric resistance trim heat, for sites with no atmospheric
               oxidant (replaces the fuel-fired COMB_HEAT N+1 at the A-M-283 30 kW connected duty)
+  X-LOC-10 locale-replacement units (placeholders; sites/leo and later locales):
+  LIO_BAT     class li_ion: sealed lithium-ion storage with battery management, for sites with no
+              buoyant electrolyte management (replaces ZNBR2, its bromine loop and pumped hydro)
+  WET_OX      class wet_ox: wet oxidation of black water, for sites where anaerobic digestion has
+              no settling (replaces BLACK_DIGEST in the sanitation function)
+  HYDRO_GROW  class hydroponics: soilless growth chamber with capillary nutrient delivery, for
+              sites with no gravity drainage (replaces GROW_BED for food and CO2 removal)
+  MEM_DIST    class membrane: hydrophobic-membrane water recovery, for sites where vapour-liquid
+              separation has no buoyancy (replaces VCD_TRAIN in the water function)
 
 Run: python3 -m flow_graph.param.stub_activation [--write]
 """
@@ -291,6 +300,44 @@ def apply(g=None, write=False):
                basis='A-M-283 (30 kW connected duty carried from COMB_HEAT)'),
           'Electric resistance trim heat (X-LOC-09): carries the N+1 melt heat duty on the grid '
           'where combustion has no atmospheric oxidant.')
+
+    # ---- X-LOC-10 locale-replacement units (placeholders; sites/leo and later locales) ------------
+    # Microgravity (AQS-SITE-010): no buoyant separation and no stable free surface, so every
+    # unit whose chemistry or separation rests on gravity needs a different technology. The
+    # X-LOC-09 units (RAD_PANEL, REC_HDR, TANK_BLD, CAT_OX, E_HEAT) carry the rest of the set.
+    lnode('LIO_BAT', 'ELEC', 'li_ion', None,
+          dict(chemistry='sealed Li-ion NMC packs, rack modules with battery management',
+               service='station storage through each eclipse; charges on the sunlit part of the orbit',
+               energy_kWh=2517, kwh_basis='interim carries the reference storage duty (ZNBR2 params.kWh); '
+               're-sized at the locale design pass from the eclipse energy (A-M-402)',
+               basis='A-M-402'),
+          'Sealed lithium-ion storage (X-LOC-10): carries the storage function where the flow-battery '
+          'electrolyte has no buoyant management. Sealed cells need no site capability.')
+    N['LIO_BAT']['params']['kWh'] = 2517   # storage duty at the top level: the portfolio storage check reads it (A-M-402 interim)
+    lnode('WET_OX', 'WTR', 'wet_ox', None,
+          dict(service='wet oxidation of black water: organic solids oxidise in water at high '
+               'temperature and pressure, no settling step',
+               design='supercritical class, 374 C and 22.1 MPa water critical point; reactor and '
+               'heat-recovery duty sized at the locale design pass',
+               basis='A-M-403'),
+          'Wet-oxidation sanitation (X-LOC-10): replaces anaerobic digestion, whose settling and '
+          'floating cover need gravity. The reactor is a closed pressure system; no site capability.')
+    lnode('HYDRO_GROW', 'FARM', 'hydroponics', None,
+          dict(service='soilless growth chamber: capillary and membrane nutrient delivery to the '
+               'root zone, LED photon supply, chamber air loops to the habitat CO2 management',
+               design='nutrient-film trays with wick delivery (no free liquid surface); areal '
+               'productivity and photon duty sized at the locale design pass',
+               basis='A-M-404'),
+          'Hydroponic growth chamber (X-LOC-10): replaces the soil grow bed, whose drainage and '
+          'irrigation distribution need gravity, for both the food and CO2-removal functions.')
+    lnode('MEM_DIST', 'WTR', 'membrane', None,
+          dict(service='water recovery by hydrophobic membrane distillation: vapour crosses the '
+               'membrane at a feed-permeate temperature difference, no boiling pool',
+               design='feed and permeate loops with heat recovery from the product water; membrane '
+               'area sized at the locale design pass from the grey-water duty',
+               basis='A-M-405'),
+          'Membrane-distillation water recovery (X-LOC-10): replaces the VCD still, whose '
+          'vapour-liquid separation and film flow need gravity.')
 
     if write:
         open(GP, 'w').write(json.dumps(g, indent=2) + '\n')

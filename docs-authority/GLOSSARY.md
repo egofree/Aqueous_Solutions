@@ -1377,3 +1377,5 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {CERN-OHL-S-2.0 -- Strongly reciprocal CERN Open Hardware Licence v2. Licence on this design source and on S.E.M core technology.}
 
 {Convey / Source / Product -- CERN-OHL terms. Source is the design (scripts, params, drawings). Product is hardware built from it. Conveying a Product requires conveying the corresponding Source.}
+
+{SCWO -- Supercritical water oxidation. Organic matter oxidises in water above the critical point (374 C, 22.1 MPa); the gravity-free sanitation path (WET_OX).}

@@ -164,5 +164,9 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | REC_HDR | recovery_header | external visual (1 y, A-M-189) |
 | CAT_OX | catalytic | external visual (1 y, A-M-189) |
 | E_HEAT | resistance_heater | external visual (1 y, A-M-189) |
+| LIO_BAT | li_ion | external visual (1 y, A-M-189) |
+| WET_OX | wet_ox | external visual (1 y, A-M-189) |
+| HYDRO_GROW | hydroponics | external visual (1 y, A-M-189) |
+| MEM_DIST | membrane | external visual (1 y, A-M-189) |
 
-155 units, 350 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+159 units, 354 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
