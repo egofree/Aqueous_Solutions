@@ -136,3 +136,28 @@ def air_density(T_C, sid=None):
 def air_fraction(gas, sid=None):
     """Mole fraction of a gas in the external atmosphere; 0 when the profile lists none."""
     return val('atmosphere.composition_mole_fraction', sid).get(gas, 0.0)
+
+
+# The process atmosphere: the gas space the enclosed plant lives in. Open-air Earth sites have no
+# entry, so process physics sees the external atmosphere. Enclosed locales (pressurised shells)
+# state the interior pressure and composition; NASA-STD-3001 fixes the sea-level equivalent.
+def _shell_entry(key, sid):
+    grp = load_profile(sid)['groups'].get('atmosphere', {})
+    return (grp.get('entries') or {}).get(key)
+
+
+def p_process_Pa(sid=None):
+    """Process-space absolute pressure, Pa: the shell interior where the profile states one, else the external atmosphere."""
+    e = _shell_entry('shell_pressure_kPa', sid)
+    return (e['value'] * 1000.0) if e else p_atm_Pa(sid)
+
+
+def p_process_kPa(sid=None):
+    """Process-space absolute pressure, kPa (adds to a gauge pressure)."""
+    return p_process_Pa(sid) / 1000
+
+
+def process_air_fraction(gas, sid=None):
+    """Mole fraction of a gas in the process space: the shell composition where the profile states one, else the external atmosphere."""
+    e = _shell_entry('shell_composition_mole_fraction', sid)
+    return e['value'].get(gas, 0.0) if e else air_fraction(gas, sid)

@@ -27,10 +27,10 @@ def design(d, e, unit):
     # fire case on the body (ISO 23251 / API 521), set at body design, 21 % overpressure
     Aw = math.pi*Dsh/1000*v('evap_sump_h_mm')/1000 + math.pi*(Dsh/1000)**2/4
     Wf, Qf = EV.fire_relief_kg_h(Aw, LAT)
-    P1f = 1.21*v('evap_body_design_kPag') + SITE.p_atm_kPa(); Tf = EV.tsat_C(P1f) + (Tb - 100)
+    P1f = 1.21*v('evap_body_design_kPag') + SITE.p_process_kPa(); Tf = EV.tsat_C(P1f) + (Tb - 100)
     Af = RL.gas_area_in2(Wf*2.20462, v('evap_k_steam'), P1f/6.894757, (Tf+273.15)*1.8, 1.0, 18.02)
     # shell side blocked outlet: compressor at 120 % of design flow, 10 % overpressure
-    Wb = 1.2*V*3600; P1b = 1.1*v('evap_shell_design_kPag') + SITE.p_atm_kPa(); Tbk = EV.tsat_C(P1b)
+    Wb = 1.2*V*3600; P1b = 1.1*v('evap_shell_design_kPag') + SITE.p_process_kPa(); Tbk = EV.tsat_C(P1b)
     Ab = RL.gas_area_in2(Wb*2.20462, v('evap_k_steam'), P1b/6.894757, (Tbk+273.15)*1.8, 1.0, 18.02)
     D_letter = v(EVK+'evap_psv_orifice_D_in2')   # in2, API 526 orifice D (smallest letter)
     col = None

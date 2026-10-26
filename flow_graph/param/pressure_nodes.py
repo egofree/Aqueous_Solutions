@@ -21,7 +21,7 @@ def main():
     for u, c in GAS.items():
         ins = [e for e in g['edges'] if e['to_unit_id'] == u and e['presence'] == 'present' and (e['rate'] or {}).get('unit') == 'kg/d']
         W = (sum((e['rate']['value'] or 0) for e in g['edges'] if e['from_unit_id'] == u and e['presence'] == 'present' and e.get('phase') == 'G' and 'H2' in e['stream_id'])/win) if c.get('W_gas_out') else ((N[u].get('continuous_kw') or {}).get('value') or 0)*3600/1940.0 if c.get('W_heater') else sum((e['rate']['value'] or 0)/(win if e['from_unit_id'] == 'H2O_ELYZ' else 24) for e in ins)
-        des = c['P_bar']*m*100; P1 = 1.10*des + SITE.p_atm_kPa()
+        des = c['P_bar']*m*100; P1 = 1.10*des + SITE.p_process_kPa()
         p = N[u]['params']; p['design_kPa'] = round(des, 1); p.setdefault('relief_mm', 3.3)
         p['relief_basis'] = {'case': f"blocked outlet at full inflow {W:.3f} kg/h ({c['fluid']}); operating {c['P_bar']:.0f} bar, design {des/100:.1f} bar g",
                              'P1_kPa_abs': round(P1, 1), 'T_K': c['T_K'], 'M_kg_kmol': c['M'], 'k': c['k'], 'Z': c['Z'], 'W_kg_h': round(W, 4),

@@ -1862,3 +1862,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-398 | closed recovery; zero atmospheric discharge - | Relief-contingency study at the shell design pass |
 | A-M-399 | 450 C | Catalyst integration test on the plant waste-gas mix |
 | A-M-400 | 200 kPa design pressure (gauge) | Shell environment specification at the Mars shell design pass |
+| A-M-401 | 101.325 kPa; N2 0.7808, O2 0.2095, Ar 0.0093, CO2 0.0004 kPa absolute; mole fraction | Shell environment specification at the Mars shell design pass |

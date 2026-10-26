@@ -6907,5 +6907,22 @@
   ],
   "needs_verification": true,
   "verification_test": "Shell environment specification at the Mars shell design pass"
+ },
+ {
+  "id": "A-M-401",
+  "value": "101.325 kPa; N2 0.7808, O2 0.2095, Ar 0.0093, CO2 0.0004",
+  "units": "kPa absolute; mole fraction",
+  "where": "sites/mars.json atmosphere.shell_pressure_kPa and shell_composition_mole_fraction; the process-space physics (balance dissolved gas, vent scrubber, relief back-pressure, flue volume)",
+  "basis": "NASA-STD-3001 sea-level-equivalent habitat atmosphere; the enclosed plant lives in this gas space, so process and relief physics see it instead of the external atmosphere",
+  "sensitivity": "Dissolved-gas loads and vent-scrubber gas volumes scale with the process pressure; relief areas grow with the back-pressure",
+  "replaced_by": "Shell environment specification at the Mars shell design pass",
+  "task": "X-LOC-09",
+  "files": [
+   "flow_graph/param/sites/mars.json",
+   "flow_graph/param/site.py",
+   "docs-authority/SITE_BASIS_MARS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Shell environment specification at the Mars shell design pass"
  }
 ]

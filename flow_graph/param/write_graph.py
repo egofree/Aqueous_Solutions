@@ -308,7 +308,7 @@ def x_els_residuals(g, N, E, d):
 
     # 4) AFTERBURNER: ID blower from the flue duty (AQS-SAN-01 850 C chamber, cooled exit duct 300 C class)
     flue = float(E['IA-AB-FLUE']['rate']['value'] or 0)
-    V = flue / 29.0 * 8314.0 * (273.15 + 300.0) / SITE.p_atm_Pa() / 86400.0    # m3/s wet flue at MW 29, 300 C
+    V = flue / 29.0 * 8314.0 * (273.15 + 300.0) / SITE.p_process_Pa() / 86400.0    # m3/s wet flue at MW 29, 300 C, in the process space
     ab_kw = V * 1000.0 * v('OIL.afterburner-train.flue_fan_dP_Pa') / v('OIL.afterburner-train.flue_fan_eta') / 1000.0
     _st('AFTERBURNER', round(ab_kw, 4),
         f"ID blower on the {flue:.3f} kg/d flue (IA-AB-FLUE): {V * 1000:.1f} L/s at the 300 C exit duct class "

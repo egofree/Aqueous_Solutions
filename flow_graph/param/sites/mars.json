@@ -88,6 +88,25 @@
           "value": 43.34,
           "units": "kg/kmol",
           "ref": "NASA_MARS_ATMOS"
+        },
+        "shell_pressure_kPa": {
+          "value": 101.325,
+          "units": "kPa absolute (shell interior)",
+          "ref": "NASA_STD_3001",
+          "register": "A-M-401",
+          "note": "pressurised shells hold a sea-level-equivalent interior; process and relief physics see this space, not the external atmosphere"
+        },
+        "shell_composition_mole_fraction": {
+          "value": {
+            "N2": 0.7808,
+            "O2": 0.2095,
+            "Ar": 0.0093,
+            "CO2": 0.0004
+          },
+          "units": "mole fraction (shell interior)",
+          "ref": "NASA_STD_3001",
+          "register": "A-M-401",
+          "note": "sea-level-equivalent air inside the shells"
         }
       }
     },

@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 58 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 446 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 447 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 640 items: 290 drivers, 350 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 641 items: 290 drivers, 351 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -656,6 +656,7 @@ Total 640 items: 290 drivers, 350 register entries. Classification rule: first m
 | A-M-398 | closed recovery; zero atmospheric discharge - | Relief-contingency study at the shell design pass | X-LOC-09 |
 | A-M-399 | 450 C | Catalyst integration test on the plant waste-gas mix | X-LOC-09 |
 | A-M-400 | 200 kPa design pressure (gauge) | Shell environment specification at the Mars shell design pass | X-LOC-09 |
+| A-M-401 | 101.325 kPa; N2 0.7808, O2 0.2095, Ar 0.0093, CO2 0.0004 kPa absolute; mole fraction | Shell environment specification at the Mars shell design pass | X-LOC-09 |
 
 ## 7. T6 Commissioning measurements
 

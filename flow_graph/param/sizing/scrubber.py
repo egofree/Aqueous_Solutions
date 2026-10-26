@@ -30,7 +30,7 @@ def vent_scrubber(feed_kg_d, air_mg_kg, T_vent_C, p_hcl_kPa, psat_vent_kPa, y_ou
     equilibrium partial pressure over the condensate [PERRY7_HCL_VLE]. NaOH absorbs HCl irreversibly, NTU = ln(y_in/y_out) [PERRY9_ABS].
     Diameter from the column-to-packing ratio (wall channelling) [PERRY9_ABS]; liquid recirculation from the minimum wetting rate;
     NaOH bleed = HCl absorbed x excess, as the BMED 2 M base."""
-    P = SITE.p_atm_kPa(); air_mol = feed_kg_d*air_mg_kg/1e6/28.96*1000          # mol/d
+    P = SITE.p_process_kPa(); air_mol = feed_kg_d*air_mg_kg/1e6/28.96*1000          # mol/d; total pressure is the process space (shell interior where the profile states one)
     n_dry = air_mol; y_w = psat_vent_kPa/P; y_h = p_hcl_kPa/P
     n_tot = n_dry/(1 - y_w - y_h); hcl_mol = n_tot*y_h; w_mol = n_tot*y_w
     vent_kg_d = (air_mol*28.96 + w_mol*18.015 + hcl_mol*36.461)/1000
