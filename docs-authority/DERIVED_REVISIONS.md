@@ -42,7 +42,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/DOC_REGISTER.md` | c430207 (regenerated, no change) | current |
-| `docs-authority/DRAWING_REGISTER.md` | working tree | current |
+| `docs-authority/DRAWING_REGISTER.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/EOL_RETURN.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/FIRE_PROTECTION.md` | c430207 (regenerated, no change) | current |

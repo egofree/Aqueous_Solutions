@@ -234,3 +234,17 @@ Locale board state: X-LOC-07, 08, 09, 10, 11 and 12 all done and ticked with
 evidence. The three unit design records for the LEO imported modules
 (capillary-gap cells, centrifuges, pumped-loop reactors) stay as named import
 paths; designing them in-house is manufacturing-desk work, task by task.
+
+## Addendum 13: FOUNDRY-CA_POT-10/-11 accepted at M3
+
+The grease-Ca electrolysis pot moves from the M2 foundry export to a dedicated
+build (models/mfg/CA_POT/ca_pot.py + params.json): three D50 graphite anodes at
+250 mm immersion, two cathode plates, the 25 mm2 Cu bus class, DN50 offtake
+with a return dip leg, and the N1 Ca-metal tap, N2 brine lance, N3 Cl2 export
+and N4 drain per the task-04 schedule. check.json records the acceptance: the
+build solid sits inside the 800 x 800 x 1600 envelope, the schedule hardware
+overhangs at most 44.5 mm against the 50 mm allowance, and every part is
+valid. The cad/stl registry solid is the in-envelope build and the X-PAR-04
+gate passes. The 8-sheet drawing set is stamped (AQS-DWG-002) with SVG and PDF.
+The task-plan generator's DONE_X set carries the X-LOC-09..12 ticks so the
+board and the files agree.
