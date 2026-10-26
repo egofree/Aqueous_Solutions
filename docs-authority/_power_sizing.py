@@ -62,7 +62,7 @@ if PVF <= 0:
         out[k] = dict(P_kW=P, E_kWh_d=E, nameplate_kWp=_nameplate, nameplate_kw=_nameplate,
                       area_m2=0, kind='wind', capacity_factor=_cf,
                       note='wind primary: nameplate = demand / capacity_factor; roof-close not called (generation is not roof-constrained)')
-    print(json.dumps({'roof': out, 'kind': 'wind'}))
+    print(json.dumps({'roof': out, 'bounding': out['bounding'], 'reference': out['reference'], 'kind': 'wind'}))
     sys.exit(0)
 out={}
 for k,P in cases.items():
