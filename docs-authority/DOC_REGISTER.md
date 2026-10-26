@@ -274,7 +274,7 @@ Table 3.1. Document numbers in use
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register | current |
 | AQS-SAF-005 | `docs-authority/FIRE_PROTECTION.md` | B | 2026-10-20 | Fire protection and detection | current |
 | AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | B | 2026-10-25 | Gas detection | current |
-| AQS-SAF-007 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | A | 2026-10-16 | Hazard separation applied to the layout | current |
+| AQS-SAF-007 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | B | 2026-10-25 | Hazard separation applied to the layout | current |
 | AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP action register | current |
 | AQS-SCALE-001 | `docs-authority/SCALE_MODEL.md` | D | 2026-10-24 | Scale model: parametric building growth | current |
 | AQS-SCALE-UR-001 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | E | 2026-10-24 | What goes unreclaimed when the plant is made smaller or a sector is switched off | current |
@@ -292,6 +292,7 @@ Table 3.1. Document numbers in use
 | AQS-SITE-005 | `docs-authority/SITE_POWER.md` | A | 2026-10-25 | Site power portfolio and redundancy | current |
 | AQS-SITE-006 | `docs-authority/SITE_BASIS_DEATH_VALLEY.md` | A | 2026-10-25 | Death Valley site basis | current |
 | AQS-SITE-007 | `docs-authority/SITE_BASIS_FLOATING_ISLAND.md` | A | 2026-10-25 | Floating island site basis | current |
+| AQS-SITE-008 | `docs-authority/SITE_BASIS_ANTARCTIC.md` | A | 2026-10-25 | Antarctic site basis | current |
 | AQS-SIZE-ACID_POLISH_SCRUB | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | A | 2026-10-20 | Sizing calculation - ACID_POLISH_SCRUB | current |
 | AQS-SIZE-ADS_CHILL | `docs-authority/sizing/ADS_CHILL.md` | A | 2026-10-20 | Sizing calculation - ADS_CHILL | current |
 | AQS-SIZE-AFTERBURNER | `docs-authority/sizing/AFTERBURNER.md` | A | 2026-10-20 | Sizing calculation - AFTERBURNER | current |

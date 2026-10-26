@@ -80,6 +80,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/WATER_PURIFICATION.md` | Verified against the checker and the guide structure. |
 | Bulk closure | 0 pages closed: all pass the automated style check and carry the guide structure. |
 | Final closure | 6 remaining pages closed. All pass the automated check and carry the guide structure. The documentation rewrite is complete. |
+| `docs-authority/SITE_BASIS_ANTARCTIC.md` | Rev A. Profile, environment, scaling actions, closure status; the locale run is blocked on the wind-primary write-stage integration (the X-LOC-08 design pass). |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |

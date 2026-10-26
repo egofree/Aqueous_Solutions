@@ -83,9 +83,7 @@ md = ['# Hazard separation applied to the layout', '', 'Document number: AQS-SAF
  'S1: oxidizer gas to hydrogen or organic liquid, 7,620 mm (25 ft) or a 1 h barrier. S2: ignition source to hydrogen or organic liquid, 7,620 mm. Barriers credited: floor slabs (2 h) and the x = 15,000 mm 1 h partition.', '',
  f'Pairs: 156; pass 156, fail 0, unresolved (block-placed) 0.', '',
  '## 3. Same-level pairs', '', 'Table 3.1. Same-level pairs', '', '| Rule | A | B | Level | Gap mm | Basis | Result |', '|---|---|---|---|---|---|---|']
- 'Rules: S1 oxidizer gas to H2 or organic liquid 7,620 mm (25 ft) or 1 h barrier; S2 ignition source to H2 or organic liquid 7,620 mm. Barriers credited: floor slabs (2 h) and the X = 15,000 mm 1 h partition.', '',
- f"Pairs: {len(rows)}; pass {K['pass']}, FAIL {K['FAIL']}, unresolved (block-placed) {K['unresolved']}.", '',
-
+f'Pairs: {len(rows)}; pass {K["pass"]}, fail {K["FAIL"]}, unresolved (block-placed) {K["unresolved"]}.', '',
 md += [f"| {r['rule']} | {r['a']} | {r['b']} | {r['level']} | {r['gap_mm']} | {r['basis']} | {r['result']} |" for r in rows if '/' not in r['level']]
 md += ['', f"Cross-level pairs ({sum(1 for r in rows if '/' in r['level'])}) pass on the floor slab.", '', f'Layout change applied: 1 h rated rooms with their own exhaust around {len(ROOMS)} units ({", ".join(sorted(ROOMS))}), written to `flow_graph/fire_rooms.json` (room = unit plan + 1 m each side) for the CAD fire-barrier model. Any remaining FAIL is a layout action: move one unit to 7,620 mm, add a rated 1 h partition between them, or (S2) enclose the ignition source in a 1 h room with its own ventilation. Unresolved pairs are checked again once the block-placed units get individual positions.']
 open('docs-authority/HAZARD_SEPARATION_LAYOUT.md', 'w').write('\n'.join(md) + '\n'); print(K); [print(r) for r in rows if r['result'] == 'FAIL']

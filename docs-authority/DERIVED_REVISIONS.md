@@ -41,7 +41,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/DECOMMISSIONING.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | 93594c7 (regenerated, no change) | current |
-| `docs-authority/DOC_REGISTER.md` | 93594c7 (regenerated, no change) | current |
+| `docs-authority/DOC_REGISTER.md` | working tree | current |
 | `docs-authority/DRAWING_REGISTER.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/EOL_RETURN.md` | 93594c7 (regenerated, no change) | current |
@@ -50,9 +50,9 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/FRAME_CHECK.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/GAS_DETECTION.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/GAS_SPECIES.md` | 93594c7 (regenerated, no change) | current |
-| `docs-authority/GA_CHECK.md` | 93594c7 (regenerated, no change) | current |
+| `docs-authority/GA_CHECK.md` | working tree | current |
 | `docs-authority/HALL_EGRESS.md` | 93594c7 (regenerated, no change) | current |
-| `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | 93594c7 (regenerated, no change) | current |
+| `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | working tree | current |
 | `docs-authority/HAZMAT_SEPARATION.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/HAZOP.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/HAZOP_ACTION_REGISTER.md` | 93594c7 (regenerated, no change) | current |
@@ -81,7 +81,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/ONE_LINE.json` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/ONE_LINE.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/OPERATING_PROCEDURES.md` | 93594c7 (regenerated, no change) | current |
-| `docs-authority/PARAMETRIC_MODEL.md` | 93594c7 (regenerated, no change) | current |
+| `docs-authority/PARAMETRIC_MODEL.md` | working tree | current |
 | `docs-authority/PERF_TEST.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/PIPE_SPECS.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/PLANT_BOM.md` | 93594c7 (regenerated, no change) | current |
@@ -96,7 +96,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/SITE_POWER.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/SITE_SCALING.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/SPARES.md` | 93594c7 (regenerated, no change) | current |
-| `docs-authority/STANDARDS_LIST.md` | 93594c7 (regenerated, no change) | current |
+| `docs-authority/STANDARDS_LIST.md` | working tree | current |
 | `docs-authority/STARTUP.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/STRUCT_LOADS.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/SUPPORTS.md` | 93594c7 (regenerated, no change) | current |
@@ -105,7 +105,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/TEST_RIGS.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/UNIT_MATERIALS.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/WATER_TOWER.md` | 93594c7 (regenerated, no change) | current |
-| `docs-authority/WIRE_SPECS.md` | 93594c7 (regenerated, no change) | current |
+| `docs-authority/WIRE_SPECS.md` | working tree | current |
 | `docs-authority/WPS_REGISTER.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/ZNBR2_STACK_TEST.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/drawings/motor_fa/MF-04.svg` | 93594c7 (regenerated, no change) | current |
@@ -460,7 +460,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/fab/VAC_CAST.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/fab/VAC_IND.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/fab/WAX_PATTERN.md` | 93594c7 (regenerated, no change) | current |
-| `docs-authority/hazop_actions.csv` | 93594c7 (regenerated, no change) | current |
+| `docs-authority/hazop_actions.csv` | working tree | current |
 | `docs-authority/insulation_schedule.csv` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/inventory/COMMISSIONING.csv` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | 93594c7 (regenerated, no change) | current |
@@ -1406,7 +1406,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/derived/SYNC_POINTER.md` | 93594c7 (regenerated, no change) | current |
-| `flow_graph/derived/_regen_receipt.json` | - | by design: manifest mechanism itself (U3 regen provenance receipt) |
+| `flow_graph/derived/_regen_receipt.json` | working tree | current |
 | `flow_graph/fire_rooms.json` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/inventory/motor_family_ids.json` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/inventory/other_family_ids.json` | 93594c7 (regenerated, no change) | current |
@@ -1416,19 +1416,19 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/plant_flow_graph.json` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/views/efd-elec.dot` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/views/efd-elec.json` | 93594c7 (regenerated, no change) | current |
-| `flow_graph/views/efd-elec.svg` | 93594c7 (regenerated, no change) | current |
+| `flow_graph/views/efd-elec.svg` | working tree | current |
 | `flow_graph/views/efd-ess.dot` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/views/efd-ess.json` | 93594c7 (regenerated, no change) | current |
-| `flow_graph/views/efd-ess.svg` | 93594c7 (regenerated, no change) | current |
+| `flow_graph/views/efd-ess.svg` | working tree | current |
 | `flow_graph/views/efd-thermal.dot` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/views/efd-thermal.json` | 93594c7 (regenerated, no change) | current |
-| `flow_graph/views/efd-thermal.svg` | 93594c7 (regenerated, no change) | current |
+| `flow_graph/views/efd-thermal.svg` | working tree | current |
 | `flow_graph/views/mfd.dot` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/views/mfd.json` | 93594c7 (regenerated, no change) | current |
-| `flow_graph/views/mfd.svg` | 93594c7 (regenerated, no change) | current |
+| `flow_graph/views/mfd.svg` | working tree | current |
 | `flow_graph/views/pfd.dot` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/views/pfd.json` | 93594c7 (regenerated, no change) | current |
-| `flow_graph/views/pfd.svg` | 93594c7 (regenerated, no change) | current |
+| `flow_graph/views/pfd.svg` | working tree | current |
 | `iso/AQS-ISO-000.png` | - | superseded by docs-authority/iso/*.svg (AQS-ISO-002, _iso_sheets.py); generator pfd_scripts/iso_fab.py retired |
 | `iso/AQS-ISO-001.png` | - | superseded by docs-authority/iso/*.svg (AQS-ISO-002, _iso_sheets.py); generator pfd_scripts/iso_fab.py retired |
 | `iso/AQS-ISO-002.png` | - | superseded by docs-authority/iso/*.svg (AQS-ISO-002, _iso_sheets.py); generator pfd_scripts/iso_fab.py retired |
