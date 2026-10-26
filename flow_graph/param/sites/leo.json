@@ -1,0 +1,397 @@
+{
+  "site_id": "leo",
+  "site_code": "LEO",
+  "groups": {
+    "identity": {
+      "entries": {
+        "name": {
+          "value": "Low Earth orbit variant (station-class, no rotating section; Q-023)",
+          "units": "-",
+          "register": "AQS-SITE-010"
+        },
+        "body": {
+          "value": "earth_surface",
+          "units": "-",
+          "register": "AQS-SITE-002"
+        },
+        "latitude_deg": {
+          "value": 51.6,
+          "units": "deg (orbital inclination)",
+          "ref": "NASA_MARS_FACT"
+        },
+        "longitude_deg": {
+          "value": 0.0,
+          "units": "deg (not applicable in orbit)",
+          "register": "AQS-SITE-010"
+        },
+        "elevation_m": {
+          "value": 400000,
+          "units": "m altitude",
+          "ref": "NASA_MARS_FACT"
+        },
+        "site_basis": {
+          "value": "AQS-SITE-010",
+          "units": "document number",
+          "register": "AQS-SITE-010"
+        }
+      }
+    },
+    "gravity": {
+      "entries": {
+        "g_m_s2": {
+          "value": 8.66,
+          "units": "m/s2 (gravitational acceleration at 400 km; apparent gravity is microgravity: the station is in free fall)",
+          "ref": "NASA_MARS_FACT",
+          "note": "microgravity: no buoyant separation, no settling, no free-surface stabilization"
+        }
+      }
+    },
+    "atmosphere": {
+      "entries": {
+        "pressure_Pa": {
+          "value": 0.0,
+          "units": "Pa (vacuum)",
+          "ref": "NASA_MARS_FACT",
+          "needs_verification": false
+        },
+        "composition_mole_fraction": {
+          "value": {},
+          "units": "mole fraction",
+          "register": "AQS-SITE-010",
+          "note": "vacuum: no atmospheric composition"
+        },
+        "breathable": {
+          "value": false,
+          "units": "-",
+          "register": "AQS-SITE-010; vacuum"
+        },
+        "vent_sink": {
+          "value": false,
+          "units": "-",
+          "register": "AQS-SITE-010; nothing vents to vacuum; vents go to recovery"
+        },
+        "oxidant": {
+          "value": false,
+          "units": "-",
+          "register": "AQS-SITE-010; vacuum has no oxidant"
+        },
+        "molar_mass_kg_kmol": {
+          "value": 0.0,
+          "units": "kg/kmol (vacuum)",
+          "register": "AQS-SITE-010"
+        }
+      }
+    },
+    "thermal": {
+      "entries": {
+        "cooling_dry_bulb_C": {
+          "value": -100.0,
+          "units": "C (radiative sink temperature; no convection)",
+          "ref": "NASA_MARS_FACT",
+          "note": "cooling is radiative only; the Stefan-Boltzmann law governs",
+          "binds": "site_design_dry_bulb_C"
+        },
+        "heating_dry_bulb_C": {
+          "value": -100.0,
+          "units": "C (radiative sink; no convective heating)",
+          "ref": "NASA_MARS_FACT",
+          "note": "heating is from the plant's own thermal stores and solar gain through the radiative environment"
+        },
+        "insulation_ambient_C": {
+          "value": -100.0,
+          "units": "C equivalent radiative environment",
+          "register": "AQS-SITE-010"
+        }
+      }
+    },
+    "solar": {
+      "entries": {
+        "pv_yield_kWh_kWp_d": {
+          "value": 5.8,
+          "units": "kWh/kWp/d (about 90 min eclipse per 92-min orbit; solar exposure is high but eclipse losses are real)",
+          "ref": "NREL_PVWATTS",
+          "needs_verification": true,
+          "verification_test": "Orbital solar geometry with eclipse fraction and radiation degradation",
+          "binds": "pv_yield_kWh_kWp_d"
+        },
+        "night_hours": {
+          "value": 0.56,
+          "units": "h per 92-min orbit in eclipse (36 min sun + 36 min eclipse cycles)",
+          "ref": "NASA_MARS_FACT",
+          "note": "the station sees about 16 orbits per day, each with a 36-minute eclipse; the storage cycles every orbit, not daily",
+          "binds": "night_hours"
+        }
+      }
+    },
+    "wind": {
+      "entries": {
+        "basic_wind_speed_m_s": {
+          "value": 0.0,
+          "units": "m/s (no atmosphere in vacuum)",
+          "register": "AQS-SITE-010"
+        }
+      }
+    },
+    "snow": {
+      "not_applicable": "No atmosphere, no snow"
+    },
+    "seismic": {
+      "not_applicable": "No seismic ground motion in orbit"
+    },
+    "ground": {
+      "not_applicable": "No ground contact in orbit; radiators replace all ground-coupled systems"
+    },
+    "radiation": {
+      "entries": {
+        "dose_rate_mSv_d": {
+          "value": 2.0,
+          "units": "mSv/d (van Allen belt transit and galactic cosmic rays; much higher than Earth surface)",
+          "ref": "NASA_MARS_RAD",
+          "needs_verification": true,
+          "verification_test": "TLD dosimetry on the station; water and polyethylene shielding design"
+        }
+      }
+    },
+    "water_sources": {
+      "entries": {
+        "sources": {
+          "value": [
+            {
+              "name": "recycled",
+              "kind": "recycled",
+              "unit": "WTR",
+              "treatment": "closed-loop recycling (the primary source; no local water in orbit); resupply supplements losses",
+              "ref": "NASA_MARS_FACT"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 9"
+        }
+      }
+    },
+    "local_feedstocks": {
+      "entries": {
+        "feed_cases": {
+          "feed_cases": {
+            "value": [],
+            "units": "-",
+            "register": "AQS-PLAN-011 section 9 (candidates: delivered cargo and waste; no local mineral or biological feedstock in orbit)"
+          },
+          "value": [],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 9 (candidates: delivered cargo and waste; no local mineral or biological feedstock in orbit)"
+        }
+      }
+    },
+    "logistics": {
+      "entries": {
+        "arrival_mode": {
+          "value": "docked cargo vehicle (Dragon, Cygnus, or successor)",
+          "units": "-",
+          "ref": "NASA_MARS_FACT"
+        },
+        "resupply_interval_d": {
+          "value": 90.0,
+          "units": "d between docked resupply missions",
+          "register": "A-M-225",
+          "needs_verification": true,
+          "verification_test": "Launch cadence and docking window study"
+        }
+      }
+    },
+    "electrical": {
+      "entries": {
+        "ac_frequency_Hz": {
+          "value": 60,
+          "units": "Hz line frequency (IEC 60034-30-1 60 Hz IE3 basis, AQS-INV-005)",
+          "register": "A-M-218 (X-INV-02B)",
+          "binds": "MFG.tools-metal-forming-train.mfa_line_hz"
+        },
+        "earthing_method": {
+          "value": "structural bonding (the hull is the common reference; no earth electrode)",
+          "units": "-",
+          "register": "AQS-SITE-010"
+        }
+      }
+    },
+    "jurisdiction": {
+      "entries": {
+        "code_families": {
+          "value": [
+            "space"
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 9 (crewed spacecraft standards: NASA-STD-3001, ISS safety requirements)"
+        }
+      }
+    },
+    "motion": {
+      "entries": {
+        "heel_deg": {
+          "value": 0.0,
+          "units": "deg (no static heel in free fall)",
+          "register": "AQS-SITE-010"
+        },
+        "roll_deg": {
+          "value": 0.0,
+          "units": "deg (no gravity-gradient roll)",
+          "register": "AQS-SITE-010"
+        },
+        "pitch_deg": {
+          "value": 0.0,
+          "units": "deg",
+          "register": "AQS-SITE-010"
+        },
+        "heave_m_s2": {
+          "value": 0.001,
+          "units": "m/s2 residual acceleration (microgravity: 1e-6 g)",
+          "register": "AQS-SITE-010"
+        }
+      },
+      "note": "microgravity: every gravity-dependent process (settling, flotation, buoyant separation) needs a replacement or an import route"
+    },
+    "power_portfolio": {
+      "entries": {
+        "sources": {
+          "value": [
+            {
+              "id": "pv",
+              "kind": "pv",
+              "unit": "PV_ARRAY",
+              "role": "primary",
+              "share": 1.0,
+              "stretch_output_frac": 0.0,
+              "resource": "solar.pv_yield_kWh_kWp_d",
+              "register": "AQS-DUTY-012; Q-024 (PV is the only practical source in orbit; eclipse every orbit)"
+            },
+            {
+              "id": "fuel_cell",
+              "kind": "fuel_cell",
+              "unit": "FUEL_CELL",
+              "role": "backup",
+              "register": "AQS-FC-001"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 9"
+        },
+        "storage": {
+          "value": [
+            {
+              "kind": "electrochemical",
+              "unit": "ZNBR2",
+              "energy_param": "kWh"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 9 (orbit-cycle storage: the battery charges in sun and discharges in eclipse every 92 minutes)"
+        },
+        "worst_stretch": {
+          "value": {
+            "kind": "eclipse",
+            "note": "the worst stretch is each 36-minute eclipse, cycling every 92-minute orbit",
+            "hours_entry": "solar.night_hours"
+          },
+          "units": "-",
+          "register": "AQS-PLAN-011 section 9"
+        },
+        "oversize_factor": {
+          "value": 1.5,
+          "units": "PV nameplate / PV needed to close the daily balance",
+          "needs_verification": true,
+          "verification_test": "Orbital solar geometry with radiation degradation over the station lifetime",
+          "binds": "pv_oversize_factor",
+          "register": "A-M-109"
+        }
+      }
+    },
+    "scaling": {
+      "entries": {
+        "actions": {
+          "value": [
+            {
+              "action": "eliminate",
+              "target": "PUMPED_HYDRO",
+              "replacement": "ZNBR2",
+              "register": "AQS-PLAN-011 section 9 (no gravity for pumped hydro in orbit)"
+            },
+            {
+              "action": "eliminate",
+              "target": "GEO_GHEX",
+              "replacement": "DRY_COOLER",
+              "register": "AQS-PLAN-011 section 9 (no ground; radiators replace all ground-coupled systems)"
+            },
+            {
+              "action": "eliminate",
+              "target": "GEO_HP",
+              "replacement": "DRY_COOLER",
+              "register": "AQS-PLAN-011 section 9 (no ground; radiative rejection only)"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 9"
+        }
+      }
+    },
+    "capabilities": {
+      "entries": {
+        "buoyant_separation": {
+          "value": false,
+          "units": "-",
+          "ref": "NASA_MARS_FACT",
+          "note": "microgravity: settlers, flotation and gravity separators need centrifuge replacements or import routes"
+        },
+        "free_surface": {
+          "value": false,
+          "units": "-",
+          "ref": "NASA_MARS_FACT",
+          "note": "microgravity: liquid free surfaces are unstable without surface-tension or membrane management"
+        },
+        "air_heat_sink": {
+          "value": false,
+          "units": "-",
+          "register": "AQS-SITE-010; vacuum: no convective cooling"
+        },
+        "air_oxidant": {
+          "value": false,
+          "units": "-",
+          "register": "AQS-SITE-010; vacuum has no oxidant"
+        },
+        "vent_sink": {
+          "value": false,
+          "units": "-",
+          "register": "AQS-SITE-010; nothing vents to vacuum"
+        },
+        "ground_contact": {
+          "value": false,
+          "units": "-",
+          "register": "AQS-SITE-010; no ground in orbit"
+        },
+        "liquid_water_at_ambient": {
+          "value": false,
+          "units": "-",
+          "note": "vacuum: open water sublimates; all water is in closed pressurised loops",
+          "register": "AQS-SITE-010"
+        }
+      }
+    },
+    "heat_rejection": {
+      "entries": {
+        "levels": {
+          "value": [
+            {
+              "level": "low-grade water loop",
+              "unit": "DRY_COOLER",
+              "mode": "radiative",
+              "duty_param": "rated_kW",
+              "radiator_K": 300,
+              "register": "AQS-PLAN-011 section 9 (radiators are the only heat sink in vacuum; the Stefan-Boltzmann law governs)"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 9"
+        }
+      }
+    }
+  }
+}
