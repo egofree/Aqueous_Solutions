@@ -1,0 +1,46 @@
+{
+  "kettle_bbox_mm": [
+    150.0,
+    150.0,
+    225.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 0.0,
+    "+X": 0.0,
+    "-Y": 30.1,
+    "+Y": 0.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: vdf_inlet, tfe_inlet, resin_chute, powder_chute, scrap_stub)",
+  "external_parts": [
+    "vdf_inlet",
+    "tfe_inlet",
+    "resin_chute",
+    "powder_chute",
+    "scrap_stub"
+  ],
+  "cap_solids": 3,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "base": 113.0,
+    "support_skirt": 68.2,
+    "kettle": 5.4,
+    "jacket": 6.5,
+    "dished_top": 5.4,
+    "agitator_shaft": 0.7,
+    "impeller": 0.3,
+    "motor": 11.3,
+    "support_frame": 314.0,
+    "vdf_inlet": 0.0,
+    "tfe_inlet": 0.0,
+    "resin_chute": 2.0,
+    "powder_chute": 2.0,
+    "pvdf_stub": 0.1,
+    "scrap_stub": 0.1,
+    "drain_well": 0.8,
+    "vent_stub": 0.0
+  },
+  "cadquery": "2.8.0"
+}

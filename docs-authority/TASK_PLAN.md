@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| FOUNDRY | Process (Mass transform) | 405 | 310 |
+| FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
 | CRYO | Utility / header | 210 | 135 |
@@ -68,7 +68,7 @@ Table 2.1. Tasks by group
 | GAS | Process (Mass transform) | 150 | 98 |
 | WTR | Utility / header | 136 | 87 |
 | MFG | Process (Mass transform) | 150 | 99 |
-| POLYMERS | Process (Mass transform) | 150 | 109 |
+| POLYMERS | Process (Mass transform) | 150 | 110 |
 | ELEC | Utility / header | 135 | 88 |
 | GLASS | Process (Mass transform) | 75 | 50 |
 | MEOH | Energy Storage System (Electrochemical) | 75 | 50 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2936** | **2082** |
+| | **Total** | **2936** | **2084** |
 
 ## 3. Triage of open tasks
 
@@ -105,7 +105,7 @@ Table 3.1. Open tasks by triage tag
 | desk P1 | 1 |
 | desk P2 | 1 |
 | desk P3 | 33 |
-| desk P4 | 461 |
+| desk P4 | 459 |
 | desk P5 | 174 |
 | hardware | 182 |
 | owner | 2 |
@@ -883,8 +883,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-SHELL_BUILD-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-SHELL_BUILD-02, FOUNDRY-SHELL_BUILD-03. Evidence: `docs-authority/duties/SHELL_BUILD.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-SHELL_BUILD-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-SHELL_BUILD-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
   - [x] FOUNDRY-SHELL_BUILD-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FOUNDRY-SHELL_BUILD-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FOUNDRY-SHELL_BUILD-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/SHELL_BUILD/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-SHELL_BUILD-02, FOUNDRY-SHELL_BUILD-04, FOUNDRY-SHELL_BUILD-06, FOUNDRY-SHELL_BUILD-09. Status: partial: M2 at `models/mfg/SHELL_BUILD/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
-  - [ ] FOUNDRY-SHELL_BUILD-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-SHELL_BUILD-10, X-DWG-01. Triage: desk P4.
+  - [x] FOUNDRY-SHELL_BUILD-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/SHELL_BUILD/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-SHELL_BUILD-02, FOUNDRY-SHELL_BUILD-04, FOUNDRY-SHELL_BUILD-06, FOUNDRY-SHELL_BUILD-09. Evidence: `models/mfg/SHELL_BUILD/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
+  - [ ] FOUNDRY-SHELL_BUILD-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-SHELL_BUILD-10, X-DWG-01. Status: partial: GA + nozzle orientation + part sheets in `models/mfg/SHELL_BUILD/drawings/` (weld callouts + ISO 2768-m tolerance notes); per-part dimension chains and the tolerance stack stay open. Triage: desk P4.
   - [x] FOUNDRY-SHELL_BUILD-12 BOM. Done when: models/mfg/SHELL_BUILD/bom.csv. Depends: FOUNDRY-SHELL_BUILD-10. Evidence: `models/mfg/SHELL_BUILD/bom.csv`.
   - [x] FOUNDRY-SHELL_BUILD-13 Fabrication route. Done when: docs-authority/fab/SHELL_BUILD.md. Depends: FOUNDRY-SHELL_BUILD-10, FOUNDRY-SHELL_BUILD-12. Evidence: `docs-authority/fab/SHELL_BUILD.md` (study route).
   - [ ] FOUNDRY-SHELL_BUILD-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-SHELL_BUILD-13, X-BLD-05, X-ASM-01. Triage: desk P5.
@@ -2832,8 +2832,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-POLY_F-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: POLYMERS-POLY_F-02, POLYMERS-POLY_F-03. Evidence: `docs-authority/duties/POLY_F.md` §6 (C7 closed on MASTER_PLAN).
   - [x] POLYMERS-POLY_F-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: POLYMERS-POLY_F-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
   - [x] POLYMERS-POLY_F-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: POLYMERS-POLY_F-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] POLYMERS-POLY_F-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/POLY_F/ builds; acceptance per AQS-PLAN-006 section 5. Depends: POLYMERS-POLY_F-02, POLYMERS-POLY_F-04, POLYMERS-POLY_F-06, POLYMERS-POLY_F-09. Status: partial: M2 at `models/mfg/POLY_F/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
-  - [ ] POLYMERS-POLY_F-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-POLY_F-10, X-DWG-01. Triage: desk P4.
+  - [x] POLYMERS-POLY_F-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/POLY_F/ builds; acceptance per AQS-PLAN-006 section 5. Depends: POLYMERS-POLY_F-02, POLYMERS-POLY_F-04, POLYMERS-POLY_F-06, POLYMERS-POLY_F-09. Evidence: `models/mfg/POLY_F/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
+  - [ ] POLYMERS-POLY_F-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-POLY_F-10, X-DWG-01. Status: partial: GA + nozzle orientation + part sheets in `models/mfg/POLY_F/drawings/` (weld callouts + ISO 2768-m tolerance notes); per-part dimension chains and the tolerance stack stay open. Triage: desk P4.
   - [x] POLYMERS-POLY_F-12 BOM. Done when: models/mfg/POLY_F/bom.csv. Depends: POLYMERS-POLY_F-10. Evidence: `models/mfg/POLY_F/bom.csv`.
   - [x] POLYMERS-POLY_F-13 Fabrication route. Done when: docs-authority/fab/POLY_F.md. Depends: POLYMERS-POLY_F-10, POLYMERS-POLY_F-12. Evidence: `docs-authority/fab/POLY_F.md` (study route).
   - [ ] POLYMERS-POLY_F-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_F-13, X-BLD-05, X-ASM-01. Triage: desk P5.
