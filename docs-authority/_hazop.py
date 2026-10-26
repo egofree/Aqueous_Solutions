@@ -103,11 +103,10 @@ md = ['# HAZOP worksheets', '', 'Document number: AQS-SAF-001', 'Revision: A (st
         '| B | Purpose and scope added per the documentation style guide (AQS-DOC-002); sections numbered. No deviation, cause, safeguard or action changed. | 2026-10-25 |', '',
         '## 1. Purpose and scope', '',
         'This page carries the study HAZOP worksheets: for every node of the generated design, the deviations, their causes and the safeguards, with the action list. It is a design-derived study HAZOP and does not replace a facilitated team HAZOP; the team review signs off rev B of the record. Method IEC 61882 (IEC61882_2016).', '',
-        '## 2. Actions by kind', '',
       'This is a design-derived study HAZOP: deviations, causes and safeguards come from the generated design. It does not replace a facilitated team HAZOP; the team review signs off rev B.', '',
       f'{len(nodes)} nodes, {sum(len(x[2]) for x in nodes)} deviations, {len(acts)} actions: {n_cls} closed at issue against cited artifacts (duty sheet section 6 relief statements, X-SAF-03 C7; AQS-CTL-001 indication loops), {n_sif} trip actions close in the SIF pass (AQS-CTL-003, `docs-authority/_sif.py`), {n_trk} tracked open in the action register AQS-SAF-008 (`docs-authority/HAZOP_ACTION_REGISTER.md`) with owner tasks in plan terms.', '', '## 2. Actions by kind', '', 'Table 2.1. Actions by kind', '', '| Action | Count | Closing task |', '|---|---|---|']
 md += [f'| {k} | {v} | {", ".join(sorted({a[4] for a in acts if a[3] == k}))} |' for k, v in A.most_common()]
-md += ['', '## Worksheets', '']
+md += ['', '## 3. Worksheets', '']
 for u, c, W in nodes:
     md += [f'### {u} ({c})', '', '| Parameter | Guide word | Cause | Consequence | Safeguard | Action |', '|---|---|---|---|---|---|'] + [f'| {a} | {b} | {cc} | {d} | {e} | {f} |' for a, b, cc, d, e, f in W] + ['']
 open('docs-authority/HAZOP.md', 'w').write('\n'.join(md) + '\n'); print(len(nodes), len(acts), dict(A), 'closed', n_cls, 'sif-pass', n_sif, 'tracked', n_trk)
