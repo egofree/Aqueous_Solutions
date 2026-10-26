@@ -289,6 +289,7 @@ END_VAR
 
   (* COMPOSITION monitoring block - indication, no set-point invented )
   FB_AI_BRIN_RECOVERAE-01( PV := BRIN_RECOVERAE-01_PV );
+  BRIN_RECOVERAE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW monitoring block - indication, no set-point invented )
   FB_AI_ICE_EXTRACTFT-01( PV := ICE_EXTRACTFT-01_PV );

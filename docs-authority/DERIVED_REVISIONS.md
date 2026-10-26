@@ -37,7 +37,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/COMMISSIONING.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/COMPLIANCE_MATRIX.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/CONTROL_ARCH.md` | c430207 (regenerated, no change) | current |
-| `docs-authority/CONTROL_SOFTWARE.md` | c430207 (regenerated, no change) | current |
+| `docs-authority/CONTROL_SOFTWARE.md` | working tree | current |
 | `docs-authority/DECOMMISSIONING.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | c430207 (regenerated, no change) | current |
@@ -1237,7 +1237,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/plc/PLC-OIL.st` | c430207 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-POLYMERS.st` | c430207 (regenerated, no change) | current |
 | `docs-authority/plc/PLC-PUMPED_HYDRO.st` | c430207 (regenerated, no change) | current |
-| `docs-authority/plc/PLC-WTR.st` | c430207 (regenerated, no change) | current |
+| `docs-authority/plc/PLC-WTR.st` | working tree | current |
 | `docs-authority/sif_list.csv` | c430207 (regenerated, no change) | current |
 | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/sizing/ADS_CHILL.md` | c430207 (regenerated, no change) | current |

@@ -66,6 +66,6 @@ The 68 discrete instrument points (LSH 66, PSH 2 rupture-disc and PSV-lift indic
 declared per the AQS-CTL-002 module table; their trip matrix is the AQS-CTL-003 cause and effect, not the basic program.
 
 - CONTROL loops exercised: 810 checks pass, 0 fail
-- INDICATION loops exercised: 1041 checks pass, 0 fail
+- INDICATION loops exercised: 1042 checks pass, 0 fail
 - SIF watch bindings: 15 pass, 0 fail
 - AI-count cross-check vs AQS-CTL-002: 0 PLCs with a residual
