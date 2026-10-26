@@ -36,7 +36,7 @@ def design(d, e, unit):
     col = None
     if acid:   # counter-current column on the body, feed at the top (X-MFG-30 option d, AQS-DUTY-060 section 7)
         c = e['cond_hcl_wt']*100; ns = VLE.strip_stages(F, v('bmed_product_wt_acid')*100, P, v('acid_conc_design_wt')*100, V, c)
-        rho = SITE.p_atm_kPa()*18.02/(8.314*(Tb+273.15)); Dc = math.sqrt(4*V/rho/v('evap_col_u_m_s')/math.pi)*1000
+        rho = p1*18.02/(8.314*(Tb+273.15)); Dc = math.sqrt(4*V/rho/v('evap_col_u_m_s')/math.pi)*1000   # body vapour space (A-M-106 body pressure), not site ambient
         DN = next(x for x in (50, 80, 100, 150, 200, 250, 300) if x >= Dc)
         col = dict(ideal_stages_incl_body=ns, column_stages=ns-1, cond_hcl_wt_pct=c, y_eq_feed_pct=round(VLE.bubble(v('bmed_product_wt_acid')*100)[1], 3),
                    y_eq_body_pct=round(VLE.bubble(v('acid_conc_design_wt')*100)[1], 2), packed_mm=round((ns-1)*v('evap_col_hetp_mm')*v('evap_col_margin')),
