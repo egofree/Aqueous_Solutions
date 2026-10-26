@@ -6804,5 +6804,25 @@
   "sensitivity": "Structural wind and drift loads, the earthing grid design and the ground-loop elimination decision.",
   "replaced_by": "Site metocean and geotechnical survey at the chosen coastal parcel",
   "task": "X-LOC-08"
+ },
+ {
+  "id": "A-M-394",
+  "value": "CO2 0.951; N2 0.0259; Ar 0.0194; O2 0.00161; CO 0.00058 mole fraction; pressure 636 Pa; density 0.020 kg/m3",
+  "units": "mole fraction; Pa; kg/m3",
+  "where": "site profile mars atmosphere group",
+  "basis": "NASA_MARS_FACT and NASA_MARS_ATMOS: mean surface values at the mean radius.",
+  "sensitivity": "Every pressurised-shell structure, every vent and relief calculation, the CRYO atmosphere-separation sizing and the atmosphere-intake compressor all scale with the Mars surface pressure and composition.",
+  "replaced_by": "In-situ pressure and composition measurement at the landing site",
+  "task": "X-LOC-09"
+ },
+ {
+  "id": "A-M-395",
+  "value": "cooling dry bulb -69 C (242-273 K converted to -31 C max; the cooler design uses -69 C as the mean); heating dry bulb -89 C (184 K); insulation ambient -63 C (210 K mean)",
+  "units": "C",
+  "where": "site profile mars thermal group (binds site_design_dry_bulb_C)",
+  "basis": "NASA_MARS_FACT: diurnal range 184-242 K at the Viking 1 site; the cooling design uses the daily maximum converted from Kelvin, the heating design uses the daily minimum.",
+  "sensitivity": "Pressurised-shell HVAC, thermal stores and material low-temperature limits.",
+  "replaced_by": "In-situ temperature record at the landing site",
+  "task": "X-LOC-09"
  }
 ]
