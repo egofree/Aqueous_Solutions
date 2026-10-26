@@ -11,7 +11,7 @@ Authority: AQS-HEAT-LADDER-001 (`HEAT_LADDER.md`), AQS-FLOW-GRAPH-001 Rev K. Not
 | B | §2, §4.1, §6, §7, §12, §13 | Graph Rev J: HX-8 to Q4, Q3 draws HX-4/5/6 with electric trim, S18 credit retired, re-rated Q3/Q4, ladder placement Rev G | 2026-10-07 |
 | C | §3, §8, §11, §13.3, §13.8, §14 | Graph Rev K: thermosyphon rise checked; downhill steps gravity on stepped stores, cross-ties pumped loops; HDR_CO2 consumer (AQS-DUTY-009) | 2026-10-07 |
 | D | §15 | Graph Rev M: HX-5 and HX-6 ratings, Q3 draws re-rated, Q4 sinks HX-9 / HX-10 / borefield (AQS-DUTY-011) | 2026-10-08 |
-| E | Status | Record of the Rev K to Rev M edge-duty derivation, kept as history. The live heat-ladder duties are regenerated into the graph at every pass (AQS-HEAT-STUDY-002; `flow_graph/param/heat_ladder.py`), and AQS-DUTY-008 is not reissued per revision after Rev D. The calculation script still runs against a Rev K base for reproducibility. | 2026-10-25 |
+| E | Status | Record of the Rev K to Rev M edge-duty derivation, kept as history. The live heat-ladder duties are regenerated into the graph at every pass (AQS-HEAT-STUDY-002; the heat stages of `flow_graph/param/write_graph.py`), and AQS-DUTY-008 is not reissued per revision after Rev D. The calculation script still runs against a Rev K base for reproducibility. | 2026-10-25 |
 
 Licence: CERN-OHL-S-2.0.
 
