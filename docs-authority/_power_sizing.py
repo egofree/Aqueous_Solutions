@@ -83,7 +83,8 @@ if _primary_kind != 'pv':
             'ext': {'total_kW': 0, 'mode': None, 'light_kW': 0, 'vent_kW': 0, 'envelope_kW': 0,
                     'gains_kW': 0, 'slab_kW': 0, 'pump_kW': 0, 'Qh_kW': 0, 'Qc_kW': 0,
                     'bore_m': 0, 'bore_field_m2': 0, 'bores': None},
-            'load': {}}
+            'load': {},
+            'pv_need_kWp': 0, 'pv_roof_kWp': 0}
     out['roof'] = roof
     out['bounding'] = out['bounding']
     out['reference'] = out['reference']
