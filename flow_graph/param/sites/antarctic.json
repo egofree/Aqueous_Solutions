@@ -134,7 +134,7 @@
       "entries": {
         "basic_wind_speed_m_s": {
           "value": 51.0,
-          "units": "m/s basic wind speed (gusts above 100 kn at McMurdo)",
+          "units": "m/s basic wind speed",
           "ref": "NOAA_MCMURDO",
           "needs_verification": true,
           "verification_test": "Class or ASCE Hazard Tool at the chosen parcel with site metocean data",
@@ -161,7 +161,7 @@
       "entries": {
         "allowable_bearing_kPa": {
           "value": 144.0,
-          "units": "kPa allowable bearing, presumptive volcanic gravel",
+          "units": "kPa allowable bearing, presumptive",
           "ref": "IBC2027_1806",
           "needs_verification": true,
           "verification_test": "Geotechnical investigation at the parcel: permafrost depth, bearing and thaw-settlement potential",
@@ -169,7 +169,7 @@
         },
         "unit_weight_kN_m3": {
           "value": 19.0,
-          "units": "kN/m3 frozen volcanic gravel",
+          "units": "kN/m3 moist soil",
           "register": "A-M-393",
           "needs_verification": true,
           "verification_test": "Geotechnical report unit weight",
