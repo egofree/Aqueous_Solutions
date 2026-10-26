@@ -6989,5 +6989,55 @@
   ],
   "needs_verification": true,
   "verification_test": "Membrane module trial on the station grey-water mix"
+ },
+ {
+  "id": "A-M-406",
+  "value": "sublimation or drill-and-melt extraction",
+  "units": "-",
+  "where": "ICE_EXTRACT design; sites/mars.json water_sources",
+  "basis": "Excess ground ice within metres of the surface (NASA_MARS_ICE); extraction duty sized from the plant make-up demand and the in-situ ice mass fraction",
+  "sensitivity": "Extraction energy scales with the ice mass fraction and the depth of the bearing layer",
+  "replaced_by": "In-situ ice assay and extraction trial at the landing site",
+  "task": "X-LOC-09",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "flow_graph/param/sites/mars.json",
+   "docs-authority/SITE_BASIS_MARS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "In-situ ice assay and extraction trial at the landing site"
+ },
+ {
+  "id": "A-M-407",
+  "value": "reduction to chloride ahead of the UPW polish",
+  "units": "-",
+  "where": "PERC_REMOVE design",
+  "basis": "Perchlorate 0.4 to 0.6 percent by mass in Martian soil (NASA_MARS_PERCHLORATE) carries into extracted melt water; biological or ion-exchange reduction bed",
+  "sensitivity": "Bed sizing scales with the perchlorate load and the make-up flow",
+  "replaced_by": "Bed trial on the extracted water at the landing site",
+  "task": "X-LOC-09",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/SITE_BASIS_MARS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Bed trial on the extracted water at the landing site"
+ },
+ {
+  "id": "A-M-408",
+  "value": "dust filter and compressor to process pressure",
+  "units": "-",
+  "where": "ATM_INT design; sites/mars.json local_feedstocks",
+  "basis": "The thin CO2 atmosphere (0.636 kPa, 95.1 percent CO2, NASA_MARS_ATMOS) is the Mars carbon and buffer-gas source; the compressor raises it to the shell process pressure (A-M-401)",
+  "sensitivity": "Compression energy scales inversely with the intake pressure; dust loading sets the filter area",
+  "replaced_by": "In-situ atmospheric assay and compressor endurance test",
+  "task": "X-LOC-09",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "flow_graph/param/sites/mars.json",
+   "docs-authority/SITE_BASIS_MARS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "In-situ atmospheric assay and compressor endurance test"
  }
 ]

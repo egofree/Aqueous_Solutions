@@ -7210,6 +7210,58 @@
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
+    },
+    {
+      "unit_id": "ICE_EXTRACT",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "ice_extract",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "ground-ice miner: strip regolith over the ice-bearing layer, extract by sublimation or drill-and-melt, deliver melt water to the treatment train",
+          "make_up": "the water-cycle make-up meter (GW_INTAKE) ledger at Mars is this unit",
+          "duty": "sized at the locale design pass from the plant make-up demand and the ice mass fraction at the landing site (NASA_MARS_ICE)",
+          "basis": "A-M-406"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "PERC_REMOVE",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "treat",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "perchlorate-reduction bed ahead of the UPW polish: biological or ion-exchange reduction of ClO4 to chloride",
+          "feed": "0.4 to 0.6 percent perchlorate by mass in the extracted ground ice (NASA_MARS_PERCHLORATE)",
+          "basis": "A-M-407"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "ATM_INT",
+      "sector_id": "GAS",
+      "enabled": true,
+      "class": "intake",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "atmosphere intake: dust filter and compressor; the CO2 feeds methanol synthesis and, with N2 and Ar, the cold-box buffer gas",
+          "feed": "0.636 kPa CO2 95.1 percent (NASA_MARS_ATMOS); the compressor raises it to the process pressure (A-M-401)",
+          "basis": "A-M-408"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
     }
   ],
   "streams": [

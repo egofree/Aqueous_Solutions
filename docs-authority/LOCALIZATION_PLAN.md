@@ -464,7 +464,7 @@ Table 12.1. Build phases
 | X-LOC-07 | Death Valley variant | profile, site basis page, regeneration and closure pass | open (profile, basis page AQS-SITE-006 and the first locale run are in; the site design check carries the H2-bank finding QC-09 and the groundwater intake unit is not yet in the graph) |
 | X-LOC-11 | Floating island variant | as X-LOC-07, with the motion group, mass and stability checks, seawater feed case and the marine code family | open |
 | X-LOC-08 | Antarctic variant | as X-LOC-07, with the treaty code family | open |
-| X-LOC-09 | Mars variant | as X-LOC-07, with in-situ feed cases and replacement units | design pass done and the locale run complete: RAD_PANEL, TANK_BLD, REC_HDR, CAT_OX and E_HEAT in the graph, the ground loop stays, scaling and the portfolio checks pass, 321 locale outputs under sites/mars/ (AQS-SITE-009 Rev C). Remainder: atmosphere intake, ice extraction, perchlorate removal, assay feed cases |
+| X-LOC-09 | Mars variant | as X-LOC-07, with in-situ feed cases and replacement units | done: replacement units (RAD_PANEL, TANK_BLD, REC_HDR, CAT_OX, E_HEAT) and in-situ resource units (ICE_EXTRACT, PERC_REMOVE, ATM_INT) in the graph; the ground loop stays; locale run complete with 321 outputs under sites/mars/; feed cases mapped to the AQS-ASSAY-001 classes (AQS-SITE-009 Rev D) |
 | X-LOC-10 | Low Earth orbit variant | as X-LOC-07, with microgravity replacements and radiators | open; the X-LOC-09 replacement units (RAD_PANEL, REC_HDR, TANK_BLD) already cover part of the microgravity set |
 | X-LOC-12 | Cross-locale comparison | a generated comparison of scaling actions, power portfolios and unit sizes across every profile | open |
 

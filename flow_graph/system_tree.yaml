@@ -529,6 +529,9 @@ nodes:
   - id: GAS.scrubbing-headers-train.gas-headers.REC_HDR
     parent: GAS.scrubbing-headers-train.gas-headers
     unit_id: REC_HDR
+  - id: GAS.scrubbing-headers-train.gas-headers.ATM_INT
+    parent: GAS.scrubbing-headers-train.gas-headers
+    unit_id: ATM_INT
   - id: CRYO
     description: >-
       Utility / header — cold-box O2/N2/CO2/H2; not a generation class.
@@ -615,6 +618,12 @@ nodes:
   - id: WTR.potable-upw-train.TANK_BLD
     parent: WTR.potable-upw-train
     unit_id: TANK_BLD
+  - id: WTR.potable-upw-train.ICE_EXTRACT
+    parent: WTR.potable-upw-train
+    unit_id: ICE_EXTRACT
+  - id: WTR.potable-upw-train.PERC_REMOVE
+    parent: WTR.potable-upw-train
+    unit_id: PERC_REMOVE
   - id: WTR.potable-upw-train.BMED_UPW_POLISH
     parent: WTR.potable-upw-train
     unit_id: BMED_UPW_POLISH

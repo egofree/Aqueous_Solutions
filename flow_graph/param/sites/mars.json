@@ -260,9 +260,32 @@
     "local_feedstocks": {
       "entries": {
         "feed_cases": {
-          "value": [],
+          "value": [
+            {
+              "name": "ground ice",
+              "classes": {
+                "water": 1.0
+              },
+              "register": "AQS-ASSAY-001 class water; NASA_MARS_ICE; A-M-406 (in-situ fraction to be assayed)"
+            },
+            {
+              "name": "regolith",
+              "classes": {
+                "silicate_oxide": 0.97,
+                "other_inorganic": 0.03
+              },
+              "register": "AQS-ASSAY-001 class silicate_oxide; AQS-SITE-009 section 5 (in-situ assay to be taken)"
+            },
+            {
+              "name": "perchlorate salts",
+              "classes": {
+                "other_inorganic": 1.0
+              },
+              "register": "AQS-ASSAY-001 class other_inorganic; NASA_MARS_PERCHLORATE; A-M-407"
+            }
+          ],
           "units": "-",
-          "register": "AQS-PLAN-011 section 8.2 (candidates: regolith for the silicate/oxide feed case, perchlorate, imported hardware; each needs an assay case)"
+          "register": "AQS-PLAN-011 section 8.2 and AQS-SITE-009 section 5; each case maps to an AQS-ASSAY-001 class and is verified by the in-situ assay"
         }
       }
     },

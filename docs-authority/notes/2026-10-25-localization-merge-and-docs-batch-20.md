@@ -191,3 +191,25 @@ X-LOC-09 stays open on its own done-definition remainder: atmosphere intake,
 ice extraction, perchlorate removal, the assay feed cases and the
 planetary-protection family. X-LOC-10 (LEO) uses the same method next; the
 X-LOC-09 units already cover part of its replacement set.
+
+## Addendum 10: X-LOC-10 LEO locale run complete; X-LOC-09 closed
+
+The LEO locale regenerates end to end: 305 outputs under sites/leo/. The
+design pass adds the microgravity replacements beside the X-LOC-09 set: sealed
+lithium-ion storage (LIO_BAT, A-M-402), wet-oxidation sanitation (WET_OX,
+A-M-403), the soilless growth chamber (HYDRO_GROW, A-M-404) and
+membrane-distillation water recovery (MEM_DIST, A-M-405). All six profiles
+pass the scaling, portfolio and heat-rejection checks; the site tests are
+green and the full battery passes.
+
+The LEO run surfaced the remaining external-atmosphere physics (cold-box feed
+volume, header and duct gas densities, the ZNBR2 purge air) and the roof-close
+boundary where the whole-kW nameplate must fit the roof; each fix is at its
+owner and the baseline is byte-identical throughout.
+
+X-LOC-09 closes: the in-situ resource units enter the graph (ICE_EXTRACT,
+PERC_REMOVE, ATM_INT; A-M-406 to A-M-408), the Mars feed cases map to the
+AQS-ASSAY-001 classes (ground ice, regolith, perchlorate salts), and the
+jurisdiction family and basis page carry planetary protection
+(AQS-SITE-009 Rev D). X-LOC-12 (the cross-locale comparison) is next; X-LOC-11
+keeps the floating-island hull pass.

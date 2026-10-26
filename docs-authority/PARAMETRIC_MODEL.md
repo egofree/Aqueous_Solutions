@@ -1867,3 +1867,6 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-403 | 374 C and 22.1 MPa C; MPa (water critical point) | Reactor integration test on the station black-water mix |
 | A-M-404 | capillary wick; no free liquid surface - | Chamber growth trial at the LEO food design pass |
 | A-M-405 | hydrophobic membrane; feed-permeate temperature difference - | Membrane module trial on the station grey-water mix |
+| A-M-406 | sublimation or drill-and-melt extraction - | In-situ ice assay and extraction trial at the landing site |
+| A-M-407 | reduction to chloride ahead of the UPW polish - | Bed trial on the extracted water at the landing site |
+| A-M-408 | dust filter and compressor to process pressure - | In-situ atmospheric assay and compressor endurance test |

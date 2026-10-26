@@ -33,6 +33,13 @@ SOLAR_PV_CELL to the existing X-MFG-38 cell-line sizing (A-M-287..296).
               sites with no gravity drainage (replaces GROW_BED for food and CO2 removal)
   MEM_DIST    class membrane: hydrophobic-membrane water recovery, for sites where vapour-liquid
               separation has no buoyancy (replaces VCD_TRAIN in the water function)
+  X-LOC-09 remainder - in-situ resource units (placeholders; placed at Mars, not at the reference):
+  ICE_EXTRACT class ice_extract: ground-ice miner; the water make-up source behind GW_INTAKE at
+              sites that state ground ice (A-M-406)
+  PERC_REMOVE class treat: perchlorate-reduction bed ahead of the UPW polish, for waters from
+              perchlorate-bearing ground (A-M-407)
+  ATM_INT     class intake: atmosphere intake - dust filter and compressor feeding the thin CO2
+              atmosphere to the cold box and methanol synthesis (A-M-408)
 
 Run: python3 -m flow_graph.param.stub_activation [--write]
 """
@@ -338,6 +345,33 @@ def apply(g=None, write=False):
                basis='A-M-405'),
           'Membrane-distillation water recovery (X-LOC-10): replaces the VCD still, whose '
           'vapour-liquid separation and film flow need gravity.')
+
+    # ---- X-LOC-09 remainder - in-situ resource units (placeholders; sites/mars) -------------------
+    lnode('ICE_EXTRACT', 'WTR', 'ice_extract', None,
+          dict(service='ground-ice miner: strip regolith over the ice-bearing layer, extract by '
+               'sublimation or drill-and-melt, deliver melt water to the treatment train',
+               make_up='the water-cycle make-up meter (GW_INTAKE) ledger at Mars is this unit',
+               duty='sized at the locale design pass from the plant make-up demand and the ice '
+               'mass fraction at the landing site (NASA_MARS_ICE)',
+               basis='A-M-406'),
+          'Ground-ice extraction (X-LOC-09 remainder): the Mars water source. Needs ground contact '
+          'by design; presence stays placeholder at the reference plant, which draws no ice.')
+    lnode('PERC_REMOVE', 'WTR', 'treat', None,
+          dict(service='perchlorate-reduction bed ahead of the UPW polish: biological or '
+               'ion-exchange reduction of ClO4 to chloride',
+               feed='0.4 to 0.6 percent perchlorate by mass in the extracted ground ice '
+               '(NASA_MARS_PERCHLORATE)',
+               basis='A-M-407'),
+          'Perchlorate removal (X-LOC-09 remainder): the ground-ice water carries perchlorate; the '
+          'reduction bed sits between ICE_EXTRACT and the UPW polish.')
+    lnode('ATM_INT', 'GAS', 'intake', None,
+          dict(service='atmosphere intake: dust filter and compressor; the CO2 feeds methanol '
+               'synthesis and, with N2 and Ar, the cold-box buffer gas',
+               feed='0.636 kPa CO2 95.1 percent (NASA_MARS_ATMOS); the compressor raises it to '
+               'the process pressure (A-M-401)',
+               basis='A-M-408'),
+          'Atmosphere intake (X-LOC-09 remainder): the Mars carbon and buffer-gas source. Class '
+          'intake like GW_INTAKE; a resource boundary, not a balance-constrained unit.')
 
     if write:
         open(GP, 'w').write(json.dumps(g, indent=2) + '\n')

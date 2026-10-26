@@ -51,7 +51,7 @@ Table 3.1. Sectors
 | OIL | Process (Mass transform) | true | true | 14 | pyro-fractionation-train |
 | GLASS | Process (Mass transform) | true | true | 5 | glass-recycle-train |
 | POLYMERS | Process (Mass transform) | true | true | 10 | fluoropolymer-train, forming-train, polyolefin-train |
-| GAS | Process (Mass transform) | true | true | 11 | scrubbing-headers-train |
+| GAS | Process (Mass transform) | true | true | 12 | scrubbing-headers-train |
 | FAB | Process (Mass transform) | true | true | 17 | litho-train, wafer-line-train, wet-reagent-train |
 | MFG | Process (Mass transform) | true | true | 10 | tools-metal-forming-train |
 | FOUNDRY | Process (Mass transform) | true | true | 28 | form-train, investment-casting-train, melt-and-cast-train, pot-cell-train |
@@ -59,7 +59,7 @@ Table 3.1. Sectors
 | FARM | Life support / habitat | true | true | 3 | grow-bed-train |
 | HAB | Life support / habitat | true | true | 3 | life-support-train |
 | CRYO | Utility / header | true | true | 14 | cold-box-asu-recovery-train |
-| WTR | Utility / header | true | true | 13 | grey-black-train, potable-upw-train |
+| WTR | Utility / header | true | true | 15 | grey-black-train, potable-upw-train |
 | ELEC | Utility / header | true | true | 10 | distribution-train, generation-train, storage-train |
 | HEAT | Utility / header | false | true | 13 | ladder-train |
 | MEOH | Energy Storage System (Electrochemical) | true | true | 5 | synthesis-train |

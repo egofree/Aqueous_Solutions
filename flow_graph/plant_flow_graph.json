@@ -7456,6 +7456,67 @@
       },
       "notes": "Membrane-distillation water recovery (X-LOC-10): replaces the VCD still, whose vapour-liquid separation and film flow need gravity.",
       "continuous_kw": null
+    },
+    {
+      "unit_id": "ICE_EXTRACT",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "ice_extract",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "ground-ice miner: strip regolith over the ice-bearing layer, extract by sublimation or drill-and-melt, deliver melt water to the treatment train",
+          "make_up": "the water-cycle make-up meter (GW_INTAKE) ledger at Mars is this unit",
+          "duty": "sized at the locale design pass from the plant make-up demand and the ice mass fraction at the landing site (NASA_MARS_ICE)",
+          "basis": "A-M-406"
+        }
+      },
+      "notes": "Ground-ice extraction (X-LOC-09 remainder): the Mars water source. Needs ground contact by design; presence stays placeholder at the reference plant, which draws no ice.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "PERC_REMOVE",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "treat",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "perchlorate-reduction bed ahead of the UPW polish: biological or ion-exchange reduction of ClO4 to chloride",
+          "feed": "0.4 to 0.6 percent perchlorate by mass in the extracted ground ice (NASA_MARS_PERCHLORATE)",
+          "basis": "A-M-407"
+        }
+      },
+      "notes": "Perchlorate removal (X-LOC-09 remainder): the ground-ice water carries perchlorate; the reduction bed sits between ICE_EXTRACT and the UPW polish.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "ATM_INT",
+      "sector_id": "GAS",
+      "presence": "placeholder",
+      "class": "intake",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "atmosphere intake: dust filter and compressor; the CO2 feeds methanol synthesis and, with N2 and Ar, the cold-box buffer gas",
+          "feed": "0.636 kPa CO2 95.1 percent (NASA_MARS_ATMOS); the compressor raises it to the process pressure (A-M-401)",
+          "basis": "A-M-408"
+        }
+      },
+      "notes": "Atmosphere intake (X-LOC-09 remainder): the Mars carbon and buffer-gas source. Class intake like GW_INTAKE; a resource boundary, not a balance-constrained unit.",
+      "continuous_kw": null
     }
   ],
   "edges": [

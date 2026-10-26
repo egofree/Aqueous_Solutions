@@ -11,6 +11,7 @@ Plan: AQS-PLAN-011 section 8; owner decision Q-022 (mid-latitude, Arcadia Planit
 | A | First issue: profile, environment, scaling findings. | 2026-10-26 |
 | B | X-LOC-09 design pass: the locale-replacement units enter the graph and the scaling actions resolve; the ground loop stays. | 2026-10-26 |
 | C | Process-space physics: enclosed-plant physics see the shell atmosphere (A-M-401), not the external atmosphere. Locale regeneration complete: 321 outputs differ from the baseline under sites/mars/. | 2026-10-26 |
+| D | In-situ resource units enter the graph (ICE_EXTRACT, PERC_REMOVE, ATM_INT; A-M-406 to A-M-408) and the feed cases map to the AQS-ASSAY-001 classes. X-LOC-09 closes. | 2026-10-26 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -62,8 +63,8 @@ The full action list with per-action registers is in the profile (`scaling.actio
 
 - PV is the primary source (2.5 kWh/kWp/d before dust losses, A-M-109 oversize); the worst stretch is the sol night plus a dust storm, carried by ZNBR2 storage with the fuel cell behind it.
 - Heat rejects through two modes: the radiator to the sky and the ground loop to the regolith.
-- Ground ice is the water source; perchlorate removal is required before use (0.4 to 0.6 percent by mass).
-- The atmosphere is the carbon source for methanol synthesis.
+- Ground ice is the water source: ICE_EXTRACT (ground-ice miner, A-M-406) feeds GW_INTAKE, and PERC_REMOVE reduces the perchlorate (0.4 to 0.6 percent by mass, A-M-407) ahead of the UPW polish.
+- The atmosphere is the carbon source for methanol synthesis: ATM_INT (dust filter and compressor, A-M-408) feeds the thin CO2 atmosphere to the synthesis train and the cold-box buffer gas.
 - Regolith gives radiation shielding and part of the shell load.
 - The electrical system floats with insulation monitoring (dry regolith gives no earth electrode).
 - Codes: Outer Space Treaty, COSPAR planetary protection, NASA-STD-3001.
@@ -71,6 +72,6 @@ The full action list with per-action registers is in the profile (`scaling.actio
 ## 5. Open items
 
 1. The locale regeneration is complete: 321 outputs differ from the baseline under `sites/mars/`, and the scaling, portfolio and heat-rejection checks pass at every committed profile.
-2. Ground-ice extraction, perchlorate removal, atmosphere (CO2) intake and solid-oxide CO2 electrolysis (the diverse oxygen source) are follow-on design units; they close X-LOC-09 with the assay feed cases in AQS-ASSAY-001.
+2. The feed cases (ground ice, regolith, perchlorate salts) map to the AQS-ASSAY-001 classes and wait on the in-situ assay at the landing site.
 3. The landing site itself (Q-022); every site-bound value is a model-based interim until it is chosen.
-4. Feed cases for regolith, perchlorate and imported hardware need mapping in AQS-ASSAY-001.
+4. Solid-oxide CO2 electrolysis (the diverse oxygen source) is a redundancy enrichment, not a scaling requirement; it enters with the oxygen-family study.
