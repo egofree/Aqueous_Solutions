@@ -50,7 +50,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/FRAME_CHECK.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/GAS_DETECTION.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/GAS_SPECIES.md` | 93594c7 (regenerated, no change) | current |
-| `docs-authority/GA_CHECK.md` | working tree | current |
+| `docs-authority/GA_CHECK.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/HALL_EGRESS.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/HAZMAT_SEPARATION.md` | 93594c7 (regenerated, no change) | current |
@@ -105,7 +105,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/TEST_RIGS.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/UNIT_MATERIALS.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/WATER_TOWER.md` | 93594c7 (regenerated, no change) | current |
-| `docs-authority/WIRE_SPECS.md` | working tree | current |
+| `docs-authority/WIRE_SPECS.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/WPS_REGISTER.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/ZNBR2_STACK_TEST.md` | 93594c7 (regenerated, no change) | current |
 | `docs-authority/drawings/motor_fa/MF-04.svg` | 93594c7 (regenerated, no change) | current |

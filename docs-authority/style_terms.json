@@ -103,7 +103,15 @@
     "POST",
     "PUT",
     "PATCH",
-    "DELETE"
+    "DELETE",
+    "NW",
+    "WF",
+    "SE",
+    "NE",
+    "SW",
+    "MAINT",
+    "SUMP",
+    "FERM"
   ],
   "long_abbreviations": [
     "ASHRAE",
