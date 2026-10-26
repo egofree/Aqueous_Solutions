@@ -119,17 +119,18 @@
       "entries": {
         "pv_yield_kWh_kWp_d": {
           "value": 2.5,
-          "units": "kWh/kWp/d before losses and dust",
+          "units": "kWh/kWp/d before losses",
           "ref": "NASA_MARS_FACT",
           "needs_verification": true,
           "verification_test": "Solar geometry with optical-depth and dust-settling losses",
-          "binds": "pv_yield_kWh_kWp_d"
+          "binds": "pv_yield_kWh_kWp_d",
+          "note": "Mars mean 586.2 W/m2 before dust-settling losses (NASA_MARS_FACT)"
         },
         "night_hours": {
           "value": 12.33,
-          "units": "h/d served from storage (Mars sol night)",
+          "units": "h/d served from storage",
           "ref": "NASA_MARS_FACT",
-          "note": "Mars sol 24.66 h; night approximately half the sol",
+          "note": "Mars sol 24.66 h; night approximately half the sol (NASA_MARS_FACT)",
           "binds": "night_hours"
         }
       }
@@ -138,7 +139,7 @@
       "entries": {
         "basic_wind_speed_m_s": {
           "value": 20.0,
-          "units": "m/s design gust (low air density 0.020 kg/m3 gives low dynamic pressure)",
+          "units": "m/s basic wind speed",
           "ref": "NASA_MARS_FACT",
           "needs_verification": true,
           "verification_test": "Metocean model at the landing site",
