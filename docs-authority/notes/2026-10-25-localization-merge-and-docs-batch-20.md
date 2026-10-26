@@ -354,3 +354,15 @@ service mast) move from the M2 foundry export to dedicated builds.
 check.json records each acceptance; the export STLs are watertight; the
 X-PAR-04 gate passes on all three registry solids. The 8-sheet drawing sets
 are stamped with SVG and PDF. Unit task 11 keeps the house partial state.
+
+## Addendum 24: FOUNDRY-SHELL_BURNOUT-10 accepted at M3
+
+The flash-dewax + shell-fire furnace moves from the M2 legacy compound to a
+dedicated build (models/mfg/SHELL_BURNOUT/shell_burnout.py + params.json):
+front-door box furnace at 900 C, condensate pan routing reclaim to
+WAX_PATTERN, off-gas collector, and the seven-nozzle schedule. The export STL
+is watertight - the second of the five legacy non-watertight models retired.
+Overhang metrics on this unit compute from the tessellated compound (the OCC
+compound bbox inflates around cylindrical pass cuts). The X-PAR-04 gate
+passes; the 8-sheet drawing set is stamped with SVG and PDF. Unit task 11
+keeps the house partial state.

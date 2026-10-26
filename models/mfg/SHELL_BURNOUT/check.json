@@ -1,0 +1,42 @@
+{
+  "casing_bbox_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 30.0,
+    "+X": 30.0,
+    "-Y": 34.0,
+    "+Y": 6.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: shell_inlet, fired_out, condensate_stub, wax_stub, offgas_stub)",
+  "external_parts": [
+    "shell_inlet",
+    "fired_out",
+    "condensate_stub",
+    "wax_stub",
+    "offgas_stub"
+  ],
+  "cap_solids": 3,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "casing": 635.2,
+    "door": 39.2,
+    "hot_face": 110.0,
+    "hearth_plate": 217.8,
+    "condenser_pan": 55.3,
+    "offgas_collector": 41.4,
+    "shell_inlet": 5.7,
+    "fired_out": 3.8,
+    "condensate_stub": 0.0,
+    "wax_stub": 0.0,
+    "offgas_stub": 0.0,
+    "drain_well": 1.0,
+    "vent_stub": 0.1
+  },
+  "cadquery": "2.8.0"
+}

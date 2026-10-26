@@ -1,0 +1,23 @@
+{
+ "size_mm": [
+  1000,
+  1000,
+  1500
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N1 green-shell inlet -X z 160 (front, full height); N2 fired-shell out +X z 600; N3/N4 condensate and unrecovered-wax DN15 stubs +Y z 600; N5 off-gas -Y z 600; N6 drain bottom (400,400) z 50; N7 vent top (400,400) z 800. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "service": "flash-dewax + shell fire furnace, 900 C",
+  "shell_kg_d": 8.0,
+  "wax_reclaim_kg_d": 1.8,
+  "burned_wax_kg_d": 0.2,
+  "T_C": 900.0,
+  "kW": 0.25,
+  "condenser": "wax condensate to WAX_PATTERN"
+ },
+ "doc": "AQS-DUTY-072"
+}

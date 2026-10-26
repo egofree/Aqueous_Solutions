@@ -1,6 +1,11 @@
-item,description,qty,material,basis
-1,"Flash-dewax + fire chamber 1000 x 640 x 900 mm, 900 C, 60 mm lined",1,"CS casing, ceramic fibre","AQS-DUTY-072 section 4; flash-dewax + shell fire furnace, 900 C"
-2,Shell trolley deck with casters and stop,1,"CS, heat-resistant wheels",8 kg/d fired shells (A-M-281)
-3,Off-gas stack DN150 with dewax-air bias damper,1,SA-240 304L,AQS-DUTY-072 section 4; flash dewax stage
-4,"Wax condenser D120 x 360 mm with run, downcomer and receiver",1,"SA-240 304L, jacketed",1.8 kg/d wax reclaim to WAX_PATTERN; 0.2 kg/d burned (A-M-281)
-5,"Control cabinet, SCR and 0.25 kW elements, 2-zone",1,"CS enclosure, IP54",AQS-DUTY-072 section 4; wax condensate to WAX_PATTERN
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Furnace casing 1000 x 1000 x 1500 mm, CS t4, front door 900 C class",1,carbon steel,674.4,make,duty section 3; WORK_ORDER step 1
+2,Ceramic-fibre hot face,1,ceramic-fibre board 128 kg/m3,110.0,make,design lining; SCHACHT2004 class
+3,Hearth plate,1,carbon steel,217.8,make,WO step 2
+4,Wax condensate pan (to WAX_PATTERN N2),1,carbon steel,55.3,make,task-04 schedule N3; reclaim 1.8 kg/d of 2.0 kg/d wax
+5,Off-gas collector hood -Y z 600,1,carbon steel,41.4,make,task-04 schedule N5 (burned wax + steam)
+6,"N1 green-shell inlet -X z 160, full height",1,carbon steel,5.7,make,task-04 schedule N1 (from SHELL_BUILD N2)
+7,N2 fired-shell out +X z 600 (to INV_CAST N1),1,carbon steel,3.8,make,task-04 schedule N2
+8,N3/N4 condensate and unrecovered-wax DN15 stubs +Y z 600,2,carbon steel,0.0,make,task-04 schedule N3/N4
+9,N5 off-gas DN15 stub -Y z 600,1,carbon steel,0.0,make,task-04 schedule N5
+10,N6 drain well + N7 vent stub,2,carbon steel,1.1,make,task-04 schedule N6/N7
