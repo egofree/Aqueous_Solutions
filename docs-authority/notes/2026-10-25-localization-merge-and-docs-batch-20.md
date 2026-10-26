@@ -220,3 +220,17 @@ SITE_COMPARISON.md (AQS-SITE-011) generates in the pipeline from the committed
 profiles and the locale outputs: the scaling actions per locale, the power
 portfolios, and the unit sizes that move between locales. The stage runs after
 site_power and is staleness-gated like every generated page.
+
+## Addendum 12: X-LOC-11 and X-LOC-12 close; every locale task is done
+
+The floating island closes with the hull pass as code: hull.py proves the
+pontoon carries the operating mass with GM and freeboard margin (AQS-SITE-012,
+A-M-412 to A-M-414), and the seawater system units (SW_INTAKE, DESAL_RO,
+BRIN_RECOVER; A-M-409 to A-M-411) join with the mapped seawater feed case.
+X-LOC-12 generates SITE_COMPARISON.md (AQS-SITE-011) in the pipeline across
+all six profiles.
+
+Locale board state: X-LOC-07, 08, 09, 10, 11 and 12 all done and ticked with
+evidence. The three unit design records for the LEO imported modules
+(capillary-gap cells, centrifuges, pumped-loop reactors) stay as named import
+paths; designing them in-house is manufacturing-desk work, task by task.

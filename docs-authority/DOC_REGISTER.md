@@ -294,7 +294,7 @@ Table 3.1. Document numbers in use
 | AQS-SITE-007 | `docs-authority/SITE_BASIS_FLOATING_ISLAND.md` | A | 2026-10-25 | Floating island site basis | current |
 | AQS-SITE-008 | `docs-authority/SITE_BASIS_ANTARCTIC.md` | A | 2026-10-25 | Antarctic site basis | current |
 | AQS-SITE-009 | `docs-authority/SITE_BASIS_MARS.md` | B | 2026-10-26 | Mars site basis | current |
-| AQS-SITE-010 | `docs-authority/SITE_BASIS_LEO.md` | A | 2026-10-25 | Low Earth orbit site basis | current |
+| AQS-SITE-010 | `docs-authority/SITE_BASIS_LEO.md` | B | 2026-10-26 | Low Earth orbit site basis | current |
 | AQS-SITE-011 | `docs-authority/SITE_COMPARISON.md` | A | 2026-10-26 | Site comparison | current |
 | AQS-SITE-012 | `docs-authority/HULL_DESIGN.md` | A | 2026-10-26 | Floating island hull design | current |
 | AQS-SIZE-ACID_POLISH_SCRUB | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | A | 2026-10-20 | Sizing calculation - ACID_POLISH_SCRUB | current |
