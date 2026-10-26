@@ -2637,6 +2637,24 @@
    "quick": false
   },
   {
+   "name": "doc_site_units",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.site_units",
+    "--write"
+   ],
+   "depends_on": [
+    "site_scaling",
+    "site_power"
+   ],
+   "outputs": [
+    "docs-authority/SITE_UNITS.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
    "name": "doc_site_comparison",
    "argv": [
     "python3",

@@ -109,6 +109,8 @@ def run(sid, check=False, extra=()):
     tmp = tempfile.mkdtemp(prefix=f'aqs-site-{sid}-'); wt = os.path.join(tmp, 'wt')
     try:
         git('worktree', 'add', '--detach', wt, 'HEAD')
+        from . import site_units as SU
+        SU.stamp_worktree(wt, sid)                     # place + size the site units in the locale graph
         env = dict(os.environ, AQS_SITE=sid, **{ENV_WT: os.path.realpath(wt)})
         r = subprocess.run([sys.executable, '-m', 'flow_graph.param.regen', *extra], cwd=wt, env=env, capture_output=True, text=True)
         if r.returncode != 0:

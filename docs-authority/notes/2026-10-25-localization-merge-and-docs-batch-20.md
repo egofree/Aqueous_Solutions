@@ -388,3 +388,17 @@ recorded in ROLL's check.json (non_manifold_note). The standby_rated units
 (EXTRUDE, DRAW, FORGE, SINTER, VAC_IND, VAC_CAST, RF_HEAT, RES_HEAT,
 COMB_HEAT) keep the envelope-only placeholder per the A-M-283 ruling and
 accept at their own M3 passes when the owner issues their duty.
+
+## Addendum 28: the site models place and size the replacement units
+
+flow_graph/param/site_units.py (AQS-SITE-013) closes the pipeline gap between the
+scaling plan and the locale models: the placeholder replacement units a locale plan
+names are placed and sized from that site profile. Two sizes compute from the
+profiles - RAD_PANEL area from the site heat-rejection group (Stefan-Boltzmann,
+A-M-396/A-M-397) and LIO_BAT energy from the worst-stretch balance (A-M-402) - and
+the rest carry the design record with the statement that they size at the locale
+design pass. site_outputs.run stamps the placements into the locale worktree graph
+(params.site_placement) before the regen; the stamp is deterministic and idempotent
+and the reference graph is untouched. SITE_UNITS.md renders the register in the
+pipeline (doc_site_units stage); flow_graph/param/test_site_units.py and
+test_site_stamp.py prove the coverage, the stamp and its idempotence.
