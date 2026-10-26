@@ -117,3 +117,14 @@ POWDER_RESIN, SHELL_BURNOUT, TI_CELL) have 2 to 9 bodies that were not
 boolean-unioned before export. The fix is the build-and-union approach that
 CAST_LINE and AL_POT use. Each needs a per-unit engineering check that the
 union is valid.
+
+## Addendum 7: mfg model solid-wall audit result
+
+Five manufacturing models export multi-body compounds that were not
+boolean-unioned before STL export: FILM_CAST (7 bodies), POLY_F (9),
+POWDER_RESIN (5), SHELL_BURNOUT (4), TI_CELL (2). These are legacy outputs
+from the X-MFG-31 batch; they have no per-unit build scripts in
+models/mfg/<UNIT>/. They will be rebuilt with the build-and-union convention
+when their units reach the desk P4 M3 acceptance pass. The remaining 59 mfg
+export STLs are watertight solids. The cad/stl registry (168 files) is fully
+solid after the tray-geometry fix.
