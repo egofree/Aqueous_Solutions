@@ -111,7 +111,7 @@ Class sets, in addition to A-core:
 | OpenSCAD | Build machine | Named in AQS-STL-001. Not on the build machine |
 | Git LFS | Repository | `*.stl` and `*.FCStd` are LFS. The `models/export` STLs are LFS pointers in an API read |
 
-Authoring is CadQuery, because it runs headless, writes STEP directly, and installs from the package index. FreeCAD on the operator box makes the TechDraw sheets and places the solids in `plant.FCStd`. The AQS-MFG-001 OpenSCAD sources are ported to CadQuery, not deleted.
+Authoring is CadQuery, because it runs headless, writes STEP directly, and installs from the package index. FreeCAD on the build machine makes the TechDraw sheets and places the solids in `plant.FCStd`. The AQS-MFG-001 OpenSCAD sources are ported to CadQuery, not deleted.
 
 T0 gate, before tier 1:
 
