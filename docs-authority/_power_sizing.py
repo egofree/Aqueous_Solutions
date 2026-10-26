@@ -116,9 +116,10 @@ for src in _sources:
         cf = src.get('capacity_factor', 0.35)
         if not (0 < cf <= 1): cf = 0.35
         for k, P in cases.items():
-            nameplate = round(share * P / cf, 1) if cf > 0 else 0
-            out.setdefault(k, {})[f'{unit}_nameplate_kw'] = nameplate
-            out.setdefault(k, {})[f'{unit}_capacity_factor'] = cf
+            o_k = out.setdefault(k, {})
+            o_k.update(_storage(k, P))
+            o_k[f'{unit}_nameplate_kw'] = round(share * P / cf, 1) if cf > 0 else 0
+            o_k[f'{unit}_capacity_factor'] = cf
 
 # set the primary's keys at the top level for backward compatibility
 _primary_result = out['bounding']
