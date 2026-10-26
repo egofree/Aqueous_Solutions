@@ -1,0 +1,25 @@
+{
+ "size_mm": [
+  1500,
+  800,
+  1500
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N2 PVDF resin inlet -X z 160 (from POLY_F N5); N1 film stock out +X z 600 on the winder line; N3 drain bottom (400,400) z 50; N4 vent at (300,80) to the z 1200 datum. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "machine": "PVDF cast film/sheet line",
+  "extruder_D_mm": 25,
+  "die_mm": 200,
+  "chill_roll_D_mm": 150,
+  "pvdf_kg_d": 0.14,
+  "melt_C": 220,
+  "duty_kW": 0.1087,
+  "product": "gasket/lining sheet (AQS-RATE-FP-MET PVDF linings and gaskets)",
+  "material": "316L barrel, Hastelloy die"
+ },
+ "doc": "AQS-DUTY-072; AQS-RATE-FP-MET"
+}

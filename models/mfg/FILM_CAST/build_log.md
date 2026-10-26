@@ -1,0 +1,25 @@
+FILM_CAST build log - FOUNDRY-FILM_CAST-10 / FOUNDRY-FILM_CAST-11 acceptance
+
+Date: 2026-10-26. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Model source: `models/mfg/FILM_CAST/film_cast.py` + `params.json`; drawing set `models/mfg/FILM_CAST/drawings/`;
+build script chain run headless (build, drawings, stamp, PDF pass).
+
+## Tool versions (recorded per AQS-PLAN-006 5.1)
+
+- CadQuery 2.8.0 (dedicated virtual environment; the plan's 2.8.0 pick holds), python 3.13.
+- trimesh 5.1.1 for the STL solid check; cairosvg for the SVG -> PDF pass.
+
+## A-core evidence (check.json is the machine-checked copy)
+
+1. Builds headless from params.json with no manual step; check.json written by the build.
+2. The in-envelope build solid stays inside the graph envelope; the face hardware overhangs
+   within the 50 mm allowance.
+3. All parts valid; the export STL is watertight; the cad/stl registry copy passes the
+   X-PAR-04 gate (flow_graph/param/test_envelopes.py).
+4. Drawings name graph revision AC; 8 sheets stamped by AQS-DWG-002, SVG + PDF.
+
+## Deviations from the M2 export
+
+- The M2 legacy multi-body compound is superseded (one of the five legacy non-watertight
+  models): the M3 build regenerates bom.csv and fasteners.csv from the model and replaces
+  the export STEP/STL.

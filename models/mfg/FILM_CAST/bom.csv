@@ -1,7 +1,10 @@
-item,description,qty,material,basis
-1,"Extruder D25 with D70 x 430 mm barrel, L/D 24 class",1,"316L barrel, Hastelloy die",AQS-DUTY-073 fluoro train; 0.14 kg/d PVDF at 220 C melt
-2,Feed hopper D90 with dryer sleeve,1,316L,AQS-DUTY-073 fluoro train
-3,"Coat-hanger die, 200 mm width slot",1,Hastelloy C-276,AQS-DUTY-073 fluoro train; gasket/lining sheet (AQS-RATE-FP-MET PVDF linings and gaskets)
-4,Chill roll D150 x 300 mm with idler/pull roll,2,"CS cored, chrome plated",AQS-DUTY-073 fluoro train; duty 0.1087 kW
-5,Double-station surface winder with lay-on roll,1,"CS frame, pneumatic shafts",AQS-DUTY-073 fluoro train; gasket/lining sheet to MFG
-6,Control panel with heat and speed loops,1,"CS enclosure, IP54",study
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Line frame: base 1500 x 800 x 40, four posts, line bed z 830..860",1,carbon steel,2173.0,make,WORK_ORDER step 1; AQS-DUTY-072 line-machine class
+2,Extruder: barrel OD 41 x 480 with hopper and drive,1,316L barrel,33.8,make,design extruder D25; melt 220 C; 316L barrel per duty section 3
+3,"Die 200 mm wide, Hastelloy (design die row)",1,Hastelloy C-276,19.2,make,design die 200 mm; Hastelloy die per duty section 3
+4,Chill roll OD 150 x 300 + pressure roll OD 90,2,carbon steel (jacket class),56.6,make,WO step 3
+5,Draw rolls OD 80 at x 980/1100/1220,3,carbon steel,30.8,make,WO step 3
+6,Winder OD 180 x 260 at +X,1,carbon steel,51.9,make,WO step 3
+7,N2 PVDF resin DN15 inlet -X z 160 (from POLY_F N5),1,carbon steel,0.0,make,task-04 schedule N2
+8,"N1 film stock stop +X (solids, bore not calculated)",1,carbon steel,11.3,make,task-04 schedule N1
+9,N3 drain well + N4 vent stub,2,carbon steel,1.3,make,task-04 schedule N3/N4

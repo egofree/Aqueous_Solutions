@@ -1,8 +1,9 @@
-item,description,qty,material,basis
-1,Pin mill D260 x 300 mm with vertical spindle,1,"316L mill, PE-lined collector",AQS-DUTY-073 fluoro train; 0.09 kg/d PTFE at 0.05 kWh/kg (0.0152 kW)
-2,Mill motor D160 with belt guard,1,IEC frame,AQS-DUTY-073 fluoro train
-3,Feed hopper D140 x 240 mm with metering screw,1,316L,AQS-DUTY-073 fluoro train
-4,Cyclone classifier D220 with vortex outlet and fines drop,1,316L,AQS-DUTY-073 fluoro train; fine-cut classification
-5,PE-lined collector bin 260 x 260 x 380 mm,1,"316L shell, PE liner",fine powder for compression sintering (PTFE is not melt-processable; ULLMANN_FLUOROPOLY)
-6,Blower with oversize-return duct to the hopper,1,316L fan,AQS-DUTY-073 fluoro train
-7,Control panel with interlocks,1,"CS enclosure, IP54",study
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Frame: base 1500 x 800 x 40, four 60 x 60 posts",1,carbon steel,914.1,make,WORK_ORDER step 1; AQS-DUTY-072 line-machine class
+2,"Pin mill OD 220 x 240, 316L (0.05 kWh/kg specific energy)",1,316L,91.8,make,design mill row; duty section 3
+3,Cyclone classifier OD 220 x 520 + cone,1,316L,155.2,make,duty section 2
+4,PE-lined collector 340 x 300 x 460,1,CS with PE liner,85.8,make,duty section 3 (PE-lined collector)
+5,"Ducts: mill -> cyclone OD 80, cyclone -> collector return",2,316L,5.9,make,WO step 4
+6,N1 powder inlet chute -X z 160 (from POLY_F N4),1,carbon steel,3.8,make,task-04 schedule N1
+7,N2 powder stock out +X at the collector (to STOCK_OUT N6),1,carbon steel,15.1,make,task-04 schedule N2
+8,N3 nominal drain + N4 vent riser to the z 1200 datum,2,carbon steel,1.3,make,task-04 schedule N3/N4

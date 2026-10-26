@@ -1,0 +1,22 @@
+{
+ "size_mm": [
+  1500,
+  800,
+  1500
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N1 powder inlet -X z 160 (from POLY_F N4); N2 powder stock out +X at the collector (to STOCK_OUT N6); N3 nominal drain bottom (400,400) z 50; N4 vent on the cyclone to the z 1200 datum. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "machine": "PTFE powder line: pin mill + cyclone classifier + collector",
+  "ptfe_kg_d": 0.09,
+  "mill_kWh_kg": 0.05,
+  "duty_kW": 0.0152,
+  "product": "fine powder for compression sintering (PTFE is not melt-processable; ULLMANN_FLUOROPOLY)",
+  "material": "316L mill, PE-lined collector"
+ },
+ "doc": "AQS-DUTY-072; ULLMANN_FLUOROPOLY"
+}

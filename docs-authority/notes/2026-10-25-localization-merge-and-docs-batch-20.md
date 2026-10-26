@@ -366,3 +366,12 @@ Overhang metrics on this unit compute from the tessellated compound (the OCC
 compound bbox inflates around cylindrical pass cuts). The X-PAR-04 gate
 passes; the 8-sheet drawing set is stamped with SVG and PDF. Unit task 11
 keeps the house partial state.
+
+## Addendum 26: FOUNDRY-FILM_CAST-10 and FOUNDRY-POWDER_RESIN-10 accepted at M3
+
+The last two of the five legacy non-watertight models are superseded: the PVDF
+cast film line (extruder, Hastelloy die, chill roll, draw rolls, winder on a
+gantry frame) and the PTFE powder line (pin mill, cyclone classifier, PE-lined
+collector on a post-and-rail frame). The M2 foundry export is retired for
+both. With POLY_F and SHELL_BURNOUT earlier, all five legacy non-watertight
+models are rebuilt; the mfg export audit is watertight across the roster.
