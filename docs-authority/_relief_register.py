@@ -17,9 +17,9 @@ for n in sorted(g['nodes'], key=lambda n: n['unit_id']):
 STD = (6.0, 8.0, 10.0, 12.0, 15.0)   # mm in-house PSV bores (DN15 body)
 def stage_rows(tag, stages, W_kg_h, M, k):
     for s in stages:
-        Pset = 1.10*s['P_out_bar']*100; P1 = Pset*1.10 + SITE.p_atm_kPa(); T = s['T_out_C'] + 273.15
+        Pset = 1.10*s['P_out_bar']*100; P1 = Pset*1.10 + SITE.p_process_kPa(); T = s['T_out_C'] + 273.15
         A = RL.gas_area_in2(W_kg_h*2.20462, k, P1/6.894757, T*1.8, 1.0, M); b = RL.equiv_bore_mm(A)
-        rows.append((f"{tag} stage {s['stage']}", 'interstage PSV', round(Pset - SITE.p_atm_kPa(), 1), f"blocked discharge at {W_kg_h:.3f} kg/h, {s['T_out_C']:.0f} C", round(W_kg_h, 3), round(b, 2), next(x for x in STD if x >= b), True))
+        rows.append((f"{tag} stage {s['stage']}", 'interstage PSV', round(Pset - SITE.p_process_kPa(), 1), f"blocked discharge at {W_kg_h:.3f} kg/h, {s['T_out_C']:.0f} C", round(W_kg_h, 3), round(b, 2), next(x for x in STD if x >= b), True))
 cd = N['CRYO_H2']['params'].get('compressor_design') or {}
 if cd: stage_rows('H2 compressor', cd['stages'], cd['H2_kg_d']/DR.load()['h2c_run_h']['value'], 2.016, 1.41)
 cb = (N['CRYO_ASU']['params'].get('design') or {})

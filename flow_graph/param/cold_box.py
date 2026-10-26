@@ -20,7 +20,7 @@ def design(d, g):
     dT = v('cb_regen_C') - v(CB+'tsa_regen_start_C'); cyc = 24/v('cb_cycle_h')
     q_cyc = m_sorb*(1 + v('cb_steel_to_sorbent')*v(CB+'steel_cp_kJ_kgK')/v('cb_cp_sorbent_kJ_kgK'))*v('cb_cp_sorbent_kJ_kgK')*dT + per_cycle*v('cb_dH_ads_kJ_mol')   # kJ; steel cp driver
     P_regen = q_cyc*cyc/86400*(1 + v('cb_regen_loss_frac'))
-    Q = (n + n2/28.013)*1000/86400*8.314*v(CB+'feed_T_K')/SITE.p_atm_Pa()                                 # m3/s feed at 35 C
+    Q = (n + n2/28.013)*1000/86400*8.314*v(CB+'feed_T_K')/SITE.p_process_Pa()                             # m3/s feed at 35 C in the process space (A-M-401 where the profile states the shell interior)
     P_blow = Q*v('cb_bed_dP_kPa')*1000/v(CB+'blower_eta')/1000
     k = v(CB+'co2_k'); x = (k - 1)/k; ns = 1
     while v(CB+'feed_T_K')*(1 + ((v('cb_co2_store_bar')/1.0)**(x/ns) - 1)/v(CB+'comp_eta')) - 273.15 > v('cb_T_out_max_C'): ns += 1   # API618 150 C
