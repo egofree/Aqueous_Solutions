@@ -74,6 +74,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/FRAME_SYSTEM.md` | Rev D. Purpose first, numbered sections and table titles; the former-number line carries the AQS-MOD-001 duplicate clear. No parameter, class, size or load rule changed. |
 | `docs-authority/GA_CHECK.md` | Rev B, through `_ga_check.py`. Purpose and scope added; sections and table titles numbered. No envelope, overlap or clearance result changed. |
 | `docs-authority/HAB_WATER.md` | Rev C. Purpose and scope added, sections renumbered. No unit, stream or rate changed. |
+| `docs-authority/HAZOP.md` | Rev B, through `_hazop.py`. Purpose and scope added, sections numbered. No deviation, cause, safeguard or action changed; the team-HAZOP study scope statement stays. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -117,7 +118,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | |
 | `docs-authority/HAB_FIXTURES.md` | |
 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | |
-| `docs-authority/HAZOP.md` | |
 | `docs-authority/HEAT_LADDER_DUTIES.md` | Rev D (2026-10-08), authority graph Rev K; not reissued for graph Rev AC. |
 | `docs-authority/INSTRUMENT_INDEX.md` | |
 | `docs-authority/INSTRUMENT_LOOPS.md` | |

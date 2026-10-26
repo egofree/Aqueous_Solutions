@@ -1,33 +1,33 @@
 action_id,node,parameter,guide_word,action,closing_task,status
 HZ-001,ACID_POLISH_SCRUB,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/ACID_POLISH_SCRUB.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-002,AFTERBURNER,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-001 (AQS-CTL-003)
+HZ-002,AFTERBURNER,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-003,AFTERBURNER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/AFTERBURNER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-004,AFTERBURNER,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-002 (AQS-CTL-003)
-HZ-005,AFTERBURNER_FLUE,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-003 (AQS-CTL-003)
+HZ-004,AFTERBURNER,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
+HZ-005,AFTERBURNER_FLUE,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-006,AFTERBURNER_FLUE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/AFTERBURNER_FLUE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-007,AFTERBURNER_FLUE,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-004 (AQS-CTL-003)
+HZ-007,AFTERBURNER_FLUE,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
 HZ-008,ALK_SCRUBBER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/ALK_SCRUBBER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-009,BACKUP_GEN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/BACKUP_GEN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-010,BAGHOUSE,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-005 (AQS-CTL-003)
+HZ-010,BAGHOUSE,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-011,BAGHOUSE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/BAGHOUSE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-012,BLACK_DIGEST,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/BLACK_DIGEST.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-013,BMED_ACID,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/BMED_ACID.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-014,BMED_BASE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/BMED_BASE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-015,BMED_UPW_POLISH,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/BMED_UPW_POLISH.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-016,COLD_MILL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-006 (AQS-CTL-003)
+HZ-016,COLD_MILL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-017,COLD_MILL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/COLD_MILL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-018,CRU,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/CRU.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-019,CRYO_AHU,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-007 (AQS-CTL-003)
+HZ-019,CRYO_AHU,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-020,CRYO_AHU,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/CRYO_AHU.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-021,CRYO_AHU_COND_CONDENSABLE,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-008 (AQS-CTL-003)
+HZ-021,CRYO_AHU_COND_CONDENSABLE,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-022,CRYO_AHU_COND_CONDENSABLE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/CRYO_AHU_COND_CONDENSABLE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-023,CRYO_CO2,pressure,Low,PT low-low trip isolating the bank,X-CTL-03,closed by SIF-009 (AQS-CTL-003)
-HZ-024,CRYO_DED_COOL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-010 (AQS-CTL-003)
+HZ-023,CRYO_CO2,pressure,Low,PT low-low trip isolating the bank,X-CTL-03,open
+HZ-024,CRYO_DED_COOL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-025,CRYO_DED_COOL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/CRYO_DED_COOL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-026,CRYO_H2,pressure,Low,PT low-low trip isolating the bank,X-CTL-03,closed by SIF-011 (AQS-CTL-003)
-HZ-027,CRYO_N2,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-012 (AQS-CTL-003)
+HZ-026,CRYO_H2,pressure,Low,PT low-low trip isolating the bank,X-CTL-03,open
+HZ-027,CRYO_N2,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-028,CRYO_N2,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/CRYO_N2.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-029,CRYO_O2,pressure,Low,PT low-low trip isolating the bank,X-CTL-03,closed by SIF-013 (AQS-CTL-003)
+HZ-029,CRYO_O2,pressure,Low,PT low-low trip isolating the bank,X-CTL-03,open
 HZ-030,EW_1,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/EW_1.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-031,EW_2,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/EW_2.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-032,EW_3,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/EW_3.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
@@ -40,51 +40,51 @@ HZ-038,EW_9,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/EW_
 HZ-039,FAB_UPW_TANK,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/FAB_UPW_TANK.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-040,FLOAT_SINK,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/FLOAT_SINK.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-041,FLUE_KO,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/FLUE_KO.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-042,FUEL_CELL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-014 (AQS-CTL-003)
+HZ-042,FUEL_CELL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-043,FUEL_CELL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/FUEL_CELL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-044,GAS_ATOMIZER,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-015 (AQS-CTL-003)
+HZ-044,GAS_ATOMIZER,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-045,GAS_ATOMIZER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/GAS_ATOMIZER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-046,GEO_GHEX,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-016 (AQS-CTL-003)
+HZ-046,GEO_GHEX,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-047,GEO_GHEX,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/GEO_GHEX.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-048,GEO_HP,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-017 (AQS-CTL-003)
-HZ-049,GEO_HP,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-018 (AQS-CTL-003)
+HZ-048,GEO_HP,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
+HZ-049,GEO_HP,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-050,GEO_HP,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/GEO_HP.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-051,GEO_HP_CLOSED_LOOP,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-019 (AQS-CTL-003)
+HZ-051,GEO_HP_CLOSED_LOOP,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-052,GEO_HP_CLOSED_LOOP,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/GEO_HP_CLOSED_LOOP.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-053,GLASS_DIGEST,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/GLASS_DIGEST.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-054,GREY_TREAT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/GREY_TREAT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-055,H2_DRYER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/H2_DRYER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-056,H2_DRYER,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-020 (AQS-CTL-003)
+HZ-056,H2_DRYER,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
 HZ-057,HABITATION,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/HABITATION.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-058,HOPPER,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-021 (AQS-CTL-003)
+HZ-058,HOPPER,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-059,HOPPER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/HOPPER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-060,HX8,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-022 (AQS-CTL-003)
+HZ-060,HX8,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-061,HX8,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/HX8.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-062,LEACH_CSTR_1,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/LEACH_CSTR_1.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-063,MEOH_COND,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MEOH_COND.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-064,MEOH_FC,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MEOH_FC.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-065,MEOH_FERM,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-023 (AQS-CTL-003)
+HZ-065,MEOH_FERM,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-066,MEOH_FERM,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MEOH_FERM.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-067,MEOH_SYNTH,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-024 (AQS-CTL-003)
+HZ-067,MEOH_SYNTH,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-068,MEOH_SYNTH,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MEOH_SYNTH.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-069,MEOH_TANK,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MEOH_TANK.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-070,MET_AHU,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-025 (AQS-CTL-003)
+HZ-070,MET_AHU,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-071,MET_AHU,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MET_AHU.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-072,MET_HX_Q4,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-026 (AQS-CTL-003)
+HZ-072,MET_HX_Q4,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-073,MET_HX_Q4,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MET_HX_Q4.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-074,MET_MELT,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-027 (AQS-CTL-003)
+HZ-074,MET_MELT,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-075,MET_MELT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MET_MELT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-076,MET_MELT,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-028 (AQS-CTL-003)
+HZ-076,MET_MELT,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
 HZ-077,MET_SCRUB,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MET_SCRUB.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-078,MFG_SHOP,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-029 (AQS-CTL-003)
+HZ-078,MFG_SHOP,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
 HZ-079,MFG_SHOP,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MFG_SHOP.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-080,NOX_SCRUB,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/NOX_SCRUB.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-081,NUTRIENT_DOSE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/NUTRIENT_DOSE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-082,OIL_DRYER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/OIL_DRYER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-083,OIL_DRYER,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-030 (AQS-CTL-003)
+HZ-083,OIL_DRYER,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
 HZ-084,OIL_FRAC,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/OIL_FRAC.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-085,OIL_PYRO,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/OIL_PYRO.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-086,OIL_PYRO,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-031 (AQS-CTL-003)
+HZ-086,OIL_PYRO,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
 HZ-087,POLISH_BANK,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/POLISH_BANK.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-088,PROD_C11_C18,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/PROD_C11_C18.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-089,PROD_C19_C28,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/PROD_C19_C28.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
@@ -93,7 +93,7 @@ HZ-091,PROD_C5_C10,pressure,High,relief case,X-SAF-04,closed: docs-authority/dut
 HZ-092,ROOF_TANK,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/ROOF_TANK.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-093,WAFER_FAB,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/WAFER_FAB.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-094,WET_BENCH,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/WET_BENCH.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-095,WIRE_DRAW,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-032 (AQS-CTL-003)
+HZ-095,WIRE_DRAW,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-096,WIRE_DRAW,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/WIRE_DRAW.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-097,WS_AMMONIA,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/WS_AMMONIA.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-098,WS_DOPE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/WS_DOPE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
@@ -107,107 +107,107 @@ HZ-105,WS_SOLV,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/
 HZ-106,ZNBR2,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/ZNBR2.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-107,ZNBR2_BR2_REGEN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/ZNBR2_BR2_REGEN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-108,WS_PHOS,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/WS_PHOS.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-109,GLASS_RINSE,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-033 (AQS-CTL-003)
+HZ-109,GLASS_RINSE,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-110,GLASS_RINSE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/GLASS_RINSE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-111,GLASS_MILL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-034 (AQS-CTL-003)
+HZ-111,GLASS_MILL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-112,GLASS_MILL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/GLASS_MILL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-113,GLASS_BURNOUT,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-035 (AQS-CTL-003)
+HZ-113,GLASS_BURNOUT,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-114,GLASS_BURNOUT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/GLASS_BURNOUT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-115,VCD_TRAIN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/VCD_TRAIN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-116,REMIN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/REMIN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-117,LITHO_COAT,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-036 (AQS-CTL-003)
+HZ-117,LITHO_COAT,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-118,LITHO_COAT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/LITHO_COAT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-119,LITHO_ALIGN,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-037 (AQS-CTL-003)
+HZ-119,LITHO_ALIGN,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-120,LITHO_ALIGN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/LITHO_ALIGN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-121,LITHO_DEV,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-038 (AQS-CTL-003)
-HZ-122,LITHO_DEV,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-039 (AQS-CTL-003)
+HZ-121,LITHO_DEV,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
+HZ-122,LITHO_DEV,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-123,LITHO_DEV,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/LITHO_DEV.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-124,ELECTRODE_COAT,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-040 (AQS-CTL-003)
+HZ-124,ELECTRODE_COAT,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-125,ELECTRODE_COAT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/ELECTRODE_COAT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-126,BLOW_MOLD,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-041 (AQS-CTL-003)
+HZ-126,BLOW_MOLD,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-127,BLOW_MOLD,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/BLOW_MOLD.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-128,SOLAR_PV_CELL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-042 (AQS-CTL-003)
+HZ-128,SOLAR_PV_CELL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-129,SOLAR_PV_CELL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/SOLAR_PV_CELL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-130,Q4_A,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-043 (AQS-CTL-003)
+HZ-130,Q4_A,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-131,Q4_A,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/Q4_A.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-132,Q4_B,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-044 (AQS-CTL-003)
+HZ-132,Q4_B,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-133,Q4_B,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/Q4_B.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-134,F_RECOVER,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-045 (AQS-CTL-003)
+HZ-134,F_RECOVER,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
 HZ-135,F_RECOVER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/F_RECOVER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-136,F_RECOVER,flow,Reverse,check valve on the pumped inlet,X-PIP,open
 HZ-137,HF_GEN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/HF_GEN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-138,HF_GEN,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-046 (AQS-CTL-003)
+HZ-138,HF_GEN,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
 HZ-139,HF_GEN,flow,Reverse,check valve on the pumped inlet,X-PIP,open
-HZ-140,VDF_SYN,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-047 (AQS-CTL-003)
+HZ-140,VDF_SYN,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
 HZ-141,VDF_SYN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/VDF_SYN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-142,TFE_SYN,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-048 (AQS-CTL-003)
+HZ-142,TFE_SYN,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
 HZ-143,TFE_SYN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/TFE_SYN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-144,POLY_F,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-049 (AQS-CTL-003)
+HZ-144,POLY_F,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
 HZ-145,POLY_F,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/POLY_F.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-146,POLY_F,flow,Reverse,check valve on the pumped inlet,X-PIP,open
-HZ-147,CR_CELL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-050 (AQS-CTL-003)
+HZ-147,CR_CELL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-148,CR_CELL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/CR_CELL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-149,TI_CELL,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-051 (AQS-CTL-003)
-HZ-150,TI_CELL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-052 (AQS-CTL-003)
+HZ-149,TI_CELL,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
+HZ-150,TI_CELL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-151,TI_CELL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/TI_CELL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-152,MO_CELL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-053 (AQS-CTL-003)
+HZ-152,MO_CELL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-153,MO_CELL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MO_CELL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-154,IND_MELT,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-054 (AQS-CTL-003)
-HZ-155,IND_MELT,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-055 (AQS-CTL-003)
+HZ-154,IND_MELT,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
+HZ-155,IND_MELT,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-156,IND_MELT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/IND_MELT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-157,IND_MELT,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-056 (AQS-CTL-003)
-HZ-158,COMB_HEAT,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-057 (AQS-CTL-003)
+HZ-157,IND_MELT,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
+HZ-158,COMB_HEAT,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-159,COMB_HEAT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/COMB_HEAT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-160,CAST_LINE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/CAST_LINE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-161,CAST_LINE,flow,Reverse,check valve on the pumped inlet,X-PIP,open
-HZ-162,ROLL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-058 (AQS-CTL-003)
+HZ-162,ROLL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-163,ROLL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/ROLL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-164,FLUX_PREP,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-059 (AQS-CTL-003)
+HZ-164,FLUX_PREP,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-165,FLUX_PREP,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/FLUX_PREP.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-166,STOCK_OUT,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-060 (AQS-CTL-003)
+HZ-166,STOCK_OUT,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-167,STOCK_OUT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/STOCK_OUT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-168,CONT_CAST,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/CONT_CAST.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-169,CONT_CAST,flow,Reverse,check valve on the pumped inlet,X-PIP,open
-HZ-170,AL_POT,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-061 (AQS-CTL-003)
+HZ-170,AL_POT,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-171,AL_POT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/AL_POT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-172,MG_POT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MG_POT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-173,MG_POT,flow,Reverse,check valve on the pumped inlet,X-PIP,open
 HZ-174,CA_POT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/CA_POT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-175,WAX_PATTERN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/WAX_PATTERN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-176,WAX_PATTERN,flow,Reverse,check valve on the pumped inlet,X-PIP,open
-HZ-177,SHELL_BUILD,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-062 (AQS-CTL-003)
+HZ-177,SHELL_BUILD,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-178,SHELL_BUILD,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/SHELL_BUILD.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-179,SHELL_BURNOUT,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-063 (AQS-CTL-003)
-HZ-180,SHELL_BURNOUT,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-064 (AQS-CTL-003)
+HZ-179,SHELL_BURNOUT,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
+HZ-180,SHELL_BURNOUT,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-181,SHELL_BURNOUT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/SHELL_BURNOUT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-182,SHELL_BURNOUT,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-065 (AQS-CTL-003)
+HZ-182,SHELL_BURNOUT,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
 HZ-183,INV_CAST,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/INV_CAST.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-184,INV_CAST,flow,Reverse,check valve on the pumped inlet,X-PIP,open
 HZ-185,SHELL_BREAK,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/SHELL_BREAK.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-186,POLY_OLEFIN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/POLY_OLEFIN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-187,POLY_OLEFIN,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-066 (AQS-CTL-003)
-HZ-188,PELLET,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-067 (AQS-CTL-003)
+HZ-187,POLY_OLEFIN,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
+HZ-188,PELLET,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-189,PELLET,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/PELLET.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-190,POWDER_RESIN,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-068 (AQS-CTL-003)
+HZ-190,POWDER_RESIN,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-191,POWDER_RESIN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/POWDER_RESIN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-192,FILM_CAST,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/FILM_CAST.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-193,FILM_CAST,flow,Reverse,check valve on the pumped inlet,X-PIP,open
-HZ-194,POLY_STOCK,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-069 (AQS-CTL-003)
-HZ-195,POLY_STOCK,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-070 (AQS-CTL-003)
+HZ-194,POLY_STOCK,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,open
+HZ-195,POLY_STOCK,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-196,POLY_STOCK,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/POLY_STOCK.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-197,EVAP_ACID,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-071 (AQS-CTL-003)
-HZ-198,EVAP_BASE,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-072 (AQS-CTL-003)
-HZ-199,ADS_CHILL,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-073 (AQS-CTL-003)
+HZ-197,EVAP_ACID,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
+HZ-198,EVAP_BASE,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
+HZ-199,ADS_CHILL,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-200,ADS_CHILL,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/ADS_CHILL.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-201,MAU_HX,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-074 (AQS-CTL-003)
+HZ-201,MAU_HX,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-202,MAU_HX,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/MAU_HX.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-203,DRY_COOLER,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-075 (AQS-CTL-003)
+HZ-203,DRY_COOLER,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-204,DRY_COOLER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/DRY_COOLER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-205,EVAP_ACID_VS,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/EVAP_ACID_VS.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-206,EVAP_ACID_VS,temperature,High,independent high-temperature trip on the heater,X-CTL-03,closed by SIF-076 (AQS-CTL-003)
-HZ-207,FOOD_STORE,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-077 (AQS-CTL-003)
+HZ-206,EVAP_ACID_VS,temperature,High,independent high-temperature trip on the heater,X-CTL-03,open
+HZ-207,FOOD_STORE,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-208,FOOD_STORE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/FOOD_STORE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-209,METAL_STORE,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-078 (AQS-CTL-003)
+HZ-209,METAL_STORE,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-210,METAL_STORE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/METAL_STORE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
-HZ-211,AIR_RECEIVER,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-079 (AQS-CTL-003)
+HZ-211,AIR_RECEIVER,flow,More,high-level or high-flow protection,X-CTL-03,open
 HZ-212,AIR_RECEIVER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/AIR_RECEIVER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
