@@ -19,5 +19,5 @@ Production route (MFG/FAB, in-house, X-MFG-31):
 
 Inspect against models/mfg/POLY_OLEFIN/export/poly_olefin.step. Not stamped (shop, not code
 stamped; AQS-ASME-002 runs the jurisdiction list separately). Production rate stays 0.0
-(feed-blocked, A-M-267: the C5-C10 collection feed is not landed on IA-C5-POLY); design case
+(feed-blocked, A-M-267: the C5-C10 collection feed is not received at the dock on IA-C5-POLY); design case
 feed_kg_d 0.2941 with the per-kg tables in AQS-DUTY-073.

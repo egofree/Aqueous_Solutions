@@ -75,7 +75,7 @@ Rev L carried 1.6 kg/d H₂ on each of IA-HDR-H2-01/03/04 (4.8 kg/d). With the E
 
 Collected H₂ is 0.322 kg/d; 0.0117 kg/d leaves with the hood sweep at < 1 % LFL. IA-HDR-H2-01 now originates at EW_7 and IA-HDR-H2-03 at EW_3 (Rev L: EW_1, EW_2); IA-HDR-H2-04 stays at EW_9 with corrected text. Each carries the H₂ with its saturation water at 50 °C. H2_DRYER condensate returns to EW_9.
 
-Consequences: the REGEN LEACH return, the CRU/BMED duty and the leach exotherm in Rev L were all driven by the 4.8 kg/d basis. They are re-derived below.
+Consequences: the REGEN LEACH return, the CRU/BMED duty and the leach exotherm in Rev L were all driven by the 4.8 kg/d basis. They are recomputed below.
 
 ### 4.2 S05/S64 alias, H2_DRYER and CRYO_H2 (items 1, 2)
 

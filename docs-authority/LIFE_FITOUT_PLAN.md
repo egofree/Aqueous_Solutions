@@ -39,12 +39,12 @@ Plate origin SW. HAB envelope 12 000 × 18 000 × 3 200 mm at Z_L1.
 
 | Room / zone | CAD stub | Program |
 |---|---|---|
-| SLEEP | `SLEEP` | Crew berths; quiet side toward NW stair |
+| SLEEP | `SLEEP` | Crew berths; quiet side toward north-west stair |
 | GALLEY | `GALLEY` | Food prep; grease capture; no open flame near farm door |
 | HAB_AIR | `HAB_AIR` | AHU / ERV on Q4 water only; CO₂ to HDR_CO2 |
 | HAB_WATER | `HAB_WATER` | Potable from HDR_UPW / roof tank; point-of-use polish |
 | HAB_WASTE | `HAB_WASTE` | Black / grey to HDR_GREY → treatment → farm or discharge permit |
-| WETROOM_HAB_NW | `WETROOM_HAB_NW` | Toilet + shower bank; IBC accessible clearances |
+| WETROOM_HAB_north-west | `WETROOM_HAB_north-west` | Toilet + shower bank; IBC accessible clearances |
 | CORR_L1_HAB | `CORR_L1_HAB` | 1 800 mm spine to CORE_LIFE / STAIR_S1 |
 | PART_HAB_SLEEP_GALLEY | partition stub | Acoustic / smoke partition |
 

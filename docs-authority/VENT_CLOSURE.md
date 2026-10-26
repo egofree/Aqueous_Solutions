@@ -204,7 +204,7 @@ Study figures are **not** vendor nameplates. See AQS-EQP-VENT-001 §4.
    MAQ cap unchanged (< 150 lb class).
 4. MET_SCRUB liquor chemistry selection (aqueous vs oil-side) — dual-path
    study retained; final media selection TBD.
-5. ~~FreeCAD solids for new scrub / KO tags~~ — stubs added Wave 1;
+5. ~~FreeCAD solids for new scrub / KO tags~~ — stubs added build phase 1;
    plant.FCStd rebuild this pass.
 6. Permit stack residual after polish — AHJ (unchanged).
 

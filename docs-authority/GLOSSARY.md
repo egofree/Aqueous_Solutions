@@ -698,6 +698,142 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {IND -- Shorthand for the induction melt chain (IND_MELT and its 25 kW share of the foundry feed).}
 {CHG -- Charge: the charging-side quantity of a storage pair, against the discharge quantity DIS.}
 {IMO -- International Maritime Organization, publisher of the SOLAS, MARPOL, MODU and intact-stability instruments cited by the floating-island site family.}
+{QC -- Quality control (check prefix QC-nn in the design-check record).}
+{XY -- The plan-view coordinate pair (x, y) in millimetres.}
+{FFC -- Free-flow chlorine: the chlorine product form shipped at the dock from the pot cells.}
+{CRC -- Chemical resistance chart: the per-material compatibility table in AQS-STD-002.}
+{PA -- Phosphoric acid (H3PO4), the WS_PHOS store.}
+{SUMP -- The collection sump of a scrubber or tank system.}
+{PG -- Pressure gauge.}
+{DOE -- United States Department of Energy, publisher of OTEC and hydrogen cost studies.}
+{DSC -- Differential scanning calorimetry: the thermal-analysis test for phase-change and decomposition.}
+{EER -- Energy efficiency ratio: cooling output in BTU/h per watt of electrical input.}
+{GC -- Gas chromatograph: the composition-analysis instrument.}
+{HPA -- High-pressure aeroponics: misting at 40 to 80 psi with sub-100 micron droplets (JAE2022_AERO).}
+{IACS -- International Annealed Copper Standard: the 100 percent conductivity reference for copper and aluminium conductors.}
+{IED -- Intelligent electronic device: any microprocessor-based protection or control device on the network.}
+{IMC -- Intermediate metal conduit: the steel wiring raceway class (NEC Article 342).}
+{NDIR -- Non-dispersive infrared: the absorption-based gas-analysis method.}
+{NPSH -- Net positive suction head: the pump inlet pressure margin above the liquid vapour pressure.}
+{TGA -- Thermogravimetric analysis: the mass-loss thermal test for sorbent and catalyst characterisation.}
+{WHO -- World Health Organization, source of the drinking-water quality guidelines (GDWQ).}
+{WHSV -- Weight hourly space velocity: mass of feed per mass of catalyst per hour.}
+{XRF -- X-ray fluorescence: the non-destructive elemental composition analysis method.}
+{LR -- Load ratio: the ratio of applied to rated load in the structural checks.}
+{CSA -- Compressive stress area, or the Canadian Standards Association (context-dependent).}
+{HTHA -- High-temperature hydrogen attack: the Nelson-curve damage mechanism for steels in hydrogen service.}
+{RP -- Recommended practice (e.g. API Recommended Practice).}
+{DWV -- Drain, waste and vent: the non-pressure plumbing piping class.}
+{AE -- Analytical element or alarm element, per ISA 5.1 tag letters.}
+{ST -- Speed transmitter, or temperature element (context-dependent ISA 5.1 tag).}
+{ZT -- Position transmitter (ISA 5.1): reports ram or valve stroke position.}
+{EDTA -- Ethylenediaminetetraacetic acid: the chelating agent used in lithium and metal recovery.}
+{PMI -- Positive material identification: the alloy-verification test (XRF or optical emission spectroscopy).}
+{UT -- Ultrasonic testing: the non-destructive thickness and flaw examination method.}
+{ETAG -- European Technical Assessment Group (construction products).}
+{PECS -- Power and energy conversion system.}
+{PTL -- Photothermal layer, or the partial transmission loss (context-dependent).}
+{UHMW -- Ultra-high molecular weight (polyethylene): the wear-resistant polymer class.}
+{ECTFE -- Ethylene-chlorotrifluoroethylene: the fluoropolymer lining and piping material.}
+{FFKM -- Perfluoroelastomer: the highest-grade elastomer for aggressive chemical seals.}
+{IGA -- Integrated gate amplifier, or iodine gas absorption (context-dependent).}
+{PPI -- Pulses per inch, or the polypropylene intermediate (context-dependent).}
+{TIMET -- TIMET (Titanium Metals Corporation), the titanium-alloy grade reference.}
+{CRI -- Chemical reaction index, or the reduction ratio (context-dependent).}
+{EMF -- Electromotive force: the cell potential in volts.}
+{ORG -- Organic (the organics fraction of a waste stream, to the oil line).}
+{ASSY -- Assembly (drawing and BOM shorthand).}
+{FERM -- Fermentation (the MEOH_FERM unit).}
+{HHO -- Hybrid hydrogen-oxygen (a misnomer for stoichiometric H2/O2 gas; not used as a design basis).}
+{BPC -- Byproduct chemical, or bypass damper (context-dependent).}
+{HFTO -- Hydrogen fuel technology office (US DOE programme name).}
+{QY -- Quantum yield: the mol product per photon absorbed in a photochemical process.}
+{ALCRM -- An invented label with no established meaning; replaced by plain wording (Q-017).}
+{CEPCI -- Chemical Engineering Plant Cost Index: the escalation index for cost estimates.}
+{CEB -- Chemically enhanced backwash: the membrane-cleaning method with chemical dosing.}
+{ABC -- Activated carbon block, or the ABC fire classification (context-dependent).}
+{AHRI -- Air-Conditioning, Heating and Refrigeration Institute: the HVAC equipment rating body.}
+{AISI -- American Iron and Steel Institute: the steel grade designation system.}
+{AIT -- Auto-ignition temperature.}
+{ASRT -- Advanced silicon refinement technology (historical study reference).}
+{BEI -- Biomass energy intake, or the biological exposure index (context-dependent).}
+{CIAAW -- Commission on Isotopic Abundances and Atomic Weights (IUPAC).}
+{DALY -- Disability-adjusted life year: the health-impact metric.}
+{DME -- Dimethyl ether: the alternative fuel and propellant.}
+{EP -- Extreme pressure (lubricant additive class), or the edit point (context-dependent).}
+{EPS -- Expanded polystyrene: the insulation board material.}
+{HHV -- Higher heating value: the combustion energy including the latent heat of water condensation.}
+{IE -- Inherently safer design, or id est (context-dependent).}
+{IIB -- IEC gas group IIB (ethylene class) for explosion-protected equipment.}
+{ISBN -- International Standard Book Number.}
+{IUPAC -- International Union of Pure and Applied Chemistry.}
+{IWA -- International Water Association.}
+{LDPE -- Low-density polyethylene.}
+{NTP -- Normal temperature and pressure (0 C, 101.325 kPa).}
+{NTRS -- NASA Technology Roadmap Series.}
+{P&I -- piping and instrumentation (as in P&I diagram, synonymous with P&ID).}
+{PD -- Positive displacement (pump or meter class), or the probability of detection.}
+{PF -- Power factor, or the polymeric foam (context-dependent).}
+{PLOS -- Public Library of Science (journal publisher).}
+{PPF -- Photosynthetic photon flux: the photon delivery rate in micromoles per second.}
+{REL -- Recommended exposure limit (NIOSH occupational exposure).}
+{SRD -- Safety requirements document, or the standard reference diet (context-dependent).}
+{STEL -- Short-term exposure limit: the 15-minute occupational exposure ceiling.}
+{TC -- Thermocouple, or the thermosyphon circuit (context-dependent).}
+{TLV -- Threshold limit value (ACGIH occupational exposure).}
+{TWA -- Time-weighted average: the 8-hour occupational exposure average.}
+{USC -- United States Code (federal law).}
+{VDROP -- Voltage drop across a circuit segment.}
+{WMO -- World Meteorological Organization.}
+{GHSV -- Gas hourly space velocity: volume of gas per volume of catalyst per hour.}
+{GSHP -- Ground-source heat pump.}
+{LOC -- Level of concern, or the loss of containment (context-dependent).}
+{PM -- Preventive maintenance, or particulate matter (context-dependent).}
+{VE -- Value engineering, or the verification event.}
+{AOX -- Adsorbable organic halogen: the halogenated-organic discharge metric.}
+{APART -- Separate, not adjacent (layout note shorthand).}
+{TAR -- The target acceptance range.}
+{CCIM -- Cold crucible induction melting.}
+{VAR -- Vacuum arc remelting.}
+{VIM -- Vacuum induction melting.}
+{CONC -- Concentrate or concentrated (stream note shorthand).}
+{ECF -- Electrochemical fluoride cell, or elemental chlorine-free (pulp bleaching; context-dependent).}
+{SKU -- Stock keeping unit.}
+{ALIGN -- The lithography alignment tool (LITHO_ALIGN).}
+{DEV -- The lithography developer tool (LITHO_DEV).}
+{ATOM -- The gas atomizer (GAS_ATOMIZER).}
+{HPDC -- High-pressure die casting.}
+{RCOO -- Carboxylate anion (R-COO-).}
+{RCOOH -- Carboxylic acid (R-COOH).}
+{DERA -- Defense Threat Reduction Agency, or a derated value (context-dependent).}
+{KMML -- Korean molybdenum melting limit (historical study reference).}
+{MDPI -- Multidisciplinary Digital Publishing Institute (journal publisher).}
+{ZNBR -- Zinc-bromide (the ZNBR2 flow battery electrolyte).}
+{HRT -- Hydraulic residence time.}
+{BIO -- Biological (the biofilter or biological treatment class).}
+{HL -- Heat-ladder edge prefix (HL-Q1-A through HL-Q4-REJ).}
+{EPR -- Ethylene propylene rubber: the insulation compound for flexible and medium-voltage cable.}
+{PCD -- Pitch circle diameter: the bolt-circle dimension of a flange or terminal plate.}
+{XLPE -- Cross-linked polyethylene: the insulation compound for power cable.}
+{THHN -- Thermoplastic high-heat nylon-coated: the building-wire insulation designation.}
+{PLTC -- Power-limited tray cable: the instrumentation and control cable class.}
+{CAPEX -- Capital expenditure.}
+{EBM -- Electron beam melting (the metal additive-process class).}
+{PK -- The peak (maximum instantaneous) value of a rate or duty.}
+{BN -- Building block number (the construction block series identifier).}
+{NH -- Nutrient hose (the farm irrigation line class), or the ammonia nitrogen species.}
+{COND -- Condenser or condensate (context-dependent stream or equipment shorthand).}
+{EPR -- Ethylene propylene rubber: the insulation compound for flexible and medium-voltage cable.}
+{PCD -- Pitch circle diameter: the bolt-circle dimension of a flange or terminal plate.}
+{XLPE -- Cross-linked polyethylene: the insulation compound for power cable.}
+{THHN -- Thermoplastic high-heat nylon-coated: the building-wire insulation designation.}
+{PLTC -- Power-limited tray cable: the instrumentation and control cable class.}
+{CAPEX -- Capital expenditure.}
+{EBM -- Electron beam melting (the metal additive-process class).}
+{PK -- The peak (maximum instantaneous) value of a rate or duty.}
+{BN -- Building block number (the construction block series identifier).}
+{NH -- Nutrient hose (the farm irrigation line class), or the ammonia nitrogen species.}
+{COND -- Condenser or condensate (context-dependent stream or equipment shorthand).}
 {PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
 
 {UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}

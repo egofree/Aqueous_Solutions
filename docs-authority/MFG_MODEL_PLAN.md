@@ -106,9 +106,9 @@ Class sets, in addition to A-core:
 
 | Tool | Where | State on 2026-10-15 |
 | --- | --- | --- |
-| CadQuery 2.8.0 with cadquery-ocp 8.0.1 | Agent box, Python 3.13 | Installed in a virtual environment on 2026-10-15. EXPANDER and LEACH_CSTR_1 built and exported |
-| FreeCAD 1.0, `freecadcmd` | Operator box | Named in AQS-STL-001 and `models/freecad/BUILD_LOCAL.md`. Not on the agent box |
-| OpenSCAD | Operator box | Named in AQS-STL-001. Not on the agent box |
+| CadQuery 2.8.0 with cadquery-ocp 8.0.1 | Build machine, Python 3.13 | Installed in a virtual environment on 2026-10-15. EXPANDER and LEACH_CSTR_1 built and exported |
+| FreeCAD 1.0, `freecadcmd` | Operator box | Named in AQS-STL-001 and `models/freecad/BUILD_LOCAL.md`. Not on the build machine |
+| OpenSCAD | Operator box | Named in AQS-STL-001. Not on the build machine |
 | Git LFS | Repository | `*.stl` and `*.FCStd` are LFS. The `models/export` STLs are LFS pointers in an API read |
 
 Authoring is CadQuery, because it runs headless, writes STEP directly, and installs from the package index. FreeCAD on the operator box makes the TechDraw sheets and places the solids in `plant.FCStd`. The AQS-MFG-001 OpenSCAD sources are ported to CadQuery, not deleted.

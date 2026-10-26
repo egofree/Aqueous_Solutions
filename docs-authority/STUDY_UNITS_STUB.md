@@ -20,7 +20,7 @@ unreclaimed or sub-MVS endpoint. Sandbox stays modular as studies close.
 | C | 2 | VCD first-principles kW; REMIN mineral balance; GEO_ORC Carnot-limited kW_e; SOLAR architecture promote; litho/blow/electrode in-scope units (WP-A5 close) | 2026-10-01 |
 | D | 3 | Framing: gaps = open studies queued toward MVS; sandbox tracks progress (not accepted unreclaimed/sub-MVS) | 2026-10-01 |
 | E | 4 | Phase A supplements A3b–d / A5b–e: LITHO/BLOW/ELC first-principles; VCD/REMIN/ORC/SOLAR physics closed + external next actions | 2026-10-01 |
-| F | 5 | Pointer to equipment spec gap register AQS-EQ-GAP-001 (commercial interim → OSS policy) | 2026-10-01 |
+| F | 5 | Pointer to equipment spec gap register AQS-EQ-GAP-001 (commercial interim → the open-source software stack policy) | 2026-10-01 |
 
 Licence: **CERN-OHL-S-2.0**.
 
@@ -156,7 +156,7 @@ REMIN doses Ca²⁺ / Mg²⁺ / K⁺ into **drinking** water after ED polish
 WHO expert guidance on demineralized / desalinated water (not a single
 mandatory GDWQ number): population-benefit discussion often cites about
 **Ca 20–30 mg/L** and **Mg ~10 mg/L** as desirable order-of-magnitude
-targets for remineralized drinking water; K has no WHO GV and is mainly
+targets for remineralized drinking water; K has no WHO gate valve and is mainly
 dietary (WHO *Nutrients in Drinking-water*; *Safe Drinking Water from
 Desalination* WHO/HSE/WSH/11.03).
 
@@ -362,7 +362,7 @@ air share study: **2–4 kW_e peak** while running; campaign **2–4 h/d** → a
 continuous mid **~0.5 kW_e** (band 0.3–0.8). Throughput campaign **1–5 kg/h**
 polymer articles.
 
-**Forbid** claiming industrial EBM average **14–28 kW** (KSY/ABLB/MEPER-class
+**Forbid** claiming industrial EBM average **14–28 kW** (the key study year/ABLB/MEPER-class
 catalog) as M1 continuous — architecture reference only (same rule as full-line
 PECVD forbid in AQS-REQ-KW-001).
 
@@ -375,7 +375,7 @@ mold FreeCAD + selected datasheet within 2–4 kW peak — **owner/date TBD**.
 
 1. AQS-REQ-KW-001 SI-MFG-01 / REQ-MFG-POLY-CONT.
 2. Precious Plastic / ONEARMY kit motor class (DEPENDENCIES.md).
-3. Industrial EBM catalog powers (KSY ~14 kW avg; ABLB65 ~21 kW avg) — **cited as
+3. Industrial EBM catalog powers (the key study year ~14 kW avg; ABLB65 ~21 kW avg) — **cited as
    forbidden M1 continuous**, not selected nameplate.
 
 ---
@@ -418,14 +418,14 @@ formulation trial — **owner/date TBD**.
 
 ## 11. Equipment specification gap register (pointer)
 
-Manufacturer / model inventory, OSS target policy, and researched **commercial
+Manufacturer / model inventory, the open-source software stack target policy, and researched **commercial
 interim** shortlists for ST-* / P0 underspecified units live in planning
 (not cad):
 
 the unpublished planning note UNIT_EQUIPMENT_SPEC_GAP — document **AQS-EQ-GAP-001**.
 
 Commercial interim never freezes as final MVS Present authority; open-source
-replacement tracked as `OSS-REP-*` work items. Physics / duty in §§3–10 of
+replacement tracked as `the open-source software stack-REP-*` work items. Physics / duty in §§3–10 of
 this stub remain controlling for study numbers.
 
 ## 12. Sync

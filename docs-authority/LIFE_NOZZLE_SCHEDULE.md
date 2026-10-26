@@ -5,7 +5,7 @@ Revision: A
 Date: 2026-09-27  
 Measurement: metric
 
-Wave 4. Origins frozen in `freecad/params.py`. These nozzles do not
+Build phase 4. Origins frozen in `freecad/params.py`. These nozzles do not
 sit on LEACH CSTR 1. Process-header tees are forbidden.
 
 Valves on etch / acid makeup: GF 546 Pro V PVC-C FKM (same family as
