@@ -6784,5 +6784,25 @@
   "sensitivity": "Ventilation and cooling loads, PV cell temperature and the seawater rejection approach temperature of the variant.",
   "replaced_by": "Metocean record at the mooring site (CLASS_RULES); ASHRAE climatic data where a coastal station applies",
   "task": "X-LOC-11"
+ },
+ {
+  "id": "A-M-392",
+  "value": "cooling dry bulb 8 C; heating dry bulb -50 C; insulation ambient -18 C",
+  "units": "C",
+  "where": "site profile antarctic thermal group (binds site_design_dry_bulb_C)",
+  "basis": "McMurdo Station climate normals (NOAA_MCMURDO): mean annual -18 C; summer extreme 8 C; winter extreme -50 C. Heating design dry bulb is the station record low as a bounding value.",
+  "sensitivity": "Heating dominates at this site; the insulation schedule, freeze-protection heat trace and material minimum-temperature check all scale with the design temperatures.",
+  "replaced_by": "Site metocean record at the chosen coastal parcel",
+  "task": "X-LOC-08"
+ },
+ {
+  "id": "A-M-393",
+  "value": "basic wind 51 m/s; snow 0.5 kPa; soil resistivity 5000 ohm m",
+  "units": "m/s; kPa; ohm m",
+  "where": "site profile antarctic wind, snow and ground groups (binds wt_wind_ms, wt_SDS, wt_SD1, soil_allow_kPa, soil_unit_weight_kN_m3, resistivity_ohm_m, ghex_capacity_W_m, frost_depth_m)",
+  "basis": "Interim bounding values for the Antarctic coastal site: gusts above 100 kn (51 m/s) from NOAA_MCMURDO; snow drift load at 0.5 kPa study value; frozen volcanic ground with permafrost has very high resistivity; ground loop not viable at this site.",
+  "sensitivity": "Structural wind and drift loads, the earthing grid design and the ground-loop elimination decision.",
+  "replaced_by": "Site metocean and geotechnical survey at the chosen coastal parcel",
+  "task": "X-LOC-08"
  }
 ]
