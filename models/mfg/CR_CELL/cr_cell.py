@@ -283,7 +283,7 @@ wo = (f"# Work order CA_POT\n\nAuthority: AQS-DUTY-072 (X-MFG lane). LIVE unit -
       f"4. Mount the hood, DN50 offtake with return dip leg, the N4 CO stub, and the N2/N3 feed chutes.\n"
       f"5. Wire the {D['connected_kW']} kW rectifier; interlock hood draft, bath temperature and cover position.\n"
       f"6. Test: dry-out and melt-up curve, then trial electrolysis; tap the Ca metal at N1, route the Cl2 export (water-treatment class).\n"
-      f"7. Inspect against models/mfg/MO_CELL/export/cr_cell.step; record dimensions on the traveller.\n")
+      f"7. Inspect against models/mfg/CR_CELL/export/cr_cell.step; record dimensions on the traveller.\n")
 (HERE / "WORK_ORDER.md").write_text(wo)
 (HERE / "check.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report))
