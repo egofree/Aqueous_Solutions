@@ -126,6 +126,12 @@ out['bounding']['kind'] = _primary_kind
 out['bounding']['_primary_unit'] = _primary_unit
 out['bounding']['_primary_kind'] = _primary_kind
 out['backup'] = _backup()
+out['roof'] = {'array_m2': 0, 'W_mm': 0, 'D_mm': 0, 'bays_x': 0, 'bays_y': 0, 'footprint_m2': 0,
+    'added_m2': 0, 'pv_roof_kWp': 0, 'layout': {'perimeter_mm': 0, 'arrays': []},
+    'ext': {'total_kW': 0, 'mode': None, 'light_kW': 0, 'vent_kW': 0, 'envelope_kW': 0,
+            'gains_kW': 0, 'slab_kW': 0, 'pump_kW': 0, 'Qh_kW': 0, 'Qc_kW': 0,
+            'bore_m': 0, 'bore_field_m2': 0, 'bores': None},
+    'load': {}, 'pv_need_kWp': 0, 'pv_roof_kWp': 0}
 
 # graph snapshot (existing keys preserved)
 _g2 = json.load(open('flow_graph/plant_flow_graph.json')); _n2 = {n['unit_id']: n for n in _g2['nodes']}
