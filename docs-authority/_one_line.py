@@ -7,7 +7,7 @@ from flow_graph.param import drivers as DR
 from flow_graph.param.sizing import power as PW
 _d = DR.load()
 g=json.load(open('flow_graph/plant_flow_graph.json'))
-V=480.0; PF=DR.val(_d,'bus_power_factor'); BRK=[15,20,25,30,40,50,60,70,80,90,100,110,125,150,175,200,225,250,300,350,400]   # NEC 240.6(A)
+V=480.0; PF=DR.val(_d,'bus_power_factor'); BRK=[15,20,25,30,40,50,60,70,80,90,100,110,125,150,175,200,225,250,300,350,400,450,500,600,700,800,1000,1200,1600,2000,2500,3000,4000,5000,6000]   # NEC 240.6(A) standard ampere ratings in full
 rect=json.loads(subprocess.run(['python3','docs-authority/_rect_ew_sizing.py'],capture_output=True,text=True,check=True).stdout)['total']
 # Load list via the JSON sidecar (U2a). kw/calc_kw are quantised to the 3 decimals the LOAD_LIST.md table
 # publishes, so the bus arithmetic below is identical to the old markdown parse.
