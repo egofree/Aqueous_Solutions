@@ -10,6 +10,7 @@ Plan: AQS-PLAN-011 section 8; owner decision Q-022 (mid-latitude, Arcadia Planit
 |---|---|---|
 | A | First issue: profile, environment, scaling findings. | 2026-10-26 |
 | B | X-LOC-09 design pass: the locale-replacement units enter the graph and the scaling actions resolve; the ground loop stays. | 2026-10-26 |
+| C | Process-space physics: enclosed-plant physics see the shell atmosphere (A-M-401), not the external atmosphere. Locale regeneration complete: 321 outputs differ from the baseline under sites/mars/. | 2026-10-26 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -69,7 +70,7 @@ The full action list with per-action registers is in the profile (`scaling.actio
 
 ## 5. Open items
 
-1. The locale regeneration runs after this page; its outputs land under `sites/mars/` and the site tests prove them.
-2. Ground-ice extraction, perchlorate removal and solid-oxide CO2 electrolysis (the diverse oxygen source) are follow-on design units; nothing in the scaling resolution blocks on them.
+1. The locale regeneration is complete: 321 outputs differ from the baseline under `sites/mars/`, and the scaling, portfolio and heat-rejection checks pass at every committed profile.
+2. Ground-ice extraction, perchlorate removal, atmosphere (CO2) intake and solid-oxide CO2 electrolysis (the diverse oxygen source) are follow-on design units; they close X-LOC-09 with the assay feed cases in AQS-ASSAY-001.
 3. The landing site itself (Q-022); every site-bound value is a model-based interim until it is chosen.
 4. Feed cases for regolith, perchlorate and imported hardware need mapping in AQS-ASSAY-001.

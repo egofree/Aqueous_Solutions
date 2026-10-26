@@ -162,3 +162,32 @@ unit that runs at the site); the Mars profile rejects through RAD_PANEL (radiati
 
 Assumptions A-M-396 through A-M-400 added. SITE_BASIS_MARS.md is Rev B. X-LOC-09's locale run and
 the site tests are the remaining proof. X-LOC-10 (LEO, 47 units) uses the same method and is next.
+
+## Addendum 9: X-LOC-09 Mars locale run complete
+
+The Mars locale regenerates end to end: 321 outputs differ from the baseline
+under sites/mars/, and the scaling, portfolio and heat-rejection checks pass at
+every committed profile (baseline, death_valley, floating_island, antarctic,
+mars). Three classes of error surfaced and were fixed at their owners:
+
+1. Process-space physics (A-M-401, site.py p_process_*): physics that live
+   inside the plant - dissolved gas in process liquor, the vent-scrubber gas
+   side, relief back-pressure, the flue volume - computed at the site ambient
+   pressure. At 0.636 kPa the vent-scrubber HCl mole fraction inflated
+   160-fold and its NaOH bleed went negative. Enclosed locales now state the
+   shell interior (NASA-STD-3001 sea-level equivalent); open-air sites fall
+   back to ambient, byte-identical at the baseline. The X-MFG-30 stripping
+   column separately sizes on the body vapour space (A-M-106), which the Mars
+   run exposed first.
+2. The breaker ladder in the one-line diagram stopped at 400 A; it now carries
+   the full NEC 240.6(A) standard ratings. The Mars battery charger (390 kW
+   over the sol-night stretch) and the 10.7 MWp roof footprint's hall
+   conditioning land above it.
+3. The motor inventories stopped at the 37 kW IEC ladder top, the 180M frame
+   table and the 22 kW IE3 table; they now run to the 630 kW preferred outputs
+   with IEC 60072-1 frames to 355L.
+
+X-LOC-09 stays open on its own done-definition remainder: atmosphere intake,
+ice extraction, perchlorate removal, the assay feed cases and the
+planetary-protection family. X-LOC-10 (LEO) uses the same method next; the
+X-LOC-09 units already cover part of its replacement set.
