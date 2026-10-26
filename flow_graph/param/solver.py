@@ -152,10 +152,12 @@ def check():
     pv = N['PV_ARRAY']['params']; rf = s.get('roof')
     np_kw = pv.get('nameplate_kw')                                        # R8: Rev AC stores module_kw x count (PV_ARRAY note)
     if np_kw is None and pv.get('module_kw') is not None: np_kw = pv['module_kw']*pv.get('count', 0)
-    if rf:
+    if rf and rf.get('pv_roof_kWp'):
         if np_kw is not None:
             cmp('PV_ARRAY nameplate kWp vs roof-closed need', np_kw, rf['pv_need_kWp'], 'NREL_PVWATTS, X-PAR-07')
             if np_kw > rf['pv_roof_kWp']: errs.append(f"PV {np_kw} kWp exceeds roof capacity {rf['pv_roof_kWp']:.1f} kWp")
+        elif np_kw:
+            errs.append(f"PV_ARRAY carries {np_kw} kWp while the site's roof chain is closed (non-PV primary)")
     return errs, mis, s, d
 
 if __name__ == '__main__':
