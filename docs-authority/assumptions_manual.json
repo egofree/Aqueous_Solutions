@@ -7039,5 +7039,104 @@
   ],
   "needs_verification": true,
   "verification_test": "In-situ atmospheric assay and compressor endurance test"
+ },
+ {
+  "id": "A-M-409",
+  "value": "screened surface intake with feed pumps",
+  "units": "-",
+  "where": "SW_INTAKE design; sites/floating_island.json water_sources",
+  "basis": "Tropical surface seawater at 28 C (profile water_sources); screens against entrainment at the intake face",
+  "sensitivity": "Intake duty scales with the desalination and seawater-rejection throughput",
+  "replaced_by": "Intake screen design at the seawater system design pass",
+  "task": "X-LOC-11",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "flow_graph/param/sites/floating_island.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "Intake screen design at the seawater system design pass"
+ },
+ {
+  "id": "A-M-410",
+  "value": "1.06 kWh/m3 at 50 percent recovery",
+  "units": "kWh/m3; -",
+  "where": "DESAL_RO design; sites/floating_island.json water_sources treatment note",
+  "basis": "The thermodynamic-bounded study specific energy the profile's seawater treatment note states; the rack train adds intake, pretreatment and brine duty above it",
+  "sensitivity": "Train duty scales with the permeate demand and recovery; the brine carries the minerals for recovery",
+  "replaced_by": "RO rack design with vendor-neutral membrane sizing at the seawater system design pass",
+  "task": "X-LOC-11",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "flow_graph/param/sites/floating_island.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "RO rack design at the seawater system design pass"
+ },
+ {
+  "id": "A-M-411",
+  "value": "magnesium, bromine and lithium from the RO brine",
+  "units": "-",
+  "where": "BRIN_RECOVER design; sites/floating_island.json water_sources composition note",
+  "basis": "Seawater composition: magnesium 1.284 g/kg, bromide 0.067 g/kg, lithium about 0.18 mg/kg; recovery by brine concentration and precipitation",
+  "sensitivity": "Recovery plant size scales with the brine flow and the target recovery fraction per mineral",
+  "replaced_by": "Mineral-recovery flowsheet study (X-LOC-11)",
+  "task": "X-LOC-11",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/SITE_BASIS_FLOATING_ISLAND.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Mineral-recovery flowsheet study at the seawater system design pass"
+ },
+ {
+  "id": "A-M-412",
+  "value": "180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m deck stack",
+  "units": "m; t; m",
+  "where": "HULL.pontoon drivers; flow_graph/param/hull.py",
+  "basis": "Pontoon principal dimensions, steel and outfitting lightweight, and the study deck stack of the placement levels; the hull general arrangement and structural design replace them",
+  "sensitivity": "Draft scales with the operating mass over L B Cb; the waterplane inertia carries BM with B cubed",
+  "replaced_by": "Hull general arrangement and structural design (X-LOC-11)",
+  "task": "X-LOC-11",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/hull.py",
+   "docs-authority/HULL_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Hull general arrangement and structural design (X-LOC-11)"
+ },
+ {
+  "id": "A-M-413",
+  "value": "200",
+  "units": "kg/m3 of packaged plant volume",
+  "where": "HULL.plant.pkg_density_kg_m3; flow_graph/param/hull.py",
+  "basis": "Packaged process-plant density over the placement block volumes; the unit massing study replaces it",
+  "sensitivity": "Operating mass and draft scale linearly with the packaging density",
+  "replaced_by": "Unit massing study (X-LOC-11)",
+  "task": "X-LOC-11",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/hull.py",
+   "docs-authority/HULL_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Unit massing study (X-LOC-11)"
+ },
+ {
+  "id": "A-M-414",
+  "value": "GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35 B",
+  "units": "m; m; -",
+  "where": "HULL.criteria drivers; flow_graph/param/hull.py",
+  "basis": "Intact stability and freeboard criteria for a manned floating installation under class rules with SOLAS and MARPOL (Q-030); the rolling radius is a study value",
+  "sensitivity": "GM falls with the square of the operating mass height; the roll period falls with the square root of GM",
+  "replaced_by": "Class stability and freeboard review at the flag or coastal state decision (Q-030)",
+  "task": "X-LOC-11",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/hull.py",
+   "docs-authority/HULL_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Class stability and freeboard review (Q-030)"
  }
 ]

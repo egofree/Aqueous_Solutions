@@ -1380,3 +1380,5 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 
 {SCWO -- Supercritical water oxidation. Organic matter oxidises in water above the critical point (374 C, 22.1 MPa); the gravity-free sanitation path (WET_OX).}
 {NMC -- Lithium nickel manganese cobalt oxide. The sealed-cell chemistry of the station storage (LIO_BAT).}
+{GM -- Metacentric height. The distance from the centre of gravity to the metacentre; the first-order measure of initial stability (HULL_DESIGN).}
+{BM -- Metacentric radius. The waterplane inertia divided by the volume of displacement; how far the metacentre sits above the centre of buoyancy.}

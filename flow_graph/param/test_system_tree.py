@@ -59,7 +59,7 @@ def test_tree_file_passes_validation(tree: SystemTree, graph: dict) -> None:
     """The YAML on disk loads and validates against the live graph."""
     report = tree.validate(graph)
     assert report["ok"] is True
-    assert report["leaves"] == report["graph_units"] == 192
+    assert report["leaves"] == report["graph_units"] == 195
     assert report["roots"] == report["sector_count"] == 19
 
 
@@ -71,7 +71,7 @@ def test_bijection_leaf_set_equals_graph_unit_set_both_directions(
     assert leaves == units
     # each unit at exactly one leaf
     placed = [n.unit_id for n in tree.nodes if n.unit_id is not None]
-    assert len(placed) == len(set(placed)) == 192
+    assert len(placed) == len(set(placed)) == 195
 
 
 def test_drift_guard_graph_unit_removed_without_tree_update_fails(
@@ -151,13 +151,13 @@ def test_cycle_free_and_parent_integrity() -> None:
 
 def test_tree_shape(tree: SystemTree) -> None:
     stats = tree.stats()
-    assert stats["by_level"] == {0: 19, 1: 31, 2: 102, 3: 111}
-    assert stats["nodes"] == 263
+    assert stats["by_level"] == {0: 19, 1: 31, 2: 105, 3: 111}
+    assert stats["nodes"] == 266
     assert stats["trains"] == 31
     assert stats["subsystems"] == 22
-    assert stats["leaves"] == 192
+    assert stats["leaves"] == 195
     # standby trains are descriptions, never hidden units
-    assert sum(stats["units_per_root"].values()) == 192
+    assert sum(stats["units_per_root"].values()) == 195
 
 
 # ----------------------------------------------------------------------
@@ -187,7 +187,7 @@ def test_resolve_units(tree: SystemTree) -> None:
     resolved: list[str] = []
     for r in roots:
         resolved += sorted(tree.resolve_units(r))
-    assert len(resolved) == len(set(resolved)) == 192
+    assert len(resolved) == len(set(resolved)) == 195
     with pytest.raises(KeyError):
         tree.resolve_units("FOUNDRY.nonexistent-train")
 
@@ -330,7 +330,7 @@ def test_enabled_units_helper_effective_set() -> None:
     on = _enabled_units(m)
     # 178 (2026-10-19): EVAP_ACID_VS sector stamp fixed WET->DIGESTER, so the
     # sector-aware set now includes every unit (the 177 exception is closed).
-    assert len(on) == 192
+    assert len(on) == 195
     assert "EVAP_ACID_VS" in on   # sector stamp fixed WET->DIGESTER 2026-10-19: now included
     # unit off leaves the set even with the sector on
     m2 = copy.deepcopy(m)

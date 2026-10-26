@@ -215,9 +215,18 @@
     "local_feedstocks": {
       "entries": {
         "feed_cases": {
-          "value": [],
+          "value": [
+            {
+              "name": "seawater",
+              "classes": {
+                "water": 0.96484,
+                "other_inorganic": 0.03516
+              },
+              "register": "AQS-ASSAY-001 classes water and other_inorganic; profile water_sources composition (salinity 35.165 g/kg)"
+            }
+          ],
           "units": "-",
-          "register": "AQS-PLAN-011 section 10.2 (candidates: seawater minerals - salt, magnesium, bromine, lithium - floating plastic debris, seaweed and ship-delivered waste; each enters only after mapping to an assay case)"
+          "register": "AQS-PLAN-011 section 10.2; the seawater case maps to the AQS-ASSAY-001 classes"
         }
       }
     },

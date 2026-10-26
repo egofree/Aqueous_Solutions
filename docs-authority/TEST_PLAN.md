@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 452 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 464 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 648 items: 290 drivers, 358 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 660 items: 296 drivers, 364 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -235,6 +235,12 @@ Total 648 items: 290 drivers, 358 register entries. Classification rule: first m
 | driver HDR.headers-train.hdr_min_DN_gas | 25 DN minimum, gas headers | Take-off and instrument tapping check on the header GA at unit task 05 | X-PAR |
 | driver HDR.headers-train.hdr_run_default_m | 20 m fallback manifold run when no isometric route exists | Header run lengths from the routed isometrics at the next AQS-ISO-002 regen | X-PAR |
 | driver HEAT.heat-battery-train.hb_q3_hold_kWh_th | 14 kWh_th | Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision | X-PAR |
+| driver HULL.plant.pkg_density_kg_m3 | 200.0 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) | X-PAR |
+| driver HULL.pontoon.B_m | 60.0 m | Hull general arrangement at the floating-island design pass | X-PAR |
+| driver HULL.pontoon.D_m | 12.0 m | Hull general arrangement at the floating-island design pass | X-PAR |
+| driver HULL.pontoon.L_m | 180.0 m | Hull general arrangement at the floating-island design pass | X-PAR |
+| driver HULL.pontoon.lightweight_KG_m | 5.5 m above baseline | Structural design (X-LOC-11 hull structure) | X-PAR |
+| driver HULL.pontoon.lightweight_t | 6500.0 t (steel and outfitting) | Structural design (X-LOC-11 hull structure) | X-PAR |
 | driver POLYMERS.fluoropolymer-train.hf_kiln.residence_min | 30.0 min | kiln exit HF strength vs residence at the first-article campaign | X-PAR |
 | driver WTR.grey-black-train.san_air_T_C | 20.0 C reference air temperature for the NOX_SCRUB superficial | Compare with the HVAC design room and line temperatures | X-PAR |
 | driver ash_cop_c | 3.22 air-source heat pump cooling COP (EER 11.0), >= 19 kW | Selected unit rating | X-PAR |
@@ -664,6 +670,12 @@ Total 648 items: 290 drivers, 358 register entries. Classification rule: first m
 | A-M-404 | capillary wick; no free liquid surface - | Chamber growth trial at the LEO food design pass | X-LOC-10 |
 | A-M-405 | hydrophobic membrane; feed-permeate temperature difference - | Membrane module trial on the station grey-water mix | X-LOC-10 |
 | A-M-407 | reduction to chloride ahead of the UPW polish - | Bed trial on the extracted water at the landing site | X-LOC-09 |
+| A-M-409 | screened surface intake with feed pumps - | Intake screen design at the seawater system design pass | X-LOC-11 |
+| A-M-410 | 1.06 kWh/m3 at 50 percent recovery kWh/m3; - | RO rack design at the seawater system design pass | X-LOC-11 |
+| A-M-411 | magnesium, bromine and lithium from the RO brine - | Mineral-recovery flowsheet study at the seawater system design pass | X-LOC-11 |
+| A-M-412 | 180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m m; t; m | Hull general arrangement and structural design (X-LOC-11) | X-LOC-11 |
+| A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) | X-LOC-11 |
+| A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35  m; m; - | Class stability and freeboard review (Q-030) | X-LOC-11 |
 
 ## 7. T6 Commissioning measurements
 

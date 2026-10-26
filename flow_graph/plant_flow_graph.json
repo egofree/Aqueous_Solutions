@@ -7517,6 +7517,66 @@
       },
       "notes": "Atmosphere intake (X-LOC-09 remainder): the Mars carbon and buffer-gas source. Class intake like GW_INTAKE; a resource boundary, not a balance-constrained unit.",
       "continuous_kw": null
+    },
+    {
+      "unit_id": "SW_INTAKE",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "intake",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "screened surface intake and feed pumps; seawater to the desalination train and the seawater heat-rejection loop",
+          "feed": "tropical surface seawater at 28 C, salinity 35.165 g/kg (profile water_sources)",
+          "basis": "A-M-409"
+        }
+      },
+      "notes": "Seawater intake (X-LOC-11): the floating island takes its water and its rejection sink from the sea. Class intake, a resource boundary like GW_INTAKE.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "DESAL_RO",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "membrane",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "reverse-osmosis desalination: permeate to the UPW and potable trains, brine to the mineral-recovery skid",
+          "duty": "1.06 kWh/m3 at 50 percent recovery, the study specific energy the profile water_sources note states; the rack train sizes at the seawater design pass",
+          "basis": "A-M-410"
+        }
+      },
+      "notes": "Reverse-osmosis desalination (X-LOC-11): the floating island makes clean water from the sea. Sealed membrane racks need no site capability beyond the intake.",
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BRIN_RECOVER",
+      "sector_id": "WTR",
+      "presence": "placeholder",
+      "class": "evaporator",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "brine concentration and precipitation: magnesium, bromine and lithium recovered from the RO reject as the surplus-mineral path",
+          "feed": "RO brine at twice seawater concentration; composition per the profile water_sources note",
+          "basis": "A-M-411"
+        }
+      },
+      "notes": "Mineral recovery from the RO brine (X-LOC-11): the surplus-stream outlet the self-sustaining rule wants for the desalination reject.",
+      "continuous_kw": null
     }
   ],
   "edges": [

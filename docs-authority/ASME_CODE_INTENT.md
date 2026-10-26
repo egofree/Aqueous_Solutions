@@ -25,7 +25,7 @@ Table 2.1. Unit count per class
 | Atmospheric | 3 |
 | B31.3 piping component | 4 |
 | Section VIII-1 (ID not yet sized) | 1 |
-| not a vessel (no design pressure on the graph) | 184 |
+| not a vessel (no design pressure on the graph) | 187 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 0 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
@@ -64,6 +64,7 @@ Table 4.1. Code intent per unit
 | BMED_BASE | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BMED_UPW_POLISH | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BOUNDARY_EXPORT | DOCK |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| BRIN_RECOVER | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | C29_RECYCLE | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CAST_LINE | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CATCH_TANK | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -84,6 +85,7 @@ Table 4.1. Code intent per unit
 | CRYO_N2 | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CRYO_O2 | CRYO | 22000.0 | 25 | 87 | B31.3 piping component | U-1(c)(2)(j): ID 87 mm <= 152 mm | none (piping carries no Certification Mark, ASME_B31_3) | hydrostatic 1.5 x design (ASME_B31_3 345.4.2); 341 examination |
 | CR_CELL | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| DESAL_RO | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | DRAW | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | DRY_COOLER | HEAT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ELECTRODE_COAT | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -216,6 +218,7 @@ Table 4.1. Code intent per unit
 | SOLAR_PV_CELL | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SOL_ARK_60K | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | STOCK_OUT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| SW_INTAKE | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | TANK_BLD | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | TFE_SYN | POLYMERS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | TI_CELL | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

@@ -908,6 +908,17 @@ All solved units close.
 | fire_zone_hazard | {"L-1 wet process": "OH2", "L0 shops/pyrolysis/oils/reagents/genset/flow battery": "EH1", "L0 electrical rooms": "pre-action, OH2 void", "L1 farm/digesters": "OH1", "L1 HAB west half": "LH", "H2/O2/CO2 receiver bays": "OH2 + NFPA 15 water spray", "ZNBR2 enclosure": "OH2 + NFPA 855 purge"} | NFPA 13 hazard class per zone | NFPA13_2025 | — |
 | ELEC.generation-train.BACKUP_GEN.eta_h2 | 0.3 | - spark-ignition engine efficiency on hydrogen (same engine, dual-fuel) | A-M-383 | — |
 | ELEC.generation-train.BACKUP_GEN.h2_lhv_kWh_kg | 33.33 | kWh/kg hydrogen lower heating value (120 MJ/kg) | A-M-383 | — |
+| HULL.pontoon.L_m | 180.0 | m | A-M-412 | yes |
+| HULL.pontoon.B_m | 60.0 | m | A-M-412 | yes |
+| HULL.pontoon.D_m | 12.0 | m | A-M-412 | yes |
+| HULL.pontoon.Cb | 0.85 | - | A-M-412 | — |
+| HULL.pontoon.lightweight_t | 6500.0 | t (steel and outfitting) | A-M-412 | yes |
+| HULL.pontoon.lightweight_KG_m | 5.5 | m above baseline | A-M-412 | yes |
+| HULL.criteria.gm_min_m | 1.0 | m | A-M-414 | — |
+| HULL.criteria.freeboard_min_m | 2.0 | m | A-M-414 | — |
+| HULL.criteria.design_heel_deg | 5.0 | deg | A-M-388 | — |
+| HULL.plant.pkg_density_kg_m3 | 200.0 | kg/m3 of packaged plant volume | A-M-413 | yes |
+| HULL.plant.deck_spacing_m | 5.0 | m | A-M-412 | — |
 
 ## 6. References
 
@@ -1512,6 +1523,12 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver MEOH.synthesis-train.MEOH_FC.j_A_cm2 | 0.3 A/cm2 current density at the design point | Stack polarisation set at the first article |
 | driver fire_pump_head_margin_kPa | 150 kPa design margin over static + friction to the remote area | Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record) |
 | driver fire_tank_refill_h | 8 h to refill the reserve from the normal supply | City/well fill-rate confirmation at X-BAS-03 (site utilities) |
+| driver HULL.pontoon.L_m | 180.0 m | Hull general arrangement at the floating-island design pass |
+| driver HULL.pontoon.B_m | 60.0 m | Hull general arrangement at the floating-island design pass |
+| driver HULL.pontoon.D_m | 12.0 m | Hull general arrangement at the floating-island design pass |
+| driver HULL.pontoon.lightweight_t | 6500.0 t (steel and outfitting) | Structural design (X-LOC-11 hull structure) |
+| driver HULL.pontoon.lightweight_KG_m | 5.5 m above baseline | Structural design (X-LOC-11 hull structure) |
+| driver HULL.plant.pkg_density_kg_m3 | 200.0 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -1870,3 +1887,9 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-406 | sublimation or drill-and-melt extraction - | In-situ ice assay and extraction trial at the landing site |
 | A-M-407 | reduction to chloride ahead of the UPW polish - | Bed trial on the extracted water at the landing site |
 | A-M-408 | dust filter and compressor to process pressure - | In-situ atmospheric assay and compressor endurance test |
+| A-M-409 | screened surface intake with feed pumps - | Intake screen design at the seawater system design pass |
+| A-M-410 | 1.06 kWh/m3 at 50 percent recovery kWh/m3; - | RO rack design at the seawater system design pass |
+| A-M-411 | magnesium, bromine and lithium from the RO brine - | Mineral-recovery flowsheet study at the seawater system design pass |
+| A-M-412 | 180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m m; t; m | Hull general arrangement and structural design (X-LOC-11) |
+| A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) |
+| A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35  m; m; - | Class stability and freeboard review (Q-030) |

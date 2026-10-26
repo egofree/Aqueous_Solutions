@@ -15,6 +15,7 @@
   "BMED_ACID",
   "BMED_BASE",
   "BMED_UPW_POLISH",
+  "BRIN_RECOVER",
   "C29_RECYCLE",
   "CAST_LINE",
   "CATCH_TANK",
@@ -35,6 +36,7 @@
   "CRYO_N2",
   "CRYO_O2",
   "CR_CELL",
+  "DESAL_RO",
   "DRAW",
   "DRY_COOLER",
   "ELECTRODE_COAT",
@@ -166,6 +168,7 @@
   "SOLAR_PV_CELL",
   "SOL_ARK_60K",
   "STOCK_OUT",
+  "SW_INTAKE",
   "TANK_BLD",
   "TFE_SYN",
   "TI_CELL",
@@ -192,5 +195,5 @@
  ],
  "open": {},
  "tot_wetted_rows": 326,
- "units": 189
+ "units": 192
 }

@@ -171,5 +171,8 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | ICE_EXTRACT | ice_extract | external visual (1 y, A-M-189) |
 | PERC_REMOVE | treat | external visual (1 y, A-M-189) |
 | ATM_INT | intake | external visual (1 y, A-M-189) |
+| SW_INTAKE | intake | external visual (1 y, A-M-189) |
+| DESAL_RO | membrane | external visual (1 y, A-M-189) |
+| BRIN_RECOVER | evaporator | external visual (1 y, A-M-189) |
 
-162 units, 357 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+165 units, 360 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

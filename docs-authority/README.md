@@ -90,6 +90,7 @@ The documents that explain how the design is organised and where its numbers com
 | [SITE_POWER.md](SITE_POWER.md) | AQS-SITE-005 | Site power portfolio and redundancy of energy and life-support functions (generated) |
 | [SITE_SCALING.md](SITE_SCALING.md) | AQS-SITE-004 | Site scaling: capabilities, scaling actions and unit needs for the selected site (generated) |
 | [SITE_COMPARISON.md](SITE_COMPARISON.md) | AQS-SITE-011 | Cross-locale comparison: scaling actions, power portfolios and unit sizes across every profile (generated) |
+| [HULL_DESIGN.md](HULL_DESIGN.md) | AQS-SITE-012 | Floating-island hull design: operating mass, hydrostatics, stability and freeboard (generated) |
 | [FEED_ASSAY.md](FEED_ASSAY.md) | AQS-ASSAY-001 | Feed assay |
 | [ASSAY.md](ASSAY.md) | AQS-ASSAY-002 | Assay |
 | [MATERIALS_STD.md](MATERIALS_STD.md) | AQS-STD-002 | Materials standard |

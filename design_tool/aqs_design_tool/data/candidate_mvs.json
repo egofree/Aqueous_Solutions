@@ -7262,6 +7262,57 @@
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
+    },
+    {
+      "unit_id": "SW_INTAKE",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "intake",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "screened surface intake and feed pumps; seawater to the desalination train and the seawater heat-rejection loop",
+          "feed": "tropical surface seawater at 28 C, salinity 35.165 g/kg (profile water_sources)",
+          "basis": "A-M-409"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "DESAL_RO",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "membrane",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "reverse-osmosis desalination: permeate to the UPW and potable trains, brine to the mineral-recovery skid",
+          "duty": "1.06 kWh/m3 at 50 percent recovery, the study specific energy the profile water_sources note states; the rack train sizes at the seawater design pass",
+          "basis": "A-M-410"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BRIN_RECOVER",
+      "sector_id": "WTR",
+      "enabled": true,
+      "class": "evaporator",
+      "tags": [],
+      "params": {
+        "design": {
+          "service": "brine concentration and precipitation: magnesium, bromine and lithium recovered from the RO reject as the surplus-mineral path",
+          "feed": "RO brine at twice seawater concentration; composition per the profile water_sources note",
+          "basis": "A-M-411"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": null
     }
   ],
   "streams": [

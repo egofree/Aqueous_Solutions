@@ -33,6 +33,23 @@
    "note": "Solver -> graph: BMED/EVAP/vent-scrubber kW and rates, EW cell + RECT stamps, SOL_ARK bus delta. Spawns _ew_sizing/_rect_ew_sizing/_power_sizing (last via solver.solve for roof)."
   },
   {
+   "name": "doc_hull",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.hull",
+    "--write"
+   ],
+   "depends_on": [
+    "write_graph_process"
+   ],
+   "outputs": [
+    "docs-authority/HULL_DESIGN.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
    "name": "sizing_cold_box",
    "argv": [
     "python3",

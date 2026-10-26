@@ -40,6 +40,12 @@ SOLAR_PV_CELL to the existing X-MFG-38 cell-line sizing (A-M-287..296).
               perchlorate-bearing ground (A-M-407)
   ATM_INT     class intake: atmosphere intake - dust filter and compressor feeding the thin CO2
               atmosphere to the cold box and methanol synthesis (A-M-408)
+  X-LOC-11 seawater system units (placeholders; placed at the floating island, not at the reference):
+  SW_INTAKE   class intake: screened surface intake and feed pumps (A-M-409)
+  DESAL_RO    class membrane: reverse-osmosis desalination at the profile's 1.06 kWh/m3, 50 percent
+              recovery study point (A-M-410)
+  BRIN_RECOVER class evaporator: brine concentration for magnesium, bromine and lithium recovery
+              from the RO reject (A-M-411)
 
 Run: python3 -m flow_graph.param.stub_activation [--write]
 """
@@ -372,6 +378,31 @@ def apply(g=None, write=False):
                basis='A-M-408'),
           'Atmosphere intake (X-LOC-09 remainder): the Mars carbon and buffer-gas source. Class '
           'intake like GW_INTAKE; a resource boundary, not a balance-constrained unit.')
+
+    # ---- X-LOC-11 seawater system units (placeholders; sites/floating_island) ---------------------
+    lnode('SW_INTAKE', 'WTR', 'intake', None,
+          dict(service='screened surface intake and feed pumps; seawater to the desalination train '
+               'and the seawater heat-rejection loop',
+               feed='tropical surface seawater at 28 C, salinity 35.165 g/kg (profile water_sources)',
+               basis='A-M-409'),
+          'Seawater intake (X-LOC-11): the floating island takes its water and its rejection sink '
+          'from the sea. Class intake, a resource boundary like GW_INTAKE.')
+    lnode('DESAL_RO', 'WTR', 'membrane', None,
+          dict(service='reverse-osmosis desalination: permeate to the UPW and potable trains, '
+               'brine to the mineral-recovery skid',
+               duty='1.06 kWh/m3 at 50 percent recovery, the study specific energy the profile '
+               'water_sources note states; the rack train sizes at the seawater design pass',
+               basis='A-M-410'),
+          'Reverse-osmosis desalination (X-LOC-11): the floating island makes clean water from the '
+          'sea. Sealed membrane racks need no site capability beyond the intake.')
+    lnode('BRIN_RECOVER', 'WTR', 'evaporator', None,
+          dict(service='brine concentration and precipitation: magnesium, bromine and lithium '
+               'recovered from the RO reject as the surplus-mineral path',
+               feed='RO brine at twice seawater concentration; composition per the profile '
+               'water_sources note',
+               basis='A-M-411'),
+          'Mineral recovery from the RO brine (X-LOC-11): the surplus-stream outlet the '
+          'self-sustaining rule wants for the desalination reject.')
 
     if write:
         open(GP, 'w').write(json.dumps(g, indent=2) + '\n')

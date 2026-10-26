@@ -5146,5 +5146,77 @@
   "value": 33.33,
   "units": "kWh/kg hydrogen lower heating value (120 MJ/kg)",
   "register": "A-M-383"
+ },
+ "HULL.pontoon.L_m": {
+  "value": 180.0,
+  "units": "m",
+  "register": "A-M-412",
+  "needs_verification": true,
+  "verification_test": "Hull general arrangement at the floating-island design pass"
+ },
+ "HULL.pontoon.B_m": {
+  "value": 60.0,
+  "units": "m",
+  "register": "A-M-412",
+  "needs_verification": true,
+  "verification_test": "Hull general arrangement at the floating-island design pass"
+ },
+ "HULL.pontoon.D_m": {
+  "value": 12.0,
+  "units": "m",
+  "register": "A-M-412",
+  "needs_verification": true,
+  "verification_test": "Hull general arrangement at the floating-island design pass"
+ },
+ "HULL.pontoon.Cb": {
+  "value": 0.85,
+  "units": "-",
+  "basis": "box pontoon block coefficient",
+  "register": "A-M-412"
+ },
+ "HULL.pontoon.lightweight_t": {
+  "value": 6500.0,
+  "units": "t (steel and outfitting)",
+  "register": "A-M-412",
+  "needs_verification": true,
+  "verification_test": "Structural design (X-LOC-11 hull structure)"
+ },
+ "HULL.pontoon.lightweight_KG_m": {
+  "value": 5.5,
+  "units": "m above baseline",
+  "register": "A-M-412",
+  "needs_verification": true,
+  "verification_test": "Structural design (X-LOC-11 hull structure)"
+ },
+ "HULL.criteria.gm_min_m": {
+  "value": 1.0,
+  "units": "m",
+  "register": "A-M-414",
+  "basis": "intact stability criterion for a manned floating installation (class rules, Q-030)"
+ },
+ "HULL.criteria.freeboard_min_m": {
+  "value": 2.0,
+  "units": "m",
+  "register": "A-M-414",
+  "basis": "minimum freeboard at the tropical design draft (class freeboard rules, Q-030)"
+ },
+ "HULL.criteria.design_heel_deg": {
+  "value": 5.0,
+  "units": "deg",
+  "register": "A-M-388",
+  "note": "the profile motion group's static design heel"
+ },
+ "HULL.plant.pkg_density_kg_m3": {
+  "value": 200.0,
+  "units": "kg/m3 of packaged plant volume",
+  "register": "A-M-413",
+  "needs_verification": true,
+  "verification_test": "Unit massing study (X-LOC-11)"
+ },
+ "HULL.plant.deck_spacing_m": {
+  "value": 5.0,
+  "units": "m",
+  "register": "A-M-412",
+  "note": "study deck stack behind the level heights in hull.py"
  }
 }

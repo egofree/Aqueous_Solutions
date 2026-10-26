@@ -621,6 +621,15 @@ nodes:
   - id: WTR.potable-upw-train.ICE_EXTRACT
     parent: WTR.potable-upw-train
     unit_id: ICE_EXTRACT
+  - id: WTR.potable-upw-train.SW_INTAKE
+    parent: WTR.potable-upw-train
+    unit_id: SW_INTAKE
+  - id: WTR.potable-upw-train.DESAL_RO
+    parent: WTR.potable-upw-train
+    unit_id: DESAL_RO
+  - id: WTR.potable-upw-train.BRIN_RECOVER
+    parent: WTR.potable-upw-train
+    unit_id: BRIN_RECOVER
   - id: WTR.potable-upw-train.PERC_REMOVE
     parent: WTR.potable-upw-train
     unit_id: PERC_REMOVE
