@@ -20,7 +20,9 @@ This is a design-derived study HAZOP: deviations, causes and safeguards come fro
 
 130 nodes, 853 deviations, 212 actions: 123 closed at issue against cited artifacts (duty sheet section 6 relief statements, X-SAF-03 C7; AQS-CTL-001 indication loops), 89 trip actions close in the SIF pass (AQS-CTL-003, `docs-authority/_sif.py`), 0 tracked open in the action register AQS-SAF-008 (`docs-authority/HAZOP_ACTION_REGISTER.md`) with owner tasks in plan terms.
 
-## Actions by kind
+## 2. Actions by kind
+
+Table 2.1. Actions by kind
 
 | Action | Count | Closing task |
 |---|---|---|
