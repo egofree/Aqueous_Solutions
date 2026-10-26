@@ -1,5 +1,7 @@
-item,description,qty,material,basis
-1,"Prep bench 800 x 600 x 900 mm, CS frame, lower shelf",1,"CS weldment, SS top",AQS-DUTY-072 section 4; salt flux cover preparation bench
-2,"Salt hopper D300 x 283 mm, 20 L, with lid",1,SS 304,"0.0398 kg/d salt-flux cover (Kroll MgCl2-class drag-out, A-M-280)"
-3,Side-entry mixer 0.1 kW with shaft and gland,1,"SS 304, PTFE gland",AQS-DUTY-072 section 4
-4,Mixing tub and salt day-bin (lower shelf),2,SS 304 / HDPE,AQS-DUTY-072 section 4; batch cover for the Al-charged melt
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Bench frame 800 x 600, work top z 850..900,1,carbon steel,255.10000000000002,make,"WORK_ORDER step 1; AQS-DUTY-072 bench_prep class"
+2,Extraction hood with the N-vent stub,1,carbon steel,223.4,make,"task-04 schedule N5"
+3,Flux hopper 20 L cone + 0.1 kW mixer stage,1,CS + carbon steel,105.3,make,"design hopper 20 L, mixer 0.1 kW; 0.0398 kg/d salt batch"
+4,N1 flux discharge chute +X z 600,1,carbon steel,18.84,make,"task-04 schedule N1 (solids, bore not calculated)"
+5,N2/N3 inlet chutes -X z 160 (digester salts; MgCl2 drag-out from TI_CELL N7),2,carbon steel,4.5,make,"task-04 schedule N2/N3; A-M-284 feedstock ruling"
+6,N4 drain well,1,carbon steel,1.0072096647506712,make,"task-04 schedule N4"

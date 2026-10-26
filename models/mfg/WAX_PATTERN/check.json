@@ -1,0 +1,38 @@
+{
+  "bench_bbox_mm": [
+    800.0,
+    600.0,
+    850.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 30.0,
+    "+X": 0.0,
+    "-Y": 0.0,
+    "+Y": 0.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: pattern_chute, condensate_trap, makeup_hopper)",
+  "external_parts": [
+    "pattern_chute",
+    "condensate_trap",
+    "makeup_hopper"
+  ],
+  "cap_solids": 4,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "bench_frame": 66.7,
+    "work_top": 188.4,
+    "extraction_hood": 223.3,
+    "vent_stub": 0.1,
+    "drain_well": 1.0,
+    "wax_pot": 12.3,
+    "injector_head": 14.2,
+    "pattern_table": 20.7,
+    "condensate_trap": 2.3,
+    "makeup_hopper": 2.3,
+    "pattern_chute": 18.8
+  },
+  "cadquery": "2.8.0"
+}

@@ -1,0 +1,38 @@
+{
+  "bench_bbox_mm": [
+    800.0,
+    600.0,
+    850.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 30.0,
+    "+X": 0.0,
+    "-Y": 0.0,
+    "+Y": 0.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: flux_chute, salt_inlet, mgcl2_inlet)",
+  "external_parts": [
+    "flux_chute",
+    "salt_inlet",
+    "mgcl2_inlet"
+  ],
+  "cap_solids": 4,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "bench_frame": 66.7,
+    "work_top": 188.4,
+    "extraction_hood": 223.3,
+    "vent_stub": 0.1,
+    "drain_well": 1.0,
+    "hopper": 77.9,
+    "mixer": 9.1,
+    "mix_stage": 17.0,
+    "flux_chute": 18.8,
+    "salt_inlet": 2.3,
+    "mgcl2_inlet": 2.3
+  },
+  "cadquery": "2.8.0"
+}

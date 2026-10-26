@@ -324,3 +324,12 @@ sill. The ten schedule rows are nominal staging positions - the seven inlets
 land on the tier decks at the z 160 datum and the issue sill carries N8.
 check.json records the acceptance; the export STL is watertight; the X-PAR-04
 gate passes. The 8-sheet drawing set is stamped with SVG and PDF.
+
+## Addendum 21: FOUNDRY-FLUX_PREP-10 and FOUNDRY-WAX_PATTERN-10 accepted at M3
+
+The two bench_prep units share one frame build (models/mfg/bench_prep.py):
+the salt-flux preparation bench (20 L hopper, 0.1 kW mixer stage) and the wax
+pattern injection bench (10 L pot, 0.5 kW injector head, pattern table).
+check.json records each acceptance; the export STLs are watertight; the
+X-PAR-04 gate passes on both registry solids. The 8-sheet drawing sets are
+stamped with SVG and PDF. Unit task 11 keeps the house partial state.

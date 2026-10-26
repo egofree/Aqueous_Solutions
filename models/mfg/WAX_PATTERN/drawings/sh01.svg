@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="800.0"
+   height="340.0"
+
+>
+    <g transform="scale(0.22499999999999998, -0.22499999999999998)   translate(888.888888888889,-888.8888888888889)" stroke-width="4.444444444444445"  fill="none">
+       <!-- hidden lines -->
+       <g  stroke="rgb(160,160,160)" fill="none" stroke-dasharray="4.444444444444445,4.444444444444445" >
+			<path d="M0.0,0.0 L900.0,0.0 " />
+			<path d="M0.0,0.0 L850.0,0.0 " />
+			<path d="M0.0,0.0 L850.0,0.0 " />
+			<path d="M0.0,0.0 L0.0,50.0 " />
+			<path d="M900.0,0.0 L900.0,800.0 " />
+			<path d="M0.0,800.0 L900.0,800.0 " />
+			<path d="M0.0,750.0 L0.0,800.0 " />
+			<path d="M0.0,750.0 L850.0,750.0 " />
+			<path d="M850.0,50.0 L850.0,750.0 " />
+			<path d="M0.0,50.0 L850.0,50.0 " />
+			<path d="M0.0,0.0 L0.0,50.0 " />
+			<path d="M0.0,50.0 L850.0,50.0 " />
+			<path d="M850.0,0.0 L850.0,50.0 " />
+			<path d="M850.0,0.0 L850.0,50.0 " />
+			<path d="M850.0,750.0 L850.0,800.0 " />
+			<path d="M850.0,750.0 L850.0,800.0 " />
+			<path d="M0.0,0.0 L0.0,50.0 " />
+			<path d="M0.0,50.0 L850.0,50.0 " />
+			<path d="M900.0,180.0 L900.0,620.0 " />
+			<path d="M900.0,180.0 L900.0,620.0 " />
+			<path d="M0.0,800.0 L850.0,800.0 " />
+			<path d="M0.0,800.0 L850.0,800.0 " />
+			<path d="M0.0,750.0 L0.0,800.0 " />
+			<path d="M0.0,750.0 L850.0,750.0 " />
+			<path d="M0.0,750.0 L850.0,750.0 " />
+			<path d="M0.0,750.0 L0.0,800.0 " />
+			<path d="M900.0,180.0 L1050.0,180.0 " />
+			<path d="M900.0,620.0 L1050.0,620.0 " />
+			<path d="M1050.0,180.0 L1050.0,620.0 " />
+			<path d="M1050.0,180.0 L1050.0,620.0 " />
+			<path d="M1050.0,150.0 L1050.0,650.0 " />
+			<path d="M1050.0,150.0 L1080.0,150.0 " />
+			<path d="M1050.0,650.0 L1080.0,650.0 " />
+			<path d="M1080.0,150.0 L1080.0,650.0 " />
+
+       </g>
+
+       <!-- solid lines -->
+       <g  stroke="rgb(0,0,0)" fill="none">
+			<path d="M900.0,0.0 L0.0,0.0 " />
+			<path d="M850.0,50.0 L850.0,750.0 " />
+			<path d="M0.0,0.0 L0.0,50.0 " />
+			<path d="M0.0,50.0 L850.0,50.0 " />
+			<path d="M900.0,0.0 L900.0,800.0 " />
+			<path d="M900.0,800.0 L0.0,800.0 " />
+			<path d="M0.0,750.0 L0.0,800.0 " />
+			<path d="M0.0,750.0 L850.0,750.0 " />
+			<path d="M900.0,180.0 L1050.0,180.0 " />
+			<path d="M900.0,620.0 L1050.0,620.0 " />
+			<path d="M1050.0,150.0 L1050.0,650.0 " />
+			<path d="M1050.0,150.0 L1080.0,150.0 " />
+			<path d="M1050.0,650.0 L1080.0,650.0 " />
+			<path d="M1080.0,150.0 L1080.0,650.0 " />
+
+       </g>
+    </g>
+    
+<g id="aqs-fab-notes" transform="translate(0,240.0)" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000"><text x="6" y="24">Graph revision AC - sh01: Bench frame: four 50 x 50 legs, work top 800 x 600 x 50; hood plenum z 900..1050 and canopy z 1050..1080</text><text x="6" y="37">Graph revision AC - sh01: 6 mm fillet welds (ISO 2553 a6) at the leg/top seams; general tolerance ISO 2768-m unless noted</text></g>
+<g id="aqs-title-block"><rect x="581.6" y="280.0" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="585.2" y="289.6" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-MFG-WAX_PATTERN-SH01</text><text x="585.2" y="299.8" font-family="sans-serif" font-size="5.4">WAX_PATTERN fabrication drawing SH01 (AQS-PLAN-006 M3; graph</text><text x="585.2" y="310.0" font-family="sans-serif" font-size="5.4">Type: fabrication drawing (GA / nozzle orientation / part sheet)   Rev cd5434da   Issued 2026-10-15</text><text x="585.2" y="320.2" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="585.2" y="330.4" font-family="sans-serif" font-size="5.4">Sheet 1 of 1   AQS-DWG-001</text></g>
+</svg>

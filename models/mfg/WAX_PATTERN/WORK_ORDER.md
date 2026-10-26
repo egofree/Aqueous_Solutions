@@ -1,9 +1,10 @@
 # Work order WAX_PATTERN
 
-Authority: AQS-DUTY-072 (X-MFG-30 pattern). LIVE unit - wax make-up import + 90 % reclaim (A-M-281).
+Authority: AQS-DUTY-072 (X-MFG lane). LIVE unit - bench_prep class.
 
-1. Weld the bench; fit the SS top and lower shelf.
-2. Set the 10 L wax pot with thermostat; plumb the reclaim melter beside it on the shelf.
-3. Build the injector frame; align plunger to die plate.
-4. Test: wax at temperature, 10 injection shots; check reclaim melt quality.
-5. Inspect against models/mfg/WAX_PATTERN/export/wax_pattern.step.
+1. Fabricate the bench frame and work top; set on anchors.
+2. Mount the extraction hood and the vent stub; prove the draft.
+3. Fit the unit hardware per bom.csv; align to the task-04 nozzle positions.
+4. Fit the N-drain and utility stubs.
+5. Test: dry run of the hardware, then the first service batch.
+6. Inspect against models/mfg/WAX_PATTERN/export/wax_pattern.step; record dimensions on the traveller.

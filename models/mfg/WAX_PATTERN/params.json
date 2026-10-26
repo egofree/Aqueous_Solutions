@@ -1,0 +1,26 @@
+{
+ "size_mm": [
+  800,
+  600,
+  1200
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: bench frame 800 x 600 with the work top at z 900; N-outlet rows at +X z 600 above the catch tray; inlet rows -X z 160; N-drain bottom; N-vent on the extraction hood top. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "bench": "wax pattern injection bench",
+  "wax_kg_d": 2.0,
+  "makeup_kg_d": 0.2,
+  "reclaim_kg_d": 1.8,
+  "injector_kW": 0.5,
+  "pot_L": 10
+ },
+ "doc": "AQS-DUTY-072",
+ "pot": {
+  "L": 10
+ },
+ "injector_kW": 0.5
+}

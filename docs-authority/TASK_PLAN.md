@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| FOUNDRY | Process (Mass transform) | 405 | 305 |
+| FOUNDRY | Process (Mass transform) | 405 | 307 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
 | CRYO | Utility / header | 210 | 135 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2936** | **2077** |
+| | **Total** | **2936** | **2079** |
 
 ## 3. Triage of open tasks
 
@@ -105,7 +105,7 @@ Table 3.1. Open tasks by triage tag
 | desk P1 | 1 |
 | desk P2 | 1 |
 | desk P3 | 33 |
-| desk P4 | 466 |
+| desk P4 | 464 |
 | desk P5 | 174 |
 | hardware | 182 |
 | owner | 2 |
@@ -707,8 +707,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-FLUX_PREP-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-FLUX_PREP-02, FOUNDRY-FLUX_PREP-03. Evidence: `docs-authority/duties/FLUX_PREP.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-FLUX_PREP-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-FLUX_PREP-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
   - [x] FOUNDRY-FLUX_PREP-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FOUNDRY-FLUX_PREP-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FOUNDRY-FLUX_PREP-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/FLUX_PREP/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-FLUX_PREP-02, FOUNDRY-FLUX_PREP-04, FOUNDRY-FLUX_PREP-06, FOUNDRY-FLUX_PREP-09. Status: partial: M2 at `models/mfg/FLUX_PREP/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
-  - [ ] FOUNDRY-FLUX_PREP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-FLUX_PREP-10, X-DWG-01. Triage: desk P4.
+  - [x] FOUNDRY-FLUX_PREP-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/FLUX_PREP/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-FLUX_PREP-02, FOUNDRY-FLUX_PREP-04, FOUNDRY-FLUX_PREP-06, FOUNDRY-FLUX_PREP-09. Evidence: `models/mfg/FLUX_PREP/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
+  - [ ] FOUNDRY-FLUX_PREP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-FLUX_PREP-10, X-DWG-01. Status: partial: GA + nozzle orientation + part sheets in `models/mfg/FLUX_PREP/drawings/` (weld callouts + ISO 2768-m tolerance notes); per-part dimension chains and the tolerance stack stay open. Triage: desk P4.
   - [x] FOUNDRY-FLUX_PREP-12 BOM. Done when: models/mfg/FLUX_PREP/bom.csv. Depends: FOUNDRY-FLUX_PREP-10. Evidence: `models/mfg/FLUX_PREP/bom.csv`.
   - [x] FOUNDRY-FLUX_PREP-13 Fabrication route. Done when: docs-authority/fab/FLUX_PREP.md. Depends: FOUNDRY-FLUX_PREP-10, FOUNDRY-FLUX_PREP-12. Evidence: `docs-authority/fab/FLUX_PREP.md` (study route).
   - [ ] FOUNDRY-FLUX_PREP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-FLUX_PREP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
@@ -995,8 +995,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-WAX_PATTERN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-WAX_PATTERN-02, FOUNDRY-WAX_PATTERN-03. Evidence: `docs-authority/duties/WAX_PATTERN.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-WAX_PATTERN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-WAX_PATTERN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
   - [x] FOUNDRY-WAX_PATTERN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FOUNDRY-WAX_PATTERN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FOUNDRY-WAX_PATTERN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/WAX_PATTERN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-WAX_PATTERN-02, FOUNDRY-WAX_PATTERN-04, FOUNDRY-WAX_PATTERN-06, FOUNDRY-WAX_PATTERN-09. Status: partial: M2 at `models/mfg/WAX_PATTERN/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
-  - [ ] FOUNDRY-WAX_PATTERN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-WAX_PATTERN-10, X-DWG-01. Triage: desk P4.
+  - [x] FOUNDRY-WAX_PATTERN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/WAX_PATTERN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-WAX_PATTERN-02, FOUNDRY-WAX_PATTERN-04, FOUNDRY-WAX_PATTERN-06, FOUNDRY-WAX_PATTERN-09. Evidence: `models/mfg/WAX_PATTERN/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
+  - [ ] FOUNDRY-WAX_PATTERN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-WAX_PATTERN-10, X-DWG-01. Status: partial: GA + nozzle orientation + part sheets in `models/mfg/WAX_PATTERN/drawings/` (weld callouts + ISO 2768-m tolerance notes); per-part dimension chains and the tolerance stack stay open. Triage: desk P4.
   - [x] FOUNDRY-WAX_PATTERN-12 BOM. Done when: models/mfg/WAX_PATTERN/bom.csv. Depends: FOUNDRY-WAX_PATTERN-10. Evidence: `models/mfg/WAX_PATTERN/bom.csv`.
   - [x] FOUNDRY-WAX_PATTERN-13 Fabrication route. Done when: docs-authority/fab/WAX_PATTERN.md. Depends: FOUNDRY-WAX_PATTERN-10, FOUNDRY-WAX_PATTERN-12. Evidence: `docs-authority/fab/WAX_PATTERN.md` (study route).
   - [ ] FOUNDRY-WAX_PATTERN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-WAX_PATTERN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
