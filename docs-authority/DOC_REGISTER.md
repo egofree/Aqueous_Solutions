@@ -293,6 +293,7 @@ Table 3.1. Document numbers in use
 | AQS-SITE-006 | `docs-authority/SITE_BASIS_DEATH_VALLEY.md` | A | 2026-10-25 | Death Valley site basis | current |
 | AQS-SITE-007 | `docs-authority/SITE_BASIS_FLOATING_ISLAND.md` | A | 2026-10-25 | Floating island site basis | current |
 | AQS-SITE-008 | `docs-authority/SITE_BASIS_ANTARCTIC.md` | A | 2026-10-25 | Antarctic site basis | current |
+| AQS-SITE-010 | `docs-authority/SITE_BASIS_LEO.md` | A | 2026-10-25 | Low Earth orbit site basis | current |
 | AQS-SIZE-ACID_POLISH_SCRUB | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | A | 2026-10-20 | Sizing calculation - ACID_POLISH_SCRUB | current |
 | AQS-SIZE-ADS_CHILL | `docs-authority/sizing/ADS_CHILL.md` | A | 2026-10-20 | Sizing calculation - ADS_CHILL | current |
 | AQS-SIZE-AFTERBURNER | `docs-authority/sizing/AFTERBURNER.md` | A | 2026-10-20 | Sizing calculation - AFTERBURNER | current |

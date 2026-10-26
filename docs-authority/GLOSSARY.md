@@ -835,6 +835,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {NH -- Nutrient hose (the farm irrigation line class), or the ammonia nitrogen species.}
 {COND -- Condenser or condensate (context-dependent stream or equipment shorthand).}
 {LH -- Light hazard: the NFPA 13 occupant-hazard classification for areas with low combustible loading.}
+{LEO -- Low Earth orbit: the 400 km, 51.6 degree orbital regime of the ISS and station-class platforms.}
 {PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
 
 {UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}
