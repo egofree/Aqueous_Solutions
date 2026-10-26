@@ -55,8 +55,9 @@ def _flow_kg_s(g, u, mode):
 
 
 def air_rho(d):
-    """Air and nitrogen class gas density from the site atmosphere at the header gas temperature."""
-    return SITE.air_density(DR.val(d, HD + 'hdr_air_T_C'))
+    """Air and nitrogen class gas density in the process space at the header gas temperature (A-M-401 where the
+    profile states the shell interior)."""
+    return SITE.process_air_density(DR.val(d, HD + 'hdr_air_T_C'))
 
 
 def design(d, g):

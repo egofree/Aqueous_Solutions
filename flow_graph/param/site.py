@@ -133,6 +133,19 @@ def air_density(T_C, sid=None):
     return p_atm_Pa(sid) * val('atmosphere.molar_mass_kg_kmol', sid) / 1000 / (R_GAS * (T_C + 273.15))
 
 
+_SHELL_M = {'N2': 28.0134, 'O2': 31.9988, 'Ar': 39.948, 'CO2': 44.0095}   # kg/kmol [CODATA2018]
+
+
+def process_air_density(T_C, sid=None):
+    """Process-space gas density at temperature T_C, kg/m3: ideal gas at the process pressure, molar mass from
+    the stated shell composition; open-air sites take the external atmosphere's density."""
+    e = _shell_entry('shell_composition_mole_fraction', sid)
+    if e:
+        M = sum(x * _SHELL_M[gas] for gas, x in e['value'].items() if gas in _SHELL_M)
+        return p_process_Pa(sid) * M / 1000 / (R_GAS * (T_C + 273.15))
+    return air_density(T_C, sid)
+
+
 def air_fraction(gas, sid=None):
     """Mole fraction of a gas in the external atmosphere; 0 when the profile lists none."""
     return val('atmosphere.composition_mole_fraction', sid).get(gas, 0.0)
