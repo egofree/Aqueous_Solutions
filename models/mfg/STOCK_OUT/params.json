@@ -1,0 +1,20 @@
+{
+ "size_mm": [
+  1200,
+  800,
+  1500
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: the seven stock-inlet rows land on the tier decks at z 160 (task-04 datum); formed product issues at the +X face at z 600; N9 nominal floor drain at (400,400) z 50; N10 top vent at (600,400). Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "rack": "three-tier bar/plate/ingot staging rack",
+  "issue_kg_d": 25.9,
+  "export_kg_d": 10.8125,
+  "hold_d": 1.0
+ },
+ "doc": "AQS-DUTY-072"
+}

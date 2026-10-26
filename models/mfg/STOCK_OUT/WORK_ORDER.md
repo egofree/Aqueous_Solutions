@@ -1,8 +1,9 @@
 # Work order STOCK_OUT
 
-Authority: AQS-DUTY-072 (X-MFG-30 pattern). In-house fabrication.
+Authority: AQS-DUTY-072 (X-MFG lane). LIVE unit - stock staging rack.
 
-1. Cut and weld the rack frame 1200 x 800 x 1500 mm, 3 tiers at 500 mm pitch.
-2. Fit mesh shelves, dividers and the offcut tote.
-3. Anchor to the slab; load test to 2x the 25.9 kg/d daily issue.
-4. Inspect against models/mfg/STOCK_OUT/export/stock_out.step.
+1. Fabricate and erect the six uprights; bolt to the slab.
+2. Fit the three tier decks and the back guard; fit the issue-face edge stops and sill.
+3. Fit the N9 floor drain and N10 vent stub.
+4. Load test: rated stock per tier, 1.0 d hold (AQS-DUTY-072).
+5. Inspect against models/mfg/STOCK_OUT/export/stock_out.step; record dimensions on the traveller.

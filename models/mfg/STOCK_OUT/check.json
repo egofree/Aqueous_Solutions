@@ -1,0 +1,32 @@
+{
+  "rack_bbox_mm": [
+    1200.0,
+    800.0,
+    1480.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": -0.0,
+    "+X": 0.0,
+    "-Y": 0.0,
+    "+Y": 0.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: issue_sill)",
+  "external_parts": [
+    "issue_sill"
+  ],
+  "cap_solids": 3,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "uprights": 250.9,
+    "tier_decks": 678.2,
+    "back_guard": 256.2,
+    "edge_stops": 43.0,
+    "issue_sill": 5.0,
+    "drain_well": 1.0,
+    "vent_stub": 0.0
+  },
+  "cadquery": "2.8.0"
+}

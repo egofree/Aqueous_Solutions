@@ -1,4 +1,7 @@
-item,description,qty,material,basis
-1,"Three-tier staging rack 1200 x 800 x 1500 mm, 500 mm tier pitch",1,CS angle + mesh shelves,"AQS-DUTY-072 section 3; 25.9 kg/d shop issue, 1 d staging"
-2,Bar/plate dividers and location stops,4,CS angle,class separation Cu / Fe / Zn
-3,Bin tote for offcut returns to the melt,1,mild steel,MFG_SCRAP_TO_IND loop
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Rack uprights, 6 x 60 x 60 x 1480 mm",6,carbon steel,250.9,make,WORK_ORDER step 1; three-tier staging rack (AQS-DUTY-072)
+2,"Tier decks at z 160/600/1000, 1200 x 800 x 30 each",3,carbon steel,678.2,make,the seven stock-inlet rows land on the tier decks (task-04 schedule N1..N7)
+3,Back guard plate,1,carbon steel,256.2,make,WO step 2
+4,Issue-face edge stops at +X,3,carbon steel,43.0,make,task-04 schedule N8
+5,Issue sill +X z 600,1,carbon steel,5.0,make,task-04 schedule N8 (formed metal product to the store; bore not calculated)
+6,N9 nominal floor drain + N10 top vent stub,2,carbon steel,1.0,make,task-04 schedule N9/N10

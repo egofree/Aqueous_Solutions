@@ -314,3 +314,13 @@ records the acceptance; the registry solid passes the X-PAR-04 gate. The
 8-sheet drawing set is stamped with SVG and PDF. One tessellation-seam edge in
 the ASCII export is recorded in check.json (non_manifold_note); the solid is a
 single valid fused body. Unit task 11 keeps the house partial state.
+
+## Addendum 20: FOUNDRY-STOCK_OUT-10 accepted at M3
+
+The three-tier stock staging rack moves from the M2 foundry export to a
+dedicated build (models/mfg/STOCK_OUT/stock_out.py + params.json): six
+uprights, tier decks at z 160 / 600 / 1000, back guard, issue-face stops and
+sill. The ten schedule rows are nominal staging positions - the seven inlets
+land on the tier decks at the z 160 datum and the issue sill carries N8.
+check.json records the acceptance; the export STL is watertight; the X-PAR-04
+gate passes. The 8-sheet drawing set is stamped with SVG and PDF.
