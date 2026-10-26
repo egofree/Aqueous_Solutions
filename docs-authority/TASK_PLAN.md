@@ -57,7 +57,7 @@ Table 2.1. Tasks by group
 | X-OPS | Operations and maintenance | 3 | 3 |
 | X-QA | QA and verification | 3 | 2 |
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
-| X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 8 |
+| X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 9 |
 | X-TOOL | Modeling tooling | 4 | 4 |
 | FOUNDRY | Process (Mass transform) | 405 | 296 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2936** | **2063** |
+| | **Total** | **2936** | **2064** |
 
 ## 3. Triage of open tasks
 
@@ -103,7 +103,7 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P1 | 1 |
-| desk P2 | 6 |
+| desk P2 | 5 |
 | desk P3 | 33 |
 | desk P4 | 475 |
 | desk P5 | 174 |
@@ -159,7 +159,6 @@ Table 6.1. Next cross-cutting desk tasks
 | Task | Title | Triage |
 | --- | --- | --- |
 | X-END-02 | End-of-life material return | desk P2 |
-| X-LOC-08 | Antarctic variant | desk P2 |
 | X-LOC-09 | Mars variant | desk P2 |
 | X-LOC-10 | Low Earth orbit variant | desk P2 |
 | X-LOC-11 | Floating island variant | desk P2 |
@@ -557,7 +556,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-LOC-06** Power portfolio, heat rejection and storage models. Done when: power portfolio per profile (PV, wind, geothermal, hydro, wave, ocean thermal, fuel cells, storage; fission and others as flagged options) solved through the worst stretch with the oversize factor and redundancy kept (Q-024); heat rejection mode per heat ladder level (air, evaporative, ground, seawater, radiative, heat pump lift) with radiator sizing; resource models from the profile. Depends: X-LOC-05. Evidence: `docs-authority/SITE_POWER.md`.
 - [x] **X-LOC-07** Death Valley variant. Done when: profile with cited values, locale site basis page (AQS-SITE series), regeneration under sites/<site_id>/ passes closure and misfit checks; water intake unit and heat rejection scaling recorded. Depends: X-LOC-06. Evidence: `docs-authority/SITE_BASIS_DEATH_VALLEY.md`.
 - [ ] **X-LOC-11** Floating island variant. Done when: as X-LOC-07, with the motion group, operating mass, centre of gravity, stability and freeboard checks, seawater intake, desalination and mineral recovery, the seawater feed case and the marine code family (Q-030, Q-031). Depends: X-LOC-07. Triage: desk P2.
-- [ ] **X-LOC-08** Antarctic variant. Done when: as X-LOC-07, with the Antarctic Treaty code family, seasonal storage, freeze protection and minimum design temperature checks. Depends: X-LOC-11. Triage: desk P2.
+- [x] **X-LOC-08** Antarctic variant. Done when: as X-LOC-07, with the Antarctic Treaty code family, seasonal storage, freeze protection and minimum design temperature checks. Depends: X-LOC-11. Evidence: `docs-authority/SITE_BASIS_ANTARCTIC.md`.
 - [ ] **X-LOC-09** Mars variant. Done when: as X-LOC-07, with pressurised halls, atmosphere intake, ice extraction, regolith and perchlorate feed cases in AQS-ASSAY-001, and planetary protection family. Depends: X-LOC-08. Triage: desk P2.
 - [ ] **X-LOC-10** Low Earth orbit variant. Done when: as X-LOC-07, with microgravity replacements and radiators. Depends: X-LOC-09. Triage: desk P2.
 - [ ] **X-LOC-12** Cross-locale comparison. Done when: a generated comparison of scaling actions, power portfolios and unit sizes across every profile. Depends: X-LOC-10. Triage: desk P2.
