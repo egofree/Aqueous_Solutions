@@ -293,3 +293,13 @@ common -X chute at z 160, the four melt rows leave through +Y DN15 stubs and
 the pour lip at z 600. check.json records the acceptance; the export STL is
 watertight; the X-PAR-04 gate passes. The 8-sheet drawing set is stamped with
 SVG and PDF. Unit task 11 keeps the house partial state.
+
+## Addendum 18: FOUNDRY-CONT_CAST-10 accepted at M3
+
+The two-strand horizontal caster moves from the M2 foundry export to a
+dedicated build (models/mfg/CONT_CAST/cont_cast.py + params.json): copper
+mould housing with two strand cavities, withdrawal rolls, run-out rollers,
+billet bed, and the mould-change gantry that carries the full 1500 x 800 x
+1500 frame. check.json records the acceptance; the export STL is watertight;
+the X-PAR-04 gate passes. The 8-sheet drawing set is stamped with SVG and
+PDF. Unit task 11 keeps the house partial state.

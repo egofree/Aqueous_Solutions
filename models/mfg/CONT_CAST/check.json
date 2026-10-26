@@ -1,0 +1,39 @@
+{
+  "frame_bbox_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 40.0,
+    "+X": 0.0,
+    "-Y": 0.0,
+    "+Y": 6.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: melt_inlet, billet_stop, stock_stubs)",
+  "external_parts": [
+    "melt_inlet",
+    "billet_stop",
+    "stock_stubs"
+  ],
+  "cap_solids": 1,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "frame": 1762.3,
+    "mould": 116.4,
+    "mould_jacket": 23.7,
+    "withdrawal_rolls": 18.0,
+    "runout_rollers": 42.6,
+    "billet_bed": 12.1,
+    "water_manifold": 1.8,
+    "melt_inlet": 0.1,
+    "billet_stop": 11.3,
+    "stock_stubs": 0.1,
+    "drain_well": 1.0,
+    "vent_stub": 0.2
+  },
+  "cadquery": "2.8.0"
+}

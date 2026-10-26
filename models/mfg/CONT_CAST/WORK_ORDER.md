@@ -1,9 +1,10 @@
 # Work order CONT_CAST
 
-Authority: AQS-DUTY-072 (X-MFG-30 pattern). In-house fabrication; no bought line machine.
+Authority: AQS-DUTY-072 (X-MFG lane). LIVE unit - two-strand caster.
 
-1. Fabricate and level the bench/frame; set the machine envelope 1500 x 800 x 1500 mm.
-2. Fit the line elements per bom.csv (two-strand horizontal semi-continuous caster).
-3. Guard the moving parts (ISO 14122-2 access; guards per AQS-BLD-012 class).
-4. Test: dry run, then trial feed pass; record dimensions on the traveller.
-5. Inspect against models/mfg/CONT_CAST/export/cont_cast.step.
+1. Fabricate the frame 1500 x 800 x 40 base with posts and table deck; set on anchors.
+2. Fit the copper mould housing with its water jacket; prove the coolant circuit.
+3. Set the withdrawal rolls and run-out rollers; align the strand lines to the mould.
+4. Fit the N1 melt inlet, N3 stock stubs, N4 drain and N5 vent.
+5. Test: water-side pressure hold, then a dry strand pull; first cast from IND_MELT N8.
+6. Inspect against models/mfg/CONT_CAST/export/cont_cast.step; record dimensions on the traveller.

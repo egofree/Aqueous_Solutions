@@ -1,6 +1,10 @@
-item,description,qty,material,basis
-1,"Water tank and mould zone, 2 strands",1,SS 304 casing; Cu moulds,AQS-DUTY-072 section 3
-2,"Water-cooled copper moulds, 2 strands (Fe billet 13.244228000000065 + Zn ingot 21.7125 kg/d)",2,"Cu, water-cooled",water-cooled copper (AQS-SIZE-FOUNDRY) (AQS-SIZE-FOUNDRY)
-3,Withdrawal/straightener roll stand,1,"CS frame, tool-steel rolls",AQS-DUTY-072 section 3
-4,Runout table 650 mm with legs,1,CS rollers,AQS-DUTY-072 section 3
-5,Torch shear at the runout end,1,CS gantry,billet cut lengths
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Caster frame: base 1500 x 800 x 40, four posts, table deck z 580..610",1,carbon steel,1762.3,make,WORK_ORDER step 1; AQS-DUTY-072 line-machine class
+2,"Two-strand mould housing 220 x 400 x 200, water-cooled copper cavities (water-cooled copper (AQS-SIZE-FOUNDRY))",1,Cu block in a CS housing,140.1,make,AQS-SIZE-FOUNDRY mould basis; N1 melt inlet -X z 160
+3,"Withdrawal rolls, 2 per strand, OD 90 with drive quills",4,carbon steel,18.0,make,WO step 3
+4,"Run-out roller conveyor, rollers OD 60 at 90 mm pitch",16,carbon steel,42.6,make,WO step 3
+5,Billet bed +X 100 x 440 x 30 with stop,1,carbon steel,23.4,make,task-04 schedule N2
+6,Mould water manifold DN36 class,1,carbon steel,1.8,make,mould cooling per AQS-SIZE-FOUNDRY
+7,N3 as-cast stock DN15 stubs +Y z 600,2,carbon steel,0.1,make,task-04 schedule N3
+8,N1 melt inlet DN15 -X z 160 (from IND_MELT N8),1,carbon steel,0.1,make,task-04 schedule N1
+9,N4 drain well + N5 vent stub,2,carbon steel,1.2,make,task-04 schedule N4/N5

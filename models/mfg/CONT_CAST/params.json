@@ -1,0 +1,22 @@
+{
+ "size_mm": [
+  1500,
+  800,
+  1500
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N1 melt inlet -X z 160 into the mould; N2 billet/slab out +X z 600 on the run-out; N3 as-cast stock +Y z 600; N4 drain bottom (400,400) z 50; N5 vent on the frame top z 800. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "machine": "two-strand horizontal semi-continuous caster",
+  "feed_kg_d": 31.7125,
+  "billet_kg_d": 13.2442,
+  "ingot_kg_d": 21.7125,
+  "strands": 2,
+  "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"
+ },
+ "doc": "AQS-DUTY-072; AQS-SIZE-FOUNDRY mould basis"
+}
