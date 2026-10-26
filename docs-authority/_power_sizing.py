@@ -45,24 +45,46 @@ cases={k:P+roof['ext']['total_kW'] for k,P in cases.items()}
 from flow_graph.param import portfolio as PF
 from flow_graph.param import site as _site_mod
 PVF=PF.pv_factor(eta=RT)   # site portfolio: PV share and worst-stretch correction (1 at the baseline); scales the PV balance through its yield
-# X-LOC-08: wind-primary portfolios. The wind capacity factor (in the profile) replaces the PV
-# yield as the generation basis. The nameplate is demand / capacity_factor; the oversize rule
-# and the worst-stretch correction apply as for PV. The roof-close function is not called for
-# non-PV sites because the generation is not roof-constrained.
-if PVF <= 0:
-    _wind = [s for s in PF.portfolio(_site_mod.load_profile())['sources'] if s['role'] == 'primary' and s['kind'] == 'wind']
-    if not _wind: raise SystemExit('site portfolio has no PV or wind primary; power sizing for other primary sources is not built yet (AQS-PLAN-011 section 5.5)')
-    _cf = _wind[0].get('capacity_factor', 0.35)
-    if not (0 < _cf <= 1): raise SystemExit(f'wind capacity_factor {_cf} must be above 0 and at most 1')
-    _demand = sum(B.values()) + rect['Pac_kW']
-    _nameplate = round(_demand / _cf, 1)
+# Generic primary-source sizing (X-LOC-08 refactoring): the portfolio's primary source kind
+# determines the sizing path. PV keeps the roof-close chain; every other kind uses
+# nameplate = demand / capacity_factor from the profile. The roof-close function is not called
+# for non-PV sources because the generation is not roof-constrained.
+_prof = _site_mod.load_profile()
+_psrc = [s for s in PF.portfolio(_prof)['sources'] if s['role'] == 'primary']
+_primary_kind = _psrc[0]['kind'] if _psrc else 'pv'
+_primary_unit = _psrc[0].get('unit', 'PV_ARRAY') if _psrc else 'PV_ARRAY'
+
+def _size_generic_primary(demand_kW, kind, src):
+    cf = src.get('capacity_factor', 0.35)
+    if not (0 < cf <= 1):
+        raise SystemExit(f'{kind} capacity_factor {cf} must be above 0 and at most 1')
+    nameplate = round(demand_kW / cf, 1)
     out = {}
     for k, P in cases.items():
         E = P * 24
-        out[k] = dict(P_kW=P, E_kWh_d=E, nameplate_kWp=_nameplate, nameplate_kw=_nameplate,
-                      area_m2=0, kind='wind', capacity_factor=_cf,
-                      note='wind primary: nameplate = demand / capacity_factor; roof-close not called (generation is not roof-constrained)')
-    print(json.dumps({'roof': out, 'bounding': out['bounding'], 'reference': out['reference'], 'kind': 'wind'}))
+        out[k] = dict(P_kW=P, E_kWh_d=E,
+                      nameplate_kWp=nameplate, nameplate_kw=nameplate,
+                      area_m2=0, kind=kind, capacity_factor=cf,
+                      store_kW=P, store_kWh=P*24*0.5, charge_kW=P*0.5, discharge_kW=P*0.5,
+                      cloudy_yield_frac=cf, inverters=1, inv_kW=P, export_peak_kW=0, export_kWh_d_clear=0,
+                      pv_base_kWp=nameplate)
+    out['_primary_unit'] = src.get('unit', 'PV_ARRAY')
+    out['_primary_kind'] = kind
+    return out
+
+if _primary_kind != 'pv':
+    _demand = sum(B.values()) + rect['Pac_kW']
+    out = _size_generic_primary(_demand, _primary_kind, _psrc[0])
+    roof = {'array_m2': 0, 'W_mm': 0, 'D_mm': 0, 'bays_x': 0, 'bays_y': 0, 'footprint_m2': 0,
+            'added_m2': 0, 'pv_roof_kWp': 0, 'layout': {'perimeter_mm': 0, 'arrays': []},
+            'ext': {'total_kW': 0, 'mode': None, 'light_kW': 0, 'vent_kW': 0, 'envelope_kW': 0,
+                    'gains_kW': 0, 'slab_kW': 0, 'pump_kW': 0, 'Qh_kW': 0, 'Qc_kW': 0,
+                    'bore_m': 0, 'bore_field_m2': 0, 'bores': None},
+            'load': {}}
+    out['roof'] = roof
+    out['bounding'] = out['bounding']
+    out['reference'] = out['reference']
+    print(json.dumps(out))
     sys.exit(0)
 out={}
 for k,P in cases.items():

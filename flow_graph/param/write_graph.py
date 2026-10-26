@@ -333,10 +333,60 @@ def x_els_residuals(g, N, E, d):
                 dict(item='total average', kW=round(nut_kw, 4))])
 
 
+def _write_generic_primary(g, N, o, d):
+    """Write generation params for a non-PV primary source (X-LOC-08 refactoring).
+    Reads the portfolio's primary source to find the graph node; writes generic
+    nameplate and capacity-factor params. The PV-specific roof chain is skipped."""
+    p = o['bounding']
+    kind = p.get('kind', 'unknown')
+    unit_id = o.get('_primary_unit', 'PV_ARRAY')
+    if unit_id not in N:
+        raise SystemExit(f'{unit_id}: primary source unit not in the graph')
+    src_node = N[unit_id]
+    src_node.setdefault('params', {}).update({
+        'nameplate_kw': p.get('nameplate_kw', 0),
+        'capacity_factor': p.get('capacity_factor', 0),
+        'kind': kind,
+        'basis': f'{kind} primary source sized by _power_sizing.py (demand / capacity factor)'})
+    src_node['continuous_kw'] = {'value': round(p['P_kW'], 4), 'unit': 'kW', 'status': 'study',
+        'note': f'{kind} primary: {p["P_kW"]:.2f} kW average demand / capacity factor {p.get("capacity_factor", 0)} = {p.get("nameplate_kw", 0)} nameplate.'}
+    # storage: write to whatever storage units the portfolio names
+    from flow_graph.param import site as _site_mod
+    prof = _site_mod.load_profile()
+    from flow_graph.param import portfolio as _PF
+    pf = _PF.portfolio(prof)
+    for sto in pf.get('storage', []):
+        su = sto.get('unit', '')
+        if su in N:
+            N[su].setdefault('params', {}).update({
+                'kW': math.ceil(p.get('store_kW', 0)), 'kWh': math.ceil(p.get('store_kWh', 0)),
+                'charge_kW': math.ceil(p.get('charge_kW', 0)), 'discharge_kW': math.ceil(p.get('discharge_kW', 0)),
+                'basis': f'{kind} primary: worst-stretch storage sizing (X-LOC-13 model)'})
+    # mvs.electrical: portfolio-driven summary
+    mvs = g.setdefault('mvs', {})
+    mvs['electrical'] = {
+        'bus_nodes': [s.get('unit', '') for s in pf.get('sources', [])],
+        'storage_options': [st.get('unit', '') for st in pf.get('storage', [])],
+        'need_kw': {'value': round(p['P_kW'], 2), 'unit': 'kW', 'status': 'study',
+                    'note': f'{kind} primary: converged bounding demand.'},
+        'target_kw': {'value': round(p.get('nameplate_kw', 0), 2), 'unit': 'kW', 'status': 'study',
+                      'note': f'{kind} primary: nameplate from demand / capacity factor.'},
+        'notes': f'write_graph power() portfolio-driven ({kind} primary; X-LOC-08 refactoring).'}
+
+
 def power():
     g = json.load(open(GP)); N = {n['unit_id']: n for n in g['nodes']}
-    o = json.loads(subprocess.run([sys.executable,'docs-authority/_power_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout); p = o['bounding']; rf = o['roof']
+    o = json.loads(subprocess.run([sys.executable,'docs-authority/_power_sizing.py'],cwd=ROOT,capture_output=True,text=True,check=True).stdout)
     d = DR.load()
+    # X-LOC-08 refactoring: dispatch per portfolio primary kind
+    _kind = o.get('bounding', {}).get('kind', o.get('kind', 'pv'))
+    if _kind != 'pv':
+        _write_generic_primary(g, N, o, d)
+        open(GP, 'w').write(json.dumps(g, indent=2))
+        print(f'{_kind} primary written (generic path)')
+        return
+    # PV-specific path (baseline and any PV-primary site)
+    p = o['bounding']; rf = o['roof']
     pv = N['PV_ARRAY']['params']; kwp = math.ceil(p['pv_kWp']); count = math.ceil(kwp/pv['module_kw'])
     pv.update({'nameplate_kw': kwp, 'count': count, 'area_m2': round(rf['array_m2']),
                'mounting': 'roof only (X-PAR-07); ground field removed',
