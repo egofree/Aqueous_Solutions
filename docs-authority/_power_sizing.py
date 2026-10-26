@@ -43,13 +43,14 @@ from flow_graph.param import solver as SV
 roof=SV.roof_close(_d,cases['bounding'])   # X-PAR-07: roof-only PV; the extension load (incl. EXT_HALL) is added by roof_close, counted once
 cases={k:P+roof['ext']['total_kW'] for k,P in cases.items()}
 from flow_graph.param import portfolio as PF
+from flow_graph.param import site as _site_mod
 PVF=PF.pv_factor(eta=RT)   # site portfolio: PV share and worst-stretch correction (1 at the baseline); scales the PV balance through its yield
 # X-LOC-08: wind-primary portfolios. The wind capacity factor (in the profile) replaces the PV
 # yield as the generation basis. The nameplate is demand / capacity_factor; the oversize rule
 # and the worst-stretch correction apply as for PV. The roof-close function is not called for
 # non-PV sites because the generation is not roof-constrained.
 if PVF <= 0:
-    _wind = [s for s in PF.portfolio(S.load_profile())['sources'] if s['role'] == 'primary' and s['kind'] == 'wind']
+    _wind = [s for s in PF.portfolio(_site_mod.load_profile())['sources'] if s['role'] == 'primary' and s['kind'] == 'wind']
     if not _wind: raise SystemExit('site portfolio has no PV or wind primary; power sizing for other primary sources is not built yet (AQS-PLAN-011 section 5.5)')
     _cf = _wind[0].get('capacity_factor', 0.35)
     if not (0 < _cf <= 1): raise SystemExit(f'wind capacity_factor {_cf} must be above 0 and at most 1')
