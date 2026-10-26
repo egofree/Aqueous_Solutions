@@ -366,8 +366,8 @@
             {
               "action": "eliminate",
               "target": "HYDRO_SET",
-              "replacement": "CRYO_H2",
-              "register": "AQS-PLAN-011 section 7.2 (seasonal hydrogen store replaces pumped hydro; frozen reservoirs)"
+              "replacement": "ZNBR2",
+              "register": "AQS-PLAN-011 section 7.2: seasonal hydrogen storage replaces pumped hydro; ZNBR2 (flow battery) is the different-technology unit on the graph that keeps the energy function."
             },
             {
               "action": "eliminate",
