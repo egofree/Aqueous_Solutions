@@ -1,0 +1,52 @@
+{
+  "vessel_bbox_mm": [
+    680.0,
+    230.0,
+    751.8
+  ],
+  "vessel_bbox_abs": [
+    80.0,
+    420.0,
+    200.0,
+    760.0,
+    650.0,
+    951.8
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 0.0,
+    "+X": 0.0,
+    "-Y": 0.0,
+    "+Y": 0.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: )",
+  "external_parts": [],
+  "cap_solids": 2,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "chlorinator": 133.8,
+    "chlorinator_band": 23.1,
+    "condenser": 50.8,
+    "condenser_band": 11.5,
+    "reduction_retort": 128.2,
+    "furnace_box": 158.3,
+    "mg_hopper": 8.9,
+    "x_chlor_cond": 0.3,
+    "x_cond_retort": 0.3,
+    "mgcl2_trough": 15.7,
+    "skid_frame": 564.3,
+    "charge_chutes": 6.4,
+    "cl2_stubs": 0.1,
+    "co_stub": 0.1,
+    "slag_spout": 1.1,
+    "harvest_ports": 2.5,
+    "mgcl2_stubs": 0.1,
+    "mg_chute": 1.7,
+    "drain_well": 4.8,
+    "vent_riser": 0.1,
+    "vent_stub": 0.0
+  },
+  "cadquery": "2.8.0"
+}

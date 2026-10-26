@@ -1,8 +1,18 @@
-item,description,qty,material,basis
-1,"Chlorinator retort D180 x 640 mm with 320 mm heater band, 800 C",1,"Inconel 601 retort, CS shell","AQS-DUTY-072 section 4; TiO2 0.8342 + C 0.2509 kg/d, Cl2 1.4813 kg/d from MG_POT"
-2,TiCl4 condenser D140 x 420 mm with water band,1,Hastelloy C-276,AQS-DUTY-072 section 4; AQS-BAL-KROLL TiCl4 pass
-3,"Mg reduction retort D200 x 520 mm in furnace box, 900 C",1,"Inconel 601 retort, argon-latched",0.5078 kg/d Mg at 1 kg Ti batch campaigns
-4,Mg charge hopper D110 with neck and metering valve,1,CS,AQS-DUTY-072 section 4; A-M-280 Mg-pot loop
-5,"TiCl4 transfer lines DN25, chlorinator -> condenser -> retort",2,Hastelloy C-276,AQS-DUTY-072 section 4
-6,"MgCl2 drag-out trough 640 x 110 x 90 mm, tapping spout",1,"CS, Monel-lined",1.9891 kg/d gross MgCl2; drag-out to FLUX_PREP (A-M-280)
-7,"Retort hold furnace + SCR, 0.5 kW",1,"resistance, PID",AQS-DUTY-072 section 4; CO 0.5852 kg/d off-gas to burn
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Kroll chlorinator retort, OD 180.0 x 640 mm at 800 C",1,carbon steel (dry hot Cl2),133.8,make,duty section 2/3; TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO at 800 C; heater band item 2
+2,"Chlorinator heater band, OD 210.0 x 320 mm",1,CS with element pockets,23.1,make,AQS-DUTY-072 section 4; hold duty per the design row
+3,"TiCl4 condenser, OD 140.0 x 420 mm with the water band",1,carbon steel,62.3,make,duty section 2; condenser at 300..500 water band
+4,"Mg-reduction retort, OD 200.0 x 520 mm at 900 C",1,carbon steel (retort class),128.2,make,duty section 2; batch campaigns at the 0.5 kg/d Ti scale
+5,Reduction furnace box 200 x 240 x 420,1,CS with element pockets,158.3,make,AQS-DUTY-072 section 4
+6,Mg charge hopper cone on the retort,1,carbon steel,8.9,make,0.5078 kg/d Mg reductant per campaign (AQS-BAL-KROLL)
+7,"Interconnects: chlorinator->condenser and condenser->retort, OD 24 t 2",2,carbon steel (dry hot Cl2/TiCl4),0.6,make,WO step 4; slope per the isometric
+8,MgCl2 drag-out trough 640 x 110 x 90,1,carbon steel,15.7,make,salt drag-out to the flux-cover source (task-04 schedule N7)
+9,N2/N10/N11 charge chutes -X z 160 (0.8342 kg/d TiO2-class + 0.2509 kg/d carbon + grit),3,"CS chute, refractory throat",6.4,make,task-04 schedule N2/N10/N11; A-M-284 feedstock ruling
+10,N3/N9 chlorine DN15 stubs -Y z 600 (1.4813 kg/d loop with MG_POT),2,carbon steel (dry hot Cl2),0.1,make,task-04 schedule N3/N9; A-M-280 ruling
+11,"N12 CO export DN15 +Y z 600 (0.5852 kg/d, fuel-gas class)",1,carbon steel,0.1,make,task-04 schedule N12
+12,N1 slag tap spout +Y z 600,1,carbon (refractory class),1.1,make,"task-04 schedule N1 (solids, bore not calculated)"
+13,N4/N5 harvest ports +X z 600 (Ti sponge/powder to vacuum melt),2,carbon steel,2.5,make,task-04 schedule N4/N5; harvest at the campaign end
+14,N6/N7 MgCl2 DN15 stubs +Y z 600 (return to MG_POT; drag-out to flux),2,carbon steel,0.1,make,task-04 schedule N6/N7; 1.9891 kg/d gross loop
+15,N8 Mg reductant chute -X z 160 on the retort,1,CS chute,1.7,make,task-04 schedule N8
+16,N13 drain well + N14 vent riser and stub,3,carbon steel,4.9,make,task-04 schedule N13/N14
+17,"Skid frame: base plate 800 x 800 x 60, four posts, retort lift beam z 1560..1600, vessel pedestals",1,carbon steel,564.3,make,the batch retort lifts in and out per campaign; X-ASM-01 install sequence

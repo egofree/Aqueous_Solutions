@@ -271,3 +271,14 @@ in-envelope build solid, schedule hardware within the 50 mm allowance, all
 parts valid; the X-PAR-04 gate passes on the in-envelope registry solids. The
 8-sheet drawing sets are stamped with SVG and PDF. Unit task 11 keeps the
 house partial state (per-part dimension chains open).
+
+## Addendum 16: FOUNDRY-TI_CELL-10 accepted at M3
+
+The Kroll train (chlorinator, TiCl4 condenser, Mg-reduction retort) moves from
+the M2 foundry export to a dedicated build (models/mfg/TI_CELL/ti_cell.py +
+params.json) on a skid frame whose base plate, posts and retort lift beam carry
+the full 800 x 800 x 1600 frame; the schedule hardware attaches to the vessels
+and stays in envelope. The export STL is watertight - the M2 multi-body
+compound defect is superseded, one of the five legacy models retired. The
+X-PAR-04 gate passes on the in-envelope registry solid; the 8-sheet drawing set
+is stamped with SVG and PDF. Unit task 11 keeps the house partial state.

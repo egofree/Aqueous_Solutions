@@ -1,0 +1,30 @@
+{
+ "size_mm": [
+  800,
+  800,
+  1600
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: chlorinator at (170,560) r90, condenser at (400,560) r70, reduction retort at (660,520) r100. N2/N10/N11 charge chutes -X z 160; N3/N9 Cl2 stubs -Y z 160; N12 CO +Y z 600; N1 slag +Y z 600; N4/N5 harvest ports +X z 600 on the retort; N6/N7 MgCl2 stubs +Y z 600 on the retort; N8 Mg chute -X z 160 on the retort; N13 drain bottom; N14 vent on the condenser top z 800. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "chlorinator_r_mm": 90.0,
+  "condenser_r_mm": 70.0,
+  "retort_r_mm": 100.0,
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "service": "Kroll chlorinator + Mg-reduction retort train",
+  "chlorinator_T_C": 800.0,
+  "retort_T_C": 900.0,
+  "tio2_kg_d": 0.8342,
+  "c_kg_d": 0.2509,
+  "ti_kg_d": 0.5,
+  "mg_kg_d": 0.5078,
+  "cl2_kg_d": 1.4813,
+  "mgcl2_gross_kg_d": 1.9891,
+  "co_kg_d": 0.5852,
+  "batch_kg": 1.0
+ },
+ "doc": "AQS-DUTY-072; AQS-BAL-KROLL; A-M-280 Cl2 ruling; A-M-284 D-DOCK feedstock"
+}
