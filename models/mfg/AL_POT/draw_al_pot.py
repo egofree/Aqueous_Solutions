@@ -45,7 +45,7 @@ SHEETS = [
      ['Keys: 800 overall width (shell); 1600 overall height, roof datum z0 = 1594..1600',
       'Melt level z 500 (hood hot plate at 490..500); head plate deck 1154..1160; bus rails 1196..1227',
       'N1 siphon lip +X z 600; N2/N4 DN15 at z 600; N3 chute z 160; N6 vent on the riser at z 800',
-      'Connection hardware protrudes <= 50 mm outside the shell faces (task-04 schedule; reported in check.json, nothing resized)',
+      'Connection hardware protrudes no more than 50 mm outside the shell faces (task-04 schedule; reported in check.json, nothing resized)',
       'Melt inventory (salt + metal layer) drawn as solids - process inventory, not a BOM part'],
      "General arrangement, front elevation. Shop, not stamped (AQS-STD-001 section 7)."),
     ("ga_side", union_all([shell, hood, electrode, aux]), (1, 0, 0),
@@ -112,7 +112,9 @@ def add_notes(svg_path, notes):
 pdf = "stamped pass pending"
 for sid, shape, pdir, notes, _title in SHEETS:
     svg = DRAW / f"{sid}.svg"
-    if "aqs-title-block" in svg.read_text():   # already stamped by _drawings.py: geometry frozen, PDF pass only
+    if not svg.exists():
+        pass   # fresh write below
+    elif "aqs-title-block" in svg.read_text():   # already stamped by _drawings.py: geometry frozen, PDF pass only
         try:
             import cairosvg
             cairosvg.svg2pdf(url=str(svg), write_to=str(DRAW / f"{sid}.pdf"))

@@ -304,7 +304,7 @@ The AQS-PID-001 series (unit P&amp;IDs) is appended by `docs-authority/_pid_shee
 | AQS-INV-005-MF-23 | Motor family MF-23 assembly | assembly drawing | e8f10e37 | models/motors/MF-23/export/drawing.svg |
 | AQS-MFG-AL_POT-AUX01 | AL_POT fabrication drawing AUX01 (AQS-PLAN-006 M3; graph revision AC) | fabrication drawing (GA / nozzle orientation / part sheet) | 2a098eff | models/mfg/AL_POT/drawings/aux01.svg |
 | AQS-MFG-AL_POT-EL01 | AL_POT fabrication drawing EL01 (AQS-PLAN-006 M3; graph revision AC) | fabrication drawing (GA / nozzle orientation / part sheet) | c0aea060 | models/mfg/AL_POT/drawings/el01.svg |
-| AQS-MFG-AL_POT-GA_FRONT | AL_POT fabrication drawing GA_FRONT (AQS-PLAN-006 M3; graph revision AC) | fabrication drawing (GA / nozzle orientation / part sheet) | c1270b3c | models/mfg/AL_POT/drawings/ga_front.svg |
+| AQS-MFG-AL_POT-GA_FRONT | AL_POT fabrication drawing GA_FRONT (AQS-PLAN-006 M3; graph revision AC) | fabrication drawing (GA / nozzle orientation / part sheet) | cb6e6fb1 | models/mfg/AL_POT/drawings/ga_front.svg |
 | AQS-MFG-AL_POT-GA_SIDE | AL_POT fabrication drawing GA_SIDE (AQS-PLAN-006 M3; graph revision AC) | fabrication drawing (GA / nozzle orientation / part sheet) | efedeaf1 | models/mfg/AL_POT/drawings/ga_side.svg |
 | AQS-MFG-AL_POT-HD01 | AL_POT fabrication drawing HD01 (AQS-PLAN-006 M3; graph revision AC) | fabrication drawing (GA / nozzle orientation / part sheet) | 55f3588e | models/mfg/AL_POT/drawings/hd01.svg |
 | AQS-MFG-AL_POT-ISO01 | AL_POT fabrication drawing ISO01 (AQS-PLAN-006 M3; graph revision AC) | fabrication drawing (GA / nozzle orientation / part sheet) | 997f4e72 | models/mfg/AL_POT/drawings/iso01.svg |
