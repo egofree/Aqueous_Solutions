@@ -282,3 +282,14 @@ and stays in envelope. The export STL is watertight - the M2 multi-body
 compound defect is superseded, one of the five legacy models retired. The
 X-PAR-04 gate passes on the in-envelope registry solid; the 8-sheet drawing set
 is stamped with SVG and PDF. Unit task 11 keeps the house partial state.
+
+## Addendum 17: FOUNDRY-IND_MELT-10 accepted at M3
+
+The melt-train anchor moves from the M2 foundry export to a dedicated build
+(models/mfg/IND_MELT/ind_melt.py + params.json): the 10 kg crucible in a
+12-turn medium-frequency coil inside the t150 hot face, tilt pour on trunnions
+at z 500, and the seventeen-nozzle schedule - the ten charge rows land on the
+common -X chute at z 160, the four melt rows leave through +Y DN15 stubs and
+the pour lip at z 600. check.json records the acceptance; the export STL is
+watertight; the X-PAR-04 gate passes. The 8-sheet drawing set is stamped with
+SVG and PDF. Unit task 11 keeps the house partial state.

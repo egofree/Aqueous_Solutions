@@ -1,8 +1,13 @@
-item,description,qty,material,basis
-1,"Chamber 660 x 1000 x 1100 mm, 150 mm ceramic-fibre lined, 4 mm CS casing, tilt pour",1,SA-240 304L casing over ceramic fibre,"AQS-DUTY-072 section 3; Cu/Fe/Zn/Al scrap + pot-metal remelt; medium-frequency coreless induction, tilt pour"
-2,"Crucible 10 kg, ID 110.0 x 165 mm, 4 heats/d",1,fused SiO2 isostatic (Cu/Fe/Zn classes),"AQS-DUTY-072 section 3; melt 21.249 kWh/d, peak 15.0 kW of 25.0 kW connected"
-3,"Induction coil, medium frequency, with cooled leads",1,"Cu tube, water-cooled",A-M-232 power basis
-4,Extraction stack DN150 with damper,1,SA-240 304L,metal-dust off-gas to MET_SCRUB
-5,"PSU / matchbox cabinet, 25 kW connected",1,"CS enclosure, IP54",A-M-232
-6,Tilt-frame hydraulics with trunnions,1,CS weldment,AQS-DUTY-072 section 3
-7,Slag/skimmings tote under the tilt axis,1,mild steel,"FOUNDRY_SLAG_TO_LEACH, A-M-262"
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Furnace casing 1000 x 1000 x 1500 mm, CS t4 (walls + roof)",1,carbon steel,248.9,make,duty section 3 (study 4 mm CS casing); WORK_ORDER step 1
+2,"Ceramic-fibre hot face, t150",1,ceramic-fibre board 128 kg/m3,114.6,make,design lining row (AQS-DUTY-072); SCHACHT2004 class
+3,"Induction coil, 12 turns x OD 20.0 mm Cu, around the crucible zone",1,Cu ETP tube,0.4,make,"medium-frequency coreless class; 25.0 kW connected, 15.0 kW peak (A-M-283)"
+4,"Crucible, D110.0 x 165.0 mm, 10.0 kg, graphite",1,graphite,1.1,buy,design crucible row; change-out at the unit task 12 work order
+5,Crucible pedestal and tilt cradle,1,graphite + CS,16.2,make,WORK_ORDER step 2; tilt pour per the design service row
+6,Trunnion pins -X/+X at z 500,2,carbon steel,4.7,make,WORK_ORDER step 2
+7,Hood plate with N17 vent pass,1,carbon steel,112.7,make,WORK_ORDER step 4
+8,"N1/N8/N13/N14 melt DN15 stubs +Y z 600 (pour, caster, atomizer, investment)",4,carbon steel,0.1,make,task-04 schedule N1/N8/N13/N14
+9,N9 slag-return spout +X z 600,1,carbon steel (refractory class),1.0,make,"task-04 schedule N9 (solids, bore not calculated)"
+10,Charge chute -X z 160 (the ten charge rows land here),1,"CS chute, refractory throat",7.9,make,task-04 schedule N2..N7/N10..N12/N15; A-M-284 feedstock ruling
+11,"N16 drain well: sump OD 60, DN15 bore, flush at z 0",1,carbon (ram class),1.0,make,task-04 schedule N16 bottom DN15 Class 150
+12,"Medium-frequency power supply, 25 kW connected, cabinet",1,purchase item,,buy,WO step 5; A-M-283 class; mass per the purchase datasheet at order

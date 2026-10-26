@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| FOUNDRY | Process (Mass transform) | 405 | 301 |
+| FOUNDRY | Process (Mass transform) | 405 | 302 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
 | CRYO | Utility / header | 210 | 135 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2936** | **2073** |
+| | **Total** | **2936** | **2074** |
 
 ## 3. Triage of open tasks
 
@@ -105,7 +105,7 @@ Table 3.1. Open tasks by triage tag
 | desk P1 | 1 |
 | desk P2 | 1 |
 | desk P3 | 33 |
-| desk P4 | 470 |
+| desk P4 | 469 |
 | desk P5 | 174 |
 | hardware | 182 |
 | owner | 2 |
@@ -739,8 +739,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-IND_MELT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-IND_MELT-02, FOUNDRY-IND_MELT-03. Evidence: `docs-authority/duties/IND_MELT.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-IND_MELT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-IND_MELT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
   - [x] FOUNDRY-IND_MELT-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FOUNDRY-IND_MELT-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FOUNDRY-IND_MELT-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/IND_MELT/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-IND_MELT-02, FOUNDRY-IND_MELT-04, FOUNDRY-IND_MELT-06, FOUNDRY-IND_MELT-09. Status: partial: M2 at `models/mfg/IND_MELT/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
-  - [ ] FOUNDRY-IND_MELT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-IND_MELT-10, X-DWG-01. Triage: desk P4.
+  - [x] FOUNDRY-IND_MELT-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/IND_MELT/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-IND_MELT-02, FOUNDRY-IND_MELT-04, FOUNDRY-IND_MELT-06, FOUNDRY-IND_MELT-09. Evidence: `models/mfg/IND_MELT/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
+  - [ ] FOUNDRY-IND_MELT-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-IND_MELT-10, X-DWG-01. Status: partial: GA + nozzle orientation + part sheets in `models/mfg/IND_MELT/drawings/` (weld callouts + ISO 2768-m tolerance notes); per-part dimension chains and the tolerance stack stay open. Triage: desk P4.
   - [x] FOUNDRY-IND_MELT-12 BOM. Done when: models/mfg/IND_MELT/bom.csv. Depends: FOUNDRY-IND_MELT-10. Evidence: `models/mfg/IND_MELT/bom.csv`.
   - [x] FOUNDRY-IND_MELT-13 Fabrication route. Done when: docs-authority/fab/IND_MELT.md. Depends: FOUNDRY-IND_MELT-10, FOUNDRY-IND_MELT-12. Evidence: `docs-authority/fab/IND_MELT.md` (study route).
   - [ ] FOUNDRY-IND_MELT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-IND_MELT-13, X-BLD-05, X-ASM-01. Triage: desk P5.

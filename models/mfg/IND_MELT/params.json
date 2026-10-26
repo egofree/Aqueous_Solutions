@@ -1,0 +1,33 @@
+{
+ "size_mm": [
+  1000,
+  1000,
+  1500
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N1/N8/N13/N14 melt DN15 stubs +Y z 600 (pour, caster, atomizer, investment); N9 slag spout +X z 600 beside the tilt-pour lip; the ten charge rows land on the common charge chute -X z 160; N16 drain bottom (500,500) z 50; N17 vent on the hood top z 800. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "crucible": {
+  "D_mm": 110.0,
+  "H_mm": 165.0,
+  "kg": 10.0
+ },
+ "coil": {
+  "turns": 12,
+  "tube_od_mm": 20.0,
+  "tube_wall_mm": 2.5
+ },
+ "design": {
+  "service": "Cu/Fe/Zn/Al scrap + pot-metal remelt; medium-frequency coreless induction, tilt pour",
+  "bath_T_C": 1100.0,
+  "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)",
+  "connected_kW": 25.0,
+  "peak_kW": 15.0,
+  "heats_d": 4,
+  "melt_kWh_d": 21.249
+ },
+ "doc": "AQS-DUTY-072; A-M-282/A-M-283 melt basis"
+}

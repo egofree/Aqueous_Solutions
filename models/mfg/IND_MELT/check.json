@@ -1,0 +1,53 @@
+{
+  "shell_bbox_mm": [
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "shell_bbox_abs": [
+    -0.0,
+    -0.0,
+    -0.0,
+    1000.0,
+    1000.0,
+    1500.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 35.0,
+    "+X": 25.0,
+    "-Y": 0.0,
+    "+Y": 6.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: charge_chute, pour_spout, slag_spout, trunnion_pins, melt_stubs)",
+  "external_parts": [
+    "charge_chute",
+    "pour_spout",
+    "slag_spout",
+    "trunnion_pins",
+    "melt_stubs"
+  ],
+  "cap_solids": 14,
+  "all_parts_valid": true,
+  "melt_volume_litres": 0.7,
+  "part_mass_kg": {
+    "casing": 248.9,
+    "fibre_lining": 114.6,
+    "induction_coil": 0.3,
+    "coil_leads": 0.1,
+    "crucible": 1.1,
+    "crucible_pedestal": 4.0,
+    "trunnion_pins": 4.7,
+    "tilt_frame": 12.2,
+    "hood": 112.7,
+    "vent_stub": 0.1,
+    "charge_chute": 7.9,
+    "melt_stubs": 0.1,
+    "pour_spout": 6.6,
+    "slag_spout": 1.0,
+    "drain_well": 1.0
+  },
+  "cadquery": "2.8.0"
+}
