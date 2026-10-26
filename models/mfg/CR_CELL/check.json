@@ -1,0 +1,57 @@
+{
+  "shell_bbox_mm": [
+    800.3,
+    800.1,
+    1600.3
+  ],
+  "shell_bbox_abs": [
+    -0.1,
+    -0.0,
+    -0.1,
+    800.3,
+    800.1,
+    1600.2
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 35.0,
+    "+X": 44.5,
+    "-Y": 0.0,
+    "+Y": 5.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: cr_tap_group, feed_chutes, co_stub)",
+  "external_parts": [
+    "cr_tap_group",
+    "feed_chutes",
+    "co_stub"
+  ],
+  "cap_solids": 3,
+  "all_parts_valid": true,
+  "anode_j_A_cm2_drawn": 0.0153,
+  "bath_volume_litres": 122.0,
+  "part_mass_kg": {
+    "casing": 297.0,
+    "fibre_lining": 16.6,
+    "ram_lining": 298.2,
+    "hood_hot_plate": 7.4,
+    "hood": 71.9,
+    "head_plate": 19.5,
+    "anodes": 11.2,
+    "anode_clamps": 2.0,
+    "cathodes": 6.2,
+    "ceramic_pads": 0.5,
+    "bus_rails": 0.3,
+    "bus_straps": 3.3,
+    "offtake_riser": 3.6,
+    "riser_flange": 1.5,
+    "dip_leg": 0.1,
+    "vent_stub": 0.0,
+    "co_stub": 0.0,
+    "cr_tap_group": 5.1,
+    "feed_chutes": 7.9,
+    "drain_well": 0.2
+  },
+  "cadquery": "2.8.0"
+}

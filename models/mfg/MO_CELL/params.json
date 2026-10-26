@@ -1,0 +1,46 @@
+{
+ "size_mm": [
+  800,
+  800,
+  1600
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N4 Mo-metal tap +X z 600; N5 concentrate chute -X y 320 z 160; N6 carbon chute -X y 480 z 160; N2 post-EW liquor inlet -Y x 256 z 160; N1 raffinate outlet +Y x 256 z 600; N3 anode gas +Y x 544 z 600; N7 chlorinator CO2 vent +Y x 660 z 600; N8 drain bottom (256,160) z 50; N9 vent on the DN50 riser top z 800. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN50_OD_mm": 60.3,
+  "DN50_wall_mm": 2.0,
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "anode": {
+  "count": 3,
+  "D_mm": 50
+ },
+ "cathode": {
+  "count": 3,
+  "plate_x_mm": 110,
+  "plate_t_mm": 12,
+  "plate_h_mm": 400
+ },
+ "busbar": {
+  "mm2": 25,
+  "rail_w_mm": 5,
+  "rail_t_mm": 5
+ },
+ "design": {
+  "service": "Mo(III) molten-salt electrolysis cell with carbochlorination loop, 650 C",
+  "chemistry": "MoO3 + 1.5C + 1.5Cl2 -> MoCl3 + 1.5CO2; MoCl3 -> Mo + 1.5Cl2",
+  "bath_T_C": 650.0,
+  "I_A": 2.57,
+  "cell_V": 2.8,
+  "dc_kW": 0.0072,
+  "hold_kW": 0.1069,
+  "connected_kW": 1.0,
+  "feed_kg_d": 0.1055,
+  "metal_kg_d": 0.0625,
+  "co2_kg_d": 0.043,
+  "anode_imm_mm": 250.0,
+  "bath_top_mm": 350.0
+ },
+ "doc": "AQS-DUTY-072; A-M-282 Faraday class; A-M-284 D-DOCK feedstock ruling"
+}

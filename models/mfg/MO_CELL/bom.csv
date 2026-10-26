@@ -1,8 +1,18 @@
-item,description,qty,material,basis
-1,"Lined cell shell 800 x 800 x 1000 mm (70 mm casing + refractory), bath at 650 C",1,"CS casing, ceramic-fibre + ram lining","AQS-DUTY-072 section 4; Mo(III) molten-salt electrolysis cell with carbochlorination loop, 650 C"
-2,"Anode bank, 3 x D50 mm graphite anodes at 250 mm immersion",3,"graphite, chlorinated",Faraday I = 3 A at CE 0.85 (A-M-282); MoO3 + 1.5C + 1.5Cl2 -> MoCl3 + 1.5CO2; MoCl3 -> Mo + 1.5Cl2
-3,"Cathode plate set, 2 x 110 x 12 mm with product pocket",2,mild steel / clad,0.0625 kg/d metal on the D-DOCK chloride import (A-M-284)
-4,"Cu busbar ladder: 2 rails 12 x 4 mm (25 mm2 class), straps and DC drops",1,Cu ETP,3 A at 2.8 V cell; 0.007 kW dc + 0.1069 kW hold of 1 kW connected
-5,Hood with gas offtake DN50 and dip leg,1,"CS hood, Hastelloy C-276 dip leg","anode-gas chlorine recycle, internal loop (0.043 kg/d COx, A-M-280)"
-6,Feed chute with hopper cone and rotary seal,1,CS + refractory throat,0.105 kg/d feed (A-M-284 feedstock ruling)
-7,"Thyristor rectifier + bath hold heaters, 1 kW connected",1,"cabinet, IP54",AQS-DUTY-072 section 4; A-M-282 current class
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Lined cell shell 800 x 800 x 1600 mm: casing t6 (walls + roof + head plate 1154),1,carbon steel (CS class),316.5,make,"WORK_ORDER step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per AQS-DUTY-072 cell-class study minimum"
+2,"Ceramic-fibre backup lining kit, t24",1,ceramic-fibre board 128 kg/m3,16.6,make,duty section 3 backup lining class (SCHACHT2004); anhydrous concentrate (X-MAT-22)
+3,"Graphite ram lining kit, t40, wetted faces",1,graphite ramming paste 1550 kg/m3,298.1,make,duty section 3 graphite wetted faces; DING2018_CL_REVIEW; liner change-out at the unit task 12 work order
+4,"Anode bank, 3 x D50 x 1064 mm, 250 mm immersion",3,graphite (chlorinated),11.2,buy,Faraday I = 2.57 A at CE 0.85 (A-M-282); drawn j 0.0021 A/cm2; MoO3 + 1.5C + 1.5Cl2 -> MoCl3 + 1.5CO2; MoCl3 -> Mo + 1.5Cl2
+5,"Cathode plate set, 3 x 110 x 12 x 300 mm",3,mild steel / clad,6.2,make,0.0625 kg/d Mo metal on the D-DOCK feedstock ruling (A-M-284)
+6,Cu busbar ladder: 2 rails 5 x 5 mm (25 mm2 class) + straps + ceramic pads,1,Cu ETP + alumina pads,4.1,make,2.57 A at 2.8 V cell; 0.0072 kW dc + 0.1069 kW hold of 1.0 kW connected; frame-isolated per AQS-STD-002 section 11
+7,"Anode clamp bars 90 x 40 x 24 on the head plate (6 x M10 studs, fasteners.csv item 1)",3,carbon steel,2.0,make,WORK_ORDER step 2/3: torque and megger check
+8,"Hood group: CS hood plate t6 + perimeter rim lip, on the graphite hot plate",1,carbon steel,71.9,make,WO step 4; dry Cl2 headspace at 700 C (M7)
+9,"Hood hot plate, graphite t10 (expendable wetted face)",1,graphite,7.4,make,duty section 3 wetted-face class; change-out at the unit task 12 work order
+10,"Offtake riser DN50 OD 60.3 t 2.0, z 350..1594, flange + N5 vent at top",1,carbon steel (dry hot Cl2),5.1,make,WO row 5; nozzles per the task-04 schedule (N5 vent top 800)
+11,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,0.1,make,WO row 5; brine-fog return seal leg
+12,"N1/N3/N7 DN15 stubs at +Y z 600: raffinate return, anode gas, chlorinator CO2 vent (0.043 kg/d CO2)",3,carbon steel (dry hot gas),0.0,make,task-04 schedule N1/N3/N7
+12b,N5/N6 feed chutes -X z 160: MoO3 concentrate + carbon reductant (0.1055 kg/d),2,"CS chute, refractory throat",7.9,make,task-04 schedule N5/N6; A-M-284 feedstock ruling
+12c,N2 post-EW liquor inlet stub -Y z 160,1,carbon steel,0.0,make,task-04 schedule N2
+13,N4 Mo-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600,1,carbon (ram class),5.1,make,"task-04 schedule N4 (solids, bore not calculated); WO step 6 trial-electrolysis tap"
+14,"N8 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),0.2,make,task-04 schedule N8 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
+16,"Thyristor rectifier + bath hold heaters, 1.0 kW connected, IP54 cabinet",1,purchase item,,buy,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order

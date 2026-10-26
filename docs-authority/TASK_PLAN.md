@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| FOUNDRY | Process (Mass transform) | 405 | 298 |
+| FOUNDRY | Process (Mass transform) | 405 | 300 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
 | CRYO | Utility / header | 210 | 135 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2936** | **2070** |
+| | **Total** | **2936** | **2072** |
 
 ## 3. Triage of open tasks
 
@@ -105,7 +105,7 @@ Table 3.1. Open tasks by triage tag
 | desk P1 | 1 |
 | desk P2 | 1 |
 | desk P3 | 33 |
-| desk P4 | 473 |
+| desk P4 | 471 |
 | desk P5 | 174 |
 | hardware | 182 |
 | owner | 2 |
@@ -659,8 +659,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-CR_CELL-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-CR_CELL-02, FOUNDRY-CR_CELL-03. Evidence: `docs-authority/duties/CR_CELL.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-CR_CELL-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-CR_CELL-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
   - [x] FOUNDRY-CR_CELL-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FOUNDRY-CR_CELL-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FOUNDRY-CR_CELL-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/CR_CELL/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-CR_CELL-02, FOUNDRY-CR_CELL-04, FOUNDRY-CR_CELL-06, FOUNDRY-CR_CELL-09. Status: partial: M2 at `models/mfg/CR_CELL/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
-  - [ ] FOUNDRY-CR_CELL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-CR_CELL-10, X-DWG-01. Triage: desk P4.
+  - [x] FOUNDRY-CR_CELL-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/CR_CELL/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-CR_CELL-02, FOUNDRY-CR_CELL-04, FOUNDRY-CR_CELL-06, FOUNDRY-CR_CELL-09. Evidence: `models/mfg/CR_CELL/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
+  - [ ] FOUNDRY-CR_CELL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-CR_CELL-10, X-DWG-01. Status: partial: GA + nozzle orientation + part sheets in `models/mfg/CR_CELL/drawings/` (weld callouts + ISO 2768-m tolerance notes); per-part dimension chains and the tolerance stack stay open. Triage: desk P4.
   - [x] FOUNDRY-CR_CELL-12 BOM. Done when: models/mfg/CR_CELL/bom.csv. Depends: FOUNDRY-CR_CELL-10. Evidence: `models/mfg/CR_CELL/bom.csv`.
   - [x] FOUNDRY-CR_CELL-13 Fabrication route. Done when: docs-authority/fab/CR_CELL.md. Depends: FOUNDRY-CR_CELL-10, FOUNDRY-CR_CELL-12. Evidence: `docs-authority/fab/CR_CELL.md` (study route).
   - [ ] FOUNDRY-CR_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CR_CELL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
@@ -803,8 +803,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-MO_CELL-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-MO_CELL-02, FOUNDRY-MO_CELL-03. Evidence: `docs-authority/duties/MO_CELL.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-MO_CELL-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-MO_CELL-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
   - [x] FOUNDRY-MO_CELL-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FOUNDRY-MO_CELL-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FOUNDRY-MO_CELL-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/MO_CELL/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-MO_CELL-02, FOUNDRY-MO_CELL-04, FOUNDRY-MO_CELL-06, FOUNDRY-MO_CELL-09. Status: partial: M2 at `models/mfg/MO_CELL/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
-  - [ ] FOUNDRY-MO_CELL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-MO_CELL-10, X-DWG-01. Triage: desk P4.
+  - [x] FOUNDRY-MO_CELL-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/MO_CELL/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FOUNDRY-MO_CELL-02, FOUNDRY-MO_CELL-04, FOUNDRY-MO_CELL-06, FOUNDRY-MO_CELL-09. Evidence: `models/mfg/MO_CELL/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
+  - [ ] FOUNDRY-MO_CELL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FOUNDRY-MO_CELL-10, X-DWG-01. Status: partial: GA + nozzle orientation + part sheets in `models/mfg/MO_CELL/drawings/` (weld callouts + ISO 2768-m tolerance notes); per-part dimension chains and the tolerance stack stay open. Triage: desk P4.
   - [x] FOUNDRY-MO_CELL-12 BOM. Done when: models/mfg/MO_CELL/bom.csv. Depends: FOUNDRY-MO_CELL-10. Evidence: `models/mfg/MO_CELL/bom.csv`.
   - [x] FOUNDRY-MO_CELL-13 Fabrication route. Done when: docs-authority/fab/MO_CELL.md. Depends: FOUNDRY-MO_CELL-10, FOUNDRY-MO_CELL-12. Evidence: `docs-authority/fab/MO_CELL.md` (study route).
   - [ ] FOUNDRY-MO_CELL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-MO_CELL-13, X-BLD-05, X-ASM-01. Triage: desk P5.

@@ -261,3 +261,13 @@ schedule hardware within the 50 mm allowance, all parts valid; the X-PAR-04
 gate passes on the in-envelope registry solid. The 8-sheet drawing set is
 stamped with SVG and PDF. Unit task 11 stays partial per the house convention
 (per-part dimension chains open) alongside AL_POT, CAST_LINE and CA_POT.
+
+## Addendum 15: FOUNDRY-MO_CELL-10 and FOUNDRY-CR_CELL-10 accepted at M3
+
+The molybdenum and chromium molten-salt cells move from the M2 foundry export
+to dedicated builds (models/mfg/MO_CELL/mo_cell.py, models/mfg/CR_CELL/
+cr_cell.py, each with params.json). Each check.json records the acceptance:
+in-envelope build solid, schedule hardware within the 50 mm allowance, all
+parts valid; the X-PAR-04 gate passes on the in-envelope registry solids. The
+8-sheet drawing sets are stamped with SVG and PDF. Unit task 11 keeps the
+house partial state (per-part dimension chains open).
