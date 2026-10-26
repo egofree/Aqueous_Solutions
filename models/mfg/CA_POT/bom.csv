@@ -1,8 +1,17 @@
-item,description,qty,material,basis
-1,"Lined cell shell 800 x 800 x 1000 mm (70 mm casing + refractory), bath at 700 C",1,"CS casing, ceramic-fibre + ram lining","AQS-DUTY-072 section 4; molten CaCl2 electrolysis cell, 700 C"
-2,"Anode bank, 3 x D50 mm graphite anodes at 250 mm immersion",3,"graphite, chlorinated",Faraday I = 4 A at CE 0.85 (A-M-282); CaCl2 -> Ca + Cl2
-3,"Cathode plate set, 2 x 110 x 12 mm with product pocket",2,mild steel / clad,0.0551 kg/d metal on the D-DOCK chloride import (A-M-284)
-4,"Cu busbar ladder: 2 rails 12 x 4 mm (25 mm2 class), straps and DC drops",1,Cu ETP,4 A at 4.2 V cell; 0.015 kW dc + 0.1069 kW hold of 1 kW connected
-5,Hood with gas offtake DN50 and dip leg,1,"CS hood, Hastelloy C-276 dip leg",0.0974 kg/d Cl2 dock export at the CRU (A-M-280 ruling)
-6,Feed chute with hopper cone and rotary seal,1,CS + refractory throat,0.152 kg/d feed (A-M-284 feedstock ruling)
-7,"Thyristor rectifier + bath hold heaters, 1 kW connected",1,"cabinet, IP54",AQS-DUTY-072 section 4; A-M-282 current class
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Lined cell shell 800 x 800 x 1600 mm: casing t6 (walls + roof + head plate 1154),1,carbon steel (CS class),316.5,make,"WORK_ORDER step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per AQS-DUTY-072 cell-class study minimum"
+2,"Ceramic-fibre backup lining kit, t24",1,ceramic-fibre board 128 kg/m3,16.6,make,duty section 3 backup lining class (SCHACHT2004); anhydrous concentrate (X-MAT-22)
+3,"Graphite ram lining kit, t40, wetted faces",1,graphite ramming paste 1550 kg/m3,298.1,make,duty section 3 graphite wetted faces; DING2018_CL_REVIEW; liner change-out at the unit task 12 work order
+4,"Anode bank, 3 x D50 x 1064 mm, 250 mm immersion",3,graphite (chlorinated),11.2,buy,Faraday I = 3.61 A at CE 0.85 (A-M-282); drawn j 0.0029 A/cm2; CaCl2 -> Ca + Cl2
+5,"Cathode plate set, 2 x 110 x 12 x 300 mm",2,mild steel / clad,3.1,make,0.0551 kg/d Ca metal on the D-DOCK chloride import (A-M-284)
+6,Cu busbar ladder: 2 rails 5 x 5 mm (25 mm2 class) + straps + ceramic pads,1,Cu ETP + alumina pads,2.8,make,3.61 A at 4.2 V cell; 0.0152 kW dc + 0.1069 kW hold of 1.0 kW connected; frame-isolated per AQS-STD-002 section 11
+7,"Anode clamp bars 90 x 40 x 24 on the head plate (6 x M10 studs, fasteners.csv item 1)",3,carbon steel,2.0,make,WORK_ORDER step 2/3: torque and megger check
+8,"Hood group: CS hood plate t6 + perimeter rim lip, on the graphite hot plate",1,carbon steel,71.9,make,WO step 4; dry Cl2 headspace at 700 C (M7)
+9,"Hood hot plate, graphite t10 (expendable wetted face)",1,graphite,7.4,make,duty section 3 wetted-face class; change-out at the unit task 12 work order
+10,"Offtake riser DN50 OD 60.3 t 2.0, z 350..1594, flange + N5 vent at top",1,carbon steel (dry hot Cl2),5.1,make,WO row 5; nozzles per the task-04 schedule (N5 vent top 800)
+11,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,0.1,make,WO row 5; brine-fog return seal leg
+12,"N3 Cl2 export stub DN15 at +Y z 600 (0.0974 kg/d, water-treatment class)",1,carbon steel (dry hot Cl2),0.0,make,task-04 schedule N3; export to the water-treatment chlorine stock
+13,Ca-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600,1,carbon (ram class),5.1,make,"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"
+14,N2 brine inlet group: chute box + DN44 lance into the bath at z 160 (0.1525 kg/d),1,"CS chute, carbon lance",4.9,make,task-04 schedule N2; A-M-284 feedstock ruling; WO step 4
+15,"Drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),0.2,make,task-04 schedule N4 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
+16,"Thyristor rectifier + bath hold heaters, 1.0 kW connected, IP54 cabinet",1,purchase item,,buy,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order

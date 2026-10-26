@@ -1,0 +1,23 @@
+{
+ "size_mm": [800, 800, 1600],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N1 Ca-metal tap +X z 600; N2 brine inlet -X y 400 z 160; N3 Cl2 export +Y x 598 z 600; N4 drain bottom (256,160) z 50; N5 vent on the DN50 riser top z 800. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN50_OD_mm": 60.3, "DN50_wall_mm": 2.0,
+  "DN15_OD_mm": 21.3, "DN15_wall_mm": 2.0,
+  "DN80_OD_mm": 88.9, "DN80_wall_mm": 2.0
+ },
+ "anode": {"count": 3, "D_mm": 50},
+ "cathode": {"count": 2, "plate_x_mm": 110, "plate_t_mm": 12, "plate_h_mm": 440},
+ "busbar": {"mm2": 25, "rail_w_mm": 5, "rail_t_mm": 5},
+ "design": {
+  "service": "molten CaCl2 electrolysis cell, 700 C (grease-thickener Ca line)",
+  "chemistry": "CaCl2 -> Ca + Cl2",
+  "bath_T_C": 700.0,
+  "I_A": 3.61, "cell_V": 4.2, "dc_kW": 0.0152, "hold_kW": 0.1069, "connected_kW": 1.0,
+  "feed_kg_d": 0.1525, "metal_kg_d": 0.0551, "cl2_kg_d": 0.0974,
+  "anode_imm_mm": 250.0,
+  "bath_top_mm": 350.0
+ },
+ "doc": "AQS-DUTY-072; A-M-282 Faraday class; A-M-284 D-DOCK chloride import"
+}
