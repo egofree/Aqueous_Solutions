@@ -115,7 +115,7 @@
       "entries": {
         "pv_yield_kWh_kWp_d": {
           "value": 1.0,
-          "units": "kWh/kWp/d annual average (summer-only; zero through the dark season)",
+          "units": "kWh/kWp/d before losses",
           "ref": "OTEC_GRADIENT",
           "needs_verification": true,
           "verification_test": "PVWatts run at the mooring latitude with the polar-day/night solar geometry",
@@ -146,7 +146,7 @@
       "entries": {
         "roof_snow_kPa": {
           "value": 0.5,
-          "units": "kPa drift load on flat roof (study)",
+          "units": "kPa flat-roof snow",
           "ref": "NOAA_MCMURDO",
           "needs_verification": true,
           "verification_test": "Snow-drift study at the parcel",
