@@ -1410,7 +1410,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/fire_rooms.json` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/inventory/motor_family_ids.json` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/inventory/other_family_ids.json` | 93594c7 (regenerated, no change) | current |
-| `flow_graph/inventory/pipe_family_ids.json` | 93594c7 (regenerated, no change) | current |
+| `flow_graph/inventory/pipe_family_ids.json` | working tree | current |
 | `flow_graph/inventory/wire_family_ids.json` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/placement_seed.json` | 93594c7 (regenerated, no change) | current |
 | `flow_graph/plant_flow_graph.json` | 93594c7 (regenerated, no change) | current |

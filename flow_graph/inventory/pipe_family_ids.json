@@ -105,6 +105,11 @@
    "cls": "P3",
    "material": "PVDF SDR 21 ISO 10931",
    "DN": 32
+  },
+  "PF-22": {
+   "cls": "P3",
+   "material": "PVDF SDR 21 ISO 10931",
+   "DN": 25
   }
  }
 }

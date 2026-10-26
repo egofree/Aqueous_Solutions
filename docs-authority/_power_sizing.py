@@ -105,19 +105,24 @@ out = {}
 for src in _sources:
     kind = src['kind']; share = src.get('share', 0.0)
     unit = src.get('unit', '')
-    if kind == 'pv' and _primary_kind == 'pv':
-        # full roof-close chain for the PV primary
-        pv_out = _size_pv()
-        for k in ('bounding', 'reference'):
-            out.setdefault(k, {}).update(pv_out[k])
-        out['roof'] = pv_out['roof']
-    else:
-        # generic: nameplate = share x demand / capacity_factor (or 0 if share is 0)
+    if kind == _primary_kind and src.get('role') == 'primary':
+        # the primary source gets its dedicated sizing function
+        if kind == 'pv':
+            pv_out = _size_pv()
+            for k in ('bounding', 'reference'):
+                out.setdefault(k, {}).update(pv_out[k])
+            out['roof'] = pv_out['roof']
+        else:
+            gen_out = _size_generic(kind, src)
+            for k in ('bounding', 'reference'):
+                out.setdefault(k, {}).update(gen_out[k])
+    elif kind != _primary_kind:
+        # non-primary sources get per-source nameplate notes but do NOT overwrite
+        # the primary's P_kW, storage or other shared keys
         cf = src.get('capacity_factor', 0.35)
         if not (0 < cf <= 1): cf = 0.35
         for k, P in cases.items():
             o_k = out.setdefault(k, {})
-            o_k.update(_storage(k, P))
             o_k[f'{unit}_nameplate_kw'] = round(share * P / cf, 1) if cf > 0 else 0
             o_k[f'{unit}_capacity_factor'] = cf
 
@@ -127,12 +132,13 @@ out['bounding']['kind'] = _primary_kind
 out['bounding']['_primary_unit'] = _primary_unit
 out['bounding']['_primary_kind'] = _primary_kind
 out['backup'] = _backup()
-out['roof'] = {'array_m2': 0, 'W_mm': 0, 'D_mm': 0, 'bays_x': 0, 'bays_y': 0, 'footprint_m2': 0,
-    'added_m2': 0, 'pv_roof_kWp': 0, 'layout': {'perimeter_mm': 0, 'arrays': []},
-    'ext': {'total_kW': 0, 'mode': None, 'light_kW': 0, 'vent_kW': 0, 'envelope_kW': 0,
-            'gains_kW': 0, 'slab_kW': 0, 'pump_kW': 0, 'Qh_kW': 0, 'Qc_kW': 0,
-            'bore_m': 0, 'bore_field_m2': 0, 'bores': None},
-    'load': {}, 'pv_need_kWp': 0, 'pv_roof_kWp': 0}
+if _primary_kind != 'pv':
+    out['roof'] = {'array_m2': 0, 'W_mm': 0, 'D_mm': 0, 'bays_x': 0, 'bays_y': 0, 'footprint_m2': 0,
+        'added_m2': 0, 'pv_roof_kWp': 0, 'layout': {'perimeter_mm': 0, 'arrays': []},
+        'ext': {'total_kW': 0, 'mode': None, 'light_kW': 0, 'vent_kW': 0, 'envelope_kW': 0,
+                'gains_kW': 0, 'slab_kW': 0, 'pump_kW': 0, 'Qh_kW': 0, 'Qc_kW': 0,
+                'bore_m': 0, 'bore_field_m2': 0, 'bores': None},
+        'load': {}, 'pv_need_kWp': 0, 'pv_roof_kWp': 0}
 
 # graph snapshot (existing keys preserved)
 _g2 = json.load(open('flow_graph/plant_flow_graph.json')); _n2 = {n['unit_id']: n for n in _g2['nodes']}
