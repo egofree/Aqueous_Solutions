@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1892 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1893 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -40,8 +40,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/CONTROL_SOFTWARE.md` | f378951 (regenerated, no change) | current |
 | `docs-authority/DECOMMISSIONING.md` | f378951 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
-| `docs-authority/DESIGN_CHECK.md` | working tree | current |
-| `docs-authority/DOC_REGISTER.md` | f378951 (regenerated, no change) | current |
+| `docs-authority/DESIGN_CHECK.md` | f378951 (regenerated, no change) | current |
+| `docs-authority/DOC_REGISTER.md` | working tree | current |
 | `docs-authority/DRAWING_REGISTER.md` | f378951 (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | f378951 (regenerated, no change) | current |
 | `docs-authority/EOL_RETURN.md` | f378951 (regenerated, no change) | current |
@@ -93,6 +93,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/SECTOR_DEFINITIONS.md` | f378951 (regenerated, no change) | current |
 | `docs-authority/SELF_COPY_BOM.md` | f378951 (regenerated, no change) | current |
 | `docs-authority/SITE_ACCESS_CHECK.md` | f378951 (regenerated, no change) | current |
+| `docs-authority/SITE_COMPARISON.md` | working tree | current |
 | `docs-authority/SITE_POWER.md` | f378951 (regenerated, no change) | current |
 | `docs-authority/SITE_SCALING.md` | f378951 (regenerated, no change) | current |
 | `docs-authority/SPARES.md` | f378951 (regenerated, no change) | current |
@@ -464,7 +465,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/insulation_schedule.csv` | f378951 (regenerated, no change) | current |
 | `docs-authority/inventory/COMMISSIONING.csv` | f378951 (regenerated, no change) | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | f378951 (regenerated, no change) | current |
-| `docs-authority/inventory/DESIGN_CHECK.csv` | working tree | current |
+| `docs-authority/inventory/DESIGN_CHECK.csv` | f378951 (regenerated, no change) | current |
 | `docs-authority/inventory/EOL_RETURN.csv` | f378951 (regenerated, no change) | current |
 | `docs-authority/inventory/FRAME_CHECK.json` | f378951 (regenerated, no change) | current |
 | `docs-authority/inventory/GAS_DETECTORS.csv` | f378951 (regenerated, no change) | current |
@@ -1406,7 +1407,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | f378951 (regenerated, no change) | current |
 | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | f378951 (regenerated, no change) | current |
 | `flow_graph/derived/SYNC_POINTER.md` | f378951 (regenerated, no change) | current |
-| `flow_graph/derived/_regen_receipt.json` | working tree | current |
+| `flow_graph/derived/_regen_receipt.json` | - | by design: manifest mechanism itself (U3 regen provenance receipt) |
 | `flow_graph/fire_rooms.json` | f378951 (regenerated, no change) | current |
 | `flow_graph/inventory/motor_family_ids.json` | f378951 (regenerated, no change) | current |
 | `flow_graph/inventory/other_family_ids.json` | f378951 (regenerated, no change) | current |
