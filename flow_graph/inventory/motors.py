@@ -10,7 +10,9 @@ if _R_s not in _sys_s.path: _sys_s.path.insert(0, _R_s)
 from flow_graph.param import site as SITE   # apparent gravity from the site profile
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 IEC = [(0.09, '56'), (0.12, '63'), (0.18, '63'), (0.25, '71'), (0.37, '71'), (0.55, '80'), (0.75, '80'), (1.1, '90S'), (1.5, '90L'), (2.2, '100L'),
-       (3.0, '100L'), (4.0, '112M'), (5.5, '132S'), (7.5, '132M'), (11.0, '160M'), (15.0, '160L'), (18.5, '180M'), (22.0, '180L'), (30.0, '200L'), (37.0, '225S')]
+       (3.0, '100L'), (4.0, '112M'), (5.5, '132S'), (7.5, '132M'), (11.0, '160M'), (15.0, '160L'), (18.5, '180M'), (22.0, '180L'), (30.0, '200L'), (37.0, '225S'),
+       (45.0, '250M'), (55.0, '280S'), (75.0, '280M'), (90.0, '315S'), (110.0, '315M'), (132.0, '315L'), (160.0, '315L'), (200.0, '355M'), (250.0, '355L'),
+       (315.0, '355L'), (400.0, '400M'), (500.0, '400L'), (630.0, '450M')]   # IEC 60034-1 preferred outputs, frames per IEC 60072-1
 H_PUMP, ETA_PUMP, DP_FAN, ETA_FAN, RHO_G = 10.0, 0.4, 1000.0, 0.5, 1.2        # A-M-119 study defaults for unsized items
 NO_PUMP = {'header', 'boundary', 'intra', 'recycle_pipe', 'relief', 'hx', 'heat_battery', 'pv', 'inverter', 'rectifier', 'ghex', 'hab', 'building', 'dock'}
 SPEED = {'solenoid': 'on/off', 'actuator': 'on/off', 'stepper': 'stepper driver', 'hermetic': 'fixed speed'}
