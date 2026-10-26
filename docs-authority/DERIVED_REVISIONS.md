@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1894 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1895 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -41,7 +41,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/DECOMMISSIONING.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | c430207 (regenerated, no change) | current |
-| `docs-authority/DOC_REGISTER.md` | c430207 (regenerated, no change) | current |
+| `docs-authority/DOC_REGISTER.md` | working tree | current |
 | `docs-authority/DRAWING_REGISTER.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/EOL_RETURN.md` | c430207 (regenerated, no change) | current |
@@ -97,6 +97,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/SITE_COMPARISON.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/SITE_POWER.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/SITE_SCALING.md` | c430207 (regenerated, no change) | current |
+| `docs-authority/SITE_UNITS.md` | c430207 | current |
 | `docs-authority/SPARES.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/STANDARDS_LIST.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/STARTUP.md` | c430207 (regenerated, no change) | current |
