@@ -204,6 +204,7 @@ def roof_close(d, P_base_kW, mode=None):
             ext = _ext(d, A-A0, W, D, mode)
             P = P_base_kW + ext['total_kW']
             need = PW.pv_kWp(P, v('night_hours'), v('storage_round_trip'), v('pv_yield_kWh_kWp_d')*v('pv_roof_yield_factor'), v('pv_system_derate'))*v('pv_oversize_factor')*pvf   # D75: 200 % of requirement
+            need = math.ceil(need)   # the nameplate is whole kWp (write_graph), so the roof carries the quantised need
             arr, lay = RF.array_area_m2(W, D, v('ifc_perim_small_mm'), v('ifc_perim_large_mm'), v('ifc_axis_limit_mm'), v('ifc_array_max_mm'), v('ifc_path_mm'))
             have = RF.roof_kWp(arr, v('pv_module_eff'), v('pv_roof_gcr'))
             if have >= need and (best is None or A < best['footprint_m2'] or (A == best['footprint_m2'] and abs(nx*1.0/ny-4/3) < abs(best['bays_x']/best['bays_y']-4/3))):

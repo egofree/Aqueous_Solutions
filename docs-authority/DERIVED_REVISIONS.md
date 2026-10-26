@@ -81,7 +81,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/ONE_LINE.json` | 509a4da (regenerated, no change) | current |
 | `docs-authority/ONE_LINE.md` | 509a4da (regenerated, no change) | current |
 | `docs-authority/OPERATING_PROCEDURES.md` | 509a4da (regenerated, no change) | current |
-| `docs-authority/PARAMETRIC_MODEL.md` | 509a4da (regenerated, no change) | current |
+| `docs-authority/PARAMETRIC_MODEL.md` | working tree | current |
 | `docs-authority/PERF_TEST.md` | 509a4da (regenerated, no change) | current |
 | `docs-authority/PIPE_SPECS.md` | 509a4da (regenerated, no change) | current |
 | `docs-authority/PLANT_BOM.md` | 509a4da (regenerated, no change) | current |
