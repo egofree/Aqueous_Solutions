@@ -65,7 +65,7 @@ def _size_generic_primary(demand_kW, kind, src):
         out[k] = dict(P_kW=P, E_kWh_d=E,
                       nameplate_kWp=nameplate, nameplate_kw=nameplate,
                       area_m2=0, kind=kind, capacity_factor=cf,
-                      store_kW=P, store_kWh=P*24*0.5, charge_kW=P*0.5, discharge_kW=P*0.5,
+                      store_kW=max(P, P*0.5), store_kWh=P*24*0.5, store_in_kWh=P*24*0.5/0.7, charge_kW=P*0.5, discharge_kW=P*0.5,
                       cloudy_yield_frac=cf, inverters=1, inv_kW=P, export_peak_kW=0, export_kWh_d_clear=0,
                       pv_base_kWp=nameplate)
     out['_primary_unit'] = src.get('unit', 'PV_ARRAY')
