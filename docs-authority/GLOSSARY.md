@@ -836,6 +836,9 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {COND -- Condenser or condensate (context-dependent stream or equipment shorthand).}
 {LH -- Light hazard: the NFPA 13 occupant-hazard classification for areas with low combustible loading.}
 {LEO -- Low Earth orbit: the 400 km, 51.6 degree orbital regime of the ISS and station-class platforms.}
+{HEICT -- Heikt et al., the perchlorate-discovery study for the Phoenix landing site (NASA_MARS_PERCHLORATE).}
+{MSL -- Mars Science Laboratory: the Curiosity rover mission that carried the RAD instrument to Gale crater.}
+{RAD -- Radiation Assessment Detector: the instrument on MSL that measured the surface dose rate at Gale crater (NASA_MARS_RAD).}
 {PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
 
 {UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}
