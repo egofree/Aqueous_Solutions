@@ -1,7 +1,7 @@
 SHELL_BUILD build log - FOUNDRY-SHELL_BUILD-10 / FOUNDRY-SHELL_BUILD-11 acceptance
 
 Date: 2026-10-26. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
-Model source: `models/mfg/SHELL_BUILD/shell_build.py` + `params.json`; drawing set `models/mfg/SHELL_BUILD/drawings/`;
+Model source: `models/mfg/SHELL_BUILD/shell_build.py` + `params.json`; drawing set `models/mfg/SHELL_BUILD/drawings/ga_front.svg` (8 sheets);
 build script chain run headless:
 
     $CADQUERY_PYTHON shell_build.py         # build + checks + bom.csv + fasteners.csv + WORK_ORDER + STEP/STL
