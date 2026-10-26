@@ -1379,3 +1379,4 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {Convey / Source / Product -- CERN-OHL terms. Source is the design (scripts, params, drawings). Product is hardware built from it. Conveying a Product requires conveying the corresponding Source.}
 
 {SCWO -- Supercritical water oxidation. Organic matter oxidises in water above the critical point (374 C, 22.1 MPa); the gravity-free sanitation path (WET_OX).}
+{NMC -- Lithium nickel manganese cobalt oxide. The sealed-cell chemistry of the station storage (LIO_BAT).}
