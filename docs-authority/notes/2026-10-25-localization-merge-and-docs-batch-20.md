@@ -102,3 +102,18 @@ gravity, stability, freeboard, motion-coupled sizing checks), the seawater
 intake/desalination/mineral-recovery units, and the assay feed case. A
 gitignore regression that silently ignored flow_graph/param/sites/ was found and
 fixed (pattern anchored to the repo root).
+
+## Addendum 6: LEO locale findings; mfg model solid-wall audit
+
+The LEO locale profile correctly identifies that 47 units cannot operate in
+microgravity (no buoyant separation, no free surfaces, no convective cooling,
+no atmospheric venting, no oxidant). Elimination actions with import paths or
+different-technology replacements are recorded for every flagged unit. The
+three site-test failures are this genuine finding, not a bug; they close when
+the X-LOC-10 replacement units join the graph.
+
+The five mfg models that export non-watertight STLs (FILM_CAST, POLY_F,
+POWDER_RESIN, SHELL_BURNOUT, TI_CELL) have 2 to 9 bodies that were not
+boolean-unioned before export. The fix is the build-and-union approach that
+CAST_LINE and AL_POT use. Each needs a per-unit engineering check that the
+union is valid.
