@@ -164,6 +164,16 @@ def test_a_replacement_brings_its_own_mode(base):
     assert 'DRY_COOLER does not remain' in e and 'GEO_HP rejects heat at this site' in e
 
 
+def test_a_level_may_sit_on_a_registered_replacement(base):
+    # the replacement is the unit that runs at the site, so its level is the site's rejection mode
+    lv = _hr(base)['levels']['value'][0]
+    lv['unit'] = 'GEO_HP'; lv['duty_param'] = 'units_installed'
+    lv.update(mode='heat_pump', sink_mode='ground', source_K=285.0, reject_K=328.0)
+    base['groups']['scaling']['entries']['actions']['value'] = [
+        {'target': 'DRY_COOLER', 'action': 'replace', 'replacement': 'GEO_HP', 'register': 'test'}]
+    assert _hrerr(base) == ''
+
+
 def test_power_document_reports_storage_coverage_and_rejection():
     t = PF.render()
     assert 'coverage' in t and '## 4. Heat rejection' in t and '| DRY_COOLER | air |' in t

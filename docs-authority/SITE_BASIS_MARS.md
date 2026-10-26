@@ -1,20 +1,21 @@
 # Mars site basis
 
 Document number: AQS-SITE-009
-Revision: A
-Date: 2026-10-25
+Revision: B
+Date: 2026-10-26
 Profile: `flow_graph/param/sites/mars.json` (site id `mars`)
 Plan: AQS-PLAN-011 section 8; owner decision Q-022 (mid-latitude, Arcadia Planitia)
 
 | Rev | Description | Date |
 |---|---|---|
-| A | First issue: profile, environment, scaling actions, design consequences | 2026-10-25 |
+| A | First issue: profile, environment, scaling findings. | 2026-10-26 |
+| B | X-LOC-09 design pass: the locale-replacement units enter the graph and the scaling actions resolve; the ground loop stays. | 2026-10-26 |
 
 Licence: CERN-OHL-S-2.0.
 
 ## 1. Purpose and scope
 
-This page records the Mars variant: a mid-latitude site with shallow ground ice of the Arcadia Planitia class. The mean surface pressure is close to the triple point of water, so the plant operates inside pressurised shells. Carbon dioxide feeds methanol synthesis and a future methanation unit. Ground ice is the water source. Partial gravity (3.71 m/s2) means settling and flotation work but more slowly.
+This page records the Mars variant: a mid-latitude site with shallow ground ice of the Arcadia Planitia class. The mean surface pressure (0.636 kPa) is close to the triple point of water, so the plant operates inside pressurised shells. The thin CO2 atmosphere provides no convective cooling, no oxidant for combustion, and no vent sink. Partial gravity (3.71 m/s2) means settling and flotation work but more slowly.
 
 ## 2. Environment
 
@@ -27,32 +28,48 @@ This page records the Mars variant: a mid-latitude site with shallow ground ice 
 | Surface pressure | 0.636 kPa | NASA_MARS_FACT |
 | Atmospheric composition | CO2 0.951, N2 0.0259, Ar 0.0194, O2 0.00161 | NASA_MARS_ATMOS |
 | Temperature | 210 K mean; 184 to 242 K diurnal | NASA_MARS_FACT |
-| Surface radiation | 0.64 mSv/d dose equivalent at Gale crater | NASA_MARS_RAD |
+| Surface radiation | 0.64 mSv/d at Gale crater | NASA_MARS_RAD |
 | Perchlorate in soil | 0.4 to 0.6 percent by mass | NASA_MARS_PERCHLORATE |
 | Ground ice | excess ice within metres of the surface | NASA_MARS_ICE |
 | Thermal design (interim, A-M-395) | cooling -31 C, heating -89 C, insulation ambient -63 C | in-situ record replaces these |
 
-## 3. Scaling actions as applied
+## 3. What the site carries and what it replaces
 
-- PUMPED_HYDRO eliminated: the roof and catch tanks are replaced or eliminated at this site. Replacement: ZNBR2.
-- GEO_HP and GEO_GHEX eliminated: GEO becomes regolith heat exchange. Replacement: DRY_COOLER.
-- No other scaling: the profile bindings drive the sizes.
+The site capabilities follow from the environment: buoyant separation and free surfaces hold at 3.71 m/s2; regolith is ground contact; the thin atmosphere gives no air heat sink, no oxidant and no vent sink; the surface pressure sits at the triple point of water, so ambient-pressure liquid water cannot be kept.
 
-## 4. Design consequences
+Two systems need no replacement and stay:
 
-- Pressurised shells: the mean surface pressure is close to the triple point of water, so open liquid water cannot be kept. Habitat and process halls are pressurised shells governed by internal pressure, not gravity. Regolith cover gives shielding and part of the load.
-- Atmosphere as a resource: CO2 feeds methanol synthesis and a future methanation unit. N2 and Ar for buffer gas come from CRYO. Solid oxide electrolysis (MOXIE) is the diverse second oxygen source behind water electrolysis.
-- Heat rejection: the thin atmosphere gives weak convection; radiators and regolith heat exchange replace air coolers.
-- Water: ground-ice extraction and perchlorate removal is a new unit. Recycling closure matters more than on Earth.
-- Heat rejection: the low air density gives weak convective cooling. Radiators and regolith heat exchange replace air coolers.
-- Combustion: the atmosphere has no usable oxygen. AFTERBURNER and BACKUP_GEN run on plant oxygen or are replaced.
-- Partial gravity: settling, flotation and packed columns work but more slowly.
-- Earthing: dry regolith gives no earth electrode; the electrical system floats with insulation monitoring.
-- Codes: the Outer Space Treaty, the COSPAR planetary-protection policy and NASA-STD-3001 apply.
+- **The ground loop stays.** Regolith is ground contact: GEO_GHEX rejects through the regolith (ground.ghex_capacity_W_m) and GEO_HP lifts on it. The locale keeps both units.
+- **The flow battery stays.** At partial gravity the zinc-bromine electrolyte management works; the bromine-regeneration loop is closed hardware with no atmospheric discharge, so it runs unchanged.
+
+Seventeen units cannot operate as designed at this site. Each scaling action eliminates one with a replacement of a different technology that the X-LOC-09 design pass adds to the graph (placeholder at the Earth reference plant, where the need does not arise):
+
+| Replaced function | Mars unit | Design basis |
+|---|---|---|
+| Convective heat rejection | RAD_PANEL (space radiator, 12 kW duty context) | rejects radiatively to the sky at 180 K sink, emissivity 0.90 (A-M-396, A-M-397); area follows the Stefan-Boltzmann law |
+| Open water storage | TANK_BLD (closed bladder tank) | 200 kPa design pressure inside the shell (A-M-400); replaces CATCH_TANK and ROOF_TANK |
+| Atmospheric relief and vents | REC_HDR (closed recovery header) | every relief and offgas returns to a hold-and-reprocess skid; nothing discharges (A-M-398); replaces both relief valves, four vent scrubbers and the flue junction |
+| Air-fired waste oxidation | CAT_OX (catalytic oxidiser) | plant-oxygen bleed at 450 C bed, far below the 850 C thermal chamber (A-M-399) |
+| Fuel-fired trim heat | E_HEAT (resistance heater) | the N+1 melt heat runs on the grid at the A-M-283 30 kW connected duty |
+| Combustion genset | FUEL_CELL | the diverse second power source (AQS-FC-001) |
+| Pumped hydro | ZNBR2 | no open water body; the flow battery carries storage |
+| Scrubbed UPW and methanol storage | imported closed pressurised tanks | process units imported as closed hardware |
+
+The full action list with per-action registers is in the profile (`scaling.actions`) and renders into the site scaling document.
+
+## 4. What the profile establishes
+
+- PV is the primary source (2.5 kWh/kWp/d before dust losses, A-M-109 oversize); the worst stretch is the sol night plus a dust storm, carried by ZNBR2 storage with the fuel cell behind it.
+- Heat rejects through two modes: the radiator to the sky and the ground loop to the regolith.
+- Ground ice is the water source; perchlorate removal is required before use (0.4 to 0.6 percent by mass).
+- The atmosphere is the carbon source for methanol synthesis.
+- Regolith gives radiation shielding and part of the shell load.
+- The electrical system floats with insulation monitoring (dry regolith gives no earth electrode).
+- Codes: Outer Space Treaty, COSPAR planetary protection, NASA-STD-3001.
 
 ## 5. Open items
 
-1. The locale run is not yet executed (the profile is committed; the next step is the first locale regeneration).
-2. Atmosphere intake, ice extraction and methanation units join the graph in their own tasks.
-3. Perchlorate removal and the regolith feed case need assay mapping in AQS-ASSAY-001.
-4. The landing site itself (Q-022); every site-bound value is a model-based interim until it is chosen.
+1. The locale regeneration runs after this page; its outputs land under `sites/mars/` and the site tests prove them.
+2. Ground-ice extraction, perchlorate removal and solid-oxide CO2 electrolysis (the diverse oxygen source) are follow-on design units; nothing in the scaling resolution blocks on them.
+3. The landing site itself (Q-022); every site-bound value is a model-based interim until it is chosen.
+4. Feed cases for regolith, perchlorate and imported hardware need mapping in AQS-ASSAY-001.

@@ -197,6 +197,11 @@ A('EXT_HALL', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L therm
 A('FOOD_STORE', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', AMB, 'food store temperature watch (class store)')
 A('FOOD_STORE', 'LT', 'level transmitter', 'ultrasonic bin level', '0-100 % of bin height', 'food stock level: S14 4.2 kg/d')
 A('AFTERBURNER_FLUE', 'TE', 'temperature element (SIF, independent)', 'Pt100 class A, own thermowell', K600, 'independent high-temperature trip (AQS-CTL-003); flue gas service (AQS-INV-004 carries no SIF element for it yet)', sif=True)
+A('RAD_PANEL', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', AMB, 'radiator loop outlet temperature watch; rejection performance against the A-M-396/A-M-397 design (X-LOC-09 placeholder)')
+A('TANK_BLD', 'PT', 'pressure transmitter', 'gauge, 316L diaphragm, pad service', '0-400 kPa', 'bladder pad pressure gives the water level in the closed tank (X-LOC-09 placeholder; A-M-400)')
+A('REC_HDR', 'PT', 'pressure transmitter', 'gauge, 316L diaphragm, header service', '0-400 kPa', 'recovery header pressure watch; the header takes every relief and offgas discharge (X-LOC-09 placeholder; A-M-398)')
+A('CAT_OX', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', K600, 'catalyst bed temperature watch against the A-M-399 450 C light-off window (X-LOC-09 placeholder)')
+A('E_HEAT', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', K600, 'resistance element temperature watch on the N+1 melt trim duty (X-LOC-09 placeholder)')
 _have = {(r['unit'], r['tag'].split('-')[-2]) for r in rows}
 _nauth = 0
 for u, L, typ, spec, rng, sig, basis, sif in AUTH:

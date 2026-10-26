@@ -25,19 +25,22 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 g = json.load(open('flow_graph/plant_flow_graph.json'))
 N = {n['unit_id']: n for n in g['nodes']}
 UNITS = sorted(n['unit_id'] for n in g['nodes'] if n.get('class') != 'boundary' and n.get('sector_id'))
-missing = []
-for u in UNITS:
-    f = f'docs-authority/fab/{u}.md'
-    if not os.path.exists(f):
-        missing.append(u)
-    elif open(f).read().startswith(f'# {u} fabrication\n\nClass: '):
-        missing.append(u)   # this generator owns the sheet; regenerate in place
-
 IN = json.load(open('docs-authority/inventory/INTERNALS.json')) if os.path.exists('docs-authority/inventory/INTERNALS.json') else {}
 DISP = {}
 DISP.update(IN.get('defined', {}))
 DISP.update({u: 'none with basis: ' + w for u, w in IN.get('none', {}).items()})
 DISP.update({u: 'open: ' + w for u, w in IN.get('open', {}).items()})
+
+missing = []
+placeholders = []
+for u in UNITS:
+    f = f'docs-authority/fab/{u}.md'
+    owned = os.path.exists(f) and open(f).read().startswith(f'# {u} fabrication\n\nClass: ')
+    if not os.path.exists(f) or owned:
+        if N[u].get('presence', 'present') != 'present':
+            placeholders.append(u)   # placeholder: issued from the node design record; duty rule keeps no duty sheet
+        else:
+            missing.append(u)        # this generator owns the sheet; issue or regenerate in place
 
 # route skeleton per graph class bucket: step 1 is the assembly route, step 2 the working
 # parts, step 3 the connections, step 4 the test. Wording cites the register it rests on.
@@ -103,4 +106,21 @@ for u in missing:
          '    the CAD acceptance (AQS-PLAN-006 M3) and the real BOM land.',
          '']
     open(f'docs-authority/fab/{u}.md', 'w').write('\n'.join(L))
-print(len(missing), 'route sheets issued:', ', '.join(missing))
+
+for u in placeholders:
+    n = N[u]; cls = n['class']
+    d = n.get('params', {}).get('design') or {}
+    scalars = '; '.join(f'{k} {v}' for k, v in d.items()
+                        if not isinstance(v, (dict, list)) and k != 'basis')
+    L = [f'# {u} fabrication', '',
+         f'Class: {cls or "unclassed"} (placeholder; sector {n.get("sector_id") or "-"}). Study route. Not stamped.',
+         'Scope: locale-replacement unit (X-LOC design pass). The unit is placed, not installed at',
+         'the Earth reference plant: a locale scaling action places it, and the envelope, nozzles and',
+         'material selection are issued at that locale design pass - nothing invented here.', '',
+         f'Design record (graph node): {scalars or "pending"}',
+         f'Basis: {d.get("basis") or "unit design record"}', '',
+         'Production route: none issued. Fabrication scope exists only once the unit goes present',
+         '(the duty-basis rule keeps no duty sheet for placeholders; AQS-STD-001 applies then).', '']
+    open(f'docs-authority/fab/{u}.md', 'w').write('\n'.join(L))
+print(len(missing), 'route sheets issued:', ', '.join(missing) if missing else '-')
+print(len(placeholders), 'placeholder design records issued:', ', '.join(placeholders) if placeholders else '-')

@@ -6824,5 +6824,88 @@
   "sensitivity": "Pressurised-shell HVAC, thermal stores and material low-temperature limits.",
   "replaced_by": "In-situ temperature record at the landing site",
   "task": "X-LOC-09"
+ },
+ {
+  "id": "A-M-396",
+  "value": "180",
+  "units": "K",
+  "where": "sites/mars.json heat_rejection.radiative_sink_K; RAD_PANEL design",
+  "basis": "Thin CO2 atmosphere (636 Pa) leaves most of the radiator view factor to deep space; the design sink is set warm on purpose, so the area errs large",
+  "sensitivity": "Radiator area falls with the fourth power of radiator temperature minus sink; a 20 K colder sink shrinks the panel roughly a fifth",
+  "replaced_by": "In-situ radiometric measurement of sky and ground brightness temperature at the landing site",
+  "task": "X-LOC-09",
+  "files": [
+   "flow_graph/param/sites/mars.json",
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/SITE_BASIS_MARS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "In-situ radiometric measurement of the sky sink at the landing site"
+ },
+ {
+  "id": "A-M-397",
+  "value": "0.90",
+  "units": "-",
+  "where": "sites/mars.json heat_rejection.radiator_emissivity; RAD_PANEL design",
+  "basis": "White-paint or anodised-aluminium radiator coating class, high emissivity in the thermal band",
+  "sensitivity": "Radiator area scales 1/emissivity; dust settling on the panel lowers effective emissivity and raises area",
+  "replaced_by": "Coating coupon exposure test at the landing site (UV, dust settling, thermal cycling)",
+  "task": "X-LOC-09",
+  "files": [
+   "flow_graph/param/sites/mars.json",
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/SITE_BASIS_MARS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Coating coupon exposure test at the landing site"
+ },
+ {
+  "id": "A-M-398",
+  "value": "closed recovery; zero atmospheric discharge",
+  "units": "-",
+  "where": "REC_HDR; mars.json scaling actions (relief, vent-scrubber and flue-junction replacements)",
+  "basis": "The Mars profile states capabilities.vent_sink false; every relief and offgas stream returns through the header to a hold-and-reprocess skid",
+  "sensitivity": "Header and hold volume scale with the largest single relief contingency",
+  "replaced_by": "Relief-contingency study for the pressurised-shell design (largest single contingency)",
+  "task": "X-LOC-09",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "flow_graph/param/sites/mars.json",
+   "docs-authority/SITE_BASIS_MARS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Relief-contingency study at the shell design pass"
+ },
+ {
+  "id": "A-M-399",
+  "value": "450",
+  "units": "C",
+  "where": "CAT_OX design",
+  "basis": "Catalytic oxidation of CO and organics over a noble-metal catalyst runs far below the 850 C thermal chamber it replaces (X-SAN-01); the bed trim heater holds the light-off window",
+  "sensitivity": "Bed temperature sets the trim heater duty and the catalyst choice; light-off margin falls with stream contaminants",
+  "replaced_by": "Catalyst integration test on the plant waste-gas mix",
+  "task": "X-LOC-09",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/SITE_BASIS_MARS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Catalyst integration test on the plant waste-gas mix"
+ },
+ {
+  "id": "A-M-400",
+  "value": "200",
+  "units": "kPa design pressure (gauge)",
+  "where": "TANK_BLD design",
+  "basis": "Inside a 101 kPa shell the working differential is near 100 kPa; designed at 200 kPa for control margin while staying light-gauge (near the ASME VIII-1 scope boundary, so the vessel stays simple)",
+  "sensitivity": "Tank wall thickness scales with design pressure; volume follows the fire-water and buffer duty of the units it replaces",
+  "replaced_by": "Shell pressure and fire-water sizing at the Mars shell design pass",
+  "task": "X-LOC-09",
+  "files": [
+   "flow_graph/plant_flow_graph.json",
+   "docs-authority/SITE_BASIS_MARS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Shell environment specification at the Mars shell design pass"
  }
 ]

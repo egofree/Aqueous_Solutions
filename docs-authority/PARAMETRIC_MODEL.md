@@ -1857,3 +1857,8 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-382 | ASTM D2855-20 (previously 15): clause numbers, tables and va clause | For each listed file, look up every clause, table and value cited with ASTM D2855 in the 20 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match |
 | A-M-383 | Dual-fuel spark-ignition engine: 30 % efficiency on hydrogen - ; kWh/kg | Exercise run on hydrogen at 30 % load: measure fuel mass and electrical output; confirm efficiency within 10 % of 0.30 |
 | A-M-384 | Gas headers (air and nitrogen class) and the sanitation flue °C | Compare with the HVAC design room and line temperatures |
+| A-M-396 | 180 K | In-situ radiometric measurement of the sky sink at the landing site |
+| A-M-397 | 0.90 - | Coating coupon exposure test at the landing site |
+| A-M-398 | closed recovery; zero atmospheric discharge - | Relief-contingency study at the shell design pass |
+| A-M-399 | 450 C | Catalyst integration test on the plant waste-gas mix |
+| A-M-400 | 200 kPa design pressure (gauge) | Shell environment specification at the Mars shell design pass |

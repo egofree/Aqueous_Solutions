@@ -16,13 +16,13 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 50 | Owner decision or site investigation report |
-| T2 | In-house design tests and standard data | 32 | In-house test record or standard data filed against the item |
+| T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 58 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 442 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 446 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 635 items: 290 drivers, 345 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 640 items: 290 drivers, 350 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -115,6 +115,7 @@ Total 635 items: 290 drivers, 345 register entries. Classification rule: first m
 | A-M-235 | 0.5 kWp x 6932 @ 19 % eff / GCR 0.6 = 8.77 m2/kWp; 30 444 m2 kWp; m2 | PV_ARRAY.params module_kw 0.5, count 6932, nameplate_kw 3466, area_m2 30444, balance_kWp 1733, oversize_factor 2.0; roof block footprint 198000 x 168000 mm, 33 x 28 bays, 33264 m2 gross | D-PV encode lane 2026-10-18 |
 | A-M-258 | Power chain derived again on the live graph: demand 281.99 k kW / kWp / kWh / m2 | python3 -m flow_graph.param.write_graph power exits 0; PV nameplate x 8.78 m2/kWp = area_m2 within rounding; nameplate <= roof capacity; sections breaker <= 1200 A (NEC 240.87) | R10b power-chain lane 2026-10-18 |
 | A-M-332 | EXT_HALL heat-pump condenser fans: electronically commutated kW | Check the selected fan's nameplate or datasheet for motor type (EC or induction), rated power, supply voltage and speed-control method; update the motor inventory row and this entry | X-INV-01 |
+| A-M-397 | 0.90 - | Coating coupon exposure test at the landing site | X-LOC-09 |
 
 ## 4. T3 Bench and laboratory tests
 
@@ -651,6 +652,10 @@ Total 635 items: 290 drivers, 345 register entries. Classification rule: first m
 | A-M-382 | ASTM D2855-20 (previously 15): clause numbers, tables and va clause | For each listed file, look up every clause, table and value cited with ASTM D2855 in the 20 text (publisher free-access reader where offered) and correct the number or value; close this entry when all match | X-STD-01 |
 | A-M-383 | Dual-fuel spark-ignition engine: 30 % efficiency on hydrogen - ; kWh/kg | Exercise run on hydrogen at 30 % load: measure fuel mass and electrical output; confirm efficiency within 10 % of 0.30 | X-PAR-12 |
 | A-M-384 | Gas headers (air and nitrogen class) and the sanitation flue °C | Compare with the HVAC design room and line temperatures | X-LOC-03 |
+| A-M-396 | 180 K | In-situ radiometric measurement of the sky sink at the landing site | X-LOC-09 |
+| A-M-398 | closed recovery; zero atmospheric discharge - | Relief-contingency study at the shell design pass | X-LOC-09 |
+| A-M-399 | 450 C | Catalyst integration test on the plant waste-gas mix | X-LOC-09 |
+| A-M-400 | 200 kPa design pressure (gauge) | Shell environment specification at the Mars shell design pass | X-LOC-09 |
 
 ## 7. T6 Commissioning measurements
 

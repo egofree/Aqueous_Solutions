@@ -159,5 +159,10 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | FOOD_STORE | store | external visual (1 y, A-M-189) |
 | METAL_STORE | store | external visual (1 y, A-M-189) |
 | AIR_RECEIVER | store | external visual (1 y, A-M-189) |
+| RAD_PANEL | radiator | external visual (1 y, A-M-189) |
+| TANK_BLD | press_tank | external visual (1 y, A-M-189) |
+| REC_HDR | recovery_header | external visual (1 y, A-M-189) |
+| CAT_OX | catalytic | external visual (1 y, A-M-189) |
+| E_HEAT | resistance_heater | external visual (1 y, A-M-189) |
 
-150 units, 345 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+155 units, 350 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

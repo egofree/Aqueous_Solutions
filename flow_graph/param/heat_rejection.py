@@ -17,7 +17,9 @@ Radiator area per kW rejected (Stefan-Boltzmann law, sigma from CODATA 2018):
     A / Q = 1000 / (eps sigma (T_r^4 - T_s^4))   [m2 per kW]
 
 Every unit of the heat_rejection function in redundancy.json that remains after the scaling actions
-needs a level, so no rejection unit runs without a mode the site supports."""
+needs a level, so no rejection unit runs without a mode the site supports. The unit that remains is
+the kept source, or the replacement a scaling action registers for it: a replacement that rejects
+heat carries its own level."""
 import json
 from . import site as S, scaling as SC
 
@@ -59,6 +61,9 @@ def validate(prof, units=None, plan=None, red=None):
     from .portfolio import RED
     red = red or json.load(open(RED))
     g = group(prof); levels = g['levels']['value']; caps = _caps(prof); err = []
+    # a level may sit on a kept unit or on the replacement an action registers: the replacement
+    # is the unit that runs at this site (the placeholder it activates is not a plan unit)
+    repl = {p['replacement'] for p in plan.values() if p.get('replacement')}
     def need(mode, k, lv):
         if mode not in MODES or mode == 'heat_pump': err.append(f'{k}: mode {mode!r} is not one of {", ".join(MODES)}'); return
         miss = [c for c in MODES[mode] if c not in caps]
@@ -73,7 +78,8 @@ def validate(prof, units=None, plan=None, red=None):
         if not (lv.get('ref') or lv.get('register') or lv.get('owner')): err.append(f'{k}: no ref, register id or owner basis')
         u = lv.get('unit')
         if u not in units: err.append(f'{k}: unit {u!r} is not in the graph'); continue
-        if plan.get(u, {}).get('status') != 'kept': err.append(f'{k}: {u} does not remain after the scaling actions')
+        if plan.get(u, {}).get('status') != 'kept' and u not in repl:
+            err.append(f'{k}: {u} does not remain after the scaling actions')
         if not isinstance(units[u].get('params', {}).get(lv.get('duty_param')), (int, float)):
             err.append(f'{k}: duty parameter {lv.get("duty_param")!r} is not a number on {u}')
         m = lv.get('mode')

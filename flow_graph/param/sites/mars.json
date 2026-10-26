@@ -352,125 +352,107 @@
               "action": "eliminate",
               "target": "HYDRO_SET",
               "replacement": "ZNBR2",
-              "register": "AQS-PLAN-011 section 8.2 (the roof and catch tanks are replaced or eliminated)"
-            },
-            {
-              "action": "eliminate",
-              "target": "GEO_HP",
-              "replacement": "DRY_COOLER",
-              "register": "AQS-PLAN-011 section 8.2 (GEO becomes regolith heat exchange)"
-            },
-            {
-              "action": "eliminate",
-              "target": "GEO_GHEX",
-              "replacement": "DRY_COOLER",
-              "register": "AQS-PLAN-011 section 8.2 (regolith heat exchange replaces the ground loop)"
-            },
-            {
-              "action": "eliminate",
-              "target": "ACID_POLISH_SCRUB",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "imported scrubber module"
-            },
-            {
-              "action": "eliminate",
-              "target": "AFTERBURNER",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "replacement": "FUEL_CELL"
-            },
-            {
-              "action": "eliminate",
-              "target": "AFTERBURNER_FLUE",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "flue recovery: combustion products contained and processed"
-            },
-            {
-              "action": "eliminate",
-              "target": "ALK_SCRUBBER",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "imported scrubber module"
+              "register": "AQS-SITE-009 section 3: no open water body at surface pressure; the zinc-bromine battery carries storage (X-RED basis on ZNBR2)"
             },
             {
               "action": "eliminate",
               "target": "BACKUP_GEN",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "replacement": "FUEL_CELL"
+              "replacement": "FUEL_CELL",
+              "register": "AQS-SITE-009 section 3: no atmospheric oxidant; the fuel cell is the diverse second power source (AQS-FC-001)"
             },
             {
               "action": "eliminate",
               "target": "CATCH_TANK",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "closed pressurised water tank (triple-point pressure prevents open water)"
-            },
-            {
-              "action": "eliminate",
-              "target": "FAB_UPW_TANK",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "closed pressurised UPW tank"
-            },
-            {
-              "action": "eliminate",
-              "target": "MEOH_TANK",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "closed pressurised methanol tank"
-            },
-            {
-              "action": "eliminate",
-              "target": "MET_SCRUB",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "imported scrubber module"
-            },
-            {
-              "action": "eliminate",
-              "target": "NOX_SCRUB",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "imported scrubber module"
-            },
-            {
-              "action": "eliminate",
-              "target": "RELIEF_CRYO",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "recovery-based relief: captured and processed, not vented"
-            },
-            {
-              "action": "eliminate",
-              "target": "RELIEF_H2",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "recovery-based relief: captured and processed, not vented"
+              "replacement": "TANK_BLD",
+              "register": "AQS-SITE-009 section 3: pressure at the triple point of water; the pumped fire supply and treated-water buffer sit in closed bladder tanks (A-M-400)"
             },
             {
               "action": "eliminate",
               "target": "ROOF_TANK",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "closed pressurised water tank inside the pressurised shell"
+              "replacement": "TANK_BLD",
+              "register": "AQS-SITE-009 section 3: no open water and no gravity reserve outside the shell; the reserve re-pumps from bladder tanks (A-M-400)"
             },
             {
               "action": "eliminate",
-              "target": "ZNBR2_BR2_REGEN",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "imported Br2 regeneration module"
+              "target": "FAB_UPW_TANK",
+              "import_path": "closed pressurised UPW tank inside the shell (process unit, imported hardware)",
+              "register": "AQS-SITE-009 section 3: no ambient-pressure liquid water; UPW storage is closed and pressurised"
+            },
+            {
+              "action": "eliminate",
+              "target": "MEOH_TANK",
+              "import_path": "closed pressurised methanol tank inside the shell (process unit, imported hardware)",
+              "register": "AQS-SITE-009 section 3: no ambient-pressure liquid water; methanol storage is closed and pressurised"
+            },
+            {
+              "action": "eliminate",
+              "target": "AFTERBURNER",
+              "replacement": "CAT_OX",
+              "register": "AQS-SITE-009 section 3: no atmospheric oxidant; waste CO and organics oxidise on a plant-oxygen bleed in the catalytic bed (A-M-399)"
+            },
+            {
+              "action": "eliminate",
+              "target": "AFTERBURNER_FLUE",
+              "replacement": "REC_HDR",
+              "register": "AQS-SITE-009 section 3: nothing discharges to the atmosphere; the oxidiser exit returns through the recovery header (A-M-398)"
             },
             {
               "action": "eliminate",
               "target": "COMB_HEAT",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "replacement": "FUEL_CELL"
+              "replacement": "E_HEAT",
+              "register": "AQS-SITE-009 section 3: no atmospheric oxidant; the N+1 melt trim heat is electric resistance at the A-M-283 30 kW connected duty"
             },
             {
               "action": "eliminate",
               "target": "DRY_COOLER",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "radiative heat-rejection panels replace convective coolers (thin atmosphere)"
+              "replacement": "RAD_PANEL",
+              "register": "AQS-SITE-009 section 3: thin atmosphere gives no convective sink; the low-grade loop rejects radiatively to the sky (A-M-396, A-M-397)"
+            },
+            {
+              "action": "eliminate",
+              "target": "RELIEF_CRYO",
+              "replacement": "REC_HDR",
+              "register": "AQS-SITE-009 section 3: nothing vents to the atmosphere; relief discharges return through the recovery header (A-M-398)"
+            },
+            {
+              "action": "eliminate",
+              "target": "RELIEF_H2",
+              "replacement": "REC_HDR",
+              "register": "AQS-SITE-009 section 3: nothing vents to the atmosphere; relief discharges return through the recovery header (A-M-398)"
+            },
+            {
+              "action": "eliminate",
+              "target": "ACID_POLISH_SCRUB",
+              "replacement": "REC_HDR",
+              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header for reprocessing (A-M-398)"
+            },
+            {
+              "action": "eliminate",
+              "target": "ALK_SCRUBBER",
+              "replacement": "REC_HDR",
+              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
+            },
+            {
+              "action": "eliminate",
+              "target": "MET_SCRUB",
+              "replacement": "REC_HDR",
+              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
+            },
+            {
+              "action": "eliminate",
+              "target": "NOX_SCRUB",
+              "replacement": "REC_HDR",
+              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
             },
             {
               "action": "eliminate",
               "target": "EVAP_ACID_VS",
-              "register": "AQS-PLAN-011 section 8.2 (Mars: the thin atmosphere cannot take vents; no convective cooling; no atmospheric oxidant; pressure near the triple point of water)",
-              "import_path": "imported vent scrubber module"
+              "replacement": "REC_HDR",
+              "register": "AQS-SITE-009 section 3: no atmospheric discharge, so no vent stream to scrub; the offgas returns through the recovery header (A-M-398)"
             }
           ],
           "units": "-",
-          "register": "AQS-PLAN-011 section 8.2"
+          "register": "AQS-PLAN-011 section 8.2 and AQS-SITE-009 section 3 (X-LOC-09 design pass: every unit the site capabilities cannot carry is eliminated with a designed different-technology replacement; the ground loop stays - regolith is ground contact)"
         }
       }
     },
@@ -522,14 +504,36 @@
           "value": [
             {
               "level": "low-grade water loop",
-              "unit": "DRY_COOLER",
-              "mode": "air",
+              "unit": "RAD_PANEL",
+              "mode": "radiative",
               "duty_param": "rated_kW",
-              "register": "AQS-PLAN-011 section 8.2 (the thin atmosphere gives weak convection; radiators and regolith heat exchange replace air coolers)"
+              "radiator_K": 328.0,
+              "register": "A-M-396 (sky sink 180 K), A-M-397 (emissivity 0.90); loop mean 328 K carried from the DRY_COOLER design (AQS-THM-002)"
+            },
+            {
+              "level": "ground loop",
+              "unit": "GEO_GHEX",
+              "mode": "ground",
+              "duty_param": "Q_GHEX_avail_kW_th",
+              "register": "AQS-SITE-009 section 3: regolith heat exchange (ground.ghex_capacity_W_m)"
             }
           ],
           "units": "-",
-          "register": "AQS-PLAN-011 section 8.2"
+          "register": "AQS-PLAN-011 section 5.5 (X-LOC-09: radiative and regolith rejection)"
+        },
+        "radiator_emissivity": {
+          "value": 0.9,
+          "units": "-",
+          "register": "A-M-397",
+          "needs_verification": true,
+          "verification_test": "Coating coupon exposure test at the landing site"
+        },
+        "radiative_sink_K": {
+          "value": 180.0,
+          "units": "K",
+          "register": "A-M-396",
+          "needs_verification": true,
+          "verification_test": "In-situ radiometric measurement of the sky sink at the landing site"
         }
       }
     }

@@ -128,3 +128,37 @@ models/mfg/<UNIT>/. They will be rebuilt with the build-and-union convention
 when their units reach the desk P4 M3 acceptance pass. The remaining 59 mfg
 export STLs are watertight solids. The cad/stl registry (168 files) is fully
 solid after the tray-geometry fix.
+
+## Addendum 8: X-LOC-09 Mars design pass — scaling resolves
+
+The Mars profile now resolves. The engineering position changed: a scaling error is a design
+requirement, not a finding to record. Each unit the site capabilities cannot carry is eliminated
+with a replacement of a different technology, and the replacements are designed units in the graph.
+
+Two systems stay at Mars: the GEO ground loop (regolith is ground contact — GEO_GHEX and GEO_HP
+keep running; the earlier eliminations were copied from the LEO profile, where no ground exists)
+and the zinc-bromine battery with its closed bromine-regeneration loop (unit_needs.json now carries
+a by-unit entry for ZNBR2_BR2_REGEN: a closed electrolytic loop with no atmospheric discharge, not
+the scrubber-class vent blanket).
+
+Five locale-replacement units enter the graph as placeholders (stub_activation.py; endpoint 0 at
+the Earth reference plant, placed by the locale's scaling actions):
+
+- RAD_PANEL (radiator): 12 kW duty context (A-M-244), rejects at 328 K to a 180 K sky sink at
+  emissivity 0.90 (A-M-396, A-M-397); 1.86 m2/kW by the Stefan-Boltzmann law.
+- TANK_BLD (press_tank): closed bladder tank, 200 kPa design (A-M-400); replaces CATCH_TANK and
+  ROOF_TANK.
+- REC_HDR (recovery_header): closed vent and relief recovery to a hold-and-reprocess skid
+  (A-M-398); replaces both relief valves, four vent scrubbers, the acid vent scrubber and the flue
+  junction.
+- CAT_OX (catalytic): waste-gas oxidation on a plant-oxygen bleed at a 450 C bed (A-M-399);
+  replaces the air-fired AFTERBURNER.
+- E_HEAT (resistance_heater): the N+1 melt trim heat on the grid at the A-M-283 30 kW connected
+  duty; replaces the fuel-fired COMB_HEAT.
+
+heat_rejection.py now accepts a rejection level on a registered replacement (the replacement is the
+unit that runs at the site); the Mars profile rejects through RAD_PANEL (radiative) and GEO_GHEX
+(ground). test_site_power.py gains test_a_level_may_sit_on_a_registered_replacement.
+
+Assumptions A-M-396 through A-M-400 added. SITE_BASIS_MARS.md is Rev B. X-LOC-09's locale run and
+the site tests are the remaining proof. X-LOC-10 (LEO, 47 units) uses the same method and is next.

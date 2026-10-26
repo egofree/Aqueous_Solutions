@@ -17,6 +17,7 @@
   "C29_RECYCLE",
   "CAST_LINE",
   "CATCH_TANK",
+  "CAT_OX",
   "CA_POT",
   "COLD_MILL",
   "COMB_HEAT",
@@ -50,6 +51,7 @@
   "EW_9",
   "EXTRUDE",
   "EXT_HALL",
+  "E_HEAT",
   "FAB_UPW_TANK",
   "FILM_CAST",
   "FLOAT_SINK",
@@ -138,7 +140,9 @@
   "Q4_A",
   "Q4_B",
   "Q4_BUS",
+  "RAD_PANEL",
   "RECTIFIER",
+  "REC_HDR",
   "RELIEF_CRYO",
   "RELIEF_H2",
   "REMIN",
@@ -156,6 +160,7 @@
   "SOLAR_PV_CELL",
   "SOL_ARK_60K",
   "STOCK_OUT",
+  "TANK_BLD",
   "TFE_SYN",
   "TI_CELL",
   "VAC_CAST",
@@ -180,5 +185,5 @@
  ],
  "open": {},
  "tot_wetted_rows": 326,
- "units": 177
+ "units": 182
 }

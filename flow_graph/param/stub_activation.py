@@ -13,6 +13,17 @@ SOLAR_PV_CELL to the existing X-MFG-38 cell-line sizing (A-M-287..296).
   ELECTRODE_COAT class coater: coating booth + IR cure at the IA-COAT-IN recoat duty
   GEO_ORC     class orc: real ORC geometry as INSTALLED STANDBY at the 12 kW_th dry-cooler context;
               continuous_kw stays null per the owner ruling D-GEO_ORC (study closed, endpoint 0 kW_e)
+  X-LOC-09 locale-replacement units (placeholders; placed, not installed at the Earth reference):
+  RAD_PANEL   class radiator: space radiator at the DRY_COOLER duty context, for sites with no air
+              heat sink (Mars; also the LEO rejection mode); rated_kW carried at 12 kW (A-M-244 context)
+  TANK_BLD    class press_tank: closed bladder tank inside the pressurised shell, for sites where
+              ambient pressure sits at the triple point of water (replaces CATCH_TANK / ROOF_TANK)
+  REC_HDR     class recovery_header: closed vent and relief recovery header, for sites with no
+              vent sink (replaces the relief valves, vent scrubbers and flue junction)
+  CAT_OX      class catalytic: catalytic waste-gas oxidiser on plant oxygen, for sites with no
+              atmospheric oxidant (replaces the air-fired AFTERBURNER)
+  E_HEAT      class resistance_heater: electric resistance trim heat, for sites with no atmospheric
+              oxidant (replaces the fuel-fired COMB_HEAT N+1 at the A-M-283 30 kW connected duty)
 
 Run: python3 -m flow_graph.param.stub_activation [--write]
 """
@@ -227,6 +238,60 @@ def apply(g=None, write=False):
                                  basis='D-GEO_ORC: study endpoint 0 kW_e; geometry at the A-M-244 12 kW dry-cooler '
                                        'context so the standby is real (A-M-285)',
                                  placement='electrical_yard.py massing stands in (unit map row)')
+    # ---- X-LOC-09 locale-replacement units (placeholders; sites/mars and later locales) -----------
+    # Mars design pass (AQS-SITE-009 section 3): the thin CO2 atmosphere gives no vent sink, no
+    # oxidant and no convective heat sink, and the surface pressure sits at the triple point of
+    # water. Each unit below is the different-technology replacement the scaling actions name.
+    # They stay placeholder at the Earth reference plant (endpoint 0; nothing sized from a need
+    # the baseline does not have); the locale profile's scaling actions place them.
+    def lnode(uid, sector, cls, role, design, note):
+        n = node(g, N, uid, sector, cls, note, presence='placeholder', role=role)
+        n['continuous_kw'] = None
+        n['params']['design'] = design
+        return n
+
+    rad_area_per_kW = 1000.0 / (0.90 * 5.670374419e-8 * (328.0 ** 4 - 180.0 ** 4))   # Stefan-Boltzmann
+    ln = lnode('RAD_PANEL', 'HEAT', 'radiator', None,
+               dict(rated_kW=12.0, radiator_K=328.0, emissivity=0.90, sink_K=180.0,
+                    area_m2_per_kW=round(rad_area_per_kW, 2),
+                    area_m2_at_duty=round(rad_area_per_kW * 12.0, 1),
+                    loop='65/45 C low-grade water loop, mean 55 C (328 K), carried from the DRY_COOLER design (AQS-THM-002)',
+                    basis='A-M-396 (sky sink 180 K), A-M-397 (emissivity 0.90); duty context A-M-244'),
+               'Space radiator at the DRY_COOLER duty context (X-LOC-09): rejects to the sky where the site '
+               'gives no air heat sink. Area follows the Stefan-Boltzmann law (heat_rejection.radiator_m2_per_kW). '
+               'presence stays placeholder at the Earth reference, which rejects through DRY_COOLER and GEO_GHEX.')
+    ln['params']['rated_kW'] = 12.0   # duty at the top level: the heat_rejection level reads it (A-M-244 context)
+    lnode('TANK_BLD', 'WTR', 'press_tank', None,
+          dict(design_kPa_g=200.0, fluid='water', roles='pumped fire supply and treated-water buffer '
+               '(replaces CATCH_TANK); gravity reserve re-pumped (replaces ROOF_TANK)',
+               volume='set by the locale fire-water and buffer calculation at the design pass',
+               basis='A-M-400'),
+          'Closed bladder tank inside the pressurised shell (X-LOC-09): holds water under a gas pad '
+          'where the ambient pressure sits at the triple point of water, so there is no free surface '
+          'open to shell gas and no ambient-pressure liquid water. Low design pressure keeps the '
+          'vessel light-gauge; volume follows the units it replaces.')
+    lnode('REC_HDR', 'GAS', 'recovery_header', None,
+          dict(service='relief discharges and process offgas return to a hold-and-reprocess skid',
+               discharge='nothing vents to site atmosphere (profile capabilities.vent_sink false)',
+               sizing='header and hold sized to the largest single relief contingency at the design pass',
+               basis='A-M-398'),
+          'Closed vent and relief recovery header (X-LOC-09): every relief valve and vent scrubber '
+          'discharge returns through the header to recovery, so the site needs no vent sink.')
+    lnode('CAT_OX', 'OIL', 'catalytic', None,
+          dict(service='catalytic oxidation of waste CO and organics on a plant-oxygen bleed',
+               bed_C=450, feed='7.097 kg/d flue class carried from the AFTERBURNER duty (X-SAN-01)',
+               trim_duty='bed trim heater duty is sized at the locale design pass',
+               basis='A-M-399'),
+          'Catalytic waste-gas oxidiser (X-LOC-09): oxidises plant waste streams on plant oxygen '
+          'where the atmosphere gives no oxidant, at catalyst temperatures far below the 850 C '
+          'thermal chamber it replaces (X-SAN-01).')
+    lnode('E_HEAT', 'FOUNDRY', 'resistance_heater', 'load',
+          dict(connected_kW=30.0, service='N+1 melt trim heat, resistance elements, standby-zero on '
+               'the design day (same dispatch discipline as the fuel-fired unit it replaces)',
+               basis='A-M-283 (30 kW connected duty carried from COMB_HEAT)'),
+          'Electric resistance trim heat (X-LOC-09): carries the N+1 melt heat duty on the grid '
+          'where combustion has no atmospheric oxidant.')
+
     if write:
         open(GP, 'w').write(json.dumps(g, indent=2) + '\n')
     return dict(litho_kW=round(litho_kW, 4), coat_kW=round(coat_kW, 4), align_kW=round(align_kW, 4), dev_kW=dev_kW,

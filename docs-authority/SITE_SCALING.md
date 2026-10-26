@@ -88,4 +88,4 @@ Table 3. Unit needs and status
 | TI_CELL | cell | process | buoyant_separation | kept |
 | VCD_TRAIN | evaporator | life support | buoyant_separation | kept |
 | ZNBR2 | flow_battery | energy | buoyant_separation | kept |
-| ZNBR2_BR2_REGEN | scrubber | energy | buoyant_separation, vent_sink | kept |
+| ZNBR2_BR2_REGEN | scrubber | energy | buoyant_separation | kept |

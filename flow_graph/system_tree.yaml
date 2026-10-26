@@ -174,6 +174,9 @@ nodes:
   - id: FOUNDRY.melt-and-cast-train.melt.COMB_HEAT
     parent: FOUNDRY.melt-and-cast-train.melt
     unit_id: COMB_HEAT
+  - id: FOUNDRY.melt-and-cast-train.melt.E_HEAT
+    parent: FOUNDRY.melt-and-cast-train.melt
+    unit_id: E_HEAT
   - id: FOUNDRY.melt-and-cast-train.melt.FLUX_PREP
     parent: FOUNDRY.melt-and-cast-train.melt
     unit_id: FLUX_PREP
@@ -473,6 +476,9 @@ nodes:
   - id: OIL.pyro-fractionation-train.AFTERBURNER
     parent: OIL.pyro-fractionation-train
     unit_id: AFTERBURNER
+  - id: OIL.pyro-fractionation-train.CAT_OX
+    parent: OIL.pyro-fractionation-train
+    unit_id: CAT_OX
   - id: GAS
     description: >-
       Process (Mass transform) — scrub / vent closure; secondary Utility.
@@ -520,6 +526,9 @@ nodes:
   - id: GAS.scrubbing-headers-train.gas-headers.RELIEF_H2
     parent: GAS.scrubbing-headers-train.gas-headers
     unit_id: RELIEF_H2
+  - id: GAS.scrubbing-headers-train.gas-headers.REC_HDR
+    parent: GAS.scrubbing-headers-train.gas-headers
+    unit_id: REC_HDR
   - id: CRYO
     description: >-
       Utility / header — cold-box O2/N2/CO2/H2; not a generation class.
@@ -603,6 +612,9 @@ nodes:
   - id: WTR.potable-upw-train.CATCH_TANK
     parent: WTR.potable-upw-train
     unit_id: CATCH_TANK
+  - id: WTR.potable-upw-train.TANK_BLD
+    parent: WTR.potable-upw-train
+    unit_id: TANK_BLD
   - id: WTR.potable-upw-train.BMED_UPW_POLISH
     parent: WTR.potable-upw-train
     unit_id: BMED_UPW_POLISH
@@ -719,6 +731,9 @@ nodes:
   - id: HEAT.ladder-train.q4-services.DRY_COOLER
     parent: HEAT.ladder-train.q4-services
     unit_id: DRY_COOLER
+  - id: HEAT.ladder-train.q4-services.RAD_PANEL
+    parent: HEAT.ladder-train.q4-services
+    unit_id: RAD_PANEL
   - id: HEAT.ladder-train.q4-services.MAU_HX
     parent: HEAT.ladder-train.q4-services
     unit_id: MAU_HX
