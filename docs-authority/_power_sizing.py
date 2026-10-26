@@ -70,6 +70,9 @@ def _size_generic_primary(demand_kW, kind, src):
                       pv_base_kWp=nameplate)
     out['_primary_unit'] = src.get('unit', 'PV_ARRAY')
     out['_primary_kind'] = kind
+    out['backup'] = dict(critical_kW=sum(CRIT.values()), critical_list=CRIT,
+                         gen_kW=GEN_KW, autonomy_d=AUT_CRIT,
+                         energy_kWh=sum(CRIT.values()) * 24 * AUT_CRIT)
     return out
 
 if _primary_kind != 'pv':
