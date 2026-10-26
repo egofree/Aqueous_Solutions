@@ -213,3 +213,10 @@ AQS-ASSAY-001 classes (ground ice, regolith, perchlorate salts), and the
 jurisdiction family and basis page carry planetary protection
 (AQS-SITE-009 Rev D). X-LOC-12 (the cross-locale comparison) is next; X-LOC-11
 keeps the floating-island hull pass.
+
+## Addendum 11: X-LOC-12 cross-locale comparison
+
+SITE_COMPARISON.md (AQS-SITE-011) generates in the pipeline from the committed
+profiles and the locale outputs: the scaling actions per locale, the power
+portfolios, and the unit sizes that move between locales. The stage runs after
+site_power and is staleness-gated like every generated page.

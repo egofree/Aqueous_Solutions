@@ -485,6 +485,10 @@
    "status": "ok"
   },
   {
+   "name": "doc_site_comparison",
+   "status": "ok"
+  },
+  {
    "name": "task_plan",
    "status": "ok"
   },
@@ -584,6 +588,7 @@
   "docs-authority/SECTOR_DEFINITIONS.md",
   "docs-authority/SELF_COPY_BOM.md",
   "docs-authority/SITE_ACCESS_CHECK.md",
+  "docs-authority/SITE_COMPARISON.md",
   "docs-authority/SITE_POWER.md",
   "docs-authority/SITE_SCALING.md",
   "docs-authority/SPARES.md",

@@ -2620,6 +2620,22 @@
    "quick": false
   },
   {
+   "name": "doc_site_comparison",
+   "argv": [
+    "python3",
+    "docs-authority/_site_comparison.py"
+   ],
+   "depends_on": [
+    "site_scaling",
+    "site_power"
+   ],
+   "outputs": [
+    "docs-authority/SITE_COMPARISON.md"
+   ],
+   "writes_graph": false,
+   "quick": false
+  },
+  {
    "name": "task_plan",
    "argv": [
     "python3",
