@@ -1,0 +1,20 @@
+{
+ "size_mm": [
+  1500,
+  800,
+  1500
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N1 fired-shell inlet -X z 160; N2/N3 melt DN15 stubs -Y z 160; N4 cast+shell +X z 600 on the roller bed; N5 drain bottom (400,400) z 50; N6 vent at (750,400) to the z 800 datum. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "machine": "investment casting tilt-pour station",
+  "pour_kg_d": 2.0,
+  "shell_kg_d": 8.0,
+  "molds_per_campaign": 8
+ },
+ "doc": "AQS-DUTY-072"
+}

@@ -1,6 +1,10 @@
-item,description,qty,material,basis
-1,"Dip slurry tank 480 x 300 x 300 mm (40 L), binder + flour",1,"SS 304, agitated",AQS-DUTY-072 section 4; dip-coat + stucco rainfall shell-building booth
-2,Rainfall stucco booth 420 x 480 x 880 mm with hopper top,1,"CS, recycled-stucco circuit",6 dips per shell at 4 kg/kg castings (A-M-281)
-3,Stucco blower / conveyor module,1,CS,AQS-DUTY-072 section 4
-4,"Mold-handling gantry, 1000 mm span beam + hoist trolley",1,"CS beam, chain hoist",AQS-DUTY-072 section 4
-5,3-tier drying rack 180 x 560 mm,1,CS angle + mesh,8 kg/d shells; silica make-up 1 + reclaim 7 kg/d (A-M-281)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Booth frame 1500 x 800 with back-wall cladding,1,carbon steel,613.4,make,WORK_ORDER step 1; AQS-DUTY-072 shell-building booth
+2,"Slurry tank 40 L (40 L design), agitated",1,316L,99.9,make,design slurry 40 L; duty section 2
+3,Rainfall stucco station with reclaim pan,1,carbon steel,98.3,make,6 dip cycles; reclaim 7.0 kg/d of 8.0 kg/d silica
+4,"6-dip manipulator: mast, cross arm, grip hoist",1,carbon steel,18.3,make,design dips 6
+5,Drip deck over the slurry tank,1,carbon steel,87.9,make,WO step 3
+6,N1 pattern chute -X z 160 (from WAX_PATTERN N1),1,carbon steel,4.0,make,task-04 schedule N1
+7,N2 green-shell out +X z 600 (to SHELL_BURNOUT N1),1,carbon steel,3.8,make,task-04 schedule N2
+8,N3/N4 silica make-up + reclaim inlets -X z 160,2,carbon steel,4.5,make,task-04 schedule N3/N4
+9,N5 drain well + N6 vent stub,2,carbon steel,1.1,make,task-04 schedule N5/N6

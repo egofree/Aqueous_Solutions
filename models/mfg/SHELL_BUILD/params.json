@@ -1,0 +1,22 @@
+{
+ "size_mm": [
+  1500,
+  800,
+  1500
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N1 pattern chute -X z 160 (from WAX_PATTERN); N3/N4 silica inlets -X z 160; N2 green shell +X z 600; N5 drain bottom (400,400) z 50; N6 vent on the booth roof z 1500 datum. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "machine": "dip-coat + stucco rainfall shell-building booth",
+  "shell_kg_d": 8.0,
+  "silica_makeup_kg_d": 1.0,
+  "reclaim_kg_d": 7.0,
+  "dips": 6,
+  "slurry_L": 40
+ },
+ "doc": "AQS-DUTY-072"
+}

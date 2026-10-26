@@ -1,6 +1,9 @@
-item,description,qty,material,basis
-1,"Tilt-pour pedestal and bracket, 700 mm axis height",1,CS weldment,AQS-DUTY-072 section 4; investment casting tilt-pour station
-2,"Pouring ladle D220 x 190 mm, trunnion-mounted",1,"CS, refractory lined",2 kg/d pour from IND_MELT (A-M-281)
-3,Mold table with 8 fired-shell seats,1,"CS, pinned",8 kg/d shells at 8/campaign (A-M-281)
-4,Rollover frame and cross-beam for shell cooling,1,CS,AQS-DUTY-072 section 4
-5,Cool/quench bin and control pedestal,2,CS / CS enclosure IP54,AQS-DUTY-072 section 4
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Frame: base 1500 x 800 x 40, four posts, table deck z 580..610",1,carbon steel,1762.3,make,WORK_ORDER step 1; AQS-DUTY-072 line-machine class
+2,Shell-mould clamp station 300 x 300 x 260 (campaign of 8 moulds),1,carbon steel,79.7,make,design campaign row; task-04 schedule N1
+3,Tilt-pour station with pour cone,1,carbon steel + refractory,116.6,make,task-04 schedule N2/N3; melt from IND_MELT N14
+4,Cast-out roller bed +X with stop,1,carbon steel,35.1,make,task-04 schedule N4
+5,N1 fired-shell inlet chute -X z 160,1,carbon steel,5.7,make,task-04 schedule N1 (from SHELL_BURNOUT N2)
+6,N2/N3 melt DN15 stubs -Y z 160,2,carbon steel,0.1,make,task-04 schedule N2/N3
+7,N2/N3 melt-stub pipe stands to the base,2,carbon steel,3.5,make,WO step 4
+8,N5 drain well + N6 vent stub,2,carbon steel,1.2,make,task-04 schedule N5/N6

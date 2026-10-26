@@ -333,3 +333,13 @@ pattern injection bench (10 L pot, 0.5 kW injector head, pattern table).
 check.json records each acceptance; the export STLs are watertight; the
 X-PAR-04 gate passes on both registry solids. The 8-sheet drawing sets are
 stamped with SVG and PDF. Unit task 11 keeps the house partial state.
+
+## Addendum 22: FOUNDRY-SHELL_BUILD-10 and FOUNDRY-INV_CAST-10 accepted at M3
+
+The shell-building booth (40 L slurry tank, rainfall stucco station, 6-dip
+manipulator) and the investment tilt-pour station (shell-mould clamp, pour
+cone, cast-out bed, mould-change gantry) move from the M2 foundry export to
+dedicated builds. check.json records each acceptance; the export STLs are
+watertight; the X-PAR-04 gate passes on both registry solids. The 8-sheet
+drawing sets are stamped with SVG and PDF. Unit task 11 keeps the house
+partial state.

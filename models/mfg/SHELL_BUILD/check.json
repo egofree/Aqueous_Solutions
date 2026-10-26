@@ -1,0 +1,37 @@
+{
+  "booth_bbox_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 35.0,
+    "+X": 10.0,
+    "-Y": 0.0,
+    "+Y": 0.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: pattern_chute, green_shell_out, silica_inlets)",
+  "external_parts": [
+    "pattern_chute",
+    "green_shell_out",
+    "silica_inlets"
+  ],
+  "cap_solids": 8,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "booth_frame": 613.4,
+    "slurry_tank": 99.9,
+    "stucco_station": 98.3,
+    "manipulator": 18.3,
+    "dip_deck": 87.9,
+    "pattern_chute": 4.0,
+    "green_shell_out": 3.8,
+    "silica_inlets": 4.5,
+    "drain_well": 1.0,
+    "vent_stub": 0.1
+  },
+  "cadquery": "2.8.0"
+}
