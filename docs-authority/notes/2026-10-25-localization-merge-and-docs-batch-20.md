@@ -343,3 +343,14 @@ dedicated builds. check.json records each acceptance; the export STLs are
 watertight; the X-PAR-04 gate passes on both registry solids. The 8-sheet
 drawing sets are stamped with SVG and PDF. Unit task 11 keeps the house
 partial state.
+
+## Addendum 23: FOUNDRY-SHELL_BUILD-10, FOUNDRY-INV_CAST-10 and FOUNDRY-SHELL_BREAK-10 accepted at M3
+
+The investment-casting line closes at M3: the shell-building booth (dip tank,
+rainfall stucco station, 6-dip manipulator), the investment tilt-pour station
+(shell-mould clamp, pour cone, cast-out bed, mould-change gantry) and the
+vibratory shell knock-out (table, drive, open-top reclaim sieve, enclosure,
+service mast) move from the M2 foundry export to dedicated builds.
+check.json records each acceptance; the export STLs are watertight; the
+X-PAR-04 gate passes on all three registry solids. The 8-sheet drawing sets
+are stamped with SVG and PDF. Unit task 11 keeps the house partial state.

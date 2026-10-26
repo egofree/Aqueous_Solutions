@@ -1,0 +1,42 @@
+{
+  "frame_bbox_mm": [
+    1500.0,
+    800.0,
+    1500.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 30.0,
+    "+X": 0.0,
+    "-Y": 0.0,
+    "+Y": 10.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: cast_inlet, casting_out, spent_out, reclaim_out, silica_out)",
+  "external_parts": [
+    "cast_inlet",
+    "casting_out",
+    "spent_out",
+    "reclaim_out",
+    "silica_out"
+  ],
+  "cap_solids": 11,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "frame": 636.9,
+    "vib_table": 131.9,
+    "vib_drive": 12.4,
+    "sieve": 17.4,
+    "reclaim_pan": 40.7,
+    "enclosure": 98.9,
+    "cast_inlet": 4.9,
+    "casting_out": 12.6,
+    "spent_out": 6.3,
+    "reclaim_out": 6.3,
+    "silica_out": 3.8,
+    "drain_well": 1.0,
+    "vent_stub": 0.0
+  },
+  "cadquery": "2.8.0"
+}

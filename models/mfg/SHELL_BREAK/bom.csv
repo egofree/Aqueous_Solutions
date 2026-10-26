@@ -1,6 +1,8 @@
-item,description,qty,material,basis
-1,Vibratory knock-out table 1000 x 360 mm on isolation springs,1,"CS deck, Mn liner",AQS-DUTY-072 section 4; vibratory shell knock-out station with reclaim sieve
-2,"Eccentric vibrator drive, 0.4 kW, with belt guard",1,geared motor,AQS-DUTY-072 section 4; A-M-199 forming class
-3,Breakout bin 900 x 360 x 500 mm under the grid,1,"CS, lined",8 kg/d spent shells (A-M-281)
-4,Reclaim sieve deck 320 x 300 mm with fines pan,1,"SS mesh, CS pan",7 kg/d reclaim to SHELL_BUILD; 1 kg/d fines exported (A-M-281)
-5,Dust hood with DN120 offtake,1,CS,knock-out dust to the baghouse
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,"Frame: base 1500 x 800 x 40, four posts, feed deck -X",1,carbon steel,636.9,make,WORK_ORDER step 1; AQS-DUTY-072 knock-out station
+2,Vibratory table 700 x 400 x 60 with the 0.4 kW drive,1,carbon steel,144.3,make,design table 0.4 kW
+3,Reclaim sieve (inclined) with mesh window + reclaim pan,1,carbon steel,58.1,make,reclaim 7.0 kg/d of 8.0 kg/d spent shell
+4,Station enclosure hood,1,carbon steel,98.9,make,WO step 4; dust control
+5,N1 cast-tree inlet -X z 160 (from INV_CAST N4),1,carbon steel,4.9,make,task-04 schedule N1
+6,N2 investment castings +X z 600; N3 spent silica +X z 600; N4 reclaim +Y z 600; N5 silica return +Y z 600,4,carbon steel,29.0,make,task-04 schedule N2..N5
+7,N6 drain well + N7 vent stub,2,carbon steel,1.0,make,task-04 schedule N6/N7

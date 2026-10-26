@@ -1,9 +1,10 @@
 # Work order SHELL_BREAK
 
-Authority: AQS-DUTY-072 (X-MFG-30 pattern). In-house fabrication; no bought line machine.
+Authority: AQS-DUTY-072 (X-MFG lane). LIVE unit - vibratory knock-out.
 
-1. Fabricate and level the bench/frame; set the machine envelope 1500 x 800 x 1500 mm.
-2. Fit the line elements per bom.csv (vibratory shell knock-out station with reclaim sieve).
-3. Guard the moving parts (ISO 14122-2 access; guards per AQS-BLD-012 class).
-4. Test: dry run, then trial feed pass; record dimensions on the traveller.
-5. Inspect against models/mfg/SHELL_BREAK/export/shell_break.step.
+1. Fabricate the frame and feed deck; set on anchors.
+2. Fit the vibratory table with the drive; prove the isolation mounts.
+3. Fit the reclaim sieve and pan at the stated slope.
+4. Mount the enclosure hood; fit the N1 inlet, N2..N5 outlets, N6 drain and N7 vent.
+5. Test: table vibration survey, then a trial knock-out of an INV_CAST campaign tree.
+6. Inspect against models/mfg/SHELL_BREAK/export/shell_break.step; record dimensions on the traveller.
