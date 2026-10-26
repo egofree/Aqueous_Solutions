@@ -21,7 +21,7 @@ Model source: `models/mfg/SHELL_BURNOUT/shell_burnout.py` + `params.json`; drawi
    schedule hardware overhangs at most 34 mm against the 50 mm allowance.
 3. All parts valid; the export STL is watertight (4 closed bodies); the cad/stl registry
    copy passes the X-PAR-04 gate (flow_graph/param/test_envelopes.py).
-4. Overhang metrics computed from the tessellated compound (the OCC compound bbox
+4. Overhang metrics computed from the tessellated compound (the solid-modeller compound bbox
    inflates around the cylindrical pass cuts).
 
 ## Deviations from the M2 export
