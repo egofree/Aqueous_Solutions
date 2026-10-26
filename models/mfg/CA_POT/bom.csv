@@ -9,7 +9,7 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 8,"Hood group: CS hood plate t6 + perimeter rim lip, on the graphite hot plate",1,carbon steel,71.9,make,WO step 4; dry Cl2 headspace at 700 C (M7)
 9,"Hood hot plate, graphite t10 (expendable wetted face)",1,graphite,7.4,make,duty section 3 wetted-face class; change-out at the unit task 12 work order
 10,"Offtake riser DN50 OD 60.3 t 2.0, z 350..1594, flange + N5 vent at top",1,carbon steel (dry hot Cl2),5.1,make,WO row 5; nozzles per the task-04 schedule (N5 vent top 800)
-11,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,0.1,make,WO row 5; brine-fog return seal leg
+11,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,0.9,make,WO row 5; brine-fog return seal leg
 12,"N3 Cl2 export stub DN15 at +Y z 600 (0.0974 kg/d, water-treatment class)",1,carbon steel (dry hot Cl2),0.0,make,task-04 schedule N3; export to the water-treatment chlorine stock
 13,Ca-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600,1,carbon (ram class),5.1,make,"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"
 14,N2 brine inlet group: chute box + DN44 lance into the bath at z 160 (0.1525 kg/d),1,"CS chute, carbon lance",4.9,make,task-04 schedule N2; A-M-284 feedstock ruling; WO step 4

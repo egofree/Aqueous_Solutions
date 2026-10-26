@@ -2,12 +2,12 @@
   "shell_bbox_mm": [
     800.3,
     800.1,
-    1600.3
+    1600.2
   ],
   "shell_bbox_abs": [
-    -0.1,
     -0.0,
-    -0.1,
+    -0.0,
+    -0.0,
     800.3,
     800.1,
     1600.2
@@ -27,7 +27,7 @@
     "brine_inlet_group",
     "cl2_stub"
   ],
-  "cap_solids": 3,
+  "cap_solids": 1,
   "all_parts_valid": true,
   "anode_j_A_cm2_drawn": 0.0029,
   "bath_volume_litres": 122.0,
@@ -46,7 +46,7 @@
     "bus_straps": 2.0,
     "offtake_riser": 3.6,
     "riser_flange": 1.5,
-    "dip_leg": 0.1,
+    "dip_leg": 0.9,
     "vent_stub": 0.0,
     "cl2_stub": 0.0,
     "ca_tap_group": 5.1,

@@ -9,7 +9,7 @@ item,description,qty,material,mass_kg,make_or_buy,basis
 8,"Hood group: CS hood plate t6 + perimeter rim lip, on the graphite hot plate",1,carbon steel,71.9,make,WO step 4; dry Cl2 headspace at 700 C (M7)
 9,"Hood hot plate, graphite t10 (expendable wetted face)",1,graphite,7.4,make,duty section 3 wetted-face class; change-out at the unit task 12 work order
 10,"Offtake riser DN50 OD 60.3 t 2.0, z 350..1594, flange + N5 vent at top",1,carbon steel (dry hot Cl2),5.1,make,WO row 5; nozzles per the task-04 schedule (N5 vent top 800)
-11,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,0.1,make,WO row 5; brine-fog return seal leg
+11,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,0.9,make,WO row 5; brine-fog return seal leg
 12,"N1/N3/N7 DN15 stubs at +Y z 600: raffinate return, anode gas, chlorinator CO2 vent (0.043 kg/d CO2)",3,carbon steel (dry hot gas),0.0,make,task-04 schedule N1/N3/N7
 12b,N5/N6 feed chutes -X z 160: MoO3 concentrate + carbon reductant (0.1055 kg/d),2,"CS chute, refractory throat",7.9,make,task-04 schedule N5/N6; A-M-284 feedstock ruling
 12c,N2 post-EW liquor inlet stub -Y z 160,1,carbon steel,0.0,make,task-04 schedule N2

@@ -48,8 +48,6 @@ casing = casing.cut(rod(RY + 2, (rx_, ry_, 1585), "Z", 30))                     
 casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (-5.0, 400.0, 160.0), "X", 90.0))   # N2 brine inlet pass
 casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (202.0, W - 40, 600.0), "Y", 90.0)) # N2 Cl2 return pass (+Y at 600)
 casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (598.0, W - 40, 600.0), "Y", 90.0)) # N6 Cl2 to the chlorinator pass (+Y at 600)
-casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (256.0, -5.0, 160.0), "Y", 90.0))   # N3 MgCl2 return pass (-Y at 160)
-casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (544.0, -5.0, 160.0), "Y", 90.0))   # N4 brine inlet pass (-Y at 160)
 casing = casing.cut(rod(30.5, (256.0, 160.0, -5.0), "Z", 85.0))                  # N7 drain well pass
 casing = casing.cut(rod(57.5, (L - 40, 400.0, 605.0), "X", 90.0))                # N1 tap well pass (+X z 600)
 casing = casing.cut(rod(57.5, (-5.0, 400.0, 605.0), "X", 90.0))                  # N5 reductant tap pass (-X z 600)
@@ -60,8 +58,6 @@ fibre = box(6, 6, 6, L - 12, W - 12, 1588).cut(box(30, 30, 30, L - 60, W - 60, 1
 parts["fibre_lining"] = fibre
 ram = box(30, 30, 30, L - 60, W - 60, 1564).cut(box(70, 70, 70, L - 140, W - 140, 1524))
 ram = ram.cut(rod(40, (256.0, 160.0, -5.0), "Z", 110.0))                          # drain sump recess
-ram = ram.cut(rod(23.5, (256.0, -5.0, 160.0), "Y", 110.0))                        # N3 return pass
-ram = ram.cut(rod(23.5, (544.0, -5.0, 160.0), "Y", 110.0))                        # N4 brine pass
 parts["ram_lining"] = ram
 
 # ---------------- hood: graphite hot plate t10 + CS plate t6 + rim lip -----------
@@ -117,7 +113,7 @@ for yv in (184, 600):
 parts["bus_rails"] = br
 st = None
 for xc in cath_xc:                                              # cathode riser straps to the - rail
-    v = box(xc - 10, 82, 490, 20, 8, 700).union(box(xc - 10, 82, 1190, 20, 110, 6))
+    v = box(xc - 10, 78, 485, 20, 8, 705).union(box(xc - 10, 78, 1190, 20, 110, 6))   # overlaps the plate top: fuses
     st = v if st is None else st.union(v)
 for xk in anode_xc:                                             # anode straps from clamp top to + rail
     v = box(xk - 10, ay + 4, 1184, 20, 8, 12).union(box(xk - 10, ay + 4, 1188, 20, 196, 6)).union(box(xk - 10, 570, 1188, 20, 60, 6))
@@ -128,8 +124,8 @@ parts["bus_straps"] = st
 parts["offtake_riser"] = tube(RY, RY - A["DN80_wall_mm"], (rx_, ry_, BATH), "Z", 1594 - BATH)
 parts["riser_flange"] = box(rx_ - 70, ry_ - 70, 1144, 140, 140, 10)
 dl = A["DN15_OD_mm"] / 2
-parts["dip_leg"] = tube(dl, dl - A["DN15_wall_mm"], (rx_, ry_, BATH - 100), "Z", 150)   # returns caught brine fog
-parts["vent_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (rx_, ry_ - RY, 800), "Y", -40)  # N5 on the riser at z 800, in-envelope
+parts["dip_leg"] = tube(dl, dl - A["DN15_wall_mm"], (rx_, ry_, BATH - 100), "Z", 900)   # returns caught brine fog; up to the flange
+parts["vent_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (rx_, ry_ - RY + 25.0, 800.0), "Y", -50)   # overlaps the riser wall: fuses
 
 # ---------------- N2/N6 Cl2 stubs (+Y at z 600) -----------------------------------
 st = None
@@ -154,13 +150,13 @@ parts["mg_tap_group"] = tap_run(670, 660)                        # N1 +X: metal 
 parts["reductant_tap_group"] = tap_run(130, -45)                 # N5 -X: Mg reductant draw to the Kroll retort
 
 # ---------------- N3/N4 inlets (-Y at z 160): return stub + brine lance -----------
-ret = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (256.0, -45.0, 160.0), "Y", 50)
-chute = box(509, 320, 130, 35, 160, 90)
-lance = tube(22.0, 11.0, (730, 400, 160), "X", -100)             # DN44 class lance into the bath from -X? no: +X wall
-parts["inlet_groups"] = ret.union(chute).union(lance)
+ret_chute = box(238, -45, 130, 36, 115, 90)              # N3 MgCl2 return launder: crosses the -Y wall into the bath
+br_chute = box(526, -45, 130, 36, 115, 90)               # N4 brine launder
+lance = tube(22.0, 11.0, (544.0, 20.0, 160.0), "Y", 380)  # brine lance from inside the launder into the bath
+parts["inlet_groups"] = ret_chute.union(br_chute).union(lance)
 
 # ---------------- N4 drain well ---------------------------------------------------
-parts["drain_well"] = tube(30.0, dl, (256, 160, 0), "Z", 50)
+parts["drain_well"] = tube(30.5, dl, (256, 160, 0), "Z", 50)   # bore matches the casing pass: fuses
 
 # ---------------- process inventory solids (not BOM parts) -----------------------
 bath_h = BATH - 100

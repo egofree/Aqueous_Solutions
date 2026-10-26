@@ -45,7 +45,6 @@ casing = box(0, 0, 0, L, W, H).cut(box(6, 6, 6, L - 12, W - 12, 1588))          
 roof = box(0, 0, 1594, L, W, 6)
 casing = casing.union(roof)
 casing = casing.cut(rod(RY + 2, (rx_, ry_, 1585), "Z", 30))                      # riser pass at the roof
-casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (-5.0, 400.0, 160.0), "X", 90.0))   # N2 brine inlet pass
 casing = casing.cut(rod(A["DN15_OD_mm"] / 2 + 1, (598.0, W - 40, 600.0), "Y", 90.0)) # N3 Cl2 export pass (+Y at 600)
 casing = casing.cut(rod(30.5, (256.0, 160.0, -5.0), "Z", 85.0))                  # N4 drain well pass
 casing = casing.cut(rod(57.5, (L - 40, 400.0, 605.0), "X", 90.0))                # N1 tap well pass (+X z 600)
@@ -122,8 +121,8 @@ parts["bus_straps"] = st
 parts["offtake_riser"] = tube(RY, RY - A["DN50_wall_mm"], (rx_, ry_, BATH), "Z", 1594 - BATH)
 parts["riser_flange"] = box(rx_ - 70, ry_ - 70, 1144, 140, 140, 10)
 dl = A["DN15_OD_mm"] / 2
-parts["dip_leg"] = tube(dl, dl - A["DN15_wall_mm"], (rx_, ry_, BATH - 100), "Z", 150)   # returns caught brine fog
-parts["vent_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (rx_, ry_ - RY, 800), "Y", -40)  # N5 on the riser at z 800, in-envelope
+parts["dip_leg"] = tube(dl, dl - A["DN15_wall_mm"], (rx_, ry_, BATH - 100), "Z", 900)   # returns caught brine fog; up to the flange
+parts["vent_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (rx_, ry_ - RY + 20.0, 800), "Y", -45)  # N5 on the riser at z 800, fused to the wall
 
 # ---------------- N3 Cl2 export stub (+Y at z 600) -------------------------------
 parts["cl2_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"],
@@ -146,7 +145,7 @@ lance = tube(22.0, 11.0, (70, 400, 160), "X", 100)               # DN44 class la
 parts["brine_inlet_group"] = chute.union(lance)
 
 # ---------------- N4 drain well ---------------------------------------------------
-parts["drain_well"] = tube(30.0, dl, (256, 160, 0), "Z", 50)
+parts["drain_well"] = tube(30.5, dl, (256, 160, 0), "Z", 50)   # bore matches the casing pass: fuses
 
 # ---------------- process inventory solids (not BOM parts) -----------------------
 bath_h = BATH - 100

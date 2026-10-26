@@ -2,12 +2,12 @@
   "shell_bbox_mm": [
     800.3,
     800.1,
-    1600.3
+    1600.2
   ],
   "shell_bbox_abs": [
     -0.1,
     -0.1,
-    -0.1,
+    -0.0,
     800.3,
     800.1,
     1600.2
@@ -17,7 +17,7 @@
     "-X": 35.0,
     "+X": 44.5,
     "-Y": 45.1,
-    "+Y": 5.0
+    "+Y": 6.0
   },
   "overhang_allowance_mm": 50.0,
   "overhang_ok": true,
@@ -30,7 +30,7 @@
     "anode_gas_stub",
     "co2_stub"
   ],
-  "cap_solids": 4,
+  "cap_solids": 2,
   "all_parts_valid": true,
   "anode_j_A_cm2_drawn": 0.0021,
   "bath_volume_litres": 122.0,
@@ -49,7 +49,7 @@
     "bus_straps": 3.3,
     "offtake_riser": 3.6,
     "riser_flange": 1.5,
-    "dip_leg": 0.1,
+    "dip_leg": 0.9,
     "vent_stub": 0.0,
     "raffinate_stub": 0.0,
     "anode_gas_stub": 0.0,

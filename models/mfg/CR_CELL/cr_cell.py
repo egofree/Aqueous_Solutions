@@ -123,11 +123,11 @@ parts["bus_straps"] = st
 parts["offtake_riser"] = tube(RY, RY - A["DN50_wall_mm"], (rx_, ry_, BATH), "Z", 1594 - BATH)
 parts["riser_flange"] = box(rx_ - 70, ry_ - 70, 1144, 140, 140, 10)
 dl = A["DN15_OD_mm"] / 2
-parts["dip_leg"] = tube(dl, dl - A["DN15_wall_mm"], (rx_, ry_, BATH - 100), "Z", 150)   # returns caught brine fog
-parts["vent_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (rx_, ry_ - RY, 800), "Y", -40)  # N6 on the riser at z 800, in-envelope
+parts["dip_leg"] = tube(dl, dl - A["DN15_wall_mm"], (rx_, ry_, BATH - 100), "Z", 900)   # returns caught brine fog; up to the flange
+parts["vent_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (rx_, ry_ - RY + 20.0, 800), "Y", -45)  # N6 on the riser at z 800, fused to the wall
 
 # ---------------- N4 CO export stub (+Y at z 600) ---------------------------------
-parts["co_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (544.0, W - 40, 600.0), "Y", 45)
+parts["co_stub"] = tube(A["DN15_OD_mm"] / 2, A["DN15_OD_mm"] / 2 - A["DN15_wall_mm"], (544.0, W - 34.0, 600.0), "Y", 40)   # starts inside the casing wall: fuses
 
 # ---------------- N1 Cr-metal tap well (+X at z 600) ------------------------------
 wr = 44.45                                        # tap-well bore class (DN80 study form, OD 88.9)
@@ -146,7 +146,7 @@ ch2 = box(-35, 480, 130, 35, 160, 90)                            # carbon reduct
 parts["feed_chutes"] = ch1.union(ch2)
 
 # ---------------- N4 drain well ---------------------------------------------------
-parts["drain_well"] = tube(30.0, dl, (256, 160, 0), "Z", 50)
+parts["drain_well"] = tube(30.5, dl, (256, 160, 0), "Z", 50)   # bore matches the casing pass: fuses
 
 # ---------------- process inventory solids (not BOM parts) -----------------------
 bath_h = BATH - 100
