@@ -76,6 +76,8 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/HAB_WATER.md` | Rev C. Purpose and scope added, sections renumbered. No unit, stream or rate changed. |
 | `docs-authority/HAZOP.md` | Rev B, through `_hazop.py`. Purpose and scope added, sections numbered. No deviation, cause, safeguard or action changed; the team-HAZOP study scope statement stays. |
 | `docs-authority/HEAT_LADDER_DUTIES.md` | Rev E. Status note added: it stays the historical record of the Rev K to Rev M edge-duty derivation; the live duties regenerate into the graph each pass and the page is not reissued per graph revision. |
+| `docs-authority/LIFE_MEP.md` | Verified against the checker and the guide structure. |
+| `docs-authority/WATER_PURIFICATION.md` | Verified against the checker and the guide structure. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
 | `docs-authority/SELF_COPY_BOM.md` | Rewritten in full, with the generated reconciliation section rewritten in `_sc_reconcile.py`; section 4 corrected to the flag values in the graph. |
 | `docs-authority/RECT_EW.md` | Rev C. Purpose and numbered table added; section 4 records how the graph now represents the rectifier. See section 6. |
@@ -125,7 +127,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/ITP.md` | |
 | `docs-authority/JELLYBEAN.md` | |
 | `docs-authority/LIFE_FITOUT_PLAN.md` | |
-| `docs-authority/LIFE_MEP.md` | |
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | |
 | `docs-authority/LOAD_LIST.md` | |
 | `docs-authority/MATERIALS_SEC3.md` | |
@@ -154,7 +155,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/TEST_PLAN.md` | |
 | `docs-authority/UNIT_MATERIALS.md` | |
 | `docs-authority/VENT_CLOSURE.md` | |
-| `docs-authority/WATER_PURIFICATION.md` | |
 | `docs-authority/WELD_MAP.md` | |
 | `docs-authority/WIRE_SPECS.md` | |
 
