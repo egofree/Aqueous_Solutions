@@ -1,5 +1,8 @@
-item,description,qty,material,basis
-1,"Two-high housing, rolls stacked at 310 mm centres",1,CS weldment,AQS-DUTY-072 section 3; 13.0 kg/d
-2,Work rolls 300 dia x 640 mm,2,forged tool steel,AQS-DUTY-072 section 3
-3,Entry and exit roller tables 400 mm,2,CS rollers,AQS-DUTY-072 section 3
-4,Geared drive with motor,1,"geared motor, IEC frame",0.416 kWh/d (A-M-177 rolling class)
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Base 1500 x 800 x 60 with four posts; table-deck rollers,1,carbon steel,988.9,make,WORK_ORDER step 1
+2,"Two-high stand: window 300 x 260 x 260, housings to z 1210",1,carbon steel,676.4,make,AQS-DUTY-072 two-high bench class
+3,"Rolls OD 300 x 640 (bottom fixed, top screw-adjust)",2,cast steel (roll class),887.8,make,design rolls row; 13.0 kg/d rolled
+4,Roll chocks 380 x 140 x 120 in the stand window,4,carbon steel,102.9,make,WO step 2
+5,Screw-down OD 50 through the stand top,1,carbon steel,5.4,make,gap adjustment per WO step 3
+6,N1/N3 entry guide -X at the pass line; N2 sheet guide +X,2,carbon steel,80.5,make,task-04 schedule N1/N2/N3
+7,N4 drain well + N5 vent stub,2,carbon steel,1.7,make,task-04 schedule N4/N5

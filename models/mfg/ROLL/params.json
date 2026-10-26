@@ -1,0 +1,21 @@
+{
+ "size_mm": [
+  1500,
+  800,
+  1500
+ ],
+ "graph_revision": "AC",
+ "layout_note": "Registered layout: N1/N3 billet entry guide -X at the pass line z ~950; N2 sheet guide +X; N4 drain bottom (400,400) z 50; N5 vent on the base at (750,400) to the z 800 datum. The pass line sits at the bottom-roll centre + radius. Faces are the layout choice; heights/bore/rating are the task-04 schedule verbatim.",
+ "assumptions": {
+  "DN15_OD_mm": 21.3,
+  "DN15_wall_mm": 2.0
+ },
+ "design": {
+  "machine": "two-high bench rolling mill",
+  "rolled_kg_d": 13.0,
+  "rolls_D_mm": 300,
+  "roll_L_mm": 640,
+  "kWh_d": 0.416
+ },
+ "doc": "AQS-DUTY-072 two-high bench class"
+}

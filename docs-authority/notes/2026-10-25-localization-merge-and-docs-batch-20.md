@@ -303,3 +303,14 @@ billet bed, and the mould-change gantry that carries the full 1500 x 800 x
 1500 frame. check.json records the acceptance; the export STL is watertight;
 the X-PAR-04 gate passes. The 8-sheet drawing set is stamped with SVG and
 PDF. Unit task 11 keeps the house partial state.
+
+## Addendum 19: FOUNDRY-ROLL-10 accepted at M3
+
+The two-high bench mill moves from the M2 foundry export to a dedicated build
+(models/mfg/ROLL/roll.py + params.json): OD 300 x 640 rolls across the full
+width in a full-width-window stand, screw-down reaching the frame datum, entry
+and sheet guides to the base, and roller tables on pedestals. check.json
+records the acceptance; the registry solid passes the X-PAR-04 gate. The
+8-sheet drawing set is stamped with SVG and PDF. One tessellation-seam edge in
+the ASCII export is recorded in check.json (non_manifold_note); the solid is a
+single valid fused body. Unit task 11 keeps the house partial state.

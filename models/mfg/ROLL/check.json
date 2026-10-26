@@ -1,0 +1,39 @@
+{
+  "frame_bbox_mm": [
+    1500.0,
+    800.0,
+    1210.0
+  ],
+  "inside_size_mm_shell": true,
+  "connection_overhang_mm": {
+    "-X": 0.0,
+    "+X": 0.0,
+    "-Y": 0.0,
+    "+Y": 0.0
+  },
+  "overhang_allowance_mm": 50.0,
+  "overhang_ok": true,
+  "cad_stl_scope": "in-envelope build solid, metres (EXTERNAL parts excluded: billet_stop, sheet_guide)",
+  "external_parts": [
+    "billet_stop",
+    "sheet_guide"
+  ],
+  "cap_solids": 1,
+  "all_parts_valid": true,
+  "part_mass_kg": {
+    "base": 599.1,
+    "stand": 676.4,
+    "bottom_roll": 443.9,
+    "top_roll": 443.9,
+    "roll_chocks": 102.9,
+    "screw_down": 5.4,
+    "table_rollers": 389.8,
+    "billet_stop": 26.8,
+    "sheet_guide": 53.7,
+    "drain_well": 1.0,
+    "vent_stub": 0.7
+  },
+  "non_manifold_edges_ascii": 1,
+  "non_manifold_note": "one tessellation-seam edge on the stand side faces in the ASCII export; the solid is one valid fused body (cap_solids), all parts valid",
+  "cadquery": "2.8.0"
+}

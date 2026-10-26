@@ -1,9 +1,10 @@
 # Work order ROLL
 
-Authority: AQS-DUTY-072 (X-MFG-30 pattern). In-house fabrication; no bought line machine.
+Authority: AQS-DUTY-072 (X-MFG lane). LIVE unit - two-high bench mill.
 
-1. Fabricate and level the bench/frame; set the machine envelope 1500 x 800 x 1500 mm.
-2. Fit the line elements per bom.csv (two-high bench rolling mill).
-3. Guard the moving parts (ISO 14122-2 access; guards per AQS-BLD-012 class).
-4. Test: dry run, then trial feed pass; record dimensions on the traveller.
-5. Inspect against models/mfg/ROLL/export/roll.step.
+1. Fabricate the base and table rollers; set on anchors.
+2. Erect the stand; seat the roll chocks and both rolls; fit the screw-down.
+3. Set the roll gap at the pass line z 1100; fit the entry guide and sheet guide.
+4. Fit the N4 drain and N5 vent.
+5. Test: roll gap parallelism, then a trial pass of the CONT_CAST billet.
+6. Inspect against models/mfg/ROLL/export/roll.step; record dimensions on the traveller.
