@@ -999,6 +999,7 @@ All solved units close.
 | CODATA2018 | Tiesinga E. et al., CODATA recommended values of the fundamental physical constants: 2018, Rev. Mod. Phys. 93, 025010 (2021). F = 96485.33212 C/mol; R = 8.314462618 J/(mol K); sigma = 5.670374419e-8 W/(m2 K4). |
 | COEY2010 | Coey J.M.D., Magnetism and Magnetic Materials, Cambridge University Press (2010), ch. 11: properties of hard magnets (sintered Nd2Fe14B, sintered and bonded hexaferrite). |
 | COOPER1996 | Cooper A., The ABC of NFT, 2nd ed., Grower Books, London (1996): about 1 L/min per gully, half at planting, 2 L/min upper limit; slope 1:30-1:100; gully length under 10-15 m. |
+| COSPAR_POLICY | COSPAR Policy on Planetary Protection (AQS-PLAN-011 section 8, [30]). |
 | CRC_AL | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements: Al melting point 660.3 C, enthalpy of fusion 10.7 kJ/mol (397.3 kJ/kg), cp about 0.90 kJ/(kg K) at 25 C rising to about 1.2 near the melting point (mean solid about 1.05), liquid cp 1.18 kJ/(kg K); density 2.70 g/cm3; molar mass 26.9815 g/mol. |
 | CRC_COND | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), Electrical conductivity of aqueous solutions (20 C): NaCl 2.5 % 39 and 5 % 70 mS/cm; NaOH 5 % 223 and 10 % 358 mS/cm; HCl 5 % 394 and 10 % 630 mS/cm. |
 | CRC_CU | Haynes W.M. (ed.), CRC Handbook of Chemistry and Physics, 97th ed. (2016), properties of the elements and heat capacity of the elements: Cu melting point 1084.62 C, enthalpy of fusion 13.26 kJ/mol (208.7 kJ/kg), cp 24.44 J/(mol K) at 25 C rising to about 30 J/(mol K) near the melting point, liquid cp 32.8 J/(mol K); density 8.96 g/cm3. Ar molar mass 39.95 g/mol. |
@@ -1102,9 +1103,16 @@ All solved units close.
 | MCCABE7_DUHRING | McCabe W.L., Smith J.C., Harriott P., Unit Operations of Chemical Engineering, 7th ed., McGraw-Hill (2005), ch. 16 evaporation: Duhring lines for NaOH-water (boiling-point elevation). |
 | METCALF5 | Metcalf & Eddy / Tchobanoglous G. et al., Wastewater Engineering: Treatment and Resource Recovery, 5th ed. (2014), ch. 13 anaerobic digestion: high-rate mesophilic SRT 15-20 d at 35 C. |
 | METCALF5_BIOMASS | Metcalf & Eddy 5th ed. (2014) ch. 7: biomass composition C5H7O2N (113 g/mol), 1.42 g COD/g cells; digester gas about 65 % CH4 by volume (ch. 13). |
+| MOXIE | NASA MOXIE: solid oxide electrolysis of carbon dioxide demonstrated on the Martian surface (Hecht et al., 2023; AQS-PLAN-011 section 8, [28]). |
 | NARASIMHAN2000 | Narasimhan S., Jordache C., Data Reconciliation and Gross Error Detection, Gulf Publishing (2000), ch. 3: linear steady-state reconciliation, minimum weighted least-squares adjustment subject to the balance constraints. |
 | NASA_5A1998 | Mulloth L.M., Finn J.E., Carbon Dioxide Adsorption on a 5A Zeolite Designed for CO2 Removal in Spacecraft Cabins, NASA/TM-1998-208752: ASRT 5A isotherms 0-250 C, about 1.0 wt% CO2 at 0.4 kPa (3 torr), 25 C. |
 | NASA_CDRA2015 | Knox J.C. et al., Optimization of the Carbon Dioxide Removal Assembly (CDRA-4EU), NTRS 20150016500 (2015): two desiccant and two adsorbent beds, one pair adsorbing while the other regenerates at 204 C, nominal half-cycle 144 min, 34.7 m3/h. |
+| NASA_MARS_ATMOS | Mars atmospheric composition (mole fraction): CO2 0.951, N2 0.0259, Ar 0.0194, O2 0.00161, CO 0.00058 (AQS-PLAN-011 section 8, [17]). |
+| NASA_MARS_FACT | NASA Mars Fact Sheet: surface gravity 3.71 m/s2, solar day 88775 s, synodic period 779.94 d, solar irradiance 586.2 W/m2 mean, surface pressure 0.636 kPa, temperature 210 K mean (184-242 K at Viking 1), surface density about 0.020 kg/m3 (AQS-PLAN-011 section 8, [16]). |
+| NASA_MARS_ICE | Excess ground ice within metres of the surface in Arcadia Planitia (Dundas et al., 2021; AQS-PLAN-011 section 8, [24], [25]). |
+| NASA_MARS_PERCHLORATE | Perchlorate in Martian soil: 0.4 to 0.6 percent by mass at the Phoenix landing site (HEICT et al., 2009; AQS-PLAN-011 section 8, [23]). |
+| NASA_MARS_RAD | Surface radiation at Gale crater: 0.64 mSv/d dose equivalent (RAD instrument, MSL; AQS-PLAN-011 section 8, [21]). |
+| NASA_STD_3001 | NASA-STD-3001: NASA Space Flight Human-System Standard (crew health; AQS-PLAN-011 section 8, [32]). |
 | NCEI_DV_EXTREMES | NOAA NCEI station all-time records, Death Valley NP (USC00042319): highest recorded air temperature 56.7 C on 1913-07-10 (world record, WMO assessed); lowest about -9.4 C. Station extremes are interim bounding design values until the ASHRAE climatic design conditions for the nearest listed station are entered. |
 | NEC2026 | NFPA 70, National Electrical Code (2026): 210.20(A)/215.3 continuous load at 125 %; 240.6(A) standard overcurrent device ratings. |
 | NEC2026_240 | NFPA 70-2026 240.6(A) standard ampere ratings; 240.87 arc energy reduction for breakers rated or adjustable to 1200 A or higher. |
@@ -1143,6 +1151,7 @@ All solved units close.
 | OSHA_1910_119 | 29 CFR 1910.119, Process Safety Management of Highly Hazardous Chemicals: Appendix A and (a)(1)(ii) flammable liquid or gas threshold 10,000 lb on site in one location. |
 | OSHA_1910_146 | 29 CFR 1910.146 (b): oxygen-deficient atmosphere below 19.5 % by volume; oxygen-enriched above 23.5 % by volume. |
 | OTEC_GRADIENT | Ocean thermal energy conversion needs at least about 20 K between the surface and about 1000 m depth; found year-round in tropical waters (AQS-PLAN-011 section 10). |
+| OUTER_SPACE_TREATY | Treaty on Principles Governing the Activities of States in the Exploration and Use of Outer Space (1967; AQS-PLAN-011 section 8, [29]). |
 | O_BRIEN2005 | O'Brien T.F., Bommaraju T.V., Hine F., Handbook of Chlor-Alkali Technology, Springer (2005), vol. I ch. 4: oxygen evolution as an anode side reaction in chloride electrolysis, typically 1-3 % of anode current on oxide-coated anodes. |
 | PACKED_COL_MOTION | Packed columns under tilt and motion: static tilt harms liquid distribution more than motion of the same amplitude; bed height limited to two to three column diameters; published packing-height margins 1.1 to 2.0 (AQS-PLAN-011 section 10). |
 | PERRY7_HCL_VLE | Perry R.H., Green D.W. (eds), Perry's Chemical Engineers' Handbook, 7th ed., McGraw-Hill (1997), Table 2-9 Partial pressures of water over aqueous solutions of HCl and Table 2-10 Partial pressures of HCl over aqueous solutions of HCl, p. 2-76 (log10 p = A - B/T fits per wt% row; 8th ed. Tables 2-11/2-12). |
