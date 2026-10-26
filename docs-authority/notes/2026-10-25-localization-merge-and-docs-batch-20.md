@@ -248,3 +248,16 @@ valid. The cad/stl registry solid is the in-envelope build and the X-PAR-04
 gate passes. The 8-sheet drawing set is stamped (AQS-DWG-002) with SVG and PDF.
 The task-plan generator's DONE_X set carries the X-LOC-09..12 ticks so the
 board and the files agree.
+
+## Addendum 14: FOUNDRY-MG_POT-10 accepted at M3
+
+The Kroll-magnesium recycling pot moves from the M2 foundry export to a
+dedicated build (models/mfg/MG_POT/mg_pot.py + params.json): four D50 graphite
+anodes at 300 mm immersion, three cathode plates, the 50 mm2 Cu bus class, the
+DN80 chlorine offtake (1.4813 kg/d; N2 return and N6 chlorinator feed per the
+A-M-280 ruling), and the N1/N5 tap groups, N3/N4 inlets and N7 drain per the
+task-04 schedule. check.json records the acceptance: in-envelope build,
+schedule hardware within the 50 mm allowance, all parts valid; the X-PAR-04
+gate passes on the in-envelope registry solid. The 8-sheet drawing set is
+stamped with SVG and PDF. Unit task 11 stays partial per the house convention
+(per-part dimension chains open) alongside AL_POT, CAST_LINE and CA_POT.

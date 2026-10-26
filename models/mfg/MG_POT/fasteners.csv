@@ -1,4 +1,4 @@
 item,size,grade,qty,location,basis
-1,M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,10,anode clamp bars,study
-2,M10 x 30 hood bolts,ISO 898-1 8.8,16,hood rim flange,study
-3,M12 anchor,ISO 898-1 8.8,4,cell shell to slab,study
+1,M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,anode clamp bars,study
+2,M8 x 25 hood bolts,ISO 898-1 8.8,12,hood rim flange,study
+3,M10 anchor,ISO 898-1 8.8,4,cell shell to slab,study

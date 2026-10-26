@@ -1,8 +1,19 @@
-item,description,qty,material,basis
-1,"Lined cell shell 800 x 800 x 1000 mm (70 mm casing + refractory), bath at 700 C",1,"CS casing, ceramic-fibre + ram lining","AQS-DUTY-072 section 4; molten MgCl2 electrolysis cell (Kroll Mg recycle), 700 C"
-2,"Anode bank, 4 x D50 mm graphite anodes at 300 mm immersion",4,"graphite, chlorinated",Faraday I = 55 A at CE 0.85 (A-M-282); MgCl2 -> Mg + Cl2
-3,"Cathode plate set, 3 x 110 x 12 mm with product pocket",3,mild steel / clad,0.5078 kg/d metal on the D-DOCK chloride import (A-M-284)
-4,"Cu busbar ladder: 2 rails 12 x 5 mm (50 mm2 class), straps and DC drops",1,Cu ETP,55 A at 4.2 V cell; 0.231 kW dc + 0.1069 kW hold of 1 kW connected
-5,Hood with gas offtake DN80 and dip leg,1,"CS hood, Hastelloy C-276 dip leg",1.4813 kg/d Cl2 to the Kroll loop (AQS-BAL-KROLL)
-6,Feed chute with hopper cone and rotary seal,1,CS + refractory throat,1.989 kg/d feed (A-M-284 feedstock ruling)
-7,"Thyristor rectifier + bath hold heaters, 1 kW connected",1,"cabinet, IP54",AQS-DUTY-072 section 4; A-M-282 current class
+item,description,qty,material,mass_kg,make_or_buy,basis
+1,Lined cell shell 800 x 800 x 1600 mm: casing t6 (walls + roof + head plate 1154),1,carbon steel (CS class),315.3,make,"WORK_ORDER step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per AQS-DUTY-072 cell-class study minimum"
+2,"Ceramic-fibre backup lining kit, t24",1,ceramic-fibre board 128 kg/m3,16.6,make,duty section 3 backup lining class (SCHACHT2004); anhydrous concentrate (X-MAT-22)
+3,"Graphite ram lining kit, t40, wetted faces",1,graphite ramming paste 1550 kg/m3,298.0,make,duty section 3 graphite wetted faces; DING2018_CL_REVIEW; liner change-out at the unit task 12 work order
+4,"Anode bank, 4 x D50 x 1064 mm, 300 mm immersion",4,graphite (chlorinated),14.9,buy,Faraday I = 54.89 A at CE 0.85 (A-M-282); drawn j 0.0280 A/cm2; MgCl2 -> Mg + Cl2
+5,"Cathode plate set, 4 x 110 x 12 x 300 mm",4,mild steel / clad,12.5,make,0.5078 kg/d Ca metal on the D-DOCK chloride import (A-M-284)
+6,Cu busbar ladder: 2 rails 10 x 5 mm (50 mm2 class) + straps + ceramic pads,1,Cu ETP + alumina pads,5.6,make,54.89 A at 4.2 V cell; 0.2306 kW dc + 0.1069 kW hold of 1.0 kW connected; frame-isolated per AQS-STD-002 section 11
+7,"Anode clamp bars 90 x 40 x 24 on the head plate (8 x M10 studs, fasteners.csv item 1)",4,carbon steel,2.7,make,WORK_ORDER step 2/3: torque and megger check
+8,"Hood group: CS hood plate t6 + perimeter rim lip, on the graphite hot plate",1,carbon steel,71.5,make,WO step 4; dry Cl2 headspace at 700 C (M7)
+9,"Hood hot plate, graphite t10 (expendable wetted face)",1,graphite,7.2,make,duty section 3 wetted-face class; change-out at the unit task 12 work order
+10,"Offtake riser DN80 OD 88.9 t 2.0, z 400..1594, flange + N8 vent at top",1,carbon steel (dry hot Cl2),6.6,make,WO row 5; nozzles per the task-04 schedule (N8 vent top 800)
+11,"Return dip leg DN15, inside the riser annulus, bottom z 250",1,carbon steel,0.1,make,WO row 5; brine-fog return seal leg
+12,N2/N6 Cl2 stubs DN15 at +Y z 600 (1.4813 kg/d: return and chlorinator feed),2,carbon steel (dry hot Cl2),0.1,make,"task-04 schedule N2/N6; A-M-280 Cl2 ruling (chlorinator feed, return net of drag-out)"
+12b,N5 Mg-reductant tap group -X z 600 (0.5078 kg/d Mg to the Kroll retort),1,carbon (ram class),5.1,make,"task-04 schedule N5 (solids, bore not calculated); WO step 6 reductant draw"
+12c,N3/N4 inlets -Y z 160: Kroll MgCl2 return stub + brine lance (1.9891 kg/d),2,"CS chute, carbon lance",4.9,make,task-04 schedule N3/N4; A-M-284 feedstock ruling
+13,Ca-metal tap group: well DN80 OD 88.9 carbon + crest + discharge lip at +X z 600,1,carbon (ram class),5.1,make,"task-04 schedule N1 (solids, bore not calculated); WO step 6 trial-electrolysis tap"
+14,N4 brine inlet group: chute box + DN44 lance into the bath at z 160,1,"CS chute, carbon lance",4.9,make,task-04 schedule N4; A-M-284 feedstock ruling; WO step 4
+15,"N7 drain well: carbon sump tube OD 60, DN15 bore, sump face z 50, flush at z 0",1,carbon (ram class),0.2,make,task-04 schedule N4 bottom DN15 Class 150; frozen-salt drain pig per WO step 6
+16,"Thyristor rectifier + bath hold heaters, 1.0 kW connected, IP54 cabinet",1,purchase item,,buy,WO step 5/7; AQS-DUTY-072 section 4; A-M-282 class; mass per the purchase datasheet at order
