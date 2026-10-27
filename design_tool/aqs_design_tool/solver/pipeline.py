@@ -19,7 +19,7 @@ _REPO = Path(__file__).resolve().parents[3]
 if str(_REPO) not in sys.path:
     sys.path.insert(0, str(_REPO))
 
-from flow_graph.param.balance import reconcile  # noqa: E402
+from flow_graph.param.balance import physics, reconcile  # noqa: E402
 from aqs_design_tool.paths import FLOW_GRAPH_JSON  # noqa: E402
 
 
@@ -30,16 +30,25 @@ def solve_mass(mvs_units: list[dict], sandbox_id: str | None = None) -> dict[str
     'max_residual', 'note'}``.
     """
     g = json.loads(FLOW_GRAPH_JSON.read_text())
+    g0 = copy.deepcopy(g)
     disabled = {u['unit_id'] for u in mvs_units if not u.get('enabled', True)}
     if disabled:
         g['nodes'] = [n for n in g['nodes'] if n['unit_id'] not in disabled]
         gone = set(disabled)
         g['edges'] = [e for e in g['edges']
                       if e['from_unit_id'] not in gone and e['to_unit_id'] not in gone]
-    # Phase 1 scope: the X-PAR-02 physics TFs are baseline-bound (they patch edges the
-    # sandbox may have removed - a leo fold has no ZNBR2 line for T-functions to write).
-    # The reconciliation runs alone; the response note carries the limitation. Phase 2 makes
-    # the TFs edge-existence-tolerant so the fold gets the full physics pass.
+    # The X-PAR-02 physics TFs are baseline-bound: a fold that removed edges (a leo fold
+    # has no ZNBR2 line for T-functions to write) breaks them. Policy: run the full
+    # physics pass when the fold survives it; otherwise roll back to the pre-physics
+    # graph and reconcile alone, stating the limitation. The baseline and the Earth-site
+    # folds (nothing removed) therefore get the full pipeline behaviour.
+    tf_note = 'full physics pass'
+    try:
+        physics(g)
+    except (KeyError, AssertionError):
+        g = copy.deepcopy(g0)
+        tf_note = ('physics TF pass skipped: the fold lacks baseline edges the TFs write; '
+                   'reconciliation runs on held study rates alone')
     R = reconcile(g)
     max_resid = float(max(abs(R['r'])) ) if len(R['r']) else 0.0
     items = []
@@ -53,9 +62,12 @@ def solve_mass(mvs_units: list[dict], sandbox_id: str | None = None) -> dict[str
     status = 'ok' if max_resid < 1e-3 else 'partial'
     return {'status': status, 'residuals': {'mass': items}, 'nodes_solved': len(R['nodes']),
             'max_residual': round(max_resid, 6), 'sandbox_id': sandbox_id,
-            'note': ('X-PAR-02 least squares on the sandbox fold, reconciliation only (the physics TF pass '
-                     'is baseline-bound in Phase 1); boundary sinks are exempt '
-                     'by design (NORTH_DOCK trade, ATMOS evaporation, exports).')}
+            'tf_note': tf_note, 'disabled': len(disabled),
+            'note': ('X-PAR-02 least squares on the sandbox fold; boundary sinks are exempt '
+                     'by design (NORTH_DOCK trade, ATMOS evaporation, exports). ' + tf_note +
+                     f'. {len(disabled)} units disabled: the fold can mass-close as a balanced '
+                     'subset while carrying FEWER FUNCTIONS - the functional-gap analysis is the '
+                     'stub solve jurisdiction (GET /flags).')}
 
 
 def _graph_path() -> Path:

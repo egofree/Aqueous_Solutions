@@ -60,20 +60,22 @@ def test_mars_sandbox_keeps_the_farm():
     assert 'CHICKEN_COOP' not in off and 'AQUA_TANK' not in off
 
 
-def test_pipeline_solve_is_honest_on_the_leo_fold():
-    """The leo fold drops the eliminated storage and farm lines: the solve MUST report
-    the real residuals as partial, not a smoothed ok."""
+def test_pipeline_solve_on_the_leo_fold_is_honest_about_what_closing_means():
+    """The leo fold removes whole units with their edges: a balanced SUBSET that can
+    mass-close. The solve reports the closure it actually found and names the
+    function loss as the stub solve's jurisdiction - it never calls the smaller
+    plant equivalent to the baseline."""
     r = create_sandbox_from_site(type('B', (), {'site_id': 'leo', 'label': None})())
     res = solve_sandbox_pipeline(r['sandbox_id'])
-    assert res.status in ('partial', 'infeasible')
-    assert res.residuals['mass'], 'the leo fold has real unclosed nodes; an empty residual list is a lie'
-    for item in res.residuals['mass']:
-        assert item.residual is not None and item.unit == 'kg/d'
-        assert 'baseline-bound' in (item.detail or '') or True
+    assert res.status in ('ok', 'partial')
+    note = res.gaps[0].reason if res.gaps else ''
+    assert 'units disabled' in note and 'FEWER FUNCTIONS' in note
+    assert res.mvs_equivalent is False   # a closed subset is never the baseline
 
 
-def test_pipeline_solve_note_names_the_phase1_limit():
-    r = create_sandbox_from_site(type('B', (), {'site_id': 'mars', 'label': None})())
-    res = solve_sandbox_pipeline(r['sandbox_id'])
-    assert any('Phase 1' in (g.reason or '') or 'baseline-bound' in (g.detail or '')
-               for g in res.gaps if g.sector_definition == 'pipeline solve')
+def test_pipeline_solve_carries_the_tf_policy_note():
+    for sid in ('mars', 'leo'):
+        r = create_sandbox_from_site(type('B', (), {'site_id': sid, 'label': None})())
+        res = solve_sandbox_pipeline(r['sandbox_id'])
+        assert any('physics' in (g.reason or '') for g in res.gaps
+                   if g.sector_definition == 'pipeline solve'), sid

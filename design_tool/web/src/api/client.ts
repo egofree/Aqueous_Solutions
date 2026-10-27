@@ -132,6 +132,52 @@ export async function getSystemTree(): Promise<SystemTreeResponse> {
   return jsonOrThrow(await fetch('/api/v1/system-tree'))
 }
 
+/** X-UI-002: the locale scaling profiles a site sandbox can start from. */
+export interface SiteInfo {
+  site_id: string
+  actions: number
+  eliminations: number
+  error?: string
+}
+
+export interface SiteSandboxResponse {
+  sandbox_id: string
+  label: string
+  site_id: string
+  applied: string[]
+  unapplied: string[]
+  replacement_of: Record<string, string>
+  model: MvsModel
+}
+
+export async function listSites(): Promise<{ sites: SiteInfo[] }> {
+  return jsonOrThrow(await fetch('/api/v1/sites'))
+}
+
+export async function createSandboxFromSite(
+  siteId: string,
+  label?: string,
+): Promise<SiteSandboxResponse> {
+  return jsonOrThrow(
+    await fetch('/api/v1/sandbox/from-site', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ site_id: siteId, label }),
+    }),
+  )
+}
+
+/** The REAL X-PAR-02 reconciliation on the sandbox fold. */
+export async function solveSandboxPipeline(id: string): Promise<SolveResponse> {
+  return jsonOrThrow(
+    await fetch(`/api/v1/sandbox/${id}/solve-pipeline`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}),
+    }),
+  )
+}
+
 /** U6: drivers.json listing — READ-ONLY (values live in drivers.json). */
 export async function getParams(): Promise<ParamsResponse> {
   return jsonOrThrow(await fetch('/api/v1/params'))
