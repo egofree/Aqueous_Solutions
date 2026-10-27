@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2493.000 | 2493.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2502.000 | 2502.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -934,7 +934,7 @@ All solved units close.
 | HAB.rooms.rec_m2 | 20.0 | m2 recreation/common day-space | A-M-419 | — |
 | HAB.rooms.sleep_quarters_m2 | 16.0 | m2 private sleeping quarters (4 x 4 m2) | A-M-419 | — |
 | HAB.rooms.common_m2 | 10.0 | m2 common circulation/utility area | A-M-419 | — |
-| FARM.duckweed.raceway_m2 | 240.0 | m2 raceway (Lemna minor, azolla co-culture) | A-M-420 | yes |
+| FARM.duckweed.raceway_m2 | 300.0 | m2 raceway (Lemna minor, azolla co-culture) | A-M-420 (revised 2026-10-26: 240 -> 300 m2 to carry the storage and galley-greens fractions) | yes |
 | FARM.duckweed.prod_g_dry_m2_d | 15.0 | g dry matter per m2 per day | A-M-420 | — |
 | FARM.duckweed.CP_frac | 0.3 | - (crude protein, dry) | A-M-420 | — |
 | FARM.ducks.stock | 6.0 | ducks (Khaki Campbell class) | A-M-421 | yes |
@@ -951,6 +951,47 @@ All solved units close.
 | FARM.bee.honey_kg_d | 0.05 | kg/d honey (annual average) | A-M-424 | — |
 | FARM.worms.bin_m2 | 2.0 | m2 bin (Eisenia fetida, 1 kg stock per 0.5 m2) | A-M-425 | — |
 | HAB.rooms.medical_m2 | 6.0 | m2 medical room | A-M-419 | — |
+| FARM.duckweed.prod_kg_d | 4.5 | kg/d dry matter (300 m2 x 15 g/m2/d) | A-M-420 | — |
+| FARM.feed_prep.layer_kg_d | 1.44 | kg/d formulated layer ration (1.33 duckweed + 0.114 larvae meal) | A-M-426 | — |
+| FARM.feed_prep.quail_kg_d | 0.5 | kg/d formulated quail ration | A-M-426 | — |
+| FARM.feed_prep.store_kg_d | 0.5 | kg/d dried reserve draw (extends the A-M-270 dry matter) | A-M-426 | — |
+| FARM.feed_prep.greens_kg_d | 0.12 | kg/d fresh galley greens | A-M-426 | — |
+| FARM.feed_prep.shell_kg_d | 0.1 | kg/d recycled eggshell (38 g Ca/d) | A-M-426 | — |
+| FARM.feed_prep.reject_kg_d | 0.104 | kg/d screenings/fines back to the BSFL bin | A-M-426 | — |
+| FARM.feed_prep.power_kW | 0.6 | kW (mixer, grinder, HP drier on the storage draw) | A-M-426 | — |
+| FARM.duckweed.fodder_dm | 0.2 | kg/d DM the ducks take as fresh forage (rest of the duck ration is mash) | A-M-426 | — |
+| FARM.duckweed.greens_dm | 0.12 | kg/d DM fresh galley greens (A-M-427) | A-M-426 | — |
+| FARM.feed_prep.store_dm | 0.5 | kg/d DM dried to the A-M-270 reserve | A-M-426 | — |
+| FARM.feed_prep.reject_dm | 0.02 | kg/d DM screenings/fines back to the bin | A-M-426 | — |
+| FARM.quail.feed_kg_bird_d | 0.025 | kg feed per quail per day (A-M-422) | A-M-426 | — |
+| FARM.bsfl.galley_bio_dm | 0.1 | kg/d DM galley biowaste to the bin | A-M-426 | — |
+| FARM.bsfl.galley_bio_wet | 0.5 | kg/d wet galley biowaste to the bin | A-M-426 | — |
+| FARM.classes.duckweed_dm_frac | 0.05 | - fresh duckweed dry-matter fraction | A-M-426 | — |
+| FARM.classes.mash_dm_frac | 0.3 | - pressed mash DM (drained duckweed feed class) | A-M-426 | — |
+| FARM.classes.larva_dm_frac | 0.44 | - prepupae DM | A-M-426 | — |
+| FARM.classes.manure_dm_frac_of_feed | 0.33 | - layer manure DM per feed DM | A-M-426 | — |
+| FARM.classes.layer_manure_moisture | 0.87 | - mash-fed cage manure moisture | A-M-426 | — |
+| FARM.classes.quail_droppings_moisture | 0.92 | - mash-fed cage droppings moisture | A-M-426 | — |
+| FARM.classes.duck_manure_moisture | 0.75 | - duck manure moisture | A-M-426 | — |
+| FARM.classes.sludge_moisture | 0.85 | - settled fish sludge moisture | A-M-426 | — |
+| FARM.classes.eggshell_frac | 0.1 | - shell mass fraction of the egg | A-M-426 | — |
+| FARM.classes.frass_wet_frac_of_feedstock | 0.06 | - frass wet mass per wet feedstock | A-M-426 | — |
+| FARM.classes.aqua_loop_kgd | 200.0 | kg/d loop circulation through the biofilter and beds | A-M-426 | — |
+| FARM.classes.nut_dose_kgd | 5.5 | kg/d mineral nitrate solution to the raceway | A-M-426 | — |
+| FARM.classes.chicken_water_kg_bird_d | 0.03 | kg drinking water per hen per day | A-M-426 | — |
+| FARM.classes.chicken_resp_kg_bird_d | 0.06 | kg respiration/evaporation per hen per day | A-M-426 | — |
+| FARM.classes.quail_water_kg_bird_d | 0.01 | kg drinking water per quail per day | A-M-426 | — |
+| FARM.classes.ca_hopper_kgd | 0.035 | kg/d mineral CaCO3 free-choice hopper (quail bank) | A-M-426 | — |
+| FARM.classes.duck_water_kg_bird_d | 0.33 | kg drinking/wash water per duck per day | A-M-426 | — |
+| FARM.classes.duck_resp_kg_d | 0.8 | kg/d duck pen evaporation (flock) | A-M-426 | — |
+| FARM.classes.rabbit_resp_kg_d | 0.1 | kg/d hutch evaporation | A-M-426 | — |
+| FARM.classes.vermi_feed_kgd | 1.0 | kg/d soft canopy residue to the vermi bin | A-M-426 | — |
+| FARM.classes.vermicompost_kgd | 1.9 | kg/d vermicompost out | A-M-426 | — |
+| FARM.classes.bed_greens_kgd | 4.0 | kg/d media-bed greens to the reserve | A-M-426 | — |
+| FARM.classes.bed_et_kgd | 5.0 | kg/d growbed evapotranspiration (initial) | A-M-426 | — |
+| FARM.classes.galley_food_issue_kgd | 8.0 | kg/d food issue to the galley (crop+products) | A-M-426 | — |
+| FARM.classes.galley_grey_kgd | 1.0 | kg/d galley wash grey | A-M-426 | — |
+| FARM.classes.food_hab_issue_kgd | 2.55 | kg/d food issue to the habitation rooms | A-M-426 | — |
 
 ## 6. References
 
@@ -1565,7 +1606,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver FARM.aquaponics.feed_larvae_frac | 0.114 kg/d larvae meal to the layer ration (7.9 % of the ration, computed) | Larvae-meal ration trial (X-FARM-01) |
 | driver FARM.chicken.stock_birds | 12.0 birds (dual-purpose layer class) | Flock trial at the coop commissioning (X-FARM-02) |
 | driver FARM.bsfl.process_kg_d | 1.43 kg/d feedstock (study duty; bin capacity class 5 kg/d) | Bin trial (X-FARM-03) |
-| driver FARM.duckweed.raceway_m2 | 240.0 m2 raceway (Lemna minor, azolla co-culture) | Raceway yield trial at the loop commissioning (X-FARM-04) |
+| driver FARM.duckweed.raceway_m2 | 300.0 m2 raceway (Lemna minor, azolla co-culture) | Raceway yield trial at the loop commissioning (X-FARM-04) |
 | driver FARM.ducks.stock | 6.0 ducks (Khaki Campbell class) | Flock trial (X-FARM-05) |
 | driver FARM.quail.stock | 20.0 coturnix hens (indoor cage bank) | Cage-bank trial (X-FARM-06) |
 | driver FARM.rabbit.does | 2.0 does + 1 buck | Rabbitry trial (X-FARM-07) |
@@ -1933,14 +1974,19 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-412 | 180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m m; t; m | Hull general arrangement and structural design (X-LOC-11) |
 | A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) |
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35  m; m; - | Class stability and freeboard review (Q-030) |
-| A-M-415 | 60 kg standing tilapia stock; 1.5 %/d ration; fish waste cir kg; - | Stocking and ration trial (X-FARM-01) |
-| A-M-416 | 0.114 kg/d larvae meal (7.9 % of the layer ration), computed - (larvae-meal mass fraction of feed) | Larvae-meal ration trial (X-FARM-01) |
+| A-M-415 | 60 kg standing tilapia stock; 1.5 %/d ration (below the 2-3  kg; - | Stocking and ration trial (X-FARM-01) |
+| A-M-416 | 0.2108 kg/d larvae meal DM (14.6 % of the layer ration DM),  - (larvae-meal mass fraction of feed) | Larvae-meal ration trial (X-FARM-01) |
 | A-M-417 | 12 birds; 0.12 kg feed/bird/d; 0.05 kg egg/bird/d birds; kg/d | Flock trial (X-FARM-02) |
-| A-M-418 | 1.43 kg/d feedstock (galley biowaste 0.5, poultry manure 0.4 kg/d; - | Bin trial (X-FARM-03) |
+| A-M-418 | 8.21 kg/d wet bin feedstock (galley 0.5 + layer manure 3.21  kg/d; - | Bin trial (X-FARM-03) |
 | A-M-419 | galley 12; washroom 6; medical 6; sleep 16 (AQS-HAB-001 room m2 | Habitability design review (X-HAB-01) |
-| A-M-420 | 240 m2 raceway at 15 g dry/m2/d, 30 % crude protein m2; g/m2/d; - | Raceway yield trial (X-FARM-04) |
+| A-M-420 | 300 m2 raceway at 15 g dry/m2/d (4.5 kg DM/d), 30 % crude pr m2; g/m2/d; - | Raceway yield trial (X-FARM-04) |
 | A-M-421 | 6 ducks (Khaki Campbell class); 0.9 kg/d ration; 0.34 kg/d d birds; kg/d | Flock trial (X-FARM-05) |
 | A-M-422 | 20 coturnix hens; 0.5 kg/d ration; 0.06 kg/d quail eggs birds; kg/d | Cage-bank trial (X-FARM-06) |
 | A-M-423 | 2 does + 1 buck; 0.5 kg/d forage (canopy thinnings); 0.1 kg/ does; kg/d | Rabbitry trial (X-FARM-07) |
 | A-M-424 | 1 hive; 10-25 kg honey/yr; pollination raises canopy yield 2 hive; kg/yr; - | Hive establishment and overwintering trial (X-FARM-08) |
 | A-M-425 | 2 m2 bin; 1 kg Eisenia fetida stock per 0.5 m2 m2; kg | Vermi-bin trial (X-FARM-09) |
+| A-M-426 | FEED_PREP formulation: layers 1.44, quail 0.50, dry-reserve  kg/d (dry-equivalent feed) | Ration trial at the FEED_PREP commissioning (X-FARM-10) |
+| A-M-427 | 0.12 kg/d DM-equivalent fresh duckweed to the galley as huma kg/d (dry-equivalent) | Greens path microbiology check (X-FARM-11) |
+| A-M-428 | AQUA_UV optional loop sanitizer between the biofilter and th - (design provision) | Sanitizer dose validation (X-FARM-12) |
+| A-M-429 | Textiles: wool/sheep eliminated at the 4-crew class; FR-fini - (roster decision) | Textile-line commissioning (X-POLY-01) |
+| A-M-430 | mineral nitrate solution 6.5 kg/d (raceway 5.5 + media beds  kg/d (mineral solution, not feed) | Raceway N-uptake measurement at the X-FARM-04 trial |

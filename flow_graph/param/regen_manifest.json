@@ -403,6 +403,23 @@
    "note": "X-MAT-22 (AQS-STD-006): duty section 3 material selections for the 38 units that held unit task 09 on the Selection pending template; writes params.sec3_material (mat/basis/alt/note/task) per node; rendered into the sheets by _duty_basis.py."
   },
   {
+   "name": "farm_balance",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.farm_balance"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "sizing_materials3"
+   ],
+   "writes_graph": true,
+   "quick": true,
+   "note": "X-FARM wet-basis balance (AQS-FARM-001, A-M-415..430): computes every FARM edge rate in real mass from the driver parameters by fixed-point iteration (the larvae meal <-> layer ration <-> manure loop); the X-PAR-02 solver then reconciles the free water edges around the held rates."
+  },
+  {
    "name": "storage_sizing",
    "argv": [
     "python3",
@@ -1358,6 +1375,7 @@
     "docs-authority/duties/_origins.json"
    ],
    "depends_on": [
+    "farm_balance",
     "write_graph_power"
    ],
    "writes_graph": false,

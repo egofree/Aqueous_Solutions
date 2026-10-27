@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: AQUA_LOOP3 0 kg/d (nitrate water through the aerobic root zone (plant uptake + anaerobic mineralisation layer)); RABBIT_MANURE 0 kg/d (cold rabbit manure direct to the mineralisation zone). Out: AQUA_LOOP4 0 kg/d (loop water to the duckweed raceway (polisher + feed crop)).
+1. Basis. Mass in 229.7 kg/d. Mass out 229.7 kg/d. Electrical duty 0.0000 kW. In: AQUA_LOOP3 202.8 kg/d (nitrate water through the aerobic root zone (plant uptake + anaerobic mineralisation layer)); RABBIT_MANURE 0.3 kg/d (cold rabbit manure direct to the mineralisation zone); FORM_PRESS 25.69 kg/d (press water back to the loop); NUT_AQUA_BED 1 kg/d (mineral nitrate solution to the media beds). Out: AQUA_LOOP4 220.7 kg/d (loop water to the duckweed raceway (polisher + feed crop)); BED_GREENS 4 kg/d (media-bed greens to the reserve); BED_ET 5 kg/d (growbed evapotranspiration).
 
 2. Size.
 - Graph design (AQS-PAR-001 sizing): service aquaponic root zone B (anaerobic mineralisation); area_m2 14.56; zones aerobic top / anaerobic mineralisation bottom (dual root zone); basis A-M-229 area; A-M-415 loop.

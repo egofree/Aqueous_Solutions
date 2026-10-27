@@ -3,8 +3,8 @@
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 192,
-  "edge_count": 611,
+  "node_count": 194,
+  "edge_count": 630,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -302,7 +302,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 175.174278,
+          "bypass_kg_d": 206.770079,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -2055,8 +2055,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 2517.0,
-        "fraction_of_znbr2_study": 0.085,
+        "vs_znbr2_kwh": 2527.0,
+        "fraction_of_znbr2_study": 0.084,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -2436,7 +2436,7 @@
             "IA-METAL-SHIP": 10.812
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.413,
+            "IA-H2O-MU": 57.878,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -2451,7 +2451,10 @@
             "IA-CR2O3-MU": 0.365,
             "IA-C-CR": 0.087,
             "IA-WAX-MU": 0.2,
-            "IA-SILICA-MU": 1.0
+            "IA-SILICA-MU": 1.0,
+            "NUT_AQUA": 5.5,
+            "NUT_AQUA_BED": 1.0,
+            "CA_HOPPER": 0.035
           },
           "net_kg_d": 0.001,
           "residual_kg_d": 0.002,
@@ -2769,7 +2772,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 336.8716,
+        "value": 337.5116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2777,11 +2780,11 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 4986,
+        "count": 5004,
         "presence": "present",
-        "nameplate_kw": 2493,
+        "nameplate_kw": 2502,
         "area_m2": 21986,
-        "balance_kWp": 1247,
+        "balance_kWp": 1251,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -2948,8 +2951,8 @@
         "count": 35,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 1920.2,
-          "export_kWh_d_clear": 5394,
+          "export_peak_kW": 1919.5,
+          "export_kWh_d_clear": 5414,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2979,9 +2982,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 150.9,
+          "bus_demand_kW": 151.5,
           "section_rating_A": 300,
-          "basis_A": 201.6,
+          "basis_A": 202.5,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -3350,25 +3353,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 179.7838,
+        "value": 180.4538,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.8 kW, charge 817.2 kW, 2517 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 180.5 kW, charge 820.2 kW, 2526 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 818,
-        "kWh": 2517,
+        "kW": 821,
+        "kWh": 2527,
         "presence": "present",
-        "charge_kW": 818,
-        "discharge_kW": 180,
+        "charge_kW": 821,
+        "discharge_kW": 181,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 35 hybrid inverters, 72.2 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.381,
-          "purge_m3_h": 26.59,
+          "H2_m3_d": 6.405,
+          "purge_m3_h": 26.69,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1646.4
+          "electrode_area_m2": 1652.5
         }
       }
     },
@@ -3484,8 +3487,8 @@
         "equipment_id": "VCD-COMP-01",
         "type": "scroll or diaphragm",
         "sec_kWh_m3": "14-20",
-        "feed_m3_d": 0.3331,
-        "avg_kw": 0.2359,
+        "feed_m3_d": 0.3647,
+        "avg_kw": 0.2583,
         "status": "duty_issued",
         "size_mm": [
           1400,
@@ -3499,20 +3502,20 @@
           "machine": "MVC still stack",
           "modules": 2,
           "compressor": "scroll class (small-MVC)",
-          "hx_area_m2": 0.559,
-          "q_latent_kW": 7.831,
-          "feed_m3_d": 0.3331,
-          "distillate_m3_d": 0.2998,
+          "hx_area_m2": 0.612,
+          "q_latent_kW": 8.574,
+          "feed_m3_d": 0.3647,
+          "distillate_m3_d": 0.3282,
           "sec_kWh_m3": 17,
-          "duty_kW": 0.2359,
+          "duty_kW": 0.2583,
           "basis": "0.333 m3/d x 17 kWh/m3 / 24 h at the issued band midpoint (A-M-149)"
         }
       },
       "continuous_kw": {
-        "value": 0.2359,
+        "value": 0.2583,
         "unit": "kW",
         "status": "study",
-        "note": "0.333 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
+        "note": "0.365 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)"
       }
     },
     {
@@ -7584,6 +7587,86 @@
         }
       },
       "notes": "Vermiculture bin, 2 m2 Eisenia fetida (A-M-425): soft canopy residue to vermicompost and worm tea for the growbeds. TECHTREE soil-management.vermiculture. Study."
+    },
+    {
+      "unit_id": "FEED_PREP",
+      "sector_id": "FARM",
+      "class": "feed_prep",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "farm",
+        "feed"
+      ],
+      "params": {
+        "design": {
+          "service": "ration formulation: duckweed + larvae meal + recycled eggshell; HP drier on the storage draw only",
+          "basis": "A-M-426; A-M-416 (no imported grain); TECHTREE insect-farming (black-soldier-fly meal milling class)",
+          "fresh_first": "fish and ducks eat the harvest wet; drying serves only the A-M-270 dry-reserve draw (0.5 kg/d)",
+          "methionine": "the binding supplement (~9 g/d DL-met equivalent at 4-crew; TECHTREE poultry.chickens: synthetic DL-methionine is the standard supplement class)",
+          "ca_source": "recycled eggshell 38 g Ca/d + BSFL Ca 5-8 % (TECHTREE insect-farming) + mineral CaCO3 top-up ~1.5-2 kg/month from the site mineral line (TECHTREE poultry.chickens: crushed limestone free-choice class)",
+          "food_safety": "larvae meal routes to POULTRY ONLY, never to the fish: manure-fed larvae are the pathogen bridge the aquaponic produce path must not carry (TECHTREE agriculture.aquaponics food-safety note)"
+        },
+        "sizing": {
+          "throughput_kg_d": 2.54,
+          "basis": "A-M-426 driver arithmetic"
+        },
+        "sec3_material": {
+          "mat": "SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path",
+          "basis": "food-contact sanitation class for the animal ration line (A-M-426): 304 at the chloride-light service, PP bins resist the wet duckweed; Cu is excluded from every feed path outright",
+          "alt": "SS316 where the eggshell grinding dust ever shows pitting",
+          "note": "the reject stream returns to the BSFL bin, so the contact surfaces serve both feeds.",
+          "task": "X-FARM-10"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "mixer + grinder + HP drier on the storage draw (A-M-426)"
+      },
+      "notes": "Ration formulation for the layer and quail rations and the dry reserve; fresh-first feeding keeps the fish and duck rations drying-free. Study."
+    },
+    {
+      "unit_id": "AQUA_UV",
+      "sector_id": "FARM",
+      "class": "uv_sanitizer",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "farm",
+        "aquaponics",
+        "food-safety"
+      ],
+      "params": {
+        "design": {
+          "service": "optional UV-C 254 nm loop sanitizer between the biofilter and the growbeds; AQUA_BYPASS normally engaged",
+          "basis": "A-M-428; A-M-427 (food-safety mode); TECHTREE agriculture.aquaponics (produce food-safety note)",
+          "why_it_works": "the nitrifying biofilm lives on the moving-bed media: post-media sterilization passes the nitrates and kills only sloughed/free cells",
+          "modes": "normal = bypassed (growbed rhizosphere needs its microbial feed); food-safety mode = inline (A-M-427 greens/harvest); contamination response = inline",
+          "ozone_contingency": "deep-clean with ozone fed from CRYO_O2, fish isolated, never in-line live: residual ozone is lethal to gills and biofilm",
+          "dose_class": "254 nm, 30-100 mJ/cm2 class for the loop flow; the 40 kg/d loop is trivial flow for a 0.04 kW lamp",
+          "failure_mode": "lamp depletion or sleeve fouling: dose decays silently - the X-FARM-12 validation test is periodic, not one-shot"
+        },
+        "sizing": {
+          "loop_kg_d": 40.0,
+          "basis": "A-M-415 loop rate"
+        },
+        "sec3_material": {
+          "mat": "SS304 reactor tube with a quartz UV sleeve, PP loop fittings, EPDM gasket class",
+          "basis": "loop-water service at aquaponic temperature (A-M-428): 304 tube with the lamp isolated behind quartz; the unit is normally bypassed, so wetted-time is intermittent",
+          "alt": "316L tube if the loop ever runs saline (it does not at the freshwater class)",
+          "note": "quartz sleeve fouling is the maintenance item - the dose validation (X-FARM-12) covers it.",
+          "task": "X-FARM-12"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "UV-C lamp + controller (A-M-428)"
+      },
+      "notes": "Optional pathogen barrier for the produce path and contamination response. Study."
     }
   ],
   "edges": [
@@ -9482,7 +9565,7 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 319.60396,
+        "value": 326.90396,
         "unit": "kg/d",
         "status": "study",
         "note": "grey/solids (the farm-protein metabolic load is inside this total: AQS-FARM-001) | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4) (AQS-PAR-003)."
@@ -9821,7 +9904,7 @@
       "forbidden": "potable taps w/o remin + UV",
       "claim_status": "Closed",
       "rate": {
-        "value": 308.519678,
+        "value": 340.115479,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -10920,10 +11003,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 78.987901,
+        "value": 102.592478,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW | X-PAR-02 TF: AHU condensate carries the vapor load by difference (T2 extended: FORM_VAP, BED_ET and the livestock vapors ride the condensate line) (AQS-PAR-003)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "DIGESTER"
@@ -10943,10 +11026,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 755.481467,
+        "value": 758.296919,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: HER 5.43 + open-circuit 0.95 m3/d H2 on 3596 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.7 m3/h holds H2 at 25 % LFL: HER 5.45 + open-circuit 0.95 m3/d H2 on 3609 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -10966,7 +11049,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 755.481467,
+        "value": 758.296919,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -13956,7 +14039,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 244.641602,
+        "value": 258.674935,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. | X-PAR-02 TF: grey sludge to the leach by difference (Rev M: sized to the continuous neighbor draw; was 242.65 at BH) (AQS-PAR-003)."
@@ -14055,7 +14138,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 336.8716,
+        "value": 337.5116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -14175,7 +14258,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 175.174278,
+        "value": 206.770079,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -14859,7 +14942,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 42.138417,
+        "value": 43.838417,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 TF: crew-duty bed closes by difference on the clean-water line (A-M-229) (AQS-PAR-003)."
@@ -15819,7 +15902,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 165.174239,
+        "value": 196.77004,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -16518,7 +16601,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 530.73594,
+        "value": 531.228831,
         "unit": "kg/d",
         "status": "study",
         "note": "Returned scrap follows the worn goods. The leach receives it back on IA-NUT-LEACH. | X-PAR-02 TF: returned scrap closes the scrap yard by difference: worn goods + swarf + leach return less the dock feed (its stated basis: follows the worn goods) (AQS-PAR-003)."
@@ -18075,7 +18158,7 @@
       "forbidden": null,
       "claim_status": null,
       "rate": {
-        "value": 167.999678,
+        "value": 199.595479,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -18758,7 +18841,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 64.41311,
+        "value": 57.87811,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -19907,7 +19990,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.622 kg/d (SANDER2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.669 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
@@ -23328,10 +23411,10 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 200.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "ammonia load: fish protein metabolism ~16 % N by mass (A-M-415); the BIOFILTER nitrifies NH3 -> NO2 -> NO3 before the root zones"
+        "note": "ammonia load: fish protein metabolism ~16 % N by mass (A-M-415); the BIOFILTER nitrifies NH3 -> NO2 -> NO3 before the root zones (X-FARM wet-basis, farm_balance.py)"
       },
       "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
       "phase": "liquid",
@@ -23341,10 +23424,10 @@
     {
       "stream_id": "AQUA_NUT",
       "from_unit_id": "BIOFILTER",
-      "to_unit_id": "GROWBED_A",
+      "to_unit_id": "AQUA_UV",
       "from_sector_id": "FARM",
       "to_sector_id": "FARM",
-      "carries": "nitrified water (NO3- nitrate, plant-available nitrogen)",
+      "carries": "nitrified water to the optional sanitizer (NO3- passes; sloughed cells die in food-safety mode)",
       "layers": [
         "mass"
       ],
@@ -23353,7 +23436,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "the BIOFILTER converts NH3/NH4+ -> NO2- (Nitrosomonas) -> NO3- (Nitrobacter); aerobic, O2-limited without aeration"
+        "note": "loop flow 40 kg/d (A-M-415); nitrates pass the media biofilm untouched (A-M-428) (X-FARM wet-basis, farm_balance.py)"
       },
       "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
       "phase": "liquid",
@@ -23372,10 +23455,10 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 202.75,
         "unit": "kg/d",
         "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 202.75 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
       "phase": "liquid",
@@ -23394,7 +23477,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.36,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23416,7 +23499,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.6,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23438,7 +23521,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 3.20818,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23460,7 +23543,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.72,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23482,29 +23565,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
-      },
-      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
-      "phase": "liquid",
-      "namespace": "IA",
-      "open_boundary": false
-    },
-    {
-      "stream_id": "LARVAE_FEED",
-      "from_unit_id": "BSFL_BIN",
-      "to_unit_id": "CHICKEN_COOP",
-      "from_sector_id": "FARM",
-      "to_sector_id": "FARM",
-      "carries": "larvae meal to the layer ration",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "rate": {
-        "value": 0.0,
+        "value": 3.0,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23526,7 +23587,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.492891,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23548,7 +23609,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 7.24291,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23570,10 +23631,10 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 4.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 8.0 kg/d]"
       },
       "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
       "phase": "liquid",
@@ -23592,10 +23653,10 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 4.84,
         "unit": "kg/d",
         "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 8.84 kg/d] | X-PAR-02 TF: served meals close the galley by difference over the issue, greens, biowaste, shell and grey (A-M-426/427) (AQS-PAR-003)."
       },
       "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
       "phase": "liquid",
@@ -23614,7 +23675,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.5,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23658,7 +23719,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.81,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23680,10 +23741,10 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 27.355801,
         "unit": "kg/d",
         "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 48.094 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "notes": "X-FARM build-out (AQS-FARM-001)",
       "phase": "liquid",
@@ -23702,7 +23763,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 1.98,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23746,10 +23807,10 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 220.738599,
         "unit": "kg/d",
         "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 216.989 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQ | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "notes": "X-FARM build-out (AQS-FARM-001)",
       "phase": "liquid",
@@ -23768,10 +23829,10 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 158.454199,
         "unit": "kg/d",
         "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+        "note": "balance-resolved farm/hab loop rate (/ build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 137.716 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQ | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "notes": "X-FARM build-out (AQS-FARM-001)",
       "phase": "liquid",
@@ -23790,29 +23851,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
-      },
-      "notes": "X-FARM build-out (AQS-FARM-001)",
-      "phase": "liquid",
-      "namespace": "IA",
-      "open_boundary": false
-    },
-    {
-      "stream_id": "DUCK_LAYERS",
-      "from_unit_id": "DUCKWEED",
-      "to_unit_id": "CHICKEN_COOP",
-      "from_sector_id": "FARM",
-      "to_sector_id": "FARM",
-      "carries": "duckweed: layer ration base (dry-equivalent)",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "rate": {
-        "value": 0.0,
+        "value": 18.0,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23834,10 +23873,10 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 2.46,
         "unit": "kg/d",
         "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) [free: solver-reconciled, x0 2.55 kg/d]"
       },
       "notes": "X-FARM build-out (AQS-FARM-001)",
       "phase": "liquid",
@@ -23856,7 +23895,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.34,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23878,7 +23917,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 1.44,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23900,29 +23939,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
-        "unit": "kg/d",
-        "status": "study",
-        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
-      },
-      "notes": "X-FARM build-out (AQS-FARM-001)",
-      "phase": "liquid",
-      "namespace": "IA",
-      "open_boundary": false
-    },
-    {
-      "stream_id": "QUAIL_FEED",
-      "from_unit_id": "DUCKWEED",
-      "to_unit_id": "QUAIL_CAGE",
-      "from_sector_id": "FARM",
-      "to_sector_id": "FARM",
-      "carries": "duckweed/larvae quail ration (dry-equivalent)",
-      "layers": [
-        "mass"
-      ],
-      "presence": "present",
-      "rate": {
-        "value": 0.0,
+        "value": 0.8,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23944,7 +23961,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.2,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23966,7 +23983,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.06,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -23988,7 +24005,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 1.75,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24010,7 +24027,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.091667,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24032,7 +24049,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.5,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24054,7 +24071,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.1,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24076,7 +24093,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.3,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24098,7 +24115,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.1,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24120,7 +24137,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.2,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24142,7 +24159,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.05,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24164,7 +24181,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.15,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24186,7 +24203,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 1.0,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24208,7 +24225,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 1.9,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24230,7 +24247,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 0.85,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24252,7 +24269,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 4.0,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24274,7 +24291,7 @@
       ],
       "presence": "present",
       "rate": {
-        "value": 0.0,
+        "value": 5.733333,
         "unit": "kg/d",
         "status": "study",
         "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
@@ -24325,6 +24342,490 @@
       },
       "notes": "X-FARM build-out: without O2 the nitrification stops and the ammonia kills the fish",
       "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_FORM",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "FEED_PREP",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "fresh duckweed to formulation (layers + quail + reserve draw)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 43.3844,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 2.33 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "EGGSHELL_RET",
+      "from_unit_id": "GALLEY",
+      "to_unit_id": "FEED_PREP",
+      "from_sector_id": "HAB",
+      "to_sector_id": "FARM",
+      "carries": "baked crushed eggshell return (38 g Ca/d)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.1 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "LAYER_FEED",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "CHICKEN_COOP",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "formulated layer ration",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 4.16818,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 1.44 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "QUAIL_RATION",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "QUAIL_CAGE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "formulated quail ration",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 1.666667,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.5 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_STORE",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "FOOD_STORE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "dried duckweed to the dry reserve",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.5 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FORM_REJECT",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "BSFL_BIN",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "screenings/fines back to the larvae bin",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.066667,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.104 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FORM_VAP",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "CRYO_AHU",
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "carries": "drying evaporation on the storage draw (fresh-basis water)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 9.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 9.5 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_GREENS",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "GALLEY",
+      "from_sector_id": "FARM",
+      "to_sector_id": "HAB",
+      "carries": "human-grade fresh duckweed greens to the galley",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 2.4,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 0.12 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "AQUA_SAN",
+      "from_unit_id": "AQUA_UV",
+      "to_unit_id": "GROWBED_A",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "sanitized loop water to the growbeds (food-safety/contingency mode)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "study rate 40 kg/d DM-eq held at zero pending the farm water-balance pass (X-FARM); the rate lives in the drivers and AQS-FARM-001"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "AQUA_BYPASS",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "GROWBED_A",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "normal-mode loop bypass around AQUA_UV",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 200.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "the normal path: the rhizosphere needs its microbial feed (A-M-428) (X-FARM)"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-POWER-FEEDPREP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FEED_PREP",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "formulation+drying electrical load",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "A-M-426 driver (X-FARM)"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-POWER-AQUAUV",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AQUA_UV",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "UV-C lamp electrical load",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "A-M-428 lamp class (X-FARM)"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "LARVAE_FRESH",
+      "from_unit_id": "BSFL_BIN",
+      "to_unit_id": "FEED_PREP",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "fresh larvae to the formulation drier",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.479045,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "fresh larvae at the 44 % DM class (TECHTREE insect-farming.md:112) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_RATION",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "DUCK_PEN",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "pressed duckweed mash to the duck ration",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 2.333333,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "duck mash at the mash DM class (A-M-421 x A-M-426) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FORM_PRESS",
+      "from_unit_id": "FEED_PREP",
+      "to_unit_id": "GROWBED_B",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "press water back to the loop",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 25.688598,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "duckweed juice water returns to the beds (A-M-426) [free: solver-reconciled, x0 25.689 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (A | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "BED_GREENS",
+      "from_unit_id": "GROWBED_B",
+      "to_unit_id": "FOOD_STORE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "media-bed greens to the reserve",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 4.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "bed greens class (FARM.classes.bed_greens_kgd) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "BED_ET",
+      "from_unit_id": "GROWBED_B",
+      "to_unit_id": "CRYO_AHU",
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "carries": "growbed evapotranspiration",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 5.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "bed ET to the AHU (free edge, solver reconciles) [free: solver-reconciled, x0 5.0 kg/d] | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PAR-003). | -02 reconciled (AQS-PA | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "NUT_AQUA",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "DUCKWEED",
+      "from_sector_id": "DOCK",
+      "to_sector_id": "FARM",
+      "carries": "mineral nitrate solution to the raceway",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 5.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "mineral N: the fish stock supplies a fraction of the raceway uptake (A-M-430) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "NUT_AQUA_BED",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "GROWBED_B",
+      "from_sector_id": "DOCK",
+      "to_sector_id": "FARM",
+      "carries": "mineral nitrate solution to the media beds",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 1.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "bed greens N top-up (A-M-430) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "CA_HOPPER",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "QUAIL_CAGE",
+      "from_sector_id": "DOCK",
+      "to_sector_id": "FARM",
+      "carries": "mineral calcium carbonate (free-choice hopper)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.035,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "quail Ca class (TECHTREE coturnix.md:60; A-M-426/430) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FOOD_EXPORT",
+      "from_unit_id": "FOOD_STORE",
+      "to_unit_id": "BOUNDARY_EXPORT",
+      "from_sector_id": "FARM",
+      "to_sector_id": "DOCK",
+      "carries": "surplus food to the reserve/trade boundary",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": -0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "production beyond the crew issue (A-M-270 reserve; D-DOCK trade statement) [free: solver-reconciled, x0 0.11 kg/d] | X-PAR-02 TF: the reserve/trade surplus closes the store by difference over the issue edges (A-M-270; D-DOCK statement) (AQS-PAR-003)."
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "GAL_GREY",
+      "from_unit_id": "GALLEY",
+      "to_unit_id": "GREY_TREAT",
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
+      "carries": "galley wash grey water to the treatment train",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 1.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "galley grey class (AQS-HAB-001 services) (X-FARM wet-basis, farm_balance.py)"
+      },
+      "notes": "X-FARM wet-basis balance (farm_balance.py)",
+      "phase": "liquid",
       "namespace": "IA",
       "open_boundary": false
     }

@@ -47,7 +47,7 @@ FAMILIES = [
     ('docs-authority/sizing/GEO_LOOP.md', 'AQS-DUTY-076', 'GEO loop (flow_graph/param/geo_loop.py)', ['GEO_GHEX', 'GEO_HP', 'GEO_HP_CLOSED_LOOP']),
     ('docs-authority/sizing/MEOH_TRAIN.md', 'AQS-DUTY-077', 'Methanol train residuals (flow_graph/param/meoh_train.py)', ['MEOH_COND', 'MEOH_FC']),
     ('docs-authority/FARM_DESIGN.md', 'AQS-FARM-001', 'Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)',
-     ['AQUA_TANK', 'BIOFILTER', 'GROWBED_A', 'GROWBED_B', 'DUCKWEED', 'CHICKEN_COOP', 'DUCK_PEN', 'QUAIL_CAGE', 'RABBIT_HUTCH', 'BSFL_BIN', 'BEE_HIVE', 'VERMI_BIN']),
+     ['AQUA_TANK', 'BIOFILTER', 'GROWBED_A', 'GROWBED_B', 'DUCKWEED', 'FEED_PREP', 'AQUA_UV', 'CHICKEN_COOP', 'DUCK_PEN', 'QUAIL_CAGE', 'RABBIT_HUTCH', 'BSFL_BIN', 'BEE_HIVE', 'VERMI_BIN']),
     ('docs-authority/HAB_DESIGN.md', 'AQS-HAB-002', 'Hab interior zoning (docs-authority/_farm_hab.py; A-M-419)',
      ['GALLEY', 'WASHROOM', 'MEDICAL', 'REC_DAYROOM', 'SLEEP_QUARTERS', 'COMMON_AREA']),
     ('docs-authority/MFG_TOOLS.md', 'AQS-MFG-010', 'Metal-shop tools (docs-authority/_mfg_tools.py, X-MFG-37)',

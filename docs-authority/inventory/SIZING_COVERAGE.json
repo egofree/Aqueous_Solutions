@@ -39,6 +39,11 @@
   "docnum": "AQS-FARM-001",
   "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
  },
+ "AQUA_UV": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
+ },
  "BACKUP_GEN": {
   "doc": "docs-authority/POWER_SIZING.md",
   "docnum": "AQS-ELEC-007",
@@ -293,6 +298,11 @@
   "doc": "docs-authority/sizing/STORAGE_HOLDUP.md",
   "docnum": "AQS-DUTY-064",
   "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
+ },
+ "FEED_PREP": {
+  "doc": "docs-authority/FARM_DESIGN.md",
+  "docnum": "AQS-FARM-001",
+  "family": "Aquaponics + smallstock + larvae composting (docs-authority/_farm_hab.py; A-M-415..418)"
  },
  "FILM_CAST": {
   "doc": "docs-authority/sizing/POLYMERS_LINE.md",

@@ -472,6 +472,20 @@ SEL_FARM = {
   'as REC_DAYROOM',
   '4 x 4 m2 private quarters in the AQS-HAB-001 basis.',
   'X-HAB-01'),
+ 'FEED_PREP': (
+  'SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path',
+  'food-contact sanitation class for the animal ration line (A-M-426): 304 at the chloride-light service, PP '
+  'bins resist the wet duckweed; Cu is excluded from every feed path outright',
+  'SS316 where the eggshell grinding dust ever shows pitting',
+  'the reject stream returns to the BSFL bin, so the contact surfaces serve both feeds.',
+  'X-FARM-10'),
+ 'AQUA_UV': (
+  'SS304 reactor tube with a quartz UV sleeve, PP loop fittings, EPDM gasket class',
+  'loop-water service at aquaponic temperature (A-M-428): 304 tube with the lamp isolated behind quartz; '
+  'the unit is normally bypassed, so wetted-time is intermittent',
+  '316L tube if the loop ever runs saline (it does not at the freshwater class)',
+  'quartz sleeve fouling is the maintenance item - the dose validation (X-FARM-12) covers it.',
+  'X-FARM-12'),
 }
 
 def main():

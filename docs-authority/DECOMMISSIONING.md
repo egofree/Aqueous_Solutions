@@ -14,7 +14,7 @@ Order: process systems first, utilities last (reverse of AQS-COM-001), so power,
 | 3 | FAB | 16 | 2.77 | Ar, Fe, HCl, N2, O2, other_metals, solute | N2/air to 19.5-23.5 % O2; air purge | 1.75 |
 | 4 | MFG | 10 | 0.00 | Cu, Pb/Sn/Ni/Cd/Zn, blend, hydrocarbon, metal, solute | N2 to < 25 % LFL | 2.00 |
 | 5 | HAB | 7 | 0.00 | solute | - | 0.00 |
-| 6 | FARM | 14 | 0.00 | CO2 | - | 3.22 |
+| 6 | FARM | 16 | 0.00 | CO2 | - | 3.22 |
 | 7 | NUT | 1 | 0.14 | Fe, HCl, other_metals | air purge | 0.03 |
 | 8 | GLASS | 5 | 0.00 | Fe, HCl, other_metals, solute | air purge | 0.23 |
 | 9 | OIL | 12 | 0.32 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2; air purge | 0.20 |

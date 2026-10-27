@@ -34,3 +34,6 @@ N32,solids,Class 150,foundry silica (flour/stucco/binder make-up),outlet,600
 N33,DN15,Class 150,dewax/burnout off-gas (burned wax + steam),inlet,160
 N34,solids,Class 150,spent foundry silica (solids return class),inlet,160
 N35,solids,Class 150,"surplus foundry metal export (pot-line product, dispatch campaign)",inlet,160
+N36,DN15,Class 150,mineral nitrate solution to the raceway,outlet,600
+N37,DN15,Class 150,mineral nitrate solution to the media beds,outlet,600
+N38,DN15,Class 150,mineral calcium carbonate (free-choice hopper),outlet,600

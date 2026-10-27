@@ -22,7 +22,7 @@ Table 2.1. Closed-form checks
 
 | Check | Module | Item | Model | Independent | Tol | Result |
 |---|---|---|---|---|---|---|
-| QC-01 | `flow_graph/param/balance.py` | mass balance, 106 units (in = out) | 106 | 106 | 1 % per unit | pass |
+| QC-01 | `flow_graph/param/balance.py` | mass balance, 120 units (in = out) | 120 | 120 | 1 % per unit | pass |
 | QC-02 | `flow_graph/param/water_tower.py` | hydro ideal energy kWh = rho g V h | 266.3 | 266.3241 | 1 % | pass |
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_H2 pressure-design wall mm | 10.1559 | 10.1559 | 2 % | pass |
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_O2 pressure-design wall mm | 10.1559 | 10.1559 | 2 % | pass |
@@ -64,4 +64,4 @@ The checks have found and led to the correction of the following errors.
 
 ## 4. Review status of the calculation modules
 
-The record covers 165 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 157 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.
+The record covers 166 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 158 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.

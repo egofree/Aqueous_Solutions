@@ -16,7 +16,7 @@ This page carries the study HAZOP worksheets: for every node of the generated de
 
 This is a design-derived study HAZOP: deviations, causes and safeguards come from the generated design. It does not replace a facilitated team HAZOP; the team review signs off rev B.
 
-132 nodes, 863 deviations, 216 actions: 124 closed at issue against cited artifacts (duty sheet section 6 relief statements, X-SAF-03 C7; AQS-CTL-001 indication loops), 91 trip actions close in the SIF pass (AQS-CTL-003, `docs-authority/_sif.py`), 1 tracked open in the action register AQS-SAF-008 (`docs-authority/HAZOP_ACTION_REGISTER.md`) with owner tasks in plan terms.
+145 nodes, 928 deviations, 242 actions: 136 closed at issue against cited artifacts (duty sheet section 6 relief statements, X-SAF-03 C7; AQS-CTL-001 indication loops), 104 trip actions close in the SIF pass (AQS-CTL-003, `docs-authority/_sif.py`), 2 tracked open in the action register AQS-SAF-008 (`docs-authority/HAZOP_ACTION_REGISTER.md`) with owner tasks in plan terms.
 
 ## 2. Actions by kind
 
@@ -24,8 +24,8 @@ Table 2.1. Actions by kind
 
 | Action | Count | Closing task |
 |---|---|---|
-| relief case | 125 | X-SAF-04 |
-| high-level or high-flow protection | 54 | X-CTL-03 |
+| relief case | 138 | X-SAF-04 |
+| high-level or high-flow protection | 67 | X-CTL-03 |
 | independent high-temperature trip on the heater | 13 | X-CTL-03 |
 | pump dry-run protection (low-flow or low-level interlock) | 11 | X-CTL-03 |
 | check valve on the pumped inlet | 10 | X-PIP |
@@ -1547,6 +1547,136 @@ Table 2.1. Actions by kind
 | composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
 
 ### BIOFILTER (biofilter)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### GROWBED_A (growbed)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### GROWBED_B (growbed)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### CHICKEN_COOP (coop)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### BSFL_BIN (bsfl_bin)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### GALLEY (galley)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### DUCKWEED (duckweed)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### DUCK_PEN (pen)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### QUAIL_CAGE (cage)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### RABBIT_HUTCH (hutch)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### BEE_HIVE (hive)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### VERMI_BIN (worm_bin)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### FEED_PREP (feed_prep)
+
+| Parameter | Guide word | Cause | Consequence | Safeguard | Action |
+|---|---|---|---|---|---|
+| flow | No/Less | upstream unit stopped, pump trip, blocked line | loss of duty | no pump on this unit; loss of duty shows at the downstream flow transmitter | - |
+| flow | More | control valve fails open, upstream surge | overfill or overpressure | none | high-level or high-flow protection |
+| pressure | High | blocked outlet; fire; thermal expansion | loss of containment | none | relief case |
+| temperature | High | heater control failure, loss of cooling | overtemperature of the wall or product | TE high alarm | - |
+| composition | Other than | wrong reagent connected, upstream upset | incompatible reaction | incompatible storage separation (AQS-BLD-011); dedicated couplings | - |
+
+### AQUA_UV (uv_sanitizer)
 
 | Parameter | Guide word | Cause | Consequence | Safeguard | Action |
 |---|---|---|---|---|---|

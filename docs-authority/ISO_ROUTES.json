@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "9a1266bb47053d225131d2bf9b08c06cb69d1e85bfc270eb9e92d9f809e12701",
+  "graph_sha256": "649c276e3390112571980986dca91416397c33096678b90abfd6c95e0840aa7e",
   "generator": "docs-authority/_iso_routes.py"
  },
  "rows": [
@@ -3963,11 +3963,26 @@
    ],
    "length_m": 14.8,
    "elbows": 3
+  },
+  {
+   "line": "NUT_AQUA",
+   "dn": 15,
+   "class": "P1",
+   "from": "NORTH_DOCK",
+   "to": "DUCKWEED",
+   "legs_mm": [
+    3200,
+    32500,
+    -13400,
+    -2900
+   ],
+   "length_m": 52.0,
+   "elbows": 3
   }
  ],
  "summary": {
-  "routed": 264,
-  "missing_position": 106,
-  "total_m": 4596
+  "routed": 265,
+  "missing_position": 122,
+  "total_m": 4648
  }
 }

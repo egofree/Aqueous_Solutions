@@ -7,7 +7,7 @@ service line: service coturnix quail cage bank, 20 hens; stock 20; egg_kg_d 0.06
 Internals: duty sheet: "PP feeders, SS316 nipple waterers. Basis: dry droppings-tray service at the 20-hen Coturnix unit (graph design" [docs-authority/duties/QUAIL_CAGE.md]
 Material: Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers. Basis: dry droppings-tray service at the 20-hen Coturnix unit (graph design; A-M-422): HDG weld wire is the cage-battery standard; the only wet points are the nipples, so those alone are stainless Alternative: PVC-coated wire if foot dermatitis ever shows at the cage floor. (continues on the duty sheet)
 
-Nozzles: 7 process connections per docs-authority/nozzles/QUAIL_CAGE.csv
+Nozzles: 9 process connections per docs-authority/nozzles/QUAIL_CAGE.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

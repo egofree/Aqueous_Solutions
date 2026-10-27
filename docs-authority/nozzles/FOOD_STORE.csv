@@ -11,3 +11,6 @@ N9,DN15,Class 150,duck eggs to the food store,inlet,160
 N10,DN15,Class 150,quail eggs to the food store,inlet,160
 N11,DN15,Class 150,dressed rabbit meat to the food store,inlet,160
 N12,DN15,Class 150,honey to the food store (annual average),inlet,160
+N13,DN15,Class 150,dried duckweed to the dry reserve,inlet,160
+N14,DN15,Class 150,media-bed greens to the reserve,inlet,160
+N15,DN15,Class 150,surplus food to the reserve/trade boundary,outlet,600

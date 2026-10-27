@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: AQUA_LOOP1 0 kg/d (ammonia-rich fish waste water (NH3/NH4+ from the gills)). Out: AQUA_NUT 0 kg/d (nitrified water (NO3- nitrate, plant-available nitrogen)).
+1. Basis. Mass in 200 kg/d. Mass out 200 kg/d. Electrical duty 0.0000 kW. In: AQUA_LOOP1 200 kg/d (ammonia-rich fish waste water (NH3/NH4+ from the gills)). Out: AQUA_NUT 0 kg/d (nitrified water to the optional sanitizer (NO3- passes; sloughed cells die in food-safety mode)); AQUA_BYPASS 200 kg/d (normal-mode loop bypass around AQUA_UV).
 
 2. Size.
 - Envelope 3000×5000×1200 mm, 18.00 m³. Flow 48200.3 kg/d is circulation. If the box were full the residence would be 8.96 h. It is not sized as a 20-day tank.

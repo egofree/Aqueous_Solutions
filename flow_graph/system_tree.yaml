@@ -871,6 +871,12 @@ nodes:
   - id: FARM.aquaponics-train.DUCKWEED
     parent: FARM.aquaponics-train
     unit_id: DUCKWEED
+  - id: FARM.aquaponics-train.FEED_PREP
+    parent: FARM.aquaponics-train
+    unit_id: FEED_PREP
+  - id: FARM.aquaponics-train.AQUA_UV
+    parent: FARM.aquaponics-train
+    unit_id: AQUA_UV
   - id: FARM.animal-train
     parent: FARM
     description: >-

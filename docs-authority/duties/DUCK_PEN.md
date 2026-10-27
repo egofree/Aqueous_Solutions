@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: IA-DUCK-H2O 0 kg/d (duck drinking/washing water); DUCK_FODDER 0 kg/d (fresh duckweed forage (ad lib)). Out: DUCK_EGGS 0 kg/d (duck eggs to the food store); DUCK_MANURE 0 kg/d (duck manure to the larvae bin); DUCK_VAP 0 kg/d (duck pen evaporation); DUCK_GREY 0 kg/d (duck wash water).
+1. Basis. Mass in 8.313 kg/d. Mass out 8.313 kg/d. Electrical duty 0.0000 kW. In: IA-DUCK-H2O 1.98 kg/d (duck drinking/washing water); DUCK_FODDER 4 kg/d (fresh duckweed forage (ad lib)); DUCK_RATION 2.333 kg/d (pressed duckweed mash to the duck ration). Out: DUCK_EGGS 0.34 kg/d (duck eggs to the food store); DUCK_MANURE 1.44 kg/d (duck manure to the larvae bin); DUCK_VAP 0.8 kg/d (duck pen evaporation); DUCK_GREY 5.733 kg/d (duck wash water).
 
 2. Size.
 - Graph design (AQS-PAR-001 sizing): service duck pen, 6 Khaki Campbell ducks; stock 6; egg_kg_d 0.34; ration_kg_d 0.9; basis A-M-421 (X-FARM-05).

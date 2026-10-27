@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "9a1266bb47053d225131d2bf9b08c06cb69d1e85bfc270eb9e92d9f809e12701",
+  "graph_sha256": "649c276e3390112571980986dca91416397c33096678b90abfd6c95e0840aa7e",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 336.872,
-   "calc_kw": 336.872,
+   "kw": 337.512,
+   "calc_kw": 337.512,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 179.784,
-   "calc_kw": 179.784,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.8 kW, charge 817.2 kW, 2517 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 180.454,
+   "calc_kw": 180.454,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 180.5 kW, charge 820.2 kW, 2526 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -401,6 +401,15 @@
    "sector": "FOUNDRY"
   },
   {
+   "unit": "VCD_TRAIN",
+   "role": "\u2014",
+   "kw": 0.258,
+   "calc_kw": 0.258,
+   "basis": "0.365 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
+   "class": "calculated",
+   "sector": "WTR"
+  },
+  {
    "unit": "SHELL_BURNOUT",
    "role": "\u2014",
    "kw": 0.25,
@@ -417,15 +426,6 @@
    "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.7 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
    "class": "calculated",
    "sector": "MFG"
-  },
-  {
-   "unit": "VCD_TRAIN",
-   "role": "\u2014",
-   "kw": 0.236,
-   "calc_kw": 0.236,
-   "basis": "0.333 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149)",
-   "class": "calculated",
-   "sector": "WTR"
   },
   {
    "unit": "WET_BENCH",
@@ -707,6 +707,15 @@
    "sector": "MEOH"
   },
   {
+   "unit": "FEED_PREP",
+   "role": "\u2014",
+   "kw": 0.6,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FARM"
+  },
+  {
    "unit": "COMB_HEAT",
    "role": "\u2014",
    "kw": 0.05,
@@ -714,6 +723,15 @@
    "basis": "standby-zero on the design day: N+1 fuel-fired heat of IND_MELT (A-M-283); 0.05 kW controls/blower parasitic, fuel on the C5-C10 class when energized.",
    "class": "standby-zero",
    "sector": "FOUNDRY"
+  },
+  {
+   "unit": "AQUA_UV",
+   "role": "\u2014",
+   "kw": 0.04,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FARM"
   },
   {
    "unit": "AQUA_TANK",
@@ -826,18 +844,18 @@
  ],
  "summary": {
   "calculated": 76,
-  "pending": 2,
+  "pending": 4,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 91,
-  "graph_sum_kW": 141.13,
-  "calc_sum_kW": 141.13,
-  "connected_load_kW": 141.1,
+  "rows": 93,
+  "graph_sum_kW": 141.79,
+  "calc_sum_kW": 141.79,
+  "connected_load_kW": 141.8,
   "connected_calculated_kW": 141.0,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 0.1,
-  "connected_calculated_pct": 99.9,
+  "connected_study_kW": 0.7,
+  "connected_calculated_pct": 99.5,
   "by_sector": {
    "CRYO": {
     "calculated": 4
@@ -854,7 +872,7 @@
    },
    "FARM": {
     "calculated": 1,
-    "pending": 2
+    "pending": 4
    },
    "FOUNDRY": {
     "calculated": 13,

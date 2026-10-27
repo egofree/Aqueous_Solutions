@@ -4,3 +4,7 @@ N2,DN15,Class 150,loop water to the duckweed raceway (polisher + feed crop),outl
 N3,DN15,Class 150,cold rabbit manure direct to the mineralisation zone,inlet,160
 N4,DN15,Class 150,drain,bottom,50
 N5,DN15,Class 150,vent,top,800
+N6,DN15,Class 150,press water back to the loop,inlet,160
+N7,DN15,Class 150,media-bed greens to the reserve,outlet,600
+N8,DN15,Class 150,growbed evapotranspiration,outlet,600
+N9,DN15,Class 150,mineral nitrate solution to the media beds,inlet,160

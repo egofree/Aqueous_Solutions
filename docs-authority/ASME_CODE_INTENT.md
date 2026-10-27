@@ -25,7 +25,7 @@ Table 2.1. Unit count per class
 | Atmospheric | 3 |
 | B31.3 piping component | 4 |
 | Section VIII-1 (ID not yet sized) | 1 |
-| not a vessel (no design pressure on the graph) | 205 |
+| not a vessel (no design pressure on the graph) | 207 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 0 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
@@ -55,6 +55,7 @@ Table 4.1. Code intent per unit
 | ALK_SCRUBBER | GAS |  |  | 600 | not a vessel (no design pressure on the graph) | - | - | - |
 | AL_POT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | AQUA_TANK | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| AQUA_UV | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ATMOS | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ATM_INT | GAS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BACKUP_GEN | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -113,6 +114,7 @@ Table 4.1. Code intent per unit
 | EXT_HALL | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | E_HEAT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | FAB_UPW_TANK | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| FEED_PREP | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | FILM_CAST | POLYMERS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | FLOAT_SINK | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | FLUE_KO | GAS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

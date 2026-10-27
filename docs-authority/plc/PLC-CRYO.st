@@ -8,7 +8,7 @@ VAR
   CRYO_AHU_COND_CONDENSABLEPT-01_PV : REAL ;  (* no design pressure on the graph )
   CRYO_AHU_COND_CONDENSABLETE-01_PV : REAL ;  (* band by service )
   CRYO_AHUFT-01_PV : REAL ;  (* S56 normal 0.00 L/h )
-  CRYO_AHUFT-02_PV : REAL ;  (* S68 normal 3.29 L/h )
+  CRYO_AHUFT-02_PV : REAL ;  (* S68 normal 4.27 L/h )
   CRYO_AHUFT-03_PV : REAL ;  (* S86 normal 0.00 L/h )
   CRYO_AHUFT-04_PV : REAL ;  (* IA-HVAC-COND normal 2.81 L/h )
   CRYO_AHUPT-01_PV : REAL ;  (* no design pressure on the graph )
@@ -59,10 +59,10 @@ END_VAR
   CRYO_AHUFT-01_ALARM_HI := 0.0 ;  (* expected-zero state: any positive PV alarms )
 
   (* FLOW control loop - set-point from the graph basis *)
-  CRYO_AHUFT-02_SP := 3.29 ;  (* graph basis: S68 normal 3.29 L/h )
+  CRYO_AHUFT-02_SP := 4.27 ;  (* graph basis: S68 normal 4.27 L/h )
   FB_PI_CRYO_AHUFT-02( PV := CRYO_AHUFT-02_PV, SP := CRYO_AHUFT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  CRYO_AHUFT-02_ALARM_HI := 3.619 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  CRYO_AHUFT-02_ALARM_LO := 2.9610000000000003 ;
+  CRYO_AHUFT-02_ALARM_HI := 4.697 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  CRYO_AHUFT-02_ALARM_LO := 3.8429999999999995 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   CRYO_AHUFT-03_SP := 0.0 ;  (* graph basis: S86 normal 0.00 L/h )

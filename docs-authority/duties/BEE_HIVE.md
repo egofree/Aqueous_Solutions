@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: NECTAR_FORAGE 0 kg/d (nectar/pollen forage from the canopy and greenhouse crops). Out: HONEY 0 kg/d (honey to the food store (annual average)); BEE_VAP 0 kg/d (hive evaporation).
+1. Basis. Mass in 0.2 kg/d. Mass out 0.2 kg/d. Electrical duty 0.0000 kW. In: NECTAR_FORAGE 0.2 kg/d (nectar/pollen forage from the canopy and greenhouse crops). Out: HONEY 0.05 kg/d (honey to the food store (annual average)); BEE_VAP 0.15 kg/d (hive evaporation).
 
 2. Size.
 - Graph design (AQS-PAR-001 sizing): service honey bee hive: pollination + honey; hives 1; honey_kg_yr 10-25; basis A-M-424 (X-FARM-08).

@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-611 edges: 370 piped, 124 solids transfers, 117 electrical. Piped edges without a length (unit position missing): 106.
+630 edges: 387 piped, 124 solids transfers, 119 electrical. Piped edges without a length (unit position missing): 122.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 47: AIR_RECEIVER, AL_POT, AQUA_TANK, ATMOS, BEE_HIVE, BSFL_BIN, CAST_LINE, CA_POT, CHICKEN_COOP, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, DUCK_PEN, FILM_CAST, FOOD_STORE, F_RECOVER, GALLEY, GREASE_CA, GREASE_LI, GROWBED_A, GROWBED_B, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, QUAIL_CAGE, RABBIT_HUTCH, SHELL_BURNOUT, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, VERMI_BIN, WASHROOM, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 49: AIR_RECEIVER, AL_POT, AQUA_TANK, AQUA_UV, ATMOS, BEE_HIVE, BSFL_BIN, CAST_LINE, CA_POT, CHICKEN_COOP, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, DUCK_PEN, FEED_PREP, FILM_CAST, FOOD_STORE, F_RECOVER, GALLEY, GREASE_CA, GREASE_LI, GROWBED_A, GROWBED_B, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, QUAIL_CAGE, RABBIT_HUTCH, SHELL_BURNOUT, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, VERMI_BIN, WASHROOM, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -583,14 +583,13 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SF-WIRE_DRAW | SOL_ARK_60K | WIRE_DRAW | cable | — | — | 38.3 | SOL_ARK_60K → WIRE_DRAW, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K | GEO_HP_CLOSED_LOOP | cable | — | — | 21.6 | SOL_ARK_60K → GEO_HP_CLOSED_LOOP, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | AQUA_LOOP1 | AQUA_TANK | BIOFILTER | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | AQUA_TANK → BIOFILTER, position missing for AQUA_TANK | velocity 1 m/s, ρ 1000; min DN15 |
-| AQUA_NUT | BIOFILTER | GROWBED_A | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | BIOFILTER → GROWBED_A, position missing for GROWBED_A | velocity 1 m/s, ρ 1000; min DN15 |
+| AQUA_NUT | BIOFILTER | AQUA_UV | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | BIOFILTER → AQUA_UV, position missing for AQUA_UV | velocity 1 m/s, ρ 1000; min DN15 |
 | AQUA_LOOP3 | GROWBED_A | GROWBED_B | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | GROWBED_A → GROWBED_B, position missing for GROWBED_A, GROWBED_B | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-CHICK-H2O | ROOF_TANK | CHICKEN_COOP | DN15 | P1 | acid or brine, at or below 60 C |  | ROOF_TANK → CHICKEN_COOP, position missing for CHICKEN_COOP | velocity 1 m/s, ρ 1000; min DN15 |
 | EGG_HARVEST | CHICKEN_COOP | FOOD_STORE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | CHICKEN_COOP → FOOD_STORE, position missing for CHICKEN_COOP, FOOD_STORE | velocity 1 m/s, ρ 1000; min DN15 |
 | CHICK_MANURE | CHICKEN_COOP | BSFL_BIN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | CHICKEN_COOP → BSFL_BIN, position missing for CHICKEN_COOP, BSFL_BIN | velocity 1 m/s, ρ 1000; min DN15 |
 | CHICK_VAP | CHICKEN_COOP | CRYO_AHU | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | CHICKEN_COOP → CRYO_AHU, position missing for CHICKEN_COOP | velocity 1 m/s, ρ 1000; min DN15 |
 | FISH_SLUDGE | AQUA_TANK | BSFL_BIN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | AQUA_TANK → BSFL_BIN, position missing for AQUA_TANK, BSFL_BIN | velocity 1 m/s, ρ 1000; min DN15 |
-| LARVAE_FEED | BSFL_BIN | CHICKEN_COOP | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | BSFL_BIN → CHICKEN_COOP, position missing for BSFL_BIN, CHICKEN_COOP | velocity 1 m/s, ρ 1000; min DN15 |
 | FRASS | BSFL_BIN | HOPPER | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | BSFL_BIN → HOPPER, position missing for BSFL_BIN | velocity 1 m/s, ρ 1000; min DN15 |
 | BSFL_VAP | BSFL_BIN | CRYO_AHU | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | BSFL_BIN → CRYO_AHU, position missing for BSFL_BIN | velocity 1 m/s, ρ 1000; min DN15 |
 | FOOD_GALLEY | FOOD_STORE | GALLEY | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | FOOD_STORE → GALLEY, position missing for FOOD_STORE, GALLEY | velocity 1 m/s, ρ 1000; min DN15 |
@@ -604,12 +603,10 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | AQUA_LOOP4 | GROWBED_B | DUCKWEED | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | GROWBED_B → DUCKWEED, position missing for GROWBED_B | velocity 1 m/s, ρ 1000; min DN15 |
 | AQUA_RETURN2 | DUCKWEED | AQUA_TANK | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | DUCKWEED → AQUA_TANK, position missing for AQUA_TANK | velocity 1 m/s, ρ 1000; min DN15 |
 | DUCK_FISH | DUCKWEED | AQUA_TANK | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | DUCKWEED → AQUA_TANK, position missing for AQUA_TANK | velocity 1 m/s, ρ 1000; min DN15 |
-| DUCK_LAYERS | DUCKWEED | CHICKEN_COOP | DN15 | P4 | alkaline |  | DUCKWEED → CHICKEN_COOP, position missing for CHICKEN_COOP | velocity 1 m/s, ρ 1000; min DN15 |
 | FOOD_HAB | FOOD_STORE | HABITATION | DN15 | P5 | water |  | FOOD_STORE → HABITATION, position missing for FOOD_STORE | velocity 1 m/s, ρ 1000; min DN15 |
 | DUCK_EGGS | DUCK_PEN | FOOD_STORE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | DUCK_PEN → FOOD_STORE, position missing for DUCK_PEN, FOOD_STORE | velocity 1 m/s, ρ 1000; min DN15 |
 | DUCK_MANURE | DUCK_PEN | BSFL_BIN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | DUCK_PEN → BSFL_BIN, position missing for DUCK_PEN, BSFL_BIN | velocity 1 m/s, ρ 1000; min DN15 |
 | DUCK_VAP | DUCK_PEN | CRYO_AHU | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | DUCK_PEN → CRYO_AHU, position missing for DUCK_PEN | velocity 1 m/s, ρ 1000; min DN15 |
-| QUAIL_FEED | DUCKWEED | QUAIL_CAGE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | DUCKWEED → QUAIL_CAGE, position missing for QUAIL_CAGE | velocity 1 m/s, ρ 1000; min DN15 |
 | QUAIL_H2O | ROOF_TANK | QUAIL_CAGE | DN15 | P1 | acid or brine, at or below 60 C |  | ROOF_TANK → QUAIL_CAGE, position missing for QUAIL_CAGE | velocity 1 m/s, ρ 1000; min DN15 |
 | QUAIL_EGGS | QUAIL_CAGE | FOOD_STORE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | QUAIL_CAGE → FOOD_STORE, position missing for QUAIL_CAGE, FOOD_STORE | velocity 1 m/s, ρ 1000; min DN15 |
 | QUAIL_DROP | QUAIL_CAGE | VERMI_BIN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | QUAIL_CAGE → VERMI_BIN, position missing for QUAIL_CAGE, VERMI_BIN | velocity 1 m/s, ρ 1000; min DN15 |
@@ -628,3 +625,25 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | DUCK_GREY | DUCK_PEN | GREY_TREAT | DN15 | P1 | acid or brine, at or below 60 C |  | DUCK_PEN → GREY_TREAT, position missing for DUCK_PEN | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-AIR-AQUA | SOL_ARK_60K | AQUA_TANK | cable | — | — |  | SOL_ARK_60K → AQUA_TANK, position missing for AQUA_TANK | electrical: cable schedule X-ELS-06 |
 | IA-AIR-BIO | SOL_ARK_60K | BIOFILTER | cable | — | — | 46.3 | SOL_ARK_60K → BIOFILTER, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
+| DUCK_FORM | DUCKWEED | FEED_PREP | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | DUCKWEED → FEED_PREP, position missing for FEED_PREP | velocity 1 m/s, ρ 1000; min DN15 |
+| EGGSHELL_RET | GALLEY | FEED_PREP | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | GALLEY → FEED_PREP, position missing for GALLEY, FEED_PREP | velocity 1 m/s, ρ 1000; min DN15 |
+| LAYER_FEED | FEED_PREP | CHICKEN_COOP | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | FEED_PREP → CHICKEN_COOP, position missing for FEED_PREP, CHICKEN_COOP | velocity 1 m/s, ρ 1000; min DN15 |
+| QUAIL_RATION | FEED_PREP | QUAIL_CAGE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | FEED_PREP → QUAIL_CAGE, position missing for FEED_PREP, QUAIL_CAGE | velocity 1 m/s, ρ 1000; min DN15 |
+| DUCK_STORE | FEED_PREP | FOOD_STORE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | FEED_PREP → FOOD_STORE, position missing for FEED_PREP, FOOD_STORE | velocity 1 m/s, ρ 1000; min DN15 |
+| FORM_REJECT | FEED_PREP | BSFL_BIN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | FEED_PREP → BSFL_BIN, position missing for FEED_PREP, BSFL_BIN | velocity 1 m/s, ρ 1000; min DN15 |
+| FORM_VAP | FEED_PREP | CRYO_AHU | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | FEED_PREP → CRYO_AHU, position missing for FEED_PREP | velocity 1 m/s, ρ 1000; min DN15 |
+| DUCK_GREENS | DUCKWEED | GALLEY | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | DUCKWEED → GALLEY, position missing for GALLEY | velocity 1 m/s, ρ 1000; min DN15 |
+| AQUA_SAN | AQUA_UV | GROWBED_A | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | AQUA_UV → GROWBED_A, position missing for AQUA_UV, GROWBED_A | velocity 1 m/s, ρ 1000; min DN15 |
+| AQUA_BYPASS | BIOFILTER | GROWBED_A | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | BIOFILTER → GROWBED_A, position missing for GROWBED_A | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-POWER-FEEDPREP | SOL_ARK_60K | FEED_PREP | cable | — | — |  | SOL_ARK_60K → FEED_PREP, position missing for FEED_PREP | electrical: cable schedule X-ELS-06 |
+| IA-POWER-AQUAUV | SOL_ARK_60K | AQUA_UV | cable | — | — |  | SOL_ARK_60K → AQUA_UV, position missing for AQUA_UV | electrical: cable schedule X-ELS-06 |
+| LARVAE_FRESH | BSFL_BIN | FEED_PREP | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | BSFL_BIN → FEED_PREP, position missing for BSFL_BIN, FEED_PREP | velocity 1 m/s, ρ 1000; min DN15 |
+| DUCK_RATION | FEED_PREP | DUCK_PEN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | FEED_PREP → DUCK_PEN, position missing for FEED_PREP, DUCK_PEN | velocity 1 m/s, ρ 1000; min DN15 |
+| FORM_PRESS | FEED_PREP | GROWBED_B | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | FEED_PREP → GROWBED_B, position missing for FEED_PREP, GROWBED_B | velocity 1 m/s, ρ 1000; min DN15 |
+| BED_GREENS | GROWBED_B | FOOD_STORE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | GROWBED_B → FOOD_STORE, position missing for GROWBED_B, FOOD_STORE | velocity 1 m/s, ρ 1000; min DN15 |
+| BED_ET | GROWBED_B | CRYO_AHU | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | GROWBED_B → CRYO_AHU, position missing for GROWBED_B | velocity 1 m/s, ρ 1000; min DN15 |
+| NUT_AQUA | NORTH_DOCK | DUCKWEED | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 55.4 | NORTH_DOCK → DUCKWEED, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
+| NUT_AQUA_BED | NORTH_DOCK | GROWBED_B | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | NORTH_DOCK → GROWBED_B, position missing for GROWBED_B | velocity 1 m/s, ρ 1000; min DN15 |
+| CA_HOPPER | NORTH_DOCK | QUAIL_CAGE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | NORTH_DOCK → QUAIL_CAGE, position missing for QUAIL_CAGE | velocity 1 m/s, ρ 1000; min DN15 |
+| FOOD_EXPORT | FOOD_STORE | BOUNDARY_EXPORT | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | FOOD_STORE → BOUNDARY_EXPORT, position missing for FOOD_STORE | velocity 1 m/s, ρ 1000; min DN15 |
+| GAL_GREY | GALLEY | GREY_TREAT | DN15 | P1 | acid or brine, at or below 60 C |  | GALLEY → GREY_TREAT, position missing for GALLEY | velocity 1 m/s, ρ 1000; min DN15 |

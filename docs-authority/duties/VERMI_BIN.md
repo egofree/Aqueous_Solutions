@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: QUAIL_DROP 0 kg/d (quail droppings to the vermi bin); VERMI_FEED 0 kg/d (soft canopy residue to the vermi bin). Out: VERMICOMPOST 0 kg/d (vermicompost to the growbed soil); WORM_TEA 0 kg/d (worm tea to the growbed soil).
+1. Basis. Mass in 2.75 kg/d. Mass out 2.75 kg/d. Electrical duty 0.0000 kW. In: QUAIL_DROP 1.75 kg/d (quail droppings to the vermi bin); VERMI_FEED 1 kg/d (soft canopy residue to the vermi bin). Out: VERMICOMPOST 1.9 kg/d (vermicompost to the growbed soil); WORM_TEA 0.85 kg/d (worm tea to the growbed soil).
 
 2. Size.
 - Graph design (AQS-PAR-001 sizing): service vermiculture bin, Eisenia fetida; bin_m2 2; basis A-M-425 (X-FARM-09); organisms Eisenia fetida (red wiggler): surface-dwelling, no O2 requirement edge (the bin is aerobic through diffusion); castings_quality vermicompost 1.5-2.5 % N, 1.0-1.5 % P, 1.0-1.5 % K in plant-available form + humic acids + growth hormones (TECHTREE vermiculture).

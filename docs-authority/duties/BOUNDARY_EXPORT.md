@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: FOOD_EXPORT 0 kg/d (surplus food to the reserve/trade boundary). Out: none.
 
 2. Size.
 - 0.0000 kW. No exchanger area. A heat-transfer area does not belong on this class.

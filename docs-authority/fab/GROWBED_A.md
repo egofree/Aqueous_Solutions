@@ -7,7 +7,7 @@ service line: see the duty sheet section 1 basis
 Internals: open: no issued internals basis for a growbed unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
 Material: see duty sheet section 3
 
-Nozzles: 6 process connections per docs-authority/nozzles/GROWBED_A.csv
+Nozzles: 8 process connections per docs-authority/nozzles/GROWBED_A.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

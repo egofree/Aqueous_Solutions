@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: IA-CHICK-H2O 0 kg/d (flock drinking water); LARVAE_FEED 0 kg/d (larvae meal to the layer ration); DUCK_LAYERS 0 kg/d (duckweed: layer ration base (dry-equivalent)). Out: EGG_HARVEST 0 kg/d (eggs to the food store); CHICK_MANURE 0 kg/d (poultry manure to the larvae bin); CHICK_VAP 0 kg/d (flock respiration/evaporation).
+1. Basis. Mass in 4.528 kg/d. Mass out 4.528 kg/d. Electrical duty 0.0000 kW. In: IA-CHICK-H2O 0.36 kg/d (flock drinking water); LAYER_FEED 4.168 kg/d (formulated layer ration). Out: EGG_HARVEST 0.6 kg/d (eggs to the food store); CHICK_MANURE 3.208 kg/d (poultry manure to the larvae bin); CHICK_VAP 0.72 kg/d (flock respiration/evaporation).
 
 2. Size.
 - Graph design (AQS-PAR-001 sizing): service layer flock, 12 birds; stock_birds 12; egg_kg_d 0.6; feed_kg_d 1.44; basis A-M-417 (X-FARM-02).

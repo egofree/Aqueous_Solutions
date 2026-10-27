@@ -7,7 +7,7 @@ service line: service BSFL larvae composting bin; feedstock_kg_d 1.43; larvae_kg
 Internals: duty sheet: "above 40 C kills the larvae). 3. Material. HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no m" [docs-authority/duties/BSFL_BIN.md]
 Material: HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no metal below the substrate line. Basis: substrate goes pH 4-6 under frass acids at 65-75 % moisture with self-heating toward 40 C (graph design; A-M-418): wet acid compost pits zinc and plate steel, HDPE/PP are inert across the whole range Alternative: FRP tray if bin scaling raises wall temperatures past the HDPE class. (continues on the duty sheet)
 
-Nozzles: 9 process connections per docs-authority/nozzles/BSFL_BIN.csv
+Nozzles: 12 process connections per docs-authority/nozzles/BSFL_BIN.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: FOOD_GALLEY 0 kg/d (food issue to the galley). Out: GALLEY_MEALS 0 kg/d (prepared meals to the crew); GALLEY_BIO 0 kg/d (galley biowaste to the larvae bin).
+1. Basis. Mass in 6.4 kg/d. Mass out 6.4 kg/d. Electrical duty 0.0000 kW. In: FOOD_GALLEY 4 kg/d (food issue to the galley); DUCK_GREENS 2.4 kg/d (human-grade fresh duckweed greens to the galley). Out: GALLEY_MEALS 4.84 kg/d (prepared meals to the crew); GALLEY_BIO 0.5 kg/d (galley biowaste to the larvae bin); EGGSHELL_RET 0.06 kg/d (baked crushed eggshell return (38 g Ca/d)); GAL_GREY 1 kg/d (galley wash grey water to the treatment train).
 
 2. Size.
 - Graph design (AQS-PAR-001 sizing): service galley / kitchen, 12 m2; area_m2 12; basis A-M-419; AQS-HAB-001.

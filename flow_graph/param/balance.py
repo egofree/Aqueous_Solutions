@@ -8,7 +8,7 @@ import numpy as np
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
 SINK = {'RELIEF_H2', 'RELIEF_CRYO', 'BOUNDARY_EXPORT', 'NORTH_DOCK', 'GW_INTAKE', 'ATMOS'}   # GW_INTAKE joined for X-LOC-13: the well head is a resource boundary (its ledger is the make-up supplied); ATMOS is the evaporation sink. Both report in != out by design.   # boundary meters: in != out by design (losses, curtailment, exports) — per first-principles audit correction 5, owner rulings 2026-10-18. NORTH_DOCK joined 2026-10-19 per owner ruling D-DOCK: the dock is the inter-plant trade boundary (feedstock imports, surplus-product exports), not a balance-constrained sector — its ledger is reported as a trade statement (params.trade_statement), exempt from unit closure.
-MARK = ('X-PAR', 'X-SAN', 'X-MFG', 'AQS-DUTY-06', 'X-SAF-10', 'X-ELS')
+MARK = ('X-PAR', 'X-SAN', 'X-MFG', 'AQS-DUTY-06', 'X-SAF-10', 'X-ELS', 'X-FARM', 'X-HAB')
 STOICH = {'S49': 'H2 to the fuel cell (load)', 'S50': 'O2 = 8 x H2 by mass', 'S02': 'crew O2 0.84 kg/p.d', 'IA-FC-AIR': 'MEOH_FC oxidant',
           'IA-AC-O2': 'acetic acid oxidation', 'IA-O2-NIT': 'nitric acid', 'IA-GLX-O2': 'net one O2 per acetaldehyde via NO recycle (X-PAR-13)', 'IA-FORM-O2': 'one O2 per methanol at 10/10 mol% (X-SAF-11)', 'IA-FORM-N2': 'FORM N2 diluent', 'IA-FORM-TAIL': 'FORM tail gas', 'IA-AB-AIR': 'afterburner dilution air less FORM N2',
           'IA-H2O2-SRC': 'Faraday at the cell current', 'S14': 'crew food', 'S21': 'crew water', 'IA-WASH': 'wash water'}   # S40 removed: TERRACE_IRRIG deleted (D-FARM owner ruling 2026-10-18, A-M-229)
@@ -71,7 +71,13 @@ def physics(g):
                            ('MEOH_FERM', 'IA-FERM-DIG', True, 'fermenter digestate (water + spent solids) joins the blackwater barrier - galley-organics class like IA-GAL; BLACK_DIGEST closes on IA-BLK-GREY (T7)'),
                            ('OIL_PYRO', 'IA-CHAR', True, 'char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET)'),
                            ('WET_BENCH', 'S10', True, 'spent etch/return order-of-magnitude band unchanged; closes the bench by difference'),
-                           ('MFG_SHOP', 'S16', True, 'shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base)')):
+                           ('MFG_SHOP', 'S16', True, 'shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base)'),
+                           ('HABITATION', 'S12', True, 'the hab sanitation anchor becomes computed (X-FARM 2026-10-27): S12 carries the hab metabolic load by difference over the hab mass edges - the A-M-426 diet basis supersedes the frozen 319.60396'),
+                           ('GREY_TREAT', 'IA-GREY-01', True, 'the treatment feed carries the grey input by difference (S12 plus the farm grey: DUCK_GREY, GAL_GREY join)'),
+                           ('CRYO_AHU', 'S68', True, 'AHU condensate carries the vapor load by difference (T2 extended: FORM_VAP, BED_ET and the livestock vapors ride the condensate line)'),
+                           ('HDR_CO2', 'S85', True, 'the CO2 header supply follows the draw by difference (the S89 aquaponics dose rides the CRYO_CO2 line)'),
+                           ('FOOD_STORE', 'FOOD_EXPORT', True, 'the reserve/trade surplus closes the store by difference over the issue edges (A-M-270; D-DOCK statement)'),
+                           ('GALLEY', 'GALLEY_MEALS', True, 'served meals close the galley by difference over the issue, greens, biowaste, shell and grey (A-M-426/427)')):
         if k in E:
             r = _unit_resid(g, u); put(k, v(k) + (r if out else -r), why)
     # MFG_SHOP is NOT closed here on POLY_TO_MFG/MFG_SCRAP_TO_IND: that pair is a coupled two-edge closure owned by the

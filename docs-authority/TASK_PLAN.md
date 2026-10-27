@@ -26,7 +26,7 @@ This list supersedes `internal/MASTER_PLAN.md` (AQS-PLAN-004) as the list of wor
 
 AQS-PLAN-001 to AQS-PLAN-003, AQS-MFG-001, AQS-REM-001, AQS-REM-BLD-001, AQS-MVS-PLAN-001 and AQS-MVS-CHK-001 are earlier plans kept as history.
 
-The tasks are of two kinds. Cross-cutting tasks (section 7) apply to the plant as a whole and carry identifiers of the form X-GOV-04. Unit tasks (section 8) apply to one unit of the plant. The units are the 195 present nodes of `flow_graph/plant_flow_graph.json`, grouped by system. An accounting node, which records a plant boundary and has no equipment, carries task 01 only.
+The tasks are of two kinds. Cross-cutting tasks (section 7) apply to the plant as a whole and carry identifiers of the form X-GOV-04. Unit tasks (section 8) apply to one unit of the plant. The units are the 197 present nodes of `flow_graph/plant_flow_graph.json`, grouped by system. An accounting node, which records a plant boundary and has no equipment, carries task 01 only.
 
 ## 2. Counts
 
@@ -62,8 +62,8 @@ Table 2.1. Tasks by group
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
+| FARM | Life support / habitat | 240 | 147 |
 | CRYO | Utility / header | 210 | 135 |
-| FARM | Life support / habitat | 210 | 129 |
 | OIL | Process (Mass transform) | 195 | 128 |
 | HEAT | Utility / header | 180 | 112 |
 | GAS | Process (Mass transform) | 150 | 98 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3209** | **2249** |
+| | **Total** | **3239** | **2267** |
 
 ## 3. Triage of open tasks
 
@@ -104,10 +104,10 @@ Table 3.1. Open tasks by triage tag
 | --- | --- |
 | desk P1 | 3 |
 | desk P2 | 7 |
-| desk P3 | 45 |
-| desk P4 | 511 |
-| desk P5 | 192 |
-| hardware | 200 |
+| desk P3 | 47 |
+| desk P4 | 517 |
+| desk P5 | 194 |
+| hardware | 202 |
 | owner | 2 |
 
 ## 4. Unit task template
@@ -258,10 +258,10 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-02D** PM magnet comparison, NdFeB vs bonded ferrite (owner 2026-10-15, after X-PAR-11). Done when: for each BLDC/stepper family (MF-01, MF-02, MF-03, MF-22, MF-23) size an NdFeB variant and a bonded-ferrite variant from cited magnet properties (remanence, coercivity); compare frame size, mass, efficiency, material inputs (rare-earth recovery from feedstock vs in-house ferrite production) and production-line implications; comparison table in AQS-INV-005; assumptions registered. Depends: X-INV-02, X-PAR-11. Evidence: `docs-authority/inventory/MOTOR_DESIGNS.md`.
 - [x] **X-INV-02C** Motor family drawings and BOMs. Done when: CadQuery models, drawings and BOM per X-INV-02 family from the AQS-INV-005 design sheets (laminations, winding, rotor, shaft, frame). Depends: X-INV-02. Evidence: `models/motors/build.py`.
 - [x] **X-INV-03** Wire inventory. Done when: every conductor by sector > sub-system > unit: size, insulation, voltage, length, ampacity basis; family rollup and production plan. Depends: X-INV-01, X-ELS-02. Evidence: `docs-authority/inventory/WIRE_INVENTORY.md`.
-- [x] **X-INV-03-WF-01** Wire family WF-01: PV DC 10 AWG PV Wire, UL 4703, 2 kV. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 33240 m in 277 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
+- [x] **X-INV-03-WF-01** Wire family WF-01: PV DC 10 AWG PV Wire, UL 4703, 2 kV. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 33360 m in 278 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-02** Wire family WF-02: control 18 AWG TFFN 3-pair, shielded. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 41987 m in 204 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-03** Wire family WF-03: power 6 AWG THHN/THWN-2 Cu in EMT. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 16920 m in 47 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
-- [x] **X-INV-03-WF-04** Wire family WF-04: equipment ground 10 AWG bare Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 16620 m in 277 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
+- [x] **X-INV-03-WF-04** Wire family WF-04: equipment ground 10 AWG bare Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 16680 m in 278 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-05** Wire family WF-05: power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 17894 m in 195 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-06** Wire family WF-06: bare grounding 4/0 AWG bare soft-drawn Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 4416 m in 1 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-07** Wire family WF-07: control 18 AWG shielded pair. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 4600 m in 230 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
@@ -285,7 +285,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-03-WF-28** Wire family WF-28: power 8 AWG XHHW-2 Cu, tray cable TC-ER. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 129 m in 1 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-29** Wire family WF-29: equipment ground 1/0 AWG green XHHW-2 Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 45 m in 1 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-04** Pipe inventory. Done when: every line by sector > sub-system > unit: DN, schedule, material, length, fittings; family rollup and production plan. Depends: X-INV-03, X-PIP-03. Evidence: `docs-authority/inventory/PIPE_INVENTORY.md`.
-- [x] **X-INV-04-PF-01** Pipe family PF-01: P1 PVC-U Sch 80 ASTM D1785 DN15. Done when: production plan (extrusion or tube mill, cut to the 171 stock lengths, fittings ASTM D2467 socket 90 elbow, joints solvent, test to the class) for 1024.4 m in 62 lines. Depends: X-INV-04. Evidence: `docs-authority/PIPE_SPECS.md`.
+- [x] **X-INV-04-PF-01** Pipe family PF-01: P1 PVC-U Sch 80 ASTM D1785 DN15. Done when: production plan (extrusion or tube mill, cut to the 180 stock lengths, fittings ASTM D2467 socket 90 elbow, joints solvent, test to the class) for 1076.3 m in 63 lines. Depends: X-INV-04. Evidence: `docs-authority/PIPE_SPECS.md`.
 - [x] **X-INV-04-PF-02** Pipe family PF-02: M1 316L ASTM A312 DN15. Done when: production plan (extrusion or tube mill, cut to the 180 stock lengths, fittings ASME B16.9 LR 90 elbow, joints butt weld, test to the class) for 1078.4 m in 54 lines. Depends: X-INV-04. Evidence: `docs-authority/PIPE_SPECS.md`.
 - [x] **X-INV-04-PF-03** Pipe family PF-03: P2 CPVC Sch 80 ASTM F441 DN15. Done when: production plan (extrusion or tube mill, cut to the 93 stock lengths, fittings ASTM F439 socket 90 elbow, joints solvent, test to the class) for 545.2 m in 27 lines. Depends: X-INV-04. Evidence: `docs-authority/PIPE_SPECS.md`.
 - [x] **X-INV-04-PF-04** Pipe family PF-04: P2 CPVC Sch 80 ASTM F441 DN50. Done when: production plan (extrusion or tube mill, cut to the 58 stock lengths, fittings ASTM F439 socket 90 elbow, joints solvent, test to the class) for 344.9 m in 17 lines. Depends: X-INV-04. Evidence: `docs-authority/PIPE_SPECS.md`.
@@ -310,7 +310,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-01** Building-block family OF-01: bearing, deep-groove ball bearing. Done when: open design and production plan for 388 items (ISO 15, normal class) in 68 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-02** Building-block family OF-02: bearing, deep-groove ball bearing. Done when: open design and production plan for 356 items (ISO 15 / ISO 492 normal class, C3) in 48 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-03** Building-block family OF-03: electronics, PLC digital I/O point. Done when: open design and production plan for 868 items (IEC 61131-2) in 94 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-04** Building-block family OF-04: electronics, PLC analog input point. Done when: open design and production plan for 782 items (IEC 61131-2) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-04** Building-block family OF-04: electronics, PLC analog input point. Done when: open design and production plan for 786 items (IEC 61131-2) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-05** Building-block family OF-05: electronics, BLDC driver. Done when: open design and production plan for 191 items (IEC 61800-5-1) in 67 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-06** Building-block family OF-06: electronics, motor starter (contactor + overload). Done when: open design and production plan for 160 items (IEC 60947-4-1) in 38 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-07** Building-block family OF-07: electronics, PLC I/O module, 16 channel. Done when: open design and production plan for 104 items (IEC 61131-2) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -320,7 +320,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-11** Building-block family OF-11: electronics, stepper driver. Done when: open design and production plan for 3 items (IEC 61800-5-1) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-12** Building-block family OF-12: electronics, safety PLC (SIL 2 capable), CPU and I/O rack. Done when: open design and production plan for 2 items (IEC 61508 / IEC 61511) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-13** Building-block family OF-13: fabricated part, fabricated part set. Done when: open design and production plan for 62 items (models/mfg/<unit>/bom.csv) in 62 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-14** Building-block family OF-14: fastener, anchor bolt. Done when: open design and production plan for 8194 items (ISO 3506 A4-70 wedge anchor) in 96 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-14** Building-block family OF-14: fastener, anchor bolt. Done when: open design and production plan for 8304 items (ISO 3506 A4-70 wedge anchor) in 96 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-15** Building-block family OF-15: fastener, M10 x 40 lid bolt. Done when: open design and production plan for 100 items (ISO 3506 A4-70) in 11 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-16** Building-block family OF-16: fastener, M8 x 30 lid bolt. Done when: open design and production plan for 48 items (ISO 3506 A4-70) in 4 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-17** Building-block family OF-17: fastener, M12 anchor. Done when: open design and production plan for 37 items (ISO 3506 A4-70) in 12 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -341,8 +341,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-32** Building-block family OF-32: fastener, Lid gasket 40 mm wide. Done when: open design and production plan for 1 items (FKM) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-33** Building-block family OF-33: fastener, Solvent cement. Done when: open design and production plan for 1 items (PVC-U per ASTM D2564) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-34** Building-block family OF-34: instrument, flow transmitter. Done when: open design and production plan for 139 items (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456) in 54 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-35** Building-block family OF-35: instrument, pressure transmitter. Done when: open design and production plan for 172 items (ceramic diaphragm, IEC 61298) in 172 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-36** Building-block family OF-36: instrument, temperature element. Done when: open design and production plan for 175 items (IEC 60751, 316L thermowell) in 175 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-35** Building-block family OF-35: instrument, pressure transmitter. Done when: open design and production plan for 174 items (ceramic diaphragm, IEC 61298) in 174 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-36** Building-block family OF-36: instrument, temperature element. Done when: open design and production plan for 177 items (IEC 60751, 316L thermowell) in 177 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-37** Building-block family OF-37: instrument, high-level switch. Done when: open design and production plan for 80 items (IEC 60947-5, 316L) in 80 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-38** Building-block family OF-38: instrument, level transmitter. Done when: open design and production plan for 80 items (IEC 62828, PTFE lens) in 80 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-39** Building-block family OF-39: instrument, gas detector, H2. Done when: open design and production plan for 30 items (alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling) in 14 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -354,9 +354,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-45** Building-block family OF-45: instrument, gas detector, NOx. Done when: open design and production plan for 6 items (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height) in 3 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-46** Building-block family OF-46: protection, inverse-time circuit breaker, 3-pole. Done when: open design and production plan for 204 items (UL 489 / IEC 60947-2) in 49 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-47** Building-block family OF-47: seal, mechanical seal, single. Done when: open design and production plan for 124 items (SiC/SiC faces, FKM) in 25 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-48** Building-block family OF-48: support, pipe clamp. Done when: open design and production plan for 2939 items (PP clamp with EPDM liner, MSS SP-58 Type 7) in 78 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-48** Building-block family OF-48: support, pipe clamp. Done when: open design and production plan for 2994 items (PP clamp with EPDM liner, MSS SP-58 Type 7) in 78 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-49** Building-block family OF-49: support, U-bolt with guide. Done when: open design and production plan for 1158 items (316 U-bolt, MSS SP-58 Type 24) in 39 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-50** Building-block family OF-50: valve, isolation valve. Done when: open design and production plan for 146 items (PVC-U true-union ball valve, MSS SP-122, EPDM seals) in 42 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-50** Building-block family OF-50: valve, isolation valve. Done when: open design and production plan for 148 items (PVC-U true-union ball valve, MSS SP-122, EPDM seals) in 43 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-51** Building-block family OF-51: valve, isolation valve. Done when: open design and production plan for 30 items (PP ball valve with HDPE stub ends, ISO 16135) in 10 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-52** Building-block family OF-52: valve, isolation valve. Done when: open design and production plan for 122 items (316L ball valve, ASME B16.34 Cl 150, RF flanged) in 28 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-53** Building-block family OF-53: valve, isolation valve. Done when: open design and production plan for 88 items (CPVC true-union ball valve, MSS SP-122, FKM seals) in 23 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -1312,7 +1312,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] DIGESTER-HX8-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-HX8-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] DIGESTER-HX8-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-HX8-14, X-COM-01. Triage: hardware.
 - **DIGESTER-LEACH_CSTR_1** (vessel, sector DIGESTER)
-  - [x] DIGESTER-LEACH_CSTR_1-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LEACH_CSTR_1.md` §1; mass in = out 6380 kg/d, 0.7500 kW.
+  - [x] DIGESTER-LEACH_CSTR_1-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/LEACH_CSTR_1.md` §1; mass in = out 6412 kg/d, 0.7500 kW.
   - [x] DIGESTER-LEACH_CSTR_1-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: DIGESTER-LEACH_CSTR_1-01. Evidence: `docs-authority/sizing/LEACH_CSTR_1.md` (AQS-DUTY-050).
   - [x] DIGESTER-LEACH_CSTR_1-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: DIGESTER-LEACH_CSTR_1-01, DIGESTER-LEACH_CSTR_1-02. Evidence: `docs-authority/pid/LEACH_CSTR_1.svg` (AQS-PID-001).
   - [x] DIGESTER-LEACH_CSTR_1-04 Nozzle schedule. Done when: docs-authority/nozzles/LEACH_CSTR_1.csv, one row per edge. Depends: DIGESTER-LEACH_CSTR_1-03. Evidence: `docs-authority/nozzles/LEACH_CSTR_1.csv` (all 58 process connections listed).
@@ -1651,6 +1651,265 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] FAB-WS_SOLV-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-WS_SOLV-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FAB-WS_SOLV-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-WS_SOLV-14, X-COM-01. Triage: hardware.
 
+### FARM. Life support / habitat
+
+- **FARM-AQUA_TANK** (fish_tank, sector FARM)
+  - [ ] FARM-AQUA_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Triage: desk P1.
+  - [x] FARM-AQUA_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-AQUA_TANK-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-AQUA_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-AQUA_TANK-01, FARM-AQUA_TANK-02. Evidence: `docs-authority/pid/AQUA_TANK.svg` (AQS-PID-001).
+  - [x] FARM-AQUA_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/AQUA_TANK.csv, one row per edge. Depends: FARM-AQUA_TANK-03. Evidence: `docs-authority/nozzles/AQUA_TANK.csv` (all 6 process connections listed).
+  - [x] FARM-AQUA_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-AQUA_TANK-04, FARM-AQUA_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FARM-AQUA_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-AQUA_TANK-02. Triage: desk P3.
+  - [ ] FARM-AQUA_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-03. Triage: desk P2.
+  - [x] FARM-AQUA_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-AQUA_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-AQUA_TANK-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-AQUA_TANK-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-AQUA_TANK-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/AQUA_TANK/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-04, FARM-AQUA_TANK-06, FARM-AQUA_TANK-09. Triage: desk P4.
+  - [ ] FARM-AQUA_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-AQUA_TANK-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-AQUA_TANK-12 BOM. Done when: models/mfg/AQUA_TANK/bom.csv. Depends: FARM-AQUA_TANK-10. Triage: desk P4.
+  - [x] FARM-AQUA_TANK-13 Fabrication route. Done when: docs-authority/fab/AQUA_TANK.md. Depends: FARM-AQUA_TANK-10, FARM-AQUA_TANK-12. Evidence: `docs-authority/fab/AQUA_TANK.md` (study route).
+  - [ ] FARM-AQUA_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-AQUA_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-AQUA_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-AQUA_TANK-14, X-COM-01. Triage: hardware.
+- **FARM-AQUA_UV** (uv_sanitizer, sector FARM)
+  - [x] FARM-AQUA_UV-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/AQUA_UV.md` §1; mass in = out 0 kg/d, 0.0400 kW.
+  - [x] FARM-AQUA_UV-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-AQUA_UV-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-AQUA_UV-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-AQUA_UV-01, FARM-AQUA_UV-02. Evidence: `docs-authority/pid/AQUA_UV.svg` (AQS-PID-001).
+  - [x] FARM-AQUA_UV-04 Nozzle schedule. Done when: docs-authority/nozzles/AQUA_UV.csv, one row per edge. Depends: FARM-AQUA_UV-03. Evidence: `docs-authority/nozzles/AQUA_UV.csv` (all 2 process connections listed).
+  - [x] FARM-AQUA_UV-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-AQUA_UV-04, FARM-AQUA_UV-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 3 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FARM-AQUA_UV-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-AQUA_UV-02. Triage: desk P3.
+  - [x] FARM-AQUA_UV-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-AQUA_UV-02, FARM-AQUA_UV-03. Evidence: `docs-authority/duties/AQUA_UV.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-AQUA_UV-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-AQUA_UV-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
+  - [x] FARM-AQUA_UV-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-AQUA_UV-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-AQUA_UV-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/AQUA_UV/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-AQUA_UV-02, FARM-AQUA_UV-04, FARM-AQUA_UV-06, FARM-AQUA_UV-09. Triage: desk P4.
+  - [ ] FARM-AQUA_UV-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-AQUA_UV-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-AQUA_UV-12 BOM. Done when: models/mfg/AQUA_UV/bom.csv. Depends: FARM-AQUA_UV-10. Triage: desk P4.
+  - [x] FARM-AQUA_UV-13 Fabrication route. Done when: docs-authority/fab/AQUA_UV.md. Depends: FARM-AQUA_UV-10, FARM-AQUA_UV-12. Evidence: `docs-authority/fab/AQUA_UV.md` (study route).
+  - [ ] FARM-AQUA_UV-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-AQUA_UV-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-AQUA_UV-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-AQUA_UV-14, X-COM-01. Triage: hardware.
+- **FARM-BEE_HIVE** (hive, sector FARM)
+  - [x] FARM-BEE_HIVE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BEE_HIVE.md` §1; mass in = out 0.2 kg/d, 0.0000 kW.
+  - [x] FARM-BEE_HIVE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-BEE_HIVE-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-BEE_HIVE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-BEE_HIVE-01, FARM-BEE_HIVE-02. Evidence: `docs-authority/pid/BEE_HIVE.svg` (AQS-PID-001).
+  - [x] FARM-BEE_HIVE-04 Nozzle schedule. Done when: docs-authority/nozzles/BEE_HIVE.csv, one row per edge. Depends: FARM-BEE_HIVE-03. Evidence: `docs-authority/nozzles/BEE_HIVE.csv` (all 3 process connections listed).
+  - [x] FARM-BEE_HIVE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-BEE_HIVE-04, FARM-BEE_HIVE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 3 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FARM-BEE_HIVE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-BEE_HIVE-02. Triage: desk P3.
+  - [x] FARM-BEE_HIVE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-BEE_HIVE-02, FARM-BEE_HIVE-03. Evidence: `docs-authority/duties/BEE_HIVE.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-BEE_HIVE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-BEE_HIVE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-BEE_HIVE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-BEE_HIVE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-BEE_HIVE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BEE_HIVE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BEE_HIVE-02, FARM-BEE_HIVE-04, FARM-BEE_HIVE-06, FARM-BEE_HIVE-09. Triage: desk P4.
+  - [ ] FARM-BEE_HIVE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BEE_HIVE-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-BEE_HIVE-12 BOM. Done when: models/mfg/BEE_HIVE/bom.csv. Depends: FARM-BEE_HIVE-10. Triage: desk P4.
+  - [x] FARM-BEE_HIVE-13 Fabrication route. Done when: docs-authority/fab/BEE_HIVE.md. Depends: FARM-BEE_HIVE-10, FARM-BEE_HIVE-12. Evidence: `docs-authority/fab/BEE_HIVE.md` (study route).
+  - [ ] FARM-BEE_HIVE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BEE_HIVE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-BEE_HIVE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BEE_HIVE-14, X-COM-01. Triage: hardware.
+- **FARM-BIOFILTER** (biofilter, sector FARM)
+  - [x] FARM-BIOFILTER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BIOFILTER.md` §1; mass in = out 200 kg/d, 0.0000 kW.
+  - [x] FARM-BIOFILTER-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-BIOFILTER-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-BIOFILTER-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-BIOFILTER-01, FARM-BIOFILTER-02. Evidence: `docs-authority/pid/BIOFILTER.svg` (AQS-PID-001).
+  - [x] FARM-BIOFILTER-04 Nozzle schedule. Done when: docs-authority/nozzles/BIOFILTER.csv, one row per edge. Depends: FARM-BIOFILTER-03. Evidence: `docs-authority/nozzles/BIOFILTER.csv` (all 3 process connections listed).
+  - [x] FARM-BIOFILTER-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-BIOFILTER-04, FARM-BIOFILTER-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FARM-BIOFILTER-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-BIOFILTER-02. Triage: desk P3.
+  - [x] FARM-BIOFILTER-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-BIOFILTER-02, FARM-BIOFILTER-03. Evidence: `docs-authority/duties/BIOFILTER.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-BIOFILTER-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-BIOFILTER-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-BIOFILTER-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-BIOFILTER-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-BIOFILTER-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BIOFILTER/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BIOFILTER-02, FARM-BIOFILTER-04, FARM-BIOFILTER-06, FARM-BIOFILTER-09. Triage: desk P4.
+  - [ ] FARM-BIOFILTER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BIOFILTER-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-BIOFILTER-12 BOM. Done when: models/mfg/BIOFILTER/bom.csv. Depends: FARM-BIOFILTER-10. Triage: desk P4.
+  - [x] FARM-BIOFILTER-13 Fabrication route. Done when: docs-authority/fab/BIOFILTER.md. Depends: FARM-BIOFILTER-10, FARM-BIOFILTER-12. Evidence: `docs-authority/fab/BIOFILTER.md` (study route).
+  - [ ] FARM-BIOFILTER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BIOFILTER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-BIOFILTER-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BIOFILTER-14, X-COM-01. Triage: hardware.
+- **FARM-BSFL_BIN** (bsfl_bin, sector FARM)
+  - [x] FARM-BSFL_BIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BSFL_BIN.md` §1; mass in = out 8.215 kg/d, 0.0000 kW.
+  - [x] FARM-BSFL_BIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-BSFL_BIN-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-BSFL_BIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-BSFL_BIN-01, FARM-BSFL_BIN-02. Evidence: `docs-authority/pid/BSFL_BIN.svg` (AQS-PID-001).
+  - [x] FARM-BSFL_BIN-04 Nozzle schedule. Done when: docs-authority/nozzles/BSFL_BIN.csv, one row per edge. Depends: FARM-BSFL_BIN-03. Evidence: `docs-authority/nozzles/BSFL_BIN.csv` (all 8 process connections listed).
+  - [x] FARM-BSFL_BIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-BSFL_BIN-04, FARM-BSFL_BIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 8 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FARM-BSFL_BIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-BSFL_BIN-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] FARM-BSFL_BIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-BSFL_BIN-02, FARM-BSFL_BIN-03. Evidence: `docs-authority/duties/BSFL_BIN.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-BSFL_BIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-BSFL_BIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-BSFL_BIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-BSFL_BIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-BSFL_BIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BSFL_BIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BSFL_BIN-02, FARM-BSFL_BIN-04, FARM-BSFL_BIN-06, FARM-BSFL_BIN-09. Triage: desk P4.
+  - [ ] FARM-BSFL_BIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BSFL_BIN-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-BSFL_BIN-12 BOM. Done when: models/mfg/BSFL_BIN/bom.csv. Depends: FARM-BSFL_BIN-10. Triage: desk P4.
+  - [x] FARM-BSFL_BIN-13 Fabrication route. Done when: docs-authority/fab/BSFL_BIN.md. Depends: FARM-BSFL_BIN-10, FARM-BSFL_BIN-12. Evidence: `docs-authority/fab/BSFL_BIN.md` (study route).
+  - [ ] FARM-BSFL_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BSFL_BIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-BSFL_BIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BSFL_BIN-14, X-COM-01. Triage: hardware.
+- **FARM-CHICKEN_COOP** (coop, sector FARM)
+  - [x] FARM-CHICKEN_COOP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CHICKEN_COOP.md` §1; mass in = out 4.528 kg/d, 0.0000 kW.
+  - [x] FARM-CHICKEN_COOP-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-CHICKEN_COOP-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-CHICKEN_COOP-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-CHICKEN_COOP-01, FARM-CHICKEN_COOP-02. Evidence: `docs-authority/pid/CHICKEN_COOP.svg` (AQS-PID-001).
+  - [x] FARM-CHICKEN_COOP-04 Nozzle schedule. Done when: docs-authority/nozzles/CHICKEN_COOP.csv, one row per edge. Depends: FARM-CHICKEN_COOP-03. Evidence: `docs-authority/nozzles/CHICKEN_COOP.csv` (all 5 process connections listed).
+  - [x] FARM-CHICKEN_COOP-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-CHICKEN_COOP-04, FARM-CHICKEN_COOP-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FARM-CHICKEN_COOP-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-CHICKEN_COOP-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] FARM-CHICKEN_COOP-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-CHICKEN_COOP-02, FARM-CHICKEN_COOP-03. Evidence: `docs-authority/duties/CHICKEN_COOP.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-CHICKEN_COOP-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-CHICKEN_COOP-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-CHICKEN_COOP-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-CHICKEN_COOP-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-CHICKEN_COOP-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/CHICKEN_COOP/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-CHICKEN_COOP-02, FARM-CHICKEN_COOP-04, FARM-CHICKEN_COOP-06, FARM-CHICKEN_COOP-09. Triage: desk P4.
+  - [ ] FARM-CHICKEN_COOP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-CHICKEN_COOP-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-CHICKEN_COOP-12 BOM. Done when: models/mfg/CHICKEN_COOP/bom.csv. Depends: FARM-CHICKEN_COOP-10. Triage: desk P4.
+  - [x] FARM-CHICKEN_COOP-13 Fabrication route. Done when: docs-authority/fab/CHICKEN_COOP.md. Depends: FARM-CHICKEN_COOP-10, FARM-CHICKEN_COOP-12. Evidence: `docs-authority/fab/CHICKEN_COOP.md` (study route).
+  - [ ] FARM-CHICKEN_COOP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-CHICKEN_COOP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-CHICKEN_COOP-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-CHICKEN_COOP-14, X-COM-01. Triage: hardware.
+- **FARM-DUCKWEED** (duckweed, sector FARM)
+  - [x] FARM-DUCKWEED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DUCKWEED.md` §1; mass in = out 226.2 kg/d, 0.0000 kW.
+  - [x] FARM-DUCKWEED-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-DUCKWEED-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-DUCKWEED-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-DUCKWEED-01, FARM-DUCKWEED-02. Evidence: `docs-authority/pid/DUCKWEED.svg` (AQS-PID-001).
+  - [x] FARM-DUCKWEED-04 Nozzle schedule. Done when: docs-authority/nozzles/DUCKWEED.csv, one row per edge. Depends: FARM-DUCKWEED-03. Evidence: `docs-authority/nozzles/DUCKWEED.csv` (all 7 process connections listed).
+  - [x] FARM-DUCKWEED-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-DUCKWEED-04, FARM-DUCKWEED-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FARM-DUCKWEED-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-DUCKWEED-02. Triage: desk P3.
+  - [x] FARM-DUCKWEED-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-DUCKWEED-02, FARM-DUCKWEED-03. Evidence: `docs-authority/duties/DUCKWEED.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-DUCKWEED-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-DUCKWEED-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-DUCKWEED-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-DUCKWEED-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-DUCKWEED-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/DUCKWEED/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-DUCKWEED-02, FARM-DUCKWEED-04, FARM-DUCKWEED-06, FARM-DUCKWEED-09. Triage: desk P4.
+  - [ ] FARM-DUCKWEED-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-DUCKWEED-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-DUCKWEED-12 BOM. Done when: models/mfg/DUCKWEED/bom.csv. Depends: FARM-DUCKWEED-10. Triage: desk P4.
+  - [x] FARM-DUCKWEED-13 Fabrication route. Done when: docs-authority/fab/DUCKWEED.md. Depends: FARM-DUCKWEED-10, FARM-DUCKWEED-12. Evidence: `docs-authority/fab/DUCKWEED.md` (study route).
+  - [ ] FARM-DUCKWEED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCKWEED-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-DUCKWEED-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-DUCKWEED-14, X-COM-01. Triage: hardware.
+- **FARM-DUCK_PEN** (pen, sector FARM)
+  - [x] FARM-DUCK_PEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DUCK_PEN.md` §1; mass in = out 8.313 kg/d, 0.0000 kW.
+  - [x] FARM-DUCK_PEN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-DUCK_PEN-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-DUCK_PEN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-DUCK_PEN-01, FARM-DUCK_PEN-02. Evidence: `docs-authority/pid/DUCK_PEN.svg` (AQS-PID-001).
+  - [x] FARM-DUCK_PEN-04 Nozzle schedule. Done when: docs-authority/nozzles/DUCK_PEN.csv, one row per edge. Depends: FARM-DUCK_PEN-03. Evidence: `docs-authority/nozzles/DUCK_PEN.csv` (all 7 process connections listed).
+  - [x] FARM-DUCK_PEN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-DUCK_PEN-04, FARM-DUCK_PEN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FARM-DUCK_PEN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-DUCK_PEN-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] FARM-DUCK_PEN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-DUCK_PEN-02, FARM-DUCK_PEN-03. Evidence: `docs-authority/duties/DUCK_PEN.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-DUCK_PEN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-DUCK_PEN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-DUCK_PEN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-DUCK_PEN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-DUCK_PEN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/DUCK_PEN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-DUCK_PEN-02, FARM-DUCK_PEN-04, FARM-DUCK_PEN-06, FARM-DUCK_PEN-09. Triage: desk P4.
+  - [ ] FARM-DUCK_PEN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-DUCK_PEN-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-DUCK_PEN-12 BOM. Done when: models/mfg/DUCK_PEN/bom.csv. Depends: FARM-DUCK_PEN-10. Triage: desk P4.
+  - [x] FARM-DUCK_PEN-13 Fabrication route. Done when: docs-authority/fab/DUCK_PEN.md. Depends: FARM-DUCK_PEN-10, FARM-DUCK_PEN-12. Evidence: `docs-authority/fab/DUCK_PEN.md` (study route).
+  - [ ] FARM-DUCK_PEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCK_PEN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-DUCK_PEN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-DUCK_PEN-14, X-COM-01. Triage: hardware.
+- **FARM-FEED_PREP** (feed_prep, sector FARM)
+  - [x] FARM-FEED_PREP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FEED_PREP.md` §1; mass in = out 43.92 kg/d, 0.6000 kW.
+  - [x] FARM-FEED_PREP-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-FEED_PREP-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-FEED_PREP-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-FEED_PREP-01, FARM-FEED_PREP-02. Evidence: `docs-authority/pid/FEED_PREP.svg` (AQS-PID-001).
+  - [x] FARM-FEED_PREP-04 Nozzle schedule. Done when: docs-authority/nozzles/FEED_PREP.csv, one row per edge. Depends: FARM-FEED_PREP-03. Evidence: `docs-authority/nozzles/FEED_PREP.csv` (all 10 process connections listed).
+  - [x] FARM-FEED_PREP-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-FEED_PREP-04, FARM-FEED_PREP-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 11 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FARM-FEED_PREP-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-FEED_PREP-02. Triage: desk P3.
+  - [x] FARM-FEED_PREP-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-FEED_PREP-02, FARM-FEED_PREP-03. Evidence: `docs-authority/duties/FEED_PREP.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-FEED_PREP-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-FEED_PREP-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
+  - [x] FARM-FEED_PREP-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-FEED_PREP-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-FEED_PREP-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/FEED_PREP/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-FEED_PREP-02, FARM-FEED_PREP-04, FARM-FEED_PREP-06, FARM-FEED_PREP-09. Triage: desk P4.
+  - [ ] FARM-FEED_PREP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-FEED_PREP-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-FEED_PREP-12 BOM. Done when: models/mfg/FEED_PREP/bom.csv. Depends: FARM-FEED_PREP-10. Triage: desk P4.
+  - [x] FARM-FEED_PREP-13 Fabrication route. Done when: docs-authority/fab/FEED_PREP.md. Depends: FARM-FEED_PREP-10, FARM-FEED_PREP-12. Evidence: `docs-authority/fab/FEED_PREP.md` (study route).
+  - [ ] FARM-FEED_PREP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-FEED_PREP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-FEED_PREP-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-FEED_PREP-14, X-COM-01. Triage: hardware.
+- **FARM-FOOD_STORE** (store, sector FARM)
+  - [x] FARM-FOOD_STORE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FOOD_STORE.md` §1; mass in = out 10.66 kg/d, 0.0000 kW.
+  - [x] FARM-FOOD_STORE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-FOOD_STORE-01. Evidence: `docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064).
+  - [x] FARM-FOOD_STORE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-FOOD_STORE-01, FARM-FOOD_STORE-02. Evidence: `docs-authority/pid/FOOD_STORE.svg` (AQS-PID-001).
+  - [x] FARM-FOOD_STORE-04 Nozzle schedule. Done when: docs-authority/nozzles/FOOD_STORE.csv, one row per edge. Depends: FARM-FOOD_STORE-03. Evidence: `docs-authority/nozzles/FOOD_STORE.csv` (all 13 process connections listed).
+  - [x] FARM-FOOD_STORE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-FOOD_STORE-04, FARM-FOOD_STORE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 13 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FARM-FOOD_STORE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-FOOD_STORE-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] FARM-FOOD_STORE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-FOOD_STORE-02, FARM-FOOD_STORE-03. Evidence: `docs-authority/duties/FOOD_STORE.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-FOOD_STORE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-FOOD_STORE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
+  - [x] FARM-FOOD_STORE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-FOOD_STORE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-FOOD_STORE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/FOOD_STORE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-FOOD_STORE-02, FARM-FOOD_STORE-04, FARM-FOOD_STORE-06, FARM-FOOD_STORE-09. Status: partial: envelope `cad/stl/FOOD_STORE.stl`. Triage: desk P4.
+  - [ ] FARM-FOOD_STORE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-FOOD_STORE-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-FOOD_STORE-12 BOM. Done when: models/mfg/FOOD_STORE/bom.csv. Depends: FARM-FOOD_STORE-10. Triage: desk P4.
+  - [x] FARM-FOOD_STORE-13 Fabrication route. Done when: docs-authority/fab/FOOD_STORE.md. Depends: FARM-FOOD_STORE-10, FARM-FOOD_STORE-12. Evidence: `docs-authority/fab/FOOD_STORE.md` (study route).
+  - [ ] FARM-FOOD_STORE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-FOOD_STORE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-FOOD_STORE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-FOOD_STORE-14, X-COM-01. Triage: hardware.
+- **FARM-GROWBED_A** (growbed, sector FARM)
+  - [ ] FARM-GROWBED_A-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Triage: desk P1.
+  - [x] FARM-GROWBED_A-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-GROWBED_A-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-GROWBED_A-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-GROWBED_A-01, FARM-GROWBED_A-02. Evidence: `docs-authority/pid/GROWBED_A.svg` (AQS-PID-001).
+  - [x] FARM-GROWBED_A-04 Nozzle schedule. Done when: docs-authority/nozzles/GROWBED_A.csv, one row per edge. Depends: FARM-GROWBED_A-03. Evidence: `docs-authority/nozzles/GROWBED_A.csv` (all 5 process connections listed).
+  - [x] FARM-GROWBED_A-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-GROWBED_A-04, FARM-GROWBED_A-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FARM-GROWBED_A-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-GROWBED_A-02. Triage: desk P3.
+  - [ ] FARM-GROWBED_A-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-03. Triage: desk P2.
+  - [x] FARM-GROWBED_A-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-GROWBED_A-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
+  - [x] FARM-GROWBED_A-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-GROWBED_A-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-GROWBED_A-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROWBED_A/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-04, FARM-GROWBED_A-06, FARM-GROWBED_A-09. Triage: desk P4.
+  - [ ] FARM-GROWBED_A-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROWBED_A-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-GROWBED_A-12 BOM. Done when: models/mfg/GROWBED_A/bom.csv. Depends: FARM-GROWBED_A-10. Triage: desk P4.
+  - [x] FARM-GROWBED_A-13 Fabrication route. Done when: docs-authority/fab/GROWBED_A.md. Depends: FARM-GROWBED_A-10, FARM-GROWBED_A-12. Evidence: `docs-authority/fab/GROWBED_A.md` (study route).
+  - [ ] FARM-GROWBED_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_A-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-GROWBED_A-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROWBED_A-14, X-COM-01. Triage: hardware.
+- **FARM-GROWBED_B** (growbed, sector FARM)
+  - [x] FARM-GROWBED_B-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROWBED_B.md` §1; mass in = out 229.7 kg/d, 0.0000 kW.
+  - [x] FARM-GROWBED_B-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-GROWBED_B-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-GROWBED_B-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-GROWBED_B-01, FARM-GROWBED_B-02. Evidence: `docs-authority/pid/GROWBED_B.svg` (AQS-PID-001).
+  - [x] FARM-GROWBED_B-04 Nozzle schedule. Done when: docs-authority/nozzles/GROWBED_B.csv, one row per edge. Depends: FARM-GROWBED_B-03. Evidence: `docs-authority/nozzles/GROWBED_B.csv` (all 7 process connections listed).
+  - [x] FARM-GROWBED_B-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-GROWBED_B-04, FARM-GROWBED_B-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FARM-GROWBED_B-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-GROWBED_B-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] FARM-GROWBED_B-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROWBED_B-02, FARM-GROWBED_B-03. Evidence: `docs-authority/duties/GROWBED_B.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-GROWBED_B-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-GROWBED_B-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
+  - [x] FARM-GROWBED_B-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-GROWBED_B-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-GROWBED_B-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROWBED_B/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROWBED_B-02, FARM-GROWBED_B-04, FARM-GROWBED_B-06, FARM-GROWBED_B-09. Triage: desk P4.
+  - [ ] FARM-GROWBED_B-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROWBED_B-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-GROWBED_B-12 BOM. Done when: models/mfg/GROWBED_B/bom.csv. Depends: FARM-GROWBED_B-10. Triage: desk P4.
+  - [x] FARM-GROWBED_B-13 Fabrication route. Done when: docs-authority/fab/GROWBED_B.md. Depends: FARM-GROWBED_B-10, FARM-GROWBED_B-12. Evidence: `docs-authority/fab/GROWBED_B.md` (study route).
+  - [ ] FARM-GROWBED_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_B-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-GROWBED_B-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROWBED_B-14, X-COM-01. Triage: hardware.
+- **FARM-GROW_BED** (farm, sector FARM)
+  - [x] FARM-GROW_BED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROW_BED.md` §1; mass in = out 78.58 kg/d, 2.0463 kW.
+  - [x] FARM-GROW_BED-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-GROW_BED-01. Evidence: `docs-authority/sizing/GROW_BED.md` (AQS-SIZE-GROW_BED).
+  - [x] FARM-GROW_BED-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-GROW_BED-01, FARM-GROW_BED-02. Evidence: `docs-authority/pid/GROW_BED.svg` (AQS-PID-001).
+  - [x] FARM-GROW_BED-04 Nozzle schedule. Done when: docs-authority/nozzles/GROW_BED.csv, one row per edge. Depends: FARM-GROW_BED-03. Evidence: `docs-authority/nozzles/GROW_BED.csv` (all 18 process connections listed).
+  - [x] FARM-GROW_BED-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-GROW_BED-04, FARM-GROW_BED-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 19 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FARM-GROW_BED-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-GROW_BED-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] FARM-GROW_BED-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROW_BED-02, FARM-GROW_BED-03. Evidence: `docs-authority/duties/GROW_BED.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-GROW_BED-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-GROW_BED-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (9 loops; AQS-CTL-001).
+  - [x] FARM-GROW_BED-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-GROW_BED-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-GROW_BED-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROW_BED/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROW_BED-02, FARM-GROW_BED-04, FARM-GROW_BED-06, FARM-GROW_BED-09. Status: partial: envelope `cad/stl/GROW_BED.stl`. Triage: desk P4.
+  - [ ] FARM-GROW_BED-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROW_BED-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-GROW_BED-12 BOM. Done when: models/mfg/GROW_BED/bom.csv. Depends: FARM-GROW_BED-10. Triage: desk P4.
+  - [x] FARM-GROW_BED-13 Fabrication route. Done when: docs-authority/fab/GROW_BED.md. Depends: FARM-GROW_BED-10, FARM-GROW_BED-12. Evidence: `docs-authority/fab/GROW_BED.md` (study route).
+  - [ ] FARM-GROW_BED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROW_BED-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-GROW_BED-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROW_BED-14, X-COM-01. Triage: hardware.
+- **FARM-QUAIL_CAGE** (cage, sector FARM)
+  - [x] FARM-QUAIL_CAGE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/QUAIL_CAGE.md` §1; mass in = out 1.902 kg/d, 0.0000 kW.
+  - [x] FARM-QUAIL_CAGE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-QUAIL_CAGE-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-QUAIL_CAGE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-QUAIL_CAGE-01, FARM-QUAIL_CAGE-02. Evidence: `docs-authority/pid/QUAIL_CAGE.svg` (AQS-PID-001).
+  - [x] FARM-QUAIL_CAGE-04 Nozzle schedule. Done when: docs-authority/nozzles/QUAIL_CAGE.csv, one row per edge. Depends: FARM-QUAIL_CAGE-03. Evidence: `docs-authority/nozzles/QUAIL_CAGE.csv` (all 6 process connections listed).
+  - [x] FARM-QUAIL_CAGE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-QUAIL_CAGE-04, FARM-QUAIL_CAGE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FARM-QUAIL_CAGE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-QUAIL_CAGE-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
+  - [x] FARM-QUAIL_CAGE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-QUAIL_CAGE-02, FARM-QUAIL_CAGE-03. Evidence: `docs-authority/duties/QUAIL_CAGE.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-QUAIL_CAGE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-QUAIL_CAGE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-QUAIL_CAGE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-QUAIL_CAGE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-QUAIL_CAGE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/QUAIL_CAGE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-QUAIL_CAGE-02, FARM-QUAIL_CAGE-04, FARM-QUAIL_CAGE-06, FARM-QUAIL_CAGE-09. Triage: desk P4.
+  - [ ] FARM-QUAIL_CAGE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-QUAIL_CAGE-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-QUAIL_CAGE-12 BOM. Done when: models/mfg/QUAIL_CAGE/bom.csv. Depends: FARM-QUAIL_CAGE-10. Triage: desk P4.
+  - [x] FARM-QUAIL_CAGE-13 Fabrication route. Done when: docs-authority/fab/QUAIL_CAGE.md. Depends: FARM-QUAIL_CAGE-10, FARM-QUAIL_CAGE-12. Evidence: `docs-authority/fab/QUAIL_CAGE.md` (study route).
+  - [ ] FARM-QUAIL_CAGE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-QUAIL_CAGE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-QUAIL_CAGE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-QUAIL_CAGE-14, X-COM-01. Triage: hardware.
+- **FARM-RABBIT_HUTCH** (hutch, sector FARM)
+  - [x] FARM-RABBIT_HUTCH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/RABBIT_HUTCH.md` §1; mass in = out 0.5 kg/d, 0.0000 kW.
+  - [x] FARM-RABBIT_HUTCH-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-RABBIT_HUTCH-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-RABBIT_HUTCH-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-RABBIT_HUTCH-01, FARM-RABBIT_HUTCH-02. Evidence: `docs-authority/pid/RABBIT_HUTCH.svg` (AQS-PID-001).
+  - [x] FARM-RABBIT_HUTCH-04 Nozzle schedule. Done when: docs-authority/nozzles/RABBIT_HUTCH.csv, one row per edge. Depends: FARM-RABBIT_HUTCH-03. Evidence: `docs-authority/nozzles/RABBIT_HUTCH.csv` (all 4 process connections listed).
+  - [x] FARM-RABBIT_HUTCH-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-RABBIT_HUTCH-04, FARM-RABBIT_HUTCH-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FARM-RABBIT_HUTCH-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-RABBIT_HUTCH-02. Triage: desk P3.
+  - [x] FARM-RABBIT_HUTCH-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-RABBIT_HUTCH-02, FARM-RABBIT_HUTCH-03. Evidence: `docs-authority/duties/RABBIT_HUTCH.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-RABBIT_HUTCH-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-RABBIT_HUTCH-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-RABBIT_HUTCH-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-RABBIT_HUTCH-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-RABBIT_HUTCH-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/RABBIT_HUTCH/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-RABBIT_HUTCH-02, FARM-RABBIT_HUTCH-04, FARM-RABBIT_HUTCH-06, FARM-RABBIT_HUTCH-09. Triage: desk P4.
+  - [ ] FARM-RABBIT_HUTCH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-RABBIT_HUTCH-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-RABBIT_HUTCH-12 BOM. Done when: models/mfg/RABBIT_HUTCH/bom.csv. Depends: FARM-RABBIT_HUTCH-10. Triage: desk P4.
+  - [x] FARM-RABBIT_HUTCH-13 Fabrication route. Done when: docs-authority/fab/RABBIT_HUTCH.md. Depends: FARM-RABBIT_HUTCH-10, FARM-RABBIT_HUTCH-12. Evidence: `docs-authority/fab/RABBIT_HUTCH.md` (study route).
+  - [ ] FARM-RABBIT_HUTCH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-RABBIT_HUTCH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-RABBIT_HUTCH-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-RABBIT_HUTCH-14, X-COM-01. Triage: hardware.
+- **FARM-VERMI_BIN** (worm_bin, sector FARM)
+  - [x] FARM-VERMI_BIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VERMI_BIN.md` §1; mass in = out 2.75 kg/d, 0.0000 kW.
+  - [x] FARM-VERMI_BIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-VERMI_BIN-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
+  - [x] FARM-VERMI_BIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-VERMI_BIN-01, FARM-VERMI_BIN-02. Evidence: `docs-authority/pid/VERMI_BIN.svg` (AQS-PID-001).
+  - [x] FARM-VERMI_BIN-04 Nozzle schedule. Done when: docs-authority/nozzles/VERMI_BIN.csv, one row per edge. Depends: FARM-VERMI_BIN-03. Evidence: `docs-authority/nozzles/VERMI_BIN.csv` (all 4 process connections listed).
+  - [x] FARM-VERMI_BIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-VERMI_BIN-04, FARM-VERMI_BIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FARM-VERMI_BIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-VERMI_BIN-02. Triage: desk P3.
+  - [x] FARM-VERMI_BIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-VERMI_BIN-02, FARM-VERMI_BIN-03. Evidence: `docs-authority/duties/VERMI_BIN.md` §6 (C7 closed on MASTER_PLAN).
+  - [x] FARM-VERMI_BIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-VERMI_BIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
+  - [x] FARM-VERMI_BIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-VERMI_BIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
+  - [ ] FARM-VERMI_BIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/VERMI_BIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-VERMI_BIN-02, FARM-VERMI_BIN-04, FARM-VERMI_BIN-06, FARM-VERMI_BIN-09. Triage: desk P4.
+  - [ ] FARM-VERMI_BIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-VERMI_BIN-10, X-DWG-01. Triage: desk P4.
+  - [ ] FARM-VERMI_BIN-12 BOM. Done when: models/mfg/VERMI_BIN/bom.csv. Depends: FARM-VERMI_BIN-10. Triage: desk P4.
+  - [x] FARM-VERMI_BIN-13 Fabrication route. Done when: docs-authority/fab/VERMI_BIN.md. Depends: FARM-VERMI_BIN-10, FARM-VERMI_BIN-12. Evidence: `docs-authority/fab/VERMI_BIN.md` (study route).
+  - [ ] FARM-VERMI_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-VERMI_BIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
+  - [ ] FARM-VERMI_BIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-VERMI_BIN-14, X-COM-01. Triage: hardware.
+
 ### CRYO. Utility / header
 
 - **CRYO-AIR_RECEIVER** (store, sector CRYO)
@@ -1670,11 +1929,11 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] CRYO-AIR_RECEIVER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-AIR_RECEIVER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] CRYO-AIR_RECEIVER-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-AIR_RECEIVER-14, X-COM-01. Triage: hardware.
 - **CRYO-CRYO_AHU** (ahu, sector CRYO)
-  - [x] CRYO-CRYO_AHU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_AHU.md` §1; mass in = out 146.5 kg/d, 0.6472 kW.
+  - [x] CRYO-CRYO_AHU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_AHU.md` §1; mass in = out 170.1 kg/d, 0.6472 kW.
   - [x] CRYO-CRYO_AHU-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: CRYO-CRYO_AHU-01. Evidence: `docs-authority/sizing/CRYO_AHU.md` (AQS-SIZE-CRYO_AHU).
   - [x] CRYO-CRYO_AHU-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: CRYO-CRYO_AHU-01, CRYO-CRYO_AHU-02. Evidence: `docs-authority/pid/CRYO_AHU.svg` (AQS-PID-001).
-  - [x] CRYO-CRYO_AHU-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_AHU.csv, one row per edge. Depends: CRYO-CRYO_AHU-03. Evidence: `docs-authority/nozzles/CRYO_AHU.csv` (all 15 process connections listed).
-  - [x] CRYO-CRYO_AHU-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: CRYO-CRYO_AHU-04, CRYO-CRYO_AHU-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 16 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] CRYO-CRYO_AHU-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_AHU.csv, one row per edge. Depends: CRYO-CRYO_AHU-03. Evidence: `docs-authority/nozzles/CRYO_AHU.csv` (all 17 process connections listed).
+  - [x] CRYO-CRYO_AHU-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: CRYO-CRYO_AHU-04, CRYO-CRYO_AHU-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 18 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] CRYO-CRYO_AHU-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: CRYO-CRYO_AHU-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] CRYO-CRYO_AHU-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: CRYO-CRYO_AHU-02, CRYO-CRYO_AHU-03. Evidence: `docs-authority/duties/CRYO_AHU.md` §6 (C7 closed on MASTER_PLAN).
   - [x] CRYO-CRYO_AHU-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: CRYO-CRYO_AHU-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (6 loops; AQS-CTL-001).
@@ -1878,233 +2137,6 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] CRYO-RELIEF_CRYO-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: CRYO-RELIEF_CRYO-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] CRYO-RELIEF_CRYO-15 Test and commission. Done when: test procedure and acceptance record. Depends: CRYO-RELIEF_CRYO-14, X-COM-01. Triage: hardware.
 
-### FARM. Life support / habitat
-
-- **FARM-AQUA_TANK** (fish_tank, sector FARM)
-  - [ ] FARM-AQUA_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Triage: desk P1.
-  - [x] FARM-AQUA_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-AQUA_TANK-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-AQUA_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-AQUA_TANK-01, FARM-AQUA_TANK-02. Evidence: `docs-authority/pid/AQUA_TANK.svg` (AQS-PID-001).
-  - [x] FARM-AQUA_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/AQUA_TANK.csv, one row per edge. Depends: FARM-AQUA_TANK-03. Evidence: `docs-authority/nozzles/AQUA_TANK.csv` (all 6 process connections listed).
-  - [x] FARM-AQUA_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-AQUA_TANK-04, FARM-AQUA_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-AQUA_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-AQUA_TANK-02. Triage: desk P3.
-  - [ ] FARM-AQUA_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-03. Triage: desk P2.
-  - [x] FARM-AQUA_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-AQUA_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-AQUA_TANK-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-AQUA_TANK-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-AQUA_TANK-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/AQUA_TANK/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-04, FARM-AQUA_TANK-06, FARM-AQUA_TANK-09. Triage: desk P4.
-  - [ ] FARM-AQUA_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-AQUA_TANK-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-AQUA_TANK-12 BOM. Done when: models/mfg/AQUA_TANK/bom.csv. Depends: FARM-AQUA_TANK-10. Triage: desk P4.
-  - [x] FARM-AQUA_TANK-13 Fabrication route. Done when: docs-authority/fab/AQUA_TANK.md. Depends: FARM-AQUA_TANK-10, FARM-AQUA_TANK-12. Evidence: `docs-authority/fab/AQUA_TANK.md` (study route).
-  - [ ] FARM-AQUA_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-AQUA_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-AQUA_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-AQUA_TANK-14, X-COM-01. Triage: hardware.
-- **FARM-BEE_HIVE** (hive, sector FARM)
-  - [x] FARM-BEE_HIVE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BEE_HIVE.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-BEE_HIVE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-BEE_HIVE-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-BEE_HIVE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-BEE_HIVE-01, FARM-BEE_HIVE-02. Evidence: `docs-authority/pid/BEE_HIVE.svg` (AQS-PID-001).
-  - [x] FARM-BEE_HIVE-04 Nozzle schedule. Done when: docs-authority/nozzles/BEE_HIVE.csv, one row per edge. Depends: FARM-BEE_HIVE-03. Evidence: `docs-authority/nozzles/BEE_HIVE.csv` (all 3 process connections listed).
-  - [x] FARM-BEE_HIVE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-BEE_HIVE-04, FARM-BEE_HIVE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 3 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-BEE_HIVE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-BEE_HIVE-02. Triage: desk P3.
-  - [x] FARM-BEE_HIVE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-BEE_HIVE-02, FARM-BEE_HIVE-03. Evidence: `docs-authority/duties/BEE_HIVE.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-BEE_HIVE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-BEE_HIVE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-BEE_HIVE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-BEE_HIVE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-BEE_HIVE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BEE_HIVE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BEE_HIVE-02, FARM-BEE_HIVE-04, FARM-BEE_HIVE-06, FARM-BEE_HIVE-09. Triage: desk P4.
-  - [ ] FARM-BEE_HIVE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BEE_HIVE-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-BEE_HIVE-12 BOM. Done when: models/mfg/BEE_HIVE/bom.csv. Depends: FARM-BEE_HIVE-10. Triage: desk P4.
-  - [x] FARM-BEE_HIVE-13 Fabrication route. Done when: docs-authority/fab/BEE_HIVE.md. Depends: FARM-BEE_HIVE-10, FARM-BEE_HIVE-12. Evidence: `docs-authority/fab/BEE_HIVE.md` (study route).
-  - [ ] FARM-BEE_HIVE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BEE_HIVE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-BEE_HIVE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BEE_HIVE-14, X-COM-01. Triage: hardware.
-- **FARM-BIOFILTER** (biofilter, sector FARM)
-  - [x] FARM-BIOFILTER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BIOFILTER.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-BIOFILTER-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-BIOFILTER-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-BIOFILTER-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-BIOFILTER-01, FARM-BIOFILTER-02. Evidence: `docs-authority/pid/BIOFILTER.svg` (AQS-PID-001).
-  - [x] FARM-BIOFILTER-04 Nozzle schedule. Done when: docs-authority/nozzles/BIOFILTER.csv, one row per edge. Depends: FARM-BIOFILTER-03. Evidence: `docs-authority/nozzles/BIOFILTER.csv` (all 2 process connections listed).
-  - [x] FARM-BIOFILTER-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-BIOFILTER-04, FARM-BIOFILTER-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 3 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-BIOFILTER-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-BIOFILTER-02. Triage: desk P3.
-  - [x] FARM-BIOFILTER-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-BIOFILTER-02, FARM-BIOFILTER-03. Evidence: `docs-authority/duties/BIOFILTER.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-BIOFILTER-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-BIOFILTER-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-BIOFILTER-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-BIOFILTER-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-BIOFILTER-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BIOFILTER/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BIOFILTER-02, FARM-BIOFILTER-04, FARM-BIOFILTER-06, FARM-BIOFILTER-09. Triage: desk P4.
-  - [ ] FARM-BIOFILTER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BIOFILTER-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-BIOFILTER-12 BOM. Done when: models/mfg/BIOFILTER/bom.csv. Depends: FARM-BIOFILTER-10. Triage: desk P4.
-  - [x] FARM-BIOFILTER-13 Fabrication route. Done when: docs-authority/fab/BIOFILTER.md. Depends: FARM-BIOFILTER-10, FARM-BIOFILTER-12. Evidence: `docs-authority/fab/BIOFILTER.md` (study route).
-  - [ ] FARM-BIOFILTER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BIOFILTER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-BIOFILTER-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BIOFILTER-14, X-COM-01. Triage: hardware.
-- **FARM-BSFL_BIN** (bsfl_bin, sector FARM)
-  - [x] FARM-BSFL_BIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BSFL_BIN.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-BSFL_BIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-BSFL_BIN-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-BSFL_BIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-BSFL_BIN-01, FARM-BSFL_BIN-02. Evidence: `docs-authority/pid/BSFL_BIN.svg` (AQS-PID-001).
-  - [x] FARM-BSFL_BIN-04 Nozzle schedule. Done when: docs-authority/nozzles/BSFL_BIN.csv, one row per edge. Depends: FARM-BSFL_BIN-03. Evidence: `docs-authority/nozzles/BSFL_BIN.csv` (all 7 process connections listed).
-  - [x] FARM-BSFL_BIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-BSFL_BIN-04, FARM-BSFL_BIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] FARM-BSFL_BIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-BSFL_BIN-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] FARM-BSFL_BIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-BSFL_BIN-02, FARM-BSFL_BIN-03. Evidence: `docs-authority/duties/BSFL_BIN.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-BSFL_BIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-BSFL_BIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-BSFL_BIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-BSFL_BIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-BSFL_BIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BSFL_BIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BSFL_BIN-02, FARM-BSFL_BIN-04, FARM-BSFL_BIN-06, FARM-BSFL_BIN-09. Triage: desk P4.
-  - [ ] FARM-BSFL_BIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BSFL_BIN-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-BSFL_BIN-12 BOM. Done when: models/mfg/BSFL_BIN/bom.csv. Depends: FARM-BSFL_BIN-10. Triage: desk P4.
-  - [x] FARM-BSFL_BIN-13 Fabrication route. Done when: docs-authority/fab/BSFL_BIN.md. Depends: FARM-BSFL_BIN-10, FARM-BSFL_BIN-12. Evidence: `docs-authority/fab/BSFL_BIN.md` (study route).
-  - [ ] FARM-BSFL_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BSFL_BIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-BSFL_BIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BSFL_BIN-14, X-COM-01. Triage: hardware.
-- **FARM-CHICKEN_COOP** (coop, sector FARM)
-  - [x] FARM-CHICKEN_COOP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CHICKEN_COOP.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-CHICKEN_COOP-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-CHICKEN_COOP-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-CHICKEN_COOP-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-CHICKEN_COOP-01, FARM-CHICKEN_COOP-02. Evidence: `docs-authority/pid/CHICKEN_COOP.svg` (AQS-PID-001).
-  - [x] FARM-CHICKEN_COOP-04 Nozzle schedule. Done when: docs-authority/nozzles/CHICKEN_COOP.csv, one row per edge. Depends: FARM-CHICKEN_COOP-03. Evidence: `docs-authority/nozzles/CHICKEN_COOP.csv` (all 6 process connections listed).
-  - [x] FARM-CHICKEN_COOP-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-CHICKEN_COOP-04, FARM-CHICKEN_COOP-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] FARM-CHICKEN_COOP-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-CHICKEN_COOP-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] FARM-CHICKEN_COOP-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-CHICKEN_COOP-02, FARM-CHICKEN_COOP-03. Evidence: `docs-authority/duties/CHICKEN_COOP.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-CHICKEN_COOP-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-CHICKEN_COOP-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-CHICKEN_COOP-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-CHICKEN_COOP-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-CHICKEN_COOP-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/CHICKEN_COOP/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-CHICKEN_COOP-02, FARM-CHICKEN_COOP-04, FARM-CHICKEN_COOP-06, FARM-CHICKEN_COOP-09. Triage: desk P4.
-  - [ ] FARM-CHICKEN_COOP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-CHICKEN_COOP-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-CHICKEN_COOP-12 BOM. Done when: models/mfg/CHICKEN_COOP/bom.csv. Depends: FARM-CHICKEN_COOP-10. Triage: desk P4.
-  - [x] FARM-CHICKEN_COOP-13 Fabrication route. Done when: docs-authority/fab/CHICKEN_COOP.md. Depends: FARM-CHICKEN_COOP-10, FARM-CHICKEN_COOP-12. Evidence: `docs-authority/fab/CHICKEN_COOP.md` (study route).
-  - [ ] FARM-CHICKEN_COOP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-CHICKEN_COOP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-CHICKEN_COOP-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-CHICKEN_COOP-14, X-COM-01. Triage: hardware.
-- **FARM-DUCKWEED** (duckweed, sector FARM)
-  - [x] FARM-DUCKWEED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DUCKWEED.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-DUCKWEED-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-DUCKWEED-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-DUCKWEED-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-DUCKWEED-01, FARM-DUCKWEED-02. Evidence: `docs-authority/pid/DUCKWEED.svg` (AQS-PID-001).
-  - [x] FARM-DUCKWEED-04 Nozzle schedule. Done when: docs-authority/nozzles/DUCKWEED.csv, one row per edge. Depends: FARM-DUCKWEED-03. Evidence: `docs-authority/nozzles/DUCKWEED.csv` (all 6 process connections listed).
-  - [x] FARM-DUCKWEED-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-DUCKWEED-04, FARM-DUCKWEED-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-DUCKWEED-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-DUCKWEED-02. Triage: desk P3.
-  - [x] FARM-DUCKWEED-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-DUCKWEED-02, FARM-DUCKWEED-03. Evidence: `docs-authority/duties/DUCKWEED.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-DUCKWEED-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-DUCKWEED-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-DUCKWEED-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-DUCKWEED-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-DUCKWEED-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/DUCKWEED/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-DUCKWEED-02, FARM-DUCKWEED-04, FARM-DUCKWEED-06, FARM-DUCKWEED-09. Triage: desk P4.
-  - [ ] FARM-DUCKWEED-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-DUCKWEED-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-DUCKWEED-12 BOM. Done when: models/mfg/DUCKWEED/bom.csv. Depends: FARM-DUCKWEED-10. Triage: desk P4.
-  - [x] FARM-DUCKWEED-13 Fabrication route. Done when: docs-authority/fab/DUCKWEED.md. Depends: FARM-DUCKWEED-10, FARM-DUCKWEED-12. Evidence: `docs-authority/fab/DUCKWEED.md` (study route).
-  - [ ] FARM-DUCKWEED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCKWEED-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-DUCKWEED-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-DUCKWEED-14, X-COM-01. Triage: hardware.
-- **FARM-DUCK_PEN** (pen, sector FARM)
-  - [x] FARM-DUCK_PEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DUCK_PEN.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-DUCK_PEN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-DUCK_PEN-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-DUCK_PEN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-DUCK_PEN-01, FARM-DUCK_PEN-02. Evidence: `docs-authority/pid/DUCK_PEN.svg` (AQS-PID-001).
-  - [x] FARM-DUCK_PEN-04 Nozzle schedule. Done when: docs-authority/nozzles/DUCK_PEN.csv, one row per edge. Depends: FARM-DUCK_PEN-03. Evidence: `docs-authority/nozzles/DUCK_PEN.csv` (all 6 process connections listed).
-  - [x] FARM-DUCK_PEN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-DUCK_PEN-04, FARM-DUCK_PEN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] FARM-DUCK_PEN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-DUCK_PEN-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] FARM-DUCK_PEN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-DUCK_PEN-02, FARM-DUCK_PEN-03. Evidence: `docs-authority/duties/DUCK_PEN.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-DUCK_PEN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-DUCK_PEN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-DUCK_PEN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-DUCK_PEN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-DUCK_PEN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/DUCK_PEN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-DUCK_PEN-02, FARM-DUCK_PEN-04, FARM-DUCK_PEN-06, FARM-DUCK_PEN-09. Triage: desk P4.
-  - [ ] FARM-DUCK_PEN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-DUCK_PEN-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-DUCK_PEN-12 BOM. Done when: models/mfg/DUCK_PEN/bom.csv. Depends: FARM-DUCK_PEN-10. Triage: desk P4.
-  - [x] FARM-DUCK_PEN-13 Fabrication route. Done when: docs-authority/fab/DUCK_PEN.md. Depends: FARM-DUCK_PEN-10, FARM-DUCK_PEN-12. Evidence: `docs-authority/fab/DUCK_PEN.md` (study route).
-  - [ ] FARM-DUCK_PEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCK_PEN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-DUCK_PEN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-DUCK_PEN-14, X-COM-01. Triage: hardware.
-- **FARM-FOOD_STORE** (store, sector FARM)
-  - [x] FARM-FOOD_STORE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/FOOD_STORE.md` §1; mass in = out 4.2 kg/d, 0.0000 kW.
-  - [x] FARM-FOOD_STORE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-FOOD_STORE-01. Evidence: `docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064).
-  - [x] FARM-FOOD_STORE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-FOOD_STORE-01, FARM-FOOD_STORE-02. Evidence: `docs-authority/pid/FOOD_STORE.svg` (AQS-PID-001).
-  - [x] FARM-FOOD_STORE-04 Nozzle schedule. Done when: docs-authority/nozzles/FOOD_STORE.csv, one row per edge. Depends: FARM-FOOD_STORE-03. Evidence: `docs-authority/nozzles/FOOD_STORE.csv` (all 10 process connections listed).
-  - [x] FARM-FOOD_STORE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-FOOD_STORE-04, FARM-FOOD_STORE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 10 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] FARM-FOOD_STORE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-FOOD_STORE-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] FARM-FOOD_STORE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-FOOD_STORE-02, FARM-FOOD_STORE-03. Evidence: `docs-authority/duties/FOOD_STORE.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-FOOD_STORE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-FOOD_STORE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
-  - [x] FARM-FOOD_STORE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-FOOD_STORE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-FOOD_STORE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/FOOD_STORE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-FOOD_STORE-02, FARM-FOOD_STORE-04, FARM-FOOD_STORE-06, FARM-FOOD_STORE-09. Status: partial: envelope `cad/stl/FOOD_STORE.stl`. Triage: desk P4.
-  - [ ] FARM-FOOD_STORE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-FOOD_STORE-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-FOOD_STORE-12 BOM. Done when: models/mfg/FOOD_STORE/bom.csv. Depends: FARM-FOOD_STORE-10. Triage: desk P4.
-  - [x] FARM-FOOD_STORE-13 Fabrication route. Done when: docs-authority/fab/FOOD_STORE.md. Depends: FARM-FOOD_STORE-10, FARM-FOOD_STORE-12. Evidence: `docs-authority/fab/FOOD_STORE.md` (study route).
-  - [ ] FARM-FOOD_STORE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-FOOD_STORE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-FOOD_STORE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-FOOD_STORE-14, X-COM-01. Triage: hardware.
-- **FARM-GROWBED_A** (growbed, sector FARM)
-  - [ ] FARM-GROWBED_A-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Triage: desk P1.
-  - [x] FARM-GROWBED_A-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-GROWBED_A-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-GROWBED_A-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-GROWBED_A-01, FARM-GROWBED_A-02. Evidence: `docs-authority/pid/GROWBED_A.svg` (AQS-PID-001).
-  - [x] FARM-GROWBED_A-04 Nozzle schedule. Done when: docs-authority/nozzles/GROWBED_A.csv, one row per edge. Depends: FARM-GROWBED_A-03. Evidence: `docs-authority/nozzles/GROWBED_A.csv` (all 4 process connections listed).
-  - [x] FARM-GROWBED_A-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-GROWBED_A-04, FARM-GROWBED_A-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-GROWBED_A-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-GROWBED_A-02. Triage: desk P3.
-  - [ ] FARM-GROWBED_A-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-03. Triage: desk P2.
-  - [x] FARM-GROWBED_A-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-GROWBED_A-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
-  - [x] FARM-GROWBED_A-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-GROWBED_A-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-GROWBED_A-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROWBED_A/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-04, FARM-GROWBED_A-06, FARM-GROWBED_A-09. Triage: desk P4.
-  - [ ] FARM-GROWBED_A-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROWBED_A-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-GROWBED_A-12 BOM. Done when: models/mfg/GROWBED_A/bom.csv. Depends: FARM-GROWBED_A-10. Triage: desk P4.
-  - [x] FARM-GROWBED_A-13 Fabrication route. Done when: docs-authority/fab/GROWBED_A.md. Depends: FARM-GROWBED_A-10, FARM-GROWBED_A-12. Evidence: `docs-authority/fab/GROWBED_A.md` (study route).
-  - [ ] FARM-GROWBED_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_A-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-GROWBED_A-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROWBED_A-14, X-COM-01. Triage: hardware.
-- **FARM-GROWBED_B** (growbed, sector FARM)
-  - [x] FARM-GROWBED_B-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROWBED_B.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-GROWBED_B-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-GROWBED_B-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-GROWBED_B-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-GROWBED_B-01, FARM-GROWBED_B-02. Evidence: `docs-authority/pid/GROWBED_B.svg` (AQS-PID-001).
-  - [x] FARM-GROWBED_B-04 Nozzle schedule. Done when: docs-authority/nozzles/GROWBED_B.csv, one row per edge. Depends: FARM-GROWBED_B-03. Evidence: `docs-authority/nozzles/GROWBED_B.csv` (all 3 process connections listed).
-  - [x] FARM-GROWBED_B-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-GROWBED_B-04, FARM-GROWBED_B-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 3 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] FARM-GROWBED_B-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-GROWBED_B-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] FARM-GROWBED_B-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROWBED_B-02, FARM-GROWBED_B-03. Evidence: `docs-authority/duties/GROWBED_B.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-GROWBED_B-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-GROWBED_B-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
-  - [x] FARM-GROWBED_B-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-GROWBED_B-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-GROWBED_B-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROWBED_B/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROWBED_B-02, FARM-GROWBED_B-04, FARM-GROWBED_B-06, FARM-GROWBED_B-09. Triage: desk P4.
-  - [ ] FARM-GROWBED_B-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROWBED_B-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-GROWBED_B-12 BOM. Done when: models/mfg/GROWBED_B/bom.csv. Depends: FARM-GROWBED_B-10. Triage: desk P4.
-  - [x] FARM-GROWBED_B-13 Fabrication route. Done when: docs-authority/fab/GROWBED_B.md. Depends: FARM-GROWBED_B-10, FARM-GROWBED_B-12. Evidence: `docs-authority/fab/GROWBED_B.md` (study route).
-  - [ ] FARM-GROWBED_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_B-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-GROWBED_B-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROWBED_B-14, X-COM-01. Triage: hardware.
-- **FARM-GROW_BED** (farm, sector FARM)
-  - [x] FARM-GROW_BED-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROW_BED.md` §1; mass in = out 76.88 kg/d, 2.0463 kW.
-  - [x] FARM-GROW_BED-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-GROW_BED-01. Evidence: `docs-authority/sizing/GROW_BED.md` (AQS-SIZE-GROW_BED).
-  - [x] FARM-GROW_BED-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-GROW_BED-01, FARM-GROW_BED-02. Evidence: `docs-authority/pid/GROW_BED.svg` (AQS-PID-001).
-  - [x] FARM-GROW_BED-04 Nozzle schedule. Done when: docs-authority/nozzles/GROW_BED.csv, one row per edge. Depends: FARM-GROW_BED-03. Evidence: `docs-authority/nozzles/GROW_BED.csv` (all 18 process connections listed).
-  - [x] FARM-GROW_BED-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-GROW_BED-04, FARM-GROW_BED-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 19 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] FARM-GROW_BED-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-GROW_BED-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] FARM-GROW_BED-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROW_BED-02, FARM-GROW_BED-03. Evidence: `docs-authority/duties/GROW_BED.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-GROW_BED-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-GROW_BED-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (9 loops; AQS-CTL-001).
-  - [x] FARM-GROW_BED-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-GROW_BED-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-GROW_BED-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROW_BED/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROW_BED-02, FARM-GROW_BED-04, FARM-GROW_BED-06, FARM-GROW_BED-09. Status: partial: envelope `cad/stl/GROW_BED.stl`. Triage: desk P4.
-  - [ ] FARM-GROW_BED-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROW_BED-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-GROW_BED-12 BOM. Done when: models/mfg/GROW_BED/bom.csv. Depends: FARM-GROW_BED-10. Triage: desk P4.
-  - [x] FARM-GROW_BED-13 Fabrication route. Done when: docs-authority/fab/GROW_BED.md. Depends: FARM-GROW_BED-10, FARM-GROW_BED-12. Evidence: `docs-authority/fab/GROW_BED.md` (study route).
-  - [ ] FARM-GROW_BED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROW_BED-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-GROW_BED-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROW_BED-14, X-COM-01. Triage: hardware.
-- **FARM-QUAIL_CAGE** (cage, sector FARM)
-  - [x] FARM-QUAIL_CAGE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/QUAIL_CAGE.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-QUAIL_CAGE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-QUAIL_CAGE-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-QUAIL_CAGE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-QUAIL_CAGE-01, FARM-QUAIL_CAGE-02. Evidence: `docs-authority/pid/QUAIL_CAGE.svg` (AQS-PID-001).
-  - [x] FARM-QUAIL_CAGE-04 Nozzle schedule. Done when: docs-authority/nozzles/QUAIL_CAGE.csv, one row per edge. Depends: FARM-QUAIL_CAGE-03. Evidence: `docs-authority/nozzles/QUAIL_CAGE.csv` (all 5 process connections listed).
-  - [x] FARM-QUAIL_CAGE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-QUAIL_CAGE-04, FARM-QUAIL_CAGE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [x] FARM-QUAIL_CAGE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-QUAIL_CAGE-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [x] FARM-QUAIL_CAGE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-QUAIL_CAGE-02, FARM-QUAIL_CAGE-03. Evidence: `docs-authority/duties/QUAIL_CAGE.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-QUAIL_CAGE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-QUAIL_CAGE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-QUAIL_CAGE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-QUAIL_CAGE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-QUAIL_CAGE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/QUAIL_CAGE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-QUAIL_CAGE-02, FARM-QUAIL_CAGE-04, FARM-QUAIL_CAGE-06, FARM-QUAIL_CAGE-09. Triage: desk P4.
-  - [ ] FARM-QUAIL_CAGE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-QUAIL_CAGE-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-QUAIL_CAGE-12 BOM. Done when: models/mfg/QUAIL_CAGE/bom.csv. Depends: FARM-QUAIL_CAGE-10. Triage: desk P4.
-  - [x] FARM-QUAIL_CAGE-13 Fabrication route. Done when: docs-authority/fab/QUAIL_CAGE.md. Depends: FARM-QUAIL_CAGE-10, FARM-QUAIL_CAGE-12. Evidence: `docs-authority/fab/QUAIL_CAGE.md` (study route).
-  - [ ] FARM-QUAIL_CAGE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-QUAIL_CAGE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-QUAIL_CAGE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-QUAIL_CAGE-14, X-COM-01. Triage: hardware.
-- **FARM-RABBIT_HUTCH** (hutch, sector FARM)
-  - [x] FARM-RABBIT_HUTCH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/RABBIT_HUTCH.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-RABBIT_HUTCH-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-RABBIT_HUTCH-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-RABBIT_HUTCH-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-RABBIT_HUTCH-01, FARM-RABBIT_HUTCH-02. Evidence: `docs-authority/pid/RABBIT_HUTCH.svg` (AQS-PID-001).
-  - [x] FARM-RABBIT_HUTCH-04 Nozzle schedule. Done when: docs-authority/nozzles/RABBIT_HUTCH.csv, one row per edge. Depends: FARM-RABBIT_HUTCH-03. Evidence: `docs-authority/nozzles/RABBIT_HUTCH.csv` (all 4 process connections listed).
-  - [x] FARM-RABBIT_HUTCH-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-RABBIT_HUTCH-04, FARM-RABBIT_HUTCH-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-RABBIT_HUTCH-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-RABBIT_HUTCH-02. Triage: desk P3.
-  - [x] FARM-RABBIT_HUTCH-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-RABBIT_HUTCH-02, FARM-RABBIT_HUTCH-03. Evidence: `docs-authority/duties/RABBIT_HUTCH.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-RABBIT_HUTCH-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-RABBIT_HUTCH-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-RABBIT_HUTCH-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-RABBIT_HUTCH-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-RABBIT_HUTCH-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/RABBIT_HUTCH/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-RABBIT_HUTCH-02, FARM-RABBIT_HUTCH-04, FARM-RABBIT_HUTCH-06, FARM-RABBIT_HUTCH-09. Triage: desk P4.
-  - [ ] FARM-RABBIT_HUTCH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-RABBIT_HUTCH-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-RABBIT_HUTCH-12 BOM. Done when: models/mfg/RABBIT_HUTCH/bom.csv. Depends: FARM-RABBIT_HUTCH-10. Triage: desk P4.
-  - [x] FARM-RABBIT_HUTCH-13 Fabrication route. Done when: docs-authority/fab/RABBIT_HUTCH.md. Depends: FARM-RABBIT_HUTCH-10, FARM-RABBIT_HUTCH-12. Evidence: `docs-authority/fab/RABBIT_HUTCH.md` (study route).
-  - [ ] FARM-RABBIT_HUTCH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-RABBIT_HUTCH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-RABBIT_HUTCH-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-RABBIT_HUTCH-14, X-COM-01. Triage: hardware.
-- **FARM-VERMI_BIN** (worm_bin, sector FARM)
-  - [x] FARM-VERMI_BIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VERMI_BIN.md` §1; mass in = out 0 kg/d, 0.0000 kW.
-  - [x] FARM-VERMI_BIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-VERMI_BIN-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
-  - [x] FARM-VERMI_BIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-VERMI_BIN-01, FARM-VERMI_BIN-02. Evidence: `docs-authority/pid/VERMI_BIN.svg` (AQS-PID-001).
-  - [x] FARM-VERMI_BIN-04 Nozzle schedule. Done when: docs-authority/nozzles/VERMI_BIN.csv, one row per edge. Depends: FARM-VERMI_BIN-03. Evidence: `docs-authority/nozzles/VERMI_BIN.csv` (all 4 process connections listed).
-  - [x] FARM-VERMI_BIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-VERMI_BIN-04, FARM-VERMI_BIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-VERMI_BIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-VERMI_BIN-02. Triage: desk P3.
-  - [x] FARM-VERMI_BIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-VERMI_BIN-02, FARM-VERMI_BIN-03. Evidence: `docs-authority/duties/VERMI_BIN.md` §6 (C7 closed on MASTER_PLAN).
-  - [x] FARM-VERMI_BIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-VERMI_BIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
-  - [x] FARM-VERMI_BIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-VERMI_BIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-VERMI_BIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/VERMI_BIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-VERMI_BIN-02, FARM-VERMI_BIN-04, FARM-VERMI_BIN-06, FARM-VERMI_BIN-09. Triage: desk P4.
-  - [ ] FARM-VERMI_BIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-VERMI_BIN-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-VERMI_BIN-12 BOM. Done when: models/mfg/VERMI_BIN/bom.csv. Depends: FARM-VERMI_BIN-10. Triage: desk P4.
-  - [x] FARM-VERMI_BIN-13 Fabrication route. Done when: docs-authority/fab/VERMI_BIN.md. Depends: FARM-VERMI_BIN-10, FARM-VERMI_BIN-12. Evidence: `docs-authority/fab/VERMI_BIN.md` (study route).
-  - [ ] FARM-VERMI_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-VERMI_BIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
-  - [ ] FARM-VERMI_BIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-VERMI_BIN-14, X-COM-01. Triage: hardware.
-
 ### OIL. Process (Mass transform)
 
 - **OIL-AFTERBURNER** (thermal, sector OIL)
@@ -2172,7 +2204,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] OIL-GREASE_LI-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: OIL-GREASE_LI-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] OIL-GREASE_LI-15 Test and commission. Done when: test procedure and acceptance record. Depends: OIL-GREASE_LI-14, X-COM-01. Triage: hardware.
 - **OIL-HOPPER** (hopper, sector OIL)
-  - [x] OIL-HOPPER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HOPPER.md` §1; mass in = out 633.4 kg/d, 0.0000 kW.
+  - [x] OIL-HOPPER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HOPPER.md` §1; mass in = out 633.9 kg/d, 0.0000 kW.
   - [x] OIL-HOPPER-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: OIL-HOPPER-01. Evidence: `docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064).
   - [x] OIL-HOPPER-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: OIL-HOPPER-01, OIL-HOPPER-02. Evidence: `docs-authority/pid/HOPPER.svg` (AQS-PID-001).
   - [x] OIL-HOPPER-04 Nozzle schedule. Done when: docs-authority/nozzles/HOPPER.csv, one row per edge. Depends: OIL-HOPPER-03. Evidence: `docs-authority/nozzles/HOPPER.csv` (all 6 process connections listed).
@@ -2695,7 +2727,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] WTR-BLACK_DIGEST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-BLACK_DIGEST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] WTR-BLACK_DIGEST-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-BLACK_DIGEST-14, X-COM-01. Triage: hardware.
 - **WTR-BMED_UPW_POLISH** (skid, sector WTR)
-  - [x] WTR-BMED_UPW_POLISH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §1; mass in = out 308.5 kg/d, 0.0180 kW.
+  - [x] WTR-BMED_UPW_POLISH-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §1; mass in = out 340.1 kg/d, 0.0180 kW.
   - [x] WTR-BMED_UPW_POLISH-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-BMED_UPW_POLISH-01. Evidence: `docs-authority/sizing/UPW_POLISH.md` (AQS-DUTY-070).
   - [x] WTR-BMED_UPW_POLISH-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-BMED_UPW_POLISH-01, WTR-BMED_UPW_POLISH-02. Evidence: `docs-authority/pid/BMED_UPW_POLISH.svg` (AQS-PID-001).
   - [x] WTR-BMED_UPW_POLISH-04 Nozzle schedule. Done when: docs-authority/nozzles/BMED_UPW_POLISH.csv, one row per edge. Depends: WTR-BMED_UPW_POLISH-03. Evidence: `docs-authority/nozzles/BMED_UPW_POLISH.csv` (all 5 process connections listed).
@@ -2727,11 +2759,11 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] WTR-CATCH_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-CATCH_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] WTR-CATCH_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-CATCH_TANK-14, X-COM-01. Triage: hardware.
 - **WTR-GREY_TREAT** (treat, sector WTR)
-  - [x] WTR-GREY_TREAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GREY_TREAT.md` §1; mass in = out 349.1 kg/d, 0.0000 kW.
+  - [x] WTR-GREY_TREAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GREY_TREAT.md` §1; mass in = out 363.2 kg/d, 0.0000 kW.
   - [x] WTR-GREY_TREAT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-GREY_TREAT-01. Evidence: `docs-authority/sizing/GREY_TREAT.md` (AQS-SIZE-GREY_TREAT).
   - [x] WTR-GREY_TREAT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-GREY_TREAT-01, WTR-GREY_TREAT-02. Evidence: `docs-authority/pid/GREY_TREAT.svg` (AQS-PID-001).
-  - [x] WTR-GREY_TREAT-04 Nozzle schedule. Done when: docs-authority/nozzles/GREY_TREAT.csv, one row per edge. Depends: WTR-GREY_TREAT-03. Evidence: `docs-authority/nozzles/GREY_TREAT.csv` (all 8 process connections listed).
-  - [x] WTR-GREY_TREAT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-GREY_TREAT-04, WTR-GREY_TREAT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 9 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] WTR-GREY_TREAT-04 Nozzle schedule. Done when: docs-authority/nozzles/GREY_TREAT.csv, one row per edge. Depends: WTR-GREY_TREAT-03. Evidence: `docs-authority/nozzles/GREY_TREAT.csv` (all 9 process connections listed).
+  - [x] WTR-GREY_TREAT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-GREY_TREAT-04, WTR-GREY_TREAT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 10 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [ ] WTR-GREY_TREAT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-GREY_TREAT-02. Triage: desk P3.
   - [x] WTR-GREY_TREAT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-GREY_TREAT-02, WTR-GREY_TREAT-03. Evidence: `docs-authority/duties/GREY_TREAT.md` §6 (C7 closed on MASTER_PLAN).
   - [x] WTR-GREY_TREAT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-GREY_TREAT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
@@ -2775,7 +2807,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] WTR-HDR_UPW-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-HDR_UPW-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] WTR-HDR_UPW-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-HDR_UPW-14, X-COM-01. Triage: hardware.
 - **WTR-REMIN** (dose, sector WTR)
-  - [x] WTR-REMIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REMIN.md` §1; mass in = out 175.2 kg/d, 0.0460 kW.
+  - [x] WTR-REMIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REMIN.md` §1; mass in = out 206.8 kg/d, 0.0460 kW.
   - [x] WTR-REMIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-REMIN-01. Evidence: `docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064).
   - [x] WTR-REMIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-REMIN-01, WTR-REMIN-02. Evidence: `docs-authority/pid/REMIN.svg` (AQS-PID-001).
   - [x] WTR-REMIN-04 Nozzle schedule. Done when: docs-authority/nozzles/REMIN.csv, one row per edge. Depends: WTR-REMIN-03. Evidence: `docs-authority/nozzles/REMIN.csv` (all 3 process connections listed).
@@ -2791,7 +2823,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] WTR-REMIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-REMIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] WTR-REMIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-REMIN-14, X-COM-01. Triage: hardware.
 - **WTR-ROOF_TANK** (tank, sector WTR)
-  - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; mass in = out 480.9 kg/d, 0.0000 kW.
+  - [x] WTR-ROOF_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ROOF_TANK.md` §1; mass in = out 512.4 kg/d, 0.0000 kW.
   - [x] WTR-ROOF_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-ROOF_TANK-01. Evidence: `docs-authority/WATER_TOWER.md` (AQS-BLD-014).
   - [x] WTR-ROOF_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-ROOF_TANK-01, WTR-ROOF_TANK-02. Evidence: `docs-authority/pid/ROOF_TANK.svg` (AQS-PID-001).
   - [x] WTR-ROOF_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/ROOF_TANK.csv, one row per edge. Depends: WTR-ROOF_TANK-03. Evidence: `docs-authority/nozzles/ROOF_TANK.csv` (all 20 process connections listed).
@@ -2807,7 +2839,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] WTR-ROOF_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: WTR-ROOF_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] WTR-ROOF_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: WTR-ROOF_TANK-14, X-COM-01. Triage: hardware.
 - **WTR-VCD_TRAIN** (evaporator, sector WTR)
-  - [x] WTR-VCD_TRAIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VCD_TRAIN.md` §1; mass in = out 333.1 kg/d, 0.2359 kW.
+  - [x] WTR-VCD_TRAIN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VCD_TRAIN.md` §1; mass in = out 364.7 kg/d, 0.2583 kW.
   - [x] WTR-VCD_TRAIN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-VCD_TRAIN-01. Evidence: `docs-authority/sizing/VCD_TRAIN.md` (AQS-SIZE-VCD_TRAIN).
   - [x] WTR-VCD_TRAIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-VCD_TRAIN-01, WTR-VCD_TRAIN-02. Evidence: `docs-authority/pid/VCD_TRAIN.svg` (AQS-PID-001).
   - [x] WTR-VCD_TRAIN-04 Nozzle schedule. Done when: docs-authority/nozzles/VCD_TRAIN.csv, one row per edge. Depends: WTR-VCD_TRAIN-03. Evidence: `docs-authority/nozzles/VCD_TRAIN.csv` (all 9 process connections listed).
@@ -3216,7 +3248,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-LOAD_AGG-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-LOAD_AGG-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-LOAD_AGG-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-LOAD_AGG-14, X-COM-01. Triage: hardware.
 - **ELEC-PV_ARRAY** (pv, sector ELEC)
-  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 336.8716 kW.
+  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 337.5116 kW.
   - [x] ELEC-PV_ARRAY-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-PV_ARRAY-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-PV_ARRAY-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-PV_ARRAY-01, ELEC-PV_ARRAY-02. Evidence: `docs-authority/pid/PV_ARRAY.svg` (AQS-PID-001).
   - [x] ELEC-PV_ARRAY-04 Nozzle schedule. Done when: docs-authority/nozzles/PV_ARRAY.csv, one row per edge. Depends: ELEC-PV_ARRAY-03. Evidence: `docs-authority/nozzles/PV_ARRAY.csv` (file current; 0 piped kg/d process connections under the _noz_edges rule).
@@ -3252,7 +3284,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-SOL_ARK_60K-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-SOL_ARK_60K-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-SOL_ARK_60K-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-SOL_ARK_60K-01, ELEC-SOL_ARK_60K-02. Evidence: `docs-authority/pid/SOL_ARK_60K.svg` (AQS-PID-001).
   - [x] ELEC-SOL_ARK_60K-04 Nozzle schedule. Done when: docs-authority/nozzles/SOL_ARK_60K.csv, one row per edge. Depends: ELEC-SOL_ARK_60K-03. Evidence: `docs-authority/nozzles/SOL_ARK_60K.csv` (file current; 0 piped kg/d process connections under the _noz_edges rule).
-  - [x] ELEC-SOL_ARK_60K-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: ELEC-SOL_ARK_60K-04, ELEC-SOL_ARK_60K-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 78 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] ELEC-SOL_ARK_60K-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: ELEC-SOL_ARK_60K-04, ELEC-SOL_ARK_60K-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 80 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] ELEC-SOL_ARK_60K-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: ELEC-SOL_ARK_60K-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] ELEC-SOL_ARK_60K-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: ELEC-SOL_ARK_60K-02, ELEC-SOL_ARK_60K-03. Evidence: `docs-authority/duties/SOL_ARK_60K.md` §6 (C7 closed on MASTER_PLAN).
   - [x] ELEC-SOL_ARK_60K-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: ELEC-SOL_ARK_60K-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -3264,7 +3296,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-SOL_ARK_60K-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-SOL_ARK_60K-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-SOL_ARK_60K-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-SOL_ARK_60K-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2** (flow_battery, sector ELEC)
-  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 764 kg/d, 179.7838 kW.
+  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 766.8 kg/d, 180.4538 kW.
   - [x] ELEC-ZNBR2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-ZNBR2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2-01, ELEC-ZNBR2-02. Evidence: `docs-authority/pid/ZNBR2.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2.csv, one row per edge. Depends: ELEC-ZNBR2-03. Evidence: `docs-authority/nozzles/ZNBR2.csv` (all 5 process connections listed).
@@ -3280,7 +3312,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-ZNBR2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-ZNBR2-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-ZNBR2-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2_BR2_REGEN** (scrubber, sector ELEC)
-  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; mass in = out 755.5 kg/d, 0.0000 kW.
+  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; mass in = out 758.3 kg/d, 0.0000 kW.
   - [x] ELEC-ZNBR2_BR2_REGEN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2_BR2_REGEN-01. Evidence: `docs-authority/sizing/ZNBR2_BR2_REGEN.md` (AQS-SIZE-ZNBR2_BR2_REGEN).
   - [x] ELEC-ZNBR2_BR2_REGEN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2_BR2_REGEN-01, ELEC-ZNBR2_BR2_REGEN-02. Evidence: `docs-authority/pid/ZNBR2_BR2_REGEN.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2_BR2_REGEN-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2_BR2_REGEN.csv, one row per edge. Depends: ELEC-ZNBR2_BR2_REGEN-03. Evidence: `docs-authority/nozzles/ZNBR2_BR2_REGEN.csv` (all 2 process connections listed).
@@ -3315,11 +3347,11 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] HAB-COMMON_AREA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-COMMON_AREA-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] HAB-COMMON_AREA-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-COMMON_AREA-14, X-COM-01. Triage: hardware.
 - **HAB-GALLEY** (galley, sector HAB)
-  - [x] HAB-GALLEY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GALLEY.md` §1; mass in = out 0 kg/d, 0.0000 kW.
+  - [x] HAB-GALLEY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GALLEY.md` §1; mass in = out 6.4 kg/d, 0.0000 kW.
   - [x] HAB-GALLEY-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: HAB-GALLEY-01. Evidence: `docs-authority/HAB_DESIGN.md` (AQS-HAB-002).
   - [x] HAB-GALLEY-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: HAB-GALLEY-01, HAB-GALLEY-02. Evidence: `docs-authority/pid/GALLEY.svg` (AQS-PID-001).
-  - [x] HAB-GALLEY-04 Nozzle schedule. Done when: docs-authority/nozzles/GALLEY.csv, one row per edge. Depends: HAB-GALLEY-03. Evidence: `docs-authority/nozzles/GALLEY.csv` (all 3 process connections listed).
-  - [x] HAB-GALLEY-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HAB-GALLEY-04, HAB-GALLEY-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 3 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] HAB-GALLEY-04 Nozzle schedule. Done when: docs-authority/nozzles/GALLEY.csv, one row per edge. Depends: HAB-GALLEY-03. Evidence: `docs-authority/nozzles/GALLEY.csv` (all 6 process connections listed).
+  - [x] HAB-GALLEY-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HAB-GALLEY-04, HAB-GALLEY-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [ ] HAB-GALLEY-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: HAB-GALLEY-02. Triage: desk P3.
   - [x] HAB-GALLEY-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-GALLEY-02, HAB-GALLEY-03. Evidence: `docs-authority/duties/GALLEY.md` §6 (C7 closed on MASTER_PLAN).
   - [x] HAB-GALLEY-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: HAB-GALLEY-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -3331,7 +3363,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] HAB-GALLEY-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-GALLEY-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] HAB-GALLEY-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-GALLEY-14, X-COM-01. Triage: hardware.
 - **HAB-HABITATION** (hab, sector HAB)
-  - [x] HAB-HABITATION-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HABITATION.md` §1; mass in = out 943.2 kg/d, 1.1570 kW.
+  - [x] HAB-HABITATION-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HABITATION.md` §1; mass in = out 950.5 kg/d, 1.1570 kW.
   - [x] HAB-HABITATION-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: HAB-HABITATION-01. Evidence: `docs-authority/sizing/HABITATION.md` (AQS-SIZE-HABITATION).
   - [x] HAB-HABITATION-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: HAB-HABITATION-01, HAB-HABITATION-02. Evidence: `docs-authority/pid/HABITATION.svg` (AQS-PID-001).
   - [x] HAB-HABITATION-04 Nozzle schedule. Done when: docs-authority/nozzles/HABITATION.csv, one row per edge. Depends: HAB-HABITATION-03. Evidence: `docs-authority/nozzles/HABITATION.csv` (all 21 process connections listed).

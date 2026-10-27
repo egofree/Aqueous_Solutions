@@ -54,8 +54,8 @@ Table 4.1. Commissioning sequence
 | 10 | OIL | 12 | 57 | 13 | 7 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute |
 | 11 | GLASS | 5 | 11 | 4 | 1 | Fe, HCl, other_metals, solute |
 | 12 | NUT | 1 | 10 | 1 | 1 | Fe, HCl, other_metals |
-| 13 | FARM | 14 | 38 | 4 | 1 | CO2 |
-| 14 | HAB | 7 | 12 | 1 | 1 | solute |
+| 13 | FARM | 16 | 45 | 16 | 1 | CO2 |
+| 14 | HAB | 7 | 12 | 2 | 1 | solute |
 | 15 | MFG | 10 | 29 | 12 | 1 | Cu, Pb/Sn/Ni/Cd/Zn blend, hydrocarbon, metal, solute |
 | 16 | FAB | 16 | 72 | 17 | 9 | Ar, Fe, HCl, N2, O2, other_metals, solute |
 | 17 | FOUNDRY | 27 | 83 | 24 | 6 |  |

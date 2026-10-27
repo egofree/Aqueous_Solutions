@@ -1,7 +1,7 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,104,1650 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,782,one per instrument
-CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 165 SIFs, redundant pair"
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,104,1654 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,786,one per instrument
+CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 178 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S70 to FLUE_KO: run and fault (assumed)
@@ -758,12 +758,15 @@ DIGESTER,separator,LI_RECOVER,instrument,temperature element,Pt100 class A,"IEC 
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,IA-H2O-MU: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-AIR-IN: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-SOLV-MU: 2 per support (assumed)
+DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,110,NUT_AQUA: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",11,IA-SOLV-MU: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",25,IA-H2O-MU: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-AIR-IN: AQS-PIP-005 span count
+DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",55,NUT_AQUA: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-H2O-MU: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-AIR-IN: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-SOLV-MU: one at each end nozzle (assumed)
+DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,NUT_AQUA: one at each end nozzle (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",48,AHU damper actuator (assumed size)
 ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
 ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
@@ -1159,6 +1162,8 @@ FARM,cage,QUAIL_CAGE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm
 FARM,cage,QUAIL_CAGE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,coop,CHICKEN_COOP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,coop,CHICKEN_COOP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,feed_prep,FEED_PREP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+FARM,feed_prep,FEED_PREP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,fish_tank,AQUA_TANK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,fish_tank,AQUA_TANK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,growbed,GROWBED_A,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1173,6 +1178,8 @@ FARM,pen,DUCK_PEN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, I
 FARM,pen,DUCK_PEN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,store,FOOD_STORE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,store,FOOD_STORE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,uv_sanitizer,AQUA_UV,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+FARM,uv_sanitizer,AQUA_UV,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,worm_bin,VERMI_BIN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,worm_bin,VERMI_BIN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,caster,CAST_LINE,fabricated part,fabricated part set,15 BOM lines,models/mfg/CAST_LINE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -1811,8 +1818,8 @@ MFG,-,BLACK_PASTEUR,fabricated part,fabricated part set,5 BOM lines,models/mfg/B
 MFG,-,BLACK_PASTEUR,fastener,M10 anchor,M10 anchor,ISO 3506 A4-70,4,models/mfg/BLACK_PASTEUR/fasteners.csv
 MFG,-,BLACK_PASTEUR,fastener,M8 x 30 lid bolt,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/BLACK_PASTEUR/fasteners.csv
 MFG,-,BLACK_PASTEUR,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-162 one per bank half
-MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-164 one per bank half
+MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-175 one per bank half
+MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-177 one per bank half
 MFG,-,DIGESTER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,"Biogas recirculation blower, diaphragm, about 1 L/min (assumed size)"
 MFG,-,DIGESTER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,"Biogas recirculation blower, diaphragm, about 1 L/min"
 MFG,-,DIGESTER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Biogas recirculation blower, diaphragm, about 1 L/min: run and fault (assumed)"

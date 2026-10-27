@@ -3,8 +3,8 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 89,
-  "edge_count": 93,
+  "node_count": 91,
+  "edge_count": 95,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -207,7 +207,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 175.174278,
+          "bypass_kg_d": 206.770079,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -1229,8 +1229,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 2517.0,
-        "fraction_of_znbr2_study": 0.085,
+        "vs_znbr2_kwh": 2527.0,
+        "fraction_of_znbr2_study": 0.084,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -1573,7 +1573,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 336.8716,
+        "value": 337.5116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1581,11 +1581,11 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 4986,
+        "count": 5004,
         "presence": "present",
-        "nameplate_kw": 2493,
+        "nameplate_kw": 2502,
         "area_m2": 21986,
-        "balance_kWp": 1247,
+        "balance_kWp": 1251,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -1655,8 +1655,8 @@
         "count": 35,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 1920.2,
-          "export_kWh_d_clear": 5394,
+          "export_peak_kW": 1919.5,
+          "export_kWh_d_clear": 5414,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -1686,9 +1686,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 150.9,
+          "bus_demand_kW": 151.5,
           "section_rating_A": 300,
-          "basis_A": 201.6,
+          "basis_A": 202.5,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -1820,25 +1820,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 179.7838,
+        "value": 180.4538,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.8 kW, charge 817.2 kW, 2517 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 180.5 kW, charge 820.2 kW, 2526 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 818,
-        "kWh": 2517,
+        "kW": 821,
+        "kWh": 2527,
         "presence": "present",
-        "charge_kW": 818,
-        "discharge_kW": 180,
+        "charge_kW": 821,
+        "discharge_kW": 181,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 35 hybrid inverters, 72.2 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.381,
-          "purge_m3_h": 26.59,
+          "H2_m3_d": 6.405,
+          "purge_m3_h": 26.69,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1646.4
+          "electrode_area_m2": 1652.5
         }
       }
     },
@@ -4335,6 +4335,86 @@
         }
       },
       "notes": "Nitrifying biofilter \u2014 the keystone biological unit of the aquaponic loop. Nitrosomonas oxidises ammonia to nitrite; Nitrobacter oxidises nitrite to nitrate. Aerobic: the bacteria consume 4.57 mg O2 per mg NH4+-N. Without dissolved O2, nitrification stops and the ammonia kills the fish within 24-48 h. The nitrate is the nitrogen source for the dual root-zone growbeds. The biofilm is the bacterial population \u2014 the moving-bed media is its habitat. Study."
+    },
+    {
+      "unit_id": "FEED_PREP",
+      "sector_id": "FARM",
+      "class": "feed_prep",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "farm",
+        "feed"
+      ],
+      "params": {
+        "design": {
+          "service": "ration formulation: duckweed + larvae meal + recycled eggshell; HP drier on the storage draw only",
+          "basis": "A-M-426; A-M-416 (no imported grain); TECHTREE insect-farming (black-soldier-fly meal milling class)",
+          "fresh_first": "fish and ducks eat the harvest wet; drying serves only the A-M-270 dry-reserve draw (0.5 kg/d)",
+          "methionine": "the binding supplement (~9 g/d DL-met equivalent at 4-crew; TECHTREE poultry.chickens: synthetic DL-methionine is the standard supplement class)",
+          "ca_source": "recycled eggshell 38 g Ca/d + BSFL Ca 5-8 % (TECHTREE insect-farming) + mineral CaCO3 top-up ~1.5-2 kg/month from the site mineral line (TECHTREE poultry.chickens: crushed limestone free-choice class)",
+          "food_safety": "larvae meal routes to POULTRY ONLY, never to the fish: manure-fed larvae are the pathogen bridge the aquaponic produce path must not carry (TECHTREE agriculture.aquaponics food-safety note)"
+        },
+        "sizing": {
+          "throughput_kg_d": 2.54,
+          "basis": "A-M-426 driver arithmetic"
+        },
+        "sec3_material": {
+          "mat": "SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path",
+          "basis": "food-contact sanitation class for the animal ration line (A-M-426): 304 at the chloride-light service, PP bins resist the wet duckweed; Cu is excluded from every feed path outright",
+          "alt": "SS316 where the eggshell grinding dust ever shows pitting",
+          "note": "the reject stream returns to the BSFL bin, so the contact surfaces serve both feeds.",
+          "task": "X-FARM-10"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "mixer + grinder + HP drier on the storage draw (A-M-426)"
+      },
+      "notes": "Ration formulation for the layer and quail rations and the dry reserve; fresh-first feeding keeps the fish and duck rations drying-free. Study."
+    },
+    {
+      "unit_id": "AQUA_UV",
+      "sector_id": "FARM",
+      "class": "uv_sanitizer",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "farm",
+        "aquaponics",
+        "food-safety"
+      ],
+      "params": {
+        "design": {
+          "service": "optional UV-C 254 nm loop sanitizer between the biofilter and the growbeds; AQUA_BYPASS normally engaged",
+          "basis": "A-M-428; A-M-427 (food-safety mode); TECHTREE agriculture.aquaponics (produce food-safety note)",
+          "why_it_works": "the nitrifying biofilm lives on the moving-bed media: post-media sterilization passes the nitrates and kills only sloughed/free cells",
+          "modes": "normal = bypassed (growbed rhizosphere needs its microbial feed); food-safety mode = inline (A-M-427 greens/harvest); contamination response = inline",
+          "ozone_contingency": "deep-clean with ozone fed from CRYO_O2, fish isolated, never in-line live: residual ozone is lethal to gills and biofilm",
+          "dose_class": "254 nm, 30-100 mJ/cm2 class for the loop flow; the 40 kg/d loop is trivial flow for a 0.04 kW lamp",
+          "failure_mode": "lamp depletion or sleeve fouling: dose decays silently - the X-FARM-12 validation test is periodic, not one-shot"
+        },
+        "sizing": {
+          "loop_kg_d": 40.0,
+          "basis": "A-M-415 loop rate"
+        },
+        "sec3_material": {
+          "mat": "SS304 reactor tube with a quartz UV sleeve, PP loop fittings, EPDM gasket class",
+          "basis": "loop-water service at aquaponic temperature (A-M-428): 304 tube with the lamp isolated behind quartz; the unit is normally bypassed, so wetted-time is intermittent",
+          "alt": "316L tube if the loop ever runs saline (it does not at the freshwater class)",
+          "note": "quartz sleeve fouling is the maintenance item - the dose validation (X-FARM-12) covers it.",
+          "task": "X-FARM-12"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "UV-C lamp + controller (A-M-428)"
+      },
+      "notes": "Optional pathogen barrier for the produce path and contamination response. Study."
     }
   ],
   "edges": [
@@ -4629,7 +4709,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 336.8716,
+        "value": 337.5116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -6768,6 +6848,50 @@
         "note": "biofilter aeration 20 W: the nitrifying bacteria are aerobic (4.57 mg O2/mg NH4+-N); A-M-415"
       },
       "notes": "X-FARM build-out: without O2 the nitrification stops and the ammonia kills the fish",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-POWER-FEEDPREP",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "FEED_PREP",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "formulation+drying electrical load",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.6,
+        "unit": "kW",
+        "status": "study",
+        "note": "A-M-426 driver (X-FARM)"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-POWER-AQUAUV",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AQUA_UV",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "UV-C lamp electrical load",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "A-M-428 lamp class (X-FARM)"
+      },
+      "notes": "X-FARM feed-closure build (A-M-426/427/428)",
       "phase": "electric",
       "namespace": "IA",
       "open_boundary": false

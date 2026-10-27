@@ -7,7 +7,7 @@ service line: service galley / kitchen, 12 m2; area_m2 12; basis A-M-419; AQS-HA
 Internals: open: no issued internals basis for a galley unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
 Material: SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths. (continues on the duty sheet)
 
-Nozzles: 5 process connections per docs-authority/nozzles/GALLEY.csv
+Nozzles: 8 process connections per docs-authority/nozzles/GALLEY.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

@@ -17,3 +17,5 @@ N15,DN15,Class 150,duck pen evaporation,inlet,160
 N16,DN15,Class 150,cage evaporation,inlet,160
 N17,DN15,Class 150,hutch evaporation,inlet,160
 N18,DN15,Class 150,hive evaporation,inlet,160
+N19,DN15,Class 150,drying evaporation on the storage draw (fresh-basis water),inlet,160
+N20,DN15,Class 150,growbed evapotranspiration,inlet,160

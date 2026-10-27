@@ -18,6 +18,7 @@ import json, math, os, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 sys.path.insert(0, R)
 from flow_graph.param import drivers as DR, site as S
+from flow_graph.param import farm_balance as FB
 
 OUT_FARM = 'docs-authority/FARM_DESIGN.md'
 OUT_HAB = 'docs-authority/HAB_DESIGN.md'
@@ -30,7 +31,6 @@ def study():
     fish_stock = v('FARM.aquaponics.fish_stock_kg')
     fish_feed = round(fish_stock * v('FARM.aquaponics.fish_feed_kg_kg'), 3)
     fish_waste = round(fish_feed * 0.5, 3)                    # half the feed leaves as waste/sludge
-    loop_kgd = 40.0                                           # aquaponic water circulation (study)
     # --- poultry ---------------------------------------------------------------
     birds = v('FARM.chicken.stock_birds')
     chick_feed = round(birds * v('FARM.chicken.feed_kg_bird_d'), 3)
@@ -48,17 +48,52 @@ def study():
     # --- dual root-zone growbeds ----------------------------------------------
     bed_area_total = 29.12                                    # GROW_BED live area (A-M-229)
     bed_each = round(bed_area_total / 2, 2)
+    # --- feed closure: the wet-basis balance is the parametric module's output ---
+    F = FB.compute(DR.load())
+    dw_prod = v('FARM.duckweed.prod_kg_d')                    # 4.5 kg/d DM at 300 m2
+    dw_cp = v('FARM.duckweed.CP_frac')                        # 30 % class (aquaculture.md:101; ducks.md:96 says 35-43)
+    form = round(F['FORM'], 2)                                # fresh to formulation
+    fish_ration = round(F['FISHF'], 2)                        # fresh to the fish
+    fodder = round(F['FODDER'], 2)                            # fresh forage the ducks take
+    store = F['store_dm']                                     # dried reserve draw (DM)
+    greens = round(F['GREENS'], 2)                            # fresh galley greens (A-M-427)
+    shell = round(F['shell_dm'], 3)                           # eggshell return (DM)
+    layer_ration = v('FARM.chicken.stock_birds') * v('FARM.chicken.feed_kg_bird_d')   # 1.44 DM-eq
+    quail_ration = v('FARM.quail.stock') * v('FARM.quail.feed_kg_bird_d')             # 0.5 DM-eq
+    lar_meal = F['larvae_meal_dm']                            # computed fixed point (A-M-416)
+    layer_dw = round(layer_ration - lar_meal - F['shell_dm'], 4)
+    # TECHTREE husbandry classes: BSFL meal CP 40-45 %, Ca 5-8 % (insect-farming.md:113-116);
+    # layer CP req 16-18 %, Ca 3.5-4.0 % (chickens.md:74/176); quail CP 20-22 %, Ca 2.5-3.0 %,
+    # met 0.50 % (coturnix.md:60/177); chicken met class 0.38-0.45 % (turkeys.md:222 comparison).
+    lar_cp, lar_ca, lar_met = 0.425, 0.065, 0.011
+    shell_ca = 0.38
+    dw_ca, dw_met = 0.010, 0.004                              # duckweed mineral class (unmeasured - X-FARM-04)
+    blend_cp = round(100 * (layer_dw * dw_cp + lar_meal * lar_cp) / layer_ration, 1)
+    blend_ca = round(100 * (layer_dw * dw_ca + lar_meal * lar_ca + shell * shell_ca) / layer_ration, 2)
+    layer_met = round(100 * (layer_dw * dw_met + lar_meal * lar_met) / layer_ration, 2)
+    quail_met = round(100 * dw_met, 1)
+    met_gap_g_d = 9                                           # loop DL-met supplement class (declared, A-M-416)
     # --- hab rooms -------------------------------------------------------------
     rooms = {'galley': v('HAB.rooms.galley_m2'), 'washroom': v('HAB.rooms.washroom_m2'),
              'medical': 6.0, 'recreation/common': v('HAB.rooms.rec_m2'),
              'private sleeping quarters': v('HAB.rooms.sleep_quarters_m2'),
              'common circulation': v('HAB.rooms.common_m2')}
     rooms_total = round(sum(rooms.values()), 1)
-    return dict(fish_stock=fish_stock, fish_feed=fish_feed, fish_waste=fish_waste, loop_kgd=loop_kgd,
+    return dict(fish_stock=fish_stock, fish_feed=fish_feed, fish_waste=fish_waste,
                 birds=birds, chick_feed=chick_feed, eggs=eggs, manure=manure, chick_water=chick_water,
                 chick_vap=chick_vap, galley_bio=galley_bio, bsfl_in=bsfl_in, larvae=larvae, frass=frass,
                 bsfl_vap=bsfl_vap, larvae_frac=larvae_frac, bed_area_total=bed_area_total,
-                bed_each=bed_each, rooms=rooms, rooms_total=rooms_total, crew=int(DR.val(d, 'san_crew')))
+                bed_each=bed_each, rooms=rooms, rooms_total=rooms_total, crew=int(DR.val(d, 'san_crew')),
+                dw_prod=dw_prod, dw_cp=dw_cp, form=form, fish_ration=fish_ration, fodder=fodder,
+                store=store, greens=greens, shell=shell, layer_ration=layer_ration,
+                quail_ration=quail_ration, lar_meal=lar_meal, layer_dw=layer_dw, blend_cp=blend_cp,
+                blend_ca=blend_ca, layer_met=layer_met, quail_met=quail_met, met_gap_g_d=met_gap_g_d,
+                fp_in=round(F['FORM'] + F['LARVA_W'] + F['shell_dm'], 2),
+                fp_out=round(F['LM'] + F['QM'] + F['DM_'] + F['store_dm'] + F['REJ'] + F['VAP'] + F['PRESS'], 2),
+                larvae_fresh=round(F['LARVA_W'], 3),
+                bin_wet=round(F['BININ'], 2), loop_kgd=int(F['loop_kgd']),
+                lm=round(F['LM'], 2), qm=round(F['QM'], 2), dm_=round(F['DM_'], 2),
+                rej=round(F['REJ'], 2), press=round(F['PRESS'], 1), vap=round(F['VAP'], 1))
 
 
 def render_farm(s):
@@ -67,18 +102,29 @@ def render_farm(s):
          'Licence: CERN-OHL-S-2.0.', '',
          'Generated by `docs-authority/_farm_hab.py` from the `FARM` driver groups (A-M-415..418) '
          'and the reference graph. Study. Not a PE stamp.', '',
-         f'The farm closes the protein loop at the {s["crew"]}-crew ration: fish and poultry turn '
-         'larvae and imported grain into eggs, fish meat and manure; the manure, sludge and galley '
-         'biowaste feed the black-soldier-fly larvae bin; the larvae return as feed and the frass '
-         'stages to the solids line as compost.', '',
-         '## 1. Aquaponics loop', '',
-         f'{s["fish_stock"]:g} kg standing tilapia-class stock at a {s["fish_feed"]:g} kg/d ration. '
-         f'About half the ration leaves as waste, which circulates through the biofilter to the dual '
-         f'root-zone growbeds at {s["loop_kgd"]:g} kg/d and returns as cleaned water.', '',
-         '| Stream | kg/d |', '| --- | --- |',
-         f'| Fish feed (imported grain/scratch class) | {s["fish_feed"]:g} |',
-         f'| Fish waste to the biofilter | {s["fish_waste"]:g} |',
-         f'| Root-zone circulation (AQUA_TANK -> BIOFILTER -> GROWBED_A -> GROWBED_B -> AQUA_TANK) | {s["loop_kgd"]:g} |', '',
+         f'The farm closes the protein loop with NO imported feed (A-M-416): the duckweed raceway is '
+         'the base crop, the black-soldier-fly larvae bin turns manure, sludge and galley biowaste into '
+         'the concentrate co-ingredient, recycled eggshell carries the calcium, and the one binding '
+         f'supplement is methionine (~{s["met_gap_g_d"]} g/d DL-met equivalent, A-M-416). '
+         'The frass stages to the solids line as compost.', '',
+         '## 1. Aquaponics loop and duckweed raceway', '',
+         f'{s["fish_stock"]:g} kg standing tilapia-class stock at a {s["fish_feed"]:g} kg/d ration '
+         f'({s["fish_ration"]:g} kg/d fresh duckweed, 1.5 % body weight - below the 2-3 % optimal-growth '
+         'class (TECHTREE aquaponics.md:155), a declared slower grow-out). About half the ration leaves '
+         f'as waste, which circulates through the biofilter at {s["loop_kgd"]:g} kg/d and returns as '
+         'cleaned water.', '',
+         f'The raceway produces {s["dw_prod"]:g} kg/d dry matter at 300 m2 and 15 g/m2/d (A-M-420):',
+         '',
+         '| Duckweed allocation | kg/d DM-eq |', '| --- | --- |',
+         f'| Formulation feed (layers + quail + reserve draw) | {s["form"]:g} |',
+         f'| Fresh tilapia ration | {s["fish_ration"]:g} |',
+         f'| Fresh duck fodder (ad lib) | {s["fodder"]:g} |',
+         f'| Human-grade greens to the galley (A-M-427) | {s["greens"]:g} |',
+         '| Harvest margin | 0.28 |', '',
+         f'The raceway runs on loop water, so the crop is the loop polisher; CP class 30 % dry '
+         '(TECHTREE aquaculture.md:101; ducks.md:96 gives 35-43 % on nutrient-rich water - the '
+         'X-FARM-04 trial measures ours). Loop path: AQUA_TANK -> BIOFILTER -> AQUA_UV (normally '
+         'bypassed, A-M-428) -> GROWBED_A -> GROWBED_B -> DUCKWEED -> return.', '',
          '## 2. Dual root-zone growbeds', '',
          f'The {s["bed_area_total"]:g} m2 live grow area splits into two beds of {s["bed_each"]:g} m2. Each bed '
          'carries two root zones: an aerobic top zone where the plant roots take the nitrate, and an '
@@ -95,17 +141,21 @@ def render_farm(s):
          f'| Larvae (wet) to the layer ration | {s["larvae"]:g} |',
          f'| Frass to the solids line (compost) | {s["frass"]:g} |',
          f'| Respiration/evaporation to the AHU | {s["bsfl_vap"]:g} |', '',
-         f'The larvae cover {s["larvae_frac"]:g} % of the layer ration by mass; the balance is imported '
-         'grain/scratch on the D-DOCK manifest (A-M-416). The frass stages to the solids line as compost; '
-         'the root zones take their nutrient from the aquaponic loop.', '',
+         f'The larvae cover {s["larvae_frac"]:g} % of the layer ration by mass as the concentrate '
+         'co-ingredient of the formulation (A-M-426). The larvae meal routes to POULTRY ONLY, never '
+         'to the fish: manure-fed larvae are the pathogen bridge the produce path must not carry '
+         '(TECHTREE aquaponics.md:342 food-safety note; A-M-426). The frass stages to the solids line '
+         'as compost; the root zones take their nutrient from the aquaponic loop.', '',
          '## 5. Units and streams', '',
-         'New reference units: AQUA_TANK, BIOFILTER, GROWBED_A, GROWBED_B, CHICKEN_COOP, BSFL_BIN. '
-         'The streams above are the graph edges; the rates are study values from the driver groups.', '',
-         '## 6. Open items', '',
-         'Larvae-meal ration trial (X-FARM-01), flock trial (X-FARM-02), bin trial (X-FARM-03). '
-         'The locale scaling passes (microgravity, thin atmosphere) treat the animal and insect units '
-         'as their own follow-on.', '']
-    L += ['', '## 6. Unit roster', '',
+         'Farm units: AQUA_TANK, BIOFILTER, GROWBED_A, GROWBED_B, DUCKWEED, FEED_PREP, AQUA_UV, '
+         'CHICKEN_COOP, DUCK_PEN, QUAIL_CAGE, RABBIT_HUTCH, BSFL_BIN, BEE_HIVE, VERMI_BIN. '
+         'The streams above are the graph edges; the rates are study values from the driver groups. '
+         f'Formulation closure at FEED_PREP (wet basis): in {s["fp_in"]:g} kg/d (duckweed {s["form"]:g} + '
+         f'fresh larvae {s["larvae_fresh"]:g} + eggshell {s["shell"]:g}), out {s["fp_out"]:g} (layer mash '
+         f'{s["lm"]:g} + quail mash {s["qm"]:g} + duck mash {s["dm_"]:g} + reserve {s["store"]:g} + reject '
+         f'{s["rej"]:g} + drying vapour {s["vap"]:g} + press water {s["press"]:g} back to the '
+         'beds).', '',
+         '## 6. Unit roster', '',
          '| Unit | Class | Function | Design basis |', '| --- | --- | --- | --- |',
          '| AQUA_TANK | fish_tank | Fish tanks (tilapia class) | A-M-415 |',
          '| BIOFILTER | biofilter | Nitrifying biofilter (Nitrosomonas + Nitrobacter) | A-M-415 |',
@@ -118,7 +168,38 @@ def render_farm(s):
          '| RABBIT_HUTCH | hutch | Rabbitry, 2 does + 1 buck | A-M-423 |',
          '| BSFL_BIN | bsfl_bin | Black-soldier-fly larvae composting bin | A-M-418 |',
          '| BEE_HIVE | hive | Honey bee hive (pollination + honey) | A-M-424 |',
-         '| VERMI_BIN | worm_bin | Vermiculture bin (Eisenia fetida) | A-M-425 |', '']
+         '| VERMI_BIN | worm_bin | Vermiculture bin (Eisenia fetida) | A-M-425 |',
+         '| FEED_PREP | feed_prep | Ration formulation + reserve drying (A-M-426) | A-M-426 |',
+         '| AQUA_UV | uv_sanitizer | Optional loop sanitizer, normally bypassed (A-M-428) | A-M-428 |', '',
+         '## 7. Nutrition evaluation (A-M-416/426; TECHTREE husbandry classes)', '',
+         '| Species | Ration kg/d | CP req % | CP supply % | Ca req % | Ca supply % | Methionine |',
+         '| --- | --- | --- | --- | --- | --- | --- |',
+         f'| Tilapia | {s["fish_ration"]:g} fresh | 28-35 (aquaponics.md:155) | 30 (25-35 class) | water-borne | - | limiting; declared gap, X-FARM-01 |',
+         f'| Layers (12) | {s["layer_ration"]:g} formulated | 16-18 (chickens.md:176) | {s["blend_cp"]:g} | 3.5-4.0 (chickens.md:74) | {s["blend_ca"]:g} | {s["layer_met"]:g} % vs 0.38-0.45 class - in class, thin margin |',
+         '| Ducks (6) | 0.87 fodder + free-range | 16-18 (ducks.md:90) | 30-43 (ducks.md:96) | free-choice (ducks.md:99) | mineral hopper | as layers |',
+         f'| Quail (20) | {s["quail_ration"]:g} formulated | 20-22 (coturnix.md:177) | 30 | 2.5-3.0 (coturnix.md:60) | mineral hopper closes | {s["quail_met"]:g} % vs 0.50 - THE BINDING CASE (~1 g/d DL-met) |',
+         '| Rabbits | 0.5 forage + hay | 16-18 (rabbits.md:34) | canopy forage class | 0.6-1.0 | forage | outside the loop (canopy) |', '',
+         f'Loop-wide methionine supplement class: ~{s["met_gap_g_d"]} g/d DL-met equivalent (quail binding case '
+         '+ the fish gap + margin). TECHTREE names synthetic DL-methionine as the standard supplement '
+         '(chickens.md:176) and states methionine limits even black-soldier-fly meal quality (insect-farming.md:117). '
+         'Duckweed Ca and met are unmeasured classes on our water - the X-FARM-04 trial measures them; '
+         'the layer Ca closure holds only with the full eggshell return plus the larvae Ca class '
+         '(5-8 %, insect-farming.md:116).', '',
+         '## 8. Open items', '',
+         '- Larvae-meal ration trial (X-FARM-01), flock trial (X-FARM-02), bin trial (X-FARM-03), '
+         'raceway yield/CP/Ca trial (X-FARM-04), duck flock (X-FARM-05), quail cage bank (X-FARM-06), '
+         'rabbitry (X-FARM-07), hive (X-FARM-08), vermi bin (X-FARM-09), FEED_PREP ration trial '
+         '(X-FARM-10), greens microbiology (X-FARM-11), UV dose validation (X-FARM-12).',
+         '- Methionine route decision: chemicals-sector DL-met synthesis vs the declared production '
+         'penalty - decided on the X-FARM-01/02 trial results (A-M-416).',
+         '- POLY_FIBER melt-spin unit after PELLET: the FR-PP textile line (A-M-429) - next unit task.',
+         '- Loop water circulation rates stay study-held at zero pending the farm water-balance pass '
+         '(the 40 kg/d class is the A-M-415 note).',
+         '- Tilapia harvest scheduling below the optimal-growth ration class.',
+         '- Mineral CaCO3 top-up logistics from the site mineral line (~1.5-2 kg/month, quail hopper '
+         '+ duckweed-Ca insurance).',
+         '- The locale scaling passes (microgravity, thin atmosphere) treat the animal and insect '
+         'units as their own follow-on (LOCALIZATION_PLAN).', '']
     return '\n'.join(L) + '\n'
 
 

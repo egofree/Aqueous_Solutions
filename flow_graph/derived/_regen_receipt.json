@@ -1,7 +1,7 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "graph_sha256": "9a1266bb47053d225131d2bf9b08c06cb69d1e85bfc270eb9e92d9f809e12701",
+ "graph_sha256": "649c276e3390112571980986dca91416397c33096678b90abfd6c95e0840aa7e",
  "converged": true,
  "stages": [
   {
@@ -86,6 +86,10 @@
   },
   {
    "name": "sizing_materials3",
+   "status": "ok"
+  },
+  {
+   "name": "farm_balance",
    "status": "ok"
   },
   {

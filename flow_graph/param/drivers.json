@@ -5313,9 +5313,9 @@
   "basis": "NASA_STD_3001 circulation class"
  },
  "FARM.duckweed.raceway_m2": {
-  "value": 240.0,
+  "value": 300.0,
   "units": "m2 raceway (Lemna minor, azolla co-culture)",
-  "register": "A-M-420",
+  "register": "A-M-420 (revised 2026-10-26: 240 -> 300 m2 to carry the storage and galley-greens fractions)",
   "needs_verification": true,
   "verification_test": "Raceway yield trial at the loop commissioning (X-FARM-04)"
  },
@@ -5413,5 +5413,236 @@
   "units": "m2 medical room",
   "register": "A-M-419",
   "basis": "AQS-HAB-001 room basis (medical 6 m2)"
+ },
+ "FARM.duckweed.prod_kg_d": {
+  "value": 4.5,
+  "units": "kg/d dry matter (300 m2 x 15 g/m2/d)",
+  "register": "A-M-420"
+ },
+ "FARM.feed_prep.layer_kg_d": {
+  "value": 1.44,
+  "units": "kg/d formulated layer ration (1.33 duckweed + 0.114 larvae meal)",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.quail_kg_d": {
+  "value": 0.5,
+  "units": "kg/d formulated quail ration",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.store_kg_d": {
+  "value": 0.5,
+  "units": "kg/d dried reserve draw (extends the A-M-270 dry matter)",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.greens_kg_d": {
+  "value": 0.12,
+  "units": "kg/d fresh galley greens",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.shell_kg_d": {
+  "value": 0.1,
+  "units": "kg/d recycled eggshell (38 g Ca/d)",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.reject_kg_d": {
+  "value": 0.104,
+  "units": "kg/d screenings/fines back to the BSFL bin",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.power_kW": {
+  "value": 0.6,
+  "units": "kW (mixer, grinder, HP drier on the storage draw)",
+  "register": "A-M-426"
+ },
+ "FARM.duckweed.fodder_dm": {
+  "value": 0.2,
+  "units": "kg/d DM the ducks take as fresh forage (rest of the duck ration is mash)",
+  "register": "A-M-426"
+ },
+ "FARM.duckweed.greens_dm": {
+  "value": 0.12,
+  "units": "kg/d DM fresh galley greens (A-M-427)",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.store_dm": {
+  "value": 0.5,
+  "units": "kg/d DM dried to the A-M-270 reserve",
+  "register": "A-M-426"
+ },
+ "FARM.feed_prep.reject_dm": {
+  "value": 0.02,
+  "units": "kg/d DM screenings/fines back to the bin",
+  "register": "A-M-426"
+ },
+ "FARM.quail.feed_kg_bird_d": {
+  "value": 0.025,
+  "units": "kg feed per quail per day (A-M-422)",
+  "register": "A-M-426"
+ },
+ "FARM.bsfl.galley_bio_dm": {
+  "value": 0.1,
+  "units": "kg/d DM galley biowaste to the bin",
+  "register": "A-M-426"
+ },
+ "FARM.bsfl.galley_bio_wet": {
+  "value": 0.5,
+  "units": "kg/d wet galley biowaste to the bin",
+  "register": "A-M-426"
+ },
+ "FARM.classes.duckweed_dm_frac": {
+  "value": 0.05,
+  "units": "- fresh duckweed dry-matter fraction",
+  "basis": "TECHTREE aquaculture.md:101 harvest class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.mash_dm_frac": {
+  "value": 0.3,
+  "units": "- pressed mash DM (drained duckweed feed class)",
+  "basis": "TECHTREE insect-farming.md substrate-moisture class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.larva_dm_frac": {
+  "value": 0.44,
+  "units": "- prepupae DM",
+  "basis": "TECHTREE insect-farming.md:112",
+  "register": "A-M-426"
+ },
+ "FARM.classes.manure_dm_frac_of_feed": {
+  "value": 0.33,
+  "units": "- layer manure DM per feed DM",
+  "basis": "TECHTREE poultry manure class, chickens.md",
+  "register": "A-M-426"
+ },
+ "FARM.classes.layer_manure_moisture": {
+  "value": 0.87,
+  "units": "- mash-fed cage manure moisture",
+  "basis": "TECHTREE poultry droppings class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.quail_droppings_moisture": {
+  "value": 0.92,
+  "units": "- mash-fed cage droppings moisture",
+  "basis": "TECHTREE coturnix cage class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.duck_manure_moisture": {
+  "value": 0.75,
+  "units": "- duck manure moisture",
+  "basis": "TECHTREE waterfowl class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.sludge_moisture": {
+  "value": 0.85,
+  "units": "- settled fish sludge moisture",
+  "basis": "TECHTREE aquaculture sludge class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.eggshell_frac": {
+  "value": 0.1,
+  "units": "- shell mass fraction of the egg",
+  "basis": "TECHTREE chickens.md:99 shell formation",
+  "register": "A-M-426"
+ },
+ "FARM.classes.frass_wet_frac_of_feedstock": {
+  "value": 0.06,
+  "units": "- frass wet mass per wet feedstock",
+  "basis": "TECHTREE insect-farming.md:17 (15-20 % protein recovery class)",
+  "register": "A-M-426"
+ },
+ "FARM.classes.aqua_loop_kgd": {
+  "value": 200.0,
+  "units": "kg/d loop circulation through the biofilter and beds",
+  "basis": "TECHTREE study class: media-bed pass-through at the nitrate delivery duty",
+  "register": "A-M-426"
+ },
+ "FARM.classes.nut_dose_kgd": {
+  "value": 5.5,
+  "units": "kg/d mineral nitrate solution to the raceway",
+  "basis": "TECHTREE A-M-430 mineral N dose",
+  "register": "A-M-426"
+ },
+ "FARM.classes.chicken_water_kg_bird_d": {
+  "value": 0.03,
+  "units": "kg drinking water per hen per day",
+  "basis": "TECHTREE chickens.md husbandry class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.chicken_resp_kg_bird_d": {
+  "value": 0.06,
+  "units": "kg respiration/evaporation per hen per day",
+  "basis": "TECHTREE flock vapor class (A-M-417)",
+  "register": "A-M-426"
+ },
+ "FARM.classes.quail_water_kg_bird_d": {
+  "value": 0.01,
+  "units": "kg drinking water per quail per day",
+  "basis": "TECHTREE coturnix husbandry class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.ca_hopper_kgd": {
+  "value": 0.035,
+  "units": "kg/d mineral CaCO3 free-choice hopper (quail bank)",
+  "basis": "TECHTREE coturnix.md:60 Ca class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.duck_water_kg_bird_d": {
+  "value": 0.33,
+  "units": "kg drinking/wash water per duck per day",
+  "basis": "TECHTREE ducks.md husbandry class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.duck_resp_kg_d": {
+  "value": 0.8,
+  "units": "kg/d duck pen evaporation (flock)",
+  "basis": "TECHTREE A-M-421 vapor class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.rabbit_resp_kg_d": {
+  "value": 0.1,
+  "units": "kg/d hutch evaporation",
+  "basis": "TECHTREE rabbitry class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.vermi_feed_kgd": {
+  "value": 1.0,
+  "units": "kg/d soft canopy residue to the vermi bin",
+  "basis": "TECHTREE A-M-425 feed class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.vermicompost_kgd": {
+  "value": 1.9,
+  "units": "kg/d vermicompost out",
+  "basis": "TECHTREE A-M-425 castings class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.bed_greens_kgd": {
+  "value": 4.0,
+  "units": "kg/d media-bed greens to the reserve",
+  "basis": "TECHTREE aquaponics.md media-bed crop class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.bed_et_kgd": {
+  "value": 5.0,
+  "units": "kg/d growbed evapotranspiration (initial)",
+  "basis": "TECHTREE free edge; solver reconciles",
+  "register": "A-M-426"
+ },
+ "FARM.classes.galley_food_issue_kgd": {
+  "value": 8.0,
+  "units": "kg/d food issue to the galley (crop+products)",
+  "basis": "TECHTREE FOOD_STORE issue split (hab anchor side)",
+  "register": "A-M-426"
+ },
+ "FARM.classes.galley_grey_kgd": {
+  "value": 1.0,
+  "units": "kg/d galley wash grey",
+  "basis": "TECHTREE grey class",
+  "register": "A-M-426"
+ },
+ "FARM.classes.food_hab_issue_kgd": {
+  "value": 2.55,
+  "units": "kg/d food issue to the habitation rooms",
+  "basis": "TECHTREE FOOD_STORE issue split",
+  "register": "A-M-426"
  }
 }

@@ -86,7 +86,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S09 | BMED_ACID | WET_BENCH | L | mass | present | HCl | 9.277184 kg/d | — |
 | S10 | WET_BENCH | LEACH_CSTR_1 | L | mass | present | spent etch | 79.115777 kg/d | — |
 | S11 | GROW_BED | AFTERBURNER | S | mass | present | organics | 0.8 kg/d | — |
-| S12 | HABITATION | GREY_TREAT | L/S | mass | present | grey/solids | 319.60396 kg/d | — |
+| S12 | HABITATION | GREY_TREAT | L/S | mass | present | grey/solids | 326.90396 kg/d | — |
 | S13 | GROW_BED | VCD_TRAIN | L | mass | present | condensate | 3.799494 kg/d | absent_from_candidate_mvs |
 | S14 | GROW_BED | FOOD_STORE | S | mass | present | food | 4.2 kg/d | — |
 | S15 | GROW_BED | HABITATION | G | mass | present | photosynthetic O2 | 0.0 kg/d | — |
@@ -99,7 +99,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S22 | ROOF_TANK | CATCH_TANK | L | ess | present | penstock | 0.0 kg/d | — |
 | S23 | CATCH_TANK | ROOF_TANK | L | ess | present | pump return | 0.0 kg/d | — |
 | S24 | H2_DRYER | RELIEF_H2 | G | mass | present | H2 relief contingency | 0.0 kg/d | — |
-| S25 | VCD_TRAIN | BMED_UPW_POLISH | L | mass | present | VCD distillate | 308.519678 kg/d | — |
+| S25 | VCD_TRAIN | BMED_UPW_POLISH | L | mass | present | VCD distillate | 340.115479 kg/d | — |
 | S26 | REMIN | HABITATION | L | mass | present | potable | 10.0 kg/d | — |
 | S27 | FAB_UPW_TANK | WET_BENCH | L | mass | present | fab UPW > 18 MΩ·cm class | 60.000181 kg/d | absent_from_candidate_mvs |
 | S28 | VCD_TRAIN | LEACH_CSTR_1 | L | mass | present | VCD brine | 17.877059 kg/d | — |
@@ -140,9 +140,9 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S66 | ACID_POLISH_SCRUB | CRU | L | mass | present | scrub liquor → chlorate finish | 27.372033 kg/d | absent_from_candidate_mvs |
 | S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | 117.42759 kg/d | — |
 | S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 14.050492 kg/d | — |
-| S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | 78.987901 kg/d | — |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 755.481467 kg/d | — |
-| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 755.481467 kg/d | — |
+| S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | 102.592478 kg/d | — |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 758.296919 kg/d | — |
+| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 758.296919 kg/d | — |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | L | mass | present | condensables | 0.0521 kg/d | — |
 | S71 | MET_AHU | MET_SCRUB | G | mass | present | metal-aisle fume / mist / dust | 20458.32 kg/d | absent_from_candidate_mvs |
 | S72 | MET_SCRUB | LEACH_CSTR_1 | L/S | mass | present | metal fines and aqueous scrub liquor | 2.4442 kg/d | — |
@@ -261,14 +261,14 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-ESS-ZNBR2-SRC | PV_ARRAY | SOL_ARK_60K | E | ess | present | PV share of the zinc-bromine round-trip loss | 1.6667 kW | ess_layer |
 | S89 | HDR_CO2 | GROW_BED | G | mass | present | CO2 enrichment dose (FARM AHU supply) | 0.882362 kg/d | — |
 | S90 | HABITATION | HDR_CO2 | G | mass | present | metabolic CO2 (desorbed from the HAB CO2 sorbent bed) | 4.021 kg/d | — |
-| IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.641602 kg/d | — |
+| IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 258.674935 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.509975 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 336.8716 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 337.5116 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
-| IA-UPW-REMIN | BMED_UPW_POLISH | REMIN | L | mass | present | remineralizer | 175.174278 kg/d | — |
+| IA-UPW-REMIN | BMED_UPW_POLISH | REMIN | L | mass | present | remineralizer | 206.770079 kg/d | — |
 | IA-UPW-REJ | BMED_UPW_POLISH | LEACH_CSTR_1 | L | mass | present | polish reject | 6.045005 kg/d | — |
 | IA-Q4-LIFE | Q4_BUS | HABITATION | thermal | thermal | present | life heat | 3.0 kW | — |
 | IA-AB-FLUE | AFTERBURNER | AFTERBURNER_FLUE | G | mass | present | flue | 7.096878 kg/d | — |
@@ -288,7 +288,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-DIG-LIQ | GLASS_DIGEST | LEACH_CSTR_1 | L | mass | present | silicate liquor | 21.968 kg/d | — |
 | IA-MILL-LOSS | GLASS_MILL | BAGHOUSE | S | mass | present | mill dust | 6.82 kg/d | — |
 | IA-MFG-OUT | MFG_SHOP | HABITATION | S | mass | present | goods in service | 596.862802 kg/d | — |
-| IA-BED-H2O | ROOF_TANK | GROW_BED | L | mass | present | irrigation | 42.138417 kg/d | — |
+| IA-BED-H2O | ROOF_TANK | GROW_BED | L | mass | present | irrigation | 43.838417 kg/d | — |
 | IA-MEOH-H2O | MEOH_SYNTH | MEOH_COND | L | mass | present | synthesis water | 19.401138 kg/d | — |
 | IA-FC-AIR | HDR_O2 | MEOH_FC | G | mass | present | cell air | 9.407064 kg/d | — |
 | IA-LEACH-BD | LEACH_CSTR_1 | NUTRIENT_DOSE | L | mass | present | bleed salts to nutrient | 109.63 kg/d | — |
@@ -316,7 +316,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-DC-EVAP | DRY_COOLER | ATMOS | vapour | mass | present | evaporated spray water to air | 0.0 kg/d | — |
 | IA-DC-SPRAY | ROOF_TANK | DRY_COOLER | liquid | mass | present | evaporative spray make-up | 0.0 kg/d | — |
 | IA-GW-MAKEUP | GW_INTAKE | ROOF_TANK | liquid | mass | present | groundwater make-up, reverse-osmosis treated | 0.0 kg/d | — |
-| IA-POT-01 | REMIN | ROOF_TANK | L | mass | present | potable makeup, remineralised | 165.174239 kg/d | — |
+| IA-POT-01 | REMIN | ROOF_TANK | L | mass | present | potable makeup, remineralised | 196.77004 kg/d | — |
 | IA-UPW-HAB | HDR_UPW | HABITATION | S/L | mass | present | potable makeup | 0.800001 kg/d | — |
 | IA-BAG-01 | BAGHOUSE | LEACH_CSTR_1 | S/L | mass | present | captured dust | 7.77 kg/d | — |
 | IA-UPW-USE | HDR_UPW | WAFER_FAB | S/L | mass | present | fab UPW | 66.500213 kg/d | — |
@@ -336,7 +336,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-NOX-HAB | ROOF_TANK | HABITATION | L | mass | present | scrubber water | 207.279999 kg/d | — |
 | IA-NUT-BED | NUTRIENT_DOSE | GROW_BED | L | mass | present | nitrate and bleed salts | 31.363502 kg/d | — |
 | IA-N2-VENT | CRYO_N2 | NORTH_DOCK | G | mass | present | nitrogen vent | 3.09978 kg/d | — |
-| IA-HOP-01 | HOPPER | LEACH_CSTR_1 | S | mass | present | returned scrap | 530.73594 kg/d | — |
+| IA-HOP-01 | HOPPER | LEACH_CSTR_1 | S | mass | present | returned scrap | 531.228831 kg/d | — |
 | IA-WEAR | HABITATION | HOPPER | S | mass | present | worn goods | 596.863842 kg/d | — |
 | IA-MEOH-COND | MEOH_COND | ROOF_TANK | S | mass | present | methanol condensate | 26.652161 kg/d | — |
 | IA-H2-IN | H2_DRYER | HDR_H2 | S | mass | present | dried hydrogen | 0.0 kg/d | — |
@@ -381,7 +381,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S17-BMED | SOL_ARK_60K | BMED_ACID | E | elec | present | 480 V AC | 5.6267 kW | — |
 | IA-BMED-03-TRIM | LEACH_CSTR_1 | GEO_GHEX | E | thermal | present | trim cooler heat from IA-BMED-03 (to BMED_ACID) | 0.78 kW | — |
 | IA-BMED-04-TRIM | LEACH_CSTR_1 | GEO_GHEX | E | thermal | present | trim cooler heat from IA-BMED-04 (to BMED_BASE) | 1.027 kW | — |
-| IA-LEACH-VCD | LEACH_CSTR_1 | VCD_TRAIN | L | mass | present | leach liquor water bleed to vapour-compression distillation | 167.999678 kg/d | — |
+| IA-LEACH-VCD | LEACH_CSTR_1 | VCD_TRAIN | L | mass | present | leach liquor water bleed to vapour-compression distillation | 199.595479 kg/d | — |
 | SF-ALK_SCRUBBER | SOL_ARK_60K | ALK_SCRUBBER | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.1122 kW | — |
 | SF-BMED_UPW_POLISH | SOL_ARK_60K | BMED_UPW_POLISH | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.018 kW | — |
 | SF-CRYO_H2 | SOL_ARK_60K | CRYO_H2 | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.9325 kW | — |
@@ -406,7 +406,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.172239 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 64.41311 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 57.87811 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
@@ -575,49 +575,68 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-COLD_MILL | SOL_ARK_60K | COLD_MILL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0191 kW | — |
 | SF-WIRE_DRAW | SOL_ARK_60K | WIRE_DRAW | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0189 kW | — |
 | SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K | GEO_HP_CLOSED_LOOP | E | elec | present | 480 V AC | 0.1257 kW | — |
-| AQUA_LOOP1 | AQUA_TANK | BIOFILTER | liquid | mass | present | ammonia-rich fish waste water (NH3/NH4+ from the gills) | 0.0 kg/d | — |
-| AQUA_NUT | BIOFILTER | GROWBED_A | liquid | mass | present | nitrified water (NO3- nitrate, plant-available nitrogen) | 0.0 kg/d | — |
-| AQUA_LOOP3 | GROWBED_A | GROWBED_B | liquid | mass | present | nitrate water through the aerobic root zone (plant uptake + anaerobic mineralisation layer) | 0.0 kg/d | — |
-| IA-CHICK-H2O | ROOF_TANK | CHICKEN_COOP | liquid | mass | present | flock drinking water | 0.0 kg/d | — |
-| EGG_HARVEST | CHICKEN_COOP | FOOD_STORE | liquid | mass | present | eggs to the food store | 0.0 kg/d | — |
-| CHICK_MANURE | CHICKEN_COOP | BSFL_BIN | liquid | mass | present | poultry manure to the larvae bin | 0.0 kg/d | — |
-| CHICK_VAP | CHICKEN_COOP | CRYO_AHU | liquid | mass | present | flock respiration/evaporation | 0.0 kg/d | — |
-| FISH_SLUDGE | AQUA_TANK | BSFL_BIN | liquid | mass | present | fish sludge to the larvae bin | 0.0 kg/d | — |
-| LARVAE_FEED | BSFL_BIN | CHICKEN_COOP | liquid | mass | present | larvae meal to the layer ration | 0.0 kg/d | — |
-| FRASS | BSFL_BIN | HOPPER | liquid | mass | present | frass compost to the solids line | 0.0 kg/d | — |
-| BSFL_VAP | BSFL_BIN | CRYO_AHU | liquid | mass | present | bin respiration/evaporation | 0.0 kg/d | — |
-| FOOD_GALLEY | FOOD_STORE | GALLEY | liquid | mass | present | food issue to the galley | 0.0 kg/d | — |
-| GALLEY_MEALS | GALLEY | HABITATION | liquid | mass | present | prepared meals to the crew | 0.0 kg/d | — |
-| GALLEY_BIO | GALLEY | BSFL_BIN | liquid | mass | present | galley biowaste to the larvae bin | 0.0 kg/d | — |
+| AQUA_LOOP1 | AQUA_TANK | BIOFILTER | liquid | mass | present | ammonia-rich fish waste water (NH3/NH4+ from the gills) | 200.0 kg/d | — |
+| AQUA_NUT | BIOFILTER | AQUA_UV | liquid | mass | present | nitrified water to the optional sanitizer (NO3- passes; sloughed cells die in food-safety mode) | 0.0 kg/d | — |
+| AQUA_LOOP3 | GROWBED_A | GROWBED_B | liquid | mass | present | nitrate water through the aerobic root zone (plant uptake + anaerobic mineralisation layer) | 202.75 kg/d | — |
+| IA-CHICK-H2O | ROOF_TANK | CHICKEN_COOP | liquid | mass | present | flock drinking water | 0.36 kg/d | — |
+| EGG_HARVEST | CHICKEN_COOP | FOOD_STORE | liquid | mass | present | eggs to the food store | 0.6 kg/d | — |
+| CHICK_MANURE | CHICKEN_COOP | BSFL_BIN | liquid | mass | present | poultry manure to the larvae bin | 3.20818 kg/d | — |
+| CHICK_VAP | CHICKEN_COOP | CRYO_AHU | liquid | mass | present | flock respiration/evaporation | 0.72 kg/d | — |
+| FISH_SLUDGE | AQUA_TANK | BSFL_BIN | liquid | mass | present | fish sludge to the larvae bin | 3.0 kg/d | — |
+| FRASS | BSFL_BIN | HOPPER | liquid | mass | present | frass compost to the solids line | 0.492891 kg/d | — |
+| BSFL_VAP | BSFL_BIN | CRYO_AHU | liquid | mass | present | bin respiration/evaporation | 7.24291 kg/d | — |
+| FOOD_GALLEY | FOOD_STORE | GALLEY | liquid | mass | present | food issue to the galley | 4.0 kg/d | — |
+| GALLEY_MEALS | GALLEY | HABITATION | liquid | mass | present | prepared meals to the crew | 4.84 kg/d | — |
+| GALLEY_BIO | GALLEY | BSFL_BIN | liquid | mass | present | galley biowaste to the larvae bin | 0.5 kg/d | — |
 | WASH_GREY | WASHROOM | GREY_TREAT | liquid | mass | present | wash grey water to the treatment train | 0.0 kg/d | — |
-| FISH_HARVEST | AQUA_TANK | FOOD_STORE | liquid | mass | present | fish harvest to the food store | 0.0 kg/d | — |
-| IA-AQUA-TOPUP | ROOF_TANK | AQUA_TANK | liquid | mass | present | loop top-up: root-zone growth water and evaporation | 0.0 kg/d | — |
-| IA-DUCK-H2O | ROOF_TANK | DUCK_PEN | liquid | mass | present | duck drinking/washing water | 0.0 kg/d | — |
+| FISH_HARVEST | AQUA_TANK | FOOD_STORE | liquid | mass | present | fish harvest to the food store | 0.81 kg/d | — |
+| IA-AQUA-TOPUP | ROOF_TANK | AQUA_TANK | liquid | mass | present | loop top-up: root-zone growth water and evaporation | 27.355801 kg/d | — |
+| IA-DUCK-H2O | ROOF_TANK | DUCK_PEN | liquid | mass | present | duck drinking/washing water | 1.98 kg/d | — |
 | IA-WASH-FEED | ROOF_TANK | WASHROOM | liquid | mass | present | wash-water feed to the washroom fixtures | 0.0 kg/d | — |
-| AQUA_LOOP4 | GROWBED_B | DUCKWEED | liquid | mass | present | loop water to the duckweed raceway (polisher + feed crop) | 0.0 kg/d | — |
-| AQUA_RETURN2 | DUCKWEED | AQUA_TANK | liquid | mass | present | polished loop water return (2.2 kg/d duckweed growth drawn from the loop) | 0.0 kg/d | — |
-| DUCK_FISH | DUCKWEED | AQUA_TANK | liquid | mass | present | fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW) | 0.0 kg/d | — |
-| DUCK_LAYERS | DUCKWEED | CHICKEN_COOP | liquid | mass | present | duckweed: layer ration base (dry-equivalent) | 0.0 kg/d | — |
-| FOOD_HAB | FOOD_STORE | HABITATION | liquid | mass | present | food issue to the habitation (direct) | 0.0 kg/d | — |
-| DUCK_EGGS | DUCK_PEN | FOOD_STORE | liquid | mass | present | duck eggs to the food store | 0.0 kg/d | — |
-| DUCK_MANURE | DUCK_PEN | BSFL_BIN | liquid | mass | present | duck manure to the larvae bin | 0.0 kg/d | — |
-| DUCK_VAP | DUCK_PEN | CRYO_AHU | liquid | mass | present | duck pen evaporation | 0.0 kg/d | — |
-| QUAIL_FEED | DUCKWEED | QUAIL_CAGE | liquid | mass | present | duckweed/larvae quail ration (dry-equivalent) | 0.0 kg/d | — |
-| QUAIL_H2O | ROOF_TANK | QUAIL_CAGE | liquid | mass | present | quail water | 0.0 kg/d | — |
-| QUAIL_EGGS | QUAIL_CAGE | FOOD_STORE | liquid | mass | present | quail eggs to the food store | 0.0 kg/d | — |
-| QUAIL_DROP | QUAIL_CAGE | VERMI_BIN | liquid | mass | present | quail droppings to the vermi bin | 0.0 kg/d | — |
-| QUAIL_VAP | QUAIL_CAGE | CRYO_AHU | liquid | mass | present | cage evaporation | 0.0 kg/d | — |
-| RABBIT_FORAGE | GROW_BED | RABBIT_HUTCH | liquid | mass | present | canopy thinnings/greens: rabbit forage | 0.0 kg/d | — |
-| RABBIT_MEAT | RABBIT_HUTCH | FOOD_STORE | liquid | mass | present | dressed rabbit meat to the food store | 0.0 kg/d | — |
-| RABBIT_MANURE | RABBIT_HUTCH | GROWBED_B | liquid | mass | present | cold rabbit manure direct to the mineralisation zone | 0.0 kg/d | — |
-| RABBIT_VAP | RABBIT_HUTCH | CRYO_AHU | liquid | mass | present | hutch evaporation | 0.0 kg/d | — |
-| NECTAR_FORAGE | GROW_BED | BEE_HIVE | liquid | mass | present | nectar/pollen forage from the canopy and greenhouse crops | 0.0 kg/d | — |
-| HONEY | BEE_HIVE | FOOD_STORE | liquid | mass | present | honey to the food store (annual average) | 0.0 kg/d | — |
-| BEE_VAP | BEE_HIVE | CRYO_AHU | liquid | mass | present | hive evaporation | 0.0 kg/d | — |
-| VERMI_FEED | GROW_BED | VERMI_BIN | liquid | mass | present | soft canopy residue to the vermi bin | 0.0 kg/d | — |
-| VERMICOMPOST | VERMI_BIN | GROWBED_A | liquid | mass | present | vermicompost to the growbed soil | 0.0 kg/d | — |
-| WORM_TEA | VERMI_BIN | GROWBED_A | liquid | mass | present | worm tea to the growbed soil | 0.0 kg/d | — |
-| DUCK_FODDER | DUCKWEED | DUCK_PEN | liquid | mass | present | fresh duckweed forage (ad lib) | 0.0 kg/d | — |
-| DUCK_GREY | DUCK_PEN | GREY_TREAT | liquid | mass | present | duck wash water | 0.0 kg/d | — |
+| AQUA_LOOP4 | GROWBED_B | DUCKWEED | liquid | mass | present | loop water to the duckweed raceway (polisher + feed crop) | 220.738599 kg/d | — |
+| AQUA_RETURN2 | DUCKWEED | AQUA_TANK | liquid | mass | present | polished loop water return (2.2 kg/d duckweed growth drawn from the loop) | 158.454199 kg/d | — |
+| DUCK_FISH | DUCKWEED | AQUA_TANK | liquid | mass | present | fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW) | 18.0 kg/d | — |
+| FOOD_HAB | FOOD_STORE | HABITATION | liquid | mass | present | food issue to the habitation (direct) | 2.46 kg/d | — |
+| DUCK_EGGS | DUCK_PEN | FOOD_STORE | liquid | mass | present | duck eggs to the food store | 0.34 kg/d | — |
+| DUCK_MANURE | DUCK_PEN | BSFL_BIN | liquid | mass | present | duck manure to the larvae bin | 1.44 kg/d | — |
+| DUCK_VAP | DUCK_PEN | CRYO_AHU | liquid | mass | present | duck pen evaporation | 0.8 kg/d | — |
+| QUAIL_H2O | ROOF_TANK | QUAIL_CAGE | liquid | mass | present | quail water | 0.2 kg/d | — |
+| QUAIL_EGGS | QUAIL_CAGE | FOOD_STORE | liquid | mass | present | quail eggs to the food store | 0.06 kg/d | — |
+| QUAIL_DROP | QUAIL_CAGE | VERMI_BIN | liquid | mass | present | quail droppings to the vermi bin | 1.75 kg/d | — |
+| QUAIL_VAP | QUAIL_CAGE | CRYO_AHU | liquid | mass | present | cage evaporation | 0.091667 kg/d | — |
+| RABBIT_FORAGE | GROW_BED | RABBIT_HUTCH | liquid | mass | present | canopy thinnings/greens: rabbit forage | 0.5 kg/d | — |
+| RABBIT_MEAT | RABBIT_HUTCH | FOOD_STORE | liquid | mass | present | dressed rabbit meat to the food store | 0.1 kg/d | — |
+| RABBIT_MANURE | RABBIT_HUTCH | GROWBED_B | liquid | mass | present | cold rabbit manure direct to the mineralisation zone | 0.3 kg/d | — |
+| RABBIT_VAP | RABBIT_HUTCH | CRYO_AHU | liquid | mass | present | hutch evaporation | 0.1 kg/d | — |
+| NECTAR_FORAGE | GROW_BED | BEE_HIVE | liquid | mass | present | nectar/pollen forage from the canopy and greenhouse crops | 0.2 kg/d | — |
+| HONEY | BEE_HIVE | FOOD_STORE | liquid | mass | present | honey to the food store (annual average) | 0.05 kg/d | — |
+| BEE_VAP | BEE_HIVE | CRYO_AHU | liquid | mass | present | hive evaporation | 0.15 kg/d | — |
+| VERMI_FEED | GROW_BED | VERMI_BIN | liquid | mass | present | soft canopy residue to the vermi bin | 1.0 kg/d | — |
+| VERMICOMPOST | VERMI_BIN | GROWBED_A | liquid | mass | present | vermicompost to the growbed soil | 1.9 kg/d | — |
+| WORM_TEA | VERMI_BIN | GROWBED_A | liquid | mass | present | worm tea to the growbed soil | 0.85 kg/d | — |
+| DUCK_FODDER | DUCKWEED | DUCK_PEN | liquid | mass | present | fresh duckweed forage (ad lib) | 4.0 kg/d | — |
+| DUCK_GREY | DUCK_PEN | GREY_TREAT | liquid | mass | present | duck wash water | 5.733333 kg/d | — |
 | IA-AIR-AQUA | SOL_ARK_60K | AQUA_TANK | electric | elec | present | air pump electrical load: O2 aeration for the fish | 0.04 kW | — |
 | IA-AIR-BIO | SOL_ARK_60K | BIOFILTER | electric | elec | present | air pump electrical load: O2 for the nitrifying bacteria | 0.02 kW | — |
+| DUCK_FORM | DUCKWEED | FEED_PREP | liquid | mass | present | fresh duckweed to formulation (layers + quail + reserve draw) | 43.3844 kg/d | — |
+| EGGSHELL_RET | GALLEY | FEED_PREP | liquid | mass | present | baked crushed eggshell return (38 g Ca/d) | 0.06 kg/d | — |
+| LAYER_FEED | FEED_PREP | CHICKEN_COOP | liquid | mass | present | formulated layer ration | 4.16818 kg/d | — |
+| QUAIL_RATION | FEED_PREP | QUAIL_CAGE | liquid | mass | present | formulated quail ration | 1.666667 kg/d | — |
+| DUCK_STORE | FEED_PREP | FOOD_STORE | liquid | mass | present | dried duckweed to the dry reserve | 0.5 kg/d | — |
+| FORM_REJECT | FEED_PREP | BSFL_BIN | liquid | mass | present | screenings/fines back to the larvae bin | 0.066667 kg/d | — |
+| FORM_VAP | FEED_PREP | CRYO_AHU | liquid | mass | present | drying evaporation on the storage draw (fresh-basis water) | 9.5 kg/d | — |
+| DUCK_GREENS | DUCKWEED | GALLEY | liquid | mass | present | human-grade fresh duckweed greens to the galley | 2.4 kg/d | — |
+| AQUA_SAN | AQUA_UV | GROWBED_A | liquid | mass | present | sanitized loop water to the growbeds (food-safety/contingency mode) | 0.0 kg/d | — |
+| AQUA_BYPASS | BIOFILTER | GROWBED_A | liquid | mass | present | normal-mode loop bypass around AQUA_UV | 200.0 kg/d | — |
+| IA-POWER-FEEDPREP | SOL_ARK_60K | FEED_PREP | electric | elec | present | formulation+drying electrical load | 0.6 kW | — |
+| IA-POWER-AQUAUV | SOL_ARK_60K | AQUA_UV | electric | elec | present | UV-C lamp electrical load | 0.04 kW | — |
+| LARVAE_FRESH | BSFL_BIN | FEED_PREP | liquid | mass | present | fresh larvae to the formulation drier | 0.479045 kg/d | — |
+| DUCK_RATION | FEED_PREP | DUCK_PEN | liquid | mass | present | pressed duckweed mash to the duck ration | 2.333333 kg/d | — |
+| FORM_PRESS | FEED_PREP | GROWBED_B | liquid | mass | present | press water back to the loop | 25.688598 kg/d | — |
+| BED_GREENS | GROWBED_B | FOOD_STORE | liquid | mass | present | media-bed greens to the reserve | 4.0 kg/d | — |
+| BED_ET | GROWBED_B | CRYO_AHU | liquid | mass | present | growbed evapotranspiration | 5.0 kg/d | — |
+| NUT_AQUA | NORTH_DOCK | DUCKWEED | liquid | mass | present | mineral nitrate solution to the raceway | 5.5 kg/d | — |
+| NUT_AQUA_BED | NORTH_DOCK | GROWBED_B | liquid | mass | present | mineral nitrate solution to the media beds | 1.0 kg/d | — |
+| CA_HOPPER | NORTH_DOCK | QUAIL_CAGE | liquid | mass | present | mineral calcium carbonate (free-choice hopper) | 0.035 kg/d | — |
+| FOOD_EXPORT | FOOD_STORE | BOUNDARY_EXPORT | liquid | mass | present | surplus food to the reserve/trade boundary | -0.0 kg/d | — |
+| GAL_GREY | GALLEY | GREY_TREAT | liquid | mass | present | galley wash grey water to the treatment train | 1.0 kg/d | — |

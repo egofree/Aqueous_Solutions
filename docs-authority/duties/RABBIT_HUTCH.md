@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: RABBIT_FORAGE 0 kg/d (canopy thinnings/greens: rabbit forage). Out: RABBIT_MEAT 0 kg/d (dressed rabbit meat to the food store); RABBIT_MANURE 0 kg/d (cold rabbit manure direct to the mineralisation zone); RABBIT_VAP 0 kg/d (hutch evaporation).
+1. Basis. Mass in 0.5 kg/d. Mass out 0.5 kg/d. Electrical duty 0.0000 kW. In: RABBIT_FORAGE 0.5 kg/d (canopy thinnings/greens: rabbit forage). Out: RABBIT_MEAT 0.1 kg/d (dressed rabbit meat to the food store); RABBIT_MANURE 0.3 kg/d (cold rabbit manure direct to the mineralisation zone); RABBIT_VAP 0.1 kg/d (hutch evaporation).
 
 2. Size.
 - Graph design (AQS-PAR-001 sizing): service rabbitry, 2 does + 1 buck; does 2; forage_kg_d 0.5; meat_kg_d 0.1; basis A-M-423 (X-FARM-07).

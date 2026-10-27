@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 480 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 35 | Commissioning record |
+| T5 | Design calculations and drawings | 483 | Calculation or drawing issued under the named task |
+| T6 | Commissioning measurements | 37 | Commissioning record |
 
-Total 679 items: 304 drivers, 375 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 684 items: 304 drivers, 380 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -681,17 +681,20 @@ Total 679 items: 304 drivers, 375 register entries. Classification rule: first m
 | A-M-412 | 180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m m; t; m | Hull general arrangement and structural design (X-LOC-11) | X-LOC-11 |
 | A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) | X-LOC-11 |
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35  m; m; - | Class stability and freeboard review (Q-030) | X-LOC-11 |
-| A-M-415 | 60 kg standing tilapia stock; 1.5 %/d ration; fish waste cir kg; - | Stocking and ration trial (X-FARM-01) | X-FARM-01 |
-| A-M-416 | 0.114 kg/d larvae meal (7.9 % of the layer ration), computed - (larvae-meal mass fraction of feed) | Larvae-meal ration trial (X-FARM-01) | X-FARM-01 |
+| A-M-415 | 60 kg standing tilapia stock; 1.5 %/d ration (below the 2-3  kg; - | Stocking and ration trial (X-FARM-01) | X-FARM-01 |
+| A-M-416 | 0.2108 kg/d larvae meal DM (14.6 % of the layer ration DM),  - (larvae-meal mass fraction of feed) | Larvae-meal ration trial (X-FARM-01) | X-FARM-01 |
 | A-M-417 | 12 birds; 0.12 kg feed/bird/d; 0.05 kg egg/bird/d birds; kg/d | Flock trial (X-FARM-02) | X-FARM-02 |
-| A-M-418 | 1.43 kg/d feedstock (galley biowaste 0.5, poultry manure 0.4 kg/d; - | Bin trial (X-FARM-03) | X-FARM-03 |
+| A-M-418 | 8.21 kg/d wet bin feedstock (galley 0.5 + layer manure 3.21  kg/d; - | Bin trial (X-FARM-03) | X-FARM-03 |
 | A-M-419 | galley 12; washroom 6; medical 6; sleep 16 (AQS-HAB-001 room m2 | Habitability design review (X-HAB-01) | X-HAB-01 |
-| A-M-420 | 240 m2 raceway at 15 g dry/m2/d, 30 % crude protein m2; g/m2/d; - | Raceway yield trial (X-FARM-04) | X-FARM-04 |
+| A-M-420 | 300 m2 raceway at 15 g dry/m2/d (4.5 kg DM/d), 30 % crude pr m2; g/m2/d; - | Raceway yield trial (X-FARM-04) | X-FARM-04 |
 | A-M-421 | 6 ducks (Khaki Campbell class); 0.9 kg/d ration; 0.34 kg/d d birds; kg/d | Flock trial (X-FARM-05) | X-FARM-05 |
 | A-M-422 | 20 coturnix hens; 0.5 kg/d ration; 0.06 kg/d quail eggs birds; kg/d | Cage-bank trial (X-FARM-06) | X-FARM-06 |
 | A-M-423 | 2 does + 1 buck; 0.5 kg/d forage (canopy thinnings); 0.1 kg/ does; kg/d | Rabbitry trial (X-FARM-07) | X-FARM-07 |
 | A-M-424 | 1 hive; 10-25 kg honey/yr; pollination raises canopy yield 2 hive; kg/yr; - | Hive establishment and overwintering trial (X-FARM-08) | X-FARM-08 |
 | A-M-425 | 2 m2 bin; 1 kg Eisenia fetida stock per 0.5 m2 m2; kg | Vermi-bin trial (X-FARM-09) | X-FARM-09 |
+| A-M-427 | 0.12 kg/d DM-equivalent fresh duckweed to the galley as huma kg/d (dry-equivalent) | Greens path microbiology check (X-FARM-11) | X-FARM-11 |
+| A-M-428 | AQUA_UV optional loop sanitizer between the biofilter and th - (design provision) | Sanitizer dose validation (X-FARM-12) | X-FARM-12 |
+| A-M-430 | mineral nitrate solution 6.5 kg/d (raceway 5.5 + media beds  kg/d (mineral solution, not feed) | Raceway N-uptake measurement at the X-FARM-04 trial | X-FARM-04 |
 
 ## 7. T6 Commissioning measurements
 
@@ -700,7 +703,7 @@ Total 679 items: 304 drivers, 375 register entries. Classification rule: first m
 | driver FAB.wafer-line-train.campaign_d | 7.0 d | logged campaign schedule at the fab commissioning task | X-PAR |
 | driver FARM.aquaponics.fish_stock_kg | 60.0 kg standing fish stock (tilapia class) | Stocking trial at the aquaponics commissioning (X-FARM-01) | X-PAR |
 | driver FARM.chicken.stock_birds | 12.0 birds (dual-purpose layer class) | Flock trial at the coop commissioning (X-FARM-02) | X-PAR |
-| driver FARM.duckweed.raceway_m2 | 240.0 m2 raceway (Lemna minor, azolla co-culture) | Raceway yield trial at the loop commissioning (X-FARM-04) | X-PAR |
+| driver FARM.duckweed.raceway_m2 | 300.0 m2 raceway (Lemna minor, azolla co-culture) | Raceway yield trial at the loop commissioning (X-FARM-04) | X-PAR |
 | driver U_free_convection_W_m2K | 7.0 W/(m2 K) | Coil outlet temperature on the installed air cooler | X-PAR |
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus | X-PAR |
 | driver ew_bus_drop_V | 0.3 V | Measure bus-bar and contact drop on the installed DC bus at rated current | X-PAR |
@@ -732,3 +735,5 @@ Total 679 items: 304 drivers, 375 register entries. Classification rule: first m
 | A-M-129 | O2 species ledger: C5-C10 cut as C7.5H17 (3.51 kg O2/kg), or kg/d | Commissioning O2 inventory test T-PAR-04: header pressure and cold-box O2 product logged over 7 days with the combustion units running; O2 make-up equal to the ledger deficit within 10 % | X-PAR-11 |
 | A-M-317 | 0.1258 kW continuous demand on the design-day bounding winter case | vendor pump curve check at the installed loop (AQS-DUTY-076 Open: none at the survey-locked basis; survey confirmation is the registered replacing test) | X-ELS-02 load list Rev C, 2026-10-21 |
 | A-M-325 | ADS_CHILL 304L adsorber shells + silica-gel beds + 316L wate selection class | season-commissioning trial: seal leak-down on the adsorbers, coil condition at the dry cooler and make-up-air coil | X-MAT-22 |
+| A-M-426 | FEED_PREP formulation: layers 1.44, quail 0.50, dry-reserve  kg/d (dry-equivalent feed) | Ration trial at the FEED_PREP commissioning (X-FARM-10) | X-FARM-10 |
+| A-M-429 | Textiles: wool/sheep eliminated at the 4-crew class; FR-fini - (roster decision) | Textile-line commissioning (X-POLY-01) | X-POLY-01 |

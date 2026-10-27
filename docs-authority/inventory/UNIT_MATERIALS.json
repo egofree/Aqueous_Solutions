@@ -8,6 +8,7 @@
   "ALK_SCRUBBER",
   "AL_POT",
   "AQUA_TANK",
+  "AQUA_UV",
   "ATM_INT",
   "BACKUP_GEN",
   "BAGHOUSE",
@@ -64,6 +65,7 @@
   "EXT_HALL",
   "E_HEAT",
   "FAB_UPW_TANK",
+  "FEED_PREP",
   "FILM_CAST",
   "FLOAT_SINK",
   "FLUE_KO",
@@ -212,6 +214,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 370,
- "units": 210
+ "tot_wetted_rows": 387,
+ "units": 212
 }

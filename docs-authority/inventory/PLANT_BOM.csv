@@ -485,6 +485,8 @@ unit envelope BOM,ANIMAL_PEN,Process nozzle DN50,2,HDPE or PVC for the water.,on
 unit envelope BOM,ANIMAL_PEN,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
 unit envelope BOM,AQUA_TANK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002,docs-authority/duties/AQUA_TANK.md
 unit envelope BOM,AQUA_TANK,Process nozzle DN15,6,per AQS-STD-002,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,AQUA_UV,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"SS304 reactor tube with a quartz UV sleeve, PP loop fittings, EPDM gasket class.",docs-authority/duties/AQUA_UV.md
+unit envelope BOM,AQUA_UV,Process nozzle DN15,2,"SS304 reactor tube with a quartz UV sleeve, PP loop fittings, EPDM gasket class.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ASH,Body / envelope 1000 x 1000 x 1500 mm,1,HDPE or PVC for the water.,docs-authority/duties/ASH.md
 unit envelope BOM,ASH,Process nozzle DN15,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ASH,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
@@ -505,7 +507,7 @@ unit envelope BOM,BEES,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-
 unit envelope BOM,BEE_HIVE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Untreated solid-pine box bodies, SS316 screen bottom board, propolis-waxed interiors; no copper-bearing alloys and no treated lumber anywhere on the hive.",docs-authority/duties/BEE_HIVE.md
 unit envelope BOM,BEE_HIVE,Process nozzle DN15,3,"Untreated solid-pine box bodies, SS316 screen bottom board, propolis-waxed interiors; no copper-bearing alloys and no treated lumber anywhere on the hive.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,BIOFILTER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/BIOFILTER.md
-unit envelope BOM,BIOFILTER,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BIOFILTER,Process nozzle DN15,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,BLOW_MOLD,Body / envelope 1200 x 800 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/BLOW_MOLD.md
 unit envelope BOM,BLOW_MOLD,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,BMED_ACID,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/BMED_ACID.md
@@ -523,7 +525,7 @@ unit envelope BOM,BSFL,Process nozzle DN15,8,HDPE or PVC for the water.,one per 
 unit envelope BOM,BSFL,Process nozzle DN50,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,BSFL,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
 unit envelope BOM,BSFL_BIN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no metal below the substrate line.",docs-authority/duties/BSFL_BIN.md
-unit envelope BOM,BSFL_BIN,Process nozzle DN15,7,"HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no metal below the substrate line.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,BSFL_BIN,Process nozzle DN15,8,"HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no metal below the substrate line.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,BUOH_STILL,Body / envelope 300 x 300 x 1200 mm,1,Borosilicate glass 3.,docs-authority/duties/BUOH_STILL.md
 unit envelope BOM,BUOH_STILL,Process nozzle DN15,2,Borosilicate glass 3.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,BUOH_STILL,Open vent DN25,1,Borosilicate glass 3.,"API 2000, A-M-155"
@@ -539,7 +541,7 @@ unit envelope BOM,CHICKENS,Body / envelope per duty sheet section 2 (not yet dim
 unit envelope BOM,CHICKENS,Process nozzle DN15,4,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CHICKENS,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
 unit envelope BOM,CHICKEN_COOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Hot-dip galvanised steel frame and hardware cloth, SS316 feeders and waterers, HDPE drop-board liner.",docs-authority/duties/CHICKEN_COOP.md
-unit envelope BOM,CHICKEN_COOP,Process nozzle DN15,6,"Hot-dip galvanised steel frame and hardware cloth, SS316 feeders and waterers, HDPE drop-board liner.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CHICKEN_COOP,Process nozzle DN15,5,"Hot-dip galvanised steel frame and hardware cloth, SS316 feeders and waterers, HDPE drop-board liner.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CLARIFIER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/CLARIFIER.md
 unit envelope BOM,CLARIFIER,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CLARIFIER,Process nozzle DN25,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
@@ -600,7 +602,7 @@ unit envelope BOM,CROP_TOMATO,Open vent DN25,1,HDPE or PVC for the water.,"API 2
 unit envelope BOM,CRU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/CRU.md
 unit envelope BOM,CRU,Process nozzle DN15,10,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_AHU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AHU.md
-unit envelope BOM,CRYO_AHU,Process nozzle DN15,15,316L.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRYO_AHU,Process nozzle DN15,17,316L.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_AHU_COND_CONDENSABLE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AHU_COND_CONDENSABLE.md
 unit envelope BOM,CRYO_AHU_COND_CONDENSABLE,Process nozzle DN15,2,316L.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_AR,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AR.md
@@ -649,9 +651,9 @@ unit envelope BOM,DUAL_ROOT,Body / envelope 6000 x 2000 x 600 mm,1,HDPE or PVC f
 unit envelope BOM,DUAL_ROOT,Process nozzle DN15,3,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,DUAL_ROOT,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
 unit envelope BOM,DUCKWEED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/DUCKWEED.md
-unit envelope BOM,DUCKWEED,Process nozzle DN15,6,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,DUCKWEED,Process nozzle DN15,7,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,DUCK_PEN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Hot-dip galvanised steel frame and hardware cloth, EPDM liner in the wallow, SS316 waterers.",docs-authority/duties/DUCK_PEN.md
-unit envelope BOM,DUCK_PEN,Process nozzle DN15,6,"Hot-dip galvanised steel frame and hardware cloth, EPDM liner in the wallow, SS316 waterers.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,DUCK_PEN,Process nozzle DN15,7,"Hot-dip galvanised steel frame and hardware cloth, EPDM liner in the wallow, SS316 waterers.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,ELECTRODE_COAT,Body / envelope 1200 x 800 x 1800 mm,1,316L where the stream is wet.,docs-authority/duties/ELECTRODE_COAT.md
 unit envelope BOM,ELECTRODE_COAT,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,EMETH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/EMETH.md
@@ -687,6 +689,8 @@ unit envelope BOM,EXTRUDE,Process nozzle DN15,2,per AQS-STD-002 (no duty sheet),
 unit envelope BOM,EXT_HALL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Steel portal frames on the 6 m grid; insulated metal roof and wall panels to the IECC U-factors; roof framing for LRFD 1.,docs-authority/duties/EXT_HALL.md
 unit envelope BOM,FAB_UPW_TANK,Body / envelope 600 x 600 x 600 mm,1,PE (rotomoulded / fabricated) (graph node material).,docs-authority/duties/FAB_UPW_TANK.md
 unit envelope BOM,FAB_UPW_TANK,Process nozzle DN15,3,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FEED_PREP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path.",docs-authority/duties/FEED_PREP.md
+unit envelope BOM,FEED_PREP,Process nozzle DN15,10,"SS304 contact surfaces and mixing troughs, PP feed bins, quartz-sleeve drier ducting; no copper-bearing alloys on any feed path.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,FILM_CAST,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/FILM_CAST.md
 unit envelope BOM,FILM_CAST,Process nozzle DN15,1,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
 unit envelope BOM,FISH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/FISH.md
@@ -707,7 +711,7 @@ unit envelope BOM,FLUE_KO,Process nozzle DN20,1,"FRP vinyl ester with C-veil lin
 unit envelope BOM,FLUX_PREP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/FLUX_PREP.md
 unit envelope BOM,FLUX_PREP,Process nozzle DN15,2,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
 unit envelope BOM,FOOD_STORE,Body / envelope 650 x 650 x 750 mm,1,PE (rotomoulded / fabricated) (graph node material).,docs-authority/duties/FOOD_STORE.md
-unit envelope BOM,FOOD_STORE,Process nozzle DN15,10,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,FOOD_STORE,Process nozzle DN15,13,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,FORGE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/FORGE.md
 unit envelope BOM,FRUIT_GUTTER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/FRUIT_GUTTER.md
 unit envelope BOM,FRUIT_GUTTER,Process nozzle DN15,6,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
@@ -718,7 +722,7 @@ unit envelope BOM,FUEL_CELL,Process nozzle DN50,1,No wetted alloy.,one per mass 
 unit envelope BOM,F_RECOVER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments.,docs-authority/duties/F_RECOVER.md
 unit envelope BOM,F_RECOVER,Process nozzle DN15,3,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) legs to the hot HF make-up; PE pump and PP-H frame attachments.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GALLEY,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths.",docs-authority/duties/GALLEY.md
-unit envelope BOM,GALLEY,Process nozzle DN15,3,"SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GALLEY,Process nozzle DN15,6,"SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GAS_ATOMIZER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/GAS_ATOMIZER.md
 unit envelope BOM,GAS_ATOMIZER,Process nozzle DN15,5,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GEO_GHEX,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal (graph node material).",docs-authority/duties/GEO_GHEX.md
@@ -742,12 +746,12 @@ unit envelope BOM,GREASE_CA,Process nozzle DN15,3,316L jacketed soap kettle + 31
 unit envelope BOM,GREASE_LI,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap.,docs-authority/duties/GREASE_LI.md
 unit envelope BOM,GREASE_LI,Process nozzle DN15,3,316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GREY_TREAT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/GREY_TREAT.md
-unit envelope BOM,GREY_TREAT,Process nozzle DN15,8,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GREY_TREAT,Process nozzle DN15,9,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GREY_TREAT,Process nozzle DN50,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GROWBED_A,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002,docs-authority/duties/GROWBED_A.md
-unit envelope BOM,GROWBED_A,Process nozzle DN15,4,per AQS-STD-002,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GROWBED_A,Process nozzle DN15,5,per AQS-STD-002,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GROWBED_B,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"HDPE tray with EPDM liner, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping.",docs-authority/duties/GROWBED_B.md
-unit envelope BOM,GROWBED_B,Process nozzle DN15,3,"HDPE tray with EPDM liner, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,GROWBED_B,Process nozzle DN15,7,"HDPE tray with EPDM liner, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GROW_BED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/GROW_BED.md
 unit envelope BOM,GROW_BED,Process nozzle DN15,18,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,GW_INTAKE,Body / envelope 900 x 700 x 1800 mm,1,"Selections issued (unit task 09 pattern; checked across the AQS-ASSAY-001 Rev C bounding cases, AQS-STD-002).",docs-authority/duties/GW_INTAKE.md
@@ -903,7 +907,7 @@ unit envelope BOM,Q3_B,Body D750 x 950 mm,1,"SA-240 304L, welded (100 C tier is 
 unit envelope BOM,Q4_A,Body D800 x 1200 mm,1,PP-H (fusion welded) (graph node material).,docs-authority/duties/Q4_A.md
 unit envelope BOM,Q4_B,Body D800 x 1200 mm,1,PP-H (fusion welded) (graph node material).,docs-authority/duties/Q4_B.md
 unit envelope BOM,QUAIL_CAGE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers.",docs-authority/duties/QUAIL_CAGE.md
-unit envelope BOM,QUAIL_CAGE,Process nozzle DN15,5,"Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,QUAIL_CAGE,Process nozzle DN15,6,"Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,QUAT,Body / envelope 400 x 400 x 800 mm,1,"Glass or PVC-U, per AQS-STD-002 rule M1.",docs-authority/duties/QUAT.md
 unit envelope BOM,QUAT,Process nozzle DN15,5,"Glass or PVC-U, per AQS-STD-002 rule M1.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,QUAT,Open vent DN25,1,"Glass or PVC-U, per AQS-STD-002 rule M1.","API 2000, A-M-155"
@@ -1200,8 +1204,8 @@ motor family,MF-23 x 0,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
 motor family,MF-23 x 0,"housing extruded 6063, NEMA ICS 16 86 mm flange",0,,extruded + machined
 motor family,MF-23 x 0,bearing 608-2Z,0,,X-INV-05
 motor family,MF-23 x 0,connector 4-pin,0,,X-INV-05 electronics
-bulk pipe,PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 171 x 6.096 m",1024.4 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
-bulk pipe,PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,174 / 124 / 124 / 496,PVC-U Sch 80 ASTM D1785,AQS-INV-003
+bulk pipe,PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 180 x 6.096 m",1076.3 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
+bulk pipe,PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,177 / 126 / 126 / 504,PVC-U Sch 80 ASTM D1785,AQS-INV-003
 bulk pipe,PF-02,"316L ASTM A312 DN15 pipe, 180 x 6.096 m",1078.4 m,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-02,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,157 / 108 / 108 / 432,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-03,"CPVC Sch 80 ASTM F441 DN15 pipe, 93 x 6.096 m",545.2 m,CPVC Sch 80 ASTM F441,AQS-INV-003
@@ -1242,10 +1246,10 @@ bulk pipe,PF-20,"316L ASTM A312 DN50 pipe, 3 x 6.096 m",17.1 m,316L ASTM A312,AQ
 bulk pipe,PF-20,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 5/8 in studs,3 / 2 / 2 / 8,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-21,"PVDF SDR 21 ISO 10931 DN32 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,AQS-INV-003
-bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",33240 m,Cu,AQS-INV-002
+bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",33360 m,Cu,AQS-INV-002
 bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",41987 m,Cu,AQS-INV-002
 bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",16920 m,Cu,AQS-INV-002
-bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",16620 m,Cu,AQS-INV-002
+bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",16680 m,Cu,AQS-INV-002
 bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",17894 m,Cu,AQS-INV-002
 bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4416 m,Cu,AQS-INV-002
 bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",4600 m,Cu,AQS-INV-002
@@ -1271,7 +1275,7 @@ bulk wire,WF-29,"equipment ground 1/0 AWG green XHHW-2 Cu, 600 V",45 m,Cu,AQS-IN
 building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",388,,AQS-INV-004
 building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",356,,AQS-INV-004
 building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),868,,AQS-INV-004
-building block,OF-04,electronics: PLC analog input point (IEC 61131-2),782,,AQS-INV-004
+building block,OF-04,electronics: PLC analog input point (IEC 61131-2),786,,AQS-INV-004
 building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),191,,AQS-INV-004
 building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),160,,AQS-INV-004
 building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",104,,AQS-INV-004
@@ -1281,7 +1285,7 @@ building block,OF-10,electronics: compressor contactor + overload (IEC 60947-4-1
 building block,OF-11,electronics: stepper driver (IEC 61800-5-1),3,,AQS-INV-004
 building block,OF-12,"electronics: safety PLC (SIL 2 capable), CPU and I/O rack (IEC 61508 / IEC 61511)",2,,AQS-INV-004
 building block,OF-13,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),62,,AQS-INV-004
-building block,OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),8194,,AQS-INV-004
+building block,OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),8304,,AQS-INV-004
 building block,OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),100,,AQS-INV-004
 building block,OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),48,,AQS-INV-004
 building block,OF-17,fastener: M12 anchor (ISO 3506 A4-70),37,,AQS-INV-004
@@ -1302,8 +1306,8 @@ building block,OF-31,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,AQS-INV-
 building block,OF-32,fastener: Lid gasket 40 mm wide (FKM),1,,AQS-INV-004
 building block,OF-33,fastener: Solvent cement (PVC-U per ASTM D2564),1,,AQS-INV-004
 building block,OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456)",139,,AQS-INV-004
-building block,OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",172,,AQS-INV-004
-building block,OF-36,"instrument: temperature element (IEC 60751, 316L thermowell)",175,,AQS-INV-004
+building block,OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",174,,AQS-INV-004
+building block,OF-36,"instrument: temperature element (IEC 60751, 316L thermowell)",177,,AQS-INV-004
 building block,OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",80,,AQS-INV-004
 building block,OF-38,"instrument: level transmitter (IEC 62828, PTFE lens)",80,,AQS-INV-004
 building block,OF-39,"instrument: gas detector, H2 (alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling)",30,,AQS-INV-004
@@ -1315,9 +1319,9 @@ building block,OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, b
 building block,OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height)",6,,AQS-INV-004
 building block,OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",204,,AQS-INV-004
 building block,OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",124,,AQS-INV-004
-building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",2939,,AQS-INV-004
+building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",2994,,AQS-INV-004
 building block,OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1158,,AQS-INV-004
-building block,OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",146,,AQS-INV-004
+building block,OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",148,,AQS-INV-004
 building block,OF-51,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",30,,AQS-INV-004
 building block,OF-52,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",122,,AQS-INV-004
 building block,OF-53,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",88,,AQS-INV-004

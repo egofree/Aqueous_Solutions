@@ -17,8 +17,8 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 634 | 47 % |
-| organic | 519 | 38 % |
+| metal_plateable | 636 | 47 % |
+| organic | 521 | 38 % |
 | metal_reactive | 84 | 6 % |
 | silicate_oxide | 60 | 4 % |
 | unassigned | 55 | 4 % |
@@ -57,6 +57,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | AMF | 0 | 3 | 0 | 0 | 0 |
 | ANIMAL_PEN | 0 | 4 | 0 | 0 | 0 |
 | AQUA_TANK | 0 | 0 | 0 | 0 | 2 |
+| AQUA_UV | 0 | 2 | 0 | 0 | 0 |
 | ASH | 0 | 3 | 0 | 0 | 0 |
 | AZOLLA | 0 | 3 | 0 | 0 | 0 |
 | AZOLLA_BED | 0 | 3 | 0 | 0 | 0 |
@@ -146,6 +147,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | EXTRUDE | 2 | 0 | 0 | 0 | 1 |
 | EXT_HALL | 1 | 0 | 0 | 0 | 0 |
 | FAB_UPW_TANK | 0 | 0 | 0 | 0 | 2 |
+| FEED_PREP | 2 | 0 | 0 | 0 | 0 |
 | FILM_CAST | 9 | 1 | 0 | 0 | 1 |
 | FISH | 0 | 5 | 0 | 0 | 0 |
 | FISH_SUMP | 0 | 4 | 0 | 0 | 0 |

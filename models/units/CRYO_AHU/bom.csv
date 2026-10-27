@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AHU.md
-2,Process nozzle DN15,15,316L.,one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,17,316L.,one per mass edge; DN from AQS-INV-003
 3,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: transfer pump IA-HVAC-COND to ROOF_TANK (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: transfer pump S68 to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005

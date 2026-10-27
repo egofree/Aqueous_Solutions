@@ -219,6 +219,10 @@ As built, the profile's `power_portfolio` group lists the sources (primary, back
 
 The profile's `heat_rejection` group lists, per level of the heat ladder, the unit that rejects the heat, its mode (air, evaporative, ground, seawater, radiative, or heat pump with a sink mode) and the graph parameter that gives its duty. `flow_graph/param/heat_rejection.py` checks each mode against the site capabilities: air needs an air heat sink; evaporative also needs a vent sink and liquid water; ground needs ground contact; seawater needs liquid water and a seawater source. A radiative level needs the radiator emissivity and the sink temperature in the group, and is sized by the Stefan-Boltzmann law with the constant from CODATA 2018 [55]. A heat pump states its source and rejection temperatures, and the document gives its lift and the Carnot bound on its coefficient of performance. Every heat rejection unit that remains after the scaling actions needs a level, so a replacement brings its own mode. The modes appear in `docs-authority/SITE_POWER.md`.
 
+### 5.6 The FARM/HAB build-out across locales
+
+The X-FARM/X-HAB units (AQS-FARM-001/002, A-M-415..429) scale by three rules. One, the animal set rides on gravity and volume: fish, poultry, rabbits and the insect bins need the pressurised, gravity-served volume of the grow room, so at the microgravity locale the whole animal chain eliminates together with its formulation unit (FEED_PREP) and the loop sanitizer (AQUA_UV) — the plant-chamber class replaces the produce function, and the textile function stays on the PP line (A-M-429, site-independent: no sheep at any locale below the large-site canopy class). Two, the raceway area is a pressurised-floor-area line item wherever the loop survives: 300 m2 at the baseline (A-M-420) enters the grow-room volume budget at Mars and the greenhouse footprint at the ground locales. Three, the food-safety class travels with the produce path (A-M-427/428): any locale that serves fresh loop-grown greens to the galley carries AQUA_UV and its dose-validation test; a locale that eliminates the loop eliminates the greens path with it and the galley issue narrows to the stored ration.
+
 ## 6. Death Valley
 
 ### 6.1 Site and environment
@@ -342,7 +346,7 @@ Table 8.1. Mars environment
 - Crew. Radiation shielding uses regolith and water. Life support follows the crewed spacecraft family.
 - Logistics. A landing pad replaces the dock. Resupply follows the transfer windows [16]. Surplus is used locally, stored or made into propellant (Q-026).
 - Codes. The Outer Space Treaty [29], the COSPAR policy on planetary protection [30] and the NASA interim directive for crewed Mars missions [31] apply, with NASA-STD-3001 for crew health [32]. Ground ice may lie in a special region under [30] (Q-027).
-- Scaling. PUMPED_HYDRO and the roof and catch tanks are replaced or eliminated. GEO becomes regolith heat exchange. DOCK becomes a landing pad. Atmosphere intake, ice extraction and methanation are added. FARM moves into a pressurised grow room with a perchlorate-free substrate.
+- Scaling. PUMPED_HYDRO and the roof and catch tanks are replaced or eliminated. GEO becomes regolith heat exchange. DOCK becomes a landing pad. Atmosphere intake, ice extraction and methanation are added. FARM moves into a pressurised grow room with a perchlorate-free substrate. At 0.38 g the animal roster can carry: the aquaponic loop, the smallstock set and FEED_PREP ride along with the fish and poultry ration classes unchanged; the raceway's 300 m2 (A-M-420) is a pressurised-volume line item in the grow room; AQUA_UV keeps the produce food-safety class (A-M-427/428) since the loop water stays closed. The HAB rooms stand as designed (A-M-419).
 
 ## 9. Low Earth orbit
 
@@ -378,7 +382,7 @@ Table 9.1. Low Earth orbit environment
 - Logistics. A docking port replaces the dock. Products used in orbit include propellant from water, radiation shielding and structural parts; the plant can make the propellant that keeps the orbit up against drag.
 - Gravity by rotation. A rotating section gives a chosen apparent gravity at its working radius. Apparent gravity is a profile value, so this choice can be swept (Q-023).
 - Codes. The Outer Space Treaty [29] and the crewed spacecraft family apply, with debris mitigation standards.
-- Scaling. PUMPED_HYDRO, GEO and the dock are eliminated or replaced. DRY_COOLER becomes a radiator. The air separation in CRYO has no air to take and becomes cabin air processing. GAS scrubbers, FLOAT_SINK, ZNBR2 and the melting and casting units of FOUNDRY need replacements.
+- Scaling. PUMPED_HYDRO, GEO and the dock are eliminated or replaced. DRY_COOLER becomes a radiator. The air separation in CRYO has no air to take and becomes cabin air processing. GAS scrubbers, FLOAT_SINK, ZNBR2 and the melting and casting units of FOUNDRY need replacements. The X-FARM/X-HAB units eliminate with the animal set: no poultry, rabbits, fish or insects in microgravity, so FEED_PREP, AQUA_UV, the aquaponic loop and the galley-greens path (A-M-427) go with them, and the growbeds become the plant chambers above; the duckweed raceway loses its gas-liquid surface and is eliminated with the loop. Textiles stay PP-fleece (A-M-429 is site-independent).
 
 ## 10. Floating island
 

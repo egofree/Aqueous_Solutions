@@ -13,3 +13,6 @@ N11,DN15,Class 150,"fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW)",o
 N12,DN15,Class 150,duckweed: layer ration base (dry-equivalent),outlet,600
 N13,DN15,Class 150,duckweed/larvae quail ration (dry-equivalent),outlet,600
 N14,DN15,Class 150,fresh duckweed forage (ad lib),outlet,600
+N15,DN15,Class 150,fresh duckweed to formulation (layers + quail + reserve draw),outlet,600
+N16,DN15,Class 150,human-grade fresh duckweed greens to the galley,outlet,600
+N17,DN15,Class 150,mineral nitrate solution to the raceway,inlet,160

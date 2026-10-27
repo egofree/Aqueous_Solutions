@@ -70,12 +70,14 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 5,HAB,SLEEP_QUARTERS,0,,-,0,no
 5,HAB,WASHROOM,0,,-,0,no
 6,FARM,AQUA_TANK,0,,-,0,no
+6,FARM,AQUA_UV,0,,-,0,no
 6,FARM,BEE_HIVE,0,,-,0,no
 6,FARM,BIOFILTER,0,,-,2700,no
 6,FARM,BSFL_BIN,0,,-,0,no
 6,FARM,CHICKEN_COOP,0,,-,0,no
 6,FARM,DUCKWEED,0,,-,518,no
 6,FARM,DUCK_PEN,0,,-,0,no
+6,FARM,FEED_PREP,0,,-,0,no
 6,FARM,FOOD_STORE,0,,-,0,no
 6,FARM,GROWBED_A,0,,-,0,no
 6,FARM,GROWBED_B,0,,-,0,no

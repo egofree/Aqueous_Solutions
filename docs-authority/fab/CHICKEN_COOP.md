@@ -7,7 +7,7 @@ service line: service layer flock, 12 birds; stock_birds 12; egg_kg_d 0.6; feed_
 Internals: duty sheet: "cloth, SS316 feeders and waterers, HDPE drop-board liner. Basis: wet uric-acid manure with ammonia offgas and " [docs-authority/duties/CHICKEN_COOP.md]
 Material: Hot-dip galvanised steel frame and hardware cloth, SS316 feeders and waterers, HDPE drop-board liner. (continues on the duty sheet)
 
-Nozzles: 8 process connections per docs-authority/nozzles/CHICKEN_COOP.csv
+Nozzles: 9 process connections per docs-authority/nozzles/CHICKEN_COOP.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):
