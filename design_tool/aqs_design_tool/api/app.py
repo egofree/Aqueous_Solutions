@@ -14,6 +14,7 @@ import json
 import subprocess
 import sys
 from datetime import datetime, timezone
+from typing import Optional
 import importlib
 
 SP = importlib.import_module("aqs_design_tool.site_profiles")
@@ -215,6 +216,7 @@ def get_flow_graph_view(view_name: str) -> JSONResponse:
 
 
 @app.post("/api/v1/sandbox")
+@app.get("/api/v1/sites")
 def list_sites() -> dict:
     """The locale scaling profiles a site sandbox can start from (X-UI-002 Phase 1)."""
     out = []
@@ -234,6 +236,9 @@ class SiteSandboxRequest(BaseModel):
 
     site_id: str
     label: Optional[str] = None
+
+
+SiteSandboxRequest.model_rebuild()
 
 
 @app.post("/api/v1/sandbox/from-site")
