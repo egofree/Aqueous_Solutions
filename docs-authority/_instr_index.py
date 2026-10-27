@@ -216,6 +216,8 @@ A('AQUA_TANK', 'PT', 'pressure transmitter', 'gauge, tank head', '0-50 kPa', 'fi
 A('FEED_PREP', 'PSH', 'pressure switch high', 'mash line, press pump discharge', '0-250 kPa', 'press-line overpressure interlock on the mash loop (X-FARM-10; A-M-426)')
 A('AQUA_UV', 'FIT', 'flow instrumentation transmitter', 'loop inline, reactor tube', '0-100 kg/d', 'loop flow permissive: the UV dose is valid only above the minimum flow (X-FARM-12; A-M-428)')
 A('AQUA_UV', 'UVT', 'UV intensity sensor', 'reactor wall, 254 nm window', '0-5 mW/cm2', 'dose watchdog: lamp depletion or sleeve fouling decays the signal (X-FARM-12; A-M-428)')
+A('POLY_FIBER', 'TIR', 'temperature instrumentation recorder', 'melt vessel, thermocouple well', '0-300 C', 'melt temperature is the spin-quality variable: PP spins at the 200-260 C class (X-POLY-01; A-M-429)')
+A('POLY_FIBER', 'FIT', 'flow instrumentation transmitter', 'spin pump discharge', '0-2 kg/h', 'denier control: fibre mass per unit length follows the pump volumetric consistency (X-POLY-01; A-M-429)')
 A('BIOFILTER', 'PT', 'pressure transmitter', 'gauge, loop side', '0-50 kPa', 'biofilter loop pressure watch (X-FARM build-out; A-M-415)')
 A('GROWBED_A', 'LT', 'level transmitter', 'ultrasonic, bed sump', '0-300 mm', 'flood-and-drain cycle watch on the aerobic root zone (X-FARM build-out; A-M-229)')
 A('GROWBED_B', 'LT', 'level transmitter', 'ultrasonic, bed sump', '0-300 mm', 'mineralisation-zone level watch (X-FARM build-out; A-M-229)')

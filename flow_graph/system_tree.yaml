@@ -281,6 +281,9 @@ nodes:
   - id: POLYMERS.forming-train.PELLET
     parent: POLYMERS.forming-train
     unit_id: PELLET
+  - id: POLYMERS.forming-train.POLY_FIBER
+    parent: POLYMERS.forming-train
+    unit_id: POLY_FIBER
   - id: POLYMERS.forming-train.POWDER_RESIN
     parent: POLYMERS.forming-train
     unit_id: POWDER_RESIN

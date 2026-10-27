@@ -26,7 +26,7 @@ FAMILIES = [
       'CAST_LINE', 'CONT_CAST', 'INV_CAST', 'VAC_CAST', 'ROLL', 'EXTRUDE', 'DRAW', 'FORGE', 'SINTER', 'FLUX_PREP', 'WAX_PATTERN',
       'SHELL_BUILD', 'SHELL_BURNOUT', 'SHELL_BREAK', 'STOCK_OUT']),
     ('docs-authority/sizing/POLYMERS_LINE.md', 'AQS-DUTY-073', 'POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)',
-     ['FILM_CAST', 'HF_GEN', 'PELLET', 'POLY_COND', 'POLY_F', 'POLY_OLEFIN', 'POLY_STOCK', 'POWDER_RESIN', 'TFE_SYN', 'VDF_SYN']),
+     ['FILM_CAST', 'HF_GEN', 'PELLET', 'POLY_COND', 'POLY_F', 'POLY_FIBER', 'POLY_OLEFIN', 'POLY_STOCK', 'POWDER_RESIN', 'TFE_SYN', 'VDF_SYN']),
     ('docs-authority/sizing/REACTOR_DESIGN.md', 'AQS-DUTY-062', 'In-house reactors (flow_graph/param/reactor_design.py)',
      ['GLASS_DIGEST', 'OIL_PYRO', 'MEOH_SYNTH', 'MEOH_FERM']),
     ('docs-authority/sizing/EVAP_DESIGN.md', 'AQS-DUTY-060', 'MVR evaporators (flow_graph/param/evap_design.py)', ['EVAP_ACID', 'EVAP_BASE']),

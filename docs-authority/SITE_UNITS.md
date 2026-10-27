@@ -16,7 +16,7 @@ Table 1. Placements and sizing by locale
 | leo | CAT_OX | AFTERBURNER | design record; sizes at the locale design pass | A-M-399 |
 | leo | E_HEAT | COMB_HEAT | design record; sizes at the locale design pass | A-M-283 (30 kW connected duty carried from COMB_HEAT) |
 | leo | HYDRO_GROW | GROW_BED | design record; sizes at the locale design pass | A-M-404 |
-| leo | LIO_BAT | ZNBR2, ZNBR2_BR2_REGEN, HYDRO_SET | storage delivered kWh 101.1; stretch h 0.56 | AQS-PLAN-011 section 5.5 worst-stretch balance; A-M-402 interim |
+| leo | LIO_BAT | ZNBR2, ZNBR2_BR2_REGEN, HYDRO_SET | storage delivered kWh 101.2; stretch h 0.56 | AQS-PLAN-011 section 5.5 worst-stretch balance; A-M-402 interim |
 | leo | MEM_DIST | VCD_TRAIN | design record; sizes at the locale design pass | A-M-405 |
 | leo | RAD_PANEL | GEO_GHEX, GEO_HP, DRY_COOLER | area m2 36.2; area m2 per kW 3.015; duty kW 12; radiator K 300 | A-M-396 (sink), A-M-397 (emissivity); Stefan-Boltzmann |
 | leo | REC_HDR | AFTERBURNER_FLUE, RELIEF_CRYO, RELIEF_H2, ACID_POLISH_SCRUB, ALK_SCRUBBER, MET_SCRUB, NOX_SCRUB, EVAP_ACID_VS | design record; sizes at the locale design pass | A-M-398 |

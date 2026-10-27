@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.2941 kg/d. Mass out 0.2941 kg/d. Electrical duty 0.0000 kW. In: OLEFIN_TO_PELLET 0.2941 kg/d (polyolefin resin); POLYF_TO_PELLET 0 kg/d (PVDF/PTFE resin). Out: PELLET_TO_STOCK 0.2941 kg/d (pellet stock).
+1. Basis. Mass in 0.3846 kg/d. Mass out 0.3846 kg/d. Electrical duty 0.0000 kW. In: OLEFIN_TO_PELLET 0.3846 kg/d (polyolefin resin); POLYF_TO_PELLET 0 kg/d (PVDF/PTFE resin). Out: PELLET_TO_STOCK 0.3846 kg/d (pellet stock).
 
 2. Size.
-- Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 146875.3 h if it were full. It is not a residence time.
+- Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 112323.6 h if it were full. It is not a residence time.
 - Envelope basis (graph node): A-M-199 forming class; hold-up of the resin stream is below the class minimum.
 - Sizing study AQS-DUTY-073 (study): pellet_kg_d 0.2941; form 2-4 mm pellets (AQS-DES-POLY).
 - Graph design (AQS-PAR-001 sizing): machine underwater die-face pelletizer; rate_kg_d 0.2941; pellet_mm 2-4.

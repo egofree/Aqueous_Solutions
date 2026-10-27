@@ -765,7 +765,7 @@ unit envelope BOM,H2_PURIFIER,Body D60 x 926 mm,1,"316L, annealed (AQS-REV-H2-00
 unit envelope BOM,H2_PURIFIER,Process nozzle DN15,3,"316L, annealed (AQS-REV-H2-001).",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,H2_PURIFIER,Open vent DN25,1,"316L, annealed (AQS-REV-H2-001).","API 2000, A-M-155"
 unit envelope BOM,HABITATION,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/HABITATION.md
-unit envelope BOM,HABITATION,Process nozzle DN15,21,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,HABITATION,Process nozzle DN15,22,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,HABITATION,Process nozzle DN50,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,HAB_GALLEY,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/HAB_GALLEY.md
 unit envelope BOM,HAB_GALLEY,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
@@ -835,7 +835,7 @@ unit envelope BOM,MET_SCRUB,Process nozzle DN15,5,"PVC-U shell, sump, and packin
 unit envelope BOM,MET_SCRUB,Process nozzle DN50,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,MET_SCRUB,Process nozzle DN300,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,MFG_SHOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/MFG_SHOP.md
-unit envelope BOM,MFG_SHOP,Process nozzle DN15,27,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,MFG_SHOP,Process nozzle DN15,29,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,MG_POT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/MG_POT.md
 unit envelope BOM,MG_POT,Process nozzle DN15,2,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
 unit envelope BOM,MISTER,Body / envelope 4000 x 1000 x 800 mm,1,HDPE or PVC for the water.,docs-authority/duties/MISTER.md
@@ -882,6 +882,8 @@ unit envelope BOM,POLY_COND,Body / envelope per duty sheet section 2 (not yet di
 unit envelope BOM,POLY_COND,Process nozzle DN15,1,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
 unit envelope BOM,POLY_F,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/POLY_F.md
 unit envelope BOM,POLY_F,Process nozzle DN15,4,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
+unit envelope BOM,POLY_FIBER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting.",docs-authority/duties/POLY_FIBER.md
+unit envelope BOM,POLY_FIBER,Process nozzle DN15,4,"SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,POLY_OLEFIN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/POLY_OLEFIN.md
 unit envelope BOM,POLY_OLEFIN,Process nozzle DN15,3,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
 unit envelope BOM,POLY_STOCK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/POLY_STOCK.md
@@ -1218,8 +1220,8 @@ bulk pipe,PF-06,"CS ASTM A106 Gr B DN15 pipe, 65 x 6.096 m",389.2 m,CS ASTM A106
 bulk pipe,PF-06,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,68 / 50 / 50 / 200,CS ASTM A106 Gr B,AQS-INV-003
 bulk pipe,PF-07,"PVC-U Sch 80 ASTM D1785 DN50 pipe, 31 x 6.096 m",185.2 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
 bulk pipe,PF-07,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 5/8 in studs,33 / 22 / 22 / 88,PVC-U Sch 80 ASTM D1785,AQS-INV-003
-bulk pipe,PF-08,"HDPE PE4710 DR 11 (ASTM D3035) DN15 pipe, 30 x 6.096 m",175.8 m,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
-bulk pipe,PF-08,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 1/2 in studs,26 / 20 / 20 / 80,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-08,"HDPE PE4710 DR 11 (ASTM D3035) DN15 pipe, 34 x 6.096 m",198.4 m,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
+bulk pipe,PF-08,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 1/2 in studs,29 / 22 / 22 / 88,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
 bulk pipe,PF-09,"HDPE PE4710 DR 11 (ASTM D3035) DN50 pipe, 14 x 6.096 m",80.6 m,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
 bulk pipe,PF-09,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 5/8 in studs,13 / 10 / 10 / 40,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
 bulk pipe,PF-10,"FRP vinyl ester DN15 pipe, 10 x 6.096 m",55.2 m,FRP vinyl ester,AQS-INV-003
@@ -1246,10 +1248,10 @@ bulk pipe,PF-20,"316L ASTM A312 DN50 pipe, 3 x 6.096 m",17.1 m,316L ASTM A312,AQ
 bulk pipe,PF-20,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 5/8 in studs,3 / 2 / 2 / 8,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-21,"PVDF SDR 21 ISO 10931 DN32 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,AQS-INV-003
-bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",33360 m,Cu,AQS-INV-002
+bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",33480 m,Cu,AQS-INV-002
 bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",41987 m,Cu,AQS-INV-002
 bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",16920 m,Cu,AQS-INV-002
-bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",16680 m,Cu,AQS-INV-002
+bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",16740 m,Cu,AQS-INV-002
 bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",17894 m,Cu,AQS-INV-002
 bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4416 m,Cu,AQS-INV-002
 bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",4600 m,Cu,AQS-INV-002
@@ -1275,7 +1277,7 @@ bulk wire,WF-29,"equipment ground 1/0 AWG green XHHW-2 Cu, 600 V",45 m,Cu,AQS-IN
 building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",388,,AQS-INV-004
 building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",356,,AQS-INV-004
 building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),868,,AQS-INV-004
-building block,OF-04,electronics: PLC analog input point (IEC 61131-2),786,,AQS-INV-004
+building block,OF-04,electronics: PLC analog input point (IEC 61131-2),789,,AQS-INV-004
 building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),191,,AQS-INV-004
 building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),160,,AQS-INV-004
 building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",104,,AQS-INV-004
@@ -1285,7 +1287,7 @@ building block,OF-10,electronics: compressor contactor + overload (IEC 60947-4-1
 building block,OF-11,electronics: stepper driver (IEC 61800-5-1),3,,AQS-INV-004
 building block,OF-12,"electronics: safety PLC (SIL 2 capable), CPU and I/O rack (IEC 61508 / IEC 61511)",2,,AQS-INV-004
 building block,OF-13,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),62,,AQS-INV-004
-building block,OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),8304,,AQS-INV-004
+building block,OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),8362,,AQS-INV-004
 building block,OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),100,,AQS-INV-004
 building block,OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),48,,AQS-INV-004
 building block,OF-17,fastener: M12 anchor (ISO 3506 A4-70),37,,AQS-INV-004
@@ -1305,9 +1307,9 @@ building block,OF-30,fastener: Flange gasket (graphite sheet),2,,AQS-INV-004
 building block,OF-31,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,AQS-INV-004
 building block,OF-32,fastener: Lid gasket 40 mm wide (FKM),1,,AQS-INV-004
 building block,OF-33,fastener: Solvent cement (PVC-U per ASTM D2564),1,,AQS-INV-004
-building block,OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456)",139,,AQS-INV-004
-building block,OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",174,,AQS-INV-004
-building block,OF-36,"instrument: temperature element (IEC 60751, 316L thermowell)",177,,AQS-INV-004
+building block,OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456)",140,,AQS-INV-004
+building block,OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",175,,AQS-INV-004
+building block,OF-36,"instrument: temperature element (IEC 60751, 316L thermowell)",178,,AQS-INV-004
 building block,OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",80,,AQS-INV-004
 building block,OF-38,"instrument: level transmitter (IEC 62828, PTFE lens)",80,,AQS-INV-004
 building block,OF-39,"instrument: gas detector, H2 (alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling)",30,,AQS-INV-004
@@ -1319,13 +1321,13 @@ building block,OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, b
 building block,OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height)",6,,AQS-INV-004
 building block,OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",204,,AQS-INV-004
 building block,OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",124,,AQS-INV-004
-building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",2994,,AQS-INV-004
+building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",3023,,AQS-INV-004
 building block,OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1158,,AQS-INV-004
 building block,OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",148,,AQS-INV-004
-building block,OF-51,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",30,,AQS-INV-004
+building block,OF-51,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",32,,AQS-INV-004
 building block,OF-52,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",122,,AQS-INV-004
 building block,OF-53,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",88,,AQS-INV-004
-building block,OF-54,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",9,,AQS-INV-004
+building block,OF-54,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",10,,AQS-INV-004
 building block,OF-55,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",51,,AQS-INV-004
 building block,OF-56,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",56,,AQS-INV-004
 building block,OF-57,"valve: check valve (CPVC true-union swing/ball check valve, FKM seals)",25,,AQS-INV-004

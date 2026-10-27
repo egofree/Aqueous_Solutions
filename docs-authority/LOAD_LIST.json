@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "649c276e3390112571980986dca91416397c33096678b90abfd6c95e0840aa7e",
+  "graph_sha256": "0264bd1d0a43ecc05819d1a70b61eab49a3574928f50fca84c223aaaeb9866d7",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 337.512,
-   "calc_kw": 337.512,
+   "kw": 337.812,
+   "calc_kw": 337.812,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 180.454,
-   "calc_kw": 180.454,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 180.5 kW, charge 820.2 kW, 2526 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 180.754,
+   "calc_kw": 180.754,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 180.8 kW, charge 821.6 kW, 2531 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -716,6 +716,15 @@
    "sector": "FARM"
   },
   {
+   "unit": "POLY_FIBER",
+   "role": "\u2014",
+   "kw": 0.3,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "POLYMERS"
+  },
+  {
    "unit": "COMB_HEAT",
    "role": "\u2014",
    "kw": 0.05,
@@ -844,18 +853,18 @@
  ],
  "summary": {
   "calculated": 76,
-  "pending": 4,
+  "pending": 5,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 93,
-  "graph_sum_kW": 141.79,
-  "calc_sum_kW": 141.79,
-  "connected_load_kW": 141.8,
+  "rows": 94,
+  "graph_sum_kW": 142.09,
+  "calc_sum_kW": 142.09,
+  "connected_load_kW": 142.1,
   "connected_calculated_kW": 141.0,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 0.7,
-  "connected_calculated_pct": 99.5,
+  "connected_study_kW": 1.0,
+  "connected_calculated_pct": 99.3,
   "by_sector": {
    "CRYO": {
     "calculated": 4
@@ -905,7 +914,8 @@
     "calculated": 2
    },
    "POLYMERS": {
-    "calculated": 6
+    "calculated": 6,
+    "pending": 1
    },
    "PUMPED_HYDRO": {
     "null": 1

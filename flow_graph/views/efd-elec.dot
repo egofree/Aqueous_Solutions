@@ -148,6 +148,7 @@ digraph G {
     "POLY_F" [fillcolor="#ffffff", label="POLY_F"];
     "POWDER_RESIN" [fillcolor="#ffffff", label="POWDER_RESIN"];
     "FILM_CAST" [fillcolor="#ffffff", label="FILM_CAST"];
+    "POLY_FIBER" [fillcolor="#ffffff", label="POLY_FIBER"];
   }
   subgraph "cluster_PUMPED_HYDRO" {
     label="PUMPED_HYDRO";
@@ -171,7 +172,7 @@ digraph G {
   "GEO_ORC" -> "SOL_ARK_60K" [label="S48", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n4.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n1.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n337.5116 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n337.8116 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BOUNDARY_EXPORT" [label="IA-PV-CURTAIL\\n4.645 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BMED_ACID" [label="S17-BMED\\n5.6267 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -256,4 +257,5 @@ digraph G {
   "SOL_ARK_60K" -> "BIOFILTER" [label="IA-AIR-BIO\\n0.02 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "FEED_PREP" [label="IA-POWER-FEEDPREP\\n0.6 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "AQUA_UV" [label="IA-POWER-AQUAUV\\n0.04 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "POLY_FIBER" [label="SF-POLY_FIBER\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

@@ -4,6 +4,15 @@
   "DIGESTER": {
    "no_sink": [
     {
+     "stream_id": "FIBER_SCRAP",
+     "from": "POLY_FIBER",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "POLYMERS",
+     "rate": 0.004524,
+     "unit": "kg/d",
+     "carries": "spin scrap to the solids line"
+    },
+    {
      "stream_id": "FOUNDRY_SLAG_TO_LEACH",
      "from": "IND_MELT",
      "to": "LEACH_CSTR_1",
@@ -89,7 +98,7 @@
      "from": "GREY_TREAT",
      "to": "LEACH_CSTR_1",
      "other_sector": "WTR",
-     "rate": 258.674935,
+     "rate": 258.762606,
      "unit": "kg/d",
      "carries": "grey sludge"
     },
@@ -831,7 +840,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 57.87811,
+     "rate": 57.785915,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -1271,7 +1280,7 @@
      "from": "PROD_C5_C10",
      "to": "POLY_OLEFIN",
      "other_sector": "POLYMERS",
-     "rate": 0.294127,
+     "rate": 0.384603,
      "unit": "kg/d",
      "carries": "C5-C10 naphtha olefin feed"
     },
@@ -1327,7 +1336,7 @@
      "from": "PROD_C5_C10",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 7.130646,
+     "rate": 7.04017,
      "unit": "kg/d",
      "carries": "C5-C10 product shipped"
     },
@@ -1568,7 +1577,7 @@
      "from": "PROD_C5_C10",
      "to": "POLY_OLEFIN",
      "other_sector": "OIL",
-     "rate": 0.294127,
+     "rate": 0.384603,
      "unit": "kg/d",
      "carries": "C5-C10 naphtha olefin feed"
     },
@@ -1592,6 +1601,24 @@
     }
    ],
    "no_source": [
+    {
+     "stream_id": "FIBER_SCRAP",
+     "from": "POLY_FIBER",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "DIGESTER",
+     "rate": 0.004524,
+     "unit": "kg/d",
+     "carries": "spin scrap to the solids line"
+    },
+    {
+     "stream_id": "FLEECE_TO_MFG",
+     "from": "POLY_FIBER",
+     "to": "MFG_SHOP",
+     "other_sector": "MFG",
+     "rate": 0.087671,
+     "unit": "kg/d",
+     "carries": "FR-finished fleece to the shop for conversion"
+    },
     {
      "stream_id": "FLUORO_TO_MFG",
      "from": "POLY_STOCK",
@@ -1658,6 +1685,15 @@
    ],
    "stops": [
     {
+     "stream_id": "FR_FINISH",
+     "from": "NORTH_DOCK",
+     "to": "POLY_FIBER",
+     "other_sector": "DOCK",
+     "rate": 0.001719,
+     "unit": "kg/d",
+     "carries": "phosphorus-FR finish (reagent manifest)"
+    },
+    {
      "stream_id": "IA-CAF2-MU",
      "from": "NORTH_DOCK",
      "to": "HF_GEN",
@@ -1710,6 +1746,15 @@
      "rate": 0.0449,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
+    },
+    {
+     "stream_id": "SF-POLY_FIBER",
+     "from": "SOL_ARK_60K",
+     "to": "POLY_FIBER",
+     "other_sector": "ELEC",
+     "rate": 0.3,
+     "unit": "kW",
+     "carries": "melt-spin electrical load"
     },
     {
      "stream_id": "SF-POWDER_RESIN",
@@ -2548,6 +2593,15 @@
      "carries": "C19-C28 from the tank"
     },
     {
+     "stream_id": "FLEECE_TO_MFG",
+     "from": "POLY_FIBER",
+     "to": "MFG_SHOP",
+     "other_sector": "POLYMERS",
+     "rate": 0.087671,
+     "unit": "kg/d",
+     "carries": "FR-finished fleece to the shop for conversion"
+    },
+    {
      "stream_id": "FLUORO_TO_MFG",
      "from": "POLY_STOCK",
      "to": "MFG_SHOP",
@@ -2836,6 +2890,15 @@
      "rate": 0.0158,
      "unit": "kg/d",
      "carries": "organic mist"
+    },
+    {
+     "stream_id": "TEXTILE_HAB",
+     "from": "MFG_SHOP",
+     "to": "HABITATION",
+     "other_sector": "HAB",
+     "rate": 0.087671,
+     "unit": "kg/d",
+     "carries": "finished crew textiles to the hab issue"
     }
    ],
    "stops": [
@@ -4170,6 +4233,15 @@
      "rate": 10.0,
      "unit": "kg/d",
      "carries": "potable"
+    },
+    {
+     "stream_id": "TEXTILE_HAB",
+     "from": "MFG_SHOP",
+     "to": "HABITATION",
+     "other_sector": "MFG",
+     "rate": 0.087671,
+     "unit": "kg/d",
+     "carries": "finished crew textiles to the hab issue"
     }
    ],
    "no_source": [
@@ -4313,7 +4385,7 @@
      "from": "HABITATION",
      "to": "GREY_TREAT",
      "other_sector": "WTR",
-     "rate": 326.90396,
+     "rate": 326.991631,
      "unit": "kg/d",
      "carries": "grey/solids"
     },
@@ -5032,7 +5104,7 @@
      "from": "HABITATION",
      "to": "GREY_TREAT",
      "other_sector": "HAB",
-     "rate": 326.90396,
+     "rate": 326.991631,
      "unit": "kg/d",
      "carries": "grey/solids"
     },
@@ -5142,7 +5214,7 @@
      "from": "GREY_TREAT",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 258.674935,
+     "rate": 258.762606,
      "unit": "kg/d",
      "carries": "grey sludge"
     },
@@ -6057,6 +6129,15 @@
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
     {
+     "stream_id": "SF-POLY_FIBER",
+     "from": "SOL_ARK_60K",
+     "to": "POLY_FIBER",
+     "other_sector": "POLYMERS",
+     "rate": 0.3,
+     "unit": "kW",
+     "carries": "melt-spin electrical load"
+    },
+    {
      "stream_id": "SF-POWDER_RESIN",
      "from": "SOL_ARK_60K",
      "to": "POWDER_RESIN",
@@ -6951,7 +7032,7 @@
      "from": "PROD_C5_C10",
      "to": "NORTH_DOCK",
      "other_sector": "OIL",
-     "rate": 7.130646,
+     "rate": 7.04017,
      "unit": "kg/d",
      "carries": "C5-C10 product shipped"
     },
@@ -7111,6 +7192,15 @@
      "carries": "mineral calcium carbonate (free-choice hopper)"
     },
     {
+     "stream_id": "FR_FINISH",
+     "from": "NORTH_DOCK",
+     "to": "POLY_FIBER",
+     "other_sector": "POLYMERS",
+     "rate": 0.001719,
+     "unit": "kg/d",
+     "carries": "phosphorus-FR finish (reagent manifest)"
+    },
+    {
      "stream_id": "IA-ALCL3-MU",
      "from": "NORTH_DOCK",
      "to": "AL_POT",
@@ -7178,7 +7268,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 57.87811,
+     "rate": 57.785915,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -7590,7 +7680,7 @@
       },
       {
        "stream_id": "IA-C5-POLY",
-       "kg_per_campaign": 0.98
+       "kg_per_campaign": 1.28
       },
       {
        "stream_id": "MEOH_TO_VDF",

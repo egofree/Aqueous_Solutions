@@ -1,0 +1,5 @@
+item,description,qty,material,basis
+1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting.",docs-authority/duties/POLY_FIBER.md
+2,Process nozzle DN15,4,"SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting.",one per mass edge; DN from AQS-INV-003
+3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

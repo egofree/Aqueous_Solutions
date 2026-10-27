@@ -486,6 +486,13 @@ SEL_FARM = {
   '316L tube if the loop ever runs saline (it does not at the freshwater class)',
   'quartz sleeve fouling is the maintenance item - the dose validation (X-FARM-12) covers it.',
   'X-FARM-12'),
+ 'POLY_FIBER': (
+  'SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting',
+  'PP melts at 160-220 C and is non-wetting to the 304 class at the bench throughput (A-M-429): the die plate is '
+  'the precision item; no copper alloys touch the melt (PP degrades against copper at melt temperature)',
+  'a 316L die plate if the FR-finish chemistry ever shows die corrosion',
+  'the FR finish dosing skid is PP/PTFE-contact throughout.',
+  'X-POLY-01'),
 }
 
 def main():

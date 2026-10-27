@@ -1386,6 +1386,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {FAO -- Food and Agriculture Organization of the United Nations. The aquaculture and livestock ration-standard source class (A-M-415).}
 {LECA -- Lightweight expanded clay aggregate. The expanded-clay aquaponic grow-bed media (GROWBED_A, GROWBED_B).}
 {BW -- Body weight. The animal-science basis for per-animal feed rations, % BW per day (DUCK_FISH, FARM animal units).}
+{FR -- Flame-retardant finish. The phosphorus-FR treatment carrying the flammability duty that PP lacks (POLY_FIBER; A-M-429).}
+{TIR -- Temperature instrumentation recorder. The thermocouple-well melt-temperature loop on the spin line (POLY_FIBER).}
 {CP -- Crude protein. The feed-science protein measure, % of dry matter (FARM ration tables; A-M-420/426).}
 {UVT -- Ultraviolet intensity transmitter. The 254 nm dose watchdog on the loop sanitizer: lamp depletion or sleeve fouling decays its signal (AQUA_UV; A-M-428).}
 {HDG -- Hot-dip galvanised steel. The zinc-coated structural class for livestock housing frames, wire floors and hardware cloth (CHICKEN_COOP, DUCK_PEN, QUAIL_CAGE, RABBIT_HUTCH).}

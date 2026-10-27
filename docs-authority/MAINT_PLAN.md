@@ -194,5 +194,6 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | VERMI_BIN | worm_bin | external visual (1 y, A-M-189) |
 | FEED_PREP | feed_prep | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | AQUA_UV | uv_sanitizer | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| POLY_FIBER | melt_spin | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 
-185 units, 386 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+186 units, 390 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

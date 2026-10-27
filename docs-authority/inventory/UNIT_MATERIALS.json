@@ -142,6 +142,7 @@
   "POLISH_BANK",
   "POLY_COND",
   "POLY_F",
+  "POLY_FIBER",
   "POLY_OLEFIN",
   "POLY_STOCK",
   "POWDER_RESIN",
@@ -214,6 +215,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 387,
- "units": 212
+ "tot_wetted_rows": 392,
+ "units": 213
 }

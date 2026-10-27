@@ -146,7 +146,7 @@ digraph G {
   "BMED_ACID" -> "WET_BENCH" [label="S09\\n9.277184 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WET_BENCH" -> "LEACH_CSTR_1" [label="S10\\n79.115777 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "AFTERBURNER" [label="S11\\n0.8 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "HABITATION" -> "GREY_TREAT" [label="S12\\n326.90396 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HABITATION" -> "GREY_TREAT" [label="S12\\n326.991631 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "VCD_TRAIN" [label="S13\\n3.799494 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "FOOD_STORE" [label="S14\\n4.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "HABITATION" [label="S15\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -190,8 +190,8 @@ digraph G {
   "AFTERBURNER_FLUE" -> "FLUE_KO" [label="S67\\n117.42759 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FLUE_KO" -> "CRYO_CO2" [label="S67B\\n14.050492 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "LEACH_CSTR_1" [label="S68\\n102.592478 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n758.296919 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n758.296919 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n759.557569 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n759.557569 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU_COND_CONDENSABLE" -> "FLUE_KO" [label="S70\\n0.0521 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_AHU" -> "MET_SCRUB" [label="S71\\n20458.32 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_SCRUB" -> "LEACH_CSTR_1" [label="S72\\n2.4442 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];

@@ -25,7 +25,7 @@ Table 2.1. Unit count per class
 | Atmospheric | 3 |
 | B31.3 piping component | 4 |
 | Section VIII-1 (ID not yet sized) | 1 |
-| not a vessel (no design pressure on the graph) | 207 |
+| not a vessel (no design pressure on the graph) | 208 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 0 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
@@ -192,6 +192,7 @@ Table 4.1. Code intent per unit
 | POLISH_BANK | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | POLY_COND | POLYMERS |  |  | 200 | not a vessel (no design pressure on the graph) | - | - | - |
 | POLY_F | POLYMERS |  | 60 | 150 | not a vessel (no design pressure on the graph) | - | - | - |
+| POLY_FIBER | POLYMERS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | POLY_OLEFIN | POLYMERS | 5000.0 | 250.0 | 142 | B31.3 piping component | U-1(c)(2)(j): ID 142 mm <= 152 mm | none (piping carries no Certification Mark, ASME_B31_3) | hydrostatic 1.5 x design (ASME_B31_3 345.4.2); 341 examination |
 | POLY_STOCK | POLYMERS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | POWDER_RESIN | POLYMERS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

@@ -5644,5 +5644,25 @@
   "units": "kg/d food issue to the habitation rooms",
   "basis": "TECHTREE FOOD_STORE issue split",
   "register": "A-M-426"
+ },
+ "POLYMERS.textile.textile_kg_person_yr": {
+  "value": 8.0,
+  "units": "kg finished textiles per person per year (clothing 4 + bedding 2 + wipes/other 2; A-M-429 study class)",
+  "register": "A-M-429"
+ },
+ "POLYMERS.textile.fr_pickup_frac": {
+  "value": 0.02,
+  "units": "- phosphorus-FR finish pick-up, % of fiber mass",
+  "register": "A-M-429"
+ },
+ "POLYMERS.textile.spin_yield": {
+  "value": 0.95,
+  "units": "- melt-spin first-pass yield; scrap to the solids line",
+  "register": "A-M-429"
+ },
+ "POLYMERS.textile.power_kW": {
+  "value": 0.3,
+  "units": "kW melt-spin heater + spindle + winder",
+  "register": "A-M-429"
  }
 }

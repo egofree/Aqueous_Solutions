@@ -194,8 +194,10 @@ def solve(g=None):
     e_melt = sum(m * q[c] for c, m in mix.items()) + val('melt_hold_kW') * val('melt_time_h') * math.ceil((S + potm + flux) / val('melt_charge_kg'))
     kw_peak = math.ceil(val('melt_charge_kg') * max(q.values()) / val('melt_time_h') * 2) / 2   # largest cold heat
     e_roll = 0.032 * (mix['Cu'] + 10.0)                        # A-M-177 rolling 0.032 kWh/kg (bounding, cold class)
-    c5 = rated('CUT-1') - rated('CUT-1-OUT') - P * (1 + rej)   # IA-C5-SHIP re-solve (make - burned - olefin)
-    return dict(g=g, E=E, d=d, r0=r0, K=K, f=f, rej=rej, P=P, S=S, slag=slag, flux=flux, potm=potm,
+    pp_in = round(val('POLYMERS.textile.textile_kg_person_yr') * val('san_crew') / 365.0
+                  / ((1 + val('POLYMERS.textile.fr_pickup_frac')) * val('POLYMERS.textile.spin_yield')), 6)
+    c5 = rated('CUT-1') - rated('CUT-1-OUT') - P * (1 + rej) - pp_in   # IA-C5-SHIP re-solve (make - burned - olefin - textile fibre)
+    return dict(g=g, E=E, d=d, r0=r0, K=K, f=f, rej=rej, P=P, S=S, slag=slag, flux=flux, potm=potm, pp_in=pp_in,
                 inv=inv, cont=cont, cont_roll=cont_roll, cont_stock=cont_stock, stock_in=stock_in,
                 al=al, ti=ti, mo=mo, cr=cr, ca=ca, xf=xf, al_i=al_i, ti_i=ti_i, mo_i=mo_i, cr_i=cr_i,
                 alcl3=alcl3, al_cl2=al_cl2, cacl2=cacl2,
@@ -474,7 +476,8 @@ def apply(g=None, write=False):
        'standby-zero on the design day: N+1 fuel-fired heat of IND_MELT (A-M-283); 0.05 kW controls/blower '
        'parasitic, fuel on the C5-C10 class when energized.')
     # ---- polymers --------------------------------------------------------------------------
-    spf = R(sP * (1 + s['rej']))                 # grid-consistent naphtha feed from the rounded P
+    pp_in = s['pp_in']
+    spf = R(sP * (1 + s['rej']) + pp_in)         # grid-consistent naphtha feed: shop issue + the textile fibre draw (A-M-429)
     put('OIL_TO_OLEFIN', 0.0,
         'Fractionator draw 0: the olefin feed draws as naphtha at the cut tank (IA-C5-POLY); the recovered-wax '
         f'path (WAX_TO_OIL) is 0 with the wax loop closing on reclaim (A-M-286). OIL_FRAC closes. | {TAG}.')
@@ -523,6 +526,36 @@ def apply(g=None, write=False):
         E['IA-C5-POLY'] = src
     else:
         put('IA-C5-POLY', spf, f'Polyolefin naphtha feed ({DOC_P}, A-M-264). | {TAG}.')
+    # ---- the crew textile line (A-M-429): stock -> fibre -> MFG conversion -> hab ----
+    if 'POLY_FIBER' in N:
+        fr_kg = R(DR.val(DR.load(), 'POLYMERS.textile.fr_pickup_frac') * pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield'))
+        textile = R(pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield') + fr_kg)
+        scrap = R(pp_in - pp_in * DR.val(DR.load(), 'POLYMERS.textile.spin_yield'))
+        tput = [('STOCK_TO_FIBER', 'POLY_STOCK', 'POLY_FIBER', 'POLYMERS', 'POLYMERS', 'L',
+                 'PP pellet draw to the melt-spin line', pp_in,
+                 f'PP feed at the {DR.val(DR.load(), "POLYMERS.textile.spin_yield"):.0%} spin yield (A-M-429).'),
+                ('FR_FINISH', 'NORTH_DOCK', 'POLY_FIBER', 'DOCK', 'POLYMERS', 'L',
+                 'phosphorus-FR finish (reagent manifest)', fr_kg,
+                 'FR pick-up ~2 % of fibre; D-DOCK reagent import per A-M-225 (in-plant synthesis = locale upgrade).'),
+                ('FIBER_SCRAP', 'POLY_FIBER', 'LEACH_CSTR_1', 'POLYMERS', 'DIGESTER', 'L',
+                 'spin scrap to the solids line', scrap,
+                 'spin waste, PP leach-inert (the POLY_TO_WET class).'),
+                ('FLEECE_TO_MFG', 'POLY_FIBER', 'MFG_SHOP', 'POLYMERS', 'MFG', 'L',
+                 'FR-finished fleece to the shop for conversion', textile,
+                 'fleece incl. FR: cutting/sewing/knitting into the crew textile issue (A-M-429).'),
+                ('TEXTILE_HAB', 'MFG_SHOP', 'HABITATION', 'MFG', 'HAB', 'L',
+                 'finished crew textiles to the hab issue',
+                 textile, 'the worn goods return on IA-WEAR (A-M-429).')]
+        for sid, f, t, fs, ts, ph, carries, val_, why in tput:
+            if sid in E:
+                put(sid, val_, f'{why} | {TAG}.')
+            else:
+                src = dict(E['STOCK_TO_FIBER'] if 'STOCK_TO_FIBER' in E else E['PELLET_TO_STOCK'])
+                src.update(stream_id=sid, from_unit_id=f, to_unit_id=t, from_sector_id=fs,
+                           to_sector_id=ts, phase=ph, carries=carries, open_boundary=False)
+                src['rate'] = rate(val_, f'{why} | {TAG}.')
+                g['edges'].append(src)
+                E[sid] = src
     cut1_out = float(s['E']['CUT-1-OUT']['rate']['value'] or 0)
     put('IA-C5-SHIP', R(float(s['E']['CUT-1']['rate']['value'] or 0)) - cut1_out - spf,
         f'X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset {cut1_out:.4f} and the '

@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "649c276e3390112571980986dca91416397c33096678b90abfd6c95e0840aa7e",
+  "graph_sha256": "0264bd1d0a43ecc05819d1a70b61eab49a3574928f50fca84c223aaaeb9866d7",
   "generator": "docs-authority/_iso_routes.py"
  },
  "rows": [
@@ -3978,11 +3978,26 @@
    ],
    "length_m": 52.0,
    "elbows": 3
+  },
+  {
+   "line": "TEXTILE_HAB",
+   "dn": 15,
+   "class": "P5",
+   "from": "MFG_SHOP",
+   "to": "HABITATION",
+   "legs_mm": [
+    5400,
+    -12000,
+    5000,
+    -300
+   ],
+   "length_m": 22.7,
+   "elbows": 3
   }
  ],
  "summary": {
-  "routed": 265,
-  "missing_position": 122,
-  "total_m": 4648
+  "routed": 266,
+  "missing_position": 126,
+  "total_m": 4670
  }
 }

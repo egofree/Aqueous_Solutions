@@ -60,13 +60,13 @@
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">POLY_OLEFIN</text>
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">IA-C5-POLY</text>
-<text x="1476" y="299" font-size="10" text-anchor="end">0.3 kg/d · DN15 M2</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">0.4 kg/d · DN15 M2</text>
 <text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
 <line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">NORTH_DOCK</text>
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-C5-SHIP</text>
-<text x="1476" y="345" font-size="10" text-anchor="end">7.1 kg/d · DN15 M2</text>
+<text x="1476" y="345" font-size="10" text-anchor="end">7.0 kg/d · DN15 M2</text>
 <text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
 <line x1="979.7" y1="332" x2="971.7" y2="332" stroke="#111" stroke-width="1.2"/>
 <polygon points="970.7,332 976.7,328.5 976.7,335.5" fill="#111"/>
@@ -84,7 +84,7 @@
 <g id="aqs-title-block"><rect x="1116" y="520" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="537" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-PROD_C5_C10</text>
 <text x="1124" y="554" font-size="9">P&amp;ID PROD_C5_C10 (cut_tank, OIL sector)</text>
-<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev fa8c8248   Issued 2026-10-19</text>
+<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 7e1eb85c   Issued 2026-10-19</text>
 <text x="1124" y="588" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="605" font-size="9">Graph SHA-256 649c276e33901125   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="605" font-size="9">Graph SHA-256 0264bd1d0a43ecc0   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

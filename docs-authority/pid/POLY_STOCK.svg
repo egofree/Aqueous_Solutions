@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="684" font-family="sans-serif">
-<rect x="4" y="4" width="1492" height="676" fill="white" stroke="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="730" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="722" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit POLY_STOCK · store · sector POLYMERS · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 3 in + 4 out · valves 0 placed / 0 unplaced · instruments 3 (1 SIF) · nozzles 9</text>
+<text x="24" y="72" font-size="10.5">Edges 3 in + 5 out · valves 0 placed / 0 unplaced · instruments 3 (1 SIF) · nozzles 10</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
-<text x="62" y="170" font-size="7">SIF-070 · SIL 1</text>
+<text x="62" y="170" font-size="7">SIF-069 · SIL 1</text>
 <text x="62" y="180" font-size="6.5" fill="#555">flow or level low-low -&gt; pump stop</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">PT-01</text>
@@ -29,7 +29,7 @@
 <text x="356" y="175.5" font-size="7.5" text-anchor="middle">TE-01</text>
 <text x="378" y="170" font-size="7">-20 to 150 C</text>
 <text x="378" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
-<rect x="590" y="210" width="320" height="214" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
+<rect x="590" y="210" width="320" height="260" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">POLY_STOCK</text>
 <text x="750.0" y="252" font-size="9.5" text-anchor="middle">store · POLYMERS sector</text>
 <line x1="430" y1="240" x2="577" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
@@ -42,7 +42,7 @@
 <polygon points="586,286 577,282 577,290" fill="#111"/>
 <text x="24" y="267" font-size="9" fill="#666" text-anchor="start">PELLET</text>
 <text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">PELLET_TO_STOCK</text>
-<text x="24" y="299" font-size="10" text-anchor="start">0.3 kg/d · solids transfer</text>
+<text x="24" y="299" font-size="10" text-anchor="start">0.4 kg/d · solids transfer</text>
 <text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
 <line x1="430" y1="332" x2="577" y2="332" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,332 577,328 577,336" fill="#111"/>
@@ -74,15 +74,21 @@
 <text x="1476" y="373" font-size="11" font-weight="600" text-anchor="end">POLY_TO_WET</text>
 <text x="1476" y="391" font-size="10" text-anchor="end">0.0 kg/d · solids transfer</text>
 <text x="902" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
-<text x="24" y="474" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="484" font-size="9">Every incident graph edge is drawn: 3 in, 4 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
-<text x="24" y="499" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/POLY_STOCK.csv.</text>
-<text x="24" y="514" font-size="9">Nozzles with no matching graph edge (service text): N8 drain; N9 vent</text>
-<text x="24" y="529" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
-<g id="aqs-title-block"><rect x="1116" y="566" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
-<text x="1124" y="583" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-POLY_STOCK</text>
-<text x="1124" y="600" font-size="9">P&amp;ID POLY_STOCK (store, POLYMERS sector)</text>
-<text x="1124" y="617" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 1dfbb0c0   Issued 2026-10-19</text>
-<text x="1124" y="634" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="651" font-size="9">Graph SHA-256 649c276e33901125   Sheet 1 of 1   AQS-DWG-001</text>
+<line x1="914" y1="424" x2="1061" y2="424" stroke="#111" stroke-width="1.6" class="edge-out"/>
+<polygon points="1070,424 1061,420 1061,428" fill="#111"/>
+<text x="1476" y="405" font-size="9" fill="#666" text-anchor="end">POLY_FIBER</text>
+<text x="1476" y="419" font-size="11" font-weight="600" text-anchor="end">STOCK_TO_FIBER</text>
+<text x="1476" y="437" font-size="10" text-anchor="end">0.1 kg/d · DN15 —</text>
+<text x="902" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="end">N10</text>
+<text x="24" y="520" font-size="10" font-weight="600">Notes</text>
+<text x="24" y="530" font-size="9">Every incident graph edge is drawn: 3 in, 5 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="545" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/POLY_STOCK.csv.</text>
+<text x="24" y="560" font-size="9">Nozzles with no matching graph edge (service text): N8 drain; N9 vent</text>
+<text x="24" y="575" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="612" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="629" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-POLY_STOCK</text>
+<text x="1124" y="646" font-size="9">P&amp;ID POLY_STOCK (store, POLYMERS sector)</text>
+<text x="1124" y="663" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 35481f48   Issued 2026-10-19</text>
+<text x="1124" y="680" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="697" font-size="9">Graph SHA-256 0264bd1d0a43ecc0   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

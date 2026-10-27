@@ -2068,7 +2068,7 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 2527.0,
+        "vs_znbr2_kwh": 2531.0,
         "fraction_of_znbr2_study": 0.084,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -2450,7 +2450,7 @@
           "exports_kg_d": {
             "IA-N2-VENT": 3.1,
             "IA-NA-PURGE": 4.394,
-            "IA-C5-SHIP": 7.131,
+            "IA-C5-SHIP": 7.04,
             "IA-C11-SHIP": 1.512,
             "IA-C19-SHIP": 2.218,
             "IA-O2-SHIP": 22.884,
@@ -2466,7 +2466,7 @@
             "IA-METAL-SHIP": 10.812
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 57.878,
+            "IA-H2O-MU": 57.786,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -2484,9 +2484,10 @@
             "IA-SILICA-MU": 1.0,
             "NUT_AQUA": 5.5,
             "NUT_AQUA_BED": 1.0,
-            "CA_HOPPER": 0.035
+            "CA_HOPPER": 0.035,
+            "FR_FINISH": 0.002
           },
-          "net_kg_d": 0.001,
+          "net_kg_d": -0.0,
           "residual_kg_d": 0.002,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
@@ -2802,7 +2803,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 337.5116,
+        "value": 337.8116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2810,11 +2811,11 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 5004,
+        "count": 5012,
         "presence": "present",
-        "nameplate_kw": 2502,
+        "nameplate_kw": 2506,
         "area_m2": 21986,
-        "balance_kWp": 1251,
+        "balance_kWp": 1253,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -2995,8 +2996,8 @@
         "count": 35,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 1919.5,
-          "export_kWh_d_clear": 5414,
+          "export_peak_kW": 1919.2,
+          "export_kWh_d_clear": 5423,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -3026,9 +3027,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 151.5,
+          "bus_demand_kW": 151.8,
           "section_rating_A": 300,
-          "basis_A": 202.5,
+          "basis_A": 202.9,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -3397,25 +3398,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 180.4538,
+        "value": 180.7538,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 180.5 kW, charge 820.2 kW, 2526 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 180.8 kW, charge 821.6 kW, 2531 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 821,
-        "kWh": 2527,
+        "kW": 822,
+        "kWh": 2531,
         "presence": "present",
-        "charge_kW": 821,
+        "charge_kW": 822,
         "discharge_kW": 181,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 35 hybrid inverters, 72.2 kWh and 23.5 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 35 hybrid inverters, 72.3 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.405,
-          "purge_m3_h": 26.69,
+          "H2_m3_d": 6.416,
+          "purge_m3_h": 26.73,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1652.5
+          "electrode_area_m2": 1655.3
         }
       }
     },
@@ -8130,6 +8131,45 @@
         "note": "UV-C lamp + controller (A-M-428)"
       },
       "notes": "Optional pathogen barrier for the produce path and contamination response. Study."
+    },
+    {
+      "unit_id": "POLY_FIBER",
+      "sector_id": "POLYMERS",
+      "class": "melt_spin",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "polymers",
+        "textiles"
+      ],
+      "params": {
+        "design": {
+          "service": "PP melt-spin staple-fiber line: pellet -> spun fiber -> needle-punched nonwoven fleece for the crew textile issue",
+          "basis": "A-M-429; A-M-225 (the FR finish rides the D-DOCK reagent manifest, the WS_SOLV reagent-import class)",
+          "fr_finish": "phosphorus-FR finish at the ~2 % pick-up class: PP is inherently flammable, the FR finish is the wool-flammability replacement carrier",
+          "product": "fleece to MFG_SHOP for conversion (cutting/sewing/knitting) - the shop issues finished textiles to the hab",
+          "feed": "draws the C5-C10 export surplus: IA-C5-SHIP gives up the 0.09 kg/d polymer share (the export carried 7.13 kg/d)",
+          "waste": "spin scrap returns to the solids/leach line (POLY_TO_WET class: PP is leach-inert)"
+        },
+        "sizing": {
+          "throughput_kg_d": 0.0905,
+          "basis": "POLYMERS.textile drivers"
+        },
+        "sec3_material": {
+          "mat": "SS304 melt vessel and spin pump with heater bands, brass-free spinnerette (stainless die plate), PP quench ducting",
+          "basis": "PP melts at 160-220 C and is non-wetting to the 304 class at the bench throughput (A-M-429): the die plate is the precision item; no copper alloys touch the melt (PP degrades against copper at melt temperature)",
+          "alt": "a 316L die plate if the FR-finish chemistry ever shows die corrosion",
+          "note": "the FR finish dosing skid is PP/PTFE-contact throughout.",
+          "task": "X-POLY-01"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "melt-spin heater + spindle + winder at the bench-scale throughput (A-M-429)"
+      },
+      "notes": "The crew textile line: the designed replacement for wool (A-M-429). Study."
     }
   ],
   "edges": [
@@ -10028,7 +10068,7 @@
       "forbidden": "HDR_ACID_GAS",
       "claim_status": "Closed",
       "rate": {
-        "value": 326.90396,
+        "value": 326.991631,
         "unit": "kg/d",
         "status": "study",
         "note": "grey/solids (the farm-protein metabolic load is inside this total: AQS-FARM-001) | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4) (AQS-PAR-003)."
@@ -11489,10 +11529,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 758.296919,
+        "value": 759.557569,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.7 m3/h holds H2 at 25 % LFL: HER 5.45 + open-circuit 0.95 m3/d H2 on 3609 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.7 m3/h holds H2 at 25 % LFL: HER 5.46 + open-circuit 0.95 m3/d H2 on 3615 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -11512,7 +11552,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 758.296919,
+        "value": 759.557569,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -13408,10 +13448,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.294127,
+        "value": 0.384603,
         "unit": "kg/d",
         "status": "study",
-        "note": "Polyolefin resin = naphtha feed 0.2941 kg/d (mass-conserving oligomerization, AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Polyolefin resin = naphtha feed 0.3846 kg/d (mass-conserving oligomerization, AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -13474,7 +13514,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.294127,
+        "value": 0.384603,
         "unit": "kg/d",
         "status": "study",
         "note": "Pellet line passes the resin to stock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
@@ -14502,7 +14542,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 258.674935,
+        "value": 258.762606,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. | X-PAR-02 TF: grey sludge to the leach by difference (Rev M: sized to the continuous neighbor draw; was 242.65 at BH) (AQS-PAR-003)."
@@ -14601,7 +14641,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 337.5116,
+        "value": 337.8116,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -19304,7 +19344,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 57.87811,
+        "value": 57.785915,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -19603,10 +19643,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.130646,
+        "value": 7.04017,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.2941 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.3846 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
@@ -21691,7 +21731,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.294127,
+        "value": 0.384603,
         "unit": "kg/d",
         "status": "study",
         "note": "Polyolefin naphtha feed (AQS-DUTY-073, A-M-264). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
@@ -25291,6 +25331,138 @@
       "phase": "liquid",
       "namespace": "IA",
       "open_boundary": false
+    },
+    {
+      "stream_id": "STOCK_TO_FIBER",
+      "from_unit_id": "POLY_STOCK",
+      "to_unit_id": "POLY_FIBER",
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
+      "carries": "PP pellet draw to the melt-spin line",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.090476,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "PP feed at the 95% spin yield (A-M-429). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "notes": "X-POLY textile line (A-M-429)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FR_FINISH",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "POLY_FIBER",
+      "from_sector_id": "DOCK",
+      "to_sector_id": "POLYMERS",
+      "carries": "phosphorus-FR finish (reagent manifest)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.001719,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "FR pick-up ~2 % of fibre; D-DOCK reagent import per A-M-225 (in-plant synthesis = locale upgrade). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "notes": "X-POLY textile line (A-M-429)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FIBER_SCRAP",
+      "from_unit_id": "POLY_FIBER",
+      "to_unit_id": "LEACH_CSTR_1",
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "DIGESTER",
+      "carries": "spin scrap to the solids line",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.004524,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "spin waste, PP leach-inert (the POLY_TO_WET class). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "notes": "X-POLY textile line (A-M-429)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FLEECE_TO_MFG",
+      "from_unit_id": "POLY_FIBER",
+      "to_unit_id": "MFG_SHOP",
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "MFG",
+      "carries": "FR-finished fleece to the shop for conversion",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.087671,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "fleece incl. FR: cutting/sewing/knitting into the crew textile issue (A-M-429). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "notes": "X-POLY textile line (A-M-429)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "TEXTILE_HAB",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "HABITATION",
+      "from_sector_id": "MFG",
+      "to_sector_id": "HAB",
+      "carries": "finished crew textiles to the hab issue",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.087671,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "the worn goods return on IA-WEAR (A-M-429). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "notes": "X-POLY textile line (A-M-429)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "SF-POLY_FIBER",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "POLY_FIBER",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
+      "carries": "melt-spin electrical load",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "0.3 kW bench-scale melt-spin line (X-POLY, A-M-429)"
+      },
+      "notes": "X-POLY textile line (A-M-429)",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
     }
   ],
   "view_presets": [
@@ -25621,19 +25793,19 @@
         "PUMPED_HYDRO"
       ],
       "need_kw": {
-        "value": 180.45,
+        "value": 180.75,
         "unit": "kW",
         "status": "study",
         "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 29x23 bays, ext 68.28 kW)."
       },
       "target_kw": {
-        "value": 451.13,
+        "value": 451.88,
         "unit": "kW",
         "status": "study",
         "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."
       },
       "pv_module_kw": 0.5,
-      "pv_count": 5004,
+      "pv_count": 5012,
       "znbr_module_kw": 60.0,
       "znbr_count": 35,
       "rect_count": 1,

@@ -4,6 +4,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 1,POLYMERS,PELLET,0,,-,0,no
 1,POLYMERS,POLY_COND,0,,-,0,no
 1,POLYMERS,POLY_F,0,,-,0,no
+1,POLYMERS,POLY_FIBER,0,,-,0,no
 1,POLYMERS,POLY_OLEFIN,0,C5-C10,-,0,no
 1,POLYMERS,POLY_STOCK,0,,-,0,no
 1,POLYMERS,POWDER_RESIN,0,,-,0,no

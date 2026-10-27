@@ -649,6 +649,11 @@
   "docnum": "AQS-DUTY-073",
   "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
  },
+ "POLY_FIBER": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
  "POLY_OLEFIN": {
   "doc": "docs-authority/sizing/POLYMERS_LINE.md",
   "docnum": "AQS-DUTY-073",

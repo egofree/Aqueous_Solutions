@@ -1,0 +1,7 @@
+tag,size,rating,service,face,height_mm
+N1,DN15,Class 150,PP pellet draw to the melt-spin line,inlet,160
+N2,DN15,Class 150,phosphorus-FR finish (reagent manifest),inlet,160
+N3,DN15,Class 150,spin scrap to the solids line,outlet,600
+N4,DN15,Class 150,FR-finished fleece to the shop for conversion,outlet,600
+N5,DN15,Class 150,drain,bottom,50
+N6,DN15,Class 150,vent,top,800

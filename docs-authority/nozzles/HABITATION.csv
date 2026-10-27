@@ -23,3 +23,4 @@ N21,solids,Class 150,fecal solids to the blackwater barrier train,outlet,600
 N22,solids,Class 150,galley food waste to the blackwater barrier train,outlet,600
 N23,DN15,Class 150,prepared meals to the crew,inlet,160
 N24,DN15,Class 150,food issue to the habitation (direct),inlet,160
+N25,DN15,Class 150,finished crew textiles to the hab issue,inlet,160

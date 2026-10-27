@@ -193,6 +193,7 @@
   "OIL_FRAC": "no issued internals basis for a frac unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "OIL_PYRO": "no issued internals basis for a pyro unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "PERC_REMOVE": "no issued internals basis for a treat unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
+  "POLY_FIBER": "no issued internals basis for a melt_spin unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "Q1_A": "no issued internals basis for a heat_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "Q1_B": "no issued internals basis for a heat_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "Q2_A": "no issued internals basis for a heat_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
@@ -217,5 +218,5 @@
   "WET_OX": "no issued internals basis for a wet_ox unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "ZNBR2": "no issued internals basis for a flow_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)"
  },
- "units": 212
+ "units": 213
 }

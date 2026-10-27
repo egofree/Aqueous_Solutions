@@ -86,7 +86,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S09 | BMED_ACID | WET_BENCH | L | mass | present | HCl | 9.277184 kg/d | — |
 | S10 | WET_BENCH | LEACH_CSTR_1 | L | mass | present | spent etch | 79.115777 kg/d | — |
 | S11 | GROW_BED | AFTERBURNER | S | mass | present | organics | 0.8 kg/d | — |
-| S12 | HABITATION | GREY_TREAT | L/S | mass | present | grey/solids | 326.90396 kg/d | — |
+| S12 | HABITATION | GREY_TREAT | L/S | mass | present | grey/solids | 326.991631 kg/d | — |
 | S13 | GROW_BED | VCD_TRAIN | L | mass | present | condensate | 3.799494 kg/d | absent_from_candidate_mvs |
 | S14 | GROW_BED | FOOD_STORE | S | mass | present | food | 4.2 kg/d | — |
 | S15 | GROW_BED | HABITATION | G | mass | present | photosynthetic O2 | 0.0 kg/d | — |
@@ -141,8 +141,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | 117.42759 kg/d | — |
 | S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 14.050492 kg/d | — |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | 102.592478 kg/d | — |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 758.296919 kg/d | — |
-| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 758.296919 kg/d | — |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 759.557569 kg/d | — |
+| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 759.557569 kg/d | — |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | L | mass | present | condensables | 0.0521 kg/d | — |
 | S71 | MET_AHU | MET_SCRUB | G | mass | present | metal-aisle fume / mist / dust | 20458.32 kg/d | absent_from_candidate_mvs |
 | S72 | MET_SCRUB | LEACH_CSTR_1 | L/S | mass | present | metal fines and aqueous scrub liquor | 2.4442 kg/d | — |
@@ -224,10 +224,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | L | mass | present | light cuts to polyolefin | 0.0 kg/d | — |
 | MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | L | mass | present | methanol co-feed | 0.0 kg/d | — |
 | DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | L | mass | present | digester organics | 0.0 kg/d | — |
-| OLEFIN_TO_PELLET | POLY_OLEFIN | PELLET | S | mass | present | polyolefin resin | 0.294127 kg/d | — |
+| OLEFIN_TO_PELLET | POLY_OLEFIN | PELLET | S | mass | present | polyolefin resin | 0.384603 kg/d | — |
 | POLYF_TO_PELLET | POLY_F | PELLET | S | mass | present | PVDF/PTFE resin | 0.0 kg/d | — |
 | POLYF_TO_POWDER | POLY_F | POWDER_RESIN | S | mass | present | fluoropolymer powder | 0.09 kg/d | — |
-| PELLET_TO_STOCK | PELLET | POLY_STOCK | S | mass | present | pellet stock | 0.294127 kg/d | — |
+| PELLET_TO_STOCK | PELLET | POLY_STOCK | S | mass | present | pellet stock | 0.384603 kg/d | — |
 | POWDER_TO_STOCK | POWDER_RESIN | POLY_STOCK | S | mass | present | powder stock | 0.09 kg/d | — |
 | FILM_TO_STOCK | FILM_CAST | POLY_STOCK | S | mass | present | film stock | 0.14 kg/d | — |
 | POLY_TO_MFG | POLY_STOCK | MFG_SHOP | S | mass | present | polymer feedstock to manufacturing | 0.267388 kg/d | — |
@@ -261,10 +261,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-ESS-ZNBR2-SRC | PV_ARRAY | SOL_ARK_60K | E | ess | present | PV share of the zinc-bromine round-trip loss | 1.6667 kW | ess_layer |
 | S89 | HDR_CO2 | GROW_BED | G | mass | present | CO2 enrichment dose (FARM AHU supply) | 0.882362 kg/d | — |
 | S90 | HABITATION | HDR_CO2 | G | mass | present | metabolic CO2 (desorbed from the HAB CO2 sorbent bed) | 4.021 kg/d | — |
-| IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 258.674935 kg/d | — |
+| IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 258.762606 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.509975 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 337.5116 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 337.8116 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
@@ -406,7 +406,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.172239 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 57.87811 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 57.785915 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
@@ -416,7 +416,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW7-CL2 | EW_7 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 104.952575 kg/d | — |
 | IA-EW8-CL2 | EW_8 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 7.451224 kg/d | — |
 | IA-EW9-CL2 | EW_9 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 111.134409 kg/d | — |
-| IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | L | mass | present | C5-C10 product shipped | 7.130646 kg/d | — |
+| IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | L | mass | present | C5-C10 product shipped | 7.04017 kg/d | — |
 | IA-C11-SHIP | PROD_C11_C18 | NORTH_DOCK | L | mass | present | C11-C18 surplus shipped | 1.511662 kg/d | — |
 | IA-C19-SHIP | PROD_C19_C28 | NORTH_DOCK | L | mass | present | C19-C28 surplus shipped | 2.218146 kg/d | — |
 | IA-ATOM-REMELT | GAS_ATOMIZER | MET_MELT | S | mass | present | off-spec powder to remelt | 0.355595 kg/d | — |
@@ -491,7 +491,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW7-H2B | EW_7 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.454643 kg/d | — |
 | IA-EW8-H2B | EW_8 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.032278 kg/d | — |
 | SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 68.2838 kW | — |
-| IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | L | mass | present | C5-C10 naphtha olefin feed | 0.294127 kg/d | — |
+| IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | L | mass | present | C5-C10 naphtha olefin feed | 0.384603 kg/d | — |
 | SQ-EVAP_ACID | EVAP_ACID | HEAT_SINK | E | energy | present | electrical input leaving as heat | 1.498 kW | — |
 | SQ-EVAP_BASE | EVAP_BASE | HEAT_SINK | E | energy | present | electrical input leaving as heat | 1.328 kW | — |
 | IA-EVAP_ACID-VENT | EVAP_ACID | EVAP_ACID_VS | G | mass | present | column vent: non-condensables, water vapour, trace HCl | 0.0293 kg/d | — |
@@ -640,3 +640,9 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | CA_HOPPER | NORTH_DOCK | QUAIL_CAGE | liquid | mass | present | mineral calcium carbonate (free-choice hopper) | 0.035 kg/d | — |
 | FOOD_EXPORT | FOOD_STORE | BOUNDARY_EXPORT | liquid | mass | present | surplus food to the reserve/trade boundary | -0.0 kg/d | — |
 | GAL_GREY | GALLEY | GREY_TREAT | liquid | mass | present | galley wash grey water to the treatment train | 1.0 kg/d | — |
+| STOCK_TO_FIBER | POLY_STOCK | POLY_FIBER | liquid | mass | present | PP pellet draw to the melt-spin line | 0.090476 kg/d | — |
+| FR_FINISH | NORTH_DOCK | POLY_FIBER | liquid | mass | present | phosphorus-FR finish (reagent manifest) | 0.001719 kg/d | — |
+| FIBER_SCRAP | POLY_FIBER | LEACH_CSTR_1 | liquid | mass | present | spin scrap to the solids line | 0.004524 kg/d | — |
+| FLEECE_TO_MFG | POLY_FIBER | MFG_SHOP | liquid | mass | present | FR-finished fleece to the shop for conversion | 0.087671 kg/d | — |
+| TEXTILE_HAB | MFG_SHOP | HABITATION | liquid | mass | present | finished crew textiles to the hab issue | 0.087671 kg/d | — |
+| SF-POLY_FIBER | SOL_ARK_60K | POLY_FIBER | electric | elec | present | melt-spin electrical load | 0.3 kW | — |

@@ -252,6 +252,7 @@ digraph G {
     "POWDER_RESIN" [fillcolor="#ffffff", label="POWDER_RESIN"];
     "FILM_CAST" [fillcolor="#ffffff", label="FILM_CAST"];
     "POLY_STOCK" [fillcolor="#ffffff", label="POLY_STOCK"];
+    "POLY_FIBER" [fillcolor="#ffffff", label="POLY_FIBER"];
   }
   subgraph "cluster_PUMPED_HYDRO" {
     label="PUMPED_HYDRO";
@@ -348,7 +349,7 @@ digraph G {
   "BMED_ACID" -> "WET_BENCH" [label="S09\\n9.277184 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WET_BENCH" -> "LEACH_CSTR_1" [label="S10\\n79.115777 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "AFTERBURNER" [label="S11\\n0.8 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "HABITATION" -> "GREY_TREAT" [label="S12\\n326.90396 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HABITATION" -> "GREY_TREAT" [label="S12\\n326.991631 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "VCD_TRAIN" [label="S13\\n3.799494 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "FOOD_STORE" [label="S14\\n4.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "HABITATION" [label="S15\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -403,8 +404,8 @@ digraph G {
   "AFTERBURNER_FLUE" -> "FLUE_KO" [label="S67\\n117.42759 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FLUE_KO" -> "CRYO_CO2" [label="S67B\\n14.050492 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "LEACH_CSTR_1" [label="S68\\n102.592478 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n758.296919 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n758.296919 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n759.557569 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n759.557569 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU_COND_CONDENSABLE" -> "FLUE_KO" [label="S70\\n0.0521 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_AHU" -> "MET_SCRUB" [label="S71\\n20458.32 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_SCRUB" -> "LEACH_CSTR_1" [label="S72\\n2.4442 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -486,10 +487,10 @@ digraph G {
   "OIL_FRAC" -> "POLY_OLEFIN" [label="OIL_TO_OLEFIN\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MEOH_SYNTH" -> "POLY_OLEFIN" [label="MEOH_TO_OLEFIN\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BLACK_DIGEST" -> "POLY_COND" [label="DIGEST_TO_POLY\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "POLY_OLEFIN" -> "PELLET" [label="OLEFIN_TO_PELLET\\n0.294127 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "POLY_OLEFIN" -> "PELLET" [label="OLEFIN_TO_PELLET\\n0.384603 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_F" -> "PELLET" [label="POLYF_TO_PELLET\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_F" -> "POWDER_RESIN" [label="POLYF_TO_POWDER\\n0.09 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "PELLET" -> "POLY_STOCK" [label="PELLET_TO_STOCK\\n0.294127 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PELLET" -> "POLY_STOCK" [label="PELLET_TO_STOCK\\n0.384603 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POWDER_RESIN" -> "POLY_STOCK" [label="POWDER_TO_STOCK\\n0.09 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FILM_CAST" -> "POLY_STOCK" [label="FILM_TO_STOCK\\n0.14 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_STOCK" -> "MFG_SHOP" [label="POLY_TO_MFG\\n0.267388 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -523,10 +524,10 @@ digraph G {
   "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-ESS-ZNBR2-SRC\\n1.6667 kW", style=dashed, color="#6d28d9", fontcolor="#6d28d9", penwidth=1.2];
   "HDR_CO2" -> "GROW_BED" [label="S89\\n0.882362 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HABITATION" -> "HDR_CO2" [label="S90\\n4.021 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GREY_TREAT" -> "LEACH_CSTR_1" [label="IA-GREY-01\\n258.674935 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GREY_TREAT" -> "LEACH_CSTR_1" [label="IA-GREY-01\\n258.762606 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRU" -> "LEACH_CSTR_1" [label="IA-CRU-01\\n27.509975 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "Q4_BUS" -> "DRY_COOLER" [label="HL-Q4-REJ\\n0.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n337.5116 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n337.8116 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "GREY_TREAT" [label="IA-ZNBR-BD\\n8.486841 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NUTRIENT_DOSE" -> "VCD_TRAIN" [label="IA-NUT-01\\n13.930007 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_UPW_POLISH" -> "FAB_UPW_TANK" [label="IA-UPW-FAB\\n60.000181 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -668,7 +669,7 @@ digraph G {
   "HDR_O2" -> "BACKUP_GEN" [label="IA-GEN-O2\\n0.172239 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "AFTERBURNER" [label="IA-AB-O2\\n0.528278 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_CO2" -> "MEOH_SYNTH" [label="IA-HCO2-MEOH\\n3.138638 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NORTH_DOCK" -> "LEACH_CSTR_1" [label="IA-H2O-MU\\n57.87811 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "NORTH_DOCK" -> "LEACH_CSTR_1" [label="IA-H2O-MU\\n57.785915 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_1" -> "LEACH_CSTR_1" [label="IA-EW1-CL2\\n88.32517 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_2" -> "LEACH_CSTR_1" [label="IA-EW2-CL2\\n88.354656 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_3" -> "LEACH_CSTR_1" [label="IA-EW3-CL2\\n33.164878 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -678,7 +679,7 @@ digraph G {
   "EW_7" -> "LEACH_CSTR_1" [label="IA-EW7-CL2\\n104.952575 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_8" -> "LEACH_CSTR_1" [label="IA-EW8-CL2\\n7.451224 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_9" -> "LEACH_CSTR_1" [label="IA-EW9-CL2\\n111.134409 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "PROD_C5_C10" -> "NORTH_DOCK" [label="IA-C5-SHIP\\n7.130646 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PROD_C5_C10" -> "NORTH_DOCK" [label="IA-C5-SHIP\\n7.04017 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_C11_C18" -> "NORTH_DOCK" [label="IA-C11-SHIP\\n1.511662 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_C19_C28" -> "NORTH_DOCK" [label="IA-C19-SHIP\\n2.218146 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GAS_ATOMIZER" -> "MET_MELT" [label="IA-ATOM-REMELT\\n0.355595 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -753,7 +754,7 @@ digraph G {
   "EW_7" -> "HDR_H2" [label="IA-EW7-H2B\\n0.454643 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_8" -> "HDR_H2" [label="IA-EW8-H2B\\n0.032278 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "EXT_HALL" [label="SF-EXT_HALL\\n68.2838 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "PROD_C5_C10" -> "POLY_OLEFIN" [label="IA-C5-POLY\\n0.294127 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PROD_C5_C10" -> "POLY_OLEFIN" [label="IA-C5-POLY\\n0.384603 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EVAP_ACID" -> "HEAT_SINK" [label="SQ-EVAP_ACID\\n1.498 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "EVAP_BASE" -> "HEAT_SINK" [label="SQ-EVAP_BASE\\n1.328 kW", style=solid, color="#334155", fontcolor="#334155", penwidth=1.2];
   "EVAP_ACID" -> "EVAP_ACID_VS" [label="IA-EVAP_ACID-VENT\\n0.0293 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -902,4 +903,10 @@ digraph G {
   "NORTH_DOCK" -> "QUAIL_CAGE" [label="CA_HOPPER\\n0.035 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FOOD_STORE" -> "BOUNDARY_EXPORT" [label="FOOD_EXPORT\\n-0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GALLEY" -> "GREY_TREAT" [label="GAL_GREY\\n1.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "POLY_STOCK" -> "POLY_FIBER" [label="STOCK_TO_FIBER\\n0.090476 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "NORTH_DOCK" -> "POLY_FIBER" [label="FR_FINISH\\n0.001719 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "POLY_FIBER" -> "LEACH_CSTR_1" [label="FIBER_SCRAP\\n0.004524 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "POLY_FIBER" -> "MFG_SHOP" [label="FLEECE_TO_MFG\\n0.087671 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MFG_SHOP" -> "HABITATION" [label="TEXTILE_HAB\\n0.087671 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOL_ARK_60K" -> "POLY_FIBER" [label="SF-POLY_FIBER\\n0.3 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

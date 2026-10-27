@@ -7356,7 +7356,7 @@
   "value": "Textiles: wool/sheep eliminated at the 4-crew class; FR-finished PP-fleece is the designed replacement",
   "units": "- (roster decision)",
   "where": "POLY_FIBER (next unit task); SLEEP_QUARTERS/REC_DAYROOM fitout basis",
-  "basis": "One miniature wool ewe needs ~0.7 kg DM/d forage against a total canopy residue of ~0.3 kg DM/d (GROW_BED 3.08 kg/d fresh inedible) - the 4-crew baseline cannot carry even one sheep, and crew wool demand is only ~4 kg/yr. The closed-loop replacement is phosphorus-FR-finished PP-fleece (inherent PP flammability finished from the chemicals line) spun on a POLY_FIBER melt-spin unit after PELLET. Sheep enter only at the large-site class (canopy >= 40-crew scale).",
+  "basis": "One miniature wool ewe needs ~0.7 kg DM/d forage against a total canopy residue of ~0.3 kg DM/d (GROW_BED 3.08 kg/d fresh inedible) - the 4-crew baseline cannot carry even one sheep, and crew wool demand is only ~4 kg/yr. The closed-loop replacement is phosphorus-FR-finished PP-fleece (inherent PP flammability finished from the chemicals line) spun on a POLY_FIBER melt-spin unit after PELLET. Sheep enter only at the large-site class (canopy >= 40-crew scale). Computed line basis (2026-10-27): 8 kg/person-yr finished textile at the 4-crew roster = 0.0877 kg/d, PP draw 0.0905 kg/d at the 95 % spin yield, FR finish 2 % pick-up riding the D-DOCK reagent manifest (A-M-225 class), supplied from the C5-C10 export surplus (IA-C5-SHIP 7.13 -> 7.04 kg/d). Conversion (cutting/sewing/knitting) runs in MFG_SHOP; the worn goods return on IA-WEAR.",
   "needs_verification": true,
   "verification_test": "Textile-line commissioning (X-POLY-01)",
   "task": "X-POLY-01",

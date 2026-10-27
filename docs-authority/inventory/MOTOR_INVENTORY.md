@@ -134,7 +134,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | pem_fc | FUEL_CELL | transfer pump S52 to VCD_TRAIN | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 42.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | rectifier | RECTIFIER | cooling fan | BLDC | 57 mm (NEMA 23 flange) | 0.05 | 24 V DC | S1 | BLDC driver | 4 | assumed per cabinet |
 | scrubber | ZNBR2_BR2_REGEN | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0022 | 24 V DC | S1 | BLDC driver | 1 | 758.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0022 | 24 V DC | S1 | BLDC driver | 1 | 759.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### FAB
 
@@ -304,7 +304,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | cut_tank | PROD_C29 | on/off valve C29_RECYCLE | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | cut_tank | PROD_C29 | transfer pump C29_RECYCLE to C29_RECYCLE | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 5.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | cut_tank | PROD_C5_C10 | on/off valve IA-C5-POLY | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
-| cut_tank | PROD_C5_C10 | transfer pump IA-C5-POLY to POLY_OLEFIN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| cut_tank | PROD_C5_C10 | transfer pump IA-C5-POLY to POLY_OLEFIN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### POLYMERS
 
@@ -350,5 +350,5 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | evaporator | VCD_TRAIN | transfer pump IA-VCD-BD to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 6.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | evaporator | VCD_TRAIN | transfer pump S25 to BMED_UPW_POLISH | BLDC | 42 mm (NEMA 17 flange) | 0.001 | 24 V DC | S3 | BLDC driver | 1 | 340.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | evaporator | VCD_TRAIN | transfer pump S28 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 17.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| treat | GREY_TREAT | transfer pump IA-GREY-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0007 | 24 V DC | S3 | BLDC driver | 1 | 258.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| treat | GREY_TREAT | transfer pump IA-GREY-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0007 | 24 V DC | S3 | BLDC driver | 1 | 258.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | treat | GREY_TREAT | transfer pump S29 to VCD_TRAIN | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | BLDC driver | 1 | 104.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |

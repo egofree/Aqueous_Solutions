@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2502.000 | 2502.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2506.000 | 2506.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -992,6 +992,10 @@ All solved units close.
 | FARM.classes.galley_food_issue_kgd | 8.0 | kg/d food issue to the galley (crop+products) | A-M-426 | — |
 | FARM.classes.galley_grey_kgd | 1.0 | kg/d galley wash grey | A-M-426 | — |
 | FARM.classes.food_hab_issue_kgd | 2.55 | kg/d food issue to the habitation rooms | A-M-426 | — |
+| POLYMERS.textile.textile_kg_person_yr | 8.0 | kg finished textiles per person per year (clothing 4 + bedding 2 + wipes/other 2; A-M-429 study class) | A-M-429 | — |
+| POLYMERS.textile.fr_pickup_frac | 0.02 | - phosphorus-FR finish pick-up, % of fiber mass | A-M-429 | — |
+| POLYMERS.textile.spin_yield | 0.95 | - melt-spin first-pass yield; scrap to the solids line | A-M-429 | — |
+| POLYMERS.textile.power_kW | 0.3 | kW melt-spin heater + spindle + winder | A-M-429 | — |
 
 ## 6. References
 

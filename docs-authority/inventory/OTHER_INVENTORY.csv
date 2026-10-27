@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,104,1654 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,786,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,104,1657 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,789,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 178 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -247,7 +247,7 @@ DIGESTER,BMED_CRU,EVAP_ACID,instrument,high-level switch,vibrating fork,"IEC 609
 DIGESTER,BMED_CRU,EVAP_ACID,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,BMED_CRU,EVAP_ACID,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,BMED_CRU,EVAP_ACID,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,BMED_CRU,EVAP_ACID,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-071 SIL 1
+DIGESTER,BMED_CRU,EVAP_ACID,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-070 SIL 1
 DIGESTER,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_ACID,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 311.0 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -279,7 +279,7 @@ DIGESTER,BMED_CRU,EVAP_BASE,instrument,high-level switch,vibrating fork,"IEC 609
 DIGESTER,BMED_CRU,EVAP_BASE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,BMED_CRU,EVAP_BASE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,BMED_CRU,EVAP_BASE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,BMED_CRU,EVAP_BASE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-072 SIL 1
+DIGESTER,BMED_CRU,EVAP_BASE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-071 SIL 1
 DIGESTER,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_BASE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 282.7 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -736,7 +736,7 @@ DIGESTER,scrubber,EVAP_ACID_VS,instrument,high-level switch,vibrating fork,"IEC 
 DIGESTER,scrubber,EVAP_ACID_VS,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,scrubber,EVAP_ACID_VS,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,scrubber,EVAP_ACID_VS,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,scrubber,EVAP_ACID_VS,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-076 SIL 1
+DIGESTER,scrubber,EVAP_ACID_VS,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-075 SIL 1
 DIGESTER,scrubber,EVAP_ACID_VS,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,scrubber,EVAP_ACID_VS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-VS-SPENT: AQS-PIP-005 span count
 DIGESTER,scrubber,EVAP_ACID_VS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-VS-OFF: AQS-PIP-005 span count
@@ -1280,7 +1280,7 @@ FOUNDRY,furnace,IND_MELT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud 
 FOUNDRY,furnace,IND_MELT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/IND_MELT/fasteners.csv
 FOUNDRY,furnace,IND_MELT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,furnace,IND_MELT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,furnace,IND_MELT,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-056 SIL 2
+FOUNDRY,furnace,IND_MELT,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-055 SIL 2
 FOUNDRY,furnace,RES_HEAT,fabricated part,fabricated part set,1 BOM lines,models/mfg/RES_HEAT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,furnace,RES_HEAT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/RES_HEAT/fasteners.csv
 FOUNDRY,furnace,RF_HEAT,fabricated part,fabricated part set,1 BOM lines,models/mfg/RF_HEAT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -1293,7 +1293,7 @@ FOUNDRY,furnace,SHELL_BURNOUT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 
 FOUNDRY,furnace,SHELL_BURNOUT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/SHELL_BURNOUT/fasteners.csv
 FOUNDRY,furnace,SHELL_BURNOUT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,furnace,SHELL_BURNOUT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,furnace,SHELL_BURNOUT,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-065 SIL 1
+FOUNDRY,furnace,SHELL_BURNOUT,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-064 SIL 1
 FOUNDRY,furnace,SINTER,fabricated part,fabricated part set,1 BOM lines,models/mfg/SINTER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,furnace,SINTER,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/SINTER/fasteners.csv
 FOUNDRY,furnace,SINTER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1931,6 +1931,8 @@ MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,1.5 kW,IEC 61800-5-1,1,Ban
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,7.5 kW,IEC 61800-5-1,1,CNC vertical mill: main drive (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,7.5 kW,IEC 61800-5-1,1,Engine lathe: main drive (assumed VFD at >= 0.75 kW)
 MFG,MFG,MFG_SHOP,electronics,variable-frequency drive,4 kW,IEC 61800-5-1,1,Rotary-screw air compressor: main drive (assumed VFD at >= 0.75 kW)
+MFG,MFG,MFG_SHOP,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,TEXTILE_HAB: 2 per support (assumed)
+MFG,MFG,MFG_SHOP,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,TEXTILE_HAB: pumped line (assumed)
 MFG,MFG,MFG_SHOP,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 MFG,MFG,MFG_SHOP,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 MFG,MFG,MFG_SHOP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1944,6 +1946,9 @@ MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 /
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MFG_SHOP,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MFG_SHOP,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,TIG/MIG welder: cooling-water pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
+MFG,MFG,MFG_SHOP,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,TEXTILE_HAB: AQS-PIP-005 span count
+MFG,MFG,MFG_SHOP,valve,check valve,DN15,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,TEXTILE_HAB: pump discharge (assumed)
+MFG,MFG,MFG_SHOP,valve,isolation valve,DN15,"PP ball valve with HDPE stub ends, ISO 16135",2,TEXTILE_HAB: one at each end nozzle (assumed)
 MFG,MFG,WIRE_DRAW,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Bull-block wire drawer: main drive: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
 MFG,MFG,WIRE_DRAW,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Bull-block wire drawer: main drive: run and fault (assumed)
 MFG,MFG,WIRE_DRAW,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,1,Bull-block wire drawer: main drive (assumed VFD at >= 0.75 kW)
@@ -2101,7 +2106,7 @@ OIL,OIL_GLASS,OIL_DRYER,instrument,high-level switch,vibrating fork,"IEC 60947-5
 OIL,OIL_GLASS,OIL_DRYER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,OIL_DRYER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,OIL_GLASS,OIL_DRYER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-OIL,OIL_GLASS,OIL_DRYER,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-030 SIL 1
+OIL,OIL_GLASS,OIL_DRYER,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-029 SIL 1
 OIL,OIL_GLASS,OIL_FRAC,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump CUT-1 to PROD_C5_C10 (assumed size)
 OIL,OIL_GLASS,OIL_FRAC,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump CUT-2 to PROD_C11_C18 (assumed size)
 OIL,OIL_GLASS,OIL_FRAC,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump CUT-3 to PROD_C19_C28 (assumed size)
@@ -2157,7 +2162,7 @@ OIL,OIL_GLASS,OIL_PYRO,instrument,high-level switch,vibrating fork,"IEC 60947-5,
 OIL,OIL_GLASS,OIL_PYRO,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,OIL_GLASS,OIL_PYRO,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,OIL_GLASS,OIL_PYRO,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-OIL,OIL_GLASS,OIL_PYRO,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-031 SIL 2
+OIL,OIL_GLASS,OIL_PYRO,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-030 SIL 2
 OIL,OIL_GLASS,OIL_PYRO,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",3,IA-OIL-02: AQS-PIP-005 span count
 OIL,OIL_GLASS,OIL_PYRO,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-OIL-02: pump discharge (assumed)
 OIL,OIL_GLASS,OIL_PYRO,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-OIL-02: one at each end nozzle (assumed)
@@ -2249,6 +2254,8 @@ POLYMERS,former,POWDER_RESIN,fabricated part,fabricated part set,8 BOM lines,mod
 POLYMERS,former,POWDER_RESIN,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/POWDER_RESIN/fasteners.csv
 POLYMERS,former,POWDER_RESIN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,former,POWDER_RESIN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+POLYMERS,melt_spin,POLY_FIBER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+POLYMERS,melt_spin,POLY_FIBER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 POLYMERS,reactor,HF_GEN,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Acid day tank D160 x 300 mm with metering pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 POLYMERS,reactor,HF_GEN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Acid day tank D160 x 300 mm with metering pump: run and fault (assumed)
 POLYMERS,reactor,HF_GEN,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW)
@@ -2259,7 +2266,7 @@ POLYMERS,reactor,HF_GEN,instrument,high-level switch,vibrating fork,"IEC 60947-5
 POLYMERS,reactor,HF_GEN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 POLYMERS,reactor,HF_GEN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,reactor,HF_GEN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-POLYMERS,reactor,HF_GEN,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-046 SIL 1
+POLYMERS,reactor,HF_GEN,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-045 SIL 1
 POLYMERS,reactor,HF_GEN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 POLYMERS,reactor,HF_GEN,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 POLYMERS,reactor,POLY_COND,fabricated part,fabricated part set,1 BOM lines,models/mfg/POLY_COND/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -2286,7 +2293,7 @@ POLYMERS,reactor,POLY_OLEFIN,instrument,high-level switch,vibrating fork,"IEC 60
 POLYMERS,reactor,POLY_OLEFIN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 POLYMERS,reactor,POLY_OLEFIN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,reactor,POLY_OLEFIN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-POLYMERS,reactor,POLY_OLEFIN,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-066 SIL 1
+POLYMERS,reactor,POLY_OLEFIN,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-065 SIL 1
 POLYMERS,reactor,TFE_SYN,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Dilute-HCl return pump and transfer line to CRU: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 POLYMERS,reactor,TFE_SYN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Dilute-HCl return pump and transfer line to CRU: run and fault (assumed)
 POLYMERS,reactor,TFE_SYN,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,Dilute-HCl return pump and transfer line to CRU (assumed VFD at >= 0.75 kW)
