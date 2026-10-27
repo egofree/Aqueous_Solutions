@@ -1,0 +1,13 @@
+{
+  "unit": "RABBIT_HUTCH",
+  "form": "frame",
+  "size_mm": [
+    1900,
+    700,
+    1600
+  ],
+  "size_note": "3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-FARM sec3)",
+  "material_class": "HDG_steel",
+  "wall_mm": 30,
+  "liner_mm": null
+}

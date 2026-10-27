@@ -4,7 +4,7 @@ Class: growbed; sector FARM. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: service aquaponic root zone B (anaerobic mineralisation); area_m2 14.56; zones aerobic top / anaerobic mineralisation bottom (dual root zone
 
-Internals: duty sheet: "basis A-M-229 area; A-M-415 loop. 3. Material. HDPE tray with EPDM liner, expanded-clay (LECA) media on a geot" [docs-authority/duties/GROWBED_B.md]
+Internals: issued mfg model BOM (2 internals part row): "1,basin_shell,1,HDPE,124.7,make,"tray class; media bed 7 m2, the anaerobic mineralisation half (A-M-415; A-M-2" [models/mfg/GROWBED_B/bom.csv]
 Material: HDPE tray with EPDM liner, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping. Basis: anaerobic mineralisation root zone (A-M-229; A-M-415): the bed runs sulfidic under the ponded tail, and sulfide plus loop-water contact excludes Cu/Zn/brass outright (ichthyotoxic to the fish stock the loop serves); LECA is the aquaponic media class (graph design). (continues on the duty sheet)
 
 Nozzles: 9 process connections per docs-authority/nozzles/GROWBED_B.csv

@@ -1,0 +1,6 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,floor,1,FRP,162.0,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
+2,wall_end_door,1,FRP,74.8,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
+3,wall_end_solid,1,FRP,125.8,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
+4,wall_long_a,1,FRP,191.6,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)
+5,wall_long_b,1,FRP,191.6,make,room class; 8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)

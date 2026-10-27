@@ -1152,34 +1152,48 @@ FARM,FARM,GROW_BED,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE 
 FARM,FARM,GROW_BED,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,S87: one at each end nozzle (assumed)
 FARM,FARM,GROW_BED,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,FARM_O2_TO_HAB: one at each end nozzle (assumed)
 FARM,FARM,GROW_BED,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-BED-VAP: one at each end nozzle (assumed)
+FARM,FARM_EXT,DUCKWEED,fabricated part,fabricated part set,2 BOM lines,models/mfg/DUCKWEED/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,FARM_EXT,DUCKWEED,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,FARM_EXT,DUCKWEED,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,biofilter,BIOFILTER,fabricated part,fabricated part set,4 BOM lines,models/mfg/BIOFILTER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,biofilter,BIOFILTER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,biofilter,BIOFILTER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,bsfl_bin,BSFL_BIN,fabricated part,fabricated part set,1 BOM lines,models/mfg/BSFL_BIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,bsfl_bin,BSFL_BIN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,bsfl_bin,BSFL_BIN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,cage,QUAIL_CAGE,fabricated part,fabricated part set,5 BOM lines,models/mfg/QUAIL_CAGE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,cage,QUAIL_CAGE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,cage,QUAIL_CAGE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,coop,CHICKEN_COOP,fabricated part,fabricated part set,6 BOM lines,models/mfg/CHICKEN_COOP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,coop,CHICKEN_COOP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,coop,CHICKEN_COOP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,feed_prep,FEED_PREP,fabricated part,fabricated part set,4 BOM lines,models/mfg/FEED_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,feed_prep,FEED_PREP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,feed_prep,FEED_PREP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,fish_tank,AQUA_TANK,fabricated part,fabricated part set,3 BOM lines,models/mfg/AQUA_TANK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,fish_tank,AQUA_TANK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,fish_tank,AQUA_TANK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,growbed,GROWBED_A,fabricated part,fabricated part set,2 BOM lines,models/mfg/GROWBED_A/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,growbed,GROWBED_A,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,growbed,GROWBED_A,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,growbed,GROWBED_B,fabricated part,fabricated part set,2 BOM lines,models/mfg/GROWBED_B/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,growbed,GROWBED_B,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,growbed,GROWBED_B,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,hive,BEE_HIVE,fabricated part,fabricated part set,5 BOM lines,models/mfg/BEE_HIVE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,hive,BEE_HIVE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,hive,BEE_HIVE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,hutch,RABBIT_HUTCH,fabricated part,fabricated part set,5 BOM lines,models/mfg/RABBIT_HUTCH/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,hutch,RABBIT_HUTCH,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,hutch,RABBIT_HUTCH,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,pen,DUCK_PEN,fabricated part,fabricated part set,5 BOM lines,models/mfg/DUCK_PEN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,pen,DUCK_PEN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,pen,DUCK_PEN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FARM,store,FOOD_STORE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,store,FOOD_STORE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,uv_sanitizer,AQUA_UV,fabricated part,fabricated part set,3 BOM lines,models/mfg/AQUA_UV/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,uv_sanitizer,AQUA_UV,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,uv_sanitizer,AQUA_UV,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FARM,worm_bin,VERMI_BIN,fabricated part,fabricated part set,1 BOM lines,models/mfg/VERMI_BIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FARM,worm_bin,VERMI_BIN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FARM,worm_bin,VERMI_BIN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,caster,CAST_LINE,fabricated part,fabricated part set,15 BOM lines,models/mfg/CAST_LINE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -1583,8 +1597,14 @@ HAB,HAB,HDR_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, 
 HAB,HAB,HDR_N2,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-AHU-AIR: one at each end nozzle (assumed)
 HAB,HAB,HDR_N2,valve,isolation valve,DN50,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-NH3-SRC: one at each end nozzle (assumed)
 HAB,HAB,HDR_N2,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-GEN-AIR: one at each end nozzle (assumed)
+HAB,dayroom,COMMON_AREA,fabricated part,fabricated part set,5 BOM lines,models/mfg/COMMON_AREA/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+HAB,dayroom,REC_DAYROOM,fabricated part,fabricated part set,5 BOM lines,models/mfg/REC_DAYROOM/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+HAB,galley,GALLEY,fabricated part,fabricated part set,5 BOM lines,models/mfg/GALLEY/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HAB,galley,GALLEY,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 HAB,galley,GALLEY,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+HAB,medical,MEDICAL,fabricated part,fabricated part set,5 BOM lines,models/mfg/MEDICAL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+HAB,quarters,SLEEP_QUARTERS,fabricated part,fabricated part set,5 BOM lines,models/mfg/SLEEP_QUARTERS/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+HAB,washroom,WASHROOM,fabricated part,fabricated part set,5 BOM lines,models/mfg/WASHROOM/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 HAB,washroom,WASHROOM,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 HAB,washroom,WASHROOM,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 HEAT,dry_cooler,DRY_COOLER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2254,6 +2274,7 @@ POLYMERS,former,POWDER_RESIN,fabricated part,fabricated part set,8 BOM lines,mod
 POLYMERS,former,POWDER_RESIN,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/POWDER_RESIN/fasteners.csv
 POLYMERS,former,POWDER_RESIN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,former,POWDER_RESIN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+POLYMERS,melt_spin,POLY_FIBER,fabricated part,fabricated part set,4 BOM lines,models/mfg/POLY_FIBER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 POLYMERS,melt_spin,POLY_FIBER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,melt_spin,POLY_FIBER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 POLYMERS,reactor,HF_GEN,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Acid day tank D160 x 300 mm with metering pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"

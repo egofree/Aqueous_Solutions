@@ -1,0 +1,13 @@
+{
+  "unit": "DUCKWEED",
+  "form": "tray",
+  "size_mm": [
+    30100,
+    10100,
+    700
+  ],
+  "size_note": "300 m2 raceway at the A-M-420 revision, 400 mm water + 100 freeboard + 200 berm: a lined civil basin, HDPE/EPDM (X-FARM sec3)",
+  "material_class": "HDPE",
+  "wall_mm": 10,
+  "liner_mm": 5
+}

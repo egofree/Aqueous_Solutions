@@ -4,7 +4,7 @@ Class: fish_tank; sector FARM. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: see the duty sheet section 1 basis
 
-Internals: open: no issued internals basis for a fish_tank unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: issued mfg model BOM (1 internals part row): "2,liner,1,HDPE,2230.4,make,tank class; 2.0 m3 working volume at the 60 kg stock / 30" [models/mfg/AQUA_TANK/bom.csv]
 Material: see duty sheet section 3
 
 Nozzles: 8 process connections per docs-authority/nozzles/AQUA_TANK.csv

@@ -1,0 +1,7 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,drop_board,1,HDG_steel,76.5,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
+2,floor_wire,1,HDG_steel,23.2,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
+3,frame_legs,1,HDG_steel,90.4,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
+4,nest_row,1,HDG_steel,753.6,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
+5,roof,1,HDG_steel,76.5,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (
+6,wire_panels,1,HDG_steel,29.8,make,frame class; 12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (

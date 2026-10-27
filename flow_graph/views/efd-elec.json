@@ -4307,7 +4307,13 @@
           "ammonia_load": "fish excrete NH3/NH4+ through the gills: ~30 g NH4+-N per kg feed (protein metabolism); toxic above 1 mg/L un-ionised NH3",
           "O2_demand": "dissolved O2 for fish respiration: ~5 mg/L minimum (aeration required); the air stones are the O2 source",
           "notes_extra": "the fish are the ammonia SOURCE and the O2 SINK of the aquaponic loop; the biofilter bacteria are the ammonia CONSUMER and the O2 SINK"
-        }
+        },
+        "size_mm": [
+          2100,
+          1100,
+          1100
+        ],
+        "size_note": "2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia glossary; A-M-415): 2000 x 1000 x 1000 ID + 50 walls, EPDM-lined HDPE (X-FARM sec3)"
       },
       "notes": "Aquaponic fish tanks (tilapia class, A-M-415): 60 kg standing stock on the D-DOCK grain supplement; waste circulates through BIOFILTER to the dual root-zone growbeds. Study."
     },
@@ -4332,7 +4338,13 @@
           "media": "moving-bed biofilm carriers (K1 micro class); surface area sets the bacterial population",
           "failure_mode": "ammonia accumulates to lethal levels within 24-48 h if the bacteria die (O2 starvation, pH crash, chemical shock)",
           "basis": "A-M-415; TECHTREE agriculture.aquaponics (nitrogen cycle); TECHTREE space-resources MELiSSA C2 nitrifying compartment"
-        }
+        },
+        "size_mm": [
+          1100,
+          900,
+          1000
+        ],
+        "size_note": "moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-M-415; TECHTREE aquaponics) (X-FARM sec3)"
       },
       "notes": "Nitrifying biofilter \u2014 the keystone biological unit of the aquaponic loop. Nitrosomonas oxidises ammonia to nitrite; Nitrobacter oxidises nitrite to nitrate. Aerobic: the bacteria consume 4.57 mg O2 per mg NH4+-N. Without dissolved O2, nitrification stops and the ammonia kills the fish within 24-48 h. The nitrate is the nitrogen source for the dual root-zone growbeds. The biofilm is the bacterial population \u2014 the moving-bed media is its habitat. Study."
     },
@@ -4365,7 +4377,13 @@
           "alt": "SS316 where the eggshell grinding dust ever shows pitting",
           "note": "the reject stream returns to the BSFL bin, so the contact surfaces serve both feeds.",
           "task": "X-FARM-10"
-        }
+        },
+        "size_mm": [
+          1300,
+          900,
+          1700
+        ],
+        "size_note": "mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3)"
       },
       "continuous_kw": {
         "value": 0.6,
@@ -4406,7 +4424,13 @@
           "alt": "316L tube if the loop ever runs saline (it does not at the freshwater class)",
           "note": "quartz sleeve fouling is the maintenance item - the dose validation (X-FARM-12) covers it.",
           "task": "X-FARM-12"
-        }
+        },
+        "size_mm": [
+          400,
+          350,
+          750
+        ],
+        "size_note": "inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-FARM sec3)"
       },
       "continuous_kw": {
         "value": 0.04,
@@ -4445,7 +4469,13 @@
           "alt": "a 316L die plate if the FR-finish chemistry ever shows die corrosion",
           "note": "the FR finish dosing skid is PP/PTFE-contact throughout.",
           "task": "X-POLY-01"
-        }
+        },
+        "size_mm": [
+          3100,
+          1300,
+          1900
+        ],
+        "size_note": "bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09 kg/d draw (A-M-429) (X-POLY sec3)"
       },
       "continuous_kw": {
         "value": 0.3,

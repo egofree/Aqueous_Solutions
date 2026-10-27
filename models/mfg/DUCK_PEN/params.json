@@ -1,0 +1,13 @@
+{
+  "unit": "DUCK_PEN",
+  "form": "frame",
+  "size_mm": [
+    2500,
+    1300,
+    1300
+  ],
+  "size_note": "6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)",
+  "material_class": "HDG_steel",
+  "wall_mm": 30,
+  "liner_mm": null
+}

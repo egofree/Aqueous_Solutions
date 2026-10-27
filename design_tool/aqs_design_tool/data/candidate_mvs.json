@@ -7333,7 +7333,13 @@
           "ammonia_load": "fish excrete NH3/NH4+ through the gills: ~30 g NH4+-N per kg feed (protein metabolism); toxic above 1 mg/L un-ionised NH3",
           "O2_demand": "dissolved O2 for fish respiration: ~5 mg/L minimum (aeration required); the air stones are the O2 source",
           "notes_extra": "the fish are the ammonia SOURCE and the O2 SINK of the aquaponic loop; the biofilter bacteria are the ammonia CONSUMER and the O2 SINK"
-        }
+        },
+        "size_mm": [
+          2100,
+          1100,
+          1100
+        ],
+        "size_note": "2.0 m3 working volume at the 60 kg stock / 30 kg-per-m3 class (TECHTREE tilapia glossary; A-M-415): 2000 x 1000 x 1000 ID + 50 walls, EPDM-lined HDPE (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7356,7 +7362,13 @@
           "media": "moving-bed biofilm carriers (K1 micro class); surface area sets the bacterial population",
           "failure_mode": "ammonia accumulates to lethal levels within 24-48 h if the bacteria die (O2 starvation, pH crash, chemical shock)",
           "basis": "A-M-415; TECHTREE agriculture.aquaponics (nitrogen cycle); TECHTREE space-resources MELiSSA C2 nitrifying compartment"
-        }
+        },
+        "size_mm": [
+          1100,
+          900,
+          1000
+        ],
+        "size_note": "moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-M-415; TECHTREE aquaponics) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7374,7 +7386,13 @@
           "area_m2": 14.56,
           "zones": "aerobic top / anaerobic mineralisation bottom (dual root zone)",
           "basis": "A-M-229 area; A-M-415 loop"
-        }
+        },
+        "size_mm": [
+          3600,
+          2100,
+          500
+        ],
+        "size_note": "media bed 7 m2 of the 14 m2 dual-root-zone duty at the 0.9 kg/d feed class, 300 mm media + freeboard (A-M-415; A-M-229) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7399,7 +7417,13 @@
           "alt": "PP tray if media abrasion ever shows on the HDPE floor (same polymer family, higher cost)",
           "note": "the anaerobic half of the dual root zone; the aerobic half (GROWBED_A) carries its own issued selection.",
           "task": "X-FARM-01"
-        }
+        },
+        "size_mm": [
+          3600,
+          2100,
+          500
+        ],
+        "size_note": "media bed 7 m2, the anaerobic mineralisation half (A-M-415; A-M-229) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7425,7 +7449,13 @@
           "alt": "SS304 frame if wash-down frequency rises past the weekly class",
           "note": "the drop board is the manure harvest surface to the BSFL bin.",
           "task": "X-FARM-02"
-        }
+        },
+        "size_mm": [
+          2500,
+          1300,
+          1900
+        ],
+        "size_note": "12 birds x 0.2 m2 floor + nest row + perch at the 0.12 kg/d ration house class (A-M-417; TECHTREE chickens.md) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7454,7 +7484,13 @@
           "alt": "FRP tray if bin scaling raises wall temperatures past the HDPE class",
           "note": "larvae harvest is by self-separation up the ramp; the mesh is the pupa screen.",
           "task": "X-FARM-03"
-        }
+        },
+        "size_mm": [
+          2500,
+          900,
+          700
+        ],
+        "size_note": "2 x 5 kg/d-class bins in one frame at the 8.21 kg/d wet feedstock (A-M-418 revision) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7478,7 +7514,13 @@
           "alt": "SS316 where chlorinated sanitisers concentrate (same family, higher cost)",
           "note": "the galley biowaste stream feeds the BSFL bin (A-M-418).",
           "task": "X-HAB-01"
-        }
+        },
+        "size_mm": [
+          4000,
+          3000,
+          2400
+        ],
+        "size_note": "12 m2 fitout shell at the A-M-419 room basis, 2400 ceiling (AQS-HAB-001) (X-HAB sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7502,7 +7544,13 @@
           "alt": "SS316 fixtures where sanitiser chemistry concentrates",
           "note": "grey water to the WTR loop; the washroom is the largest hab water consumer.",
           "task": "X-HAB-01"
-        }
+        },
+        "size_mm": [
+          3000,
+          2000,
+          2400
+        ],
+        "size_note": "8 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7526,7 +7574,13 @@
           "alt": "SS316 where antiseptic chemistry ever demands it",
           "note": "the room is 6 m2 of the AQS-HAB-001 zoning.",
           "task": "X-HAB-01"
-        }
+        },
+        "size_mm": [
+          3000,
+          2000,
+          2400
+        ],
+        "size_note": "6 m2 fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7550,7 +7604,13 @@
           "alt": "wood-composite panels rejected for outgassing into the shell atmosphere",
           "note": "recreation/common zoning is 20 m2 of the AQS-HAB-001 basis.",
           "task": "X-HAB-01"
-        }
+        },
+        "size_mm": [
+          5000,
+          4000,
+          2400
+        ],
+        "size_note": "20 m2 fitout shell (A-M-419) (X-HAB sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7574,7 +7634,13 @@
           "alt": "as REC_DAYROOM",
           "note": "4 x 4 m2 private quarters in the AQS-HAB-001 basis.",
           "task": "X-HAB-01"
-        }
+        },
+        "size_mm": [
+          4000,
+          4000,
+          2400
+        ],
+        "size_note": "4 x 4 m2 private quarters block fitout shell (A-M-419; AQS-HAB-001) (X-HAB sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7598,7 +7664,13 @@
           "alt": "as REC_DAYROOM",
           "note": "10 m2 circulation in the AQS-HAB-001 basis.",
           "task": "X-HAB-01"
-        }
+        },
+        "size_mm": [
+          4000,
+          2500,
+          2400
+        ],
+        "size_note": "10 m2 circulation fitout shell (A-M-419) (X-HAB sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7617,7 +7689,13 @@
           "prod_g_dry_m2_d": 15.0,
           "CP_frac": 0.3,
           "basis": "A-M-420; TECHTREE aquaculture (Lemna 25-35 % CP)"
-        }
+        },
+        "size_mm": [
+          30100,
+          10100,
+          700
+        ],
+        "size_note": "300 m2 raceway at the A-M-420 revision, 400 mm water + 100 freeboard + 200 berm: a lined civil basin, HDPE/EPDM (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7643,7 +7721,13 @@
           "alt": "FRP wet panels in place of the liner if the pen geometry changes",
           "note": "the ducks forage the aquaponic loop water; pen drainings join the BSFL feedstock.",
           "task": "X-FARM-05"
-        }
+        },
+        "size_mm": [
+          2500,
+          1300,
+          1300
+        ],
+        "size_note": "6 ducks x 0.3 m2 + wallow strip (A-M-421; TECHTREE ducks.md) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7669,7 +7753,13 @@
           "alt": "PVC-coated wire if foot dermatitis ever shows at the cage floor",
           "note": "the droppings tray feeds the vermi bin directly.",
           "task": "X-FARM-06"
-        }
+        },
+        "size_mm": [
+          1300,
+          700,
+          1700
+        ],
+        "size_note": "20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class (A-M-422; TECHTREE coturnix.md) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7695,7 +7785,13 @@
           "alt": "SS wire floor if galvanising wears through at the door wear points",
           "note": "cold manure goes direct to the soil root zones (A-M-423).",
           "task": "X-FARM-07"
-        }
+        },
+        "size_mm": [
+          1900,
+          700,
+          1600
+        ],
+        "size_note": "3 rabbitry positions x 0.5 m2 with rest mats (A-M-423; TECHTREE rabbits.md) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7720,7 +7816,13 @@
           "alt": "none within the palette - the material is the biology interface here (a polymer hive is a process-change decision, not a materials trade)",
           "note": "pollination service to the canopy is the primary output; honey and wax are secondary (A-M-424).",
           "task": "X-FARM-08"
-        }
+        },
+        "size_mm": [
+          600,
+          500,
+          1100
+        ],
+        "size_note": "10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7746,7 +7848,13 @@
           "alt": "FRP bin at larger areas (same polymer-class logic as the BSFL bin)",
           "note": "castings 1.5-2.5 % N to the soil root zones (A-M-425).",
           "task": "X-FARM-09"
-        }
+        },
+        "size_mm": [
+          2100,
+          1100,
+          600
+        ],
+        "size_note": "2 m2 bin at 300 mm bedding depth (A-M-425) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7780,7 +7888,13 @@
           "alt": "SS316 where the eggshell grinding dust ever shows pitting",
           "note": "the reject stream returns to the BSFL bin, so the contact surfaces serve both feeds.",
           "task": "X-FARM-10"
-        }
+        },
+        "size_mm": [
+          1300,
+          900,
+          1700
+        ],
+        "size_note": "mixer + grinder + HP drier cabinet at the 0.6 kW duty (A-M-426) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7821,7 +7935,13 @@
           "alt": "316L tube if the loop ever runs saline (it does not at the freshwater class)",
           "note": "quartz sleeve fouling is the maintenance item - the dose validation (X-FARM-12) covers it.",
           "task": "X-FARM-12"
-        }
+        },
+        "size_mm": [
+          400,
+          350,
+          750
+        ],
+        "size_note": "inline 254 nm reactor tube + control box at the 0.04 kW lamp class (A-M-428) (X-FARM sec3)"
       },
       "modules": [],
       "electrical_role": null,
@@ -7860,7 +7980,13 @@
           "alt": "a 316L die plate if the FR-finish chemistry ever shows die corrosion",
           "note": "the FR finish dosing skid is PP/PTFE-contact throughout.",
           "task": "X-POLY-01"
-        }
+        },
+        "size_mm": [
+          3100,
+          1300,
+          1900
+        ],
+        "size_note": "bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09 kg/d draw (A-M-429) (X-POLY sec3)"
       },
       "modules": [],
       "electrical_role": null,

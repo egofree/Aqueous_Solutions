@@ -1,0 +1,13 @@
+{
+  "unit": "VERMI_BIN",
+  "form": "tray",
+  "size_mm": [
+    2100,
+    1100,
+    600
+  ],
+  "size_note": "2 m2 bin at 300 mm bedding depth (A-M-425) (X-FARM sec3)",
+  "material_class": "HDPE",
+  "wall_mm": 10,
+  "liner_mm": null
+}

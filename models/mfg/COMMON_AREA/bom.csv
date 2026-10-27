@@ -1,0 +1,6 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,floor,1,aluminium,405.0,make,room class; 10 m2 circulation fitout shell (A-M-419) (X-HAB sec3)
+2,wall_end_door,1,aluminium,160.0,make,room class; 10 m2 circulation fitout shell (A-M-419) (X-HAB sec3)
+3,wall_end_solid,1,aluminium,236.6,make,room class; 10 m2 circulation fitout shell (A-M-419) (X-HAB sec3)
+4,wall_long_a,1,aluminium,383.1,make,room class; 10 m2 circulation fitout shell (A-M-419) (X-HAB sec3)
+5,wall_long_b,1,aluminium,383.1,make,room class; 10 m2 circulation fitout shell (A-M-419) (X-HAB sec3)

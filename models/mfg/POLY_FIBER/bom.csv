@@ -1,0 +1,5 @@
+item,part,qty,material,mass_kg,make_buy,note
+1,cabinet_shell,1,SS304,826.7,make,cabinet class; bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09
+2,extruder,1,SS304,59.9,make,cabinet class; bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09
+3,quench_winder,1,SS304,83.7,make,cabinet class; bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09
+4,top,1,SS304,161.2,make,cabinet class; bench-scale melt-spin line: extruder + spinnerette + quench + winder at the 0.09

@@ -1,0 +1,29 @@
+{
+  "unit": "BIOFILTER",
+  "form": "tank",
+  "size_mm": [
+    1100,
+    900,
+    1000
+  ],
+  "size_note": "moving-bed vessel 0.55 m3 at the 0.9 kg/d feed ammonia load, K1 media 0.2 m3 (A-M-415; TECHTREE aquaponics) (X-FARM sec3)",
+  "material_class": "HDPE",
+  "wall_mm": 15,
+  "liner_mm": null,
+  "stubs_mm": [
+    [
+      25,
+      120,
+      550,
+      450,
+      20
+    ],
+    [
+      32,
+      120,
+      550,
+      750,
+      20
+    ]
+  ]
+}

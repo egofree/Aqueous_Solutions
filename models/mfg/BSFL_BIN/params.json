@@ -1,0 +1,13 @@
+{
+  "unit": "BSFL_BIN",
+  "form": "tray",
+  "size_mm": [
+    2500,
+    900,
+    700
+  ],
+  "size_note": "2 x 5 kg/d-class bins in one frame at the 8.21 kg/d wet feedstock (A-M-418 revision) (X-FARM sec3)",
+  "material_class": "HDPE",
+  "wall_mm": 10,
+  "liner_mm": null
+}

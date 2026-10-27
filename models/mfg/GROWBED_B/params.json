@@ -1,0 +1,13 @@
+{
+  "unit": "GROWBED_B",
+  "form": "tray",
+  "size_mm": [
+    3600,
+    2100,
+    500
+  ],
+  "size_note": "media bed 7 m2, the anaerobic mineralisation half (A-M-415; A-M-229) (X-FARM sec3)",
+  "material_class": "HDPE",
+  "wall_mm": 10,
+  "liner_mm": 5
+}

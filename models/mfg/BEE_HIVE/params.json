@@ -1,0 +1,13 @@
+{
+  "unit": "BEE_HIVE",
+  "form": "hive",
+  "size_mm": [
+    600,
+    500,
+    1100
+  ],
+  "size_note": "10-frame deep + medium + stand (A-M-424; TECHTREE beekeeping) (X-FARM sec3)",
+  "material_class": "pine",
+  "wall_mm": 30,
+  "liner_mm": null
+}

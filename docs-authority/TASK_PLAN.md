@@ -62,23 +62,23 @@ Table 2.1. Tasks by group
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
-| FARM | Life support / habitat | 240 | 147 |
+| FARM | Life support / habitat | 240 | 165 |
 | CRYO | Utility / header | 210 | 135 |
 | OIL | Process (Mass transform) | 195 | 128 |
 | HEAT | Utility / header | 180 | 112 |
-| POLYMERS | Process (Mass transform) | 165 | 121 |
+| POLYMERS | Process (Mass transform) | 165 | 122 |
 | GAS | Process (Mass transform) | 150 | 98 |
 | WTR | Utility / header | 136 | 87 |
 | MFG | Process (Mass transform) | 150 | 99 |
 | ELEC | Utility / header | 135 | 88 |
-| HAB | Life support / habitat | 135 | 81 |
+| HAB | Life support / habitat | 135 | 87 |
 | GLASS | Process (Mass transform) | 75 | 50 |
 | MEOH | Energy Storage System (Electrochemical) | 75 | 50 |
 | GEO | Utility / header | 45 | 30 |
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3254** | **2276** |
+| | **Total** | **3254** | **2301** |
 
 ## 3. Triage of open tasks
 
@@ -104,8 +104,8 @@ Table 3.1. Open tasks by triage tag
 | --- | --- |
 | desk P1 | 3 |
 | desk P2 | 7 |
-| desk P3 | 48 |
-| desk P4 | 520 |
+| desk P3 | 44 |
+| desk P4 | 499 |
 | desk P5 | 195 |
 | hardware | 203 |
 | owner | 2 |
@@ -319,7 +319,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-05-OF-10** Building-block family OF-10: electronics, compressor contactor + overload. Done when: open design and production plan for 10 items (IEC 60947-4-1) in 3 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-11** Building-block family OF-11: electronics, stepper driver. Done when: open design and production plan for 3 items (IEC 61800-5-1) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-12** Building-block family OF-12: electronics, safety PLC (SIL 2 capable), CPU and I/O rack. Done when: open design and production plan for 2 items (IEC 61508 / IEC 61511) in 1 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
-- [x] **X-INV-05-OF-13** Building-block family OF-13: fabricated part, fabricated part set. Done when: open design and production plan for 62 items (models/mfg/<unit>/bom.csv) in 62 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
+- [x] **X-INV-05-OF-13** Building-block family OF-13: fabricated part, fabricated part set. Done when: open design and production plan for 83 items (models/mfg/<unit>/bom.csv) in 83 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-14** Building-block family OF-14: fastener, anchor bolt. Done when: open design and production plan for 8362 items (ISO 3506 A4-70 wedge anchor) in 97 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-15** Building-block family OF-15: fastener, M10 x 40 lid bolt. Done when: open design and production plan for 100 items (ISO 3506 A4-70) in 11 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
 - [x] **X-INV-05-OF-16** Building-block family OF-16: fastener, M8 x 30 lid bolt. Done when: open design and production plan for 48 items (ISO 3506 A4-70) in 4 units. Depends: X-INV-05. Evidence: `docs-authority/BLOCK_FAMILY_PLANS.md`.
@@ -1659,13 +1659,13 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-AQUA_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-AQUA_TANK-01, FARM-AQUA_TANK-02. Evidence: `docs-authority/pid/AQUA_TANK.svg` (AQS-PID-001).
   - [x] FARM-AQUA_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/AQUA_TANK.csv, one row per edge. Depends: FARM-AQUA_TANK-03. Evidence: `docs-authority/nozzles/AQUA_TANK.csv` (all 6 process connections listed).
   - [x] FARM-AQUA_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-AQUA_TANK-04, FARM-AQUA_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-AQUA_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-AQUA_TANK-02. Triage: desk P3.
+  - [x] FARM-AQUA_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-AQUA_TANK-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [ ] FARM-AQUA_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-03. Triage: desk P2.
   - [x] FARM-AQUA_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-AQUA_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-AQUA_TANK-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-AQUA_TANK-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-AQUA_TANK-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/AQUA_TANK/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-04, FARM-AQUA_TANK-06, FARM-AQUA_TANK-09. Triage: desk P4.
+  - [ ] FARM-AQUA_TANK-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/AQUA_TANK/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-04, FARM-AQUA_TANK-06, FARM-AQUA_TANK-09. Status: partial: M2 at `models/mfg/AQUA_TANK/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-AQUA_TANK-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-AQUA_TANK-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-AQUA_TANK-12 BOM. Done when: models/mfg/AQUA_TANK/bom.csv. Depends: FARM-AQUA_TANK-10. Triage: desk P4.
+  - [x] FARM-AQUA_TANK-12 BOM. Done when: models/mfg/AQUA_TANK/bom.csv. Depends: FARM-AQUA_TANK-10. Evidence: `models/mfg/AQUA_TANK/bom.csv`.
   - [x] FARM-AQUA_TANK-13 Fabrication route. Done when: docs-authority/fab/AQUA_TANK.md. Depends: FARM-AQUA_TANK-10, FARM-AQUA_TANK-12. Evidence: `docs-authority/fab/AQUA_TANK.md` (study route).
   - [ ] FARM-AQUA_TANK-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-AQUA_TANK-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-AQUA_TANK-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-AQUA_TANK-14, X-COM-01. Triage: hardware.
@@ -1679,9 +1679,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-AQUA_UV-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-AQUA_UV-02, FARM-AQUA_UV-03. Evidence: `docs-authority/duties/AQUA_UV.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-AQUA_UV-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-AQUA_UV-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
   - [x] FARM-AQUA_UV-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-AQUA_UV-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-AQUA_UV-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/AQUA_UV/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-AQUA_UV-02, FARM-AQUA_UV-04, FARM-AQUA_UV-06, FARM-AQUA_UV-09. Triage: desk P4.
+  - [ ] FARM-AQUA_UV-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/AQUA_UV/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-AQUA_UV-02, FARM-AQUA_UV-04, FARM-AQUA_UV-06, FARM-AQUA_UV-09. Status: partial: M2 at `models/mfg/AQUA_UV/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-AQUA_UV-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-AQUA_UV-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-AQUA_UV-12 BOM. Done when: models/mfg/AQUA_UV/bom.csv. Depends: FARM-AQUA_UV-10. Triage: desk P4.
+  - [x] FARM-AQUA_UV-12 BOM. Done when: models/mfg/AQUA_UV/bom.csv. Depends: FARM-AQUA_UV-10. Evidence: `models/mfg/AQUA_UV/bom.csv`.
   - [x] FARM-AQUA_UV-13 Fabrication route. Done when: docs-authority/fab/AQUA_UV.md. Depends: FARM-AQUA_UV-10, FARM-AQUA_UV-12. Evidence: `docs-authority/fab/AQUA_UV.md` (study route).
   - [ ] FARM-AQUA_UV-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-AQUA_UV-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-AQUA_UV-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-AQUA_UV-14, X-COM-01. Triage: hardware.
@@ -1695,9 +1695,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-BEE_HIVE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-BEE_HIVE-02, FARM-BEE_HIVE-03. Evidence: `docs-authority/duties/BEE_HIVE.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-BEE_HIVE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-BEE_HIVE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-BEE_HIVE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-BEE_HIVE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-BEE_HIVE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BEE_HIVE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BEE_HIVE-02, FARM-BEE_HIVE-04, FARM-BEE_HIVE-06, FARM-BEE_HIVE-09. Triage: desk P4.
+  - [ ] FARM-BEE_HIVE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BEE_HIVE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BEE_HIVE-02, FARM-BEE_HIVE-04, FARM-BEE_HIVE-06, FARM-BEE_HIVE-09. Status: partial: M2 at `models/mfg/BEE_HIVE/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-BEE_HIVE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BEE_HIVE-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-BEE_HIVE-12 BOM. Done when: models/mfg/BEE_HIVE/bom.csv. Depends: FARM-BEE_HIVE-10. Triage: desk P4.
+  - [x] FARM-BEE_HIVE-12 BOM. Done when: models/mfg/BEE_HIVE/bom.csv. Depends: FARM-BEE_HIVE-10. Evidence: `models/mfg/BEE_HIVE/bom.csv`.
   - [x] FARM-BEE_HIVE-13 Fabrication route. Done when: docs-authority/fab/BEE_HIVE.md. Depends: FARM-BEE_HIVE-10, FARM-BEE_HIVE-12. Evidence: `docs-authority/fab/BEE_HIVE.md` (study route).
   - [ ] FARM-BEE_HIVE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BEE_HIVE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-BEE_HIVE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BEE_HIVE-14, X-COM-01. Triage: hardware.
@@ -1711,9 +1711,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-BIOFILTER-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-BIOFILTER-02, FARM-BIOFILTER-03. Evidence: `docs-authority/duties/BIOFILTER.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-BIOFILTER-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-BIOFILTER-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-BIOFILTER-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-BIOFILTER-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-BIOFILTER-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BIOFILTER/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BIOFILTER-02, FARM-BIOFILTER-04, FARM-BIOFILTER-06, FARM-BIOFILTER-09. Triage: desk P4.
+  - [ ] FARM-BIOFILTER-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BIOFILTER/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BIOFILTER-02, FARM-BIOFILTER-04, FARM-BIOFILTER-06, FARM-BIOFILTER-09. Status: partial: M2 at `models/mfg/BIOFILTER/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-BIOFILTER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BIOFILTER-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-BIOFILTER-12 BOM. Done when: models/mfg/BIOFILTER/bom.csv. Depends: FARM-BIOFILTER-10. Triage: desk P4.
+  - [x] FARM-BIOFILTER-12 BOM. Done when: models/mfg/BIOFILTER/bom.csv. Depends: FARM-BIOFILTER-10. Evidence: `models/mfg/BIOFILTER/bom.csv`.
   - [x] FARM-BIOFILTER-13 Fabrication route. Done when: docs-authority/fab/BIOFILTER.md. Depends: FARM-BIOFILTER-10, FARM-BIOFILTER-12. Evidence: `docs-authority/fab/BIOFILTER.md` (study route).
   - [ ] FARM-BIOFILTER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BIOFILTER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-BIOFILTER-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BIOFILTER-14, X-COM-01. Triage: hardware.
@@ -1727,9 +1727,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-BSFL_BIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-BSFL_BIN-02, FARM-BSFL_BIN-03. Evidence: `docs-authority/duties/BSFL_BIN.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-BSFL_BIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-BSFL_BIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-BSFL_BIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-BSFL_BIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-BSFL_BIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BSFL_BIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BSFL_BIN-02, FARM-BSFL_BIN-04, FARM-BSFL_BIN-06, FARM-BSFL_BIN-09. Triage: desk P4.
+  - [ ] FARM-BSFL_BIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/BSFL_BIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-BSFL_BIN-02, FARM-BSFL_BIN-04, FARM-BSFL_BIN-06, FARM-BSFL_BIN-09. Status: partial: M2 at `models/mfg/BSFL_BIN/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-BSFL_BIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-BSFL_BIN-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-BSFL_BIN-12 BOM. Done when: models/mfg/BSFL_BIN/bom.csv. Depends: FARM-BSFL_BIN-10. Triage: desk P4.
+  - [x] FARM-BSFL_BIN-12 BOM. Done when: models/mfg/BSFL_BIN/bom.csv. Depends: FARM-BSFL_BIN-10. Evidence: `models/mfg/BSFL_BIN/bom.csv`.
   - [x] FARM-BSFL_BIN-13 Fabrication route. Done when: docs-authority/fab/BSFL_BIN.md. Depends: FARM-BSFL_BIN-10, FARM-BSFL_BIN-12. Evidence: `docs-authority/fab/BSFL_BIN.md` (study route).
   - [ ] FARM-BSFL_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-BSFL_BIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-BSFL_BIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-BSFL_BIN-14, X-COM-01. Triage: hardware.
@@ -1743,9 +1743,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-CHICKEN_COOP-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-CHICKEN_COOP-02, FARM-CHICKEN_COOP-03. Evidence: `docs-authority/duties/CHICKEN_COOP.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-CHICKEN_COOP-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-CHICKEN_COOP-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-CHICKEN_COOP-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-CHICKEN_COOP-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-CHICKEN_COOP-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/CHICKEN_COOP/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-CHICKEN_COOP-02, FARM-CHICKEN_COOP-04, FARM-CHICKEN_COOP-06, FARM-CHICKEN_COOP-09. Triage: desk P4.
+  - [ ] FARM-CHICKEN_COOP-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/CHICKEN_COOP/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-CHICKEN_COOP-02, FARM-CHICKEN_COOP-04, FARM-CHICKEN_COOP-06, FARM-CHICKEN_COOP-09. Status: partial: M2 at `models/mfg/CHICKEN_COOP/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-CHICKEN_COOP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-CHICKEN_COOP-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-CHICKEN_COOP-12 BOM. Done when: models/mfg/CHICKEN_COOP/bom.csv. Depends: FARM-CHICKEN_COOP-10. Triage: desk P4.
+  - [x] FARM-CHICKEN_COOP-12 BOM. Done when: models/mfg/CHICKEN_COOP/bom.csv. Depends: FARM-CHICKEN_COOP-10. Evidence: `models/mfg/CHICKEN_COOP/bom.csv`.
   - [x] FARM-CHICKEN_COOP-13 Fabrication route. Done when: docs-authority/fab/CHICKEN_COOP.md. Depends: FARM-CHICKEN_COOP-10, FARM-CHICKEN_COOP-12. Evidence: `docs-authority/fab/CHICKEN_COOP.md` (study route).
   - [ ] FARM-CHICKEN_COOP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-CHICKEN_COOP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-CHICKEN_COOP-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-CHICKEN_COOP-14, X-COM-01. Triage: hardware.
@@ -1755,13 +1755,13 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-DUCKWEED-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-DUCKWEED-01, FARM-DUCKWEED-02. Evidence: `docs-authority/pid/DUCKWEED.svg` (AQS-PID-001).
   - [x] FARM-DUCKWEED-04 Nozzle schedule. Done when: docs-authority/nozzles/DUCKWEED.csv, one row per edge. Depends: FARM-DUCKWEED-03. Evidence: `docs-authority/nozzles/DUCKWEED.csv` (all 7 process connections listed).
   - [x] FARM-DUCKWEED-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-DUCKWEED-04, FARM-DUCKWEED-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-DUCKWEED-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-DUCKWEED-02. Triage: desk P3.
+  - [x] FARM-DUCKWEED-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-DUCKWEED-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FARM-DUCKWEED-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-DUCKWEED-02, FARM-DUCKWEED-03. Evidence: `docs-authority/duties/DUCKWEED.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-DUCKWEED-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-DUCKWEED-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-DUCKWEED-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-DUCKWEED-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-DUCKWEED-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/DUCKWEED/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-DUCKWEED-02, FARM-DUCKWEED-04, FARM-DUCKWEED-06, FARM-DUCKWEED-09. Triage: desk P4.
+  - [ ] FARM-DUCKWEED-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/DUCKWEED/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-DUCKWEED-02, FARM-DUCKWEED-04, FARM-DUCKWEED-06, FARM-DUCKWEED-09. Status: partial: M2 at `models/mfg/DUCKWEED/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-DUCKWEED-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-DUCKWEED-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-DUCKWEED-12 BOM. Done when: models/mfg/DUCKWEED/bom.csv. Depends: FARM-DUCKWEED-10. Triage: desk P4.
+  - [x] FARM-DUCKWEED-12 BOM. Done when: models/mfg/DUCKWEED/bom.csv. Depends: FARM-DUCKWEED-10. Evidence: `models/mfg/DUCKWEED/bom.csv`.
   - [x] FARM-DUCKWEED-13 Fabrication route. Done when: docs-authority/fab/DUCKWEED.md. Depends: FARM-DUCKWEED-10, FARM-DUCKWEED-12. Evidence: `docs-authority/fab/DUCKWEED.md` (study route).
   - [ ] FARM-DUCKWEED-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCKWEED-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-DUCKWEED-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-DUCKWEED-14, X-COM-01. Triage: hardware.
@@ -1775,9 +1775,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-DUCK_PEN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-DUCK_PEN-02, FARM-DUCK_PEN-03. Evidence: `docs-authority/duties/DUCK_PEN.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-DUCK_PEN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-DUCK_PEN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-DUCK_PEN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-DUCK_PEN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-DUCK_PEN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/DUCK_PEN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-DUCK_PEN-02, FARM-DUCK_PEN-04, FARM-DUCK_PEN-06, FARM-DUCK_PEN-09. Triage: desk P4.
+  - [ ] FARM-DUCK_PEN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/DUCK_PEN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-DUCK_PEN-02, FARM-DUCK_PEN-04, FARM-DUCK_PEN-06, FARM-DUCK_PEN-09. Status: partial: M2 at `models/mfg/DUCK_PEN/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-DUCK_PEN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-DUCK_PEN-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-DUCK_PEN-12 BOM. Done when: models/mfg/DUCK_PEN/bom.csv. Depends: FARM-DUCK_PEN-10. Triage: desk P4.
+  - [x] FARM-DUCK_PEN-12 BOM. Done when: models/mfg/DUCK_PEN/bom.csv. Depends: FARM-DUCK_PEN-10. Evidence: `models/mfg/DUCK_PEN/bom.csv`.
   - [x] FARM-DUCK_PEN-13 Fabrication route. Done when: docs-authority/fab/DUCK_PEN.md. Depends: FARM-DUCK_PEN-10, FARM-DUCK_PEN-12. Evidence: `docs-authority/fab/DUCK_PEN.md` (study route).
   - [ ] FARM-DUCK_PEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-DUCK_PEN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-DUCK_PEN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-DUCK_PEN-14, X-COM-01. Triage: hardware.
@@ -1791,9 +1791,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-FEED_PREP-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-FEED_PREP-02, FARM-FEED_PREP-03. Evidence: `docs-authority/duties/FEED_PREP.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-FEED_PREP-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-FEED_PREP-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
   - [x] FARM-FEED_PREP-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-FEED_PREP-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-FEED_PREP-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/FEED_PREP/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-FEED_PREP-02, FARM-FEED_PREP-04, FARM-FEED_PREP-06, FARM-FEED_PREP-09. Triage: desk P4.
+  - [ ] FARM-FEED_PREP-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/FEED_PREP/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-FEED_PREP-02, FARM-FEED_PREP-04, FARM-FEED_PREP-06, FARM-FEED_PREP-09. Status: partial: M2 at `models/mfg/FEED_PREP/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-FEED_PREP-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-FEED_PREP-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-FEED_PREP-12 BOM. Done when: models/mfg/FEED_PREP/bom.csv. Depends: FARM-FEED_PREP-10. Triage: desk P4.
+  - [x] FARM-FEED_PREP-12 BOM. Done when: models/mfg/FEED_PREP/bom.csv. Depends: FARM-FEED_PREP-10. Evidence: `models/mfg/FEED_PREP/bom.csv`.
   - [x] FARM-FEED_PREP-13 Fabrication route. Done when: docs-authority/fab/FEED_PREP.md. Depends: FARM-FEED_PREP-10, FARM-FEED_PREP-12. Evidence: `docs-authority/fab/FEED_PREP.md` (study route).
   - [ ] FARM-FEED_PREP-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-FEED_PREP-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-FEED_PREP-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-FEED_PREP-14, X-COM-01. Triage: hardware.
@@ -1819,13 +1819,13 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-GROWBED_A-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-GROWBED_A-01, FARM-GROWBED_A-02. Evidence: `docs-authority/pid/GROWBED_A.svg` (AQS-PID-001).
   - [x] FARM-GROWBED_A-04 Nozzle schedule. Done when: docs-authority/nozzles/GROWBED_A.csv, one row per edge. Depends: FARM-GROWBED_A-03. Evidence: `docs-authority/nozzles/GROWBED_A.csv` (all 5 process connections listed).
   - [x] FARM-GROWBED_A-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-GROWBED_A-04, FARM-GROWBED_A-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-GROWBED_A-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-GROWBED_A-02. Triage: desk P3.
+  - [x] FARM-GROWBED_A-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-GROWBED_A-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [ ] FARM-GROWBED_A-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-03. Triage: desk P2.
   - [x] FARM-GROWBED_A-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-GROWBED_A-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
   - [x] FARM-GROWBED_A-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-GROWBED_A-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-GROWBED_A-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROWBED_A/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-04, FARM-GROWBED_A-06, FARM-GROWBED_A-09. Triage: desk P4.
+  - [ ] FARM-GROWBED_A-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROWBED_A/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-04, FARM-GROWBED_A-06, FARM-GROWBED_A-09. Status: partial: M2 at `models/mfg/GROWBED_A/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-GROWBED_A-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROWBED_A-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-GROWBED_A-12 BOM. Done when: models/mfg/GROWBED_A/bom.csv. Depends: FARM-GROWBED_A-10. Triage: desk P4.
+  - [x] FARM-GROWBED_A-12 BOM. Done when: models/mfg/GROWBED_A/bom.csv. Depends: FARM-GROWBED_A-10. Evidence: `models/mfg/GROWBED_A/bom.csv`.
   - [x] FARM-GROWBED_A-13 Fabrication route. Done when: docs-authority/fab/GROWBED_A.md. Depends: FARM-GROWBED_A-10, FARM-GROWBED_A-12. Evidence: `docs-authority/fab/GROWBED_A.md` (study route).
   - [ ] FARM-GROWBED_A-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_A-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-GROWBED_A-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROWBED_A-14, X-COM-01. Triage: hardware.
@@ -1839,9 +1839,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-GROWBED_B-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROWBED_B-02, FARM-GROWBED_B-03. Evidence: `docs-authority/duties/GROWBED_B.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-GROWBED_B-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-GROWBED_B-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
   - [x] FARM-GROWBED_B-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-GROWBED_B-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-GROWBED_B-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROWBED_B/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROWBED_B-02, FARM-GROWBED_B-04, FARM-GROWBED_B-06, FARM-GROWBED_B-09. Triage: desk P4.
+  - [ ] FARM-GROWBED_B-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROWBED_B/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROWBED_B-02, FARM-GROWBED_B-04, FARM-GROWBED_B-06, FARM-GROWBED_B-09. Status: partial: M2 at `models/mfg/GROWBED_B/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-GROWBED_B-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-GROWBED_B-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-GROWBED_B-12 BOM. Done when: models/mfg/GROWBED_B/bom.csv. Depends: FARM-GROWBED_B-10. Triage: desk P4.
+  - [x] FARM-GROWBED_B-12 BOM. Done when: models/mfg/GROWBED_B/bom.csv. Depends: FARM-GROWBED_B-10. Evidence: `models/mfg/GROWBED_B/bom.csv`.
   - [x] FARM-GROWBED_B-13 Fabrication route. Done when: docs-authority/fab/GROWBED_B.md. Depends: FARM-GROWBED_B-10, FARM-GROWBED_B-12. Evidence: `docs-authority/fab/GROWBED_B.md` (study route).
   - [ ] FARM-GROWBED_B-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-GROWBED_B-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-GROWBED_B-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-GROWBED_B-14, X-COM-01. Triage: hardware.
@@ -1871,9 +1871,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-QUAIL_CAGE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-QUAIL_CAGE-02, FARM-QUAIL_CAGE-03. Evidence: `docs-authority/duties/QUAIL_CAGE.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-QUAIL_CAGE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-QUAIL_CAGE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-QUAIL_CAGE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-QUAIL_CAGE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-QUAIL_CAGE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/QUAIL_CAGE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-QUAIL_CAGE-02, FARM-QUAIL_CAGE-04, FARM-QUAIL_CAGE-06, FARM-QUAIL_CAGE-09. Triage: desk P4.
+  - [ ] FARM-QUAIL_CAGE-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/QUAIL_CAGE/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-QUAIL_CAGE-02, FARM-QUAIL_CAGE-04, FARM-QUAIL_CAGE-06, FARM-QUAIL_CAGE-09. Status: partial: M2 at `models/mfg/QUAIL_CAGE/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-QUAIL_CAGE-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-QUAIL_CAGE-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-QUAIL_CAGE-12 BOM. Done when: models/mfg/QUAIL_CAGE/bom.csv. Depends: FARM-QUAIL_CAGE-10. Triage: desk P4.
+  - [x] FARM-QUAIL_CAGE-12 BOM. Done when: models/mfg/QUAIL_CAGE/bom.csv. Depends: FARM-QUAIL_CAGE-10. Evidence: `models/mfg/QUAIL_CAGE/bom.csv`.
   - [x] FARM-QUAIL_CAGE-13 Fabrication route. Done when: docs-authority/fab/QUAIL_CAGE.md. Depends: FARM-QUAIL_CAGE-10, FARM-QUAIL_CAGE-12. Evidence: `docs-authority/fab/QUAIL_CAGE.md` (study route).
   - [ ] FARM-QUAIL_CAGE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-QUAIL_CAGE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-QUAIL_CAGE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-QUAIL_CAGE-14, X-COM-01. Triage: hardware.
@@ -1887,9 +1887,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-RABBIT_HUTCH-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-RABBIT_HUTCH-02, FARM-RABBIT_HUTCH-03. Evidence: `docs-authority/duties/RABBIT_HUTCH.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-RABBIT_HUTCH-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-RABBIT_HUTCH-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-RABBIT_HUTCH-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-RABBIT_HUTCH-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-RABBIT_HUTCH-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/RABBIT_HUTCH/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-RABBIT_HUTCH-02, FARM-RABBIT_HUTCH-04, FARM-RABBIT_HUTCH-06, FARM-RABBIT_HUTCH-09. Triage: desk P4.
+  - [ ] FARM-RABBIT_HUTCH-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/RABBIT_HUTCH/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-RABBIT_HUTCH-02, FARM-RABBIT_HUTCH-04, FARM-RABBIT_HUTCH-06, FARM-RABBIT_HUTCH-09. Status: partial: M2 at `models/mfg/RABBIT_HUTCH/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-RABBIT_HUTCH-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-RABBIT_HUTCH-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-RABBIT_HUTCH-12 BOM. Done when: models/mfg/RABBIT_HUTCH/bom.csv. Depends: FARM-RABBIT_HUTCH-10. Triage: desk P4.
+  - [x] FARM-RABBIT_HUTCH-12 BOM. Done when: models/mfg/RABBIT_HUTCH/bom.csv. Depends: FARM-RABBIT_HUTCH-10. Evidence: `models/mfg/RABBIT_HUTCH/bom.csv`.
   - [x] FARM-RABBIT_HUTCH-13 Fabrication route. Done when: docs-authority/fab/RABBIT_HUTCH.md. Depends: FARM-RABBIT_HUTCH-10, FARM-RABBIT_HUTCH-12. Evidence: `docs-authority/fab/RABBIT_HUTCH.md` (study route).
   - [ ] FARM-RABBIT_HUTCH-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-RABBIT_HUTCH-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-RABBIT_HUTCH-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-RABBIT_HUTCH-14, X-COM-01. Triage: hardware.
@@ -1899,13 +1899,13 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FARM-VERMI_BIN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-VERMI_BIN-01, FARM-VERMI_BIN-02. Evidence: `docs-authority/pid/VERMI_BIN.svg` (AQS-PID-001).
   - [x] FARM-VERMI_BIN-04 Nozzle schedule. Done when: docs-authority/nozzles/VERMI_BIN.csv, one row per edge. Depends: FARM-VERMI_BIN-03. Evidence: `docs-authority/nozzles/VERMI_BIN.csv` (all 4 process connections listed).
   - [x] FARM-VERMI_BIN-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-VERMI_BIN-04, FARM-VERMI_BIN-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] FARM-VERMI_BIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-VERMI_BIN-02. Triage: desk P3.
+  - [x] FARM-VERMI_BIN-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-VERMI_BIN-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FARM-VERMI_BIN-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-VERMI_BIN-02, FARM-VERMI_BIN-03. Evidence: `docs-authority/duties/VERMI_BIN.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-VERMI_BIN-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-VERMI_BIN-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-VERMI_BIN-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-VERMI_BIN-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] FARM-VERMI_BIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/VERMI_BIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-VERMI_BIN-02, FARM-VERMI_BIN-04, FARM-VERMI_BIN-06, FARM-VERMI_BIN-09. Triage: desk P4.
+  - [ ] FARM-VERMI_BIN-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/VERMI_BIN/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-VERMI_BIN-02, FARM-VERMI_BIN-04, FARM-VERMI_BIN-06, FARM-VERMI_BIN-09. Status: partial: M2 at `models/mfg/VERMI_BIN/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] FARM-VERMI_BIN-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: FARM-VERMI_BIN-10, X-DWG-01. Triage: desk P4.
-  - [ ] FARM-VERMI_BIN-12 BOM. Done when: models/mfg/VERMI_BIN/bom.csv. Depends: FARM-VERMI_BIN-10. Triage: desk P4.
+  - [x] FARM-VERMI_BIN-12 BOM. Done when: models/mfg/VERMI_BIN/bom.csv. Depends: FARM-VERMI_BIN-10. Evidence: `models/mfg/VERMI_BIN/bom.csv`.
   - [x] FARM-VERMI_BIN-13 Fabrication route. Done when: docs-authority/fab/VERMI_BIN.md. Depends: FARM-VERMI_BIN-10, FARM-VERMI_BIN-12. Evidence: `docs-authority/fab/VERMI_BIN.md` (study route).
   - [ ] FARM-VERMI_BIN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-VERMI_BIN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-VERMI_BIN-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-VERMI_BIN-14, X-COM-01. Triage: hardware.
@@ -2635,9 +2635,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] POLYMERS-POLY_FIBER-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: POLYMERS-POLY_FIBER-02, POLYMERS-POLY_FIBER-03. Evidence: `docs-authority/duties/POLY_FIBER.md` §6 (C7 closed on MASTER_PLAN).
   - [x] POLYMERS-POLY_FIBER-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: POLYMERS-POLY_FIBER-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
   - [x] POLYMERS-POLY_FIBER-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: POLYMERS-POLY_FIBER-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] POLYMERS-POLY_FIBER-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/POLY_FIBER/ builds; acceptance per AQS-PLAN-006 section 5. Depends: POLYMERS-POLY_FIBER-02, POLYMERS-POLY_FIBER-04, POLYMERS-POLY_FIBER-06, POLYMERS-POLY_FIBER-09. Triage: desk P4.
+  - [ ] POLYMERS-POLY_FIBER-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/POLY_FIBER/ builds; acceptance per AQS-PLAN-006 section 5. Depends: POLYMERS-POLY_FIBER-02, POLYMERS-POLY_FIBER-04, POLYMERS-POLY_FIBER-06, POLYMERS-POLY_FIBER-09. Status: partial: M2 at `models/mfg/POLY_FIBER/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] POLYMERS-POLY_FIBER-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: POLYMERS-POLY_FIBER-10, X-DWG-01. Triage: desk P4.
-  - [ ] POLYMERS-POLY_FIBER-12 BOM. Done when: models/mfg/POLY_FIBER/bom.csv. Depends: POLYMERS-POLY_FIBER-10. Triage: desk P4.
+  - [x] POLYMERS-POLY_FIBER-12 BOM. Done when: models/mfg/POLY_FIBER/bom.csv. Depends: POLYMERS-POLY_FIBER-10. Evidence: `models/mfg/POLY_FIBER/bom.csv`.
   - [x] POLYMERS-POLY_FIBER-13 Fabrication route. Done when: docs-authority/fab/POLY_FIBER.md. Depends: POLYMERS-POLY_FIBER-10, POLYMERS-POLY_FIBER-12. Evidence: `docs-authority/fab/POLY_FIBER.md` (study route).
   - [ ] POLYMERS-POLY_FIBER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: POLYMERS-POLY_FIBER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] POLYMERS-POLY_FIBER-15 Test and commission. Done when: test procedure and acceptance record. Depends: POLYMERS-POLY_FIBER-14, X-COM-01. Triage: hardware.
@@ -3356,9 +3356,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-COMMON_AREA-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-COMMON_AREA-02, HAB-COMMON_AREA-03. Evidence: `docs-authority/duties/COMMON_AREA.md` §6 (C7 closed on MASTER_PLAN).
   - [x] HAB-COMMON_AREA-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: HAB-COMMON_AREA-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (1 loops; AQS-CTL-001).
   - [x] HAB-COMMON_AREA-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: HAB-COMMON_AREA-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] HAB-COMMON_AREA-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/COMMON_AREA/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-COMMON_AREA-02, HAB-COMMON_AREA-04, HAB-COMMON_AREA-06, HAB-COMMON_AREA-09. Triage: desk P4.
+  - [ ] HAB-COMMON_AREA-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/COMMON_AREA/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-COMMON_AREA-02, HAB-COMMON_AREA-04, HAB-COMMON_AREA-06, HAB-COMMON_AREA-09. Status: partial: M2 at `models/mfg/COMMON_AREA/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] HAB-COMMON_AREA-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-COMMON_AREA-10, X-DWG-01. Triage: desk P4.
-  - [ ] HAB-COMMON_AREA-12 BOM. Done when: models/mfg/COMMON_AREA/bom.csv. Depends: HAB-COMMON_AREA-10. Triage: desk P4.
+  - [x] HAB-COMMON_AREA-12 BOM. Done when: models/mfg/COMMON_AREA/bom.csv. Depends: HAB-COMMON_AREA-10. Evidence: `models/mfg/COMMON_AREA/bom.csv`.
   - [x] HAB-COMMON_AREA-13 Fabrication route. Done when: docs-authority/fab/COMMON_AREA.md. Depends: HAB-COMMON_AREA-10, HAB-COMMON_AREA-12. Evidence: `docs-authority/fab/COMMON_AREA.md` (study route).
   - [ ] HAB-COMMON_AREA-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-COMMON_AREA-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] HAB-COMMON_AREA-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-COMMON_AREA-14, X-COM-01. Triage: hardware.
@@ -3372,9 +3372,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-GALLEY-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-GALLEY-02, HAB-GALLEY-03. Evidence: `docs-authority/duties/GALLEY.md` §6 (C7 closed on MASTER_PLAN).
   - [x] HAB-GALLEY-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: HAB-GALLEY-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] HAB-GALLEY-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: HAB-GALLEY-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] HAB-GALLEY-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GALLEY/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-GALLEY-02, HAB-GALLEY-04, HAB-GALLEY-06, HAB-GALLEY-09. Triage: desk P4.
+  - [ ] HAB-GALLEY-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GALLEY/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-GALLEY-02, HAB-GALLEY-04, HAB-GALLEY-06, HAB-GALLEY-09. Status: partial: M2 at `models/mfg/GALLEY/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] HAB-GALLEY-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-GALLEY-10, X-DWG-01. Triage: desk P4.
-  - [ ] HAB-GALLEY-12 BOM. Done when: models/mfg/GALLEY/bom.csv. Depends: HAB-GALLEY-10. Triage: desk P4.
+  - [x] HAB-GALLEY-12 BOM. Done when: models/mfg/GALLEY/bom.csv. Depends: HAB-GALLEY-10. Evidence: `models/mfg/GALLEY/bom.csv`.
   - [x] HAB-GALLEY-13 Fabrication route. Done when: docs-authority/fab/GALLEY.md. Depends: HAB-GALLEY-10, HAB-GALLEY-12. Evidence: `docs-authority/fab/GALLEY.md` (study route).
   - [ ] HAB-GALLEY-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-GALLEY-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] HAB-GALLEY-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-GALLEY-14, X-COM-01. Triage: hardware.
@@ -3436,9 +3436,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-MEDICAL-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-MEDICAL-02, HAB-MEDICAL-03. Evidence: `docs-authority/duties/MEDICAL.md` §6 (C7 closed on MASTER_PLAN).
   - [x] HAB-MEDICAL-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: HAB-MEDICAL-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (1 loops; AQS-CTL-001).
   - [x] HAB-MEDICAL-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: HAB-MEDICAL-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] HAB-MEDICAL-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/MEDICAL/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-MEDICAL-02, HAB-MEDICAL-04, HAB-MEDICAL-06, HAB-MEDICAL-09. Triage: desk P4.
+  - [ ] HAB-MEDICAL-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/MEDICAL/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-MEDICAL-02, HAB-MEDICAL-04, HAB-MEDICAL-06, HAB-MEDICAL-09. Status: partial: M2 at `models/mfg/MEDICAL/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] HAB-MEDICAL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-MEDICAL-10, X-DWG-01. Triage: desk P4.
-  - [ ] HAB-MEDICAL-12 BOM. Done when: models/mfg/MEDICAL/bom.csv. Depends: HAB-MEDICAL-10. Triage: desk P4.
+  - [x] HAB-MEDICAL-12 BOM. Done when: models/mfg/MEDICAL/bom.csv. Depends: HAB-MEDICAL-10. Evidence: `models/mfg/MEDICAL/bom.csv`.
   - [x] HAB-MEDICAL-13 Fabrication route. Done when: docs-authority/fab/MEDICAL.md. Depends: HAB-MEDICAL-10, HAB-MEDICAL-12. Evidence: `docs-authority/fab/MEDICAL.md` (study route).
   - [ ] HAB-MEDICAL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-MEDICAL-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] HAB-MEDICAL-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-MEDICAL-14, X-COM-01. Triage: hardware.
@@ -3452,9 +3452,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-REC_DAYROOM-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-REC_DAYROOM-02, HAB-REC_DAYROOM-03. Evidence: `docs-authority/duties/REC_DAYROOM.md` §6 (C7 closed on MASTER_PLAN).
   - [x] HAB-REC_DAYROOM-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: HAB-REC_DAYROOM-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (1 loops; AQS-CTL-001).
   - [x] HAB-REC_DAYROOM-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: HAB-REC_DAYROOM-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] HAB-REC_DAYROOM-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/REC_DAYROOM/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-REC_DAYROOM-02, HAB-REC_DAYROOM-04, HAB-REC_DAYROOM-06, HAB-REC_DAYROOM-09. Triage: desk P4.
+  - [ ] HAB-REC_DAYROOM-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/REC_DAYROOM/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-REC_DAYROOM-02, HAB-REC_DAYROOM-04, HAB-REC_DAYROOM-06, HAB-REC_DAYROOM-09. Status: partial: M2 at `models/mfg/REC_DAYROOM/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] HAB-REC_DAYROOM-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-REC_DAYROOM-10, X-DWG-01. Triage: desk P4.
-  - [ ] HAB-REC_DAYROOM-12 BOM. Done when: models/mfg/REC_DAYROOM/bom.csv. Depends: HAB-REC_DAYROOM-10. Triage: desk P4.
+  - [x] HAB-REC_DAYROOM-12 BOM. Done when: models/mfg/REC_DAYROOM/bom.csv. Depends: HAB-REC_DAYROOM-10. Evidence: `models/mfg/REC_DAYROOM/bom.csv`.
   - [x] HAB-REC_DAYROOM-13 Fabrication route. Done when: docs-authority/fab/REC_DAYROOM.md. Depends: HAB-REC_DAYROOM-10, HAB-REC_DAYROOM-12. Evidence: `docs-authority/fab/REC_DAYROOM.md` (study route).
   - [ ] HAB-REC_DAYROOM-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-REC_DAYROOM-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] HAB-REC_DAYROOM-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-REC_DAYROOM-14, X-COM-01. Triage: hardware.
@@ -3468,9 +3468,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-SLEEP_QUARTERS-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-SLEEP_QUARTERS-02, HAB-SLEEP_QUARTERS-03. Evidence: `docs-authority/duties/SLEEP_QUARTERS.md` §6 (C7 closed on MASTER_PLAN).
   - [x] HAB-SLEEP_QUARTERS-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: HAB-SLEEP_QUARTERS-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (1 loops; AQS-CTL-001).
   - [x] HAB-SLEEP_QUARTERS-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: HAB-SLEEP_QUARTERS-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] HAB-SLEEP_QUARTERS-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/SLEEP_QUARTERS/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-SLEEP_QUARTERS-02, HAB-SLEEP_QUARTERS-04, HAB-SLEEP_QUARTERS-06, HAB-SLEEP_QUARTERS-09. Triage: desk P4.
+  - [ ] HAB-SLEEP_QUARTERS-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/SLEEP_QUARTERS/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-SLEEP_QUARTERS-02, HAB-SLEEP_QUARTERS-04, HAB-SLEEP_QUARTERS-06, HAB-SLEEP_QUARTERS-09. Status: partial: M2 at `models/mfg/SLEEP_QUARTERS/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] HAB-SLEEP_QUARTERS-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-SLEEP_QUARTERS-10, X-DWG-01. Triage: desk P4.
-  - [ ] HAB-SLEEP_QUARTERS-12 BOM. Done when: models/mfg/SLEEP_QUARTERS/bom.csv. Depends: HAB-SLEEP_QUARTERS-10. Triage: desk P4.
+  - [x] HAB-SLEEP_QUARTERS-12 BOM. Done when: models/mfg/SLEEP_QUARTERS/bom.csv. Depends: HAB-SLEEP_QUARTERS-10. Evidence: `models/mfg/SLEEP_QUARTERS/bom.csv`.
   - [x] HAB-SLEEP_QUARTERS-13 Fabrication route. Done when: docs-authority/fab/SLEEP_QUARTERS.md. Depends: HAB-SLEEP_QUARTERS-10, HAB-SLEEP_QUARTERS-12. Evidence: `docs-authority/fab/SLEEP_QUARTERS.md` (study route).
   - [ ] HAB-SLEEP_QUARTERS-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-SLEEP_QUARTERS-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] HAB-SLEEP_QUARTERS-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-SLEEP_QUARTERS-14, X-COM-01. Triage: hardware.
@@ -3484,9 +3484,9 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-WASHROOM-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-WASHROOM-02, HAB-WASHROOM-03. Evidence: `docs-authority/duties/WASHROOM.md` §6 (C7 closed on MASTER_PLAN).
   - [x] HAB-WASHROOM-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: HAB-WASHROOM-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] HAB-WASHROOM-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: HAB-WASHROOM-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] HAB-WASHROOM-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/WASHROOM/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-WASHROOM-02, HAB-WASHROOM-04, HAB-WASHROOM-06, HAB-WASHROOM-09. Triage: desk P4.
+  - [ ] HAB-WASHROOM-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/WASHROOM/ builds; acceptance per AQS-PLAN-006 section 5. Depends: HAB-WASHROOM-02, HAB-WASHROOM-04, HAB-WASHROOM-06, HAB-WASHROOM-09. Status: partial: M2 at `models/mfg/WASHROOM/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
   - [ ] HAB-WASHROOM-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: HAB-WASHROOM-10, X-DWG-01. Triage: desk P4.
-  - [ ] HAB-WASHROOM-12 BOM. Done when: models/mfg/WASHROOM/bom.csv. Depends: HAB-WASHROOM-10. Triage: desk P4.
+  - [x] HAB-WASHROOM-12 BOM. Done when: models/mfg/WASHROOM/bom.csv. Depends: HAB-WASHROOM-10. Evidence: `models/mfg/WASHROOM/bom.csv`.
   - [x] HAB-WASHROOM-13 Fabrication route. Done when: docs-authority/fab/WASHROOM.md. Depends: HAB-WASHROOM-10, HAB-WASHROOM-12. Evidence: `docs-authority/fab/WASHROOM.md` (study route).
   - [ ] HAB-WASHROOM-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: HAB-WASHROOM-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] HAB-WASHROOM-15 Test and commission. Done when: test procedure and acceptance record. Depends: HAB-WASHROOM-14, X-COM-01. Triage: hardware.

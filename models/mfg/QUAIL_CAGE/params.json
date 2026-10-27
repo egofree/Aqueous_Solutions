@@ -1,0 +1,13 @@
+{
+  "unit": "QUAIL_CAGE",
+  "form": "frame",
+  "size_mm": [
+    1300,
+    700,
+    1700
+  ],
+  "size_note": "20-hen Coturnix battery, 4 tiers x 0.075 m2/cage at the 0.025 kg/d ration class (A-M-422; TECHTREE coturnix.md) (X-FARM sec3)",
+  "material_class": "HDG_steel",
+  "wall_mm": 30,
+  "liner_mm": null
+}

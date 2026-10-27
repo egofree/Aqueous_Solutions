@@ -1,0 +1,23 @@
+{
+  "shell_bbox_mm": [
+    3600.0,
+    2100.0,
+    500.0
+  ],
+  "envelope_mm": [
+    3600,
+    2100,
+    500
+  ],
+  "inside_size_mm_shell": true,
+  "solids": 1,
+  "all_parts_valid": true,
+  "material_class": "HDPE",
+  "form": "tray",
+  "mass_kg": {
+    "basin_shell": 124.7,
+    "liner": 35.4
+  },
+  "empty_kg": 160.1,
+  "cad_stl_scope": "envelope-true build solid, mm (X-PAR-04 class; M3 roster acceptance)"
+}

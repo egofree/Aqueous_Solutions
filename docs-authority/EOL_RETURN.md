@@ -17,20 +17,20 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 638 | 47 % |
-| organic | 521 | 38 % |
-| metal_reactive | 84 | 6 % |
+| metal_plateable | 675 | 47 % |
+| organic | 541 | 38 % |
+| metal_reactive | 104 | 7 % |
 | silicate_oxide | 60 | 4 % |
-| unassigned | 55 | 4 % |
+| unassigned | 60 | 4 % |
 
-Unassigned: 55 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 60 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
 | fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 84 |
-| held - material not identified on the line | 48 |
+| held - material not identified on the line | 53 |
 | Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 25 |
 | held - material pending: no duty sheet yet; assigned at unit task 09 under AQS-STD-002 | 6 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
@@ -56,16 +56,16 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | AL_POT | 4 | 6 | 0 | 4 | 4 |
 | AMF | 0 | 3 | 0 | 0 | 0 |
 | ANIMAL_PEN | 0 | 4 | 0 | 0 | 0 |
-| AQUA_TANK | 0 | 0 | 0 | 0 | 2 |
-| AQUA_UV | 0 | 2 | 0 | 0 | 0 |
+| AQUA_TANK | 0 | 3 | 0 | 0 | 2 |
+| AQUA_UV | 3 | 2 | 0 | 0 | 0 |
 | ASH | 0 | 3 | 0 | 0 | 0 |
 | AZOLLA | 0 | 3 | 0 | 0 | 0 |
 | AZOLLA_BED | 0 | 3 | 0 | 0 | 0 |
 | BACKUP_GEN | 2 | 0 | 0 | 0 | 0 |
 | BAGHOUSE | 3 | 0 | 0 | 0 | 0 |
 | BEES | 0 | 3 | 0 | 0 | 0 |
-| BEE_HIVE | 2 | 0 | 0 | 0 | 0 |
-| BIOFILTER | 0 | 2 | 0 | 0 | 0 |
+| BEE_HIVE | 2 | 0 | 0 | 0 | 5 |
+| BIOFILTER | 0 | 6 | 0 | 0 | 0 |
 | BLACK_ALK_HOLD | 0 | 5 | 0 | 0 | 0 |
 | BLACK_DEWATER | 2 | 2 | 0 | 0 | 0 |
 | BLACK_DIGEST | 1 | 5 | 0 | 0 | 0 |
@@ -76,7 +76,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | BMED_UPW_POLISH | 2 | 0 | 0 | 0 | 0 |
 | BOARD_MILL | 4 | 0 | 0 | 0 | 0 |
 | BSFL | 0 | 4 | 0 | 0 | 0 |
-| BSFL_BIN | 0 | 2 | 0 | 0 | 0 |
+| BSFL_BIN | 0 | 3 | 0 | 0 | 0 |
 | BUCL | 0 | 2 | 0 | 5 | 0 |
 | BUOH_STILL | 0 | 0 | 0 | 3 | 0 |
 | C29_RECYCLE | 2 | 0 | 0 | 0 | 0 |
@@ -84,12 +84,12 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | CATCH_TANK | 0 | 2 | 0 | 0 | 0 |
 | CA_POT | 7 | 6 | 0 | 2 | 3 |
 | CHICKENS | 0 | 3 | 0 | 0 | 0 |
-| CHICKEN_COOP | 0 | 2 | 0 | 0 | 0 |
+| CHICKEN_COOP | 6 | 2 | 0 | 0 | 0 |
 | CLARIFIER | 0 | 4 | 0 | 0 | 0 |
 | CLOVER | 0 | 3 | 0 | 0 | 0 |
 | COLD_MILL | 2 | 0 | 0 | 0 | 0 |
 | COMB_HEAT | 0 | 0 | 0 | 2 | 1 |
-| COMMON_AREA | 0 | 0 | 1 | 0 | 0 |
+| COMMON_AREA | 0 | 0 | 6 | 0 | 0 |
 | COMPOST | 0 | 4 | 0 | 0 | 0 |
 | COMPOST_MYC | 0 | 3 | 0 | 0 | 0 |
 | COMPOST_TOILET | 0 | 3 | 0 | 0 | 0 |
@@ -126,8 +126,8 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | DRAW | 2 | 0 | 0 | 0 | 1 |
 | DRY_COOLER | 0 | 0 | 2 | 0 | 0 |
 | DUAL_ROOT | 0 | 3 | 0 | 0 | 0 |
-| DUCKWEED | 0 | 2 | 0 | 0 | 0 |
-| DUCK_PEN | 0 | 2 | 0 | 0 | 0 |
+| DUCKWEED | 0 | 4 | 0 | 0 | 0 |
+| DUCK_PEN | 5 | 2 | 0 | 0 | 0 |
 | ELECTRODE_COAT | 2 | 0 | 0 | 0 | 0 |
 | EMETH | 0 | 4 | 0 | 0 | 0 |
 | ETOH_STILL | 0 | 0 | 0 | 3 | 0 |
@@ -147,7 +147,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | EXTRUDE | 2 | 0 | 0 | 0 | 1 |
 | EXT_HALL | 1 | 0 | 0 | 0 | 0 |
 | FAB_UPW_TANK | 0 | 0 | 0 | 0 | 2 |
-| FEED_PREP | 2 | 0 | 0 | 0 | 0 |
+| FEED_PREP | 6 | 0 | 0 | 0 | 0 |
 | FILM_CAST | 9 | 1 | 0 | 0 | 1 |
 | FISH | 0 | 5 | 0 | 0 | 0 |
 | FISH_SUMP | 0 | 4 | 0 | 0 | 0 |
@@ -160,7 +160,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | FRUIT_GUTTER | 0 | 3 | 0 | 0 | 0 |
 | FUEL_CELL | 3 | 0 | 0 | 0 | 0 |
 | F_RECOVER | 0 | 2 | 0 | 0 | 0 |
-| GALLEY | 2 | 0 | 0 | 0 | 0 |
+| GALLEY | 2 | 0 | 5 | 0 | 0 |
 | GAS_ATOMIZER | 2 | 0 | 0 | 0 | 0 |
 | GEO_GHEX | 0 | 2 | 0 | 0 | 0 |
 | GEO_HP | 1 | 0 | 0 | 0 | 0 |
@@ -175,8 +175,8 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | GREASE_CA | 2 | 0 | 0 | 0 | 0 |
 | GREASE_LI | 2 | 0 | 0 | 0 | 0 |
 | GREY_TREAT | 0 | 3 | 0 | 0 | 0 |
-| GROWBED_A | 0 | 0 | 0 | 0 | 2 |
-| GROWBED_B | 0 | 2 | 0 | 0 | 0 |
+| GROWBED_A | 0 | 2 | 0 | 0 | 2 |
+| GROWBED_B | 0 | 4 | 0 | 0 | 0 |
 | GROW_BED | 0 | 2 | 0 | 0 | 0 |
 | GW_INTAKE | 0 | 0 | 0 | 0 | 2 |
 | H2O_ELYZ | 1 | 2 | 0 | 0 | 0 |
@@ -209,7 +209,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | LOAD_AGG | 1 | 0 | 0 | 0 | 0 |
 | MAU_HX | 0 | 0 | 1 | 0 | 0 |
 | MEAM | 4 | 1 | 0 | 3 | 0 |
-| MEDICAL | 1 | 0 | 0 | 0 | 0 |
+| MEDICAL | 6 | 0 | 0 | 0 | 0 |
 | MEOH_COND | 2 | 0 | 0 | 0 | 0 |
 | MEOH_FC | 2 | 0 | 0 | 0 | 0 |
 | MEOH_FERM | 0 | 6 | 0 | 0 | 0 |
@@ -367,7 +367,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | POLISH_BANK | 0 | 2 | 0 | 0 | 0 |
 | POLY_COND | 2 | 0 | 0 | 0 | 1 |
 | POLY_F | 6 | 5 | 0 | 0 | 0 |
-| POLY_FIBER | 2 | 0 | 0 | 0 | 0 |
+| POLY_FIBER | 6 | 0 | 0 | 0 | 0 |
 | POLY_OLEFIN | 5 | 4 | 0 | 0 | 0 |
 | POLY_STOCK | 0 | 5 | 0 | 0 | 0 |
 | POWDER_RESIN | 10 | 0 | 0 | 0 | 0 |
@@ -384,12 +384,12 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | Q3_B | 0 | 1 | 0 | 0 | 0 |
 | Q4_A | 0 | 1 | 0 | 0 | 0 |
 | Q4_B | 0 | 1 | 0 | 0 | 0 |
-| QUAIL_CAGE | 2 | 0 | 0 | 0 | 0 |
+| QUAIL_CAGE | 7 | 0 | 0 | 0 | 0 |
 | QUAT | 0 | 3 | 0 | 0 | 0 |
-| RABBIT_HUTCH | 0 | 2 | 0 | 0 | 0 |
+| RABBIT_HUTCH | 5 | 2 | 0 | 0 | 0 |
 | RECTIFIER | 1 | 0 | 0 | 0 | 0 |
 | RECT_EW | 1 | 0 | 0 | 0 | 0 |
-| REC_DAYROOM | 0 | 0 | 1 | 0 | 0 |
+| REC_DAYROOM | 0 | 0 | 6 | 0 | 0 |
 | RELIEF_CRYO | 2 | 0 | 0 | 0 | 0 |
 | RELIEF_H2 | 2 | 0 | 0 | 0 | 0 |
 | REMIN | 0 | 2 | 0 | 0 | 0 |
@@ -406,7 +406,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | SIC_FURNACE | 0 | 3 | 0 | 0 | 0 |
 | SINTER | 0 | 2 | 0 | 0 | 1 |
 | SI_REDUCE | 0 | 2 | 0 | 0 | 0 |
-| SLEEP_QUARTERS | 0 | 0 | 1 | 0 | 0 |
+| SLEEP_QUARTERS | 0 | 0 | 6 | 0 | 0 |
 | SOLAR_PV_CELL | 2 | 0 | 0 | 0 | 0 |
 | SOL_ARK_60K | 1 | 0 | 0 | 0 | 0 |
 | STOCK_OUT | 6 | 2 | 0 | 0 | 0 |
@@ -419,9 +419,9 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | VCD_TRAIN | 2 | 0 | 0 | 0 | 0 |
 | VDF_SYN | 3 | 6 | 0 | 0 | 0 |
 | VEG_BED | 0 | 3 | 0 | 0 | 0 |
-| VERMI_BIN | 0 | 2 | 0 | 0 | 0 |
+| VERMI_BIN | 0 | 3 | 0 | 0 | 0 |
 | WAFER_FAB | 3 | 0 | 0 | 0 | 0 |
-| WASHROOM | 0 | 2 | 0 | 0 | 0 |
+| WASHROOM | 0 | 7 | 0 | 0 | 0 |
 | WAX_PATTERN | 7 | 2 | 0 | 0 | 1 |
 | WET_BENCH | 0 | 2 | 0 | 0 | 0 |
 | WF-01 | 1 | 0 | 0 | 0 | 0 |
