@@ -18,3 +18,6 @@ N16,DN15,Class 150,nutrient solution,inlet,160
 N17,DN15,Class 150,irrigation,inlet,160
 N18,DN15,Class 150,bed transpiration,outlet,600
 N19,DN15,Class 150,nitrate and bleed salts,inlet,160
+N20,DN15,Class 150,canopy thinnings/greens: rabbit forage,outlet,600
+N21,DN15,Class 150,nectar/pollen forage from the canopy and greenhouse crops,outlet,600
+N22,DN15,Class 150,soft canopy residue to the vermi bin,outlet,600

@@ -402,3 +402,14 @@ design pass. site_outputs.run stamps the placements into the locale worktree gra
 and the reference graph is untouched. SITE_UNITS.md renders the register in the
 pipeline (doc_site_units stage); flow_graph/param/test_site_units.py and
 test_site_stamp.py prove the coverage, the stamp and its idempotence.
+
+## Addendum 29: aquaponic nitrogen-pathway correction
+
+The aquaponic loop stream descriptions corrected: fish excrete ammonia (NH3/NH4+)
+through their gills, not CO2, as their primary nitrogenous waste. The BIOFILTER is
+the critical unit that converts the toxic ammonia to plant-available nitrate via
+nitrification (Nitrosomonas: NH3 -> NO2-, then Nitrobacter: NO2- -> NO3-). The
+nitrifying bacteria are aerobic — the biofilter needs forced aeration (air stones or
+equivalent) or the ammonia builds to lethal levels within days. The nitrate is what
+the dual root-zone growbeds take up. Without the biofilter, the fish die and the
+plants starve — it is the keystone unit of the aquaponic loop.

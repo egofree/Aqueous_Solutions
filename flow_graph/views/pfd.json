@@ -3,8 +3,8 @@
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 178,
-  "edge_count": 565,
+  "node_count": 192,
+  "edge_count": 611,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -2769,7 +2769,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 336.8116,
+        "value": 336.8716,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2777,11 +2777,11 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 4984,
+        "count": 4986,
         "presence": "present",
-        "nameplate_kw": 2492,
+        "nameplate_kw": 2493,
         "area_m2": 21986,
-        "balance_kWp": 1246,
+        "balance_kWp": 1247,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -2948,8 +2948,8 @@
         "count": 35,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 1920.3,
-          "export_kWh_d_clear": 5392,
+          "export_peak_kW": 1920.2,
+          "export_kWh_d_clear": 5394,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2979,7 +2979,7 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 150.8,
+          "bus_demand_kW": 150.9,
           "section_rating_A": 300,
           "basis_A": 201.6,
           "MCC": "MCC-1A / MCC-1B",
@@ -3350,25 +3350,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 179.7238,
+        "value": 179.7838,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.8 kW, charge 817.2 kW, 2517 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 817,
+        "kW": 818,
         "kWh": 2517,
         "presence": "present",
-        "charge_kW": 817,
+        "charge_kW": 818,
         "discharge_kW": 180,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.379,
-          "purge_m3_h": 26.58,
+          "H2_m3_d": 6.381,
+          "purge_m3_h": 26.59,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1645.8
+          "electrode_area_m2": 1646.4
         }
       }
     },
@@ -7218,6 +7218,372 @@
           "material": "SA-240 304L, welded"
         }
       }
+    },
+    {
+      "unit_id": "AQUA_TANK",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "fish_tank",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "aquaponic fish tanks, 60 kg standing stock",
+          "stock_kg": 60.0,
+          "ration_kg_d": 0.9,
+          "basis": "A-M-415 (X-FARM-01)",
+          "ammonia_load": "fish excrete NH3/NH4+ through the gills: ~30 g NH4+-N per kg feed (protein metabolism); toxic above 1 mg/L un-ionised NH3",
+          "O2_demand": "dissolved O2 for fish respiration: ~5 mg/L minimum (aeration required); the air stones are the O2 source",
+          "notes_extra": "the fish are the ammonia SOURCE and the O2 SINK of the aquaponic loop; the biofilter bacteria are the ammonia CONSUMER and the O2 SINK"
+        }
+      },
+      "notes": "Aquaponic fish tanks (tilapia class, A-M-415): 60 kg standing stock on the D-DOCK grain supplement; waste circulates through BIOFILTER to the dual root-zone growbeds. Study."
+    },
+    {
+      "unit_id": "BIOFILTER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "biofilter",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "nitrifying biofilter \u2014 Nitrosomonas + Nitrobacter biofilm on moving-bed media",
+          "organisms": "Nitrosomonas europaea (NH3 -> NO2-); Nitrobacter winogradskyi (NO2- -> NO3-)",
+          "stoichiometry": "NH4+ + 1.5 O2 -> NO2- + 2H+ + H2O (Nitrosomonas); NO2- + 0.5 O2 -> NO3- (Nitrobacter); combined: NH4+ + 2 O2 -> NO3- + 2H+ + H2O",
+          "O2_demand": "2 mol O2 per mol NH4+ nitrified (4.57 mg O2 per mg NH4+-N); aerobic \u2014 the bacteria die without dissolved O2",
+          "pH": "7.0-8.5 optimal; below 6.5 the nitrification rate collapses",
+          "temperature": "25-30 C optimal; below 15 C nitrification slows dramatically",
+          "media": "moving-bed biofilm carriers (K1 micro class); surface area sets the bacterial population",
+          "failure_mode": "ammonia accumulates to lethal levels within 24-48 h if the bacteria die (O2 starvation, pH crash, chemical shock)",
+          "basis": "A-M-415; TECHTREE agriculture.aquaponics (nitrogen cycle); TECHTREE space-resources MELiSSA C2 nitrifying compartment"
+        }
+      },
+      "notes": "Nitrifying biofilter \u2014 the keystone biological unit of the aquaponic loop. Nitrosomonas oxidises ammonia to nitrite; Nitrobacter oxidises nitrite to nitrate. Aerobic: the bacteria consume 4.57 mg O2 per mg NH4+-N. Without dissolved O2, nitrification stops and the ammonia kills the fish within 24-48 h. The nitrate is the nitrogen source for the dual root-zone growbeds. The biofilm is the bacterial population \u2014 the moving-bed media is its habitat. Study."
+    },
+    {
+      "unit_id": "GROWBED_A",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "growbed",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "aquaponic root zone A (aerobic plant roots)",
+          "area_m2": 14.56,
+          "zones": "aerobic top / anaerobic mineralisation bottom (dual root zone)",
+          "basis": "A-M-229 area; A-M-415 loop"
+        }
+      },
+      "notes": "Dual root-zone aquaponic growbed A (aerobic plant-root zone, 14.56 m2 of the GROW_BED live area): receives the nitrified loop water; the crop roots are the GROW_BED canopy roots. A-M-229 area basis. Study."
+    },
+    {
+      "unit_id": "GROWBED_B",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "growbed",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "aquaponic root zone B (anaerobic mineralisation)",
+          "area_m2": 14.56,
+          "zones": "aerobic top / anaerobic mineralisation bottom (dual root zone)",
+          "basis": "A-M-229 area; A-M-415 loop"
+        },
+        "sec3_material": {
+          "mat": "HDPE tray with EPDM liner, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping",
+          "basis": "anaerobic mineralisation root zone (A-M-229; A-M-415): the bed runs sulfidic under the ponded tail, and sulfide plus loop-water contact excludes Cu/Zn/brass outright (ichthyotoxic to the fish stock the loop serves); LECA is the aquaponic media class (graph design). Selection per AQS-STD-002 with the duty section 2 environment.",
+          "alt": "PP tray if media abrasion ever shows on the HDPE floor (same polymer family, higher cost)",
+          "note": "the anaerobic half of the dual root zone; the aerobic half (GROWBED_A) carries its own issued selection.",
+          "task": "X-FARM-01"
+        }
+      },
+      "notes": "Dual root-zone aquaponic growbed B (anaerobic mineralisation zone, 14.56 m2): polishes the loop before the return to AQUA_TANK. A-M-229 area basis. Study."
+    },
+    {
+      "unit_id": "CHICKEN_COOP",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "coop",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "layer flock, 12 birds",
+          "stock_birds": 12.0,
+          "egg_kg_d": 0.6,
+          "feed_kg_d": 1.44,
+          "basis": "A-M-417 (X-FARM-02)"
+        },
+        "sec3_material": {
+          "mat": "Hot-dip galvanised steel frame and hardware cloth, SS316 feeders and waterers, HDPE drop-board liner",
+          "basis": "wet uric-acid manure with ammonia offgas and periodic wash-down (graph design; A-M-417): ammonia plus moisture pits zinc at the droppings line, so the wet contact points step up to SS316 (standard poultry-housing practice)",
+          "alt": "SS304 frame if wash-down frequency rises past the weekly class",
+          "note": "the drop board is the manure harvest surface to the BSFL bin.",
+          "task": "X-FARM-02"
+        }
+      },
+      "notes": "Dual-purpose layer flock, 12 birds (A-M-417): eggs to FOOD_STORE, manure to BSFL_BIN. Live on the grain supplement. Study."
+    },
+    {
+      "unit_id": "BSFL_BIN",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "bsfl_bin",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "BSFL larvae composting bin",
+          "feedstock_kg_d": 1.43,
+          "larvae_kg_d": 0.114,
+          "frass_kg_d": 0.357,
+          "basis": "A-M-418 (X-FARM-03)",
+          "organisms": "Hermetia illucens (black soldier fly) larvae: 5 instars, 14-18 d at 25-30 C; adults do not feed or bite",
+          "conversion": "1.4-2.0 kg wet biowaste per kg fresh larvae (TECHTREE insect-farming); substrate moisture 65-75 %",
+          "heat": "the larvae mass generates metabolic heat (the bin self-heats; above 40 C kills the larvae)"
+        },
+        "sec3_material": {
+          "mat": "HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no metal below the substrate line",
+          "basis": "substrate goes pH 4-6 under frass acids at 65-75 % moisture with self-heating toward 40 C (graph design; A-M-418): wet acid compost pits zinc and plate steel, HDPE/PP are inert across the whole range",
+          "alt": "FRP tray if bin scaling raises wall temperatures past the HDPE class",
+          "note": "larvae harvest is by self-separation up the ramp; the mesh is the pupa screen.",
+          "task": "X-FARM-03"
+        }
+      },
+      "notes": "Black-soldier-fly larvae composting: galley biowaste, poultry manure and fish sludge in; larvae to the layer ration, frass to the solids line (A-M-418). Study."
+    },
+    {
+      "unit_id": "GALLEY",
+      "sector_id": "HAB",
+      "presence": "present",
+      "class": "galley",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "galley / kitchen, 12 m2",
+          "area_m2": 12.0,
+          "basis": "A-M-419; AQS-HAB-001"
+        },
+        "sec3_material": {
+          "mat": "SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths",
+          "basis": "food-contact sanitation class with wipe-down chemistry (AQS-HAB-001; A-M-419): 304 is sufficient at the chloride-light galley service; Cu alloys are excluded from food paths outright (AQS-STD-002 food-contact rule)",
+          "alt": "SS316 where chlorinated sanitisers concentrate (same family, higher cost)",
+          "note": "the galley biowaste stream feeds the BSFL bin (A-M-418).",
+          "task": "X-HAB-01"
+        }
+      },
+      "notes": "Galley (kitchen), 12 m2 (AQS-HAB-001 room basis): meal preparation; biowaste to BSFL_BIN; prepared meals to the crew. Study."
+    },
+    {
+      "unit_id": "WASHROOM",
+      "sector_id": "HAB",
+      "presence": "present",
+      "class": "washroom",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "washroom / hygiene, 6 m2",
+          "area_m2": 6.0,
+          "basis": "A-M-419; AQS-HAB-001"
+        },
+        "sec3_material": {
+          "mat": "FRP wet-wall panels, SS304 fixtures, ceramic tile wet zones, SS drainage",
+          "basis": "continuous wet zone at habitable temperature (AQS-HAB-001; A-M-419): FRP and ceramic carry the standing condensate; 304 is the fixture class at the chloride-light service",
+          "alt": "SS316 fixtures where sanitiser chemistry concentrates",
+          "note": "grey water to the WTR loop; the washroom is the largest hab water consumer.",
+          "task": "X-HAB-01"
+        }
+      },
+      "notes": "Washroom (hygiene), 6 m2 (AQS-HAB-001 room basis): grey water to the treatment train. Study."
+    },
+    {
+      "unit_id": "DUCKWEED",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "duckweed",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "duckweed raceway (Lemna minor, azolla co-culture)",
+          "raceway_m2": 240.0,
+          "prod_g_dry_m2_d": 15.0,
+          "CP_frac": 0.3,
+          "basis": "A-M-420; TECHTREE aquaculture (Lemna 25-35 % CP)"
+        }
+      },
+      "notes": "Duckweed raceway (Lemna minor, azolla co-culture), 240 m2 on the aquaponic loop (A-M-420): 3.6 kg dry/d at 30 % CP \u2014 the base feed crop for the fish, the ducks and the layers, and the loop polisher after the growbeds. Study."
+    },
+    {
+      "unit_id": "DUCK_PEN",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "pen",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "duck pen, 6 Khaki Campbell ducks",
+          "stock": 6.0,
+          "egg_kg_d": 0.34,
+          "ration_kg_d": 0.9,
+          "basis": "A-M-421 (X-FARM-05)"
+        },
+        "sec3_material": {
+          "mat": "Hot-dip galvanised steel frame and hardware cloth, EPDM liner in the wallow, SS316 waterers",
+          "basis": "permanently wet pen with a wallow (graph design; A-M-421): standing water governs the zinc budget, so the wet zone is EPDM-lined and drinking-water contact is SS316",
+          "alt": "FRP wet panels in place of the liner if the pen geometry changes",
+          "note": "the ducks forage the aquaponic loop water; pen drainings join the BSFL feedstock.",
+          "task": "X-FARM-05"
+        }
+      },
+      "notes": "Duck pen, 6 Khaki Campbells (A-M-421): duckweed forage from the raceway, duck eggs to FOOD_STORE, manure to BSFL_BIN; wash water from the water cycle. TECHTREE poultry.ducks. Study."
+    },
+    {
+      "unit_id": "QUAIL_CAGE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "cage",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "coturnix quail cage bank, 20 hens",
+          "stock": 20.0,
+          "egg_kg_d": 0.06,
+          "ration_kg_d": 0.5,
+          "basis": "A-M-422 (X-FARM-06)"
+        },
+        "sec3_material": {
+          "mat": "Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers",
+          "basis": "dry droppings-tray service at the 20-hen Coturnix unit (graph design; A-M-422): HDG weld wire is the cage-battery standard; the only wet points are the nipples, so those alone are stainless",
+          "alt": "PVC-coated wire if foot dermatitis ever shows at the cage floor",
+          "note": "the droppings tray feeds the vermi bin directly.",
+          "task": "X-FARM-06"
+        }
+      },
+      "notes": "Coturnix quail cage bank, 20 hens indoors (A-M-422): quail eggs to FOOD_STORE, droppings to VERMI_BIN. TECHTREE poultry.coturnix. Study."
+    },
+    {
+      "unit_id": "RABBIT_HUTCH",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "hutch",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "rabbitry, 2 does + 1 buck",
+          "does": 2.0,
+          "forage_kg_d": 0.5,
+          "meat_kg_d": 0.1,
+          "basis": "A-M-423 (X-FARM-07)"
+        },
+        "sec3_material": {
+          "mat": "Hot-dip galvanised wire floor, HDPE rest mats, PP nest boxes, SS316 waterers",
+          "basis": "dry pellet manure on a wire floor with rest mats against sore hocks (graph design; A-M-423): HDG wire is the rabbitry floor standard and the rest mats are the welfare contact surface",
+          "alt": "SS wire floor if galvanising wears through at the door wear points",
+          "note": "cold manure goes direct to the soil root zones (A-M-423).",
+          "task": "X-FARM-07"
+        }
+      },
+      "notes": "Rabbitry, 2 does + 1 buck (A-M-423): forage on the canopy thinnings; dressed meat to FOOD_STORE; cold manure direct to GROWBED_B. TECHTREE rabbits. Study."
+    },
+    {
+      "unit_id": "BEE_HIVE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "hive",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "honey bee hive: pollination + honey",
+          "hives": 1.0,
+          "honey_kg_yr": "10-25",
+          "basis": "A-M-424 (X-FARM-08)"
+        },
+        "sec3_material": {
+          "mat": "Untreated solid-pine box bodies, SS316 screen bottom board, propolis-waxed interiors; no copper-bearing alloys and no treated lumber anywhere on the hive",
+          "basis": "Apis mellifera propolise rough untreated wood and are poisoned by lumber preservatives and copper salts (graph design; A-M-424): in the closed shell the hive may also not outgas into the habitable atmosphere, which is what excludes the polymer-hive class",
+          "alt": "none within the palette - the material is the biology interface here (a polymer hive is a process-change decision, not a materials trade)",
+          "note": "pollination service to the canopy is the primary output; honey and wax are secondary (A-M-424).",
+          "task": "X-FARM-08"
+        }
+      },
+      "notes": "Honey bee hive (A-M-424): pollination service to the greenhouse canopy (yield +20-30 %) and honey/wax to FOOD_STORE. TECHTREE beekeeping. Study."
+    },
+    {
+      "unit_id": "VERMI_BIN",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "worm_bin",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "vermiculture bin, Eisenia fetida",
+          "bin_m2": 2.0,
+          "basis": "A-M-425 (X-FARM-09)",
+          "organisms": "Eisenia fetida (red wiggler): surface-dwelling, no O2 requirement edge (the bin is aerobic through diffusion)",
+          "castings_quality": "vermicompost 1.5-2.5 % N, 1.0-1.5 % P, 1.0-1.5 % K in plant-available form + humic acids + growth hormones (TECHTREE vermiculture)"
+        },
+        "sec3_material": {
+          "mat": "HDPE bin with coco-coir and shredded-paper bedding, PP working fork, SS316 harvest screen",
+          "basis": "bedding held at 70-80 % moisture near neutral pH for Eisenia fetida (graph design; A-M-425): the wet near-neutral bedding is benign to HDPE/PP and hostile to unprotected steel; no metal contact with the casting harvest",
+          "alt": "FRP bin at larger areas (same polymer-class logic as the BSFL bin)",
+          "note": "castings 1.5-2.5 % N to the soil root zones (A-M-425).",
+          "task": "X-FARM-09"
+        }
+      },
+      "notes": "Vermiculture bin, 2 m2 Eisenia fetida (A-M-425): soft canopy residue to vermicompost and worm tea for the growbeds. TECHTREE soil-management.vermiculture. Study."
     }
   ],
   "edges": [
@@ -9119,7 +9485,7 @@
         "value": 319.60396,
         "unit": "kg/d",
         "status": "study",
-        "note": "Mid of AQS-AUD-001 \u00a711 grey \u2192 treat/VCD ~100\u2013120 L/d | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4) (AQS-PAR-003)."
+        "note": "grey/solids (the farm-protein metabolic load is inside this total: AQS-FARM-001) | X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH retired; 91d33f4) (AQS-PAR-003)."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "WTR",
@@ -10577,10 +10943,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 755.229337,
+        "value": 755.481467,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: HER 5.43 + open-circuit 0.95 m3/d H2 on 3594 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL: HER 5.43 + open-circuit 0.95 m3/d H2 on 3596 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -10600,7 +10966,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 755.229337,
+        "value": 755.481467,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -11143,7 +11509,8 @@
         "note": "AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
-      "to_sector_id": "FAB"
+      "to_sector_id": "FAB",
+      "open_boundary": false
     },
     {
       "stream_id": "S34B",
@@ -11165,7 +11532,8 @@
         "note": "Phosphate feed 0.620 less dopant 0.010. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
-      "to_sector_id": "FAB"
+      "to_sector_id": "FAB",
+      "open_boundary": false
     },
     {
       "stream_id": "F_RECOVER_TO_HF_GEN",
@@ -13687,7 +14055,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 336.8116,
+        "value": 336.8716,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -21054,7 +21422,7 @@
         "value": 4.2,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: food store passes the harvest at steady state (D-DOCK buffer, A-M-270). | X-PAR-02 TF: food store passes the harvest to the galley at steady state (D-DOCK buffer, A-M-270) (AQS-PAR-003)."
+        "note": "food issue to the habitation (the farm protein is inside this total: AQS-FARM-001) | X-PAR-02 TF: food store passes the harvest to the galley at steady state (D-DOCK buffer, A-M-270) (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "HAB",
@@ -22947,6 +23315,1018 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "AQUA_LOOP1",
+      "from_unit_id": "AQUA_TANK",
+      "to_unit_id": "BIOFILTER",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "ammonia-rich fish waste water (NH3/NH4+ from the gills)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "ammonia load: fish protein metabolism ~16 % N by mass (A-M-415); the BIOFILTER nitrifies NH3 -> NO2 -> NO3 before the root zones"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "AQUA_NUT",
+      "from_unit_id": "BIOFILTER",
+      "to_unit_id": "GROWBED_A",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "nitrified water (NO3- nitrate, plant-available nitrogen)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "the BIOFILTER converts NH3/NH4+ -> NO2- (Nitrosomonas) -> NO3- (Nitrobacter); aerobic, O2-limited without aeration"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "AQUA_LOOP3",
+      "from_unit_id": "GROWBED_A",
+      "to_unit_id": "GROWBED_B",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "nitrate water through the aerobic root zone (plant uptake + anaerobic mineralisation layer)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-CHICK-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "CHICKEN_COOP",
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
+      "carries": "flock drinking water",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "EGG_HARVEST",
+      "from_unit_id": "CHICKEN_COOP",
+      "to_unit_id": "FOOD_STORE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "eggs to the food store",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "CHICK_MANURE",
+      "from_unit_id": "CHICKEN_COOP",
+      "to_unit_id": "BSFL_BIN",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "poultry manure to the larvae bin",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "CHICK_VAP",
+      "from_unit_id": "CHICKEN_COOP",
+      "to_unit_id": "CRYO_AHU",
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "carries": "flock respiration/evaporation",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FISH_SLUDGE",
+      "from_unit_id": "AQUA_TANK",
+      "to_unit_id": "BSFL_BIN",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "fish sludge to the larvae bin",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "LARVAE_FEED",
+      "from_unit_id": "BSFL_BIN",
+      "to_unit_id": "CHICKEN_COOP",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "larvae meal to the layer ration",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FRASS",
+      "from_unit_id": "BSFL_BIN",
+      "to_unit_id": "HOPPER",
+      "from_sector_id": "FARM",
+      "to_sector_id": "OIL",
+      "carries": "frass compost to the solids line",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "BSFL_VAP",
+      "from_unit_id": "BSFL_BIN",
+      "to_unit_id": "CRYO_AHU",
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "carries": "bin respiration/evaporation",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FOOD_GALLEY",
+      "from_unit_id": "FOOD_STORE",
+      "to_unit_id": "GALLEY",
+      "from_sector_id": "FARM",
+      "to_sector_id": "HAB",
+      "carries": "food issue to the galley",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "GALLEY_MEALS",
+      "from_unit_id": "GALLEY",
+      "to_unit_id": "HABITATION",
+      "from_sector_id": "HAB",
+      "to_sector_id": "HAB",
+      "carries": "prepared meals to the crew",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "GALLEY_BIO",
+      "from_unit_id": "GALLEY",
+      "to_unit_id": "BSFL_BIN",
+      "from_sector_id": "HAB",
+      "to_sector_id": "FARM",
+      "carries": "galley biowaste to the larvae bin",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "WASH_GREY",
+      "from_unit_id": "WASHROOM",
+      "to_unit_id": "GREY_TREAT",
+      "from_sector_id": "HAB",
+      "to_sector_id": "WTR",
+      "carries": "wash grey water to the treatment train",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FISH_HARVEST",
+      "from_unit_id": "AQUA_TANK",
+      "to_unit_id": "FOOD_STORE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "fish harvest to the food store",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001/AQS-HAB-002)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-AQUA-TOPUP",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "AQUA_TANK",
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
+      "carries": "loop top-up: root-zone growth water and evaporation",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-DUCK-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "DUCK_PEN",
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
+      "carries": "duck drinking/washing water",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-WASH-FEED",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "WASHROOM",
+      "from_sector_id": "WTR",
+      "to_sector_id": "HAB",
+      "carries": "wash-water feed to the washroom fixtures",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "AQUA_LOOP4",
+      "from_unit_id": "GROWBED_B",
+      "to_unit_id": "DUCKWEED",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "loop water to the duckweed raceway (polisher + feed crop)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "AQUA_RETURN2",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "AQUA_TANK",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "polished loop water return (2.2 kg/d duckweed growth drawn from the loop)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_FISH",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "AQUA_TANK",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_LAYERS",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "CHICKEN_COOP",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "duckweed: layer ration base (dry-equivalent)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "FOOD_HAB",
+      "from_unit_id": "FOOD_STORE",
+      "to_unit_id": "HABITATION",
+      "from_sector_id": "FARM",
+      "to_sector_id": "HAB",
+      "carries": "food issue to the habitation (direct)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_EGGS",
+      "from_unit_id": "DUCK_PEN",
+      "to_unit_id": "FOOD_STORE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "duck eggs to the food store",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_MANURE",
+      "from_unit_id": "DUCK_PEN",
+      "to_unit_id": "BSFL_BIN",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "duck manure to the larvae bin",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_VAP",
+      "from_unit_id": "DUCK_PEN",
+      "to_unit_id": "CRYO_AHU",
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "carries": "duck pen evaporation",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "QUAIL_FEED",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "QUAIL_CAGE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "duckweed/larvae quail ration (dry-equivalent)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "QUAIL_H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "QUAIL_CAGE",
+      "from_sector_id": "WTR",
+      "to_sector_id": "FARM",
+      "carries": "quail water",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "QUAIL_EGGS",
+      "from_unit_id": "QUAIL_CAGE",
+      "to_unit_id": "FOOD_STORE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "quail eggs to the food store",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "QUAIL_DROP",
+      "from_unit_id": "QUAIL_CAGE",
+      "to_unit_id": "VERMI_BIN",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "quail droppings to the vermi bin",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "QUAIL_VAP",
+      "from_unit_id": "QUAIL_CAGE",
+      "to_unit_id": "CRYO_AHU",
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "carries": "cage evaporation",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "RABBIT_FORAGE",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "RABBIT_HUTCH",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "canopy thinnings/greens: rabbit forage",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "RABBIT_MEAT",
+      "from_unit_id": "RABBIT_HUTCH",
+      "to_unit_id": "FOOD_STORE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "dressed rabbit meat to the food store",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "RABBIT_MANURE",
+      "from_unit_id": "RABBIT_HUTCH",
+      "to_unit_id": "GROWBED_B",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "cold rabbit manure direct to the mineralisation zone",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "RABBIT_VAP",
+      "from_unit_id": "RABBIT_HUTCH",
+      "to_unit_id": "CRYO_AHU",
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "carries": "hutch evaporation",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "NECTAR_FORAGE",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "BEE_HIVE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "nectar/pollen forage from the canopy and greenhouse crops",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "HONEY",
+      "from_unit_id": "BEE_HIVE",
+      "to_unit_id": "FOOD_STORE",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "honey to the food store (annual average)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "BEE_VAP",
+      "from_unit_id": "BEE_HIVE",
+      "to_unit_id": "CRYO_AHU",
+      "from_sector_id": "FARM",
+      "to_sector_id": "CRYO",
+      "carries": "hive evaporation",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "VERMI_FEED",
+      "from_unit_id": "GROW_BED",
+      "to_unit_id": "VERMI_BIN",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "soft canopy residue to the vermi bin",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "VERMICOMPOST",
+      "from_unit_id": "VERMI_BIN",
+      "to_unit_id": "GROWBED_A",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "vermicompost to the growbed soil",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "WORM_TEA",
+      "from_unit_id": "VERMI_BIN",
+      "to_unit_id": "GROWBED_A",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "worm tea to the growbed soil",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_FODDER",
+      "from_unit_id": "DUCKWEED",
+      "to_unit_id": "DUCK_PEN",
+      "from_sector_id": "FARM",
+      "to_sector_id": "FARM",
+      "carries": "fresh duckweed forage (ad lib)",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "DUCK_GREY",
+      "from_unit_id": "DUCK_PEN",
+      "to_unit_id": "GREY_TREAT",
+      "from_sector_id": "FARM",
+      "to_sector_id": "WTR",
+      "carries": "duck wash water",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster)"
+      },
+      "notes": "X-FARM build-out (AQS-FARM-001)",
+      "phase": "liquid",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-AIR-AQUA",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AQUA_TANK",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "air pump electrical load: O2 aeration for the fish",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "air pump 40 W: dissolved O2 for the fish (5 mg/L minimum) and the biofilter nitrification (A-M-415)"
+      },
+      "notes": "X-FARM build-out: the air stones are the O2 source for the fish and the nitrifying bacteria",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-AIR-BIO",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BIOFILTER",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "air pump electrical load: O2 for the nitrifying bacteria",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "biofilter aeration 20 W: the nitrifying bacteria are aerobic (4.57 mg O2/mg NH4+-N); A-M-415"
+      },
+      "notes": "X-FARM build-out: without O2 the nitrification stops and the ammonia kills the fish",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

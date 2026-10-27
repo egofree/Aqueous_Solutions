@@ -1368,6 +1368,23 @@
    ]
   },
   {
+   "name": "farm_hab_design",
+   "argv": [
+    "python3",
+    "docs-authority/_farm_hab.py",
+    "--write"
+   ],
+   "outputs": [
+    "docs-authority/FARM_DESIGN.md",
+    "docs-authority/HAB_DESIGN.md"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "quick": true,
+   "note": "X-FARM/X-HAB (AQS-FARM-001, AQS-HAB-002): the FARM and HAB sector design studies - unit rosters, drivers arithmetic, sizing basis and the X-FARM/X-HAB material selections (A-M-415..425)."
+  },
+  {
    "name": "unit_sizing_sweep",
    "argv": [
     "python3",
@@ -2566,6 +2583,7 @@
     "duty_basis",
     "ew_busbar",
     "ew_sizing_doc",
+    "farm_hab_design",
     "foam_ew_cut_list",
     "foundry_sizing_doc",
     "gas_species",

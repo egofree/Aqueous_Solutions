@@ -4,7 +4,7 @@ Class: cell; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 800×800×1600 mm;
 service line: service molten MgCl2 electrolysis cell (Kroll Mg recycle), 700 C; chemistry MgCl2 -> Mg + Cl2; feed_kg_d 1.989; metal_kg_d 0.5078; cl2_kg_d 
 
-Internals: issued mfg model BOM (1 internals part row): "5,Hood with gas offtake DN80 and dip leg,1,"CS hood, Hastelloy C-276 dip leg",1.4813 kg/d Cl2 to the Kroll loo" [models/mfg/MG_POT/bom.csv]
+Internals: issued mfg model BOM (3 internals part row): "step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per AQS-DUTY-07" [models/mfg/MG_POT/bom.csv]
 Material: Graphite anodes, steel cathode plates, mullite-class alumina-silica refractory cell lining in a mild-steel shell; skim launder kept graphite-wetted. Basis: molten MgCl2 at 700 C: the industrial MgCl2-electrolysis pot class is graphite anodes + steel cathodes (ULLMANN_MAGNESIUM); alloy containment loses Cr to the melt (DING2021_ENG, KRUIZENGA2012); backup lining per SCHACHT2004. (continues on the duty sheet)
 
 Nozzles: 8 process connections per docs-authority/nozzles/MG_POT.csv

@@ -1,50 +1,5 @@
 item,description,qty,material,basis
-1,Body / envelope 3000 x 5000 x 1200 mm,1,HDPE or PVC for the water.,docs-authority/duties/BIOFILTER.md
-2,Process nozzle DN15,6,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
-3,Process nozzle DN20,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
-4,Process nozzle DN50,1,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
-5,Open vent DN50,1,HDPE or PVC for the water.,"API 2000, A-M-155"
-6,"Motor: transfer pump IA-BIO-BED to GROW_BED (BLDC, 57 mm (NEMA 23 flange))",1,-,AQS-INV-001 / AQS-INV-005
-7,"Motor: transfer pump IA-BIO-VEG to VEG_BED (BLDC, 57 mm (NEMA 23 flange))",1,-,AQS-INV-001 / AQS-INV-005
-8,"Motor: transfer pump IA-BIO-WEED to DUCKWEED (BLDC, 57 mm (NEMA 23 flange))",1,-,AQS-INV-001 / AQS-INV-005
-9,"Motor: transfer pump IA-CLOSE-0 to NUTRIENT_DOSE (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-10,"Motor: transfer pump IA-NFT-IN to NFT (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-11,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-12,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-13,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-14,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-15,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-16,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-17,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-18,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-19,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-20,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-21,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-22,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-23,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-24,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-25,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-26,fastener: anchor bolt M10,82,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-27,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-28,fastener: anchor bolt M10,20,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-29,fastener: anchor bolt M10,34,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-30,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-31,instrument: flow transmitter DN20,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-32,instrument: flow transmitter DN50,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-33,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-34,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-35,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-36,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-37,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-38,support: pipe clamp DN15,41,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-39,support: pipe clamp DN20,14,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-40,support: pipe clamp DN50,10,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-41,support: pipe clamp DN15,17,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-42,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-43,valve: check valve DN20,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-44,valve: check valve DN50,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-45,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
-46,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-47,valve: isolation valve DN20,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-48,valve: isolation valve DN50,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
-49,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,docs-authority/duties/BIOFILTER.md
+2,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
+3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

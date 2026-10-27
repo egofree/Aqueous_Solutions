@@ -59,7 +59,7 @@ def test_tree_file_passes_validation(tree: SystemTree, graph: dict) -> None:
     """The YAML on disk loads and validates against the live graph."""
     report = tree.validate(graph)
     assert report["ok"] is True
-    assert report["leaves"] == report["graph_units"] == 195
+    assert report["leaves"] == report["graph_units"] == 213
     assert report["roots"] == report["sector_count"] == 19
 
 
@@ -71,7 +71,7 @@ def test_bijection_leaf_set_equals_graph_unit_set_both_directions(
     assert leaves == units
     # each unit at exactly one leaf
     placed = [n.unit_id for n in tree.nodes if n.unit_id is not None]
-    assert len(placed) == len(set(placed)) == 195
+    assert len(placed) == len(set(placed)) == 213
 
 
 def test_drift_guard_graph_unit_removed_without_tree_update_fails(
@@ -151,13 +151,13 @@ def test_cycle_free_and_parent_integrity() -> None:
 
 def test_tree_shape(tree: SystemTree) -> None:
     stats = tree.stats()
-    assert stats["by_level"] == {0: 19, 1: 31, 2: 105, 3: 111}
-    assert stats["nodes"] == 266
-    assert stats["trains"] == 31
+    assert stats["by_level"] == {0: 19, 1: 34, 2: 123, 3: 111}
+    assert stats["nodes"] == 287
+    assert stats["trains"] == 34
     assert stats["subsystems"] == 22
-    assert stats["leaves"] == 195
+    assert stats["leaves"] == 213
     # standby trains are descriptions, never hidden units
-    assert sum(stats["units_per_root"].values()) == 195
+    assert sum(stats["units_per_root"].values()) == 213
 
 
 # ----------------------------------------------------------------------
@@ -187,7 +187,7 @@ def test_resolve_units(tree: SystemTree) -> None:
     resolved: list[str] = []
     for r in roots:
         resolved += sorted(tree.resolve_units(r))
-    assert len(resolved) == len(set(resolved)) == 195
+    assert len(resolved) == len(set(resolved)) == 213
     with pytest.raises(KeyError):
         tree.resolve_units("FOUNDRY.nonexistent-train")
 
@@ -206,7 +206,21 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     # PV 336.8304 -> 336.8121 (2026-10-24): the BACKUP_GEN exercise burns hydrogen first (S45), which needs less O2
     # than the C5-C10 cut, so CRYO_ASU and H2O_ELYZ draw less and the balancing PV average follows (A-M-383)
     # PV 336.8121 -> 336.8116 (2026-10-25): pumps and heads read the profile gravity 9.80665 m/s2 instead of 9.81 (Q-032)
-    assert gen["kw_sum"] == pytest.approx(336.8116 + 4.0 + 0.0082)   # PV 336.8116 (profile gravity, Q-032)
+    # generation kW is derived, not pinned (2026-10-26 parametric pass). PV_ARRAY is the
+    # write_graph power() live derivation (average delivered = balancing energy / 24 h,
+    # AQS-NOTE-PV-REBASE Rev A section 8, A-M-233/A-M-234/D75); it moves whenever the demand
+    # model moves (2026-10-26: +0.06 kW for the farm aeration pumps IA-AIR-AQUA + IA-AIR-BIO),
+    # so no copy of it lives here. The derivation is written twice — node continuous_kw and the
+    # IA-PV-01 edge rate — and the test requires the two to agree (stale-writer guard).
+    # mvs.electrical.target_kw is deliberately NOT compared to it: it is the INSTALLED array's
+    # mean-day average (pv_oversize x roof factor x the same balancing basis) — a different
+    # quantity. FUEL_CELL and BACKUP_GEN are model inputs, and those stay pinned:
+    _by_unit = {n["unit_id"]: n for n in graph["nodes"]}
+    _pv = _by_unit["PV_ARRAY"]["continuous_kw"]["value"]
+    _pv_edge = next(e for e in graph["edges"] if e["stream_id"] == "IA-PV-01")["rate"]["value"]
+    assert _pv == _pv_edge
+    assert _by_unit["FUEL_CELL"]["continuous_kw"]["value"] == 4.0   # REQ-FC-CONT
+    assert _by_unit["BACKUP_GEN"]["continuous_kw"]["value"] == pytest.approx(0.0082)   # X-PAR-12 standby, NFPA 110 exercise average
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(
@@ -330,7 +344,7 @@ def test_enabled_units_helper_effective_set() -> None:
     on = _enabled_units(m)
     # 178 (2026-10-19): EVAP_ACID_VS sector stamp fixed WET->DIGESTER, so the
     # sector-aware set now includes every unit (the 177 exception is closed).
-    assert len(on) == 195
+    assert len(on) == 213
     assert "EVAP_ACID_VS" in on   # sector stamp fixed WET->DIGESTER 2026-10-19: now included
     # unit off leaves the set even with the sector on
     m2 = copy.deepcopy(m)

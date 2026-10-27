@@ -1,5 +1,6 @@
-"""X-MAT-22 lane gates: the 38 held units each carry an issued duty section 3 material
-selection (AQS-STD-006, A-M-318..328); the roster section 3 sweep is clean, the internals
+"""X-MAT-22 lane gates (AQS-STD-006, A-M-318..328): the 38 held units each carry an issued duty
+section 3 material selection; the X-FARM/X-HAB lane (materials3.SEL_FARM, A-M-415..425) extends
+the same gate to the FARM/HAB build-out units. The roster section 3 sweep is clean, the internals
 task-09 hold is gone, the brine family of AQS-STD-002 section 12.2 is issued, and the
 new refs.py sources of the lane exist."""
 import csv, json, os, re, sys
@@ -13,7 +14,12 @@ def _sel():
 
 def test_sec3_selections_issued_and_rendered():
     sel = _sel()
-    assert len(sel) == 38, sorted(sel)[:3]
+    # the selections are derived from the issued lanes, not pinned (2026-10-26 parametric pass):
+    # the graph carries exactly what flow_graph/param/materials3.py issues (stale-writer guard),
+    # and the closed X-MAT-22 task-09 batch keeps its audited 38-unit roster
+    from flow_graph.param import materials3
+    assert set(sel) == set(materials3.SEL) | set(materials3.SEL_FARM)
+    assert len(materials3.SEL) == 38
     for u, s in sel.items():
         assert all(s.get(k) for k in ('mat', 'basis', 'alt', 'note', 'task')), u
         d = open(f'{ROOT}/docs-authority/duties/{u}.md').read()
@@ -21,7 +27,7 @@ def test_sec3_selections_issued_and_rendered():
         assert m3, f'no duty section 3 on {u}'
         t = m3.group(0)
         assert 'Selection pending' not in t and 'Not chosen' not in t, u
-        assert 'Basis:' in t and 'Alternative:' in t and '(X-MAT-22)' in t, u
+        assert 'Basis:' in t and 'Alternative:' in t and f"({s['task']})" in t, u
 
 def test_std002_122_brine_family_issued():
     s = open(f'{ROOT}/docs-authority/MATERIALS_STD.md').read()

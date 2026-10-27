@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 4.2 kg/d. Mass out 4.2 kg/d. Electrical duty 0.0000 kW. In: S14 4.2 kg/d (food). Out: S14D 4.2 kg/d (food).
+1. Basis. Mass in 4.2 kg/d. Mass out 4.2 kg/d. Electrical duty 0.0000 kW. In: S14 4.2 kg/d (food); EGG_HARVEST 0 kg/d (eggs to the food store); FISH_HARVEST 0 kg/d (fish harvest to the food store); DUCK_EGGS 0 kg/d (duck eggs to the food store); 3 more. Out: S14D 4.2 kg/d (food); FOOD_GALLEY 0 kg/d (food issue to the galley); FOOD_HAB 0 kg/d (food issue to the habitation (direct)).
 
 2. Size.
 - Envelope 650×650×750 mm, 0.3169 m³. That box over this flow would be 1810.9 h if it were full. It is not a residence time.

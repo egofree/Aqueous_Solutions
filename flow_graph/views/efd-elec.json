@@ -3,8 +3,8 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 87,
-  "edge_count": 91,
+  "node_count": 89,
+  "edge_count": 93,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -1573,7 +1573,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 336.8116,
+        "value": 336.8716,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1581,11 +1581,11 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 4984,
+        "count": 4986,
         "presence": "present",
-        "nameplate_kw": 2492,
+        "nameplate_kw": 2493,
         "area_m2": 21986,
-        "balance_kWp": 1246,
+        "balance_kWp": 1247,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -1655,8 +1655,8 @@
         "count": 35,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 1920.3,
-          "export_kWh_d_clear": 5392,
+          "export_peak_kW": 1920.2,
+          "export_kWh_d_clear": 5394,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -1686,7 +1686,7 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 150.8,
+          "bus_demand_kW": 150.9,
           "section_rating_A": 300,
           "basis_A": 201.6,
           "MCC": "MCC-1A / MCC-1B",
@@ -1820,25 +1820,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 179.7238,
+        "value": 179.7838,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.8 kW, charge 817.2 kW, 2517 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 817,
+        "kW": 818,
         "kWh": 2517,
         "presence": "present",
-        "charge_kW": 817,
+        "charge_kW": 818,
         "discharge_kW": 180,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 35 hybrid inverters, 71.9 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.379,
-          "purge_m3_h": 26.58,
+          "H2_m3_d": 6.381,
+          "purge_m3_h": 26.59,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1645.8
+          "electrode_area_m2": 1646.4
         }
       }
     },
@@ -4287,6 +4287,54 @@
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73); X-PAR-10 vent scrubber (AQS-DUTY-061). Sump recirculation pump 350 L/h at the minimum wetting rate (PERRY9_ABS), 10 m head, 40 % efficiency (study)."
       }
+    },
+    {
+      "unit_id": "AQUA_TANK",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "fish_tank",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "aquaponic fish tanks, 60 kg standing stock",
+          "stock_kg": 60.0,
+          "ration_kg_d": 0.9,
+          "basis": "A-M-415 (X-FARM-01)",
+          "ammonia_load": "fish excrete NH3/NH4+ through the gills: ~30 g NH4+-N per kg feed (protein metabolism); toxic above 1 mg/L un-ionised NH3",
+          "O2_demand": "dissolved O2 for fish respiration: ~5 mg/L minimum (aeration required); the air stones are the O2 source",
+          "notes_extra": "the fish are the ammonia SOURCE and the O2 SINK of the aquaponic loop; the biofilter bacteria are the ammonia CONSUMER and the O2 SINK"
+        }
+      },
+      "notes": "Aquaponic fish tanks (tilapia class, A-M-415): 60 kg standing stock on the D-DOCK grain supplement; waste circulates through BIOFILTER to the dual root-zone growbeds. Study."
+    },
+    {
+      "unit_id": "BIOFILTER",
+      "sector_id": "FARM",
+      "presence": "present",
+      "class": "biofilter",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "nitrifying biofilter \u2014 Nitrosomonas + Nitrobacter biofilm on moving-bed media",
+          "organisms": "Nitrosomonas europaea (NH3 -> NO2-); Nitrobacter winogradskyi (NO2- -> NO3-)",
+          "stoichiometry": "NH4+ + 1.5 O2 -> NO2- + 2H+ + H2O (Nitrosomonas); NO2- + 0.5 O2 -> NO3- (Nitrobacter); combined: NH4+ + 2 O2 -> NO3- + 2H+ + H2O",
+          "O2_demand": "2 mol O2 per mol NH4+ nitrified (4.57 mg O2 per mg NH4+-N); aerobic \u2014 the bacteria die without dissolved O2",
+          "pH": "7.0-8.5 optimal; below 6.5 the nitrification rate collapses",
+          "temperature": "25-30 C optimal; below 15 C nitrification slows dramatically",
+          "media": "moving-bed biofilm carriers (K1 micro class); surface area sets the bacterial population",
+          "failure_mode": "ammonia accumulates to lethal levels within 24-48 h if the bacteria die (O2 starvation, pH crash, chemical shock)",
+          "basis": "A-M-415; TECHTREE agriculture.aquaponics (nitrogen cycle); TECHTREE space-resources MELiSSA C2 nitrifying compartment"
+        }
+      },
+      "notes": "Nitrifying biofilter \u2014 the keystone biological unit of the aquaponic loop. Nitrosomonas oxidises ammonia to nitrite; Nitrobacter oxidises nitrite to nitrate. Aerobic: the bacteria consume 4.57 mg O2 per mg NH4+-N. Without dissolved O2, nitrification stops and the ammonia kills the fish within 24-48 h. The nitrate is the nitrogen source for the dual root-zone growbeds. The biofilm is the bacterial population \u2014 the moving-bed media is its habitat. Study."
     }
   ],
   "edges": [
@@ -4581,7 +4629,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 336.8116,
+        "value": 336.8716,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -6679,6 +6727,50 @@
       "namespace": "S",
       "gap_flags": [],
       "notes": null
+    },
+    {
+      "stream_id": "IA-AIR-AQUA",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "AQUA_TANK",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "air pump electrical load: O2 aeration for the fish",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.04,
+        "unit": "kW",
+        "status": "study",
+        "note": "air pump 40 W: dissolved O2 for the fish (5 mg/L minimum) and the biofilter nitrification (A-M-415)"
+      },
+      "notes": "X-FARM build-out: the air stones are the O2 source for the fish and the nitrifying bacteria",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
+    },
+    {
+      "stream_id": "IA-AIR-BIO",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "BIOFILTER",
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FARM",
+      "carries": "air pump electrical load: O2 for the nitrifying bacteria",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "rate": {
+        "value": 0.02,
+        "unit": "kW",
+        "status": "study",
+        "note": "biofilter aeration 20 W: the nitrifying bacteria are aerobic (4.57 mg O2/mg NH4+-N); A-M-415"
+      },
+      "notes": "X-FARM build-out: without O2 the nitrification stops and the ammonia kills the fish",
+      "phase": "electric",
+      "namespace": "IA",
+      "open_boundary": false
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

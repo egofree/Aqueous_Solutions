@@ -1,0 +1,20 @@
+# GALLEY
+
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
+
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: FOOD_GALLEY 0 kg/d (food issue to the galley). Out: GALLEY_MEALS 0 kg/d (prepared meals to the crew); GALLEY_BIO 0 kg/d (galley biowaste to the larvae bin).
+
+2. Size.
+- Graph design (AQS-PAR-001 sizing): service galley / kitchen, 12 m2; area_m2 12; basis A-M-419; AQS-HAB-001.
+
+3. Material. SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths. Basis: food-contact sanitation class with wipe-down chemistry (AQS-HAB-001; A-M-419): 304 is sufficient at the chloride-light galley service; Cu alloys are excluded from food paths outright (AQS-STD-002 food-contact rule) Alternative: SS316 where chlorinated sanitisers concentrate (same family, higher cost). the galley biowaste stream feeds the BSFL bin (A-M-418). (X-HAB-01)
+
+4. Nozzles. Schedule at `nozzles/GALLEY.csv` (unit task 04): one row per process connection (mass kg/d and heat-loop kW edges), service text matching the edge `carries`. Bore is the AQS-PIP-004 line DN (AQS-PIP-003: the piped bore is the nozzle bore basis); bores are not recalculated here. Elevations are the schedule placeholders pending vessel design (unit tasks 02/06).
+
+5. Instruments. Loops GALLEYPT-01 in AQS-CTL-001. What trips is stated on the loop.
+
+6. Relief. Relief case study pending (unit task 07). No set point is claimed on this page. Not to the room.
+
+7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). No CAD envelope issued yet.
+
+8. Open items. Sizing calculation pending (unit task 02). Material selection pending (unit task 09). Relief case pending (unit task 07). Nozzle elevations are schedule placeholders, not designed elevations (unit tasks 02/06).

@@ -211,3 +211,7 @@ HZ-209,METAL_STORE,flow,More,high-level or high-flow protection,X-CTL-03,closed 
 HZ-210,METAL_STORE,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/METAL_STORE.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
 HZ-211,AIR_RECEIVER,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-079 (AQS-CTL-003)
 HZ-212,AIR_RECEIVER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/AIR_RECEIVER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
+HZ-213,AQUA_TANK,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-080 (AQS-CTL-003)
+HZ-214,AQUA_TANK,pressure,High,relief case,X-SAF-04,open - tracked HA-01 (AQS-SAF-008)
+HZ-215,BIOFILTER,flow,More,high-level or high-flow protection,X-CTL-03,closed by SIF-081 (AQS-CTL-003)
+HZ-216,BIOFILTER,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/BIOFILTER.md section 6 names the case or atmospheric statement (X-SAF-03 C7)

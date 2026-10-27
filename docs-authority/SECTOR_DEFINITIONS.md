@@ -56,8 +56,8 @@ Table 3.1. Sectors
 | MFG | Process (Mass transform) | true | true | 10 | tools-metal-forming-train |
 | FOUNDRY | Process (Mass transform) | true | true | 28 | form-train, investment-casting-train, melt-and-cast-train, pot-cell-train |
 | NUT | Process (Mass transform) | true | true | 1 | dosing-train |
-| FARM | Life support / habitat | true | true | 3 | grow-bed-train |
-| HAB | Life support / habitat | true | true | 3 | life-support-train |
+| FARM | Life support / habitat | true | true | 15 | animal-train, aquaponics-train, grow-bed-train |
+| HAB | Life support / habitat | true | true | 9 | life-support-train, rooms-train |
 | CRYO | Utility / header | true | true | 14 | cold-box-asu-recovery-train |
 | WTR | Utility / header | true | true | 18 | grey-black-train, potable-upw-train |
 | ELEC | Utility / header | true | true | 10 | distribution-train, generation-train, storage-train |

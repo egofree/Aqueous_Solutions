@@ -91,6 +91,7 @@ The documents that explain how the design is organised and where its numbers com
 | [SITE_SCALING.md](SITE_SCALING.md) | AQS-SITE-004 | Site scaling: capabilities, scaling actions and unit needs for the selected site (generated) |
 | [SITE_COMPARISON.md](SITE_COMPARISON.md) | AQS-SITE-011 |
 | [SITE_UNITS.md](SITE_UNITS.md) | AQS-SITE-013 | Site unit placements: per-locale sizing of the placeholder replacement units (generated) | Cross-locale comparison: scaling actions, power portfolios and unit sizes across every profile (generated) |
+| [HAB_DESIGN.md](HAB_DESIGN.md) | AQS-HAB-002 | Hab interior zoning: room areas and fitout basis (A-M-419) |
 | [HULL_DESIGN.md](HULL_DESIGN.md) | AQS-SITE-012 | Floating-island hull design: operating mass, hydrostatics, stability and freeboard (generated) |
 | [FEED_ASSAY.md](FEED_ASSAY.md) | AQS-ASSAY-001 | Feed assay |
 | [ASSAY.md](ASSAY.md) | AQS-ASSAY-002 | Assay |
@@ -180,6 +181,7 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 
 | Document | Number | Title |
 |---|---|---|
+| [FARM_DESIGN.md](FARM_DESIGN.md) | AQS-FARM-001 | Farm sector design: aquaponics loop, smallstock roster, larvae composting (A-M-415..418) |
 | [FARM_EQUIPMENT.md](FARM_EQUIPMENT.md) | AQS-EQP-FRM-001 | Farm equipment / process list |
 | [NUTRIENT_DOSE.md](NUTRIENT_DOSE.md) | AQS-EQP-NUT-001 | Nutrient dose / N-P process list |
 | [GREENHOUSE_ENVELOPE.md](GREENHOUSE_ENVELOPE.md) | AQS-TRR-GH-001 | Enclosed greenhouse envelope — schedule stub (optional FreeCAD) |

@@ -1383,3 +1383,7 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {GM -- Metacentric height. The distance from the centre of gravity to the metacentre; the first-order measure of initial stability (HULL_DESIGN).}
 {BM -- Metacentric radius. The waterplane inertia divided by the volume of displacement; how far the metacentre sits above the centre of buoyancy.}
 {KB -- Height of the centre of buoyancy above the keel. Half the draft for a box hull.}
+{FAO -- Food and Agriculture Organization of the United Nations. The aquaculture and livestock ration-standard source class (A-M-415).}
+{LECA -- Lightweight expanded clay aggregate. The expanded-clay aquaponic grow-bed media (GROWBED_A, GROWBED_B).}
+{BW -- Body weight. The animal-science basis for per-animal feed rations, % BW per day (DUCK_FISH, FARM animal units).}
+{HDG -- Hot-dip galvanised steel. The zinc-coated structural class for livestock housing frames, wire floors and hardware cloth (CHICKEN_COOP, DUCK_PEN, QUAIL_CAGE, RABBIT_HUTCH).}

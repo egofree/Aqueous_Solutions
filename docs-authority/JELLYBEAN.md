@@ -32,25 +32,27 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | --- | --- | --- | --- | --- |
 | M10 | U-bolt | ISO 3506 A4-70 | 2 | DIN 3570 (U-bolt) |
 | M10 | anchor | ISO 3506 A4-70 | 16 | ISO 4017 + chemical anchor (ETAG 001) |
+| M10 | anchor | ISO 898-1 8.8 | 40 | ISO 4017 + chemical anchor (ETAG 001) |
 | M10 | hex bolt | A4-70 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M10 | hex bolt | ASTM A193 B8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | hex bolt | ISO 3506 A4-70 | 188 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | hex bolt | ISO 3506 A4-80 | 20 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M10 | hex bolt | ISO 898-1 8.8 | 104 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | hex bolt | ISO 3506 A4-70 | 152 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | hex bolt | ISO 3506 A4-80 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | hex bolt | ISO 898-1 8.8 | 16 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M10 | stud | ISO 898-1 8.8 | 66 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | anchor | A4-70 | 4 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | anchor | ISO 3506 A4-70 | 37 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | anchor | ISO 3506 A4-80 | 7 | ISO 4017 + chemical anchor (ETAG 001) |
-| M12 | anchor | ISO 898-1 8.8 | 160 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | anchor | ISO 3506 A4-80 | 3 | ISO 4017 + chemical anchor (ETAG 001) |
+| M12 | anchor | ISO 898-1 8.8 | 102 | ISO 4017 + chemical anchor (ETAG 001) |
 | M12 | hex bolt | ISO 898-1 8.8 | 28 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M12 | hex bolt | PVDF | 36 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M12 | stud | ISO 898-1 8.8 | 50 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M16 | hex bolt | ISO 898-1 8.8 | 72 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M12 | stud | ISO 898-1 8.8 | 26 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M16 | hex bolt | ISO 898-1 8.8 | 12 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 3506 A4-70 outside the wetted zone | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M16 | stud | ISO 898-1 8.8 | 64 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M16 | stud | ISO 898-1 8.8 | 12 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M16 | stud | ISO 898-1 8.8 zinc | 24 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M8 | hex bolt | A4-70 | 4 | ISO 4014 / ISO 4032 / ISO 7089 |
 | M8 | hex bolt | ISO 3506 A4-70 | 48 | ISO 4014 / ISO 4032 / ISO 7089 |
-| M8 | hex bolt | ISO 898-1 8.8 | 8 | ISO 4014 / ISO 4032 / ISO 7089 |
+| M8 | hex bolt | ISO 898-1 8.8 | 64 | ISO 4014 / ISO 4032 / ISO 7089 |
 
 ## 3. Seals and gaskets
 
@@ -66,11 +68,9 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | BLACK_DEWATER | Sealed cake bin 20 L with gasketed lid | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | BLACK_DIGEST | Water seal and flame arrester on the biogas line to AFTERBURNER | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | BUCL | Bolted flat lid with gasket | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| CA_POT | Feed chute with hopper cone and rotary seal | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| CR_CELL | Feed chute with hopper cone and rotary seal | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
+| CA_POT | Return dip leg DN15, inside the riser annulus, bottom z 250 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
+| CR_CELL | Return dip leg DN15, inside the riser annulus, bottom z 250 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | DIGESTER | Bolted flat lid with gasket | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| FILM_CAST | Coat-hanger die, 200 mm width slot | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| FILM_CAST | Double-station surface winder with lay-on roll | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | FORM | Spiral-wound gasket DN15 Class 150 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | GLASS_DIGEST | Bolted flat lid with gasket | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | GLYOXAL | Bolted flat lid with gasket | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
@@ -81,10 +81,10 @@ Rating = next IEC 60034-1 preferred rating at or above shaft power x 1.15. Pumps
 | MEAM | Spiral-wound gasket DN15 Class 300 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | MEOH_FERM | Bolted flat lid with gasket | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | MEOH_SYNTH | Spiral-wound gasket DN50 Class 600, 316/graphite | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| MG_POT | Feed chute with hopper cone and rotary seal | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| MO_CELL | Feed chute with hopper cone and rotary seal | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
+| MG_POT | Return dip leg DN15, inside the riser annulus, bottom z 250 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
+| MO_CELL | Return dip leg DN15, inside the riser annulus, bottom z 250 | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | OIL_PYRO | Bolted flat lid with gasket | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
-| POLY_F | Kettle shell DN150 x 225 mm, 6 mm wall, 60 C emulsion service | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
+| POLY_F | Kettle OD 150 x 225 mm, Hastelloy C-276 wetted, PTFE gasketed | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | POLY_OLEFIN | Bolted flat lid with gasket and mixer gland | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 | YEAST | Bolted flat lid with gasket | flat gasket EN 1514-1 / ASME B16.21 to the flange DN; O-rings ISO 3601-1 class A; lip seals ISO 6194-1 |
 

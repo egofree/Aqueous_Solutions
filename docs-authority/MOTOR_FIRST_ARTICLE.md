@@ -27,7 +27,7 @@ Table 1.1. Induction first-article dimensions
 | MF-06 | 0.37 | 4 | 66.24 | 0.244 | 46 | 24/22 | 122.9 | 18.01 | 4.17 | 8.51 | 121 / 119.3 | 27.3 | 2.0 | 104 |
 | MF-07 | 1.1 | 4 | 84.28 | 0.279 | 52 | 36/28 | 124.0 | 21.8 | 3.54 | 10.82 | 153 / 149.5 | 40.9 | 6.0 | 23 |
 | MF-08 | 1.5 | 4 | 84.29 | 0.292 | 72 | 36/28 | 135.0 | 23.22 | 3.54 | 10.82 | 153 / 152.4 | 40.1 | 8.2 | 3 |
-| MF-09 | 0.18 | 4 | 59.23 | 0.228 | 33 | 24/22 | 86.0 | 14.57 | 3.73 | 7.6 | 107 / 103.6 | 24.3 | 1.0 | 21 |
+| MF-09 | 0.18 | 4 | 59.23 | 0.228 | 33 | 24/22 | 86.0 | 14.57 | 3.73 | 7.6 | 107 / 103.6 | 24.3 | 1.0 | 20 |
 | MF-10 | 0.55 | 4 | 75.25 | 0.255 | 52 | 24/22 | 139.6 | 18.59 | 4.74 | 9.66 | 136 / 131.8 | 30.9 | 3.0 | 10 |
 | MF-11 | 2.2 | 4 | 94.31 | 0.31 | 81 | 36/28 | 167.9 | 25.85 | 3.96 | 12.11 | 170 / 170.2 | 45.6 | 12.0 | 6 |
 | MF-12 | 0.12 | 4 | 52.22 | 0.221 | 29 | 24/22 | 76.9 | 14.28 | 3.29 | 6.7 | 95 / 94.2 | 21.5 | 0.7 | 4 |
@@ -49,8 +49,8 @@ Table 2.1. Other motor families
 
 | Family | Type | Rating | Items | First article |
 |---|---|---|---|---|
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 106 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
-| MF-02 | BLDC | 57 mm (NEMA 23 flange) | 58 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 108 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
+| MF-02 | BLDC | 57 mm (NEMA 23 flange) | 56 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 27 | BLDC + harmonic or spur gearhead to ISO 5211 F03 flange; stall torque and cycle life 10,000 strokes |
 | MF-17 | solenoid | ISO 15218 coil, 22 mm | 36 | bobbin coil, plunger and frame; pull-in and drop-out voltage, coil temperature rise at 110 % V |
 | MF-19 | stepper | NEMA 34 (86 mm) | 3 | hybrid stepper stack, 1.8 deg; holding torque and pull-out torque curve |

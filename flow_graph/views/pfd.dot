@@ -92,6 +92,18 @@ digraph G {
     style=rounded; color="#94a3b8";
     "GROW_BED" [fillcolor="#ffffff", label="GROW_BED"];
     "FOOD_STORE" [fillcolor="#ffffff", label="FOOD_STORE"];
+    "AQUA_TANK" [fillcolor="#ffffff", label="AQUA_TANK"];
+    "BIOFILTER" [fillcolor="#ffffff", label="BIOFILTER"];
+    "GROWBED_A" [fillcolor="#ffffff", label="GROWBED_A"];
+    "GROWBED_B" [fillcolor="#ffffff", label="GROWBED_B"];
+    "CHICKEN_COOP" [fillcolor="#ffffff", label="CHICKEN_COOP"];
+    "BSFL_BIN" [fillcolor="#ffffff", label="BSFL_BIN"];
+    "DUCKWEED" [fillcolor="#ffffff", label="DUCKWEED"];
+    "DUCK_PEN" [fillcolor="#ffffff", label="DUCK_PEN"];
+    "QUAIL_CAGE" [fillcolor="#ffffff", label="QUAIL_CAGE"];
+    "RABBIT_HUTCH" [fillcolor="#ffffff", label="RABBIT_HUTCH"];
+    "BEE_HIVE" [fillcolor="#ffffff", label="BEE_HIVE"];
+    "VERMI_BIN" [fillcolor="#ffffff", label="VERMI_BIN"];
   }
   subgraph "cluster_FOUNDRY" {
     label="FOUNDRY";
@@ -161,6 +173,8 @@ digraph G {
     "HABITATION" [fillcolor="#ffffff", label="HABITATION"];
     "HDR_CO2" [fillcolor="#ffffff", label="HDR_CO2"];
     "HDR_N2" [fillcolor="#ffffff", label="HDR_N2"];
+    "GALLEY" [fillcolor="#ffffff", label="GALLEY"];
+    "WASHROOM" [fillcolor="#ffffff", label="WASHROOM"];
   }
   subgraph "cluster_HEAT" {
     label="HEAT";
@@ -387,8 +401,8 @@ digraph G {
   "AFTERBURNER_FLUE" -> "FLUE_KO" [label="S67\\n117.42759 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FLUE_KO" -> "CRYO_CO2" [label="S67B\\n14.050492 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "LEACH_CSTR_1" [label="S68\\n78.987901 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n755.229337 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n755.229337 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n755.481467 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n755.481467 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU_COND_CONDENSABLE" -> "FLUE_KO" [label="S70\\n0.0521 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_AHU" -> "MET_SCRUB" [label="S71\\n20458.32 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_SCRUB" -> "LEACH_CSTR_1" [label="S72\\n2.4442 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -510,7 +524,7 @@ digraph G {
   "GREY_TREAT" -> "LEACH_CSTR_1" [label="IA-GREY-01\\n244.641602 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRU" -> "LEACH_CSTR_1" [label="IA-CRU-01\\n27.509975 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "Q4_BUS" -> "DRY_COOLER" [label="HL-Q4-REJ\\n0.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n336.8116 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n336.8716 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "GREY_TREAT" [label="IA-ZNBR-BD\\n8.486841 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NUTRIENT_DOSE" -> "VCD_TRAIN" [label="IA-NUT-01\\n13.930007 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_UPW_POLISH" -> "FAB_UPW_TANK" [label="IA-UPW-FAB\\n60.000181 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -821,4 +835,50 @@ digraph G {
   "SOL_ARK_60K" -> "COLD_MILL" [label="SF-COLD_MILL\\n0.0191 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "WIRE_DRAW" [label="SF-WIRE_DRAW\\n0.0189 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "GEO_HP_CLOSED_LOOP" [label="SF-GEO_HP_CLOSED_LOOP\\n0.1257 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "AQUA_TANK" -> "BIOFILTER" [label="AQUA_LOOP1\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BIOFILTER" -> "GROWBED_A" [label="AQUA_NUT\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GROWBED_A" -> "GROWBED_B" [label="AQUA_LOOP3\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ROOF_TANK" -> "CHICKEN_COOP" [label="IA-CHICK-H2O\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CHICKEN_COOP" -> "FOOD_STORE" [label="EGG_HARVEST\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CHICKEN_COOP" -> "BSFL_BIN" [label="CHICK_MANURE\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CHICKEN_COOP" -> "CRYO_AHU" [label="CHICK_VAP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "AQUA_TANK" -> "BSFL_BIN" [label="FISH_SLUDGE\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BSFL_BIN" -> "CHICKEN_COOP" [label="LARVAE_FEED\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BSFL_BIN" -> "HOPPER" [label="FRASS\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BSFL_BIN" -> "CRYO_AHU" [label="BSFL_VAP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "FOOD_STORE" -> "GALLEY" [label="FOOD_GALLEY\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GALLEY" -> "HABITATION" [label="GALLEY_MEALS\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GALLEY" -> "BSFL_BIN" [label="GALLEY_BIO\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WASHROOM" -> "GREY_TREAT" [label="WASH_GREY\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "AQUA_TANK" -> "FOOD_STORE" [label="FISH_HARVEST\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ROOF_TANK" -> "AQUA_TANK" [label="IA-AQUA-TOPUP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ROOF_TANK" -> "DUCK_PEN" [label="IA-DUCK-H2O\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ROOF_TANK" -> "WASHROOM" [label="IA-WASH-FEED\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GROWBED_B" -> "DUCKWEED" [label="AQUA_LOOP4\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DUCKWEED" -> "AQUA_TANK" [label="AQUA_RETURN2\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DUCKWEED" -> "AQUA_TANK" [label="DUCK_FISH\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DUCKWEED" -> "CHICKEN_COOP" [label="DUCK_LAYERS\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "FOOD_STORE" -> "HABITATION" [label="FOOD_HAB\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DUCK_PEN" -> "FOOD_STORE" [label="DUCK_EGGS\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DUCK_PEN" -> "BSFL_BIN" [label="DUCK_MANURE\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DUCK_PEN" -> "CRYO_AHU" [label="DUCK_VAP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DUCKWEED" -> "QUAIL_CAGE" [label="QUAIL_FEED\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ROOF_TANK" -> "QUAIL_CAGE" [label="QUAIL_H2O\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "QUAIL_CAGE" -> "FOOD_STORE" [label="QUAIL_EGGS\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "QUAIL_CAGE" -> "VERMI_BIN" [label="QUAIL_DROP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "QUAIL_CAGE" -> "CRYO_AHU" [label="QUAIL_VAP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GROW_BED" -> "RABBIT_HUTCH" [label="RABBIT_FORAGE\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "RABBIT_HUTCH" -> "FOOD_STORE" [label="RABBIT_MEAT\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "RABBIT_HUTCH" -> "GROWBED_B" [label="RABBIT_MANURE\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "RABBIT_HUTCH" -> "CRYO_AHU" [label="RABBIT_VAP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GROW_BED" -> "BEE_HIVE" [label="NECTAR_FORAGE\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BEE_HIVE" -> "FOOD_STORE" [label="HONEY\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BEE_HIVE" -> "CRYO_AHU" [label="BEE_VAP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GROW_BED" -> "VERMI_BIN" [label="VERMI_FEED\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "VERMI_BIN" -> "GROWBED_A" [label="VERMICOMPOST\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "VERMI_BIN" -> "GROWBED_A" [label="WORM_TEA\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DUCKWEED" -> "DUCK_PEN" [label="DUCK_FODDER\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "DUCK_PEN" -> "GREY_TREAT" [label="DUCK_GREY\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOL_ARK_60K" -> "AQUA_TANK" [label="IA-AIR-AQUA\\n0.04 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "BIOFILTER" [label="IA-AIR-BIO\\n0.02 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

@@ -1,0 +1,5 @@
+item,description,qty,material,basis
+1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"FRP wet-wall panels, SS304 fixtures, ceramic tile wet zones, SS drainage.",docs-authority/duties/WASHROOM.md
+2,Process nozzle DN15,2,"FRP wet-wall panels, SS304 fixtures, ceramic tile wet zones, SS drainage.",one per mass edge; DN from AQS-INV-003
+3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

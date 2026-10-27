@@ -5218,5 +5218,200 @@
   "units": "m",
   "register": "A-M-412",
   "note": "study deck stack behind the level heights in hull.py"
+ },
+ "FARM.aquaponics.fish_stock_kg": {
+  "value": 60.0,
+  "units": "kg standing fish stock (tilapia class)",
+  "register": "A-M-415",
+  "needs_verification": true,
+  "verification_test": "Stocking trial at the aquaponics commissioning (X-FARM-01)"
+ },
+ "FARM.aquaponics.fish_feed_kg_kg": {
+  "value": 0.015,
+  "units": "kg feed per kg fish per day (1.5 % body weight)",
+  "register": "A-M-415",
+  "basis": "Tilapia-class ration at grow-out stocking (FAO_AQUACONTENT class)"
+ },
+ "FARM.aquaponics.feed_larvae_frac": {
+  "value": 0.114,
+  "units": "kg/d larvae meal to the layer ration (7.9 % of the ration, computed)",
+  "register": "A-M-416",
+  "needs_verification": true,
+  "verification_test": "Larvae-meal ration trial (X-FARM-01)"
+ },
+ "FARM.aquaponics.waste_to_bed_frac": {
+  "value": 1.0,
+  "units": "- (fish waste circulates through the biofilter to the root zones)",
+  "register": "A-M-415"
+ },
+ "FARM.chicken.stock_birds": {
+  "value": 12.0,
+  "units": "birds (dual-purpose layer class)",
+  "register": "A-M-417",
+  "needs_verification": true,
+  "verification_test": "Flock trial at the coop commissioning (X-FARM-02)"
+ },
+ "FARM.chicken.feed_kg_bird_d": {
+  "value": 0.12,
+  "units": "kg feed per bird per day",
+  "register": "A-M-417",
+  "basis": "Layer-class ration"
+ },
+ "FARM.chicken.egg_kg_bird_d": {
+  "value": 0.05,
+  "units": "kg egg per bird per day",
+  "register": "A-M-417",
+  "basis": "Layer-class production"
+ },
+ "FARM.bsfl.process_kg_d": {
+  "value": 1.43,
+  "units": "kg/d feedstock (study duty; bin capacity class 5 kg/d)",
+  "register": "A-M-418",
+  "needs_verification": true,
+  "verification_test": "Bin trial (X-FARM-03)"
+ },
+ "FARM.bsfl.larvae_frac": {
+  "value": 0.15,
+  "units": "- (fresh larvae per feedstock mass)",
+  "register": "A-M-418",
+  "basis": "TECHTREE insect-farming: 1.4-2.0 kg wet biowaste per kg fresh larvae (DIENER2009 class)"
+ },
+ "FARM.bsfl.frass_frac": {
+  "value": 0.25,
+  "units": "- (frass per feedstock mass)",
+  "register": "A-M-418",
+  "basis": "BSFL residue class (DIENER2009)"
+ },
+ "HAB.rooms.galley_m2": {
+  "value": 12.0,
+  "units": "m2 galley floor area",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 habitable-volume class per function; 4 crew"
+ },
+ "HAB.rooms.washroom_m2": {
+  "value": 8.0,
+  "units": "m2 washroom/hygiene floor area",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 hygiene-volume class; 4 crew"
+ },
+ "HAB.rooms.rec_m2": {
+  "value": 20.0,
+  "units": "m2 recreation/common day-space",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 common-area class; 4 crew"
+ },
+ "HAB.rooms.sleep_quarters_m2": {
+  "value": 16.0,
+  "units": "m2 private sleeping quarters (4 x 4 m2)",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 private-crew-quarter class; 4 crew x 4 m2"
+ },
+ "HAB.rooms.common_m2": {
+  "value": 10.0,
+  "units": "m2 common circulation/utility area",
+  "register": "A-M-419",
+  "basis": "NASA_STD_3001 circulation class"
+ },
+ "FARM.duckweed.raceway_m2": {
+  "value": 240.0,
+  "units": "m2 raceway (Lemna minor, azolla co-culture)",
+  "register": "A-M-420",
+  "needs_verification": true,
+  "verification_test": "Raceway yield trial at the loop commissioning (X-FARM-04)"
+ },
+ "FARM.duckweed.prod_g_dry_m2_d": {
+  "value": 15.0,
+  "units": "g dry matter per m2 per day",
+  "register": "A-M-420",
+  "basis": "Lemna-class yield at aquaponic-strength water (TECHTREE aquaculture: duckweed 25-35 % CP)"
+ },
+ "FARM.duckweed.CP_frac": {
+  "value": 0.3,
+  "units": "- (crude protein, dry)",
+  "register": "A-M-420",
+  "basis": "Lemna spp. 25-35 % CP class (TECHTREE aquaculture)"
+ },
+ "FARM.ducks.stock": {
+  "value": 6.0,
+  "units": "ducks (Khaki Campbell class)",
+  "register": "A-M-421",
+  "needs_verification": true,
+  "verification_test": "Flock trial (X-FARM-05)",
+  "basis": "TECHTREE poultry.ducks: Khaki Campbell 250-340 eggs/yr, feed 120-150 g/d"
+ },
+ "FARM.ducks.feed_kg_d": {
+  "value": 0.9,
+  "units": "kg/d ration (dry-equivalent, duckweed-base)",
+  "register": "A-M-421"
+ },
+ "FARM.ducks.egg_kg_d": {
+  "value": 0.34,
+  "units": "kg/d duck eggs",
+  "register": "A-M-421",
+  "basis": "6 ducks x ~0.8 eggs/d x 70 g (TECHTREE Khaki Campbell 250-340 eggs/yr)"
+ },
+ "FARM.ducks.manure_kg_d": {
+  "value": 0.36,
+  "units": "kg/d manure to the BSFL bin",
+  "register": "A-M-421"
+ },
+ "FARM.quail.stock": {
+  "value": 20.0,
+  "units": "coturnix hens (indoor cage bank)",
+  "register": "A-M-422",
+  "needs_verification": true,
+  "verification_test": "Cage-bank trial (X-FARM-06)",
+  "basis": "TECHTREE poultry.coturnix: 20-hen unit, feed 150-190 kg/yr"
+ },
+ "FARM.quail.feed_kg_d": {
+  "value": 0.5,
+  "units": "kg/d ration (dry)",
+  "register": "A-M-422"
+ },
+ "FARM.quail.egg_kg_d": {
+  "value": 0.06,
+  "units": "kg/d quail eggs",
+  "register": "A-M-422"
+ },
+ "FARM.rabbit.does": {
+  "value": 2.0,
+  "units": "does + 1 buck",
+  "register": "A-M-423",
+  "needs_verification": true,
+  "verification_test": "Rabbitry trial (X-FARM-07)",
+  "basis": "TECHTREE rabbits: 0.5-0.8 m2 per doe, cold manure direct to crops"
+ },
+ "FARM.rabbit.feed_kg_d": {
+  "value": 0.5,
+  "units": "kg/d forage + greens (canopy thinnings)",
+  "register": "A-M-423"
+ },
+ "FARM.rabbit.meat_kg_d": {
+  "value": 0.1,
+  "units": "kg/d dressed meat (study average)",
+  "register": "A-M-423"
+ },
+ "FARM.bee.hives": {
+  "value": 1.0,
+  "units": "hive (Apis mellifera)",
+  "register": "A-M-424",
+  "basis": "TECHTREE beekeeping: 10-25 kg honey/yr; pollination raises crop yields 20-30 %"
+ },
+ "FARM.bee.honey_kg_d": {
+  "value": 0.05,
+  "units": "kg/d honey (annual average)",
+  "register": "A-M-424"
+ },
+ "FARM.worms.bin_m2": {
+  "value": 2.0,
+  "units": "m2 bin (Eisenia fetida, 1 kg stock per 0.5 m2)",
+  "register": "A-M-425",
+  "basis": "TECHTREE soil-management.vermiculture: castings 1.5-2.5 % N, no turning"
+ },
+ "HAB.rooms.medical_m2": {
+  "value": 6.0,
+  "units": "m2 medical room",
+  "register": "A-M-419",
+  "basis": "AQS-HAB-001 room basis (medical 6 m2)"
  }
 }

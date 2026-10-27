@@ -7138,5 +7138,181 @@
   ],
   "needs_verification": true,
   "verification_test": "Class stability and freeboard review (Q-030)"
+ },
+ {
+  "id": "A-M-415",
+  "value": "60 kg standing tilapia stock; 1.5 %/d ration; fish waste circulates through the biofilter to the dual root zones; 40 kg/d loop",
+  "units": "kg; -",
+  "where": "FARM.aquaponics drivers; AQUA_TANK and BIOFILTER design",
+  "basis": "Tilapia-class aquaponics stocking and ration at grow-out (FAO aquaculture class); fish waste splits between the root zones and the BSFL bin. Roster and ration bases cross-checked against the TechTree animals/plants domains (github.com/egofree/TechTree \u2014 From Stone to Silicon civilization bootstrap tech tree (animals and plants domains)).",
+  "sensitivity": "Fish waste sets the nutrient load to the root zones and the biofilter duty",
+  "replaced_by": "Aquaponics commissioning trial (X-FARM-01)",
+  "task": "X-FARM-01",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Stocking and ration trial (X-FARM-01)"
+ },
+ {
+  "id": "A-M-416",
+  "value": "0.114 kg/d larvae meal (7.9 % of the layer ration), computed from the feed balance",
+  "units": "- (larvae-meal mass fraction of feed)",
+  "where": "FARM.aquaponics.feed_larvae_frac; CHICKEN_COOP and AQUA_TANK feed",
+  "basis": "BSFL larvae meal replaces half the imported layer/fish feed by mass; the balance is imported grain/scratch. Roster and ration bases cross-checked against the TechTree animals/plants domains (github.com/egofree/TechTree \u2014 From Stone to Silicon civilization bootstrap tech tree (animals and plants domains)).",
+  "sensitivity": "The imported feed mass scales 1:1 with (1 - fraction)",
+  "replaced_by": "Larvae-meal ration trial (X-FARM-01)",
+  "task": "X-FARM-01",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Larvae-meal ration trial (X-FARM-01)"
+ },
+ {
+  "id": "A-M-417",
+  "value": "12 birds; 0.12 kg feed/bird/d; 0.05 kg egg/bird/d",
+  "units": "birds; kg/d",
+  "where": "FARM.chicken drivers; CHICKEN_COOP design",
+  "basis": "Dual-purpose layer flock at the 4-crew egg ration",
+  "sensitivity": "Egg output and manure to the BSFL bin scale with the flock",
+  "replaced_by": "Flock trial at the coop commissioning (X-FARM-02)",
+  "task": "X-FARM-02",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Flock trial (X-FARM-02)"
+ },
+ {
+  "id": "A-M-418",
+  "value": "1.43 kg/d feedstock (galley biowaste 0.5, poultry manure 0.48, fish sludge 0.45); 15 % fresh larvae (TECHTREE insect-farming); 25 % frass",
+  "units": "kg/d; -",
+  "where": "FARM.bsfl drivers; BSFL_BIN design",
+  "basis": "Black-soldier-fly larvae conversion of kitchen biowaste and poultry manure (DIENER2009 class). Roster and ration bases cross-checked against the TechTree animals/plants domains (github.com/egofree/TechTree \u2014 From Stone to Silicon civilization bootstrap tech tree (animals and plants domains)).",
+  "sensitivity": "Larvae output sets the home-grown feed fraction; frass goes to the soil root zone",
+  "replaced_by": "Bin trial at the BSFL commissioning (X-FARM-03)",
+  "task": "X-FARM-03",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Bin trial (X-FARM-03)"
+ },
+ {
+  "id": "A-M-419",
+  "value": "galley 12; washroom 6; medical 6; sleep 16 (AQS-HAB-001 room basis); recreation/common 20; circulation 10",
+  "units": "m2",
+  "where": "HAB.rooms drivers; GALLEY, WASHROOM, REC_DAYROOM, SLEEP_QUARTERS, COMMON_AREA design",
+  "basis": "NASA_STD_3001 habitable-volume class per function at the 4-crew occupancy",
+  "sensitivity": "Habitable volume scales with crew; the envelope carries the zoning",
+  "replaced_by": "Habitability design review at the HAB interior design pass",
+  "task": "X-HAB-01",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/HAB_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Habitability design review (X-HAB-01)"
+ },
+ {
+  "id": "A-M-420",
+  "value": "240 m2 raceway at 15 g dry/m2/d, 30 % crude protein",
+  "units": "m2; g/m2/d; -",
+  "where": "FARM.duckweed drivers; DUCKWEED design",
+  "basis": "Lemna minor raceway on the aquaponic loop water; CP 25-35 % class (TECHTREE aquaculture); the raceway is the loop polisher and the base feed crop for the fish and the waterfowl",
+  "sensitivity": "The raceway area sets the home-grown feed ceiling for every farm animal",
+  "replaced_by": "Raceway yield trial (X-FARM-04)",
+  "task": "X-FARM-04",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Raceway yield trial (X-FARM-04)"
+ },
+ {
+  "id": "A-M-421",
+  "value": "6 ducks (Khaki Campbell class); 0.9 kg/d ration; 0.34 kg/d duck eggs; 0.36 kg/d manure",
+  "units": "birds; kg/d",
+  "where": "FARM.ducks drivers; DUCK_PEN design",
+  "basis": "Khaki Campbell 250-340 eggs/yr, feed 120-150 g/d, duckweed 35-43 % protein supplement (TECHTREE poultry.ducks)",
+  "sensitivity": "Duck eggs and manure scale with the flock; the ducks forage the loop water",
+  "replaced_by": "Flock trial (X-FARM-05)",
+  "task": "X-FARM-05",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Flock trial (X-FARM-05)"
+ },
+ {
+  "id": "A-M-422",
+  "value": "20 coturnix hens; 0.5 kg/d ration; 0.06 kg/d quail eggs",
+  "units": "birds; kg/d",
+  "where": "FARM.quail drivers; QUAIL_CAGE design",
+  "basis": "Coturnix cage bank at the 20-hen unit, feed 150-190 kg/yr (TECHTREE poultry.coturnix)",
+  "sensitivity": "Quail eggs scale with the cage bank; droppings feed the vermi bin",
+  "replaced_by": "Cage-bank trial (X-FARM-06)",
+  "task": "X-FARM-06",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Cage-bank trial (X-FARM-06)"
+ },
+ {
+  "id": "A-M-423",
+  "value": "2 does + 1 buck; 0.5 kg/d forage (canopy thinnings); 0.1 kg/d dressed meat",
+  "units": "does; kg/d",
+  "where": "FARM.rabbit drivers; RABBIT_HUTCH design",
+  "basis": "Rabbits: highest-efficiency plant-to-meat converter, cold manure direct to crops (TECHTREE rabbits)",
+  "sensitivity": "Meat output scales with the doe count; the forage draws on the canopy thinnings",
+  "replaced_by": "Rabbitry trial (X-FARM-07)",
+  "task": "X-FARM-07",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Rabbitry trial (X-FARM-07)"
+ },
+ {
+  "id": "A-M-424",
+  "value": "1 hive; 10-25 kg honey/yr; pollination raises canopy yield 20-30 %",
+  "units": "hive; kg/yr; -",
+  "where": "FARM.bee drivers; BEE_HIVE design",
+  "basis": "Apis mellifera pollination service to the greenhouse crops and honey/wax output (TECHTREE beekeeping)",
+  "sensitivity": "Pollination directly scales the seed and fruit set of the canopy crops",
+  "replaced_by": "Hive establishment and overwintering trial (X-FARM-08)",
+  "task": "X-FARM-08",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Hive establishment and overwintering trial (X-FARM-08)"
+ },
+ {
+  "id": "A-M-425",
+  "value": "2 m2 bin; 1 kg Eisenia fetida stock per 0.5 m2",
+  "units": "m2; kg",
+  "where": "FARM.worms drivers; VERMI_BIN design",
+  "basis": "Vermiculture: kitchen scraps and soft residue to vermicompost, castings 1.5-2.5 % N (TECHTREE soil-management.vermiculture)",
+  "sensitivity": "Casting output scales with the bin area and the soft-residue feed",
+  "replaced_by": "Vermi-bin trial (X-FARM-09)",
+  "task": "X-FARM-09",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "docs-authority/FARM_DESIGN.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Vermi-bin trial (X-FARM-09)"
  }
 ]

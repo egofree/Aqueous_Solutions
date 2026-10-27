@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2492.000 | 2492.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2493.000 | 2493.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -919,6 +919,38 @@ All solved units close.
 | HULL.criteria.design_heel_deg | 5.0 | deg | A-M-388 | — |
 | HULL.plant.pkg_density_kg_m3 | 200.0 | kg/m3 of packaged plant volume | A-M-413 | yes |
 | HULL.plant.deck_spacing_m | 5.0 | m | A-M-412 | — |
+| FARM.aquaponics.fish_stock_kg | 60.0 | kg standing fish stock (tilapia class) | A-M-415 | yes |
+| FARM.aquaponics.fish_feed_kg_kg | 0.015 | kg feed per kg fish per day (1.5 % body weight) | A-M-415 | — |
+| FARM.aquaponics.feed_larvae_frac | 0.114 | kg/d larvae meal to the layer ration (7.9 % of the ration, computed) | A-M-416 | yes |
+| FARM.aquaponics.waste_to_bed_frac | 1.0 | - (fish waste circulates through the biofilter to the root zones) | A-M-415 | — |
+| FARM.chicken.stock_birds | 12.0 | birds (dual-purpose layer class) | A-M-417 | yes |
+| FARM.chicken.feed_kg_bird_d | 0.12 | kg feed per bird per day | A-M-417 | — |
+| FARM.chicken.egg_kg_bird_d | 0.05 | kg egg per bird per day | A-M-417 | — |
+| FARM.bsfl.process_kg_d | 1.43 | kg/d feedstock (study duty; bin capacity class 5 kg/d) | A-M-418 | yes |
+| FARM.bsfl.larvae_frac | 0.15 | - (fresh larvae per feedstock mass) | A-M-418 | — |
+| FARM.bsfl.frass_frac | 0.25 | - (frass per feedstock mass) | A-M-418 | — |
+| HAB.rooms.galley_m2 | 12.0 | m2 galley floor area | A-M-419 | — |
+| HAB.rooms.washroom_m2 | 8.0 | m2 washroom/hygiene floor area | A-M-419 | — |
+| HAB.rooms.rec_m2 | 20.0 | m2 recreation/common day-space | A-M-419 | — |
+| HAB.rooms.sleep_quarters_m2 | 16.0 | m2 private sleeping quarters (4 x 4 m2) | A-M-419 | — |
+| HAB.rooms.common_m2 | 10.0 | m2 common circulation/utility area | A-M-419 | — |
+| FARM.duckweed.raceway_m2 | 240.0 | m2 raceway (Lemna minor, azolla co-culture) | A-M-420 | yes |
+| FARM.duckweed.prod_g_dry_m2_d | 15.0 | g dry matter per m2 per day | A-M-420 | — |
+| FARM.duckweed.CP_frac | 0.3 | - (crude protein, dry) | A-M-420 | — |
+| FARM.ducks.stock | 6.0 | ducks (Khaki Campbell class) | A-M-421 | yes |
+| FARM.ducks.feed_kg_d | 0.9 | kg/d ration (dry-equivalent, duckweed-base) | A-M-421 | — |
+| FARM.ducks.egg_kg_d | 0.34 | kg/d duck eggs | A-M-421 | — |
+| FARM.ducks.manure_kg_d | 0.36 | kg/d manure to the BSFL bin | A-M-421 | — |
+| FARM.quail.stock | 20.0 | coturnix hens (indoor cage bank) | A-M-422 | yes |
+| FARM.quail.feed_kg_d | 0.5 | kg/d ration (dry) | A-M-422 | — |
+| FARM.quail.egg_kg_d | 0.06 | kg/d quail eggs | A-M-422 | — |
+| FARM.rabbit.does | 2.0 | does + 1 buck | A-M-423 | yes |
+| FARM.rabbit.feed_kg_d | 0.5 | kg/d forage + greens (canopy thinnings) | A-M-423 | — |
+| FARM.rabbit.meat_kg_d | 0.1 | kg/d dressed meat (study average) | A-M-423 | — |
+| FARM.bee.hives | 1.0 | hive (Apis mellifera) | A-M-424 | — |
+| FARM.bee.honey_kg_d | 0.05 | kg/d honey (annual average) | A-M-424 | — |
+| FARM.worms.bin_m2 | 2.0 | m2 bin (Eisenia fetida, 1 kg stock per 0.5 m2) | A-M-425 | — |
+| HAB.rooms.medical_m2 | 6.0 | m2 medical room | A-M-419 | — |
 
 ## 6. References
 
@@ -1529,6 +1561,14 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver HULL.pontoon.lightweight_t | 6500.0 t (steel and outfitting) | Structural design (X-LOC-11 hull structure) |
 | driver HULL.pontoon.lightweight_KG_m | 5.5 m above baseline | Structural design (X-LOC-11 hull structure) |
 | driver HULL.plant.pkg_density_kg_m3 | 200.0 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) |
+| driver FARM.aquaponics.fish_stock_kg | 60.0 kg standing fish stock (tilapia class) | Stocking trial at the aquaponics commissioning (X-FARM-01) |
+| driver FARM.aquaponics.feed_larvae_frac | 0.114 kg/d larvae meal to the layer ration (7.9 % of the ration, computed) | Larvae-meal ration trial (X-FARM-01) |
+| driver FARM.chicken.stock_birds | 12.0 birds (dual-purpose layer class) | Flock trial at the coop commissioning (X-FARM-02) |
+| driver FARM.bsfl.process_kg_d | 1.43 kg/d feedstock (study duty; bin capacity class 5 kg/d) | Bin trial (X-FARM-03) |
+| driver FARM.duckweed.raceway_m2 | 240.0 m2 raceway (Lemna minor, azolla co-culture) | Raceway yield trial at the loop commissioning (X-FARM-04) |
+| driver FARM.ducks.stock | 6.0 ducks (Khaki Campbell class) | Flock trial (X-FARM-05) |
+| driver FARM.quail.stock | 20.0 coturnix hens (indoor cage bank) | Cage-bank trial (X-FARM-06) |
+| driver FARM.rabbit.does | 2.0 does + 1 buck | Rabbitry trial (X-FARM-07) |
 | A-M-001 | 5 wt% H2O2 | Wet-bench recipe from the fab process sheet |
 | A-M-002 | 0.80 - | Cell test: H2O2 titration against charge passed |
 | A-M-003 | 0.050 A/cm2 | Cell polarization test |
@@ -1893,3 +1933,14 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-412 | 180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m m; t; m | Hull general arrangement and structural design (X-LOC-11) |
 | A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) |
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35  m; m; - | Class stability and freeboard review (Q-030) |
+| A-M-415 | 60 kg standing tilapia stock; 1.5 %/d ration; fish waste cir kg; - | Stocking and ration trial (X-FARM-01) |
+| A-M-416 | 0.114 kg/d larvae meal (7.9 % of the layer ration), computed - (larvae-meal mass fraction of feed) | Larvae-meal ration trial (X-FARM-01) |
+| A-M-417 | 12 birds; 0.12 kg feed/bird/d; 0.05 kg egg/bird/d birds; kg/d | Flock trial (X-FARM-02) |
+| A-M-418 | 1.43 kg/d feedstock (galley biowaste 0.5, poultry manure 0.4 kg/d; - | Bin trial (X-FARM-03) |
+| A-M-419 | galley 12; washroom 6; medical 6; sleep 16 (AQS-HAB-001 room m2 | Habitability design review (X-HAB-01) |
+| A-M-420 | 240 m2 raceway at 15 g dry/m2/d, 30 % crude protein m2; g/m2/d; - | Raceway yield trial (X-FARM-04) |
+| A-M-421 | 6 ducks (Khaki Campbell class); 0.9 kg/d ration; 0.34 kg/d d birds; kg/d | Flock trial (X-FARM-05) |
+| A-M-422 | 20 coturnix hens; 0.5 kg/d ration; 0.06 kg/d quail eggs birds; kg/d | Cage-bank trial (X-FARM-06) |
+| A-M-423 | 2 does + 1 buck; 0.5 kg/d forage (canopy thinnings); 0.1 kg/ does; kg/d | Rabbitry trial (X-FARM-07) |
+| A-M-424 | 1 hive; 10-25 kg honey/yr; pollination raises canopy yield 2 hive; kg/yr; - | Hive establishment and overwintering trial (X-FARM-08) |
+| A-M-425 | 2 m2 bin; 1 kg Eisenia fetida stock per 0.5 m2 m2; kg | Vermi-bin trial (X-FARM-09) |

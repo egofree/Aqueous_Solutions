@@ -1343,6 +1343,15 @@
      "carries": "C5-C10 fuel from the tank"
     },
     {
+     "stream_id": "FRASS",
+     "from": "BSFL_BIN",
+     "to": "HOPPER",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "frass compost to the solids line"
+    },
+    {
      "stream_id": "OIL_TO_OLEFIN",
      "from": "OIL_FRAC",
      "to": "POLY_OLEFIN",
@@ -3716,6 +3725,24 @@
    ],
    "stops": [
     {
+     "stream_id": "IA-AIR-AQUA",
+     "from": "SOL_ARK_60K",
+     "to": "AQUA_TANK",
+     "other_sector": "ELEC",
+     "rate": 0.04,
+     "unit": "kW",
+     "carries": "air pump electrical load: O2 aeration for the fish"
+    },
+    {
+     "stream_id": "IA-AIR-BIO",
+     "from": "SOL_ARK_60K",
+     "to": "BIOFILTER",
+     "other_sector": "ELEC",
+     "rate": 0.02,
+     "unit": "kW",
+     "carries": "air pump electrical load: O2 for the nitrifying bacteria"
+    },
+    {
      "stream_id": "S20",
      "from": "SOL_ARK_60K",
      "to": "GROW_BED",
@@ -3727,6 +3754,33 @@
    ],
    "inactive": [
     {
+     "stream_id": "BEE_VAP",
+     "from": "BEE_HIVE",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "hive evaporation"
+    },
+    {
+     "stream_id": "BSFL_VAP",
+     "from": "BSFL_BIN",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "bin respiration/evaporation"
+    },
+    {
+     "stream_id": "CHICK_VAP",
+     "from": "CHICKEN_COOP",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "flock respiration/evaporation"
+    },
+    {
      "stream_id": "CO2_TO_FARM",
      "from": "HDR_CO2",
      "to": "GROW_BED",
@@ -3734,6 +3788,24 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "CO2 enrichment"
+    },
+    {
+     "stream_id": "DUCK_GREY",
+     "from": "DUCK_PEN",
+     "to": "GREY_TREAT",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "duck wash water"
+    },
+    {
+     "stream_id": "DUCK_VAP",
+     "from": "DUCK_PEN",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "duck pen evaporation"
     },
     {
      "stream_id": "FARM_O2_TO_HAB",
@@ -3745,6 +3817,69 @@
      "carries": "farm O2"
     },
     {
+     "stream_id": "FOOD_GALLEY",
+     "from": "FOOD_STORE",
+     "to": "GALLEY",
+     "other_sector": "HAB",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "food issue to the galley"
+    },
+    {
+     "stream_id": "FOOD_HAB",
+     "from": "FOOD_STORE",
+     "to": "HABITATION",
+     "other_sector": "HAB",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "food issue to the habitation (direct)"
+    },
+    {
+     "stream_id": "FRASS",
+     "from": "BSFL_BIN",
+     "to": "HOPPER",
+     "other_sector": "OIL",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "frass compost to the solids line"
+    },
+    {
+     "stream_id": "GALLEY_BIO",
+     "from": "GALLEY",
+     "to": "BSFL_BIN",
+     "other_sector": "HAB",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "galley biowaste to the larvae bin"
+    },
+    {
+     "stream_id": "IA-AQUA-TOPUP",
+     "from": "ROOF_TANK",
+     "to": "AQUA_TANK",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "loop top-up: root-zone growth water and evaporation"
+    },
+    {
+     "stream_id": "IA-CHICK-H2O",
+     "from": "ROOF_TANK",
+     "to": "CHICKEN_COOP",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "flock drinking water"
+    },
+    {
+     "stream_id": "IA-DUCK-H2O",
+     "from": "ROOF_TANK",
+     "to": "DUCK_PEN",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "duck drinking/washing water"
+    },
+    {
      "stream_id": "NUT_TO_BED",
      "from": "NUTRIENT_DOSE",
      "to": "GROW_BED",
@@ -3752,6 +3887,33 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "nutrient solution"
+    },
+    {
+     "stream_id": "QUAIL_H2O",
+     "from": "ROOF_TANK",
+     "to": "QUAIL_CAGE",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "quail water"
+    },
+    {
+     "stream_id": "QUAIL_VAP",
+     "from": "QUAIL_CAGE",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "cage evaporation"
+    },
+    {
+     "stream_id": "RABBIT_VAP",
+     "from": "RABBIT_HUTCH",
+     "to": "CRYO_AHU",
+     "other_sector": "CRYO",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "hutch evaporation"
     },
     {
      "stream_id": "S04",
@@ -4051,6 +4213,33 @@
      "carries": "farm O2"
     },
     {
+     "stream_id": "FOOD_GALLEY",
+     "from": "FOOD_STORE",
+     "to": "GALLEY",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "food issue to the galley"
+    },
+    {
+     "stream_id": "FOOD_HAB",
+     "from": "FOOD_STORE",
+     "to": "HABITATION",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "food issue to the habitation (direct)"
+    },
+    {
+     "stream_id": "GALLEY_BIO",
+     "from": "GALLEY",
+     "to": "BSFL_BIN",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "galley biowaste to the larvae bin"
+    },
+    {
      "stream_id": "IA-HAB-VAP",
      "from": "HABITATION",
      "to": "CRYO_AHU",
@@ -4069,6 +4258,15 @@
      "carries": "nitrogen return"
     },
     {
+     "stream_id": "IA-WASH-FEED",
+     "from": "ROOF_TANK",
+     "to": "WASHROOM",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "wash-water feed to the washroom fixtures"
+    },
+    {
      "stream_id": "S15",
      "from": "GROW_BED",
      "to": "HABITATION",
@@ -4085,6 +4283,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "CO2 product after FLUE_KO"
+    },
+    {
+     "stream_id": "WASH_GREY",
+     "from": "WASHROOM",
+     "to": "GREY_TREAT",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "wash grey water to the treatment train"
     }
    ]
   },
@@ -4385,6 +4592,42 @@
    ],
    "inactive": [
     {
+     "stream_id": "BEE_VAP",
+     "from": "BEE_HIVE",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "hive evaporation"
+    },
+    {
+     "stream_id": "BSFL_VAP",
+     "from": "BSFL_BIN",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "bin respiration/evaporation"
+    },
+    {
+     "stream_id": "CHICK_VAP",
+     "from": "CHICKEN_COOP",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "flock respiration/evaporation"
+    },
+    {
+     "stream_id": "DUCK_VAP",
+     "from": "DUCK_PEN",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "duck pen evaporation"
+    },
+    {
      "stream_id": "IA-AIR-IN",
      "from": "NORTH_DOCK",
      "to": "CRYO_ASU",
@@ -4446,6 +4689,24 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "oxygen return"
+    },
+    {
+     "stream_id": "QUAIL_VAP",
+     "from": "QUAIL_CAGE",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "cage evaporation"
+    },
+    {
+     "stream_id": "RABBIT_VAP",
+     "from": "RABBIT_HUTCH",
+     "to": "CRYO_AHU",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "hutch evaporation"
     },
     {
      "stream_id": "S04",
@@ -4854,6 +5115,33 @@
      "carries": "digester organics"
     },
     {
+     "stream_id": "DUCK_GREY",
+     "from": "DUCK_PEN",
+     "to": "GREY_TREAT",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "duck wash water"
+    },
+    {
+     "stream_id": "IA-AQUA-TOPUP",
+     "from": "ROOF_TANK",
+     "to": "AQUA_TANK",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "loop top-up: root-zone growth water and evaporation"
+    },
+    {
+     "stream_id": "IA-CHICK-H2O",
+     "from": "ROOF_TANK",
+     "to": "CHICKEN_COOP",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "flock drinking water"
+    },
+    {
      "stream_id": "IA-DC-EVAP",
      "from": "DRY_COOLER",
      "to": "ATMOS",
@@ -4872,6 +5160,15 @@
      "carries": "evaporative spray make-up"
     },
     {
+     "stream_id": "IA-DUCK-H2O",
+     "from": "ROOF_TANK",
+     "to": "DUCK_PEN",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "duck drinking/washing water"
+    },
+    {
      "stream_id": "IA-H2P-H2O",
      "from": "H2_DRYER",
      "to": "VCD_TRAIN",
@@ -4879,6 +5176,33 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "TSA regeneration condensate"
+    },
+    {
+     "stream_id": "IA-WASH-FEED",
+     "from": "ROOF_TANK",
+     "to": "WASHROOM",
+     "other_sector": "HAB",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "wash-water feed to the washroom fixtures"
+    },
+    {
+     "stream_id": "QUAIL_H2O",
+     "from": "ROOF_TANK",
+     "to": "QUAIL_CAGE",
+     "other_sector": "FARM",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "quail water"
+    },
+    {
+     "stream_id": "WASH_GREY",
+     "from": "WASHROOM",
+     "to": "GREY_TREAT",
+     "other_sector": "HAB",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "wash grey water to the treatment train"
     }
    ]
   },
@@ -4967,6 +5291,24 @@
     }
    ],
    "no_source": [
+    {
+     "stream_id": "IA-AIR-AQUA",
+     "from": "SOL_ARK_60K",
+     "to": "AQUA_TANK",
+     "other_sector": "FARM",
+     "rate": 0.04,
+     "unit": "kW",
+     "carries": "air pump electrical load: O2 aeration for the fish"
+    },
+    {
+     "stream_id": "IA-AIR-BIO",
+     "from": "SOL_ARK_60K",
+     "to": "BIOFILTER",
+     "other_sector": "FARM",
+     "rate": 0.02,
+     "unit": "kW",
+     "carries": "air pump electrical load: O2 for the nitrifying bacteria"
+    },
     {
      "stream_id": "IA-DC-EW_1",
      "from": "RECTIFIER",

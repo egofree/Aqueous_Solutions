@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 464 | Calculation or drawing issued under the named task |
-| T6 | Commissioning measurements | 32 | Commissioning record |
+| T5 | Design calculations and drawings | 480 | Calculation or drawing issued under the named task |
+| T6 | Commissioning measurements | 35 | Commissioning record |
 
-Total 660 items: 296 drivers, 364 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 679 items: 304 drivers, 375 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -224,6 +224,11 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | driver DIGESTER.metals-leach-train.htc_header_T_K | 473.15 K | steam heater temperature vs duty sheet | X-PAR |
 | driver ELEC.storage-train.ZNBR2.purge_air_T_C | 25.0 C purge air temperature | Compare with the HVAC design room and line temperatures | X-PAR |
 | driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task | X-PAR |
+| driver FARM.aquaponics.feed_larvae_frac | 0.114 kg/d larvae meal to the layer ration (7.9 % of the ration, computed) | Larvae-meal ration trial (X-FARM-01) | X-PAR |
+| driver FARM.bsfl.process_kg_d | 1.43 kg/d feedstock (study duty; bin capacity class 5 kg/d) | Bin trial (X-FARM-03) | X-PAR |
+| driver FARM.ducks.stock | 6.0 ducks (Khaki Campbell class) | Flock trial (X-FARM-05) | X-PAR |
+| driver FARM.quail.stock | 20.0 coturnix hens (indoor cage bank) | Cage-bank trial (X-FARM-06) | X-PAR |
+| driver FARM.rabbit.does | 2.0 does + 1 buck | Rabbitry trial (X-FARM-07) | X-PAR |
 | driver GAS.headers.meam_header_P_bar | 20.7 bar a | MeAM loop design pressure vs duty sheet | X-PAR |
 | driver GAS.headers.meam_header_T_K | 673.15 K | MeAM loop temperature vs duty sheet | X-PAR |
 | driver GAS.headers.methanol_synth_loop_P_bar | 50.0 bar a | loop reactor design pressure vs MEOH_SYNTH duty sheet | X-PAR |
@@ -676,12 +681,26 @@ Total 660 items: 296 drivers, 364 register entries. Classification rule: first m
 | A-M-412 | 180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m m; t; m | Hull general arrangement and structural design (X-LOC-11) | X-LOC-11 |
 | A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) | X-LOC-11 |
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35  m; m; - | Class stability and freeboard review (Q-030) | X-LOC-11 |
+| A-M-415 | 60 kg standing tilapia stock; 1.5 %/d ration; fish waste cir kg; - | Stocking and ration trial (X-FARM-01) | X-FARM-01 |
+| A-M-416 | 0.114 kg/d larvae meal (7.9 % of the layer ration), computed - (larvae-meal mass fraction of feed) | Larvae-meal ration trial (X-FARM-01) | X-FARM-01 |
+| A-M-417 | 12 birds; 0.12 kg feed/bird/d; 0.05 kg egg/bird/d birds; kg/d | Flock trial (X-FARM-02) | X-FARM-02 |
+| A-M-418 | 1.43 kg/d feedstock (galley biowaste 0.5, poultry manure 0.4 kg/d; - | Bin trial (X-FARM-03) | X-FARM-03 |
+| A-M-419 | galley 12; washroom 6; medical 6; sleep 16 (AQS-HAB-001 room m2 | Habitability design review (X-HAB-01) | X-HAB-01 |
+| A-M-420 | 240 m2 raceway at 15 g dry/m2/d, 30 % crude protein m2; g/m2/d; - | Raceway yield trial (X-FARM-04) | X-FARM-04 |
+| A-M-421 | 6 ducks (Khaki Campbell class); 0.9 kg/d ration; 0.34 kg/d d birds; kg/d | Flock trial (X-FARM-05) | X-FARM-05 |
+| A-M-422 | 20 coturnix hens; 0.5 kg/d ration; 0.06 kg/d quail eggs birds; kg/d | Cage-bank trial (X-FARM-06) | X-FARM-06 |
+| A-M-423 | 2 does + 1 buck; 0.5 kg/d forage (canopy thinnings); 0.1 kg/ does; kg/d | Rabbitry trial (X-FARM-07) | X-FARM-07 |
+| A-M-424 | 1 hive; 10-25 kg honey/yr; pollination raises canopy yield 2 hive; kg/yr; - | Hive establishment and overwintering trial (X-FARM-08) | X-FARM-08 |
+| A-M-425 | 2 m2 bin; 1 kg Eisenia fetida stock per 0.5 m2 m2; kg | Vermi-bin trial (X-FARM-09) | X-FARM-09 |
 
 ## 7. T6 Commissioning measurements
 
 | Item | Value | Test | Task |
 | --- | --- | --- | --- |
 | driver FAB.wafer-line-train.campaign_d | 7.0 d | logged campaign schedule at the fab commissioning task | X-PAR |
+| driver FARM.aquaponics.fish_stock_kg | 60.0 kg standing fish stock (tilapia class) | Stocking trial at the aquaponics commissioning (X-FARM-01) | X-PAR |
+| driver FARM.chicken.stock_birds | 12.0 birds (dual-purpose layer class) | Flock trial at the coop commissioning (X-FARM-02) | X-PAR |
+| driver FARM.duckweed.raceway_m2 | 240.0 m2 raceway (Lemna minor, azolla co-culture) | Raceway yield trial at the loop commissioning (X-FARM-04) | X-PAR |
 | driver U_free_convection_W_m2K | 7.0 W/(m2 K) | Coil outlet temperature on the installed air cooler | X-PAR |
 | driver bus_power_factor | 0.9 - | Measured power factor on the 480 V bus | X-PAR |
 | driver ew_bus_drop_V | 0.3 V | Measure bus-bar and contact drop on the installed DC bus at rated current | X-PAR |

@@ -170,6 +170,7 @@ Table 3.1. Document numbers in use
 | AQS-ESS-001 | `docs-authority/ESS_DUTY_MATRIX.md` | B | 2026-10-01 | ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study) | current |
 | AQS-ESS-002 | `docs-authority/FLOW_BATTERY.md` | — | — | ZnBr2 flow battery | current |
 | AQS-EW-MOD-001 | `docs-authority/EW_MODULE.md` | D | 2026-10-15 | Electrowinning module | current |
+| AQS-FARM-001 | `docs-authority/FARM_DESIGN.md` | A | 2026-10-26 | Farm design: aquaponics, dual root-zone growbeds, poultry, larvae composting | current |
 | AQS-FC-001 | `docs-authority/FUEL_CELL.md` | B | 2026-10-01 | PEM fuel cell — plant H₂ / O₂ on Sol-Ark DC bus | current |
 | AQS-FLOW-GRAPH-001 | `flow_graph/README.md` | — | 2026-10-01 | Plant flow graph — sole typed authority | current |
 | AQS-FOAM-001 | `models/openscad/foam_ew/CUT_LIST.md` | A | 2026-09-27 | Foam EW cascade — cut list | current |
@@ -179,6 +180,7 @@ Table 3.1. Document numbers in use
 | AQS-GLO-001 | `docs-authority/GLOSSARY.md` | B | 2026-10-25 | Glossary | current |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | B | — | Derived file revisions | current |
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
+| AQS-HAB-002 | `docs-authority/HAB_DESIGN.md` | A | 2026-10-26 | Hab interior design: zoning | current |
 | AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | A | 2026-10-25 | Dual heat ladder | current |
 | AQS-HEAT-STUDY-002 | `notes/heat_sink_study_2026-10-18.md` | A | 2026-10-18 | HL-Q4-REJ heat-sink study — resolving D-GEO_ORC | current |
 | AQS-HSE-001 | `docs-authority/HAZARD_SEPARATION.md` | H | 2026-10-24 | Hazard separation and containment | current |

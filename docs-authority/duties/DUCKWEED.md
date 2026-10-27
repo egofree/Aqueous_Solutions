@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
 
-1. Basis. Mass in 9698 kg/d. Mass out 9698 kg/d. Electrical duty 0.1000 kW. In: IA-BED-WEED 0.9 kg/d (nutrient water); IA-BIO-WEED 9697 kg/d (nitrate water). Out: IA-WEED-FISH 0.5 kg/d (duckweed); IA-WEED-HEN 0.2 kg/d (duckweed); IA-WEED-GOAT 0.15 kg/d (duckweed); IA-WEED-HAB 0.05 kg/d (duckweed reserve); 1 more.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: AQUA_LOOP4 0 kg/d (loop water to the duckweed raceway (polisher + feed crop)). Out: AQUA_RETURN2 0 kg/d (polished loop water return (2.2 kg/d duckweed growth drawn from the loop)); DUCK_FISH 0 kg/d (fresh duckweed: tilapia ration (dry-equivalent, 1.5 % BW)); DUCK_LAYERS 0 kg/d (duckweed: layer ration base (dry-equivalent)); QUAIL_FEED 0 kg/d (duckweed/larvae quail ration (dry-equivalent)); 1 more.
 
 2. Size.
 - Circulation 9697.9 kg/d. Two-minute holdup 0.0135 m³. A 20-day volume at this rate is not a tank.

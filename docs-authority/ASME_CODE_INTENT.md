@@ -25,7 +25,7 @@ Table 2.1. Unit count per class
 | Atmospheric | 3 |
 | B31.3 piping component | 4 |
 | Section VIII-1 (ID not yet sized) | 1 |
-| not a vessel (no design pressure on the graph) | 187 |
+| not a vessel (no design pressure on the graph) | 205 |
 
 Atmospheric design pressure is set from the actual cases by the vent stage (A-M-174): 4 x the open-vent dP for the vapour space plus the full-height hydrostatic head at SG 1.25. 0 atmospheric units have no sized height yet; their liquid head comes from a hold-up volume (A-M-182: 2 d for stores, 1 d for process units, H/D 1.5) until their unit sizing replaces it. Units with no liquid inflow carry the vapour case alone. Among the X-MFG-40 named units, GLASS_BURNOUT (rotary kiln), ALK_SCRUBBER, ZNBR2_BR2_REGEN (Br2 tower) and OIL_FRAC run at or near atmospheric pressure by process and stay atmospheric; the cold box CRYO_ASU does not: its compressor and column pressures are set by X-MFG-33 and it is reclassified when that design issues.
 
@@ -54,10 +54,13 @@ Table 4.1. Code intent per unit
 | AIR_RECEIVER | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ALK_SCRUBBER | GAS |  |  | 600 | not a vessel (no design pressure on the graph) | - | - | - |
 | AL_POT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| AQUA_TANK | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ATMOS | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ATM_INT | GAS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BACKUP_GEN | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BAGHOUSE | GAS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| BEE_HIVE | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| BIOFILTER | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BLACK_DIGEST | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BLOW_MOLD | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BMED_ACID | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -65,13 +68,16 @@ Table 4.1. Code intent per unit
 | BMED_UPW_POLISH | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BOUNDARY_EXPORT | DOCK |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BRIN_RECOVER | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| BSFL_BIN | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | C29_RECYCLE | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CAST_LINE | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CATCH_TANK | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CAT_OX | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CA_POT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| CHICKEN_COOP | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | COLD_MILL | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | COMB_HEAT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| COMMON_AREA | HAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CONTINUOUS_RECYCLE | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CONT_CAST | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | CRU | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -88,6 +94,8 @@ Table 4.1. Code intent per unit
 | DESAL_RO | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | DRAW | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | DRY_COOLER | HEAT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| DUCKWEED | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| DUCK_PEN | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | ELECTRODE_COAT | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | EVAP_ACID | DIGESTER | 100.0 |  |  | Atmospheric | U-1(c)(2)(h): <= 103 kPa g | none (API 650/620 or DVS 2205 intent; no Code stamp) | fill test with water to the top of the shell |
 | EVAP_ACID_VS | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -113,6 +121,7 @@ Table 4.1. Code intent per unit
 | FORGE | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | FUEL_CELL | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | F_RECOVER | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| GALLEY | HAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GAS_ATOMIZER | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GEO_GHEX | GEO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GEO_HP | GEO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -125,6 +134,8 @@ Table 4.1. Code intent per unit
 | GREASE_CA | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GREASE_LI | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GREY_TREAT | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| GROWBED_A | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| GROWBED_B | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GROW_BED | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GW_INTAKE | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | H2O_ELYZ | CRYO | 990.0 |  |  | Section VIII-1 (ID not yet sized) | 990 kPa g > 103; size from its unit design | U stamp pending size | UG-99(b) pending size |
@@ -152,6 +163,7 @@ Table 4.1. Code intent per unit
 | LI_RECOVER | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | LOAD_AGG | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MAU_HX | HEAT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| MEDICAL | HAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MEM_DIST | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MEOH_COND | MEOH |  |  | 400 | not a vessel (no design pressure on the graph) | - | - | - |
 | MEOH_FC | MEOH |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -198,8 +210,11 @@ Table 4.1. Code intent per unit
 | Q4_A | HEAT |  |  | -79264 | not a vessel (no design pressure on the graph) | - | - | - |
 | Q4_B | HEAT |  |  | -79264 | not a vessel (no design pressure on the graph) | - | - | - |
 | Q4_BUS | HEAT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| QUAIL_CAGE | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| RABBIT_HUTCH | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RAD_PANEL | HEAT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RECTIFIER | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| REC_DAYROOM | HAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | REC_HDR | GAS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RELIEF_CRYO | CRYO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | RELIEF_H2 | GAS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -215,6 +230,7 @@ Table 4.1. Code intent per unit
 | SHELL_BURNOUT | FOUNDRY |  | 900.0 |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SINTER | FOUNDRY |  | 1300.0 |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SI_REDUCE | GLASS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| SLEEP_QUARTERS | HAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SOLAR_PV_CELL | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | SOL_ARK_60K | ELEC |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | STOCK_OUT | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -226,7 +242,9 @@ Table 4.1. Code intent per unit
 | VAC_IND | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | VCD_TRAIN | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | VDF_SYN | POLYMERS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| VERMI_BIN | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | WAFER_FAB | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| WASHROOM | HAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | WAX_PATTERN | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | WET_BENCH | FAB |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | WET_OX | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

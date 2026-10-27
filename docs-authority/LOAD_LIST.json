@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "307200ce85a4b6e4ac802b198b2b61760112d5af88cc7956debf461181d0cd08",
+  "graph_sha256": "9a1266bb47053d225131d2bf9b08c06cb69d1e85bfc270eb9e92d9f809e12701",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 336.812,
-   "calc_kw": 336.812,
+   "kw": 336.872,
+   "calc_kw": 336.872,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 179.724,
-   "calc_kw": 179.724,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 179.784,
+   "calc_kw": 179.784,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.8 kW, charge 817.2 kW, 2517 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -716,6 +716,24 @@
    "sector": "FOUNDRY"
   },
   {
+   "unit": "AQUA_TANK",
+   "role": "load",
+   "kw": 0.04,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02); kW from the IA-AIR-AQUA feed (node has no continuous_kw stamp)",
+   "class": "pending",
+   "sector": "FARM"
+  },
+  {
+   "unit": "BIOFILTER",
+   "role": "load",
+   "kw": 0.02,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02); kW from the IA-AIR-BIO feed (node has no continuous_kw stamp)",
+   "class": "pending",
+   "sector": "FARM"
+  },
+  {
    "unit": "HYDRO_SET",
    "role": "storage",
    "kw": 0,
@@ -808,18 +826,18 @@
  ],
  "summary": {
   "calculated": 76,
-  "pending": 0,
+  "pending": 2,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 89,
-  "graph_sum_kW": 141.07,
-  "calc_sum_kW": 141.07,
+  "rows": 91,
+  "graph_sum_kW": 141.13,
+  "calc_sum_kW": 141.13,
   "connected_load_kW": 141.1,
   "connected_calculated_kW": 141.0,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 0.0,
-  "connected_calculated_pct": 100.0,
+  "connected_study_kW": 0.1,
+  "connected_calculated_pct": 99.9,
   "by_sector": {
    "CRYO": {
     "calculated": 4
@@ -835,7 +853,8 @@
     "calculated": 7
    },
    "FARM": {
-    "calculated": 1
+    "calculated": 1,
+    "pending": 2
    },
    "FOUNDRY": {
     "calculated": 13,

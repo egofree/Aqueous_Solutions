@@ -363,10 +363,121 @@ SEL = {
   'no wetted stream on the graph; the selection is the construction class only.'),
 }
 
+# X-FARM/X-HAB lane: the FARM/HAB build-out units (A-M-415..425). Same method as X-MAT-22:
+# the environment comes from the unit's duty sections 1-2 (graph design), the degradation
+# mechanism is named, the alternative states the condition that would switch it. Aquaculture
+# and wet-livestock service excludes Cu/Zn alloys from loop and feed-water contact (ichthyotoxic);
+# the closed shell excludes outgassing polymer classes from habitable rooms and from the hive.
+# 5-tuples: (mat, basis, alt, note, task) - task is the unit's own A-M verification lane.
+SEL_FARM = {
+ 'GROWBED_B': (
+  'HDPE tray with EPDM liner, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping',
+  'anaerobic mineralisation root zone (A-M-229; A-M-415): the bed runs sulfidic under the ponded tail, and '
+  'sulfide plus loop-water contact excludes Cu/Zn/brass outright (ichthyotoxic to the fish stock the loop serves); '
+  'LECA is the aquaponic media class (graph design). Selection per AQS-STD-002 with the duty section 2 environment.',
+  'PP tray if media abrasion ever shows on the HDPE floor (same polymer family, higher cost)',
+  'the anaerobic half of the dual root zone; the aerobic half (GROWBED_A) carries its own issued selection.',
+  'X-FARM-01'),
+ 'BSFL_BIN': (
+  'HDPE tray bin, PP larval self-harvest ramp, SS316 mesh screen; no metal below the substrate line',
+  'substrate goes pH 4-6 under frass acids at 65-75 % moisture with self-heating toward 40 C (graph design; A-M-418): '
+  'wet acid compost pits zinc and plate steel, HDPE/PP are inert across the whole range',
+  'FRP tray if bin scaling raises wall temperatures past the HDPE class',
+  'larvae harvest is by self-separation up the ramp; the mesh is the pupa screen.',
+  'X-FARM-03'),
+ 'CHICKEN_COOP': (
+  'Hot-dip galvanised steel frame and hardware cloth, SS316 feeders and waterers, HDPE drop-board liner',
+  'wet uric-acid manure with ammonia offgas and periodic wash-down (graph design; A-M-417): ammonia plus moisture '
+  'pits zinc at the droppings line, so the wet contact points step up to SS316 (standard poultry-housing practice)',
+  'SS304 frame if wash-down frequency rises past the weekly class',
+  'the drop board is the manure harvest surface to the BSFL bin.',
+  'X-FARM-02'),
+ 'DUCK_PEN': (
+  'Hot-dip galvanised steel frame and hardware cloth, EPDM liner in the wallow, SS316 waterers',
+  'permanently wet pen with a wallow (graph design; A-M-421): standing water governs the zinc budget, '
+  'so the wet zone is EPDM-lined and drinking-water contact is SS316',
+  'FRP wet panels in place of the liner if the pen geometry changes',
+  'the ducks forage the aquaponic loop water; pen drainings join the BSFL feedstock.',
+  'X-FARM-05'),
+ 'QUAIL_CAGE': (
+  'Hot-dip galvanised weld-wire cage battery, PP feeders, SS316 nipple waterers',
+  'dry droppings-tray service at the 20-hen Coturnix unit (graph design; A-M-422): HDG weld wire is the '
+  'cage-battery standard; the only wet points are the nipples, so those alone are stainless',
+  'PVC-coated wire if foot dermatitis ever shows at the cage floor',
+  'the droppings tray feeds the vermi bin directly.',
+  'X-FARM-06'),
+ 'RABBIT_HUTCH': (
+  'Hot-dip galvanised wire floor, HDPE rest mats, PP nest boxes, SS316 waterers',
+  'dry pellet manure on a wire floor with rest mats against sore hocks (graph design; A-M-423): HDG wire is the '
+  'rabbitry floor standard and the rest mats are the welfare contact surface',
+  'SS wire floor if galvanising wears through at the door wear points',
+  'cold manure goes direct to the soil root zones (A-M-423).',
+  'X-FARM-07'),
+ 'BEE_HIVE': (
+  'Untreated solid-pine box bodies, SS316 screen bottom board, propolis-waxed interiors; no copper-bearing '
+  'alloys and no treated lumber anywhere on the hive',
+  'Apis mellifera propolise rough untreated wood and are poisoned by lumber preservatives and copper salts '
+  '(graph design; A-M-424): in the closed shell the hive may also not outgas into the habitable atmosphere, '
+  'which is what excludes the polymer-hive class',
+  'none within the palette - the material is the biology interface here (a polymer hive is a process-change '
+  'decision, not a materials trade)',
+  'pollination service to the canopy is the primary output; honey and wax are secondary (A-M-424).',
+  'X-FARM-08'),
+ 'VERMI_BIN': (
+  'HDPE bin with coco-coir and shredded-paper bedding, PP working fork, SS316 harvest screen',
+  'bedding held at 70-80 % moisture near neutral pH for Eisenia fetida (graph design; A-M-425): the wet '
+  'near-neutral bedding is benign to HDPE/PP and hostile to unprotected steel; no metal contact with the casting harvest',
+  'FRP bin at larger areas (same polymer-class logic as the BSFL bin)',
+  'castings 1.5-2.5 % N to the soil root zones (A-M-425).',
+  'X-FARM-09'),
+ 'GALLEY': (
+  'SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths',
+  'food-contact sanitation class with wipe-down chemistry (AQS-HAB-001; A-M-419): 304 is sufficient at the '
+  'chloride-light galley service; Cu alloys are excluded from food paths outright (AQS-STD-002 food-contact rule)',
+  'SS316 where chlorinated sanitisers concentrate (same family, higher cost)',
+  'the galley biowaste stream feeds the BSFL bin (A-M-418).',
+  'X-HAB-01'),
+ 'WASHROOM': (
+  'FRP wet-wall panels, SS304 fixtures, ceramic tile wet zones, SS drainage',
+  'continuous wet zone at habitable temperature (AQS-HAB-001; A-M-419): FRP and ceramic carry the standing '
+  'condensate; 304 is the fixture class at the chloride-light service',
+  'SS316 fixtures where sanitiser chemistry concentrates',
+  'grey water to the WTR loop; the washroom is the largest hab water consumer.',
+  'X-HAB-01'),
+ 'MEDICAL': (
+  'SS304 wipe-down surfaces and cabinets, PP instrument trays',
+  'clinical sanitation class (AQS-HAB-001; A-M-419): full wipe-down surfaces, no fabric in the room; 304 at '
+  'the sanitiser service',
+  'SS316 where antiseptic chemistry ever demands it',
+  'the room is 6 m2 of the AQS-HAB-001 zoning.',
+  'X-HAB-01'),
+ 'REC_DAYROOM': (
+  'Aluminium extrusion partitions, PP-fleece acoustic panels, SS kick plates',
+  'hab interior fitout class (AQS-HAB-001; A-M-419): non-outgassing, wipe-down, 1-atm interior; no structural '
+  'duty beyond the partitions',
+  'wood-composite panels rejected for outgassing into the shell atmosphere',
+  'recreation/common zoning is 20 m2 of the AQS-HAB-001 basis.',
+  'X-HAB-01'),
+ 'COMMON_AREA': (
+  'Aluminium extrusion circulation framing, PP-fleece panel lining, SS kick plates',
+  'hab circulation and utility zoning (AQS-HAB-001; A-M-419): the same non-outgassing interior fitout class '
+  'as the day spaces',
+  'as REC_DAYROOM',
+  '10 m2 circulation in the AQS-HAB-001 basis.',
+  'X-HAB-01'),
+ 'SLEEP_QUARTERS': (
+  'Aluminium extrusion bunk framing, PP-fleece panel lining and bedding textiles, SS kick plates',
+  'private quarters at 16 m2 (AQS-HAB-001; A-M-419): interior fitout class as the day spaces; the textiles are '
+  'the polymer classes from the POLYMERS sector (no animal-fibre import exists in the roster)',
+  'as REC_DAYROOM',
+  '4 x 4 m2 private quarters in the AQS-HAB-001 basis.',
+  'X-HAB-01'),
+}
+
 def main():
     g = json.load(open(GP))
     N = {n['unit_id']: n for n in g['nodes']}
-    missing = [u for u in SEL if u not in N]
+    missing = [u for u in list(SEL) + list(SEL_FARM) if u not in N]
     assert not missing, f'{missing}: selection units absent from the graph'
     wrote = 0
     for u, (mat, basis, alt, note) in SEL.items():
@@ -376,8 +487,15 @@ def main():
         if cur != new:
             p['sec3_material'] = new
             wrote += 1
+    for u, (mat, basis, alt, note, task) in SEL_FARM.items():
+        p = N[u].setdefault('params', {})
+        cur = p.get('sec3_material') or {}
+        new = dict(mat=mat, basis=basis, alt=alt, note=note, task=task)
+        if cur != new:
+            p['sec3_material'] = new
+            wrote += 1
     json.dump(g, open(GP, 'w'), indent=1)
-    print(f'materials3: {len(SEL)} selections issued, {wrote} changed (X-MAT-22)')
+    print(f'materials3: {len(SEL) + len(SEL_FARM)} selections issued ({len(SEL)} X-MAT-22, {len(SEL_FARM)} X-FARM/X-HAB), {wrote} changed')
 
 if __name__ == '__main__':
     main()

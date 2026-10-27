@@ -433,6 +433,8 @@ Table 3.10. FARM off. Sector type: Life support / habitat.
 | S13 | GROW_BED to VCD_TRAIN | WTR | 3.8 kg/d | left without a source: consumer goes short |
 | S14D | FOOD_STORE to HABITATION | HAB | 4.2 kg/d | left without a source: consumer goes short |
 | S87 | GROW_BED to CRYO_O2 | CRYO | 0.642 kg/d | left without a source: consumer goes short |
+| IA-AIR-AQUA | SOL_ARK_60K to AQUA_TANK | ELEC | 0.04 kW | stops with the sector |
+| IA-AIR-BIO | SOL_ARK_60K to BIOFILTER | ELEC | 0.02 kW | stops with the sector |
 | S20 | SOL_ARK_60K to GROW_BED | ELEC | 2.05 kW | stops with the sector |
 
 Table 3.11. HAB off. Sector type: Life support / habitat.
@@ -561,6 +563,8 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | S49 | CRYO_H2 to FUEL_CELL | CRYO | 4.8 kg/d | left without a sink: unreclaimed |
 | S50 | CRYO_O2 to FUEL_CELL | CRYO | 38.4 kg/d | left without a sink: unreclaimed |
 | S79 | MEOH_FC to SOL_ARK_60K | MEOH | 1 kW | left without a sink: unreclaimed |
+| IA-AIR-AQUA | SOL_ARK_60K to AQUA_TANK | FARM | 0.04 kW | left without a source: consumer goes short |
+| IA-AIR-BIO | SOL_ARK_60K to BIOFILTER | FARM | 0.02 kW | left without a source: consumer goes short |
 | IA-DC-EW_1 | RECTIFIER to EW_1 | DIGESTER | 5.99 kW | left without a source: consumer goes short |
 | IA-DC-EW_2 | RECTIFIER to EW_2 | DIGESTER | 5.99 kW | left without a source: consumer goes short |
 | IA-DC-EW_3 | RECTIFIER to EW_3 | DIGESTER | 2.25 kW | left without a source: consumer goes short |

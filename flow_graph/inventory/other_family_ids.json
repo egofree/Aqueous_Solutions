@@ -400,6 +400,26 @@
    "category": "fastener",
    "item": "M8 hex socket head cap screw (ISO 4762)",
    "spec": "ISO 898-1 8.8"
+  },
+  "OF-81": {
+   "category": "fastener",
+   "item": "M10 stud + nut (ISO 4014 / ISO 4032)",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-82": {
+   "category": "fastener",
+   "item": "M8 x 25 hood bolts",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-83": {
+   "category": "fastener",
+   "item": "M10 anchor",
+   "spec": "ISO 898-1 8.8"
+  },
+  "OF-84": {
+   "category": "fastener",
+   "item": "M8 x 25 hopper bolts",
+   "spec": "ISO 898-1 8.8"
   }
  }
 }

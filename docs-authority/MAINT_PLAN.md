@@ -174,5 +174,23 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | SW_INTAKE | intake | external visual (1 y, A-M-189) |
 | DESAL_RO | membrane | external visual (1 y, A-M-189) |
 | BRIN_RECOVER | evaporator | external visual (1 y, A-M-189) |
+| AQUA_TANK | fish_tank | external visual (1 y, A-M-189) |
+| BIOFILTER | biofilter | external visual (1 y, A-M-189) |
+| GROWBED_A | growbed | external visual (1 y, A-M-189) |
+| GROWBED_B | growbed | external visual (1 y, A-M-189) |
+| CHICKEN_COOP | coop | external visual (1 y, A-M-189) |
+| BSFL_BIN | bsfl_bin | external visual (1 y, A-M-189) |
+| GALLEY | galley | external visual (1 y, A-M-189) |
+| WASHROOM | washroom | external visual (1 y, A-M-189) |
+| MEDICAL | medical | external visual (1 y, A-M-189) |
+| REC_DAYROOM | dayroom | external visual (1 y, A-M-189) |
+| SLEEP_QUARTERS | quarters | external visual (1 y, A-M-189) |
+| COMMON_AREA | dayroom | external visual (1 y, A-M-189) |
+| DUCKWEED | duckweed | external visual (1 y, A-M-189) |
+| DUCK_PEN | pen | external visual (1 y, A-M-189) |
+| QUAIL_CAGE | cage | external visual (1 y, A-M-189) |
+| RABBIT_HUTCH | hutch | external visual (1 y, A-M-189) |
+| BEE_HIVE | hive | external visual (1 y, A-M-189) |
+| VERMI_BIN | worm_bin | external visual (1 y, A-M-189) |
 
-165 units, 360 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+183 units, 378 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

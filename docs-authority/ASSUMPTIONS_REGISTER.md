@@ -460,6 +460,17 @@ Table 1.1. Curated assumptions
 | A-M-412 | 180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m deck stack | m; t; m | HULL.pontoon drivers; flow_graph/param/hull.py | Pontoon principal dimensions, steel and outfitting lightweight, and the study deck stack of the placement levels; the hull general arrangement and structural design replace them | Draft scales with the operating mass over L B Cb; the waterplane inertia carries BM with B cubed | Hull general arrangement and structural design (X-LOC-11) | X-LOC-11 |
 | A-M-413 | 200 | kg/m3 of packaged plant volume | HULL.plant.pkg_density_kg_m3; flow_graph/param/hull.py | Packaged process-plant density over the placement block volumes; the unit massing study replaces it | Operating mass and draft scale linearly with the packaging density | Unit massing study (X-LOC-11) | X-LOC-11 |
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35 B | m; m; - | HULL.criteria drivers; flow_graph/param/hull.py | Intact stability and freeboard criteria for a manned floating installation under class rules with SOLAS and MARPOL (Q-030); the rolling radius is a study value | GM falls with the square of the operating mass height; the roll period falls with the square root of GM | Class stability and freeboard review at the flag or coastal state decision (Q-030) | X-LOC-11 |
+| A-M-415 | 60 kg standing tilapia stock; 1.5 %/d ration; fish waste circulates through the biofilter to the dual root zones; 40 kg/d loop | kg; - | FARM.aquaponics drivers; AQUA_TANK and BIOFILTER design | Tilapia-class aquaponics stocking and ration at grow-out (FAO aquaculture class); fish waste splits between the root zones and the BSFL bin. Roster and ration bases cross-checked against the TechTree animals/plants domains (github.com/egofree/TechTree — From Stone to Silicon civilization bootstrap tech tree (animals and plants domains)). | Fish waste sets the nutrient load to the root zones and the biofilter duty | Aquaponics commissioning trial (X-FARM-01) | X-FARM-01 |
+| A-M-416 | 0.114 kg/d larvae meal (7.9 % of the layer ration), computed from the feed balance | - (larvae-meal mass fraction of feed) | FARM.aquaponics.feed_larvae_frac; CHICKEN_COOP and AQUA_TANK feed | BSFL larvae meal replaces half the imported layer/fish feed by mass; the balance is imported grain/scratch. Roster and ration bases cross-checked against the TechTree animals/plants domains (github.com/egofree/TechTree — From Stone to Silicon civilization bootstrap tech tree (animals and plants domains)). | The imported feed mass scales 1:1 with (1 - fraction) | Larvae-meal ration trial (X-FARM-01) | X-FARM-01 |
+| A-M-417 | 12 birds; 0.12 kg feed/bird/d; 0.05 kg egg/bird/d | birds; kg/d | FARM.chicken drivers; CHICKEN_COOP design | Dual-purpose layer flock at the 4-crew egg ration | Egg output and manure to the BSFL bin scale with the flock | Flock trial at the coop commissioning (X-FARM-02) | X-FARM-02 |
+| A-M-418 | 1.43 kg/d feedstock (galley biowaste 0.5, poultry manure 0.48, fish sludge 0.45); 15 % fresh larvae (TECHTREE insect-farming); 25 % frass | kg/d; - | FARM.bsfl drivers; BSFL_BIN design | Black-soldier-fly larvae conversion of kitchen biowaste and poultry manure (DIENER2009 class). Roster and ration bases cross-checked against the TechTree animals/plants domains (github.com/egofree/TechTree — From Stone to Silicon civilization bootstrap tech tree (animals and plants domains)). | Larvae output sets the home-grown feed fraction; frass goes to the soil root zone | Bin trial at the BSFL commissioning (X-FARM-03) | X-FARM-03 |
+| A-M-419 | galley 12; washroom 6; medical 6; sleep 16 (AQS-HAB-001 room basis); recreation/common 20; circulation 10 | m2 | HAB.rooms drivers; GALLEY, WASHROOM, REC_DAYROOM, SLEEP_QUARTERS, COMMON_AREA design | NASA_STD_3001 habitable-volume class per function at the 4-crew occupancy | Habitable volume scales with crew; the envelope carries the zoning | Habitability design review at the HAB interior design pass | X-HAB-01 |
+| A-M-420 | 240 m2 raceway at 15 g dry/m2/d, 30 % crude protein | m2; g/m2/d; - | FARM.duckweed drivers; DUCKWEED design | Lemna minor raceway on the aquaponic loop water; CP 25-35 % class (TECHTREE aquaculture); the raceway is the loop polisher and the base feed crop for the fish and the waterfowl | The raceway area sets the home-grown feed ceiling for every farm animal | Raceway yield trial (X-FARM-04) | X-FARM-04 |
+| A-M-421 | 6 ducks (Khaki Campbell class); 0.9 kg/d ration; 0.34 kg/d duck eggs; 0.36 kg/d manure | birds; kg/d | FARM.ducks drivers; DUCK_PEN design | Khaki Campbell 250-340 eggs/yr, feed 120-150 g/d, duckweed 35-43 % protein supplement (TECHTREE poultry.ducks) | Duck eggs and manure scale with the flock; the ducks forage the loop water | Flock trial (X-FARM-05) | X-FARM-05 |
+| A-M-422 | 20 coturnix hens; 0.5 kg/d ration; 0.06 kg/d quail eggs | birds; kg/d | FARM.quail drivers; QUAIL_CAGE design | Coturnix cage bank at the 20-hen unit, feed 150-190 kg/yr (TECHTREE poultry.coturnix) | Quail eggs scale with the cage bank; droppings feed the vermi bin | Cage-bank trial (X-FARM-06) | X-FARM-06 |
+| A-M-423 | 2 does + 1 buck; 0.5 kg/d forage (canopy thinnings); 0.1 kg/d dressed meat | does; kg/d | FARM.rabbit drivers; RABBIT_HUTCH design | Rabbits: highest-efficiency plant-to-meat converter, cold manure direct to crops (TECHTREE rabbits) | Meat output scales with the doe count; the forage draws on the canopy thinnings | Rabbitry trial (X-FARM-07) | X-FARM-07 |
+| A-M-424 | 1 hive; 10-25 kg honey/yr; pollination raises canopy yield 20-30 % | hive; kg/yr; - | FARM.bee drivers; BEE_HIVE design | Apis mellifera pollination service to the greenhouse crops and honey/wax output (TECHTREE beekeeping) | Pollination directly scales the seed and fruit set of the canopy crops | Hive establishment and overwintering trial (X-FARM-08) | X-FARM-08 |
+| A-M-425 | 2 m2 bin; 1 kg Eisenia fetida stock per 0.5 m2 | m2; kg | FARM.worms drivers; VERMI_BIN design | Vermiculture: kitchen scraps and soft residue to vermicompost, castings 1.5-2.5 % N (TECHTREE soil-management.vermiculture) | Casting output scales with the bin area and the soft-residue feed | Vermi-bin trial (X-FARM-09) | X-FARM-09 |
 
 ## 2. Graph study and assumed values
 
@@ -510,13 +521,13 @@ Table 2.1. Graph study and assumed values
 | A-G-c8e676 | 0.0385 | kW | graph NOX_SCRUB continuous_kw | X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W. |  | unit task 02 (NOX_SCRUB) |
 | A-G-3a2c73 | 0.0245 | kW | graph NUTRIENT_DOSE continuous_kw | Dosing-skid pumps (AQS-EQP-NUT-001): bleed transfer 109.6 kg/d over a 2 h window at 15 m head, eta 0.35 (6.4 W) + 3 x 8 W metering pumps on the bed/fish ... |  | unit task 02 (NUTRIENT_DOSE) |
 | A-G-9552a6 | 1.664 | kW | graph OIL_PYRO continuous_kw | X-ELS-02: node aligned to its calculated SF-OIL_PYRO feed (retort heat / heater efficiency); sizing module flow_graph/param/reactor_design.py (X-MFG-31 ... |  | unit task 02 (OIL_PYRO) |
-| A-G-dddba0 | 336.8116 | kW | graph PV_ARRAY continuous_kw | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg — resolved (A-M-233). |  | unit task 02 (PV_ARRAY) |
+| A-G-dddba0 | 336.8716 | kW | graph PV_ARRAY continuous_kw | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg — resolved (A-M-233). |  | unit task 02 (PV_ARRAY) |
 | A-G-18e3f1 | 12.0 | kW | graph RECTIFIER continuous_kw | A-M-231 (AQS-NOTE-PV-REBASE Rev A section 8): 12 kW 48 V rail and auxiliary basis (AQS-PWR-001). The nine-channel EW DC load is counted once behind the ... |  | unit task 02 (RECTIFIER) |
 | A-G-c0d11f | 0.4417 | kW | graph WAFER_FAB continuous_kw | AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved ... |  | unit task 02 (WAFER_FAB) |
 | A-G-80b832 | 0.2066 | kW | graph WET_BENCH continuous_kw | RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern) ... |  | unit task 02 (WET_BENCH) |
 | A-G-e58fa0 | 0.0189 | kW | graph WIRE_DRAW continuous_kw | X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this ... |  | unit task 02 (WIRE_DRAW) |
 | A-G-dd83c0 | 0.0308 | kW | graph WS_PEROX continuous_kw | X-ELS-10 (AQS-DSN-OX-001): peroxide electrolytic cell 12.31 A x 2.5 V = 0.0308 kW from the S32 duty; DC behind the RECTIFIER AC sum. |  | unit task 02 (WS_PEROX) |
-| A-G-9b7b1e | 179.7238 | kW | graph ZNBR2 continuous_kw | X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.7 kW, charge 816.9 kW, 2516 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value. |  | unit task 02 (ZNBR2) |
+| A-G-9b7b1e | 179.7838 | kW | graph ZNBR2 continuous_kw | X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 179.8 kW, charge 817.2 kW, 2517 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value. |  | unit task 02 (ZNBR2) |
 | A-G-ee0b63 | 0.2359 | kW | graph VCD_TRAIN continuous_kw | 0.333 m3/d x 17 kWh/m3 / 24 h (issued 14-20 band midpoint); duty unit only (A-M-149) |  | unit task 02 (VCD_TRAIN) |
 | A-G-5014df | 0.046 | kW | graph REMIN continuous_kw | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): 2 x 8 W metering pumps + 30 W UV at the 10 L/d drink basis (AQS-EQP-STUDY-001 sec.4; A-M-285). |  | unit task 02 (REMIN) |
 | A-G-f420c2 | 0.0254 | kW | graph LITHO_COAT continuous_kw | X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287). |  | unit task 02 (LITHO_COAT) |
@@ -665,7 +676,7 @@ Table 2.1. Graph study and assumed values
 | A-G-ebcef8 | 9.277184 | kg/d | graph S09 rate | AQS-DUTY-010: SC-2 1:1:5 -> HCl volume = H2O2 SC-2 share 1.5 L/d (37 % eq, 0.655 kg HCl) delivered as 2 M BMED acid / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-1344d3 | 79.115777 | kg/d | graph S10 rate | AQS-AUD-001 §13 spent etch/return order-of-magnitude (~WS_* forwards sum mid) / X-PAR-02 TF: spent etch/return order-of-magnitude band unchanged; closes the ... |  | X-BAS-02 |
 | A-G-01380a | 0.8 | kg/d | graph S11 rate | Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 §12) |  | X-BAS-02 |
-| A-G-72cdab | 319.60396 | kg/d | graph S12 rate | Mid of AQS-AUD-001 §11 grey → treat/VCD ~100–120 L/d / X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 wash ride S12, HAB_WASH ... |  | X-BAS-02 |
+| A-G-72cdab | 319.60396 | kg/d | graph S12 rate | grey/solids (the farm-protein metabolic load is inside this total: AQS-FARM-001) / X-PAR-02 TF: crew grey+wash by difference (BH crew-4: 240.23 grey + 80.00 ... |  | X-BAS-02 |
 | A-G-f09add | 3.799494 | kg/d | graph S13 rate | AQS-DUTY-014. Fiber taken from the still feed. Still resized. / X-PAR-02 reconciled (AQS-PAR-003). / value restored from graph Rev BH (91d33f4): Rev AC ... |  | X-BAS-02 |
 | A-G-855495 | 4.2 | kg/d | graph S14 rate | Upper-band AQS-AUD-001 §12 food path 4.2 kg/d fresh (band 1.4–4.2; was mid 2.8). Study yield/berth assumption — not nutritionist lock (AQS-SUR-001 / WP-A2). / ... |  | X-BAS-02 |
 | A-G-6a75ae | 0.0 | kg/d | graph S15 rate | null_rate_kind=unknown / X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229): photosynthetic O2 captured on S87 to CRYO_O2 (32/44 x CO2 fixed, PQ 1.0) ... |  | X-BAS-02 |
@@ -715,8 +726,8 @@ Table 2.1. Graph study and assumed values
 | A-G-09568e | 117.42759 | kg/d | graph S67 rate | Flue includes the silicon-carbide CO. / X-SAN-01 Rev B: +0.7656 kg/d from sanitation cake and biogas combustion. / X-PAR-12 TF: flue junction passes burner ... |  | X-BAS-02 |
 | A-G-121660 | 14.050492 | kg/d | graph S67B rate | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. Farm-trim carbon included. / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR-12 TF: bound O2 ... |  | X-BAS-02 |
 | A-G-e2f3f4 | 78.987901 | kg/d | graph S68 rate | AQS-DUTY-010: CRYO AHU 2592 m3/h coil to 10.0 C dew (w 0.01 -> 0.00762); latent 4.93 kW / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-b66bb4 | 755.229337 | kg/d | graph S69 rate | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 / X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL ... |  | X-BAS-02 |
-| A-G-ec8519 | 755.229337 | kg/d | graph S69B rate | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. / X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in ... |  | X-BAS-02 |
+| A-G-b66bb4 | 755.481467 | kg/d | graph S69 rate | AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 / X-PAR-02 TF: purge 26.6 m3/h holds H2 at 25 % LFL ... |  | X-BAS-02 |
+| A-G-ec8519 | 755.481467 | kg/d | graph S69B rate | AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. / X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in ... |  | X-BAS-02 |
 | A-G-5863c6 | 0.0521 | kg/d | graph S70 rate | AQS-DUTY-010: CRYO_CO2 boil-off 1%/d of the 5.21 kg dark buffer, vented via the cryo AHU condensables box / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-7073c8 | 20458.32 | kg/d | graph S71 rate | AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. / value ... |  | X-BAS-02 |
 | A-G-14c1dd | 2.4442 | kg/d | graph S72 rate | AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -825,7 +836,7 @@ Table 2.1. Graph study and assumed values
 | A-G-75b109 | 244.641602 | kg/d | graph IA-GREY-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. / X-PAR-02 TF: grey sludge to the leach by difference (Rev ... |  | X-BAS-02 |
 | A-G-c27d95 | 27.509975 | kg/d | graph IA-CRU-01 rate | CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 drawn 0.6158 = 27.5100 kg/d (chlorate consumed, NaCl + reaction water + monomer water formed; A-M-289). The leach sees +0.1379 kg/d liquor, below the 0.5 kg/d battery limit, absorbed by its reconciliation layer. |  | X-BAS-02 |
 | A-G-ec5c10 | 0.0 | kW | graph HL-Q4-REJ rate | AQS-HEAT-STUDY-002 Rev A 2026-10-18 §10.8/§10.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored — 13.1637 in - 3.0 life - 0.532 HX-9 - ... |  | X-BAS-02 |
-| A-G-a59b7e | 336.8116 | kW | graph IA-PV-01 rate | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW. |  | X-BAS-02 |
+| A-G-a59b7e | 336.8716 | kW | graph IA-PV-01 rate | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW. |  | X-BAS-02 |
 | A-G-181fa6 | 8.486841 | kg/d | graph IA-ZNBR-BD rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-3a0716 | 13.930007 | kg/d | graph IA-NUT-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-225194 | 60.000181 | kg/d | graph IA-UPW-FAB rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -1060,7 +1071,7 @@ Table 2.1. Graph study and assumed values
 | A-G-9bbc75 | 0.0238 | kW | graph SF-EVAP_ACID_VS rate | X-PAR acid-loop decision (AQS-PAR-001 §3); X-PAR-10 vent scrubber (AQS-DUTY-061). Feed equal to continuous_kw. |  | X-BAS-02 |
 | A-G-97f7d3 | 0.0238 | kW | graph SQ-EVAP_ACID_VS rate | X-PAR acid-loop decision (AQS-PAR-001 §3); X-PAR-10 vent scrubber (AQS-DUTY-061). Pump work leaves as heat. |  | X-BAS-02 |
 | A-G-da7e5d | 0.0 | kg/d | graph IA-H2P-H2O rate | X-PAR-15: feed water (S49 composition) removed by the TSA, condensed from the regeneration purge (A-M-168). |  | X-BAS-02 |
-| A-G-e45640 | 4.2 | kg/d | graph S14D rate | X-PAR-02 TF: food store passes the harvest at steady state (D-DOCK buffer, A-M-270). / X-PAR-02 TF: food store passes the harvest to the galley at steady state (D-DOCK buffer, A-M-270) (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-e45640 | 4.2 | kg/d | graph S14D rate | food issue to the habitation (the farm protein is inside this total: AQS-FARM-001) / X-PAR-02 TF: food store passes the harvest to the galley at steady state ... |  | X-BAS-02 |
 | A-G-07dcde | 36.7125 | kg/d | graph IA-STOCK-STORE rate | X-PAR-02 TF: metal product store passes the foundry output to the stock draws (D-DOCK buffer, A-M-270). / X-PAR-02 TF: metal product store passes the foundry ... |  | X-BAS-02 |
 | A-G-f95795 | 191.989014 | kg/d | graph IA-AIR-RX-OUT rate | X-PAR-12 TF: air receiver passes the cold-box delivery to the header at steady state (D-DOCK buffer, A-M-270). / X-PAR-12 TF: air receiver passes the cold-box ... |  | X-BAS-02 |
 | A-G-187ee5 | 0.3454 | kg/d | graph IA-FERM-DIG rate | X-PAR-02 TF R10c: fermenter digestate to the blackwater barrier by difference - galley-organics class like IA-GAL (D-DOCK lane 2026-10-19); BLACK_DIGEST closes on IA-BLK-GREY (T7). / X-PAR-02 TF: fermenter digestate (water + spent solids) joins the blackwater barrier - galley-organics class like IA-GAL; BLACK_DIGEST closes on IA-BLK-GREY (T7) (AQS-PAR-003). |  | X-BAS-02 |
@@ -1134,6 +1145,52 @@ Table 2.1. Graph study and assumed values
 | A-G-7ec3d8 | 0.0191 | kW | graph SF-COLD_MILL rate | X-ELS-02 load-basis (A-M-275). Feed equal to COLD_MILL continuous_kw. |  | X-BAS-02 |
 | A-G-b8f703 | 0.0189 | kW | graph SF-WIRE_DRAW rate | X-ELS-02 load-basis (A-M-275). Feed equal to WIRE_DRAW continuous_kw. |  | X-BAS-02 |
 | A-G-ea3ecb | 0.1257 | kW | graph SF-GEO_HP_CLOSED_LOOP rate | X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP_CLOSED_LOOP continuous_kw (A-M-317). |  | X-BAS-02 |
+| A-G-087ca9 | 0.0 | kg/d | graph AQUA_LOOP1 rate | ammonia load: fish protein metabolism ~16 % N by mass (A-M-415); the BIOFILTER nitrifies NH3 -> NO2 -> NO3 before the root zones |  | X-BAS-02 |
+| A-G-71cd4c | 0.0 | kg/d | graph AQUA_NUT rate | the BIOFILTER converts NH3/NH4+ -> NO2- (Nitrosomonas) -> NO3- (Nitrobacter); aerobic, O2-limited without aeration |  | X-BAS-02 |
+| A-G-8b5217 | 0.0 | kg/d | graph AQUA_LOOP3 rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-adc7b1 | 0.0 | kg/d | graph IA-CHICK-H2O rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-d7751c | 0.0 | kg/d | graph EGG_HARVEST rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-e8d409 | 0.0 | kg/d | graph CHICK_MANURE rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-4b9999 | 0.0 | kg/d | graph CHICK_VAP rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-40ffb7 | 0.0 | kg/d | graph FISH_SLUDGE rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-738eaf | 0.0 | kg/d | graph LARVAE_FEED rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-3629b0 | 0.0 | kg/d | graph FRASS rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-cc3a02 | 0.0 | kg/d | graph BSFL_VAP rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-375cb8 | 0.0 | kg/d | graph FOOD_GALLEY rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-e56c59 | 0.0 | kg/d | graph GALLEY_MEALS rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-5fbb95 | 0.0 | kg/d | graph GALLEY_BIO rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-936d48 | 0.0 | kg/d | graph WASH_GREY rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-fe72b9 | 0.0 | kg/d | graph FISH_HARVEST rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-8e85e9 | 0.0 | kg/d | graph IA-AQUA-TOPUP rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-cfd116 | 0.0 | kg/d | graph IA-DUCK-H2O rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-b6f137 | 0.0 | kg/d | graph IA-WASH-FEED rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-d1b0da | 0.0 | kg/d | graph AQUA_LOOP4 rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-8e6d8d | 0.0 | kg/d | graph AQUA_RETURN2 rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-3eff2b | 0.0 | kg/d | graph DUCK_FISH rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-2dcee0 | 0.0 | kg/d | graph DUCK_LAYERS rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-393ac1 | 0.0 | kg/d | graph FOOD_HAB rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-afb409 | 0.0 | kg/d | graph DUCK_EGGS rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-ea3a1c | 0.0 | kg/d | graph DUCK_MANURE rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-7a45ee | 0.0 | kg/d | graph DUCK_VAP rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-6555df | 0.0 | kg/d | graph QUAIL_FEED rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-d504a9 | 0.0 | kg/d | graph QUAIL_H2O rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-f2cb2d | 0.0 | kg/d | graph QUAIL_EGGS rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-87cf7f | 0.0 | kg/d | graph QUAIL_DROP rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-186fd8 | 0.0 | kg/d | graph QUAIL_VAP rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-e698c4 | 0.0 | kg/d | graph RABBIT_FORAGE rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-5b1c92 | 0.0 | kg/d | graph RABBIT_MEAT rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-19ae26 | 0.0 | kg/d | graph RABBIT_MANURE rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-146765 | 0.0 | kg/d | graph RABBIT_VAP rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-de3d4e | 0.0 | kg/d | graph NECTAR_FORAGE rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-e0d3be | 0.0 | kg/d | graph HONEY rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-04d257 | 0.0 | kg/d | graph BEE_VAP rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-ea1e1f | 0.0 | kg/d | graph VERMI_FEED rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-17ddbd | 0.0 | kg/d | graph VERMICOMPOST rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-31e70f | 0.0 | kg/d | graph WORM_TEA rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-ad87a5 | 0.0 | kg/d | graph DUCK_FODDER rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-bb867e | 0.0 | kg/d | graph DUCK_GREY rate | balance-resolved farm/hab loop rate (X-FARM/X-HAB build-out; A-M-415..425, TECHTREE roster) |  | X-BAS-02 |
+| A-G-a61295 | 0.04 | kW | graph IA-AIR-AQUA rate | air pump 40 W: dissolved O2 for the fish (5 mg/L minimum) and the biofilter nitrification (A-M-415) |  | X-BAS-02 |
+| A-G-33d938 | 0.02 | kW | graph IA-AIR-BIO rate | biofilter aeration 20 W: the nitrifying bacteria are aerobic (4.57 mg O2/mg NH4+-N); A-M-415 |  | X-BAS-02 |
 
 ## 3. Model parameters
 
@@ -1172,6 +1229,18 @@ Table 3.1. Model parameters
 | A-P-5486c2 | None |  | models/mfg/CAST_LINE/params.json gantry_swl | Mould-change gantry with SWL 250 kg chain hoist purchased item: mould change-out is the unit task 12 work order; SWL is a fit choice for the heaviest seat ... |  | unit task 10 (CAST_LINE) |
 | A-P-52c3ee | None |  | models/mfg/CAST_LINE/params.json materials_xmat22 | Materials per docs-authority/duties/CAST_LINE.md section 3 (X-MAT-22): fine-graphite mould hot faces with steel backing platens, graphite launder/refractory ... |  | unit task 10 (CAST_LINE) |
 | A-P-9a8547 | None |  | models/mfg/CAST_LINE/params.json bearing_class | Bearing/bushing hardware (2-bolt flange bearings, 25 mm bore class) is a purchased utility item; the rating is a fit choice for the hand-run roller loads, no ... |  | unit task 10 (CAST_LINE) |
+| A-P-5e863f | 60.3 | mm | models/mfg/CA_POT/params.json DN50_OD_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-574d73 | 2.0 | mm | models/mfg/CA_POT/params.json DN50_wall_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-b038da | 21.3 | mm | models/mfg/CA_POT/params.json DN15_OD_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-a5861e | 2.0 | mm | models/mfg/CA_POT/params.json DN15_wall_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-c6007f | 88.9 | mm | models/mfg/CA_POT/params.json DN80_OD_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-1d8814 | 2.0 | mm | models/mfg/CA_POT/params.json DN80_wall_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-1f9ada | 21.3 | mm | models/mfg/CONT_CAST/params.json DN15_OD_mm | assumption |  | unit task 10 (CONT_CAST) |
+| A-P-73a924 | 2.0 | mm | models/mfg/CONT_CAST/params.json DN15_wall_mm | assumption |  | unit task 10 (CONT_CAST) |
+| A-P-e28e77 | 60.3 | mm | models/mfg/CR_CELL/params.json DN50_OD_mm | assumption |  | unit task 10 (CR_CELL) |
+| A-P-0d4f78 | 2.0 | mm | models/mfg/CR_CELL/params.json DN50_wall_mm | assumption |  | unit task 10 (CR_CELL) |
+| A-P-22b167 | 21.3 | mm | models/mfg/CR_CELL/params.json DN15_OD_mm | assumption |  | unit task 10 (CR_CELL) |
+| A-P-c4e278 | 2.0 | mm | models/mfg/CR_CELL/params.json DN15_wall_mm | assumption |  | unit task 10 (CR_CELL) |
 | A-P-4e3f95 | 12 | mm | models/mfg/EXPANDER/params.json baseplate_t_mm | assumption |  | unit task 10 (EXPANDER) |
 | A-P-917f64 | 10 | mm | models/mfg/EXPANDER/params.json cylinder_wall_mm | assumption |  | unit task 10 (EXPANDER) |
 | A-P-0829fa | [300, 300, 250] | mm | models/mfg/EXPANDER/params.json crankcase_mm | assumption |  | unit task 10 (EXPANDER) |
@@ -1181,6 +1250,14 @@ Table 3.1. Model parameters
 | A-P-d87378 | 50 | mm | models/mfg/EXPANDER/params.json nozzle_stub_len_mm | assumption |  | unit task 10 (EXPANDER) |
 | A-P-763503 | 115 |  | models/mfg/EXPANDER/params.json allowable_stress_MPa | assumption |  | unit task 10 (EXPANDER) |
 | A-P-fd20b0 | Not on the graph. Shop proportions chosen to fit size_mm. Not measured. Not a design calculation except the wall check. |  | models/mfg/EXPANDER/params.json note | assumption |  | unit task 10 (EXPANDER) |
+| A-P-65a831 | 21.3 | mm | models/mfg/FILM_CAST/params.json DN15_OD_mm | assumption |  | unit task 10 (FILM_CAST) |
+| A-P-a1e904 | 2.0 | mm | models/mfg/FILM_CAST/params.json DN15_wall_mm | assumption |  | unit task 10 (FILM_CAST) |
+| A-P-413496 | 21.3 | mm | models/mfg/FLUX_PREP/params.json DN15_OD_mm | assumption |  | unit task 10 (FLUX_PREP) |
+| A-P-e815b7 | 2.0 | mm | models/mfg/FLUX_PREP/params.json DN15_wall_mm | assumption |  | unit task 10 (FLUX_PREP) |
+| A-P-d12d58 | 21.3 | mm | models/mfg/IND_MELT/params.json DN15_OD_mm | assumption |  | unit task 10 (IND_MELT) |
+| A-P-22ca6b | 2.0 | mm | models/mfg/IND_MELT/params.json DN15_wall_mm | assumption |  | unit task 10 (IND_MELT) |
+| A-P-503123 | 21.3 | mm | models/mfg/INV_CAST/params.json DN15_OD_mm | assumption |  | unit task 10 (INV_CAST) |
+| A-P-bb7018 | 2.0 | mm | models/mfg/INV_CAST/params.json DN15_wall_mm | assumption |  | unit task 10 (INV_CAST) |
 | A-P-28519d | 60 | mm | models/mfg/LEACH_CSTR_1/params.json header_zone_mm | Room for the DN50 headers and the 56 mm belts on each Y face | Fabrication drawing (unit task 11) | unit task 10 (LEACH_CSTR_1) |
 | A-P-dc0778 | 16 | mm | models/mfg/LEACH_CSTR_1/params.json wall_mm | AQS-DUTY-050 panel check at 85 C | Manufacturer creep data; hydrotest | unit task 10 (LEACH_CSTR_1) |
 | A-P-350882 | 16 | mm | models/mfg/LEACH_CSTR_1/params.json floor_mm | AQS-NZ-001; floor bears on the slab | Slab support drawing | unit task 10 (LEACH_CSTR_1) |
@@ -1194,3 +1271,32 @@ Table 3.1. Model parameters
 | A-P-07caca | None |  | models/mfg/LEACH_CSTR_1/params.json belts | AQS-DUTY-050 section 4 | In-house FRP coupon tests (X-MAT-21) | unit task 10 (LEACH_CSTR_1) |
 | A-P-fc3d22 | 1100 | mm | models/mfg/LEACH_CSTR_1/params.json level_mm | AQS-DUTY-050 section 1 | Commissioning level | unit task 10 (LEACH_CSTR_1) |
 | A-P-5d4b13 | 1100 |  | models/mfg/LEACH_CSTR_1/params.json liquor_density_kg_m3 | AQS-DUTY-050 section 1 | Liquor sample density | unit task 10 (LEACH_CSTR_1) |
+| A-P-0cde50 | 88.9 | mm | models/mfg/MG_POT/params.json DN80_OD_mm | assumption |  | unit task 10 (MG_POT) |
+| A-P-78855f | 2.0 | mm | models/mfg/MG_POT/params.json DN80_wall_mm | assumption |  | unit task 10 (MG_POT) |
+| A-P-405e23 | 21.3 | mm | models/mfg/MG_POT/params.json DN15_OD_mm | assumption |  | unit task 10 (MG_POT) |
+| A-P-c86665 | 2.0 | mm | models/mfg/MG_POT/params.json DN15_wall_mm | assumption |  | unit task 10 (MG_POT) |
+| A-P-141455 | 60.3 | mm | models/mfg/MO_CELL/params.json DN50_OD_mm | assumption |  | unit task 10 (MO_CELL) |
+| A-P-897703 | 2.0 | mm | models/mfg/MO_CELL/params.json DN50_wall_mm | assumption |  | unit task 10 (MO_CELL) |
+| A-P-b2e297 | 21.3 | mm | models/mfg/MO_CELL/params.json DN15_OD_mm | assumption |  | unit task 10 (MO_CELL) |
+| A-P-fb7be3 | 2.0 | mm | models/mfg/MO_CELL/params.json DN15_wall_mm | assumption |  | unit task 10 (MO_CELL) |
+| A-P-f06446 | 21.3 | mm | models/mfg/POLY_F/params.json DN15_OD_mm | assumption |  | unit task 10 (POLY_F) |
+| A-P-506d4e | 2.0 | mm | models/mfg/POLY_F/params.json DN15_wall_mm | assumption |  | unit task 10 (POLY_F) |
+| A-P-8af796 | 21.3 | mm | models/mfg/POWDER_RESIN/params.json DN15_OD_mm | assumption |  | unit task 10 (POWDER_RESIN) |
+| A-P-307f03 | 2.0 | mm | models/mfg/POWDER_RESIN/params.json DN15_wall_mm | assumption |  | unit task 10 (POWDER_RESIN) |
+| A-P-ce3e65 | 21.3 | mm | models/mfg/ROLL/params.json DN15_OD_mm | assumption |  | unit task 10 (ROLL) |
+| A-P-d62497 | 2.0 | mm | models/mfg/ROLL/params.json DN15_wall_mm | assumption |  | unit task 10 (ROLL) |
+| A-P-e82f9e | 21.3 | mm | models/mfg/SHELL_BREAK/params.json DN15_OD_mm | assumption |  | unit task 10 (SHELL_BREAK) |
+| A-P-5158a6 | 2.0 | mm | models/mfg/SHELL_BREAK/params.json DN15_wall_mm | assumption |  | unit task 10 (SHELL_BREAK) |
+| A-P-854145 | 21.3 | mm | models/mfg/SHELL_BUILD/params.json DN15_OD_mm | assumption |  | unit task 10 (SHELL_BUILD) |
+| A-P-a5cff3 | 2.0 | mm | models/mfg/SHELL_BUILD/params.json DN15_wall_mm | assumption |  | unit task 10 (SHELL_BUILD) |
+| A-P-9a86b3 | 21.3 | mm | models/mfg/SHELL_BURNOUT/params.json DN15_OD_mm | assumption |  | unit task 10 (SHELL_BURNOUT) |
+| A-P-36934f | 2.0 | mm | models/mfg/SHELL_BURNOUT/params.json DN15_wall_mm | assumption |  | unit task 10 (SHELL_BURNOUT) |
+| A-P-4a75e4 | 21.3 | mm | models/mfg/STOCK_OUT/params.json DN15_OD_mm | assumption |  | unit task 10 (STOCK_OUT) |
+| A-P-ddae3c | 2.0 | mm | models/mfg/STOCK_OUT/params.json DN15_wall_mm | assumption |  | unit task 10 (STOCK_OUT) |
+| A-P-b5266a | 90.0 | mm | models/mfg/TI_CELL/params.json chlorinator_r_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-2aefbd | 70.0 | mm | models/mfg/TI_CELL/params.json condenser_r_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-7131a5 | 100.0 | mm | models/mfg/TI_CELL/params.json retort_r_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-786b3b | 21.3 | mm | models/mfg/TI_CELL/params.json DN15_OD_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-ff3dca | 2.0 | mm | models/mfg/TI_CELL/params.json DN15_wall_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-422007 | 21.3 | mm | models/mfg/WAX_PATTERN/params.json DN15_OD_mm | assumption |  | unit task 10 (WAX_PATTERN) |
+| A-P-2297fc | 2.0 | mm | models/mfg/WAX_PATTERN/params.json DN15_wall_mm | assumption |  | unit task 10 (WAX_PATTERN) |
