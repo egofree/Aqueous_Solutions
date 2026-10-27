@@ -221,7 +221,7 @@ X=[
 ('PIP','Piping and line list',[
 ('X-PIP-01','Piping class sheets','class sheets per service and material','X-MAT-01','docs-authority/PIPING_CLASSES.md'),
 ('X-PIP-02','Plant line list','every edge with DN, class, length, route; generated from the graph','X-PIP-01, unit task 05','docs-authority/LINE_LIST.md'),
-('X-PIP-03','Header routing and isometrics','isometric per line; current set AQS-ISO-000 Rev A is partial','X-PIP-02, X-BLD-04','docs-authority/ISO_ROUTES.md'),
+('X-PIP-03','Header routing and isometrics','pending the FreeCAD placement model: the auto-router was rejected (AQS-3D-BUILD-001 Rev G) and the route sidecar retired 2026-10-27','X-PIP-02, X-BLD-04','docs-authority/BUILD_3D_FROM_FLOW.md'),
 ('X-PIP-04','Pipe supports and stress','support spacing and thermal stress for hot and cryogenic lines','X-PIP-03','docs-authority/SUPPORTS.md'),
 ('X-PIP-05','Weld map and WPS','AQS-WLD-001 extended with WPS/PQR per material','X-PIP-01',None)]),
 ('ELS','Electrical system (plant level)',[

@@ -1100,12 +1100,12 @@
   "value": "rack at level datum + 3200 mm; rise, X, Y, drop",
   "units": "mm",
   "where": "AQS-ISO-001 routes",
-  "basis": "AQS-PIP-002 header elevation Z 3200; orthogonal rack routing",
-  "sensitivity": "Line lengths and elbow counts",
+  "basis": "AQS-PIP-002 header elevation Z 3200; rack routing PENDING the FreeCAD placement model - the auto-router was rejected (AQS-3D-BUILD-001 Rev G, no invented mm) and its route sidecar retired 2026-10-27, so no line lengths or elbow counts exist. Supersedes the ISO_ROUTES.md basis.",
+  "sensitivity": "line lengths and elbow counts - both pending the placement model",
   "replaced_by": "3D routed model (X-PIP-03 close-out with X-BLD-04)",
   "task": "X-PIP-03",
   "files": [
-   "docs-authority/ISO_ROUTES.md"
+   "docs-authority/BUILD_3D_FROM_FLOW.md"
   ],
   "id": "A-M-074",
   "needs_verification": true,
@@ -1867,13 +1867,12 @@
   "task": "X-PIP-03",
   "needs_verification": true,
   "files": [
-   "docs-authority/_iso_sheets.py",
-   "docs-authority/_line_list.py"
+   "docs-authority/BUILD_3D_FROM_FLOW.md"
   ],
   "value": "Isometric sheets: AQS-ISO-001 rack route rule; thermoplastic elbow take-off 0.5 x OD; 6 m random lengths; flanges at both equipment nozzles; ASME B16.5 Class 150 bolting for all classes; EVAP_ACID_VS lines from the EVAP_ACID frame centre + 650 mm north; seed units used for line ends where no duty origin",
   "units": "mm, m",
   "where": "AQS-ISO-002",
-  "basis": "ASME B16.9, ASME B16.5, ASME B36.10M, ASTM D2467, ISO 15494",
+  "basis": "ASME B16.9, ASME B16.5, ASME B36.10M, ASTM D2467, ISO 15494 (the iso route sheets and their generators retired 2026-10-27 with the rejected auto-router, AQS-3D-BUILD-001 Rev G; the line geometry basis moves to the FreeCAD placement model under X-PIP-03.)",
   "sensitivity": "Cut lengths change by tens of mm per fitting; routes change when clash checking and supports land (X-PIP-04)",
   "replaced_by": "Clash-checked 3D routing and fabrication take-offs",
   "verification_test": "3D clash check of the routed lines against envelopes and structure; fit-up check of the first spool per class"
@@ -1958,13 +1957,12 @@
   "task": "X-PIP-06",
   "needs_verification": true,
   "files": [
-   "docs-authority/_iso_routes.py",
-   "docs-authority/_iso_sheets.py"
+   "docs-authority/BUILD_3D_FROM_FLOW.md"
   ],
   "value": "Route rule: rack elevation for a line is at least 300 mm above the higher end, so the riser is an expansion leg; covers the guided-cantilever need (max 0.16 m on IA-ACOH, IA-ALD, IA-MEAM, HDPE DN15)",
   "units": "mm",
   "where": "AQS-ISO-001, AQS-PIP-005",
-  "basis": "Guided-cantilever leg L = sqrt(3 E D dL / S) (AQS-PIP-005); HDPE E 900 MPa, S 4 MPa (study values)",
+  "basis": "Guided-cantilever leg L = sqrt(3 E D dL / S) (AQS-PIP-005); HDPE E 900 MPa, S 4 MPa (study values) (the iso route sheets and their generators retired 2026-10-27 with the rejected auto-router, AQS-3D-BUILD-001 Rev G; the line geometry basis moves to the FreeCAD placement model under X-PIP-03.)",
   "sensitivity": "Larger dT on these lines would need a longer riser",
   "replaced_by": "Stress analysis to ASME B31.3 Appendix S for the hot and thermoplastic lines",
   "verification_test": "Installed-route survey of IA-ACOH, IA-ALD, IA-MEAM: riser >= 0.3 m, no support binding at the operating-temperature cycle (commissioning)"

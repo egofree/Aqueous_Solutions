@@ -42,22 +42,22 @@ Table 4.1. Commissioning sequence
 
 | Seq | System | Units | Loops | SIFs | Water-run units | Chemical run reagents |
 |---|---|---|---|---|---|---|
-| 1 | ELEC | 8 | 29 | 5 | 2 | Ar, Fe, HCl, N2, O2, other_metals |
+| 1 | ELEC | 8 | 22 | 8 | 2 | Ar, Fe, HCl, N2, O2, other_metals |
 | 2 | PUMPED_HYDRO | 1 | 2 | 0 | 0 |  |
-| 3 | WTR | 8 | 51 | 7 | 6 | Fe, HCl, other_metals, solids, solute |
+| 3 | WTR | 8 | 32 | 12 | 6 | Fe, HCl, other_metals, solids, solute |
 | 4 | HEAT | 11 | 21 | 5 | 0 |  |
-| 5 | GAS | 8 | 34 | 9 | 1 | Fe, HCl, N2, other_metals, solute |
-| 6 | CRYO | 14 | 37 | 10 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |
+| 5 | GAS | 8 | 27 | 12 | 1 | Fe, HCl, N2, other_metals, solute |
+| 6 | CRYO | 14 | 32 | 12 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |
 | 7 | GEO | 3 | 6 | 4 | 0 |  |
-| 8 | DIGESTER | 24 | 146 | 26 | 19 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals, silicate_oxide, solute, unassigned |
-| 9 | MEOH | 5 | 24 | 5 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |
-| 10 | OIL | 12 | 57 | 13 | 7 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute |
+| 8 | DIGESTER | 24 | 97 | 42 | 19 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals, silicate_oxide, solute, unassigned |
+| 9 | MEOH | 5 | 16 | 8 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |
+| 10 | OIL | 12 | 45 | 19 | 7 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute |
 | 11 | GLASS | 5 | 11 | 4 | 1 | Fe, HCl, other_metals, solute |
-| 12 | NUT | 1 | 10 | 1 | 1 | Fe, HCl, other_metals |
-| 13 | FARM | 16 | 45 | 16 | 1 | CO2 |
+| 12 | NUT | 1 | 4 | 2 | 1 | Fe, HCl, other_metals |
+| 13 | FARM | 16 | 40 | 16 | 1 | CO2 |
 | 14 | HAB | 7 | 12 | 2 | 1 | solute |
-| 15 | MFG | 10 | 30 | 11 | 1 | Cu, Pb/Sn/Ni/Cd/Zn blend, hydrocarbon, metal, solute |
-| 16 | FAB | 16 | 72 | 17 | 9 | Ar, Fe, HCl, N2, O2, other_metals, solute |
+| 15 | MFG | 10 | 25 | 14 | 1 | Cu, Pb/Sn/Ni/Cd/Zn blend, hydrocarbon, metal, solute |
+| 16 | FAB | 16 | 56 | 28 | 9 | Ar, Fe, HCl, N2, O2, other_metals, solute |
 | 17 | FOUNDRY | 27 | 83 | 24 | 6 |  |
 | 18 | POLYMERS | 11 | 44 | 16 | 6 | C5-C10 |
 

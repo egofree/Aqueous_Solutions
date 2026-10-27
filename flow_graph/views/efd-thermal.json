@@ -558,13 +558,13 @@
           "v_m_s": 1.5,
           "id_req_mm": 18.1,
           "DN": 32,
-          "length_m": 37.1,
-          "volume_m3": 0.0168,
+          "length_m": 20,
+          "volume_m3": 0.009,
           "material": "PP-H SDR 11 (80 C class), fusion-welded",
-          "hold_kg": 16.48,
+          "hold_kg": 8.89,
           "connections": 14
         },
-        "size_note": "DN32 manifold x 37 m run (0.017 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       },
       "continuous_kw": null
     },

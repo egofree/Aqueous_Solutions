@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="602" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit CRYO_DED_COOL · cool · sector CRYO · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 1 in + 1 out · valves 2 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 4</text>
+<text x="24" y="72" font-size="10.5">Edges 1 in + 1 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 4</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -33,16 +33,12 @@
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">S55</text>
 <text x="24" y="253" font-size="10" text-anchor="start">4.3 kW · DN15 P1</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
-<path d="M 539.6,234 L 547.6,240 L 539.6,246 Z M 557.6,234 L 549.6,240 L 557.6,246 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="548.6" y="229.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">CRYO_DED_COOL</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">S55</text>
 <text x="1476" y="253" font-size="10" text-anchor="end">4.3 kW · DN15 P1</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N1</text>
-<path d="M 1023.6,234 L 1031.6,240 L 1023.6,246 Z M 1041.6,234 L 1033.6,240 L 1041.6,246 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="229.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 1 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="425" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/CRYO_DED_COOL.csv.</text>
@@ -51,7 +47,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRYO_DED_COOL</text>
 <text x="1124" y="526" font-size="9">P&amp;ID CRYO_DED_COOL (cool, CRYO sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 287c3ea3   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev d86bc912   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 b9a12db17afa7b88   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 978d0c66abb9bc99   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

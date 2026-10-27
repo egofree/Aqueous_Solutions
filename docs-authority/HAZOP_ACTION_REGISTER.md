@@ -15,7 +15,7 @@ lane (flow_graph/inventory/other.py) once setpoints exist; the relief items need
 
 | Register id | HAZOP action | Node | Deviation | Open action | Owner task (AQS-PLAN-007) |
 |---|---|---|---|---|---|
-| HA-01 | HZ-213 | AQUA_TANK | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FARM-AQUA_TANK-07 |
-| HA-02 | HZ-217 | GROWBED_A | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FARM-GROWBED_A-07 |
+| HA-01 | HZ-311 | AQUA_TANK | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FARM-AQUA_TANK-07 |
+| HA-02 | HZ-315 | GROWBED_A | pressure / High | state the relief case or atmospheric vent in the duty sheet (unit task 07) | FARM-GROWBED_A-07 |
 
 2 open engineering actions on 2 units: AQUA_TANK, GROWBED_A.

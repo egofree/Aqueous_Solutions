@@ -1,7 +1,7 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "graph_sha256": "b9a12db17afa7b886b9d5e6c8e626c08f6ab50fa09589b265c868cae57986ff1",
+ "graph_sha256": "978d0c66abb9bc99fdd646b48da1bf02f27eb3eb24f3b11481a568af3d3d4d32",
  "converged": true,
  "stages": [
   {
@@ -317,14 +317,6 @@
    "status": "ok"
   },
   {
-   "name": "iso_routes",
-   "status": "ok"
-  },
-  {
-   "name": "iso_sheets",
-   "status": "ok"
-  },
-  {
    "name": "supports",
    "status": "ok"
   },
@@ -577,9 +569,6 @@
   "docs-authority/INSTRUMENT_INDEX.md",
   "docs-authority/INSULATION_SCHEDULE.md",
   "docs-authority/INTERNALS.md",
-  "docs-authority/ISO_ROUTES.json",
-  "docs-authority/ISO_ROUTES.md",
-  "docs-authority/ISO_SHEETS.md",
   "docs-authority/ITP.md",
   "docs-authority/JELLYBEAN.md",
   "docs-authority/LIFTING.md",
@@ -737,7 +726,6 @@
   "docs-authority/inventory/WIRE_INVENTORY.md",
   "docs-authority/inventory/WIRE_SPECS.json",
   "docs-authority/inventory/motor_families/MF-*.md",
-  "docs-authority/iso/*",
   "docs-authority/nozzles/*.csv",
   "docs-authority/pid/*",
   "docs-authority/plc/*.st",
@@ -778,11 +766,7 @@
   "flow_graph/placement_seed.json",
   "flow_graph/plant_flow_graph.json",
   "flow_graph/views/*",
-  "media/D*.png",
-  "media/F0_campus.png",
   "media/_generated.json",
-  "media/pfd/*",
-  "media/plant_phase_d.mp4",
   "models/openscad/foam_ew/*.png",
   "models/openscad/foam_ew/CUT_LIST.md",
   "models/openscad/foam_ew/cut_list.csv",

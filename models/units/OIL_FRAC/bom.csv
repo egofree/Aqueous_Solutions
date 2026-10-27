@@ -17,33 +17,8 @@ item,description,qty,material,basis
 16,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 17,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 18,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-19,fastener: anchor bolt M10,40,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-20,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-21,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-22,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-23,fastener: anchor bolt M10,14,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-24,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-25,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-26,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-27,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-28,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-29,"instrument: gas detector, CO electrochemical CO",2,"alarm 25 ppm, trip 50 ppm, breathing height",AQS-INV-004
-30,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-31,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-32,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-33,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-34,support: U-bolt with guide DN15,20,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-35,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-36,support: U-bolt with guide DN15,5,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-37,support: U-bolt with guide DN15,5,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-38,support: pipe clamp DN15,7,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-39,valve: check valve DN15,1,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-40,valve: check valve DN15,1,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-41,valve: check valve DN15,1,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-42,valve: check valve DN15,1,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-43,valve: check valve DN15,1,"PVDF swing/ball check valve, ISO 16137, PTFE seats",AQS-INV-004
-44,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-45,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-46,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-47,valve: isolation valve DN15,2,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-48,valve: isolation valve DN15,2,"PVDF ball valve, ISO 16135, PTFE seats",AQS-INV-004
+19,"instrument: gas detector, CO electrochemical CO",2,"alarm 25 ppm, trip 50 ppm, breathing height",AQS-INV-004
+20,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+21,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+22,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+23,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

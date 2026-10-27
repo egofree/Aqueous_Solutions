@@ -107,13 +107,13 @@
           "v_m_s": 8.0,
           "id_req_mm": 17.0,
           "DN": 100,
-          "length_m": 44.7,
-          "volume_m3": 0.2971,
+          "length_m": 20,
+          "volume_m3": 0.133,
           "material": "CS Sch 40, insulated per AQS-THM-003",
-          "hold_kg": 0.22,
+          "hold_kg": 0.1,
           "connections": 3
         },
-        "size_note": "DN100 manifold x 45 m run (0.297 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "DN100 manifold x 20 m run (0.133 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       },
       "continuous_kw": null
     },
@@ -1189,13 +1189,13 @@
           "v_m_s": 8.0,
           "id_req_mm": 2.0,
           "DN": 25,
-          "length_m": 29.2,
-          "volume_m3": 0.0066,
+          "length_m": 20,
+          "volume_m3": 0.0045,
           "material": "316L tube",
           "hold_kg": 0.01,
           "connections": 5
         },
-        "size_note": "DN25 manifold x 29 m run (0.007 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       }
     },
     {
@@ -1220,13 +1220,13 @@
           "v_m_s": 8.0,
           "id_req_mm": 7.1,
           "DN": 25,
-          "length_m": 33.6,
-          "volume_m3": 0.0076,
+          "length_m": 20,
+          "volume_m3": 0.0045,
           "material": "316L tube, oxygen-clean per ASTM_G93, socketless",
           "hold_kg": 0.01,
           "connections": 8
         },
-        "size_note": "DN25 manifold x 34 m run (0.008 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       },
       "continuous_kw": null
     },
@@ -1254,13 +1254,13 @@
           "v_m_s": 1.5,
           "id_req_mm": 0.8,
           "DN": 25,
-          "length_m": 32.5,
-          "volume_m3": 0.0074,
+          "length_m": 20,
+          "volume_m3": 0.0045,
           "material": "PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002)",
-          "hold_kg": 7.24,
+          "hold_kg": 4.46,
           "connections": 3
         },
-        "size_note": "DN25 manifold x 32 m run (0.007 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       }
     },
     {

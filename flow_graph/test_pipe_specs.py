@@ -13,6 +13,13 @@ FAM = list(csv.DictReader(open(os.path.join(R, 'docs-authority/inventory/PIPE_FA
 
 def test_header_and_dispositions():
     src = open(DOC).read()
+    if not FAM:
+        # pending the placement model (2026-10-27): the families derive from routed pipe
+        # lengths, which no model provides since the auto-router was rejected
+        # (AQS-3D-BUILD-001 Rev G). The doc must state the gap, not fake the schedule.
+        assert src.startswith('# Pipe classes (AQS-PIP-003)')
+        assert 'PENDING THE PLACEMENT MODEL' in src and 'AQS-3D-BUILD-001 Rev G' in src
+        return
     assert src.startswith('# Pipe family production plans')
     assert 'Document number: AQS-INV-006' in src and 'Revision: A' in src
     assert 'X-INV-04-PF-01..18' in src
@@ -60,6 +67,8 @@ def test_class_and_wps_joins_resolve():
 
 
 def test_totals_reconcile_to_the_csv():
+    if not FAM:
+        import pytest; pytest.skip('pending the placement model: no routed lengths (AQS-3D-BUILD-001 Rev G)')
     src = open(DOC).read()
     summary = src.split('## 1. Summary and dispositions', 1)[1].split('## 2.', 1)[0]
     tot_m = sum(float(f['pipe_m']) for f in FAM)

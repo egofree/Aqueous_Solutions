@@ -25,7 +25,9 @@ def main():
     g = json.load(open(os.path.join(R, 'flow_graph/plant_flow_graph.json'))); E = {e['stream_id']: e for e in g['edges']}
     P2 = {'P2': 85.0}
     rows = []
-    for r in csv.DictReader(open(os.path.join(R, 'docs-authority/iso/ISO_SHEETS.csv'))):
+    # line-insulation rows pended: routed lengths retired with the auto-router (AQS-3D-BUILD-001 Rev G);
+    # the placement model will issue its own routed-length artifact for this schedule to consume.
+    for r in []:
         e = E.get(r['line']); p = (e or {}).get('params') or {}
         T = p.get('T_C') if isinstance(p.get('T_C'), (int, float)) else max(p.get('supply_C', -999), p.get('return_C', -999)) if 'supply_C' in p else P2.get(r['cls'] if 'cls' in r else r.get('class'), None)
         if T is None or T == -999 or TDEW + 1 <= T <= TH: continue

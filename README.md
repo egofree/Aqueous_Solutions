@@ -62,7 +62,7 @@ Every independent number in the model is stored once, with its unit and its basi
 
 ### 2.3 Sizing and generated outputs
 
-The command `python3 -m flow_graph.param.regen` runs the design pipeline. It solves the mass and energy balances on the graph, sizes each unit from its duty by a cited method, repeats until the results stop changing, and then writes the documents. The generated documents include a duty sheet and a sizing sheet for each unit, piping and instrumentation diagrams (P&IDs), piping isometrics, the line list, the electrical load list and one-line diagram, the model workbook `docs-authority/MODEL_WORKBOOK.xlsx`, and the task plan. A generated file is never edited by hand. To change it, change the input or the generator and run the pipeline again.
+The command `python3 -m flow_graph.param.regen` runs the design pipeline. It solves the mass and energy balances on the graph, sizes each unit from its duty by a cited method, repeats until the results stop changing, and then writes the documents. The generated documents include a duty sheet and a sizing sheet for each unit, piping and instrumentation diagrams (P&IDs), the line list, the electrical load list and one-line diagram, the model workbook `docs-authority/MODEL_WORKBOOK.xlsx`, and the task plan. A generated file is never edited by hand. To change it, change the input or the generator and run the pipeline again.
 
 The CAD models are also built by code. The FreeCAD scripts in `models/freecad/` build the general arrangement of the plant, and the CadQuery scripts in `models/mfg/` build individual units with drawings, parts lists, and STEP and STL export files.
 
@@ -83,8 +83,7 @@ Table 3.1. Top-level folders
 | `models/` | The FreeCAD and CadQuery scripts and the unit and motor models they build |
 | `cad/` | Unit envelope meshes and study solids, stored with Git Large File Storage (LFS) |
 | `design_tool/` | A local web application that displays the plant graph and cannot change it |
-| `media/` | Rendered process sheets, overview images and an animation |
-| `iso/` | An early set of isometric fabrication drawings, which the generated isometrics in `docs-authority/iso/` replace |
+| `media/` | The generated-media manifest and kept artwork (the matplotlib PFD renders and the phase animation were retired from the pipeline 2026-10-27; the exporters remain on-demand under `flow_graph/exporters/matplotlib/` and `models/freecad/`) |
 | `tables/` | Cut lists, material lists and parts tables |
 | `notes/` | Design notes, audits and recorded decisions by the project owner |
 | `scripts/` | The command that runs all of the checks |

@@ -29,7 +29,7 @@ Other abbreviations are in `docs-authority/GLOSSARY.md`.
 
 Method: radial conduction in series with an outer coefficient of 10.0 W/(m2 K) (ASTM_C680). Hot items above 50.0 C: smallest standard thickness giving a surface at or below 50.0 C (ASTM_C1055 contact threshold about 60 C). Cold items: surface at least 1 K above the dew point 16.7 C of 25.0 C / 60 % RH air (ASHRAE_FUND2021_PSY). Vessel losses include 30 % for heads and nozzles.
 
-Total insulation 4.689 m3; total loss 17.101 kW hot, -89.1 W gain cold.
+Total insulation 0.021 m3; total loss 0.139 kW hot, 0.0 W gain cold.
 
 Heat-ladder lines (HL-*) also carry a heat-conservation limit: loss at most 10 % of the rated loop duty. Lines that cannot meet it even at 200 mm are marked (limit not met) in Table 4.1; their loss fraction is carried to X-THM-01 (heat ladder duty balance).
 
@@ -41,48 +41,7 @@ Table 4.1. Insulation schedule
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | H2_DRYER | vessel | 60 | 250.0 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 38 | 47.7 | 97.07 | 0.628 | 79.2 |  |
 | POLY_OLEFIN | vessel | 150 | 250.0 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 50 | 45.1 | 157.55 | 0.225 | 46.1 |  |
-| HL-Q3-A-HX4 | line | 15 | 95.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 200 | 25.5 | 7.21 | 7.57 | 54.6 | 0.181 (limit not met) |
-| HL-Q3-A-HX5 | line | 20 | 95.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 40.1 | 25.02 | 9.68 | 242.2 | 0.03 |
-| HL-Q3-A-HX6 | line | 15 | 95.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.5 | 21.56 | 7.57 | 163.2 | 0.078 |
-| HL-Q3-B-HX4 | line | 15 | 95.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 200 | 25.5 | 7.21 | 15.37 | 110.8 | 0.367 (limit not met) |
-| HL-Q3-B-HX5 | line | 20 | 95.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 40.1 | 25.02 | 29.48 | 737.5 | 0.093 |
-| HL-Q3-B-HX6 | line | 15 | 95.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 38 | 29.4 | 13.39 | 15.37 | 205.8 | 0.099 |
-| IA-BMED-03 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 19.39 | 353.4 |  |
-| IA-BMED-04 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 19.39 | 353.4 |  |
-| IA-EW-01 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 8.58 | 156.4 |  |
-| IA-EW-04 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 9.15 | 166.8 |  |
-| IA-REC-01 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 8.59 | 156.5 |  |
-| IA-WET-FLOAT-01 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 9.89 | 180.2 |  |
-| S10 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 33.14 | 603.9 |  |
-| S28 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 21.84 | 398.0 |  |
-| S46 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 7.84 | 142.9 |  |
-| S66 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 14.69 | 267.7 |  |
-| S68 | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 13.14 | 239.5 |  |
-| S72 | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 26.12 | 1013.8 |  |
-| IA-ZNBR-MU | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 16.88 | 307.6 |  |
-| IA-LEACH-BD | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 33.59 | 612.1 |  |
-| IA-SINK-01 | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 9.77 | 379.2 |  |
-| IA-PLAST-01 | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 9.72 | 377.3 |  |
-| IA-CULLET | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 12.72 | 493.7 |  |
-| IA-SCRUB-SRC | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 31.12 | 1207.9 |  |
-| IA-NOX-N | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 32.27 | 1252.5 |  |
-| IA-LEACH-NOX | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 11.22 | 435.5 |  |
-| IA-LEACH-FLUE | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 24.12 | 936.2 |  |
-| IA-LEACH-HOP | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 9.77 | 379.2 |  |
-| IA-CLOSE-1 | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 11.22 | 435.5 |  |
-| IA-LEACH-VCD | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 21.84 | 398.0 |  |
-| IA-NA-PURGE | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 18.34 | 334.2 |  |
-| IA-H2O-MU | line | 15 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 37.3 | 18.22 | 24.14 | 439.9 |  |
-| IA-NOX-CO2 | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 24.87 | 965.3 |  |
-| IA-NOX-N2 | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 24.87 | 965.3 |  |
-| IA-LEACH-ASU | line | 50 | 85.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 39.3 | 38.81 | 14.07 | 546.1 |  |
-| IA-FC-FIX | line | 50 | 60.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 33.1 | 21.88 | 16.32 | 357.0 |  |
-| IA-FC-LEACH | line | 15 | 60.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 31.9 | 10.26 | 27.24 | 279.4 |  |
 | POLY_F | vessel | 150 | 60 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 13 | 33.7 | 47.96 | 0.225 | 14.0 |  |
-| IA-BASE-01 | line | 15 | 50.6 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.0 | 7.4 | 19.66 | 145.4 |  |
-| IA-BASE-PPT | line | 15 | 50.6 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.0 | 7.4 | 15.91 | 117.7 |  |
-| IA-EVAP_BASE-COND | line | 15 | 50.6 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.0 | 7.4 | 6.71 | 49.6 |  |
-| IA-HVAC-COND | line | 15 | 10.0 | cold, anti-condensation | flexible elastomeric (ASTM C534), vapour-sealed | 13 | 22.4 | -3.9 | 22.86 | -89.1 |  |
 
 ## 5. Heat-ladder store closure (X-THM-01, A-M-166)
 
@@ -104,6 +63,6 @@ Each store closes on the graph rates (in = out within 0.01 kW). Line losses pass
 
 ## 6. Heat-ladder line losses (X-THM-04, A-M-165)
 
-Every heat-ladder line carries its loss on the graph: params line_loss_W, and duty_source_rated_kw = rated duty + loss, which the source of each loop must deliver. Lines in flow in normal operation put their loss on a thermal edge HLL-<line> to HEAT_SINK (0.534 kW total). The normally-off same-tier ties (HL-Q*-X, duty_normal 0) are stagnant in normal operation and cool down; they lose heat only while running in the single-ladder case, when their 980 W is covered by the rated source duty. Total if every line ran: 1.514 kW.
+Every heat-ladder line carries its loss on the graph: params line_loss_W, and duty_source_rated_kw = rated duty + loss, which the source of each loop must deliver. Lines in flow in normal operation put their loss on a thermal edge HLL-<line> to HEAT_SINK (0.000 kW total). The normally-off same-tier ties (HL-Q*-X, duty_normal 0) are stagnant in normal operation and cool down; they lose heat only while running in the single-ladder case, when their 0 W is covered by the rated source duty. Total if every line ran: 0.000 kW.
 
 Why the 10 % target is not met on some lines, and why that is accepted: the loops are 0.3-2 kW at 95-250 C on DN15-25 over 12-29 m; above about 150 C mineral wool at 200 mm still loses 14-29 W/m (k rises with temperature, ASTM_C547), so the fraction is set by the small duty, not by the insulation. Moving the batteries next to their sources would trade these runs for the same length on the consumer side, since each store serves several users across the hall (AQS-HEAT-LADDER-001). The absolute loss is small against the 146.5 kW HEAT_SINK and is now carried in the ladder duties; the loop sources are checked against duty_source_rated_kw under X-THM-01.

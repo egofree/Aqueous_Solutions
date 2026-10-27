@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="952" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit Q4_BUS · header · sector HEAT · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 10 in + 6 out · valves 2 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 9</text>
+<text x="24" y="72" font-size="10.5">Edges 10 in + 6 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 9</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -99,8 +99,6 @@
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-Q4-LIFE</text>
 <text x="1476" y="345" font-size="10" text-anchor="end">3.0 kW · DN15 M1</text>
 <text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
-<path d="M 1023.6,326 L 1031.6,332 L 1023.6,338 Z M 1041.6,326 L 1033.6,332 L 1041.6,338 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="321.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="378" x2="1061" y2="378" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,378 1061,374 1061,382" fill="#111"/>
 <text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">MAU_HX</text>
@@ -124,7 +122,7 @@
 <g id="aqs-title-block"><rect x="1116" y="842" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="859" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-Q4_BUS</text>
 <text x="1124" y="876" font-size="9">P&amp;ID Q4_BUS (header, HEAT sector)</text>
-<text x="1124" y="893" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 7d79536e   Issued 2026-10-19</text>
+<text x="1124" y="893" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev c52c494f   Issued 2026-10-19</text>
 <text x="1124" y="910" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="927" font-size="9">Graph SHA-256 b9a12db17afa7b88   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="927" font-size="9">Graph SHA-256 978d0c66abb9bc99   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

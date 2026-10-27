@@ -730,10 +730,6 @@
    ],
    "outputs": [
     "flow_graph/views/*",
-    "media/pfd/*",
-    "media/D*.png",
-    "media/F0_campus.png",
-    "media/plant_phase_d.mp4",
     "media/_generated.json"
    ],
    "depends_on": [
@@ -741,7 +737,7 @@
    ],
    "writes_graph": false,
    "quick": false,
-   "note": "Layer views + 7 matplotlib PFDs + FreeCAD frames + ffmpeg mp4 + media/_generated.json graph-sha manifest. Slowest stage (FreeCAD + ffmpeg).",
+   "note": "layer views + the generated-media manifest (the matplotlib PFD renders, the FreeCAD phase frames and the mp4 were retired from the pipeline 2026-10-27; the exporters remain on-demand tools)",
    "invokes": [
     "flow_graph/render_layer_views.py",
     "models/freecad/render_frames.py",
@@ -1456,44 +1452,6 @@
    "quick": false
   },
   {
-   "name": "iso_routes",
-   "argv": [
-    "python3",
-    "docs-authority/_iso_routes.py"
-   ],
-   "outputs": [
-    "docs-authority/ISO_ROUTES.md",
-    "docs-authority/ISO_ROUTES.json"
-   ],
-   "depends_on": [
-    "doc_egress_hall",
-    "doc_water_tower",
-    "line_list"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-ISO-001 + U2a JSON sidecar read by _supports."
-  },
-  {
-   "name": "iso_sheets",
-   "argv": [
-    "python3",
-    "docs-authority/_iso_sheets.py"
-   ],
-   "outputs": [
-    "docs-authority/iso/*",
-    "docs-authority/ISO_SHEETS.md"
-   ],
-   "depends_on": [
-    "doc_egress_hall",
-    "doc_water_tower",
-    "iso_routes"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-ISO-002: docs-authority/iso/<LINE>.svg per routed line + docs-authority/iso/ISO_SHEETS.csv (also the by-design orphan list source for _rev_stamp) + ISO_SHEETS.md."
-  },
-  {
    "name": "supports",
    "argv": [
     "python3",
@@ -1502,12 +1460,10 @@
    "outputs": [
     "docs-authority/SUPPORTS.md"
    ],
-   "depends_on": [
-    "iso_routes"
-   ],
+   "depends_on": [],
    "writes_graph": false,
    "quick": false,
-   "note": "AQS-PIP-005; reads ISO_ROUTES.json."
+   "note": "AQS-PIP-005; pending the placement model - writes the named gap when ISO_ROUTES.json is absent."
   },
   {
    "name": "insulation",
@@ -1519,12 +1475,10 @@
     "docs-authority/INSULATION_SCHEDULE.md",
     "docs-authority/insulation_schedule.csv"
    ],
-   "depends_on": [
-    "iso_sheets"
-   ],
+   "depends_on": [],
    "writes_graph": false,
    "quick": false,
-   "note": "X-THM-03; reads docs-authority/iso/ISO_SHEETS.csv (no --graph: the T_C stamps are not rewritten)."
+   "note": "X-THM-03; the iso-sheet T_C read retired with the route model (2026-10-27) - equipment T_C comes from the graph."
   },
   {
    "name": "doc_test_rigs",
@@ -1653,8 +1607,7 @@
    ],
    "depends_on": [
     "doc_egress_hall",
-    "doc_water_tower",
-    "iso_sheets"
+    "doc_water_tower"
    ],
    "outputs": [
     "docs-authority/inventory/PIPE_FAMILIES.csv",
@@ -1880,7 +1833,6 @@
     "docs-authority/_drawings.py"
    ],
    "depends_on": [
-    "iso_sheets",
     "pid_sheets",
     "regen_derived"
    ],
@@ -2119,7 +2071,6 @@
     "doc_water_tower",
     "inventory_motors",
     "inventory_wire",
-    "iso_sheets",
     "supports"
    ],
    "outputs": [
@@ -2612,8 +2563,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -2786,8 +2735,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -2895,8 +2842,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -3005,8 +2950,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -3122,8 +3065,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -3230,8 +3171,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -3349,8 +3288,6 @@
     "inventory_other",
     "inventory_pipe",
     "inventory_wire",
-    "iso_routes",
-    "iso_sheets",
     "leach_sizing_doc",
     "line_list",
     "load_list",
@@ -3415,7 +3352,7 @@
    "scripts": [
     "flow_graph/exporters/matplotlib/*.py"
    ],
-   "reason": "Writes an untracked preview PNG beside the script. The sheets published in media/pfd are run by stage regen_derived."
+   "reason": "Writes an untracked preview PNG beside the script. The media/pfd renders were retired from the pipeline 2026-10-27; the exporters run on demand."
   },
   {
    "role": "study",

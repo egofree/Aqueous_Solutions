@@ -13,22 +13,7 @@ item,description,qty,material,basis
 12,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 13,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 14,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-15,fastener: anchor bolt M10,12,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-16,fastener: anchor bolt M10,42,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-17,fastener: anchor bolt M10,16,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-18,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-19,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-20,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
-21,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-22,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-23,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-24,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-25,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-26,support: U-bolt with guide DN15,21,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-27,support: pipe clamp DN15,8,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-28,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-29,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-30,valve: check valve DN15,1,"PVC-lined swing/ball check valve in FRP service, ISO 16137",AQS-INV-004
-31,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-32,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
-33,valve: isolation valve DN15,2,"PVC-lined ball valve in FRP service, ISO 16135",AQS-INV-004
+15,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+16,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+17,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+18,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

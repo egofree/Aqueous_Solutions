@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="1136" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit ROOF_TANK · tank · sector WTR · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 8 in + 14 out · valves 21 placed / 0 unplaced · instruments 11 (1 SIF) · nozzles 26</text>
+<text x="24" y="72" font-size="10.5">Edges 8 in + 14 out · valves 0 placed / 0 unplaced · instruments 4 (2 SIF) · nozzles 26</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -19,12 +19,13 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-156 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-209 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
+<circle cx="198" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
-<text x="220" y="170" font-size="7">0-100 % of vessel height</text>
-<text x="220" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
+<text x="220" y="170" font-size="7">SIF-067 · SIL 1</text>
+<text x="220" y="180" font-size="6.5" fill="#555">flow or level low-low -&gt; pump stop</text>
 <circle cx="356" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="356" y="175.5" font-size="7.5" text-anchor="middle">PT-01</text>
 <text x="378" y="170" font-size="7">0-10 bar g</text>
@@ -96,14 +97,6 @@
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">IA-BED-H2O</text>
 <text x="1476" y="299" font-size="10" text-anchor="end">43.8 kg/d · DN15 P1</text>
 <text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N13</text>
-<line x1="979.7" y1="286" x2="971.7" y2="286" stroke="#111" stroke-width="1.2"/>
-<polygon points="970.7,286 976.7,282.5 976.7,289.5" fill="#111"/>
-<path d="M 948.7,280 L 956.7,286 L 948.7,292 Z M 966.7,280 L 958.7,286 L 966.7,292 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="957.7" y="275.0" font-size="7.5" text-anchor="middle">chk DN15</text>
-<path d="M 1023.6,280 L 1031.6,286 L 1023.6,292 Z M 1041.6,280 L 1033.6,286 L 1041.6,292 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="275.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<circle cx="995.12" cy="286" r="12" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="995.12" y="289" font-size="7" text-anchor="middle">FT-04</text>
 <line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">CHICKEN_COOP</text>
@@ -134,56 +127,24 @@
 <text x="1476" y="511" font-size="11" font-weight="600" text-anchor="end">IA-ESS-HYDRO-DIS</text>
 <text x="1476" y="529" font-size="10" text-anchor="end">0.0 kg/d · DN15 P1</text>
 <text x="902" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
-<line x1="979.7" y1="516" x2="971.7" y2="516" stroke="#111" stroke-width="1.2"/>
-<polygon points="970.7,516 976.7,512.5 976.7,519.5" fill="#111"/>
-<path d="M 948.7,510 L 956.7,516 L 948.7,522 Z M 966.7,510 L 958.7,516 L 966.7,522 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="957.7" y="505.0" font-size="7.5" text-anchor="middle">chk DN15</text>
-<path d="M 1023.6,510 L 1031.6,516 L 1023.6,522 Z M 1041.6,510 L 1033.6,516 L 1041.6,522 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="505.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<circle cx="995.12" cy="516" r="12" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="995.12" y="519" font-size="7" text-anchor="middle">FT-01</text>
 <line x1="914" y1="562" x2="1061" y2="562" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,562 1061,558 1061,566" fill="#111"/>
 <text x="1476" y="543" font-size="9" fill="#666" text-anchor="end">FLUE_KO</text>
 <text x="1476" y="557" font-size="11" font-weight="600" text-anchor="end">IA-FLUE-QUENCH</text>
 <text x="1476" y="575" font-size="10" text-anchor="end">24.3 kg/d · DN15 P5</text>
 <text x="902" y="566" font-size="8" font-style="italic" fill="#555" text-anchor="end">N11</text>
-<line x1="979.7" y1="562" x2="971.7" y2="562" stroke="#111" stroke-width="1.2"/>
-<polygon points="970.7,562 976.7,558.5 976.7,565.5" fill="#111"/>
-<path d="M 948.7,556 L 956.7,562 L 948.7,568 Z M 966.7,556 L 958.7,562 L 966.7,568 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="957.7" y="551.0" font-size="7.5" text-anchor="middle">chk DN15</text>
-<path d="M 1023.6,556 L 1031.6,562 L 1023.6,568 Z M 1041.6,556 L 1033.6,562 L 1041.6,568 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="551.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<circle cx="995.12" cy="562" r="12" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="995.12" y="565" font-size="7" text-anchor="middle">FT-06</text>
 <line x1="914" y1="608" x2="1061" y2="608" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,608 1061,604 1061,612" fill="#111"/>
 <text x="1476" y="589" font-size="9" fill="#666" text-anchor="end">HABITATION</text>
 <text x="1476" y="603" font-size="11" font-weight="600" text-anchor="end">IA-NOX-HAB</text>
 <text x="1476" y="621" font-size="10" text-anchor="end">207.3 kg/d · DN15 P1</text>
 <text x="902" y="612" font-size="8" font-style="italic" fill="#555" text-anchor="end">N17</text>
-<line x1="979.7" y1="608" x2="971.7" y2="608" stroke="#111" stroke-width="1.2"/>
-<polygon points="970.7,608 976.7,604.5 976.7,611.5" fill="#111"/>
-<path d="M 948.7,602 L 956.7,608 L 948.7,614 Z M 966.7,602 L 958.7,608 L 966.7,614 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="957.7" y="597.0" font-size="7.5" text-anchor="middle">chk DN15</text>
-<path d="M 1023.6,602 L 1031.6,608 L 1023.6,614 Z M 1041.6,602 L 1033.6,608 L 1041.6,614 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="597.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<circle cx="995.12" cy="608" r="12" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="995.12" y="611" font-size="7" text-anchor="middle">FT-05</text>
 <line x1="914" y1="654" x2="1061" y2="654" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,654 1061,650 1061,658" fill="#111"/>
 <text x="1476" y="635" font-size="9" fill="#666" text-anchor="end">WS_PEROX</text>
 <text x="1476" y="649" font-size="11" font-weight="600" text-anchor="end">IA-PEROX-H2O</text>
 <text x="1476" y="667" font-size="10" text-anchor="end">2.8 kg/d · DN15 P3</text>
 <text x="902" y="658" font-size="8" font-style="italic" fill="#555" text-anchor="end">N12</text>
-<line x1="979.7" y1="654" x2="971.7" y2="654" stroke="#111" stroke-width="1.2"/>
-<polygon points="970.7,654 976.7,650.5 976.7,657.5" fill="#111"/>
-<path d="M 948.7,648 L 956.7,654 L 948.7,660 Z M 966.7,648 L 958.7,654 L 966.7,660 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="957.7" y="643.0" font-size="7.5" text-anchor="middle">chk DN15</text>
-<path d="M 1023.6,648 L 1031.6,654 L 1023.6,660 Z M 1041.6,648 L 1033.6,654 L 1041.6,660 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="643.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<circle cx="995.12" cy="654" r="12" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="995.12" y="657" font-size="7" text-anchor="middle">FT-07</text>
 <line x1="914" y1="700" x2="1061" y2="700" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,700 1061,696 1061,704" fill="#111"/>
 <text x="1476" y="681" font-size="9" fill="#666" text-anchor="end">WASHROOM</text>
@@ -202,28 +163,12 @@
 <text x="1476" y="787" font-size="11" font-weight="600" text-anchor="end">S21</text>
 <text x="1476" y="805" font-size="10" text-anchor="end">120.7 kg/d · DN15 P1</text>
 <text x="902" y="796" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
-<line x1="979.7" y1="792" x2="971.7" y2="792" stroke="#111" stroke-width="1.2"/>
-<polygon points="970.7,792 976.7,788.5 976.7,795.5" fill="#111"/>
-<path d="M 948.7,786 L 956.7,792 L 948.7,798 Z M 966.7,786 L 958.7,792 L 966.7,798 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="957.7" y="781.0" font-size="7.5" text-anchor="middle">chk DN15</text>
-<path d="M 1023.6,786 L 1031.6,792 L 1023.6,798 Z M 1041.6,786 L 1033.6,792 L 1041.6,798 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="781.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<circle cx="995.12" cy="792" r="12" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="995.12" y="795" font-size="7" text-anchor="middle">FT-02</text>
 <line x1="914" y1="838" x2="1061" y2="838" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,838 1061,834 1061,842" fill="#111"/>
 <text x="1476" y="819" font-size="9" fill="#666" text-anchor="end">CATCH_TANK</text>
 <text x="1476" y="833" font-size="11" font-weight="600" text-anchor="end">S22</text>
 <text x="1476" y="851" font-size="10" text-anchor="end">0.0 kg/d · DN15 P1</text>
 <text x="902" y="842" font-size="8" font-style="italic" fill="#555" text-anchor="end">N7</text>
-<line x1="979.7" y1="838" x2="971.7" y2="838" stroke="#111" stroke-width="1.2"/>
-<polygon points="970.7,838 976.7,834.5 976.7,841.5" fill="#111"/>
-<path d="M 948.7,832 L 956.7,838 L 948.7,844 Z M 966.7,832 L 958.7,838 L 966.7,844 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="957.7" y="827.0" font-size="7.5" text-anchor="middle">chk DN15</text>
-<path d="M 1023.6,832 L 1031.6,838 L 1023.6,844 Z M 1041.6,832 L 1033.6,838 L 1041.6,844 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="827.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<circle cx="995.12" cy="838" r="12" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="995.12" y="841" font-size="7" text-anchor="middle">FT-03</text>
 <text x="24" y="934" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="944" font-size="9">Every incident graph edge is drawn: 8 in, 14 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="959" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/ROOF_TANK.csv.</text>
@@ -232,7 +177,7 @@
 <g id="aqs-title-block"><rect x="1116" y="1026" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="1043" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-ROOF_TANK</text>
 <text x="1124" y="1060" font-size="9">P&amp;ID ROOF_TANK (tank, WTR sector)</text>
-<text x="1124" y="1077" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 581fe57a   Issued 2026-10-19</text>
+<text x="1124" y="1077" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev d3f409aa   Issued 2026-10-19</text>
 <text x="1124" y="1094" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="1111" font-size="9">Graph SHA-256 b9a12db17afa7b88   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="1111" font-size="9">Graph SHA-256 978d0c66abb9bc99   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

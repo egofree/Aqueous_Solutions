@@ -26,7 +26,13 @@ import collections, os, re, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 
 FAM = list(__import__('csv').DictReader(open('docs-authority/inventory/PIPE_FAMILIES.csv')))
-assert FAM, 'no pipe families'
+if not FAM:
+    open('docs-authority/PIPE_SPECS.md', 'w').write(
+        '# Pipe classes (AQS-PIP-003)\n\nDocument number: AQS-INV-006\nRevision: B (pending state)\n\nPENDING THE PLACEMENT MODEL. One production plan per pipe family; '
+        'the families derive from routed pipe lengths, which no model provides since the auto-router was '
+        'rejected (AQS-3D-BUILD-001 Rev G, no invented mm) and its sidecar retired. The class sheets '
+        're-issue when the FreeCAD placement model restores the routed lengths.\n')
+    raise SystemExit(0)
 
 # the class sheets of AQS-PIP-003: letter -> sheet title (the sheet itself carries the rating basis)
 CLS = {}
