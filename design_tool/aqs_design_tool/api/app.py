@@ -14,14 +14,27 @@ import json
 import subprocess
 import sys
 from datetime import datetime, timezone
+import importlib
 
+SP = importlib.import_module("aqs_design_tool.site_profiles")
+SC = importlib.import_module("flow_graph.param.scaling")
+SITE_PROF = importlib.import_module("flow_graph.param.site")
+PIPE = importlib.import_module("aqs_design_tool.solver.pipeline")
+
+from pydantic import BaseModel, ConfigDict
 from fastapi import FastAPI, HTTPException
+
+SP = importlib.import_module("aqs_design_tool.site_profiles")
+SC = importlib.import_module("flow_graph.param.scaling")
+SITE_PROF = importlib.import_module("flow_graph.param.site")
+PIPE = importlib.import_module("aqs_design_tool.solver.pipeline")
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .. import SCHEMA_VERSION, __version__
 from ..export.pack import export_pack
 from ..models import (
+    ResidualItem, GapModel, SandboxOverrides, SolveResponse, SolveRequest,
     ExportRequest,
     ExportResponse,
     FlagsResponse,
@@ -202,6 +215,69 @@ def get_flow_graph_view(view_name: str) -> JSONResponse:
 
 
 @app.post("/api/v1/sandbox")
+def list_sites() -> dict:
+    """The locale scaling profiles a site sandbox can start from (X-UI-002 Phase 1)."""
+    out = []
+    for sid in SP.available_sites():
+        try:
+            prof = SITE_PROF.load_profile(sid)
+            acts = SC.actions(prof)
+            out.append({'site_id': sid, 'actions': len(acts),
+                        'eliminations': sum(1 for a in acts if a.get('action') == 'eliminate')})
+        except Exception as exc:  # a broken profile is listed with its error, not hidden
+            out.append({'site_id': sid, 'error': str(exc)[:120]})
+    return {'sites': out}
+
+
+class SiteSandboxRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    site_id: str
+    label: Optional[str] = None
+
+
+@app.post("/api/v1/sandbox/from-site")
+def create_sandbox_from_site(body: SiteSandboxRequest) -> dict:
+    """A scaling profile becomes a sandbox: the engine's own resolved plan as overrides."""
+    try:
+        sp = SP.site_overrides(body.site_id)
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=f"site profile {body.site_id}: {exc}") from exc
+    if sp['errors']:
+        raise HTTPException(status_code=422, detail={'site_id': body.site_id, 'errors': sp['errors']})
+    overrides = SandboxOverrides(**sp['overrides'])
+    rec = STORE.create(overrides=overrides, label=body.label or f"site:{body.site_id}")
+    return {
+        "sandbox_id": rec.sandbox_id,
+        "label": rec.label,
+        "site_id": body.site_id,
+        "applied": sp['applied'],
+        "unapplied": sp['unapplied'],
+        "replacement_of": sp['replacement_of'],
+        "parent_mvs_revision": rec.parent_mvs_revision,
+        "model": rec.model.model_dump(by_alias=True, mode="json"),
+    }
+
+
+@app.post("/api/v1/sandbox/{sandbox_id}/solve-pipeline", response_model=SolveResponse)
+def solve_sandbox_pipeline(sandbox_id: str) -> SolveResponse:
+    """The REAL X-PAR-02 balance on the sandbox fold: true residuals, never smoothed."""
+    try:
+        rec = STORE.get(sandbox_id)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=f"Unknown sandbox {sandbox_id}") from exc
+    units = [u.model_dump(by_alias=True) for u in rec.model.units]
+    res = PIPE.solve_mass(units, sandbox_id=sandbox_id)
+    result = SolveResponse(
+        status=res['status'],
+        sandbox_id=sandbox_id,
+        residuals={'mass': [ResidualItem(**r) for r in res['residuals']['mass']]},
+        gaps=[GapModel(sector_definition='pipeline solve', reason=res['note'])],
+    )
+    STORE.set_solve(sandbox_id, result)
+    return result
+
+
 def create_sandbox(body: SandboxCreateRequest | None = None) -> dict:
     body = body or SandboxCreateRequest()
     rec = STORE.create(overrides=body.overrides, label=body.label)
