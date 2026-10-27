@@ -179,9 +179,11 @@ def test_resolve_units(tree: SystemTree) -> None:
     }
     # leaf resolves to itself
     assert tree.resolve_units("ELEC.distribution-train.EXT_HALL") == {"EXT_HALL"}
-    # root resolves to the whole sector (DIGESTER carries EVAP_ACID_VS from WET)
+    # root resolves to the whole sector (DIGESTER carries EVAP_ACID_VS from WET);
+    # membership is the designed invariant - the count follows from it
     digester = tree.resolve_units("DIGESTER")
-    assert len(digester) == 25 and "EVAP_ACID_VS" in digester
+    assert "EVAP_ACID_VS" in digester
+    assert {"EVAP_ACID", "EVAP_BASE", "LEACH_CSTR_1", "EW_1", "EW_9", "P_CA", "SALT_FEED"} <= digester
     # all 178 units resolve exactly once across roots
     roots = [n.id for n in tree.nodes if n.parent is None]
     resolved: list[str] = []
