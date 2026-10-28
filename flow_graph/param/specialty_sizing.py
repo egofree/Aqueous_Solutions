@@ -97,14 +97,20 @@ def write():
             p['size_mm'] = size_mm
             p['size_note'] = size_note
         if kw is not None:
-            n['continuous_kw'] = {'value': kw, 'unit': 'kW', 'status': 'study',
-                                  'note': f'{kw_note} (X-SPEC sizing, calculated)'}
+            cur = (n.get('continuous_kw') or {}).get('note') or ''
+            if '(X-SPEC' not in cur:            # idempotence: the note is written once
+                n['continuous_kw'] = {'value': kw, 'unit': 'kW', 'status': 'study',
+                                      'note': f'{kw_note} (X-SPEC sizing, calculated)'}
+            else:
+                n['continuous_kw']['value'] = kw
 
     def edge(sid, val, note):
         for e in g['edges']:
             if e['stream_id'] == sid:
                 e['rate']['value'] = val
-                e['rate']['note'] = (e['rate'].get('note') or '') + f' | {note} (X-SPEC)'
+                cur = e['rate'].get('note') or ''
+                if '(X-SPEC)' not in cur:            # idempotence: the note is written once
+                    e['rate']['note'] = (cur + f' | {note} (X-SPEC)')[:240]
                 return
 
     # --- the grease/lithium chain: the draws slice the balanced nodes 1:1 -----------
