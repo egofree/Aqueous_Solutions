@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: CERN-OHL-S-2.0
 // Copyright 2026 Mike Matthews.
 /**
- * Deterministic schematic layout: grid units by sector.
- * No invented coordinates in MVS — layout is UI-only.
+ * Deterministic schematic layout: grid units by sector, adaptive column count
+ * (squarer bands read better at 200+ units than a fixed strip). No invented
+ * coordinates in MVS — layout is UI-only, a reading aid that carries no dimension.
  */
-import type { Sector, Stream, Unit } from '../types/mvs'
+import type { Sector, Unit } from '../types/mvs'
 
 export interface Point {
   x: number
@@ -18,14 +19,20 @@ export interface LayoutResult {
   height: number
 }
 
-const BOX_W = 110
-const BOX_H = 36
-const COL_GAP = 28
-const ROW_GAP = 18
+export const BOX_W = 130
+export const BOX_H = 36
+const COL_GAP = 24
+const ROW_GAP = 16
 const PAD = 40
-const COLS_PER_SECTOR = 2
+const BAND_GAP = 60
 
-export { BOX_W, BOX_H }
+/** Cycle filter helper (kept here so the layout module owns the schematic math). */
+export function streamMatchesCycle(
+  st: { stream_id: string },
+  cycle: string | null,
+): boolean {
+  return cycle == null || st.stream_id.startsWith(cycle)
+}
 
 export function layoutBySector(
   units: Unit[],
@@ -38,83 +45,52 @@ export function layoutBySector(
     list.push(u)
     bySector.set(u.sector_id, list)
   }
-  // Stable sort units within sector
   for (const list of bySector.values()) {
     list.sort((a, b) => a.unit_id.localeCompare(b.unit_id))
   }
 
   const unitPos: Record<string, Point> = {}
   const sectorBands: LayoutResult['sectorBands'] = []
-  let col = 0
+  let bandX = PAD
   let maxY = PAD
 
+  const placed = new Set<string>()
   for (const sid of sectorOrder) {
-    const list = bySector.get(sid) ?? []
+    const list = (bySector.get(sid) ?? []).filter((u) => !placed.has(u.unit_id))
     if (list.length === 0) continue
-    const bandX = PAD + col * (BOX_W * COLS_PER_SECTOR + COL_GAP * 2 + 24)
+    // adaptive columns: a squarer band per sector
+    const cols = Math.min(8, Math.max(2, Math.ceil(Math.sqrt((list.length * BOX_W) / 110))))
+    const bandW = cols * (BOX_W + COL_GAP)
     sectorBands.push({ sector_id: sid, x: bandX, label: sid })
     list.forEach((u, i) => {
-      const localCol = i % COLS_PER_SECTOR
-      const localRow = Math.floor(i / COLS_PER_SECTOR)
-      const x = bandX + localCol * (BOX_W + COL_GAP)
-      const y = PAD + 28 + localRow * (BOX_H + ROW_GAP)
-      unitPos[u.unit_id] = { x, y }
-      maxY = Math.max(maxY, y + BOX_H)
+      const localCol = i % cols
+      const localRow = Math.floor(i / cols)
+      unitPos[u.unit_id] = {
+        x: bandX + localCol * (BOX_W + COL_GAP),
+        y: PAD + 28 + localRow * (BOX_H + ROW_GAP),
+      }
+      placed.add(u.unit_id)
+      maxY = Math.max(maxY, PAD + 28 + localRow * (BOX_H + ROW_GAP) + BOX_H)
     })
-    col += 1
+    bandX += bandW + BAND_GAP
   }
 
-  // Orphan units (sector not in sector list)
-  const placed = new Set(Object.keys(unitPos))
+  // Orphan units (sector not in the sector list)
   const orphans = units.filter((u) => !placed.has(u.unit_id))
   if (orphans.length) {
-    const bandX = PAD + col * (BOX_W * COLS_PER_SECTOR + COL_GAP * 2 + 24)
     sectorBands.push({ sector_id: '_OTHER', x: bandX, label: 'OTHER' })
+    const cols = Math.min(8, Math.max(2, Math.ceil(Math.sqrt((orphans.length * BOX_W) / 110))))
     orphans
       .sort((a, b) => a.unit_id.localeCompare(b.unit_id))
       .forEach((u, i) => {
-        const localCol = i % COLS_PER_SECTOR
-        const localRow = Math.floor(i / COLS_PER_SECTOR)
-        const x = bandX + localCol * (BOX_W + COL_GAP)
-        const y = PAD + 28 + localRow * (BOX_H + ROW_GAP)
-        unitPos[u.unit_id] = { x, y }
-        maxY = Math.max(maxY, y + BOX_H)
+        unitPos[u.unit_id] = {
+          x: bandX + (i % cols) * (BOX_W + COL_GAP),
+          y: PAD + 28 + Math.floor(i / cols) * (BOX_H + ROW_GAP),
+        }
+        maxY = Math.max(maxY, PAD + 28 + Math.floor(i / cols) * (BOX_H + ROW_GAP) + BOX_H)
       })
-    col += 1
+    bandX += cols * (BOX_W + COL_GAP) + BAND_GAP
   }
 
-  const width = Math.max(
-    800,
-    PAD * 2 + col * (BOX_W * COLS_PER_SECTOR + COL_GAP * 2 + 24),
-  )
-  const height = Math.max(480, maxY + PAD)
-  return { unitPos, sectorBands, width, height }
-}
-
-/** Map cycle view id → substrings matched against stream.carries (case-insensitive). */
-const CYCLE_MATCH: Record<string, string[]> = {
-  C: ['co2', 'carbon', 'organics', 'meoh', 'methanol', 'food', 'scrap'],
-  O: ['o2', 'oxygen', 'photosynthetic'],
-  H2O: ['h2o', 'upw', 'water', 'potable', 'distillate', 'brine', 'grey', 'sump', 'overflow', 'tower', 'pem product'],
-  H2: ['h2', 'hydrogen'],
-  N: ['n2', 'nitrogen'],
-  heat: ['heat', 'q4', 'thermal'],
-}
-
-export function streamMatchesCycle(
-  stream: Stream,
-  cycle: string | null,
-): boolean {
-  if (!cycle) return true
-  const carries = (stream.carries ?? '').toLowerCase()
-  const keys = CYCLE_MATCH[cycle] ?? [cycle.toLowerCase()]
-  // H2 must not match H2O falsely — check H2O cycle separately
-  if (cycle === 'H2') {
-    if (/\bh2o\b/.test(carries) || carries.includes('water') || carries.includes('upw')) {
-      // only match if also has H2 fuel / process H2 etc without being pure water
-      return /\bh2\b/.test(carries) && !/^(upw|potable|.*water.*)$/.test(carries)
-    }
-    return keys.some((k) => carries.includes(k))
-  }
-  return keys.some((k) => carries.includes(k))
+  return { unitPos, sectorBands, width: bandX, height: maxY + PAD }
 }
