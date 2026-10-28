@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1675 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1684 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -1225,6 +1225,15 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/views/pfd.dot` | 2d4836d (regenerated, no change) | current |
 | `flow_graph/views/pfd.json` | 2d4836d (regenerated, no change) | current |
 | `flow_graph/views/pfd.svg` | 2d4836d (regenerated, no change) | current |
+| `media/3d/LEVEL_L0.svg` | 2d4836d | current |
+| `media/3d/LEVEL_L1.svg` | 2d4836d | current |
+| `media/3d/LEVEL_L2.svg` | 2d4836d | current |
+| `media/3d/LEVEL_Lm1.svg` | 2d4836d | current |
+| `media/3d/LEVEL_Lm2.svg` | 2d4836d | current |
+| `media/3d/LEVEL_ROOF.svg` | 2d4836d | current |
+| `media/3d/MODEL_MANIFEST.json` | 2d4836d | current |
+| `media/3d/SITE_AXO.svg` | 2d4836d | current |
+| `media/3d/site_model.glb` | 2d4836d | current |
 | `media/_generated.json` | - | by design: the manifest that lists generated media and the graph each was made from (regen_derived.py) |
 | `media/logo3.png` | - | artwork, not derived |
 | `media/verify_view.png` | - | manual capture in GUI FreeCAD (models/freecad/verify_view_png.py) |
