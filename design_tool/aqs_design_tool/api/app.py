@@ -16,6 +16,7 @@ import sys
 from datetime import datetime, timezone
 from typing import Optional
 import importlib
+import os
 
 SP = importlib.import_module("aqs_design_tool.site_profiles")
 SC = importlib.import_module("flow_graph.param.scaling")
@@ -34,6 +35,7 @@ from fastapi.responses import JSONResponse
 
 from .. import SCHEMA_VERSION, __version__
 from ..export.pack import export_pack
+from ..paths import EXPORTS_DIR
 from ..models import (
     ResidualItem, GapModel, SandboxOverrides, SolveResponse, SolveRequest,
     ExportRequest,
@@ -239,6 +241,50 @@ class SiteSandboxRequest(BaseModel):
 
 
 SiteSandboxRequest.model_rebuild()
+
+
+SR3 = importlib.import_module("flow_graph.param.site_3d")
+
+
+@app.get("/api/v1/sites/{site_id}/3d")
+def get_site_3d_manifest(site_id: str) -> dict:
+    """The site's 3D model manifest: coverage, per-unit state, level plans (built on demand)."""
+    if site_id not in [x['site_id'] for x in list_sites()['sites']] and site_id != 'baseline':
+        raise HTTPException(status_code=404, detail=f'unknown site {site_id}')
+    out = os.path.join(str(EXPORTS_DIR), f'{site_id}_3d')
+    man = os.path.join(out, 'MODEL_MANIFEST.json')
+    if not os.path.exists(man):
+        m = SR3.build(site_id, out)
+    else:
+        m = json.load(open(man))
+    return m
+
+
+_3D_FILES = ('SITE_AXO.svg', 'site_model.glb', 'MODEL_MANIFEST.json')
+
+
+@app.get("/api/v1/sites/{site_id}/3d/file/{fname}")
+def get_site_3d_file(site_id: str, fname: str):
+    """Serve a 3D artifact by whitelisted name (axo sheet, level plan, GLB)."""
+    from fastapi.responses import FileResponse
+    if site_id not in [x['site_id'] for x in list_sites()['sites']] and site_id != 'baseline':
+        raise HTTPException(status_code=404, detail=f'unknown site {site_id}')
+    if fname != 'MODEL_MANIFEST.json' and not (fname.startswith('LEVEL_') and fname.endswith('.svg')) \
+            and fname not in _3D_FILES:
+        raise HTTPException(status_code=400, detail=f'unknown 3d artifact {fname}')
+    if '/' in fname or '\\' in fname or '..' in fname:
+        raise HTTPException(status_code=400, detail='bad artifact name')
+    out = os.path.join(str(EXPORTS_DIR), f'{site_id}_3d')
+    man = os.path.join(out, 'MODEL_MANIFEST.json')
+    if not os.path.exists(man):
+        SR3.build(site_id, out)
+    path = os.path.join(out, fname)
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail=f'{fname} not built for {site_id}')
+    media = ('image/svg+xml' if fname.endswith('.svg')
+             else 'model/gltf-binary' if fname.endswith('.glb') else 'application/json')
+    return FileResponse(path, media_type=media,
+                        filename=f'{site_id}_{fname}' if fname.endswith('.glb') else None)
 
 
 @app.post("/api/v1/sandbox/from-site")

@@ -1,0 +1,1455 @@
+{
+ "site_id": "baseline",
+ "placement_seed_revision": "M",
+ "units_total": 214,
+ "built": 140,
+ "ghosts_eliminated": 0,
+ "block_centre_massing": 40,
+ "unplaced": [
+  "ADS_CHILL",
+  "AIR_RECEIVER",
+  "AL_POT",
+  "ATMOS",
+  "ATM_INT",
+  "BRIN_RECOVER",
+  "CAST_LINE",
+  "CAT_OX",
+  "CA_POT",
+  "COMB_HEAT",
+  "CONT_CAST",
+  "CRYO_ASU",
+  "CR_CELL",
+  "DESAL_RO",
+  "DRAW",
+  "DRY_COOLER",
+  "EVAP_ACID",
+  "EVAP_ACID_VS",
+  "EVAP_BASE",
+  "EXTRUDE",
+  "E_HEAT",
+  "FILM_CAST",
+  "FLUX_PREP",
+  "FOOD_STORE",
+  "FORGE",
+  "F_RECOVER",
+  "GREASE_CA",
+  "GREASE_LI",
+  "GW_INTAKE",
+  "H2O_ELYZ",
+  "HDR_CO2",
+  "HDR_N2",
+  "HF_GEN",
+  "HYDRO_GROW",
+  "ICE_EXTRACT",
+  "IND_MELT",
+  "INV_CAST",
+  "LIO_BAT",
+  "LI_RECOVER",
+  "MAU_HX",
+  "MEM_DIST",
+  "METAL_STORE",
+  "MG_POT",
+  "MO_CELL",
+  "PELLET",
+  "PERC_REMOVE",
+  "POLY_COND",
+  "POLY_F",
+  "POLY_OLEFIN",
+  "POLY_STOCK",
+  "POWDER_RESIN",
+  "PROD_MEOH",
+  "PROD_O2",
+  "P_CA",
+  "RAD_PANEL",
+  "REC_HDR",
+  "RES_HEAT",
+  "RF_HEAT",
+  "ROLL",
+  "SHELL_BREAK",
+  "SHELL_BUILD",
+  "SHELL_BURNOUT",
+  "SINTER",
+  "SI_REDUCE",
+  "STOCK_OUT",
+  "SW_INTAKE",
+  "TANK_BLD",
+  "TFE_SYN",
+  "TI_CELL",
+  "VAC_CAST",
+  "VAC_IND",
+  "VDF_SYN",
+  "WAX_PATTERN",
+  "WET_OX"
+ ],
+ "routed_note": "3D geometry is placement-model massing at sourced centres; detailed CAD remains models/freecad + models/mfg.",
+ "levels": [
+  "L-2",
+  "L-1",
+  "L0",
+  "L1",
+  "L2",
+  "ROOF"
+ ],
+ "plans": {
+  "L-2": "LEVEL_Lm2.svg",
+  "L-1": "LEVEL_Lm1.svg",
+  "L0": "LEVEL_L0.svg",
+  "L1": "LEVEL_L1.svg",
+  "L2": "LEVEL_L2.svg",
+  "ROOF": "LEVEL_ROOF.svg"
+ },
+ "glb_units": 140,
+ "errors": [],
+ "units": [
+  {
+   "unit_id": "ACID_POLISH_SCRUB",
+   "sector_id": "GAS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of SCRUB (placement pending)"
+  },
+  {
+   "unit_id": "ADS_CHILL",
+   "sector_id": "HEAT",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "AFTERBURNER",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+  },
+  {
+   "unit_id": "AFTERBURNER_FLUE",
+   "sector_id": "GAS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of SCRUB (placement pending)"
+  },
+  {
+   "unit_id": "AIR_RECEIVER",
+   "sector_id": "CRYO",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "ALK_SCRUBBER",
+   "sector_id": "GAS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of SCRUB (placement pending)"
+  },
+  {
+   "unit_id": "AL_POT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "AQUA_TANK",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-415: 2.0 m3 at the 60 kg / 30 kg-per-m3 stocking class (TECHTREE tilapia)"
+  },
+  {
+   "unit_id": "AQUA_UV",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-428: inline sanitizer on the loop bypass at the 0.04 kW lamp class"
+  },
+  {
+   "unit_id": "ATMOS",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "ATM_INT",
+   "sector_id": "GAS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "BACKUP_GEN",
+   "sector_id": "ELEC",
+   "level": "L0",
+   "status": "built",
+   "basis": "Study skid, not a nameplate. Outdoor H2 consumer. 3 ft flange rule. Exhaust not to hab. East face west of the 500 mm wall clear. Rev F: from (-3500, 8200). Clears FUEL_CELL overlap. 1100 mm all faces (nec_110_26_mm); 1300 mm to ZNBR2, 1500 mm to NOX_SCRUB, 1500 mm to the west wall line."
+  },
+  {
+   "unit_id": "BAGHOUSE",
+   "sector_id": "GAS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of SCRUB (placement pending)"
+  },
+  {
+   "unit_id": "BEE_HIVE",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-424: 10-frame deep + medium + stand (TECHTREE beekeeping)"
+  },
+  {
+   "unit_id": "BIOFILTER",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "C5. Node envelope in the farm block. Rev K farm re-row (flow_graph/farm_rerow.py): 914 mm paths between farm rows; FARM block west edge x=10600 (AQS-BLD-012, A-M-102)."
+  },
+  {
+   "unit_id": "BLACK_DIGEST",
+   "sector_id": "WTR",
+   "level": "L1",
+   "status": "built",
+   "basis": "X-SAN-01 AQS-DUTY-063: HAB sanitation room (west wall, 1 h walls, own exhaust, negative to HAB corridor); >= 7.62 m from every FARM unit."
+  },
+  {
+   "unit_id": "BLOW_MOLD",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "Rev H: issued envelope 1200x800x1600 (BLOW-01). Moved from (20000,400): 200 mm from STAIR_S2. North MFG bay, south of CORR_L0_EW, >= 600 mm to equipment."
+  },
+  {
+   "unit_id": "BMED_ACID",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of BMED_CRU (placement pending)"
+  },
+  {
+   "unit_id": "BMED_BASE",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of BMED_CRU (placement pending)"
+  },
+  {
+   "unit_id": "BMED_UPW_POLISH",
+   "sector_id": "WTR",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Beside BMED block. Polish after BMED, before FAB_UPW_TANK. Not a second regen stack."
+  },
+  {
+   "unit_id": "BOUNDARY_EXPORT",
+   "sector_id": "DOCK",
+   "level": "L0",
+   "status": "built",
+   "basis": "Dock door. Freight boundary. No process stream. Goods only."
+  },
+  {
+   "unit_id": "BRIN_RECOVER",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "BSFL_BIN",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-418 Rev M: 2 x 5 kg/d-class bins at the 8.21 kg/d wet feedstock"
+  },
+  {
+   "unit_id": "C29_RECYCLE",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "C29 cut pipe. PROD_C29 to pyro inlet. Not the wet line. Rev F: from (2000, 12400). Run moved off the glass row (was through GLASS_RINSE and GLASS_MILL); centred on PROD_C29, 400 mm nozzle approach."
+  },
+  {
+   "unit_id": "CAST_LINE",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "CATCH_TANK",
+   "sector_id": "WTR",
+   "level": "L-2",
+   "status": "built",
+   "basis": "Rev H record row (no move: equals the existing Feature). Pumped-hydro lower reservoir and terrace rain catch (ASME_CLASS_SHEETS \"Lower reservoir\"; SCALE_MODEL CATCH_TANK_Z = Z_Lm2, always deepest). Below L-1 by function. Inlets: S22/IA-ESS-HYDRO-DIS penstock and S23/IA-ESS-HYDRO-CHG pump return, both inside SHAFT_PENSTOCK [10800..11600, 8200..9000], which is the only slab crossing; S41 terrace drain joins the shaft at L0 through a wall sleeve. No penetration of SLAB_Lm1 into the L-1 process rooms. Not a heat-ladder drain tank: Q-store drain-down goes to the L-1 process bund pump-out (S22 forbids process sumps, S41 forbids the L-1 process bund)."
+  },
+  {
+   "unit_id": "CAT_OX",
+   "sector_id": "OIL",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "CA_POT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "CHICKEN_COOP",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-417: 12 birds x 0.2 m2 + nest row (TECHTREE chickens.md)"
+  },
+  {
+   "unit_id": "COLD_MILL",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "block-centre massing of MFG (placement pending)"
+  },
+  {
+   "unit_id": "COMB_HEAT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "COMMON_AREA",
+   "sector_id": "HAB",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-419: 10 m2 circulation"
+  },
+  {
+   "unit_id": "CONTINUOUS_RECYCLE",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Rev H line envelope DN50 (OD 60.3): continuous liquor return IA-REC-01, high-level run over LEACH_CSTR_1 (top nozzle drop not drawn), above the corridors (top -2800). Moved from (800,4200,-6000): that origin was in CORR_Lm1_EW at floor level. Line: no-overlap rule."
+  },
+  {
+   "unit_id": "CONT_CAST",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "CRU",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of BMED_CRU (placement pending)"
+  },
+  {
+   "unit_id": "CRYO_AHU",
+   "sector_id": "CRYO",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of CRYO (placement pending)"
+  },
+  {
+   "unit_id": "CRYO_AHU_COND_CONDENSABLE",
+   "sector_id": "CRYO",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Inside CRYO room. Downstream of CRYO_AHU. S70 to cold box. Not hab."
+  },
+  {
+   "unit_id": "CRYO_ASU",
+   "sector_id": "CRYO",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "CRYO_CO2",
+   "sector_id": "CRYO",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of CRYO (placement pending)"
+  },
+  {
+   "unit_id": "CRYO_DED_COOL",
+   "sector_id": "CRYO",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of CRYO (placement pending)"
+  },
+  {
+   "unit_id": "CRYO_H2",
+   "sector_id": "CRYO",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of CRYO (placement pending)"
+  },
+  {
+   "unit_id": "CRYO_HX_Q4",
+   "sector_id": "CRYO",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Warm residual water only. S54. Not the Stirling reject (that is CRYO_DED_COOL)."
+  },
+  {
+   "unit_id": "CRYO_N2",
+   "sector_id": "CRYO",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of CRYO (placement pending)"
+  },
+  {
+   "unit_id": "CRYO_O2",
+   "sector_id": "CRYO",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of CRYO (placement pending)"
+  },
+  {
+   "unit_id": "CR_CELL",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "DESAL_RO",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "DRAW",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "DRY_COOLER",
+   "sector_id": "HEAT",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "DUCKWEED",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-420 raceway basin 300 m2 (30.1 x 10.1 x 0.7 m lined basin, the FARM block extends to fit); EPDM liner per sec3"
+  },
+  {
+   "unit_id": "DUCK_PEN",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-421: 6 ducks x 0.3 m2 + wallow (TECHTREE ducks.md)"
+  },
+  {
+   "unit_id": "ELECTRODE_COAT",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "Rev H: issued envelope 1200x800x1800 (ELC-BOOTH-01). Moved from (15600,200): intersected MFG_FLOOR, 400 mm to MET_HX_Q4. South wall of MFG, 600 mm to ENV_WALL_S and GAS_ATOMIZER. Exhaust to MET_AHU."
+  },
+  {
+   "unit_id": "EVAP_ACID",
+   "sector_id": "DIGESTER",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "EVAP_ACID_VS",
+   "sector_id": "DIGESTER",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "EVAP_BASE",
+   "sector_id": "DIGESTER",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "EW_1",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_2",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 25); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_3",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 10); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_4",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 2); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_5",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_6",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_7",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 30); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_8",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 3); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EW_9",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "X-RSZ-03 sized envelope (AQS-DUTY-051 cathode count 31); LEACH_EW block, 600 mm clear to other rows, 914 mm aisle between cells (AQS-BLD-012)"
+  },
+  {
+   "unit_id": "EXTRUDE",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "EXT_HALL",
+   "sector_id": "ELEC",
+   "level": "L0",
+   "status": "built",
+   "basis": "block-centre massing of EXT_HALL_E (placement pending)"
+  },
+  {
+   "unit_id": "E_HEAT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "FAB_UPW_TANK",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "params.py P_TANK_* alias. East of wet benches. Feed is roof water, not Salria."
+  },
+  {
+   "unit_id": "FEED_PREP",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-426: mixer + grinder + HP drier cabinet at the 0.6 kW duty"
+  },
+  {
+   "unit_id": "FILM_CAST",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "FLOAT_SINK",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of LEACH_EW (placement pending)"
+  },
+  {
+   "unit_id": "FLUE_KO",
+   "sector_id": "GAS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Rev H: FLUE_KO is the existing FLUE_CAP Feature (cryo.py; VENT_SCRUB_EQUIPMENT s2.5 afterburner -> CRYO CO2 / condensate KO). Record row (fixed_feature): equals the FLUE_CAP origin and size and is never written. Old study row (18000,12400) retired: it duplicated the Feature."
+  },
+  {
+   "unit_id": "FLUX_PREP",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "FOOD_STORE",
+   "sector_id": "FARM",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "FORGE",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "FUEL_CELL",
+   "sector_id": "ELEC",
+   "level": "L0",
+   "status": "built",
+   "basis": "Study skid. H2 anode. O2 manifold stays on the south face, 7620 mm from BACKUP_GEN H2 flanges or a 1 h wall. Heat is Q4 water only. Rev F: from (-3300, 7600). South (O2) face 7700 mm north of BACKUP_GEN, meeting oxidizer_or_1h_mm by distance without a 1 h wall. 1100 mm all faces; 1921 mm to SOL_ARK_60K (above the 5 ft vent envelope)."
+  },
+  {
+   "unit_id": "F_RECOVER",
+   "sector_id": "DIGESTER",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "GALLEY",
+   "sector_id": "HAB",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-419: 12 m2 galley, AQS-HAB-001 zoning"
+  },
+  {
+   "unit_id": "GAS_ATOMIZER",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "block-centre massing of MFG (placement pending)"
+  },
+  {
+   "unit_id": "GEO_GHEX",
+   "sector_id": "GEO",
+   "level": "L0",
+   "status": "built",
+   "basis": "West of GEO_HP. Bore field tie. Massing only."
+  },
+  {
+   "unit_id": "GEO_HP",
+   "sector_id": "GEO",
+   "level": "L0",
+   "status": "built",
+   "basis": "Yard, south of GEN, north of MeOH. Closed loop. Not a process pit."
+  },
+  {
+   "unit_id": "GEO_HP_CLOSED_LOOP",
+   "sector_id": "GEO",
+   "level": "L0",
+   "status": "built",
+   "basis": "Loop vessel beside GHEX. Not Salria."
+  },
+  {
+   "unit_id": "GEO_ORC",
+   "sector_id": "GEO",
+   "level": "L0",
+   "status": "built",
+   "basis": "ST-ORC-01 reserved pad. M1 duty is 0 kW_e until GHEX survey shows surplus after Q4. Do not buy a skid on this row."
+  },
+  {
+   "unit_id": "GLASS_BURNOUT",
+   "sector_id": "GLASS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "IA glass. Organics off cullet before digest. Off-gas to oil vapor header, not acid header. Rev F: from (4400, 12200). Cleared PROD_C5_C10 and PROD_C11_C18 (were intersecting). West of GLASS_RINSE with a 600 mm aisle; 600 mm off the west wall line. East side of the row is TOILET_Lm1_MAINT and STAIR_SERVICE on the model."
+  },
+  {
+   "unit_id": "GLASS_DIGEST",
+   "sector_id": "GLASS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+  },
+  {
+   "unit_id": "GLASS_MILL",
+   "sector_id": "GLASS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "IA glass. After rinse. Fines to GLASS_DIGEST.  params MILL_L class."
+  },
+  {
+   "unit_id": "GLASS_RINSE",
+   "sector_id": "GLASS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "IA glass. After vibratory split, before mill. Rinse liquor back to CSTR 1."
+  },
+  {
+   "unit_id": "GREASE_CA",
+   "sector_id": "OIL",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "GREASE_LI",
+   "sector_id": "OIL",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "GREY_TREAT",
+   "sector_id": "WTR",
+   "level": "L1",
+   "status": "built",
+   "basis": "Downstream of black digest. HDR_GREY only. Not Salria."
+  },
+  {
+   "unit_id": "GROWBED_A",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-415: the aerobic media bed, 7 m2 of the dual-root-zone duty"
+  },
+  {
+   "unit_id": "GROWBED_B",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-415: the anaerobic mineralisation bed, in series with GROWBED_A"
+  },
+  {
+   "unit_id": "GROW_BED",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "block-centre massing of FARM (placement pending)"
+  },
+  {
+   "unit_id": "GW_INTAKE",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "H2O_ELYZ",
+   "sector_id": "CRYO",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "H2_DRYER",
+   "sector_id": "GAS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of SCRUB (placement pending)"
+  },
+  {
+   "unit_id": "HABITATION",
+   "sector_id": "HAB",
+   "level": "L1",
+   "status": "built",
+   "basis": "block-centre massing of HAB (placement pending)"
+  },
+  {
+   "unit_id": "HDR_CO2",
+   "sector_id": "HAB",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "HDR_H2",
+   "sector_id": "GAS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of LEACH_EW (placement pending)"
+  },
+  {
+   "unit_id": "HDR_N2",
+   "sector_id": "HAB",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "HDR_O2",
+   "sector_id": "GAS",
+   "level": "L1",
+   "status": "built",
+   "basis": "block-centre massing of LIFE_RACK (placement pending)"
+  },
+  {
+   "unit_id": "HDR_UPW",
+   "sector_id": "WTR",
+   "level": "L1",
+   "status": "built",
+   "basis": "block-centre massing of LIFE_RACK (placement pending)"
+  },
+  {
+   "unit_id": "HF_GEN",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "HOPPER",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of LEACH_EW (placement pending)"
+  },
+  {
+   "unit_id": "HX8",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Rev H study envelope: Ti plate HX 0.51 m2 (AQS-DUTY-008 Rev B) in an M3-class frame. Moved from (4000,5200): that origin was inside CORR_Lm1_PROCESS. Now south of EW_BUND (606 mm), under the EW_1 end, near the Q4 return run. EW exchanger, not a cell."
+  },
+  {
+   "unit_id": "HYDRO_GROW",
+   "sector_id": "FARM",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "HYDRO_SET",
+   "sector_id": "PUMPED_HYDRO",
+   "level": "L-2",
+   "status": "built",
+   "basis": "block-centre massing of HYDRO (placement pending)"
+  },
+  {
+   "unit_id": "ICE_EXTRACT",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "IND_MELT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "INV_CAST",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LEACH_CSTR_1",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "C4. Node envelope. Inside LEACH_EW. 600 mm clear of the seed boxes on L-1."
+  },
+  {
+   "unit_id": "LIO_BAT",
+   "sector_id": "ELEC",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LITHO_ALIGN",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Rev H child of LITHO_STUB, issued 500x500x800, on the bench. 365 nm LED. Group member."
+  },
+  {
+   "unit_id": "LITHO_COAT",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Rev H child of LITHO_STUB, issued 600x500x800, on the bench. Group member."
+  },
+  {
+   "unit_id": "LITHO_DEV",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Rev H child of LITHO_STUB, issued 500x500x800, on the bench. Solvent waste to the oil line. Group member."
+  },
+  {
+   "unit_id": "LI_RECOVER",
+   "sector_id": "DIGESTER",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "LOAD_AGG",
+   "sector_id": "ELEC",
+   "level": "L0",
+   "status": "built",
+   "basis": "Electrical sum at the rectifier. Not a process vessel. S17/S20 accounting node."
+  },
+  {
+   "unit_id": "MAU_HX",
+   "sector_id": "HEAT",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "MEDICAL",
+   "sector_id": "HAB",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-419: 6 m2 medical, AQS-HAB-001 zoning"
+  },
+  {
+   "unit_id": "MEM_DIST",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "MEOH_COND",
+   "sector_id": "MEOH",
+   "level": "L0",
+   "status": "built",
+   "basis": "Rev H study envelope: DN150 KO pot + trap for 5.6 kg/d MeOH fuel-cell condensate. Yard, 600 mm from MEOH_FC. Origin unchanged."
+  },
+  {
+   "unit_id": "MEOH_FC",
+   "sector_id": "MEOH",
+   "level": "L0",
+   "status": "built",
+   "basis": "Order 4. Last. Not the PEM H2 fuel cell. No bay inside L1."
+  },
+  {
+   "unit_id": "MEOH_FERM",
+   "sector_id": "MEOH",
+   "level": "L0",
+   "status": "built",
+   "basis": "Deferred train, outdoor west yard, south of ESS. Order 1 of 4. Not a hab bay. Size is BMED skid class, not a nameplate. Rev F: from (-4848, 2400). North end of the MeOH train; 600 mm to MEOH_SYNTH, 700 mm to the GEO_ORC pad."
+  },
+  {
+   "unit_id": "MEOH_SYNTH",
+   "sector_id": "MEOH",
+   "level": "L0",
+   "status": "built",
+   "basis": "Order 2. Downstream of fermenter. DMFC still deferred. Rev F: from (-4848, 1200). Clears MEOH_TANK overlap; 600 mm to MEOH_FC and MEOH_FERM."
+  },
+  {
+   "unit_id": "MEOH_TANK",
+   "sector_id": "MEOH",
+   "level": "L0",
+   "status": "built",
+   "basis": "Order 3. Flammable hold. NFPA 30 dike. Not under the roof tank. Rev F: from (-4848, 1600). East of MEOH_SYNTH, 600 mm aisle; NFPA 30 dike envelope not drawn."
+  },
+  {
+   "unit_id": "METAL_STORE",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "MET_AHU",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "MFG metal aisle capture. Upstream of MET_SCRUB. No hab return."
+  },
+  {
+   "unit_id": "MET_HX_Q4",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "Water only, after scrub, <80 C. S63."
+  },
+  {
+   "unit_id": "MET_MELT",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "block-centre massing of MFG (placement pending)"
+  },
+  {
+   "unit_id": "MET_SCRUB",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4."
+  },
+  {
+   "unit_id": "MFG_SHOP",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "block-centre massing of MFG (placement pending)"
+  },
+  {
+   "unit_id": "MG_POT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "MO_CELL",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "NCG_HEADER",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "NCG only. To afterburner."
+  },
+  {
+   "unit_id": "NORTH_DOCK",
+   "sector_id": "DOCK",
+   "level": "L0",
+   "status": "built",
+   "basis": "block-centre massing of DOCK (placement pending)"
+  },
+  {
+   "unit_id": "NOX_SCRUB",
+   "sector_id": "GAS",
+   "level": "L0",
+   "status": "built",
+   "basis": "Rev H study envelope (graph params): DN100 packed column + sump for H2 genset exhaust 10.4 kg/h. Yard, east face x -2900 (<= -500); 1500 mm from BACKUP_GEN. Origin unchanged."
+  },
+  {
+   "unit_id": "NUTRIENT_DOSE",
+   "sector_id": "NUT",
+   "level": "L1",
+   "status": "built",
+   "basis": "block-centre massing of FARM (placement pending)"
+  },
+  {
+   "unit_id": "OIL_DRYER",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+  },
+  {
+   "unit_id": "OIL_FRAC",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+  },
+  {
+   "unit_id": "OIL_PYRO",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+  },
+  {
+   "unit_id": "PELLET",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "PERC_REMOVE",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "POLISH_BANK",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of BMED_CRU (placement pending)"
+  },
+  {
+   "unit_id": "POLY_COND",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "POLY_F",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "POLY_FIBER",
+   "sector_id": "POLYMERS",
+   "level": "L0",
+   "status": "built",
+   "basis": "A-M-429: bench-scale melt-spin line on the MFG floor, clear of MET_AHU (Y 0-1000) and the wet benches (Y 8000+)"
+  },
+  {
+   "unit_id": "POLY_OLEFIN",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "POLY_STOCK",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "POWDER_RESIN",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "PROD_C11_C18",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Cut tank."
+  },
+  {
+   "unit_id": "PROD_C19_C28",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Cut tank."
+  },
+  {
+   "unit_id": "PROD_C29",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "C29 tank. Feeds C29_RECYCLE only."
+  },
+  {
+   "unit_id": "PROD_C5_C10",
+   "sector_id": "OIL",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Cut tank. Product. NFPA 30."
+  },
+  {
+   "unit_id": "PROD_MEOH",
+   "sector_id": "CRYO",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "PROD_O2",
+   "sector_id": "CRYO",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "PV_ARRAY",
+   "sector_id": "ELEC",
+   "level": "ROOF",
+   "status": "built",
+   "basis": "X-PAR-07 roof-only PV (ground field removed). Envelope of 16 arrays inside the IFC 2027 1205.3 1829 mm perimeter pathway of the 186 x 174 m roof (solver.roof_close); 1219 mm interior pathways; array area 29784 m2. ROOF datum 14400 mm is a study value (A-M-103)."
+  },
+  {
+   "unit_id": "P_CA",
+   "sector_id": "DIGESTER",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "Q1_A",
+   "sector_id": "HEAT",
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on the L-1 floor. Coils, top to bottom: cross_tie (mid) 1.84 m2 (bare, 3 row, 0.376 m); down_evaporator (high) 1.51 m2 (bare, 2 row, 0.384 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+  },
+  {
+   "unit_id": "Q1_B",
+   "sector_id": "HEAT",
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 250 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on the L-1 floor. Coils, top to bottom: cross_tie (mid) 1.84 m2 (bare, 3 row, 0.376 m); down_evaporator (high) 1.51 m2 (bare, 2 row, 0.384 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+  },
+  {
+   "unit_id": "Q2_A",
+   "sector_id": "HEAT",
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on a 850 mm steel stand (z -5150). Coils, top to bottom: down_condenser (low) 1.51 m2 (integral low-fin, 1 row, 0.292 m); cross_tie (mid) 2.70 m2 (integral low-fin, 2 row, 0.305 m); down_evaporator (high) 2.52 m2 (integral low-fin, 2 row, 0.284 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+  },
+  {
+   "unit_id": "Q2_B",
+   "sector_id": "HEAT",
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). thermal oil 0.30 m3 at 150 C, 90 mm microporous. Rev H (AQS-DUTY-008 Rev C s14): on a 850 mm steel stand (z -5150). Coils, top to bottom: down_condenser (low) 1.51 m2 (integral low-fin, 1 row, 0.292 m); cross_tie (mid) 2.70 m2 (integral low-fin, 2 row, 0.305 m); down_evaporator (high) 2.52 m2 (integral low-fin, 2 row, 0.284 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+  },
+  {
+   "unit_id": "Q3_A",
+   "sector_id": "HEAT",
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Rev H (AQS-DUTY-008 Rev C s14): on a 1750 mm steel stand (z -4250). Coils, top to bottom: down_condenser (low) 0.94 m2 (integral low-fin, 1 row, 0.162 m); cross_tie (mid) 0.92 m2 (integral low-fin, 1 row, 0.157 m); down_evaporator (high) 0.81 m2 (bare, 1 row, 0.311 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+  },
+  {
+   "unit_id": "Q3_B",
+   "sector_id": "HEAT",
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.40 m3 at 100 C, 60 mm mineral wool. Rev H (AQS-DUTY-008 Rev C s14): on a 1750 mm steel stand (z -4250). Coils, top to bottom: down_condenser (low) 0.94 m2 (integral low-fin, 1 row, 0.162 m); cross_tie (mid) 0.92 m2 (integral low-fin, 1 row, 0.157 m); down_evaporator (high) 0.81 m2 (bare, 1 row, 0.311 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+  },
+  {
+   "unit_id": "Q4_A",
+   "sector_id": "HEAT",
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Rev H (AQS-DUTY-008 Rev C s14): on a 2650 mm steel stand (z -3350). Coils, top to bottom: down_condenser (low) 0.81 m2 (bare, 1 row, 0.279 m); cross_tie (mid) 0.78 m2 (bare, 1 row, 0.270 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+  },
+  {
+   "unit_id": "Q4_B",
+   "sector_id": "HEAT",
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-HEAT-LADDER-001 battery, issued envelope 800x800x1200 (MVS_EQUIPMENT). water 0.60 m3 at 70 C, 30 mm PIR. Rev H (AQS-DUTY-008 Rev C s14): on a 2650 mm steel stand (z -3350). Coils, top to bottom: down_condenser (low) 0.81 m2 (bare, 1 row, 0.279 m); cross_tie (mid) 0.78 m2 (bare, 1 row, 0.270 m). Stratification-correct: the downhill evaporator sits high in the hotter store, the downhill condenser low in the colder store; colder tiers stand higher so the condensate leg rises >= 0.30 m. Cross-tie coil is a pumped loop. Ladder plan position unchanged; checked against the placed copy and seed boxes, >= 600 mm clear. Plate-world."
+  },
+  {
+   "unit_id": "Q4_BUS",
+   "sector_id": "HEAT",
+   "level": "L0",
+   "status": "built",
+   "basis": "Water header collecting S06/S44/S53/S54/S63/S80. <80 C. Not a flue."
+  },
+  {
+   "unit_id": "QUAIL_CAGE",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-422: 20-hen Coturnix battery (TECHTREE coturnix.md)"
+  },
+  {
+   "unit_id": "RABBIT_HUTCH",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-423: 3 rabbitry positions (TECHTREE rabbits.md)"
+  },
+  {
+   "unit_id": "RAD_PANEL",
+   "sector_id": "HEAT",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "RECTIFIER",
+   "sector_id": "ELEC",
+   "level": "L0",
+   "status": "built",
+   "basis": "params.py RECT_* . Same ordinary yard row. Not in Class I."
+  },
+  {
+   "unit_id": "REC_DAYROOM",
+   "sector_id": "HAB",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-419: 20 m2 recreation/common"
+  },
+  {
+   "unit_id": "REC_HDR",
+   "sector_id": "GAS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "RELIEF_CRYO",
+   "sector_id": "CRYO",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Rev H study envelope: contingency vent damper section on the CRYO_AHU exhaust (12 ACH x 216 m3 = 2592 m3/h, 300x300 duct at 8 m/s). In the CRYO room, 800 mm north of CRYO_AHU, under VJ_003. Not the dock."
+  },
+  {
+   "unit_id": "RELIEF_H2",
+   "sector_id": "GAS",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Rev H record row (fixed_feature): RELIEF_H2 discharges through the existing H2_STACK (gas_handling, 8 m H2 vent stack, centred cylinder D250). Bounding box only; the applicator never writes it."
+  },
+  {
+   "unit_id": "REMIN",
+   "sector_id": "WTR",
+   "level": "L1",
+   "status": "built",
+   "basis": "Rev H: issued envelope 600x400x800 (REMIN-01). Moved from (2800,200): 200 mm from GREY_TREAT. Now in HAB between GALLEY and HAB_WASTE, >= 600 mm clear."
+  },
+  {
+   "unit_id": "RES_HEAT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "RF_HEAT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "ROLL",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "ROOF_TANK",
+   "sector_id": "WTR",
+   "level": "L2",
+   "status": "built",
+   "basis": "block-centre massing of ROOF (placement pending)"
+  },
+  {
+   "unit_id": "SALT_FEED",
+   "sector_id": "DIGESTER",
+   "level": "L-1",
+   "status": "built",
+   "basis": "block-centre massing of BMED_CRU (placement pending)"
+  },
+  {
+   "unit_id": "SHELL_BREAK",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "SHELL_BUILD",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "SHELL_BURNOUT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "SINTER",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "SI_REDUCE",
+   "sector_id": "GLASS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "SLEEP_QUARTERS",
+   "sector_id": "HAB",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-419: 4 x 4 m2 private quarters, AQS-HAB-001 zoning"
+  },
+  {
+   "unit_id": "SOLAR_PV_CELL",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Rev H: issued envelope 2400x1200x1600. Moved from (18800,10000): clashed with FAB_TOOL and PV_EMITTER. Free FAB bay north of ETCH_RETURN (600 mm), 1000 mm north of the LITHO group. The wafer_fab PV_* stubs (PV_TEXTURE..PV_ARC) are separate secondaries: duplication open."
+  },
+  {
+   "unit_id": "SOL_ARK_60K",
+   "sector_id": "ELEC",
+   "level": "L0",
+   "status": "built",
+   "basis": "params.py SOLARK_* . East face at X=-1100 (NEC 110.26). North of rectifier. Outside ZnBr2 Class I."
+  },
+  {
+   "unit_id": "STOCK_OUT",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "SW_INTAKE",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "TANK_BLD",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "TFE_SYN",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "TI_CELL",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "VAC_CAST",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "VAC_IND",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "VCD_TRAIN",
+   "sector_id": "WTR",
+   "level": "L-1",
+   "status": "built",
+   "basis": "Rev H: issued envelope 1400x600x1200 (VCD-COMP-01). Moved from (15000,2000): abutted S13_CLASS_TREAT. Now south of it (700 mm), >= 600 mm to PK_1 and walls."
+  },
+  {
+   "unit_id": "VDF_SYN",
+   "sector_id": "POLYMERS",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "VERMI_BIN",
+   "sector_id": "FARM",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-425: 2 m2 bin at 300 mm bedding"
+  },
+  {
+   "unit_id": "WAFER_FAB",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "block-centre massing of FAB (placement pending)"
+  },
+  {
+   "unit_id": "WASHROOM",
+   "sector_id": "HAB",
+   "level": "L1",
+   "status": "built",
+   "basis": "A-M-419: 8 m2 washroom, AQS-HAB-001 zoning"
+  },
+  {
+   "unit_id": "WAX_PATTERN",
+   "sector_id": "FOUNDRY",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "WET_BENCH",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "block-centre massing of FAB (placement pending)"
+  },
+  {
+   "unit_id": "WET_OX",
+   "sector_id": "WTR",
+   "status": "unplaced"
+  },
+  {
+   "unit_id": "WIRE_DRAW",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "block-centre massing of MFG (placement pending)"
+  },
+  {
+   "unit_id": "WS_AMMONIA",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Alkaline bund, north of peroxide. Away from Br2 yard and HF room. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2027 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011)."
+  },
+  {
+   "unit_id": "WS_DOPE",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Gas cabinet row on FAB tool east wall. Exhaust not to hab AHU. Not in the tote aisle."
+  },
+  {
+   "unit_id": "WS_HF_ED",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "FAB SW acid room. 1 h partition at X=15000 to peroxide. No shared sump. S31 to WET_BENCH."
+  },
+  {
+   "unit_id": "WS_KOH",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Alkaline bund. Distinct from NaOH product. Solar texture stays stub. Rev K: alkaline bund moved to the FAB north side, 6400 mm edge gap to WS_PEROX (IFC 2027 5003.9.8 / NFPA 400 6.1.12.1, 6096 mm; AQS-BLD-011)."
+  },
+  {
+   "unit_id": "WS_NITRIC",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Same acid room as HF, separate bund. Oxidizer acid. Not with solvents."
+  },
+  {
+   "unit_id": "WS_PEROX",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "East of 1 h partition. RCA oxidizer. Not in HF sump. Not with WS_SOLV."
+  },
+  {
+   "unit_id": "WS_PHOS",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Rev H new row: issued envelope 800x800x1100. H3PO4 to WET_BENCH (S34B). Own bund (acid_phos), not the HF room: 3.6 m from WS_HF_ED, 600 mm from CORE_PROCESS, north of WET_BENCH (Class 7 bench unchanged)."
+  },
+  {
+   "unit_id": "WS_SLURRY",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "CMP makeup. Glass silicate + UPW. Not an etch bath."
+  },
+  {
+   "unit_id": "WS_SOLV",
+   "sector_id": "FAB",
+   "level": "L0",
+   "status": "built",
+   "basis": "Flammable cabinet, FAB north wall. 1 h from HF room. Oil-vapor rules, not the acid header."
+  },
+  {
+   "unit_id": "ZNBR2",
+   "sector_id": "ELEC",
+   "level": "L0",
+   "status": "built",
+   "basis": "params.py ZNBR_* . East face 3048 mm west of X=0 (AQS-HSE-001 10 ft from openings). Y aligned to dock. Outdoor. Own Br2 tower, not CRU."
+  },
+  {
+   "unit_id": "ZNBR2_BR2_REGEN",
+   "sector_id": "ELEC",
+   "level": "L0",
+   "status": "built",
+   "basis": "Own Br2 tower. 10 ft class with the skid."
+  }
+ ]
+}

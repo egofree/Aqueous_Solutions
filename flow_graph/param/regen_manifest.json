@@ -1454,6 +1454,24 @@
    "note": "X-PIP-03: routed lengths from the placement model (placement_seed Rev M) by the A-M-074 rack rule - re-activates SUPPORTS (X-PIP-05), the insulation schedule and the pipe inventory over the placed subset; unplaced ends stay a named gap per line."
   },
   {
+   "name": "site_3d",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.site_3d"
+   ],
+   "outputs": [
+    "media/3d/*"
+   ],
+   "depends_on": [
+    "placement_routes",
+    "line_list"
+   ],
+   "writes_graph": false,
+   "quick": true,
+   "note": "X-3D-SITE: the per-site 3D plant model from the placement model - placement-model massing at sourced centres, the scaling eliminations as a labelled ghost layer, the site's replacement placements at their stamped sizing; GLB + labelled axonometric + per-level plans + coverage manifest. Locale runs build the site model; the baseline run builds the reference model."
+  },
+  {
    "name": "nozzle_sched",
    "argv": [
     "python3",

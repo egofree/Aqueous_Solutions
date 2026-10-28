@@ -3,9 +3,12 @@
 import { useEffect, useState } from 'react'
 import {
   createSandboxFromSite,
+  getSite3dManifest,
   listSites,
+  site3dFileUrl,
   solveSandboxPipeline,
 } from '../api/client'
+import type { Site3dManifest } from '../api/client'
 import type { SolveResponse } from '../types/mvs'
 
 interface SiteInfo {
@@ -35,6 +38,8 @@ export function SitePanel(props: {
   const [picked, setPicked] = useState<string>('')
   const [created, setCreated] = useState<SiteSandboxResponse | null>(null)
   const [solve, setSolve] = useState<SolveResponse | null>(null)
+  const [model3d, setModel3d] = useState<Site3dManifest | null>(null)
+  const [level, setLevel] = useState<string>('')
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -43,9 +48,21 @@ export function SitePanel(props: {
       .then((r) => {
         setSites(r.sites)
         if (r.sites.length) setPicked(r.sites[0].site_id)
+        getSite3dManifest(r.sites[0].site_id).then((m) => {
+          setModel3d(m)
+          if (m.levels.length) setLevel(m.levels[m.levels.length - 1])
+        }).catch(() => {})
       })
       .catch((e) => setError(String(e)))
   }, [])
+
+  const pick = (sid: string) => {
+    setPicked(sid)
+    getSite3dManifest(sid).then((m) => {
+      setModel3d(m)
+      if (m.levels.length) setLevel(m.levels[m.levels.length - 1])
+    }).catch(() => {})
+  }
 
   const create = () => {
     setBusy(true)
@@ -79,7 +96,7 @@ export function SitePanel(props: {
       <div className="row">
         <select
           value={picked}
-          onChange={(e) => setPicked(e.target.value)}
+          onChange={(e) => pick(e.target.value)}
           aria-label="site profile"
         >
           {sites.map((s) => (
@@ -125,6 +142,53 @@ export function SitePanel(props: {
               </ul>
             </details>
           )}
+        </>
+      )}
+      {model3d && (
+        <>
+          <h3>site 3D model</h3>
+          <p className="muted">
+            built {model3d.built} / ghosts (eliminated) {model3d.ghosts_eliminated} / block-centre
+            massing {model3d.block_centre_massing} / unplaced {model3d.unplaced.length} · seed Rev{' '}
+            {model3d.placement_seed_revision}
+          </p>
+          {model3d.unplaced.length > 0 && (
+            <details>
+              <summary>units without a placement ({model3d.unplaced.length})</summary>
+              <ul>
+                {model3d.unplaced.map((u) => (
+                  <li key={u}>{u}</li>
+                ))}
+              </ul>
+            </details>
+          )}
+          <div className="row">
+            <select value={level} onChange={(e) => setLevel(e.target.value)} aria-label="level plan">
+              {model3d.levels.map((lv) => (
+                <option key={lv} value={lv}>
+                  level plan {lv}
+                </option>
+              ))}
+            </select>
+            <a href={site3dFileUrl(model3d.site_id, 'SITE_AXO.svg')} target="_blank" rel="noreferrer">
+              axonometric sheet
+            </a>
+            <a href={site3dFileUrl(model3d.site_id, 'site_model.glb')} download>
+              GLB model
+            </a>
+          </div>
+          {level && model3d.plans[level] && (
+            <img
+              src={site3dFileUrl(model3d.site_id, model3d.plans[level])}
+              alt={`level ${level} plan`}
+              style={{ width: '100%', border: '1px solid #ccc' }}
+            />
+          )}
+          <img
+            src={site3dFileUrl(model3d.site_id, 'SITE_AXO.svg')}
+            alt="site axonometric"
+            style={{ width: '100%', border: '1px solid #ccc' }}
+          />
         </>
       )}
       {solve && (

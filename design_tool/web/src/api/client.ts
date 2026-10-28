@@ -178,6 +178,29 @@ export async function solveSandboxPipeline(id: string): Promise<SolveResponse> {
   )
 }
 
+/** X-3D-SITE: the site's 3D model manifest (placement-model coverage + per-unit state). */
+export interface Site3dManifest {
+  site_id: string
+  placement_seed_revision: string
+  units_total: number
+  built: number
+  ghosts_eliminated: number
+  block_centre_massing: number
+  unplaced: string[]
+  levels: string[]
+  plans: Record<string, string>
+  glb_units: number
+  errors: string[]
+}
+
+export async function getSite3dManifest(siteId: string): Promise<Site3dManifest> {
+  return jsonOrThrow(await fetch(`/api/v1/sites/${siteId}/3d`))
+}
+
+export function site3dFileUrl(siteId: string, fname: string): string {
+  return `/api/v1/sites/${siteId}/3d/file/${fname}`
+}
+
 /** U6: drivers.json listing — READ-ONLY (values live in drivers.json). */
 export async function getParams(): Promise<ParamsResponse> {
   return jsonOrThrow(await fetch('/api/v1/params'))

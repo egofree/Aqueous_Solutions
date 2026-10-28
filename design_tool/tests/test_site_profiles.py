@@ -129,3 +129,33 @@ def test_export_pack_carries_the_site_provenance():
     resp = export_pack(rec, ExportRequest(pack_name=f'site_prov_{int(time.time())}'))
     assert resp.pack_dir is not None
 
+def test_site_3d_endpoints():
+    """The site's 3D model endpoints: manifest, axo sheet, level plan, GLB."""
+    from fastapi.testclient import TestClient
+    from aqs_design_tool.api.app import create_app
+    c = TestClient(create_app())
+    m = c.get('/api/v1/sites/leo/3d')
+    assert m.status_code == 200
+    body = m.json()
+    assert body['site_id'] == 'leo'
+    assert body['built'] > 0
+    assert body['ghosts_eliminated'] > 0            # the eliminations ride as ghosts, never silent
+    assert body['levels'], 'level plans must exist'
+    axo = c.get('/api/v1/sites/leo/3d/file/SITE_AXO.svg')
+    assert axo.status_code == 200 and b'<svg' in axo.content[:60]
+    glb = c.get('/api/v1/sites/leo/3d/file/site_model.glb')
+    assert glb.status_code == 200 and glb.content[:4] == b'glTF'
+    bad = c.get('/api/v1/sites/leo/3d/file/nonsense.txt')
+    assert bad.status_code == 400
+
+
+def test_baseline_3d_model_builds():
+    from fastapi.testclient import TestClient
+    from aqs_design_tool.api.app import create_app
+    c = TestClient(create_app())
+    m = c.get('/api/v1/sites/baseline/3d')
+    assert m.status_code == 200
+    body = m.json()
+    assert body['ghosts_eliminated'] == 0           # the baseline eliminates nothing
+    assert body['built'] > 0
+
