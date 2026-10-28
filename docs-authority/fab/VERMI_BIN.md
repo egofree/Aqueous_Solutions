@@ -1,7 +1,7 @@
 # VERMI_BIN fabrication
 
 Class: worm_bin; sector FARM. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 2100×1100×600 mm;
 service line: service vermiculture bin, Eisenia fetida; bin_m2 2; basis A-M-425 (X-FARM-09); organisms Eisenia fetida (red wiggler): surface-dwelling, no 
 
 Internals: issued mfg model BOM (1 internals part row): "1,basin_shell,1,HDPE,57.6,make,tray class; 2 m2 bin at 300 mm bedding depth (A-M-425) (X-FARM sec3)" [models/mfg/VERMI_BIN/bom.csv]

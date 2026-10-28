@@ -138,6 +138,21 @@
           "alt": "carbon-composite bipolar plates as the stack replacement class (PEMFC-family hardware) with the same hydride check",
           "note": "electrode degradation is the first-article bench basis: no rate claimed here; the P5 water feed legs are the issued house family.",
           "task": "X-MAT-22"
+        },
+        "design": {
+          "duty": "PEM electrolysis: 83.62 kg/d water -> 9.358 kg/d H2 + 74.263 kg/d O2 at 21.445 kW",
+          "kwh_per_kg_h2": 55.0
+        },
+        "sizing": {
+          "kwh_per_kg_h2": 55.0
+        },
+        "envelope": {
+          "size_mm": [
+            1800,
+            800,
+            1600
+          ],
+          "basis": "the PEM stack skid: stack + power electronics + water loop at the 21.445 kW duty"
         }
       }
     },
@@ -605,25 +620,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 180.7538,
+        "value": 191.3901,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 180.8 kW, charge 821.6 kW, 2531 kWh over 35 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.4 kW, charge 869.9 kW, 2679 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 822,
-        "kWh": 2531,
+        "kW": 870,
+        "kWh": 2680,
         "presence": "present",
-        "charge_kW": 822,
-        "discharge_kW": 181,
+        "charge_kW": 870,
+        "discharge_kW": 192,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 35 hybrid inverters, 72.3 kWh and 23.5 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 37 hybrid inverters, 72.4 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.416,
-          "purge_m3_h": 26.73,
+          "H2_m3_d": 6.793,
+          "purge_m3_h": 28.31,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1655.3
+          "electrode_area_m2": 1752.7
         }
       }
     },
@@ -1259,6 +1274,23 @@
           "alt": "13X zeolite bed if the drive temperature class climbs above 90 C (cost up, a different duty class)",
           "note": "seal integrity is the durability item, not corrosion; the chilled/cooling water side stays on the house water materials.",
           "task": "X-MAT-22"
+        },
+        "design": {
+          "duty": "silica gel-water adsorption chiller: 5 kW drive at 65 C -> 2.25 kW chilled at 12 C, 7.25 kW rejected",
+          "chilled_kw": 2.25,
+          "cop_thermal": 0.45
+        },
+        "sizing": {
+          "chilled_kw": 2.25,
+          "cop_thermal": 0.45
+        },
+        "envelope": {
+          "size_mm": [
+            700,
+            500,
+            1200
+          ],
+          "basis": "the 2.25 kW-class silica gel-water adsorption chiller: drive 65 C, chilled 12 C, thermal COP ~0.45 (A-M-239/240; WANG2006_ADS); 304L shells per the issued sec3"
         }
       },
       "continuous_kw": null,
@@ -1286,6 +1318,20 @@
           "alt": "316L finned-tube coil if winter commissioning shows fin wetting (cost up)",
           "note": "no wetted stream; the filter frames are the machine maintenance surface.",
           "task": "X-MAT-22"
+        },
+        "design": {
+          "duty": "the 12 kW water-to-air coil on the hab make-up air (Q4 -> MAU)"
+        },
+        "sizing": {
+          "duty_kw": 12.0
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            400,
+            400
+          ],
+          "basis": "the 12 kW water-to-air coil at the MAU duty (Q4 -> hab make-up air)"
         }
       },
       "continuous_kw": null,
@@ -1318,9 +1364,30 @@
           "alt": "micro-channel all-aluminium coil (cost down) if galvanic behaviour in the dry service proves neutral",
           "note": "no wetted stream; the fan is the only moving part.",
           "task": "X-MAT-22"
+        },
+        "design": {
+          "duty": "dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share",
+          "airflow_m3_s": 0.61,
+          "fan_kw": 0.15
+        },
+        "sizing": {
+          "airflow_m3_s": 0.61
+        },
+        "envelope": {
+          "size_mm": [
+            1200,
+            600,
+            1200
+          ],
+          "basis": "the dry coil + fan at the 7.25 kW rejection duty"
         }
       },
-      "continuous_kw": null,
+      "continuous_kw": {
+        "value": 0.15,
+        "unit": "kW",
+        "status": "study",
+        "note": "the fan at ~0.03 kW per 100 m3/h class for the dry coil draft (the fan; the rejection is passive-draft assisted) (X-SPEC sizing, calculated)"
+      },
       "class": "dry_cooler"
     }
   ],

@@ -1,7 +1,7 @@
 # MEDICAL fabrication
 
 Class: medical; sector HAB. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 3000×2000×2400 mm;
 service line: service medical room, 6 m2; area_m2 6; basis A-M-419; AQS-HAB-001.
 
 Internals: duty sheet: "SS304 wipe-down surfaces and cabinets, PP instrument trays. Basis: clinical sanitation class (AQS-HAB-001; A-M" [docs-authority/duties/MEDICAL.md]

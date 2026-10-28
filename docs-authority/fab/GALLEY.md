@@ -1,10 +1,10 @@
 # GALLEY fabrication
 
 Class: galley; sector HAB. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 4000×3000×2400 mm;
 service line: service galley / kitchen, 12 m2; area_m2 12; basis A-M-419; AQS-HAB-001.
 
-Internals: open: no issued internals basis for a galley unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: duty sheet: "The envelope is `cad/stl/GALLEY.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). Manufacturing mo" [docs-authority/duties/GALLEY.md]
 Material: SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-bearing alloys on food paths. (continues on the duty sheet)
 
 Nozzles: 8 process connections per docs-authority/nozzles/GALLEY.csv

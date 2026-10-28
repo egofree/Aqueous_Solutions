@@ -16,6 +16,6 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 6. Relief. Relief case study pending (unit task 07). No set point is claimed on this page. Not to the room.
 
-7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). No CAD envelope issued yet.
+7. Code. Shop, not stamped (AQS-STD-001 section 7 shop rule). No CAD envelope issued yet. Manufacturing model `models/mfg/FEED_PREP/draw_feed_prep.py` (AQS-PLAN-006).
 
 8. Open items. Material selection pending (unit task 09). Relief case pending (unit task 07). Nozzle elevations are schedule placeholders, not designed elevations (unit tasks 02/06).

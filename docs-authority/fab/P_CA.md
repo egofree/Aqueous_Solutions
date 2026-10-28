@@ -1,10 +1,10 @@
 # P_CA fabrication
 
 Class: precip; sector DIGESTER. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
-service line: see the duty sheet section 1 basis
+Envelope: Envelope 300×300×400 mm;
+service line: duty calcium-soap precipitation: wax + lime -> the grease thickener (feeds GREASE_CA); thickener_kgd 0.025.
 
-Internals: duty sheet: "no envelope. 3. Material. PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing ou" [docs-authority/duties/P_CA.md]
+Internals: duty sheet: "0.025. 3. Material. PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside " [docs-authority/duties/P_CA.md]
 Material: PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace. (continues on the duty sheet)
 
 Nozzles: 2 process connections per docs-authority/nozzles/P_CA.csv

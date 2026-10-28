@@ -1,7 +1,7 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "graph_sha256": "978d0c66abb9bc99fdd646b48da1bf02f27eb3eb24f3b11481a568af3d3d4d32",
+ "graph_sha256": "79339916a4ef21d586f3fc367adc1d954b703f2585b42895e9ebdcb3e136397e",
  "converged": true,
  "stages": [
   {
@@ -314,6 +314,10 @@
   },
   {
    "name": "placement_routes",
+   "status": "ok"
+  },
+  {
+   "name": "site_3d",
    "status": "ok"
   },
   {
@@ -774,6 +778,7 @@
   "flow_graph/placement_seed.json",
   "flow_graph/plant_flow_graph.json",
   "flow_graph/views/*",
+  "media/3d/*",
   "media/_generated.json",
   "models/openscad/foam_ew/*.png",
   "models/openscad/foam_ew/CUT_LIST.md",

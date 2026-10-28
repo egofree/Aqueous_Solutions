@@ -1,10 +1,10 @@
 # SLEEP_QUARTERS fabrication
 
 Class: quarters; sector HAB. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 4000×4000×2400 mm;
 service line: service private sleeping quarters, 4 x 4 m2; area_m2 16; basis A-M-419; AQS-HAB-001.
 
-Internals: open: no issued internals basis for a quarters unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: duty sheet: "envelope is `cad/stl/SLEEP_QUARTERS.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). Manufacturin" [docs-authority/duties/SLEEP_QUARTERS.md]
 Material: Aluminium extrusion bunk framing, PP-fleece panel lining and bedding textiles, SS kick plates. Basis: private quarters at 16 m2 (AQS-HAB-001; A-M-419): interior fitout class as the day spaces; the textiles are the polymer classes from the POLYMERS sector (no animal-fibre import exists in the roster) Alternative: as REC_DAYROOM. 4 x 4 m2 private quarters in the AQS-HAB-001 basis. (X-HAB-01)
 
 Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled

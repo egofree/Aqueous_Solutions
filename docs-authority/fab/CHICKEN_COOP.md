@@ -1,7 +1,7 @@
 # CHICKEN_COOP fabrication
 
 Class: coop; sector FARM. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 2500×1300×1900 mm;
 service line: service layer flock, 12 birds; stock_birds 12; egg_kg_d 0.6; feed_kg_d 1.44; basis A-M-417 (X-FARM-02).
 
 Internals: duty sheet: "cloth, SS316 feeders and waterers, HDPE drop-board liner. Basis: wet uric-acid manure with ammonia offgas and " [docs-authority/duties/CHICKEN_COOP.md]

@@ -3,7 +3,7 @@ item,description,qty,material,basis
 2,"Motor: AHU damper actuator (BLDC actuator, ISO 5211 F03 mount)",24,-,AQS-INV-001 / AQS-INV-005
 3,"Motor: AHU exhaust fan (induction IE3, IEC 90S / 1.1 kW)",8,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: AHU supply fan (induction IE3, IEC 90S / 1.1 kW)",8,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: air-source heat pump compressor (hermetic induction (scroll), 15 kW hermetic)",8,-,AQS-INV-001 / AQS-INV-005
+5,"Motor: air-source heat pump compressor (hermetic induction (scroll), 18.5 kW hermetic)",8,-,AQS-INV-001 / AQS-INV-005
 6,"Motor: heat pump condenser fan (EC (electronically commutated, permanent-magnet) fan motor, 1.1 kW EC fan, integrated drive)",16,-,AQS-INV-001 / AQS-INV-005
 7,bearing: deep-groove ball bearing 608-2Z,48,"ISO 15, normal class",AQS-INV-004
 8,bearing: deep-groove ball bearing 6205-2Z,16,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
@@ -14,10 +14,10 @@ item,description,qty,material,basis
 13,electronics: PLC digital I/O point 24 V DC,16,IEC 61131-2,AQS-INV-004
 14,electronics: PLC digital I/O point 24 V DC,16,IEC 61131-2,AQS-INV-004
 15,electronics: PLC digital I/O point 24 V DC,32,IEC 61131-2,AQS-INV-004
-16,electronics: compressor contactor + overload 15 kW hermetic,8,IEC 60947-4-1,AQS-INV-004
-17,electronics: motor starter (contactor + overload) 1.1 kW,8,IEC 60947-4-1,AQS-INV-004
-18,electronics: motor starter (contactor + overload) 1.1 kW,8,IEC 60947-4-1,AQS-INV-004
+16,electronics: compressor contactor + overload 18.5 kW hermetic,8,IEC 60947-4-1,AQS-INV-004
+17,electronics: variable-frequency drive 1.1 kW,8,IEC 61800-5-1,AQS-INV-004
+18,electronics: variable-frequency drive 1.1 kW,8,IEC 61800-5-1,AQS-INV-004
 19,"protection: inverse-time circuit breaker, 3-pole 15 A",8,UL 489 / IEC 60947-2,AQS-INV-004
 20,"protection: inverse-time circuit breaker, 3-pole 15 A",8,UL 489 / IEC 60947-2,AQS-INV-004
-21,"protection: inverse-time circuit breaker, 3-pole 70 A",8,UL 489 / IEC 60947-2,AQS-INV-004
+21,"protection: inverse-time circuit breaker, 3-pole 90 A",8,UL 489 / IEC 60947-2,AQS-INV-004
 22,"protection: inverse-time circuit breaker, 3-pole 15 A",16,UL 489 / IEC 60947-2,AQS-INV-004

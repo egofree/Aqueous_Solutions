@@ -694,7 +694,7 @@
      "from": "LI_RECOVER",
      "to": "GREASE_LI",
      "other_sector": "OIL",
-     "rate": null,
+     "rate": 0.5,
      "unit": null,
      "carries": "lithium hydroxide or carbonate"
     },
@@ -703,7 +703,7 @@
      "from": "P_CA",
      "to": "GREASE_CA",
      "other_sector": "OIL",
-     "rate": null,
+     "rate": 0.025,
      "unit": null,
      "carries": "calcium hydroxide"
     },
@@ -1152,7 +1152,7 @@
      "from": "LI_RECOVER",
      "to": "GREASE_LI",
      "other_sector": "DIGESTER",
-     "rate": null,
+     "rate": 0.5,
      "unit": null,
      "carries": "lithium hydroxide or carbonate"
     },
@@ -1161,7 +1161,7 @@
      "from": "P_CA",
      "to": "GREASE_CA",
      "other_sector": "DIGESTER",
-     "rate": null,
+     "rate": 0.025,
      "unit": null,
      "carries": "calcium hydroxide"
     },
@@ -1208,7 +1208,7 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": null,
+     "rate": 1.924,
      "unit": null,
      "carries": "pyro char"
     },
@@ -1405,7 +1405,7 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "OIL",
-     "rate": null,
+     "rate": 1.924,
      "unit": null,
      "carries": "pyro char"
     },

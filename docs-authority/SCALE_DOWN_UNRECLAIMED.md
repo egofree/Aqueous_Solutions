@@ -133,8 +133,8 @@ Table 3.1. DIGESTER off. Sector type: Process (Mass transform).
 | IA-SCRUB-SRC | LEACH_CSTR_1 to ACID_POLISH_SCRUB | GAS | 27.3 kg/d | left without a source: consumer goes short |
 | IA-VS-OFF | EVAP_ACID_VS to ALK_SCRUBBER | GAS | 0.0292 kg/d | left without a source: consumer goes short |
 | IA-ZNBR-MU | LEACH_CSTR_1 to ZNBR2 | ELEC | 8.49 kg/d | left without a source: consumer goes short |
-| LI_TO_GREASE | LI_RECOVER to GREASE_LI | OIL | not yet rated | left without a source: consumer goes short |
-| PCA_TO_GREASE | P_CA to GREASE_CA | OIL | not yet rated | left without a source: consumer goes short |
+| LI_TO_GREASE | LI_RECOVER to GREASE_LI | OIL | 0.5 | left without a source: consumer goes short |
+| PCA_TO_GREASE | P_CA to GREASE_CA | OIL | 0.025 | left without a source: consumer goes short |
 | S08 | LEACH_CSTR_1 to MFG_SHOP | MFG | 42 kg/d | left without a source: consumer goes short |
 | S09 | BMED_ACID to WET_BENCH | FAB | 9.28 kg/d | left without a source: consumer goes short |
 | SQ-EVAP_ACID | EVAP_ACID to HEAT_SINK | GEO | 1.5 kW | left without a source: consumer goes short |
@@ -173,13 +173,13 @@ Table 3.2. OIL off. Sector type: Process (Mass transform).
 | IA-LITHO-OUT | LITHO_DEV to OIL_FRAC | FAB | 0.987 kg/d | left without a sink: unreclaimed |
 | IA-PLAST-01 | FLOAT_SINK to OIL_DRYER | DIGESTER | 33 kg/d | left without a sink: unreclaimed |
 | IA-WEAR | HABITATION to HOPPER | HAB | 597 kg/d | left without a sink: unreclaimed |
-| LI_TO_GREASE | LI_RECOVER to GREASE_LI | DIGESTER | not yet rated | left without a sink: unreclaimed |
-| PCA_TO_GREASE | P_CA to GREASE_CA | DIGESTER | not yet rated | left without a sink: unreclaimed |
+| LI_TO_GREASE | LI_RECOVER to GREASE_LI | DIGESTER | 0.5 | left without a sink: unreclaimed |
+| PCA_TO_GREASE | P_CA to GREASE_CA | DIGESTER | 0.025 | left without a sink: unreclaimed |
 | S11 | GROW_BED to AFTERBURNER | FARM | 0.8 kg/d | left without a sink: unreclaimed |
 | S38 | WET_BENCH to OIL_FRAC | FAB | 0.006 kg/d | left without a sink: unreclaimed |
 | S61 | MFG_SHOP to HOPPER | MFG | 1.2 kg/d | left without a sink: unreclaimed |
 | S72B | MET_SCRUB to OIL_FRAC | MFG | 0.0158 kg/d | left without a sink: unreclaimed |
-| CHAR_TO_SI | OIL_PYRO to SI_REDUCE | GLASS | not yet rated | left without a source: consumer goes short |
+| CHAR_TO_SI | OIL_PYRO to SI_REDUCE | GLASS | 1.92 | left without a source: consumer goes short |
 | CUT-3-OUT | PROD_C19_C28 to MFG_SHOP | MFG | 3.95 kg/d | left without a source: consumer goes short |
 | GREASE_CA_TO_MFG | GREASE_CA to MFG_SHOP | MFG | not yet rated | left without a source: consumer goes short |
 | GREASE_LI_TO_MFG | GREASE_LI to MFG_SHOP | MFG | not yet rated | left without a source: consumer goes short |
@@ -200,7 +200,7 @@ Table 3.3. GLASS off. Sector type: Process (Mass transform).
 
 | Stream | From and to | Other sector | Design rate | When the sector is off |
 |---|---|---|---|---|
-| CHAR_TO_SI | OIL_PYRO to SI_REDUCE | OIL | not yet rated | left without a sink: unreclaimed |
+| CHAR_TO_SI | OIL_PYRO to SI_REDUCE | OIL | 1.92 | left without a sink: unreclaimed |
 | HL-Q3-A-HX6 | Q3_A to GLASS_DIGEST | HEAT | 0.381 kW | left without a sink: unreclaimed |
 | HL-Q3-B-HX6 | Q3_B to GLASS_DIGEST | HEAT | 0.381 kW | left without a sink: unreclaimed |
 | IA-BASE-01 | EVAP_BASE to GLASS_DIGEST | DIGESTER | 22 kg/d | left without a sink: unreclaimed |

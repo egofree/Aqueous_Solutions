@@ -179,7 +179,7 @@ LI_RECOVER-LSH-01,LI_RECOVER,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip
 LI_RECOVER-LT-01,LI_RECOVER,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),LI_RECOVERLT-01,PLC-DIGESTER,A-M-182 liquid height
 LI_RECOVER-PT-01,LI_RECOVER,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),LI_RECOVERPT-01,PLC-DIGESTER,no design pressure on the graph
 LI_RECOVER-TE-01,LI_RECOVER,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LI_RECOVERTE-01,PLC-DIGESTER,band by service
-ZNBR2-FT-01,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2FT-01,PLC-ELEC,S69 normal 31.65 L/h
+ZNBR2-FT-01,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2FT-01,PLC-ELEC,S69 normal 33.51 L/h
 ZNBR2-FT-02,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),ZNBR2FT-02,PLC-ELEC,IA-ZNBR-BD normal 0.35 L/h
 ZNBR2-FT-03,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),ZNBR2FT-03,PLC-ELEC,IA-ZNBR-HEAT normal 0.07 L/h
 ZNBR2-LSH-01,ZNBR2,ELEC,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ZNBR2LSH-01,PLC-ELEC,alarm at 90 %
@@ -203,7 +203,7 @@ PV_ARRAY-PT-01,PV_ARRAY,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298"
 PV_ARRAY-TE-01,PV_ARRAY,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PV_ARRAYTE-01,PLC-ELEC,band by service
 RECTIFIER-PT-01,RECTIFIER,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),RECTIFIERPT-01,PLC-ELEC,no design pressure on the graph
 RECTIFIER-TE-01,RECTIFIER,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),RECTIFIERTE-01,PLC-ELEC,band by service
-ZNBR2_BR2_REGEN-FT-01,ZNBR2_BR2_REGEN,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2_BR2_REGENFT-01,PLC-ELEC,S69B normal 31.65 L/h
+ZNBR2_BR2_REGEN-FT-01,ZNBR2_BR2_REGEN,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2_BR2_REGENFT-01,PLC-ELEC,S69B normal 33.51 L/h
 ZNBR2_BR2_REGEN-LSH-01,ZNBR2_BR2_REGEN,ELEC,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ZNBR2_BR2_REGENLSH-01,PLC-ELEC,alarm at 90 %
 ZNBR2_BR2_REGEN-LT-01,ZNBR2_BR2_REGEN,ELEC,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),ZNBR2_BR2_REGENLT-01,PLC-ELEC,A-M-182 liquid height
 ZNBR2_BR2_REGEN-PT-01,ZNBR2_BR2_REGEN,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),ZNBR2_BR2_REGENPT-01,PLC-ELEC,no design pressure on the graph
@@ -576,8 +576,12 @@ PROD_C5_C10-LSH-01,PROD_C5_C10,OIL,high-level switch,"IEC 60947-5, 316L",trip at
 PROD_C5_C10-LT-01,PROD_C5_C10,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),PROD_C5_C10LT-01,PLC-OIL,A-M-182 liquid height
 PROD_C5_C10-PT-01,PROD_C5_C10,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),PROD_C5_C10PT-01,PLC-OIL,no design pressure on the graph
 PROD_C5_C10-TE-01,PROD_C5_C10,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PROD_C5_C10TE-01,PLC-OIL,band by service
+GREASE_CA-LSH-01,GREASE_CA,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),GREASE_CALSH-01,PLC-OIL,alarm at 90 %
+GREASE_CA-LT-01,GREASE_CA,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),GREASE_CALT-01,PLC-OIL,A-M-182 liquid height
 GREASE_CA-PT-01,GREASE_CA,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GREASE_CAPT-01,PLC-OIL,no design pressure on the graph
 GREASE_CA-TE-01,GREASE_CA,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GREASE_CATE-01,PLC-OIL,band by service
+GREASE_LI-LSH-01,GREASE_LI,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),GREASE_LILSH-01,PLC-OIL,alarm at 90 %
+GREASE_LI-LT-01,GREASE_LI,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),GREASE_LILT-01,PLC-OIL,A-M-182 liquid height
 GREASE_LI-PT-01,GREASE_LI,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GREASE_LIPT-01,PLC-OIL,no design pressure on the graph
 GREASE_LI-TE-01,GREASE_LI,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GREASE_LITE-01,PLC-OIL,band by service
 C29_RECYCLE-LSH-01,C29_RECYCLE,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),C29_RECYCLELSH-01,PLC-OIL,alarm at 90 %
@@ -718,8 +722,6 @@ HDR_N2-PT-01,HDR_N2,HAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10
 HDR_UPW-PT-01,HDR_UPW,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HDR_UPWPT-01,PLC-WTR,UPW header; no design pressure on the graph
 HDR_UPW-FT-01,HDR_UPW,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),HDR_UPWFT-01,PLC-WTR,UPW supply: S01 67.30 kg/d (2.80 L/h)
 NCG_HEADER-PT-01,NCG_HEADER,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),NCG_HEADERPT-01,PLC-OIL,NCG header: IA-OIL-03 5.0 kg/d to the afterburner; no design pressure on the graph
-GREASE_CA-LT-01,GREASE_CA,OIL,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of kettle height,4-20 mA HART (AI),GREASE_CALT-01,PLC-OIL,kettle holdup (class kettle)
-GREASE_LI-LT-01,GREASE_LI,OIL,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of kettle height,4-20 mA HART (AI),GREASE_LILT-01,PLC-OIL,kettle holdup (class kettle)
 PROD_MEOH-FT-01,PROD_MEOH,CRYO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),PROD_MEOHFT-01,PLC-CRYO,methanol product: IA-MEOH-PROD 28.15 kg/d (1.47 L/h at 792 kg/m3)
 RELIEF_CRYO-PSH-01,RELIEF_CRYO,CRYO,"pressure switch, high (rupture indication)","diaphragm pressure switch, IEC 60947-5-1",trips on header pressure rise (disc burst / PSV lift),24 V DC discrete (DI),RELIEF_CRYOPSH-01,PLC-CRYO,vent stack: S56 + S86 cryo contingency vents
 RELIEF_H2-PSH-01,RELIEF_H2,GAS,"pressure switch, high (rupture indication)","diaphragm pressure switch, IEC 60947-5-1",trips on header pressure rise (disc burst / PSV lift),24 V DC discrete (DI),RELIEF_H2PSH-01,PLC-GAS,vent stack: S24 H2 relief contingency

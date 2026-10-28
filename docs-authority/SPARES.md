@@ -12,13 +12,13 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x388) | 388 | 39 | 10 % min 2 |
 | building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x22; 6206-2Z) | 356 | 36 | 10 % min 2 |
 | building block | OF-03 | electronics: PLC digital I/O point (24 V DC x868) | 868 | 87 | 10 % min 1 |
-| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x797) | 797 | 80 | 10 % min 1 |
+| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x801) | 801 | 81 | 10 % min 1 |
 | building block | OF-05 | electronics: BLDC driver (24/48 V DC x191) | 191 | 20 | 10 % min 1 |
-| building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x104; 0.18 kW x20; 1.1 kW x18; 0.55 kW x10; 0.12 kW ) | 160 | 16 | 10 % min 1 |
+| building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x104; 0.18 kW x20; 0.55 kW x10; 0.12 kW x4; 0.25 kW ) | 144 | 15 | 10 % min 1 |
 | building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x105) | 105 | 11 | 10 % min 1 |
-| building block | OF-08 | electronics: variable-frequency drive (2.2 kW x6; 1.1 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1) | 18 | 2 | 10 % min 1 |
+| building block | OF-08 | electronics: variable-frequency drive (1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x3; 4 kW x1) | 34 | 4 | 10 % min 1 |
 | building block | OF-09 | electronics: solenoid driver channel (24 V DC x36) | 36 | 4 | 10 % min 1 |
-| building block | OF-10 | electronics: compressor contactor + overload (15 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1) | 10 | 1 | 10 % min 1 |
+| building block | OF-10 | electronics: compressor contactor + overload (18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1) | 10 | 1 | 10 % min 1 |
 | building block | OF-11 | electronics: stepper driver (24/48 V DC x3) | 3 | 1 | 10 % min 1 |
 | building block | OF-12 | electronics: safety PLC (SIL 2 capable), CPU and I/O rack (- x2) | 2 | 1 | 10 % min 1 |
 | building block | OF-14 | fastener: anchor bolt (M10 x10766) | 10766 | 216 | 2 % min 4 |
@@ -44,8 +44,8 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-34 | instrument: flow transmitter (DN15 x128; DN50 x17; DN32 x1; DN250 x1; DN300 x1) | 148 | 15 | 10 % min 1 |
 | building block | OF-35 | instrument: pressure transmitter (0-10 bar x174; 0-16 bar x1) | 175 | 18 | 10 % min 1 |
 | building block | OF-36 | instrument: temperature element (Pt100 class A x178) | 178 | 18 | 10 % min 1 |
-| building block | OF-37 | instrument: high-level switch (vibrating fork x80) | 80 | 8 | 10 % min 1 |
-| building block | OF-38 | instrument: level transmitter (radar 80 GHz x80) | 80 | 8 | 10 % min 1 |
+| building block | OF-37 | instrument: high-level switch (vibrating fork x82) | 82 | 9 | 10 % min 1 |
+| building block | OF-38 | instrument: level transmitter (radar 80 GHz x82) | 82 | 9 | 10 % min 1 |
 | building block | OF-39 | instrument: gas detector, H2 (catalytic bead + IR backup x30) | 30 | 3 | 10 % min 1 |
 | building block | OF-40 | instrument: gas detector, O2 deficiency (electrochemical O2 x20) | 20 | 2 | 10 % min 1 |
 | building block | OF-41 | instrument: gas detector, Cl2 / HCl (electrochemical Cl2 and HCl x38) | 38 | 4 | 10 % min 1 |
@@ -53,7 +53,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-43 | instrument: gas detector, O2 enrichment (electrochemical O2 x12) | 12 | 2 | 10 % min 1 |
 | building block | OF-44 | instrument: gas detector, CO (electrochemical CO x14) | 14 | 2 | 10 % min 1 |
 | building block | OF-45 | instrument: gas detector, NOx (electrochemical NO2 x6) | 6 | 1 | 10 % min 1 |
-| building block | OF-46 | protection: inverse-time circuit breaker, 3-pole (15 A x192; 70 A x8; 30 A x3; 60 A x1) | 204 | 21 | 10 % min 1 |
+| building block | OF-46 | protection: inverse-time circuit breaker, 3-pole (15 A x192; 90 A x8; 30 A x3; 60 A x1) | 204 | 21 | 10 % min 1 |
 | building block | OF-47 | seal: mechanical seal, single (EN 12756 x124) | 124 | 25 | 20 % min 2 |
 | building block | OF-50 | valve: isolation valve (DN15 x216; DN50 x22) | 238 | 12 | 5 % min 1 |
 | building block | OF-51 | valve: isolation valve (DN15 x30; DN50 x10) | 40 | 2 | 5 % min 1 |
@@ -105,10 +105,10 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | motor | MF-16 | induction IE3 IEC 80 / 0.75 kW 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-17 | solenoid ISO 15218 coil, 22 mm 24 V DC | 36 | 2 | 5 % min 1 |
 | motor | MF-19 | stepper NEMA 34 (86 mm) 48 V DC | 3 | 1 | 5 % min 1 |
-| motor | MF-24 | hermetic induction (scroll) 15 kW hermetic 480 V 3-ph | 8 | 1 | 5 % min 1 |
 | motor | MF-25 | hermetic induction (scroll) 1.1 kW hermetic 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-26 | hermetic induction (scroll) 0.75 kW hermetic 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-27 | EC (electronically commutated, permanent-magnet) fan motor 1.1 kW EC fan, integrated drive 480 V 3-ph | 16 | 1 | 5 % min 1 |
+| motor | MF-28 | hermetic induction (scroll) 18.5 kW hermetic 480 V 3-ph | 8 | 1 | 5 % min 1 |
 | process insert | BMED_ACID | one stack of bipolar, anion and cation membranes (AQS-DUTY-068 spare stack is installed; this is the membrane set to rebuild it) | 1 | 1 | one charge or set |
 | process insert | BMED_UPW_POLISH | RO flat-sheet set and one EDI stack (AQS-DUTY-070) | 1 | 1 | one charge or set |
 | process insert | CRYO_ASU | 13X sorbent charge, 109 kg (AQS-DUTY-069) | 1 | 1 | one charge or set |
@@ -126,4 +126,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-116 lines; 35 spare motors, 831 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+116 lines; 35 spare motors, 835 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

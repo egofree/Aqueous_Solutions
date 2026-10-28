@@ -1,7 +1,7 @@
 # QUAIL_CAGE fabrication
 
 Class: cage; sector FARM. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 1300×700×1700 mm;
 service line: service coturnix quail cage bank, 20 hens; stock 20; egg_kg_d 0.06; ration_kg_d 0.5; basis A-M-422 (X-FARM-06).
 
 Internals: duty sheet: "PP feeders, SS316 nipple waterers. Basis: dry droppings-tray service at the 20-hen Coturnix unit (graph design" [docs-authority/duties/QUAIL_CAGE.md]

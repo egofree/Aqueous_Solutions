@@ -17,20 +17,20 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 675 | 47 % |
-| organic | 541 | 38 % |
+| metal_plateable | 673 | 47 % |
+| organic | 543 | 38 % |
 | metal_reactive | 104 | 7 % |
 | silicate_oxide | 60 | 4 % |
-| unassigned | 60 | 4 % |
+| unassigned | 58 | 4 % |
 
-Unassigned: 60 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 58 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
 | Reason | Lines |
 |---|---|
 | fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 84 |
-| held - material not identified on the line | 53 |
+| held - material not identified on the line | 51 |
 | Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 25 |
 | held - material pending: no duty sheet yet; assigned at unit task 09 under AQS-STD-002 | 6 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
@@ -178,7 +178,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | GROWBED_A | 0 | 2 | 0 | 0 | 2 |
 | GROWBED_B | 0 | 4 | 0 | 0 | 0 |
 | GROW_BED | 0 | 2 | 0 | 0 | 0 |
-| GW_INTAKE | 0 | 0 | 0 | 0 | 2 |
+| GW_INTAKE | 0 | 2 | 0 | 0 | 0 |
 | H2O_ELYZ | 1 | 2 | 0 | 0 | 0 |
 | H2_DRYER | 0 | 2 | 0 | 0 | 0 |
 | H2_PURIFIER | 3 | 0 | 0 | 0 | 0 |
@@ -441,15 +441,13 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | WF-15 | 1 | 0 | 0 | 0 | 0 |
 | WF-16 | 1 | 0 | 0 | 0 | 0 |
 | WF-17 | 1 | 0 | 0 | 0 | 0 |
-| WF-18 | 1 | 0 | 0 | 0 | 0 |
 | WF-19 | 1 | 0 | 0 | 0 | 0 |
 | WF-20 | 1 | 0 | 0 | 0 | 0 |
 | WF-21 | 1 | 0 | 0 | 0 | 0 |
 | WF-24 | 1 | 0 | 0 | 0 | 0 |
 | WF-25 | 1 | 0 | 0 | 0 | 0 |
-| WF-27 | 1 | 0 | 0 | 0 | 0 |
 | WF-28 | 1 | 0 | 0 | 0 | 0 |
-| WF-29 | 1 | 0 | 0 | 0 | 0 |
+| WF-30 | 1 | 0 | 0 | 0 | 0 |
 | WIRE_DRAW | 2 | 0 | 0 | 0 | 0 |
 | WORMS | 0 | 4 | 0 | 0 | 0 |
 | WS_AMMONIA | 0 | 2 | 0 | 0 | 0 |

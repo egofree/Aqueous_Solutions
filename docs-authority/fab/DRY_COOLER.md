@@ -1,10 +1,10 @@
 # DRY_COOLER fabrication
 
 Class: dry_cooler; sector HEAT. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
-service line: see the duty sheet section 1 basis
+Envelope: Envelope 1200×600×1200 mm;
+service line: duty dry rejection of the ADS_CHILL 7.25 kW + the Q4 dry share; airflow_m3_s 0.61; fan_kw 0.15.
 
-Internals: duty sheet: "with margin. 3. Material. Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated heade" [docs-authority/duties/DRY_COOLER.md]
+Internals: duty sheet: "mm, 0.864 m³. - Envelope basis (graph node): the dry coil + fan at the 7.25 kW rejection duty. - Sizing study " [docs-authority/duties/DRY_COOLER.md]
 Material: Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop. Basis: 12 kW dry rejection at the 37.8 C design bulb (graph params; A-M-244): air-sided fin-coil construction is the air-cooled exchanger class (PERRY9_HEAT); the loop side follows the issued water-loop families (AQS-STD-002 section 12.1). (continues on the duty sheet)
 
 Nozzles: 5 process connections per docs-authority/nozzles/DRY_COOLER.csv

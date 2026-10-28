@@ -493,6 +493,12 @@ SEL_FARM = {
   'a 316L die plate if the FR-finish chemistry ever shows die corrosion',
   'the FR finish dosing skid is PP/PTFE-contact throughout.',
   'X-POLY-01'),
+ 'GW_INTAKE': (
+  'SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages',
+  'potable groundwater contact (X-LOC-13 well head): 304 wetted at the chloride-light aquifer class, HDPE for the discharge run; the pump stages are the well-class stainless',
+  '316L wetted where the aquifer mineralisation ever shows pitting',
+  'standby-zero at the baseline: the atmospheric harvest covers the water cycle (the T4 by-design ruling).',
+  'X-LOC-13'),
 }
 
 def main():

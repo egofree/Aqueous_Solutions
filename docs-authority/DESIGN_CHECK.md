@@ -29,7 +29,7 @@ Table 2.1. Closed-form checks
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_CO2 pressure-design wall mm | 1.085 | 1.085 | 2 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_A stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_B stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
-| QC-05 | `flow_graph/param/write_graph.py` | kW of the 66 feeder-supplied units: node continuous kW vs SF- feeder edges | 120.1357 | 120.1357 | 1 % | pass |
+| QC-05 | `flow_graph/param/write_graph.py` | kW of the 66 feeder-supplied units: node continuous kW vs SF- feeder edges | 124.752 | 124.752 | 1 % | pass |
 | QC-06 | `docs-authority/_struct_loads.py` | equipment rows with test >= operating >= empty | 199 | 199 | 0 % | pass |
 | QC-07 | `flow_graph/param/write_graph.py` | stream compositions sum to 1 and match their note (156 streams) | 156 | 156 | 2 % | pass |
 | QC-09 | `flow_graph/param/receivers.py` | H2 bank kg at 200 bar vs the sized store (AQS-ELEC-007 / X-PAR-12 basis in the graph) | 17 | 17.406 | 5 % | pass |
@@ -64,4 +64,4 @@ The checks have found and led to the correction of the following errors.
 
 ## 4. Review status of the calculation modules
 
-The record covers 165 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 157 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.
+The record covers 167 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 159 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.

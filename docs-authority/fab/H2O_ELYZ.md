@@ -1,8 +1,8 @@
 # H2O_ELYZ fabrication
 
 Class: pem_electrolyser; sector CRYO. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
-service line: see the duty sheet section 1 basis
+Envelope: Envelope 1800×800×1600 mm;
+service line: duty PEM electrolysis: 83.62 kg/d water -> 9.358 kg/d H2 + 74.263 kg/d O2 at 21.445 kW; kwh_per_kg_h2 55.
 
 Internals: duty sheet: "H2 and O2 leave on separate lines (NFPA 2, ISO 22734). - Internals (graph node): PEM stack, H2 and O2 gas-liqu" [docs-authority/duties/H2O_ELYZ.md]
 Material: PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family. (continues on the duty sheet)

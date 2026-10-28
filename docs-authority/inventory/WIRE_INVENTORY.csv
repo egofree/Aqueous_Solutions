@@ -135,9 +135,9 @@ ELEC,EXT_HALL_N,EXT_HALL,AHU exhaust fan feeder,"power, 3 ph + EGC",14 AWG,"XHHW
 ELEC,EXT_HALL_N,EXT_HALL,AHU supply fan EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,128.8,8,1030.3,NEC 250.122 at 15 A OCPD
 ELEC,EXT_HALL_N,EXT_HALL,AHU supply fan control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,128.8,8,6181.7,"start/stop, run, fault (assumed)"
 ELEC,EXT_HALL_N,EXT_HALL,AHU supply fan feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,128.8,8,3090.8,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-ELEC (Manhattan x 1.1 + 3 m drop, assumed)"
-ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor EGC,equipment ground,8 AWG,green XHHW-2 Cu,600 V,1,128.8,8,1030.3,NEC 250.122 at 70 A OCPD
+ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor EGC,equipment ground,8 AWG,green XHHW-2 Cu,600 V,1,128.8,8,1030.3,NEC 250.122 at 90 A OCPD
 ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,128.8,8,6181.7,"start/stop, run, fault (assumed)"
-ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor feeder,"power, 3 ph + EGC",6 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,128.8,8,3090.8,"NEC 430.22: 1.25 x 27.0 A FLC; routed tray from panel LP-ELEC (Manhattan x 1.1 + 3 m drop, assumed); upsized from 8 AWG for 3 % drop"
+ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor feeder,"power, 3 ph + EGC",6 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,128.8,8,3090.8,"NEC 430.22: 1.25 x 34.0 A FLC; routed tray from panel LP-ELEC (Manhattan x 1.1 + 3 m drop, assumed); upsized from 8 AWG for 3 % drop"
 ELEC,EXT_HALL_N,EXT_HALL,heat pump condenser fan EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,128.8,16,2060.6,NEC 250.122 at 15 A OCPD
 ELEC,EXT_HALL_N,EXT_HALL,heat pump condenser fan control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,128.8,16,12363.4,"start/stop, run, fault (assumed)"
 ELEC,EXT_HALL_N,EXT_HALL,heat pump condenser fan feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,128.8,16,6181.7,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-ELEC (Manhattan x 1.1 + 3 m drop, assumed)"
@@ -145,7 +145,7 @@ ELEC,MV,CB-1,transformer MV to the PCC switchgear,"MV power, 3 ph",2 AWG,"MV-105
 ELEC,MV,CB-2,transformer MV to the PCC switchgear,"MV power, 3 ph",2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,3,100.0,1,300.0,34.7 A; minimum practical 15 kV size; 100 m (assumed)
 ELEC,MV,CB-3,transformer MV to the PCC switchgear,"MV power, 3 ph",2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,3,100.0,1,300.0,34.7 A; minimum practical 15 kV size; 100 m (assumed)
 ELEC,MV,CB-4,transformer MV to the PCC switchgear,"MV power, 3 ph",2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,3,100.0,1,300.0,34.7 A; minimum practical 15 kV size; 100 m (assumed)
-ELEC,collection bus,CB-1,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,9,675.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
+ELEC,collection bus,CB-1,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,10,750.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
 ELEC,collection bus,CB-1,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
 ELEC,collection bus,CB-1,section main to CB-1 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
 ELEC,collection bus,CB-2,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,9,675.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
@@ -154,11 +154,11 @@ ELEC,collection bus,CB-2,section main to CB-2 transformer LV,"power, 3 ph parall
 ELEC,collection bus,CB-3,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,9,675.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
 ELEC,collection bus,CB-3,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
 ELEC,collection bus,CB-3,section main to CB-3 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
-ELEC,collection bus,CB-4,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,8,600.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
-ELEC,collection bus,CB-4,section EGC,equipment ground,1/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
-ELEC,collection bus,CB-4,section main to CB-4 transformer LV,"power, 3 ph parallel",300 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 800 A main (NEC 310.10(G)); 15 m (assumed)
+ELEC,collection bus,CB-4,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,9,675.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
+ELEC,collection bus,CB-4,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
+ELEC,collection bus,CB-4,section main to CB-4 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
 ELEC,distribution,LP-ELEC,panel feeder 208 V,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,5.1,1,20.2,NEC 430.24: 3.0 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
-ELEC,distribution,LP-ELEC,panel feeder 460 V,"power, 3 ph + EGC",4/0 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,8,5.1,1,40.5,NEC 430.24: 439.7 A in 2 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
+ELEC,distribution,LP-ELEC,panel feeder 460 V,"power, 3 ph + EGC",250 kcmil,"XHHW-2 Cu, tray cable TC-ER",600 V,8,5.1,1,40.5,NEC 430.24: 497.4 A in 2 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
 ELEC,flow_battery,ZNBR2,"electrolyte pump (anolyte, catholyte) per stack string EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,11.0,96,1058.7,NEC 250.122 at 15 A OCPD
 ELEC,flow_battery,ZNBR2,"electrolyte pump (anolyte, catholyte) per stack string control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,11.0,96,6352.0,"start/stop, run, fault (assumed)"
 ELEC,flow_battery,ZNBR2,"electrolyte pump (anolyte, catholyte) per stack string feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,11.0,96,3176.0,"NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-ELEC (Manhattan x 1.1 + 3 m drop, assumed)"
@@ -170,8 +170,8 @@ ELEC,genset,BACKUP_GEN,radiator fan feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu
 ELEC,genset,BACKUP_GEN,starter motor EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,12.1,1,12.1,NEC 250.122 at 15 A OCPD
 ELEC,genset,BACKUP_GEN,starter motor control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,12.1,1,72.5,"start/stop, run, fault (assumed)"
 ELEC,genset,BACKUP_GEN,starter motor feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,12.1,1,36.2,"NEC 430.22: 1.25 x 3.4 A FLC; routed tray from panel LP-ELEC (Manhattan x 1.1 + 3 m drop, assumed)"
-ELEC,grounding,GROUND_GRID,ring and mesh conductors,bare grounding,4/0 AWG,bare soft-drawn Cu,-,1,4416.0,1,4416.0,AQS-ELEC-005 ring 644 m + mesh 3772 m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS)
-ELEC,hall,EXT_HALL,lighting branch circuit 277 V,"power, 1 ph + N + EGC",6 AWG,THHN/THWN-2 Cu in EMT,600 V,3,120.0,47,16920.0,installed 208 kW (average 20.75 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06)
+ELEC,grounding,GROUND_GRID,ring and mesh conductors,bare grounding,4/0 AWG,bare soft-drawn Cu,-,1,4698.0,1,4698.0,AQS-ELEC-005 ring 668 m + mesh 4030 m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS)
+ELEC,hall,EXT_HALL,lighting branch circuit 277 V,"power, 1 ph + N + EGC",6 AWG,THHN/THWN-2 Cu in EMT,600 V,3,120.0,51,18360.0,installed 222 kW (average 22.208 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06)
 ELEC,inverter,SOL_ARK_60K,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,48,960.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,inverter,SOL_ARK_60K,cooling fan signal,control,18 AWG,shielded pair,300 V,2,10.0,48,960.0,speed/position feedback (assumed)
 ELEC,pem_fc,FUEL_CELL,cathode air blower EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,8.1,1,8.1,NEC 250.122 at 15 A OCPD
@@ -185,8 +185,8 @@ ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN power,DC power pair,16 AWG,
 ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 ELEC,rectifier,RECTIFIER,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,4,80.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,rectifier,RECTIFIER,cooling fan signal,control,18 AWG,shielded pair,300 V,2,10.0,4,80.0,speed/position feedback (assumed)
-ELEC,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,279,33480.0,"5012 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 279 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
-ELEC,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,279,16740.0,NEC 690.45 / 250.122
+ELEC,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,295,35400.0,"5308 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 295 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
+ELEC,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,295,17700.0,NEC 690.45 / 250.122
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 ELEC,scrubber,ZNBR2_BR2_REGEN,transfer pump S69B to ZNBR2 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"

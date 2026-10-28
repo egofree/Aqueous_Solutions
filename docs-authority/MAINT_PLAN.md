@@ -90,7 +90,7 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | GLASS_MILL | intra | external visual (1 y, A-M-189) |
 | GLASS_BURNOUT | intra | external visual (1 y, A-M-189) |
 | VCD_TRAIN | evaporator | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
-| GW_INTAKE | intake | external visual (1 y, A-M-189) |
+| GW_INTAKE | intake | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | REMIN | dose | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | LITHO_COAT | coater | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | LITHO_ALIGN | aligner | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
@@ -144,16 +144,16 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | POWDER_RESIN | former | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | FILM_CAST | former | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | POLY_STOCK | store | external visual (1 y, A-M-189) |
-| LI_RECOVER | separator | external visual (1 y, A-M-189) |
-| GREASE_CA | kettle | external visual (1 y, A-M-189) |
-| GREASE_LI | kettle | external visual (1 y, A-M-189) |
-| P_CA | precip | external visual (1 y, A-M-189) |
-| SI_REDUCE | furnace | external visual (1 y, A-M-189) |
+| LI_RECOVER | separator | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| GREASE_CA | kettle | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| GREASE_LI | kettle | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| P_CA | precip | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| SI_REDUCE | furnace | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | EVAP_ACID | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | EVAP_BASE | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | ADS_CHILL | adsorption_chiller | external visual (1 y, A-M-189) |
 | MAU_HX | hx | external visual (1 y, A-M-189) |
-| DRY_COOLER | dry_cooler | external visual (1 y, A-M-189) |
+| DRY_COOLER | dry_cooler | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | PROD_MEOH | product | external visual (1 y, A-M-189) |
 | EVAP_ACID_VS | scrubber | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | FOOD_STORE | store | external visual (1 y, A-M-189) |
@@ -196,4 +196,4 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | AQUA_UV | uv_sanitizer | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | POLY_FIBER | melt_spin | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 
-186 units, 390 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+186 units, 411 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

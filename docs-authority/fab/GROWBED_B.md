@@ -1,7 +1,7 @@
 # GROWBED_B fabrication
 
 Class: growbed; sector FARM. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 3600×2100×500 mm;
 service line: service aquaponic root zone B (anaerobic mineralisation); area_m2 14.56; zones aerobic top / anaerobic mineralisation bottom (dual root zone
 
 Internals: issued mfg model BOM (2 internals part row): "1,basin_shell,1,HDPE,124.7,make,"tray class; media bed 7 m2, the anaerobic mineralisation half (A-M-415; A-M-2" [models/mfg/GROWBED_B/bom.csv]

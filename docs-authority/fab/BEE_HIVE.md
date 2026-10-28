@@ -1,10 +1,10 @@
 # BEE_HIVE fabrication
 
 Class: hive; sector FARM. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 600×500×1100 mm;
 service line: service honey bee hive: pollination + honey; hives 1; honey_kg_yr 10-25; basis A-M-424 (X-FARM-08).
 
-Internals: open: no issued internals basis for a hive unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
+Internals: duty sheet: "The envelope is `cad/stl/BEE_HIVE.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). Manufacturing " [docs-authority/duties/BEE_HIVE.md]
 Material: Untreated solid-pine box bodies, SS316 screen bottom board, propolis-waxed interiors; no copper-bearing alloys and no treated lumber anywhere on the hive. (continues on the duty sheet)
 
 Nozzles: 5 process connections per docs-authority/nozzles/BEE_HIVE.csv

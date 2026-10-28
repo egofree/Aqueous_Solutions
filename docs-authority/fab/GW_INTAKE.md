@@ -1,11 +1,11 @@
 # GW_INTAKE fabrication
 
 Class: intake; sector WTR. Study route. Not stamped.
-Envelope: Envelope 900×700×1800 mm;
-service line: see the duty sheet section 1 basis
+Envelope: Envelope 800×800×600 mm;
+service line: duty standby well head: the make-up on loss of atmospheric harvest; pump_kw 0.37.
 
-Internals: duty sheet: "in the bounding cases. The reverse-osmosis stage uses FRP membrane housings with 316L wetted pump and valve in" [docs-authority/duties/GW_INTAKE.md]
-Material: Selections issued (unit task 09 pattern; checked across the AQS-ASSAY-001 Rev C bounding cases, AQS-STD-002). The raw well side, from the well pump suction through the sand separator, is PVC-U Sch 80 (class P1): mineralised water at about 30 C with silica, fluoride and arsenic (USGS_DV_GW) and no hydrocarbon or aromatic exposure in the bounding cases. (continues on the duty sheet)
+Internals: duty sheet: "The envelope is `cad/stl/GW_INTAKE.stl` (a thick-walled tray at the claimed envelope; X-PAR-04). 8. Open items" [docs-authority/duties/GW_INTAKE.md]
+Material: SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages. Basis: potable groundwater contact (X-LOC-13 well head): 304 wetted at the chloride-light aquifer class, HDPE for the discharge run; the pump stages are the well-class stainless Alternative: 316L wetted where the aquifer mineralisation ever shows pitting. (continues on the duty sheet)
 
 Nozzles: 3 process connections per docs-authority/nozzles/GW_INTAKE.csv
 

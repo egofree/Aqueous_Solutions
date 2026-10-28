@@ -19,8 +19,8 @@ This page is the specification sheet for everything the shop buys: one datasheet
 |---|---|
 | fastener | 11568 |
 | support | 5383 |
-| electronics | 2190 |
-| instrument | 797 |
+| electronics | 2194 |
+| instrument | 801 |
 | valve | 794 |
 | bearing | 744 |
 | protection | 204 |
@@ -52,15 +52,15 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x868 | 868 | 94 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
-| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x797 | 797 | 1 | one per instrument |  |
+| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x801 | 801 | 1 | one per instrument |  |
 | OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x191 | 191 | 67 | AHU damper actuator; Biogas recirculation blower, diaphragm, about 1 L/min; Biogas recirculation diaphragm blower about 2 L/min |  |
-| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.37 kW x104; 0.18 kW x20; 1.1 kW x18; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 0.75 kW x1 | 160 | 38 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Acid day tank D160 x 300 mm with metering pump (assumed VFD a |  |
-| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x105 | 105 | 1 | 1665 points / 16 |  |
-| OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x6; 1.1 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 18 | 15 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
+| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.37 kW x104; 0.18 kW x20; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1 | 144 | 37 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Dilute-HCl return pump and transfer line to CRU (assumed VFD at >= 0.75 kW |  |
+| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x105 | 105 | 1 | 1669 points / 16 |  |
+| OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 34 | 16 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x36 | 36 | 18 | NaOH dosing pump, solenoid diaphragm; on/off valve C29_RECYCLE; on/off valve CUT-3-OUT |  |
-| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 15 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 10 | 3 | air-source heat pump compressor; cryocooler compressor; heat pump compressor |  |
+| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 10 | 3 | air-source heat pump compressor; cryocooler compressor; heat pump compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
-| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 178 SIFs, redundant pair |  |
+| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 181 SIFs, redundant pair |  |
 ## 5. Instrument datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -68,8 +68,8 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-34 | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | DN15 x128; DN50 x17; DN32 x1; DN250 x1; DN300 x1 | 148 | 55 | C29_RECYCLE: pumped line (assumed); CUT-1-OUT: pumped line (assumed); CUT-1: pumped line (assumed) | spec per tag on AQS-CTL-001 |
 | OF-35 | pressure transmitter | ceramic diaphragm, IEC 61298 | 0-10 bar x174; 0-16 bar x1 | 175 | 175 | duty item 5 (one per unit); range >= 1.25 x design pressure | spec per tag on AQS-CTL-001 |
 | OF-36 | temperature element | IEC 60751, 316L thermowell | Pt100 class A x178 | 178 | 178 | duty item 5 (assumed one per unit) | spec per tag on AQS-CTL-001 |
-| OF-37 | high-level switch | IEC 60947-5, 316L | vibrating fork x80 | 80 | 80 | duty item 5: high level trips the inlet | spec per tag on AQS-CTL-001 |
-| OF-38 | level transmitter | IEC 62828, PTFE lens | radar 80 GHz x80 | 80 | 80 | duty item 5: liquid holdup | spec per tag on AQS-CTL-001 |
+| OF-37 | high-level switch | IEC 60947-5, 316L | vibrating fork x82 | 82 | 82 | duty item 5: high level trips the inlet | spec per tag on AQS-CTL-001 |
+| OF-38 | level transmitter | IEC 62828, PTFE lens | radar 80 GHz x82 | 82 | 82 | duty item 5: liquid holdup | spec per tag on AQS-CTL-001 |
 | OF-39 | gas detector, H2 | alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling | catalytic bead + IR backup x30 | 30 | 14 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-40 | gas detector, O2 deficiency | alarm 19.5 vol %, trip 18.0 vol %, low (dense gases) | electrochemical O2 x20 | 20 | 10 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-41 | gas detector, Cl2 / HCl | alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low | electrochemical Cl2 and HCl x38 | 38 | 19 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
@@ -82,7 +82,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x192; 70 A x8; 30 A x3; 60 A x1 | 204 | 49 | NEC 430.52, from AQS-INV-002 |  |
+| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x192; 90 A x8; 30 A x3; 60 A x1 | 204 | 49 | NEC 430.52, from AQS-INV-002 |  |
 ## 7. Seal datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |

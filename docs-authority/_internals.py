@@ -162,10 +162,14 @@ for u in UNITS:
             s = '\n'.join(hits)
             hit = (bom, f'issued mfg model BOM ({len(hits)} internals part row)', s, KW_BOM)
     if not hit and os.path.exists(f'docs-authority/duties/{u}.md'):
-        s = bare(open(f'docs-authority/duties/{u}.md').read())
-        m = KW.search(s)
-        if m and not NEG.search(s):
-            hit = (f'docs-authority/duties/{u}.md', 'duty sheet', s, KW)
+        src = open(f'docs-authority/duties/{u}.md').read()
+        # the unit-id strip governs the keyword SCAN (a unit's own name is not an
+        # internal), but the quote comes from the ORIGINAL text: stripping the id
+        # inside the envelope path ate the filename (cad/stl/BEE_HIVE.stl ->
+        # cad/stl/. (stl) and left a dangling citation (X-UI-002 follow-up).
+        m = KW.search(bare(src))
+        if m and not NEG.search(src):
+            hit = (f'docs-authority/duties/{u}.md', 'duty sheet', src, KW)
     if hit:
         path, kind, s, rx = hit
         ctx = rx.search(s)

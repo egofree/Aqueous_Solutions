@@ -1,7 +1,7 @@
 # DUCK_PEN fabrication
 
 Class: pen; sector FARM. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 2500×1300×1300 mm;
 service line: service duck pen, 6 Khaki Campbell ducks; stock 6; egg_kg_d 0.34; ration_kg_d 0.9; basis A-M-421 (X-FARM-05).
 
 Internals: duty sheet: "Hot-dip galvanised steel frame and hardware cloth, EPDM liner in the wallow, SS316 waterers. Basis: permanentl" [docs-authority/duties/DUCK_PEN.md]

@@ -1,7 +1,7 @@
 # BSFL_BIN fabrication
 
 Class: bsfl_bin; sector FARM. Study route. Not stamped.
-Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
+Envelope: Envelope 2500×900×700 mm;
 service line: service BSFL larvae composting bin; feedstock_kg_d 1.43; larvae_kg_d 0.114; frass_kg_d 0.357; basis A-M-418 (X-FARM-03); organisms Hermetia 
 
 Internals: issued mfg model BOM (1 internals part row): "1,basin_shell,1,HDPE,65.7,make,tray class; 2 x 5 kg/d-class bins in one frame at the 8.21 kg/d wet feedstock" [models/mfg/BSFL_BIN/bom.csv]
