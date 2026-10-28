@@ -75,3 +75,21 @@ def site_power_portfolio(site_id: str) -> dict[str, Any]:
     """The profile's power portfolio (sources, storage, worst stretch, oversize)."""
     prof = SITE.load_profile(site_id)
     return prof['groups'].get('power_portfolio', {})
+
+def site_placement_units(site_id: str) -> list[dict[str, Any]]:
+    """The profile's replacement placements as fold-ready unit dicts.
+
+    The replacements are placeholder units in the graph already - what the fold
+    lacks is their SITE sizing and provenance, which the placement model sizes
+    (flow_graph.param.site_units SIZERS). Returns one dict per placement."""
+    from flow_graph.param import site_units as SU
+    g = json_graph()
+    out = []
+    for rep, e in SU.placements(site_id, g):
+        out.append({'unit_id': rep, 'sector_id': e['sector'], 'enabled': True,
+                    'class': e['class'],
+                    'params': {'site_placement': {'site': site_id, 'replaces': e['replaces'],
+                                                  'sizing': e['sizing'],
+                                                  'register': 'AQS-SITE-013 (SITE_UNITS.md)'},
+                               'design': e['design']}})
+    return out

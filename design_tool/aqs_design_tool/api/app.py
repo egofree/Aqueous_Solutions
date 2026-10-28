@@ -243,15 +243,28 @@ SiteSandboxRequest.model_rebuild()
 
 @app.post("/api/v1/sandbox/from-site")
 def create_sandbox_from_site(body: SiteSandboxRequest) -> dict:
-    """A scaling profile becomes a sandbox: the engine's own resolved plan as overrides."""
+    """A scaling profile becomes a sandbox: the engine's own resolved plan as overrides,
+    the profile's replacement placements stamped with their site sizing."""
     try:
         sp = SP.site_overrides(body.site_id)
+        place_units = SP.site_placement_units(body.site_id)
     except Exception as exc:
         raise HTTPException(status_code=400, detail=f"site profile {body.site_id}: {exc}") from exc
     if sp['errors']:
         raise HTTPException(status_code=422, detail={'site_id': body.site_id, 'errors': sp['errors']})
     overrides = SandboxOverrides(**sp['overrides'])
-    rec = STORE.create(overrides=overrides, label=body.label or f"site:{body.site_id}")
+    base = load_mvs_from_graph()
+    # fold in the placement units (sizing + provenance from the placement model);
+    # units already carried by the graph get their site sizing stamped instead
+    by_id = {u.unit_id: u for u in base.units}
+    for pu in place_units:
+        if pu['unit_id'] in by_id:
+            u = by_id[pu['unit_id']]
+            u.params = {**(u.params or {}), **pu['params']}
+        else:
+            base.units.append(UnitModel(**pu))
+    rec = STORE.create(overrides=overrides, label=body.label or f"site:{body.site_id}",
+                       base=base, site_profile=body.site_id)
     return {
         "sandbox_id": rec.sandbox_id,
         "label": rec.label,
@@ -259,6 +272,7 @@ def create_sandbox_from_site(body: SiteSandboxRequest) -> dict:
         "applied": sp['applied'],
         "unapplied": sp['unapplied'],
         "replacement_of": sp['replacement_of'],
+        "placement_units": [p['unit_id'] for p in place_units],
         "parent_mvs_revision": rec.parent_mvs_revision,
         "model": rec.model.model_dump(by_alias=True, mode="json"),
     }
@@ -273,11 +287,24 @@ def solve_sandbox_pipeline(sandbox_id: str) -> SolveResponse:
         raise HTTPException(status_code=404, detail=f"Unknown sandbox {sandbox_id}") from exc
     units = [u.model_dump(by_alias=True) for u in rec.model.units]
     res = PIPE.solve_mass(units, sandbox_id=sandbox_id)
+    elec, egaps = {}, []
+    if rec.site_profile:
+        try:
+            er = PIPE.solve_electrical(rec.model.electrical.model_dump(by_alias=True),
+                                       units, rec.site_profile,
+                                       disabled={u['unit_id'] for u in units
+                                                 if not u.get('enabled', True)})
+            elec = er['electrical_match']
+            egaps = [GapModel(sector_definition='site electrical', reason=gap) for gap in er['gaps']]
+        except Exception as exc:  # a broken profile section is a named error, not a silent one
+            egaps = [GapModel(sector_definition='site electrical',
+                              reason=f'electrical match failed: {exc}')]
     result = SolveResponse(
         status=res['status'],
         sandbox_id=sandbox_id,
         residuals={'mass': [ResidualItem(**r) for r in res['residuals']['mass']]},
-        gaps=[GapModel(sector_definition='pipeline solve', reason=res['note'])],
+        electrical_match=elec,
+        gaps=[GapModel(sector_definition='pipeline solve', reason=res['note'])] + egaps,
     )
     STORE.set_solve(sandbox_id, result)
     return result

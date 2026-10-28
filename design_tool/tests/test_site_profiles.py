@@ -79,3 +79,53 @@ def test_pipeline_solve_carries_the_tf_policy_note():
         res = solve_sandbox_pipeline(r['sandbox_id'])
         assert any('physics' in (g.reason or '') for g in res.gaps
                    if g.sector_definition == 'pipeline solve'), sid
+
+def test_leo_sandbox_stamps_the_placement_sizing():
+    """The replacements are graph placeholders - the from-site fold stamps their SITE
+    sizing and provenance (the placement model's own sizers)."""
+    r = create_sandbox_from_site(type('B', (), {'site_id': 'leo', 'label': None})())
+    m = r['model']
+    lio = next(u for u in m['units'] if u['unit_id'] == 'LIO_BAT')
+    sp = (lio.get('params') or {}).get('site_placement') or {}
+    assert sp.get('site') == 'leo' and 'ZNBR2' in sp.get('replaces', [])
+    assert set(sp.get('replaces', [])) == {'ZNBR2', 'ZNBR2_BR2_REGEN', 'HYDRO_SET'}
+    assert sp.get('sizing'), 'the placement model sizing must be stamped'
+
+
+def test_leo_pipeline_solve_reports_the_site_electrical_match():
+    """The site electrical match comes from the profile portfolio: leo's primary is
+    PV_ARRAY (share 1.0), the worst stretch is the eclipse, storage is LIO_BAT."""
+    r = create_sandbox_from_site(type('B', (), {'site_id': 'leo', 'label': None})())
+    res = solve_sandbox_pipeline(r['sandbox_id'])
+    em = res.electrical_match or {}
+    srcs = {s['unit']: s for s in em.get('sources', [])}
+    assert srcs['PV_ARRAY']['role'] == 'primary' and srcs['PV_ARRAY']['share'] == 1.0
+    assert srcs['PV_ARRAY']['enabled'] is True
+    assert srcs['FUEL_CELL']['role'] == 'backup'
+    assert em.get('worst_stretch', {}).get('kind') == 'eclipse'
+    assert em.get('demand_kw', 0) > 0
+    assert any('eta = 1' in g.reason for g in res.gaps if g.sector_definition == 'site electrical')
+
+
+def test_leo_sandbox_survives_an_eliminated_storage_placeholder():
+    """LIO_BAT's storage energy rides the placeholder node: the match must read the
+    issued energy, and a missing storage unit must name the gap, not zero silently."""
+    r = create_sandbox_from_site(type('B', (), {'site_id': 'leo', 'label': None})())
+    res = solve_sandbox_pipeline(r['sandbox_id'])
+    em = res.electrical_match or {}
+    sto = {s['unit']: s for s in em.get('storage', [])}
+    assert sto['LIO_BAT']['enabled'] is True
+    assert (sto['LIO_BAT'].get('energy_kWh') or 0) > 0
+
+
+def test_export_pack_carries_the_site_provenance():
+    from aqs_design_tool.api.store import STORE, load_mvs_from_graph
+    from aqs_design_tool.export.pack import export_pack
+    import time
+    from aqs_design_tool.models import ExportRequest
+    r = create_sandbox_from_site(type('B', (), {'site_id': 'leo', 'label': None})())
+    solve_sandbox_pipeline(r['sandbox_id'])
+    rec = STORE.get(r['sandbox_id'])
+    resp = export_pack(rec, ExportRequest(pack_name=f'site_prov_{int(time.time())}'))
+    assert resp.pack_dir is not None
+

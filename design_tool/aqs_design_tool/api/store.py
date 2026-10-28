@@ -151,6 +151,7 @@ class SandboxRecord:
     updated_at: str
     last_solve: Optional[SolveResponse] = None
     parent_mvs_revision: str = "E-candidate"
+    site_profile: Optional[str] = None
 
 
 class SandboxStore:
@@ -170,6 +171,7 @@ class SandboxStore:
         overrides: SandboxOverrides | None = None,
         label: str | None = None,
         base: MvsModel | None = None,
+        site_profile: str | None = None,
     ) -> SandboxRecord:
         with self._lock:
             # Default base: graph sole authority (WP-Ap1)
@@ -187,6 +189,7 @@ class SandboxStore:
                 created_at=now,
                 updated_at=now,
                 parent_mvs_revision=base.revision,
+                site_profile=site_profile,
             )
             self._items[sid] = rec
             self._mirror(rec)
@@ -216,6 +219,7 @@ class SandboxStore:
                         parent_mvs_revision=raw.get(
                             "parent_mvs_revision", "E-candidate"
                         ),
+                        site_profile=raw.get("site_profile"),
                     )
                 except (
                     json.JSONDecodeError,

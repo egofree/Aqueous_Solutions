@@ -597,6 +597,24 @@ def export_pack(rec: SandboxRecord, req: ExportRequest | None = None) -> ExportR
             "pack lacks flow_graph_snapshot.json."
         )
 
+    # X-UI-002: the site provenance round-trips - the pack names the profile and
+    # records the fold's site-driven unit state (disabled = eliminated, the
+    # replacement map from the scaling plan)
+    if getattr(rec, "site_profile", None):
+        site_state = {
+            "site_id": rec.site_profile,
+            "sandbox_id": rec.sandbox_id,
+            "disabled_units": [u.unit_id for u in rec.model.units if not u.enabled],
+            "enabled_units": [u.unit_id for u in rec.model.units if u.enabled],
+            "note": ("The disabled set is the locale scaling plan applied (the engine's "
+                     "own resolve). A pipeline locale run (regen --site) reproduces the "
+                     "same dispositions from the committed profile."),
+        }
+        (pack_dir / "site_profile.json").write_text(
+            json.dumps(site_state, indent=2) + "\n", encoding="utf-8")
+        files.append("site_profile.json")
+        notes.append("site_profile.json: the locale profile the sandbox started from + the fold's unit state.")
+
     # MVS snapshot = graph projection (not a divergent master file)
     mvs = load_mvs_from_graph()
     (pack_dir / "mvs_snapshot.json").write_text(
