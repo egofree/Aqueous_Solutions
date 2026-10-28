@@ -420,6 +420,23 @@
    "note": "X-FARM wet-basis balance (AQS-FARM-001, A-M-415..430): computes every FARM edge rate in real mass from the driver parameters by fixed-point iteration (the larvae meal <-> layer ration <-> manure loop); the X-PAR-02 solver then reconciles the free water edges around the held rates."
   },
   {
+   "name": "specialty_sizing",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.specialty_sizing"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "farm_balance"
+   ],
+   "writes_graph": true,
+   "quick": true,
+   "note": "X-LOC-SPEC: unit task 02 close-out for the ten last unsized units - the grease/lithium specialty chain (GREASE_CA/GREASE_LI kettles, P_CA precipitation, LI_RECOVER carbonation), SI_REDUCE (the PV cell line silicon), ADS_CHILL, DRY_COOLER, GW_INTAKE, MAU_HX and the FEED_PREP/POLY_FIBER/AQUA_UV load bases - rates, design parameters and envelopes, every value with a cited basis."
+  },
+  {
    "name": "storage_sizing",
    "argv": [
     "python3",
