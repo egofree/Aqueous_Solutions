@@ -1,232 +1,179 @@
 id,unit,initiator,cause,effect,final_element,SIL,voting,source
-SIF-001,ACID_POLISH_SCRUB,ACID_POLISH_SCRUB-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-001
-SIF-002,AFTERBURNER,AFTERBURNER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-003
-SIF-003,AFTERBURNER,AFTERBURNER-TE-90 (independent element; not AFTERBURNER-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-005
-SIF-004,AFTERBURNER_FLUE,AFTERBURNER_FLUE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-006
-SIF-005,AFTERBURNER_FLUE,AFTERBURNER_FLUE-TE-90 (independent element; not AFTERBURNER_FLUE-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-008
-SIF-006,BAGHOUSE,BAGHOUSE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-011
-SIF-007,BAGHOUSE,BAGHOUSE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-012
-SIF-008,BMED_ACID,BMED_ACID-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-015
-SIF-009,BMED_BASE,BMED_BASE-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-018
-SIF-010,BMED_UPW_POLISH,BMED_UPW_POLISH-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-021
-SIF-011,COLD_MILL,COLD_MILL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-024
-SIF-012,CRU,CRU-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-026
-SIF-013,CRYO_AHU,CRYO_AHU,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-029
-SIF-014,CRYO_AHU,CRYO_AHU,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-030
-SIF-015,CRYO_AHU_COND_CONDENSABLE,CRYO_AHU_COND_CONDENSABLE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-032
-SIF-016,CRYO_AHU_COND_CONDENSABLE,CRYO_AHU_COND_CONDENSABLE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-033
-SIF-017,CRYO_CO2,CRYO_CO2-PT-01 + second PT,pressure low-low (leak),"close bank isolation valves, stop compressor, alarm","bank outlet ESD valves (one per half), fail closed",2,1oo2,HZ-035
-SIF-018,CRYO_DED_COOL,CRYO_DED_COOL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-036
-SIF-019,CRYO_H2,CRYO_H2-PT-01 + second PT,pressure low-low (leak),"close bank isolation valves, stop compressor, alarm","bank outlet ESD valves (one per half), fail closed",2,1oo2,HZ-038
-SIF-020,CRYO_N2,CRYO_N2,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-039
-SIF-021,CRYO_O2,CRYO_O2-PT-01 + second PT,pressure low-low (leak),"close bank isolation valves, stop compressor, alarm","bank outlet ESD valves (one per half), fail closed",2,1oo2,HZ-041
-SIF-022,EW_1,EW_1-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-043
-SIF-023,EW_2,EW_2-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-045
-SIF-024,EW_3,EW_3-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-048
-SIF-025,EW_4,EW_4-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-051
-SIF-026,EW_5,EW_5-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-054
-SIF-027,EW_6,EW_6-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-057
-SIF-028,EW_7,EW_7-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-060
-SIF-029,EW_8,EW_8-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-063
-SIF-030,EW_9,EW_9-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-066
-SIF-031,FAB_UPW_TANK,FAB_UPW_TANK-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-069
-SIF-032,FLOAT_SINK,FLOAT_SINK-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-072
-SIF-033,FUEL_CELL,FUEL_CELL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-076
-SIF-034,FUEL_CELL,FUEL_CELL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-077
-SIF-035,GAS_ATOMIZER,GAS_ATOMIZER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-079
-SIF-036,GEO_GHEX,GEO_GHEX,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-081
-SIF-037,GEO_HP,GEO_HP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-083
-SIF-038,GEO_HP,GEO_HP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-084
-SIF-039,GEO_HP_CLOSED_LOOP,GEO_HP_CLOSED_LOOP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-086
-SIF-040,GREY_TREAT,GREY_TREAT-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-090
-SIF-041,H2_DRYER,H2_DRYER-TE-90 (independent element; not H2_DRYER-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-094
-SIF-042,HOPPER,HOPPER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-097
-SIF-043,HOPPER,HOPPER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-098
-SIF-044,HX8,HX8,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-100
-SIF-045,MEOH_FC,MEOH_FC-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-106
-SIF-046,MEOH_FERM,MEOH_FERM,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-109
-SIF-047,MEOH_SYNTH,MEOH_SYNTH,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-111
-SIF-048,MEOH_SYNTH,MEOH_SYNTH,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-112
-SIF-049,MEOH_TANK,MEOH_TANK-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-114
-SIF-050,MET_AHU,MET_AHU,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-117
-SIF-051,MET_HX_Q4,MET_HX_Q4,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-119
-SIF-052,MET_MELT,MET_MELT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-121
-SIF-053,MET_MELT,MET_MELT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-122
-SIF-054,MET_MELT,MET_MELT-TE-90 (independent element; not MET_MELT-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-124
-SIF-055,MET_SCRUB,MET_SCRUB-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-125
-SIF-056,MFG_SHOP,MFG_SHOP-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-127
-SIF-057,NOX_SCRUB,NOX_SCRUB-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-130
-SIF-058,NUTRIENT_DOSE,NUTRIENT_DOSE-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-132
-SIF-059,OIL_DRYER,OIL_DRYER-TE-90 (independent element; not OIL_DRYER-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-135
-SIF-060,OIL_FRAC,OIL_FRAC-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-136
-SIF-061,OIL_PYRO,OIL_PYRO-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-139
-SIF-062,OIL_PYRO,OIL_PYRO-TE-90 (independent element; not OIL_PYRO-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-141
-SIF-063,POLISH_BANK,POLISH_BANK-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-142
-SIF-064,PROD_C19_C28,PROD_C19_C28-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-147
-SIF-065,PROD_C29,PROD_C29-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-150
-SIF-066,PROD_C5_C10,PROD_C5_C10-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-153
-SIF-067,ROOF_TANK,ROOF_TANK-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-156
-SIF-068,WAFER_FAB,WAFER_FAB-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-159
-SIF-069,WET_BENCH,WET_BENCH-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-162
-SIF-070,WIRE_DRAW,WIRE_DRAW,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-165
-SIF-071,WS_AMMONIA,WS_AMMONIA-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-167
-SIF-072,WS_HF_ED,WS_HF_ED-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-171
-SIF-073,WS_KOH,WS_KOH-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-174
-SIF-074,WS_NITRIC,WS_NITRIC-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-177
-SIF-075,WS_PEROX,WS_PEROX-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-180
-SIF-076,WS_SLURRY,WS_SLURRY-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-183
-SIF-077,WS_SOLV,WS_SOLV-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-185
-SIF-078,ZNBR2,ZNBR2-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-187
-SIF-079,ZNBR2_BR2_REGEN,ZNBR2_BR2_REGEN-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-190
-SIF-080,WS_PHOS,WS_PHOS-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-192
-SIF-081,GLASS_RINSE,GLASS_RINSE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-194
-SIF-082,GLASS_MILL,GLASS_MILL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-196
-SIF-083,GLASS_BURNOUT,GLASS_BURNOUT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-198
-SIF-084,VCD_TRAIN,VCD_TRAIN-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-200
-SIF-085,REMIN,REMIN-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-203
-SIF-086,LITHO_COAT,LITHO_COAT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-206
-SIF-087,LITHO_ALIGN,LITHO_ALIGN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-208
-SIF-088,LITHO_DEV,LITHO_DEV,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-210
-SIF-089,LITHO_DEV,LITHO_DEV,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-211
-SIF-090,ELECTRODE_COAT,ELECTRODE_COAT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-213
-SIF-091,BLOW_MOLD,BLOW_MOLD,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-215
-SIF-092,SOLAR_PV_CELL,SOLAR_PV_CELL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-217
-SIF-093,Q4_A,Q4_A,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-219
-SIF-094,Q4_B,Q4_B,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-221
-SIF-095,F_RECOVER,F_RECOVER-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-223
-SIF-096,HF_GEN,HF_GEN-TE-90 (independent element; not HF_GEN-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-227
-SIF-097,VDF_SYN,VDF_SYN-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-229
-SIF-098,TFE_SYN,TFE_SYN-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-232
-SIF-099,POLY_F,POLY_F-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-235
-SIF-100,CR_CELL,CR_CELL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-238
-SIF-101,TI_CELL,TI_CELL-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-240
-SIF-102,TI_CELL,TI_CELL-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-241
-SIF-103,MO_CELL,MO_CELL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-243
-SIF-104,IND_MELT,IND_MELT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-245
-SIF-105,IND_MELT,IND_MELT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-246
-SIF-106,IND_MELT,IND_MELT-TE-90 (independent element; not IND_MELT-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-248
-SIF-107,COMB_HEAT,COMB_HEAT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-249
-SIF-108,ROLL,ROLL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-253
-SIF-109,FLUX_PREP,FLUX_PREP-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-255
-SIF-110,STOCK_OUT,STOCK_OUT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-257
-SIF-111,AL_POT,AL_POT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-261
-SIF-112,SHELL_BUILD,SHELL_BUILD-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-268
-SIF-113,SHELL_BURNOUT,SHELL_BURNOUT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-270
-SIF-114,SHELL_BURNOUT,SHELL_BURNOUT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-271
-SIF-115,SHELL_BURNOUT,SHELL_BURNOUT-TE-90 (independent element; not SHELL_BURNOUT-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-273
-SIF-116,POLY_OLEFIN,POLY_OLEFIN-TE-90 (independent element; not POLY_OLEFIN-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-278
-SIF-117,PELLET,PELLET,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-280
-SIF-118,POWDER_RESIN,POWDER_RESIN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-282
-SIF-119,POLY_STOCK,POLY_STOCK-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-286
-SIF-120,POLY_STOCK,POLY_STOCK-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-287
-SIF-121,EVAP_ACID,EVAP_ACID-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-289
-SIF-122,EVAP_ACID,EVAP_ACID-TE-90 (independent element; not EVAP_ACID-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-290
-SIF-123,EVAP_BASE,EVAP_BASE-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-292
-SIF-124,EVAP_BASE,EVAP_BASE-TE-90 (independent element; not EVAP_BASE-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-293
-SIF-125,ADS_CHILL,ADS_CHILL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-295
-SIF-126,MAU_HX,MAU_HX,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-297
-SIF-127,DRY_COOLER,DRY_COOLER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-299
-SIF-128,EVAP_ACID_VS,EVAP_ACID_VS-TE-90 (independent element; not EVAP_ACID_VS-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-302
-SIF-129,FOOD_STORE,FOOD_STORE-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-304
-SIF-130,METAL_STORE,METAL_STORE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-306
-SIF-131,AIR_RECEIVER,AIR_RECEIVER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-308
-SIF-132,AQUA_TANK,AQUA_TANK,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-310
-SIF-133,BIOFILTER,BIOFILTER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-312
-SIF-134,GROWBED_A,GROWBED_A-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-314
-SIF-135,GROWBED_B,GROWBED_B-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-316
-SIF-136,CHICKEN_COOP,CHICKEN_COOP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-318
-SIF-137,BSFL_BIN,BSFL_BIN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-320
-SIF-138,GALLEY,GALLEY,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-322
-SIF-139,DUCKWEED,DUCKWEED,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-324
-SIF-140,DUCK_PEN,DUCK_PEN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-326
-SIF-141,QUAIL_CAGE,QUAIL_CAGE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-328
-SIF-142,RABBIT_HUTCH,RABBIT_HUTCH,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-330
-SIF-143,BEE_HIVE,BEE_HIVE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-332
-SIF-144,VERMI_BIN,VERMI_BIN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-334
-SIF-145,FEED_PREP,FEED_PREP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-336
-SIF-146,AQUA_UV,AQUA_UV,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-338
-SIF-147,POLY_FIBER,POLY_FIBER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-340
-SIF-148,ACID_POLISH_SCRUB,ACID_POLISH_SCRUB-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-149,ALK_SCRUBBER,ALK_SCRUBBER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-150,BACKUP_GEN,BACKUP_GEN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-151,BLACK_DIGEST,BLACK_DIGEST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-152,BMED_ACID,BMED_ACID-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-153,BMED_BASE,BMED_BASE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-154,BMED_UPW_POLISH,BMED_UPW_POLISH-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-155,C29_RECYCLE,C29_RECYCLE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-156,CAST_LINE,CAST_LINE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-157,CATCH_TANK,CATCH_TANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-158,CA_POT,CA_POT-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-159,CONTINUOUS_RECYCLE,CONTINUOUS_RECYCLE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-160,CONT_CAST,CONT_CAST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-161,CRU,CRU-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-162,EVAP_ACID,EVAP_ACID-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-163,EVAP_ACID_VS,EVAP_ACID_VS-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-164,EVAP_BASE,EVAP_BASE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-165,EW_1,EW_1-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-166,EW_2,EW_2-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-167,EW_3,EW_3-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-168,EW_4,EW_4-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-169,EW_5,EW_5-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-170,EW_6,EW_6-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-171,EW_7,EW_7-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-172,EW_8,EW_8-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-173,EW_9,EW_9-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-174,FAB_UPW_TANK,FAB_UPW_TANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-175,FILM_CAST,FILM_CAST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-176,FLOAT_SINK,FLOAT_SINK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-177,FLUE_KO,FLUE_KO-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-178,F_RECOVER,F_RECOVER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-179,GLASS_DIGEST,GLASS_DIGEST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-180,GREY_TREAT,GREY_TREAT-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-181,GROW_BED,GROW_BED-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-182,H2O_ELYZ,H2O_ELYZ-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-183,H2_DRYER,H2_DRYER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-184,HABITATION,HABITATION-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-185,HF_GEN,HF_GEN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-186,INV_CAST,INV_CAST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-187,LEACH_CSTR_1,LEACH_CSTR_1-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-188,LI_RECOVER,LI_RECOVER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-189,MEOH_COND,MEOH_COND-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-190,MEOH_FC,MEOH_FC-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-191,MEOH_TANK,MEOH_TANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-192,MET_SCRUB,MET_SCRUB-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-193,MFG_SHOP,MFG_SHOP-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-194,MG_POT,MG_POT-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-195,NOX_SCRUB,NOX_SCRUB-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-196,NUTRIENT_DOSE,NUTRIENT_DOSE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-197,OIL_DRYER,OIL_DRYER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-198,OIL_FRAC,OIL_FRAC-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-199,OIL_PYRO,OIL_PYRO-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-200,POLISH_BANK,POLISH_BANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-201,POLY_F,POLY_F-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-202,POLY_OLEFIN,POLY_OLEFIN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-203,PROD_C11_C18,PROD_C11_C18-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-204,PROD_C19_C28,PROD_C19_C28-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-205,PROD_C29,PROD_C29-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-206,PROD_C5_C10,PROD_C5_C10-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-207,PROD_MEOH,PROD_MEOH-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-208,REMIN,REMIN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-209,ROOF_TANK,ROOF_TANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-210,SHELL_BREAK,SHELL_BREAK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-211,TFE_SYN,TFE_SYN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-212,VCD_TRAIN,VCD_TRAIN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-213,VDF_SYN,VDF_SYN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-214,WAFER_FAB,WAFER_FAB-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-215,WAX_PATTERN,WAX_PATTERN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-216,WET_BENCH,WET_BENCH-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-217,WS_AMMONIA,WS_AMMONIA-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-218,WS_DOPE,WS_DOPE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-219,WS_HF_ED,WS_HF_ED-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-220,WS_KOH,WS_KOH-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-221,WS_NITRIC,WS_NITRIC-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-222,WS_PEROX,WS_PEROX-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-223,WS_PHOS,WS_PHOS-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-224,WS_SLURRY,WS_SLURRY-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-225,WS_SOLV,WS_SOLV-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-226,ZNBR2,ZNBR2-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-227,ZNBR2_BR2_REGEN,ZNBR2_BR2_REGEN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
-SIF-228,CRYO_H2 area,H2 gas detectors 2oo3,H2 at 25 % LFL,"trip H2O_ELYZ and its rectifier, close H2 bank ESD valves, purge ventilation to high","rectifier breaker, ESD valves",2,1oo2,"AQS-SAF-005, NFPA 2, NFPA 69"
-SIF-229,CRYO_H2 / CRYO_O2,UV/IR flame detectors 2oo2,flame at a receiver,"water spray on, depressuring valves open (API 521 5.20)","deluge valve, depressuring valves fail open",2,1oo2,AQS-SAF-005
-SIF-230,CRYO_O2 area,O2 detectors 2oo3,O2 above 23.5 %,"close O2 bank and IA-ELY-O2 isolation, ventilation to high",ESD valves fail closed,1,1oo1,AQS-SAF-005
-SIF-231,ZNBR2,H2 detectors in the headspace 1oo2,H2 at 25 % LFL in the purge,"stop charging, purge fan to high",charge contactor,1,1oo1,"NFPA 855, NFPA 69, ess_tf purge basis"
+SIF-001,AFTERBURNER,AFTERBURNER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-002
+SIF-002,AFTERBURNER,AFTERBURNER-TE-90 (independent element; not AFTERBURNER-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-004
+SIF-003,AFTERBURNER_FLUE,AFTERBURNER_FLUE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-005
+SIF-004,AFTERBURNER_FLUE,AFTERBURNER_FLUE-TE-90 (independent element; not AFTERBURNER_FLUE-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-007
+SIF-005,BAGHOUSE,BAGHOUSE-FT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-010
+SIF-006,COLD_MILL,COLD_MILL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-016
+SIF-007,CRYO_AHU,CRYO_AHU-FT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-019
+SIF-008,CRYO_AHU_COND_CONDENSABLE,CRYO_AHU_COND_CONDENSABLE-FT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-021
+SIF-009,CRYO_CO2,CRYO_CO2-PT-01 + second PT,pressure low-low (leak),"close bank isolation valves, stop compressor, alarm","bank outlet ESD valves (one per half), fail closed",2,1oo2,HZ-023
+SIF-010,CRYO_DED_COOL,CRYO_DED_COOL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-024
+SIF-011,CRYO_H2,CRYO_H2-PT-01 + second PT,pressure low-low (leak),"close bank isolation valves, stop compressor, alarm","bank outlet ESD valves (one per half), fail closed",2,1oo2,HZ-026
+SIF-012,CRYO_N2,CRYO_N2,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-027
+SIF-013,CRYO_O2,CRYO_O2-PT-01 + second PT,pressure low-low (leak),"close bank isolation valves, stop compressor, alarm","bank outlet ESD valves (one per half), fail closed",2,1oo2,HZ-029
+SIF-014,FUEL_CELL,FUEL_CELL-FT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-042
+SIF-015,GAS_ATOMIZER,GAS_ATOMIZER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-044
+SIF-016,GEO_GHEX,GEO_GHEX,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-046
+SIF-017,GEO_HP,GEO_HP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-048
+SIF-018,GEO_HP,GEO_HP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-049
+SIF-019,GEO_HP_CLOSED_LOOP,GEO_HP_CLOSED_LOOP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-051
+SIF-020,H2_DRYER,H2_DRYER-TE-90 (independent element; not H2_DRYER-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-056
+SIF-021,HOPPER,HOPPER-FT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-058
+SIF-022,HX8,HX8,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-060
+SIF-023,MEOH_FERM,MEOH_FERM,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-065
+SIF-024,MEOH_SYNTH,MEOH_SYNTH-FT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-067
+SIF-025,MET_AHU,MET_AHU,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-070
+SIF-026,MET_HX_Q4,MET_HX_Q4,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-072
+SIF-027,MET_MELT,MET_MELT-FT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-074
+SIF-028,MET_MELT,MET_MELT-TE-90 (independent element; not MET_MELT-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-076
+SIF-029,OIL_DRYER,OIL_DRYER-TE-90 (independent element; not OIL_DRYER-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-082
+SIF-030,OIL_PYRO,OIL_PYRO-TE-90 (independent element; not OIL_PYRO-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-085
+SIF-031,WIRE_DRAW,WIRE_DRAW,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-094
+SIF-032,GLASS_RINSE,GLASS_RINSE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-108
+SIF-033,GLASS_MILL,GLASS_MILL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-110
+SIF-034,GLASS_BURNOUT,GLASS_BURNOUT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-112
+SIF-035,LITHO_COAT,LITHO_COAT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-116
+SIF-036,LITHO_ALIGN,LITHO_ALIGN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-118
+SIF-037,LITHO_DEV,LITHO_DEV,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-120
+SIF-038,LITHO_DEV,LITHO_DEV,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-121
+SIF-039,ELECTRODE_COAT,ELECTRODE_COAT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-123
+SIF-040,BLOW_MOLD,BLOW_MOLD,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-125
+SIF-041,SOLAR_PV_CELL,SOLAR_PV_CELL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-127
+SIF-042,Q4_A,Q4_A,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-129
+SIF-043,Q4_B,Q4_B,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-131
+SIF-044,F_RECOVER,F_RECOVER-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-133
+SIF-045,HF_GEN,HF_GEN-TE-90 (independent element; not HF_GEN-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-137
+SIF-046,VDF_SYN,VDF_SYN-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-139
+SIF-047,TFE_SYN,TFE_SYN-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-141
+SIF-048,POLY_F,POLY_F-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-143
+SIF-049,CR_CELL,CR_CELL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-146
+SIF-050,TI_CELL,TI_CELL-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-148
+SIF-051,TI_CELL,TI_CELL-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-149
+SIF-052,MO_CELL,MO_CELL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-151
+SIF-053,IND_MELT,IND_MELT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-153
+SIF-054,IND_MELT,IND_MELT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-154
+SIF-055,IND_MELT,IND_MELT-TE-90 (independent element; not IND_MELT-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",2,1oo2,HZ-156
+SIF-056,COMB_HEAT,COMB_HEAT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-157
+SIF-057,ROLL,ROLL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-161
+SIF-058,FLUX_PREP,FLUX_PREP-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-163
+SIF-059,STOCK_OUT,STOCK_OUT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-165
+SIF-060,AL_POT,AL_POT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-169
+SIF-061,SHELL_BUILD,SHELL_BUILD-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-176
+SIF-062,SHELL_BURNOUT,SHELL_BURNOUT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-178
+SIF-063,SHELL_BURNOUT,SHELL_BURNOUT,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-179
+SIF-064,SHELL_BURNOUT,SHELL_BURNOUT-TE-90 (independent element; not SHELL_BURNOUT-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-181
+SIF-065,POLY_OLEFIN,POLY_OLEFIN-TE-90 (independent element; not POLY_OLEFIN-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-186
+SIF-066,PELLET,PELLET,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-187
+SIF-067,POWDER_RESIN,POWDER_RESIN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-189
+SIF-068,POLY_STOCK,POLY_STOCK-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-193
+SIF-069,POLY_STOCK,POLY_STOCK-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-194
+SIF-070,EVAP_ACID,EVAP_ACID-TE-90 (independent element; not EVAP_ACID-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-196
+SIF-071,EVAP_BASE,EVAP_BASE-TE-90 (independent element; not EVAP_BASE-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-197
+SIF-072,ADS_CHILL,ADS_CHILL,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-198
+SIF-073,MAU_HX,MAU_HX,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-200
+SIF-074,DRY_COOLER,DRY_COOLER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-202
+SIF-075,EVAP_ACID_VS,EVAP_ACID_VS-TE-90 (independent element; not EVAP_ACID_VS-TE-01),temperature high-high,heater supply off,"heater contactor, de-energise",1,1oo1,HZ-205
+SIF-076,FOOD_STORE,FOOD_STORE-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-206
+SIF-077,METAL_STORE,METAL_STORE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-208
+SIF-078,AIR_RECEIVER,AIR_RECEIVER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-210
+SIF-079,AQUA_TANK,AQUA_TANK,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-212
+SIF-080,BIOFILTER,BIOFILTER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-214
+SIF-081,GROWBED_A,GROWBED_A-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-216
+SIF-082,GROWBED_B,GROWBED_B-LT-01,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-218
+SIF-083,CHICKEN_COOP,CHICKEN_COOP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-220
+SIF-084,BSFL_BIN,BSFL_BIN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-222
+SIF-085,GALLEY,GALLEY,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-224
+SIF-086,DUCKWEED,DUCKWEED,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-226
+SIF-087,DUCK_PEN,DUCK_PEN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-228
+SIF-088,QUAIL_CAGE,QUAIL_CAGE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-230
+SIF-089,RABBIT_HUTCH,RABBIT_HUTCH,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-232
+SIF-090,BEE_HIVE,BEE_HIVE,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-234
+SIF-091,VERMI_BIN,VERMI_BIN,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-236
+SIF-092,FEED_PREP,FEED_PREP,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-238
+SIF-093,AQUA_UV,AQUA_UV,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-240
+SIF-094,POLY_FIBER,POLY_FIBER,flow or level low-low,pump stop,"pump starter, de-energise",1,1oo1,HZ-242
+SIF-095,ACID_POLISH_SCRUB,ACID_POLISH_SCRUB-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-096,ALK_SCRUBBER,ALK_SCRUBBER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-097,BACKUP_GEN,BACKUP_GEN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-098,BLACK_DIGEST,BLACK_DIGEST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-099,BMED_ACID,BMED_ACID-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-100,BMED_BASE,BMED_BASE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-101,BMED_UPW_POLISH,BMED_UPW_POLISH-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-102,C29_RECYCLE,C29_RECYCLE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-103,CAST_LINE,CAST_LINE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-104,CATCH_TANK,CATCH_TANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-105,CA_POT,CA_POT-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-106,CONTINUOUS_RECYCLE,CONTINUOUS_RECYCLE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-107,CONT_CAST,CONT_CAST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-108,CRU,CRU-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-109,EVAP_ACID,EVAP_ACID-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-110,EVAP_ACID_VS,EVAP_ACID_VS-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-111,EVAP_BASE,EVAP_BASE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-112,EW_1,EW_1-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-113,EW_2,EW_2-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-114,EW_3,EW_3-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-115,EW_4,EW_4-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-116,EW_5,EW_5-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-117,EW_6,EW_6-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-118,EW_7,EW_7-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-119,EW_8,EW_8-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-120,EW_9,EW_9-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-121,FAB_UPW_TANK,FAB_UPW_TANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-122,FILM_CAST,FILM_CAST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-123,FLOAT_SINK,FLOAT_SINK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-124,FLUE_KO,FLUE_KO-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-125,F_RECOVER,F_RECOVER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-126,GLASS_DIGEST,GLASS_DIGEST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-127,GREY_TREAT,GREY_TREAT-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-128,GROW_BED,GROW_BED-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-129,H2O_ELYZ,H2O_ELYZ-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-130,H2_DRYER,H2_DRYER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-131,HABITATION,HABITATION-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-132,HF_GEN,HF_GEN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-133,INV_CAST,INV_CAST-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-134,LEACH_CSTR_1,LEACH_CSTR_1-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-135,LI_RECOVER,LI_RECOVER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-136,MEOH_COND,MEOH_COND-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-137,MEOH_FC,MEOH_FC-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-138,MEOH_TANK,MEOH_TANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-139,MET_SCRUB,MET_SCRUB-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-140,MFG_SHOP,MFG_SHOP-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-141,MG_POT,MG_POT-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-142,NOX_SCRUB,NOX_SCRUB-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-143,NUTRIENT_DOSE,NUTRIENT_DOSE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-144,OIL_DRYER,OIL_DRYER-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-145,OIL_FRAC,OIL_FRAC-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-146,OIL_PYRO,OIL_PYRO-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-147,POLISH_BANK,POLISH_BANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-148,POLY_F,POLY_F-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-149,POLY_OLEFIN,POLY_OLEFIN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-150,PROD_C11_C18,PROD_C11_C18-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-151,PROD_C19_C28,PROD_C19_C28-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-152,PROD_C29,PROD_C29-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-153,PROD_C5_C10,PROD_C5_C10-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-154,PROD_MEOH,PROD_MEOH-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-155,REMIN,REMIN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-156,ROOF_TANK,ROOF_TANK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-157,SHELL_BREAK,SHELL_BREAK-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-158,TFE_SYN,TFE_SYN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-159,VCD_TRAIN,VCD_TRAIN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-160,VDF_SYN,VDF_SYN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-161,WAFER_FAB,WAFER_FAB-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-162,WAX_PATTERN,WAX_PATTERN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-163,WET_BENCH,WET_BENCH-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-164,WS_AMMONIA,WS_AMMONIA-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-165,WS_DOPE,WS_DOPE-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-166,WS_HF_ED,WS_HF_ED-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-167,WS_KOH,WS_KOH-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-168,WS_NITRIC,WS_NITRIC-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-169,WS_PEROX,WS_PEROX-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-170,WS_PHOS,WS_PHOS-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-171,WS_SLURRY,WS_SLURRY-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-172,WS_SOLV,WS_SOLV-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-173,ZNBR2,ZNBR2-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-174,ZNBR2_BR2_REGEN,ZNBR2_BR2_REGEN-LSH-01,level high-high,close feed valve / stop feed pump,feed valve fail closed,0,1oo1,AQS-CTL-001 LSH
+SIF-175,CRYO_H2 area,H2 gas detectors 2oo3,H2 at 25 % LFL,"trip H2O_ELYZ and its rectifier, close H2 bank ESD valves, purge ventilation to high","rectifier breaker, ESD valves",2,1oo2,"AQS-SAF-005, NFPA 2, NFPA 69"
+SIF-176,CRYO_H2 / CRYO_O2,UV/IR flame detectors 2oo2,flame at a receiver,"water spray on, depressuring valves open (API 521 5.20)","deluge valve, depressuring valves fail open",2,1oo2,AQS-SAF-005
+SIF-177,CRYO_O2 area,O2 detectors 2oo3,O2 above 23.5 %,"close O2 bank and IA-ELY-O2 isolation, ventilation to high",ESD valves fail closed,1,1oo1,AQS-SAF-005
+SIF-178,ZNBR2,H2 detectors in the headspace 1oo2,H2 at 25 % LFL in the purge,"stop charging, purge fan to high",charge contactor,1,1oo1,"NFPA 855, NFPA 69, ess_tf purge basis"

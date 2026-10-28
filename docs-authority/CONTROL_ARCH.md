@@ -52,26 +52,26 @@ Table 4.1. I/O and modules by PLC
 
 | Sector PLC | AI | AO | DI | DO | Fieldbus drives | Modules AI/AO/DI/DO | CPU | 24 V load W |
 |---|---|---|---|---|---|---|---|---|
-| PLC-CRYO | 29 | 1 | 17 | 2 | 4 | 3/1/2/1 | redundant pair | 38 |
-| PLC-DIGESTER | 78 | 3 | 115 | 24 | 20 | 6/1/9/2 | single | 48 |
-| PLC-ELEC | 21 | 1 | 445 | 122 | 82 | 2/1/34/10 | redundant pair | 118 |
-| PLC-FAB | 46 | 3 | 74 | 11 | 17 | 4/1/6/1 | single | 36 |
-| PLC-FARM | 40 | 0 | 3 | 0 | 1 | 3/0/1/0 | redundant pair | 32 |
+| PLC-CRYO | 34 | 1 | 17 | 2 | 4 | 3/1/2/1 | redundant pair | 38 |
+| PLC-DIGESTER | 127 | 3 | 115 | 24 | 20 | 10/1/9/2 | single | 56 |
+| PLC-ELEC | 28 | 1 | 445 | 122 | 82 | 3/1/34/10 | redundant pair | 120 |
+| PLC-FAB | 62 | 3 | 74 | 11 | 17 | 5/1/6/1 | single | 38 |
+| PLC-FARM | 48 | 0 | 3 | 0 | 1 | 4/0/1/0 | redundant pair | 34 |
 | PLC-FOUNDRY | 77 | 0 | 17 | 0 | 5 | 6/0/2/0 | single | 28 |
-| PLC-GAS | 25 | 0 | 36 | 6 | 9 | 2/0/3/1 | redundant pair | 36 |
+| PLC-GAS | 32 | 0 | 36 | 6 | 9 | 3/0/3/1 | redundant pair | 38 |
 | PLC-GEO | 8 | 0 | 4 | 2 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-GLASS | 10 | 0 | 3 | 1 | 0 | 1/0/1/1 | single | 18 |
 | PLC-HAB | 13 | 0 | 1 | 0 | 0 | 1/0/1/0 | redundant pair | 28 |
 | PLC-HEAT | 24 | 0 | 0 | 0 | 0 | 2/0/0/0 | single | 16 |
-| PLC-MEOH | 13 | 0 | 35 | 6 | 10 | 1/0/3/1 | single | 22 |
-| PLC-MFG | 23 | 9 | 62 | 11 | 10 | 2/1/5/1 | single | 30 |
-| PLC-NUT | 3 | 0 | 21 | 5 | 5 | 1/0/2/1 | redundant pair | 32 |
-| PLC-OIL | 39 | 0 | 40 | 5 | 11 | 3/0/3/1 | single | 26 |
+| PLC-MEOH | 21 | 0 | 35 | 6 | 10 | 2/0/3/1 | single | 24 |
+| PLC-MFG | 28 | 9 | 62 | 11 | 10 | 3/1/5/1 | single | 32 |
+| PLC-NUT | 9 | 0 | 21 | 5 | 5 | 1/0/2/1 | redundant pair | 32 |
+| PLC-OIL | 51 | 0 | 40 | 5 | 11 | 4/0/3/1 | single | 28 |
 | PLC-POLYMERS | 38 | 0 | 18 | 3 | 3 | 3/0/2/1 | single | 24 |
 | PLC-PUMPED_HYDRO | 2 | 1 | 2 | 0 | 0 | 1/1/1/0 | redundant pair | 30 |
-| PLC-WTR | 35 | 0 | 57 | 8 | 17 | 3/0/5/1 | redundant pair | 42 |
-| Total | 524 | 18 | 950 | 206 | 194 | 155 modules | 9 redundant of 18 | 634 |
+| PLC-WTR | 59 | 0 | 57 | 8 | 17 | 5/0/5/1 | redundant pair | 46 |
+| Total | 671 | 18 | 950 | 206 | 194 | 168 modules | 9 redundant of 18 | 660 |
 
-The control system draws about 0.63 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
+The control system draws about 0.66 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 
 The module count in AQS-INV-004 (item OF-07) uses a different basis, the number of points divided by 16 with no spare, and is superseded by Table 4.1. The DI count adds the high-level switches of the instrument index to the digital points of the inventory. If the inventory already counts those switches, the DI count is 113 too high, which errs on the safe side.

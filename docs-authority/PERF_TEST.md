@@ -28,10 +28,10 @@ Table 3.1. Guarantee points
 
 | Product | Stream | From | Graph rate | Unit | Measured by | Pass band |
 |---|---|---|---|---|---|---|
-| PROD_C11_C18 | CUT-2 | OIL_FRAC | 9.919 | kg/d | weighed batch (scale, 0.1 % FS) | 8.927 - 10.91 |
-| PROD_C19_C28 | CUT-3 | OIL_FRAC | 6.166 | kg/d | weighed batch (scale, 0.1 % FS) | 5.549 - 6.782 |
-| PROD_C29 | CUT-4 | OIL_FRAC | 5.873 | kg/d | weighed batch (scale, 0.1 % FS) | 5.286 - 6.461 |
-| PROD_C5_C10 | CUT-1 | OIL_FRAC | 7.425 | kg/d | weighed batch (scale, 0.1 % FS) | 6.682 - 8.167 |
+| PROD_C11_C18 | CUT-2 | OIL_FRAC | 9.919 | kg/d | OIL_FRAC-FT-02 | 8.927 - 10.91 |
+| PROD_C19_C28 | CUT-3 | OIL_FRAC | 6.166 | kg/d | OIL_FRAC-FT-03 | 5.549 - 6.782 |
+| PROD_C29 | CUT-4 | OIL_FRAC | 5.873 | kg/d | OIL_FRAC-FT-04 | 5.286 - 6.461 |
+| PROD_C5_C10 | CUT-1 | OIL_FRAC | 7.425 | kg/d | OIL_FRAC-FT-01 | 6.682 - 8.167 |
 | PROD_MEOH | IA-MEOH-PROD | MEOH_TANK | 28.03 | kg/d | weighed batch (scale, 0.1 % FS) | 25.23 - 30.83 |
 | PROD_O2 | IA-O2-PROD | HDR_O2 | 22.88 | kg/d | weighed batch (scale, 0.1 % FS) | 20.6 - 25.17 |
 | metal from EW_1 | IA-EW-MET-1 | EW_1 | 59.87 | kg/d | weighed cathode harvest | 53.88 - 65.86 |

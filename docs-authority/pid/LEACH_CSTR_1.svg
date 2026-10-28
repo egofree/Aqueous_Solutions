@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="2424" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit LEACH_CSTR_1 · vessel · sector DIGESTER · present</text>
 <text x="24" y="54" font-size="10.5">0.75 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 42 in + 22 out · valves 0 placed / 0 unplaced · instruments 4 (1 SIF) · nozzles 61</text>
+<text x="24" y="72" font-size="10.5">Edges 42 in + 22 out · valves 34 placed / 0 unplaced · instruments 4 (1 SIF) · nozzles 61</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-187 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-134 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -291,6 +291,8 @@
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-BMED-03</text>
 <text x="1476" y="253" font-size="10" text-anchor="end">450.2 kg/d · DN15 P2</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
+<path d="M 1023.6,234 L 1031.6,240 L 1023.6,246 Z M 1041.6,234 L 1033.6,240 L 1041.6,246 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="229.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">GEO_GHEX</text>
@@ -302,6 +304,8 @@
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-BMED-04</text>
 <text x="1476" y="345" font-size="10" text-anchor="end">500.1 kg/d · DN15 P2</text>
 <text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
+<path d="M 1023.6,326 L 1031.6,332 L 1023.6,338 Z M 1041.6,326 L 1033.6,332 L 1041.6,338 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="321.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="378" x2="1061" y2="378" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,378 1061,374 1061,382" fill="#111"/>
 <text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">GEO_GHEX</text>
@@ -313,24 +317,32 @@
 <text x="1476" y="419" font-size="11" font-weight="600" text-anchor="end">IA-CLOSE-1</text>
 <text x="1476" y="437" font-size="10" text-anchor="end">1.0 kg/d · DN50 P2</text>
 <text x="902" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="end">N43</text>
+<path d="M 1023.6,418 L 1031.6,424 L 1023.6,430 Z M 1041.6,418 L 1033.6,424 L 1041.6,430 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="413.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="470" x2="1061" y2="470" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,470 1061,466 1061,474" fill="#111"/>
 <text x="1476" y="451" font-size="9" fill="#666" text-anchor="end">MEOH_FC</text>
 <text x="1476" y="465" font-size="11" font-weight="600" text-anchor="end">IA-CLOSE-10</text>
 <text x="1476" y="483" font-size="10" text-anchor="end">0.2 kg/d · DN50 M1</text>
 <text x="902" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="end">N44</text>
+<path d="M 1023.6,464 L 1031.6,470 L 1023.6,476 Z M 1041.6,464 L 1033.6,470 L 1041.6,476 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="459.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="516" x2="1061" y2="516" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,516 1061,512 1061,520" fill="#111"/>
 <text x="1476" y="497" font-size="9" fill="#666" text-anchor="end">GLASS_RINSE</text>
 <text x="1476" y="511" font-size="11" font-weight="600" text-anchor="end">IA-CULLET</text>
 <text x="1476" y="529" font-size="10" text-anchor="end">36.8 kg/d · DN50 P2</text>
 <text x="902" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="end">N32</text>
+<path d="M 1023.6,510 L 1031.6,516 L 1023.6,522 Z M 1041.6,510 L 1033.6,516 L 1041.6,522 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="505.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="562" x2="1061" y2="562" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,562 1061,558 1061,566" fill="#111"/>
 <text x="1476" y="543" font-size="9" fill="#666" text-anchor="end">EW_1</text>
 <text x="1476" y="557" font-size="11" font-weight="600" text-anchor="end">IA-EW-04</text>
 <text x="1476" y="575" font-size="10" text-anchor="end">4287.8 kg/d · DN15 P2</text>
 <text x="902" y="566" font-size="8" font-style="italic" fill="#555" text-anchor="end">N7</text>
+<path d="M 1023.6,556 L 1031.6,562 L 1023.6,568 Z M 1041.6,556 L 1033.6,562 L 1041.6,568 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="551.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="608" x2="1061" y2="608" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,608 1061,604 1061,612" fill="#111"/>
 <text x="1476" y="589" font-size="9" fill="#666" text-anchor="end">F_RECOVER</text>
@@ -343,48 +355,64 @@
 <text x="1476" y="649" font-size="11" font-weight="600" text-anchor="end">IA-LEACH-ASU</text>
 <text x="1476" y="667" font-size="10" text-anchor="end">0.0 kg/d · DN50 P2</text>
 <text x="902" y="658" font-size="8" font-style="italic" fill="#555" text-anchor="end">N60</text>
+<path d="M 1023.6,648 L 1031.6,654 L 1023.6,660 Z M 1041.6,648 L 1033.6,654 L 1041.6,660 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="643.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="700" x2="1061" y2="700" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,700 1061,696 1061,704" fill="#111"/>
 <text x="1476" y="681" font-size="9" fill="#666" text-anchor="end">NUTRIENT_DOSE</text>
 <text x="1476" y="695" font-size="11" font-weight="600" text-anchor="end">IA-LEACH-BD</text>
 <text x="1476" y="713" font-size="10" text-anchor="end">109.6 kg/d · DN15 P2</text>
 <text x="902" y="704" font-size="8" font-style="italic" fill="#555" text-anchor="end">N26</text>
+<path d="M 1023.6,694 L 1031.6,700 L 1023.6,706 Z M 1041.6,694 L 1033.6,700 L 1041.6,706 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="689.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="746" x2="1061" y2="746" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,746 1061,742 1061,750" fill="#111"/>
 <text x="1476" y="727" font-size="9" fill="#666" text-anchor="end">FLUE_KO</text>
 <text x="1476" y="741" font-size="11" font-weight="600" text-anchor="end">IA-LEACH-FLUE</text>
 <text x="1476" y="759" font-size="10" text-anchor="end">135.9 kg/d · DN50 P2</text>
 <text x="902" y="750" font-size="8" font-style="italic" fill="#555" text-anchor="end">N39</text>
+<path d="M 1023.6,740 L 1031.6,746 L 1023.6,752 Z M 1041.6,740 L 1033.6,746 L 1041.6,752 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="735.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="792" x2="1061" y2="792" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,792 1061,788 1061,796" fill="#111"/>
 <text x="1476" y="773" font-size="9" fill="#666" text-anchor="end">HDR_H2</text>
 <text x="1476" y="787" font-size="11" font-weight="600" text-anchor="end">IA-LEACH-H2</text>
 <text x="1476" y="805" font-size="10" text-anchor="end">0.0 kg/d · DN50 P1</text>
 <text x="902" y="796" font-size="8" font-style="italic" fill="#555" text-anchor="end">N41</text>
+<path d="M 1023.6,786 L 1031.6,792 L 1023.6,798 Z M 1041.6,786 L 1033.6,792 L 1041.6,798 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="781.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="838" x2="1061" y2="838" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,838 1061,834 1061,842" fill="#111"/>
 <text x="1476" y="819" font-size="9" fill="#666" text-anchor="end">HOPPER</text>
 <text x="1476" y="833" font-size="11" font-weight="600" text-anchor="end">IA-LEACH-HOP</text>
 <text x="1476" y="851" font-size="10" text-anchor="end">35.4 kg/d · DN50 P2</text>
 <text x="902" y="842" font-size="8" font-style="italic" fill="#555" text-anchor="end">N40</text>
+<path d="M 1023.6,832 L 1031.6,838 L 1023.6,844 Z M 1041.6,832 L 1033.6,838 L 1041.6,844 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="827.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="884" x2="1061" y2="884" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,884 1061,880 1061,888" fill="#111"/>
 <text x="1476" y="865" font-size="9" fill="#666" text-anchor="end">NOX_SCRUB</text>
 <text x="1476" y="879" font-size="11" font-weight="600" text-anchor="end">IA-LEACH-NOX</text>
 <text x="1476" y="897" font-size="10" text-anchor="end">195.0 kg/d · DN50 P2</text>
 <text x="902" y="888" font-size="8" font-style="italic" fill="#555" text-anchor="end">N38</text>
+<path d="M 1023.6,878 L 1031.6,884 L 1023.6,890 Z M 1041.6,878 L 1033.6,884 L 1041.6,890 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="873.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="930" x2="1061" y2="930" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,930 1061,926 1061,934" fill="#111"/>
 <text x="1476" y="911" font-size="9" fill="#666" text-anchor="end">VCD_TRAIN</text>
 <text x="1476" y="925" font-size="11" font-weight="600" text-anchor="end">IA-LEACH-VCD</text>
 <text x="1476" y="943" font-size="10" text-anchor="end">199.6 kg/d · DN15 P2</text>
 <text x="902" y="934" font-size="8" font-style="italic" fill="#555" text-anchor="end">N46</text>
+<path d="M 1023.6,924 L 1031.6,930 L 1023.6,936 Z M 1041.6,924 L 1033.6,930 L 1041.6,936 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="919.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="976" x2="1061" y2="976" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,976 1061,972 1061,980" fill="#111"/>
 <text x="1476" y="957" font-size="9" fill="#666" text-anchor="end">NORTH_DOCK</text>
 <text x="1476" y="971" font-size="11" font-weight="600" text-anchor="end">IA-NA-PURGE</text>
 <text x="1476" y="989" font-size="10" text-anchor="end">4.4 kg/d · DN15 P2</text>
 <text x="902" y="980" font-size="8" font-style="italic" fill="#555" text-anchor="end">N47</text>
+<path d="M 1023.6,970 L 1031.6,976 L 1023.6,982 Z M 1041.6,970 L 1033.6,976 L 1041.6,982 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="965.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="1022" x2="1061" y2="1022" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,1022 1061,1018 1061,1026" fill="#111"/>
 <text x="1476" y="1003" font-size="9" fill="#666" text-anchor="end">WS_PHOS</text>
@@ -397,18 +425,24 @@
 <text x="1476" y="1063" font-size="11" font-weight="600" text-anchor="end">IA-SCRUB-SRC</text>
 <text x="1476" y="1081" font-size="10" text-anchor="end">27.3 kg/d · DN50 P2</text>
 <text x="902" y="1072" font-size="8" font-style="italic" fill="#555" text-anchor="end">N33</text>
+<path d="M 1023.6,1062 L 1031.6,1068 L 1023.6,1074 Z M 1041.6,1062 L 1033.6,1068 L 1041.6,1074 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="1057.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="1114" x2="1061" y2="1114" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,1114 1061,1110 1061,1118" fill="#111"/>
 <text x="1476" y="1095" font-size="9" fill="#666" text-anchor="end">FLOAT_SINK</text>
 <text x="1476" y="1109" font-size="11" font-weight="600" text-anchor="end">IA-SINK-01</text>
 <text x="1476" y="1127" font-size="10" text-anchor="end">376.1 kg/d · DN50 P2</text>
 <text x="902" y="1118" font-size="8" font-style="italic" fill="#555" text-anchor="end">N31</text>
+<path d="M 1023.6,1108 L 1031.6,1114 L 1023.6,1120 Z M 1041.6,1108 L 1033.6,1114 L 1041.6,1120 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="1103.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
 <line x1="914" y1="1160" x2="1061" y2="1160" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,1160 1061,1156 1061,1164" fill="#111"/>
 <text x="1476" y="1141" font-size="9" fill="#666" text-anchor="end">ZNBR2</text>
 <text x="1476" y="1155" font-size="11" font-weight="600" text-anchor="end">IA-ZNBR-MU</text>
 <text x="1476" y="1173" font-size="10" text-anchor="end">8.5 kg/d · DN15 P2</text>
 <text x="902" y="1164" font-size="8" font-style="italic" fill="#555" text-anchor="end">N24</text>
+<path d="M 1023.6,1154 L 1031.6,1160 L 1023.6,1166 Z M 1041.6,1154 L 1033.6,1160 L 1041.6,1166 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="1149.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="1206" x2="1061" y2="1206" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,1206 1061,1202 1061,1210" fill="#111"/>
 <text x="1476" y="1187" font-size="9" fill="#666" text-anchor="end">MFG_SHOP</text>
@@ -423,7 +457,7 @@
 <g id="aqs-title-block"><rect x="1116" y="2314" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="2331" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-LEACH_CSTR_1</text>
 <text x="1124" y="2348" font-size="9">P&amp;ID LEACH_CSTR_1 (vessel, DIGESTER sector)</text>
-<text x="1124" y="2365" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 446b3668   Issued 2026-10-19</text>
+<text x="1124" y="2365" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 400f9e32   Issued 2026-10-19</text>
 <text x="1124" y="2382" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="2399" font-size="9">Graph SHA-256 978d0c66abb9bc99   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

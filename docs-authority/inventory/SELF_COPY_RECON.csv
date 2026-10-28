@@ -544,7 +544,8 @@ YEAST,Legs 40x40 x 300 mm,3,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 
 YEAST,PIR insulation 50 mm with PE cladding; CO2 evolution; daily recirculation pump,1,PIR,Partial,OIL/MEOH chemistry,monomer route not yet in the graph
 YEAST,Heater mat 5 W with thermostat,1,silicone,Partial,OIL/MEOH chemistry,monomer route not yet in the graph
 ACID_POLISH_SCRUB,Body D600 x 3803 mm,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-ACID_POLISH_SCRUB,Process nozzle DN15,4,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+ACID_POLISH_SCRUB,Process nozzle DN15,3,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+ACID_POLISH_SCRUB,Process nozzle DN250,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 ADS_CHILL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 AFTERBURNER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 AFTERBURNER,Process nozzle DN15,7,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
@@ -553,7 +554,8 @@ AFTERBURNER_FLUE,Process nozzle DN15,3,"316L pipe, dry flue at 300 °C, insulate
 AIR_RECEIVER,Body / envelope 1000 x 1000 x 1200 mm,1,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 AIR_RECEIVER,Process nozzle DN15,2,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 ALK_SCRUBBER,Body D600 x 3803 mm,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-ALK_SCRUBBER,Process nozzle DN15,3,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+ALK_SCRUBBER,Process nozzle DN15,2,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+ALK_SCRUBBER,Process nozzle DN250,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 AL_POT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),Unstated,-,material not stated on the unit BOM line
 AL_POT,Process nozzle DN15,2,per AQS-STD-002 (no duty sheet),Unstated,-,material not stated on the unit BOM line
 AMF,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
@@ -579,7 +581,8 @@ AZOLLA_BED,Open vent DN50,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefi
 BACKUP_GEN,Body / envelope 2000 x 1000 x 1600 mm,1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 BACKUP_GEN,Process nozzle DN15,5,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 BAGHOUSE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; ",Closed,Fe EW -> MET_MELT -> mill/draw,
-BAGHOUSE,Process nozzle DN15,5,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; ",Closed,Fe EW -> MET_MELT -> mill/draw,
+BAGHOUSE,Process nozzle DN15,4,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; ",Closed,Fe EW -> MET_MELT -> mill/draw,
+BAGHOUSE,Process nozzle DN50,1,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; ",Closed,Fe EW -> MET_MELT -> mill/draw,
 BEES,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 BEES,Process nozzle DN15,2,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 BEES,Open vent DN25,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
@@ -706,12 +709,14 @@ CRYO_KR,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,M
 CRYO_KR,Process nozzle DN15,2,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_KR,Open vent DN25,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_N2,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_N2,Process nozzle DN15,6,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_N2,Process nozzle DN15,5,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_N2,Process nozzle DN50,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_NE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_NE,Process nozzle DN15,2,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_NE,Open vent DN25,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_O2,Body D114 x 600 mm,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_O2,Process nozzle DN15,7,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_O2,Process nozzle DN15,6,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_O2,Process nozzle DN50,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_O2,"Relief valve, 9.0 mm bore, DN15 body",2,316L,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_XE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_XE,Process nozzle DN15,2,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -741,13 +746,16 @@ ETOH_STILL,Body / envelope 400 x 400 x 1500 mm,1,Borosilicate glass 3.,Partial,G
 ETOH_STILL,Process nozzle DN15,4,Borosilicate glass 3.,Partial,GLASS,boron not recovered; soda-lime or high-silica glass from GLASS is the substitute study
 ETOH_STILL,Open vent DN25,1,Borosilicate glass 3.,Partial,GLASS,boron not recovered; soda-lime or high-silica glass from GLASS is the substitute study
 EW_1,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_1,Process nozzle DN15,8,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_1,Process nozzle DN15,7,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_1,Process nozzle DN50,1,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
 EW_2,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_2,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_2,Process nozzle DN15,5,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_2,Process nozzle DN50,1,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
 EW_3,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
 EW_3,Process nozzle DN15,5,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
 EW_4,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
-EW_4,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_4,Process nozzle DN15,4,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
+EW_4,Process nozzle DN50,2,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
 EW_5,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
 EW_5,Process nozzle DN15,5,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
 EW_6,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",Missing,MET_MELT,Ti not recovered (ilmenite route not in the graph)
@@ -777,9 +785,11 @@ FISH_SUMP,Process nozzle DN15,5,HDPE or PVC for the water.,Partial,OIL cuts -> o
 FISH_SUMP,Process nozzle DN25,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 FISH_SUMP,Open vent DN50,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 FLOAT_SINK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-FLOAT_SINK,Process nozzle DN15,4,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+FLOAT_SINK,Process nozzle DN15,3,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+FLOAT_SINK,Process nozzle DN50,1,"CPVC wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 FLUE_KO,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",Missing,-,no fluorine source on site; end of life Q-011
-FLUE_KO,Process nozzle DN15,6,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",Missing,-,no fluorine source on site; end of life Q-011
+FLUE_KO,Process nozzle DN15,5,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",Missing,-,no fluorine source on site; end of life Q-011
+FLUE_KO,Process nozzle DN20,1,"FRP vinyl ester with C-veil liner, PVDF mesh pad, borosilicate glass 3.",Missing,-,no fluorine source on site; end of life Q-011
 FLUX_PREP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),Unstated,-,material not stated on the unit BOM line
 FLUX_PREP,Process nozzle DN15,2,per AQS-STD-002 (no duty sheet),Unstated,-,material not stated on the unit BOM line
 FOOD_STORE,Body / envelope 650 x 650 x 750 mm,1,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
@@ -789,7 +799,8 @@ FRUIT_GUTTER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HD
 FRUIT_GUTTER,Process nozzle DN15,6,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 FRUIT_GUTTER,Open vent DN25,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 FUEL_CELL,Body / envelope 1800 x 800 x 1600 mm,1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
-FUEL_CELL,Process nozzle DN15,5,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
+FUEL_CELL,Process nozzle DN15,4,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
+FUEL_CELL,Process nozzle DN50,1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 F_RECOVER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) leg,Missing,-,no fluorine source on site; end of life Q-011
 F_RECOVER,Process nozzle DN15,3,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) leg,Missing,-,no fluorine source on site; end of life Q-011
 GALLEY,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"SS304 worktops and splashbacks, food-contact PP preparation boards; no copper-be",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -817,7 +828,8 @@ GREASE_CA,Process nozzle DN15,3,316L jacketed soap kettle + 316L agitator; steel
 GREASE_LI,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for t,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 GREASE_LI,Process nozzle DN15,3,316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for t,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 GREY_TREAT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-GREY_TREAT,Process nozzle DN15,10,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+GREY_TREAT,Process nozzle DN15,9,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+GREY_TREAT,Process nozzle DN50,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 GROWBED_A,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002,Unstated,-,not classed: per AQS-STD-002
 GROWBED_A,Process nozzle DN15,5,per AQS-STD-002,Unstated,-,not classed: per AQS-STD-002
 GROWBED_B,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"HDPE tray with EPDM liner, expanded-clay (LECA) media on a geotextile separation",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
@@ -835,7 +847,8 @@ H2_PURIFIER,Body D60 x 926 mm,1,"316L, annealed (AQS-REV-H2-001).",Missing,MET_M
 H2_PURIFIER,Process nozzle DN15,3,"316L, annealed (AQS-REV-H2-001).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 H2_PURIFIER,Open vent DN25,1,"316L, annealed (AQS-REV-H2-001).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 HABITATION,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-HABITATION,Process nozzle DN15,24,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+HABITATION,Process nozzle DN15,22,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+HABITATION,Process nozzle DN50,2,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 HAB_GALLEY,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 HAB_GALLEY,Process nozzle DN15,2,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 HAB_GALLEY,Open vent DN25,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
@@ -887,16 +900,22 @@ MEOH_COND,Process nozzle DN15,3,316L shell and coil (methanol/water traces) (gra
 MEOH_FC,Body / envelope 1800 x 800 x 1600 mm,1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 MEOH_FC,Process nozzle DN15,7,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 MEOH_TANK,Body / envelope 600 x 600 x 600 mm,1,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MEOH_TANK,Process nozzle DN15,7,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MEOH_TANK,Process nozzle DN15,6,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MEOH_TANK,Process nozzle DN50,1,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 METAL_STORE,Body / envelope 800 x 800 x 950 mm,1,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 METAL_STORE,Process nozzle DN15,5,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 MET_AHU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MET_AHU,Process nozzle DN15,3,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MET_AHU,Process nozzle DN15,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MET_AHU,Process nozzle DN200,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MET_AHU,Process nozzle DN250,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MET_HX_Q4,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L if the stream is wet or chloride.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MET_MELT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Graphite or refractory on the hot face.,Closed,GLASS / silicate melt,
-MET_MELT,Process nozzle DN15,5,Graphite or refractory on the hot face.,Closed,GLASS / silicate melt,
+MET_MELT,Process nozzle DN15,4,Graphite or refractory on the hot face.,Closed,GLASS / silicate melt,
+MET_MELT,Process nozzle DN50,1,Graphite or refractory on the hot face.,Closed,GLASS / silicate melt,
 MET_SCRUB,Body D800 x 3803 mm,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-MET_SCRUB,Process nozzle DN15,7,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+MET_SCRUB,Process nozzle DN15,5,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+MET_SCRUB,Process nozzle DN50,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+MET_SCRUB,Process nozzle DN300,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 MFG_SHOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MFG_SHOP,Process nozzle DN15,29,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MG_POT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),Unstated,-,material not stated on the unit BOM line
@@ -925,9 +944,11 @@ NORTH_DOCK,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L
 NORTH_DOCK,Process nozzle DN15,9,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 NORTH_DOCK,Process nozzle DN50,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 NOX_SCRUB,Body D200 x 3803 mm,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-NOX_SCRUB,Process nozzle DN15,11,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+NOX_SCRUB,Process nozzle DN15,7,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+NOX_SCRUB,Process nozzle DN50,4,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 NUTRIENT_DOSE,Body / envelope 600 x 600 x 600 mm,1,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
-NUTRIENT_DOSE,Process nozzle DN15,10,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
+NUTRIENT_DOSE,Process nozzle DN15,9,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
+NUTRIENT_DOSE,Process nozzle DN50,1,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 OIL_DRYER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_DRYER,Process nozzle DN15,2,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_FRAC,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
@@ -1041,7 +1062,8 @@ VEG_BED,Open vent DN32,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -
 VERMI_BIN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"HDPE bin with coco-coir and shredded-paper bedding, PP working fork, SS316 harve",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 VERMI_BIN,Process nozzle DN15,4,"HDPE bin with coco-coir and shredded-paper bedding, PP working fork, SS316 harve",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WAFER_FAB,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-WAFER_FAB,Process nozzle DN15,12,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+WAFER_FAB,Process nozzle DN15,11,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+WAFER_FAB,Process nozzle DN50,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WASHROOM,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"FRP wet-wall panels, SS304 fixtures, ceramic tile wet zones, SS drainage.",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WASHROOM,Process nozzle DN15,2,"FRP wet-wall panels, SS304 fixtures, ceramic tile wet zones, SS drainage.",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WAX_PATTERN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),Unstated,-,material not stated on the unit BOM line
@@ -1073,7 +1095,8 @@ WS_SLURRY,Process nozzle DN15,2,PE (rotomoulded / fabricated) (graph node materi
 WS_SOLV,Body / envelope 600 x 600 x 600 mm,1,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 WS_SOLV,Process nozzle DN15,2,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 ZNBR2,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
-ZNBR2,Process nozzle DN15,4,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
+ZNBR2,Process nozzle DN15,3,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
+ZNBR2,Process nozzle DN32,1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 ZNBR2_BR2_REGEN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",Missing,-,no fluorine source on site; end of life Q-011
 ZNBR2_BR2_REGEN,Process nozzle DN15,2,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",Missing,-,no fluorine source on site; end of life Q-011
 MF-01 x 108,stator laminations M270-35A 0.35 mm,1944,,Unstated,-,material not stated on the unit BOM line
@@ -1265,6 +1288,48 @@ MF-23 x 0,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated o
 MF-23 x 0,"housing extruded 6063, NEMA ICS 16 86 mm flange",0,,Unstated,-,material not stated on the unit BOM line
 MF-23 x 0,bearing 608-2Z,0,,Unstated,-,material not stated on the unit BOM line
 MF-23 x 0,connector 4-pin,0,,Unstated,-,material not stated on the unit BOM line
+PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 339 x 6.096 m",2035.5 m,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,308 / 216 / 216 / 864,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-02,"316L ASTM A312 DN15 pipe, 186 x 6.096 m",1112.3 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-02,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,163 / 112 / 112 / 448,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-03,"CPVC Sch 80 ASTM F441 DN15 pipe, 98 x 6.096 m",570.3 m,CPVC Sch 80 ASTM F441,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-03,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 1/2 in studs,84 / 56 / 56 / 224,CPVC Sch 80 ASTM F441,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-04,"CPVC Sch 80 ASTM F441 DN50 pipe, 58 x 6.096 m",344.9 m,CPVC Sch 80 ASTM F441,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-04,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 5/8 in studs,51 / 34 / 34 / 136,CPVC Sch 80 ASTM F441,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-05,"PVDF SDR 21 ISO 10931 DN15 pipe, 62 x 6.096 m",366.5 m,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-05,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 ,72 / 50 / 50 / 200,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-06,"CS ASTM A106 Gr B DN15 pipe, 65 x 6.096 m",389.2 m,CS ASTM A106 Gr B,Closed,Fe EW -> MET_MELT -> mill/draw,
+PF-06,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,68 / 50 / 50 / 200,CS ASTM A106 Gr B,Closed,Fe EW -> MET_MELT -> mill/draw,
+PF-07,"PVC-U Sch 80 ASTM D1785 DN50 pipe, 31 x 6.096 m",185.2 m,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-07,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 5/8 in studs,33 / 22 / 22 / 88,PVC-U Sch 80 ASTM D1785,Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+PF-08,"HDPE PE4710 DR 11 (ASTM D3035) DN15 pipe, 47 x 6.096 m",278.4 m,HDPE PE4710 DR 11 (ASTM D3035),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+PF-08,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 1/,41 / 30 / 30 / 120,HDPE PE4710 DR 11 (ASTM D3035),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+PF-09,"HDPE PE4710 DR 11 (ASTM D3035) DN50 pipe, 14 x 6.096 m",80.6 m,HDPE PE4710 DR 11 (ASTM D3035),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+PF-09,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 5/,13 / 10 / 10 / 40,HDPE PE4710 DR 11 (ASTM D3035),Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+PF-10,"FRP vinyl ester DN15 pipe, 10 x 6.096 m",55.2 m,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+PF-10,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 1/2 in studs,12 / 8 / 8 / 32,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+PF-11,"PVDF SDR 21 ISO 10931 DN50 pipe, 4 x 6.096 m",23.2 m,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-11,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 5/8 ,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-12,"PP-H ISO 15494 DN15 pipe, 11 x 6.096 m",64.1 m,PP-H ISO 15494,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+PF-12,ISO 15494 butt-fusion 90 elbow; ISO 15494 stub end + backing ring; gaskets; 1/2 ,21 / 14 / 14 / 56,PP-H ISO 15494,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+PF-13,"316L ASTM A312 DN25 pipe, 8 x 6.096 m",42.2 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-13,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,6 / 4 / 4 / 16,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-14,"316L ASTM A312 DN20 pipe, 7 x 6.096 m",39.2 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-14,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,6 / 4 / 4 / 16,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-15,"FRP vinyl ester DN20 pipe, 6 x 6.096 m",30.4 m,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+PF-15,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 1/2 in studs,3 / 2 / 2 / 8,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+PF-16,"FRP vinyl ester DN250 pipe, 2 x 6.096 m",9.5 m,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+PF-16,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 7/8 in studs,7 / 6 / 6 / 72,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+PF-17,"FRP vinyl ester DN200 pipe, 2 x 6.096 m",7.1 m,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+PF-17,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 3/4 in studs,3 / 2 / 2 / 16,FRP vinyl ester,Partial,GLASS fibre + resin,glass fibre from GLASS; vinyl ester resin route is a study
+PF-18,"PVDF SDR 21 ISO 10931 DN300 pipe, 2 x 6.096 m",6.8 m,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-18,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 7/8 ,3 / 2 / 2 / 24,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-19,"PP-H ISO 15494 DN50 pipe, 10 x 6.096 m",56.7 m,PP-H ISO 15494,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+PF-19,ISO 15494 butt-fusion 90 elbow; ISO 15494 stub end + backing ring; gaskets; 5/8 ,6 / 4 / 4 / 16,PP-H ISO 15494,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
+PF-20,"316L ASTM A312 DN50 pipe, 3 x 6.096 m",17.1 m,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-20,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 5/8 in studs,3 / 2 / 2 / 8,316L ASTM A312,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+PF-21,"PVDF SDR 21 ISO 10931 DN32 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
+PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 ,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,Missing,-,no fluorine source on site; end of life Q-011
 WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",33480 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",41987 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",16920 m,Cu,Closed,Cu EW -> WIRE_DRAW,
@@ -1294,16 +1359,17 @@ WF-29,"equipment ground 1/0 AWG green XHHW-2 Cu, 600 V",45 m,Cu,Closed,Cu EW -> 
 OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",388,,Unstated,-,material not stated on the unit BOM line
 OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",356,,Unstated,-,material not stated on the unit BOM line
 OF-03,electronics: PLC digital I/O point (IEC 61131-2),868,,Unstated,-,material not stated on the unit BOM line
-OF-04,electronics: PLC analog input point (IEC 61131-2),649,,Unstated,-,material not stated on the unit BOM line
+OF-04,electronics: PLC analog input point (IEC 61131-2),797,,Unstated,-,material not stated on the unit BOM line
 OF-05,electronics: BLDC driver (IEC 61800-5-1),191,,Unstated,-,material not stated on the unit BOM line
 OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),160,,Unstated,-,material not stated on the unit BOM line
-OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",95,,Unstated,-,material not stated on the unit BOM line
+OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",105,,Unstated,-,material not stated on the unit BOM line
 OF-08,electronics: variable-frequency drive (IEC 61800-5-1),18,,Unstated,-,material not stated on the unit BOM line
 OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),36,,Unstated,-,material not stated on the unit BOM line
 OF-10,electronics: compressor contactor + overload (IEC 60947-4-1),10,,Unstated,-,material not stated on the unit BOM line
 OF-11,electronics: stepper driver (IEC 61800-5-1),3,,Unstated,-,material not stated on the unit BOM line
 OF-12,"electronics: safety PLC (SIL 2 capable), CPU and I/O rack (IEC 61508 / IEC 61511",2,,Unstated,-,material not stated on the unit BOM line
 OF-13,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),83,,Unstated,-,material not stated on the unit BOM line
+OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),10766,,Unstated,-,material not stated on the unit BOM line
 OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),100,,Unstated,-,material not stated on the unit BOM line
 OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),48,,Unstated,-,material not stated on the unit BOM line
 OF-17,fastener: M12 anchor (ISO 3506 A4-70),37,,Unstated,-,material not stated on the unit BOM line
@@ -1323,6 +1389,7 @@ OF-30,fastener: Flange gasket (graphite sheet),2,,Unstated,-,material not stated
 OF-31,fastener: M10 U-bolt for DN150 (ISO 3506 A4-70),2,,Unstated,-,material not stated on the unit BOM line
 OF-32,fastener: Lid gasket 40 mm wide (FKM),1,,Unstated,-,material not stated on the unit BOM line
 OF-33,fastener: Solvent cement (PVC-U per ASTM D2564),1,,Unstated,-,material not stated on the unit BOM line
+OF-34,"instrument: flow transmitter (electromagnetic, PFA liner, Hastelloy C electrodes",148,,Unstated,-,material not stated on the unit BOM line
 OF-35,"instrument: pressure transmitter (ceramic diaphragm, IEC 61298)",175,,Unstated,-,material not stated on the unit BOM line
 OF-36,"instrument: temperature element (IEC 60751, 316L thermowell)",178,,Unstated,-,material not stated on the unit BOM line
 OF-37,"instrument: high-level switch (IEC 60947-5, 316L)",80,,Unstated,-,material not stated on the unit BOM line
@@ -1336,7 +1403,24 @@ OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, breathing height
 OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing he",6,,Unstated,-,material not stated on the unit BOM line
 OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",204,,Unstated,-,material not stated on the unit BOM line
 OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",124,,Unstated,-,material not stated on the unit BOM line
+OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",4199,,Unstated,-,material not stated on the unit BOM line
+OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1184,,Unstated,-,material not stated on the unit BOM line
+OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",238,,Unstated,-,material not stated on the unit BOM line
+OF-51,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",40,,Unstated,-,material not stated on the unit BOM line
+OF-52,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",126,,Unstated,-,material not stated on the unit BOM line
+OF-53,"valve: isolation valve (CPVC true-union ball valve, MSS SP-122, FKM seals)",90,,Unstated,-,material not stated on the unit BOM line
+OF-54,"valve: check valve (PP swing/ball check valve with HDPE stub ends, ISO 16137)",13,,Unstated,-,material not stated on the unit BOM line
+OF-55,"valve: check valve (PVC-U true-union swing/ball check valve, EPDM seals)",56,,Unstated,-,material not stated on the unit BOM line
+OF-56,"valve: isolation valve (PVDF ball valve, ISO 16135, PTFE seats)",56,,Unstated,-,material not stated on the unit BOM line
+OF-57,"valve: check valve (CPVC true-union swing/ball check valve, FKM seals)",25,,Unstated,-,material not stated on the unit BOM line
+OF-58,"valve: check valve (PVDF swing/ball check valve, ISO 16137, PTFE seats)",22,,Unstated,-,material not stated on the unit BOM line
+OF-59,"valve: isolation valve (CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged)",50,,Unstated,-,material not stated on the unit BOM line
+OF-60,"valve: isolation valve (PVC-lined ball valve in FRP service, ISO 16135)",18,,Unstated,-,material not stated on the unit BOM line
+OF-61,"valve: check valve (316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged)",10,,Unstated,-,material not stated on the unit BOM line
+OF-62,"valve: isolation valve (PP-H ball valve, ISO 16135, EPDM seals)",18,,Unstated,-,material not stated on the unit BOM line
 OF-63,"valve: ESD valve, spring-return actuator (316L, fail-safe, IEC 61511)",10,,Unstated,-,material not stated on the unit BOM line
+OF-64,"valve: check valve (PP-H swing/ball check valve, ISO 16137, EPDM seals)",8,,Unstated,-,material not stated on the unit BOM line
+OF-65,"valve: check valve (PVC-lined swing/ball check valve in FRP service, ISO 16137)",3,,Unstated,-,material not stated on the unit BOM line
 OF-66,fastener: M12 anchor (ISO 898-1 8.8),102,,Unstated,-,material not stated on the unit BOM line
 OF-67,fastener: M10 x 30 hood bolts (ISO 898-1 8.8),16,,Unstated,-,material not stated on the unit BOM line
 OF-68,fastener: M16 T-bolt + nut (ISO 4014 / ISO 4032) (ISO 898-1 8.8),12,,Unstated,-,material not stated on the unit BOM line
@@ -1348,6 +1432,7 @@ OF-74,fastener: M10 x 40 lid bolt (ISO 3506 A4-80),8,,Unstated,-,material not st
 OF-75,fastener: M10 clamp (ISO 3506 A4-70),4,,Unstated,-,material not stated on the unit BOM line
 OF-76,fastener: M12 anchor (ISO 3506 A4-80),3,,Unstated,-,material not stated on the unit BOM line
 OF-77,"instrument: pressure transmitter (316L thin-film strain gauge, IEC 61298)",3,,Unstated,-,material not stated on the unit BOM line
+OF-78,"valve: check valve (CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF f",11,,Unstated,-,material not stated on the unit BOM line
 OF-79,fastener: M12 hex socket head cap screw (ISO 4762) (ISO 898-1 8.8),28,,Unstated,-,material not stated on the unit BOM line
 OF-80,fastener: M8 hex socket head cap screw (ISO 4762) (ISO 898-1 8.8),8,,Unstated,-,material not stated on the unit BOM line
 OF-81,fastener: M10 stud + nut (ISO 4014 / ISO 4032) (ISO 898-1 8.8),66,,Unstated,-,material not stated on the unit BOM line

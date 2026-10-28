@@ -9,7 +9,8 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R); sy
 from flow_graph.param.refs import cite
 for k in ('ASME_B30_2', 'ASME_B30_16', 'CMAA70_2020'): cite(k)
 g = json.load(open('flow_graph/plant_flow_graph.json')); C = {n['unit_id']: n.get('class') for n in g['nodes']}; N = {n['unit_id']: n for n in g['nodes']}
-INPLACE = {'tank', 'pv', 'farm', 'hab', 'building', 'boundary', 'header', 'recycle_pipe', 'shop', 'dock'}
+# X-FARM: the raceway basin is a lined excavation; the hab rooms assemble from panels
+INPLACE = {'tank', 'pv', 'farm', 'hab', 'building', 'boundary', 'header', 'recycle_pipe', 'shop', 'dock', 'duckweed', 'room'}
 SIZES = [0.25, 0.5, 1.0, 2.0, 3.2, 5.0, 10.0, 16.0, 20.0]; RIG = 0.10
 rows = json.load(open('docs-authority/inventory/STRUCT_ROWS.json')); L = collections.defaultdict(list)
 for r in rows:

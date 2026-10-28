@@ -313,6 +313,10 @@
    "status": "ok"
   },
   {
+   "name": "placement_routes",
+   "status": "ok"
+  },
+  {
    "name": "nozzle_sched",
    "status": "ok"
   },
@@ -569,6 +573,9 @@
   "docs-authority/INSTRUMENT_INDEX.md",
   "docs-authority/INSULATION_SCHEDULE.md",
   "docs-authority/INTERNALS.md",
+  "docs-authority/ISO_ROUTES.json",
+  "docs-authority/ISO_ROUTES.md",
+  "docs-authority/ISO_SHEETS.md",
   "docs-authority/ITP.md",
   "docs-authority/JELLYBEAN.md",
   "docs-authority/LIFTING.md",
@@ -726,6 +733,7 @@
   "docs-authority/inventory/WIRE_INVENTORY.md",
   "docs-authority/inventory/WIRE_SPECS.json",
   "docs-authority/inventory/motor_families/MF-*.md",
+  "docs-authority/iso/ISO_SHEETS.csv",
   "docs-authority/nozzles/*.csv",
   "docs-authority/pid/*",
   "docs-authority/plc/*.st",

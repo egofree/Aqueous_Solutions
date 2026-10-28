@@ -1435,6 +1435,25 @@
    "note": "AQS-PIP-004; unit centres from duties/_origins.json."
   },
   {
+   "name": "placement_routes",
+   "argv": [
+    "python3",
+    "docs-authority/_placement_routes.py"
+   ],
+   "outputs": [
+    "docs-authority/ISO_ROUTES.md",
+    "docs-authority/ISO_ROUTES.json",
+    "docs-authority/iso/ISO_SHEETS.csv",
+    "docs-authority/ISO_SHEETS.md"
+   ],
+   "depends_on": [
+    "line_list"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "X-PIP-03: routed lengths from the placement model (placement_seed Rev M) by the A-M-074 rack rule - re-activates SUPPORTS (X-PIP-05), the insulation schedule and the pipe inventory over the placed subset; unplaced ends stay a named gap per line."
+  },
+  {
    "name": "nozzle_sched",
    "argv": [
     "python3",
@@ -1460,7 +1479,9 @@
    "outputs": [
     "docs-authority/SUPPORTS.md"
    ],
-   "depends_on": [],
+   "depends_on": [
+    "placement_routes"
+   ],
    "writes_graph": false,
    "quick": false,
    "note": "AQS-PIP-005; pending the placement model - writes the named gap when ISO_ROUTES.json is absent."
@@ -1475,7 +1496,9 @@
     "docs-authority/INSULATION_SCHEDULE.md",
     "docs-authority/insulation_schedule.csv"
    ],
-   "depends_on": [],
+   "depends_on": [
+    "placement_routes"
+   ],
    "writes_graph": false,
    "quick": false,
    "note": "X-THM-03; the iso-sheet T_C read retired with the route model (2026-10-27) - equipment T_C comes from the graph."

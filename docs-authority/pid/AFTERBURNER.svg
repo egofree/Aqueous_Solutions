@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="722" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit AFTERBURNER · thermal · sector OIL · present</text>
 <text x="24" y="54" font-size="10.5">0.1332 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 5 in + 4 out · valves 0 placed / 0 unplaced · instruments 3 (1 SIF) · nozzles 12</text>
+<text x="24" y="72" font-size="10.5">Edges 5 in + 4 out · valves 8 placed / 0 unplaced · instruments 3 (1 SIF) · nozzles 12</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -27,7 +27,7 @@
 <circle cx="356" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="356" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="356" y="175.5" font-size="7.5" text-anchor="middle">TE-90</text>
-<text x="378" y="170" font-size="7">SIF-003 · SIL 2</text>
+<text x="378" y="170" font-size="7">SIF-002 · SIL 2</text>
 <text x="378" y="180" font-size="6.5" fill="#555">temperature high-high -&gt; heater supply off</text>
 <rect x="590" y="210" width="320" height="260" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">AFTERBURNER</text>
@@ -67,23 +67,31 @@
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">Q1_A</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">HL-AFTERBURNER-Q1-A</text>
 <text x="1476" y="253" font-size="10" text-anchor="end">1.4 kW · DN15 M2 · absent</text>
+<path d="M 1023.6,234 L 1031.6,240 L 1023.6,246 Z M 1041.6,234 L 1033.6,240 L 1041.6,246 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="229.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="286" x2="1061" y2="286" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-out"/>
 <polygon points="1070,286 1061,282 1061,290" fill="#999"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">Q1_B</text>
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">HL-AFTERBURNER-Q1-B</text>
 <text x="1476" y="299" font-size="10" text-anchor="end">1.4 kW · DN15 M2 · absent</text>
+<path d="M 1023.6,280 L 1031.6,286 L 1023.6,292 Z M 1041.6,280 L 1033.6,286 L 1041.6,292 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="275.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">AFTERBURNER_FLUE</text>
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-AB-FLUE</text>
 <text x="1476" y="345" font-size="10" text-anchor="end">7.1 kg/d · DN15 F1</text>
 <text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
+<path d="M 1023.6,326 L 1031.6,332 L 1023.6,338 Z M 1041.6,326 L 1033.6,332 L 1041.6,338 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="321.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="378" x2="1061" y2="378" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,378 1061,374 1061,382" fill="#111"/>
 <text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">CRYO_CO2</text>
 <text x="1476" y="373" font-size="11" font-weight="600" text-anchor="end">S18</text>
 <text x="1476" y="391" font-size="10" text-anchor="end">0.0 kg/d · DN15 M1</text>
 <text x="902" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="end">N9</text>
+<path d="M 1023.6,372 L 1031.6,378 L 1023.6,384 Z M 1041.6,372 L 1033.6,378 L 1041.6,384 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="367.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <text x="24" y="520" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="530" font-size="9">Every incident graph edge is drawn: 5 in, 4 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="545" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/AFTERBURNER.csv.</text>
@@ -92,7 +100,7 @@
 <g id="aqs-title-block"><rect x="1116" y="612" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="629" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-AFTERBURNER</text>
 <text x="1124" y="646" font-size="9">P&amp;ID AFTERBURNER (thermal, OIL sector)</text>
-<text x="1124" y="663" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev c6b5bc44   Issued 2026-10-19</text>
+<text x="1124" y="663" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 6358fdd8   Issued 2026-10-19</text>
 <text x="1124" y="680" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
 <text x="1124" y="697" font-size="9">Graph SHA-256 978d0c66abb9bc99   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

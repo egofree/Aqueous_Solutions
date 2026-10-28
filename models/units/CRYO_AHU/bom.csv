@@ -13,5 +13,25 @@ item,description,qty,material,basis
 12,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 13,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 14,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-15,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-16,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+15,fastener: anchor bolt M10,24,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+16,fastener: anchor bolt M10,28,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+17,fastener: anchor bolt M10,24,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+18,fastener: anchor bolt M10,50,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+19,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+20,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+21,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+22,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+23,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+24,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+25,support: U-bolt with guide DN15,12,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+26,support: U-bolt with guide DN15,12,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+27,support: pipe clamp DN15,14,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+28,support: pipe clamp DN15,25,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+29,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+30,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
+31,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+32,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
+33,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+34,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+35,valve: isolation valve DN15,2,"316L ball valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
+36,valve: isolation valve DN15,2,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",AQS-INV-004

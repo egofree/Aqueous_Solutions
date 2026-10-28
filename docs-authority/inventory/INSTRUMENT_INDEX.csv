@@ -1,6 +1,11 @@
 tag,unit,sector,type,spec,range,signal,loop,plc,basis
+CRYO_AHU_COND_CONDENSABLE-FT-01,CRYO_AHU_COND_CONDENSABLE,CRYO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.005 L/h,4-20 mA HART (AI),CRYO_AHU_COND_CONDENSABLEFT-01,PLC-CRYO,S70 normal 0.00 L/h
 CRYO_AHU_COND_CONDENSABLE-PT-01,CRYO_AHU_COND_CONDENSABLE,CRYO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),CRYO_AHU_COND_CONDENSABLEPT-01,PLC-CRYO,no design pressure on the graph
 CRYO_AHU_COND_CONDENSABLE-TE-01,CRYO_AHU_COND_CONDENSABLE,CRYO,temperature element,"IEC 60751, 316L thermowell",-200 to 50 C,4-20 mA HART (AI),CRYO_AHU_COND_CONDENSABLETE-01,PLC-CRYO,band by service
+CRYO_AHU-FT-01,CRYO_AHU,CRYO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),CRYO_AHUFT-01,PLC-CRYO,S56 normal 0.00 L/h
+CRYO_AHU-FT-02,CRYO_AHU,CRYO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),CRYO_AHUFT-02,PLC-CRYO,S68 normal 4.27 L/h
+CRYO_AHU-FT-03,CRYO_AHU,CRYO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),CRYO_AHUFT-03,PLC-CRYO,S86 normal 0.00 L/h
+CRYO_AHU-FT-04,CRYO_AHU,CRYO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),CRYO_AHUFT-04,PLC-CRYO,IA-HVAC-COND normal 2.81 L/h
 CRYO_AHU-PT-01,CRYO_AHU,CRYO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),CRYO_AHUPT-01,PLC-CRYO,no design pressure on the graph
 CRYO_AHU-TE-01,CRYO_AHU,CRYO,temperature element,"IEC 60751, 316L thermowell",-200 to 50 C,4-20 mA HART (AI),CRYO_AHUTE-01,PLC-CRYO,band by service
 CRYO_ASU-PT-01,CRYO_ASU,CRYO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),CRYO_ASUPT-01,PLC-CRYO,design 17.5 kPa g
@@ -31,46 +36,75 @@ AIR_RECEIVER-PT-01,AIR_RECEIVER,CRYO,pressure transmitter,"ceramic diaphragm, IE
 AIR_RECEIVER-TE-01,AIR_RECEIVER,CRYO,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),AIR_RECEIVERTE-01,PLC-CRYO,band by service
 S13_CLASS_TREAT-PT-01,S13_CLASS_TREAT,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),S13_CLASS_TREATPT-01,PLC-DIGESTER,no design pressure on the graph
 S13_CLASS_TREAT-TE-01,S13_CLASS_TREAT,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),S13_CLASS_TREATTE-01,PLC-DIGESTER,band by service
+BMED_ACID-FT-01,BMED_ACID,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),BMED_ACIDFT-01,PLC-DIGESTER,IA-BMED-01 normal 0.05 L/h
+BMED_ACID-FT-02,BMED_ACID,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),BMED_ACIDFT-02,PLC-DIGESTER,S09 normal 0.39 L/h
+BMED_ACID-FT-03,BMED_ACID,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-200 L/h,4-20 mA HART (AI),BMED_ACIDFT-03,PLC-DIGESTER,IA-EVAP_ACID-FEED normal 54.37 L/h
 BMED_ACID-LSH-01,BMED_ACID,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),BMED_ACIDLSH-01,PLC-DIGESTER,alarm at 90 %
 BMED_ACID-LT-01,BMED_ACID,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),BMED_ACIDLT-01,PLC-DIGESTER,A-M-182 liquid height
 BMED_ACID-PT-01,BMED_ACID,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),BMED_ACIDPT-01,PLC-DIGESTER,no design pressure on the graph
 BMED_ACID-TE-01,BMED_ACID,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),BMED_ACIDTE-01,PLC-DIGESTER,band by service
+BMED_BASE-FT-01,BMED_BASE,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.025 L/h,4-20 mA HART (AI),BMED_BASEFT-01,PLC-DIGESTER,IA-BMED-02 normal 0.01 L/h
+BMED_BASE-FT-02,BMED_BASE,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-200 L/h,4-20 mA HART (AI),BMED_BASEFT-02,PLC-DIGESTER,IA-EVAP_BASE-FEED normal 54.24 L/h
+BMED_BASE-FT-03,BMED_BASE,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5e-05 L/h,4-20 mA HART (AI),BMED_BASEFT-03,PLC-DIGESTER,IA-VS-NAOH normal 0.00 L/h
 BMED_BASE-LSH-01,BMED_BASE,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),BMED_BASELSH-01,PLC-DIGESTER,alarm at 90 %
 BMED_BASE-LT-01,BMED_BASE,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),BMED_BASELT-01,PLC-DIGESTER,A-M-182 liquid height
 BMED_BASE-PT-01,BMED_BASE,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),BMED_BASEPT-01,PLC-DIGESTER,no design pressure on the graph
 BMED_BASE-TE-01,BMED_BASE,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),BMED_BASETE-01,PLC-DIGESTER,band by service
+CRU-FT-01,CRU,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2.5 L/h,4-20 mA HART (AI),CRUFT-01,PLC-DIGESTER,IA-CRU-01 normal 1.15 L/h
 CRU-LSH-01,CRU,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),CRULSH-01,PLC-DIGESTER,alarm at 90 %
 CRU-LT-01,CRU,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),CRULT-01,PLC-DIGESTER,A-M-182 liquid height
 CRU-PT-01,CRU,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),CRUPT-01,PLC-DIGESTER,no design pressure on the graph
 CRU-TE-01,CRU,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),CRUTE-01,PLC-DIGESTER,band by service
+EVAP_ACID-FT-01,EVAP_ACID,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-50 L/h,4-20 mA HART (AI),EVAP_ACIDFT-01,PLC-DIGESTER,IA-ACID-01 normal 18.32 L/h
+EVAP_ACID-FT-02,EVAP_ACID,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),EVAP_ACIDFT-02,PLC-DIGESTER,IA-EVAP_ACID-COND normal 36.05 L/h
+EVAP_ACID-FT-03,EVAP_ACID,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.0025 L/h,4-20 mA HART (AI),EVAP_ACIDFT-03,PLC-DIGESTER,IA-EVAP_ACID-VENT normal 0.00 L/h
 EVAP_ACID-LSH-01,EVAP_ACID,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EVAP_ACIDLSH-01,PLC-DIGESTER,alarm at 90 %
 EVAP_ACID-LT-01,EVAP_ACID,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EVAP_ACIDLT-01,PLC-DIGESTER,A-M-182 liquid height
 EVAP_ACID-PT-01,EVAP_ACID,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EVAP_ACIDPT-01,PLC-DIGESTER,design 100.0 kPa g
 EVAP_ACID-TE-01,EVAP_ACID,DIGESTER,temperature element,"IEC 60751, 316L thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),EVAP_ACIDTE-01,PLC-DIGESTER,band by service
 EVAP_ACID-TE-90,EVAP_ACID,DIGESTER,"temperature element (SIF, independent)","IEC 60751, own thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),EVAP_ACIDTE-90,PLC-DIGESTER,band by service
+EVAP_BASE-FT-01,EVAP_BASE,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2 L/h,4-20 mA HART (AI),EVAP_BASEFT-01,PLC-DIGESTER,IA-BASE-01 normal 0.92 L/h
+EVAP_BASE-FT-02,EVAP_BASE,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-50 L/h,4-20 mA HART (AI),EVAP_BASEFT-02,PLC-DIGESTER,IA-BASE-PPT normal 20.10 L/h
+EVAP_BASE-FT-03,EVAP_BASE,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),EVAP_BASEFT-03,PLC-DIGESTER,IA-EVAP_BASE-COND normal 33.41 L/h
 EVAP_BASE-LSH-01,EVAP_BASE,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EVAP_BASELSH-01,PLC-DIGESTER,alarm at 90 %
 EVAP_BASE-LT-01,EVAP_BASE,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EVAP_BASELT-01,PLC-DIGESTER,A-M-182 liquid height
 EVAP_BASE-PT-01,EVAP_BASE,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EVAP_BASEPT-01,PLC-DIGESTER,design 100.0 kPa g
 EVAP_BASE-TE-01,EVAP_BASE,DIGESTER,temperature element,"IEC 60751, 316L thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),EVAP_BASETE-01,PLC-DIGESTER,band by service
 EVAP_BASE-TE-90,EVAP_BASE,DIGESTER,"temperature element (SIF, independent)","IEC 60751, own thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),EVAP_BASETE-90,PLC-DIGESTER,band by service
+POLISH_BANK-FT-01,POLISH_BANK,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),POLISH_BANKFT-01,PLC-DIGESTER,IA-POL-01 normal 0.00 L/h
+POLISH_BANK-FT-02,POLISH_BANK,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),POLISH_BANKFT-02,PLC-DIGESTER,IA-POL-02 normal 137.62 L/h
 POLISH_BANK-LSH-01,POLISH_BANK,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),POLISH_BANKLSH-01,PLC-DIGESTER,alarm at 90 %
 POLISH_BANK-LT-01,POLISH_BANK,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),POLISH_BANKLT-01,PLC-DIGESTER,A-M-182 liquid height
 POLISH_BANK-PT-01,POLISH_BANK,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),POLISH_BANKPT-01,PLC-DIGESTER,no design pressure on the graph
 POLISH_BANK-TE-01,POLISH_BANK,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),POLISH_BANKTE-01,PLC-DIGESTER,band by service
 SALT_FEED-PT-01,SALT_FEED,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),SALT_FEEDPT-01,PLC-DIGESTER,no design pressure on the graph
 SALT_FEED-TE-01,SALT_FEED,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),SALT_FEEDTE-01,PLC-DIGESTER,band by service
+EW_1-FT-01,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_1FT-01,PLC-DIGESTER,IA-EW-01 normal 172.47 L/h
+EW_1-FT-02,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),EW_1FT-02,PLC-DIGESTER,IA-HDR-H2-01 normal 0.02 L/h
+EW_1-FT-03,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),EW_1FT-03,PLC-DIGESTER,IA-HX8 normal 0.19 L/h
+EW_1-FT-04,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),EW_1FT-04,PLC-DIGESTER,IA-EW1-H2 normal 0.00 L/h
+EW_1-FT-05,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),EW_1FT-05,PLC-DIGESTER,IA-EW1-CL2 normal 3.68 L/h
 EW_1-LSH-01,EW_1,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_1LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_1-LT-01,EW_1,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_1LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_1-PT-01,EW_1,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_1PT-01,PLC-DIGESTER,no design pressure on the graph
 EW_1-TE-01,EW_1,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_1TE-01,PLC-DIGESTER,band by service
+EW_2-FT-01,EW_2,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_2FT-01,PLC-DIGESTER,IA-EW-02 normal 166.27 L/h
+EW_2-FT-02,EW_2,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),EW_2FT-02,PLC-DIGESTER,IA-HDR-H2-03 normal 0.02 L/h
+EW_2-FT-03,EW_2,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),EW_2FT-03,PLC-DIGESTER,IA-EW2-H2 normal 0.00 L/h
+EW_2-FT-04,EW_2,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),EW_2FT-04,PLC-DIGESTER,IA-EW2-CL2 normal 3.68 L/h
 EW_2-LSH-01,EW_2,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_2LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_2-LT-01,EW_2,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_2LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_2-PT-01,EW_2,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_2PT-01,PLC-DIGESTER,no design pressure on the graph
 EW_2-TE-01,EW_2,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_2TE-01,PLC-DIGESTER,band by service
+EW_9-FT-01,EW_9,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_9FT-01,PLC-DIGESTER,IA-EW-09 normal 146.68 L/h
+EW_9-FT-02,EW_9,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),EW_9FT-02,PLC-DIGESTER,IA-HDR-H2-04 normal 0.02 L/h
+EW_9-FT-03,EW_9,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),EW_9FT-03,PLC-DIGESTER,IA-EW9-CL2 normal 4.63 L/h
 EW_9-LSH-01,EW_9,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_9LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_9-LT-01,EW_9,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_9LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_9-PT-01,EW_9,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_9PT-01,PLC-DIGESTER,no design pressure on the graph
 EW_9-TE-01,EW_9,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_9TE-01,PLC-DIGESTER,band by service
+FLOAT_SINK-FT-01,FLOAT_SINK,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-50 L/h,4-20 mA HART (AI),FLOAT_SINKFT-01,PLC-DIGESTER,IA-WET-FLOAT-01 normal 14.30 L/h
+FLOAT_SINK-FT-02,FLOAT_SINK,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),FLOAT_SINKFT-02,PLC-DIGESTER,IA-PLAST-01 normal 1.38 L/h
 FLOAT_SINK-LSH-01,FLOAT_SINK,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),FLOAT_SINKLSH-01,PLC-DIGESTER,alarm at 90 %
 FLOAT_SINK-LT-01,FLOAT_SINK,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),FLOAT_SINKLT-01,PLC-DIGESTER,A-M-182 liquid height
 FLOAT_SINK-PT-01,FLOAT_SINK,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),FLOAT_SINKPT-01,PLC-DIGESTER,no design pressure on the graph
@@ -79,26 +113,45 @@ LEACH_CSTR_1-LSH-01,LEACH_CSTR_1,DIGESTER,high-level switch,"IEC 60947-5, 316L",
 LEACH_CSTR_1-LT-01,LEACH_CSTR_1,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),LEACH_CSTR_1LT-01,PLC-DIGESTER,A-M-182 liquid height
 LEACH_CSTR_1-PT-01,LEACH_CSTR_1,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),LEACH_CSTR_1PT-01,PLC-DIGESTER,no design pressure on the graph
 LEACH_CSTR_1-TE-01,LEACH_CSTR_1,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LEACH_CSTR_1TE-01,PLC-DIGESTER,band by service
+EW_3-FT-01,EW_3,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_3FT-01,PLC-DIGESTER,IA-EW-03 normal 163.95 L/h
+EW_3-FT-02,EW_3,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),EW_3FT-02,PLC-DIGESTER,IA-EW3-CL2 normal 1.38 L/h
+EW_3-FT-03,EW_3,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.02 L/h,4-20 mA HART (AI),EW_3FT-03,PLC-DIGESTER,IA-EW3-H2B normal 0.01 L/h
 EW_3-LSH-01,EW_3,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_3LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_3-LT-01,EW_3,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_3LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_3-PT-01,EW_3,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_3PT-01,PLC-DIGESTER,no design pressure on the graph
 EW_3-TE-01,EW_3,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_3TE-01,PLC-DIGESTER,band by service
+EW_4-FT-01,EW_4,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_4FT-01,PLC-DIGESTER,IA-EW-10 normal 163.43 L/h
+EW_4-FT-02,EW_4,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.005 L/h,4-20 mA HART (AI),EW_4FT-02,PLC-DIGESTER,IA-EW4-H2 normal 0.00 L/h
+EW_4-FT-03,EW_4,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),EW_4FT-03,PLC-DIGESTER,IA-EW4-N2 normal 0.02 L/h
+EW_4-FT-04,EW_4,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),EW_4FT-04,PLC-DIGESTER,IA-EW4-CL2 normal 0.30 L/h
 EW_4-LSH-01,EW_4,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_4LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_4-LT-01,EW_4,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_4LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_4-PT-01,EW_4,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_4PT-01,PLC-DIGESTER,no design pressure on the graph
 EW_4-TE-01,EW_4,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_4TE-01,PLC-DIGESTER,band by service
+EW_5-FT-01,EW_5,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_5FT-01,PLC-DIGESTER,IA-EW-05 normal 162.91 L/h
+EW_5-FT-02,EW_5,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),EW_5FT-02,PLC-DIGESTER,IA-EW5-CL2 normal 0.31 L/h
+EW_5-FT-03,EW_5,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.005 L/h,4-20 mA HART (AI),EW_5FT-03,PLC-DIGESTER,IA-EW5-H2B normal 0.00 L/h
 EW_5-LSH-01,EW_5,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_5LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_5-LT-01,EW_5,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_5LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_5-PT-01,EW_5,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_5PT-01,PLC-DIGESTER,no design pressure on the graph
 EW_5-TE-01,EW_5,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_5TE-01,PLC-DIGESTER,band by service
+EW_6-FT-01,EW_6,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_6FT-01,PLC-DIGESTER,IA-EW-06 normal 162.35 L/h
+EW_6-FT-02,EW_6,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),EW_6FT-02,PLC-DIGESTER,IA-EW6-CL2 normal 0.34 L/h
+EW_6-FT-03,EW_6,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.005 L/h,4-20 mA HART (AI),EW_6FT-03,PLC-DIGESTER,IA-EW6-H2B normal 0.00 L/h
 EW_6-LSH-01,EW_6,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_6LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_6-LT-01,EW_6,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_6LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_6-PT-01,EW_6,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_6PT-01,PLC-DIGESTER,no design pressure on the graph
 EW_6-TE-01,EW_6,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_6TE-01,PLC-DIGESTER,band by service
+EW_7-FT-01,EW_7,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_7FT-01,PLC-DIGESTER,IA-EW-07 normal 154.99 L/h
+EW_7-FT-02,EW_7,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),EW_7FT-02,PLC-DIGESTER,IA-EW7-CL2 normal 4.37 L/h
+EW_7-FT-03,EW_7,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),EW_7FT-03,PLC-DIGESTER,IA-EW7-H2B normal 0.02 L/h
 EW_7-LSH-01,EW_7,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_7LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_7-LT-01,EW_7,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_7LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_7-PT-01,EW_7,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_7PT-01,PLC-DIGESTER,no design pressure on the graph
 EW_7-TE-01,EW_7,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_7TE-01,PLC-DIGESTER,band by service
+EW_8-FT-01,EW_8,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_8FT-01,PLC-DIGESTER,IA-EW-08 normal 154.47 L/h
+EW_8-FT-02,EW_8,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),EW_8FT-02,PLC-DIGESTER,IA-EW8-CL2 normal 0.31 L/h
+EW_8-FT-03,EW_8,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.005 L/h,4-20 mA HART (AI),EW_8FT-03,PLC-DIGESTER,IA-EW8-H2B normal 0.00 L/h
 EW_8-LSH-01,EW_8,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_8LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_8-LT-01,EW_8,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_8LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_8-PT-01,EW_8,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_8PT-01,PLC-DIGESTER,no design pressure on the graph
@@ -111,6 +164,8 @@ CONTINUOUS_RECYCLE-LSH-01,CONTINUOUS_RECYCLE,DIGESTER,high-level switch,"IEC 609
 CONTINUOUS_RECYCLE-LT-01,CONTINUOUS_RECYCLE,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),CONTINUOUS_RECYCLELT-01,PLC-DIGESTER,A-M-182 liquid height
 CONTINUOUS_RECYCLE-PT-01,CONTINUOUS_RECYCLE,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),CONTINUOUS_RECYCLEPT-01,PLC-DIGESTER,no design pressure on the graph
 CONTINUOUS_RECYCLE-TE-01,CONTINUOUS_RECYCLE,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),CONTINUOUS_RECYCLETE-01,PLC-DIGESTER,band by service
+EVAP_ACID_VS-FT-01,EVAP_ACID_VS,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5e-05 L/h,4-20 mA HART (AI),EVAP_ACID_VSFT-01,PLC-DIGESTER,IA-VS-SPENT normal 0.00 L/h
+EVAP_ACID_VS-FT-02,EVAP_ACID_VS,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.0025 L/h,4-20 mA HART (AI),EVAP_ACID_VSFT-02,PLC-DIGESTER,IA-VS-OFF normal 0.00 L/h
 EVAP_ACID_VS-LSH-01,EVAP_ACID_VS,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EVAP_ACID_VSLSH-01,PLC-DIGESTER,alarm at 90 %
 EVAP_ACID_VS-LT-01,EVAP_ACID_VS,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EVAP_ACID_VSLT-01,PLC-DIGESTER,A-M-182 liquid height
 EVAP_ACID_VS-PT-01,EVAP_ACID_VS,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EVAP_ACID_VSPT-01,PLC-DIGESTER,no design pressure on the graph
@@ -124,6 +179,9 @@ LI_RECOVER-LSH-01,LI_RECOVER,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip
 LI_RECOVER-LT-01,LI_RECOVER,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),LI_RECOVERLT-01,PLC-DIGESTER,A-M-182 liquid height
 LI_RECOVER-PT-01,LI_RECOVER,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),LI_RECOVERPT-01,PLC-DIGESTER,no design pressure on the graph
 LI_RECOVER-TE-01,LI_RECOVER,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LI_RECOVERTE-01,PLC-DIGESTER,band by service
+ZNBR2-FT-01,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2FT-01,PLC-ELEC,S69 normal 31.65 L/h
+ZNBR2-FT-02,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),ZNBR2FT-02,PLC-ELEC,IA-ZNBR-BD normal 0.35 L/h
+ZNBR2-FT-03,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),ZNBR2FT-03,PLC-ELEC,IA-ZNBR-HEAT normal 0.07 L/h
 ZNBR2-LSH-01,ZNBR2,ELEC,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ZNBR2LSH-01,PLC-ELEC,alarm at 90 %
 ZNBR2-LT-01,ZNBR2,ELEC,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),ZNBR2LT-01,PLC-ELEC,A-M-182 liquid height
 ZNBR2-PT-01,ZNBR2,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),ZNBR2PT-01,PLC-ELEC,no design pressure on the graph
@@ -136,20 +194,29 @@ SOL_ARK_60K-PT-01,SOL_ARK_60K,ELEC,pressure transmitter,"ceramic diaphragm, IEC 
 SOL_ARK_60K-TE-01,SOL_ARK_60K,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),SOL_ARK_60KTE-01,PLC-ELEC,band by service
 LOAD_AGG-PT-01,LOAD_AGG,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),LOAD_AGGPT-01,PLC-ELEC,no design pressure on the graph
 LOAD_AGG-TE-01,LOAD_AGG,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LOAD_AGGTE-01,PLC-ELEC,band by service
+FUEL_CELL-FT-01,FUEL_CELL,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),FUEL_CELLFT-01,PLC-ELEC,S52 normal 1.79 L/h
+FUEL_CELL-FT-02,FUEL_CELL,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),FUEL_CELLFT-02,PLC-ELEC,IA-FC-FIX normal 0.00 L/h
+FUEL_CELL-FT-03,FUEL_CELL,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),FUEL_CELLFT-03,PLC-ELEC,IA-FC-LEACH normal 0.01 L/h
 FUEL_CELL-PT-01,FUEL_CELL,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),FUEL_CELLPT-01,PLC-ELEC,no design pressure on the graph
 FUEL_CELL-TE-01,FUEL_CELL,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),FUEL_CELLTE-01,PLC-ELEC,band by service
 PV_ARRAY-PT-01,PV_ARRAY,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),PV_ARRAYPT-01,PLC-ELEC,no design pressure on the graph
 PV_ARRAY-TE-01,PV_ARRAY,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PV_ARRAYTE-01,PLC-ELEC,band by service
 RECTIFIER-PT-01,RECTIFIER,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),RECTIFIERPT-01,PLC-ELEC,no design pressure on the graph
 RECTIFIER-TE-01,RECTIFIER,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),RECTIFIERTE-01,PLC-ELEC,band by service
+ZNBR2_BR2_REGEN-FT-01,ZNBR2_BR2_REGEN,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2_BR2_REGENFT-01,PLC-ELEC,S69B normal 31.65 L/h
 ZNBR2_BR2_REGEN-LSH-01,ZNBR2_BR2_REGEN,ELEC,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ZNBR2_BR2_REGENLSH-01,PLC-ELEC,alarm at 90 %
 ZNBR2_BR2_REGEN-LT-01,ZNBR2_BR2_REGEN,ELEC,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),ZNBR2_BR2_REGENLT-01,PLC-ELEC,A-M-182 liquid height
 ZNBR2_BR2_REGEN-PT-01,ZNBR2_BR2_REGEN,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),ZNBR2_BR2_REGENPT-01,PLC-ELEC,no design pressure on the graph
 ZNBR2_BR2_REGEN-TE-01,ZNBR2_BR2_REGEN,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),ZNBR2_BR2_REGENTE-01,PLC-ELEC,band by service
+WAFER_FAB-FT-01,WAFER_FAB,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),WAFER_FABFT-01,PLC-FAB,S39 normal 0.14 L/h
+WAFER_FAB-FT-02,WAFER_FAB,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),WAFER_FABFT-02,PLC-FAB,S39B normal 0.00 L/h
+WAFER_FAB-FT-03,WAFER_FAB,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),WAFER_FABFT-03,PLC-FAB,IA-FAB-SPENT normal 2.77 L/h
 WAFER_FAB-LSH-01,WAFER_FAB,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WAFER_FABLSH-01,PLC-FAB,alarm at 90 %
 WAFER_FAB-LT-01,WAFER_FAB,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WAFER_FABLT-01,PLC-FAB,A-M-182 liquid height
 WAFER_FAB-PT-01,WAFER_FAB,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WAFER_FABPT-01,PLC-FAB,no design pressure on the graph
 WAFER_FAB-TE-01,WAFER_FAB,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WAFER_FABTE-01,PLC-FAB,band by service
+WET_BENCH-FT-01,WET_BENCH,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),WET_BENCHFT-01,PLC-FAB,S10 normal 3.30 L/h
+WET_BENCH-FT-02,WET_BENCH,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.0005 L/h,4-20 mA HART (AI),WET_BENCHFT-02,PLC-FAB,S38 normal 0.00 L/h
 WET_BENCH-LSH-01,WET_BENCH,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WET_BENCHLSH-01,PLC-FAB,alarm at 90 %
 WET_BENCH-LT-01,WET_BENCH,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WET_BENCHLT-01,PLC-FAB,A-M-182 liquid height
 WET_BENCH-PT-01,WET_BENCH,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WET_BENCHPT-01,PLC-FAB,no design pressure on the graph
@@ -158,6 +225,7 @@ LITHO_ALIGN-PT-01,LITHO_ALIGN,FAB,pressure transmitter,"ceramic diaphragm, IEC 6
 LITHO_ALIGN-TE-01,LITHO_ALIGN,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LITHO_ALIGNTE-01,PLC-FAB,band by service
 LITHO_COAT-PT-01,LITHO_COAT,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),LITHO_COATPT-01,PLC-FAB,no design pressure on the graph
 LITHO_COAT-TE-01,LITHO_COAT,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LITHO_COATTE-01,PLC-FAB,band by service
+WS_AMMONIA-FT-01,WS_AMMONIA,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),WS_AMMONIAFT-01,PLC-FAB,S33 normal 0.13 L/h
 WS_AMMONIA-LSH-01,WS_AMMONIA,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WS_AMMONIALSH-01,PLC-FAB,alarm at 90 %
 WS_AMMONIA-LT-01,WS_AMMONIA,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_AMMONIALT-01,PLC-FAB,A-M-182 liquid height
 WS_AMMONIA-PT-01,WS_AMMONIA,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WS_AMMONIAPT-01,PLC-FAB,no design pressure on the graph
@@ -166,36 +234,46 @@ WS_DOPE-LSH-01,WS_DOPE,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of
 WS_DOPE-LT-01,WS_DOPE,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_DOPELT-01,PLC-FAB,A-M-182 liquid height
 WS_DOPE-PT-01,WS_DOPE,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WS_DOPEPT-01,PLC-FAB,no design pressure on the graph
 WS_DOPE-TE-01,WS_DOPE,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WS_DOPETE-01,PLC-FAB,band by service
+WS_HF_ED-FT-01,WS_HF_ED,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),WS_HF_EDFT-01,PLC-FAB,S31 normal 0.06 L/h
 WS_HF_ED-LSH-01,WS_HF_ED,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WS_HF_EDLSH-01,PLC-FAB,alarm at 90 %
 WS_HF_ED-LT-01,WS_HF_ED,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_HF_EDLT-01,PLC-FAB,A-M-182 liquid height
 WS_HF_ED-PT-01,WS_HF_ED,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WS_HF_EDPT-01,PLC-FAB,no design pressure on the graph
 WS_HF_ED-TE-01,WS_HF_ED,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WS_HF_EDTE-01,PLC-FAB,band by service
+WS_KOH-FT-01,WS_KOH,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.025 L/h,4-20 mA HART (AI),WS_KOHFT-01,PLC-FAB,S35 normal 0.01 L/h
 WS_KOH-LSH-01,WS_KOH,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WS_KOHLSH-01,PLC-FAB,alarm at 90 %
 WS_KOH-LT-01,WS_KOH,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_KOHLT-01,PLC-FAB,A-M-182 liquid height
 WS_KOH-PT-01,WS_KOH,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WS_KOHPT-01,PLC-FAB,no design pressure on the graph
 WS_KOH-TE-01,WS_KOH,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WS_KOHTE-01,PLC-FAB,band by service
+WS_NITRIC-FT-01,WS_NITRIC,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),WS_NITRICFT-01,PLC-FAB,S34 normal 0.05 L/h
+WS_NITRIC-FT-02,WS_NITRIC,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),WS_NITRICFT-02,PLC-FAB,IA-NIT-VENT normal 0.00 L/h
 WS_NITRIC-LSH-01,WS_NITRIC,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WS_NITRICLSH-01,PLC-FAB,alarm at 90 %
 WS_NITRIC-LT-01,WS_NITRIC,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_NITRICLT-01,PLC-FAB,A-M-182 liquid height
 WS_NITRIC-PT-01,WS_NITRIC,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WS_NITRICPT-01,PLC-FAB,no design pressure on the graph
 WS_NITRIC-TE-01,WS_NITRIC,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WS_NITRICTE-01,PLC-FAB,band by service
+WS_PEROX-FT-01,WS_PEROX,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.25 L/h,4-20 mA HART (AI),WS_PEROXFT-01,PLC-FAB,S32 normal 0.12 L/h
 WS_PEROX-LSH-01,WS_PEROX,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WS_PEROXLSH-01,PLC-FAB,alarm at 90 %
 WS_PEROX-LT-01,WS_PEROX,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_PEROXLT-01,PLC-FAB,A-M-182 liquid height
 WS_PEROX-PT-01,WS_PEROX,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WS_PEROXPT-01,PLC-FAB,no design pressure on the graph
 WS_PEROX-TE-01,WS_PEROX,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WS_PEROXTE-01,PLC-FAB,band by service
+WS_PHOS-FT-01,WS_PHOS,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.1 L/h,4-20 mA HART (AI),WS_PHOSFT-01,PLC-FAB,S34B normal 0.03 L/h
+WS_PHOS-FT-02,WS_PHOS,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.001 L/h,4-20 mA HART (AI),WS_PHOSFT-02,PLC-FAB,IA-PHOS-DOPE normal 0.00 L/h
 WS_PHOS-LSH-01,WS_PHOS,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WS_PHOSLSH-01,PLC-FAB,alarm at 90 %
 WS_PHOS-LT-01,WS_PHOS,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_PHOSLT-01,PLC-FAB,A-M-182 liquid height
 WS_PHOS-PT-01,WS_PHOS,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WS_PHOSPT-01,PLC-FAB,no design pressure on the graph
 WS_PHOS-TE-01,WS_PHOS,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WS_PHOSTE-01,PLC-FAB,band by service
+WS_SLURRY-FT-01,WS_SLURRY,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),WS_SLURRYFT-01,PLC-FAB,S37 normal 0.14 L/h
 WS_SLURRY-LSH-01,WS_SLURRY,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WS_SLURRYLSH-01,PLC-FAB,alarm at 90 %
 WS_SLURRY-LT-01,WS_SLURRY,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_SLURRYLT-01,PLC-FAB,A-M-182 liquid height
 WS_SLURRY-PT-01,WS_SLURRY,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WS_SLURRYPT-01,PLC-FAB,no design pressure on the graph
 WS_SLURRY-TE-01,WS_SLURRY,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WS_SLURRYTE-01,PLC-FAB,band by service
+WS_SOLV-FT-01,WS_SOLV,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.02 L/h,4-20 mA HART (AI),WS_SOLVFT-01,PLC-FAB,IA-SOLV-WB normal 0.01 L/h
 WS_SOLV-LSH-01,WS_SOLV,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WS_SOLVLSH-01,PLC-FAB,alarm at 90 %
 WS_SOLV-LT-01,WS_SOLV,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_SOLVLT-01,PLC-FAB,A-M-182 liquid height
 WS_SOLV-PT-01,WS_SOLV,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WS_SOLVPT-01,PLC-FAB,no design pressure on the graph
 WS_SOLV-TE-01,WS_SOLV,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WS_SOLVTE-01,PLC-FAB,band by service
 LITHO_STUB-PT-01,LITHO_STUB,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),LITHO_STUBPT-01,PLC-FAB,no design pressure on the graph
 LITHO_STUB-TE-01,LITHO_STUB,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LITHO_STUBTE-01,PLC-FAB,band by service
+FAB_UPW_TANK-FT-01,FAB_UPW_TANK,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),FAB_UPW_TANKFT-01,PLC-FAB,S27 normal 2.50 L/h
 FAB_UPW_TANK-LSH-01,FAB_UPW_TANK,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),FAB_UPW_TANKLSH-01,PLC-FAB,alarm at 90 %
 FAB_UPW_TANK-LT-01,FAB_UPW_TANK,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),FAB_UPW_TANKLT-01,PLC-FAB,A-M-182 liquid height
 FAB_UPW_TANK-PT-01,FAB_UPW_TANK,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),FAB_UPW_TANKPT-01,PLC-FAB,no design pressure on the graph
@@ -204,6 +282,14 @@ SOLAR_PV_CELL-PT-01,SOLAR_PV_CELL,FAB,pressure transmitter,"ceramic diaphragm, I
 SOLAR_PV_CELL-TE-01,SOLAR_PV_CELL,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),SOLAR_PV_CELLTE-01,PLC-FAB,band by service
 LITHO_DEV-PT-01,LITHO_DEV,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),LITHO_DEVPT-01,PLC-FAB,no design pressure on the graph
 LITHO_DEV-TE-01,LITHO_DEV,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LITHO_DEVTE-01,PLC-FAB,band by service
+GROW_BED-FT-01,GROW_BED,FARM,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),GROW_BEDFT-01,PLC-FARM,S13 normal 0.16 L/h
+GROW_BED-FT-02,GROW_BED,FARM,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),GROW_BEDFT-02,PLC-FARM,S15 normal 0.00 L/h
+GROW_BED-FT-03,GROW_BED,FARM,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.1 L/h,4-20 mA HART (AI),GROW_BEDFT-03,PLC-FARM,S87 normal 0.03 L/h
+GROW_BED-FT-04,GROW_BED,FARM,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),GROW_BEDFT-04,PLC-FARM,FARM_O2_TO_HAB normal 0.00 L/h
+GROW_BED-FT-05,GROW_BED,FARM,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),GROW_BEDFT-05,PLC-FARM,IA-BED-VAP normal 2.81 L/h
+GROW_BED-FT-06,GROW_BED,FARM,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),GROW_BEDFT-06,PLC-FARM,RABBIT_FORAGE normal 0.02 L/h
+GROW_BED-FT-07,GROW_BED,FARM,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.02 L/h,4-20 mA HART (AI),GROW_BEDFT-07,PLC-FARM,NECTAR_FORAGE normal 0.01 L/h
+GROW_BED-FT-08,GROW_BED,FARM,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.1 L/h,4-20 mA HART (AI),GROW_BEDFT-08,PLC-FARM,VERMI_FEED normal 0.04 L/h
 GROW_BED-LSH-01,GROW_BED,FARM,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),GROW_BEDLSH-01,PLC-FARM,alarm at 90 %
 GROW_BED-LT-01,GROW_BED,FARM,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),GROW_BEDLT-01,PLC-FARM,A-M-182 liquid height
 GROW_BED-PT-01,GROW_BED,FARM,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GROW_BEDPT-01,PLC-FARM,no design pressure on the graph
@@ -302,6 +388,8 @@ METAL_STORE-PT-01,METAL_STORE,FOUNDRY,pressure transmitter,"ceramic diaphragm, I
 METAL_STORE-TE-01,METAL_STORE,FOUNDRY,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),METAL_STORETE-01,PLC-FOUNDRY,band by service
 STOCK_OUT-PT-01,STOCK_OUT,FOUNDRY,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),STOCK_OUTPT-01,PLC-FOUNDRY,no design pressure on the graph
 STOCK_OUT-TE-01,STOCK_OUT,FOUNDRY,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),STOCK_OUTTE-01,PLC-FOUNDRY,band by service
+ACID_POLISH_SCRUB-FT-01,ACID_POLISH_SCRUB,GAS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2.5 L/h,4-20 mA HART (AI),ACID_POLISH_SCRUBFT-01,PLC-GAS,S66 normal 1.14 L/h
+ACID_POLISH_SCRUB-FT-02,ACID_POLISH_SCRUB,GAS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5000 L/h,4-20 mA HART (AI),ACID_POLISH_SCRUBFT-02,PLC-GAS,IA-ACID-AIR-RET normal 1562.91 L/h
 ACID_POLISH_SCRUB-LSH-01,ACID_POLISH_SCRUB,GAS,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ACID_POLISH_SCRUBLSH-01,PLC-GAS,alarm at 90 %
 ACID_POLISH_SCRUB-LT-01,ACID_POLISH_SCRUB,GAS,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),ACID_POLISH_SCRUBLT-01,PLC-GAS,A-M-182 liquid height
 ACID_POLISH_SCRUB-PT-01,ACID_POLISH_SCRUB,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),ACID_POLISH_SCRUBPT-01,PLC-GAS,no design pressure on the graph
@@ -313,6 +401,7 @@ ALK_SCRUBBER-LSH-01,ALK_SCRUBBER,GAS,high-level switch,"IEC 60947-5, 316L",trip 
 ALK_SCRUBBER-LT-01,ALK_SCRUBBER,GAS,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),ALK_SCRUBBERLT-01,PLC-GAS,A-M-182 liquid height
 ALK_SCRUBBER-PT-01,ALK_SCRUBBER,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),ALK_SCRUBBERPT-01,PLC-GAS,no design pressure on the graph
 ALK_SCRUBBER-TE-01,ALK_SCRUBBER,GAS,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),ALK_SCRUBBERTE-01,PLC-GAS,band by service
+BAGHOUSE-FT-01,BAGHOUSE,GAS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),BAGHOUSEFT-01,PLC-GAS,IA-BAG-01 normal 0.32 L/h
 BAGHOUSE-PT-01,BAGHOUSE,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),BAGHOUSEPT-01,PLC-GAS,no design pressure on the graph
 BAGHOUSE-TE-01,BAGHOUSE,GAS,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),BAGHOUSETE-01,PLC-GAS,band by service
 H2_DRYER-LSH-01,H2_DRYER,GAS,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),H2_DRYERLSH-01,PLC-GAS,alarm at 90 %
@@ -320,6 +409,10 @@ H2_DRYER-LT-01,H2_DRYER,GAS,level transmitter,"IEC 62828, PTFE lens",0-100 % of 
 H2_DRYER-PT-01,H2_DRYER,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),H2_DRYERPT-01,PLC-GAS,no design pressure on the graph
 H2_DRYER-TE-01,H2_DRYER,GAS,temperature element,"IEC 60751, 316L thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),H2_DRYERTE-01,PLC-GAS,design T 250.0 C
 H2_DRYER-TE-90,H2_DRYER,GAS,"temperature element (SIF, independent)","IEC 60751, own thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),H2_DRYERTE-90,PLC-GAS,design T 250.0 C
+NOX_SCRUB-FT-01,NOX_SCRUB,GAS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-20 L/h,4-20 mA HART (AI),NOX_SCRUBFT-01,PLC-GAS,IA-NOX-H2O normal 9.23 L/h
+NOX_SCRUB-FT-02,NOX_SCRUB,GAS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2 L/h,4-20 mA HART (AI),NOX_SCRUBFT-02,PLC-GAS,IA-NOX-N normal 0.84 L/h
+NOX_SCRUB-FT-03,NOX_SCRUB,GAS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2 L/h,4-20 mA HART (AI),NOX_SCRUBFT-03,PLC-GAS,IA-NOX-CO2 normal 0.90 L/h
+NOX_SCRUB-FT-04,NOX_SCRUB,GAS,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-20 L/h,4-20 mA HART (AI),NOX_SCRUBFT-04,PLC-GAS,IA-NOX-N2 normal 8.19 L/h
 NOX_SCRUB-LSH-01,NOX_SCRUB,GAS,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),NOX_SCRUBLSH-01,PLC-GAS,alarm at 90 %
 NOX_SCRUB-LT-01,NOX_SCRUB,GAS,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),NOX_SCRUBLT-01,PLC-GAS,A-M-182 liquid height
 NOX_SCRUB-PT-01,NOX_SCRUB,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),NOX_SCRUBPT-01,PLC-GAS,no design pressure on the graph
@@ -374,16 +467,24 @@ Q4_B-PT-01,Q4_B,HEAT,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 ba
 Q4_B-TE-01,Q4_B,HEAT,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),Q4_BTE-01,PLC-HEAT,band by service
 MEOH_FERM-PT-01,MEOH_FERM,MEOH,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MEOH_FERMPT-01,PLC-MEOH,no design pressure on the graph
 MEOH_FERM-TE-01,MEOH_FERM,MEOH,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),MEOH_FERMTE-01,PLC-MEOH,band by service
+MEOH_FC-FT-01,MEOH_FC,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),MEOH_FCFT-01,PLC-MEOH,S81 normal 0.30 L/h
+MEOH_FC-FT-02,MEOH_FC,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),MEOH_FCFT-02,PLC-MEOH,S82 normal 0.36 L/h
+MEOH_FC-FT-03,MEOH_FC,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),MEOH_FCFT-03,PLC-MEOH,IA-FC-EXH normal 0.00 L/h
 MEOH_FC-LSH-01,MEOH_FC,MEOH,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),MEOH_FCLSH-01,PLC-MEOH,alarm at 90 %
 MEOH_FC-LT-01,MEOH_FC,MEOH,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),MEOH_FCLT-01,PLC-MEOH,A-M-182 liquid height
 MEOH_FC-PT-01,MEOH_FC,MEOH,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MEOH_FCPT-01,PLC-MEOH,no design pressure on the graph
 MEOH_FC-TE-01,MEOH_FC,MEOH,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),MEOH_FCTE-01,PLC-MEOH,band by service
+MEOH_SYNTH-FT-01,MEOH_SYNTH,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),MEOH_SYNTHFT-01,PLC-MEOH,IA-ESS-MEOH-CHG normal 0.00 L/h
+MEOH_SYNTH-FT-02,MEOH_SYNTH,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),MEOH_SYNTHFT-02,PLC-MEOH,S75 normal 1.44 L/h
+MEOH_SYNTH-FT-03,MEOH_SYNTH,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2 L/h,4-20 mA HART (AI),MEOH_SYNTHFT-03,PLC-MEOH,IA-MEOH-H2O normal 0.81 L/h
 MEOH_SYNTH-PT-01,MEOH_SYNTH,MEOH,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MEOH_SYNTHPT-01,PLC-MEOH,no design pressure on the graph
 MEOH_SYNTH-TE-01,MEOH_SYNTH,MEOH,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),MEOH_SYNTHTE-01,PLC-MEOH,band by service
 MEOH_COND-LSH-01,MEOH_COND,MEOH,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),MEOH_CONDLSH-01,PLC-MEOH,alarm at 90 %
 MEOH_COND-LT-01,MEOH_COND,MEOH,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),MEOH_CONDLT-01,PLC-MEOH,A-M-182 liquid height
 MEOH_COND-PT-01,MEOH_COND,MEOH,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MEOH_CONDPT-01,PLC-MEOH,no design pressure on the graph
 MEOH_COND-TE-01,MEOH_COND,MEOH,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),MEOH_CONDTE-01,PLC-MEOH,band by service
+MEOH_TANK-FT-01,MEOH_TANK,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),MEOH_TANKFT-01,PLC-MEOH,S76 normal 0.21 L/h
+MEOH_TANK-FT-02,MEOH_TANK,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),MEOH_TANKFT-02,PLC-MEOH,IA-MEOH-REST normal 0.05 L/h
 MEOH_TANK-LSH-01,MEOH_TANK,MEOH,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),MEOH_TANKLSH-01,PLC-MEOH,alarm at 90 %
 MEOH_TANK-LT-01,MEOH_TANK,MEOH,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),MEOH_TANKLT-01,PLC-MEOH,A-M-182 liquid height
 MEOH_TANK-PT-01,MEOH_TANK,MEOH,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MEOH_TANKPT-01,PLC-MEOH,no design pressure on the graph
@@ -392,9 +493,11 @@ COLD_MILL-PT-01,COLD_MILL,MFG,pressure transmitter,"ceramic diaphragm, IEC 61298
 COLD_MILL-TE-01,COLD_MILL,MFG,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),COLD_MILLTE-01,PLC-MFG,band by service
 GAS_ATOMIZER-PT-01,GAS_ATOMIZER,MFG,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GAS_ATOMIZERPT-01,PLC-MFG,no design pressure on the graph
 GAS_ATOMIZER-TE-01,GAS_ATOMIZER,MFG,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GAS_ATOMIZERTE-01,PLC-MFG,band by service
+MET_MELT-FT-01,MET_MELT,MFG,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),MET_MELTFT-01,PLC-MFG,S57 normal 0.28 L/h
 MET_MELT-PT-01,MET_MELT,MFG,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MET_MELTPT-01,PLC-MFG,no design pressure on the graph
 MET_MELT-TE-01,MET_MELT,MFG,temperature element,"IEC 60751, 316L thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),MET_MELTTE-01,PLC-MFG,band by service
 MET_MELT-TE-90,MET_MELT,MFG,"temperature element (SIF, independent)","IEC 60751, own thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),MET_MELTTE-90,PLC-MFG,band by service
+MFG_SHOP-FT-01,MFG_SHOP,MFG,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.01 L/h,4-20 mA HART (AI),MFG_SHOPFT-01,PLC-MFG,TEXTILE_HAB normal 0.00 L/h
 MFG_SHOP-LSH-01,MFG_SHOP,MFG,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),MFG_SHOPLSH-01,PLC-MFG,alarm at 90 %
 MFG_SHOP-LT-01,MFG_SHOP,MFG,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),MFG_SHOPLT-01,PLC-MFG,A-M-182 liquid height
 MFG_SHOP-PT-01,MFG_SHOP,MFG,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MFG_SHOPPT-01,PLC-MFG,no design pressure on the graph
@@ -409,14 +512,24 @@ BLOW_MOLD-PT-01,BLOW_MOLD,MFG,pressure transmitter,"ceramic diaphragm, IEC 61298
 BLOW_MOLD-TE-01,BLOW_MOLD,MFG,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),BLOW_MOLDTE-01,PLC-MFG,band by service
 MET_HX_Q4-PT-01,MET_HX_Q4,MFG,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MET_HX_Q4PT-01,PLC-MFG,no design pressure on the graph
 MET_HX_Q4-TE-01,MET_HX_Q4,MFG,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),MET_HX_Q4TE-01,PLC-MFG,band by service
+MET_SCRUB-FT-01,MET_SCRUB,MFG,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.25 L/h,4-20 mA HART (AI),MET_SCRUBFT-01,PLC-MFG,S72 normal 0.10 L/h
+MET_SCRUB-FT-02,MET_SCRUB,MFG,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.002 L/h,4-20 mA HART (AI),MET_SCRUBFT-02,PLC-MFG,S72B normal 0.00 L/h
+MET_SCRUB-FT-03,MET_SCRUB,MFG,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10000 L/h,4-20 mA HART (AI),MET_SCRUBFT-03,PLC-MFG,IA-MET-AIR-RET normal 2983.50 L/h
 MET_SCRUB-LSH-01,MET_SCRUB,MFG,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),MET_SCRUBLSH-01,PLC-MFG,alarm at 90 %
 MET_SCRUB-LT-01,MET_SCRUB,MFG,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),MET_SCRUBLT-01,PLC-MFG,A-M-182 liquid height
 MET_SCRUB-PT-01,MET_SCRUB,MFG,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MET_SCRUBPT-01,PLC-MFG,no design pressure on the graph
 MET_SCRUB-TE-01,MET_SCRUB,MFG,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),MET_SCRUBTE-01,PLC-MFG,band by service
+NUTRIENT_DOSE-FT-01,NUTRIENT_DOSE,NUT,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.25 L/h,4-20 mA HART (AI),NUTRIENT_DOSEFT-01,PLC-NUT,S07 normal 0.10 L/h
+NUTRIENT_DOSE-FT-02,NUTRIENT_DOSE,NUT,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),NUTRIENT_DOSEFT-02,PLC-NUT,NUT_TO_BED normal 0.00 L/h
+NUTRIENT_DOSE-FT-03,NUTRIENT_DOSE,NUT,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2 L/h,4-20 mA HART (AI),NUTRIENT_DOSEFT-03,PLC-NUT,IA-NUT-01 normal 0.58 L/h
+NUTRIENT_DOSE-FT-04,NUTRIENT_DOSE,NUT,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),NUTRIENT_DOSEFT-04,PLC-NUT,IA-NUT-LEACH normal 3.43 L/h
+NUTRIENT_DOSE-FT-05,NUTRIENT_DOSE,NUT,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),NUTRIENT_DOSEFT-05,PLC-NUT,IA-NUT-BED normal 1.31 L/h
+NUTRIENT_DOSE-FT-06,NUTRIENT_DOSE,NUT,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),NUTRIENT_DOSEFT-06,PLC-NUT,IA-SIC-RET normal 0.02 L/h
 NUTRIENT_DOSE-LSH-01,NUTRIENT_DOSE,NUT,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),NUTRIENT_DOSELSH-01,PLC-NUT,alarm at 90 %
 NUTRIENT_DOSE-LT-01,NUTRIENT_DOSE,NUT,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),NUTRIENT_DOSELT-01,PLC-NUT,A-M-182 liquid height
 NUTRIENT_DOSE-PT-01,NUTRIENT_DOSE,NUT,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),NUTRIENT_DOSEPT-01,PLC-NUT,no design pressure on the graph
 NUTRIENT_DOSE-TE-01,NUTRIENT_DOSE,NUT,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),NUTRIENT_DOSETE-01,PLC-NUT,band by service
+HOPPER-FT-01,HOPPER,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),HOPPERFT-01,PLC-OIL,IA-FEED-01 normal 4.28 L/h
 HOPPER-PT-01,HOPPER,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HOPPERPT-01,PLC-OIL,no design pressure on the graph
 HOPPER-TE-01,HOPPER,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),HOPPERTE-01,PLC-OIL,band by service
 AFTERBURNER-PT-01,AFTERBURNER,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),AFTERBURNERPT-01,PLC-OIL,no design pressure on the graph
@@ -427,10 +540,16 @@ OIL_DRYER-LT-01,OIL_DRYER,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % o
 OIL_DRYER-PT-01,OIL_DRYER,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),OIL_DRYERPT-01,PLC-OIL,no design pressure on the graph
 OIL_DRYER-TE-01,OIL_DRYER,OIL,temperature element,"IEC 60751, 316L thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),OIL_DRYERTE-01,PLC-OIL,band by service
 OIL_DRYER-TE-90,OIL_DRYER,OIL,"temperature element (SIF, independent)","IEC 60751, own thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),OIL_DRYERTE-90,PLC-OIL,band by service
+OIL_FRAC-FT-01,OIL_FRAC,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),OIL_FRACFT-01,PLC-OIL,CUT-1 normal 0.31 L/h
+OIL_FRAC-FT-02,OIL_FRAC,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),OIL_FRACFT-02,PLC-OIL,CUT-2 normal 0.41 L/h
+OIL_FRAC-FT-03,OIL_FRAC,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),OIL_FRACFT-03,PLC-OIL,CUT-3 normal 0.26 L/h
+OIL_FRAC-FT-04,OIL_FRAC,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),OIL_FRACFT-04,PLC-OIL,CUT-4 normal 0.24 L/h
+OIL_FRAC-FT-05,OIL_FRAC,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),OIL_FRACFT-05,PLC-OIL,IA-OIL-03 normal 0.21 L/h
 OIL_FRAC-LSH-01,OIL_FRAC,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),OIL_FRACLSH-01,PLC-OIL,alarm at 90 %
 OIL_FRAC-LT-01,OIL_FRAC,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),OIL_FRACLT-01,PLC-OIL,A-M-182 liquid height
 OIL_FRAC-PT-01,OIL_FRAC,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),OIL_FRACPT-01,PLC-OIL,no design pressure on the graph
 OIL_FRAC-TE-01,OIL_FRAC,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),OIL_FRACTE-01,PLC-OIL,band by service
+OIL_PYRO-FT-01,OIL_PYRO,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),OIL_PYROFT-01,PLC-OIL,IA-OIL-02 normal 1.39 L/h
 OIL_PYRO-LSH-01,OIL_PYRO,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),OIL_PYROLSH-01,PLC-OIL,alarm at 90 %
 OIL_PYRO-LT-01,OIL_PYRO,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),OIL_PYROLT-01,PLC-OIL,A-M-182 liquid height
 OIL_PYRO-PT-01,OIL_PYRO,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),OIL_PYROPT-01,PLC-OIL,no design pressure on the graph
@@ -440,14 +559,19 @@ PROD_C11_C18-LSH-01,PROD_C11_C18,OIL,high-level switch,"IEC 60947-5, 316L",trip 
 PROD_C11_C18-LT-01,PROD_C11_C18,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),PROD_C11_C18LT-01,PLC-OIL,A-M-182 liquid height
 PROD_C11_C18-PT-01,PROD_C11_C18,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),PROD_C11_C18PT-01,PLC-OIL,no design pressure on the graph
 PROD_C11_C18-TE-01,PROD_C11_C18,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PROD_C11_C18TE-01,PLC-OIL,band by service
+PROD_C19_C28-FT-01,PROD_C19_C28,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),PROD_C19_C28FT-01,PLC-OIL,CUT-3-OUT normal 0.16 L/h
+PROD_C19_C28-FT-02,PROD_C19_C28,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),PROD_C19_C28FT-02,PLC-OIL,IA-C19-SHIP normal 0.09 L/h
 PROD_C19_C28-LSH-01,PROD_C19_C28,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),PROD_C19_C28LSH-01,PLC-OIL,alarm at 90 %
 PROD_C19_C28-LT-01,PROD_C19_C28,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),PROD_C19_C28LT-01,PLC-OIL,A-M-182 liquid height
 PROD_C19_C28-PT-01,PROD_C19_C28,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),PROD_C19_C28PT-01,PLC-OIL,no design pressure on the graph
 PROD_C19_C28-TE-01,PROD_C19_C28,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PROD_C19_C28TE-01,PLC-OIL,band by service
+PROD_C29-FT-01,PROD_C29,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),PROD_C29FT-01,PLC-OIL,C29_RECYCLE normal 0.24 L/h
 PROD_C29-LSH-01,PROD_C29,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),PROD_C29LSH-01,PLC-OIL,alarm at 90 %
 PROD_C29-LT-01,PROD_C29,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),PROD_C29LT-01,PLC-OIL,A-M-182 liquid height
 PROD_C29-PT-01,PROD_C29,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),PROD_C29PT-01,PLC-OIL,no design pressure on the graph
 PROD_C29-TE-01,PROD_C29,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PROD_C29TE-01,PLC-OIL,band by service
+PROD_C5_C10-FT-01,PROD_C5_C10,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),PROD_C5_C10FT-01,PLC-OIL,CUT-1-OUT normal 0.00 L/h
+PROD_C5_C10-FT-02,PROD_C5_C10,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),PROD_C5_C10FT-02,PLC-OIL,IA-C5-SHIP normal 0.29 L/h
 PROD_C5_C10-LSH-01,PROD_C5_C10,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),PROD_C5_C10LSH-01,PLC-OIL,alarm at 90 %
 PROD_C5_C10-LT-01,PROD_C5_C10,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),PROD_C5_C10LT-01,PLC-OIL,A-M-182 liquid height
 PROD_C5_C10-PT-01,PROD_C5_C10,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),PROD_C5_C10PT-01,PLC-OIL,no design pressure on the graph
@@ -498,6 +622,10 @@ POLY_STOCK-PT-01,POLY_STOCK,POLYMERS,pressure transmitter,"ceramic diaphragm, IE
 POLY_STOCK-TE-01,POLY_STOCK,POLYMERS,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),POLY_STOCKTE-01,PLC-POLYMERS,band by service
 HYDRO_SET-PT-01,HYDRO_SET,PUMPED_HYDRO,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HYDRO_SETPT-01,PLC-PUMPED_HYDRO,no design pressure on the graph
 HYDRO_SET-TE-01,HYDRO_SET,PUMPED_HYDRO,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),HYDRO_SETTE-01,PLC-PUMPED_HYDRO,band by service
+BMED_UPW_POLISH-FT-01,BMED_UPW_POLISH,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),BMED_UPW_POLISHFT-01,PLC-WTR,S01 normal 2.80 L/h
+BMED_UPW_POLISH-FT-02,BMED_UPW_POLISH,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),BMED_UPW_POLISHFT-02,PLC-WTR,IA-UPW-FAB normal 2.50 L/h
+BMED_UPW_POLISH-FT-03,BMED_UPW_POLISH,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-20 L/h,4-20 mA HART (AI),BMED_UPW_POLISHFT-03,PLC-WTR,IA-UPW-REMIN normal 8.62 L/h
+BMED_UPW_POLISH-FT-04,BMED_UPW_POLISH,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),BMED_UPW_POLISHFT-04,PLC-WTR,IA-UPW-REJ normal 0.25 L/h
 BMED_UPW_POLISH-LSH-01,BMED_UPW_POLISH,WTR,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),BMED_UPW_POLISHLSH-01,PLC-WTR,alarm at 90 %
 BMED_UPW_POLISH-LT-01,BMED_UPW_POLISH,WTR,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),BMED_UPW_POLISHLT-01,PLC-WTR,A-M-182 liquid height
 BMED_UPW_POLISH-PT-01,BMED_UPW_POLISH,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),BMED_UPW_POLISHPT-01,PLC-WTR,no design pressure on the graph
@@ -506,6 +634,18 @@ CATCH_TANK-LSH-01,CATCH_TANK,WTR,high-level switch,"IEC 60947-5, 316L",trip at 9
 CATCH_TANK-LT-01,CATCH_TANK,WTR,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),CATCH_TANKLT-01,PLC-WTR,A-M-182 liquid height
 CATCH_TANK-PT-01,CATCH_TANK,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),CATCH_TANKPT-01,PLC-WTR,no design pressure on the graph
 CATCH_TANK-TE-01,CATCH_TANK,WTR,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),CATCH_TANKTE-01,PLC-WTR,band by service
+ROOF_TANK-FT-01,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),ROOF_TANKFT-01,PLC-WTR,IA-ESS-HYDRO-DIS normal 0.00 L/h
+ROOF_TANK-FT-02,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-20 L/h,4-20 mA HART (AI),ROOF_TANKFT-02,PLC-WTR,S21 normal 5.03 L/h
+ROOF_TANK-FT-03,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),ROOF_TANKFT-03,PLC-WTR,S22 normal 0.00 L/h
+ROOF_TANK-FT-04,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),ROOF_TANKFT-04,PLC-WTR,IA-BED-H2O normal 1.83 L/h
+ROOF_TANK-FT-05,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-20 L/h,4-20 mA HART (AI),ROOF_TANKFT-05,PLC-WTR,IA-NOX-HAB normal 8.64 L/h
+ROOF_TANK-FT-06,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2.5 L/h,4-20 mA HART (AI),ROOF_TANKFT-06,PLC-WTR,IA-FLUE-QUENCH normal 1.01 L/h
+ROOF_TANK-FT-07,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.25 L/h,4-20 mA HART (AI),ROOF_TANKFT-07,PLC-WTR,IA-PEROX-H2O normal 0.12 L/h
+ROOF_TANK-FT-08,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),ROOF_TANKFT-08,PLC-WTR,IA-CHICK-H2O normal 0.01 L/h
+ROOF_TANK-FT-09,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2.5 L/h,4-20 mA HART (AI),ROOF_TANKFT-09,PLC-WTR,IA-AQUA-TOPUP normal 1.14 L/h
+ROOF_TANK-FT-10,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),ROOF_TANKFT-10,PLC-WTR,IA-DUCK-H2O normal 0.08 L/h
+ROOF_TANK-FT-11,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),ROOF_TANKFT-11,PLC-WTR,IA-WASH-FEED normal 0.00 L/h
+ROOF_TANK-FT-12,ROOF_TANK,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.02 L/h,4-20 mA HART (AI),ROOF_TANKFT-12,PLC-WTR,QUAIL_H2O normal 0.01 L/h
 ROOF_TANK-LSH-01,ROOF_TANK,WTR,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ROOF_TANKLSH-01,PLC-WTR,alarm at 90 %
 ROOF_TANK-LT-01,ROOF_TANK,WTR,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),ROOF_TANKLT-01,PLC-WTR,A-M-182 liquid height
 ROOF_TANK-PT-01,ROOF_TANK,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),ROOF_TANKPT-01,PLC-WTR,no design pressure on the graph
@@ -514,16 +654,24 @@ BLACK_DIGEST-LSH-01,BLACK_DIGEST,WTR,high-level switch,"IEC 60947-5, 316L",trip 
 BLACK_DIGEST-LT-01,BLACK_DIGEST,WTR,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),BLACK_DIGESTLT-01,PLC-WTR,A-M-182 liquid height
 BLACK_DIGEST-PT-01,BLACK_DIGEST,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),BLACK_DIGESTPT-01,PLC-WTR,no design pressure on the graph
 BLACK_DIGEST-TE-01,BLACK_DIGEST,WTR,temperature element,"IEC 60751, 316L thermowell","0 to 600 C (Pt100 to 600 C, IEC 60751)",4-20 mA HART (AI),BLACK_DIGESTTE-01,PLC-WTR,band by service
+REMIN-FT-01,REMIN,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),REMINFT-01,PLC-WTR,S26 normal 0.42 L/h
+REMIN-FT-02,REMIN,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-20 L/h,4-20 mA HART (AI),REMINFT-02,PLC-WTR,IA-POT-01 normal 8.20 L/h
 REMIN-LSH-01,REMIN,WTR,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),REMINLSH-01,PLC-WTR,alarm at 90 %
 REMIN-LT-01,REMIN,WTR,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),REMINLT-01,PLC-WTR,A-M-182 liquid height
 REMIN-PT-01,REMIN,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),REMINPT-01,PLC-WTR,no design pressure on the graph
 REMIN-TE-01,REMIN,WTR,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),REMINTE-01,PLC-WTR,band by service
+VCD_TRAIN-FT-01,VCD_TRAIN,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-50 L/h,4-20 mA HART (AI),VCD_TRAINFT-01,PLC-WTR,S25 normal 14.17 L/h
+VCD_TRAIN-FT-02,VCD_TRAIN,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-2 L/h,4-20 mA HART (AI),VCD_TRAINFT-02,PLC-WTR,S28 normal 0.74 L/h
+VCD_TRAIN-FT-03,VCD_TRAIN,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),VCD_TRAINFT-03,PLC-WTR,IA-VCD-BD normal 0.28 L/h
 VCD_TRAIN-LSH-01,VCD_TRAIN,WTR,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),VCD_TRAINLSH-01,PLC-WTR,alarm at 90 %
 VCD_TRAIN-LT-01,VCD_TRAIN,WTR,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),VCD_TRAINLT-01,PLC-WTR,A-M-182 liquid height
 VCD_TRAIN-PT-01,VCD_TRAIN,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),VCD_TRAINPT-01,PLC-WTR,no design pressure on the graph
 VCD_TRAIN-TE-01,VCD_TRAIN,WTR,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),VCD_TRAINTE-01,PLC-WTR,band by service
 GW_INTAKE-PT-01,GW_INTAKE,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GW_INTAKEPT-01,PLC-WTR,no design pressure on the graph
 GW_INTAKE-TE-01,GW_INTAKE,WTR,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GW_INTAKETE-01,PLC-WTR,band by service
+GREY_TREAT-FT-01,GREY_TREAT,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),GREY_TREATFT-01,PLC-WTR,S29 normal 4.35 L/h
+GREY_TREAT-FT-02,GREY_TREAT,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-25 L/h,4-20 mA HART (AI),GREY_TREATFT-02,PLC-WTR,IA-GREY-01 normal 10.78 L/h
+GREY_TREAT-FT-03,GREY_TREAT,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),GREY_TREATFT-03,PLC-WTR,IA-GREY-RET normal 0.00 L/h
 GREY_TREAT-LSH-01,GREY_TREAT,WTR,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),GREY_TREATLSH-01,PLC-WTR,alarm at 90 %
 GREY_TREAT-LT-01,GREY_TREAT,WTR,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),GREY_TREATLT-01,PLC-WTR,A-M-182 liquid height
 GREY_TREAT-PT-01,GREY_TREAT,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GREY_TREATPT-01,PLC-WTR,no design pressure on the graph
@@ -562,7 +710,6 @@ GW_INTAKE-FT-01,GW_INTAKE,WTR,flow transmitter,"electromagnetic, PFA liner, Hast
 GW_INTAKE-CT-01,GW_INTAKE,WTR,conductivity transmitter,"inductive conductivity, IEC 60746-1",0-2000 uS/cm,4-20 mA HART (AI),GW_INTAKECT-01,PLC-WTR,"RO product quality watch; well water moderately mineralised with high silica, fluoride and arsenic (USGS_DV_GW)"
 EVAP_ACID_VS-AE-01,EVAP_ACID_VS,DIGESTER,pH analyzer,"glass electrode pH, IEC 60746-2",0-14 pH,4-20 mA HART (AI),EVAP_ACID_VSAE-01,PLC-DIGESTER,scrub liquor: NaOH 2 M bleed IA-VS-NAOH 0.5 g/d
 EVAP_ACID_VS-AE-02,EVAP_ACID_VS,DIGESTER,ORP analyzer,"ORP electrode, IEC 60746-2",-1000 to +1000 mV,4-20 mA HART (AI),EVAP_ACID_VSAE-02,PLC-DIGESTER,acid-gas breakthrough watch: IA-VS-OFF 0.029 kg/d scrubbed vent
-EVAP_ACID_VS-FT-01,EVAP_ACID_VS,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-700 L/h,4-20 mA HART (AI),EVAP_ACID_VSFT-01,PLC-DIGESTER,sump recirculation 0.35 m3/h (AQS-INV-001 motor inventory)
 P_CA-LT-01,P_CA,DIGESTER,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),P_CALT-01,PLC-DIGESTER,standby Ca precipitator: PCA_TO_GREASE (rate pending assay)
 HDR_H2-PT-01,HDR_H2,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HDR_H2PT-01,PLC-GAS,H2 pool header: IA-HDR-H2-02 1.98 kg/d max feed; no design pressure on the graph
 HDR_O2-PT-01,HDR_O2,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HDR_O2PT-01,PLC-GAS,O2 pool header: S83 33.2 kg/d product + returns; no design pressure on the graph

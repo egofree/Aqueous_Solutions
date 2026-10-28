@@ -1,27 +1,27 @@
 item,description,qty,material,basis
 1,Body / envelope 600 x 600 x 600 mm,1,PE (rotomoulded / fabricated) (graph node material).,docs-authority/duties/NUTRIENT_DOSE.md
-2,Process nozzle DN15,10,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
-3,"Motor: on/off valve IA-NUT-01 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
-4,"Motor: on/off valve IA-NUT-BED (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
-5,"Motor: on/off valve IA-NUT-LEACH (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
-6,"Motor: on/off valve IA-SIC-RET (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
-7,"Motor: on/off valve S07 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
-8,"Motor: transfer pump IA-NUT-01 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-9,"Motor: transfer pump IA-NUT-BED to GROW_BED (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-10,"Motor: transfer pump IA-NUT-LEACH to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-11,"Motor: transfer pump IA-SIC-RET to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-12,"Motor: transfer pump S07 to GROW_BED (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-13,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+2,Process nozzle DN15,9,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
+3,Process nozzle DN50,1,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
+4,"Motor: on/off valve IA-NUT-01 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
+5,"Motor: on/off valve IA-NUT-BED (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
+6,"Motor: on/off valve IA-NUT-LEACH (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
+7,"Motor: on/off valve IA-SIC-RET (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
+8,"Motor: on/off valve S07 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
+9,"Motor: transfer pump IA-NUT-01 to VCD_TRAIN (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+10,"Motor: transfer pump IA-NUT-BED to GROW_BED (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+11,"Motor: transfer pump IA-NUT-LEACH to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+12,"Motor: transfer pump IA-SIC-RET to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+13,"Motor: transfer pump S07 to GROW_BED (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 14,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 15,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 16,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 17,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-18,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+18,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 19,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 20,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 21,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 22,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-23,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+23,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 24,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 25,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 26,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
@@ -31,12 +31,43 @@ item,description,qty,material,basis
 30,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 31,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 32,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-33,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
+33,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
 34,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
 35,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
 36,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
 37,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
-38,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-39,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-40,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-41,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+38,electronics: solenoid driver channel 24 V DC,1,IEC 61131-2 DO,AQS-INV-004
+39,fastener: anchor bolt M10,6,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+40,fastener: anchor bolt M10,8,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+41,fastener: anchor bolt M10,70,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+42,fastener: anchor bolt M10,70,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+43,fastener: anchor bolt M10,8,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+44,fastener: anchor bolt M10,70,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+45,instrument: flow transmitter DN50,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+46,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+47,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+48,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+49,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+50,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
+51,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+52,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+53,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+54,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+55,support: pipe clamp DN50,3,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+56,support: pipe clamp DN15,4,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+57,support: pipe clamp DN15,35,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+58,support: pipe clamp DN15,35,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+59,support: pipe clamp DN15,4,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+60,support: pipe clamp DN15,35,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+61,valve: check valve DN50,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
+62,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
+63,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
+64,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
+65,valve: check valve DN15,1,"PP swing/ball check valve with HDPE stub ends, ISO 16137",AQS-INV-004
+66,valve: check valve DN15,1,"CPVC true-union swing/ball check valve, FKM seals",AQS-INV-004
+67,valve: isolation valve DN50,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+68,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+69,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+70,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004
+71,valve: isolation valve DN15,2,"PP ball valve with HDPE stub ends, ISO 16135",AQS-INV-004
+72,valve: isolation valve DN15,2,"CPVC true-union ball valve, MSS SP-122, FKM seals",AQS-INV-004

@@ -36,7 +36,7 @@ Basis: NEC 2026 110.26(A)(1)-(2); NFPA 101 (2027) 7.3.4.1.1 and IBC 2027 1018.5 
 | FORM | L0 | none |
 | MEAM | L0 | none |
 
-Rows checked for access: 153; rows without a 914 mm face: 13.
+Rows checked for access: 172; rows without a 914 mm face: 13.
 
 Failing items: 13.
 

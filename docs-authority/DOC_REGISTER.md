@@ -193,11 +193,13 @@ Table 3.1. Document numbers in use
 | AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | B | 2026-10-25 | Pipe inventory | current |
 | AQS-INV-004 | `docs-authority/inventory/OTHER_INVENTORY.md` | B | 2026-10-25 | Other building blocks inventory | current |
 | AQS-INV-005 | `docs-authority/inventory/MOTOR_DESIGNS.md` | A | 2026-10-15 | Motor family designs | current |
-| AQS-INV-006 | `docs-authority/PIPE_SPECS.md` | B | — | Pipe classes (AQS-PIP-003) | current |
+| AQS-INV-006 | `docs-authority/PIPE_SPECS.md` | A | 2026-10-21 | Pipe family production plans | current |
 | AQS-INV-007 | `docs-authority/WIRE_SPECS.md` | C | 2026-10-21 | Wire family specifications and production plans | current |
 | AQS-INV-008 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | B | 2026-10-25 | Motor first articles: drawings, traveller and type-test rig | current |
 | AQS-INV-009 | `docs-authority/BLOCK_FAMILY_PLANS.md` | A | 2026-10-21 | Building-block family production plans | current |
 | AQS-IO-FOUNDRY | `notes/FOUNDRY_IO.md` | A | 2026-10-16 | FOUNDRY sector — inputs and outputs | current |
+| AQS-ISO-001 | `docs-authority/ISO_ROUTES.md` | B | 2026-10-28 | Placement routes | current |
+| AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | — | — | Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27) | current |
 | AQS-LIFE-001 | `docs-authority/LIFE_FITOUT_PLAN.md` | B | 2026-10-01 | Habitation and farm fit-out plan | current |
 | AQS-LIT-ASSAY | `notes/LIT_ASSAY.md` | A | 2026-10-16 | Literature compositions for missing assays | current |
 | AQS-LITH-001 | `docs-authority/ALIGNER.md` | C | 2026-10-11 | Contact aligner | current |
@@ -235,7 +237,7 @@ Table 3.1. Document numbers in use
 | AQS-PIP-002 | `docs-authority/LIFE_HEADERS.md` | B | 2026-10-25 | Life-header racks | current |
 | AQS-PIP-003 | `docs-authority/PIPING_CLASSES.md` | C | 2026-10-25 | Piping class sheets | current |
 | AQS-PIP-004 | `docs-authority/LINE_LIST.md` | C | 2026-10-21 | Plant line list | current |
-| AQS-PIP-005 | `docs-authority/SUPPORTS.md` | B | — | Pipe supports and thermal flexibility (AQS-PIP-005) | current |
+| AQS-PIP-005 | `docs-authority/SUPPORTS.md` | A | 2026-10-15 | Pipe supports and thermal flexibility | current |
 | AQS-PIP-006 | `docs-authority/PIPES.md` | — | — | Pipe junctions | current |
 | AQS-PLACE-SEED-001 | `docs-authority/MVS_PITCH_PASS.md` | — | 2026-10-02 | Pitch pass — yard through water stubs | current |
 | AQS-PLAN-001 | `docs-authority/internal/DESIGN_PLAN.md` | B | 2026-10-09 | Design plan | superseded by AQS-PLAN-007 |

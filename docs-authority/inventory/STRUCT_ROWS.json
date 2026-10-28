@@ -792,6 +792,166 @@
 "foot_m2": 1.17
 },
 {
+"unit": "DUCKWEED",
+"level": "L1",
+"empty_kg": 31921.1,
+"op_kg": 31921.1,
+"test_kg": 31921.1,
+"foot_m2": 304.01
+},
+{
+"unit": "AQUA_TANK",
+"level": "L1",
+"empty_kg": 381.2,
+"op_kg": 381.2,
+"test_kg": 381.2,
+"foot_m2": 2.31
+},
+{
+"unit": "GROWBED_A",
+"level": "L1",
+"empty_kg": 567.0,
+"op_kg": 567.0,
+"test_kg": 567.0,
+"foot_m2": 7.56
+},
+{
+"unit": "GROWBED_B",
+"level": "L1",
+"empty_kg": 567.0,
+"op_kg": 567.0,
+"test_kg": 567.0,
+"foot_m2": 7.56
+},
+{
+"unit": "BSFL_BIN",
+"level": "L1",
+"empty_kg": 236.3,
+"op_kg": 236.3,
+"test_kg": 236.3,
+"foot_m2": 2.25
+},
+{
+"unit": "FEED_PREP",
+"level": "L1",
+"empty_kg": 298.4,
+"op_kg": 298.4,
+"test_kg": 298.4,
+"foot_m2": 1.17
+},
+{
+"unit": "AQUA_UV",
+"level": "L1",
+"empty_kg": 15.8,
+"op_kg": 15.8,
+"test_kg": 15.8,
+"foot_m2": 0.14
+},
+{
+"unit": "CHICKEN_COOP",
+"level": "L1",
+"empty_kg": 926.3,
+"op_kg": 926.3,
+"test_kg": 926.3,
+"foot_m2": 3.25
+},
+{
+"unit": "DUCK_PEN",
+"level": "L1",
+"empty_kg": 633.8,
+"op_kg": 633.8,
+"test_kg": 633.8,
+"foot_m2": 3.25
+},
+{
+"unit": "QUAIL_CAGE",
+"level": "L1",
+"empty_kg": 232.1,
+"op_kg": 232.1,
+"test_kg": 232.1,
+"foot_m2": 0.91
+},
+{
+"unit": "RABBIT_HUTCH",
+"level": "L1",
+"empty_kg": 319.2,
+"op_kg": 319.2,
+"test_kg": 319.2,
+"foot_m2": 1.33
+},
+{
+"unit": "BEE_HIVE",
+"level": "L1",
+"empty_kg": 49.5,
+"op_kg": 49.5,
+"test_kg": 49.5,
+"foot_m2": 0.3
+},
+{
+"unit": "VERMI_BIN",
+"level": "L1",
+"empty_kg": 207.9,
+"op_kg": 207.9,
+"test_kg": 207.9,
+"foot_m2": 2.31
+},
+{
+"unit": "GALLEY",
+"level": "L1",
+"empty_kg": 4320.0,
+"op_kg": 4320.0,
+"test_kg": 4320.0,
+"foot_m2": 12.0
+},
+{
+"unit": "WASHROOM",
+"level": "L1",
+"empty_kg": 2160.0,
+"op_kg": 2160.0,
+"test_kg": 2160.0,
+"foot_m2": 6.0
+},
+{
+"unit": "MEDICAL",
+"level": "L1",
+"empty_kg": 2160.0,
+"op_kg": 2160.0,
+"test_kg": 2160.0,
+"foot_m2": 6.0
+},
+{
+"unit": "COMMON_AREA",
+"level": "L1",
+"empty_kg": 3600.0,
+"op_kg": 3600.0,
+"test_kg": 3600.0,
+"foot_m2": 10.0
+},
+{
+"unit": "SLEEP_QUARTERS",
+"level": "L1",
+"empty_kg": 5760.0,
+"op_kg": 5760.0,
+"test_kg": 5760.0,
+"foot_m2": 16.0
+},
+{
+"unit": "REC_DAYROOM",
+"level": "L1",
+"empty_kg": 7200.0,
+"op_kg": 7200.0,
+"test_kg": 7200.0,
+"foot_m2": 20.0
+},
+{
+"unit": "POLY_FIBER",
+"level": "L0",
+"empty_kg": 1148.6,
+"op_kg": 1148.6,
+"test_kg": 1148.6,
+"foot_m2": 4.03
+},
+{
 "unit": "GROW_BED/R1",
 "level": "L1",
 "empty_kg": 1090.8,

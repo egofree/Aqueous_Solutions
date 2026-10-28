@@ -24,9 +24,10 @@ def test_doc_header_and_rules():
 def test_one_plan_per_roster_lift():
     src = open(DOC).read()
     plans = re.findall(r'^### Plan (\d+): (\S+) to (L-?\d+|ROOF)$', src, re.M)
-    assert len(plans) == 15
+    ## one plan per roster lift: the census is the roster's, not a frozen number
     ## roster rows agree with the plans, same order and numbering
     roster = re.findall(r'^\| (\d+) \| (L-?\d+|ROOF) \| (\S+) \| \d+ \| \d+ \| [\d.]+ \| [\d.]+ \|$', src, re.M)
+    assert len(plans) == len(roster)
     assert [(n, u, lv) for n, lv, u in roster] == plans
     ## every planned unit is a heavy lift of the AQS-ASM-002 sequence
     seq = open(SEQ).read()

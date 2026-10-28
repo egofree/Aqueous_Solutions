@@ -1,7 +1,7 @@
 {
   "schema": "aqs-placement-table-1.0",
   "doc_id": "AQS-PLACE-SEED-001",
-  "revision": "L",
+  "revision": "M",
   "date": "2026-10-15",
   "source": "AQS-BLD-001 Rev F \u00a76 plus params.py SCALE_M=1.0 plus AQS-HSE-001. Block origins are not intra-aisle pitches. Unit rows below are the pitch pass.",
   "datums_mm": {
@@ -229,11 +229,11 @@
         0
       ],
       "size_mm": [
-        12000,
+        32000,
         18000,
         4500
       ],
-      "source": "params.py FARM_X/Y/Z",
+      "source": "params.py FARM_X/Y/Z; Rev M 2026-10-28: the block extends X 12000 -> 32000 for the A-M-420 raceway revision (the 300 m2 basin is 30.1 m long)",
       "unit_ids": [
         "GROW_BED",
         "NUTRIENT_DOSE"
@@ -1867,6 +1867,306 @@
         780
       ],
       "source": "X-SAN-01 AQS-DUTY-063: HAB sanitation room (west wall, 1 h walls, own exhaust, negative to HAB corridor); >= 7.62 m from every FARM unit."
+    },
+    {
+      "unit_id": "DUCKWEED",
+      "level": "L1",
+      "origin_mm": [
+        12000,
+        0,
+        0
+      ],
+      "size_mm": [
+        30100,
+        10100,
+        700
+      ],
+      "source": "A-M-420 raceway basin 300 m2 (30.1 x 10.1 x 0.7 m lined basin, the FARM block extends to fit); EPDM liner per sec3"
+    },
+    {
+      "unit_id": "AQUA_TANK",
+      "level": "L1",
+      "origin_mm": [
+        12000,
+        10100,
+        0
+      ],
+      "size_mm": [
+        2100,
+        1100,
+        1100
+      ],
+      "source": "A-M-415: 2.0 m3 at the 60 kg / 30 kg-per-m3 stocking class (TECHTREE tilapia)"
+    },
+    {
+      "unit_id": "GROWBED_A",
+      "level": "L1",
+      "origin_mm": [
+        15400,
+        10100,
+        0
+      ],
+      "size_mm": [
+        3600,
+        2100,
+        500
+      ],
+      "source": "A-M-415: the aerobic media bed, 7 m2 of the dual-root-zone duty"
+    },
+    {
+      "unit_id": "GROWBED_B",
+      "level": "L1",
+      "origin_mm": [
+        19100,
+        10100,
+        0
+      ],
+      "size_mm": [
+        3600,
+        2100,
+        500
+      ],
+      "source": "A-M-415: the anaerobic mineralisation bed, in series with GROWBED_A"
+    },
+    {
+      "unit_id": "BSFL_BIN",
+      "level": "L1",
+      "origin_mm": [
+        12000,
+        12300,
+        0
+      ],
+      "size_mm": [
+        2500,
+        900,
+        700
+      ],
+      "source": "A-M-418 Rev M: 2 x 5 kg/d-class bins at the 8.21 kg/d wet feedstock"
+    },
+    {
+      "unit_id": "FEED_PREP",
+      "level": "L1",
+      "origin_mm": [
+        14600,
+        12300,
+        0
+      ],
+      "size_mm": [
+        1300,
+        900,
+        1700
+      ],
+      "source": "A-M-426: mixer + grinder + HP drier cabinet at the 0.6 kW duty"
+    },
+    {
+      "unit_id": "AQUA_UV",
+      "level": "L1",
+      "origin_mm": [
+        16000,
+        12300,
+        0
+      ],
+      "size_mm": [
+        400,
+        350,
+        750
+      ],
+      "source": "A-M-428: inline sanitizer on the loop bypass at the 0.04 kW lamp class"
+    },
+    {
+      "unit_id": "CHICKEN_COOP",
+      "level": "L1",
+      "origin_mm": [
+        16500,
+        12300,
+        0
+      ],
+      "size_mm": [
+        2500,
+        1300,
+        1900
+      ],
+      "source": "A-M-417: 12 birds x 0.2 m2 + nest row (TECHTREE chickens.md)"
+    },
+    {
+      "unit_id": "DUCK_PEN",
+      "level": "L1",
+      "origin_mm": [
+        19100,
+        12300,
+        0
+      ],
+      "size_mm": [
+        2500,
+        1300,
+        1300
+      ],
+      "source": "A-M-421: 6 ducks x 0.3 m2 + wallow (TECHTREE ducks.md)"
+    },
+    {
+      "unit_id": "QUAIL_CAGE",
+      "level": "L1",
+      "origin_mm": [
+        21700,
+        12300,
+        0
+      ],
+      "size_mm": [
+        1300,
+        700,
+        1700
+      ],
+      "source": "A-M-422: 20-hen Coturnix battery (TECHTREE coturnix.md)"
+    },
+    {
+      "unit_id": "RABBIT_HUTCH",
+      "level": "L1",
+      "origin_mm": [
+        23100,
+        12300,
+        0
+      ],
+      "size_mm": [
+        1900,
+        700,
+        1600
+      ],
+      "source": "A-M-423: 3 rabbitry positions (TECHTREE rabbits.md)"
+    },
+    {
+      "unit_id": "BEE_HIVE",
+      "level": "L1",
+      "origin_mm": [
+        25100,
+        12300,
+        0
+      ],
+      "size_mm": [
+        600,
+        500,
+        1100
+      ],
+      "source": "A-M-424: 10-frame deep + medium + stand (TECHTREE beekeeping)"
+    },
+    {
+      "unit_id": "VERMI_BIN",
+      "level": "L1",
+      "origin_mm": [
+        25800,
+        12300,
+        0
+      ],
+      "size_mm": [
+        2100,
+        1100,
+        600
+      ],
+      "source": "A-M-425: 2 m2 bin at 300 mm bedding"
+    },
+    {
+      "unit_id": "GALLEY",
+      "level": "L1",
+      "origin_mm": [
+        200,
+        200,
+        0
+      ],
+      "size_mm": [
+        4000,
+        3000,
+        2400
+      ],
+      "source": "A-M-419: 12 m2 galley, AQS-HAB-001 zoning"
+    },
+    {
+      "unit_id": "WASHROOM",
+      "level": "L1",
+      "origin_mm": [
+        200,
+        3300,
+        0
+      ],
+      "size_mm": [
+        3000,
+        2000,
+        2400
+      ],
+      "source": "A-M-419: 8 m2 washroom, AQS-HAB-001 zoning"
+    },
+    {
+      "unit_id": "MEDICAL",
+      "level": "L1",
+      "origin_mm": [
+        200,
+        5400,
+        0
+      ],
+      "size_mm": [
+        3000,
+        2000,
+        2400
+      ],
+      "source": "A-M-419: 6 m2 medical, AQS-HAB-001 zoning"
+    },
+    {
+      "unit_id": "COMMON_AREA",
+      "level": "L1",
+      "origin_mm": [
+        200,
+        7500,
+        0
+      ],
+      "size_mm": [
+        4000,
+        2500,
+        2400
+      ],
+      "source": "A-M-419: 10 m2 circulation"
+    },
+    {
+      "unit_id": "SLEEP_QUARTERS",
+      "level": "L1",
+      "origin_mm": [
+        200,
+        10100,
+        0
+      ],
+      "size_mm": [
+        4000,
+        4000,
+        2400
+      ],
+      "source": "A-M-419: 4 x 4 m2 private quarters, AQS-HAB-001 zoning"
+    },
+    {
+      "unit_id": "REC_DAYROOM",
+      "level": "L1",
+      "origin_mm": [
+        200,
+        14200,
+        0
+      ],
+      "size_mm": [
+        5000,
+        4000,
+        2400
+      ],
+      "source": "A-M-419: 20 m2 recreation/common"
+    },
+    {
+      "unit_id": "POLY_FIBER",
+      "level": "L0",
+      "origin_mm": [
+        12200,
+        3000,
+        0
+      ],
+      "size_mm": [
+        3100,
+        1300,
+        1900
+      ],
+      "source": "A-M-429: bench-scale melt-spin line on the MFG floor, clear of MET_AHU (Y 0-1000) and the wet benches (Y 8000+)"
     }
   ],
   "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied.",
@@ -1878,5 +2178,6 @@
   "notes_rev_j": "2026-10-15, X-BLD-04. 12 rows moved the smallest distance to clear maint_clear_mm 600 (flow_graph/clear_pairs.py); partition sides kept.",
   "notes_rev_k": "2026-10-15, X-BLD-04. WS_AMMONIA to (15200, 15200) and WS_KOH to (16600, 15200): 6400 mm edge gap to WS_PEROX for incompatible separation (IFC 2027 5003.9.8, NFPA 400 6.1.12.1; AQS-BLD-011). EW aisle re-packed by flow_graph/place_ew_aisle.py with 914 mm between cells (NFPA 101 7.3.4.1.1) and 1219 mm round RECT_EW (NEC 110.26(A)(1) Condition 3); AQS-BLD-012. L1 hab rows ASH, IODIDE and MISTER (600 mm bed paths, no 914 mm face) left for review.",
   "notes_rev_k_farm": "2026-10-15, X-BLD-04 farm re-row: farm rows occupy x 10600..24000 on L1, west of the AQS-BLD-001 FARM/HAB line at x=12000; HAB rows displaced: ['COMPOST_TOILET']. 914 mm between farm rows (A-M-102).",
-  "notes_rev_l": "2026-10-15, X-PAR-07: building grown to 186 x 174 m (31 x 29 bays of 6 m, conditioned extension) so the roof carries the full PV array; EXT_HALL_E/N blocks; PV_ARRAY on ROOF; ground field removed. Base-plate rows not moved: no sizing driver warrants it."
+  "notes_rev_l": "2026-10-15, X-PAR-07: building grown to 186 x 174 m (31 x 29 bays of 6 m, conditioned extension) so the roof carries the full PV array; EXT_HALL_E/N blocks; PV_ARRAY on ROOF; ground field removed. Base-plate rows not moved: no sizing driver warrants it.",
+  "notes_rev_m": "2026-10-28 X-FARM/X-POLY: the 20 new units placed - the farm hall extends east to 32000 mm for the A-M-420 raceway; the hab rooms take the AQS-HAB-001 zoning inside the HAB block; POLY_FIBER sits on the MFG floor clear of the Q4 header and the wet benches. Every size traces to the unit task basis quoted in source; the routing stage (_placement_routes.py) consumes these centres through the A-M-074 rack rule."
 }

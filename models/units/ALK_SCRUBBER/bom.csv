@@ -1,12 +1,16 @@
 item,description,qty,material,basis
 1,Body D600 x 3803 mm,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/ALK_SCRUBBER.md
-2,Process nozzle DN15,3,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
-3,"Motor: induced-draft fan (induction IE3, IEC 90S / 1.1 kW)",1,-,AQS-INV-001 / AQS-INV-005
-4,bearing: deep-groove ball bearing 6205-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
-5,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-6,electronics: motor starter (contactor + overload) 1.1 kW,1,IEC 60947-4-1,AQS-INV-004
-7,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
-8,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
-9,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-10,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-11,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+2,Process nozzle DN15,2,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+3,Process nozzle DN250,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+4,"Motor: induced-draft fan (induction IE3, IEC 90S / 1.1 kW)",1,-,AQS-INV-001 / AQS-INV-005
+5,bearing: deep-groove ball bearing 6205-2Z,2,"ISO 15 / ISO 492 normal class, C3",AQS-INV-004
+6,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+7,electronics: motor starter (contactor + overload) 1.1 kW,1,IEC 60947-4-1,AQS-INV-004
+8,fastener: anchor bolt M10,4,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+9,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+10,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+11,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+12,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+13,"protection: inverse-time circuit breaker, 3-pole 15 A",1,UL 489 / IEC 60947-2,AQS-INV-004
+14,support: pipe clamp DN250,2,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+15,valve: isolation valve DN250,2,"PVC-lined ball valve in FRP service, ISO 16135",AQS-INV-004

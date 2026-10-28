@@ -15,9 +15,9 @@ Table 1. Operating mass
 
 | Item | Value | Basis |
 | --- | --- | --- |
-| Packaged plant | 39942 t | 17 placement blocks at the packaging density (A-M-413) |
+| Packaged plant | 40266 t | 17 placement blocks at the packaging density (A-M-413) |
 | Hull lightweight | 6500 t | A-M-412 |
-| Operating mass | 46442 t | sum |
+| Operating mass | 46766 t | sum |
 
 ## 2. Hydrostatics and stability
 
@@ -25,13 +25,13 @@ Table 2. Hydrostatics
 
 | Quantity | Value | Basis |
 | --- | --- | --- |
-| Draft | 4.94 m | displacement / (rho L B Cb), rho 1025 kg/m3 |
-| Displacement | 46442 t | operating mass |
-| KB | 2.47 m | box hull, T/2 |
-| BM | 71.51 m | waterplane inertia L B^3/12 over displacement |
-| KG | 11.13 m | lightweight KG (A-M-412) with the packaged plant at the study deck stack (A-M-412) |
-| GM | 62.85 m | criterion 1 m (A-M-414) |
-| Freeboard | 7.06 m | criterion 2 m (A-M-414) |
+| Draft | 4.97 m | displacement / (rho L B Cb), rho 1025 kg/m3 |
+| Displacement | 46766 t | operating mass |
+| KB | 2.49 m | box hull, T/2 |
+| BM | 71.01 m | waterplane inertia L B^3/12 over displacement |
+| KG | 11.16 m | lightweight KG (A-M-412) with the packaged plant at the study deck stack (A-M-412) |
+| GM | 62.34 m | criterion 1 m (A-M-414) |
+| Freeboard | 7.03 m | criterion 2 m (A-M-414) |
 | Roll period | 5.3 s | k = 0.35 B (study; model tests replace it, A-M-414) |
 | Deck-edge immersion at the 5 deg design heel | 2.62 m | (B/2) tan(heel) against the freeboard |
 

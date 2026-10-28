@@ -1100,12 +1100,12 @@
   "value": "rack at level datum + 3200 mm; rise, X, Y, drop",
   "units": "mm",
   "where": "AQS-ISO-001 routes",
-  "basis": "AQS-PIP-002 header elevation Z 3200; rack routing PENDING the FreeCAD placement model - the auto-router was rejected (AQS-3D-BUILD-001 Rev G, no invented mm) and its route sidecar retired 2026-10-27, so no line lengths or elbow counts exist. Supersedes the ISO_ROUTES.md basis.",
+  "basis": "AQS-PIP-002 header elevation Z 3200; orthogonal rack routing. Revived 2026-10-28 by the placement model (placement_seed Rev M, docs-authority/_placement_routes.py): 318 of 392 piped lines routed over the placed units (5772 m); the 74 unplaced-end lines stay a named gap in the route document until their units are placed.",
   "sensitivity": "line lengths and elbow counts - both pending the placement model",
   "replaced_by": "3D routed model (X-PIP-03 close-out with X-BLD-04)",
   "task": "X-PIP-03",
   "files": [
-   "docs-authority/BUILD_3D_FROM_FLOW.md"
+   "docs-authority/ISO_ROUTES.md"
   ],
   "id": "A-M-074",
   "needs_verification": true,

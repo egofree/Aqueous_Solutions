@@ -31,7 +31,8 @@ LEVELS = ['L-2', 'L-1', 'L0', 'L1', 'R1', 'R2', 'R3', 'ROOF']
 ## the built-in-place classes of AQS-BLD-015 (docs-authority/_lifting.py): these are assembled on the
 # level, not lifted whole, so the hoist book - and this sequence - does not count them as lifts.
 # The pytest gate asserts this set stays identical to the one in _lifting.py.
-INPLACE = {'tank', 'pv', 'farm', 'hab', 'building', 'boundary', 'header', 'recycle_pipe', 'shop', 'dock'}
+# X-FARM: the raceway basin is a lined excavation; the hab rooms assemble from panels
+INPLACE = {'tank', 'pv', 'farm', 'hab', 'building', 'boundary', 'header', 'recycle_pipe', 'shop', 'dock', 'duckweed', 'room'}
 
 
 def graph_index():
