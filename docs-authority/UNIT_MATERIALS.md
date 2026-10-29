@@ -17,24 +17,24 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 192 units, 137 have an issued material for each wetted stream, 55 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 328 wetted stream ends, and each resolves to an issued service family.
+Of the 192 units, 137 have an issued material for each wetted stream, 55 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 321 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
 
 The following service families of AQS-STD-002 are used, with the number of stream ends in each.
 
-- Acid or brine, at or below 60 C: 54 stream ends.
+- Acid or brine, at or below 60 C: 52 stream ends.
 - Hot leach liquor: 44 stream ends.
 - Dry gas, H2/O2/N2/CO2: 40 stream ends.
 - Process vent gas: 32 stream ends.
-- Q3/Q4 water loop: 20 stream ends.
-- Hydrocarbon product, fuel or wax cut: 19 stream ends.
+- Hydrocarbon product, fuel or wax cut: 18 stream ends.
+- Q3/Q4 water loop: 18 stream ends.
 - Aqueous process liquor (AQS-ASSAY-001 envelope): 14 stream ends.
 - Oxidizer, wet HF or PVDF unit: 13 stream ends.
 - Wet acid H₂ + sweep air header: 13 stream ends.
-- Water loops (protective, irrigation, UPW): 13 stream ends.
 - Q1/Q2 thermal oil: 12 stream ends.
+- Water loops (protective, irrigation, UPW): 12 stream ends.
 - Wet methanol service: 11 stream ends.
 - Flue or acid gas: 10 stream ends.
 - Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 9 stream ends.
@@ -42,7 +42,6 @@ The following service families of AQS-STD-002 are used, with the number of strea
 - Alkaline (NaOH/KOH base liquor): 6 stream ends.
 - Alkaline silica slurry: 3 stream ends.
 - CaCl₂/MgCl₂ brine concentrates to molten-salt pots (ambient import legs, NORTH_DOCK to MG_POT and CA_POT): 2 stream ends.
-- Dopant concentrates (S36, BBr₃/POCl₃ class): 1 stream ends.
 - Propylene-glycol ground loop: 1 stream ends.
 - Flue quench water: 1 stream ends.
 - Organic liquid (solvent make-up): 1 stream ends.
@@ -477,7 +476,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-EW-08 | EW_8 | EW_9 | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-EW-09 | EW_9 | POLISH_BANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-HDR-H2-04 | EW_9 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
-| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-EW9-CL2 | EW_9 | LEACH_CSTR_1 | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### EXTRUDE
@@ -497,7 +495,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | S27 | FAB_UPW_TANK | WET_BENCH | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
-| UPW_TO_FAB | HDR_UPW | FAB_UPW_TANK | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 
 ### FILM_CAST
@@ -753,7 +750,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | S01 | BMED_UPW_POLISH | HDR_UPW | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
-| UPW_TO_FAB | HDR_UPW | FAB_UPW_TANK | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 | IA-UPW-HAB | HDR_UPW | HABITATION | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 | IA-UPW-USE | HDR_UPW | WAFER_FAB | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 
@@ -778,8 +774,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| HL-HX8-Q3-A | HX8 | Q3_A | M1 | 12.1 q3/q4 water loop | 316L loops |
-| HL-HX8-Q3-B | HX8 | Q3_B | M1 | 12.1 q3/q4 water loop | 316L loops |
 | IA-HX8 | EW_1 | HX8 | P3 | 12.1 oxidizer, hf or pvdf unit | PVDF (P3) |
 | HL-HX8-Q4-A | HX8 | Q4_A | M1 | 12.1 q3/q4 water loop | 316L loops |
 | HL-HX8-Q4-B | HX8 | Q4_B | M1 | 12.1 q3/q4 water loop | 316L loops |
@@ -1009,8 +1003,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
-| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-MO-VENT | MO_CELL | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
 
@@ -1071,7 +1063,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-OIL-02 | OIL_PYRO | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-OIL-03 | OIL_FRAC | NCG_HEADER | P3 | 12.1 process vent gas | PVDF (P3) |
 | S38 | WET_BENCH | OIL_FRAC | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
-| S39B | WAFER_FAB | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | S72B | MET_SCRUB | OIL_FRAC | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
@@ -1098,7 +1089,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-EW-09 | EW_9 | POLISH_BANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-POL-01 | POLISH_BANK | BMED_UPW_POLISH | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-POL-02 | POLISH_BANK | CONTINUOUS_RECYCLE | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
-| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | POLISH_TO_LI | POLISH_BANK | LI_RECOVER | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 
 ### POLY_COND
@@ -1235,7 +1225,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| HL-HX8-Q3-A | HX8 | Q3_A | M1 | 12.1 q3/q4 water loop | 316L loops |
 | HL-Q2-A-DOWN | Q2_A | Q3_A | M2 | 12.1 q1/q2 thermal oil | Carbon steel A106 Gr B per section 4.4 |
 | HL-Q3-A-DOWN | Q3_A | Q4_A | M1 | 12.1 q3/q4 water loop | 316L loops |
 | HL-Q3-X | Q3_A | Q3_B | M1 | 12.1 q3/q4 water loop | 316L loops |
@@ -1248,7 +1237,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| HL-HX8-Q3-B | HX8 | Q3_B | M1 | 12.1 q3/q4 water loop | 316L loops |
 | HL-Q2-B-DOWN | Q2_B | Q3_B | M2 | 12.1 q1/q2 thermal oil | Carbon steel A106 Gr B per section 4.4 |
 | HL-Q3-B-DOWN | Q3_B | Q4_B | M1 | 12.1 q3/q4 water loop | 316L loops |
 | HL-Q3-X | Q3_A | Q3_B | M1 | 12.1 q3/q4 water loop | 316L loops |
@@ -1466,10 +1454,8 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | S03 | CRYO_N2 | WAFER_FAB | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
-| S36 | WS_DOPE | WAFER_FAB | — | 12.2 dopant concentrates (s36, bbr3/pocl3 class) | PTFE/PFA handling per the semiconductor-reagent practice |
 | S37 | WS_SLURRY | WAFER_FAB | P4 | 12.1 alkaline silica slurry | PP-H (P4) |
 | S39 | WAFER_FAB | LEACH_CSTR_1 | P4 | 12.1 alkaline silica slurry | PP-H (P4) |
-| S39B | WAFER_FAB | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-UPW-USE | HDR_UPW | WAFER_FAB | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 | IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-AR-CZ | CRYO_ASU | WAFER_FAB | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
@@ -1518,7 +1504,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| S36 | WS_DOPE | WAFER_FAB | — | 12.2 dopant concentrates (s36, bbr3/pocl3 class) | PTFE/PFA handling per the semiconductor-reagent practice |
 | IA-PHOS-DOPE | WS_PHOS | WS_DOPE | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 
 ### WS_HF_ED

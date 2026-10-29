@@ -17,9 +17,9 @@ This page indexes the isometric sheets of the plant piping and totals their mate
 
 ## 2. Summary
 
-The line list has 266 piped lines with a sheet. Together they need 4,602 m of pipe, 761 elbows of 90°, 532 flanges and 2,445 joints.
+The line list has 261 piped lines with a sheet. Together they need 4,500 m of pipe, 746 elbows of 90°, 522 flanges and 2,394 joints.
 
-A further 62 lines have no sheet yet, because the position of one of their ends is not yet fixed: S84, F_RECOVER_TO_HF_GEN, HF_GEN_TO_VDF, HF_GEN_TO_TFE, VDF_TO_POLY_F, TFE_TO_POLY_F, MO_CELL_RAFFINATE, EW9_LIQUOR_TO_MO, TI_CELL_CL2_TO_CRU, MO_CELL_ANODE_GAS_TO_CRU, IND_MELT_TO_CAST, VAC_IND_TO_VAC_CAST, IND_TO_CONT, AL_POT_CL2, MG_POT_CL2, COMB_OFFGAS, IND_TO_ATOM, IND_TO_INV, VAC_TO_INV, WAX_RECLAIM_TO_PATTERN, WAX_TO_OIL, OIL_TO_OLEFIN, MEOH_TO_OLEFIN, DIGEST_TO_POLY, CRU_TO_VDF, CRU_TO_TFE, POLISH_TO_LI, WAX_TO_GREASE_CA, WAX_TO_GREASE_LI, HL-Q4-REJ, IA-DC-EVAP, IA-DC-SPRAY, IA-GW-MAKEUP, IA-HF-SRC, IA-ELY-H2O, IA-ELY-H2, IA-ELY-O2, IA-O2-PROD, IA-O2-SHIP, IA-MEOH-PROD, IA-MEOH-SHIP, IA-C5-POLY, IA-AIR-RX-OUT, POLYF_TO_FILM, IA-H2SO4-MU, IA-HF-PROD, MEOH_TO_VDF, MEOH_TO_TFE, VDF_HCL_TO_CRU, TFE_HCL_TO_CRU, POLYF_RECLAIM, FLUORO_TO_MFG, IA-CL2-SHIP, IA-MGCL2-KROLL, IA-MGCL2-MU, IA-CL2-MG-TI, IA-CACL2-MU, IA-CA-CL2-SHIP, IA-KROLL-CO, IA-MO-VENT, IA-CR-VENT, IA-BURNOUT-VENT.
+A further 60 lines have no sheet yet, because the position of one of their ends is not yet fixed: S84, F_RECOVER_TO_HF_GEN, HF_GEN_TO_VDF, HF_GEN_TO_TFE, VDF_TO_POLY_F, TFE_TO_POLY_F, TI_CELL_CL2_TO_CRU, MO_CELL_ANODE_GAS_TO_CRU, IND_MELT_TO_CAST, VAC_IND_TO_VAC_CAST, IND_TO_CONT, AL_POT_CL2, MG_POT_CL2, COMB_OFFGAS, IND_TO_ATOM, IND_TO_INV, VAC_TO_INV, WAX_RECLAIM_TO_PATTERN, WAX_TO_OIL, OIL_TO_OLEFIN, MEOH_TO_OLEFIN, DIGEST_TO_POLY, CRU_TO_VDF, CRU_TO_TFE, POLISH_TO_LI, WAX_TO_GREASE_CA, WAX_TO_GREASE_LI, HL-Q4-REJ, IA-DC-EVAP, IA-DC-SPRAY, IA-GW-MAKEUP, IA-HF-SRC, IA-ELY-H2O, IA-ELY-H2, IA-ELY-O2, IA-O2-PROD, IA-O2-SHIP, IA-MEOH-PROD, IA-MEOH-SHIP, IA-C5-POLY, IA-AIR-RX-OUT, POLYF_TO_FILM, IA-H2SO4-MU, IA-HF-PROD, MEOH_TO_VDF, MEOH_TO_TFE, VDF_HCL_TO_CRU, TFE_HCL_TO_CRU, POLYF_RECLAIM, FLUORO_TO_MFG, IA-CL2-SHIP, IA-MGCL2-KROLL, IA-MGCL2-MU, IA-CL2-MG-TI, IA-CACL2-MU, IA-CA-CL2-SHIP, IA-KROLL-CO, IA-MO-VENT, IA-CR-VENT, IA-BURNOUT-VENT.
 
 ## 3. Basis
 
@@ -38,11 +38,11 @@ Table 4.1. Quantities by class and size
 | F1 | FRP vinyl ester | 20 | 1 | 30.4 | 3 | 2 | 12 |
 | F1 | FRP vinyl ester | 200 | 1 | 7.1 | 3 | 2 | 8 |
 | F1 | FRP vinyl ester | 250 | 3 | 9.5 | 7 | 6 | 20 |
-| M1 | 316L ASTM A312 | 15 | 56 | 1121.7 | 163 | 112 | 549 |
+| M1 | 316L ASTM A312 | 15 | 54 | 1080.2 | 157 | 108 | 528 |
 | M1 | 316L ASTM A312 | 20 | 2 | 39.2 | 6 | 4 | 19 |
 | M1 | 316L ASTM A312 | 25 | 2 | 42.2 | 6 | 4 | 21 |
 | M1 | 316L ASTM A312 | 50 | 1 | 17.1 | 3 | 2 | 9 |
-| M2 | CS ASTM A106 Gr B | 15 | 25 | 389.2 | 68 | 50 | 218 |
+| M2 | CS ASTM A106 Gr B | 15 | 24 | 366.3 | 65 | 48 | 207 |
 | P1 | PVC-U Sch 80 ASTM D1785 | 15 | 62 | 1024.4 | 174 | 124 | 553 |
 | P1 | PVC-U Sch 80 ASTM D1785 | 50 | 11 | 185.2 | 33 | 22 | 102 |
 | P2 | CPVC Sch 80 ASTM F441 | 15 | 27 | 545.2 | 81 | 54 | 260 |
@@ -53,9 +53,8 @@ Table 4.1. Quantities by class and size
 | P3 | PVDF SDR 21 ISO 10931 | 300 | 1 | 6.8 | 3 | 2 | 8 |
 | P4 | PP-H ISO 15494 | 15 | 7 | 64.1 | 21 | 14 | 58 |
 | P4 | PP-H ISO 15494 | 50 | 2 | 56.7 | 6 | 4 | 23 |
-| P5 | HDPE PE4710 DR 11 (ASTM D3035) | 15 | 10 | 175.8 | 26 | 20 | 89 |
+| P5 | HDPE PE4710 DR 11 (ASTM D3035) | 15 | 9 | 146.8 | 23 | 18 | 78 |
 | P5 | HDPE PE4710 DR 11 (ASTM D3035) | 50 | 5 | 80.6 | 13 | 10 | 42 |
-| — | — | 15 | 1 | 8.6 | 3 | 2 | 8 |
 | — | — | 50 | 1 | 1.3 | 1 | 2 | 4 |
 
 ## 5. Sheet index
@@ -76,8 +75,6 @@ Table 5.1. Sheet index
 | HL-AFTERBURNER-Q1-B | 15 | M2 | AFTERBURNER | Q1_B | 19.02 | 3 | [svg](iso/HL-AFTERBURNER-Q1-B.svg) |
 | HL-GLASS_BURNOUT-Q2-A | 15 | M2 | GLASS_BURNOUT | Q2_A | 9.32 | 3 | [svg](iso/HL-GLASS_BURNOUT-Q2-A.svg) |
 | HL-GLASS_BURNOUT-Q2-B | 15 | M2 | GLASS_BURNOUT | Q2_B | 22.92 | 3 | [svg](iso/HL-GLASS_BURNOUT-Q2-B.svg) |
-| HL-HX8-Q3-A | 15 | M1 | HX8 | Q3_A | 11.72 | 3 | [svg](iso/HL-HX8-Q3-A.svg) |
-| HL-HX8-Q3-B | 15 | M1 | HX8 | Q3_B | 29.72 | 3 | [svg](iso/HL-HX8-Q3-B.svg) |
 | HL-Q1-A-DOWN | 15 | M2 | Q1_A | Q2_A | 5.7 | 2 | [svg](iso/HL-Q1-A-DOWN.svg) |
 | HL-Q1-B-DOWN | 15 | M2 | Q1_B | Q2_B | 5.7 | 2 | [svg](iso/HL-Q1-B-DOWN.svg) |
 | HL-Q1-X | 15 | M2 | Q1_A | Q1_B | 24.77 | 3 | [svg](iso/HL-Q1-X.svg) |
@@ -148,11 +145,9 @@ Table 5.1. Sheet index
 | S32 | 15 | P3 | WS_PEROX | WET_BENCH | 10.59 | 3 | [svg](iso/S32.svg) |
 | S33 | 15 | P1 | WS_AMMONIA | WET_BENCH | 9.39 | 3 | [svg](iso/S33.svg) |
 | S35 | 15 | P4 | WS_KOH | WET_BENCH | 8.39 | 3 | [svg](iso/S35.svg) |
-| S36 | 15 | — | WS_DOPE | WAFER_FAB | 8.59 | 3 | [svg](iso/S36.svg) |
 | S37 | 15 | P4 | WS_SLURRY | WAFER_FAB | 8.59 | 3 | [svg](iso/S37.svg) |
 | S38 | 15 | P1 | WET_BENCH | OIL_FRAC | 23.09 | 3 | [svg](iso/S38.svg) |
 | S39 | 50 | P4 | WAFER_FAB | LEACH_CSTR_1 | 33.02 | 3 | [svg](iso/S39.svg) |
-| S39B | 15 | M2 | WAFER_FAB | OIL_FRAC | 22.92 | 3 | [svg](iso/S39B.svg) |
 | S43 | 15 | P5 | GEO_GHEX | GEO_HP_CLOSED_LOOP | 6.94 | 3 | [svg](iso/S43.svg) |
 | S45 | 15 | M1 | CRYO_H2 | BACKUP_GEN | 17.97 | 3 | [svg](iso/S45.svg) |
 | S46 | 15 | P2 | BACKUP_GEN | NOX_SCRUB | 7.84 | 3 | [svg](iso/S46.svg) |
@@ -196,7 +191,6 @@ Table 5.1. Sheet index
 | HAB_GREY | 15 | P1 | HABITATION | GREY_TREAT | 16.39 | 3 | [svg](iso/HAB_GREY.svg) |
 | HAB_BLACK | 15 | P1 | HABITATION | BLACK_DIGEST | 15.99 | 3 | [svg](iso/HAB_BLACK.svg) |
 | NUT_TO_BED | 15 | P5 | NUTRIENT_DOSE | GROW_BED | 1.88 | 1 | [svg](iso/NUT_TO_BED.svg) |
-| UPW_TO_FAB | 15 | P5 | HDR_UPW | FAB_UPW_TANK | 28.94 | 3 | [svg](iso/UPW_TO_FAB.svg) |
 | HL-HX8-Q4-A | 25 | M1 | HX8 | Q4_A | 11.22 | 3 | [svg](iso/HL-HX8-Q4-A.svg) |
 | HL-HX8-Q4-B | 25 | M1 | HX8 | Q4_B | 31.02 | 3 | [svg](iso/HL-HX8-Q4-B.svg) |
 | HL-Q3-A-HX4 | 15 | M1 | Q3_A | OIL_DRYER | 7.57 | 3 | [svg](iso/HL-Q3-A-HX4.svg) |

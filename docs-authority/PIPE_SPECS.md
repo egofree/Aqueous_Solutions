@@ -17,7 +17,7 @@ This page gives the production plan of each pipe family in the pipe inventory AQ
 
 ## 2. Summary and rules
 
-The inventory has 21 families with 4,592.3 m of pipe in 264 lines. The pipe is delivered as 778 stock lengths of 6.096 m, with a cutting allowance of 146.5 m, which is 3.2 % of the installed length. The families need 757 elbows and 528 flange sets and have 2433 joints. Every figure is taken line by line from AQS-INV-003.
+The inventory has 21 families with 4,499.0 m of pipe in 260 lines. The pipe is delivered as 763 stock lengths of 6.096 m, with a cutting allowance of 148.4 m, which is 3.3 % of the installed length. The families need 745 elbows and 520 flange sets and have 2390 joints. Every figure is taken line by line from AQS-INV-003.
 
 The following rules apply to every family.
 
@@ -35,13 +35,13 @@ Table 3.1. Pipe families
 | Family | Class | DN | Material | Pipe m | Lines | Stock 6.096 m | Offcut m | Joints | WPS |
 |---|---|---|---|---|---|---|---|---|---|
 | PF-01 | P1 | 15 | PVC-U Sch 80 ASTM D1785 | 1024.4 | 62 | 171 | 17.3 | 553 | WPS-06 |
-| PF-02 | M1 | 15 | 316L ASTM A312 | 1121.6 | 56 | 187 | 17.2 | 549 | WPS-01 |
+| PF-02 | M1 | 15 | 316L ASTM A312 | 1080.2 | 54 | 180 | 16.0 | 528 | WPS-01 |
 | PF-03 | P2 | 15 | CPVC Sch 80 ASTM F441 | 545.2 | 27 | 93 | 21.3 | 260 | WPS-07 |
 | PF-04 | P2 | 50 | CPVC Sch 80 ASTM F441 | 344.9 | 17 | 58 | 8.4 | 171 | WPS-07 |
 | PF-05 | P3 | 15 | PVDF SDR 21 ISO 10931 | 366.5 | 25 | 62 | 11.2 | 217 | WPS-04 |
-| PF-06 | M2 | 15 | CS ASTM A106 Gr B | 389.2 | 25 | 65 | 6.6 | 218 | WPS-02 |
+| PF-06 | M2 | 15 | CS ASTM A106 Gr B | 366.3 | 24 | 62 | 11.2 | 207 | WPS-02 |
 | PF-07 | P1 | 50 | PVC-U Sch 80 ASTM D1785 | 185.2 | 11 | 31 | 3.6 | 102 | WPS-06 |
-| PF-08 | P5 | 15 | HDPE PE4710 DR 11 (ASTM D3035) | 175.8 | 10 | 30 | 7.0 | 89 | WPS-03 |
+| PF-08 | P5 | 15 | HDPE PE4710 DR 11 (ASTM D3035) | 146.8 | 9 | 25 | 5.5 | 78 | WPS-03 |
 | PF-09 | P5 | 50 | HDPE PE4710 DR 11 (ASTM D3035) | 80.6 | 5 | 14 | 4.7 | 42 | WPS-03 |
 | PF-10 | F1 | 15 | FRP vinyl ester | 55.2 | 4 | 10 | 5.7 | 36 | WPS-08 |
 | PF-11 | P3 | 50 | PVDF SDR 21 ISO 10931 | 23.2 | 1 | 4 | 1.2 | 10 | WPS-04 |
@@ -67,8 +67,8 @@ It needs 174 elbows to ASTM D2467 socket 90 elbow, 124 flanges to ASTM D2467 fla
 
 ### PF-02: M1 DN15, 316L ASTM A312
 
-The family has 1121.6 m of pipe in 56 lines, cut from 187 stock lengths of 6.096 m with a cutting allowance of 17.2 m; the off-cuts return to the store for spool pieces. The pipe is bought mill stock to class sheet M1 of AQS-PIP-003 (316L, ASTM A312 pipe, A403 fittings, A182 flanges).
-It needs 163 elbows to ASME B16.9 LR 90 elbow, 112 flanges to ASME B16.5 Cl 150 flange, 112 gaskets and 448 stud bolts of 1/2 in. Its 549 joints are made to WPS-01: GTAW root and fill, open butt, argon purge to < 1 % O2 on the root side. It is tested to class sheet M1.
+The family has 1080.2 m of pipe in 54 lines, cut from 180 stock lengths of 6.096 m with a cutting allowance of 16.0 m; the off-cuts return to the store for spool pieces. The pipe is bought mill stock to class sheet M1 of AQS-PIP-003 (316L, ASTM A312 pipe, A403 fittings, A182 flanges).
+It needs 157 elbows to ASME B16.9 LR 90 elbow, 108 flanges to ASME B16.5 Cl 150 flange, 108 gaskets and 432 stud bolts of 1/2 in. Its 528 joints are made to WPS-01: GTAW root and fill, open butt, argon purge to < 1 % O2 on the root side. It is tested to class sheet M1.
 
 ### PF-03: P2 DN15, CPVC Sch 80 ASTM F441
 
@@ -87,8 +87,8 @@ It needs 72 elbows to ISO 10931 butt-fusion 90 elbow, 50 flanges to ISO 10931 st
 
 ### PF-06: M2 DN15, CS ASTM A106 Gr B
 
-The family has 389.2 m of pipe in 25 lines, cut from 65 stock lengths of 6.096 m with a cutting allowance of 6.6 m; the off-cuts return to the store for spool pieces. The pipe is bought mill stock to class sheet M2 of AQS-PIP-003 (Carbon steel, ASTM A106 Gr B, A234 WPB, A105).
-It needs 68 elbows to ASME B16.9 LR 90 elbow, 50 flanges to ASME B16.5 Cl 150 flange, 50 gaskets and 200 stud bolts of 1/2 in. Its 218 joints are made to WPS-02: GTAW root (ER70S-2), SMAW fill and cap (E7018). It is tested to class sheet M2.
+The family has 366.3 m of pipe in 24 lines, cut from 62 stock lengths of 6.096 m with a cutting allowance of 11.2 m; the off-cuts return to the store for spool pieces. The pipe is bought mill stock to class sheet M2 of AQS-PIP-003 (Carbon steel, ASTM A106 Gr B, A234 WPB, A105).
+It needs 65 elbows to ASME B16.9 LR 90 elbow, 48 flanges to ASME B16.5 Cl 150 flange, 48 gaskets and 192 stud bolts of 1/2 in. Its 207 joints are made to WPS-02: GTAW root (ER70S-2), SMAW fill and cap (E7018). It is tested to class sheet M2.
 
 ### PF-07: P1 DN50, PVC-U Sch 80 ASTM D1785
 
@@ -97,8 +97,8 @@ It needs 33 elbows to ASTM D2467 socket 90 elbow, 22 flanges to ASTM D2467 flang
 
 ### PF-08: P5 DN15, HDPE PE4710 DR 11 (ASTM D3035)
 
-The family has 175.8 m of pipe in 10 lines, cut from 30 stock lengths of 6.096 m with a cutting allowance of 7.0 m; the off-cuts return to the store for spool pieces. The pipe is bought mill stock to class sheet P5 of AQS-PIP-003 (HDPE PE4710, ASTM D3035 / F714).
-It needs 26 elbows to ASTM D3261 butt-fusion 90 elbow, 20 flanges to ASTM D3261 stub end + backing ring, 20 gaskets and 80 stud bolts of 1/2 in. Its 89 joints are made to WPS-03: heated-tool butt fusion. It is tested to class sheet P5.
+The family has 146.8 m of pipe in 9 lines, cut from 25 stock lengths of 6.096 m with a cutting allowance of 5.5 m; the off-cuts return to the store for spool pieces. The pipe is bought mill stock to class sheet P5 of AQS-PIP-003 (HDPE PE4710, ASTM D3035 / F714).
+It needs 23 elbows to ASTM D3261 butt-fusion 90 elbow, 18 flanges to ASTM D3261 stub end + backing ring, 18 gaskets and 72 stud bolts of 1/2 in. Its 78 joints are made to WPS-03: heated-tool butt fusion. It is tested to class sheet P5.
 
 ### PF-09: P5 DN50, HDPE PE4710 DR 11 (ASTM D3035)
 

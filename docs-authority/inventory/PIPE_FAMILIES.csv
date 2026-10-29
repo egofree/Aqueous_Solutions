@@ -1,12 +1,12 @@
 family,cls,material,DN,pipe_m,lines,stock_lengths_6m,offcut_m,elbows_90,elbow_std,flanges,flange_std,gaskets,stud_bolts,stud_size,joints,joint_type
 PF-01,P1,PVC-U Sch 80 ASTM D1785,15,1024.4,62,171,17.3,174,ASTM D2467 socket 90 elbow,124,ASTM D2467 flange,124,496,1/2 in,553,solvent
-PF-02,M1,316L ASTM A312,15,1121.6,56,187,17.2,163,ASME B16.9 LR 90 elbow,112,ASME B16.5 Cl 150 flange,112,448,1/2 in,549,butt weld
+PF-02,M1,316L ASTM A312,15,1080.2,54,180,16.0,157,ASME B16.9 LR 90 elbow,108,ASME B16.5 Cl 150 flange,108,432,1/2 in,528,butt weld
 PF-03,P2,CPVC Sch 80 ASTM F441,15,545.2,27,93,21.3,81,ASTM F439 socket 90 elbow,54,ASTM F439 flange,54,216,1/2 in,260,solvent
 PF-04,P2,CPVC Sch 80 ASTM F441,50,344.9,17,58,8.4,51,ASTM F439 socket 90 elbow,34,ASTM F439 flange,34,136,5/8 in,171,solvent
 PF-05,P3,PVDF SDR 21 ISO 10931,15,366.5,25,62,11.2,72,ISO 10931 butt-fusion 90 elbow,50,ISO 10931 stub end + backing ring,50,200,1/2 in,217,fusion
-PF-06,M2,CS ASTM A106 Gr B,15,389.2,25,65,6.6,68,ASME B16.9 LR 90 elbow,50,ASME B16.5 Cl 150 flange,50,200,1/2 in,218,butt weld
+PF-06,M2,CS ASTM A106 Gr B,15,366.3,24,62,11.2,65,ASME B16.9 LR 90 elbow,48,ASME B16.5 Cl 150 flange,48,192,1/2 in,207,butt weld
 PF-07,P1,PVC-U Sch 80 ASTM D1785,50,185.2,11,31,3.6,33,ASTM D2467 socket 90 elbow,22,ASTM D2467 flange,22,88,5/8 in,102,solvent
-PF-08,P5,HDPE PE4710 DR 11 (ASTM D3035),15,175.8,10,30,7.0,26,ASTM D3261 butt-fusion 90 elbow,20,ASTM D3261 stub end + backing ring,20,80,1/2 in,89,fusion
+PF-08,P5,HDPE PE4710 DR 11 (ASTM D3035),15,146.8,9,25,5.5,23,ASTM D3261 butt-fusion 90 elbow,18,ASTM D3261 stub end + backing ring,18,72,1/2 in,78,fusion
 PF-09,P5,HDPE PE4710 DR 11 (ASTM D3035),50,80.6,5,14,4.7,13,ASTM D3261 butt-fusion 90 elbow,10,ASTM D3261 stub end + backing ring,10,40,5/8 in,42,fusion
 PF-10,F1,FRP vinyl ester,15,55.2,4,10,5.7,12,ASTM D5421 FRP 90 elbow,8,ASTM D5421 FRP flange,8,32,1/2 in,36,butt-and-strap
 PF-11,P3,PVDF SDR 21 ISO 10931,50,23.2,1,4,1.2,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,8,5/8 in,10,fusion

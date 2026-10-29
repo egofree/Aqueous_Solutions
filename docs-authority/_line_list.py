@@ -97,6 +97,7 @@ def rho(e):
 DN=[15,20,25,32,40,50,65,80,100,150,200,250,300,400,500]; ID={15:15.8,20:20.9,25:26.6,32:35.1,40:40.9,50:52.5,65:62.7,80:77.9,100:102.3,150:154.1,200:202.7,250:254.5,300:303.2,400:381.0,500:477.8}
 rows=[]
 for e in g['edges']:
+    if e.get('presence') == 'retired': continue   # a retired route has no line (owner decision 2026-10-29: obsolete content is eliminated)
     u=(e.get('rate') or {}).get('unit'); ph=e.get('phase'); sid=e['stream_id']; lay=e.get('layers') or []
     a,b=e['from_unit_id'],e['to_unit_id']
     ca,cb=C.get(a),C.get(b)

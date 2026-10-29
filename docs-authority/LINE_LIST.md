@@ -11,7 +11,7 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-574 edges: 328 piped, 131 solids transfers, 115 electrical. Piped edges without a length (unit position missing): 62.
+565 edges: 321 piped, 130 solids transfers, 114 electrical. Piped edges without a length (unit position missing): 60.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -28,8 +28,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | HL-AFTERBURNER-Q1-B | AFTERBURNER | Q1_B | DN15 | M2 | Q1/Q2 thermal oil | 20.8 | AFTERBURNER → Q1_B, orthogonal × 1.2 (placement_report + GA relocate; duty origin) | heat loop 1.383 kW at ΔT 10 K, 1 m/s |
 | HL-GLASS_BURNOUT-Q2-A | GLASS_BURNOUT | Q2_A | DN15 | M2 | Q1/Q2 thermal oil | 7.3 | GLASS_BURNOUT → Q2_A, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0.928 kW at ΔT 10 K, 1 m/s |
 | HL-GLASS_BURNOUT-Q2-B | GLASS_BURNOUT | Q2_B | DN15 | M2 | Q1/Q2 thermal oil | 23.6 | GLASS_BURNOUT → Q2_B, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0.928 kW at ΔT 10 K, 1 m/s |
-| HL-HX8-Q3-A | HX8 | Q3_A | DN15 | M1 | Q3/Q4 water loop | 12.3 | HX8 → Q3_A, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
-| HL-HX8-Q3-B | HX8 | Q3_B | DN15 | M1 | Q3/Q4 water loop | 33.9 | HX8 → Q3_B, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | HL-Q1-A-DOWN | Q1_A | Q2_A | DN15 | M2 | Q1/Q2 thermal oil | 2.8 | Q1_A → Q2_A, orthogonal × 1.2 (duty origin; duty origin) | heat loop 1.133 kW at ΔT 10 K, 1 m/s |
 | HL-Q1-B-DOWN | Q1_B | Q2_B | DN15 | M2 | Q1/Q2 thermal oil | 2.8 | Q1_B → Q2_B, orthogonal × 1.2 (duty origin; duty origin) | heat loop 1.133 kW at ΔT 10 K, 1 m/s |
 | HL-Q1-X | Q1_A | Q1_B | DN15 | M2 | Q1/Q2 thermal oil | 23.8 | Q1_A → Q1_B, orthogonal × 1.2 (duty origin; duty origin) | heat loop 1.383 kW at ΔT 10 K, 1 m/s |
@@ -116,11 +114,9 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S32 | WS_PEROX | WET_BENCH | DN15 | P3 | oxidizer, HF or PVDF unit | 9.9 | WS_PEROX → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S33 | WS_AMMONIA | WET_BENCH | DN15 | P1 | acid or brine, at or below 60 C | 8.5 | WS_AMMONIA → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S35 | WS_KOH | WET_BENCH | DN15 | P4 | alkaline | 7.3 | WS_KOH → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| S36 | WS_DOPE | WAFER_FAB | DN15 | — | dopant concentrates (BBr₃/POCl₃ class): PTFE/PFA handling; class pending PIP-003 Rev B | 7.5 | WS_DOPE → WAFER_FAB, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S37 | WS_SLURRY | WAFER_FAB | DN15 | P4 | alkaline silica slurry (PP-H; SIMONA class data) | 7.5 | WS_SLURRY → WAFER_FAB, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S38 | WET_BENCH | OIL_FRAC | DN15 | P1 | acid or brine, at or below 60 C | 24.9 | WET_BENCH → OIL_FRAC, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S39 | WAFER_FAB | LEACH_CSTR_1 | DN50 | P4 | alkaline silica slurry (PP-H; SIMONA class data) | 37.0 | WAFER_FAB → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN50 |
-| S39B | WAFER_FAB | OIL_FRAC | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 24.9 | WAFER_FAB → OIL_FRAC, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S43 | GEO_GHEX | GEO_HP_CLOSED_LOOP | DN15 | P5 | propylene-glycol ground loop (HDPE DR-11 per node design) | 1.7 | GEO_GHEX → GEO_HP_CLOSED_LOOP, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0 kW at ΔT 10 K, 1 m/s |
 | S44 | GEO_HP | Q4_BUS | cable | — | — | 35.3 | GEO_HP → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | S45 | CRYO_H2 | BACKUP_GEN | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 21.1 | CRYO_H2 → BACKUP_GEN, orthogonal × 1.2 (placement_report + GA move + GA move + GA move; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
@@ -178,9 +174,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | VDF_TO_POLY_F | VDF_SYN | POLY_F | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B |  | VDF_SYN → POLY_F, position missing for VDF_SYN, POLY_F | velocity 1 m/s, ρ 1000; min DN15 |
 | TFE_TO_POLY_F | TFE_SYN | POLY_F | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B |  | TFE_SYN → POLY_F, position missing for TFE_SYN, POLY_F | velocity 1 m/s, ρ 1000; min DN15 |
 | TI_CELL_SLAG_RETURN | TI_CELL | LEACH_CSTR_1 | solids | — | — |  | TI_CELL → LEACH_CSTR_1, position missing for TI_CELL | solids: conveyor, bin or hand transfer; not piped |
-| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | DN15 | P1 | acid or brine, at or below 60 C |  | MO_CELL → POLISH_BANK, position missing for MO_CELL | velocity 1 m/s, ρ 1000; min DN15 |
 | FLOAT_SINK_GRIT_TO_TI | FLOAT_SINK | TI_CELL | solids | — | — |  | FLOAT_SINK → TI_CELL, position missing for TI_CELL | solids: conveyor, bin or hand transfer; not piped |
-| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | DN15 | P1 | acid or brine, at or below 60 C |  | EW_9 → MO_CELL, position missing for MO_CELL | velocity 1 m/s, ρ 1000; min DN15 |
 | TI_CELL_CL2_TO_CRU | TI_CELL | CRU | DN15 | P3 | process vent gas |  | TI_CELL → CRU, position missing for TI_CELL | velocity 10 m/s, ρ 1.2; min DN15 |
 | MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | DN15 | P3 | process vent gas |  | MO_CELL → CRU, position missing for MO_CELL | velocity 10 m/s, ρ 1.2; min DN15 |
 | IND_MELT_TO_CAST | IND_MELT | CAST_LINE | DN15 | — | molten metal launder/pour (not piped) |  | IND_MELT → CAST_LINE, position missing for IND_MELT, CAST_LINE | velocity 1 m/s, ρ 1000; min DN15 |
@@ -194,7 +188,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | DRAW_TO_STOCK | DRAW | STOCK_OUT | solids | — | — |  | DRAW → STOCK_OUT, position missing for DRAW, STOCK_OUT | solids: conveyor, bin or hand transfer; not piped |
 | SINTER_TO_STOCK | SINTER | STOCK_OUT | solids | — | — |  | SINTER → STOCK_OUT, position missing for SINTER, STOCK_OUT | solids: conveyor, bin or hand transfer; not piped |
 | FLUX_TO_IND | FLUX_PREP | IND_MELT | solids | — | — |  | FLUX_PREP → IND_MELT, position missing for FLUX_PREP, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
-| EW_METALS_TO_IND | EW_9 | IND_MELT | solids | — | — |  | EW_9 → IND_MELT, position missing for IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | MO_TO_IND | MO_CELL | IND_MELT | solids | — | — |  | MO_CELL → IND_MELT, position missing for MO_CELL, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | CR_TO_IND | CR_CELL | IND_MELT | solids | — | — |  | CR_CELL → IND_MELT, position missing for CR_CELL, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | IND_TO_CONT | IND_MELT | CONT_CAST | DN15 | — | molten metal launder/pour (not piped) |  | IND_MELT → CONT_CAST, position missing for IND_MELT, CONT_CAST | velocity 1 m/s, ρ 1000; min DN15 |
@@ -256,7 +249,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | HAB_GREY | HABITATION | GREY_TREAT | DN15 | P1 | acid or brine, at or below 60 C | 15.9 | HABITATION → GREY_TREAT, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | HAB_BLACK | HABITATION | BLACK_DIGEST | DN15 | P1 | acid or brine, at or below 60 C | 15.4 | HABITATION → BLACK_DIGEST, orthogonal × 1.2 (placement_report; duty origin + GA move) | velocity 1 m/s, ρ 1000; min DN15 |
 | NUT_TO_BED | NUTRIENT_DOSE | GROW_BED | DN15 | P5 | water | 0.0 | NUTRIENT_DOSE → GROW_BED, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| UPW_TO_FAB | HDR_UPW | FAB_UPW_TANK | DN15 | P5 | water | 27.1 | HDR_UPW → FAB_UPW_TANK, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | HL-HX8-Q4-A | HX8 | Q4_A | DN25 | M1 | Q3/Q4 water loop | 13.0 | HX8 → Q4_A, orthogonal × 1.2 (duty origin; duty origin) | edge line_DN |
 | HL-HX8-Q4-B | HX8 | Q4_B | DN25 | M1 | Q3/Q4 water loop | 36.8 | HX8 → Q4_B, orthogonal × 1.2 (duty origin; duty origin) | edge line_DN |
 | HL-Q3-A-HX4 | Q3_A | OIL_DRYER | DN15 | M1 | Q3/Q4 water loop | 7.3 | Q3_A → OIL_DRYER, orthogonal × 1.2 (duty origin; placement_report) | edge line_DN |
@@ -401,7 +393,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SF-NUTRIENT_DOSE | SOL_ARK_60K | NUTRIENT_DOSE | cable | — | — | 39.2 | SOL_ARK_60K → NUTRIENT_DOSE, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | SF-WAFER_FAB | SOL_ARK_60K | WAFER_FAB | cable | — | — | 26.9 | SOL_ARK_60K → WAFER_FAB, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | SF-WET_BENCH | SOL_ARK_60K | WET_BENCH | cable | — | — | 26.9 | SOL_ARK_60K → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
-| SF-LITHO_STUB | SOL_ARK_60K | LITHO_STUB | cable | — | — | 27.8 | SOL_ARK_60K → LITHO_STUB, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | SF-ELECTRODE_COAT | SOL_ARK_60K | ELECTRODE_COAT | cable | — | — | 41.2 | SOL_ARK_60K → ELECTRODE_COAT, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | SF-BLOW_MOLD | SOL_ARK_60K | BLOW_MOLD | cable | — | — | 35.5 | SOL_ARK_60K → BLOW_MOLD, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | SF-SOLAR_PV_CELL | SOL_ARK_60K | SOLAR_PV_CELL | cable | — | — | 24.7 | SOL_ARK_60K → SOLAR_PV_CELL, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |

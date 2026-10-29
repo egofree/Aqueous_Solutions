@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1912 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1907 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -552,8 +552,6 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/iso/HL-AFTERBURNER-Q1-B.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/HL-GLASS_BURNOUT-Q2-A.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/HL-GLASS_BURNOUT-Q2-B.svg` | e313d1c (regenerated, no change) | current |
-| `docs-authority/iso/HL-HX8-Q3-A.svg` | e313d1c (regenerated, no change) | current |
-| `docs-authority/iso/HL-HX8-Q3-B.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/HL-HX8-Q4-A.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/HL-HX8-Q4-B.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/HL-Q1-A-DOWN.svg` | e313d1c (regenerated, no change) | current |
@@ -759,11 +757,9 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/iso/S34.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S34B.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S35.svg` | e313d1c (regenerated, no change) | current |
-| `docs-authority/iso/S36.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S37.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S38.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S39.svg` | e313d1c (regenerated, no change) | current |
-| `docs-authority/iso/S39B.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S43.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S45.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S46.svg` | e313d1c (regenerated, no change) | current |
@@ -801,7 +797,6 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/iso/S88.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S89.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/iso/S90.svg` | e313d1c (regenerated, no change) | current |
-| `docs-authority/iso/UPW_TO_FAB.svg` | e313d1c (regenerated, no change) | current |
 | `docs-authority/nozzles/ABE.csv` | e313d1c (regenerated, no change) | current |
 | `docs-authority/nozzles/ACETOX.csv` | e313d1c (regenerated, no change) | current |
 | `docs-authority/nozzles/ACEX.csv` | e313d1c (regenerated, no change) | current |

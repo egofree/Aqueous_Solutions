@@ -222,6 +222,46 @@
    ],
    "when": "2026-10-29 rewrite batch 21",
    "note": "hand-drawn matplotlib sheet with tags no longer on the graph, never run by the regenerator and its PNG never committed; replaced by the graph-driven sector view"
+  },
+  {
+   "old": "docs-authority/iso/HL-HX8-Q3-A.svg",
+   "now": [
+    "docs-authority/ISO_SHEETS.md"
+   ],
+   "when": "2026-10-29 rewrite batch 30",
+   "note": "isometric sheet of route HL-HX8-Q3-A, which is retired on the graph; the line list and the sheet set now skip retired routes"
+  },
+  {
+   "old": "docs-authority/iso/HL-HX8-Q3-B.svg",
+   "now": [
+    "docs-authority/ISO_SHEETS.md"
+   ],
+   "when": "2026-10-29 rewrite batch 30",
+   "note": "isometric sheet of route HL-HX8-Q3-B, which is retired on the graph; the line list and the sheet set now skip retired routes"
+  },
+  {
+   "old": "docs-authority/iso/S36.svg",
+   "now": [
+    "docs-authority/ISO_SHEETS.md"
+   ],
+   "when": "2026-10-29 rewrite batch 30",
+   "note": "isometric sheet of route S36, which is retired on the graph; the line list and the sheet set now skip retired routes"
+  },
+  {
+   "old": "docs-authority/iso/S39B.svg",
+   "now": [
+    "docs-authority/ISO_SHEETS.md"
+   ],
+   "when": "2026-10-29 rewrite batch 30",
+   "note": "isometric sheet of route S39B, which is retired on the graph; the line list and the sheet set now skip retired routes"
+  },
+  {
+   "old": "docs-authority/iso/UPW_TO_FAB.svg",
+   "now": [
+    "docs-authority/ISO_SHEETS.md"
+   ],
+   "when": "2026-10-29 rewrite batch 30",
+   "note": "isometric sheet of route UPW_TO_FAB, which is retired on the graph; the line list and the sheet set now skip retired routes"
   }
  ],
  "reissued_numbers": [

@@ -53,6 +53,9 @@ for r in rows:
                pieces=len(cuts), cut_list_mm=' '.join(f'{c:.0f}' for c in cuts), elbows_90=el, flanges=2, gaskets=2, stud_bolts=2*nb, stud_size=f'{bs} in', joints=joints, joint_type=JOINT.get(cl, '-'))
     recs.append(rec)
     svg(r[0], legs, dn, cl, r[1], r[2], [f"pipe {pipe_m:.2f} m in {len(cuts)} pieces; cut {rec['cut_list_mm']} mm"[:110], f'{el} x 90 LR elbow; 2 flanges B16.5 Cl150; {2*nb} studs {bs} in; {joints} {JOINT.get(cl, "")} joints', 'Study isometric. Supports and stress X-PIP-04.'])
+# A sheet whose line left the line list (a retired route) is removed, so the sheet set follows the graph
+for fn in os.listdir('docs-authority/iso'):
+    if fn.endswith('.svg') and fn[:-4] not in {x['line'] for x in recs}: os.remove(os.path.join('docs-authority/iso', fn))
 with open('docs-authority/iso/ISO_SHEETS.csv', 'w', newline='') as f:
     w = csv.DictWriter(f, list(recs[0].keys())); w.writeheader(); w.writerows(recs)
 T = collections.defaultdict(lambda: dict(n=0, m=0.0, el=0, fl=0, j=0))

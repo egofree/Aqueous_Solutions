@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AF
+Revision: AG
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -38,6 +38,7 @@ Date: 2026-10-29
 | AD | Batch 27: standby route STOCK_TO_WIRE_DRAW sized at its rated case (A-M-418) | 2026-10-29 |
 | AE | Batch 28: standby route IND_TO_ATOM sized at its rated case (A-M-418) | 2026-10-29 |
 | AF | Batch 29: route UPW_TO_FAB retired as a duplicate of IA-UPW-FAB; FAB_WET_INTERFACE revision C | 2026-10-29 |
+| AG | Batch 30: retired routes leave the line list, and their isometric sheets are removed through the generator | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -188,6 +189,7 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/param/standby_routes.py` (A-M-418) | New: a standby feed route carries the rate of the case that puts it in service; STOCK_TO_WIRE_DRAW rated at the S57 copper feed, with the METAL_STORE holding for the outage. |
 | `flow_graph/param/standby_routes.py` (A-M-418) | IND_TO_ATOM rated at the IA-MELT-ATOM atomiser charge for a MET_MELT outage; IND_MELT runs one more heat a day in the outage. |
 | `docs-authority/FAB_WET_INTERFACE.md` | Rev C. Route UPW_TO_FAB removed from the stream list; the route is retired on the graph as a duplicate of IA-UPW-FAB (X-RTE). |
+| `docs-authority/_line_list.py`, `docs-authority/_iso_sheets.py` | Retired routes are skipped, and a sheet whose line left the line list is removed; five sheets of retired routes gone (owner decision 2026-10-29). |
 
 ## 3. In progress
 

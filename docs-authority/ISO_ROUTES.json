@@ -155,36 +155,6 @@
    "elbows": 3
   },
   {
-   "line": "HL-HX8-Q3-A",
-   "dn": 15,
-   "class": "M1",
-   "from": "HX8",
-   "to": "Q3_A",
-   "legs_mm": [
-    2900,
-    -900,
-    7300,
-    -850
-   ],
-   "length_m": 11.9,
-   "elbows": 3
-  },
-  {
-   "line": "HL-HX8-Q3-B",
-   "dn": 15,
-   "class": "M1",
-   "from": "HX8",
-   "to": "Q3_B",
-   "legs_mm": [
-    2900,
-    12900,
-    13300,
-    -850
-   ],
-   "length_m": 29.9,
-   "elbows": 3
-  },
-  {
    "line": "HL-Q1-A-DOWN",
    "dn": 15,
    "class": "M2",
@@ -1235,21 +1205,6 @@
    "elbows": 3
   },
   {
-   "line": "S36",
-   "dn": 15,
-   "class": "\u2014",
-   "from": "WS_DOPE",
-   "to": "WAFER_FAB",
-   "legs_mm": [
-    2650,
-    -2400,
-    -2400,
-    -1200
-   ],
-   "length_m": 8.7,
-   "elbows": 3
-  },
-  {
    "line": "S37",
    "dn": 15,
    "class": "P4",
@@ -1292,21 +1247,6 @@
     -8500
    ],
    "length_m": 33.2,
-   "elbows": 3
-  },
-  {
-   "line": "S39B",
-   "dn": 15,
-   "class": "M2",
-   "from": "WAFER_FAB",
-   "to": "OIL_FRAC",
-   "legs_mm": [
-    1200,
-    -13000,
-    2000,
-    -6950
-   ],
-   "length_m": 23.1,
    "elbows": 3
   },
   {
@@ -1953,21 +1893,6 @@
    ],
    "length_m": 1.9,
    "elbows": 1
-  },
-  {
-   "line": "UPW_TO_FAB",
-   "dn": 15,
-   "class": "P5",
-   "from": "HDR_UPW",
-   "to": "FAB_UPW_TANK",
-   "legs_mm": [
-    3200,
-    9250,
-    7750,
-    -8800
-   ],
-   "length_m": 29.0,
-   "elbows": 3
   },
   {
    "line": "HL-HX8-Q4-A",
@@ -3996,8 +3921,8 @@
   }
  ],
  "summary": {
-  "routed": 266,
-  "missing_position": 62,
-  "total_m": 4639
+  "routed": 261,
+  "missing_position": 60,
+  "total_m": 4537
  }
 }

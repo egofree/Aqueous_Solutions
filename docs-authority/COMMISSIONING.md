@@ -57,7 +57,7 @@ Table 4.1. Commissioning sequence
 | 13 | FARM | 2 | 12 | 2 | 1 | CO2 |
 | 14 | HAB | 1 | 4 | 1 | 1 | solute |
 | 15 | MFG | 10 | 29 | 12 | 1 | Cu, Pb/Sn/Ni/Cd/Zn blend, hydrocarbon, metal, solute |
-| 16 | FAB | 16 | 73 | 17 | 9 | Ar, Fe, HCl, N2, O2, Si, other_metals, solute |
+| 16 | FAB | 16 | 72 | 17 | 9 | Ar, Fe, HCl, N2, O2, Si, other_metals, solute |
 | 17 | FOUNDRY | 27 | 83 | 24 | 6 | Si |
 | 18 | POLYMERS | 10 | 40 | 15 | 6 | C5-C10 |
 
