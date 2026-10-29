@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: S
+Revision: T
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -25,6 +25,7 @@ Date: 2026-10-29
 | Q | Batch 14: the trim heaters fed by the rectifier counted at rated load in the plant bus demand by owner decision (A-M-415), with their own feeder; the bus section rating now follows the bus demand; the two owner questions on these closed | 2026-10-29 |
 | R | Batch 15: the metal-forming, shop and wafer fab equipment lists given generators that read the graph; owner questions on the forming tool design, the silicon charge of the fab and its blanket gas | 2026-10-29 |
 | S | Batch 16: the path of the cryogenic massing script corrected in AUTHORITY and in the history page REMAINING_BLD | 2026-10-29 |
+| T | Batch 17: PARAMETRIC_MODEL rewritten through its generator `flow_graph/param/report.py` | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -157,6 +158,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | Rev D. Now written by `docs-authority/_wafer_fab_equipment.py` (regen stage `doc_wafer_fab_equipment`) from the units of sector FAB, the equipment list of WAFER_FAB and the fab edges; references outside the repository removed. |
 | `docs-authority/AUTHORITY.md` | Rev Z. The vacuum-jacketed line envelopes now point to `models/freecad/cryo.py`, where they are defined. |
 | `docs-authority/internal/REMAINING_BLD.md` | Rev Z. History page kept as it is; two file paths corrected, one to `models/freecad/cryo.py` and one to a folder outside the repository. |
+| `docs-authority/PARAMETRIC_MODEL.md` | Rev C. Rewritten through `flow_graph/param/report.py`: purpose, scope and terms; the framework and the acid-loop decision as sentences in order; the relief and scrubber rows read from the graph; stale pointers removed. |
 
 ## 3. In progress
 
@@ -191,7 +193,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/MVS_STUDY_CLOSE.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; arrows used in place of sentences. |
 | `docs-authority/O2_SOURCE.md` | No purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
-| `docs-authority/PARAMETRIC_MODEL.md` | No purpose and scope section; working or stock phrasing. Written by `_graph.py`; fix the generator. |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | No record of revisions; no purpose and scope section; list items written as fragments; arrows used in place of sentences. |
 | `docs-authority/SIGN_SCHEDULE.md` | No purpose and scope section. |
