@@ -1,10 +1,10 @@
 # Remaining after BLD CAD pass (2026-09-27)
 
-Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only.
+Superseded by `docs-authority/TASK_PLAN.md` (AQS-PLAN-007). This page is kept as history; open work is tracked there only. Revision Z corrects two file paths and changes nothing else.
 
 Document number: AQS-REM-BLD-001  
-Revision: Y
-Date: 2026-10-01  
+Revision: Z
+Date: 2026-10-29  
 Authority: AQS-AUTH-001; style AQS-DOC-002.
 
 Completed this pass: authority lock, building/fire CAD, campus re-origin,
@@ -35,7 +35,7 @@ tanks, terraces). Sheets now show full vertical stack (not flat Phase F),
 M1 keep-out envelopes on plans, FB_*/HA_* ratings, CORE_LIFE/PROCESS
 shaft sizes from AQS-BLD-001 §2.1. Doc nos AQS-PFD-BLD-001…006,
 AQS-PFD-CMP-001, AQS-PFD-HSE-001, AQS-PFD-PIP-002, AQS-PFD-GAS-001,
-AQS-PFD-WTR-001. Regenerated PNGs in diagrams hub + share `pfd/images/`.
+AQS-PFD-WTR-001. Regenerated PNGs in the diagrams hub outside the repository.
 `SCALE_M` left unchanged (still 2.0 on disk).
 
 Completed 2026-09-27 **sector PFD generators** pass (Rev G): wrote
@@ -122,7 +122,7 @@ with Stirling / DIST_COL_* / REBOILER_COND / COMP_EXPAND / MOL_SIEVE /
 HEPA / CRYO_HX_Q4 / CRYO_DED_COOL / CRYO_AHU tags; regenerated
 `cryo_pfd.py` (AQS-PFD-CRY-001) showing internals + Q4/HVAC + GEN/FC/S24
 draws from CRYO_H2; streams S54–S56; HVAC/geo split (Q4 vs dedicated vs
-room vent); `freecad/cryo.py` child envelope stubs; LEGACY item 5
+room vent); `models/freecad/cryo.py` child envelope stubs; LEGACY item 5
 Present/Partial. SCALE_M left **1.0**. No plant.FCStd rebuild; no git
 commit. Duties / holdup kg TBD.
 

@@ -46,7 +46,7 @@ Table 3.1. Document numbers in use
 | AQS-ASSAY-TI-MO | `notes/ASSAY_TI_MO.md` | A | 2026-10-16 | Missing assays — TI_CELL and MO_CELL | current |
 | AQS-AUD-GRAPH-001 | `docs-authority/GRAPH_AUDIT.md` | — | 2026-10-02 | Graph audit | current |
 | AQS-AUDIT-001 | `notes/pathway_audit.md` | A | 2026-10-09 | Pathway audit | current |
-| AQS-AUTH-001 | `docs-authority/AUTHORITY.md` | Y | 2026-10-24 | CAD authority lock | current |
+| AQS-AUTH-001 | `docs-authority/AUTHORITY.md` | Z | 2026-10-29 | CAD authority lock | current |
 | AQS-BAL-KROLL | `notes/KROLL_BALANCE.md` | A | 2026-10-16 | Kroll loop — placeholder balance | current |
 | AQS-BLD-001 | `docs-authority/BUILDING_STACK.md` | G | 2026-10-24 | Building stack: the vertical campus | current |
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | B | 2026-10-25 | General arrangement clash check | current |
@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | R | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | S | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -266,7 +266,7 @@ Table 3.1. Document numbers in use
 | AQS-REL-001 | `docs-authority/RELIEF.md` | B | 2026-10-25 | Relief | current |
 | AQS-REM-001 | `docs-authority/internal/REMAINING.md` | A | 2026-10-10 | Remaining designs | superseded by AQS-PLAN-007 |
 | AQS-REM-002 | `docs-authority/internal/REMAINING_CHECKLIST.md` | E | 2026-10-01 | Remaining work checklist | superseded by AQS-PLAN-007 |
-| AQS-REM-BLD-001 | `docs-authority/internal/REMAINING_BLD.md` | Y | 2026-10-01 | Remaining after BLD CAD pass (2026-09-27) | superseded by AQS-PLAN-007 |
+| AQS-REM-BLD-001 | `docs-authority/internal/REMAINING_BLD.md` | Z | 2026-10-29 | Remaining after BLD CAD pass (2026-09-27) | superseded by AQS-PLAN-007 |
 | AQS-REQ-001 | `notes/BINDING_REQ_2026-10-16.md` | A | 2026-10-16 | Binding requirements — fluoropolymers, critical metals, cost basis | current |
 | AQS-REQ-KW-001 | `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md` | B | 2026-10-24 | Continuous power requirements for generation, fuel cells, PV fabrication, cryogenics and manufacturing | current |
 | AQS-REV-H2-001 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | C | 2026-10-29 | Hydrogen embrittlement review | current |

@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: R
+Revision: S
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -24,6 +24,7 @@ Date: 2026-10-29
 | P | Batch 13: the per-unit sizing pages of the unit sizing sweep rewritten through their generator | 2026-10-29 |
 | Q | Batch 14: the trim heaters fed by the rectifier counted at rated load in the plant bus demand by owner decision (A-M-415), with their own feeder; the bus section rating now follows the bus demand; the two owner questions on these closed | 2026-10-29 |
 | R | Batch 15: the metal-forming, shop and wafer fab equipment lists given generators that read the graph; owner questions on the forming tool design, the silicon charge of the fab and its blanket gas | 2026-10-29 |
+| S | Batch 16: the path of the cryogenic massing script corrected in AUTHORITY and in the history page REMAINING_BLD | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -154,6 +155,8 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | Rev E. Now written by `docs-authority/_mfg_equipment.py` (regen stage `doc_mfg_equipment`) from the metal-forming units of sector MFG and the tool list AQS-MFG-010: units, tools, streams, mass balance and separation checks. Tags no longer on the graph, the nitrogen atomising gas and the TBD tool sizes removed. |
 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | Rev E. Now written by `docs-authority/_mfg_equipment.py` from the other units of sector MFG and the shop tools of AQS-MFG-010: units, tools, streams and mass balance. |
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | Rev D. Now written by `docs-authority/_wafer_fab_equipment.py` (regen stage `doc_wafer_fab_equipment`) from the units of sector FAB, the equipment list of WAFER_FAB and the fab edges; references outside the repository removed. |
+| `docs-authority/AUTHORITY.md` | Rev Z. The vacuum-jacketed line envelopes now point to `models/freecad/cryo.py`, where they are defined. |
+| `docs-authority/internal/REMAINING_BLD.md` | Rev Z. History page kept as it is; two file paths corrected, one to `models/freecad/cryo.py` and one to a folder outside the repository. |
 
 ## 3. In progress
 

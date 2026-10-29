@@ -1,8 +1,8 @@
 # CAD authority lock
 
 Document number: AQS-AUTH-001  
-Revision: Y  
-Date: 2026-10-24
+Revision: Z  
+Date: 2026-10-29
 
 ## 1. Purpose and scope
 
@@ -87,7 +87,7 @@ Table 6.1. Controlling documents by topic
 | Living-area mechanical, electrical and plumbing | `docs-authority/LIFE_MEP.md` (AQS-MEP-001) | |
 | Solar-cell schedule | `docs-authority/SOLAR_CELL_EQUIPMENT.md` (AQS-EQP-FAB-PV-001 Rev B) | PFD AQS-PFD-FAB-PV-001; FreeCAD `PV_*` envelopes on the east strip |
 | Optional greenhouse envelopes | `docs-authority/GREENHOUSE_ENVELOPE.md` (AQS-TRR-GH-001 Rev B) | `GH_ENV_*`, `GH_AHU`, `GH_IRRIG_HDR` and `GH_DOOR_AIRLOCK` in `building_stack.py` |
-| Cryogenic vacuum-jacketed line envelopes | AQS-ASM-001 §8 | Tags `VJ_001` to `VJ_005` in `freecad/cryo.py`. These are not fabricator isometrics; MAWP and WPS are still open |
+| Cryogenic vacuum-jacketed line envelopes | AQS-ASM-001 §8 | Tags `VJ_001` to `VJ_005` in `models/freecad/cryo.py`. These are not fabricator isometrics; MAWP and WPS are still open |
 
 Planning gap audits and other planning-only documents are kept outside this repository.
 
@@ -118,3 +118,4 @@ Table 8.1. Revision history
 | W | WP-Bp1 to Bp4 done: React and SVG graph-layer interface (`design_tool/web/`) loads `/api/v1/flow-graph` and its views (PFD, MFD, electrical EFD, thermal, storage); placeholders shown; sandbox patches the graph-backed model; export packs include `flow_graph_snapshot.json`; MVS reference unchanged; `npm run build` passes; B′ exit met; Phase C planned and unblocked, starting only on explicit authorisation. Plan AQS-PLAN-UI-001 Rev Q. Nothing published to GitHub; no rates, streams or nameplates invented | 2026-10-01 |
 | X | WP-C1 done locally: modular export packs emit graph-driven `pfd/` (PFD and MFD views as SVG and JSON), `sld.svg` and `sld.json` (electrical EFD), and `bom.csv` and `bom_self_copy.json` from graph nodes and flags; the optional `matplotlib` module copies bridged hub PNG files only (not authority); unused modules off; MVS reference unchanged. WP-C2 and C3 waited on authorisation to publish to GitHub; C2 not started. Plan AQS-PLAN-UI-001 Rev R. No rates, streams or nameplates invented | 2026-10-01 |
 | Y | Rewritten to DOC_STYLE (AQS-DOC-002): purpose, terms, tables and revision history; pointer list made a table; VJ reference updated to AQS-ASM-001 §8; values unchanged | 2026-10-24 |
+| Z | Path of the cryogenic massing script corrected to `models/freecad/cryo.py`, where the line envelopes `VJ_001` to `VJ_005` are defined | 2026-10-29 |
