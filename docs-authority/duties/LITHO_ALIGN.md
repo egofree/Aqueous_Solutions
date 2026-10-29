@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0040 kW. In: none. Out: none.
+1. Basis. Mass in 0.1389 kg/d. Mass out 0.1389 kg/d. Electrical duty 0.0040 kW. In: IA-LITHO-WAFER-A 0.1389 kg/d (coated wafers to exposure). Out: IA-LITHO-WAFER-B 0.1389 kg/d (exposed wafers to develop).
 
 2. Size.
 - Envelope 500×500×800 mm, 0.2000 m³. The box is the machine. It is not a liquid holdup.

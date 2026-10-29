@@ -167,7 +167,7 @@ digraph G {
   "GEO_ORC" -> "SOL_ARK_60K" [label="S48", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n4.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n1.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n350.105 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n350.0702 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BOUNDARY_EXPORT" [label="IA-PV-CURTAIL\\n4.645 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BMED_ACID" [label="S17-BMED\\n5.6267 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -181,7 +181,7 @@ digraph G {
   "SOL_ARK_60K" -> "MEOH_SYNTH" [label="SF-MEOH_SYNTH\\n0.7388 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "MFG_SHOP" [label="SF-MFG_SHOP\\n2.55 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "NUTRIENT_DOSE" [label="SF-NUTRIENT_DOSE\\n0.0245 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "WAFER_FAB" [label="SF-WAFER_FAB\\n0.4417 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "WAFER_FAB" [label="SF-WAFER_FAB\\n0.4069 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "WET_BENCH" [label="SF-WET_BENCH\\n0.2066 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "LITHO_STUB" [label="SF-LITHO_STUB\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "ELECTRODE_COAT" [label="SF-ELECTRODE_COAT\\n0.0792 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];

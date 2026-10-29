@@ -1651,10 +1651,11 @@
             "IA-CR-VENT": 0.202,
             "IA-BURNOUT-VENT": 0.2,
             "IA-SHELL-EXPORT": 1.0,
-            "IA-METAL-SHIP": 10.812
+            "IA-METAL-SHIP": 10.812,
+            "IA-FAB-PRODUCT": 0.139
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.413,
+            "IA-H2O-MU": 64.326,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -1669,7 +1670,8 @@
             "IA-CR2O3-MU": 0.365,
             "IA-C-CR": 0.087,
             "IA-WAX-MU": 0.2,
-            "IA-SILICA-MU": 1.0
+            "IA-SILICA-MU": 1.0,
+            "IA-SI-IMPORT": 0.226
           },
           "net_kg_d": 0.001,
           "residual_kg_d": 0.002,
@@ -1852,10 +1854,10 @@
       "notes": " ISO 14644-1 Class 7 wet bench, Class 6 tool row.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.4417,
+        "value": 0.4069,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-301)."
+        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 28.31 kWh/pull heat-up (CRC_SI cp/L) + 671 kWh/pull hot zone, one pull every 148 d (A-M-417) + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-301)."
       },
       "modules": [],
       "params": {
@@ -1864,8 +1866,8 @@
         "iso_14644_tool_row": "Class 6",
         "equipment": [
           {
-            "item": "CZ puller: charge heat-up over the 7 d campaign + 4 h hot hold",
-            "kW": 0.2317
+            "item": "CZ puller: charge heat-up + hot zone over 19.2 h, one pull every 148 d",
+            "kW": 0.1969
           },
           {
             "item": "ingot cool/anneal station: N2 circulator duty share",
@@ -1885,7 +1887,7 @@
           },
           {
             "item": "total connected (calculated)",
-            "kW": 0.4417
+            "kW": 0.4069
           }
         ]
       }
@@ -2171,25 +2173,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 216.2817,
+        "value": 216.2517,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 216.3 kW, charge 983.1 kW, 3028 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 216.3 kW, charge 982.9 kW, 3028 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 984,
+        "kW": 983,
         "kWh": 3028,
         "presence": "present",
-        "charge_kW": 984,
+        "charge_kW": 983,
         "discharge_kW": 217,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 42 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.677,
-          "purge_m3_h": 31.99,
+          "H2_m3_d": 7.676,
+          "purge_m3_h": 31.98,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1980.6
+          "electrode_area_m2": 1980.3
         }
       }
     },
@@ -3863,10 +3865,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 908.851641,
+        "value": 908.725576,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.0 m3/h holds H2 at 25 % LFL: HER 6.54 + open-circuit 1.14 m3/d H2 on 4326 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.0 m3/h holds H2 at 25 % LFL: HER 6.54 + open-circuit 1.14 m3/d H2 on 4325 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -3886,7 +3888,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 908.851641,
+        "value": 908.725576,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."

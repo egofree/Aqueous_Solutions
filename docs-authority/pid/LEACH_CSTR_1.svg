@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="2386" font-family="sans-serif">
-<rect x="4" y="4" width="1492" height="2378" fill="white" stroke="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="2432" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="2424" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit LEACH_CSTR_1 · vessel · sector DIGESTER · present</text>
 <text x="24" y="54" font-size="10.5">0.75 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 41 in + 22 out · valves 34 placed / 0 unplaced · instruments 4 (1 SIF) · nozzles 60</text>
+<text x="24" y="72" font-size="10.5">Edges 42 in + 22 out · valves 34 placed / 0 unplaced · instruments 4 (1 SIF) · nozzles 61</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -33,7 +33,7 @@
 <text x="514" y="175.5" font-size="7.5" text-anchor="middle">TE-01</text>
 <text x="536" y="170" font-size="7">-20 to 150 C</text>
 <text x="536" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
-<rect x="590" y="210" width="320" height="1916" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
+<rect x="590" y="210" width="320" height="1962" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">LEACH_CSTR_1</text>
 <text x="750.0" y="252" font-size="9.5" text-anchor="middle">vessel · DIGESTER sector</text>
 <line x1="430" y1="240" x2="577" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
@@ -138,147 +138,153 @@
 <text x="24" y="971" font-size="11" font-weight="600" text-anchor="start">IA-EW9-CL2</text>
 <text x="24" y="989" font-size="10" text-anchor="start">111.1 kg/d · DN15 P3</text>
 <text x="598" y="980" font-size="8" font-style="italic" fill="#555" text-anchor="start">N57</text>
-<line x1="430" y1="1022" x2="577" y2="1022" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<line x1="430" y1="1022" x2="577" y2="1022" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1022 577,1018 577,1026" fill="#111"/>
 <text x="24" y="1003" font-size="9" fill="#666" text-anchor="start">WAFER_FAB</text>
-<text x="24" y="1017" font-size="11" font-weight="600" text-anchor="start">IA-FAB-SPENT</text>
-<text x="24" y="1035" font-size="10" text-anchor="start">66.5 kg/d · DN15 P2</text>
-<text x="598" y="1026" font-size="8" font-style="italic" fill="#555" text-anchor="start">N35</text>
+<text x="24" y="1017" font-size="11" font-weight="600" text-anchor="start">IA-FAB-KERF</text>
+<text x="24" y="1035" font-size="10" text-anchor="start">0.1 kg/d · solids transfer</text>
+<text x="598" y="1026" font-size="8" font-style="italic" fill="#555" text-anchor="start">N61</text>
 <line x1="430" y1="1068" x2="577" y2="1068" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1068 577,1064 577,1072" fill="#111"/>
-<text x="24" y="1049" font-size="9" fill="#666" text-anchor="start">FUEL_CELL</text>
-<text x="24" y="1063" font-size="11" font-weight="600" text-anchor="start">IA-FC-LEACH</text>
-<text x="24" y="1081" font-size="10" text-anchor="start">0.3 kg/d · DN15 P2</text>
-<text x="598" y="1072" font-size="8" font-style="italic" fill="#555" text-anchor="start">N42</text>
+<text x="24" y="1049" font-size="9" fill="#666" text-anchor="start">WAFER_FAB</text>
+<text x="24" y="1063" font-size="11" font-weight="600" text-anchor="start">IA-FAB-SPENT</text>
+<text x="24" y="1081" font-size="10" text-anchor="start">66.5 kg/d · DN15 P2</text>
+<text x="598" y="1072" font-size="8" font-style="italic" fill="#555" text-anchor="start">N35</text>
 <line x1="430" y1="1114" x2="577" y2="1114" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1114 577,1110 577,1118" fill="#111"/>
-<text x="24" y="1095" font-size="9" fill="#666" text-anchor="start">HOPPER</text>
-<text x="24" y="1109" font-size="11" font-weight="600" text-anchor="start">IA-FEED-01</text>
-<text x="24" y="1127" font-size="10" text-anchor="start">102.7 kg/d · DN15 P2</text>
-<text x="598" y="1118" font-size="8" font-style="italic" fill="#555" text-anchor="start">N29</text>
-<line x1="430" y1="1160" x2="577" y2="1160" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<text x="24" y="1095" font-size="9" fill="#666" text-anchor="start">FUEL_CELL</text>
+<text x="24" y="1109" font-size="11" font-weight="600" text-anchor="start">IA-FC-LEACH</text>
+<text x="24" y="1127" font-size="10" text-anchor="start">0.3 kg/d · DN15 P2</text>
+<text x="598" y="1118" font-size="8" font-style="italic" fill="#555" text-anchor="start">N42</text>
+<line x1="430" y1="1160" x2="577" y2="1160" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1160 577,1156 577,1164" fill="#111"/>
-<text x="24" y="1141" font-size="9" fill="#666" text-anchor="start">GREY_TREAT</text>
-<text x="24" y="1155" font-size="11" font-weight="600" text-anchor="start">IA-GREY-01</text>
-<text x="24" y="1173" font-size="10" text-anchor="start">244.6 kg/d · DN50 P2</text>
-<text x="598" y="1164" font-size="8" font-style="italic" fill="#555" text-anchor="start">N21</text>
-<line x1="430" y1="1206" x2="577" y2="1206" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<text x="24" y="1141" font-size="9" fill="#666" text-anchor="start">HOPPER</text>
+<text x="24" y="1155" font-size="11" font-weight="600" text-anchor="start">IA-FEED-01</text>
+<text x="24" y="1173" font-size="10" text-anchor="start">102.7 kg/d · DN15 P2</text>
+<text x="598" y="1164" font-size="8" font-style="italic" fill="#555" text-anchor="start">N29</text>
+<line x1="430" y1="1206" x2="577" y2="1206" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1206 577,1202 577,1210" fill="#111"/>
-<text x="24" y="1187" font-size="9" fill="#666" text-anchor="start">NORTH_DOCK</text>
-<text x="24" y="1201" font-size="11" font-weight="600" text-anchor="start">IA-H2O-MU</text>
-<text x="24" y="1219" font-size="10" text-anchor="start">64.4 kg/d · DN15 P2</text>
-<text x="598" y="1210" font-size="8" font-style="italic" fill="#555" text-anchor="start">N48</text>
-<line x1="430" y1="1252" x2="577" y2="1252" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<text x="24" y="1187" font-size="9" fill="#666" text-anchor="start">GREY_TREAT</text>
+<text x="24" y="1201" font-size="11" font-weight="600" text-anchor="start">IA-GREY-01</text>
+<text x="24" y="1219" font-size="10" text-anchor="start">244.6 kg/d · DN50 P2</text>
+<text x="598" y="1210" font-size="8" font-style="italic" fill="#555" text-anchor="start">N21</text>
+<line x1="430" y1="1252" x2="577" y2="1252" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1252 577,1248 577,1256" fill="#111"/>
-<text x="24" y="1233" font-size="9" fill="#666" text-anchor="start">HOPPER</text>
-<text x="24" y="1247" font-size="11" font-weight="600" text-anchor="start">IA-HOP-01</text>
-<text x="24" y="1265" font-size="10" text-anchor="start">530.7 kg/d · solids transfer</text>
-<text x="598" y="1256" font-size="8" font-style="italic" fill="#555" text-anchor="start">N36</text>
-<line x1="430" y1="1298" x2="577" y2="1298" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<text x="24" y="1233" font-size="9" fill="#666" text-anchor="start">NORTH_DOCK</text>
+<text x="24" y="1247" font-size="11" font-weight="600" text-anchor="start">IA-H2O-MU</text>
+<text x="24" y="1265" font-size="10" text-anchor="start">64.3 kg/d · DN15 P2</text>
+<text x="598" y="1256" font-size="8" font-style="italic" fill="#555" text-anchor="start">N48</text>
+<line x1="430" y1="1298" x2="577" y2="1298" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1298 577,1294 577,1302" fill="#111"/>
-<text x="24" y="1279" font-size="9" fill="#666" text-anchor="start">NUTRIENT_DOSE</text>
-<text x="24" y="1293" font-size="11" font-weight="600" text-anchor="start">IA-NUT-LEACH</text>
-<text x="24" y="1311" font-size="10" text-anchor="start">82.3 kg/d · DN15 P2</text>
-<text x="598" y="1302" font-size="8" font-style="italic" fill="#555" text-anchor="start">N28</text>
+<text x="24" y="1279" font-size="9" fill="#666" text-anchor="start">HOPPER</text>
+<text x="24" y="1293" font-size="11" font-weight="600" text-anchor="start">IA-HOP-01</text>
+<text x="24" y="1311" font-size="10" text-anchor="start">530.7 kg/d · solids transfer</text>
+<text x="598" y="1302" font-size="8" font-style="italic" fill="#555" text-anchor="start">N36</text>
 <line x1="430" y1="1344" x2="577" y2="1344" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1344 577,1340 577,1348" fill="#111"/>
-<text x="24" y="1325" font-size="9" fill="#666" text-anchor="start">CONTINUOUS_RECYCLE</text>
-<text x="24" y="1339" font-size="11" font-weight="600" text-anchor="start">IA-REC-01</text>
-<text x="24" y="1357" font-size="10" text-anchor="start">3302.9 kg/d · DN15 P2</text>
-<text x="598" y="1348" font-size="8" font-style="italic" fill="#555" text-anchor="start">N3</text>
+<text x="24" y="1325" font-size="9" fill="#666" text-anchor="start">NUTRIENT_DOSE</text>
+<text x="24" y="1339" font-size="11" font-weight="600" text-anchor="start">IA-NUT-LEACH</text>
+<text x="24" y="1357" font-size="10" text-anchor="start">82.3 kg/d · DN15 P2</text>
+<text x="598" y="1348" font-size="8" font-style="italic" fill="#555" text-anchor="start">N28</text>
 <line x1="430" y1="1390" x2="577" y2="1390" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1390 577,1386 577,1394" fill="#111"/>
-<text x="24" y="1371" font-size="9" fill="#666" text-anchor="start">NUTRIENT_DOSE</text>
-<text x="24" y="1385" font-size="11" font-weight="600" text-anchor="start">IA-SIC-RET</text>
-<text x="24" y="1403" font-size="10" text-anchor="start">0.5 kg/d · DN15 P2</text>
-<text x="598" y="1394" font-size="8" font-style="italic" fill="#555" text-anchor="start">N45</text>
-<line x1="430" y1="1436" x2="577" y2="1436" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
+<text x="24" y="1371" font-size="9" fill="#666" text-anchor="start">CONTINUOUS_RECYCLE</text>
+<text x="24" y="1385" font-size="11" font-weight="600" text-anchor="start">IA-REC-01</text>
+<text x="24" y="1403" font-size="10" text-anchor="start">3302.9 kg/d · DN15 P2</text>
+<text x="598" y="1394" font-size="8" font-style="italic" fill="#555" text-anchor="start">N3</text>
+<line x1="430" y1="1436" x2="577" y2="1436" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1436 577,1432 577,1440" fill="#111"/>
-<text x="24" y="1417" font-size="9" fill="#666" text-anchor="start">RECTIFIER</text>
-<text x="24" y="1431" font-size="11" font-weight="600" text-anchor="start">IA-TRIM-HX5</text>
-<text x="24" y="1449" font-size="10" text-anchor="start">15.9 kW · cable (schedule X-ELS-06)</text>
-<line x1="430" y1="1482" x2="577" y2="1482" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<text x="24" y="1417" font-size="9" fill="#666" text-anchor="start">NUTRIENT_DOSE</text>
+<text x="24" y="1431" font-size="11" font-weight="600" text-anchor="start">IA-SIC-RET</text>
+<text x="24" y="1449" font-size="10" text-anchor="start">0.5 kg/d · DN15 P2</text>
+<text x="598" y="1440" font-size="8" font-style="italic" fill="#555" text-anchor="start">N45</text>
+<line x1="430" y1="1482" x2="577" y2="1482" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,1482 577,1478 577,1486" fill="#111"/>
-<text x="24" y="1463" font-size="9" fill="#666" text-anchor="start">BMED_UPW_POLISH</text>
-<text x="24" y="1477" font-size="11" font-weight="600" text-anchor="start">IA-UPW-REJ</text>
-<text x="24" y="1495" font-size="10" text-anchor="start">6.0 kg/d · DN15 P2</text>
-<text x="598" y="1486" font-size="8" font-style="italic" fill="#555" text-anchor="start">N23</text>
+<text x="24" y="1463" font-size="9" fill="#666" text-anchor="start">RECTIFIER</text>
+<text x="24" y="1477" font-size="11" font-weight="600" text-anchor="start">IA-TRIM-HX5</text>
+<text x="24" y="1495" font-size="10" text-anchor="start">15.9 kW · cable (schedule X-ELS-06)</text>
 <line x1="430" y1="1528" x2="577" y2="1528" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1528 577,1524 577,1532" fill="#111"/>
-<text x="24" y="1509" font-size="9" fill="#666" text-anchor="start">VCD_TRAIN</text>
-<text x="24" y="1523" font-size="11" font-weight="600" text-anchor="start">IA-VCD-BD</text>
-<text x="24" y="1541" font-size="10" text-anchor="start">6.7 kg/d · DN15 P2</text>
-<text x="598" y="1532" font-size="8" font-style="italic" fill="#555" text-anchor="start">N27</text>
+<text x="24" y="1509" font-size="9" fill="#666" text-anchor="start">BMED_UPW_POLISH</text>
+<text x="24" y="1523" font-size="11" font-weight="600" text-anchor="start">IA-UPW-REJ</text>
+<text x="24" y="1541" font-size="10" text-anchor="start">6.0 kg/d · DN15 P2</text>
+<text x="598" y="1532" font-size="8" font-style="italic" fill="#555" text-anchor="start">N23</text>
 <line x1="430" y1="1574" x2="577" y2="1574" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1574 577,1570 577,1578" fill="#111"/>
-<text x="24" y="1555" font-size="9" fill="#666" text-anchor="start">FLOAT_SINK</text>
-<text x="24" y="1569" font-size="11" font-weight="600" text-anchor="start">IA-WET-FLOAT-01</text>
-<text x="24" y="1587" font-size="10" text-anchor="start">343.1 kg/d · DN15 P2</text>
-<text x="598" y="1578" font-size="8" font-style="italic" fill="#555" text-anchor="start">N4</text>
-<line x1="430" y1="1620" x2="577" y2="1620" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<text x="24" y="1555" font-size="9" fill="#666" text-anchor="start">VCD_TRAIN</text>
+<text x="24" y="1569" font-size="11" font-weight="600" text-anchor="start">IA-VCD-BD</text>
+<text x="24" y="1587" font-size="10" text-anchor="start">6.7 kg/d · DN15 P2</text>
+<text x="598" y="1578" font-size="8" font-style="italic" fill="#555" text-anchor="start">N27</text>
+<line x1="430" y1="1620" x2="577" y2="1620" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1620 577,1616 577,1624" fill="#111"/>
-<text x="24" y="1601" font-size="9" fill="#666" text-anchor="start">POLY_STOCK</text>
-<text x="24" y="1615" font-size="11" font-weight="600" text-anchor="start">POLY_TO_WET</text>
-<text x="24" y="1633" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
-<text x="598" y="1624" font-size="8" font-style="italic" fill="#555" text-anchor="start">N20</text>
-<line x1="430" y1="1666" x2="577" y2="1666" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<text x="24" y="1601" font-size="9" fill="#666" text-anchor="start">FLOAT_SINK</text>
+<text x="24" y="1615" font-size="11" font-weight="600" text-anchor="start">IA-WET-FLOAT-01</text>
+<text x="24" y="1633" font-size="10" text-anchor="start">343.1 kg/d · DN15 P2</text>
+<text x="598" y="1624" font-size="8" font-style="italic" fill="#555" text-anchor="start">N4</text>
+<line x1="430" y1="1666" x2="577" y2="1666" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1666 577,1662 577,1670" fill="#111"/>
-<text x="24" y="1647" font-size="9" fill="#666" text-anchor="start">WET_BENCH</text>
-<text x="24" y="1661" font-size="11" font-weight="600" text-anchor="start">S10</text>
-<text x="24" y="1679" font-size="10" text-anchor="start">79.1 kg/d · DN15 P2</text>
-<text x="598" y="1670" font-size="8" font-style="italic" fill="#555" text-anchor="start">N11</text>
-<line x1="430" y1="1712" x2="577" y2="1712" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
+<text x="24" y="1647" font-size="9" fill="#666" text-anchor="start">POLY_STOCK</text>
+<text x="24" y="1661" font-size="11" font-weight="600" text-anchor="start">POLY_TO_WET</text>
+<text x="24" y="1679" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
+<text x="598" y="1670" font-size="8" font-style="italic" fill="#555" text-anchor="start">N20</text>
+<line x1="430" y1="1712" x2="577" y2="1712" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1712 577,1708 577,1716" fill="#111"/>
-<text x="24" y="1693" font-size="9" fill="#666" text-anchor="start">Q4_BUS</text>
-<text x="24" y="1707" font-size="11" font-weight="600" text-anchor="start">S100</text>
-<text x="24" y="1725" font-size="10" text-anchor="start">0.5 kW · cable (schedule X-ELS-06)</text>
-<line x1="430" y1="1758" x2="577" y2="1758" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<text x="24" y="1693" font-size="9" fill="#666" text-anchor="start">WET_BENCH</text>
+<text x="24" y="1707" font-size="11" font-weight="600" text-anchor="start">S10</text>
+<text x="24" y="1725" font-size="10" text-anchor="start">79.1 kg/d · DN15 P2</text>
+<text x="598" y="1716" font-size="8" font-style="italic" fill="#555" text-anchor="start">N11</text>
+<line x1="430" y1="1758" x2="577" y2="1758" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,1758 577,1754 577,1762" fill="#111"/>
-<text x="24" y="1739" font-size="9" fill="#666" text-anchor="start">MFG_SHOP</text>
-<text x="24" y="1753" font-size="11" font-weight="600" text-anchor="start">S16</text>
-<text x="24" y="1771" font-size="10" text-anchor="start">12.3 kg/d · solids transfer</text>
-<text x="598" y="1762" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
+<text x="24" y="1739" font-size="9" fill="#666" text-anchor="start">Q4_BUS</text>
+<text x="24" y="1753" font-size="11" font-weight="600" text-anchor="start">S100</text>
+<text x="24" y="1771" font-size="10" text-anchor="start">0.5 kW · cable (schedule X-ELS-06)</text>
 <line x1="430" y1="1804" x2="577" y2="1804" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1804 577,1800 577,1808" fill="#111"/>
-<text x="24" y="1785" font-size="9" fill="#666" text-anchor="start">BAGHOUSE</text>
-<text x="24" y="1799" font-size="11" font-weight="600" text-anchor="start">S19</text>
-<text x="24" y="1817" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
-<text x="598" y="1808" font-size="8" font-style="italic" fill="#555" text-anchor="start">N13</text>
-<line x1="430" y1="1850" x2="577" y2="1850" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<text x="24" y="1785" font-size="9" fill="#666" text-anchor="start">MFG_SHOP</text>
+<text x="24" y="1799" font-size="11" font-weight="600" text-anchor="start">S16</text>
+<text x="24" y="1817" font-size="10" text-anchor="start">12.3 kg/d · solids transfer</text>
+<text x="598" y="1808" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
+<line x1="430" y1="1850" x2="577" y2="1850" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1850 577,1846 577,1854" fill="#111"/>
-<text x="24" y="1831" font-size="9" fill="#666" text-anchor="start">VCD_TRAIN</text>
-<text x="24" y="1845" font-size="11" font-weight="600" text-anchor="start">S28</text>
-<text x="24" y="1863" font-size="10" text-anchor="start">17.9 kg/d · DN15 P2</text>
-<text x="598" y="1854" font-size="8" font-style="italic" fill="#555" text-anchor="start">N14</text>
-<line x1="430" y1="1896" x2="577" y2="1896" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<text x="24" y="1831" font-size="9" fill="#666" text-anchor="start">BAGHOUSE</text>
+<text x="24" y="1845" font-size="11" font-weight="600" text-anchor="start">S19</text>
+<text x="24" y="1863" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
+<text x="598" y="1854" font-size="8" font-style="italic" fill="#555" text-anchor="start">N13</text>
+<line x1="430" y1="1896" x2="577" y2="1896" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1896 577,1892 577,1900" fill="#111"/>
-<text x="24" y="1877" font-size="9" fill="#666" text-anchor="start">WAFER_FAB</text>
-<text x="24" y="1891" font-size="11" font-weight="600" text-anchor="start">S39</text>
-<text x="24" y="1909" font-size="10" text-anchor="start">3.3 kg/d · DN50 P4</text>
-<text x="598" y="1900" font-size="8" font-style="italic" fill="#555" text-anchor="start">N15</text>
-<line x1="430" y1="1942" x2="577" y2="1942" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<text x="24" y="1877" font-size="9" fill="#666" text-anchor="start">VCD_TRAIN</text>
+<text x="24" y="1891" font-size="11" font-weight="600" text-anchor="start">S28</text>
+<text x="24" y="1909" font-size="10" text-anchor="start">17.9 kg/d · DN15 P2</text>
+<text x="598" y="1900" font-size="8" font-style="italic" fill="#555" text-anchor="start">N14</text>
+<line x1="430" y1="1942" x2="577" y2="1942" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1942 577,1938 577,1946" fill="#111"/>
-<text x="24" y="1923" font-size="9" fill="#666" text-anchor="start">CRYO_AHU</text>
-<text x="24" y="1937" font-size="11" font-weight="600" text-anchor="start">S68</text>
-<text x="24" y="1955" font-size="10" text-anchor="start">79.0 kg/d · DN15 P2</text>
-<text x="598" y="1946" font-size="8" font-style="italic" fill="#555" text-anchor="start">N16</text>
-<line x1="430" y1="1988" x2="577" y2="1988" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<text x="24" y="1923" font-size="9" fill="#666" text-anchor="start">WAFER_FAB</text>
+<text x="24" y="1937" font-size="11" font-weight="600" text-anchor="start">S39</text>
+<text x="24" y="1955" font-size="10" text-anchor="start">3.3 kg/d · DN50 P4</text>
+<text x="598" y="1946" font-size="8" font-style="italic" fill="#555" text-anchor="start">N15</text>
+<line x1="430" y1="1988" x2="577" y2="1988" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1988 577,1984 577,1992" fill="#111"/>
-<text x="24" y="1969" font-size="9" fill="#666" text-anchor="start">MET_SCRUB</text>
-<text x="24" y="1983" font-size="11" font-weight="600" text-anchor="start">S72</text>
-<text x="24" y="2001" font-size="10" text-anchor="start">2.4 kg/d · DN50 P2</text>
-<text x="598" y="1992" font-size="8" font-style="italic" fill="#555" text-anchor="start">N17</text>
-<line x1="430" y1="2034" x2="577" y2="2034" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
+<text x="24" y="1969" font-size="9" fill="#666" text-anchor="start">CRYO_AHU</text>
+<text x="24" y="1983" font-size="11" font-weight="600" text-anchor="start">S68</text>
+<text x="24" y="2001" font-size="10" text-anchor="start">79.0 kg/d · DN15 P2</text>
+<text x="598" y="1992" font-size="8" font-style="italic" fill="#555" text-anchor="start">N16</text>
+<line x1="430" y1="2034" x2="577" y2="2034" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,2034 577,2030 577,2038" fill="#111"/>
-<text x="24" y="2015" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
-<text x="24" y="2029" font-size="11" font-weight="600" text-anchor="start">SF-LEACH_CSTR_1</text>
-<text x="24" y="2047" font-size="10" text-anchor="start">0.8 kW · cable (schedule X-ELS-06)</text>
-<line x1="430" y1="2080" x2="577" y2="2080" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<text x="24" y="2015" font-size="9" fill="#666" text-anchor="start">MET_SCRUB</text>
+<text x="24" y="2029" font-size="11" font-weight="600" text-anchor="start">S72</text>
+<text x="24" y="2047" font-size="10" text-anchor="start">2.4 kg/d · DN50 P2</text>
+<text x="598" y="2038" font-size="8" font-style="italic" fill="#555" text-anchor="start">N17</text>
+<line x1="430" y1="2080" x2="577" y2="2080" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,2080 577,2076 577,2084" fill="#111"/>
-<text x="24" y="2061" font-size="9" fill="#666" text-anchor="start">TI_CELL</text>
-<text x="24" y="2075" font-size="11" font-weight="600" text-anchor="start">TI_CELL_SLAG_RETURN</text>
-<text x="24" y="2093" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
-<text x="598" y="2084" font-size="8" font-style="italic" fill="#555" text-anchor="start">N18</text>
+<text x="24" y="2061" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
+<text x="24" y="2075" font-size="11" font-weight="600" text-anchor="start">SF-LEACH_CSTR_1</text>
+<text x="24" y="2093" font-size="10" text-anchor="start">0.8 kW · cable (schedule X-ELS-06)</text>
+<line x1="430" y1="2126" x2="577" y2="2126" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<polygon points="586,2126 577,2122 577,2130" fill="#111"/>
+<text x="24" y="2107" font-size="9" fill="#666" text-anchor="start">TI_CELL</text>
+<text x="24" y="2121" font-size="11" font-weight="600" text-anchor="start">TI_CELL_SLAG_RETURN</text>
+<text x="24" y="2139" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
+<text x="598" y="2130" font-size="8" font-style="italic" fill="#555" text-anchor="start">N18</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">BMED_ACID</text>
@@ -443,15 +449,15 @@
 <text x="1476" y="1201" font-size="11" font-weight="600" text-anchor="end">S08</text>
 <text x="1476" y="1219" font-size="10" text-anchor="end">42.0 kg/d · solids transfer</text>
 <text x="902" y="1210" font-size="8" font-style="italic" fill="#555" text-anchor="end">N8</text>
-<text x="24" y="2176" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="2186" font-size="9">Every incident graph edge is drawn: 41 in, 22 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
-<text x="24" y="2201" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/LEACH_CSTR_1.csv.</text>
-<text x="24" y="2216" font-size="9">Nozzles with no matching graph edge (service text): N9 drain; N10 vent</text>
-<text x="24" y="2231" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
-<g id="aqs-title-block"><rect x="1116" y="2268" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
-<text x="1124" y="2285" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-LEACH_CSTR_1</text>
-<text x="1124" y="2302" font-size="9">P&amp;ID LEACH_CSTR_1 (vessel, DIGESTER sector)</text>
-<text x="1124" y="2319" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 8e862388   Issued 2026-10-19</text>
-<text x="1124" y="2336" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="2353" font-size="9">Graph SHA-256 c5ecb8d0e71a4594   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="24" y="2222" font-size="10" font-weight="600">Notes</text>
+<text x="24" y="2232" font-size="9">Every incident graph edge is drawn: 42 in, 22 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="2247" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/LEACH_CSTR_1.csv.</text>
+<text x="24" y="2262" font-size="9">Nozzles with no matching graph edge (service text): N9 drain; N10 vent</text>
+<text x="24" y="2277" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="2314" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="2331" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-LEACH_CSTR_1</text>
+<text x="1124" y="2348" font-size="9">P&amp;ID LEACH_CSTR_1 (vessel, DIGESTER sector)</text>
+<text x="1124" y="2365" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 25d9d6df   Issued 2026-10-19</text>
+<text x="1124" y="2382" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="2399" font-size="9">Graph SHA-256 71bd267d2e8a5147   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

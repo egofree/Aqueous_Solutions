@@ -279,9 +279,12 @@ def x_els_residuals(g, N, E, d):
 
     # 3) WAFER_FAB + WET_BENCH: tool lists from AQS-EQP-FAB-001 (litho now on its own real tools, A-M-287)
     cp_si, L_si, T_melt = 0.9, 1790.0, 1414.0                      # kJ/kg K, kJ/kg (CRC_SI)
-    cz = v('FAB.wafer-line-train.cz_charge_kg') * (cp_si * (T_melt - 25) + L_si) / 3600   # kWh per pull
-    camp = v('FAB.wafer-line-train.campaign_d')
-    fab = [('CZ puller: charge heat-up over the 7 d campaign + 4 h hot hold', (cz + 0.3 * 4) / camp),
+    from flow_graph.param import fab_silicon
+    SIL = fab_silicon.design(d)                                   # charge and pull interval from the wafer need (A-M-417)
+    cz = SIL['charge_kg'] * (cp_si * (T_melt - 25) + L_si) / 3600   # kWh per pull, charge heat-up
+    hz = v('FAB.wafer-line-train.cz_hotzone_kW') * SIL['ar_h']       # kWh per pull, hot-zone heater over the hours under argon
+    camp = SIL['interval_d']
+    fab = [(f"CZ puller: charge heat-up + hot zone over {SIL['ar_h']:.1f} h, one pull every {camp:.0f} d", (cz + hz) / camp / 24),
            ('ingot cool/anneal station: N2 circulator duty share', 0.02),
            ('crop/grind/edge tools at 5 starts/d', 0.04),
            ('FAB_TOOL dry row parasitics (ox, RTA, metal, probe standby)', 0.12),
@@ -289,7 +292,7 @@ def x_els_residuals(g, N, E, d):
     fab_kw = round(sum(x[1] for x in fab), 4)
     _st('WAFER_FAB', fab_kw,
         f"AQS-EQP-FAB-001 sec.3 tool train (CZ class) at {v('FAB.litho-train.starts_per_d')} wafer starts/d: CZ charge "
-        f"{cz:.2f} kWh/pull (CRC_SI cp/L) over a {camp:.0f} d campaign + tool-row parasitics; litho moved to the real "
+        f"{cz:.2f} kWh/pull heat-up (CRC_SI cp/L) + {hz:.0f} kWh/pull hot zone, one pull every {camp:.0f} d (A-M-417) + tool-row parasitics; litho moved to the real "
         f"LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share.",
         design=[dict(item=i, kW=round(w, 4)) for i, w in fab] + [dict(item='total connected (calculated)', kW=fab_kw)])
     from .sizing import heat as HT

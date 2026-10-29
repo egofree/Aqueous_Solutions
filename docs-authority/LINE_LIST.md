@@ -11,7 +11,7 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-565 edges: 326 piped, 124 solids transfers, 115 electrical. Piped edges without a length (unit position missing): 62.
+572 edges: 326 piped, 131 solids transfers, 115 electrical. Piped edges without a length (unit position missing): 62.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -582,3 +582,10 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SF-COLD_MILL | SOL_ARK_60K | COLD_MILL | cable | — | — | 38.3 | SOL_ARK_60K → COLD_MILL, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | SF-WIRE_DRAW | SOL_ARK_60K | WIRE_DRAW | cable | — | — | 38.3 | SOL_ARK_60K → WIRE_DRAW, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K | GEO_HP_CLOSED_LOOP | cable | — | — | 21.6 | SOL_ARK_60K → GEO_HP_CLOSED_LOOP, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
+| IA-SI-IMPORT | NORTH_DOCK | METAL_STORE | solids | — | — |  | NORTH_DOCK → METAL_STORE, position missing for METAL_STORE | solids: conveyor, bin or hand transfer; not piped |
+| IA-FAB-WAFER | WAFER_FAB | LITHO_COAT | solids | — | — | 2.7 | WAFER_FAB → LITHO_COAT, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-LITHO-WAFER-A | LITHO_COAT | LITHO_ALIGN | solids | — | — | 0.7 | LITHO_COAT → LITHO_ALIGN, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-LITHO-WAFER-B | LITHO_ALIGN | LITHO_DEV | solids | — | — | 0.6 | LITHO_ALIGN → LITHO_DEV, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-LITHO-WAFER-RET | LITHO_DEV | WAFER_FAB | solids | — | — | 4.0 | LITHO_DEV → WAFER_FAB, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-FAB-PRODUCT | WAFER_FAB | NORTH_DOCK | solids | — | — | 18.0 | WAFER_FAB → NORTH_DOCK, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | solids | — | — | 37.0 | WAFER_FAB → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |

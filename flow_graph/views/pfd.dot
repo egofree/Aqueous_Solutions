@@ -387,8 +387,8 @@ digraph G {
   "AFTERBURNER_FLUE" -> "FLUE_KO" [label="S67\\n117.42759 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FLUE_KO" -> "CRYO_CO2" [label="S67B\\n14.050492 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "LEACH_CSTR_1" [label="S68\\n78.987901 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n908.851641 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n908.851641 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n908.725576 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n908.725576 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU_COND_CONDENSABLE" -> "FLUE_KO" [label="S70\\n0.0521 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_AHU" -> "MET_SCRUB" [label="S71\\n20458.32 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_SCRUB" -> "LEACH_CSTR_1" [label="S72\\n2.4442 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -441,7 +441,7 @@ digraph G {
   "CONT_CAST" -> "STOCK_OUT" [label="CONT_TO_STOCK\\n21.7125 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "TI_CELL" -> "VAC_IND" [label="VAC_IND_TI\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "METAL_STORE" -> "MFG_SHOP" [label="STOCK_TO_MFG\\n25.9 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "METAL_STORE" -> "WAFER_FAB" [label="STOCK_TO_FAB\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "METAL_STORE" -> "WAFER_FAB" [label="STOCK_TO_FAB\\n0.226363 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "IND_MELT" -> "LEACH_CSTR_1" [label="FOUNDRY_SLAG_TO_LEACH\\n0.356466 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SALT_FEED" -> "FLUX_PREP" [label="SALT_TO_FLUX\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "AL_POT" -> "IND_MELT" [label="AL_POT_TO_IND\\n10.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -510,7 +510,7 @@ digraph G {
   "GREY_TREAT" -> "LEACH_CSTR_1" [label="IA-GREY-01\\n244.641602 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRU" -> "LEACH_CSTR_1" [label="IA-CRU-01\\n27.509975 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "Q4_BUS" -> "DRY_COOLER" [label="HL-Q4-REJ\\n0.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n350.105 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n350.0702 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "GREY_TREAT" [label="IA-ZNBR-BD\\n8.486841 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NUTRIENT_DOSE" -> "VCD_TRAIN" [label="IA-NUT-01\\n13.930007 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_UPW_POLISH" -> "FAB_UPW_TANK" [label="IA-UPW-FAB\\n60.000181 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -638,7 +638,7 @@ digraph G {
   "SOL_ARK_60K" -> "MEOH_SYNTH" [label="SF-MEOH_SYNTH\\n0.7388 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "MFG_SHOP" [label="SF-MFG_SHOP\\n2.55 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "NUTRIENT_DOSE" [label="SF-NUTRIENT_DOSE\\n0.0245 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "WAFER_FAB" [label="SF-WAFER_FAB\\n0.4417 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "WAFER_FAB" [label="SF-WAFER_FAB\\n0.4069 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "WET_BENCH" [label="SF-WET_BENCH\\n0.2066 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "LITHO_STUB" [label="SF-LITHO_STUB\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "ELECTRODE_COAT" [label="SF-ELECTRODE_COAT\\n0.0792 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -652,7 +652,7 @@ digraph G {
   "HDR_O2" -> "BACKUP_GEN" [label="IA-GEN-O2\\n0.172239 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "AFTERBURNER" [label="IA-AB-O2\\n0.528278 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_CO2" -> "MEOH_SYNTH" [label="IA-HCO2-MEOH\\n3.138638 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NORTH_DOCK" -> "LEACH_CSTR_1" [label="IA-H2O-MU\\n64.41311 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "NORTH_DOCK" -> "LEACH_CSTR_1" [label="IA-H2O-MU\\n64.325652 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_1" -> "LEACH_CSTR_1" [label="IA-EW1-CL2\\n88.32517 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_2" -> "LEACH_CSTR_1" [label="IA-EW2-CL2\\n88.354656 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_3" -> "LEACH_CSTR_1" [label="IA-EW3-CL2\\n33.164878 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -821,4 +821,11 @@ digraph G {
   "SOL_ARK_60K" -> "COLD_MILL" [label="SF-COLD_MILL\\n0.0191 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "WIRE_DRAW" [label="SF-WIRE_DRAW\\n0.0189 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "GEO_HP_CLOSED_LOOP" [label="SF-GEO_HP_CLOSED_LOOP\\n0.1257 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "NORTH_DOCK" -> "METAL_STORE" [label="IA-SI-IMPORT\\n0.226363 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "LITHO_COAT" [label="IA-FAB-WAFER\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LITHO_COAT" -> "LITHO_ALIGN" [label="IA-LITHO-WAFER-A\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LITHO_ALIGN" -> "LITHO_DEV" [label="IA-LITHO-WAFER-B\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LITHO_DEV" -> "WAFER_FAB" [label="IA-LITHO-WAFER-RET\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "NORTH_DOCK" [label="IA-FAB-PRODUCT\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "LEACH_CSTR_1" [label="IA-FAB-KERF\\n0.087458 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

@@ -17,7 +17,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 625 | 47 % |
+| metal_plateable | 626 | 47 % |
 | organic | 509 | 38 % |
 | metal_reactive | 81 | 6 % |
 | silicate_oxide | 60 | 5 % |
@@ -190,7 +190,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | IODIDE | 0 | 3 | 0 | 0 | 0 |
 | LEACH_CSTR_1 | 1 | 15 | 0 | 1 | 0 |
 | LIGNO_PRE | 0 | 4 | 0 | 0 | 0 |
-| LITHO_ALIGN | 1 | 0 | 0 | 0 | 0 |
+| LITHO_ALIGN | 2 | 0 | 0 | 0 | 0 |
 | LITHO_COAT | 2 | 0 | 0 | 0 | 0 |
 | LITHO_DEV | 2 | 0 | 0 | 0 | 0 |
 | LITHO_STUB | 2 | 0 | 0 | 0 | 0 |

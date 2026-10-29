@@ -35,6 +35,7 @@ digraph G {
     "WS_SOLV" [fillcolor="#ffffff", label="WS_SOLV"];
     "WS_PHOS" [fillcolor="#ffffff", label="WS_PHOS"];
     "LITHO_COAT" [fillcolor="#ffffff", label="LITHO_COAT"];
+    "LITHO_ALIGN" [fillcolor="#ffffff", label="LITHO_ALIGN"];
     "LITHO_DEV" [fillcolor="#ffffff", label="LITHO_DEV"];
     "SOLAR_PV_CELL" [fillcolor="#ffffff", label="SOLAR_PV_CELL"];
   }
@@ -95,7 +96,7 @@ digraph G {
   "WAFER_FAB" -> "OIL_FRAC" [label="S39B\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_NITRIC" -> "WET_BENCH" [label="S34\\n1.2456 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_PHOS" -> "WET_BENCH" [label="S34B\\n0.61 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "METAL_STORE" -> "WAFER_FAB" [label="STOCK_TO_FAB\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "METAL_STORE" -> "WAFER_FAB" [label="STOCK_TO_FAB\\n0.226363 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_STOCK" -> "WAFER_FAB" [label="POLY_TO_FAB\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_UPW" -> "FAB_UPW_TANK" [label="UPW_TO_FAB", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_UPW_POLISH" -> "FAB_UPW_TANK" [label="IA-UPW-FAB\\n60.000181 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -117,4 +118,10 @@ digraph G {
   "NORTH_DOCK" -> "WS_SOLV" [label="IA-SOLV-MU\\n0.209973 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HF_GEN" -> "WS_HF_ED" [label="IA-HF-PROD\\n1.5 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "LITHO_COAT" -> "LITHO_DEV" [label="IA-LITHO-CARRY\\n0.987499 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "LITHO_COAT" [label="IA-FAB-WAFER\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LITHO_COAT" -> "LITHO_ALIGN" [label="IA-LITHO-WAFER-A\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LITHO_ALIGN" -> "LITHO_DEV" [label="IA-LITHO-WAFER-B\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LITHO_DEV" -> "WAFER_FAB" [label="IA-LITHO-WAFER-RET\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "NORTH_DOCK" [label="IA-FAB-PRODUCT\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "LEACH_CSTR_1" [label="IA-FAB-KERF\\n0.087458 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

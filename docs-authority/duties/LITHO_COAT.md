@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.9875 kg/d. Mass out 0.9875 kg/d. Electrical duty 0.0254 kW. In: IA-LITHO-IN 0.9875 kg/d (spent resist and solvent). Out: IA-LITHO-CARRY 0.9875 kg/d (resist/solvent carry (coat catch bowl + developer) to the develop bench).
+1. Basis. Mass in 1.126 kg/d. Mass out 1.126 kg/d. Electrical duty 0.0254 kW. In: IA-LITHO-IN 0.9875 kg/d (spent resist and solvent); IA-FAB-WAFER 0.1389 kg/d (wafers to resist coat). Out: IA-LITHO-CARRY 0.9875 kg/d (resist/solvent carry (coat catch bowl + developer) to the develop bench); IA-LITHO-WAFER-A 0.1389 kg/d (coated wafers to exposure).
 
 2. Size.
 - Envelope 600×500×800 mm, 0.2400 m³. The box is the machine. It is not a liquid holdup.

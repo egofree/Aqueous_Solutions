@@ -134,7 +134,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | pem_fc | FUEL_CELL | transfer pump S52 to VCD_TRAIN | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 42.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | rectifier | RECTIFIER | cooling fan | BLDC | 57 mm (NEMA 23 flange) | 0.05 | 24 V DC | S1 | BLDC driver | 4 | assumed per cabinet |
 | scrubber | ZNBR2_BR2_REGEN | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0026 | 24 V DC | S1 | BLDC driver | 1 | 908.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0026 | 24 V DC | S1 | BLDC driver | 1 | 908.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### FAB
 

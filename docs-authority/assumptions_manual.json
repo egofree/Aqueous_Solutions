@@ -5004,7 +5004,7 @@
   "id": "A-M-297",
   "value": "one CZ pull + tool campaign per week at 5 wafer starts/d: cz charge 0.5 kg per pull, campaign 7.0 d",
   "units": "kg per pull; campaign d",
-  "where": "drivers FAB.wafer-line-train.cz_charge_kg / campaign_d; flow_graph/param/write_graph.py WAFER_FAB tool row",
+  "where": "driver FAB.wafer-line-train.campaign_d; the CZ charge is derived by flow_graph/param/fab_silicon.py (A-M-417); flow_graph/param/write_graph.py WAFER_FAB tool row",
   "basis": "AQS-EQP-FAB-001 small-ingot CZ class: 0.42 kWh/pull (CRC_SI cp/L) over the campaign + tool-row parasitics; was the 2 kW PECVD+belt study share before the litho/stub split",
   "sensitivity": "campaign energy scales 1:1 with starts/d and the pull mass",
   "replaced_by": "fab campaign log at the first pull",
@@ -7173,5 +7173,22 @@
   ],
   "needs_verification": true,
   "verification_test": "First atomiser heat: pour time and receiver pressure drop logged; first mill run: strip gauge and width measured"
+ },
+ {
+  "id": "A-M-417",
+  "value": "Wafer-fab silicon and blanket gas from the wafer need: a 150 mm wafer slot is 675 um of wafer plus 150 um of kerf, and 25 % of the charge is crop and pot scrap; the CZ charge is the larger of one 7 d tool campaign of starts and the least melt a crucible 2.7 times the ingot diameter holds (depth 0.25 of its diameter, liquid silicon 2.57 g/cm3), and the pull interval follows; polysilicon is imported through the dock into METAL_STORE, which holds the larger of one charge and 90 d of feed; wafers run fab, lithography and back to the fab, then to the dock; kerf and crop go to the leach; argon from CRYO_ASU at 0.03 slpm per cm2 of crucible for meltdown (3 h), neck and crown (2 h), the body pull at 60 mm/h and cool-down (4 h), returned to the cold-box getter in a closed loop; the hot zone draws 35 kW while under argon",
+  "units": "kg/d, mm, um, h, slpm",
+  "where": "flow_graph/param/fab_silicon.py design() and tf(), called from flow_graph/param/balance.py physics(); flow_graph/param/write_graph.py CZ charge energy; docs-authority/_wafer_fab_equipment.py",
+  "basis": "Owner decision 2026-10-29: the crystal-growth blanket gas is argon from the cold box and the fab gets a silicon feed so the balance closes. SEMI M1 wafer thickness; CRC_SI density; argon reference density 1.784 g/L at 0 C and 1 atm. Nitrogen is refused as a CZ ambient because it forms silicon nitride on the melt. The plant makes only metallurgical-grade silicon (SI_REDUCE), so the charge is imported (AQS-PLAN-011 elimination rule: an import path with its resupply interval and holding)",
+  "sensitivity": "The crop share and kerf set the silicon import; the argon specific flow and the hours under gas set the loop flow and the getter duty",
+  "replaced_by": "Logged charge mass, ingot yield and argon use of the first campaigns",
+  "task": "QA audit 2026-10-29, fab silicon feed and blanket gas",
+  "files": [
+   "flow_graph/param/fab_silicon.py",
+   "flow_graph/param/balance.py",
+   "flow_graph/param/write_graph.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.fab_silicon; first-campaign charge, yield and argon use against the design"
  }
 ]

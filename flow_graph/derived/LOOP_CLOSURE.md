@@ -3,8 +3,8 @@ A component passes when every unit balances and the cut balances, per rate unit,
 Pass is on the present edges in this file. It is not on-site evidence.
 This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
 
-## mass: 407 edges, 1 loops
-- 135 units. Circuits listed: 11 (cap 20). Elementary search stopped at the visit cap. Closure is the cut, not the circuit list.
+## mass: 414 edges, 1 loops
+- 136 units. Circuits listed: 11 (cap 20). Elementary search stopped at the visit cap. Closure is the cut, not the circuit list.
   ACID_POLISH_SCRUB, AFTERBURNER, AFTERBURNER_FLUE, AIR_RECEIVER, ALK_SCRUBBER, AL_POT, BACKUP_GEN, BAGHOUSE, BLACK_DIGEST, BLOW_MOLD, BMED_ACID, BMED_BASE, BMED_UPW_POLISH, C29_RECYCLE ...
   one circuit: S66 -> CRU_TO_VDF -> VDF_TO_POLY_F -> POLYF_TO_PELLET -> PELLET_TO_STOCK -> POLY_TO_MFG -> S16 -> IA-BMED-03
   kg/d: nodes off 0, cut in 0.00 out 0.00 pass
@@ -15,7 +15,7 @@ This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
 - 2 units. Circuits listed: 1 (cap 20).
   SOL_ARK_60K, ZNBR2
   one circuit: IA-ESS-ZNBR2-CHG -> IA-ESS-ZNBR2-DIS
-  kW: nodes off 1, cut in 355.11 out 159.12 fail
+  kW: nodes off 1, cut in 355.08 out 159.08 fail
 
 ## ess: 10 edges, 2 loops
 - 2 units. Circuits listed: 4 (cap 20).

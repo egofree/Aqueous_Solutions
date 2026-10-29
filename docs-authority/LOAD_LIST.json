@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "c5ecb8d0e71a4594b6924cc2995014f7d0657bd23f26b3d22fa08db5b8ba22c7",
+  "graph_sha256": "71bd267d2e8a5147eac04cbd777a3e2f1d7c2b2257a9e3b2ff987d35d89e0a20",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 350.105,
-   "calc_kw": 350.105,
+   "kw": 350.07,
+   "calc_kw": 350.07,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 216.282,
-   "calc_kw": 216.282,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 216.3 kW, charge 983.1 kW, 3028 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 216.252,
+   "calc_kw": 216.252,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 216.3 kW, charge 982.9 kW, 3028 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -311,15 +311,6 @@
    "sector": "DIGESTER"
   },
   {
-   "unit": "WAFER_FAB",
-   "role": "load",
-   "kw": 0.442,
-   "calc_kw": 0.442,
-   "basis": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. / X-ELS-02 load-basis (A-M-301).",
-   "class": "calculated",
-   "sector": "FAB"
-  },
-  {
    "unit": "EW_5",
    "role": "load",
    "kw": 0,
@@ -336,6 +327,15 @@
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
    "sector": "DIGESTER"
+  },
+  {
+   "unit": "WAFER_FAB",
+   "role": "load",
+   "kw": 0.407,
+   "calc_kw": 0.407,
+   "basis": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 28.31 kWh/pull heat-up (CRC_SI cp/L) + 671 kWh/pull hot zone, one pull every 148 d (A-M-417) + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. / X-ELS-02 load-basis (A-M-301).",
+   "class": "calculated",
+   "sector": "FAB"
   },
   {
    "unit": "SHELL_BREAK",
@@ -813,9 +813,9 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 89,
-  "graph_sum_kW": 154.36,
-  "calc_sum_kW": 154.36,
-  "connected_load_kW": 154.4,
+  "graph_sum_kW": 154.32,
+  "calc_sum_kW": 154.32,
+  "connected_load_kW": 154.3,
   "connected_calculated_kW": 154.3,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 0.0,

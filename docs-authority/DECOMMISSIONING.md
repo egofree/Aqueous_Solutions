@@ -10,8 +10,8 @@ Order: process systems first, utilities last (reverse of AQS-COM-001), so power,
 | Step | System | Units | Drain (t) | Chemicals drained | Purge | Dismantled (t) |
 |---|---|---|---|---|---|---|
 | 1 | POLYMERS | 10 | 0.00 | C5-C10 | - | 0.00 |
-| 2 | FOUNDRY | 27 | 0.00 |  | - | 0.00 |
-| 3 | FAB | 16 | 2.77 | Ar, Fe, HCl, N2, O2, other_metals, solute | N2/air to 19.5-23.5 % O2; air purge | 1.75 |
+| 2 | FOUNDRY | 27 | 0.00 | Si | - | 0.00 |
+| 3 | FAB | 16 | 2.77 | Ar, Fe, HCl, N2, O2, Si, other_metals, solute | N2/air to 19.5-23.5 % O2; air purge | 1.75 |
 | 4 | MFG | 10 | 0.00 | Cu, Pb/Sn/Ni/Cd/Zn, blend, hydrocarbon, metal, solute | N2 to < 25 % LFL | 2.00 |
 | 5 | HAB | 1 | 0.00 | solute | - | 0.00 |
 | 6 | FARM | 2 | 0.00 | CO2 | - | 0.00 |
@@ -19,7 +19,7 @@ Order: process systems first, utilities last (reverse of AQS-COM-001), so power,
 | 8 | GLASS | 5 | 0.00 | Fe, HCl, other_metals, solute | air purge | 0.23 |
 | 9 | OIL | 12 | 0.32 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2; air purge | 0.20 |
 | 10 | MEOH | 5 | 1.94 | Ar, CO2, Fe, HCl, O2, other_metals, solute | N2/air to 19.5-23.5 % O2 | 1.22 |
-| 11 | DIGESTER | 24 | 14.17 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals … | N2/air to 19.5-23.5 % O2; air purge | 3.73 |
+| 11 | DIGESTER | 24 | 14.17 | Cl2, Fe, HCl, O2, Si, metal_plateable, metal_reactive, organic … | N2/air to 19.5-23.5 % O2; air purge | 3.73 |
 | 12 | GEO | 3 | 0.00 |  | - | 0.46 |
 | 13 | CRYO | 14 | 0.00 | Ar, CH3OH, CO2, H2, N2, O2, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2 | 10.78 |
 | 14 | GAS | 8 | 0.29 | Fe, HCl, N2, other_metals, solute | air purge | 1.65 |

@@ -13,3 +13,8 @@ N11,solids,Class 150,specialty stock to fab,inlet,160
 N12,solids,Class 150,polymer feedstock to fab,inlet,160
 N13,solids,Class 150,spent resist and solvent,outlet,600
 N14,solids,Class 150,dopant into the wafer fab,inlet,160
+N15,solids,Class 150,polysilicon CZ charge from the store,inlet,160
+N16,solids,Class 150,wafers to resist coat,outlet,600
+N17,solids,Class 150,patterned wafers back to the fab tool row,inlet,160
+N18,solids,Class 150,finished wafers to the dock for dispatch,outlet,600
+N19,solids,Class 150,"saw kerf, crop and pot scrap with the spent slurry",outlet,600

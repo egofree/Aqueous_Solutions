@@ -21,7 +21,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 2,FOUNDRY,FORGE,0,,-,0,no
 2,FOUNDRY,IND_MELT,0,,-,0,no
 2,FOUNDRY,INV_CAST,0,,-,0,no
-2,FOUNDRY,METAL_STORE,0,,-,0,no
+2,FOUNDRY,METAL_STORE,0,Si,-,0,no
 2,FOUNDRY,MG_POT,0,,-,0,no
 2,FOUNDRY,MO_CELL,0,,-,0,no
 2,FOUNDRY,RES_HEAT,0,,-,0,no
@@ -37,11 +37,11 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 2,FOUNDRY,VAC_IND,0,,-,0,no
 2,FOUNDRY,WAX_PATTERN,0,,-,0,no
 3,FAB,FAB_UPW_TANK,125,solute,-,8,no
-3,FAB,LITHO_ALIGN,0,,-,30,no
-3,FAB,LITHO_COAT,0,solute,-,36,no
-3,FAB,LITHO_DEV,0,solute,-,30,no
+3,FAB,LITHO_ALIGN,0,Si,-,30,no
+3,FAB,LITHO_COAT,0,Si solute,-,36,no
+3,FAB,LITHO_DEV,0,Si solute,-,30,no
 3,FAB,SOLAR_PV_CELL,0,solute,-,691,no
-3,FAB,WAFER_FAB,0,N2 solute,-,0,no
+3,FAB,WAFER_FAB,0,N2 Si solute,-,0,no
 3,FAB,WET_BENCH,0,solute,-,0,no
 3,FAB,WS_AMMONIA,0,N2,-,106,no
 3,FAB,WS_DOPE,440,solute,-,106,no
@@ -107,7 +107,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 11,DIGESTER,FLOAT_SINK,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",216,no
 11,DIGESTER,F_RECOVER,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",0,no
 11,DIGESTER,HX8,0,,-,22,no
-11,DIGESTER,LEACH_CSTR_1,2100,Cl2 Fe HCl O2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
+11,DIGESTER,LEACH_CSTR_1,2100,Cl2 Fe HCl O2 Si metal_plateable metal_reactive organic other_metals silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
 11,DIGESTER,LI_RECOVER,0,,-,0,no
 11,DIGESTER,POLISH_BANK,0,,-,0,no
 11,DIGESTER,P_CA,0,,-,0,no

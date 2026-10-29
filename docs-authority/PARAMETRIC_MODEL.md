@@ -79,7 +79,7 @@ Table 6.1. Graph values against the solver
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2999.000 | 2999.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2998.000 | 2998.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 7. Acid-loop decision (X-PAR-04)
 
@@ -93,7 +93,7 @@ Table 6.1. Graph values against the solver
 
 ## 8. Drivers
 
-Table 8.1 lists the 850 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 865 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -862,7 +862,22 @@ Table 8.1. Drivers
 | FAB.wet-bench-train.bath_C | 80.0 | C | SC1/SC2 bath temperature (RCA class, AQS-EQP-FAB-001; A-M-298) (A-M-301) | — |
 | FAB.wet-bench-train.heated_baths | 2 | count | SC1 + SC2 heated; DHF at ambient (AQS-EQP-FAB-001; A-M-298) (A-M-301) | — |
 | FAB.wafer-line-train.campaign_d | 7.0 | d | one CZ pull + tool campaign per week at 5 starts/d (A-M-297) (A-M-301) | yes |
-| FAB.wafer-line-train.cz_charge_kg | 0.5 | kg | small-ingot CZ charge per pull (AQS-EQP-FAB-001 CZ class; A-M-297) (A-M-301) | — |
+| FAB.wafer-line-train.cz_blanket_gas | "Ar" | - CZ puller ambient; only Ar is accepted (N2 nitrides the melt) | A-M-417 | — |
+| FAB.wafer-line-train.wafer_D_mm | 150.0 | mm wafer diameter (the 150 mm class of the litho train) | A-M-417 | — |
+| FAB.wafer-line-train.wafer_t_um | 675.0 | um wafer thickness, SEMI M1 for 150 mm | A-M-417 | — |
+| FAB.wafer-line-train.kerf_um | 150.0 | um saw kerf per wafer, diamond wire | A-M-417 | — |
+| FAB.wafer-line-train.si_rho_g_cm3 | 2.329 | g/cm3 silicon density (CRC_SI) | A-M-417 | — |
+| FAB.wafer-line-train.cz_crop_frac | 0.25 | - share of the charge not in the wafered body: crown, tail, diameter grind and pot scrap | A-M-417 | — |
+| FAB.wafer-line-train.cz_pull_mm_h | 60.0 | mm/h body pull rate of a small CZ ingot | A-M-417 | — |
+| FAB.wafer-line-train.cz_melt_h | 3.0 | h meltdown and stabilisation under argon | A-M-417 | — |
+| FAB.wafer-line-train.cz_neck_crown_h | 2.0 | h seed dip, neck and crown under argon | A-M-417 | — |
+| FAB.wafer-line-train.cz_cool_h | 4.0 | h ingot cool-down under argon | A-M-417 | — |
+| FAB.wafer-line-train.cz_crucible_ratio | 2.7 | - crucible diameter over ingot diameter | A-M-417 | — |
+| FAB.wafer-line-train.cz_ar_slpm_per_cm2 | 0.03 | slpm argon per cm2 of crucible area (about 40 slpm on a 16 inch crucible) | A-M-417 | — |
+| FAB.wafer-line-train.si_liquid_rho_g_cm3 | 2.57 | g/cm3 liquid silicon density at the melting point (CRC_SI) | A-M-417 | — |
+| FAB.wafer-line-train.cz_min_depth_frac | 0.25 | - least melt depth for a pull, as a share of the crucible diameter | A-M-417 | — |
+| FAB.wafer-line-train.cz_hotzone_kW | 35.0 | kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured) | A-M-417 | — |
+| FAB.wafer-line-train.si_resupply_d | 90.0 | d interval between polysilicon deliveries; the store holds one interval of charge | A-M-417 | — |
 | OIL.afterburner-train.flue_fan_dP_Pa | 350.0 | Pa | duct + stack draft loss class of a 100 mm bore flue run (A-M-300) (A-M-301) | — |
 | OIL.afterburner-train.flue_fan_eta | 0.35 | fraction | small high-temperature centrifugal fan (A-M-300) (A-M-301) | — |
 | NUT.nutrient-train.dose_head_m | 15.0 | m | dose-header head to the grow beds (AQS-EQP-NUT-001; A-M-299) (A-M-301) | — |
@@ -1261,7 +1276,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 366 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 367 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1929,3 +1944,4 @@ Table 10.1. Values to verify
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35 … m; m; - | Class stability and freeboard review (Q-030) |
 | A-M-415 | Rectifier trim heaters (every present kW edge out of … kW | python3 docs-authority/_power_sizing.py: bounding P_kW equals the node and feed sum plus rect_ac_input_kW plus the rectifier_trims sum plus the converged EXT_HALL load; SOL_ARK_60K.params.redundancy.bus_demand_kW equals mvs.electrical.need_kw |
 | A-M-416 | Metal-forming tool design from the graph throughputs … mm, bar, kg/m3, fraction | First atomiser heat: pour time and receiver pressure drop logged; first mill run: strip gauge and width measured |
+| A-M-417 | Wafer-fab silicon and blanket gas from the wafer need: a … kg/d, mm, um, h, slpm | python3 -m flow_graph.param.fab_silicon; first-campaign charge, yield and argon use against the design |

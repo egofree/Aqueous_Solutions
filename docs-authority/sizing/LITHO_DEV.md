@@ -17,7 +17,7 @@ This page records the size of unit LITHO_DEV, of class `wet_bench` in sector FAB
 
 ## 2. Duty
 
-The unit takes 0.987499 kg/d by 1 stream and gives 0.987499 kg/d by 1 stream. Its continuous electrical load is 0.008 kW, fed by stream SF-LITHO_DEV.
+The unit takes 1.1264 kg/d by 2 streams and gives 1.1264 kg/d by 2 streams. Its continuous electrical load is 0.008 kW, fed by stream SF-LITHO_DEV.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -36,7 +36,7 @@ Table 2.1. Design parameters
 
 The envelope is 1200 mm x 600 mm x 900 mm, from `params.size_mm`. Its basis is: L x W x H mm, issued envelope (A-M-287).
 
-The hold-up check takes 0.987499 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.9875 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 110 mm in diameter and 160 mm high. It fits within the envelope.
+The hold-up check takes 1.1264 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 1.126 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 110 mm in diameter and 160 mm high. It fits within the envelope.
 
 ## 4. Material
 

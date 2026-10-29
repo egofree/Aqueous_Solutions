@@ -141,8 +141,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | 117.42759 kg/d | — |
 | S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 14.050492 kg/d | — |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | 78.987901 kg/d | — |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 908.851641 kg/d | — |
-| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 908.851641 kg/d | — |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 908.725576 kg/d | — |
+| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 908.725576 kg/d | — |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | L | mass | present | condensables | 0.0521 kg/d | — |
 | S71 | MET_AHU | MET_SCRUB | G | mass | present | metal-aisle fume / mist / dust | 20458.32 kg/d | absent_from_candidate_mvs |
 | S72 | MET_SCRUB | LEACH_CSTR_1 | L/S | mass | present | metal fines and aqueous scrub liquor | 2.4442 kg/d | — |
@@ -195,7 +195,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | CONT_TO_STOCK | CONT_CAST | STOCK_OUT | S | mass | present | as-cast stock | 21.7125 kg/d | — |
 | VAC_IND_TI | TI_CELL | VAC_IND | S | mass | present | Ti sponge/powder to vacuum melt | 0.0 kg/d | — |
 | STOCK_TO_MFG | METAL_STORE | MFG_SHOP | S | mass | present | plate/rod/wire to manufacturing | 25.9 kg/d | — |
-| STOCK_TO_FAB | METAL_STORE | WAFER_FAB | S | mass | present | specialty stock to fab | 0.0 kg/d | — |
+| STOCK_TO_FAB | METAL_STORE | WAFER_FAB | S | mass | present | polysilicon CZ charge from the store | 0.226363 kg/d | — |
 | FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | S | mass | present | slag return | 0.356466 kg/d | — |
 | SALT_TO_FLUX | SALT_FEED | FLUX_PREP | S | mass | present | digester/leach salts to flux | 0.0 kg/d | — |
 | AL_POT_TO_IND | AL_POT | IND_MELT | S | mass | present | Al metal | 10.0 kg/d | — |
@@ -264,7 +264,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.641602 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.509975 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 350.105 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 350.0702 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
@@ -392,7 +392,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-MEOH_SYNTH | SOL_ARK_60K | MEOH_SYNTH | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.7388 kW | — |
 | SF-MFG_SHOP | SOL_ARK_60K | MFG_SHOP | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 2.55 kW | — |
 | SF-NUTRIENT_DOSE | SOL_ARK_60K | NUTRIENT_DOSE | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0245 kW | — |
-| SF-WAFER_FAB | SOL_ARK_60K | WAFER_FAB | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.4417 kW | — |
+| SF-WAFER_FAB | SOL_ARK_60K | WAFER_FAB | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.4069 kW | — |
 | SF-WET_BENCH | SOL_ARK_60K | WET_BENCH | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.2066 kW | — |
 | SF-LITHO_STUB | SOL_ARK_60K | LITHO_STUB | E | elec | retired | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0 kW | — |
 | SF-ELECTRODE_COAT | SOL_ARK_60K | ELECTRODE_COAT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0792 kW | — |
@@ -406,7 +406,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.172239 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 64.41311 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 64.325652 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
@@ -575,3 +575,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-COLD_MILL | SOL_ARK_60K | COLD_MILL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0191 kW | — |
 | SF-WIRE_DRAW | SOL_ARK_60K | WIRE_DRAW | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0189 kW | — |
 | SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K | GEO_HP_CLOSED_LOOP | E | elec | present | 480 V AC | 0.1257 kW | — |
+| IA-SI-IMPORT | NORTH_DOCK | METAL_STORE | S | mass | present | imported polysilicon for the CZ charge | 0.226363 kg/d | — |
+| IA-FAB-WAFER | WAFER_FAB | LITHO_COAT | S | mass | present | wafers to resist coat | 0.138904 kg/d | — |
+| IA-LITHO-WAFER-A | LITHO_COAT | LITHO_ALIGN | S | mass | present | coated wafers to exposure | 0.138904 kg/d | — |
+| IA-LITHO-WAFER-B | LITHO_ALIGN | LITHO_DEV | S | mass | present | exposed wafers to develop | 0.138904 kg/d | — |
+| IA-LITHO-WAFER-RET | LITHO_DEV | WAFER_FAB | S | mass | present | patterned wafers back to the fab tool row | 0.138904 kg/d | — |
+| IA-FAB-PRODUCT | WAFER_FAB | NORTH_DOCK | S | mass | present | finished wafers to the dock for dispatch | 0.138904 kg/d | — |
+| IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | S | mass | present | saw kerf, crop and pot scrap with the spent slurry | 0.087458 kg/d | — |

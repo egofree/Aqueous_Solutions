@@ -3,8 +3,8 @@
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 32,
-  "edge_count": 39,
+  "node_count": 33,
+  "edge_count": 45,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -304,10 +304,11 @@
             "IA-CR-VENT": 0.202,
             "IA-BURNOUT-VENT": 0.2,
             "IA-SHELL-EXPORT": 1.0,
-            "IA-METAL-SHIP": 10.812
+            "IA-METAL-SHIP": 10.812,
+            "IA-FAB-PRODUCT": 0.139
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.413,
+            "IA-H2O-MU": 64.326,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -322,7 +323,8 @@
             "IA-CR2O3-MU": 0.365,
             "IA-C-CR": 0.087,
             "IA-WAX-MU": 0.2,
-            "IA-SILICA-MU": 1.0
+            "IA-SILICA-MU": 1.0,
+            "IA-SI-IMPORT": 0.226
           },
           "net_kg_d": 0.001,
           "residual_kg_d": 0.002,
@@ -436,10 +438,10 @@
       "notes": " ISO 14644-1 Class 7 wet bench, Class 6 tool row.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.4417,
+        "value": 0.4069,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-301)."
+        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 28.31 kWh/pull heat-up (CRC_SI cp/L) + 671 kWh/pull hot zone, one pull every 148 d (A-M-417) + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-301)."
       },
       "modules": [],
       "params": {
@@ -448,8 +450,8 @@
         "iso_14644_tool_row": "Class 6",
         "equipment": [
           {
-            "item": "CZ puller: charge heat-up over the 7 d campaign + 4 h hot hold",
-            "kW": 0.2317
+            "item": "CZ puller: charge heat-up + hot zone over 19.2 h, one pull every 148 d",
+            "kW": 0.1969
           },
           {
             "item": "ingot cool/anneal station: N2 circulator duty share",
@@ -469,7 +471,7 @@
           },
           {
             "item": "total connected (calculated)",
-            "kW": 0.4417
+            "kW": 0.4069
           }
         ]
       }
@@ -816,6 +818,42 @@
       },
       "continuous_kw": {
         "value": 0.0254,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287)."
+      }
+    },
+    {
+      "unit_id": "LITHO_ALIGN",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "aligner",
+      "notes": "Contact aligner: 365 nm LED array over a 100 mm field, leadscrew stage (AQS-LITH-001 rev C; A-M-287). Not a stepper.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "starts_d": 5,
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          1200,
+          600,
+          800
+        ],
+        "size_note": "L x W x H mm, AQS-LITH-001 rev C frame 6061",
+        "equipment_id": "LITHO-ALIGN-01",
+        "design": {
+          "machine": "contact aligner",
+          "source": "365 nm LED array, 1 W optical (AQS-LITH-001)",
+          "dose": "10 mW/cm2 x 20 s = 200 mJ/cm2",
+          "field_mm": 100,
+          "stage": "leadscrew 1 mm pitch, 10 um repeatability",
+          "mask": "chrome on glass, 100 um pattern",
+          "duty_kW": 0.004,
+          "peak_kW": 0.25
+        }
+      },
+      "continuous_kw": {
+        "value": 0.004,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287)."
@@ -1532,7 +1570,7 @@
       "to_unit_id": "WAFER_FAB",
       "phase": "S",
       "presence": "present",
-      "carries": "specialty stock to fab",
+      "carries": "polysilicon CZ charge from the store",
       "notes": "Integration edge. Rate TBD.",
       "namespace": "IA",
       "layers": [
@@ -1540,13 +1578,16 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.0,
+        "value": 0.226363,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b A-M-257: rated 0 by difference on live endpoints - the fab closes at steady state on UPW (IA-UPW-USE) + slurry (S37) + N2 purge (S03); its wafer output rides IA-PV-OUT 0.01 kg/d. A net STOCK_OUT draw appears when the foundry/goods pass sizes the fab product basis (DOCK_EXPORT_TBD lane). | D-DOCK: drawn from the METAL_STORE product buffer (A-M-270)."
+        "note": "X-MFG-40 TF (A-M-417): CZ charge per pull / days between pulls = 0.2264 kg/d (fab_silicon.py)."
       },
       "from_sector_id": "FOUNDRY",
-      "to_sector_id": "FAB"
+      "to_sector_id": "FAB",
+      "composition": {
+        "Si": 1.0
+      }
     },
     {
       "stream_id": "POLY_TO_FAB",
@@ -2189,6 +2230,180 @@
       "composition": {
         "water": 0.97,
         "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-FAB-WAFER",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "LITHO_COAT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "wafers to resist coat",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.138904,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): wafer starts x wafer mass = 0.1389 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Si": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-LITHO-WAFER-A",
+      "from_unit_id": "LITHO_COAT",
+      "to_unit_id": "LITHO_ALIGN",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "coated wafers to exposure",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.138904,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): wafer starts x wafer mass = 0.1389 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Si": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-LITHO-WAFER-B",
+      "from_unit_id": "LITHO_ALIGN",
+      "to_unit_id": "LITHO_DEV",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "exposed wafers to develop",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.138904,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): wafer starts x wafer mass = 0.1389 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Si": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-LITHO-WAFER-RET",
+      "from_unit_id": "LITHO_DEV",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "patterned wafers back to the fab tool row",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.138904,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): wafer starts x wafer mass = 0.1389 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Si": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-FAB-PRODUCT",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "finished wafers to the dock for dispatch",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.138904,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): wafer starts x wafer mass = 0.1389 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Si": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-FAB-KERF",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "saw kerf, crop and pot scrap with the spent slurry",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.087458,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): charge less wafers: kerf, crop and pot scrap = 0.0875 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Si": 1.0
       }
     }
   ],

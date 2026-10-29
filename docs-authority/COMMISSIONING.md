@@ -49,7 +49,7 @@ Table 4.1. Commissioning sequence
 | 5 | GAS | 8 | 34 | 9 | 1 | Fe, HCl, N2, other_metals, solute |
 | 6 | CRYO | 14 | 37 | 10 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |
 | 7 | GEO | 3 | 6 | 4 | 0 |  |
-| 8 | DIGESTER | 24 | 146 | 26 | 19 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals, silicate_oxide, solute, unassigned |
+| 8 | DIGESTER | 24 | 146 | 26 | 19 | Cl2, Fe, HCl, O2, Si, metal_plateable, metal_reactive, organic, other_metals, silicate_oxide, solute, unassigned |
 | 9 | MEOH | 5 | 24 | 5 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |
 | 10 | OIL | 12 | 57 | 13 | 7 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute |
 | 11 | GLASS | 5 | 11 | 4 | 1 | Fe, HCl, other_metals, solute |
@@ -57,8 +57,8 @@ Table 4.1. Commissioning sequence
 | 13 | FARM | 2 | 12 | 2 | 1 | CO2 |
 | 14 | HAB | 1 | 4 | 1 | 1 | solute |
 | 15 | MFG | 10 | 29 | 12 | 1 | Cu, Pb/Sn/Ni/Cd/Zn blend, hydrocarbon, metal, solute |
-| 16 | FAB | 16 | 72 | 17 | 9 | Ar, Fe, HCl, N2, O2, other_metals, solute |
-| 17 | FOUNDRY | 27 | 83 | 24 | 6 |  |
+| 16 | FAB | 16 | 72 | 17 | 9 | Ar, Fe, HCl, N2, O2, Si, other_metals, solute |
+| 17 | FOUNDRY | 27 | 83 | 24 | 6 | Si |
 | 18 | POLYMERS | 10 | 40 | 15 | 6 | C5-C10 |
 
 The area SIFs (gas and flame detection) are proof-tested with AQS-SAF-006 in the CRYO and ZNBR2 steps.

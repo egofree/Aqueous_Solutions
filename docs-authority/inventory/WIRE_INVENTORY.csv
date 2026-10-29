@@ -185,7 +185,7 @@ ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN power,DC power pair,16 AWG,
 ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 ELEC,rectifier,RECTIFIER,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,4,80.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,rectifier,RECTIFIER,cooling fan signal,control,18 AWG,shielded pair,300 V,2,10.0,4,80.0,speed/position feedback (assumed)
-ELEC,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,334,40080.0,"5998 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 334 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
+ELEC,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,334,40080.0,"5996 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 334 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
 ELEC,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,334,20040.0,NEC 690.45 / 250.122
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)

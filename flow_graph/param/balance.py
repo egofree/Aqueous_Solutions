@@ -53,6 +53,7 @@ def physics(g):
        (SANDER2015); the remaining excess over that bound is task X-PAR-11."""
     from flow_graph.param import o2_close
     from flow_graph.param import ess_tf; ess_tf.tf(g)
+    from flow_graph.param import fab_silicon; fab_silicon.tf(g)     # X-MFG-40: fab silicon feed and CZ argon loop (A-M-417)
     o2_close.patch(g); o2_close.tf(g)
     E = {e['stream_id']: e for e in g['edges']}
     v = lambda k: float(E[k]['rate']['value'] or 0)

@@ -4725,10 +4725,85 @@
   "needs_verification": true,
   "verification_test": "logged campaign schedule at the fab commissioning task"
  },
- "FAB.wafer-line-train.cz_charge_kg": {
-  "value": 0.5,
-  "units": "kg",
-  "owner": "small-ingot CZ charge per pull (AQS-EQP-FAB-001 CZ class; A-M-297) (A-M-301)"
+ "FAB.wafer-line-train.cz_blanket_gas": {
+  "value": "Ar",
+  "units": "- CZ puller ambient; only Ar is accepted (N2 nitrides the melt)",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.wafer_D_mm": {
+  "value": 150.0,
+  "units": "mm wafer diameter (the 150 mm class of the litho train)",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.wafer_t_um": {
+  "value": 675.0,
+  "units": "um wafer thickness, SEMI M1 for 150 mm",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.kerf_um": {
+  "value": 150.0,
+  "units": "um saw kerf per wafer, diamond wire",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.si_rho_g_cm3": {
+  "value": 2.329,
+  "units": "g/cm3 silicon density (CRC_SI)",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.cz_crop_frac": {
+  "value": 0.25,
+  "units": "- share of the charge not in the wafered body: crown, tail, diameter grind and pot scrap",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.cz_pull_mm_h": {
+  "value": 60.0,
+  "units": "mm/h body pull rate of a small CZ ingot",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.cz_melt_h": {
+  "value": 3.0,
+  "units": "h meltdown and stabilisation under argon",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.cz_neck_crown_h": {
+  "value": 2.0,
+  "units": "h seed dip, neck and crown under argon",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.cz_cool_h": {
+  "value": 4.0,
+  "units": "h ingot cool-down under argon",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.cz_crucible_ratio": {
+  "value": 2.7,
+  "units": "- crucible diameter over ingot diameter",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.cz_ar_slpm_per_cm2": {
+  "value": 0.03,
+  "units": "slpm argon per cm2 of crucible area (about 40 slpm on a 16 inch crucible)",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.si_liquid_rho_g_cm3": {
+  "value": 2.57,
+  "units": "g/cm3 liquid silicon density at the melting point (CRC_SI)",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.cz_min_depth_frac": {
+  "value": 0.25,
+  "units": "- least melt depth for a pull, as a share of the crucible diameter",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.cz_hotzone_kW": {
+  "value": 35.0,
+  "units": "kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured)",
+  "register": "A-M-417"
+ },
+ "FAB.wafer-line-train.si_resupply_d": {
+  "value": 90.0,
+  "units": "d interval between polysilicon deliveries; the store holds one interval of charge",
+  "register": "A-M-417"
  },
  "OIL.afterburner-train.flue_fan_dP_Pa": {
   "value": 350.0,

@@ -17,7 +17,7 @@ This page records the size of unit LITHO_ALIGN, of class `aligner` in sector FAB
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 0.004 kW, fed by stream SF-LITHO_ALIGN.
+The unit takes 0.138904 kg/d by 1 stream and gives 0.138904 kg/d by 1 stream. Its continuous electrical load is 0.004 kW, fed by stream SF-LITHO_ALIGN.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -38,7 +38,7 @@ Table 2.1. Design parameters
 
 The envelope is 1200 mm x 600 mm x 800 mm, from `params.size_mm`. Its basis is: L x W x H mm, AQS-LITH-001 rev C frame 6061.
 
-With no mass flow, the unit has no hold-up volume to check.
+The hold-up check takes 0.138904 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.1389 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 60 mm in diameter and 80 mm high. It fits within the envelope.
 
 ## 4. Material
 

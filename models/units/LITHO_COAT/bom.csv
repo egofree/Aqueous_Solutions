@@ -1,5 +1,5 @@
 item,description,qty,material,basis
 1,Body / envelope 1200 x 800 x 1400 mm,1,316L where the stream is wet.,docs-authority/duties/LITHO_COAT.md
-2,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,4,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 3,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
 4,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

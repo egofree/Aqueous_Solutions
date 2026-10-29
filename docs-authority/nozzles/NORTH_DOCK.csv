@@ -34,3 +34,5 @@ N32,solids,Class 150,foundry silica (flour/stucco/binder make-up),outlet,600
 N33,DN15,Class 150,dewax/burnout off-gas (burned wax + steam),inlet,160
 N34,solids,Class 150,spent foundry silica (solids return class),inlet,160
 N35,solids,Class 150,"surplus foundry metal export (pot-line product, dispatch campaign)",inlet,160
+N36,solids,Class 150,imported polysilicon for the CZ charge,outlet,600
+N37,solids,Class 150,finished wafers to the dock for dispatch,inlet,160

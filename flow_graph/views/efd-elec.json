@@ -1573,7 +1573,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 350.105,
+        "value": 350.0702,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1581,11 +1581,11 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 5998,
+        "count": 5996,
         "presence": "present",
-        "nameplate_kw": 2999,
+        "nameplate_kw": 2998,
         "area_m2": 26315,
-        "balance_kWp": 1500,
+        "balance_kWp": 1499,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -1686,7 +1686,7 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 216.3,
+          "bus_demand_kW": 216.2,
           "section_rating_A": 400,
           "basis_A": 289.0,
           "MCC": "MCC-1A / MCC-1B",
@@ -1709,10 +1709,10 @@
       "notes": " ISO 14644-1 Class 7 wet bench, Class 6 tool row.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.4417,
+        "value": 0.4069,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-301)."
+        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 28.31 kWh/pull heat-up (CRC_SI cp/L) + 671 kWh/pull hot zone, one pull every 148 d (A-M-417) + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-301)."
       },
       "modules": [],
       "params": {
@@ -1721,8 +1721,8 @@
         "iso_14644_tool_row": "Class 6",
         "equipment": [
           {
-            "item": "CZ puller: charge heat-up over the 7 d campaign + 4 h hot hold",
-            "kW": 0.2317
+            "item": "CZ puller: charge heat-up + hot zone over 19.2 h, one pull every 148 d",
+            "kW": 0.1969
           },
           {
             "item": "ingot cool/anneal station: N2 circulator duty share",
@@ -1742,7 +1742,7 @@
           },
           {
             "item": "total connected (calculated)",
-            "kW": 0.4417
+            "kW": 0.4069
           }
         ]
       }
@@ -1820,25 +1820,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 216.2817,
+        "value": 216.2517,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 216.3 kW, charge 983.1 kW, 3028 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 216.3 kW, charge 982.9 kW, 3028 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 984,
+        "kW": 983,
         "kWh": 3028,
         "presence": "present",
-        "charge_kW": 984,
+        "charge_kW": 983,
         "discharge_kW": 217,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 42 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.677,
-          "purge_m3_h": 31.99,
+          "H2_m3_d": 7.676,
+          "purge_m3_h": 31.98,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1980.6
+          "electrode_area_m2": 1980.3
         }
       }
     },
@@ -4581,7 +4581,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 350.105,
+        "value": 350.0702,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -4946,7 +4946,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.4417,
+        "value": 0.4069,
         "unit": "kW",
         "status": "study",
         "note": "Feed equal to WAFER_FAB continuous_kw. | X-ELS-02 load-basis (A-M-301)."
