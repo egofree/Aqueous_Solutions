@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: F
+Revision: G
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -12,6 +12,7 @@ Date: 2026-10-29
 | D | FUEL_CELL, H2_EMBRITTLEMENT_REVIEW and WELD_MAP rewritten; PROTECTION found stale and its reason updated | 2026-10-29 |
 | E | WATER_PURIFICATION, LIFE_MEP and MEOH_TRAIN given generators and rewritten | 2026-10-29 |
 | F | PROTECTION written by its study script; ISO_SHEETS and JELLYBEAN rewritten through their generators | 2026-10-29 |
+| G | Reference sweep: unregistered document numbers listed in `unregistered_doc_numbers.json` and guarded by `flow_graph/test_doc_number_refs.py` | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -320,3 +321,5 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/duties/` | Duty sheets remain for units that are no longer on the graph, mostly farm, crop and animal units (for example ABE, CHICKENS, CROP_TOMATO, RECT_EW). `_duty_basis.py` skips them, so they keep Graph Rev BH and stale values. Should they be deleted, or moved to an archive? |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` (AQS-REV-H2-001) | The graph sends cathode hydrogen from EW_1 to EW_3 and EW_5 to EW_9, while AQS-STD-002 section 9 names EW_1, EW_2, EW_4 and EW_9. Which is correct? |
 | `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |
+| `docs-authority/unregistered_doc_numbers.json` | Pages cite AQS-PFD-* flow diagram numbers that are in neither register. Should they be added to the drawing register with the scripts in `flow_graph/exporters/matplotlib/` as their source, or removed from the pages? |
+| `docs-authority/unregistered_doc_numbers.json` | Many pages cite AQS-AUD-001, a crew and water audit that is not in the repository. Should it be added, or should each citation be replaced by the graph value it stood for? |
