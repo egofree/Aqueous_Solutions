@@ -109,11 +109,11 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S32 | WS_PEROX | WET_BENCH | L | mass | present | H₂O₂ | 3.0 kg/d | absent_from_candidate_mvs |
 | S33 | WS_AMMONIA | WET_BENCH | L | mass | present | NH₄OH / NH₃ (aq) | 3.008739 kg/d | absent_from_candidate_mvs |
 | S35 | WS_KOH | WET_BENCH | L | mass | present | KOH | 0.2701 kg/d | absent_from_candidate_mvs |
-| S36 | WS_DOPE | WAFER_FAB | L/G | mass | present | B/P/As concentrate; BBr₃ / POCl₃ class | 0.0 kg/d | absent_from_candidate_mvs |
+| S36 | WS_DOPE | WAFER_FAB | L/G | mass | retired | B/P/As concentrate; BBr₃ / POCl₃ class | 0.0 kg/d | absent_from_candidate_mvs |
 | S37 | WS_SLURRY | WAFER_FAB | L | mass | present | colloidal silica slurry | 3.3 kg/d | absent_from_candidate_mvs |
 | S38 | WET_BENCH | OIL_FRAC | L | mass | present | resist and solvent waste | 0.006 kg/d | — |
 | S39 | WAFER_FAB | LEACH_CSTR_1 | L/S | mass | present | spent slurry and etch liquor | 3.310001 kg/d | — |
-| S39B | WAFER_FAB | OIL_FRAC | L | mass | present | solvent and photoresist | 0.0 kg/d | — |
+| S39B | WAFER_FAB | OIL_FRAC | L | mass | retired | solvent and photoresist | 0.0 kg/d | — |
 | S43 | GEO_GHEX | GEO_HP_CLOSED_LOOP | L/E | mass,thermal | present | geothermal loop fluid | 0.0 kW | absent_from_candidate_mvs |
 | S44 | GEO_HP | Q4_BUS | E | thermal | present | heat < 80 °C | 2.1972 kW | absent_from_candidate_mvs |
 | S45 | CRYO_H2 | BACKUP_GEN | G | mass | present | H2 fuel | 0.019728 kg/d | — |
@@ -171,9 +171,9 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | VDF_TO_POLY_F | VDF_SYN | POLY_F | L | mass | present | VDF monomer | 0.15 kg/d | — |
 | TFE_TO_POLY_F | TFE_SYN | POLY_F | L | mass | present | TFE monomer | 0.1 kg/d | — |
 | TI_CELL_SLAG_RETURN | TI_CELL | LEACH_CSTR_1 | S | mass | present | slag / residual grit | 0.0 kg/d | — |
-| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | L | mass | present | raffinate after Mo cut | 0.0 kg/d | — |
+| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | L | mass | retired | raffinate after Mo cut | 0.0 kg/d | — |
 | FLOAT_SINK_GRIT_TO_TI | FLOAT_SINK | TI_CELL | S | mass | present | dense grit (ilmenite/rutile fraction) | 0.0 kg/d | — |
-| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | L | mass | present | post-EW liquor for Mo cut | 0.0 kg/d | — |
+| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | L | mass | retired | post-EW liquor for Mo cut | 0.0 kg/d | — |
 | TI_CELL_CL2_TO_CRU | TI_CELL | CRU | G | mass | present | chlorine from Kroll chlorinator / Mg recycle | 0.0 kg/d | — |
 | MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | G | mass | present | anode gas (Cl2 or O2) from molten-salt pot | 0.0 kg/d | — |
 | IND_MELT_TO_CAST | IND_MELT | CAST_LINE | L | mass | present | molten metal | 3.0 kg/d | — |
@@ -187,7 +187,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | DRAW_TO_STOCK | DRAW | STOCK_OUT | S | mass | present | wire | 0.0 kg/d | — |
 | SINTER_TO_STOCK | SINTER | STOCK_OUT | S | mass | present | sintered stock | 0.0 kg/d | — |
 | FLUX_TO_IND | FLUX_PREP | IND_MELT | S | mass | present | flux | 0.039781 kg/d | — |
-| EW_METALS_TO_IND | EW_9 | IND_MELT | S | mass | present | EW cathode/powder metals | 0.0 kg/d | — |
+| EW_METALS_TO_IND | EW_9 | IND_MELT | S | mass | retired | EW cathode/powder metals | 0.0 kg/d | — |
 | MO_TO_IND | MO_CELL | IND_MELT | S | mass | present | Mo metal | 0.0625 kg/d | — |
 | CR_TO_IND | CR_CELL | IND_MELT | S | mass | present | Cr metal | 0.25 kg/d | — |
 | IND_TO_CONT | IND_MELT | CONT_CAST | L | mass | present | melt to continuous caster | 31.7125 kg/d | — |

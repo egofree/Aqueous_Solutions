@@ -59,6 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 50 | 1 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
@@ -78,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2937** | **2088** |
+| | **Total** | **2987** | **2089** |
 
 ## 3. Triage of open tasks
 
@@ -103,7 +104,7 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P1 | 1 |
-| desk P2 | 2 |
+| desk P2 | 51 |
 | desk P3 | 31 |
 | desk P4 | 457 |
 | desk P5 | 174 |
@@ -160,6 +161,55 @@ Table 6.1. Next cross-cutting desk tasks
 | --- | --- | --- |
 | X-END-02 | End-of-life material return | desk P2 |
 | X-LOC-11 | Floating island variant | desk P2 |
+| X-RTE-AL_POT_CL2 | Route AL_POT_CL2 from AL_POT to CRU carries no flow | desk P2 |
+| X-RTE-CHAR_TO_SI | Route CHAR_TO_SI from OIL_PYRO to SI_REDUCE carries no flow | desk P2 |
+| X-RTE-CO2_TO_FARM | Route CO2_TO_FARM from HDR_CO2 to GROW_BED carries no flow | desk P2 |
+| X-RTE-CUT-1-OUT | Route CUT-1-OUT from PROD_C5_C10 to BACKUP_GEN carries no flow | desk P2 |
+| X-RTE-CZ-HOTZONE | CZ hot-zone heater from a heat-loss model | desk P2 |
+| X-RTE-DIGEST_TO_POLY | Route DIGEST_TO_POLY from BLACK_DIGEST to POLY_COND carries no flow | desk P2 |
+| X-RTE-FARM_O2_TO_HAB | Route FARM_O2_TO_HAB from GROW_BED to HABITATION carries no flow | desk P2 |
+| X-RTE-FLOAT_SINK_GRIT_TO_TI | Route FLOAT_SINK_GRIT_TO_TI from FLOAT_SINK to TI_CELL carries no flow | desk P2 |
+| X-RTE-GLASS_MILL_TO_DIGEST | Route GLASS_MILL_TO_DIGEST from GLASS_MILL to GLASS_DIGEST carries no flow | desk P2 |
+| X-RTE-GREASE_CA_TO_MFG | Route GREASE_CA_TO_MFG from GREASE_CA to MFG_SHOP carries no flow | desk P2 |
+| X-RTE-GREASE_LI_TO_MFG | Route GREASE_LI_TO_MFG from GREASE_LI to MFG_SHOP carries no flow | desk P2 |
+| X-RTE-HAB_BLACK | Route HAB_BLACK from HABITATION to BLACK_DIGEST carries no flow | desk P2 |
+| X-RTE-HAB_CO2_TO_HDR | Route HAB_CO2_TO_HDR from HABITATION to HDR_CO2 carries no flow | desk P2 |
+| X-RTE-HAB_GREY | Route HAB_GREY from HABITATION to GREY_TREAT carries no flow | desk P2 |
+| X-RTE-IA-EW1-H2 | Route IA-EW1-H2 from EW_1 to HDR_H2 carries no flow | desk P2 |
+| X-RTE-IA-EW2-H2 | Route IA-EW2-H2 from EW_2 to HDR_H2 carries no flow | desk P2 |
+| X-RTE-IA-FC-EXH | Route IA-FC-EXH from MEOH_FC to NOX_SCRUB carries no flow | desk P2 |
+| X-RTE-IA-GW-MAKEUP | Route IA-GW-MAKEUP from GW_INTAKE to ROOF_TANK carries no flow | desk P2 |
+| X-RTE-IA-H2-AIR | Route IA-H2-AIR from H2_DRYER to CRYO_ASU carries no flow | desk P2 |
+| X-RTE-IA-H2P-H2O | Route IA-H2P-H2O from H2_DRYER to VCD_TRAIN carries no flow | desk P2 |
+| X-RTE-IA-LEACH-ASU | Route IA-LEACH-ASU from LEACH_CSTR_1 to CRYO_ASU carries no flow | desk P2 |
+| X-RTE-IND_TO_ATOM | Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER carries no flow | desk P2 |
+| X-RTE-LEGACY-PFD | Remaining hand-drawn process sheets | desk P2 |
+| X-RTE-LI_TO_GREASE | Route LI_TO_GREASE from LI_RECOVER to GREASE_LI carries no flow | desk P2 |
+| X-RTE-MEOH_TO_OLEFIN | Route MEOH_TO_OLEFIN from MEOH_SYNTH to POLY_OLEFIN carries no flow | desk P2 |
+| X-RTE-MG_POT_CL2 | Route MG_POT_CL2 from MG_POT to CRU carries no flow | desk P2 |
+| X-RTE-MG_POT_TO_IND | Route MG_POT_TO_IND from MG_POT to IND_MELT carries no flow | desk P2 |
+| X-RTE-NUT_TO_BED | Route NUT_TO_BED from NUTRIENT_DOSE to GROW_BED carries no flow | desk P2 |
+| X-RTE-OIL_TO_OLEFIN | Route OIL_TO_OLEFIN from OIL_FRAC to POLY_OLEFIN carries no flow | desk P2 |
+| X-RTE-PCA_TO_GREASE | Route PCA_TO_GREASE from P_CA to GREASE_CA carries no flow | desk P2 |
+| X-RTE-POLISH_TO_LI | Route POLISH_TO_LI from POLISH_BANK to LI_RECOVER carries no flow | desk P2 |
+| X-RTE-POLYF_TO_PELLET | Route POLYF_TO_PELLET from POLY_F to PELLET carries no flow | desk P2 |
+| X-RTE-POLY_TO_FAB | Route POLY_TO_FAB from POLY_STOCK to WAFER_FAB carries no flow | desk P2 |
+| X-RTE-PV-SI | Silicon wafers for SOLAR_PV_CELL | desk P2 |
+| X-RTE-RETURN | Return routes without flow: IA-CO2-RET, IA-N2-RET, IA-O2-RET, TI_CELL_SLAG_RETURN | desk P2 |
+| X-RTE-S04 | Route S04 from CRYO_CO2 to GROW_BED carries no flow | desk P2 |
+| X-RTE-S15 | Route S15 from GROW_BED to HABITATION carries no flow | desk P2 |
+| X-RTE-S18 | Route S18 from AFTERBURNER to CRYO_CO2 carries no flow | desk P2 |
+| X-RTE-S30 | Route S30 from BLACK_DIGEST to NUTRIENT_DOSE carries no flow | desk P2 |
+| X-RTE-S85 | Route S85 from CRYO_CO2 to HDR_CO2 carries no flow | desk P2 |
+| X-RTE-SALT_TO_FLUX | Route SALT_TO_FLUX from SALT_FEED to FLUX_PREP carries no flow | desk P2 |
+| X-RTE-SHELL_TO_GLASS | Route SHELL_TO_GLASS from SHELL_BREAK to GLASS_MILL carries no flow | desk P2 |
+| X-RTE-SI-BACKUP | In-house refining of SI_REDUCE silicon to charge grade | desk P2 |
+| X-RTE-STANDBY | Standby routes without a rated case: ATOM_TO_STOCK, CAST_SCRAP_TO_IND, CAST_TO_EXTRUDE, COMB_OFFGAS, DRAW_TO_STOCK, EXTRUDE_TO_STOCK, IA-DC-EVAP, IA-DC-SPRAY, IA-ESS-HYDRO-CHG, IA-ESS-HYDRO-DIS, IA-NIT-VENT, MO_CELL_ANODE_GAS_TO_CRU, SINTER_TO_STOCK, TI_CELL_CL2_TO_CRU, VAC_IND_TI, VAC_IND_TO_VAC_CAST, VAC_TO_INV | desk P2 |
+| X-RTE-STOCK_TO_WIRE_DRAW | Route STOCK_TO_WIRE_DRAW from METAL_STORE to WIRE_DRAW carries no flow | desk P2 |
+| X-RTE-UPW_TO_FAB | Route UPW_TO_FAB from HDR_UPW to FAB_UPW_TANK carries no flow | desk P2 |
+| X-RTE-WAX_TO_GREASE_CA | Route WAX_TO_GREASE_CA from PROD_C19_C28 to GREASE_CA carries no flow | desk P2 |
+| X-RTE-WAX_TO_GREASE_LI | Route WAX_TO_GREASE_LI from PROD_C19_C28 to GREASE_LI carries no flow | desk P2 |
+| X-RTE-WAX_TO_OIL | Route WAX_TO_OIL from SHELL_BURNOUT to OIL_FRAC carries no flow | desk P2 |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
 
@@ -567,6 +617,59 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-TOOL-03** STL storage in LFS. Done when: all cad/stl files are LFS pointers. Depends: —. Evidence: `cad/stl`.
 - [x] **X-TOOL-04** Design tool phases. Done when: AQS-UI-001 phases beyond P0, P1, B-prime. Depends: —. Evidence: `docs-authority/DESIGN_TOOL_ARCHITECTURE.md`.
 
+### X-RTE. Routes without flow (owner decision 2026-10-29)
+
+- [x] **X-RTE-STOCK_TO_FAB** Route STOCK_TO_FAB: silicon charge to WAFER_FAB. Done when: the CZ charge is sized from the wafer need and imported through the dock (A-M-417). Depends: —. Evidence: `flow_graph/param/fab_silicon.py`.
+- [ ] **X-RTE-AL_POT_CL2** Route AL_POT_CL2 from AL_POT to CRU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-CHAR_TO_SI** Route CHAR_TO_SI from OIL_PYRO to SI_REDUCE carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-CO2_TO_FARM** Route CO2_TO_FARM from HDR_CO2 to GROW_BED carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-CUT-1-OUT** Route CUT-1-OUT from PROD_C5_C10 to BACKUP_GEN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-DIGEST_TO_POLY** Route DIGEST_TO_POLY from BLACK_DIGEST to POLY_COND carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-FARM_O2_TO_HAB** Route FARM_O2_TO_HAB from GROW_BED to HABITATION carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-FLOAT_SINK_GRIT_TO_TI** Route FLOAT_SINK_GRIT_TO_TI from FLOAT_SINK to TI_CELL carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-GLASS_MILL_TO_DIGEST** Route GLASS_MILL_TO_DIGEST from GLASS_MILL to GLASS_DIGEST carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-GREASE_CA_TO_MFG** Route GREASE_CA_TO_MFG from GREASE_CA to MFG_SHOP carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-GREASE_LI_TO_MFG** Route GREASE_LI_TO_MFG from GREASE_LI to MFG_SHOP carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-HAB_BLACK** Route HAB_BLACK from HABITATION to BLACK_DIGEST carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-HAB_CO2_TO_HDR** Route HAB_CO2_TO_HDR from HABITATION to HDR_CO2 carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-HAB_GREY** Route HAB_GREY from HABITATION to GREY_TREAT carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-IA-EW1-H2** Route IA-EW1-H2 from EW_1 to HDR_H2 carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-IA-EW2-H2** Route IA-EW2-H2 from EW_2 to HDR_H2 carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-IA-FC-EXH** Route IA-FC-EXH from MEOH_FC to NOX_SCRUB carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-IA-GW-MAKEUP** Route IA-GW-MAKEUP from GW_INTAKE to ROOF_TANK carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-IA-H2-AIR** Route IA-H2-AIR from H2_DRYER to CRYO_ASU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-IA-H2P-H2O** Route IA-H2P-H2O from H2_DRYER to VCD_TRAIN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-IA-LEACH-ASU** Route IA-LEACH-ASU from LEACH_CSTR_1 to CRYO_ASU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-IND_TO_ATOM** Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-LI_TO_GREASE** Route LI_TO_GREASE from LI_RECOVER to GREASE_LI carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-MEOH_TO_OLEFIN** Route MEOH_TO_OLEFIN from MEOH_SYNTH to POLY_OLEFIN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-MG_POT_CL2** Route MG_POT_CL2 from MG_POT to CRU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-MG_POT_TO_IND** Route MG_POT_TO_IND from MG_POT to IND_MELT carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-NUT_TO_BED** Route NUT_TO_BED from NUTRIENT_DOSE to GROW_BED carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-OIL_TO_OLEFIN** Route OIL_TO_OLEFIN from OIL_FRAC to POLY_OLEFIN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-PCA_TO_GREASE** Route PCA_TO_GREASE from P_CA to GREASE_CA carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-POLISH_TO_LI** Route POLISH_TO_LI from POLISH_BANK to LI_RECOVER carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-POLYF_TO_PELLET** Route POLYF_TO_PELLET from POLY_F to PELLET carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-POLY_TO_FAB** Route POLY_TO_FAB from POLY_STOCK to WAFER_FAB carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-S04** Route S04 from CRYO_CO2 to GROW_BED carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-S15** Route S15 from GROW_BED to HABITATION carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-S18** Route S18 from AFTERBURNER to CRYO_CO2 carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-S30** Route S30 from BLACK_DIGEST to NUTRIENT_DOSE carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-S85** Route S85 from CRYO_CO2 to HDR_CO2 carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-SALT_TO_FLUX** Route SALT_TO_FLUX from SALT_FEED to FLUX_PREP carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-SHELL_TO_GLASS** Route SHELL_TO_GLASS from SHELL_BREAK to GLASS_MILL carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-STOCK_TO_WIRE_DRAW** Route STOCK_TO_WIRE_DRAW from METAL_STORE to WIRE_DRAW carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-UPW_TO_FAB** Route UPW_TO_FAB from HDR_UPW to FAB_UPW_TANK carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-WAX_TO_GREASE_CA** Route WAX_TO_GREASE_CA from PROD_C19_C28 to GREASE_CA carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-WAX_TO_GREASE_LI** Route WAX_TO_GREASE_LI from PROD_C19_C28 to GREASE_LI carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-WAX_TO_OIL** Route WAX_TO_OIL from SHELL_BURNOUT to OIL_FRAC carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-STANDBY** Standby routes without a rated case: ATOM_TO_STOCK, CAST_SCRAP_TO_IND, CAST_TO_EXTRUDE, COMB_OFFGAS, DRAW_TO_STOCK, EXTRUDE_TO_STOCK, IA-DC-EVAP, IA-DC-SPRAY, IA-ESS-HYDRO-CHG, IA-ESS-HYDRO-DIS, IA-NIT-VENT, MO_CELL_ANODE_GAS_TO_CRU, SINTER_TO_STOCK, TI_CELL_CL2_TO_CRU, VAC_IND_TI, VAC_IND_TO_VAC_CAST, VAC_TO_INV. Done when: each standby, N+1 or site-mode route carries the rate of the case that puts it in service, so its line and both units are sized for it. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-RETURN** Return routes without flow: IA-CO2-RET, IA-N2-RET, IA-O2-RET, TI_CELL_SLAG_RETURN. Done when: each return route is shown to be needed, with the case that uses it and its rate, or it is retired. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-PV-SI** Silicon wafers for SOLAR_PV_CELL. Done when: the cell line has a wafer route sized from pv_cells_per_d, from the fab or an import, with both balances closed. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
+- [ ] **X-RTE-SI-BACKUP** In-house refining of SI_REDUCE silicon to charge grade. Done when: a refining route of a different technology from the polysilicon import is designed and sized, or the import is confirmed as the only path. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
+- [ ] **X-RTE-CZ-HOTZONE** CZ hot-zone heater from a heat-loss model. Done when: the 35 kW hot-zone duty of A-M-417 is replaced by a heat-loss model of the hot zone, and the pull peak is carried in the one-line. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
+- [ ] **X-RTE-LEGACY-PFD** Remaining hand-drawn process sheets. Done when: each script in flow_graph/exporters/matplotlib/ that the regenerator does not run is checked for what it draws and who cites it, then retired or replaced by a graph view. Depends: —. Triage: desk P2.
+
 ## 8. Unit tasks by system
 
 ### FOUNDRY. Process (Mass transform)
@@ -735,8 +838,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-IND_MELT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/IND_MELT.md` §1; mass in = out 37.07 kg/d, 0.8854 kW.
   - [x] FOUNDRY-IND_MELT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-IND_MELT-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-IND_MELT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-IND_MELT-01, FOUNDRY-IND_MELT-02. Evidence: `docs-authority/pid/IND_MELT.svg` (AQS-PID-001).
-  - [x] FOUNDRY-IND_MELT-04 Nozzle schedule. Done when: docs-authority/nozzles/IND_MELT.csv, one row per edge. Depends: FOUNDRY-IND_MELT-03. Evidence: `docs-authority/nozzles/IND_MELT.csv` (all 15 process connections listed).
-  - [x] FOUNDRY-IND_MELT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-IND_MELT-04, FOUNDRY-IND_MELT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 17 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FOUNDRY-IND_MELT-04 Nozzle schedule. Done when: docs-authority/nozzles/IND_MELT.csv, one row per edge. Depends: FOUNDRY-IND_MELT-03. Evidence: `docs-authority/nozzles/IND_MELT.csv` (all 14 process connections listed).
+  - [x] FOUNDRY-IND_MELT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-IND_MELT-04, FOUNDRY-IND_MELT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 16 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FOUNDRY-IND_MELT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FOUNDRY-IND_MELT-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FOUNDRY-IND_MELT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-IND_MELT-02, FOUNDRY-IND_MELT-03. Evidence: `docs-authority/duties/IND_MELT.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-IND_MELT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-IND_MELT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
@@ -799,8 +902,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-MO_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MO_CELL.md` §1; mass in = out 0.1055 kg/d, 0.1141 kW.
   - [x] FOUNDRY-MO_CELL-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-MO_CELL-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-MO_CELL-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-MO_CELL-01, FOUNDRY-MO_CELL-02. Evidence: `docs-authority/pid/MO_CELL.svg` (AQS-PID-001).
-  - [x] FOUNDRY-MO_CELL-04 Nozzle schedule. Done when: docs-authority/nozzles/MO_CELL.csv, one row per edge. Depends: FOUNDRY-MO_CELL-03. Evidence: `docs-authority/nozzles/MO_CELL.csv` (all 7 process connections listed).
-  - [x] FOUNDRY-MO_CELL-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-MO_CELL-04, FOUNDRY-MO_CELL-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 8 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FOUNDRY-MO_CELL-04 Nozzle schedule. Done when: docs-authority/nozzles/MO_CELL.csv, one row per edge. Depends: FOUNDRY-MO_CELL-03. Evidence: `docs-authority/nozzles/MO_CELL.csv` (all 5 process connections listed).
+  - [x] FOUNDRY-MO_CELL-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-MO_CELL-04, FOUNDRY-MO_CELL-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FOUNDRY-MO_CELL-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FOUNDRY-MO_CELL-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FOUNDRY-MO_CELL-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-MO_CELL-02, FOUNDRY-MO_CELL-03. Evidence: `docs-authority/duties/MO_CELL.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-MO_CELL-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-MO_CELL-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
@@ -1250,8 +1353,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-EW_9-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EW_9.md` §1; mass in = out 3707 kg/d, 0.0000 kW.
   - [x] DIGESTER-EW_9-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: DIGESTER-EW_9-01. Evidence: `docs-authority/sizing/EW_CELLS.md` (AQS-DUTY-051).
   - [x] DIGESTER-EW_9-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: DIGESTER-EW_9-01, DIGESTER-EW_9-02. Evidence: `docs-authority/pid/EW_9.svg` (AQS-PID-001).
-  - [x] DIGESTER-EW_9-04 Nozzle schedule. Done when: docs-authority/nozzles/EW_9.csv, one row per edge. Depends: DIGESTER-EW_9-03. Evidence: `docs-authority/nozzles/EW_9.csv` (all 8 process connections listed).
-  - [x] DIGESTER-EW_9-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: DIGESTER-EW_9-04, DIGESTER-EW_9-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 9 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] DIGESTER-EW_9-04 Nozzle schedule. Done when: docs-authority/nozzles/EW_9.csv, one row per edge. Depends: DIGESTER-EW_9-03. Evidence: `docs-authority/nozzles/EW_9.csv` (all 6 process connections listed).
+  - [x] DIGESTER-EW_9-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: DIGESTER-EW_9-04, DIGESTER-EW_9-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] DIGESTER-EW_9-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: DIGESTER-EW_9-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] DIGESTER-EW_9-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: DIGESTER-EW_9-02, DIGESTER-EW_9-03. Evidence: `docs-authority/duties/EW_9.md` §6 (C7 closed on MASTER_PLAN).
   - [x] DIGESTER-EW_9-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: DIGESTER-EW_9-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
@@ -1346,8 +1449,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-POLISH_BANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/POLISH_BANK.md` §1; mass in = out 3520 kg/d, 0.0000 kW.
   - [x] DIGESTER-POLISH_BANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: DIGESTER-POLISH_BANK-01. Evidence: `docs-authority/sizing/POLISH_BANK.md` (AQS-SIZE-POLISH_BANK).
   - [x] DIGESTER-POLISH_BANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: DIGESTER-POLISH_BANK-01, DIGESTER-POLISH_BANK-02. Evidence: `docs-authority/pid/POLISH_BANK.svg` (AQS-PID-001).
-  - [x] DIGESTER-POLISH_BANK-04 Nozzle schedule. Done when: docs-authority/nozzles/POLISH_BANK.csv, one row per edge. Depends: DIGESTER-POLISH_BANK-03. Evidence: `docs-authority/nozzles/POLISH_BANK.csv` (all 4 process connections listed).
-  - [x] DIGESTER-POLISH_BANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: DIGESTER-POLISH_BANK-04, DIGESTER-POLISH_BANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] DIGESTER-POLISH_BANK-04 Nozzle schedule. Done when: docs-authority/nozzles/POLISH_BANK.csv, one row per edge. Depends: DIGESTER-POLISH_BANK-03. Evidence: `docs-authority/nozzles/POLISH_BANK.csv` (all 3 process connections listed).
+  - [x] DIGESTER-POLISH_BANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: DIGESTER-POLISH_BANK-04, DIGESTER-POLISH_BANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] DIGESTER-POLISH_BANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: DIGESTER-POLISH_BANK-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] DIGESTER-POLISH_BANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: DIGESTER-POLISH_BANK-02, DIGESTER-POLISH_BANK-03. Evidence: `docs-authority/duties/POLISH_BANK.md` §6 (C7 closed on MASTER_PLAN).
   - [x] DIGESTER-POLISH_BANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: DIGESTER-POLISH_BANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (6 loops; AQS-CTL-001).
@@ -1477,8 +1580,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WAFER_FAB-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WAFER_FAB.md` §1; mass in = out 72.21 kg/d, 0.4069 kW.
   - [x] FAB-WAFER_FAB-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FAB-WAFER_FAB-01. Evidence: `docs-authority/sizing/WAFER_FAB.md` (AQS-SIZE-WAFER_FAB).
   - [x] FAB-WAFER_FAB-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FAB-WAFER_FAB-01, FAB-WAFER_FAB-02. Evidence: `docs-authority/pid/WAFER_FAB.svg` (AQS-PID-001).
-  - [x] FAB-WAFER_FAB-04 Nozzle schedule. Done when: docs-authority/nozzles/WAFER_FAB.csv, one row per edge. Depends: FAB-WAFER_FAB-03. Evidence: `docs-authority/nozzles/WAFER_FAB.csv` (all 18 process connections listed).
-  - [x] FAB-WAFER_FAB-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FAB-WAFER_FAB-04, FAB-WAFER_FAB-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 19 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FAB-WAFER_FAB-04 Nozzle schedule. Done when: docs-authority/nozzles/WAFER_FAB.csv, one row per edge. Depends: FAB-WAFER_FAB-03. Evidence: `docs-authority/nozzles/WAFER_FAB.csv` (all 16 process connections listed).
+  - [x] FAB-WAFER_FAB-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FAB-WAFER_FAB-04, FAB-WAFER_FAB-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 17 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FAB-WAFER_FAB-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FAB-WAFER_FAB-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FAB-WAFER_FAB-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FAB-WAFER_FAB-02, FAB-WAFER_FAB-03. Evidence: `docs-authority/duties/WAFER_FAB.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FAB-WAFER_FAB-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FAB-WAFER_FAB-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (8 loops; AQS-CTL-001).
@@ -1525,8 +1628,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-WS_DOPE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WS_DOPE.md` §1; mass in = out 0.01 kg/d, 0.0000 kW.
   - [x] FAB-WS_DOPE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FAB-WS_DOPE-01. Evidence: `docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064).
   - [x] FAB-WS_DOPE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FAB-WS_DOPE-01, FAB-WS_DOPE-02. Evidence: `docs-authority/pid/WS_DOPE.svg` (AQS-PID-001).
-  - [x] FAB-WS_DOPE-04 Nozzle schedule. Done when: docs-authority/nozzles/WS_DOPE.csv, one row per edge. Depends: FAB-WS_DOPE-03. Evidence: `docs-authority/nozzles/WS_DOPE.csv` (all 3 process connections listed).
-  - [x] FAB-WS_DOPE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FAB-WS_DOPE-04, FAB-WS_DOPE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 3 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FAB-WS_DOPE-04 Nozzle schedule. Done when: docs-authority/nozzles/WS_DOPE.csv, one row per edge. Depends: FAB-WS_DOPE-03. Evidence: `docs-authority/nozzles/WS_DOPE.csv` (all 2 process connections listed).
+  - [x] FAB-WS_DOPE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FAB-WS_DOPE-04, FAB-WS_DOPE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 2 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FAB-WS_DOPE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FAB-WS_DOPE-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FAB-WS_DOPE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FAB-WS_DOPE-02, FAB-WS_DOPE-03. Evidence: `docs-authority/duties/WS_DOPE.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FAB-WS_DOPE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FAB-WS_DOPE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (4 loops; AQS-CTL-001).
@@ -1995,8 +2098,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-OIL_FRAC-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/OIL_FRAC.md` §1; mass in = out 34.38 kg/d, 0.0000 kW.
   - [x] OIL-OIL_FRAC-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: OIL-OIL_FRAC-01. Evidence: `docs-authority/sizing/OIL_FRAC.md` (AQS-SIZE-OIL_FRAC).
   - [x] OIL-OIL_FRAC-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: OIL-OIL_FRAC-01, OIL-OIL_FRAC-02. Evidence: `docs-authority/pid/OIL_FRAC.svg` (AQS-PID-001).
-  - [x] OIL-OIL_FRAC-04 Nozzle schedule. Done when: docs-authority/nozzles/OIL_FRAC.csv, one row per edge. Depends: OIL-OIL_FRAC-03. Evidence: `docs-authority/nozzles/OIL_FRAC.csv` (all 12 process connections listed).
-  - [x] OIL-OIL_FRAC-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: OIL-OIL_FRAC-04, OIL-OIL_FRAC-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 12 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] OIL-OIL_FRAC-04 Nozzle schedule. Done when: docs-authority/nozzles/OIL_FRAC.csv, one row per edge. Depends: OIL-OIL_FRAC-03. Evidence: `docs-authority/nozzles/OIL_FRAC.csv` (all 11 process connections listed).
+  - [x] OIL-OIL_FRAC-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: OIL-OIL_FRAC-04, OIL-OIL_FRAC-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 11 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [ ] OIL-OIL_FRAC-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: OIL-OIL_FRAC-02. Triage: desk P3.
   - [x] OIL-OIL_FRAC-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: OIL-OIL_FRAC-02, OIL-OIL_FRAC-03. Evidence: `docs-authority/duties/OIL_FRAC.md` §6 (C7 closed on MASTER_PLAN).
   - [x] OIL-OIL_FRAC-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: OIL-OIL_FRAC-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (9 loops; AQS-CTL-001).

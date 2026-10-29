@@ -17,7 +17,7 @@ This page records the size of unit IND_MELT, of class `furnace` in sector FOUNDR
 
 ## 2. Duty
 
-The unit takes 37.069 kg/d by 10 streams and gives 37.069 kg/d by 5 streams. Its continuous electrical load is 0.8854 kW, fed by stream SF-IND_MELT.
+The unit takes 37.069 kg/d by 9 streams and gives 37.069 kg/d by 5 streams. Its continuous electrical load is 0.8854 kW, fed by stream SF-IND_MELT.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

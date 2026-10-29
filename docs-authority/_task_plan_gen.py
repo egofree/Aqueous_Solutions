@@ -654,6 +654,39 @@ import re as _re
 HW_RE = _re.compile(r"(test record|coupon|first article|bench|stack test|polarisation test|on site|as-built|build one|type test|Wenner|acceptance record)", _re.I)
 OWNER_X = {'X-PRO-03', 'X-BAS-03', 'X-ELS-08'}
 CRIT_X = {'X-BAS-02', 'X-ELS-02', 'X-ELS-04', 'X-SAF-01', 'X-PIP-02', 'X-BLD-02', 'X-BLD-01', 'X-BLD-03', 'X-PAR-02', 'X-PAR-03', 'X-PAR-04', 'X-PIP-03', 'X-MAT-01'}
+
+# X-RTE (owner decision 2026-10-29): a present mass route that carries no flow is unfinished design. Generated from the graph:
+# one task per open route; standby, return and retired routes are grouped. A route given its flow drops out of the open list;
+# the routes finished in the QA pass are kept below as done tasks with their evidence.
+def _rte_kind(e):
+    n = ((e['rate'].get('note') or '') + ' ' + str(e.get('notes') or '')).lower()
+    if e['to_unit_id'].startswith('RELIEF') or 'contingency' in n: return None          # relief and contingency routes are closed by design
+    if 'retired' in n: return 'retired'
+    if e['stream_id'].endswith(('-RET', '_RETURN')) or 'no surplus' in n or 'no co2 recy' in n or 'return' in n and 'no ' in n: return 'return'
+    if any(k in n for k in ('standby', 'n+1', 'held full', 'evaporat', 'optional', 'campaign event', 'upset vent', 'purge-only')): return 'standby'
+    return 'open'
+_RTE = collections.defaultdict(list)
+for _e in g['edges']:
+    if _e.get('presence') == 'present' and 'mass' in (_e.get('layers') or []) and (_e['rate'].get('unit') in ('kg/d', None)) and not _e['rate'].get('value'):
+        _k = _rte_kind(_e)
+        if _k: _RTE[_k].append(_e)
+RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_FAB', 'the CZ charge is sized from the wafer need and imported through the dock (A-M-417)', 'flow_graph/param/fab_silicon.py')]
+_rte_items = [(tid, t, crit, '—', ev) for tid, t, crit, ev in RTE_DONE]
+for _e in sorted(_RTE['open'], key=lambda e: e['stream_id']):
+    _rte_items.append((f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']} carries no flow",
+                       'the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason', 'X-PAR-02', None))
+for _k, _t, _c in (('standby', 'Standby routes without a rated case', 'each standby, N+1 or site-mode route carries the rate of the case that puts it in service, so its line and both units are sized for it'),
+                   ('return', 'Return routes without flow', 'each return route is shown to be needed, with the case that uses it and its rate, or it is retired'),
+                   ('retired', 'Routes noted as retired but still present', 'each route is set to presence retired on the graph, or given a rate')):
+    if _RTE[_k]:
+        _rte_items.append((f'X-RTE-{_k.upper()}', f"{_t}: {', '.join(sorted(e['stream_id'] for e in _RTE[_k]))}", _c, 'X-PAR-02', None))
+_rte_items += [('X-RTE-PV-SI', 'Silicon wafers for SOLAR_PV_CELL', 'the cell line has a wafer route sized from pv_cells_per_d, from the fab or an import, with both balances closed', 'X-RTE-STOCK_TO_FAB', None),
+               ('X-RTE-SI-BACKUP', 'In-house refining of SI_REDUCE silicon to charge grade', 'a refining route of a different technology from the polysilicon import is designed and sized, or the import is confirmed as the only path', 'X-RTE-STOCK_TO_FAB', None),
+               ('X-RTE-CZ-HOTZONE', 'CZ hot-zone heater from a heat-loss model', 'the 35 kW hot-zone duty of A-M-417 is replaced by a heat-loss model of the hot zone, and the pull peak is carried in the one-line', 'X-RTE-STOCK_TO_FAB', None),
+               ('X-RTE-LEGACY-PFD', 'Remaining hand-drawn process sheets', 'each script in flow_graph/exporters/matplotlib/ that the regenerator does not run is checked for what it draws and who cites it, then retired or replaced by a graph view', '—', None)]
+X.append(('RTE', 'Routes without flow (owner decision 2026-10-29)', _rte_items))
+OWNER_X |= {'X-RTE-RETIRED'}
+DONE_X |= {tid for tid, *_ in RTE_DONE}
 HAND_NEXT = ['X-PAR-02 Extend the solver unit by unit (LEACH full balance, FLOAT_SINK, VCD, UPW, gas train) until every edge is solved.', 'X-PAR-03 Atmospheric venting (API 2000) per unit task 07; API 520 relief recomputed for EXPANDER 2026-10-15 by `write_graph.py relief`. Converted 2026-10-15: rectifier, LEACH_CSTR_1, HX-5/HX8, power and one-line scripts (AQS-PAR-001 section 2).', 'X-PAR-03 Apply the scrubber function to ALK_SCRUBBER, ACID_POLISH_SCRUB, NOX_SCRUB and MET_SCRUB with C_s and HTU from the in-house packing design (X-MFG-31) (function added 2026-10-15, `flow_graph/param/sizing/scrubber.py`). Tank, agitator and pump functions added 2026-10-15 (`flow_graph/param/sizing/tank.py`).', 'X-PAR-04 BOMs for EVAP_ACID and EVAP_BASE come from the in-house design (X-MFG-30; no bought skid, owner decision 2026-10-15); CadQuery envelopes, line list, isometric routes and supports regenerated 2026-10-15 (`flow_graph/param/envelopes.py`). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).', 'X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).', 'X-PIP-03 Fabrication isometrics from AQS-ISO-001.', 'X-ELS-02 Remaining study-share loads; CRYO_ASU basis.', 'X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test, site area for the PV field.', 'X-PAR-02 Solver extension: LEACH full balance, FLOAT_SINK, VCD, UPW, gas train.']
 PROGRESS_LOG = [
     'X-BLD-04 closed 2026-10-15 (seed Rev K): AQS-BLD-010 0 overlaps / 0 pairs; AQS-BLD-011 10/10 incompatible pairs; AQS-BLD-012 9/9 NEC 110.26 rows and 139/139 rows with a 914 mm face; L1 farm re-rowed to 914 mm paths (`flow_graph/farm_rerow.py`, A-M-102). Next: X-PAR-07 roof-only PV, X-STD-01, X-MFG-30..32, X-GOV-20 (owner decisions 2026-10-15).',

@@ -133,11 +133,9 @@ Table 6.1. Streams of the fab units
 | S34 | WS_NITRIC | WET_BENCH | 1.246 | kg/d |
 | S34B | WS_PHOS | WET_BENCH | 0.61 | kg/d |
 | S35 | WS_KOH | WET_BENCH | 0.2701 | kg/d |
-| S36 | WS_DOPE | WAFER_FAB | 0 | kg/d |
 | S37 | WS_SLURRY | WAFER_FAB | 3.3 | kg/d |
 | S38 | WET_BENCH | OIL_FRAC | 0.006 | kg/d |
 | S39 | WAFER_FAB | LEACH_CSTR_1 | 3.31 | kg/d |
-| S39B | WAFER_FAB | OIL_FRAC | 0 | kg/d |
 | SF-LITHO_ALIGN | SOL_ARK_60K | LITHO_ALIGN | 0.004 | kW |
 | SF-LITHO_COAT | SOL_ARK_60K | LITHO_COAT | 0.0254 | kW |
 | SF-LITHO_DEV | SOL_ARK_60K | LITHO_DEV | 0.008 | kW |
@@ -147,7 +145,7 @@ Table 6.1. Streams of the fab units
 | STOCK_TO_FAB | METAL_STORE | WAFER_FAB | 0.2264 | kg/d |
 | UPW_TO_FAB | HDR_UPW | FAB_UPW_TANK | — | — |
 
-The streams IA-NIT-VENT, POLY_TO_FAB, S36, S39B and UPW_TO_FAB carry no flow on the present graph.
+The streams IA-NIT-VENT, POLY_TO_FAB and UPW_TO_FAB carry no flow on the present graph.
 
 ## 7. Mass balance
 

@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AA
+Revision: AB
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -33,6 +33,7 @@ Date: 2026-10-29
 | Y | Batch 22: the wire die schedule, the cold-mill gauge and width and the atomiser batch derived from the graph throughputs (owner decision 2026-10-29, A-M-416); the owner question on the forming tool design closed | 2026-10-29 |
 | Z | Batch 23: silicon feed to WAFER_FAB sized from the wafer need, imported through the dock (owner decision 2026-10-29, A-M-417); the owner question on the silicon charge closed | 2026-10-29 |
 | AA | Batch 24: argon blanket gas for the CZ puller from the cold box in a closed loop (owner decision 2026-10-29, A-M-417); nitrogen refused for the melt; the owner question on the blanket gas closed | 2026-10-29 |
+| AB | Batch 25: every route without flow put on the task list as group X-RTE, generated from the graph; five routes already noted as retired set to presence retired | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -178,6 +179,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | Rev F. Section 7 sets the die schedule, the cold-mill gauge and width and the atomiser batch from the graph throughputs (A-M-416); `docs-authority/_mfg_tools.py` designs the tools. |
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | Rev E. Section 4.1 gives the silicon charge from the wafer need (`flow_graph/param/fab_silicon.py`, A-M-417); STOCK_TO_FAB now carries the feed. |
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | Rev F. Section 4.1 adds the argon loop IA-AR-CZ / IA-AR-CZ-BACK with the cold box, sized from the puller (A-M-417). |
+| `docs-authority/_task_plan_gen.py` (AQS-PLAN-007) | Task group X-RTE generated from the graph: one task per open route without flow, grouped standby, return and retired routes, and the done routes with evidence (owner decision 2026-10-29). |
 
 ## 3. In progress
 

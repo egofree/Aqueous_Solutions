@@ -1473,7 +1473,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "B/P/As concentrate; BBr\u2083 / POCl\u2083 class",
       "header": "gas cabinet / tote",
       "forbidden": "hab AHU",
@@ -1482,7 +1482,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | Retired 2026-10-29 (owner decision: a route without flow is finished or retired; its note already named the live path)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -1572,7 +1572,7 @@
       "from_unit_id": "WAFER_FAB",
       "to_unit_id": "OIL_FRAC",
       "phase": "L",
-      "presence": "present",
+      "presence": "retired",
       "carries": "solvent and photoresist",
       "header": "HDR_ORG",
       "forbidden": "leach, farm",
@@ -1586,7 +1586,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT."
+        "note": "Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT. | Retired 2026-10-29 (owner decision: a route without flow is finished or retired; its note already named the live path)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "OIL"

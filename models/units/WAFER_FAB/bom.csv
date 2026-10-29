@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/WAFER_FAB.md
-2,Process nozzle DN15,17,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,15,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 3,Process nozzle DN50,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 4,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: process vacuum pump (induction IE3, IEC 90S / 1.1 kW)",1,-,AQS-INV-001 / AQS-INV-005

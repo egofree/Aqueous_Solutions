@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 37.07 kg/d. Mass out 37.07 kg/d. Electrical duty 0.8854 kW. In: CAST_SCRAP_TO_IND 0 kg/d (foundry scrap); METALS_TO_IND_MELT 0.5 kg/d (Ti and other metal powders/sponge); FLUX_TO_IND 0.03978 kg/d (flux); EW_METALS_TO_IND 0 kg/d (EW cathode/powder metals); 6 more. Out: IND_MELT_TO_CAST 3 kg/d (molten metal); IND_TO_CONT 31.71 kg/d (melt to continuous caster); FOUNDRY_SLAG_TO_LEACH 0.3565 kg/d (slag return); IND_TO_ATOM 0 kg/d (melt to atomizer when powder required); 1 more.
+1. Basis. Mass in 37.07 kg/d. Mass out 37.07 kg/d. Electrical duty 0.8854 kW. In: CAST_SCRAP_TO_IND 0 kg/d (foundry scrap); METALS_TO_IND_MELT 0.5 kg/d (Ti and other metal powders/sponge); FLUX_TO_IND 0.03978 kg/d (flux); MO_TO_IND 0.0625 kg/d (Mo metal); 5 more. Out: IND_MELT_TO_CAST 3 kg/d (molten metal); IND_TO_CONT 31.71 kg/d (melt to continuous caster); FOUNDRY_SLAG_TO_LEACH 0.3565 kg/d (slag return); IND_TO_ATOM 0 kg/d (melt to atomizer when powder required); 1 more.
 
 2. Size.
 - Envelope 1000×1000×1500 mm, 1.5 m³. That box over this flow would be 971.2 h if it were full. It is not a residence time.

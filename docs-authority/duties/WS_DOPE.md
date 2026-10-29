@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.01 kg/d. Mass out 0.01 kg/d. Electrical duty 0.0000 kW. In: IA-PHOS-DOPE 0.01 kg/d (phosphate to dopant). Out: S36 0 kg/d (B/P/As concentrate; BBr₃ / POCl₃ class); IA-PV-IN 0.01 kg/d (dopant concentrate).
+1. Basis. Mass in 0.01 kg/d. Mass out 0.01 kg/d. Electrical duty 0.0000 kW. In: IA-PHOS-DOPE 0.01 kg/d (phosphate to dopant). Out: IA-PV-IN 0.01 kg/d (dopant concentrate).
 
 2. Size.
 - In 0.0100 kg/d, out 0.0100 kg/d. No holdup claimed.

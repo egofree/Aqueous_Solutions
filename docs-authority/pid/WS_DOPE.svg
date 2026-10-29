@@ -48,11 +48,11 @@
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-PV-IN</text>
 <text x="1476" y="253" font-size="10" text-anchor="end">0.0 kg/d · solids transfer</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
-<line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
-<polygon points="1070,286 1061,282 1061,290" fill="#111"/>
+<line x1="914" y1="286" x2="1061" y2="286" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-out"/>
+<polygon points="1070,286 1061,282 1061,290" fill="#999"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">WAFER_FAB</text>
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">S36</text>
-<text x="1476" y="299" font-size="10" text-anchor="end">0.0 kg/d · DN15 —</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">0.0 kg/d · DN15 — · absent</text>
 <text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N2</text>
 <path d="M 1023.6,280 L 1031.6,286 L 1023.6,292 Z M 1041.6,280 L 1033.6,286 L 1041.6,292 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="275.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
@@ -64,7 +64,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-WS_DOPE</text>
 <text x="1124" y="526" font-size="9">P&amp;ID WS_DOPE (reagent, FAB sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 853344ef   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 34b2d1d6   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 b4b60a03b5946476   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 f020ca1e16e04ee5   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

@@ -690,11 +690,11 @@ Table 2.1. Graph study and assumed values
 | A-G-8226f7 | 3.0 | kg/d | graph S32 rate | AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L / value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on ... |  | X-BAS-02 |
 | A-G-84959d | 3.008739 | kg/d | graph S33 rate | AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L / X-PAR-02 reconciled (AQS-PAR-003). / value restored from graph Rev BH (91d33f4): Rev ... |  | X-BAS-02 |
 | A-G-b3ebcb | 0.2701 | kg/d | graph S35 rate | AQS-DUTY-010: AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L) / X-PAR-02 reconciled (AQS-PAR-003). / value restored from graph Rev BH (91d33f4): Rev AC ... |  | X-BAS-02 |
-| A-G-767e54 | 0.0 | kg/d | graph S36 rate | Retired. Live path is IA-PV-IN / IA-PV-OUT. / value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology |  | X-BAS-02 |
+| A-G-767e54 | 0.0 | kg/d | graph S36 rate | Retired. Live path is IA-PV-IN / IA-PV-OUT. / value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology / Retired ... |  | X-BAS-02 |
 | A-G-f031bd | 3.3 | kg/d | graph S37 rate | AQS-DUTY-010: AUD s13 1-5 L/d makeup at 3 starts = 3.0 L/d x 1.1 kg/L / X-PAR-02 reconciled (AQS-PAR-003). / value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology |  | X-BAS-02 |
 | A-G-a5136c | 0.006 | kg/d | graph S38 rate | AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d |  | X-BAS-02 |
 | A-G-048135 | 3.310001 | kg/d | graph S39 rate | AQS-DUTY-010: spent slurry + dopant residue = S37 + S36 (AUD: spent return same order as forwards) / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-158550 | 0.0 | kg/d | graph S39B rate | Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT. |  | X-BAS-02 |
+| A-G-158550 | 0.0 | kg/d | graph S39B rate | Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT. / Retired 2026-10-29 (owner decision: a route without flow is finished or retired; its note already named the live path). |  | X-BAS-02 |
 | A-G-d6b951 | 0.0 | kW | graph S43 rate | AQS-DUTY-010: ground heat = 0 while GEO_HP is idle. Standby 2.126 kW at COP 3.43 (0.45 Carnot 285 -> 328 K) <= GHEX 3.0 kW / value restored from graph Rev BH ... |  | X-BAS-02 |
 | A-G-141642 | 2.1972 | kW | graph S44 rate | AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab / value restored ... |  | X-BAS-02 |
 | A-G-6d652b | 0.019728 | kg/d | graph S45 rate | AQS-REQ-KW-001 ~0.15 kg/h H2 @ REQ-GEN-CONT; shared pool — cannot all draw Faraday max / X-PAR-12 TF: genset fuel priority 1: hydrogen for the NFPA 110 8.4.2 ... |  | X-BAS-02 |

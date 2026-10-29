@@ -40,11 +40,11 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S32 | WS_PEROX→WET_BENCH | Claimed | present | 3.0 kg/d | From register: WS_PEROX → WET_BENCH |
 | S33 | WS_AMMONIA→WET_BENCH | Claimed | present | 3.008739 kg/d | From register: WS_AMMONIA → WET_BENCH |
 | S35 | WS_KOH→WET_BENCH | Claimed | present | 0.2701 kg/d | From register: WS_KOH → WET_BENCH / solar texture stub |
-| S36 | WS_DOPE→WAFER_FAB | Claimed | present | 0.0 kg/d | From register: WS_DOPE / CRU polish → FAB_TOOL dopant cabinets |
+| S36 | WS_DOPE→WAFER_FAB | Claimed | retired | 0.0 kg/d | From register: WS_DOPE / CRU polish → FAB_TOOL dopant cabinets |
 | S37 | WS_SLURRY→WAFER_FAB | Claimed | present | 3.3 kg/d | From register: WS_SLURRY → LAP_CMP / FAB_PREP |
 | S38 | WET_BENCH→OIL_FRAC | — | present | 0.006 kg/d | Waste leaves the bench. |
 | S39 | WAFER_FAB→LEACH_CSTR_1 | — | present | 3.310001 kg/d | NFPA 400: no organics into chlorate leach. |
-| S39B | WAFER_FAB→OIL_FRAC | — | present | 0.0 kg/d | Organics to the oil line. |
+| S39B | WAFER_FAB→OIL_FRAC | — | retired | 0.0 kg/d | Organics to the oil line. |
 | S43 | GEO_GHEX→GEO_HP_CLOSED_LOOP | Closed | present | 0.0 kW | From register: GEO_GHEX → GEO_HP (closed loop) |
 | S45 | CRYO_H2→BACKUP_GEN | Claimed / Partial | present | 0.019728 kg/d | — |
 | S46 | BACKUP_GEN→NOX_SCRUB | — | present | 0.198104 kg/d | NFPA 37 exhaust. Not life water. |

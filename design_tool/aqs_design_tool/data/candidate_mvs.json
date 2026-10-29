@@ -9017,7 +9017,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | Retired 2026-10-29 (owner decision: a route without flow is finished or retired; its note already named the live path)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -9085,7 +9085,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT."
+        "note": "Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT. | Retired 2026-10-29 (owner decision: a route without flow is finished or retired; its note already named the live path)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "OIL",

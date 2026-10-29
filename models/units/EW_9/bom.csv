@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope 600 x 420 x 650 mm,1,"Cathode titanium Grade 2, 3 mm.",docs-authority/duties/EW_9.md
-2,Process nozzle DN15,8,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,6,"Cathode titanium Grade 2, 3 mm.",one per mass edge; DN from AQS-INV-003
 3,"Motor: electrolyte circulation pump (induction IE3, IEC 63 / 0.18 kW)",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: screw conveyor IA-EW-MET-9 to MFG_SHOP (induction IE3, IEC 80 / 0.55 kW)",1,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: transfer pump IA-EW-09 to POLISH_BANK (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005

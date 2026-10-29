@@ -54,11 +54,11 @@
 <text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">S38</text>
 <text x="24" y="345" font-size="10" text-anchor="start">0.0 kg/d · DN15 P1</text>
 <text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
-<line x1="430" y1="378" x2="577" y2="378" stroke="#111" stroke-width="1.6" class="edge-in"/>
-<polygon points="586,378 577,374 577,382" fill="#111"/>
+<line x1="430" y1="378" x2="577" y2="378" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-in"/>
+<polygon points="586,378 577,374 577,382" fill="#999"/>
 <text x="24" y="359" font-size="9" fill="#666" text-anchor="start">WAFER_FAB</text>
 <text x="24" y="373" font-size="11" font-weight="600" text-anchor="start">S39B</text>
-<text x="24" y="391" font-size="10" text-anchor="start">0.0 kg/d · DN15 M2</text>
+<text x="24" y="391" font-size="10" text-anchor="start">0.0 kg/d · DN15 M2 · absent</text>
 <text x="598" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="start">N3</text>
 <line x1="430" y1="424" x2="577" y2="424" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,424 577,420 577,428" fill="#111"/>
@@ -156,7 +156,7 @@
 <g id="aqs-title-block"><rect x="1116" y="658" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="675" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-OIL_FRAC</text>
 <text x="1124" y="692" font-size="9">P&amp;ID OIL_FRAC (frac, OIL sector)</text>
-<text x="1124" y="709" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev e276503d   Issued 2026-10-19</text>
+<text x="1124" y="709" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev df4766f7   Issued 2026-10-19</text>
 <text x="1124" y="726" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="743" font-size="9">Graph SHA-256 b4b60a03b5946476   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="743" font-size="9">Graph SHA-256 f020ca1e16e04ee5   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

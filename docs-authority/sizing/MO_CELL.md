@@ -17,7 +17,7 @@ This page records the size of unit MO_CELL, of class `cell` in sector FOUNDRY, f
 
 ## 2. Duty
 
-The unit takes 0.105502 kg/d by 3 streams and gives 0.105502 kg/d by 4 streams. Its continuous electrical load is 0.1141 kW, fed by stream SF-MO_CELL.
+The unit takes 0.105502 kg/d by 2 streams and gives 0.105502 kg/d by 3 streams. Its continuous electrical load is 0.1141 kW, fed by stream SF-MO_CELL.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
