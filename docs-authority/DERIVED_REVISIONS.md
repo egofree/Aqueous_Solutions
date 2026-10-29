@@ -97,7 +97,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/SITE_COMPARISON.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/SITE_POWER.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/SITE_SCALING.md` | c430207 (regenerated, no change) | current |
-| `docs-authority/SITE_UNITS.md` | c430207 | current |
+| `docs-authority/SITE_UNITS.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/SPARES.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/STANDARDS_LIST.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/STARTUP.md` | c430207 (regenerated, no change) | current |

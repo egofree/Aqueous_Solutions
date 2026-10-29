@@ -17,14 +17,14 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 9168 |
+| fastener | 8996 |
 | support | 4097 |
-| electronics | 2147 |
+| electronics | 2144 |
 | instrument | 754 |
-| bearing | 746 |
+| bearing | 744 |
 | valve | 677 |
-| protection | 205 |
-| seal | 125 |
+| protection | 204 |
+| seal | 124 |
 
 ## 2a. What a datasheet is here
 
@@ -45,17 +45,17 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x388 | 388 | 69 | AHU damper actuator (assumed size); Biogas recirculation blower, diaphragm, about 1 L/min (assumed size); Biogas recirculation diaphragm blower about  |  |
-| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6202-2Z x214; 6205-2Z x52; 6201-2Z x50; 6204-2Z x22; 6206-2Z x12; 6308-2Z x6; 6306-2Z x2 | 358 | 49 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
+| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x388 | 388 | 68 | AHU damper actuator (assumed size); Biogas recirculation blower, diaphragm, about 1 L/min (assumed size); Biogas recirculation diaphragm blower about  |  |
+| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x22; 6206-2Z x12; 6308-2Z x6; 6306-2Z x2 | 356 | 48 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x870 | 870 | 96 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
+| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x868 | 868 | 94 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
 | OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x754 | 754 | 1 | one per instrument |  |
-| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x191 | 191 | 68 | AHU damper actuator; Biogas recirculation blower, diaphragm, about 1 L/min; Biogas recirculation diaphragm blower about 2 L/min |  |
-| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.37 kW x104; 0.18 kW x21; 1.1 kW x18; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 0.75 kW x1 | 161 | 39 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Acid day tank D160 x 300 mm with metering pump (assumed VFD a |  |
-| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x102 | 102 | 1 | 1624 points / 16 |  |
+| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x191 | 191 | 67 | AHU damper actuator; Biogas recirculation blower, diaphragm, about 1 L/min; Biogas recirculation diaphragm blower about 2 L/min |  |
+| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.37 kW x104; 0.18 kW x20; 1.1 kW x18; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 0.75 kW x1 | 160 | 38 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Acid day tank D160 x 300 mm with metering pump (assumed VFD a |  |
+| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x102 | 102 | 1 | 1622 points / 16 |  |
 | OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x6; 1.1 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 18 | 15 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x36 | 36 | 18 | NaOH dosing pump, solenoid diaphragm; on/off valve C29_RECYCLE; on/off valve CUT-3-OUT |  |
 | OF-10 | compressor contactor + overload | IEC 60947-4-1 | 15 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 10 | 3 | air-source heat pump compressor; cryocooler compressor; heat pump compressor |  |
@@ -82,12 +82,12 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x193; 70 A x8; 30 A x3; 60 A x1 | 205 | 50 | NEC 430.52, from AQS-INV-002 |  |
+| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x192; 70 A x8; 30 A x3; 60 A x1 | 204 | 49 | NEC 430.52, from AQS-INV-002 |  |
 ## 7. Seal datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x125 | 125 | 26 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
+| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x124 | 124 | 25 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
 ## 8. Support datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -139,22 +139,25 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-31 | M10 U-bolt for DN150 | ISO 3506 A4-70 | M10 U-bolt for DN150 x2 | 2 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
 | OF-32 | Lid gasket 40 mm wide | FKM | Lid gasket 40 mm wide x1 | 1 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
 | OF-33 | Solvent cement | PVC-U per ASTM D2564 | Solvent cement x1 | 1 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
-| OF-66 | M12 anchor | ISO 898-1 8.8 | M12 anchor x160 | 160 | 33 | models/mfg/AL_POT/fasteners.csv; models/mfg/CAST_LINE/fasteners.csv; models/mfg/CA_POT/fasteners.csv |  |
-| OF-67 | M10 x 30 hood bolts | ISO 898-1 8.8 | M10 x 30 hood bolts x80 | 80 | 5 | models/mfg/AL_POT/fasteners.csv; models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv |  |
-| OF-68 | M16 T-bolt + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 T-bolt + nut (ISO 4014 / ISO 4032) x72 | 72 | 6 | models/mfg/CAST_LINE/fasteners.csv; models/mfg/CONT_CAST/fasteners.csv; models/mfg/INV_CAST/fasteners.csv |  |
-| OF-69 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x64 | 64 | 4 | models/mfg/HF_GEN/fasteners.csv; models/mfg/IND_MELT/fasteners.csv; models/mfg/SHELL_BURNOUT/fasteners.csv |  |
-| OF-70 | M12 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M12 stud + nut (ISO 4014 / ISO 4032) x50 | 50 | 5 | models/mfg/AL_POT/fasteners.csv; models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv |  |
-| OF-71 | M10 x 30 guard screws | ISO 3506 A4-70 | M10 x 30 guard screws x44 | 44 | 3 | models/mfg/FILM_CAST/fasteners.csv; models/mfg/PELLET/fasteners.csv; models/mfg/POWDER_RESIN/fasteners.csv |  |
+| OF-66 | M12 anchor | ISO 898-1 8.8 | M12 anchor x102 | 102 | 23 | models/mfg/AL_POT/fasteners.csv; models/mfg/CAST_LINE/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv |  |
+| OF-67 | M10 x 30 hood bolts | ISO 898-1 8.8 | M10 x 30 hood bolts x16 | 16 | 1 | models/mfg/AL_POT/fasteners.csv |  |
+| OF-68 | M16 T-bolt + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 T-bolt + nut (ISO 4014 / ISO 4032) x12 | 12 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
+| OF-69 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x12 | 12 | 1 | models/mfg/HF_GEN/fasteners.csv |  |
+| OF-70 | M12 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M12 stud + nut (ISO 4014 / ISO 4032) x26 | 26 | 3 | models/mfg/AL_POT/fasteners.csv; models/mfg/INV_CAST/fasteners.csv; models/mfg/ROLL/fasteners.csv |  |
+| OF-71 | M10 x 30 guard screws | ISO 3506 A4-70 | M10 x 30 guard screws x16 | 16 | 1 | models/mfg/PELLET/fasteners.csv |  |
 | OF-72 | M10 x 30 jacket screws | ISO 3506 A4-70 | M10 x 30 jacket screws x32 | 32 | 2 | models/mfg/TFE_SYN/fasteners.csv; models/mfg/VDF_SYN/fasteners.csv |  |
-| OF-73 | M10 x 30 bench bolts | ISO 898-1 8.8 | M10 x 30 bench bolts x24 | 24 | 2 | models/mfg/FLUX_PREP/fasteners.csv; models/mfg/WAX_PATTERN/fasteners.csv |  |
-| OF-74 | M10 x 40 lid bolt | ISO 3506 A4-80 | M10 x 40 lid bolt with nut and washers x20 | 20 | 2 | models/mfg/POLY_F/fasteners.csv; models/mfg/POLY_OLEFIN/fasteners.csv |  |
-| OF-75 | M10 clamp | ISO 3506 A4-70 | M10 clamp x12 | 12 | 2 | models/mfg/POLY_F/fasteners.csv; models/mfg/POLY_STOCK/fasteners.csv |  |
-| OF-76 | M12 anchor | ISO 3506 A4-80 | M12 anchor x7 | 7 | 2 | models/mfg/POLY_F/fasteners.csv; models/mfg/POLY_OLEFIN/fasteners.csv |  |
+| OF-74 | M10 x 40 lid bolt | ISO 3506 A4-80 | M10 x 40 lid bolt with nut and washers x8 | 8 | 1 | models/mfg/POLY_OLEFIN/fasteners.csv |  |
+| OF-75 | M10 clamp | ISO 3506 A4-70 | M10 clamp x4 | 4 | 1 | models/mfg/POLY_STOCK/fasteners.csv |  |
+| OF-76 | M12 anchor | ISO 3506 A4-80 | M12 anchor x3 | 3 | 1 | models/mfg/POLY_OLEFIN/fasteners.csv |  |
 | OF-79 | M12 hex socket head cap screw (ISO 4762) | ISO 898-1 8.8 | M12 hex socket head cap screw (ISO 4762) x28 | 28 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
 | OF-80 | M8 hex socket head cap screw (ISO 4762) | ISO 898-1 8.8 | M8 hex socket head cap screw (ISO 4762) x8 | 8 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
+| OF-81 | M10 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M10 stud + nut (ISO 4014 / ISO 4032) x66 | 66 | 9 | models/mfg/CA_POT/fasteners.csv; models/mfg/CONT_CAST/fasteners.csv; models/mfg/CR_CELL/fasteners.csv |  |
+| OF-82 | M8 x 25 hood bolts | ISO 898-1 8.8 | M8 x 25 hood bolts x48 | 48 | 4 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/MG_POT/fasteners.csv |  |
+| OF-83 | M10 anchor | ISO 898-1 8.8 | M10 anchor x40 | 40 | 10 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/FILM_CAST/fasteners.csv |  |
+| OF-84 | M8 x 25 hopper bolts | ISO 898-1 8.8 | M8 x 25 hopper bolts x8 | 8 | 1 | models/mfg/TI_CELL/fasteners.csv |  |
 
 ## 11. Coverage gate
 
-- Bought families covered: 79 of 80 (the excluded one is OF-13, the fabricated-part set:
+- Bought families covered: 82 of 83 (the excluded one is OF-13, the fabricated-part set:
   sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).
 - Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.

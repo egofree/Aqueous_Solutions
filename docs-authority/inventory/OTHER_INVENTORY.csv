@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,102,1624 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,102,1622 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,754,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 163 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
@@ -1160,16 +1160,16 @@ FOUNDRY,caster,CAST_LINE,instrument,high-level switch,vibrating fork,"IEC 60947-
 FOUNDRY,caster,CAST_LINE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,caster,CAST_LINE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,caster,CAST_LINE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,caster,CONT_CAST,fabricated part,fabricated part set,5 BOM lines,models/mfg/CONT_CAST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,caster,CONT_CAST,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/CONT_CAST/fasteners.csv
-FOUNDRY,caster,CONT_CAST,fastener,M16 T-bolt + nut (ISO 4014 / ISO 4032),M16 T-bolt + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/CONT_CAST/fasteners.csv
+FOUNDRY,caster,CONT_CAST,fabricated part,fabricated part set,9 BOM lines,models/mfg/CONT_CAST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,caster,CONT_CAST,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,models/mfg/CONT_CAST/fasteners.csv
+FOUNDRY,caster,CONT_CAST,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/CONT_CAST/fasteners.csv
 FOUNDRY,caster,CONT_CAST,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,caster,CONT_CAST,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,caster,CONT_CAST,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,caster,CONT_CAST,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,caster,INV_CAST,fabricated part,fabricated part set,5 BOM lines,models/mfg/INV_CAST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,caster,INV_CAST,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/INV_CAST/fasteners.csv
-FOUNDRY,caster,INV_CAST,fastener,M16 T-bolt + nut (ISO 4014 / ISO 4032),M16 T-bolt + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/INV_CAST/fasteners.csv
+FOUNDRY,caster,INV_CAST,fabricated part,fabricated part set,8 BOM lines,models/mfg/INV_CAST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,caster,INV_CAST,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/INV_CAST/fasteners.csv
+FOUNDRY,caster,INV_CAST,fastener,M12 stud + nut (ISO 4014 / ISO 4032),M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,models/mfg/INV_CAST/fasteners.csv
 FOUNDRY,caster,INV_CAST,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,caster,INV_CAST,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,caster,INV_CAST,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1185,54 +1185,50 @@ FOUNDRY,cell,AL_POT,fastener,M12 stud + nut (ISO 4014 / ISO 4032),M12 stud + nut
 FOUNDRY,cell,AL_POT,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,cell,AL_POT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,cell,AL_POT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,cell,CA_POT,fabricated part,fabricated part set,7 BOM lines,models/mfg/CA_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,cell,CA_POT,fastener,M10 x 30 hood bolts,M10 x 30 hood bolts,ISO 898-1 8.8,16,models/mfg/CA_POT/fasteners.csv
-FOUNDRY,cell,CA_POT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/CA_POT/fasteners.csv
-FOUNDRY,cell,CA_POT,fastener,M12 stud + nut (ISO 4014 / ISO 4032),M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,10,models/mfg/CA_POT/fasteners.csv
+FOUNDRY,cell,CA_POT,fabricated part,fabricated part set,16 BOM lines,models/mfg/CA_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,cell,CA_POT,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/CA_POT/fasteners.csv
+FOUNDRY,cell,CA_POT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/CA_POT/fasteners.csv
+FOUNDRY,cell,CA_POT,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/CA_POT/fasteners.csv
 FOUNDRY,cell,CA_POT,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,cell,CA_POT,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,cell,CA_POT,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,cell,CA_POT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,cell,CA_POT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,cell,CR_CELL,fabricated part,fabricated part set,7 BOM lines,models/mfg/CR_CELL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,cell,CR_CELL,fastener,M10 x 30 hood bolts,M10 x 30 hood bolts,ISO 898-1 8.8,16,models/mfg/CR_CELL/fasteners.csv
-FOUNDRY,cell,CR_CELL,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/CR_CELL/fasteners.csv
-FOUNDRY,cell,CR_CELL,fastener,M12 stud + nut (ISO 4014 / ISO 4032),M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,10,models/mfg/CR_CELL/fasteners.csv
+FOUNDRY,cell,CR_CELL,fabricated part,fabricated part set,16 BOM lines,models/mfg/CR_CELL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,cell,CR_CELL,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/CR_CELL/fasteners.csv
+FOUNDRY,cell,CR_CELL,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/CR_CELL/fasteners.csv
+FOUNDRY,cell,CR_CELL,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/CR_CELL/fasteners.csv
 FOUNDRY,cell,CR_CELL,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,cell,CR_CELL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,cell,CR_CELL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,cell,MG_POT,fabricated part,fabricated part set,7 BOM lines,models/mfg/MG_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,cell,MG_POT,fastener,M10 x 30 hood bolts,M10 x 30 hood bolts,ISO 898-1 8.8,16,models/mfg/MG_POT/fasteners.csv
-FOUNDRY,cell,MG_POT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/MG_POT/fasteners.csv
-FOUNDRY,cell,MG_POT,fastener,M12 stud + nut (ISO 4014 / ISO 4032),M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,10,models/mfg/MG_POT/fasteners.csv
+FOUNDRY,cell,MG_POT,fabricated part,fabricated part set,18 BOM lines,models/mfg/MG_POT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,cell,MG_POT,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/MG_POT/fasteners.csv
+FOUNDRY,cell,MG_POT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/MG_POT/fasteners.csv
+FOUNDRY,cell,MG_POT,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/MG_POT/fasteners.csv
 FOUNDRY,cell,MG_POT,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,cell,MG_POT,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,cell,MG_POT,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,cell,MG_POT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,cell,MG_POT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,cell,MO_CELL,fabricated part,fabricated part set,7 BOM lines,models/mfg/MO_CELL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,cell,MO_CELL,fastener,M10 x 30 hood bolts,M10 x 30 hood bolts,ISO 898-1 8.8,16,models/mfg/MO_CELL/fasteners.csv
-FOUNDRY,cell,MO_CELL,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/MO_CELL/fasteners.csv
-FOUNDRY,cell,MO_CELL,fastener,M12 stud + nut (ISO 4014 / ISO 4032),M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,10,models/mfg/MO_CELL/fasteners.csv
+FOUNDRY,cell,MO_CELL,fabricated part,fabricated part set,17 BOM lines,models/mfg/MO_CELL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,cell,MO_CELL,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/MO_CELL/fasteners.csv
+FOUNDRY,cell,MO_CELL,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/MO_CELL/fasteners.csv
+FOUNDRY,cell,MO_CELL,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/MO_CELL/fasteners.csv
 FOUNDRY,cell,MO_CELL,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,cell,MO_CELL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,cell,MO_CELL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,cell,TI_CELL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-MGCL2-KROLL to MG_POT (assumed size)
 FOUNDRY,cell,TI_CELL,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-MGCL2-KROLL to MG_POT
 FOUNDRY,cell,TI_CELL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-MGCL2-KROLL to MG_POT: run and fault (assumed)
-FOUNDRY,cell,TI_CELL,fabricated part,fabricated part set,7 BOM lines,models/mfg/TI_CELL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,cell,TI_CELL,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/TI_CELL/fasteners.csv
-FOUNDRY,cell,TI_CELL,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/TI_CELL/fasteners.csv
+FOUNDRY,cell,TI_CELL,fabricated part,fabricated part set,17 BOM lines,models/mfg/TI_CELL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,cell,TI_CELL,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/TI_CELL/fasteners.csv
+FOUNDRY,cell,TI_CELL,fastener,M8 x 25 hopper bolts,M8 x 25 hopper bolts,ISO 898-1 8.8,8,models/mfg/TI_CELL/fasteners.csv
 FOUNDRY,cell,TI_CELL,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,cell,TI_CELL,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,cell,TI_CELL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,cell,TI_CELL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,coater,SHELL_BUILD,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,Stucco blower / conveyor module (assumed size)
-FOUNDRY,coater,SHELL_BUILD,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,Stucco blower / conveyor module
-FOUNDRY,coater,SHELL_BUILD,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Stucco blower / conveyor module: run and fault (assumed)
-FOUNDRY,coater,SHELL_BUILD,fabricated part,fabricated part set,5 BOM lines,models/mfg/SHELL_BUILD/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,coater,SHELL_BUILD,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/SHELL_BUILD/fasteners.csv
-FOUNDRY,coater,SHELL_BUILD,fastener,M16 T-bolt + nut (ISO 4014 / ISO 4032),M16 T-bolt + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/SHELL_BUILD/fasteners.csv
+FOUNDRY,coater,SHELL_BUILD,fabricated part,fabricated part set,9 BOM lines,models/mfg/SHELL_BUILD/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,coater,SHELL_BUILD,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/SHELL_BUILD/fasteners.csv
 FOUNDRY,coater,SHELL_BUILD,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,coater,SHELL_BUILD,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,furnace,COMB_HEAT,fabricated part,fabricated part set,1 BOM lines,models/mfg/COMB_HEAT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -1248,9 +1244,9 @@ FOUNDRY,furnace,IND_MELT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,tran
 FOUNDRY,furnace,IND_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IND_MELT_TO_CAST to CAST_LINE: run and fault (assumed)
 FOUNDRY,furnace,IND_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IND_TO_CONT to CONT_CAST: run and fault (assumed)
 FOUNDRY,furnace,IND_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IND_TO_INV to INV_CAST: run and fault (assumed)
-FOUNDRY,furnace,IND_MELT,fabricated part,fabricated part set,7 BOM lines,models/mfg/IND_MELT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,furnace,IND_MELT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/IND_MELT/fasteners.csv
-FOUNDRY,furnace,IND_MELT,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,24,models/mfg/IND_MELT/fasteners.csv
+FOUNDRY,furnace,IND_MELT,fabricated part,fabricated part set,12 BOM lines,models/mfg/IND_MELT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,furnace,IND_MELT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,models/mfg/IND_MELT/fasteners.csv
+FOUNDRY,furnace,IND_MELT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/IND_MELT/fasteners.csv
 FOUNDRY,furnace,IND_MELT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,furnace,IND_MELT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,furnace,IND_MELT,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-056 SIL 2
@@ -1261,9 +1257,9 @@ FOUNDRY,furnace,RF_HEAT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mf
 FOUNDRY,furnace,SHELL_BURNOUT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump WAX_RECLAIM_TO_PATTERN to WAX_PATTERN (assumed size)
 FOUNDRY,furnace,SHELL_BURNOUT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump WAX_RECLAIM_TO_PATTERN to WAX_PATTERN
 FOUNDRY,furnace,SHELL_BURNOUT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump WAX_RECLAIM_TO_PATTERN to WAX_PATTERN: run and fault (assumed)
-FOUNDRY,furnace,SHELL_BURNOUT,fabricated part,fabricated part set,5 BOM lines,models/mfg/SHELL_BURNOUT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,furnace,SHELL_BURNOUT,fabricated part,fabricated part set,10 BOM lines,models/mfg/SHELL_BURNOUT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,furnace,SHELL_BURNOUT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/SHELL_BURNOUT/fasteners.csv
 FOUNDRY,furnace,SHELL_BURNOUT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/SHELL_BURNOUT/fasteners.csv
-FOUNDRY,furnace,SHELL_BURNOUT,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,16,models/mfg/SHELL_BURNOUT/fasteners.csv
 FOUNDRY,furnace,SHELL_BURNOUT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,furnace,SHELL_BURNOUT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,furnace,SHELL_BURNOUT,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-065 SIL 1
@@ -1279,19 +1275,17 @@ FOUNDRY,mill,DRAW,fabricated part,fabricated part set,1 BOM lines,models/mfg/DRA
 FOUNDRY,mill,DRAW,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/DRAW/fasteners.csv
 FOUNDRY,mill,DRAW,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,mill,DRAW,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,mill,ROLL,fabricated part,fabricated part set,4 BOM lines,models/mfg/ROLL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,mill,ROLL,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/ROLL/fasteners.csv
-FOUNDRY,mill,ROLL,fastener,M16 T-bolt + nut (ISO 4014 / ISO 4032),M16 T-bolt + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/ROLL/fasteners.csv
+FOUNDRY,mill,ROLL,fabricated part,fabricated part set,7 BOM lines,models/mfg/ROLL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,mill,ROLL,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/ROLL/fasteners.csv
+FOUNDRY,mill,ROLL,fastener,M12 stud + nut (ISO 4014 / ISO 4032),M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,models/mfg/ROLL/fasteners.csv
 FOUNDRY,mill,ROLL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,mill,ROLL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,prep,FLUX_PREP,fabricated part,fabricated part set,4 BOM lines,models/mfg/FLUX_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,prep,FLUX_PREP,fastener,M10 x 30 bench bolts,M10 x 30 bench bolts,ISO 898-1 8.8,12,models/mfg/FLUX_PREP/fasteners.csv
-FOUNDRY,prep,FLUX_PREP,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
+FOUNDRY,prep,FLUX_PREP,fabricated part,fabricated part set,6 BOM lines,models/mfg/FLUX_PREP/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,prep,FLUX_PREP,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/FLUX_PREP/fasteners.csv
 FOUNDRY,prep,FLUX_PREP,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,prep,FLUX_PREP,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,prep,WAX_PATTERN,fabricated part,fabricated part set,4 BOM lines,models/mfg/WAX_PATTERN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,prep,WAX_PATTERN,fastener,M10 x 30 bench bolts,M10 x 30 bench bolts,ISO 898-1 8.8,12,models/mfg/WAX_PATTERN/fasteners.csv
-FOUNDRY,prep,WAX_PATTERN,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
+FOUNDRY,prep,WAX_PATTERN,fabricated part,fabricated part set,8 BOM lines,models/mfg/WAX_PATTERN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,prep,WAX_PATTERN,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/WAX_PATTERN/fasteners.csv
 FOUNDRY,prep,WAX_PATTERN,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,prep,WAX_PATTERN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,prep,WAX_PATTERN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1302,16 +1296,15 @@ FOUNDRY,press,EXTRUDE,instrument,pressure transmitter,0-10 bar,"ceramic diaphrag
 FOUNDRY,press,EXTRUDE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,press,FORGE,fabricated part,fabricated part set,1 BOM lines,models/mfg/FORGE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,press,FORGE,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/FORGE/fasteners.csv
-FOUNDRY,separator,SHELL_BREAK,fabricated part,fabricated part set,5 BOM lines,models/mfg/SHELL_BREAK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-FOUNDRY,separator,SHELL_BREAK,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/SHELL_BREAK/fasteners.csv
-FOUNDRY,separator,SHELL_BREAK,fastener,M16 T-bolt + nut (ISO 4014 / ISO 4032),M16 T-bolt + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/SHELL_BREAK/fasteners.csv
+FOUNDRY,separator,SHELL_BREAK,fabricated part,fabricated part set,7 BOM lines,models/mfg/SHELL_BREAK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,separator,SHELL_BREAK,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/SHELL_BREAK/fasteners.csv
 FOUNDRY,separator,SHELL_BREAK,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,separator,SHELL_BREAK,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,separator,SHELL_BREAK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,separator,SHELL_BREAK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,store,METAL_STORE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,store,METAL_STORE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,store,STOCK_OUT,fabricated part,fabricated part set,3 BOM lines,models/mfg/STOCK_OUT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+FOUNDRY,store,STOCK_OUT,fabricated part,fabricated part set,6 BOM lines,models/mfg/STOCK_OUT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,store,STOCK_OUT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/STOCK_OUT/fasteners.csv
 FOUNDRY,store,STOCK_OUT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,store,STOCK_OUT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
@@ -2206,9 +2199,8 @@ OIL,recycle_pipe,C29_RECYCLE,instrument,pressure transmitter,0-10 bar,"ceramic d
 OIL,recycle_pipe,C29_RECYCLE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 OIL,recycle_pipe,C29_RECYCLE,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",7,C29_TO_PYRO: AQS-PIP-005 span count
 OIL,recycle_pipe,C29_RECYCLE,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,C29_TO_PYRO: one at each end nozzle (assumed)
-POLYMERS,former,FILM_CAST,fabricated part,fabricated part set,6 BOM lines,models/mfg/FILM_CAST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-POLYMERS,former,FILM_CAST,fastener,M10 x 30 guard screws,M10 x 30 guard screws,ISO 3506 A4-70,16,models/mfg/FILM_CAST/fasteners.csv
-POLYMERS,former,FILM_CAST,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,8,models/mfg/FILM_CAST/fasteners.csv
+POLYMERS,former,FILM_CAST,fabricated part,fabricated part set,9 BOM lines,models/mfg/FILM_CAST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+POLYMERS,former,FILM_CAST,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/FILM_CAST/fasteners.csv
 POLYMERS,former,FILM_CAST,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 POLYMERS,former,FILM_CAST,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 POLYMERS,former,FILM_CAST,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2218,12 +2210,8 @@ POLYMERS,former,PELLET,fastener,M10 x 30 guard screws,M10 x 30 guard screws,ISO 
 POLYMERS,former,PELLET,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/PELLET/fasteners.csv
 POLYMERS,former,PELLET,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,former,PELLET,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-POLYMERS,former,POWDER_RESIN,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,Blower with oversize-return duct to the hopper (assumed size)
-POLYMERS,former,POWDER_RESIN,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,Blower with oversize-return duct to the hopper
-POLYMERS,former,POWDER_RESIN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Blower with oversize-return duct to the hopper: run and fault (assumed)
-POLYMERS,former,POWDER_RESIN,fabricated part,fabricated part set,7 BOM lines,models/mfg/POWDER_RESIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-POLYMERS,former,POWDER_RESIN,fastener,M10 x 30 guard screws,M10 x 30 guard screws,ISO 3506 A4-70,12,models/mfg/POWDER_RESIN/fasteners.csv
-POLYMERS,former,POWDER_RESIN,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/POWDER_RESIN/fasteners.csv
+POLYMERS,former,POWDER_RESIN,fabricated part,fabricated part set,8 BOM lines,models/mfg/POWDER_RESIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+POLYMERS,former,POWDER_RESIN,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/POWDER_RESIN/fasteners.csv
 POLYMERS,former,POWDER_RESIN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,former,POWDER_RESIN,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 POLYMERS,reactor,HF_GEN,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Acid day tank D160 x 300 mm with metering pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
@@ -2243,19 +2231,19 @@ POLYMERS,reactor,POLY_COND,fabricated part,fabricated part set,1 BOM lines,model
 POLYMERS,reactor,POLY_COND,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/POLY_COND/fasteners.csv
 POLYMERS,reactor,POLY_COND,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,reactor,POLY_COND,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-POLYMERS,reactor,POLY_F,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Reclaim pump module: transfer of unreacted monomer (0.02 kg/: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-POLYMERS,reactor,POLY_F,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Reclaim pump module: transfer of unreacted monomer (0.02 kg/: run and fault (assumed)
-POLYMERS,reactor,POLY_F,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,Reclaim pump module: transfer of unreacted monomer (0.02 kg/ (assumed VFD at >= 0.75 kW)
-POLYMERS,reactor,POLY_F,fabricated part,fabricated part set,7 BOM lines,models/mfg/POLY_F/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-POLYMERS,reactor,POLY_F,fastener,M10 clamp,M10 clamp,ISO 3506 A4-70,8,models/mfg/POLY_F/fasteners.csv
-POLYMERS,reactor,POLY_F,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-80,12,models/mfg/POLY_F/fasteners.csv
-POLYMERS,reactor,POLY_F,fastener,M12 anchor,M12 anchor,ISO 3506 A4-80,4,models/mfg/POLY_F/fasteners.csv
+POLYMERS,reactor,POLY_F,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump POLYF_RECLAIM to F_RECOVER (assumed size)
+POLYMERS,reactor,POLY_F,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump POLYF_TO_FILM to FILM_CAST (assumed size)
+POLYMERS,reactor,POLY_F,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump POLYF_RECLAIM to F_RECOVER
+POLYMERS,reactor,POLY_F,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump POLYF_TO_FILM to FILM_CAST
+POLYMERS,reactor,POLY_F,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump POLYF_RECLAIM to F_RECOVER: run and fault (assumed)
+POLYMERS,reactor,POLY_F,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump POLYF_TO_FILM to FILM_CAST: run and fault (assumed)
+POLYMERS,reactor,POLY_F,fabricated part,fabricated part set,9 BOM lines,models/mfg/POLY_F/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+POLYMERS,reactor,POLY_F,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,models/mfg/POLY_F/fasteners.csv
+POLYMERS,reactor,POLY_F,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/POLY_F/fasteners.csv
 POLYMERS,reactor,POLY_F,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 POLYMERS,reactor,POLY_F,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 POLYMERS,reactor,POLY_F,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,reactor,POLY_F,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-POLYMERS,reactor,POLY_F,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-POLYMERS,reactor,POLY_F,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Reclaim pump module: transfer of unreacted monomer (0.02 kg/: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 POLYMERS,reactor,POLY_OLEFIN,fabricated part,fabricated part set,7 BOM lines,models/mfg/POLY_OLEFIN/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 POLYMERS,reactor,POLY_OLEFIN,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-80,8,models/mfg/POLY_OLEFIN/fasteners.csv
 POLYMERS,reactor,POLY_OLEFIN,fastener,M12 anchor,M12 anchor,ISO 3506 A4-80,3,models/mfg/POLY_OLEFIN/fasteners.csv

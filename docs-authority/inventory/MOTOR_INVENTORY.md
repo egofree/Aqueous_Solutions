@@ -28,13 +28,13 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 106 | 60 | 0.24 |
-| MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 58 | 8 | 2.77 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 108 | 61 | 0.24 |
+| MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 56 | 6 | 2.73 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 27 | 2 | 0.15 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 104 | 5 | 26.06 |
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 23 | 8 | 17.19 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 21 | 21 | 2.52 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 20 | 20 | 2.40 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 6 | 6 | 9.06 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 4 | 4 | 0.36 |
@@ -183,7 +183,6 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | cell | TI_CELL | transfer pump IA-MGCL2-KROLL to MG_POT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 1.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| coater | SHELL_BUILD | Stucco blower / conveyor module | BLDC | 57 mm (NEMA 23 flange) | 0.02 | 24 V DC | S1 | BLDC driver | 1 | BOM; shaft assumed (A-M-119) |
 | furnace | IND_MELT | transfer pump IND_MELT_TO_CAST to CAST_LINE | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 3.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | furnace | IND_MELT | transfer pump IND_TO_CONT to CONT_CAST | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 31.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | furnace | IND_MELT | transfer pump IND_TO_INV to INV_CAST | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 2.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
@@ -311,9 +310,9 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| former | POWDER_RESIN | Blower with oversize-return duct to the hopper | BLDC | 57 mm (NEMA 23 flange) | 0.02 | 24 V DC | S1 | BLDC driver | 1 | BOM; shaft assumed (A-M-119) |
 | reactor | HF_GEN | Acid day tank D160 x 300 mm with metering pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| reactor | POLY_F | Reclaim pump module: transfer of unreacted monomer (0.02 kg/ | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
+| reactor | POLY_F | transfer pump POLYF_RECLAIM to F_RECOVER | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| reactor | POLY_F | transfer pump POLYF_TO_FILM to FILM_CAST | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | reactor | TFE_SYN | Dilute-HCl return pump and transfer line to CRU | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | reactor | VDF_SYN | Dilute-HCl return pump and transfer line to CRU | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | store | POLY_STOCK | transfer pump FLUORO_TO_MFG to MFG_SHOP | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |

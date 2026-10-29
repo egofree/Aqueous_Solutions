@@ -1172,6 +1172,18 @@ Table 3.1. Model parameters
 | A-P-5486c2 | None |  | models/mfg/CAST_LINE/params.json gantry_swl | Mould-change gantry with SWL 250 kg chain hoist purchased item: mould change-out is the unit task 12 work order; SWL is a fit choice for the heaviest seat ... |  | unit task 10 (CAST_LINE) |
 | A-P-52c3ee | None |  | models/mfg/CAST_LINE/params.json materials_xmat22 | Materials per docs-authority/duties/CAST_LINE.md section 3 (X-MAT-22): fine-graphite mould hot faces with steel backing platens, graphite launder/refractory ... |  | unit task 10 (CAST_LINE) |
 | A-P-9a8547 | None |  | models/mfg/CAST_LINE/params.json bearing_class | Bearing/bushing hardware (2-bolt flange bearings, 25 mm bore class) is a purchased utility item; the rating is a fit choice for the hand-run roller loads, no ... |  | unit task 10 (CAST_LINE) |
+| A-P-5e863f | 60.3 | mm | models/mfg/CA_POT/params.json DN50_OD_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-574d73 | 2.0 | mm | models/mfg/CA_POT/params.json DN50_wall_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-b038da | 21.3 | mm | models/mfg/CA_POT/params.json DN15_OD_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-a5861e | 2.0 | mm | models/mfg/CA_POT/params.json DN15_wall_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-c6007f | 88.9 | mm | models/mfg/CA_POT/params.json DN80_OD_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-1d8814 | 2.0 | mm | models/mfg/CA_POT/params.json DN80_wall_mm | assumption |  | unit task 10 (CA_POT) |
+| A-P-1f9ada | 21.3 | mm | models/mfg/CONT_CAST/params.json DN15_OD_mm | assumption |  | unit task 10 (CONT_CAST) |
+| A-P-73a924 | 2.0 | mm | models/mfg/CONT_CAST/params.json DN15_wall_mm | assumption |  | unit task 10 (CONT_CAST) |
+| A-P-e28e77 | 60.3 | mm | models/mfg/CR_CELL/params.json DN50_OD_mm | assumption |  | unit task 10 (CR_CELL) |
+| A-P-0d4f78 | 2.0 | mm | models/mfg/CR_CELL/params.json DN50_wall_mm | assumption |  | unit task 10 (CR_CELL) |
+| A-P-22b167 | 21.3 | mm | models/mfg/CR_CELL/params.json DN15_OD_mm | assumption |  | unit task 10 (CR_CELL) |
+| A-P-c4e278 | 2.0 | mm | models/mfg/CR_CELL/params.json DN15_wall_mm | assumption |  | unit task 10 (CR_CELL) |
 | A-P-4e3f95 | 12 | mm | models/mfg/EXPANDER/params.json baseplate_t_mm | assumption |  | unit task 10 (EXPANDER) |
 | A-P-917f64 | 10 | mm | models/mfg/EXPANDER/params.json cylinder_wall_mm | assumption |  | unit task 10 (EXPANDER) |
 | A-P-0829fa | [300, 300, 250] | mm | models/mfg/EXPANDER/params.json crankcase_mm | assumption |  | unit task 10 (EXPANDER) |
@@ -1181,6 +1193,14 @@ Table 3.1. Model parameters
 | A-P-d87378 | 50 | mm | models/mfg/EXPANDER/params.json nozzle_stub_len_mm | assumption |  | unit task 10 (EXPANDER) |
 | A-P-763503 | 115 |  | models/mfg/EXPANDER/params.json allowable_stress_MPa | assumption |  | unit task 10 (EXPANDER) |
 | A-P-fd20b0 | Not on the graph. Shop proportions chosen to fit size_mm. Not measured. Not a design calculation except the wall check. |  | models/mfg/EXPANDER/params.json note | assumption |  | unit task 10 (EXPANDER) |
+| A-P-65a831 | 21.3 | mm | models/mfg/FILM_CAST/params.json DN15_OD_mm | assumption |  | unit task 10 (FILM_CAST) |
+| A-P-a1e904 | 2.0 | mm | models/mfg/FILM_CAST/params.json DN15_wall_mm | assumption |  | unit task 10 (FILM_CAST) |
+| A-P-413496 | 21.3 | mm | models/mfg/FLUX_PREP/params.json DN15_OD_mm | assumption |  | unit task 10 (FLUX_PREP) |
+| A-P-e815b7 | 2.0 | mm | models/mfg/FLUX_PREP/params.json DN15_wall_mm | assumption |  | unit task 10 (FLUX_PREP) |
+| A-P-d12d58 | 21.3 | mm | models/mfg/IND_MELT/params.json DN15_OD_mm | assumption |  | unit task 10 (IND_MELT) |
+| A-P-22ca6b | 2.0 | mm | models/mfg/IND_MELT/params.json DN15_wall_mm | assumption |  | unit task 10 (IND_MELT) |
+| A-P-503123 | 21.3 | mm | models/mfg/INV_CAST/params.json DN15_OD_mm | assumption |  | unit task 10 (INV_CAST) |
+| A-P-bb7018 | 2.0 | mm | models/mfg/INV_CAST/params.json DN15_wall_mm | assumption |  | unit task 10 (INV_CAST) |
 | A-P-28519d | 60 | mm | models/mfg/LEACH_CSTR_1/params.json header_zone_mm | Room for the DN50 headers and the 56 mm belts on each Y face | Fabrication drawing (unit task 11) | unit task 10 (LEACH_CSTR_1) |
 | A-P-dc0778 | 16 | mm | models/mfg/LEACH_CSTR_1/params.json wall_mm | AQS-DUTY-050 panel check at 85 C | Manufacturer creep data; hydrotest | unit task 10 (LEACH_CSTR_1) |
 | A-P-350882 | 16 | mm | models/mfg/LEACH_CSTR_1/params.json floor_mm | AQS-NZ-001; floor bears on the slab | Slab support drawing | unit task 10 (LEACH_CSTR_1) |
@@ -1194,3 +1214,32 @@ Table 3.1. Model parameters
 | A-P-07caca | None |  | models/mfg/LEACH_CSTR_1/params.json belts | AQS-DUTY-050 section 4 | In-house FRP coupon tests (X-MAT-21) | unit task 10 (LEACH_CSTR_1) |
 | A-P-fc3d22 | 1100 | mm | models/mfg/LEACH_CSTR_1/params.json level_mm | AQS-DUTY-050 section 1 | Commissioning level | unit task 10 (LEACH_CSTR_1) |
 | A-P-5d4b13 | 1100 |  | models/mfg/LEACH_CSTR_1/params.json liquor_density_kg_m3 | AQS-DUTY-050 section 1 | Liquor sample density | unit task 10 (LEACH_CSTR_1) |
+| A-P-0cde50 | 88.9 | mm | models/mfg/MG_POT/params.json DN80_OD_mm | assumption |  | unit task 10 (MG_POT) |
+| A-P-78855f | 2.0 | mm | models/mfg/MG_POT/params.json DN80_wall_mm | assumption |  | unit task 10 (MG_POT) |
+| A-P-405e23 | 21.3 | mm | models/mfg/MG_POT/params.json DN15_OD_mm | assumption |  | unit task 10 (MG_POT) |
+| A-P-c86665 | 2.0 | mm | models/mfg/MG_POT/params.json DN15_wall_mm | assumption |  | unit task 10 (MG_POT) |
+| A-P-141455 | 60.3 | mm | models/mfg/MO_CELL/params.json DN50_OD_mm | assumption |  | unit task 10 (MO_CELL) |
+| A-P-897703 | 2.0 | mm | models/mfg/MO_CELL/params.json DN50_wall_mm | assumption |  | unit task 10 (MO_CELL) |
+| A-P-b2e297 | 21.3 | mm | models/mfg/MO_CELL/params.json DN15_OD_mm | assumption |  | unit task 10 (MO_CELL) |
+| A-P-fb7be3 | 2.0 | mm | models/mfg/MO_CELL/params.json DN15_wall_mm | assumption |  | unit task 10 (MO_CELL) |
+| A-P-f06446 | 21.3 | mm | models/mfg/POLY_F/params.json DN15_OD_mm | assumption |  | unit task 10 (POLY_F) |
+| A-P-506d4e | 2.0 | mm | models/mfg/POLY_F/params.json DN15_wall_mm | assumption |  | unit task 10 (POLY_F) |
+| A-P-8af796 | 21.3 | mm | models/mfg/POWDER_RESIN/params.json DN15_OD_mm | assumption |  | unit task 10 (POWDER_RESIN) |
+| A-P-307f03 | 2.0 | mm | models/mfg/POWDER_RESIN/params.json DN15_wall_mm | assumption |  | unit task 10 (POWDER_RESIN) |
+| A-P-ce3e65 | 21.3 | mm | models/mfg/ROLL/params.json DN15_OD_mm | assumption |  | unit task 10 (ROLL) |
+| A-P-d62497 | 2.0 | mm | models/mfg/ROLL/params.json DN15_wall_mm | assumption |  | unit task 10 (ROLL) |
+| A-P-e82f9e | 21.3 | mm | models/mfg/SHELL_BREAK/params.json DN15_OD_mm | assumption |  | unit task 10 (SHELL_BREAK) |
+| A-P-5158a6 | 2.0 | mm | models/mfg/SHELL_BREAK/params.json DN15_wall_mm | assumption |  | unit task 10 (SHELL_BREAK) |
+| A-P-854145 | 21.3 | mm | models/mfg/SHELL_BUILD/params.json DN15_OD_mm | assumption |  | unit task 10 (SHELL_BUILD) |
+| A-P-a5cff3 | 2.0 | mm | models/mfg/SHELL_BUILD/params.json DN15_wall_mm | assumption |  | unit task 10 (SHELL_BUILD) |
+| A-P-9a86b3 | 21.3 | mm | models/mfg/SHELL_BURNOUT/params.json DN15_OD_mm | assumption |  | unit task 10 (SHELL_BURNOUT) |
+| A-P-36934f | 2.0 | mm | models/mfg/SHELL_BURNOUT/params.json DN15_wall_mm | assumption |  | unit task 10 (SHELL_BURNOUT) |
+| A-P-4a75e4 | 21.3 | mm | models/mfg/STOCK_OUT/params.json DN15_OD_mm | assumption |  | unit task 10 (STOCK_OUT) |
+| A-P-ddae3c | 2.0 | mm | models/mfg/STOCK_OUT/params.json DN15_wall_mm | assumption |  | unit task 10 (STOCK_OUT) |
+| A-P-b5266a | 90.0 | mm | models/mfg/TI_CELL/params.json chlorinator_r_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-2aefbd | 70.0 | mm | models/mfg/TI_CELL/params.json condenser_r_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-7131a5 | 100.0 | mm | models/mfg/TI_CELL/params.json retort_r_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-786b3b | 21.3 | mm | models/mfg/TI_CELL/params.json DN15_OD_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-ff3dca | 2.0 | mm | models/mfg/TI_CELL/params.json DN15_wall_mm | assumption |  | unit task 10 (TI_CELL) |
+| A-P-422007 | 21.3 | mm | models/mfg/WAX_PATTERN/params.json DN15_OD_mm | assumption |  | unit task 10 (WAX_PATTERN) |
+| A-P-2297fc | 2.0 | mm | models/mfg/WAX_PATTERN/params.json DN15_wall_mm | assumption |  | unit task 10 (WAX_PATTERN) |

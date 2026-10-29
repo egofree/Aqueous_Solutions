@@ -4,7 +4,7 @@ Class: cell; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 800×800×1600 mm;
 service line: service molten CaCl2 electrolysis cell, 700 C; chemistry CaCl2 -> Ca + Cl2; feed_kg_d 0.1525; metal_kg_d 0.0551; cl2_kg_d 0.0974; I_A 3.61; 
 
-Internals: issued mfg model BOM (1 internals part row): "5,Hood with gas offtake DN50 and dip leg,1,"CS hood, Hastelloy C-276 dip leg",0.0974 kg/d Cl2 dock export at t" [models/mfg/CA_POT/bom.csv]
+Internals: issued mfg model BOM (3 internals part row): "step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per AQS-DUTY-07" [models/mfg/CA_POT/bom.csv]
 Material: Graphite anodes, steel cathode rods carrying the solid Ca deposit to the tap work order; 90 % alumina backup lining + ceramic-fibre in a mild-steel shell. Basis: molten CaCl2 at 700 C (graph design; Ca m.p. (continues on the duty sheet)
 
 Nozzles: 5 process connections per docs-authority/nozzles/CA_POT.csv

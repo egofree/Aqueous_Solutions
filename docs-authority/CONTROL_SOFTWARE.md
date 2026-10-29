@@ -38,7 +38,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 | PLC-ELEC | 28 | 0 | 28 | 0 | 1/445/122 | redundant pair |
 | PLC-FAB | 62 | 0 | 62 | 0 | 3/74/11 | single |
 | PLC-FARM | 12 | 0 | 12 | 0 | 0/3/0 | redundant pair |
-| PLC-FOUNDRY | 77 | 4 | 77 | 0 | 0/19/0 | single |
+| PLC-FOUNDRY | 77 | 4 | 77 | 0 | 0/17/0 | single |
 | PLC-GAS | 32 | 2 | 32 | 0 | 0/36/6 | redundant pair |
 | PLC-GEO | 8 | 0 | 8 | 0 | 0/4/2 | redundant pair |
 | PLC-GLASS | 10 | 0 | 10 | 0 | 0/3/1 | single |
@@ -48,7 +48,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 | PLC-MFG | 27 | 1 | 27 | 0 | 9/62/11 | single |
 | PLC-NUT | 9 | 0 | 9 | 0 | 0/21/5 | redundant pair |
 | PLC-OIL | 51 | 3 | 51 | 0 | 0/40/5 | single |
-| PLC-POLYMERS | 34 | 2 | 34 | 0 | 0/18/4 | single |
+| PLC-POLYMERS | 34 | 2 | 34 | 0 | 0/18/3 | single |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 0 | 1/2/0 | redundant pair |
 | PLC-WTR | 54 | 0 | 54 | 0 | 0/57/8 | redundant pair |
 
