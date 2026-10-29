@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | H | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | I | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -191,10 +191,10 @@ Table 3.1. Document numbers in use
 | AQS-INV-003 | `docs-authority/inventory/PIPE_INVENTORY.md` | B | 2026-10-25 | Pipe inventory | current |
 | AQS-INV-004 | `docs-authority/inventory/OTHER_INVENTORY.md` | B | 2026-10-25 | Other building blocks inventory | current |
 | AQS-INV-005 | `docs-authority/inventory/MOTOR_DESIGNS.md` | A | 2026-10-15 | Motor family designs | current |
-| AQS-INV-006 | `docs-authority/PIPE_SPECS.md` | A | 2026-10-21 | Pipe family production plans | current |
-| AQS-INV-007 | `docs-authority/WIRE_SPECS.md` | C | 2026-10-21 | Wire family specifications and production plans | current |
+| AQS-INV-006 | `docs-authority/PIPE_SPECS.md` | B | 2026-10-29 | Pipe family production plans | current |
+| AQS-INV-007 | `docs-authority/WIRE_SPECS.md` | D | 2026-10-29 | Wire family specifications and production plans | current |
 | AQS-INV-008 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | B | 2026-10-25 | Motor first articles: drawings, traveller and type-test rig | current |
-| AQS-INV-009 | `docs-authority/BLOCK_FAMILY_PLANS.md` | A | 2026-10-21 | Building-block family production plans | current |
+| AQS-INV-009 | `docs-authority/BLOCK_FAMILY_PLANS.md` | B | 2026-10-29 | Building-block family production plans | current |
 | AQS-IO-FOUNDRY | `notes/FOUNDRY_IO.md` | A | 2026-10-16 | FOUNDRY sector — inputs and outputs | current |
 | AQS-ISO-000 | `docs-authority/ISO_DRAWING_INDEX.md` | A | 2026-09-27 | Isometric fabrication set | current |
 | AQS-ISO-001 | `docs-authority/ISO_ROUTES.md` | A | 2026-10-15 | Isometric route data | current |
@@ -446,7 +446,7 @@ Table 3.1. Document numbers in use
 | AQS-STD-001 | `docs-authority/AQS-STD-001.md` | A | 2026-10-10 | Unit duty standard | current |
 | AQS-STD-002 | `docs-authority/MATERIALS_STD.md` | O | 2026-10-21 | Materials standard | current |
 | AQS-STD-003 | `docs-authority/STANDARDS_BASIS.md` | — | 2026-10-02 | Standards basis for the audit fixes | current |
-| AQS-STD-004 | `docs-authority/STANDARDS_LIST.md` | A | 2026-10-15 | Codes and standards list | current |
+| AQS-STD-004 | `docs-authority/STANDARDS_LIST.md` | B | 2026-10-29 | Codes and standards list | current |
 | AQS-STD-005 | `docs-authority/UNIT_MATERIALS.md` | B | 2026-10-29 | Per-unit material selections | current |
 | AQS-STD-006 | `docs-authority/MATERIALS_SEC3.md` | A | 2026-10-21 | Duty section 3 material selections, batch issue (AQS-STD-006) | current |
 | AQS-STD-007 | `docs-authority/CODE_BASIS.md` | D | 2026-10-24 | Code basis | current |

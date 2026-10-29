@@ -16,9 +16,9 @@ FAM = list(csv.DictReader(open(os.path.join(R, 'docs-authority/inventory/WIRE_FA
 def test_header_and_rev_history():
     src = open(DOC).read()
     assert src.startswith('# Wire family specifications and production plans')
-    assert 'Document number: AQS-INV-007' in src and 'Revision: C' in src
-    assert 'X-INV-03-WF-01..26' in src
-    assert '| A | First issue' in src and '| C | Board evidence issue' in src
+    assert 'Document number: AQS-INV-007' in src and re.search(r'^Revision: [A-Z]+$', src, re.M)
+    assert 'tasks X-INV-03-WF of AQS-PLAN-007' in src
+    assert '| A | First issue' in src and '| C | Evidence issue' in src
     ## the open part of the Done-when is named, not claimed
     assert 'production runs and type tests are the open part' in src
 
@@ -31,15 +31,15 @@ def test_one_sheet_per_family_with_all_elements():
     for r in ROWS:
         s = src.split(f"### {r['fam']}:", 1)[1].split('###')[0]
         assert f"drawings/wire/{r['fam']}.svg" in s, r['fam']
-        assert f"{r['n']} x {r['ds']:.3f} mm soft Cu" in s, r['fam']
+        assert f"soft copper, {r['n']} wires of {r['ds']:.3f} mm" in s, r['fam']
         if 'bare' in r['ins']:
             assert abs(r['D'] - r['Dc']) < 0.01 and 'insulation' not in s, r['fam']
         else:
             assert f"{r['D']:.2f} mm" in s and r['D'] > r['Dc'], r['fam']
         assert 'passes from 8 mm rod' in s, r['fam']
     ## the common production plan names the WIRE_DRAW line steps end to end
-    plan = src.split('## 2. Production plan', 1)[1].split('## 3.', 1)[0]
-    for step in ('Rod:', 'Drawing:', 'Anneal:', 'Strand:', 'Insulate:', 'Spark test', 'Routine tests per reel'):
+    plan = src.split('## 3. Production plan', 1)[1].split('## 4.', 1)[0]
+    for step in ('1. Rod.', '2. Drawing.', '3. Annealing.', '4. Stranding.', '5. Insulation.', 'spark tested', 'Each reel is tested'):
         assert step in plan, step
 
 
@@ -51,11 +51,11 @@ def test_arithmetic_and_roster_match_the_csv_and_json():
         assert r['L'] == float(f['conductor_m']) and r['size'] == f['size']
         m = re.search(rf'^### {r["fam"]}:.*?\n', src, re.S)
         ## the sheet's conflated length and circuit counts match the CSV roster
-        use = re.search(rf"### {r['fam']}:[^\n]*\n\nUse: {int(f['circuits'])} circuits", src)
+        use = re.search(rf"### {r['fam']}:[^\n]*\n\nThe family serves {int(f['circuits'])} circuits", src)
         assert use, r['fam']
         assert r['R20'] > 0 and r['a'] > 0
     ## summary totals
-    tot = re.search(r'(\d+) families, ([\d.]+) km of conductor, ([\d,]+) kg copper', src)
+    tot = re.search(r'(\d+) families with ([\d.]+) km of conductor, ([\d,]+) kg of copper', src)
     assert int(tot.group(1)) == len(FAM)
     assert abs(float(tot.group(2)) - sum(r['L'] for r in ROWS) / 1000) < 0.05
     assert int(tot.group(3).replace(',', '')) == round(sum(r['cu'] for r in ROWS))

@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: H
+Revision: I
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -14,6 +14,7 @@ Date: 2026-10-29
 | F | PROTECTION written by its study script; ISO_SHEETS and JELLYBEAN rewritten through their generators | 2026-10-29 |
 | G | Reference sweep: unregistered document numbers listed in `unregistered_doc_numbers.json` and guarded by `flow_graph/test_doc_number_refs.py` | 2026-10-29 |
 | H | Batch 6: the instrument index, inspection and test plan, load list, internals register and per-unit material selections rewritten through their generators | 2026-10-29 |
+| I | Batch 7: the pipe, wire and building-block family plans and the standards list rewritten through their generators | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -115,6 +116,10 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/LOAD_LIST.md` | Rev D. Rewritten through `docs-authority/_load_list.py`: the load bases defined, the status written as sentences, numbered tables. |
 | `docs-authority/INTERNALS.md` | Rev B. Rewritten through `docs-authority/_internals.py`: purpose and scope, the method and limits as sentences, fixed counts removed. |
 | `docs-authority/UNIT_MATERIALS.md` | Rev B. Rewritten through `docs-authority/_unit_materials.py`: purpose and scope, the summary and rule as sentences, fixed counts removed, no empty table. |
+| `docs-authority/PIPE_SPECS.md` | Rev B. Rewritten through `docs-authority/_pipe_specs.py`: purpose and scope, rules and family plans as sentences, the stale family count replaced by the inventory count. |
+| `docs-authority/WIRE_SPECS.md` | Rev D. Rewritten through `docs-authority/_wire_specs.py`: purpose and scope, the production steps and family sheets as sentences, numbered tables. |
+| `docs-authority/BLOCK_FAMILY_PLANS.md` | Rev B. Rewritten through `docs-authority/_block_fam_plans.py`: purpose and scope, category plans as sentences, stale counts of bought families and spares removed. |
+| `docs-authority/STANDARDS_LIST.md` | Rev B. Rewritten through `docs-authority/_standards_list.py`: record of revisions, purpose and scope, numbered tables, full standard titles. |
 
 ## 3. In progress
 
@@ -138,7 +143,6 @@ Table 4.1. Pending pages directly under docs-authority/
 
 | Page | Defects found |
 | --- | --- |
-| `docs-authority/BLOCK_FAMILY_PLANS.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_block_fam_plans.py`; fix the generator. |
 | `docs-authority/INSTRUMENT_LOOPS.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/LIFE_FITOUT_PLAN.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | No record of revisions; no purpose and scope section. |
@@ -152,19 +156,16 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/O2_SOURCE.md` | No purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/PARAMETRIC_MODEL.md` | No purpose and scope section; working or stock phrasing. Written by `_graph.py`; fix the generator. |
-| `docs-authority/PIPE_SPECS.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_pipe_specs.py`; fix the generator. |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | No purpose and scope section; working or stock phrasing. Written by `flow_graph/param/scale_down.py`; fix the generator. |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | No record of revisions; no purpose and scope section; list items written as fragments; arrows used in place of sentences. |
 | `docs-authority/SIGN_SCHEDULE.md` | No purpose and scope section. |
 | `docs-authority/SOLVENT_ROUTE.md` | No record of revisions; no purpose and scope section. |
-| `docs-authority/STANDARDS_LIST.md` | No record of revisions; no purpose and scope section; working or stock phrasing. Written by `docs-authority/_standards_list.py`; fix the generator. |
 | `docs-authority/STL_MANIFEST.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/STUDY_UNITS_STUB.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/TERRACE_LANDSCAPE.md` | No purpose and scope section; list items written as fragments. |
 | `docs-authority/TEST_PLAN.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/VENT_CLOSURE.md` | Working or stock phrasing. |
-| `docs-authority/WIRE_SPECS.md` | No purpose and scope section; list items written as fragments. Written by `docs-authority/_wire_specs.py`; fix the generator. |
 
 Table 4.2. Pending pages in subfolders
 

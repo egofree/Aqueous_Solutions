@@ -1,5 +1,5 @@
 """X-INV-05-OF gate: AQS-INV-009 (BLOCK_FAMILY_PLANS.md) carries one production plan per
-building-block family, the design side joined by reference to AQS-PRO-002 (64 bought families),
+building-block family, the design side joined by reference to AQS-PRO-002 (the bought families),
 OF-13 pointed at the in-house fabricated-part sheets, and no invented datasheet content."""
 import csv
 import os
@@ -15,11 +15,11 @@ BS = open(os.path.join(R, 'docs-authority/BOUGHT_SPECS.md')).read()
 def test_header_and_rules():
     src = open(DOC).read()
     assert src.startswith('# Building-block family production plans')
-    assert 'Document number: AQS-INV-009' in src and 'Revision: A' in src
-    assert 'X-INV-05-OF-01..65' in src
+    assert 'Document number: AQS-INV-009' in src and re.search(r'^Revision: [A-Z]+$', src, re.M)
+    assert 'tasks X-INV-05-OF of AQS-PLAN-007' in src
     ## the design rule is stated and honest: standard class is the design, reference not duplication
-    assert 'the standard class IS the open design' in src
-    assert 'joined below by reference and not repeated' in src
+    assert 'is designed by its standard class' in src
+    assert 'is cited in Table 4.1 and not repeated' in src
     assert '| A | First issue' in src
 
 
@@ -51,7 +51,7 @@ def test_design_joins_resolve():
         assert f'AQS-PRO-002 sheet' in src.split(f'### {f["family"]}:', 1)[-1] or \
             f'| {f["family"]} | {f["category"]} | {f["item"]} | {f["spec"]} | {f["qty"]} | {f["units"]} | AQS-PRO-002 sheet' in src, f['family']
     ## the fabricated family points at the issued in-house sheets, never at a purchase
-    assert 'in-house: models/mfg/<unit>/bom.csv + WORK_ORDER.md' in src
+    assert 'In-house sheets models/mfg/<unit>/bom.csv and WORK_ORDER.md' in src
 
 
 def test_the_open_parts_are_named():
