@@ -2126,6 +2126,11 @@
   "units": "kg/m3 density of the atomised melt (Cu, Ni, Sn, Pb, Zn blend class)",
   "register": "A-M-416"
  },
+ "standby_outage_d": {
+  "value": 2.0,
+  "units": "d outage of a primary unit that a standby feed route covers; the N+1 outage basis of the foundry melt backups (A-M-283)",
+  "register": "A-M-418"
+ },
  "atom_store_bar": {
   "value": 50.0,
   "units": "bar argon receiver charge pressure; it discharges to the nozzle supply pressure atom_P_bar during a pour",

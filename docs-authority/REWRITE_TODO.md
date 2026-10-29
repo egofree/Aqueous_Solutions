@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AC
+Revision: AD
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -35,6 +35,7 @@ Date: 2026-10-29
 | AA | Batch 24: argon blanket gas for the CZ puller from the cold box in a closed loop (owner decision 2026-10-29, A-M-417); nitrogen refused for the melt; the owner question on the blanket gas closed | 2026-10-29 |
 | AB | Batch 25: every route without flow put on the task list as group X-RTE, generated from the graph; five routes already noted as retired set to presence retired | 2026-10-29 |
 | AC | Batch 26: METAL_FORMING revision D points to the tool design derived from the graph throughputs | 2026-10-29 |
+| AD | Batch 27: standby route STOCK_TO_WIRE_DRAW sized at its rated case (A-M-418) | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -182,6 +183,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | Rev F. Section 4.1 adds the argon loop IA-AR-CZ / IA-AR-CZ-BACK with the cold box, sized from the puller (A-M-417). |
 | `docs-authority/_task_plan_gen.py` (AQS-PLAN-007) | Task group X-RTE generated from the graph: one task per open route without flow, grouped standby, return and retired routes, and the done routes with evidence (owner decision 2026-10-29). |
 | `docs-authority/METAL_FORMING.md` | Rev D. Section 3.4 explains the tool design from the throughputs and points to the equipment list; the atomiser argon receiver described. |
+| `flow_graph/param/standby_routes.py` (A-M-418) | New: a standby feed route carries the rate of the case that puts it in service; STOCK_TO_WIRE_DRAW rated at the S57 copper feed, with the METAL_STORE holding for the outage. |
 
 ## 3. In progress
 

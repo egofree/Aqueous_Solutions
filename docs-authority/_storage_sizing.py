@@ -54,11 +54,16 @@ GRAPH_Q = {
     'PROD_O2': round(EV.get('IA-O2-PROD', 0.0), 4),
     'PROD_MEOH': round(EV.get('IA-MEOH-PROD', 0.0), 4),
 }
+# A store that feeds a standby route also holds the route's rated feed for its outage (hold_kg, A-M-418, flow_graph/param/standby_routes.py)
+STANDBY_KG = {}
+for e in g['edges']:
+    if e['presence'] == 'present' and (e.get('params') or {}).get('hold_kg'):
+        STANDBY_KG[e['from_unit_id']] = STANDBY_KG.get(e['from_unit_id'], 0.0) + e['params']['hold_kg']
 GAS_STEEL = {'AIR_RECEIVER', 'PROD_O2'}   # compressed-gas service: steel at the working pressure (not hydrostatic PE)
 FLAM = {'MEOH_TANK', 'WS_SOLV', 'PROD_C5_C10', 'PROD_C11_C18', 'PROD_C19_C28', 'PROD_C29', 'PROD_MEOH'}   # flammable / combustible: steel per NFPA 30 ch. 21
 rows = []
 for u, (path, svc, ph) in B.items():
-    n = N[u]; Q = GRAPH_Q.get(u, 0.0) or qin(n); td = DR.val(_d, path + '.hold_d'); rho = DR.val(_d, path + '.rho_kg_m3'); V = Q*td/rho; Vn = max(V/FILL, 0.02)
+    n = N[u]; Q = GRAPH_Q.get(u, 0.0) or qin(n); td = DR.val(_d, path + '.hold_d'); rho = DR.val(_d, path + '.rho_kg_m3'); V = (Q*td + STANDBY_KG.get(u, 0.0))/rho; Vn = max(V/FILL, 0.02)
     D = math.ceil((4*Vn/(math.pi*HD))**(1/3)*1000/50)*50; H = math.ceil(Vn/(math.pi*(D/1000)**2/4)*1000/50)*50
     P = DR.val(_d, path + '.P_MPa') if u in GAS_STEEL else (rho*G*H/1000*1e-6 if ph == 'L' else 0.0)
     steel = u in FLAM or u in GAS_STEEL

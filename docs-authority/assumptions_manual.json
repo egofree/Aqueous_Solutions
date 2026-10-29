@@ -7190,5 +7190,24 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.fab_silicon; first-campaign charge, yield and argon use against the design"
+ },
+ {
+  "id": "A-M-418",
+  "value": "A standby feed route carries no flow on the design day and is sized for the case that puts it in service: its rated rate is the design-day rate of the primary route it stands in for, over an outage of 2 d (the N+1 outage basis of the foundry melt backups, A-M-283). A store that feeds a standby route holds the rated feed for the outage on top of its own holding; a melt furnace that feeds one runs the extra heats. STOCK_TO_WIRE_DRAW carries the S57 copper feed of the wire drawer from the METAL_STORE dock buffer while MET_MELT is out of service.",
+  "units": "kg/d, d, kg",
+  "where": "flow_graph/param/standby_routes.py design() and tf(), called from flow_graph/param/balance.py physics(); docs-authority/_storage_sizing.py (hold_kg); docs-authority/_task_plan_gen.py X-RTE",
+  "basis": "Owner decision 2026-10-29: every route without flow is unfinished design, and a standby route is finished when it carries the rate of the case that puts it in service (X-RTE). The tool downstream needs the same feed whichever route brings it.",
+  "sensitivity": "The store holding rises by the rated feed times the outage; a longer outage raises it in proportion.",
+  "replaced_by": "Logged outage durations of MET_MELT and the stock drawn during them",
+  "task": "QA audit 2026-10-29, routes without flow (X-RTE)",
+  "files": [
+   "flow_graph/param/standby_routes.py",
+   "flow_graph/param/balance.py",
+   "docs-authority/_storage_sizing.py",
+   "docs-authority/_task_plan_gen.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.standby_routes; the rated rate equals the S57 rate and METAL_STORE holds the rated feed for the outage"
  }
 ]

@@ -659,6 +659,7 @@ CRIT_X = {'X-BAS-02', 'X-ELS-02', 'X-ELS-04', 'X-SAF-01', 'X-PIP-02', 'X-BLD-02'
 # one task per open route; standby, return and retired routes are grouped. A route given its flow drops out of the open list;
 # the routes finished in the QA pass are kept below as done tasks with their evidence.
 def _rte_kind(e):
+    if (e.get('params') or {}).get('rate_rated_kg_d'): return None                   # standby route sized at its rated case (A-M-418)
     n = ((e['rate'].get('note') or '') + ' ' + str(e.get('notes') or '')).lower()
     if e['to_unit_id'].startswith('RELIEF') or 'contingency' in n: return None          # relief and contingency routes are closed by design
     if 'retired' in n: return 'retired'
@@ -671,6 +672,9 @@ for _e in g['edges']:
         _k = _rte_kind(_e)
         if _k: _RTE[_k].append(_e)
 RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_FAB', 'the CZ charge is sized from the wafer need and imported through the dock (A-M-417)', 'flow_graph/param/fab_silicon.py')]
+RTE_DONE += [(f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']}: standby at its rated case",
+             f"the route carries {_e['params']['rate_rated_kg_d']:g} kg/d when {_e['params']['rated_case']} (A-M-418)", 'flow_graph/param/standby_routes.py')
+             for _e in sorted((x for x in g['edges'] if x.get('presence') == 'present'), key=lambda e: e['stream_id']) if (_e.get('params') or {}).get('rate_rated_kg_d')]
 _rte_items = [(tid, t, crit, '—', ev) for tid, t, crit, ev in RTE_DONE]
 for _e in sorted(_RTE['open'], key=lambda e: e['stream_id']):
     _rte_items.append((f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']} carries no flow",

@@ -1556,10 +1556,19 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "WIRE_DRAW (MFG) closes on S57 Cu from MET_MELT (A-M-177 line); no foundry wire draw at the bounding case (A-M-257 by-difference pattern). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 6.8389 kg/d (the S57 rate) when MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer, for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FOUNDRY",
-      "to_sector_id": "MFG"
+      "to_sector_id": "MFG",
+      "params": {
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 6.8389,
+        "rated_case": "MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer",
+        "backs_up": "S57",
+        "outage_d": 2.0,
+        "basis": "A-M-418; flow_graph/param/standby_routes.py",
+        "hold_kg": 13.6778
+      }
     },
     {
       "stream_id": "IND_TO_ATOM",

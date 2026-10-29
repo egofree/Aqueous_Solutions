@@ -93,7 +93,7 @@ Table 6.1. Graph values against the solver
 
 ## 8. Drivers
 
-Table 8.1 lists the 865 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 866 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -431,6 +431,7 @@ Table 8.1. Drivers
 | atom_head_mm | 100.0 | mm metal head in the tundish above the nozzle | A-M-416 | — |
 | atom_Cd | 0.8 | - discharge coefficient of the melt nozzle | A-M-416 | — |
 | atom_melt_rho_kg_m3 | 8000.0 | kg/m3 density of the atomised melt (Cu, Ni, Sn, Pb, Zn blend class) | A-M-416 | — |
+| standby_outage_d | 2.0 | d outage of a primary unit that a standby feed route covers; the N+1 outage basis of the foundry melt backups (A-M-283) | A-M-418 | — |
 | atom_store_bar | 50.0 | bar argon receiver charge pressure; it discharges to the nozzle supply pressure atom_P_bar during a pour | A-M-416 | — |
 | mill_slab_t_mm | 10.0 | mm thickness of the cast slab entering the cold mill (ingot mould) | A-M-416 | — |
 | mill_slab_L_mm | 250.0 | mm length of the cast slab entering the cold mill (ingot mould) | A-M-416 | — |
@@ -1276,7 +1277,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 367 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 368 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1945,3 +1946,4 @@ Table 10.1. Values to verify
 | A-M-415 | Rectifier trim heaters (every present kW edge out of … kW | python3 docs-authority/_power_sizing.py: bounding P_kW equals the node and feed sum plus rect_ac_input_kW plus the rectifier_trims sum plus the converged EXT_HALL load; SOL_ARK_60K.params.redundancy.bus_demand_kW equals mvs.electrical.need_kw |
 | A-M-416 | Metal-forming tool design from the graph throughputs … mm, bar, kg/m3, fraction | First atomiser heat: pour time and receiver pressure drop logged; first mill run: strip gauge and width measured |
 | A-M-417 | Wafer-fab silicon and blanket gas from the wafer need: a … kg/d, mm, um, h, slpm | python3 -m flow_graph.param.fab_silicon; first-campaign charge, yield and argon use against the design |
+| A-M-418 | A standby feed route carries no flow on the design day and … kg/d, d, kg | python3 -m flow_graph.param.standby_routes; the rated rate equals the S57 rate and METAL_STORE holds the rated feed for the outage |
