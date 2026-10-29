@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | C | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | D | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | A | 2026-10-21 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -170,7 +170,7 @@ Table 3.1. Document numbers in use
 | AQS-ESS-001 | `docs-authority/ESS_DUTY_MATRIX.md` | B | 2026-10-01 | ESS duty matrix — ZnBr₂ / MeOH / pumped hydro (study) | current |
 | AQS-ESS-002 | `docs-authority/FLOW_BATTERY.md` | — | — | ZnBr2 flow battery | current |
 | AQS-EW-MOD-001 | `docs-authority/EW_MODULE.md` | D | 2026-10-15 | Electrowinning module | current |
-| AQS-FC-001 | `docs-authority/FUEL_CELL.md` | B | 2026-10-01 | PEM fuel cell — plant H₂ / O₂ on Sol-Ark DC bus | current |
+| AQS-FC-001 | `docs-authority/FUEL_CELL.md` | C | 2026-10-29 | PEM fuel cell on plant hydrogen and oxygen | current |
 | AQS-FLOW-GRAPH-001 | `flow_graph/README.md` | — | 2026-10-01 | Plant flow graph — sole typed authority | current |
 | AQS-FOAM-001 | `models/openscad/foam_ew/CUT_LIST.md` | A | 2026-09-27 | Foam EW cascade — cut list | current |
 | AQS-FONT-001 | `docs-authority/FONTS.md` | A | 2026-10-25 | Fonts for 3D sign glyphs | current |
@@ -269,7 +269,7 @@ Table 3.1. Document numbers in use
 | AQS-REM-BLD-001 | `docs-authority/internal/REMAINING_BLD.md` | Y | 2026-10-01 | Remaining after BLD CAD pass (2026-09-27) | superseded by AQS-PLAN-007 |
 | AQS-REQ-001 | `notes/BINDING_REQ_2026-10-16.md` | A | 2026-10-16 | Binding requirements — fluoropolymers, critical metals, cost basis | current |
 | AQS-REQ-KW-001 | `docs-authority/CONTINUOUS_KW_REQUIREMENTS.md` | B | 2026-10-24 | Continuous power requirements for generation, fuel cells, PV fabrication, cryogenics and manufacturing | current |
-| AQS-REV-H2-001 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | B | 2026-10-15 | Hydrogen embrittlement review | current |
+| AQS-REV-H2-001 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | C | 2026-10-29 | Hydrogen embrittlement review | current |
 | AQS-SAF-001 | `docs-authority/HAZOP.md` | A | 2026-10-16 | HAZOP worksheets | current |
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register | current |
 | AQS-SAF-005 | `docs-authority/FIRE_PROTECTION.md` | C | 2026-10-29 | Fire protection and detection | current |
@@ -469,7 +469,7 @@ Table 3.1. Document numbers in use
 | AQS-TST-005 | `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | B | 2026-10-24 | Hydrogen compressor first-article bench run | current |
 | AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | H | 2026-10-24 | Design-tool architecture | current |
 | AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | current |
-| AQS-WLD-001 | `docs-authority/WELD_MAP.md` | A | 2026-09-27 | Weld and joint map | current |
+| AQS-WLD-001 | `docs-authority/WELD_MAP.md` | B | 2026-10-29 | Weld and joint map | current |
 | AQS-WLD-002 | `docs-authority/WPS_REGISTER.md` | B | 2026-10-25 | Welding procedure register | current |
 | AQS-WTR-001 | `docs-authority/WATER_PURIFICATION.md` | B | 2026-10-01 | Water purification — habitation and fab UPW | current |
 

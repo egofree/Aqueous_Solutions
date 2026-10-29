@@ -1,63 +1,71 @@
 # Weld and joint map
 
-Document number: AQS-WLD-001  
-Revision: A  
-Date: 2026-09-27
+Document number: AQS-WLD-001
+Revision: B
+Date: 2026-10-29
 
-| Rev | Change | Date |
-|---|---|---|
-| A | Schedule only. Not a certified shop pack | 2026-09-27 |
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue: a register of joints for the fabricator, without procedures | 2026-09-27 |
+| B | Joint tags restored to JW-nnn after a text replacement on 2026-10-25 corrupted them; purpose and scope added; the electrowinning hangers and the hydrogen header brought in line with AQS-STD-002; items not found on the plant graph listed in section 5 | 2026-10-29 |
 
-This is a joint register for the fabricator to balloon against.
-It is **not** an AWS / ASME stamped weld map. No WPS, PQR, or NDE
-procedure lives here. Balloons are the `the weld joint identifier (the weld joint identifier-nn)-###` tags.
+## 1. Purpose and scope
 
-## Process locks
+This page is a register of the welded, fused, cemented and bonded joints of the plant equipment. The fabricator marks each joint on the shop drawing with a balloon carrying its joint tag. A joint tag has the form JW-nnn, where nnn is a three-digit serial number.
 
-- Salria / anolyte / acid: CPVC solvent or PVDF IR/butt. No metallic
-  fillet on the wetted face.
-- BMED BASE / digest: PP fusion.
-- Pyro shell: Ti Grade 2 GTAW, purge both sides.
-- H2 duct: 316L GTAW, purge.
-- Oil-vapor jacket: 304 inner, CS outer. Do not weld the jacket to
-  the pyro Ti.
+The register is not a certified weld map under AWS or ASME rules. It contains no welding procedure specification (WPS), procedure qualification record (PQR) or non-destructive examination (NDE) procedure; the fabricator supplies those. The materials come from AQS-STD-002 (`MATERIALS_STD.md`), which governs where this page and that standard differ.
 
-## Register
+## 2. Joining rules by service
 
-| the weld joint identifier (the weld joint identifier-nn) | Unit | Joint | Process | Filler / cement | NDE (suggested) | Code hook |
-|---|---|---|---|---|---|---|
-| the weld joint identifier (the weld joint identifier-nn)-001 | LEACH CSTR 1 | wall-to-floor lap | CPVC solvent | Weld-On 724 | visual + 24 h hydro | sheet tank |
-| the weld joint identifier (the weld joint identifier-nn)-002 | LEACH CSTR 1 | wall corners | CPVC solvent | 724 | visual | |
-| the weld joint identifier (the weld joint identifier-nn)-003 | LEACH CSTR 1 | lid coaming to lid | CPVC solvent | 724 | visual | N1 |
-| the weld joint identifier (the weld joint identifier-nn)-004 | LEACH CSTR 1 | N3, N4, N5, N8, N9, N12 bosses | CPVC solvent + flange | 724 | visual + hydro | AQS-NZ-001 |
-| the weld joint identifier (the weld joint identifier-nn)-005 | LEACH CSTR 1 | N6a/b bosses | CPVC solvent | 724 | visual | HX water |
-| the weld joint identifier (the weld joint identifier-nn)-006 | CSTR 2 weir | crest plate + spout | CPVC solvent | 724 | visual | |
-| the weld joint identifier (the weld joint identifier-nn)-007 | CSTR 3 trough | trough to floor | CPVC solvent | 724 | visual | |
-| the weld joint identifier (the weld joint identifier-nn)-008 | EW-1…9 | body seams + funnel | CPVC solvent or rotomold | 724 | hydro per cell | |
-| the weld joint identifier (the weld joint identifier-nn)-009 | EW funnel | DN50 union boss | CPVC solvent | 724 | visual | 163 546 357V |
-| the weld joint identifier (the weld joint identifier-nn)-010 | EW hangers | 316L to 316L | GTAW fillet | ER316L | visual | cathodes only |
-| the weld joint identifier (the weld joint identifier-nn)-011 | DRYER | trough long seams | GTAW / GMAW | ER308L | visual + leak | jacket separately |
-| the weld joint identifier (the weld joint identifier-nn)-012 | DRYER | jacket to trough | GTAW fillet | ER308L | hydro jacket 6 bar | Q3 |
-| the weld joint identifier (the weld joint identifier-nn)-013 | INDUCTION PYROLYZER | shell long + girth | GTAW Ti | ERTi-2 | 100 % PT + RT sample | SB-338 |
-| the weld joint identifier (the weld joint identifier-nn)-014 | INDUCTION PYROLYZER | B16.5 NPS 12 Cl.150 | GTAW Ti | ERTi-2 | PT | no steel filler |
-| the weld joint identifier (the weld joint identifier-nn)-015 | QUENCH | shell + spray bosses | GTAW 304 | ER308L | hydro | |
-| the weld joint identifier (the weld joint identifier-nn)-016 | FRACTIONATOR | shell courses | GTAW 304 | ER308L | visual | pack vendor |
-| the weld joint identifier (the weld joint identifier-nn)-017 | AFTERBURNER | shell + burner plate | SMAW / GMAW CS or 304 | E7018 / ER308L | visual | Q1 |
-| the weld joint identifier (the weld joint identifier-nn)-018 | BURNOUT ROTARY | tube to tires | per SiC / Alloy 600 vendor | vendor | vendor | not oil auger |
-| the weld joint identifier (the weld joint identifier-nn)-019 | NaOH DIGEST | PP sheet seams | extrusion weld | PP rod | spark test | |
-| the weld joint identifier (the weld joint identifier-nn)-020 | BMED frames | PP | fusion | PP | leak | SEM Tech |
-| the weld joint identifier (the weld joint identifier-nn)-021 | ALK SCRUBBER | PP/FRP shell | vendor | vendor | hydro | pregnant → CRU |
-| the weld joint identifier (the weld joint identifier-nn)-022 | HDR_H2 | 316L long / girth | GTAW | ER316L | PT + purge record | arrestor up |
-| the weld joint identifier (the weld joint identifier-nn)-023 | HDR_OIL_VAPOR | 304 inner | GTAW | ER308L | visual | jacket CS fillet only |
-| the weld joint identifier (the weld joint identifier-nn)-024 | HX-7 flue jacket | CS | GMAW | ER70S-6 | visual | atmosphere isolated |
-| the weld joint identifier (the weld joint identifier-nn)-025 | ZnBr2 tanks | PP | fusion | PP | spark | Br2 tower PVDF |
-| the weld joint identifier (the weld joint identifier-nn)-026 | CRU | CPVC shell + jacket bosses | 724 + CS jacket fillet | 724 / ER308L | hydro | not PP |
-| the weld joint identifier (the weld joint identifier-nn)-027 | Pipe rack | CS beam clips | fillet | E7018 | visual | not wetted |
-| the weld joint identifier (the weld joint identifier-nn)-028 | Cable tray | splices | bolted | — | torque | no weld on Al tray |
-| the weld joint identifier (the weld joint identifier-nn)-029 | Ground ring | cadweld / exothermic | — | — | continuity &lt; 1 Ω | NEC / local |
+1. Acid and anolyte service is joined by CPVC solvent cement or by PVDF infrared or butt fusion. No metal fillet weld is made on a wetted face.
+2. Base service in the bipolar membrane electrodialysis units and the digesters is joined by polypropylene (PP) fusion.
+3. The pyrolysis reactor shell is titanium Grade 2, welded by gas tungsten arc welding (GTAW) with a purge on both sides.
+4. The oil vapour jacket has a type 304 stainless steel inner wall and a carbon steel outer wall. The jacket is never welded to the titanium of the pyrolysis reactor.
+5. The hydrogen header `HDR_H2` is unplasticized PVC (PVC-U), joined by solvent cement (AQS-STD-002, `H2_EMBRITTLEMENT_REVIEW.md`).
 
-## Balloon rule
+## 3. Register
 
-One balloon per the weld joint identifier (the weld joint identifier-nn) on the shop drawing. Do not balloon solvent joints
-with a fillet-weld symbol. CPVC joints get a note “SW 724, full
-insertion, 24 h cure” instead of an AWS weld symbol.
+Table 3.1 lists the joints. The examination column gives the suggested examination; the fabricator's NDE procedure governs.
+
+Table 3.1. Joint register
+
+| Tag | Unit or item | Joint | Process | Filler or cement | Examination | Note |
+| --- | --- | --- | --- | --- | --- | --- |
+| JW-001 | `LEACH_CSTR_1` | Wall to floor, lap | CPVC solvent cement | Weld-On 724 | Visual, and a 24 h hydrostatic test | Sheet tank |
+| JW-002 | `LEACH_CSTR_1` | Wall corners | CPVC solvent cement | Weld-On 724 | Visual | |
+| JW-003 | `LEACH_CSTR_1` | Lid coaming to lid | CPVC solvent cement | Weld-On 724 | Visual | Nozzle N1 |
+| JW-004 | `LEACH_CSTR_1` | Bosses of nozzles N3, N4, N5, N8, N9 and N12 | CPVC solvent cement and flange | Weld-On 724 | Visual and hydrostatic test | AQS-NZ-001 |
+| JW-005 | `LEACH_CSTR_1` | Bosses of nozzles N6a and N6b | CPVC solvent cement | Weld-On 724 | Visual | Heat exchanger water |
+| JW-006 | Leach tank 2 weir | Crest plate and spout | CPVC solvent cement | Weld-On 724 | Visual | See section 5 |
+| JW-007 | Leach tank 3 trough | Trough to floor | CPVC solvent cement | Weld-On 724 | Visual | See section 5 |
+| JW-008 | `EW_1` to `EW_9` | Body seams and funnel | CPVC solvent cement, or rotational moulding | Weld-On 724 | Hydrostatic test of each cell | |
+| JW-009 | Electrowinning funnel | DN50 union boss | CPVC solvent cement | Weld-On 724 | Visual | Union part number 163 546 357V |
+| JW-010 | Electrowinning cathode hangers | To be redefined | — | — | — | Superseded: AQS-STD-002 section 9 changed the cathode blanks to titanium Grade 2 and the hanger bars to copper, so the former 316L fillet weld no longer applies |
+| JW-011 | Dryer | Trough long seams | GTAW or gas metal arc welding (GMAW) | ER308L | Visual and leak test | Jacket joined separately; see section 5 |
+| JW-012 | Dryer | Jacket to trough | GTAW fillet | ER308L | Hydrostatic test of the jacket at 600 kPa | Heated from the Q3 header |
+| JW-013 | Pyrolysis reactor | Shell long and girth seams | GTAW, titanium | ERTi-2 | Penetrant test of every seam and a radiographic sample | ASME SB-338 |
+| JW-014 | Pyrolysis reactor | Flange, ASME B16.5 NPS 12 Class 150 | GTAW, titanium | ERTi-2 | Penetrant test | No steel filler |
+| JW-015 | Quench | Shell and spray bosses | GTAW, type 304 | ER308L | Hydrostatic test | |
+| JW-016 | Fractionator | Shell courses | GTAW, type 304 | ER308L | Visual | Packing by the vendor |
+| JW-017 | `AFTERBURNER` | Shell and burner plate | Shielded metal arc welding (SMAW) or GMAW, carbon steel or type 304 | E7018 or ER308L | Visual | Q1 header |
+| JW-018 | Rotary burnout kiln | Tube to tyres | To the vendor's procedure for silicon carbide or Alloy 600 | By the vendor | By the vendor | Not the oil auger |
+| JW-019 | Sodium hydroxide digester | PP sheet seams | Extrusion welding | PP rod | Spark test | |
+| JW-020 | Bipolar membrane electrodialysis frames | PP | Fusion | PP | Leak test | |
+| JW-021 | `ALK_SCRUBBER` | PP or fibre-reinforced plastic shell | By the vendor | By the vendor | Hydrostatic test | Bleed to `CRU` |
+| JW-022 | `HDR_H2` | Pipe and fittings | PVC-U solvent cement, ASTM D2855 | PVC cement | Visual and leak test | Changed from 316L welding to match AQS-STD-002; flame arrestor upstream |
+| JW-023 | Oil vapour header | Type 304 inner wall | GTAW | ER308L | Visual | Carbon steel jacket by fillet weld only |
+| JW-024 | Heat exchanger HX-7, flue jacket | Carbon steel | GMAW | ER70S-6 | Visual | Isolated from the atmosphere |
+| JW-025 | `ZNBR2` tanks | PP | Fusion | PP | Spark test | Bromine tower in PVDF |
+| JW-026 | `CRU` | CPVC shell and jacket bosses | Weld-On 724, and a carbon steel fillet weld on the jacket | Weld-On 724 or ER308L | Hydrostatic test | Not PP |
+| JW-027 | Pipe rack | Carbon steel beam clips | Fillet weld | E7018 | Visual | Not wetted |
+| JW-028 | Cable tray | Splices | Bolted | — | Torque check | No welding on aluminium tray |
+| JW-029 | Ground ring | Exothermic connections | Exothermic welding | — | Continuity below 1 Ω | NFPA 70 |
+
+## 4. Balloon rule
+
+Each joint has one balloon on the shop drawing. A solvent-cemented joint is not marked with a fillet weld symbol. A CPVC joint carries the note "SW 724, full insertion, 24 h cure" instead of an AWS weld symbol.
+
+## 5. Open items
+
+1. The register names some equipment by description because no graph unit has the same name: leach tanks 2 and 3, the dryer, the pyrolysis reactor, the quench, the fractionator, the rotary burnout kiln, the sodium hydroxide digester and heat exchanger HX-7. Each is to be matched to its graph unit (for example `OIL_PYRO`, `OIL_FRAC`, `OIL_DRYER`, `SHELL_BURNOUT` or `GLASS_DIGEST`) by the fabricator's drawing list, and the register updated.
+2. The joints of the electrowinning cathode hangers (JW-010) are to be defined for the titanium blanks and copper hanger bars of AQS-STD-002 section 9.

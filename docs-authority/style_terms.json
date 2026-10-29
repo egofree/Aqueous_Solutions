@@ -141,9 +141,7 @@
   ],
   "pending": [
     "docs-authority/BLOCK_FAMILY_PLANS.md",
-    "docs-authority/FUEL_CELL.md",
     "docs-authority/GLOSSARY.md",
-    "docs-authority/H2_EMBRITTLEMENT_REVIEW.md",
     "docs-authority/INSTRUMENT_INDEX.md",
     "docs-authority/INSTRUMENT_LOOPS.md",
     "docs-authority/INTERNALS.md",
@@ -182,7 +180,6 @@
     "docs-authority/UNIT_MATERIALS.md",
     "docs-authority/VENT_CLOSURE.md",
     "docs-authority/WATER_PURIFICATION.md",
-    "docs-authority/WELD_MAP.md",
     "docs-authority/WIRE_SPECS.md",
     "docs-authority/duties/ACID_POLISH_SCRUB.md",
     "docs-authority/duties/AFTERBURNER_FLUE.md",

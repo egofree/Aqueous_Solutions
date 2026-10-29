@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: C
+Revision: D
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -9,6 +9,7 @@ Date: 2026-10-29
 | A | First issue | 2026-10-25 |
 | B | Pages closed on 2026-10-25 without a rewrite re-opened with the reason for each; sections 3 and 4 now match the pending list, which `flow_graph/test_rewrite_todo.py` checks | 2026-10-29 |
 | C | POWER_SIZING given a generator; FIRE_PROTECTION rewritten through its generator; duty sheet headers now carry the current graph revision | 2026-10-29 |
+| D | FUEL_CELL, H2_EMBRITTLEMENT_REVIEW and WELD_MAP rewritten; PROTECTION found stale and its reason updated | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -96,6 +97,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/STRUCT_LOADS.md` | Rev B, through `_struct_loads.py`. Purpose, method and table titles added; the text now says that the operating liquid is taken as live load, which is what the calculation does (it said dead load before). No load changed. |
 | `docs-authority/POWER_SIZING.md` | Rev G. Now written by `docs-authority/_power_sizing_doc.py` from the graph and the drivers (regen stage `doc_power_sizing`). The page does not duplicate the flow battery outputs: it is the only page that reports the array, storage, inverter and generator sizing together and is cited by the sizing scripts and the backup generator page. Section 5 reports two mismatches for the owner. |
 | `docs-authority/FIRE_PROTECTION.md` | Rev C. Rewritten through `docs-authority/_fire.py`: purpose and scope with defined hazard classes, the two descriptions of the water supplies merged, fragments from `fire.py` replaced by sentences, tables numbered and a numbered reference list. |
+| `docs-authority/FUEL_CELL.md` | Rev C. Rewritten against the graph: streams and rates from the graph, the reversible loop with the electrolyser, the difference from the backup generator and the methanol fuel cell; references outside the repository (POWER/, hub ELECTRICAL.md, share mirror) removed. |
+| `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | Rev C. Rewritten against the graph: electrolyser and hydrogen compressor added, cathodes changed to titanium as AQS-STD-002 section 9 decided, the store described as a compressed-gas tube bank, and the false statement that the edges carry pressure and temperature withdrawn. |
+| `docs-authority/WELD_MAP.md` | Rev B. The joint tags, corrupted by a text replacement in the 2026-10-25 bulk closure, restored to JW-nnn; the hanger and hydrogen header joints brought in line with AQS-STD-002. |
 
 ## 3. In progress
 
@@ -120,8 +124,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | Page | Defects found |
 | --- | --- |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_block_fam_plans.py`; fix the generator. |
-| `docs-authority/FUEL_CELL.md` | Arrows used in place of sentences; working or stock phrasing. |
-| `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | No purpose and scope section; list items written as fragments. |
 | `docs-authority/INSTRUMENT_INDEX.md` | No record of revisions; no purpose and scope section. Written by `docs-authority/_instr_index.py`; fix the generator. |
 | `docs-authority/INSTRUMENT_LOOPS.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/INTERNALS.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_internals.py`; fix the generator. |
@@ -144,7 +146,7 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/PARAMETRIC_MODEL.md` | No purpose and scope section; working or stock phrasing. Written by `_graph.py`; fix the generator. |
 | `docs-authority/PIPE_SPECS.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_pipe_specs.py`; fix the generator. |
-| `docs-authority/PROTECTION.md` | No purpose and scope section. |
+| `docs-authority/PROTECTION.md` | No purpose and scope section. Its values are stale: it states 48 inverters and names node RECT_EW, while the graph has 35 inverters and node RECTIFIER. `docs-authority/_protection.py` computes the study but prints it instead of writing the page; the page needs that script to write it. |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | No purpose and scope section; working or stock phrasing. Written by `flow_graph/param/scale_down.py`; fix the generator. |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | No record of revisions; no purpose and scope section; list items written as fragments; arrows used in place of sentences. |
@@ -158,7 +160,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/UNIT_MATERIALS.md` | No purpose and scope section. Written by `docs-authority/_unit_materials.py`; fix the generator. |
 | `docs-authority/VENT_CLOSURE.md` | Working or stock phrasing. |
 | `docs-authority/WATER_PURIFICATION.md` | No purpose and scope section; arrows used in place of sentences; working or stock phrasing. |
-| `docs-authority/WELD_MAP.md` | No purpose and scope section. |
 | `docs-authority/WIRE_SPECS.md` | No purpose and scope section; list items written as fragments. Written by `docs-authority/_wire_specs.py`; fix the generator. |
 
 Table 4.2. Pending pages in subfolders
@@ -314,3 +315,6 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/O2_SOURCE.md` (AQS-PAR-005) | Not rewritten. Two generators write this page: `flow_graph/param/o2_source.py` (the current Rev D duty summary) and `flow_graph/param/o2_close.py` report(), whose Rev C closure report would overwrite it if run. The page says the Rev C sections regenerate at the next balance run. Which generator owns the page? Once that is settled, the template can be rewritten without the risk of the other writer restoring the old text. |
 | `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | The note on driver `backup_gen_rated_kW` states 125 % of the critical load list in 5 kW steps, which gives 20 kW for the present critical loads, but the driver holds 40 kW (AQS-ELEC-007 section 5). Should the driver or its note change? |
 | `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | `SOL_ARK_60K.params.redundancy` was computed for a bus demand of 150.8 kW while the plant bus demand is 179.7 kW, so the bus section rating needs recomputing by its stage (AQS-ELEC-007 section 5). Should that stage run after the power stage? |
+| `docs-authority/duties/` | Duty sheets remain for units that are no longer on the graph, mostly farm, crop and animal units (for example ABE, CHICKENS, CROP_TOMATO, RECT_EW). `_duty_basis.py` skips them, so they keep Graph Rev BH and stale values. Should they be deleted, or moved to an archive? |
+| `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` (AQS-REV-H2-001) | The graph sends cathode hydrogen from EW_1 to EW_3 and EW_5 to EW_9, while AQS-STD-002 section 9 names EW_1, EW_2, EW_4 and EW_9. Which is correct? |
+| `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |
