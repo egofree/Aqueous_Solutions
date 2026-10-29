@@ -34,10 +34,10 @@
 <text x="15286" y="10196" fontSize="11">GROWBED_A</text>
 <rect x="18980" y="10180" width="3600" height="2100" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
 <text x="18986" y="10196" fontSize="11">GROWBED_B</text>
-<rect x="14680" y="680" width="1500" height="1000" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
-<text x="14686" y="696" fontSize="11">GROW_BED</text>
-<rect x="480" y="680" width="1500" height="1000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
-<text x="486" y="696" fontSize="11">HABITATION</text>
+<rect x="12380" y="1980" width="1500" height="1000" fill="#1e844933" stroke="#1e8449" stroke-width="2"/>
+<text x="12386" y="1996" fontSize="11">GROW_BED</text>
+<rect x="380" y="580" width="1500" height="1000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
+<text x="386" y="596" fontSize="11">HABITATION</text>
 <rect x="2680" y="680" width="1500" height="1000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>
 <text x="2686" y="696" fontSize="11">HDR_CO2</text>
 <rect x="4880" y="680" width="1500" height="1000" fill="#c0392b33" stroke="#c0392b" stroke-width="2"/>

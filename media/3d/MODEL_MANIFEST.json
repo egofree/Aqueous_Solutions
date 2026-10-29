@@ -1,6 +1,6 @@
 {
  "site_id": "baseline",
- "placement_seed_revision": "N",
+ "placement_seed_revision": "O",
  "units_total": 215,
  "built": 200,
  "ghosts_eliminated": 0,
@@ -47,7 +47,7 @@
    "sector_id": "GAS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "ADS_CHILL",
@@ -61,14 +61,14 @@
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "AFTERBURNER_FLUE",
    "sector_id": "GAS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "AIR_RECEIVER",
@@ -82,14 +82,14 @@
    "sector_id": "GAS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "AL_POT",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "AQUA_TANK",
@@ -129,7 +129,7 @@
    "sector_id": "GAS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "BEE_HIVE",
@@ -164,14 +164,14 @@
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "BMED_BASE",
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "BMED_UPW_POLISH",
@@ -211,7 +211,7 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CATCH_TANK",
@@ -230,7 +230,7 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CHICKEN_COOP",
@@ -244,14 +244,14 @@
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "COMB_HEAT",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "COMMON_AREA",
@@ -272,21 +272,21 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CRU",
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CRYO_AHU",
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CRYO_AHU_COND_CONDENSABLE",
@@ -307,21 +307,21 @@
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CRYO_DED_COOL",
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CRYO_H2",
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CRYO_HX_Q4",
@@ -335,21 +335,21 @@
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CRYO_O2",
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "CR_CELL",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "DESAL_RO",
@@ -361,7 +361,7 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "DRY_COOLER",
@@ -396,21 +396,21 @@
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "EVAP_ACID_VS",
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "EVAP_BASE",
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "EW_1",
@@ -480,14 +480,14 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "EXT_HALL",
    "sector_id": "ELEC",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "E_HEAT",
@@ -513,14 +513,14 @@
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "FLOAT_SINK",
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "FLUE_KO",
@@ -534,7 +534,7 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "FOOD_STORE",
@@ -548,7 +548,7 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "FUEL_CELL",
@@ -562,7 +562,7 @@
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "GALLEY",
@@ -576,7 +576,7 @@
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "GEO_GHEX",
@@ -618,7 +618,7 @@
    "sector_id": "GLASS",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "GLASS_MILL",
@@ -674,7 +674,7 @@
    "sector_id": "FARM",
    "level": "L1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FARM grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "GW_INTAKE",
@@ -695,14 +695,14 @@
    "sector_id": "GAS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "HABITATION",
    "sector_id": "HAB",
    "level": "L1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: HAB grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "HDR_CO2",
@@ -716,7 +716,7 @@
    "sector_id": "GAS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "HDR_N2",
@@ -730,28 +730,28 @@
    "sector_id": "GAS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "HDR_UPW",
    "sector_id": "WTR",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "HF_GEN",
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "HOPPER",
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "HX8",
@@ -770,7 +770,7 @@
    "sector_id": "PUMPED_HYDRO",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "ICE_EXTRACT",
@@ -782,14 +782,14 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "INV_CAST",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "LEACH_CSTR_1",
@@ -829,7 +829,7 @@
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "LOAD_AGG",
@@ -897,7 +897,7 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "MET_AHU",
@@ -918,7 +918,7 @@
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "MET_SCRUB",
@@ -939,21 +939,21 @@
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "MG_POT",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "MO_CELL",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "NCG_HEADER",
@@ -967,7 +967,7 @@
    "sector_id": "DOCK",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "NOX_SCRUB",
@@ -981,35 +981,35 @@
    "sector_id": "NUT",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "OIL_DRYER",
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "OIL_FRAC",
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "OIL_PYRO",
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "PELLET",
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "PERC_REMOVE",
@@ -1021,21 +1021,21 @@
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "POLY_COND",
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "POLY_F",
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "POLY_FIBER",
@@ -1049,21 +1049,21 @@
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "POLY_STOCK",
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "POWDER_RESIN",
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "PROD_C11_C18",
@@ -1119,7 +1119,7 @@
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "Q1_A",
@@ -1248,63 +1248,63 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "RF_HEAT",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "ROLL",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "ROOF_TANK",
    "sector_id": "WTR",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "SALT_FEED",
    "sector_id": "DIGESTER",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "SHELL_BREAK",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "SHELL_BUILD",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "SHELL_BURNOUT",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "SINTER",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "SI_REDUCE",
@@ -1339,7 +1339,7 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "SW_INTAKE",
@@ -1356,28 +1356,28 @@
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "TI_CELL",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "VAC_CAST",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "VAC_IND",
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "VCD_TRAIN",
@@ -1391,7 +1391,7 @@
    "sector_id": "POLYMERS",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "VERMI_BIN",
@@ -1405,7 +1405,7 @@
    "sector_id": "FAB",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "WASHROOM",
@@ -1419,14 +1419,14 @@
    "sector_id": "FOUNDRY",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "WET_BENCH",
    "sector_id": "FAB",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "WET_OX",
@@ -1438,7 +1438,7 @@
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+   "basis": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
   },
   {
    "unit_id": "WS_AMMONIA",

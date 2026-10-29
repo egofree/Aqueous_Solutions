@@ -12,7 +12,7 @@ Basis: NEC 2026 110.26(A)(1)-(2); NFPA 101 (2027) 7.3.4.1.1 and IBC 2027 1018.5 
 | RECT_EW | L-1 | S N E | S N E | pass |
 | SOL_ARK_60K | L0 | S N W E | N W E | pass |
 | LOAD_AGG | L0 | S W E | S W E | pass |
-| BOUNDARY_EXPORT | L0 | S N W E | S N W E | pass |
+| BOUNDARY_EXPORT | L0 | S W E | S W E | pass |
 | BACKUP_GEN | L0 | S N W E | S N W E | pass |
 | FUEL_CELL | L0 | S N W E | S N W E | pass |
 | ZNBR2 | L0 | S N W E | S N E | pass |
@@ -22,69 +22,32 @@ Basis: NEC 2026 110.26(A)(1)-(2); NFPA 101 (2027) 7.3.4.1.1 and IBC 2027 1018.5 
 
 | Row | Level | Faces with 914 mm clear |
 |---|---|---|
-| WS_NITRIC | L0 | none |
-| WS_PEROX | L0 | none |
-| WS_SLURRY | L0 | none |
-| BLOW_MOLD | L0 | none |
+| MET_SCRUB | L0 | none |
+| Q2_B | L-1 | none |
 | PROD_C5_C10 | L-1 | none |
+| FLUE_KO | L-1 | none |
 | RELIEF_CRYO | L-1 | none |
-| ACID_POLISH_SCRUB | L0 | none |
-| AFTERBURNER_FLUE | L0 | none |
 | AIR_RECEIVER | L-1 | none |
-| AL_POT | L0 | none |
-| ATMOS | L0 | none |
-| BMED_ACID | L0 | none |
-| BMED_BASE | L0 | none |
-| CAST_LINE | L0 | none |
 | COLD_MILL | L0 | none |
 | CONT_CAST | L0 | none |
-| CRYO_AHU | L-1 | none |
-| CRYO_H2 | L-1 | none |
-| CRYO_N2 | L-1 | none |
-| CR_CELL | L0 | none |
-| DRAW | L0 | none |
-| FILM_CAST | L0 | none |
-| FLOAT_SINK | L0 | none |
-| FLUX_PREP | L0 | none |
+| CRYO_CO2 | L-1 | none |
 | FOOD_STORE | L1 | none |
-| FORGE | L0 | none |
-| GLASS_DIGEST | L-1 | none |
+| F_RECOVER | L0 | none |
+| GAS_ATOMIZER | L0 | none |
 | GROW_BED | L1 | none |
 | GW_INTAKE | L0 | none |
-| HDR_H2 | L0 | none |
-| HDR_O2 | L0 | none |
-| HDR_UPW | L0 | none |
-| HF_GEN | L0 | none |
-| HYDRO_SET | L0 | none |
-| IND_MELT | L0 | none |
-| LI_RECOVER | L0 | none |
-| MET_SYN | L0 | none |
+| H2O_ELYZ | L-1 | none |
 | MFG_SHOP | L0 | none |
-| MG_POT | L0 | none |
-| MO_CELL | L0 | none |
-| NORTH_DOCK | L0 | none |
-| NUTRIENT_DOSE | L0 | none |
-| POLISH_BANK | L0 | none |
-| POLY_OLEFIN | L0 | none |
-| POLY_STOCK | L0 | none |
-| P_CA | L0 | none |
-| RES_HEAT | L0 | none |
-| ROLL | L0 | none |
-| SHELL_BREAK | L0 | none |
-| TFE_SYN | L0 | none |
-| VDF_SYN | L0 | none |
-| WAFER_FAB | L0 | none |
-| WET_BENCH | L0 | none |
-| BOARD_MILL | L0 | none |
-| CRYO_NE | L-1 | none |
-| CRYO_KR | L-1 | none |
+| PROD_MEOH | L-1 | none |
+| PROD_O2 | L-1 | none |
+| SALT_FEED | L0 | none |
+| STOCK_OUT | L0 | none |
 | CRYO_XE | L-1 | none |
 | CRYO_AR | L-1 | none |
-| H2_PURIFIER | L-1 | none |
 
-Rows checked for access: 266; rows without a 914 mm face: 59.
+Rows checked for access: 266; rows without a 914 mm face: 22.
 
-Failing items: 59.
+Failing items: 22.
 
 ## Code basis (X-STD-01)
 

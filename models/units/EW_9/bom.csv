@@ -15,7 +15,7 @@ item,description,qty,material,basis
 14,electronics: motor starter (contactor + overload) 0.55 kW,1,IEC 60947-4-1,AQS-INV-004
 15,fastener: anchor bolt M10,32,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 16,fastener: anchor bolt M10,24,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-17,fastener: anchor bolt M10,40,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+17,fastener: anchor bolt M10,74,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 18,fastener: anchor bolt M10,26,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 19,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 20,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
@@ -32,7 +32,7 @@ item,description,qty,material,basis
 31,"seal: mechanical seal, single EN 12756",1,"SiC/SiC faces, FKM",AQS-INV-004
 32,support: pipe clamp DN15,16,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 33,support: pipe clamp DN15,12,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-34,support: pipe clamp DN15,20,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+34,support: pipe clamp DN15,37,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 35,support: pipe clamp DN15,13,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 36,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
 37,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004

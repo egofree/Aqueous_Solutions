@@ -24,7 +24,7 @@ IA-SINK-01,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), A
 IA-PLAST-01,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,9.72,377.3,,True,0.0291
 IA-CULLET,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,12.72,493.7,,True,0.0381
 IA-SCRUB-SRC,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,31.12,1207.9,,True,0.0932
-IA-HF-SRC,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,27.82,1079.8,,True,0.0833
+IA-HF-SRC,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,12.72,493.7,,True,0.0381
 IA-NOX-N,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,32.27,1252.5,,True,0.0966
 IA-LEACH-NOX,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,11.22,435.5,,True,0.0336
 IA-LEACH-FLUE,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,24.12,936.2,,True,0.0722

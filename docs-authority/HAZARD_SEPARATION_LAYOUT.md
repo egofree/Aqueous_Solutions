@@ -26,23 +26,23 @@ Table 3.1. Same-level pairs
 
 | Rule | A | B | Level | Gap mm | Basis | Result |
 |---|---|---|---|---|---|---|
-| S1 | AFTERBURNER | CRYO_H2 | L-1 | 15930 | distance | pass |
-| S1 | AFTERBURNER | EW_3 | L-1 | 7956 | distance | pass |
-| S1 | AFTERBURNER | EW_4 | L-1 | 6210 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | EW_5 | L-1 | 10753 | distance | pass |
-| S1 | AFTERBURNER | EW_6 | L-1 | 4724 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | EW_7 | L-1 | 6277 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | EW_8 | L-1 | 5337 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | H2O_ELYZ | L-1 | 13594 | distance | pass |
-| S1 | AFTERBURNER | OIL_FRAC | L-1 | 3008 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | PROD_C11_C18 | L-1 | 2309 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | PROD_C19_C28 | L-1 | 2802 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | PROD_C29 | L-1 | 2300 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | PROD_C5_C10 | L-1 | 2404 | 1 h room around AFTERBURNER | pass |
-| S1 | AFTERBURNER | PROD_MEOH | L-1 | 15750 | distance | pass |
+| S1 | AFTERBURNER | CRYO_H2 | L-1 | 13678 | distance | pass |
+| S1 | AFTERBURNER | EW_3 | L-1 | 7872 | distance | pass |
+| S1 | AFTERBURNER | EW_4 | L-1 | 6208 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | EW_5 | L-1 | 10779 | distance | pass |
+| S1 | AFTERBURNER | EW_6 | L-1 | 4663 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | EW_7 | L-1 | 6197 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | EW_8 | L-1 | 5309 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | H2O_ELYZ | L-1 | 13682 | distance | pass |
+| S1 | AFTERBURNER | OIL_FRAC | L-1 | 5459 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | PROD_C11_C18 | L-1 | 2402 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | PROD_C19_C28 | L-1 | 2941 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | PROD_C29 | L-1 | 2400 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | PROD_C5_C10 | L-1 | 2530 | 1 h room around AFTERBURNER | pass |
+| S1 | AFTERBURNER | PROD_MEOH | L-1 | 15842 | distance | pass |
 | S1 | BACKUP_GEN | MEOH_TANK | L0 | 5300 | 1 h room around BACKUP_GEN | pass |
-| S1 | BACKUP_GEN | POLY_OLEFIN | L0 | 16964 | distance | pass |
-| S1 | CRYO_ASU | CRYO_H2 | L-1 | 800 | 1 h room around CRYO_ASU | pass |
+| S1 | BACKUP_GEN | POLY_OLEFIN | L0 | 10800 | distance | pass |
+| S1 | CRYO_ASU | CRYO_H2 | L-1 | 1200 | 1 h room around CRYO_ASU | pass |
 | S1 | CRYO_ASU | EW_3 | L-1 | 15743 | distance | pass |
 | S1 | CRYO_ASU | EW_4 | L-1 | 13230 | distance | pass |
 | S1 | CRYO_ASU | EW_5 | L-1 | 8632 | distance | pass |
@@ -50,42 +50,42 @@ Table 3.1. Same-level pairs
 | S1 | CRYO_ASU | EW_7 | L-1 | 13631 | distance | pass |
 | S1 | CRYO_ASU | EW_8 | L-1 | 14530 | distance | pass |
 | S1 | CRYO_ASU | H2O_ELYZ | L-1 | 3677 | 1 h room around CRYO_ASU | pass |
-| S1 | CRYO_ASU | OIL_FRAC | L-1 | 15116 | distance | pass |
+| S1 | CRYO_ASU | OIL_FRAC | L-1 | 12965 | distance | pass |
 | S1 | CRYO_ASU | PROD_C11_C18 | L-1 | 15660 | distance | pass |
 | S1 | CRYO_ASU | PROD_C19_C28 | L-1 | 16815 | distance | pass |
 | S1 | CRYO_ASU | PROD_C29 | L-1 | 16082 | distance | pass |
 | S1 | CRYO_ASU | PROD_C5_C10 | L-1 | 16428 | distance | pass |
 | S1 | CRYO_ASU | PROD_MEOH | L-1 | 2804 | 1 h room around CRYO_ASU | pass |
-| S1 | CRYO_O2 | CRYO_H2 | L-1 | 0 | 1 h room around CRYO_O2 | pass |
-| S1 | CRYO_O2 | EW_3 | L-1 | 18206 | distance | pass |
-| S1 | CRYO_O2 | EW_4 | L-1 | 15433 | distance | pass |
-| S1 | CRYO_O2 | EW_5 | L-1 | 11010 | distance | pass |
-| S1 | CRYO_O2 | EW_6 | L-1 | 18132 | distance | pass |
-| S1 | CRYO_O2 | EW_7 | L-1 | 15953 | distance | pass |
-| S1 | CRYO_O2 | EW_8 | L-1 | 16732 | distance | pass |
-| S1 | CRYO_O2 | H2O_ELYZ | L-1 | 4809 | 1 h room around CRYO_O2 | pass |
-| S1 | CRYO_O2 | OIL_FRAC | L-1 | 16332 | distance | pass |
-| S1 | CRYO_O2 | PROD_C11_C18 | L-1 | 17340 | distance | pass |
-| S1 | CRYO_O2 | PROD_C19_C28 | L-1 | 17998 | distance | pass |
-| S1 | CRYO_O2 | PROD_C29 | L-1 | 17552 | distance | pass |
-| S1 | CRYO_O2 | PROD_C5_C10 | L-1 | 17754 | distance | pass |
-| S1 | CRYO_O2 | PROD_MEOH | L-1 | 3264 | 1 h room around CRYO_O2 | pass |
-| S1 | H2O_ELYZ | CRYO_H2 | L-1 | 500 | 1 h room around H2O_ELYZ | pass |
+| S1 | CRYO_O2 | CRYO_H2 | L-1 | 800 | 1 h room around CRYO_O2 | pass |
+| S1 | CRYO_O2 | EW_3 | L-1 | 12829 | distance | pass |
+| S1 | CRYO_O2 | EW_4 | L-1 | 9225 | distance | pass |
+| S1 | CRYO_O2 | EW_5 | L-1 | 6242 | 1 h partition X=15000 | pass |
+| S1 | CRYO_O2 | EW_6 | L-1 | 11812 | distance | pass |
+| S1 | CRYO_O2 | EW_7 | L-1 | 10260 | distance | pass |
+| S1 | CRYO_O2 | EW_8 | L-1 | 10463 | distance | pass |
+| S1 | CRYO_O2 | H2O_ELYZ | L-1 | 100 | 1 h room around CRYO_O2 | pass |
+| S1 | CRYO_O2 | OIL_FRAC | L-1 | 6815 | 1 h partition X=15000 | pass |
+| S1 | CRYO_O2 | PROD_C11_C18 | L-1 | 10500 | distance | pass |
+| S1 | CRYO_O2 | PROD_C19_C28 | L-1 | 10817 | distance | pass |
+| S1 | CRYO_O2 | PROD_C29 | L-1 | 10530 | distance | pass |
+| S1 | CRYO_O2 | PROD_C5_C10 | L-1 | 10637 | distance | pass |
+| S1 | CRYO_O2 | PROD_MEOH | L-1 | 0 | 1 h room around CRYO_O2 | pass |
+| S1 | H2O_ELYZ | CRYO_H2 | L-1 | 0 | 1 h room around H2O_ELYZ | pass |
 | S1 | H2O_ELYZ | EW_3 | L-1 | 12496 | distance | pass |
 | S1 | H2O_ELYZ | EW_4 | L-1 | 9072 | distance | pass |
 | S1 | H2O_ELYZ | EW_5 | L-1 | 5673 | 1 h partition X=15000 | pass |
 | S1 | H2O_ELYZ | EW_6 | L-1 | 11716 | distance | pass |
 | S1 | H2O_ELYZ | EW_7 | L-1 | 9974 | distance | pass |
 | S1 | H2O_ELYZ | EW_8 | L-1 | 10341 | distance | pass |
-| S1 | H2O_ELYZ | OIL_FRAC | L-1 | 9714 | distance | pass |
+| S1 | H2O_ELYZ | OIL_FRAC | L-1 | 7469 | 1 h partition X=15000 | pass |
 | S1 | H2O_ELYZ | PROD_C11_C18 | L-1 | 10657 | distance | pass |
 | S1 | H2O_ELYZ | PROD_C19_C28 | L-1 | 11402 | distance | pass |
 | S1 | H2O_ELYZ | PROD_C29 | L-1 | 10868 | distance | pass |
 | S1 | H2O_ELYZ | PROD_C5_C10 | L-1 | 11102 | distance | pass |
 | S1 | H2O_ELYZ | PROD_MEOH | L-1 | 400 | 1 h room around H2O_ELYZ | pass |
 | S1 | MEOH_FC | MEOH_TANK | L0 | 1166 | 1 h room around MEOH_FC | pass |
-| S1 | MEOH_FC | POLY_OLEFIN | L0 | 17903 | distance | pass |
-| S1 | PROD_O2 | CRYO_H2 | L-1 | 300 | 1 h room around PROD_O2 | pass |
+| S1 | MEOH_FC | POLY_OLEFIN | L0 | 5193 | 1 h room around MEOH_FC | pass |
+| S1 | PROD_O2 | CRYO_H2 | L-1 | 0 | 1 h room around PROD_O2 | pass |
 | S1 | PROD_O2 | EW_3 | L-1 | 16563 | distance | pass |
 | S1 | PROD_O2 | EW_4 | L-1 | 13393 | distance | pass |
 | S1 | PROD_O2 | EW_5 | L-1 | 9422 | distance | pass |
@@ -93,31 +93,31 @@ Table 3.1. Same-level pairs
 | S1 | PROD_O2 | EW_7 | L-1 | 14144 | distance | pass |
 | S1 | PROD_O2 | EW_8 | L-1 | 14678 | distance | pass |
 | S1 | PROD_O2 | H2O_ELYZ | L-1 | 2600 | 1 h room around PROD_O2 | pass |
-| S1 | PROD_O2 | OIL_FRAC | L-1 | 13787 | distance | pass |
+| S1 | PROD_O2 | OIL_FRAC | L-1 | 11424 | distance | pass |
 | S1 | PROD_O2 | PROD_C11_C18 | L-1 | 15008 | distance | pass |
 | S1 | PROD_O2 | PROD_C19_C28 | L-1 | 15426 | distance | pass |
 | S1 | PROD_O2 | PROD_C29 | L-1 | 15108 | distance | pass |
 | S1 | PROD_O2 | PROD_C5_C10 | L-1 | 15241 | distance | pass |
 | S1 | PROD_O2 | PROD_MEOH | L-1 | 1050 | 1 h room around PROD_O2 | pass |
-| S2 | AFTERBURNER | CRYO_H2 | L-1 | 15930 | distance | pass |
-| S2 | AFTERBURNER | EW_3 | L-1 | 7956 | distance | pass |
-| S2 | AFTERBURNER | EW_4 | L-1 | 6210 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | EW_5 | L-1 | 10753 | distance | pass |
-| S2 | AFTERBURNER | EW_6 | L-1 | 4724 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | EW_7 | L-1 | 6277 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | EW_8 | L-1 | 5337 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | H2O_ELYZ | L-1 | 13594 | distance | pass |
-| S2 | AFTERBURNER | OIL_FRAC | L-1 | 3008 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | PROD_C11_C18 | L-1 | 2309 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | PROD_C19_C28 | L-1 | 2802 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | PROD_C29 | L-1 | 2300 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | PROD_C5_C10 | L-1 | 2404 | 1 h room around AFTERBURNER | pass |
-| S2 | AFTERBURNER | PROD_MEOH | L-1 | 15750 | distance | pass |
-| S2 | AFTERBURNER_FLUE | MEOH_TANK | L0 | 16048 | distance | pass |
-| S2 | AFTERBURNER_FLUE | POLY_OLEFIN | L0 | 800 | 1 h room around AFTERBURNER_FLUE | pass |
+| S2 | AFTERBURNER | CRYO_H2 | L-1 | 13678 | distance | pass |
+| S2 | AFTERBURNER | EW_3 | L-1 | 7872 | distance | pass |
+| S2 | AFTERBURNER | EW_4 | L-1 | 6208 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | EW_5 | L-1 | 10779 | distance | pass |
+| S2 | AFTERBURNER | EW_6 | L-1 | 4663 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | EW_7 | L-1 | 6197 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | EW_8 | L-1 | 5309 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | H2O_ELYZ | L-1 | 13682 | distance | pass |
+| S2 | AFTERBURNER | OIL_FRAC | L-1 | 5459 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | PROD_C11_C18 | L-1 | 2402 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | PROD_C19_C28 | L-1 | 2941 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | PROD_C29 | L-1 | 2400 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | PROD_C5_C10 | L-1 | 2530 | 1 h room around AFTERBURNER | pass |
+| S2 | AFTERBURNER | PROD_MEOH | L-1 | 15842 | distance | pass |
+| S2 | AFTERBURNER_FLUE | MEOH_TANK | L0 | 5391 | 1 h room around AFTERBURNER_FLUE | pass |
+| S2 | AFTERBURNER_FLUE | POLY_OLEFIN | L0 | 10572 | distance | pass |
 | S2 | BACKUP_GEN | MEOH_TANK | L0 | 5300 | 1 h room around BACKUP_GEN | pass |
-| S2 | BACKUP_GEN | POLY_OLEFIN | L0 | 16964 | distance | pass |
-| S2 | GLASS_BURNOUT | CRYO_H2 | L-1 | 16560 | distance | pass |
+| S2 | BACKUP_GEN | POLY_OLEFIN | L0 | 10800 | distance | pass |
+| S2 | GLASS_BURNOUT | CRYO_H2 | L-1 | 14227 | distance | pass |
 | S2 | GLASS_BURNOUT | EW_3 | L-1 | 7694 | distance | pass |
 | S2 | GLASS_BURNOUT | EW_4 | L-1 | 6453 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | EW_5 | L-1 | 11120 | distance | pass |
@@ -125,31 +125,31 @@ Table 3.1. Same-level pairs
 | S2 | GLASS_BURNOUT | EW_7 | L-1 | 6054 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | EW_8 | L-1 | 5441 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | H2O_ELYZ | L-1 | 14251 | distance | pass |
-| S2 | GLASS_BURNOUT | OIL_FRAC | L-1 | 3940 | 1 h room around GLASS_BURNOUT | pass |
+| S2 | GLASS_BURNOUT | OIL_FRAC | L-1 | 6185 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | PROD_C11_C18 | L-1 | 3000 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | PROD_C19_C28 | L-1 | 3842 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | PROD_C29 | L-1 | 3059 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | PROD_C5_C10 | L-1 | 3354 | 1 h room around GLASS_BURNOUT | pass |
 | S2 | GLASS_BURNOUT | PROD_MEOH | L-1 | 16422 | distance | pass |
-| S2 | MET_MELT | MEOH_TANK | L0 | 20448 | distance | pass |
-| S2 | MET_MELT | POLY_OLEFIN | L0 | 3800 | 1 h room around MET_MELT | pass |
-| S2 | OIL_PYRO | CRYO_H2 | L-1 | 10152 | distance | pass |
-| S2 | OIL_PYRO | EW_3 | L-1 | 10085 | distance | pass |
-| S2 | OIL_PYRO | EW_4 | L-1 | 6295 | 1 h room around OIL_PYRO | pass |
-| S2 | OIL_PYRO | EW_5 | L-1 | 8278 | distance | pass |
-| S2 | OIL_PYRO | EW_6 | L-1 | 7017 | 1 h room around OIL_PYRO | pass |
-| S2 | OIL_PYRO | EW_7 | L-1 | 8023 | distance | pass |
-| S2 | OIL_PYRO | EW_8 | L-1 | 6514 | 1 h room around OIL_PYRO | pass |
-| S2 | OIL_PYRO | H2O_ELYZ | L-1 | 7692 | distance | pass |
-| S2 | OIL_PYRO | OIL_FRAC | L-1 | 700 | 1 h room around OIL_PYRO | pass |
-| S2 | OIL_PYRO | PROD_C11_C18 | L-1 | 2973 | 1 h room around OIL_PYRO | pass |
-| S2 | OIL_PYRO | PROD_C19_C28 | L-1 | 2200 | 1 h room around OIL_PYRO | pass |
-| S2 | OIL_PYRO | PROD_C29 | L-1 | 2309 | 1 h room around OIL_PYRO | pass |
-| S2 | OIL_PYRO | PROD_C5_C10 | L-1 | 2200 | 1 h room around OIL_PYRO | pass |
-| S2 | OIL_PYRO | PROD_MEOH | L-1 | 9598 | distance | pass |
-| S2 | SHELL_BURNOUT | MEOH_TANK | L0 | 15608 | distance | pass |
-| S2 | SHELL_BURNOUT | POLY_OLEFIN | L0 | 6708 | 1 h room around SHELL_BURNOUT | pass |
+| S2 | MET_MELT | MEOH_TANK | L0 | 16048 | distance | pass |
+| S2 | MET_MELT | POLY_OLEFIN | L0 | 24919 | distance | pass |
+| S2 | OIL_PYRO | CRYO_H2 | L-1 | 9758 | distance | pass |
+| S2 | OIL_PYRO | EW_3 | L-1 | 9608 | distance | pass |
+| S2 | OIL_PYRO | EW_4 | L-1 | 6180 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | EW_5 | L-1 | 8977 | distance | pass |
+| S2 | OIL_PYRO | EW_6 | L-1 | 6265 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | EW_7 | L-1 | 7880 | distance | pass |
+| S2 | OIL_PYRO | EW_8 | L-1 | 6180 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | H2O_ELYZ | L-1 | 9586 | distance | pass |
+| S2 | OIL_PYRO | OIL_FRAC | L-1 | 800 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | PROD_C11_C18 | L-1 | 1903 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | PROD_C19_C28 | L-1 | 100 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | PROD_C29 | L-1 | 608 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | PROD_C5_C10 | L-1 | 100 | 1 h room around OIL_PYRO | pass |
+| S2 | OIL_PYRO | PROD_MEOH | L-1 | 11582 | distance | pass |
+| S2 | SHELL_BURNOUT | MEOH_TANK | L0 | 12039 | distance | pass |
+| S2 | SHELL_BURNOUT | POLY_OLEFIN | L0 | 13503 | distance | pass |
 
 Cross-level pairs (116) pass on the floor slab.
 
-Layout change applied: 1 h rated rooms with their own exhaust around 12 units (AFTERBURNER, AFTERBURNER_FLUE, BACKUP_GEN, CRYO_ASU, CRYO_O2, GLASS_BURNOUT, H2O_ELYZ, MEOH_FC, MET_MELT, OIL_PYRO, PROD_O2, SHELL_BURNOUT), written to `flow_graph/fire_rooms.json` (room = unit plan + 1 m each side) for the CAD fire-barrier model. Any remaining FAIL is a layout action: move one unit to 7,620 mm, add a rated 1 h partition between them, or (S2) enclose the ignition source in a 1 h room with its own ventilation. Unresolved pairs are checked again once the block-placed units get individual positions.
+Layout change applied: 1 h rated rooms with their own exhaust around 10 units (AFTERBURNER, AFTERBURNER_FLUE, BACKUP_GEN, CRYO_ASU, CRYO_O2, GLASS_BURNOUT, H2O_ELYZ, MEOH_FC, OIL_PYRO, PROD_O2), written to `flow_graph/fire_rooms.json` (room = unit plan + 1 m each side) for the CAD fire-barrier model. Any remaining FAIL is a layout action: move one unit to 7,620 mm, add a rated 1 h partition between them, or (S2) enclose the ignition source in a 1 h room with its own ventilation. Unresolved pairs are checked again once the block-placed units get individual positions.
