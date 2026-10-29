@@ -18,11 +18,11 @@ UNITS = {n['unit_id'] for n in G['nodes'] if n.get('class') != 'boundary' and n.
 def test_header_and_method():
     src = open(DOC).read()
     assert src.startswith('# Per-unit material selections')
-    assert 'Document number: AQS-STD-005' in src and 'Revision: A' in src
+    assert 'Document number: AQS-STD-005' in src and re.search(r'^Revision: [A-Z]+$', src, re.M)
     ## the selection is not made here - it is the issued section 12 join, with its bounding check cited
-    assert 'No selection is made here' in src
-    assert 'AQS-ASSAY-001 Rev C bounding cases' in src
-    assert 'every one resolves to an issued family' in src
+    assert 'It makes no selection of its own' in src
+    assert 'bounding feed cases of AQS-ASSAY-001' in src
+    assert 'each resolves to an issued service family' in src
     assert '| A | First issue' in src
 
 
@@ -65,7 +65,7 @@ def test_wetted_sheets_match_the_line_list():
             assert any(t in s for t in ('CPVC Sch 80', 'PVC-U', '316L', 'PVDF', 'HDPE', 'PP-H', 'Carbon steel', 'FRP', 'Hastelloy', 'carbon steel', 'Not piped', 'hot face')), u
         else:
             no_wetted.append(u)
-            assert 'No wetted piped stream' in s, u
+            assert 'has no wetted piped stream' in s, u
     assert len(no_wetted) == len([u for u in UM['issued'] if not per_unit.get(u)])
 
 

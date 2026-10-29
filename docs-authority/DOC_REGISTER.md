@@ -72,7 +72,7 @@ Table 3.1. Document numbers in use
 | AQS-COMPL-001 | `docs-authority/COMPLIANCE_MATRIX.md` | F | 2026-10-24 | Compliance matrix: design intent against code themes | current |
 | AQS-CRY-002 | `docs-authority/CRYO_COLD_BOX.md` | D | 2026-10-25 | Air liquefaction cold box: internals and heat rejection | current |
 | AQS-CRY-003 | `docs-authority/COLD_BOX.md` | — | — | Cold box | current |
-| AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | A | 2026-10-16 | Instrument index | current |
+| AQS-CTL-001 | `docs-authority/INSTRUMENT_INDEX.md` | B | 2026-10-29 | Instrument index | current |
 | AQS-CTL-002 | `docs-authority/CONTROL_ARCH.md` | B | 2026-10-25 | Control philosophy and PLC architecture | current |
 | AQS-CTL-003 | `docs-authority/CAUSE_EFFECT.md` | A | 2026-10-16 | Safety instrumented functions and cause and effect | current |
 | AQS-CTL-004 | `docs-authority/CONTROL_SOFTWARE.md` | B | 2026-10-25 | Control program source and scan simulation | current |
@@ -82,8 +82,8 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | G | 2026-10-29 | Documentation rewrite status | current |
-| AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | A | 2026-10-21 | Unit internals register | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | H | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
 | AQS-DUTY-008 | `docs-authority/HEAT_LADDER_DUTIES.md` | D | 2026-10-08 | Heat-ladder edge duties | current |
@@ -140,7 +140,7 @@ Table 3.1. Document numbers in use
 | AQS-ELC-001 | `docs-authority/ELECTRICAL.md` | D | 2026-10-24 | Electrical analysis | current |
 | AQS-ELEC-001 | `docs-authority/ELECTRONICS.md` | C | 2026-10-11 | Electronics bay | current |
 | AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | E | 2026-10-24 | Single-line diagram | current |
-| AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | C | 2026-10-21 | Load list | current |
+| AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | D | 2026-10-29 | Load list | current |
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | C | 2026-10-25 | Electrowinning rectifier sizing (RECT-EW) | current |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | B | 2026-10-25 | Grounding and bonding | current |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | E | 2026-10-29 | Protection and coordination | current |
@@ -254,7 +254,7 @@ Table 3.1. Document numbers in use
 | AQS-PWR-001 | `docs-authority/POWER.md` | A | 2026-10-17 | Power | current |
 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | C | 2026-10-29 | Ground-source heat pump loop and backup generator | current |
 | AQS-PWR-ROLLUP | `notes/LOAD_ROLLUP.md` | A | 2026-10-17 | Load rollup — foundry, polymers, grease | current |
-| AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan | current |
+| AQS-QA-001 | `docs-authority/ITP.md` | B | 2026-10-29 | Inspection and test plan | current |
 | AQS-QA-002 | `docs-authority/DESIGN_CHECK.md` | B | 2026-10-25 | Independent design check record | current |
 | AQS-RATE-FP-MET | `notes/DESIGN_RATES.md` | A | 2026-10-16 | Design rates — fluoropolymer and critical metals | current |
 | AQS-REB-001 | `docs-authority/REBUILD.md` | D | 2026-10-24 | Rebuilding the design from the plant graph | current |
@@ -447,7 +447,7 @@ Table 3.1. Document numbers in use
 | AQS-STD-002 | `docs-authority/MATERIALS_STD.md` | O | 2026-10-21 | Materials standard | current |
 | AQS-STD-003 | `docs-authority/STANDARDS_BASIS.md` | — | 2026-10-02 | Standards basis for the audit fixes | current |
 | AQS-STD-004 | `docs-authority/STANDARDS_LIST.md` | A | 2026-10-15 | Codes and standards list | current |
-| AQS-STD-005 | `docs-authority/UNIT_MATERIALS.md` | A | 2026-10-21 | Per-unit material selections (duty section 3 sweep) | current |
+| AQS-STD-005 | `docs-authority/UNIT_MATERIALS.md` | B | 2026-10-29 | Per-unit material selections | current |
 | AQS-STD-006 | `docs-authority/MATERIALS_SEC3.md` | A | 2026-10-21 | Duty section 3 material selections, batch issue (AQS-STD-006) | current |
 | AQS-STD-007 | `docs-authority/CODE_BASIS.md` | D | 2026-10-24 | Code basis | current |
 | AQS-STL-001 | `docs-authority/STL_MANIFEST.md` | A | 2026-09-27 | STL rebuild manifest | current |

@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: G
+Revision: H
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -13,6 +13,7 @@ Date: 2026-10-29
 | E | WATER_PURIFICATION, LIFE_MEP and MEOH_TRAIN given generators and rewritten | 2026-10-29 |
 | F | PROTECTION written by its study script; ISO_SHEETS and JELLYBEAN rewritten through their generators | 2026-10-29 |
 | G | Reference sweep: unregistered document numbers listed in `unregistered_doc_numbers.json` and guarded by `flow_graph/test_doc_number_refs.py` | 2026-10-29 |
+| H | Batch 6: the instrument index, inspection and test plan, load list, internals register and per-unit material selections rewritten through their generators | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -109,6 +110,11 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/PROTECTION.md` | Rev E. Now written by `docs-authority/_protection.py`, which already computed the study: inverter count and rating, section mains and the rectifier name from the graph, feeders from the one-line diagram, grid values from `_grounding_study.py` (not changed). The code basis section appended by `code_basis.py` is carried over. |
 | `docs-authority/ISO_SHEETS.md` | Rev B. Rewritten through `docs-authority/_iso_sheets.py`: purpose and scope, the summary and basis as sentences, numbered tables. |
 | `docs-authority/JELLYBEAN.md` | Rev B. Rewritten through `docs-authority/_jellybean.py`: purpose and scope, an introductory sentence and numbered table for each family, the pipe entries no longer contradict their schedule, and the line list cited as AQS-PIP-004 instead of an unregistered number. |
+| `docs-authority/INSTRUMENT_INDEX.md` | Rev B. Rewritten through `docs-authority/_instr_index.py`: record of revisions, purpose and scope, counts and loops as sentences, numbered tables. |
+| `docs-authority/ITP.md` | Rev B. Rewritten through `docs-authority/_itp.py`: record of revisions, purpose and scope, inspection points defined, one numbered section and table per route. |
+| `docs-authority/LOAD_LIST.md` | Rev D. Rewritten through `docs-authority/_load_list.py`: the load bases defined, the status written as sentences, numbered tables. |
+| `docs-authority/INTERNALS.md` | Rev B. Rewritten through `docs-authority/_internals.py`: purpose and scope, the method and limits as sentences, fixed counts removed. |
+| `docs-authority/UNIT_MATERIALS.md` | Rev B. Rewritten through `docs-authority/_unit_materials.py`: purpose and scope, the summary and rule as sentences, fixed counts removed, no empty table. |
 
 ## 3. In progress
 
@@ -133,13 +139,9 @@ Table 4.1. Pending pages directly under docs-authority/
 | Page | Defects found |
 | --- | --- |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_block_fam_plans.py`; fix the generator. |
-| `docs-authority/INSTRUMENT_INDEX.md` | No record of revisions; no purpose and scope section. Written by `docs-authority/_instr_index.py`; fix the generator. |
 | `docs-authority/INSTRUMENT_LOOPS.md` | No purpose and scope section; working or stock phrasing. |
-| `docs-authority/INTERNALS.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_internals.py`; fix the generator. |
-| `docs-authority/ITP.md` | No record of revisions; no purpose and scope section. Written by `docs-authority/_itp.py`; fix the generator. |
 | `docs-authority/LIFE_FITOUT_PLAN.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | No record of revisions; no purpose and scope section. |
-| `docs-authority/LOAD_LIST.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_load_list.py`; fix the generator. |
 | `docs-authority/MATERIALS_SEC3.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/MATERIALS_STD.md` | No purpose and scope section; list items written as fragments; working or stock phrasing. |
 | `docs-authority/METAL_FORMING.md` | No purpose and scope section; working or stock phrasing. |
@@ -161,7 +163,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/STUDY_UNITS_STUB.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/TERRACE_LANDSCAPE.md` | No purpose and scope section; list items written as fragments. |
 | `docs-authority/TEST_PLAN.md` | No purpose and scope section; working or stock phrasing. |
-| `docs-authority/UNIT_MATERIALS.md` | No purpose and scope section. Written by `docs-authority/_unit_materials.py`; fix the generator. |
 | `docs-authority/VENT_CLOSURE.md` | Working or stock phrasing. |
 | `docs-authority/WIRE_SPECS.md` | No purpose and scope section; list items written as fragments. Written by `docs-authority/_wire_specs.py`; fix the generator. |
 

@@ -18,11 +18,11 @@ UNITS = {n['unit_id'] for n in G['nodes'] if n.get('class') != 'boundary' and n.
 def test_header_and_method():
     src = open(DOC).read()
     assert src.startswith('# Unit internals register')
-    assert 'Document number: AQS-DSN-INT-001' in src and 'Revision: A' in src
+    assert 'Document number: AQS-DSN-INT-001' in src and re.search(r'^Revision: [A-Z]+$', src, re.M)
     # nothing invented: closes carry issued documents, opens are named gaps
-    assert 'Nothing here invents an internal' in src
+    assert 'The register invents no internal' in src
     assert '| A | First issue' in src
-    assert '## 4. Open units (named gaps)' in src
+    assert '## 5. Open units' in src
 
 
 def test_every_roster_unit_is_accounted_for():
