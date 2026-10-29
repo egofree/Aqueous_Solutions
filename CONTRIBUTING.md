@@ -94,6 +94,13 @@ It regenerates the register (AQS-REG-002) and fails on an incomplete entry.
 6. Open a pull request against `main` and fill in the template. Keep one task,
    or one closely related set of tasks, per pull request.
 
+### Commit identity
+
+Commit under your own name and a working email address (a GitHub
+`users.noreply.github.com` address is fine). Set it in your clone with
+`git config user.name` and `git config user.email`. The check script rejects
+an unset or placeholder address such as one at `example.com`.
+
 ### Required checks
 
 The project uses no hosted build service: you run the checks on your own
@@ -103,7 +110,7 @@ machine before you submit. One command runs them all from the repository root:
 scripts/check_all.sh            # or: make check
 ```
 
-It runs, in order:
+It checks that `git config user.email` is set to a real address, then runs, in order:
 
 ```bash
 pytest flow_graph/                              # tests, including the 1 % misfit gate

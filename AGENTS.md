@@ -53,6 +53,16 @@ from those lines. Task, assumption, open-question, unit and stream ids take the
 next unused id in their sequence. `flow_graph/test_doc_numbers.py` fails on a
 duplicate or a missing number.
 
+## Commit identity
+
+Commit under a real identity. For the project owner's clones this is
+`Mike Matthews <4124269+egofree@users.noreply.github.com>`, set in the clone's
+own `.git/config` (`git config user.name` and `git config user.email`), not
+taken from a machine-wide setting. `scripts/check_all.sh` fails when
+`user.email` is unset or is a placeholder address. `.mailmap` maps earlier
+placeholder identities to the owner; add a line there rather than rewriting
+history.
+
 ## Writing style
 
 Write every published page, generator text template, docstring, commit message

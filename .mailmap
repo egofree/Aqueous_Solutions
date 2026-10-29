@@ -1,0 +1,6 @@
+# Maps commit identities to the canonical author for git log, shortlog and blame.
+# Format: Canonical Name <canonical@email> Commit Name <commit@email>
+# The placeholder identity came from a machine-wide Git setting on the owner's
+# workstation; those commits were made from the owner's clones.
+Mike Matthews <4124269+egofree@users.noreply.github.com> Buddy Dev <buddy@example.com>
+Mike Matthews <4124269+egofree@users.noreply.github.com> <egofree@users.noreply.github.com>
