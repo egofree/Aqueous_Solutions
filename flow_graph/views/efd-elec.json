@@ -4534,7 +4534,13 @@
           "alt": "a tantalum reactor if the HCN service ever shows corrosion at the glass-lining pinholes",
           "note": "the crystalliser is the product-quality bottleneck: DL-Met crystal habit controls the filtration rate.",
           "task": "X-UI-002"
-        }
+        },
+        "size_mm": [
+          1500,
+          1000,
+          1800
+        ],
+        "size_note": "bench fume-hood train: glass-lined reactor column (2 L working volume), reagent feed tanks, Hastelloy C crystalliser; the 9 g/d DL-Met duty sets nothing larger (A-M-416 route A; X-UI-002)"
       },
       "continuous_kw": {
         "value": 0.2,

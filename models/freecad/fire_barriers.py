@@ -173,6 +173,9 @@ def _rated_rooms(doc):
     CAD solid; each wall sits mid-way to the nearest neighbouring solid on that side (max 1,000 mm, min 300 mm), so walls do not cut
     neighbours. Units with no CAD solid fall back to the placement position."""
     import json
+    findings = OUT.parents[1] / "docs-authority" / "inventory" / "CAD_ROOM_FINDINGS.json"
+    findings.parent.mkdir(parents=True, exist_ok=True)
+    findings.write_text("")                    # one run's findings, never accreted
     f = Path(__file__).resolve().parents[2] / "flow_graph" / "fire_rooms.json"
     if not f.exists():
         return
@@ -254,6 +257,16 @@ def _rated_rooms(doc):
                     nx0, ny0 = min(x0, B[0]), min(y0, B[1]); L, W = max(x0 + L, B[3]) - nx0, max(y0 + W, B[4]) - ny0; x0, y0 = nx0, ny0
                     H = min(Hcap, max(H, B[5] - z + 300))
             if not grew: break
+        if X1 - X0 <= 2 * t or Y1 - Y0 <= 2 * t:
+            # boundaries on opposite sides (stair + its door, twin walls) can squeeze
+            # the room inside out; that is a layout conflict to surface, not a crash
+            print("  FR_%s: room bounds inverted (X %g..%g, Y %g..%g) after clips %s"
+                  " - room skipped, recorded as a GA finding"
+                  % (r["unit"], X0, X1, Y0, Y1, {k: round(v) for k, v in clip.items()}))
+            with open(findings, "a") as fh:
+                fh.write(json.dumps({"unit": r["unit"], "X": [round(X0), round(X1)],
+                                     "Y": [round(Y0), round(Y1)], "clips": {k: round(v) for k, v in clip.items()}}) + "\n")
+            continue
         walls = [box_at(X0, Y0, z, X1 - X0, t, H), box_at(X0, Y1 - t, z, X1 - X0, t, H),
                  box_at(X0, Y0, z, t, Y1 - Y0, H), box_at(X1 - t, Y0, z, t, Y1 - Y0, H)]
         sh = _fuse(walls)

@@ -177,6 +177,10 @@ def write():
     put('FEED_PREP', sizing={'load_basis': v['feed_prep_kw'][1]}, kw=v['feed_prep_kw'][0], kw_note=v['feed_prep_kw'][1] + ' (X-SPEC calculated)')
     put('POLY_FIBER', sizing={'load_basis': v['poly_fiber_kw'][1]}, kw=v['poly_fiber_kw'][0], kw_note=v['poly_fiber_kw'][1] + ' (X-SPEC calculated)')
     put('AQUA_UV', sizing={'load_basis': v['aqua_uv_kw'][1]}, kw=v['aqua_uv_kw'][0], kw_note=v['aqua_uv_kw'][1] + ' (X-SPEC calculated)')
+    put('MET_SYN', size_mm=[1500, 1000, 1800],
+        size_note=('bench fume-hood train: glass-lined reactor column (2 L working volume), '
+                   'reagent feed tanks, Hastelloy C crystalliser; the 9 g/d DL-Met duty sets '
+                   'nothing larger (A-M-416 route A; X-UI-002)'))
 
     json.dump(g, open(GP, 'w'), indent=2)
     return v

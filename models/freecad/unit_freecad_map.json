@@ -2,8 +2,8 @@
   "schema": "aqs-unit-freecad-map-1.0",
   "licence": "CERN-OHL-S-2.0",
   "doc_id": "AQS-UNIT-FREECAD-MAP-001",
-  "revision": "D",
-  "date": "2026-10-19",
+  "revision": "E",
+  "date": "2026-10-29",
   "graph_doc_id": "AQS-FLOW-GRAPH-001",
   "graph_revision": "B",
   "freecad_binary": "/usr/bin/freecadcmd",
@@ -89,6 +89,20 @@
       "notes": "alias: graph AFTERBURNER_FLUE \u2192 Feature HX7_FLUE_JACKET (flue jacket on AB path); no Feature named AFTERBURNER_FLUE"
     },
     {
+      "unit_id": "AIR_RECEIVER",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "store",
+      "status": "massing_only",
+      "freecad_names": [
+        "AIR_RECEIVER"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [],
+      "notes": "Rev D (2026-10-19): D-DOCK plant-air receiver (A-M-270) - seed box from graph params.size_mm in the north dock hall; graph_dims.py rebuilds it as the sized 700 x 900 mm cylinder at the placed centre (CAD_GRAPH_DIMS applied=true closes the P1 audit item). No plant_groups classify rule: Feature sits at the tree root."
+    },
+    {
       "unit_id": "ALK_SCRUBBER",
       "sector_id": "GAS",
       "presence": "present",
@@ -117,6 +131,24 @@
       "builder": "mfg/foundry.py",
       "group_path": [],
       "notes": "P2+P3 2026-10-19: pot_cell (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/AL_POT/export/al_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/AL_POT.stl study envelope [800, 800, 1600]"
+    },
+    {
+      "unit_id": "AQUA_UV",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "AQUA_UV"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "optional RAS UV sanitizer in the BIOFILTER-to-grow-bed loop pocket (A-M-424), normally bypassed"
     },
     {
       "unit_id": "BACKUP_GEN",
@@ -152,6 +184,24 @@
         "Gas"
       ],
       "notes": ""
+    },
+    {
+      "unit_id": "BEE_HIVE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "BEE_HIVE"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "row 2 (A-M-422)"
     },
     {
       "unit_id": "BLACK_DIGEST",
@@ -250,6 +300,24 @@
       "notes": "logical DOCK boundary node; no solid"
     },
     {
+      "unit_id": "BSFL_BIN",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "BSFL_BIN"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "larvae bin under the coop manure drop (A-M-419)"
+    },
+    {
       "unit_id": "C29_RECYCLE",
       "sector_id": "OIL",
       "presence": "placeholder",
@@ -308,6 +376,24 @@
       "builder": "mfg/foundry.py",
       "group_path": [],
       "notes": "P2+P3 2026-10-19: pot_cell (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/CA_POT/export/ca_pot.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/CA_POT.stl study envelope [800, 800, 1600]"
+    },
+    {
+      "unit_id": "CHICKEN_COOP",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "CHICKEN_COOP"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "layer flock row 1 (A-M-417)"
     },
     {
       "unit_id": "COLD_MILL",
@@ -416,6 +502,24 @@
         "Cryo"
       ],
       "notes": "alias: graph CRYO_AHU_COND_CONDENSABLE \u2192 Feature CRYO_AHU_COND"
+    },
+    {
+      "unit_id": "CRYO_ASU",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "cold_box",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_ASU"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": "Rev D: P4 restored unit. TSA cold box as one Part::Feature compound: enclosure box with the 3 x 13X beds as internal cylinders, every dim from params.design (beds/bed_D_mm/bed_L_mm; no cryogenic column, AQS-DUTY-069 Rev C) - the COLD_BOX internals pattern, so resolve_overlaps / regroup translate it as one solid. Authored on the O2/ignition side of the FB_CRYO_H2_PART split, inside the 2 h CRYO enclosure (fire_rooms gives it no room of its own; its FR_CRYO_ASU entry now finds a solid). Any regroup translation is logged in CAD_MOVES.json (A-M-223)."
     },
     {
       "unit_id": "CRYO_CO2",
@@ -550,6 +654,40 @@
       "notes": "P2+P3 2026-10-19: line_machine (standby_rated); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/DRAW/export/draw.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/DRAW.stl study envelope [1500, 800, 1500]"
     },
     {
+      "unit_id": "DUCKWEED",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "raceway is scale-guarded: 30.1 x 10.1 m does not fit the M1 plate, the builder emits it at the scale that fits it (build log carries the note)"
+    },
+    {
+      "unit_id": "DUCK_PEN",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "DUCK_PEN"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "waterfowl south of the grow bed (A-M-420)"
+    },
+    {
       "unit_id": "ELECTRODE_COAT",
       "sector_id": "MFG",
       "presence": "placeholder",
@@ -646,6 +784,24 @@
       "notes": "WP-D1b TBD tank = P_TANK_* alias in FAB envelope; \u2260 ROOF/CATCH"
     },
     {
+      "unit_id": "FEED_PREP",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "FEED_PREP"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "feed formulation row, farm plate west column; dims from the graph"
+    },
+    {
       "unit_id": "FILM_CAST",
       "sector_id": "POLYMERS",
       "presence": "present",
@@ -705,6 +861,20 @@
       "builder": "mfg/foundry.py",
       "group_path": [],
       "notes": "P2+P3 2026-10-19: bench_prep (live); parametric CadQuery model mfg/foundry.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-072); exports models/mfg/FLUX_PREP/export/flux_prep.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/FLUX_PREP.stl study envelope [800, 600, 1200]"
+    },
+    {
+      "unit_id": "FOOD_STORE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": "store",
+      "status": "massing_only",
+      "freecad_names": [
+        "FOOD_STORE"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [],
+      "notes": "Rev D (2026-10-19): D-DOCK food buffer (A-M-270 X-RED-08 80 d dry reserve) - seed box from graph params.size_mm; graph_dims.py rebuilds it as the sized 350 x 450 mm cylinder. No plant_groups classify rule: Feature sits at the tree root."
     },
     {
       "unit_id": "FORGE",
@@ -928,6 +1098,37 @@
         "Farm"
       ],
       "notes": "secondaries GROW_BED_G3, GROW_TRAY_*"
+    },
+    {
+      "unit_id": "GW_INTAKE",
+      "sector_id": "WTR",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "GW_INTAKE"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "wellhead hatch + pump discharge pad (X-LOC-13), L0 yard south of the MEOH row; dims from the graph envelope"
+    },
+    {
+      "unit_id": "H2O_ELYZ",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "pem_electrolyser",
+      "status": "mapped",
+      "freecad_names": [
+        "H2O_ELYZ"
+      ],
+      "builder": "cryo.py",
+      "group_path": [],
+      "notes": "Rev D: P4 restored unit (owner ruling D-O2). One Part::Feature compound: PEM stack skid + BoP deck (H2/O2 separators, deoxo, dryer per params.internals) sized from the rated stack kW on the graph - IA-ELY-H2 x pem_kWh_kg_H2 / ely_window_h = 85.8 kW, areal allowances A-M-279; no hand dims. Authored in the H2 bay of the CRYO room behind the new FB_CRYO_ELYZ_PART (FR_CRYO_ASU ruling); a regroup translation is logged in CAD_MOVES.json (A-M-223). No plant_groups classify rule matches the name (H2O_ prefix): the Feature sits at the Plant tree root though the graph sector is CRYO."
     },
     {
       "unit_id": "H2_DRYER",
@@ -1208,6 +1409,20 @@
       "notes": "WP-D1b TBD tank clash = P_TANK_* alias (~study 50\u2013200 L envelope class); not PE"
     },
     {
+      "unit_id": "METAL_STORE",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "enabled": true,
+      "class": "store",
+      "status": "massing_only",
+      "freecad_names": [
+        "METAL_STORE"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [],
+      "notes": "Rev D (2026-10-19): D-DOCK metal product buffer (A-M-270 14 d dispatch campaign) - seed box from graph params.size_mm; graph_dims.py rebuilds it as the sized 500 x 650 mm cylinder. No plant_groups classify rule: Feature sits at the tree root."
+    },
+    {
       "unit_id": "MET_AHU",
       "sector_id": "MFG",
       "presence": "present",
@@ -1278,6 +1493,23 @@
         "Wet"
       ],
       "notes": "secondary MET_SCRUB_REGEN"
+    },
+    {
+      "unit_id": "MET_SYN",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "MET_SYN"
+      ],
+      "builder": "d1b_massing.py",
+      "group_path": [
+        "Plant",
+        "Electrical"
+      ],
+      "notes": "DL-methionine bench train (A-M-416 route A): bench fume-hood envelope from the graph X-SPEC sizing, east of MEOH_TANK in the L0 yard row"
     },
     {
       "unit_id": "MFG_SHOP",
@@ -1474,6 +1706,24 @@
       "notes": "P2+P3 2026-10-19: reactor (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POLY_F/export/poly_f.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POLY_F.stl study envelope [600, 600, 1200]"
     },
     {
+      "unit_id": "POLY_FIBER",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "POLY_FIBER"
+      ],
+      "builder": "mfg_shop.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Wet"
+      ],
+      "notes": "crew textile line (A-M-429) keep-out on the MFG floor, first cassette; CadQuery machine model follows at its unit task (no cadquery interpreter on this host)"
+    },
+    {
       "unit_id": "POLY_OLEFIN",
       "sector_id": "POLYMERS",
       "presence": "present",
@@ -1510,6 +1760,30 @@
       "notes": "P2+P3 2026-10-19: line_machine (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/POWDER_RESIN/export/powder_resin.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/POWDER_RESIN.stl study envelope [1500, 800, 1500]"
     },
     {
+      "unit_id": "PROD_MEOH",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "product",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "Rev D: AQS-DUTY-064 storage row added (A-M-278): sized D850 x H1150 mm welded-steel tank + params.size_mm / design_storage on the graph; no FreeCAD Feature yet, so graph_dims logs applied=false until a CAD lane stages it at the D-DOCK (as REMIN/HOPPER today). cad/stl/PROD_MEOH.stl carries the study envelope."
+    },
+    {
+      "unit_id": "PROD_O2",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "product",
+      "status": "unmapped",
+      "freecad_names": [],
+      "builder": null,
+      "group_path": [],
+      "notes": "Rev D: AQS-DUTY-064 storage row added (A-M-278): surplus-O2 cylinder-bank equivalent volume D1100 x H1450 mm (200 bar, CRYO_O2 storage_mode basis; thin-wall equivalent figure only) + params.size_mm / design_storage on the graph; no FreeCAD Feature yet (graph_dims applied=false until placed). cad/stl/PROD_O2.stl carries the study envelope."
+    },
+    {
       "unit_id": "PV_ARRAY",
       "sector_id": "ELEC",
       "presence": "present",
@@ -1539,6 +1813,42 @@
       "notes": "thermal collector bus logical; related HX Features (CRYO_HX_Q4, MET_HX_Q4, HVAC_Q4, FC_HX_Q4, PV_HX_Q4, UTIL_ROUGH_Q4) belong to other units \u2014 no Q4_BUS Feature"
     },
     {
+      "unit_id": "QUAIL_CAGE",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "QUAIL_CAGE"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "coturnix cage beside the coop (A-M-418)"
+    },
+    {
+      "unit_id": "RABBIT_HUTCH",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "RABBIT_HUTCH"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "row 2 (A-M-421)"
+    },
+    {
       "unit_id": "RECTIFIER",
       "sector_id": "ELEC",
       "presence": "present",
@@ -1554,6 +1864,24 @@
         "Electrical"
       ],
       "notes": ""
+    },
+    {
+      "unit_id": "RELIEF_CRYO",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "enabled": true,
+      "class": "relief",
+      "status": "mapped",
+      "freecad_names": [
+        "CRYO_VENT_STACK"
+      ],
+      "builder": "cryo.py",
+      "group_path": [
+        "Plant",
+        "Process",
+        "Cryo"
+      ],
+      "notes": "Rev D (2026-10-19): CRYO_VENT_STACK (250 mm bore, 8 m from the L-1 floor, per the RELIEF_H2 -> H2_STACK pattern in gas_handling.py) is the RELIEF_CRYO discharge - cryo non-condensable contingency, NFPA 55, not the dock. Riser column (18250, 11000) is the clear aisle over the CRYO room north strip: FAB_TOOL sits over the duty-sheet origin (18300, 9500), so the S56/S86 relief header runs ~1.6 m north to this riser. Feature name, not a unit alias."
     },
     {
       "unit_id": "RELIEF_H2",
@@ -1855,6 +2183,24 @@
       "notes": "P2+P3 2026-10-19: reactor (live); parametric CadQuery model mfg/polymers.py reads params.design/params.envelope (foundry_poly.py, AQS-DUTY-073); exports models/mfg/VDF_SYN/export/vdf_syn.step|.stl + bom.csv/fasteners.csv/WORK_ORDER.md; no plant.FCStd Feature - layout box is the cad/stl/VDF_SYN.stl study envelope [600, 600, 1200]"
     },
     {
+      "unit_id": "VERMI_BIN",
+      "sector_id": "FARM",
+      "presence": "present",
+      "enabled": true,
+      "class": null,
+      "status": "massing_only",
+      "freecad_names": [
+        "VERMI_BIN"
+      ],
+      "builder": "farm.py",
+      "group_path": [
+        "Plant",
+        "Life",
+        "Farm"
+      ],
+      "notes": "vermicompost beside the BSFL bin (A-M-423)"
+    },
+    {
       "unit_id": "WAFER_FAB",
       "sector_id": "FAB",
       "presence": "present",
@@ -2080,124 +2426,9 @@
         "Electrical"
       ],
       "notes": "secondaries ZNBR2_NEG_TANK, ZNBR2_POS_TANK, ZNBR2_BR2_SCRUBBER, ZNBR2_BR2_REGEN"
-    },
-    {
-      "unit_id": "AIR_RECEIVER",
-      "sector_id": "CRYO",
-      "presence": "present",
-      "enabled": true,
-      "class": "store",
-      "status": "massing_only",
-      "freecad_names": [
-        "AIR_RECEIVER"
-      ],
-      "builder": "d1b_massing.py",
-      "group_path": [],
-      "notes": "Rev D (2026-10-19): D-DOCK plant-air receiver (A-M-270) - seed box from graph params.size_mm in the north dock hall; graph_dims.py rebuilds it as the sized 700 x 900 mm cylinder at the placed centre (CAD_GRAPH_DIMS applied=true closes the P1 audit item). No plant_groups classify rule: Feature sits at the tree root."
-    },
-    {
-      "unit_id": "CRYO_ASU",
-      "sector_id": "CRYO",
-      "presence": "present",
-      "enabled": true,
-      "class": "cold_box",
-      "status": "mapped",
-      "freecad_names": [
-        "CRYO_ASU"
-      ],
-      "builder": "cryo.py",
-      "group_path": [
-        "Plant",
-        "Process",
-        "Cryo"
-      ],
-      "notes": "Rev D: P4 restored unit. TSA cold box as one Part::Feature compound: enclosure box with the 3 x 13X beds as internal cylinders, every dim from params.design (beds/bed_D_mm/bed_L_mm; no cryogenic column, AQS-DUTY-069 Rev C) - the COLD_BOX internals pattern, so resolve_overlaps / regroup translate it as one solid. Authored on the O2/ignition side of the FB_CRYO_H2_PART split, inside the 2 h CRYO enclosure (fire_rooms gives it no room of its own; its FR_CRYO_ASU entry now finds a solid). Any regroup translation is logged in CAD_MOVES.json (A-M-223)."
-    },
-    {
-      "unit_id": "FOOD_STORE",
-      "sector_id": "FARM",
-      "presence": "present",
-      "enabled": true,
-      "class": "store",
-      "status": "massing_only",
-      "freecad_names": [
-        "FOOD_STORE"
-      ],
-      "builder": "d1b_massing.py",
-      "group_path": [],
-      "notes": "Rev D (2026-10-19): D-DOCK food buffer (A-M-270 X-RED-08 80 d dry reserve) - seed box from graph params.size_mm; graph_dims.py rebuilds it as the sized 350 x 450 mm cylinder. No plant_groups classify rule: Feature sits at the tree root."
-    },
-    {
-      "unit_id": "H2O_ELYZ",
-      "sector_id": "CRYO",
-      "presence": "present",
-      "enabled": true,
-      "class": "pem_electrolyser",
-      "status": "mapped",
-      "freecad_names": [
-        "H2O_ELYZ"
-      ],
-      "builder": "cryo.py",
-      "group_path": [],
-      "notes": "Rev D: P4 restored unit (owner ruling D-O2). One Part::Feature compound: PEM stack skid + BoP deck (H2/O2 separators, deoxo, dryer per params.internals) sized from the rated stack kW on the graph - IA-ELY-H2 x pem_kWh_kg_H2 / ely_window_h = 85.8 kW, areal allowances A-M-279; no hand dims. Authored in the H2 bay of the CRYO room behind the new FB_CRYO_ELYZ_PART (FR_CRYO_ASU ruling); a regroup translation is logged in CAD_MOVES.json (A-M-223). No plant_groups classify rule matches the name (H2O_ prefix): the Feature sits at the Plant tree root though the graph sector is CRYO."
-    },
-    {
-      "unit_id": "METAL_STORE",
-      "sector_id": "FOUNDRY",
-      "presence": "present",
-      "enabled": true,
-      "class": "store",
-      "status": "massing_only",
-      "freecad_names": [
-        "METAL_STORE"
-      ],
-      "builder": "d1b_massing.py",
-      "group_path": [],
-      "notes": "Rev D (2026-10-19): D-DOCK metal product buffer (A-M-270 14 d dispatch campaign) - seed box from graph params.size_mm; graph_dims.py rebuilds it as the sized 500 x 650 mm cylinder. No plant_groups classify rule: Feature sits at the tree root."
-    },
-    {
-      "unit_id": "PROD_MEOH",
-      "sector_id": "CRYO",
-      "presence": "present",
-      "enabled": true,
-      "class": "product",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "Rev D: AQS-DUTY-064 storage row added (A-M-278): sized D850 x H1150 mm welded-steel tank + params.size_mm / design_storage on the graph; no FreeCAD Feature yet, so graph_dims logs applied=false until a CAD lane stages it at the D-DOCK (as REMIN/HOPPER today). cad/stl/PROD_MEOH.stl carries the study envelope."
-    },
-    {
-      "unit_id": "PROD_O2",
-      "sector_id": "CRYO",
-      "presence": "present",
-      "enabled": true,
-      "class": "product",
-      "status": "unmapped",
-      "freecad_names": [],
-      "builder": null,
-      "group_path": [],
-      "notes": "Rev D: AQS-DUTY-064 storage row added (A-M-278): surplus-O2 cylinder-bank equivalent volume D1100 x H1450 mm (200 bar, CRYO_O2 storage_mode basis; thin-wall equivalent figure only) + params.size_mm / design_storage on the graph; no FreeCAD Feature yet (graph_dims applied=false until placed). cad/stl/PROD_O2.stl carries the study envelope."
-    },
-    {
-      "unit_id": "RELIEF_CRYO",
-      "sector_id": "CRYO",
-      "presence": "present",
-      "enabled": true,
-      "class": "relief",
-      "status": "mapped",
-      "freecad_names": [
-        "CRYO_VENT_STACK"
-      ],
-      "builder": "cryo.py",
-      "group_path": [
-        "Plant",
-        "Process",
-        "Cryo"
-      ],
-      "notes": "Rev D (2026-10-19): CRYO_VENT_STACK (250 mm bore, 8 m from the L-1 floor, per the RELIEF_H2 -> H2_STACK pattern in gas_handling.py) is the RELIEF_CRYO discharge - cryo non-condensable contingency, NFPA 55, not the dock. Riser column (18250, 11000) is the clear aisle over the CRYO room north strip: FAB_TOOL sits over the duty-sheet origin (18300, 9500), so the S56/S86 relief header runs ~1.6 m north to this riser. Feature name, not a unit alias."
     }
   ],
   "rev_c_note": "Graph Rev K: FLUE_KO -> FLUE_CAP and RELIEF_H2 -> H2_STACK added. LOAD_AGG is class boundary on the graph. Units created on the placed copy from issued or study envelopes carry their own unit_id as the Feature name and are not listed here. Coverage block below is from the original inventory and is not recounted.",
-  "rev_d_note": "Rev D unit map check 2026-10-21: 28 geometry-class \"(standby)\" note tokens refreshed from each unit's live params.envelope.state (pot/cells LIVE via foundry_poly; alternates standby_rated)."
+  "rev_d_note": "Rev D unit map check 2026-10-21: 28 geometry-class \"(standby)\" note tokens refreshed from each unit's live params.envelope.state (pot/cells LIVE via foundry_poly; alternates standby_rated).",
+  "rev_e_note": "Rev E 2026-10-29: the X-FARM/X-POLY/X-UI-002 build-out units join the map - the animal chain + FEED_PREP + AQUA_UV (farm.py), MET_SYN + GW_INTAKE (d1b_massing.py), POLY_FIBER (mfg_shop.py). Dims are read from the graph params at build time (flat size_mm or envelope.size_mm), never re-typed in the builders. DUCKWEED is scale-guarded and absent at the M1 baseline. CAD_ROOM_FINDINGS.json records the two fire rooms the fit pass now skips instead of crashing on (pre-existing squeeze at FR_AFTERBURNER / FR_OIL_PYRO); FR_H2O_ELYZ cuts its own unit - both GA findings."
 }

@@ -916,7 +916,7 @@ unit envelope BOM,MET_SCRUB,Body D800 x 3803 mm,1,"PVC-U shell, sump, and packin
 unit envelope BOM,MET_SCRUB,Process nozzle DN15,5,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,MET_SCRUB,Process nozzle DN50,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,MET_SCRUB,Process nozzle DN300,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
-unit envelope BOM,MET_SYN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser.",docs-authority/duties/MET_SYN.md
+unit envelope BOM,MET_SYN,Body / envelope 1500 x 1000 x 1800 mm,1,"Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser.",docs-authority/duties/MET_SYN.md
 unit envelope BOM,MET_SYN,Process nozzle DN15,4,"Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,MFG_SHOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/MFG_SHOP.md
 unit envelope BOM,MFG_SHOP,Process nozzle DN15,29,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
