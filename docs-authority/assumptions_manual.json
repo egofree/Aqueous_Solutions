@@ -7138,5 +7138,23 @@
   ],
   "needs_verification": true,
   "verification_test": "Class stability and freeboard review (Q-030)"
+ },
+ {
+  "id": "A-M-415",
+  "value": "Rectifier trim heaters (every present kW edge out of RECTIFIER that is not a DC channel to an EW cell or an IA-RECT loss) counted at their rated edge values in the plant bus demand and fed by a RECT-TRIM feeder",
+  "units": "kW",
+  "where": "flow_graph/param/sizing/power.py rectifier_trims(); docs-authority/_power_sizing.py cases; docs-authority/_one_line.py RECT-TRIM row; flow_graph/param/ess_tf.py bus section rating",
+  "basis": "Owner decision 2026-10-29: every unit is sized for its edge case from actual need, so the trim heaters are carried at rated load rather than a duty-cycle average; the rated values are the graph edge rates, with the heat exchanger trim already carrying its 1.25 margin",
+  "sensitivity": "Each kW of trim load adds to the bus demand and, through the extension hall that roofs the array, raises the array, storage, inverter count and bus section rating in proportion",
+  "replaced_by": "Measured or controller-limited trim heater duty from commissioning, or a thermal-control study that sets a lower coincident load",
+  "task": "QA audit 2026-10-29, rectifier trim heater supply",
+  "files": [
+   "flow_graph/param/sizing/power.py",
+   "docs-authority/_power_sizing.py",
+   "docs-authority/_one_line.py",
+   "flow_graph/param/ess_tf.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 docs-authority/_power_sizing.py: bounding P_kW equals the node and feed sum plus rect_ac_input_kW plus the rectifier_trims sum plus the converged EXT_HALL load; SOL_ARK_60K.params.redundancy.bus_demand_kW equals mvs.electrical.need_kw"
  }
 ]

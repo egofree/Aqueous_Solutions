@@ -85,34 +85,37 @@ rect_ew=rpar.get('rect_ac_input_kW')
 rect_row=next((r['kw'] for r in rows if r['unit']=='RECTIFIER'),None)
 ext_kw=next((r['kw'] for r in loads if r['unit']=='EXT_HALL'),0.0)
 _and=lambda xs: ', '.join(xs[:-1])+' and '+xs[-1] if len(xs)>1 else ''.join(xs)
-trims=[(e['stream_id'],e['to_unit_id'],(e.get('rate') or {}).get('value')) for e in g['edges'] if e.get('from_unit_id')=='RECTIFIER' and e.get('presence')!='retired' and not e['to_unit_id'].startswith('EW_') and not e['stream_id'].startswith('IA-RECT-') and isinstance((e.get('rate') or {}).get('value'),(int,float))]
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from flow_graph.param.sizing import power as _PW
+trims=_PW.rectifier_trims(g); tk=sum(t[2] for t in trims)
 s17=next(((e.get('rate') or {}).get('value') for e in g['edges'] if e.get('from_unit_id')=='SOL_ARK_60K' and e.get('to_unit_id')=='RECTIFIER' and 'elec' in (e.get('layers') or [])),None)
 if isinstance(need,(int,float)) and isinstance(rect_ew,(int,float)):
-    resid=need-conn-rect_ew
+    resid=need-conn-rect_ew-tk
     rel=(f"The plant bus demand in AQS-ELEC-007 (`mvs.electrical.need_kw`) is {need:.1f} kW, which is {need-conn:.1f} kW more than the connected load. "
          "The power sizing `docs-authority/_power_sizing.py` sums the loads of the units and the feeds of the inverter bus, as this page does, including the extension hall `EXT_HALL`. "
          f"It then adds the alternating-current input of the rectifier for the electrowinning cells at the bounding current, which the graph records as `RECTIFIER.params.rect_ac_input_kW` ({rect_ew:.2f} kW). "
          "This page lists the electrowinning cells as direct-current loads behind the rectifier and leaves them out of the alternating-current sum"
          + (f", and the `RECTIFIER` row carries only the {rect_row:.1f} kW of its 48 V rails and auxiliaries" if isinstance(rect_row,(int,float)) else '')
-         + ". The rectifier input for the cells is therefore in the bus demand but not in the connected load. Table 3.1 reconciles the two.")
+         + ". The rectifier input for the cells is therefore in the bus demand but not in the connected load."
+         + (f" The power sizing also adds the {len(trims)} electric trim heaters that the rectifier feeds, at their rated load (A-M-415): " + _and([f'{t[1]} by stream {t[0]} ({t[2]:.2f} kW)' for t in trims]) + f", {tk:.2f} kW in all." if trims else '')
+         + " Table 3.1 reconciles the two.")
     rtab=["Table 3.1. Connected load and plant bus demand", "", "| Quantity | kW | Source |", "| --- | --- | --- |",
           f"| Connected alternating-current load | {conn:.2f} | Section 2 |",
           f"| of which the extension hall `EXT_HALL` | {ext_kw:.2f} | Table 5.1 |",
           f"| Rectifier input for the electrowinning cells | {rect_ew:.2f} | `RECTIFIER.params.rect_ac_input_kW` |",
-          f"| Sum | {conn+rect_ew:.2f} | |",
+          *([f"| Trim heaters fed by the rectifier, at rated load | {tk:.2f} | `flow_graph/param/sizing/power.py` `rectifier_trims` |"] if trims else []),
+          f"| Sum | {conn+rect_ew+tk:.2f} | |",
           f"| Plant bus demand | {need:.2f} | `mvs.electrical.need_kw` |",
           f"| Difference | {resid:.2f} | |"]
     after=[]
     if abs(resid)>=0.05:
-        after.append(f"The difference of {resid:.2f} kW is not explained by the rectifier input and must be traced in the power sizing.")
+        after.append(f"The difference of {resid:.2f} kW is not explained by the rectifier input and the trim heaters and must be traced in the power sizing.")
     if isinstance(s17,(int,float)):
-        after.append(f"The one-line diagram AQS-ELEC-002 feeds the rectifier through two feeders: stream S17 at {s17:.1f} kW for its 48 V rails and auxiliaries, and the RECT-EW feeder at the {rect_ew:.1f} kW input for the cells. Together they carry the {s17 + rect_ew:.1f} kW that the plant bus demand counts for the rectifier.")
-    if trims:
-        _tk=sum(t[2] for t in trims)
-        after_t=(f"The rectifier also feeds {len(trims)} electric trim heaters: " + _and([f'{t[1]} by stream {t[0]} ({t[2]:.2f} kW)' for t in trims]) + f", {_tk:.2f} kW in all at their rated values. "
-                 "Neither feeder of the rectifier and no term of the plant bus demand includes this load, so the heaters have no supply in the sizing. "
-                 "This is an open question for the project owner in `REWRITE_TODO.md`; this page does not change any value.")
-        after.append(after_t)
+        after.append(f"The one-line diagram AQS-ELEC-002 feeds the rectifier through "
+                     + ("three feeders" if trims else "two feeders")
+                     + f": stream S17 at {s17:.1f} kW for its 48 V rails and auxiliaries, the RECT-EW feeder at the {rect_ew:.1f} kW input for the cells"
+                     + (f", and the RECT-TRIM feeder at the {tk:.1f} kW of the trim heaters" if trims else '')
+                     + f". Together they carry the {s17 + rect_ew + tk:.1f} kW that the plant bus demand counts for the rectifier.")
 else:
     rel="The plant bus demand or the rectifier input is not on the graph, so the connected load cannot be reconciled with the bus demand."
     rtab=[]; after=[]
@@ -121,7 +124,7 @@ lock_list='; '.join(f"{r['unit']} {r['kw']:.3f} kW" for r in sorted([r for r in 
 out=[f"""# Load list
 
 Document number: AQS-ELEC-003
-Revision: F
+Revision: G
 Date: 2026-10-29
 Generated by `docs-authority/_load_list.py` from the plant graph (sha256 {hashlib.sha256(open('flow_graph/plant_flow_graph.json','rb').read()).hexdigest()[:12]}), with a JSON twin `docs-authority/LOAD_LIST.json`. Do not edit by hand; change the generator or the graph and run `python3 -m flow_graph.param.regen`.
 Authority: AQS-PLAN-007 task X-ELS-02. Study. Not a PE stamp.
@@ -134,6 +137,7 @@ Authority: AQS-PLAN-007 task X-ELS-02. Study. Not a PE stamp.
 | D | Purpose and scope added; the status written as sentences; tables numbered | 2026-10-29 |
 | E | Section 3 added: the connected load reconciled with the plant bus demand of AQS-ELEC-007 | 2026-10-29 |
 | F | Section 3 corrected: the rectifier has two feeders on the one-line diagram, which together carry its share of the bus demand; the trim heaters it feeds are the load without a supply | 2026-10-29 |
+| G | The trim heaters fed by the rectifier counted at rated load in the plant bus demand (A-M-415); Table 3.1 carries them and the rectifier has three feeders | 2026-10-29 |
 
 ## 1. Purpose and scope
 

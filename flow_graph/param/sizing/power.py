@@ -28,3 +28,17 @@ def oversized(P_kW, night_h, eta_rt, yield_kWh_kWp_d, derate, factor, dc_ac, inv
     return dict(pv_base_kWp=base, pv_kWp=kwp, store_kWh=P_kW*night_h, discharge_kW=P_kW, charge_kW=charge,
                 store_kW=max(P_kW, charge), store_in_kWh=P_kW*night_h/eta_rt, inverters=n, inv_kW=n*inv_unit_kW,
                 export_peak_kW=n*inv_unit_kW - P_kW, export_kWh_d_clear=(factor-1)*E_bal, cloudy_yield_frac=1/factor)
+
+def rectifier_trims(g):
+    """Electric trim heaters fed from the rectifier node: every present edge out of RECTIFIER with a kW rate that is
+    neither a DC channel to an electrowinning cell (EW_n) nor the rectifier's own loss (IA-RECT-*). Counted at their
+    rated values in the plant bus demand (A-M-415). Returns [(stream_id, to_unit_id, kW)]."""
+    out = []
+    for e in g['edges']:
+        r = e.get('rate') or {}
+        if e.get('from_unit_id') != 'RECTIFIER' or e.get('presence') == 'retired' or r.get('unit') != 'kW' or not isinstance(r.get('value'), (int, float)):
+            continue
+        if e['to_unit_id'].startswith('EW_') or e['stream_id'].startswith('IA-RECT-'):
+            continue
+        out.append((e['stream_id'], e['to_unit_id'], float(r['value'])))
+    return out

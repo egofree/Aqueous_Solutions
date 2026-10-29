@@ -41,7 +41,8 @@ for e in _g['edges']:
     r=e.get('rate') or {}
     if r.get('unit')=='kW' and isinstance(r.get('value'),(int,float)): B[u]=max(B.get(u,0.0),float(r['value']))
 ref_rect=ew['I_elem_A']*DR.val(_d,'ELEC.distribution-train.RECTIFIER.ref_case_cell_V')/DR.val(_d,'ELEC.distribution-train.RECTIFIER.ref_case_CE')/1000
-cases={'bounding':round(sum(B.values())+rect['Pac_kW'],2),'reference':round(sum(B.values())+ref_rect,2)}
+TRIM=sum(t[2] for t in PW.rectifier_trims(_g))   # rectifier trim heaters at rated load (A-M-415)
+cases={'bounding':round(sum(B.values())+rect['Pac_kW']+TRIM,2),'reference':round(sum(B.values())+ref_rect+TRIM,2)}
 
 # --- read the site profile's power portfolio ---
 from flow_graph.param import portfolio as PF

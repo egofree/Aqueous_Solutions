@@ -206,7 +206,9 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     # PV 336.8304 -> 336.8121 (2026-10-24): the BACKUP_GEN exercise burns hydrogen first (S45), which needs less O2
     # than the C5-C10 cut, so CRYO_ASU and H2O_ELYZ draw less and the balancing PV average follows (A-M-383)
     # PV 336.8121 -> 336.8116 (2026-10-25): pumps and heads read the profile gravity 9.80665 m/s2 instead of 9.81 (Q-032)
-    assert gen["kw_sum"] == pytest.approx(336.8116 + 4.0 + 0.0082)   # PV 336.8116 (profile gravity, Q-032)
+    # PV 336.8116 -> 350.0995 (2026-10-29): the rectifier trim heaters at rated load in the bus demand (A-M-415) grow the
+    # array and the extension hall that roofs it, whose HVAC load (EXT_HALL 68.28 -> 81.57 kW) the balancing PV average follows
+    assert gen["kw_sum"] == pytest.approx(350.0995 + 4.0 + 0.0082)   # PV 350.0995 (trim heaters at rated load, A-M-415)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(

@@ -157,7 +157,10 @@ def tf(g, ps=None):
     # X-RED-03 distribution N+1 (A-M-152): main-tie-main 480 V bus, each section rated for the whole bus demand (tie closes on loss of a main);
     # MCC and T-1 duplicated; critical life-support loads on an ATS fed from both sections. NEC 240.6 standard ratings.
     import math
-    dem = sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == 'SOL_ARK_60K' and e['rate'].get('unit') == 'kW')
+    # the section carries the plant bus demand that the power sizing writes (mvs.electrical.need_kw, docs-authority/_power_sizing.py);
+    # the sum of the inverter feed edges is only the fallback, because it misses the loads with no feed edge (RECT-EW, the trim heaters)
+    _nk = ((g.get('mvs') or {}).get('electrical') or {}).get('need_kw') or {}
+    dem = _nk.get('value') if isinstance(_nk.get('value'), (int, float)) else sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == 'SOL_ARK_60K' and e['rate'].get('unit') == 'kW')
     BUS_V = _D['ELEC.distribution-train.SOL_ARK_60K.bus_V']['value']; PF = _D['bus_power_factor']['value']; CLF = _D['continuous_load_factor']['value']
     amps = dem*1000/(math.sqrt(3)*BUS_V*PF); std = _D['ELEC.distribution-train.SOL_ARK_60K.nec_240_6_ratings_A']['value']
     sec = next(x for x in std if x >= amps*CLF); crit = float(ps.get('critical_kW') or _crit()); ca = crit*1000/(math.sqrt(3)*BUS_V*PF)
