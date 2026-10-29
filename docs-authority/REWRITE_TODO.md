@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: N
+Revision: O
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -20,6 +20,7 @@ Date: 2026-10-29
 | L | Batch 9: four sizing pages rewritten through their generators | 2026-10-29 |
 | M | Batch 10: the storage, electrowinning cell and reactor sizing pages rewritten through their generators; one owner question added on the sanitation page | 2026-10-29 |
 | N | Batch 11: the sanitation page given a generator that reads the present graph; the rectifier finding corrected in the load list and power sizing pages; owner questions on the trim heaters and the sanitation feed | 2026-10-29 |
+| O | Batch 12: the evaporator and polymers line sizing pages rewritten through their generators | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -143,6 +144,8 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/sizing/EW_CELLS.md` | Rev D. Rewritten through `docs-authority/_ew_sizing.py`: purpose and scope, the cell basis from the driver values, results in a numbered table, and findings as sentences; the tank length range is now computed. The finding on the hydrogen-cell list is unchanged while the owner question is open. |
 | `docs-authority/sizing/REACTOR_DESIGN.md` | Rev C. Rewritten through `flow_graph/param/reactor_design.py`: purpose and scope, the basis written as sentences with the driver values in place of typed figures, numbered tables, and no section for a reactor type with no unit on the graph. |
 | `docs-authority/sizing/SANITATION.md` | Rev C. Now written by `flow_graph/param/sanitation.py`, rewritten to read the present graph and write only the page (regen stage `sanitation_doc`; the script was a retired one-time graph edit). The train is sized from the flows of BLACK_DIGEST; purpose and scope, numbered tables, sentences. |
+| `docs-authority/sizing/EVAP_DESIGN.md` | Rev C. Rewritten through `flow_graph/param/evap_design.py`: document number, revision and date lines, record of revisions with dates, purpose and scope, the basis as sentences with the driver values, tables numbered and labelled with units, and the comparison with an earlier upper bound removed. |
+| `docs-authority/sizing/POLYMERS_LINE.md` | Rev B. Rewritten through `docs-authority/_polymers_sizing.py`: purpose and scope, sentences, numbered tables; the fluoropolymer train is now reported from the graph, where it runs on imported fluorspar, in place of text that called it blocked; the stale open item on the film caster feed is dropped when the graph has that feed. |
 
 ## 3. In progress
 
@@ -270,9 +273,7 @@ Table 4.2. Pending pages in subfolders
 | `docs-authority/fab/COMB_HEAT.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
 | `docs-authority/fab/POLY_OLEFIN.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
 | `docs-authority/fab/VAC_IND.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
-| `docs-authority/sizing/EVAP_DESIGN.md` | No document number line; no revision line; no date line; no purpose and scope section. Written by `flow_graph/param/evap_design.py`; fix the generator. |
 | `docs-authority/sizing/LITHO_DEV.md` | No record of revisions; no purpose and scope section. |
-| `docs-authority/sizing/POLYMERS_LINE.md` | No purpose and scope section. Written by `docs-authority/_polymers_sizing.py`; fix the generator. |
 | `docs-authority/sizing/SOLAR_PV_CELL.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/VAC_IND.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/VCD_TRAIN.md` | No record of revisions; no purpose and scope section. |

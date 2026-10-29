@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | N | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | O | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -101,7 +101,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-049 | `docs-authority/POLYMER_HX_SIZING.md` | A | 2026-10-15 | Polymer exchanger sizing, HX-5 and HX8 | current |
 | AQS-DUTY-050 | `docs-authority/sizing/LEACH_CSTR_1.md` | B | 2026-10-18 | LEACH_CSTR_1 sizing | current |
 | AQS-DUTY-051 | `docs-authority/sizing/EW_CELLS.md` | D | 2026-10-29 | EW_1 to EW_9 cell sizing | current |
-| AQS-DUTY-060 | `docs-authority/sizing/EVAP_DESIGN.md` | — | — | In-house MVR evaporators EVAP_ACID and EVAP_BASE | current |
+| AQS-DUTY-060 | `docs-authority/sizing/EVAP_DESIGN.md` | C | 2026-10-29 | In-house mechanical vapour recompression evaporators EVAP_ACID and EVAP_BASE | current |
 | AQS-DUTY-061 | `docs-authority/sizing/VENT_SCRUBBER.md` | A | 2026-10-15 | EVAP_ACID vent scrubber | current |
 | AQS-DUTY-062 | `docs-authority/sizing/REACTOR_DESIGN.md` | C | 2026-10-29 | In-house reaction chambers | current |
 | AQS-DUTY-063 | `docs-authority/sizing/SANITATION.md` | C | 2026-10-29 | Blackwater and excreta train | current |
@@ -114,7 +114,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-070 | `docs-authority/sizing/UPW_POLISH.md` | B | 2026-10-29 | Ultrapure water polish (RO and EDI) | current |
 | AQS-DUTY-071 | `docs-authority/sizing/PV_CELL_LINE.md` | B | 2026-10-29 | PV cell line tools | current |
 | AQS-DUTY-072 | `docs-authority/sizing/FOUNDRY_LINE.md` | A | 2026-10-18 | FOUNDRY line sizing | current |
-| AQS-DUTY-073 | `docs-authority/sizing/POLYMERS_LINE.md` | A | 2026-10-18 | POLYMERS line sizing | current |
+| AQS-DUTY-073 | `docs-authority/sizing/POLYMERS_LINE.md` | B | 2026-10-29 | POLYMERS line sizing | current |
 | AQS-DUTY-074 | `docs-authority/sizing/HEAT_BATTERY.md` | A | 2026-10-20 | Heat battery sizing | current |
 | AQS-DUTY-075 | `docs-authority/sizing/HEADERS.md` | B | 2026-10-29 | Header and bus sizing | current |
 | AQS-DUTY-076 | `docs-authority/sizing/GEO_LOOP.md` | A | 2026-10-20 | GEO loop sizing | current |
