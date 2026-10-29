@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: J
+Revision: K
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -16,6 +16,7 @@ Date: 2026-10-29
 | H | Batch 6: the instrument index, inspection and test plan, load list, internals register and per-unit material selections rewritten through their generators | 2026-10-29 |
 | I | Batch 7: the pipe, wire and building-block family plans and the standards list rewritten through their generators | 2026-10-29 |
 | J | Out-of-repository references removed from six equipment lists | 2026-10-29 |
+| K | Batch 8: the load list and power sizing reconciled; the scale-down page and the matplotlib folder index rewritten; one owner question added on the rectifier feed | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -127,6 +128,10 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/CRYO_EQUIPMENT.md` | Rev G. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
 | `docs-authority/FARM_EQUIPMENT.md` | Rev E. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | Rev D. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
+| `docs-authority/LOAD_LIST.md` | Rev E. Section 3 reconciles the connected load with the plant bus demand of AQS-ELEC-007, from the graph. |
+| `docs-authority/POWER_SIZING.md` | Rev H. The plant bus demand split into its parts, and the rectifier feed checked against the rectifier input. |
+| `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | Rev F. Rewritten through `flow_graph/param/scale_down.py`: purpose and scope, the revision history taken out of the summary, the terms table captioned. |
+| `flow_graph/exporters/matplotlib/README.md` | Rev B. Hand-written folder index (it has no generator; the earlier entry here was wrong). Purpose and scope added, and the images built by the regeneration stated from `flow_graph/regen_derived.py`. |
 
 ## 3. In progress
 
@@ -164,7 +169,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/PARAMETRIC_MODEL.md` | No purpose and scope section; working or stock phrasing. Written by `_graph.py`; fix the generator. |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
-| `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | No purpose and scope section; working or stock phrasing. Written by `flow_graph/param/scale_down.py`; fix the generator. |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | No record of revisions; no purpose and scope section; list items written as fragments; arrows used in place of sentences. |
 | `docs-authority/SIGN_SCHEDULE.md` | No purpose and scope section. |
 | `docs-authority/SOLVENT_ROUTE.md` | No record of revisions; no purpose and scope section. |
@@ -270,7 +274,6 @@ Table 4.2. Pending pages in subfolders
 | `docs-authority/sizing/VAC_IND.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/VCD_TRAIN.md` | No record of revisions; no purpose and scope section. |
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | No revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
-| `flow_graph/exporters/matplotlib/README.md` | No document number line; no revision line; no record of revisions; no purpose and scope section. Written by `_layer_views.py`; fix the generator. |
 | `models/mfg/AL_POT/build_log.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; working or stock phrasing. |
 | `models/mfg/BLACK_DEWATER/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
 | `models/mfg/EXPANDER/WO.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
@@ -327,6 +330,7 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/O2_SOURCE.md` (AQS-PAR-005) | Not rewritten. Two generators write this page: `flow_graph/param/o2_source.py` (the current Rev D duty summary) and `flow_graph/param/o2_close.py` report(), whose Rev C closure report would overwrite it if run. The page says the Rev C sections regenerate at the next balance run. Which generator owns the page? Once that is settled, the template can be rewritten without the risk of the other writer restoring the old text. |
 | `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | The note on driver `backup_gen_rated_kW` states 125 % of the critical load list in 5 kW steps, which gives 20 kW for the present critical loads, but the driver holds 40 kW (AQS-ELEC-007 section 5). Should the driver or its note change? |
 | `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | `SOL_ARK_60K.params.redundancy` was computed for a bus demand of 150.8 kW while the plant bus demand is 179.7 kW, so the bus section rating needs recomputing by its stage (AQS-ELEC-007 section 5). Should that stage run after the power stage? |
+| `docs-authority/LOAD_LIST.md` (AQS-ELEC-003), `docs-authority/ONE_LINE.md` (AQS-ELEC-002) | The rectifier is fed by stream S17 at the 12 kW of its 48 V rails, and the one-line diagram sizes its feeder from that, but the rectifier also draws the 38.7 kW input for the electrowinning cells (`RECTIFIER.params.rect_ac_input_kW`), which only the plant bus demand counts. Should S17 and the `RECTIFIER` row of the load list carry the full input? The writer of S17 and the rectifier numbers are on hold, so neither value was changed. |
 | `docs-authority/duties/` | Duty sheets remain for units that are no longer on the graph, mostly farm, crop and animal units (for example ABE, CHICKENS, CROP_TOMATO, RECT_EW). `_duty_basis.py` skips them, so they keep Graph Rev BH and stale values. Should they be deleted, or moved to an archive? |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` (AQS-REV-H2-001) | The graph sends cathode hydrogen from EW_1 to EW_3 and EW_5 to EW_9, while AQS-STD-002 section 9 names EW_1, EW_2, EW_4 and EW_9. Which is correct? |
 | `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |

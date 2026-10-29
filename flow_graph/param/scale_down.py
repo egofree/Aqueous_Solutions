@@ -31,7 +31,7 @@ GRAPH = os.path.join(ROOT, 'flow_graph', 'plant_flow_graph.json')
 OUT_JSON = os.path.join(ROOT, 'design_tool', 'aqs_design_tool', 'data', 'scale_down.json')
 OUT_MD = os.path.join(ROOT, 'docs-authority', 'SCALE_DOWN_UNRECLAIMED.md')
 
-REVISION, DATE = 'E', '2026-10-24'
+REVISION, DATE = 'F', '2026-10-29'
 SUPPLY_SECTORS = {'ELEC'}       # an electrical feed stops when its load is off
 TRADE_SECTOR = 'DOCK'           # imports are not bought; exports and vents stop
 BATCH_FILL = 0.7                # A-M-331
@@ -197,9 +197,10 @@ def page(a, units_off, hand_rules):
         ['C', 'Unit-level map for units switched off inside a running sector', '2026-10-01'],
         ['D', 'Sector names brought to the current sector list', '2026-10-24'],
         ['E', 'Rewritten in plain language. Sector lists now computed from the graph by a balance on each sector, which '
-              'closes the open FOUNDRY, POLYMERS and HEAT rows. Scale-down limits derived for those three sectors.', DATE]])
+              'closes the open FOUNDRY, POLYMERS and HEAT rows. Scale-down limits derived for those three sectors.', '2026-10-24'],
+        ['F', 'Summary renamed purpose and scope; the revision history removed from the summary; the terms table captioned.', DATE]])
     w('')
-    w('## 1. Summary')
+    w('## 1. Purpose and scope')
     w('')
     w('The design tool lets a user plan a smaller plant, or switch parts of it off. The plant is designed so that every '
       'material and heat stream is used again somewhere: scrap is remelted, chlorine goes back to the leach, waste heat '
@@ -213,11 +214,14 @@ def page(a, units_off, hand_rules):
     w('2. If the plant is built smaller, how small can each sector go before it stops working, and what does a '
       'smaller size cost? (Section 4.)')
     w('')
-    w('Earlier revisions answered question 1 with hand-typed lists and left the FOUNDRY (metal production), POLYMERS '
-      '(plastics) and HEAT (heat storage) rows open. This revision computes every sector\'s list from the plant graph '
-      'and answers question 2 for those three sectors from their mass and energy balances.')
+    w('Every list on this page is computed from the plant graph by a balance on each sector, and the size limits of '
+      'section 4 come from the mass and energy balances of the sectors concerned.')
     w('')
     w('## 2. Terms')
+    w('')
+    w('Table 2.1 defines the terms used on this page.')
+    w('')
+    w('Table 2.1. Terms')
     w('')
     L += (table(['Term', 'Meaning'], [
         ['Sector', 'A group of units that does one job, such as FOUNDRY (metal production). The sector list is the plant graph\'s, AQS-SEC-001.'],
@@ -237,7 +241,7 @@ def page(a, units_off, hand_rules):
     w('')
     w('- A stream coming in from another sector loses its sink. The material or heat is left unreclaimed in the sector that makes it.')
     w('- A stream going out to another sector loses its source. That sector goes short of something it needs.')
-    w('- Electrical feeds, including electric heaters that top up a heat store, and purchased imports simply stop. Exports and vents through the dock stop with the sector. Neither is a closure gap.')
+    w('- Electrical feeds, including electric heaters that top up a heat store, and purchased imports stop. Exports and vents through the dock stop with the sector. Neither is a closure gap.')
     w('- A stream whose rate is zero in the current design carries nothing today. It is listed for completeness only.')
     w('')
     w('The generator recomputes these lists from the plant graph on every regeneration, so they follow design changes. The '
@@ -320,7 +324,7 @@ def page(a, units_off, hand_rules):
                [[c['unit_id'], fmt(c['hold_kW']), fmt(c['dc_kW']), fmt(c['hold_share'])] + [fmt(c['energy_factor'][str(x)]) for x in SCALES] for c in lim['FOUNDRY']['cells']])
     w('')
     w('The induction melter works in heats of one full crucible. Each heat starts from a cold charge, so the energy per '
-      'kilogram does not change with the number of heats [7]. A smaller plant simply runs fewer heats. Below the scale '
+      'kilogram does not change with the number of heats [7]. A smaller plant runs fewer heats. Below the scale '
       'at which a day\'s scrap fills one crucible, the melter runs in campaigns and the scrap waits in a buffer of one '
       'crucible. Nothing is left unreclaimed.')
     w('')

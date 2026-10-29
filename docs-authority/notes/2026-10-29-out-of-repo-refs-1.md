@@ -6,6 +6,6 @@ Six equipment lists cited documents that are not in this repository: `POWER/Powe
 
 The references to the outside documents were removed from the backup generator, fuel cell, geothermal, cryogenic, farm and solar cell equipment lists. Two removals took content with them. The fuel cell list no longer quotes the stack range of the old power narrative, and the geothermal list no longer has the rating row that quoted a 100 kW baseload from it; neither value is on the plant graph or in the drivers, and both were already marked as narrative only. The cryogenic list now says that no rating is taken from earlier narrative documents. The FreeCAD script paths were corrected.
 
-The footers of the backup generator and geothermal flow diagram scripts in `flow_graph/exporters/matplotlib/` also cited the power narrative and were corrected. Their images are built by the site build, which this work does not run, so the committed images keep the old footer until the next site build.
+The footers of the backup generator and geothermal flow diagram scripts in `flow_graph/exporters/matplotlib/` also cited the power narrative and were corrected. Their images are not tracked and are not built by the regeneration, so nothing else changed. (An earlier version of this note said the images were tracked; they are not.)
 
 No tag, rating or rule changed.
