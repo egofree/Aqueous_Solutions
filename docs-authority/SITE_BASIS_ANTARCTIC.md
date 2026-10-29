@@ -1,14 +1,15 @@
 # Antarctic site basis
 
 Document number: AQS-SITE-008
-Revision: A
-Date: 2026-10-25
+Revision: B
+Date: 2026-10-29
 Profile: `flow_graph/param/sites/antarctic.json` (site id `antarctic`)
 Plan: AQS-PLAN-011 section 7; owner decisions Q-021 (coastal McMurdo class) and Q-025 (waste processing under the treaty)
 
 | Rev | Description | Date |
 |---|---|---|
 | A | First issue: profile, environment, scaling actions, design consequences, closure status | 2026-10-25 |
+| B | Section 5: the locale run completes and the site design check passes; the blocking write-stage item is closed | 2026-10-29 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -48,12 +49,11 @@ This page records the Antarctic variant: a coastal platform of the McMurdo class
 
 ## 5. Closure status
 
-The profile is committed and validates. The locale run is blocked on the wind-primary power sizing integration into `flow_graph/param/write_graph.py`: the `write_graph power` stage accesses PV-specific output keys (`pv_kWp`, `store_kW`, `inverters`, `export_peak_kW`) that a wind-primary portfolio does not produce. The power-sizing calculation itself has been extended to handle wind-primary portfolios (nameplate = demand / capacity factor). The remaining work is the write-stage restructure.
+The profile is committed and validates. A locale run on 2026-10-29 completes and its site design check passes. The first run had been blocked because the power write stage read keys that only a photovoltaic-primary portfolio produces; `flow_graph/param/write_graph.py` now writes the parameters of a non-photovoltaic primary source, so the wind-primary portfolio of this site is written to the graph. The outputs that differ from the baseline are listed in `sites/antarctic/SITE_OUTPUTS.json`; `sites/` is not committed, so run `python3 -m flow_graph.param.regen --site antarctic` to reproduce them.
 
 Open items, in order:
 
-1. Wind-primary write-stage integration: `flow_graph/param/write_graph.py` power() must handle non-PV primary sources. This is the X-LOC-08 design pass.
-2. ASHRAE climatic design conditions for McMurdo replace the interim design temperatures (A-M-392).
-3. The metocean and geotechnical survey at the chosen coastal parcel replaces the interim wind, snow, soil and seismic values (A-M-393).
-4. The mooring site itself (Q-021); every site-bound value is a station-climate interim until it is chosen.
-5. Environmental evaluation under Annex I for the waste-processing role (Q-025).
+1. ASHRAE climatic design conditions for McMurdo replace the interim design temperatures (A-M-392).
+2. The metocean and geotechnical survey at the chosen coastal parcel replaces the interim wind, snow, soil and seismic values (A-M-393).
+3. The mooring site itself (Q-021); every site-bound value is a station-climate interim until it is chosen.
+4. Environmental evaluation under Annex I for the waste-processing role (Q-025).

@@ -1,8 +1,8 @@
 # Mars site basis
 
 Document number: AQS-SITE-009
-Revision: B
-Date: 2026-10-26
+Revision: E
+Date: 2026-10-29
 Profile: `flow_graph/param/sites/mars.json` (site id `mars`)
 Plan: AQS-PLAN-011 section 8; owner decision Q-022 (mid-latitude, Arcadia Planitia)
 
@@ -10,8 +10,9 @@ Plan: AQS-PLAN-011 section 8; owner decision Q-022 (mid-latitude, Arcadia Planit
 |---|---|---|
 | A | First issue: profile, environment, scaling findings. | 2026-10-26 |
 | B | X-LOC-09 design pass: the locale-replacement units enter the graph and the scaling actions resolve; the ground loop stays. | 2026-10-26 |
-| C | Process-space physics: enclosed-plant physics see the shell atmosphere (A-M-401), not the external atmosphere. Locale regeneration complete: 321 outputs differ from the baseline under sites/mars/. | 2026-10-26 |
+| C | Process-space physics: enclosed-plant physics see the shell atmosphere (A-M-401), not the external atmosphere. Locale regeneration complete under sites/mars/. | 2026-10-26 |
 | D | In-situ resource units enter the graph (ICE_EXTRACT, PERC_REMOVE, ATM_INT; A-M-406 to A-M-408) and the feed cases map to the AQS-ASSAY-001 classes. X-LOC-09 closes. | 2026-10-26 |
+| E | The revision line now matches the record of revisions (it said B after revision D); hand-written output counts replaced by the file that reports them | 2026-10-29 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -71,7 +72,7 @@ The full action list with per-action registers is in the profile (`scaling.actio
 
 ## 5. Open items
 
-1. The locale regeneration is complete: 321 outputs differ from the baseline under `sites/mars/`, and the scaling, portfolio and heat-rejection checks pass at every committed profile.
+1. The locale regeneration is complete (run again on 2026-10-29; the outputs that differ from the baseline, listed in `sites/mars/SITE_OUTPUTS.json`), and the scaling, portfolio and heat-rejection checks pass at every committed profile.
 2. The feed cases (ground ice, regolith, perchlorate salts) map to the AQS-ASSAY-001 classes and wait on the in-situ assay at the landing site.
 3. The landing site itself (Q-022); every site-bound value is a model-based interim until it is chosen.
 4. Solid-oxide CO2 electrolysis (the diverse oxygen source) is a redundancy enrichment, not a scaling requirement; it enters with the oxygen-family study.

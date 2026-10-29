@@ -8,6 +8,6 @@ A locale run for the Death Valley profile at the head of `main` (2026-10-26) wro
 
 ## Change
 
-Check QC-01 in `docs-authority/_design_check.py` skips units of class `intake` (GW_INTAKE, SW_INTAKE, ATM_INT) in the same way as boundaries. The baseline design check (AQS-QA-002) does not change.
+Check QC-01 in `docs-authority/_design_check.py` skips units of class `intake` (GW_INTAKE, SW_INTAKE, ATM_INT) in the same way as boundaries. The baseline mass balance result does not change. Running the generator also added `flow_graph/param/site_units.py` to the module record of AQS-QA-002: that module was committed on 2026-10-26 without the record being regenerated, and the staleness check did not detect it because the record is gated on the graph, not on the module list.
 
 A path in AQS-AUTH-001 that had been shortened with an ellipsis is written in full (`design_tool/aqs_design_tool/solver/scale_down_map.py`).

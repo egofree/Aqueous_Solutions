@@ -1,14 +1,15 @@
 # Floating island site basis
 
 Document number: AQS-SITE-007
-Revision: A
-Date: 2026-10-25
+Revision: B
+Date: 2026-10-29
 Profile: `flow_graph/param/sites/floating_island.json` (site id `floating_island`)
 Plan: AQS-PLAN-011 section 10; owner decisions Q-030 (moored, tropical) and Q-031 (ride out the design storm)
 
 | Rev | Description | Date |
 |---|---|---|
 | A | First issue with the first locale run: profile, environment, scaling actions, design consequences and closure result | 2026-10-25 |
+| B | Section 5: the hand-written output count replaced by the file that reports it; the variant recorded as open while the seawater units are placeholders | 2026-10-29 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -47,7 +48,7 @@ This page records the floating-island variant: a self-contained platform moored 
 
 ## 5. Closure result and open items
 
-The locale run closes: the mass balance and design checks pass, and the site writes 258 outputs that differ from the baseline under `sites/floating_island/`. One finding is recorded:
+The locale run closes: the mass balance and design checks pass, and the hull check (AQS-SITE-012) passes. The site writes the outputs that differ from the baseline, listed in `sites/floating_island/SITE_OUTPUTS.json`. The variant is not complete: the seawater intake SW_INTAKE and the desalination unit DESAL_RO are in the graph only as placeholders that this profile does not activate, and no mineral-recovery unit exists (item 2 below), so X-LOC-11 stays open. One finding is recorded:
 
 1. Storage coverage has no margin: the worst-stretch energy closes at exactly 1.00. The reserve must come from a storage re-size, the flagged wave or ocean-thermal sources, or generator runtime; the choice follows the power-portfolio rules (Q-024) and is part of the X-LOC-11 remainder.
 

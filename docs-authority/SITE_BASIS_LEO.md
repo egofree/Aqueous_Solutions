@@ -1,15 +1,16 @@
 # Low Earth orbit site basis
 
 Document number: AQS-SITE-010
-Revision: B
-Date: 2026-10-26
+Revision: C
+Date: 2026-10-29
 Profile: `flow_graph/param/sites/leo.json` (site id `leo`)
 Plan: AQS-PLAN-011 section 9; owner decision Q-023 (station-class orbit, no rotating section)
 
 | Rev | Description | Date |
 |---|---|---|
-| A | First issue: profile, environment, scaling findings. The locale run correctly identifies that 47 units cannot operate in microgravity without replacement units. X-LOC-10 stays open on the named remainder. | 2026-10-25 |
-| B | X-LOC-10 design pass: the microgravity replacements enter the graph (LIO_BAT, WET_OX, HYDRO_GROW, MEM_DIST, beside the X-LOC-09 set) and every scaling action resolves. Locale regeneration complete: 305 outputs under sites/leo/. The station interior is the process space (A-M-401). | 2026-10-26 |
+| A | First issue: profile, environment, scaling findings. The locale run identifies the units that cannot operate in microgravity without replacement units. X-LOC-10 stays open on the named remainder. | 2026-10-25 |
+| B | X-LOC-10 design pass: the microgravity replacements enter the graph (LIO_BAT, WET_OX, HYDRO_GROW, MEM_DIST, beside the X-LOC-09 set) and every scaling action resolves. Locale regeneration complete under sites/leo/. The station interior is the process space (A-M-401). | 2026-10-26 |
+| C | Hand-written output counts replaced by the file that reports them; open items renumbered | 2026-10-29 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -65,8 +66,8 @@ The full action list with per-action registers is in the profile (`scaling.actio
 
 ## 5. Open items
 
-1. The locale regeneration is complete: 305 outputs differ from the baseline under `sites/leo/`, and the scaling, portfolio and heat-rejection checks pass at every committed profile.
+1. The locale regeneration is complete (the outputs that differ from the baseline, listed in `sites/leo/SITE_OUTPUTS.json`), and the scaling, portfolio and heat-rejection checks pass at every committed profile.
 2. The imported modules (capillary-gap electrolysis cells, centrifuges, pumped-loop reactors) enter as named import paths; designing them in-house is the manufacturing-desk follow-on, task by task.
 3. The orbit parameters (Q-023) are a model-based interim; the eclipse energy re-sizes the storage (A-M-402) when they are chosen.
-5. Recovery-based vent system to replace atmospheric venting.
-6. Crew radiation shielding design (water and polyethylene) for the habitable space.
+4. Recovery-based vent system to replace atmospheric venting.
+5. Crew radiation shielding design (water and polyethylene) for the habitable space.

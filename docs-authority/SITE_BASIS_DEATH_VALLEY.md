@@ -1,8 +1,8 @@
 # Death Valley site basis
 
 Document number: AQS-SITE-006
-Revision: A
-Date: 2026-10-25
+Revision: C
+Date: 2026-10-29
 Profile: `flow_graph/param/sites/death_valley.json` (site id `death_valley`)
 Plan: AQS-PLAN-011 section 6; open question Q-033 (the parcel)
 
@@ -10,6 +10,7 @@ Plan: AQS-PLAN-011 section 6; open question Q-033 (the parcel)
 |---|---|---|
 | A | First issue with the first locale run: profile, environment, design consequences and closure result | 2026-10-25 |
 | B | The evaporative rejection charge is booked (X-LOC-13): the site run carries 255.257 kg/d of spray consumed at DRY_COOLER, evaporated to ATMOS, closed by the groundwater intake GW_INTAKE at the same rate. Section 4 count replaced by its authority; section 5 item 1 closed. | 2026-10-25 |
+| C | Section 5: the intake balance finding of the 2026-10-29 locale run recorded | 2026-10-29 |
 
 Licence: CERN-OHL-S-2.0.
 
@@ -47,7 +48,7 @@ The locale run writes the outputs that differ from the baseline into `sites/deat
 
 ## 5. Closure result and open items
 
-The mass balance closes at the site. The site design check passes: the former QC-09 finding is resolved by making the check read the graph's sized hydrogen store (17 kg, AQS-ELEC-007 / X-PAR-12) instead of a frozen 19 kg constant that the store basis had superseded; the rack holds the store within the band at both sites.
+The mass balance closes at the site. The design check on the 2026-10-29 locale run had failed on GW_INTAKE because it balanced the intake as a process unit; intakes are now skipped, as boundaries are. The site design check passes: the former QC-09 finding is resolved by making the check read the graph's sized hydrogen store (17 kg, AQS-ELEC-007 / X-PAR-12) instead of a frozen 19 kg constant that the store basis had superseded; the rack holds the store within the band at both sites.
 
 Open items, in order:
 

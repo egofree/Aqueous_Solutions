@@ -247,7 +247,7 @@ Table 3.1. Document numbers in use
 | AQS-PLAN-006 | `docs-authority/MFG_MODEL_PLAN.md` | A | 2026-10-15 | Manufacturing model plan | current |
 | AQS-PLAN-007 | `docs-authority/TASK_PLAN.md` | C | 2026-10-25 | Task plan | current |
 | AQS-PLAN-010 | `docs-authority/RESIZE_SWEEP.md` | B | 2026-10-16 | Bounding-case resize sweep | current |
-| AQS-PLAN-011 | `docs-authority/LOCALIZATION_PLAN.md` | J | 2026-10-25 | Localization plan: site profiles and locale variants | current |
+| AQS-PLAN-011 | `docs-authority/LOCALIZATION_PLAN.md` | K | 2026-10-29 | Localization plan: site profiles and locale variants | current |
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up | current |
 | AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | B | 2026-10-25 | Bought-item specification sheets | current |
 | AQS-PV-001 | `docs-authority/PV_CELL_MOD.md` | C | 2026-10-11 | Photovoltaic cell | current |
@@ -290,11 +290,11 @@ Table 3.1. Document numbers in use
 | AQS-SITE-003 | `docs-authority/SITE_ACCESS_CHECK.md` | A | 2026-10-16 | Site access and dock check | current |
 | AQS-SITE-004 | `docs-authority/SITE_SCALING.md` | A | 2026-10-25 | Site scaling | current |
 | AQS-SITE-005 | `docs-authority/SITE_POWER.md` | A | 2026-10-25 | Site power portfolio and redundancy | current |
-| AQS-SITE-006 | `docs-authority/SITE_BASIS_DEATH_VALLEY.md` | A | 2026-10-25 | Death Valley site basis | current |
-| AQS-SITE-007 | `docs-authority/SITE_BASIS_FLOATING_ISLAND.md` | A | 2026-10-25 | Floating island site basis | current |
-| AQS-SITE-008 | `docs-authority/SITE_BASIS_ANTARCTIC.md` | A | 2026-10-25 | Antarctic site basis | current |
-| AQS-SITE-009 | `docs-authority/SITE_BASIS_MARS.md` | B | 2026-10-26 | Mars site basis | current |
-| AQS-SITE-010 | `docs-authority/SITE_BASIS_LEO.md` | B | 2026-10-26 | Low Earth orbit site basis | current |
+| AQS-SITE-006 | `docs-authority/SITE_BASIS_DEATH_VALLEY.md` | C | 2026-10-29 | Death Valley site basis | current |
+| AQS-SITE-007 | `docs-authority/SITE_BASIS_FLOATING_ISLAND.md` | B | 2026-10-29 | Floating island site basis | current |
+| AQS-SITE-008 | `docs-authority/SITE_BASIS_ANTARCTIC.md` | B | 2026-10-29 | Antarctic site basis | current |
+| AQS-SITE-009 | `docs-authority/SITE_BASIS_MARS.md` | E | 2026-10-29 | Mars site basis | current |
+| AQS-SITE-010 | `docs-authority/SITE_BASIS_LEO.md` | C | 2026-10-29 | Low Earth orbit site basis | current |
 | AQS-SITE-011 | `docs-authority/SITE_COMPARISON.md` | A | 2026-10-26 | Site comparison | current |
 | AQS-SITE-012 | `docs-authority/HULL_DESIGN.md` | A | 2026-10-26 | Floating island hull design | current |
 | AQS-SITE-013 | `docs-authority/SITE_UNITS.md` | A | 2026-10-26 | Site unit placements | current |

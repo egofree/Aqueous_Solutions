@@ -1,8 +1,8 @@
 # Localization plan: site profiles and locale variants
 
 Document number: AQS-PLAN-011
-Revision: J
-Date: 2026-10-25
+Revision: K
+Date: 2026-10-29
 
 | Rev | Description | Date |
 | --- | --- | --- |
@@ -16,6 +16,7 @@ Date: 2026-10-25
 | H | Section 5.4 describes the scaling actions, capabilities and checks as built; capabilities group added to Table 4.1 | 2026-10-25 |
 | I | Section 5.5 describes the power portfolio and function redundancy as built; an import path no longer counts as an energy or life-support source | 2026-10-25 |
 | J | Section 5.5 adds storage coverage of the worst stretch and the heat rejection modes as built; X-LOC-06 done | 2026-10-25 |
+| K | Section 2 and section 13 no longer describe the site profiles as future work; Table 12.1 lists every X-LOC task with the status of the task plan, checked by `flow_graph/test_localization_plan.py`, and the evidence from locale runs on 2026-10-29 | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -36,8 +37,8 @@ Every value in sections 6 to 10 cites a published source. A value enters the mod
 
 ## 2. Summary
 
-- The site is not yet an input. The study site values are in AQS-SITE-002 (`docs-authority/SITE_BASIS.md`) and in `flow_graph/param/drivers.json`, mixed with process drivers. Several facts about the surface of the Earth are constants in code: standard gravity, standard atmospheric pressure, the composition and density of air, and the use of outside air as a heat sink, an oxidant and a vent destination.
-- A site profile per locale, `flow_graph/param/sites/<site_id>.json` (to be created), will hold every environmental input in the same form as a driver (value, units, reference or register id, verification test). The driver loader applies the selected profile. The baseline profile carries the present values, so the baseline output does not change.
+- When this plan was first issued, the site was not an input. The study site values were in AQS-SITE-002 (`docs-authority/SITE_BASIS.md`) and in `flow_graph/param/drivers.json`, mixed with process drivers. Several facts about the surface of the Earth are constants in code: standard gravity, standard atmospheric pressure, the composition and density of air, and the use of outside air as a heat sink, an oxidant and a vent destination.
+- A site profile per locale, `flow_graph/param/sites/<site_id>.json`, holds every environmental input in the same form as a driver (value, units, reference or register id, verification test). The driver loader applies the selected profile. The baseline profile carries the present values, so the baseline output does not change.
 - The full building is the reference ideal, not a build target. A profile scales each sector and unit: sized up, sized down, duplicated, replaced by a unit of another technology, or eliminated. Eliminating a function needs an import path or a replacement of a different technology. Each unit states its environmental needs, such as a minimum gravity for buoyant separation, outside air for heat rejection, or ground contact; an unmet need forces a replacement or an elimination. The generated table of these scaling actions is the record of what the plant changes to work in each place.
 - Power sources are chosen per site from what the local resource supports: PV, wind, geothermal, hydro, wave and ocean thermal energy where cited, fuel cells on plant-made fuels, and storage. Fission and other sources enter only as flagged options with their own studies. The generation that closes the energy balance through the worst stretch at the site is oversized by `pv_oversize_factor`, and redundancy is kept.
 - Death Valley keeps the architecture and stresses heat rejection, water supply and material temperatures. Antarctica stresses a dark season, freezing, and a treaty that forbids mineral resource activity. Mars needs pressurised process spaces, works at partial gravity, and can use the carbon dioxide atmosphere, ground ice and regolith as feed. A floating island loses the ground and gains the sea: seawater for cooling, water and minerals, wave and ocean thermal energy, but every kilogram counts against buoyancy and stability, and motion disturbs gravity separation. Low Earth orbit removes gravity, air and ground together and needs the most replacement units.
@@ -449,7 +450,7 @@ Table 11.1. Architecture gaps and their parametric handling
 
 ## 12. Build order
 
-The work is split into phases, each closed by its own check. Tasks X-LOC-01 to X-LOC-12 in AQS-PLAN-007 track them, and the status column below follows that task plan. Earth sites come before off-world sites. Table 12.1 gives the order.
+The work is split into phases, each closed by its own check. The X-LOC tasks in AQS-PLAN-007 track them. The status column gives the state of each task in that plan; `flow_graph/test_localization_plan.py` fails when the two disagree. A locale run writes its outputs under `sites/<site_id>/`, which is not committed, so the evidence for a variant is reproduced by running `python3 -m flow_graph.param.regen --site <site_id>`. Earth sites come before off-world sites. Table 12.1 gives the order.
 
 Table 12.1. Build phases
 
@@ -461,12 +462,13 @@ Table 12.1. Build phases
 | X-LOC-04 | Site selection and namespaces | `--site`, `AQS_SITE`, `--all-sites`; outputs under `sites/<site_id>/`; register handles locale numbers | done |
 | X-LOC-05 | Sector and unit scaling | needs table, scaling map, scaling check and per-locale scaling table generated | done |
 | X-LOC-06 | Power portfolio, heat rejection and storage models | portfolio solved through the worst stretch with the oversize factor; rejection modes and radiator sizing; solar and other resource models in the solver | done |
-| X-LOC-07 | Death Valley variant | profile, site basis page, regeneration and closure pass | open (profile, basis page AQS-SITE-006 and the first locale run are in; the site design check carries the H2-bank finding QC-09 and the groundwater intake unit is not yet in the graph) |
-| X-LOC-11 | Floating island variant | as X-LOC-07, with the motion group, mass and stability checks, seawater feed case and the marine code family | open |
-| X-LOC-08 | Antarctic variant | as X-LOC-07, with the treaty code family | open |
-| X-LOC-09 | Mars variant | as X-LOC-07, with in-situ feed cases and replacement units | done: replacement units (RAD_PANEL, TANK_BLD, REC_HDR, CAT_OX, E_HEAT) and in-situ resource units (ICE_EXTRACT, PERC_REMOVE, ATM_INT) in the graph; the ground loop stays; locale run complete with 321 outputs under sites/mars/; feed cases mapped to the AQS-ASSAY-001 classes (AQS-SITE-009 Rev D) |
-| X-LOC-10 | Low Earth orbit variant | as X-LOC-07, with microgravity replacements and radiators | open; the X-LOC-09 replacement units (RAD_PANEL, REC_HDR, TANK_BLD) already cover part of the microgravity set |
-| X-LOC-12 | Cross-locale comparison | a generated comparison of scaling actions, power portfolios and unit sizes across every profile | open |
+| X-LOC-07 | Death Valley variant | profile, site basis page, regeneration and closure pass | done: the locale run on 2026-10-29 passes the site design check once intake units are skipped by the per-unit mass balance (they draw from outside the plant) |
+| X-LOC-11 | Floating island variant | as X-LOC-07, with the motion group, mass and stability checks, seawater feed case and the marine code family | open: the locale run on 2026-10-29 passes the site design check and the hull check (AQS-SITE-012), but SW_INTAKE and DESAL_RO stay placeholders in the profile and no mineral-recovery unit is in the graph |
+| X-LOC-08 | Antarctic variant | as X-LOC-07, with the treaty code family | done: the locale run on 2026-10-29 passes the site design check; the wind-primary power write stage that blocked the first run is in `flow_graph/param/write_graph.py` |
+| X-LOC-09 | Mars variant | as X-LOC-07, with in-situ feed cases and replacement units | done: replacement and in-situ resource units in the graph; the locale run on 2026-10-29 passes the site design check |
+| X-LOC-10 | Low Earth orbit variant | as X-LOC-07, with microgravity replacements and radiators | done: the locale run on 2026-10-29 passes the site design check |
+| X-LOC-12 | Cross-locale comparison | a generated comparison of scaling actions, power portfolios and unit sizes across every profile | done: AQS-SITE-011, written by `docs-authority/_site_comparison.py` from the locale outputs |
+| X-LOC-13 | Evaporative rejection water charge | spray water at evaporative sites booked against the water balance and closed by the groundwater intake | done: booked in `flow_graph/param/balance.py`; the Death Valley run closes with it |
 
 ## 13. Acceptance checks
 
@@ -475,7 +477,7 @@ These checks are added with the phase that needs them and run in `scripts/check_
 - A profile that lacks a required entry, or has an entry without a basis, fails the loader.
 - With the baseline profile, the resolved drivers equal `drivers.json` and `regen --check` changes nothing.
 - No script reads `drivers.json` except through the loader, and no sizing module contains a gravity or atmospheric pressure literal.
-- Every profile in `flow_graph/param/sites/` (to be created) regenerates, and its loop closure and mass and energy balance checks pass within the misfit gate.
+- Every profile in `flow_graph/param/sites/` regenerates, and its loop closure and mass and energy balance checks pass within the misfit gate.
 - Every unit whose needs a profile does not meet is replaced or eliminated; every elimination has an import path or a replacement; no energy or life-support function is left with fewer sources than the redundancy rule needs.
 - Each profile's power portfolio closes the energy balance through its worst stretch with the oversize factor applied.
 - Document numbers are unique as number and site pairs, and every locale page has a number from the register tool.
