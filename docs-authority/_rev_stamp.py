@@ -70,13 +70,16 @@ def compute():
     for f in sorted(files):
         c = last.get(f)
         if f == 'docs-authority/DERIVED_REVISIONS.md': rows.append((f, '-', 'this register (its own row would change with each write)')); continue
-        if c is None or f in dirty: rows.append((f, 'working tree', 'current' if f in dirty else 'untracked')); continue
         cl = next((v for k, v in CLASS.items() if fnmatch.fnmatch(f, k)), None)
         if cl: rows.append((f, '-', cl)); continue
         bd = next((v for k, v in BY_DESIGN.items() if fnmatch.fnmatch(f, k)), None)
         if bd: rows.append((f, '-', 'by design: ' + bd)); continue
         if f in orphans: rows.append((f, '-', 'by design: sheet of a deleted/rerouted edge (not in regenerated iso/ISO_SHEETS.csv); retirement pending the graph lane')); continue
         if any(fnmatch.fnmatch(f, k) for k in checked) or vouched.get(f) == gsha: rows.append((f, head_g[0][:7] + ' (regenerated, no change)', 'current')); continue
+        # A file the regeneration vouched for (above) is stamped from the graph commit whether or not it is
+        # committed yet, so a full regeneration writes the same register before and after the commit that
+        # carries its outputs. Only files outside the vouched set fall back to their own commit history.
+        if c is None or f in dirty: rows.append((f, 'working tree', 'current' if f in dirty else 'untracked')); continue
         made = next((g for g in graph if g[1] <= c[1]), None)
         st = 'current' if made and made[0] == head_g[0] else 'stale'
         rows.append((f, (made[0][:7] if made else '-'), st))
