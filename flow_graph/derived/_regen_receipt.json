@@ -145,6 +145,10 @@
    "status": "ok"
   },
   {
+   "name": "sanitation_doc",
+   "status": "ok"
+  },
+  {
    "name": "foundry_sizing_doc",
    "status": "ok"
   },
@@ -770,6 +774,7 @@
   "docs-authority/sizing/PV_CELL_LINE.md",
   "docs-authority/sizing/REACTOR_DESIGN._generated.json",
   "docs-authority/sizing/REACTOR_DESIGN.md",
+  "docs-authority/sizing/SANITATION.md",
   "docs-authority/sizing/STORAGE_HOLDUP.md",
   "docs-authority/sizing/UPW_POLISH.md",
   "docs-authority/sizing/VENT_SCRUBBER.md",

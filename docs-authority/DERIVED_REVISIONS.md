@@ -1382,7 +1382,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/sizing/ROLL.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/sizing/ROOF_TANK.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/sizing/SALT_FEED.md` | c430207 (regenerated, no change) | current |
-| `docs-authority/sizing/SANITATION.md` | - | by design: X-SAN-01 graph-writer module (flow_graph/param/sanitation.py); owner-lane port pending (R11 close-out) |
+| `docs-authority/sizing/SANITATION.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/sizing/SHELL_BREAK.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/sizing/SHELL_BUILD.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/sizing/SHELL_BURNOUT.md` | c430207 (regenerated, no change) | current |

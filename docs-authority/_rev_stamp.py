@@ -25,7 +25,6 @@ CLASS = {'iso/*': 'superseded by docs-authority/iso/*.svg (AQS-ISO-002, _iso_she
          'media/logo3.png': 'artwork, not derived', 'media/verify_view*.png': 'manual capture in GUI FreeCAD (models/freecad/verify_view_png.py)'}
 # documented one-shots and blocked generators: derived files the U3 orchestrator does not regenerate, with the reason (U3 gated expansion)
 BY_DESIGN = {
-    'docs-authority/sizing/SANITATION.md': 'X-SAN-01 graph-writer module (flow_graph/param/sanitation.py); owner-lane port pending (R11 close-out)',
     'media/_generated.json': 'the manifest that lists generated media and the graph each was made from (regen_derived.py)',
     'flow_graph/derived/_regen_receipt.json': 'manifest mechanism itself (U3 regen provenance receipt)'}
 FILE_MANIFESTS = ['docs-authority/sizing/REACTOR_DESIGN._generated.json']

@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: M
+Revision: N
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -19,6 +19,7 @@ Date: 2026-10-29
 | K | Batch 8: the load list and power sizing reconciled; the scale-down page and the matplotlib folder index rewritten; one owner question added on the rectifier feed | 2026-10-29 |
 | L | Batch 9: four sizing pages rewritten through their generators | 2026-10-29 |
 | M | Batch 10: the storage, electrowinning cell and reactor sizing pages rewritten through their generators; one owner question added on the sanitation page | 2026-10-29 |
+| N | Batch 11: the sanitation page given a generator that reads the present graph; the rectifier finding corrected in the load list and power sizing pages; owner questions on the trim heaters and the sanitation feed | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -130,8 +131,8 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/CRYO_EQUIPMENT.md` | Rev G. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
 | `docs-authority/FARM_EQUIPMENT.md` | Rev E. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | Rev D. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
-| `docs-authority/LOAD_LIST.md` | Rev E. Section 3 reconciles the connected load with the plant bus demand of AQS-ELEC-007, from the graph. |
-| `docs-authority/POWER_SIZING.md` | Rev H. The plant bus demand split into its parts, and the rectifier feed checked against the rectifier input. |
+| `docs-authority/LOAD_LIST.md` | Rev F. Section 3 reconciles the connected load with the plant bus demand of AQS-ELEC-007, from the graph, and names the trim heaters fed by the rectifier, which no feeder carries. |
+| `docs-authority/POWER_SIZING.md` | Rev I. The plant bus demand split into its parts; the two rectifier feeders checked against the bus demand, and the trim heaters fed by the rectifier named. |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | Rev F. Rewritten through `flow_graph/param/scale_down.py`: purpose and scope, the revision history taken out of the summary, the terms table captioned. |
 | `flow_graph/exporters/matplotlib/README.md` | Rev B. Hand-written folder index (it has no generator; the earlier entry here was wrong). Purpose and scope added, and the images built by the regeneration stated from `flow_graph/regen_derived.py`. |
 | `docs-authority/sizing/H2_COMPRESSOR.md` | Rev C. Rewritten through `flow_graph/param/h2_compressor.py`: record of revisions, purpose and scope, the method as sentences with driver values in place of fixed figures, numbered tables. |
@@ -141,6 +142,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/sizing/STORAGE_HOLDUP.md` | Rev B. Rewritten through `docs-authority/_storage_sizing.py`: record of revisions, purpose and scope, the method with the hold-up and minimum-volume drivers, results in a numbered table and a section on units sized elsewhere. |
 | `docs-authority/sizing/EW_CELLS.md` | Rev D. Rewritten through `docs-authority/_ew_sizing.py`: purpose and scope, the cell basis from the driver values, results in a numbered table, and findings as sentences; the tank length range is now computed. The finding on the hydrogen-cell list is unchanged while the owner question is open. |
 | `docs-authority/sizing/REACTOR_DESIGN.md` | Rev C. Rewritten through `flow_graph/param/reactor_design.py`: purpose and scope, the basis written as sentences with the driver values in place of typed figures, numbered tables, and no section for a reactor type with no unit on the graph. |
+| `docs-authority/sizing/SANITATION.md` | Rev C. Now written by `flow_graph/param/sanitation.py`, rewritten to read the present graph and write only the page (regen stage `sanitation_doc`; the script was a retired one-time graph edit). The train is sized from the flows of BLACK_DIGEST; purpose and scope, numbered tables, sentences. |
 
 ## 3. In progress
 
@@ -271,7 +273,6 @@ Table 4.2. Pending pages in subfolders
 | `docs-authority/sizing/EVAP_DESIGN.md` | No document number line; no revision line; no date line; no purpose and scope section. Written by `flow_graph/param/evap_design.py`; fix the generator. |
 | `docs-authority/sizing/LITHO_DEV.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/POLYMERS_LINE.md` | No purpose and scope section. Written by `docs-authority/_polymers_sizing.py`; fix the generator. |
-| `docs-authority/sizing/SANITATION.md` | No purpose and scope section. The page names `flow_graph/param/sanitation.py` as its generator, but that script was a one-time edit and the regeneration no longer runs it; the page is kept pending the owner question in section 6. |
 | `docs-authority/sizing/SOLAR_PV_CELL.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/VAC_IND.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/VCD_TRAIN.md` | No record of revisions; no purpose and scope section. |
@@ -332,10 +333,10 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/O2_SOURCE.md` (AQS-PAR-005) | Not rewritten. Two generators write this page: `flow_graph/param/o2_source.py` (the current Rev D duty summary) and `flow_graph/param/o2_close.py` report(), whose Rev C closure report would overwrite it if run. The page says the Rev C sections regenerate at the next balance run. Which generator owns the page? Once that is settled, the template can be rewritten without the risk of the other writer restoring the old text. |
 | `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | The note on driver `backup_gen_rated_kW` states 125 % of the critical load list in 5 kW steps, which gives 20 kW for the present critical loads, but the driver holds 40 kW (AQS-ELEC-007 section 5). Should the driver or its note change? |
 | `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | `SOL_ARK_60K.params.redundancy` was computed for a bus demand of 150.8 kW while the plant bus demand is 179.7 kW, so the bus section rating needs recomputing by its stage (AQS-ELEC-007 section 5). Should that stage run after the power stage? |
-| `docs-authority/LOAD_LIST.md` (AQS-ELEC-003), `docs-authority/ONE_LINE.md` (AQS-ELEC-002) | The rectifier is fed by stream S17 at the 12 kW of its 48 V rails, and the one-line diagram sizes its feeder from that, but the rectifier also draws the 38.7 kW input for the electrowinning cells (`RECTIFIER.params.rect_ac_input_kW`), which only the plant bus demand counts. Should S17 and the `RECTIFIER` row of the load list carry the full input? The writer of S17 and the rectifier numbers are on hold, so neither value was changed. |
+| `docs-authority/LOAD_LIST.md` (AQS-ELEC-003), `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | The rectifier has two feeders on the one-line diagram, S17 for its 48 V rails (12 kW) and RECT-EW for the electrowinning cells (`RECTIFIER.params.rect_ac_input_kW`), and the plant bus demand counts both. The rectifier also feeds the trim heaters IA-TRIM-HX5, IA-TRIM-HX6, IA-Q4A-TRIM and IA-Q4B-TRIM at their rated values, and no feeder or term of the bus demand includes them. Should the bus demand and a feeder carry them, and at the rated or the normal trim load? Either choice changes the bus demand and with it the array, storage, inverter and bus section sizing, so no value was changed. |
 | `docs-authority/duties/` | Duty sheets remain for units that are no longer on the graph, mostly farm, crop and animal units (for example ABE, CHICKENS, CROP_TOMATO, RECT_EW). `_duty_basis.py` skips them, so they keep Graph Rev BH and stale values. Should they be deleted, or moved to an archive? |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` (AQS-REV-H2-001) | The graph sends cathode hydrogen from EW_1 to EW_3 and EW_5 to EW_9, while AQS-STD-002 section 9 names EW_1, EW_2, EW_4 and EW_9. Which is correct? |
-| `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063) | The page says it is generated by `flow_graph/param/sanitation.py`, but that script is listed in `not_stages` of the regeneration manifest as a one-time edit and fails on the present graph. The page no longer matches the graph: the units BLACK_PASTEUR, BLACK_ALK_HOLD and BLACK_DEWATER and the streams IA-TOIL-SOL and IA-TOIL-URN are not on it (only BLACK_DIGEST is), and the feed to AFTERBURNER is now 7.097 kg/d against 7.03 kg/d on the page. Should the page be rewritten by hand for the present graph, given a new generator, or retired? |
+| `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063) | The graph carries the sanitation train as the one node BLACK_DIGEST: Rev AC retired BLACK_DEWATER, BLACK_PASTEUR and BLACK_ALK_HOLD, although their equipment is still built. The electrical load of the train from its sizing is about 0.21 kW, while stream SF-BLACK_DIGEST feeds 0.105 kW, the digester alone. Should the barrier units return to the graph as nodes, and should the feed carry the whole train? Either change moves the bus demand, so neither was made. |
 | `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |
 | `docs-authority/unregistered_doc_numbers.json` | Pages cite AQS-PFD-* flow diagram numbers that are in neither register. Should they be added to the drawing register with the scripts in `flow_graph/exporters/matplotlib/` as their source, or removed from the pages? |
 | `docs-authority/unregistered_doc_numbers.json` | Many pages cite AQS-AUD-001, a crew and water audit that is not in the repository. Should it be added, or should each citation be replaced by the graph value it stood for? |

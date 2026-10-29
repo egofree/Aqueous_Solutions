@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | M | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | N | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -104,7 +104,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-060 | `docs-authority/sizing/EVAP_DESIGN.md` | — | — | In-house MVR evaporators EVAP_ACID and EVAP_BASE | current |
 | AQS-DUTY-061 | `docs-authority/sizing/VENT_SCRUBBER.md` | A | 2026-10-15 | EVAP_ACID vent scrubber | current |
 | AQS-DUTY-062 | `docs-authority/sizing/REACTOR_DESIGN.md` | C | 2026-10-29 | In-house reaction chambers | current |
-| AQS-DUTY-063 | `docs-authority/sizing/SANITATION.md` | B | 2026-10-15 | Blackwater and excreta multi-barrier train | current |
+| AQS-DUTY-063 | `docs-authority/sizing/SANITATION.md` | C | 2026-10-29 | Blackwater and excreta train | current |
 | AQS-DUTY-064 | `docs-authority/sizing/STORAGE_HOLDUP.md` | B | 2026-10-29 | Storage and holdup sizing | current |
 | AQS-DUTY-065 | `docs-authority/sizing/GAS_RECEIVERS.md` | B | 2026-10-16 | High-pressure gas receivers | current |
 | AQS-DUTY-066 | `docs-authority/sizing/H2_PURIFIER_BEDS.md` | A | 2026-10-15 | H2_PURIFIER beds | current |
@@ -140,11 +140,11 @@ Table 3.1. Document numbers in use
 | AQS-ELC-001 | `docs-authority/ELECTRICAL.md` | D | 2026-10-24 | Electrical analysis | current |
 | AQS-ELEC-001 | `docs-authority/ELECTRONICS.md` | C | 2026-10-11 | Electronics bay | current |
 | AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | E | 2026-10-24 | Single-line diagram | current |
-| AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | E | 2026-10-29 | Load list | current |
+| AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | F | 2026-10-29 | Load list | current |
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | C | 2026-10-25 | Electrowinning rectifier sizing (RECT-EW) | current |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | B | 2026-10-25 | Grounding and bonding | current |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | E | 2026-10-29 | Protection and coordination | current |
-| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | H | 2026-10-29 | Storage and generation sizing | current |
+| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | I | 2026-10-29 | Storage and generation sizing | current |
 | AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | B | 2026-10-24 | Collection bus sections | current |
 | AQS-ELEC-009 | `docs-authority/HAZ_AREA.md` | B | 2026-10-25 | Hazardous area classification | current |
 | AQS-ELEC-010 | `docs-authority/CABLE_SCHEDULE.md` | A | 2026-10-15 | Cable and busbar schedule | current |

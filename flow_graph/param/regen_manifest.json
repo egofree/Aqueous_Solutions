@@ -652,6 +652,24 @@
    "note": "--doc-only (U2a): REACTOR_DESIGN.md + per-file manifest; graph untouched (gated file)."
   },
   {
+   "name": "sanitation_doc",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.sanitation",
+    "--write"
+   ],
+   "outputs": [
+    "docs-authority/sizing/SANITATION.md"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-DUTY-063 from the flows of BLACK_DIGEST; reads the graph and writes only the page (the 2026-10-15 graph edit is already in the graph)."
+  },
+  {
    "name": "foundry_sizing_doc",
    "argv": [
     "python3",
@@ -2659,6 +2677,7 @@
     "protection",
     "reactor_design_doc",
     "regen_derived",
+    "sanitation_doc",
     "sector_definitions",
     "sep_check",
     "sizing_bmed_stack",
@@ -2747,7 +2766,6 @@
     "docs-authority/TASK_PLAN.md"
    ],
    "depends_on": [
-    "storage_sizing",
     "access_check",
     "cable_schedule",
     "candidate_mvs",
@@ -2833,10 +2851,12 @@
     "protection",
     "reactor_design_doc",
     "regen_derived",
+    "sanitation_doc",
     "sector_definitions",
     "sep_check",
     "sizing_bmed_stack",
     "sizing_coverage",
+    "storage_sizing",
     "supports",
     "unit_sizing_sweep",
     "vent_scrubber_doc"
@@ -2856,7 +2876,6 @@
     "docs-authority/MODEL_WORKBOOK.xlsx"
    ],
    "depends_on": [
-    "write_graph_power",
     "access_check",
     "cable_schedule",
     "candidate_mvs",
@@ -2942,6 +2961,7 @@
     "protection",
     "reactor_design_doc",
     "regen_derived",
+    "sanitation_doc",
     "sector_definitions",
     "sep_check",
     "sizing_bmed_stack",
@@ -2949,7 +2969,8 @@
     "supports",
     "task_plan",
     "unit_sizing_sweep",
-    "vent_scrubber_doc"
+    "vent_scrubber_doc",
+    "write_graph_power"
    ],
    "writes_graph": false,
    "quick": false,
@@ -2966,7 +2987,6 @@
     "docs-authority/ASSUMPTIONS_REGISTER.md"
    ],
    "depends_on": [
-    "write_graph_power",
     "access_check",
     "cable_schedule",
     "candidate_mvs",
@@ -3053,6 +3073,7 @@
     "protection",
     "reactor_design_doc",
     "regen_derived",
+    "sanitation_doc",
     "sector_definitions",
     "sep_check",
     "sizing_bmed_stack",
@@ -3060,7 +3081,8 @@
     "supports",
     "task_plan",
     "unit_sizing_sweep",
-    "vent_scrubber_doc"
+    "vent_scrubber_doc",
+    "write_graph_power"
    ],
    "writes_graph": false,
    "quick": false,
@@ -3170,6 +3192,7 @@
     "protection",
     "reactor_design_doc",
     "regen_derived",
+    "sanitation_doc",
     "sector_definitions",
     "sep_check",
     "sizing_bmed_stack",
@@ -3278,6 +3301,7 @@
     "protection",
     "reactor_design_doc",
     "regen_derived",
+    "sanitation_doc",
     "sector_definitions",
     "sep_check",
     "sizing_bmed_stack",
@@ -3397,6 +3421,7 @@
     "protection",
     "reactor_design_doc",
     "regen_derived",
+    "sanitation_doc",
     "sector_definitions",
     "sep_check",
     "sizing_bmed_stack",
@@ -3463,8 +3488,7 @@
     "docs-authority/_resize_sweep.py",
     "docs-authority/_material_temps.py",
     "flow_graph/param/pressure_nodes.py",
-    "flow_graph/build_seed.py",
-    "flow_graph/param/sanitation.py"
+    "flow_graph/build_seed.py"
    ],
    "reason": "One-time edit of the graph, already applied; the graph is the authority now. Re-running would rewrite the graph, and several no longer match it."
   },
