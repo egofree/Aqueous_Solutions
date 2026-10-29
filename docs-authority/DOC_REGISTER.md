@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AB | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AC | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -209,7 +209,7 @@ Table 3.1. Document numbers in use
 | AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | E | 2026-10-29 | Manufacturing shop tool list | current |
 | AQS-MFG-011 | `docs-authority/JELLYBEAN.md` | B | 2026-10-29 | Jellybean parts: standard sizes and in-house lines | current |
 | AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | D | 2026-10-25 | Electrode fabrication and coating | current |
-| AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | C | 2026-10-29 | Metal forming: wire drawing, cold rolling and gas atomising | current |
+| AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | D | 2026-10-29 | Metal forming: wire drawing, cold rolling and gas atomising | current |
 | AQS-MOD-001 | `docs-authority/MODULE.md` | C | 2026-10-12 | Module standard | current |
 | AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` | D | 2026-10-25 | Frame system | current |
 | AQS-MVS-CHK-001 | `docs-authority/internal/MVS_CHECKLIST.md` | — | 2026-10-02 | MVS checklist | superseded by AQS-PLAN-007 |

@@ -1,7 +1,7 @@
 # Metal forming: wire drawing, cold rolling and gas atomising
 
 Document number: AQS-MFG-MET-001  
-Revision: C  
+Revision: D  
 Date: 2026-10-29  
 Equipment: AQS-EQP-MFG-MET-001 (`docs-authority/METAL_FORMING_EQUIPMENT.md`)  
 Authority: the plant flow graph `flow_graph/plant_flow_graph.json`; the tool list AQS-MFG-010; the stream register AQS-STR-001; the hazard separation register AQS-HSE-001; the vent and scrubber list AQS-EQP-VENT-001.  
@@ -12,6 +12,7 @@ Licence: CERN-OHL-S-2.0.
 | A | First issue: wire drawing, cold mill and atomiser path with its air handling and heat recovery. | 2026-09-28 |
 | B | Metal-aisle scrubber and its streams added; no free discharge to outdoors. | 2026-09-28 |
 | C | Rewritten against the plant graph and the documentation style guide (AQS-DOC-002). Bulk melting now belongs to the foundry, and the shop melt furnace takes only electrowon sheet and atomiser remelt. Tags that are no longer on the graph (product bins, powder crib, nitrogen blanket, electrode blank station) and references to documents outside the repository were removed. Nitrogen as atomising gas replaced by the argon of the tool list. Rates and loads are no longer stated here; they are in the generated equipment list. | 2026-10-29 |
+| D | The atomiser argon is held in a receiver between heats, and the tool design (die schedule, mill gauge and width, atomiser batch) is now derived from the graph throughputs (A-M-416); Section 3.4 points to it. | 2026-10-29 |
 
 ## Purpose and scope
 
@@ -51,7 +52,11 @@ The foundry melts and casts the bulk of the metal in IND_MELT and the casting un
 
 ### 3.3 Argon for atomising
 
-The atomiser is a close-coupled design with the argon recirculated, as AQS-MFG-010 sizes it. Argon is inert to the reactive metals that nitrogen would nitride. Shop air is never the atomising gas.
+The atomiser is a close-coupled design with the argon recirculated, as AQS-MFG-010 sizes it. The argon for a pour is held in a receiver charged above the nozzle supply pressure, and the compressor recovers and recharges it over the hours until the next heat. Argon is inert to the reactive metals that nitrogen would nitride. Shop air is never the atomising gas.
+
+### 3.4 Tool design from the throughputs
+
+The wire drawer, the cold mill and the atomiser are set from the throughputs on the graph rather than from fixed figures (A-M-416). The die series of the wire drawer runs from the copper rod down to the finest strand of the wire families, and each family leaves the line at the die that reaches its strand. The cold mill rolls a cast slab at constant width, so the slab mass sets the width of the strip and the strain sets its final gauge. The atomiser pours each heat through a nozzle whose flow sets the pour time and the argon drawn from the receiver. The resulting schedules are in Section 7 of the equipment list AQS-EQP-MFG-MET-001.
 
 ## 4. Air handling and heat recovery
 
