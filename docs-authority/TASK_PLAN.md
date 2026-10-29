@@ -66,19 +66,19 @@ Table 2.1. Tasks by group
 | OIL | Process (Mass transform) | 195 | 128 |
 | HEAT | Utility / header | 180 | 112 |
 | GAS | Process (Mass transform) | 150 | 98 |
-| WTR | Utility / header | 136 | 87 |
+| WTR | Utility / header | 136 | 88 |
 | MFG | Process (Mass transform) | 150 | 99 |
 | POLYMERS | Process (Mass transform) | 150 | 112 |
 | ELEC | Utility / header | 135 | 88 |
 | GLASS | Process (Mass transform) | 75 | 50 |
-| MEOH | Energy Storage System (Electrochemical) | 75 | 50 |
+| MEOH | Energy Storage System (Electrochemical) | 75 | 51 |
 | GEO | Utility / header | 45 | 30 |
 | HAB | Life support / habitat | 45 | 30 |
 | DOCK | Export / dock | 2 | 2 |
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2939** | **2088** |
+| | **Total** | **2939** | **2090** |
 
 ## 3. Triage of open tasks
 
@@ -104,7 +104,7 @@ Table 3.1. Open tasks by triage tag
 | --- | --- |
 | desk P1 | 1 |
 | desk P2 | 2 |
-| desk P3 | 33 |
+| desk P3 | 31 |
 | desk P4 | 457 |
 | desk P5 | 174 |
 | hardware | 182 |
@@ -2474,7 +2474,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-BMED_UPW_POLISH-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-BMED_UPW_POLISH-01, WTR-BMED_UPW_POLISH-02. Evidence: `docs-authority/pid/BMED_UPW_POLISH.svg` (AQS-PID-001).
   - [x] WTR-BMED_UPW_POLISH-04 Nozzle schedule. Done when: docs-authority/nozzles/BMED_UPW_POLISH.csv, one row per edge. Depends: WTR-BMED_UPW_POLISH-03. Evidence: `docs-authority/nozzles/BMED_UPW_POLISH.csv` (all 5 process connections listed).
   - [x] WTR-BMED_UPW_POLISH-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-BMED_UPW_POLISH-04, WTR-BMED_UPW_POLISH-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] WTR-BMED_UPW_POLISH-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-BMED_UPW_POLISH-02. Triage: desk P3.
+  - [x] WTR-BMED_UPW_POLISH-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-BMED_UPW_POLISH-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] WTR-BMED_UPW_POLISH-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-BMED_UPW_POLISH-02, WTR-BMED_UPW_POLISH-03. Evidence: `docs-authority/duties/BMED_UPW_POLISH.md` §6 (C7 closed on MASTER_PLAN).
   - [x] WTR-BMED_UPW_POLISH-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-BMED_UPW_POLISH-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (8 loops; AQS-CTL-001).
   - [x] WTR-BMED_UPW_POLISH-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-BMED_UPW_POLISH-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
@@ -3177,7 +3177,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MEOH-MEOH_FC-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: MEOH-MEOH_FC-01, MEOH-MEOH_FC-02. Evidence: `docs-authority/pid/MEOH_FC.svg` (AQS-PID-001).
   - [x] MEOH-MEOH_FC-04 Nozzle schedule. Done when: docs-authority/nozzles/MEOH_FC.csv, one row per edge. Depends: MEOH-MEOH_FC-03. Evidence: `docs-authority/nozzles/MEOH_FC.csv` (all 7 process connections listed).
   - [x] MEOH-MEOH_FC-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: MEOH-MEOH_FC-04, MEOH-MEOH_FC-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 9 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] MEOH-MEOH_FC-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: MEOH-MEOH_FC-02. Triage: desk P3.
+  - [x] MEOH-MEOH_FC-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: MEOH-MEOH_FC-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] MEOH-MEOH_FC-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: MEOH-MEOH_FC-02, MEOH-MEOH_FC-03. Evidence: `docs-authority/duties/MEOH_FC.md` §6 (C7 closed on MASTER_PLAN).
   - [x] MEOH-MEOH_FC-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: MEOH-MEOH_FC-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
   - [x] MEOH-MEOH_FC-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: MEOH-MEOH_FC-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).

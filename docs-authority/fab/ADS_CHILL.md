@@ -4,7 +4,7 @@ Class: adsorption_chiller; sector HEAT. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: see the duty sheet section 1 basis
 
-Internals: duty sheet: "N+1. 3. Material. 304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and headers" [docs-authority/duties/ADS_CHILL.md]
+Internals: duty sheet: "N+1. 3. Material. 304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and" [docs-authority/duties/ADS_CHILL.md]
 Material: 304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and headers; PP-H water legs on the P5 house water family; steel frame. Basis: silica gel-water adsorption chiller, drive 65 C, chilled 12 C (graph node params; A-M-239/240 COP class): the silica gel-water chiller drives at 55-90 C (WANG2006_ADS); bed shells are sealed vacuum-grade vessels. (continues on the duty sheet)
 
 Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled

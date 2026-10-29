@@ -4,7 +4,7 @@ Class: cell; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 800×800×1600 mm;
 service line: service Kroll chlorinator + Mg-reduction retort train; chemistry TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO; TiCl4 + 2Mg -> Ti + 2MgCl2 (AQS-BAL-KROLL)
 
-Internals: duty sheet: "carbochlorinator at 800 C with graphite hot face; TiCl4 take-off cooled through a 316L condensation train; Kro" [docs-authority/duties/TI_CELL.md]
+Internals: duty sheet: "carbochlorinator at 800 C with graphite hot face; TiCl4 take-off cooled through a 316L condensation train;" [docs-authority/duties/TI_CELL.md]
 Material: Alumina-brick-lined carbochlorinator at 800 C with graphite hot face; TiCl4 take-off cooled through a 316L condensation train; Kroll reduction retort 310S (25Cr-20Ni) with a graphite crucible insert at 900 C; molten MgCl2 return through graphite/Ni-200 launder. (continues on the duty sheet)
 
 Nozzles: 14 process connections per docs-authority/nozzles/TI_CELL.csv

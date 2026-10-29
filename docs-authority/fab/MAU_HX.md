@@ -4,7 +4,7 @@ Class: hx; sector HEAT. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: see the duty sheet section 1 basis
 
-Internals: duty sheet: "Material. Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating" [docs-authority/duties/MAU_HX.md]
+Internals: duty sheet: "Material. Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in" [docs-authority/duties/MAU_HX.md]
 Material: Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the dew point in heating), 316L headers; PP condensate tray where any defrost condensate can form; water side on the issued Q3/Q4 M1 316L loop family. (continues on the duty sheet)
 
 Nozzles: none scheduled yet (unit task 04); route carries the connections once scheduled

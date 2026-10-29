@@ -4,7 +4,7 @@ Class: dry_cooler; sector HEAT. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: see the duty sheet section 1 basis
 
-Internals: duty sheet: "with margin. 3. Material. Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated heade" [docs-authority/duties/DRY_COOLER.md]
+Internals: duty sheet: "with margin. 3. Material. Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated" [docs-authority/duties/DRY_COOLER.md]
 Material: Copper-tube, aluminium-fin air coil with galvanized-steel casing; epoxy-coated headers; the rejection loop is the house HDPE-class closed water loop. Basis: 12 kW dry rejection at the 37.8 C design bulb (graph params; A-M-244): air-sided fin-coil construction is the air-cooled exchanger class (PERRY9_HEAT); the loop side follows the issued water-loop families (AQS-STD-002 section 12.1). (continues on the duty sheet)
 
 Nozzles: 5 process connections per docs-authority/nozzles/DRY_COOLER.csv

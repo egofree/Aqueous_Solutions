@@ -4,7 +4,7 @@ Class: separator; sector DIGESTER. Study route. Not stamped.
 Envelope: not booked on the duty sheet - the physical build size is the unit task 10-11 scope;
 service line: see the duty sheet section 1 basis
 
-Internals: duty sheet: "3. Material. PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wet" [docs-authority/duties/LI_RECOVER.md]
+Internals: duty sheet: "3. Material. PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the" [docs-authority/duties/LI_RECOVER.md]
 Material: PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone. (continues on the duty sheet)
 
 Nozzles: 2 process connections per docs-authority/nozzles/LI_RECOVER.csv

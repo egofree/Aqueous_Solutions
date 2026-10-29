@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: O
+Revision: P
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -21,6 +21,7 @@ Date: 2026-10-29
 | M | Batch 10: the storage, electrowinning cell and reactor sizing pages rewritten through their generators; one owner question added on the sanitation page | 2026-10-29 |
 | N | Batch 11: the sanitation page given a generator that reads the present graph; the rectifier finding corrected in the load list and power sizing pages; owner questions on the trim heaters and the sanitation feed | 2026-10-29 |
 | O | Batch 12: the evaporator and polymers line sizing pages rewritten through their generators | 2026-10-29 |
+| P | Batch 13: the per-unit sizing pages of the unit sizing sweep rewritten through their generator | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -146,6 +147,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/sizing/SANITATION.md` | Rev C. Now written by `flow_graph/param/sanitation.py`, rewritten to read the present graph and write only the page (regen stage `sanitation_doc`; the script was a retired one-time graph edit). The train is sized from the flows of BLACK_DIGEST; purpose and scope, numbered tables, sentences. |
 | `docs-authority/sizing/EVAP_DESIGN.md` | Rev C. Rewritten through `flow_graph/param/evap_design.py`: document number, revision and date lines, record of revisions with dates, purpose and scope, the basis as sentences with the driver values, tables numbered and labelled with units, and the comparison with an earlier upper bound removed. |
 | `docs-authority/sizing/POLYMERS_LINE.md` | Rev B. Rewritten through `docs-authority/_polymers_sizing.py`: purpose and scope, sentences, numbered tables; the fluoropolymer train is now reported from the graph, where it runs on imported fluorspar, in place of text that called it blocked; the stale open item on the film caster feed is dropped when the graph has that feed. |
+| `docs-authority/sizing/<UNIT>.md` (AQS-SIZE-<UNIT>, every page of the unit sizing sweep) | Rev B. Rewritten through `docs-authority/_unit_sizing_sweep.py`, which had stopped writing them: purpose and scope, design parameters in a table, the envelope from the graph or the placement files, the hold-up vessel in millimetres from the larger of inflow and outflow with a real fit check, and the material from the duty sheet. |
 
 ## 3. In progress
 
@@ -273,10 +275,6 @@ Table 4.2. Pending pages in subfolders
 | `docs-authority/fab/COMB_HEAT.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
 | `docs-authority/fab/POLY_OLEFIN.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
 | `docs-authority/fab/VAC_IND.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
-| `docs-authority/sizing/LITHO_DEV.md` | No record of revisions; no purpose and scope section. |
-| `docs-authority/sizing/SOLAR_PV_CELL.md` | No record of revisions; no purpose and scope section. |
-| `docs-authority/sizing/VAC_IND.md` | No record of revisions; no purpose and scope section. |
-| `docs-authority/sizing/VCD_TRAIN.md` | No record of revisions; no purpose and scope section. |
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | No revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
 | `models/mfg/AL_POT/build_log.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; working or stock phrasing. |
 | `models/mfg/BLACK_DEWATER/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |

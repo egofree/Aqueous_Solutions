@@ -4,7 +4,7 @@ Class: furnace; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1000×1000×1500 mm;
 service line: service Cu/Fe/Zn/Al scrap + pot-metal remelt; medium-frequency coreless induction, tilt pour; crucible_kg 10; crucible_D_mm 110; crucible_H_
 
-Internals: sizing sheet: "remelt; medium-frequency coreless induction, tilt pour, crucible_kg=10.0, crucible_D_mm=110.0, crucible_H_mm=1" [docs-authority/sizing/IND_MELT.md]
+Internals: sizing sheet: "remelt; medium-frequency coreless induction, tilt pour, crucible_kg=10, crucible_D_mm=110, crucible_H_mm=165," [docs-authority/sizing/IND_MELT.md]
 Material: Clay-graphite crucibles assigned per melt family (Cu/Zn/Fe/Al one each), ceramic-fibre hot face 150 mm + 4 mm CS casing; alumina castable hearth under the pour lip. (continues on the duty sheet)
 
 Nozzles: 17 process connections per docs-authority/nozzles/IND_MELT.csv

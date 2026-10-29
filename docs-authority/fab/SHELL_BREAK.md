@@ -4,7 +4,7 @@ Class: separator; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1500×800×1500 mm;
 service line: machine vibratory shell knock-out station with reclaim sieve; spent_shell_kg_d 8; reclaim_kg_d 7; export_kg_d 1; table_kW 0.4.
 
-Internals: duty sheet: "1; table_kW 0.4. 3. Material. Vibratory knock-out tray with UHMW-PE wear liner, 304 stainless reclaim sieve, o" [docs-authority/duties/SHELL_BREAK.md]
+Internals: duty sheet: "1; table_kW 0.4. 3. Material. Vibratory knock-out tray with UHMW-PE wear liner, 304 stainless reclaim sieve," [docs-authority/duties/SHELL_BREAK.md]
 Material: Vibratory knock-out tray with UHMW-PE wear liner, 304 stainless reclaim sieve, open-steel frame housing the dry, noncombustible silica dust. Basis: shell knock-out + stucco reclaim, 8 kg shell/d (graph design A-M-281): wear selection per the mechanical-metallurgy wear text (DIETER1988 ch. (continues on the duty sheet)
 
 Nozzles: 7 process connections per docs-authority/nozzles/SHELL_BREAK.csv

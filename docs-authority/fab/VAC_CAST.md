@@ -4,7 +4,7 @@ Class: caster; sector FOUNDRY. Study route. Not stamped.
 Envelope: Envelope 1500×800×1500 mm;
 service line: machine vacuum tilt-pour casting station, N+1 of CAST_LINE; connected_kW 7.5; backup_of CAST_LINE; outage_d 2; design_case_kg_d 3.
 
-Internals: duty sheet: "3. 3. Material. 304L vacuum tilt-pour chamber; graphite crucible + alumina backup; steel table hardware. Basis" [docs-authority/duties/VAC_CAST.md]
+Internals: duty sheet: "3. 3. Material. 304L vacuum tilt-pour chamber; graphite crucible + alumina backup; steel table hardware." [docs-authority/duties/VAC_CAST.md]
 Material: 304L vacuum tilt-pour chamber; graphite crucible + alumina backup; steel table hardware. Basis: vacuum tilt-pour N+1 of CAST_LINE/CONT_CAST at the 3 kg case (graph design, A-M-283/199): same refractory-chemistry classes as the other melt-shop units (SCHACHT2004, DIETER1988). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). (continues on the duty sheet)
 
 Nozzles: 3 process connections per docs-authority/nozzles/VAC_CAST.csv

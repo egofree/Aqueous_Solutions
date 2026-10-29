@@ -151,7 +151,11 @@ for u in UNITS:
     hit = None
     for p in sorted(glob.glob(f'docs-authority/sizing/{u}.md')) + sorted(glob.glob(f'docs-authority/sizing/{u}_*.md')):
         if os.path.exists(p):
-            s = bare(open(p).read())
+            s = open(p).read()
+            if s.startswith('# Sizing calculation'):      # a unit sizing sweep page quotes its material from the duty sheet,
+                s = s.split('\n## 4. Material', 1)[0]      # which is scanned below as the duty sheet, not as a sizing sheet
+                s = re.sub(r'^\| (.+?) \| (.+?) \|$', r'\1=\2,', s, flags=re.M)   # design table rows read as name=value
+            s = bare(s)
             m = KW.search(s)
             if m and not NEG.search(s):
                 hit = (p, 'sizing sheet', s, KW); break
@@ -173,7 +177,8 @@ for u in UNITS:
         frag = re.sub(r'\s+', ' ', s[lo:hi]).strip()
         if lo > 0 and ' ' in frag: frag = frag.split(' ', 1)[1]        # quote whole words only
         if hi < len(s) and ' ' in frag: frag = frag.rsplit(' ', 1)[0]
-        defined[u] = f'{kind}: "{frag[0:110]}" [{path}]'
+        if len(frag) > 110: frag = frag[:111].rsplit(' ', 1)[0]           # cut at a word boundary
+        defined[u] = f'{kind}: "{frag}" [{path}]'
         continue
     # rule 3: class-level none with basis (keyword-guarded - the scan above precedes)
     if cls in NONE_CLASSES:

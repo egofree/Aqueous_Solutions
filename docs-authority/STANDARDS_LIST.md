@@ -85,7 +85,7 @@ Table 4.1. Electrical
 | IEC61131_3 | IEC 61131-3 | 4 | docs-authority/CONTROL_ARCH.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_plc_arch.py |
 | IEC61511_2016 | IEC 61511-1 | 6 | docs-authority/CAUSE_EFFECT.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_commissioning.py |
 | IEC61882_2016 | IEC 61882 | 3 | docs-authority/HAZOP.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_hazop.py |
-| IEC62282_3_100 | IEC 62282-3-100 | 15 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
+| IEC62282_3_100 | IEC 62282-3-100 | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | IEC62439_2 | IEC 62439-2 | 3 | docs-authority/CONTROL_ARCH.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_plc_arch.py |
 | IECC2021_C402 | International Energy Conservation Code (2021) Table C402.1.4 | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_egress_env.py, docs-authority/assumptions_manual.json |
 | IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
@@ -110,10 +110,10 @@ Table 4.1. Electrical
 | UL66_2015 | UL 66, Fixture Wire (2015) | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/WIRE_SPECS.md, docs-authority/_wire_specs.py |
 | UL83_2017 | UL 83, Thermoplastic-Insulated Wires and Cables (2017) | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/WIRE_SPECS.md, docs-authority/_wire_specs.py |
 | UL891 | UL 891, Switchboards (12th ed., 2019). | 6 | docs-authority/BUSBAR.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_cable_schedule.py |
-| ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters | 31 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/BALANCE_RECONCILIATION.md, docs-authority/INTERNALS.md |
+| ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters | 32 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/BALANCE_RECONCILIATION.md, docs-authority/INTERNALS.md |
 | ULLMANN_GLYOXAL | Mattioda G., Blanc A., Glyoxal, Ullmann's Encyclopedia of Industrial Chemistry (2011), doi | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
-| ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 8 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/duties/EVAP_ACID.md, docs-authority/sizing/EVAP_DESIGN.md |
-| ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter | 14 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
+| ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 9 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/duties/EVAP_ACID.md, docs-authority/sizing/EVAP_ACID.md |
+| ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter | 15 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds) | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/MATERIALS_STD.md |
 | ULLMANN_NITRIC | Thiemann M., Scheibler E., Wiegand K.W., Nitric Acid, Nitrous Acid, and Nitrogen Oxides, Ullmann's Encyclopedia of Industrial Chemistry (2000), doi | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
 | ULLMANN_TITANIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Titanium chapter (Titanium, Titanium Alloys, and Titanium Compounds) | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
@@ -142,7 +142,7 @@ Table 5.1. Fire, life safety and hazardous materials
 | NFPA20_2025 | NFPA 20-2025, Installation of Stationary Pumps for Fire Protection. | 9 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py |
 | NFPA22_2023 | NFPA 22-2023, Water Tanks for Private Fire Protection | 9 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py |
 | NFPA25_2026 | NFPA 25-2026, Inspection, Testing, and Maintenance of Water-Based Fire Protection Systems | 4 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py, docs-authority/_maint.py |
-| NFPA30_2027 | NFPA 30-2027, Flammable and Combustible Liquids Code, chapter 21 (storage tank construction | 4 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_storage_sizing.py, docs-authority/_unit_sizing_sweep.py |
+| NFPA30_2027 | NFPA 30-2027, Flammable and Combustible Liquids Code, chapter 21 (storage tank construction | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_storage_sizing.py, docs-authority/sizing/STORAGE_HOLDUP.md |
 | NFPA400_2025 | NFPA 400, Hazardous Materials Code (2025) 6.1.12.1 | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_hse_sep.py, flow_graph/sep_check.py |
 | NFPA497_2027 | NFPA 497-2027, Recommended Practice for the Classification of Flammable Liquids, Gases, or Vapors and of Hazardous (Classified) Locations | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_haz_area.py |
 | NFPA69_2024 | NFPA 69, Standard on Explosion Prevention Systems, 2024 ed. | 6 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_decom.py, docs-authority/_gas_det.py |
@@ -234,7 +234,7 @@ Table 10.1. Other
 | ASTM_D638_22 | ASTM D638-22, Tensile Properties of Plastics | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/TEST_RIGS.md, docs-authority/_test_rigs.py |
 | ASTM_D790_17 | ASTM D790-25, Flexural Properties of Unreinforced and Reinforced Plastics | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/TEST_RIGS.md, docs-authority/_test_rigs.py |
 | ASTM_D792_20 | ASTM D792-20, Density and Specific Gravity of Plastics by Displacement | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/TEST_RIGS.md, docs-authority/_test_rigs.py |
-| ASTM_G93 | ASTM G93/G93M-19, Standard Guide for Cleanliness Levels and Cleaning Methods for Materials and Equipment Used in Oxygen-Enriched Environments. | 10 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_commissioning.py |
+| ASTM_G93 | ASTM G93/G93M-19, Standard Guide for Cleanliness Levels and Cleaning Methods for Materials and Equipment Used in Oxygen-Enriched Environments. | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_commissioning.py |
 | ISO12944_CX | ISO 12944-2 corrosivity category CX (offshore) | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/SITE_BASIS_FLOATING_ISLAND.md |
 | ISO14120_2015 | ISO 14120 | 1 | docs-authority/PARAMETRIC_MODEL.md |
 | ISO21940_11_2016 | ISO 21940-11 | 1 | docs-authority/PARAMETRIC_MODEL.md |

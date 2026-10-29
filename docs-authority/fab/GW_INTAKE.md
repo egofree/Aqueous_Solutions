@@ -4,7 +4,7 @@ Class: intake; sector WTR. Study route. Not stamped.
 Envelope: Envelope 900×700×1800 mm;
 service line: see the duty sheet section 1 basis
 
-Internals: duty sheet: "in the bounding cases. The reverse-osmosis stage uses FRP membrane housings with 316L wetted pump and valve in" [docs-authority/duties/GW_INTAKE.md]
+Internals: duty sheet: "in the bounding cases. The reverse-osmosis stage uses FRP membrane housings with 316L wetted pump and valve" [docs-authority/duties/GW_INTAKE.md]
 Material: Selections issued (unit task 09 pattern; checked across the AQS-ASSAY-001 Rev C bounding cases, AQS-STD-002). The raw well side, from the well pump suction through the sand separator, is PVC-U Sch 80 (class P1): mineralised water at about 30 C with silica, fluoride and arsenic (USGS_DV_GW) and no hydrocarbon or aromatic exposure in the bounding cases. (continues on the duty sheet)
 
 Nozzles: 3 process connections per docs-authority/nozzles/GW_INTAKE.csv
