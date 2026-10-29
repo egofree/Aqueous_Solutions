@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | T | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | U | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -96,7 +96,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-018 | `docs-authority/CRYO_ASU.md` | C | 2026-10-25 | Cold box gas rate | current |
 | AQS-DUTY-023 | `docs-authority/MASS_DISPOSITION.md` | A | 2026-10-09 | Residual close | current |
 | AQS-DUTY-024 | `docs-authority/PATHWAY_AUDIT.md` | A | 2026-10-09 | No placeholders | current |
-| AQS-DUTY-026 | `docs-authority/SOLVENT_ROUTE.md` | C | 2026-10-12 | Sugar and reagent stores | current |
+| AQS-DUTY-026 | `docs-authority/SOLVENT_ROUTE.md` | D | 2026-10-29 | Solvent and reagent synthesis route | current |
 | AQS-DUTY-038 | `docs-authority/MVS_SIZE.md` | D | 2026-10-12 | Sector size and MVS | current |
 | AQS-DUTY-049 | `docs-authority/POLYMER_HX_SIZING.md` | A | 2026-10-15 | Polymer exchanger sizing, HX-5 and HX8 | current |
 | AQS-DUTY-050 | `docs-authority/sizing/LEACH_CSTR_1.md` | B | 2026-10-18 | LEACH_CSTR_1 sizing | current |
@@ -209,7 +209,7 @@ Table 3.1. Document numbers in use
 | AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | D | 2026-10-25 | Manufacturing shop tool list | current |
 | AQS-MFG-011 | `docs-authority/JELLYBEAN.md` | B | 2026-10-29 | Jellybean parts: standard sizes and in-house lines | current |
 | AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | D | 2026-10-25 | Electrode fabrication and coating | current |
-| AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | B | 2026-09-28 | Metal forming path — wire draw / cold mill / gas atomizer | current |
+| AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | C | 2026-10-29 | Metal forming: wire drawing, cold rolling and gas atomising | current |
 | AQS-MOD-001 | `docs-authority/MODULE.md` | C | 2026-10-12 | Module standard | current |
 | AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` | D | 2026-10-25 | Frame system | current |
 | AQS-MVS-CHK-001 | `docs-authority/internal/MVS_CHECKLIST.md` | — | 2026-10-02 | MVS checklist | superseded by AQS-PLAN-007 |

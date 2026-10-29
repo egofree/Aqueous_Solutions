@@ -1,0 +1,6 @@
+# Rewrite batch 18: metal forming and the solvent route
+
+Date: 2026-10-29
+
+- `docs-authority/METAL_FORMING.md` (AQS-MFG-MET-001), Rev C. The page described a path in which the shop melt furnace took the electrowon metal and fed the forming tools through product bins, a powder crib and a nitrogen blanket. On the graph the foundry does the bulk melting, the shop furnace takes only electrowon sheet and atomiser remelt, and the bins, crib and blanket are not units. The atomiser is sized on argon in the tool list, not nitrogen. The page now follows the graph stream by stream, gives the choices and hazards as sentences, and leaves every rate and load to the generated equipment list AQS-EQP-MFG-MET-001, so it carries no value that can go stale.
+- `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026), Rev D. The rates were from graph revision BH: the methanol train was given 6.9 kg/d of carbon dioxide and 5.0 kg/d of methanol, while the graph now carries several times that. The page now gives the methanol train by stream and the fab reagent uses, without rates. The ionic-liquid solvent chain has build models in `models/mfg/` but no units on the graph; its chemistry is kept and its status is an owner question in `REWRITE_TODO.md`.

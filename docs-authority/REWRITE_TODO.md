@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: T
+Revision: U
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -26,6 +26,7 @@ Date: 2026-10-29
 | R | Batch 15: the metal-forming, shop and wafer fab equipment lists given generators that read the graph; owner questions on the forming tool design, the silicon charge of the fab and its blanket gas | 2026-10-29 |
 | S | Batch 16: the path of the cryogenic massing script corrected in AUTHORITY and in the history page REMAINING_BLD | 2026-10-29 |
 | T | Batch 17: PARAMETRIC_MODEL rewritten through its generator `flow_graph/param/report.py` | 2026-10-29 |
+| U | Batch 18: METAL_FORMING and SOLVENT_ROUTE rewritten against the graph; owner question on the ionic-liquid chain | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -159,6 +160,8 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/AUTHORITY.md` | Rev Z. The vacuum-jacketed line envelopes now point to `models/freecad/cryo.py`, where they are defined. |
 | `docs-authority/internal/REMAINING_BLD.md` | Rev Z. History page kept as it is; two file paths corrected, one to `models/freecad/cryo.py` and one to a folder outside the repository. |
 | `docs-authority/PARAMETRIC_MODEL.md` | Rev C. Rewritten through `flow_graph/param/report.py`: purpose, scope and terms; the framework and the acid-loop decision as sentences in order; the relief and scrubber rows read from the graph; stale pointers removed. |
+| `docs-authority/METAL_FORMING.md` | Rev C. Rewritten against the graph: the route of the metal by stream, the choices that fix it, air handling, heat recovery and hazards; stale tags, outside references and the nitrogen atomising gas removed; values left to the generated equipment list. |
+| `docs-authority/SOLVENT_ROUTE.md` | Rev D. Rewritten against the graph: the methanol train by stream, the ionic-liquid route as chemistry only, and the fab reagent uses; the rates of graph revision BH removed. |
 
 ## 3. In progress
 
@@ -187,7 +190,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/MATERIALS_SEC3.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/MATERIALS_STD.md` | No purpose and scope section; list items written as fragments; working or stock phrasing. |
-| `docs-authority/METAL_FORMING.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/MFG_MODEL_PLAN.md` | No purpose and scope section. |
 | `docs-authority/MVS_PITCH_PASS.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; arrows used in place of sentences. |
 | `docs-authority/MVS_STUDY_CLOSE.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; arrows used in place of sentences. |
@@ -196,7 +198,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | No record of revisions; no purpose and scope section; list items written as fragments; arrows used in place of sentences. |
 | `docs-authority/SIGN_SCHEDULE.md` | No purpose and scope section. |
-| `docs-authority/SOLVENT_ROUTE.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/STL_MANIFEST.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/STUDY_UNITS_STUB.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/TERRACE_LANDSCAPE.md` | No purpose and scope section; list items written as fragments. |
@@ -346,6 +347,7 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/METAL_FORMING_EQUIPMENT.md` (AQS-EQP-MFG-MET-001) | AQS-MFG-010 sizes the wire drawer, the cold mill and the atomiser from their energy per kilogram and gives their nameplates, but the die schedule of the wire drawer, the gauge and width range of the mill and the batch rate of the atomiser are not designed. Should they be set now from the graph throughputs, or held until the tools are designed in-house? |
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001) | No stream brings silicon to WAFER_FAB: STOCK_TO_FAB carries no flow, and the fab balance closes on its gas, slurry and water streams alone, so the wafer stream to LITHO_COAT is not backed by a silicon charge. Should STOCK_TO_FAB be rated from the wafer output, and from which store? |
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001) | Revision C left the blanket gas for the Czochralski charge as TBD between argon and nitrogen. The graph feeds the fab nitrogen (S03) only. Is nitrogen the choice, or should an argon stream be added? |
+| `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | The ionic-liquid solvent chain (fermentation, acetic acid, glyoxal, formaldehyde, methylimidazole, chlorobutane and the quaternisation) has build models in `models/mfg/` but no units on the present graph. Should it be put back on the graph with its rates, or retired with its build models? |
 | `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |
 | `docs-authority/unregistered_doc_numbers.json` | Pages cite AQS-PFD-* flow diagram numbers that are in neither register. Should they be added to the drawing register with the scripts in `flow_graph/exporters/matplotlib/` as their source, or removed from the pages? |
 | `docs-authority/unregistered_doc_numbers.json` | Many pages cite AQS-AUD-001, a crew and water audit that is not in the repository. Should it be added, or should each citation be replaced by the graph value it stood for? |

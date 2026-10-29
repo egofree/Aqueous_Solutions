@@ -1,216 +1,75 @@
-# Metal forming path — wire draw / cold mill / gas atomizer
+# Metal forming: wire drawing, cold rolling and gas atomising
 
 Document number: AQS-MFG-MET-001  
-Revision: B  
-Date: 2026-09-28  
-PFD: AQS-PFD-MFG-MET-001 (`metal_forming_pfd.png`)  
-Equipment: AQS-EQP-MFG-MET-001  
-Streams: AQS-STR-001 **S57–S63** / **S71–S72** (AQS-VENT-001)
-
-Authority: `MANUFACTURING/Manufacturing_Overview.md` (MetalFab Mermaid),
-root `04-structural-metal-manufacturing.md` (thermal / powder narrative),
-AQS-EQP-MFG-001 (shop envelope; metals massing), `freecad/mfg_shop.py`,
-`freecad/wet_products.py` (`PROD_METALS`, `MELT` stub), AQS-STR-001 /
-AQS-MF-001, AQS-HSE-001, AQS-GAP-001 §2 / §7 item 6, hub `ELECTRICAL.md`
-(induction coil = electric Present), AQS-VENT-001 (MET_AHU scrub closure).
-
-| Rev | Change | Description | Date |
-|---|---|---|---|
-| A | — | Basic issue: wire-draw / cold-mill / atomizer path + HVAC/Q4 | 2026-09-28 |
-| B | 1 | MET_SCRUB / S71–S72; no free outdoor dump (AQS-VENT-001) | 2026-09-28 |
-
+Revision: C  
+Date: 2026-10-29  
+Equipment: AQS-EQP-MFG-MET-001 (`docs-authority/METAL_FORMING_EQUIPMENT.md`)  
+Authority: the plant flow graph `flow_graph/plant_flow_graph.json`; the tool list AQS-MFG-010; the stream register AQS-STR-001; the hazard separation register AQS-HSE-001; the vent and scrubber list AQS-EQP-VENT-001.  
 Licence: CERN-OHL-S-2.0.
 
----
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue: wire drawing, cold mill and atomiser path with its air handling and heat recovery. | 2026-09-28 |
+| B | Metal-aisle scrubber and its streams added; no free discharge to outdoors. | 2026-09-28 |
+| C | Rewritten against the plant graph and the documentation style guide (AQS-DOC-002). Bulk melting now belongs to the foundry, and the shop melt furnace takes only electrowon sheet and atomiser remelt. Tags that are no longer on the graph (product bins, powder crib, nitrogen blanket, electrode blank station) and references to documents outside the repository were removed. Nitrogen as atomising gas replaced by the argon of the tool list. Rates and loads are no longer stated here; they are in the generated equipment list. | 2026-10-29 |
 
-## 1. Scope
+## Purpose and scope
 
-Closes AQS-GAP-001 §7 item 6 (**MFG metals forming kit**): promote the
-legacy MetalFab nodes WireDraw / RollMill / PowderAtom from “out of M1
-CAD massing” into a **named process path** with equipment list, PFD,
-streams, and FreeCAD keep-out stubs inside `MFG_SHOP`.
+The plant turns part of the metal it recovers into wire, sheet and powder for its own use: cable and fasteners, panels and electrode blanks, and powder for sintering and printing. This page describes that process: the route of the metal, the choices that fix it, the air handling and heat recovery, and the hazards. It covers the units MET_MELT, WIRE_DRAW, COLD_MILL, GAS_ATOMIZER, MET_AHU, MET_SCRUB and MET_HX_Q4.
 
-| In scope | Out of scope this pass |
-|---|---|
-| Wire draw, 4HI cold mill, gas atomizer topology | Invented kW / kg/h / m/min nameplates |
-| Feedstock from PROD_METALS / MET_MELT (induction electric) | Full plant.FCStd rebuild |
-| Products: wire, sheet, powder; scrap → S16 / leach | Electrode coating line detail (RuO₂/IrO₂) |
-| Dedicated process-aisle AHU; Q4 via named HX only | Textiles / melt-blown / HEPA media line |
-| Distinction MET_MELT ≠ INDUCTION_PYROLYZER | SCALE_M change / git commit |
-| Streams S57–S63 | Dock / yard geometry; compliance rewrite |
+The rates, loads, tool nameplates and mass balances are in the generated equipment list AQS-EQP-MFG-MET-001, and the tools are designed in AQS-MFG-010. This page gives no values of its own, so it does not go out of date when the graph changes. Bulk melting and casting belong to the foundry and are not covered here.
 
-**NOTE**
+## 1. Terms
 
-`SCALE_M` stays **1.0**. Legacy Manufacturing_Overview figures (SuperbMelt
-“35 kW”, Stanat/Fenn “5–8 kW”, “20–30 kW MFG allocation”) are **study
-narrative only** — cite for topology, do not issue as M1 nameplates.
-Duties = **TBD**.
+- Cold rolling: reducing the thickness of metal strip between rolls at room temperature.
+- Wire drawing: pulling rod through a series of dies to reduce its diameter.
+- Gas atomising: breaking a stream of molten metal into droplets with a jet of gas, which freeze into powder.
+- Remelt: metal returned to the melt furnace, here the atomiser fines and oversize.
+- Q4 header: the low-grade warm-water loop that heats the habitation air.
 
----
+## 2. Route of the metal
 
-## 2. Decisions (locked this pass)
+The shop melt furnace MET_MELT takes electrowon sheet from the last electrowinning cell (stream IA-EW-SHEET) and the remelt from the atomiser (IA-ATOM-REMELT). It sends melt to three tools:
 
-### 2.1 Path topology
+- the wire drawer WIRE_DRAW, on stream S57, which makes wire (S58);
+- the cold mill COLD_MILL, on IA-MELT-MILL, which makes sheet and strip (S59);
+- the gas atomiser GAS_ATOMIZER, on IA-MELT-ATOM, which makes powder (S60).
 
-```
-PROD_METALS / S08 crib
-        │
-        ▼
-   MET_MELT  (induction electric metal melt — ≠ INDUCTION_PYROLYZER)
-        │  S57 billet / melt / charge
-        ├──────────────┬──────────────┐
-        ▼              ▼              ▼
-   WIRE_DRAW      COLD_MILL     GAS_ATOMIZER
-        │              │              │
-     S58 wire       S59 sheet      S60 powder
-        │              │              │
-        └──────► MFG_CRIB / electrodes / RepRap / FAB charge
-                      │
-                   S61 swarf / trim → HOPPER (S16 class) / leach
-```
+The wire, sheet and powder go to the shop MFG_SHOP. Swarf and trim from the shop go to the hopper on stream S61 and to the leach on S16. The fume from wire drawing goes to the scrubber (IA-DRAW-FUME), and the fines lost in drawing go to the baghouse (IA-WIRE-LOSS).
 
-Legacy Mermaid: `Smelt → WireDraw & RollMill & PowderAtom → Electrodes &
-MetalProducts`. That topology is retained; equipment tags use locked
-`_` names per AQS-SYS naming.
+The graph also keeps routes from the foundry that carry no flow at present: stock to the wire drawer (STOCK_TO_WIRE_DRAW), foundry melt to the atomiser (IND_TO_ATOM) and atomiser powder to stock (ATOM_TO_STOCK). The equipment list names the routes without flow on each regeneration.
 
-### 2.2 MET_MELT ≠ INDUCTION_PYROLYZER
+## 3. Choices that fix the process
 
-| Tag | Duty | Energy | Feed | Location |
-|---|---|---|---|---|
-| **MET_MELT** | Structural / electrode metal melt → billet / charge for draw / roll / atomize | **Electric induction** (Present) | PROD_METALS / S08 metals | L0 `MFG_SHOP` |
-| **INDUCTION_PYROLYZER** | Plastic / organics depolymerization on **oil line** | Electric induction coil (Present) | Sorted polymer (HDR_ORG) — **never FR-4** | L-1 oil aisle (`oil_line.py`) |
+### 3.1 Electric induction melting
 
-**CAUTION**
+MET_MELT is a coreless induction furnace. Fuel firing is not used: it would need a fuel header and a flue for a small batch melt, and the induction furnace runs from the plant bus. The furnace takes only metal. No polymer, oil or printed circuit board enters it; organics go to the oil-line pyrolyser OIL_PYRO, which is a different unit with a different chemistry.
 
-Do not route polymer scrap into MET_MELT. Do not treat MET_MELT as the
-oil-line pyrolyzer. Combustion / oil-gas firing for metal melt is **not**
-the M1 selection — electric induction only (matches `ELECTRICAL.md`
-induction Present; avoids inventing a fuel header).
+### 3.2 Bulk melting in the foundry
 
-### 2.3 Units issued
+The foundry melts and casts the bulk of the metal in IND_MELT and the casting units. MET_MELT is kept for the small shop melt that feeds the forming tools, and it is not sized as the main melt.
 
-| Tag | Role |
-|---|---|
-| `MET_MELT` | Induction metal melt pot / furnace envelope |
-| `WIRE_DRAW` | Wire drawing (Cu / Al / Fe class 0.5–5 mm intent — size TBD) |
-| `COLD_MILL` | 4HI reversing cold rolling mill (sheet 0.1–9 mm class intent — TBD) |
-| `GAS_ATOMIZER` | Inert-gas atomizer → metal powder for RepRap / sinter / FAB charge |
-| `MET_WIRE_BIN` | Wire product hold |
-| `MET_SHEET_BIN` | Sheet / strip product hold |
-| `MET_POWDER_CRIB` | Powder product hold (dry; N₂ blanketed) |
-| `MET_N2_BLANKET` | Inert blanketing / atomizer gas from S03 (N₂); Ar = vendor option |
-| `MET_AHU` / `MET_SCRUB` | **Dedicated** MFG metal-aisle capture → scrub/baghouse (AQS-VENT-001) |
-| `MET_HX_Q4` | Low-grade coolant / quench residual → Q4 water only |
-| `ELECTRODE_FAB` | Stub — 316L / Ti electrode prep (Partial; coating deferred) |
+### 3.3 Argon for atomising
 
-### 2.4 HVAC / heat rejection
+The atomiser is a close-coupled design with the argon recirculated, as AQS-MFG-010 sizes it. Argon is inert to the reactive metals that nitrogen would nitride. Shop air is never the atomising gas.
 
-| Destination | Tag / stream | What | Forbidden |
-|---|---|---|---|
-| **Dedicated process AHU** | `MET_AHU` → **S71** MET_SCRUB / BH | Metal-aisle capture (fume / oil mist / N₂ dilution) → scrub/baghouse; **S72** returns | Shared return with HAB / FARM; acid-gas header as primary; free outdoor dump |
-| **Q4** (life HVAC water) | `MET_HX_Q4` → **S63** | Recoverable warm residual from mill / draw coolants or quench that can meet **< 80 °C** water class (peer to S06 / S44 / S53 / S54) | Atomizer hot gas as flue into life air; melt off-gas untreated |
+## 4. Air handling and heat recovery
 
-**WARNING**
+The metal aisle has its own air handler, MET_AHU. It sends the aisle air to the scrubber MET_SCRUB (streams S62 and S71), which washes out fume and oil mist and returns the cleaned air to the air handler (IA-MET-AIR-RET). The scrubber liquor goes to the leach (S72) and the oil it collects to the oil line (S72B). The aisle air never shares a return with the habitation or the farm, and it is not discharged to outdoors without treatment.
 
-Never share `MET_AHU` return with HAB / FARM. Free outdoor dump is not the design end state (AQS-VENT-001). Never put melt / atomizer
-hot gas into Q4 as flue. Q4 remains water-only into life air.
+Warm water from the foundry induction melt and the vacuum induction furnace is recovered in MET_HX_Q4 and sent to the Q4 header as heat (S63). Only water crosses to the Q4 header; no flue or melt gas does.
 
-### 2.5 Feedstock and products (qualitative)
+## 5. Hazards
 
-| Item | Source / sink |
-|---|---|
-| Feedstock | Electrowon / polished metals from `PROD_METALS` (S08 class); scrap remelt from S61 when chemistry allows |
-| Wire | Cabling, fasteners, electrode wire stock (S58) |
-| Sheet / strip | Structural panels, tank skins, electrode blanks (S59) |
-| Powder | RepRap / sinter / FAB charge / powder-metallurgy (S60) |
-| Scrap / swarf / trim | S61 → HOPPER (S16) or leach — **no FR-4**; no pyro |
+1. Induction melting can cause burns and metal splash, and the coil carries a strong field. The coil supply is locked out before work on the furnace (29 CFR 1910.147 and 1910.333).
+2. The wire drawer and the cold mill can trap and crush, and they are loud. They are guarded (29 CFR 1910.212), and hearing protection is used where the noise requires it (29 CFR 1910.95).
+3. The atomiser holds gas under pressure and sprays hot metal. Its area is kept clear while it runs. Powder of reactive metals such as aluminium and titanium can burn or explode, so it is held under inert gas, the equipment is grounded, and open ignition sources are kept out.
+4. Metal dust and fume are captured by the aisle air handler and the scrubber, not by the habitation air system.
+5. Where inert gas is held in an enclosed volume, the oxygen level is monitored.
 
-### 2.6 Utilities
+## 6. Related pages
 
-| Utility | Intent |
-|---|---|
-| Electric | Module AC / induction coil — load on S17 / S20; kW **TBD** |
-| N₂ blanketing / atomize | S03 branch via `MET_N2_BLANKET`; Ar optional |
-| Cooling water | Closed loop → `MET_HX_Q4` when residual qualifies for Q4; else dedicated cool (do not invent UPW dump) |
-| Compressed air | Shop air for actuators only — not atomizer primary gas |
-
----
-
-## 3. Placement — L0 MFG_SHOP
-
-| Tag | Placement intent |
-|---|---|
-| Forming train | Inside `MFG_SHOP` / `MFG_FLOOR` cassette bay on L0 (`MFG_X/Y/Z`) |
-| `MET_MELT` | Adjacent to crib / PROD_METALS handoff; keep-out from polymer line |
-| `WIRE_DRAW` / `COLD_MILL` / `GAS_ATOMIZER` | Downstream of melt along floor +X |
-| `MET_AHU` / `MET_SCRUB` | On metal aisle; scrub/BH before any residual vent — not through HAB |
-| `MET_HX_Q4` | On Q4 water header with GEO_HP / FC_HX / CRYO_HX peers |
-
-Full `plant.FCStd` rebuild is **required** before these envelopes appear
-in the assembled plant model — stub only this pass.
-
----
-
-## 4. Streams (qualitative)
-
-| ID | From | To | Ph | Carries | Notes |
-|---|---|---|---|---|---|
-| S57 | PROD_METALS / MET_MELT | WIRE_DRAW / COLD_MILL / GAS_ATOMIZER | S/L | billet / melt / charge | Branch of S08; not polymer |
-| S58 | WIRE_DRAW | MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB | S | wire product | Size class TBD |
-| S59 | COLD_MILL | MET_SHEET_BIN / MFG_CRIB | S | sheet / strip | Gauge TBD |
-| S60 | GAS_ATOMIZER | MET_POWDER_CRIB / FAB / RepRap | S | metal powder | N₂/Ar atomize; dry hold |
-| S61 | Forming train swarf / trim | HOPPER / leach | S | metal scrap | S16 class; no FR-4; no pyro |
-| S62 / S71 | MET_AHU → MET_SCRUB / BH | scrub train | G | aisle capture | Never HAB return; not free dump |
-| S72 | MET_SCRUB / BH | CSTR / OIL / ORG | L/S | fines + liquor returns | sewer-as-primary |
-| S63 | MET_HX_Q4 | Q4 / FARM / HAB | E | heat < 80 °C | Same Q4 rule as S06 / S44 / S53 / S54 |
-
----
-
-## 5. Hazards (summary)
-
-1. Induction melt: burn / splash / EMF; LOTO on coil supply
-   (29 CFR 1910.147 / 1910.333).
-2. Wire draw / cold mill: pinch / crush / noise — machine guarding
-   (1910.212 / 1910.95); same family as shredder discipline.
-3. Gas atomizer: pressurized inert gas + hot metal spray — keep-out;
-   powder explosion / fire risk for reactive metals (Al / Ti class) —
-   inert hold, grounding, no open ignition sources.
-4. Metal dust / fume → `MET_AHU` → `MET_SCRUB` / baghouse (S71–S72); do not rely on hab AHU; no free outdoor dump (AQS-VENT-001).
-5. FR-4 and polymer never enter MET_MELT or the forming train
-   (same FR-4 rule as pyro).
-6. N₂ asphyxiation in blanketed bins — O₂ deficiency monitors where
-   hold volumes warrant (shop practice).
-
----
-
-## 6. Relationship to existing MFG / wet path
-
-| Existing | Relationship |
-|---|---|
-| AQS-EQP-MFG-001 / AQS-PFD-MFG-001 | Shop envelope + polymer + CNC massing; this doc is the **metals forming detail sheet** |
-| `PROD_METALS` / `MELT` (`wet_products.py`) | Upstream crib / melt stub — MET_MELT is the issued shop-side melt tag |
-| Oil-line `INDUCTION_PYROLYZER` | Separate chemistry; electric but organics only |
-| Glass line MILL | Silicate mill — not COLD_MILL |
-| Electrode fab (legacy) | `ELECTRODE_FAB` stub only; coating chemistry deferred |
-
----
-
-## 7. Rebuild / sync
-
-```bash
-cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
-python3 metal_forming_pfd.py
-python3 mfg_shop_pfd.py          # pointer callout if regenerated
-```
-
-Optional FreeCAD envelope only (no full plant rebuild this pass):
-
-```bash
-# edit models/freecad/mfg_shop.py stubs (MET_*), then:
-# /usr/bin/freecadcmd models/freecad/mfg_shop.py
-# Full plant.FCStd rebuild REQUIRED before stubs appear in plant.
-```
-
-Share mirror: `share/aqueous-solutions/docs-authority/`,
-`docs-authority/process/`, `pfd/scripts/`, `pfd/images/`,
-`models/freecad/mfg_shop.py`.
+- AQS-EQP-MFG-MET-001, the generated equipment list for these units, with streams, rates, balances and separation checks.
+- AQS-EQP-MFG-001, the shop equipment list.
+- AQS-MFG-010, the tool list that sizes the four metal tools.
+- The process flow diagram is part of the plant view `flow_graph/views/pfd.svg`, drawn from the graph by the regenerator.
