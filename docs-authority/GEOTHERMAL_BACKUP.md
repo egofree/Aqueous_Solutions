@@ -1,179 +1,111 @@
-# Geothermal loop and backup generator
+# Ground-source heat pump loop and backup generator
 
 Document number: AQS-PWR-002  
-Renumbered 2026-10-15 from AQS-PWR-001 to clear a duplicate (AQS-REG-001).
-Revision: B  
-Date: 2026-09-28  
-PFDs: AQS-PFD-GEO-001 (`geothermal_pfd.png`), AQS-PFD-GEN-001 (`backup_gen_pfd.png`)  
-Equipment: AQS-EQP-GEO-001, AQS-EQP-GEN-001
+Former number: AQS-PWR-001 (renumbered on 2026-10-15 to clear a duplicate)  
+Revision: C  
+Date: 2026-10-29  
+Equipment lists: AQS-EQP-GEO-001 (`GEOTHERMAL_EQUIPMENT.md`), AQS-EQP-GEN-001 (`BACKUP_GEN_EQUIPMENT.md`)
 
-Authority: `POWER/Power_System_overview.md`, hub `ELECTRICAL.md`,
-`FLOW_BATTERY.md`, AQS-GAP-001 §4 / §7 item 4, AQS-SCALE-001 §9,
-AQS-STR-001 / AQS-MF-001 (S43–S48), `freecad/electrical_yard.py`,
-`electrical_sld.png`, GAS_SYSTEM exhaust-recapture intent, root
-`06-energy-carbon-oxygen.md` (FC narrative remains separate).
-
-| Rev | Change | Description | Date |
-|---|---|---|---|
-| A | — | Basic issue: GHEX + heat pump; H₂ genset on Sol-Ark GEN | 2026-09-27 |
-| B | 1 | FC relationship closed (AQS-FC-001); Q4 peer FC_HX_Q4 | 2026-09-28 |
-
-Licence: CERN-OHL-S-2.0.
-
----
-
-## 1. Purpose
-
-Close POWER gaps for GHEX/heat pump and H₂ BACKUP_GEN on the Sol-Ark GEN port.
-
-## 2. Scope
-
-Closes the POWER legacy gaps called **Missing / Partial** in
-AQS-GAP-001: geothermal baseload path, and backup generator on the
-Sol-Ark **GEN** port (previously spare).
-
-| In scope | Out of scope this pass |
-|---|---|
-| Ground heat-exchanger class + heat-pump thermal path | Invented electric kW beyond published POWER / ELECTRICAL figures |
-| Backup genset fuel decision from plant streams | PEM FC issued separately (AQS-FC-001); MeOH DMFC still deferred |
-| GEN port interconnect + L0 yard placement | Binary ORC electric rating lock (stub only) |
-| Qualitative streams S43–S48 | FreeCAD plant rebuild / SCALE_M change |
-| Equipment lists + regenerable PFDs | Site bore-field survey / AHJ permits |
-
-**NOTE**
-
-`SCALE_M` stays **1.0**. No git commit. Do not hard-code legacy
-“400 kW solar / 100 kW geothermal / 280 kW campus” as M1 yard
-nameplate — those figures stay narrative targets in
-`POWER/Power_System_overview.md` until SCALE_M growth and a site
-resource survey support them.
-
----
-
-## 3. Decisions (locked this pass)
-
-### 2.1 Geothermal — heat pump primary; ORC electric TBD
-
-| Path | Decision | Rationale |
+| Rev | Description | Date |
 |---|---|---|
-| Ground heat exchanger | **Closed-loop vertical bore field** class (`GEO_GHEX`) | Avoids producing brine / geothermal fluid that would enter process headers; matches campus closed-loop water discipline |
-| Thermal use | **Water-source heat pump** (`GEO_HP`) → **Q4** (`S44`) | M1 HVAC already on Q4 (ELECTRICAL HVAC 1.5 kW class); heat pump displaces resistance / boiler without claiming new generation kW |
-| Electric generation | **Binary ORC stub** (`GEO_ORC`) — **rating TBD** | Legacy Mermaid claims “Geothermal Generator 100 kW baseload”; M1 module peak is ~50 kW continuous class (`ELECTRICAL.md`). Do not claim 100 kW on the M1 yard. ORC may AC-couple later when resource + SCALE_M justify |
+| A | First issue: ground heat exchanger, heat pump and hydrogen generator on the inverter generator port | 2026-09-27 |
+| B | Relationship to the fuel cell (AQS-FC-001) recorded | 2026-09-28 |
+| C | Rewritten to the style guide and to the plant graph: the generator is dual-fuel as the graph states, the organic Rankine cycle unit is a sized standby option, and units and streams that are not in the graph are removed | 2026-10-29 |
+
+## 1. Purpose and scope
+
+This page states how the plant uses ground heat and how it keeps critical loads running when the solar array, the flow battery and the grid are all unavailable. It covers four units in the plant graph: the ground heat exchanger `GEO_GHEX`, the heat pump `GEO_HP`, the organic Rankine cycle (ORC) generator `GEO_ORC` and the standby generator `BACKUP_GEN`. It gives the design decisions, their reasons and the streams that connect the units.
+
+The plant graph (`flow_graph/plant_flow_graph.json`) holds every rate, rating and size. This page names where each value is held and does not repeat it. The fuel cell is described in AQS-FC-001 (`FUEL_CELL.md`) and the storage and generation sizing in AQS-ELEC-007 (`POWER_SIZING.md`).
+
+## 2. Summary
+
+- The ground loop is a closed vertical bore field. Its fluid stays in its own circuit and never enters a process or potable water header.
+- The heat pump lifts ground heat into the low-grade heat bus `Q4_BUS` only when that bus is short of heat. Two heat pumps are installed, each able to carry the full duty (2 × 100 %).
+- The ORC generator is an installed standby unit sized for a study case. The present ground resource supports no useful electrical output, and no output is claimed until a site survey supports one.
+- The backup generator is dual-fuel. It burns hydrogen from the plant store first and the plant's own C5 to C10 hydrocarbon cut when hydrogen is short. Both fuels are made by the plant, so an outage does not depend on a fuel delivery.
+- The generator rating comes from the driver `backup_gen_rated_kW` in `flow_graph/param/drivers.json`: 125 % of the critical load list, rounded up in 5 kW steps, on the standby basis of NFPA 110-2025.
+
+## 3. Ground loop and heat pump
+
+### 3.1 Ground heat exchanger
+
+`GEO_GHEX` is a closed-loop vertical bore field filled with a propylene glycol solution. A closed loop was chosen because an open well would bring groundwater or brine to the surface, and that water would then need treatment before it could touch any plant header. The bore count, bore depth, spacing, loop pipe size, loop flow and the heat the field can deliver are in `params.design` of the `GEO_GHEX` node. The ground conductivity and source temperature behind them are study values until a site survey replaces them (`survey_status` on the node).
 
 **CAUTION**
 
-Do not tee geothermal loop fluid into HDR_UPW, CATCH, Salria, or
-life potable. Loop fluid is a dedicated closed circuit (S43).
+Do not connect the ground loop to the ultrapure water header, the catch tank or the potable water system. The loop fluid contains glycol and is a dedicated closed circuit (stream S43).
 
-### 2.2 Backup genset — plant H₂ on Sol-Ark GEN
+### 3.2 Heat pump
 
-| Option | Verdict | Why |
-|---|---|---|
-| **H₂ AC genset** (primary) | **Selected** | Fuel from existing plant streams S05 / CRYO_H2 / S24 holdup; matches POWER Mermaid “diesel/H₂”; exhaust is primarily H₂O (→ condensate class) + air nitrogen oxides to scrubber — not an external carbon import |
-| Diesel / biodiesel | Contingency only | External fuel breaks closed-loop claim; retain as emergency procurement path, not the named M1 duty |
-| Biogas from S30 black digest | Deferred | Digester gas quality / cleanup not scheduled; would compete with nutrient dose |
-| Methanol DMFC (root 06) | Out of scope | **PEM** FC is Present (AQS-FC-001 on BATT DC); MeOH DMFC remains deferred — neither is the Sol-Ark GEN AC port |
+`GEO_HP` is a water-source heat pump between the ground loop and `Q4_BUS`. It runs only when the heat recovered from the process does not cover the low-grade heat demand; otherwise it is idle and the ground loop carries no heat. The dispatch rule is stated in AQS-DUTY-010 (`EDGE_RATING_DUTY.md`). The lift, the coefficient of performance, the electrical draw and the heat exchanger areas are in `params.design` of the `GEO_HP` node. The source-loop circulator is sized in AQS-DUTY-076 and sits on `GEO_HP_CLOSED_LOOP`.
 
-Sol-Ark 60K **GEN** terminal is 200 A class (`ELECTRICAL.md`). Genset
-continuous rating is **TBD** — size to critical islanded load and
-GEN-port limits; do not invent a kW nameplate beyond the published
-module peak (~50 kW) and inverter continuous (60 kW) as **upper
-bounds for study**, not issued ratings.
+### 3.3 Organic Rankine cycle generator
 
-### 2.3 Interfaces to RECT / ZnBr2 / PV
+`GEO_ORC` is a binary ORC unit with a scroll expander. It is kept in the graph as an installed standby option so that the design is ready if a site offers hotter ground. At the study site the ground temperature is too low for useful output, so the study endpoint is 0 kW of electricity. The machine geometry in `params.design` is sized for the dry-cooler heat case of A-M-244 so that the standby unit is a real machine (A-M-285). Its connection to the inverter, stream S48, carries no rate. The node lists the surveys that must be done before an output is claimed: ground conductivity, source temperature and the heat left over after the `Q4_BUS` demand.
 
-```
-PV_ARRAY*  ──PV DC──►  SOL_ARK_60K  ◄──BATT DC──  ZNBR2*
-                         │
-              GEN port ◄─┴── S47 AC ── BACKUP_GEN  ◄── S45 H₂
-                         │
-              LOAD ──► ATS S2 ──► PLANT MAIN ──► MCC + RECTIFIER*
-                         │
-              GRID ↔ utility / optional backfeed
+## 4. Backup generator
 
-GEO_GHEX ◄──S43──► GEO_HP ──S44 Q4──► FARM / HAB HVAC
-GEO_ORC (stub) ──S48 TBD──► Sol-Ark AC couple (future)
-```
+### 4.1 Role
 
-Rectifiers remain on plant main AC after ATS. Backup does **not**
-feed tankhouse DC directly. ZnBr2 stays the night / pyro peak buffer;
-genset is failover when PV + ZnBr2 + grid are unavailable or for
-ordered island tests.
+`BACKUP_GEN` feeds the generator port of the hybrid inverter `SOL_ARK_60K` (stream S47). It runs when the solar array, the zinc-bromine flow battery `ZNBR2` and the grid cannot carry the critical loads, and once a month for the exercise that NFPA 110-2025 section 8.4.2 requires. It does not feed the electrowinning rectifiers directly; they stay on the plant main alternating-current supply after the transfer switch.
 
----
+### 4.2 Fuels
 
-## 4. Placement — L0 POWER yard
+The generator keeps two fuels, each made by the plant, so that losing one does not stop the generator. Table 4.1 gives the order in which they are used. The table is taken from `params.fuel_selection` of the `BACKUP_GEN` node, which `flow_graph/param/backup_fuel.py` writes.
 
-Yard origin remains `electrical_yard.py` west of the **north** dock /
-plate at `Z_L0`, Y-aligned to `DOCK_Y` (AQS-BLD-001 Rev D / AQS-SITE-001). Proposed massing (docs + optional FreeCAD stub):
+Table 4.1. Backup generator fuels in order of use
 
-| Tag | Placement intent |
-|---|---|
-| `BACKUP_GEN` | L0 yard, immediately adjacent to `SOL_ARK_60K` (+X or +Y of inverter) so GEN feeder is short |
-| `GEN_H2_BUFFER` | Small hold tank / manifold between CRYO_H2 branch and genset; outdoors or fire-rated nook per NFPA 2 — detail TBD |
-| `GEO_HP` | L0 yard mechanical pad near POWER, or grade mechanical room west — keep off L1 life |
-| `GEO_GHEX` | Off-plate bore field (site); CAD shows **keep-out / stub header** only at yard edge |
-| `GEO_ORC` | Stub footprint south of yard; dashed until resource survey |
+| Order | Fuel | Source unit | Stream | When it is used |
+|---|---|---|---|---|
+| 1 | Hydrogen | `CRYO_H2` | S45 | Whenever the hydrogen store holds hydrogen, including the monthly exercise |
+| 2 | C5 to C10 hydrocarbon cut | `PROD_C5_C10` | CUT-1-OUT | When hydrogen is short. The product tank keeps a reserve that is not shipped. |
+| 3 | Methanol or digester gas | `MEOH_TANK` or the sanitation digester | none | Not piped. These are candidates only if both fuels above run short. |
+
+The reserve of the C5 to C10 cut covers the critical load list for the autonomy period in the driver `crit_autonomy_d`, on the assumption that the hydrogen store is empty when the outage starts. The reserve mass and its basis are in the same graph entry. Combustion air arrives as oxygen (IA-GEN-O2) and nitrogen diluent (IA-GEN-AIR) from the plant headers. The exhaust, stream S46, goes to the nitrogen oxide scrubber `NOX_SCRUB` and is never sent to a habitation air system.
+
+### 4.3 Rating
+
+The generator is a standby machine. Its rating is set by the driver `backup_gen_rated_kW` and written to the graph by `flow_graph/param/write_graph.py`; AQS-ELEC-007 and AQS-RED-001 (`RED_AUDIT.md`) give the critical load list it must carry. Its daily average draw in the graph is the exercise energy only, because the generator does not run on a normal day.
 
 **WARNING**
 
-H₂ equipment outdoors shall observe MAQ / classified-area rules already
-noted for S24 (AQS-MF-001 §6). Do not route HDR_H2 process capture
-header into the genset fuel manifold without flame arrestors and
-isolation from the EW cathode header.
+Hydrogen fuel equipment outdoors is in a classified area. Do not connect the process hydrogen capture header to the generator fuel line without a flame arrester and an isolation valve that separate it from the electrowinning cathode gas.
 
----
+## 5. Streams
 
-## 5. Streams (qualitative)
+Table 5.1 lists the streams that connect these units. The stream register AQS-STR-001 (`STREAM_REGISTER.md`) gives their rates.
 
-| ID | From | To | Ph | Carries | Notes |
-|---|---|---|---|---|---|
-| S43 | GEO_GHEX | GEO_HP (closed) | L/E | loop fluid | Dedicated; not UPW / CATCH |
-| S44 | GEO_HP | Q4 / FARM / HAB | E | heat < 80 °C | Same Q4 rule as S06 |
-| S45 | CRYO_H2 / H2_DRYER | BACKUP_GEN | G | dried H₂ fuel | Branch of S05; MAQ |
-| S46 | BACKUP_GEN exhaust | condensate / scrubber | G/L | H₂O + NOx class | Claimed; not raw to HDR_CO2 |
-| S47 | BACKUP_GEN | SOL_ARK GEN port | E | 480 V 3φ AC | Closes spare GEN |
-| S48 | GEO_ORC (stub) | Sol-Ark AC | E | ORC AC | Rating TBD; dashed |
+Table 5.1. Streams of the ground loop and the backup generator
 
----
+| Stream | From | To | Carries |
+|---|---|---|---|
+| S43 | `GEO_GHEX` | `GEO_HP_CLOSED_LOOP` | Ground loop heat |
+| S44 | `GEO_HP` | `Q4_BUS` | Low-grade heat lifted by the heat pump |
+| S45 | `CRYO_H2` | `BACKUP_GEN` | Hydrogen fuel |
+| CUT-1-OUT | `PROD_C5_C10` | `BACKUP_GEN` | C5 to C10 hydrocarbon fuel |
+| IA-GEN-O2 | `HDR_O2` | `BACKUP_GEN` | Combustion oxygen |
+| IA-GEN-AIR | `HDR_N2` | `BACKUP_GEN` | Nitrogen diluent |
+| S46 | `BACKUP_GEN` | `NOX_SCRUB` | Exhaust |
+| S47 | `BACKUP_GEN` | `SOL_ARK_60K` | Electricity to the generator port |
+| S48 | `GEO_ORC` | `SOL_ARK_60K` | Electricity from the ORC unit; no rate claimed |
 
-## 6. Relationship to fuel cell (AQS-FC-001)
+## 6. Relationship to the fuel cell
 
-PEM fuel cell is issued under **AQS-FC-001** / AQS-EQP-FC-001 /
-AQS-PFD-FC-001. This genset document does **not** substitute for the
-fuel cell:
+The fuel cell `FUEL_CELL` (AQS-FC-001) and the backup generator are two different technologies that can each carry critical load, which is the diverse backup that AGENTS.md asks for. They do not replace each other. The fuel cell takes hydrogen (S49) and oxygen (S50) from the plant stores and delivers direct current to `SOL_ARK_60K` (S51); its heat goes to `Q4_BUS` (S53). The generator delivers alternating current to the generator port of the same inverter. The hydrogen store is shared, so `CRYO_H2` is sized for the generator, the fuel cell and the relief contingency together (AQS-EQP-CRY-001, `CRYO_EQUIPMENT.md`).
 
-| Path | Port | Stream |
-|---|---|---|
-| BACKUP_GEN | Sol-Ark **GEN** (AC) | S45 fuel / S47 AC |
-| FUEL_CELL | Sol-Ark **BATT DC** (via FC_DCDC) | S49/S50 fuel / S51 DC |
+## 7. Placement
 
-FC low-grade heat joins **Q4** through `FC_HX_Q4` (S53) — same header
-discipline as GEO_HP (S44) and S06. Never mix GEN exhaust (S46) into
-hab HVAC. Size CRYO_H2 for **GEN + FC + S24 vent contingency**
-(AQS-EQP-CRY-001). Methanol DMFC (root 06) remains deferred.
+The units stand in the power yard at level 0. `models/freecad/electrical_yard.py` places them and sets the service clearances around the generator and the heat pump pad. The generator envelope is `size_mm` on the `BACKUP_GEN` node. The bore field is outside the building plate; the model shows only its header at the yard edge.
 
----
+## 8. Drawings
 
-## 7. Rebuild / sync
+The process flow diagrams AQS-PFD-GEO-001 and AQS-PFD-GEN-001 are drawn from the graph by `flow_graph/exporters/matplotlib/geothermal_pfd.py` and `flow_graph/exporters/matplotlib/backup_gen_pfd.py`. The images are not committed; run the scripts to produce them.
 
-```bash
-cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
-python3 geothermal_pfd.py
-python3 backup_gen_pfd.py
-python3 fuel_cell_pfd.py
-python3 electrical_sld.py
-python3 campus_life_hazard_pfds.py   # POWER yard callout
-python3 building_stack_pfds.py       # L0 POWER yard callout
-```
+## 9. References
 
-Optional FreeCAD envelope only (no full plant rebuild required for
-doc issuance):
-
-```bash
-# edit models/freecad/electrical_yard.py stubs, then if desired:
-# /usr/bin/freecadcmd models/freecad/electrical_yard.py
-```
-
-Share mirror: `share/aqueous-solutions/docs-authority/`,
-`pfd/scripts/`, `pfd/images/`.
+1. NFPA 110-2025, *Standard for Emergency and Standby Power Systems*, section 8.4.2 (monthly exercise).
+2. AQS-DUTY-010, `docs-authority/EDGE_RATING_DUTY.md`: heat pump and generator dispatch.
+3. AQS-ELEC-007, `docs-authority/POWER_SIZING.md`: storage and generation sizing.
+4. AQS-RED-001, `docs-authority/RED_AUDIT.md`: redundancy audit.
+5. AQS-FC-001, `docs-authority/FUEL_CELL.md`: fuel cell.

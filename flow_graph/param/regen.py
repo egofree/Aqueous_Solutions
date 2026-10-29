@@ -20,8 +20,8 @@ Executes flow_graph/param/regen_manifest.json (data, not code):
 
 Modes: --quick = the write_graph solver stages only (what-if; no doc regen, no receipt write -- a
 partial run must not clobber the full-run provenance receipt). --check = staleness verification
-only (runs docs-authority/_rev_stamp.py --check: regenerates DERIVED_REVISIONS.md, exit 1 when a
-gated derived file is stale). --dry-run prints the plan. --stage runs exactly the named stages
+only (runs docs-authority/_rev_stamp.py --check-only: writes nothing, exit 1 when a gated derived
+file is stale; a check must not change the tree, so DERIVED_REVISIONS.md is refreshed only by a full run). --dry-run prints the plan. --stage runs exactly the named stages
 once each, in manifest order (expert mode; no loop, no receipt). --cad adds the "cad" group
 (CadQuery, OpenSCAD and FreeCAD model builds). A stage whose `requires` toolchain is missing is
 skipped with a message and vouches nothing; its committed outputs are kept.
@@ -125,7 +125,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(prog='flow_graph.param.regen', description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--stage', action='append', default=[], metavar='NAME', help='run only these stages (once each, manifest order)')
     ap.add_argument('--quick', action='store_true', help='solver + write_graph stages only (what-if; no doc regen)')
-    ap.add_argument('--check', action='store_true', help='staleness verification only (rev_stamp full: writes DERIVED_REVISIONS.md, gates)')
+    ap.add_argument('--check', action='store_true', help='staleness verification only (rev_stamp --check-only: writes nothing, gates)')
     ap.add_argument('--dry-run', action='store_true', help='print the plan and exit')
     ap.add_argument('--max-passes', type=int, default=4, metavar='N', help='graph- and doc-phase convergence cap (default 4; a converged tree needs 1, a drifted tree 2-3)')
     ap.add_argument('--site', metavar='SITE_ID', help='site profile (flow_graph/param/sites/); a locale writes its outputs under sites/<site_id>/')
@@ -156,9 +156,9 @@ def main(argv=None):
         m['stages'] = [s for s in m['stages'] if s.get('group') != 'cad']
 
     if args.check:
-        r = subprocess.run(['python3', 'docs-authority/_rev_stamp.py', '--check'], cwd=ROOT, capture_output=True, text=True)
+        r = subprocess.run(['python3', 'docs-authority/_rev_stamp.py', '--check-only'], cwd=ROOT, capture_output=True, text=True)
         sys.stdout.write(r.stdout); sys.stderr.write(r.stderr)
-        print(f"rev_stamp --check rc={r.returncode}")
+        print(f"rev_stamp --check-only rc={r.returncode}")
         return r.returncode
 
     if args.stage:

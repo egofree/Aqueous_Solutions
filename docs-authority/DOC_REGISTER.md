@@ -52,7 +52,7 @@ Table 3.1. Document numbers in use
 | AQS-BLD-010 | `docs-authority/GA_CHECK.md` | B | 2026-10-25 | General arrangement clash check | current |
 | AQS-BLD-011 | `docs-authority/HAZMAT_SEPARATION.md` | B | 2026-10-25 | Incompatible hazardous-material separation | current |
 | AQS-BLD-012 | `docs-authority/ACCESS_CHECK.md` | — | — | Access and electrical working-space check | current |
-| AQS-BLD-013 | `docs-authority/STRUCT_LOADS.md` | A | 2026-10-16 | Equipment structural loads | current |
+| AQS-BLD-013 | `docs-authority/STRUCT_LOADS.md` | B | 2026-10-29 | Equipment structural loads | current |
 | AQS-BLD-014 | `docs-authority/WATER_TOWER.md` | A | 2026-10-16 | Water tower: pumped-hydro reservoirs in the building | current |
 | AQS-BLD-015 | `docs-authority/LIFTING.md` | B | 2026-10-25 | Lifting and cranes | current |
 | AQS-BLD-016 | `docs-authority/FRAME_CHECK.md` | B | 2026-10-25 | Building frame member check | current |
@@ -81,8 +81,8 @@ Table 3.1. Document numbers in use
 | AQS-DES-LIFE | `notes/LIFE_SUPPORT.md` | A | 2026-10-17 | Farm, nutrient, habitation, water — item 7 | current |
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
-| AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | B | 2026-10-24 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | A | 2026-10-25 | Documentation rewrite status | current |
+| AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | B | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | A | 2026-10-21 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -176,9 +176,9 @@ Table 3.1. Document numbers in use
 | AQS-FONT-001 | `docs-authority/FONTS.md` | A | 2026-10-25 | Fonts for 3D sign glyphs | current |
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Basic | 2026-09-27 | Scrubber chemistry | current |
 | AQS-GAS-003 | `docs-authority/FAN_STACK.md` | B | 2026-09-27 | Fan curves and stack heights | current |
-| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | B | 2026-10-25 | Glossary | current |
+| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | C | 2026-10-29 | Glossary | current |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | B | — | Derived file revisions | current |
-| AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | B | 2026-10-12 | Habitation fixtures | current |
+| AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | C | 2026-10-29 | Habitation fixtures | current |
 | AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | A | 2026-10-25 | Dual heat ladder | current |
 | AQS-HEAT-STUDY-002 | `notes/heat_sink_study_2026-10-18.md` | A | 2026-10-18 | HL-Q4-REJ heat-sink study — resolving D-GEO_ORC | current |
 | AQS-HSE-001 | `docs-authority/HAZARD_SEPARATION.md` | H | 2026-10-24 | Hazard separation and containment | current |
@@ -252,7 +252,7 @@ Table 3.1. Document numbers in use
 | AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | B | 2026-10-25 | Bought-item specification sheets | current |
 | AQS-PV-001 | `docs-authority/PV_CELL_MOD.md` | C | 2026-10-11 | Photovoltaic cell | current |
 | AQS-PWR-001 | `docs-authority/POWER.md` | A | 2026-10-17 | Power | current |
-| AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator | current |
+| AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | C | 2026-10-29 | Ground-source heat pump loop and backup generator | current |
 | AQS-PWR-ROLLUP | `notes/LOAD_ROLLUP.md` | A | 2026-10-17 | Load rollup — foundry, polymers, grease | current |
 | AQS-QA-001 | `docs-authority/ITP.md` | A | 2026-10-16 | Inspection and test plan | current |
 | AQS-QA-002 | `docs-authority/DESIGN_CHECK.md` | B | 2026-10-25 | Independent design check record | current |
@@ -488,7 +488,7 @@ Table 4.1. Former numbers and their current equivalents
 | AQS-ELEC-001 | AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | `docs-authority/ELECTRONICS.md` | AQS-ELEC-001 (renumbered 2026-10-15 to clear a duplicate) |
 | AQS-MOD-001 | AQS-MOD-002 | `docs-authority/FRAME_SYSTEM.md` | `docs-authority/MODULE.md` | AQS-MOD-001 (duplicate cleared 2026-10-15, AQS-REG-001) |
 | AQS-PLAN-001 | AQS-IF-009 | `docs-authority/PHASE9_INTERFACES.md` | `docs-authority/internal/DESIGN_PLAN.md` | AQS-PLAN-001 to clear a duplicate (AQS-REG-001). |
-| AQS-PWR-001 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | `docs-authority/POWER.md` | AQS-PWR-001 to clear a duplicate (AQS-REG-001). |
+| AQS-PWR-001 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | `docs-authority/POWER.md` | AQS-PWR-001 (renumbered on 2026-10-15 to clear a duplicate) |
 | AQS-PWR-002 | AQS-PWR-001 | `docs-authority/POWER.md` | `docs-authority/GEOTHERMAL_BACKUP.md` | AQS-PWR-002 (on this page 2026-10-17 to 2026-10-24 in error; AQS-PWR-002 is GEOTHERMAL_BACKUP.md) |
 | AQS-REM-001 | AQS-REM-002 | `docs-authority/internal/REMAINING_CHECKLIST.md` | `docs-authority/internal/REMAINING.md` | AQS-REM-001 to clear a duplicate (AQS-REG-001). |
 | AQS-STD-001 | AQS-STD-003 | `docs-authority/STANDARDS_BASIS.md` | `docs-authority/AQS-STD-001.md` | AQS-STD-001 to clear a duplicate (AQS-REG-001). |
