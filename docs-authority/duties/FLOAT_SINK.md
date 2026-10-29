@@ -1,6 +1,6 @@
 # FLOAT_SINK
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 376.1 kg/d. Mass out 376.1 kg/d. Electrical duty 0.0000 kW. In: IA-SINK-01 376.1 kg/d (sink solids). Out: IA-WET-FLOAT-01 343.1 kg/d (Float/sink liquor return); FLOAT_SINK_GRIT_TO_TI 0 kg/d (dense grit (ilmenite/rutile fraction)); IA-PLAST-01 33 kg/d (float plastics).
 

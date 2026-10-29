@@ -1,6 +1,6 @@
 # WS_HF_ED
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 1.5 kg/d. Mass out 1.5 kg/d. Electrical duty 0.0000 kW. In: IA-HF-PROD 1.5 kg/d (aqueous HF to the fab reagent fork). Out: S31 1.5 kg/d (HF (aq)).
 

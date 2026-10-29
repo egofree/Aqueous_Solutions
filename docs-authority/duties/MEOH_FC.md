@@ -1,6 +1,6 @@
 # MEOH_FC
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 15.88 kg/d. Mass out 15.88 kg/d. Electrical duty 1.0000 kW. In: S76 5 kg/d (MeOH fuel); IA-FC-AIR 9.407 kg/d (cell air); IA-MEOH-REST 1.28 kg/d (tank draw); IA-CLOSE-10 0.1896 kg/d (leach condensate to the methanol cell). Out: S81 7.251 kg/d (MeOH FC condensate); S82 8.626 kg/d (CO₂ return from MeOH FC); IA-FC-EXH 0 kg/d (cell exhaust).
 

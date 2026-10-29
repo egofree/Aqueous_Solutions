@@ -1,6 +1,6 @@
 # PROD_C11_C18
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 9.919 kg/d. Mass out 9.919 kg/d. Electrical duty 0.0000 kW. In: CUT-2 9.919 kg/d (fractionator cut). Out: IA-BLOW-IN 8.407 kg/d (C11-C18 to the mold); IA-C11-SHIP 1.512 kg/d (C11-C18 surplus shipped).
 

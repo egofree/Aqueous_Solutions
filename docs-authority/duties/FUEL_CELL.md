@@ -1,6 +1,6 @@
 # FUEL_CELL
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 43.2 kg/d. Mass out 43.2 kg/d. Electrical duty 4.0000 kW. In: S49 4.8 kg/d (H2 fuel); S50 38.4 kg/d (O2 oxidizer). Out: S52 42.88 kg/d (PEM product H2O); IA-FC-FIX 0 kg/d (cell water); IA-FC-LEACH 0.3234 kg/d (cell water).
 

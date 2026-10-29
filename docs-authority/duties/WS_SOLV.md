@@ -1,6 +1,6 @@
 # WS_SOLV
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.21 kg/d. Mass out 0.21 kg/d. Electrical duty 0.0000 kW. In: IA-SOLV-MU 0.21 kg/d (solvent resupply (ethanol and acetone)). Out: IA-SOLV-WB 0.21 kg/d (ethanol and acetone).
 

@@ -107,6 +107,8 @@ def main():
             if n.get('presence') != 'present': continue   # standby units keep no sheet until they go present
             open(p, 'w').write(author(n, g, ins, outs, mi, mo, kw)); au += 1; continue
         s = open(p).read(); s0 = s
+        # Header: keep the graph revision current on existing sheets, not only on newly authored ones.
+        s = re.sub(r'^Standard: AQS-STD-001 Rev A\. Graph Rev \S+?\.', f"Standard: AQS-STD-001 Rev A. Graph Rev {g.get('revision')}.", s, count=1, flags=re.M)
         s = re.sub(r'^1\. Basis\..*$', f'1. Basis. Mass in {f4(mi)} kg/d. Mass out {f4(mo)} kg/d. Electrical duty {kw:.4f} kW. In: {lst(ins)}. Out: {lst(outs)}.', s, count=1, flags=re.M)
         # X-MAT-06: re-render section 3 only where it still carries a default template, so an
         # issued graph design/design_storage material reaches the sheet; hand-written per-unit

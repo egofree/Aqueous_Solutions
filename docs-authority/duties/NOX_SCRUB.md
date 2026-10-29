@@ -1,6 +1,6 @@
 # NOX_SCRUB
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 459.9 kg/d. Mass out 459.9 kg/d. Electrical duty 0.0385 kW. In: S46 0.1981 kg/d (exhaust condensate / NOx); IA-FLUE-EXH 263.6 kg/d (flue to the NOx scrubber); IA-FC-EXH 0 kg/d (cell exhaust); IA-LEACH-NOX 195 kg/d (leach offgas); 3 more. Out: IA-NOX-H2O 221.6 kg/d (scrubber condensate); IA-NOX-N 20.05 kg/d (nitrate liquor); IA-NOX-CO2 21.58 kg/d (scrubbed CO2 to the cold box); IA-NOX-N2 196.7 kg/d (scrubbed flue nitrogen to the cold box).
 

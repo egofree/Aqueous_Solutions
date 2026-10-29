@@ -1,6 +1,6 @@
 # MET_AHU
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 7.16e+04 kg/d. Mass out 7.16e+04 kg/d. Electrical duty 0.0000 kW. In: IA-MET-AIR-RET 7.16e+04 kg/d (scrubbed metal-aisle air returned to the hall). Out: S62 5.115e+04 kg/d (MFG metal-aisle capture feed); S71 2.046e+04 kg/d (metal-aisle fume / mist / dust).
 

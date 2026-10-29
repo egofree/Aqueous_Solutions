@@ -50,7 +50,7 @@ FAMILIES = [
      ['MET_MELT', 'GAS_ATOMIZER', 'COLD_MILL', 'WIRE_DRAW']),
     ('docs-authority/WATER_TOWER.md', 'AQS-BLD-014', 'Water tower reservoirs and hydro set (docs-authority/_water_tower.py)',
      ['ROOF_TANK', 'CATCH_TANK', 'HYDRO_SET']),
-    ('docs-authority/POWER_SIZING.md', 'AQS-ELEC-007', 'Plant power sizing (docs-authority/_power_sizing.py)',
+    ('docs-authority/POWER_SIZING.md', 'AQS-ELEC-007', 'Plant power sizing (docs-authority/_power_sizing.py, page by docs-authority/_power_sizing_doc.py)',
      ['PV_ARRAY', 'ZNBR2', 'SOL_ARK_60K', 'BACKUP_GEN', 'FUEL_CELL']),
     ('docs-authority/POLYMER_HX_SIZING.md', 'AQS-DUTY-049', 'Polymer heat exchangers (docs-authority/_polymer_hx_study.py, X-MAT-11/12)', ['HX8']),
     # Residuals NOT listed (docs size the equipment under a legacy name): RECTIFIER, LITHO_ALIGN

@@ -1,6 +1,6 @@
 # EVAP_BASE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 1306 kg/d. Mass out 1306 kg/d. Electrical duty 1.3280 kW. In: IA-EVAP_BASE-FEED 1302 kg/d (NaOH 2 M from BMED); IA-NAOH-MU 4.394 kg/d (purchased NaOH flake make-up). Out: IA-BASE-01 21.97 kg/d (digest NaOH, 20 wt%); IA-BASE-PPT 482.3 kg/d (NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)); IA-EVAP_BASE-COND 801.9 kg/d (evaporator condensate return (BMED water make-up)).
 

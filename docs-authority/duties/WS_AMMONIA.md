@@ -1,6 +1,6 @@
 # WS_AMMONIA
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 3.009 kg/d. Mass out 3.009 kg/d. Electrical duty 0.0000 kW. In: IA-NH3-SRC 3.009 kg/d (nitrogen to ammonia). Out: S33 3.009 kg/d (NH₄OH / NH₃ (aq)).
 

@@ -1,6 +1,6 @@
 # LITHO_DEV
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.9875 kg/d. Mass out 0.9875 kg/d. Electrical duty 0.0080 kW. In: IA-LITHO-CARRY 0.9875 kg/d (resist/solvent carry (coat catch bowl + developer) to the develop bench). Out: IA-LITHO-OUT 0.9875 kg/d (spent resist and solvent).
 

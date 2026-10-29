@@ -1,6 +1,6 @@
 # CATCH_TANK
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: IA-ESS-HYDRO-DIS 0 kg/d (Pumped hydro discharge (penstock; peers S22)). Out: IA-ESS-HYDRO-CHG 0 kg/d (Pumped hydro charge (pump up; peers S23)).
 

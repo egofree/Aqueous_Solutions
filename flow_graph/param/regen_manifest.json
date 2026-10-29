@@ -448,6 +448,22 @@
    ]
   },
   {
+   "name": "doc_power_sizing",
+   "argv": [
+    "python3",
+    "docs-authority/_power_sizing_doc.py"
+   ],
+   "outputs": [
+    "docs-authority/POWER_SIZING.md"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-ELEC-007 page from the PV_ARRAY, ZNBR2, SOL_ARK_60K and BACKUP_GEN params and the drivers; code_basis appends its code basis section afterwards."
+  },
+  {
    "name": "balance_report",
    "argv": [
     "python3",
@@ -1694,6 +1710,7 @@
     "access_check",
     "doc_egress_hall",
     "doc_ga_check",
+    "doc_power_sizing",
     "one_line",
     "sep_check",
     "unit_sizing_sweep",

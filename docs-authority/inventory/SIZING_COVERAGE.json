@@ -37,7 +37,7 @@
  "BACKUP_GEN": {
   "doc": "docs-authority/POWER_SIZING.md",
   "docnum": "AQS-ELEC-007",
-  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+  "family": "Plant power sizing (docs-authority/_power_sizing.py, page by docs-authority/_power_sizing_doc.py)"
  },
  "BAGHOUSE": {
   "doc": "docs-authority/sizing/BAGHOUSE.md",
@@ -287,7 +287,7 @@
  "FUEL_CELL": {
   "doc": "docs-authority/POWER_SIZING.md",
   "docnum": "AQS-ELEC-007",
-  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+  "family": "Plant power sizing (docs-authority/_power_sizing.py, page by docs-authority/_power_sizing_doc.py)"
  },
  "F_RECOVER": {
   "doc": "docs-authority/sizing/F_RECOVER.md",
@@ -627,7 +627,7 @@
  "PV_ARRAY": {
   "doc": "docs-authority/POWER_SIZING.md",
   "docnum": "AQS-ELEC-007",
-  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+  "family": "Plant power sizing (docs-authority/_power_sizing.py, page by docs-authority/_power_sizing_doc.py)"
  },
  "P_CA": {
   "doc": "docs-authority/sizing/P_CA.md",
@@ -757,7 +757,7 @@
  "SOL_ARK_60K": {
   "doc": "docs-authority/POWER_SIZING.md",
   "docnum": "AQS-ELEC-007",
-  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+  "family": "Plant power sizing (docs-authority/_power_sizing.py, page by docs-authority/_power_sizing_doc.py)"
  },
  "STOCK_OUT": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
@@ -862,7 +862,7 @@
  "ZNBR2": {
   "doc": "docs-authority/POWER_SIZING.md",
   "docnum": "AQS-ELEC-007",
-  "family": "Plant power sizing (docs-authority/_power_sizing.py)"
+  "family": "Plant power sizing (docs-authority/_power_sizing.py, page by docs-authority/_power_sizing_doc.py)"
  },
  "ZNBR2_BR2_REGEN": {
   "doc": "docs-authority/sizing/ZNBR2_BR2_REGEN.md",

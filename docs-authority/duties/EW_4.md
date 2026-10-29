@@ -1,6 +1,6 @@
 # EW_4
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 3935 kg/d. Mass out 3935 kg/d. Electrical duty 0.0000 kW. In: IA-EW-03 3935 kg/d (EW overflow). Out: IA-EW-10 3922 kg/d (EW overflow); IA-EW-MET-4 4.85 kg/d (plated sheet); IA-EW4-H2 0.03099 kg/d (hood hydrogen); IA-EW4-N2 0.3966 kg/d (sweep nitrogen); 1 more.
 

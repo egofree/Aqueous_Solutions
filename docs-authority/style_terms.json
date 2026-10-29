@@ -141,7 +141,6 @@
   ],
   "pending": [
     "docs-authority/BLOCK_FAMILY_PLANS.md",
-    "docs-authority/FIRE_PROTECTION.md",
     "docs-authority/FUEL_CELL.md",
     "docs-authority/GLOSSARY.md",
     "docs-authority/H2_EMBRITTLEMENT_REVIEW.md",
@@ -168,7 +167,6 @@
     "docs-authority/OPEN_QUESTIONS.md",
     "docs-authority/PARAMETRIC_MODEL.md",
     "docs-authority/PIPE_SPECS.md",
-    "docs-authority/POWER_SIZING.md",
     "docs-authority/PROTECTION.md",
     "docs-authority/REV_M_CLOSURE_DUTY.md",
     "docs-authority/SCALE_DOWN_UNRECLAIMED.md",

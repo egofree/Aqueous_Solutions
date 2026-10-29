@@ -1,6 +1,6 @@
 # CRYO_AHU_COND_CONDENSABLE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.0521 kg/d. Mass out 0.0521 kg/d. Electrical duty 0.0000 kW. In: IA-AHU-POT 0.0521 kg/d (condensable slip). Out: S70 0.0521 kg/d (condensables).
 

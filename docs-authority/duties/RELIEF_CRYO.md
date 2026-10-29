@@ -1,6 +1,6 @@
 # RELIEF_CRYO
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: S56 0 kg/d (non-condensable residual after KO); S86 0 kg/d (cryo residual contingency). Out: none.
 

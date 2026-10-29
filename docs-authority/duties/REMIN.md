@@ -1,6 +1,6 @@
 # REMIN
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 175.2 kg/d. Mass out 175.2 kg/d. Electrical duty 0.0460 kW. In: IA-UPW-REMIN 175.2 kg/d (remineralizer). Out: S26 10 kg/d (potable); IA-POT-01 165.2 kg/d (potable makeup, remineralised).
 

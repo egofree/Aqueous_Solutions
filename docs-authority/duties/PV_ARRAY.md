@@ -1,6 +1,6 @@
 # PV_ARRAY
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 336.8116 kW. In: none. Out: none.
 

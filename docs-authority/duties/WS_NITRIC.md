@@ -1,6 +1,6 @@
 # WS_NITRIC
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 1.246 kg/d. Mass out 1.246 kg/d. Electrical duty 0.0000 kW. In: IA-BMED-01 1.246 kg/d (HCl product). Out: S34 1.246 kg/d (HNO3); IA-NIT-VENT 0 kg/d (nitric tank vent).
 

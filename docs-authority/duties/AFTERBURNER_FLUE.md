@@ -1,6 +1,6 @@
 # AFTERBURNER_FLUE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 117.4 kg/d. Mass out 117.4 kg/d. Electrical duty 0.0000 kW. In: IA-AB-FLUE 7.097 kg/d (flue); IA-AB-AIR 110.3 kg/d (combustion air). Out: S67 117.4 kg/d (flue N2/O2/CO2/NOx).
 

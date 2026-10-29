@@ -1,6 +1,6 @@
 # HDR_N2
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 192.4 kg/d. Mass out 192.4 kg/d. Electrical duty 0.0000 kW. In: IA-EW4-N2 0.3966 kg/d (sweep nitrogen); IA-AIR-RX-OUT 192 kg/d (plant air from the receiver bank). Out: IA-AB-AIR 110.3 kg/d (combustion air); IA-AHU-AIR 79.04 kg/d (outdoor air moisture); IA-NH3-SRC 3.009 kg/d (nitrogen to ammonia); IA-GEN-AIR 0.006137 kg/d (genset air); 1 more.
 

@@ -1,6 +1,6 @@
 # VCD_TRAIN
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 333.1 kg/d. Mass out 333.1 kg/d. Electrical duty 0.2359 kW. In: S13 3.799 kg/d (condensate); S29 104.5 kg/d (treated grey); S52 42.88 kg/d (PEM product H2O); IA-NUT-01 13.93 kg/d (digest surplus); 2 more. Out: S25 308.5 kg/d (VCD distillate); S28 17.88 kg/d (VCD brine); IA-VCD-BD 6.709 kg/d (still bottoms).
 

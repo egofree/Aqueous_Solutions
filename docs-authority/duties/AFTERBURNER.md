@@ -1,6 +1,6 @@
 # AFTERBURNER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 7.097 kg/d. Mass out 7.097 kg/d. Electrical duty 0.1332 kW. In: NCG_TO_AB 5 kg/d (NCG); S11 0.8 kg/d (organics); IA-BLK-GAS 0.0986 kg/d (digester biogas, flared in the afterburner); IA-AB-O2 0.5283 kg/d (combustion O2, 10 % excess); 1 more. Out: S18 0 kg/d (captured CO2/air); IA-AB-FLUE 7.097 kg/d (flue).
 

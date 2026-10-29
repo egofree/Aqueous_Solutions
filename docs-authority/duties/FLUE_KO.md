@@ -1,6 +1,6 @@
 # FLUE_KO
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 277.7 kg/d. Mass out 277.7 kg/d. Electrical duty 0.0000 kW. In: S67 117.4 kg/d (flue N2/O2/CO2/NOx); S70 0.0521 kg/d (condensables); IA-LEACH-FLUE 135.9 kg/d (leach vent); IA-FLUE-QUENCH 24.31 kg/d (flue quench water). Out: S67B 14.05 kg/d (CO2-rich gas after KO); IA-FLUE-EXH 263.6 kg/d (flue to the NOx scrubber).
 

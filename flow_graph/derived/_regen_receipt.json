@@ -97,6 +97,10 @@
    "status": "ok"
   },
   {
+   "name": "doc_power_sizing",
+   "status": "ok"
+  },
+  {
    "name": "balance_report",
    "status": "ok"
   },

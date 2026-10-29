@@ -1,6 +1,6 @@
 # EW_6
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 3910 kg/d. Mass out 3910 kg/d. Electrical duty 0.0000 kW. In: IA-EW-05 3910 kg/d (EW overflow). Out: IA-EW-06 3896 kg/d (EW overflow); IA-EW-MET-6 5.47 kg/d (plated sheet); IA-EW6-CL2 8.07 kg/d (anode Cl2 (+ O2 side) to leach oxidation); IA-EW6-H2B 0.03496 kg/d (cathode H2 to the H2 pool).
 

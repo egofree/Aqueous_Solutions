@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | B | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | C | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | A | 2026-10-21 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -144,7 +144,7 @@ Table 3.1. Document numbers in use
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | C | 2026-10-25 | Electrowinning rectifier sizing (RECT-EW) | current |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | B | 2026-10-25 | Grounding and bonding | current |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | D | 2026-10-15 | Protection and coordination | current |
-| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | F | 2026-10-15 | Storage and generation sizing | current |
+| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | G | 2026-10-29 | Storage and generation sizing | current |
 | AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | B | 2026-10-24 | Collection bus sections | current |
 | AQS-ELEC-009 | `docs-authority/HAZ_AREA.md` | B | 2026-10-25 | Hazardous area classification | current |
 | AQS-ELEC-010 | `docs-authority/CABLE_SCHEDULE.md` | A | 2026-10-15 | Cable and busbar schedule | current |
@@ -272,7 +272,7 @@ Table 3.1. Document numbers in use
 | AQS-REV-H2-001 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | B | 2026-10-15 | Hydrogen embrittlement review | current |
 | AQS-SAF-001 | `docs-authority/HAZOP.md` | A | 2026-10-16 | HAZOP worksheets | current |
 | AQS-SAF-004 | `docs-authority/RELIEF_REGISTER.md` | A | 2026-10-16 | Relief register | current |
-| AQS-SAF-005 | `docs-authority/FIRE_PROTECTION.md` | B | 2026-10-20 | Fire protection and detection | current |
+| AQS-SAF-005 | `docs-authority/FIRE_PROTECTION.md` | C | 2026-10-29 | Fire protection and detection | current |
 | AQS-SAF-006 | `docs-authority/GAS_DETECTION.md` | B | 2026-10-25 | Gas detection | current |
 | AQS-SAF-007 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | B | 2026-10-25 | Hazard separation applied to the layout | current |
 | AQS-SAF-008 | `docs-authority/HAZOP_ACTION_REGISTER.md` | A | 2026-10-19 | HAZOP action register | current |

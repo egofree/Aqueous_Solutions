@@ -1,6 +1,6 @@
 # NUTRIENT_DOSE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 130.6 kg/d. Mass out 130.6 kg/d. Electrical duty 0.0245 kW. In: IA-LEACH-BD 109.6 kg/d (bleed salts to nutrient); IA-NOX-N 20.05 kg/d (nitrate liquor); IA-BLK-NUT 0.9 kg/d (released digest-liquor nutrient split). Out: S07 2.5 kg/d (nutrients); NUT_TO_BED 0 kg/d (nutrient solution); IA-NUT-01 13.93 kg/d (digest surplus); IA-NUT-LEACH 82.32 kg/d (nutrient surplus); 2 more.
 

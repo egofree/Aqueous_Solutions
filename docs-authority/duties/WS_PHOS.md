@@ -1,6 +1,6 @@
 # WS_PHOS
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.62 kg/d. Mass out 0.62 kg/d. Electrical duty 0.0000 kW. In: IA-PHOS-SRC 0.62 kg/d (phosphate). Out: S34B 0.61 kg/d (H3PO4); IA-PHOS-DOPE 0.01 kg/d (phosphate to dopant).
 

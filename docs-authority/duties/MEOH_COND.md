@@ -1,6 +1,6 @@
 # MEOH_COND
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 26.65 kg/d. Mass out 26.65 kg/d. Electrical duty 0.0000 kW. In: S81 7.251 kg/d (MeOH FC condensate); IA-MEOH-H2O 19.4 kg/d (synthesis water). Out: IA-MEOH-COND 26.65 kg/d (methanol condensate).
 

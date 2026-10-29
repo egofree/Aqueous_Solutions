@@ -1,6 +1,6 @@
 # H2_DRYER
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 1.975 kg/d. Mass out 1.975 kg/d. Electrical duty 0.0205 kW. In: IA-HDR-H2-02 1.975 kg/d (process H2). Out: S24 0 kg/d (H2 relief contingency); S64 1.975 kg/d (H2 normal path); IA-H2-IN 0 kg/d (dried hydrogen); IA-H2-AIR 0 kg/d (sweep air from the hydrogen hood); 1 more.
 

@@ -1,6 +1,6 @@
 # BACKUP_GEN
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 0.1981 kg/d. Mass out 0.1981 kg/d. Electrical duty 0.0082 kW. In: S45 0.01973 kg/d (H2 fuel); IA-GEN-AIR 0.006137 kg/d (genset air); CUT-1-OUT 0 kg/d (C5-C10 fuel from the tank); IA-GEN-O2 0.1722 kg/d (combustion O2, 10 % excess). Out: S46 0.1981 kg/d (exhaust condensate / NOx).
 

@@ -1,6 +1,6 @@
 # HDR_O2
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 33.17 kg/d. Mass out 33.17 kg/d. Electrical duty 0.0000 kW. In: S83 33.17 kg/d (O2 product); IA-O2-MAKE 0 kg/d (oxygen makeup). Out: IA-FC-AIR 9.407 kg/d (cell air); IA-H2O2-SRC 0.176 kg/d (oxygen to peroxide); IA-GEN-O2 0.1722 kg/d (combustion O2, 10 % excess); IA-AB-O2 0.5283 kg/d (combustion O2, 10 % excess); 2 more.
 

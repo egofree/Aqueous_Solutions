@@ -1,6 +1,6 @@
 # GLASS_RINSE
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 36.82 kg/d. Mass out 36.82 kg/d. Electrical duty 0.0000 kW. In: IA-CULLET 36.82 kg/d (cullet). Out: IA-GLASS-01 36.82 kg/d (rinsed cullet).
 

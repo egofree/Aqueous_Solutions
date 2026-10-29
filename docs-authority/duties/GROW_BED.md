@@ -1,6 +1,6 @@
 # GROW_BED
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 76.88 kg/d. Mass out 76.88 kg/d. Electrical duty 2.0463 kW. In: S04 0 kg/d (CO2); S07 2.5 kg/d (nutrients); S88 0 kg/d (N2 make-up); CO2_TO_FARM 0 kg/d (CO2 enrichment); 4 more. Out: S11 0.8 kg/d (organics); S13 3.799 kg/d (condensate); S14 4.2 kg/d (food); S15 0 kg/d (photosynthetic O2); 3 more.
 

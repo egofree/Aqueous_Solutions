@@ -1,6 +1,6 @@
 # EVAP_ACID
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 1305 kg/d. Mass out 1305 kg/d. Electrical duty 1.4980 kW. In: IA-EVAP_ACID-FEED 1305 kg/d (HCl 2 M from BMED). Out: IA-ACID-01 439.6 kg/d (regen HCl, 20 wt%); IA-EVAP_ACID-COND 865.1 kg/d (evaporator condensate return (BMED water make-up)); IA-EVAP_ACID-VENT 0.0293 kg/d (column vent: non-condensables, water vapour, trace HCl).
 

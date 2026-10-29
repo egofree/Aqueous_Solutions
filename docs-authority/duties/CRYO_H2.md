@@ -1,6 +1,6 @@
 # CRYO_H2
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 11.33 kg/d. Mass out 11.33 kg/d. Electrical duty 0.9325 kW. In: S64 1.975 kg/d (H2 normal path); IA-ELY-H2 9.358 kg/d (electrolyser H2). Out: S45 0.01973 kg/d (H2 fuel); S49 4.8 kg/d (H2 fuel); S74 6.513 kg/d (H2 for MeOH).
 

@@ -1,6 +1,6 @@
 # BMED_ACID
 
-Standard: AQS-STD-001 Rev A. Graph Rev BH. Study. Not a PE stamp.
+Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
 1. Basis. Mass in 1315 kg/d. Mass out 1315 kg/d. Electrical duty 5.6267 kW. In: IA-BMED-03 450.2 kg/d (CRU → BMED acid regen loop); IA-EVAP_ACID-COND 865.1 kg/d (evaporator condensate return (BMED water make-up)); IA-VS-SPENT 0.0006 kg/d (spent scrub liquor (NaCl in NaOH) to the BMED brine). Out: IA-BMED-01 1.246 kg/d (HCl product); S09 9.277 kg/d (HCl); IA-EVAP_ACID-FEED 1305 kg/d (HCl 2 M from BMED).
 
