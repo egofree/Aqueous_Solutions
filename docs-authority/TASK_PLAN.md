@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 50 | 2 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 50 | 3 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2987** | **2090** |
+| | **Total** | **2987** | **2091** |
 
 ## 3. Triage of open tasks
 
@@ -104,7 +104,7 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P1 | 1 |
-| desk P2 | 50 |
+| desk P2 | 49 |
 | desk P3 | 31 |
 | desk P4 | 457 |
 | desk P5 | 174 |
@@ -182,7 +182,6 @@ Table 6.1. Next cross-cutting desk tasks
 | X-RTE-IA-H2-AIR | Route IA-H2-AIR from H2_DRYER to CRYO_ASU carries no flow | desk P2 |
 | X-RTE-IA-H2P-H2O | Route IA-H2P-H2O from H2_DRYER to VCD_TRAIN carries no flow | desk P2 |
 | X-RTE-IA-LEACH-ASU | Route IA-LEACH-ASU from LEACH_CSTR_1 to CRYO_ASU carries no flow | desk P2 |
-| X-RTE-IND_TO_ATOM | Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER carries no flow | desk P2 |
 | X-RTE-LEGACY-PFD | Remaining hand-drawn process sheets | desk P2 |
 | X-RTE-LI_TO_GREASE | Route LI_TO_GREASE from LI_RECOVER to GREASE_LI carries no flow | desk P2 |
 | X-RTE-MEOH_TO_OLEFIN | Route MEOH_TO_OLEFIN from MEOH_SYNTH to POLY_OLEFIN carries no flow | desk P2 |
@@ -619,6 +618,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 ### X-RTE. Routes without flow (owner decision 2026-10-29)
 
 - [x] **X-RTE-STOCK_TO_FAB** Route STOCK_TO_FAB: silicon charge to WAFER_FAB. Done when: the CZ charge is sized from the wafer need and imported through the dock (A-M-417). Depends: —. Evidence: `flow_graph/param/fab_silicon.py`.
+- [x] **X-RTE-IND_TO_ATOM** Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER: standby at its rated case. Done when: the route carries 3.556 kg/d when MET_MELT is out of service and the foundry melt IND_MELT pours the atomiser charge (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-STOCK_TO_WIRE_DRAW** Route STOCK_TO_WIRE_DRAW from METAL_STORE to WIRE_DRAW: standby at its rated case. Done when: the route carries 6.8389 kg/d when MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [ ] **X-RTE-AL_POT_CL2** Route AL_POT_CL2 from AL_POT to CRU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-CHAR_TO_SI** Route CHAR_TO_SI from OIL_PYRO to SI_REDUCE carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
@@ -640,7 +640,6 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-RTE-IA-H2-AIR** Route IA-H2-AIR from H2_DRYER to CRYO_ASU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-IA-H2P-H2O** Route IA-H2P-H2O from H2_DRYER to VCD_TRAIN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-IA-LEACH-ASU** Route IA-LEACH-ASU from LEACH_CSTR_1 to CRYO_ASU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
-- [ ] **X-RTE-IND_TO_ATOM** Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-LI_TO_GREASE** Route LI_TO_GREASE from LI_RECOVER to GREASE_LI carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-MEOH_TO_OLEFIN** Route MEOH_TO_OLEFIN from MEOH_SYNTH to POLY_OLEFIN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-MG_POT_CL2** Route MG_POT_CL2 from MG_POT to CRU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.

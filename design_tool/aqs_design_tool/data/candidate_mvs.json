@@ -10684,7 +10684,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "No powder demand on IND_MELT at the bounding case. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 3.5560 kg/d (the IA-MELT-ATOM rate) when MET_MELT is out of service and the foundry melt IND_MELT pours the atomiser charge, for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "MFG",

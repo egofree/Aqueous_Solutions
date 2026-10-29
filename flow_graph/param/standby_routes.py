@@ -9,8 +9,8 @@ stays at zero, which the balance keeps.
 The outage a standby route covers lasts standby_outage_d days, the N+1 outage basis of the foundry melt backups (A-M-283).
 A route drawn from a store makes the store hold the rated rate for that outage on top of its own holding (the hold_kg
 parameter, read by docs-authority/_storage_sizing.py). A route drawn from a melt furnace makes the furnace run the extra
-heats for the rated rate during the outage (the heats parameter); the furnace rating is unchanged because each heat is the
-same charge.
+heats for the rated rate during the outage (the heats parameters); the furnace rating is unchanged because each heat is the
+same charge, and the energy of the extra heats replaces the melt energy of the primary furnace that is out.
 
 Run: python3 -m flow_graph.param.standby_routes"""
 import json, math
@@ -20,6 +20,7 @@ TAG = 'X-RTE TF (A-M-418)'
 # (standby route, primary route it stands in for, rated case)
 ROUTES = (
     ('STOCK_TO_WIRE_DRAW', 'S57', 'MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer'),
+    ('IND_TO_ATOM', 'IA-MELT-ATOM', 'MET_MELT is out of service and the foundry melt IND_MELT pours the atomiser charge'),
 )
 
 def design(g, d=None):
@@ -31,7 +32,7 @@ def design(g, d=None):
         row = dict(rated_kg_d=rated, outage_d=od, backs_up=prim, case=case, source=src['unit_id'])
         sz = (src.get('params') or {}).get('sizing') or {}
         if sz.get('crucible_kg'):   # a melt furnace: extra heats in the outage
-            row['heats_d'] = math.ceil(((sz.get('charge_kg_d') or 0) + rated)/sz['crucible_kg'])
+            row['heats_d'] = math.ceil(((sz.get('charge_kg_d') or 0) + rated)/sz['crucible_kg']); row['heats_d_normal'] = sz.get('heats_d')
         else:                       # a store: hold the rated feed for the outage
             row['hold_kg'] = rated*od
         out[sid] = row
@@ -44,7 +45,7 @@ def tf(g, d=None):
         p = dict(rate_normal_kg_d=0.0, rate_rated_kg_d=round(row['rated_kg_d'], 4), rated_case=row['case'], backs_up=row['backs_up'],
                  outage_d=row['outage_d'], basis='A-M-418; flow_graph/param/standby_routes.py')
         if 'hold_kg' in row: p['hold_kg'] = round(row['hold_kg'], 4)
-        if 'heats_d' in row: p['source_heats_d_in_outage'] = row['heats_d']
+        if 'heats_d' in row: p.update(source_heats_d_normal=row['heats_d_normal'], source_heats_d_in_outage=row['heats_d'])
         e['params'] = p
         e['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study',
                      'note': f"{TAG}: zero on the design day; rated {row['rated_kg_d']:.4f} kg/d (the {row['backs_up']} rate) when {row['case']}, for {row['outage_d']:g} d (standby_routes.py)."}
