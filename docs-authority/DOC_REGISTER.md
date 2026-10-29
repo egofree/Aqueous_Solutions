@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | K | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | L | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -108,15 +108,15 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-064 | `docs-authority/sizing/STORAGE_HOLDUP.md` | A | 2026-10-16 | Storage and holdup sizing | current |
 | AQS-DUTY-065 | `docs-authority/sizing/GAS_RECEIVERS.md` | B | 2026-10-16 | High-pressure gas receivers | current |
 | AQS-DUTY-066 | `docs-authority/sizing/H2_PURIFIER_BEDS.md` | A | 2026-10-15 | H2_PURIFIER beds | current |
-| AQS-DUTY-067 | `docs-authority/sizing/H2_COMPRESSOR.md` | B | 2026-10-16 | Hydrogen compressor | current |
+| AQS-DUTY-067 | `docs-authority/sizing/H2_COMPRESSOR.md` | C | 2026-10-29 | Hydrogen compressor | current |
 | AQS-DUTY-068 | `docs-authority/sizing/BMED_STACK.md` | A | 2026-10-15 | BMED stack | current |
 | AQS-DUTY-069 | `docs-authority/sizing/COLD_BOX.md` | C | 2026-10-16 | CRYO_ASU separation train | current |
-| AQS-DUTY-070 | `docs-authority/sizing/UPW_POLISH.md` | A | 2026-10-16 | UPW polish (RO and EDI) | current |
-| AQS-DUTY-071 | `docs-authority/sizing/PV_CELL_LINE.md` | A | 2026-10-16 | PV cell line tools | current |
+| AQS-DUTY-070 | `docs-authority/sizing/UPW_POLISH.md` | B | 2026-10-29 | Ultrapure water polish (RO and EDI) | current |
+| AQS-DUTY-071 | `docs-authority/sizing/PV_CELL_LINE.md` | B | 2026-10-29 | PV cell line tools | current |
 | AQS-DUTY-072 | `docs-authority/sizing/FOUNDRY_LINE.md` | A | 2026-10-18 | FOUNDRY line sizing | current |
 | AQS-DUTY-073 | `docs-authority/sizing/POLYMERS_LINE.md` | A | 2026-10-18 | POLYMERS line sizing | current |
 | AQS-DUTY-074 | `docs-authority/sizing/HEAT_BATTERY.md` | A | 2026-10-20 | Heat battery sizing | current |
-| AQS-DUTY-075 | `docs-authority/sizing/HEADERS.md` | A | 2026-10-20 | Header and bus sizing | current |
+| AQS-DUTY-075 | `docs-authority/sizing/HEADERS.md` | B | 2026-10-29 | Header and bus sizing | current |
 | AQS-DUTY-076 | `docs-authority/sizing/GEO_LOOP.md` | A | 2026-10-20 | GEO loop sizing | current |
 | AQS-DUTY-077 | `docs-authority/sizing/MEOH_TRAIN.md` | A | 2026-10-20 | Methanol train residual sizing | current |
 | AQS-DUTY-078 | `docs-authority/BALANCE_CLOSE.md` | A | 2026-10-09 | Balance close | current |

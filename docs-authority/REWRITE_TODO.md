@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: K
+Revision: L
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -17,6 +17,7 @@ Date: 2026-10-29
 | I | Batch 7: the pipe, wire and building-block family plans and the standards list rewritten through their generators | 2026-10-29 |
 | J | Out-of-repository references removed from six equipment lists | 2026-10-29 |
 | K | Batch 8: the load list and power sizing reconciled; the scale-down page and the matplotlib folder index rewritten; one owner question added on the rectifier feed | 2026-10-29 |
+| L | Batch 9: four sizing pages rewritten through their generators | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -132,6 +133,10 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/POWER_SIZING.md` | Rev H. The plant bus demand split into its parts, and the rectifier feed checked against the rectifier input. |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | Rev F. Rewritten through `flow_graph/param/scale_down.py`: purpose and scope, the revision history taken out of the summary, the terms table captioned. |
 | `flow_graph/exporters/matplotlib/README.md` | Rev B. Hand-written folder index (it has no generator; the earlier entry here was wrong). Purpose and scope added, and the images built by the regeneration stated from `flow_graph/regen_derived.py`. |
+| `docs-authority/sizing/H2_COMPRESSOR.md` | Rev C. Rewritten through `flow_graph/param/h2_compressor.py`: record of revisions, purpose and scope, the method as sentences with driver values in place of fixed figures, numbered tables. |
+| `docs-authority/sizing/HEADERS.md` | Rev B. Rewritten through `flow_graph/param/headers.py`: record of revisions, purpose and scope, the method as sentences with driver values in place of fixed figures, numbered tables. |
+| `docs-authority/sizing/UPW_POLISH.md` | Rev B. Rewritten through `flow_graph/param/upw_polish.py`: record of revisions, purpose and scope, the method as sentences with driver values in place of fixed figures, numbered tables. |
+| `docs-authority/sizing/PV_CELL_LINE.md` | Rev B. Rewritten through `flow_graph/param/pv_cell_line.py`: record of revisions, purpose and scope, the method as sentences with driver values in place of fixed figures, numbered tables. |
 
 ## 3. In progress
 
@@ -261,16 +266,12 @@ Table 4.2. Pending pages in subfolders
 | `docs-authority/fab/VAC_IND.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/EVAP_DESIGN.md` | No document number line; no revision line; no date line; no purpose and scope section. Written by `flow_graph/param/evap_design.py`; fix the generator. |
 | `docs-authority/sizing/EW_CELLS.md` | No purpose and scope section. Written by `docs-authority/_ew_sizing.py`; fix the generator. |
-| `docs-authority/sizing/H2_COMPRESSOR.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/h2_compressor.py`; fix the generator. |
-| `docs-authority/sizing/HEADERS.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/headers.py`; fix the generator. |
 | `docs-authority/sizing/LITHO_DEV.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/POLYMERS_LINE.md` | No purpose and scope section. Written by `docs-authority/_polymers_sizing.py`; fix the generator. |
-| `docs-authority/sizing/PV_CELL_LINE.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/pv_cell_line.py`; fix the generator. |
 | `docs-authority/sizing/REACTOR_DESIGN.md` | No purpose and scope section. Written by `flow_graph/param/reactor_design.py`; fix the generator. |
 | `docs-authority/sizing/SANITATION.md` | No purpose and scope section. Written by `flow_graph/param/sanitation.py`; fix the generator. |
 | `docs-authority/sizing/SOLAR_PV_CELL.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/STORAGE_HOLDUP.md` | No record of revisions; no purpose and scope section; working or stock phrasing. Written by `docs-authority/_storage_sizing.py`; fix the generator. |
-| `docs-authority/sizing/UPW_POLISH.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/upw_polish.py`; fix the generator. |
 | `docs-authority/sizing/VAC_IND.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/VCD_TRAIN.md` | No record of revisions; no purpose and scope section. |
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | No revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
