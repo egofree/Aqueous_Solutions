@@ -221,6 +221,10 @@
    "status": "ok"
   },
   {
+   "name": "doc_vent_closure",
+   "status": "ok"
+  },
+  {
    "name": "doc_asme_class",
    "status": "ok"
   },
@@ -642,6 +646,7 @@
   "docs-authority/TEST_PLAN.md",
   "docs-authority/TEST_RIGS.md",
   "docs-authority/UNIT_MATERIALS.md",
+  "docs-authority/VENT_CLOSURE.md",
   "docs-authority/WAFER_FAB_EQUIPMENT.md",
   "docs-authority/WATER_PURIFICATION.md",
   "docs-authority/WATER_TOWER.md",

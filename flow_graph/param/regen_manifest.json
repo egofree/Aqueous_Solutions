@@ -1071,6 +1071,22 @@
    "note": "AQS-EQP-FAB-001 from the FAB units, the WAFER_FAB equipment list and the fab edges of the graph."
   },
   {
+   "name": "doc_vent_closure",
+   "argv": [
+    "python3",
+    "docs-authority/_vent_closure.py"
+   ],
+   "outputs": [
+    "docs-authority/VENT_CLOSURE.md"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-VENT-001: the vent closures checked against the graph."
+  },
+  {
    "name": "doc_asme_class",
    "argv": [
     "python3",
@@ -2719,7 +2735,8 @@
     "unit_sizing_sweep",
     "vent_scrubber_doc",
     "doc_mfg_equipment",
-    "doc_wafer_fab_equipment"
+    "doc_wafer_fab_equipment",
+    "doc_vent_closure"
    ],
    "writes_graph": false,
    "quick": false,
@@ -2897,7 +2914,8 @@
     "unit_sizing_sweep",
     "vent_scrubber_doc",
     "doc_mfg_equipment",
-    "doc_wafer_fab_equipment"
+    "doc_wafer_fab_equipment",
+    "doc_vent_closure"
    ],
    "writes_graph": false,
    "quick": false,
@@ -3010,7 +3028,8 @@
     "vent_scrubber_doc",
     "write_graph_power",
     "doc_mfg_equipment",
-    "doc_wafer_fab_equipment"
+    "doc_wafer_fab_equipment",
+    "doc_vent_closure"
    ],
    "writes_graph": false,
    "quick": false,
@@ -3124,7 +3143,8 @@
     "vent_scrubber_doc",
     "write_graph_power",
     "doc_mfg_equipment",
-    "doc_wafer_fab_equipment"
+    "doc_wafer_fab_equipment",
+    "doc_vent_closure"
    ],
    "writes_graph": false,
    "quick": false,
@@ -3244,7 +3264,8 @@
     "unit_sizing_sweep",
     "vent_scrubber_doc",
     "doc_mfg_equipment",
-    "doc_wafer_fab_equipment"
+    "doc_wafer_fab_equipment",
+    "doc_vent_closure"
    ],
    "writes_graph": false,
    "quick": false,
@@ -3355,7 +3376,8 @@
     "unit_sizing_sweep",
     "vent_scrubber_doc",
     "doc_mfg_equipment",
-    "doc_wafer_fab_equipment"
+    "doc_wafer_fab_equipment",
+    "doc_vent_closure"
    ],
    "outputs": [
     "docs-authority/DOC_REGISTER.md"
@@ -3477,7 +3499,8 @@
     "unit_sizing_sweep",
     "vent_scrubber_doc",
     "doc_mfg_equipment",
-    "doc_wafer_fab_equipment"
+    "doc_wafer_fab_equipment",
+    "doc_vent_closure"
    ],
    "writes_graph": false,
    "quick": false,

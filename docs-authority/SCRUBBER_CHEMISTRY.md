@@ -1,220 +1,135 @@
 # Scrubber chemistry
 
 Document number: AQS-GAS-002  
-Revision: Basic issue  
-Date: 2026-09-27  
-Measurement: metric
+Revision: B  
+Date: 2026-10-29  
+Authority: the plant flow graph `flow_graph/plant_flow_graph.json`; the vent and scrubber list AQS-EQP-VENT-001; the flow battery page `docs-authority/FLOW_BATTERY.md`. Measurement is metric.
 
-Liquor destinations are locked. Mixing towers mixes oxidizers. Shared
-NaOH supply from BMED BASE is allowed. Shared liquor is not.
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue. | 2026-09-27 |
+| B | Rewritten against the plant graph and the documentation style guide (AQS-DOC-002): purpose, scope and terms added; the tower names mapped to the units on the graph; the reactions and controls kept; arrows and fragments written as sentences. The acid-gas and caustic headers of revision A are not units on the graph, and the caustic branch is now an owner question. | 2026-10-29 |
 
-| Tower | Gas in | Liquid in | Liquid out | Gas out |
-|---|---|---|---|---|
-| Alkali (HDR_ACID_GAS) | HCl, Cl2, acid mist | BMED NaOH | CRU | → polish / upset residual |
-| Caustic (HDR_CAUSTIC) | NaOH mist | Q4 water + BMED HCl trim | SALT FEED as NaCl | after pack (closed liquid primary) |
-| Br2 (battery) | Br2, HBr | BMED NaOH | hold / regen → ZnBr2 pos. tank (S69) | no continuous dump |
-| Demister (ahead of alkali) | same as alkali | none (knockout) | CSTR 1 or CRU | alkali tower |
-| Dust / H2 | solids / H2 | — | fines to CSTR 1 | not a wet tower |
+## Purpose and scope
 
+The plant scrubs acid gas, chlorine and bromine out of its vents with caustic liquor made on site, and it reuses the spent liquor instead of discharging it. This page explains the chemistry that sets which liquor may go where: the reactions in each scrubber, the controls that keep them on the intended path, the destination of each liquor, and the materials each liquor needs. The sizes and rates of the scrubbers are in AQS-EQP-VENT-001 and on the graph; this page gives none.
 
-## 0. Closure end state (AQS-VENT-001)
+The rule that governs the whole page is that liquors are kept apart. The scrubbers may share the supply of sodium hydroxide from the bipolar-membrane stack, but each spent liquor has one destination, because mixing them mixes oxidisers and sends the wrong salt to the wrong unit.
 
-Gas **out** columns below that historically read “stack” are **not**
-design free outdoor dumps. Normal end states:
+## 1. Terms
 
-| Tower | Normal gas end state | Liquor return |
-|---|---|---|
-| Alkali (+ **ACID_POLISH**) | Upset residual only after polish | → CRU (S66) |
-| Caustic | After pack; liquor → SALT FEED | already closed liquid |
-| Br₂ (+ **ZNBR2_BR2_REGEN**) | No continuous dump | → ZnBr2 pos. tank (S69) |
-| Demister | → alkali tower | knockout → CSTR / CRU |
+- BMED: the bipolar-membrane electrodialysis stack, which makes hydrochloric acid and sodium hydroxide from salt.
+- CRU: the chlorate unit, a heated hold in which hypochlorite turns into chlorate for the leach.
+- ORP: oxidation-reduction potential, a measure of the oxidiser content of a liquor.
+- Lean liquor: liquor entering a scrubber; rich liquor: liquor leaving it with the absorbed gas.
 
-H₂ is not scrubbed (see §5) — path is dryer → CRYO_H2 (S64).
-AFTERBURNER flue → FLUE_CAP / CRYO (S67), not these towers.
+## 2. Scrubbers on the graph
 
-## 1. Alkali tower — HDR_ACID_GAS
+Table 2.1 maps the scrubbers of this page to the units on the graph.
 
-Duty: CSTR lid + EW / polish **anode** hoods. Induced draft. Fan is
-**after** the pack so the impeller sees scrubbed gas.
+Table 2.1. Scrubbers and their liquors
 
-Wetted wall: PP or FRP. Pack: 50 mm PP or ceramic saddles. Lean liquor:
-BMED BASE, 5–15 wt% NaOH. Do not feed Salria into this tower.
+| Duty | Units on the graph | Gas in | Liquor in | Liquor to |
+| --- | --- | --- | --- | --- |
+| Hydrogen chloride and chlorine | ALK_SCRUBBER, then ACID_POLISH_SCRUB (S65) | Off-gas of the acid evaporator vacuum system (IA-VS-OFF) into ALK_SCRUBBER; leach reactor headspace (IA-SCRUB-SRC) into ACID_POLISH_SCRUB | BMED sodium hydroxide | CRU (S66) |
+| Chlorate finish | CRU | — | Polish liquor (S66) and the chlorine of the molten-salt cells | Leach reactor (IA-CRU-01) |
+| Bromine | ZNBR2_BR2_REGEN | Headspace of the positive tank of the zinc-bromine battery (S69) | BMED sodium hydroxide | Back to the battery as bromide (S69B) |
+| Metal-aisle fume | MET_SCRUB | Metal-aisle air (S62, S71) | Scrubber water | Leach (S72) and oil line (S72B) |
+| Nitrogen oxides | NOX_SCRUB | Flue and exhaust gases | — | Nutrient dosing and roof tank |
 
-### 1.1 Hydrogen chloride
+The metal-aisle and nitrogen-oxide scrubbers are listed for completeness; their chemistry is in AQS-EQP-VENT-001. Hydrogen is not scrubbed: it goes from the dryer to the hydrogen store CRYO_H2 (S64), and the relief route to RELIEF_H2 (S24) carries flow only in an upset. The afterburner flue goes to the flue knockout FLUE_KO (S67), not to these scrubbers.
 
-```
-HCl(g) + NaOH(aq) → NaCl(aq) + H2O
-```
+## 3. Hydrogen chloride and chlorine
 
-Fast. Controlling resistance is film area, not kinetics. Packed height
-is set by Cl2, not by HCl.
+### 3.1 Hydrogen chloride
 
-### 1.2 Chlorine — cold absorption
+Hydrogen chloride reacts with sodium hydroxide to give salt and water:
 
-At the top of the tower (lean, cooler):
+    HCl + NaOH → NaCl + H2O
 
-```
-Cl2 + 2 NaOH → NaCl + NaClO + H2O
-```
+The reaction is fast, so the rate is set by the wetted area of the packing, not by the chemistry. The packed height is set by chlorine, not by hydrogen chloride.
 
-Ionically:
+### 3.2 Chlorine, absorbed cold
 
-```
-Cl2 + 2 OH- → Cl- + ClO- + H2O
-```
+At the top of the tower, where the liquor is lean and cool, chlorine gives chloride and hypochlorite:
 
-This is the same first step as industrial hypochlorite. Keep the
-**inlet** liquor below ~40 °C so you do not flash Cl2 back off a hot
-sump.
+    Cl2 + 2 NaOH → NaCl + NaClO + H2O
 
-### 1.3 Chlorate — the CRU step
+This is the first step of industrial hypochlorite manufacture. The inlet liquor is kept below about 40 °C so that chlorine is not driven back out of a hot sump.
 
-Hypochlorite disproportionates when the liquor is held hot and
-slightly alkaline:
+### 3.3 Chlorate, in the chlorate unit
 
-```
-3 NaClO → 2 NaCl + NaClO3
-```
+Hypochlorite disproportionates to chlorate when the liquor is held hot and slightly alkaline:
 
-```
-3 ClO- → 2 Cl- + ClO3-
-```
+    3 NaClO → 2 NaCl + NaClO3
 
-That hold is **CRU**, not the packed bed. The tower makes
-NaCl + NaClO. CRU finishes NaClO3 for REGEN LEACH (with BMED HCl).
-Chlorate is not made in BMED.
+That hold is the chlorate unit CRU, not the packed bed: the tower makes chloride and hypochlorite, and CRU finishes the chlorate that the leach uses as oxidant with BMED acid. Chlorate is not made in the BMED stack. The liquor of CRU is never sent to a drain.
 
-Target after CRU: NaClO3 inventory for leach ORP, residual NaCl
-returned toward SALT FEED / BMED. Do not dump CRU liquor to sewer.
+### 3.4 Side reactions to avoid
 
-### 1.4 Side reactions to starve
+Air leaking into the header brings carbon dioxide, which takes up sodium hydroxide as carbonate:
 
-Air in-leak:
+    2 NaOH + CO2 → Na2CO3 + H2O
 
-```
-2 NaOH + CO2 → Na2CO3 + H2O
-```
+Carbonate uses up base, adds salt that does nothing, and makes no oxidant, so the reactor lid stays closed, the header stays tight, and make-up air enters only through the designed breather. Free chlorine that meets ammonia or organics forms chloramines and chlorinated organics, so only the anode hoods are connected to this tower; the cathode hydrogen stays on the hydrogen header HDR_H2. Liquor that has seen bromide forms mixed chlorine and bromine oxyanions and must not go to CRU (Section 5).
 
-Carbonate consumes BASE, adds dead salt, and does not make oxidant.
-Keep the CSTR lid closed and the header tight. Makeup air only through
-the designed breather.
+### 3.5 Controls
 
-If free Cl2 meets ammonia or organics in this tower you make
-chloramines / AOX. Anode hoods only. Cathode H2 stays on HDR_H2.
+- The lean liquor enters at pH 12 or above at the top distributor.
+- The sump is held between pH 10 and 12. Below pH 9 chlorine slips through; above about pH 13 and hot, the liquor attacks the packing and takes up carbonate faster.
+- A rising ORP at a fixed pH means hypochlorite is building up, and the liquor is transferred to CRU rather than recirculated.
+- Transfer is started on the level or on the ORP band, not on a timer alone.
+- If the chlorine or hydrogen chloride at the outlet rises, the liquor rate is raised first, not the fan speed.
 
-If this liquor sees bromide (battery or polish Br), you start
-mixed Cl/Br oxyanions. That liquor does not go to CRU. See §3.
+One mole of chlorine needs two moles of sodium hydroxide in the cold step, and one mole of hydrogen chloride needs one. The base supply is sized from the anode current of the electrowinning cells and the chlorate unit by Faraday's law, plus the reactor headspace load, with a margin for carbon dioxide and slip.
 
-### 1.5 Controls
+## 4. Caustic vents
 
-- Lean NaOH: pH ≥ 12 at the top distributor.
-- Sump pH 10–12. Below 9, Cl2 slips. Above ~13 and hot, you etch pack
-  and accelerate carbonate pickup.
-- Sump ORP: rising ORP at fixed pH means ClO- inventory is building —
-  transfer to CRU, do not keep recirculating forever.
-- Transfer on level or on ORP band, not on a timer alone.
-- Gas out: Cl2 and HCl below the site permit after polish. Prefer
-  liquor → CRU pull over continuous stack flow (AQS-VENT-001). If the
-  residual sensor rises, increase liquor rate first, not fan speed.
+Revision A described a separate caustic branch for the vents of the glass digest and the BMED base tank: the sodium hydroxide mist is caught in water and trimmed with BMED acid to a neutral salt solution for the salt feed of the BMED stack,
 
-Stoichiometry check (order of magnitude): 1 mol Cl2 needs 2 mol NaOH
-at the cold step. 1 mol HCl needs 1 mol NaOH. Size BMED BASE bleed
-from Faraday on the EW / CRU anodes plus the CSTR headspace load,
-then add 20 % for CO2 and slip.
+    NaOH + HCl → NaCl + H2O
 
-## 2. Caustic branch — HDR_CAUSTIC
+with a target of pH 6 to 8 and no free caustic sent to the stack. This branch and its header are not units on the present graph. Whether these vents need their own scrubber, or are covered by another unit, is an owner question in `REWRITE_TODO.md`. The rule stands either way: caustic vents are not joined to the acid-gas scrubber, because that would spend base on neutralising base and send the wrong salt to CRU.
 
-Duty: NaOH DIGEST headspace and BMED BASE tank vents. Local suction.
-Do **not** tee this header into HDR_ACID_GAS. You would spend BASE
-neutralizing BASE and send the wrong salt to CRU.
+## 5. Bromine
 
-### 2.1 Capture
+The bromine regenerator ZNBR2_BR2_REGEN takes the headspace and seal gas of the positive tank of the zinc-bromine battery ZNBR2. It is a separate unit with its own liquor; it shares only the base supply. Bromine and hydrogen bromide are absorbed cold:
 
-NaOH mist dissolves in Q4 water:
+    Br2 + 2 NaOH → NaBr + NaOBr + H2O
+    HBr + NaOH → NaBr + H2O
 
-```
-NaOH(mist) → NaOH(aq)
-```
+Hypobromite turns into bromate if it is held hot,
 
-### 2.2 Neutralize to salt
+    3 NaOBr → 2 NaBr + NaBrO3
 
-Trim with BMED ACID to a pH the SALT chamber will accept:
+and bromate is not a battery chemical, so this sump is never held hot as CRU is. The liquor goes to a hold tank, is checked by ORP, and returns to the positive tank as bromide. If the ORP shows too much hypobromite or bromate, the liquor is reduced, preferably on zinc granules from the electrowinning scrap, since zinc is already in the battery; a metered sulfite also works but adds a salt. This liquor never goes to CRU. The size of the regenerator is in `docs-authority/sizing/ZNBR2_BR2_REGEN.md` and `docs-authority/FLOW_BATTERY.md`.
 
-```
-NaOH + HCl → NaCl + H2O
-```
+## 6. What each liquor is after the scrubber
 
-Target liquor: pH 6–8, conductivity as NaCl, no free caustic slug
-into BMED SALT. Then SALT FEED.
-
-If you skip the HCl trim and send dilute NaOH to SALT, the BPM still
-runs but you have moved BASE into the wrong compartment and you will
-fight pH on the stack.
-
-Wall: PP. Pack: PP saddles. Pump: PP mag-drive. Not CPVC-required;
-not PVDF-required.
-
-## 3. Battery bromine tower
-
-Duty: ZnBr2 positive-tank headspace and pump seals. PVDF tower,
-separate liquor. Shared BMED BASE supply only.
-
-Cold absorption:
-
-```
-Br2 + 2 NaOH → NaBr + NaOBr + H2O
-```
-
-```
-HBr + NaOH → NaBr + H2O
-```
-
-Hypobromite will disproportionate to bromate if you cook it:
-
-```
-3 NaOBr → 2 NaBr + NaBrO3
-```
-
-Bromate is not a battery chemical. Do not hot-hold this sump the way
-CRU hot-holds hypochlorite.
-
-Liquor path: sump → hold tank → ORP check → return **bromide** to the
-positive tank. If ORP says hypobromite/bromate is high, reduce
-(plant options: contact with zinc granules from EW-9 scrap, or a
-metered sulfite — sulfite is an extra salt, zinc is already in the
-flowsheet). Do not send this liquor to CRU.
-
-FLOW_BATTERY.md owns the skid dimensions (200 mm ID, 1.5 m pack,
-5–10 L/min). This file owns why the liquor is segregated.
-
-## 4. What each liquor is after the tower
+Table 6.1. Liquors and their destinations
 
 | Liquor | Main solutes | Goes to | Must not contain |
-|---|---|---|---|
-| Alkali sump | NaCl, NaClO, leftover NaOH | CRU → NaClO3 + NaCl | Br, organics, NH3 |
-| CRU product | NaClO3, NaCl | REGEN LEACH with BMED HCl | BrO3-, sewer |
-| Caustic sump | NaCl after HCl trim | SALT FEED | free Cl2, chlorate slug |
-| Br2 sump | NaBr, NaOBr | hold → pos. tank as Br- | chlorate, Salria |
+| --- | --- | --- | --- |
+| Acid-gas scrubber sump | NaCl, NaClO, remaining NaOH | CRU | bromide, organics, ammonia |
+| CRU product | NaClO3, NaCl | Leach reactor, with BMED acid | bromate; never to a drain |
+| Caustic vent liquor (Section 4) | NaCl after the acid trim | BMED salt feed | free chlorine, chlorate |
+| Bromine regenerator sump | NaBr, NaOBr | Hold tank, then the battery as bromide | chlorate |
 
-## 5. Pressure and routing (chemistry constraints)
+## 7. Pressure and routing
 
-- Alkali and dust headers are negative at the source so leaks go
-  inward. Fan after treatment.
-- Battery tanks are 20–50 mmWC **positive** so Br2 leaks to the Br2
-  header, not the pad (FLOW_BATTERY.md). Different sign from the
-  plant acid-gas header. Do not manifold them.
-- H2 is not scrubbed. Flame arrestor, dryer, CRYO_H2 / fuel (S64);
-  roof (S24) contingency only. Water wash on H2 only adds a wet
-  explosion problem.
+- The acid-gas and dust headers run below atmospheric pressure at the source, so leaks go inward, and the fan sits after the treatment so that its impeller sees clean gas.
+- The battery tanks run a little above atmospheric pressure, so bromine leaks into the bromine header and not onto the pad (`docs-authority/FLOW_BATTERY.md`). The two headers have opposite signs and are never joined.
+- Hydrogen is not washed with water: a water wash adds a wet explosion hazard. It passes a flame arrestor and the dryer to the store.
 
-## 6. Materials vs chemistry
+## 8. Materials
+
+Table 8.1. Materials for each liquor
 
 | Stream | Wall |
-|---|---|
-| Cl2 / HCl gas + NaOH liquor | PP or FRP tower; PVDF pump |
-| Hot CRU (chlorate finish) | CPVC or PVDF — this liquor is becoming an oxidizer |
-| NaOH mist + dilute HCl trim | PP |
-| Br2 gas + NaOH liquor | PVDF only |
+| --- | --- |
+| Chlorine and hydrogen chloride gas with caustic liquor | Polypropylene or glass-reinforced plastic tower; PVDF pump |
+| Hot chlorate liquor in CRU | CPVC or PVDF, because the liquor is becoming an oxidiser |
+| Caustic mist with a dilute acid trim | Polypropylene |
+| Bromine gas with caustic liquor | PVDF only |
 
-Ti is not a scrubber wall. 316L pits in wet Cl2. PP is wrong for the
-hot CRU oxidizer hold.
+Titanium is not used for a scrubber wall, 316L stainless steel pits in wet chlorine, and polypropylene is not suitable for the hot chlorate hold.

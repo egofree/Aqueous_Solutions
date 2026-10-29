@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: U
+Revision: V
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -27,6 +27,7 @@ Date: 2026-10-29
 | S | Batch 16: the path of the cryogenic massing script corrected in AUTHORITY and in the history page REMAINING_BLD | 2026-10-29 |
 | T | Batch 17: PARAMETRIC_MODEL rewritten through its generator `flow_graph/param/report.py` | 2026-10-29 |
 | U | Batch 18: METAL_FORMING and SOLVENT_ROUTE rewritten against the graph; owner question on the ionic-liquid chain | 2026-10-29 |
+| V | Batch 19: SCRUBBER_CHEMISTRY rewritten against the graph; VENT_CLOSURE given a generator that checks every closure on the graph; owner question on the caustic vents | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -162,6 +163,8 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/PARAMETRIC_MODEL.md` | Rev C. Rewritten through `flow_graph/param/report.py`: purpose, scope and terms; the framework and the acid-loop decision as sentences in order; the relief and scrubber rows read from the graph; stale pointers removed. |
 | `docs-authority/METAL_FORMING.md` | Rev C. Rewritten against the graph: the route of the metal by stream, the choices that fix it, air handling, heat recovery and hazards; stale tags, outside references and the nitrogen atomising gas removed; values left to the generated equipment list. |
 | `docs-authority/SOLVENT_ROUTE.md` | Rev D. Rewritten against the graph: the methanol train by stream, the ionic-liquid route as chemistry only, and the fab reagent uses; the rates of graph revision BH removed. |
+| `docs-authority/SCRUBBER_CHEMISTRY.md` | Rev B. Rewritten against the graph: scrubbers mapped to graph units and streams, reactions and controls kept as sentences, liquor destinations and materials in numbered tables; the acid-gas and caustic headers that are not on the graph removed. |
+| `docs-authority/VENT_CLOSURE.md` | Rev D. Now written by `docs-authority/_vent_closure.py` (regen stage `doc_vent_closure`): the closure rule, each former open discharge with its end state, and a check of every closure stream, contingency route and relief sink against the graph. |
 
 ## 3. In progress
 
@@ -196,13 +199,11 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/O2_SOURCE.md` | No purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
-| `docs-authority/SCRUBBER_CHEMISTRY.md` | No record of revisions; no purpose and scope section; list items written as fragments; arrows used in place of sentences. |
 | `docs-authority/SIGN_SCHEDULE.md` | No purpose and scope section. |
 | `docs-authority/STL_MANIFEST.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/STUDY_UNITS_STUB.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/TERRACE_LANDSCAPE.md` | No purpose and scope section; list items written as fragments. |
 | `docs-authority/TEST_PLAN.md` | No purpose and scope section; working or stock phrasing. |
-| `docs-authority/VENT_CLOSURE.md` | Working or stock phrasing. |
 
 Table 4.2. Pending pages in subfolders
 
@@ -348,6 +349,7 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001) | No stream brings silicon to WAFER_FAB: STOCK_TO_FAB carries no flow, and the fab balance closes on its gas, slurry and water streams alone, so the wafer stream to LITHO_COAT is not backed by a silicon charge. Should STOCK_TO_FAB be rated from the wafer output, and from which store? |
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001) | Revision C left the blanket gas for the Czochralski charge as TBD between argon and nitrogen. The graph feeds the fab nitrogen (S03) only. Is nitrogen the choice, or should an argon stream be added? |
 | `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | The ionic-liquid solvent chain (fermentation, acetic acid, glyoxal, formaldehyde, methylimidazole, chlorobutane and the quaternisation) has build models in `models/mfg/` but no units on the present graph. Should it be put back on the graph with its rates, or retired with its build models? |
+| `docs-authority/SCRUBBER_CHEMISTRY.md` (AQS-GAS-002) | Revision A had a separate caustic scrubber for the vents of the glass digest and the BMED base tank, trimming the mist to salt for the BMED salt feed. Neither that scrubber nor its header is on the graph. Do these vents need their own unit, or does another unit cover them? |
 | `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |
 | `docs-authority/unregistered_doc_numbers.json` | Pages cite AQS-PFD-* flow diagram numbers that are in neither register. Should they be added to the drawing register with the scripts in `flow_graph/exporters/matplotlib/` as their source, or removed from the pages? |
 | `docs-authority/unregistered_doc_numbers.json` | Many pages cite AQS-AUD-001, a crew and water audit that is not in the repository. Should it be added, or should each citation be replaced by the graph value it stood for? |

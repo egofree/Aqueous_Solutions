@@ -1,0 +1,6 @@
+# Rewrite batch 19: scrubber chemistry and vent closure
+
+Date: 2026-10-29
+
+- `docs-authority/SCRUBBER_CHEMISTRY.md` (AQS-GAS-002), Rev B. The page named an acid-gas header, a caustic header, a demister and a flow-battery tower, none of which is a unit on the graph. The scrubbers are now mapped to the graph units ALK_SCRUBBER, ACID_POLISH_SCRUB, CRU, ZNBR2_BR2_REGEN, MET_SCRUB and NOX_SCRUB with their streams. The reactions, controls, liquor destinations and materials are kept, written as sentences and numbered tables. The separate caustic scrubber of revision A has no unit on the graph and is now an owner question.
+- `docs-authority/VENT_CLOSURE.md` (AQS-VENT-001), Rev D. The page is now written by `docs-authority/_vent_closure.py` (regen stage `doc_vent_closure`). The closures decided on 2026-09-28 are held in the generator; each regeneration checks on the graph that every named stream exists, that every contingency route carries no flow, that no stream reaches the habitation or the farm, and that nothing flows into the relief units or the atmospheric boundary in normal operation. All checks pass on the present graph. The study figures of revision C, which AQS-EQP-VENT-001 now carries, and the tags no longer on the graph were removed.
