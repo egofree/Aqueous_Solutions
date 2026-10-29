@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | E | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | F | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | A | 2026-10-21 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -143,7 +143,7 @@ Table 3.1. Document numbers in use
 | AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | C | 2026-10-21 | Load list | current |
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | C | 2026-10-25 | Electrowinning rectifier sizing (RECT-EW) | current |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | B | 2026-10-25 | Grounding and bonding | current |
-| AQS-ELEC-006 | `docs-authority/PROTECTION.md` | D | 2026-10-15 | Protection and coordination | current |
+| AQS-ELEC-006 | `docs-authority/PROTECTION.md` | E | 2026-10-29 | Protection and coordination | current |
 | AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | G | 2026-10-29 | Storage and generation sizing | current |
 | AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | B | 2026-10-24 | Collection bus sections | current |
 | AQS-ELEC-009 | `docs-authority/HAZ_AREA.md` | B | 2026-10-25 | Hazardous area classification | current |
@@ -198,7 +198,7 @@ Table 3.1. Document numbers in use
 | AQS-IO-FOUNDRY | `notes/FOUNDRY_IO.md` | A | 2026-10-16 | FOUNDRY sector — inputs and outputs | current |
 | AQS-ISO-000 | `docs-authority/ISO_DRAWING_INDEX.md` | A | 2026-09-27 | Isometric fabrication set | current |
 | AQS-ISO-001 | `docs-authority/ISO_ROUTES.md` | A | 2026-10-15 | Isometric route data | current |
-| AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | A | 2026-10-15 | Isometric sheets | current |
+| AQS-ISO-002 | `docs-authority/ISO_SHEETS.md` | B | 2026-10-29 | Isometric sheets | current |
 | AQS-LIFE-001 | `docs-authority/LIFE_FITOUT_PLAN.md` | B | 2026-10-01 | Habitation and farm fit-out plan | current |
 | AQS-LIT-ASSAY | `notes/LIT_ASSAY.md` | A | 2026-10-16 | Literature compositions for missing assays | current |
 | AQS-LITH-001 | `docs-authority/ALIGNER.md` | C | 2026-10-11 | Contact aligner | current |
@@ -207,7 +207,7 @@ Table 3.1. Document numbers in use
 | AQS-MF-001-DERIVED | `flow_graph/derived/MASS_FLOW_DERIVED.md` | — | — | Mass-flow claim excerpt — DERIVED from flow_graph | current |
 | AQS-MFG-001 | `docs-authority/internal/DETAIL_MODEL_PLAN.md` | A | 2026-09-26 | Manufacturing-detail model list | superseded by AQS-PLAN-007 |
 | AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | D | 2026-10-25 | Manufacturing shop tool list | current |
-| AQS-MFG-011 | `docs-authority/JELLYBEAN.md` | A | 2026-10-15 | Jellybean parts: standard sizes and in-house lines | current |
+| AQS-MFG-011 | `docs-authority/JELLYBEAN.md` | B | 2026-10-29 | Jellybean parts: standard sizes and in-house lines | current |
 | AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | D | 2026-10-25 | Electrode fabrication and coating | current |
 | AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | B | 2026-09-28 | Metal forming path — wire draw / cold mill / gas atomizer | current |
 | AQS-MOD-001 | `docs-authority/MODULE.md` | C | 2026-10-12 | Module standard | current |

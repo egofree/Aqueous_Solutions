@@ -1788,14 +1788,16 @@
     "python3",
     "docs-authority/_protection.py"
    ],
-   "outputs": [],
+   "outputs": [
+    "docs-authority/PROTECTION.md"
+   ],
    "depends_on": [
     "code_basis",
     "one_line"
    ],
    "writes_graph": false,
    "quick": false,
-   "note": "AQS-ELEC-006 study (stdout JSON; parses ONE_LINE.md); spawns _grounding_study."
+   "note": "AQS-ELEC-006 study (writes PROTECTION.md, keeping the code basis section; stdout JSON; parses ONE_LINE.md); spawns _grounding_study."
   },
   {
    "name": "inventory_wire",

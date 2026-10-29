@@ -69,13 +69,13 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/ISO_SHEETS.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/ITP.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/JELLYBEAN.md` | c430207 (regenerated, no change) | current |
-| `docs-authority/LIFE_MEP.md` | working tree | current |
+| `docs-authority/LIFE_MEP.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/LIFTING.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/LINE_LIST.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/LOAD_LIST.json` | c430207 (regenerated, no change) | current |
 | `docs-authority/LOAD_LIST.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/MAINT_PLAN.md` | c430207 (regenerated, no change) | current |
-| `docs-authority/MEOH_TRAIN.md` | working tree | current |
+| `docs-authority/MEOH_TRAIN.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/MFG_TOOLS.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | c430207 (regenerated, no change) | current |
 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | c430207 (regenerated, no change) | current |
@@ -109,7 +109,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/TEST_PLAN.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/TEST_RIGS.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/UNIT_MATERIALS.md` | c430207 (regenerated, no change) | current |
-| `docs-authority/WATER_PURIFICATION.md` | working tree | current |
+| `docs-authority/WATER_PURIFICATION.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/WATER_TOWER.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/WIRE_SPECS.md` | c430207 (regenerated, no change) | current |
 | `docs-authority/WPS_REGISTER.md` | c430207 (regenerated, no change) | current |

@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: E
+Revision: F
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -11,6 +11,7 @@ Date: 2026-10-29
 | C | POWER_SIZING given a generator; FIRE_PROTECTION rewritten through its generator; duty sheet headers now carry the current graph revision | 2026-10-29 |
 | D | FUEL_CELL, H2_EMBRITTLEMENT_REVIEW and WELD_MAP rewritten; PROTECTION found stale and its reason updated | 2026-10-29 |
 | E | WATER_PURIFICATION, LIFE_MEP and MEOH_TRAIN given generators and rewritten | 2026-10-29 |
+| F | PROTECTION written by its study script; ISO_SHEETS and JELLYBEAN rewritten through their generators | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -104,6 +105,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/WATER_PURIFICATION.md` | Rev C. Now written by `docs-authority/_water_purification.py` (stage `doc_water_purification`): the treatment trains described by their graph units, every stream and the unit balances from the graph; references to SLINGSHOT/ and the numbered root documents removed; the quality targets kept, with their published sources listed as an open item. |
 | `docs-authority/LIFE_MEP.md` | Rev B. Now written by `docs-authority/_life_mep.py` (stage `doc_life_mep`): crew size from the graph, pipe sizes from `params.py`, drains named by graph unit, arrow diagrams replaced by sentences, the citation of AQS-AUD-001 (not in the repository) removed. |
 | `docs-authority/MEOH_TRAIN.md` | Rev B. Now written by `docs-authority/_meoh_train_doc.py` (stage `doc_meoh_train`): units, streams and rates from the graph, including the methanol product shipped at the dock, which Rev A did not describe; ranges, tags not on the graph and references to root documents removed. |
+| `docs-authority/PROTECTION.md` | Rev E. Now written by `docs-authority/_protection.py`, which already computed the study: inverter count and rating, section mains and the rectifier name from the graph, feeders from the one-line diagram, grid values from `_grounding_study.py` (not changed). The code basis section appended by `code_basis.py` is carried over. |
+| `docs-authority/ISO_SHEETS.md` | Rev B. Rewritten through `docs-authority/_iso_sheets.py`: purpose and scope, the summary and basis as sentences, numbered tables. |
+| `docs-authority/JELLYBEAN.md` | Rev B. Rewritten through `docs-authority/_jellybean.py`: purpose and scope, an introductory sentence and numbered table for each family, the pipe entries no longer contradict their schedule, and the line list cited as AQS-PIP-004 instead of an unregistered number. |
 
 ## 3. In progress
 
@@ -131,9 +135,7 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/INSTRUMENT_INDEX.md` | No record of revisions; no purpose and scope section. Written by `docs-authority/_instr_index.py`; fix the generator. |
 | `docs-authority/INSTRUMENT_LOOPS.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/INTERNALS.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_internals.py`; fix the generator. |
-| `docs-authority/ISO_SHEETS.md` | No purpose and scope section. Written by `docs-authority/_iso_sheets.py`; fix the generator. |
 | `docs-authority/ITP.md` | No record of revisions; no purpose and scope section. Written by `docs-authority/_itp.py`; fix the generator. |
-| `docs-authority/JELLYBEAN.md` | No purpose and scope section. Written by `docs-authority/_jellybean.py`; fix the generator. |
 | `docs-authority/LIFE_FITOUT_PLAN.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/LOAD_LIST.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_load_list.py`; fix the generator. |
@@ -148,7 +150,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/PARAMETRIC_MODEL.md` | No purpose and scope section; working or stock phrasing. Written by `_graph.py`; fix the generator. |
 | `docs-authority/PIPE_SPECS.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_pipe_specs.py`; fix the generator. |
-| `docs-authority/PROTECTION.md` | No purpose and scope section. Its values are stale: it states 48 inverters and names node RECT_EW, while the graph has 35 inverters and node RECTIFIER. `docs-authority/_protection.py` computes the study but prints it instead of writing the page; the page needs that script to write it. |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | No purpose and scope section; working or stock phrasing. Written by `flow_graph/param/scale_down.py`; fix the generator. |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | No record of revisions; no purpose and scope section; list items written as fragments; arrows used in place of sentences. |
