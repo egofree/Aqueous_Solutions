@@ -10,10 +10,10 @@ g = json.load(open('flow_graph/plant_flow_graph.json')); N = {n['unit_id']: n fo
 C = []
 def chk(cid, module, what, model, indep, tol):
     ok = abs(model - indep) <= tol*max(abs(indep), 1e-9); C.append(dict(check=cid, module=module, item=what, model=round(model, 4), independent=round(indep, 4), tol=f'{tol*100:g} %', result='pass' if ok else 'fail'))
-# 1 mass balance per unit (kg/d edges only)
+# 1 mass balance per unit (kg/d edges only). Boundaries and intakes are skipped: an intake draws from outside the plant (groundwater, seawater, atmosphere), so it has no inflow to balance.
 bad = 0; nb = 0
 for u, n in N.items():
-    if n.get('class') in ('boundary', 'header', 'building', 'dock', 'product', 'cut_tank', 'reagent') or n.get('presence', 'present') != 'present': continue
+    if n.get('class') in ('boundary', 'intake', 'header', 'building', 'dock', 'product', 'cut_tank', 'reagent') or n.get('presence', 'present') != 'present': continue
     i = sum(e['rate']['value'] or 0 for e in g['edges'] if e['to_unit_id'] == u and e['presence'] == 'present' and e['rate'].get('unit') == 'kg/d')
     o = sum(e['rate']['value'] or 0 for e in g['edges'] if e['from_unit_id'] == u and e['presence'] == 'present' and e['rate'].get('unit') == 'kg/d')
     if i > 0.01 or o > 0.01:
