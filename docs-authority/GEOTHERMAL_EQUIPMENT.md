@@ -1,10 +1,10 @@
 # Geothermal equipment list
 
 Document number: AQS-EQP-GEO-001  
-Revision: D  
-Date: 2026-10-24  
+Revision: E  
+Date: 2026-10-29  
 Process flow diagram: AQS-PFD-GEO-001 (`geothermal_pfd.png`)  
-Basis: AQS-PWR-002 (`GEOTHERMAL_BACKUP.md`); `POWER/Power_System_overview.md`; AQS-SCALE-001; `ELECTRICAL.md` (AQS-ELC-001, HVAC and Q4); AQS-STR-001 streams S43, S44 and S48.  
+Basis: AQS-PWR-002 (`GEOTHERMAL_BACKUP.md`); AQS-SCALE-001; `ELECTRICAL.md` (AQS-ELC-001, HVAC and Q4); AQS-STR-001 streams S43, S44 and S48.  
 Licence: CERN-OHL-S-2.0.
 
 | Rev | Change | Description | Date |
@@ -12,6 +12,7 @@ Licence: CERN-OHL-S-2.0.
 | A | — | Basic issue with POWER gap close | 2026-09-27 |
 | C | 2 | Point to AQS-EQP-STUDY-001 Rev C Carnot-limited ORC band | 2026-10-01 |
 | D | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, scope and terms, captions; the Q4 and organic Rankine cycle notes given section numbers. Tags, ratings and rules unchanged. | 2026-10-24 |
+| E | 1 | References to documents outside this repository removed, with the rating row that quoted a baseload from one of them. Other ratings and rules unchanged. | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -64,7 +65,6 @@ Table 6.1. Ratings
 
 | Quantity | Value | Source |
 |---|---|---|
-| Legacy campus electric claim | 100 kW baseload | `POWER/Power_System_overview.md` (narrative) |
 | M1 electric claim this pass | **TBD** — ORC stub only | AQS-PWR-002 §2.1 |
 | Heat-pump thermal | **TBD** | Do not invent kW |
 | HVAC AC load context | 1.5 kW class | `ELECTRICAL.md` |

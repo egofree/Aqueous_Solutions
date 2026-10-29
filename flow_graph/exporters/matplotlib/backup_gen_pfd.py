@@ -110,7 +110,7 @@ def main():
 
     S.callout(ax, 2, 3.5, 96, 7.0, "MACHINE / DOC NAMES", [
         "BACKUP_GEN · GEN_H2_BUFFER · GEN_EXHAUST_HX · SOL_ARK_60K GEN · ATS · RECTIFIER* · ZNBR2* · PV_ARRAY*",
-        "AQS-PWR-002 · AQS-EQP-GEN-001 · ELECTRICAL.md · POWER/Power_System_overview.md · AQS-GAP-001 §4",
+        "AQS-PWR-002 · AQS-EQP-GEN-001 · ELECTRICAL.md · AQS-GAP-001 §4",
         "Placement: L0 POWER yard beside SOL_ARK_60K  ·  SCALE_M=1.0  ·  CERN-OHL-S-2.0",
     ], fill="#fafaf9", edge="#57534e")
 

@@ -1,10 +1,10 @@
 # Backup generator equipment list
 
 Document number: AQS-EQP-GEN-001  
-Revision: D  
-Date: 2026-10-24  
+Revision: E  
+Date: 2026-10-29  
 Process flow diagram: AQS-PFD-GEN-001 (`backup_gen_pfd.png`)  
-Basis: AQS-PWR-002; `ELECTRICAL.md` (AQS-ELC-001, Sol-Ark generator port); `POWER/Power_System_overview.md`; the exhaust-recapture intent of the gas system; AQS-STR-001 streams S45 to S47; AQS-HSE-001 and AQS-MF-001 (hydrogen maximum allowable quantity).  
+Basis: AQS-PWR-002; `ELECTRICAL.md` (AQS-ELC-001, Sol-Ark generator port); the exhaust-recapture intent of the gas system; AQS-STR-001 streams S45 to S47; AQS-HSE-001 and AQS-MF-001 (hydrogen maximum allowable quantity).  
 Licence: CERN-OHL-S-2.0.
 
 | Rev | Change | Description | Date |
@@ -13,6 +13,7 @@ Licence: CERN-OHL-S-2.0.
 | B | 1 | Study continuous / capacity bounds from Faraday + ELECTRICAL | 2026-10-01 |
 | C | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, scope and terms, captions; sections renumbered. Tags, ratings and rules unchanged. | 2026-10-24 |
 | D | 2 | Dual fuel restored (owner decision 2026-10-24): hydrogen first from CRYO_H2 (S45), the C5-C10 cut as fallback (CUT-1-OUT) with a reserve sized for the outage edge case; the retired S05 source removed. | 2026-10-24 |
+| E | 1 | References to documents outside this repository removed; the basis now cites only in-repo documents. Tags, ratings and rules unchanged. | 2026-10-29 |
 
 ## 1. Purpose and scope
 

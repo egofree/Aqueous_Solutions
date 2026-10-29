@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: I
+Revision: J
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -15,6 +15,7 @@ Date: 2026-10-29
 | G | Reference sweep: unregistered document numbers listed in `unregistered_doc_numbers.json` and guarded by `flow_graph/test_doc_number_refs.py` | 2026-10-29 |
 | H | Batch 6: the instrument index, inspection and test plan, load list, internals register and per-unit material selections rewritten through their generators | 2026-10-29 |
 | I | Batch 7: the pipe, wire and building-block family plans and the standards list rewritten through their generators | 2026-10-29 |
+| J | Out-of-repository references removed from six equipment lists | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -120,6 +121,12 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/WIRE_SPECS.md` | Rev D. Rewritten through `docs-authority/_wire_specs.py`: purpose and scope, the production steps and family sheets as sentences, numbered tables. |
 | `docs-authority/BLOCK_FAMILY_PLANS.md` | Rev B. Rewritten through `docs-authority/_block_fam_plans.py`: purpose and scope, category plans as sentences, stale counts of bought families and spares removed. |
 | `docs-authority/STANDARDS_LIST.md` | Rev B. Rewritten through `docs-authority/_standards_list.py`: record of revisions, purpose and scope, numbered tables, full standard titles. |
+| `docs-authority/BACKUP_GEN_EQUIPMENT.md` | Rev E. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
+| `docs-authority/FUEL_CELL_EQUIPMENT.md` | Rev F. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
+| `docs-authority/GEOTHERMAL_EQUIPMENT.md` | Rev E. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
+| `docs-authority/CRYO_EQUIPMENT.md` | Rev G. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
+| `docs-authority/FARM_EQUIPMENT.md` | Rev E. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
+| `docs-authority/SOLAR_CELL_EQUIPMENT.md` | Rev D. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
 
 ## 3. In progress
 

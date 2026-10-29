@@ -1,10 +1,10 @@
 # Cryogenic equipment list
 
 Document number: AQS-EQP-CRY-001  
-Revision: F  
-Date: 2026-10-24  
+Revision: G  
+Date: 2026-10-29  
 Process flow diagram: AQS-PFD-CRY-001 (`cryo_pfd.png`)  
-Basis: AQS-CRY-002; `09-air-liquefaction-cryogenic.md`; `freecad/cryo.py`; AQS-PHF-001; AQS-STR-001; AQS-HSE-001; AQS-PWR-002 and AQS-FC-001 (users of `CRYO_H2`); AQS-EQP-GEO-001 (Q4 header).  
+Basis: AQS-CRY-002; `models/freecad/cryo.py`; AQS-PHF-001; AQS-STR-001; AQS-HSE-001; AQS-PWR-002 and AQS-FC-001 (users of `CRYO_H2`); AQS-EQP-GEO-001 (Q4 header).  
 Licence: CERN-OHL-S-2.0.
 
 | Rev | Change | Description | Date |
@@ -15,12 +15,13 @@ Licence: CERN-OHL-S-2.0.
 | D | 1 | CRYO_AHU_COND / S70; S64 H₂ normal; S67 flue-cap (AQS-VENT-001) | 2026-09-28 |
 | E | 1 | Study Stirling/AHU_COND/holdup bounds; 9×6 envelope | 2026-10-01 |
 | F | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, scope and terms, captions; sections renumbered (the hydrogen store interface is now §6). Tags, ratings and rules unchanged. | 2026-10-24 |
+| G | 1 | References to documents outside this repository removed; the FreeCAD script cited by its path in the repository. Tags, ratings and rules unchanged. | 2026-10-29 |
 
 ## 1. Purpose and scope
 
 The cryogenic plant separates air and process gases at 77–90 K into oxygen, nitrogen, carbon dioxide and hydrogen products, and holds them in receivers for the rest of the plant. This page lists the cryogenic units (the cold box, its internals and the product receivers), the separation rules, the sizing interface of the hydrogen store, the heat rejection paths and the FreeCAD stubs.
 
-Ratings marked TBD are still to be determined. The reboiler, condenser and coefficient-of-performance figures in the root document `09-air-liquefaction-cryogenic.md` are older narrative only; no M1 nameplate is invented from them.
+Ratings marked TBD are still to be determined. No reboiler, condenser or coefficient-of-performance rating is taken from earlier narrative documents, and no M1 nameplate is invented.
 
 ## 2. Terms
 
@@ -106,7 +107,7 @@ The other users of the Q4 water header are S06 (HVAC), S44 (`GEO_HP`), S53 (`FC_
 
 ## 8. FreeCAD stubs
 
-`freecad/cryo.py` attaches `COLD_BOX`, the receivers and envelope stubs for the internals (`AIR_INTAKE`, `MOL_SIEVE`, `HEPA_BANK`, `STIRLING_COLD_HEAD`, `DIST_COL_*`, `REBOILER_COND`, `COMP_EXPAND`, `CRYO_HX_Q4`, `CRYO_DED_COOL`, `CRYO_AHU`). The assembled plant (`plant.FCStd`) must be rebuilt before these children appear in it.
+`models/freecad/cryo.py` attaches `COLD_BOX`, the receivers and envelope stubs for the internals (`AIR_INTAKE`, `MOL_SIEVE`, `HEPA_BANK`, `STIRLING_COLD_HEAD`, `DIST_COL_*`, `REBOILER_COND`, `COMP_EXPAND`, `CRYO_HX_Q4`, `CRYO_DED_COOL`, `CRYO_AHU`). The assembled plant (`plant.FCStd`) must be rebuilt before these children appear in it.
 
 ## 9. Rebuilding the drawing
 

@@ -1,10 +1,10 @@
 # Farm equipment and process list
 
 Document number: AQS-EQP-FRM-001  
-Revision: D  
-Date: 2026-10-24  
+Revision: E  
+Date: 2026-10-29  
 Process flow diagrams: AQS-PFD-FRM-001 (`farm_pfd.png`); companions AQS-PFD-NUT-001 and AQS-PFD-TRR-001 (`terrace_irrigation_pfd.png`).  
-Basis: `05-organic-farm-nutrient.md`; AQS-LIFE-001 §3 and §8; `freecad/farm.py`; AQS-STR-001; AQS-MF-001; AQS-SCALE-001 §9–10; AQS-TRR-001; AQS-WTR-001; AQS-PHF-001.  
+Basis: AQS-LIFE-001 §3 and §8; `models/freecad/farm.py`; AQS-STR-001; AQS-MF-001; AQS-SCALE-001 §9–10; AQS-TRR-001; AQS-WTR-001; AQS-PHF-001.  
 Licence: CERN-OHL-S-2.0.
 
 | Rev | Change | Description | Date |
@@ -13,6 +13,7 @@ Licence: CERN-OHL-S-2.0.
 | B | 1 | Irrigation / terrace interfaces; unit duties; FreeCAD follow-up list | 2026-09-27 |
 | C | 1 | Study food kg/d; grow trays FreeCAD | 2026-10-01 |
 | D | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose, scope and terms, captions; sections renumbered; working-log wording removed. Units, streams and rules unchanged. | 2026-10-24 |
+| E | 1 | References to documents outside this repository removed; the FreeCAD script cited by its path in the repository. Units, streams and rules unchanged. | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -32,7 +33,7 @@ Stream numbers (S01 and so on) are those of AQS-STR-001. Other abbreviations are
 
 ## 3. Farm units (level 1 east plate)
 
-The names match `freecad/farm.py`. When `LIFE_LEVELS` is greater than 1, units on further life plates take the suffix `_S2` and so on (Table 3.1).
+The names match `models/freecad/farm.py`. When `LIFE_LEVELS` is greater than 1, units on further life plates take the suffix `_S2` and so on (Table 3.1).
 
 Table 3.1. Farm units
 

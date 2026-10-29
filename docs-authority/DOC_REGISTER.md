@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | I | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | J | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -151,15 +151,15 @@ Table 3.1. Document numbers in use
 | AQS-END-001 | `docs-authority/DECOMMISSIONING.md` | A | 2026-10-16 | Decommissioning plan | current |
 | AQS-END-002 | `docs-authority/EOL_RETURN.md` | D | 2026-10-21 | End-of-life material return | current |
 | AQS-ENV-FP-MET | `notes/VESSEL_ENVELOPES.md` | A | 2026-10-16 | Vessel envelopes — fluoropolymer train and critical-metal cells | current |
-| AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | F | 2026-10-24 | Cryogenic equipment list | current |
+| AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | G | 2026-10-29 | Cryogenic equipment list | current |
 | AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | C | 2026-10-24 | Wafer fab equipment and process list | current |
-| AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | C | 2026-10-24 | Solar-cell line equipment | current |
+| AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | D | 2026-10-29 | Solar-cell line equipment | current |
 | AQS-EQP-FAB-RGN-001 | `docs-authority/FAB_WET_REAGENTS.md` | B | 2026-10-01 | Fab wet reagents — wet-line synth forks | current |
 | AQS-EQP-FAB-UPW-001 | `docs-authority/FAB_UPW.md` | B | 2026-09-27 | Fab UPW — equipment list | current |
-| AQS-EQP-FC-001 | `docs-authority/FUEL_CELL_EQUIPMENT.md` | E | 2026-10-24 | Fuel-cell equipment list | current |
-| AQS-EQP-FRM-001 | `docs-authority/FARM_EQUIPMENT.md` | D | 2026-10-24 | Farm equipment and process list | current |
-| AQS-EQP-GEN-001 | `docs-authority/BACKUP_GEN_EQUIPMENT.md` | D | 2026-10-24 | Backup generator equipment list | current |
-| AQS-EQP-GEO-001 | `docs-authority/GEOTHERMAL_EQUIPMENT.md` | D | 2026-10-24 | Geothermal equipment list | current |
+| AQS-EQP-FC-001 | `docs-authority/FUEL_CELL_EQUIPMENT.md` | F | 2026-10-29 | Fuel-cell equipment list | current |
+| AQS-EQP-FRM-001 | `docs-authority/FARM_EQUIPMENT.md` | E | 2026-10-29 | Farm equipment and process list | current |
+| AQS-EQP-GEN-001 | `docs-authority/BACKUP_GEN_EQUIPMENT.md` | E | 2026-10-29 | Backup generator equipment list | current |
+| AQS-EQP-GEO-001 | `docs-authority/GEOTHERMAL_EQUIPMENT.md` | E | 2026-10-29 | Geothermal equipment list | current |
 | AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | B | 2026-09-27 | Habitation water — equipment list | current |
 | AQS-EQP-MEOH-001 | `docs-authority/MEOH_EQUIPMENT.md` | B | 2026-10-25 | Methanol train equipment list | current |
 | AQS-EQP-MFG-001 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | C | 2026-09-28 | MFG shop equipment list | current |

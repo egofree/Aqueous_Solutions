@@ -1,10 +1,10 @@
 # Solar-cell line equipment
 
 Document number: AQS-EQP-FAB-PV-001  
-Revision: C  
-Date: 2026-10-24  
+Revision: D  
+Date: 2026-10-29  
 Process flow diagram: AQS-PFD-FAB-PV-001 (`solar_cell_pfd.png`); the parent fab diagram AQS-PFD-FAB-001 points to it.  
-Basis: AQS-EQP-FAB-001 §4; root document `03-silicon-wafer-fabrication.md`; AQS-EQP-FAB-RGN-001 (`WS_KOH`); AQS-WTR-001 (fab ultrapure water); AQS-ELC-001 (campus PV narrative only).  
+Basis: AQS-EQP-FAB-001 §4; AQS-EQP-FAB-RGN-001 (`WS_KOH`); AQS-WTR-001 (fab ultrapure water); AQS-ELC-001 (campus PV narrative only).  
 Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. `SCALE_M = 1.0`.
 
 | Rev | Change | Description | Date |
@@ -12,6 +12,7 @@ Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. `SCALE_M = 1.0`.
 | A | — | Close open solar-cell path with named train; no invented kW / belt solids | 2026-10-01 |
 | B | 1 | Dedicated PFD + FreeCAD PV_* east-strip envelopes; kW still TBD | 2026-10-01 |
 | C | 1 | Rewritten to DOC_STYLE (AQS-DOC-002) for a reader new to the project: purpose and scope merged into §1, terms in §2, captions; layout section brought in line with the issued FreeCAD stubs. Tags, requirements and status unchanged. | 2026-10-24 |
+| D | 1 | References to documents outside this repository removed; the FreeCAD script cited by its path in the repository. Tags, requirements and status unchanged. | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -73,14 +74,14 @@ Table 4.1. Utilities and returns
 
 ## 5. Layout (level 0 fab bay)
 
-The `PV_*` units sit as a strip inside the fab envelope (12 × 10 m at M1) without moving the CZ train. Their FreeCAD envelope stubs are on the east strip in `freecad/wafer_fab.py`; detailed solids remain open, as do the `CZ_PULLER` solids in AQS-EQP-FAB-001.
+The `PV_*` units sit as a strip inside the fab envelope (12 × 10 m at M1) without moving the CZ train. Their FreeCAD envelope stubs are on the east strip in `models/freecad/wafer_fab.py`; detailed solids remain open, as do the `CZ_PULLER` solids in AQS-EQP-FAB-001.
 
 Clash rules: no Salria in the PV wet benches; no `HDR_H2` dwell in the fab; bromine and the zinc-bromide battery stay outdoors.
 
 ## 6. Status of follow-up items
 
 1. Dedicated process flow diagram AQS-PFD-FAB-PV-001: done (`solar_cell_pfd.py`).
-2. FreeCAD envelope stubs for `PV_TEXTURE` to `PV_FIRE`, `PV_IV` and `PV_HX_Q4`: done (`freecad/wafer_fab.py`, east strip).
+2. FreeCAD envelope stubs for `PV_TEXTURE` to `PV_FIRE`, `PV_IV` and `PV_HX_Q4`: done (`models/freecad/wafer_fab.py`, east strip).
 3. Purchase datasheets for the PECVD tool and the belt furnace: open. The study requirements are in AQS-REQ-KW-001.
 4. Whether the cell output changes `PV_COUNT` (the electrical cassette): open.
 
