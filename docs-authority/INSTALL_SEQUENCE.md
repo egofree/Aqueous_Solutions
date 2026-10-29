@@ -155,7 +155,7 @@ Recycle-loop tie-in pass: 18 same-level connections of ['ACID_POLISH_SCRUB', 'AL
 | 30 | FORM | 17 | 17 | hoist | initial feed | - |
 | 31 | MEAM | 17 | 17 | hoist | initial feed | - |
 | 32 | BUCL | 10 | 10 | hoist | initial feed | - |
-| 33 | FAB_UPW_TANK | 8 | 133 | built in place | initial feed | IA-UPW-FAB -> BMED_UPW_POLISH (L-1); S27 -> WET_BENCH (no structural booking); UPW_TO_FAB -> HDR_UPW (no structural booking) |
+| 33 | FAB_UPW_TANK | 8 | 133 | built in place | initial feed | IA-UPW-FAB -> BMED_UPW_POLISH (L-1); S27 -> WET_BENCH (no structural booking) |
 | 34 | MEOH_SYNTH | 416 | 416 | hoist | IA-MEOH-H2O -> MEOH_COND; S75 -> MEOH_TANK; SF-MEOH_SYNTH -> SOL_ARK_60K | IA-HCO2-MEOH -> HDR_CO2 (L1); MEOH_TO_OLEFIN -> POLY_OLEFIN (no structural booking); S73 -> CRYO_CO2 (L-1); S74 -> CRYO_H2 (L-1) |
 | 35 | MEOH_FERM | 416 | 416 | hoist | S77 -> MEOH_TANK; SF-MEOH_FERM -> SOL_ARK_60K | IA-FERM-DIG -> BLACK_DIGEST (L1); S78 -> HABITATION (no structural booking) |
 | 36 | MEOH_TANK | 28 | 468 | built in place | IA-MEOH-REST -> MEOH_FC; S75 -> MEOH_SYNTH; S76 -> MEOH_FC; S77 -> MEOH_FERM | IA-MEOH-PROD -> PROD_MEOH (no structural booking); MEOH_TO_TFE -> TFE_SYN (no structural booking); MEOH_TO_VDF -> VDF_SYN (no structural booking) |

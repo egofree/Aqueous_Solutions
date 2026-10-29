@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope 600 x 600 x 600 mm,1,PE (rotomoulded / fabricated) (graph node material).,docs-authority/duties/FAB_UPW_TANK.md
-2,Process nozzle DN15,3,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,2,PE (rotomoulded / fabricated) (graph node material).,one per mass edge; DN from AQS-INV-003
 3,"Motor: on/off valve S27 (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: transfer pump S27 to WET_BENCH (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004

@@ -249,7 +249,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | HAB_GREY | HABITATION | GREY_TREAT | L | mass | present | grey water | — | — |
 | HAB_BLACK | HABITATION | BLACK_DIGEST | L | mass | present | black water | — | — |
 | NUT_TO_BED | NUTRIENT_DOSE | GROW_BED | L | mass | present | nutrient solution | 0.0 kg/d | — |
-| UPW_TO_FAB | HDR_UPW | FAB_UPW_TANK | L | mass | present | UPW | — | — |
+| UPW_TO_FAB | HDR_UPW | FAB_UPW_TANK | L | mass | retired | UPW | — | — |
 | HL-HX8-Q4-A | HX8 | Q4_A | heat | thermal | present | HX-8 EW reject, Q4 return preheat | 2.286 kW | — |
 | HL-HX8-Q4-B | HX8 | Q4_B | heat | thermal | present | HX-8 EW reject, Q4 return preheat | 2.286 kW | — |
 | HL-Q3-A-HX4 | Q3_A | OIL_DRYER | heat | thermal | present | HX-4 Q3 process heat (dryer jacket) | 0.0553 kW | — |

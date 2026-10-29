@@ -671,7 +671,8 @@ for _e in g['edges']:
     if _e.get('presence') == 'present' and 'mass' in (_e.get('layers') or []) and (_e['rate'].get('unit') in ('kg/d', None)) and not _e['rate'].get('value'):
         _k = _rte_kind(_e)
         if _k: _RTE[_k].append(_e)
-RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_FAB', 'the CZ charge is sized from the wafer need and imported through the dock (A-M-417)', 'flow_graph/param/fab_silicon.py')]
+RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_FAB', 'the CZ charge is sized from the wafer need and imported through the dock (A-M-417)', 'flow_graph/param/fab_silicon.py'),
+            ('X-RTE-UPW_TO_FAB', 'Route UPW_TO_FAB: retired as a duplicate', 'IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired', 'flow_graph/plant_flow_graph.json')]
 RTE_DONE += [(f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']}: standby at its rated case",
              f"the route carries {_e['params']['rate_rated_kg_d']:g} kg/d when {_e['params']['rated_case']} (A-M-418)", 'flow_graph/param/standby_routes.py')
              for _e in sorted((x for x in g['edges'] if x.get('presence') == 'present'), key=lambda e: e['stream_id']) if (_e.get('params') or {}).get('rate_rated_kg_d')]

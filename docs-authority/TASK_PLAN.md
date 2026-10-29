@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 50 | 3 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 50 | 4 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **2987** | **2091** |
+| | **Total** | **2987** | **2092** |
 
 ## 3. Triage of open tasks
 
@@ -104,7 +104,7 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P1 | 1 |
-| desk P2 | 49 |
+| desk P2 | 48 |
 | desk P3 | 31 |
 | desk P4 | 457 |
 | desk P5 | 174 |
@@ -204,7 +204,6 @@ Table 6.1. Next cross-cutting desk tasks
 | X-RTE-SHELL_TO_GLASS | Route SHELL_TO_GLASS from SHELL_BREAK to GLASS_MILL carries no flow | desk P2 |
 | X-RTE-SI-BACKUP | In-house refining of SI_REDUCE silicon to charge grade | desk P2 |
 | X-RTE-STANDBY | Standby routes without a rated case: ATOM_TO_STOCK, CAST_SCRAP_TO_IND, CAST_TO_EXTRUDE, COMB_OFFGAS, DRAW_TO_STOCK, EXTRUDE_TO_STOCK, IA-DC-EVAP, IA-DC-SPRAY, IA-ESS-HYDRO-CHG, IA-ESS-HYDRO-DIS, IA-NIT-VENT, MO_CELL_ANODE_GAS_TO_CRU, SINTER_TO_STOCK, TI_CELL_CL2_TO_CRU, VAC_IND_TI, VAC_IND_TO_VAC_CAST, VAC_TO_INV | desk P2 |
-| X-RTE-UPW_TO_FAB | Route UPW_TO_FAB from HDR_UPW to FAB_UPW_TANK carries no flow | desk P2 |
 | X-RTE-WAX_TO_GREASE_CA | Route WAX_TO_GREASE_CA from PROD_C19_C28 to GREASE_CA carries no flow | desk P2 |
 | X-RTE-WAX_TO_GREASE_LI | Route WAX_TO_GREASE_LI from PROD_C19_C28 to GREASE_LI carries no flow | desk P2 |
 | X-RTE-WAX_TO_OIL | Route WAX_TO_OIL from SHELL_BURNOUT to OIL_FRAC carries no flow | desk P2 |
@@ -618,6 +617,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 ### X-RTE. Routes without flow (owner decision 2026-10-29)
 
 - [x] **X-RTE-STOCK_TO_FAB** Route STOCK_TO_FAB: silicon charge to WAFER_FAB. Done when: the CZ charge is sized from the wafer need and imported through the dock (A-M-417). Depends: —. Evidence: `flow_graph/param/fab_silicon.py`.
+- [x] **X-RTE-UPW_TO_FAB** Route UPW_TO_FAB: retired as a duplicate. Done when: IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired. Depends: —. Evidence: `flow_graph/plant_flow_graph.json`.
 - [x] **X-RTE-IND_TO_ATOM** Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER: standby at its rated case. Done when: the route carries 3.556 kg/d when MET_MELT is out of service and the foundry melt IND_MELT pours the atomiser charge (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-STOCK_TO_WIRE_DRAW** Route STOCK_TO_WIRE_DRAW from METAL_STORE to WIRE_DRAW: standby at its rated case. Done when: the route carries 6.8389 kg/d when MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [ ] **X-RTE-AL_POT_CL2** Route AL_POT_CL2 from AL_POT to CRU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
@@ -657,7 +657,6 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-RTE-S85** Route S85 from CRYO_CO2 to HDR_CO2 carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-SALT_TO_FLUX** Route SALT_TO_FLUX from SALT_FEED to FLUX_PREP carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-SHELL_TO_GLASS** Route SHELL_TO_GLASS from SHELL_BREAK to GLASS_MILL carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
-- [ ] **X-RTE-UPW_TO_FAB** Route UPW_TO_FAB from HDR_UPW to FAB_UPW_TANK carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-WAX_TO_GREASE_CA** Route WAX_TO_GREASE_CA from PROD_C19_C28 to GREASE_CA carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-WAX_TO_GREASE_LI** Route WAX_TO_GREASE_LI from PROD_C19_C28 to GREASE_LI carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-WAX_TO_OIL** Route WAX_TO_OIL from SHELL_BURNOUT to OIL_FRAC carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
@@ -1499,7 +1498,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FAB-FAB_UPW_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FAB-FAB_UPW_TANK-01. Evidence: `docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064).
   - [x] FAB-FAB_UPW_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FAB-FAB_UPW_TANK-01, FAB-FAB_UPW_TANK-02. Evidence: `docs-authority/pid/FAB_UPW_TANK.svg` (AQS-PID-001).
   - [x] FAB-FAB_UPW_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/FAB_UPW_TANK.csv, one row per edge. Depends: FAB-FAB_UPW_TANK-03. Evidence: `docs-authority/nozzles/FAB_UPW_TANK.csv` (all 2 process connections listed).
-  - [x] FAB-FAB_UPW_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FAB-FAB_UPW_TANK-04, FAB-FAB_UPW_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 3 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FAB-FAB_UPW_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FAB-FAB_UPW_TANK-04, FAB-FAB_UPW_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 2 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FAB-FAB_UPW_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FAB-FAB_UPW_TANK-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FAB-FAB_UPW_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FAB-FAB_UPW_TANK-02, FAB-FAB_UPW_TANK-03. Evidence: `docs-authority/duties/FAB_UPW_TANK.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FAB-FAB_UPW_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FAB-FAB_UPW_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (5 loops; AQS-CTL-001).
@@ -2636,7 +2635,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-HDR_UPW-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-HDR_UPW-01. Evidence: `docs-authority/sizing/HEADERS.md` (AQS-DUTY-075).
   - [x] WTR-HDR_UPW-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-HDR_UPW-01, WTR-HDR_UPW-02. Evidence: `docs-authority/pid/HDR_UPW.svg` (AQS-PID-001).
   - [x] WTR-HDR_UPW-04 Nozzle schedule. Done when: docs-authority/nozzles/HDR_UPW.csv, one row per edge. Depends: WTR-HDR_UPW-03. Evidence: `docs-authority/nozzles/HDR_UPW.csv` (all 3 process connections listed).
-  - [x] WTR-HDR_UPW-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-HDR_UPW-04, WTR-HDR_UPW-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] WTR-HDR_UPW-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-HDR_UPW-04, WTR-HDR_UPW-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 3 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] WTR-HDR_UPW-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-HDR_UPW-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] WTR-HDR_UPW-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-HDR_UPW-02, WTR-HDR_UPW-03. Evidence: `docs-authority/duties/HDR_UPW.md` §6 (C7 closed on MASTER_PLAN).
   - [x] WTR-HDR_UPW-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-HDR_UPW-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).

@@ -1687,7 +1687,7 @@
       "from_unit_id": "HDR_UPW",
       "to_unit_id": "FAB_UPW_TANK",
       "phase": "L",
-      "presence": "present",
+      "presence": "retired",
       "carries": "UPW",
       "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.",
       "namespace": "IA",
@@ -1699,7 +1699,7 @@
         "value": null,
         "unit": null,
         "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "note": "Rev AC new topology \u2014 unrated pending param pass | Retired 2026-10-29 (owner decision: a route without flow is finished or retired). It duplicates IA-UPW-FAB, which already fills FAB_UPW_TANK from the same polisher BMED_UPW_POLISH; a second path from the same source through HDR_UPW adds no diversity."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "FAB"

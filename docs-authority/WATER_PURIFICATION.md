@@ -85,7 +85,6 @@ Table 3.1. Water train streams
 | S26 | `REMIN` | `HABITATION` | potable | 10.00 kg/d |
 | IA-UPW-HAB | `HDR_UPW` | `HABITATION` | potable makeup | 0.80 kg/d |
 | IA-UPW-USE | `HDR_UPW` | `WAFER_FAB` | fab UPW | 66.50 kg/d |
-| UPW_TO_FAB | `HDR_UPW` | `FAB_UPW_TANK` | UPW | no rate |
 | S27 | `FAB_UPW_TANK` | `WET_BENCH` | fab UPW > 18 MΩ·cm class | 60.00 kg/d |
 
 Table 3.2 gives the mass in and out of each unit, from the streams of Table 3.1 that carry a rate in kg/d.
@@ -133,4 +132,4 @@ Dissolved silica, boron and metals in the fab water have no target yet. They are
 ## 6. Open items
 
 1. A published source is to be registered in `flow_graph/param/refs.py` for each quality target in Table 4.1, and the targets for silica, boron and metals in fab water set from it.
-2. The graph carries these streams without a rate: HAB_GREY, HAB_BLACK, S30, UPW_TO_FAB. Each is either a topology edge duplicated by a rated stream or a stream still to be solved; the graph owner is to rate or remove them.
+2. The graph carries these streams without a rate: HAB_GREY, HAB_BLACK, S30. Each is either a topology edge duplicated by a rated stream or a stream still to be solved; the graph owner is to rate or remove them.

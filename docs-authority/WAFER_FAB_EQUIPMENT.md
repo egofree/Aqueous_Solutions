@@ -143,9 +143,8 @@ Table 6.1. Streams of the fab units
 | SF-WAFER_FAB | SOL_ARK_60K | WAFER_FAB | 0.4069 | kW |
 | SF-WET_BENCH | SOL_ARK_60K | WET_BENCH | 0.2066 | kW |
 | STOCK_TO_FAB | METAL_STORE | WAFER_FAB | 0.2264 | kg/d |
-| UPW_TO_FAB | HDR_UPW | FAB_UPW_TANK | — | — |
 
-The streams IA-NIT-VENT, POLY_TO_FAB and UPW_TO_FAB carry no flow on the present graph.
+The streams IA-NIT-VENT and POLY_TO_FAB carry no flow on the present graph.
 
 ## 7. Mass balance
 

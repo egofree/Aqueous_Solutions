@@ -679,7 +679,7 @@ EXTRUDE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS
 EXTRUDE,Process nozzle DN15,2,per AQS-STD-002 (no duty sheet),Unstated,-,material not stated on the unit BOM line
 EXT_HALL,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Steel portal frames on the 6 m grid; insulated metal roof and wall panels to the,Closed,Fe EW -> MET_MELT -> mill/draw,
 FAB_UPW_TANK,Body / envelope 600 x 600 x 600 mm,1,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
-FAB_UPW_TANK,Process nozzle DN15,3,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
+FAB_UPW_TANK,Process nozzle DN15,2,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 FILM_CAST,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),Unstated,-,material not stated on the unit BOM line
 FILM_CAST,Process nozzle DN15,1,per AQS-STD-002 (no duty sheet),Unstated,-,material not stated on the unit BOM line
 FISH,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph

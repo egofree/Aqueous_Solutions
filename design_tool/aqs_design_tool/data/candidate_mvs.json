@@ -11410,7 +11410,7 @@
         "value": null,
         "unit": "",
         "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "note": "Rev AC new topology \u2014 unrated pending param pass | Retired 2026-10-29 (owner decision: a route without flow is finished or retired). It duplicates IA-UPW-FAB, which already fills FAB_UPW_TANK from the same polisher BMED_UPW_POLISH; a second path from the same source through HDR_UPW adds no diversity."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "FAB",

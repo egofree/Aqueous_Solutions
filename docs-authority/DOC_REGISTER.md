@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AE | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AF | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -183,7 +183,7 @@ Table 3.1. Document numbers in use
 | AQS-HEAT-STUDY-002 | `notes/heat_sink_study_2026-10-18.md` | A | 2026-10-18 | HL-Q4-REJ heat-sink study — resolving D-GEO_ORC | current |
 | AQS-HSE-001 | `docs-authority/HAZARD_SEPARATION.md` | H | 2026-10-24 | Hazard separation and containment | current |
 | AQS-IF-009 | `docs-authority/PHASE9_INTERFACES.md` | C | 2026-10-09 | Phase 9 interfaces | current |
-| AQS-IF-FAB-WET-001 | `docs-authority/FAB_WET_INTERFACE.md` | B | 2026-10-25 | Fab to wet-line interface | current |
+| AQS-IF-FAB-WET-001 | `docs-authority/FAB_WET_INTERFACE.md` | C | 2026-10-29 | Fab to wet-line interface | current |
 | AQS-INST-001 | `docs-authority/INSTRUMENT_LOOPS.md` | C | 2026-10-21 | Instrument loops | current |
 | AQS-INT-FOUNDRY | `notes/FOUNDRY_INTEGRATION.md` | B | 2026-10-16 | FOUNDRY role fixes — Rev O | current |
 | AQS-INV-001 | `docs-authority/inventory/MOTOR_INVENTORY.md` | B | 2026-10-25 | Motor and actuator inventory | current |

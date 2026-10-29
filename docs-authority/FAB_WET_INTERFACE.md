@@ -1,8 +1,8 @@
 # Fab to wet-line interface
 
 Document number: AQS-IF-FAB-WET-001  
-Revision: B  
-Date: 2026-10-25
+Revision: C  
+Date: 2026-10-29
 
 Authority: AQS-EQP-FAB-001, AQS-EQP-FAB-RGN-001, AQS-STR-001. Interface edges verified against graph Rev AC.
 
@@ -10,6 +10,7 @@ Authority: AQS-EQP-FAB-001, AQS-EQP-FAB-RGN-001, AQS-STR-001. Interface edges ve
 |---|---|---|---|
 | A | — | Short interface map | 2026-09-27 |
 | B | Rewritten to the documentation style guide (AQS-DOC-002) and re-based on the graph: retired units (FAB_PREP, FAB_TOOL, ETCH_RETURN) removed, stream list corrected to the present edges (S10 WET_BENCH to LEACH_CSTR_1, S39/S39B from WAFER_FAB), wet-chemical supply train stated with rates. No stream or rate changed; the crossings are read off the graph. | 2026-10-25 |
+| C | Route UPW_TO_FAB removed from the stream list | The header feed to FAB_UPW_TANK is retired on the graph because IA-UPW-FAB already fills the tank from the same polisher. | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -40,7 +41,6 @@ The wet-chemical stores sit with the BMED skids so the acid and base products cr
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | 0.21 | ethanol and acetone |
 | S27 | FAB_UPW_TANK | WET_BENCH | 60.0 | fab UPW above the 18 megohm-cm class |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | 60.0 | fab UPW |
-| UPW_TO_FAB | HDR_UPW | FAB_UPW_TANK | — | UPW header feed |
 | IA-UPW-USE | HDR_UPW | WAFER_FAB | 66.5 | fab UPW |
 | S03 | CRYO_N2 | WAFER_FAB | 1.50 | N2 purge |
 | S37 | WS_SLURRY | WAFER_FAB | 3.3 | colloidal silica slurry |

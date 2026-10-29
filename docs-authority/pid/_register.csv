@@ -49,7 +49,7 @@ EW_8,AQS-PID-001-EW_8,fd77818f,docs-authority/pid/EW_8.svg,DIGESTER,ew_cell,2,4,
 EW_9,AQS-PID-001-EW_9,f52a75dc,docs-authority/pid/EW_9.svg,DIGESTER,ew_cell,2,7,9,0,7,1,10
 EXTRUDE,AQS-PID-001-EXTRUDE,a3251793,docs-authority/pid/EXTRUDE.svg,FOUNDRY,press,2,1,0,0,2,0,4
 EXT_HALL,AQS-PID-001-EXT_HALL,460c27b3,docs-authority/pid/EXT_HALL.svg,ELEC,building,1,0,0,0,1,0,0
-FAB_UPW_TANK,AQS-PID-001-FAB_UPW_TANK,70c0dcd8,docs-authority/pid/FAB_UPW_TANK.svg,FAB,tank,2,1,3,0,5,1,4
+FAB_UPW_TANK,AQS-PID-001-FAB_UPW_TANK,7a29b335,docs-authority/pid/FAB_UPW_TANK.svg,FAB,tank,2,1,3,0,5,1,4
 FILM_CAST,AQS-PID-001-FILM_CAST,091fe0db,docs-authority/pid/FILM_CAST.svg,POLYMERS,former,2,1,0,0,5,1,4
 FLOAT_SINK,AQS-PID-001-FLOAT_SINK,9d7b62de,docs-authority/pid/FLOAT_SINK.svg,DIGESTER,separator,1,3,6,0,6,1,6
 FLUE_KO,AQS-PID-001-FLUE_KO,411eeb5c,docs-authority/pid/FLUE_KO.svg,GAS,separator,4,2,4,0,4,1,8
@@ -78,7 +78,7 @@ HDR_CO2,AQS-PID-001-HDR_CO2,b52a2ed2,docs-authority/pid/HDR_CO2.svg,HAB,header,3
 HDR_H2,AQS-PID-001-HDR_H2,c41b968a,docs-authority/pid/HDR_H2.svg,GAS,header,13,1,2,0,1,0,16
 HDR_N2,AQS-PID-001-HDR_N2,14551d02,docs-authority/pid/HDR_N2.svg,HAB,header,2,5,8,0,1,0,13
 HDR_O2,AQS-PID-001-HDR_O2,c1b3520c,docs-authority/pid/HDR_O2.svg,GAS,header,2,6,8,0,1,0,12
-HDR_UPW,AQS-PID-001-HDR_UPW,91bdf2c3,docs-authority/pid/HDR_UPW.svg,WTR,header,1,3,6,0,2,0,5
+HDR_UPW,AQS-PID-001-HDR_UPW,246f19b5,docs-authority/pid/HDR_UPW.svg,WTR,header,1,3,6,0,2,0,5
 HF_GEN,AQS-PID-001-HF_GEN,c41ff050,docs-authority/pid/HF_GEN.svg,POLYMERS,reactor,4,4,0,0,7,2,9
 HOPPER,AQS-PID-001-HOPPER,4031171a,docs-authority/pid/HOPPER.svg,OIL,hopper,3,2,3,0,3,1,9
 HX8,AQS-PID-001-HX8,36d97ab2,docs-authority/pid/HX8.svg,DIGESTER,hx,1,4,8,0,2,0,7
