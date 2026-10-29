@@ -172,7 +172,7 @@
 <polygon points="586,1252 577,1248 577,1256" fill="#111"/>
 <text x="24" y="1233" font-size="9" fill="#666" text-anchor="start">NORTH_DOCK</text>
 <text x="24" y="1247" font-size="11" font-weight="600" text-anchor="start">IA-H2O-MU</text>
-<text x="24" y="1265" font-size="10" text-anchor="start">64.2 kg/d · DN15 P2</text>
+<text x="24" y="1265" font-size="10" text-anchor="start">64.6 kg/d · DN15 P2</text>
 <text x="598" y="1256" font-size="8" font-style="italic" fill="#555" text-anchor="start">N48</text>
 <line x1="430" y1="1298" x2="577" y2="1298" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1298 577,1294 577,1302" fill="#111"/>
@@ -254,7 +254,7 @@
 <polygon points="586,1896 577,1892 577,1900" fill="#111"/>
 <text x="24" y="1877" font-size="9" fill="#666" text-anchor="start">MFG_SHOP</text>
 <text x="24" y="1891" font-size="11" font-weight="600" text-anchor="start">S16</text>
-<text x="24" y="1909" font-size="10" text-anchor="start">12.1 kg/d · solids transfer</text>
+<text x="24" y="1909" font-size="10" text-anchor="start">11.7 kg/d · solids transfer</text>
 <text x="598" y="1900" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
 <line x1="430" y1="1942" x2="577" y2="1942" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1942 577,1938 577,1946" fill="#111"/>
@@ -469,7 +469,7 @@
 <g id="aqs-title-block"><rect x="1116" y="2406" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="2423" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-LEACH_CSTR_1</text>
 <text x="1124" y="2440" font-size="9">P&amp;ID LEACH_CSTR_1 (vessel, DIGESTER sector)</text>
-<text x="1124" y="2457" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 7c9c01e2   Issued 2026-10-19</text>
+<text x="1124" y="2457" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev aefb547d   Issued 2026-10-19</text>
 <text x="1124" y="2474" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="2491" font-size="9">Graph SHA-256 4a39307819d4f7d8   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="2491" font-size="9">Graph SHA-256 96617544b221fef5   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

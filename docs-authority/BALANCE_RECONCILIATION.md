@@ -48,25 +48,22 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-C5-SHIP | C5-C10 product shipped | 7.131 |
 | export | IA-CA-CL2-SHIP | chlorine byproduct export (water-treatme | 0.097 |
 | export | IA-CL2-SHIP | chlorine byproduct export (water-treatme | 39.206 |
-| export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.202 |
+| export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.217 |
 | export | IA-FAB-PRODUCT | finished wafers to the dock for dispatch | 0.139 |
 | export | IA-GYPSUM-SHIP | fluorgypsum (anhydrite) cake byproduct | 0.576 |
-| export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.585 |
+| export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.629 |
 | export | IA-MEOH-SHIP | methanol shipped at the dock | 28.029 |
 | export | IA-METAL-SHIP | surplus foundry metal export (pot-line p | 10.812 |
-| export | IA-MO-VENT | chlorinator CO2 (vent class) | 0.043 |
+| export | IA-MO-VENT | chlorinator CO2 (vent class) | 0.045 |
 | export | IA-N2-VENT | nitrogen vent | 3.1 |
 | export | IA-NA-PURGE | sodium salt purge equal to the make-up m | 4.394 |
 | export | IA-O2-SHIP | O2 cylinders shipped at the dock | 22.884 |
 | export | IA-SHELL-EXPORT | spent foundry silica (solids return clas | 1.0 |
 | import | IA-ALCL3-MU | anhydrous AlCl3 feed (mining-waste chlor | 49.419 |
-| import | IA-C-CR | carbon reductant (petcoke/char class) | 0.087 |
-| import | IA-C-MO | carbon reductant (petcoke/char class) | 0.012 |
-| import | IA-C-TI | carbon reductant (petcoke/char class) | 0.251 |
 | import | IA-CACL2-MU | CaCl2 brine concentrate (mining-waste cl | 0.152 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 64.152 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 64.563 |
 | import | IA-H2SO4-MU | 98 wt% sulfuric acid make-up | 0.404 |
 | import | IA-MGCL2-MU | CaCl2-MgCl2 brine concentrate (mining-wa | 0.04 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
@@ -77,7 +74,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | IA-TIO2-MU | TiO2-equivalent rutile concentrate (dock | 0.834 |
 | import | IA-WAX-MU | pattern wax make-up (petro-wax class imp | 0.2 |
 
-**Net trade: -0.530 kg/d** (exports 122.128 - imports 122.658); dock ledger residual -0.529 kg/d (reported, exempt per D-DOCK).
+**Net trade: -0.530 kg/d** (exports 122.189 - imports 122.719); dock ledger residual -0.529 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 

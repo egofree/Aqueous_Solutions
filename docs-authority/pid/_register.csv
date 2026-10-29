@@ -31,7 +31,7 @@ CRYO_H2,AQS-PID-001-CRYO_H2,8a3e1df7,docs-authority/pid/CRYO_H2.svg,CRYO,cold_bo
 CRYO_HX_Q4,AQS-PID-001-CRYO_HX_Q4,0bc58a01,docs-authority/pid/CRYO_HX_Q4.svg,CRYO,hx,0,1,0,0,2,0,4
 CRYO_N2,AQS-PID-001-CRYO_N2,a3270216,docs-authority/pid/CRYO_N2.svg,CRYO,cold_box,1,5,8,0,2,0,8
 CRYO_O2,AQS-PID-001-CRYO_O2,30cb5a56,docs-authority/pid/CRYO_O2.svg,CRYO,cold_box,3,4,8,1,2,1,9
-CR_CELL,AQS-PID-001-CR_CELL,914d6658,docs-authority/pid/CR_CELL.svg,FOUNDRY,cell,3,2,0,0,4,0,6
+CR_CELL,AQS-PID-001-CR_CELL,099caa00,docs-authority/pid/CR_CELL.svg,FOUNDRY,cell,3,2,0,0,4,0,7
 DRAW,AQS-PID-001-DRAW,089da736,docs-authority/pid/DRAW.svg,FOUNDRY,mill,1,1,0,0,2,0,3
 DRY_COOLER,AQS-PID-001-DRY_COOLER,00150cbe,docs-authority/pid/DRY_COOLER.svg,HEAT,dry_cooler,3,1,0,0,2,0,5
 ELECTRODE_COAT,AQS-PID-001-ELECTRODE_COAT,023d5235,docs-authority/pid/ELECTRODE_COAT.svg,MFG,coater,2,1,0,0,2,0,4
@@ -85,7 +85,7 @@ HX8,AQS-PID-001-HX8,e31b3475,docs-authority/pid/HX8.svg,DIGESTER,hx,1,4,4,0,2,0,
 HYDRO_SET,AQS-PID-001-HYDRO_SET,2692fb91,docs-authority/pid/HYDRO_SET.svg,PUMPED_HYDRO,hydro,0,1,0,0,2,0,3
 IND_MELT,AQS-PID-001-IND_MELT,51b349ba,docs-authority/pid/IND_MELT.svg,FOUNDRY,furnace,11,6,0,0,3,1,17
 INV_CAST,AQS-PID-001-INV_CAST,2dd32757,docs-authority/pid/INV_CAST.svg,FOUNDRY,caster,4,1,0,0,4,1,6
-LEACH_CSTR_1,AQS-PID-001-LEACH_CSTR_1,7c9c01e2,docs-authority/pid/LEACH_CSTR_1.svg,DIGESTER,vessel,44,22,34,0,4,1,63
+LEACH_CSTR_1,AQS-PID-001-LEACH_CSTR_1,aefb547d,docs-authority/pid/LEACH_CSTR_1.svg,DIGESTER,vessel,44,22,34,0,4,1,63
 LITHO_ALIGN,AQS-PID-001-LITHO_ALIGN,cffd95e2,docs-authority/pid/LITHO_ALIGN.svg,FAB,aligner,2,1,0,0,2,0,4
 LITHO_COAT,AQS-PID-001-LITHO_COAT,730c8ca5,docs-authority/pid/LITHO_COAT.svg,FAB,coater,3,2,0,0,2,0,6
 LITHO_DEV,AQS-PID-001-LITHO_DEV,40163b2c,docs-authority/pid/LITHO_DEV.svg,FAB,wet_bench,3,2,0,0,2,0,6
@@ -102,15 +102,15 @@ MET_AHU,AQS-PID-001-MET_AHU,a8572962,docs-authority/pid/MET_AHU.svg,MFG,ahu,1,2,
 MET_HX_Q4,AQS-PID-001-MET_HX_Q4,2529557a,docs-authority/pid/MET_HX_Q4.svg,MFG,hx,2,1,0,0,2,0,3
 MET_MELT,AQS-PID-001-MET_MELT,137a5801,docs-authority/pid/MET_MELT.svg,MFG,melt,3,3,3,0,4,2,7
 MET_SCRUB,AQS-PID-001-MET_SCRUB,963ec094,docs-authority/pid/MET_SCRUB.svg,MFG,scrubber,5,3,9,0,7,1,9
-MFG_SHOP,AQS-PID-001-MFG_SHOP,de6a11a9,docs-authority/pid/MFG_SHOP.svg,MFG,shop,24,4,0,0,4,2,31
+MFG_SHOP,AQS-PID-001-MFG_SHOP,c8436ced,docs-authority/pid/MFG_SHOP.svg,MFG,shop,24,4,0,0,4,2,31
 MG_POT,AQS-PID-001-MG_POT,e1dee9d4,docs-authority/pid/MG_POT.svg,FOUNDRY,cell,3,4,0,0,6,1,8
-MO_CELL,AQS-PID-001-MO_CELL,65528469,docs-authority/pid/MO_CELL.svg,FOUNDRY,cell,4,4,0,0,4,0,9
+MO_CELL,AQS-PID-001-MO_CELL,ad4c4c18,docs-authority/pid/MO_CELL.svg,FOUNDRY,cell,4,4,0,0,4,0,10
 NCG_HEADER,AQS-PID-001-NCG_HEADER,ca5ff3b7,docs-authority/pid/NCG_HEADER.svg,OIL,header,1,1,2,0,1,0,4
 NOX_SCRUB,AQS-PID-001-NOX_SCRUB,ec046f36,docs-authority/pid/NOX_SCRUB.svg,GAS,scrubber,8,4,12,0,8,1,15
 NUTRIENT_DOSE,AQS-PID-001-NUTRIENT_DOSE,3413768a,docs-authority/pid/NUTRIENT_DOSE.svg,NUT,dose,5,6,18,0,10,1,13
 OIL_DRYER,AQS-PID-001-OIL_DRYER,d7e4f3c2,docs-authority/pid/OIL_DRYER.svg,OIL,dryer,3,1,0,0,5,2,7
 OIL_FRAC,AQS-PID-001-OIL_FRAC,d00c8f13,docs-authority/pid/OIL_FRAC.svg,OIL,frac,6,6,15,0,9,1,14
-OIL_PYRO,AQS-PID-001-OIL_PYRO,032ef6d3,docs-authority/pid/OIL_PYRO.svg,OIL,pyro,3,3,3,0,6,2,7
+OIL_PYRO,AQS-PID-001-OIL_PYRO,48a7d42e,docs-authority/pid/OIL_PYRO.svg,OIL,pyro,3,6,3,0,6,2,10
 PELLET,AQS-PID-001-PELLET,7be2477e,docs-authority/pid/PELLET.svg,POLYMERS,former,2,1,0,0,2,0,5
 POLISH_BANK,AQS-PID-001-POLISH_BANK,9cef759e,docs-authority/pid/POLISH_BANK.svg,DIGESTER,polish,2,4,6,0,6,1,7
 POLY_COND,AQS-PID-001-POLY_COND,2225f138,docs-authority/pid/POLY_COND.svg,POLYMERS,reactor,1,0,0,0,3,0,3
@@ -154,7 +154,7 @@ SOLAR_PV_CELL,AQS-PID-001-SOLAR_PV_CELL,d11def67,docs-authority/pid/SOLAR_PV_CEL
 SOL_ARK_60K,AQS-PID-001-SOL_ARK_60K,3f42d21b,docs-authority/pid/SOL_ARK_60K.svg,ELEC,inverter,9,73,0,0,2,0,10
 STOCK_OUT,AQS-PID-001-STOCK_OUT,f008cce8,docs-authority/pid/STOCK_OUT.svg,FOUNDRY,store,7,1,0,0,2,0,10
 TFE_SYN,AQS-PID-001-TFE_SYN,cc8b6be5,docs-authority/pid/TFE_SYN.svg,POLYMERS,reactor,4,2,0,0,4,2,7
-TI_CELL,AQS-PID-001-TI_CELL,e6251ff1,docs-authority/pid/TI_CELL.svg,FOUNDRY,cell,6,7,0,0,3,1,14
+TI_CELL,AQS-PID-001-TI_CELL,0a3c4faa,docs-authority/pid/TI_CELL.svg,FOUNDRY,cell,6,7,0,0,3,1,15
 VAC_CAST,AQS-PID-001-VAC_CAST,c4954b3f,docs-authority/pid/VAC_CAST.svg,FOUNDRY,caster,2,0,0,0,2,0,3
 VAC_IND,AQS-PID-001-VAC_IND,3ac6cf84,docs-authority/pid/VAC_IND.svg,FOUNDRY,furnace,2,3,0,0,2,0,5
 VCD_TRAIN,AQS-PID-001-VCD_TRAIN,732457e9,docs-authority/pid/VCD_TRAIN.svg,WTR,evaporator,6,3,9,0,7,1,11

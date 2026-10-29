@@ -206,7 +206,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "MFG",
-     "rate": 12.071721,
+     "rate": 11.660798,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -858,7 +858,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 64.151962,
+     "rate": 64.562885,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -1285,6 +1285,33 @@
      "carries": "C11-C18 to the mold"
     },
     {
+     "stream_id": "IA-C-CR",
+     "from": "OIL_PYRO",
+     "to": "CR_CELL",
+     "other_sector": "FOUNDRY",
+     "rate": 0.101911,
+     "unit": "kg/d",
+     "carries": "plant pyrolysis char reductant"
+    },
+    {
+     "stream_id": "IA-C-MO",
+     "from": "OIL_PYRO",
+     "to": "MO_CELL",
+     "other_sector": "FOUNDRY",
+     "rate": 0.013807,
+     "unit": "kg/d",
+     "carries": "plant pyrolysis char reductant"
+    },
+    {
+     "stream_id": "IA-C-TI",
+     "from": "OIL_PYRO",
+     "to": "TI_CELL",
+     "other_sector": "FOUNDRY",
+     "rate": 0.295205,
+     "unit": "kg/d",
+     "carries": "plant pyrolysis char reductant"
+    },
+    {
      "stream_id": "IA-C5-POLY",
      "from": "PROD_C5_C10",
      "to": "POLY_OLEFIN",
@@ -1298,7 +1325,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 5.272222,
+     "rate": 4.861299,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -2723,7 +2750,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "OIL",
-     "rate": 5.272222,
+     "rate": 4.861299,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -2932,7 +2959,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 12.071721,
+     "rate": 11.660798,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -3089,6 +3116,33 @@
   "FOUNDRY": {
    "no_sink": [
     {
+     "stream_id": "IA-C-CR",
+     "from": "OIL_PYRO",
+     "to": "CR_CELL",
+     "other_sector": "OIL",
+     "rate": 0.101911,
+     "unit": "kg/d",
+     "carries": "plant pyrolysis char reductant"
+    },
+    {
+     "stream_id": "IA-C-MO",
+     "from": "OIL_PYRO",
+     "to": "MO_CELL",
+     "other_sector": "OIL",
+     "rate": 0.013807,
+     "unit": "kg/d",
+     "carries": "plant pyrolysis char reductant"
+    },
+    {
+     "stream_id": "IA-C-TI",
+     "from": "OIL_PYRO",
+     "to": "TI_CELL",
+     "other_sector": "OIL",
+     "rate": 0.295205,
+     "unit": "kg/d",
+     "carries": "plant pyrolysis char reductant"
+    },
+    {
      "stream_id": "IA-SI-EG",
      "from": "SI_REFINE",
      "to": "METAL_STORE",
@@ -3183,33 +3237,6 @@
      "carries": "dewax/burnout off-gas (burned wax + steam)"
     },
     {
-     "stream_id": "IA-C-CR",
-     "from": "NORTH_DOCK",
-     "to": "CR_CELL",
-     "other_sector": "DOCK",
-     "rate": 0.086624,
-     "unit": "kg/d",
-     "carries": "carbon reductant (petcoke/char class)"
-    },
-    {
-     "stream_id": "IA-C-MO",
-     "from": "NORTH_DOCK",
-     "to": "MO_CELL",
-     "other_sector": "DOCK",
-     "rate": 0.011736,
-     "unit": "kg/d",
-     "carries": "carbon reductant (petcoke/char class)"
-    },
-    {
-     "stream_id": "IA-C-TI",
-     "from": "NORTH_DOCK",
-     "to": "TI_CELL",
-     "other_sector": "DOCK",
-     "rate": 0.250924,
-     "unit": "kg/d",
-     "carries": "carbon reductant (petcoke/char class)"
-    },
-    {
      "stream_id": "IA-CA-CL2-SHIP",
      "from": "CA_POT",
      "to": "NORTH_DOCK",
@@ -3241,7 +3268,7 @@
      "from": "CR_CELL",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.202013,
+     "rate": 0.2173,
      "unit": "kg/d",
      "carries": "chlorinator CO (fuel-gas class export)"
     },
@@ -3259,7 +3286,7 @@
      "from": "TI_CELL",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.585172,
+     "rate": 0.629453,
      "unit": "kg/d",
      "carries": "chlorinator CO (fuel-gas class export)"
     },
@@ -3286,7 +3313,7 @@
      "from": "MO_CELL",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.043002,
+     "rate": 0.045073,
      "unit": "kg/d",
      "carries": "chlorinator CO2 (vent class)"
     },
@@ -6699,7 +6726,7 @@
      "from": "CR_CELL",
      "to": "NORTH_DOCK",
      "other_sector": "FOUNDRY",
-     "rate": 0.202013,
+     "rate": 0.2173,
      "unit": "kg/d",
      "carries": "chlorinator CO (fuel-gas class export)"
     },
@@ -6726,7 +6753,7 @@
      "from": "TI_CELL",
      "to": "NORTH_DOCK",
      "other_sector": "FOUNDRY",
-     "rate": 0.585172,
+     "rate": 0.629453,
      "unit": "kg/d",
      "carries": "chlorinator CO (fuel-gas class export)"
     },
@@ -6753,7 +6780,7 @@
      "from": "MO_CELL",
      "to": "NORTH_DOCK",
      "other_sector": "FOUNDRY",
-     "rate": 0.043002,
+     "rate": 0.045073,
      "unit": "kg/d",
      "carries": "chlorinator CO2 (vent class)"
     },
@@ -6841,33 +6868,6 @@
      "carries": "anhydrous AlCl3 feed (mining-waste chloride class)"
     },
     {
-     "stream_id": "IA-C-CR",
-     "from": "NORTH_DOCK",
-     "to": "CR_CELL",
-     "other_sector": "FOUNDRY",
-     "rate": 0.086624,
-     "unit": "kg/d",
-     "carries": "carbon reductant (petcoke/char class)"
-    },
-    {
-     "stream_id": "IA-C-MO",
-     "from": "NORTH_DOCK",
-     "to": "MO_CELL",
-     "other_sector": "FOUNDRY",
-     "rate": 0.011736,
-     "unit": "kg/d",
-     "carries": "carbon reductant (petcoke/char class)"
-    },
-    {
-     "stream_id": "IA-C-TI",
-     "from": "NORTH_DOCK",
-     "to": "TI_CELL",
-     "other_sector": "FOUNDRY",
-     "rate": 0.250924,
-     "unit": "kg/d",
-     "carries": "carbon reductant (petcoke/char class)"
-    },
-    {
      "stream_id": "IA-CACL2-MU",
      "from": "NORTH_DOCK",
      "to": "CA_POT",
@@ -6899,7 +6899,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 64.151962,
+     "rate": 64.562885,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },

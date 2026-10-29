@@ -535,13 +535,13 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-CACL2-MU | NORTH_DOCK | CA_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) |  | NORTH_DOCK → CA_POT, position missing for CA_POT | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | DN15 | P3 | process vent gas |  | CA_POT → NORTH_DOCK, position missing for CA_POT | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-TIO2-MU | NORTH_DOCK | TI_CELL | solids | — | — |  | NORTH_DOCK → TI_CELL, position missing for TI_CELL | solids: conveyor, bin or hand transfer; not piped |
-| IA-C-TI | NORTH_DOCK | TI_CELL | solids | — | — |  | NORTH_DOCK → TI_CELL, position missing for TI_CELL | solids: conveyor, bin or hand transfer; not piped |
+| IA-C-TI | OIL_PYRO | TI_CELL | solids | — | — |  | OIL_PYRO → TI_CELL, position missing for TI_CELL | solids: conveyor, bin or hand transfer; not piped |
 | IA-KROLL-CO | TI_CELL | NORTH_DOCK | DN15 | P3 | process vent gas |  | TI_CELL → NORTH_DOCK, position missing for TI_CELL | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-MOO3-MU | NORTH_DOCK | MO_CELL | solids | — | — |  | NORTH_DOCK → MO_CELL, position missing for MO_CELL | solids: conveyor, bin or hand transfer; not piped |
-| IA-C-MO | NORTH_DOCK | MO_CELL | solids | — | — |  | NORTH_DOCK → MO_CELL, position missing for MO_CELL | solids: conveyor, bin or hand transfer; not piped |
+| IA-C-MO | OIL_PYRO | MO_CELL | solids | — | — |  | OIL_PYRO → MO_CELL, position missing for MO_CELL | solids: conveyor, bin or hand transfer; not piped |
 | IA-MO-VENT | MO_CELL | NORTH_DOCK | DN15 | P3 | process vent gas |  | MO_CELL → NORTH_DOCK, position missing for MO_CELL | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-CR2O3-MU | NORTH_DOCK | CR_CELL | solids | — | — |  | NORTH_DOCK → CR_CELL, position missing for CR_CELL | solids: conveyor, bin or hand transfer; not piped |
-| IA-C-CR | NORTH_DOCK | CR_CELL | solids | — | — |  | NORTH_DOCK → CR_CELL, position missing for CR_CELL | solids: conveyor, bin or hand transfer; not piped |
+| IA-C-CR | OIL_PYRO | CR_CELL | solids | — | — |  | OIL_PYRO → CR_CELL, position missing for CR_CELL | solids: conveyor, bin or hand transfer; not piped |
 | IA-CR-VENT | CR_CELL | NORTH_DOCK | DN15 | P3 | process vent gas |  | CR_CELL → NORTH_DOCK, position missing for CR_CELL | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-WAX-MU | NORTH_DOCK | WAX_PATTERN | solids | — | — |  | NORTH_DOCK → WAX_PATTERN, position missing for WAX_PATTERN | solids: conveyor, bin or hand transfer; not piped |
 | IA-SILICA-MU | NORTH_DOCK | SHELL_BUILD | solids | — | — |  | NORTH_DOCK → SHELL_BUILD, position missing for SHELL_BUILD | solids: conveyor, bin or hand transfer; not piped |

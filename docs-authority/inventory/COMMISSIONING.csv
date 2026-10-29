@@ -71,7 +71,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 8,DIGESTER,FLOAT_SINK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-111,,Fe HCl other_metals
 8,DIGESTER,F_RECOVER,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",4,SIF-045 SIF-113,0.02,Fe HCl other_metals
 8,DIGESTER,HX8,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,SIF-022,,
-8,DIGESTER,LEACH_CSTR_1,fill or function test per AQS-QA-001 R8,4,SIF-122,5122.85,Cl2 Fe HCl O2 Si SiCl4 SiO2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned
+8,DIGESTER,LEACH_CSTR_1,fill or function test per AQS-QA-001 R8,4,SIF-122,5123.26,Cl2 Fe HCl O2 Si SiCl4 SiO2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned
 8,DIGESTER,LI_RECOVER,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-123,,
 8,DIGESTER,POLISH_BANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-135,3520.31,
 8,DIGESTER,P_CA,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",3,-,,

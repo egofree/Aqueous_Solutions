@@ -93,7 +93,7 @@ Table 6.1. Graph values against the solver
 
 ## 8. Drivers
 
-Table 8.1 lists the 875 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 876 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -878,6 +878,7 @@ Table 8.1. Drivers
 | FAB.wafer-line-train.si_liquid_rho_g_cm3 | 2.57 | g/cm3 liquid silicon density at the melting point (CRC_SI) | A-M-417 | — |
 | FAB.wafer-line-train.cz_min_depth_frac | 0.25 | - least melt depth for a pull, as a share of the crucible diameter | A-M-417 | — |
 | FAB.wafer-line-train.cz_hotzone_kW | 35.0 | kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured) | A-M-417 | — |
+| char_fixed_C_frac | 0.85 | - fixed-carbon mass fraction of the OIL_PYRO char used as the Ti, Mo and Cr chlorinator reductant (pyrolysis char class; the volatiles and ash leave with the chlorinator gas) | A-M-420 | — |
 | si_refine_route | "TCS_SIEMENS" | - refining route of the CZ charge: TCS_SIEMENS (trichlorosilane on Siemens rods) or SILANE_FBR (silane in a fluidised bed), two technologies on the same chlorosilane loop | A-M-419 | — |
 | si_refine_yield_TCS_SIEMENS | 0.85 | - fraction of the silicon fed to the chlorosilane loop that leaves as electronic-grade rod; the rest is bled as SiCl4 (Siemens class) | A-M-419 | — |
 | si_refine_yield_SILANE_FBR | 0.8 | - fraction of the silicon fed to the loop that leaves as electronic-grade granules; the rest is bled as SiCl4 (silane fluidised-bed class) | A-M-419 | — |
@@ -1286,7 +1287,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 369 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 370 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1957,3 +1958,4 @@ Table 10.1. Values to verify
 | A-M-417 | Wafer-fab silicon and blanket gas from the wafer need: a … kg/d, mm, um, h, slpm | python3 -m flow_graph.param.fab_silicon; first-campaign charge, yield and argon use against the design |
 | A-M-418 | A standby feed route carries no flow on the design day and … kg/d, d, kg | python3 -m flow_graph.param.standby_routes; the rated rate equals the S57 rate and METAL_STORE holds the rated feed for the outage; IND_TO_ATOM is rated at the IA-MELT-ATOM rate and the IND_MELT outage heats fit the day |
 | A-M-419 | The CZ charge is made on site (no imports except waste or … kg/d, kWh/kg, fraction | python3 -m flow_graph.param.si_refine; the furnace and loop mass balances close and the electronic-grade output equals the CZ charge |
+| A-M-420 | The Ti, Mo and Cr chlorinators take their carbon reductant … kg/d, fraction | python3 -m flow_graph.param.regen; IA-C-TI, IA-C-MO and IA-C-CR leave OIL_PYRO at the carbon need over char_fixed_C_frac and the cell balances close |

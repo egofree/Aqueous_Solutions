@@ -17,7 +17,7 @@ This page records the size of unit TI_CELL, of class `cell` in sector FOUNDRY, f
 
 ## 2. Duty
 
-The unit takes 3.07424 kg/d by 5 streams and gives 3.07424 kg/d by 7 streams. Its continuous electrical load is 0.5 kW, fed by stream SF-TI_CELL.
+The unit takes 3.11853 kg/d by 5 streams and gives 3.11853 kg/d by 7 streams. Its continuous electrical load is 0.5 kW, fed by stream SF-TI_CELL.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -44,7 +44,7 @@ Table 2.1. Design parameters
 
 The envelope is 800 mm x 800 mm x 1600 mm, from `params.envelope` (state live). Its basis is: cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-284).
 
-The hold-up check takes 3.07424 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 3.074 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 150 mm in diameter and 230 mm high. It fits within the envelope.
+The hold-up check takes 3.11853 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 3.119 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 150 mm in diameter and 230 mm high. It fits within the envelope.
 
 ## 4. Material
 

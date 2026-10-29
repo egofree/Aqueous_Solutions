@@ -4805,6 +4805,11 @@
   "units": "kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured)",
   "register": "A-M-417"
  },
+ "char_fixed_C_frac": {
+  "value": 0.85,
+  "units": "- fixed-carbon mass fraction of the OIL_PYRO char used as the Ti, Mo and Cr chlorinator reductant (pyrolysis char class; the volatiles and ash leave with the chlorinator gas)",
+  "register": "A-M-420"
+ },
  "si_refine_route": {
   "value": "TCS_SIEMENS",
   "units": "- refining route of the CZ charge: TCS_SIEMENS (trichlorosilane on Siemens rods) or SILANE_FBR (silane in a fluidised bed), two technologies on the same chlorosilane loop",

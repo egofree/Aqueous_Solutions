@@ -230,7 +230,26 @@
       "not_applicable": "Earth surface under the atmosphere: natural background only, no shielding design case"
     },
     "water_sources": {
-      "pending": "X-LOC-07"
+      "entries": {
+        "sources": {
+          "value": [
+            {
+              "name": "groundwater well",
+              "kind": "groundwater",
+              "unit": "GW_INTAKE",
+              "treatment": "well water to the roof tank and the potable path; its draw is the graph make-up the plant balance needs (X-LOC-13 resource boundary)"
+            },
+            {
+              "name": "delivered make-up water",
+              "kind": "delivered",
+              "unit": "NORTH_DOCK",
+              "treatment": "water make-up for the hydrogen and oxygen that leave in products (IA-H2O-MU); a natural resource like air, allowed under the owner rule of 2026-10-29"
+            }
+          ],
+          "units": "-",
+          "register": "AQS-PLAN-011 section 9"
+        }
+      }
     },
     "local_feedstocks": {
       "pending": "X-LOC-07"

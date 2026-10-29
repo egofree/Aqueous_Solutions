@@ -2428,16 +2428,16 @@
             "IA-GYPSUM-SHIP": 0.576,
             "IA-CL2-SHIP": 39.206,
             "IA-CA-CL2-SHIP": 0.097,
-            "IA-KROLL-CO": 0.585,
-            "IA-MO-VENT": 0.043,
-            "IA-CR-VENT": 0.202,
+            "IA-KROLL-CO": 0.629,
+            "IA-MO-VENT": 0.045,
+            "IA-CR-VENT": 0.217,
             "IA-BURNOUT-VENT": 0.2,
             "IA-SHELL-EXPORT": 1.0,
             "IA-METAL-SHIP": 10.812,
             "IA-FAB-PRODUCT": 0.139
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.152,
+            "IA-H2O-MU": 64.563,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -2446,11 +2446,8 @@
             "IA-MGCL2-MU": 0.04,
             "IA-CACL2-MU": 0.152,
             "IA-TIO2-MU": 0.834,
-            "IA-C-TI": 0.251,
             "IA-MOO3-MU": 0.094,
-            "IA-C-MO": 0.012,
             "IA-CR2O3-MU": 0.365,
-            "IA-C-CR": 0.087,
             "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
             "IA-QUARTZ-MU": 0.718
@@ -5731,7 +5728,7 @@
         "design": {
           "machine": "two-strand horizontal semi-continuous caster",
           "feed_kg_d": 31.7125,
-          "billet_kg_d": 13.244228000000009,
+          "billet_kg_d": 13.244228000000033,
           "ingot_kg_d": 21.7125,
           "strands": 2,
           "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"
@@ -9258,7 +9255,7 @@
       "forbidden": "pyro if FR-4",
       "claim_status": "Closed",
       "rate": {
-        "value": 12.071721,
+        "value": 11.660798,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
@@ -14719,7 +14716,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 5.272222,
+        "value": 4.861299,
         "unit": "kg/d",
         "status": "study",
         "note": "Char less the carbon charged to the silicon-carbide furnace. | X-PAR-02 TF: char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET) (AQS-PAR-003)."
@@ -18451,7 +18448,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 64.151962,
+        "value": 64.562885,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -22006,24 +22003,24 @@
     },
     {
       "stream_id": "IA-C-TI",
-      "from_unit_id": "NORTH_DOCK",
+      "from_unit_id": "OIL_PYRO",
       "to_unit_id": "TI_CELL",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "carbon reductant (petcoke/char class)",
+      "carries": "plant pyrolysis char reductant",
       "header": "dedicated",
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.250924,
+        "value": 0.295205,
         "unit": "kg/d",
         "status": "study",
-        "note": "2 C per TiO2 chlorinated (AQS-BAL-KROLL); plant pyro char is booked to MFG (IA-CHAR), so the Kroll carbon rides the dock import class. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "2 C per TiO2 chlorinated (AQS-BAL-KROLL): 0.2509 kg/d carbon / char_fixed_C_frac 0.85 = 0.2952 kg/d of char from OIL_PYRO (A-M-420). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "OIL",
       "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "namespace": "IA",
@@ -22045,7 +22042,7 @@
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.585172,
+        "value": 0.629453,
         "unit": "kg/d",
         "status": "study",
         "note": "1.170 kg/kg Ti chlorinator CO to the dock fuel-gas class (IA-N2-VENT precedent; no spare burner capacity at Rev AC scope - burner routing is an integration follow-up). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
@@ -22087,24 +22084,24 @@
     },
     {
       "stream_id": "IA-C-MO",
-      "from_unit_id": "NORTH_DOCK",
+      "from_unit_id": "OIL_PYRO",
       "to_unit_id": "MO_CELL",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "carbon reductant (petcoke/char class)",
+      "carries": "plant pyrolysis char reductant",
       "header": "dedicated",
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.011736,
+        "value": 0.013807,
         "unit": "kg/d",
         "status": "study",
-        "note": "1.5 C per MoO3 on the Mo(III) chloride route (A-M-284). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "1.5 C per MoO3 on the Mo(III) chloride route (A-M-284): 0.0117 kg/d carbon / char_fixed_C_frac 0.85 = 0.0138 kg/d of char from OIL_PYRO (A-M-420). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "OIL",
       "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "namespace": "IA",
@@ -22126,7 +22123,7 @@
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.043002,
+        "value": 0.045073,
         "unit": "kg/d",
         "status": "study",
         "note": "1.5 CO2 per Mo on the carbochlorination net (A-M-284); dock vent class. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
@@ -22168,24 +22165,24 @@
     },
     {
       "stream_id": "IA-C-CR",
-      "from_unit_id": "NORTH_DOCK",
+      "from_unit_id": "OIL_PYRO",
       "to_unit_id": "CR_CELL",
       "phase": "S",
       "layers": [
         "mass"
       ],
       "presence": "present",
-      "carries": "carbon reductant (petcoke/char class)",
+      "carries": "plant pyrolysis char reductant",
       "header": "dedicated",
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.086624,
+        "value": 0.101911,
         "unit": "kg/d",
         "status": "study",
-        "note": "3 C per Cr2O3 on the Cr(III) chloride route (A-M-284). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "3 C per Cr2O3 on the Cr(III) chloride route (A-M-284): 0.0866 kg/d carbon / char_fixed_C_frac 0.85 = 0.1019 kg/d of char from OIL_PYRO (A-M-420). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
-      "from_sector_id": "DOCK",
+      "from_sector_id": "OIL",
       "to_sector_id": "FOUNDRY",
       "open_boundary": false,
       "namespace": "IA",
@@ -22207,7 +22204,7 @@
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.202013,
+        "value": 0.2173,
         "unit": "kg/d",
         "status": "study",
         "note": "3 CO per 2 Cr on the carbochlorination net (A-M-284); dock fuel-gas class. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."

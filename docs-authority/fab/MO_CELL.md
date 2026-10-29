@@ -7,7 +7,7 @@ service line: service Mo(III) molten-salt electrolysis cell with carbochlorinati
 Internals: issued mfg model BOM (3 internals part row): "step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per" [models/mfg/MO_CELL/bom.csv]
 Material: Graphite liner and graphite anode for the carbochlorination melt (MoCl3 wetted); 90 % alumina brick backup in a mild-steel shell; dry CO2-laden headspace. Basis: MoO3 + 1.5C + 1.5Cl2 at 650 C (graph design): same pot-cell class as CR_CELL - graphite wetted face, alumina backup (DING2018_CL_REVIEW, SCHACHT2004). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). (continues on the duty sheet)
 
-Nozzles: 9 process connections per docs-authority/nozzles/MO_CELL.csv
+Nozzles: 10 process connections per docs-authority/nozzles/MO_CELL.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

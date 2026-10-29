@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 57 | 5 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 54 | 6 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3009** | **2101** |
+| | **Total** | **3006** | **2102** |
 
 ## 3. Triage of open tasks
 
@@ -108,7 +108,7 @@ Table 3.1. Open tasks by triage tag
 | desk P3 | 32 |
 | desk P4 | 460 |
 | desk P5 | 175 |
-| hardware | 191 |
+| hardware | 187 |
 | owner | 2 |
 
 ## 4. Unit task template
@@ -616,6 +616,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 - [x] **X-RTE-STOCK_TO_FAB** Route STOCK_TO_FAB: silicon charge to WAFER_FAB. Done when: the CZ charge is sized from the wafer need (A-M-417) and made on site by SI_REDUCE and SI_REFINE (A-M-419). Depends: —. Evidence: `flow_graph/param/fab_silicon.py`.
 - [x] **X-RTE-SI-BACKUP** Refining of SI_REDUCE silicon to charge grade, with a backup of a different technology. Done when: the CZ charge is refined on site on a chlorosilane loop by the Siemens route, with the silane fluidised bed as the selectable other technology (si_refine_route, A-M-419); the polysilicon import is retired. Depends: —. Evidence: `flow_graph/param/si_refine.py`.
+- [x] **X-RTE-IMPORT-CARBON** Imports IA-C-TI, IA-C-MO and IA-C-CR: carbon reductant made on site. Done when: the Ti, Mo and Cr chlorinators take plant pyrolysis char from OIL_PYRO, sized from their carbon need over the char fixed carbon (A-M-420). Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
 - [x] **X-RTE-UPW_TO_FAB** Route UPW_TO_FAB: retired as a duplicate. Done when: IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired. Depends: —. Evidence: `flow_graph/plant_flow_graph.json`.
 - [x] **X-RTE-IND_TO_ATOM** Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER: standby at its rated case. Done when: the route carries 3.556 kg/d when MET_MELT is out of service and the foundry melt IND_MELT pours the atomiser charge (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-STOCK_TO_WIRE_DRAW** Route STOCK_TO_WIRE_DRAW from METAL_STORE to WIRE_DRAW: standby at its rated case. Done when: the route carries 6.8389 kg/d when MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
@@ -663,10 +664,6 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-RTE-PV-SI** Silicon wafers for SOLAR_PV_CELL. Done when: the cell line has a wafer route sized from pv_cells_per_d, from the fab or an import, with both balances closed. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
 - [ ] **X-RTE-CZ-HOTZONE** CZ hot-zone heater from a heat-loss model. Done when: the 35 kW hot-zone duty of A-M-417 is replaced by a heat-loss model of the hot zone, and the pull peak is carried in the one-line. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
 - [ ] **X-RTE-LEGACY-PFD** Remaining hand-drawn process sheets. Done when: each script in flow_graph/exporters/matplotlib/ that the regenerator does not run is checked for what it draws and who cites it, then retired or replaced by a graph view. Depends: —. Triage: desk P2.
-- [ ] **X-RTE-IMPORT-IA-C-CR** Import IA-C-CR to CR_CELL (carbon reductant (petcoke/char class)) is neither waste nor raw ore. Done when: the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore. Depends: X-RTE-SI-BACKUP. Triage: hardware.
-- [ ] **X-RTE-IMPORT-IA-C-MO** Import IA-C-MO to MO_CELL (carbon reductant (petcoke/char class)) is neither waste nor raw ore. Done when: the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore. Depends: X-RTE-SI-BACKUP. Triage: hardware.
-- [ ] **X-RTE-IMPORT-IA-C-TI** Import IA-C-TI to TI_CELL (carbon reductant (petcoke/char class)) is neither waste nor raw ore. Done when: the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore. Depends: X-RTE-SI-BACKUP. Triage: hardware.
-- [ ] **X-RTE-IMPORT-IA-H2O-MU** Import IA-H2O-MU to LEACH_CSTR_1 (water make-up for H and O leaving as product) is neither waste nor raw ore. Done when: the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore. Depends: X-RTE-SI-BACKUP. Triage: hardware.
 - [ ] **X-RTE-IMPORT-IA-H2SO4-MU** Import IA-H2SO4-MU to HF_GEN (98 wt% sulfuric acid make-up) is neither waste nor raw ore. Done when: the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore. Depends: X-RTE-SI-BACKUP. Triage: hardware.
 - [ ] **X-RTE-IMPORT-IA-NAOH-MU** Import IA-NAOH-MU to EVAP_BASE (purchased NaOH flake make-up) is neither waste nor raw ore. Done when: the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore. Depends: X-RTE-SI-BACKUP. Triage: hardware.
 - [ ] **X-RTE-IMPORT-IA-SOLV-MU** Import IA-SOLV-MU to WS_SOLV (solvent resupply (ethanol and acetone)) is neither waste nor raw ore. Done when: the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore. Depends: X-RTE-SI-BACKUP. Triage: hardware.
@@ -757,7 +754,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] FOUNDRY-CONT_CAST-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-CONT_CAST-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FOUNDRY-CONT_CAST-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-CONT_CAST-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-CR_CELL** (cell, sector FOUNDRY)
-  - [x] FOUNDRY-CR_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CR_CELL.md` §1; mass in = out 0.452 kg/d, 0.1600 kW.
+  - [x] FOUNDRY-CR_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CR_CELL.md` §1; mass in = out 0.4673 kg/d, 0.1600 kW.
   - [x] FOUNDRY-CR_CELL-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-CR_CELL-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-CR_CELL-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-CR_CELL-01, FOUNDRY-CR_CELL-02. Evidence: `docs-authority/pid/CR_CELL.svg` (AQS-PID-001).
   - [x] FOUNDRY-CR_CELL-04 Nozzle schedule. Done when: docs-authority/nozzles/CR_CELL.csv, one row per edge. Depends: FOUNDRY-CR_CELL-03. Evidence: `docs-authority/nozzles/CR_CELL.csv` (all 4 process connections listed).
@@ -901,7 +898,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] FOUNDRY-MG_POT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-MG_POT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FOUNDRY-MG_POT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-MG_POT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-MO_CELL** (cell, sector FOUNDRY)
-  - [x] FOUNDRY-MO_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MO_CELL.md` §1; mass in = out 0.1055 kg/d, 0.1141 kW.
+  - [x] FOUNDRY-MO_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MO_CELL.md` §1; mass in = out 0.1076 kg/d, 0.1141 kW.
   - [x] FOUNDRY-MO_CELL-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-MO_CELL-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-MO_CELL-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-MO_CELL-01, FOUNDRY-MO_CELL-02. Evidence: `docs-authority/pid/MO_CELL.svg` (AQS-PID-001).
   - [x] FOUNDRY-MO_CELL-04 Nozzle schedule. Done when: docs-authority/nozzles/MO_CELL.csv, one row per edge. Depends: FOUNDRY-MO_CELL-03. Evidence: `docs-authority/nozzles/MO_CELL.csv` (all 5 process connections listed).
@@ -1045,7 +1042,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] FOUNDRY-STOCK_OUT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-STOCK_OUT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FOUNDRY-STOCK_OUT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-STOCK_OUT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-TI_CELL** (cell, sector FOUNDRY)
-  - [x] FOUNDRY-TI_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/TI_CELL.md` §1; mass in = out 3.074 kg/d, 0.5000 kW.
+  - [x] FOUNDRY-TI_CELL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/TI_CELL.md` §1; mass in = out 3.119 kg/d, 0.5000 kW.
   - [x] FOUNDRY-TI_CELL-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-TI_CELL-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-TI_CELL-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-TI_CELL-01, FOUNDRY-TI_CELL-02. Evidence: `docs-authority/pid/TI_CELL.svg` (AQS-PID-001).
   - [x] FOUNDRY-TI_CELL-04 Nozzle schedule. Done when: docs-authority/nozzles/TI_CELL.csv, one row per edge. Depends: FOUNDRY-TI_CELL-03. Evidence: `docs-authority/nozzles/TI_CELL.csv` (all 12 process connections listed).
@@ -2116,8 +2113,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-OIL_PYRO-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/OIL_PYRO.md` §1; mass in = out 38.87 kg/d, 1.6640 kW.
   - [x] OIL-OIL_PYRO-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: OIL-OIL_PYRO-01. Evidence: `docs-authority/sizing/REACTOR_DESIGN.md` (AQS-DUTY-062).
   - [x] OIL-OIL_PYRO-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: OIL-OIL_PYRO-01, OIL-OIL_PYRO-02. Evidence: `docs-authority/pid/OIL_PYRO.svg` (AQS-PID-001).
-  - [x] OIL-OIL_PYRO-04 Nozzle schedule. Done when: docs-authority/nozzles/OIL_PYRO.csv, one row per edge. Depends: OIL-OIL_PYRO-03. Evidence: `docs-authority/nozzles/OIL_PYRO.csv` (all 5 process connections listed).
-  - [x] OIL-OIL_PYRO-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: OIL-OIL_PYRO-04, OIL-OIL_PYRO-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] OIL-OIL_PYRO-04 Nozzle schedule. Done when: docs-authority/nozzles/OIL_PYRO.csv, one row per edge. Depends: OIL-OIL_PYRO-03. Evidence: `docs-authority/nozzles/OIL_PYRO.csv` (all 8 process connections listed).
+  - [x] OIL-OIL_PYRO-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: OIL-OIL_PYRO-04, OIL-OIL_PYRO-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 9 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [ ] OIL-OIL_PYRO-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: OIL-OIL_PYRO-02. Triage: desk P3.
   - [x] OIL-OIL_PYRO-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: OIL-OIL_PYRO-02, OIL-OIL_PYRO-03. Evidence: `docs-authority/duties/OIL_PYRO.md` §6 (C7 closed on MASTER_PLAN).
   - [x] OIL-OIL_PYRO-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: OIL-OIL_PYRO-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (6 loops; AQS-CTL-001).
@@ -2831,7 +2828,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] MFG-MET_SCRUB-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: MFG-MET_SCRUB-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] MFG-MET_SCRUB-15 Test and commission. Done when: test procedure and acceptance record. Depends: MFG-MET_SCRUB-14, X-COM-01. Triage: hardware.
 - **MFG-MFG_SHOP** (shop, sector MFG)
-  - [x] MFG-MFG_SHOP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MFG_SHOP.md` §1; mass in = out 636.3 kg/d, 2.5500 kW.
+  - [x] MFG-MFG_SHOP-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MFG_SHOP.md` §1; mass in = out 635.9 kg/d, 2.5500 kW.
   - [x] MFG-MFG_SHOP-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: MFG-MFG_SHOP-01. Evidence: `docs-authority/sizing/MFG_SHOP.md` (AQS-SIZE-MFG_SHOP).
   - [x] MFG-MFG_SHOP-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: MFG-MFG_SHOP-01, MFG-MFG_SHOP-02. Evidence: `docs-authority/pid/MFG_SHOP.svg` (AQS-PID-001).
   - [x] MFG-MFG_SHOP-04 Nozzle schedule. Done when: docs-authority/nozzles/MFG_SHOP.csv, one row per edge. Depends: MFG-MFG_SHOP-03. Evidence: `docs-authority/nozzles/MFG_SHOP.csv` (all 25 process connections listed).

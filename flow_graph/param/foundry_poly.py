@@ -331,9 +331,14 @@ def apply(g=None, write=False):
        f'D-DOCK feedstock import (A-M-284): {(MM["Ti"] + 2 * MM["O"]) / MM["Ti"]:.3f} kg/kg Ti on the oxide-equivalent '
        f'basis (AQS-BAL-KROLL); concentrate grade envelope TiO2 90-97 wt%, design point 94 % (A-M-284 '
        f'needs_verification: XRF assay of the accepted lot). | {TAG}.')
-    mk('IA-C-TI', 'NORTH_DOCK', 'TI_CELL', 'FOUNDRY', 'S', 'carbon reductant (petcoke/char class)',
-       s['c_ti'], f'2 C per TiO2 chlorinated (AQS-BAL-KROLL); plant pyro char is booked to MFG (IA-CHAR), so the Kroll '
-       f'carbon rides the dock import class. | {TAG}.')
+    # Carbon reductant from the plant's own pyrolysis char (owner decision t58u: no imports except waste or raw ore; A-M-420).
+    # The char carries char_fixed_C_frac fixed carbon; its volatiles and ash leave with the chlorinator gas on the design basis.
+    _fc = DR.val(s['d'], 'char_fixed_C_frac'); CH = {k: s[k]/_fc for k in ('c_ti', 'c_mo', 'c_cr')}
+    def _char(sid, cell, why):
+        mk(sid, 'OIL_PYRO', cell, 'FOUNDRY', 'S', 'plant pyrolysis char reductant', CH[why[0]],
+           f'{why[1]}: {s[why[0]]:.4f} kg/d carbon / char_fixed_C_frac {_fc:g} = {CH[why[0]]:.4f} kg/d of char from OIL_PYRO (A-M-420). | {TAG}.')
+        E[sid].update(from_unit_id='OIL_PYRO', from_sector_id='OIL', carries='plant pyrolysis char reductant')
+    _char('IA-C-TI', 'TI_CELL', ('c_ti', '2 C per TiO2 chlorinated (AQS-BAL-KROLL)'))
     put('METALS_TO_IND_MELT', s['ti'],
         f'Ti sponge to the melt under salt flux: {s["ti"]:.2f} kg/d = 0.40 line + export margin (A-M-285); the vacuum '
         f'consolidation path (VAC_IND_TI) is the N+1 quality route, standby-zero (A-M-283). | {TAG}.')
@@ -342,7 +347,7 @@ def apply(g=None, write=False):
         f'(A-M-284 envelope: the real concentrate assay re-points the feed to FLOAT_SINK grit when it lands). | {TAG}.')
     put('TI_CELL_CL2_TO_CRU', 0.0, f'Kroll chlorine closes on the Mg pot loop (IA-CL2-MG-TI); the CRU tap is purge-only. | {TAG}.')
     mk('IA-KROLL-CO', 'TI_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO (fuel-gas class export)',
-       R(s['tio2']) + R(s['c_ti']) + R(s['cl2_ti']) + R(s['mg_ti']) - R(s['ti']) - R(s['mgcl2_ret']) - R(s['kroll_flux']),
+       R(s['tio2']) + R(CH['c_ti']) + R(s['cl2_ti']) + R(s['mg_ti']) - R(s['ti']) - R(s['mgcl2_ret']) - R(s['kroll_flux']),
        f'{2 * (MM["C"] + MM["O"]) / MM["Ti"]:.3f} kg/kg Ti chlorinator CO to the dock fuel-gas class (IA-N2-VENT '
        f'precedent; no spare burner capacity at Rev AC scope - burner routing is an integration follow-up). | {TAG}.')
     put('VAC_IND_TI', 0.0, f'VAC_IND is the N+1 diverse melt path (A-M-283): standby-zero on the design day. | {TAG}.')
@@ -351,8 +356,7 @@ def apply(g=None, write=False):
        s['moo3'],
        f'D-DOCK feedstock import (A-M-284): {(MM["Mo"] + 3 * MM["O"]) / MM["Mo"]:.3f} kg/kg Mo oxide-equivalent; '
        f'tech-oxide grade envelope 95-99 wt% MoO3, design 98 % (A-M-284 assay-verification task). | {TAG}.')
-    mk('IA-C-MO', 'NORTH_DOCK', 'MO_CELL', 'FOUNDRY', 'S', 'carbon reductant (petcoke/char class)',
-       s['c_mo'], f'1.5 C per MoO3 on the Mo(III) chloride route (A-M-284). | {TAG}.')
+    _char('IA-C-MO', 'MO_CELL', ('c_mo', '1.5 C per MoO3 on the Mo(III) chloride route (A-M-284)'))
     put('MO_TO_IND', s['mo'],
         f'Mo metal to the melt: carbochlorination to MoCl3 then molten-salt electrolysis MoCl3 -> Mo + 1.5Cl2 with the '
         f'anode gas recycled to the chlorination (internal chlorine loop, A-M-290); {s["mo_i"]:.2f} kg/d 316-class '
@@ -366,14 +370,13 @@ def apply(g=None, write=False):
         'A-M-255 alias retired: EW_9 metal harvest fully booked on IA-EW-MET-9 and IA-EW-SHEET; the melt is fed on '
         f'shop scrap + pot metal. | {TAG}.')
     mk('IA-MO-VENT', 'MO_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO2 (vent class)',
-       R(s['moo3']) + R(s['c_mo']) - R(s['mo']), f'1.5 CO2 per Mo on the carbochlorination net (A-M-284); dock vent class. | {TAG}.')
+       R(s['moo3']) + R(CH['c_mo']) - R(s['mo']), f'1.5 CO2 per Mo on the carbochlorination net (A-M-284); dock vent class. | {TAG}.')
     mk('IA-CR2O3-MU', 'NORTH_DOCK', 'CR_CELL', 'FOUNDRY', 'S', 'Cr2O3-equivalent chromite concentrate (dock import class)',
        s['cr2o3'],
        f'D-DOCK feedstock import (A-M-284): {(2 * MM["Cr"] + 3 * MM["O"]) / (2 * MM["Cr"]):.3f} kg/kg Cr '
        f'oxide-equivalent; chromite class envelope 40-52 wt% Cr2O3, design 46 % (A-M-284 assay-verification task; the '
        f'Fe/Mg/Al gangue balance is the assay-day follow-up). | {TAG}.')
-    mk('IA-C-CR', 'NORTH_DOCK', 'CR_CELL', 'FOUNDRY', 'S', 'carbon reductant (petcoke/char class)',
-       s['c_cr'], f'3 C per Cr2O3 on the Cr(III) chloride route (A-M-284). | {TAG}.')
+    _char('IA-C-CR', 'CR_CELL', ('c_cr', '3 C per Cr2O3 on the Cr(III) chloride route (A-M-284)'))
     put('CR_TO_IND', s['cr'],
         f'Cr metal to the melt: carbochlorination to CrCl3 then molten-salt electrolysis 2CrCl3 -> 2Cr + 3Cl2 with the '
         f'anode gas recycled internally (A-M-284); {s["cr_i"]:.2f} kg/d stainless addition + export margin. | {TAG}.')
@@ -381,7 +384,7 @@ def apply(g=None, write=False):
         'Internal dense-grit feed superseded by the dock rutile class at the design point; the assay-day task can '
         f're-point the feed to the grit when AQS-ASSAY-TI-MO lands (A-M-284). | {TAG}.')
     mk('IA-CR-VENT', 'CR_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO (fuel-gas class export)',
-       R(s['cr2o3']) + R(s['c_cr']) - R(s['cr']), f'3 CO per 2 Cr on the carbochlorination net (A-M-284); dock fuel-gas class. | {TAG}.')
+       R(s['cr2o3']) + R(CH['c_cr']) - R(s['cr']), f'3 CO per 2 Cr on the carbochlorination net (A-M-284); dock fuel-gas class. | {TAG}.')
     # ---- investment casting: wax make-up + foundry silica imports (A-M-286) ----------------
     mk('IA-WAX-MU', 'NORTH_DOCK', 'WAX_PATTERN', 'FOUNDRY', 'S', 'pattern wax make-up (petro-wax class import)',
        s['wx_mu'],

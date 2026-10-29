@@ -7229,5 +7229,22 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.si_refine; the furnace and loop mass balances close and the electronic-grade output equals the CZ charge"
+ },
+ {
+  "id": "A-M-420",
+  "value": "The Ti, Mo and Cr chlorinators take their carbon reductant as pyrolysis char from OIL_PYRO instead of imported petcoke. The char is 85 % fixed carbon; its rate is the carbon need of each cell (2 C per TiO2, 1.5 C per MoO3, 3 C per Cr2O3) over that fraction, and the volatiles and ash leave with the chlorinator gas on the design basis. The char left after these draws and CHAR_TO_SI goes to the shop on IA-CHAR, by difference.",
+  "units": "kg/d, fraction",
+  "where": "flow_graph/param/foundry_poly.py (IA-C-TI, IA-C-MO, IA-C-CR and the chlorinator gas by difference); flow_graph/param/drivers.json char_fixed_C_frac",
+  "basis": "Owner decision 2026-10-29 (t58u): no imports except waste or raw ore. Pyrolysis char is a carbon reductant of the same duty class as the petcoke it replaces for carbochlorination; the plant makes it in OIL_PYRO, which already carries a char surplus to the shop.",
+  "sensitivity": "The char draw scales with 1 / char_fixed_C_frac; the shop char falls by the same amount.",
+  "replaced_by": "Proximate analysis (fixed carbon, volatiles, ash) of the OIL_PYRO char and the chlorinator off-gas assay",
+  "task": "QA audit 2026-10-29, imports made on site (X-RTE-IMPORT)",
+  "files": [
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/drivers.json",
+   "docs-authority/_task_plan_gen.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.regen; IA-C-TI, IA-C-MO and IA-C-CR leave OIL_PYRO at the carbon need over char_fixed_C_frac and the cell balances close"
  }
 ]

@@ -90,7 +90,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S13 | GROW_BED | VCD_TRAIN | L | mass | present | condensate | 3.799494 kg/d | absent_from_candidate_mvs |
 | S14 | GROW_BED | FOOD_STORE | S | mass | present | food | 4.2 kg/d | — |
 | S15 | GROW_BED | HABITATION | G | mass | present | photosynthetic O2 | 0.0 kg/d | — |
-| S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 12.071721 kg/d | — |
+| S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 11.660798 kg/d | — |
 | S17 | SOL_ARK_60K | RECTIFIER | E | elec | present | DC/480V | 12.0 kW | — |
 | S18 | AFTERBURNER | CRYO_CO2 | G | mass | present | captured CO2/air | 0.0 kg/d | — |
 | S19 | BAGHOUSE | LEACH_CSTR_1 | S | mass | present | dust | 0.0 kg/d | absent_from_candidate_mvs |
@@ -293,7 +293,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-FC-AIR | HDR_O2 | MEOH_FC | G | mass | present | cell air | 9.407064 kg/d | — |
 | IA-LEACH-BD | LEACH_CSTR_1 | NUTRIENT_DOSE | L | mass | present | bleed salts to nutrient | 109.63 kg/d | — |
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | L | mass | present | still bottoms | 6.709424 kg/d | — |
-| IA-CHAR | OIL_PYRO | MFG_SHOP | S | mass | present | char reductant | 5.272222 kg/d | — |
+| IA-CHAR | OIL_PYRO | MFG_SHOP | S | mass | present | char reductant | 4.861299 kg/d | — |
 | IA-FC-EXH | MEOH_FC | NOX_SCRUB | G | mass | present | cell exhaust | 0 kg/d | — |
 | IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | thermal | thermal | present | round-trip loss | 1.67 kW | — |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | electric | thermal | present | store trim | 1.61 kW | — |
@@ -406,7 +406,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.172239 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 64.151962 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 64.562885 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
@@ -537,14 +537,14 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-CACL2-MU | NORTH_DOCK | CA_POT | L | mass | present | CaCl2 brine concentrate (mining-waste class) | 0.152497 kg/d | — |
 | IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class) | 0.097428 kg/d | — |
 | IA-TIO2-MU | NORTH_DOCK | TI_CELL | S | mass | present | TiO2-equivalent rutile concentrate (dock import class) | 0.834247 kg/d | — |
-| IA-C-TI | NORTH_DOCK | TI_CELL | S | mass | present | carbon reductant (petcoke/char class) | 0.250924 kg/d | — |
-| IA-KROLL-CO | TI_CELL | NORTH_DOCK | G | mass | present | chlorinator CO (fuel-gas class export) | 0.585172 kg/d | — |
+| IA-C-TI | OIL_PYRO | TI_CELL | S | mass | present | plant pyrolysis char reductant | 0.295205 kg/d | — |
+| IA-KROLL-CO | TI_CELL | NORTH_DOCK | G | mass | present | chlorinator CO (fuel-gas class export) | 0.629453 kg/d | — |
 | IA-MOO3-MU | NORTH_DOCK | MO_CELL | S | mass | present | MoO3-equivalent concentrate (dock import class) | 0.093766 kg/d | — |
-| IA-C-MO | NORTH_DOCK | MO_CELL | S | mass | present | carbon reductant (petcoke/char class) | 0.011736 kg/d | — |
-| IA-MO-VENT | MO_CELL | NORTH_DOCK | G | mass | present | chlorinator CO2 (vent class) | 0.043002 kg/d | — |
+| IA-C-MO | OIL_PYRO | MO_CELL | S | mass | present | plant pyrolysis char reductant | 0.013807 kg/d | — |
+| IA-MO-VENT | MO_CELL | NORTH_DOCK | G | mass | present | chlorinator CO2 (vent class) | 0.045073 kg/d | — |
 | IA-CR2O3-MU | NORTH_DOCK | CR_CELL | S | mass | present | Cr2O3-equivalent chromite concentrate (dock import class) | 0.365389 kg/d | — |
-| IA-C-CR | NORTH_DOCK | CR_CELL | S | mass | present | carbon reductant (petcoke/char class) | 0.086624 kg/d | — |
-| IA-CR-VENT | CR_CELL | NORTH_DOCK | G | mass | present | chlorinator CO (fuel-gas class export) | 0.202013 kg/d | — |
+| IA-C-CR | OIL_PYRO | CR_CELL | S | mass | present | plant pyrolysis char reductant | 0.101911 kg/d | — |
+| IA-CR-VENT | CR_CELL | NORTH_DOCK | G | mass | present | chlorinator CO (fuel-gas class export) | 0.2173 kg/d | — |
 | IA-WAX-MU | NORTH_DOCK | WAX_PATTERN | S | mass | present | pattern wax make-up (petro-wax class import) | 0.2 kg/d | — |
 | IA-SILICA-MU | NORTH_DOCK | SHELL_BUILD | S | mass | present | foundry silica (flour/stucco/binder make-up) | 1.0 kg/d | — |
 | IA-BURNOUT-VENT | SHELL_BURNOUT | NORTH_DOCK | G | mass | present | dewax/burnout off-gas (burned wax + steam) | 0.2 kg/d | — |

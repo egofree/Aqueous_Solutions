@@ -8,3 +8,4 @@ N6,solids,Class 150,carbon reductant (petcoke/char class),inlet,160
 N7,DN15,Class 150,chlorinator CO2 (vent class),outlet,600
 N8,DN15,Class 150,drain,bottom,50
 N9,DN15,Class 150,vent,top,800
+N10,solids,Class 150,plant pyrolysis char reductant,inlet,160

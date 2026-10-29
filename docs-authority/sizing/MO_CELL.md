@@ -17,7 +17,7 @@ This page records the size of unit MO_CELL, of class `cell` in sector FOUNDRY, f
 
 ## 2. Duty
 
-The unit takes 0.105502 kg/d by 2 streams and gives 0.105502 kg/d by 3 streams. Its continuous electrical load is 0.1141 kW, fed by stream SF-MO_CELL.
+The unit takes 0.107573 kg/d by 2 streams and gives 0.107573 kg/d by 3 streams. Its continuous electrical load is 0.1141 kW, fed by stream SF-MO_CELL.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -45,7 +45,7 @@ Table 2.1. Design parameters
 
 The envelope is 800 mm x 800 mm x 1600 mm, from `params.envelope` (state live). Its basis is: cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282).
 
-The hold-up check takes 0.105502 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.1055 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 50 mm in diameter and 80 mm high. It fits within the envelope.
+The hold-up check takes 0.107573 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.1076 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 50 mm in diameter and 80 mm high. It fits within the envelope.
 
 ## 4. Material
 

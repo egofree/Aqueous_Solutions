@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AH
+Revision: AI
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -40,6 +40,7 @@ Date: 2026-10-29
 | AF | Batch 29: route UPW_TO_FAB retired as a duplicate of IA-UPW-FAB; FAB_WET_INTERFACE revision C | 2026-10-29 |
 | AG | Batch 30: retired routes leave the line list, and their isometric sheets are removed through the generator | 2026-10-29 |
 | AH | Batch 31: the CZ silicon is made on site (SI_REDUCE and the new SI_REFINE, A-M-419); the polysilicon import is retired; WAFER_FAB_EQUIPMENT revision G | 2026-10-29 |
+| AI | Batch 32: water make-up allowed as a natural resource; Ti, Mo and Cr carbon reductant from plant char (A-M-420) | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -192,6 +193,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/FAB_WET_INTERFACE.md` | Rev C. Route UPW_TO_FAB removed from the stream list; the route is retired on the graph as a duplicate of IA-UPW-FAB (X-RTE). |
 | `docs-authority/_line_list.py`, `docs-authority/_iso_sheets.py` | Retired routes are skipped, and a sheet whose line left the line list is removed; five sheets of retired routes gone (owner decision 2026-10-29). |
 | `flow_graph/param/si_refine.py` (A-M-419) | New: quartz reduction and chlorosilane refining sized from the CZ charge, with a selectable backup of a different technology; IA-SI-IMPORT retired; other imports that break the rule listed as X-RTE-IMPORT tasks (owner decision t58u). |
+| `flow_graph/param/foundry_poly.py` (A-M-420) | The chlorinator carbon is plant pyrolysis char from OIL_PYRO, sized from the carbon need over its fixed carbon; the petcoke imports are gone; water make-up is allowed and the baseline site profile lists its water sources. |
 
 ## 3. In progress
 

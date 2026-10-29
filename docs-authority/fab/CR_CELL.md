@@ -7,7 +7,7 @@ service line: service Cr(III) molten-salt electrolysis cell with carbochlorinati
 Internals: issued mfg model BOM (3 internals part row): "step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per" [models/mfg/CR_CELL/bom.csv]
 Material: Graphite liner and graphite anode for the carbochlorination melt (CrCl3 wetted), dry CO/CO2/Cl2 headspace; 90 % alumina brick backup in a mild-steel shell. Basis: Cr2O3 + 3C + 3Cl2 carbochlorination at 700 C with an internal anode-gas loop (graph design): the bed is a dry hot face (M7); the melt physics is the pot-cell class (DING2018_CL_REVIEW, KRUIZENGA2012). (continues on the duty sheet)
 
-Nozzles: 6 process connections per docs-authority/nozzles/CR_CELL.csv
+Nozzles: 7 process connections per docs-authority/nozzles/CR_CELL.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

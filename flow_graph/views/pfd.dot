@@ -337,7 +337,7 @@ digraph G {
   "GROW_BED" -> "VCD_TRAIN" [label="S13\\n3.799494 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "FOOD_STORE" [label="S14\\n4.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "HABITATION" [label="S15\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MFG_SHOP" -> "LEACH_CSTR_1" [label="S16\\n12.071721 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MFG_SHOP" -> "LEACH_CSTR_1" [label="S16\\n11.660798 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "RECTIFIER" [label="S17\\n12.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
   "AFTERBURNER" -> "CRYO_CO2" [label="S18\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BAGHOUSE" -> "LEACH_CSTR_1" [label="S19\\n0.0 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -540,7 +540,7 @@ digraph G {
   "HDR_O2" -> "MEOH_FC" [label="IA-FC-AIR\\n9.407064 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "LEACH_CSTR_1" -> "NUTRIENT_DOSE" [label="IA-LEACH-BD\\n109.63 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "VCD_TRAIN" -> "LEACH_CSTR_1" [label="IA-VCD-BD\\n6.709424 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "OIL_PYRO" -> "MFG_SHOP" [label="IA-CHAR\\n5.272222 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "OIL_PYRO" -> "MFG_SHOP" [label="IA-CHAR\\n4.861299 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MEOH_FC" -> "NOX_SCRUB" [label="IA-FC-EXH\\n0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ZNBR2" -> "Q4_BUS" [label="IA-ZNBR-HEAT\\n1.67 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "RECTIFIER" -> "Q4_A" [label="IA-Q4A-TRIM\\n1.61 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
@@ -653,7 +653,7 @@ digraph G {
   "HDR_O2" -> "BACKUP_GEN" [label="IA-GEN-O2\\n0.172239 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "AFTERBURNER" [label="IA-AB-O2\\n0.528278 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_CO2" -> "MEOH_SYNTH" [label="IA-HCO2-MEOH\\n3.138638 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NORTH_DOCK" -> "LEACH_CSTR_1" [label="IA-H2O-MU\\n64.151962 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "NORTH_DOCK" -> "LEACH_CSTR_1" [label="IA-H2O-MU\\n64.562885 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_1" -> "LEACH_CSTR_1" [label="IA-EW1-CL2\\n88.32517 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_2" -> "LEACH_CSTR_1" [label="IA-EW2-CL2\\n88.354656 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_3" -> "LEACH_CSTR_1" [label="IA-EW3-CL2\\n33.164878 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -784,14 +784,14 @@ digraph G {
   "NORTH_DOCK" -> "CA_POT" [label="IA-CACL2-MU\\n0.152497 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CA_POT" -> "NORTH_DOCK" [label="IA-CA-CL2-SHIP\\n0.097428 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "TI_CELL" [label="IA-TIO2-MU\\n0.834247 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NORTH_DOCK" -> "TI_CELL" [label="IA-C-TI\\n0.250924 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "TI_CELL" -> "NORTH_DOCK" [label="IA-KROLL-CO\\n0.585172 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "OIL_PYRO" -> "TI_CELL" [label="IA-C-TI\\n0.295205 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "TI_CELL" -> "NORTH_DOCK" [label="IA-KROLL-CO\\n0.629453 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "MO_CELL" [label="IA-MOO3-MU\\n0.093766 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NORTH_DOCK" -> "MO_CELL" [label="IA-C-MO\\n0.011736 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MO_CELL" -> "NORTH_DOCK" [label="IA-MO-VENT\\n0.043002 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "OIL_PYRO" -> "MO_CELL" [label="IA-C-MO\\n0.013807 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MO_CELL" -> "NORTH_DOCK" [label="IA-MO-VENT\\n0.045073 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "CR_CELL" [label="IA-CR2O3-MU\\n0.365389 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NORTH_DOCK" -> "CR_CELL" [label="IA-C-CR\\n0.086624 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "CR_CELL" -> "NORTH_DOCK" [label="IA-CR-VENT\\n0.202013 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "OIL_PYRO" -> "CR_CELL" [label="IA-C-CR\\n0.101911 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CR_CELL" -> "NORTH_DOCK" [label="IA-CR-VENT\\n0.2173 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "WAX_PATTERN" [label="IA-WAX-MU\\n0.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "SHELL_BUILD" [label="IA-SILICA-MU\\n1.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SHELL_BURNOUT" -> "NORTH_DOCK" [label="IA-BURNOUT-VENT\\n0.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];

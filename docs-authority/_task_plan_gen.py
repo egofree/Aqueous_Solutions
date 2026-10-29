@@ -673,6 +673,7 @@ for _e in g['edges']:
         if _k: _RTE[_k].append(_e)
 RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_FAB', 'the CZ charge is sized from the wafer need (A-M-417) and made on site by SI_REDUCE and SI_REFINE (A-M-419)', 'flow_graph/param/fab_silicon.py'),
             ('X-RTE-SI-BACKUP', 'Refining of SI_REDUCE silicon to charge grade, with a backup of a different technology', 'the CZ charge is refined on site on a chlorosilane loop by the Siemens route, with the silane fluidised bed as the selectable other technology (si_refine_route, A-M-419); the polysilicon import is retired', 'flow_graph/param/si_refine.py'),
+            ('X-RTE-IMPORT-CARBON', 'Imports IA-C-TI, IA-C-MO and IA-C-CR: carbon reductant made on site', 'the Ti, Mo and Cr chlorinators take plant pyrolysis char from OIL_PYRO, sized from their carbon need over the char fixed carbon (A-M-420)', 'flow_graph/param/foundry_poly.py'),
             ('X-RTE-UPW_TO_FAB', 'Route UPW_TO_FAB: retired as a duplicate', 'IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired', 'flow_graph/plant_flow_graph.json')]
 RTE_DONE += [(f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']}: standby at its rated case",
              f"the route carries {_e['params']['rate_rated_kg_d']:g} kg/d when {_e['params']['rated_case']} (A-M-418)", 'flow_graph/param/standby_routes.py')
@@ -691,7 +692,8 @@ _rte_items += [('X-RTE-PV-SI', 'Silicon wafers for SOLAR_PV_CELL', 'the cell lin
                ('X-RTE-LEGACY-PFD', 'Remaining hand-drawn process sheets', 'each script in flow_graph/exporters/matplotlib/ that the regenerator does not run is checked for what it draws and who cites it, then retired or replaced by a graph view', '—', None)]
 # Owner decision 2026-10-29 (t58u): the plant makes everything on site; only waste and raw ore come in. Every present dock
 # import that carries flow and is not waste or raw ore is an open task: make it on site, or show it is waste or ore.
-_ORE = ('ore', 'concentrate', 'spar', 'brine', 'mining-waste', 'quartz', 'silica', 'intake air', 'waste')
+# Water and air are natural resources like ore (owner decision 2026-10-29): their intake is allowed; the water balance stays on the graph.
+_ORE = ('ore', 'concentrate', 'spar', 'brine', 'mining-waste', 'quartz', 'silica', 'intake air', 'waste', 'water make-up')
 for _e in sorted(g['edges'], key=lambda e: e['stream_id']):
     if _e.get('presence') == 'present' and _e['from_unit_id'] == 'NORTH_DOCK' and (_e['rate'].get('value') or 0) > 0 and 'mass' in (_e.get('layers') or []):
         _c = (_e.get('carries') or '').lower()
