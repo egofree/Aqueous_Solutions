@@ -1,12 +1,13 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: A
-Date: 2026-10-25
+Revision: B
+Date: 2026-10-29
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue | 2026-10-25 |
+| B | Pages closed on 2026-10-25 without a rewrite re-opened with the reason for each; sections 3 and 4 now match the pending list, which `flow_graph/test_rewrite_todo.py` checks | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -16,14 +17,16 @@ The list of pages that the automated style check treats as not yet rewritten is 
 
 Each page is in one of four states:
 
-- **pending**: not yet rewritten.
-- **in progress**: part of the page, or the generator that writes it, has been rewritten.
+- **pending**: not yet rewritten. The page is on the pending list.
+- **in progress**: part of the page, or the generator that writes it, has been rewritten. The page stays on the pending list until the rewrite is complete.
 - **done**: rewritten in full and removed from the pending list.
 - **removed**: deleted from the repository, with the reason given.
 
 Pages are rewritten in order of how early a new reader is likely to open them: the register and plans first, then the definitions of the plant, then the duty, sizing, equipment, schedule and test pages. A generated page is rewritten by changing its generator.
 
 ## 2. Done
+
+Table 2.1 lists the pages rewritten in full. A row that says only that a page was checked against the guide has been moved back to section 4.
 
 Table 2.1. Pages rewritten in full
 
@@ -52,17 +55,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/BALANCE_RECONCILIATION.md` | Rev E, through `flow_graph/param/balance.py`. Purpose and scope first, revision record in order, sections and table titles renumbered (0-4 to 2-6; cross-references in balance.py, closure_tf.py and assumptions A-M-120/A-M-123 updated in the same change). No method, rate or result changed. Also fixed in this batch: the assumptions-register scan crashed on any model params.json whose `assumptions` entry is a list (CAST_LINE); params.json converted to the keyed form and the register runs again. |
 | `docs-authority/BOUGHT_SPECS.md` | Rev B, through `_bought_specs.py`. Purpose and scope first, numbered sections and table titles. No roster row, class or size changed. |
 | `docs-authority/CONTROL_SOFTWARE.md` | Rev B, through `flow_graph/control/plc_programs.py`. Purpose and scope first, revision record added, sections renumbered. No program, classification or check changed. |
-| `docs-authority/FUEL_CELL.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
-| `docs-authority/GEOTHERMAL_BACKUP.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
-| `docs-authority/INTERNALS.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
-| `docs-authority/POWER_SIZING.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
-| `docs-authority/PROTECTION.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
 | `docs-authority/SECTOR_DEFINITIONS.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
-| `docs-authority/sizing/EVAP_DESIGN.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
-| `docs-authority/sizing/EW_CELLS.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
-| `docs-authority/sizing/POLYMERS_LINE.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
-| `docs-authority/sizing/REACTOR_DESIGN.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
-| `docs-authority/sizing/SANITATION.md` | Verified compliant against the checker and the guide's structure rules (revision record, purpose first, numbered sections); closed without further edits. |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | Rev C, through `_assumptions_register.py`. Already guide-structured; the document-line mining section removed as index noise (the curated assumptions and the graph/parameter scans stay). |
 | `docs-authority/DERIVED_REVISIONS.md` | Rev B, through `_rev_stamp.py`. Purpose and scope added; the count line states its authority (the regeneration command). Tracking rule unchanged. |
 | `docs-authority/EDGE_RATING_DUTY.md` | Rev B. Rewritten to the guide; stays the record of the Rev L edge rating (the Rev M balances live in AQS-DUTY-011 and the regenerated sheets). Banned phrase removed; CHG defined at first use. No rating changed. |
@@ -76,10 +69,6 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/HAB_WATER.md` | Rev C. Purpose and scope added, sections renumbered. No unit, stream or rate changed. |
 | `docs-authority/HAZOP.md` | Rev B, through `_hazop.py`. Purpose and scope added, sections numbered. No deviation, cause, safeguard or action changed; the team-HAZOP study scope statement stays. |
 | `docs-authority/HEAT_LADDER_DUTIES.md` | Rev E. Status note added: it stays the historical record of the Rev K to Rev M edge-duty derivation; the live duties regenerate into the graph each pass and the page is not reissued per graph revision. |
-| `docs-authority/LIFE_MEP.md` | Verified against the checker and the guide structure. |
-| `docs-authority/WATER_PURIFICATION.md` | Verified against the checker and the guide structure. |
-| Bulk closure | 0 pages closed: all pass the automated style check and carry the guide structure. |
-| Final closure | 6 remaining pages closed. All pass the automated check and carry the guide structure. The documentation rewrite is complete. |
 | `docs-authority/SITE_BASIS_ANTARCTIC.md` | Rev A. Profile, environment, scaling actions, closure status; the locale run is blocked on the wind-primary write-stage integration (the X-LOC-08 design pass). |
 | `docs-authority/SITE_BASIS_MARS.md` | Rev A. Profile, environment, scaling actions and design consequences for the Mars variant. |
 | `docs-authority/HEAT_LADDER.md` | Rewritten in full; it was not on the pending list but did not follow the guide (no record of revisions, sentence fragments). |
@@ -104,148 +93,184 @@ Table 2.1. Pages rewritten in full
 
 ## 3. In progress
 
+Table 3.1 lists the pending pages whose rewrite has started.
+
 Table 3.1. Pages partly rewritten
 
 | Page | Note |
 | --- | --- |
-| `docs-authority/TASK_PLAN.md` | Sections 1 to 6 rewritten in `_task_plan_gen.py`; next tasks generated from the triage tags; hand-kept list and progress record moved to Appendix A. Task texts in sections 7 and 8 still to rewrite. |
-| `docs-authority/OPEN_QUESTIONS.md` | Purpose and scope rewritten. Question rows still to rewrite. |
+| `docs-authority/GLOSSARY.md` | Entries added in bulk on 2026-10-25 to clear the automated check gave wrong expansions (for example PA, PG, IED, FFC, CRC) or two meanings for one abbreviation; those were corrected on 2026-10-29. Many entries are still fragments, and some terms are defined twice under different headings. |
+| `docs-authority/TASK_PLAN.md` | Sections 1 to 6 rewritten in `_task_plan_gen.py`; the task texts in sections 7 and 8 are still to rewrite. |
+| `docs-authority/OPEN_QUESTIONS.md` | Purpose and scope rewritten; the question rows are still to rewrite. |
 
 ## 4. Pending
 
-Table 4.1 lists the pages directly under `docs-authority/` that are still to be rewritten, in the order they will be taken. Table 4.2 lists the pending pages in subfolders; most of them are generated, so the work is in their generators.
+On 2026-10-25 every remaining page was taken off the pending list in one change because each passed the automated style check. Section 16 of the guide says that passing the check is not enough, and a review on 2026-10-29 found that most of those pages lack the identity lines, the record of revisions or the purpose and scope section that section 10 of the guide requires. They are back on the pending list. Each row gives the defects found; a page can have others that a reader will find only in the full rewrite.
+
+Table 4.1 lists the pending pages directly under `docs-authority/`. Table 4.2 lists those in subfolders; most of them are generated, so the work is in their generators.
 
 Table 4.1. Pending pages directly under docs-authority/
 
-| Page | Note |
+| Page | Defects found |
 | --- | --- |
-| `docs-authority/BLOCK_FAMILY_PLANS.md` | |
-| `docs-authority/FIRE_PROTECTION.md` | |
-| `docs-authority/GLOSSARY.md` | Rev B. Purpose statement added; withdrawn document-line scan removed from the A-M entry; all style findings cleared. Entry fragments and duplicate terms remain an ongoing polish item, tracked by the checker. |
-| `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | |
-| `docs-authority/HAB_FIXTURES.md` | |
-| `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | |
-| `docs-authority/INSTRUMENT_INDEX.md` | |
-| `docs-authority/INSTRUMENT_LOOPS.md` | |
-| `docs-authority/ISO_SHEETS.md` | |
-| `docs-authority/ITP.md` | |
-| `docs-authority/JELLYBEAN.md` | |
-| `docs-authority/LIFE_FITOUT_PLAN.md` | |
-| `docs-authority/LOAD_LIST.md` | |
-| `docs-authority/MATERIALS_SEC3.md` | |
-| `docs-authority/MATERIALS_STD.md` | |
-| `docs-authority/MEOH_TRAIN.md` | |
-| `docs-authority/METAL_FORMING.md` | |
-| `docs-authority/MFG_SHOP_EQUIPMENT.md` | |
-| `docs-authority/MVS_PITCH_PASS.md` | |
-| `docs-authority/MVS_STUDY_CLOSE.md` | |
-| `docs-authority/O2_SOURCE.md` | |
-| `docs-authority/O2_SOURCE_AUDIT.md` | |
-| `docs-authority/OSE_CSK_ALIGNMENT.md` | |
-| `docs-authority/PIPE_SPECS.md` | |
-| `docs-authority/REV_M_CLOSURE_DUTY.md` | |
-| `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | |
-| `docs-authority/SCRUBBER_CHEMISTRY.md` | |
-| `docs-authority/SIGN_SCHEDULE.md` | |
-| `docs-authority/SOLVENT_ROUTE.md` | |
-| `docs-authority/STANDARDS_LIST.md` | |
-| `docs-authority/STRUCT_LOADS.md` | |
-| `docs-authority/TERRACE_LANDSCAPE.md` | |
-| `docs-authority/TEST_PLAN.md` | |
-| `docs-authority/UNIT_MATERIALS.md` | |
-| `docs-authority/WELD_MAP.md` | |
-| `docs-authority/WIRE_SPECS.md` | |
+| `docs-authority/BLOCK_FAMILY_PLANS.md` | No purpose and scope section; working or stock phrasing. Generated by `docs-authority/_block_fam_plans.py`; fix the generator. |
+| `docs-authority/FIRE_PROTECTION.md` | No purpose and scope section. Generated by `docs-authority/_fire.py`; fix the generator. |
+| `docs-authority/FUEL_CELL.md` | Arrows used in place of sentences; working or stock phrasing. |
+| `docs-authority/GEOTHERMAL_BACKUP.md` | Working or stock phrasing. |
+| `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | No purpose and scope section; list items written as fragments. |
+| `docs-authority/HAB_FIXTURES.md` | No record of revisions; no purpose and scope section. |
+| `docs-authority/INSTRUMENT_INDEX.md` | No record of revisions; no purpose and scope section. Generated by `docs-authority/_instr_index.py`; fix the generator. |
+| `docs-authority/INSTRUMENT_LOOPS.md` | No purpose and scope section; working or stock phrasing. |
+| `docs-authority/INTERNALS.md` | No purpose and scope section; working or stock phrasing. Generated by `docs-authority/_internals.py`; fix the generator. |
+| `docs-authority/ISO_SHEETS.md` | No purpose and scope section. Generated by `docs-authority/_iso_sheets.py`; fix the generator. |
+| `docs-authority/ITP.md` | No record of revisions; no purpose and scope section. Generated by `docs-authority/_itp.py`; fix the generator. |
+| `docs-authority/JELLYBEAN.md` | No purpose and scope section. Generated by `docs-authority/_jellybean.py`; fix the generator. |
+| `docs-authority/LIFE_FITOUT_PLAN.md` | No purpose and scope section; working or stock phrasing. |
+| `docs-authority/LIFE_MEP.md` | Working or stock phrasing. |
+| `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | No record of revisions; no purpose and scope section. |
+| `docs-authority/LOAD_LIST.md` | No purpose and scope section; working or stock phrasing. Generated by `docs-authority/_load_list.py`; fix the generator. |
+| `docs-authority/MATERIALS_SEC3.md` | No purpose and scope section; working or stock phrasing. |
+| `docs-authority/MATERIALS_STD.md` | No purpose and scope section; list items written as fragments; working or stock phrasing. |
+| `docs-authority/MEOH_TRAIN.md` | Arrows used in place of sentences; working or stock phrasing. |
+| `docs-authority/METAL_FORMING.md` | No purpose and scope section; working or stock phrasing. |
+| `docs-authority/MFG_MODEL_PLAN.md` | No purpose and scope section. |
+| `docs-authority/MFG_SHOP_EQUIPMENT.md` | No purpose and scope section. |
+| `docs-authority/MVS_PITCH_PASS.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; arrows used in place of sentences. |
+| `docs-authority/MVS_STUDY_CLOSE.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; arrows used in place of sentences. |
+| `docs-authority/O2_SOURCE.md` | No purpose and scope section. Generated by `flow_graph/param/o2_source.py`; fix the generator. |
+| `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Generated by `flow_graph/param/o2_source.py`; fix the generator. |
+| `docs-authority/PARAMETRIC_MODEL.md` | No purpose and scope section; working or stock phrasing. Generated by `_graph.py`; fix the generator. |
+| `docs-authority/PIPE_SPECS.md` | No purpose and scope section; working or stock phrasing. Generated by `docs-authority/_pipe_specs.py`; fix the generator. |
+| `docs-authority/POWER_SIZING.md` | No purpose and scope section. Generated by `flow_graph/param/write_graph.py`; fix the generator. |
+| `docs-authority/PROTECTION.md` | No purpose and scope section. |
+| `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
+| `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | No purpose and scope section; working or stock phrasing. Generated by `flow_graph/param/scale_down.py`; fix the generator. |
+| `docs-authority/SCRUBBER_CHEMISTRY.md` | No record of revisions; no purpose and scope section; list items written as fragments; arrows used in place of sentences. |
+| `docs-authority/SIGN_SCHEDULE.md` | No purpose and scope section. |
+| `docs-authority/SOLVENT_ROUTE.md` | No record of revisions; no purpose and scope section. |
+| `docs-authority/STANDARDS_LIST.md` | No record of revisions; no purpose and scope section; working or stock phrasing. Generated by `docs-authority/_standards_list.py`; fix the generator. |
+| `docs-authority/STL_MANIFEST.md` | No record of revisions; no purpose and scope section. |
+| `docs-authority/STRUCT_LOADS.md` | No record of revisions; no purpose and scope section. Generated by `docs-authority/_struct_loads.py`; fix the generator. |
+| `docs-authority/STUDY_UNITS_STUB.md` | Arrows used in place of sentences; working or stock phrasing. |
+| `docs-authority/TERRACE_LANDSCAPE.md` | No purpose and scope section; list items written as fragments. |
+| `docs-authority/TEST_PLAN.md` | No purpose and scope section; working or stock phrasing. |
+| `docs-authority/UNIT_MATERIALS.md` | No purpose and scope section. Generated by `docs-authority/_unit_materials.py`; fix the generator. |
+| `docs-authority/VENT_CLOSURE.md` | Working or stock phrasing. |
+| `docs-authority/WATER_PURIFICATION.md` | No purpose and scope section; arrows used in place of sentences; working or stock phrasing. |
+| `docs-authority/WELD_MAP.md` | No purpose and scope section. |
+| `docs-authority/WIRE_SPECS.md` | No purpose and scope section; list items written as fragments. Generated by `docs-authority/_wire_specs.py`; fix the generator. |
 
 Table 4.2. Pending pages in subfolders
 
-| Page | Note |
+| Page | Defects found |
 | --- | --- |
-| `docs-authority/duties/ACID_POLISH_SCRUB.md` | |
-| `docs-authority/duties/AFTERBURNER_FLUE.md` | |
-| `docs-authority/duties/ALK_SCRUBBER.md` | |
-| `docs-authority/duties/BIOFILTER.md` | |
-| `docs-authority/duties/BLACK_DIGEST.md` | |
-| `docs-authority/duties/C29_RECYCLE.md` | |
-| `docs-authority/duties/CATCH_TANK.md` | |
-| `docs-authority/duties/CONTINUOUS_RECYCLE.md` | |
-| `docs-authority/duties/CRYO_AHU_COND_CONDENSABLE.md` | |
-| `docs-authority/duties/CRYO_AR.md` | |
-| `docs-authority/duties/CRYO_ASU.md` | |
-| `docs-authority/duties/CRYO_CO2.md` | |
-| `docs-authority/duties/CRYO_H2.md` | |
-| `docs-authority/duties/CRYO_HE.md` | |
-| `docs-authority/duties/CRYO_HX_Q4.md` | |
-| `docs-authority/duties/CRYO_KR.md` | |
-| `docs-authority/duties/CRYO_N2.md` | |
-| `docs-authority/duties/CRYO_NE.md` | |
-| `docs-authority/duties/CRYO_O2.md` | |
-| `docs-authority/duties/CRYO_XE.md` | |
-| `docs-authority/duties/CURTAIL.md` | |
-| `docs-authority/duties/EMETH.md` | |
-| `docs-authority/duties/EVAP_ACID.md` | |
-| `docs-authority/duties/EW_1.md` | |
-| `docs-authority/duties/EW_2.md` | |
-| `docs-authority/duties/EW_3.md` | |
-| `docs-authority/duties/EW_4.md` | |
-| `docs-authority/duties/EW_5.md` | |
-| `docs-authority/duties/EW_6.md` | |
-| `docs-authority/duties/EW_7.md` | |
-| `docs-authority/duties/EW_8.md` | |
-| `docs-authority/duties/EW_9.md` | |
-| `docs-authority/duties/EXT_HALL.md` | |
-| `docs-authority/duties/FAB_UPW_TANK.md` | |
-| `docs-authority/duties/FLOAT_SINK.md` | |
-| `docs-authority/duties/FLUE_KO.md` | |
-| `docs-authority/duties/GEO_ORC.md` | |
-| `docs-authority/duties/GLASS_DIGEST.md` | |
-| `docs-authority/duties/HDR_CO2.md` | |
-| `docs-authority/duties/HDR_H2.md` | |
-| `docs-authority/duties/HDR_N2.md` | |
-| `docs-authority/duties/HDR_O2.md` | |
-| `docs-authority/duties/HDR_UPW.md` | |
-| `docs-authority/duties/HEAT_SINK.md` | |
-| `docs-authority/duties/HX8.md` | |
-| `docs-authority/duties/IODIDE.md` | |
-| `docs-authority/duties/LEACH_CSTR_1.md` | |
-| `docs-authority/duties/LIGNO_PRE.md` | |
-| `docs-authority/duties/MEOH_COND.md` | |
-| `docs-authority/duties/MEOH_SYNTH.md` | |
-| `docs-authority/duties/MEOH_TANK.md` | |
-| `docs-authority/duties/MET_HX_Q4.md` | |
-| `docs-authority/duties/MET_SCRUB.md` | |
-| `docs-authority/duties/NCG_HEADER.md` | |
-| `docs-authority/duties/NOX_SCRUB.md` | |
-| `docs-authority/duties/PROD_C11_C18.md` | |
-| `docs-authority/duties/PROD_C19_C28.md` | |
-| `docs-authority/duties/PROD_C29.md` | |
-| `docs-authority/duties/PROD_C5_C10.md` | |
-| `docs-authority/duties/Q1_A.md` | |
-| `docs-authority/duties/Q1_B.md` | |
-| `docs-authority/duties/Q2_A.md` | |
-| `docs-authority/duties/Q2_B.md` | |
-| `docs-authority/duties/Q3_A.md` | |
-| `docs-authority/duties/Q3_B.md` | |
-| `docs-authority/duties/Q4_A.md` | |
-| `docs-authority/duties/Q4_B.md` | |
-| `docs-authority/duties/Q4_BUS.md` | |
-| `docs-authority/duties/REMIN.md` | |
-| `docs-authority/duties/ROOF_TANK.md` | |
-| `docs-authority/duties/TERRACE_IRRIG.md` | |
-| `docs-authority/duties/VAC_IND.md` | |
-| `docs-authority/duties/ZNBR2_BR2_REGEN.md` | |
-| `docs-authority/fab/AL_POT.md` | |
-| `docs-authority/fab/COMB_HEAT.md` | |
-| `docs-authority/fab/POLY_OLEFIN.md` | |
-| `docs-authority/fab/VAC_IND.md` | |
-| `docs-authority/sizing/H2_COMPRESSOR.md` | |
-| `docs-authority/sizing/HEADERS.md` | |
-| `docs-authority/sizing/LITHO_DEV.md` | |
-| `docs-authority/sizing/PV_CELL_LINE.md` | |
-| `docs-authority/sizing/SOLAR_PV_CELL.md` | |
-| `docs-authority/sizing/STORAGE_HOLDUP.md` | |
-| `docs-authority/sizing/UPW_POLISH.md` | |
-| `docs-authority/sizing/VAC_IND.md` | |
-| `docs-authority/sizing/VCD_TRAIN.md` | |
+| `docs-authority/duties/ACID_POLISH_SCRUB.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/AFTERBURNER_FLUE.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/ALK_SCRUBBER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/BIOFILTER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
+| `docs-authority/duties/BLACK_DIGEST.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/C29_RECYCLE.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CATCH_TANK.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CONTINUOUS_RECYCLE.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_AHU_COND_CONDENSABLE.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_AR.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_ASU.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_CO2.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_H2.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_HE.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_HX_Q4.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_KR.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_N2.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_NE.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_O2.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CRYO_XE.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/CURTAIL.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EMETH.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EVAP_ACID.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EW_1.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EW_2.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EW_3.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EW_4.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EW_5.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EW_6.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EW_7.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EW_8.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EW_9.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/EXT_HALL.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/FAB_UPW_TANK.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/FLOAT_SINK.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/FLUE_KO.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/GEO_ORC.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/GLASS_DIGEST.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/HDR_CO2.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/HDR_H2.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/HDR_N2.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/HDR_O2.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/HDR_UPW.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/HEAT_SINK.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/HX8.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/IODIDE.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/LEACH_CSTR_1.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/LIGNO_PRE.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/MEOH_COND.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/MEOH_SYNTH.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/MEOH_TANK.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/MET_HX_Q4.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/MET_SCRUB.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/NCG_HEADER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/NOX_SCRUB.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/PROD_C11_C18.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/PROD_C19_C28.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/PROD_C29.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/PROD_C5_C10.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/Q1_A.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/Q1_B.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/Q2_A.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/Q2_B.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/Q3_A.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/Q3_B.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/Q4_A.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/Q4_B.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/Q4_BUS.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/REMIN.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/ROOF_TANK.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/TERRACE_IRRIG.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/VAC_IND.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/duties/ZNBR2_BR2_REGEN.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/fab/AL_POT.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/fab/COMB_HEAT.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/fab/POLY_OLEFIN.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
+| `docs-authority/fab/VAC_IND.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `docs-authority/sizing/EVAP_DESIGN.md` | No document number line; no revision line; no date line; no purpose and scope section. Generated by `flow_graph/param/evap_design.py`; fix the generator. |
+| `docs-authority/sizing/EW_CELLS.md` | No purpose and scope section. Generated by `docs-authority/_ew_sizing.py`; fix the generator. |
+| `docs-authority/sizing/H2_COMPRESSOR.md` | No record of revisions; no purpose and scope section. Generated by `flow_graph/param/h2_compressor.py`; fix the generator. |
+| `docs-authority/sizing/HEADERS.md` | No record of revisions; no purpose and scope section. Generated by `flow_graph/param/headers.py`; fix the generator. |
+| `docs-authority/sizing/LITHO_DEV.md` | No record of revisions; no purpose and scope section. |
+| `docs-authority/sizing/POLYMERS_LINE.md` | No purpose and scope section. Generated by `docs-authority/_polymers_sizing.py`; fix the generator. |
+| `docs-authority/sizing/PV_CELL_LINE.md` | No record of revisions; no purpose and scope section. Generated by `flow_graph/param/pv_cell_line.py`; fix the generator. |
+| `docs-authority/sizing/REACTOR_DESIGN.md` | No purpose and scope section. Generated by `flow_graph/param/reactor_design.py`; fix the generator. |
+| `docs-authority/sizing/SANITATION.md` | No purpose and scope section. Generated by `flow_graph/param/sanitation.py`; fix the generator. |
+| `docs-authority/sizing/SOLAR_PV_CELL.md` | No record of revisions; no purpose and scope section. |
+| `docs-authority/sizing/STORAGE_HOLDUP.md` | No record of revisions; no purpose and scope section; working or stock phrasing. Generated by `docs-authority/_storage_sizing.py`; fix the generator. |
+| `docs-authority/sizing/UPW_POLISH.md` | No record of revisions; no purpose and scope section. Generated by `flow_graph/param/upw_polish.py`; fix the generator. |
+| `docs-authority/sizing/VAC_IND.md` | No record of revisions; no purpose and scope section. |
+| `docs-authority/sizing/VCD_TRAIN.md` | No record of revisions; no purpose and scope section. |
+| `flow_graph/derived/MASS_FLOW_DERIVED.md` | No revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
+| `flow_graph/exporters/matplotlib/README.md` | No document number line; no revision line; no record of revisions; no purpose and scope section. Generated by `_layer_views.py`; fix the generator. |
+| `models/mfg/AL_POT/build_log.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; working or stock phrasing. |
+| `models/mfg/BLACK_DEWATER/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `models/mfg/EXPANDER/WO.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `models/mfg/FILM_CAST/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `models/mfg/FLUX_PREP/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
+| `models/mfg/HF_GEN/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `models/mfg/IND_MELT/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `models/mfg/POLY_F/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `models/mfg/POWDER_RESIN/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `models/mfg/SHELL_BURNOUT/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
+| `models/mfg/TFE_SYN/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `models/mfg/VDF_SYN/WORK_ORDER.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
+| `models/openscad/foam_ew/CUT_LIST.md` | No record of revisions; no purpose and scope section; working or stock phrasing. |
+| `models/openscad/foam_ew/DECISIONS.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; working or stock phrasing. |
 
 ## 5. Removed
 
@@ -279,17 +304,11 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | Reviewed 2026-10-25. It describes the route to the ionic liquid [Bmim] acetate through 1-methylimidazole; the units IMID and QUAT are no longer graph nodes. The number is cited elsewhere, so it is kept until a decision. |
 | `docs-authority/RED_AUDIT.md` (AQS-RED-001) | Rewritten, but two rows need a factual update: the sanitation row names COMPOST_TOILET and the cold-box row names EXPANDER, and neither is a graph node now. |
 | `docs-authority/inventory/PIPE_INVENTORY.csv` (AQS-INV-003) | Lines S36 (WS_DOPE, FAB) and S57 (MET_MELT, MFG) have no piping class, material or joint type ("—" and "-"), so `WPS_REGISTER.md` cannot assign them a procedure. The class and material need to be set in the pipe inventory generator. |
-
 | `docs-authority/GROUNDING.md` (AQS-ELEC-005) | Sections 1 and 4 describe the revision A grid (35 × 20 m ring, 12 rods, 1.14 Ω; GPR 494 V). AQS-ELEC-006 section 4 describes grid Rev B (196 × 174 m, 74 rods, 0.128 Ω, GPR 887 V), and `docs-authority/_grounding_study.py` now prints 0.150 Ω with 65 rods (area 25 392 m²). The three need to be reconciled before section 1 is restated. |
-
 | `docs-authority/GREENHOUSE_ENVELOPE.md` (AQS-TRR-GH-001) | Streams S40 (overflow to terrace irrigation) and S42 (fertigation return) are named here, in AQS-TRR-001 and in the stream register, but neither is an edge of the plant flow graph. Should they be added to the graph or removed from the pages? |
 | `docs-authority/MEOH_EQUIPMENT.md` (AQS-EQP-MEOH-001) | Only MEOH_SYNTH, MEOH_COND, MEOH_TANK and MEOH_FC are graph nodes. The graph has one MEOH_FERM where the list has MEOH_FERM_DIG and MEOH_FERM_STILL, and the remaining tags are on the list only. Should the list be cut to the graph, or the graph extended? |
-
 | `docs-authority/RECT_EW.md` (AQS-ELEC-004) | Finding 1 names node RECT_EW, streams S17-EW and IA-RECT-EW-LOSS (7.73 kW) and a 38.66 kW AC input. The graph now has node RECTIFIER, supply S17 at 12.0 kW (A-M-231) and loss IA-RECT-Q4 at 1.0 kW; the channel streams IA-DC-EW_1 to IA-DC-EW_9 still match Table 2.1. Which AC input is correct? |
 | `docs-authority/ELECTRODE_FAB.md` (AQS-MFG-ELC-001) | Study ST-ELC-01 gives about 0.3 kW average; the graph supplies ELECTRODE_COAT with 0.0792 kW (SF-ELECTRODE_COAT). Which is correct? |
-
 | `docs-authority/PERF_TEST.md` (AQS-COM-003) | `_perf_test.py` takes every solid stream leaving an electrowinning cell as harvested metal, so IA-COAT-IN (0.02 kg/d, EW_1 to ELECTRODE_COAT, the electrode sent for coating) appears as a guarantee point measured by weighed cathode harvest. Should the selection exclude streams that do not go to a product? |
-
 | `docs-authority/CONTROL_ARCH.md` (AQS-CTL-002) | The closing note says that, if the inventory already counts the high-level switches, the DI count is 113 too high. The figure 113 is a fixed number in `_plc_arch.py`; the instrument index now has 82 digital-input rows (`24 V DC discrete (DI)`). Should the note be computed from the index? |
-
 | `docs-authority/O2_SOURCE.md` (AQS-PAR-005) | Not rewritten. Two generators write this page: `flow_graph/param/o2_source.py` (the current Rev D duty summary) and `flow_graph/param/o2_close.py` report(), whose Rev C closure report would overwrite it if run. The page says the Rev C sections regenerate at the next balance run. Which generator owns the page? Once that is settled, the template can be rewritten without the risk of the other writer restoring the old text. |

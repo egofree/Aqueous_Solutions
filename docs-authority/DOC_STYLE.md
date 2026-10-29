@@ -2,13 +2,14 @@
 
 Document number: AQS-DOC-002  
 Former number: AQS-DOC-001 (the separate house-style page DOCUMENTATION_STYLE.md, merged into this guide on 2026-10-24)  
-Revision: B  
-Date: 2026-10-24
+Revision: C  
+Date: 2026-10-29
 
 | Rev | Description | Date |
 |---|---|---|
 | A | Practical notes on warnings, signs and revisions | 2026-09-26 |
 | B | Single style guide for the repository, distilled from KSC-DF-107 Rev F and the IET guide; replaces DOCUMENTATION_STYLE.md | 2026-10-24 |
+| C | Section 16: a page closed without a rewrite is put back on the pending list | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -140,7 +141,7 @@ Generators write prose too. The text templates in a generator follow this guide 
 1. Every abbreviation written in capitals is defined in `docs-authority/GLOSSARY.md` (section 7). Identifiers from the plant graph, unit folders, tokens containing a digit, code and revision letters are not counted.
 2. No page uses a term from the banned list in `docs-authority/style_terms.json` (section 4). Each entry gives the reason and what to write instead.
 
-The check is deliberately light: it cannot judge clarity, and passing it does not make a page follow this guide. Pages not yet rewritten to this guide are listed as pending in the same data file. Their findings are reported but do not fail the check. Remove a page from the list by hand only after rewriting it to this guide; passing the check is not enough. Do not add pages to the list; fix the page or the glossary instead.
+The check is deliberately light: it cannot judge clarity, and passing it does not make a page follow this guide. Pages not yet rewritten to this guide are listed as pending in the same data file. Their findings are reported but do not fail the check. Remove a page from the list by hand only after rewriting it to this guide; passing the check is not enough. Do not add a page to the list to silence its findings; fix the page or the glossary instead. A page that left the list without a rewrite goes back on it, with the reason recorded in `docs-authority/REWRITE_TODO.md` (AQS-DOC-003). `flow_graph/test_rewrite_todo.py` checks that the list and that page agree.
 
 ## 17. Related documents
 

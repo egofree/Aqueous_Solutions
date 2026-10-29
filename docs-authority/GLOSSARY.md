@@ -1,14 +1,14 @@
 # Glossary
 
 Document number: AQS-GLO-001  
-Revision: B  
-Date: 2026-10-25  
+Revision: C  
+Date: 2026-10-29  
 
 | Rev | Description | Date |
 |---|---|---|
 | A | First issue | — |
 | B | Purpose statement added; the withdrawn document-line scan removed from the A-M entry; style findings cleared | 2026-10-25 |
-
+| C | Wrong expansions corrected against the pages that use them (for example PA, PG, IED, FFC, CRC, LR); entries with two meanings or no use removed; duplicate entries removed | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -78,7 +78,6 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {FR-4 -- Glass-epoxy circuit-board laminate. Must not enter the induction pyrolyzer. Leaves at VIBRATORY SPLIT → BURNOUT ROTARY.}
 {FRM -- Former short name for the FARM sector, still found in older CAD files. It is not a sector identifier; read it as FARM.}
-
 
 {Leach / Salria -- Oxidative chloride leach: HCl + NaClO₃, 70–85 °C, ORP > 1.5 V, pH ≈ 0. Dissolves metals. Doubles as the float–sink medium.}
 
@@ -356,7 +355,6 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {POLISH METALS -- Co, Mn (or MnO₂), Cr, Hg, Tl, Bi, Sb. Join METALS / ELEMENTS.}
 
-
 ## Diagram layers and design tool
 
 {PFD -- Process flow diagram. Line or campus view of process units and streams. In the typed plant graph, PFD is a view filter over the same unit_id / stream_id set (lock layered_views), not a competing topology authority.}
@@ -366,8 +364,6 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {EFD -- Energy-flow diagram. Three energy layers over the same graph: electrical, thermal (Q1–Q4 / HX), and chemical-storage ESS charge–discharge (lock efd_three_layers). UI labels: EFD-elec, EFD-thermal, EFD-ess.}
 
 {SLD -- Single-line diagram. Electrical one-line (utility → Sol-Ark → ATS → loads). Graph export path uses the efd-elec layer; matplotlib `electrical_sld.png` is an optional exporter.}
-
-{MVS -- Minimum Viable System. Smallest self-sustaining human colony design intent: full manufacture and habitation, self-copy, scale up/down, closed loops including all three ESS peers, plus surplus export of food, clean water, materials/goods, and energy. Sandbox must not overwrite locked MVS.}
 
 {IA / IA-* -- Intra-aisle stream identifiers on the typed graph (e.g. IA-EW-*, IA-ESS-*). Distinct from inter-block S## in STREAM_REGISTER. Required under lock full_depth_now; rates stay null until Present authority supplies them.}
 
@@ -632,7 +628,6 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 
 {GVCS -- Global Village Construction Set. OSE catalogue of industrial machines mapped as coverage/study/candidate against Aqueous sectors.}
 
-
 {M1 -- Module / plant baseline at SCALE_M = 1.0. Layout and study duties reference M1; do not copy legacy campus kW claims onto M1 without evidence.}
 
 {BMS -- Battery management system. ZnBr₂ / ESS charge–discharge inhibit and Sol-Ark gateway theme.}
@@ -700,18 +695,17 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {IMO -- International Maritime Organization, publisher of the SOLAS, MARPOL, MODU and intact-stability instruments cited by the floating-island site family.}
 {QC -- Quality control (check prefix QC-nn in the design-check record).}
 {XY -- The plan-view coordinate pair (x, y) in millimetres.}
-{FFC -- Free-flow chlorine: the chlorine product form shipped at the dock from the pot cells.}
-{CRC -- Chemical resistance chart: the per-material compatibility table in AQS-STD-002.}
-{PA -- Phosphoric acid (H3PO4), the WS_PHOS store.}
-{SUMP -- The collection sump of a scrubber or tank system.}
-{PG -- Pressure gauge.}
+{FFC -- Fray-Farthing-Chen process: molten-salt electrochemical reduction of a solid metal oxide to the metal (the FFC Cambridge process).}
+{CRC -- CRC Press, publisher of the CRC Handbook of Chemistry and Physics and other handbooks.}
+{PA -- Polyamide (nylon).}
+{PG -- Propylene glycol, the freeze-protection additive in closed water loops.}
 {DOE -- United States Department of Energy, publisher of OTEC and hydrogen cost studies.}
 {DSC -- Differential scanning calorimetry: the thermal-analysis test for phase-change and decomposition.}
 {EER -- Energy efficiency ratio: cooling output in BTU/h per watt of electrical input.}
 {GC -- Gas chromatograph: the composition-analysis instrument.}
 {HPA -- High-pressure aeroponics: misting at 40 to 80 psi with sub-100 micron droplets (JAE2022_AERO).}
 {IACS -- International Annealed Copper Standard: the 100 percent conductivity reference for copper and aluminium conductors.}
-{IED -- Intelligent electronic device: any microprocessor-based protection or control device on the network.}
+{IED -- Industrial Emissions Directive (Directive 2010/75/EU).}
 {IMC -- Intermediate metal conduit: the steel wiring raceway class (NEC Article 342).}
 {NDIR -- Non-dispersive infrared: the absorption-based gas-analysis method.}
 {NPSH -- Net positive suction head: the pump inlet pressure margin above the liquid vapour pressure.}
@@ -719,51 +713,52 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {WHO -- World Health Organization, source of the drinking-water quality guidelines (GDWQ).}
 {WHSV -- Weight hourly space velocity: mass of feed per mass of catalyst per hour.}
 {XRF -- X-ray fluorescence: the non-destructive elemental composition analysis method.}
-{LR -- Load ratio: the ratio of applied to rated load in the structural checks.}
-{CSA -- Compressive stress area, or the Canadian Standards Association (context-dependent).}
+{LR -- Long radius, as in ASME B16.9 long-radius elbows.}
+{CSA -- CSA Group (formerly the Canadian Standards Association), publisher of CSA CHMC1.}
 {HTHA -- High-temperature hydrogen attack: the Nelson-curve damage mechanism for steels in hydrogen service.}
 {RP -- Recommended practice (e.g. API Recommended Practice).}
 {DWV -- Drain, waste and vent: the non-pressure plumbing piping class.}
-{AE -- Analytical element or alarm element, per ISA 5.1 tag letters.}
-{ST -- Speed transmitter, or temperature element (context-dependent ISA 5.1 tag).}
+{AE -- Analysis element (ISA 5.1 tag letters).}
+{ST -- Speed transmitter (ISA 5.1 tag letters).}
 {ZT -- Position transmitter (ISA 5.1): reports ram or valve stroke position.}
 {EDTA -- Ethylenediaminetetraacetic acid: the chelating agent used in lithium and metal recovery.}
 {PMI -- Positive material identification: the alloy-verification test (XRF or optical emission spectroscopy).}
 {UT -- Ultrasonic testing: the non-destructive thickness and flaw examination method.}
-{ETAG -- European Technical Assessment Group (construction products).}
-{PECS -- Power and energy conversion system.}
-{PTL -- Photothermal layer, or the partial transmission loss (context-dependent).}
+{ETAG -- European Technical Approval Guideline; ETAG 001 covers metal anchors for use in concrete.}
+{PECS -- Progress in Energy and Combustion Science (journal).}
+
+{PTL -- Porous transport layer: the porous titanium layer between the catalyst and the flow field in a proton exchange membrane electrolyser.}
+
+{BEI -- Biological Exposure Index (ACGIH), published with the TLVs.}
 {UHMW -- Ultra-high molecular weight (polyethylene): the wear-resistant polymer class.}
 {ECTFE -- Ethylene-chlorotrifluoroethylene: the fluoropolymer lining and piping material.}
 {FFKM -- Perfluoroelastomer: the highest-grade elastomer for aggressive chemical seals.}
-{IGA -- Integrated gate amplifier, or iodine gas absorption (context-dependent).}
-{PPI -- Pulses per inch, or the polypropylene intermediate (context-dependent).}
-{TIMET -- TIMET (Titanium Metals Corporation), the titanium-alloy grade reference.}
-{CRI -- Chemical reaction index, or the reduction ratio (context-dependent).}
+{IGA -- International Geothermal Association.}
+{PPI -- Plastics Pipe Institute, publisher of the PPI technical notes on thermoplastic pipe.}
+{TIMET -- Titanium Metals Corporation, publisher of the cited titanium corrosion data.}
+{CRI -- Carbon Recycling International, operator of the George Olah renewable methanol plant in Iceland.}
 {EMF -- Electromotive force: the cell potential in volts.}
-{ORG -- Organic (the organics fraction of a waste stream, to the oil line).}
+{ORG -- Organics: the organic fraction of a waste stream, sent to the oil line.}
 {ASSY -- Assembly (drawing and BOM shorthand).}
 {FERM -- Fermentation (the MEOH_FERM unit).}
-{HHO -- Hybrid hydrogen-oxygen (a misnomer for stoichiometric H2/O2 gas; not used as a design basis).}
-{BPC -- Byproduct chemical, or bypass damper (context-dependent).}
+{HHO -- Mixed hydrogen and oxygen gas, as made by an electrolysis cell without a separator. The plant never makes or stores it.}
+{BPC -- Biomass Production Chamber, the NASA crop-growth test chamber at Kennedy Space Center.}
 {HFTO -- Hydrogen fuel technology office (US DOE programme name).}
 {QY -- Quantum yield: the mol product per photon absorbed in a photochemical process.}
-{ALCRM -- An invented label with no established meaning; replaced by plain wording (Q-017).}
+{ALCRM -- A label found in early project records whose meaning could not be established; it is not used in the design (X-GOV-07).}
 {CEPCI -- Chemical Engineering Plant Cost Index: the escalation index for cost estimates.}
 {CEB -- Chemically enhanced backwash: the membrane-cleaning method with chemical dosing.}
-{ABC -- Activated carbon block, or the ABC fire classification (context-dependent).}
 {AHRI -- Air-Conditioning, Heating and Refrigeration Institute: the HVAC equipment rating body.}
 {AISI -- American Iron and Steel Institute: the steel grade designation system.}
 {AIT -- Auto-ignition temperature.}
-{ASRT -- Advanced silicon refinement technology (historical study reference).}
-{BEI -- Biomass energy intake, or the biological exposure index (context-dependent).}
+{ASRT -- Part of the grade name of the ASRT 5A zeolite sorbent studied for carbon dioxide removal in spacecraft cabins; not expanded in the cited source.}
 {CIAAW -- Commission on Isotopic Abundances and Atomic Weights (IUPAC).}
 {DALY -- Disability-adjusted life year: the health-impact metric.}
 {DME -- Dimethyl ether: the alternative fuel and propellant.}
-{EP -- Extreme pressure (lubricant additive class), or the edit point (context-dependent).}
+{EP -- European patent (as in EP 0064380 B1).}
 {EPS -- Expanded polystyrene: the insulation board material.}
 {HHV -- Higher heating value: the combustion energy including the latent heat of water condensation.}
-{IE -- Inherently safer design, or id est (context-dependent).}
+{IE -- International efficiency class of a line-operated alternating-current motor (IE1 to IE5, IEC 60034-30-1).}
 {IIB -- IEC gas group IIB (ethylene class) for explosion-protected equipment.}
 {ISBN -- International Standard Book Number.}
 {IUPAC -- International Union of Pure and Applied Chemistry.}
@@ -773,13 +768,13 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {NTRS -- NASA Technology Roadmap Series.}
 {P&I -- piping and instrumentation (as in P&I diagram, synonymous with P&ID).}
 {PD -- Positive displacement (pump or meter class), or the probability of detection.}
-{PF -- Power factor, or the polymeric foam (context-dependent).}
+{PF -- Power factor.}
 {PLOS -- Public Library of Science (journal publisher).}
 {PPF -- Photosynthetic photon flux: the photon delivery rate in micromoles per second.}
 {REL -- Recommended exposure limit (NIOSH occupational exposure).}
-{SRD -- Safety requirements document, or the standard reference diet (context-dependent).}
+{SRD -- Standard Reference Database (NIST), as in the NIST Chemistry WebBook, SRD 69.}
 {STEL -- Short-term exposure limit: the 15-minute occupational exposure ceiling.}
-{TC -- Thermocouple, or the thermosyphon circuit (context-dependent).}
+{TC -- Tray cable (NEC Article 336), as in cable types TC and TC-ER.}
 {TLV -- Threshold limit value (ACGIH occupational exposure).}
 {TWA -- Time-weighted average: the 8-hour occupational exposure average.}
 {USC -- United States Code (federal law).}
@@ -787,30 +782,20 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {WMO -- World Meteorological Organization.}
 {GHSV -- Gas hourly space velocity: volume of gas per volume of catalyst per hour.}
 {GSHP -- Ground-source heat pump.}
-{LOC -- Level of concern, or the loss of containment (context-dependent).}
-{PM -- Preventive maintenance, or particulate matter (context-dependent).}
-{VE -- Value engineering, or the verification event.}
+{LOC -- Limiting oxygen concentration: the oxygen fraction below which a fuel mixture cannot burn (NFPA 69).}
+{PM -- Permanent magnet (as in a permanent-magnet motor).}
+{VE -- Voltage efficiency of an electrochemical cell or stack.}
 {AOX -- Adsorbable organic halogen: the halogenated-organic discharge metric.}
-{APART -- Separate, not adjacent (layout note shorthand).}
-{TAR -- The target acceptance range.}
 {CCIM -- Cold crucible induction melting.}
 {VAR -- Vacuum arc remelting.}
 {VIM -- Vacuum induction melting.}
-{CONC -- Concentrate or concentrated (stream note shorthand).}
-{ECF -- Electrochemical fluoride cell, or elemental chlorine-free (pulp bleaching; context-dependent).}
 {SKU -- Stock keeping unit.}
-{ALIGN -- The lithography alignment tool (LITHO_ALIGN).}
-{DEV -- The lithography developer tool (LITHO_DEV).}
-{ATOM -- The gas atomizer (GAS_ATOMIZER).}
 {HPDC -- High-pressure die casting.}
 {RCOO -- Carboxylate anion (R-COO-).}
 {RCOOH -- Carboxylic acid (R-COOH).}
-{DERA -- Defense Threat Reduction Agency, or a derated value (context-dependent).}
-{KMML -- Korean molybdenum melting limit (historical study reference).}
 {MDPI -- Multidisciplinary Digital Publishing Institute (journal publisher).}
 {ZNBR -- Zinc-bromide (the ZNBR2 flow battery electrolyte).}
 {HRT -- Hydraulic residence time.}
-{BIO -- Biological (the biofilter or biological treatment class).}
 {HL -- Heat-ladder edge prefix (HL-Q1-A through HL-Q4-REJ).}
 {EPR -- Ethylene propylene rubber: the insulation compound for flexible and medium-voltage cable.}
 {PCD -- Pitch circle diameter: the bolt-circle dimension of a flange or terminal plate.}
@@ -819,21 +804,9 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {PLTC -- Power-limited tray cable: the instrumentation and control cable class.}
 {CAPEX -- Capital expenditure.}
 {EBM -- Electron beam melting (the metal additive-process class).}
-{PK -- The peak (maximum instantaneous) value of a rate or duty.}
-{BN -- Building block number (the construction block series identifier).}
-{NH -- Nutrient hose (the farm irrigation line class), or the ammonia nitrogen species.}
-{COND -- Condenser or condensate (context-dependent stream or equipment shorthand).}
-{EPR -- Ethylene propylene rubber: the insulation compound for flexible and medium-voltage cable.}
-{PCD -- Pitch circle diameter: the bolt-circle dimension of a flange or terminal plate.}
-{XLPE -- Cross-linked polyethylene: the insulation compound for power cable.}
-{THHN -- Thermoplastic high-heat nylon-coated: the building-wire insulation designation.}
-{PLTC -- Power-limited tray cable: the instrumentation and control cable class.}
-{CAPEX -- Capital expenditure.}
-{EBM -- Electron beam melting (the metal additive-process class).}
-{PK -- The peak (maximum instantaneous) value of a rate or duty.}
-{BN -- Building block number (the construction block series identifier).}
-{NH -- Nutrient hose (the farm irrigation line class), or the ammonia nitrogen species.}
-{COND -- Condenser or condensate (context-dependent stream or equipment shorthand).}
+{PK -- Polishing cells PK-1 to PK-9 taken as a group (section "Cells").}
+{BN -- The outermost terrace planting band; bands are numbered B1 at the plate face outward to BN.}
+{COND -- Condenser; used for MEOH_COND where a page names the methanol train units by their last word.}
 {LH -- Light hazard: the NFPA 13 occupant-hazard classification for areas with low combustible loading.}
 {LEO -- Low Earth orbit: the 400 km, 51.6 degree orbital regime of the ISS and station-class platforms.}
 {HEICT -- Heikt et al., the perchlorate-discovery study for the Phoenix landing site (NASA_MARS_PERCHLORATE).}
@@ -842,7 +815,6 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {PSV -- Pressure safety valve. Relief device; set pressure ≤ MAWP on protected vessels (AQS-ASM-001 study tables).}
 
 {UL -- Underwriters Laboratories. Listing theme on inverters and electrical equipment (e.g. Sol-Ark UL 1741 SB).}
-
 
 ## Membrane and support chemistry (cross-refs)
 
@@ -1255,9 +1227,6 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {OCPD -- Overcurrent protective device: a breaker or fuse that opens a circuit on overload or short circuit (NEC Article 240).}
 
 {NMP -- N-methyl-2-pyrrolidone, a polar solvent used in photoresist stripping}
-
-
-
 
 {AGPL -- GNU Affero General Public License, a copyleft software licence whose terms also cover use over a network}
 
