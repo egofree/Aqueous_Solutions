@@ -53,7 +53,9 @@ STREAMS = (('IA-SI-IMPORT', 'NORTH_DOCK', 'METAL_STORE', 'imported polysilicon f
            ('IA-LITHO-WAFER-B', 'LITHO_ALIGN', 'LITHO_DEV', 'exposed wafers to develop', 'S', {'Si': 1.0}, 'wafer_kg_d'),
            ('IA-LITHO-WAFER-RET', 'LITHO_DEV', 'WAFER_FAB', 'patterned wafers back to the fab tool row', 'S', {'Si': 1.0}, 'wafer_kg_d'),
            ('IA-FAB-PRODUCT', 'WAFER_FAB', 'NORTH_DOCK', 'finished wafers to the dock for dispatch', 'S', {'Si': 1.0}, 'wafer_kg_d'),
-           ('IA-FAB-KERF', 'WAFER_FAB', 'LEACH_CSTR_1', 'saw kerf, crop and pot scrap with the spent slurry', 'S', {'Si': 1.0}, 'loss_kg_d'))
+           ('IA-FAB-KERF', 'WAFER_FAB', 'LEACH_CSTR_1', 'saw kerf, crop and pot scrap with the spent slurry', 'S', {'Si': 1.0}, 'loss_kg_d'),
+           ('IA-AR-CZ', 'CRYO_ASU', 'WAFER_FAB', 'argon blanket gas for the CZ puller', 'G', {'Ar': 1.0}, 'ar_kg_d'),
+           ('IA-AR-CZ-BACK', 'WAFER_FAB', 'CRYO_ASU', 'CZ argon exhaust back to the cold-box getter', 'G', {'Ar': 1.0}, 'ar_kg_d'))
 WHY = {'si_kg_d': 'CZ charge per pull / days between pulls', 'wafer_kg_d': 'wafer starts x wafer mass',
        'loss_kg_d': 'charge less wafers: kerf, crop and pot scrap', 'ar_kg_d': 'puller argon per pull / days between pulls; closed loop through the getter'}
 

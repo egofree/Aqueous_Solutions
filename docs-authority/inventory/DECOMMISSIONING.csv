@@ -41,7 +41,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 3,FAB,LITHO_COAT,0,Si solute,-,36,no
 3,FAB,LITHO_DEV,0,Si solute,-,30,no
 3,FAB,SOLAR_PV_CELL,0,solute,-,691,no
-3,FAB,WAFER_FAB,0,N2 Si solute,-,0,no
+3,FAB,WAFER_FAB,0,Ar N2 Si solute,-,0,no
 3,FAB,WET_BENCH,0,solute,-,0,no
 3,FAB,WS_AMMONIA,0,N2,-,106,no
 3,FAB,WS_DOPE,440,solute,-,106,no
@@ -118,7 +118,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 13,CRYO,AIR_RECEIVER,0,,-,0,no
 13,CRYO,CRYO_AHU,0,N2,-,243,no
 13,CRYO,CRYO_AHU_COND_CONDENSABLE,0,solute,-,22,no
-13,CRYO,CRYO_ASU,0,CO2 N2,-,1170,no
+13,CRYO,CRYO_ASU,0,Ar CO2 N2,-,1170,no
 13,CRYO,CRYO_CO2,0,CO2,-,690,no
 13,CRYO,CRYO_DED_COOL,0,,-,86,no
 13,CRYO,CRYO_H2,0,H2,"N2 to < 25 % LFL, then < 1 % H2",5520,no

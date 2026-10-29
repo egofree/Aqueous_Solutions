@@ -150,7 +150,7 @@ Units: BLOW_MOLD, COLD_MILL, ELECTRODE_COAT, GAS_ATOMIZER, MET_AHU, MET_HX_Q4, M
 
 Units: FAB_UPW_TANK, LITHO_ALIGN, LITHO_COAT, LITHO_DEV, SOLAR_PV_CELL, WAFER_FAB, WET_BENCH, WS_AMMONIA, WS_DOPE, WS_HF_ED, WS_KOH, WS_NITRIC, WS_PEROX, WS_PHOS, WS_SLURRY, WS_SOLV.
 
-- **Normal:** 72 loops on PLC-FAB in auto; operator rounds per shift on levels and temperatures of FAB_UPW_TANK, WAFER_FAB, WET_BENCH, WS_DOPE, WS_HF_ED, WS_KOH, WS_NITRIC, WS_PEROX …; alarm response per AQS-CTL-001.
+- **Normal:** 73 loops on PLC-FAB in auto; operator rounds per shift on levels and temperatures of FAB_UPW_TANK, WAFER_FAB, WET_BENCH, WS_DOPE, WS_HF_ED, WS_KOH, WS_NITRIC, WS_PEROX …; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-15 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 17-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
 - **Emergency:** 17 trips: SIF-106 level high-high → close feed valve / stop feed pump; SIF-037 flow or level low-low → pump stop; SIF-036 flow or level low-low → pump stop; SIF-038 flow or level low-low → pump stop; SIF-039 flow or level low-low → pump stop; SIF-042 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.

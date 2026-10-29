@@ -17,7 +17,7 @@ This page indexes the isometric sheets of the plant piping and totals their mate
 
 ## 2. Summary
 
-The line list has 264 piped lines with a sheet. Together they need 4,559 m of pipe, 755 elbows of 90°, 528 flanges and 2,423 joints.
+The line list has 266 piped lines with a sheet. Together they need 4,602 m of pipe, 761 elbows of 90°, 532 flanges and 2,445 joints.
 
 A further 62 lines have no sheet yet, because the position of one of their ends is not yet fixed: S84, F_RECOVER_TO_HF_GEN, HF_GEN_TO_VDF, HF_GEN_TO_TFE, VDF_TO_POLY_F, TFE_TO_POLY_F, MO_CELL_RAFFINATE, EW9_LIQUOR_TO_MO, TI_CELL_CL2_TO_CRU, MO_CELL_ANODE_GAS_TO_CRU, IND_MELT_TO_CAST, VAC_IND_TO_VAC_CAST, IND_TO_CONT, AL_POT_CL2, MG_POT_CL2, COMB_OFFGAS, IND_TO_ATOM, IND_TO_INV, VAC_TO_INV, WAX_RECLAIM_TO_PATTERN, WAX_TO_OIL, OIL_TO_OLEFIN, MEOH_TO_OLEFIN, DIGEST_TO_POLY, CRU_TO_VDF, CRU_TO_TFE, POLISH_TO_LI, WAX_TO_GREASE_CA, WAX_TO_GREASE_LI, HL-Q4-REJ, IA-DC-EVAP, IA-DC-SPRAY, IA-GW-MAKEUP, IA-HF-SRC, IA-ELY-H2O, IA-ELY-H2, IA-ELY-O2, IA-O2-PROD, IA-O2-SHIP, IA-MEOH-PROD, IA-MEOH-SHIP, IA-C5-POLY, IA-AIR-RX-OUT, POLYF_TO_FILM, IA-H2SO4-MU, IA-HF-PROD, MEOH_TO_VDF, MEOH_TO_TFE, VDF_HCL_TO_CRU, TFE_HCL_TO_CRU, POLYF_RECLAIM, FLUORO_TO_MFG, IA-CL2-SHIP, IA-MGCL2-KROLL, IA-MGCL2-MU, IA-CL2-MG-TI, IA-CACL2-MU, IA-CA-CL2-SHIP, IA-KROLL-CO, IA-MO-VENT, IA-CR-VENT, IA-BURNOUT-VENT.
 
@@ -38,7 +38,7 @@ Table 4.1. Quantities by class and size
 | F1 | FRP vinyl ester | 20 | 1 | 30.4 | 3 | 2 | 12 |
 | F1 | FRP vinyl ester | 200 | 1 | 7.1 | 3 | 2 | 8 |
 | F1 | FRP vinyl ester | 250 | 3 | 9.5 | 7 | 6 | 20 |
-| M1 | 316L ASTM A312 | 15 | 54 | 1078.4 | 157 | 108 | 527 |
+| M1 | 316L ASTM A312 | 15 | 56 | 1121.7 | 163 | 112 | 549 |
 | M1 | 316L ASTM A312 | 20 | 2 | 39.2 | 6 | 4 | 19 |
 | M1 | 316L ASTM A312 | 25 | 2 | 42.2 | 6 | 4 | 21 |
 | M1 | 316L ASTM A312 | 50 | 1 | 17.1 | 3 | 2 | 9 |
@@ -330,3 +330,5 @@ Table 5.1. Sheet index
 | IA-VS-OFF | 15 | F1 | EVAP_ACID_VS | ALK_SCRUBBER | 15.01 | 3 | [svg](iso/IA-VS-OFF.svg) |
 | IA-H2P-H2O | 15 | P5 | H2_DRYER | VCD_TRAIN | 24.74 | 3 | [svg](iso/IA-H2P-H2O.svg) |
 | IA-SOLV-MU | 15 | M1 | NORTH_DOCK | WS_SOLV | 14.62 | 3 | [svg](iso/IA-SOLV-MU.svg) |
+| IA-AR-CZ | 15 | M1 | CRYO_ASU | WAFER_FAB | 20.72 | 3 | [svg](iso/IA-AR-CZ.svg) |
+| IA-AR-CZ-BACK | 15 | M1 | WAFER_FAB | CRYO_ASU | 22.52 | 3 | [svg](iso/IA-AR-CZ-BACK.svg) |

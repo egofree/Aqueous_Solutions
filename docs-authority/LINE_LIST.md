@@ -11,7 +11,7 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-572 edges: 326 piped, 131 solids transfers, 115 electrical. Piped edges without a length (unit position missing): 62.
+574 edges: 328 piped, 131 solids transfers, 115 electrical. Piped edges without a length (unit position missing): 62.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -589,3 +589,5 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-LITHO-WAFER-RET | LITHO_DEV | WAFER_FAB | solids | — | — | 4.0 | LITHO_DEV → WAFER_FAB, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-FAB-PRODUCT | WAFER_FAB | NORTH_DOCK | solids | — | — | 18.0 | WAFER_FAB → NORTH_DOCK, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | solids | — | — | 37.0 | WAFER_FAB → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-AR-CZ | CRYO_ASU | WAFER_FAB | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 24.4 | CRYO_ASU → WAFER_FAB, orthogonal × 1.2 (placement_study (STUDY) + GA move + GA move; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 24.4 | WAFER_FAB → CRYO_ASU, orthogonal × 1.2 (placement_report; placement_study (STUDY) + GA move + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |

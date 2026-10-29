@@ -295,6 +295,7 @@ Table 3.6. FAB off. Sector type: Process (Mass transform).
 
 | Stream | From and to | Other sector | Design rate | When the sector is off |
 |---|---|---|---|---|
+| IA-AR-CZ | CRYO_ASU to WAFER_FAB | CRYO | 0.536 kg/d | left without a sink: unreclaimed |
 | IA-BMED-01 | BMED_ACID to WS_NITRIC | DIGESTER | 1.25 kg/d | left without a sink: unreclaimed |
 | IA-BMED-02 | BMED_BASE to WS_KOH | DIGESTER | 0.27 kg/d | left without a sink: unreclaimed |
 | IA-H2O2-SRC | HDR_O2 to WS_PEROX | GAS | 0.176 kg/d | left without a sink: unreclaimed |
@@ -309,6 +310,7 @@ Table 3.6. FAB off. Sector type: Process (Mass transform).
 | S09 | BMED_ACID to WET_BENCH | DIGESTER | 9.28 kg/d | left without a sink: unreclaimed |
 | STOCK_TO_FAB | METAL_STORE to WAFER_FAB | FOUNDRY | 0.226 kg/d | left without a sink: unreclaimed |
 | UPW_TO_FAB | HDR_UPW to FAB_UPW_TANK | WTR | not yet rated | left without a sink: unreclaimed |
+| IA-AR-CZ-BACK | WAFER_FAB to CRYO_ASU | CRYO | 0.536 kg/d | left without a source: consumer goes short |
 | IA-FAB-KERF | WAFER_FAB to LEACH_CSTR_1 | DIGESTER | 0.0875 kg/d | left without a source: consumer goes short |
 | IA-FAB-LOSS | WAFER_FAB to BAGHOUSE | GAS | 0.51 kg/d | left without a source: consumer goes short |
 | IA-FAB-SPENT | WAFER_FAB to LEACH_CSTR_1 | DIGESTER | 66.5 kg/d | left without a source: consumer goes short |
@@ -483,6 +485,7 @@ Table 3.12. CRYO off. Sector type: Utility / header.
 | Stream | From and to | Other sector | Design rate | When the sector is off |
 |---|---|---|---|---|
 | IA-AHU-AIR | HDR_N2 to CRYO_AHU | HAB | 79 kg/d | left without a sink: unreclaimed |
+| IA-AR-CZ-BACK | WAFER_FAB to CRYO_ASU | FAB | 0.536 kg/d | left without a sink: unreclaimed |
 | IA-BED-VAP | GROW_BED to CRYO_AHU | FARM | 67.4 kg/d | left without a sink: unreclaimed |
 | IA-ELY-H2O | ROOF_TANK to H2O_ELYZ | WTR | 83.6 kg/d | left without a sink: unreclaimed |
 | IA-MEOH-PROD | MEOH_TANK to PROD_MEOH | MEOH | 28 kg/d | left without a sink: unreclaimed |
@@ -494,6 +497,7 @@ Table 3.12. CRYO off. Sector type: Utility / header.
 | S82 | MEOH_FC to CRYO_CO2 | MEOH | 8.63 kg/d | left without a sink: unreclaimed |
 | S87 | GROW_BED to CRYO_O2 | FARM | 0.642 kg/d | left without a sink: unreclaimed |
 | IA-AIR-RX-OUT | AIR_RECEIVER to HDR_N2 | HAB | 192 kg/d | left without a source: consumer goes short |
+| IA-AR-CZ | CRYO_ASU to WAFER_FAB | FAB | 0.536 kg/d | left without a source: consumer goes short |
 | IA-HVAC-COND | CRYO_AHU to ROOF_TANK | WTR | 67.4 kg/d | left without a source: consumer goes short |
 | S02 | CRYO_O2 to HABITATION | HAB | 3.4 kg/d | left without a source: consumer goes short |
 | S03 | CRYO_N2 to WAFER_FAB | FAB | 1.5 kg/d | left without a source: consumer goes short |

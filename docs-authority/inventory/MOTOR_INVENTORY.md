@@ -140,7 +140,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| FAB | WAFER_FAB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
+| FAB | WAFER_FAB | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.5 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
 | FAB | WAFER_FAB | process vacuum pump | induction IE3 | IEC 90S / 1.1 kW | 0.75 | 480 V 3-ph | S1 | fixed speed | 1 | assumed |
 | FAB | WAFER_FAB | transfer pump IA-FAB-SPENT to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0002 | 24 V DC | S3 | BLDC driver | 1 | 66.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | FAB | WAFER_FAB | transfer pump S39 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 3.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |

@@ -3,8 +3,8 @@
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 33,
-  "edge_count": 45,
+  "node_count": 34,
+  "edge_count": 47,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -92,6 +92,77 @@
           "kWh_per_m3_RO_EDI": 0.5463508924805983
         }
       }
+    },
+    {
+      "unit_id": "CRYO_ASU",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cold_box",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Register S03 endpoint; not yet in candidate_mvs units[] | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "duty": "In 220.747 kg/d, out 220.747 kg/d, 1.660 kW. Sheet docs-authority/duties/CRYO_ASU.md.",
+        "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through",
+        "design_kPa": 17.5,
+        "relief_mm": 3.3,
+        "relief_basis": {
+          "case": "atmospheric",
+          "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
+          "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
+          "V_tk_m3": 0.0,
+          "pump_in_m3_h": 0.0,
+          "pump_out_m3_h": 0.0,
+          "out_breathing_Nm3_h": 0.0,
+          "in_breathing_Nm3_h": 0.0,
+          "vent_dP_Pa": 500,
+          "vent_bore_req_mm": 0.0,
+          "vent_DN": 25,
+          "thermal_term": "no sized volume: pump terms only",
+          "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.2 kPa (1.24 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
+        },
+        "design": {
+          "feed_N2_kg_d": 196.652277,
+          "feed_CO2_kg_d": 21.581514,
+          "x_CO2": 0.06529300748782826,
+          "CO2_mol_per_cycle": 163.4591683708248,
+          "sorbent_kg_per_bed": 108.9727789138832,
+          "beds": 3,
+          "bed_D_mm": 414.3791015239308,
+          "bed_L_mm": 1243.1373045717921,
+          "regen_kW": 1.3993012919033552,
+          "blower_kW": 0.043957774772434344,
+          "co2_comp_kW": 0.08109776820114514,
+          "co2_chill_kW": 0.03284686447916667,
+          "getter_kW": 0.1,
+          "total_kW": 1.6572036993561015,
+          "comp_stages": 4,
+          "comp_ratio_per_stage": 2.114742526881128,
+          "comp_T_out_C": 121.93064278721914,
+          "expander_backup": {
+            "cold_kW": 0.08211716119791666,
+            "T_out_C": -56.08836699924316,
+            "loop_kg_d": 219.44031618967603,
+            "shaft_kW": 0.21907433261240844,
+            "net_kW": 0.44182895075708484,
+            "COP": 0.18585735737145986,
+            "chiller_kW": 0.03284686447916667
+          },
+          "H_mm": 1243,
+          "D_mm": 414
+        }
+      },
+      "continuous_kw": {
+        "value": 1.6572,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-33 (A-M-175, AQS-DUTY-069): 13X TSA regeneration 1.40 + blower 0.044 + CO2 compressor 0.081 + condenser chiller 0.033 + Ar getter 0.10 kW; no cryogenic column (no air intake)."
+      },
+      "internals": "3 x 13X TSA beds, CO2 two-stage compressor and condenser, heated Ar getter; noble-gas inventories pass through"
     },
     {
       "unit_id": "CRYO_N2",
@@ -2404,6 +2475,64 @@
       "notes": null,
       "composition": {
         "Si": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-AR-CZ",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "argon blanket gas for the CZ puller",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.535819,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): puller argon per pull / days between pulls; closed loop through the getter = 0.5358 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Ar": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-AR-CZ-BACK",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "CZ argon exhaust back to the cold-box getter",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.535819,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): puller argon per pull / days between pulls; closed loop through the getter = 0.5358 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Ar": 1.0
       }
     }
   ],

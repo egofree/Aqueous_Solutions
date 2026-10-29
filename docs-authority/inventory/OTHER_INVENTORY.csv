@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,102,1622 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,754,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,102,1623 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,755,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 163 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -52,6 +52,7 @@ CRYO,CRYO,CRYO_ASU,electronics,variable-frequency drive,2.2 kW,IEC 61800-5-1,1,a
 CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,18,IA-ASU-N2: 2 per support (assumed)
 CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,IA-ASU-O2: 2 per support (assumed)
 CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-ASU-CO2: 2 per support (assumed)
+CRYO,CRYO,CRYO_ASU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IA-AR-CZ: 2 per support (assumed)
 CRYO,CRYO,CRYO_ASU,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_ASU,instrument,"gas detector, O2 enrichment",electrochemical O2,"alarm 23.5 vol %, trip 25 vol %, breathing height",2,AQS-SAF-006 alarm 1oo2
 CRYO,CRYO,CRYO_ASU,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -61,9 +62,11 @@ CRYO,CRYO,CRYO_ASU,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489
 CRYO,CRYO,CRYO_ASU,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",9,IA-ASU-N2: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_ASU,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",10,IA-ASU-O2: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_ASU,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",17,IA-ASU-CO2: AQS-PIP-005 span count
+CRYO,CRYO,CRYO_ASU,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",15,IA-AR-CZ: AQS-PIP-005 span count
 CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ASU-N2: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ASU-O2: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-ASU-CO2: one at each end nozzle (assumed)
+CRYO,CRYO,CRYO_ASU,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-AR-CZ: one at each end nozzle (assumed)
 CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,S04: 2 per support (assumed)
 CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,S73: 2 per support (assumed)
 CRYO,CRYO,CRYO_CO2,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,S85: 2 per support (assumed)
@@ -900,9 +903,11 @@ FAB,FAB,WAFER_FAB,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,1,pr
 FAB,FAB,WAFER_FAB,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,S39: 2 per support (assumed)
 FAB,FAB,WAFER_FAB,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,S39B: 2 per support (assumed)
 FAB,FAB,WAFER_FAB,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66,IA-FAB-SPENT: 2 per support (assumed)
+FAB,FAB,WAFER_FAB,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,IA-AR-CZ-BACK: 2 per support (assumed)
 FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S39: pumped line (assumed)
 FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S39B: pumped line (assumed)
 FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-FAB-SPENT: pumped line (assumed)
+FAB,FAB,WAFER_FAB,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-AR-CZ-BACK: pumped line (assumed)
 FAB,FAB,WAFER_FAB,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 FAB,FAB,WAFER_FAB,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FAB,FAB,WAFER_FAB,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
@@ -911,14 +916,17 @@ FAB,FAB,WAFER_FAB,instrument,temperature element,Pt100 class A,"IEC 60751, 316L 
 FAB,FAB,WAFER_FAB,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 FAB,FAB,WAFER_FAB,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,process vacuum pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 FAB,FAB,WAFER_FAB,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",17,S39B: AQS-PIP-005 span count
+FAB,FAB,WAFER_FAB,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",17,IA-AR-CZ-BACK: AQS-PIP-005 span count
 FAB,FAB,WAFER_FAB,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",21,S39: AQS-PIP-005 span count
 FAB,FAB,WAFER_FAB,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",33,IA-FAB-SPENT: AQS-PIP-005 span count
 FAB,FAB,WAFER_FAB,valve,check valve,DN50,"PP-H swing/ball check valve, ISO 16137, EPDM seals",1,S39: pump discharge (assumed)
 FAB,FAB,WAFER_FAB,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,S39B: pump discharge (assumed)
 FAB,FAB,WAFER_FAB,valve,check valve,DN15,"CPVC true-union swing/ball check valve, FKM seals",1,IA-FAB-SPENT: pump discharge (assumed)
+FAB,FAB,WAFER_FAB,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-AR-CZ-BACK: pump discharge (assumed)
 FAB,FAB,WAFER_FAB,valve,isolation valve,DN50,"PP-H ball valve, ISO 16135, EPDM seals",2,S39: one at each end nozzle (assumed)
 FAB,FAB,WAFER_FAB,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,S39B: one at each end nozzle (assumed)
 FAB,FAB,WAFER_FAB,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-FAB-SPENT: one at each end nozzle (assumed)
+FAB,FAB,WAFER_FAB,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-AR-CZ-BACK: one at each end nozzle (assumed)
 FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,induced-draft fan (assumed size)
 FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",2,"process vacuum pump: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
 FAB,FAB,WET_BENCH,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S10 to LEACH_CSTR_1 (assumed size)

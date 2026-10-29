@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="680" font-family="sans-serif" font-size="11"><rect x="1" y="1" width="818" height="678" fill="white" stroke="black"/>
+<polyline points="40.0,580.0 40.0,316.7 281.0,177.5 77.5,60.0 77.5,71.3" fill="none" stroke="black" stroke-width="3"/>
+<text x="46.0" y="444.4">Z +7000</text>
+<text x="166.5" y="243.1">X +7400</text>
+<text x="185.3" y="114.8">Y +6250</text>
+<text x="83.5" y="61.6">Z -300</text>
+<circle cx="40.0" cy="580.0" r="5" fill="black"/><text x="48.0" y="594.0">CRYO_ASU</text>
+<circle cx="77.5" cy="71.3" r="5" fill="none" stroke="black"/><text x="85.5" y="85.3">WAFER_FAB</text>
+<g transform="translate(600,610)"><line x1="0" y1="0" x2="26" y2="-15" stroke="black"/><text x="28" y="-15">+X</text><line x1="0" y1="0" x2="-26" y2="-15" stroke="black"/><text x="-48" y="-15">+Y</text><line x1="0" y1="0" x2="0" y2="-30" stroke="black"/><text x="4" y="-32">+Z</text></g>
+<text x="20" y="600">AQS-ISO-002  IA-AR-CZ</text>
+<text x="20" y="614">DN15  class M1  316L ASTM A312</text>
+<text x="20" y="628">CRYO_ASU -> WAFER_FAB</text>
+<text x="20" y="642">pipe 20.72 m in 7 pieces; cut 6000 962 6000 1324 6000 174 262 mm</text>
+<text x="20" y="656">3 x 90 LR elbow; 2 flanges B16.5 Cl150; 8 studs 1/2 in; 11 butt weld joints</text>
+<text x="20" y="670">Study isometric. Supports and stress X-PIP-04.</text>
+<g id="aqs-title-block"><rect x="545.0" y="604.4" width="272.0" height="72.5" fill="white" stroke="black" stroke-width="0.76"/><text x="549.5" y="616.5" font-family="sans-serif" font-size="6.8">Aqueous Solutions (owner)   AQS-ISO-002-IA-AR-CZ</text><text x="549.5" y="629.4" font-family="sans-serif" font-size="6.8">Piping isometric IA-AR-CZ</text><text x="549.5" y="642.2" font-family="sans-serif" font-size="6.8">Type: piping isometric   Rev 1719f9a9   Issued 2026-10-15</text><text x="549.5" y="655.1" font-family="sans-serif" font-size="6.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="549.5" y="667.9" font-family="sans-serif" font-size="6.8">Sheet 1 of 1   AQS-DWG-001</text></g>
+</svg>

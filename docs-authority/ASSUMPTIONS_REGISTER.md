@@ -1144,6 +1144,8 @@ Table 2.1. Graph study and assumed values
 | A-G-e3c54e | 0.138904 | kg/d | graph IA-LITHO-WAFER-RET rate | X-MFG-40 TF (A-M-417): wafer starts x wafer mass = 0.1389 kg/d (fab_silicon.py). |  | X-BAS-02 |
 | A-G-fa6a8d | 0.138904 | kg/d | graph IA-FAB-PRODUCT rate | X-MFG-40 TF (A-M-417): wafer starts x wafer mass = 0.1389 kg/d (fab_silicon.py). |  | X-BAS-02 |
 | A-G-79c718 | 0.087458 | kg/d | graph IA-FAB-KERF rate | X-MFG-40 TF (A-M-417): charge less wafers: kerf, crop and pot scrap = 0.0875 kg/d (fab_silicon.py). |  | X-BAS-02 |
+| A-G-869f4c | 0.535819 | kg/d | graph IA-AR-CZ rate | X-MFG-40 TF (A-M-417): puller argon per pull / days between pulls; closed loop through the getter = 0.5358 kg/d (fab_silicon.py). |  | X-BAS-02 |
+| A-G-d844eb | 0.535819 | kg/d | graph IA-AR-CZ-BACK rate | X-MFG-40 TF (A-M-417): puller argon per pull / days between pulls; closed loop through the getter = 0.5358 kg/d (fab_silicon.py). |  | X-BAS-02 |
 
 ## 3. Model parameters
 

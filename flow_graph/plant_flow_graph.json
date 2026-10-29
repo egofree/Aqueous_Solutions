@@ -23514,6 +23514,64 @@
       "composition": {
         "Si": 1.0
       }
+    },
+    {
+      "stream_id": "IA-AR-CZ",
+      "from_unit_id": "CRYO_ASU",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "argon blanket gas for the CZ puller",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.535819,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): puller argon per pull / days between pulls; closed loop through the getter = 0.5358 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Ar": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-AR-CZ-BACK",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "CRYO_ASU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "CZ argon exhaust back to the cold-box getter",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.535819,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF (A-M-417): puller argon per pull / days between pulls; closed loop through the getter = 0.5358 kg/d (fab_silicon.py)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "CRYO",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Ar": 1.0
+      }
     }
   ],
   "view_presets": [

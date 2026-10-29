@@ -5,6 +5,7 @@ digraph G {
   subgraph "cluster_CRYO" {
     label="CRYO";
     style=rounded; color="#94a3b8";
+    "CRYO_ASU" [fillcolor="#ffffff", label="CRYO_ASU"];
     "CRYO_N2" [fillcolor="#ffffff", label="CRYO_N2"];
   }
   subgraph "cluster_DIGESTER" {
@@ -124,4 +125,6 @@ digraph G {
   "LITHO_DEV" -> "WAFER_FAB" [label="IA-LITHO-WAFER-RET\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WAFER_FAB" -> "NORTH_DOCK" [label="IA-FAB-PRODUCT\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WAFER_FAB" -> "LEACH_CSTR_1" [label="IA-FAB-KERF\\n0.087458 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CRYO_ASU" -> "WAFER_FAB" [label="IA-AR-CZ\\n0.535819 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "CRYO_ASU" [label="IA-AR-CZ-BACK\\n0.535819 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

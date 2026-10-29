@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="914" font-family="sans-serif">
-<rect x="4" y="4" width="1492" height="906" fill="white" stroke="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="960" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="952" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit CRYO_ASU · cold_box · sector CRYO · present</text>
 <text x="24" y="54" font-size="10.5">design 17.5 kPa g · 1.6572 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 9 in + 3 out · valves 6 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 16</text>
+<text x="24" y="72" font-size="10.5">Edges 10 in + 4 out · valves 8 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 18</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -24,7 +24,7 @@
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">TE-01</text>
 <text x="220" y="170" font-size="7">-200 to 50 C</text>
 <text x="220" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
-<rect x="590" y="210" width="320" height="444" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
+<rect x="590" y="210" width="320" height="490" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">CRYO_ASU</text>
 <text x="750.0" y="252" font-size="9.5" text-anchor="middle">cold_box · CRYO sector</text>
 <line x1="430" y1="240" x2="577" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
@@ -33,86 +33,100 @@
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">IA-AIR-IN</text>
 <text x="24" y="253" font-size="10" text-anchor="start">0.0 kg/d · DN50 P5</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N11</text>
-<line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
 <polygon points="586,286 577,282 577,290" fill="#111"/>
-<text x="24" y="267" font-size="9" fill="#666" text-anchor="start">CRYO_CO2</text>
-<text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">IA-CO2-RET</text>
-<text x="24" y="299" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
-<text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N15</text>
-<line x1="430" y1="332" x2="577" y2="332" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
+<text x="24" y="267" font-size="9" fill="#666" text-anchor="start">WAFER_FAB</text>
+<text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">IA-AR-CZ-BACK</text>
+<text x="24" y="299" font-size="10" text-anchor="start">0.5 kg/d · DN15 M1</text>
+<text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N18</text>
+<line x1="430" y1="332" x2="577" y2="332" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,332 577,328 577,336" fill="#111"/>
-<text x="24" y="313" font-size="9" fill="#666" text-anchor="start">H2_DRYER</text>
-<text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">IA-H2-AIR</text>
-<text x="24" y="345" font-size="10" text-anchor="start">0.0 kg/d · DN15 M1</text>
-<text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
-<line x1="430" y1="378" x2="577" y2="378" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
+<text x="24" y="313" font-size="9" fill="#666" text-anchor="start">CRYO_CO2</text>
+<text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">IA-CO2-RET</text>
+<text x="24" y="345" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
+<text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N15</text>
+<line x1="430" y1="378" x2="577" y2="378" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
 <polygon points="586,378 577,374 577,382" fill="#111"/>
-<text x="24" y="359" font-size="9" fill="#666" text-anchor="start">LEACH_CSTR_1</text>
-<text x="24" y="373" font-size="11" font-weight="600" text-anchor="start">IA-LEACH-ASU</text>
-<text x="24" y="391" font-size="10" text-anchor="start">0.0 kg/d · DN50 P2</text>
-<text x="598" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="start">N16</text>
+<text x="24" y="359" font-size="9" fill="#666" text-anchor="start">H2_DRYER</text>
+<text x="24" y="373" font-size="11" font-weight="600" text-anchor="start">IA-H2-AIR</text>
+<text x="24" y="391" font-size="10" text-anchor="start">0.0 kg/d · DN15 M1</text>
+<text x="598" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
 <line x1="430" y1="424" x2="577" y2="424" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,424 577,420 577,428" fill="#111"/>
-<text x="24" y="405" font-size="9" fill="#666" text-anchor="start">HDR_N2</text>
-<text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">IA-N2-RET</text>
-<text x="24" y="437" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
-<text x="598" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="start">N13</text>
+<text x="24" y="405" font-size="9" fill="#666" text-anchor="start">LEACH_CSTR_1</text>
+<text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">IA-LEACH-ASU</text>
+<text x="24" y="437" font-size="10" text-anchor="start">0.0 kg/d · DN50 P2</text>
+<text x="598" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="start">N16</text>
 <line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,470 577,466 577,474" fill="#111"/>
-<text x="24" y="451" font-size="9" fill="#666" text-anchor="start">NOX_SCRUB</text>
-<text x="24" y="465" font-size="11" font-weight="600" text-anchor="start">IA-NOX-CO2</text>
-<text x="24" y="483" font-size="10" text-anchor="start">21.6 kg/d · DN50 P2</text>
-<text x="598" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
+<text x="24" y="451" font-size="9" fill="#666" text-anchor="start">HDR_N2</text>
+<text x="24" y="465" font-size="11" font-weight="600" text-anchor="start">IA-N2-RET</text>
+<text x="24" y="483" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
+<text x="598" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="start">N13</text>
 <line x1="430" y1="516" x2="577" y2="516" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,516 577,512 577,520" fill="#111"/>
 <text x="24" y="497" font-size="9" fill="#666" text-anchor="start">NOX_SCRUB</text>
-<text x="24" y="511" font-size="11" font-weight="600" text-anchor="start">IA-NOX-N2</text>
-<text x="24" y="529" font-size="10" text-anchor="start">196.7 kg/d · DN50 P2</text>
-<text x="598" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
+<text x="24" y="511" font-size="11" font-weight="600" text-anchor="start">IA-NOX-CO2</text>
+<text x="24" y="529" font-size="10" text-anchor="start">21.6 kg/d · DN50 P2</text>
+<text x="598" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
 <line x1="430" y1="562" x2="577" y2="562" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,562 577,558 577,566" fill="#111"/>
-<text x="24" y="543" font-size="9" fill="#666" text-anchor="start">HDR_O2</text>
-<text x="24" y="557" font-size="11" font-weight="600" text-anchor="start">IA-O2-RET</text>
-<text x="24" y="575" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
-<text x="598" y="566" font-size="8" font-style="italic" fill="#555" text-anchor="start">N14</text>
-<line x1="430" y1="608" x2="577" y2="608" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
+<text x="24" y="543" font-size="9" fill="#666" text-anchor="start">NOX_SCRUB</text>
+<text x="24" y="557" font-size="11" font-weight="600" text-anchor="start">IA-NOX-N2</text>
+<text x="24" y="575" font-size="10" text-anchor="start">196.7 kg/d · DN50 P2</text>
+<text x="598" y="566" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
+<line x1="430" y1="608" x2="577" y2="608" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,608 577,604 577,612" fill="#111"/>
-<text x="24" y="589" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
-<text x="24" y="603" font-size="11" font-weight="600" text-anchor="start">SF-CRYO_ASU</text>
-<text x="24" y="621" font-size="10" text-anchor="start">1.7 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="589" font-size="9" fill="#666" text-anchor="start">HDR_O2</text>
+<text x="24" y="603" font-size="11" font-weight="600" text-anchor="start">IA-O2-RET</text>
+<text x="24" y="621" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
+<text x="598" y="612" font-size="8" font-style="italic" fill="#555" text-anchor="start">N14</text>
+<line x1="430" y1="654" x2="577" y2="654" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
+<polygon points="586,654 577,650 577,658" fill="#111"/>
+<text x="24" y="635" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
+<text x="24" y="649" font-size="11" font-weight="600" text-anchor="start">SF-CRYO_ASU</text>
+<text x="24" y="667" font-size="10" text-anchor="start">1.7 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
-<text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">CRYO_CO2</text>
-<text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-ASU-CO2</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">21.6 kg/d · DN15 M1</text>
-<text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N7</text>
+<text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">WAFER_FAB</text>
+<text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-AR-CZ</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">0.5 kg/d · DN15 M1</text>
+<text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N17</text>
 <path d="M 1023.6,234 L 1031.6,240 L 1023.6,246 Z M 1041.6,234 L 1033.6,240 L 1041.6,246 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="229.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
-<text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">CRYO_N2</text>
-<text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">IA-ASU-N2</text>
-<text x="1476" y="299" font-size="10" text-anchor="end">196.6 kg/d · DN15 M1</text>
-<text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
+<text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">CRYO_CO2</text>
+<text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">IA-ASU-CO2</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">21.6 kg/d · DN15 M1</text>
+<text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N7</text>
 <path d="M 1023.6,280 L 1031.6,286 L 1023.6,292 Z M 1041.6,280 L 1033.6,286 L 1041.6,292 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="275.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
-<text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">CRYO_O2</text>
-<text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-ASU-O2</text>
-<text x="1476" y="345" font-size="10" text-anchor="end">0.1 kg/d · DN15 M1</text>
-<text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
+<text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">CRYO_N2</text>
+<text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-ASU-N2</text>
+<text x="1476" y="345" font-size="10" text-anchor="end">196.6 kg/d · DN15 M1</text>
+<text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
 <path d="M 1023.6,326 L 1031.6,332 L 1023.6,338 Z M 1041.6,326 L 1033.6,332 L 1041.6,338 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="321.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<text x="24" y="704" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="714" font-size="9">Every incident graph edge is drawn: 9 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
-<text x="24" y="729" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/CRYO_ASU.csv.</text>
-<text x="24" y="744" font-size="9">Nozzles with no matching graph edge (service text): N3 argon return; N4 helium return; N8 argon; N9 drain; N10 vent</text>
-<text x="24" y="759" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
-<g id="aqs-title-block"><rect x="1116" y="796" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
-<text x="1124" y="813" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRYO_ASU</text>
-<text x="1124" y="830" font-size="9">P&amp;ID CRYO_ASU (cold_box, CRYO sector)</text>
-<text x="1124" y="847" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 9233a428   Issued 2026-10-19</text>
-<text x="1124" y="864" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="881" font-size="9">Graph SHA-256 71bd267d2e8a5147   Sheet 1 of 1   AQS-DWG-001</text>
+<line x1="914" y1="378" x2="1061" y2="378" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
+<polygon points="1070,378 1061,374 1061,382" fill="#111"/>
+<text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">CRYO_O2</text>
+<text x="1476" y="373" font-size="11" font-weight="600" text-anchor="end">IA-ASU-O2</text>
+<text x="1476" y="391" font-size="10" text-anchor="end">0.1 kg/d · DN15 M1</text>
+<text x="902" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
+<path d="M 1023.6,372 L 1031.6,378 L 1023.6,384 Z M 1041.6,372 L 1033.6,378 L 1041.6,384 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="367.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
+<text x="24" y="750" font-size="10" font-weight="600">Notes</text>
+<text x="24" y="760" font-size="9">Every incident graph edge is drawn: 10 in, 4 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="775" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/CRYO_ASU.csv.</text>
+<text x="24" y="790" font-size="9">Nozzles with no matching graph edge (service text): N3 argon return; N4 helium return; N8 argon; N9 drain; N10 vent</text>
+<text x="24" y="805" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="842" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="859" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRYO_ASU</text>
+<text x="1124" y="876" font-size="9">P&amp;ID CRYO_ASU (cold_box, CRYO sector)</text>
+<text x="1124" y="893" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 979e23eb   Issued 2026-10-19</text>
+<text x="1124" y="910" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="927" font-size="9">Graph SHA-256 b4b60a03b5946476   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

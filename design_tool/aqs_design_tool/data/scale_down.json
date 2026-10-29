@@ -2250,6 +2250,15 @@
   "FAB": {
    "no_sink": [
     {
+     "stream_id": "IA-AR-CZ",
+     "from": "CRYO_ASU",
+     "to": "WAFER_FAB",
+     "other_sector": "CRYO",
+     "rate": 0.535819,
+     "unit": "kg/d",
+     "carries": "argon blanket gas for the CZ puller"
+    },
+    {
      "stream_id": "IA-BMED-01",
      "from": "BMED_ACID",
      "to": "WS_NITRIC",
@@ -2377,6 +2386,15 @@
     }
    ],
    "no_source": [
+    {
+     "stream_id": "IA-AR-CZ-BACK",
+     "from": "WAFER_FAB",
+     "to": "CRYO_ASU",
+     "other_sector": "CRYO",
+     "rate": 0.535819,
+     "unit": "kg/d",
+     "carries": "CZ argon exhaust back to the cold-box getter"
+    },
     {
      "stream_id": "IA-FAB-KERF",
      "from": "WAFER_FAB",
@@ -4136,6 +4154,15 @@
      "carries": "outdoor air moisture"
     },
     {
+     "stream_id": "IA-AR-CZ-BACK",
+     "from": "WAFER_FAB",
+     "to": "CRYO_ASU",
+     "other_sector": "FAB",
+     "rate": 0.535819,
+     "unit": "kg/d",
+     "carries": "CZ argon exhaust back to the cold-box getter"
+    },
+    {
      "stream_id": "IA-BED-VAP",
      "from": "GROW_BED",
      "to": "CRYO_AHU",
@@ -4235,6 +4262,15 @@
      "rate": 191.989014,
      "unit": "kg/d",
      "carries": "plant air from the receiver bank"
+    },
+    {
+     "stream_id": "IA-AR-CZ",
+     "from": "CRYO_ASU",
+     "to": "WAFER_FAB",
+     "other_sector": "FAB",
+     "rate": 0.535819,
+     "unit": "kg/d",
+     "carries": "argon blanket gas for the CZ puller"
     },
     {
      "stream_id": "IA-HVAC-COND",

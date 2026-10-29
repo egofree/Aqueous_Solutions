@@ -211,6 +211,7 @@ ZNBR2_BR2_REGEN-TE-01,ZNBR2_BR2_REGEN,ELEC,temperature element,"IEC 60751, 316L 
 WAFER_FAB-FT-01,WAFER_FAB,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),WAFER_FABFT-01,PLC-FAB,S39 normal 0.14 L/h
 WAFER_FAB-FT-02,WAFER_FAB,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),WAFER_FABFT-02,PLC-FAB,S39B normal 0.00 L/h
 WAFER_FAB-FT-03,WAFER_FAB,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),WAFER_FABFT-03,PLC-FAB,IA-FAB-SPENT normal 2.77 L/h
+WAFER_FAB-FT-04,WAFER_FAB,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),WAFER_FABFT-04,PLC-FAB,IA-AR-CZ-BACK normal 0.02 L/h
 WAFER_FAB-LSH-01,WAFER_FAB,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WAFER_FABLSH-01,PLC-FAB,alarm at 90 %
 WAFER_FAB-LT-01,WAFER_FAB,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WAFER_FABLT-01,PLC-FAB,A-M-182 liquid height
 WAFER_FAB-PT-01,WAFER_FAB,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WAFER_FABPT-01,PLC-FAB,no design pressure on the graph

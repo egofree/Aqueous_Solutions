@@ -18,3 +18,5 @@ N16,solids,Class 150,wafers to resist coat,outlet,600
 N17,solids,Class 150,patterned wafers back to the fab tool row,inlet,160
 N18,solids,Class 150,finished wafers to the dock for dispatch,outlet,600
 N19,solids,Class 150,"saw kerf, crop and pot scrap with the spent slurry",outlet,600
+N20,DN15,Class 150,argon blanket gas for the CZ puller,inlet,160
+N21,DN15,Class 150,CZ argon exhaust back to the cold-box getter,outlet,600

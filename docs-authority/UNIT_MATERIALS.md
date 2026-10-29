@@ -17,7 +17,7 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 192 units, 137 have an issued material for each wetted stream, 55 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 326 wetted stream ends, and each resolves to an issued service family.
+Of the 192 units, 137 have an issued material for each wetted stream, 55 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 328 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
@@ -26,7 +26,7 @@ The following service families of AQS-STD-002 are used, with the number of strea
 
 - Acid or brine, at or below 60 C: 54 stream ends.
 - Hot leach liquor: 44 stream ends.
-- Dry gas, H2/O2/N2/CO2: 38 stream ends.
+- Dry gas, H2/O2/N2/CO2: 40 stream ends.
 - Process vent gas: 32 stream ends.
 - Q3/Q4 water loop: 20 stream ends.
 - Hydrocarbon product, fuel or wax cut: 19 stream ends.
@@ -283,6 +283,8 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-ASU-CO2 | CRYO_ASU | CRYO_CO2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | IA-H2-AIR | H2_DRYER | CRYO_ASU | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
+| IA-AR-CZ | CRYO_ASU | WAFER_FAB | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
+| IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 
 ### CRYO_CO2
 
@@ -1470,6 +1472,8 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | S39B | WAFER_FAB | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-UPW-USE | HDR_UPW | WAFER_FAB | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 | IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
+| IA-AR-CZ | CRYO_ASU | WAFER_FAB | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
+| IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 
 ### WAX_PATTERN
 

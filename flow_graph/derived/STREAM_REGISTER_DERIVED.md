@@ -582,3 +582,5 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-LITHO-WAFER-RET | LITHO_DEV | WAFER_FAB | S | mass | present | patterned wafers back to the fab tool row | 0.138904 kg/d | — |
 | IA-FAB-PRODUCT | WAFER_FAB | NORTH_DOCK | S | mass | present | finished wafers to the dock for dispatch | 0.138904 kg/d | — |
 | IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | S | mass | present | saw kerf, crop and pot scrap with the spent slurry | 0.087458 kg/d | — |
+| IA-AR-CZ | CRYO_ASU | WAFER_FAB | G | mass | present | argon blanket gas for the CZ puller | 0.535819 kg/d | — |
+| IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | G | mass | present | CZ argon exhaust back to the cold-box getter | 0.535819 kg/d | — |

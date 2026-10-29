@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: Z
+Revision: AA
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -32,6 +32,7 @@ Date: 2026-10-29
 | X | Batch 21: four hand-drawn process sheets retired and replaced by graph-driven sector views | 2026-10-29 |
 | Y | Batch 22: the wire die schedule, the cold-mill gauge and width and the atomiser batch derived from the graph throughputs (owner decision 2026-10-29, A-M-416); the owner question on the forming tool design closed | 2026-10-29 |
 | Z | Batch 23: silicon feed to WAFER_FAB sized from the wafer need, imported through the dock (owner decision 2026-10-29, A-M-417); the owner question on the silicon charge closed | 2026-10-29 |
+| AA | Batch 24: argon blanket gas for the CZ puller from the cold box in a closed loop (owner decision 2026-10-29, A-M-417); nitrogen refused for the melt; the owner question on the blanket gas closed | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -176,6 +177,7 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/exporters/matplotlib/` metal_forming_pfd, mfg_shop_pfd, wafer_fab_pfd, fab_reagent_forks_pfd | Removed after checking what each drew and who cited it; replaced by the sector views `flow_graph/views/pfd-mfg.svg` and `pfd-fab.svg` (owner decision 2026-10-29). |
 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | Rev F. Section 7 sets the die schedule, the cold-mill gauge and width and the atomiser batch from the graph throughputs (A-M-416); `docs-authority/_mfg_tools.py` designs the tools. |
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | Rev E. Section 4.1 gives the silicon charge from the wafer need (`flow_graph/param/fab_silicon.py`, A-M-417); STOCK_TO_FAB now carries the feed. |
+| `docs-authority/WAFER_FAB_EQUIPMENT.md` | Rev F. Section 4.1 adds the argon loop IA-AR-CZ / IA-AR-CZ-BACK with the cold box, sized from the puller (A-M-417). |
 
 ## 3. In progress
 
@@ -352,7 +354,6 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/duties/` | Duty sheets remain for units that are no longer on the graph, mostly farm, crop and animal units (for example ABE, CHICKENS, CROP_TOMATO, RECT_EW). `_duty_basis.py` skips them, so they keep Graph Rev BH and stale values. Should they be deleted, or moved to an archive? |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` (AQS-REV-H2-001) | The graph sends cathode hydrogen from EW_1 to EW_3 and EW_5 to EW_9, while AQS-STD-002 section 9 names EW_1, EW_2, EW_4 and EW_9. Which is correct? |
 | `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063) | The graph carries the sanitation train as the one node BLACK_DIGEST: Rev AC retired BLACK_DEWATER, BLACK_PASTEUR and BLACK_ALK_HOLD, although their equipment is still built. The electrical load of the train from its sizing is about 0.21 kW, while stream SF-BLACK_DIGEST feeds 0.105 kW, the digester alone. Should the barrier units return to the graph as nodes, and should the feed carry the whole train? Either change moves the bus demand, so neither was made. |
-| `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001) | Revision C left the blanket gas for the Czochralski charge as TBD between argon and nitrogen. The graph feeds the fab nitrogen (S03) only. Is nitrogen the choice, or should an argon stream be added? |
 | `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | The ionic-liquid solvent chain (fermentation, acetic acid, glyoxal, formaldehyde, methylimidazole, chlorobutane and the quaternisation) has build models in `models/mfg/` but no units on the present graph. Should it be put back on the graph with its rates, or retired with its build models? |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` (AQS-GAS-002) | Revision A had a separate caustic scrubber for the vents of the glass digest and the BMED base tank, trimming the mist to salt for the BMED salt feed. Neither that scrubber nor its header is on the graph. Do these vents need their own unit, or does another unit cover them? |
 | `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |

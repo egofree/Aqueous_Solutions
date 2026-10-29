@@ -17,7 +17,7 @@ This page records the size of unit WAFER_FAB, of class `fab` in sector FAB, from
 
 ## 2. Duty
 
-The unit takes 71.6753 kg/d by 8 streams and gives 71.6753 kg/d by 8 streams. Its continuous electrical load is 0.4069 kW, fed by stream SF-WAFER_FAB.
+The unit takes 72.2111 kg/d by 9 streams and gives 72.2111 kg/d by 9 streams. Its continuous electrical load is 0.4069 kW, fed by stream SF-WAFER_FAB.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The envelope is 600 mm x 600 mm x 4000 mm, from the placement file `flow_graph/placement_blocks.json`.
 
-The hold-up check takes 71.6753 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 71.68 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 430 mm in diameter and 640 mm high. It fits within the envelope.
+The hold-up check takes 72.2111 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 72.21 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 430 mm in diameter and 640 mm high. It fits within the envelope.
 
 ## 4. Material
 
