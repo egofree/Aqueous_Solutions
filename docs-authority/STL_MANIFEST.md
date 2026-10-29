@@ -1,101 +1,42 @@
 # STL rebuild manifest
 
 Document number: AQS-STL-001  
-Revision: A  
-Date: 2026-09-27
+Revision: B  
+Date: 2026-10-29  
+Authority: `models/openscad/detail/build_stls.sh` and `models/freecad/import_mfg.py`. The scripts are the record; this page explains them.
 
-OpenSCAD: any `openscad` on PATH (AppImage or distro package). FreeCAD: `/usr/bin/freecadcmd` (1.0).
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue: rebuild commands and the list of manufacturing STL files expected before the plant model counts as rebuilt. | 2026-09-27 |
+| B | Rewritten to the documentation style guide (AQS-DOC-002). The typed list of files is replaced by the mapping in `import_mfg.py`, and the importer now reads the folder that the build script writes. | 2026-10-29 |
 
-## Command
+## Purpose and scope
 
-```
-# This repo:
-cd models/openscad/detail && bash build_stls.sh   # when script present
-cd ../../freecad && /usr/bin/freecadcmd build_plant.py
+This page tells a builder how to rebuild the STL meshes of the manufacturing equipment and bring them into the FreeCAD plant model. It covers the tools needed, the commands, where the files are written and read, and how to tell that the rebuild is complete. It does not cover the design of the parts; each part is described in its own `.scad` source.
 
-# Local working-directory layout (not published): models/openscad/detail + models/freecad
-```
+## 1. Tools
 
-`import_mfg.py` skips a missing STL. `stamp_materials.py` runs from
-`build_plant.py` against `tables/materials.csv`.
+Any OpenSCAD on the path will do, either the AppImage or a distribution package. FreeCAD is run headless through `freecadcmd`. Installing a system package is optional, and an unattended agent should not run `sudo apt`. Record the binary used in your local build log, and do not commit workstation paths into this tree.
 
-## Expected outputs (`models/export/detail/` or `models/openscad/detail/stl/`)
+## 2. Commands
 
-Every detail `*.scad` compiles to a same-name `.stl`.
-
-Shop files that must exist before the plant tree is considered rebuilt:
-
-- mfg_hopper.stl
-- mfg_shredder.stl
-- mfg_vibratory_conveyor.stl
-- mfg_lid_coaming.stl
-- mfg_leach_cstr.stl
-- cstr3_flight.stl
-- mfg_dewater.stl
-- mfg_vibratory_split.stl
-- mfg_ew_fitout.stl
-- mfg_ew_bund.stl
-- cem_cassette.stl
-- funnel_valve.stl
-- mfg_harvest_vdf.stl
-- mfg_precip.stl
-- mfg_totes.stl
-- mfg_melt.stl
-- mfg_bmed_stack.stl
-- bmed_cell.stl
-- mfg_cru.stl
-- mfg_dryer.stl
-- mfg_induction_pyrolyzer.stl
-- induction_coil.stl
-- mfg_quench.stl
-- mfg_fractionator.stl
-- mfg_afterburner.stl
-- mfg_rinse.stl
-- mfg_burnout_rotary.stl
-- mfg_mill.stl
-- mfg_digest.stl
-- mfg_scrubber_train.stl
-- mfg_baghouse.stl
-- mfg_h2_dryer.stl
-- mfg_electrical.stl
-- znbr2_iem.stl
-- mfg_znbr2_skid.stl
-- mfg_q4_hvac.stl
-- mfg_gas_handling.stl
-- mfg_pipe_rack.stl
-- mfg_cable_tray.stl
-- mfg_fish_tank.stl
-- mfg_biofilter.stl
-- mfg_grow_bed.stl
-- mfg_farm_sump.stl
-- mfg_nutrient_dose.stl
-- mfg_wet_bench.stl
-- mfg_etch_return.stl
-- mfg_hab_water.stl
-- mfg_hab_waste.stl
-- mfg_cold_box.stl
-- mfg_life_rack.stl
-
-Pipe racks, trays, and campus envelopes also exist as Part features from
-`pipe_services.py` and `campus.py` even if those two STLs are absent.
-
-Existing compiled twins (older, still valid check files under
-`models/export/`):
-
-- `leach_cstr.stl`
-- `ew_cell.stl`
-- `assembly_wet.stl`
-
-## Operator PATH note
-
-When OpenSCAD is available on the **build host** (AppImage or package on
-`PATH`), compile STLs before the FreeCAD plant import:
+Compile the STL files first, then build the plant model:
 
 ```
-cd models/openscad/detail   # or models/openscad/detail/ in the local layout
-bash build_stls.sh
+cd models/openscad/detail && bash build_stls.sh
+cd ../../freecad && freecadcmd build_plant.py
 ```
 
-System package install remains optional; do not force `sudo apt` from an
-unattended agent. Record the binary you used in your local build log — do
-not commit workstation-absolute paths into this tree.
+`build_stls.sh` compiles every `.scad` file in `models/openscad/detail/` into a file of the same name in `models/openscad/detail/stl/`, and copies the results to `models/export/detail/`. `build_plant.py` runs `stamp_materials.py` against `tables/materials.csv`, so the model carries the material of each part.
+
+## 3. When the rebuild is complete
+
+The importer `models/freecad/import_mfg.py` holds the mapping from each manufacturing STL file to the plant units it stands for. Each file named in that mapping must exist after the build. When a file exists, the importer places the mesh and hides, without deleting, the plain box that stood in for the unit. When a file is missing, the importer skips it and the box stays, so a missing file does not stop the build but leaves the model incomplete. Some `.scad` sources, such as the bipolar membrane cell and the induction coil, are compiled for detail work and are not in the mapping.
+
+The pipe racks, cable trays and campus envelopes are also built as FreeCAD Part features by `pipe_services.py` and `campus.py`, so they appear in the model even when their STL files are absent.
+
+Older compiled meshes of the leach reactor, the electrowinning cell and the wet assembly remain in `models/export/` as reference files for checking.
+
+## 4. Where the importer reads
+
+The importer reads from `models/export/detail/`, where the build script publishes, and falls back to `models/openscad/detail/stl/` when that folder is absent. Before revision B it read from `models/detail/stl/`, a folder that nothing writes, so it skipped every mesh.

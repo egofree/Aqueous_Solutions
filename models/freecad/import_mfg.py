@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replace massing boxes with manufacturing STLs from models/openscad/detail/stl/.
+"""Replace massing boxes with manufacturing STLs from models/export/detail/ (or models/openscad/detail/stl/).
 
     bash ../detail/build_stls.sh
     /usr/bin/freecadcmd import_mfg.py
@@ -20,7 +20,9 @@ import electrical_yard
 import FreeCAD as App
 
 OUT = Path(__file__).resolve().parent
-STL = OUT.parent / "detail" / "stl"
+# build_stls.sh writes models/openscad/detail/stl and publishes to models/export/detail.
+STL = next((d for d in (OUT.parent / "export" / "detail", OUT.parent / "openscad" / "detail" / "stl") if d.is_dir()),
+           OUT.parent / "export" / "detail")
 
 HIDE = {
     "mfg_hopper.stl": ("HOPPER_SHREDDER",),

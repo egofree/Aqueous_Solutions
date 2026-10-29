@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: V
+Revision: W
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -28,6 +28,7 @@ Date: 2026-10-29
 | T | Batch 17: PARAMETRIC_MODEL rewritten through its generator `flow_graph/param/report.py` | 2026-10-29 |
 | U | Batch 18: METAL_FORMING and SOLVENT_ROUTE rewritten against the graph; owner question on the ionic-liquid chain | 2026-10-29 |
 | V | Batch 19: SCRUBBER_CHEMISTRY rewritten against the graph; VENT_CLOSURE given a generator that checks every closure on the graph; owner question on the caustic vents | 2026-10-29 |
+| W | Batch 20: MVS_PITCH_PASS and MVS_STUDY_CLOSE marked as superseded records; MATERIALS_SEC3 and STL_MANIFEST brought to the style guide; STL importer path fixed | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -165,6 +166,10 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/SOLVENT_ROUTE.md` | Rev D. Rewritten against the graph: the methanol train by stream, the ionic-liquid route as chemistry only, and the fab reagent uses; the rates of graph revision BH removed. |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` | Rev B. Rewritten against the graph: scrubbers mapped to graph units and streams, reactions and controls kept as sentences, liquor destinations and materials in numbered tables; the acid-gas and caustic headers that are not on the graph removed. |
 | `docs-authority/VENT_CLOSURE.md` | Rev D. Now written by `docs-authority/_vent_closure.py` (regen stage `doc_vent_closure`): the closure rule, each former open discharge with its end state, and a check of every closure stream, contingency route and relief sink against the graph. |
+| `docs-authority/MVS_PITCH_PASS.md` | Rev B. Identity lines, record of revisions and purpose; marked as a superseded placement record pointing to the placement seed and AQS-SITE-013. |
+| `docs-authority/MVS_STUDY_CLOSE.md` | Rev B. Identity lines, record of revisions and purpose; marked as a superseded study record pointing to the stub activation. |
+| `docs-authority/MATERIALS_SEC3.md` | Rev B. Purpose and scope added; working phrasing and the unit count removed. No selection changed. |
+| `docs-authority/STL_MANIFEST.md` | Rev B. Rewritten; the expected meshes are those mapped in `import_mfg.py`, whose read folder is now the one the build writes. |
 
 ## 3. In progress
 
@@ -191,16 +196,12 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/INSTRUMENT_LOOPS.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/LIFE_FITOUT_PLAN.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | No record of revisions; no purpose and scope section. |
-| `docs-authority/MATERIALS_SEC3.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/MATERIALS_STD.md` | No purpose and scope section; list items written as fragments; working or stock phrasing. |
 | `docs-authority/MFG_MODEL_PLAN.md` | No purpose and scope section. |
-| `docs-authority/MVS_PITCH_PASS.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; arrows used in place of sentences. |
-| `docs-authority/MVS_STUDY_CLOSE.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; arrows used in place of sentences. |
 | `docs-authority/O2_SOURCE.md` | No purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/SIGN_SCHEDULE.md` | No purpose and scope section. |
-| `docs-authority/STL_MANIFEST.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/STUDY_UNITS_STUB.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/TERRACE_LANDSCAPE.md` | No purpose and scope section; list items written as fragments. |
 | `docs-authority/TEST_PLAN.md` | No purpose and scope section; working or stock phrasing. |

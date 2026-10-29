@@ -1,13 +1,20 @@
-# Duty section 3 material selections, batch issue (AQS-STD-006)
+# Construction materials for the units without a selection
 
 Document number: AQS-STD-006
-Revision: A
-Date: 2026-10-21
+Revision: B
+Date: 2026-10-29
 Authority: unit task 09 board items ("Materials and corrosion": material per wetted stream under AQS-STD-002, checked across the AQS-ASSAY-001 Rev C bounding cases), lane X-MAT-22. Study. Not a PE stamp. Referenced from AQS-PLAN-007. Selection data of record: `flow_graph/param/materials3.py` (graph `params.sec3_material`), rendered into every duty sheet section 3 by `docs-authority/_duty_basis.py`.
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue: the 38 units whose duty section 3 read "Selection pending" each receive an individual construction-material selection - the pot cells, the metallurgy train, the melt-shop furnaces, the investment train, the forming machines, the digestor service units, the grease kettles, the heat block, the PEM electrolyser, the polymer sizing train and the GLASS-sector furnace. Sources verified before citation. | 2026-10-21 |
+| B | Purpose and scope added to the documentation style guide (AQS-DOC-002); working phrasing removed and the unit count taken out of the headings. No selection changed. | 2026-10-29 |
+
+## Purpose and scope
+
+Section 3 of each duty sheet names the construction material of the unit. When this page was issued, a group of units still read "Selection pending" there. This page gives the selection for each of them, the environment that bounds it, the allowance made for wear or corrosion, the alternative and the condition for switching to it, and the sources. It covers the pot cells, the carbochlorination cells, the Kroll train, the melt-shop furnaces, the investment-casting train, the forming machines, the digester service units, the grease kettles, the heat block, the electrolyser, the polymer sizing train and the silicon reduction furnace.
+
+The text of record for each unit is the string in `flow_graph/param/materials3.py`, which is written to the graph as `params.sec3_material` and rendered into section 3 of every duty sheet by `docs-authority/_duty_basis.py`. The rates quoted in the bounding environments of Table 4.1 are those of the date of issue and are not kept current here.
 
 ## 1. Method
 
@@ -17,7 +24,7 @@ Each selection is individual to the unit: the bounding temperature and chemistry
 
 At 650-700 °C an Fe-Cr-Ni alloy immersed in a dry neutral chloride melt loses chromium selectively (the Cr chlorides are volatile under the salt surface), while a graphite hot face is essentially inert to a dry neutral chloride melt, and the residual attack that remains is impurity-driven (hydroxide / oxide / oxygen in the salt); hence the pot family carries dry-breathing headspaces and anhydrous-feed rules, and the structural alloy sits outside the melt behind an alumina backup lining and ceramic fibre (DING2018_CL_REVIEW, DING2021_ENG, KRUIZENGA2012). This is the governing first-principle for AL_POT, MG_POT, CA_POT, CR_CELL, MO_CELL and the TI_CELL launder: **graphite wetted faces + 90 % alumina backup + steel shell below the liner**, instead of the wet-stainless families of section 12.1 that would shed Cr into the melt and the product metal.
 
-The brine lines of AQS-STD-002 section 12.2 (formerly the "pending" last row) issue with this lane as two rows: the ambient import legs (NORTH_DOCK to MG_POT and CA_POT) are PVDF-wetted handling with the dry concentrate kept anhydrous to the pot feeder (MgCl2 hygroscopicity, ULLMANN_MAGNESIUM); the molten MgCl2 salt return (TI_CELL to MG_POT, ~700 °C) is a graphite/Ni-200 wetted launder. AQS-PIP-004 regenerates its service text from `docs-authority/_line_list.py`.
+The brine lines of AQS-STD-002 section 12.2 (formerly the "pending" last row) were issued with this page as two rows: the ambient import legs (NORTH_DOCK to MG_POT and CA_POT) are PVDF-wetted handling with the dry concentrate kept anhydrous to the pot feeder (MgCl2 hygroscopicity, ULLMANN_MAGNESIUM); the molten MgCl2 salt return (TI_CELL to MG_POT, ~700 °C) is a graphite/Ni-200 wetted launder. AQS-PIP-004 regenerates its service text from `docs-authority/_line_list.py`.
 
 ## 3. Per-family rationale (grouped where one environment governs)
 
@@ -34,7 +41,11 @@ The brine lines of AQS-STD-002 section 12.2 (formerly the "pending" last row) is
 - **Polymer sizing train (PELLET, POLY_STOCK)** - 316L die plate and cutter hub with an UHMW-PE trough liner at the underwater pelletiser (wear, not corrosion, is the design limit); HDPE totes and PP powder drums at the dry store.
 - **GLASS-sector furnace (SI_REDUCE)** - graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing, dry char/silica handling. The unit's solids-only graph edges carry no wetted stream today and its process duty stays a task 02 pending item; this page issues the construction class only.
 
-## 4. Per-unit table (the 38 selections; the graph strings in `materials3.py` are the per-unit text of record)
+## 4. Selections by unit
+
+Table 4.1 gives the selection for each unit. The strings in `materials3.py` are the text of record.
+
+Table 4.1. Selections by unit
 
 | Unit | Bounding environment | Selection | Design allowance | Alternative (switch condition) | Longevity / cost basis | Sources |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -89,5 +100,5 @@ What this page does **not** do: it issues no sizing (task 02 gaps on GREASE_CA, 
 
 ## 6. Sources
 
-Added to `flow_graph/param/refs.py` with this lane, metadata verified 2026-10-21 before citation:
+Added to `flow_graph/param/refs.py` with this page, with metadata verified 2026-10-21 before citation:
 DING2018_CL_REVIEW, DING2021_ENG, KRUIZENGA2012 (SAND2012-7594), KROLL1940 (Trans. ECS 78:35-47), ULLMANN_MAGNESIUM, ULLMANN_TITANIUM, ULLMANN_WAX (Ullmann's chapters), MANG2007 (Lubricants and Lubrication 2nd ed. ch. 14), WANG2006_ADS (PECS 32:424-458), SCHACHT2004 (Refractories Handbook, CRC), ASM_V1 (ASM Handbook Vol 1), ASM_V7 (ASM Handbook Vol 7). Existing entries carry the rest of the table (PERRY9_MAT, PERRY9_HEAT, GREENWOOD, CRC_CU/CRC_FE/CRC_ZN/CRC_AL/CRC_TI/CRC_SI, INDUCT_SOCX, TURNS2012, ULLMANN_HF, ULLMANN_FLUOROPOLY, DIETER1988, BERNT2018, IEC62282_3_100, ISO22734_2019).

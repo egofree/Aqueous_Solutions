@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | V | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | W | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -238,7 +238,7 @@ Table 3.1. Document numbers in use
 | AQS-PIP-004 | `docs-authority/LINE_LIST.md` | C | 2026-10-21 | Plant line list | current |
 | AQS-PIP-005 | `docs-authority/SUPPORTS.md` | A | 2026-10-15 | Pipe supports and thermal flexibility | current |
 | AQS-PIP-006 | `docs-authority/PIPES.md` | — | — | Pipe junctions | current |
-| AQS-PLACE-SEED-001 | `docs-authority/MVS_PITCH_PASS.md` | — | 2026-10-02 | Pitch pass — yard through water stubs | current |
+| AQS-PLACE-SEED-001 | `docs-authority/MVS_PITCH_PASS.md` | B | 2026-10-29 | Pitch pass: yard through water stubs | current |
 | AQS-PLAN-001 | `docs-authority/internal/DESIGN_PLAN.md` | B | 2026-10-09 | Design plan | superseded by AQS-PLAN-007 |
 | AQS-PLAN-002 | `docs-authority/internal/BUILD_PLAN.md` | A | 2026-10-10 | Build plan | superseded by AQS-PLAN-007 |
 | AQS-PLAN-003 | `docs-authority/internal/CRITICAL_PATH.md` | D | 2026-10-12 | Critical path against the tech tree | superseded by AQS-PLAN-007 |
@@ -448,12 +448,12 @@ Table 3.1. Document numbers in use
 | AQS-STD-003 | `docs-authority/STANDARDS_BASIS.md` | — | 2026-10-02 | Standards basis for the audit fixes | current |
 | AQS-STD-004 | `docs-authority/STANDARDS_LIST.md` | B | 2026-10-29 | Codes and standards list | current |
 | AQS-STD-005 | `docs-authority/UNIT_MATERIALS.md` | B | 2026-10-29 | Per-unit material selections | current |
-| AQS-STD-006 | `docs-authority/MATERIALS_SEC3.md` | A | 2026-10-21 | Duty section 3 material selections, batch issue (AQS-STD-006) | current |
+| AQS-STD-006 | `docs-authority/MATERIALS_SEC3.md` | B | 2026-10-29 | Construction materials for the units without a selection | current |
 | AQS-STD-007 | `docs-authority/CODE_BASIS.md` | D | 2026-10-24 | Code basis | current |
-| AQS-STL-001 | `docs-authority/STL_MANIFEST.md` | A | 2026-09-27 | STL rebuild manifest | current |
+| AQS-STL-001 | `docs-authority/STL_MANIFEST.md` | B | 2026-10-29 | STL rebuild manifest | current |
 | AQS-STR-001 | `docs-authority/STREAM_REGISTER.md` | L | 2026-10-24 | Stream register: streams between blocks | current |
 | AQS-STR-001-DERIVED | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | — | — | Stream register excerpt — DERIVED from flow_graph | current |
-| AQS-STUDY-CLOSE-001 | `docs-authority/MVS_STUDY_CLOSE.md` | — | 2026-10-02 | Study close — the 15 skipped nodes | current |
+| AQS-STUDY-CLOSE-001 | `docs-authority/MVS_STUDY_CLOSE.md` | B | 2026-10-29 | Study close: the skipped nodes | current |
 | AQS-SUR-001 | `docs-authority/SURPLUS_PASS_THRESHOLDS.md` | D | 2026-10-25 | Surplus pass thresholds for the minimum viable system study | current |
 | AQS-THM-002 | `docs-authority/HVAC.md` | A | 2026-10-16 | Ventilation and HVAC design | current |
 | AQS-THM-003 | `docs-authority/INSULATION_SCHEDULE.md` | B | 2026-10-24 | Insulation schedule | current |

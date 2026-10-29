@@ -1,8 +1,19 @@
-# Pitch pass — yard through water stubs
+# Pitch pass: yard through water stubs
 
-Document: AQS-PLACE-SEED-001 Rev B; origins updated to seed Rev F
-Date: 2026-10-02; updated 2026-10-07
-Not a PE stamp. Study envelopes where params.py has no article size.
+Document number: AQS-PLACE-SEED-001  
+Revision: B  
+Date: 2026-10-29  
+Authority: placement seed revision F of 2026-10-07. Superseded for placement by `flow_graph/placement_seed.json` and the site unit placements AQS-SITE-013. This is a record, not a stamped design.
+
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue: placement of the yard, fab wet rooms, methanol train and water stubs, with origins at placement seed revision B. | 2026-10-02 |
+| — | Origins updated to placement seed revision F; no revision letter was given. | 2026-10-07 |
+| B | Identity lines, record of revisions and purpose added to the documentation style guide (AQS-DOC-002); arrows written as sentences. The record is otherwise unchanged. | 2026-10-29 |
+
+## Purpose and scope
+
+This page records the placement pass of early October 2026: where the yard units, the fab wet rooms, the methanol train and the water stubs were put, and the clearance rule behind each. It is kept as the record of those rules. The coordinates below are those of placement seed revision F and are no longer current; the current origins are in `flow_graph/placement_seed.json`, and the site placements in AQS-SITE-013. Some units named here (for example the phosphate fork, which was not then on the graph) have changed since.
 
 ## 1. Yard (west of X=0, Y aligned to dock at 10000)
 
@@ -37,15 +48,15 @@ WS_PHOS is in the reagent note and not a graph node. No solid this pass.
 
 ## 3. MeOH (deferred chemistry, fixed order)
 
-Outdoor west yard, south of geothermal: FERM → SYNTH → TANK → FC.
+Outdoor west yard, south of geothermal: MEOH_FERM, then MEOH_SYNTH, MEOH_TANK and MEOH_FC.
 Not the PEM fuel cell. Not under L1. Tank is NFPA 30 diked.
 
 Rev F origins (SW corner, mm): MEOH_FERM −4700, 3100; MEOH_SYNTH −4848, 1600; MEOH_TANK −2048, 1600; MEOH_FC −4848, 200; MEOH_COND −2448, 200. 600 mm between every pair; FERM 700 mm from the ORC pad.
 
 ## 4. Nozzle order
 
-Metal: MET_AHU → MET_SCRUB → returns S71–S72. MET_HX_Q4 is water after scrub, <80 °C.
-Cryo: CRYO_AHU → CRYO_AHU_COND (S70) → cold box. CRYO_HX_Q4 is warm residual water (S54), not CRYO_DED_COOL.
+Metal: MET_AHU feeds MET_SCRUB, which returns on S71 and S72. MET_HX_Q4 is water after scrub, <80 °C.
+Cryo: CRYO_AHU feeds CRYO_AHU_COND, which returns on S70 to the cold box. CRYO_HX_Q4 is warm residual water (S54), not CRYO_DED_COOL.
 
 ## 5. Water stubs
 
