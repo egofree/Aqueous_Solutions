@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: L
+Revision: M
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -18,6 +18,7 @@ Date: 2026-10-29
 | J | Out-of-repository references removed from six equipment lists | 2026-10-29 |
 | K | Batch 8: the load list and power sizing reconciled; the scale-down page and the matplotlib folder index rewritten; one owner question added on the rectifier feed | 2026-10-29 |
 | L | Batch 9: four sizing pages rewritten through their generators | 2026-10-29 |
+| M | Batch 10: the storage, electrowinning cell and reactor sizing pages rewritten through their generators; one owner question added on the sanitation page | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -137,6 +138,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/sizing/HEADERS.md` | Rev B. Rewritten through `flow_graph/param/headers.py`: record of revisions, purpose and scope, the method as sentences with driver values in place of fixed figures, numbered tables. |
 | `docs-authority/sizing/UPW_POLISH.md` | Rev B. Rewritten through `flow_graph/param/upw_polish.py`: record of revisions, purpose and scope, the method as sentences with driver values in place of fixed figures, numbered tables. |
 | `docs-authority/sizing/PV_CELL_LINE.md` | Rev B. Rewritten through `flow_graph/param/pv_cell_line.py`: record of revisions, purpose and scope, the method as sentences with driver values in place of fixed figures, numbered tables. |
+| `docs-authority/sizing/STORAGE_HOLDUP.md` | Rev B. Rewritten through `docs-authority/_storage_sizing.py`: record of revisions, purpose and scope, the method with the hold-up and minimum-volume drivers, results in a numbered table and a section on units sized elsewhere. |
+| `docs-authority/sizing/EW_CELLS.md` | Rev D. Rewritten through `docs-authority/_ew_sizing.py`: purpose and scope, the cell basis from the driver values, results in a numbered table, and findings as sentences; the tank length range is now computed. The finding on the hydrogen-cell list is unchanged while the owner question is open. |
+| `docs-authority/sizing/REACTOR_DESIGN.md` | Rev C. Rewritten through `flow_graph/param/reactor_design.py`: purpose and scope, the basis written as sentences with the driver values in place of typed figures, numbered tables, and no section for a reactor type with no unit on the graph. |
 
 ## 3. In progress
 
@@ -265,13 +269,10 @@ Table 4.2. Pending pages in subfolders
 | `docs-authority/fab/POLY_OLEFIN.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
 | `docs-authority/fab/VAC_IND.md` | No document number line; no revision line; no date line; no record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/EVAP_DESIGN.md` | No document number line; no revision line; no date line; no purpose and scope section. Written by `flow_graph/param/evap_design.py`; fix the generator. |
-| `docs-authority/sizing/EW_CELLS.md` | No purpose and scope section. Written by `docs-authority/_ew_sizing.py`; fix the generator. |
 | `docs-authority/sizing/LITHO_DEV.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/POLYMERS_LINE.md` | No purpose and scope section. Written by `docs-authority/_polymers_sizing.py`; fix the generator. |
-| `docs-authority/sizing/REACTOR_DESIGN.md` | No purpose and scope section. Written by `flow_graph/param/reactor_design.py`; fix the generator. |
-| `docs-authority/sizing/SANITATION.md` | No purpose and scope section. Written by `flow_graph/param/sanitation.py`; fix the generator. |
+| `docs-authority/sizing/SANITATION.md` | No purpose and scope section. The page names `flow_graph/param/sanitation.py` as its generator, but that script was a one-time edit and the regeneration no longer runs it; the page is kept pending the owner question in section 6. |
 | `docs-authority/sizing/SOLAR_PV_CELL.md` | No record of revisions; no purpose and scope section. |
-| `docs-authority/sizing/STORAGE_HOLDUP.md` | No record of revisions; no purpose and scope section; working or stock phrasing. Written by `docs-authority/_storage_sizing.py`; fix the generator. |
 | `docs-authority/sizing/VAC_IND.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/sizing/VCD_TRAIN.md` | No record of revisions; no purpose and scope section. |
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | No revision line; no date line; no record of revisions; no purpose and scope section; working or stock phrasing. |
@@ -334,6 +335,7 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/LOAD_LIST.md` (AQS-ELEC-003), `docs-authority/ONE_LINE.md` (AQS-ELEC-002) | The rectifier is fed by stream S17 at the 12 kW of its 48 V rails, and the one-line diagram sizes its feeder from that, but the rectifier also draws the 38.7 kW input for the electrowinning cells (`RECTIFIER.params.rect_ac_input_kW`), which only the plant bus demand counts. Should S17 and the `RECTIFIER` row of the load list carry the full input? The writer of S17 and the rectifier numbers are on hold, so neither value was changed. |
 | `docs-authority/duties/` | Duty sheets remain for units that are no longer on the graph, mostly farm, crop and animal units (for example ABE, CHICKENS, CROP_TOMATO, RECT_EW). `_duty_basis.py` skips them, so they keep Graph Rev BH and stale values. Should they be deleted, or moved to an archive? |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` (AQS-REV-H2-001) | The graph sends cathode hydrogen from EW_1 to EW_3 and EW_5 to EW_9, while AQS-STD-002 section 9 names EW_1, EW_2, EW_4 and EW_9. Which is correct? |
+| `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063) | The page says it is generated by `flow_graph/param/sanitation.py`, but that script is listed in `not_stages` of the regeneration manifest as a one-time edit and fails on the present graph. The page no longer matches the graph: the units BLACK_PASTEUR, BLACK_ALK_HOLD and BLACK_DEWATER and the streams IA-TOIL-SOL and IA-TOIL-URN are not on it (only BLACK_DIGEST is), and the feed to AFTERBURNER is now 7.097 kg/d against 7.03 kg/d on the page. Should the page be rewritten by hand for the present graph, given a new generator, or retired? |
 | `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |
 | `docs-authority/unregistered_doc_numbers.json` | Pages cite AQS-PFD-* flow diagram numbers that are in neither register. Should they be added to the drawing register with the scripts in `flow_graph/exporters/matplotlib/` as their source, or removed from the pages? |
 | `docs-authority/unregistered_doc_numbers.json` | Many pages cite AQS-AUD-001, a crew and water audit that is not in the repository. Should it be added, or should each citation be replaced by the graph value it stood for? |
