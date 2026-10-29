@@ -7,7 +7,7 @@ Authority: the placement model (flow_graph/placement_seed.json Rev M, AQS-BLD-00
 
 Route rule: up to the source-level rack (datum + 3200 mm, AQS-PIP-002), X run, Y run, then vertical to the target centre. Legs in mm, signed. Elbows = non-zero legs - 1. Risers are at least 300 mm above the higher end so every route keeps a flexible leg (X-PIP-04). Unit centres are the placement-model centres; nozzle lateral offsets refine at detail design (the nozzle schedules carry face + height). Supports and stress: AQS-PIP-005.
 
-Status. 396 positioned piped lines routed, 7767 m total. 0 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
+Status. 396 positioned piped lines routed, 7879 m total. 0 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
 
 | Line | DN | Class | From | To | dZ up | dX | dY | dZ down | Length m | Elbows |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -136,31 +136,31 @@ Status. 396 positioned piped lines routed, 7767 m total. 0 piped lines wait on u
 | S88 | 15 | M1 | CRYO_N2 | GROW_BED | 12550 | 12000 | -1500 | -300 | 26.4 | 3 |
 | S34 | 15 | P3 | WS_NITRIC | WET_BENCH | 2650 | 4400 | 4400 | -1200 | 12.7 | 3 |
 | S34B | 15 | P1 | WS_PHOS | WET_BENCH | 2650 | 4600 | 0 | -1200 | 8.4 | 2 |
-| F_RECOVER_TO_HF_GEN | 15 | P3 | F_RECOVER | HF_GEN | 2450 | -4450 | -10950 | -2450 | 20.3 | 3 |
+| F_RECOVER_TO_HF_GEN | 15 | P3 | F_RECOVER | HF_GEN | 2450 | 6550 | 15050 | -2450 | 26.5 | 3 |
 | HF_GEN_TO_VDF | 15 | P3 | HF_GEN | VDF_SYN | 2450 | 1100 | 1450 | -2600 | 7.6 | 3 |
 | HF_GEN_TO_TFE | 15 | P3 | HF_GEN | TFE_SYN | 2450 | 1700 | -50 | -2600 | 6.8 | 3 |
 | VDF_TO_POLY_F | 15 | — | VDF_SYN | POLY_F | 2600 | 0 | 1400 | -2600 | 6.6 | 2 |
 | TFE_TO_POLY_F | 15 | — | TFE_SYN | POLY_F | 2600 | -600 | 2900 | -2600 | 8.7 | 3 |
-| MO_CELL_RAFFINATE | 15 | P1 | MO_CELL | POLISH_BANK | 2400 | 23900 | -10900 | -1450 | 38.6 | 3 |
-| EW9_LIQUOR_TO_MO | 15 | P1 | EW_9 | MO_CELL | 2820 | -16435 | 13540 | -2400 | 35.2 | 3 |
-| TI_CELL_CL2_TO_CRU | 15 | P3 | TI_CELL | CRU | 2400 | 22200 | -9100 | -1450 | 35.1 | 3 |
-| MO_CELL_ANODE_GAS_TO_CRU | 15 | P3 | MO_CELL | CRU | 2400 | 23900 | -10900 | -1450 | 38.6 | 3 |
+| MO_CELL_RAFFINATE | 15 | P1 | MO_CELL | POLISH_BANK | 2400 | 32900 | -2900 | -1450 | 39.6 | 3 |
+| EW9_LIQUOR_TO_MO | 15 | P1 | EW_9 | MO_CELL | 2820 | -25435 | 5540 | -2400 | 36.2 | 3 |
+| TI_CELL_CL2_TO_CRU | 15 | P3 | TI_CELL | CRU | 2400 | 31200 | -1100 | -1450 | 36.1 | 3 |
+| MO_CELL_ANODE_GAS_TO_CRU | 15 | P3 | MO_CELL | CRU | 2400 | 32900 | -2900 | -1450 | 39.6 | 3 |
 | IND_MELT_TO_CAST | 15 | — | IND_MELT | CAST_LINE | 2450 | -3550 | -1900 | -2450 | 10.3 | 3 |
 | VAC_IND_TO_VAC_CAST | 15 | — | VAC_IND | VAC_CAST | 2450 | -2550 | -1700 | -2450 | 9.2 | 3 |
 | IND_TO_CONT | 15 | — | IND_MELT | CONT_CAST | 2450 | -7250 | -3500 | -2450 | 15.7 | 3 |
-| AL_POT_CL2 | 15 | P3 | AL_POT | CRU | 2400 | 28700 | -10900 | -1450 | 43.5 | 3 |
-| MG_POT_CL2 | 15 | P3 | MG_POT | CRU | 2400 | 23800 | -9100 | -1450 | 36.8 | 3 |
-| COMB_OFFGAS | 15 | F1 | COMB_HEAT | MET_SCRUB | 6550 | 32000 | -13500 | -300 | 52.4 | 3 |
-| IND_TO_ATOM | 15 | — | IND_MELT | GAS_ATOMIZER | 8050 | 24200 | -14000 | -300 | 46.5 | 3 |
+| AL_POT_CL2 | 15 | P3 | AL_POT | CRU | 2400 | 37700 | -2900 | -1450 | 44.5 | 3 |
+| MG_POT_CL2 | 15 | P3 | MG_POT | CRU | 2400 | 32800 | -1100 | -1450 | 37.8 | 3 |
+| COMB_OFFGAS | 15 | F1 | COMB_HEAT | MET_SCRUB | 6550 | 41000 | -5500 | -300 | 53.4 | 3 |
+| IND_TO_ATOM | 15 | — | IND_MELT | GAS_ATOMIZER | 8050 | 33200 | -6000 | -300 | 47.5 | 3 |
 | IND_TO_INV | 15 | — | IND_MELT | INV_CAST | 2450 | -4950 | -3500 | -2450 | 13.3 | 3 |
 | VAC_TO_INV | 15 | — | VAC_IND | INV_CAST | 2450 | -6650 | -1700 | -2450 | 13.2 | 3 |
 | WAX_RECLAIM_TO_PATTERN | 15 | M2 | SHELL_BURNOUT | WAX_PATTERN | 2450 | 1700 | -200 | -2600 | 7.0 | 3 |
-| WAX_TO_OIL | 15 | M2 | SHELL_BURNOUT | OIL_FRAC | 2450 | 14100 | 2000 | -950 | 19.5 | 3 |
-| OIL_TO_OLEFIN | 15 | M2 | OIL_FRAC | POLY_OLEFIN | 950 | -15200 | -16300 | -2600 | 35.0 | 3 |
-| MEOH_TO_OLEFIN | 15 | M1 | MEOH_SYNTH | POLY_OLEFIN | 2500 | -6452 | -3350 | -8600 | 20.9 | 3 |
-| DIGEST_TO_POLY | 15 | P1 | BLACK_DIGEST | POLY_COND | 2400 | -12500 | -3350 | -14600 | 32.9 | 3 |
-| CRU_TO_VDF | 15 | — | CRU | VDF_SYN | 1450 | -24800 | -9700 | -2600 | 38.5 | 3 |
-| CRU_TO_TFE | 15 | — | CRU | TFE_SYN | 1450 | -24200 | -11200 | -2600 | 39.5 | 3 |
+| WAX_TO_OIL | 15 | M2 | SHELL_BURNOUT | OIL_FRAC | 2450 | 23100 | 10000 | -950 | 36.5 | 3 |
+| OIL_TO_OLEFIN | 15 | M2 | OIL_FRAC | POLY_OLEFIN | 950 | -4200 | 9700 | -2600 | 17.4 | 3 |
+| MEOH_TO_OLEFIN | 15 | M1 | MEOH_SYNTH | POLY_OLEFIN | 2500 | 4548 | 22650 | -8600 | 38.3 | 3 |
+| DIGEST_TO_POLY | 15 | P1 | BLACK_DIGEST | POLY_COND | 2400 | -1500 | 22650 | -14600 | 41.1 | 3 |
+| CRU_TO_VDF | 15 | — | CRU | VDF_SYN | 1450 | -13800 | 16300 | -2600 | 34.1 | 3 |
+| CRU_TO_TFE | 15 | — | CRU | TFE_SYN | 1450 | -13200 | 14800 | -2600 | 32.0 | 3 |
 | POLISH_TO_LI | 15 | P1 | POLISH_BANK | LI_RECOVER | 1450 | -24400 | 3000 | -2800 | 31.6 | 3 |
 | WAX_TO_GREASE_CA | 15 | M2 | PROD_C19_C28 | GREASE_CA | 2850 | 550 | -350 | -2900 | 6.7 | 3 |
 | WAX_TO_GREASE_LI | 15 | M2 | PROD_C19_C28 | GREASE_LI | 2850 | 2750 | -350 | -2900 | 8.8 | 3 |
@@ -310,7 +310,7 @@ Status. 396 positioned piped lines routed, 7767 m total. 0 piped lines wait on u
 | IA-EW6-H2B | 15 | P1 | EW_6 | HDR_H2 | 2820 | -4185 | 840 | -950 | 8.8 | 3 |
 | IA-EW7-H2B | 15 | P1 | EW_7 | HDR_H2 | 2820 | 1465 | 2340 | -950 | 7.6 | 3 |
 | IA-EW8-H2B | 15 | P1 | EW_8 | HDR_H2 | 2820 | -5185 | 840 | -950 | 9.8 | 3 |
-| IA-C5-POLY | 15 | M2 | PROD_C5_C10 | POLY_OLEFIN | 2850 | 100 | -25650 | -2600 | 31.2 | 3 |
+| IA-C5-POLY | 15 | M2 | PROD_C5_C10 | POLY_OLEFIN | 2850 | 11100 | 350 | -2600 | 16.9 | 3 |
 | IA-EVAP_ACID-VENT | 15 | P3 | EVAP_ACID | EVAP_ACID_VS | 1300 | -21325 | 3650 | -2500 | 28.8 | 3 |
 | IA-VS-NAOH | 15 | P4 | BMED_BASE | EVAP_ACID_VS | 1450 | -19700 | 1300 | -2500 | 24.9 | 3 |
 | IA-VS-SPENT | 15 | P4 | EVAP_ACID_VS | BMED_ACID | 2500 | 19700 | -1300 | -1450 | 24.9 | 3 |
@@ -319,24 +319,24 @@ Status. 396 positioned piped lines routed, 7767 m total. 0 piped lines wait on u
 | IA-AIR-RX-OUT | 15 | P3 | AIR_RECEIVER | HDR_N2 | 11850 | -11000 | -5150 | -300 | 28.3 | 3 |
 | IA-SOLV-MU | 15 | M1 | NORTH_DOCK | WS_SOLV | 3200 | 6600 | 2400 | -2650 | 14.8 | 3 |
 | POLYF_TO_FILM | 15 | — | POLY_F | FILM_CAST | 2600 | 2750 | 1500 | -2450 | 9.3 | 3 |
-| IA-H2SO4-MU | 15 | M2 | NORTH_DOCK | HF_GEN | 3200 | -15900 | -18150 | -8450 | 45.7 | 3 |
-| IA-HF-PROD | 15 | P3 | HF_GEN | WS_HF_ED | 6100 | 22500 | 12750 | -300 | 41.6 | 3 |
-| MEOH_TO_VDF | 15 | M1 | MEOH_TANK | VDF_SYN | 2650 | -7152 | -4700 | -8600 | 23.1 | 3 |
-| MEOH_TO_TFE | 15 | M1 | MEOH_TANK | TFE_SYN | 2650 | -6552 | -6200 | -8600 | 24.0 | 3 |
-| VDF_HCL_TO_CRU | 15 | — | VDF_SYN | CRU | 2600 | 24800 | 9700 | -1450 | 38.5 | 3 |
-| TFE_HCL_TO_CRU | 15 | — | TFE_SYN | CRU | 2600 | 24200 | 11200 | -1450 | 39.5 | 3 |
-| POLYF_RECLAIM | 15 | — | POLY_F | F_RECOVER | 2600 | 3350 | 8100 | -2450 | 16.5 | 3 |
-| FLUORO_TO_MFG | 15 | — | POLY_STOCK | MFG_SHOP | 8400 | 25900 | 4000 | -300 | 38.6 | 3 |
-| IA-CL2-SHIP | 15 | P3 | AL_POT | NORTH_DOCK | 5500 | 18700 | -3900 | -300 | 28.4 | 3 |
+| IA-H2SO4-MU | 15 | M2 | NORTH_DOCK | HF_GEN | 3200 | -4900 | 7850 | -8450 | 24.4 | 3 |
+| IA-HF-PROD | 15 | P3 | HF_GEN | WS_HF_ED | 6100 | 11500 | -13250 | -300 | 31.1 | 3 |
+| MEOH_TO_VDF | 15 | M1 | MEOH_TANK | VDF_SYN | 2650 | 3848 | 21300 | -8600 | 36.4 | 3 |
+| MEOH_TO_TFE | 15 | M1 | MEOH_TANK | TFE_SYN | 2650 | 4448 | 19800 | -8600 | 35.5 | 3 |
+| VDF_HCL_TO_CRU | 15 | — | VDF_SYN | CRU | 2600 | 13800 | -16300 | -1450 | 34.1 | 3 |
+| TFE_HCL_TO_CRU | 15 | — | TFE_SYN | CRU | 2600 | 13200 | -14800 | -1450 | 32.0 | 3 |
+| POLYF_RECLAIM | 15 | — | POLY_F | F_RECOVER | 2600 | -7650 | -17900 | -2450 | 30.6 | 3 |
+| FLUORO_TO_MFG | 15 | — | POLY_STOCK | MFG_SHOP | 8400 | 14900 | -22000 | -300 | 45.6 | 3 |
+| IA-CL2-SHIP | 15 | P3 | AL_POT | NORTH_DOCK | 5500 | 27700 | 4100 | -300 | 37.6 | 3 |
 | IA-MGCL2-KROLL | 15 | — | TI_CELL | MG_POT | 2400 | -1600 | 0 | -2400 | 6.4 | 2 |
-| IA-MGCL2-MU | 15 | — | NORTH_DOCK | MG_POT | 3200 | -13800 | 2100 | -8400 | 27.5 | 3 |
+| IA-MGCL2-MU | 15 | — | NORTH_DOCK | MG_POT | 3200 | -22800 | -5900 | -8400 | 40.3 | 3 |
 | IA-CL2-MG-TI | 15 | P3 | MG_POT | TI_CELL | 2400 | 1600 | 0 | -2400 | 6.4 | 2 |
-| IA-CACL2-MU | 15 | — | NORTH_DOCK | CA_POT | 3200 | -17100 | 3900 | -8400 | 32.6 | 3 |
-| IA-CA-CL2-SHIP | 15 | P3 | CA_POT | NORTH_DOCK | 5500 | 17100 | -3900 | -300 | 26.8 | 3 |
-| IA-KROLL-CO | 15 | P3 | TI_CELL | NORTH_DOCK | 5500 | 12200 | -2100 | -300 | 20.1 | 3 |
-| IA-MO-VENT | 15 | P3 | MO_CELL | NORTH_DOCK | 5500 | 13900 | -3900 | -300 | 23.6 | 3 |
-| IA-CR-VENT | 15 | P3 | CR_CELL | NORTH_DOCK | 5500 | 15500 | -3900 | -300 | 25.2 | 3 |
-| IA-BURNOUT-VENT | 15 | P3 | SHELL_BURNOUT | NORTH_DOCK | 5550 | 15100 | 1000 | -300 | 21.9 | 3 |
+| IA-CACL2-MU | 15 | — | NORTH_DOCK | CA_POT | 3200 | -26100 | -4100 | -8400 | 41.8 | 3 |
+| IA-CA-CL2-SHIP | 15 | P3 | CA_POT | NORTH_DOCK | 5500 | 26100 | 4100 | -300 | 36.0 | 3 |
+| IA-KROLL-CO | 15 | P3 | TI_CELL | NORTH_DOCK | 5500 | 21200 | 5900 | -300 | 32.9 | 3 |
+| IA-MO-VENT | 15 | P3 | MO_CELL | NORTH_DOCK | 5500 | 22900 | 4100 | -300 | 32.8 | 3 |
+| IA-CR-VENT | 15 | P3 | CR_CELL | NORTH_DOCK | 5500 | 24500 | 4100 | -300 | 34.4 | 3 |
+| IA-BURNOUT-VENT | 15 | P3 | SHELL_BURNOUT | NORTH_DOCK | 5550 | 24100 | 9000 | -300 | 39.0 | 3 |
 | AQUA_LOOP1 | 15 | P1 | AQUA_TANK | BIOFILTER | 6350 | 6050 | -8150 | -300 | 20.9 | 3 |
 | AQUA_NUT | 15 | P1 | BIOFILTER | AQUA_UV | 2600 | -2900 | 9975 | -8825 | 24.3 | 3 |
 | AQUA_LOOP3 | 15 | P1 | GROWBED_A | GROWBED_B | 2950 | 3700 | 0 | -2950 | 9.6 | 2 |
@@ -398,7 +398,7 @@ Status. 396 positioned piped lines routed, 7767 m total. 0 piped lines wait on u
 | CA_HOPPER | 15 | P1 | NORTH_DOCK | QUAIL_CAGE | 3200 | 16350 | -1350 | -2350 | 23.2 | 3 |
 | FOOD_EXPORT | 15 | P1 | FOOD_STORE | BOUNDARY_EXPORT | 2825 | -11125 | 9475 | -7800 | 31.2 | 3 |
 | GAL_GREY | 15 | P1 | GALLEY | GREY_TREAT | 5650 | 0 | -1100 | -300 | 7.0 | 2 |
-| STOCK_TO_FIBER | 15 | — | POLY_STOCK | POLY_FIBER | 6850 | 21650 | 3650 | -300 | 32.5 | 3 |
+| STOCK_TO_FIBER | 15 | — | POLY_STOCK | POLY_FIBER | 6850 | 10650 | -22350 | -300 | 40.1 | 3 |
 | FR_FINISH | 15 | P1 | NORTH_DOCK | POLY_FIBER | 3200 | 7750 | -10350 | -2250 | 23.6 | 3 |
 | FIBER_SCRAP | 15 | P2 | POLY_FIBER | LEACH_CSTR_1 | 2250 | -12150 | 2250 | -8500 | 25.1 | 3 |
 | FLEECE_TO_MFG | 15 | P1 | POLY_FIBER | MFG_SHOP | 2250 | 4250 | 350 | -700 | 7.5 | 3 |

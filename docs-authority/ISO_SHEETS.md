@@ -1,7 +1,7 @@
 # Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27)
 
 Document number: AQS-ISO-002
-Status. 396 routed lines; waiting on placements 0. Pipe 7719 m, elbows 1145, flanges 792, joints 3781.
+Status. 396 routed lines; waiting on placements 0. Pipe 7831 m, elbows 1145, flanges 792, joints 3795.
 
 Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow take-off ASME B16.9 long-radius (metal) or 0.5 x OD (thermoplastic, A-M-121); 6 m random lengths; flanges at both nozzles; ASME B16.5 Class 150 bolting; OD ASME B36.10M. Not checked here: clashes with structure and other lines along the rack (X-PIP-04 with supports and stress).
 
@@ -134,31 +134,31 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | S88 | CRYO_N2 | GROW_BED | 15 | M1 | 26.12 | 3 |
 | S34 | WS_NITRIC | WET_BENCH | 15 | P3 | 12.59 | 3 |
 | S34B | WS_PHOS | WET_BENCH | 15 | P1 | 8.41 | 2 |
-| F_RECOVER_TO_HF_GEN | F_RECOVER | HF_GEN | 15 | P3 | 20.24 | 3 |
+| F_RECOVER_TO_HF_GEN | F_RECOVER | HF_GEN | 15 | P3 | 26.44 | 3 |
 | HF_GEN_TO_VDF | HF_GEN | VDF_SYN | 15 | P3 | 7.54 | 3 |
 | HF_GEN_TO_TFE | HF_GEN | TFE_SYN | 15 | P3 | 6.74 | 3 |
 | VDF_TO_POLY_F | VDF_SYN | POLY_F | 15 | — | 6.56 | 2 |
 | TFE_TO_POLY_F | TFE_SYN | POLY_F | 15 | — | 8.64 | 3 |
-| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | 15 | P1 | 38.59 | 3 |
-| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | 15 | P1 | 35.13 | 3 |
-| TI_CELL_CL2_TO_CRU | TI_CELL | CRU | 15 | P3 | 35.09 | 3 |
-| MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | 15 | P3 | 38.59 | 3 |
+| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | 15 | P1 | 39.59 | 3 |
+| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | 15 | P1 | 36.13 | 3 |
+| TI_CELL_CL2_TO_CRU | TI_CELL | CRU | 15 | P3 | 36.09 | 3 |
+| MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | 15 | P3 | 39.59 | 3 |
 | IND_MELT_TO_CAST | IND_MELT | CAST_LINE | 15 | — | 10.29 | 3 |
 | VAC_IND_TO_VAC_CAST | VAC_IND | VAC_CAST | 15 | — | 9.09 | 3 |
 | IND_TO_CONT | IND_MELT | CONT_CAST | 15 | — | 15.59 | 3 |
-| AL_POT_CL2 | AL_POT | CRU | 15 | P3 | 43.39 | 3 |
-| MG_POT_CL2 | MG_POT | CRU | 15 | P3 | 36.69 | 3 |
-| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | 15 | F1 | 52.29 | 3 |
-| IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | 15 | — | 46.49 | 3 |
+| AL_POT_CL2 | AL_POT | CRU | 15 | P3 | 44.39 | 3 |
+| MG_POT_CL2 | MG_POT | CRU | 15 | P3 | 37.69 | 3 |
+| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | 15 | F1 | 53.29 | 3 |
+| IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | 15 | — | 47.49 | 3 |
 | IND_TO_INV | IND_MELT | INV_CAST | 15 | — | 13.29 | 3 |
 | VAC_TO_INV | VAC_IND | INV_CAST | 15 | — | 13.19 | 3 |
 | WAX_RECLAIM_TO_PATTERN | SHELL_BURNOUT | WAX_PATTERN | 15 | M2 | 6.72 | 3 |
-| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | 15 | M2 | 19.27 | 3 |
-| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | 15 | M2 | 34.82 | 3 |
-| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | 15 | M1 | 20.67 | 3 |
-| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | 15 | P1 | 32.79 | 3 |
-| CRU_TO_VDF | CRU | VDF_SYN | 15 | — | 38.49 | 3 |
-| CRU_TO_TFE | CRU | TFE_SYN | 15 | — | 39.39 | 3 |
+| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | 15 | M2 | 36.27 | 3 |
+| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | 15 | M2 | 17.22 | 3 |
+| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | 15 | M1 | 38.07 | 3 |
+| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | 15 | P1 | 41.09 | 3 |
+| CRU_TO_VDF | CRU | VDF_SYN | 15 | — | 34.09 | 3 |
+| CRU_TO_TFE | CRU | TFE_SYN | 15 | — | 31.99 | 3 |
 | POLISH_TO_LI | POLISH_BANK | LI_RECOVER | 15 | P1 | 31.59 | 3 |
 | WAX_TO_GREASE_CA | PROD_C19_C28 | GREASE_CA | 15 | M2 | 6.42 | 3 |
 | WAX_TO_GREASE_LI | PROD_C19_C28 | GREASE_LI | 15 | M2 | 8.62 | 3 |
@@ -308,7 +308,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-EW6-H2B | EW_6 | HDR_H2 | 15 | P1 | 8.73 | 3 |
 | IA-EW7-H2B | EW_7 | HDR_H2 | 15 | P1 | 7.51 | 3 |
 | IA-EW8-H2B | EW_8 | HDR_H2 | 15 | P1 | 9.73 | 3 |
-| IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | 15 | M2 | 30.97 | 3 |
+| IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | 15 | M2 | 16.67 | 3 |
 | IA-EVAP_ACID-VENT | EVAP_ACID | EVAP_ACID_VS | 15 | P3 | 28.71 | 3 |
 | IA-VS-NAOH | BMED_BASE | EVAP_ACID_VS | 15 | P4 | 24.89 | 3 |
 | IA-VS-SPENT | EVAP_ACID_VS | BMED_ACID | 15 | P4 | 24.89 | 3 |
@@ -317,24 +317,24 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | IA-AIR-RX-OUT | AIR_RECEIVER | HDR_N2 | 15 | P3 | 28.24 | 3 |
 | IA-SOLV-MU | NORTH_DOCK | WS_SOLV | 15 | M1 | 14.62 | 3 |
 | POLYF_TO_FILM | POLY_F | FILM_CAST | 15 | — | 9.24 | 3 |
-| IA-H2SO4-MU | NORTH_DOCK | HF_GEN | 15 | M2 | 45.47 | 3 |
-| IA-HF-PROD | HF_GEN | WS_HF_ED | 15 | P3 | 41.59 | 3 |
-| MEOH_TO_VDF | MEOH_TANK | VDF_SYN | 15 | M1 | 22.87 | 3 |
-| MEOH_TO_TFE | MEOH_TANK | TFE_SYN | 15 | M1 | 23.77 | 3 |
-| VDF_HCL_TO_CRU | VDF_SYN | CRU | 15 | — | 38.49 | 3 |
-| TFE_HCL_TO_CRU | TFE_SYN | CRU | 15 | — | 39.39 | 3 |
-| POLYF_RECLAIM | POLY_F | F_RECOVER | 15 | — | 16.44 | 3 |
-| FLUORO_TO_MFG | POLY_STOCK | MFG_SHOP | 15 | — | 38.54 | 3 |
-| IA-CL2-SHIP | AL_POT | NORTH_DOCK | 15 | P3 | 28.34 | 3 |
+| IA-H2SO4-MU | NORTH_DOCK | HF_GEN | 15 | M2 | 24.17 | 3 |
+| IA-HF-PROD | HF_GEN | WS_HF_ED | 15 | P3 | 31.09 | 3 |
+| MEOH_TO_VDF | MEOH_TANK | VDF_SYN | 15 | M1 | 36.17 | 3 |
+| MEOH_TO_TFE | MEOH_TANK | TFE_SYN | 15 | M1 | 35.27 | 3 |
+| VDF_HCL_TO_CRU | VDF_SYN | CRU | 15 | — | 34.09 | 3 |
+| TFE_HCL_TO_CRU | TFE_SYN | CRU | 15 | — | 31.99 | 3 |
+| POLYF_RECLAIM | POLY_F | F_RECOVER | 15 | — | 30.54 | 3 |
+| FLUORO_TO_MFG | POLY_STOCK | MFG_SHOP | 15 | — | 45.54 | 3 |
+| IA-CL2-SHIP | AL_POT | NORTH_DOCK | 15 | P3 | 37.54 | 3 |
 | IA-MGCL2-KROLL | TI_CELL | MG_POT | 15 | — | 6.36 | 2 |
-| IA-MGCL2-MU | NORTH_DOCK | MG_POT | 15 | — | 27.44 | 3 |
+| IA-MGCL2-MU | NORTH_DOCK | MG_POT | 15 | — | 40.24 | 3 |
 | IA-CL2-MG-TI | MG_POT | TI_CELL | 15 | P3 | 6.36 | 2 |
-| IA-CACL2-MU | NORTH_DOCK | CA_POT | 15 | — | 32.54 | 3 |
-| IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | 15 | P3 | 26.74 | 3 |
-| IA-KROLL-CO | TI_CELL | NORTH_DOCK | 15 | P3 | 20.04 | 3 |
-| IA-MO-VENT | MO_CELL | NORTH_DOCK | 15 | P3 | 23.54 | 3 |
-| IA-CR-VENT | CR_CELL | NORTH_DOCK | 15 | P3 | 25.14 | 3 |
-| IA-BURNOUT-VENT | SHELL_BURNOUT | NORTH_DOCK | 15 | P3 | 21.89 | 3 |
+| IA-CACL2-MU | NORTH_DOCK | CA_POT | 15 | — | 41.74 | 3 |
+| IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | 15 | P3 | 35.94 | 3 |
+| IA-KROLL-CO | TI_CELL | NORTH_DOCK | 15 | P3 | 32.84 | 3 |
+| IA-MO-VENT | MO_CELL | NORTH_DOCK | 15 | P3 | 32.74 | 3 |
+| IA-CR-VENT | CR_CELL | NORTH_DOCK | 15 | P3 | 34.34 | 3 |
+| IA-BURNOUT-VENT | SHELL_BURNOUT | NORTH_DOCK | 15 | P3 | 38.89 | 3 |
 | AQUA_LOOP1 | AQUA_TANK | BIOFILTER | 15 | P1 | 20.79 | 3 |
 | AQUA_NUT | BIOFILTER | AQUA_UV | 15 | P1 | 24.24 | 3 |
 | AQUA_LOOP3 | GROWBED_A | GROWBED_B | 15 | P1 | 9.56 | 2 |
@@ -396,7 +396,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev O); elbow 
 | CA_HOPPER | NORTH_DOCK | QUAIL_CAGE | 15 | P1 | 23.19 | 3 |
 | FOOD_EXPORT | FOOD_STORE | BOUNDARY_EXPORT | 15 | P1 | 31.16 | 3 |
 | GAL_GREY | GALLEY | GREY_TREAT | 15 | P1 | 7.01 | 2 |
-| STOCK_TO_FIBER | POLY_STOCK | POLY_FIBER | 15 | — | 32.39 | 3 |
+| STOCK_TO_FIBER | POLY_STOCK | POLY_FIBER | 15 | — | 40.09 | 3 |
 | FR_FINISH | NORTH_DOCK | POLY_FIBER | 15 | P1 | 23.49 | 3 |
 | FIBER_SCRAP | POLY_FIBER | LEACH_CSTR_1 | 15 | P2 | 25.09 | 3 |
 | FLEECE_TO_MFG | POLY_FIBER | MFG_SHOP | 15 | P1 | 7.49 | 3 |

@@ -23,31 +23,21 @@ Basis: NEC 2026 110.26(A)(1)-(2); NFPA 101 (2027) 7.3.4.1.1 and IBC 2027 1018.5 
 | Row | Level | Faces with 914 mm clear |
 |---|---|---|
 | MET_SCRUB | L0 | none |
-| Q2_B | L-1 | none |
 | PROD_C5_C10 | L-1 | none |
-| FLUE_KO | L-1 | none |
-| RELIEF_CRYO | L-1 | none |
-| AIR_RECEIVER | L-1 | none |
 | COLD_MILL | L0 | none |
 | CONT_CAST | L0 | none |
-| CRYO_CO2 | L-1 | none |
 | FOOD_STORE | L1 | none |
 | F_RECOVER | L0 | none |
 | GAS_ATOMIZER | L0 | none |
 | GROW_BED | L1 | none |
 | GW_INTAKE | L0 | none |
-| H2O_ELYZ | L-1 | none |
 | MFG_SHOP | L0 | none |
-| PROD_MEOH | L-1 | none |
-| PROD_O2 | L-1 | none |
 | SALT_FEED | L0 | none |
 | STOCK_OUT | L0 | none |
-| CRYO_XE | L-1 | none |
-| CRYO_AR | L-1 | none |
 
-Rows checked for access: 266; rows without a 914 mm face: 22.
+Rows checked for access: 266; rows without a 914 mm face: 12.
 
-Failing items: 22.
+Failing items: 12.
 
 ## Code basis (X-STD-01)
 

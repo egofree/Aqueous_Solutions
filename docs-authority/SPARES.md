@@ -21,7 +21,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-10 | electronics: compressor contactor + overload (18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1) | 10 | 1 | 10 % min 1 |
 | building block | OF-11 | electronics: stepper driver (24/48 V DC x3) | 3 | 1 | 10 % min 1 |
 | building block | OF-12 | electronics: safety PLC (SIL 2 capable), CPU and I/O rack (- x2) | 2 | 1 | 10 % min 1 |
-| building block | OF-14 | fastener: anchor bolt (M10 x14526) | 14526 | 291 | 2 % min 4 |
+| building block | OF-14 | fastener: anchor bolt (M10 x14726) | 14726 | 295 | 2 % min 4 |
 | building block | OF-15 | fastener: M10 x 40 lid bolt (M10 x 40 lid bolt with nut and washers x100) | 100 | 4 | 2 % min 4 |
 | building block | OF-16 | fastener: M8 x 30 lid bolt (M8 x 30 lid bolt with nut and washers x48) | 48 | 4 | 2 % min 4 |
 | building block | OF-17 | fastener: M12 anchor (M12 anchor x37) | 37 | 4 | 2 % min 4 |
@@ -126,4 +126,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-116 lines; 35 spare motors, 929 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+116 lines; 35 spare motors, 933 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

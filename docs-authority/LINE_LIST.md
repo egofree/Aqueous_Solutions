@@ -172,17 +172,17 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S88 | CRYO_N2 | GROW_BED | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 30.9 | CRYO_N2 → GROW_BED, orthogonal × 1.2 (placement_report + GA move + GA move; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | S34 | WS_NITRIC | WET_BENCH | DN15 | P3 | oxidizer, HF or PVDF unit | 12.3 | WS_NITRIC → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | S34B | WS_PHOS | WET_BENCH | DN15 | P1 | acid or brine, at or below 60 C | 7.3 | WS_PHOS → WET_BENCH, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| F_RECOVER_TO_HF_GEN | F_RECOVER | HF_GEN | DN15 | P3 | oxidizer, HF or PVDF unit | 18.5 | F_RECOVER → HF_GEN, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| F_RECOVER_TO_HF_GEN | F_RECOVER | HF_GEN | DN15 | P3 | oxidizer, HF or PVDF unit | 25.9 | F_RECOVER → HF_GEN, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | HF_GEN_TO_VDF | HF_GEN | VDF_SYN | DN15 | P3 | oxidizer, HF or PVDF unit | 3.2 | HF_GEN → VDF_SYN, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | HF_GEN_TO_TFE | HF_GEN | TFE_SYN | DN15 | P3 | oxidizer, HF or PVDF unit | 2.3 | HF_GEN → TFE_SYN, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | VDF_TO_POLY_F | VDF_SYN | POLY_F | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 1.7 | VDF_SYN → POLY_F, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | TFE_TO_POLY_F | TFE_SYN | POLY_F | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 4.2 | TFE_SYN → POLY_F, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| TI_CELL_SLAG_RETURN | TI_CELL | LEACH_CSTR_1 | solids | — | — | 21.7 | TI_CELL → LEACH_CSTR_1, orthogonal × 1.2 (placement_seed; duty origin) | solids: conveyor, bin or hand transfer; not piped |
-| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | DN15 | P1 | acid or brine, at or below 60 C | 42.9 | MO_CELL → POLISH_BANK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| FLOAT_SINK_GRIT_TO_TI | FLOAT_SINK | TI_CELL | solids | — | — | 26.1 | FLOAT_SINK → TI_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | DN15 | P1 | acid or brine, at or below 60 C | 36.5 | EW_9 → MO_CELL, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| TI_CELL_CL2_TO_CRU | TI_CELL | CRU | DN15 | P3 | process vent gas | 38.7 | TI_CELL → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | DN15 | P3 | process vent gas | 42.9 | MO_CELL → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| TI_CELL_SLAG_RETURN | TI_CELL | LEACH_CSTR_1 | solids | — | — | 22.9 | TI_CELL → LEACH_CSTR_1, orthogonal × 1.2 (placement_seed; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | DN15 | P1 | acid or brine, at or below 60 C | 44.1 | MO_CELL → POLISH_BANK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| FLOAT_SINK_GRIT_TO_TI | FLOAT_SINK | TI_CELL | solids | — | — | 27.3 | FLOAT_SINK → TI_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | DN15 | P1 | acid or brine, at or below 60 C | 37.7 | EW_9 → MO_CELL, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| TI_CELL_CL2_TO_CRU | TI_CELL | CRU | DN15 | P3 | process vent gas | 39.9 | TI_CELL → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | DN15 | P3 | process vent gas | 44.1 | MO_CELL → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IND_MELT_TO_CAST | IND_MELT | CAST_LINE | DN15 | — | molten metal launder/pour (not piped) | 6.5 | IND_MELT → CAST_LINE, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | CAST_SCRAP_TO_IND | CAST_LINE | IND_MELT | solids | — | — | 6.5 | CAST_LINE → IND_MELT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | METALS_TO_IND_MELT | TI_CELL | IND_MELT | solids | — | — | 2.3 | TI_CELL → IND_MELT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
@@ -194,28 +194,28 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | DRAW_TO_STOCK | DRAW | STOCK_OUT | solids | — | — | 4.5 | DRAW → STOCK_OUT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | SINTER_TO_STOCK | SINTER | STOCK_OUT | solids | — | — | 5.6 | SINTER → STOCK_OUT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | FLUX_TO_IND | FLUX_PREP | IND_MELT | solids | — | — | 2.5 | FLUX_PREP → IND_MELT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| EW_METALS_TO_IND | EW_9 | IND_MELT | solids | — | — | 34.5 | EW_9 → IND_MELT, orthogonal × 1.2 (duty origin; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| EW_METALS_TO_IND | EW_9 | IND_MELT | solids | — | — | 35.7 | EW_9 → IND_MELT, orthogonal × 1.2 (duty origin; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | MO_TO_IND | MO_CELL | IND_MELT | solids | — | — | 2.2 | MO_CELL → IND_MELT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | CR_TO_IND | CR_CELL | IND_MELT | solids | — | — | 4.1 | CR_CELL → IND_MELT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | IND_TO_CONT | IND_MELT | CONT_CAST | DN15 | — | molten metal launder/pour (not piped) | 12.9 | IND_MELT → CONT_CAST, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | CONT_TO_ROLL | CONT_CAST | ROLL | solids | — | — | 3.6 | CONT_CAST → ROLL, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | CONT_TO_STOCK | CONT_CAST | STOCK_OUT | solids | — | — | 2.6 | CONT_CAST → STOCK_OUT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | VAC_IND_TI | TI_CELL | VAC_IND | solids | — | — | 2.2 | TI_CELL → VAC_IND, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| STOCK_TO_MFG | METAL_STORE | MFG_SHOP | solids | — | — | 62.5 | METAL_STORE → MFG_SHOP, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| STOCK_TO_FAB | METAL_STORE | WAFER_FAB | solids | — | — | 51.1 | METAL_STORE → WAFER_FAB, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | solids | — | — | 23.9 | IND_MELT → LEACH_CSTR_1, orthogonal × 1.2 (placement_seed; duty origin) | solids: conveyor, bin or hand transfer; not piped |
-| SALT_TO_FLUX | SALT_FEED | FLUX_PREP | solids | — | — | 38.9 | SALT_FEED → FLUX_PREP, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| STOCK_TO_MFG | METAL_STORE | MFG_SHOP | solids | — | — | 63.8 | METAL_STORE → MFG_SHOP, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| STOCK_TO_FAB | METAL_STORE | WAFER_FAB | solids | — | — | 64.1 | METAL_STORE → WAFER_FAB, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | solids | — | — | 25.1 | IND_MELT → LEACH_CSTR_1, orthogonal × 1.2 (placement_seed; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| SALT_TO_FLUX | SALT_FEED | FLUX_PREP | solids | — | — | 40.1 | SALT_FEED → FLUX_PREP, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | AL_POT_TO_IND | AL_POT | IND_MELT | solids | — | — | 8.0 | AL_POT → IND_MELT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | MG_POT_TO_IND | MG_POT | IND_MELT | solids | — | — | 4.3 | MG_POT → IND_MELT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | CA_POT_TO_IND | CA_POT | IND_MELT | solids | — | — | 6.1 | CA_POT → IND_MELT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| AL_POT_CL2 | AL_POT | CRU | DN15 | P3 | process vent gas | 48.7 | AL_POT → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| MG_POT_CL2 | MG_POT | CRU | DN15 | P3 | process vent gas | 40.6 | MG_POT → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IND_HEAT_TO_HX | IND_MELT | MET_HX_Q4 | cable | — | — | 53.1 | IND_MELT → MET_HX_Q4, orthogonal × 1.2 (placement_seed; duty origin) | electrical: cable schedule X-ELS-06 |
-| VAC_HEAT_TO_HX | VAC_IND | MET_HX_Q4 | cable | — | — | 48.9 | VAC_IND → MET_HX_Q4, orthogonal × 1.2 (placement_seed; duty origin) | electrical: cable schedule X-ELS-06 |
-| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | DN15 | F1 | flue or acid gas | 62.1 | COMB_HEAT → MET_SCRUB, orthogonal × 1.2 (placement_seed; duty origin + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
-| STOCK_TO_WIRE_DRAW | METAL_STORE | WIRE_DRAW | solids | — | — | 62.5 | METAL_STORE → WIRE_DRAW, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | DN15 | — | molten metal launder/pour (not piped) | 55.1 | IND_MELT → GAS_ATOMIZER, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| ATOM_TO_STOCK | GAS_ATOMIZER | STOCK_OUT | solids | — | — | 62.2 | GAS_ATOMIZER → STOCK_OUT, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| AL_POT_CL2 | AL_POT | CRU | DN15 | P3 | process vent gas | 49.9 | AL_POT → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| MG_POT_CL2 | MG_POT | CRU | DN15 | P3 | process vent gas | 41.8 | MG_POT → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IND_HEAT_TO_HX | IND_MELT | MET_HX_Q4 | cable | — | — | 54.3 | IND_MELT → MET_HX_Q4, orthogonal × 1.2 (placement_seed; duty origin) | electrical: cable schedule X-ELS-06 |
+| VAC_HEAT_TO_HX | VAC_IND | MET_HX_Q4 | cable | — | — | 50.1 | VAC_IND → MET_HX_Q4, orthogonal × 1.2 (placement_seed; duty origin) | electrical: cable schedule X-ELS-06 |
+| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | DN15 | F1 | flue or acid gas | 63.3 | COMB_HEAT → MET_SCRUB, orthogonal × 1.2 (placement_seed; duty origin + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
+| STOCK_TO_WIRE_DRAW | METAL_STORE | WIRE_DRAW | solids | — | — | 63.8 | METAL_STORE → WIRE_DRAW, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | DN15 | — | molten metal launder/pour (not piped) | 56.3 | IND_MELT → GAS_ATOMIZER, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| ATOM_TO_STOCK | GAS_ATOMIZER | STOCK_OUT | solids | — | — | 63.4 | GAS_ATOMIZER → STOCK_OUT, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | WAX_TO_SHELL | WAX_PATTERN | SHELL_BUILD | solids | — | — | 7.2 | WAX_PATTERN → SHELL_BUILD, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | SHELL_TO_BURNOUT | SHELL_BUILD | SHELL_BURNOUT | solids | — | — | 5.0 | SHELL_BUILD → SHELL_BURNOUT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | BURNOUT_TO_CAST | SHELL_BURNOUT | INV_CAST | solids | — | — | 4.3 | SHELL_BURNOUT → INV_CAST, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
@@ -223,25 +223,25 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | VAC_TO_INV | VAC_IND | INV_CAST | DN15 | — | molten metal launder/pour (not piped) | 10.0 | VAC_IND → INV_CAST, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | INV_TO_BREAK | INV_CAST | SHELL_BREAK | solids | — | — | 7.1 | INV_CAST → SHELL_BREAK, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | BREAK_TO_STOCK | SHELL_BREAK | STOCK_OUT | solids | — | — | 2.1 | SHELL_BREAK → STOCK_OUT, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| SHELL_TO_GLASS | SHELL_BREAK | GLASS_MILL | solids | — | — | 24.0 | SHELL_BREAK → GLASS_MILL, orthogonal × 1.2 (placement_seed; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| SHELL_TO_GLASS | SHELL_BREAK | GLASS_MILL | solids | — | — | 43.4 | SHELL_BREAK → GLASS_MILL, orthogonal × 1.2 (placement_seed; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | GLASS_MILL_TO_DIGEST | GLASS_MILL | GLASS_DIGEST | solids | — | — | 6.7 | GLASS_MILL → GLASS_DIGEST, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| MFG_SCRAP_TO_IND | MFG_SHOP | IND_MELT | solids | — | — | 55.1 | MFG_SHOP → IND_MELT, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| MFG_SCRAP_TO_IND | MFG_SHOP | IND_MELT | solids | — | — | 56.3 | MFG_SHOP → IND_MELT, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | WAX_RECLAIM_TO_PATTERN | SHELL_BURNOUT | WAX_PATTERN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.5 | SHELL_BURNOUT → WAX_PATTERN, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 21.1 | SHELL_BURNOUT → OIL_FRAC, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 39.8 | OIL_FRAC → POLY_OLEFIN, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | DN15 | M1 | wet methanol service (316L per unit duty sheets) | 19.1 | MEOH_SYNTH → POLY_OLEFIN, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | DN15 | P1 | acid or brine, at or below 60 C | 33.7 | BLACK_DIGEST → POLY_COND, orthogonal × 1.2 (duty origin + GA move; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 41.5 | SHELL_BURNOUT → OIL_FRAC, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 18.7 | OIL_FRAC → POLY_OLEFIN, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | DN15 | M1 | wet methanol service (316L per unit duty sheets) | 40.0 | MEOH_SYNTH → POLY_OLEFIN, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | DN15 | P1 | acid or brine, at or below 60 C | 43.6 | BLACK_DIGEST → POLY_COND, orthogonal × 1.2 (duty origin + GA move; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | OLEFIN_TO_PELLET | POLY_OLEFIN | PELLET | solids | — | — | 2.5 | POLY_OLEFIN → PELLET, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | POLYF_TO_PELLET | POLY_F | PELLET | solids | — | — | 3.1 | POLY_F → PELLET, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | POLYF_TO_POWDER | POLY_F | POWDER_RESIN | solids | — | — | 4.0 | POLY_F → POWDER_RESIN, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | PELLET_TO_STOCK | PELLET | POLY_STOCK | solids | — | — | 2.9 | PELLET → POLY_STOCK, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | POWDER_TO_STOCK | POWDER_RESIN | POLY_STOCK | solids | — | — | 4.7 | POWDER_RESIN → POLY_STOCK, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | FILM_TO_STOCK | FILM_CAST | POLY_STOCK | solids | — | — | 2.9 | FILM_CAST → POLY_STOCK, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| POLY_TO_MFG | POLY_STOCK | MFG_SHOP | solids | — | — | 45.6 | POLY_STOCK → MFG_SHOP, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| POLY_TO_FAB | POLY_STOCK | WAFER_FAB | solids | — | — | 55.8 | POLY_STOCK → WAFER_FAB, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| POLY_TO_WET | POLY_STOCK | LEACH_CSTR_1 | solids | — | — | 18.8 | POLY_STOCK → LEACH_CSTR_1, orthogonal × 1.2 (placement_seed; duty origin) | solids: conveyor, bin or hand transfer; not piped |
-| CRU_TO_VDF | CRU | VDF_SYN | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 42.8 | CRU → VDF_SYN, orthogonal × 1.2 (placement_report; placement_seed) | velocity 10 m/s, ρ 1.2; min DN15 |
-| CRU_TO_TFE | CRU | TFE_SYN | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 43.9 | CRU → TFE_SYN, orthogonal × 1.2 (placement_report; placement_seed) | velocity 10 m/s, ρ 1.2; min DN15 |
+| POLY_TO_MFG | POLY_STOCK | MFG_SHOP | solids | — | — | 54.0 | POLY_STOCK → MFG_SHOP, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| POLY_TO_FAB | POLY_STOCK | WAFER_FAB | solids | — | — | 42.6 | POLY_STOCK → WAFER_FAB, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| POLY_TO_WET | POLY_STOCK | LEACH_CSTR_1 | solids | — | — | 26.3 | POLY_STOCK → LEACH_CSTR_1, orthogonal × 1.2 (placement_seed; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| CRU_TO_VDF | CRU | VDF_SYN | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 37.5 | CRU → VDF_SYN, orthogonal × 1.2 (placement_report; placement_seed) | velocity 10 m/s, ρ 1.2; min DN15 |
+| CRU_TO_TFE | CRU | TFE_SYN | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 35.0 | CRU → TFE_SYN, orthogonal × 1.2 (placement_report; placement_seed) | velocity 10 m/s, ρ 1.2; min DN15 |
 | POLISH_TO_LI | POLISH_BANK | LI_RECOVER | DN15 | P1 | acid or brine, at or below 60 C | 34.5 | POLISH_BANK → LI_RECOVER, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | WAX_TO_GREASE_CA | PROD_C19_C28 | GREASE_CA | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 1.1 | PROD_C19_C28 → GREASE_CA, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | WAX_TO_GREASE_LI | PROD_C19_C28 | GREASE_LI | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 3.8 | PROD_C19_C28 → GREASE_LI, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -460,10 +460,10 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SF-H2O_ELYZ | SOL_ARK_60K | H2O_ELYZ | cable | — | — | 12.7 | SOL_ARK_60K → H2O_ELYZ, orthogonal × 1.2 (duty origin; placement_seed + GA move + GA move) | electrical: cable schedule X-ELS-06 |
 | IA-O2-PROD | HDR_O2 | PROD_O2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 36.0 | HDR_O2 → PROD_O2, orthogonal × 1.2 (placement_report; placement_seed) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-O2-SHIP | PROD_O2 | NORTH_DOCK | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 27.5 | PROD_O2 → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| SF-IND_MELT | SOL_ARK_60K | IND_MELT | cable | — | — | 16.9 | SOL_ARK_60K → IND_MELT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-VAC_IND | SOL_ARK_60K | VAC_IND | cable | — | — | 12.7 | SOL_ARK_60K → VAC_IND, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-RF_HEAT | SOL_ARK_60K | RF_HEAT | cable | — | — | 28.9 | SOL_ARK_60K → RF_HEAT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-HF_GEN | SOL_ARK_60K | HF_GEN | cable | — | — | 40.7 | SOL_ARK_60K → HF_GEN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-IND_MELT | SOL_ARK_60K | IND_MELT | cable | — | — | 30.1 | SOL_ARK_60K → IND_MELT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-VAC_IND | SOL_ARK_60K | VAC_IND | cable | — | — | 30.2 | SOL_ARK_60K → VAC_IND, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-RF_HEAT | SOL_ARK_60K | RF_HEAT | cable | — | — | 42.1 | SOL_ARK_60K → RF_HEAT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-HF_GEN | SOL_ARK_60K | HF_GEN | cable | — | — | 18.0 | SOL_ARK_60K → HF_GEN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
 | S100 | Q4_BUS | LEACH_CSTR_1 | cable | — | — | 31.9 | Q4_BUS → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | S101 | Q4_BUS | GLASS_DIGEST | cable | — | — | 36.9 | Q4_BUS → GLASS_DIGEST, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | IA-Q4-ADS | Q4_BUS | ADS_CHILL | cable | — | — | 32.7 | Q4_BUS → ADS_CHILL, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
@@ -498,7 +498,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-EW7-H2B | EW_7 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 6.8 | EW_7 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
 | IA-EW8-H2B | EW_8 | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 9.5 | EW_8 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 10 m/s, ρ 0.09; min DN15 |
 | SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | cable | — | — | 137.3 | SOL_ARK_60K → EXT_HALL, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
-| IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 31.2 | PROD_C5_C10 → POLY_OLEFIN, orthogonal × 1.2 (duty origin + GA move + GA move; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 14.0 | PROD_C5_C10 → POLY_OLEFIN, orthogonal × 1.2 (duty origin + GA move + GA move; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | SQ-EVAP_ACID | EVAP_ACID | HEAT_SINK | cable | — | — |  | EVAP_ACID → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | SQ-EVAP_BASE | EVAP_BASE | HEAT_SINK | cable | — | — |  | EVAP_BASE → HEAT_SINK, position missing for HEAT_SINK | electrical: cable schedule X-ELS-06 |
 | IA-EVAP_ACID-VENT | EVAP_ACID | EVAP_ACID_VS | DN15 | P3 | process vent gas | 31.4 | EVAP_ACID → EVAP_ACID_VS, orthogonal × 1.2 (placement_study (STUDY); placement_seed) | velocity 10 m/s, ρ 1.2; min DN15 |
@@ -514,69 +514,69 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-FERM-DIG | MEOH_FERM | BLACK_DIGEST | solids | — | — | 17.9 | MEOH_FERM → BLACK_DIGEST, orthogonal × 1.2 (duty origin; duty origin + GA move) | solids: conveyor, bin or hand transfer; not piped |
 | IA-SOLV-MU | NORTH_DOCK | WS_SOLV | DN15 | M1 | organic liquid (316L per unit duty sheets) | 11.5 | NORTH_DOCK → WS_SOLV, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | POLYF_TO_FILM | POLY_F | FILM_CAST | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 5.3 | POLY_F → FILM_CAST, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-CAF2-MU | NORTH_DOCK | HF_GEN | solids | — | — | 47.2 | NORTH_DOCK → HF_GEN, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-H2SO4-MU | NORTH_DOCK | HF_GEN | DN15 | M2 | 98 wt% H2SO4 make-up; carbon steel passivates above 93 wt% and at ambient (PERRY9_MAT) | 47.2 | NORTH_DOCK → HF_GEN, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-GYPSUM-SHIP | HF_GEN | NORTH_DOCK | solids | — | — | 47.2 | HF_GEN → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-HF-PROD | HF_GEN | WS_HF_ED | DN15 | P3 | oxidizer, HF or PVDF unit | 49.3 | HF_GEN → WS_HF_ED, orthogonal × 1.2 (placement_seed; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
-| MEOH_TO_VDF | MEOH_TANK | VDF_SYN | DN15 | M1 | wet methanol service (316L per unit duty sheets) | 21.4 | MEOH_TANK → VDF_SYN, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| MEOH_TO_TFE | MEOH_TANK | TFE_SYN | DN15 | M1 | wet methanol service (316L per unit duty sheets) | 22.4 | MEOH_TANK → TFE_SYN, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| VDF_HCL_TO_CRU | VDF_SYN | CRU | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 42.8 | VDF_SYN → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| TFE_HCL_TO_CRU | TFE_SYN | CRU | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 43.9 | TFE_SYN → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| POLYF_RECLAIM | POLY_F | F_RECOVER | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 13.9 | POLY_F → F_RECOVER, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| FLUORO_TO_MFG | POLY_STOCK | MFG_SHOP | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 45.6 | POLY_STOCK → MFG_SHOP, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
-| SF-VDF_SYN | SOL_ARK_60K | VDF_SYN | cable | — | — | 37.8 | SOL_ARK_60K → VDF_SYN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-TFE_SYN | SOL_ARK_60K | TFE_SYN | cable | — | — | 38.9 | SOL_ARK_60K → TFE_SYN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-POLY_F | SOL_ARK_60K | POLY_F | cable | — | — | 36.1 | SOL_ARK_60K → POLY_F, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-FILM_CAST | SOL_ARK_60K | FILM_CAST | cable | — | — | 30.8 | SOL_ARK_60K → FILM_CAST, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-POWDER_RESIN | SOL_ARK_60K | POWDER_RESIN | cable | — | — | 35.3 | SOL_ARK_60K → POWDER_RESIN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| IA-CAF2-MU | NORTH_DOCK | HF_GEN | solids | — | — | 21.6 | NORTH_DOCK → HF_GEN, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-H2SO4-MU | NORTH_DOCK | HF_GEN | DN15 | M2 | 98 wt% H2SO4 make-up; carbon steel passivates above 93 wt% and at ambient (PERRY9_MAT) | 21.6 | NORTH_DOCK → HF_GEN, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-GYPSUM-SHIP | HF_GEN | NORTH_DOCK | solids | — | — | 21.6 | HF_GEN → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-HF-PROD | HF_GEN | WS_HF_ED | DN15 | P3 | oxidizer, HF or PVDF unit | 36.7 | HF_GEN → WS_HF_ED, orthogonal × 1.2 (placement_seed; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
+| MEOH_TO_VDF | MEOH_TANK | VDF_SYN | DN15 | M1 | wet methanol service (316L per unit duty sheets) | 37.3 | MEOH_TANK → VDF_SYN, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| MEOH_TO_TFE | MEOH_TANK | TFE_SYN | DN15 | M1 | wet methanol service (316L per unit duty sheets) | 36.2 | MEOH_TANK → TFE_SYN, orthogonal × 1.2 (duty origin; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| VDF_HCL_TO_CRU | VDF_SYN | CRU | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 37.5 | VDF_SYN → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| TFE_HCL_TO_CRU | TFE_SYN | CRU | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 35.0 | TFE_SYN → CRU, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| POLYF_RECLAIM | POLY_F | F_RECOVER | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 30.8 | POLY_F → F_RECOVER, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| FLUORO_TO_MFG | POLY_STOCK | MFG_SHOP | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B | 54.0 | POLY_STOCK → MFG_SHOP, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| SF-VDF_SYN | SOL_ARK_60K | VDF_SYN | cable | — | — | 21.2 | SOL_ARK_60K → VDF_SYN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-TFE_SYN | SOL_ARK_60K | TFE_SYN | cable | — | — | 20.2 | SOL_ARK_60K → TFE_SYN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-POLY_F | SOL_ARK_60K | POLY_F | cable | — | — | 22.9 | SOL_ARK_60K → POLY_F, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-FILM_CAST | SOL_ARK_60K | FILM_CAST | cable | — | — | 27.8 | SOL_ARK_60K → FILM_CAST, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-POWDER_RESIN | SOL_ARK_60K | POWDER_RESIN | cable | — | — | 23.4 | SOL_ARK_60K → POWDER_RESIN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
 | SF-LITHO_COAT | SOL_ARK_60K | LITHO_COAT | cable | — | — | 27.7 | SOL_ARK_60K → LITHO_COAT, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | SF-LITHO_ALIGN | SOL_ARK_60K | LITHO_ALIGN | cable | — | — | 28.3 | SOL_ARK_60K → LITHO_ALIGN, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | SF-LITHO_DEV | SOL_ARK_60K | LITHO_DEV | cable | — | — | 28.9 | SOL_ARK_60K → LITHO_DEV, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-LITHO-CARRY | LITHO_COAT | LITHO_DEV | solids | — | — | 1.3 | LITHO_COAT → LITHO_DEV, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | SF-REMIN | SOL_ARK_60K | REMIN | cable | — | — | 28.9 | SOL_ARK_60K → REMIN, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
-| IA-ALCL3-MU | NORTH_DOCK | AL_POT | solids | — | — | 33.4 | NORTH_DOCK → AL_POT, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-CL2-SHIP | AL_POT | NORTH_DOCK | DN15 | P3 | process vent gas | 33.4 | AL_POT → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-ALCL3-MU | NORTH_DOCK | AL_POT | solids | — | — | 44.4 | NORTH_DOCK → AL_POT, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-CL2-SHIP | AL_POT | NORTH_DOCK | DN15 | P3 | process vent gas | 44.4 | AL_POT → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-MGCL2-KROLL | TI_CELL | MG_POT | DN15 | — | molten MgCl2 salt return (Kroll retort to MG_POT, ~700 C): graphite/Ni-200 wetted launder per AQS-STD-006 (AQS-STD-002 section 12.2) | 1.9 | TI_CELL → MG_POT, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-KROLL-FLUX | TI_CELL | FLUX_PREP | solids | — | — | 4.3 | TI_CELL → FLUX_PREP, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-MGCL2-MU | NORTH_DOCK | MG_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) | 25.3 | NORTH_DOCK → MG_POT, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-MGCL2-MU | NORTH_DOCK | MG_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) | 40.7 | NORTH_DOCK → MG_POT, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-MG-TI | MG_POT | TI_CELL | solids | — | — | 1.9 | MG_POT → TI_CELL, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
 | IA-CL2-MG-TI | MG_POT | TI_CELL | DN15 | P3 | process vent gas | 1.9 | MG_POT → TI_CELL, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-CACL2-MU | NORTH_DOCK | CA_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) | 31.4 | NORTH_DOCK → CA_POT, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | DN15 | P3 | process vent gas | 31.4 | CA_POT → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-TIO2-MU | NORTH_DOCK | TI_CELL | solids | — | — | 23.4 | NORTH_DOCK → TI_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-C-TI | NORTH_DOCK | TI_CELL | solids | — | — | 23.4 | NORTH_DOCK → TI_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-KROLL-CO | TI_CELL | NORTH_DOCK | DN15 | P3 | process vent gas | 23.4 | TI_CELL → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-MOO3-MU | NORTH_DOCK | MO_CELL | solids | — | — | 27.6 | NORTH_DOCK → MO_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-C-MO | NORTH_DOCK | MO_CELL | solids | — | — | 27.6 | NORTH_DOCK → MO_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-MO-VENT | MO_CELL | NORTH_DOCK | DN15 | P3 | process vent gas | 27.6 | MO_CELL → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-CR2O3-MU | NORTH_DOCK | CR_CELL | solids | — | — | 29.5 | NORTH_DOCK → CR_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-C-CR | NORTH_DOCK | CR_CELL | solids | — | — | 29.5 | NORTH_DOCK → CR_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-CR-VENT | CR_CELL | NORTH_DOCK | DN15 | P3 | process vent gas | 29.5 | CR_CELL → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-WAX-MU | NORTH_DOCK | WAX_PATTERN | solids | — | — | 24.0 | NORTH_DOCK → WAX_PATTERN, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-SILICA-MU | NORTH_DOCK | SHELL_BUILD | solids | — | — | 30.6 | NORTH_DOCK → SHELL_BUILD, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-BURNOUT-VENT | SHELL_BURNOUT | NORTH_DOCK | DN15 | P3 | process vent gas | 25.6 | SHELL_BURNOUT → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-CACL2-MU | NORTH_DOCK | CA_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) | 42.5 | NORTH_DOCK → CA_POT, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | DN15 | P3 | process vent gas | 42.5 | CA_POT → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-TIO2-MU | NORTH_DOCK | TI_CELL | solids | — | — | 38.8 | NORTH_DOCK → TI_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-C-TI | NORTH_DOCK | TI_CELL | solids | — | — | 38.8 | NORTH_DOCK → TI_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-KROLL-CO | TI_CELL | NORTH_DOCK | DN15 | P3 | process vent gas | 38.8 | TI_CELL → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-MOO3-MU | NORTH_DOCK | MO_CELL | solids | — | — | 38.6 | NORTH_DOCK → MO_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-C-MO | NORTH_DOCK | MO_CELL | solids | — | — | 38.6 | NORTH_DOCK → MO_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-MO-VENT | MO_CELL | NORTH_DOCK | DN15 | P3 | process vent gas | 38.6 | MO_CELL → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-CR2O3-MU | NORTH_DOCK | CR_CELL | solids | — | — | 40.6 | NORTH_DOCK → CR_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-C-CR | NORTH_DOCK | CR_CELL | solids | — | — | 40.6 | NORTH_DOCK → CR_CELL, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-CR-VENT | CR_CELL | NORTH_DOCK | DN15 | P3 | process vent gas | 40.6 | CR_CELL → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-WAX-MU | NORTH_DOCK | WAX_PATTERN | solids | — | — | 44.4 | NORTH_DOCK → WAX_PATTERN, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-SILICA-MU | NORTH_DOCK | SHELL_BUILD | solids | — | — | 51.0 | NORTH_DOCK → SHELL_BUILD, orthogonal × 1.2 (placement_report; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
+| IA-BURNOUT-VENT | SHELL_BURNOUT | NORTH_DOCK | DN15 | P3 | process vent gas | 46.0 | SHELL_BURNOUT → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-SHELL-RECLAIM | SHELL_BREAK | SHELL_BUILD | solids | — | — | 2.8 | SHELL_BREAK → SHELL_BUILD, orthogonal × 1.2 (placement_seed; placement_seed) | solids: conveyor, bin or hand transfer; not piped |
-| IA-SHELL-EXPORT | SHELL_BREAK | NORTH_DOCK | solids | — | — | 33.4 | SHELL_BREAK → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| SF-AL_POT | SOL_ARK_60K | AL_POT | cable | — | — | 24.5 | SOL_ARK_60K → AL_POT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-MG_POT | SOL_ARK_60K | MG_POT | cable | — | — | 16.4 | SOL_ARK_60K → MG_POT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-CA_POT | SOL_ARK_60K | CA_POT | cable | — | — | 22.6 | SOL_ARK_60K → CA_POT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-TI_CELL | SOL_ARK_60K | TI_CELL | cable | — | — | 14.5 | SOL_ARK_60K → TI_CELL, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-MO_CELL | SOL_ARK_60K | MO_CELL | cable | — | — | 18.7 | SOL_ARK_60K → MO_CELL, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-CR_CELL | SOL_ARK_60K | CR_CELL | cable | — | — | 20.6 | SOL_ARK_60K → CR_CELL, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-FLUX_PREP | SOL_ARK_60K | FLUX_PREP | cable | — | — | 14.8 | SOL_ARK_60K → FLUX_PREP, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-WAX_PATTERN | SOL_ARK_60K | WAX_PATTERN | cable | — | — | 17.5 | SOL_ARK_60K → WAX_PATTERN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-SHELL_BUILD | SOL_ARK_60K | SHELL_BUILD | cable | — | — | 24.1 | SOL_ARK_60K → SHELL_BUILD, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-SHELL_BURNOUT | SOL_ARK_60K | SHELL_BURNOUT | cable | — | — | 19.1 | SOL_ARK_60K → SHELL_BURNOUT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-INV_CAST | SOL_ARK_60K | INV_CAST | cable | — | — | 19.8 | SOL_ARK_60K → INV_CAST, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-SHELL_BREAK | SOL_ARK_60K | SHELL_BREAK | cable | — | — | 26.9 | SOL_ARK_60K → SHELL_BREAK, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-VAC_CAST | SOL_ARK_60K | VAC_CAST | cable | — | — | 14.9 | SOL_ARK_60K → VAC_CAST, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-RES_HEAT | SOL_ARK_60K | RES_HEAT | cable | — | — | 31.0 | SOL_ARK_60K → RES_HEAT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-SINTER | SOL_ARK_60K | SINTER | cable | — | — | 26.7 | SOL_ARK_60K → SINTER, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-FORGE | SOL_ARK_60K | FORGE | cable | — | — | 27.7 | SOL_ARK_60K → FORGE, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-EXTRUDE | SOL_ARK_60K | EXTRUDE | cable | — | — | 26.3 | SOL_ARK_60K → EXTRUDE, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-DRAW | SOL_ARK_60K | DRAW | cable | — | — | 29.6 | SOL_ARK_60K → DRAW, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| SF-COMB_HEAT | SOL_ARK_60K | COMB_HEAT | cable | — | — | 28.9 | SOL_ARK_60K → COMB_HEAT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
-| IA-METAL-SHIP | METAL_STORE | NORTH_DOCK | solids | — | — | 33.1 | METAL_STORE → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-SHELL-EXPORT | SHELL_BREAK | NORTH_DOCK | solids | — | — | 53.8 | SHELL_BREAK → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| SF-AL_POT | SOL_ARK_60K | AL_POT | cable | — | — | 37.9 | SOL_ARK_60K → AL_POT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-MG_POT | SOL_ARK_60K | MG_POT | cable | — | — | 34.2 | SOL_ARK_60K → MG_POT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-CA_POT | SOL_ARK_60K | CA_POT | cable | — | — | 36.0 | SOL_ARK_60K → CA_POT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-TI_CELL | SOL_ARK_60K | TI_CELL | cable | — | — | 32.3 | SOL_ARK_60K → TI_CELL, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-MO_CELL | SOL_ARK_60K | MO_CELL | cable | — | — | 32.2 | SOL_ARK_60K → MO_CELL, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-CR_CELL | SOL_ARK_60K | CR_CELL | cable | — | — | 34.1 | SOL_ARK_60K → CR_CELL, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-FLUX_PREP | SOL_ARK_60K | FLUX_PREP | cable | — | — | 28.4 | SOL_ARK_60K → FLUX_PREP, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-WAX_PATTERN | SOL_ARK_60K | WAX_PATTERN | cable | — | — | 37.9 | SOL_ARK_60K → WAX_PATTERN, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-SHELL_BUILD | SOL_ARK_60K | SHELL_BUILD | cable | — | — | 44.5 | SOL_ARK_60K → SHELL_BUILD, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-SHELL_BURNOUT | SOL_ARK_60K | SHELL_BURNOUT | cable | — | — | 39.5 | SOL_ARK_60K → SHELL_BURNOUT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-INV_CAST | SOL_ARK_60K | INV_CAST | cable | — | — | 40.2 | SOL_ARK_60K → INV_CAST, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-SHELL_BREAK | SOL_ARK_60K | SHELL_BREAK | cable | — | — | 47.3 | SOL_ARK_60K → SHELL_BREAK, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-VAC_CAST | SOL_ARK_60K | VAC_CAST | cable | — | — | 35.3 | SOL_ARK_60K → VAC_CAST, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-RES_HEAT | SOL_ARK_60K | RES_HEAT | cable | — | — | 44.2 | SOL_ARK_60K → RES_HEAT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-SINTER | SOL_ARK_60K | SINTER | cable | — | — | 39.9 | SOL_ARK_60K → SINTER, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-FORGE | SOL_ARK_60K | FORGE | cable | — | — | 48.1 | SOL_ARK_60K → FORGE, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-EXTRUDE | SOL_ARK_60K | EXTRUDE | cable | — | — | 44.0 | SOL_ARK_60K → EXTRUDE, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-DRAW | SOL_ARK_60K | DRAW | cable | — | — | 50.0 | SOL_ARK_60K → DRAW, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| SF-COMB_HEAT | SOL_ARK_60K | COMB_HEAT | cable | — | — | 46.4 | SOL_ARK_60K → COMB_HEAT, orthogonal × 1.2 (duty origin; placement_seed) | electrical: cable schedule X-ELS-06 |
+| IA-METAL-SHIP | METAL_STORE | NORTH_DOCK | solids | — | — | 48.5 | METAL_STORE → NORTH_DOCK, orthogonal × 1.2 (placement_seed; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | SF-MET_MELT | SOL_ARK_60K | MET_MELT | cable | — | — | 38.3 | SOL_ARK_60K → MET_MELT, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | SF-GAS_ATOMIZER | SOL_ARK_60K | GAS_ATOMIZER | cable | — | — | 38.3 | SOL_ARK_60K → GAS_ATOMIZER, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | SF-COLD_MILL | SOL_ARK_60K | COLD_MILL | cable | — | — | 38.3 | SOL_ARK_60K → COLD_MILL, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
@@ -647,7 +647,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | CA_HOPPER | NORTH_DOCK | QUAIL_CAGE | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 22.3 | NORTH_DOCK → QUAIL_CAGE, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | FOOD_EXPORT | FOOD_STORE | BOUNDARY_EXPORT | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 30.7 | FOOD_STORE → BOUNDARY_EXPORT, orthogonal × 1.2 (placement_seed; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | GAL_GREY | GALLEY | GREY_TREAT | DN15 | P1 | acid or brine, at or below 60 C | 7.7 | GALLEY → GREY_TREAT, orthogonal × 1.2 (placement_seed; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
-| STOCK_TO_FIBER | POLY_STOCK | POLY_FIBER | DN15 | — | molten metal launder/pour (not piped) | 38.2 | POLY_STOCK → POLY_FIBER, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
+| STOCK_TO_FIBER | POLY_STOCK | POLY_FIBER | DN15 | — | molten metal launder/pour (not piped) | 47.5 | POLY_STOCK → POLY_FIBER, orthogonal × 1.2 (placement_seed; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | FR_FINISH | NORTH_DOCK | POLY_FIBER | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 22.9 | NORTH_DOCK → POLY_FIBER, orthogonal × 1.2 (placement_report; placement_seed) | velocity 1 m/s, ρ 1000; min DN15 |
 | FIBER_SCRAP | POLY_FIBER | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 24.8 | POLY_FIBER → LEACH_CSTR_1, orthogonal × 1.2 (placement_seed; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | FLEECE_TO_MFG | POLY_FIBER | MFG_SHOP | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 7.4 | POLY_FIBER → MFG_SHOP, orthogonal × 1.2 (placement_seed; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |

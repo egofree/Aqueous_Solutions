@@ -1,227 +1,227 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="40740" height="24286" font-family="DejaVu Sans,sans-serif" font-size="12">
-<rect x="0" y="0" width="40740" height="24286" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="49740" height="31386" font-family="DejaVu Sans,sans-serif" font-size="12">
+<rect x="0" y="0" width="49740" height="31386" fill="white"/>
 <text x="16" y="26" font-size="15" font-weight="bold">Baseline site - level L0 plan (mm, +X right, +Y up)</text>
 <text x="16" y="44" font-size="11" fill="#555">datum Z 0 mm. Dashed = eliminated by the scaling plan.</text>
-<rect x="23680" y="1880" width="1000" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
-<text x="23686" y="1896" fontSize="11">ACID_POLISH_SCRUB</text>
-<rect x="19080" y="80" width="1500" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
-<text x="19086" y="96" fontSize="11">AFTERBURNER_FLUE</text>
-<rect x="21380" y="80" width="1000" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
-<text x="21386" y="96" fontSize="11">ALK_SCRUBBER</text>
-<rect x="5480" y="22080" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="5486" y="22096" fontSize="11">AL_POT</text>
-<rect x="31180" y="5180" width="1500" height="1000" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
-<text x="31186" y="5196" fontSize="11">ATMOS</text>
-<rect x="15080" y="12280" width="2000" height="1000" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
-<text x="15086" y="12296" fontSize="11">BACKUP_GEN</text>
-<rect x="19080" y="1880" width="1500" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
-<text x="19086" y="1896" fontSize="11">BAGHOUSE</text>
-<rect x="37780" y="10580" width="1200" height="800" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="37786" y="10596" fontSize="11">BLOW_MOLD</text>
-<rect x="12380" y="9080" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="12386" y="9096" fontSize="11">BMED_ACID</text>
-<rect x="11080" y="14480" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="11086" y="14496" fontSize="11">BMED_BASE</text>
-<rect x="18580" y="14580" width="3600" height="800" fill="#85929e33" stroke="#85929e" stroke-width="2"/>
-<text x="18586" y="14596" fontSize="11">BOUNDARY_EXPORT</text>
-<rect x="8080" y="20280" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="8086" y="20296" fontSize="11">CAST_LINE</text>
-<rect x="7080" y="22080" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="7086" y="22096" fontSize="11">CA_POT</text>
-<rect x="31080" y="5080" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="31086" y="5096" fontSize="11">COLD_MILL</text>
-<rect x="80" y="20280" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="86" y="20296" fontSize="11">COMB_HEAT</text>
-<rect x="4380" y="18680" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="4386" y="18696" fontSize="11">CONT_CAST</text>
-<rect x="10080" y="9080" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="10086" y="9096" fontSize="11">CRU</text>
-<rect x="8680" y="22080" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="8686" y="22096" fontSize="11">CR_CELL</text>
-<rect x="80" y="17080" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="86" y="17096" fontSize="11">DRAW</text>
-<rect x="36980" y="5180" width="1200" height="800" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="36986" y="5196" fontSize="11">ELECTRODE_COAT</text>
-<rect x="13380" y="14480" width="1650" height="1300" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="13386" y="14496" fontSize="11">EVAP_ACID</text>
-<rect x="14680" y="12680" width="400" height="400" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="14686" y="12696" fontSize="11">EVAP_ACID_VS</text>
-<rect x="10080" y="16580" width="1250" height="800" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="10086" y="16596" fontSize="11">EVAP_BASE</text>
-<rect x="1880" y="20280" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="1886" y="20296" fontSize="11">EXTRUDE</text>
-<rect x="19080" y="23080" width="1500" height="1000" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
-<text x="19086" y="23096" fontSize="11">EXT_HALL</text>
-<rect x="39580" y="12780" width="500" height="500" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="39586" y="12796" fontSize="11">FAB_UPW_TANK</text>
-<rect x="11780" y="4380" width="1500" height="800" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="11786" y="4396" fontSize="11">FILM_CAST</text>
-<rect x="10080" y="10880" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="10086" y="10896" fontSize="11">FLOAT_SINK</text>
-<rect x="13680" y="22080" width="800" height="600" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="13686" y="22096" fontSize="11">FLUX_PREP</text>
-<rect x="80" y="18680" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="86" y="18696" fontSize="11">FORGE</text>
-<rect x="13780" y="20980" width="1800" height="800" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
-<text x="13786" y="20996" fontSize="11">FUEL_CELL</text>
-<rect x="12380" y="10880" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="12386" y="10896" fontSize="11">F_RECOVER</text>
-<rect x="31080" y="6880" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="31086" y="6896" fontSize="11">GAS_ATOMIZER</text>
-<rect x="9780" y="9980" width="1200" height="800" fill="#5d6d7e33" stroke="#5d6d7e" stroke-width="2"/>
-<text x="9786" y="9996" fontSize="11">GEO_GHEX</text>
-<rect x="11580" y="9780" width="1600" height="800" fill="#5d6d7e33" stroke="#5d6d7e" stroke-width="2"/>
-<text x="11586" y="9796" fontSize="11">GEO_HP</text>
-<rect x="9980" y="8580" width="800" height="800" fill="#5d6d7e33" stroke="#5d6d7e" stroke-width="2"/>
-<text x="9986" y="8596" fontSize="11">GEO_HP_CLOSED_LOOP</text>
-<rect x="11580" y="8180" width="1600" height="800" fill="#5d6d7e33" stroke="#5d6d7e" stroke-width="2"/>
-<text x="11586" y="8196" fontSize="11">GEO_ORC</text>
-<rect x="31180" y="6980" width="800" height="800" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
-<text x="31186" y="6996" fontSize="11">GW_INTAKE</text>
-<rect x="25480" y="1880" width="600" height="400" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
-<text x="25486" y="1896" fontSize="11">H2_DRYER</text>
-<rect x="23180" y="80" width="1500" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
-<text x="23186" y="96" fontSize="11">HDR_H2</text>
-<rect x="21380" y="1880" width="1500" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
-<text x="21386" y="1896" fontSize="11">HDR_O2</text>
-<rect x="19080" y="5280" width="1500" height="1000" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
-<text x="19086" y="5296" fontSize="11">HDR_UPW</text>
-<rect x="8080" y="80" width="1200" height="700" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="8086" y="96" fontSize="11">HF_GEN</text>
-<rect x="31080" y="9080" width="1500" height="1000" fill="#2874a633" stroke="#2874a6" stroke-width="2"/>
-<text x="31086" y="9096" fontSize="11">HYDRO_SET</text>
-<rect x="11880" y="22080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="11886" y="22096" fontSize="11">IND_MELT</text>
-<rect x="6680" y="18680" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="6686" y="18696" fontSize="11">INV_CAST</text>
-<rect x="36980" y="15980" width="500" height="500" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="36986" y="15996" fontSize="11">LITHO_ALIGN</text>
-<rect x="36380" y="15980" width="600" height="500" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="36386" y="15996" fontSize="11">LITHO_COAT</text>
-<rect x="37480" y="15980" width="500" height="500" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="37486" y="15996" fontSize="11">LITHO_DEV</text>
-<rect x="10080" y="14480" width="200" height="200" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="10086" y="14496" fontSize="11">LI_RECOVER</text>
-<rect x="16680" y="16380" width="600" height="400" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
-<text x="16686" y="16396" fontSize="11">LOAD_AGG</text>
-<rect x="16132" y="4780" width="400" height="400" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
-<text x="16138" y="4796" fontSize="11">MEOH_COND</text>
-<rect x="13732" y="4780" width="1800" height="800" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
-<text x="13738" y="4796" fontSize="11">MEOH_FC</text>
-<rect x="13880" y="7680" width="2200" height="900" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
-<text x="13886" y="7696" fontSize="11">MEOH_FERM</text>
-<rect x="13732" y="6180" width="2200" height="900" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
-<text x="13738" y="6196" fontSize="11">MEOH_SYNTH</text>
-<rect x="16532" y="6180" width="800" height="800" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
-<text x="16538" y="6196" fontSize="11">MEOH_TANK</text>
-<rect x="4180" y="20280" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="4186" y="20296" fontSize="11">METAL_STORE</text>
-<rect x="30780" y="4780" width="1200" height="800" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="30786" y="4796" fontSize="11">MET_AHU</text>
-<rect x="33180" y="4780" width="600" height="400" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="33186" y="4796" fontSize="11">MET_HX_Q4</text>
-<rect x="33380" y="6880" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="33386" y="6896" fontSize="11">MET_MELT</text>
-<rect x="32180" y="6180" width="800" height="800" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="32186" y="6196" fontSize="11">MET_SCRUB</text>
-<rect x="31180" y="8780" width="1500" height="1000" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
-<text x="31186" y="8796" fontSize="11">MET_SYN</text>
-<rect x="31080" y="8680" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="31086" y="8696" fontSize="11">MFG_SHOP</text>
-<rect x="10380" y="20280" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="10386" y="20296" fontSize="11">MG_POT</text>
-<rect x="10280" y="22080" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="10286" y="22096" fontSize="11">MO_CELL</text>
-<rect x="19080" y="15080" width="1500" height="1000" fill="#85929e33" stroke="#85929e" stroke-width="2"/>
-<text x="19086" y="15096" fontSize="11">NORTH_DOCK</text>
-<rect x="15080" y="10380" width="600" height="400" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
-<text x="15086" y="10396" fontSize="11">NOX_SCRUB</text>
-<rect x="31080" y="5080" width="600" height="600" fill="#884ea033" stroke="#884ea0" stroke-width="2"/>
-<text x="31086" y="5096" fontSize="11">NUTRIENT_DOSE</text>
-<rect x="8080" y="4380" width="1500" height="800" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="8086" y="4396" fontSize="11">PELLET</text>
-<rect x="10080" y="12680" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="10086" y="12696" fontSize="11">POLISH_BANK</text>
-<rect x="8080" y="1580" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="8086" y="1596" fontSize="11">POLY_COND</text>
-<rect x="9480" y="2980" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="9486" y="2996" fontSize="11">POLY_F</text>
-<rect x="30780" y="7580" width="3100" height="1300" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="30786" y="7596" fontSize="11">POLY_FIBER</text>
-<rect x="8080" y="2980" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="8086" y="2996" fontSize="11">POLY_OLEFIN</text>
-<rect x="10380" y="4380" width="600" height="400" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="10386" y="4396" fontSize="11">POLY_STOCK</text>
-<rect x="10880" y="1580" width="1500" height="800" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="10886" y="1596" fontSize="11">POWDER_RESIN</text>
-<rect x="14680" y="10880" width="300" height="300" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="14686" y="10896" fontSize="11">P_CA</text>
-<rect x="30580" y="4580" width="10000" height="80" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
-<text x="30586" y="4596" fontSize="11">Q4_BUS</text>
-<rect x="16680" y="17380" width="1600" height="800" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
-<text x="16686" y="17396" fontSize="11">RECTIFIER</text>
-<rect x="80" y="22080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="86" y="22096" fontSize="11">RES_HEAT</text>
-<rect x="1880" y="22080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="1886" y="22096" fontSize="11">RF_HEAT</text>
-<rect x="5780" y="20280" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="5786" y="20296" fontSize="11">ROLL</text>
-<rect x="23080" y="8080" width="1500" height="1000" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
-<text x="23086" y="8096" fontSize="11">ROOF_TANK</text>
-<rect x="12380" y="12680" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
-<text x="12386" y="12696" fontSize="11">SALT_FEED</text>
-<rect x="2380" y="17080" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="2386" y="17096" fontSize="11">SHELL_BREAK</text>
-<rect x="4680" y="17080" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="4686" y="17096" fontSize="11">SHELL_BUILD</text>
-<rect x="8980" y="17080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="8986" y="17096" fontSize="11">SHELL_BURNOUT</text>
-<rect x="3680" y="22080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="3686" y="22096" fontSize="11">SINTER</text>
-<rect x="35580" y="17780" width="2400" height="1200" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="35586" y="17796" fontSize="11">SOLAR_PV_CELL</text>
-<rect x="17080" y="19380" width="800" height="400" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
-<text x="17086" y="19396" fontSize="11">SOL_ARK_60K</text>
-<rect x="2380" y="18680" width="1200" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="2386" y="18696" fontSize="11">STOCK_OUT</text>
-<rect x="10080" y="80" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="10086" y="96" fontSize="11">TFE_SYN</text>
-<rect x="11980" y="20280" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="11986" y="20296" fontSize="11">TI_CELL</text>
-<rect x="10780" y="18680" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="10786" y="18696" fontSize="11">VAC_CAST</text>
-<rect x="13580" y="20280" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="13586" y="20296" fontSize="11">VAC_IND</text>
-<rect x="9480" y="1580" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
-<text x="9486" y="1596" fontSize="11">VDF_SYN</text>
-<rect x="31080" y="13080" width="1500" height="1000" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="31086" y="13096" fontSize="11">WAFER_FAB</text>
-<rect x="10780" y="17080" width="800" height="600" fill="#93511633" stroke="#935116" stroke-width="2"/>
-<text x="10786" y="17096" fontSize="11">WAX_PATTERN</text>
-<rect x="31080" y="14880" width="1500" height="1000" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="31086" y="14896" fontSize="11">WET_BENCH</text>
-<rect x="33380" y="8680" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
-<text x="33386" y="8696" fontSize="11">WIRE_DRAW</text>
-<rect x="33780" y="19780" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="33786" y="19796" fontSize="11">WS_AMMONIA</text>
-<rect x="38580" y="19580" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="38586" y="19596" fontSize="11">WS_DOPE</text>
-<rect x="30780" y="14180" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="30786" y="14196" fontSize="11">WS_HF_ED</text>
-<rect x="35180" y="19780" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="35186" y="19796" fontSize="11">WS_KOH</text>
-<rect x="31780" y="12780" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="31786" y="12796" fontSize="11">WS_NITRIC</text>
-<rect x="33780" y="12580" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="33786" y="12596" fontSize="11">WS_PEROX</text>
-<rect x="31580" y="17180" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="31586" y="17196" fontSize="11">WS_PHOS</text>
-<rect x="35780" y="12780" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="35786" y="12796" fontSize="11">WS_SLURRY</text>
-<rect x="30780" y="20580" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
-<text x="30786" y="20596" fontSize="11">WS_SOLV</text>
-<rect x="13732" y="14580" width="1800" height="1200" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
-<text x="13738" y="14596" fontSize="11">ZNBR2</text>
-<rect x="12180" y="14580" width="400" height="400" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
-<text x="12186" y="14596" fontSize="11">ZNBR2_BR2_REGEN</text>
+<rect x="32680" y="1880" width="1000" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="32686" y="1896" fontSize="11">ACID_POLISH_SCRUB</text>
+<rect x="28080" y="80" width="1500" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="28086" y="96" fontSize="11">AFTERBURNER_FLUE</text>
+<rect x="30380" y="80" width="1000" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="30386" y="96" fontSize="11">ALK_SCRUBBER</text>
+<rect x="5480" y="14080" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="5486" y="14096" fontSize="11">AL_POT</text>
+<rect x="40180" y="5180" width="1500" height="1000" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
+<text x="40186" y="5196" fontSize="11">ATMOS</text>
+<rect x="24080" y="12280" width="2000" height="1000" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
+<text x="24086" y="12296" fontSize="11">BACKUP_GEN</text>
+<rect x="28080" y="1880" width="1500" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="28086" y="1896" fontSize="11">BAGHOUSE</text>
+<rect x="46780" y="10580" width="1200" height="800" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="46786" y="10596" fontSize="11">BLOW_MOLD</text>
+<rect x="21380" y="9080" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="21386" y="9096" fontSize="11">BMED_ACID</text>
+<rect x="20080" y="14480" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="20086" y="14496" fontSize="11">BMED_BASE</text>
+<rect x="27580" y="14580" width="3600" height="800" fill="#85929e33" stroke="#85929e" stroke-width="2"/>
+<text x="27586" y="14596" fontSize="11">BOUNDARY_EXPORT</text>
+<rect x="8080" y="12280" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="8086" y="12296" fontSize="11">CAST_LINE</text>
+<rect x="7080" y="14080" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="7086" y="14096" fontSize="11">CA_POT</text>
+<rect x="40080" y="5080" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="40086" y="5096" fontSize="11">COLD_MILL</text>
+<rect x="80" y="12280" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="86" y="12296" fontSize="11">COMB_HEAT</text>
+<rect x="4380" y="10680" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="4386" y="10696" fontSize="11">CONT_CAST</text>
+<rect x="19080" y="9080" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="19086" y="9096" fontSize="11">CRU</text>
+<rect x="8680" y="14080" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="8686" y="14096" fontSize="11">CR_CELL</text>
+<rect x="80" y="9080" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="86" y="9096" fontSize="11">DRAW</text>
+<rect x="45980" y="5180" width="1200" height="800" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="45986" y="5196" fontSize="11">ELECTRODE_COAT</text>
+<rect x="22380" y="14480" width="1650" height="1300" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="22386" y="14496" fontSize="11">EVAP_ACID</text>
+<rect x="23680" y="12680" width="400" height="400" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="23686" y="12696" fontSize="11">EVAP_ACID_VS</text>
+<rect x="19080" y="16580" width="1250" height="800" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="19086" y="16596" fontSize="11">EVAP_BASE</text>
+<rect x="1880" y="12280" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="1886" y="12296" fontSize="11">EXTRUDE</text>
+<rect x="28080" y="23080" width="1500" height="1000" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
+<text x="28086" y="23096" fontSize="11">EXT_HALL</text>
+<rect x="48580" y="12780" width="500" height="500" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="48586" y="12796" fontSize="11">FAB_UPW_TANK</text>
+<rect x="31780" y="30380" width="1500" height="800" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="31786" y="30396" fontSize="11">FILM_CAST</text>
+<rect x="19080" y="10880" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="19086" y="10896" fontSize="11">FLOAT_SINK</text>
+<rect x="13680" y="14080" width="800" height="600" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="13686" y="14096" fontSize="11">FLUX_PREP</text>
+<rect x="80" y="10680" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="86" y="10696" fontSize="11">FORGE</text>
+<rect x="22780" y="20980" width="1800" height="800" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
+<text x="22786" y="20996" fontSize="11">FUEL_CELL</text>
+<rect x="21380" y="10880" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="21386" y="10896" fontSize="11">F_RECOVER</text>
+<rect x="40080" y="6880" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="40086" y="6896" fontSize="11">GAS_ATOMIZER</text>
+<rect x="18780" y="9980" width="1200" height="800" fill="#5d6d7e33" stroke="#5d6d7e" stroke-width="2"/>
+<text x="18786" y="9996" fontSize="11">GEO_GHEX</text>
+<rect x="20580" y="9780" width="1600" height="800" fill="#5d6d7e33" stroke="#5d6d7e" stroke-width="2"/>
+<text x="20586" y="9796" fontSize="11">GEO_HP</text>
+<rect x="18980" y="8580" width="800" height="800" fill="#5d6d7e33" stroke="#5d6d7e" stroke-width="2"/>
+<text x="18986" y="8596" fontSize="11">GEO_HP_CLOSED_LOOP</text>
+<rect x="20580" y="8180" width="1600" height="800" fill="#5d6d7e33" stroke="#5d6d7e" stroke-width="2"/>
+<text x="20586" y="8196" fontSize="11">GEO_ORC</text>
+<rect x="40180" y="6980" width="800" height="800" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
+<text x="40186" y="6996" fontSize="11">GW_INTAKE</text>
+<rect x="34480" y="1880" width="600" height="400" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="34486" y="1896" fontSize="11">H2_DRYER</text>
+<rect x="32180" y="80" width="1500" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="32186" y="96" fontSize="11">HDR_H2</text>
+<rect x="30380" y="1880" width="1500" height="1000" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="30386" y="1896" fontSize="11">HDR_O2</text>
+<rect x="28080" y="26080" width="1500" height="1000" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
+<text x="28086" y="26096" fontSize="11">HDR_UPW</text>
+<rect x="28080" y="26080" width="1200" height="700" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="28086" y="26096" fontSize="11">HF_GEN</text>
+<rect x="40080" y="9080" width="1500" height="1000" fill="#2874a633" stroke="#2874a6" stroke-width="2"/>
+<text x="40086" y="9096" fontSize="11">HYDRO_SET</text>
+<rect x="11880" y="14080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="11886" y="14096" fontSize="11">IND_MELT</text>
+<rect x="6680" y="10680" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="6686" y="10696" fontSize="11">INV_CAST</text>
+<rect x="45980" y="15980" width="500" height="500" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="45986" y="15996" fontSize="11">LITHO_ALIGN</text>
+<rect x="45380" y="15980" width="600" height="500" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="45386" y="15996" fontSize="11">LITHO_COAT</text>
+<rect x="46480" y="15980" width="500" height="500" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="46486" y="15996" fontSize="11">LITHO_DEV</text>
+<rect x="19080" y="14480" width="200" height="200" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="19086" y="14496" fontSize="11">LI_RECOVER</text>
+<rect x="25680" y="16380" width="600" height="400" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
+<text x="25686" y="16396" fontSize="11">LOAD_AGG</text>
+<rect x="25132" y="4780" width="400" height="400" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
+<text x="25138" y="4796" fontSize="11">MEOH_COND</text>
+<rect x="22732" y="4780" width="1800" height="800" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
+<text x="22738" y="4796" fontSize="11">MEOH_FC</text>
+<rect x="22880" y="7680" width="2200" height="900" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
+<text x="22886" y="7696" fontSize="11">MEOH_FERM</text>
+<rect x="22732" y="6180" width="2200" height="900" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
+<text x="22738" y="6196" fontSize="11">MEOH_SYNTH</text>
+<rect x="25532" y="6180" width="800" height="800" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
+<text x="25538" y="6196" fontSize="11">MEOH_TANK</text>
+<rect x="4180" y="12280" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="4186" y="12296" fontSize="11">METAL_STORE</text>
+<rect x="39780" y="4780" width="1200" height="800" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="39786" y="4796" fontSize="11">MET_AHU</text>
+<rect x="42180" y="4780" width="600" height="400" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="42186" y="4796" fontSize="11">MET_HX_Q4</text>
+<rect x="42380" y="6880" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="42386" y="6896" fontSize="11">MET_MELT</text>
+<rect x="41180" y="6180" width="800" height="800" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="41186" y="6196" fontSize="11">MET_SCRUB</text>
+<rect x="40180" y="8780" width="1500" height="1000" fill="#117a6533" stroke="#117a65" stroke-width="2"/>
+<text x="40186" y="8796" fontSize="11">MET_SYN</text>
+<rect x="40080" y="8680" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="40086" y="8696" fontSize="11">MFG_SHOP</text>
+<rect x="10380" y="12280" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="10386" y="12296" fontSize="11">MG_POT</text>
+<rect x="10280" y="14080" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="10286" y="14096" fontSize="11">MO_CELL</text>
+<rect x="28080" y="15080" width="1500" height="1000" fill="#85929e33" stroke="#85929e" stroke-width="2"/>
+<text x="28086" y="15096" fontSize="11">NORTH_DOCK</text>
+<rect x="24080" y="10380" width="600" height="400" fill="#b03a2e33" stroke="#b03a2e" stroke-width="2"/>
+<text x="24086" y="10396" fontSize="11">NOX_SCRUB</text>
+<rect x="40080" y="5080" width="600" height="600" fill="#884ea033" stroke="#884ea0" stroke-width="2"/>
+<text x="40086" y="5096" fontSize="11">NUTRIENT_DOSE</text>
+<rect x="28080" y="30380" width="1500" height="800" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="28086" y="30396" fontSize="11">PELLET</text>
+<rect x="19080" y="12680" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="19086" y="12696" fontSize="11">POLISH_BANK</text>
+<rect x="28080" y="27580" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="28086" y="27596" fontSize="11">POLY_COND</text>
+<rect x="29480" y="28980" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="29486" y="28996" fontSize="11">POLY_F</text>
+<rect x="39780" y="7580" width="3100" height="1300" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="39786" y="7596" fontSize="11">POLY_FIBER</text>
+<rect x="28080" y="28980" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="28086" y="28996" fontSize="11">POLY_OLEFIN</text>
+<rect x="30380" y="30380" width="600" height="400" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="30386" y="30396" fontSize="11">POLY_STOCK</text>
+<rect x="30880" y="27580" width="1500" height="800" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="30886" y="27596" fontSize="11">POWDER_RESIN</text>
+<rect x="23680" y="10880" width="300" height="300" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="23686" y="10896" fontSize="11">P_CA</text>
+<rect x="39580" y="4580" width="10000" height="80" fill="#d6891033" stroke="#d68910" stroke-width="2"/>
+<text x="39586" y="4596" fontSize="11">Q4_BUS</text>
+<rect x="25680" y="17380" width="1600" height="800" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
+<text x="25686" y="17396" fontSize="11">RECTIFIER</text>
+<rect x="80" y="14080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="86" y="14096" fontSize="11">RES_HEAT</text>
+<rect x="1880" y="14080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="1886" y="14096" fontSize="11">RF_HEAT</text>
+<rect x="5780" y="12280" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="5786" y="12296" fontSize="11">ROLL</text>
+<rect x="32080" y="8080" width="1500" height="1000" fill="#2471a333" stroke="#2471a3" stroke-width="2"/>
+<text x="32086" y="8096" fontSize="11">ROOF_TANK</text>
+<rect x="21380" y="12680" width="1500" height="1000" fill="#7d660833" stroke="#7d6608" stroke-width="2"/>
+<text x="21386" y="12696" fontSize="11">SALT_FEED</text>
+<rect x="2380" y="9080" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="2386" y="9096" fontSize="11">SHELL_BREAK</text>
+<rect x="4680" y="9080" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="4686" y="9096" fontSize="11">SHELL_BUILD</text>
+<rect x="8980" y="9080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="8986" y="9096" fontSize="11">SHELL_BURNOUT</text>
+<rect x="3680" y="14080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="3686" y="14096" fontSize="11">SINTER</text>
+<rect x="44580" y="17780" width="2400" height="1200" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="44586" y="17796" fontSize="11">SOLAR_PV_CELL</text>
+<rect x="26080" y="19380" width="800" height="400" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
+<text x="26086" y="19396" fontSize="11">SOL_ARK_60K</text>
+<rect x="2380" y="10680" width="1200" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="2386" y="10696" fontSize="11">STOCK_OUT</text>
+<rect x="30080" y="26080" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="30086" y="26096" fontSize="11">TFE_SYN</text>
+<rect x="11980" y="12280" width="800" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="11986" y="12296" fontSize="11">TI_CELL</text>
+<rect x="10780" y="10680" width="1500" height="800" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="10786" y="10696" fontSize="11">VAC_CAST</text>
+<rect x="13580" y="12280" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="13586" y="12296" fontSize="11">VAC_IND</text>
+<rect x="29480" y="27580" width="600" height="600" fill="#1f618d33" stroke="#1f618d" stroke-width="2"/>
+<text x="29486" y="27596" fontSize="11">VDF_SYN</text>
+<rect x="40080" y="13080" width="1500" height="1000" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="40086" y="13096" fontSize="11">WAFER_FAB</text>
+<rect x="10780" y="9080" width="800" height="600" fill="#93511633" stroke="#935116" stroke-width="2"/>
+<text x="10786" y="9096" fontSize="11">WAX_PATTERN</text>
+<rect x="40080" y="14880" width="1500" height="1000" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="40086" y="14896" fontSize="11">WET_BENCH</text>
+<rect x="42380" y="8680" width="1500" height="1000" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="42386" y="8696" fontSize="11">WIRE_DRAW</text>
+<rect x="42780" y="19780" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="42786" y="19796" fontSize="11">WS_AMMONIA</text>
+<rect x="47580" y="19580" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="47586" y="19596" fontSize="11">WS_DOPE</text>
+<rect x="39780" y="14180" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="39786" y="14196" fontSize="11">WS_HF_ED</text>
+<rect x="44180" y="19780" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="44186" y="19796" fontSize="11">WS_KOH</text>
+<rect x="40780" y="12780" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="40786" y="12796" fontSize="11">WS_NITRIC</text>
+<rect x="42780" y="12580" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="42786" y="12596" fontSize="11">WS_PEROX</text>
+<rect x="40580" y="17180" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="40586" y="17196" fontSize="11">WS_PHOS</text>
+<rect x="44780" y="12780" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="44786" y="12796" fontSize="11">WS_SLURRY</text>
+<rect x="39780" y="20580" width="800" height="800" fill="#11786433" stroke="#117864" stroke-width="2"/>
+<text x="39786" y="20596" fontSize="11">WS_SOLV</text>
+<rect x="22732" y="14580" width="1800" height="1200" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
+<text x="22738" y="14596" fontSize="11">ZNBR2</text>
+<rect x="21180" y="14580" width="400" height="400" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
+<text x="21186" y="14596" fontSize="11">ZNBR2_BR2_REGEN</text>
 </svg>

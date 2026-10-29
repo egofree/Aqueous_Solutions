@@ -235,8 +235,8 @@ DIGESTER,DIGESTER_EXT,BMED_BASE,valve,isolation valve,DN15,"PP-H ball valve, ISO
 DIGESTER,DIGESTER_EXT,CRU,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-CRU-01 to LEACH_CSTR_1 (assumed size)
 DIGESTER,DIGESTER_EXT,CRU,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-CRU-01 to LEACH_CSTR_1
 DIGESTER,DIGESTER_EXT,CRU,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-CRU-01 to LEACH_CSTR_1: run and fault (assumed)
-DIGESTER,DIGESTER_EXT,CRU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,82,CRU_TO_VDF: 2 per support (assumed)
-DIGESTER,DIGESTER_EXT,CRU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,84,CRU_TO_TFE: 2 per support (assumed)
+DIGESTER,DIGESTER_EXT,CRU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,72,CRU_TO_VDF: 2 per support (assumed)
+DIGESTER,DIGESTER_EXT,CRU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,68,CRU_TO_TFE: 2 per support (assumed)
 DIGESTER,DIGESTER_EXT,CRU,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-CRU-01: 2 per support (assumed)
 DIGESTER,DIGESTER_EXT,CRU,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CRU_TO_VDF: pumped line (assumed)
 DIGESTER,DIGESTER_EXT,CRU,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CRU_TO_TFE: pumped line (assumed)
@@ -246,8 +246,8 @@ DIGESTER,DIGESTER_EXT,CRU,instrument,high-level switch,vibrating fork,"IEC 60947
 DIGESTER,DIGESTER_EXT,CRU,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,DIGESTER_EXT,CRU,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,DIGESTER_EXT,CRU,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,DIGESTER_EXT,CRU,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",41,CRU_TO_VDF: AQS-PIP-005 span count
-DIGESTER,DIGESTER_EXT,CRU,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",42,CRU_TO_TFE: AQS-PIP-005 span count
+DIGESTER,DIGESTER_EXT,CRU,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",36,CRU_TO_VDF: AQS-PIP-005 span count
+DIGESTER,DIGESTER_EXT,CRU,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",34,CRU_TO_TFE: AQS-PIP-005 span count
 DIGESTER,DIGESTER_EXT,CRU,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-CRU-01: AQS-PIP-005 span count
 DIGESTER,DIGESTER_EXT,CRU,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,CRU_TO_VDF: pump discharge (assumed)
 DIGESTER,DIGESTER_EXT,CRU,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,CRU_TO_TFE: pump discharge (assumed)
@@ -366,13 +366,13 @@ DIGESTER,DIGESTER_EXT,FLOAT_SINK,valve,isolation valve,DN50,"CPVC true-union bal
 DIGESTER,DIGESTER_EXT,F_RECOVER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump F_RECOVER_TO_HF_GEN to HF_GEN (assumed size)
 DIGESTER,DIGESTER_EXT,F_RECOVER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump F_RECOVER_TO_HF_GEN to HF_GEN
 DIGESTER,DIGESTER_EXT,F_RECOVER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump F_RECOVER_TO_HF_GEN to HF_GEN: run and fault (assumed)
-DIGESTER,DIGESTER_EXT,F_RECOVER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,F_RECOVER_TO_HF_GEN: 2 per support (assumed)
+DIGESTER,DIGESTER_EXT,F_RECOVER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,F_RECOVER_TO_HF_GEN: 2 per support (assumed)
 DIGESTER,DIGESTER_EXT,F_RECOVER,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,F_RECOVER_TO_HF_GEN: pumped line (assumed)
 DIGESTER,DIGESTER_EXT,F_RECOVER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 DIGESTER,DIGESTER_EXT,F_RECOVER,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,DIGESTER_EXT,F_RECOVER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,DIGESTER_EXT,F_RECOVER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,DIGESTER_EXT,F_RECOVER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",19,F_RECOVER_TO_HF_GEN: AQS-PIP-005 span count
+DIGESTER,DIGESTER_EXT,F_RECOVER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,F_RECOVER_TO_HF_GEN: AQS-PIP-005 span count
 DIGESTER,DIGESTER_EXT,F_RECOVER,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,F_RECOVER_TO_HF_GEN: pump discharge (assumed)
 DIGESTER,DIGESTER_EXT,F_RECOVER,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,F_RECOVER_TO_HF_GEN: one at each end nozzle (assumed)
 DIGESTER,DIGESTER_EXT,LI_RECOVER,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
@@ -505,7 +505,7 @@ DIGESTER,LEACH_EW,EW_9,electronics,motor starter (contactor + overload),0.18 kW,
 DIGESTER,LEACH_EW,EW_9,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,screw conveyor IA-EW-MET-9 to MFG_SHOP (assumed VFD at >= 0.75 kW)
 DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-EW-09: 2 per support (assumed)
 DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-HDR-H2-04: 2 per support (assumed)
-DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,74,EW9_LIQUOR_TO_MO: 2 per support (assumed)
+DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,76,EW9_LIQUOR_TO_MO: 2 per support (assumed)
 DIGESTER,LEACH_EW,EW_9,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-EW9-CL2: 2 per support (assumed)
 DIGESTER,LEACH_EW,EW_9,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-EW-09: pumped line (assumed)
 DIGESTER,LEACH_EW,EW_9,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-HDR-H2-04: pumped line (assumed)
@@ -522,7 +522,7 @@ DIGESTER,LEACH_EW,EW_9,protection,"inverse-time circuit breaker, 3-pole",15 A,UL
 DIGESTER,LEACH_EW,EW_9,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,electrolyte circulation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 DIGESTER,LEACH_EW,EW_9,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-EW-09: AQS-PIP-005 span count
 DIGESTER,LEACH_EW,EW_9,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-HDR-H2-04: AQS-PIP-005 span count
-DIGESTER,LEACH_EW,EW_9,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",37,EW9_LIQUOR_TO_MO: AQS-PIP-005 span count
+DIGESTER,LEACH_EW,EW_9,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",38,EW9_LIQUOR_TO_MO: AQS-PIP-005 span count
 DIGESTER,LEACH_EW,EW_9,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",13,IA-EW9-CL2: AQS-PIP-005 span count
 DIGESTER,LEACH_EW,EW_9,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-EW-09: pump discharge (assumed)
 DIGESTER,LEACH_EW,EW_9,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,IA-HDR-H2-04: pump discharge (assumed)
@@ -804,19 +804,19 @@ DIGESTER,recycle_pipe,CONTINUOUS_RECYCLE,valve,isolation valve,DN15,"CPVC true-u
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,IA-H2O-MU: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-AIR-IN: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-SOLV-MU: 2 per support (assumed)
-DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,64,IA-H2SO4-MU: 2 per support (assumed)
-DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,60,IA-MGCL2-MU: 2 per support (assumed)
-DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,70,IA-CACL2-MU: 2 per support (assumed)
+DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-H2SO4-MU: 2 per support (assumed)
+DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,86,IA-MGCL2-MU: 2 per support (assumed)
+DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,88,IA-CACL2-MU: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,110,NUT_AQUA: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,NUT_AQUA_BED: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,CA_HOPPER: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,FR_FINISH: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",11,IA-SOLV-MU: AQS-PIP-005 span count
-DOCK,DOCK,NORTH_DOCK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",32,IA-H2SO4-MU: AQS-PIP-005 span count
+DOCK,DOCK,NORTH_DOCK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",18,IA-H2SO4-MU: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",25,IA-H2O-MU: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-AIR-IN: AQS-PIP-005 span count
-DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",30,IA-MGCL2-MU: AQS-PIP-005 span count
-DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",35,IA-CACL2-MU: AQS-PIP-005 span count
+DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",43,IA-MGCL2-MU: AQS-PIP-005 span count
+DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",44,IA-CACL2-MU: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",55,NUT_AQUA: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",26,NUT_AQUA_BED: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",25,CA_HOPPER: AQS-PIP-005 span count
@@ -1419,13 +1419,13 @@ FOUNDRY,FOUNDRY_E,AL_POT,fabricated part,fabricated part set,16 BOM lines,models
 FOUNDRY,FOUNDRY_E,AL_POT,fastener,M10 x 30 hood bolts,M10 x 30 hood bolts,ISO 898-1 8.8,16,models/mfg/AL_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,AL_POT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/AL_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,AL_POT,fastener,M12 stud + nut (ISO 4014 / ISO 4032),M12 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,10,models/mfg/AL_POT/fasteners.csv
-FOUNDRY,FOUNDRY_E,AL_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,76,AL_POT_CL2: 2 per support (assumed)
-FOUNDRY,FOUNDRY_E,AL_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,IA-CL2-SHIP: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,AL_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,78,AL_POT_CL2: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,AL_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66,IA-CL2-SHIP: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,AL_POT,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,FOUNDRY_E,AL_POT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,AL_POT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,AL_POT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",38,AL_POT_CL2: AQS-PIP-005 span count
-FOUNDRY,FOUNDRY_E,AL_POT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",25,IA-CL2-SHIP: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,AL_POT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",39,AL_POT_CL2: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,AL_POT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",33,IA-CL2-SHIP: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,AL_POT,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,AL_POT_CL2: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,AL_POT,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-CL2-SHIP: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,CAST_LINE,fabricated part,fabricated part set,15 BOM lines,models/mfg/CAST_LINE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
@@ -1441,20 +1441,20 @@ FOUNDRY,FOUNDRY_E,CA_POT,fabricated part,fabricated part set,16 BOM lines,models
 FOUNDRY,FOUNDRY_E,CA_POT,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/CA_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,CA_POT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/CA_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,CA_POT,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/CA_POT/fasteners.csv
-FOUNDRY,FOUNDRY_E,CA_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,IA-CA-CL2-SHIP: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,CA_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,64,IA-CA-CL2-SHIP: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,CA_POT,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,FOUNDRY_E,CA_POT,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,FOUNDRY_E,CA_POT,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,FOUNDRY_E,CA_POT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,CA_POT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,CA_POT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,IA-CA-CL2-SHIP: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,CA_POT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",32,IA-CA-CL2-SHIP: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,CA_POT,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-CA-CL2-SHIP: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,COMB_HEAT,fabricated part,fabricated part set,1 BOM lines,models/mfg/COMB_HEAT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,COMB_HEAT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/COMB_HEAT/fasteners.csv
-FOUNDRY,FOUNDRY_E,COMB_HEAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,60,COMB_OFFGAS: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,COMB_HEAT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,62,COMB_OFFGAS: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,COMB_HEAT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,COMB_HEAT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,COMB_HEAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",30,COMB_OFFGAS: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,COMB_HEAT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",31,COMB_OFFGAS: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,COMB_HEAT,valve,isolation valve,DN15,"PVC-lined ball valve in FRP service, ISO 16135",2,COMB_OFFGAS: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,CONT_CAST,fabricated part,fabricated part set,9 BOM lines,models/mfg/CONT_CAST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,CONT_CAST,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,models/mfg/CONT_CAST/fasteners.csv
@@ -1467,11 +1467,11 @@ FOUNDRY,FOUNDRY_E,CR_CELL,fabricated part,fabricated part set,16 BOM lines,model
 FOUNDRY,FOUNDRY_E,CR_CELL,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/CR_CELL/fasteners.csv
 FOUNDRY,FOUNDRY_E,CR_CELL,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/CR_CELL/fasteners.csv
 FOUNDRY,FOUNDRY_E,CR_CELL,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/CR_CELL/fasteners.csv
-FOUNDRY,FOUNDRY_E,CR_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,IA-CR-VENT: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,CR_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,60,IA-CR-VENT: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,CR_CELL,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,FOUNDRY_E,CR_CELL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,CR_CELL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,CR_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",23,IA-CR-VENT: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,CR_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",30,IA-CR-VENT: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,CR_CELL,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-CR-VENT: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,DRAW,fabricated part,fabricated part set,1 BOM lines,models/mfg/DRAW/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,DRAW,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/DRAW/fasteners.csv
@@ -1501,7 +1501,7 @@ FOUNDRY,FOUNDRY_E,IND_MELT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stu
 FOUNDRY,FOUNDRY_E,IND_MELT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/IND_MELT/fasteners.csv
 FOUNDRY,FOUNDRY_E,IND_MELT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IND_MELT_TO_CAST: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,IND_MELT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IND_TO_CONT: 2 per support (assumed)
-FOUNDRY,FOUNDRY_E,IND_MELT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,98,IND_TO_ATOM: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,IND_MELT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,100,IND_TO_ATOM: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,IND_MELT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,IND_TO_INV: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,IND_MELT,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IND_MELT_TO_CAST: pumped line (assumed)
 FOUNDRY,FOUNDRY_E,IND_MELT,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IND_TO_CONT: pumped line (assumed)
@@ -1512,7 +1512,7 @@ FOUNDRY,FOUNDRY_E,IND_MELT,instrument,temperature element,Pt100 class A,"IEC 607
 FOUNDRY,FOUNDRY_E,IND_MELT,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-049 SIL 2
 FOUNDRY,FOUNDRY_E,IND_MELT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IND_MELT_TO_CAST: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,IND_MELT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IND_TO_CONT: AQS-PIP-005 span count
-FOUNDRY,FOUNDRY_E,IND_MELT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",49,IND_TO_ATOM: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,IND_MELT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",50,IND_TO_ATOM: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,IND_MELT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",15,IND_TO_INV: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,IND_MELT,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IND_MELT_TO_CAST: pump discharge (assumed)
 FOUNDRY,FOUNDRY_E,IND_MELT,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IND_TO_CONT: pump discharge (assumed)
@@ -1535,14 +1535,14 @@ FOUNDRY,FOUNDRY_E,MG_POT,fabricated part,fabricated part set,18 BOM lines,models
 FOUNDRY,FOUNDRY_E,MG_POT,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/MG_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,MG_POT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/MG_POT/fasteners.csv
 FOUNDRY,FOUNDRY_E,MG_POT,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/MG_POT/fasteners.csv
-FOUNDRY,FOUNDRY_E,MG_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,64,MG_POT_CL2: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,MG_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66,MG_POT_CL2: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,MG_POT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,IA-CL2-MG-TI: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,MG_POT,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,FOUNDRY_E,MG_POT,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FOUNDRY,FOUNDRY_E,MG_POT,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FOUNDRY,FOUNDRY_E,MG_POT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,MG_POT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,MG_POT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",32,MG_POT_CL2: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,MG_POT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",33,MG_POT_CL2: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,MG_POT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-CL2-MG-TI: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,MG_POT,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,MG_POT_CL2: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,MG_POT,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-CL2-MG-TI: one at each end nozzle (assumed)
@@ -1550,15 +1550,15 @@ FOUNDRY,FOUNDRY_E,MO_CELL,fabricated part,fabricated part set,17 BOM lines,model
 FOUNDRY,FOUNDRY_E,MO_CELL,fastener,M10 anchor,M10 anchor,ISO 898-1 8.8,4,models/mfg/MO_CELL/fasteners.csv
 FOUNDRY,FOUNDRY_E,MO_CELL,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/MO_CELL/fasteners.csv
 FOUNDRY,FOUNDRY_E,MO_CELL,fastener,M8 x 25 hood bolts,M8 x 25 hood bolts,ISO 898-1 8.8,12,models/mfg/MO_CELL/fasteners.csv
-FOUNDRY,FOUNDRY_E,MO_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,82,MO_CELL_RAFFINATE: 2 per support (assumed)
-FOUNDRY,FOUNDRY_E,MO_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,68,MO_CELL_ANODE_GAS_TO_CRU: 2 per support (assumed)
-FOUNDRY,FOUNDRY_E,MO_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,42,IA-MO-VENT: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,MO_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,84,MO_CELL_RAFFINATE: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,MO_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,70,MO_CELL_ANODE_GAS_TO_CRU: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,MO_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-MO-VENT: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,MO_CELL,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,FOUNDRY_E,MO_CELL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,MO_CELL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,MO_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",41,MO_CELL_RAFFINATE: AQS-PIP-005 span count
-FOUNDRY,FOUNDRY_E,MO_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",34,MO_CELL_ANODE_GAS_TO_CRU: AQS-PIP-005 span count
-FOUNDRY,FOUNDRY_E,MO_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",21,IA-MO-VENT: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,MO_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",42,MO_CELL_RAFFINATE: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,MO_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",35,MO_CELL_ANODE_GAS_TO_CRU: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,MO_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-MO-VENT: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,MO_CELL,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,MO_CELL_RAFFINATE: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,MO_CELL,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,MO_CELL_ANODE_GAS_TO_CRU: one at each end nozzle (assumed)
 FOUNDRY,FOUNDRY_E,MO_CELL,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,IA-MO-VENT: one at each end nozzle (assumed)
@@ -1588,8 +1588,8 @@ FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,fabricated part,fabricated part set,10 BOM lines
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,6,models/mfg/SHELL_BURNOUT/fasteners.csv
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/SHELL_BURNOUT/fasteners.csv
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,WAX_RECLAIM_TO_PATTERN: 2 per support (assumed)
-FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,WAX_TO_OIL: 2 per support (assumed)
-FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,IA-BURNOUT-VENT: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,WAX_TO_OIL: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,68,IA-BURNOUT-VENT: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,WAX_RECLAIM_TO_PATTERN: pumped line (assumed)
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,WAX_TO_OIL: pumped line (assumed)
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-BURNOUT-VENT: pumped line (assumed)
@@ -1597,8 +1597,8 @@ FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,instrument,pressure transmitter,0-10 bar,"cerami
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-057 SIL 1
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",6,WAX_RECLAIM_TO_PATTERN: AQS-PIP-005 span count
-FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",14,WAX_TO_OIL: AQS-PIP-005 span count
-FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,IA-BURNOUT-VENT: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",26,WAX_TO_OIL: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",34,IA-BURNOUT-VENT: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,WAX_RECLAIM_TO_PATTERN: pump discharge (assumed)
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,WAX_TO_OIL: pump discharge (assumed)
 FOUNDRY,FOUNDRY_E,SHELL_BURNOUT,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,IA-BURNOUT-VENT: pump discharge (assumed)
@@ -1619,9 +1619,9 @@ FOUNDRY,FOUNDRY_E,TI_CELL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,
 FOUNDRY,FOUNDRY_E,TI_CELL,fabricated part,fabricated part set,17 BOM lines,models/mfg/TI_CELL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 FOUNDRY,FOUNDRY_E,TI_CELL,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/TI_CELL/fasteners.csv
 FOUNDRY,FOUNDRY_E,TI_CELL,fastener,M8 x 25 hopper bolts,M8 x 25 hopper bolts,ISO 898-1 8.8,8,models/mfg/TI_CELL/fasteners.csv
-FOUNDRY,FOUNDRY_E,TI_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,62,TI_CELL_CL2_TO_CRU: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,TI_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,64,TI_CELL_CL2_TO_CRU: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,TI_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-MGCL2-KROLL: 2 per support (assumed)
-FOUNDRY,FOUNDRY_E,TI_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-KROLL-CO: 2 per support (assumed)
+FOUNDRY,FOUNDRY_E,TI_CELL,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-KROLL-CO: 2 per support (assumed)
 FOUNDRY,FOUNDRY_E,TI_CELL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,TI_CELL_CL2_TO_CRU: pumped line (assumed)
 FOUNDRY,FOUNDRY_E,TI_CELL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-MGCL2-KROLL: pumped line (assumed)
 FOUNDRY,FOUNDRY_E,TI_CELL,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-KROLL-CO: pumped line (assumed)
@@ -1629,9 +1629,9 @@ FOUNDRY,FOUNDRY_E,TI_CELL,instrument,"gas detector, CO",electrochemical CO,"alar
 FOUNDRY,FOUNDRY_E,TI_CELL,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FOUNDRY,FOUNDRY_E,TI_CELL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,FOUNDRY_E,TI_CELL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-FOUNDRY,FOUNDRY_E,TI_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",31,TI_CELL_CL2_TO_CRU: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,TI_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",32,TI_CELL_CL2_TO_CRU: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,TI_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-MGCL2-KROLL: AQS-PIP-005 span count
-FOUNDRY,FOUNDRY_E,TI_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,IA-KROLL-CO: AQS-PIP-005 span count
+FOUNDRY,FOUNDRY_E,TI_CELL,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-KROLL-CO: AQS-PIP-005 span count
 FOUNDRY,FOUNDRY_E,TI_CELL,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,TI_CELL_CL2_TO_CRU: pump discharge (assumed)
 FOUNDRY,FOUNDRY_E,TI_CELL,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-MGCL2-KROLL: pump discharge (assumed)
 FOUNDRY,FOUNDRY_E,TI_CELL,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,IA-KROLL-CO: pump discharge (assumed)
@@ -2090,7 +2090,7 @@ MEOH,reactor,MEOH_SYNTH,fabricated part,fabricated part set,9 BOM lines,models/m
 MEOH,reactor,MEOH_SYNTH,fastener,5/8 in stud bolt,5/8 in stud bolt with 2 heavy hex nuts,ASTM A193 B7 / A194 2H,16,models/mfg/MEOH_SYNTH/fasteners.csv
 MEOH,reactor,MEOH_SYNTH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,IA-ESS-MEOH-CHG: 2 per support (assumed)
 MEOH,reactor,MEOH_SYNTH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,S75: 2 per support (assumed)
-MEOH,reactor,MEOH_SYNTH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,30,MEOH_TO_OLEFIN: 2 per support (assumed)
+MEOH,reactor,MEOH_SYNTH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,MEOH_TO_OLEFIN: 2 per support (assumed)
 MEOH,reactor,MEOH_SYNTH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,24,IA-MEOH-H2O: 2 per support (assumed)
 MEOH,reactor,MEOH_SYNTH,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,IA-MEOH-CH3SH: 2 per support (assumed)
 MEOH,reactor,MEOH_SYNTH,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-ESS-MEOH-CHG: pumped line (assumed)
@@ -2104,7 +2104,7 @@ MEOH,reactor,MEOH_SYNTH,instrument,pressure transmitter,0-10 bar,"ceramic diaphr
 MEOH,reactor,MEOH_SYNTH,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MEOH,reactor,MEOH_SYNTH,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",6,IA-ESS-MEOH-CHG: AQS-PIP-005 span count
 MEOH,reactor,MEOH_SYNTH,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",6,S75: AQS-PIP-005 span count
-MEOH,reactor,MEOH_SYNTH,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",15,MEOH_TO_OLEFIN: AQS-PIP-005 span count
+MEOH,reactor,MEOH_SYNTH,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",27,MEOH_TO_OLEFIN: AQS-PIP-005 span count
 MEOH,reactor,MEOH_SYNTH,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",18,IA-MEOH-CH3SH: AQS-PIP-005 span count
 MEOH,reactor,MEOH_SYNTH,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",12,IA-MEOH-H2O: AQS-PIP-005 span count
 MEOH,reactor,MEOH_SYNTH,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-ESS-MEOH-CHG: pump discharge (assumed)
@@ -2149,8 +2149,8 @@ MEOH,tank,MEOH_TANK,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1
 MEOH,tank,MEOH_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,S76: 2 per support (assumed)
 MEOH,tank,MEOH_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,IA-MEOH-REST: 2 per support (assumed)
 MEOH,tank,MEOH_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,IA-MEOH-PROD: 2 per support (assumed)
-MEOH,tank,MEOH_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,MEOH_TO_VDF: 2 per support (assumed)
-MEOH,tank,MEOH_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,MEOH_TO_TFE: 2 per support (assumed)
+MEOH,tank,MEOH_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,MEOH_TO_VDF: 2 per support (assumed)
+MEOH,tank,MEOH_TANK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,MEOH_TO_TFE: 2 per support (assumed)
 MEOH,tank,MEOH_TANK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,S76: pumped line (assumed)
 MEOH,tank,MEOH_TANK,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-MEOH-REST: pumped line (assumed)
 MEOH,tank,MEOH_TANK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-MEOH-PROD: pumped line (assumed)
@@ -2162,8 +2162,8 @@ MEOH,tank,MEOH_TANK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm,
 MEOH,tank,MEOH_TANK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MEOH,tank,MEOH_TANK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",7,S76: AQS-PIP-005 span count
 MEOH,tank,MEOH_TANK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",28,IA-MEOH-PROD: AQS-PIP-005 span count
-MEOH,tank,MEOH_TANK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",17,MEOH_TO_VDF: AQS-PIP-005 span count
-MEOH,tank,MEOH_TANK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",17,MEOH_TO_TFE: AQS-PIP-005 span count
+MEOH,tank,MEOH_TANK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",26,MEOH_TO_VDF: AQS-PIP-005 span count
+MEOH,tank,MEOH_TANK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",25,MEOH_TO_TFE: AQS-PIP-005 span count
 MEOH,tank,MEOH_TANK,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,IA-MEOH-REST: AQS-PIP-005 span count
 MEOH,tank,MEOH_TANK,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,S76: pump discharge (assumed)
 MEOH,tank,MEOH_TANK,valve,check valve,DN50,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-MEOH-REST: pump discharge (assumed)
@@ -2503,7 +2503,7 @@ OIL,OIL_GLASS,OIL_FRAC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,12,C
 OIL,OIL_GLASS,OIL_FRAC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,10,CUT-3: 2 per support (assumed)
 OIL,OIL_GLASS,OIL_FRAC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,10,CUT-4: 2 per support (assumed)
 OIL,OIL_GLASS,OIL_FRAC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,IA-OIL-03: 2 per support (assumed)
-OIL,OIL_GLASS,OIL_FRAC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,OIL_TO_OLEFIN: 2 per support (assumed)
+OIL,OIL_GLASS,OIL_FRAC,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,OIL_TO_OLEFIN: 2 per support (assumed)
 OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-1: pumped line (assumed)
 OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-2: pumped line (assumed)
 OIL,OIL_GLASS,OIL_FRAC,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-3: pumped line (assumed)
@@ -2519,7 +2519,7 @@ OIL,OIL_GLASS,OIL_FRAC,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Typ
 OIL,OIL_GLASS,OIL_FRAC,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",6,CUT-2: AQS-PIP-005 span count
 OIL,OIL_GLASS,OIL_FRAC,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",5,CUT-3: AQS-PIP-005 span count
 OIL,OIL_GLASS,OIL_FRAC,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",5,CUT-4: AQS-PIP-005 span count
-OIL,OIL_GLASS,OIL_FRAC,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",25,OIL_TO_OLEFIN: AQS-PIP-005 span count
+OIL,OIL_GLASS,OIL_FRAC,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",13,OIL_TO_OLEFIN: AQS-PIP-005 span count
 OIL,OIL_GLASS,OIL_FRAC,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-OIL-03: AQS-PIP-005 span count
 OIL,OIL_GLASS,OIL_FRAC,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,CUT-1: pump discharge (assumed)
 OIL,OIL_GLASS,OIL_FRAC,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,CUT-2: pump discharge (assumed)
@@ -2607,7 +2607,7 @@ OIL,cut_tank,PROD_C5_C10,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2
 OIL,cut_tank,PROD_C5_C10,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-C5-POLY
 OIL,cut_tank,PROD_C5_C10,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,CUT-1-OUT: 2 per support (assumed)
 OIL,cut_tank,PROD_C5_C10,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,IA-C5-SHIP: 2 per support (assumed)
-OIL,cut_tank,PROD_C5_C10,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,IA-C5-POLY: 2 per support (assumed)
+OIL,cut_tank,PROD_C5_C10,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,IA-C5-POLY: 2 per support (assumed)
 OIL,cut_tank,PROD_C5_C10,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-1-OUT: pumped line (assumed)
 OIL,cut_tank,PROD_C5_C10,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-C5-SHIP: pumped line (assumed)
 OIL,cut_tank,PROD_C5_C10,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-C5-POLY: pumped line (assumed)
@@ -2617,7 +2617,7 @@ OIL,cut_tank,PROD_C5_C10,instrument,pressure transmitter,0-10 bar,"ceramic diaph
 OIL,cut_tank,PROD_C5_C10,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 OIL,cut_tank,PROD_C5_C10,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",22,CUT-1-OUT: AQS-PIP-005 span count
 OIL,cut_tank,PROD_C5_C10,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",23,IA-C5-SHIP: AQS-PIP-005 span count
-OIL,cut_tank,PROD_C5_C10,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",22,IA-C5-POLY: AQS-PIP-005 span count
+OIL,cut_tank,PROD_C5_C10,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",13,IA-C5-POLY: AQS-PIP-005 span count
 OIL,cut_tank,PROD_C5_C10,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,CUT-1-OUT: pump discharge (assumed)
 OIL,cut_tank,PROD_C5_C10,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-C5-SHIP: pump discharge (assumed)
 OIL,cut_tank,PROD_C5_C10,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-C5-POLY: pump discharge (assumed)
@@ -2656,7 +2656,7 @@ POLYMERS,POLY_MON,HF_GEN,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/m
 POLYMERS,POLY_MON,HF_GEN,fastener,M16 stud + 2 nuts (ISO 4014 / ISO 4032),M16 stud + 2 nuts (ISO 4014 / ISO 4032),ISO 898-1 8.8,12,models/mfg/HF_GEN/fasteners.csv
 POLYMERS,POLY_MON,HF_GEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,HF_GEN_TO_VDF: 2 per support (assumed)
 POLYMERS,POLY_MON,HF_GEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,HF_GEN_TO_TFE: 2 per support (assumed)
-POLYMERS,POLY_MON,HF_GEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,72,IA-HF-PROD: 2 per support (assumed)
+POLYMERS,POLY_MON,HF_GEN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,56,IA-HF-PROD: 2 per support (assumed)
 POLYMERS,POLY_MON,HF_GEN,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,HF_GEN_TO_VDF: pumped line (assumed)
 POLYMERS,POLY_MON,HF_GEN,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,HF_GEN_TO_TFE: pumped line (assumed)
 POLYMERS,POLY_MON,HF_GEN,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-HF-PROD: pumped line (assumed)
@@ -2669,7 +2669,7 @@ POLYMERS,POLY_MON,HF_GEN,protection,"inverse-time circuit breaker, 3-pole",15 A,
 POLYMERS,POLY_MON,HF_GEN,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 POLYMERS,POLY_MON,HF_GEN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,HF_GEN_TO_VDF: AQS-PIP-005 span count
 POLYMERS,POLY_MON,HF_GEN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,HF_GEN_TO_TFE: AQS-PIP-005 span count
-POLYMERS,POLY_MON,HF_GEN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",36,IA-HF-PROD: AQS-PIP-005 span count
+POLYMERS,POLY_MON,HF_GEN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",28,IA-HF-PROD: AQS-PIP-005 span count
 POLYMERS,POLY_MON,HF_GEN,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,HF_GEN_TO_VDF: pump discharge (assumed)
 POLYMERS,POLY_MON,HF_GEN,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,HF_GEN_TO_TFE: pump discharge (assumed)
 POLYMERS,POLY_MON,HF_GEN,valve,check valve,DN15,"PVDF swing/ball check valve, ISO 16137, PTFE seats",1,IA-HF-PROD: pump discharge (assumed)
@@ -2695,7 +2695,7 @@ POLYMERS,POLY_MON,POLY_F,fabricated part,fabricated part set,9 BOM lines,models/
 POLYMERS,POLY_MON,POLY_F,fastener,M10 stud + nut (ISO 4014 / ISO 4032),M10 stud + nut (ISO 4014 / ISO 4032),ISO 898-1 8.8,8,models/mfg/POLY_F/fasteners.csv
 POLYMERS,POLY_MON,POLY_F,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/POLY_F/fasteners.csv
 POLYMERS,POLY_MON,POLY_F,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,POLYF_TO_FILM: 2 per support (assumed)
-POLYMERS,POLY_MON,POLY_F,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,36,POLYF_RECLAIM: 2 per support (assumed)
+POLYMERS,POLY_MON,POLY_F,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,66,POLYF_RECLAIM: 2 per support (assumed)
 POLYMERS,POLY_MON,POLY_F,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,POLYF_TO_FILM: pumped line (assumed)
 POLYMERS,POLY_MON,POLY_F,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,POLYF_RECLAIM: pumped line (assumed)
 POLYMERS,POLY_MON,POLY_F,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
@@ -2703,7 +2703,7 @@ POLYMERS,POLY_MON,POLY_F,instrument,level transmitter,radar 80 GHz,"IEC 62828, P
 POLYMERS,POLY_MON,POLY_F,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,POLY_MON,POLY_F,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 POLYMERS,POLY_MON,POLY_F,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",11,POLYF_TO_FILM: AQS-PIP-005 span count
-POLYMERS,POLY_MON,POLY_F,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",18,POLYF_RECLAIM: AQS-PIP-005 span count
+POLYMERS,POLY_MON,POLY_F,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",33,POLYF_RECLAIM: AQS-PIP-005 span count
 POLYMERS,POLY_MON,POLY_F,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,POLYF_TO_FILM: pump discharge (assumed)
 POLYMERS,POLY_MON,POLY_F,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,POLYF_RECLAIM: pump discharge (assumed)
 POLYMERS,POLY_MON,POLY_F,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,POLYF_TO_FILM: one at each end nozzle (assumed)
@@ -2721,14 +2721,14 @@ POLYMERS,POLY_MON,POLY_STOCK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,
 POLYMERS,POLY_MON,POLY_STOCK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump FLUORO_TO_MFG to MFG_SHOP: run and fault (assumed)
 POLYMERS,POLY_MON,POLY_STOCK,fabricated part,fabricated part set,3 BOM lines,models/mfg/POLY_STOCK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 POLYMERS,POLY_MON,POLY_STOCK,fastener,M10 clamp,M10 clamp,ISO 3506 A4-70,4,models/mfg/POLY_STOCK/fasteners.csv
-POLYMERS,POLY_MON,POLY_STOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,82,FLUORO_TO_MFG: 2 per support (assumed)
-POLYMERS,POLY_MON,POLY_STOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,70,STOCK_TO_FIBER: 2 per support (assumed)
+POLYMERS,POLY_MON,POLY_STOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,96,FLUORO_TO_MFG: 2 per support (assumed)
+POLYMERS,POLY_MON,POLY_STOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,84,STOCK_TO_FIBER: 2 per support (assumed)
 POLYMERS,POLY_MON,POLY_STOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,FLUORO_TO_MFG: pumped line (assumed)
 POLYMERS,POLY_MON,POLY_STOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,STOCK_TO_FIBER: pumped line (assumed)
 POLYMERS,POLY_MON,POLY_STOCK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,POLY_MON,POLY_STOCK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-POLYMERS,POLY_MON,POLY_STOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",41,FLUORO_TO_MFG: AQS-PIP-005 span count
-POLYMERS,POLY_MON,POLY_STOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",35,STOCK_TO_FIBER: AQS-PIP-005 span count
+POLYMERS,POLY_MON,POLY_STOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",48,FLUORO_TO_MFG: AQS-PIP-005 span count
+POLYMERS,POLY_MON,POLY_STOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",42,STOCK_TO_FIBER: AQS-PIP-005 span count
 POLYMERS,POLY_MON,POLY_STOCK,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,FLUORO_TO_MFG: pump discharge (assumed)
 POLYMERS,POLY_MON,POLY_STOCK,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,STOCK_TO_FIBER: pump discharge (assumed)
 POLYMERS,POLY_MON,POLY_STOCK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,FLUORO_TO_MFG: one at each end nozzle (assumed)
@@ -2744,7 +2744,7 @@ POLYMERS,POLY_MON,TFE_SYN,fabricated part,fabricated part set,7 BOM lines,models
 POLYMERS,POLY_MON,TFE_SYN,fastener,M10 x 30 jacket screws,M10 x 30 jacket screws,ISO 3506 A4-70,16,models/mfg/TFE_SYN/fasteners.csv
 POLYMERS,POLY_MON,TFE_SYN,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/TFE_SYN/fasteners.csv
 POLYMERS,POLY_MON,TFE_SYN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,20,TFE_TO_POLY_F: 2 per support (assumed)
-POLYMERS,POLY_MON,TFE_SYN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,84,TFE_HCL_TO_CRU: 2 per support (assumed)
+POLYMERS,POLY_MON,TFE_SYN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,68,TFE_HCL_TO_CRU: 2 per support (assumed)
 POLYMERS,POLY_MON,TFE_SYN,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,TFE_TO_POLY_F: pumped line (assumed)
 POLYMERS,POLY_MON,TFE_SYN,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,TFE_HCL_TO_CRU: pumped line (assumed)
 POLYMERS,POLY_MON,TFE_SYN,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
@@ -2755,7 +2755,7 @@ POLYMERS,POLY_MON,TFE_SYN,instrument,temperature element,Pt100 class A,"IEC 6075
 POLYMERS,POLY_MON,TFE_SYN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 POLYMERS,POLY_MON,TFE_SYN,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Dilute-HCl return pump and transfer line to CRU: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 POLYMERS,POLY_MON,TFE_SYN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,TFE_TO_POLY_F: AQS-PIP-005 span count
-POLYMERS,POLY_MON,TFE_SYN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",42,TFE_HCL_TO_CRU: AQS-PIP-005 span count
+POLYMERS,POLY_MON,TFE_SYN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",34,TFE_HCL_TO_CRU: AQS-PIP-005 span count
 POLYMERS,POLY_MON,TFE_SYN,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,TFE_TO_POLY_F: pump discharge (assumed)
 POLYMERS,POLY_MON,TFE_SYN,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,TFE_HCL_TO_CRU: pump discharge (assumed)
 POLYMERS,POLY_MON,TFE_SYN,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,TFE_TO_POLY_F: one at each end nozzle (assumed)
@@ -2767,7 +2767,7 @@ POLYMERS,POLY_MON,VDF_SYN,fabricated part,fabricated part set,7 BOM lines,models
 POLYMERS,POLY_MON,VDF_SYN,fastener,M10 x 30 jacket screws,M10 x 30 jacket screws,ISO 3506 A4-70,16,models/mfg/VDF_SYN/fasteners.csv
 POLYMERS,POLY_MON,VDF_SYN,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,6,models/mfg/VDF_SYN/fasteners.csv
 POLYMERS,POLY_MON,VDF_SYN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,VDF_TO_POLY_F: 2 per support (assumed)
-POLYMERS,POLY_MON,VDF_SYN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,82,VDF_HCL_TO_CRU: 2 per support (assumed)
+POLYMERS,POLY_MON,VDF_SYN,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,72,VDF_HCL_TO_CRU: 2 per support (assumed)
 POLYMERS,POLY_MON,VDF_SYN,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,VDF_TO_POLY_F: pumped line (assumed)
 POLYMERS,POLY_MON,VDF_SYN,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,VDF_HCL_TO_CRU: pumped line (assumed)
 POLYMERS,POLY_MON,VDF_SYN,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
@@ -2778,7 +2778,7 @@ POLYMERS,POLY_MON,VDF_SYN,instrument,temperature element,Pt100 class A,"IEC 6075
 POLYMERS,POLY_MON,VDF_SYN,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 POLYMERS,POLY_MON,VDF_SYN,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Dilute-HCl return pump and transfer line to CRU: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 POLYMERS,POLY_MON,VDF_SYN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",8,VDF_TO_POLY_F: AQS-PIP-005 span count
-POLYMERS,POLY_MON,VDF_SYN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",41,VDF_HCL_TO_CRU: AQS-PIP-005 span count
+POLYMERS,POLY_MON,VDF_SYN,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",36,VDF_HCL_TO_CRU: AQS-PIP-005 span count
 POLYMERS,POLY_MON,VDF_SYN,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,VDF_TO_POLY_F: pump discharge (assumed)
 POLYMERS,POLY_MON,VDF_SYN,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,VDF_HCL_TO_CRU: pump discharge (assumed)
 POLYMERS,POLY_MON,VDF_SYN,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,VDF_TO_POLY_F: one at each end nozzle (assumed)
@@ -2962,7 +2962,7 @@ WTR,digest,BLACK_DIGEST,fabricated part,fabricated part set,6 BOM lines,models/m
 WTR,digest,BLACK_DIGEST,fastener,M10 anchor,M10 anchor,ISO 3506 A4-70,4,models/mfg/BLACK_DIGEST/fasteners.csv
 WTR,digest,BLACK_DIGEST,fastener,M8 x 30 lid bolt,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/BLACK_DIGEST/fasteners.csv
 WTR,digest,BLACK_DIGEST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,40,S30: 2 per support (assumed)
-WTR,digest,BLACK_DIGEST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,70,DIGEST_TO_POLY: 2 per support (assumed)
+WTR,digest,BLACK_DIGEST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,86,DIGEST_TO_POLY: 2 per support (assumed)
 WTR,digest,BLACK_DIGEST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,60,IA-BLK-GAS: 2 per support (assumed)
 WTR,digest,BLACK_DIGEST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,IA-BLK-NUT: 2 per support (assumed)
 WTR,digest,BLACK_DIGEST,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,IA-BLK-GREY: 2 per support (assumed)
@@ -2972,7 +2972,7 @@ WTR,digest,BLACK_DIGEST,instrument,level transmitter,radar 80 GHz,"IEC 62828, PT
 WTR,digest,BLACK_DIGEST,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WTR,digest,BLACK_DIGEST,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,digest,BLACK_DIGEST,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",20,S30: AQS-PIP-005 span count
-WTR,digest,BLACK_DIGEST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",35,DIGEST_TO_POLY: AQS-PIP-005 span count
+WTR,digest,BLACK_DIGEST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",43,DIGEST_TO_POLY: AQS-PIP-005 span count
 WTR,digest,BLACK_DIGEST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",30,IA-BLK-GAS: AQS-PIP-005 span count
 WTR,digest,BLACK_DIGEST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,IA-BLK-NUT: AQS-PIP-005 span count
 WTR,digest,BLACK_DIGEST,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-BLK-GREY: AQS-PIP-005 span count

@@ -22,7 +22,7 @@ item,description,qty,material,basis
 21,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 22,fastener: anchor bolt M10,10,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 23,fastener: anchor bolt M10,14,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-24,fastener: anchor bolt M10,50,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+24,fastener: anchor bolt M10,26,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 25,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 26,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 27,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
@@ -38,7 +38,7 @@ item,description,qty,material,basis
 37,support: U-bolt with guide DN15,6,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
 38,support: U-bolt with guide DN15,5,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
 39,support: U-bolt with guide DN15,5,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
-40,support: U-bolt with guide DN15,25,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
+40,support: U-bolt with guide DN15,13,"316 U-bolt, MSS SP-58 Type 24",AQS-INV-004
 41,support: pipe clamp DN15,7,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 42,valve: check valve DN15,1,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
 43,valve: check valve DN15,1,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004

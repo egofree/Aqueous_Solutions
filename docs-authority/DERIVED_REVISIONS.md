@@ -40,11 +40,11 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/CONTROL_SOFTWARE.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/DECOMMISSIONING.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
-| `docs-authority/DESIGN_CHECK.md` | working tree | current |
+| `docs-authority/DESIGN_CHECK.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/DOC_REGISTER.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/DRAWING_REGISTER.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | 48bc545 (regenerated, no change) | current |
-| `docs-authority/EOL_RETURN.md` | 48bc545 (regenerated, no change) | current |
+| `docs-authority/EOL_RETURN.md` | working tree | current |
 | `docs-authority/FARM_DESIGN.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/FIRE_PROTECTION.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/FOUNDATION.md` | 48bc545 (regenerated, no change) | current |
@@ -59,12 +59,12 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/HAZOP.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/HAZOP_ACTION_REGISTER.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/HAZ_AREA.md` | 48bc545 (regenerated, no change) | current |
-| `docs-authority/HULL_DESIGN.md` | working tree | current |
+| `docs-authority/HULL_DESIGN.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/HVAC.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/HYDRO_SITING.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/INSTALL_SEQUENCE.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/INSTRUMENT_INDEX.md` | 48bc545 (regenerated, no change) | current |
-| `docs-authority/INSULATION_SCHEDULE.md` | working tree | current |
+| `docs-authority/INSULATION_SCHEDULE.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/INTERNALS.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/ISO_ROUTES.json` | working tree | current |
 | `docs-authority/ISO_ROUTES.md` | working tree | current |
@@ -87,14 +87,14 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/PARAMETRIC_MODEL.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/PERF_TEST.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/PIPE_SPECS.md` | working tree | current |
-| `docs-authority/PLANT_BOM.md` | 48bc545 (regenerated, no change) | current |
+| `docs-authority/PLANT_BOM.md` | working tree | current |
 | `docs-authority/POWER_SIZING.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/PROTECTION.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/RELIEF_REGISTER.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/RIGGING_PLANS.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/SECTOR_DEFINITIONS.md` | 48bc545 (regenerated, no change) | current |
-| `docs-authority/SELF_COPY_BOM.md` | 48bc545 (regenerated, no change) | current |
+| `docs-authority/SELF_COPY_BOM.md` | working tree | current |
 | `docs-authority/SITE_ACCESS_CHECK.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/SITE_COMPARISON.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/SITE_POWER.md` | 48bc545 (regenerated, no change) | current |
@@ -487,10 +487,10 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/fab/VAC_IND.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/fab/WAX_PATTERN.md` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/hazop_actions.csv` | 48bc545 (regenerated, no change) | current |
-| `docs-authority/insulation_schedule.csv` | working tree | current |
+| `docs-authority/insulation_schedule.csv` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/inventory/COMMISSIONING.csv` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | 48bc545 (regenerated, no change) | current |
-| `docs-authority/inventory/DESIGN_CHECK.csv` | working tree | current |
+| `docs-authority/inventory/DESIGN_CHECK.csv` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/inventory/EOL_RETURN.csv` | working tree | current |
 | `docs-authority/inventory/FRAME_CHECK.json` | 48bc545 (regenerated, no change) | current |
 | `docs-authority/inventory/GAS_DETECTORS.csv` | 48bc545 (regenerated, no change) | current |
@@ -1207,7 +1207,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/derived/MASS_FLOW_DERIVED.md` | 48bc545 (regenerated, no change) | current |
 | `flow_graph/derived/STREAM_REGISTER_DERIVED.md` | 48bc545 (regenerated, no change) | current |
 | `flow_graph/derived/SYNC_POINTER.md` | 48bc545 (regenerated, no change) | current |
-| `flow_graph/derived/_regen_receipt.json` | - | by design: manifest mechanism itself (U3 regen provenance receipt) |
+| `flow_graph/derived/_regen_receipt.json` | working tree | current |
 | `flow_graph/fire_rooms.json` | working tree | current |
 | `flow_graph/inventory/motor_family_ids.json` | 48bc545 (regenerated, no change) | current |
 | `flow_graph/inventory/other_family_ids.json` | 48bc545 (regenerated, no change) | current |
@@ -1231,12 +1231,12 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/views/pfd.json` | 48bc545 (regenerated, no change) | current |
 | `flow_graph/views/pfd.svg` | 48bc545 (regenerated, no change) | current |
 | `media/3d/LEVEL_L0.svg` | working tree | current |
-| `media/3d/LEVEL_L1.svg` | working tree | current |
+| `media/3d/LEVEL_L1.svg` | 48bc545 (regenerated, no change) | current |
 | `media/3d/LEVEL_L2.svg` | 48bc545 (regenerated, no change) | current |
 | `media/3d/LEVEL_Lm1.svg` | working tree | current |
 | `media/3d/LEVEL_Lm2.svg` | 48bc545 (regenerated, no change) | current |
 | `media/3d/LEVEL_ROOF.svg` | 48bc545 (regenerated, no change) | current |
-| `media/3d/MODEL_MANIFEST.json` | working tree | current |
+| `media/3d/MODEL_MANIFEST.json` | 48bc545 (regenerated, no change) | current |
 | `media/3d/SITE_AXO.svg` | working tree | current |
 | `media/3d/site_model.glb` | working tree | current |
 | `media/_generated.json` | - | by design: the manifest that lists generated media and the graph each was made from (regen_derived.py) |
@@ -1285,7 +1285,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/units/BLOW_MOLD/maint.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/BMED_ACID/bom.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/BMED_ACID/itp.csv` | 48bc545 (regenerated, no change) | current |
-| `models/units/BMED_BASE/bom.csv` | working tree | current |
+| `models/units/BMED_BASE/bom.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/BMED_BASE/itp.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/BMED_UPW_POLISH/bom.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/BMED_UPW_POLISH/itp.csv` | 48bc545 (regenerated, no change) | current |
@@ -1564,7 +1564,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/units/OIL_FRAC/maint.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/PEANUT/itp.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/PELLET/itp.csv` | 48bc545 (regenerated, no change) | current |
-| `models/units/POLISH_BANK/bom.csv` | working tree | current |
+| `models/units/POLISH_BANK/bom.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/POLISH_BANK/itp.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/POLY_COND/itp.csv` | 48bc545 (regenerated, no change) | current |
 | `models/units/POLY_F/itp.csv` | 48bc545 (regenerated, no change) | current |

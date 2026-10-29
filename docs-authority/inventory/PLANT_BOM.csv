@@ -1290,17 +1290,17 @@ motor family,MF-23 x 0,magnet wire IEC 60317-13 class 200,-,,X-INV-03 wire line
 motor family,MF-23 x 0,"housing extruded 6063, NEMA ICS 16 86 mm flange",0,,extruded + machined
 motor family,MF-23 x 0,bearing 608-2Z,0,,X-INV-05
 motor family,MF-23 x 0,connector 4-pin,0,,X-INV-05 electronics
-bulk pipe,PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 429 x 6.096 m",2577.1 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
+bulk pipe,PF-01,"PVC-U Sch 80 ASTM D1785 DN15 pipe, 431 x 6.096 m",2587.4 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
 bulk pipe,PF-01,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 1/2 in studs,371 / 258 / 258 / 1032,PVC-U Sch 80 ASTM D1785,AQS-INV-003
-bulk pipe,PF-02,"316L ASTM A312 DN15 pipe, 231 x 6.096 m",1386.6 m,316L ASTM A312,AQS-INV-003
+bulk pipe,PF-02,"316L ASTM A312 DN15 pipe, 238 x 6.096 m",1428.8 m,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-02,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,199 / 136 / 136 / 544,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-03,"CPVC Sch 80 ASTM F441 DN15 pipe, 98 x 6.096 m",570.3 m,CPVC Sch 80 ASTM F441,AQS-INV-003
 bulk pipe,PF-03,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 1/2 in studs,84 / 56 / 56 / 224,CPVC Sch 80 ASTM F441,AQS-INV-003
 bulk pipe,PF-04,"CPVC Sch 80 ASTM F441 DN50 pipe, 58 x 6.096 m",344.9 m,CPVC Sch 80 ASTM F441,AQS-INV-003
 bulk pipe,PF-04,ASTM F439 socket 90 elbow; ASTM F439 flange; gaskets; 5/8 in studs,51 / 34 / 34 / 136,CPVC Sch 80 ASTM F441,AQS-INV-003
-bulk pipe,PF-05,"PVDF SDR 21 ISO 10931 DN15 pipe, 135 x 6.096 m",802.1 m,PVDF SDR 21 ISO 10931,AQS-INV-003
+bulk pipe,PF-05,"PVDF SDR 21 ISO 10931 DN15 pipe, 146 x 6.096 m",868.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-05,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,120 / 82 / 82 / 328,PVDF SDR 21 ISO 10931,AQS-INV-003
-bulk pipe,PF-06,"CS ASTM A106 Gr B DN15 pipe, 91 x 6.096 m",541.5 m,CS ASTM A106 Gr B,AQS-INV-003
+bulk pipe,PF-06,"CS ASTM A106 Gr B DN15 pipe, 85 x 6.096 m",505.3 m,CS ASTM A106 Gr B,AQS-INV-003
 bulk pipe,PF-06,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 1/2 in studs,89 / 64 / 64 / 256,CS ASTM A106 Gr B,AQS-INV-003
 bulk pipe,PF-07,"PVC-U Sch 80 ASTM D1785 DN50 pipe, 31 x 6.096 m",185.2 m,PVC-U Sch 80 ASTM D1785,AQS-INV-003
 bulk pipe,PF-07,ASTM D2467 socket 90 elbow; ASTM D2467 flange; gaskets; 5/8 in studs,33 / 22 / 22 / 88,PVC-U Sch 80 ASTM D1785,AQS-INV-003
@@ -1308,7 +1308,7 @@ bulk pipe,PF-08,"HDPE PE4710 DR 11 (ASTM D3035) DN15 pipe, 50 x 6.096 m",297.8 m
 bulk pipe,PF-08,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 1/2 in studs,44 / 32 / 32 / 128,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
 bulk pipe,PF-09,"HDPE PE4710 DR 11 (ASTM D3035) DN50 pipe, 14 x 6.096 m",80.6 m,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
 bulk pipe,PF-09,ASTM D3261 butt-fusion 90 elbow; ASTM D3261 stub end + backing ring; gaskets; 5/8 in studs,13 / 10 / 10 / 40,HDPE PE4710 DR 11 (ASTM D3035),AQS-INV-003
-bulk pipe,PF-10,"FRP vinyl ester DN15 pipe, 22 x 6.096 m",127.0 m,FRP vinyl ester,AQS-INV-003
+bulk pipe,PF-10,"FRP vinyl ester DN15 pipe, 22 x 6.096 m",128.0 m,FRP vinyl ester,AQS-INV-003
 bulk pipe,PF-10,ASTM D5421 FRP 90 elbow; ASTM D5421 FRP flange; gaskets; 1/2 in studs,15 / 10 / 10 / 40,FRP vinyl ester,AQS-INV-003
 bulk pipe,PF-11,"PVDF SDR 21 ISO 10931 DN50 pipe, 7 x 6.096 m",35.9 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-11,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 5/8 in studs,6 / 4 / 4 / 16,PVDF SDR 21 ISO 10931,AQS-INV-003
@@ -1333,20 +1333,20 @@ bulk pipe,PF-20,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 5/8 i
 bulk pipe,PF-21,"PVDF SDR 21 ISO 10931 DN32 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",35520 m,Cu,AQS-INV-002
-bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",41611 m,Cu,AQS-INV-002
+bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",42031 m,Cu,AQS-INV-002
 bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",18360 m,Cu,AQS-INV-002
 bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",17760 m,Cu,AQS-INV-002
-bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",17705 m,Cu,AQS-INV-002
+bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",17964 m,Cu,AQS-INV-002
 bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4698 m,Cu,AQS-INV-002
 bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",4600 m,Cu,AQS-INV-002
 bulk wire,WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",4540 m,Cu,AQS-INV-002
-bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",5893 m,Cu,AQS-INV-002
+bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",5979 m,Cu,AQS-INV-002
 bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",2775 m,Cu,AQS-INV-002
-bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3091 m,Cu,AQS-INV-002
+bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3042 m,Cu,AQS-INV-002
 bulk wire,WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1200 m,Cu,AQS-INV-002
-bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1030 m,Cu,AQS-INV-002
+bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1014 m,Cu,AQS-INV-002
 bulk wire,WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",540 m,Cu,AQS-INV-002
-bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",407 m,Cu,AQS-INV-002
+bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",564 m,Cu,AQS-INV-002
 bulk wire,WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",173 m,Cu,AQS-INV-002
 bulk wire,WF-17,"power 6 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",128 m,Cu,AQS-INV-002
 bulk wire,WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",180 m,Cu,AQS-INV-002
@@ -1355,8 +1355,7 @@ bulk wire,WF-21,"DC power pair 14 AWG TC-ER 2-cond, 600 V",60 m,Cu,AQS-INV-002
 bulk wire,WF-24,"equipment ground 10 AWG green XHHW-2 Cu, 600 V",12 m,Cu,AQS-INV-002
 bulk wire,WF-25,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,AQS-INV-002
 bulk wire,WF-28,"power 8 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",128 m,Cu,AQS-INV-002
-bulk wire,WF-30,"power 250 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",40 m,Cu,AQS-INV-002
-bulk wire,WF-31,"power 12 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",164 m,Cu,AQS-INV-002
+bulk wire,WF-30,"power 250 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",58 m,Cu,AQS-INV-002
 building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",388,,AQS-INV-004
 building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",356,,AQS-INV-004
 building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),868,,AQS-INV-004
@@ -1370,7 +1369,7 @@ building block,OF-10,electronics: compressor contactor + overload (IEC 60947-4-1
 building block,OF-11,electronics: stepper driver (IEC 61800-5-1),3,,AQS-INV-004
 building block,OF-12,"electronics: safety PLC (SIL 2 capable), CPU and I/O rack (IEC 61508 / IEC 61511)",2,,AQS-INV-004
 building block,OF-13,fabricated part: fabricated part set (models/mfg/<unit>/bom.csv),83,,AQS-INV-004
-building block,OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),14526,,AQS-INV-004
+building block,OF-14,fastener: anchor bolt (ISO 3506 A4-70 wedge anchor),14726,,AQS-INV-004
 building block,OF-15,fastener: M10 x 40 lid bolt (ISO 3506 A4-70),100,,AQS-INV-004
 building block,OF-16,fastener: M8 x 30 lid bolt (ISO 3506 A4-70),48,,AQS-INV-004
 building block,OF-17,fastener: M12 anchor (ISO 3506 A4-70),37,,AQS-INV-004
@@ -1404,8 +1403,8 @@ building block,OF-44,"instrument: gas detector, CO (alarm 25 ppm, trip 50 ppm, b
 building block,OF-45,"instrument: gas detector, NOx (alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height)",6,,AQS-INV-004
 building block,OF-46,"protection: inverse-time circuit breaker, 3-pole (UL 489 / IEC 60947-2)",204,,AQS-INV-004
 building block,OF-47,"seal: mechanical seal, single (SiC/SiC faces, FKM)",124,,AQS-INV-004
-building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5765,,AQS-INV-004
-building block,OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1498,,AQS-INV-004
+building block,OF-48,"support: pipe clamp (PP clamp with EPDM liner, MSS SP-58 Type 7)",5859,,AQS-INV-004
+building block,OF-49,"support: U-bolt with guide (316 U-bolt, MSS SP-58 Type 24)",1504,,AQS-INV-004
 building block,OF-50,"valve: isolation valve (PVC-U true-union ball valve, MSS SP-122, EPDM seals)",280,,AQS-INV-004
 building block,OF-51,"valve: isolation valve (PP ball valve with HDPE stub ends, ISO 16135)",42,,AQS-INV-004
 building block,OF-52,"valve: isolation valve (316L ball valve, ASME B16.34 Cl 150, RF flanged)",188,,AQS-INV-004

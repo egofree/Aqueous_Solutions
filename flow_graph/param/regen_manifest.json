@@ -1452,6 +1452,23 @@
    "note": "AQS-PIP-004; unit centres from duties/_origins.json."
   },
   {
+   "name": "placement_refine",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.placement_refine"
+   ],
+   "outputs": [
+    "flow_graph/placement_seed.json"
+   ],
+   "depends_on": [
+    "line_list"
+   ],
+   "writes_graph": false,
+   "quick": true,
+   "note": "X-PIP-03 Rev O: the Rev N grid placements re-seated by process adjacency - the Rev N blocks seated by weighted mass-edge adjacency around the pinned constellation, then each unit greedily seated nearest its already-seated graph neighbours (BFS from the block sources sets priority). Designed placements untouched. Idempotent via the source stamps. Must run before placement_routes so the routed lengths reflect the refined positions."
+  },
+  {
    "name": "placement_routes",
    "argv": [
     "python3",
@@ -1464,7 +1481,8 @@
     "docs-authority/ISO_SHEETS.md"
    ],
    "depends_on": [
-    "line_list"
+    "line_list",
+    "placement_refine"
    ],
    "writes_graph": false,
    "quick": false,

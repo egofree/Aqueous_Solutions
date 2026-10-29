@@ -133,6 +133,10 @@ def seat_blocks(seed, g):
 
         for bid in mov:                              # heaviest first
             b = blocks[bid]
+            if 'X-PIP-03 refinement' in (b.get('source') or ''):
+                deltas[bid] = (0, 0)                 # already seated: idempotence stamp
+                seated[bid] = rect_of(bid)
+                continue
             bw, bd = b['size_mm'][0], b['size_mm'][1]
             nbrs = {nb: wt for nb, wt in w[bid].items() if nb in seated}
             # candidate seats: the four sides of every seated rect
@@ -164,6 +168,8 @@ def seat_blocks(seed, g):
             seated[bid] = best
             deltas[bid] = (round(best[0] - b['origin_mm'][0]),
                            round(best[1] - b['origin_mm'][1]))
+            b['source'] = (b.get('source') or '') + \
+                ' [X-PIP-03 refinement: seated by weighted adjacency]'
     return deltas
 
 

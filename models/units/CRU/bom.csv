@@ -5,8 +5,8 @@ item,description,qty,material,basis
 4,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 5,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
 6,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-7,fastener: anchor bolt M10,82,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-8,fastener: anchor bolt M10,84,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+7,fastener: anchor bolt M10,72,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+8,fastener: anchor bolt M10,68,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 9,fastener: anchor bolt M10,40,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 10,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 11,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
@@ -16,8 +16,8 @@ item,description,qty,material,basis
 15,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
 16,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
 17,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
-18,support: pipe clamp DN15,41,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-19,support: pipe clamp DN15,42,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+18,support: pipe clamp DN15,36,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+19,support: pipe clamp DN15,34,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 20,support: pipe clamp DN15,20,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 21,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
 22,valve: check valve DN15,1,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",AQS-INV-004
