@@ -3,8 +3,7 @@
 Document number: AQS-EQP-FAB-RGN-001  
 Revision: B  
 Date: 2026-10-01  
-PFD: AQS-PFD-FAB-RGN-001 (`fab_reagent_forks_pfd.png`); parent sector
-AQS-PFD-FAB-001; wet factory AQS-PFD-WET-001
+PFD: the fab sector view `flow_graph/views/pfd-fab.svg`, which includes the reagent forks; wet factory AQS-PFD-WET-001
 
 Authority: `03-silicon-wafer-fabrication.md`,
 `MANUFACTURING/SILICON_FAB/Silicon_Fab_overview.md`, root `01-…` /

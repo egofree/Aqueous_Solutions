@@ -90,7 +90,7 @@ md += ['- The blanket gas for the charge, argon or nitrogen, is not yet chosen; 
        ('- Lithography is on the graph as its own units' if any(N[u].get('class') in ('coater',) or u.startswith('LITHO') for u in U) else '- Lithography is still part of the fab unit') + '; implantation and metallisation are still part of the fab unit and may be split out in a later module.']
 if idle: md.append('- The streams without flow in Section 6 need a rate or a decision to retire them.')
 md += ['', '## 10. Drawings', '',
-       'The fab appears in the plant view `flow_graph/views/pfd.svg`, which the regenerator draws from the graph. The massing model is `models/freecad/wafer_fab.py`. '
-       'The older scripts `flow_graph/exporters/matplotlib/wafer_fab_pfd.py` and `fab_reagent_forks_pfd.py` are not run by the regenerator.', '']
+       'The process flow diagram of the fab is the sector view `flow_graph/views/pfd-fab.svg`, which the regenerator draws from the graph with every mass stream that has an end in the sector, the reagent forks included. '
+       'The fab also appears in the plant view `flow_graph/views/pfd.svg`. The massing model is `models/freecad/wafer_fab.py`.', '']
 open('docs-authority/WAFER_FAB_EQUIPMENT.md', 'w').write('\n'.join(md))
 print('docs-authority/WAFER_FAB_EQUIPMENT.md written')

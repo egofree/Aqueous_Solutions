@@ -186,6 +186,42 @@
    ],
    "when": "2026-10-25 documentation triage",
    "note": "nitrogen-fixation study of the retired fish/clover/azolla model; number AQS-DUTY-044 withdrawn"
+  },
+  {
+   "old": "flow_graph/exporters/matplotlib/metal_forming_pfd.py",
+   "now": [
+    "flow_graph/views/pfd-mfg.svg",
+    "flow_graph/render_layer_views.py"
+   ],
+   "when": "2026-10-29 rewrite batch 21",
+   "note": "hand-drawn matplotlib sheet with tags no longer on the graph, never run by the regenerator and its PNG never committed; replaced by the graph-driven sector view"
+  },
+  {
+   "old": "flow_graph/exporters/matplotlib/mfg_shop_pfd.py",
+   "now": [
+    "flow_graph/views/pfd-mfg.svg",
+    "flow_graph/render_layer_views.py"
+   ],
+   "when": "2026-10-29 rewrite batch 21",
+   "note": "hand-drawn matplotlib sheet with tags no longer on the graph, never run by the regenerator and its PNG never committed; replaced by the graph-driven sector view"
+  },
+  {
+   "old": "flow_graph/exporters/matplotlib/wafer_fab_pfd.py",
+   "now": [
+    "flow_graph/views/pfd-fab.svg",
+    "flow_graph/render_layer_views.py"
+   ],
+   "when": "2026-10-29 rewrite batch 21",
+   "note": "hand-drawn matplotlib sheet with tags no longer on the graph, never run by the regenerator and its PNG never committed; replaced by the graph-driven sector view"
+  },
+  {
+   "old": "flow_graph/exporters/matplotlib/fab_reagent_forks_pfd.py",
+   "now": [
+    "flow_graph/views/pfd-fab.svg",
+    "flow_graph/render_layer_views.py"
+   ],
+   "when": "2026-10-29 rewrite batch 21",
+   "note": "hand-drawn matplotlib sheet with tags no longer on the graph, never run by the regenerator and its PNG never committed; replaced by the graph-driven sector view"
   }
  ],
  "reissued_numbers": [
@@ -271,7 +307,7 @@
    "\\b{id} (sector|line)\\b",
    "/ {id} polish"
   ],
-  "history_words": "(?i:renamed|pre-rename|deleted|former|\u2192|->|became|no longer|replaced|stale|removed)"
+  "history_words": "(?i:renamed|pre-rename|deleted|former|→|->|became|no longer|replaced|stale|removed)"
  },
  "names": [
   {

@@ -1,0 +1,2507 @@
+{
+  "preset_id": "VIEW-PFD-MFG",
+  "view_mode": "PFD",
+  "source_doc": "AQS-FLOW-GRAPH-001",
+  "source_revision": "AC",
+  "node_count": 35,
+  "edge_count": 46,
+  "orphan_campus_units": [],
+  "nodes": [
+    {
+      "unit_id": "BAGHOUSE",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "baghouse",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Dust baghouse (S19)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "COLD_MILL",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "forming",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Cold mill (S59)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": {
+        "value": 0.0191,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 2.2 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+      }
+    },
+    {
+      "unit_id": "EW_1",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "ew_cell",
+      "tags": [
+        "EW-1"
+      ],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 5.2483,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). Cell DC at the electrode: 2476 A (Faraday, copper-equivalent, CE 0.85) x 2.12 V (USBM_CL_EW chloride EW)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "sizing": {
+          "size_mm": [
+            2670,
+            720,
+            760
+          ],
+          "I_bounding_A": 2476,
+          "cathodes": 25,
+          "anodes": 26,
+          "j_A_m2": 196,
+          "V_liq_m3": 1.243,
+          "P_dc_kW": 5.25,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        }
+      }
+    },
+    {
+      "unit_id": "EW_2",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "ew_cell",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "EW cascade stage (intra)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "sizing": {
+          "size_mm": [
+            2670,
+            720,
+            760
+          ],
+          "I_bounding_A": 2476,
+          "cathodes": 25,
+          "anodes": 26,
+          "j_A_m2": 197,
+          "V_liq_m3": 1.243,
+          "P_dc_kW": 5.25,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "EW_3",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "ew_cell",
+      "notes": "EW-3. Same cell as EW-1. Overflow to the next cell. Not a proxy.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "pitch_mm": 750,
+        "index": 3,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "sizing": {
+          "size_mm": [
+            1170,
+            720,
+            760
+          ],
+          "I_bounding_A": 930,
+          "cathodes": 10,
+          "anodes": 11,
+          "j_A_m2": 184,
+          "V_liq_m3": 0.539,
+          "P_dc_kW": 1.97,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        }
+      }
+    },
+    {
+      "unit_id": "EW_4",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "ew_cell",
+      "notes": "EW-4. Same cell as EW-1. Overflow to the next cell. Not a proxy.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "pitch_mm": 750,
+        "index": 4,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "sizing": {
+          "size_mm": [
+            370,
+            720,
+            760
+          ],
+          "I_bounding_A": 201,
+          "cathodes": 2,
+          "anodes": 3,
+          "j_A_m2": 199,
+          "V_liq_m3": 0.164,
+          "P_dc_kW": 0.43,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        }
+      }
+    },
+    {
+      "unit_id": "EW_5",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "ew_cell",
+      "notes": "EW-5. Same cell as EW-1. Overflow to the next cell. Not a proxy.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "pitch_mm": 750,
+        "index": 5,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "sizing": {
+          "size_mm": [
+            470,
+            720,
+            760
+          ],
+          "I_bounding_A": 208,
+          "cathodes": 3,
+          "anodes": 4,
+          "j_A_m2": 137,
+          "V_liq_m3": 0.211,
+          "P_dc_kW": 0.44,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        }
+      }
+    },
+    {
+      "unit_id": "EW_6",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "ew_cell",
+      "notes": "EW-6. Same cell as EW-1. Overflow to the next cell. Not a proxy.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "pitch_mm": 750,
+        "index": 6,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "sizing": {
+          "size_mm": [
+            470,
+            720,
+            760
+          ],
+          "I_bounding_A": 226,
+          "cathodes": 3,
+          "anodes": 4,
+          "j_A_m2": 150,
+          "V_liq_m3": 0.211,
+          "P_dc_kW": 0.48,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        }
+      }
+    },
+    {
+      "unit_id": "EW_7",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "ew_cell",
+      "notes": "EW-7. Same cell as EW-1. Overflow to the next cell. Not a proxy.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "pitch_mm": 750,
+        "index": 7,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "sizing": {
+          "size_mm": [
+            3170,
+            720,
+            760
+          ],
+          "I_bounding_A": 2942,
+          "cathodes": 30,
+          "anodes": 31,
+          "j_A_m2": 195,
+          "V_liq_m3": 1.477,
+          "P_dc_kW": 6.24,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        }
+      }
+    },
+    {
+      "unit_id": "EW_8",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "ew_cell",
+      "notes": "EW-8. Same cell as EW-1. Overflow to the next cell. Not a proxy.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "pitch_mm": 750,
+        "index": 8,
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "sizing": {
+          "size_mm": [
+            470,
+            720,
+            760
+          ],
+          "I_bounding_A": 209,
+          "cathodes": 3,
+          "anodes": 4,
+          "j_A_m2": 138,
+          "V_liq_m3": 0.211,
+          "P_dc_kW": 0.44,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        }
+      }
+    },
+    {
+      "unit_id": "EW_9",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "ew_cell",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "EW cascade last stage proxy (intra)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          420,
+          650
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "sizing": {
+          "size_mm": [
+            3270,
+            720,
+            760
+          ],
+          "I_bounding_A": 3115,
+          "cathodes": 31,
+          "anodes": 32,
+          "j_A_m2": 199,
+          "V_liq_m3": 1.524,
+          "P_dc_kW": 6.6,
+          "status": "study",
+          "source": "AQS-DUTY-051"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GAS_ATOMIZER",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "forming",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Powder production. Fed from FOUNDRY melt when powder stock required. Not baseline.",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": {
+        "value": 0.0781,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 1.9 kWh/d / 24 h; batch nameplate 5.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+      }
+    },
+    {
+      "unit_id": "GLASS_DIGEST",
+      "sector_id": "GLASS",
+      "presence": "present",
+      "class": "digest",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.09,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02: node aligned to its calculated SF-GLASS_DIGEST feed (agitator motor); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to GLASS_DIGEST continuous_kw.."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "HABITATION",
+      "sector_id": "HAB",
+      "presence": "present",
+      "class": "hab",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 1.157,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-301)."
+      },
+      "modules": [],
+      "params": {
+        "crew_study": 4,
+        "presence": "present",
+        "co2_removal": {
+          "metabolic_CO2_kg_d": 4.021,
+          "half_cycle_min": 144.0,
+          "zeolite_5A_kg_per_bed": 40.2,
+          "beds_per_assembly": 2,
+          "assemblies": 2,
+          "zeolite_total_kg": 160.8,
+          "basis": "NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)"
+        },
+        "equipment": [
+          {
+            "item": "CDRA CO2 removal: 5A zeolite bed regen heaters + valves (X-RED-06, NASA_CDRA2015 class)",
+            "kW": 0.75
+          },
+          {
+            "item": "ventilation fans: 22 L/s at SFP 750 W/(m3/s) (ASHRAE621_2019 rates, ISO16798_3 SFP3)",
+            "kW": 0.017
+          },
+          {
+            "item": "lighting: 40 m2 x 8.8 W/m2 x 10 % lit (IECC2021_C405 allowance)",
+            "kW": 0.035
+          },
+          {
+            "item": "water pressure + grey lift pumps (shower 6 L/min at 2 bar class, AQS-HAB-001)",
+            "kW": 0.03
+          },
+          {
+            "item": "galley: induction 2 kW x 0.5 h/d + microwave + kettle = 1.4 kWh/d",
+            "kW": 0.058
+          },
+          {
+            "item": "medical fridge/freezer + pharmacy (AQS-HAB-001 medical room)",
+            "kW": 0.08
+          },
+          {
+            "item": "medical equipment duty share",
+            "kW": 0.05
+          },
+          {
+            "item": "comms, electronics, controls at the hab panels",
+            "kW": 0.05
+          },
+          {
+            "item": "wash-water heating: 60 kg/d x 30 K x 4.18 kJ/kg K",
+            "kW": 0.087
+          },
+          {
+            "item": "total connected (calculated)",
+            "kW": 1.157
+          },
+          {
+            "item": "critical-capacity lock (drivers, NFPA 110)",
+            "kW": 3.0
+          }
+        ]
+      }
+    },
+    {
+      "unit_id": "HOPPER",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "hopper",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Organic/scrap hopper (S11/S16/S61) Design: notes/OIL_SECTOR.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 1.0,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "LEACH_CSTR_1",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "vessel",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.75,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02: agitator PBT D450 at 150 rpm, 403 W shaft (Np x rho x N^3 x D^5) -> 0.75 kW motor (drivers key motor_kW; AQS-DUTY-050 Rev B); leach heat is Q3 via HX-5, not electric (was the 2 kW AC parasitics share)."
+      },
+      "modules": [],
+      "params": {
+        "V_m3": null,
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "MET_AHU",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "ahu",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Metal aisle AHU (S62/S71)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "MET_MELT",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "melt",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Superseded for bulk melt by FOUNDRY IND_MELT. Retained as MFG hold/transfer only. Do not size as primary melt.",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": {
+        "value": 0.2369,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 5.7 kWh/d / 24 h; batch nameplate 7.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+      }
+    },
+    {
+      "unit_id": "MET_SCRUB",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "scrubber",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "MET scrub/baghouse (S71/S72)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "duty": "metal-aisle fume and mist (wet scrubber ahead of the baghouse filter)",
+          "gas_kg_d": 71604.0,
+          "Q_m3_s": 0.6906,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 800,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 7.4258,
+          "dP_Pa": 1171.034,
+          "fan_W": 1617.4908,
+          "pump_W": 505.7074,
+          "kW": 2.1232,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          1200,
+          1200,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 2.1232,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 1617 W, pump 506 W."
+      }
+    },
+    {
+      "unit_id": "MFG_SHOP",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "shop",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 2.55,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 42.8 kW, coincident peak 24.5 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "OIL_FRAC",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "frac",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Oil frac (intra) Design: notes/OIL_SECTOR.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "vol_net_base": 27.5,
+        "cut_basis": {
+          "source": "SU2018_PYRO",
+          "per_pass_fractions_C5-10_C11-18_C19-28_C29+": [
+            0.2267,
+            0.3496,
+            0.2167,
+            0.207
+          ],
+          "A-M": "A-M-138"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "OIL_PYRO",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "pyro",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Oil pyro (intra) Design: notes/OIL_SECTOR.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": {
+        "value": 1.664,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02: node aligned to its calculated SF-OIL_PYRO feed (retort heat / heater efficiency); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to OIL_PYRO continuous_kw.."
+      }
+    },
+    {
+      "unit_id": "POLISH_BANK",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "polish",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Polish bank series",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "PROD_C11_C18",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "cut_tank",
+      "notes": "Mid cut tank. Product. Design: notes/OIL_SECTOR.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "oil_line.py",
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
+        }
+      }
+    },
+    {
+      "unit_id": "PROD_C19_C28",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "cut_tank",
+      "notes": "Heavy-mid cut tank. Product. Design: notes/OIL_SECTOR.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "oil_line.py",
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
+        }
+      }
+    },
+    {
+      "unit_id": "WIRE_DRAW",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "forming",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Final wire sizing in MFG. Takes rod/wire stock from FOUNDRY DRAW via STOCK_OUT. Not the primary draw.",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": {
+        "value": 0.0189,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 0.5 kWh/d / 24 h; batch nameplate 1.1 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+      }
+    },
+    {
+      "unit_id": "ELECTRODE_COAT",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "coater",
+      "notes": "Electrode coating booth for EW/BMED replaceable electrodes (non-precious M1 carbon/Ni class): exhaust to MET_AHU, recoat loop IA-COAT-IN/OUT (AQS-MFG-ELC-001; A-M-285).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "equipment_id": "ELC-BOOTH-01",
+        "formulation": "carbon or nickel",
+        "avg_kw": 0.0792,
+        "exhaust": "MET_AHU",
+        "size_mm": [
+          1200,
+          800,
+          1800
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "kWh_d": 1.9,
+        "design": {
+          "machine": "coating booth + IR cure",
+          "exhaust_kW": 0.35,
+          "cure_kW": 1.2,
+          "campaign_h_d": 2.0,
+          "cure_h_d": 1.0,
+          "formulation": "carbon / Ni non-precious M1 class (RuO2-IrO2 deferred)",
+          "exhaust": "MET_AHU -> MET_SCRUB (S71-S72)",
+          "recoat_loop": "IA-COAT-IN/OUT 0.02 kg/d, net zero",
+          "duty_kW": 0.0792
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0792,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): booth exhaust 0.35 kW x 2 h/d + IR cure 1.2 kW x 1 h/d campaign at the 0.02 kg/d anode recoat loop (AQS-MFG-ELC-001 Rev B; A-M-285)."
+      }
+    },
+    {
+      "unit_id": "BLOW_MOLD",
+      "sector_id": "MFG",
+      "presence": "present",
+      "class": "former",
+      "notes": "Continuous-extrusion blow molder (Precious Plastic class): wax/polymer articles for the shop goods loop on IA-BLOW-IN; scrap to the oil line (AQS-EQP-MFG-001; A-M-285).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "equipment_id": "BLOW-01",
+        "peak_kw": 3.7,
+        "avg_kw": 0.3691,
+        "scrap": "OIL_FRAC",
+        "size_mm": [
+          1200,
+          800,
+          1600
+        ],
+        "size_note": "L\u00d7W\u00d7H mm, issued envelope",
+        "kWh_d": 8.858,
+        "design": {
+          "machine": "continuous-extrusion blow molder",
+          "extruder_kW": 2.2,
+          "clamp_kW": 0.75,
+          "air_kW": 0.75,
+          "rate_kg_h": 2.8,
+          "run_h_d": 3.0,
+          "feed_kg_d": 8.4072,
+          "products": "molded articles to MFG_SHOP (IA-BLOW-OUT)",
+          "duty_kW": 0.3691
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3691,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): extruder 2.2 kW + clamp/air duty over a 3.0 h/d campaign at 8.41 kg/d wax feed (AQS-EQP-MFG-001 / AQS-REQ-KW-001 SI-MFG-01; A-M-285)."
+      }
+    },
+    {
+      "unit_id": "IND_MELT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "furnace",
+      "tags": [
+        "induction",
+        "foundry"
+      ],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Primary induction melt furnace. Coreless or channel. Feeds castings and alloy. Binding foundry sector 2026-10-16. Electrical load on RECTIFIER/LOAD_AGG. Sized: 10 kg crucible, 25 kW, 2-3 kHz. notes/FOUNDRY_SIZING.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "charge_kg_d": 37.0139,
+          "stock_out_kg_d": 25.9,
+          "slag_kg_d": 0.3565,
+          "crucible_kg": 10.0,
+          "heats_d": 4,
+          "melt_kWh_d": 21.249,
+          "avg_kW": 0.8854,
+          "peak_kW": 15.0,
+          "connected_kW": 25.0,
+          "kWh_per_kg": {
+            "Cu": 0.3616,
+            "Fe": 0.5406,
+            "Zn": 0.1605,
+            "Al": 0.5972,
+            "Ti": 0.749
+          },
+          "basis": "scrap remelt + pot metal; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN/CRC_AL/CRC_TI (reactive/addition class bounding at Ti)",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "Cu/Fe/Zn/Al scrap + pot-metal remelt; medium-frequency coreless induction, tilt pour",
+          "crucible_kg": 10.0,
+          "crucible_D_mm": 110.0,
+          "crucible_H_mm": 165,
+          "heats_d": 4,
+          "connected_kW": 25.0,
+          "peak_kW": 15.0,
+          "melt_kWh_d": 21.249,
+          "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "live",
+          "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
+        },
+        "duty_cycle": {
+          "avg_kW": 0.8854,
+          "peak_kW": 15.0,
+          "connected_kW": 25.0,
+          "kWh_d": 21.249,
+          "heats_d": 4,
+          "basis": "X-MFG-37 logged batch schedule class"
+        },
+        "sec3_material": {
+          "mat": "Clay-graphite crucibles assigned per melt family (Cu/Zn/Fe/Al one each), ceramic-fibre hot face 150 mm + 4 mm CS casing; alumina castable hearth under the pour lip",
+          "basis": "coreless medium-frequency induction remelt of Cu/Fe/Zn/Al scrap + pot metal at the 10 kg class (graph design, A-M-282 energies): melting points bound the refractory class (CRC_CU/CRC_FE/CRC_ZN/CRC_AL); crucible and lining class per SCHACHT2004 ch. 8/10; coil hardware per INDUCT_SOCX. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "SiC crucibles for the Al family if attack is measured (cost up, better wetting resistance); alumina-liner swap when the charge is ferrous-only",
+          "note": "crucible life is a unit task 12 first-article measurement (crucible_kg 10, heats_d 4 in graph design); no rate claimed. Slag tap is basic-oxide wetted: alumina hot face.",
+          "task": "X-MAT-22"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.8854,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.25 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
+      }
+    },
+    {
+      "unit_id": "COMB_HEAT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "furnace",
+      "tags": [
+        "combustion",
+        "alternate"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Combustion heat. Alternate / redundant path only. Not baseline. Fuel from existing headers.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "rate_kg_d": 0.0,
+          "connected_kW": 30.0,
+          "backup_of": "IND_MELT (tertiary, fuel-fired C5-C10 class)",
+          "outage_basis": "long IND_MELT outage with both electric alternates unavailable (A-M-282); off-gas to MET_SCRUB when energized",
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ]
+        },
+        "design": {
+          "service": "combustion reheating furnace (C5-C10 fuel class), tertiary N+1 of IND_MELT",
+          "connected_kW": 0.05,
+          "thermal_kW": 30.0,
+          "backup_of": "IND_MELT",
+          "outage_d": 2.0,
+          "offgas": "to MET_SCRUB when energized (COMB_OFFGAS)"
+        },
+        "envelope": {
+          "size_mm": [
+            1000,
+            1000,
+            1500
+          ],
+          "style": "box_furnace",
+          "state": "standby_rated",
+          "basis": "A-M-199 melt class; N+1 rated envelope (A-M-283)"
+        },
+        "sec3_material": {
+          "mat": "Alumina-silica brick + castable crown hot face on a mild-steel shell; 310S burner tube; flue path dry above the acid dew point into MET_SCRUB",
+          "basis": "tertiary N+1 fuel-fired melt heat (graph design): combustion hot-face class per SCHACHT2004 ch. 10; the fuel class is the plant C5-C10 product (duty section 1); combustion stoichiometry per TURNS2012. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "precast refractory module kit if relining downtime dominates the outage plan",
+          "note": "energized only on IND_MELT outage (outage_d 2); off-gas books to MET_SCRUB when hot (M7).",
+          "task": "X-MAT-22"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.05,
+        "unit": "kW",
+        "status": "study",
+        "note": "standby-zero on the design day: N+1 fuel-fired heat of IND_MELT (A-M-283); 0.05 kW controls/blower parasitic, fuel on the C5-C10 class when energized."
+      }
+    },
+    {
+      "unit_id": "STOCK_OUT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "store",
+      "tags": [
+        "foundry"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Staged stock to MFG and FAB. See notes/FOUNDRY_DESIGN.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "stock_out_kg_d": 36.7125,
+          "draws": {
+            "MFG": 25.9,
+            "FAB": 0.0,
+            "WIRE_DRAW": 0.0
+          },
+          "export_kg_d": 10.8125,
+          "size_mm": [
+            1200,
+            800,
+            1500
+          ]
+        },
+        "design": {
+          "rack": "three-tier bar/plate/ingot staging rack",
+          "issue_kg_d": 25.9,
+          "export_kg_d": 10.8125,
+          "hold_d": 1.0
+        },
+        "envelope": {
+          "size_mm": [
+            1200,
+            800,
+            1500
+          ],
+          "style": "store_rack",
+          "state": "live",
+          "basis": "1 d shop issue K at the 2000 kg/m3 staged-metal density (AQS-DUTY-064 METAL_STORE row; A-M-261 loop)"
+        },
+        "sec3_material": {
+          "mat": "Mild-steel staging rack with HDPE wear pads and PE tote carts; no piped wetted service",
+          "basis": "bar/plate/ingot staging, 1 d hold at the METAL_STORE class (graph design; AQS-DUTY-064; A-M-261): dry solids storage; machine-marker class grounding (dry dust housing conductive rule M7 where chips fly). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "galvanized rack hardware for the imported-stock bay if atmospheric humidity rules",
+          "note": "no corrosion load; wear at the pads is a spares item.",
+          "task": "X-MAT-22"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "POLY_STOCK",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "store",
+      "tags": [
+        "polymer"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Staged polymer feedstock to MFG, FAB, WET, FOUNDRY. Sized in notes/POLYMERS_DESIGN.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "out_kg_d": 0.497388,
+          "fluoro_kg_d": 0.23,
+          "to_wet_kg_d": 0.026739,
+          "to_fab_kg_d": 0.0,
+          "status_note": "olefin issue (foundry_poly P) + fluoropolymer issue 0.230 kg/d (A-M-289)"
+        },
+        "design": {
+          "bin": "pellet tote bin",
+          "issue_kg_d": 0.267388,
+          "to_wet_kg_d": 0.026739,
+          "hold_d": 1.0
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            400,
+            800
+          ],
+          "style": "store_bin",
+          "state": "live",
+          "basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264)"
+        },
+        "sec3_material": {
+          "mat": "HDPE tote bins and PP powder drums; steel rack; no wetted streams",
+          "basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (graph design; A-M-264): dry resin storage, no process contact (AQS-DUTY-073 class). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "antistatic PP totes if the powder-drum fraction builds charge (a spares-check item)",
+          "note": "no corrosion load; stock loss is the managed quantity.",
+          "task": "X-MAT-22"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GREASE_CA",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "kettle",
+      "tags": [
+        "grease"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Calcium soap grease kettle. Wax C19-C28 + P-Ca. Shop grease.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sec3_material": {
+          "mat": "316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water heads keep the jacket wetted side on the issued Q3/Q4 M1 water family",
+          "basis": "calcium soap saponification at the 95-120 C kettle class, wax cut + Ca(OH)2 (graph edges/duty AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2): grease manufacture practice selects 304/316L hot-soap contact (MANG2007 ch. 14.6); the alkaline soap concentrate is hot and basic, out of the PP-H class. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "304L kettle if the wax cut proves the only wetted face at a lower saponification temperature (cost down, first-article choice)",
+          "note": "allowance: corrosion is not the limit - cleaning and soap residue set the maintenance surface; no measured pit rate.",
+          "task": "X-MAT-22"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GREASE_LI",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "kettle",
+      "tags": [
+        "grease"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Lithium soap grease kettle. Wax C19-C28 + Li from LI_RECOVER. Higher-temp grease.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sec3_material": {
+          "mat": "316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap",
+          "basis": "lithium 12-hydroxystearate soap saponification, wax cut + Li source from LI_RECOVER (graph edges): Li soaps are the standard thickeners and their kettles run the same 95-120 C class (MANG2007 ch. 14). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "304L kettle at the same trade-off as GREASE_CA",
+          "note": "Li-bearing residues drive the cleaning protocol, not corrosion.",
+          "task": "X-MAT-22"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "METAL_STORE",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "store",
+      "tags": [
+        "foundry"
+      ],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": "Metal product store. D-DOCK owner ruling 2026-10-19 (notes/first_principles_audit_2026-10-17.md): product buffer storage assumed built. STOCK_OUT is transit/classification only; this store buffers foundry output against the MFG/FAB/wire-draw dispatch, 14 d campaign (A-M-270).",
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "note": "D-DOCK product buffer (A-M-270): IA-STOCK-STORE in, STOCK_TO_* draws out at steady state.",
+        "presence": "present",
+        "size_mm": [
+          800,
+          800,
+          950
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.1225,
+          "D_mm": 500,
+          "H_mm": 650,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "stream_id": "S08",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "metals/Si",
+      "header": "crib",
+      "forbidden": "FR-4 to pyro",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 41.996408,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE plated metals \u224842 kg/d at 150 kg/d wet feed | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "S08G",
+      "from_unit_id": "GLASS_DIGEST",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "glass/ceramic goods",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 26.7,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-AUD-001 \u00a74.1 Mixed WEEE silicate+grit \u224830 kg/d; goods export boundary | X-PAR-02 TF R10a: glass/ceramic goods to the shop = BH verbatim (graph 91d33f4, X-PAR-02 R10a restore 2026-10-18) 26.20 + IA-SIC-IN 0.50 silica (SIC_FURNACE retired, rides S08G); BOUNDARY_EXPORT re-point retired (AQS-AUD-001 4.1 silicate+grit ~=30 kg/d basis)"
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "MFG",
+      "open_boundary": true,
+      "namespace": "SANDBOX",
+      "gap_flags": [
+        "sandbox_extra_not_in_STREAM_REGISTER",
+        "reconcile_or_keep_sandbox"
+      ],
+      "notes": "candidate_mvs extension \u2014 do not invent new register ID"
+    },
+    {
+      "stream_id": "S16",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "scrap",
+      "header": "conveyor",
+      "forbidden": "pyro if FR-4",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 12.299499,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "S57",
+      "from_unit_id": "MET_MELT",
+      "to_unit_id": "WIRE_DRAW",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "billet / melt / charge",
+      "header": "MFG metal aisle",
+      "forbidden": "polymer, FR-4, pyro",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 6.8389,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: PROD_METALS / MET_MELT \u2192 WIRE_DRAW / COLD_MILL / GAS_ATOMIZER",
+      "composition": {
+        "Cu": 1.0
+      }
+    },
+    {
+      "stream_id": "S58",
+      "from_unit_id": "WIRE_DRAW",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "wire product",
+      "header": "tote / crib",
+      "forbidden": "\u2014",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 3.9389,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: S57 less 10% draw swarf | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: WIRE_DRAW \u2192 MET_WIRE_BIN / ELECTRODE_FAB / MFG_CRIB"
+    },
+    {
+      "stream_id": "S59",
+      "from_unit_id": "COLD_MILL",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "sheet / strip",
+      "header": "tote / crib",
+      "forbidden": "\u2014",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 3.950359,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: Cu 4.392 to cold mill less 10% trim | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: COLD_MILL \u2192 MET_SHEET_BIN / MFG_CRIB"
+    },
+    {
+      "stream_id": "S60",
+      "from_unit_id": "GAS_ATOMIZER",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "metal powder",
+      "header": "N\u2082-blanketed crib",
+      "forbidden": "open ignition, HAB air",
+      "claim_status": "Closed / Claimed",
+      "rate": {
+        "value": 3.200359,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: blend deposit 3.555 (Pb/Sn/Ni/Cd/Zn) less 10% off-spec | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: GAS_ATOMIZER \u2192 MET_POWDER_CRIB / FAB / RepRap",
+      "composition": {
+        "Pb/Sn/Ni/Cd/Zn blend": 1.0
+      }
+    },
+    {
+      "stream_id": "S61",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "HOPPER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "metal scrap",
+      "header": "S16 class / conveyor",
+      "forbidden": "FR-4, pyro",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 1.197099,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: swarf/trim/off-spec from draw, mill and atomizer (less LEV fines) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: Forming swarf / trim \u2192 HOPPER / leach"
+    },
+    {
+      "stream_id": "S62",
+      "from_unit_id": "MET_AHU",
+      "to_unit_id": "MET_SCRUB",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "MFG metal-aisle capture feed",
+      "header": "dedicated MET_AHU",
+      "forbidden": "HAB/FARM return, acid-gas as primary",
+      "claim_status": "Partial / Claimed",
+      "rate": {
+        "value": 51145.68,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: MET aisle general exhaust 6.0 ACH x 300.0 m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse (S71)"
+    },
+    {
+      "stream_id": "S71",
+      "from_unit_id": "MET_AHU",
+      "to_unit_id": "MET_SCRUB",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "metal-aisle fume / mist / dust",
+      "header": "MET capture train",
+      "forbidden": "HAB return, HDR_ACID_GAS primary",
+      "claim_status": "Partial / Claimed",
+      "rate": {
+        "value": 20458.32,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: MET_AHU \u2192 MET_SCRUB / baghouse"
+    },
+    {
+      "stream_id": "S72",
+      "from_unit_id": "MET_SCRUB",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L/S",
+      "presence": "present",
+      "carries": "metal fines and aqueous scrub liquor",
+      "forbidden": "organic mist",
+      "notes": "Fines only.",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 2.4442,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: fines 0.0487 kg/d (melt fume + atomizer ultrafines) in scrub blowdown at 2% solids | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "DIGESTER"
+    },
+    {
+      "stream_id": "S72B",
+      "from_unit_id": "MET_SCRUB",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "presence": "present",
+      "carries": "organic mist",
+      "forbidden": "leach",
+      "notes": "Organics off the metal scrub, to oil.",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0158,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d"
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "OIL"
+    },
+    {
+      "stream_id": "STOCK_TO_MFG",
+      "from_unit_id": "METAL_STORE",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "presence": "present",
+      "carries": "plate/rod/wire to manufacturing",
+      "notes": "Integration edge. Rate TBD.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 25.9,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Formed stock to the shop = the foundry product demand: the full AQS-SIZE-FOUNDRY consumable-replacement table Cu 3 + Fe 10 + Zn/EW 1 + Al 8 + stainless 1.5 + Ti 0.40 + investment castings 2 = 25.9 kg/d (A-M-261 rev: the pot-blocked lines unblock on their dock feeds, A-M-284). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG"
+    },
+    {
+      "stream_id": "COMB_OFFGAS",
+      "from_unit_id": "COMB_HEAT",
+      "to_unit_id": "MET_SCRUB",
+      "phase": "G",
+      "presence": "present",
+      "carries": "combustion off-gas when alternate used",
+      "notes": "Role fix / integration. Rate TBD.",
+      "namespace": "IA",
+      "layers": [
+        "mass",
+        "energy"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "COMB_HEAT is the fuel-fired N+1 alternate (A-M-283): standby-zero; off-gas routes to MET_SCRUB only when the alternate is energized. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG"
+    },
+    {
+      "stream_id": "STOCK_TO_WIRE_DRAW",
+      "from_unit_id": "METAL_STORE",
+      "to_unit_id": "WIRE_DRAW",
+      "phase": "S",
+      "presence": "present",
+      "carries": "rod/wire for final sizing",
+      "notes": "Role fix / integration. Rate TBD.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "WIRE_DRAW (MFG) closes on S57 Cu from MET_MELT (A-M-177 line); no foundry wire draw at the bounding case (A-M-257 by-difference pattern). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG"
+    },
+    {
+      "stream_id": "IND_TO_ATOM",
+      "from_unit_id": "IND_MELT",
+      "to_unit_id": "GAS_ATOMIZER",
+      "phase": "L",
+      "presence": "present",
+      "carries": "melt to atomizer when powder required",
+      "notes": "Role fix / integration. Rate TBD.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "No powder demand on IND_MELT at the bounding case. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "MFG"
+    },
+    {
+      "stream_id": "ATOM_TO_STOCK",
+      "from_unit_id": "GAS_ATOMIZER",
+      "to_unit_id": "STOCK_OUT",
+      "phase": "S",
+      "presence": "present",
+      "carries": "powder stock",
+      "notes": "Role fix / integration. Rate TBD.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Gas-atomizer powder path optional, not baseline (FOUNDRY_INTEGRATION). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "FOUNDRY"
+    },
+    {
+      "stream_id": "MFG_SCRAP_TO_IND",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "IND_MELT",
+      "phase": "S",
+      "presence": "present",
+      "carries": "manufacturing scrap return",
+      "notes": "Foundry I/O. Rate per notes/FOUNDRY_SIZING.md.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 26.161616,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Shop scrap (charge) to the melt; closes MFG_SHOP on the store draws (AQS-DUTY-072, A-M-261 rev). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "FOUNDRY"
+    },
+    {
+      "stream_id": "POLY_TO_MFG",
+      "from_unit_id": "POLY_STOCK",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "presence": "present",
+      "carries": "polymer feedstock to manufacturing",
+      "notes": "Polymers sector. Rate TBD.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.267388,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Shop polymer draw by difference on the shop closure (A-M-257 pattern): -r0 -0.005772 + melt loss term f*K/(1-f); molded articles ride BLOW_MOLD (IA-BLOW-OUT 8.407). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "MFG"
+    },
+    {
+      "stream_id": "GREASE_CA_TO_MFG",
+      "from_unit_id": "GREASE_CA",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "presence": "present",
+      "carries": "Ca grease",
+      "notes": "Grease line. Rate per notes/GREASE_LINES.md.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "Rev AC new topology \u2014 unrated pending param pass"
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG"
+    },
+    {
+      "stream_id": "GREASE_LI_TO_MFG",
+      "from_unit_id": "GREASE_LI",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "presence": "present",
+      "carries": "Li grease",
+      "notes": "Grease line. Rate per notes/GREASE_LINES.md.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "Rev AC new topology \u2014 unrated pending param pass"
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG"
+    },
+    {
+      "stream_id": "IA-EW-MET-1",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 59.869999,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-EW-MET-2",
+      "from_unit_id": "EW_2",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 59.889999,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-EW-MET-3",
+      "from_unit_id": "EW_3",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 22.480359,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-EW-MET-4",
+      "from_unit_id": "EW_4",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 4.85,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-EW-MET-5",
+      "from_unit_id": "EW_5",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.020359,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-EW-MET-6",
+      "from_unit_id": "EW_6",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.470359,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-EW-MET-7",
+      "from_unit_id": "EW_7",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 71.139999,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-EW-MET-8",
+      "from_unit_id": "EW_8",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.050359,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-EW-MET-9",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plated sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 61.341099,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-POL-CAKE",
+      "from_unit_id": "POLISH_BANK",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "recovered cake",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 217.369993,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-MFG-OUT",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "HABITATION",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "goods in service",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 596.862802,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Goods less the mass that left as CO. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "HAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-CHAR",
+      "from_unit_id": "OIL_PYRO",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "char reductant",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 5.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Char less the carbon charged to the silicon-carbide furnace. | X-PAR-02 TF: char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET) (AQS-PAR-003)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "hydrocarbon": 0.95,
+        "water": 0.05
+      }
+    },
+    {
+      "stream_id": "IA-WIRE-LOSS",
+      "from_unit_id": "WIRE_DRAW",
+      "to_unit_id": "BAGHOUSE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "draw scrap",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.44,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-EW-SHEET",
+      "from_unit_id": "EW_9",
+      "to_unit_id": "MET_MELT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cathode sheet",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 13.9889,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Not an element split. Composition is metal 1.0. The copper-equivalent sizing rule is not an assay. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-MELT-MILL",
+      "from_unit_id": "MET_MELT",
+      "to_unit_id": "COLD_MILL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "melt to the mill",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.949641,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 TF: mill draw closes the melt (-0.0000) (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "metal": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-MELT-ATOM",
+      "from_unit_id": "MET_MELT",
+      "to_unit_id": "GAS_ATOMIZER",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "melt to the atomizer",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.555954,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 TF: powder 3.200 / (1 - 10% off-spec) (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "Pb/Sn/Ni/Cd/Zn blend": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-DRAW-FUME",
+      "from_unit_id": "WIRE_DRAW",
+      "to_unit_id": "MET_SCRUB",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "draw fume",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 2.46,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-020. Continuous dock feed retired. Metal line fed from the melt. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-BLOW-IN",
+      "from_unit_id": "PROD_C11_C18",
+      "to_unit_id": "BLOW_MOLD",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C11-C18 to the mold",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 8.407159,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "C11-C18 wax from the tank. Not the dryer. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "hydrocarbon": 0.95,
+        "water": 0.05
+      }
+    },
+    {
+      "stream_id": "IA-BLOW-OUT",
+      "from_unit_id": "BLOW_MOLD",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "blown parts",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 8.407518,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Molded parts. Same mass into the shop. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-COAT-IN",
+      "from_unit_id": "EW_1",
+      "to_unit_id": "ELECTRODE_COAT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nickel sheet to the booth",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Daily average of a batch recoat. Returns on IA-COAT-OUT. Does not consume the EW nickel deposit."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-COAT-OUT",
+      "from_unit_id": "ELECTRODE_COAT",
+      "to_unit_id": "EW_1",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "coated anode",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Coated anode back to EW-1. Net zero."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-MET-AIR-RET",
+      "from_unit_id": "MET_SCRUB",
+      "to_unit_id": "MET_AHU",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "scrubbed metal-aisle air returned to the hall",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 71604.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "S62 + S71. Closed aisle. No stack. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
+    },
+    {
+      "stream_id": "CUT-3-OUT",
+      "from_unit_id": "PROD_C19_C28",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C19-C28 from the tank",
+      "header": null,
+      "forbidden": null,
+      "claim_status": null,
+      "rate": {
+        "value": 3.947559,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Same mass as CUT-3. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
+    },
+    {
+      "stream_id": "IA-ATOM-REMELT",
+      "from_unit_id": "GAS_ATOMIZER",
+      "to_unit_id": "MET_MELT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "off-spec powder to remelt",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.355595,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: 10% off-spec remelted (AQS-PAR-003)."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "MFG",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "Pb/Sn/Ni/Cd/Zn blend": 1.0
+      }
+    },
+    {
+      "stream_id": "FLUORO_TO_MFG",
+      "from_unit_id": "POLY_STOCK",
+      "to_unit_id": "MFG_SHOP",
+      "phase": "L",
+      "presence": "present",
+      "carries": "fluoropolymer stock issue to the shop",
+      "notes": "Created by the fluoropolymer train activation (Q-013 reopen; A-M-283).",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.23,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "PVDF 0.14 + PTFE 0.09 kg/d seal/gasket/lining replacement stock; enters the MFG_SHOP remnant r0 (foundry_poly), so the olefin draw P re-solves smaller and total shop polymer is unchanged (A-M-257 pattern) | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "MFG"
+    }
+  ],
+  "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"
+}

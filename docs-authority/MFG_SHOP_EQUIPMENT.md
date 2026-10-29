@@ -119,4 +119,4 @@ Each unit closes its mass balance within 0.1 %.
 
 ## 8. Drawings
 
-The process flow diagram of these units is part of the plant view `flow_graph/views/pfd.svg`, which the regenerator draws from the graph. The older script `flow_graph/exporters/matplotlib/mfg_shop_pfd.py` still draws tags that are no longer on the graph and is not run by the regenerator.
+The process flow diagram of these units is the sector view `flow_graph/views/pfd-mfg.svg`, which the regenerator draws from the graph with every mass stream that has an end in the sector. The units also appear in the plant view `flow_graph/views/pfd.svg`.

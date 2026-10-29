@@ -88,7 +88,7 @@ Table 4.1. Electrical
 | IEC62282_3_100 | IEC 62282-3-100 | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | IEC62439_2 | IEC 62439-2 | 3 | docs-authority/CONTROL_ARCH.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_plc_arch.py |
 | IECC2021_C402 | International Energy Conservation Code (2021) Table C402.1.4 | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_egress_env.py, docs-authority/assumptions_manual.json |
-| IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
+| IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
 | IEEE1547_2018 | IEEE 1547-2018, Standard for Interconnection and Interoperability of Distributed Energy Resources with Associated Electric Power Systems Interfaces (with 1547a-2020) | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | IEEE2030_7 | IEEE 2030.7-2017, Standard for the Specification of Microgrid Controllers (planned and unplanned islanding, reconnection). | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | IEEE80 | IEEE Std 80-2013, Guide for Safety in AC Substation Grounding | 2 | docs-authority/PARAMETRIC_MODEL.md, flow_graph/param/drivers.json |
@@ -113,7 +113,7 @@ Table 4.1. Electrical
 | ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters | 32 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/BALANCE_RECONCILIATION.md, docs-authority/INTERNALS.md |
 | ULLMANN_GLYOXAL | Mattioda G., Blanc A., Glyoxal, Ullmann's Encyclopedia of Industrial Chemistry (2011), doi | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 9 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/duties/EVAP_ACID.md, docs-authority/sizing/EVAP_ACID.md |
-| ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter | 15 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
+| ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds) | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/MATERIALS_STD.md |
 | ULLMANN_NITRIC | Thiemann M., Scheibler E., Wiegand K.W., Nitric Acid, Nitrous Acid, and Nitrogen Oxides, Ullmann's Encyclopedia of Industrial Chemistry (2000), doi | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
 | ULLMANN_TITANIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Titanium chapter (Titanium, Titanium Alloys, and Titanium Compounds) | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
@@ -136,11 +136,11 @@ Table 5.1. Fire, life safety and hazardous materials
 | ISO45001 | ISO 45001 | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_standards_list.py |
 | ISO7010 | ISO 7010 | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_standards_list.py |
 | NFPA101_2027 | NFPA 101-2027, Life Safety Code | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/WATER_TOWER.md, docs-authority/_egress_env.py |
-| NFPA13_2025 | NFPA 13-2025, Standard for the Installation of Sprinkler Systems. | 10 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py |
+| NFPA13_2025 | NFPA 13-2025, Standard for the Installation of Sprinkler Systems. | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py |
 | NFPA15_2027 | NFPA 15-2027, Water Spray Fixed Systems for Fire Protection | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py |
 | NFPA1_2027_11_12 | NFPA 1, Fire Code (2027) 11.12.3 | 2 | docs-authority/PARAMETRIC_MODEL.md, flow_graph/param/sizing/roof.py |
-| NFPA20_2025 | NFPA 20-2025, Installation of Stationary Pumps for Fire Protection. | 9 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py |
-| NFPA22_2023 | NFPA 22-2023, Water Tanks for Private Fire Protection | 9 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py |
+| NFPA20_2025 | NFPA 20-2025, Installation of Stationary Pumps for Fire Protection. | 10 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py |
+| NFPA22_2023 | NFPA 22-2023, Water Tanks for Private Fire Protection | 10 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py |
 | NFPA25_2026 | NFPA 25-2026, Inspection, Testing, and Maintenance of Water-Based Fire Protection Systems | 4 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_fire.py, docs-authority/_maint.py |
 | NFPA30_2027 | NFPA 30-2027, Flammable and Combustible Liquids Code, chapter 21 (storage tank construction | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_storage_sizing.py, docs-authority/sizing/STORAGE_HOLDUP.md |
 | NFPA400_2025 | NFPA 400, Hazardous Materials Code (2025) 6.1.12.1 | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_hse_sep.py, flow_graph/sep_check.py |
@@ -161,7 +161,7 @@ Table 6.1. Mechanical, HVAC and energy
 
 | Key | Standard | Files citing it | First files |
 |---|---|---|---|
-| ASHRAE621_2019 | ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1 | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
+| ASHRAE621_2019 | ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1 | 13 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
 | ASHRAE901_2019_T6812 | ANSI/ASHRAE/IES 90.1-2025 Table 6.8.1-2 | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
 | ASHRAE901_2022 | ANSI/ASHRAE/IES Standard 90.1-2022, Table 6.8.1-3 | 3 | docs-authority/PARAMETRIC_MODEL.md, flow_graph/param/balance.py, flow_graph/param/drivers.json |
 | ASHRAE_FUND2021_PSY | ASHRAE Handbook - Fundamentals (2021), Ch. 1 Psychrometrics | 3 | docs-authority/INSULATION_SCHEDULE.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_insulation.py |
@@ -170,8 +170,8 @@ Table 6.1. Mechanical, HVAC and energy
 | ASTM_C1055 | ASTM C1055-20, Standard Guide for Heated System Surface Conditions that Produce Contact Burn Injuries | 4 | docs-authority/INSULATION_SCHEDULE.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_insulation.py |
 | ASTM_C534 | ASTM C534/C534M-22, Standard Specification for Preformed Flexible Elastomeric Cellular Thermal Insulation in Sheet and Tubular Form | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_insulation.py |
 | ASTM_C547 | ASTM C547-25, Standard Specification for Mineral Fiber Pipe Insulation | 7 | docs-authority/INSULATION_SCHEDULE.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_insulation.py |
-| ASTM_C680 | ASTM C680-24, Standard Practice for Estimate of the Heat Gain or Loss and the Surface Temperatures of Insulated Flat, Cylindrical, and Spherical Systems | 18 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/INSULATION_SCHEDULE.md, docs-authority/LOAD_LIST.json |
-| ISO16798_3 | EN 16798-3 | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
+| ASTM_C680 | ASTM C680-24, Standard Practice for Estimate of the Heat Gain or Loss and the Surface Temperatures of Insulated Flat, Cylindrical, and Spherical Systems | 19 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/INSULATION_SCHEDULE.md, docs-authority/LOAD_LIST.json |
+| ISO16798_3 | EN 16798-3 | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
 
 ## 7. Structural and water storage
 
@@ -234,7 +234,7 @@ Table 10.1. Other
 | ASTM_D638_22 | ASTM D638-22, Tensile Properties of Plastics | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/TEST_RIGS.md, docs-authority/_test_rigs.py |
 | ASTM_D790_17 | ASTM D790-25, Flexural Properties of Unreinforced and Reinforced Plastics | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/TEST_RIGS.md, docs-authority/_test_rigs.py |
 | ASTM_D792_20 | ASTM D792-20, Density and Specific Gravity of Plastics by Displacement | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/TEST_RIGS.md, docs-authority/_test_rigs.py |
-| ASTM_G93 | ASTM G93/G93M-19, Standard Guide for Cleanliness Levels and Cleaning Methods for Materials and Equipment Used in Oxygen-Enriched Environments. | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_commissioning.py |
+| ASTM_G93 | ASTM G93/G93M-19, Standard Guide for Cleanliness Levels and Cleaning Methods for Materials and Equipment Used in Oxygen-Enriched Environments. | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_commissioning.py |
 | ISO12944_CX | ISO 12944-2 corrosivity category CX (offshore) | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/SITE_BASIS_FLOATING_ISLAND.md |
 | ISO14120_2015 | ISO 14120 | 1 | docs-authority/PARAMETRIC_MODEL.md |
 | ISO21940_11_2016 | ISO 21940-11 | 1 | docs-authority/PARAMETRIC_MODEL.md |

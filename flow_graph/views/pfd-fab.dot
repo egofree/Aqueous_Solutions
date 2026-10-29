@@ -1,0 +1,120 @@
+digraph G {
+  graph [rankdir=LR, fontname="Helvetica", fontsize=11, label="PFD sector FAB (mass streams)\nVIEW-PFD-FAB  ·  AQS-FLOW-GRAPH-001 rev AC", labelloc=t, pad=0.3, nodesep=0.35, ranksep=0.55];
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=9];
+  edge [fontname="Helvetica", fontsize=8];
+  subgraph "cluster_CRYO" {
+    label="CRYO";
+    style=rounded; color="#94a3b8";
+    "CRYO_N2" [fillcolor="#ffffff", label="CRYO_N2"];
+  }
+  subgraph "cluster_DIGESTER" {
+    label="DIGESTER";
+    style=rounded; color="#94a3b8";
+    "BMED_ACID" [fillcolor="#ffffff", label="BMED_ACID"];
+    "BMED_BASE" [fillcolor="#ffffff", label="BMED_BASE"];
+    "LEACH_CSTR_1" [fillcolor="#ffffff", label="LEACH_CSTR_1"];
+  }
+  subgraph "cluster_DOCK" {
+    label="DOCK";
+    style=rounded; color="#94a3b8";
+    "NORTH_DOCK" [fillcolor="#fde68a", label="NORTH_DOCK\nDedicated hydro_dock_pfd.png (graph-bridged); ca…"];
+  }
+  subgraph "cluster_FAB" {
+    label="FAB";
+    style=rounded; color="#94a3b8";
+    "FAB_UPW_TANK" [fillcolor="#ffffff", label="FAB_UPW_TANK"];
+    "WAFER_FAB" [fillcolor="#ffffff", label="WAFER_FAB"];
+    "WET_BENCH" [fillcolor="#ffffff", label="WET_BENCH"];
+    "WS_AMMONIA" [fillcolor="#ffffff", label="WS_AMMONIA"];
+    "WS_DOPE" [fillcolor="#ffffff", label="WS_DOPE"];
+    "WS_HF_ED" [fillcolor="#ffffff", label="WS_HF_ED"];
+    "WS_KOH" [fillcolor="#ffffff", label="WS_KOH"];
+    "WS_NITRIC" [fillcolor="#ffffff", label="WS_NITRIC"];
+    "WS_PEROX" [fillcolor="#ffffff", label="WS_PEROX"];
+    "WS_SLURRY" [fillcolor="#ffffff", label="WS_SLURRY"];
+    "WS_SOLV" [fillcolor="#ffffff", label="WS_SOLV"];
+    "WS_PHOS" [fillcolor="#ffffff", label="WS_PHOS"];
+    "LITHO_COAT" [fillcolor="#ffffff", label="LITHO_COAT"];
+    "LITHO_DEV" [fillcolor="#ffffff", label="LITHO_DEV"];
+    "SOLAR_PV_CELL" [fillcolor="#ffffff", label="SOLAR_PV_CELL"];
+  }
+  subgraph "cluster_FOUNDRY" {
+    label="FOUNDRY";
+    style=rounded; color="#94a3b8";
+    "METAL_STORE" [fillcolor="#ffffff", label="METAL_STORE"];
+  }
+  subgraph "cluster_GAS" {
+    label="GAS";
+    style=rounded; color="#94a3b8";
+    "BAGHOUSE" [fillcolor="#ffffff", label="BAGHOUSE"];
+    "HDR_O2" [fillcolor="#ffffff", label="HDR_O2"];
+    "NOX_SCRUB" [fillcolor="#ffffff", label="NOX_SCRUB"];
+  }
+  subgraph "cluster_GLASS" {
+    label="GLASS";
+    style=rounded; color="#94a3b8";
+    "GLASS_DIGEST" [fillcolor="#ffffff", label="GLASS_DIGEST"];
+  }
+  subgraph "cluster_HAB" {
+    label="HAB";
+    style=rounded; color="#94a3b8";
+    "HDR_N2" [fillcolor="#ffffff", label="HDR_N2"];
+  }
+  subgraph "cluster_OIL" {
+    label="OIL";
+    style=rounded; color="#94a3b8";
+    "OIL_FRAC" [fillcolor="#ffffff", label="OIL_FRAC"];
+  }
+  subgraph "cluster_POLYMERS" {
+    label="POLYMERS";
+    style=rounded; color="#94a3b8";
+    "HF_GEN" [fillcolor="#ffffff", label="HF_GEN"];
+    "POLY_STOCK" [fillcolor="#ffffff", label="POLY_STOCK"];
+  }
+  subgraph "cluster_WTR" {
+    label="WTR";
+    style=rounded; color="#94a3b8";
+    "BMED_UPW_POLISH" [fillcolor="#ffffff", label="BMED_UPW_POLISH"];
+    "HDR_UPW" [fillcolor="#ffffff", label="HDR_UPW"];
+    "ROOF_TANK" [fillcolor="#ffffff", label="ROOF_TANK"];
+  }
+  "BMED_ACID" -> "WS_NITRIC" [label="IA-BMED-01\\n1.2456 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BMED_BASE" -> "WS_KOH" [label="IA-BMED-02\\n0.2701 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CRYO_N2" -> "WAFER_FAB" [label="S03\\n1.499799 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BMED_ACID" -> "WET_BENCH" [label="S09\\n9.277184 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WET_BENCH" -> "LEACH_CSTR_1" [label="S10\\n79.115777 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "FAB_UPW_TANK" -> "WET_BENCH" [label="S27\\n60.000181 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_HF_ED" -> "WET_BENCH" [label="S31\\n1.5 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_PEROX" -> "WET_BENCH" [label="S32\\n3.0 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_AMMONIA" -> "WET_BENCH" [label="S33\\n3.008739 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_KOH" -> "WET_BENCH" [label="S35\\n0.2701 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_DOPE" -> "WAFER_FAB" [label="S36\\n0.0 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_SLURRY" -> "WAFER_FAB" [label="S37\\n3.3 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WET_BENCH" -> "OIL_FRAC" [label="S38\\n0.006 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "LEACH_CSTR_1" [label="S39\\n3.310001 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "OIL_FRAC" [label="S39B\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_NITRIC" -> "WET_BENCH" [label="S34\\n1.2456 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_PHOS" -> "WET_BENCH" [label="S34B\\n0.61 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "METAL_STORE" -> "WAFER_FAB" [label="STOCK_TO_FAB\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "POLY_STOCK" -> "WAFER_FAB" [label="POLY_TO_FAB\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_UPW" -> "FAB_UPW_TANK" [label="UPW_TO_FAB", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BMED_UPW_POLISH" -> "FAB_UPW_TANK" [label="IA-UPW-FAB\\n60.000181 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "BAGHOUSE" [label="IA-FAB-LOSS\\n0.51 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_UPW" -> "WAFER_FAB" [label="IA-UPW-USE\\n66.500213 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GLASS_DIGEST" -> "WS_SLURRY" [label="IA-SIL-SRC\\n3.3 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_N2" -> "WS_AMMONIA" [label="IA-NH3-SRC\\n3.008739 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_O2" -> "WS_PEROX" [label="IA-H2O2-SRC\\n0.176 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "LEACH_CSTR_1" [label="IA-FAB-SPENT\\n66.502511 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LEACH_CSTR_1" -> "WS_PHOS" [label="IA-PHOS-SRC\\n0.62 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_PHOS" -> "WS_DOPE" [label="IA-PHOS-DOPE\\n0.01 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_SOLV" -> "WET_BENCH" [label="IA-SOLV-WB\\n0.209973 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "LITHO_COAT" [label="IA-LITHO-IN\\n0.987499 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LITHO_DEV" -> "OIL_FRAC" [label="IA-LITHO-OUT\\n0.987499 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_DOPE" -> "SOLAR_PV_CELL" [label="IA-PV-IN\\n0.01 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOLAR_PV_CELL" -> "WAFER_FAB" [label="IA-PV-OUT\\n0.009999 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WS_NITRIC" -> "NOX_SCRUB" [label="IA-NIT-VENT\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ROOF_TANK" -> "WS_PEROX" [label="IA-PEROX-H2O\\n2.824 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "NORTH_DOCK" -> "WS_SOLV" [label="IA-SOLV-MU\\n0.209973 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HF_GEN" -> "WS_HF_ED" [label="IA-HF-PROD\\n1.5 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LITHO_COAT" -> "LITHO_DEV" [label="IA-LITHO-CARRY\\n0.987499 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+}

@@ -61,6 +61,28 @@ PRESETS = {
         "force_sectors": frozenset(),
         "engine": "dot",
     },
+    # Sector process views: every mass edge with an end in the sector (replace the hand-drawn
+    # matplotlib sheets metal_forming_pfd, mfg_shop_pfd, wafer_fab_pfd and fab_reagent_forks_pfd).
+    "pfd-mfg": {
+        "preset_id": "VIEW-PFD-MFG",
+        "view_mode": "PFD",
+        "layers": ["mass"],
+        "sectors": ["MFG"],
+        "include_intra_aisle": True,
+        "include_placeholders": True,
+        "force_sectors": frozenset(),
+        "engine": "dot",
+    },
+    "pfd-fab": {
+        "preset_id": "VIEW-PFD-FAB",
+        "view_mode": "PFD",
+        "layers": ["mass"],
+        "sectors": ["FAB"],
+        "include_intra_aisle": True,
+        "include_placeholders": True,
+        "force_sectors": frozenset(),
+        "engine": "dot",
+    },
     "efd-ess": {
         "preset_id": "VIEW-EFD-ESS",
         "view_mode": "EFD",
@@ -101,9 +123,13 @@ def filter_view(g: dict, cfg: dict) -> dict:
     layers = cfg.get("layers")
     ns_allow = cfg.get("namespaces")
     force_sectors = cfg.get("force_sectors") or frozenset()
+    sectors = set(cfg.get("sectors") or [])
+    sec = {n["unit_id"]: n.get("sector_id") for n in g["nodes"]}
     edges = []
     used_nodes = set()
     for e in g["edges"]:
+        if sectors and not {sec.get(e["from_unit_id"]), sec.get(e["to_unit_id"])} & sectors:
+            continue
         if not cfg.get("include_placeholders", True) and e["presence"] == "placeholder":
             continue
         if not cfg.get("include_intra_aisle", True) and e["namespace"] == "IA":
@@ -292,6 +318,8 @@ def main() -> None:
                 "efd-elec": "EFD electrical layer (S17 + peers)",
                 "efd-thermal": "EFD thermal layer",
                 "efd-ess": "EFD ESS charge/discharge layer",
+                "pfd-mfg": "PFD sector MFG (mass streams)",
+                "pfd-fab": "PFD sector FAB (mass streams)",
             }.get(key, key)
             dot_text = to_dot(view, title=title)
             dot_path = args.out_dir / f"{key}.dot"

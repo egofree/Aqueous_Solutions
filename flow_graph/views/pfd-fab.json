@@ -1,0 +1,2196 @@
+{
+  "preset_id": "VIEW-PFD-FAB",
+  "view_mode": "PFD",
+  "source_doc": "AQS-FLOW-GRAPH-001",
+  "source_revision": "AC",
+  "node_count": 32,
+  "edge_count": 39,
+  "orphan_campus_units": [],
+  "nodes": [
+    {
+      "unit_id": "BAGHOUSE",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "baghouse",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Dust baghouse (S19)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BMED_ACID",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "bmed",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "BMED acid loop node",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": {
+        "value": 5.6267,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). BMED stack: 96.46 kg/d NaOH x 1.40 kWh/kg from triplet voltage 1.67 V at CE 0.8 (STRATHMANN2004, CRC_COND, EDBM_PILOT_2023; AQS-DUTY-068) / 24 h. Solver flow_graph/param/solver.py bmed()."
+      }
+    },
+    {
+      "unit_id": "BMED_BASE",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "bmed",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "BMED base loop node",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "BMED_UPW_POLISH",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "skid",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.018,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-34 (A-M-176, AQS-DUTY-070): RO pump 2.6 W + EDI 0.39 W + UV 15 W; potable share bypasses."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
+        "design": {
+          "UPW_kg_d": 127.300395,
+          "bypass_kg_d": 175.174278,
+          "RO_feed_kg_d": 133.34539999999998,
+          "recovery": 0.9546665651758517,
+          "osmotic_bar": 0.19204145086101648,
+          "feed_bar": 6.858708117527684,
+          "membrane_m2": 0.26520915624999997,
+          "modules": 2,
+          "RO_kW": 0.0026463459994646287,
+          "EDI_A": 0.009730285740657567,
+          "EDI_kW": 0.00038921142962630267,
+          "UV_kW": 0.015,
+          "total_kW": 0.01803555742909093,
+          "kWh_per_m3": 3.2461065645922726,
+          "kWh_per_m3_RO_EDI": 0.5463508924805983
+        }
+      }
+    },
+    {
+      "unit_id": "CRYO_N2",
+      "sector_id": "CRYO",
+      "presence": "present",
+      "class": "cold_box",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Register S03 endpoint; not yet in candidate_mvs units[]",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "FAB_UPW_TANK",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "tank",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab UPW tank (S27)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 1.0,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "GLASS_DIGEST",
+      "sector_id": "GLASS",
+      "presence": "present",
+      "class": "digest",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.09,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02: node aligned to its calculated SF-GLASS_DIGEST feed (agitator motor); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to GLASS_DIGEST continuous_kw.."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "HDR_N2",
+      "sector_id": "HAB",
+      "presence": "present",
+      "class": "header",
+      "notes": "Life N2 header. Not a process header. Not the dock.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws)",
+          "kind": "gas",
+          "flow_kg_s": 0.0022,
+          "duty_kW": null,
+          "rho_kg_m3": 1.2041,
+          "Q_m3_s": 0.0018,
+          "v_m_s": 8.0,
+          "id_req_mm": 17.2,
+          "DN": 32,
+          "length_m": 44.7,
+          "volume_m3": 0.0202,
+          "material": "316L tube",
+          "hold_kg": 0.02,
+          "connections": 7
+        },
+        "size_note": "DN32 manifold x 45 m run (0.020 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+      }
+    },
+    {
+      "unit_id": "HDR_O2",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "header",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "O2 header (S15/S02)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "design": {
+          "service": "O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws)",
+          "kind": "gas",
+          "flow_kg_s": 0.0004,
+          "duty_kW": null,
+          "rho_kg_m3": 1.2041,
+          "Q_m3_s": 0.0003,
+          "v_m_s": 8.0,
+          "id_req_mm": 7.1,
+          "DN": 25,
+          "length_m": 33.6,
+          "volume_m3": 0.0076,
+          "material": "316L tube, oxygen-clean per ASTM_G93, socketless",
+          "hold_kg": 0.01,
+          "connections": 8
+        },
+        "size_note": "DN25 manifold x 34 m run (0.008 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "HDR_UPW",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "header",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "design": {
+          "service": "UPW distribution header (polish skid in; fab and hab draws)",
+          "kind": "liquid",
+          "flow_kg_s": 0.0008,
+          "duty_kW": null,
+          "rho_kg_m3": 983,
+          "Q_m3_s": 0.0,
+          "v_m_s": 1.5,
+          "id_req_mm": 0.8,
+          "DN": 25,
+          "length_m": 32.5,
+          "volume_m3": 0.0074,
+          "material": "PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002)",
+          "hold_kg": 7.24,
+          "connections": 3
+        },
+        "size_note": "DN25 manifold x 32 m run (0.007 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+      }
+    },
+    {
+      "unit_id": "LEACH_CSTR_1",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "vessel",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.75,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02: agitator PBT D450 at 150 rpm, 403 W shaft (Np x rho x N^3 x D^5) -> 0.75 kW motor (drivers key motor_kW; AQS-DUTY-050 Rev B); leach heat is Q3 via HX-5, not electric (was the 2 kW AC parasitics share)."
+      },
+      "modules": [],
+      "params": {
+        "V_m3": null,
+        "presence": "present"
+      }
+    },
+    {
+      "unit_id": "NORTH_DOCK",
+      "sector_id": "DOCK",
+      "presence": "present",
+      "class": "boundary",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus/ground_floor still show footprint",
+      "notes": "Item 9. notes/DOCK_BOUNDARY.md. Inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): feedstock imports (landfill reclaim, mining waste, lunar regolith class) and surplus-product exports; reported trade statement (params.trade_statement), exempt from intra-plant closure. Intake mineral 500 kg/d unassayed. Export is product only.",
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus/ground_floor still show footprint",
+        "presence": "present",
+        "trade_statement": {
+          "exports_kg_d": {
+            "IA-N2-VENT": 3.1,
+            "IA-NA-PURGE": 4.394,
+            "IA-C5-SHIP": 7.131,
+            "IA-C11-SHIP": 1.512,
+            "IA-C19-SHIP": 2.218,
+            "IA-O2-SHIP": 22.884,
+            "IA-MEOH-SHIP": 28.029,
+            "IA-GYPSUM-SHIP": 0.576,
+            "IA-CL2-SHIP": 39.419,
+            "IA-CA-CL2-SHIP": 0.097,
+            "IA-KROLL-CO": 0.585,
+            "IA-MO-VENT": 0.043,
+            "IA-CR-VENT": 0.202,
+            "IA-BURNOUT-VENT": 0.2,
+            "IA-SHELL-EXPORT": 1.0,
+            "IA-METAL-SHIP": 10.812
+          },
+          "imports_kg_d": {
+            "IA-H2O-MU": 64.413,
+            "IA-NAOH-MU": 4.394,
+            "IA-SOLV-MU": 0.21,
+            "IA-CAF2-MU": 0.326,
+            "IA-H2SO4-MU": 0.404,
+            "IA-ALCL3-MU": 49.419,
+            "IA-MGCL2-MU": 0.04,
+            "IA-CACL2-MU": 0.152,
+            "IA-TIO2-MU": 0.834,
+            "IA-C-TI": 0.251,
+            "IA-MOO3-MU": 0.094,
+            "IA-C-MO": 0.012,
+            "IA-CR2O3-MU": 0.365,
+            "IA-C-CR": 0.087,
+            "IA-WAX-MU": 0.2,
+            "IA-SILICA-MU": 1.0
+          },
+          "net_kg_d": 0.001,
+          "residual_kg_d": 0.002,
+          "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
+          "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
+        }
+      }
+    },
+    {
+      "unit_id": "NOX_SCRUB",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "scrubber",
+      "notes": "Generator exhaust water and NOx. Not grey treat.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "NFPA 37 / plant acid-gas practice",
+        "design": {
+          "duty": "flue, leach off-gas and nitric vents",
+          "gas_kg_d": 263.8392,
+          "Q_m3_s": 0.0025,
+          "u_flood_m_s": 2.0195,
+          "D_mm": 200,
+          "packed_mm": 2303,
+          "H_mm": 3803,
+          "recirc_m3_h": 0.4775,
+          "dP_Pa": 1171.034,
+          "fan_W": 5.96,
+          "pump_W": 32.5201,
+          "kW": 0.0385,
+          "material": "PP-H shell and in-house cut PP rings; PP mesh demister"
+        },
+        "size_mm": [
+          600,
+          600,
+          4103
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/house_scrubbers.py (X-PAR-03)"
+      },
+      "continuous_kw": {
+        "value": 0.0385,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 6 W, pump 33 W."
+      }
+    },
+    {
+      "unit_id": "OIL_FRAC",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "frac",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Oil frac (intra) Design: notes/OIL_SECTOR.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "vol_net_base": 27.5,
+        "cut_basis": {
+          "source": "SU2018_PYRO",
+          "per_pass_fractions_C5-10_C11-18_C19-28_C29+": [
+            0.2267,
+            0.3496,
+            0.2167,
+            0.207
+          ],
+          "A-M": "A-M-138"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "ROOF_TANK",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "tank",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "fire": {
+          "role": "gravity supply: fire reserve as water-tower dead storage",
+          "governing_level": "L0",
+          "governing_hazard": "EH1",
+          "reserve_m3": 451.2,
+          "demand_Lmin": 5013,
+          "duration_min": 90.0,
+          "pump_rated_Lmin": 5678,
+          "pump_rated_head_kPa": 150,
+          "pump_kW": 2.1,
+          "refill_h": 8,
+          "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2025 / NFPA20_2025 / NFPA22_2023"
+        }
+      }
+    },
+    {
+      "unit_id": "WAFER_FAB",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "fab",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": " ISO 14644-1 Class 7 wet bench, Class 6 tool row.",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.4417,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 0.42 kWh/pull (CRC_SI cp/L) over a 7 d campaign + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-301)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "iso_14644_wet_bench": "Class 7",
+        "iso_14644_tool_row": "Class 6",
+        "equipment": [
+          {
+            "item": "CZ puller: charge heat-up over the 7 d campaign + 4 h hot hold",
+            "kW": 0.2317
+          },
+          {
+            "item": "ingot cool/anneal station: N2 circulator duty share",
+            "kW": 0.02
+          },
+          {
+            "item": "crop/grind/edge tools at 5 starts/d",
+            "kW": 0.04
+          },
+          {
+            "item": "FAB_TOOL dry row parasitics (ox, RTA, metal, probe standby)",
+            "kW": 0.12
+          },
+          {
+            "item": "N2 purge distribution (ISO 14644 Class 6 row)",
+            "kW": 0.03
+          },
+          {
+            "item": "total connected (calculated)",
+            "kW": 0.4417
+          }
+        ]
+      }
+    },
+    {
+      "unit_id": "WET_BENCH",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "wet_bench",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2066,
+        "unit": "kW",
+        "status": "study",
+        "note": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. | X-ELS-02 load-basis (A-M-301)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "equipment": [
+          {
+            "item": "SC1 bath 10 L PP tank, 80 C immersion heater",
+            "kWh_d": 2.479
+          },
+          {
+            "item": "SC2 bath 10 L PP tank, 80 C immersion heater",
+            "kWh_d": 2.479
+          },
+          {
+            "item": "DHF etch bath, ambient",
+            "kWh_d": 0.0
+          },
+          {
+            "item": "DIW rinse + N2 guns",
+            "kWh_d": 0.05
+          },
+          {
+            "item": "total",
+            "kWh_d": 5.008
+          }
+        ]
+      }
+    },
+    {
+      "unit_id": "WS_AMMONIA",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab reagent fork (S33)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_DOPE",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab reagent fork (S36)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_HF_ED",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab reagent fork (S31)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_KOH",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab reagent fork (S35)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_NITRIC",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab reagent fork (S34)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_PEROX",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab reagent fork (S32)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0308,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-10 (AQS-DSN-OX-001): peroxide electrolytic cell 12.31 A x 2.5 V = 0.0308 kW from the S32 duty; DC behind the RECTIFIER AC sum."
+      }
+    },
+    {
+      "unit_id": "WS_SLURRY",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab reagent fork (S37)",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_SOLV",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Fab reagent fork (S38) \u2014 litho path also via LITHO_STUB",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "WS_PHOS",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reagent",
+      "notes": "Phosphoric etch. Own bund, not the HF room.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "bund": "acid_phos",
+        "separate_from": "WS_HF_ED",
+        "study_L_d": "0.5-2",
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 30,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      }
+    },
+    {
+      "unit_id": "LITHO_COAT",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "coater",
+      "notes": "Spin-coater line: spin bowl, vacuum chuck, softbake hotplate. Parent LITHO_STUB retired into the real tools (AQS-LITH-001 rev C; A-M-287).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "starts_d": 5,
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          1200,
+          800,
+          1400
+        ],
+        "size_note": "L x W x H mm, issued envelope (A-M-287)",
+        "equipment_id": "LITHO-COAT-01",
+        "spin_peak_kW": 0.75,
+        "softbake_kW": 0.3,
+        "kWh_d": 0.61,
+        "design": {
+          "machine": "spin-coater line",
+          "chuck_mm": 150,
+          "spin_rpm": 5000,
+          "dispense_mL_per_wafer": 2.0,
+          "softbake_C": 100,
+          "chemistry": "novolac resist, 1 um (AQS-LITH-001)",
+          "duty_kW": 0.0254,
+          "peak_kW": 0.75
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0254,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287)."
+      }
+    },
+    {
+      "unit_id": "LITHO_DEV",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "wet_bench",
+      "notes": "Wet develop bench on the WET_BENCH chemistry class (TMAH/KOH developer fork, S38 resist-waste loop); developer is a share of the fab resist/solvent issue (A-M-287).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "starts_d": 5,
+        "parent": "LITHO_STUB",
+        "size_mm": [
+          1200,
+          600,
+          900
+        ],
+        "size_note": "L x W x H mm, issued envelope (A-M-287)",
+        "equipment_id": "LITHO-DEV-01",
+        "developer_kg_d": 0.2,
+        "design": {
+          "machine": "wet develop bench",
+          "developer": "TMAH 2.38 % class, shared WET_BENCH chemistry fork",
+          "puddle_mL_per_wafer": 40.0,
+          "waste": "S38-class resist/solvent loop to OIL_FRAC",
+          "duty_kW": 0.008,
+          "peak_kW": 0.05
+        }
+      },
+      "continuous_kw": {
+        "value": 0.008,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): tool duty at 5 wafer starts/d (AQS-LITH-001 rev C; A-M-287)."
+      }
+    },
+    {
+      "unit_id": "SOLAR_PV_CELL",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "tool",
+      "notes": "In-house PV cell line (X-MFG-38, AQS-DUTY-071, A-M-178): texture, POCl3 diffusion, PSG etch, PECVD SiNx, screen print, fast firing, IV. Tool table in params.design; not the yard array (PV_ARRAY). Study_stub class retired at the A-M-295 disposition.",
+      "enabled": true,
+      "modules": [
+        "PV_TEXTURE",
+        "PV_EMITTER",
+        "PV_PSG_ETCH",
+        "PV_ARC",
+        "PV_CONTACT",
+        "PV_FIRE",
+        "PV_IV"
+      ],
+      "params": {
+        "equipment_id": "PV-CELL-01",
+        "avg_kw": 0.3917,
+        "koh": "WS_KOH",
+        "not": "PV_ARRAY",
+        "size_mm": [
+          2400,
+          1200,
+          1600
+        ],
+        "size_note": "L x W x H mm, issued envelope (X-MFG-38 tool line)",
+        "design": {
+          "cells_per_d": 3,
+          "tools": [
+            {
+              "id": "PV-TEX-01",
+              "design": "KOH texture bath, 10 L PP tank, immersion heater",
+              "peak_kW": 1.9835999950403127,
+              "kWh_d": 0.6870259209662386
+            },
+            {
+              "id": "PV-EMIT-01",
+              "design": "POCl3 diffusion, quartz tube 200 mm x 1.0 m, 200 mm ceramic fibre",
+              "peak_kW": 3.7942691188488986,
+              "kWh_d": 5.876082069096683
+            },
+            {
+              "id": "PV-PSG-01",
+              "design": "HF PSG etch, room temperature PP bath",
+              "peak_kW": 0.0,
+              "kWh_d": 0.0
+            },
+            {
+              "id": "PV-ARC-01",
+              "design": "PECVD SiNx, parallel-plate RF, 5 kg heated platen, dry vacuum pump",
+              "peak_kW": 2.2514027215504537,
+              "kWh_d": 1.9534860548837867
+            },
+            {
+              "id": "PV-CON-01",
+              "design": "Screen printer and 200 C dryer",
+              "peak_kW": 0.7,
+              "kWh_d": 0.35
+            },
+            {
+              "id": "PV-FIRE-01",
+              "design": "IR lamp fast-firing furnace",
+              "peak_kW": 3.0,
+              "kWh_d": 0.51
+            },
+            {
+              "id": "PV-IV-01",
+              "design": "Flash IV tester",
+              "peak_kW": 0.1,
+              "kWh_d": 0.025
+            }
+          ],
+          "kWh_d": 9.401594044946709,
+          "avg_kW": 0.3917330852061129,
+          "peak_kW": 3.7942691188488986,
+          "kWh_per_cell": 3.133864681648903
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3917,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-38 (A-M-178, AQS-DUTY-071): 9.40 kWh/d for 3 cells, one batch; peak 3.79 kW (one tool at a time)."
+      }
+    },
+    {
+      "unit_id": "HF_GEN",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [
+        "fluorine",
+        "acid"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Aqueous HF (WS_HF_ED mandatory). Duty: notes/FLUOROPOLYMER_DUTY.md. Rate unset. Sector POLYMERS.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "rate_kg_d": 0.0,
+          "design_case": {
+            "hf_kg_d": 0.5,
+            "vdf_kg_d": 0.15,
+            "tfe_kg_d": 0.1,
+            "pvdf_kg_d": 0.14,
+            "ptfE_kg_d": 0.09,
+            "source": "AQS-RATE-FP-MET design case"
+          },
+          "status_note": "live via fluoro_train (Q-013 reopened, A-M-289); rates re-stamped by the fluoro stage",
+          "size_mm": [
+            1200,
+            700,
+            1500
+          ]
+        },
+        "design": {
+          "machine": "indirectly heated rotary kiln, fluorspar + H2SO4 -> HF",
+          "tube_D_mm": 200,
+          "tube_L_mm": 1200,
+          "slope_deg": 2.0,
+          "rpm": 4,
+          "residence_min": 30.0,
+          "T_C": 250.0,
+          "spar_kg_d": 0.32554,
+          "acid_kg_d": 0.403768,
+          "hf_kg_d": 1.673754,
+          "cake_kg_d": 0.575554,
+          "drive_kW": 0.37,
+          "feed": "dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate",
+          "material": "carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts",
+          "duty_kW": 0.3083
+        },
+        "envelope": {
+          "size_mm": [
+            1200,
+            700,
+            1500
+          ],
+          "style": "rotary_kiln",
+          "state": "live",
+          "basis": "kiln-class study minimum at the 1.674 kg/d HF duty (ULLMANN_HF; A-M-289); tube 200 x 1200 mm, 2 deg slope, kiln gas absorbed into the recovered-F liquor at the dissolution tank"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.3083,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): rotary kiln at 250 C: insulated shell loss + endotherm 65.7 kJ/mol CaF2 + feed sensible (A-M-289)."
+      }
+    },
+    {
+      "unit_id": "POLY_STOCK",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "store",
+      "tags": [
+        "polymer"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Staged polymer feedstock to MFG, FAB, WET, FOUNDRY. Sized in notes/POLYMERS_DESIGN.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-073",
+          "out_kg_d": 0.497388,
+          "fluoro_kg_d": 0.23,
+          "to_wet_kg_d": 0.026739,
+          "to_fab_kg_d": 0.0,
+          "status_note": "olefin issue (foundry_poly P) + fluoropolymer issue 0.230 kg/d (A-M-289)"
+        },
+        "design": {
+          "bin": "pellet tote bin",
+          "issue_kg_d": 0.267388,
+          "to_wet_kg_d": 0.026739,
+          "hold_d": 1.0
+        },
+        "envelope": {
+          "size_mm": [
+            600,
+            400,
+            800
+          ],
+          "style": "store_bin",
+          "state": "live",
+          "basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264)"
+        },
+        "sec3_material": {
+          "mat": "HDPE tote bins and PP powder drums; steel rack; no wetted streams",
+          "basis": "1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (graph design; A-M-264): dry resin storage, no process contact (AQS-DUTY-073 class). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "antistatic PP totes if the powder-drum fraction builds charge (a spares-check item)",
+          "note": "no corrosion load; stock loss is the managed quantity.",
+          "task": "X-MAT-22"
+        }
+      },
+      "continuous_kw": null
+    },
+    {
+      "unit_id": "METAL_STORE",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "store",
+      "tags": [
+        "foundry"
+      ],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": "Metal product store. D-DOCK owner ruling 2026-10-19 (notes/first_principles_audit_2026-10-17.md): product buffer storage assumed built. STOCK_OUT is transit/classification only; this store buffers foundry output against the MFG/FAB/wire-draw dispatch, 14 d campaign (A-M-270).",
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "note": "D-DOCK product buffer (A-M-270): IA-STOCK-STORE in, STOCK_TO_* draws out at steady state.",
+        "presence": "present",
+        "size_mm": [
+          800,
+          800,
+          950
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.1225,
+          "D_mm": 500,
+          "H_mm": 650,
+          "wall_mm": 4.75,
+          "material": "PE (rotomoulded / fabricated)"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "stream_id": "IA-BMED-01",
+      "from_unit_id": "BMED_ACID",
+      "to_unit_id": "WS_NITRIC",
+      "phase": "L",
+      "presence": "present",
+      "carries": "HCl product",
+      "forbidden": "UPW polish, hab",
+      "notes": "Acid product to acid use. Not the polish node.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 1.2456,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: 1:1 molar HCl for S34 (1.25 mol/d HNO3) at 2 M, resin exchange | X-PAR-02 TF: reagent day tank passes its draw S34; 1.25 mol/d HCl at 36.46 g/mol = 0.0456 kg/d is the stated molar basis (AQS-DUTY-010); BMED_ACID re-closes on the spent-acid purge IA-BMED-03 (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FAB"
+    },
+    {
+      "stream_id": "IA-BMED-02",
+      "from_unit_id": "BMED_BASE",
+      "to_unit_id": "WS_KOH",
+      "phase": "L",
+      "presence": "present",
+      "carries": "NaOH product",
+      "forbidden": "UPW polish",
+      "notes": "Base product. KOH node is a separate synth.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.2701,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: 1:1 molar NaOH for S35 (0.50 mol/d KOH) at 2 M, resin exchange | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FAB"
+    },
+    {
+      "stream_id": "S03",
+      "from_unit_id": "CRYO_N2",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "G",
+      "presence": "present",
+      "carries": "N2",
+      "forbidden": "CRYO_H2, dock",
+      "notes": "Was wrongly sourced from CRYO_H2.",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "from_sector_id": "CRYO",
+      "to_sector_id": "FAB",
+      "rate": {
+        "value": 1.499799,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "R10b A-M-257: BH 91d33f4 verbatim (AQS-DUTY-010: 10.0 slm x 40.0 min x 3 starts at 1.25 g/L) - the fab N2 purge, re-pointed Rev AC to draw CRYO_N2 directly; exactly the WAFER_FAB deficit after the IA-AR-RET retirement. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "composition": {
+        "N2": 1.0
+      }
+    },
+    {
+      "stream_id": "S09",
+      "from_unit_id": "BMED_ACID",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "presence": "present",
+      "carries": "HCl",
+      "forbidden": "hab",
+      "notes": "Acid to bench. Polish is not this edge.",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 9.277184,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: SC-2 1:1:5 -> HCl volume = H2O2 SC-2 share 1.5 L/d (37 % eq, 0.655 kg HCl) delivered as 2 M BMED acid | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FAB"
+    },
+    {
+      "stream_id": "S10",
+      "from_unit_id": "WET_BENCH",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent etch",
+      "header": "HDR_ETCH",
+      "forbidden": "floor drain",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 79.115777,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-AUD-001 \u00a713 spent etch/return order-of-magnitude (~WS_* forwards sum mid) | X-PAR-02 TF: spent etch/return order-of-magnitude band unchanged; closes the bench by difference (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [],
+      "notes": null
+    },
+    {
+      "stream_id": "S27",
+      "from_unit_id": "FAB_UPW_TANK",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fab UPW > 18 M\u03a9\u00b7cm class",
+      "header": "fab UPW loop",
+      "forbidden": "remin path, grey",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 60.000181,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: fab UPW 20-100 L/d for 1-5 starts, at 3 starts | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: FAB_UPW_TANK \u2192 WET_BENCH"
+    },
+    {
+      "stream_id": "S31",
+      "from_unit_id": "WS_HF_ED",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "HF (aq)",
+      "header": "fab acid chase",
+      "forbidden": "sewer, HDR_GREY, life",
+      "claim_status": "Closed / Claimed",
+      "rate": {
+        "value": 1.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 band 0.5-2.5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: WS_HF_ED \u2192 WET_BENCH"
+    },
+    {
+      "stream_id": "S32",
+      "from_unit_id": "WS_PEROX",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "H\u2082O\u2082",
+      "header": "fab chem",
+      "forbidden": "sewer",
+      "claim_status": "Claimed",
+      "rate": {
+        "value": 3.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: WS_PEROX \u2192 WET_BENCH"
+    },
+    {
+      "stream_id": "S33",
+      "from_unit_id": "WS_AMMONIA",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "NH\u2084OH / NH\u2083 (aq)",
+      "header": "fab chem",
+      "forbidden": "hab air",
+      "claim_status": "Claimed",
+      "rate": {
+        "value": 3.008739,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: WS_AMMONIA \u2192 WET_BENCH"
+    },
+    {
+      "stream_id": "S35",
+      "from_unit_id": "WS_KOH",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "KOH",
+      "header": "fab chem",
+      "forbidden": "sewer, farm beds",
+      "claim_status": "Claimed",
+      "rate": {
+        "value": 0.2701,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 <0.5 L/d -> 0.25 L/d of 2 M KOH (1.09 kg/L) | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: WS_KOH \u2192 WET_BENCH / solar texture stub"
+    },
+    {
+      "stream_id": "S36",
+      "from_unit_id": "WS_DOPE",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "L/G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "B/P/As concentrate; BBr\u2083 / POCl\u2083 class",
+      "header": "gas cabinet / tote",
+      "forbidden": "hab AHU",
+      "claim_status": "Claimed",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Retired. Live path is IA-PV-IN / IA-PV-OUT. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: WS_DOPE / CRU polish \u2192 FAB_TOOL dopant cabinets"
+    },
+    {
+      "stream_id": "S37",
+      "from_unit_id": "WS_SLURRY",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "colloidal silica slurry",
+      "header": "slurry loop",
+      "forbidden": "sewer",
+      "claim_status": "Claimed",
+      "rate": {
+        "value": 3.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 1-5 L/d makeup at 3 starts = 3.0 L/d x 1.1 kg/L | X-PAR-02 reconciled (AQS-PAR-003). | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "S",
+      "gap_flags": [
+        "absent_from_candidate_mvs"
+      ],
+      "notes": "From register: WS_SLURRY \u2192 LAP_CMP / FAB_PREP"
+    },
+    {
+      "stream_id": "S38",
+      "from_unit_id": "WET_BENCH",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "presence": "present",
+      "carries": "resist and solvent waste",
+      "forbidden": "into the bench",
+      "notes": "Waste leaves the bench.",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.006,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "OIL"
+    },
+    {
+      "stream_id": "S39",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L/S",
+      "presence": "present",
+      "carries": "spent slurry and etch liquor",
+      "forbidden": "solvent, photoresist, floor drain",
+      "notes": "NFPA 400: no organics into chlorate leach.",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 3.310001,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: spent slurry + dopant residue = S37 + S36 (AUD: spent return same order as forwards) | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER"
+    },
+    {
+      "stream_id": "S39B",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "presence": "present",
+      "carries": "solvent and photoresist",
+      "header": "HDR_ORG",
+      "forbidden": "leach, farm",
+      "notes": "Organics to the oil line.",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Retired. Live path is IA-LITHO-IN / IA-LITHO-OUT."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "OIL"
+    },
+    {
+      "stream_id": "S34",
+      "from_unit_id": "WS_NITRIC",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "presence": "present",
+      "carries": "HNO3",
+      "forbidden": "sewer, WS_PHOS bund",
+      "notes": "Nitric only. | layers/namespace restored per QA R5 (schema-required fields absent since Rev AC)",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
+      "rate": {
+        "value": 1.2456,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB"
+    },
+    {
+      "stream_id": "S34B",
+      "from_unit_id": "WS_PHOS",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "presence": "present",
+      "carries": "H3PO4",
+      "forbidden": "sewer, HF bund",
+      "notes": "Phosphoric etch. Own bund. | layers/namespace restored per QA R5 (schema-required fields absent since Rev AC)",
+      "namespace": "S",
+      "layers": [
+        "mass"
+      ],
+      "rate": {
+        "value": 0.61,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Phosphate feed 0.620 less dopant 0.010. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB"
+    },
+    {
+      "stream_id": "STOCK_TO_FAB",
+      "from_unit_id": "METAL_STORE",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "S",
+      "presence": "present",
+      "carries": "specialty stock to fab",
+      "notes": "Integration edge. Rate TBD.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "R10b A-M-257: rated 0 by difference on live endpoints - the fab closes at steady state on UPW (IA-UPW-USE) + slurry (S37) + N2 purge (S03); its wafer output rides IA-PV-OUT 0.01 kg/d. A net STOCK_OUT draw appears when the foundry/goods pass sizes the fab product basis (DOCK_EXPORT_TBD lane). | D-DOCK: drawn from the METAL_STORE product buffer (A-M-270)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FAB"
+    },
+    {
+      "stream_id": "POLY_TO_FAB",
+      "from_unit_id": "POLY_STOCK",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "S",
+      "presence": "present",
+      "carries": "polymer feedstock to fab",
+      "notes": "Polymers sector. Rate TBD.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "R10b A-M-257: rated 0 by difference on live endpoints - the fab closes at steady state on UPW (IA-UPW-USE) + slurry (S37) + N2 purge (S03); its wafer output rides IA-PV-OUT 0.01 kg/d. A net POLY_STOCK draw appears when the foundry/goods pass sizes the fab product basis (DOCK_EXPORT_TBD lane)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "FAB"
+    },
+    {
+      "stream_id": "UPW_TO_FAB",
+      "from_unit_id": "HDR_UPW",
+      "to_unit_id": "FAB_UPW_TANK",
+      "phase": "L",
+      "presence": "present",
+      "carries": "UPW",
+      "notes": "Item 6/7. Rate in notes/FAB_DESIGN.md or notes/LIFE_SUPPORT.md.",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": null,
+        "unit": null,
+        "status": "null",
+        "note": "Rev AC new topology \u2014 unrated pending param pass"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB"
+    },
+    {
+      "stream_id": "IA-UPW-FAB",
+      "from_unit_id": "BMED_UPW_POLISH",
+      "to_unit_id": "FAB_UPW_TANK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fab UPW",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 60.000181,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-FAB-LOSS",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "BAGHOUSE",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "kerf",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.51,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-012 Rev N. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "GAS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-UPW-USE",
+      "from_unit_id": "HDR_UPW",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fab UPW",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 66.500213,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-SIL-SRC",
+      "from_unit_id": "GLASS_DIGEST",
+      "to_unit_id": "WS_SLURRY",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "silicate to slurry",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.3,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-NH3-SRC",
+      "from_unit_id": "HDR_N2",
+      "to_unit_id": "WS_AMMONIA",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "nitrogen to ammonia",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.008739,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 TF: ammonia source sized to the bench draw S33 (AQS-DUTY-016: each chemical has a source); the N2 header re-settles in o2_close (AQS-PAR-003)."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "N2": 0.99
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
+      }
+    },
+    {
+      "stream_id": "IA-H2O2-SRC",
+      "from_unit_id": "HDR_O2",
+      "to_unit_id": "WS_PEROX",
+      "phase": "S/L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxygen to peroxide",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.176,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAF-10. O2 to the cell at 12.31 A, FE 0.80 (WS_PEROX params.cell). Was 3.0 kg/d, which counted dilution water as oxygen."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "O2": 0.99,
+        "Ar": 0.01
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
+      }
+    },
+    {
+      "stream_id": "IA-FAB-SPENT",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent UPW",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 66.502511,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-016. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "Fe": 0.02,
+        "other_metals": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
+      }
+    },
+    {
+      "stream_id": "IA-PHOS-SRC",
+      "from_unit_id": "LEACH_CSTR_1",
+      "to_unit_id": "WS_PHOS",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "phosphate",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.62,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.9,
+        "HCl": 0.05,
+        "Fe": 0.02,
+        "other_metals": 0.03
+      },
+      "assay_g_L": {
+        "Fe": 20,
+        "Cu": 8,
+        "Ni": 3,
+        "Zn": 4,
+        "Al": 6,
+        "other": 9
+      }
+    },
+    {
+      "stream_id": "IA-PHOS-DOPE",
+      "from_unit_id": "WS_PHOS",
+      "to_unit_id": "WS_DOPE",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "phosphate to dopant",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026. Sugar to yeast and the solvent train. Each store has a feed and a use. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-WB",
+      "from_unit_id": "WS_SOLV",
+      "to_unit_id": "WET_BENCH",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ethanol and acetone",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.209973,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DUTY-026 | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      },
+      "params": {
+        "T_C": 40.0,
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
+      }
+    },
+    {
+      "stream_id": "IA-LITHO-IN",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "LITHO_COAT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent resist and solvent",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.987499,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Spent resist and solvent. Same mass as S39B, through LITHO_STUB. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Re-pointed from LITHO_STUB at its retirement: fab resist/solvent issue to the coat line (A-M-287).",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-LITHO-OUT",
+      "from_unit_id": "LITHO_DEV",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "spent resist and solvent",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.987499,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Same mass into the fractionator. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Re-pointed from LITHO_STUB at its retirement: spent resist and solvent to the oil line (A-M-287).",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-PV-IN",
+      "from_unit_id": "WS_DOPE",
+      "to_unit_id": "SOLAR_PV_CELL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "dopant concentrate",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.01,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "S36 dopant, through the cell line. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-PV-OUT",
+      "from_unit_id": "SOLAR_PV_CELL",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "dopant into the wafer fab",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.009999,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Same 10 g/d into the wafer fab. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    },
+    {
+      "stream_id": "IA-NIT-VENT",
+      "from_unit_id": "WS_NITRIC",
+      "to_unit_id": "NOX_SCRUB",
+      "phase": "G",
+      "presence": "present",
+      "carries": "nitric tank vent",
+      "forbidden": "room, hab air",
+      "notes": "AQS-DSN-OX-001 vent. Breathing and upset only. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "from_sector_id": "FAB",
+      "to_sector_id": "GAS",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "AQS-DSN-OX-001: tank breathing and upset vent; no continuous flow on the design day (assumption)."
+      },
+      "params": {
+        "rate_basis": "breathing and upset vent; no continuous flow on the design day (assumption)",
+        "rate_source": "AQS-DSN-OX-001",
+        "medium": "air with NOx and HNO3 mist",
+        "conditions": "ambient, atm",
+        "rate_kind": "derived",
+        "doc": "AQS-DSN-OX-001",
+        "material": "PVDF or PVC-U (AQS-STD-002)"
+      },
+      "composition": {
+        "air": 0.999,
+        "HNO3": 0.001
+      }
+    },
+    {
+      "stream_id": "IA-PEROX-H2O",
+      "from_unit_id": "ROOF_TANK",
+      "to_unit_id": "WS_PEROX",
+      "phase": "L",
+      "presence": "present",
+      "carries": "peroxide dilution water",
+      "forbidden": "potable",
+      "notes": "X-SAF-10. Make-up water for the 5 wt% product. | restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
+      "rate": {
+        "value": 2.824,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-SAF-10. S32 3.0 kg/d less cell O2 0.176 kg/d"
+      },
+      "params": {
+        "rate_basis": "S32 3.0 kg/d less cell O2 0.176 kg/d",
+        "rate_source": "X-SAF-10 mass balance",
+        "medium": "tower water, deionised at the point of use (held)",
+        "conditions": "25 C",
+        "rate_kind": "derived",
+        "doc": "AQS-DSN-OX-001",
+        "material": "PVC-U",
+        "T_C": 25.0,
+        "T_basis": "X-MAT-09: edge conditions"
+      },
+      "composition": {
+        "water": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-MU",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "WS_SOLV",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "solvent resupply (ethanol and acetone)",
+      "header": "dedicated",
+      "forbidden": "process aisle",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.209973,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF R10c: solvent resupply imported at the dock boundary equals the bench draw IA-SOLV-WB (D-DOCK reagent import; each chemical has a source, AQS-DUTY-016; 30 d hold A-M-225). | X-PAR-02 TF: solvent resupply imported at the dock boundary equals the bench draw IA-SOLV-WB (D-DOCK reagent import; 30 d hold already sized, A-M-225) (AQS-PAR-003)."
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-HF-PROD",
+      "from_unit_id": "HF_GEN",
+      "to_unit_id": "WS_HF_ED",
+      "phase": "L",
+      "presence": "present",
+      "carries": "aqueous HF to the fab reagent fork",
+      "notes": "Created by the fluoropolymer train activation (Q-013 reopen; A-M-283).",
+      "namespace": "IA",
+      "layers": [
+        "mass"
+      ],
+      "open_boundary": false,
+      "rate": {
+        "value": 1.5,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "HF_GEN supplies the reagent fork at the S31 draw 1.500 kg/d (AQS-DUTY-FP sec. 2: product to the monomer units and the direct HF users; replaces the direct leach feed of IA-HF-SRC, which now runs through F_RECOVER) | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "FAB"
+    },
+    {
+      "stream_id": "IA-LITHO-CARRY",
+      "from_unit_id": "LITHO_COAT",
+      "to_unit_id": "LITHO_DEV",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "resist/solvent carry (coat catch bowl + developer) to the develop bench",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.987499,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool handoff; wafer mass is below graph resolution). A-M-284."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": "Created at the LITHO_STUB retirement so each real tool closes (A-M-284).",
+      "composition": {
+        "water": 0.97,
+        "solute": 0.03
+      }
+    }
+  ],
+  "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"
+}

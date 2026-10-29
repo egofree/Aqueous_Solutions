@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: W
+Revision: X
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -29,6 +29,7 @@ Date: 2026-10-29
 | U | Batch 18: METAL_FORMING and SOLVENT_ROUTE rewritten against the graph; owner question on the ionic-liquid chain | 2026-10-29 |
 | V | Batch 19: SCRUBBER_CHEMISTRY rewritten against the graph; VENT_CLOSURE given a generator that checks every closure on the graph; owner question on the caustic vents | 2026-10-29 |
 | W | Batch 20: MVS_PITCH_PASS and MVS_STUDY_CLOSE marked as superseded records; MATERIALS_SEC3 and STL_MANIFEST brought to the style guide; STL importer path fixed | 2026-10-29 |
+| X | Batch 21: four hand-drawn process sheets retired and replaced by graph-driven sector views | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -170,6 +171,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/MVS_STUDY_CLOSE.md` | Rev B. Identity lines, record of revisions and purpose; marked as a superseded study record pointing to the stub activation. |
 | `docs-authority/MATERIALS_SEC3.md` | Rev B. Purpose and scope added; working phrasing and the unit count removed. No selection changed. |
 | `docs-authority/STL_MANIFEST.md` | Rev B. Rewritten; the expected meshes are those mapped in `import_mfg.py`, whose read folder is now the one the build writes. |
+| `flow_graph/exporters/matplotlib/` metal_forming_pfd, mfg_shop_pfd, wafer_fab_pfd, fab_reagent_forks_pfd | Removed after checking what each drew and who cited it; replaced by the sector views `flow_graph/views/pfd-mfg.svg` and `pfd-fab.svg` (owner decision 2026-10-29). |
 
 ## 3. In progress
 

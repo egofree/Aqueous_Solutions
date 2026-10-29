@@ -46,8 +46,8 @@ missing regenerable scripts (orphaned Wave-2 PNGs replaced):
 | AQS-PFD-FRM-001 | `farm_pfd.py` | `farm_pfd.png` |
 | AQS-PFD-HAB-001 | `habitation_pfd.py` | `habitation_pfd.png` |
 | AQS-PFD-CRY-001 | `cryo_pfd.py` | `cryo_pfd.png` |
-| AQS-PFD-FAB-001 | `wafer_fab_pfd.py` | `wafer_fab_pfd.png` |
-| AQS-PFD-MFG-001 | `mfg_shop_pfd.py` | `mfg_shop_pfd.png` |
+| (retired AQS-PFD-FAB-001) | `flow_graph/render_layer_views.py` preset `pfd-fab` | `flow_graph/views/pfd-fab.svg` |
+| (retired AQS-PFD-MFG-001) | `flow_graph/render_layer_views.py` preset `pfd-mfg` | `flow_graph/views/pfd-mfg.svg` |
 | AQS-PFD-NUT-001 | `nutrient_pfd.py` | `nutrient_pfd.png` |
 | AQS-PFD-WET-001 | `wet_line_factory_pfd.py` (machine-list callout) | `wet_line_factory_pfd.png` |
 

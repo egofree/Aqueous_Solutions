@@ -170,4 +170,4 @@ The reagent synthesis forks and the reagent map are in AQS-EQP-FAB-RGN-001 (`doc
 
 ## 10. Drawings
 
-The fab appears in the plant view `flow_graph/views/pfd.svg`, which the regenerator draws from the graph. The massing model is `models/freecad/wafer_fab.py`. The older scripts `flow_graph/exporters/matplotlib/wafer_fab_pfd.py` and `fab_reagent_forks_pfd.py` are not run by the regenerator.
+The process flow diagram of the fab is the sector view `flow_graph/views/pfd-fab.svg`, which the regenerator draws from the graph with every mass stream that has an end in the sector, the reagent forks included. The fab also appears in the plant view `flow_graph/views/pfd.svg`. The massing model is `models/freecad/wafer_fab.py`.

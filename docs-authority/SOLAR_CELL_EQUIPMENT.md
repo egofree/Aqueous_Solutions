@@ -3,7 +3,7 @@
 Document number: AQS-EQP-FAB-PV-001  
 Revision: D  
 Date: 2026-10-29  
-Process flow diagram: AQS-PFD-FAB-PV-001 (`solar_cell_pfd.png`); the parent fab diagram AQS-PFD-FAB-001 points to it.  
+Process flow diagram: AQS-PFD-FAB-PV-001 (`solar_cell_pfd.png`); the parent fab sector view is `flow_graph/views/pfd-fab.svg`.  
 Basis: AQS-EQP-FAB-001 §4; AQS-EQP-FAB-RGN-001 (`WS_KOH`); AQS-WTR-001 (fab ultrapure water); AQS-ELC-001 (campus PV narrative only).  
 Licence: CERN-OHL-S-2.0. Style: AQS-DOC-002. `SCALE_M = 1.0`.
 

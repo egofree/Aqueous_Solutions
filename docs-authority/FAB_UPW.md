@@ -4,7 +4,7 @@ Document number: AQS-EQP-FAB-UPW-001
 Revision: B  
 Date: 2026-09-27  
 PFD: AQS-PFD-FAB-UPW-001 (`fab_upw_pfd.png`); parent sector
-AQS-PFD-FAB-001 (`wafer_fab_pfd.png`)
+view `flow_graph/views/pfd-fab.svg`
 
 Authority: AQS-WTR-001, `03-silicon-wafer-fabrication.md`,
 AQS-EQP-FAB-001, AQS-STR-001, AQS-MF-001.

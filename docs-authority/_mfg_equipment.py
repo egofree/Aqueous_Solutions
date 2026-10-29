@@ -112,8 +112,8 @@ md += ['## 7. Open items', '',
 if id_m:
     md.append('- The streams without flow in Section 4 are routes kept on the graph for later use; each needs a rate or a decision to retire it.')
 md += ['', '## 8. Drawings', '',
-       'The process flow diagram of these units is part of the plant view `flow_graph/views/pfd.svg`, which the regenerator draws from the graph. '
-       'The older script `flow_graph/exporters/matplotlib/metal_forming_pfd.py` still draws tags that are no longer on the graph and is not run by the regenerator.', '']
+       'The process flow diagram of these units is the sector view `flow_graph/views/pfd-mfg.svg`, which the regenerator draws from the graph with every mass stream that has an end in the sector. '
+       'The units also appear in the plant view `flow_graph/views/pfd.svg`.', '']
 open('docs-authority/METAL_FORMING_EQUIPMENT.md', 'w').write('\n'.join(md))
 
 # ---------- shop ----------
@@ -156,7 +156,7 @@ md += ['## 7. Open items', '']
 md += ([f'- The streams without a rate in Section 5 need a rate or a decision to retire them.'] if id_s else [])
 md += ['- The shop tools keep their study nameplates and utilisation until the tools are chosen (A-M-177).', '',
        '## 8. Drawings', '',
-       'The process flow diagram of these units is part of the plant view `flow_graph/views/pfd.svg`, which the regenerator draws from the graph. '
-       'The older script `flow_graph/exporters/matplotlib/mfg_shop_pfd.py` still draws tags that are no longer on the graph and is not run by the regenerator.', '']
+       'The process flow diagram of these units is the sector view `flow_graph/views/pfd-mfg.svg`, which the regenerator draws from the graph with every mass stream that has an end in the sector. '
+       'The units also appear in the plant view `flow_graph/views/pfd.svg`.', '']
 open('docs-authority/MFG_SHOP_EQUIPMENT.md', 'w').write('\n'.join(md))
 print('docs-authority/METAL_FORMING_EQUIPMENT.md and docs-authority/MFG_SHOP_EQUIPMENT.md written')

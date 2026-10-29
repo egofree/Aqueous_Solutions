@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1904 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1910 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -1438,6 +1438,12 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/views/mfd.dot` | 9a0993d (regenerated, no change) | current |
 | `flow_graph/views/mfd.json` | 9a0993d (regenerated, no change) | current |
 | `flow_graph/views/mfd.svg` | 9a0993d (regenerated, no change) | current |
+| `flow_graph/views/pfd-fab.dot` | 9a0993d (regenerated, no change) | current |
+| `flow_graph/views/pfd-fab.json` | 9a0993d (regenerated, no change) | current |
+| `flow_graph/views/pfd-fab.svg` | 9a0993d (regenerated, no change) | current |
+| `flow_graph/views/pfd-mfg.dot` | 9a0993d (regenerated, no change) | current |
+| `flow_graph/views/pfd-mfg.json` | 9a0993d (regenerated, no change) | current |
+| `flow_graph/views/pfd-mfg.svg` | 9a0993d (regenerated, no change) | current |
 | `flow_graph/views/pfd.dot` | 9a0993d (regenerated, no change) | current |
 | `flow_graph/views/pfd.json` | 9a0993d (regenerated, no change) | current |
 | `flow_graph/views/pfd.svg` | 9a0993d (regenerated, no change) | current |

@@ -34,8 +34,8 @@ Do **not** invent rates/nameplates/stream routes in either path.
 | `flow_graph/exporters/matplotlib/meoh_train_pfd.py` | **Graph-bridged** — S73–S82 + IA-ESS-MEOH-* |
 | `flow_graph/exporters/matplotlib/oil_line_pfd.py` | **Graph-bridged** — IA-OIL-* + S67/S11 |
 | `flow_graph/exporters/matplotlib/wet_line_factory_pfd.py` | **Graph-bridged** — IA-WET-* / IA-REC-01 + S09/S10/S31–S35/S38/S65–S66 |
-| `flow_graph/exporters/matplotlib/metal_forming_pfd.py` | **Graph-bridged** — S57–S63 / S71–S72 |
-| `flow_graph/exporters/matplotlib/mfg_shop_pfd.py` | **Graph-bridged** — S08/S16/S58–S61 |
+| `flow_graph/views/pfd-mfg.svg` | **Graph-driven** sector view (replaces the retired `metal_forming_pfd.py`, 2026-10-29) |
+| `flow_graph/views/pfd-mfg.svg` | **Graph-driven** sector view (replaces the retired `mfg_shop_pfd.py`, 2026-10-29) |
 | `flow_graph/exporters/matplotlib/hab_water_pfd.py` | **Graph-bridged** — S01/S12/S21/S25–S29 |
 | `flow_graph/exporters/matplotlib/habitation_pfd.py` | **Graph-bridged** — S02/S12/S14–S15/S21/S26/S78 |
 | `flow_graph/exporters/matplotlib/fab_upw_pfd.py` | **Graph-bridged** — S01/S09/S27 |
@@ -43,8 +43,8 @@ Do **not** invent rates/nameplates/stream routes in either path.
 | `flow_graph/exporters/matplotlib/fuel_cell_pfd.py` | **Graph-bridged** — S49–S53 |
 | `flow_graph/exporters/matplotlib/backup_gen_pfd.py` | **Graph-bridged** — S45–S47 |
 | `flow_graph/exporters/matplotlib/geothermal_pfd.py` | **Graph-bridged** — S06/S43–S44/S48 |
-| `flow_graph/exporters/matplotlib/wafer_fab_pfd.py` | **Graph-bridged** — S03/S36–S39 |
-| `flow_graph/exporters/matplotlib/fab_reagent_forks_pfd.py` | **Graph-bridged** — S31–S37 |
+| `flow_graph/views/pfd-fab.svg` | **Graph-driven** sector view (replaces the retired `wafer_fab_pfd.py`, 2026-10-29) |
+| `flow_graph/views/pfd-fab.svg` | **Graph-driven** sector view (replaces the retired `fab_reagent_forks_pfd.py`, 2026-10-29) |
 | `flow_graph/exporters/matplotlib/solar_cell_pfd.py` | **Graph-bridged** — S10/S27/S35 peers; **SOLAR_PV_CELL** node has no dedicated edges yet (placeholder) |
 | `flow_graph/exporters/matplotlib/farm_pfd.py` | **Graph-bridged** — S04/S06–S07/S11/S13–S15/S14X/S20 |
 | `flow_graph/exporters/matplotlib/nutrient_pfd.py` | **Graph-bridged** — S07/S12/S30 |
@@ -80,8 +80,6 @@ cd Diagrams/aqueous_diagrams
 /usr/bin/python3 flow_graph/exporters/matplotlib/meoh_train_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/oil_line_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/wet_line_factory_pfd.py
-/usr/bin/python3 flow_graph/exporters/matplotlib/metal_forming_pfd.py
-/usr/bin/python3 flow_graph/exporters/matplotlib/mfg_shop_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/hab_water_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/habitation_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/fab_upw_pfd.py
@@ -89,8 +87,6 @@ cd Diagrams/aqueous_diagrams
 /usr/bin/python3 flow_graph/exporters/matplotlib/fuel_cell_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/backup_gen_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/geothermal_pfd.py
-/usr/bin/python3 flow_graph/exporters/matplotlib/wafer_fab_pfd.py
-/usr/bin/python3 flow_graph/exporters/matplotlib/fab_reagent_forks_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/solar_cell_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/farm_pfd.py
 /usr/bin/python3 flow_graph/exporters/matplotlib/nutrient_pfd.py
