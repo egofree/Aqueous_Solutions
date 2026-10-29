@@ -22,7 +22,8 @@ q_melt = (v('melt_cp_solid_kJ_kgK')*(v('MFG.tools-metal-forming-train.metal-form
 m_melt = thr('MET_MELT'); heats = math.ceil(m_melt/v('melt_charge_kg'))
 kw_melt = math.ceil(v('melt_charge_kg')*q_melt/v('melt_time_h')*2)/2
 e_melt = q_melt*m_melt + v('melt_hold_kW')*v('MFG.tools-metal-forming-train.metal-forming.MET_MELT.hold_h')*heats
-T_AR = v('MFG.tools-metal-forming-train.metal-forming.GAS_ATOMIZER.ar_T_K'); M_AR = 0.03995; G = 9.81
+from flow_graph.param import site as SITE   # apparent gravity from the site profile
+T_AR = v('MFG.tools-metal-forming-train.metal-forming.GAS_ATOMIZER.ar_T_K'); M_AR = 0.03995; G = SITE.g()
 SHIFT_H = v('MFG.tools-metal-forming-train.hall-services.MFG_SHOP.shift_h')
 # atomiser (A-M-416): argon is compressed once into a receiver at atom_store_bar and discharged to the nozzle supply during the pour
 w_ar = 8.314*T_AR/M_AR*math.log(v('atom_store_bar'))/v('atom_comp_eta')/3.6e6*v('atom_GMR')                     # kWh/kg metal
