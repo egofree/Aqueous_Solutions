@@ -52,11 +52,11 @@ item,description,qty,material,basis
 51,fastener: anchor bolt M10,72,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 52,fastener: anchor bolt M10,34,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 53,fastener: anchor bolt M10,82,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-54,fastener: anchor bolt M10,52,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+54,fastener: anchor bolt M10,46,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 55,fastener: anchor bolt M10,38,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 56,fastener: anchor bolt M10,58,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 57,fastener: anchor bolt M10,62,ISO 3506 A4-70 wedge anchor,AQS-INV-004
-58,fastener: anchor bolt M10,60,ISO 3506 A4-70 wedge anchor,AQS-INV-004
+58,fastener: anchor bolt M10,56,ISO 3506 A4-70 wedge anchor,AQS-INV-004
 59,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 60,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
 61,instrument: flow transmitter DN15,1,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",AQS-INV-004
@@ -84,11 +84,11 @@ item,description,qty,material,basis
 83,support: pipe clamp DN15,36,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 84,support: pipe clamp DN15,17,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 85,support: pipe clamp DN15,41,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-86,support: pipe clamp DN15,26,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+86,support: pipe clamp DN15,23,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 87,support: pipe clamp DN15,19,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 88,support: pipe clamp DN15,29,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 89,support: pipe clamp DN15,31,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
-90,support: pipe clamp DN15,30,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
+90,support: pipe clamp DN15,28,"PP clamp with EPDM liner, MSS SP-58 Type 7",AQS-INV-004
 91,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
 92,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004
 93,valve: check valve DN15,1,"PVC-U true-union swing/ball check valve, EPDM seals",AQS-INV-004

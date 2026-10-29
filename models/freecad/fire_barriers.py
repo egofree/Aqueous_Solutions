@@ -206,6 +206,11 @@ def _rated_rooms(doc):
         # Rev C: a solid the room walls would cut joins the room (own ancillaries, clearances, the line it feeds);
         # a rated shaft, stair, fence or wall bounds the room instead. Repeat until stable.
         members = {me[0].Label} if me else set(); clip = {}; pen = []
+        if me:
+            b0 = me[0].Shape.BoundBox
+            mbb = [b0.XMin, b0.YMin, b0.ZMin, b0.XMax, b0.YMax, b0.ZMax]   # member union: a wall may never cut it
+        else:
+            mbb = [x0, y0, z, x0 + L, y0 + W, z + H]
         up = [v for v in list(zl.values()) + [getattr(P, "Z_ROOF", P.Z_L2 + 5400)] if v > z + 100]
         Hcap = (min(up) - z - P.SLAB_THK) if up else H
         H = min(H, Hcap)
@@ -254,6 +259,8 @@ def _rated_rooms(doc):
                     if DBG: print("  clip", r["unit"], k, o.Label)
                 else:
                     members.add(o.Label); grew = True
+                    mbb = [min(mbb[0], B[0]), min(mbb[1], B[1]), min(mbb[2], B[2]),
+                           max(mbb[3], B[3]), max(mbb[4], B[4]), max(mbb[5], B[5])]
                     nx0, ny0 = min(x0, B[0]), min(y0, B[1]); L, W = max(x0 + L, B[3]) - nx0, max(y0 + W, B[4]) - ny0; x0, y0 = nx0, ny0
                     H = min(Hcap, max(H, B[5] - z + 300))
             if not grew: break
@@ -264,11 +271,26 @@ def _rated_rooms(doc):
                   " - room skipped, recorded as a GA finding"
                   % (r["unit"], X0, X1, Y0, Y1, {k: round(v) for k, v in clip.items()}))
             with open(findings, "a") as fh:
-                fh.write(json.dumps({"unit": r["unit"], "X": [round(X0), round(X1)],
-                                     "Y": [round(Y0), round(Y1)], "clips": {k: round(v) for k, v in clip.items()}}) + "\n")
+                fh.write(json.dumps({"unit": r["unit"], "inverted": True,
+                                     "X": [round(X0), round(X1)], "Y": [round(Y0), round(Y1)],
+                                     "clips": {k: round(v) for k, v in clip.items()}}) + "\n")
             continue
         walls = [box_at(X0, Y0, z, X1 - X0, t, H), box_at(X0, Y1 - t, z, X1 - X0, t, H),
                  box_at(X0, Y0, z, t, Y1 - Y0, H), box_at(X1 - t, Y0, z, t, Y1 - Y0, H)]
+        # a wall may never cut the unit it encloses: a boundary clip (e.g. a
+        # neighbour potting the room's side) can pull a wall across a member;
+        # that is a layout conflict to surface, not a wall to build
+        wx = [(X0, Y0, X1, Y0 + t), (X0, Y1 - t, X1, Y1), (X0, Y0, X0 + t, Y1), (X1 - t, Y0, X1, Y1)]
+        cut = [k for k, (a, b, c, d) in zip("wsne", wx)
+               if a < mbb[3] and c > mbb[0] and b < mbb[4] and d > mbb[1]
+               and z < mbb[5] and z + H > mbb[2]]
+        if cut:
+            print("  FR_%s: %s wall(s) would cut the room's own unit (member bounds %s) - room skipped, recorded as a GA finding"
+                  % (r["unit"], "/".join(cut), [round(v) for v in mbb]))
+            with open(findings, "a") as fh:
+                fh.write(json.dumps({"unit": r["unit"], "cut_walls": cut,
+                                     "member_bounds": [round(v) for v in mbb]}) + "\n")
+            continue
         sh = _fuse(walls)
         for B in pen:
             sh = sh.cut(box_at(B[0] - 50, B[1] - 50, B[2] - 50, B[3] - B[0] + 100, B[4] - B[1] + 100, B[5] - B[2] + 100))

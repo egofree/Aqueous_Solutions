@@ -7,27 +7,29 @@ CRYO,CRYO,CRYO_AHU,transfer pump IA-HVAC-COND to ROOF_TANK power,DC power pair,1
 CRYO,CRYO,CRYO_AHU,transfer pump IA-HVAC-COND to ROOF_TANK signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 CRYO,CRYO,CRYO_AHU,transfer pump S68 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 CRYO,CRYO,CRYO_AHU,transfer pump S68 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-CRYO,CRYO,CRYO_ASU,air compressor (cold box feed) EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,6.2,1,6.2,NEC 250.122 at 15 A OCPD
-CRYO,CRYO,CRYO_ASU,air compressor (cold box feed) control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,6.2,1,37.2,"start/stop, run, fault (assumed)"
-CRYO,CRYO,CRYO_ASU,air compressor (cold box feed) feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,6.2,1,18.6,"NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-CRYO,CRYO,CRYO_ASU,expander brake / generator EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,6.2,1,6.2,NEC 250.122 at 15 A OCPD
-CRYO,CRYO,CRYO_ASU,expander brake / generator control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,6.2,1,37.2,"start/stop, run, fault (assumed)"
-CRYO,CRYO,CRYO_ASU,expander brake / generator feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,6.2,1,18.6,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-CRYO,CRYO,CRYO_H2,cryocooler compressor EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,25.2,1,25.2,NEC 250.122 at 15 A OCPD
-CRYO,CRYO,CRYO_H2,cryocooler compressor control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,25.2,1,150.9,"start/stop, run, fault (assumed)"
-CRYO,CRYO,CRYO_H2,cryocooler compressor feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,25.2,1,75.5,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,DIGESTER_EXT,BMED_ACID,"stack loop pumps (acid, base, salt) EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,12.4,3,37.1,NEC 250.122 at 15 A OCPD
-DIGESTER,DIGESTER_EXT,BMED_ACID,"stack loop pumps (acid, base, salt) control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,12.4,3,222.5,"start/stop, run, fault (assumed)"
-DIGESTER,DIGESTER_EXT,BMED_ACID,"stack loop pumps (acid, base, salt) feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,12.4,3,111.2,"NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+CRYO,CRYO,CRYO_ASU,air compressor (cold box feed) EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,12.5,1,12.5,NEC 250.122 at 15 A OCPD
+CRYO,CRYO,CRYO_ASU,air compressor (cold box feed) control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,12.5,1,74.8,"start/stop, run, fault (assumed)"
+CRYO,CRYO,CRYO_ASU,air compressor (cold box feed) feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,12.5,1,37.4,"NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-CRYO (Manhattan x 1.1 + 3 m drop, assumed)"
+CRYO,CRYO,CRYO_ASU,expander brake / generator EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,12.5,1,12.5,NEC 250.122 at 15 A OCPD
+CRYO,CRYO,CRYO_ASU,expander brake / generator control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,12.5,1,74.8,"start/stop, run, fault (assumed)"
+CRYO,CRYO,CRYO_ASU,expander brake / generator feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,12.5,1,37.4,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-CRYO (Manhattan x 1.1 + 3 m drop, assumed)"
+CRYO,CRYO,CRYO_H2,cryocooler compressor EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,13.9,1,13.9,NEC 250.122 at 15 A OCPD
+CRYO,CRYO,CRYO_H2,cryocooler compressor control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,13.9,1,83.7,"start/stop, run, fault (assumed)"
+CRYO,CRYO,CRYO_H2,cryocooler compressor feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,13.9,1,41.8,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-CRYO (Manhattan x 1.1 + 3 m drop, assumed)"
+CRYO,distribution,LP-CRYO,panel feeder 208 V,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,19.7,1,78.8,NEC 430.24: 7.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
+CRYO,distribution,LP-CRYO,panel feeder 460 V,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,19.7,1,78.8,NEC 430.24: 10.6 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
+DIGESTER,DIGESTER_EXT,BMED_ACID,"stack loop pumps (acid, base, salt) EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.9,3,32.7,NEC 250.122 at 15 A OCPD
+DIGESTER,DIGESTER_EXT,BMED_ACID,"stack loop pumps (acid, base, salt) control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.9,3,196.3,"start/stop, run, fault (assumed)"
+DIGESTER,DIGESTER_EXT,BMED_ACID,"stack loop pumps (acid, base, salt) feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.9,3,98.1,"NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,DIGESTER_EXT,BMED_ACID,transfer pump IA-BMED-01 to WS_NITRIC power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,DIGESTER_EXT,BMED_ACID,transfer pump IA-BMED-01 to WS_NITRIC signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 DIGESTER,DIGESTER_EXT,BMED_ACID,transfer pump IA-EVAP_ACID-FEED to EVAP_ACID power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,DIGESTER_EXT,BMED_ACID,transfer pump IA-EVAP_ACID-FEED to EVAP_ACID signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 DIGESTER,DIGESTER_EXT,BMED_ACID,transfer pump S09 to WET_BENCH power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,DIGESTER_EXT,BMED_ACID,transfer pump S09 to WET_BENCH signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,DIGESTER_EXT,BMED_BASE,"stack loop pumps (acid, base, salt) EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,12.4,3,37.1,NEC 250.122 at 15 A OCPD
-DIGESTER,DIGESTER_EXT,BMED_BASE,"stack loop pumps (acid, base, salt) control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,12.4,3,222.5,"start/stop, run, fault (assumed)"
-DIGESTER,DIGESTER_EXT,BMED_BASE,"stack loop pumps (acid, base, salt) feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,12.4,3,111.2,"NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,DIGESTER_EXT,BMED_BASE,"stack loop pumps (acid, base, salt) EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.9,3,32.7,NEC 250.122 at 15 A OCPD
+DIGESTER,DIGESTER_EXT,BMED_BASE,"stack loop pumps (acid, base, salt) control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.9,3,196.3,"start/stop, run, fault (assumed)"
+DIGESTER,DIGESTER_EXT,BMED_BASE,"stack loop pumps (acid, base, salt) feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.9,3,98.1,"NEC 430.22: 1.25 x 1.1 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,DIGESTER_EXT,BMED_BASE,transfer pump IA-BMED-02 to WS_KOH power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,DIGESTER_EXT,BMED_BASE,transfer pump IA-BMED-02 to WS_KOH signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 DIGESTER,DIGESTER_EXT,BMED_BASE,transfer pump IA-EVAP_BASE-FEED to EVAP_BASE power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -36,95 +38,95 @@ DIGESTER,DIGESTER_EXT,BMED_BASE,transfer pump IA-VS-NAOH to EVAP_ACID_VS power,D
 DIGESTER,DIGESTER_EXT,BMED_BASE,transfer pump IA-VS-NAOH to EVAP_ACID_VS signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 DIGESTER,DIGESTER_EXT,CRU,transfer pump IA-CRU-01 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,DIGESTER_EXT,CRU,transfer pump IA-CRU-01 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,DIGESTER_EXT,EVAP_ACID,"Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,16.9,1,16.9,NEC 250.122 at 15 A OCPD
-DIGESTER,DIGESTER_EXT,EVAP_ACID,"Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,16.9,1,101.4,"start/stop, run, fault (assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_ACID,"Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,16.9,1,50.7,"NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,16.9,1,16.9,NEC 250.122 at 15 A OCPD
-DIGESTER,DIGESTER_EXT,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,16.9,1,101.4,"start/stop, run, fault (assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,16.9,1,50.7,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at  EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,17.9,1,17.9,NEC 250.122 at 15 A OCPD
-DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at  control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,17.9,1,107.4,"start/stop, run, fault (assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at  feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,17.9,1,53.7,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.1,1,10.1,NEC 250.122 at 15 A OCPD
-DIGESTER,DIGESTER_EXT,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.1,1,60.5,"start/stop, run, fault (assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.1,1,30.2,"NEC 430.22: 1.25 x 3.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.1,1,10.1,NEC 250.122 at 15 A OCPD
-DIGESTER,DIGESTER_EXT,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.1,1,60.5,"start/stop, run, fault (assumed)"
-DIGESTER,DIGESTER_EXT,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.1,1,30.2,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_ACID,"Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,15.4,1,15.4,NEC 250.122 at 15 A OCPD
+DIGESTER,DIGESTER_EXT,EVAP_ACID,"Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,15.4,1,92.6,"start/stop, run, fault (assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_ACID,"Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,15.4,1,46.3,"NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,15.4,1,15.4,NEC 250.122 at 15 A OCPD
+DIGESTER,DIGESTER_EXT,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,15.4,1,92.6,"start/stop, run, fault (assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,15.4,1,46.3,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at  EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,20.1,1,20.1,NEC 250.122 at 15 A OCPD
+DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at  control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,20.1,1,120.3,"start/stop, run, fault (assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at  feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,20.1,1,60.2,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,8.6,1,8.6,NEC 250.122 at 15 A OCPD
+DIGESTER,DIGESTER_EXT,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,8.6,1,51.7,"start/stop, run, fault (assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,8.6,1,25.9,"NEC 430.22: 1.25 x 3.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,8.6,1,8.6,NEC 250.122 at 15 A OCPD
+DIGESTER,DIGESTER_EXT,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,8.6,1,51.7,"start/stop, run, fault (assumed)"
+DIGESTER,DIGESTER_EXT,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,8.6,1,25.9,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,DIGESTER_EXT,FLOAT_SINK,transfer pump IA-PLAST-01 to OIL_DRYER power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,DIGESTER_EXT,FLOAT_SINK,transfer pump IA-PLAST-01 to OIL_DRYER signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 DIGESTER,DIGESTER_EXT,FLOAT_SINK,transfer pump IA-WET-FLOAT-01 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,DIGESTER_EXT,FLOAT_SINK,transfer pump IA-WET-FLOAT-01 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 DIGESTER,DIGESTER_EXT,F_RECOVER,transfer pump F_RECOVER_TO_HF_GEN to HF_GEN power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,DIGESTER_EXT,F_RECOVER,transfer pump F_RECOVER_TO_HF_GEN to HF_GEN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,DIGESTER_EXT,POLISH_BANK,screw conveyor IA-POL-CAKE to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,12.4,1,12.4,NEC 250.122 at 15 A OCPD
-DIGESTER,DIGESTER_EXT,POLISH_BANK,screw conveyor IA-POL-CAKE to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,12.4,1,74.2,"start/stop, run, fault (assumed)"
-DIGESTER,DIGESTER_EXT,POLISH_BANK,screw conveyor IA-POL-CAKE to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,12.4,1,37.1,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,DIGESTER_EXT,POLISH_BANK,screw conveyor IA-POL-CAKE to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.9,1,10.9,NEC 250.122 at 15 A OCPD
+DIGESTER,DIGESTER_EXT,POLISH_BANK,screw conveyor IA-POL-CAKE to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.9,1,65.4,"start/stop, run, fault (assumed)"
+DIGESTER,DIGESTER_EXT,POLISH_BANK,screw conveyor IA-POL-CAKE to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.9,1,32.7,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,DIGESTER_EXT,POLISH_BANK,transfer pump IA-POL-02 to CONTINUOUS_RECYCLE power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,DIGESTER_EXT,POLISH_BANK,transfer pump IA-POL-02 to CONTINUOUS_RECYCLE signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,DIGESTER_EXT,SALT_FEED,screw feeder EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,12.4,1,12.4,NEC 250.122 at 15 A OCPD
-DIGESTER,DIGESTER_EXT,SALT_FEED,screw feeder control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,12.4,1,74.2,"start/stop, run, fault (assumed)"
-DIGESTER,DIGESTER_EXT,SALT_FEED,screw feeder feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,12.4,1,37.1,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,LEACH_EW,EW_1,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,8.0,1,8.0,NEC 250.122 at 15 A OCPD
-DIGESTER,LEACH_EW,EW_1,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,8.0,1,48.3,"start/stop, run, fault (assumed)"
-DIGESTER,LEACH_EW,EW_1,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,8.0,1,24.1,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,LEACH_EW,EW_1,screw conveyor IA-EW-MET-1 to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,8.0,1,8.0,NEC 250.122 at 15 A OCPD
-DIGESTER,LEACH_EW,EW_1,screw conveyor IA-EW-MET-1 to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,8.0,1,48.3,"start/stop, run, fault (assumed)"
-DIGESTER,LEACH_EW,EW_1,screw conveyor IA-EW-MET-1 to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,8.0,1,24.1,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,DIGESTER_EXT,SALT_FEED,screw feeder EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.9,1,10.9,NEC 250.122 at 15 A OCPD
+DIGESTER,DIGESTER_EXT,SALT_FEED,screw feeder control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.9,1,65.4,"start/stop, run, fault (assumed)"
+DIGESTER,DIGESTER_EXT,SALT_FEED,screw feeder feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.9,1,32.7,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,LEACH_EW,EW_1,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,9.5,1,9.5,NEC 250.122 at 15 A OCPD
+DIGESTER,LEACH_EW,EW_1,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,9.5,1,57.0,"start/stop, run, fault (assumed)"
+DIGESTER,LEACH_EW,EW_1,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,9.5,1,28.5,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,LEACH_EW,EW_1,screw conveyor IA-EW-MET-1 to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,9.5,1,9.5,NEC 250.122 at 15 A OCPD
+DIGESTER,LEACH_EW,EW_1,screw conveyor IA-EW-MET-1 to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,9.5,1,57.0,"start/stop, run, fault (assumed)"
+DIGESTER,LEACH_EW,EW_1,screw conveyor IA-EW-MET-1 to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,9.5,1,28.5,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,LEACH_EW,EW_1,transfer pump IA-EW-01 to EW_2 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,LEACH_EW,EW_1,transfer pump IA-EW-01 to EW_2 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,LEACH_EW,EW_2,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,5.0,1,5.0,NEC 250.122 at 15 A OCPD
-DIGESTER,LEACH_EW,EW_2,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,5.0,1,29.8,"start/stop, run, fault (assumed)"
-DIGESTER,LEACH_EW,EW_2,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,5.0,1,14.9,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,LEACH_EW,EW_2,screw conveyor IA-EW-MET-2 to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,5.0,1,5.0,NEC 250.122 at 15 A OCPD
-DIGESTER,LEACH_EW,EW_2,screw conveyor IA-EW-MET-2 to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,5.0,1,29.8,"start/stop, run, fault (assumed)"
-DIGESTER,LEACH_EW,EW_2,screw conveyor IA-EW-MET-2 to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,5.0,1,14.9,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,LEACH_EW,EW_2,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,6.4,1,6.4,NEC 250.122 at 15 A OCPD
+DIGESTER,LEACH_EW,EW_2,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,6.4,1,38.5,"start/stop, run, fault (assumed)"
+DIGESTER,LEACH_EW,EW_2,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,6.4,1,19.3,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,LEACH_EW,EW_2,screw conveyor IA-EW-MET-2 to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,6.4,1,6.4,NEC 250.122 at 15 A OCPD
+DIGESTER,LEACH_EW,EW_2,screw conveyor IA-EW-MET-2 to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,6.4,1,38.5,"start/stop, run, fault (assumed)"
+DIGESTER,LEACH_EW,EW_2,screw conveyor IA-EW-MET-2 to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,6.4,1,19.3,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,LEACH_EW,EW_2,transfer pump IA-EW-02 to EW_3 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,LEACH_EW,EW_2,transfer pump IA-EW-02 to EW_3 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,LEACH_EW,EW_9,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.6,1,7.6,NEC 250.122 at 15 A OCPD
-DIGESTER,LEACH_EW,EW_9,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.6,1,45.4,"start/stop, run, fault (assumed)"
-DIGESTER,LEACH_EW,EW_9,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.6,1,22.7,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,LEACH_EW,EW_9,screw conveyor IA-EW-MET-9 to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.6,1,7.6,NEC 250.122 at 15 A OCPD
-DIGESTER,LEACH_EW,EW_9,screw conveyor IA-EW-MET-9 to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.6,1,45.4,"start/stop, run, fault (assumed)"
-DIGESTER,LEACH_EW,EW_9,screw conveyor IA-EW-MET-9 to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.6,1,22.7,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,LEACH_EW,EW_9,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.7,1,7.7,NEC 250.122 at 15 A OCPD
+DIGESTER,LEACH_EW,EW_9,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.7,1,46.3,"start/stop, run, fault (assumed)"
+DIGESTER,LEACH_EW,EW_9,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.7,1,23.2,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,LEACH_EW,EW_9,screw conveyor IA-EW-MET-9 to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.7,1,7.7,NEC 250.122 at 15 A OCPD
+DIGESTER,LEACH_EW,EW_9,screw conveyor IA-EW-MET-9 to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.7,1,46.3,"start/stop, run, fault (assumed)"
+DIGESTER,LEACH_EW,EW_9,screw conveyor IA-EW-MET-9 to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.7,1,23.2,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,LEACH_EW,EW_9,transfer pump IA-EW-09 to POLISH_BANK power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,LEACH_EW,EW_9,transfer pump IA-EW-09 to POLISH_BANK signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,LEACH_EW,LEACH_CSTR_1,Gearmotor 0.75 kW 150 rpm output on lid bridge EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,12.0,1,12.0,NEC 250.122 at 15 A OCPD
-DIGESTER,LEACH_EW,LEACH_CSTR_1,Gearmotor 0.75 kW 150 rpm output on lid bridge control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,12.0,1,71.9,"start/stop, run, fault (assumed)"
-DIGESTER,LEACH_EW,LEACH_CSTR_1,Gearmotor 0.75 kW 150 rpm output on lid bridge feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,12.0,1,35.9,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,distribution,LP-DIGESTER,panel feeder 208 V,"power, 3 ph + EGC",6 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,31.9,1,127.7,NEC 430.24: 39.0 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
-DIGESTER,distribution,LP-DIGESTER,panel feeder 460 V,"power, 3 ph + EGC",8 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,31.9,1,127.7,NEC 430.24: 36.4 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
-DIGESTER,ew_cell,EW_3,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.6,1,7.6,NEC 250.122 at 15 A OCPD
-DIGESTER,ew_cell,EW_3,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.6,1,45.8,"start/stop, run, fault (assumed)"
-DIGESTER,ew_cell,EW_3,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.6,1,22.9,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,LEACH_EW,LEACH_CSTR_1,Gearmotor 0.75 kW 150 rpm output on lid bridge EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,14.0,1,14.0,NEC 250.122 at 15 A OCPD
+DIGESTER,LEACH_EW,LEACH_CSTR_1,Gearmotor 0.75 kW 150 rpm output on lid bridge control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,14.0,1,84.0,"start/stop, run, fault (assumed)"
+DIGESTER,LEACH_EW,LEACH_CSTR_1,Gearmotor 0.75 kW 150 rpm output on lid bridge feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,14.0,1,42.0,"NEC 430.22: 1.25 x 3.0 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,distribution,LP-DIGESTER,panel feeder 208 V,"power, 3 ph + EGC",6 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,35.7,1,142.9,NEC 430.24: 31.8 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
+DIGESTER,distribution,LP-DIGESTER,panel feeder 460 V,"power, 3 ph + EGC",10 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,35.7,1,142.9,NEC 430.24: 27.0 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
+DIGESTER,ew_cell,EW_3,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,4.6,1,4.6,NEC 250.122 at 15 A OCPD
+DIGESTER,ew_cell,EW_3,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,4.6,1,27.5,"start/stop, run, fault (assumed)"
+DIGESTER,ew_cell,EW_3,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,4.6,1,13.8,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,ew_cell,EW_3,transfer pump IA-EW-03 to EW_4 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,ew_cell,EW_3,transfer pump IA-EW-03 to EW_4 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,ew_cell,EW_4,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.0,1,10.0,NEC 250.122 at 15 A OCPD
-DIGESTER,ew_cell,EW_4,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.0,1,60.3,"start/stop, run, fault (assumed)"
-DIGESTER,ew_cell,EW_4,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.0,1,30.1,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,ew_cell,EW_4,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,6.6,1,6.6,NEC 250.122 at 15 A OCPD
+DIGESTER,ew_cell,EW_4,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,6.6,1,39.4,"start/stop, run, fault (assumed)"
+DIGESTER,ew_cell,EW_4,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,6.6,1,19.7,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,ew_cell,EW_4,transfer pump IA-EW-10 to EW_5 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,ew_cell,EW_4,transfer pump IA-EW-10 to EW_5 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,ew_cell,EW_5,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,5.4,1,5.4,NEC 250.122 at 15 A OCPD
-DIGESTER,ew_cell,EW_5,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,5.4,1,32.6,"start/stop, run, fault (assumed)"
-DIGESTER,ew_cell,EW_5,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,5.4,1,16.3,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,ew_cell,EW_5,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,4.3,1,4.3,NEC 250.122 at 15 A OCPD
+DIGESTER,ew_cell,EW_5,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,4.3,1,25.7,"start/stop, run, fault (assumed)"
+DIGESTER,ew_cell,EW_5,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,4.3,1,12.8,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,ew_cell,EW_5,transfer pump IA-EW-05 to EW_6 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,ew_cell,EW_5,transfer pump IA-EW-05 to EW_6 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,ew_cell,EW_6,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,6.5,1,6.5,NEC 250.122 at 15 A OCPD
-DIGESTER,ew_cell,EW_6,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,6.5,1,39.2,"start/stop, run, fault (assumed)"
-DIGESTER,ew_cell,EW_6,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,6.5,1,19.6,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,ew_cell,EW_6,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,3.2,1,3.2,NEC 250.122 at 15 A OCPD
+DIGESTER,ew_cell,EW_6,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,3.2,1,19.1,"start/stop, run, fault (assumed)"
+DIGESTER,ew_cell,EW_6,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,3.2,1,9.5,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,ew_cell,EW_6,transfer pump IA-EW-06 to EW_7 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,ew_cell,EW_6,transfer pump IA-EW-06 to EW_7 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,ew_cell,EW_7,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,9.4,1,9.4,NEC 250.122 at 15 A OCPD
-DIGESTER,ew_cell,EW_7,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,9.4,1,56.2,"start/stop, run, fault (assumed)"
-DIGESTER,ew_cell,EW_7,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,9.4,1,28.1,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-DIGESTER,ew_cell,EW_7,screw conveyor IA-EW-MET-7 to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,9.4,1,9.4,NEC 250.122 at 15 A OCPD
-DIGESTER,ew_cell,EW_7,screw conveyor IA-EW-MET-7 to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,9.4,1,56.2,"start/stop, run, fault (assumed)"
-DIGESTER,ew_cell,EW_7,screw conveyor IA-EW-MET-7 to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,9.4,1,28.1,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,ew_cell,EW_7,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.7,1,10.7,NEC 250.122 at 15 A OCPD
+DIGESTER,ew_cell,EW_7,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.7,1,64.1,"start/stop, run, fault (assumed)"
+DIGESTER,ew_cell,EW_7,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.7,1,32.1,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,ew_cell,EW_7,screw conveyor IA-EW-MET-7 to MFG_SHOP EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.7,1,10.7,NEC 250.122 at 15 A OCPD
+DIGESTER,ew_cell,EW_7,screw conveyor IA-EW-MET-7 to MFG_SHOP control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.7,1,64.1,"start/stop, run, fault (assumed)"
+DIGESTER,ew_cell,EW_7,screw conveyor IA-EW-MET-7 to MFG_SHOP feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.7,1,32.1,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,ew_cell,EW_7,transfer pump IA-EW-07 to EW_8 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,ew_cell,EW_7,transfer pump IA-EW-07 to EW_8 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-DIGESTER,ew_cell,EW_8,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.6,1,7.6,NEC 250.122 at 15 A OCPD
-DIGESTER,ew_cell,EW_8,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.6,1,45.8,"start/stop, run, fault (assumed)"
-DIGESTER,ew_cell,EW_8,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.6,1,22.9,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+DIGESTER,ew_cell,EW_8,electrolyte circulation pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,4.3,1,4.3,NEC 250.122 at 15 A OCPD
+DIGESTER,ew_cell,EW_8,electrolyte circulation pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,4.3,1,25.7,"start/stop, run, fault (assumed)"
+DIGESTER,ew_cell,EW_8,electrolyte circulation pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,4.3,1,12.8,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
 DIGESTER,ew_cell,EW_8,transfer pump IA-EW-08 to EW_9 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 DIGESTER,ew_cell,EW_8,transfer pump IA-EW-08 to EW_9 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 ELEC,EXT_HALL_N,EXT_HALL,AHU damper actuator power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,24,480.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -304,9 +306,9 @@ GEO,heat_pump,GEO_HP,ground-loop circulator feeder,"power, 3 ph + EGC",14 AWG,"X
 GEO,heat_pump,GEO_HP,heat pump compressor EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,3.0,1,3.0,NEC 250.122 at 15 A OCPD
 GEO,heat_pump,GEO_HP,heat pump compressor control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,3.0,1,18.0,"start/stop, run, fault (assumed)"
 GEO,heat_pump,GEO_HP,heat pump compressor feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,3.0,1,9.0,"NEC 430.22: 1.25 x 2.1 A FLC; routed tray from panel LP-GEO (Manhattan x 1.1 + 3 m drop, assumed)"
-GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,16.1,1,16.1,NEC 250.122 at 15 A OCPD
-GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,16.1,1,96.5,"start/stop, run, fault (assumed)"
-GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,16.1,1,48.2,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,4.9,1,4.9,NEC 250.122 at 15 A OCPD
+GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,4.9,1,29.2,"start/stop, run, fault (assumed)"
+GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,4.9,1,14.6,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-CRYO (Manhattan x 1.1 + 3 m drop, assumed)"
 MEOH,distribution,LP-MEOH,panel feeder 208 V,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,21.4,1,85.8,NEC 430.24: 3.0 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
 MEOH,ferment,MEOH_FERM,PIR insulation 50 mm with PE cladding; daily recirculation p EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.0,1,7.0,NEC 250.122 at 15 A OCPD
 MEOH,ferment,MEOH_FERM,PIR insulation 50 mm with PE cladding; daily recirculation p control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.0,1,42.1,"start/stop, run, fault (assumed)"
@@ -434,12 +436,12 @@ NUT,FARM,NUTRIENT_DOSE,transfer pump IA-SIC-RET to LEACH_CSTR_1 power,DC power p
 NUT,FARM,NUTRIENT_DOSE,transfer pump IA-SIC-RET to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 NUT,FARM,NUTRIENT_DOSE,transfer pump S07 to GROW_BED power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 NUT,FARM,NUTRIENT_DOSE,transfer pump S07 to GROW_BED signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
-OIL,LEACH_EW,HOPPER,screw conveyor IA-HOP-01 to LEACH_CSTR_1 EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.3,1,7.3,NEC 250.122 at 15 A OCPD
-OIL,LEACH_EW,HOPPER,screw conveyor IA-HOP-01 to LEACH_CSTR_1 control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.3,1,43.7,"start/stop, run, fault (assumed)"
-OIL,LEACH_EW,HOPPER,screw conveyor IA-HOP-01 to LEACH_CSTR_1 feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.3,1,21.8,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
-OIL,LEACH_EW,HOPPER,screw feeder EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.3,1,7.3,NEC 250.122 at 15 A OCPD
-OIL,LEACH_EW,HOPPER,screw feeder control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.3,1,43.7,"start/stop, run, fault (assumed)"
-OIL,LEACH_EW,HOPPER,screw feeder feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,7.3,1,21.8,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+OIL,LEACH_EW,HOPPER,screw conveyor IA-HOP-01 to LEACH_CSTR_1 EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.5,1,10.5,NEC 250.122 at 15 A OCPD
+OIL,LEACH_EW,HOPPER,screw conveyor IA-HOP-01 to LEACH_CSTR_1 control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.5,1,62.9,"start/stop, run, fault (assumed)"
+OIL,LEACH_EW,HOPPER,screw conveyor IA-HOP-01 to LEACH_CSTR_1 feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.5,1,31.4,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-CRYO (Manhattan x 1.1 + 3 m drop, assumed)"
+OIL,LEACH_EW,HOPPER,screw feeder EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.5,1,10.5,NEC 250.122 at 15 A OCPD
+OIL,LEACH_EW,HOPPER,screw feeder control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.5,1,62.9,"start/stop, run, fault (assumed)"
+OIL,LEACH_EW,HOPPER,screw feeder feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.5,1,31.4,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-CRYO (Manhattan x 1.1 + 3 m drop, assumed)"
 OIL,LEACH_EW,HOPPER,transfer pump IA-FEED-01 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 OIL,LEACH_EW,HOPPER,transfer pump IA-FEED-01 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 OIL,OIL_GLASS,AFTERBURNER,induced-draft fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"

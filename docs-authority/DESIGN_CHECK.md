@@ -44,13 +44,13 @@ Table 2.1. Closed-form checks
 | QC-19 | `docs-authority/_wire_specs.py` | 400 kcmil R20 ohm/km vs NEC Ch. 9 Table 8 | 0.0866 | 0.0876 | 3 % | pass |
 | QC-20 | `flow_graph/inventory/motor_designs.py` | MF-08 (1.5 kW IE3) line current A | 2.61 | 2.6073 | 2 % | pass |
 | QC-22 | `docs-authority/_test_rigs.py` | BMED bench NaOH g/h (10 triplets, 8 A, CE 0.80) | 95.5174 | 95.5103 | 1 % | pass |
-| QC-24 | `models/freecad/clash_check.py` | CAD clashes, 27 new elements vs 246 solids | 0 | 0 | 0 | pass |
+| QC-24 | `models/freecad/clash_check.py` | CAD clashes, 23 new elements vs 213 solids | 0 | 0 | 0 | pass |
 | QC-25 | `docs-authority/_wire_specs.py` | WF-01 core OD mm = stranded OD + 2 x 1.905 mm | 6.7447 | 6.7547 | 1 % | pass |
 | QC-26 | `docs-authority/_wire_specs.py` | WF-05 4/c 14 AWG TC-ER OD mm vs published 10.4 mm | 10.4 | 10.4047 | 5 % | pass |
-| QC-27 | `models/freecad/clash_equip.py` | equipment overlaps and corridor intrusions (180 solids) | 0 | 0 | 0 | pass |
+| QC-27 | `models/freecad/clash_equip.py` | equipment overlaps and corridor intrusions (149 solids) | 0 | 0 | 0 | pass |
 | QC-28 | `flow_graph/inventory/motor_designs.py` | induction slot + yoke fit the sheet OD (AQS-INV-008 re-derivation) | 0 | 0 | 0 | pass |
 | QC-29 | `flow_graph/param/water_tower.py` | catch tank top below L-1 FFL - slab (mm) | -6500 | -6300 | <= | pass |
-| QC-30 | `models/freecad/regroup.py` | L-1 flow adjacency m (18 units, 18 moves) | 142.4 | 320.7 | <= | pass |
+| QC-30 | `models/freecad/regroup.py` | L-1 flow adjacency m (18 units, 19 moves) | 178.4 | 375.4 | <= | pass |
 
 No check fails.
 

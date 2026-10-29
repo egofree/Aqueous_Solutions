@@ -1,11 +1,5 @@
 {
- "new": 25,
+ "new": 23,
  "others": 213,
- "clashes": [
-  {
-   "a": "FR_H2O_ELYZ",
-   "b": "H2O_ELYZ",
-   "m3": 0.791
-  }
- ]
+ "clashes": []
 }

@@ -17,8 +17,8 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 15528 |
-| support | 7363 |
+| fastener | 15512 |
+| support | 7355 |
 | electronics | 2236 |
 | valve | 988 |
 | instrument | 841 |
@@ -92,8 +92,8 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-48 | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | DN15 x5297; DN50 x525; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 5859 | 116 | AL_POT_CL2: AQS-PIP-005 span count; AQUA_BYPASS: AQS-PIP-005 span count; AQUA_LOOP1: AQS-PIP-005 span count |  |
-| OF-49 | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | DN15 x1449; DN20 x25; DN25 x23; DN50 x7 | 1504 | 44 | C29_RECYCLE: AQS-PIP-005 span count; C29_TO_PYRO: AQS-PIP-005 span count; CO2_TO_FARM: AQS-PIP-005 span count |  |
+| OF-48 | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | DN15 x5289; DN50 x537; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 5863 | 116 | AL_POT_CL2: AQS-PIP-005 span count; AQUA_BYPASS: AQS-PIP-005 span count; AQUA_LOOP1: AQS-PIP-005 span count |  |
+| OF-49 | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | DN15 x1437; DN20 x25; DN25 x23; DN50 x7 | 1492 | 44 | C29_RECYCLE: AQS-PIP-005 span count; C29_TO_PYRO: AQS-PIP-005 span count; CO2_TO_FARM: AQS-PIP-005 span count |  |
 ## 9. Valve datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -119,7 +119,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14726 | 14726 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
+| OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14710 | 14710 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
 | OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x100 | 100 | 11 | models/mfg/ABE/fasteners.csv; models/mfg/ACETOX/fasteners.csv; models/mfg/ACEX/fasteners.csv |  |
 | OF-16 | M8 x 30 lid bolt | ISO 3506 A4-70 | M8 x 30 lid bolt with nut and washers x48 | 48 | 4 | models/mfg/BLACK_ALK_HOLD/fasteners.csv; models/mfg/BLACK_DEWATER/fasteners.csv; models/mfg/BLACK_DIGEST/fasteners.csv |  |
 | OF-17 | M12 anchor | ISO 3506 A4-70 | M12 anchor x37 | 37 | 12 | models/mfg/ABE/fasteners.csv; models/mfg/ACETOX/fasteners.csv; models/mfg/ACEX/fasteners.csv |  |

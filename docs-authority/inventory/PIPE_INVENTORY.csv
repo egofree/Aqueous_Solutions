@@ -1,12 +1,12 @@
 sector,subsystem,unit,line,DN,cls,material,pipe_m,pieces,elbows_90,elbow_std,flanges,flange_std,gaskets,gasket_std,stud_bolts,stud_size,stud_std,joints,joint_type
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,S70,15,P1,PVC-U Sch 80 ASTM D1785,9.64,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
-CRYO,CRYO,CRYO_AHU,IA-HVAC-COND,15,P1,PVC-U Sch 80 ASTM D1785,22.86,6,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
-CRYO,CRYO,CRYO_AHU,S56,15,M1,316L ASTM A312,15.17,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
-CRYO,CRYO,CRYO_AHU,S68,15,P2,CPVC Sch 80 ASTM F441,13.14,5,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
-CRYO,CRYO,CRYO_AHU,S86,15,M1,316L ASTM A312,15.17,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
-CRYO,CRYO,CRYO_ASU,IA-ASU-CO2,15,M1,316L ASTM A312,23.22,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
-CRYO,CRYO,CRYO_ASU,IA-ASU-N2,15,M1,316L ASTM A312,11.22,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
-CRYO,CRYO,CRYO_ASU,IA-ASU-O2,15,M1,316L ASTM A312,12.22,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
+CRYO,CRYO,CRYO_AHU,IA-HVAC-COND,15,P1,PVC-U Sch 80 ASTM D1785,25.84,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
+CRYO,CRYO,CRYO_AHU,S56,15,M1,316L ASTM A312,12.17,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
+CRYO,CRYO,CRYO_AHU,S68,15,P2,CPVC Sch 80 ASTM F441,17.94,6,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+CRYO,CRYO,CRYO_AHU,S86,15,M1,316L ASTM A312,12.17,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
+CRYO,CRYO,CRYO_ASU,IA-ASU-CO2,15,M1,316L ASTM A312,18.72,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
+CRYO,CRYO,CRYO_ASU,IA-ASU-N2,15,M1,316L ASTM A312,5.22,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
+CRYO,CRYO,CRYO_ASU,IA-ASU-O2,15,M1,316L ASTM A312,9.72,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
 CRYO,CRYO,CRYO_CO2,S04,15,M1,316L ASTM A312,38.12,9,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,13,butt weld
 CRYO,CRYO,CRYO_CO2,S73,15,M1,316L ASTM A312,23.27,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 CRYO,CRYO,CRYO_CO2,S85,15,M1,316L ASTM A312,28.97,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
@@ -14,17 +14,17 @@ CRYO,CRYO,CRYO_DED_COOL,S55,15,P1,PVC-U Sch 80 ASTM D1785,2.38,2,1,ASTM D2467 so
 CRYO,CRYO,CRYO_H2,S45,15,M1,316L ASTM A312,17.97,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
 CRYO,CRYO,CRYO_H2,S49,15,M1,316L ASTM A312,10.77,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
 CRYO,CRYO,CRYO_H2,S74,15,M1,316L ASTM A312,25.27,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
-CRYO,CRYO,CRYO_N2,IA-AHU-FIX,50,P1,PVC-U Sch 80 ASTM D1785,5.72,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,8,solvent
-CRYO,CRYO,CRYO_N2,IA-N2-VENT,15,M1,316L ASTM A312,7.95,3,2,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,6,butt weld
-CRYO,CRYO,CRYO_N2,S03,15,M1,316L ASTM A312,20.87,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
-CRYO,CRYO,CRYO_N2,S84,15,M1,316L ASTM A312,17.07,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
-CRYO,CRYO,CRYO_N2,S88,15,M1,316L ASTM A312,26.12,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
-CRYO,CRYO,CRYO_O2,IA-O2-MAKE,50,P1,PVC-U Sch 80 ASTM D1785,27.22,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,11,solvent
-CRYO,CRYO,CRYO_O2,S02,15,M1,316L ASTM A312,17.47,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
-CRYO,CRYO,CRYO_O2,S50,15,M1,316L ASTM A312,20.37,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
-CRYO,CRYO,CRYO_O2,S83,15,M1,316L ASTM A312,27.17,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
+CRYO,CRYO,CRYO_N2,IA-AHU-FIX,50,P1,PVC-U Sch 80 ASTM D1785,14.72,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,solvent
+CRYO,CRYO,CRYO_N2,IA-N2-VENT,15,M1,316L ASTM A312,9.87,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
+CRYO,CRYO,CRYO_N2,S03,15,M1,316L ASTM A312,17.87,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
+CRYO,CRYO,CRYO_N2,S84,15,M1,316L ASTM A312,15.07,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
+CRYO,CRYO,CRYO_N2,S88,15,M1,316L ASTM A312,24.12,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
+CRYO,CRYO,CRYO_O2,IA-O2-MAKE,50,P1,PVC-U Sch 80 ASTM D1785,29.22,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,11,solvent
+CRYO,CRYO,CRYO_O2,S02,15,M1,316L ASTM A312,19.47,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
+CRYO,CRYO,CRYO_O2,S50,15,M1,316L ASTM A312,18.37,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
+CRYO,CRYO,CRYO_O2,S83,15,M1,316L ASTM A312,29.17,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 CRYO,pem_electrolyser,H2O_ELYZ,IA-ELY-H2,15,M1,316L ASTM A312,6.27,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
-CRYO,pem_electrolyser,H2O_ELYZ,IA-ELY-O2,15,M1,316L ASTM A312,13.47,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
+CRYO,pem_electrolyser,H2O_ELYZ,IA-ELY-O2,15,M1,316L ASTM A312,11.47,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
 CRYO,product,PROD_MEOH,IA-MEOH-SHIP,15,M1,316L ASTM A312,21.25,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 CRYO,product,PROD_O2,IA-O2-SHIP,15,M1,316L ASTM A312,23.3,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 CRYO,store,AIR_RECEIVER,IA-AIR-RX-OUT,15,P3,PVDF SDR 21 ISO 10931,28.24,6,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
@@ -71,7 +71,7 @@ DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-CLOSE-10,50,M1,316L ASTM A312,17.09,5,3,ASME B
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-CULLET,50,P2,CPVC Sch 80 ASTM F441,12.72,5,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,solvent
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-EW-04,15,P2,CPVC Sch 80 ASTM F441,9.15,4,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-HF-SRC,50,P3,PVDF SDR 21 ISO 10931,12.72,5,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,fusion
-DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-LEACH-ASU,50,P2,CPVC Sch 80 ASTM F441,14.07,5,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,solvent
+DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-LEACH-ASU,50,P2,CPVC Sch 80 ASTM F441,18.57,5,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,solvent
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-LEACH-BD,15,P2,CPVC Sch 80 ASTM F441,33.59,8,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,solvent
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-LEACH-FLUE,50,P2,CPVC Sch 80 ASTM F441,24.12,6,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,10,solvent
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-LEACH-H2,50,P1,PVC-U Sch 80 ASTM D1785,9.77,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,8,solvent
@@ -106,9 +106,9 @@ DIGESTER,hx,HX8,HL-HX8-Q3-B,15,M1,316L ASTM A312,29.72,8,3,ASME B16.9 LR 90 elbo
 DIGESTER,hx,HX8,HL-HX8-Q4-A,25,M1,316L ASTM A312,11.22,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
 DIGESTER,hx,HX8,HL-HX8-Q4-B,25,M1,316L ASTM A312,31.02,8,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,12,butt weld
 DIGESTER,recycle_pipe,CONTINUOUS_RECYCLE,IA-REC-01,15,P2,CPVC Sch 80 ASTM F441,8.59,4,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
-DOCK,DOCK,NORTH_DOCK,CA_HOPPER,15,P1,PVC-U Sch 80 ASTM D1785,23.19,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-DOCK,DOCK,NORTH_DOCK,FR_FINISH,15,P1,PVC-U Sch 80 ASTM D1785,23.49,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-DOCK,DOCK,NORTH_DOCK,IA-AIR-IN,50,P5,HDPE PE4710 DR 11 (ASTM D3035),22.77,6,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,5/8 in,ASTM A193 B7 stud + nuts,10,fusion
+DOCK,DOCK,NORTH_DOCK,CA_HOPPER,15,P1,PVC-U Sch 80 ASTM D1785,24.99,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+DOCK,DOCK,NORTH_DOCK,FR_FINISH,15,P1,PVC-U Sch 80 ASTM D1785,26.89,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
+DOCK,DOCK,NORTH_DOCK,IA-AIR-IN,50,P5,HDPE PE4710 DR 11 (ASTM D3035),18.27,5,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,fusion
 DOCK,DOCK,NORTH_DOCK,IA-CACL2-MU,15,—,—,41.74,9,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,13,-
 DOCK,DOCK,NORTH_DOCK,IA-H2O-MU,15,P2,CPVC Sch 80 ASTM F441,24.14,6,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 DOCK,DOCK,NORTH_DOCK,IA-H2SO4-MU,15,M2,CS ASTM A106 Gr B,24.17,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
@@ -129,7 +129,7 @@ FAB,FAB,WAFER_FAB,S39,50,P4,PP-H ISO 15494,33.02,8,3,ISO 15494 butt-fusion 90 el
 FAB,FAB,WAFER_FAB,S39B,15,M2,CS ASTM A106 Gr B,22.92,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 FAB,FAB,WET_BENCH,S10,15,P2,CPVC Sch 80 ASTM F441,33.14,8,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,solvent
 FAB,FAB,WET_BENCH,S38,15,P1,PVC-U Sch 80 ASTM D1785,23.09,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
-FAB,reagent,WS_AMMONIA,IA-NH3-MET,15,P1,PVC-U Sch 80 ASTM D1785,12.39,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FAB,reagent,WS_AMMONIA,IA-NH3-MET,15,P1,PVC-U Sch 80 ASTM D1785,13.09,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 FAB,reagent,WS_AMMONIA,S33,15,P1,PVC-U Sch 80 ASTM D1785,9.39,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 FAB,reagent,WS_DOPE,S36,15,—,—,8.59,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,-
 FAB,reagent,WS_HF_ED,S31,15,P3,PVDF SDR 21 ISO 10931,13.59,4,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,fusion
@@ -143,52 +143,52 @@ FAB,reagent,WS_SLURRY,S37,15,P4,PP-H ISO 15494,8.59,4,3,ISO 15494 butt-fusion 90
 FAB,reagent,WS_SOLV,IA-SOLV-WB,15,P1,PVC-U Sch 80 ASTM D1785,12.59,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 FAB,tank,FAB_UPW_TANK,S27,15,P1,PVC-U Sch 80 ASTM D1785,11.74,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 FARM,FARM,GROW_BED,FARM_O2_TO_HAB,15,P3,PVDF SDR 21 ISO 10931,14.51,4,2,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,7,fusion
-FARM,FARM,GROW_BED,IA-BED-VAP,15,M1,316L ASTM A312,24.0,6,2,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
-FARM,FARM,GROW_BED,NECTAR_FORAGE,15,P5,HDPE PE4710 DR 11 (ASTM D3035),20.49,6,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
-FARM,FARM,GROW_BED,RABBIT_FORAGE,15,P5,HDPE PE4710 DR 11 (ASTM D3035),18.99,6,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
+FARM,FARM,GROW_BED,IA-BED-VAP,15,M1,316L ASTM A312,20.92,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
+FARM,FARM,GROW_BED,NECTAR_FORAGE,15,P5,HDPE PE4710 DR 11 (ASTM D3035),17.89,6,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
+FARM,FARM,GROW_BED,RABBIT_FORAGE,15,P5,HDPE PE4710 DR 11 (ASTM D3035),16.39,6,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
 FARM,FARM,GROW_BED,S13,15,P5,HDPE PE4710 DR 11 (ASTM D3035),27.99,7,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,fusion
 FARM,FARM,GROW_BED,S15,15,P3,PVDF SDR 21 ISO 10931,14.51,4,2,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,7,fusion
-FARM,FARM,GROW_BED,S87,15,M1,316L ASTM A312,28.42,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
+FARM,FARM,GROW_BED,S87,15,M1,316L ASTM A312,30.42,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 FARM,FARM,GROW_BED,VERMI_FEED,15,P5,HDPE PE4710 DR 11 (ASTM D3035),22.49,6,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
 FARM,FARM_EXT,DUCKWEED,AQUA_RETURN2,15,P1,PVC-U Sch 80 ASTM D1785,40.99,9,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,13,solvent
 FARM,FARM_EXT,DUCKWEED,DUCK_FISH,15,P1,PVC-U Sch 80 ASTM D1785,40.99,9,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,13,solvent
 FARM,FARM_EXT,DUCKWEED,DUCK_FODDER,15,P1,PVC-U Sch 80 ASTM D1785,35.89,9,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,13,solvent
-FARM,FARM_EXT,DUCKWEED,DUCK_FORM,15,P1,PVC-U Sch 80 ASTM D1785,40.59,9,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,13,solvent
+FARM,FARM_EXT,DUCKWEED,DUCK_FORM,15,P1,PVC-U Sch 80 ASTM D1785,39.79,8,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,solvent
 FARM,FARM_EXT,DUCKWEED,DUCK_GREENS,15,P1,PVC-U Sch 80 ASTM D1785,42.24,10,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,14,solvent
 FARM,biofilter,BIOFILTER,AQUA_BYPASS,15,P1,PVC-U Sch 80 ASTM D1785,22.04,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 FARM,biofilter,BIOFILTER,AQUA_NUT,15,P1,PVC-U Sch 80 ASTM D1785,24.24,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-FARM,bsfl_bin,BSFL_BIN,BSFL_VAP,15,P1,PVC-U Sch 80 ASTM D1785,18.99,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
-FARM,bsfl_bin,BSFL_BIN,FRASS,15,P1,PVC-U Sch 80 ASTM D1785,21.74,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-FARM,bsfl_bin,BSFL_BIN,LARVAE_FRESH,15,P1,PVC-U Sch 80 ASTM D1785,7.16,3,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,6,solvent
-FARM,cage,QUAIL_CAGE,QUAIL_DROP,15,P1,PVC-U Sch 80 ASTM D1785,9.89,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
-FARM,cage,QUAIL_CAGE,QUAIL_EGGS,15,P1,PVC-U Sch 80 ASTM D1785,27.21,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-FARM,cage,QUAIL_CAGE,QUAIL_VAP,15,P1,PVC-U Sch 80 ASTM D1785,27.49,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
-FARM,coop,CHICKEN_COOP,CHICK_MANURE,15,P1,PVC-U Sch 80 ASTM D1785,9.74,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
-FARM,coop,CHICKEN_COOP,CHICK_VAP,15,P1,PVC-U Sch 80 ASTM D1785,23.09,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-FARM,coop,CHICKEN_COOP,EGG_HARVEST,15,P1,PVC-U Sch 80 ASTM D1785,22.81,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-FARM,feed_prep,FEED_PREP,DUCK_RATION,15,P1,PVC-U Sch 80 ASTM D1785,10.14,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
-FARM,feed_prep,FEED_PREP,DUCK_STORE,15,P1,PVC-U Sch 80 ASTM D1785,20.21,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
-FARM,feed_prep,FEED_PREP,FORM_PRESS,15,P1,PVC-U Sch 80 ASTM D1785,12.49,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
-FARM,feed_prep,FEED_PREP,FORM_REJECT,15,P1,PVC-U Sch 80 ASTM D1785,7.16,3,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,6,solvent
-FARM,feed_prep,FEED_PREP,FORM_VAP,15,P1,PVC-U Sch 80 ASTM D1785,20.49,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-FARM,feed_prep,FEED_PREP,LAYER_FEED,15,P1,PVC-U Sch 80 ASTM D1785,7.24,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
-FARM,feed_prep,FEED_PREP,QUAIL_RATION,15,P1,PVC-U Sch 80 ASTM D1785,11.84,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
+FARM,bsfl_bin,BSFL_BIN,BSFL_VAP,15,P1,PVC-U Sch 80 ASTM D1785,22.09,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+FARM,bsfl_bin,BSFL_BIN,FRASS,15,P1,PVC-U Sch 80 ASTM D1785,24.34,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
+FARM,bsfl_bin,BSFL_BIN,LARVAE_FRESH,15,P1,PVC-U Sch 80 ASTM D1785,10.54,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FARM,cage,QUAIL_CAGE,QUAIL_DROP,15,P1,PVC-U Sch 80 ASTM D1785,11.69,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FARM,cage,QUAIL_CAGE,QUAIL_EGGS,15,P1,PVC-U Sch 80 ASTM D1785,25.41,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+FARM,cage,QUAIL_CAGE,QUAIL_VAP,15,P1,PVC-U Sch 80 ASTM D1785,22.69,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+FARM,coop,CHICKEN_COOP,CHICK_MANURE,15,P1,PVC-U Sch 80 ASTM D1785,14.34,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FARM,coop,CHICKEN_COOP,CHICK_VAP,15,P1,PVC-U Sch 80 ASTM D1785,17.69,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
+FARM,coop,CHICKEN_COOP,EGG_HARVEST,15,P1,PVC-U Sch 80 ASTM D1785,20.41,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
+FARM,feed_prep,FEED_PREP,DUCK_RATION,15,P1,PVC-U Sch 80 ASTM D1785,10.94,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FARM,feed_prep,FEED_PREP,DUCK_STORE,15,P1,PVC-U Sch 80 ASTM D1785,19.41,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
+FARM,feed_prep,FEED_PREP,FORM_PRESS,15,P1,PVC-U Sch 80 ASTM D1785,11.69,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FARM,feed_prep,FEED_PREP,FORM_REJECT,15,P1,PVC-U Sch 80 ASTM D1785,10.54,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FARM,feed_prep,FEED_PREP,FORM_VAP,15,P1,PVC-U Sch 80 ASTM D1785,16.69,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+FARM,feed_prep,FEED_PREP,LAYER_FEED,15,P1,PVC-U Sch 80 ASTM D1785,8.44,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FARM,feed_prep,FEED_PREP,QUAIL_RATION,15,P1,PVC-U Sch 80 ASTM D1785,12.84,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
 FARM,fish_tank,AQUA_TANK,AQUA_LOOP1,15,P1,PVC-U Sch 80 ASTM D1785,20.79,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
 FARM,fish_tank,AQUA_TANK,FISH_HARVEST,15,P1,PVC-U Sch 80 ASTM D1785,16.21,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-FARM,fish_tank,AQUA_TANK,FISH_SLUDGE,15,P1,PVC-U Sch 80 ASTM D1785,7.74,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FARM,fish_tank,AQUA_TANK,FISH_SLUDGE,15,P1,PVC-U Sch 80 ASTM D1785,10.34,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 FARM,growbed,GROWBED_A,AQUA_LOOP3,15,P1,PVC-U Sch 80 ASTM D1785,9.56,3,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,6,solvent
 FARM,growbed,GROWBED_B,AQUA_LOOP4,15,P1,PVC-U Sch 80 ASTM D1785,33.94,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
-FARM,growbed,GROWBED_B,BED_ET,15,P1,PVC-U Sch 80 ASTM D1785,25.14,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
+FARM,growbed,GROWBED_B,BED_ET,15,P1,PVC-U Sch 80 ASTM D1785,22.14,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 FARM,growbed,GROWBED_B,BED_GREENS,15,P1,PVC-U Sch 80 ASTM D1785,24.86,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
-FARM,hive,BEE_HIVE,BEE_VAP,15,P1,PVC-U Sch 80 ASTM D1785,30.74,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
-FARM,hive,BEE_HIVE,HONEY,15,P1,PVC-U Sch 80 ASTM D1785,30.46,8,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,solvent
-FARM,hutch,RABBIT_HUTCH,RABBIT_MANURE,15,P1,PVC-U Sch 80 ASTM D1785,9.94,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
-FARM,hutch,RABBIT_HUTCH,RABBIT_MEAT,15,P1,PVC-U Sch 80 ASTM D1785,28.96,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
-FARM,hutch,RABBIT_HUTCH,RABBIT_VAP,15,P1,PVC-U Sch 80 ASTM D1785,29.24,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
+FARM,hive,BEE_HIVE,BEE_VAP,15,P1,PVC-U Sch 80 ASTM D1785,23.24,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+FARM,hive,BEE_HIVE,HONEY,15,P1,PVC-U Sch 80 ASTM D1785,25.96,8,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,solvent
+FARM,hutch,RABBIT_HUTCH,RABBIT_MANURE,15,P1,PVC-U Sch 80 ASTM D1785,11.64,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+FARM,hutch,RABBIT_HUTCH,RABBIT_MEAT,15,P1,PVC-U Sch 80 ASTM D1785,24.26,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+FARM,hutch,RABBIT_HUTCH,RABBIT_VAP,15,P1,PVC-U Sch 80 ASTM D1785,21.54,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 FARM,pen,DUCK_PEN,DUCK_EGGS,15,P1,PVC-U Sch 80 ASTM D1785,25.71,8,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,solvent
 FARM,pen,DUCK_PEN,DUCK_GREY,15,P1,PVC-U Sch 80 ASTM D1785,36.94,10,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,14,solvent
-FARM,pen,DUCK_PEN,DUCK_MANURE,15,P1,PVC-U Sch 80 ASTM D1785,12.64,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
-FARM,pen,DUCK_PEN,DUCK_VAP,15,P1,PVC-U Sch 80 ASTM D1785,25.99,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
+FARM,pen,DUCK_PEN,DUCK_MANURE,15,P1,PVC-U Sch 80 ASTM D1785,14.84,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
+FARM,pen,DUCK_PEN,DUCK_VAP,15,P1,PVC-U Sch 80 ASTM D1785,22.99,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 FARM,store,FOOD_STORE,FOOD_EXPORT,15,P1,PVC-U Sch 80 ASTM D1785,31.16,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
 FARM,store,FOOD_STORE,FOOD_GALLEY,15,P1,PVC-U Sch 80 ASTM D1785,22.26,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 FARM,store,FOOD_STORE,FOOD_HAB,15,P5,HDPE PE4710 DR 11 (ASTM D3035),19.36,6,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
@@ -222,7 +222,7 @@ GAS,GAS_SCRUB,ACID_POLISH_SCRUB,S66,15,P2,CPVC Sch 80 ASTM F441,14.69,5,3,ASTM F
 GAS,GAS_SCRUB,AFTERBURNER_FLUE,S67,15,F1,FRP vinyl ester,12.64,5,3,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,butt-and-strap
 GAS,GAS_SCRUB,ALK_SCRUBBER,S65,250,F1,FRP vinyl ester,1.25,3,2,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,EPDM full-face gasket,24,7/8 in,ASTM A193 B7 stud + nuts,6,butt-and-strap
 GAS,GAS_SCRUB,BAGHOUSE,IA-BAG-01,50,P2,CPVC Sch 80 ASTM F441,31.52,8,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,12,solvent
-GAS,GAS_SCRUB,H2_DRYER,IA-H2-AIR,15,M1,316L ASTM A312,21.02,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
+GAS,GAS_SCRUB,H2_DRYER,IA-H2-AIR,15,M1,316L ASTM A312,16.52,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
 GAS,GAS_SCRUB,H2_DRYER,IA-H2P-H2O,15,P5,HDPE PE4710 DR 11 (ASTM D3035),24.74,7,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,fusion
 GAS,GAS_SCRUB,H2_DRYER,S24,15,P3,PVDF SDR 21 ISO 10931,20.94,6,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
 GAS,GAS_SCRUB,H2_DRYER,S64,15,M1,316L ASTM A312,26.17,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
@@ -232,10 +232,10 @@ GAS,GAS_SCRUB,HDR_O2,IA-FC-AIR,15,M1,316L ASTM A312,27.42,7,3,ASME B16.9 LR 90 e
 GAS,GAS_SCRUB,HDR_O2,IA-GEN-O2,15,M1,316L ASTM A312,33.37,8,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,12,butt weld
 GAS,GAS_SCRUB,HDR_O2,IA-H2O2-SRC,50,P3,PVDF SDR 21 ISO 10931,23.17,6,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,5/8 in,ASTM A193 B7 stud + nuts,10,fusion
 GAS,GAS_SCRUB,HDR_O2,IA-O2-PROD,15,M1,316L ASTM A312,36.2,8,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,12,butt weld
-GAS,scrubber,NOX_SCRUB,IA-NOX-CO2,50,P2,CPVC Sch 80 ASTM F441,24.87,7,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,11,solvent
+GAS,scrubber,NOX_SCRUB,IA-NOX-CO2,50,P2,CPVC Sch 80 ASTM F441,29.37,7,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,11,solvent
 GAS,scrubber,NOX_SCRUB,IA-NOX-H2O,50,P2,CPVC Sch 80 ASTM F441,32.32,8,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,12,solvent
 GAS,scrubber,NOX_SCRUB,IA-NOX-N,50,P2,CPVC Sch 80 ASTM F441,32.27,8,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,12,solvent
-GAS,scrubber,NOX_SCRUB,IA-NOX-N2,50,P2,CPVC Sch 80 ASTM F441,24.87,7,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,11,solvent
+GAS,scrubber,NOX_SCRUB,IA-NOX-N2,50,P2,CPVC Sch 80 ASTM F441,29.37,7,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,11,solvent
 GAS,separator,FLUE_KO,IA-FLUE-EXH,20,F1,FRP vinyl ester,30.42,8,3,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,butt-and-strap
 GAS,separator,FLUE_KO,S67B,15,M1,316L ASTM A312,31.67,8,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,12,butt weld
 GEO,ghex,GEO_GHEX,S43,15,P5,HDPE PE4710 DR 11 (ASTM D3035),6.94,4,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,fusion
@@ -247,7 +247,7 @@ HAB,HAB,HABITATION,HAB_BLACK,15,P1,PVC-U Sch 80 ASTM D1785,15.99,5,3,ASTM D2467 
 HAB,HAB,HABITATION,HAB_CO2_TO_HDR,15,P3,PVDF SDR 21 ISO 10931,13.74,5,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,fusion
 HAB,HAB,HABITATION,HAB_GREY,15,P1,PVC-U Sch 80 ASTM D1785,16.39,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
 HAB,HAB,HABITATION,IA-BLK-01,15,P1,PVC-U Sch 80 ASTM D1785,15.99,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
-HAB,HAB,HABITATION,IA-HAB-VAP,15,M1,316L ASTM A312,16.65,5,2,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
+HAB,HAB,HABITATION,IA-HAB-VAP,15,M1,316L ASTM A312,27.57,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 HAB,HAB,HABITATION,IA-URINE,15,P1,PVC-U Sch 80 ASTM D1785,15.99,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
 HAB,HAB,HABITATION,S12,50,P1,PVC-U Sch 80 ASTM D1785,16.27,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,solvent
 HAB,HAB,HABITATION,S78,50,P1,PVC-U Sch 80 ASTM D1785,24.97,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,10,solvent
@@ -256,11 +256,11 @@ HAB,HAB,HDR_CO2,CO2_TO_FARM,15,M1,316L ASTM A312,24.92,7,3,ASME B16.9 LR 90 elbo
 HAB,HAB,HDR_CO2,IA-HCO2-MEOH,15,M1,316L ASTM A312,19.07,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 HAB,HAB,HDR_CO2,S89,15,M1,316L ASTM A312,24.92,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 HAB,HAB,HDR_N2,IA-AB-AIR,15,M1,316L ASTM A312,44.47,10,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,14,butt weld
-HAB,HAB,HDR_N2,IA-AHU-AIR,15,M1,316L ASTM A312,25.97,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
+HAB,HAB,HDR_N2,IA-AHU-AIR,15,M1,316L ASTM A312,28.97,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 HAB,HAB,HDR_N2,IA-GEN-AIR,15,P1,PVC-U Sch 80 ASTM D1785,25.24,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
 HAB,HAB,HDR_N2,IA-NH3-SRC,50,P1,PVC-U Sch 80 ASTM D1785,29.87,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,11,solvent
-HAB,galley,GALLEY,EGGSHELL_RET,15,P1,PVC-U Sch 80 ASTM D1785,28.39,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
-HAB,galley,GALLEY,GALLEY_BIO,15,P1,PVC-U Sch 80 ASTM D1785,26.89,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+HAB,galley,GALLEY,EGGSHELL_RET,15,P1,PVC-U Sch 80 ASTM D1785,27.59,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
+HAB,galley,GALLEY,GALLEY_BIO,15,P1,PVC-U Sch 80 ASTM D1785,29.49,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
 HAB,galley,GALLEY,GALLEY_MEALS,15,P5,HDPE PE4710 DR 11 (ASTM D3035),18.04,6,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
 HAB,galley,GALLEY,GAL_GREY,15,P1,PVC-U Sch 80 ASTM D1785,7.01,3,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,6,solvent
 HAB,washroom,WASHROOM,WASH_GREY,15,P1,PVC-U Sch 80 ASTM D1785,10.09,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
@@ -293,13 +293,13 @@ HEAT,heat_battery,Q4_A,HL-Q4-A-BUS,15,M1,316L ASTM A312,23.42,6,3,ASME B16.9 LR 
 HEAT,heat_battery,Q4_A,HL-Q4-X,15,M1,316L ASTM A312,20.17,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 HEAT,heat_battery,Q4_B,HL-Q4-B-BUS,15,M1,316L ASTM A312,21.42,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 HEAT,heat_battery,Q4_B,HL-Q4-X-BA,15,M1,316L ASTM A312,20.17,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
-MEOH,chemical_synthesis,MET_SYN,DL_MET_TO_FEED,15,P1,PVC-U Sch 80 ASTM D1785,17.29,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
+MEOH,chemical_synthesis,MET_SYN,DL_MET_TO_FEED,15,P1,PVC-U Sch 80 ASTM D1785,15.59,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 MEOH,ferment,MEOH_FERM,S77,15,M1,316L ASTM A312,8.42,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
 MEOH,iem_fc,MEOH_FC,IA-FC-EXH,15,F1,FRP vinyl ester,11.08,4,3,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,butt-and-strap
 MEOH,iem_fc,MEOH_FC,S81,15,M1,316L ASTM A312,6.97,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
 MEOH,iem_fc,MEOH_FC,S82,15,M1,316L ASTM A312,29.22,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 MEOH,reactor,MEOH_SYNTH,IA-ESS-MEOH-CHG,15,M1,316L ASTM A312,7.1,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
-MEOH,reactor,MEOH_SYNTH,IA-MEOH-CH3SH,15,M1,316L ASTM A312,24.47,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
+MEOH,reactor,MEOH_SYNTH,IA-MEOH-CH3SH,15,M1,316L ASTM A312,23.77,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 MEOH,reactor,MEOH_SYNTH,IA-MEOH-H2O,15,P5,HDPE PE4710 DR 11 (ASTM D3035),8.49,4,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,fusion
 MEOH,reactor,MEOH_SYNTH,MEOH_TO_OLEFIN,15,M1,316L ASTM A312,38.07,8,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,12,butt weld
 MEOH,reactor,MEOH_SYNTH,S75,15,M1,316L ASTM A312,7.1,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
@@ -350,13 +350,13 @@ POLYMERS,POLY_MON,HF_GEN,IA-HF-PROD,15,P3,PVDF SDR 21 ISO 10931,31.09,8,3,ISO 10
 POLYMERS,POLY_MON,POLY_F,POLYF_RECLAIM,15,—,—,30.54,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,-
 POLYMERS,POLY_MON,POLY_F,POLYF_TO_FILM,15,—,—,9.24,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,-
 POLYMERS,POLY_MON,POLY_STOCK,FLUORO_TO_MFG,15,—,—,45.54,10,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,14,-
-POLYMERS,POLY_MON,POLY_STOCK,STOCK_TO_FIBER,15,—,—,40.09,9,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,13,-
+POLYMERS,POLY_MON,POLY_STOCK,STOCK_TO_FIBER,15,—,—,43.49,10,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,14,-
 POLYMERS,POLY_MON,TFE_SYN,TFE_HCL_TO_CRU,15,—,—,31.99,8,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,-
 POLYMERS,POLY_MON,TFE_SYN,TFE_TO_POLY_F,15,—,—,8.64,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,-
 POLYMERS,POLY_MON,VDF_SYN,VDF_HCL_TO_CRU,15,—,—,34.09,8,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,-
 POLYMERS,POLY_MON,VDF_SYN,VDF_TO_POLY_F,15,—,—,6.56,3,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,6,-
-POLYMERS,melt_spin,POLY_FIBER,FIBER_SCRAP,15,P2,CPVC Sch 80 ASTM F441,25.09,7,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
-POLYMERS,melt_spin,POLY_FIBER,FLEECE_TO_MFG,15,P1,PVC-U Sch 80 ASTM D1785,7.49,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
+POLYMERS,melt_spin,POLY_FIBER,FIBER_SCRAP,15,P2,CPVC Sch 80 ASTM F441,28.49,7,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
+POLYMERS,melt_spin,POLY_FIBER,FLEECE_TO_MFG,15,P1,PVC-U Sch 80 ASTM D1785,10.89,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 WTR,BMED_CRU,BMED_UPW_POLISH,IA-UPW-FAB,15,P5,HDPE PE4710 DR 11 (ASTM D3035),18.09,5,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,fusion
 WTR,BMED_CRU,BMED_UPW_POLISH,IA-UPW-REJ,15,P2,CPVC Sch 80 ASTM F441,30.69,7,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
 WTR,BMED_CRU,BMED_UPW_POLISH,IA-UPW-REMIN,15,P1,PVC-U Sch 80 ASTM D1785,37.19,8,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,solvent
@@ -368,7 +368,7 @@ WTR,LIFE_RACK,HDR_UPW,IA-UPW-USE,50,P5,HDPE PE4710 DR 11 (ASTM D3035),28.52,7,3,
 WTR,LIFE_RACK,HDR_UPW,UPW_TO_FAB,15,P5,HDPE PE4710 DR 11 (ASTM D3035),28.94,7,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,fusion
 WTR,ROOF,ROOF_TANK,IA-AQUA-TOPUP,15,P1,PVC-U Sch 80 ASTM D1785,16.99,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 WTR,ROOF,ROOF_TANK,IA-BED-H2O,15,P1,PVC-U Sch 80 ASTM D1785,12.61,4,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,7,solvent
-WTR,ROOF,ROOF_TANK,IA-CHICK-H2O,15,P1,PVC-U Sch 80 ASTM D1785,23.59,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+WTR,ROOF,ROOF_TANK,IA-CHICK-H2O,15,P1,PVC-U Sch 80 ASTM D1785,21.19,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 WTR,ROOF,ROOF_TANK,IA-DC-SPRAY,15,P1,PVC-U Sch 80 ASTM D1785,13.14,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 WTR,ROOF,ROOF_TANK,IA-DUCK-H2O,15,P1,PVC-U Sch 80 ASTM D1785,26.49,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
 WTR,ROOF,ROOF_TANK,IA-ELY-H2O,15,P1,PVC-U Sch 80 ASTM D1785,38.64,9,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,13,solvent
@@ -377,14 +377,14 @@ WTR,ROOF,ROOF_TANK,IA-FLUE-QUENCH,15,P5,HDPE PE4710 DR 11 (ASTM D3035),28.84,8,3
 WTR,ROOF,ROOF_TANK,IA-NOX-HAB,15,P1,PVC-U Sch 80 ASTM D1785,13.26,4,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,7,solvent
 WTR,ROOF,ROOF_TANK,IA-PEROX-H2O,15,P3,PVDF SDR 21 ISO 10931,18.29,6,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
 WTR,ROOF,ROOF_TANK,IA-WASH-FEED,15,P1,PVC-U Sch 80 ASTM D1785,28.64,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
-WTR,ROOF,ROOF_TANK,QUAIL_H2O,15,P1,PVC-U Sch 80 ASTM D1785,27.99,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
+WTR,ROOF,ROOF_TANK,QUAIL_H2O,15,P1,PVC-U Sch 80 ASTM D1785,26.19,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
 WTR,ROOF,ROOF_TANK,S21,15,P1,PVC-U Sch 80 ASTM D1785,13.26,4,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,7,solvent
 WTR,ROOF,ROOF_TANK,S22,15,P1,PVC-U Sch 80 ASTM D1785,29.36,6,2,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
 WTR,digest,BLACK_DIGEST,DIGEST_TO_POLY,15,P1,PVC-U Sch 80 ASTM D1785,41.09,9,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,13,solvent
 WTR,digest,BLACK_DIGEST,IA-BLK-GAS,15,P3,PVDF SDR 21 ISO 10931,33.44,8,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,fusion
 WTR,digest,BLACK_DIGEST,IA-BLK-GREY,15,P1,PVC-U Sch 80 ASTM D1785,5.14,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 WTR,digest,BLACK_DIGEST,IA-BLK-NUT,15,P1,PVC-U Sch 80 ASTM D1785,27.34,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,solvent
-WTR,digest,BLACK_DIGEST,IA-H2S-CH3SH,15,P1,PVC-U Sch 80 ASTM D1785,25.89,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
+WTR,digest,BLACK_DIGEST,IA-H2S-CH3SH,15,P1,PVC-U Sch 80 ASTM D1785,25.19,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 WTR,digest,BLACK_DIGEST,S30,50,P1,PVC-U Sch 80 ASTM D1785,27.22,7,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,11,solvent
 WTR,dose,REMIN,IA-POT-01,15,P1,PVC-U Sch 80 ASTM D1785,21.14,6,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,solvent
 WTR,dose,REMIN,S26,15,P1,PVC-U Sch 80 ASTM D1785,11.04,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent

@@ -1,2 +1,4 @@
-{"unit": "AFTERBURNER", "X": [-500, 3000], "Y": [13410, 13660], "clips": {"s": 13410}}
-{"unit": "OIL_PYRO", "X": [4450, 6760], "Y": [14210, 14190], "clips": {"n": 14190, "s": 14210}}
+{"unit": "AFTERBURNER", "inverted": true, "X": [-500, 3000], "Y": [13410, 13660], "clips": {"s": 13410}}
+{"unit": "AFTERBURNER_FLUE", "cut_walls": ["s"], "member_bounds": [500, -4500, 0, 2000, -3500, 3000]}
+{"unit": "H2O_ELYZ", "cut_walls": ["e"], "member_bounds": [6900, 13850, -6000, 7950, 17218, -3800]}
+{"unit": "OIL_PYRO", "inverted": true, "X": [4450, 6760], "Y": [14210, 14190], "clips": {"n": 14190, "s": 14210}}
