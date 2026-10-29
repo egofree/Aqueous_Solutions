@@ -20,94 +20,95 @@ This page states the available fault current of the plant, the protective device
 
 ## 2. Available fault current
 
-Every alternating-current source of the plant is a hybrid inverter `SOL_ARK_60K`. The graph carries 35 inverters with a total rating of 2,100 kW (60 kW each). At 480 V the rated current is 2,526 A. An inverter limits its fault current; the study takes twice the rated current, 5,052 A, as in AQS-ELEC-002.
+Every alternating-current source of the plant is a hybrid inverter `SOL_ARK_60K`. The graph carries 42 inverters with a total rating of 2,520 kW (60 kW each). At 480 V the rated current is 3,031 A. An inverter limits its fault current; the study takes twice the rated current, 6,062 A, as in AQS-ELEC-002.
 The export connection to the utility adds the fault current of the utility, which is not known until the interconnection study is made (A-M-110). This study must be repeated with it. The inverters are listed to UL 1741 SB and ride through voltage and frequency disturbances as IEEE 1547-2018 Category III requires.
 
 ## 3. Feeder devices
 
-A thermal-magnetic breaker clears a fault instantly only if its magnetic pickup is below the available fault current. With low instantaneous trip units set at 5 times the rating, a feeder qualifies when 5 times its rating is at most 80 % of the available fault current, which is 4,041 A at 480 V. Larger feeders use electronic trip units with a short-time pickup at 1.5 times the rating and a delay of 0.1 s. Table 3.1 gives the device for each feeder of the one-line diagram.
+A thermal-magnetic breaker clears a fault instantly only if its magnetic pickup is below the available fault current. With low instantaneous trip units set at 5 times the rating, a feeder qualifies when 5 times its rating is at most 80 % of the available fault current, which is 4,850 A at 480 V. Larger feeders use electronic trip units with a short-time pickup at 1.5 times the rating and a delay of 0.1 s. Table 3.1 gives the device for each feeder of the one-line diagram.
 
 Table 3.1. Feeder devices
 
 | Bus | Load | Breaker (A) | Fault current (A) | Device | Pickup |
 | --- | --- | --- | --- | --- | --- |
-| MCC-1 480 V | HABITATION | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
+| MCC-1 480 V | HABITATION | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | PP-1 208/120 V | VCD_TRAIN | 15 | 833 | thermal-magnetic, instantaneous 5× | 75 A |
 | PP-1 208/120 V | AFTERBURNER | 15 | 833 | thermal-magnetic, instantaneous 5× | 75 A |
 | PP-1 208/120 V | WS_PEROX | 15 | 833 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | EXT_HALL | 125 | 5,052 | thermal-magnetic, instantaneous 5× | 625 A |
-| SOL_ARK 480 V | RECT-EW (EW_1–EW_9) | 70 | 5,052 | thermal-magnetic, instantaneous 5× | 350 A |
-| SOL_ARK 480 V | H2O_ELYZ | 40 | 5,052 | thermal-magnetic, instantaneous 5× | 200 A |
-| SOL_ARK 480 V | RECTIFIER | 25 | 5,052 | thermal-magnetic, instantaneous 5× | 125 A |
-| SOL_ARK 480 V | ZNBR2 | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | AL_POT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | BMED_ACID | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | MFG_SHOP | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | MET_SCRUB | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | GROW_BED | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | OIL_PYRO | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | CRYO_ASU | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | EVAP_ACID | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | EVAP_BASE | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | ALK_SCRUBBER | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | ACID_POLISH_SCRUB | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | CRYO_H2 | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | IND_MELT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | LEACH_CSTR_1 | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | MEOH_SYNTH | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | GEO_HP | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | CRYO_AHU | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | VDF_SYN | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | TI_CELL | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | WAX_PATTERN | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | WAFER_FAB | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | SHELL_BREAK | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | TFE_SYN | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | SOLAR_PV_CELL | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | BLOW_MOLD | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | MG_POT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | HF_GEN | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | SHELL_BUILD | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | SHELL_BURNOUT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | MET_MELT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | WET_BENCH | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | CR_CELL | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | INV_CAST | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | GEO_HP_CLOSED_LOOP | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | CA_POT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | MO_CELL | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | FILM_CAST | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | BLACK_DIGEST | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | FLUX_PREP | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | GLASS_DIGEST | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | ELECTRODE_COAT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | GAS_ATOMIZER | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | COMB_HEAT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | REMIN | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | POLY_F | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | NOX_SCRUB | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | LITHO_COAT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | NUTRIENT_DOSE | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | EVAP_ACID_VS | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | MEOH_FERM | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | H2_DRYER | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | COLD_MILL | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | WIRE_DRAW | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | BMED_UPW_POLISH | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | POWDER_RESIN | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | LITHO_DEV | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | LITHO_ALIGN | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | LITHO_STUB | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | VAC_IND | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | RF_HEAT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | VAC_CAST | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | RES_HEAT | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | SINTER | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | FORGE | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | EXTRUDE | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | DRAW | 15 | 5,052 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | EXT_HALL | 150 | 6,062 | thermal-magnetic, instantaneous 5× | 750 A |
+| SOL_ARK 480 V | RECT-EW (EW_1–EW_9) | 70 | 6,062 | thermal-magnetic, instantaneous 5× | 350 A |
+| SOL_ARK 480 V | RECT-TRIM (trim heaters) | 40 | 6,062 | thermal-magnetic, instantaneous 5× | 200 A |
+| SOL_ARK 480 V | H2O_ELYZ | 40 | 6,062 | thermal-magnetic, instantaneous 5× | 200 A |
+| SOL_ARK 480 V | RECTIFIER | 25 | 6,062 | thermal-magnetic, instantaneous 5× | 125 A |
+| SOL_ARK 480 V | ZNBR2 | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | AL_POT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | BMED_ACID | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | MFG_SHOP | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | MET_SCRUB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | GROW_BED | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | OIL_PYRO | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | CRYO_ASU | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | EVAP_ACID | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | EVAP_BASE | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | ALK_SCRUBBER | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | ACID_POLISH_SCRUB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | CRYO_H2 | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | IND_MELT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | LEACH_CSTR_1 | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | MEOH_SYNTH | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | GEO_HP | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | CRYO_AHU | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | VDF_SYN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | TI_CELL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | WAX_PATTERN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | WAFER_FAB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | SHELL_BREAK | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | TFE_SYN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | SOLAR_PV_CELL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | BLOW_MOLD | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | MG_POT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | HF_GEN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | SHELL_BUILD | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | SHELL_BURNOUT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | MET_MELT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | WET_BENCH | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | CR_CELL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | INV_CAST | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | GEO_HP_CLOSED_LOOP | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | CA_POT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | MO_CELL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | FILM_CAST | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | BLACK_DIGEST | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | FLUX_PREP | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | GLASS_DIGEST | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | ELECTRODE_COAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | GAS_ATOMIZER | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | COMB_HEAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | REMIN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | POLY_F | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | NOX_SCRUB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | LITHO_COAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | NUTRIENT_DOSE | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | EVAP_ACID_VS | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | MEOH_FERM | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | H2_DRYER | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | COLD_MILL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | WIRE_DRAW | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | BMED_UPW_POLISH | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | POWDER_RESIN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | LITHO_DEV | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | LITHO_ALIGN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | LITHO_STUB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | VAC_IND | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | RF_HEAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | VAC_CAST | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | RES_HEAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | SINTER | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | FORGE | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | EXTRUDE | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | DRAW | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 
-The plant is collected in 4 sections, each with its main breaker (1000 A, 1000 A, 1000 A, 800 A), fed by step-up transformers to 12.47 kV (AQS-ELEC-008). The section mains have electronic trip units with a short-time delay of 0.3 s and an interrupting rating of 65 kA, so they are selective over the feeders, which trip within 0.1 s. Transformer T-1 is protected as NFPA 70 450.3(B) requires; its 5 % impedance limits the fault current on the 208 V buses.
+The plant is collected in 4 sections, each with its main breaker (1000 A, 1000 A, 1000 A, 1000 A), fed by step-up transformers to 12.47 kV (AQS-ELEC-008). The section mains have electronic trip units with a short-time delay of 0.3 s and an interrupting rating of 65 kA, so they are selective over the feeders, which trip within 0.1 s. Transformer T-1 is protected as NFPA 70 450.3(B) requires; its 5 % impedance limits the fault current on the 208 V buses.
 
 ## 4. Direct-current circuits
 
@@ -115,15 +116,15 @@ The electrowinning rectifier `RECTIFIER` limits its current to 1.05 times the ra
 
 ## 5. Earth fault, touch and step voltages
 
-The inverters bound the earth-fault current at 5,052 A; the contribution of the utility is not yet known (A-M-110). The ground grid of `docs-authority/_grounding_study.py` covers 25,392 m² with a perimeter conductor of 644 m, 3,772 m of mesh conductors at a spacing of 12 m, 2/0 AWG at a depth of 0.75 m, and 65 rods of 3 m. Its resistance is 0.150 Ω, so the ground potential rise is 758 V.
-Because the ground potential rise exceeds the tolerable touch voltage, the mesh and step voltages of IEEE 80-2013 (equations 85 to 94) govern. They are 123 V and 51 V. Table 5.1 compares them with the tolerable voltages for a 50 kg person and a clearing time of 0.5 s (IEEE 80-2013 equations 29 and 32).
+The inverters bound the earth-fault current at 6,062 A; the contribution of the utility is not yet known (A-M-110). The ground grid of `docs-authority/_grounding_study.py` covers 29,988 m² with a perimeter conductor of 728 m, 4,410 m of mesh conductors at a spacing of 12 m, 2/0 AWG at a depth of 0.75 m, and 73 rods of 3 m. Its resistance is 0.137 Ω, so the ground potential rise is 831 V.
+Because the ground potential rise exceeds the tolerable touch voltage, the mesh and step voltages of IEEE 80-2013 (equations 85 to 94) govern. They are 132 V and 55 V. Table 5.1 compares them with the tolerable voltages for a 50 kg person and a clearing time of 0.5 s (IEEE 80-2013 equations 29 and 32).
 
 Table 5.1. Touch and step voltages
 
 | Surface | Tolerable touch (V) | Tolerable step (V) | Mesh voltage (V) | Step voltage (V) | Result |
 | --- | --- | --- | --- | --- | --- |
-| bare soil | 176 | 213 | 123 | 51 | safe |
-| crushed rock 0.1 m, 3000 ohm m | 677 | 2,216 | 123 | 51 | safe |
+| bare soil | 176 | 213 | 132 | 55 | safe |
+| crushed rock 0.1 m, 3000 ohm m | 677 | 2,216 | 132 | 55 | safe |
 
 A crushed rock layer 0.1 m deep with a resistivity of at least 3000 Ω·m is kept on the outdoor yard around the flow battery and the methanol train, as a margin against the unknown utility contribution. Indoors, the slab reinforcement is bonded to the grid as an equipotential mat (AQS-ELEC-005).
 

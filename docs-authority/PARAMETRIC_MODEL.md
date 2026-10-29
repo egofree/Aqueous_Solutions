@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2492.000 | 2492.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 2999.000 | 2999.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -1893,3 +1893,4 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | A-M-412 | 180 x 60 x 12 m pontoon; lightweight 6500 t at KG 5.5 m; 5 m m; t; m | Hull general arrangement and structural design (X-LOC-11) |
 | A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) |
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35  m; m; - | Class stability and freeboard review (Q-030) |
+| A-M-415 | Rectifier trim heaters (every present kW edge out of RECTIFI kW | python3 docs-authority/_power_sizing.py: bounding P_kW equals the node and feed sum plus rect_ac_input_kW plus the rectifier_trims sum plus the converged EXT_HALL load; SOL_ARK_60K.params.redundancy.bus_demand_kW equals mvs.electrical.need_kw |

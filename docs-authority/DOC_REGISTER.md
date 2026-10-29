@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | P | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | Q | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -139,12 +139,12 @@ Table 3.1. Document numbers in use
 | AQS-EGR-002 | `docs-authority/HALL_EGRESS.md` | A | 2026-10-15 | Extension hall egress | current |
 | AQS-ELC-001 | `docs-authority/ELECTRICAL.md` | D | 2026-10-24 | Electrical analysis | current |
 | AQS-ELEC-001 | `docs-authority/ELECTRONICS.md` | C | 2026-10-11 | Electronics bay | current |
-| AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | E | 2026-10-24 | Single-line diagram | current |
-| AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | F | 2026-10-29 | Load list | current |
+| AQS-ELEC-002 | `docs-authority/ONE_LINE.md` | F | 2026-10-29 | Single-line diagram | current |
+| AQS-ELEC-003 | `docs-authority/LOAD_LIST.md` | G | 2026-10-29 | Load list | current |
 | AQS-ELEC-004 | `docs-authority/RECT_EW.md` | C | 2026-10-25 | Electrowinning rectifier sizing (RECT-EW) | current |
 | AQS-ELEC-005 | `docs-authority/GROUNDING.md` | B | 2026-10-25 | Grounding and bonding | current |
 | AQS-ELEC-006 | `docs-authority/PROTECTION.md` | E | 2026-10-29 | Protection and coordination | current |
-| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | I | 2026-10-29 | Storage and generation sizing | current |
+| AQS-ELEC-007 | `docs-authority/POWER_SIZING.md` | J | 2026-10-29 | Storage and generation sizing | current |
 | AQS-ELEC-008 | `docs-authority/COLLECTION_BUS.md` | B | 2026-10-24 | Collection bus sections | current |
 | AQS-ELEC-009 | `docs-authority/HAZ_AREA.md` | B | 2026-10-25 | Hazardous area classification | current |
 | AQS-ELEC-010 | `docs-authority/CABLE_SCHEDULE.md` | A | 2026-10-15 | Cable and busbar schedule | current |
@@ -531,6 +531,7 @@ Table 5.1. Parts of numbered documents
 | AQS-INV-005 | sheet MF-25 | `docs-authority/inventory/motor_families/MF-25.md` |
 | AQS-INV-005 | sheet MF-26 | `docs-authority/inventory/motor_families/MF-26.md` |
 | AQS-INV-005 | sheet MF-27 | `docs-authority/inventory/motor_families/MF-27.md` |
+| AQS-INV-005 | sheet MF-28 | `docs-authority/inventory/motor_families/MF-28.md` |
 | AQS-PLAN-007 | note (no new AQS number; working record) | `docs-authority/notes/2026-10-19-closure-lane.md` |
 | AQS-PLAN-007 | note (no new AQS number; this is a working record) | `docs-authority/notes/2026-10-19-evidence-pass.md` |
 | AQS-PLAN-007 | note (working record; no new AQS number) | `docs-authority/notes/2026-10-20-duties-nozzles.md` |

@@ -43,11 +43,11 @@ Table 2.1. Item families
 | OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 868 | 24 V DC x868 | 94 |
 | OF-04 | electronics | PLC analog input point | IEC 61131-2 | 754 | 4-20 mA HART x754 | 1 |
 | OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 191 | 24/48 V DC x191 | 67 |
-| OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 160 | 0.37 kW x104; 0.18 kW x20; 1.1 kW x18; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 0.75 kW x1 | 38 |
+| OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 144 | 0.37 kW x104; 0.18 kW x20; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1 | 37 |
 | OF-07 | electronics | PLC I/O module, 16 channel | IEC 61131-2 | 102 | 24 V DC x102 | 1 |
-| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 18 | 2.2 kW x6; 1.1 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 15 |
+| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 34 | 1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 16 |
 | OF-09 | electronics | solenoid driver channel | IEC 61131-2 DO | 36 | 24 V DC x36 | 18 |
-| OF-10 | electronics | compressor contactor + overload | IEC 60947-4-1 | 10 | 15 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 3 |
+| OF-10 | electronics | compressor contactor + overload | IEC 60947-4-1 | 10 | 18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 3 |
 | OF-11 | electronics | stepper driver | IEC 61800-5-1 | 3 | 24/48 V DC x3 | 1 |
 | OF-12 | electronics | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | 2 | - x2 | 1 |
 | OF-13 | fabricated part | fabricated part set | models/mfg/<unit>/bom.csv | 62 | 6 BOM lines x13; 7 BOM lines x11; 1 BOM lines x10; 9 BOM lines x6; 8 BOM lines x6; 17 BOM lines x3; 16 BOM lines x3; 5 B | 62 |
@@ -83,7 +83,7 @@ Table 2.1. Item families
 | OF-43 | instrument | gas detector, O2 enrichment | alarm 23.5 vol %, trip 25 vol %, breathing height | 12 | electrochemical O2 x12 | 5 |
 | OF-44 | instrument | gas detector, CO | alarm 25 ppm, trip 50 ppm, breathing height | 14 | electrochemical CO x14 | 7 |
 | OF-45 | instrument | gas detector, NOx | alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height | 6 | electrochemical NO2 x6 | 3 |
-| OF-46 | protection | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 204 | 15 A x192; 70 A x8; 30 A x3; 60 A x1 | 49 |
+| OF-46 | protection | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 204 | 15 A x192; 90 A x8; 30 A x3; 60 A x1 | 49 |
 | OF-47 | seal | mechanical seal, single | SiC/SiC faces, FKM | 124 | EN 12756 x124 | 25 |
 | OF-48 | support | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | 2939 | DN15 x2386; DN50 x516; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 78 |
 | OF-49 | support | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | 1158 | DN15 x1103; DN20 x25; DN25 x23; DN50 x7 | 39 |
@@ -923,12 +923,12 @@ Table 2.1. Item families
 | EXT_HALL_N | EXT_HALL | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 16 | AHU supply fan: run and fault (assumed) |
 | EXT_HALL_N | EXT_HALL | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 16 | air-source heat pump compressor: run and fault (assumed) |
 | EXT_HALL_N | EXT_HALL | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 32 | heat pump condenser fan: run and fault (assumed) |
-| EXT_HALL_N | EXT_HALL | electronics | compressor contactor + overload | 15 kW hermetic | IEC 60947-4-1 | 8 | air-source heat pump compressor |
-| EXT_HALL_N | EXT_HALL | electronics | motor starter (contactor + overload) | 1.1 kW | IEC 60947-4-1 | 8 | AHU exhaust fan (assumed VFD at >= 0.75 kW) |
-| EXT_HALL_N | EXT_HALL | electronics | motor starter (contactor + overload) | 1.1 kW | IEC 60947-4-1 | 8 | AHU supply fan (assumed VFD at >= 0.75 kW) |
+| EXT_HALL_N | EXT_HALL | electronics | compressor contactor + overload | 18.5 kW hermetic | IEC 60947-4-1 | 8 | air-source heat pump compressor |
+| EXT_HALL_N | EXT_HALL | electronics | variable-frequency drive | 1.1 kW | IEC 61800-5-1 | 8 | AHU exhaust fan (assumed VFD at >= 0.75 kW) |
+| EXT_HALL_N | EXT_HALL | electronics | variable-frequency drive | 1.1 kW | IEC 61800-5-1 | 8 | AHU supply fan (assumed VFD at >= 0.75 kW) |
 | EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 8 | NEC 430.52, from AQS-INV-002 |
 | EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 8 | NEC 430.52, from AQS-INV-002 |
-| EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 70 A | UL 489 / IEC 60947-2 | 8 | NEC 430.52, from AQS-INV-002 |
+| EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 90 A | UL 489 / IEC 60947-2 | 8 | NEC 430.52, from AQS-INV-002 |
 | EXT_HALL_N | EXT_HALL | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 16 | NEC 430.52, from AQS-INV-002 |
 | flow_battery | ZNBR2 | bearing | deep-groove ball bearing | 6202-2Z | ISO 15 / ISO 492 normal class, C3 | 192 | electrolyte pump (anolyte, catholyte) per stack string: drive and non-drive end, IEC 60072 frame 71 (assumed size) |
 | flow_battery | ZNBR2 | bearing | deep-groove ball bearing | 608-2Z | ISO 15, normal class | 2 | transfer pump IA-ZNBR-BD to GREY_TREAT (assumed size) |

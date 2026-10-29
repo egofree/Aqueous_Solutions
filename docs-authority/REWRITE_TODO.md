@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: P
+Revision: Q
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -22,6 +22,7 @@ Date: 2026-10-29
 | N | Batch 11: the sanitation page given a generator that reads the present graph; the rectifier finding corrected in the load list and power sizing pages; owner questions on the trim heaters and the sanitation feed | 2026-10-29 |
 | O | Batch 12: the evaporator and polymers line sizing pages rewritten through their generators | 2026-10-29 |
 | P | Batch 13: the per-unit sizing pages of the unit sizing sweep rewritten through their generator | 2026-10-29 |
+| Q | Batch 14: the trim heaters fed by the rectifier counted at rated load in the plant bus demand by owner decision (A-M-415), with their own feeder; the bus section rating now follows the bus demand; the two owner questions on these closed | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -133,8 +134,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/CRYO_EQUIPMENT.md` | Rev G. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
 | `docs-authority/FARM_EQUIPMENT.md` | Rev E. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | Rev D. References to documents outside the repository removed; FreeCAD script paths corrected where cited. |
-| `docs-authority/LOAD_LIST.md` | Rev F. Section 3 reconciles the connected load with the plant bus demand of AQS-ELEC-007, from the graph, and names the trim heaters fed by the rectifier, which no feeder carries. |
-| `docs-authority/POWER_SIZING.md` | Rev I. The plant bus demand split into its parts; the two rectifier feeders checked against the bus demand, and the trim heaters fed by the rectifier named. |
+| `docs-authority/LOAD_LIST.md` | Rev G. Section 3 reconciles the connected load with the plant bus demand of AQS-ELEC-007, from the graph; the trim heaters fed by the rectifier are counted at rated load and the rectifier has three feeders. |
+| `docs-authority/POWER_SIZING.md` | Rev J. The plant bus demand split into its parts, the trim heaters fed by the rectifier among them at rated load; the three rectifier feeders and the bus section rating checked against the bus demand. |
+| `docs-authority/ONE_LINE.md` | Rev F. The RECT-TRIM feeder added for the trim heaters fed by the rectifier, sized from their rated load by `docs-authority/_one_line.py`. |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | Rev F. Rewritten through `flow_graph/param/scale_down.py`: purpose and scope, the revision history taken out of the summary, the terms table captioned. |
 | `flow_graph/exporters/matplotlib/README.md` | Rev B. Hand-written folder index (it has no generator; the earlier entry here was wrong). Purpose and scope added, and the images built by the regeneration stated from `flow_graph/regen_derived.py`. |
 | `docs-authority/sizing/H2_COMPRESSOR.md` | Rev C. Rewritten through `flow_graph/param/h2_compressor.py`: record of revisions, purpose and scope, the method as sentences with driver values in place of fixed figures, numbered tables. |
@@ -331,8 +333,6 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/CONTROL_ARCH.md` (AQS-CTL-002) | The closing note says that, if the inventory already counts the high-level switches, the DI count is 113 too high. The figure 113 is a fixed number in `_plc_arch.py`; the instrument index now has 82 digital-input rows (`24 V DC discrete (DI)`). Should the note be computed from the index? |
 | `docs-authority/O2_SOURCE.md` (AQS-PAR-005) | Not rewritten. Two generators write this page: `flow_graph/param/o2_source.py` (the current Rev D duty summary) and `flow_graph/param/o2_close.py` report(), whose Rev C closure report would overwrite it if run. The page says the Rev C sections regenerate at the next balance run. Which generator owns the page? Once that is settled, the template can be rewritten without the risk of the other writer restoring the old text. |
 | `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | The note on driver `backup_gen_rated_kW` states 125 % of the critical load list in 5 kW steps, which gives 20 kW for the present critical loads, but the driver holds 40 kW (AQS-ELEC-007 section 5). Should the driver or its note change? |
-| `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | `SOL_ARK_60K.params.redundancy` was computed for a bus demand of 150.8 kW while the plant bus demand is 179.7 kW, so the bus section rating needs recomputing by its stage (AQS-ELEC-007 section 5). Should that stage run after the power stage? |
-| `docs-authority/LOAD_LIST.md` (AQS-ELEC-003), `docs-authority/POWER_SIZING.md` (AQS-ELEC-007) | The rectifier has two feeders on the one-line diagram, S17 for its 48 V rails (12 kW) and RECT-EW for the electrowinning cells (`RECTIFIER.params.rect_ac_input_kW`), and the plant bus demand counts both. The rectifier also feeds the trim heaters IA-TRIM-HX5, IA-TRIM-HX6, IA-Q4A-TRIM and IA-Q4B-TRIM at their rated values, and no feeder or term of the bus demand includes them. Should the bus demand and a feeder carry them, and at the rated or the normal trim load? Either choice changes the bus demand and with it the array, storage, inverter and bus section sizing, so no value was changed. |
 | `docs-authority/duties/` | Duty sheets remain for units that are no longer on the graph, mostly farm, crop and animal units (for example ABE, CHICKENS, CROP_TOMATO, RECT_EW). `_duty_basis.py` skips them, so they keep Graph Rev BH and stale values. Should they be deleted, or moved to an archive? |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` (AQS-REV-H2-001) | The graph sends cathode hydrogen from EW_1 to EW_3 and EW_5 to EW_9, while AQS-STD-002 section 9 names EW_1, EW_2, EW_4 and EW_9. Which is correct? |
 | `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063) | The graph carries the sanitation train as the one node BLACK_DIGEST: Rev AC retired BLACK_DEWATER, BLACK_PASTEUR and BLACK_ALK_HOLD, although their equipment is still built. The electrical load of the train from its sizing is about 0.21 kW, while stream SF-BLACK_DIGEST feeds 0.105 kW, the digester alone. Should the barrier units return to the graph as nodes, and should the feed carry the whole train? Either change moves the bus demand, so neither was made. |

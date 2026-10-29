@@ -1806,7 +1806,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M751.93,-11529.99C808.07,-11536.07 931.64,-11542.77 1022,-11499 1053.23,-11483.87 1079.23,-11452.98 1095.12,-11430.52"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1098.14,-11432.31 1100.91,-11422.08 1092.37,-11428.35 1098.14,-11432.31"/>
-<text text-anchor="middle" x="946.5" y="-11535.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n336.8116 kW</text>
+<text text-anchor="middle" x="946.5" y="-11535.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n350.0995 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node44" class="node">
@@ -2005,7 +2005,7 @@
 <title>SOL_ARK_60K&#45;&gt;EXT_HALL</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M1123.54,-11422.23C1137.46,-11446.63 1165.9,-11488.81 1204,-11506 1271.25,-11536.35 1310.46,-11549.57 1370,-11506 1393.71,-11488.65 1380.19,-11470.69 1390,-11443 1410.66,-11384.69 1437.79,-11317.55 1452.96,-11280.74"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1456.32,-11281.77 1456.9,-11271.19 1449.85,-11279.09 1456.32,-11281.77"/>
-<text text-anchor="middle" x="1287" y="-11535.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;EXT_HALL\n68.2838 kW</text>
+<text text-anchor="middle" x="1287" y="-11535.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;EXT_HALL\n81.5717 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;WAFER_FAB -->
 <g id="edge383" class="edge">
@@ -2630,7 +2630,7 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1492.59,-11196.89C1508.64,-11201.19 1528.46,-11209.03 1541,-11223 1562.04,-11246.45 1537.45,-11270.08 1561,-11291 1620.65,-11343.99 1659.94,-11304.46 1738,-11321 1766.72,-11327.08 1798.25,-11334.95 1824.89,-11341.95"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1824.28,-11345.41 1834.84,-11344.58 1826.07,-11338.64 1824.28,-11345.41"/>
-<text text-anchor="middle" x="1649.5" y="-11323.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n755.229337 kg/d</text>
+<text text-anchor="middle" x="1649.5" y="-11323.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n908.809619 kg/d</text>
 </g>
 <!-- ZNBR2&#45;&gt;Q4_BUS -->
 <g id="edge286" class="edge">
@@ -2657,7 +2657,7 @@
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1834.75,-11357.76C1747.76,-11355.2 1580.79,-11347.98 1561,-11330 1525.19,-11297.47 1571.44,-11260.6 1541,-11223 1531.42,-11211.17 1516.56,-11203.8 1502.62,-11199.23"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1503.3,-11195.79 1492.72,-11196.38 1501.36,-11202.51 1503.3,-11195.79"/>
-<text text-anchor="middle" x="1649.5" y="-11355.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n755.229337 kg/d</text>
+<text text-anchor="middle" x="1649.5" y="-11355.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n908.809619 kg/d</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node49" class="node">
@@ -5114,5 +5114,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="3017.2" y="12770.8" width="2026.5" height="540.4" fill="white" stroke="black" stroke-width="5.63"/><text x="3051.0" y="12860.8" font-family="sans-serif" font-size="50.7">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3051.0" y="12956.5" font-family="sans-serif" font-size="50.7">Process flow diagram</text><text x="3051.0" y="13052.2" font-family="sans-serif" font-size="50.7">Type: flow diagram (ISO_10628_2)   Rev 707cdc60   Issued 2026-10-15</text><text x="3051.0" y="13147.9" font-family="sans-serif" font-size="50.7">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3051.0" y="13243.6" font-family="sans-serif" font-size="50.7">Graph SHA-256 307200ce85a4b6e4   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="3017.2" y="12770.8" width="2026.5" height="540.4" fill="white" stroke="black" stroke-width="5.63"/><text x="3051.0" y="12860.8" font-family="sans-serif" font-size="50.7">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3051.0" y="12956.5" font-family="sans-serif" font-size="50.7">Process flow diagram</text><text x="3051.0" y="13052.2" font-family="sans-serif" font-size="50.7">Type: flow diagram (ISO_10628_2)   Rev c18ddccd   Issued 2026-10-15</text><text x="3051.0" y="13147.9" font-family="sans-serif" font-size="50.7">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3051.0" y="13243.6" font-family="sans-serif" font-size="50.7">Graph SHA-256 d47de7a2485991ce   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

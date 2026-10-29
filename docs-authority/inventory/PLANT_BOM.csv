@@ -1218,40 +1218,38 @@ bulk pipe,PF-20,"316L ASTM A312 DN50 pipe, 3 x 6.096 m",17.1 m,316L ASTM A312,AQ
 bulk pipe,PF-20,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 5/8 in studs,3 / 2 / 2 / 8,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-21,"PVDF SDR 21 ISO 10931 DN32 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,AQS-INV-003
-bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",33240 m,Cu,AQS-INV-002
+bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",40080 m,Cu,AQS-INV-002
 bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",41987 m,Cu,AQS-INV-002
-bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",16920 m,Cu,AQS-INV-002
-bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",16620 m,Cu,AQS-INV-002
+bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",20520 m,Cu,AQS-INV-002
+bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",20040 m,Cu,AQS-INV-002
 bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",17894 m,Cu,AQS-INV-002
-bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",4416 m,Cu,AQS-INV-002
+bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",5138 m,Cu,AQS-INV-002
 bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",4600 m,Cu,AQS-INV-002
 bulk wire,WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",4540 m,Cu,AQS-INV-002
 bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",5955 m,Cu,AQS-INV-002
-bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",2625 m,Cu,AQS-INV-002
+bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3150 m,Cu,AQS-INV-002
 bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3091 m,Cu,AQS-INV-002
 bulk wire,WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1200 m,Cu,AQS-INV-002
 bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1030 m,Cu,AQS-INV-002
-bulk wire,WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",405 m,Cu,AQS-INV-002
+bulk wire,WF-14,"power 400 kcmil XHHW-2 Cu, 600 V",540 m,Cu,AQS-INV-002
 bulk wire,WF-15,"power 14 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",407 m,Cu,AQS-INV-002
 bulk wire,WF-16,"power 10 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",173 m,Cu,AQS-INV-002
 bulk wire,WF-17,"power 6 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",129 m,Cu,AQS-INV-002
-bulk wire,WF-18,"power 4/0 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",40 m,Cu,AQS-INV-002
-bulk wire,WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",135 m,Cu,AQS-INV-002
+bulk wire,WF-19,"equipment ground 2/0 AWG green XHHW-2 Cu, 600 V",180 m,Cu,AQS-INV-002
 bulk wire,WF-20,"power 3 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",173 m,Cu,AQS-INV-002
 bulk wire,WF-21,"DC power pair 14 AWG TC-ER 2-cond, 600 V",60 m,Cu,AQS-INV-002
 bulk wire,WF-24,"equipment ground 10 AWG green XHHW-2 Cu, 600 V",12 m,Cu,AQS-INV-002
 bulk wire,WF-25,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,AQS-INV-002
-bulk wire,WF-27,"power 300 kcmil XHHW-2 Cu, 600 V",135 m,Cu,AQS-INV-002
 bulk wire,WF-28,"power 8 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",129 m,Cu,AQS-INV-002
-bulk wire,WF-29,"equipment ground 1/0 AWG green XHHW-2 Cu, 600 V",45 m,Cu,AQS-INV-002
+bulk wire,WF-30,"power 250 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",40 m,Cu,AQS-INV-002
 building block,OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",388,,AQS-INV-004
 building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",356,,AQS-INV-004
 building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),868,,AQS-INV-004
 building block,OF-04,electronics: PLC analog input point (IEC 61131-2),754,,AQS-INV-004
 building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),191,,AQS-INV-004
-building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),160,,AQS-INV-004
+building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),144,,AQS-INV-004
 building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",102,,AQS-INV-004
-building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),18,,AQS-INV-004
+building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),34,,AQS-INV-004
 building block,OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),36,,AQS-INV-004
 building block,OF-10,electronics: compressor contactor + overload (IEC 60947-4-1),10,,AQS-INV-004
 building block,OF-11,electronics: stepper driver (IEC 61800-5-1),3,,AQS-INV-004

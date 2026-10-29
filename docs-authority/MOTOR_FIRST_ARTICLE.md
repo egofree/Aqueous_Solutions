@@ -35,9 +35,9 @@ Table 1.1. Induction first-article dimensions
 | MF-14 | 7.5 | 4 | 123.39 | 0.393 | 147 | 36/28 | 180.5 | 23.71 | 5.19 | 15.85 | 224 / 202.5 | 62.9 | 41.0 | 3 |
 | MF-15 | 4.0 | 4 | 105.35 | 0.346 | 111 | 36/28 | 173.0 | 25.01 | 4.43 | 13.53 | 190 / 182.4 | 53.4 | 21.9 | 1 |
 | MF-16 | 0.75 | 4 | 75.26 | 0.265 | 69 | 24/22 | 156.0 | 20.21 | 4.74 | 9.66 | 136 / 135.0 | 30.8 | 4.1 | 1 |
-| MF-24 | 15.0 | 2 | 129.67 | 0.668 | 139 | 36/28 | 258.7 | 30.51 | 5.44 | 33.25 | 259 / 257.2 | 63.8 | 41.0 | 8 |
 | MF-25 | 1.1 | 2 | 62.36 | 0.365 | 110 | 36/28 | 59.8 | 14.67 | 2.61 | 15.98 | 124 / 123.7 | 13.4 | 3.0 | 1 |
 | MF-26 | 0.75 | 2 | 64.34 | 0.341 | 64 | 36/28 | 65.3 | 15.43 | 2.7 | 16.49 | 129 / 128.2 | 16.5 | 2.1 | 1 |
+| MF-28 | 18.5 | 2 | 138.71 | 0.709 | 113 | 36/28 | 301.3 | 33.08 | 5.82 | 35.57 | 277 / 276.0 | 90.9 | 50.6 | 8 |
 
 No family is flagged: every recalculated OD is within 2 % of its sheet OD.
 
@@ -78,8 +78,8 @@ Table 3.1. Build traveller for an induction first article
 
 One rig is used to type-test all families. It has the following parts.
 
-- Load machine. An MF-18 motor made in-house (18.5 kW, IEC frame 180M) runs as a regenerating load on a back-to-back pair of variable-frequency drives (VFDs) with a common DC bus, so that only the losses are drawn from the supply. The largest family (MF-04, a 15 kW hermetic motor) is tested at 85 % of its rating on this load, or with a second MF-18 coupled in tandem.
-- Torque transducer. An in-line transducer with a range of 200 N m and an accuracy class of 0.2 %; the largest rated torque of any family is 41.0 N m. Speed is measured with an encoder of 1024 pulses per revolution.
+- Load machine. An MF-18 motor made in-house (18.5 kW, IEC frame 180M) runs as a regenerating load on a back-to-back pair of variable-frequency drives (VFDs) with a common DC bus, so that only the losses are drawn from the supply. The largest family (MF-04, a 18 kW hermetic motor) is tested at 85 % of its rating on this load, or with a second MF-18 coupled in tandem.
+- Torque transducer. An in-line transducer with a range of 200 N m and an accuracy class of 0.2 %; the largest rated torque of any family is 50.6 N m. Speed is measured with an encoder of 1024 pulses per revolution.
 - Power analyser. A three-phase analyser of accuracy class 0.1 %, measuring harmonics to the 50th, with six thermocouples in each winding for temperature rise and a timer for the resistance measurement after shutdown.
 - Bed. A cast or welded steel T-slot bed with adjustable centre-height adapter plates for IEC frames 63 to 180, jaw couplings sized for the transducer, and a guard to ISO 14120.
 - Supply. A 480 V three-phase supply, adjustable through the VFD for the no-load voltage sweep from 110 % to 30 % of rated voltage (IEC 60034-2-1), and a DC supply for the winding resistance measurement.

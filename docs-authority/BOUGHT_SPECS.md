@@ -54,11 +54,11 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x868 | 868 | 94 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
 | OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x754 | 754 | 1 | one per instrument |  |
 | OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x191 | 191 | 67 | AHU damper actuator; Biogas recirculation blower, diaphragm, about 1 L/min; Biogas recirculation diaphragm blower about 2 L/min |  |
-| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.37 kW x104; 0.18 kW x20; 1.1 kW x18; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 0.75 kW x1 | 160 | 38 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Acid day tank D160 x 300 mm with metering pump (assumed VFD a |  |
+| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.37 kW x104; 0.18 kW x20; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1 | 144 | 37 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Dilute-HCl return pump and transfer line to CRU (assumed VFD at >= 0.75 kW |  |
 | OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x102 | 102 | 1 | 1622 points / 16 |  |
-| OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x6; 1.1 kW x5; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 18 | 15 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
+| OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 34 | 16 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x36 | 36 | 18 | NaOH dosing pump, solenoid diaphragm; on/off valve C29_RECYCLE; on/off valve CUT-3-OUT |  |
-| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 15 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 10 | 3 | air-source heat pump compressor; cryocooler compressor; heat pump compressor |  |
+| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 10 | 3 | air-source heat pump compressor; cryocooler compressor; heat pump compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
 | OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 163 SIFs, redundant pair |  |
 ## 5. Instrument datasheets
@@ -82,7 +82,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x192; 70 A x8; 30 A x3; 60 A x1 | 204 | 49 | NEC 430.52, from AQS-INV-002 |  |
+| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x192; 90 A x8; 30 A x3; 60 A x1 | 204 | 49 | NEC 430.52, from AQS-INV-002 |  |
 ## 7. Seal datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
