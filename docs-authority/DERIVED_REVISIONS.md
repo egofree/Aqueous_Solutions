@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1900 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1903 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -76,6 +76,8 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/LOAD_LIST.md` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/MAINT_PLAN.md` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/MEOH_TRAIN.md` | 9a0993d (regenerated, no change) | current |
+| `docs-authority/METAL_FORMING_EQUIPMENT.md` | 9a0993d (regenerated, no change) | current |
+| `docs-authority/MFG_SHOP_EQUIPMENT.md` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/MFG_TOOLS.md` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/MOTOR_FIRST_ARTICLE.md` | 9a0993d (regenerated, no change) | current |
@@ -109,6 +111,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/TEST_PLAN.md` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/TEST_RIGS.md` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/UNIT_MATERIALS.md` | 9a0993d (regenerated, no change) | current |
+| `docs-authority/WAFER_FAB_EQUIPMENT.md` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/WATER_PURIFICATION.md` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/WATER_TOWER.md` | 9a0993d (regenerated, no change) | current |
 | `docs-authority/WIRE_SPECS.md` | 9a0993d (regenerated, no change) | current |

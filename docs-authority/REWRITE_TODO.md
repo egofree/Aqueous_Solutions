@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: Q
+Revision: R
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -23,6 +23,7 @@ Date: 2026-10-29
 | O | Batch 12: the evaporator and polymers line sizing pages rewritten through their generators | 2026-10-29 |
 | P | Batch 13: the per-unit sizing pages of the unit sizing sweep rewritten through their generator | 2026-10-29 |
 | Q | Batch 14: the trim heaters fed by the rectifier counted at rated load in the plant bus demand by owner decision (A-M-415), with their own feeder; the bus section rating now follows the bus demand; the two owner questions on these closed | 2026-10-29 |
+| R | Batch 15: the metal-forming, shop and wafer fab equipment lists given generators that read the graph; owner questions on the forming tool design, the silicon charge of the fab and its blanket gas | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -150,6 +151,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/sizing/EVAP_DESIGN.md` | Rev C. Rewritten through `flow_graph/param/evap_design.py`: document number, revision and date lines, record of revisions with dates, purpose and scope, the basis as sentences with the driver values, tables numbered and labelled with units, and the comparison with an earlier upper bound removed. |
 | `docs-authority/sizing/POLYMERS_LINE.md` | Rev B. Rewritten through `docs-authority/_polymers_sizing.py`: purpose and scope, sentences, numbered tables; the fluoropolymer train is now reported from the graph, where it runs on imported fluorspar, in place of text that called it blocked; the stale open item on the film caster feed is dropped when the graph has that feed. |
 | `docs-authority/sizing/<UNIT>.md` (AQS-SIZE-<UNIT>, every page of the unit sizing sweep) | Rev B. Rewritten through `docs-authority/_unit_sizing_sweep.py`, which had stopped writing them: purpose and scope, design parameters in a table, the envelope from the graph or the placement files, the hold-up vessel in millimetres from the larger of inflow and outflow with a real fit check, and the material from the duty sheet. |
+| `docs-authority/METAL_FORMING_EQUIPMENT.md` | Rev E. Now written by `docs-authority/_mfg_equipment.py` (regen stage `doc_mfg_equipment`) from the metal-forming units of sector MFG and the tool list AQS-MFG-010: units, tools, streams, mass balance and separation checks. Tags no longer on the graph, the nitrogen atomising gas and the TBD tool sizes removed. |
+| `docs-authority/MFG_SHOP_EQUIPMENT.md` | Rev E. Now written by `docs-authority/_mfg_equipment.py` from the other units of sector MFG and the shop tools of AQS-MFG-010: units, tools, streams and mass balance. |
+| `docs-authority/WAFER_FAB_EQUIPMENT.md` | Rev D. Now written by `docs-authority/_wafer_fab_equipment.py` (regen stage `doc_wafer_fab_equipment`) from the units of sector FAB, the equipment list of WAFER_FAB and the fab edges; references outside the repository removed. |
 
 ## 3. In progress
 
@@ -180,7 +184,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/MATERIALS_STD.md` | No purpose and scope section; list items written as fragments; working or stock phrasing. |
 | `docs-authority/METAL_FORMING.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/MFG_MODEL_PLAN.md` | No purpose and scope section. |
-| `docs-authority/MFG_SHOP_EQUIPMENT.md` | No purpose and scope section. |
 | `docs-authority/MVS_PITCH_PASS.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; arrows used in place of sentences. |
 | `docs-authority/MVS_STUDY_CLOSE.md` | No document number line; no revision line; no record of revisions; no purpose and scope section; arrows used in place of sentences. |
 | `docs-authority/O2_SOURCE.md` | No purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
@@ -336,6 +339,9 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/duties/` | Duty sheets remain for units that are no longer on the graph, mostly farm, crop and animal units (for example ABE, CHICKENS, CROP_TOMATO, RECT_EW). `_duty_basis.py` skips them, so they keep Graph Rev BH and stale values. Should they be deleted, or moved to an archive? |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` (AQS-REV-H2-001) | The graph sends cathode hydrogen from EW_1 to EW_3 and EW_5 to EW_9, while AQS-STD-002 section 9 names EW_1, EW_2, EW_4 and EW_9. Which is correct? |
 | `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063) | The graph carries the sanitation train as the one node BLACK_DIGEST: Rev AC retired BLACK_DEWATER, BLACK_PASTEUR and BLACK_ALK_HOLD, although their equipment is still built. The electrical load of the train from its sizing is about 0.21 kW, while stream SF-BLACK_DIGEST feeds 0.105 kW, the digester alone. Should the barrier units return to the graph as nodes, and should the feed carry the whole train? Either change moves the bus demand, so neither was made. |
+| `docs-authority/METAL_FORMING_EQUIPMENT.md` (AQS-EQP-MFG-MET-001) | AQS-MFG-010 sizes the wire drawer, the cold mill and the atomiser from their energy per kilogram and gives their nameplates, but the die schedule of the wire drawer, the gauge and width range of the mill and the batch rate of the atomiser are not designed. Should they be set now from the graph throughputs, or held until the tools are designed in-house? |
+| `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001) | No stream brings silicon to WAFER_FAB: STOCK_TO_FAB carries no flow, and the fab balance closes on its gas, slurry and water streams alone, so the wafer stream to LITHO_COAT is not backed by a silicon charge. Should STOCK_TO_FAB be rated from the wafer output, and from which store? |
+| `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001) | Revision C left the blanket gas for the Czochralski charge as TBD between argon and nitrogen. The graph feeds the fab nitrogen (S03) only. Is nitrogen the choice, or should an argon stream be added? |
 | `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |
 | `docs-authority/unregistered_doc_numbers.json` | Pages cite AQS-PFD-* flow diagram numbers that are in neither register. Should they be added to the drawing register with the scripts in `flow_graph/exporters/matplotlib/` as their source, or removed from the pages? |
 | `docs-authority/unregistered_doc_numbers.json` | Many pages cite AQS-AUD-001, a crew and water audit that is not in the repository. Should it be added, or should each citation be replaced by the graph value it stood for? |

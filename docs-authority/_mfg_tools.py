@@ -82,7 +82,9 @@ The connected load of the whole list is {peak:.1f} kW. The coincident peak is {c
 
 The efficiencies, the flow stress and the atomising gas ratio are assumptions until trial runs are made (A-M-177).
 """
-open('docs-authority/MFG_TOOLS.md','w').write(out)
+if '--json' not in sys.argv:   # --json: report only (read by docs-authority/_mfg_equipment.py), page untouched
+    open('docs-authority/MFG_TOOLS.md','w').write(out)
 print(json.dumps(dict(avg=round(avg,2),peak=coinc,connected=peak,
                       shop_avg=round(shop_e/24,4), shop_connected=round(shop_kw,1),
-                      metal=[dict(unit=u, avg_kw=round(a,4), kwh_d=round(e,1), nameplate_kw=round(kwv,1)) for u,a,e,kwv in metal])))
+                      metal=[dict(unit=u, avg_kw=round(a,4), kwh_d=round(e,1), nameplate_kw=round(kwv,1)) for u,a,e,kwv in metal],
+                      tools=[dict(tool=t, serves=sv, nameplate_kw=round(kw,1), kwh_d=round(e,1)) for t,sv,kw,e,b in T])))

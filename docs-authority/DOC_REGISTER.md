@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | Q | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | R | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -152,7 +152,7 @@ Table 3.1. Document numbers in use
 | AQS-END-002 | `docs-authority/EOL_RETURN.md` | D | 2026-10-21 | End-of-life material return | current |
 | AQS-ENV-FP-MET | `notes/VESSEL_ENVELOPES.md` | A | 2026-10-16 | Vessel envelopes — fluoropolymer train and critical-metal cells | current |
 | AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | G | 2026-10-29 | Cryogenic equipment list | current |
-| AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | C | 2026-10-24 | Wafer fab equipment and process list | current |
+| AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | D | 2026-10-29 | Wafer fab equipment and process list | current |
 | AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | D | 2026-10-29 | Solar-cell line equipment | current |
 | AQS-EQP-FAB-RGN-001 | `docs-authority/FAB_WET_REAGENTS.md` | B | 2026-10-01 | Fab wet reagents — wet-line synth forks | current |
 | AQS-EQP-FAB-UPW-001 | `docs-authority/FAB_UPW.md` | B | 2026-09-27 | Fab UPW — equipment list | current |
@@ -162,8 +162,8 @@ Table 3.1. Document numbers in use
 | AQS-EQP-GEO-001 | `docs-authority/GEOTHERMAL_EQUIPMENT.md` | E | 2026-10-29 | Geothermal equipment list | current |
 | AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | B | 2026-09-27 | Habitation water — equipment list | current |
 | AQS-EQP-MEOH-001 | `docs-authority/MEOH_EQUIPMENT.md` | B | 2026-10-25 | Methanol train equipment list | current |
-| AQS-EQP-MFG-001 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | C | 2026-09-28 | MFG shop equipment list | current |
-| AQS-EQP-MFG-MET-001 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | D | 2026-10-01 | Metal-forming equipment list | current |
+| AQS-EQP-MFG-001 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | E | 2026-10-29 | Manufacturing shop equipment list | current |
+| AQS-EQP-MFG-MET-001 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | E | 2026-10-29 | Metal-forming equipment list | current |
 | AQS-EQP-NUT-001 | `docs-authority/NUTRIENT_DOSE.md` | B | 2026-09-27 | Nutrient dose / N-P process list | current |
 | AQS-EQP-STUDY-001 | `docs-authority/STUDY_UNITS_STUB.md` | F | 2026-10-01 | Study / deferred units — VCD·remin, ORC, litho, solar, blow-mold, electrode coat | current |
 | AQS-EQP-VENT-001 | `docs-authority/VENT_SCRUB_EQUIPMENT.md` | C | 2026-10-24 | Vent, scrubber and regenerator equipment | current |

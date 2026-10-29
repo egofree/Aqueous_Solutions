@@ -1037,6 +1037,40 @@
    "quick": false
   },
   {
+   "name": "doc_mfg_equipment",
+   "argv": [
+    "python3",
+    "docs-authority/_mfg_equipment.py"
+   ],
+   "outputs": [
+    "docs-authority/METAL_FORMING_EQUIPMENT.md",
+    "docs-authority/MFG_SHOP_EQUIPMENT.md"
+   ],
+   "depends_on": [
+    "doc_mfg_tools",
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-EQP-MFG-MET-001 and AQS-EQP-MFG-001 from the MFG units of the graph and the AQS-MFG-010 tool list (--json, read only)."
+  },
+  {
+   "name": "doc_wafer_fab_equipment",
+   "argv": [
+    "python3",
+    "docs-authority/_wafer_fab_equipment.py"
+   ],
+   "outputs": [
+    "docs-authority/WAFER_FAB_EQUIPMENT.md"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-EQP-FAB-001 from the FAB units, the WAFER_FAB equipment list and the fab edges of the graph."
+  },
+  {
    "name": "doc_asme_class",
    "argv": [
     "python3",
@@ -2683,7 +2717,9 @@
     "sizing_bmed_stack",
     "supports",
     "unit_sizing_sweep",
-    "vent_scrubber_doc"
+    "vent_scrubber_doc",
+    "doc_mfg_equipment",
+    "doc_wafer_fab_equipment"
    ],
    "writes_graph": false,
    "quick": false,
@@ -2859,7 +2895,9 @@
     "storage_sizing",
     "supports",
     "unit_sizing_sweep",
-    "vent_scrubber_doc"
+    "vent_scrubber_doc",
+    "doc_mfg_equipment",
+    "doc_wafer_fab_equipment"
    ],
    "writes_graph": false,
    "quick": false,
@@ -2970,7 +3008,9 @@
     "task_plan",
     "unit_sizing_sweep",
     "vent_scrubber_doc",
-    "write_graph_power"
+    "write_graph_power",
+    "doc_mfg_equipment",
+    "doc_wafer_fab_equipment"
    ],
    "writes_graph": false,
    "quick": false,
@@ -3082,7 +3122,9 @@
     "task_plan",
     "unit_sizing_sweep",
     "vent_scrubber_doc",
-    "write_graph_power"
+    "write_graph_power",
+    "doc_mfg_equipment",
+    "doc_wafer_fab_equipment"
    ],
    "writes_graph": false,
    "quick": false,
@@ -3200,7 +3242,9 @@
     "supports",
     "task_plan",
     "unit_sizing_sweep",
-    "vent_scrubber_doc"
+    "vent_scrubber_doc",
+    "doc_mfg_equipment",
+    "doc_wafer_fab_equipment"
    ],
    "writes_graph": false,
    "quick": false,
@@ -3309,7 +3353,9 @@
     "supports",
     "task_plan",
     "unit_sizing_sweep",
-    "vent_scrubber_doc"
+    "vent_scrubber_doc",
+    "doc_mfg_equipment",
+    "doc_wafer_fab_equipment"
    ],
    "outputs": [
     "docs-authority/DOC_REGISTER.md"
@@ -3429,7 +3475,9 @@
     "supports",
     "task_plan",
     "unit_sizing_sweep",
-    "vent_scrubber_doc"
+    "vent_scrubber_doc",
+    "doc_mfg_equipment",
+    "doc_wafer_fab_equipment"
    ],
    "writes_graph": false,
    "quick": false,

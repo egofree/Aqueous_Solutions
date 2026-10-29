@@ -213,6 +213,14 @@
    "status": "ok"
   },
   {
+   "name": "doc_mfg_equipment",
+   "status": "ok"
+  },
+  {
+   "name": "doc_wafer_fab_equipment",
+   "status": "ok"
+  },
+  {
    "name": "doc_asme_class",
    "status": "ok"
   },
@@ -599,6 +607,8 @@
   "docs-authority/LOAD_LIST.md",
   "docs-authority/MAINT_PLAN.md",
   "docs-authority/MEOH_TRAIN.md",
+  "docs-authority/METAL_FORMING_EQUIPMENT.md",
+  "docs-authority/MFG_SHOP_EQUIPMENT.md",
   "docs-authority/MFG_TOOLS.md",
   "docs-authority/MODEL_WORKBOOK.xlsx",
   "docs-authority/MOTOR_FIRST_ARTICLE.md",
@@ -632,6 +642,7 @@
   "docs-authority/TEST_PLAN.md",
   "docs-authority/TEST_RIGS.md",
   "docs-authority/UNIT_MATERIALS.md",
+  "docs-authority/WAFER_FAB_EQUIPMENT.md",
   "docs-authority/WATER_PURIFICATION.md",
   "docs-authority/WATER_TOWER.md",
   "docs-authority/WIRE_SPECS.md",
