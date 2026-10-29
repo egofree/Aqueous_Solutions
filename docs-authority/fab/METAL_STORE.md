@@ -7,7 +7,7 @@ service line: see the duty sheet section 1 basis
 Internals: none with basis: static storage; no contacting or separation internals; holdup is the duty size line
 Material: PE (rotomoulded / fabricated) (graph node material). Corrosion allowance per the AQS-STD-001 shop rule; no measured pit rate.
 
-Nozzles: 9 process connections per docs-authority/nozzles/METAL_STORE.csv
+Nozzles: 11 process connections per docs-authority/nozzles/METAL_STORE.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

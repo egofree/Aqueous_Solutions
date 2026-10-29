@@ -789,7 +789,7 @@ nodes:
   - id: GLASS.glass-recycle-train
     parent: GLASS
     description: >-
-      Cullet loop: rinse, mill, burnout, NaOH digest; SI_REDUCE carbothermic silicon on pyro char.
+      Cullet loop: rinse, mill, burnout, NaOH digest; SI_REDUCE carbothermic silicon on pyro char; SI_REFINE electronic-grade silicon on a chlorosilane loop.
   - id: GLASS.glass-recycle-train.cullet-loop
     parent: GLASS.glass-recycle-train
     description: >-
@@ -809,6 +809,9 @@ nodes:
   - id: GLASS.glass-recycle-train.SI_REDUCE
     parent: GLASS.glass-recycle-train
     unit_id: SI_REDUCE
+  - id: GLASS.glass-recycle-train.SI_REFINE
+    parent: GLASS.glass-recycle-train
+    unit_id: SI_REFINE
   - id: HAB
     description: >-
       Life support / habitat — habitation and life support.

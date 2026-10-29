@@ -79,7 +79,7 @@ Table 6.1. Graph values against the solver
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2998.000 | 2998.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3016.000 | 3016.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 7. Acid-loop decision (X-PAR-04)
 
@@ -93,7 +93,7 @@ Table 6.1. Graph values against the solver
 
 ## 8. Drivers
 
-Table 8.1 lists the 866 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 875 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -878,7 +878,16 @@ Table 8.1. Drivers
 | FAB.wafer-line-train.si_liquid_rho_g_cm3 | 2.57 | g/cm3 liquid silicon density at the melting point (CRC_SI) | A-M-417 | — |
 | FAB.wafer-line-train.cz_min_depth_frac | 0.25 | - least melt depth for a pull, as a share of the crucible diameter | A-M-417 | — |
 | FAB.wafer-line-train.cz_hotzone_kW | 35.0 | kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured) | A-M-417 | — |
-| FAB.wafer-line-train.si_resupply_d | 90.0 | d interval between polysilicon deliveries; the store holds one interval of charge | A-M-417 | — |
+| si_refine_route | "TCS_SIEMENS" | - refining route of the CZ charge: TCS_SIEMENS (trichlorosilane on Siemens rods) or SILANE_FBR (silane in a fluidised bed), two technologies on the same chlorosilane loop | A-M-419 | — |
+| si_refine_yield_TCS_SIEMENS | 0.85 | - fraction of the silicon fed to the chlorosilane loop that leaves as electronic-grade rod; the rest is bled as SiCl4 (Siemens class) | A-M-419 | — |
+| si_refine_yield_SILANE_FBR | 0.8 | - fraction of the silicon fed to the loop that leaves as electronic-grade granules; the rest is bled as SiCl4 (silane fluidised-bed class) | A-M-419 | — |
+| si_refine_kWh_kg_TCS_SIEMENS | 60.0 | kWh per kg of electronic-grade silicon for the Siemens route, rod heating, hydrochlorination and distillation (small bell-jar class) | A-M-419 | — |
+| si_refine_kWh_kg_SILANE_FBR | 20.0 | kWh per kg of electronic-grade silicon for the silane fluidised-bed route, redistribution, bed heating and distillation (class value) | A-M-419 | — |
+| siemens_pass_conv | 0.1 | - fraction of the trichlorosilane silicon deposited on the rods in one pass; sets the loop circulation | A-M-419 | — |
+| si_mg_purity | 0.98 | - silicon mass fraction of the metallurgical-grade silicon from SI_REDUCE; the rest is Fe, Al and Ca from the ore and the char ash | A-M-419 | — |
+| si_saf_recovery | 0.8 | - fraction of the reduced silica recovered as silicon in the small arc furnace; the rest leaves as silica fume | A-M-419 | — |
+| si_saf_kWh_kg | 13.0 | kWh per kg of metallurgical silicon in the submerged-arc furnace (industrial class 11 to 13, small furnace at the top) | A-M-419 | — |
+| si_imp_cl_kg_kg | 2.2 | kg of chlorine per kg of Fe, Al and Ca impurity leaving the loop as chlorides (FeCl3 1.90, AlCl3 3.94, CaCl2 1.77, iron-rich mix) | A-M-419 | — |
 | OIL.afterburner-train.flue_fan_dP_Pa | 350.0 | Pa | duct + stack draft loss class of a 100 mm bore flue run (A-M-300) (A-M-301) | — |
 | OIL.afterburner-train.flue_fan_eta | 0.35 | fraction | small high-temperature centrifugal fan (A-M-300) (A-M-301) | — |
 | NUT.nutrient-train.dose_head_m | 15.0 | m | dose-header head to the grow beds (AQS-EQP-NUT-001; A-M-299) (A-M-301) | — |
@@ -1277,7 +1286,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 368 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 369 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1947,3 +1956,4 @@ Table 10.1. Values to verify
 | A-M-416 | Metal-forming tool design from the graph throughputs … mm, bar, kg/m3, fraction | First atomiser heat: pour time and receiver pressure drop logged; first mill run: strip gauge and width measured |
 | A-M-417 | Wafer-fab silicon and blanket gas from the wafer need: a … kg/d, mm, um, h, slpm | python3 -m flow_graph.param.fab_silicon; first-campaign charge, yield and argon use against the design |
 | A-M-418 | A standby feed route carries no flow on the design day and … kg/d, d, kg | python3 -m flow_graph.param.standby_routes; the rated rate equals the S57 rate and METAL_STORE holds the rated feed for the outage; IND_TO_ATOM is rated at the IA-MELT-ATOM rate and the IND_MELT outage heats fit the day |
+| A-M-419 | The CZ charge is made on site (no imports except waste or … kg/d, kWh/kg, fraction | python3 -m flow_graph.param.si_refine; the furnace and loop mass balances close and the electronic-grade output equals the CZ charge |

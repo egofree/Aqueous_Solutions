@@ -749,6 +749,11 @@
   "docnum": "AQS-SIZE-SI_REDUCE",
   "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
  },
+ "SI_REFINE": {
+  "doc": "docs-authority/WAFER_FAB_EQUIPMENT.md",
+  "docnum": "AQS-EQP-FAB-001",
+  "family": "Silicon refining for the CZ charge (flow_graph/param/si_refine.py, Section 4.2, A-M-419)"
+ },
  "SOLAR_PV_CELL": {
   "doc": "docs-authority/sizing/PV_CELL_LINE.md",
   "docnum": "AQS-DUTY-071",

@@ -9,13 +9,13 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 
 | Kind | Family / unit | Item | Installed | Spares | Rule |
 |---|---|---|---|---|---|
-| building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x388) | 388 | 39 | 10 % min 2 |
+| building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x390) | 390 | 39 | 10 % min 2 |
 | building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z) | 356 | 36 | 10 % min 2 |
-| building block | OF-03 | electronics: PLC digital I/O point (24 V DC x868) | 868 | 87 | 10 % min 1 |
-| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x754) | 754 | 76 | 10 % min 1 |
-| building block | OF-05 | electronics: BLDC driver (24/48 V DC x191) | 191 | 20 | 10 % min 1 |
+| building block | OF-03 | electronics: PLC digital I/O point (24 V DC x870) | 870 | 87 | 10 % min 1 |
+| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x766) | 766 | 77 | 10 % min 1 |
+| building block | OF-05 | electronics: BLDC driver (24/48 V DC x192) | 192 | 20 | 10 % min 1 |
 | building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x104; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW ) | 145 | 15 | 10 % min 1 |
-| building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x102) | 102 | 11 | 10 % min 1 |
+| building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x103) | 103 | 11 | 10 % min 1 |
 | building block | OF-08 | electronics: variable-frequency drive (1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x2; 4 kW x1) | 33 | 4 | 10 % min 1 |
 | building block | OF-09 | electronics: solenoid driver channel (24 V DC x36) | 36 | 4 | 10 % min 1 |
 | building block | OF-10 | electronics: compressor contactor + overload (18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1) | 10 | 1 | 10 % min 1 |
@@ -42,17 +42,17 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-32 | fastener: Lid gasket 40 mm wide (Lid gasket 40 mm wide x1) | 1 | 4 | 2 % min 4 |
 | building block | OF-33 | fastener: Solvent cement (Solvent cement x1) | 1 | 4 | 2 % min 4 |
 | building block | OF-34 | instrument: flow transmitter (DN15 x119; DN50 x17; DN32 x1; DN250 x1; DN300 x1) | 139 | 14 | 10 % min 1 |
-| building block | OF-35 | instrument: pressure transmitter (0-10 bar x157; 0-16 bar x1) | 158 | 16 | 10 % min 1 |
-| building block | OF-36 | instrument: temperature element (Pt100 class A x161) | 161 | 17 | 10 % min 1 |
+| building block | OF-35 | instrument: pressure transmitter (0-10 bar x159; 0-16 bar x1) | 160 | 16 | 10 % min 1 |
+| building block | OF-36 | instrument: temperature element (Pt100 class A x163) | 163 | 17 | 10 % min 1 |
 | building block | OF-37 | instrument: high-level switch (vibrating fork x80) | 80 | 8 | 10 % min 1 |
 | building block | OF-38 | instrument: level transmitter (radar 80 GHz x80) | 80 | 8 | 10 % min 1 |
 | building block | OF-39 | instrument: gas detector, H2 (catalytic bead + IR backup x30) | 30 | 3 | 10 % min 1 |
-| building block | OF-40 | instrument: gas detector, O2 deficiency (electrochemical O2 x20) | 20 | 2 | 10 % min 1 |
-| building block | OF-41 | instrument: gas detector, Cl2 / HCl (electrochemical Cl2 and HCl x38) | 38 | 4 | 10 % min 1 |
+| building block | OF-40 | instrument: gas detector, O2 deficiency (electrochemical O2 x22) | 22 | 3 | 10 % min 1 |
+| building block | OF-41 | instrument: gas detector, Cl2 / HCl (electrochemical Cl2 and HCl x40) | 40 | 4 | 10 % min 1 |
 | building block | OF-42 | instrument: temperature element (SIF, independent) (Pt100 class A x13) | 13 | 2 | 10 % min 1 |
 | building block | OF-43 | instrument: gas detector, O2 enrichment (electrochemical O2 x12) | 12 | 2 | 10 % min 1 |
-| building block | OF-44 | instrument: gas detector, CO (electrochemical CO x14) | 14 | 2 | 10 % min 1 |
-| building block | OF-45 | instrument: gas detector, NOx (electrochemical NO2 x6) | 6 | 1 | 10 % min 1 |
+| building block | OF-44 | instrument: gas detector, CO (electrochemical CO x16) | 16 | 2 | 10 % min 1 |
+| building block | OF-45 | instrument: gas detector, NOx (electrochemical NO2 x8) | 8 | 1 | 10 % min 1 |
 | building block | OF-46 | protection: inverse-time circuit breaker, 3-pole (15 A x193; 90 A x8; 30 A x2; 60 A x1) | 204 | 21 | 10 % min 1 |
 | building block | OF-47 | seal: mechanical seal, single (EN 12756 x124) | 124 | 25 | 20 % min 2 |
 | building block | OF-50 | valve: isolation valve (DN15 x124; DN50 x22) | 146 | 8 | 5 % min 1 |
@@ -89,7 +89,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-82 | fastener: M8 x 25 hood bolts (M8 x 25 hood bolts x48) | 48 | 4 | 2 % min 4 |
 | building block | OF-83 | fastener: M10 anchor (M10 anchor x40) | 40 | 4 | 2 % min 4 |
 | building block | OF-84 | fastener: M8 x 25 hopper bolts (M8 x 25 hopper bolts x8) | 8 | 4 | 2 % min 4 |
-| motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 108 | 6 | 5 % min 1 |
+| motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 109 | 6 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 56 | 3 | 5 % min 1 |
 | motor | MF-03 | BLDC actuator ISO 5211 F03 mount 24 V DC | 27 | 2 | 5 % min 1 |
 | motor | MF-06 | induction IE3 IEC 71 / 0.37 kW 480 V 3-ph | 104 | 6 | 5 % min 1 |
@@ -126,4 +126,4 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | process insert | CRYO_O2 | PSV for one bank half, fire-case bore, oxygen-clean (AQS-SAF-005) | 1 | 1 | one charge or set |
 | process insert | CRYO_CO2 | PSV for one bank half, fire-case bore (AQS-SAF-005) | 1 | 1 | one charge or set |
 
-116 lines; 35 spare motors, 765 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.
+116 lines; 35 spare motors, 767 building-block spares, 16 process insert sets. Intervals and failure rates are X-OPS-02.

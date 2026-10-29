@@ -148,7 +148,7 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | GREASE_CA | kettle | external visual (1 y, A-M-189) |
 | GREASE_LI | kettle | external visual (1 y, A-M-189) |
 | P_CA | precip | external visual (1 y, A-M-189) |
-| SI_REDUCE | furnace | external visual (1 y, A-M-189) |
+| SI_REDUCE | furnace | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | EVAP_ACID | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | EVAP_BASE | evaporator | external inspection (5 y, API 510 6.4); internal or on-stream thickness (10 y, API 510 6.5); relief valve bench test (5 y, API 576); lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | ADS_CHILL | adsorption_chiller | external visual (1 y, A-M-189) |
@@ -174,5 +174,6 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | SW_INTAKE | intake | external visual (1 y, A-M-189) |
 | DESAL_RO | membrane | external visual (1 y, A-M-189) |
 | BRIN_RECOVER | evaporator | external visual (1 y, A-M-189) |
+| SI_REFINE | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 
-165 units, 360 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+166 units, 367 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

@@ -2087,7 +2087,7 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3028.0,
+        "vs_znbr2_kwh": 3046.0,
         "fraction_of_znbr2_study": 0.07,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -2446,7 +2446,7 @@
             "IA-O2-SHIP": 22.884,
             "IA-MEOH-SHIP": 28.029,
             "IA-GYPSUM-SHIP": 0.576,
-            "IA-CL2-SHIP": 39.419,
+            "IA-CL2-SHIP": 39.206,
             "IA-CA-CL2-SHIP": 0.097,
             "IA-KROLL-CO": 0.585,
             "IA-MO-VENT": 0.043,
@@ -2457,7 +2457,7 @@
             "IA-FAB-PRODUCT": 0.139
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.326,
+            "IA-H2O-MU": 64.152,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -2473,10 +2473,10 @@
             "IA-C-CR": 0.087,
             "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
-            "IA-SI-IMPORT": 0.226
+            "IA-QUARTZ-MU": 0.718
           },
-          "net_kg_d": 0.001,
-          "residual_kg_d": 0.002,
+          "net_kg_d": -0.53,
+          "residual_kg_d": -0.529,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -2777,28 +2777,28 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 5996,
+        "count": 6032,
         "presence": "present",
-        "nameplate_kw": 2998,
-        "area_m2": 26315,
-        "balance_kWp": 1499,
+        "nameplate_kw": 3016,
+        "area_m2": 26574,
+        "balance_kWp": 1508,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            228000,
-            126000
+            210000,
+            138000
           ],
           "bays": [
-            38,
-            21
+            35,
+            23
           ],
-          "footprint_m2": 28728.0,
-          "extension_m2": 28296.0,
-          "roof_capacity_kWp": 2999.9,
+          "footprint_m2": 28980.0,
+          "extension_m2": 28548.0,
+          "roof_capacity_kWp": 3029.5,
           "perimeter_pathway_mm": 1829,
           "arrays": 15,
-          "extension_load_kW": 81.57,
+          "extension_load_kW": 82.13,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -2809,7 +2809,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 350.0702,
+        "value": 351.3442,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2951,8 +2951,8 @@
         "count": 42,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2303.7,
-          "export_kWh_d_clear": 6488,
+          "export_peak_kW": 2302.5,
+          "export_kWh_d_clear": 6526,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2982,9 +2982,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 216.2,
+          "bus_demand_kW": 217.5,
           "section_rating_A": 400,
-          "basis_A": 289.0,
+          "basis_A": 290.7,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -3319,27 +3319,27 @@
       "class": "flow_battery",
       "tags": [],
       "params": {
-        "kW": 983,
-        "kWh": 3028,
+        "kW": 989,
+        "kWh": 3046,
         "presence": "present",
-        "charge_kW": 983,
-        "discharge_kW": 217,
+        "charge_kW": 989,
+        "discharge_kW": 218,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 42 hybrid inverters, 72.1 kWh and 23.4 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 42 hybrid inverters, 72.5 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.676,
-          "purge_m3_h": 31.98,
+          "H2_m3_d": 7.721,
+          "purge_m3_h": 32.17,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1980.3
+          "electrode_area_m2": 1992.0
         }
       },
       "modules": [],
       "electrical_role": "storage",
       "continuous_kw": {
-        "value": 216.2517,
+        "value": 217.5226,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 216.3 kW, charge 982.9 kW, 3028 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.5 kW, charge 988.7 kW, 3045 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       }
     },
     {
@@ -5643,7 +5643,7 @@
         "design": {
           "machine": "two-strand horizontal semi-continuous caster",
           "feed_kg_d": 31.7125,
-          "billet_kg_d": 13.244228000000065,
+          "billet_kg_d": 13.244228000000009,
           "ingot_kg_d": 21.7125,
           "strands": 2,
           "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"
@@ -6564,7 +6564,7 @@
       "params": {
         "sec3_material": {
           "mat": "Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7)",
-          "basis": "GLASS-sector furnace unit with solids-only edges (CHAR_TO_SI on the graph design day at zero): the construction material is issued here at the lining level (SCHACHT2004 ch. 8 carbonaceous hot faces; CRC_SI is the element benchmark for the reduction duty class); process duty and its rates stay a unit task 02 pending item. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "basis": "GLASS-sector arc furnace reducing quartz ore with char (IA-QUARTZ-MU, CHAR_TO_SI, sized by flow_graph/param/si_refine.py, A-M-419): the construction material is issued at the lining level (SCHACHT2004 ch. 8 carbonaceous hot faces; CRC_SI is the element benchmark for the reduction duty class); the CO burns in the hood and the silica fume goes to the baghouse. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
           "alt": "Silicon-carbide hot face when batch chemistry reaches beyond the graphite class (a process-change decision, not a materials trade)",
           "note": "no wetted stream on the graph; the selection is the construction class only.",
           "task": "X-MAT-22"
@@ -6572,7 +6572,12 @@
       },
       "modules": [],
       "electrical_role": null,
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.1472,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): 0.2717 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py)."
+      }
     },
     {
       "unit_id": "EVAP_ACID",
@@ -6892,35 +6897,35 @@
       "tags": [],
       "params": {
         "hvac": {
-          "light_kW": 24.9,
-          "vent_kW": 35.292,
-          "envelope_kW": 21.379,
-          "total_kW": 81.572,
-          "vent_L_s": 8488.8,
-          "Qh_kW": 50.182,
-          "Qc_kW": 99.348,
-          "slab_kW": 3.095,
-          "gains_kW": 35.511,
+          "light_kW": 25.122,
+          "vent_kW": 35.606,
+          "envelope_kW": 21.404,
+          "total_kW": 82.133,
+          "vent_L_s": 8564.4,
+          "Qh_kW": 50.346,
+          "Qc_kW": 99.976,
+          "slab_kW": 3.042,
+          "gains_kW": 35.828,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 443.677,
-          "peak_c_kW": 393.008
+          "peak_h_kW": 445.723,
+          "peak_c_kW": 395.352
         },
-        "footprint_m2": 28296.0,
+        "footprint_m2": 28548.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 81.572 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 82.133 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 81.5717,
+        "value": 82.1326,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 28296 m2; lighting 24.90 kW (IECC 2021 C405, 10 % lit), ventilation 35.29 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.38 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.2 kW and cooling 99.3 kW thermal average after internal gains 35.5 kW and slab edge 3.09 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 35.61 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.40 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.3 kW and cooling 100.0 kW thermal average after internal gains 35.8 kW and slab edge 3.04 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       }
     },
     {
@@ -7315,6 +7320,32 @@
       "modules": [],
       "electrical_role": null,
       "continuous_kw": null
+    },
+    {
+      "unit_id": "SI_REFINE",
+      "sector_id": "GLASS",
+      "enabled": true,
+      "class": "reactor",
+      "tags": [],
+      "params": {
+        "presence": "present",
+        "note": "Electronic-grade silicon refining (A-M-419).",
+        "sec3_material": {
+          "mat": "Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route)",
+          "basis": "Dry chlorosilanes, hydrogen chloride and hydrogen at up to about 300 C in the hydrochlorinator and a cooled wall round rods at about 1100 C (A-M-419, flow_graph/param/si_refine.py): dry hydrogen chloride and chlorosilanes are carried in nickel and stainless steel, and any moisture makes hydrochloric acid, so the loop is kept dry (ULLMANN_HCL; PERRY9_MAT). The product-contact parts are silicon or graphite so the charge stays at electronic grade. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Hastelloy C-276 for the purge and condensate lines if moisture ingress cannot be excluded",
+          "note": "wetted by dry chlorosilanes; moisture is the corrosion load, controlled by the dry loop.",
+          "task": "X-MAT-22"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": {
+        "value": 0.5659,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): 0.2264 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py)."
+      }
     }
   ],
   "streams": [
@@ -8690,7 +8721,7 @@
       "phase": "S",
       "carries": "scrap",
       "rate": {
-        "value": 12.299499,
+        "value": 12.071721,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
@@ -9559,10 +9590,10 @@
       "phase": "G",
       "carries": "Br2 vapor",
       "rate": {
-        "value": 908.725576,
+        "value": 914.066378,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.0 m3/h holds H2 at 25 % LFL: HER 6.54 + open-circuit 1.14 m3/d H2 on 4325 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.57 + open-circuit 1.15 m3/d H2 on 4350 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -9576,7 +9607,7 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 908.725576,
+        "value": 914.066378,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -10475,7 +10506,7 @@
       "from_unit_id": "METAL_STORE",
       "to_unit_id": "WAFER_FAB",
       "phase": "S",
-      "carries": "polysilicon CZ charge from the store",
+      "carries": "electronic-grade silicon CZ charge from the store",
       "rate": {
         "value": 0.226363,
         "unit": "kg/d",
@@ -11282,17 +11313,16 @@
       "from_unit_id": "OIL_PYRO",
       "to_unit_id": "SI_REDUCE",
       "phase": "S",
-      "carries": "pyro char",
+      "carries": "pyrolysis char reductant",
       "rate": {
-        "value": null,
-        "unit": "",
-        "status": "tbd",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.227778,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): 2 C per Si reduced = 0.2278 kg/d (si_refine.py, route TCS_SIEMENS)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "GLASS",
       "open_boundary": false,
-      "null_rate_kind": "inventory_cycle",
       "note": "3 kg/d assumption. notes/OIL_SECTOR.md.; namespace=IA; layers=mass"
     },
     {
@@ -11663,7 +11693,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 350.0702,
+        "value": 351.3442,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -12156,7 +12186,7 @@
       "phase": "S",
       "carries": "char reductant",
       "rate": {
-        "value": 5.5,
+        "value": 5.272222,
         "unit": "kg/d",
         "status": "study",
         "note": "Char less the carbon charged to the silicon-carbide furnace. | X-PAR-02 TF: char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET) (AQS-PAR-003)."
@@ -14077,7 +14107,7 @@
       "phase": "L",
       "carries": "water make-up for H and O leaving as product",
       "rate": {
-        "value": 64.325652,
+        "value": 64.151962,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -14743,7 +14773,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.622 kg/d (SANDER2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.623 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
@@ -15505,7 +15535,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 81.5717,
+        "value": 82.1326,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -16151,10 +16181,10 @@
       "phase": "G",
       "carries": "chlorine byproduct export (water-treatment class product)",
       "rate": {
-        "value": 39.419232,
+        "value": 39.205574,
         "unit": "kg/d",
         "status": "study",
-        "note": "Pot Cl2 byproduct 3.942 kg/kg Al exports at the dock (D-DOCK outlet; CRU closes exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-290 chlorine ruling). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Pot Cl2 byproduct 3.942 kg/kg Al less the 0.2137 kg/d silicon-loop make-up on IA-CL2-SIREF (A-M-419) exports at the dock (D-DOCK outlet; CRU closes exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-290 chlorine ruling). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
@@ -16950,10 +16980,10 @@
       "phase": "S",
       "carries": "imported polysilicon for the CZ charge",
       "rate": {
-        "value": 0.226363,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-MFG-40 TF (A-M-417): CZ charge per pull / days between pulls = 0.2264 kg/d (fab_silicon.py)."
+        "note": "Retired 2026-10-29 (owner decision t58u: no imports except waste or raw ore). The CZ charge is made on site by SI_REDUCE and SI_REFINE (A-M-419)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "FOUNDRY",
@@ -17095,6 +17125,176 @@
       "to_sector_id": "CRYO",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-QUARTZ-MU",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "SI_REDUCE",
+      "phase": "S",
+      "carries": "quartz ore for the silicon furnace (raw ore)",
+      "rate": {
+        "value": 0.71758,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): silica reduced plus fume plus impurities = 0.7176 kg/d (si_refine.py, route TCS_SIEMENS)."
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-SI-HOOD-O2",
+      "from_unit_id": "ATMOS",
+      "to_unit_id": "SI_REDUCE",
+      "phase": "G",
+      "carries": "oxygen of the hood air that burns the furnace carbon monoxide",
+      "rate": {
+        "value": 0.303408,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): half an O2 per CO burned = 0.3034 kg/d (si_refine.py, route TCS_SIEMENS)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-SI-CO2",
+      "from_unit_id": "SI_REDUCE",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "carries": "carbon dioxide of the burned furnace gas",
+      "rate": {
+        "value": 0.834593,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): one CO2 per CO burned = 0.8346 kg/d (si_refine.py, route TCS_SIEMENS)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-SI-FUME",
+      "from_unit_id": "SI_REDUCE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S",
+      "carries": "silica fume from the furnace baghouse",
+      "rate": {
+        "value": 0.142429,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): silica not recovered as silicon = 0.1424 kg/d (si_refine.py, route TCS_SIEMENS)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-SI-MG",
+      "from_unit_id": "SI_REDUCE",
+      "to_unit_id": "SI_REFINE",
+      "phase": "S",
+      "carries": "metallurgical-grade silicon",
+      "rate": {
+        "value": 0.271744,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): refining feed / yield / purity = 0.2717 kg/d (si_refine.py, route TCS_SIEMENS)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-CL2-SIREF",
+      "from_unit_id": "AL_POT",
+      "to_unit_id": "SI_REFINE",
+      "phase": "G",
+      "carries": "chlorine make-up of the chlorosilane loop",
+      "rate": {
+        "value": 0.213658,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): chlorine leaving in the purge = 0.2137 kg/d (si_refine.py, route TCS_SIEMENS)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-SI-PURGE",
+      "from_unit_id": "SI_REFINE",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "impurity chlorides and silicon tetrachloride bleed",
+      "rate": {
+        "value": 0.259039,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): impurity chlorides plus SiCl4 of the unrecovered silicon = 0.2590 kg/d (si_refine.py, route TCS_SIEMENS)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-SI-EG",
+      "from_unit_id": "SI_REFINE",
+      "to_unit_id": "METAL_STORE",
+      "phase": "S",
+      "carries": "electronic-grade silicon for the CZ charge",
+      "rate": {
+        "value": 0.226363,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): the CZ charge of fab_silicon.py = 0.2264 kg/d (si_refine.py, route TCS_SIEMENS)."
+      },
+      "from_sector_id": "GLASS",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-SI_REDUCE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SI_REDUCE",
+      "phase": "E",
+      "carries": "480 V AC",
+      "rate": {
+        "value": 0.1472,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): feed equal to SI_REDUCE continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=elec"
+    },
+    {
+      "stream_id": "SF-SI_REFINE",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "SI_REFINE",
+      "phase": "E",
+      "carries": "480 V AC",
+      "rate": {
+        "value": 0.5659,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): feed equal to SI_REFINE continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=elec"
     }
   ],
   "electrical": {
@@ -17109,19 +17309,19 @@
       "PUMPED_HYDRO"
     ],
     "need_kw": {
-      "value": 216.25,
+      "value": 217.52,
       "unit": "kW",
       "status": "study",
-      "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 38x21 bays, ext 81.57 kW)."
+      "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 35x23 bays, ext 82.13 kW)."
     },
     "target_kw": {
-      "value": 540.63,
+      "value": 543.81,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."
     },
     "pv_module_kw": 0.5,
-    "pv_count": 5996,
+    "pv_count": 6032,
     "znbr_module_kw": 60.0,
     "znbr_count": 42,
     "rect_count": 1,

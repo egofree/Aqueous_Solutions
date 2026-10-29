@@ -671,7 +671,8 @@ for _e in g['edges']:
     if _e.get('presence') == 'present' and 'mass' in (_e.get('layers') or []) and (_e['rate'].get('unit') in ('kg/d', None)) and not _e['rate'].get('value'):
         _k = _rte_kind(_e)
         if _k: _RTE[_k].append(_e)
-RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_FAB', 'the CZ charge is sized from the wafer need and imported through the dock (A-M-417)', 'flow_graph/param/fab_silicon.py'),
+RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_FAB', 'the CZ charge is sized from the wafer need (A-M-417) and made on site by SI_REDUCE and SI_REFINE (A-M-419)', 'flow_graph/param/fab_silicon.py'),
+            ('X-RTE-SI-BACKUP', 'Refining of SI_REDUCE silicon to charge grade, with a backup of a different technology', 'the CZ charge is refined on site on a chlorosilane loop by the Siemens route, with the silane fluidised bed as the selectable other technology (si_refine_route, A-M-419); the polysilicon import is retired', 'flow_graph/param/si_refine.py'),
             ('X-RTE-UPW_TO_FAB', 'Route UPW_TO_FAB: retired as a duplicate', 'IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired', 'flow_graph/plant_flow_graph.json')]
 RTE_DONE += [(f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']}: standby at its rated case",
              f"the route carries {_e['params']['rate_rated_kg_d']:g} kg/d when {_e['params']['rated_case']} (A-M-418)", 'flow_graph/param/standby_routes.py')
@@ -686,9 +687,17 @@ for _k, _t, _c in (('standby', 'Standby routes without a rated case', 'each stan
     if _RTE[_k]:
         _rte_items.append((f'X-RTE-{_k.upper()}', f"{_t}: {', '.join(sorted(e['stream_id'] for e in _RTE[_k]))}", _c, 'X-PAR-02', None))
 _rte_items += [('X-RTE-PV-SI', 'Silicon wafers for SOLAR_PV_CELL', 'the cell line has a wafer route sized from pv_cells_per_d, from the fab or an import, with both balances closed', 'X-RTE-STOCK_TO_FAB', None),
-               ('X-RTE-SI-BACKUP', 'In-house refining of SI_REDUCE silicon to charge grade', 'a refining route of a different technology from the polysilicon import is designed and sized, or the import is confirmed as the only path', 'X-RTE-STOCK_TO_FAB', None),
                ('X-RTE-CZ-HOTZONE', 'CZ hot-zone heater from a heat-loss model', 'the 35 kW hot-zone duty of A-M-417 is replaced by a heat-loss model of the hot zone, and the pull peak is carried in the one-line', 'X-RTE-STOCK_TO_FAB', None),
                ('X-RTE-LEGACY-PFD', 'Remaining hand-drawn process sheets', 'each script in flow_graph/exporters/matplotlib/ that the regenerator does not run is checked for what it draws and who cites it, then retired or replaced by a graph view', '—', None)]
+# Owner decision 2026-10-29 (t58u): the plant makes everything on site; only waste and raw ore come in. Every present dock
+# import that carries flow and is not waste or raw ore is an open task: make it on site, or show it is waste or ore.
+_ORE = ('ore', 'concentrate', 'spar', 'brine', 'mining-waste', 'quartz', 'silica', 'intake air', 'waste')
+for _e in sorted(g['edges'], key=lambda e: e['stream_id']):
+    if _e.get('presence') == 'present' and _e['from_unit_id'] == 'NORTH_DOCK' and (_e['rate'].get('value') or 0) > 0 and 'mass' in (_e.get('layers') or []):
+        _c = (_e.get('carries') or '').lower()
+        if not any(k in _c for k in _ORE):
+            _rte_items.append((f"X-RTE-IMPORT-{_e['stream_id']}", f"Import {_e['stream_id']} to {_e['to_unit_id']} ({_e.get('carries')}) is neither waste nor raw ore",
+                               'the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore', 'X-RTE-SI-BACKUP', None))
 X.append(('RTE', 'Routes without flow (owner decision 2026-10-29)', _rte_items))
 OWNER_X |= {'X-RTE-RETIRED'}
 DONE_X |= {tid for tid, *_ in RTE_DONE}

@@ -170,8 +170,8 @@ ELEC,genset,BACKUP_GEN,radiator fan feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu
 ELEC,genset,BACKUP_GEN,starter motor EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,12.1,1,12.1,NEC 250.122 at 15 A OCPD
 ELEC,genset,BACKUP_GEN,starter motor control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,12.1,1,72.5,"start/stop, run, fault (assumed)"
 ELEC,genset,BACKUP_GEN,starter motor feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,12.1,1,36.2,"NEC 430.22: 1.25 x 3.4 A FLC; routed tray from panel LP-ELEC (Manhattan x 1.1 + 3 m drop, assumed)"
-ELEC,grounding,GROUND_GRID,ring and mesh conductors,bare grounding,4/0 AWG,bare soft-drawn Cu,-,1,5138.0,1,5138.0,AQS-ELEC-005 ring 728 m + mesh 4410 m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS)
-ELEC,hall,EXT_HALL,lighting branch circuit 277 V,"power, 1 ph + N + EGC",6 AWG,THHN/THWN-2 Cu in EMT,600 V,3,120.0,57,20520.0,installed 249 kW (average 24.9 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06)
+ELEC,grounding,GROUND_GRID,ring and mesh conductors,bare grounding,4/0 AWG,bare soft-drawn Cu,-,1,5262.0,1,5262.0,AQS-ELEC-005 ring 716 m + mesh 4546 m; 4/0 assumed (IEEE 80 conductor sizing at X-ELS)
+ELEC,hall,EXT_HALL,lighting branch circuit 277 V,"power, 1 ph + N + EGC",6 AWG,THHN/THWN-2 Cu in EMT,600 V,3,120.0,57,20520.0,installed 251 kW (average 25.122 kW at 10 % lit) / 4.43 kW per 20 A circuit at 80 % (16 A); 120 m mean (assumed); 6 AWG for 3 % drop (X-ELS-06)
 ELEC,inverter,SOL_ARK_60K,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,48,960.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,inverter,SOL_ARK_60K,cooling fan signal,control,18 AWG,shielded pair,300 V,2,10.0,48,960.0,speed/position feedback (assumed)
 ELEC,pem_fc,FUEL_CELL,cathode air blower EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,8.1,1,8.1,NEC 250.122 at 15 A OCPD
@@ -185,8 +185,8 @@ ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN power,DC power pair,16 AWG,
 ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 ELEC,rectifier,RECTIFIER,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,4,80.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,rectifier,RECTIFIER,cooling fan signal,control,18 AWG,shielded pair,300 V,2,10.0,4,80.0,speed/position feedback (assumed)
-ELEC,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,334,40080.0,"5996 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 334 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
-ELEC,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,334,20040.0,NEC 690.45 / 250.122
+ELEC,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,336,40320.0,"6032 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 336 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
+ELEC,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,336,20160.0,NEC 690.45 / 250.122
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 ELEC,scrubber,ZNBR2_BR2_REGEN,transfer pump S69B to ZNBR2 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -307,6 +307,8 @@ GEO,heat_pump,GEO_HP,heat pump compressor feeder,"power, 3 ph + EGC",14 AWG,"XHH
 GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,16.4,1,16.4,NEC 250.122 at 15 A OCPD
 GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,16.4,1,98.4,"start/stop, run, fault (assumed)"
 GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,16.4,1,49.2,"NEC 430.22: 1.25 x 2.4 A FLC; routed tray from panel LP-DIGESTER (Manhattan x 1.1 + 3 m drop, assumed)"
+GLASS,reactor,SI_REFINE,transfer pump IA-SI-PURGE to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
+GLASS,reactor,SI_REFINE,transfer pump IA-SI-PURGE to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 MEOH,distribution,LP-MEOH,panel feeder 208 V,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,21.4,1,85.8,NEC 430.24: 3.0 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
 MEOH,ferment,MEOH_FERM,PIR insulation 50 mm with PE cladding; daily recirculation p EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,7.0,1,7.0,NEC 250.122 at 15 A OCPD
 MEOH,ferment,MEOH_FERM,PIR insulation 50 mm with PE cladding; daily recirculation p control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,7.0,1,42.1,"start/stop, run, fault (assumed)"

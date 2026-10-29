@@ -1,6 +1,6 @@
 {
  "generated_by": "docs-authority/_pid_sheets.py",
- "graph_sha256": "1ca0d5311e1e660b996a6e7985eb41bcda59a4fd760c1e665beb6181d2609b58",
+ "graph_sha256": "4a39307819d4f7d87577b6e1483c28f84a1abd9020ceb645ad0d652d5f695aa0",
  "patterns": [
   "docs-authority/pid/*"
  ],
@@ -155,6 +155,7 @@
   "SHELL_BURNOUT",
   "SINTER",
   "SI_REDUCE",
+  "SI_REFINE",
   "SOLAR_PV_CELL",
   "SOL_ARK_60K",
   "STOCK_OUT",

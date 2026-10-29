@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 72.21 kg/d. Mass out 72.21 kg/d. Electrical duty 0.4069 kW. In: S03 1.5 kg/d (N2); S37 3.3 kg/d (colloidal silica slurry); STOCK_TO_FAB 0.2264 kg/d (polysilicon CZ charge from the store); POLY_TO_FAB 0 kg/d (polymer feedstock to fab); 4 more. Out: S39 3.31 kg/d (spent slurry and etch liquor); IA-FAB-LOSS 0.51 kg/d (kerf); IA-FAB-SPENT 66.5 kg/d (spent UPW); IA-LITHO-IN 0.9875 kg/d (spent resist and solvent); 4 more.
+1. Basis. Mass in 72.21 kg/d. Mass out 72.21 kg/d. Electrical duty 0.4069 kW. In: S03 1.5 kg/d (N2); S37 3.3 kg/d (colloidal silica slurry); STOCK_TO_FAB 0.2264 kg/d (electronic-grade silicon CZ charge from the store); POLY_TO_FAB 0 kg/d (polymer feedstock to fab); 4 more. Out: S39 3.31 kg/d (spent slurry and etch liquor); IA-FAB-LOSS 0.51 kg/d (kerf); IA-FAB-SPENT 66.5 kg/d (spent UPW); IA-LITHO-IN 0.9875 kg/d (spent resist and solvent); 4 more.
 
 2. Size.
 - In 76.61 kg/d, out 76.61 kg/d. No holdup claimed.

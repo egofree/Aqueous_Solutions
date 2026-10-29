@@ -7176,7 +7176,7 @@
  },
  {
   "id": "A-M-417",
-  "value": "Wafer-fab silicon and blanket gas from the wafer need: a 150 mm wafer slot is 675 um of wafer plus 150 um of kerf, and 25 % of the charge is crop and pot scrap; the CZ charge is the larger of one 7 d tool campaign of starts and the least melt a crucible 2.7 times the ingot diameter holds (depth 0.25 of its diameter, liquid silicon 2.57 g/cm3), and the pull interval follows; polysilicon is imported through the dock into METAL_STORE, which holds the larger of one charge and 90 d of feed; wafers run fab, lithography and back to the fab, then to the dock; kerf and crop go to the leach; argon from CRYO_ASU at 0.03 slpm per cm2 of crucible for meltdown (3 h), neck and crown (2 h), the body pull at 60 mm/h and cool-down (4 h), returned to the cold-box getter in a closed loop; the hot zone draws 35 kW while under argon",
+  "value": "Wafer-fab silicon and blanket gas from the wafer need: a 150 mm wafer slot is 675 um of wafer plus 150 um of kerf, and 25 % of the charge is crop and pot scrap; the CZ charge is the larger of one 7 d tool campaign of starts and the least melt a crucible 2.7 times the ingot diameter holds (depth 0.25 of its diameter, liquid silicon 2.57 g/cm3), and the pull interval follows; the charge is made on site (A-M-419) into METAL_STORE, which holds one charge; wafers run fab, lithography and back to the fab, then to the dock; kerf and crop go to the leach; argon from CRYO_ASU at 0.03 slpm per cm2 of crucible for meltdown (3 h), neck and crown (2 h), the body pull at 60 mm/h and cool-down (4 h), returned to the cold-box getter in a closed loop; the hot zone draws 35 kW while under argon",
   "units": "kg/d, mm, um, h, slpm",
   "where": "flow_graph/param/fab_silicon.py design() and tf(), called from flow_graph/param/balance.py physics(); flow_graph/param/write_graph.py CZ charge energy; docs-authority/_wafer_fab_equipment.py",
   "basis": "Owner decision 2026-10-29: the crystal-growth blanket gas is argon from the cold box and the fab gets a silicon feed so the balance closes. SEMI M1 wafer thickness; CRC_SI density; argon reference density 1.784 g/L at 0 C and 1 atm. Nitrogen is refused as a CZ ambient because it forms silicon nitride on the melt. The plant makes only metallurgical-grade silicon (SI_REDUCE), so the charge is imported (AQS-PLAN-011 elimination rule: an import path with its resupply interval and holding)",
@@ -7209,5 +7209,25 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.standby_routes; the rated rate equals the S57 rate and METAL_STORE holds the rated feed for the outage; IND_TO_ATOM is rated at the IA-MELT-ATOM rate and the IND_MELT outage heats fit the day"
+ },
+ {
+  "id": "A-M-419",
+  "value": "The CZ charge is made on site (no imports except waste or raw ore). SI_REDUCE reduces quartz ore with pyrolysis char, SiO2 + 2 C to Si + 2 CO, recovering 80 % of the silica as silicon of 98 % purity at 13 kWh/kg; the CO burns to CO2 in the hood with room air and the silica fume is caught in the baghouse and sent to the acid leach. SI_REFINE refines it on a closed chlorosilane loop, selectable between trichlorosilane on Siemens rods (85 % yield, 60 kWh/kg, 10 % deposited a pass) and silane in a fluidised bed (80 % yield, 20 kWh/kg); the loop bleeds the impurity chlorides (2.2 kg Cl per kg impurity) and the SiCl4 of the unrecovered silicon to the acid leach LEACH_CSTR_1, where it hydrolyses to silica and hydrogen chloride, and takes the chlorine they carry as Cl2 from AL_POT.",
+  "units": "kg/d, kWh/kg, fraction",
+  "where": "flow_graph/param/si_refine.py design() and tf(), called from flow_graph/param/balance.py physics(); docs-authority/_wafer_fab_equipment.py Section 4.2",
+  "basis": "Owner decision 2026-10-29 (t58u): the plant produces on site, with no imports except waste or raw ore, so the imported polysilicon route is replaced by on-site refining, with a different-technology backup as a selectable option. Carbothermic reduction and the chlorosilane (Siemens and silane) routes are the industrial practice for metallurgical and electronic-grade silicon.",
+  "sensitivity": "The refining energy scales with the charge and the route; the chlorine make-up scales with 1 - yield and the impurity content.",
+  "replaced_by": "Measured furnace recovery, loop yield, purge assay and energy of the first campaigns",
+  "task": "QA audit 2026-10-29, on-site silicon (owner decision t58u)",
+  "files": [
+   "flow_graph/param/si_refine.py",
+   "flow_graph/param/fab_silicon.py",
+   "flow_graph/param/balance.py",
+   "flow_graph/param/drivers.json",
+   "docs-authority/_wafer_fab_equipment.py",
+   "docs-authority/_task_plan_gen.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.si_refine; the furnace and loop mass balances close and the electronic-grade output equals the CZ charge"
  }
 ]

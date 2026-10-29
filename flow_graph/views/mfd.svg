@@ -426,14 +426,14 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1630.49,-1074.67C1630.92,-1071.6 1631.21,-1068.33 1631.32,-1065.06"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1634.82,-1064.75 1631.14,-1054.81 1627.82,-1064.88 1634.82,-1064.75"/>
-<text text-anchor="middle" x="1677.91" y="-1063.47" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n908.725576 kg/d</text>
+<text text-anchor="middle" x="1677.91" y="-1063.47" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n914.066378 kg/d</text>
 </g>
 <!-- ZNBR2_BR2_REGEN&#45;&gt;ZNBR2 -->
 <g id="edge57" class="edge">
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1613.47,-1054.72C1613,-1057.79 1612.71,-1061.06 1612.59,-1064.33"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1609.1,-1064.66 1612.82,-1074.58 1616.09,-1064.5 1609.1,-1064.66"/>
-<text text-anchor="middle" x="1563.03" y="-1062.12" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n908.725576 kg/d</text>
+<text text-anchor="middle" x="1563.03" y="-1062.12" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n914.066378 kg/d</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node19" class="node">
@@ -940,7 +940,7 @@
 <title>MFG_SHOP&#45;&gt;LEACH_CSTR_1</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M426.54,-761.29C515.04,-790.67 759.19,-855.37 867.22,-878.46"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="866.73,-881.94 877.24,-880.57 868.17,-875.09 866.73,-881.94"/>
-<text text-anchor="middle" x="602.38" y="-822.47" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S16\n12.299499 kg/d</text>
+<text text-anchor="middle" x="602.38" y="-822.47" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S16\n12.071721 kg/d</text>
 </g>
 <!-- HOPPER -->
 <g id="node60" class="node">
@@ -1070,5 +1070,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="1154.1" y="1349.5" width="607.3" height="161.9" fill="white" stroke="black" stroke-width="1.69"/><text x="1164.2" y="1376.5" font-family="sans-serif" font-size="15.2">Aqueous Solutions (owner)   AQS-DWG-PFD-MFD</text><text x="1164.2" y="1405.2" font-family="sans-serif" font-size="15.2">Mass flow diagram</text><text x="1164.2" y="1433.9" font-family="sans-serif" font-size="15.2">Type: flow diagram (ISO_10628_2)   Rev b1c50208   Issued 2026-10-15</text><text x="1164.2" y="1462.5" font-family="sans-serif" font-size="15.2">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1164.2" y="1491.2" font-family="sans-serif" font-size="15.2">Graph SHA-256 1ca0d5311e1e660b   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="1154.1" y="1349.5" width="607.3" height="161.9" fill="white" stroke="black" stroke-width="1.69"/><text x="1164.2" y="1376.5" font-family="sans-serif" font-size="15.2">Aqueous Solutions (owner)   AQS-DWG-PFD-MFD</text><text x="1164.2" y="1405.2" font-family="sans-serif" font-size="15.2">Mass flow diagram</text><text x="1164.2" y="1433.9" font-family="sans-serif" font-size="15.2">Type: flow diagram (ISO_10628_2)   Rev d496b161   Issued 2026-10-15</text><text x="1164.2" y="1462.5" font-family="sans-serif" font-size="15.2">Created: flow graph pipeline   Approved: not approved (study)</text><text x="1164.2" y="1491.2" font-family="sans-serif" font-size="15.2">Graph SHA-256 4a39307819d4f7d8   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

@@ -281,9 +281,11 @@ def apply(g=None, write=False):
         f'Al metal to the melt: molten AlCl3-(NaCl-KCl) electrolysis 2AlCl3 -> 2Al + 3Cl2 at 700 C, '
         f'{s["pot_e"]["AL_POT"]["I_A"]:.0f} A at CE {DR.val(s["d"], "foundry_pot_ce")} (A-M-282); '
         f'{s["al_i"]:.0f} kg/d line + {s["al"] - s["al_i"]:.1f} export surplus (A-M-285). | {TAG}.')
+    from flow_graph.param import si_refine as _sir
+    _si_cl2 = _sir.design(s['d'])['cl2_kg_d']   # chlorine make-up of the on-site silicon loop, IA-CL2-SIREF (A-M-419)
     mk('IA-CL2-SHIP', 'AL_POT', 'NORTH_DOCK', 'DOCK', 'G', 'chlorine byproduct export (water-treatment class product)',
-       s['al_cl2'],
-       f'Pot Cl2 byproduct {3 * MM["Cl"] / MM["Al"]:.3f} kg/kg Al exports at the dock (D-DOCK outlet; CRU closes '
+       s['al_cl2'] - _si_cl2,
+       f'Pot Cl2 byproduct {3 * MM["Cl"] / MM["Al"]:.3f} kg/kg Al less the {_si_cl2:.4f} kg/d silicon-loop make-up on IA-CL2-SIREF (A-M-419) exports at the dock (D-DOCK outlet; CRU closes '
        f'exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-290 chlorine ruling). | {TAG}.',
        layers=['mass', 'energy'])
     mk('IA-MGCL2-KROLL', 'TI_CELL', 'MG_POT', 'FOUNDRY', 'L', 'Kroll retort MgCl2 return (net of drag-out)',

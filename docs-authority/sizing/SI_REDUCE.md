@@ -17,7 +17,7 @@ This page records the size of unit SI_REDUCE, of class `furnace` in sector GLASS
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph.
+The unit takes 1.24877 kg/d by 3 streams and gives 1.24877 kg/d by 3 streams. Its continuous electrical load is 0.1472 kW, fed by stream SF-SI_REDUCE.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The graph gives no envelope for the unit.
 
-With no mass flow, the unit has no hold-up volume to check.
+The hold-up check takes 1.24877 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 1.249 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 110 mm in diameter and 170 mm high.
 
 ## 4. Material
 

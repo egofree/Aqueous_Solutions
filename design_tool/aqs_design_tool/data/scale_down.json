@@ -121,6 +121,24 @@
      "carries": "nutrient surplus"
     },
     {
+     "stream_id": "IA-SI-FUME",
+     "from": "SI_REDUCE",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "GLASS",
+     "rate": 0.142429,
+     "unit": "kg/d",
+     "carries": "silica fume from the furnace baghouse"
+    },
+    {
+     "stream_id": "IA-SI-PURGE",
+     "from": "SI_REFINE",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "GLASS",
+     "rate": 0.259039,
+     "unit": "kg/d",
+     "carries": "impurity chlorides and silicon tetrachloride bleed"
+    },
+    {
      "stream_id": "IA-SIC-RET",
      "from": "NUTRIENT_DOSE",
      "to": "LEACH_CSTR_1",
@@ -188,7 +206,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "MFG",
-     "rate": 12.299499,
+     "rate": 12.071721,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -840,7 +858,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 64.325652,
+     "rate": 64.151962,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -1199,9 +1217,9 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": null,
-     "unit": null,
-     "carries": "pyro char"
+     "rate": 0.227778,
+     "unit": "kg/d",
+     "carries": "pyrolysis char reductant"
     },
     {
      "stream_id": "CUT-3-OUT",
@@ -1280,7 +1298,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 5.5,
+     "rate": 5.272222,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -1396,9 +1414,9 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "OIL",
-     "rate": null,
-     "unit": null,
-     "carries": "pyro char"
+     "rate": 0.227778,
+     "unit": "kg/d",
+     "carries": "pyrolysis char reductant"
     },
     {
      "stream_id": "HL-Q3-A-HX6",
@@ -1428,6 +1446,15 @@
      "carries": "digest NaOH, 20 wt%"
     },
     {
+     "stream_id": "IA-CL2-SIREF",
+     "from": "AL_POT",
+     "to": "SI_REFINE",
+     "other_sector": "FOUNDRY",
+     "rate": 0.213658,
+     "unit": "kg/d",
+     "carries": "chlorine make-up of the chlorosilane loop"
+    },
+    {
      "stream_id": "IA-CULLET",
      "from": "LEACH_CSTR_1",
      "to": "GLASS_RINSE",
@@ -1435,6 +1462,15 @@
      "rate": 36.82,
      "unit": "kg/d",
      "carries": "cullet"
+    },
+    {
+     "stream_id": "IA-SI-HOOD-O2",
+     "from": "ATMOS",
+     "to": "SI_REDUCE",
+     "other_sector": "WTR",
+     "rate": 0.303408,
+     "unit": "kg/d",
+     "carries": "oxygen of the hood air that burns the furnace carbon monoxide"
     },
     {
      "stream_id": "S101",
@@ -1484,6 +1520,42 @@
      "carries": "mill dust"
     },
     {
+     "stream_id": "IA-SI-CO2",
+     "from": "SI_REDUCE",
+     "to": "ATMOS",
+     "other_sector": "WTR",
+     "rate": 0.834593,
+     "unit": "kg/d",
+     "carries": "carbon dioxide of the burned furnace gas"
+    },
+    {
+     "stream_id": "IA-SI-EG",
+     "from": "SI_REFINE",
+     "to": "METAL_STORE",
+     "other_sector": "FOUNDRY",
+     "rate": 0.226363,
+     "unit": "kg/d",
+     "carries": "electronic-grade silicon for the CZ charge"
+    },
+    {
+     "stream_id": "IA-SI-FUME",
+     "from": "SI_REDUCE",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "DIGESTER",
+     "rate": 0.142429,
+     "unit": "kg/d",
+     "carries": "silica fume from the furnace baghouse"
+    },
+    {
+     "stream_id": "IA-SI-PURGE",
+     "from": "SI_REFINE",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "DIGESTER",
+     "rate": 0.259039,
+     "unit": "kg/d",
+     "carries": "impurity chlorides and silicon tetrachloride bleed"
+    },
+    {
      "stream_id": "IA-SIL-SRC",
      "from": "GLASS_DIGEST",
      "to": "WS_SLURRY",
@@ -1504,6 +1576,15 @@
    ],
    "stops": [
     {
+     "stream_id": "IA-QUARTZ-MU",
+     "from": "NORTH_DOCK",
+     "to": "SI_REDUCE",
+     "other_sector": "DOCK",
+     "rate": 0.71758,
+     "unit": "kg/d",
+     "carries": "quartz ore for the silicon furnace (raw ore)"
+    },
+    {
      "stream_id": "IA-TRIM-HX6",
      "from": "RECTIFIER",
      "to": "GLASS_DIGEST",
@@ -1520,6 +1601,24 @@
      "rate": 0.09,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
+    },
+    {
+     "stream_id": "SF-SI_REDUCE",
+     "from": "SOL_ARK_60K",
+     "to": "SI_REDUCE",
+     "other_sector": "ELEC",
+     "rate": 0.1472,
+     "unit": "kW",
+     "carries": "480 V AC"
+    },
+    {
+     "stream_id": "SF-SI_REFINE",
+     "from": "SOL_ARK_60K",
+     "to": "SI_REFINE",
+     "other_sector": "ELEC",
+     "rate": 0.5659,
+     "unit": "kW",
+     "carries": "480 V AC"
     }
    ],
    "inactive": [
@@ -2373,7 +2472,7 @@
      "other_sector": "FOUNDRY",
      "rate": 0.226363,
      "unit": "kg/d",
-     "carries": "polysilicon CZ charge from the store"
+     "carries": "electronic-grade silicon CZ charge from the store"
     },
     {
      "stream_id": "UPW_TO_FAB",
@@ -2624,7 +2723,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "OIL",
-     "rate": 5.5,
+     "rate": 5.272222,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -2833,7 +2932,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 12.299499,
+     "rate": 12.071721,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -2990,6 +3089,15 @@
   "FOUNDRY": {
    "no_sink": [
     {
+     "stream_id": "IA-SI-EG",
+     "from": "SI_REFINE",
+     "to": "METAL_STORE",
+     "other_sector": "GLASS",
+     "rate": 0.226363,
+     "unit": "kg/d",
+     "carries": "electronic-grade silicon for the CZ charge"
+    },
+    {
      "stream_id": "MFG_SCRAP_TO_IND",
      "from": "MFG_SHOP",
      "to": "IND_MELT",
@@ -3010,6 +3118,15 @@
      "carries": "slag return"
     },
     {
+     "stream_id": "IA-CL2-SIREF",
+     "from": "AL_POT",
+     "to": "SI_REFINE",
+     "other_sector": "GLASS",
+     "rate": 0.213658,
+     "unit": "kg/d",
+     "carries": "chlorine make-up of the chlorosilane loop"
+    },
+    {
      "stream_id": "IND_HEAT_TO_HX",
      "from": "IND_MELT",
      "to": "MET_HX_Q4",
@@ -3025,7 +3142,7 @@
      "other_sector": "FAB",
      "rate": 0.226363,
      "unit": "kg/d",
-     "carries": "polysilicon CZ charge from the store"
+     "carries": "electronic-grade silicon CZ charge from the store"
     },
     {
      "stream_id": "STOCK_TO_MFG",
@@ -3115,7 +3232,7 @@
      "from": "AL_POT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 39.419232,
+     "rate": 39.205574,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class product)"
     },
@@ -3190,15 +3307,6 @@
      "rate": 1.0,
      "unit": "kg/d",
      "carries": "spent foundry silica (solids return class)"
-    },
-    {
-     "stream_id": "IA-SI-IMPORT",
-     "from": "NORTH_DOCK",
-     "to": "METAL_STORE",
-     "other_sector": "DOCK",
-     "rate": 0.226363,
-     "unit": "kg/d",
-     "carries": "imported polysilicon for the CZ charge"
     },
     {
      "stream_id": "IA-SILICA-MU",
@@ -3408,6 +3516,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "dense grit (ilmenite/rutile fraction)"
+    },
+    {
+     "stream_id": "IA-SI-IMPORT",
+     "from": "NORTH_DOCK",
+     "to": "METAL_STORE",
+     "other_sector": "DOCK",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "imported polysilicon for the CZ charge"
     },
     {
      "stream_id": "IND_TO_ATOM",
@@ -4668,6 +4785,15 @@
      "carries": "Polish bank → UPW polish"
     },
     {
+     "stream_id": "IA-SI-CO2",
+     "from": "SI_REDUCE",
+     "to": "ATMOS",
+     "other_sector": "GLASS",
+     "rate": 0.834593,
+     "unit": "kg/d",
+     "carries": "carbon dioxide of the burned furnace gas"
+    },
+    {
      "stream_id": "IA-URINE",
      "from": "HABITATION",
      "to": "BLACK_DIGEST",
@@ -4794,6 +4920,15 @@
      "rate": 2.824,
      "unit": "kg/d",
      "carries": "peroxide dilution water"
+    },
+    {
+     "stream_id": "IA-SI-HOOD-O2",
+     "from": "ATMOS",
+     "to": "SI_REDUCE",
+     "other_sector": "GLASS",
+     "rate": 0.303408,
+     "unit": "kg/d",
+     "carries": "oxygen of the hood air that burns the furnace carbon monoxide"
     },
     {
      "stream_id": "IA-UPW-FAB",
@@ -5670,6 +5805,24 @@
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
     {
+     "stream_id": "SF-SI_REDUCE",
+     "from": "SOL_ARK_60K",
+     "to": "SI_REDUCE",
+     "other_sector": "GLASS",
+     "rate": 0.1472,
+     "unit": "kW",
+     "carries": "480 V AC"
+    },
+    {
+     "stream_id": "SF-SI_REFINE",
+     "from": "SOL_ARK_60K",
+     "to": "SI_REFINE",
+     "other_sector": "GLASS",
+     "rate": 0.5659,
+     "unit": "kW",
+     "carries": "480 V AC"
+    },
+    {
      "stream_id": "SF-SOLAR_PV_CELL",
      "from": "SOL_ARK_60K",
      "to": "SOLAR_PV_CELL",
@@ -6537,7 +6690,7 @@
      "from": "AL_POT",
      "to": "NORTH_DOCK",
      "other_sector": "FOUNDRY",
-     "rate": 39.419232,
+     "rate": 39.205574,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class product)"
     },
@@ -6746,7 +6899,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 64.325652,
+     "rate": 64.151962,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -6787,13 +6940,13 @@
      "carries": "purchased NaOH flake make-up"
     },
     {
-     "stream_id": "IA-SI-IMPORT",
+     "stream_id": "IA-QUARTZ-MU",
      "from": "NORTH_DOCK",
-     "to": "METAL_STORE",
-     "other_sector": "FOUNDRY",
-     "rate": 0.226363,
+     "to": "SI_REDUCE",
+     "other_sector": "GLASS",
+     "rate": 0.71758,
      "unit": "kg/d",
-     "carries": "imported polysilicon for the CZ charge"
+     "carries": "quartz ore for the silicon furnace (raw ore)"
     },
     {
      "stream_id": "IA-SILICA-MU",
@@ -6861,6 +7014,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "intake air"
+    },
+    {
+     "stream_id": "IA-SI-IMPORT",
+     "from": "NORTH_DOCK",
+     "to": "METAL_STORE",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "imported polysilicon for the CZ charge"
     }
    ]
   }

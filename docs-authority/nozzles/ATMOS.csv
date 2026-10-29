@@ -2,3 +2,5 @@ tag,size,rating,service,face,height_mm
 N1,DN15,Class 150,evaporated spray water to air,inlet,160
 N2,DN15,Class 150,drain,bottom,50
 N3,DN15,Class 150,vent,top,800
+N4,DN15,Class 150,oxygen of the hood air that burns the furnace carbon monoxide,outlet,600
+N5,DN15,Class 150,carbon dioxide of the burned furnace gas,inlet,160

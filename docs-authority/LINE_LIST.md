@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-565 edges: 321 piped, 130 solids transfers, 114 electrical. Piped edges without a length (unit position missing): 60.
+574 edges: 325 piped, 133 solids transfers, 116 electrical. Piped edges without a length (unit position missing): 64.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 34: AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 36: AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -573,7 +573,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SF-COLD_MILL | SOL_ARK_60K | COLD_MILL | cable | — | — | 38.3 | SOL_ARK_60K → COLD_MILL, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | SF-WIRE_DRAW | SOL_ARK_60K | WIRE_DRAW | cable | — | — | 38.3 | SOL_ARK_60K → WIRE_DRAW, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K | GEO_HP_CLOSED_LOOP | cable | — | — | 21.6 | SOL_ARK_60K → GEO_HP_CLOSED_LOOP, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
-| IA-SI-IMPORT | NORTH_DOCK | METAL_STORE | solids | — | — |  | NORTH_DOCK → METAL_STORE, position missing for METAL_STORE | solids: conveyor, bin or hand transfer; not piped |
 | IA-FAB-WAFER | WAFER_FAB | LITHO_COAT | solids | — | — | 2.7 | WAFER_FAB → LITHO_COAT, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-LITHO-WAFER-A | LITHO_COAT | LITHO_ALIGN | solids | — | — | 0.7 | LITHO_COAT → LITHO_ALIGN, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-LITHO-WAFER-B | LITHO_ALIGN | LITHO_DEV | solids | — | — | 0.6 | LITHO_ALIGN → LITHO_DEV, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
@@ -582,3 +581,13 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | solids | — | — | 37.0 | WAFER_FAB → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-AR-CZ | CRYO_ASU | WAFER_FAB | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 24.4 | CRYO_ASU → WAFER_FAB, orthogonal × 1.2 (placement_study (STUDY) + GA move + GA move; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 24.4 | WAFER_FAB → CRYO_ASU, orthogonal × 1.2 (placement_report; placement_study (STUDY) + GA move + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-QUARTZ-MU | NORTH_DOCK | SI_REDUCE | solids | — | — |  | NORTH_DOCK → SI_REDUCE, position missing for SI_REDUCE | solids: conveyor, bin or hand transfer; not piped |
+| IA-SI-HOOD-O2 | ATMOS | SI_REDUCE | DN15 | M1 | dry gas, H2/O2/N2/CO2 |  | ATMOS → SI_REDUCE, position missing for ATMOS, SI_REDUCE | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-SI-CO2 | SI_REDUCE | ATMOS | DN15 | P3 | process vent gas |  | SI_REDUCE → ATMOS, position missing for SI_REDUCE, ATMOS | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-SI-FUME | SI_REDUCE | LEACH_CSTR_1 | solids | — | — |  | SI_REDUCE → LEACH_CSTR_1, position missing for SI_REDUCE | solids: conveyor, bin or hand transfer; not piped |
+| IA-SI-MG | SI_REDUCE | SI_REFINE | solids | — | — |  | SI_REDUCE → SI_REFINE, position missing for SI_REDUCE, SI_REFINE | solids: conveyor, bin or hand transfer; not piped |
+| IA-CL2-SIREF | AL_POT | SI_REFINE | DN15 | P3 | process vent gas |  | AL_POT → SI_REFINE, position missing for AL_POT, SI_REFINE | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-SI-PURGE | SI_REFINE | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor |  | SI_REFINE → LEACH_CSTR_1, position missing for SI_REFINE | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-SI-EG | SI_REFINE | METAL_STORE | solids | — | — |  | SI_REFINE → METAL_STORE, position missing for SI_REFINE, METAL_STORE | solids: conveyor, bin or hand transfer; not piped |
+| SF-SI_REDUCE | SOL_ARK_60K | SI_REDUCE | cable | — | — |  | SOL_ARK_60K → SI_REDUCE, position missing for SI_REDUCE | electrical: cable schedule X-ELS-06 |
+| SF-SI_REFINE | SOL_ARK_60K | SI_REFINE | cable | — | — |  | SOL_ARK_60K → SI_REFINE, position missing for SI_REFINE | electrical: cable schedule X-ELS-06 |

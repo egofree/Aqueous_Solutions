@@ -52,6 +52,7 @@ FAMILIES = [
      ['ROOF_TANK', 'CATCH_TANK', 'HYDRO_SET']),
     ('docs-authority/POWER_SIZING.md', 'AQS-ELEC-007', 'Plant power sizing (docs-authority/_power_sizing.py, page by docs-authority/_power_sizing_doc.py)',
      ['PV_ARRAY', 'ZNBR2', 'SOL_ARK_60K', 'BACKUP_GEN', 'FUEL_CELL']),
+    ('docs-authority/WAFER_FAB_EQUIPMENT.md', 'AQS-EQP-FAB-001', 'Silicon refining for the CZ charge (flow_graph/param/si_refine.py, Section 4.2, A-M-419)', ['SI_REFINE']),
     ('docs-authority/POLYMER_HX_SIZING.md', 'AQS-DUTY-049', 'Polymer heat exchangers (docs-authority/_polymer_hx_study.py, X-MAT-11/12)', ['HX8']),
     # Residuals NOT listed (docs size the equipment under a legacy name): RECTIFIER, LITHO_ALIGN
     # and the rest of the task-02 tail retire through the per-unit sweep-doc pass below

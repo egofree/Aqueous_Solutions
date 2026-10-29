@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 36.94 kg/d. Mass out 36.94 kg/d. Electrical duty 0.0000 kW. In: IA-STOCK-STORE 36.71 kg/d (formed metal product to the store); IA-SI-IMPORT 0.2264 kg/d (imported polysilicon for the CZ charge). Out: STOCK_TO_MFG 25.9 kg/d (plate/rod/wire to manufacturing); STOCK_TO_FAB 0.2264 kg/d (polysilicon CZ charge from the store); STOCK_TO_WIRE_DRAW 0 kg/d (rod/wire for final sizing); IA-METAL-SHIP 10.81 kg/d (surplus foundry metal export (pot-line product, dispatch campaign)).
+1. Basis. Mass in 36.94 kg/d. Mass out 36.94 kg/d. Electrical duty 0.0000 kW. In: IA-STOCK-STORE 36.71 kg/d (formed metal product to the store); IA-SI-EG 0.2264 kg/d (electronic-grade silicon for the CZ charge). Out: STOCK_TO_MFG 25.9 kg/d (plate/rod/wire to manufacturing); STOCK_TO_FAB 0.2264 kg/d (electronic-grade silicon CZ charge from the store); STOCK_TO_WIRE_DRAW 0 kg/d (rod/wire for final sizing); IA-METAL-SHIP 10.81 kg/d (surplus foundry metal export (pot-line product, dispatch campaign)).
 
 2. Size.
 - Envelope 800×800×950 mm, 0.608 m³. That box over this flow would be 395.0 h if it were full. It is not a residence time.

@@ -368,7 +368,7 @@
             "IA-O2-SHIP": 22.884,
             "IA-MEOH-SHIP": 28.029,
             "IA-GYPSUM-SHIP": 0.576,
-            "IA-CL2-SHIP": 39.419,
+            "IA-CL2-SHIP": 39.206,
             "IA-CA-CL2-SHIP": 0.097,
             "IA-KROLL-CO": 0.585,
             "IA-MO-VENT": 0.043,
@@ -379,7 +379,7 @@
             "IA-FAB-PRODUCT": 0.139
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.326,
+            "IA-H2O-MU": 64.152,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
@@ -395,10 +395,10 @@
             "IA-C-CR": 0.087,
             "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
-            "IA-SI-IMPORT": 0.226
+            "IA-QUARTZ-MU": 0.718
           },
-          "net_kg_d": 0.001,
-          "residual_kg_d": 0.002,
+          "net_kg_d": -0.53,
+          "residual_kg_d": -0.529,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -1641,7 +1641,7 @@
       "to_unit_id": "WAFER_FAB",
       "phase": "S",
       "presence": "present",
-      "carries": "polysilicon CZ charge from the store",
+      "carries": "electronic-grade silicon CZ charge from the store",
       "notes": "Integration edge. Rate TBD.",
       "namespace": "IA",
       "layers": [

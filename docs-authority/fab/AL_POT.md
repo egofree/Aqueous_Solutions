@@ -7,7 +7,7 @@ service line: service molten AlCl3-(NaCl-KCl) electrolysis cell, 700 C; chemistr
 Internals: issued mfg model BOM (3 internals part row): "step 1; duty section 3 mild-steel outer shell below the liner, 700 C, dry outside the lining; envelope per" [models/mfg/AL_POT/bom.csv]
 Material: Graphite cell liner (design allowance 10 mm on the wetted faces), graphite anodes at j 0.5 A/cm2 (A-M-282 class), steel cathode bus above the melt with copper busbar frame-isolated to AQS-STD-002 section 11; 90 % alumina brick + ceramic-fibre backup lining; mild-steel outer shell below the liner. (continues on the duty sheet)
 
-Nozzles: 6 process connections per docs-authority/nozzles/AL_POT.csv
+Nozzles: 7 process connections per docs-authority/nozzles/AL_POT.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

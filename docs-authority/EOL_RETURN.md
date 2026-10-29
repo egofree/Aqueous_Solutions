@@ -18,7 +18,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 | Feed class | BOM lines | Share |
 |---|---|---|
 | metal_plateable | 626 | 47 % |
-| organic | 509 | 38 % |
+| organic | 511 | 38 % |
 | metal_reactive | 81 | 6 % |
 | silicate_oxide | 60 | 5 % |
 | unassigned | 51 | 4 % |
@@ -208,7 +208,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_HX_Q4 | 1 | 0 | 0 | 0 | 0 |
 | MET_MELT | 0 | 3 | 0 | 0 | 0 |
 | MET_SCRUB | 0 | 4 | 0 | 0 | 0 |
-| MF-01 x 108 | 3 | 1 | 2 | 0 | 0 |
+| MF-01 x 109 | 3 | 1 | 2 | 0 | 0 |
 | MF-02 x 56 | 3 | 1 | 2 | 0 | 0 |
 | MF-03 x 27 | 5 | 1 | 2 | 0 | 0 |
 | MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |
@@ -390,6 +390,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | SIC_FURNACE | 0 | 3 | 0 | 0 | 0 |
 | SINTER | 0 | 2 | 0 | 0 | 1 |
 | SI_REDUCE | 0 | 2 | 0 | 0 | 0 |
+| SI_REFINE | 0 | 2 | 0 | 0 | 0 |
 | SOLAR_PV_CELL | 2 | 0 | 0 | 0 | 0 |
 | SOL_ARK_60K | 1 | 0 | 0 | 0 | 0 |
 | STOCK_OUT | 6 | 2 | 0 | 0 | 0 |

@@ -60,3 +60,5 @@ N58,DN15,Class 150,"regen HCl, 20 wt%",inlet,160
 N59,DN15,Class 150,"NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)",inlet,160
 N60,DN50,Class 150,dissolved gas,outlet,600
 N61,solids,Class 150,"saw kerf, crop and pot scrap with the spent slurry",inlet,160
+N62,solids,Class 150,silica fume from the furnace baghouse,inlet,160
+N63,DN15,Class 150,impurity chlorides and silicon tetrachloride bleed,inlet,160

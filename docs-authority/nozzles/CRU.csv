@@ -11,3 +11,4 @@ N9,DN15,Class 150,chlorine,outlet,600
 N10,DN15,Class 150,chlorine,outlet,600
 N11,DN15,Class 150,dilute HCl return (HCl + reaction water),inlet,160
 N12,DN15,Class 150,dilute HCl return (HCl + reaction water),inlet,160
+N13,DN15,Class 150,impurity chlorides and silicon tetrachloride bleed,inlet,160

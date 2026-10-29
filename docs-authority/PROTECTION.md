@@ -58,6 +58,7 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | MEOH_SYNTH | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | GEO_HP | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | CRYO_AHU | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | SI_REFINE | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | VDF_SYN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | TI_CELL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | WAX_PATTERN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
@@ -74,6 +75,7 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | WET_BENCH | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | CR_CELL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | INV_CAST | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | SI_REDUCE | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | GEO_HP_CLOSED_LOOP | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | CA_POT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | MO_CELL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
@@ -116,15 +118,15 @@ The electrowinning rectifier `RECTIFIER` limits its current to 1.05 times the ra
 
 ## 5. Earth fault, touch and step voltages
 
-The inverters bound the earth-fault current at 6,062 A; the contribution of the utility is not yet known (A-M-110). The ground grid of `docs-authority/_grounding_study.py` covers 29,988 m² with a perimeter conductor of 728 m, 4,410 m of mesh conductors at a spacing of 12 m, 2/0 AWG at a depth of 0.75 m, and 73 rods of 3 m. Its resistance is 0.137 Ω, so the ground potential rise is 831 V.
-Because the ground potential rise exceeds the tolerable touch voltage, the mesh and step voltages of IEEE 80-2013 (equations 85 to 94) govern. They are 132 V and 55 V. Table 5.1 compares them with the tolerable voltages for a 50 kg person and a clearing time of 0.5 s (IEEE 80-2013 equations 29 and 32).
+The inverters bound the earth-fault current at 6,062 A; the contribution of the utility is not yet known (A-M-110). The ground grid of `docs-authority/_grounding_study.py` covers 30,360 m² with a perimeter conductor of 716 m, 4,546 m of mesh conductors at a spacing of 12 m, 2/0 AWG at a depth of 0.75 m, and 72 rods of 3 m. Its resistance is 0.136 Ω, so the ground potential rise is 824 V.
+Because the ground potential rise exceeds the tolerable touch voltage, the mesh and step voltages of IEEE 80-2013 (equations 85 to 94) govern. They are 131 V and 55 V. Table 5.1 compares them with the tolerable voltages for a 50 kg person and a clearing time of 0.5 s (IEEE 80-2013 equations 29 and 32).
 
 Table 5.1. Touch and step voltages
 
 | Surface | Tolerable touch (V) | Tolerable step (V) | Mesh voltage (V) | Step voltage (V) | Result |
 | --- | --- | --- | --- | --- | --- |
-| bare soil | 176 | 213 | 132 | 55 | safe |
-| crushed rock 0.1 m, 3000 ohm m | 677 | 2,216 | 132 | 55 | safe |
+| bare soil | 176 | 213 | 131 | 55 | safe |
+| crushed rock 0.1 m, 3000 ohm m | 677 | 2,216 | 131 | 55 | safe |
 
 A crushed rock layer 0.1 m deep with a resistivity of at least 3000 Ω·m is kept on the outdoor yard around the flow battery and the methanol train, as a margin against the unknown utility contribution. Indoors, the slab reinforcement is bonded to the grid as an equipotential mat (AQS-ELEC-005).
 

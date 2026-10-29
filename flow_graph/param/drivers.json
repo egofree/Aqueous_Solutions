@@ -4805,10 +4805,55 @@
   "units": "kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured)",
   "register": "A-M-417"
  },
- "FAB.wafer-line-train.si_resupply_d": {
-  "value": 90.0,
-  "units": "d interval between polysilicon deliveries; the store holds one interval of charge",
-  "register": "A-M-417"
+ "si_refine_route": {
+  "value": "TCS_SIEMENS",
+  "units": "- refining route of the CZ charge: TCS_SIEMENS (trichlorosilane on Siemens rods) or SILANE_FBR (silane in a fluidised bed), two technologies on the same chlorosilane loop",
+  "register": "A-M-419"
+ },
+ "si_refine_yield_TCS_SIEMENS": {
+  "value": 0.85,
+  "units": "- fraction of the silicon fed to the chlorosilane loop that leaves as electronic-grade rod; the rest is bled as SiCl4 (Siemens class)",
+  "register": "A-M-419"
+ },
+ "si_refine_yield_SILANE_FBR": {
+  "value": 0.8,
+  "units": "- fraction of the silicon fed to the loop that leaves as electronic-grade granules; the rest is bled as SiCl4 (silane fluidised-bed class)",
+  "register": "A-M-419"
+ },
+ "si_refine_kWh_kg_TCS_SIEMENS": {
+  "value": 60.0,
+  "units": "kWh per kg of electronic-grade silicon for the Siemens route, rod heating, hydrochlorination and distillation (small bell-jar class)",
+  "register": "A-M-419"
+ },
+ "si_refine_kWh_kg_SILANE_FBR": {
+  "value": 20.0,
+  "units": "kWh per kg of electronic-grade silicon for the silane fluidised-bed route, redistribution, bed heating and distillation (class value)",
+  "register": "A-M-419"
+ },
+ "siemens_pass_conv": {
+  "value": 0.1,
+  "units": "- fraction of the trichlorosilane silicon deposited on the rods in one pass; sets the loop circulation",
+  "register": "A-M-419"
+ },
+ "si_mg_purity": {
+  "value": 0.98,
+  "units": "- silicon mass fraction of the metallurgical-grade silicon from SI_REDUCE; the rest is Fe, Al and Ca from the ore and the char ash",
+  "register": "A-M-419"
+ },
+ "si_saf_recovery": {
+  "value": 0.8,
+  "units": "- fraction of the reduced silica recovered as silicon in the small arc furnace; the rest leaves as silica fume",
+  "register": "A-M-419"
+ },
+ "si_saf_kWh_kg": {
+  "value": 13.0,
+  "units": "kWh per kg of metallurgical silicon in the submerged-arc furnace (industrial class 11 to 13, small furnace at the top)",
+  "register": "A-M-419"
+ },
+ "si_imp_cl_kg_kg": {
+  "value": 2.2,
+  "units": "kg of chlorine per kg of Fe, Al and Ca impurity leaving the loop as chlorides (FeCl3 1.90, AlCl3 3.94, CaCl2 1.77, iron-rich mix)",
+  "register": "A-M-419"
  },
  "OIL.afterburner-train.flue_fan_dP_Pa": {
   "value": 350.0,

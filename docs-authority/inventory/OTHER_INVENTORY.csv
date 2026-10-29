@@ -1,7 +1,7 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,102,1622 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,754,one per instrument
-CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 163 SIFs, redundant pair"
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,103,1636 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,766,one per instrument
+CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 166 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S70 to FLUE_KO: run and fault (assumed)
@@ -250,7 +250,7 @@ DIGESTER,BMED_CRU,EVAP_ACID,instrument,high-level switch,vibrating fork,"IEC 609
 DIGESTER,BMED_CRU,EVAP_ACID,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,BMED_CRU,EVAP_ACID,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,BMED_CRU,EVAP_ACID,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,BMED_CRU,EVAP_ACID,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-071 SIL 1
+DIGESTER,BMED_CRU,EVAP_ACID,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-072 SIL 1
 DIGESTER,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_ACID,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 311.0 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -282,7 +282,7 @@ DIGESTER,BMED_CRU,EVAP_BASE,instrument,high-level switch,vibrating fork,"IEC 609
 DIGESTER,BMED_CRU,EVAP_BASE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,BMED_CRU,EVAP_BASE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,BMED_CRU,EVAP_BASE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,BMED_CRU,EVAP_BASE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-072 SIL 1
+DIGESTER,BMED_CRU,EVAP_BASE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-073 SIL 1
 DIGESTER,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_BASE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 282.7 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -733,7 +733,7 @@ DIGESTER,scrubber,EVAP_ACID_VS,instrument,high-level switch,vibrating fork,"IEC 
 DIGESTER,scrubber,EVAP_ACID_VS,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,scrubber,EVAP_ACID_VS,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,scrubber,EVAP_ACID_VS,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,scrubber,EVAP_ACID_VS,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-076 SIL 1
+DIGESTER,scrubber,EVAP_ACID_VS,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-077 SIL 1
 DIGESTER,scrubber,EVAP_ACID_VS,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,scrubber,EVAP_ACID_VS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-VS-SPENT: AQS-PIP-005 span count
 DIGESTER,scrubber,EVAP_ACID_VS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-VS-OFF: AQS-PIP-005 span count
@@ -1481,6 +1481,11 @@ GLASS,OIL_GLASS,GLASS_DIGEST,support,pipe clamp,DN15,"PP clamp with EPDM liner, 
 GLASS,OIL_GLASS,GLASS_DIGEST,support,pipe clamp,DN50,"PP clamp with EPDM liner, MSS SP-58 Type 7",16,IA-SIL-SRC: AQS-PIP-005 span count
 GLASS,OIL_GLASS,GLASS_DIGEST,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-DIG-LIQ: one at each end nozzle (assumed)
 GLASS,OIL_GLASS,GLASS_DIGEST,valve,isolation valve,DN50,"PP-H ball valve, ISO 16135, EPDM seals",2,IA-SIL-SRC: one at each end nozzle (assumed)
+GLASS,furnace,SI_REDUCE,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
+GLASS,furnace,SI_REDUCE,instrument,"gas detector, NOx",electrochemical NO2,"alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",2,AQS-SAF-006 alarm 1oo2
+GLASS,furnace,SI_REDUCE,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
+GLASS,furnace,SI_REDUCE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+GLASS,furnace,SI_REDUCE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 GLASS,intra,GLASS_BURNOUT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,16,HL-GLASS_BURNOUT-Q2-A: 2 per support (assumed)
 GLASS,intra,GLASS_BURNOUT,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,34,HL-GLASS_BURNOUT-Q2-B: 2 per support (assumed)
 GLASS,intra,GLASS_BURNOUT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1493,6 +1498,12 @@ GLASS,intra,GLASS_MILL,instrument,pressure transmitter,0-10 bar,"ceramic diaphra
 GLASS,intra,GLASS_MILL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 GLASS,intra,GLASS_RINSE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 GLASS,intra,GLASS_RINSE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+GLASS,reactor,SI_REFINE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-SI-PURGE to LEACH_CSTR_1 (assumed size)
+GLASS,reactor,SI_REFINE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-SI-PURGE to LEACH_CSTR_1
+GLASS,reactor,SI_REFINE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-SI-PURGE to LEACH_CSTR_1: run and fault (assumed)
+GLASS,reactor,SI_REFINE,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
+GLASS,reactor,SI_REFINE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
+GLASS,reactor,SI_REFINE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,S12: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,38,S78: 2 per support (assumed)
 HAB,HAB,HABITATION,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,26,HAB_CO2_TO_HDR: 2 per support (assumed)
@@ -1777,8 +1788,8 @@ MFG,-,BLACK_PASTEUR,fabricated part,fabricated part set,5 BOM lines,models/mfg/B
 MFG,-,BLACK_PASTEUR,fastener,M10 anchor,M10 anchor,ISO 3506 A4-70,4,models/mfg/BLACK_PASTEUR/fasteners.csv
 MFG,-,BLACK_PASTEUR,fastener,M8 x 30 lid bolt,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/BLACK_PASTEUR/fasteners.csv
 MFG,-,BLACK_PASTEUR,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-160 one per bank half
-MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-162 one per bank half
+MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-163 one per bank half
+MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-165 one per bank half
 MFG,-,DIGESTER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,"Biogas recirculation blower, diaphragm, about 1 L/min (assumed size)"
 MFG,-,DIGESTER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,"Biogas recirculation blower, diaphragm, about 1 L/min"
 MFG,-,DIGESTER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Biogas recirculation blower, diaphragm, about 1 L/min: run and fault (assumed)"

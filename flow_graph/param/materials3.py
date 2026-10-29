@@ -354,13 +354,24 @@ SEL = {
  'SI_REDUCE': (
   'Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel '
   'casing; dry char and silica-class feed handling; the hot face stays dry (M7)',
-  'GLASS-sector furnace unit with solids-only edges (CHAR_TO_SI on the graph design day at zero): the '
-  'construction material is issued here at the lining level (SCHACHT2004 ch. 8 carbonaceous hot faces; '
-  'CRC_SI is the element benchmark for the reduction duty class); process duty and its rates stay a '
-  'unit task 02 pending item. ' + _TAG,
+  'GLASS-sector arc furnace reducing quartz ore with char (IA-QUARTZ-MU, CHAR_TO_SI, sized by '
+  'flow_graph/param/si_refine.py, A-M-419): the construction material is issued at the lining level '
+  '(SCHACHT2004 ch. 8 carbonaceous hot faces; CRC_SI is the element benchmark for the reduction duty class); '
+  'the CO burns in the hood and the silica fume goes to the baghouse. ' + _TAG,
   'Silicon-carbide hot face when batch chemistry reaches beyond the graphite class (a process-change '
   'decision, not a materials trade)',
   'no wetted stream on the graph; the selection is the construction class only.'),
+ 'SI_REFINE': (
+  'Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen '
+  'chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite '
+  'chucks (or a silicon-lined fluidised bed on the silane route)',
+  'Dry chlorosilanes, hydrogen chloride and hydrogen at up to about 300 C in the hydrochlorinator and a cooled '
+  'wall round rods at about 1100 C (A-M-419, flow_graph/param/si_refine.py): dry hydrogen chloride and '
+  'chlorosilanes are carried in nickel and stainless steel, and any moisture makes hydrochloric acid, so the '
+  'loop is kept dry (ULLMANN_HCL; PERRY9_MAT). The product-contact parts are silicon or graphite so the charge '
+  'stays at electronic grade. ' + _TAG,
+  'Hastelloy C-276 for the purge and condensate lines if moisture ingress cannot be excluded',
+  'wetted by dry chlorosilanes; moisture is the corrosion load, controlled by the dry loop.'),
 }
 
 def main():

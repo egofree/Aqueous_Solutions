@@ -1,11 +1,11 @@
 family,category,item,spec,qty,sizes,units
-OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",388,608-2Z x388,68
+OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",390,608-2Z x390,69
 OF-02,bearing,deep-groove ball bearing,"ISO 15 / ISO 492 normal class, C3",356,6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z x12; 6308-2Z x4; 6306-2Z x2,48
-OF-03,electronics,PLC digital I/O point,IEC 61131-2,868,24 V DC x868,94
-OF-04,electronics,PLC analog input point,IEC 61131-2,754,4-20 mA HART x754,1
-OF-05,electronics,BLDC driver,IEC 61800-5-1,191,24/48 V DC x191,67
+OF-03,electronics,PLC digital I/O point,IEC 61131-2,870,24 V DC x870,95
+OF-04,electronics,PLC analog input point,IEC 61131-2,766,4-20 mA HART x766,1
+OF-05,electronics,BLDC driver,IEC 61800-5-1,192,24/48 V DC x192,68
 OF-06,electronics,motor starter (contactor + overload),IEC 60947-4-1,145,0.37 kW x104; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1,38
-OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,102,24 V DC x102,1
+OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,103,24 V DC x103,1
 OF-08,electronics,variable-frequency drive,IEC 61800-5-1,33,1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x2; 4 kW x1,15
 OF-09,electronics,solenoid driver channel,IEC 61131-2 DO,36,24 V DC x36,18
 OF-10,electronics,compressor contactor + overload,IEC 60947-4-1,10,18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1,3
@@ -33,17 +33,17 @@ OF-31,fastener,M10 U-bolt for DN150,ISO 3506 A4-70,2,M10 U-bolt for DN150 x2,1
 OF-32,fastener,Lid gasket 40 mm wide,FKM,1,Lid gasket 40 mm wide x1,1
 OF-33,fastener,Solvent cement,PVC-U per ASTM D2564,1,Solvent cement x1,1
 OF-34,instrument,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",139,DN15 x119; DN50 x17; DN32 x1; DN250 x1; DN300 x1,54
-OF-35,instrument,pressure transmitter,"ceramic diaphragm, IEC 61298",158,0-10 bar x157; 0-16 bar x1,158
-OF-36,instrument,temperature element,"IEC 60751, 316L thermowell",161,Pt100 class A x161,161
+OF-35,instrument,pressure transmitter,"ceramic diaphragm, IEC 61298",160,0-10 bar x159; 0-16 bar x1,160
+OF-36,instrument,temperature element,"IEC 60751, 316L thermowell",163,Pt100 class A x163,163
 OF-37,instrument,high-level switch,"IEC 60947-5, 316L",80,vibrating fork x80,80
 OF-38,instrument,level transmitter,"IEC 62828, PTFE lens",80,radar 80 GHz x80,80
 OF-39,instrument,"gas detector, H2","alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",30,catalytic bead + IR backup x30,14
-OF-40,instrument,"gas detector, O2 deficiency","alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",20,electrochemical O2 x20,10
-OF-41,instrument,"gas detector, Cl2 / HCl","alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",38,electrochemical Cl2 and HCl x38,19
+OF-40,instrument,"gas detector, O2 deficiency","alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",22,electrochemical O2 x22,11
+OF-41,instrument,"gas detector, Cl2 / HCl","alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",40,electrochemical Cl2 and HCl x40,20
 OF-42,instrument,"temperature element (SIF, independent)","IEC 60751, own thermowell",13,Pt100 class A x13,13
 OF-43,instrument,"gas detector, O2 enrichment","alarm 23.5 vol %, trip 25 vol %, breathing height",12,electrochemical O2 x12,5
-OF-44,instrument,"gas detector, CO","alarm 25 ppm, trip 50 ppm, breathing height",14,electrochemical CO x14,7
-OF-45,instrument,"gas detector, NOx","alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",6,electrochemical NO2 x6,3
+OF-44,instrument,"gas detector, CO","alarm 25 ppm, trip 50 ppm, breathing height",16,electrochemical CO x16,8
+OF-45,instrument,"gas detector, NOx","alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",8,electrochemical NO2 x8,4
 OF-46,protection,"inverse-time circuit breaker, 3-pole",UL 489 / IEC 60947-2,204,15 A x193; 90 A x8; 30 A x2; 60 A x1,49
 OF-47,seal,"mechanical seal, single","SiC/SiC faces, FKM",124,EN 12756 x124,25
 OF-48,support,pipe clamp,"PP clamp with EPDM liner, MSS SP-58 Type 7",2893,DN15 x2340; DN50 x516; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3,77

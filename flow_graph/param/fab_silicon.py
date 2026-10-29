@@ -4,8 +4,8 @@ Silicon. The fab starts FAB.litho-train.starts_per_d wafers a day. Each wafer ta
 along the ingot body; the charge adds the crown, tail, ground-off diameter and pot scrap (cz_crop_frac). The charge of a pull is
 the larger of the need of one tool campaign (campaign_d) and the least melt the crucible holds (cz_min_depth_frac of the crucible
 diameter); the days between pulls follow, and the wafers of a pull are stored until started. The plant makes only metallurgical-grade silicon
-(SI_REDUCE), which is far below the purity a CZ charge needs, so the charge is imported as polysilicon through the dock into
-the METAL_STORE buffer (elimination rule of AQS-PLAN-011: an import path with its resupply interval and holding). Finished
+(SI_REDUCE), far below the purity a CZ charge needs, so flow_graph/param/si_refine.py refines it on site to electronic grade
+into the METAL_STORE buffer, which holds one charge until the pull (owner decision t58u: no imports except waste or raw ore). Finished
 wafers go to the lithography train and back to the fab tool row, then to the dock; kerf and crop leave with the
 spent slurry to the leach.
 
@@ -42,12 +42,11 @@ def design(d=None):
     slpm = crucible_cm2*v(F + 'cz_ar_slpm_per_cm2')
     ar_kg_pull = slpm*60*ar_h*AR_RHO_STD/1000
     return dict(wafers_per_pull=n, interval_d=interval_d, need_kg=need_kg, min_kg=min_kg, crucible_D_cm=cru_D, wafer_g=wafer_g, body_cm=body_cm, charge_kg=charge_kg, si_kg_d=si_kg_d, wafer_kg_d=wafer_kg_d,
-                loss_kg_d=loss_kg_d, resupply_d=v(F + 'si_resupply_d'), holding_kg=max(charge_kg, si_kg_d*v(F + 'si_resupply_d')),
+                loss_kg_d=loss_kg_d, holding_kg=charge_kg,
                 pull_h=pull_h, ar_h=ar_h, crucible_cm2=crucible_cm2, ar_slpm=slpm, ar_kg_pull=ar_kg_pull, ar_kg_d=ar_kg_pull/interval_d)
 
 # stream id, from, to, carries, phase, composition, key of the design dict
-STREAMS = (('IA-SI-IMPORT', 'NORTH_DOCK', 'METAL_STORE', 'imported polysilicon for the CZ charge', 'S', {'Si': 1.0}, 'si_kg_d'),
-           ('STOCK_TO_FAB', 'METAL_STORE', 'WAFER_FAB', 'polysilicon CZ charge from the store', 'S', {'Si': 1.0}, 'si_kg_d'),
+STREAMS = (('STOCK_TO_FAB', 'METAL_STORE', 'WAFER_FAB', 'electronic-grade silicon CZ charge from the store', 'S', {'Si': 1.0}, 'si_kg_d'),
            ('IA-FAB-WAFER', 'WAFER_FAB', 'LITHO_COAT', 'wafers to resist coat', 'S', {'Si': 1.0}, 'wafer_kg_d'),
            ('IA-LITHO-WAFER-A', 'LITHO_COAT', 'LITHO_ALIGN', 'coated wafers to exposure', 'S', {'Si': 1.0}, 'wafer_kg_d'),
            ('IA-LITHO-WAFER-B', 'LITHO_ALIGN', 'LITHO_DEV', 'exposed wafers to develop', 'S', {'Si': 1.0}, 'wafer_kg_d'),

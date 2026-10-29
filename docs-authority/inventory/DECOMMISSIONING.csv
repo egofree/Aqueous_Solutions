@@ -70,7 +70,8 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 8,GLASS,GLASS_DIGEST,0,solute,-,0,no
 8,GLASS,GLASS_MILL,0,,-,58,no
 8,GLASS,GLASS_RINSE,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",86,no
-8,GLASS,SI_REDUCE,0,,-,0,no
+8,GLASS,SI_REDUCE,0,C O2 SiO2,N2/air to 19.5-23.5 % O2,0,no
+8,GLASS,SI_REFINE,0,Cl2 Si,"air purge, scrubbed to vent (TLV)",0,no
 9,OIL,AFTERBURNER,0,Ar O2,N2/air to 19.5-23.5 % O2,65,no
 9,OIL,C29_RECYCLE,4,,-,1,no
 9,OIL,GREASE_CA,0,,-,0,no
@@ -107,7 +108,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 11,DIGESTER,FLOAT_SINK,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",216,no
 11,DIGESTER,F_RECOVER,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",0,no
 11,DIGESTER,HX8,0,,-,22,no
-11,DIGESTER,LEACH_CSTR_1,2100,Cl2 Fe HCl O2 Si metal_plateable metal_reactive organic other_metals silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
+11,DIGESTER,LEACH_CSTR_1,2100,Cl2 Fe HCl O2 Si SiCl4 SiO2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
 11,DIGESTER,LI_RECOVER,0,,-,0,no
 11,DIGESTER,POLISH_BANK,0,,-,0,no
 11,DIGESTER,P_CA,0,,-,0,no

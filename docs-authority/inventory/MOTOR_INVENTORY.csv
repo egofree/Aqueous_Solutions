@@ -50,9 +50,9 @@ DIGESTER,ew_cell,EW_8,transfer pump IA-EW-08 to EW_9,BLDC,42 mm (NEMA 17 flange)
 DIGESTER,scrubber,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,separator,F_RECOVER,transfer pump F_RECOVER_TO_HF_GEN to HF_GEN,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"1.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 ELEC,EXT_HALL_N,EXT_HALL,AHU damper actuator,BLDC actuator,ISO 5211 F03 mount,0.005,24 V DC,S2,on/off,24,assumed 3 per AHU
-ELEC,EXT_HALL_N,EXT_HALL,AHU exhaust fan,induction IE3,IEC 90S / 1.1 kW,0.8842,480 V 3-ph,S1,variable-frequency drive,8,"8489 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
-ELEC,EXT_HALL_N,EXT_HALL,AHU supply fan,induction IE3,IEC 90S / 1.1 kW,0.8842,480 V 3-ph,S1,variable-frequency drive,8,"8489 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
-ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor,hermetic induction (scroll),18.5 kW hermetic,15.2565,480 V 3-ph,S1,variable-frequency drive,8,"peak cooling 393 kW / COP 3.22 / 8 modules (module count assumed, A-M-119)"
+ELEC,EXT_HALL_N,EXT_HALL,AHU exhaust fan,induction IE3,IEC 90S / 1.1 kW,0.8921,480 V 3-ph,S1,variable-frequency drive,8,"8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
+ELEC,EXT_HALL_N,EXT_HALL,AHU supply fan,induction IE3,IEC 90S / 1.1 kW,0.8921,480 V 3-ph,S1,variable-frequency drive,8,"8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
+ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor,hermetic induction (scroll),18.5 kW hermetic,15.3475,480 V 3-ph,S1,variable-frequency drive,8,"peak cooling 395 kW / COP 3.22 / 8 modules (module count assumed, A-M-119)"
 ELEC,EXT_HALL_N,EXT_HALL,heat pump condenser fan,"EC (electronically commutated, permanent-magnet) fan motor","1.1 kW EC fan, integrated drive",0.75,480 V 3-ph,S1,electronically commutated (EC) motor,16,assumed 2 per module; EC fan type assumed (A-M-119)
 ELEC,flow_battery,ZNBR2,"electrolyte pump (anolyte, catholyte) per stack string",induction IE3,IEC 71 / 0.37 kW,0.25,480 V 3-ph,S1,fixed speed,96,"assumed 0.25 kW per string, 2 per string, 48 strings (A-M-119)"
 ELEC,flow_battery,ZNBR2,transfer pump IA-ZNBR-BD to GREY_TREAT,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"8.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
@@ -65,7 +65,7 @@ ELEC,pem_fc,FUEL_CELL,transfer pump IA-FC-LEACH to LEACH_CSTR_1,BLDC,42 mm (NEMA
 ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"42.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 ELEC,rectifier,RECTIFIER,cooling fan,BLDC,57 mm (NEMA 23 flange),0.05,24 V DC,S1,BLDC driver,4,assumed per cabinet
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
-ELEC,scrubber,ZNBR2_BR2_REGEN,transfer pump S69B to ZNBR2,BLDC,42 mm (NEMA 17 flange),0.0026,24 V DC,S1,BLDC driver,1,"908.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+ELEC,scrubber,ZNBR2_BR2_REGEN,transfer pump S69B to ZNBR2,BLDC,42 mm (NEMA 17 flange),0.0026,24 V DC,S1,BLDC driver,1,"914.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 FAB,FAB,WAFER_FAB,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.5 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 FAB,FAB,WAFER_FAB,process vacuum pump,induction IE3,IEC 90S / 1.1 kW,0.75,480 V 3-ph,S1,fixed speed,1,assumed
 FAB,FAB,WAFER_FAB,transfer pump IA-FAB-SPENT to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,BLDC driver,1,"66.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
@@ -118,6 +118,7 @@ GAS,scrubber,NOX_SCRUB,transfer pump IA-NOX-N2 to CRYO_ASU,BLDC,42 mm (NEMA 17 f
 GEO,heat_pump,GEO_HP,ground-loop circulator,induction IE3,IEC 63 / 0.12 kW,0.1,208 V 3-ph,S1,fixed speed,1,assumed
 GEO,heat_pump,GEO_HP,heat pump compressor,hermetic induction (scroll),0.75 kW hermetic,0.6179,480 V 3-ph,S1,fixed speed,1,graph continuous_kw x 0.9 (assumed)
 GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09",induction IE3,IEC 63 / 0.12 kW,0.09,208 V 3-ph,S1,fixed speed,1,BOM (sized)
+GLASS,reactor,SI_REFINE,transfer pump IA-SI-PURGE to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"0.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 MEOH,ferment,MEOH_FERM,PIR insulation 50 mm with PE cladding; daily recirculation p,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 MEOH,iem_fc,MEOH_FC,cathode air blower,BLDC,57 mm (NEMA 23 flange),0.05,24 V DC,S1,BLDC driver,1,assumed 5 % parasitic
 MEOH,iem_fc,MEOH_FC,coolant pump,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,assumed 1 %

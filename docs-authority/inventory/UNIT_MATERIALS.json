@@ -165,6 +165,7 @@
   "SHELL_BURNOUT",
   "SINTER",
   "SI_REDUCE",
+  "SI_REFINE",
   "SOLAR_PV_CELL",
   "SOL_ARK_60K",
   "STOCK_OUT",
@@ -194,6 +195,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 321,
- "units": 192
+ "tot_wetted_rows": 325,
+ "units": 193
 }

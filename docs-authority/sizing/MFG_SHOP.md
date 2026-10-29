@@ -17,7 +17,7 @@ This page records the size of unit MFG_SHOP, of class `shop` in sector MFG, from
 
 ## 2. Duty
 
-The unit takes 636.521 kg/d by 21 streams and gives 636.521 kg/d by 4 streams. Its continuous electrical load is 2.55 kW, fed by stream SF-MFG_SHOP.
+The unit takes 636.293 kg/d by 21 streams and gives 636.293 kg/d by 4 streams. Its continuous electrical load is 2.55 kW, fed by stream SF-MFG_SHOP.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The envelope is 600 mm x 600 mm x 5000 mm, from the placement file `flow_graph/placement_blocks.json`.
 
-The hold-up check takes 636.521 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 636.5 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 880 mm in diameter and 1320 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
+The hold-up check takes 636.293 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 636.3 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 880 mm in diameter and 1320 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
 
 ## 4. Material
 
