@@ -52,7 +52,7 @@ Table 4.1. Shop machine tools
 | TIG/MIG welder | 6.0 | 9.6 |
 | Bench grinder, drill press, hand tools | 2.0 | 3.2 |
 
-The connected load of the shop tools is 26.5 kW. With the metal tools of AQS-EQP-MFG-MET-001, the whole tool list has a connected load of 42.8 kW and a coincident peak of 24.5 kW, which size the feeder to MCC-1.
+The connected load of the shop tools is 26.5 kW. With the metal tools of AQS-EQP-MFG-MET-001, the whole tool list has a connected load of 37.8 kW and a coincident peak of 19.5 kW, which size the feeder to MCC-1.
 
 ## 5. Streams
 

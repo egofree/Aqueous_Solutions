@@ -2054,11 +2054,6 @@
   "units": "- Ar recirculation compressor, isothermal efficiency",
   "register": "A-M-177"
  },
- "atom_batch_min": {
-  "value": 10.0,
-  "units": "min pour time per heat",
-  "register": "A-M-177"
- },
  "atom_tundish_kW": {
   "value": 1.0,
   "units": "kW tundish heater for 1 h per heat",
@@ -2110,6 +2105,51 @@
   "value": 1.0,
   "units": "h/d run",
   "register": "A-M-177"
+ },
+ "atom_nozzle_mm": {
+  "value": 4.0,
+  "units": "mm melt delivery nozzle bore of the close-coupled atomiser (2 to 6 mm class)",
+  "register": "A-M-416"
+ },
+ "atom_head_mm": {
+  "value": 100.0,
+  "units": "mm metal head in the tundish above the nozzle",
+  "register": "A-M-416"
+ },
+ "atom_Cd": {
+  "value": 0.8,
+  "units": "- discharge coefficient of the melt nozzle",
+  "register": "A-M-416"
+ },
+ "atom_melt_rho_kg_m3": {
+  "value": 8000.0,
+  "units": "kg/m3 density of the atomised melt (Cu, Ni, Sn, Pb, Zn blend class)",
+  "register": "A-M-416"
+ },
+ "atom_store_bar": {
+  "value": 50.0,
+  "units": "bar argon receiver charge pressure; it discharges to the nozzle supply pressure atom_P_bar during a pour",
+  "register": "A-M-416"
+ },
+ "mill_slab_t_mm": {
+  "value": 10.0,
+  "units": "mm thickness of the cast slab entering the cold mill (ingot mould)",
+  "register": "A-M-416"
+ },
+ "mill_slab_L_mm": {
+  "value": 250.0,
+  "units": "mm length of the cast slab entering the cold mill (ingot mould)",
+  "register": "A-M-416"
+ },
+ "mill_pass_reduction": {
+  "value": 0.25,
+  "units": "- thickness reduction per cold-rolling pass of copper",
+  "register": "A-M-416"
+ },
+ "mill_edge_margin": {
+  "value": 0.25,
+  "units": "- roll face width margin over the slab width for edge spread and tracking",
+  "register": "A-M-416"
  },
  "pv_cells_per_d": {
   "value": 3,

@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 465 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 466 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 661 items: 296 drivers, 365 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 662 items: 296 drivers, 366 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -677,6 +677,7 @@ Total 661 items: 296 drivers, 365 register entries. Classification rule: first m
 | A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) | X-LOC-11 |
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35  m; m; - | Class stability and freeboard review (Q-030) | X-LOC-11 |
 | A-M-415 | Rectifier trim heaters (every present kW edge out of RECTIFI kW | python3 docs-authority/_power_sizing.py: bounding P_kW equals the node and feed sum plus rect_ac_input_kW plus the rectifier_trims sum plus the converged EXT_HALL load; SOL_ARK_60K.params.redundancy.bus_demand_kW equals mvs.electrical.need_kw | QA audit 2026-10-29, rectifier trim heater supply |
+| A-M-416 | Metal-forming tool design from the graph throughputs: atomis mm, bar, kg/m3, fraction | First atomiser heat: pour time and receiver pressure drop logged; first mill run: strip gauge and width measured | QA audit 2026-10-29, metal-forming tool design |
 
 ## 7. T6 Commissioning measurements
 

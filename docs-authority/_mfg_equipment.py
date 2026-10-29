@@ -70,10 +70,11 @@ nokw = [u for u in METAL if kw(u) is None]
 fan_cover = [u for u in METAL if N[u].get('class') == 'scrubber' and ((N[u].get('params') or {}).get('design') or {}).get('fan_W')]
 id_m = idle(METAL)
 
-md = header('Metal-forming equipment list', 'AQS-EQP-MFG-MET-001', 'E', [
+md = header('Metal-forming equipment list', 'AQS-EQP-MFG-MET-001', 'F', [
     '| A | First issue: wire drawing, cold mill, gas atomiser, and the air handling and heat recovery tags. | 2026-09-28 |',
     '| B to D | Not recorded on the page; see the history of the file. | 2026-10-01 |',
-    '| E | Generated from the plant graph. Revision D listed tags no longer on the graph (product bins, powder crib, nitrogen blanket, swarf collection, scrubber regenerator, shop air and the electrode blank station), quoted a nitrogen atomising gas where the tool list uses argon, gave load bands and left the tool sizes as TBD. The units, tools, streams and checks are now read from the graph and the tool list AQS-MFG-010. | 2026-10-29 |'],
+    '| E | Generated from the plant graph. Revision D listed tags no longer on the graph (product bins, powder crib, nitrogen blanket, swarf collection, scrubber regenerator, shop air and the electrode blank station), quoted a nitrogen atomising gas where the tool list uses argon, gave load bands and left the tool sizes as TBD. The units, tools, streams and checks are now read from the graph and the tool list AQS-MFG-010. | 2026-10-29 |',
+    '| F | Section 7 added: the die schedule of the wire drawer, the gauge schedule and roll width of the cold mill, and the batch rate and argon receiver of the atomiser, derived from the graph throughputs (owner decision 2026-10-29, A-M-416). | 2026-10-29 |'],
     'the metal-forming units of sector MFG in `flow_graph/plant_flow_graph.json`; the tool list AQS-MFG-010; the vent and scrubber list AQS-EQP-VENT-001; the stream register AQS-STR-001.')
 md += ['## 1. Purpose and scope', '',
        'This list gives the units that turn electrowon and remelted metal into wire, sheet and powder, the tools that do the work, the streams that join them to the rest of the plant, and checks of those streams against the separation rules. '
@@ -106,12 +107,34 @@ md += ['## 6. Separation checks', '', 'The separation rules of the hazard separa
        + ('It shares no return with the habitation or the farm.' if not set(ahu_out + ahu_in) & {'HABITATION', 'HAB_AHU', 'GROW_BED'} else 'It shares a return with the habitation or the farm, which breaks the rule; this is an open item.'),
        f"- The heat recovery exchanger {_and(hx)} sends " + _and([f"{'thermal' if 'thermal' in l else '/'.join(l)} duty to {t}" for t, l in hx_out]) + '. '
        + ('No flue or melt gas goes to the Q4 header.' if all(l == ('thermal',) for _, l in hx_out) else 'A stream other than heat leaves it, which must be checked.'), '']
-md += ['## 7. Open items', '',
-       '- The tool list sizes each tool from its energy per kilogram and gives its nameplate. The die schedule of the wire drawer, the gauge and width range of the cold mill, and the batch rate of the atomiser are not yet designed. They are recorded as an owner question in `REWRITE_TODO.md`.',
+DZ = tools['design']; AT, ML = DZ['atomiser'], DZ['mill']
+WS = json.load(open('docs-authority/inventory/WIRE_SPECS.json'))
+from flow_graph.param import drivers as _DR
+_d = _DR.load(); ROD = _DR.val(_d, 'MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_rod_D_mm'); RED = _DR.val(_d, 'MFG.tools-metal-forming-train.metal-forming.WIRE_DRAW.ws_pass_reduction')
+NP = max(w['passes'] for w in WS)
+md += ['## 7. Tool design', '',
+       'The tools below are set from the throughputs on the graph, with the method and assumptions of A-M-416. Each heat uses at most one melt charge.', '',
+       '### 7.1 Wire drawer', '',
+       f"WIRE_DRAW draws {ROD:g} mm copper rod through a series of dies, each reducing the area by {RED*100:.0f} %. The wire families of AQS-INV-007 set where each product leaves the line: a family whose strand needs n passes leaves after die n. "
+       f"The finest strand needs {NP} dies, so the line carries {NP} die stations. Table 7.1 gives the die bores and the families that finish at each one.", '',
+       'Table 7.1. Die schedule', '', '| Die | Bore, mm | Families that finish here |', '| --- | --- | --- |']
+for k in range(1, NP + 1):
+    fam = sorted({w['fam'] for w in WS if w['passes'] == k})
+    md.append(f"| {k} | {ROD*(1 - RED)**(k/2):.3f} | {', '.join(fam) if fam else '—'} |")
+md += ['', '### 7.2 Cold mill', '',
+       f"COLD_MILL takes {ML['slab_kg']*ML['heats_d']:.2f} kg/d in {ML['heats_d']} slab a day of {ML['slab_kg']:.2f} kg. The slab is cast {ML['slab_t_mm']:g} mm thick and {ML['slab_L_mm']:g} mm long, so its width is {ML['slab_w_mm']:.0f} mm. "
+       f"It is rolled at constant width to {ML['final_mm']:.2f} mm, a strip {ML['strip_L_m']:.1f} m long, in {ML['passes']} passes of up to {ML['pass_reduction']*100:.0f} % reduction. "
+       f"The roll face is {ML['face_mm']} mm, which leaves room for edge spread and tracking.", '',
+       'Table 7.2. Gauge after each pass', '', '| Pass | Gauge, mm |', '| --- | --- |'] + [f'| {k} | {t:.2f} |' for k, t in enumerate(ML['gauges_mm'], 1)]
+md += ['', '### 7.3 Gas atomiser', '',
+       f"GAS_ATOMIZER makes {AT['heats_d']} heat a day of {AT['batch_kg']:.2f} kg. The melt runs through a {AT['nozzle_mm']:g} mm nozzle under a {AT['head_mm']:g} mm head at {AT['melt_kg_min']:.1f} kg/min, so a pour takes {AT['pour_s']:.0f} s. "
+       f"The pour uses {AT['argon_kg_batch']:.1f} kg of argon, drawn from a receiver of {AT['receiver_m3']:.2f} m3 charged to {AT['store_bar']:g} bar and discharging to the {AT['supply_bar']:g} bar nozzle supply. "
+       f"The argon is recovered from the chamber and recompressed into the receiver over the {AT['recharge_h']:.1f} h until the next heat, which sets the compressor nameplate of {AT['compressor_kW']:.1f} kW.", '']
+md += ['## 8. Open items', '',
        '- The efficiencies, the flow stress and the atomising gas ratio in AQS-MFG-010 are assumptions until trial runs are made (A-M-177).']
 if id_m:
     md.append('- The streams without flow in Section 4 are routes kept on the graph for later use; each needs a rate or a decision to retire it.')
-md += ['', '## 8. Drawings', '',
+md += ['', '## 9. Drawings', '',
        'The process flow diagram of these units is the sector view `flow_graph/views/pfd-mfg.svg`, which the regenerator draws from the graph with every mass stream that has an end in the sector. '
        'The units also appear in the plant view `flow_graph/views/pfd.svg`.', '']
 open('docs-authority/METAL_FORMING_EQUIPMENT.md', 'w').write('\n'.join(md))

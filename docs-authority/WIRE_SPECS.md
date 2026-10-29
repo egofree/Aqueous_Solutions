@@ -19,7 +19,7 @@ This page gives the specification and production plan of each wire family in the
 
 ## 2. Summary
 
-The inventory has 24 families with 171.1 km of conductor, 14,013 kg of copper and 2,728 kg of insulation and jacket compound; cable jackets are not included in the compound mass. The conductor is soft annealed copper of 100 % IACS conductivity to [ASTM_B3_2013], with class B concentric stranding to [ASTM_B8_2023]. It is drawn on WIRE_DRAW from 8 mm redraw rod to [ASTM_B49_2020], with an area reduction of 20% per pass. The cross-section drawings are `docs-authority/drawings/wire/WF-nn.svg`.
+The inventory has 24 families with 171.1 km of conductor, 14,004 kg of copper and 2,727 kg of insulation and jacket compound; cable jackets are not included in the compound mass. The conductor is soft annealed copper of 100 % IACS conductivity to [ASTM_B3_2013], with class B concentric stranding to [ASTM_B8_2023]. It is drawn on WIRE_DRAW from 8 mm redraw rod to [ASTM_B49_2020], with an area reduction of 20% per pass. The cross-section drawings are `docs-authority/drawings/wire/WF-nn.svg`.
 
 Table 2.1 lists the families.
 
@@ -35,7 +35,7 @@ Table 2.1. Wire families
 | WF-06 | 4/0 AWG | 107.219 | 19 | 2.680 | 10 | bare, no covering | 13.40 | single conductor |  | 5,138 | 4,995.4 | 0.0 | 0.164 | ASTM_B3_2013 / ASTM_B8_2023 |
 | WF-07 | 18 AWG | 0.823 | 7 | 0.387 | 28 | PLTC shielded pair | 1.92 | twisted pair, Al/PET foil and drain, PVC jacket | 6.1 | 4,600 | 34.3 | 11.8 | 21.367 | UL1581_2019 |
 | WF-08 | 16 AWG | 1.309 | 7 | 0.488 | 26 | XHHW-2 | 2.98 | TC-ER 2-conductor | 8.2 | 4,540 | 53.9 | 22.9 | 13.438 | UL44_2018 |
-| WF-09 | 14 AWG | 2.081 | 7 | 0.615 | 23 | XHHW-2 | 3.37 | single conductor |  | 5,955 | 112.4 | 35.2 | 8.451 | UL44_2018 |
+| WF-09 | 14 AWG | 2.081 | 7 | 0.615 | 23 | XHHW-2 | 3.37 | single conductor |  | 5,958 | 112.4 | 35.2 | 8.451 | UL44_2018 |
 | WF-10 | 3 AWG | 26.670 | 7 | 2.203 | 12 | XHHW-2 | 8.89 | single conductor |  | 3,150 | 761.8 | 83.0 | 0.659 | UL44_2018 |
 | WF-11 | 6 AWG | 13.302 | 7 | 1.555 | 15 | XHHW-2 | 6.95 | TC-ER 3 + green ground | 19.8 | 3,091 | 372.8 | 61.1 | 1.322 | UL44_2018 |
 | WF-12 | 2 AWG | 33.631 | 7 | 2.473 | 11 | MV-105 | 25.44 | single conductor |  | 1,200 | 365.9 | 633.0 | 0.523 | UL1072_2006 |
@@ -45,12 +45,12 @@ Table 2.1. Wire families
 | WF-16 | 10 AWG | 5.261 | 7 | 0.978 | 19 | XHHW-2 | 4.45 | TC-ER 3 + green ground | 13.0 | 173 | 8.3 | 1.4 | 3.343 | UL44_2018 |
 | WF-17 | 6 AWG | 13.302 | 7 | 1.555 | 15 | XHHW-2 | 6.95 | TC-ER 3 + green ground | 19.8 | 129 | 15.6 | 2.5 | 1.322 | UL44_2018 |
 | WF-19 | 2/0 AWG | 67.431 | 19 | 2.126 | 12 | XHHW-2 | 13.43 | single conductor |  | 180 | 110.1 | 9.0 | 0.261 | UL44_2018 |
-| WF-20 | 3 AWG | 26.670 | 7 | 2.203 | 12 | XHHW-2 | 8.89 | TC-ER 3 + green ground | 25.5 | 173 | 41.8 | 4.6 | 0.659 | UL44_2018 |
 | WF-21 | 14 AWG | 2.081 | 7 | 0.615 | 23 | XHHW-2 | 3.37 | TC-ER 2-conductor | 9.0 | 60 | 1.1 | 0.4 | 8.451 | UL44_2018 |
-| WF-24 | 10 AWG | 5.261 | 7 | 0.978 | 19 | XHHW-2 | 4.45 | single conductor |  | 12 | 0.6 | 0.1 | 3.343 | UL44_2018 |
+| WF-24 | 10 AWG | 5.261 | 7 | 0.978 | 19 | XHHW-2 | 4.45 | single conductor |  | 9 | 0.4 | 0.1 | 3.343 | UL44_2018 |
 | WF-25 | 10 AWG | 5.261 | 7 | 0.978 | 19 | XHHW-2 | 4.45 | TC-ER 3 + green ground | 13.0 | 9 | 0.4 | 0.1 | 3.343 | UL44_2018 |
 | WF-28 | 8 AWG | 8.366 | 7 | 1.234 | 17 | XHHW-2 | 5.98 | TC-ER 3 + green ground | 17.5 | 129 | 9.8 | 2.1 | 2.102 | UL44_2018 |
 | WF-30 | 250 kcmil | 126.677 | 37 | 2.088 | 13 | XHHW-2 | 17.92 | TC-ER 3 + green ground | 48.8 | 40 | 46.4 | 3.2 | 0.140 | UL44_2018 |
+| WF-31 | 4 AWG | 21.151 | 7 | 1.961 | 13 | XHHW-2 | 8.16 | TC-ER 3 + green ground | 23.8 | 173 | 33.2 | 4.1 | 0.831 | UL44_2018 |
 
 ## 3. Production plan
 
@@ -121,7 +121,7 @@ The strand wire is drawn in 26 passes from 8 mm rod. The family is made to UL44_
 
 ### WF-09: equipment ground 14 AWG, green XHHW-2 Cu
 
-The family serves 192 circuits with 5,955 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-09.svg`.
+The family serves 193 circuits with 5,958 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-09.svg`.
 The conductor is 2.081 mm2 of soft copper, 7 wires of 0.615 mm, with a stranded diameter of 1.85 mm and a resistance at 20 °C of 8.451 ohm/km including the stranding factor; it uses 112.4 kg of copper. The covering layers are: XLPE insulation (XHHW-2), green 0.76 mm. The core diameter is 3.37 mm.
 The strand wire is drawn in 23 passes from 8 mm rod. The family is made to UL44_2018 and uses 35.2 kg of compound.
 
@@ -179,12 +179,6 @@ The family serves 4 circuits with 180 m of conductor at voltage class 600 V (AQS
 The conductor is 67.431 mm2 of soft copper, 19 wires of 2.126 mm, with a stranded diameter of 10.63 mm and a resistance at 20 °C of 0.261 ohm/km including the stranding factor; it uses 110.1 kg of copper. The covering layers are: XLPE insulation (XHHW-2), green 1.40 mm. The core diameter is 13.43 mm.
 The strand wire is drawn in 12 passes from 8 mm rod. The family is made to UL44_2018 and uses 9.0 kg of compound.
 
-### WF-20: power 3 AWG, XHHW-2 Cu, tray cable TC-ER
-
-The family serves 1 circuits with 173 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-20.svg`.
-The conductor is 26.670 mm2 of soft copper, 7 wires of 2.203 mm, with a stranded diameter of 6.61 mm and a resistance at 20 °C of 0.659 ohm/km including the stranding factor; it uses 41.8 kg of copper. The covering layers are: XLPE insulation (XHHW-2) 1.14 mm. The core diameter is 8.89 mm. It is made up as TC-ER 3 + green ground, with a jacket of 2.03 mm from the UL 1277 table [UL1277_2019] and a cable outside diameter of 25.5 mm.
-The strand wire is drawn in 12 passes from 8 mm rod. The family is made to UL44_2018 and uses 4.6 kg of compound.
-
 ### WF-21: DC power pair 14 AWG, TC-ER 2-cond
 
 The family serves 3 circuits with 60 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-21.svg`.
@@ -193,8 +187,8 @@ The strand wire is drawn in 23 passes from 8 mm rod. The family is made to UL44_
 
 ### WF-24: equipment ground 10 AWG, green XHHW-2 Cu
 
-The family serves 4 circuits with 12 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-24.svg`.
-The conductor is 5.261 mm2 of soft copper, 7 wires of 0.978 mm, with a stranded diameter of 2.93 mm and a resistance at 20 °C of 3.343 ohm/km including the stranding factor; it uses 0.6 kg of copper. The covering layers are: XLPE insulation (XHHW-2), green 0.76 mm. The core diameter is 4.45 mm.
+The family serves 3 circuits with 9 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-24.svg`.
+The conductor is 5.261 mm2 of soft copper, 7 wires of 0.978 mm, with a stranded diameter of 2.93 mm and a resistance at 20 °C of 3.343 ohm/km including the stranding factor; it uses 0.4 kg of copper. The covering layers are: XLPE insulation (XHHW-2), green 0.76 mm. The core diameter is 4.45 mm.
 The strand wire is drawn in 19 passes from 8 mm rod. The family is made to UL44_2018 and uses 0.1 kg of compound.
 
 ### WF-25: power 10 AWG, XHHW-2 Cu, 600 V, tray cable TC-ER
@@ -214,4 +208,10 @@ The strand wire is drawn in 17 passes from 8 mm rod. The family is made to UL44_
 The family serves 1 circuits with 40 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-30.svg`.
 The conductor is 126.677 mm2 of soft copper, 37 wires of 2.088 mm, with a stranded diameter of 14.62 mm and a resistance at 20 °C of 0.140 ohm/km including the stranding factor; it uses 46.4 kg of copper. The covering layers are: XLPE insulation (XHHW-2) 1.65 mm. The core diameter is 17.92 mm. It is made up as TC-ER 3 + green ground, with a jacket of 2.79 mm from the UL 1277 table [UL1277_2019] and a cable outside diameter of 48.8 mm.
 The strand wire is drawn in 13 passes from 8 mm rod. The family is made to UL44_2018 and uses 3.2 kg of compound.
+
+### WF-31: power 4 AWG, XHHW-2 Cu, tray cable TC-ER
+
+The family serves 1 circuits with 173 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-31.svg`.
+The conductor is 21.151 mm2 of soft copper, 7 wires of 1.961 mm, with a stranded diameter of 5.88 mm and a resistance at 20 °C of 0.831 ohm/km including the stranding factor; it uses 33.2 kg of copper. The covering layers are: XLPE insulation (XHHW-2) 1.14 mm. The core diameter is 8.16 mm. It is made up as TC-ER 3 + green ground, with a jacket of 2.03 mm from the UL 1277 table [UL1277_2019] and a cable outside diameter of 23.8 mm.
+The strand wire is drawn in 13 passes from 8 mm rod. The family is made to UL44_2018 and uses 4.1 kg of compound.
 

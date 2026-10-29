@@ -81,8 +81,8 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | BLACK_DIGEST | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | FLUX_PREP | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | GLASS_DIGEST | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | ELECTRODE_COAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | GAS_ATOMIZER | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | ELECTRODE_COAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | COMB_HEAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | REMIN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | POLY_F | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |

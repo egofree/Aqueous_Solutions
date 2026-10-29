@@ -93,7 +93,7 @@ Table 6.1. Graph values against the solver
 
 ## 8. Drivers
 
-Table 8.1 lists the 842 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 850 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -417,7 +417,6 @@ Table 8.1. Drivers
 | atom_GMR | 2.5 | kg Ar per kg metal | A-M-177 | yes |
 | atom_P_bar | 30.0 | bar Ar at the nozzle | A-M-177 | — |
 | atom_comp_eta | 0.6 | - Ar recirculation compressor, isothermal efficiency | A-M-177 | — |
-| atom_batch_min | 10.0 | min pour time per heat | A-M-177 | — |
 | atom_tundish_kW | 1.0 | kW tundish heater for 1 h per heat | A-M-177 | — |
 | cu_flow_stress_MPa | 250.0 | MPa mean flow stress, Cu cold work | A-M-177 | yes |
 | roll_strain | 2.3 | - true strain, 10 mm bar to 1 mm strip | A-M-177 | — |
@@ -428,6 +427,15 @@ Table 8.1. Drivers
 | mill_idle_frac | 0.15 | - no-load fraction of nameplate while running | A-M-177 | — |
 | draw_kW | 1.1 | kW bull-block motor nameplate | A-M-177 | — |
 | draw_run_h | 1.0 | h/d run | A-M-177 | — |
+| atom_nozzle_mm | 4.0 | mm melt delivery nozzle bore of the close-coupled atomiser (2 to 6 mm class) | A-M-416 | — |
+| atom_head_mm | 100.0 | mm metal head in the tundish above the nozzle | A-M-416 | — |
+| atom_Cd | 0.8 | - discharge coefficient of the melt nozzle | A-M-416 | — |
+| atom_melt_rho_kg_m3 | 8000.0 | kg/m3 density of the atomised melt (Cu, Ni, Sn, Pb, Zn blend class) | A-M-416 | — |
+| atom_store_bar | 50.0 | bar argon receiver charge pressure; it discharges to the nozzle supply pressure atom_P_bar during a pour | A-M-416 | — |
+| mill_slab_t_mm | 10.0 | mm thickness of the cast slab entering the cold mill (ingot mould) | A-M-416 | — |
+| mill_slab_L_mm | 250.0 | mm length of the cast slab entering the cold mill (ingot mould) | A-M-416 | — |
+| mill_pass_reduction | 0.25 | - thickness reduction per cold-rolling pass of copper | A-M-416 | — |
+| mill_edge_margin | 0.25 | - roll face width margin over the slab width for edge spread and tracking | A-M-416 | — |
 | pv_cells_per_d | 3 | cells/d M2 156 mm (ST-SOLAR-01 study rate) | ST-SOLAR-01 | — |
 | pvl_tex_L | 10.0 | L KOH texture bath | A-M-178 | — |
 | pvl_tex_C | 80.0 | C texture bath | A-M-178 | — |
@@ -1253,7 +1261,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 365 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 366 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1920,3 +1928,4 @@ Table 10.1. Values to verify
 | A-M-413 | 200 kg/m3 of packaged plant volume | Unit massing study (X-LOC-11) |
 | A-M-414 | GM 1.0 m minimum; freeboard 2.0 m minimum; roll radius 0.35 … m; m; - | Class stability and freeboard review (Q-030) |
 | A-M-415 | Rectifier trim heaters (every present kW edge out of … kW | python3 docs-authority/_power_sizing.py: bounding P_kW equals the node and feed sum plus rect_ac_input_kW plus the rectifier_trims sum plus the converged EXT_HALL load; SOL_ARK_60K.params.redundancy.bus_demand_kW equals mvs.electrical.need_kw |
+| A-M-416 | Metal-forming tool design from the graph throughputs … mm, bar, kg/m3, fraction | First atomiser heat: pour time and receiver pressure drop logged; first mill run: strip gauge and width measured |

@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: X
+Revision: Y
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -30,6 +30,7 @@ Date: 2026-10-29
 | V | Batch 19: SCRUBBER_CHEMISTRY rewritten against the graph; VENT_CLOSURE given a generator that checks every closure on the graph; owner question on the caustic vents | 2026-10-29 |
 | W | Batch 20: MVS_PITCH_PASS and MVS_STUDY_CLOSE marked as superseded records; MATERIALS_SEC3 and STL_MANIFEST brought to the style guide; STL importer path fixed | 2026-10-29 |
 | X | Batch 21: four hand-drawn process sheets retired and replaced by graph-driven sector views | 2026-10-29 |
+| Y | Batch 22: the wire die schedule, the cold-mill gauge and width and the atomiser batch derived from the graph throughputs (owner decision 2026-10-29, A-M-416); the owner question on the forming tool design closed | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -172,6 +173,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/MATERIALS_SEC3.md` | Rev B. Purpose and scope added; working phrasing and the unit count removed. No selection changed. |
 | `docs-authority/STL_MANIFEST.md` | Rev B. Rewritten; the expected meshes are those mapped in `import_mfg.py`, whose read folder is now the one the build writes. |
 | `flow_graph/exporters/matplotlib/` metal_forming_pfd, mfg_shop_pfd, wafer_fab_pfd, fab_reagent_forks_pfd | Removed after checking what each drew and who cited it; replaced by the sector views `flow_graph/views/pfd-mfg.svg` and `pfd-fab.svg` (owner decision 2026-10-29). |
+| `docs-authority/METAL_FORMING_EQUIPMENT.md` | Rev F. Section 7 sets the die schedule, the cold-mill gauge and width and the atomiser batch from the graph throughputs (A-M-416); `docs-authority/_mfg_tools.py` designs the tools. |
 
 ## 3. In progress
 
@@ -348,7 +350,6 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/duties/` | Duty sheets remain for units that are no longer on the graph, mostly farm, crop and animal units (for example ABE, CHICKENS, CROP_TOMATO, RECT_EW). `_duty_basis.py` skips them, so they keep Graph Rev BH and stale values. Should they be deleted, or moved to an archive? |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` (AQS-REV-H2-001) | The graph sends cathode hydrogen from EW_1 to EW_3 and EW_5 to EW_9, while AQS-STD-002 section 9 names EW_1, EW_2, EW_4 and EW_9. Which is correct? |
 | `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063) | The graph carries the sanitation train as the one node BLACK_DIGEST: Rev AC retired BLACK_DEWATER, BLACK_PASTEUR and BLACK_ALK_HOLD, although their equipment is still built. The electrical load of the train from its sizing is about 0.21 kW, while stream SF-BLACK_DIGEST feeds 0.105 kW, the digester alone. Should the barrier units return to the graph as nodes, and should the feed carry the whole train? Either change moves the bus demand, so neither was made. |
-| `docs-authority/METAL_FORMING_EQUIPMENT.md` (AQS-EQP-MFG-MET-001) | AQS-MFG-010 sizes the wire drawer, the cold mill and the atomiser from their energy per kilogram and gives their nameplates, but the die schedule of the wire drawer, the gauge and width range of the mill and the batch rate of the atomiser are not designed. Should they be set now from the graph throughputs, or held until the tools are designed in-house? |
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001) | No stream brings silicon to WAFER_FAB: STOCK_TO_FAB carries no flow, and the fab balance closes on its gas, slurry and water streams alone, so the wafer stream to LITHO_COAT is not backed by a silicon charge. Should STOCK_TO_FAB be rated from the wafer output, and from which store? |
 | `docs-authority/WAFER_FAB_EQUIPMENT.md` (AQS-EQP-FAB-001) | Revision C left the blanket gas for the Czochralski charge as TBD between argon and nitrogen. The graph feeds the fab nitrogen (S03) only. Is nitrogen the choice, or should an argon stream be added? |
 | `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | The ionic-liquid solvent chain (fermentation, acetic acid, glyoxal, formaldehyde, methylimidazole, chlorobutane and the quaternisation) has build models in `models/mfg/` but no units on the present graph. Should it be put back on the graph with its rates, or retired with its build models? |

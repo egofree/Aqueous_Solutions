@@ -65,7 +65,7 @@ ELEC,pem_fc,FUEL_CELL,transfer pump IA-FC-LEACH to LEACH_CSTR_1,BLDC,42 mm (NEMA
 ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"42.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 ELEC,rectifier,RECTIFIER,cooling fan,BLDC,57 mm (NEMA 23 flange),0.05,24 V DC,S1,BLDC driver,4,assumed per cabinet
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
-ELEC,scrubber,ZNBR2_BR2_REGEN,transfer pump S69B to ZNBR2,BLDC,42 mm (NEMA 17 flange),0.0026,24 V DC,S1,BLDC driver,1,"908.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+ELEC,scrubber,ZNBR2_BR2_REGEN,transfer pump S69B to ZNBR2,BLDC,42 mm (NEMA 17 flange),0.0026,24 V DC,S1,BLDC driver,1,"908.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 FAB,FAB,WAFER_FAB,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 FAB,FAB,WAFER_FAB,process vacuum pump,induction IE3,IEC 90S / 1.1 kW,0.75,480 V 3-ph,S1,fixed speed,1,assumed
 FAB,FAB,WAFER_FAB,transfer pump IA-FAB-SPENT to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,BLDC driver,1,"66.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
@@ -143,7 +143,7 @@ MFG,FARM,GLYOXAL,Mineral wool insulation with SS cladding; recirculation pump,in
 MFG,FARM,IMID,Mineral wool insulation with SS cladding; recirculation pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 MFG,FARM,YEAST,PIR insulation 50 mm with PE cladding; CO2 evolution; daily ,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 MFG,MFG,COLD_MILL,Two-high cold rolling mill: main drive,induction IE3,IEC 100L / 2.2 kW,1.913,480 V 3-ph,S3,fixed speed,1,MFG_TOOLS nameplate
-MFG,MFG,GAS_ATOMIZER,Close-coupled gas atomiser with Ar recirculation: main drive,induction IE3,IEC 132M / 7.5 kW,4.7826,480 V 3-ph,S3,fixed speed,1,MFG_TOOLS nameplate
+MFG,MFG,GAS_ATOMIZER,Close-coupled gas atomiser with Ar recirculation: main drive,induction IE3,IEC 80 / 0.55 kW,0.4348,480 V 3-ph,S3,fixed speed,1,MFG_TOOLS nameplate
 MFG,MFG,MET_MELT,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump",induction IE3,IEC 80 / 0.55 kW,0.37,480 V 3-ph,S1,fixed speed,1,MFG_TOOLS; assumed (A-M-119)
 MFG,MFG,MET_MELT,transfer pump S57 to WIRE_DRAW,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"6.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 MFG,MFG,MFG_SHOP,Band saw: main drive,induction IE3,IEC 90L / 1.5 kW,1.3043,480 V 3-ph,S3,fixed speed,1,MFG_TOOLS nameplate

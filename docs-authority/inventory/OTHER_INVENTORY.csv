@@ -1847,12 +1847,12 @@ MFG,MFG,COLD_MILL,electronics,variable-frequency drive,2.2 kW,IEC 61800-5-1,1,Tw
 MFG,MFG,COLD_MILL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MFG,MFG,COLD_MILL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 MFG,MFG,COLD_MILL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,MFG,GAS_ATOMIZER,bearing,deep-groove ball bearing,6308-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Close-coupled gas atomiser with Ar recirculation: main drive: drive and non-drive end, IEC 60072 frame 132M (assumed size)"
+MFG,MFG,GAS_ATOMIZER,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Close-coupled gas atomiser with Ar recirculation: main drive: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 MFG,MFG,GAS_ATOMIZER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Close-coupled gas atomiser with Ar recirculation: main drive: run and fault (assumed)
-MFG,MFG,GAS_ATOMIZER,electronics,variable-frequency drive,7.5 kW,IEC 61800-5-1,1,Close-coupled gas atomiser with Ar recirculation: main drive (assumed VFD at >= 0.75 kW)
+MFG,MFG,GAS_ATOMIZER,electronics,motor starter (contactor + overload),0.55 kW,IEC 60947-4-1,1,Close-coupled gas atomiser with Ar recirculation: main drive (assumed VFD at >= 0.75 kW)
 MFG,MFG,GAS_ATOMIZER,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 MFG,MFG,GAS_ATOMIZER,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-MFG,MFG,GAS_ATOMIZER,protection,"inverse-time circuit breaker, 3-pole",30 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
+MFG,MFG,GAS_ATOMIZER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,MFG,MET_MELT,bearing,deep-groove ball bearing,6204-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump: drive and non-drive end, IEC 60072 frame 80 (assumed size)"
 MFG,MFG,MET_MELT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S57 to WIRE_DRAW (assumed size)
 MFG,MFG,MET_MELT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S57 to WIRE_DRAW

@@ -373,10 +373,10 @@
       "modules": [],
       "params": {},
       "continuous_kw": {
-        "value": 0.0781,
+        "value": 0.0836,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 1.9 kWh/d / 24 h; batch nameplate 5.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 2.0 kWh/d / 24 h; batch nameplate 0.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged)."
       }
     },
     {
@@ -616,7 +616,7 @@
         "value": 2.55,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 42.8 kW, coincident peak 24.5 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share)."
+        "note": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 37.8 kW, coincident peak 19.5 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share)."
       },
       "modules": [],
       "params": {

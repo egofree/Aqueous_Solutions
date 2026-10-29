@@ -82,7 +82,7 @@ Plant demand 222.9 kW at 480 V, power factor 0.9 assumed: 298 A. EW process bars
 | EXT_HALL | heat pump condenser fan feeder | 14 AWG | 1 | 3.0 | 15 | 128.8 | 460 | 1.50 | 3 | yes |
 | EXT_HALL | lighting branch circuit 277 V | 6 AWG | 1 | 16.0 | 65 | 120.0 | 277 | 2.23 | 3 | yes |
 | FUEL_CELL | cathode air blower feeder | 14 AWG | 1 | 2.4 | 15 | 8.1 | 460 | 0.08 | 3 | yes |
-| GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive feeder | 14 AWG | 1 | 11.0 | 15 | 3.0 | 460 | 0.13 | 3 | yes |
+| GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive feeder | 14 AWG | 1 | 1.6 | 15 | 3.0 | 460 | 0.02 | 3 | yes |
 | GEO_HP | ground-loop circulator feeder | 14 AWG | 1 | 2.4 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
 | GEO_HP | heat pump compressor feeder | 14 AWG | 1 | 2.1 | 15 | 3.0 | 460 | 0.02 | 3 | yes |
 | GLASS_DIGEST | Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09 feeder | 14 AWG | 1 | 2.4 | 15 | 16.4 | 460 | 0.15 | 3 | yes |
@@ -103,7 +103,7 @@ Plant demand 222.9 kW at 480 V, power factor 0.9 assumed: 298 A. EW process bars
 | LP-GEO | panel feeder 460 V | 14 AWG | 1 | 2.6 | 15 | 22.4 | 460 | 0.23 | 2 | yes |
 | LP-MEOH | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 21.4 | 208 | 0.55 | 2 | yes |
 | LP-MFG | panel feeder 208 V | 10 AWG | 1 | 12.6 | 30 | 43.3 | 208 | 1.80 | 2 | yes |
-| LP-MFG | panel feeder 460 V | 3 AWG | 1 | 90.0 | 100 | 43.3 | 460 | 1.18 | 2 | yes |
+| LP-MFG | panel feeder 460 V | 4 AWG | 1 | 80.5 | 85 | 43.3 | 460 | 1.33 | 2 | yes |
 | MEOH_FERM | PIR insulation 50 mm with PE cladding; daily recirculation p feeder | 14 AWG | 1 | 2.4 | 15 | 7.0 | 460 | 0.07 | 3 | yes |
 | MET_AHU | induced-draft fan feeder | 14 AWG | 1 | 4.8 | 15 | 14.2 | 460 | 0.26 | 3 | yes |
 | MET_MELT | Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump feeder | 14 AWG | 1 | 1.6 | 15 | 3.0 | 460 | 0.02 | 3 | yes |

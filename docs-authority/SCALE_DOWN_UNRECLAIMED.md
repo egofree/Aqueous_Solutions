@@ -361,7 +361,7 @@ Table 3.7. MFG off. Sector type: Process (Mass transform).
 | SF-BLOW_MOLD | SOL_ARK_60K to BLOW_MOLD | ELEC | 0.369 kW | stops with the sector |
 | SF-COLD_MILL | SOL_ARK_60K to COLD_MILL | ELEC | 0.0191 kW | stops with the sector |
 | SF-ELECTRODE_COAT | SOL_ARK_60K to ELECTRODE_COAT | ELEC | 0.0792 kW | stops with the sector |
-| SF-GAS_ATOMIZER | SOL_ARK_60K to GAS_ATOMIZER | ELEC | 0.0781 kW | stops with the sector |
+| SF-GAS_ATOMIZER | SOL_ARK_60K to GAS_ATOMIZER | ELEC | 0.0836 kW | stops with the sector |
 | SF-MET_MELT | SOL_ARK_60K to MET_MELT | ELEC | 0.237 kW | stops with the sector |
 | SF-MET_SCRUB | SOL_ARK_60K to MET_SCRUB | ELEC | 2.12 kW | stops with the sector |
 | SF-MFG_SHOP | SOL_ARK_60K to MFG_SHOP | ELEC | 2.55 kW | stops with the sector |
@@ -607,7 +607,7 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | SF-EVAP_BASE | SOL_ARK_60K to EVAP_BASE | DIGESTER | 1.33 kW | left without a source: consumer goes short |
 | SF-FILM_CAST | SOL_ARK_60K to FILM_CAST | POLYMERS | 0.109 kW | left without a source: consumer goes short |
 | SF-FLUX_PREP | SOL_ARK_60K to FLUX_PREP | FOUNDRY | 0.1 kW | left without a source: consumer goes short |
-| SF-GAS_ATOMIZER | SOL_ARK_60K to GAS_ATOMIZER | MFG | 0.0781 kW | left without a source: consumer goes short |
+| SF-GAS_ATOMIZER | SOL_ARK_60K to GAS_ATOMIZER | MFG | 0.0836 kW | left without a source: consumer goes short |
 | SF-GEO_HP | SOL_ARK_60K to GEO_HP | GEO | 0.687 kW | left without a source: consumer goes short |
 | SF-GEO_HP_CLOSED_LOOP | SOL_ARK_60K to GEO_HP_CLOSED_LOOP | GEO | 0.126 kW | left without a source: consumer goes short |
 | SF-GLASS_DIGEST | SOL_ARK_60K to GLASS_DIGEST | GLASS | 0.09 kW | left without a source: consumer goes short |

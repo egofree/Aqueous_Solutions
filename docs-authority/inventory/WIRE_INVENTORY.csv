@@ -365,9 +365,9 @@ MFG,FARM,YEAST,PIR insulation 50 mm with PE cladding; CO2 evolution; daily  feed
 MFG,MFG,COLD_MILL,Two-high cold rolling mill: main drive EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,3.0,1,3.0,NEC 250.122 at 15 A OCPD
 MFG,MFG,COLD_MILL,Two-high cold rolling mill: main drive control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,3.0,1,18.0,"start/stop, run, fault (assumed)"
 MFG,MFG,COLD_MILL,Two-high cold rolling mill: main drive feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,3.0,1,9.0,"NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed)"
-MFG,MFG,GAS_ATOMIZER,Close-coupled gas atomiser with Ar recirculation: main drive EGC,equipment ground,10 AWG,green XHHW-2 Cu,600 V,1,3.0,1,3.0,NEC 250.122 at 30 A OCPD
+MFG,MFG,GAS_ATOMIZER,Close-coupled gas atomiser with Ar recirculation: main drive EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,3.0,1,3.0,NEC 250.122 at 15 A OCPD
 MFG,MFG,GAS_ATOMIZER,Close-coupled gas atomiser with Ar recirculation: main drive control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,3.0,1,18.0,"start/stop, run, fault (assumed)"
-MFG,MFG,GAS_ATOMIZER,Close-coupled gas atomiser with Ar recirculation: main drive feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,3.0,1,9.0,"NEC 430.22: 1.25 x 11.0 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed)"
+MFG,MFG,GAS_ATOMIZER,Close-coupled gas atomiser with Ar recirculation: main drive feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,3.0,1,9.0,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed)"
 MFG,MFG,MET_MELT,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump EGC",equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,3.0,1,3.0,NEC 250.122 at 15 A OCPD
 MFG,MFG,MET_MELT,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump control",control,18 AWG,"TFFN 3-pair, shielded",600 V,6,3.0,1,18.0,"start/stop, run, fault (assumed)"
 MFG,MFG,MET_MELT,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump feeder","power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,3.0,1,9.0,"NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed)"
@@ -406,7 +406,7 @@ MFG,ahu,MET_AHU,induced-draft fan EGC,equipment ground,14 AWG,green XHHW-2 Cu,60
 MFG,ahu,MET_AHU,induced-draft fan control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,14.2,1,85.3,"start/stop, run, fault (assumed)"
 MFG,ahu,MET_AHU,induced-draft fan feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,14.2,1,42.7,"NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed)"
 MFG,distribution,LP-MFG,panel feeder 208 V,"power, 3 ph + EGC",10 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,43.3,1,173.1,NEC 430.24: 12.6 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
-MFG,distribution,LP-MFG,panel feeder 460 V,"power, 3 ph + EGC",3 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,43.3,1,173.1,NEC 430.24: 90.0 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
+MFG,distribution,LP-MFG,panel feeder 460 V,"power, 3 ph + EGC",4 AWG,"XHHW-2 Cu, tray cable TC-ER",600 V,4,43.3,1,173.1,NEC 430.24: 80.5 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m
 MFG,scrubber,MET_SCRUB,induced-draft fan EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,10.5,1,10.5,NEC 250.122 at 15 A OCPD
 MFG,scrubber,MET_SCRUB,induced-draft fan control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,10.5,1,62.9,"start/stop, run, fault (assumed)"
 MFG,scrubber,MET_SCRUB,induced-draft fan feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,10.5,1,31.4,"NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed)"

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="610" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="602" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit PV_ARRAY · pv · sector ELEC · present</text>
-<text x="24" y="54" font-size="10.5">350.099 kW continuous</text>
+<text x="24" y="54" font-size="10.5">350.105 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 0 in + 2 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 4</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -46,7 +46,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-PV_ARRAY</text>
 <text x="1124" y="526" font-size="9">P&amp;ID PV_ARRAY (pv, ELEC sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 34f976a0   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev de352e69   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 d47de7a2485991ce   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 c5ecb8d0e71a4594   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

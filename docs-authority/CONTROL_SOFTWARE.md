@@ -45,7 +45,7 @@ PI blocks with set-point literals taken from the graph basis column of AQS-CTL-0
 | PLC-HAB | 5 | 0 | 5 | 0 | 0/1/0 | redundant pair |
 | PLC-HEAT | 24 | 0 | 24 | 0 | 0/0/0 | single |
 | PLC-MEOH | 21 | 0 | 21 | 0 | 0/35/6 | single |
-| PLC-MFG | 27 | 1 | 27 | 0 | 9/62/11 | single |
+| PLC-MFG | 27 | 1 | 27 | 0 | 8/62/12 | single |
 | PLC-NUT | 9 | 0 | 9 | 0 | 0/21/5 | redundant pair |
 | PLC-OIL | 51 | 3 | 51 | 0 | 0/40/5 | single |
 | PLC-POLYMERS | 34 | 2 | 34 | 0 | 0/18/3 | single |

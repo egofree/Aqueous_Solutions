@@ -38,7 +38,7 @@ flowchart LR
   BACKUP_GEN["BACKUP_GEN 0.01 kW"] -->|S47| BUS
   FUEL_CELL["FUEL_CELL 4.00 kW"] -->|S51| BUS
   MEOH_FC["MEOH_FC 1.00 kW"] -->|S79| BUS
-  PV_ARRAY["PV_ARRAY 350.10 kW"] -->|IA-PV-01| BUS
+  PV_ARRAY["PV_ARRAY 350.11 kW"] -->|IA-PV-01| BUS
   BUS(["SOL_ARK_60K 480 V 3φ, 42 × 60 = 2520 kW inverters"])
   BUS --> MCC["MCC-1 480 V 1.2 kW"]
   BUS --> XF["T-1 15 kVA 480–208/120 V"] --> PP["PP-1 0.4 kW"]
@@ -177,8 +177,8 @@ Table 1. Loads on the main bus, largest first
 | SOL_ARK 480 V | BLACK_DIGEST | 0.11 | 0.1 | 15 | graph SF-BLACK_DIGEST |
 | SOL_ARK 480 V | FLUX_PREP | 0.10 | 0.1 | 15 | graph SF-FLUX_PREP |
 | SOL_ARK 480 V | GLASS_DIGEST | 0.09 | 0.1 | 15 | graph SF-GLASS_DIGEST |
-| SOL_ARK 480 V | ELECTRODE_COAT | 0.08 | 0.1 | 15 | graph SF-ELECTRODE_COAT |
 | SOL_ARK 480 V | GAS_ATOMIZER | 0.08 | 0.1 | 15 | graph SF-GAS_ATOMIZER |
+| SOL_ARK 480 V | ELECTRODE_COAT | 0.08 | 0.1 | 15 | graph SF-ELECTRODE_COAT |
 | SOL_ARK 480 V | COMB_HEAT | 0.05 | 0.1 | 15 | graph SF-COMB_HEAT |
 | SOL_ARK 480 V | REMIN | 0.05 | 0.1 | 15 | graph SF-REMIN |
 | SOL_ARK 480 V | POLY_F | 0.04 | 0.1 | 15 | graph SF-POLY_F |
@@ -211,10 +211,10 @@ Table 2. Bus totals
 | Item | kW |
 | --- | --- |
 | Sources on the bus (graph edges) | 360.11 |
-| Demand on the bus (this page) | 222.94 |
+| Demand on the bus (this page) | 222.95 |
 | Inverter rating (SOL_ARK_60K) | 2520.0 |
 | Shortfall against sources | -137.16 |
-| Shortfall against inverter | -2297.06 |
+| Shortfall against inverter | -2297.05 |
 
 ## Findings
 

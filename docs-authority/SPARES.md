@@ -10,13 +10,13 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | Kind | Family / unit | Item | Installed | Spares | Rule |
 |---|---|---|---|---|---|
 | building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x388) | 388 | 39 | 10 % min 2 |
-| building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x22; 6206-2Z) | 356 | 36 | 10 % min 2 |
+| building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z) | 356 | 36 | 10 % min 2 |
 | building block | OF-03 | electronics: PLC digital I/O point (24 V DC x868) | 868 | 87 | 10 % min 1 |
 | building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x754) | 754 | 76 | 10 % min 1 |
 | building block | OF-05 | electronics: BLDC driver (24/48 V DC x191) | 191 | 20 | 10 % min 1 |
-| building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x104; 0.18 kW x20; 0.55 kW x10; 0.12 kW x4; 0.25 kW ) | 144 | 15 | 10 % min 1 |
+| building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x104; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW ) | 145 | 15 | 10 % min 1 |
 | building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x102) | 102 | 11 | 10 % min 1 |
-| building block | OF-08 | electronics: variable-frequency drive (1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x3; 4 kW x1) | 34 | 4 | 10 % min 1 |
+| building block | OF-08 | electronics: variable-frequency drive (1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x2; 4 kW x1) | 33 | 4 | 10 % min 1 |
 | building block | OF-09 | electronics: solenoid driver channel (24 V DC x36) | 36 | 4 | 10 % min 1 |
 | building block | OF-10 | electronics: compressor contactor + overload (18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1) | 10 | 1 | 10 % min 1 |
 | building block | OF-11 | electronics: stepper driver (24/48 V DC x3) | 3 | 1 | 10 % min 1 |
@@ -53,7 +53,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-43 | instrument: gas detector, O2 enrichment (electrochemical O2 x12) | 12 | 2 | 10 % min 1 |
 | building block | OF-44 | instrument: gas detector, CO (electrochemical CO x14) | 14 | 2 | 10 % min 1 |
 | building block | OF-45 | instrument: gas detector, NOx (electrochemical NO2 x6) | 6 | 1 | 10 % min 1 |
-| building block | OF-46 | protection: inverse-time circuit breaker, 3-pole (15 A x192; 90 A x8; 30 A x3; 60 A x1) | 204 | 21 | 10 % min 1 |
+| building block | OF-46 | protection: inverse-time circuit breaker, 3-pole (15 A x193; 90 A x8; 30 A x2; 60 A x1) | 204 | 21 | 10 % min 1 |
 | building block | OF-47 | seal: mechanical seal, single (EN 12756 x124) | 124 | 25 | 20 % min 2 |
 | building block | OF-50 | valve: isolation valve (DN15 x124; DN50 x22) | 146 | 8 | 5 % min 1 |
 | building block | OF-51 | valve: isolation valve (DN15 x20; DN50 x10) | 30 | 2 | 5 % min 1 |
@@ -96,11 +96,11 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | motor | MF-07 | induction IE3 IEC 90S / 1.1 kW 480 V 3-ph | 23 | 2 | 5 % min 1 |
 | motor | MF-08 | induction IE3 IEC 90L / 1.5 kW 480 V 3-ph | 3 | 1 | 5 % min 1 |
 | motor | MF-09 | induction IE3 IEC 63 / 0.18 kW 208 V 3-ph | 20 | 1 | 5 % min 1 |
-| motor | MF-10 | induction IE3 IEC 80 / 0.55 kW 480 V 3-ph | 10 | 1 | 5 % min 1 |
+| motor | MF-10 | induction IE3 IEC 80 / 0.55 kW 480 V 3-ph | 11 | 1 | 5 % min 1 |
 | motor | MF-11 | induction IE3 IEC 100L / 2.2 kW 480 V 3-ph | 6 | 1 | 5 % min 1 |
 | motor | MF-12 | induction IE3 IEC 63 / 0.12 kW 208 V 3-ph | 4 | 1 | 5 % min 1 |
 | motor | MF-13 | induction IE3 IEC 71 / 0.25 kW 208 V 3-ph | 3 | 1 | 5 % min 1 |
-| motor | MF-14 | induction IE3 IEC 132M / 7.5 kW 480 V 3-ph | 3 | 1 | 5 % min 1 |
+| motor | MF-14 | induction IE3 IEC 132M / 7.5 kW 480 V 3-ph | 2 | 1 | 5 % min 1 |
 | motor | MF-15 | induction IE3 IEC 112M / 4 kW 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-16 | induction IE3 IEC 80 / 0.75 kW 480 V 3-ph | 1 | 1 | 5 % min 1 |
 | motor | MF-17 | solenoid ISO 15218 coil, 22 mm 24 V DC | 36 | 2 | 5 % min 1 |

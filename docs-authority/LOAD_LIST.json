@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "d47de7a2485991ce88edfc3bea99d6f9cb52c9dd2571e4c64069c2ec36446466",
+  "graph_sha256": "c5ecb8d0e71a4594b6924cc2995014f7d0657bd23f26b3d22fa08db5b8ba22c7",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 350.099,
-   "calc_kw": 350.099,
+   "kw": 350.105,
+   "calc_kw": 350.105,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 216.272,
-   "calc_kw": 216.272,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 216.3 kW, charge 983.0 kW, 3028 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 216.282,
+   "calc_kw": 216.282,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 216.3 kW, charge 983.1 kW, 3028 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -117,7 +117,7 @@
    "role": "load",
    "kw": 2.55,
    "calc_kw": 2.55,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 42.8 kW, coincident peak 24.5 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).",
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C shop machine-tool list, one 8 h shift; 61.2 kWh/d / 24 h; shop connected 26.5 kW (roster connected 37.8 kW, coincident peak 19.5 kW frames MCC-1); rev C metering split moves the four metal tools to their own stamps (X-ELS-02: node was the 12 kW REQ-MFG-TOTAL-CONT study share).",
    "class": "calculated",
    "sector": "MFG"
   },
@@ -527,20 +527,20 @@
    "sector": "GLASS"
   },
   {
+   "unit": "GAS_ATOMIZER",
+   "role": "load",
+   "kw": 0.084,
+   "calc_kw": 0.084,
+   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 2.0 kWh/d / 24 h; batch nameplate 0.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
+   "class": "calculated",
+   "sector": "MFG"
+  },
+  {
    "unit": "ELECTRODE_COAT",
    "role": "\u2014",
    "kw": 0.079,
    "calc_kw": 0.079,
    "basis": "X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296): booth exhaust 0.35 kW x 2 h/d + IR cure 1.2 kW x 1 h/d campaign at the 0.02 kg/d anode recoat loop (AQS-MFG-ELC-001 Rev B; A-M-285).",
-   "class": "calculated",
-   "sector": "MFG"
-  },
-  {
-   "unit": "GAS_ATOMIZER",
-   "role": "load",
-   "kw": 0.078,
-   "calc_kw": 0.078,
-   "basis": "X-MFG-37 (A-M-177): AQS-MFG-010 rev C per-tool stamp, in-house physics from graph throughputs; 1.9 kWh/d / 24 h; batch nameplate 5.5 kW (rev B metered this tool inside the MFG_SHOP aggregate; total roster demand unchanged).",
    "class": "calculated",
    "sector": "MFG"
   },
@@ -813,8 +813,8 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 89,
-  "graph_sum_kW": 154.35,
-  "calc_sum_kW": 154.35,
+  "graph_sum_kW": 154.36,
+  "calc_sum_kW": 154.36,
   "connected_load_kW": 154.4,
   "connected_calculated_kW": 154.3,
   "connected_standby_kW": 0.1,

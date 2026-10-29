@@ -217,11 +217,11 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MF-07 x 23 | 5 | 0 | 1 | 0 | 0 |
 | MF-08 x 3 | 7 | 0 | 3 | 0 | 0 |
 | MF-09 x 20 | 7 | 0 | 3 | 0 | 0 |
-| MF-10 x 10 | 7 | 0 | 3 | 0 | 0 |
+| MF-10 x 11 | 7 | 0 | 3 | 0 | 0 |
 | MF-11 x 6 | 7 | 0 | 3 | 0 | 0 |
 | MF-12 x 4 | 7 | 0 | 3 | 0 | 0 |
 | MF-13 x 3 | 7 | 0 | 3 | 0 | 0 |
-| MF-14 x 3 | 7 | 0 | 3 | 0 | 0 |
+| MF-14 x 2 | 7 | 0 | 3 | 0 | 0 |
 | MF-15 x 1 | 7 | 0 | 3 | 0 | 0 |
 | MF-16 x 1 | 7 | 0 | 3 | 0 | 0 |
 | MF-17 x 36 | 7 | 0 | 3 | 0 | 0 |
@@ -423,12 +423,12 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | WF-16 | 1 | 0 | 0 | 0 | 0 |
 | WF-17 | 1 | 0 | 0 | 0 | 0 |
 | WF-19 | 1 | 0 | 0 | 0 | 0 |
-| WF-20 | 1 | 0 | 0 | 0 | 0 |
 | WF-21 | 1 | 0 | 0 | 0 | 0 |
 | WF-24 | 1 | 0 | 0 | 0 | 0 |
 | WF-25 | 1 | 0 | 0 | 0 | 0 |
 | WF-28 | 1 | 0 | 0 | 0 | 0 |
 | WF-30 | 1 | 0 | 0 | 0 | 0 |
+| WF-31 | 1 | 0 | 0 | 0 | 0 |
 | WIRE_DRAW | 2 | 0 | 0 | 0 | 0 |
 | WORMS | 0 | 4 | 0 | 0 | 0 |
 | WS_AMMONIA | 0 | 2 | 0 | 0 | 0 |

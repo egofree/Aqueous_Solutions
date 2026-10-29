@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | X | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | Y | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -163,7 +163,7 @@ Table 3.1. Document numbers in use
 | AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | B | 2026-09-27 | Habitation water — equipment list | current |
 | AQS-EQP-MEOH-001 | `docs-authority/MEOH_EQUIPMENT.md` | B | 2026-10-25 | Methanol train equipment list | current |
 | AQS-EQP-MFG-001 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | E | 2026-10-29 | Manufacturing shop equipment list | current |
-| AQS-EQP-MFG-MET-001 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | E | 2026-10-29 | Metal-forming equipment list | current |
+| AQS-EQP-MFG-MET-001 | `docs-authority/METAL_FORMING_EQUIPMENT.md` | F | 2026-10-29 | Metal-forming equipment list | current |
 | AQS-EQP-NUT-001 | `docs-authority/NUTRIENT_DOSE.md` | B | 2026-09-27 | Nutrient dose / N-P process list | current |
 | AQS-EQP-STUDY-001 | `docs-authority/STUDY_UNITS_STUB.md` | F | 2026-10-01 | Study / deferred units — VCD·remin, ORC, litho, solar, blow-mold, electrode coat | current |
 | AQS-EQP-VENT-001 | `docs-authority/VENT_SCRUB_EQUIPMENT.md` | C | 2026-10-24 | Vent, scrubber and regenerator equipment | current |
@@ -206,7 +206,7 @@ Table 3.1. Document numbers in use
 | AQS-MF-001 | `docs-authority/MASS_FLOW.md` | K | 2026-10-24 | Mass-flow claim status | current |
 | AQS-MF-001-DERIVED | `flow_graph/derived/MASS_FLOW_DERIVED.md` | — | — | Mass-flow claim excerpt — DERIVED from flow_graph | current |
 | AQS-MFG-001 | `docs-authority/internal/DETAIL_MODEL_PLAN.md` | A | 2026-09-26 | Manufacturing-detail model list | superseded by AQS-PLAN-007 |
-| AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | D | 2026-10-25 | Manufacturing shop tool list | current |
+| AQS-MFG-010 | `docs-authority/MFG_TOOLS.md` | E | 2026-10-29 | Manufacturing shop tool list | current |
 | AQS-MFG-011 | `docs-authority/JELLYBEAN.md` | B | 2026-10-29 | Jellybean parts: standard sizes and in-house lines | current |
 | AQS-MFG-ELC-001 | `docs-authority/ELECTRODE_FAB.md` | D | 2026-10-25 | Electrode fabrication and coating | current |
 | AQS-MFG-MET-001 | `docs-authority/METAL_FORMING.md` | C | 2026-10-29 | Metal forming: wire drawing, cold rolling and gas atomising | current |

@@ -7156,5 +7156,22 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 docs-authority/_power_sizing.py: bounding P_kW equals the node and feed sum plus rect_ac_input_kW plus the rectifier_trims sum plus the converged EXT_HALL load; SOL_ARK_60K.params.redundancy.bus_demand_kW equals mvs.electrical.need_kw"
+ },
+ {
+  "id": "A-M-416",
+  "value": "Metal-forming tool design from the graph throughputs: atomiser batch from the daily powder feed and the melt charge, pour rate from the melt nozzle (bore 4 mm, head 100 mm, Cd 0.8, melt 8000 kg/m3), argon held in a receiver charged to 50 bar and recharged between heats; cold mill fed a 10 mm x 250 mm cast slab whose width follows from the slab mass, 25 % reduction per pass, roll face 25 % wider than the slab; wire dies follow the rod diameter and pass reduction of AQS-INV-007 down to the finest strand of the wire families",
+  "units": "mm, bar, kg/m3, fraction",
+  "where": "docs-authority/_mfg_tools.py design(); docs-authority/_mfg_equipment.py section 7; flow_graph/param/drivers.json atom_*, mill_*",
+  "basis": "Owner decision 2026-10-29: the wire die schedule, the cold-mill gauge and width and the atomiser batch rate are set from the graph throughputs. Orifice flow m = Cd A rho (2 g h)^0.5; plane-strain rolling t = t0 exp(-strain) at constant width; receiver mass m = (P_hi - P_lo) V M / (R T)",
+  "sensitivity": "The nozzle bore sets the pour time and the argon flow during the pour; the receiver pressure sets the compression work per kilogram; the slab size sets the strip width and length",
+  "replaced_by": "Measured pour rate, gas use and strip dimensions from the first atomiser and mill runs",
+  "task": "QA audit 2026-10-29, metal-forming tool design",
+  "files": [
+   "docs-authority/_mfg_tools.py",
+   "docs-authority/_mfg_equipment.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "First atomiser heat: pour time and receiver pressure drop logged; first mill run: strip gauge and width measured"
  }
 ]

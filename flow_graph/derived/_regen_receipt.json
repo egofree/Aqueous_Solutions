@@ -1,7 +1,7 @@
 {
  "generated_by": "flow_graph/param/regen.py",
  "manifest": "flow_graph/param/regen_manifest.json",
- "graph_sha256": "d47de7a2485991ce88edfc3bea99d6f9cb52c9dd2571e4c64069c2ec36446466",
+ "graph_sha256": "c5ecb8d0e71a4594b6924cc2995014f7d0657bd23f26b3d22fa08db5b8ba22c7",
  "converged": true,
  "stages": [
   {
@@ -213,10 +213,6 @@
    "status": "ok"
   },
   {
-   "name": "doc_mfg_equipment",
-   "status": "ok"
-  },
-  {
    "name": "doc_wafer_fab_equipment",
    "status": "ok"
   },
@@ -406,6 +402,10 @@
   },
   {
    "name": "doc_wire_specs",
+   "status": "ok"
+  },
+  {
+   "name": "doc_mfg_equipment",
    "status": "ok"
   },
   {

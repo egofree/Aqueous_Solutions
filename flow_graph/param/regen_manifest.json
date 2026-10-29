@@ -1037,24 +1037,6 @@
    "quick": false
   },
   {
-   "name": "doc_mfg_equipment",
-   "argv": [
-    "python3",
-    "docs-authority/_mfg_equipment.py"
-   ],
-   "outputs": [
-    "docs-authority/METAL_FORMING_EQUIPMENT.md",
-    "docs-authority/MFG_SHOP_EQUIPMENT.md"
-   ],
-   "depends_on": [
-    "doc_mfg_tools",
-    "write_graph_power"
-   ],
-   "writes_graph": false,
-   "quick": false,
-   "note": "AQS-EQP-MFG-MET-001 and AQS-EQP-MFG-001 from the MFG units of the graph and the AQS-MFG-010 tool list (--json, read only)."
-  },
-  {
    "name": "doc_wafer_fab_equipment",
    "argv": [
     "python3",
@@ -1950,6 +1932,25 @@
    ],
    "writes_graph": false,
    "quick": false
+  },
+  {
+   "name": "doc_mfg_equipment",
+   "argv": [
+    "python3",
+    "docs-authority/_mfg_equipment.py"
+   ],
+   "outputs": [
+    "docs-authority/METAL_FORMING_EQUIPMENT.md",
+    "docs-authority/MFG_SHOP_EQUIPMENT.md"
+   ],
+   "depends_on": [
+    "doc_mfg_tools",
+    "write_graph_power",
+    "doc_wire_specs"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-EQP-MFG-MET-001 and AQS-EQP-MFG-001 from the MFG units of the graph and the AQS-MFG-010 tool list (--json, read only)."
   },
   {
    "name": "pid_sheets",

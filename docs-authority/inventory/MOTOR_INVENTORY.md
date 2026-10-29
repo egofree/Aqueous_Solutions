@@ -35,11 +35,11 @@ Table 1.1. Motor families
 | MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 23 | 8 | 19.55 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
 | MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 20 | 20 | 2.40 |
-| MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
+| MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 11 | 9 | 4.13 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 6 | 6 | 9.06 |
 | MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 4 | 4 | 0.36 |
 | MF-13 | induction IE3 | IEC 71 / 0.25 kW | 208 V 3-ph | 3 | 3 | 0.56 |
-| MF-14 | induction IE3 | IEC 132M / 7.5 kW | 480 V 3-ph | 3 | 2 | 16.09 |
+| MF-14 | induction IE3 | IEC 132M / 7.5 kW | 480 V 3-ph | 2 | 1 | 11.30 |
 | MF-15 | induction IE3 | IEC 112M / 4 kW | 480 V 3-ph | 1 | 1 | 3.48 |
 | MF-16 | induction IE3 | IEC 80 / 0.75 kW | 480 V 3-ph | 1 | 1 | 0.55 |
 | MF-17 | solenoid | ISO 15218 coil, 22 mm | 24 V DC | 36 | 18 | 0.32 |
@@ -134,7 +134,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | pem_fc | FUEL_CELL | transfer pump S52 to VCD_TRAIN | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 42.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | rectifier | RECTIFIER | cooling fan | BLDC | 57 mm (NEMA 23 flange) | 0.05 | 24 V DC | S1 | BLDC driver | 4 | assumed per cabinet |
 | scrubber | ZNBR2_BR2_REGEN | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0026 | 24 V DC | S1 | BLDC driver | 1 | 908.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0026 | 24 V DC | S1 | BLDC driver | 1 | 908.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### FAB
 
@@ -252,7 +252,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | FARM | IMID | Mineral wool insulation with SS cladding; recirculation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | FARM | YEAST | PIR insulation 50 mm with PE cladding; CO2 evolution; daily  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | MFG | COLD_MILL | Two-high cold rolling mill: main drive | induction IE3 | IEC 100L / 2.2 kW | 1.913 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
-| MFG | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive | induction IE3 | IEC 132M / 7.5 kW | 4.7826 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
+| MFG | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive | induction IE3 | IEC 80 / 0.55 kW | 0.4348 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
 | MFG | MET_MELT | Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S1 | fixed speed | 1 | MFG_TOOLS; assumed (A-M-119) |
 | MFG | MET_MELT | transfer pump S57 to WIRE_DRAW | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 6.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | MFG | MFG_SHOP | Band saw: main drive | induction IE3 | IEC 90L / 1.5 kW | 1.3043 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |

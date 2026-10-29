@@ -20,7 +20,7 @@ The inventory has 537 circuit rows with 171.1 km of conductor in total; 142.8 km
 
 ## 0. Panel merge (X-ELS-02, by calculation)
 
-The rule in `merge_panels` folds the panel with the least feeder copper into the host panel that gives the lowest total copper. A merge is accepted only if the total copper mass does not rise and every branch circuit and feeder still meets the voltage-drop limits of 3 % and 2 % without a conductor larger than 600 kcmil. The merges reduce the panels from 11 to 6 and the copper from 13.86 t to 13.83 t. The merged sectors and their host panels are listed below.
+The rule in `merge_panels` folds the panel with the least feeder copper into the host panel that gives the lowest total copper. A merge is accepted only if the total copper mass does not rise and every branch circuit and feeder still meets the voltage-drop limits of 3 % and 2 % without a conductor larger than 600 kcmil. The merges reduce the panels from 11 to 6 and the copper from 13.85 t to 13.82 t. The merged sectors and their host panels are listed below.
 
 | Merged sector | Host panel |
 | --- | --- |
@@ -30,7 +30,7 @@ The rule in `merge_panels` folds the panel with the least feeder copper into the
 | OIL | LP-DIGESTER |
 | PUMPED_HYDRO | LP-ELEC |
 
-The following merges were rejected because they would add less than 5 kg of copper. They are kept separate under the rule. A panel enclosure and main breaker probably outweigh this copper, but no cost basis is registered, so these merges are held for review: FAB (+0.0 kg), MEOH (+0.4 kg), GEO (+0.4 kg), MFG (+1.5 kg), DIGESTER (+2.1 kg).
+The following merges were rejected because they would add less than 5 kg of copper. They are kept separate under the rule. A panel enclosure and main breaker probably outweigh this copper, but no cost basis is registered, so these merges are held for review: FAB (+0.0 kg), MEOH (+0.4 kg), GEO (+0.4 kg), DIGESTER (+2.0 kg), MFG (+2.5 kg).
 
 ## 1. Family rollup
 
@@ -48,7 +48,7 @@ Table 1.1. Conductor families
 | WF-06 | bare grounding | 4/0 AWG | bare soft-drawn Cu | - | 5138 | 1 |
 | WF-07 | control | 18 AWG | shielded pair | 300 V | 4600 | 230 |
 | WF-08 | DC power pair | 16 AWG | TC-ER 2-cond | 600 V | 4540 | 227 |
-| WF-09 | equipment ground | 14 AWG | green XHHW-2 Cu | 600 V | 5955 | 192 |
+| WF-09 | equipment ground | 14 AWG | green XHHW-2 Cu | 600 V | 5958 | 193 |
 | WF-10 | power | 3 AWG | XHHW-2 Cu | 600 V | 3150 | 42 |
 | WF-11 | power | 6 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 600 V | 3091 | 8 |
 | WF-12 | MV power | 2 AWG | MV-105 Cu, 133 % insulation, tape shield | 15 kV | 1200 | 4 |
@@ -58,12 +58,12 @@ Table 1.1. Conductor families
 | WF-16 | power | 10 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 173 | 1 |
 | WF-17 | power | 6 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 129 | 1 |
 | WF-19 | equipment ground | 2/0 AWG | green XHHW-2 Cu | 600 V | 180 | 4 |
-| WF-20 | power | 3 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 173 | 1 |
 | WF-21 | DC power pair | 14 AWG | TC-ER 2-cond | 600 V | 60 | 3 |
-| WF-24 | equipment ground | 10 AWG | green XHHW-2 Cu | 600 V | 12 | 4 |
+| WF-24 | equipment ground | 10 AWG | green XHHW-2 Cu | 600 V | 9 | 3 |
 | WF-25 | power | 10 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 600 V | 9 | 1 |
 | WF-28 | power | 8 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 129 | 1 |
 | WF-30 | power | 250 kcmil | XHHW-2 Cu, tray cable TC-ER | 600 V | 40 | 1 |
+| WF-31 | power | 4 AWG | XHHW-2 Cu, tray cable TC-ER | 600 V | 173 | 1 |
 
 ## 2. Circuits by sector, sub-system and unit
 
@@ -488,9 +488,9 @@ Table 1.1. Conductor families
 | MFG | COLD_MILL | Two-high cold rolling mill: main drive EGC | 14 AWG | green XHHW-2 Cu | 1 | 3.0 | 1 | 3.0 | NEC 250.122 at 15 A OCPD |
 | MFG | COLD_MILL | Two-high cold rolling mill: main drive control | 18 AWG | TFFN 3-pair, shielded | 6 | 3.0 | 1 | 18.0 | start/stop, run, fault (assumed) |
 | MFG | COLD_MILL | Two-high cold rolling mill: main drive feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 3.0 | 1 | 9.0 | NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed) |
-| MFG | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive EGC | 10 AWG | green XHHW-2 Cu | 1 | 3.0 | 1 | 3.0 | NEC 250.122 at 30 A OCPD |
+| MFG | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive EGC | 14 AWG | green XHHW-2 Cu | 1 | 3.0 | 1 | 3.0 | NEC 250.122 at 15 A OCPD |
 | MFG | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive control | 18 AWG | TFFN 3-pair, shielded | 6 | 3.0 | 1 | 18.0 | start/stop, run, fault (assumed) |
-| MFG | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 3.0 | 1 | 9.0 | NEC 430.22: 1.25 x 11.0 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed) |
+| MFG | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 3.0 | 1 | 9.0 | NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed) |
 | MFG | MET_MELT | Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump EGC | 14 AWG | green XHHW-2 Cu | 1 | 3.0 | 1 | 3.0 | NEC 250.122 at 15 A OCPD |
 | MFG | MET_MELT | Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump control | 18 AWG | TFFN 3-pair, shielded | 6 | 3.0 | 1 | 18.0 | start/stop, run, fault (assumed) |
 | MFG | MET_MELT | Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 3.0 | 1 | 9.0 | NEC 430.22: 1.25 x 1.6 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed) |
@@ -529,7 +529,7 @@ Table 1.1. Conductor families
 | ahu | MET_AHU | induced-draft fan control | 18 AWG | TFFN 3-pair, shielded | 6 | 14.2 | 1 | 85.3 | start/stop, run, fault (assumed) |
 | ahu | MET_AHU | induced-draft fan feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 14.2 | 1 | 42.7 | NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed) |
 | distribution | LP-MFG | panel feeder 208 V | 10 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 43.3 | 1 | 173.1 | NEC 430.24: 12.6 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
-| distribution | LP-MFG | panel feeder 460 V | 3 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 43.3 | 1 | 173.1 | NEC 430.24: 90.0 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
+| distribution | LP-MFG | panel feeder 460 V | 4 AWG | XHHW-2 Cu, tray cable TC-ER | 4 | 43.3 | 1 | 173.1 | NEC 430.24: 80.5 A in 1 parallel set(s) (310.10(G)); drop <= 2 % feeder so branch 3 % keeps total under 5 %; Manhattan to the electrical room x 1.2 + 5 m |
 | scrubber | MET_SCRUB | induced-draft fan EGC | 14 AWG | green XHHW-2 Cu | 1 | 10.5 | 1 | 10.5 | NEC 250.122 at 15 A OCPD |
 | scrubber | MET_SCRUB | induced-draft fan control | 18 AWG | TFFN 3-pair, shielded | 6 | 10.5 | 1 | 62.9 | start/stop, run, fault (assumed) |
 | scrubber | MET_SCRUB | induced-draft fan feeder | 14 AWG | XHHW-2 Cu, 600 V, tray cable TC-ER | 3 | 10.5 | 1 | 31.4 | NEC 430.22: 1.25 x 4.8 A FLC; routed tray from panel LP-MFG (Manhattan x 1.1 + 3 m drop, assumed) |

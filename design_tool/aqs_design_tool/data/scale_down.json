@@ -2862,7 +2862,7 @@
      "from": "SOL_ARK_60K",
      "to": "GAS_ATOMIZER",
      "other_sector": "ELEC",
-     "rate": 0.0781,
+     "rate": 0.0836,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -5341,7 +5341,7 @@
      "from": "SOL_ARK_60K",
      "to": "GAS_ATOMIZER",
      "other_sector": "MFG",
-     "rate": 0.0781,
+     "rate": 0.0836,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },

@@ -39,13 +39,13 @@ Table 2.1. Item families
 | Family | Category | Item | Specification | Qty | Sizes | Units |
 | --- | --- | --- | --- | --- | --- | --- |
 | OF-01 | bearing | deep-groove ball bearing | ISO 15, normal class | 388 | 608-2Z x388 | 68 |
-| OF-02 | bearing | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 356 | 6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x22; 6206-2Z x12; 6308-2Z x6; 6306-2Z x2 | 48 |
+| OF-02 | bearing | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 356 | 6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z x12; 6308-2Z x4; 6306-2Z x2 | 48 |
 | OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 868 | 24 V DC x868 | 94 |
 | OF-04 | electronics | PLC analog input point | IEC 61131-2 | 754 | 4-20 mA HART x754 | 1 |
 | OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 191 | 24/48 V DC x191 | 67 |
-| OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 144 | 0.37 kW x104; 0.18 kW x20; 0.55 kW x10; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1 | 37 |
+| OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 145 | 0.37 kW x104; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1 | 38 |
 | OF-07 | electronics | PLC I/O module, 16 channel | IEC 61131-2 | 102 | 24 V DC x102 | 1 |
-| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 34 | 1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 16 |
+| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 33 | 1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x2; 4 kW x1 | 15 |
 | OF-09 | electronics | solenoid driver channel | IEC 61131-2 DO | 36 | 24 V DC x36 | 18 |
 | OF-10 | electronics | compressor contactor + overload | IEC 60947-4-1 | 10 | 18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 3 |
 | OF-11 | electronics | stepper driver | IEC 61800-5-1 | 3 | 24/48 V DC x3 | 1 |
@@ -83,7 +83,7 @@ Table 2.1. Item families
 | OF-43 | instrument | gas detector, O2 enrichment | alarm 23.5 vol %, trip 25 vol %, breathing height | 12 | electrochemical O2 x12 | 5 |
 | OF-44 | instrument | gas detector, CO | alarm 25 ppm, trip 50 ppm, breathing height | 14 | electrochemical CO x14 | 7 |
 | OF-45 | instrument | gas detector, NOx | alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height | 6 | electrochemical NO2 x6 | 3 |
-| OF-46 | protection | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 204 | 15 A x192; 90 A x8; 30 A x3; 60 A x1 | 49 |
+| OF-46 | protection | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 204 | 15 A x193; 90 A x8; 30 A x2; 60 A x1 | 49 |
 | OF-47 | seal | mechanical seal, single | SiC/SiC faces, FKM | 124 | EN 12756 x124 | 25 |
 | OF-48 | support | pipe clamp | PP clamp with EPDM liner, MSS SP-58 Type 7 | 2939 | DN15 x2386; DN50 x516; DN20 x17; DN250 x7; DN32 x6; DN300 x4; DN200 x3 | 78 |
 | OF-49 | support | U-bolt with guide | 316 U-bolt, MSS SP-58 Type 24 | 1158 | DN15 x1103; DN20 x25; DN25 x23; DN50 x7 | 39 |
@@ -2047,12 +2047,12 @@ Table 2.1. Item families
 | MFG | COLD_MILL | instrument | pressure transmitter | 0-10 bar | ceramic diaphragm, IEC 61298 | 1 | duty item 5 (one per unit); range >= 1.25 x design pressure |
 | MFG | COLD_MILL | instrument | temperature element | Pt100 class A | IEC 60751, 316L thermowell | 1 | duty item 5 (assumed one per unit) |
 | MFG | COLD_MILL | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 1 | NEC 430.52, from AQS-INV-002 |
-| MFG | GAS_ATOMIZER | bearing | deep-groove ball bearing | 6308-2Z | ISO 15 / ISO 492 normal class, C3 | 2 | Close-coupled gas atomiser with Ar recirculation: main drive: drive and non-drive end, IEC 60072 frame 132M (assumed size) |
+| MFG | GAS_ATOMIZER | bearing | deep-groove ball bearing | 6204-2Z | ISO 15 / ISO 492 normal class, C3 | 2 | Close-coupled gas atomiser with Ar recirculation: main drive: drive and non-drive end, IEC 60072 frame 80 (assumed size) |
 | MFG | GAS_ATOMIZER | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 2 | Close-coupled gas atomiser with Ar recirculation: main drive: run and fault (assumed) |
-| MFG | GAS_ATOMIZER | electronics | variable-frequency drive | 7.5 kW | IEC 61800-5-1 | 1 | Close-coupled gas atomiser with Ar recirculation: main drive (assumed VFD at >= 0.75 kW) |
+| MFG | GAS_ATOMIZER | electronics | motor starter (contactor + overload) | 0.55 kW | IEC 60947-4-1 | 1 | Close-coupled gas atomiser with Ar recirculation: main drive (assumed VFD at >= 0.75 kW) |
 | MFG | GAS_ATOMIZER | instrument | pressure transmitter | 0-10 bar | ceramic diaphragm, IEC 61298 | 1 | duty item 5 (one per unit); range >= 1.25 x design pressure |
 | MFG | GAS_ATOMIZER | instrument | temperature element | Pt100 class A | IEC 60751, 316L thermowell | 1 | duty item 5 (assumed one per unit) |
-| MFG | GAS_ATOMIZER | protection | inverse-time circuit breaker, 3-pole | 30 A | UL 489 / IEC 60947-2 | 1 | NEC 430.52, from AQS-INV-002 |
+| MFG | GAS_ATOMIZER | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 1 | NEC 430.52, from AQS-INV-002 |
 | MFG | MET_MELT | bearing | deep-groove ball bearing | 6204-2Z | ISO 15 / ISO 492 normal class, C3 | 2 | Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump: drive and non-drive end, IEC 60072 frame 80 (assumed size) |
 | MFG | MET_MELT | bearing | deep-groove ball bearing | 608-2Z | ISO 15, normal class | 2 | transfer pump S57 to WIRE_DRAW (assumed size) |
 | MFG | MET_MELT | electronics | BLDC driver | 24/48 V DC | IEC 61800-5-1 | 1 | transfer pump S57 to WIRE_DRAW |
