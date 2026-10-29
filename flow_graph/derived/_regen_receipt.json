@@ -101,6 +101,18 @@
    "status": "ok"
   },
   {
+   "name": "doc_water_purification",
+   "status": "ok"
+  },
+  {
+   "name": "doc_life_mep",
+   "status": "ok"
+  },
+  {
+   "name": "doc_meoh_train",
+   "status": "ok"
+  },
+  {
    "name": "balance_report",
    "status": "ok"
   },
@@ -576,11 +588,13 @@
   "docs-authority/ISO_SHEETS.md",
   "docs-authority/ITP.md",
   "docs-authority/JELLYBEAN.md",
+  "docs-authority/LIFE_MEP.md",
   "docs-authority/LIFTING.md",
   "docs-authority/LINE_LIST.md",
   "docs-authority/LOAD_LIST.json",
   "docs-authority/LOAD_LIST.md",
   "docs-authority/MAINT_PLAN.md",
+  "docs-authority/MEOH_TRAIN.md",
   "docs-authority/MFG_TOOLS.md",
   "docs-authority/MODEL_WORKBOOK.xlsx",
   "docs-authority/MOTOR_FIRST_ARTICLE.md",
@@ -614,6 +628,7 @@
   "docs-authority/TEST_PLAN.md",
   "docs-authority/TEST_RIGS.md",
   "docs-authority/UNIT_MATERIALS.md",
+  "docs-authority/WATER_PURIFICATION.md",
   "docs-authority/WATER_TOWER.md",
   "docs-authority/WIRE_SPECS.md",
   "docs-authority/WPS_REGISTER.md",

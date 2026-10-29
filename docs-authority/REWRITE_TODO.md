@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: D
+Revision: E
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -10,6 +10,7 @@ Date: 2026-10-29
 | B | Pages closed on 2026-10-25 without a rewrite re-opened with the reason for each; sections 3 and 4 now match the pending list, which `flow_graph/test_rewrite_todo.py` checks | 2026-10-29 |
 | C | POWER_SIZING given a generator; FIRE_PROTECTION rewritten through its generator; duty sheet headers now carry the current graph revision | 2026-10-29 |
 | D | FUEL_CELL, H2_EMBRITTLEMENT_REVIEW and WELD_MAP rewritten; PROTECTION found stale and its reason updated | 2026-10-29 |
+| E | WATER_PURIFICATION, LIFE_MEP and MEOH_TRAIN given generators and rewritten | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -100,6 +101,9 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/FUEL_CELL.md` | Rev C. Rewritten against the graph: streams and rates from the graph, the reversible loop with the electrolyser, the difference from the backup generator and the methanol fuel cell; references outside the repository (POWER/, hub ELECTRICAL.md, share mirror) removed. |
 | `docs-authority/H2_EMBRITTLEMENT_REVIEW.md` | Rev C. Rewritten against the graph: electrolyser and hydrogen compressor added, cathodes changed to titanium as AQS-STD-002 section 9 decided, the store described as a compressed-gas tube bank, and the false statement that the edges carry pressure and temperature withdrawn. |
 | `docs-authority/WELD_MAP.md` | Rev B. The joint tags, corrupted by a text replacement in the 2026-10-25 bulk closure, restored to JW-nnn; the hanger and hydrogen header joints brought in line with AQS-STD-002. |
+| `docs-authority/WATER_PURIFICATION.md` | Rev C. Now written by `docs-authority/_water_purification.py` (stage `doc_water_purification`): the treatment trains described by their graph units, every stream and the unit balances from the graph; references to SLINGSHOT/ and the numbered root documents removed; the quality targets kept, with their published sources listed as an open item. |
+| `docs-authority/LIFE_MEP.md` | Rev B. Now written by `docs-authority/_life_mep.py` (stage `doc_life_mep`): crew size from the graph, pipe sizes from `params.py`, drains named by graph unit, arrow diagrams replaced by sentences, the citation of AQS-AUD-001 (not in the repository) removed. |
+| `docs-authority/MEOH_TRAIN.md` | Rev B. Now written by `docs-authority/_meoh_train_doc.py` (stage `doc_meoh_train`): units, streams and rates from the graph, including the methanol product shipped at the dock, which Rev A did not describe; ranges, tags not on the graph and references to root documents removed. |
 
 ## 3. In progress
 
@@ -131,12 +135,10 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/ITP.md` | No record of revisions; no purpose and scope section. Written by `docs-authority/_itp.py`; fix the generator. |
 | `docs-authority/JELLYBEAN.md` | No purpose and scope section. Written by `docs-authority/_jellybean.py`; fix the generator. |
 | `docs-authority/LIFE_FITOUT_PLAN.md` | No purpose and scope section; working or stock phrasing. |
-| `docs-authority/LIFE_MEP.md` | Working or stock phrasing. |
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | No record of revisions; no purpose and scope section. |
 | `docs-authority/LOAD_LIST.md` | No purpose and scope section; working or stock phrasing. Written by `docs-authority/_load_list.py`; fix the generator. |
 | `docs-authority/MATERIALS_SEC3.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/MATERIALS_STD.md` | No purpose and scope section; list items written as fragments; working or stock phrasing. |
-| `docs-authority/MEOH_TRAIN.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/METAL_FORMING.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/MFG_MODEL_PLAN.md` | No purpose and scope section. |
 | `docs-authority/MFG_SHOP_EQUIPMENT.md` | No purpose and scope section. |
@@ -159,7 +161,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/TEST_PLAN.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/UNIT_MATERIALS.md` | No purpose and scope section. Written by `docs-authority/_unit_materials.py`; fix the generator. |
 | `docs-authority/VENT_CLOSURE.md` | Working or stock phrasing. |
-| `docs-authority/WATER_PURIFICATION.md` | No purpose and scope section; arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/WIRE_SPECS.md` | No purpose and scope section; list items written as fragments. Written by `docs-authority/_wire_specs.py`; fix the generator. |
 
 Table 4.2. Pending pages in subfolders

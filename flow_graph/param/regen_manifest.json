@@ -464,6 +464,54 @@
    "note": "AQS-ELEC-007 page from the PV_ARRAY, ZNBR2, SOL_ARK_60K and BACKUP_GEN params and the drivers; code_basis appends its code basis section afterwards."
   },
   {
+   "name": "doc_water_purification",
+   "argv": [
+    "python3",
+    "docs-authority/_water_purification.py"
+   ],
+   "outputs": [
+    "docs-authority/WATER_PURIFICATION.md"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-WTR-001 page: water treatment trains and their streams from the graph."
+  },
+  {
+   "name": "doc_life_mep",
+   "argv": [
+    "python3",
+    "docs-authority/_life_mep.py"
+   ],
+   "outputs": [
+    "docs-authority/LIFE_MEP.md"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-MEP-001 page: life floor fixtures, pipe and duct sizes from the graph crew and params.py."
+  },
+  {
+   "name": "doc_meoh_train",
+   "argv": [
+    "python3",
+    "docs-authority/_meoh_train_doc.py"
+   ],
+   "outputs": [
+    "docs-authority/MEOH_TRAIN.md"
+   ],
+   "depends_on": [
+    "write_graph_power"
+   ],
+   "writes_graph": false,
+   "quick": false,
+   "note": "AQS-MeOH-001 page: methanol units and streams from the graph."
+  },
+  {
    "name": "balance_report",
    "argv": [
     "python3",

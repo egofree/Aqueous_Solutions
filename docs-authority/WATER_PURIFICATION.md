@@ -1,363 +1,136 @@
-# Water purification — habitation and fab UPW
-
-Document number: AQS-WTR-001  
-Revision: B  
-Date: 2026-10-01  
-Authority: `SLINGSHOT/Water_Cycle_diagram.md`, `07-water-air-habitation.md`,
-`03-silicon-wafer-fabrication.md`, AQS-BLD-001 §6, AQS-STR-001,
-AQS-MF-001, AQS-LIFE-001 §5, AQS-GAP-001 §5 / §7.1.
-Subordinate equipment lists: AQS-EQP-HAB-001, AQS-EQP-FAB-UPW-001.
-
-| Rev | Change | Description | Date |
-|---|---|---|---|
-| A | — | First issue. Habitation VCD + remineralization + grey/black; fab UPW train; SLINGSHOT keep/adapt/supersede | 2026-09-27 |
-
-Licence: CERN-OHL-S-2.0.
-
----
-
-## 0. Scope and naming
-
-This note schedules **two purification trains** that the BLD stack had
-named but not equipped:
-
-1. **Habitation** — grey / black treatment, vapor-compression distillation
-   (VCD), ED polish, remineralization, potable distribution.
-2. **Wafer fab UPW** — polish of plant water to rinse resistivity / TOC
-   targets for the wet bench.
-
-**NOTE**
-
-`polish_bank` / AQS-PFD polish sheets are **EW metal polish cells** after
-EW-9. They are not potable or fab UPW. Locked water names in this note
-use `UPW POLISH`, `HAB_ED_POLISH`, `FAB_UPW_POLISH`, `VCD_*`, and `REMIN`.
-
-Roof–catch (S21–S23, AQS-PFD-WTR-001 / AQS-PFD-BLD-005) is the **clean
-inventory and gravity tower**. It is not a regeneration process. VCD
-regenerates distillate into that inventory. Both shall appear on campus
-water sheets.
-
-Quantitative mass rates stay **TBD** unless already locked in AQS-MF-001
-or a root doc citation below. Do not invent balances.
-
----
-
-## 1. What already covers vs what is new
-
-| Layer | Already present | New in Rev A |
-|---|---|---|
-| Clean inventory | ROOF TANK, CATCH TANK, SHAFT_PENSTOCK, S21–S23 | — |
-| Dirty returns | S12 HDR_GREY / HDR_ORG; S10 HDR_ETCH; S13 condensate | Grey / black unit ops before those headers |
-| Core salts / acids | BMED, CRU, S07 nutrient dose, S09 acid/base | REMIN draw of Ca/Mg/K for drinking (separate from S07 farm path) |
-| Named UPW node | “UPW POLISH” on campus / water PFDs; S01 < 1 µS/cm claim | Equipment schedule: VCD → ED polish → (remin \| fab polish) |
-| Hab CAD | HAB_WATER, HAB_WASTE, WETROOM | POTABLE / GREY_TREAT / BLACK_DIGEST / VCD_* / REMIN tags |
-| Fab CAD | WET_BENCH, ETCH_RETURN; S01 stub | FAB_UPW_POLISH train + S27 product |
-| SLINGSHOT VCD + remin | Missing (AQS-GAP-001) | Kept and adapted into BLD stack (see §7) |
-| Root-07 MED narrative | Narrative only | Adapted as grey/black membrane ED stage ahead of / beside VCD |
-
----
-
-## 2. Habitation train
-
-### 2.1 Topology (qualitative)
-
-```
-Clean condensates (S13: farm sump + HVAC)
-        │
-        ▼
-   ┌────────────┐     grey treat product (S29)
-   │  VCD_FEED  │◄──── black digest liquor (optional dilute; preferred S30 → nutrient)
-   └─────┬──────┘
-         ▼
-   VCD_HX  →  VCD_EVAP  →  VCD_COMP  →  VCD_COND
-         │                      │
-         ▼                      ▼
-    VCD brine (S28)        distillate (S25)
-    → REGEN LEACH /           │
-      SALT FEED               ▼
-                        HAB_ED_POLISH / UPW POLISH
-                        (BMED middle-chamber assist)
-                              │
-              ┌───────────────┼───────────────┐
-              ▼               ▼               ▼
-         HDR_UPW / S01   REMIN (Ca Mg K)   FAB_UPW feed
-         (farm / fab     → potable S26     (pre-remin)
-          pre-remin)       → HAB taps
-```
-
-Grey and black collection stay on HAB_WASTE → treatment units →
-HDR_GREY / HDR_ORG as today. Dirty streams do **not** feed VCD as the
-primary path (SLINGSHOT rule retained). Backup dirty feed to VCD is
-allowed only through a screened buffer labeled as contingency — not the
-normal operating line.
-
-### 2.2 Grey water
-
-| Tag | Duty |
-|---|---|
-| GREY_SCREEN | Solids / grease capture from wetroom + galley rinse |
-| GREY_BIO | Biological polish (BOD / FOG); air from HAB_AIR, not process aisle |
-| GREY_MED | Membrane electrodialysis stage (root-07 MED duty for grey) |
-| GREY_BUFF | Buffer before VCD feed (S29) or SALT FEED if off-spec |
-
-Return: treated grey → S29 → VCD_FEED (preferred) or SALT FEED.
-Never to Salria, HDR_ETCH, or storm.
-
-### 2.3 Black water
-
-| Tag | Duty |
-|---|---|
-| BLACK_COLLECT | Toilet collect; optional urine diversion |
-| BLACK_DIGEST | Anaerobic / aerobic digester; solids → HDR_ORG / HOPPER |
-| BLACK_MED | Nutrient-lean liquor polish (root-07 MED / nutrient stage) |
-
-Liquor → S30 → NUTRIENT DOSE / SALT FEED (struvite path aligned with
-S07 chemistry). Solids never enter VCD evaporators.
-
-**CAUTION**
-
-Human waste solids do not enter LEACH without AHJ review
-(AQS-LIFE-001 §6). Prefer nutrient / digest path.
-
-### 2.4 VCD (kept from SLINGSHOT)
-
-| Tag | Duty |
-|---|---|
-| VCD_HX | Counterflow feed / distillate heat recovery (Slingshot energy recovery) |
-| VCD_EVAP | Evaporator; vapor out; brine out (S28) |
-| VCD_COMP | Vapor compressor (DC bus / module parasitics) |
-| VCD_COND | Condenser; distillate (S25) |
-| VCD_FEED | Clean condensate + S29 buffer |
-
-Primary feed: clean condensates (S13) and treated grey (S29).
-Brine (S28) → REGEN LEACH or SALT FEED — same “concentrate to oxidative
-leach” intent as SLINGSHOT. Distillate is not potable until ED polish
-and, for drinking, remineralization.
-
-Energy: SLINGSHOT 5–10 kW allocation is **superseded** by module
-parasitics (AQS-GAP-001). Name the compressor load on the electrical
-one-line later; do not hard-code kilowatts here.
-
-### 2.5 ED polish and remineralization
-
-| Tag | Duty |
-|---|---|
-| HAB_ED_POLISH / UPW POLISH | Distillate → < 1 µS/cm class water (S01 claim); BMED middle-chamber integration as assist, not a second wet-line stack |
-| REMIN | Dose Ca²⁺, Mg²⁺, K⁺ (and related) from core salt inventory into drinking water |
-| POTABLE_TANK | Remineralized drinking water holdup |
-| HAB_BOOST | Distribution booster after gravity-first roof feed (secondary) |
-
-Remineralization is **for drinking only**. Farm nutrient dose remains
-S07 (P-Al / P-Mg / P-Ca + BMED salts). Do not tee REMIN product into
-grow beds as fertilizer, and do not use S07 totes as the potable
-mineral source without a dedicated food-grade path.
-
-Potable finishing after remin (root-07): UF/NF integrity check + UV
-sterilization at HAB_WATER point-of-use as required for microbiological
-safety. Residual disinfectant target remains a permit decision (TBD).
-
-### 2.6 Potable quality (grounded)
-
-| Parameter | Target | Source |
-|---|---|---|
-| Conductivity (pre-remin UPW) | < 1 µS/cm | S01 / SLINGSHOT / AQS-STR-001 |
-| Potable TDS (post-remin) | < 50 mg/L class | Root 07 §10.3 |
-| Turbidity | < 0.1 NTU product | Root 07 §10.3 |
-| pH (potable) | 6.5–8.5 | Root 07 §10.3 |
-| UV dose | ≥ 40 mJ/cm² @ 254 nm | Root 07 §10.3 |
-| Mass rates | Study §8 (AUD §11) | Labeled study — not permit demand |
-
-Backflow: air gap or RPZ on HDR_UPW at potable (AQS-HSE-001 / AQS-MF-001).
-
----
-
-## 3. Wafer fab UPW train
-
-### 3.1 Topology
-
-```
-Plant water (S21 roof and/or S01 HDR_UPW, pre-remin)
-        │
-        ▼
-  FAB_UPW_PRE  →  FAB_UPW_UF  →  FAB_UPW_IX / EDI  →  FAB_UPW_UV  →  FAB_UPW_TANK
-                                                                      │
-                                                                      ▼
-                                                              WET_BENCH (S27)
-                                                                      │
-                                                    rinse reject ──────┤
-                                                                      ▼
-                                              clean reject → HDR_GREY / SALT FEED
-                                              etch-laden → HDR_ETCH (S10 path)
-```
-
-Fab UPW takes **pre-remin** plant water. Remineralized potable shall not
-feed the wet bench (minerals defeat resistivity).
-
-### 3.2 Equipment tags
-
-| Tag | Duty |
-|---|---|
-| FAB_UPW_PRE | Particulate / carbon prefilter |
-| FAB_UPW_UF | Ultrafiltration |
-| FAB_UPW_IX | Mixed-bed ion exchange and/or EDI polish |
-| FAB_UPW_UV | TOC / microbial UV |
-| FAB_UPW_TANK | Recirculating UPW loop to WET_BENCH |
-| FAB_UPW_REJECT | Segregated reject header (see §3.4) |
-
-### 3.3 Quality targets
-
-Doc 03 rinse-station control (authority for fab water analytics):
-
-| Parameter | Target | Label |
-|---|---|---|
-| Resistivity | > 18 MΩ·cm | Doc 03 rinse target |
-| TOC | < 5 ppb | Doc 03 rinse target |
-| Particles > 0.5 µm | < 100 / L | Doc 03 rinse target |
-| Conductivity (plant S01 feed) | < 1 µS/cm class | AQS-STR-001 S01 |
-
-Where a full SEMI Type E-1 suite is implied but not enumerated in doc 03
-(dissolved silica, boron, metals), mark **industry-class placeholder —
-TBD** on the equipment list. Do not invent numeric limits beyond doc 03
-and S01.
-
-### 3.4 Reject and return
-
-| Stream | Destination | Forbidden |
-|---|---|---|
-| Clean UF/IX reject | HDR_GREY / SALT FEED / VCD_FEED if conductivity allows | Sewer, farm beds, Salria |
-| Etch / HF-bearing rinse | HDR_ETCH → REGEN LEACH (S10) | Floor drain, HDR_GREY, hab |
-| Spent wet-bench baths | S10 closed | Same |
-
----
-
-## 4. Stream IDs (AQS-STR-001 extension)
-
-Existing (unchanged duty):
-
-| ID | Role in this note |
-|---|---|
-| S01 | Post-ED UPW on HDR_UPW → FARM, FAB feed, HAB pre-remin |
-| S10 | Etch return |
-| S12 | Hab waste collect |
-| S13 | Condensate → VCD / SALT FEED |
-| S21–S23 | Roof–catch clean inventory |
-
-New (Rev A):
-
-| ID | From | To | Ph | Carries | Header | Forbidden |
-|---|---|---|---|---|---|---|
-| S25 | VCD_COND | UPW POLISH / HAB_ED_POLISH | L | distillate | process UPW | potable taps without remin + UV |
-| S26 | REMIN / POTABLE_TANK | HAB taps (HAB_WATER) | L | remineralized potable | potable branch + RPZ | process wet bench, etch |
-| S27 | FAB_UPW_TANK | WET_BENCH | L | fab UPW > 18 MΩ·cm class | fab UPW loop | remin path, grey |
-| S28 | VCD_EVAP | REGEN LEACH / SALT FEED | L | VCD brine | process | HDR_UPW, farm beds |
-| S29 | GREY_TREAT | VCD_FEED / SALT FEED | L | treated grey | HDR_GREY branch | Salria, etch |
-| S30 | BLACK_DIGEST | NUTRIENT DOSE / SALT FEED | L/S | digest liquor / nutrients | dose / HDR_ORG | VCD evaporators (solids), sewer |
-
-S01 remains the shared plant UPW header. S26 is the drinking branch
-after remin. S27 is the fab loop after dedicated polish.
-
----
-
-## 5. Interfaces
-
-| Interface | Habitation | Fab UPW |
-|---|---|---|
-| Farm | S13 condensate in; S01 / S21 makeup out; S30 nutrients toward S07 | No direct farm tie |
-| Wet line / BMED | S28 brine; ED assist from BMED middle; S09 not for potable | S09 acids/bases to bench only; S10 return |
-| Cryo | No direct water tie this pass (condensate if any → S13) | S03 N₂ purge on tools (unchanged) |
-| Roof / catch | S21 gravity to HAB_WATER; product water may refill roof via clean path | S21 / S01 feed; no roof contamination from reject |
-| Power | VCD_COMP + pumps on module bus (kW TBD) | Recirc pumps + UV (kW TBD) |
-| Fuel-cell water | Deferred — no FC in CAD (AQS-GAP-001) | — |
-
----
-
-## 6. Building placement (qualitative)
-
-| Unit group | Preferred level / zone |
-|---|---|
-| GREY_* / BLACK_* / HAB_WATER / REMIN | L1 west (HABITATION) + CORE_LIFE util |
-| VCD_* / UPW POLISH | L1 / L0 util near CORE — not inside SLEEP |
-| FAB_UPW_* | L0 WAFER_FAB cassette or adjacent util chase |
-| ROOF / CATCH | Unchanged (L2 / L-2) |
-
-Dirty liquor does not drain uphill into life (AQS-BLD-001 §3).
-
----
-
-## 7. SLINGSHOT decision table
-
-| SLINGSHOT element | Decision | BLD disposition |
-|---|---|---|
-| Clean condensate collection (farm / HVAC / gas / FC) | **Keep** | S13; FC product water deferred until FC exists |
-| Dirty black/grey + fab rinses → core / leach (primary) | **Keep** | S12 / S10; grey/black treat then leach/salt — not VCD-primary |
-| Dirty backup into clean condensate | **Adapt** | Contingency only via GREY_BUFF; not normal ops |
-| Roof tank / catch / penstock | **Keep** (already Present) | Inventory architecture; does **not** replace VCD regeneration |
-| VCD (HX → evaporate → compress → condense) | **Keep** | Tags VCD_HX / VCD_EVAP / VCD_COMP / VCD_COND |
-| ED polish + core middle chamber | **Adapt** | HAB_ED_POLISH / UPW POLISH; BMED assist; S01 claim retained |
-| Remineralization (Ca / Mg / K from core) | **Keep** | REMIN + S26; separate from S07 farm dose |
-| Ultra-pure tank < 1 µS/cm | **Keep** | S01 / UPW POLISH holdup; fab further polishes to S27 |
-| Drinking water tank | **Keep** | POTABLE_TANK |
-| Distribution pumps to FAB / MFG / HAB | **Adapt** | Gravity-first from ROOF (S21); HAB_BOOST / fab recirc secondary |
-| 5–10 kW fresh-water allocation | **Supersede** | Module parasitics / ELECTRICAL.md |
-| Root-07 MED as sole potable regenerator | **Adapt** | MED used on grey/black; VCD is primary distillate regenerator; NF/UV finish potable |
-
-**CAUTION**
-
-AQS-PFD-WTR-001 remains the roof–catch sheet. Regeneration detail lives
-on AQS-PFD-HAB-WTR-001 and AQS-PFD-FAB-UPW-001. Do not treat the roof
-PNG as evidence that VCD was deleted.
-
----
-
-## 8. Sheets and regenerate
-
-| Doc | Script | PNG |
-|---|---|---|
-| AQS-WTR-001 | this file | — |
-| AQS-EQP-HAB-001 | `docs-authority/HAB_WATER.md` | — |
-| AQS-EQP-FAB-UPW-001 | `docs-authority/FAB_UPW.md` | — |
-| AQS-PFD-HAB-001 | `habitation_pfd.py` | `habitation_pfd.png` |
-| AQS-PFD-HAB-WTR-001 | `hab_water_pfd.py` | `hab_water_pfd.png` |
-| AQS-PFD-FAB-001 | `wafer_fab_pfd.py` | `wafer_fab_pfd.png` |
-| AQS-PFD-FAB-UPW-001 | `fab_upw_pfd.py` | `fab_upw_pfd.png` |
-| AQS-PFD-WTR-001 | `campus_life_hazard_pfds.py` (`water`) | `water_cycle_pfd.png` |
-
-```bash
-cd flow_graph/exporters/matplotlib  # or local hub pfd_scripts/
-python3 hab_water_pfd.py
-python3 fab_upw_pfd.py
-python3 habitation_pfd.py
-python3 wafer_fab_pfd.py
-python3 campus_life_hazard_pfds.py
-```
-
-No SCALE_M change. No FreeCAD rebuild this pass.
-
----
-
-## 9. Open / next forks
-
-1. ~~Crystal forge → cut and wet-line reagent forks~~ — Done AQS-REM-BLD Rev I;
-   solar-cell branch still open.
-2. Fuel-cell product water into S13 when FC chemistry is chosen.
-3. Quantitative VCD / UPW mass–energy balance (pilot numbers from root 07 only after scale lock).
-4. ~~Terrace irrigation from clean overflow only~~ — Done AQS-TRR-001
-   (S40 primary; S41→CATCH; S42 fertigated≠CATCH).
-5. SCALE_M=1 restore when shipping baseline M1 again.
-
-
-## 8. Study L/d balance (SCALE_M = 1.0)
-
-Authority cross-ref: AQS-AUD-001 Rev D §11. **Study assumptions** —
-crew = 4 persons (issued berth count TBD); GROW_BED ≈ 28 m².
-
-| Loop | Study L/d | Notes |
-|---|---|---|
-| Potable S26 | ~130 | 4 × (2.5 drink + 30 hygiene) |
-| Grey → VCD/treat | ~100–120 | Return fraction of hygiene |
-| FAB UPW makeup | ~20–100 | Pending wafer/d; loop 200–500 L |
-| FARM makeup | ~50–140 | 28 m² × 2–5 L/m²·d |
-| Terrace S40 | Event-driven | No continuous nameplate |
-
-Roof–catch inventory ≫ daily use (200 m³ min). VCD regeneration remains
-required alongside inventory (this document §1).
+# Water purification
+
+Document number: AQS-WTR-001
+Revision: C
+Date: 2026-10-29
+Generated by `docs-authority/_water_purification.py` from the plant graph. Do not edit by hand; change the generator or the graph and run `python3 -m flow_graph.param.regen`.
+Authority: plant graph Rev AC. Equipment lists: AQS-EQP-HAB-001 (`HAB_WATER.md`) and AQS-EQP-FAB-UPW-001 (`FAB_UPW.md`). Study. Not a PE stamp.
+
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue: habitation water treatment and the fab ultrapure water train | 2026-09-27 |
+| B | Revised; no record of the change was kept | 2026-10-01 |
+| C | Generated from the graph. Revision B described equipment tags that the graph does not carry and cited documents outside the repository; the page now describes the graph units and reads every stream from the graph | 2026-10-29 |
+
+## 1. Purpose and scope
+
+This page describes how the plant treats its used water and makes drinking water and ultrapure water (UPW) for the wafer fab. It covers the grey water and black water treatment, the vapour compression distillation (VCD) train, the polishing of the distillate, the remineralization of drinking water and the UPW loop of the fab. It names each step by its unit on the plant graph and takes every stream and rate from the graph.
+The storage of clean water in the water tower and the lower reservoir is described in AQS-BLD-014 (`WATER_TOWER.md`). The sizing of the polishing skid is in AQS-DUTY-070 (`sizing/UPW_POLISH.md`).
+
+## 2. Treatment trains
+
+### 2.1 Grey water
+
+`GREY_TREAT` treats the grey water from the habitation (`HABITATION`). It also takes the released digest liquor from `BLACK_DIGEST` and the electrolyte bleed of the flow battery. Treated grey water goes to `VCD_TRAIN`, and the sludge goes to the leach tank `LEACH_CSTR_1`. Grey water is never sent to the etch return, the farm beds or storm drains.
+
+### 2.2 Black water
+
+`BLACK_DIGEST` takes the vacuum-toilet black water, urine, faecal solids and galley food waste of the habitation. Its biogas and its dewatered cake go to the afterburner `AFTERBURNER`. Its liquor is split between the nutrient dose `NUTRIENT_DOSE` and `GREY_TREAT`. Solids from the digester never reach the evaporator.
+
+### 2.3 Vapour compression distillation
+
+`VCD_TRAIN` evaporates its feed and condenses the vapour after compression, recovering the heat of condensation to evaporate more feed. Its feeds are treated grey water, the water bleed of the leach liquor, condensate from the farm, the product water of the fuel cell and the surplus of the nutrient dose. The distillate goes to `BMED_UPW_POLISH`. The brine and the still bottoms go to `LEACH_CSTR_1`, where their salts are recovered. The distillate is not drinking water until it has been polished and remineralized.
+
+### 2.4 Polishing
+
+`BMED_UPW_POLISH` is a skid of reverse osmosis modules, electrodeionization stacks and an ultraviolet lamp that destroys organic carbon; AQS-DUTY-070 gives their number and size. The share of the distillate meant for drinking bypasses the polish and goes straight to `REMIN`. The rest passes reverse osmosis (RO) and electrodeionization (EDI) and leaves as UPW, to the plant UPW header `HDR_UPW` (stream S01) and to the fab tank `FAB_UPW_TANK`. The RO reject returns to `LEACH_CSTR_1`.
+
+### 2.5 Remineralization
+
+`REMIN` adds calcium, magnesium and potassium salts from the plant salt inventory to make drinking water. It feeds the habitation (stream S26) and tops up the water tower `ROOF_TANK`. Remineralized water is for drinking only. The farm takes its nutrients from `NUTRIENT_DOSE`, never from `REMIN`.
+
+### 2.6 Fab ultrapure water
+
+`FAB_UPW_TANK` holds UPW and circulates it to the wet bench `WET_BENCH` (stream S27). The fab takes UPW before remineralization, because the added minerals would lower its resistivity. Spent etch from the wet bench returns to `LEACH_CSTR_1` (stream S10); it never enters the grey water or the habitation drains.
+
+## 3. Streams
+
+Table 3.1 lists every stream that enters or leaves a unit of the water trains, as the graph holds it.
+
+Table 3.1. Water train streams
+
+| Stream | From | To | Carries | Rate |
+| --- | --- | --- | --- | --- |
+| HAB_GREY | `HABITATION` | `GREY_TREAT` | grey water | no rate |
+| IA-BLK-GREY | `BLACK_DIGEST` | `GREY_TREAT` | released digest liquor to grey treatment | 21.05 kg/d |
+| IA-GREY-01 | `GREY_TREAT` | `LEACH_CSTR_1` | grey sludge | 244.64 kg/d |
+| IA-GREY-RET | `GREY_TREAT` | `ROOF_TANK` | treated grey to the water cycle | 0.00 kg/d |
+| IA-ZNBR-BD | `ZNBR2` | `GREY_TREAT` | electrolyte bleed | 8.49 kg/d |
+| S12 | `HABITATION` | `GREY_TREAT` | grey/solids | 319.60 kg/d |
+| S29 | `GREY_TREAT` | `VCD_TRAIN` | treated grey | 104.50 kg/d |
+| DIGEST_TO_POLY | `BLACK_DIGEST` | `POLY_COND` | digester organics | 0.00 kg/d |
+| HAB_BLACK | `HABITATION` | `BLACK_DIGEST` | black water | no rate |
+| IA-BLK-01 | `HABITATION` | `BLACK_DIGEST` | vacuum-toilet blackwater | 19.64 kg/d |
+| IA-BLK-CAKE | `BLACK_DIGEST` | `AFTERBURNER` | dewatered digestate cake to incineration (barrier 2) | 0.67 kg/d |
+| IA-BLK-GAS | `BLACK_DIGEST` | `AFTERBURNER` | digester biogas, flared in the afterburner | 0.10 kg/d |
+| IA-BLK-NUT | `BLACK_DIGEST` | `NUTRIENT_DOSE` | released digest-liquor nutrient split | 0.90 kg/d |
+| IA-FEC-01 | `HABITATION` | `BLACK_DIGEST` | fecal solids to the blackwater barrier train | 0.13 kg/d |
+| IA-FERM-DIG | `MEOH_FERM` | `BLACK_DIGEST` | fermenter digestate (water + spent solids) | 0.35 kg/d |
+| IA-GAL | `HABITATION` | `BLACK_DIGEST` | galley food waste to the blackwater barrier train | 1.18 kg/d |
+| IA-URINE | `HABITATION` | `BLACK_DIGEST` | urine to the blackwater barrier train | 1.42 kg/d |
+| S30 | `BLACK_DIGEST` | `NUTRIENT_DOSE` | digest liquor / nutrients | no rate |
+| IA-H2P-H2O | `H2_DRYER` | `VCD_TRAIN` | TSA regeneration condensate | 0.00 kg/d |
+| IA-LEACH-VCD | `LEACH_CSTR_1` | `VCD_TRAIN` | leach liquor water bleed to vapour-compression distillation | 168.00 kg/d |
+| IA-NUT-01 | `NUTRIENT_DOSE` | `VCD_TRAIN` | digest surplus | 13.93 kg/d |
+| IA-VCD-BD | `VCD_TRAIN` | `LEACH_CSTR_1` | still bottoms | 6.71 kg/d |
+| S13 | `GROW_BED` | `VCD_TRAIN` | condensate | 3.80 kg/d |
+| S25 | `VCD_TRAIN` | `BMED_UPW_POLISH` | VCD distillate | 308.52 kg/d |
+| S28 | `VCD_TRAIN` | `LEACH_CSTR_1` | VCD brine | 17.88 kg/d |
+| S52 | `FUEL_CELL` | `VCD_TRAIN` | PEM product H2O | 42.88 kg/d |
+| IA-UPW-FAB | `BMED_UPW_POLISH` | `FAB_UPW_TANK` | fab UPW | 60.00 kg/d |
+| IA-UPW-REJ | `BMED_UPW_POLISH` | `LEACH_CSTR_1` | polish reject | 6.05 kg/d |
+| IA-UPW-REMIN | `BMED_UPW_POLISH` | `REMIN` | remineralizer | 175.17 kg/d |
+| S01 | `BMED_UPW_POLISH` | `HDR_UPW` | UPW | 67.30 kg/d |
+| IA-POT-01 | `REMIN` | `ROOF_TANK` | potable makeup, remineralised | 165.17 kg/d |
+| S26 | `REMIN` | `HABITATION` | potable | 10.00 kg/d |
+| IA-UPW-HAB | `HDR_UPW` | `HABITATION` | potable makeup | 0.80 kg/d |
+| IA-UPW-USE | `HDR_UPW` | `WAFER_FAB` | fab UPW | 66.50 kg/d |
+| UPW_TO_FAB | `HDR_UPW` | `FAB_UPW_TANK` | UPW | no rate |
+| S27 | `FAB_UPW_TANK` | `WET_BENCH` | fab UPW > 18 MΩ·cm class | 60.00 kg/d |
+
+Table 3.2 gives the mass in and out of each unit, from the streams of Table 3.1 that carry a rate in kg/d.
+
+Table 3.2. Mass balance of the water units
+
+| Unit | In (kg/d) | Out (kg/d) |
+| --- | --- | --- |
+| `GREY_TREAT` | 349.14 | 349.14 |
+| `BLACK_DIGEST` | 22.72 | 22.72 |
+| `VCD_TRAIN` | 333.11 | 333.11 |
+| `BMED_UPW_POLISH` | 308.52 | 308.52 |
+| `REMIN` | 175.17 | 175.17 |
+| `HDR_UPW` | 67.30 | 67.30 |
+| `FAB_UPW_TANK` | 60.00 | 60.00 |
+
+Every unit balances: the mass in equals the mass out.
+
+## 4. Quality targets
+
+Table 4.1 gives the quality targets. They were set in the project documents from which this page was first written, which are not in this repository; the published standard for each is still to be registered (section 6).
+
+Table 4.1. Water quality targets
+
+| Water | Parameter | Target |
+| --- | --- | --- |
+| UPW header, before remineralization | Conductivity | Below 1 µS/cm |
+| Drinking water, after remineralization | Total dissolved solids | Below 50 mg/L |
+| Drinking water | Turbidity | Below 0.1 NTU |
+| Drinking water | pH | 6.5 to 8.5 |
+| Drinking water | Ultraviolet dose at 254 nm | At least 40 mJ/cm² |
+| Fab rinse water | Resistivity | Above 18 MΩ·cm |
+| Fab rinse water | Total organic carbon | Below 5 ppb |
+| Fab rinse water | Particles larger than 0.5 µm | Fewer than 100 per litre |
+
+Dissolved silica, boron and metals in the fab water have no target yet. They are to be set when a published UPW standard is registered.
+
+## 5. Separation rules
+
+1. The drinking water branch is protected from the process by an air gap or a reduced-pressure zone backflow preventer.
+2. Remineralized water never feeds the wet bench.
+3. Reject water from the polish goes to the leach tank, never to a sewer, the farm beds or the anolyte.
+4. Water that carries etchant, including hydrofluoric acid, returns only by stream S10; it never reaches a floor drain, the grey water or the habitation.
+
+## 6. Open items
+
+1. A published source is to be registered in `flow_graph/param/refs.py` for each quality target in Table 4.1, and the targets for silica, boron and metals in fab water set from it.
+2. The graph carries these streams without a rate: HAB_GREY, HAB_BLACK, S30, UPW_TO_FAB. Each is either a topology edge duplicated by a rated stream or a stream still to be solved; the graph owner is to rate or remove them.

@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | D | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | E | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | A | 2026-10-21 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -202,7 +202,7 @@ Table 3.1. Document numbers in use
 | AQS-LIFE-001 | `docs-authority/LIFE_FITOUT_PLAN.md` | B | 2026-10-01 | Habitation and farm fit-out plan | current |
 | AQS-LIT-ASSAY | `notes/LIT_ASSAY.md` | A | 2026-10-16 | Literature compositions for missing assays | current |
 | AQS-LITH-001 | `docs-authority/ALIGNER.md` | C | 2026-10-11 | Contact aligner | current |
-| AQS-MEP-001 | `docs-authority/LIFE_MEP.md` | A | 2026-10-01 | Life MEP — Phase D (duct / fixture / one-line study) | current |
+| AQS-MEP-001 | `docs-authority/LIFE_MEP.md` | B | 2026-10-29 | Life mechanical, electrical and plumbing study | current |
 | AQS-MF-001 | `docs-authority/MASS_FLOW.md` | K | 2026-10-24 | Mass-flow claim status | current |
 | AQS-MF-001-DERIVED | `flow_graph/derived/MASS_FLOW_DERIVED.md` | — | — | Mass-flow claim excerpt — DERIVED from flow_graph | current |
 | AQS-MFG-001 | `docs-authority/internal/DETAIL_MODEL_PLAN.md` | A | 2026-09-26 | Manufacturing-detail model list | superseded by AQS-PLAN-007 |
@@ -215,7 +215,7 @@ Table 3.1. Document numbers in use
 | AQS-MVS-CHK-001 | `docs-authority/internal/MVS_CHECKLIST.md` | — | 2026-10-02 | MVS checklist | superseded by AQS-PLAN-007 |
 | AQS-MVS-EQP-001 | `docs-authority/internal/MVS_EQUIPMENT.md` | — | 2026-10-02 | MVS equipment issue | superseded by AQS-PLAN-007 |
 | AQS-MVS-PLAN-001 | `docs-authority/internal/MVS_PLAN.md` | — | 2026-10-02 | MVS completion plan | superseded by AQS-PLAN-007 |
-| AQS-MeOH-001 | `docs-authority/MEOH_TRAIN.md` | A | 2026-10-01 | Methanol train — diverse MeOH sources + IEM fuel cell (gap fill) | current |
+| AQS-MeOH-001 | `docs-authority/MEOH_TRAIN.md` | B | 2026-10-29 | Methanol train | current |
 | AQS-NOTE-CARBIDE | `notes/CARBIDE_AND_ECF.md` | A | 2026-10-16 | Carbide train and electrochemical fluorination | current |
 | AQS-NOTE-CAST | `notes/ADVANCED_CASTING.md` | A | 2026-10-16 | Advanced casting techniques — foundry applicability | current |
 | AQS-NOTE-PV-REBASE | `notes/pv_sizing_derivation_2026-10-18.md` | A | 2026-10-18 | PV / storage / inverter / roof parametric derivation — Rev AC re-base | current |
@@ -471,7 +471,7 @@ Table 3.1. Document numbers in use
 | AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | current |
 | AQS-WLD-001 | `docs-authority/WELD_MAP.md` | B | 2026-10-29 | Weld and joint map | current |
 | AQS-WLD-002 | `docs-authority/WPS_REGISTER.md` | B | 2026-10-25 | Welding procedure register | current |
-| AQS-WTR-001 | `docs-authority/WATER_PURIFICATION.md` | B | 2026-10-01 | Water purification — habitation and fab UPW | current |
+| AQS-WTR-001 | `docs-authority/WATER_PURIFICATION.md` | C | 2026-10-29 | Water purification | current |
 
 ## 4. Former numbers
 
