@@ -2535,6 +2535,15 @@
    ],
    "inactive": [
     {
+     "stream_id": "IA-NH3-MET",
+     "from": "WS_AMMONIA",
+     "to": "MET_SYN",
+     "other_sector": "MEOH",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "ammonia feed to the Strecker step (trace)"
+    },
+    {
      "stream_id": "IA-NIT-VENT",
      "from": "WS_NITRIC",
      "to": "NOX_SCRUB",
@@ -4042,6 +4051,15 @@
      "carries": "CO2 enrichment"
     },
     {
+     "stream_id": "DL_MET_TO_FEED",
+     "from": "MET_SYN",
+     "to": "CHICKEN_COOP",
+     "other_sector": "MEOH",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "DL-methionine crystals: top-dressed supplement at the point of feeding"
+    },
+    {
      "stream_id": "FARM_O2_TO_HAB",
      "from": "GROW_BED",
      "to": "HABITATION",
@@ -5403,6 +5421,15 @@
      "carries": "TSA regeneration condensate"
     },
     {
+     "stream_id": "IA-H2S-CH3SH",
+     "from": "BLACK_DIGEST",
+     "to": "MET_SYN",
+     "other_sector": "MEOH",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "H2S feed to the methyl-mercaptan synthesis (trace)"
+    },
+    {
      "stream_id": "IA-WASH-FEED",
      "from": "ROOF_TANK",
      "to": "WASHROOM",
@@ -6064,6 +6091,15 @@
      "rate": 2.1232,
      "unit": "kW",
      "carries": "480 V AC"
+    },
+    {
+     "stream_id": "SF-MET_SYN",
+     "from": "SOL_ARK_60K",
+     "to": "MET_SYN",
+     "other_sector": "MEOH",
+     "rate": 0.2,
+     "unit": "kW",
+     "carries": "heating jacket + stirrer + metering pumps"
     },
     {
      "stream_id": "SF-MFG_SHOP",
@@ -6869,9 +6905,27 @@
      "rate": 0.7388,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
+    },
+    {
+     "stream_id": "SF-MET_SYN",
+     "from": "SOL_ARK_60K",
+     "to": "MET_SYN",
+     "other_sector": "ELEC",
+     "rate": 0.2,
+     "unit": "kW",
+     "carries": "heating jacket + stirrer + metering pumps"
     }
    ],
    "inactive": [
+    {
+     "stream_id": "DL_MET_TO_FEED",
+     "from": "MET_SYN",
+     "to": "CHICKEN_COOP",
+     "other_sector": "FARM",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "DL-methionine crystals: top-dressed supplement at the point of feeding"
+    },
     {
      "stream_id": "IA-FC-EXH",
      "from": "MEOH_FC",
@@ -6880,6 +6934,24 @@
      "rate": 0,
      "unit": "kg/d",
      "carries": "cell exhaust"
+    },
+    {
+     "stream_id": "IA-H2S-CH3SH",
+     "from": "BLACK_DIGEST",
+     "to": "MET_SYN",
+     "other_sector": "WTR",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "H2S feed to the methyl-mercaptan synthesis (trace)"
+    },
+    {
+     "stream_id": "IA-NH3-MET",
+     "from": "WS_AMMONIA",
+     "to": "MET_SYN",
+     "other_sector": "FAB",
+     "rate": 0,
+     "unit": "kg/d",
+     "carries": "ammonia feed to the Strecker step (trace)"
     },
     {
      "stream_id": "MEOH_TO_OLEFIN",

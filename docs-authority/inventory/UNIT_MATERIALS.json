@@ -128,6 +128,7 @@
   "MET_HX_Q4",
   "MET_MELT",
   "MET_SCRUB",
+  "MET_SYN",
   "MFG_SHOP",
   "MG_POT",
   "MO_CELL",
@@ -215,6 +216,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 392,
- "units": 213
+ "tot_wetted_rows": 396,
+ "units": 214
 }

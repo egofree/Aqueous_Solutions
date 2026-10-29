@@ -7,7 +7,7 @@ Authority: the placement model (flow_graph/placement_seed.json Rev M, AQS-BLD-00
 
 Route rule: up to the source-level rack (datum + 3200 mm, AQS-PIP-002), X run, Y run, then vertical to the target centre. Legs in mm, signed. Elbows = non-zero legs - 1. Risers are at least 300 mm above the higher end so every route keeps a flexible leg (X-PIP-04). Unit centres are the placement-model centres; nozzle lateral offsets refine at detail design (the nozzle schedules carry face + height). Supports and stress: AQS-PIP-005.
 
-Status. 318 positioned piped lines routed, 5772 m total. 74 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
+Status. 396 positioned piped lines routed, 7301 m total. 0 piped lines wait on unit placements (the named gap: X-BLD-09 / X-RSZ-05).
 
 | Line | DN | Class | From | To | dZ up | dX | dY | dZ down | Length m | Elbows |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -129,12 +129,41 @@ Status. 318 positioned piped lines routed, 5772 m total. 74 piped lines wait on 
 | S81 | 15 | M1 | MEOH_FC | MEOH_COND | 2400 | 1700 | -200 | -2900 | 7.2 | 3 |
 | S82 | 15 | M1 | MEOH_FC | CRYO_CO2 | 2400 | 3948 | 15900 | -7200 | 29.4 | 3 |
 | S83 | 15 | M1 | CRYO_O2 | HDR_O2 | 10300 | 4500 | -12300 | -300 | 27.4 | 3 |
+| S84 | 15 | M1 | CRYO_N2 | AIR_RECEIVER | 1200 | 10100 | -3400 | -2600 | 17.3 | 3 |
 | S85 | 15 | M1 | CRYO_CO2 | HDR_CO2 | 10450 | 3900 | -14550 | -300 | 29.2 | 3 |
 | S86 | 15 | M1 | CRYO_AHU | RELIEF_CRYO | 1200 | 10600 | 700 | -2900 | 15.4 | 3 |
 | S87 | 15 | M1 | GROW_BED | CRYO_O2 | 950 | -10500 | 4000 | -13200 | 28.6 | 3 |
 | S88 | 15 | M1 | CRYO_N2 | GROW_BED | 12550 | 12000 | -1500 | -300 | 26.4 | 3 |
 | S34 | 15 | P3 | WS_NITRIC | WET_BENCH | 2650 | 4400 | 4400 | -1200 | 12.7 | 3 |
 | S34B | 15 | P1 | WS_PHOS | WET_BENCH | 2650 | 4600 | 0 | -1200 | 8.4 | 2 |
+| F_RECOVER_TO_HF_GEN | 15 | P3 | F_RECOVER | HF_GEN | 2450 | -4550 | -1950 | -2450 | 11.4 | 3 |
+| HF_GEN_TO_VDF | 15 | P3 | HF_GEN | VDF_SYN | 2450 | -300 | 3550 | -2600 | 8.9 | 3 |
+| HF_GEN_TO_TFE | 15 | P3 | HF_GEN | TFE_SYN | 2450 | -2500 | 3550 | -2600 | 11.1 | 3 |
+| VDF_TO_POLY_F | 15 | — | VDF_SYN | POLY_F | 2600 | -2200 | -1800 | -2600 | 9.2 | 3 |
+| TFE_TO_POLY_F | 15 | — | TFE_SYN | POLY_F | 2600 | 0 | -1800 | -2600 | 7.0 | 2 |
+| MO_CELL_RAFFINATE | 15 | P1 | MO_CELL | POLISH_BANK | 2400 | -1400 | 600 | -7450 | 11.8 | 3 |
+| EW9_LIQUOR_TO_MO | 15 | P1 | EW_9 | MO_CELL | 6720 | 8865 | 2040 | -300 | 17.9 | 3 |
+| TI_CELL_CL2_TO_CRU | 15 | P3 | TI_CELL | CRU | 2400 | -3600 | -3000 | -7450 | 16.4 | 3 |
+| MO_CELL_ANODE_GAS_TO_CRU | 15 | P3 | MO_CELL | CRU | 2400 | -1400 | 600 | -7450 | 11.8 | 3 |
+| IND_MELT_TO_CAST | 15 | — | IND_MELT | CAST_LINE | 2450 | -1950 | -3700 | -2450 | 10.6 | 3 |
+| VAC_IND_TO_VAC_CAST | 15 | — | VAC_IND | VAC_CAST | 2450 | -1950 | -100 | -2450 | 7.0 | 3 |
+| IND_TO_CONT | 15 | — | IND_MELT | CONT_CAST | 2450 | -4150 | -1900 | -2450 | 10.9 | 3 |
+| AL_POT_CL2 | 15 | P3 | AL_POT | CRU | 2400 | 3000 | 6000 | -7450 | 18.9 | 3 |
+| MG_POT_CL2 | 15 | P3 | MG_POT | CRU | 2400 | 800 | 600 | -7450 | 11.2 | 3 |
+| COMB_OFFGAS | 15 | F1 | COMB_HEAT | MET_SCRUB | 2450 | -5700 | 1600 | -2200 | 11.9 | 3 |
+| IND_TO_ATOM | 15 | — | IND_MELT | GAS_ATOMIZER | 2450 | 500 | -700 | -700 | 4.3 | 3 |
+| IND_TO_INV | 15 | — | IND_MELT | INV_CAST | 2450 | 2450 | -100 | -2450 | 7.5 | 3 |
+| VAC_TO_INV | 15 | — | VAC_IND | INV_CAST | 2450 | 4650 | -7300 | -2450 | 16.9 | 3 |
+| WAX_RECLAIM_TO_PATTERN | 15 | M2 | SHELL_BURNOUT | WAX_PATTERN | 2450 | 4300 | 1600 | -2600 | 10.9 | 3 |
+| WAX_TO_OIL | 15 | M2 | SHELL_BURNOUT | OIL_FRAC | 2450 | -8100 | 4900 | -6950 | 22.4 | 3 |
+| OIL_TO_OLEFIN | 15 | M2 | OIL_FRAC | POLY_OLEFIN | 4650 | 10100 | -12300 | -300 | 27.4 | 3 |
+| MEOH_TO_OLEFIN | 15 | M1 | MEOH_SYNTH | POLY_OLEFIN | 2500 | 18848 | 650 | -2600 | 24.6 | 3 |
+| DIGEST_TO_POLY | 15 | P1 | BLACK_DIGEST | POLY_COND | 2400 | 17200 | 250 | -8600 | 28.4 | 3 |
+| CRU_TO_VDF | 15 | — | CRU | VDF_SYN | 5150 | -900 | -2500 | -300 | 8.8 | 3 |
+| CRU_TO_TFE | 15 | — | CRU | TFE_SYN | 5150 | -3100 | -2500 | -300 | 11.1 | 3 |
+| POLISH_TO_LI | 15 | P1 | POLISH_BANK | LI_RECOVER | 4950 | -3300 | -2700 | -300 | 11.2 | 3 |
+| WAX_TO_GREASE_CA | 15 | M2 | PROD_C19_C28 | GREASE_CA | 2850 | 550 | -350 | -2900 | 6.7 | 3 |
+| WAX_TO_GREASE_LI | 15 | M2 | PROD_C19_C28 | GREASE_LI | 2850 | 2750 | -350 | -2900 | 8.8 | 3 |
 | CO2_TO_FARM | 15 | M1 | HDR_CO2 | GROW_BED | 3050 | 14100 | 7050 | -950 | 25.1 | 3 |
 | FARM_O2_TO_HAB | 15 | P3 | GROW_BED | HABITATION | 950 | -12000 | 0 | -1600 | 14.6 | 2 |
 | HAB_CO2_TO_HDR | 15 | P3 | HABITATION | HDR_CO2 | 1600 | -2100 | -7050 | -3050 | 13.8 | 3 |
@@ -154,6 +183,7 @@ Status. 318 positioned piped lines routed, 5772 m total. 74 piped lines wait on 
 | S90 | 15 | P3 | HABITATION | HDR_CO2 | 1600 | -2100 | -7050 | -3050 | 13.8 | 3 |
 | IA-GREY-01 | 50 | P2 | GREY_TREAT | LEACH_CSTR_1 | 2650 | -600 | 5300 | -14500 | 23.1 | 3 |
 | IA-CRU-01 | 15 | P2 | CRU | LEACH_CSTR_1 | 1450 | -14400 | -1100 | -2500 | 19.4 | 3 |
+| HL-Q4-REJ | 15 | M1 | Q4_BUS | DRY_COOLER | 11660 | -9600 | 3860 | -300 | 25.4 | 3 |
 | IA-ZNBR-BD | 15 | P1 | ZNBR2 | GREY_TREAT | 6050 | 6148 | -10000 | -300 | 22.5 | 3 |
 | IA-NUT-01 | 15 | P5 | NUTRIENT_DOSE | VCD_TRAIN | 950 | -4500 | -8000 | -14600 | 28.1 | 3 |
 | IA-UPW-FAB | 15 | P5 | BMED_UPW_POLISH | FAB_UPW_TANK | 6000 | 4150 | -7700 | -300 | 18.1 | 3 |
@@ -183,6 +213,9 @@ Status. 318 positioned piped lines routed, 5772 m total. 74 piped lines wait on 
 | IA-GREY-RET | 15 | P1 | GREY_TREAT | ROOF_TANK | 8050 | 9800 | 8400 | -300 | 26.6 | 3 |
 | IA-NUT-LEACH | 15 | P2 | NUTRIENT_DOSE | LEACH_CSTR_1 | 950 | -16400 | -3100 | -14500 | 35.0 | 3 |
 | IA-FEED-01 | 15 | P2 | HOPPER | LEACH_CSTR_1 | 950 | -4400 | -2100 | -2500 | 9.9 | 3 |
+| IA-DC-EVAP | 15 | P1 | DRY_COOLER | ATMOS | 2600 | 5950 | -2800 | -13250 | 24.6 | 3 |
+| IA-DC-SPRAY | 15 | P1 | ROOF_TANK | DRY_COOLER | 300 | -4600 | -5100 | -3200 | 13.2 | 3 |
+| IA-GW-MAKEUP | 15 | P1 | GW_INTAKE | ROOF_TANK | 14300 | -1000 | 6200 | -300 | 21.8 | 3 |
 | IA-POT-01 | 15 | P1 | REMIN | ROOF_TANK | 8200 | 6700 | 6000 | -300 | 21.2 | 3 |
 | IA-UPW-HAB | 50 | P5 | HDR_UPW | HABITATION | 3200 | -6000 | 8300 | -1600 | 19.1 | 3 |
 | IA-BAG-01 | 50 | P2 | BAGHOUSE | LEACH_CSTR_1 | 700 | -19400 | -9100 | -2500 | 31.7 | 3 |
@@ -193,6 +226,7 @@ Status. 318 positioned piped lines routed, 5772 m total. 74 piped lines wait on 
 | IA-CULLET | 50 | P2 | LEACH_CSTR_1 | GLASS_RINSE | 2500 | 1000 | 6600 | -2800 | 12.9 | 3 |
 | IA-SCRUB-SRC | 50 | P2 | LEACH_CSTR_1 | ACID_POLISH_SCRUB | 2500 | 19400 | 8700 | -700 | 31.3 | 3 |
 | IA-SIL-SRC | 50 | P4 | GLASS_DIGEST | WS_SLURRY | 4600 | 12600 | -6400 | -300 | 23.9 | 3 |
+| IA-HF-SRC | 50 | P3 | LEACH_CSTR_1 | F_RECOVER | 6350 | 18350 | -3000 | -300 | 28.0 | 3 |
 | IA-NH3-SRC | 50 | P1 | HDR_N2 | WS_AMMONIA | 3050 | 10500 | 7850 | -8650 | 30.1 | 3 |
 | IA-H2O2-SRC | 50 | P3 | HDR_O2 | WS_PEROX | 3200 | 3600 | 7900 | -8650 | 23.4 | 3 |
 | IA-NOX-H2O | 50 | P2 | NOX_SCRUB | ROOF_TANK | 14000 | 15200 | 3000 | -300 | 32.5 | 3 |
@@ -261,47 +295,83 @@ Status. 318 positioned piped lines routed, 5772 m total. 74 piped lines wait on 
 | IA-ASU-CO2 | 15 | M1 | CRYO_ASU | CRYO_CO2 | 1900 | -10600 | 9750 | -1200 | 23.4 | 3 |
 | IA-H2-AIR | 15 | M1 | H2_DRYER | CRYO_ASU | 700 | -10400 | -8250 | -1900 | 21.2 | 3 |
 | IA-LEACH-ASU | 50 | P2 | LEACH_CSTR_1 | CRYO_ASU | 2500 | 9000 | 850 | -1900 | 14.2 | 3 |
+| IA-ELY-H2O | 15 | P1 | ROOF_TANK | H2O_ELYZ | 300 | -10500 | 8100 | -19800 | 38.7 | 3 |
+| IA-ELY-H2 | 15 | M1 | H2O_ELYZ | CRYO_H2 | 2400 | -1500 | 1400 | -1200 | 6.5 | 3 |
+| IA-ELY-O2 | 15 | M1 | H2O_ELYZ | CRYO_O2 | 2400 | 6000 | -4100 | -1200 | 13.7 | 3 |
+| IA-O2-PROD | 15 | M1 | HDR_O2 | PROD_O2 | 3200 | 8700 | 10200 | -14325 | 36.4 | 3 |
+| IA-O2-SHIP | 15 | M1 | PROD_O2 | NORTH_DOCK | 5425 | -14700 | 3100 | -300 | 23.5 | 3 |
 | IA-URINE | 15 | P1 | HABITATION | BLACK_DIGEST | 1600 | -3700 | -8350 | -2400 | 16.1 | 3 |
 | IA-BLK-NUT | 15 | P1 | BLACK_DIGEST | NUTRIENT_DOSE | 2400 | 15700 | 8350 | -950 | 27.4 | 3 |
 | IA-BLK-GREY | 15 | P1 | BLACK_DIGEST | GREY_TREAT | 2400 | -100 | -50 | -2650 | 5.2 | 3 |
+| IA-MEOH-PROD | 15 | M1 | MEOH_TANK | PROD_MEOH | 2650 | 20023 | 8775 | -8475 | 39.9 | 3 |
+| IA-MEOH-SHIP | 15 | M1 | PROD_MEOH | NORTH_DOCK | 5575 | -12375 | 3225 | -300 | 21.5 | 3 |
 | IA-EW3-H2B | 15 | P1 | EW_3 | HDR_H2 | 2820 | -3985 | 2240 | -950 | 10.0 | 3 |
 | IA-EW5-H2B | 15 | P1 | EW_5 | HDR_H2 | 2820 | -3185 | 840 | -950 | 7.8 | 3 |
 | IA-EW6-H2B | 15 | P1 | EW_6 | HDR_H2 | 2820 | -4185 | 840 | -950 | 8.8 | 3 |
 | IA-EW7-H2B | 15 | P1 | EW_7 | HDR_H2 | 2820 | 1465 | 2340 | -950 | 7.6 | 3 |
 | IA-EW8-H2B | 15 | P1 | EW_8 | HDR_H2 | 2820 | -5185 | 840 | -950 | 9.8 | 3 |
-| IA-EVAP_ACID-VENT | 15 | P3 | EVAP_ACID | EVAP_ACID_VS | 1300 | 0 | 650 | -1300 | 3.2 | 2 |
-| IA-VS-NAOH | 15 | P4 | BMED_BASE | EVAP_ACID_VS | 1450 | 1625 | -1700 | -1300 | 6.1 | 3 |
-| IA-VS-SPENT | 15 | P4 | EVAP_ACID_VS | BMED_ACID | 1300 | -1625 | 1700 | -1450 | 6.1 | 3 |
-| IA-VS-OFF | 15 | F1 | EVAP_ACID_VS | ALK_SCRUBBER | 1300 | 3375 | 9700 | -700 | 15.1 | 3 |
+| IA-C5-POLY | 15 | M2 | PROD_C5_C10 | POLY_OLEFIN | 6550 | 25400 | -21650 | -300 | 53.9 | 3 |
+| IA-EVAP_ACID-VENT | 15 | P3 | EVAP_ACID | EVAP_ACID_VS | 5100 | -4825 | -2050 | -300 | 12.3 | 3 |
+| IA-VS-NAOH | 15 | P4 | BMED_BASE | EVAP_ACID_VS | 5250 | -3200 | -4400 | -300 | 13.2 | 3 |
+| IA-VS-SPENT | 15 | P4 | EVAP_ACID_VS | BMED_ACID | 2500 | 3200 | 4400 | -7450 | 17.6 | 3 |
+| IA-VS-OFF | 15 | F1 | EVAP_ACID_VS | ALK_SCRUBBER | 2500 | 8200 | 12400 | -6700 | 29.8 | 3 |
 | IA-H2P-H2O | 15 | P5 | H2_DRYER | VCD_TRAIN | 700 | -7500 | -14000 | -2600 | 24.8 | 3 |
+| IA-AIR-RX-OUT | 15 | P3 | AIR_RECEIVER | HDR_N2 | 11850 | -11000 | -5150 | -300 | 28.3 | 3 |
 | IA-SOLV-MU | 15 | M1 | NORTH_DOCK | WS_SOLV | 3200 | 6600 | 2400 | -2650 | 14.8 | 3 |
+| POLYF_TO_FILM | 15 | — | POLY_F | FILM_CAST | 2600 | 450 | -1700 | -2450 | 7.2 | 3 |
+| IA-H2SO4-MU | 15 | M2 | NORTH_DOCK | HF_GEN | 3200 | 9400 | -13050 | -2450 | 28.1 | 3 |
+| IA-HF-PROD | 15 | P3 | HF_GEN | WS_HF_ED | 2450 | -2800 | 7650 | -2650 | 15.6 | 3 |
+| MEOH_TO_VDF | 15 | M1 | MEOH_TANK | VDF_SYN | 2650 | 16748 | 2500 | -2600 | 24.5 | 3 |
+| MEOH_TO_TFE | 15 | M1 | MEOH_TANK | TFE_SYN | 2650 | 14548 | 2500 | -2600 | 22.3 | 3 |
+| VDF_HCL_TO_CRU | 15 | — | VDF_SYN | CRU | 2600 | 900 | 2500 | -7450 | 13.4 | 3 |
+| TFE_HCL_TO_CRU | 15 | — | TFE_SYN | CRU | 2600 | 3100 | 2500 | -7450 | 15.7 | 3 |
+| POLYF_RECLAIM | 15 | — | POLY_F | F_RECOVER | 2600 | 7050 | 200 | -2450 | 12.3 | 3 |
+| FLUORO_TO_MFG | 15 | — | POLY_STOCK | MFG_SHOP | 2800 | 700 | 1400 | -700 | 5.6 | 3 |
+| IA-CL2-SHIP | 15 | P3 | AL_POT | NORTH_DOCK | 2400 | -7000 | 13000 | -3200 | 25.6 | 3 |
+| IA-MGCL2-KROLL | 15 | — | TI_CELL | MG_POT | 2400 | -4400 | -3600 | -2400 | 12.8 | 3 |
+| IA-MGCL2-MU | 15 | — | NORTH_DOCK | MG_POT | 3200 | 9200 | -7600 | -2400 | 22.4 | 3 |
+| IA-CL2-MG-TI | 15 | P3 | MG_POT | TI_CELL | 2400 | 4400 | 3600 | -2400 | 12.8 | 3 |
+| IA-CACL2-MU | 15 | — | NORTH_DOCK | CA_POT | 3200 | 11400 | -13000 | -2400 | 30.0 | 3 |
+| IA-CA-CL2-SHIP | 15 | P3 | CA_POT | NORTH_DOCK | 2400 | -11400 | 13000 | -3200 | 30.0 | 3 |
+| IA-KROLL-CO | 15 | P3 | TI_CELL | NORTH_DOCK | 2400 | -13600 | 4000 | -3200 | 23.2 | 3 |
+| IA-MO-VENT | 15 | P3 | MO_CELL | NORTH_DOCK | 2400 | -11400 | 7600 | -3200 | 24.6 | 3 |
+| IA-CR-VENT | 15 | P3 | CR_CELL | NORTH_DOCK | 2400 | -9200 | 11200 | -3200 | 26.0 | 3 |
+| IA-BURNOUT-VENT | 15 | P3 | SHELL_BURNOUT | NORTH_DOCK | 2450 | -7100 | 3900 | -3200 | 16.6 | 3 |
 | AQUA_LOOP1 | 15 | P1 | AQUA_TANK | BIOFILTER | 6350 | 6050 | -8150 | -300 | 20.9 | 3 |
 | AQUA_NUT | 15 | P1 | BIOFILTER | AQUA_UV | 2600 | -2900 | 9975 | -8825 | 24.3 | 3 |
 | AQUA_LOOP3 | 15 | P1 | GROWBED_A | GROWBED_B | 2950 | 3700 | 0 | -2950 | 9.6 | 2 |
 | IA-CHICK-H2O | 15 | P1 | ROOF_TANK | CHICKEN_COOP | 300 | 5750 | 3950 | -13650 | 23.6 | 3 |
+| EGG_HARVEST | 15 | P1 | CHICKEN_COOP | FOOD_STORE | 5725 | -4825 | -12025 | -300 | 22.9 | 3 |
 | CHICK_MANURE | 15 | P1 | CHICKEN_COOP | BSFL_BIN | 2250 | -4500 | -200 | -2850 | 9.8 | 3 |
 | CHICK_VAP | 15 | P1 | CHICKEN_COOP | CRYO_AHU | 2250 | -9750 | -3950 | -7200 | 23.1 | 3 |
 | FISH_SLUDGE | 15 | P1 | AQUA_TANK | BSFL_BIN | 2650 | 200 | 2100 | -2850 | 7.8 | 3 |
 | FRASS | 15 | P1 | BSFL_BIN | HOPPER | 2850 | -7250 | -4750 | -6950 | 21.8 | 3 |
 | BSFL_VAP | 15 | P1 | BSFL_BIN | CRYO_AHU | 2850 | -5250 | -3750 | -7200 | 19.1 | 3 |
+| FOOD_GALLEY | 15 | P1 | FOOD_STORE | GALLEY | 2825 | -10725 | 775 | -8000 | 22.3 | 3 |
 | GALLEY_MEALS | 15 | P5 | GALLEY | HABITATION | 6700 | 3800 | 7300 | -300 | 18.1 | 3 |
 | GALLEY_BIO | 15 | P1 | GALLEY | BSFL_BIN | 2000 | 11050 | 11050 | -2850 | 26.9 | 3 |
 | WASH_GREY | 15 | P1 | WASHROOM | GREY_TREAT | 5650 | 500 | -3700 | -300 | 10.2 | 3 |
+| FISH_HARVEST | 15 | P1 | AQUA_TANK | FOOD_STORE | 6125 | -125 | -9725 | -300 | 16.3 | 3 |
 | IA-AQUA-TOPUP | 15 | P1 | ROOF_TANK | AQUA_TANK | 300 | 1050 | 1650 | -14050 | 17.1 | 3 |
 | IA-DUCK-H2O | 15 | P1 | ROOF_TANK | DUCK_PEN | 300 | 8350 | 3950 | -13950 | 26.6 | 3 |
 | IA-WASH-FEED | 15 | P1 | ROOF_TANK | WASHROOM | 300 | -10300 | -4700 | -13400 | 28.7 | 3 |
 | AQUA_LOOP4 | 15 | P1 | GROWBED_B | DUCKWEED | 2950 | 17600 | -10550 | -2900 | 34.0 | 3 |
 | AQUA_RETURN2 | 15 | P1 | DUCKWEED | AQUA_TANK | 2900 | -25450 | 10050 | -2650 | 41.0 | 3 |
 | DUCK_FISH | 15 | P1 | DUCKWEED | AQUA_TANK | 2900 | -25450 | 10050 | -2650 | 41.0 | 3 |
+| FOOD_HAB | 15 | P5 | FOOD_STORE | HABITATION | 2825 | -6925 | 8075 | -1600 | 19.4 | 3 |
+| DUCK_EGGS | 15 | P1 | DUCK_PEN | FOOD_STORE | 6025 | -7425 | -12025 | -300 | 25.8 | 3 |
 | DUCK_MANURE | 15 | P1 | DUCK_PEN | BSFL_BIN | 2550 | -7100 | -200 | -2850 | 12.7 | 3 |
 | DUCK_VAP | 15 | P1 | DUCK_PEN | CRYO_AHU | 2550 | -12350 | -3950 | -7200 | 26.1 | 3 |
 | QUAIL_H2O | 15 | P1 | ROOF_TANK | QUAIL_CAGE | 300 | 10350 | 3650 | -13750 | 28.1 | 3 |
+| QUAIL_EGGS | 15 | P1 | QUAIL_CAGE | FOOD_STORE | 5825 | -9425 | -11725 | -300 | 27.3 | 3 |
 | QUAIL_DROP | 15 | P1 | QUAIL_CAGE | VERMI_BIN | 2350 | 4500 | 200 | -2900 | 9.9 | 3 |
 | QUAIL_VAP | 15 | P1 | QUAIL_CAGE | CRYO_AHU | 2350 | -14350 | -3650 | -7200 | 27.6 | 3 |
 | RABBIT_FORAGE | 15 | P5 | GROW_BED | RABBIT_HUTCH | 950 | 6050 | 3650 | -8400 | 19.1 | 3 |
+| RABBIT_MEAT | 15 | P1 | RABBIT_HUTCH | FOOD_STORE | 5875 | -11125 | -11725 | -300 | 29.0 | 3 |
 | RABBIT_MANURE | 15 | P1 | RABBIT_HUTCH | GROWBED_B | 2400 | -3150 | -1500 | -2950 | 10.0 | 3 |
 | RABBIT_VAP | 15 | P1 | RABBIT_HUTCH | CRYO_AHU | 2400 | -16050 | -3650 | -7200 | 29.3 | 3 |
 | NECTAR_FORAGE | 15 | P5 | GROW_BED | BEE_HIVE | 950 | 7400 | 3550 | -8650 | 20.6 | 3 |
+| HONEY | 15 | P1 | BEE_HIVE | FOOD_STORE | 6125 | -12475 | -11625 | -300 | 30.5 | 3 |
 | BEE_VAP | 15 | P1 | BEE_HIVE | CRYO_AHU | 2650 | -17400 | -3550 | -7200 | 30.8 | 3 |
 | VERMI_FEED | 15 | P5 | GROW_BED | VERMI_BIN | 950 | 8850 | 3850 | -8900 | 22.6 | 3 |
 | VERMICOMPOST | 15 | M1 | VERMI_BIN | GROWBED_A | 2900 | -9650 | -1700 | -2950 | 17.2 | 3 |
@@ -312,6 +382,7 @@ Status. 318 positioned piped lines routed, 5772 m total. 74 piped lines wait on 
 | EGGSHELL_RET | 15 | P1 | GALLEY | FEED_PREP | 2000 | 13050 | 11050 | -2350 | 28.4 | 3 |
 | LAYER_FEED | 15 | P1 | FEED_PREP | CHICKEN_COOP | 2350 | 2500 | 200 | -2250 | 7.3 | 3 |
 | QUAIL_RATION | 15 | P1 | FEED_PREP | QUAIL_CAGE | 2350 | 7100 | -100 | -2350 | 11.9 | 3 |
+| DUCK_STORE | 15 | P1 | FEED_PREP | FOOD_STORE | 5825 | -2325 | -11825 | -300 | 20.3 | 3 |
 | FORM_REJECT | 15 | P1 | FEED_PREP | BSFL_BIN | 2350 | -2000 | 0 | -2850 | 7.2 | 2 |
 | FORM_VAP | 15 | P1 | FEED_PREP | CRYO_AHU | 2350 | -7250 | -3750 | -7200 | 20.6 | 3 |
 | DUCK_GREENS | 15 | P1 | DUCKWEED | GALLEY | 2900 | -36300 | 1100 | -2000 | 42.3 | 3 |
@@ -320,88 +391,21 @@ Status. 318 positioned piped lines routed, 5772 m total. 74 piped lines wait on 
 | LARVAE_FRESH | 15 | P1 | BSFL_BIN | FEED_PREP | 2850 | 2000 | 0 | -2350 | 7.2 | 2 |
 | DUCK_RATION | 15 | P1 | FEED_PREP | DUCK_PEN | 2350 | 5100 | 200 | -2550 | 10.2 | 3 |
 | FORM_PRESS | 15 | P1 | FEED_PREP | GROWBED_B | 2350 | 5650 | -1600 | -2950 | 12.6 | 3 |
+| BED_GREENS | 15 | P1 | GROWBED_B | FOOD_STORE | 6425 | -7975 | -10225 | -300 | 24.9 | 3 |
 | BED_ET | 15 | P1 | GROWBED_B | CRYO_AHU | 2950 | -12900 | -2150 | -7200 | 25.2 | 3 |
 | NUT_AQUA | 15 | P1 | NORTH_DOCK | DUCKWEED | 3200 | 32500 | -13400 | -2900 | 52.0 | 3 |
 | NUT_AQUA_BED | 15 | P1 | NORTH_DOCK | GROWBED_B | 3200 | 14900 | -2850 | -2950 | 23.9 | 3 |
 | CA_HOPPER | 15 | P1 | NORTH_DOCK | QUAIL_CAGE | 3200 | 16350 | -1350 | -2350 | 23.2 | 3 |
+| FOOD_EXPORT | 15 | P1 | FOOD_STORE | BOUNDARY_EXPORT | 2825 | -11125 | 9475 | -7800 | 31.2 | 3 |
 | GAL_GREY | 15 | P1 | GALLEY | GREY_TREAT | 5650 | 0 | -1100 | -300 | 7.0 | 2 |
+| STOCK_TO_FIBER | 15 | — | POLY_STOCK | POLY_FIBER | 2800 | -3550 | 1050 | -2250 | 9.7 | 3 |
 | FR_FINISH | 15 | P1 | NORTH_DOCK | POLY_FIBER | 3200 | 7750 | -10350 | -2250 | 23.6 | 3 |
 | FIBER_SCRAP | 15 | P2 | POLY_FIBER | LEACH_CSTR_1 | 2250 | -12150 | 2250 | -8500 | 25.1 | 3 |
 | FLEECE_TO_MFG | 15 | P1 | POLY_FIBER | MFG_SHOP | 2250 | 4250 | 350 | -700 | 7.5 | 3 |
 | TEXTILE_HAB | 15 | P5 | MFG_SHOP | HABITATION | 5400 | -12000 | 5000 | -300 | 22.7 | 3 |
+| IA-MEOH-CH3SH | 15 | M1 | MEOH_SYNTH | MET_SYN | 2500 | 17098 | 2650 | -2450 | 24.7 | 3 |
+| IA-H2S-CH3SH | 15 | P1 | BLACK_DIGEST | MET_SYN | 2400 | 11050 | 4050 | -8450 | 25.9 | 3 |
+| IA-NH3-MET | 15 | P1 | WS_AMMONIA | MET_SYN | 2650 | -2250 | -5100 | -2450 | 12.4 | 3 |
+| DL_MET_TO_FEED | 15 | P1 | MET_SYN | CHICKEN_COOP | 2450 | 4400 | 8250 | -2250 | 17.4 | 3 |
 
-Waiting on placements:
-- S84 (AIR_RECEIVER unplaced)
-- F_RECOVER_TO_HF_GEN (F_RECOVER unplaced)
-- HF_GEN_TO_VDF (HF_GEN unplaced)
-- HF_GEN_TO_TFE (HF_GEN unplaced)
-- VDF_TO_POLY_F (VDF_SYN unplaced)
-- TFE_TO_POLY_F (TFE_SYN unplaced)
-- MO_CELL_RAFFINATE (MO_CELL unplaced)
-- EW9_LIQUOR_TO_MO (MO_CELL unplaced)
-- TI_CELL_CL2_TO_CRU (TI_CELL unplaced)
-- MO_CELL_ANODE_GAS_TO_CRU (MO_CELL unplaced)
-- IND_MELT_TO_CAST (IND_MELT unplaced)
-- VAC_IND_TO_VAC_CAST (VAC_IND unplaced)
-- IND_TO_CONT (IND_MELT unplaced)
-- AL_POT_CL2 (AL_POT unplaced)
-- MG_POT_CL2 (MG_POT unplaced)
-- COMB_OFFGAS (COMB_HEAT unplaced)
-- IND_TO_ATOM (IND_MELT unplaced)
-- IND_TO_INV (IND_MELT unplaced)
-- VAC_TO_INV (VAC_IND unplaced)
-- WAX_RECLAIM_TO_PATTERN (SHELL_BURNOUT unplaced)
-- WAX_TO_OIL (SHELL_BURNOUT unplaced)
-- OIL_TO_OLEFIN (POLY_OLEFIN unplaced)
-- MEOH_TO_OLEFIN (POLY_OLEFIN unplaced)
-- DIGEST_TO_POLY (POLY_COND unplaced)
-- CRU_TO_VDF (VDF_SYN unplaced)
-- CRU_TO_TFE (TFE_SYN unplaced)
-- POLISH_TO_LI (LI_RECOVER unplaced)
-- WAX_TO_GREASE_CA (GREASE_CA unplaced)
-- WAX_TO_GREASE_LI (GREASE_LI unplaced)
-- HL-Q4-REJ (DRY_COOLER unplaced)
-- IA-DC-EVAP (DRY_COOLER unplaced)
-- IA-DC-SPRAY (DRY_COOLER unplaced)
-- IA-GW-MAKEUP (GW_INTAKE unplaced)
-- IA-HF-SRC (F_RECOVER unplaced)
-- IA-ELY-H2O (H2O_ELYZ unplaced)
-- IA-ELY-H2 (H2O_ELYZ unplaced)
-- IA-ELY-O2 (H2O_ELYZ unplaced)
-- IA-O2-PROD (PROD_O2 unplaced)
-- IA-O2-SHIP (PROD_O2 unplaced)
-- IA-MEOH-PROD (PROD_MEOH unplaced)
-- IA-MEOH-SHIP (PROD_MEOH unplaced)
-- IA-C5-POLY (POLY_OLEFIN unplaced)
-- IA-AIR-RX-OUT (AIR_RECEIVER unplaced)
-- POLYF_TO_FILM (POLY_F unplaced)
-- IA-H2SO4-MU (HF_GEN unplaced)
-- IA-HF-PROD (HF_GEN unplaced)
-- MEOH_TO_VDF (VDF_SYN unplaced)
-- MEOH_TO_TFE (TFE_SYN unplaced)
-- VDF_HCL_TO_CRU (VDF_SYN unplaced)
-- TFE_HCL_TO_CRU (TFE_SYN unplaced)
-- POLYF_RECLAIM (POLY_F unplaced)
-- FLUORO_TO_MFG (POLY_STOCK unplaced)
-- IA-CL2-SHIP (AL_POT unplaced)
-- IA-MGCL2-KROLL (TI_CELL unplaced)
-- IA-MGCL2-MU (MG_POT unplaced)
-- IA-CL2-MG-TI (MG_POT unplaced)
-- IA-CACL2-MU (CA_POT unplaced)
-- IA-CA-CL2-SHIP (CA_POT unplaced)
-- IA-KROLL-CO (TI_CELL unplaced)
-- IA-MO-VENT (MO_CELL unplaced)
-- IA-CR-VENT (CR_CELL unplaced)
-- IA-BURNOUT-VENT (SHELL_BURNOUT unplaced)
-- EGG_HARVEST (FOOD_STORE unplaced)
-- FOOD_GALLEY (FOOD_STORE unplaced)
-- FISH_HARVEST (FOOD_STORE unplaced)
-- FOOD_HAB (FOOD_STORE unplaced)
-- DUCK_EGGS (FOOD_STORE unplaced)
-- QUAIL_EGGS (FOOD_STORE unplaced)
-- RABBIT_MEAT (FOOD_STORE unplaced)
-- HONEY (FOOD_STORE unplaced)
-- DUCK_STORE (FOOD_STORE unplaced)
-- BED_GREENS (FOOD_STORE unplaced)
-- FOOD_EXPORT (FOOD_STORE unplaced)
-- STOCK_TO_FIBER (POLY_STOCK unplaced)
+All piped lines routed.

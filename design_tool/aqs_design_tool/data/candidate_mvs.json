@@ -2102,8 +2102,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 2680.0,
-        "fraction_of_znbr2_study": 0.08,
+        "vs_znbr2_kwh": 2683.0,
+        "fraction_of_znbr2_study": 0.079,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -2794,11 +2794,11 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 5308,
+        "count": 5314,
         "presence": "present",
-        "nameplate_kw": 2654,
+        "nameplate_kw": 2657,
         "area_m2": 23569,
-        "balance_kWp": 1327,
+        "balance_kWp": 1329,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -2826,7 +2826,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 342.4279,
+        "value": 342.6279,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2968,8 +2968,8 @@
         "count": 37,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2028.6,
-          "export_kWh_d_clear": 5742,
+          "export_peak_kW": 2028.4,
+          "export_kWh_d_clear": 5748,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2999,9 +2999,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 156.4,
+          "bus_demand_kW": 156.6,
           "section_rating_A": 300,
-          "basis_A": 209.1,
+          "basis_A": 209.3,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -3336,27 +3336,27 @@
       "class": "flow_battery",
       "tags": [],
       "params": {
-        "kW": 870,
-        "kWh": 2680,
+        "kW": 871,
+        "kWh": 2683,
         "presence": "present",
-        "charge_kW": 870,
+        "charge_kW": 871,
         "discharge_kW": 192,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 37 hybrid inverters, 72.4 kWh and 23.5 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 37 hybrid inverters, 72.5 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 6.793,
-          "purge_m3_h": 28.31,
+          "H2_m3_d": 6.8,
+          "purge_m3_h": 28.33,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1752.7
+          "electrode_area_m2": 1754.5
         }
       },
       "modules": [],
       "electrical_role": "storage",
       "continuous_kw": {
-        "value": 191.3901,
+        "value": 191.5901,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.4 kW, charge 869.9 kW, 2679 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.6 kW, charge 870.8 kW, 2682 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       }
     },
     {
@@ -8196,6 +8196,47 @@
         "status": "study",
         "note": "extruder heater 0.2 (0.09 kg/d PP melt + standby) + spindle/winder 0.1; arithmetic per A-M-429 (X-SPEC calculated) (X-SPEC sizing, calculated)"
       }
+    },
+    {
+      "unit_id": "MET_SYN",
+      "sector_id": "MEOH",
+      "enabled": true,
+      "class": "chemical_synthesis",
+      "tags": [
+        "meoh",
+        "amino-acid",
+        "feed"
+      ],
+      "params": {
+        "design": {
+          "service": "DL-methionine synthesis (the three-step Strecker route): CH3SH + acrolein -> MMP; MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met",
+          "basis": "A-M-416 route A close-out (2026-10-28): the no-import-feed rule requires on-site synthesis; TECHTREE poultry.chickens.md: synthetic DL-methionine is the standard supplement class",
+          "chemistry": "step 1: CH3OH + H2S -> CH3SH (K2O/Al2O3, 350 C); step 2: CH3SH + acrolein -> MMP (base-catalysed Michael addition); step 3: MMP + NH3 + HCN -> aminonitrile; hydrolysis -> DL-Met (Strecker)",
+          "throughput_g_d": 9.0,
+          "precursor_chain": "CH3OH from MEOH_SYNTH; H2S from BLACK_DIGEST; NH3 from WS_AMMONIA; acrolein from the olefin line; HCN from the Andrussow reaction (CH4 + NH3 + O2) at the gram/d scale",
+          "product": "DL-methionine crystals to the FEED_PREP formulation (A-M-426)"
+        },
+        "sizing": {
+          "throughput_g_d": 9.0,
+          "power_kW": 0.2,
+          "basis": "bench-scale glass-lined reactor column + reagent feed tanks + crystalliser; the scale is trivial (9 g/d vs the tonne/y industrial class) - the complexity is the three-step sequence, not the throughput"
+        },
+        "sec3_material": {
+          "mat": "Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser",
+          "basis": "the three-step Strecker carries HCN, acrolein and methanethiol - all aggressive at the reagent class (A-M-416): glass-lined for the reaction column, PTFE for the transfer, Hastelloy C for the acidic hydrolysis/crystallisation",
+          "alt": "a tantalum reactor if the HCN service ever shows corrosion at the glass-lining pinholes",
+          "note": "the crystalliser is the product-quality bottleneck: DL-Met crystal habit controls the filtration rate.",
+          "task": "X-UI-002"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "heating jacket + stirrer + metering pumps (X-UI-002 MET_SYN design; A-M-416 route A)"
+      }
     }
   ],
   "streams": [
@@ -10440,10 +10481,10 @@
       "phase": "G",
       "carries": "Br2 vapor",
       "rate": {
-        "value": 804.252995,
+        "value": 805.093429,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 28.3 m3/h holds H2 at 25 % LFL: HER 5.78 + open-circuit 1.01 m3/d H2 on 3828 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 28.3 m3/h holds H2 at 25 % LFL: HER 5.79 + open-circuit 1.01 m3/d H2 on 3832 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -10457,7 +10498,7 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 804.252995,
+        "value": 805.093429,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -12538,7 +12579,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 342.4279,
+        "value": 342.6279,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -19024,6 +19065,91 @@
       "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "note": "X-POLY textile line (A-M-429); namespace=IA; layers=elec"
+    },
+    {
+      "stream_id": "IA-MEOH-CH3SH",
+      "from_unit_id": "MEOH_SYNTH",
+      "to_unit_id": "MET_SYN",
+      "phase": "liquid",
+      "carries": "methanol feed to the methyl-mercaptan synthesis (trace)",
+      "rate": {
+        "value": 0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "nutritional supplement at the 9 g/d DL-Met class: below the mass-balance significance threshold. The requirement and the synthesis route are in A-M-416 (route A) and MET_SYN params. [X-UI]"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-H2S-CH3SH",
+      "from_unit_id": "BLACK_DIGEST",
+      "to_unit_id": "MET_SYN",
+      "phase": "liquid",
+      "carries": "H2S feed to the methyl-mercaptan synthesis (trace)",
+      "rate": {
+        "value": 0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "nutritional supplement at the 9 g/d DL-Met class: below the mass-balance significance threshold. The requirement and the synthesis route are in A-M-416 (route A) and MET_SYN params. [X-UI]"
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-NH3-MET",
+      "from_unit_id": "WS_AMMONIA",
+      "to_unit_id": "MET_SYN",
+      "phase": "liquid",
+      "carries": "ammonia feed to the Strecker step (trace)",
+      "rate": {
+        "value": 0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "nutritional supplement at the 9 g/d DL-Met class: below the mass-balance significance threshold. The requirement and the synthesis route are in A-M-416 (route A) and MET_SYN params. [X-UI]"
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "DL_MET_TO_FEED",
+      "from_unit_id": "MET_SYN",
+      "to_unit_id": "CHICKEN_COOP",
+      "phase": "liquid",
+      "carries": "DL-methionine crystals: top-dressed supplement at the point of feeding",
+      "rate": {
+        "value": 0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "nutritional supplement at the 9 g/d DL-Met class: below the mass-balance significance threshold. The requirement and the synthesis route are in A-M-416 (route A) and MET_SYN params. [X-UI]"
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "FARM",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-MET_SYN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "MET_SYN",
+      "phase": "electric",
+      "carries": "heating jacket + stirrer + metering pumps",
+      "rate": {
+        "value": 0.2,
+        "unit": "kW",
+        "status": "study",
+        "note": "the bench-scale synthesis duty (A-M-416) [X-UI-002-supplement held]"
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "note": "X-UI-002 MET_SYN (A-M-416 route A); namespace=IA; layers=elec"
     }
   ],
   "electrical": {
@@ -19038,19 +19164,19 @@
       "PUMPED_HYDRO"
     ],
     "need_kw": {
-      "value": 191.39,
+      "value": 191.59,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 31x23 bays, ext 72.90 kW)."
     },
     "target_kw": {
-      "value": 478.48,
+      "value": 478.98,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."
     },
     "pv_module_kw": 0.5,
-    "pv_count": 5308,
+    "pv_count": 5314,
     "znbr_module_kw": 60.0,
     "znbr_count": 37,
     "rect_count": 1,

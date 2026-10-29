@@ -22,12 +22,12 @@ Freight elevator car 2700 x 3200 mm. Largest basement units (plan, sorted):
 
 | Unit | Level | Plan short x long mm | Height mm |
 |---|---|---|---|
+| CRYO_CO2 | L-1 | 1500 x 6696 | 450 |
+| CRYO_H2 | L-1 | 1500 x 6696 | 900 |
+| CRYO_O2 | L-1 | 1500 x 6696 | 600 |
 | EW_9 | L-1 | 720 x 3270 | 760 |
 | EW_7 | L-1 | 720 x 3170 | 760 |
-| EW_1 | L-1 | 720 x 2670 | 760 |
-| EW_2 | L-1 | 720 x 2670 | 760 |
-| RECT_EW | L-1 | 800 x 2400 | 2000 |
 
-2 basement units do not fit the elevator with 100 mm clearance each side; they go down an equipment hatch of 3870 x 1320 mm in the L0 slab beside the dock, served by the L0 hoist (AQS-BLD-015), with a removable 2 h rated cover (AQS-HSE-001 horizontal assembly). Units taller than the storey are installed in sections.
+5 basement units do not fit the elevator with 100 mm clearance each side; they go down an equipment hatch of 7296 x 2100 mm in the L0 slab beside the dock, served by the L0 hoist (AQS-BLD-015), with a removable 2 h rated cover (AQS-HSE-001 horizontal assembly). Units taller than the storey are installed in sections.
 
 Changes made: DOCK_APRON_N 6,000 -> 34,000 mm and new DOCK_DOOR_H 4,300 mm and DOCK_APRON_W = PLATE_L in `models/freecad/params.py`.

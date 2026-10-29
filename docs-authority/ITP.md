@@ -79,7 +79,7 @@ Units: FLUE_KO, WASHROOM
 
 Units: EW_1, EW_2, EW_3, EW_4, EW_5, EW_6, EW_7, EW_8, EW_9
 
-## R7 glass, graphite and refractory (5 units)
+## R7 glass, graphite and refractory (6 units)
 
 | Step | Activity | Basis | Point |
 |---|---|---|---|
@@ -87,7 +87,7 @@ Units: EW_1, EW_2, EW_3, EW_4, EW_5, EW_6, EW_7, EW_8, EW_9
 | 2 | visual and dimensional | A-M-190 | W |
 | 3 | thermal or leak test at first heat-up | A-M-190 | H |
 
-Units: BUOH_STILL, ETOH_STILL, MET_MELT, SIC_FURNACE, SI_REDUCE
+Units: BUOH_STILL, ETOH_STILL, MET_MELT, MET_SYN, SIC_FURNACE, SI_REDUCE
 
 ## R8 assembled equipment (structure, enclosures, mechanisms) (67 units)
 
@@ -107,4 +107,4 @@ Units: AIR_RECEIVER, AL_POT, AQUA_TANK, AQUA_UV, BACKUP_GEN, BEE_HIVE, CAST_LINE
 | electrical panels: dielectric and continuity test | UL 891 / NEC 2026 | H |
 | loop check of every instrument | A-M-190 | W |
 
-242 units assigned. Hold points marked A-M-190 are study practice until the owner quality manual (X-COD-01) adopts them.
+243 units assigned. Hold points marked A-M-190 are study practice until the owner quality manual (X-COD-01) adopts them.

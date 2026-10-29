@@ -22,23 +22,69 @@ Basis: NEC 2026 110.26(A)(1)-(2); NFPA 101 (2027) 7.3.4.1.1 and IBC 2027 1018.5 
 
 | Row | Level | Faces with 914 mm clear |
 |---|---|---|
-| GROW_BED/R8 | L0 | none |
-| GROW_BED/R9 | L0 | none |
-| GROW_BED/R10 | L0 | none |
-| PEANUT/R1 | L0 | none |
-| PEANUT/R2 | L0 | none |
-| PEANUT/R3 | L0 | none |
-| CLOVER | L0 | none |
-| SUNFLOWER | L0 | none |
-| ACEX | L0 | none |
-| BUCL | L0 | none |
-| ALD | L0 | none |
-| FORM | L0 | none |
-| MEAM | L0 | none |
+| WS_NITRIC | L0 | none |
+| WS_PEROX | L0 | none |
+| WS_SLURRY | L0 | none |
+| BLOW_MOLD | L0 | none |
+| PROD_C5_C10 | L-1 | none |
+| RELIEF_CRYO | L-1 | none |
+| ACID_POLISH_SCRUB | L0 | none |
+| AFTERBURNER_FLUE | L0 | none |
+| AIR_RECEIVER | L-1 | none |
+| AL_POT | L0 | none |
+| ATMOS | L0 | none |
+| BMED_ACID | L0 | none |
+| BMED_BASE | L0 | none |
+| CAST_LINE | L0 | none |
+| COLD_MILL | L0 | none |
+| CONT_CAST | L0 | none |
+| CRYO_AHU | L-1 | none |
+| CRYO_H2 | L-1 | none |
+| CRYO_N2 | L-1 | none |
+| CR_CELL | L0 | none |
+| DRAW | L0 | none |
+| FILM_CAST | L0 | none |
+| FLOAT_SINK | L0 | none |
+| FLUX_PREP | L0 | none |
+| FOOD_STORE | L1 | none |
+| FORGE | L0 | none |
+| GLASS_DIGEST | L-1 | none |
+| GROW_BED | L1 | none |
+| GW_INTAKE | L0 | none |
+| HDR_H2 | L0 | none |
+| HDR_O2 | L0 | none |
+| HDR_UPW | L0 | none |
+| HF_GEN | L0 | none |
+| HYDRO_SET | L0 | none |
+| IND_MELT | L0 | none |
+| LI_RECOVER | L0 | none |
+| MET_SYN | L0 | none |
+| MFG_SHOP | L0 | none |
+| MG_POT | L0 | none |
+| MO_CELL | L0 | none |
+| NORTH_DOCK | L0 | none |
+| NUTRIENT_DOSE | L0 | none |
+| POLISH_BANK | L0 | none |
+| POLY_OLEFIN | L0 | none |
+| POLY_STOCK | L0 | none |
+| P_CA | L0 | none |
+| RES_HEAT | L0 | none |
+| ROLL | L0 | none |
+| SHELL_BREAK | L0 | none |
+| TFE_SYN | L0 | none |
+| VDF_SYN | L0 | none |
+| WAFER_FAB | L0 | none |
+| WET_BENCH | L0 | none |
+| BOARD_MILL | L0 | none |
+| CRYO_NE | L-1 | none |
+| CRYO_KR | L-1 | none |
+| CRYO_XE | L-1 | none |
+| CRYO_AR | L-1 | none |
+| H2_PURIFIER | L-1 | none |
 
-Rows checked for access: 172; rows without a 914 mm face: 13.
+Rows checked for access: 266; rows without a 914 mm face: 59.
 
-Failing items: 13.
+Failing items: 59.
 
 ## Code basis (X-STD-01)
 

@@ -1,6 +1,6 @@
 {
  "generated_by": "docs-authority/_pid_sheets.py",
- "graph_sha256": "54afe2b6ebc8b1f35b2b1efd80ae699e1c0c46962a216b125ea2ff2f0b560ae6",
+ "graph_sha256": "dececea12380e60ec643451df5ba1e7462b11c846d9976fef91be7c72218117f",
  "patterns": [
   "docs-authority/pid/*"
  ],
@@ -122,6 +122,7 @@
   "MET_HX_Q4",
   "MET_MELT",
   "MET_SCRUB",
+  "MET_SYN",
   "MFG_SHOP",
   "MG_POT",
   "MO_CELL",

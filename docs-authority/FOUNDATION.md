@@ -26,12 +26,12 @@ Table 3.1. Foundation checks
 
 | Check | Demand | Capacity | Result |
 |---|---|---|---|
-| Service weight D + F + L | 149,485 kN (equipment and water 66,040, slabs 24,883, raft 27,994, walls 19,919, columns 911) | - | - |
-| Gross bearing | 346 kPa | - | - |
-| Net bearing (gross - 325 kPa excavated overburden) | 21 kPa | 216 kPa (72 x depth increase, IBC 1806.3.1) | pass |
-| Seismic overturning, M = 72,522 kNm, e = 0.49 m (B/6 = 3.00) | net toe 77 kPa | 216 kPa | pass |
-| Uplift, plant empty and reservoirs drained, groundwater at 0.0 m | 76,544 kN | 84,256 kN, FS 1.10 (need 1.10) | pass |
-| Raft two-way shear at the interior column (Pu 8266 kN, column 470 mm) | 8266 kN | phiVc 8610 kN at t = 1.10 m | pass |
+| Service weight D + F + L | 150,087 kN (equipment and water 66,642, slabs 24,883, raft 27,994, walls 19,919, columns 911) | - | - |
+| Gross bearing | 347 kPa | - | - |
+| Net bearing (gross - 325 kPa excavated overburden) | 22 kPa | 216 kPa (72 x depth increase, IBC 1806.3.1) | pass |
+| Seismic overturning, M = 72,522 kNm, e = 0.48 m (B/6 = 3.00) | net toe 78 kPa | 216 kPa | pass |
+| Uplift, plant empty and reservoirs drained, groundwater at 0.0 m | 76,544 kN | 84,462 kN, FS 1.10 (need 1.10) | pass |
+| Raft two-way shear at the interior column (Pu 8324 kN, column 470 mm) | 8324 kN | phiVc 8610 kN at t = 1.10 m | pass |
 | Raft thickness adopted | shear 1.10 m + uplift ballast 1.60 m | 2.70 m | - |
 
 ## 4. Discussion

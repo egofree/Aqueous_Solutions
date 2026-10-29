@@ -137,6 +137,14 @@ def design(d, g):
     pre = (nh3n*2.2 + o2n*0.95)*(250 - 20)/86.4/0.7
     Vw = R('IA-HNO3')/1400*v('rx_hno3_absorber_tau_h')/24; ves = vessel(Vw, 0.5, 1400.0, steel=True, t_min=2.0)
     kw = (pre + loss_g)/1000 + 0.02
+    # MET_SYN (A-M-416 route A): the three-step Strecker at the 9 g/d DL-Met class;
+    # glass-lined reactor, PTFE transfer, Hastelloy C crystalliser (the issued sec3).
+    out['MET_SYN'] = dict(T_C=120, P_bar=1.0, throughput_g_d=9.0,
+                          steps='CH3SH synth / Michael addition / Strecker + hydrolysis',
+                          material='borosilicate glass-lined, PTFE transfer, Hastelloy C crystalliser',
+                          heat_W=200, V_work_L=2.0, tau_h=8,
+                          note='bench-scale: the complexity is the three-step sequence, not the throughput')
+
     out['HNO3'] = dict(T_C=Tg, gauze='Pt-Rh gauze in DN25 Sch 40 SA-312 310S, 300 mm', insulation_mm=ins_g, loss_W=loss_g, heat_W=kw*1000, tau_h=v('rx_hno3_absorber_tau_h'),
                        **ves, material='burner 310S tube; absorber SA-240 304L packed column', kW=round(kw, 4))
     live = {n['unit_id'] for n in g['nodes'] if n.get('presence', 'present') == 'present'}   # R11 Rev AC regen: DIGESTER, YEAST, ABE, ACETOX, HTC, GLYOXAL, IMID, BUCL, HNO3, ACEX, ALD, FORM, MEAM left the graph; only live units are sized
@@ -226,6 +234,9 @@ Authority: AQS-PLAN-007 X-MFG-31 (owner decision 2026-10-15: no bought skids). G
     if 'HNO3' in R:
         H = R['HNO3']
         md += f"\n## 7. Nitric acid (A-M-161)\n\nOstwald route (ULLMANN_NITRIC): {H['gauze']} at {H['T_C']:.0f} C, {H['insulation_mm']} mm insulation, loss {H['loss_W']:.0f} W; absorber {H['D_mm']} x {H['H_mm']} mm, {H['V_work_L']:.2f} L hold-up ({H['tau_h']} h). Heater {H['heat_W']:.0f} W. At this rate the burner does not run autothermally; the bus holds the gauze.\n"
+    if 'MET_SYN' in R:
+        M = R['MET_SYN']
+        md += f"\n## 8. MET_SYN: DL-methionine synthesis (A-M-416 route A)\n\nThe three-step Strecker at {M['throughput_g_d']:.0f} g/d DL-Met: CH3SH synth, Michael addition, Strecker + hydrolysis. Glass-lined column at {M['T_C']:.0f} C, {M['V_work_L']:.1f} L working volume, {M['tau_h']:.0f} h residence. {M['material']}. Heater {M['heat_W']:.0f} W.\n"
     if 'GLYOXAL' in R or 'ACEX' in R: md += '\nGLYOXAL runs on the HNO3 route (X-PAR-13, A-M-160). ACEX (X-PAR-14, A-M-162): the direct exchange [Bmim]Cl + AcOH -> [Bmim]OAc + HCl is not driven (HCl the stronger acid); the route is an OH-form strong-base anion resin then acetic acid neutralisation, resin regenerated with 20 wt% NaOH from EVAP_BASE (PERRY9_IX).\n'
     if 'ACEX' in R:
         A_ = R['ACEX']; md += f"ACEX columns: {A_['columns']} x {A_['tube']} PP, bed {A_['V_bed_L']:.2f} L ({A_['L_bed_mm']} mm), {A_['eq_per_cycle']:.2f} eq per {DR.val(d,'ix_cycle_h')} h cycle; one on line, one regenerating.\n"

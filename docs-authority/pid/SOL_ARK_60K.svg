@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="3996" font-family="sans-serif">
-<rect x="4" y="4" width="1492" height="3988" fill="white" stroke="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="4042" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="4034" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit SOL_ARK_60K · inverter · sector ELEC · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 9 in + 76 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 10</text>
+<text x="24" y="72" font-size="10.5">Edges 9 in + 77 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 10</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -24,7 +24,7 @@
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">TE-01</text>
 <text x="220" y="170" font-size="7">-20 to 150 C</text>
 <text x="220" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
-<rect x="590" y="210" width="320" height="3526" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
+<rect x="590" y="210" width="320" height="3572" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">SOL_ARK_60K</text>
 <text x="750.0" y="252" font-size="9.5" text-anchor="middle">inverter · ELEC sector</text>
 <line x1="430" y1="240" x2="577" y2="240" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-in"/>
@@ -53,7 +53,7 @@
 <polygon points="586,424 577,420 577,428" fill="#111"/>
 <text x="24" y="405" font-size="9" fill="#666" text-anchor="start">PV_ARRAY</text>
 <text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">IA-PV-01</text>
-<text x="24" y="437" font-size="10" text-anchor="start">342.4 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="437" font-size="10" text-anchor="start">342.6 kW · cable (schedule X-ELS-06)</text>
 <line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,470 577,466 577,474" fill="#111"/>
 <text x="24" y="451" font-size="9" fill="#666" text-anchor="start">BACKUP_GEN</text>
@@ -332,143 +332,148 @@
 <text x="1476" y="2507" font-size="10" text-anchor="end">2.1 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2540" x2="1061" y2="2540" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2540 1061,2536 1061,2544" fill="#111"/>
-<text x="1476" y="2521" font-size="9" fill="#666" text-anchor="end">MFG_SHOP</text>
-<text x="1476" y="2535" font-size="11" font-weight="600" text-anchor="end">SF-MFG_SHOP</text>
-<text x="1476" y="2553" font-size="10" text-anchor="end">2.5 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="2521" font-size="9" fill="#666" text-anchor="end">MET_SYN</text>
+<text x="1476" y="2535" font-size="11" font-weight="600" text-anchor="end">SF-MET_SYN</text>
+<text x="1476" y="2553" font-size="10" text-anchor="end">0.2 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2586" x2="1061" y2="2586" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2586 1061,2582 1061,2590" fill="#111"/>
-<text x="1476" y="2567" font-size="9" fill="#666" text-anchor="end">MG_POT</text>
-<text x="1476" y="2581" font-size="11" font-weight="600" text-anchor="end">SF-MG_POT</text>
-<text x="1476" y="2599" font-size="10" text-anchor="end">0.3 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="2567" font-size="9" fill="#666" text-anchor="end">MFG_SHOP</text>
+<text x="1476" y="2581" font-size="11" font-weight="600" text-anchor="end">SF-MFG_SHOP</text>
+<text x="1476" y="2599" font-size="10" text-anchor="end">2.5 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2632" x2="1061" y2="2632" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2632 1061,2628 1061,2636" fill="#111"/>
-<text x="1476" y="2613" font-size="9" fill="#666" text-anchor="end">MO_CELL</text>
-<text x="1476" y="2627" font-size="11" font-weight="600" text-anchor="end">SF-MO_CELL</text>
-<text x="1476" y="2645" font-size="10" text-anchor="end">0.1 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="2613" font-size="9" fill="#666" text-anchor="end">MG_POT</text>
+<text x="1476" y="2627" font-size="11" font-weight="600" text-anchor="end">SF-MG_POT</text>
+<text x="1476" y="2645" font-size="10" text-anchor="end">0.3 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2678" x2="1061" y2="2678" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2678 1061,2674 1061,2682" fill="#111"/>
-<text x="1476" y="2659" font-size="9" fill="#666" text-anchor="end">NOX_SCRUB</text>
-<text x="1476" y="2673" font-size="11" font-weight="600" text-anchor="end">SF-NOX_SCRUB</text>
-<text x="1476" y="2691" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="2659" font-size="9" fill="#666" text-anchor="end">MO_CELL</text>
+<text x="1476" y="2673" font-size="11" font-weight="600" text-anchor="end">SF-MO_CELL</text>
+<text x="1476" y="2691" font-size="10" text-anchor="end">0.1 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2724" x2="1061" y2="2724" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2724 1061,2720 1061,2728" fill="#111"/>
-<text x="1476" y="2705" font-size="9" fill="#666" text-anchor="end">NUTRIENT_DOSE</text>
-<text x="1476" y="2719" font-size="11" font-weight="600" text-anchor="end">SF-NUTRIENT_DOSE</text>
+<text x="1476" y="2705" font-size="9" fill="#666" text-anchor="end">NOX_SCRUB</text>
+<text x="1476" y="2719" font-size="11" font-weight="600" text-anchor="end">SF-NOX_SCRUB</text>
 <text x="1476" y="2737" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2770" x2="1061" y2="2770" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2770 1061,2766 1061,2774" fill="#111"/>
-<text x="1476" y="2751" font-size="9" fill="#666" text-anchor="end">OIL_PYRO</text>
-<text x="1476" y="2765" font-size="11" font-weight="600" text-anchor="end">SF-OIL_PYRO</text>
-<text x="1476" y="2783" font-size="10" text-anchor="end">1.7 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="2751" font-size="9" fill="#666" text-anchor="end">NUTRIENT_DOSE</text>
+<text x="1476" y="2765" font-size="11" font-weight="600" text-anchor="end">SF-NUTRIENT_DOSE</text>
+<text x="1476" y="2783" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2816" x2="1061" y2="2816" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2816 1061,2812 1061,2820" fill="#111"/>
-<text x="1476" y="2797" font-size="9" fill="#666" text-anchor="end">POLY_F</text>
-<text x="1476" y="2811" font-size="11" font-weight="600" text-anchor="end">SF-POLY_F</text>
-<text x="1476" y="2829" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="2797" font-size="9" fill="#666" text-anchor="end">OIL_PYRO</text>
+<text x="1476" y="2811" font-size="11" font-weight="600" text-anchor="end">SF-OIL_PYRO</text>
+<text x="1476" y="2829" font-size="10" text-anchor="end">1.7 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2862" x2="1061" y2="2862" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2862 1061,2858 1061,2866" fill="#111"/>
-<text x="1476" y="2843" font-size="9" fill="#666" text-anchor="end">POLY_FIBER</text>
-<text x="1476" y="2857" font-size="11" font-weight="600" text-anchor="end">SF-POLY_FIBER</text>
-<text x="1476" y="2875" font-size="10" text-anchor="end">0.3 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="2843" font-size="9" fill="#666" text-anchor="end">POLY_F</text>
+<text x="1476" y="2857" font-size="11" font-weight="600" text-anchor="end">SF-POLY_F</text>
+<text x="1476" y="2875" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2908" x2="1061" y2="2908" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2908 1061,2904 1061,2912" fill="#111"/>
-<text x="1476" y="2889" font-size="9" fill="#666" text-anchor="end">POWDER_RESIN</text>
-<text x="1476" y="2903" font-size="11" font-weight="600" text-anchor="end">SF-POWDER_RESIN</text>
-<text x="1476" y="2921" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="2889" font-size="9" fill="#666" text-anchor="end">POLY_FIBER</text>
+<text x="1476" y="2903" font-size="11" font-weight="600" text-anchor="end">SF-POLY_FIBER</text>
+<text x="1476" y="2921" font-size="10" text-anchor="end">0.3 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2954" x2="1061" y2="2954" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2954 1061,2950 1061,2958" fill="#111"/>
-<text x="1476" y="2935" font-size="9" fill="#666" text-anchor="end">REMIN</text>
-<text x="1476" y="2949" font-size="11" font-weight="600" text-anchor="end">SF-REMIN</text>
+<text x="1476" y="2935" font-size="9" fill="#666" text-anchor="end">POWDER_RESIN</text>
+<text x="1476" y="2949" font-size="11" font-weight="600" text-anchor="end">SF-POWDER_RESIN</text>
 <text x="1476" y="2967" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3000" x2="1061" y2="3000" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3000 1061,2996 1061,3004" fill="#111"/>
-<text x="1476" y="2981" font-size="9" fill="#666" text-anchor="end">RES_HEAT</text>
-<text x="1476" y="2995" font-size="11" font-weight="600" text-anchor="end">SF-RES_HEAT</text>
+<text x="1476" y="2981" font-size="9" fill="#666" text-anchor="end">REMIN</text>
+<text x="1476" y="2995" font-size="11" font-weight="600" text-anchor="end">SF-REMIN</text>
 <text x="1476" y="3013" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3046" x2="1061" y2="3046" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3046 1061,3042 1061,3050" fill="#111"/>
-<text x="1476" y="3027" font-size="9" fill="#666" text-anchor="end">RF_HEAT</text>
-<text x="1476" y="3041" font-size="11" font-weight="600" text-anchor="end">SF-RF_HEAT</text>
+<text x="1476" y="3027" font-size="9" fill="#666" text-anchor="end">RES_HEAT</text>
+<text x="1476" y="3041" font-size="11" font-weight="600" text-anchor="end">SF-RES_HEAT</text>
 <text x="1476" y="3059" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3092" x2="1061" y2="3092" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3092 1061,3088 1061,3096" fill="#111"/>
-<text x="1476" y="3073" font-size="9" fill="#666" text-anchor="end">SHELL_BREAK</text>
-<text x="1476" y="3087" font-size="11" font-weight="600" text-anchor="end">SF-SHELL_BREAK</text>
-<text x="1476" y="3105" font-size="10" text-anchor="end">0.4 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3073" font-size="9" fill="#666" text-anchor="end">RF_HEAT</text>
+<text x="1476" y="3087" font-size="11" font-weight="600" text-anchor="end">SF-RF_HEAT</text>
+<text x="1476" y="3105" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3138" x2="1061" y2="3138" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3138 1061,3134 1061,3142" fill="#111"/>
-<text x="1476" y="3119" font-size="9" fill="#666" text-anchor="end">SHELL_BUILD</text>
-<text x="1476" y="3133" font-size="11" font-weight="600" text-anchor="end">SF-SHELL_BUILD</text>
-<text x="1476" y="3151" font-size="10" text-anchor="end">0.3 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3119" font-size="9" fill="#666" text-anchor="end">SHELL_BREAK</text>
+<text x="1476" y="3133" font-size="11" font-weight="600" text-anchor="end">SF-SHELL_BREAK</text>
+<text x="1476" y="3151" font-size="10" text-anchor="end">0.4 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3184" x2="1061" y2="3184" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3184 1061,3180 1061,3188" fill="#111"/>
-<text x="1476" y="3165" font-size="9" fill="#666" text-anchor="end">SHELL_BURNOUT</text>
-<text x="1476" y="3179" font-size="11" font-weight="600" text-anchor="end">SF-SHELL_BURNOUT</text>
-<text x="1476" y="3197" font-size="10" text-anchor="end">0.2 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3165" font-size="9" fill="#666" text-anchor="end">SHELL_BUILD</text>
+<text x="1476" y="3179" font-size="11" font-weight="600" text-anchor="end">SF-SHELL_BUILD</text>
+<text x="1476" y="3197" font-size="10" text-anchor="end">0.3 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3230" x2="1061" y2="3230" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3230 1061,3226 1061,3234" fill="#111"/>
-<text x="1476" y="3211" font-size="9" fill="#666" text-anchor="end">SINTER</text>
-<text x="1476" y="3225" font-size="11" font-weight="600" text-anchor="end">SF-SINTER</text>
-<text x="1476" y="3243" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3211" font-size="9" fill="#666" text-anchor="end">SHELL_BURNOUT</text>
+<text x="1476" y="3225" font-size="11" font-weight="600" text-anchor="end">SF-SHELL_BURNOUT</text>
+<text x="1476" y="3243" font-size="10" text-anchor="end">0.2 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3276" x2="1061" y2="3276" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3276 1061,3272 1061,3280" fill="#111"/>
-<text x="1476" y="3257" font-size="9" fill="#666" text-anchor="end">SOLAR_PV_CELL</text>
-<text x="1476" y="3271" font-size="11" font-weight="600" text-anchor="end">SF-SOLAR_PV_CELL</text>
-<text x="1476" y="3289" font-size="10" text-anchor="end">0.4 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3257" font-size="9" fill="#666" text-anchor="end">SINTER</text>
+<text x="1476" y="3271" font-size="11" font-weight="600" text-anchor="end">SF-SINTER</text>
+<text x="1476" y="3289" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3322" x2="1061" y2="3322" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3322 1061,3318 1061,3326" fill="#111"/>
-<text x="1476" y="3303" font-size="9" fill="#666" text-anchor="end">TFE_SYN</text>
-<text x="1476" y="3317" font-size="11" font-weight="600" text-anchor="end">SF-TFE_SYN</text>
+<text x="1476" y="3303" font-size="9" fill="#666" text-anchor="end">SOLAR_PV_CELL</text>
+<text x="1476" y="3317" font-size="11" font-weight="600" text-anchor="end">SF-SOLAR_PV_CELL</text>
 <text x="1476" y="3335" font-size="10" text-anchor="end">0.4 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3368" x2="1061" y2="3368" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3368 1061,3364 1061,3372" fill="#111"/>
-<text x="1476" y="3349" font-size="9" fill="#666" text-anchor="end">TI_CELL</text>
-<text x="1476" y="3363" font-size="11" font-weight="600" text-anchor="end">SF-TI_CELL</text>
-<text x="1476" y="3381" font-size="10" text-anchor="end">0.5 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3349" font-size="9" fill="#666" text-anchor="end">TFE_SYN</text>
+<text x="1476" y="3363" font-size="11" font-weight="600" text-anchor="end">SF-TFE_SYN</text>
+<text x="1476" y="3381" font-size="10" text-anchor="end">0.4 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3414" x2="1061" y2="3414" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3414 1061,3410 1061,3418" fill="#111"/>
-<text x="1476" y="3395" font-size="9" fill="#666" text-anchor="end">VAC_CAST</text>
-<text x="1476" y="3409" font-size="11" font-weight="600" text-anchor="end">SF-VAC_CAST</text>
-<text x="1476" y="3427" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3395" font-size="9" fill="#666" text-anchor="end">TI_CELL</text>
+<text x="1476" y="3409" font-size="11" font-weight="600" text-anchor="end">SF-TI_CELL</text>
+<text x="1476" y="3427" font-size="10" text-anchor="end">0.5 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3460" x2="1061" y2="3460" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3460 1061,3456 1061,3464" fill="#111"/>
-<text x="1476" y="3441" font-size="9" fill="#666" text-anchor="end">VAC_IND</text>
-<text x="1476" y="3455" font-size="11" font-weight="600" text-anchor="end">SF-VAC_IND</text>
+<text x="1476" y="3441" font-size="9" fill="#666" text-anchor="end">VAC_CAST</text>
+<text x="1476" y="3455" font-size="11" font-weight="600" text-anchor="end">SF-VAC_CAST</text>
 <text x="1476" y="3473" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3506" x2="1061" y2="3506" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3506 1061,3502 1061,3510" fill="#111"/>
-<text x="1476" y="3487" font-size="9" fill="#666" text-anchor="end">VDF_SYN</text>
-<text x="1476" y="3501" font-size="11" font-weight="600" text-anchor="end">SF-VDF_SYN</text>
-<text x="1476" y="3519" font-size="10" text-anchor="end">0.5 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3487" font-size="9" fill="#666" text-anchor="end">VAC_IND</text>
+<text x="1476" y="3501" font-size="11" font-weight="600" text-anchor="end">SF-VAC_IND</text>
+<text x="1476" y="3519" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3552" x2="1061" y2="3552" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3552 1061,3548 1061,3556" fill="#111"/>
-<text x="1476" y="3533" font-size="9" fill="#666" text-anchor="end">WAFER_FAB</text>
-<text x="1476" y="3547" font-size="11" font-weight="600" text-anchor="end">SF-WAFER_FAB</text>
-<text x="1476" y="3565" font-size="10" text-anchor="end">0.4 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3533" font-size="9" fill="#666" text-anchor="end">VDF_SYN</text>
+<text x="1476" y="3547" font-size="11" font-weight="600" text-anchor="end">SF-VDF_SYN</text>
+<text x="1476" y="3565" font-size="10" text-anchor="end">0.5 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3598" x2="1061" y2="3598" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3598 1061,3594 1061,3602" fill="#111"/>
-<text x="1476" y="3579" font-size="9" fill="#666" text-anchor="end">WAX_PATTERN</text>
-<text x="1476" y="3593" font-size="11" font-weight="600" text-anchor="end">SF-WAX_PATTERN</text>
-<text x="1476" y="3611" font-size="10" text-anchor="end">0.5 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3579" font-size="9" fill="#666" text-anchor="end">WAFER_FAB</text>
+<text x="1476" y="3593" font-size="11" font-weight="600" text-anchor="end">SF-WAFER_FAB</text>
+<text x="1476" y="3611" font-size="10" text-anchor="end">0.4 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3644" x2="1061" y2="3644" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3644 1061,3640 1061,3648" fill="#111"/>
-<text x="1476" y="3625" font-size="9" fill="#666" text-anchor="end">WET_BENCH</text>
-<text x="1476" y="3639" font-size="11" font-weight="600" text-anchor="end">SF-WET_BENCH</text>
-<text x="1476" y="3657" font-size="10" text-anchor="end">0.2 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="3625" font-size="9" fill="#666" text-anchor="end">WAX_PATTERN</text>
+<text x="1476" y="3639" font-size="11" font-weight="600" text-anchor="end">SF-WAX_PATTERN</text>
+<text x="1476" y="3657" font-size="10" text-anchor="end">0.5 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="3690" x2="1061" y2="3690" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,3690 1061,3686 1061,3694" fill="#111"/>
-<text x="1476" y="3671" font-size="9" fill="#666" text-anchor="end">WIRE_DRAW</text>
-<text x="1476" y="3685" font-size="11" font-weight="600" text-anchor="end">SF-WIRE_DRAW</text>
-<text x="1476" y="3703" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
-<text x="24" y="3786" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="3796" font-size="9">Every incident graph edge is drawn: 9 in, 76 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
-<text x="24" y="3811" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/SOL_ARK_60K.csv.</text>
-<text x="24" y="3826" font-size="9">Nozzles with no matching graph edge (service text): N9 drain; N10 vent</text>
-<text x="24" y="3841" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
-<g id="aqs-title-block"><rect x="1116" y="3878" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
-<text x="1124" y="3895" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-SOL_ARK_60K</text>
-<text x="1124" y="3912" font-size="9">P&amp;ID SOL_ARK_60K (inverter, ELEC sector)</text>
-<text x="1124" y="3929" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 99e22f06   Issued 2026-10-19</text>
-<text x="1124" y="3946" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="3963" font-size="9">Graph SHA-256 54afe2b6ebc8b1f3   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1476" y="3671" font-size="9" fill="#666" text-anchor="end">WET_BENCH</text>
+<text x="1476" y="3685" font-size="11" font-weight="600" text-anchor="end">SF-WET_BENCH</text>
+<text x="1476" y="3703" font-size="10" text-anchor="end">0.2 kW · cable (schedule X-ELS-06)</text>
+<line x1="914" y1="3736" x2="1061" y2="3736" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
+<polygon points="1070,3736 1061,3732 1061,3740" fill="#111"/>
+<text x="1476" y="3717" font-size="9" fill="#666" text-anchor="end">WIRE_DRAW</text>
+<text x="1476" y="3731" font-size="11" font-weight="600" text-anchor="end">SF-WIRE_DRAW</text>
+<text x="1476" y="3749" font-size="10" text-anchor="end">0.0 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="3832" font-size="10" font-weight="600">Notes</text>
+<text x="24" y="3842" font-size="9">Every incident graph edge is drawn: 9 in, 77 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="3857" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/SOL_ARK_60K.csv.</text>
+<text x="24" y="3872" font-size="9">Nozzles with no matching graph edge (service text): N9 drain; N10 vent</text>
+<text x="24" y="3887" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="3924" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="3941" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-SOL_ARK_60K</text>
+<text x="1124" y="3958" font-size="9">P&amp;ID SOL_ARK_60K (inverter, ELEC sector)</text>
+<text x="1124" y="3975" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 8de45b6d   Issued 2026-10-19</text>
+<text x="1124" y="3992" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="4009" font-size="9">Graph SHA-256 dececea12380e60e   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

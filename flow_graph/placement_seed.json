@@ -1,7 +1,7 @@
 {
   "schema": "aqs-placement-table-1.0",
   "doc_id": "AQS-PLACE-SEED-001",
-  "revision": "M",
+  "revision": "N",
   "date": "2026-10-15",
   "source": "AQS-BLD-001 Rev F \u00a76 plus params.py SCALE_M=1.0 plus AQS-HSE-001. Block origins are not intra-aisle pitches. Unit rows below are the pitch pass.",
   "datums_mm": {
@@ -327,6 +327,126 @@
         "EXT_HALL"
       ],
       "source": "X-PAR-07 extension north of the base plate. NORTH_DOCK opens into it; a 6 m truck lane to the north wall is reserved (accepted 2026-10-15)."
+    },
+    {
+      "block_id": "FOUNDRY_E",
+      "level": "L-1",
+      "origin_mm": [
+        30000,
+        4000
+      ],
+      "size_mm": [
+        16000,
+        10000,
+        4500
+      ],
+      "source": "AQS-BLD-001 Rev N: the FOUNDRY_E block",
+      "unit_ids": [
+        "AL_POT",
+        "CAST_LINE",
+        "CA_POT",
+        "COMB_HEAT",
+        "CONT_CAST",
+        "CR_CELL",
+        "DRAW",
+        "EXTRUDE",
+        "FLUX_PREP",
+        "FORGE",
+        "IND_MELT",
+        "INV_CAST",
+        "METAL_STORE",
+        "MG_POT",
+        "MO_CELL",
+        "RES_HEAT",
+        "RF_HEAT",
+        "ROLL",
+        "SHELL_BREAK",
+        "SHELL_BUILD",
+        "SHELL_BURNOUT",
+        "SINTER",
+        "STOCK_OUT",
+        "TI_CELL",
+        "VAC_CAST",
+        "VAC_IND",
+        "WAX_PATTERN"
+      ]
+    },
+    {
+      "block_id": "POLY_MON",
+      "level": "L-1",
+      "origin_mm": [
+        30000,
+        15000
+      ],
+      "size_mm": [
+        8000,
+        6000,
+        4000
+      ],
+      "source": "AQS-BLD-001 Rev N: the POLY_MON block",
+      "unit_ids": [
+        "FILM_CAST",
+        "HF_GEN",
+        "PELLET",
+        "POLY_COND",
+        "POLY_F",
+        "POLY_OLEFIN",
+        "POLY_STOCK",
+        "POWDER_RESIN",
+        "TFE_SYN",
+        "VDF_SYN"
+      ]
+    },
+    {
+      "block_id": "GAS_SCRUB",
+      "level": "L-1",
+      "origin_mm": [
+        0,
+        19000
+      ],
+      "size_mm": [
+        8000,
+        6000,
+        4000
+      ],
+      "source": "AQS-BLD-001 Rev N: the GAS_SCRUB block",
+      "unit_ids": [
+        "ACID_POLISH_SCRUB",
+        "AFTERBURNER_FLUE",
+        "ALK_SCRUBBER",
+        "BAGHOUSE",
+        "H2_DRYER",
+        "HDR_H2",
+        "HDR_O2"
+      ]
+    },
+    {
+      "block_id": "DIGESTER_EXT",
+      "level": "L-1",
+      "origin_mm": [
+        22000,
+        21000
+      ],
+      "size_mm": [
+        6000,
+        5000,
+        4000
+      ],
+      "source": "AQS-BLD-001 Rev N: the DIGESTER_EXT block",
+      "unit_ids": [
+        "BMED_ACID",
+        "BMED_BASE",
+        "CRU",
+        "EVAP_ACID",
+        "EVAP_ACID_VS",
+        "EVAP_BASE",
+        "FLOAT_SINK",
+        "F_RECOVER",
+        "LI_RECOVER",
+        "POLISH_BANK",
+        "P_CA",
+        "SALT_FEED"
+      ]
     },
     {
       "block_id": "EXIT_PASSAGE_HALL",
@@ -2167,6 +2287,1506 @@
         1900
       ],
       "source": "A-M-429: bench-scale melt-spin line on the MFG floor, clear of MET_AHU (Y 0-1000) and the wet benches (Y 8000+)"
+    },
+    {
+      "unit_id": "ACID_POLISH_SCRUB",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        600,
+        0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        4103
+      ],
+      "source": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "ADS_CHILL",
+      "level": "L2",
+      "origin_mm": [
+        4600,
+        3600,
+        10800
+      ],
+      "size_mm": [
+        700,
+        500,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: ROOF grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "AFTERBURNER",
+      "level": "L-1",
+      "origin_mm": [
+        600,
+        12600,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "AFTERBURNER_FLUE",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "AIR_RECEIVER",
+      "level": "L-1",
+      "origin_mm": [
+        15600,
+        6600,
+        -6000
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "ALK_SCRUBBER",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        600,
+        0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        4103
+      ],
+      "source": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "AL_POT",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        600,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1600
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "ATMOS",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "BAGHOUSE",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "BMED_ACID",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "BMED_BASE",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CAST_LINE",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CA_POT",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        600,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1600
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "COLD_MILL",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "COMB_HEAT",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        600,
+        0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CONT_CAST",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CRU",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CRYO_AHU",
+      "level": "L-1",
+      "origin_mm": [
+        17800,
+        6600,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CRYO_ASU",
+      "level": "L-1",
+      "origin_mm": [
+        20000,
+        6600,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CRYO_CO2",
+      "level": "L-1",
+      "origin_mm": [
+        22200,
+        6600,
+        -6000
+      ],
+      "size_mm": [
+        6696,
+        1500,
+        450
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CRYO_DED_COOL",
+      "level": "L-1",
+      "origin_mm": [
+        15600,
+        8400,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CRYO_H2",
+      "level": "L-1",
+      "origin_mm": [
+        17800,
+        8400,
+        -6000
+      ],
+      "size_mm": [
+        6696,
+        1500,
+        900
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CRYO_N2",
+      "level": "L-1",
+      "origin_mm": [
+        20000,
+        8400,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CRYO_O2",
+      "level": "L-1",
+      "origin_mm": [
+        22200,
+        8400,
+        -6000
+      ],
+      "size_mm": [
+        6696,
+        1500,
+        600
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "CR_CELL",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        2400,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1600
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "DRAW",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "DRY_COOLER",
+      "level": "L2",
+      "origin_mm": [
+        6800,
+        3600,
+        10800
+      ],
+      "size_mm": [
+        1200,
+        600,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: ROOF grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "EVAP_ACID",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        600,
+        0
+      ],
+      "size_mm": [
+        1650,
+        1300,
+        3800
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "EVAP_ACID_VS",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        2400,
+        0
+      ],
+      "size_mm": [
+        400,
+        400,
+        1400
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "EVAP_BASE",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1250,
+        800,
+        3100
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "EXTRUDE",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "EXT_HALL",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "FILM_CAST",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "FLOAT_SINK",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "FLUX_PREP",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        4200,
+        0
+      ],
+      "size_mm": [
+        800,
+        600,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "FOOD_STORE",
+      "level": "L1",
+      "origin_mm": [
+        12600,
+        600,
+        6000
+      ],
+      "size_mm": [
+        650,
+        650,
+        750
+      ],
+      "source": "AQS-BLD-001 Rev N: FARM grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "FORGE",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        4200,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "F_RECOVER",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "GAS_ATOMIZER",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "GLASS_DIGEST",
+      "level": "L-1",
+      "origin_mm": [
+        2800,
+        12600,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "GREASE_CA",
+      "level": "L-1",
+      "origin_mm": [
+        5000,
+        12600,
+        -6000
+      ],
+      "size_mm": [
+        500,
+        400,
+        600
+      ],
+      "source": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "GREASE_LI",
+      "level": "L-1",
+      "origin_mm": [
+        7200,
+        12600,
+        -6000
+      ],
+      "size_mm": [
+        500,
+        400,
+        600
+      ],
+      "source": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "GROW_BED",
+      "level": "L1",
+      "origin_mm": [
+        14800,
+        600,
+        6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FARM grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "GW_INTAKE",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        2400,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        600
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "H2O_ELYZ",
+      "level": "L-1",
+      "origin_mm": [
+        15600,
+        10200,
+        -6000
+      ],
+      "size_mm": [
+        1800,
+        800,
+        1600
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "H2_DRYER",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        2400,
+        0
+      ],
+      "size_mm": [
+        600,
+        400,
+        1028
+      ],
+      "source": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "HABITATION",
+      "level": "L1",
+      "origin_mm": [
+        600,
+        600,
+        6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: HAB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "HDR_CO2",
+      "level": "L1",
+      "origin_mm": [
+        2800,
+        600,
+        6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: HAB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "HDR_H2",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "HDR_N2",
+      "level": "L1",
+      "origin_mm": [
+        5000,
+        600,
+        6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: HAB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "HDR_O2",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "HDR_UPW",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "HF_GEN",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        600,
+        0
+      ],
+      "size_mm": [
+        1200,
+        700,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "HOPPER",
+      "level": "L-1",
+      "origin_mm": [
+        600,
+        14400,
+        -6000
+      ],
+      "size_mm": [
+        600,
+        600,
+        600
+      ],
+      "source": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "HYDRO_SET",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "IND_MELT",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        4200,
+        0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "INV_CAST",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        4200,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "LI_RECOVER",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        4200,
+        0
+      ],
+      "size_mm": [
+        200,
+        200,
+        800
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "MAU_HX",
+      "level": "L2",
+      "origin_mm": [
+        9000,
+        3600,
+        10800
+      ],
+      "size_mm": [
+        600,
+        400,
+        400
+      ],
+      "source": "AQS-BLD-001 Rev N: ROOF grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "METAL_STORE",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        6000,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        950
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "MET_MELT",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "MET_SYN",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        4200,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "MFG_SHOP",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        4200,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "MG_POT",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        6000,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1600
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "MO_CELL",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        6000,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1600
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "NORTH_DOCK",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        4200,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "NUTRIENT_DOSE",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        4200,
+        0
+      ],
+      "size_mm": [
+        600,
+        600,
+        600
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "OIL_DRYER",
+      "level": "L-1",
+      "origin_mm": [
+        2800,
+        14400,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "OIL_FRAC",
+      "level": "L-1",
+      "origin_mm": [
+        5000,
+        14400,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "OIL_PYRO",
+      "level": "L-1",
+      "origin_mm": [
+        7200,
+        14400,
+        -6000
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "PELLET",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        600,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "POLISH_BANK",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        4200,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "POLY_COND",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        600,
+        0
+      ],
+      "size_mm": [
+        600,
+        600,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "POLY_F",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        2400,
+        0
+      ],
+      "size_mm": [
+        600,
+        600,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "POLY_OLEFIN",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        2400,
+        0
+      ],
+      "size_mm": [
+        600,
+        600,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "POLY_STOCK",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        2400,
+        0
+      ],
+      "size_mm": [
+        600,
+        400,
+        800
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "POWDER_RESIN",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        2400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "PROD_MEOH",
+      "level": "L-1",
+      "origin_mm": [
+        17800,
+        10200,
+        -6000
+      ],
+      "size_mm": [
+        1150,
+        1150,
+        1450
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "PROD_O2",
+      "level": "L-1",
+      "origin_mm": [
+        20000,
+        10200,
+        -6000
+      ],
+      "size_mm": [
+        1400,
+        1400,
+        1750
+      ],
+      "source": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "P_CA",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        4200,
+        0
+      ],
+      "size_mm": [
+        300,
+        300,
+        400
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "RES_HEAT",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        6000,
+        0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "RF_HEAT",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        7800,
+        0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "ROLL",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        7800,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "ROOF_TANK",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        6000,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "SALT_FEED",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        4200,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "SHELL_BREAK",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        7800,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "SHELL_BUILD",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        7800,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "SHELL_BURNOUT",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        9600,
+        0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "SINTER",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        9600,
+        0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "SI_REDUCE",
+      "level": "L-1",
+      "origin_mm": [
+        600,
+        16200,
+        -6000
+      ],
+      "size_mm": [
+        1200,
+        1000,
+        1600
+      ],
+      "source": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "STOCK_OUT",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        9600,
+        0
+      ],
+      "size_mm": [
+        1200,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "TFE_SYN",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        4200,
+        0
+      ],
+      "size_mm": [
+        600,
+        600,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "TI_CELL",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        9600,
+        0
+      ],
+      "size_mm": [
+        800,
+        800,
+        1600
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "VAC_CAST",
+      "level": "L0",
+      "origin_mm": [
+        12600,
+        11400,
+        0
+      ],
+      "size_mm": [
+        1500,
+        800,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "VAC_IND",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        11400,
+        0
+      ],
+      "size_mm": [
+        1000,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "VDF_SYN",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        4200,
+        0
+      ],
+      "size_mm": [
+        600,
+        600,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "WAFER_FAB",
+      "level": "L0",
+      "origin_mm": [
+        14800,
+        6000,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "WAX_PATTERN",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        11400,
+        0
+      ],
+      "size_mm": [
+        800,
+        600,
+        1200
+      ],
+      "source": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "WET_BENCH",
+      "level": "L0",
+      "origin_mm": [
+        17000,
+        6000,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+    },
+    {
+      "unit_id": "WIRE_DRAW",
+      "level": "L0",
+      "origin_mm": [
+        19200,
+        6000,
+        0
+      ],
+      "size_mm": [
+        1500,
+        1000,
+        1500
+      ],
+      "source": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
     }
   ],
   "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied.",
@@ -2179,5 +3799,6 @@
   "notes_rev_k": "2026-10-15, X-BLD-04. WS_AMMONIA to (15200, 15200) and WS_KOH to (16600, 15200): 6400 mm edge gap to WS_PEROX for incompatible separation (IFC 2027 5003.9.8, NFPA 400 6.1.12.1; AQS-BLD-011). EW aisle re-packed by flow_graph/place_ew_aisle.py with 914 mm between cells (NFPA 101 7.3.4.1.1) and 1219 mm round RECT_EW (NEC 110.26(A)(1) Condition 3); AQS-BLD-012. L1 hab rows ASH, IODIDE and MISTER (600 mm bed paths, no 914 mm face) left for review.",
   "notes_rev_k_farm": "2026-10-15, X-BLD-04 farm re-row: farm rows occupy x 10600..24000 on L1, west of the AQS-BLD-001 FARM/HAB line at x=12000; HAB rows displaced: ['COMPOST_TOILET']. 914 mm between farm rows (A-M-102).",
   "notes_rev_l": "2026-10-15, X-PAR-07: building grown to 186 x 174 m (31 x 29 bays of 6 m, conditioned extension) so the roof carries the full PV array; EXT_HALL_E/N blocks; PV_ARRAY on ROOF; ground field removed. Base-plate rows not moved: no sizing driver warrants it.",
-  "notes_rev_m": "2026-10-28 X-FARM/X-POLY: the 20 new units placed - the farm hall extends east to 32000 mm for the A-M-420 raceway; the hab rooms take the AQS-HAB-001 zoning inside the HAB block; POLY_FIBER sits on the MFG floor clear of the Q4 header and the wet benches. Every size traces to the unit task basis quoted in source; the routing stage (_placement_routes.py) consumes these centres through the A-M-074 rack rule."
+  "notes_rev_m": "2026-10-28 X-FARM/X-POLY: the 20 new units placed - the farm hall extends east to 32000 mm for the A-M-420 raceway; the hab rooms take the AQS-HAB-001 zoning inside the HAB block; POLY_FIBER sits on the MFG floor clear of the Q4 header and the wet benches. Every size traces to the unit task basis quoted in source; the routing stage (_placement_routes.py) consumes these centres through the A-M-074 rack rule.",
+  "notes_rev_n": "2026-10-28 X-PIP-03 placement pass: all 99 unplaced units placed. Four new blocks (FOUNDRY_E, POLY_MON, GAS_SCRUB, DIGESTER_EXT) + grid placements inside the existing blocks. Every piped line now has both ends placed: SUPPORTS, PIPE_SPECS and the insulation schedule return to full coverage."
 }

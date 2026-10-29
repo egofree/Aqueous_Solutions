@@ -62,7 +62,7 @@ Table 3.1. Sectors
 | WTR | Utility / header | true | true | 18 | grey-black-train, potable-upw-train |
 | ELEC | Utility / header | true | true | 10 | distribution-train, generation-train, storage-train |
 | HEAT | Utility / header | false | true | 13 | ladder-train |
-| MEOH | Energy Storage System (Electrochemical) | true | true | 5 | synthesis-train |
+| MEOH | Energy Storage System (Electrochemical) | true | true | 6 | synthesis-train |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | true | true | 1 | hydro-train |
 | GEO | Utility / header | false | true | 4 | ground-loop-train |
 | DOCK | Export / dock | true | true | 2 | boundary-train |

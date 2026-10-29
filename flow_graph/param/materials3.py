@@ -493,6 +493,13 @@ SEL_FARM = {
   'a 316L die plate if the FR-finish chemistry ever shows die corrosion',
   'the FR finish dosing skid is PP/PTFE-contact throughout.',
   'X-POLY-01'),
+ 'MET_SYN': (
+  'Borosilicate glass-lined reactor column, PTFE-lined transfer lines, SS304 reagent feed tanks, Hastelloy C crystalliser',
+  'the three-step Strecker carries HCN, acrolein and methanethiol - all aggressive at the reagent class (A-M-416): '
+  'glass-lined for the reaction column, PTFE for the transfer, Hastelloy C for the acidic hydrolysis/crystallisation',
+  'a tantalum reactor if the HCN service ever shows corrosion at the glass-lining pinholes',
+  'the crystalliser is the product-quality bottleneck: DL-Met crystal habit controls the filtration rate.',
+  'X-UI-002'),
  'GW_INTAKE': (
   'SS304 wellhead plate and discharge head, HDPE potable discharge line, submersible pump SS304/stainless stages',
   'potable groundwater contact (X-LOC-13 well head): 304 wetted at the chloride-light aquifer class, HDPE for the discharge run; the pump stages are the well-class stainless',

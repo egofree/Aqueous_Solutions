@@ -1,9 +1,12 @@
 {
  "hatch_mm": [
-  3870,
-  1320
+  7296,
+  2100
  ],
  "units_by_hatch": [
+  "CRYO_CO2",
+  "CRYO_H2",
+  "CRYO_O2",
   "EW_7",
   "EW_9"
  ]

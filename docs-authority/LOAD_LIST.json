@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "54afe2b6ebc8b1f35b2b1efd80ae699e1c0c46962a216b125ea2ff2f0b560ae6",
+  "graph_sha256": "dececea12380e60ec643451df5ba1e7462b11c846d9976fef91be7c72218117f",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 342.428,
-   "calc_kw": 342.428,
+   "kw": 342.628,
+   "calc_kw": 342.628,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 191.39,
-   "calc_kw": 191.39,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.4 kW, charge 869.9 kW, 2679 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 191.59,
+   "calc_kw": 191.59,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.6 kW, charge 870.8 kW, 2682 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -761,6 +761,15 @@
    "sector": "OIL"
   },
   {
+   "unit": "MET_SYN",
+   "role": "\u2014",
+   "kw": 0.2,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "MEOH"
+  },
+  {
    "unit": "DRY_COOLER",
    "role": "\u2014",
    "kw": 0.15,
@@ -916,18 +925,18 @@
  ],
  "summary": {
   "calculated": 78,
-  "pending": 10,
+  "pending": 11,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 101,
-  "graph_sum_kW": 152.72,
-  "calc_sum_kW": 152.72,
-  "connected_load_kW": 152.7,
+  "rows": 102,
+  "graph_sum_kW": 152.92,
+  "calc_sum_kW": 152.92,
+  "connected_load_kW": 152.9,
   "connected_calculated_kW": 151.3,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 1.4,
-  "connected_calculated_pct": 99.0,
+  "connected_study_kW": 1.6,
+  "connected_calculated_pct": 98.9,
   "by_sector": {
    "CRYO": {
     "calculated": 4
@@ -969,6 +978,7 @@
    "MEOH": {
     "calculated": 2,
     "owner-lock": 1,
+    "pending": 1,
     "null": 1
    },
    "MFG": {

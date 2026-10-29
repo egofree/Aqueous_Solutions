@@ -1,84 +1,25 @@
 {
  "site_id": "baseline",
- "placement_seed_revision": "M",
- "units_total": 214,
- "built": 140,
+ "placement_seed_revision": "N",
+ "units_total": 215,
+ "built": 200,
  "ghosts_eliminated": 0,
- "block_centre_massing": 40,
+ "block_centre_massing": 0,
  "unplaced": [
-  "ADS_CHILL",
-  "AIR_RECEIVER",
-  "AL_POT",
-  "ATMOS",
   "ATM_INT",
   "BRIN_RECOVER",
-  "CAST_LINE",
   "CAT_OX",
-  "CA_POT",
-  "COMB_HEAT",
-  "CONT_CAST",
-  "CRYO_ASU",
-  "CR_CELL",
   "DESAL_RO",
-  "DRAW",
-  "DRY_COOLER",
-  "EVAP_ACID",
-  "EVAP_ACID_VS",
-  "EVAP_BASE",
-  "EXTRUDE",
   "E_HEAT",
-  "FILM_CAST",
-  "FLUX_PREP",
-  "FOOD_STORE",
-  "FORGE",
-  "F_RECOVER",
-  "GREASE_CA",
-  "GREASE_LI",
-  "GW_INTAKE",
-  "H2O_ELYZ",
-  "HDR_CO2",
-  "HDR_N2",
-  "HF_GEN",
   "HYDRO_GROW",
   "ICE_EXTRACT",
-  "IND_MELT",
-  "INV_CAST",
   "LIO_BAT",
-  "LI_RECOVER",
-  "MAU_HX",
   "MEM_DIST",
-  "METAL_STORE",
-  "MG_POT",
-  "MO_CELL",
-  "PELLET",
   "PERC_REMOVE",
-  "POLY_COND",
-  "POLY_F",
-  "POLY_OLEFIN",
-  "POLY_STOCK",
-  "POWDER_RESIN",
-  "PROD_MEOH",
-  "PROD_O2",
-  "P_CA",
   "RAD_PANEL",
   "REC_HDR",
-  "RES_HEAT",
-  "RF_HEAT",
-  "ROLL",
-  "SHELL_BREAK",
-  "SHELL_BUILD",
-  "SHELL_BURNOUT",
-  "SINTER",
-  "SI_REDUCE",
-  "STOCK_OUT",
   "SW_INTAKE",
   "TANK_BLD",
-  "TFE_SYN",
-  "TI_CELL",
-  "VAC_CAST",
-  "VAC_IND",
-  "VDF_SYN",
-  "WAX_PATTERN",
   "WET_OX"
  ],
  "routed_note": "3D geometry is placement-model massing at sourced centres; detailed CAD remains models/freecad + models/mfg.",
@@ -98,51 +39,57 @@
   "L2": "LEVEL_L2.svg",
   "ROOF": "LEVEL_ROOF.svg"
  },
- "glb_units": 140,
+ "glb_units": 200,
  "errors": [],
  "units": [
   {
    "unit_id": "ACID_POLISH_SCRUB",
    "sector_id": "GAS",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of SCRUB (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "ADS_CHILL",
    "sector_id": "HEAT",
-   "status": "unplaced"
+   "level": "L2",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: ROOF grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "AFTERBURNER",
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "AFTERBURNER_FLUE",
    "sector_id": "GAS",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of SCRUB (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "AIR_RECEIVER",
    "sector_id": "CRYO",
-   "status": "unplaced"
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "ALK_SCRUBBER",
    "sector_id": "GAS",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of SCRUB (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "AL_POT",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "AQUA_TANK",
@@ -161,7 +108,9 @@
   {
    "unit_id": "ATMOS",
    "sector_id": "WTR",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "ATM_INT",
@@ -178,9 +127,9 @@
   {
    "unit_id": "BAGHOUSE",
    "sector_id": "GAS",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of SCRUB (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "BEE_HIVE",
@@ -213,16 +162,16 @@
   {
    "unit_id": "BMED_ACID",
    "sector_id": "DIGESTER",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of BMED_CRU (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "BMED_BASE",
    "sector_id": "DIGESTER",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of BMED_CRU (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "BMED_UPW_POLISH",
@@ -260,7 +209,9 @@
   {
    "unit_id": "CAST_LINE",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CATCH_TANK",
@@ -277,7 +228,9 @@
   {
    "unit_id": "CA_POT",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CHICKEN_COOP",
@@ -291,12 +244,14 @@
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of MFG (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "COMB_HEAT",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "COMMON_AREA",
@@ -315,21 +270,23 @@
   {
    "unit_id": "CONT_CAST",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CRU",
    "sector_id": "DIGESTER",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of BMED_CRU (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CRYO_AHU",
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of CRYO (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CRYO_AHU_COND_CONDENSABLE",
@@ -341,28 +298,30 @@
   {
    "unit_id": "CRYO_ASU",
    "sector_id": "CRYO",
-   "status": "unplaced"
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CRYO_CO2",
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of CRYO (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CRYO_DED_COOL",
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of CRYO (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CRYO_H2",
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of CRYO (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CRYO_HX_Q4",
@@ -376,19 +335,21 @@
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of CRYO (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CRYO_O2",
    "sector_id": "CRYO",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of CRYO (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "CR_CELL",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "DESAL_RO",
@@ -398,12 +359,16 @@
   {
    "unit_id": "DRAW",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "DRY_COOLER",
    "sector_id": "HEAT",
-   "status": "unplaced"
+   "level": "L2",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: ROOF grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "DUCKWEED",
@@ -429,17 +394,23 @@
   {
    "unit_id": "EVAP_ACID",
    "sector_id": "DIGESTER",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "EVAP_ACID_VS",
    "sector_id": "DIGESTER",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "EVAP_BASE",
    "sector_id": "DIGESTER",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "EW_1",
@@ -507,14 +478,16 @@
   {
    "unit_id": "EXTRUDE",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "EXT_HALL",
    "sector_id": "ELEC",
    "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of EXT_HALL_E (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "E_HEAT",
@@ -538,14 +511,16 @@
   {
    "unit_id": "FILM_CAST",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "FLOAT_SINK",
    "sector_id": "DIGESTER",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of LEACH_EW (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "FLUE_KO",
@@ -557,17 +532,23 @@
   {
    "unit_id": "FLUX_PREP",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "FOOD_STORE",
    "sector_id": "FARM",
-   "status": "unplaced"
+   "level": "L1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FARM grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "FORGE",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "FUEL_CELL",
@@ -579,7 +560,9 @@
   {
    "unit_id": "F_RECOVER",
    "sector_id": "DIGESTER",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "GALLEY",
@@ -593,7 +576,7 @@
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of MFG (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "GEO_GHEX",
@@ -635,7 +618,7 @@
    "sector_id": "GLASS",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "GLASS_MILL",
@@ -654,12 +637,16 @@
   {
    "unit_id": "GREASE_CA",
    "sector_id": "OIL",
-   "status": "unplaced"
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "GREASE_LI",
    "sector_id": "OIL",
-   "status": "unplaced"
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "GREY_TREAT",
@@ -687,74 +674,84 @@
    "sector_id": "FARM",
    "level": "L1",
    "status": "built",
-   "basis": "block-centre massing of FARM (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: FARM grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "GW_INTAKE",
    "sector_id": "WTR",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "H2O_ELYZ",
    "sector_id": "CRYO",
-   "status": "unplaced"
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "H2_DRYER",
    "sector_id": "GAS",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of SCRUB (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "HABITATION",
    "sector_id": "HAB",
    "level": "L1",
    "status": "built",
-   "basis": "block-centre massing of HAB (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: HAB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "HDR_CO2",
    "sector_id": "HAB",
-   "status": "unplaced"
+   "level": "L1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: HAB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "HDR_H2",
    "sector_id": "GAS",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of LEACH_EW (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "HDR_N2",
    "sector_id": "HAB",
-   "status": "unplaced"
+   "level": "L1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: HAB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "HDR_O2",
    "sector_id": "GAS",
-   "level": "L1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of LIFE_RACK (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: GAS_SCRUB grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "HDR_UPW",
    "sector_id": "WTR",
-   "level": "L1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of LIFE_RACK (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "HF_GEN",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "HOPPER",
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of LEACH_EW (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "HX8",
@@ -771,9 +768,9 @@
   {
    "unit_id": "HYDRO_SET",
    "sector_id": "PUMPED_HYDRO",
-   "level": "L-2",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of HYDRO (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "ICE_EXTRACT",
@@ -783,12 +780,16 @@
   {
    "unit_id": "IND_MELT",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "INV_CAST",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "LEACH_CSTR_1",
@@ -826,7 +827,9 @@
   {
    "unit_id": "LI_RECOVER",
    "sector_id": "DIGESTER",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "LOAD_AGG",
@@ -838,7 +841,9 @@
   {
    "unit_id": "MAU_HX",
    "sector_id": "HEAT",
-   "status": "unplaced"
+   "level": "L2",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: ROOF grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "MEDICAL",
@@ -890,7 +895,9 @@
   {
    "unit_id": "METAL_STORE",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "MET_AHU",
@@ -911,7 +918,7 @@
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of MFG (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "MET_SCRUB",
@@ -921,21 +928,32 @@
    "basis": "Downstream of MET_AHU. S71-S72 return. Not a flue into Q4."
   },
   {
+   "unit_id": "MET_SYN",
+   "sector_id": "MEOH",
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
+  },
+  {
    "unit_id": "MFG_SHOP",
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of MFG (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "MG_POT",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "MO_CELL",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "NCG_HEADER",
@@ -949,7 +967,7 @@
    "sector_id": "DOCK",
    "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of DOCK (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "NOX_SCRUB",
@@ -961,35 +979,37 @@
   {
    "unit_id": "NUTRIENT_DOSE",
    "sector_id": "NUT",
-   "level": "L1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of FARM (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "OIL_DRYER",
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "OIL_FRAC",
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "OIL_PYRO",
    "sector_id": "OIL",
    "level": "L-1",
    "status": "built",
-   "basis": "block-centre massing of OIL_GLASS (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "PELLET",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "PERC_REMOVE",
@@ -999,19 +1019,23 @@
   {
    "unit_id": "POLISH_BANK",
    "sector_id": "DIGESTER",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of BMED_CRU (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "POLY_COND",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "POLY_F",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "POLY_FIBER",
@@ -1023,17 +1047,23 @@
   {
    "unit_id": "POLY_OLEFIN",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "POLY_STOCK",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "POWDER_RESIN",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "PROD_C11_C18",
@@ -1066,12 +1096,16 @@
   {
    "unit_id": "PROD_MEOH",
    "sector_id": "CRYO",
-   "status": "unplaced"
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "PROD_O2",
    "sector_id": "CRYO",
-   "status": "unplaced"
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: CRYO grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "PV_ARRAY",
@@ -1083,7 +1117,9 @@
   {
    "unit_id": "P_CA",
    "sector_id": "DIGESTER",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "Q1_A",
@@ -1210,56 +1246,72 @@
   {
    "unit_id": "RES_HEAT",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "RF_HEAT",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "ROLL",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "ROOF_TANK",
    "sector_id": "WTR",
-   "level": "L2",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of ROOF (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "SALT_FEED",
    "sector_id": "DIGESTER",
-   "level": "L-1",
+   "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of BMED_CRU (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: DIGESTER_EXT grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "SHELL_BREAK",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "SHELL_BUILD",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "SHELL_BURNOUT",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "SINTER",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "SI_REDUCE",
    "sector_id": "GLASS",
-   "status": "unplaced"
+   "level": "L-1",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: OIL_GLASS grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "SLEEP_QUARTERS",
@@ -1285,7 +1337,9 @@
   {
    "unit_id": "STOCK_OUT",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "SW_INTAKE",
@@ -1300,22 +1354,30 @@
   {
    "unit_id": "TFE_SYN",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "TI_CELL",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "VAC_CAST",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "VAC_IND",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "VCD_TRAIN",
@@ -1327,7 +1389,9 @@
   {
    "unit_id": "VDF_SYN",
    "sector_id": "POLYMERS",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: POLY_MON grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "VERMI_BIN",
@@ -1341,7 +1405,7 @@
    "sector_id": "FAB",
    "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of FAB (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "WASHROOM",
@@ -1353,14 +1417,16 @@
   {
    "unit_id": "WAX_PATTERN",
    "sector_id": "FOUNDRY",
-   "status": "unplaced"
+   "level": "L0",
+   "status": "built",
+   "basis": "AQS-BLD-001 Rev N: FOUNDRY_E grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "WET_BENCH",
    "sector_id": "FAB",
    "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of FAB (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "WET_OX",
@@ -1372,7 +1438,7 @@
    "sector_id": "MFG",
    "level": "L0",
    "status": "built",
-   "basis": "block-centre massing of MFG (placement pending)"
+   "basis": "AQS-BLD-001 Rev N: MFG grid placement (X-PIP-03 placement pass)"
   },
   {
    "unit_id": "WS_AMMONIA",

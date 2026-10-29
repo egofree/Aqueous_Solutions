@@ -1390,4 +1390,6 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {TIR -- Temperature instrumentation recorder. The thermocouple-well melt-temperature loop on the spin line (POLY_FIBER).}
 {CP -- Crude protein. The feed-science protein measure, % of dry matter (FARM ration tables; A-M-420/426).}
 {UVT -- Ultraviolet intensity transmitter. The 254 nm dose watchdog on the loop sanitizer: lamp depletion or sleeve fouling decays its signal (AQUA_UV; A-M-428).}
+{HCN -- Hydrogen cyanide. The Strecker-step reagent for the DL-methionine synthesis (MET_SYN; A-M-416).}
+{MMP -- 3-(Methylthio)propanal. The Strecker-step aldehyde precursor: CH3SH + acrolein (MET_SYN; A-M-416).}
 {HDG -- Hot-dip galvanised steel. The zinc-coated structural class for livestock housing frames, wire floors and hardware cloth (CHICKEN_COOP, DUCK_PEN, QUAIL_CAGE, RABBIT_HUTCH).}

@@ -584,6 +584,11 @@
   "docnum": "AQS-DUTY-079",
   "family": "House scrubbers (flow_graph/param/house_scrubbers.py)"
  },
+ "MET_SYN": {
+  "doc": "docs-authority/sizing/REACTOR_DESIGN.md",
+  "docnum": "AQS-DUTY-062",
+  "family": "In-house reactors (flow_graph/param/reactor_design.py)"
+ },
  "MFG_SHOP": {
   "doc": "docs-authority/sizing/MFG_SHOP.md",
   "docnum": "AQS-SIZE-MFG_SHOP",

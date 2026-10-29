@@ -1,9 +1,9 @@
 # Isometric sheet data (no SVG: the isometric presentation retired 2026-10-27)
 
 Document number: AQS-ISO-002
-Status. 318 routed lines; waiting on placements 74. Pipe 5732 m, elbows 913, flanges 636, joints 2958.
+Status. 396 routed lines; waiting on placements 0. Pipe 7253 m, elbows 1147, flanges 792, joints 3706.
 
-Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev M); elbow take-off ASME B16.9 long-radius (metal) or 0.5 x OD (thermoplastic, A-M-121); 6 m random lengths; flanges at both nozzles; ASME B16.5 Class 150 bolting; OD ASME B36.10M. Not checked here: clashes with structure and other lines along the rack (X-PIP-04 with supports and stress).
+Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev N); elbow take-off ASME B16.9 long-radius (metal) or 0.5 x OD (thermoplastic, A-M-121); 6 m random lengths; flanges at both nozzles; ASME B16.5 Class 150 bolting; OD ASME B36.10M. Not checked here: clashes with structure and other lines along the rack (X-PIP-04 with supports and stress).
 
 ## Lines
 
@@ -127,12 +127,41 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev M); elbow 
 | S81 | MEOH_FC | MEOH_COND | 15 | M1 | 6.97 | 3 |
 | S82 | MEOH_FC | CRYO_CO2 | 15 | M1 | 29.22 | 3 |
 | S83 | CRYO_O2 | HDR_O2 | 15 | M1 | 27.17 | 3 |
+| S84 | CRYO_N2 | AIR_RECEIVER | 15 | M1 | 17.07 | 3 |
 | S85 | CRYO_CO2 | HDR_CO2 | 15 | M1 | 28.97 | 3 |
 | S86 | CRYO_AHU | RELIEF_CRYO | 15 | M1 | 15.17 | 3 |
 | S87 | GROW_BED | CRYO_O2 | 15 | M1 | 28.42 | 3 |
 | S88 | CRYO_N2 | GROW_BED | 15 | M1 | 26.12 | 3 |
 | S34 | WS_NITRIC | WET_BENCH | 15 | P3 | 12.59 | 3 |
 | S34B | WS_PHOS | WET_BENCH | 15 | P1 | 8.41 | 2 |
+| F_RECOVER_TO_HF_GEN | F_RECOVER | HF_GEN | 15 | P3 | 11.34 | 3 |
+| HF_GEN_TO_VDF | HF_GEN | VDF_SYN | 15 | P3 | 8.84 | 3 |
+| HF_GEN_TO_TFE | HF_GEN | TFE_SYN | 15 | P3 | 11.04 | 3 |
+| VDF_TO_POLY_F | VDF_SYN | POLY_F | 15 | — | 9.14 | 3 |
+| TFE_TO_POLY_F | TFE_SYN | POLY_F | 15 | — | 6.96 | 2 |
+| MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | 15 | P1 | 11.79 | 3 |
+| EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | 15 | P1 | 17.86 | 3 |
+| TI_CELL_CL2_TO_CRU | TI_CELL | CRU | 15 | P3 | 16.39 | 3 |
+| MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | 15 | P3 | 11.79 | 3 |
+| IND_MELT_TO_CAST | IND_MELT | CAST_LINE | 15 | — | 10.49 | 3 |
+| VAC_IND_TO_VAC_CAST | VAC_IND | VAC_CAST | 15 | — | 6.89 | 3 |
+| IND_TO_CONT | IND_MELT | CONT_CAST | 15 | — | 10.89 | 3 |
+| AL_POT_CL2 | AL_POT | CRU | 15 | P3 | 18.79 | 3 |
+| MG_POT_CL2 | MG_POT | CRU | 15 | P3 | 11.19 | 3 |
+| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | 15 | F1 | 11.89 | 3 |
+| IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | 15 | — | 4.29 | 3 |
+| IND_TO_INV | IND_MELT | INV_CAST | 15 | — | 7.39 | 3 |
+| VAC_TO_INV | VAC_IND | INV_CAST | 15 | — | 16.79 | 3 |
+| WAX_RECLAIM_TO_PATTERN | SHELL_BURNOUT | WAX_PATTERN | 15 | M2 | 10.72 | 3 |
+| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | 15 | M2 | 22.17 | 3 |
+| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | 15 | M2 | 27.12 | 3 |
+| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | 15 | M1 | 24.37 | 3 |
+| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | 15 | P1 | 28.39 | 3 |
+| CRU_TO_VDF | CRU | VDF_SYN | 15 | — | 8.79 | 3 |
+| CRU_TO_TFE | CRU | TFE_SYN | 15 | — | 10.99 | 3 |
+| POLISH_TO_LI | POLISH_BANK | LI_RECOVER | 15 | P1 | 11.19 | 3 |
+| WAX_TO_GREASE_CA | PROD_C19_C28 | GREASE_CA | 15 | M2 | 6.42 | 3 |
+| WAX_TO_GREASE_LI | PROD_C19_C28 | GREASE_LI | 15 | M2 | 8.62 | 3 |
 | CO2_TO_FARM | HDR_CO2 | GROW_BED | 15 | M1 | 24.92 | 3 |
 | FARM_O2_TO_HAB | GROW_BED | HABITATION | 15 | P3 | 14.51 | 2 |
 | HAB_CO2_TO_HDR | HABITATION | HDR_CO2 | 15 | P3 | 13.74 | 3 |
@@ -152,6 +181,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev M); elbow 
 | S90 | HABITATION | HDR_CO2 | 15 | P3 | 13.74 | 3 |
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | 50 | P2 | 22.87 | 3 |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | 15 | P2 | 19.39 | 3 |
+| HL-Q4-REJ | Q4_BUS | DRY_COOLER | 15 | M1 | 25.19 | 3 |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | 15 | P1 | 22.43 | 3 |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | 15 | P5 | 27.99 | 3 |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | 15 | P5 | 18.09 | 3 |
@@ -181,6 +211,9 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev M); elbow 
 | IA-GREY-RET | GREY_TREAT | ROOF_TANK | 15 | P1 | 26.49 | 3 |
 | IA-NUT-LEACH | NUTRIENT_DOSE | LEACH_CSTR_1 | 15 | P2 | 34.89 | 3 |
 | IA-FEED-01 | HOPPER | LEACH_CSTR_1 | 15 | P2 | 9.89 | 3 |
+| IA-DC-EVAP | DRY_COOLER | ATMOS | 15 | P1 | 24.54 | 3 |
+| IA-DC-SPRAY | ROOF_TANK | DRY_COOLER | 15 | P1 | 13.14 | 3 |
+| IA-GW-MAKEUP | GW_INTAKE | ROOF_TANK | 15 | P1 | 21.74 | 3 |
 | IA-POT-01 | REMIN | ROOF_TANK | 15 | P1 | 21.14 | 3 |
 | IA-UPW-HAB | HDR_UPW | HABITATION | 50 | P5 | 18.92 | 3 |
 | IA-BAG-01 | BAGHOUSE | LEACH_CSTR_1 | 50 | P2 | 31.52 | 3 |
@@ -191,6 +224,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev M); elbow 
 | IA-CULLET | LEACH_CSTR_1 | GLASS_RINSE | 50 | P2 | 12.72 | 3 |
 | IA-SCRUB-SRC | LEACH_CSTR_1 | ACID_POLISH_SCRUB | 50 | P2 | 31.12 | 3 |
 | IA-SIL-SRC | GLASS_DIGEST | WS_SLURRY | 50 | P4 | 23.72 | 3 |
+| IA-HF-SRC | LEACH_CSTR_1 | F_RECOVER | 50 | P3 | 27.82 | 3 |
 | IA-NH3-SRC | HDR_N2 | WS_AMMONIA | 50 | P1 | 29.87 | 3 |
 | IA-H2O2-SRC | HDR_O2 | WS_PEROX | 50 | P3 | 23.17 | 3 |
 | IA-NOX-H2O | NOX_SCRUB | ROOF_TANK | 50 | P2 | 32.32 | 3 |
@@ -259,47 +293,83 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev M); elbow 
 | IA-ASU-CO2 | CRYO_ASU | CRYO_CO2 | 15 | M1 | 23.22 | 3 |
 | IA-H2-AIR | H2_DRYER | CRYO_ASU | 15 | M1 | 21.02 | 3 |
 | IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | 50 | P2 | 14.07 | 3 |
+| IA-ELY-H2O | ROOF_TANK | H2O_ELYZ | 15 | P1 | 38.64 | 3 |
+| IA-ELY-H2 | H2O_ELYZ | CRYO_H2 | 15 | M1 | 6.27 | 3 |
+| IA-ELY-O2 | H2O_ELYZ | CRYO_O2 | 15 | M1 | 13.47 | 3 |
+| IA-O2-PROD | HDR_O2 | PROD_O2 | 15 | M1 | 36.2 | 3 |
+| IA-O2-SHIP | PROD_O2 | NORTH_DOCK | 15 | M1 | 23.3 | 3 |
 | IA-URINE | HABITATION | BLACK_DIGEST | 15 | P1 | 15.99 | 3 |
 | IA-BLK-NUT | BLACK_DIGEST | NUTRIENT_DOSE | 15 | P1 | 27.34 | 3 |
 | IA-BLK-GREY | BLACK_DIGEST | GREY_TREAT | 15 | P1 | 5.14 | 3 |
+| IA-MEOH-PROD | MEOH_TANK | PROD_MEOH | 15 | M1 | 39.7 | 3 |
+| IA-MEOH-SHIP | PROD_MEOH | NORTH_DOCK | 15 | M1 | 21.25 | 3 |
 | IA-EW3-H2B | EW_3 | HDR_H2 | 15 | P1 | 9.93 | 3 |
 | IA-EW5-H2B | EW_5 | HDR_H2 | 15 | P1 | 7.73 | 3 |
 | IA-EW6-H2B | EW_6 | HDR_H2 | 15 | P1 | 8.73 | 3 |
 | IA-EW7-H2B | EW_7 | HDR_H2 | 15 | P1 | 7.51 | 3 |
 | IA-EW8-H2B | EW_8 | HDR_H2 | 15 | P1 | 9.73 | 3 |
-| IA-EVAP_ACID-VENT | EVAP_ACID | EVAP_ACID_VS | 15 | P3 | 3.21 | 2 |
-| IA-VS-NAOH | BMED_BASE | EVAP_ACID_VS | 15 | P4 | 6.01 | 3 |
-| IA-VS-SPENT | EVAP_ACID_VS | BMED_ACID | 15 | P4 | 6.01 | 3 |
-| IA-VS-OFF | EVAP_ACID_VS | ALK_SCRUBBER | 15 | F1 | 15.01 | 3 |
+| IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | 15 | M2 | 53.67 | 3 |
+| IA-EVAP_ACID-VENT | EVAP_ACID | EVAP_ACID_VS | 15 | P3 | 12.21 | 3 |
+| IA-VS-NAOH | BMED_BASE | EVAP_ACID_VS | 15 | P4 | 13.09 | 3 |
+| IA-VS-SPENT | EVAP_ACID_VS | BMED_ACID | 15 | P4 | 17.49 | 3 |
+| IA-VS-OFF | EVAP_ACID_VS | ALK_SCRUBBER | 15 | F1 | 29.74 | 3 |
 | IA-H2P-H2O | H2_DRYER | VCD_TRAIN | 15 | P5 | 24.74 | 3 |
+| IA-AIR-RX-OUT | AIR_RECEIVER | HDR_N2 | 15 | P3 | 28.24 | 3 |
 | IA-SOLV-MU | NORTH_DOCK | WS_SOLV | 15 | M1 | 14.62 | 3 |
+| POLYF_TO_FILM | POLY_F | FILM_CAST | 15 | — | 7.14 | 3 |
+| IA-H2SO4-MU | NORTH_DOCK | HF_GEN | 15 | M2 | 27.87 | 3 |
+| IA-HF-PROD | HF_GEN | WS_HF_ED | 15 | P3 | 15.49 | 3 |
+| MEOH_TO_VDF | MEOH_TANK | VDF_SYN | 15 | M1 | 24.27 | 3 |
+| MEOH_TO_TFE | MEOH_TANK | TFE_SYN | 15 | M1 | 22.07 | 3 |
+| VDF_HCL_TO_CRU | VDF_SYN | CRU | 15 | — | 13.39 | 3 |
+| TFE_HCL_TO_CRU | TFE_SYN | CRU | 15 | — | 15.59 | 3 |
+| POLYF_RECLAIM | POLY_F | F_RECOVER | 15 | — | 12.24 | 3 |
+| FLUORO_TO_MFG | POLY_STOCK | MFG_SHOP | 15 | — | 5.54 | 3 |
+| IA-CL2-SHIP | AL_POT | NORTH_DOCK | 15 | P3 | 25.54 | 3 |
+| IA-MGCL2-KROLL | TI_CELL | MG_POT | 15 | — | 12.74 | 3 |
+| IA-MGCL2-MU | NORTH_DOCK | MG_POT | 15 | — | 22.34 | 3 |
+| IA-CL2-MG-TI | MG_POT | TI_CELL | 15 | P3 | 12.74 | 3 |
+| IA-CACL2-MU | NORTH_DOCK | CA_POT | 15 | — | 29.94 | 3 |
+| IA-CA-CL2-SHIP | CA_POT | NORTH_DOCK | 15 | P3 | 29.94 | 3 |
+| IA-KROLL-CO | TI_CELL | NORTH_DOCK | 15 | P3 | 23.14 | 3 |
+| IA-MO-VENT | MO_CELL | NORTH_DOCK | 15 | P3 | 24.54 | 3 |
+| IA-CR-VENT | CR_CELL | NORTH_DOCK | 15 | P3 | 25.94 | 3 |
+| IA-BURNOUT-VENT | SHELL_BURNOUT | NORTH_DOCK | 15 | P3 | 16.59 | 3 |
 | AQUA_LOOP1 | AQUA_TANK | BIOFILTER | 15 | P1 | 20.79 | 3 |
 | AQUA_NUT | BIOFILTER | AQUA_UV | 15 | P1 | 24.24 | 3 |
 | AQUA_LOOP3 | GROWBED_A | GROWBED_B | 15 | P1 | 9.56 | 2 |
 | IA-CHICK-H2O | ROOF_TANK | CHICKEN_COOP | 15 | P1 | 23.59 | 3 |
+| EGG_HARVEST | CHICKEN_COOP | FOOD_STORE | 15 | P1 | 22.81 | 3 |
 | CHICK_MANURE | CHICKEN_COOP | BSFL_BIN | 15 | P1 | 9.74 | 3 |
 | CHICK_VAP | CHICKEN_COOP | CRYO_AHU | 15 | P1 | 23.09 | 3 |
 | FISH_SLUDGE | AQUA_TANK | BSFL_BIN | 15 | P1 | 7.74 | 3 |
 | FRASS | BSFL_BIN | HOPPER | 15 | P1 | 21.74 | 3 |
 | BSFL_VAP | BSFL_BIN | CRYO_AHU | 15 | P1 | 18.99 | 3 |
+| FOOD_GALLEY | FOOD_STORE | GALLEY | 15 | P1 | 22.26 | 3 |
 | GALLEY_MEALS | GALLEY | HABITATION | 15 | P5 | 18.04 | 3 |
 | GALLEY_BIO | GALLEY | BSFL_BIN | 15 | P1 | 26.89 | 3 |
 | WASH_GREY | WASHROOM | GREY_TREAT | 15 | P1 | 10.09 | 3 |
+| FISH_HARVEST | AQUA_TANK | FOOD_STORE | 15 | P1 | 16.21 | 3 |
 | IA-AQUA-TOPUP | ROOF_TANK | AQUA_TANK | 15 | P1 | 16.99 | 3 |
 | IA-DUCK-H2O | ROOF_TANK | DUCK_PEN | 15 | P1 | 26.49 | 3 |
 | IA-WASH-FEED | ROOF_TANK | WASHROOM | 15 | P1 | 28.64 | 3 |
 | AQUA_LOOP4 | GROWBED_B | DUCKWEED | 15 | P1 | 33.94 | 3 |
 | AQUA_RETURN2 | DUCKWEED | AQUA_TANK | 15 | P1 | 40.99 | 3 |
 | DUCK_FISH | DUCKWEED | AQUA_TANK | 15 | P1 | 40.99 | 3 |
+| FOOD_HAB | FOOD_STORE | HABITATION | 15 | P5 | 19.36 | 3 |
+| DUCK_EGGS | DUCK_PEN | FOOD_STORE | 15 | P1 | 25.71 | 3 |
 | DUCK_MANURE | DUCK_PEN | BSFL_BIN | 15 | P1 | 12.64 | 3 |
 | DUCK_VAP | DUCK_PEN | CRYO_AHU | 15 | P1 | 25.99 | 3 |
 | QUAIL_H2O | ROOF_TANK | QUAIL_CAGE | 15 | P1 | 27.99 | 3 |
+| QUAIL_EGGS | QUAIL_CAGE | FOOD_STORE | 15 | P1 | 27.21 | 3 |
 | QUAIL_DROP | QUAIL_CAGE | VERMI_BIN | 15 | P1 | 9.89 | 3 |
 | QUAIL_VAP | QUAIL_CAGE | CRYO_AHU | 15 | P1 | 27.49 | 3 |
 | RABBIT_FORAGE | GROW_BED | RABBIT_HUTCH | 15 | P5 | 18.99 | 3 |
+| RABBIT_MEAT | RABBIT_HUTCH | FOOD_STORE | 15 | P1 | 28.96 | 3 |
 | RABBIT_MANURE | RABBIT_HUTCH | GROWBED_B | 15 | P1 | 9.94 | 3 |
 | RABBIT_VAP | RABBIT_HUTCH | CRYO_AHU | 15 | P1 | 29.24 | 3 |
 | NECTAR_FORAGE | GROW_BED | BEE_HIVE | 15 | P5 | 20.49 | 3 |
+| HONEY | BEE_HIVE | FOOD_STORE | 15 | P1 | 30.46 | 3 |
 | BEE_VAP | BEE_HIVE | CRYO_AHU | 15 | P1 | 30.74 | 3 |
 | VERMI_FEED | GROW_BED | VERMI_BIN | 15 | P5 | 22.49 | 3 |
 | VERMICOMPOST | VERMI_BIN | GROWBED_A | 15 | M1 | 16.97 | 3 |
@@ -310,6 +380,7 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev M); elbow 
 | EGGSHELL_RET | GALLEY | FEED_PREP | 15 | P1 | 28.39 | 3 |
 | LAYER_FEED | FEED_PREP | CHICKEN_COOP | 15 | P1 | 7.24 | 3 |
 | QUAIL_RATION | FEED_PREP | QUAIL_CAGE | 15 | P1 | 11.84 | 3 |
+| DUCK_STORE | FEED_PREP | FOOD_STORE | 15 | P1 | 20.21 | 3 |
 | FORM_REJECT | FEED_PREP | BSFL_BIN | 15 | P1 | 7.16 | 2 |
 | FORM_VAP | FEED_PREP | CRYO_AHU | 15 | P1 | 20.49 | 3 |
 | DUCK_GREENS | DUCKWEED | GALLEY | 15 | P1 | 42.24 | 3 |
@@ -318,88 +389,19 @@ Basis: the AQS-ISO-001 Rev B route rule over the placement model (Rev M); elbow 
 | LARVAE_FRESH | BSFL_BIN | FEED_PREP | 15 | P1 | 7.16 | 2 |
 | DUCK_RATION | FEED_PREP | DUCK_PEN | 15 | P1 | 10.14 | 3 |
 | FORM_PRESS | FEED_PREP | GROWBED_B | 15 | P1 | 12.49 | 3 |
+| BED_GREENS | GROWBED_B | FOOD_STORE | 15 | P1 | 24.86 | 3 |
 | BED_ET | GROWBED_B | CRYO_AHU | 15 | P1 | 25.14 | 3 |
 | NUT_AQUA | NORTH_DOCK | DUCKWEED | 15 | P1 | 51.94 | 3 |
 | NUT_AQUA_BED | NORTH_DOCK | GROWBED_B | 15 | P1 | 23.84 | 3 |
 | CA_HOPPER | NORTH_DOCK | QUAIL_CAGE | 15 | P1 | 23.19 | 3 |
+| FOOD_EXPORT | FOOD_STORE | BOUNDARY_EXPORT | 15 | P1 | 31.16 | 3 |
 | GAL_GREY | GALLEY | GREY_TREAT | 15 | P1 | 7.01 | 2 |
+| STOCK_TO_FIBER | POLY_STOCK | POLY_FIBER | 15 | — | 9.59 | 3 |
 | FR_FINISH | NORTH_DOCK | POLY_FIBER | 15 | P1 | 23.49 | 3 |
 | FIBER_SCRAP | POLY_FIBER | LEACH_CSTR_1 | 15 | P2 | 25.09 | 3 |
 | FLEECE_TO_MFG | POLY_FIBER | MFG_SHOP | 15 | P1 | 7.49 | 3 |
 | TEXTILE_HAB | MFG_SHOP | HABITATION | 15 | P5 | 22.64 | 3 |
-
-Waiting on placements:
-- S84 (AIR_RECEIVER unplaced)
-- F_RECOVER_TO_HF_GEN (F_RECOVER unplaced)
-- HF_GEN_TO_VDF (HF_GEN unplaced)
-- HF_GEN_TO_TFE (HF_GEN unplaced)
-- VDF_TO_POLY_F (VDF_SYN unplaced)
-- TFE_TO_POLY_F (TFE_SYN unplaced)
-- MO_CELL_RAFFINATE (MO_CELL unplaced)
-- EW9_LIQUOR_TO_MO (MO_CELL unplaced)
-- TI_CELL_CL2_TO_CRU (TI_CELL unplaced)
-- MO_CELL_ANODE_GAS_TO_CRU (MO_CELL unplaced)
-- IND_MELT_TO_CAST (IND_MELT unplaced)
-- VAC_IND_TO_VAC_CAST (VAC_IND unplaced)
-- IND_TO_CONT (IND_MELT unplaced)
-- AL_POT_CL2 (AL_POT unplaced)
-- MG_POT_CL2 (MG_POT unplaced)
-- COMB_OFFGAS (COMB_HEAT unplaced)
-- IND_TO_ATOM (IND_MELT unplaced)
-- IND_TO_INV (IND_MELT unplaced)
-- VAC_TO_INV (VAC_IND unplaced)
-- WAX_RECLAIM_TO_PATTERN (SHELL_BURNOUT unplaced)
-- WAX_TO_OIL (SHELL_BURNOUT unplaced)
-- OIL_TO_OLEFIN (POLY_OLEFIN unplaced)
-- MEOH_TO_OLEFIN (POLY_OLEFIN unplaced)
-- DIGEST_TO_POLY (POLY_COND unplaced)
-- CRU_TO_VDF (VDF_SYN unplaced)
-- CRU_TO_TFE (TFE_SYN unplaced)
-- POLISH_TO_LI (LI_RECOVER unplaced)
-- WAX_TO_GREASE_CA (GREASE_CA unplaced)
-- WAX_TO_GREASE_LI (GREASE_LI unplaced)
-- HL-Q4-REJ (DRY_COOLER unplaced)
-- IA-DC-EVAP (DRY_COOLER unplaced)
-- IA-DC-SPRAY (DRY_COOLER unplaced)
-- IA-GW-MAKEUP (GW_INTAKE unplaced)
-- IA-HF-SRC (F_RECOVER unplaced)
-- IA-ELY-H2O (H2O_ELYZ unplaced)
-- IA-ELY-H2 (H2O_ELYZ unplaced)
-- IA-ELY-O2 (H2O_ELYZ unplaced)
-- IA-O2-PROD (PROD_O2 unplaced)
-- IA-O2-SHIP (PROD_O2 unplaced)
-- IA-MEOH-PROD (PROD_MEOH unplaced)
-- IA-MEOH-SHIP (PROD_MEOH unplaced)
-- IA-C5-POLY (POLY_OLEFIN unplaced)
-- IA-AIR-RX-OUT (AIR_RECEIVER unplaced)
-- POLYF_TO_FILM (POLY_F unplaced)
-- IA-H2SO4-MU (HF_GEN unplaced)
-- IA-HF-PROD (HF_GEN unplaced)
-- MEOH_TO_VDF (VDF_SYN unplaced)
-- MEOH_TO_TFE (TFE_SYN unplaced)
-- VDF_HCL_TO_CRU (VDF_SYN unplaced)
-- TFE_HCL_TO_CRU (TFE_SYN unplaced)
-- POLYF_RECLAIM (POLY_F unplaced)
-- FLUORO_TO_MFG (POLY_STOCK unplaced)
-- IA-CL2-SHIP (AL_POT unplaced)
-- IA-MGCL2-KROLL (TI_CELL unplaced)
-- IA-MGCL2-MU (MG_POT unplaced)
-- IA-CL2-MG-TI (MG_POT unplaced)
-- IA-CACL2-MU (CA_POT unplaced)
-- IA-CA-CL2-SHIP (CA_POT unplaced)
-- IA-KROLL-CO (TI_CELL unplaced)
-- IA-MO-VENT (MO_CELL unplaced)
-- IA-CR-VENT (CR_CELL unplaced)
-- IA-BURNOUT-VENT (SHELL_BURNOUT unplaced)
-- EGG_HARVEST (FOOD_STORE unplaced)
-- FOOD_GALLEY (FOOD_STORE unplaced)
-- FISH_HARVEST (FOOD_STORE unplaced)
-- FOOD_HAB (FOOD_STORE unplaced)
-- DUCK_EGGS (FOOD_STORE unplaced)
-- QUAIL_EGGS (FOOD_STORE unplaced)
-- RABBIT_MEAT (FOOD_STORE unplaced)
-- HONEY (FOOD_STORE unplaced)
-- DUCK_STORE (FOOD_STORE unplaced)
-- BED_GREENS (FOOD_STORE unplaced)
-- FOOD_EXPORT (FOOD_STORE unplaced)
-- STOCK_TO_FIBER (POLY_STOCK unplaced)
+| IA-MEOH-CH3SH | MEOH_SYNTH | MET_SYN | 15 | M1 | 24.47 | 3 |
+| IA-H2S-CH3SH | BLACK_DIGEST | MET_SYN | 15 | P1 | 25.89 | 3 |
+| IA-NH3-MET | WS_AMMONIA | MET_SYN | 15 | P1 | 12.39 | 3 |
+| DL_MET_TO_FEED | MET_SYN | CHICKEN_COOP | 15 | P1 | 17.29 | 3 |

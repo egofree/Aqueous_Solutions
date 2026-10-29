@@ -9,24 +9,24 @@ Order: process systems first, utilities last (reverse of AQS-COM-001), so power,
 
 | Step | System | Units | Drain (t) | Chemicals drained | Purge | Dismantled (t) |
 |---|---|---|---|---|---|---|
-| 1 | POLYMERS | 11 | 0.00 | C5-C10 | - | 1.15 |
-| 2 | FOUNDRY | 27 | 0.00 |  | - | 0.00 |
-| 3 | FAB | 16 | 2.77 | Ar, Fe, HCl, N2, O2, other_metals, solute | N2/air to 19.5-23.5 % O2; air purge | 1.75 |
-| 4 | MFG | 10 | 0.00 | Cu, Pb/Sn/Ni/Cd/Zn, blend, hydrocarbon, metal, solute | N2 to < 25 % LFL | 2.00 |
-| 5 | HAB | 7 | 0.00 | solute | - | 25.20 |
-| 6 | FARM | 16 | 0.00 | CO2 | - | 7.65 |
+| 1 | POLYMERS | 11 | 2.99 | C5-C10 | - | 2.50 |
+| 2 | FOUNDRY | 27 | 5.01 |  | - | 5.68 |
+| 3 | FAB | 16 | 5.58 | Ar, Fe, HCl, N2, O2, other_metals, solute | N2/air to 19.5-23.5 % O2; air purge | 2.42 |
+| 4 | MFG | 10 | 1.41 | Cu, Pb/Sn/Ni/Cd/Zn, blend, hydrocarbon, metal, solute | N2 to < 25 % LFL | 2.65 |
+| 5 | HAB | 7 | 1.41 | solute | - | 25.54 |
+| 6 | FARM | 16 | 1.41 | CO2 | - | 8.04 |
 | 7 | NUT | 1 | 0.14 | Fe, HCl, other_metals | air purge | 0.03 |
-| 8 | GLASS | 5 | 0.00 | Fe, HCl, other_metals, solute | air purge | 0.23 |
-| 9 | OIL | 12 | 0.32 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2; air purge | 0.20 |
-| 10 | MEOH | 5 | 1.94 | Ar, CO2, Fe, HCl, O2, other_metals, solute | N2/air to 19.5-23.5 % O2 | 1.22 |
-| 11 | DIGESTER | 24 | 14.17 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals … | N2/air to 19.5-23.5 % O2; air purge | 3.73 |
+| 8 | GLASS | 5 | 1.41 | Fe, HCl, other_metals, solute | air purge | 0.86 |
+| 9 | OIL | 12 | 3.28 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2; air purge | 1.44 |
+| 10 | MEOH | 6 | 1.94 | Ar, CO2, Fe, HCl, O2, other_metals, solute | N2/air to 19.5-23.5 % O2 | 1.56 |
+| 11 | DIGESTER | 24 | 21.36 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals … | N2/air to 19.5-23.5 % O2; air purge | 5.83 |
 | 12 | GEO | 3 | 0.00 |  | - | 0.46 |
-| 13 | CRYO | 14 | 0.00 | Ar, CH3OH, CO2, H2, N2, O2, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2 | 10.78 |
-| 14 | GAS | 8 | 0.29 | Fe, HCl, N2, other_metals, solute | air purge | 1.65 |
-| 15 | HEAT | 11 | 0.00 |  | - | 0.92 |
-| 16 | WTR | 8 | 2222.68 | Fe, HCl, other_metals, solids, solute | air purge | 142.93 |
-| 17 | PUMPED_HYDRO | 1 | 0.00 |  | - | 0.17 |
+| 13 | CRYO | 14 | 2.64 | Ar, CH3OH, CO2, H2, N2, O2, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2 | 12.55 |
+| 14 | GAS | 8 | 0.29 | Fe, HCl, N2, other_metals, solute | air purge | 2.13 |
+| 15 | HEAT | 11 | 0.00 |  | - | 1.13 |
+| 16 | WTR | 8 | 2224.09 | Fe, HCl, other_metals, solids, solute | air purge | 143.08 |
+| 17 | PUMPED_HYDRO | 1 | 0.00 |  | - | 0.34 |
 | 18 | ELEC | 8 | 4.16 | Ar, Fe, HCl, N2, O2, other_metals | N2/air to 19.5-23.5 % O2; air purge | 529.89 |
 
-Totals: drain 2246.5 t, dismantle 730.0 t (equipment; building and water tower excluded). Liquids go to the plant's own recovery units while they still run (acid to HCl regeneration, metal liquor to EW), else to licensed treatment. Per unit: `docs-authority/inventory/DECOMMISSIONING.csv`.
+Totals: drain 2277.1 t, dismantle 746.1 t (equipment; building and water tower excluded). Liquids go to the plant's own recovery units while they still run (acid to HCl regeneration, metal liquor to EW), else to licensed treatment. Per unit: `docs-authority/inventory/DECOMMISSIONING.csv`.
 Last steps: H2/O2/CO2 banks drawn down into process use first, the rest vented at controlled rate through the relief headers (AQS-SAF-004) and N2 purged; ZnBr2 electrolyte drained to sealed drums for return (AQS-END-002); water tower drawn down last and kept for fire cover until the end.

@@ -931,6 +931,9 @@ nodes:
   - id: MEOH.synthesis-train.MEOH_SYNTH
     parent: MEOH.synthesis-train
     unit_id: MEOH_SYNTH
+  - id: MEOH.synthesis-train.MET_SYN
+    parent: MEOH.synthesis-train
+    unit_id: MET_SYN
   - id: MEOH.synthesis-train.MEOH_FERM
     parent: MEOH.synthesis-train
     unit_id: MEOH_FERM

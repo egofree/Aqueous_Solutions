@@ -194,6 +194,7 @@
   "MEOH_FC": "no issued internals basis for a iem_fc unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "MEOH_FERM": "no issued internals basis for a ferment unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "MET_HX_Q4": "no issued internals basis for a hx unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
+  "MET_SYN": "no issued internals basis for a chemical_synthesis unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "OIL_DRYER": "no issued internals basis for a dryer unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "OIL_FRAC": "no issued internals basis for a frac unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "OIL_PYRO": "no issued internals basis for a pyro unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
@@ -218,5 +219,5 @@
   "WET_OX": "no issued internals basis for a wet_ox unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "ZNBR2": "no issued internals basis for a flow_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)"
  },
- "units": 213
+ "units": 214
 }

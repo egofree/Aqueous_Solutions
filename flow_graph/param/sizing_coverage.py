@@ -28,7 +28,7 @@ FAMILIES = [
     ('docs-authority/sizing/POLYMERS_LINE.md', 'AQS-DUTY-073', 'POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)',
      ['FILM_CAST', 'HF_GEN', 'PELLET', 'POLY_COND', 'POLY_F', 'POLY_FIBER', 'POLY_OLEFIN', 'POLY_STOCK', 'POWDER_RESIN', 'TFE_SYN', 'VDF_SYN']),
     ('docs-authority/sizing/REACTOR_DESIGN.md', 'AQS-DUTY-062', 'In-house reactors (flow_graph/param/reactor_design.py)',
-     ['GLASS_DIGEST', 'OIL_PYRO', 'MEOH_SYNTH', 'MEOH_FERM']),
+     ['GLASS_DIGEST', 'OIL_PYRO', 'MEOH_SYNTH', 'MEOH_FERM', 'MET_SYN']),
     ('docs-authority/sizing/EVAP_DESIGN.md', 'AQS-DUTY-060', 'MVR evaporators (flow_graph/param/evap_design.py)', ['EVAP_ACID', 'EVAP_BASE']),
     ('docs-authority/sizing/COLD_BOX.md', 'AQS-DUTY-069', 'Micro cold box (flow_graph/param/cold_box.py)', ['CRYO_ASU']),
     ('docs-authority/sizing/GAS_RECEIVERS.md', 'AQS-DUTY-065', 'Gas receiver banks (flow_graph/param/receivers.py)', ['CRYO_H2', 'CRYO_O2', 'CRYO_CO2']),
