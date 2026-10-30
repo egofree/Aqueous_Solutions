@@ -420,6 +420,9 @@ def apply(g=None, write=False):
     mk('IA-SHELL-EXPORT', 'SHELL_BREAK', 'NORTH_DOCK', 'DOCK', 'S', 'spent foundry silica (solids return class)',
        s['sh_mu'], f'Spent-shell balance = the 0.5 kg/kg-casting make-up (AQS-SIZE-FOUNDRY registered waste line; '
        f'A-M-286); GLASS_MILL has no digest capacity (A-M-267). | {TAG}.')
+    # bench solvent made on site, recovery first (A-M-428); takes its CO from IA-KROLL-CO rated above
+    from . import solvent as _SV
+    _SV.tf(g, E, s['d'])
     # recovery-first records (owner rule t61u, A-M-423; checked by flow_graph/param/recovery.py)
     from .recovery import frac as _fr
     _v = lambda k: float(E[k]['rate']['value'] or 0)

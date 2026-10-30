@@ -100,6 +100,7 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | WIRE_DRAW | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | BMED_UPW_POLISH | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | POWDER_RESIN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | SOLV_PLANT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_DEV | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_ALIGN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_STUB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |

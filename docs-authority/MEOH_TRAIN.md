@@ -27,7 +27,7 @@ This page describes how the plant makes, stores, uses and ships methanol. It cov
 
 ## 3. Storage, use and product
 
-`MEOH_TANK` holds the methanol from both sources. It feeds the methanol fuel cell `MEOH_FC` with 6.28 kg/d, supplies methanol as a carbon source to the fluoropolymer syntheses `VDF_SYN` and `TFE_SYN`, and sends the remainder to the product store `PROD_MEOH`. The product, 28.03 kg/d, is shipped at the north dock, so the carbon leaves the plant as product rather than as a vent.
+`MEOH_TANK` holds the methanol from both sources. It feeds the methanol fuel cell `MEOH_FC` with 6.28 kg/d, supplies methanol as a carbon source to the fluoropolymer syntheses `VDF_SYN` and `TFE_SYN`, and sends the remainder to the product store `PROD_MEOH`. The product, 28.01 kg/d, is shipped at the north dock, so the carbon leaves the plant as product rather than as a vent.
 `MEOH_FC` has a continuous output of 1.0 kW. It feeds direct current to the battery side of the inverters `SOL_ARK_60K` (stream S79), alongside the hydrogen fuel cell, and its heat to the Q4 header `Q4_BUS` (stream S80). Its carbon dioxide returns to `CRYO_CO2` (stream S82) and its condensate to `MEOH_COND` (stream S81). It never feeds the generator port of the inverters or a rectifier bus.
 `MEOH_COND` condenses the water from the synthesis and the fuel cell and returns it to the water tower `ROOF_TANK`.
 
@@ -49,6 +49,7 @@ Table 4.1. Methanol train streams
 | IA-MEOH-PROD | `MEOH_TANK` | `PROD_MEOH` | methanol product | 28 kg/d |
 | IA-MEOH-REST | `MEOH_TANK` | `MEOH_FC` | tank draw | 1.28 kg/d |
 | IA-MEOH-SHIP | `PROD_MEOH` | `NORTH_DOCK` | methanol shipped at the dock | 28 kg/d |
+| IA-SOLV-MEOH | `MEOH_TANK` | `SOLV_PLANT` | plant methanol for the carbonylation | 0.0205 kg/d |
 | MEOH_TO_OLEFIN | `MEOH_SYNTH` | `POLY_OLEFIN` | methanol co-feed | 0 kg/d |
 | MEOH_TO_TFE | `MEOH_TANK` | `TFE_SYN` | methanol carbon source to TFE | 0.0641 kg/d |
 | MEOH_TO_VDF | `MEOH_TANK` | `VDF_SYN` | methanol carbon source to VDF | 0.15 kg/d |

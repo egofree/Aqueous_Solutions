@@ -42,8 +42,9 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 3,FAB,LITHO_COAT,0,Si solute,-,36,no
 3,FAB,LITHO_DEV,0,Si solute,-,30,no
 3,FAB,SOLAR_PV_CELL,0,solute,-,691,no
+3,FAB,SOLV_PLANT,0,CH3OH CO H2 acetone ethanol,"N2 to < 25 % LFL, then < 1 % H2",0,no
 3,FAB,WAFER_FAB,0,Ar N2 Si solute,-,0,no
-3,FAB,WET_BENCH,0,solute,-,0,no
+3,FAB,WET_BENCH,0,acetone ethanol,-,0,no
 3,FAB,WS_AMMONIA,0,N2,-,106,no
 3,FAB,WS_DOPE,440,solute,-,106,no
 3,FAB,WS_HF_ED,440,,-,106,no
@@ -52,7 +53,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 3,FAB,WS_PEROX,440,Ar O2,N2/air to 19.5-23.5 % O2,106,no
 3,FAB,WS_PHOS,0,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",106,no
 3,FAB,WS_SLURRY,0,solute,-,106,no
-3,FAB,WS_SOLV,440,,-,106,no
+3,FAB,WS_SOLV,440,acetone ethanol,-,106,no
 4,MFG,BLOW_MOLD,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",230,no
 4,MFG,COLD_MILL,0,metal,-,270,no
 4,MFG,ELECTRODE_COAT,0,solute,-,259,no
@@ -79,7 +80,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 9,OIL,GREASE_LI,0,,-,0,no
 9,OIL,HOPPER,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",32,no
 9,OIL,OIL_DRYER,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",86,no
-9,OIL,OIL_FRAC,0,solute,-,0,no
+9,OIL,OIL_FRAC,0,hydrocarbon solute,"N2 to < 25 % LFL, then < 1 % H2",0,no
 9,OIL,OIL_PYRO,0,,-,0,no
 9,OIL,PROD_C11_C18,79,,-,5,no
 9,OIL,PROD_C19_C28,79,,-,5,no

@@ -15,7 +15,7 @@ Authority: task X-BAS-04 of AQS-PLAN-007. Jurisdiction: USA (AQS-STD-003, AQS-HS
 
 This list gives the codes and standards that the project cites, grouped by discipline. It is built from the register of references in `flow_graph/param/refs.py`: every key there that names a code or standard is listed, with the number of repository files that cite it and up to three of those files. A key that no file cites yet is marked as registered but not cited.
 
-The list has 146 codes and standards in 9 disciplines; every one is cited by at least one file. Quantities are in SI units, with US customary units only where a code states them, such as NEC conductor sizes and ASME B16.5 pressure classes.
+The list has 147 codes and standards in 9 disciplines; every one is cited by at least one file. Quantities are in SI units, with US customary units only where a code states them, such as NEC conductor sizes and ASME B16.5 pressure classes.
 
 ## 2. Pressure equipment and piping
 
@@ -88,7 +88,7 @@ Table 4.1. Electrical
 | IEC62282_3_100 | IEC 62282-3-100 | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | IEC62439_2 | IEC 62439-2 | 3 | docs-authority/CONTROL_ARCH.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_plc_arch.py |
 | IECC2021_C402 | International Energy Conservation Code (2021) Table C402.1.4 | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_egress_env.py, docs-authority/assumptions_manual.json |
-| IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
+| IECC2021_C405 | International Energy Conservation Code (2021) C405.3.2, Table C405.3.2(1) interior lighting power allowances, building area method | 13 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
 | IEEE1547_2018 | IEEE 1547-2018, Standard for Interconnection and Interoperability of Distributed Energy Resources with Associated Electric Power Systems Interfaces (with 1547a-2020) | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | IEEE2030_7 | IEEE 2030.7-2017, Standard for the Specification of Microgrid Controllers (planned and unplanned islanding, reconnection). | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | IEEE80 | IEEE Std 80-2013, Guide for Safety in AC Substation Grounding | 2 | docs-authority/PARAMETRIC_MODEL.md, flow_graph/param/drivers.json |
@@ -110,6 +110,7 @@ Table 4.1. Electrical
 | UL66_2015 | UL 66, Fixture Wire (2015) | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/WIRE_SPECS.md, docs-authority/_wire_specs.py |
 | UL83_2017 | UL 83, Thermoplastic-Insulated Wires and Cables (2017) | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/WIRE_SPECS.md, docs-authority/_wire_specs.py |
 | UL891 | UL 891, Switchboards (12th ed., 2019). | 6 | docs-authority/BUSBAR.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_cable_schedule.py |
+| ULLMANN_ACETIC | Le Berre C., Serp P., Kalck P., Torrence G.P., Acetic Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2014) | 13 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters | 32 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/BALANCE_RECONCILIATION.md, docs-authority/INTERNALS.md |
 | ULLMANN_GLYOXAL | Mattioda G., Blanc A., Glyoxal, Ullmann's Encyclopedia of Industrial Chemistry (2011), doi | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | ULLMANN_H2SO4 | Mueller H., Sulfuric Acid and Sulfur Trioxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
@@ -118,7 +119,7 @@ Table 4.1. Electrical
 | ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds) | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/MATERIALS_STD.md |
 | ULLMANN_NAOH | Kurt C., Bittner J., Sodium Hydroxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2006) | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | ULLMANN_NITRIC | Thiemann M., Scheibler E., Wiegand K.W., Nitric Acid, Nitrous Acid, and Nitrogen Oxides, Ullmann's Encyclopedia of Industrial Chemistry (2000), doi | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
-| ULLMANN_TITANIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Titanium chapter (Titanium, Titanium Alloys, and Titanium Compounds) | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
+| ULLMANN_TITANIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Titanium chapter (Titanium, Titanium Alloys, and Titanium Compounds) | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | ULLMANN_WAX | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Waxes chapter (Waxes) | 14 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 
 ## 5. Fire, life safety and hazardous materials
@@ -163,7 +164,7 @@ Table 6.1. Mechanical, HVAC and energy
 
 | Key | Standard | Files citing it | First files |
 |---|---|---|---|
-| ASHRAE621_2019 | ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1 | 13 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
+| ASHRAE621_2019 | ANSI/ASHRAE Standard 62.1-2019, Table 6.2.2.1 | 14 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
 | ASHRAE901_2019_T6812 | ANSI/ASHRAE/IES 90.1-2025 Table 6.8.1-2 | 3 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
 | ASHRAE901_2022 | ANSI/ASHRAE/IES Standard 90.1-2022, Table 6.8.1-3 | 3 | docs-authority/PARAMETRIC_MODEL.md, flow_graph/param/balance.py, flow_graph/param/drivers.json |
 | ASHRAE_FUND2021_PSY | ASHRAE Handbook - Fundamentals (2021), Ch. 1 Psychrometrics | 3 | docs-authority/INSULATION_SCHEDULE.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_insulation.py |
@@ -173,7 +174,7 @@ Table 6.1. Mechanical, HVAC and energy
 | ASTM_C534 | ASTM C534/C534M-22, Standard Specification for Preformed Flexible Elastomeric Cellular Thermal Insulation in Sheet and Tubular Form | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/_insulation.py |
 | ASTM_C547 | ASTM C547-25, Standard Specification for Mineral Fiber Pipe Insulation | 7 | docs-authority/INSULATION_SCHEDULE.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_insulation.py |
 | ASTM_C680 | ASTM C680-24, Standard Practice for Estimate of the Heat Gain or Loss and the Surface Temperatures of Insulated Flat, Cylindrical, and Spherical Systems | 19 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/INSULATION_SCHEDULE.md, docs-authority/LOAD_LIST.json |
-| ISO16798_3 | EN 16798-3 | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
+| ISO16798_3 | EN 16798-3 | 13 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/LOAD_LIST.json, docs-authority/LOAD_LIST.md |
 
 ## 7. Structural and water storage
 

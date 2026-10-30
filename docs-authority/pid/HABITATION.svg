@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1052" font-family="sans-serif">
-<rect x="4" y="4" width="1492" height="1044" fill="white" stroke="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1098" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="1090" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit HABITATION · hab · sector HAB · present</text>
 <text x="24" y="54" font-size="10.5">1.157 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 12 in + 12 out · valves 18 placed / 0 unplaced · instruments 4 (1 SIF) · nozzles 22</text>
+<text x="24" y="72" font-size="10.5">Edges 12 in + 13 out · valves 18 placed / 0 unplaced · instruments 4 (1 SIF) · nozzles 22</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-122 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-123 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -33,7 +33,7 @@
 <text x="514" y="175.5" font-size="7.5" text-anchor="middle">TE-01</text>
 <text x="536" y="170" font-size="7">-20 to 150 C</text>
 <text x="536" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
-<rect x="590" y="210" width="320" height="582" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
+<rect x="590" y="210" width="320" height="628" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">HABITATION</text>
 <text x="750.0" y="252" font-size="9.5" text-anchor="middle">hab · HAB sector</text>
 <line x1="430" y1="240" x2="577" y2="240" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
@@ -155,53 +155,58 @@
 <text x="902" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="end">N15</text>
 <path d="M 1023.6,510 L 1031.6,516 L 1023.6,522 Z M 1041.6,510 L 1033.6,516 L 1041.6,522 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="505.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<line x1="914" y1="562" x2="1061" y2="562" stroke="#111" stroke-width="1.6" class="edge-out"/>
-<polygon points="1070,562 1061,558 1061,566" fill="#111"/>
-<text x="1476" y="543" font-size="9" fill="#666" text-anchor="end">BLACK_DIGEST</text>
-<text x="1476" y="557" font-size="11" font-weight="600" text-anchor="end">IA-URINE</text>
-<text x="1476" y="575" font-size="10" text-anchor="end">1.4 kg/d · DN15 P1</text>
-<text x="902" y="566" font-size="8" font-style="italic" fill="#555" text-anchor="end">N20</text>
-<path d="M 1023.6,556 L 1031.6,562 L 1023.6,568 Z M 1041.6,556 L 1033.6,562 L 1041.6,568 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="551.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<line x1="914" y1="608" x2="1061" y2="608" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
+<line x1="914" y1="562" x2="1061" y2="562" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-out"/>
+<polygon points="1070,562 1061,558 1061,566" fill="#999"/>
+<text x="1476" y="543" font-size="9" fill="#666" text-anchor="end">SOLV_PLANT</text>
+<text x="1476" y="557" font-size="11" font-weight="600" text-anchor="end">IA-SOLV-FW</text>
+<text x="1476" y="575" font-size="10" text-anchor="end">0.0 kg/d · not in line list · absent</text>
+<line x1="914" y1="608" x2="1061" y2="608" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,608 1061,604 1061,612" fill="#111"/>
-<text x="1476" y="589" font-size="9" fill="#666" text-anchor="end">HOPPER</text>
-<text x="1476" y="603" font-size="11" font-weight="600" text-anchor="end">IA-WEAR</text>
-<text x="1476" y="621" font-size="10" text-anchor="end">596.9 kg/d · solids transfer</text>
-<text x="902" y="612" font-size="8" font-style="italic" fill="#555" text-anchor="end">N18</text>
+<text x="1476" y="589" font-size="9" fill="#666" text-anchor="end">BLACK_DIGEST</text>
+<text x="1476" y="603" font-size="11" font-weight="600" text-anchor="end">IA-URINE</text>
+<text x="1476" y="621" font-size="10" text-anchor="end">1.4 kg/d · DN15 P1</text>
+<text x="902" y="612" font-size="8" font-style="italic" fill="#555" text-anchor="end">N20</text>
+<path d="M 1023.6,602 L 1031.6,608 L 1023.6,614 Z M 1041.6,602 L 1033.6,608 L 1041.6,614 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="597.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="654" x2="1061" y2="654" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,654 1061,650 1061,658" fill="#111"/>
-<text x="1476" y="635" font-size="9" fill="#666" text-anchor="end">GREY_TREAT</text>
-<text x="1476" y="649" font-size="11" font-weight="600" text-anchor="end">S12</text>
-<text x="1476" y="667" font-size="10" text-anchor="end">319.6 kg/d · DN50 P1</text>
-<text x="902" y="658" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
-<path d="M 1023.6,648 L 1031.6,654 L 1023.6,660 Z M 1041.6,648 L 1033.6,654 L 1041.6,660 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="643.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
+<text x="1476" y="635" font-size="9" fill="#666" text-anchor="end">HOPPER</text>
+<text x="1476" y="649" font-size="11" font-weight="600" text-anchor="end">IA-WEAR</text>
+<text x="1476" y="667" font-size="10" text-anchor="end">596.9 kg/d · solids transfer</text>
+<text x="902" y="658" font-size="8" font-style="italic" fill="#555" text-anchor="end">N18</text>
 <line x1="914" y1="700" x2="1061" y2="700" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,700 1061,696 1061,704" fill="#111"/>
-<text x="1476" y="681" font-size="9" fill="#666" text-anchor="end">MEOH_FERM</text>
-<text x="1476" y="695" font-size="11" font-weight="600" text-anchor="end">S78</text>
-<text x="1476" y="713" font-size="10" text-anchor="end">0.4 kg/d · DN50 P1</text>
-<text x="902" y="704" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
+<text x="1476" y="681" font-size="9" fill="#666" text-anchor="end">GREY_TREAT</text>
+<text x="1476" y="695" font-size="11" font-weight="600" text-anchor="end">S12</text>
+<text x="1476" y="713" font-size="10" text-anchor="end">319.6 kg/d · DN50 P1</text>
+<text x="902" y="704" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
 <path d="M 1023.6,694 L 1031.6,700 L 1023.6,706 Z M 1041.6,694 L 1033.6,700 L 1041.6,706 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="689.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
-<line x1="914" y1="746" x2="1061" y2="746" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
+<line x1="914" y1="746" x2="1061" y2="746" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,746 1061,742 1061,750" fill="#111"/>
-<text x="1476" y="727" font-size="9" fill="#666" text-anchor="end">HDR_CO2</text>
-<text x="1476" y="741" font-size="11" font-weight="600" text-anchor="end">S90</text>
-<text x="1476" y="759" font-size="10" text-anchor="end">4.0 kg/d · DN15 P3</text>
-<text x="902" y="750" font-size="8" font-style="italic" fill="#555" text-anchor="end">N7</text>
+<text x="1476" y="727" font-size="9" fill="#666" text-anchor="end">MEOH_FERM</text>
+<text x="1476" y="741" font-size="11" font-weight="600" text-anchor="end">S78</text>
+<text x="1476" y="759" font-size="10" text-anchor="end">0.4 kg/d · DN50 P1</text>
+<text x="902" y="750" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
 <path d="M 1023.6,740 L 1031.6,746 L 1023.6,752 Z M 1041.6,740 L 1033.6,746 L 1041.6,752 Z" fill="white" stroke="#111" stroke-width="1.3"/>
-<text x="1032.6" y="735.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
-<text x="24" y="842" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="852" font-size="9">Every incident graph edge is drawn: 12 in, 12 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
-<text x="24" y="867" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/HABITATION.csv.</text>
-<text x="24" y="882" font-size="9">Nozzles with no matching graph edge (service text): N8 feces; N9 drain; N10 vent</text>
-<text x="24" y="897" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
-<g id="aqs-title-block"><rect x="1116" y="934" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
-<text x="1124" y="951" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-HABITATION</text>
-<text x="1124" y="968" font-size="9">P&amp;ID HABITATION (hab, HAB sector)</text>
-<text x="1124" y="985" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev ef938418   Issued 2026-10-19</text>
-<text x="1124" y="1002" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="1019" font-size="9">Graph SHA-256 4f26521cea1a9295   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1032.6" y="735.0" font-size="7.5" text-anchor="middle">2x isol DN50</text>
+<line x1="914" y1="792" x2="1061" y2="792" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
+<polygon points="1070,792 1061,788 1061,796" fill="#111"/>
+<text x="1476" y="773" font-size="9" fill="#666" text-anchor="end">HDR_CO2</text>
+<text x="1476" y="787" font-size="11" font-weight="600" text-anchor="end">S90</text>
+<text x="1476" y="805" font-size="10" text-anchor="end">4.0 kg/d · DN15 P3</text>
+<text x="902" y="796" font-size="8" font-style="italic" fill="#555" text-anchor="end">N7</text>
+<path d="M 1023.6,786 L 1031.6,792 L 1023.6,798 Z M 1041.6,786 L 1033.6,792 L 1041.6,798 Z" fill="white" stroke="#111" stroke-width="1.3"/>
+<text x="1032.6" y="781.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
+<text x="24" y="888" font-size="10" font-weight="600">Notes</text>
+<text x="24" y="898" font-size="9">Every incident graph edge is drawn: 12 in, 13 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="913" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/HABITATION.csv.</text>
+<text x="24" y="928" font-size="9">Nozzles with no matching graph edge (service text): N8 feces; N9 drain; N10 vent</text>
+<text x="24" y="943" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="980" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="997" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-HABITATION</text>
+<text x="1124" y="1014" font-size="9">P&amp;ID HABITATION (hab, HAB sector)</text>
+<text x="1124" y="1031" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 6a7c3569   Issued 2026-10-19</text>
+<text x="1124" y="1048" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="1065" font-size="9">Graph SHA-256 45fb0db28bae1d46   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

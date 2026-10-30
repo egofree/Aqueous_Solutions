@@ -33,7 +33,7 @@ Other abbreviations are in `docs-authority/GLOSSARY.md`.
 
 ## 3. Fab units
 
-Table 3.1 lists the 16 present units of sector FAB. The role is the note on the graph node.
+Table 3.1 lists the 17 present units of sector FAB. The role is the note on the graph node.
 
 Table 3.1. Fab units
 
@@ -55,6 +55,7 @@ Table 3.1. Fab units
 | LITHO_ALIGN | aligner | Contact aligner: 365 nm LED array over a 100 mm field, leadscrew stage (AQS-LITH-001 rev C; A-M-287). Not a stepper. | 0.0040 |
 | LITHO_DEV | wet_bench | Wet develop bench on the WET_BENCH chemistry class (TMAH/KOH developer fork, S38 resist-waste loop); developer is a share of the fab resist/solvent issue (A-M-287). | 0.0080 |
 | SOLAR_PV_CELL | tool | In-house PV cell line (X-MFG-38, AQS-DUTY-071, A-M-178): texture, POCl3 diffusion, PSG etch, PECVD SiNx, screen print, fast firing, IV. Tool table in params.design; not the yard array (PV_ARRAY). Study_stub class retired at the A-M-295 disposition. | 0.3917 |
+| SOLV_PLANT | reactor | Solvent plant: spent-solvent still, with carbonylation, ketonisation and hydrogenation reactors or solvent fermenters (A-M-428). | 0.0103 |
 
 FAB_UPW_TANK, WS_AMMONIA, WS_DOPE, WS_HF_ED, WS_KOH, WS_NITRIC, WS_SLURRY, WS_SOLV and WS_PHOS carry no electrical load on the graph.
 
@@ -125,14 +126,20 @@ Table 6.1. Streams of the fab units
 | IA-PV-IN | WS_DOPE | SOLAR_PV_CELL | 0.01 | kg/d |
 | IA-PV-OUT | SOLAR_PV_CELL | WAFER_FAB | 0.009999 | kg/d |
 | IA-SIL-SRC | GLASS_DIGEST | WS_SLURRY | 3.3 | kg/d |
-| IA-SOLV-MU | NORTH_DOCK | WS_SOLV | 0.21 | kg/d |
+| IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | 0.009974 | kg/d |
+| IA-SOLV-CO | TI_CELL | SOLV_PLANT | 0.01789 | kg/d |
+| IA-SOLV-H2 | HDR_H2 | SOLV_PLANT | 0.000995 | kg/d |
+| IA-SOLV-MEOH | MEOH_TANK | SOLV_PLANT | 0.02046 | kg/d |
+| IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | 0.21 | kg/d |
+| IA-SOLV-SPENT | WET_BENCH | SOLV_PLANT | 0.1995 | kg/d |
+| IA-SOLV-VENT | SOLV_PLANT | NORTH_DOCK | 0.01887 | kg/d |
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | 0.21 | kg/d |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | 60 | kg/d |
 | IA-UPW-USE | HDR_UPW | WAFER_FAB | 66.5 | kg/d |
 | POLY_TO_FAB | POLY_STOCK | WAFER_FAB | 0 | kg/d |
 | S03 | CRYO_N2 | WAFER_FAB | 1.5 | kg/d |
 | S09 | BMED_ACID | WET_BENCH | 9.277 | kg/d |
-| S10 | WET_BENCH | LEACH_CSTR_1 | 79.12 | kg/d |
+| S10 | WET_BENCH | LEACH_CSTR_1 | 78.92 | kg/d |
 | S27 | FAB_UPW_TANK | WET_BENCH | 60 | kg/d |
 | S31 | WS_HF_ED | WET_BENCH | 1.5 | kg/d |
 | S32 | WS_PEROX | WET_BENCH | 3 | kg/d |
@@ -147,6 +154,7 @@ Table 6.1. Streams of the fab units
 | SF-LITHO_COAT | SOL_ARK_60K | LITHO_COAT | 0.0254 | kW |
 | SF-LITHO_DEV | SOL_ARK_60K | LITHO_DEV | 0.008 | kW |
 | SF-SOLAR_PV_CELL | SOL_ARK_60K | SOLAR_PV_CELL | 0.3917 | kW |
+| SF-SOLV_PLANT | SOL_ARK_60K | SOLV_PLANT | 0.01034 | kW |
 | SF-WAFER_FAB | SOL_ARK_60K | WAFER_FAB | 0.4069 | kW |
 | SF-WET_BENCH | SOL_ARK_60K | WET_BENCH | 0.2066 | kW |
 | STOCK_TO_FAB | METAL_STORE | WAFER_FAB | 0.2264 | kg/d |
@@ -177,6 +185,7 @@ Table 7.1. Mass in and out of each unit
 | LITHO_ALIGN | 0.139 | 0.139 | 0.000 |
 | LITHO_DEV | 1.126 | 1.126 | 0.000 |
 | SOLAR_PV_CELL | 0.010 | 0.010 | -0.000 |
+| SOLV_PLANT | 0.239 | 0.239 | -0.000 |
 
 ## 8. Wet-line reagent interface
 

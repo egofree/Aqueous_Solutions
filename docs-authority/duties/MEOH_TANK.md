@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 34.52 kg/d. Mass out 34.52 kg/d. Electrical duty 0.0000 kW. In: S75 34.51 kg/d (crude MeOH); S77 0.0146 kg/d (biogenic MeOH). Out: S76 5 kg/d (MeOH fuel); IA-MEOH-REST 1.28 kg/d (tank draw); IA-MEOH-PROD 28.03 kg/d (methanol product); MEOH_TO_VDF 0.1501 kg/d (methanol carbon source to VDF); 1 more.
+1. Basis. Mass in 34.52 kg/d. Mass out 34.52 kg/d. Electrical duty 0.0000 kW. In: S75 34.51 kg/d (crude MeOH); S77 0.0146 kg/d (biogenic MeOH). Out: S76 5 kg/d (MeOH fuel); IA-MEOH-REST 1.28 kg/d (tank draw); IA-MEOH-PROD 28.01 kg/d (methanol product); MEOH_TO_VDF 0.1501 kg/d (methanol carbon source to VDF); 2 more.
 
 2. Size.
 - Envelope 800×800×1100 mm is the shell. It is not full. Working volume, 7 days of throughput: V = (6.02/1000)×(168/24) = 0.0421 m³.

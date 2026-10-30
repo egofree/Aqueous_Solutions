@@ -17,7 +17,7 @@ This page records the size of unit WET_BENCH, of class `wet_bench` in sector FAB
 
 ## 2. Duty
 
-The unit takes 79.1218 kg/d by 9 streams and gives 79.1218 kg/d by 2 streams. Its continuous electrical load is 0.2066 kW, fed by stream SF-WET_BENCH.
+The unit takes 79.1218 kg/d by 9 streams and gives 79.1218 kg/d by 3 streams. Its continuous electrical load is 0.2066 kW, fed by stream SF-WET_BENCH.
 
 The graph holds no design parameters for the unit.
 

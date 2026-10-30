@@ -4898,6 +4898,96 @@
   "units": "fraction of the grit metal oxide taken up by the carbochlorination; the rest leaves with the grit gangue in the slag return to the leach",
   "register": "A-M-427"
  },
+ "solv_route": {
+  "value": "MEOH_CO",
+  "units": "- route of SOLV_PLANT for the solvent it does not recover: MEOH_CO (plant methanol carbonylated with the chlorinator CO, then ketonised to acetone and hydrogenated to ethanol) or FERMENT (galley food waste to acetone-butanol-ethanol and yeast fermentations)",
+  "register": "A-M-428"
+ },
+ "solv_acetone_frac": {
+  "value": 0.5,
+  "units": "mass fraction acetone in the bench solvent (the rest ethanol), equal rinse volumes of the two",
+  "register": "A-M-428"
+ },
+ "solv_spent_catch_frac": {
+  "value": 0.95,
+  "units": "fraction of the bench solvent collected in the segregated spent-solvent drain; the rest evaporates or leaves with the spent etch",
+  "register": "A-M-428"
+ },
+ "solv_still_recovery_frac": {
+  "value": 0.95,
+  "units": "fraction of the collected spent solvent returned by the batch still; the rest leaves in the bottoms with the resist residue",
+  "register": "A-M-428"
+ },
+ "solv_still_reflux": {
+  "value": 3.0,
+  "units": "reflux ratio of the batch still for the ethanol-acetone split",
+  "register": "A-M-428"
+ },
+ "solv_dHvap_kJ_kg": {
+  "value": 680.0,
+  "units": "kJ/kg heat of vaporisation of the 50/50 ethanol-acetone distillate (ethanol 841, acetone 518 kJ/kg, NIST_WEBBOOK)",
+  "register": "A-M-428"
+ },
+ "solv_still_heater_eff": {
+  "value": 0.7,
+  "units": "fraction of the electric reboiler heat that reaches the boil-up (losses, A-M-157 convention)",
+  "register": "A-M-428"
+ },
+ "solv_cat_selectivity": {
+  "value": 0.9,
+  "units": "carbon selectivity of carbonylation with ketonisation or hydrogenation to the product; the rest leaves as off-gas (ULLMANN_ACETIC, PHAM2013)",
+  "register": "A-M-428"
+ },
+ "solv_cat_T_C": {
+  "value": 350.0,
+  "units": "C bounding reactor temperature of the catalytic steps (ketonisation 350 C, carbonylation and hydrogenation lower; PHAM2013)",
+  "register": "A-M-428"
+ },
+ "solv_cat_cp_kJ_kgK": {
+  "value": 2.5,
+  "units": "kJ/(kg K) feed heat capacity for the reactor heaters (A-M-157 convention)",
+  "register": "A-M-428"
+ },
+ "solv_cat_heater_eff": {
+  "value": 0.7,
+  "units": "fraction of the electric reactor heat that reaches the feed (A-M-157 convention)",
+  "register": "A-M-428"
+ },
+ "meoh_dHvap_kJ_kg": {
+  "value": 1100.0,
+  "units": "kJ/kg heat of vaporisation of methanol, 35.2 kJ/mol (NIST_WEBBOOK)",
+  "register": "A-M-428"
+ },
+ "solv_fw_sugar_frac": {
+  "value": 0.12,
+  "units": "kg fermentable sugar per kg of wet galley food waste after hydrolysis (FERMENT route)",
+  "register": "A-M-428"
+ },
+ "abe_acetone_yield": {
+  "value": 0.1,
+  "units": "kg acetone per kg sugar in the acetone-butanol-ethanol fermentation (solvents about 0.33 kg/kg at 3:6:1, JONES1986)",
+  "register": "A-M-428"
+ },
+ "abe_butanol_yield": {
+  "value": 0.2,
+  "units": "kg butanol per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986)",
+  "register": "A-M-428"
+ },
+ "abe_ethanol_yield": {
+  "value": 0.033,
+  "units": "kg ethanol per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986)",
+  "register": "A-M-428"
+ },
+ "abe_gas_yield": {
+  "value": 0.5,
+  "units": "kg CO2 and H2 per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986)",
+  "register": "A-M-428"
+ },
+ "yeast_ethanol_yield_frac": {
+  "value": 0.9,
+  "units": "fraction of the theoretical 0.511 kg ethanol per kg glucose reached by the yeast fermentation (BAI2008)",
+  "register": "A-M-428"
+ },
  "caso4_dHrxn_kJ_mol": {
   "value": 303.0,
   "units": "kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197)",

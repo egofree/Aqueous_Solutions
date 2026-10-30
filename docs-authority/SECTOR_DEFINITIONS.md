@@ -52,7 +52,7 @@ Table 3.1. Sectors
 | GLASS | Process (Mass transform) | true | true | 6 | glass-recycle-train |
 | POLYMERS | Process (Mass transform) | true | true | 11 | fluoropolymer-train, forming-train, polyolefin-train |
 | GAS | Process (Mass transform) | true | true | 12 | scrubbing-headers-train |
-| FAB | Process (Mass transform) | true | true | 17 | litho-train, wafer-line-train, wet-reagent-train |
+| FAB | Process (Mass transform) | true | true | 18 | litho-train, wafer-line-train, wet-reagent-train |
 | MFG | Process (Mass transform) | true | true | 10 | tools-metal-forming-train |
 | FOUNDRY | Process (Mass transform) | true | true | 28 | form-train, investment-casting-train, melt-and-cast-train, pot-cell-train |
 | NUT | Process (Mass transform) | true | true | 1 | dosing-train |

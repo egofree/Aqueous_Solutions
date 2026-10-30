@@ -87,6 +87,7 @@ digraph G {
     "LITHO_DEV" [fillcolor="#ffffff", label="LITHO_DEV"];
     "LITHO_STUB" [fillcolor="#ffffff", label="LITHO_STUB"];
     "SOLAR_PV_CELL" [fillcolor="#ffffff", label="SOLAR_PV_CELL"];
+    "SOLV_PLANT" [fillcolor="#ffffff", label="SOLV_PLANT"];
   }
   subgraph "cluster_FARM" {
     label="FARM";
@@ -261,7 +262,7 @@ digraph G {
   }
   "PROD_C29" -> "C29_RECYCLE" [label="C29_RECYCLE\\n5.873266 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "C29_RECYCLE" -> "OIL_PYRO" [label="C29_TO_PYRO\\n5.873266 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "OIL_FRAC" -> "PROD_C5_C10" [label="CUT-1\\n7.424773 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "OIL_FRAC" -> "PROD_C5_C10" [label="CUT-1\\n7.434747 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "OIL_FRAC" -> "PROD_C11_C18" [label="CUT-2\\n9.918821 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "OIL_FRAC" -> "PROD_C19_C28" [label="CUT-3\\n6.165705 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "OIL_FRAC" -> "PROD_C29" [label="CUT-4\\n5.873266 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -313,7 +314,7 @@ digraph G {
   "GLASS_MILL" -> "GLASS_BURNOUT" [label="IA-GLASS-02\\n30.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GLASS_BURNOUT" -> "GLASS_DIGEST" [label="IA-GLASS-03\\n30.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_1" -> "HDR_H2" [label="IA-HDR-H2-01\\n0.382615 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "HDR_H2" -> "H2_DRYER" [label="IA-HDR-H2-02\\n2.086136 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_H2" -> "H2_DRYER" [label="IA-HDR-H2-02\\n2.085141 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_2" -> "HDR_H2" [label="IA-HDR-H2-03\\n0.382743 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_9" -> "HDR_H2" [label="IA-HDR-H2-04\\n0.481422 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_1" -> "HX8" [label="IA-HX8\\n4.572 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
@@ -333,7 +334,7 @@ digraph G {
   "LEACH_CSTR_1" -> "MFG_SHOP" [label="S08\\n41.996408 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GLASS_DIGEST" -> "MFG_SHOP" [label="S08G\\n26.7 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_ACID" -> "WET_BENCH" [label="S09\\n9.277184 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "WET_BENCH" -> "LEACH_CSTR_1" [label="S10\\n79.115777 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WET_BENCH" -> "LEACH_CSTR_1" [label="S10\\n78.916303 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "AFTERBURNER" [label="S11\\n0.8 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HABITATION" -> "GREY_TREAT" [label="S12\\n319.60396 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "VCD_TRAIN" [label="S13\\n3.799494 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -348,7 +349,7 @@ digraph G {
   "ROOF_TANK" -> "CATCH_TANK" [label="S22\\n0.0 kg/d", style=solid, color="#6d28d9", fontcolor="#6d28d9", penwidth=1.2];
   "CATCH_TANK" -> "ROOF_TANK" [label="S23\\n0.0 kg/d", style=solid, color="#6d28d9", fontcolor="#6d28d9", penwidth=1.2];
   "H2_DRYER" -> "RELIEF_H2" [label="S24\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "VCD_TRAIN" -> "BMED_UPW_POLISH" [label="S25\\n307.530211 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "VCD_TRAIN" -> "BMED_UPW_POLISH" [label="S25\\n307.539103 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "REMIN" -> "HABITATION" [label="S26\\n10.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FAB_UPW_TANK" -> "WET_BENCH" [label="S27\\n60.000181 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "VCD_TRAIN" -> "LEACH_CSTR_1" [label="S28\\n17.877059 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -364,7 +365,7 @@ digraph G {
   "WAFER_FAB" -> "LEACH_CSTR_1" [label="S39\\n3.310001 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WAFER_FAB" -> "OIL_FRAC" [label="S39B\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GEO_GHEX" -> "GEO_HP_CLOSED_LOOP" [label="S43\\n0.0 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GEO_HP" -> "Q4_BUS" [label="S44\\n2.2692 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GEO_HP" -> "Q4_BUS" [label="S44\\n2.2685 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "CRYO_H2" -> "BACKUP_GEN" [label="S45\\n0.019728 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BACKUP_GEN" -> "NOX_SCRUB" [label="S46\\n0.198104 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BACKUP_GEN" -> "SOL_ARK_60K" [label="S47\\n0.008219 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -384,14 +385,14 @@ digraph G {
   "MFG_SHOP" -> "HOPPER" [label="S61\\n1.197099 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_AHU" -> "MET_SCRUB" [label="S62\\n51145.68 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_HX_Q4" -> "Q4_BUS" [label="S63\\n0.0171 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "H2_DRYER" -> "CRYO_H2" [label="S64\\n2.086136 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "H2_DRYER" -> "CRYO_H2" [label="S64\\n2.085141 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ALK_SCRUBBER" -> "ACID_POLISH_SCRUB" [label="S65\\n37509.8546 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ACID_POLISH_SCRUB" -> "CRU" [label="S66\\n27.372033 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "AFTERBURNER_FLUE" -> "FLUE_KO" [label="S67\\n117.42759 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FLUE_KO" -> "CRYO_CO2" [label="S67B\\n14.050492 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "LEACH_CSTR_1" [label="S68\\n78.987901 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n916.12544 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n916.12544 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2" -> "ZNBR2_BR2_REGEN" [label="S69\\n916.167461 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ZNBR2_BR2_REGEN" -> "ZNBR2" [label="S69B\\n916.167461 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU_COND_CONDENSABLE" -> "FLUE_KO" [label="S70\\n0.0521 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_AHU" -> "MET_SCRUB" [label="S71\\n20458.32 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_SCRUB" -> "LEACH_CSTR_1" [label="S72\\n2.4442 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -406,7 +407,7 @@ digraph G {
   "MEOH_FC" -> "Q4_BUS" [label="S80\\n0.3689 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=2.2];
   "MEOH_FC" -> "MEOH_COND" [label="S81\\n7.251023 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=2.2];
   "MEOH_FC" -> "CRYO_CO2" [label="S82\\n8.625641 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=2.2];
-  "CRYO_O2" -> "HDR_O2" [label="S83\\n32.289136 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CRYO_O2" -> "HDR_O2" [label="S83\\n32.297033 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_N2" -> "AIR_RECEIVER" [label="S84\\n191.989014 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_CO2" -> "HDR_CO2" [label="S85\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRYO_AHU" -> "RELIEF_CRYO" [label="S86\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -513,11 +514,11 @@ digraph G {
   "GREY_TREAT" -> "LEACH_CSTR_1" [label="IA-GREY-01\\n244.641602 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRU" -> "LEACH_CSTR_1" [label="IA-CRU-01\\n27.509975 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "Q4_BUS" -> "DRY_COOLER" [label="HL-Q4-REJ\\n0.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n351.8354 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n351.8478 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "GREY_TREAT" [label="IA-ZNBR-BD\\n8.486841 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NUTRIENT_DOSE" -> "VCD_TRAIN" [label="IA-NUT-01\\n13.930007 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_UPW_POLISH" -> "FAB_UPW_TANK" [label="IA-UPW-FAB\\n60.000181 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "BMED_UPW_POLISH" -> "REMIN" [label="IA-UPW-REMIN\\n174.184811 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "BMED_UPW_POLISH" -> "REMIN" [label="IA-UPW-REMIN\\n174.193703 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_UPW_POLISH" -> "LEACH_CSTR_1" [label="IA-UPW-REJ\\n6.045005 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "Q4_BUS" -> "HABITATION" [label="IA-Q4-LIFE\\n3.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "AFTERBURNER" -> "AFTERBURNER_FLUE" [label="IA-AB-FLUE\\n7.096878 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -565,7 +566,7 @@ digraph G {
   "DRY_COOLER" -> "ATMOS" [label="IA-DC-EVAP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ROOF_TANK" -> "DRY_COOLER" [label="IA-DC-SPRAY\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GW_INTAKE" -> "ROOF_TANK" [label="IA-GW-MAKEUP\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "REMIN" -> "ROOF_TANK" [label="IA-POT-01\\n164.184772 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "REMIN" -> "ROOF_TANK" [label="IA-POT-01\\n164.193664 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_UPW" -> "HABITATION" [label="IA-UPW-HAB\\n0.800001 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BAGHOUSE" -> "LEACH_CSTR_1" [label="IA-BAG-01\\n7.77 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_UPW" -> "WAFER_FAB" [label="IA-UPW-USE\\n66.500213 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -630,11 +631,11 @@ digraph G {
   "SOL_ARK_60K" -> "BMED_ACID" [label="S17-BMED\\n5.6267 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "LEACH_CSTR_1" -> "GEO_GHEX" [label="IA-BMED-03-TRIM\\n0.78 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "LEACH_CSTR_1" -> "GEO_GHEX" [label="IA-BMED-04-TRIM\\n1.027 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
-  "LEACH_CSTR_1" -> "VCD_TRAIN" [label="IA-LEACH-VCD\\n167.010211 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "LEACH_CSTR_1" -> "VCD_TRAIN" [label="IA-LEACH-VCD\\n167.019103 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "ALK_SCRUBBER" [label="SF-ALK_SCRUBBER\\n1.1122 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BMED_UPW_POLISH" [label="SF-BMED_UPW_POLISH\\n0.018 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "CRYO_H2" [label="SF-CRYO_H2\\n0.9325 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "GEO_HP" [label="SF-GEO_HP\\n0.7091 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "GEO_HP" [label="SF-GEO_HP\\n0.7089 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "GLASS_DIGEST" [label="SF-GLASS_DIGEST\\n0.09 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "H2_DRYER" [label="SF-H2_DRYER\\n0.0205 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "LEACH_CSTR_1" [label="SF-LEACH_CSTR_1\\n0.75 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -655,7 +656,7 @@ digraph G {
   "HDR_O2" -> "BACKUP_GEN" [label="IA-GEN-O2\\n0.172239 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "AFTERBURNER" [label="IA-AB-O2\\n0.528278 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_CO2" -> "MEOH_SYNTH" [label="IA-HCO2-MEOH\\n3.138638 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NORTH_DOCK" -> "LEACH_CSTR_1" [label="IA-H2O-MU\\n56.288882 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "NORTH_DOCK" -> "LEACH_CSTR_1" [label="IA-H2O-MU\\n56.497248 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_1" -> "LEACH_CSTR_1" [label="IA-EW1-CL2\\n88.32517 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_2" -> "LEACH_CSTR_1" [label="IA-EW2-CL2\\n88.354656 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_3" -> "LEACH_CSTR_1" [label="IA-EW3-CL2\\n33.164878 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -665,7 +666,7 @@ digraph G {
   "EW_7" -> "LEACH_CSTR_1" [label="IA-EW7-CL2\\n104.952575 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_8" -> "LEACH_CSTR_1" [label="IA-EW8-CL2\\n7.451224 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_9" -> "LEACH_CSTR_1" [label="IA-EW9-CL2\\n111.134409 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "PROD_C5_C10" -> "NORTH_DOCK" [label="IA-C5-SHIP\\n7.130646 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PROD_C5_C10" -> "NORTH_DOCK" [label="IA-C5-SHIP\\n7.14062 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_C11_C18" -> "NORTH_DOCK" [label="IA-C11-SHIP\\n1.511662 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_C19_C28" -> "NORTH_DOCK" [label="IA-C19-SHIP\\n2.018146 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GAS_ATOMIZER" -> "MET_MELT" [label="IA-ATOM-REMELT\\n0.355595 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -696,12 +697,12 @@ digraph G {
   "CRYO_CO2" -> "CRYO_ASU" [label="IA-CO2-RET\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "LEACH_CSTR_1" -> "CRYO_ASU" [label="IA-LEACH-ASU\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "CRYO_ASU" [label="SF-CRYO_ASU\\n1.6572 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "ROOF_TANK" -> "H2O_ELYZ" [label="IA-ELY-H2O\\n82.630828 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "H2O_ELYZ" -> "CRYO_H2" [label="IA-ELY-H2\\n9.246947 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "H2O_ELYZ" -> "CRYO_O2" [label="IA-ELY-O2\\n73.383881 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "SOL_ARK_60K" -> "H2O_ELYZ" [label="SF-H2O_ELYZ\\n21.1909 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "HDR_O2" -> "PROD_O2" [label="IA-O2-PROD\\n22.005555 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "PROD_O2" -> "NORTH_DOCK" [label="IA-O2-SHIP\\n22.005555 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ROOF_TANK" -> "H2O_ELYZ" [label="IA-ELY-H2O\\n82.63972 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "H2O_ELYZ" -> "CRYO_H2" [label="IA-ELY-H2\\n9.247942 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "H2O_ELYZ" -> "CRYO_O2" [label="IA-ELY-O2\\n73.391778 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOL_ARK_60K" -> "H2O_ELYZ" [label="SF-H2O_ELYZ\\n21.1932 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "HDR_O2" -> "PROD_O2" [label="IA-O2-PROD\\n22.013452 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PROD_O2" -> "NORTH_DOCK" [label="IA-O2-SHIP\\n22.013452 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "IND_MELT" [label="SF-IND_MELT\\n0.8854 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "VAC_IND" [label="SF-VAC_IND\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "RF_HEAT" [label="SF-RF_HEAT\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -716,15 +717,15 @@ digraph G {
   "RECTIFIER" -> "Q4_BUS" [label="IA-RECT-Q4\\n1.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "RECTIFIER" -> "LEACH_CSTR_1" [label="IA-TRIM-HX5\\n15.882 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "GLASS_DIGEST" [label="IA-TRIM-HX6\\n4.158 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "H2O_ELYZ" -> "Q4_BUS" [label="SQ-H2O_ELYZ-Q4\\n6.0105 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "H2O_ELYZ" -> "Q4_BUS" [label="SQ-H2O_ELYZ-Q4\\n6.0112 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "HABITATION" -> "BLACK_DIGEST" [label="IA-URINE\\n1.42 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HABITATION" -> "BLACK_DIGEST" [label="IA-FEC-01\\n0.13 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HABITATION" -> "BLACK_DIGEST" [label="IA-GAL\\n1.18 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BLACK_DIGEST" -> "AFTERBURNER" [label="IA-BLK-CAKE\\n0.67 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BLACK_DIGEST" -> "NUTRIENT_DOSE" [label="IA-BLK-NUT\\n0.9 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BLACK_DIGEST" -> "GREY_TREAT" [label="IA-BLK-GREY\\n21.0508 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MEOH_TANK" -> "PROD_MEOH" [label="IA-MEOH-PROD\\n28.028914 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "PROD_MEOH" -> "NORTH_DOCK" [label="IA-MEOH-SHIP\\n28.028914 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MEOH_TANK" -> "PROD_MEOH" [label="IA-MEOH-PROD\\n28.008454 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PROD_MEOH" -> "NORTH_DOCK" [label="IA-MEOH-SHIP\\n28.008454 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "RECTIFIER" -> "EW_1" [label="IA-DC-EW_1\\n5.9909 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "EW_2" [label="IA-DC-EW_2\\n5.9929 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "EW_3" [label="IA-DC-EW_3\\n2.2495 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -754,7 +755,7 @@ digraph G {
   "STOCK_OUT" -> "METAL_STORE" [label="IA-STOCK-STORE\\n36.7125 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "AIR_RECEIVER" -> "HDR_N2" [label="IA-AIR-RX-OUT\\n191.989014 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MEOH_FERM" -> "BLACK_DIGEST" [label="IA-FERM-DIG\\n0.3454 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NORTH_DOCK" -> "WS_SOLV" [label="IA-SOLV-MU\\n0.209973 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "NORTH_DOCK" -> "WS_SOLV" [label="IA-SOLV-MU\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_F" -> "FILM_CAST" [label="POLYF_TO_FILM\\n0.14 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "HF_GEN" [label="IA-CAF2-MU\\n0.32554 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "HF_GEN" [label="IA-H2SO4-MU\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -787,7 +788,7 @@ digraph G {
   "CA_POT" -> "NORTH_DOCK" [label="IA-CA-CL2-SHIP\\n0.097428 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "TI_CELL" [label="IA-TIO2-MU\\n0.834247 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "OIL_PYRO" -> "TI_CELL" [label="IA-C-TI\\n0.295205 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "TI_CELL" -> "NORTH_DOCK" [label="IA-KROLL-CO\\n0.629453 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "TI_CELL" -> "NORTH_DOCK" [label="IA-KROLL-CO\\n0.611568 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "MO_CELL" [label="IA-MOO3-MU\\n0.093766 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "OIL_PYRO" -> "MO_CELL" [label="IA-C-MO\\n0.013807 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MO_CELL" -> "NORTH_DOCK" [label="IA-MO-VENT\\n0.045073 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -869,4 +870,14 @@ digraph G {
   "MO_CELL" -> "LEACH_CSTR_1" [label="MO_CELL_SLAG_RETURN\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "FLOAT_SINK" -> "CR_CELL" [label="FLOAT_SINK_GRIT_TO_CR\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CR_CELL" -> "LEACH_CSTR_1" [label="CR_CELL_SLAG_RETURN\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WET_BENCH" -> "SOLV_PLANT" [label="IA-SOLV-SPENT\\n0.199474 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOLV_PLANT" -> "WS_SOLV" [label="IA-SOLV-PLANT\\n0.209973 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOLV_PLANT" -> "OIL_FRAC" [label="IA-SOLV-BTMS\\n0.009974 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOLV_PLANT" -> "NORTH_DOCK" [label="IA-SOLV-VENT\\n0.018867 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MEOH_TANK" -> "SOLV_PLANT" [label="IA-SOLV-MEOH\\n0.02046 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "TI_CELL" -> "SOLV_PLANT" [label="IA-SOLV-CO\\n0.017885 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HDR_H2" -> "SOLV_PLANT" [label="IA-SOLV-H2\\n0.000995 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "HABITATION" -> "SOLV_PLANT" [label="IA-SOLV-FW\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOLV_PLANT" -> "BLACK_DIGEST" [label="IA-SOLV-STILLAGE\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOL_ARK_60K" -> "SOLV_PLANT" [label="SF-SOLV_PLANT\\n0.01034 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

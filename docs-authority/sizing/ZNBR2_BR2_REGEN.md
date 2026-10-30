@@ -17,7 +17,7 @@ This page records the size of unit ZNBR2_BR2_REGEN, of class `scrubber` in secto
 
 ## 2. Duty
 
-The unit takes 916.125 kg/d by 1 stream and gives 916.125 kg/d by 1 stream.
+The unit takes 916.167 kg/d by 1 stream and gives 916.167 kg/d by 1 stream.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The envelope is 400 mm x 400 mm x 1500 mm, from the placement file `flow_graph/placement_seed.json`.
 
-The hold-up check takes 916.125 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 916.1 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 1000 mm in diameter and 1490 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
+The hold-up check takes 916.167 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 916.2 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 1000 mm in diameter and 1490 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
 
 ## 4. Material
 

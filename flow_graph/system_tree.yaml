@@ -345,6 +345,9 @@ nodes:
   - id: FAB.wet-reagent-train.reagents.WS_SOLV
     parent: FAB.wet-reagent-train.reagents
     unit_id: WS_SOLV
+  - id: FAB.wet-reagent-train.reagents.SOLV_PLANT
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: SOLV_PLANT
   - id: FAB.litho-train
     parent: FAB
     description: >-

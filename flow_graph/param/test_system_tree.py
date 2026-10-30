@@ -59,7 +59,7 @@ def test_tree_file_passes_validation(tree: SystemTree, graph: dict) -> None:
     """The YAML on disk loads and validates against the live graph."""
     report = tree.validate(graph)
     assert report["ok"] is True
-    assert report["leaves"] == report["graph_units"] == 198
+    assert report["leaves"] == report["graph_units"] == 199
     assert report["roots"] == report["sector_count"] == 19
 
 
@@ -71,7 +71,7 @@ def test_bijection_leaf_set_equals_graph_unit_set_both_directions(
     assert leaves == units
     # each unit at exactly one leaf
     placed = [n.unit_id for n in tree.nodes if n.unit_id is not None]
-    assert len(placed) == len(set(placed)) == 198
+    assert len(placed) == len(set(placed)) == 199
 
 
 def test_drift_guard_graph_unit_removed_without_tree_update_fails(
@@ -151,13 +151,13 @@ def test_cycle_free_and_parent_integrity() -> None:
 
 def test_tree_shape(tree: SystemTree) -> None:
     stats = tree.stats()
-    assert stats["by_level"] == {0: 19, 1: 31, 2: 107, 3: 112}
-    assert stats["nodes"] == 269
+    assert stats["by_level"] == {0: 19, 1: 31, 2: 107, 3: 113}
+    assert stats["nodes"] == 270
     assert stats["trains"] == 31
     assert stats["subsystems"] == 22
-    assert stats["leaves"] == 198
+    assert stats["leaves"] == 199
     # standby trains are descriptions, never hidden units
-    assert sum(stats["units_per_root"].values()) == 198
+    assert sum(stats["units_per_root"].values()) == 199
 
 
 # ----------------------------------------------------------------------
@@ -187,7 +187,7 @@ def test_resolve_units(tree: SystemTree) -> None:
     resolved: list[str] = []
     for r in roots:
         resolved += sorted(tree.resolve_units(r))
-    assert len(resolved) == len(set(resolved)) == 198
+    assert len(resolved) == len(set(resolved)) == 199
     with pytest.raises(KeyError):
         tree.resolve_units("FOUNDRY.nonexistent-train")
 
@@ -213,7 +213,8 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     # PV 350.0702 -> 351.3442 (2026-10-29): on-site silicon reduction and refining for the CZ charge (A-M-419, owner decision t58u).
     # PV 353.877 -> 352.926 (2026-10-29): the acid cake kiln runs in campaigns (Q-034, A-M-425).
     # PV 352.926 -> 351.8354 (2026-10-29): the sodium hydroxide top-up runs on the chlor-alkali cells, with no kilns (Q-035, A-M-426).
-    assert gen["kw_sum"] == pytest.approx(351.8354 + 4.0 + 0.0082)   # PV 351.8354 (on-site silicon A-M-419, sulfuric acid A-M-421, sodium hydroxide A-M-422, kiln campaigns A-M-425, chlor-alkali top-up A-M-426)
+    # PV 351.8354 -> 351.8478 (2026-10-29): SOLV_PLANT recovers and makes the bench solvent on site (A-M-428).
+    assert gen["kw_sum"] == pytest.approx(351.8478 + 4.0 + 0.0082)   # PV 351.8478 (on-site silicon A-M-419, sulfuric acid A-M-421, sodium hydroxide A-M-422, kiln campaigns A-M-425, chlor-alkali top-up A-M-426, solvent plant A-M-428)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(
@@ -337,7 +338,7 @@ def test_enabled_units_helper_effective_set() -> None:
     on = _enabled_units(m)
     # 178 (2026-10-19): EVAP_ACID_VS sector stamp fixed WET->DIGESTER, so the
     # sector-aware set now includes every unit (the 177 exception is closed).
-    assert len(on) == 198
+    assert len(on) == 199
     assert "EVAP_ACID_VS" in on   # sector stamp fixed WET->DIGESTER 2026-10-19: now included
     # unit off leaves the set even with the sector on
     m2 = copy.deepcopy(m)

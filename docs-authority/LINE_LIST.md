@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-592 edges: 333 piped, 141 solids transfers, 118 electrical. Piped edges without a length (unit position missing): 72.
+599 edges: 339 piped, 141 solids transfers, 119 electrical. Piped edges without a length (unit position missing): 79.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 38: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, NAOH_PLANT, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 39: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, NAOH_PLANT, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, SOLV_PLANT, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -502,7 +502,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-STOCK-STORE | STOCK_OUT | METAL_STORE | solids | — | — |  | STOCK_OUT → METAL_STORE, position missing for STOCK_OUT, METAL_STORE | solids: conveyor, bin or hand transfer; not piped |
 | IA-AIR-RX-OUT | AIR_RECEIVER | HDR_N2 | DN15 | P3 | process vent gas |  | AIR_RECEIVER → HDR_N2, position missing for AIR_RECEIVER | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-FERM-DIG | MEOH_FERM | BLACK_DIGEST | solids | — | — | 17.9 | MEOH_FERM → BLACK_DIGEST, orthogonal × 1.2 (duty origin; duty origin + GA move) | solids: conveyor, bin or hand transfer; not piped |
-| IA-SOLV-MU | NORTH_DOCK | WS_SOLV | DN15 | M1 | organic liquid (316L per unit duty sheets) | 11.5 | NORTH_DOCK → WS_SOLV, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | POLYF_TO_FILM | POLY_F | FILM_CAST | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B |  | POLY_F → FILM_CAST, position missing for POLY_F, FILM_CAST | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-CAF2-MU | NORTH_DOCK | HF_GEN | solids | — | — |  | NORTH_DOCK → HF_GEN, position missing for HF_GEN | solids: conveyor, bin or hand transfer; not piped |
 | IA-HF-PROD | HF_GEN | WS_HF_ED | DN15 | P3 | oxidizer, HF or PVDF unit |  | HF_GEN → WS_HF_ED, position missing for HF_GEN | velocity 1 m/s, ρ 1000; min DN15 |
@@ -609,3 +608,11 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | MO_CELL_SLAG_RETURN | MO_CELL | LEACH_CSTR_1 | solids | — | — |  | MO_CELL → LEACH_CSTR_1, position missing for MO_CELL | solids: conveyor, bin or hand transfer; not piped |
 | FLOAT_SINK_GRIT_TO_CR | FLOAT_SINK | CR_CELL | solids | — | — |  | FLOAT_SINK → CR_CELL, position missing for CR_CELL | solids: conveyor, bin or hand transfer; not piped |
 | CR_CELL_SLAG_RETURN | CR_CELL | LEACH_CSTR_1 | solids | — | — |  | CR_CELL → LEACH_CSTR_1, position missing for CR_CELL | solids: conveyor, bin or hand transfer; not piped |
+| IA-SOLV-SPENT | WET_BENCH | SOLV_PLANT | DN15 | P1 | acid or brine, at or below 60 C |  | WET_BENCH → SOLV_PLANT, position missing for SOLV_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | DN15 | M1 | organic liquid (316L per unit duty sheets) |  | SOLV_PLANT → WS_SOLV, position missing for SOLV_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) |  | SOLV_PLANT → OIL_FRAC, position missing for SOLV_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-SOLV-VENT | SOLV_PLANT | NORTH_DOCK | DN15 | P3 | process vent gas |  | SOLV_PLANT → NORTH_DOCK, position missing for SOLV_PLANT | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-SOLV-MEOH | MEOH_TANK | SOLV_PLANT | DN15 | M1 | wet methanol service (316L per unit duty sheets) |  | MEOH_TANK → SOLV_PLANT, position missing for SOLV_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-SOLV-CO | TI_CELL | SOLV_PLANT | DN15 | P3 | process vent gas |  | TI_CELL → SOLV_PLANT, position missing for TI_CELL, SOLV_PLANT | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-SOLV-H2 | HDR_H2 | SOLV_PLANT | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) |  | HDR_H2 → SOLV_PLANT, position missing for SOLV_PLANT | velocity 10 m/s, ρ 0.09; min DN15 |
+| SF-SOLV_PLANT | SOL_ARK_60K | SOLV_PLANT | cable | — | — |  | SOL_ARK_60K → SOLV_PLANT, position missing for SOLV_PLANT | electrical: cable schedule X-ELS-06 |

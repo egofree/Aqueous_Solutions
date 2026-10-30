@@ -37,7 +37,7 @@ Table 3.1. Polyolefin line
 | PELLET | 0.294127 | 0.294127 | pellets of 2 mm to 4 mm (AQS-DES-POLY) |
 | POLY_STOCK | 0.524127 | 0.524127 | staged polymer feedstock for the shop, the wet line and the fab |
 
-The line draws 0.294127 kg/d of naphtha at the cut tank by stream IA-C5-POLY. The naphtha shipped by stream IA-C5-SHIP is what the cut tank makes less the genset draw and the polyolefin draw: 7.424773 − 0.000000 − 0.294127 = 7.130646 kg/d. The saleable naphtha therefore falls kilogram for kilogram with the polymer need. Stream OIL_TO_OLEFIN carries 0 kg/d, because the wax path from the fractionator is closed while the investment train is blocked, and stream MEOH_TO_OLEFIN carries 0 kg/d, because the methanol is committed to the tank and shipping balance (X-PAR-12).
+The line draws 0.294127 kg/d of naphtha at the cut tank by stream IA-C5-POLY. The naphtha shipped by stream IA-C5-SHIP is what the cut tank makes less the genset draw and the polyolefin draw: 7.434747 − 0.000000 − 0.294127 = 7.140620 kg/d. The saleable naphtha therefore falls kilogram for kilogram with the polymer need. Stream OIL_TO_OLEFIN carries 0 kg/d, because the wax path from the fractionator is closed while the investment train is blocked, and stream MEOH_TO_OLEFIN carries 0 kg/d, because the methanol is committed to the tank and shipping balance (X-PAR-12).
 
 ## 4. Fluoropolymer train
 

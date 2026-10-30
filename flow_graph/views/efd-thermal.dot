@@ -106,7 +106,7 @@ digraph G {
   "Q4_B" -> "Q4_A" [label="HL-Q4-X-BA\\n1.565 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "EW_1" -> "HX8" [label="IA-HX8\\n4.572 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "GEO_GHEX" -> "GEO_HP_CLOSED_LOOP" [label="S43\\n0.0 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GEO_HP" -> "Q4_BUS" [label="S44\\n2.2692 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "GEO_HP" -> "Q4_BUS" [label="S44\\n2.2685 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "FUEL_CELL" -> "Q4_BUS" [label="S53\\n1.1419 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "CRYO_HX_Q4" -> "Q4_BUS" [label="S54\\n0.5448 kW", style=dashed, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "CRYO_DED_COOL" -> "CRYO_DED_COOL" [label="S55\\n4.2838 kW", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -143,5 +143,5 @@ digraph G {
   "RECTIFIER" -> "Q4_BUS" [label="IA-RECT-Q4\\n1.0 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
   "RECTIFIER" -> "LEACH_CSTR_1" [label="IA-TRIM-HX5\\n15.882 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "RECTIFIER" -> "GLASS_DIGEST" [label="IA-TRIM-HX6\\n4.158 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "H2O_ELYZ" -> "Q4_BUS" [label="SQ-H2O_ELYZ-Q4\\n6.0105 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
+  "H2O_ELYZ" -> "Q4_BUS" [label="SQ-H2O_ELYZ-Q4\\n6.0112 kW", style=solid, color="#b45309", fontcolor="#b45309", penwidth=1.2];
 }

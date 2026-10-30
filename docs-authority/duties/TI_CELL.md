@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 3.119 kg/d. Mass out 3.119 kg/d. Electrical duty 0.5000 kW. In: FLOAT_SINK_GRIT_TO_TI 0 kg/d (dense grit (ilmenite/rutile fraction)); IA-MG-TI 0.5078 kg/d (Mg reductant to the Kroll retort); IA-CL2-MG-TI 1.481 kg/d (chlorine to the Kroll chlorinator); IA-TIO2-MU 0.8342 kg/d (TiO2-equivalent rutile concentrate (dock import class)); 1 more. Out: TI_CELL_SLAG_RETURN 0 kg/d (slag / residual grit); TI_CELL_CL2_TO_CRU 0 kg/d (chlorine from Kroll chlorinator / Mg recycle); METALS_TO_IND_MELT 0.5 kg/d (Ti and other metal powders/sponge); VAC_IND_TI 0 kg/d (Ti sponge/powder to vacuum melt); 3 more.
+1. Basis. Mass in 3.119 kg/d. Mass out 3.119 kg/d. Electrical duty 0.5000 kW. In: FLOAT_SINK_GRIT_TO_TI 0 kg/d (dense grit (ilmenite/rutile fraction)); IA-MG-TI 0.5078 kg/d (Mg reductant to the Kroll retort); IA-CL2-MG-TI 1.481 kg/d (chlorine to the Kroll chlorinator); IA-TIO2-MU 0.8342 kg/d (TiO2-equivalent rutile concentrate (dock import class)); 1 more. Out: TI_CELL_SLAG_RETURN 0 kg/d (slag / residual grit); TI_CELL_CL2_TO_CRU 0 kg/d (chlorine from Kroll chlorinator / Mg recycle); METALS_TO_IND_MELT 0.5 kg/d (Ti and other metal powders/sponge); VAC_IND_TI 0 kg/d (Ti sponge/powder to vacuum melt); 4 more.
 
 2. Size.
 - Envelope 800×800×1600 mm, 1.024 m³. That box over this flow would be 7880.6 h if it were full. It is not a residence time.

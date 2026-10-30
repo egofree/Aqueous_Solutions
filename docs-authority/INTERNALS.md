@@ -17,7 +17,7 @@ This register records, for every unit on the plant graph, whether its process in
 
 ## 2. Summary and method
 
-Of the 195 units, 66 have their internals defined and sized in an issued document (section 4), 82 have no process internals by a class rule (section 3), and 47 are open, each with its gap named (section 5). A unit whose construction material is still unselected in AQS-STD-005 (`UNIT_MATERIALS.md`) is open here too.
+Of the 196 units, 66 have their internals defined and sized in an issued document (section 4), 82 have no process internals by a class rule (section 3), and 48 are open, each with its gap named (section 5). A unit whose construction material is still unselected in AQS-STD-005 (`UNIT_MATERIALS.md`) is open here too.
 A class rule closes a unit only if none of its own documents books an internal. The generator first scans the sizing sheet, the duty sheet and the bill of materials of the unit for internals; if it finds one, the unit is taken out of the class rule.
 
 ## 3. Class rules
@@ -196,6 +196,7 @@ Table 5.1. Open units
 | SINTER | furnace | no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element) |
 | SI_REDUCE | furnace | no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element) |
 | SI_REFINE | reactor | no issued internals basis for a reactor unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element) |
+| SOLV_PLANT | reactor | no issued internals basis for a reactor unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element) |
 | SW_INTAKE | intake | no issued internals basis for a intake unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element) |
 | TANK_BLD | press_tank | no issued internals basis for a press_tank unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element) |
 | VCD_TRAIN | evaporator | no issued internals basis for a evaporator unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element) |

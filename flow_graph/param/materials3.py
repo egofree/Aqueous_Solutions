@@ -380,6 +380,14 @@ SEL = {
   'lined steel (ULLMANN_NAOH; PERRY9_MAT). ' + _TAG,
   'Nickel 200 for the liquor lines if the caustic runs hot and strong in service',
   'wetted by caustic liquor (and wet chlorine on the chlor-alkali route); caustic cracking of stressed carbon steel is the corrosion load.'),
+ 'SOLV_PLANT': (
+  '316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid '
+  'step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed',
+  'Ethanol and acetone at their boiling points in the still, and acetic acid with an iodide promoter at 150-200 C in the '
+  'carbonylation (A-M-428, flow_graph/param/solvent.py): stainless steel serves the solvents and the dry reactor gases, '
+  'while hot acetic acid with iodide needs a nickel-molybdenum alloy (ULLMANN_ACETIC; PERRY9_MAT). ' + _TAG,
+  'Zirconium for the carbonylation autoclave if iodide corrosion of C-276 is seen in service',
+  'wetted by ethanol, acetone and hot acetic acid with an iodide promoter; iodide pitting of the carbonylation vessel is the corrosion load.'),
  'SI_REFINE': (
   'Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen '
   'chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite '

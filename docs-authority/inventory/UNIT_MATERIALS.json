@@ -169,6 +169,7 @@
   "SI_REDUCE",
   "SI_REFINE",
   "SOLAR_PV_CELL",
+  "SOLV_PLANT",
   "SOL_ARK_60K",
   "STOCK_OUT",
   "SW_INTAKE",
@@ -197,6 +198,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 333,
- "units": 195
+ "tot_wetted_rows": 339,
+ "units": 196
 }

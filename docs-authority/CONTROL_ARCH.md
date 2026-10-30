@@ -55,7 +55,7 @@ Table 4.1. I/O and modules by PLC
 | PLC-CRYO | 34 | 1 | 17 | 2 | 4 | 3/1/2/1 | redundant pair | 38 |
 | PLC-DIGESTER | 132 | 3 | 118 | 24 | 21 | 10/1/9/2 | single | 56 |
 | PLC-ELEC | 28 | 17 | 445 | 106 | 82 | 3/2/34/8 | redundant pair | 118 |
-| PLC-FAB | 62 | 3 | 74 | 11 | 17 | 5/1/6/1 | single | 38 |
+| PLC-FAB | 67 | 3 | 81 | 11 | 20 | 6/1/7/1 | single | 42 |
 | PLC-FARM | 12 | 0 | 3 | 0 | 1 | 1/0/1/0 | redundant pair | 28 |
 | PLC-FOUNDRY | 77 | 0 | 17 | 0 | 5 | 6/0/2/0 | single | 28 |
 | PLC-GAS | 32 | 0 | 36 | 6 | 9 | 3/0/3/1 | redundant pair | 38 |
@@ -63,15 +63,15 @@ Table 4.1. I/O and modules by PLC
 | PLC-GLASS | 13 | 0 | 5 | 1 | 1 | 1/0/1/1 | single | 18 |
 | PLC-HAB | 5 | 0 | 1 | 0 | 0 | 1/0/1/0 | redundant pair | 28 |
 | PLC-HEAT | 24 | 0 | 0 | 0 | 0 | 2/0/0/0 | single | 16 |
-| PLC-MEOH | 21 | 0 | 35 | 6 | 10 | 2/0/3/1 | single | 24 |
+| PLC-MEOH | 21 | 0 | 39 | 7 | 11 | 2/0/3/1 | single | 24 |
 | PLC-MFG | 27 | 8 | 62 | 12 | 10 | 3/1/5/1 | single | 32 |
 | PLC-NUT | 9 | 0 | 21 | 5 | 5 | 1/0/2/1 | redundant pair | 32 |
 | PLC-OIL | 51 | 0 | 40 | 5 | 11 | 4/0/3/1 | single | 28 |
 | PLC-POLYMERS | 39 | 0 | 21 | 3 | 4 | 3/0/2/1 | single | 24 |
 | PLC-PUMPED_HYDRO | 2 | 1 | 2 | 0 | 0 | 1/1/1/0 | redundant pair | 30 |
 | PLC-WTR | 54 | 0 | 61 | 8 | 19 | 5/0/5/1 | redundant pair | 46 |
-| Total | 630 | 33 | 962 | 191 | 199 | 164 modules | 9 redundant of 18 | 652 |
+| Total | 635 | 33 | 973 | 192 | 203 | 166 modules | 9 redundant of 18 | 656 |
 
-The control system draws about 0.65 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
+The control system draws about 0.66 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 
 The module count in AQS-INV-004 (item OF-07) uses a different basis, the number of points divided by 16 with no spare, and is superseded by Table 4.1. The DI count adds the high-level switches of the instrument index to the digital points of the inventory. If the inventory already counts those switches, the DI count is 113 too high, which errs on the safe side.

@@ -40,7 +40,7 @@ Table 3.1. Storage and generation sizing results
 | Quantity | Value | Unit | Graph field |
 |---|---|---|---|
 | Plant bus demand | 218.0 | kW | `mvs.electrical.need_kw` |
-| Mean-day average generation of the installed array | 545.0 | kW | `mvs.electrical.target_kw` |
+| Mean-day average generation of the installed array | 545.1 | kW | `mvs.electrical.target_kw` |
 | PV balancing nameplate | 1,512 | kWp | `PV_ARRAY.params.balance_kWp` |
 | PV oversize factor | 2.0 | - | `PV_ARRAY.params.oversize_factor` |
 | PV installed nameplate | 3,023 | kWp | `PV_ARRAY.params.nameplate_kw` |
@@ -54,7 +54,7 @@ Table 3.1. Storage and generation sizing results
 | Hybrid inverters | 42 | - | `SOL_ARK_60K.params.count` |
 | Inverter capacity | 2,520 | kW | `SOL_ARK_60K.params.kW` |
 | Export at noon, store full | 2,302.0 | kW | `SOL_ARK_60K.params.interconnection.export_peak_kW` |
-| Export energy, clear day | 6,540 | kWh/d | `SOL_ARK_60K.params.interconnection.export_kWh_d_clear` |
+| Export energy, clear day | 6,541 | kWh/d | `SOL_ARK_60K.params.interconnection.export_kWh_d_clear` |
 | Fuel cell continuous output | 4.0 | kW | `FUEL_CELL.continuous_kw` |
 | Fuel cell loop round-trip efficiency | 0.364 | - | `FUEL_CELL.params.reversible_loop.round_trip` |
 | Backup generator rating | 40 | kW | `BACKUP_GEN.params.rated_kW` |

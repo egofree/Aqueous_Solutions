@@ -14,3 +14,4 @@ N12,DN15,Class 150,chlorinator CO (fuel-gas class export),outlet,600
 N13,DN15,Class 150,drain,bottom,50
 N14,DN15,Class 150,vent,top,800
 N15,solids,Class 150,plant pyrolysis char reductant,inlet,160
+N16,DN15,Class 150,chlorinator carbon monoxide for the carbonylation,outlet,600

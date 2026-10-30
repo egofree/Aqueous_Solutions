@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1920 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1923 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -397,6 +397,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/SI_REDUCE.md` | 792d434 (regenerated, no change) | current |
 | `docs-authority/duties/SI_REFINE.md` | 792d434 (regenerated, no change) | current |
 | `docs-authority/duties/SOLAR_PV_CELL.md` | 792d434 (regenerated, no change) | current |
+| `docs-authority/duties/SOLV_PLANT.md` | 792d434 (regenerated, no change) | current |
 | `docs-authority/duties/SOL_ARK_60K.md` | 792d434 (regenerated, no change) | current |
 | `docs-authority/duties/STOCK_OUT.md` | 792d434 (regenerated, no change) | current |
 | `docs-authority/duties/STRUVITE.md` | 792d434 (regenerated, no change) | current |
@@ -714,7 +715,6 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/iso/IA-SIC-RET.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/iso/IA-SIL-SRC.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/iso/IA-SINK-01.svg` | 792d434 (regenerated, no change) | current |
-| `docs-authority/iso/IA-SOLV-MU.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/iso/IA-SOLV-WB.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/iso/IA-UPW-FAB.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/iso/IA-UPW-HAB.svg` | 792d434 (regenerated, no change) | current |
@@ -1029,6 +1029,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/nozzles/SI_REDUCE.csv` | 792d434 (regenerated, no change) | current |
 | `docs-authority/nozzles/SI_REFINE.csv` | 792d434 (regenerated, no change) | current |
 | `docs-authority/nozzles/SOLAR_PV_CELL.csv` | 792d434 (regenerated, no change) | current |
+| `docs-authority/nozzles/SOLV_PLANT.csv` | 792d434 (regenerated, no change) | current |
 | `docs-authority/nozzles/SOL_ARK_60K.csv` | 792d434 (regenerated, no change) | current |
 | `docs-authority/nozzles/STOCK_OUT.csv` | 792d434 (regenerated, no change) | current |
 | `docs-authority/nozzles/STRUVITE.csv` | 792d434 (regenerated, no change) | current |
@@ -1212,6 +1213,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/pid/SI_REDUCE.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/pid/SI_REFINE.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/pid/SOLAR_PV_CELL.svg` | 792d434 (regenerated, no change) | current |
+| `docs-authority/pid/SOLV_PLANT.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/pid/SOL_ARK_60K.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/pid/STOCK_OUT.svg` | 792d434 (regenerated, no change) | current |
 | `docs-authority/pid/TFE_SYN.svg` | 792d434 (regenerated, no change) | current |
@@ -1882,6 +1884,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/units/SOLAR_PV_CELL/bom.csv` | 792d434 (regenerated, no change) | current |
 | `models/units/SOLAR_PV_CELL/itp.csv` | 792d434 (regenerated, no change) | current |
 | `models/units/SOLAR_PV_CELL/maint.csv` | 792d434 (regenerated, no change) | current |
+| `models/units/SOLV_PLANT/itp.csv` | 792d434 (regenerated, no change) | current |
 | `models/units/SOL_ARK_60K/bom.csv` | 792d434 (regenerated, no change) | current |
 | `models/units/SOL_ARK_60K/itp.csv` | 792d434 (regenerated, no change) | current |
 | `models/units/SOL_ARK_60K/maint.csv` | 792d434 (regenerated, no change) | current |

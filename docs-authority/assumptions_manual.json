@@ -7378,5 +7378,24 @@
   ],
   "needs_verification": true,
   "verification_test": "Set the grit_* assay drivers to the assay values and run python3 -m flow_graph.param.regen; the grit feeds carry the oxide the assay supports, the concentrate edges fall by the same amount, and python3 -m flow_graph.param.recovery reports no flags."
+ },
+ {
+  "id": "A-M-428",
+  "value": "SOLV_PLANT supplies the bench ethanol and acetone, recovery first. WET_BENCH collects solv_spent_catch_frac of its solvent in a segregated drain and a batch still returns solv_still_recovery_frac of it; the bottoms go to the light oil cut. The shortfall is made on the route chosen by solv_route: MEOH_CO (default) carbonylates plant methanol with the chlorinator CO of TI_CELL to acetic acid, ketonises part to acetone and hydrogenates the rest to ethanol with header hydrogen, at solv_cat_selectivity; FERMENT ferments galley food waste (acetone-butanol-ethanol and yeast), returns the stillage to the digester and sends the butanol to the oil cut. The bench solvent is taken as equal masses of ethanol and acetone (solv_acetone_frac).",
+  "units": "kg/d; kW",
+  "where": "flow_graph/param/solvent.py; flow_graph/param/drivers.json solv_*, abe_*, yeast_ethanol_yield_frac; AQS-PAR-001 section 7.3",
+  "basis": "Owner decisions t59u (no imports except waste or raw ore) and t61u (recover first), with two selectable technologies where both are valid. Distillation returns most of a segregated spent solvent; carbonylation (ULLMANN_ACETIC), ketonisation (PHAM2013) and the fermentations (JONES1986, BAI2008) are the process bases. MEOH_CO is the default because it uses a gas the plant exported as fuel and a plant product in small amounts, while FERMENT would take most of the galley waste from the digester.",
+  "sensitivity": "The make-up and every route feed scale with 1 - solv_spent_catch_frac x solv_still_recovery_frac; the FERMENT galley draw scales inversely with solv_fw_sugar_frac and abe_acetone_yield.",
+  "replaced_by": "A spent-solvent recovery trial at the first article and the measured bench solvent mix",
+  "task": "QA audit 2026-10-29, imports made on site (X-RTE-IMPORT-IA-SOLV-MU)",
+  "files": [
+   "flow_graph/param/solvent.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/report.py",
+   "flow_graph/param/recovery.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags."
  }
 ]

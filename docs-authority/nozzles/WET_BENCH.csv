@@ -12,3 +12,4 @@ N10,DN15,Class 150,KOH,inlet,160
 N11,DN15,Class 150,HNO3,inlet,160
 N12,DN15,Class 150,H3PO4,inlet,160
 N13,DN15,Class 150,ethanol and acetone,inlet,160
+N14,DN15,Class 150,segregated spent solvent from the bench rinse drain,outlet,600

@@ -13,7 +13,7 @@ Feed 2.09 kg/d H2 (0.97 Nm3/h). O2 1.03 mol/d, water 37.3 g/d, HCl 0.038 g/d. Pr
 |---|---|---|---|---|
 | deoxo | 0.193 | DN25 Sch 40 316L | 347 | 2 |
 | guard | 0.050 | DN25 Sch 40 316L | 300 | 2 |
-| TSA | 0.533 | DN50 Sch 40 316L | 300 | 2 |
+| TSA | 0.532 | DN50 Sch 40 316L | 300 | 2 |
 
 Guard charge 34 g; sieve 373 g per TSA bed. Regeneration 1.1 W average at 250.0 C, insulation 38 mm (loss 38 W while hot); electric load 20 W. Every bed is duplicated (one on line). All capacities and the space velocity are assumptions (A-M-168) until the bed tests.
 

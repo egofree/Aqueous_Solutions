@@ -17,7 +17,7 @@ This page records the size of unit HDR_H2, of class `header` in sector GAS, from
 
 ## 2. Duty
 
-The unit takes 2.08614 kg/d by 14 streams and gives 2.08614 kg/d by 1 stream.
+The unit takes 2.08614 kg/d by 14 streams and gives 2.08614 kg/d by 2 streams.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -38,7 +38,7 @@ Table 2.1. Design parameters
 | volume_m3 | 0.0054 |
 | material | PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06) |
 | hold_kg | 0 |
-| connections | 15 |
+| connections | 16 |
 
 ## 3. Geometry
 

@@ -29,7 +29,7 @@ ORE = {'IA-CAF2-MU': ('F', 'CaF2', 'POLYMERS.fluoropolymer-train.fluorspar_CaF2_
        'IA-LIMESTONE-MU': ('Ca', 'CaCO3', 'limestone_ore_purity')}
 WASTE_RE = re.compile(r'mining-waste|\bwaste\b')
 WATER_RE = re.compile(r'water make-up')
-PENDING = {'IA-SOLV-MU': 'X-RTE-IMPORT-IA-SOLV-MU'}
+PENDING = {}
 PRODUCT_FROM = ('PROD_', 'METAL_STORE', 'WAFER_FAB')
 PRODUCT_RE = re.compile(r'\bexport\b|\bshipped\b|\bproduct\b')
 

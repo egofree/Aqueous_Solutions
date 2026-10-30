@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,docs-authority/duties/OIL_FRAC.md
-2,Process nozzle DN15,11,Carbon steel.,one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,12,Carbon steel.,one per mass edge; DN from AQS-INV-003
 3,"Motor: transfer pump CUT-1 to PROD_C5_C10 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: transfer pump CUT-2 to PROD_C11_C18 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: transfer pump CUT-3 to PROD_C19_C28 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005

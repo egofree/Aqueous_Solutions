@@ -18,7 +18,7 @@ This page lists every unit in the graph that can release a flammable substance, 
 
 ## 2. Basis
 
-The ventilation is taken as medium degree with good availability, provided by mechanical extract (AQS-THM-002). Loss of extract trips the release source (AQS-CTL-003), so the zone extents remain valid. The graph has 14 release sources: 8 in gas group IIC (Group B), 6 in gas group IIA (Group D).
+The ventilation is taken as medium degree with good availability, provided by mechanical extract (AQS-THM-002). Loss of extract trips the release source (AQS-CTL-003), so the zone extents remain valid. The graph has 16 release sources: 9 in gas group IIC (Group B), 7 in gas group IIA (Group D).
 
 ## 3. Zones
 
@@ -28,22 +28,24 @@ Table 3.1. Release sources and zones
 
 | Unit | Sector | Substances | Flow (kg/d) | Gas group | Temperature class | Zone 1 | Zone 2 | Instruments | Motors and pumps |
 |---|---|---|---|---|---|---|---|---|---|
-| CRYO_H2 | CRYO | H2 | 9.247 | IIC (Group B) | T1 | 1.0 m around relief/vent outlet | 1.5 m around the envelope, upward bias | 2 | 0 |
+| CRYO_H2 | CRYO | H2 | 9.248 | IIC (Group B) | T1 | 1.0 m around relief/vent outlet | 1.5 m around the envelope, upward bias | 2 | 0 |
 | EW_3 | DIGESTER | H2 | 0.141 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
 | EW_5 | DIGESTER | H2 | 0.031 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
 | EW_6 | DIGESTER | H2 | 0.034 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
 | EW_7 | DIGESTER | H2 | 0.446 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 2 |
 | EW_8 | DIGESTER | H2 | 0.032 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 7 | 1 |
-| H2O_ELYZ | CRYO | H2 | 9.247 | IIC (Group B) | T1 | 1.0 m around relief/vent outlet | 1.5 m around the envelope, upward bias | 4 | 0 |
-| MEOH_TANK | MEOH | CH3OH | 28.029 | IIA (Group D) | T1 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 6 | 0 |
+| H2O_ELYZ | CRYO | H2 | 9.248 | IIC (Group B) | T1 | 1.0 m around relief/vent outlet | 1.5 m around the envelope, upward bias | 4 | 0 |
+| MEOH_TANK | MEOH | CH3OH | 28.008 | IIA (Group D) | T1 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 6 | 0 |
 | NAOH_PLANT | DIGESTER | H2 | 0.109 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 6 | 0 |
+| OIL_FRAC | OIL | hydrocarbon | 0.01 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 9 | 0 |
 | POLY_OLEFIN | POLYMERS | C5-C10 | 0.294 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
 | PROD_C11_C18 | OIL | C11-C18 | 1.512 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 4 | 0 |
 | PROD_C19_C28 | OIL | C19-C28 | 2.018 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 6 | 0 |
-| PROD_C5_C10 | OIL | C5-C10 | 7.131 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 6 | 0 |
-| PROD_MEOH | CRYO | CH3OH | 28.029 | IIA (Group D) | T1 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
+| PROD_C5_C10 | OIL | C5-C10 | 7.141 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 6 | 0 |
+| PROD_MEOH | CRYO | CH3OH | 28.008 | IIA (Group D) | T1 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
+| SOLV_PLANT | FAB | CH3OH H2 hydrocarbon | 0.031 | IIC (Group B) | T3 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 6 | 0 |
 
-In total, 79 instruments and 6 motors or pumps are in Zone 1 or Zone 2. Their specifications in the instrument index (AQS-CTL-001) and the inventories take the protection type from the protection column of `docs-authority/inventory/HAZ_AREA.csv`.
+In total, 94 instruments and 6 motors or pumps are in Zone 1 or Zone 2. Their specifications in the instrument index (AQS-CTL-001) and the inventories take the protection type from the protection column of `docs-authority/inventory/HAZ_AREA.csv`.
 
 The headspace of the zinc–bromine flow battery (ZNBR2), where hydrogen forms by the hydrogen evolution reaction (HER), is Zone 2 inside the enclosure while the purge is running (NFPA 855; gas detection in AQS-SAF-006).
 

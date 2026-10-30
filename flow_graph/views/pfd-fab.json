@@ -3,8 +3,8 @@
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 34,
-  "edge_count": 47,
+  "node_count": 40,
+  "edge_count": 56,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -20,6 +20,25 @@
       "modules": [],
       "params": {},
       "continuous_kw": null
+    },
+    {
+      "unit_id": "BLACK_DIGEST",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "digest",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Black digest (S30)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": {
+        "value": 0.1052,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-ELS-02: node aligned to its calculated SF-BLACK_DIGEST feed; sizing module flow_graph/param/sanitation.py (X-SAN-01, AQS-DUTY-063). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to BLACK_DIGEST continuous_kw.."
+      }
     },
     {
       "unit_id": "BMED_ACID",
@@ -76,7 +95,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 174.184811,
+          "bypass_kg_d": 174.193703,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -229,6 +248,116 @@
       }
     },
     {
+      "unit_id": "HABITATION",
+      "sector_id": "HAB",
+      "presence": "present",
+      "class": "hab",
+      "tags": [],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": 1.157,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-HAB-002 equipment list: 9 line items sum 1.157 kW calculated (CDRA 0.75 kW dominates, NASA_CDRA2015; ventilation ASHRAE621_2019/ISO16798_3; lighting IECC2021_C405; fixtures AQS-HAB-001 rev B). Separately, the driver key ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW 3.0 kW stays the NFPA 110 critical-capacity lock for the backup sizing - not this connected load. | X-ELS-02 load-basis (A-M-301)."
+      },
+      "modules": [],
+      "params": {
+        "crew_study": 4,
+        "presence": "present",
+        "co2_removal": {
+          "metabolic_CO2_kg_d": 4.021,
+          "half_cycle_min": 144.0,
+          "zeolite_5A_kg_per_bed": 40.2,
+          "beds_per_assembly": 2,
+          "assemblies": 2,
+          "zeolite_total_kg": 160.8,
+          "basis": "NASA_5A1998 1.0 wt% at 0.4 kPa; NASA_CDRA2015 swing pair; N+1 assembly (X-RED-06, A-M-147)"
+        },
+        "equipment": [
+          {
+            "item": "CDRA CO2 removal: 5A zeolite bed regen heaters + valves (X-RED-06, NASA_CDRA2015 class)",
+            "kW": 0.75
+          },
+          {
+            "item": "ventilation fans: 22 L/s at SFP 750 W/(m3/s) (ASHRAE621_2019 rates, ISO16798_3 SFP3)",
+            "kW": 0.017
+          },
+          {
+            "item": "lighting: 40 m2 x 8.8 W/m2 x 10 % lit (IECC2021_C405 allowance)",
+            "kW": 0.035
+          },
+          {
+            "item": "water pressure + grey lift pumps (shower 6 L/min at 2 bar class, AQS-HAB-001)",
+            "kW": 0.03
+          },
+          {
+            "item": "galley: induction 2 kW x 0.5 h/d + microwave + kettle = 1.4 kWh/d",
+            "kW": 0.058
+          },
+          {
+            "item": "medical fridge/freezer + pharmacy (AQS-HAB-001 medical room)",
+            "kW": 0.08
+          },
+          {
+            "item": "medical equipment duty share",
+            "kW": 0.05
+          },
+          {
+            "item": "comms, electronics, controls at the hab panels",
+            "kW": 0.05
+          },
+          {
+            "item": "wash-water heating: 60 kg/d x 30 K x 4.18 kJ/kg K",
+            "kW": 0.087
+          },
+          {
+            "item": "total connected (calculated)",
+            "kW": 1.157
+          },
+          {
+            "item": "critical-capacity lock (drivers, NFPA 110)",
+            "kW": 3.0
+          }
+        ]
+      }
+    },
+    {
+      "unit_id": "HDR_H2",
+      "sector_id": "GAS",
+      "presence": "present",
+      "class": "header",
+      "tags": [],
+      "electrical_role": "none",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": null,
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "design": {
+          "service": "H2 header (EW cathode gas in, dryer and trim draws out)",
+          "kind": "gas",
+          "flow_kg_s": 0.0,
+          "duty_kW": null,
+          "rho_kg_m3": 0.084,
+          "Q_m3_s": 0.0003,
+          "v_m_s": 8.0,
+          "id_req_mm": 6.8,
+          "DN": 25,
+          "length_m": 23.6,
+          "volume_m3": 0.0054,
+          "material": "PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)",
+          "hold_kg": 0.0,
+          "connections": 16
+        },
+        "size_note": "DN25 manifold x 24 m run (0.005 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+      }
+    },
+    {
       "unit_id": "HDR_N2",
       "sector_id": "HAB",
       "presence": "present",
@@ -344,6 +473,43 @@
       }
     },
     {
+      "unit_id": "MEOH_TANK",
+      "sector_id": "MEOH",
+      "presence": "present",
+      "class": "tank",
+      "tags": [],
+      "electrical_role": "storage",
+      "diagram_gap": null,
+      "notes": null,
+      "enabled": true,
+      "continuous_kw": {
+        "value": null,
+        "unit": "kW",
+        "status": "study",
+        "note": "Inventory store; no continuous kW \u2014 fuel to MEOH_FC"
+      },
+      "modules": [],
+      "params": {
+        "inventory_kg_study_min": 15.0,
+        "days_at_mid_synth": 3,
+        "presence": "present",
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
+        }
+      }
+    },
+    {
       "unit_id": "NORTH_DOCK",
       "sector_id": "DOCK",
       "presence": "present",
@@ -362,14 +528,14 @@
           "exports_kg_d": {
             "IA-N2-VENT": 3.1,
             "IA-NA-PURGE": 0.642,
-            "IA-C5-SHIP": 7.131,
+            "IA-C5-SHIP": 7.141,
             "IA-C11-SHIP": 1.512,
             "IA-C19-SHIP": 2.018,
-            "IA-O2-SHIP": 22.006,
-            "IA-MEOH-SHIP": 28.029,
+            "IA-O2-SHIP": 22.013,
+            "IA-MEOH-SHIP": 28.008,
             "IA-CL2-SHIP": 39.206,
             "IA-CA-CL2-SHIP": 0.097,
-            "IA-KROLL-CO": 0.629,
+            "IA-KROLL-CO": 0.612,
             "IA-MO-VENT": 0.045,
             "IA-CR-VENT": 0.217,
             "IA-BURNOUT-VENT": 0.2,
@@ -378,11 +544,11 @@
             "IA-FAB-PRODUCT": 0.139,
             "IA-LIME-SHIP": 0.282,
             "IA-NAOH-CL2-SHIP": 3.894,
-            "IA-NAOH-RESIDUE": 0.034
+            "IA-NAOH-RESIDUE": 0.034,
+            "IA-SOLV-VENT": 0.019
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 56.289,
-            "IA-SOLV-MU": 0.21,
+            "IA-H2O-MU": 56.497,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
             "IA-MGCL2-MU": 0.04,
@@ -1141,6 +1307,101 @@
       }
     },
     {
+      "unit_id": "TI_CELL",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "cell",
+      "tags": [
+        "titanium",
+        "molten_salt"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Titanium metal. Primary: Kroll (chlorinate to TiCl4, Mg reduction). FFC Cambridge is cold spare. MgCl2 returns to existing Mg pot. Cl2 to CRU. Binding + selection 2026-10-16. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "ti_kg_d": 0.5,
+          "tio2_kg_d": 0.8342,
+          "c_kg_d": 0.2509,
+          "cl2_kg_d": 1.4813,
+          "mg_kg_d": 0.5078,
+          "mgcl2_gross_kg_d": 1.9891,
+          "co_kg_d": 0.5852,
+          "chemistry": "TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO; TiCl4 + 2Mg -> Ti + 2MgCl2 (AQS-BAL-KROLL)",
+          "I_A": 0.0,
+          "V": 0.0,
+          "dc_kW": 0.0,
+          "hold_kW": 0.5,
+          "kW": 0.5,
+          "basis": "dock rutile-equivalent + carbon + Mg-pot loop; A-M-284 (assay envelope on the concentrate)",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "service": "Kroll chlorinator + Mg-reduction retort train",
+          "chemistry": "TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO; TiCl4 + 2Mg -> Ti + 2MgCl2 (AQS-BAL-KROLL)",
+          "tio2_kg_d": 0.8342,
+          "c_kg_d": 0.2509,
+          "ti_kg_d": 0.5,
+          "mg_kg_d": 0.5078,
+          "cl2_kg_d": 1.4813,
+          "mgcl2_gross_kg_d": 1.9891,
+          "co_kg_d": 0.5852,
+          "retort_T_C": 900.0,
+          "chlorinator_T_C": 800.0,
+          "hold_kW": 0.5,
+          "batch_kg": 1.0,
+          "basis": "batch retort campaigns at the 0.5 kg/d Ti scale"
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "kroll_train",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK rutile + carbon imports with the Mg-pot loop (A-M-284)"
+        },
+        "sec3_material": {
+          "mat": "Alumina-brick-lined carbochlorinator at 800 C with graphite hot face; TiCl4 take-off cooled through a 316L condensation train; Kroll reduction retort 310S (25Cr-20Ni) with a graphite crucible insert at 900 C; molten MgCl2 return through graphite/Ni-200 launder",
+          "basis": "TiO2 + 2C + 2Cl2 at 800 C and TiCl4 + 2Mg at 900 C (AQS-BAL-KROLL closure, graph design): the chlorinator bed is a dry hot face; the retort is the Kroll steel-retort class (KROLL1940, ULLMANN_TITANIUM); chloride-melt metallurgy for the launder (DING2018_CL_REVIEW). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Mo-clad retort (Kroll shipped his demonstration retort Mo-clad) if service pushes above 950 C; Hastelloy C-276 condensation if TiCl4 hydrolysis is ever traced",
+          "note": "batch 1 kg sponge class retort (graph design); the Mg recycles from MG_POT and the MgCl2 returns through the issued section 12.2 last-row launder.",
+          "task": "X-MAT-22"
+        },
+        "recovery": [
+          {
+            "element": "Ti",
+            "use": "TI_CELL metal",
+            "need_kg_d": 0.5000050228385401,
+            "recovered_kg_d": 0.0,
+            "recovered_from": [
+              "FLOAT_SINK_GRIT_TO_TI"
+            ],
+            "ore_streams": [
+              "IA-TIO2-MU"
+            ],
+            "unrecovered": [],
+            "note": "the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_TiO2_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427)"
+          }
+        ]
+      },
+      "continuous_kw": {
+        "value": 0.5,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 Kroll retort + chlorinator hold at 900/800 C under Ar (thermochemical reduction, no electrolysis; A-M-284 study hold)."
+      }
+    },
+    {
       "unit_id": "POLY_STOCK",
       "sector_id": "POLYMERS",
       "presence": "present",
@@ -1219,6 +1480,83 @@
           "H_mm": 650,
           "wall_mm": 4.75,
           "material": "PE (rotomoulded / fabricated)"
+        }
+      }
+    },
+    {
+      "unit_id": "SOLV_PLANT",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Solvent plant: spent-solvent still, with carbonylation, ketonisation and hydrogenation reactors or solvent fermenters (A-M-428).",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.01034,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): still reboiler 0.00944 kW + reactor heaters 0.00090 kW (solvent.py, route MEOH_CO)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "Solvent plant (A-M-428).",
+        "recovery": [
+          {
+            "element": "C",
+            "use": "bench solvent (ethanol and acetone)",
+            "need_kg_d": 0.1198775889411408,
+            "recovered_kg_d": 0.10818952401937956,
+            "recovered_from": [
+              "IA-SOLV-SPENT"
+            ],
+            "ore_streams": [],
+            "unrecovered": [
+              {
+                "stream": "S10",
+                "kg_d": 0.005993879447057046,
+                "recoverable": false,
+                "basis": "solvent that evaporates at the bench or leaves with the spent etch, outside the segregated drain (solv_spent_catch_frac)"
+              },
+              {
+                "stream": "IA-SOLV-BTMS",
+                "kg_d": 0.005694185474704193,
+                "recoverable": false,
+                "basis": "still bottoms with the resist residue, burned with the light oil cut (solv_still_recovery_frac)"
+              }
+            ],
+            "note": "the shortfall is made from plant methanol and the chlorinator CO that was exported as fuel gas"
+          }
+        ],
+        "design": {
+          "route": "MEOH_CO",
+          "bench_kg_d": 0.209973,
+          "spent_kg_d": 0.199474,
+          "recovered_kg_d": 0.189501,
+          "make_kg_d": 0.020472,
+          "acetone_kg_d": 0.010236,
+          "ethanol_kg_d": 0.010236,
+          "meoh_kg_d": 0.02046,
+          "co_kg_d": 0.017885,
+          "h2_kg_d": 0.000995,
+          "fw_kg_d": 0.0,
+          "stillage_kg_d": 0.0,
+          "butanol_kg_d": 0.0,
+          "vent_kg_d": 0.018868,
+          "btms_kg_d": 0.009974,
+          "product_kg_d": 0.209973,
+          "kw": 0.010344,
+          "kw_still": 0.009443,
+          "kw_rx": 0.000901
+        },
+        "sec3_material": {
+          "mat": "316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed",
+          "basis": "Ethanol and acetone at their boiling points in the still, and acetic acid with an iodide promoter at 150-200 C in the carbonylation (A-M-428, flow_graph/param/solvent.py): stainless steel serves the solvents and the dry reactor gases, while hot acetic acid with iodide needs a nickel-molybdenum alloy (ULLMANN_ACETIC; PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Zirconium for the carbonylation autoclave if iodide corrosion of C-276 is seen in service",
+          "note": "wetted by ethanol, acetone and hot acetic acid with an iodide promoter; iodide pitting of the carbonylation vessel is the corrosion load.",
+          "task": "X-MAT-22"
         }
       }
     }
@@ -1333,7 +1671,7 @@
       "forbidden": "floor drain",
       "claim_status": "Closed",
       "rate": {
-        "value": 79.115777,
+        "value": 78.916303,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-AUD-001 \u00a713 spent etch/return order-of-magnitude (~WS_* forwards sum mid) | X-PAR-02 TF: spent etch/return order-of-magnitude band unchanged; closes the bench by difference (AQS-PAR-003)."
@@ -1343,7 +1681,10 @@
       "open_boundary": false,
       "namespace": "S",
       "gap_flags": [],
-      "notes": null
+      "notes": null,
+      "params": {
+        "pre_solv_kg_d": 79.115777
+      }
     },
     {
       "stream_id": "S27",
@@ -2043,8 +2384,8 @@
       "gap_flags": [],
       "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
       "composition": {
-        "water": 0.97,
-        "solute": 0.03
+        "ethanol": 0.5,
+        "acetone": 0.5
       },
       "params": {
         "T_C": 40.0,
@@ -2252,16 +2593,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "solvent resupply (ethanol and acetone)",
       "header": "dedicated",
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.209973,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF R10c: solvent resupply imported at the dock boundary equals the bench draw IA-SOLV-WB (D-DOCK reagent import; each chemical has a source, AQS-DUTY-016; 30 d hold A-M-225). | X-PAR-02 TF: solvent resupply imported at the dock boundary equals the bench draw IA-SOLV-WB (D-DOCK reagent import; 30 d hold already sized, A-M-225) (AQS-PAR-003)."
+        "note": "Retired 2026-10-29 (owner decision t59u: no imports except waste or raw ore). SOLV_PLANT recovers the spent solvent and makes the shortfall on site (A-M-428). | X-PAR-02 TF: solvent resupply imported at the dock boundary equals the bench draw IA-SOLV-WB (D-DOCK reagent import; 30 d hold already sized, A-M-225) (AQS-PAR-003)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "FAB",
@@ -2553,6 +2894,270 @@
       "notes": null,
       "composition": {
         "Ar": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-SPENT",
+      "from_unit_id": "WET_BENCH",
+      "to_unit_id": "SOLV_PLANT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "segregated spent solvent from the bench rinse drain",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.199474,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_CO)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "ethanol": 0.5,
+        "acetone": 0.5
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-PLANT",
+      "from_unit_id": "SOLV_PLANT",
+      "to_unit_id": "WS_SOLV",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "recovered and new ethanol and acetone to the solvent store",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.209973,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): product = 0.209973 kg/d (solvent.py, route MEOH_CO)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "ethanol": 0.5,
+        "acetone": 0.5
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-BTMS",
+      "from_unit_id": "SOLV_PLANT",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "still bottoms (resist residue and heavy alcohols) to the light oil cut",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.009974,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): btms = 0.009974 kg/d (solvent.py, route MEOH_CO)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-VENT",
+      "from_unit_id": "SOLV_PLANT",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "reactor or fermenter off-gas (fuel-gas class export)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.018867,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): vent = 0.018868 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CO2, water and unconverted CO, H2 and methanol": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-MEOH",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "SOLV_PLANT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plant methanol for the carbonylation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.02046,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.020460 kg/d (solvent.py, route MEOH_CO)."
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CH3OH": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-CO",
+      "from_unit_id": "TI_CELL",
+      "to_unit_id": "SOLV_PLANT",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "chlorinator carbon monoxide for the carbonylation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.017885,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): co = 0.017885 kg/d (solvent.py, route MEOH_CO)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CO": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-H2",
+      "from_unit_id": "HDR_H2",
+      "to_unit_id": "SOLV_PLANT",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "header hydrogen for the acetic acid hydrogenation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.000995,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO)."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-FW",
+      "from_unit_id": "HABITATION",
+      "to_unit_id": "SOLV_PLANT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "retired",
+      "carries": "galley food waste for the solvent fermentation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): fw = 0.000000 kg/d (solvent.py, route MEOH_CO)."
+      },
+      "from_sector_id": "HAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "food waste": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-SOLV-STILLAGE",
+      "from_unit_id": "SOLV_PLANT",
+      "to_unit_id": "BLACK_DIGEST",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "retired",
+      "carries": "fermentation stillage to the digester",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): stillage = 0.000000 kg/d (solvent.py, route MEOH_CO)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "water": 0.9,
+        "solids": 0.1
       }
     }
   ],

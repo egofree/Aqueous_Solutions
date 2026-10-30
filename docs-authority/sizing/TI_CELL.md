@@ -17,7 +17,7 @@ This page records the size of unit TI_CELL, of class `cell` in sector FOUNDRY, f
 
 ## 2. Duty
 
-The unit takes 3.11853 kg/d by 5 streams and gives 3.11853 kg/d by 7 streams. Its continuous electrical load is 0.5 kW, fed by stream SF-TI_CELL.
+The unit takes 3.11853 kg/d by 5 streams and gives 3.11853 kg/d by 8 streams. Its continuous electrical load is 0.5 kW, fed by stream SF-TI_CELL.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

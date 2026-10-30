@@ -769,6 +769,11 @@
   "docnum": "AQS-DUTY-071",
   "family": "PV cell line (flow_graph/param/pv_cell_line.py)"
  },
+ "SOLV_PLANT": {
+  "doc": "docs-authority/PARAMETRIC_MODEL.md",
+  "docnum": "AQS-PAR-001",
+  "family": "Solvent plant (flow_graph/param/solvent.py, section 7.3, A-M-428)"
+ },
  "SOL_ARK_60K": {
   "doc": "docs-authority/POWER_SIZING.md",
   "docnum": "AQS-ELEC-007",

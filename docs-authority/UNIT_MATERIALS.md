@@ -17,25 +17,25 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 195 units, 141 have an issued material for each wetted stream, 54 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 333 wetted stream ends, and each resolves to an issued service family.
+Of the 196 units, 142 have an issued material for each wetted stream, 54 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 339 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
 
 The following service families of AQS-STD-002 are used, with the number of stream ends in each.
 
-- Acid or brine, at or below 60 C: 52 stream ends.
+- Acid or brine, at or below 60 C: 53 stream ends.
 - Hot leach liquor: 46 stream ends.
 - Dry gas, H2/O2/N2/CO2: 42 stream ends.
-- Process vent gas: 36 stream ends.
-- Hydrocarbon product, fuel or wax cut: 18 stream ends.
+- Process vent gas: 38 stream ends.
+- Hydrocarbon product, fuel or wax cut: 19 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
 - Aqueous process liquor (AQS-ASSAY-001 envelope): 16 stream ends.
-- Wet acid H₂ + sweep air header: 14 stream ends.
+- Wet acid H₂ + sweep air header: 15 stream ends.
 - Oxidizer, wet HF or PVDF unit: 13 stream ends.
 - Q1/Q2 thermal oil: 12 stream ends.
+- Wet methanol service: 12 stream ends.
 - Water loops (protective, irrigation, UPW): 12 stream ends.
-- Wet methanol service: 11 stream ends.
 - Flue or acid gas: 10 stream ends.
 - Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 10 stream ends.
 - Alkaline (NaOH/KOH base liquor): 7 stream ends.
@@ -44,8 +44,8 @@ The following service families of AQS-STD-002 are used, with the number of strea
 - CaCl₂/MgCl₂ brine concentrates to molten-salt pots (ambient import legs, NORTH_DOCK to MG_POT and CA_POT): 2 stream ends.
 - Propylene-glycol ground loop: 1 stream ends.
 - Flue quench water: 1 stream ends.
-- Organic liquid (solvent make-up): 1 stream ends.
 - Molten MgCl₂ salt return (TI_CELL Kroll retort to MG_POT, ~700 °C): 1 stream ends.
+- Organic liquid (solvent make-up): 1 stream ends.
 
 ## 4. Selections by unit
 
@@ -734,6 +734,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-EW7-H2B | EW_7 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-EW8-H2B | EW_8 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-NAOH-H2 | NAOH_PLANT | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
+| IA-SOLV-H2 | HDR_H2 | SOLV_PLANT | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 
 ### HDR_N2
 
@@ -964,6 +965,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-MEOH-PROD | MEOH_TANK | PROD_MEOH | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | MEOH_TO_VDF | MEOH_TANK | VDF_SYN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | MEOH_TO_TFE | MEOH_TANK | TFE_SYN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
+| IA-SOLV-MEOH | MEOH_TANK | SOLV_PLANT | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 
 ### METAL_STORE
 
@@ -1091,6 +1093,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | S72B | MET_SCRUB | OIL_FRAC | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 
 ### OIL_PYRO
 
@@ -1412,6 +1415,18 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 This unit has no wetted piped stream: every edge is a solids transfer or an electrical connection. Its construction material is set by its fabrication route and bill of materials, which AQS-END-002 tracks, not by a wetted selection.
 
+### SOLV_PLANT
+
+| Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
+|---|---|---|---|---|---|
+| IA-SOLV-SPENT | WET_BENCH | SOLV_PLANT | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+| IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | M1 | 12.1 organic liquid (solvent make-up) | 316L where wet per the WS_SOLV duty |
+| IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-SOLV-VENT | SOLV_PLANT | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-SOLV-MEOH | MEOH_TANK | SOLV_PLANT | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
+| IA-SOLV-CO | TI_CELL | SOLV_PLANT | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-SOLV-H2 | HDR_H2 | SOLV_PLANT | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
+
 ### SOL_ARK_60K
 
 This unit has no wetted piped stream: every edge is a solids transfer or an electrical connection. Its construction material is set by its fabrication route and bill of materials, which AQS-END-002 tracks, not by a wetted selection.
@@ -1446,6 +1461,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-MGCL2-KROLL | TI_CELL | MG_POT | — | 12.2 molten mgcl2 salt return (ti_cell kroll retort to mg_pot, ~700 °c) | Graphite/Ni-200 wetted launder, per the AQS-STD-006 pot-cell selections (molten-chloride physics: DING2018_CL_REVIEW, KRUIZENGA2012) |
 | IA-CL2-MG-TI | MG_POT | TI_CELL | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-KROLL-CO | TI_CELL | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-SOLV-CO | TI_CELL | SOLV_PLANT | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### VAC_CAST
 
@@ -1517,6 +1533,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | S34 | WS_NITRIC | WET_BENCH | P3 | 12.1 oxidizer, hf or pvdf unit | PVDF (P3) |
 | S34B | WS_PHOS | WET_BENCH | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+| IA-SOLV-SPENT | WET_BENCH | SOLV_PLANT | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 
 ### WET_OX
 
@@ -1590,7 +1607,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
-| IA-SOLV-MU | NORTH_DOCK | WS_SOLV | M1 | 12.1 organic liquid (solvent make-up) | 316L where wet per the WS_SOLV duty |
+| IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | M1 | 12.1 organic liquid (solvent make-up) | 316L where wet per the WS_SOLV duty |
 
 ### ZNBR2
 

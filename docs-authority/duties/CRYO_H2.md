@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 11.33 kg/d. Mass out 11.33 kg/d. Electrical duty 0.9325 kW. In: S64 2.086 kg/d (H2 normal path); IA-ELY-H2 9.247 kg/d (electrolyser H2). Out: S45 0.01973 kg/d (H2 fuel); S49 4.8 kg/d (H2 fuel); S74 6.513 kg/d (H2 for MeOH).
+1. Basis. Mass in 11.33 kg/d. Mass out 11.33 kg/d. Electrical duty 0.9325 kW. In: S64 2.085 kg/d (H2 normal path); IA-ELY-H2 9.248 kg/d (electrolyser H2). Out: S45 0.01973 kg/d (H2 fuel); S49 4.8 kg/d (H2 fuel); S74 6.513 kg/d (H2 for MeOH).
 
 2. Size.
 - Not a packed tower. The column diameter and the tray count are on CRYO_ASU only.

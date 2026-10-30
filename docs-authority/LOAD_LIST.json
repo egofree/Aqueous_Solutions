@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "4f26521cea1a9295ab716581636c19bb3ecec2e460ee7516dfaf622545f04479",
+  "graph_sha256": "45fb0db28bae1d46277cac015f9297612986741486018ee417ccea3493f51e0f",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 351.835,
-   "calc_kw": 351.835,
+   "kw": 351.848,
+   "calc_kw": 351.848,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 218.013,
-   "calc_kw": 218.013,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.9 kW, 3052 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 218.023,
+   "calc_kw": 218.023,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 991.0 kW, 3052 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -34,8 +34,8 @@
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 21.191,
-   "calc_kw": 21.191,
+   "kw": 21.193,
+   "calc_kw": 21.193,
    "basis": "X-PAR-12 TF: 9.25 kg/d H2 x 55.0 kWh/kg / 24 h; rated 84.8 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
@@ -252,7 +252,7 @@
    "role": "load",
    "kw": 0.709,
    "calc_kw": 0.709,
-   "basis": "X-ELS-02: Q4-bus lift S44 2.2692 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.7091 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
+   "basis": "X-ELS-02: Q4-bus lift S44 2.2685 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.7089 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
    "class": "calculated",
    "sector": "GEO"
   },
@@ -752,6 +752,15 @@
    "sector": "FOUNDRY"
   },
   {
+   "unit": "SOLV_PLANT",
+   "role": "\u2014",
+   "kw": 0.01,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FAB"
+  },
+  {
    "unit": "HYDRO_SET",
    "role": "storage",
    "kw": 0,
@@ -844,13 +853,13 @@
  ],
  "summary": {
   "calculated": 80,
-  "pending": 0,
+  "pending": 1,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 93,
-  "graph_sum_kW": 156.09,
-  "calc_sum_kW": 156.09,
+  "rows": 94,
+  "graph_sum_kW": 156.1,
+  "calc_sum_kW": 156.1,
   "connected_load_kW": 156.1,
   "connected_calculated_kW": 156.0,
   "connected_standby_kW": 0.1,
@@ -868,7 +877,8 @@
     "owner-lock": 1
    },
    "FAB": {
-    "calculated": 7
+    "calculated": 7,
+    "pending": 1
    },
    "FARM": {
     "calculated": 1

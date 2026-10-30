@@ -41,8 +41,8 @@ The 110.3 kg/d drawn as combustion air (IA-AB-AIR, IA-GEN-AIR) is N2 product; at
 | --- | --- | --- |
 | S87 | grow-bed photosynthesis | 0.642 |
 | IA-ASU-O2 | cold box: excess combustion O2 recovered (species-conserving) | 0.064 |
-| IA-ELY-O2 | PEM electrolyser | 73.384 |
+| IA-ELY-O2 | PEM electrolyser | 73.392 |
 
 ## 4. Result
 
-O2 drawn 10.28 (combustion included, on HDR_O2) against real sources 74.09: no species gap; surplus 63.81 kg/d O2 to PROD_O2 (X-PAR-12, AQS-PAR-005 Rev B).
+O2 drawn 10.28 (combustion included, on HDR_O2) against real sources 74.10: no species gap; surplus 63.81 kg/d O2 to PROD_O2 (X-PAR-12, AQS-PAR-005 Rev B).

@@ -6,3 +6,4 @@ N4,DN15,Class 150,ethanol and acetone,outlet,600
 N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
 N7,DN15,Class 150,solvent resupply (ethanol and acetone),inlet,160
+N8,DN15,Class 150,recovered and new ethanol and acetone to the solvent store,inlet,160

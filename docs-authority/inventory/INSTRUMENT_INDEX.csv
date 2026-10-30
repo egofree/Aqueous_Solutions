@@ -219,7 +219,7 @@ WAFER_FAB-LSH-01,WAFER_FAB,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 
 WAFER_FAB-LT-01,WAFER_FAB,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WAFER_FABLT-01,PLC-FAB,A-M-182 liquid height
 WAFER_FAB-PT-01,WAFER_FAB,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),WAFER_FABPT-01,PLC-FAB,no design pressure on the graph
 WAFER_FAB-TE-01,WAFER_FAB,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),WAFER_FABTE-01,PLC-FAB,band by service
-WET_BENCH-FT-01,WET_BENCH,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),WET_BENCHFT-01,PLC-FAB,S10 normal 3.30 L/h
+WET_BENCH-FT-01,WET_BENCH,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),WET_BENCHFT-01,PLC-FAB,S10 normal 3.29 L/h
 WET_BENCH-FT-02,WET_BENCH,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.0005 L/h,4-20 mA HART (AI),WET_BENCHFT-02,PLC-FAB,S38 normal 0.00 L/h
 WET_BENCH-LSH-01,WET_BENCH,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WET_BENCHLSH-01,PLC-FAB,alarm at 90 %
 WET_BENCH-LT-01,WET_BENCH,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WET_BENCHLT-01,PLC-FAB,A-M-182 liquid height
@@ -229,6 +229,10 @@ LITHO_ALIGN-PT-01,LITHO_ALIGN,FAB,pressure transmitter,"ceramic diaphragm, IEC 6
 LITHO_ALIGN-TE-01,LITHO_ALIGN,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LITHO_ALIGNTE-01,PLC-FAB,band by service
 LITHO_COAT-PT-01,LITHO_COAT,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),LITHO_COATPT-01,PLC-FAB,no design pressure on the graph
 LITHO_COAT-TE-01,LITHO_COAT,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LITHO_COATTE-01,PLC-FAB,band by service
+SOLV_PLANT-LSH-01,SOLV_PLANT,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),SOLV_PLANTLSH-01,PLC-FAB,alarm at 90 %
+SOLV_PLANT-LT-01,SOLV_PLANT,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),SOLV_PLANTLT-01,PLC-FAB,A-M-182 liquid height
+SOLV_PLANT-PT-01,SOLV_PLANT,FAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),SOLV_PLANTPT-01,PLC-FAB,no design pressure on the graph
+SOLV_PLANT-TE-01,SOLV_PLANT,FAB,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),SOLV_PLANTTE-01,PLC-FAB,band by service
 WS_AMMONIA-FT-01,WS_AMMONIA,FAB,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),WS_AMMONIAFT-01,PLC-FAB,S33 normal 0.13 L/h
 WS_AMMONIA-LSH-01,WS_AMMONIA,FAB,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),WS_AMMONIALSH-01,PLC-FAB,alarm at 90 %
 WS_AMMONIA-LT-01,WS_AMMONIA,FAB,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),WS_AMMONIALT-01,PLC-FAB,A-M-182 liquid height
@@ -670,6 +674,8 @@ ACID_PLANT-TE-90,ACID_PLANT,POLYMERS,"temperature element (SIF, independent)","t
 ACID_PLANT-AE-01,ACID_PLANT,POLYMERS,SO2 analyzer,electrochemical SO2 cell,0-20 ppm SO2,4-20 mA HART (AI),ACID_PLANTAE-01,PLC-POLYMERS,absorber tail-gas SO2 watch on the contact process (A-M-421)
 NAOH_PLANT-TE-90,NAOH_PLANT,DIGESTER,"temperature element (SIF, independent)","type K thermocouple, own sheath",0 to 1100 C,4-20 mA HART (AI),NAOH_PLANTTE-90,PLC-DIGESTER,independent high-temperature trip on the lime kiln (AQS-CTL-003)
 NAOH_PLANT-AE-01,NAOH_PLANT,DIGESTER,conductivity analyser,"toroidal conductivity cell, PEEK body",0-1000 mS/cm,4-20 mA HART (AI),NAOH_PLANTAE-01,PLC-DIGESTER,NaOH strength of the product liquor on stream IA-NAOH-LIQ
+SOLV_PLANT-TE-90,SOLV_PLANT,FAB,"temperature element (SIF, independent)","Pt100 RTD, own sheath",0 to 400 C,4-20 mA HART (AI),SOLV_PLANTTE-90,PLC-FAB,independent high-temperature trip on the reactor heaters and the reboiler (AQS-CTL-003)
+SOLV_PLANT-AE-01,SOLV_PLANT,FAB,flammable gas detector,catalytic bead LEL sensor,0-100 % LEL,4-20 mA HART (AI),SOLV_PLANTAE-01,PLC-FAB,solvent vapour at the still and the receivers (A-M-428)
 POLY_COND-LT-01,POLY_COND,POLYMERS,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of 0.30 m kettle,4-20 mA HART (AI),POLY_CONDLT-01,PLC-POLYMERS,kettle: design H_mm 300
 POWDER_RESIN-ST-01,POWDER_RESIN,POLYMERS,speed transmitter,incremental encoder on the mill drive,0-100 % of drive speed,4-20 mA HART (AI),POWDER_RESINST-01,PLC-POLYMERS,mill drive: design duty_kW 0.0152 kW
 FILM_CAST-ST-01,FILM_CAST,POLYMERS,speed transmitter,incremental encoder on the chill-roll/haul-off drive,0-100 % of drive speed,4-20 mA HART (AI),FILM_CASTST-01,PLC-POLYMERS,chill-roll drive: design chill_roll_D_mm 150

@@ -13,3 +13,4 @@ N11,DN15,Class 150,NCG only,outlet,600
 N12,DN15,Class 150,unrecovered wax to oil line,inlet,160
 N13,DN15,Class 150,light cuts to polyolefin,outlet,600
 N14,solids,Class 150,spent resist and solvent,inlet,160
+N15,DN15,Class 150,still bottoms (resist residue and heavy alcohols) to the light oil cut,inlet,160

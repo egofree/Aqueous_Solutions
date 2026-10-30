@@ -194,11 +194,12 @@
   "SINTER": "no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "SI_REDUCE": "no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "SI_REFINE": "no issued internals basis for a reactor unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
+  "SOLV_PLANT": "no issued internals basis for a reactor unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "SW_INTAKE": "no issued internals basis for a intake unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "TANK_BLD": "no issued internals basis for a press_tank unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "VCD_TRAIN": "no issued internals basis for a evaporator unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "WET_OX": "no issued internals basis for a wet_ox unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "ZNBR2": "no issued internals basis for a flow_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)"
  },
- "units": 195
+ "units": 196
 }
