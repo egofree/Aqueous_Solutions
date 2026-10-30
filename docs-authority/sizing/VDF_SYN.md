@@ -17,7 +17,7 @@ This page records the size of unit VDF_SYN, of class `reactor` in sector POLYMER
 
 ## 2. Duty
 
-The unit takes 0.592086 kg/d by 3 streams and gives 0.592086 kg/d by 2 streams. Its continuous electrical load is 0.5128 kW, fed by stream SF-VDF_SYN.
+The unit takes 0.57605 kg/d by 3 streams and gives 0.57605 kg/d by 2 streams. Its continuous electrical load is 0.5128 kW, fed by stream SF-VDF_SYN.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -41,7 +41,7 @@ Table 2.1. Design parameters
 
 The envelope is 600 mm x 600 mm x 1200 mm, from `params.envelope` (state live). Its basis is: reactor-class study minimum; the two heated stages dominate the duty (A-M-289).
 
-The hold-up check takes 0.592086 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.5921 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 90 mm in diameter and 130 mm high. It fits within the envelope.
+The hold-up check takes 0.57605 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.5761 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 90 mm in diameter and 130 mm high. It fits within the envelope.
 
 ## 4. Material
 

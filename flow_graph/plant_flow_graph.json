@@ -2450,7 +2450,7 @@
           "exports_kg_d": {
             "IA-N2-VENT": 3.098,
             "IA-NA-PURGE": 0.642,
-            "IA-C5-SHIP": 7.635,
+            "IA-C5-SHIP": 6.63,
             "IA-C11-SHIP": 1.145,
             "IA-C19-SHIP": 2.016,
             "IA-O2-SHIP": 22.014,
@@ -2485,8 +2485,8 @@
             "IA-SULFUR-MU": 0.014,
             "IA-HALITE-MU": 0.676
           },
-          "net_kg_d": 10.371,
-          "residual_kg_d": 10.373,
+          "net_kg_d": 9.366,
+          "residual_kg_d": 9.368,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -12074,10 +12074,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.093912,
+        "value": 0.093738,
         "unit": "kg/d",
         "status": "study",
-        "note": "Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 H2O; AQS-SEL-FP locked route, ULLMANN_FLUOROPOLY). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 H2O; AQS-SEL-FP locked route, ULLMANN_FLUOROPOLY)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -12096,10 +12096,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.079842,
+        "value": 0.080016,
         "unit": "kg/d",
         "status": "study",
-        "note": "Aqueous HF to TFE: 0.10 kg/d TFE x 4 HF/TFE (R-22 route; AQS-SEL-FP, ULLMANN_FLUOROPOLY). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Aqueous HF to TFE: 0.10 kg/d TFE x 4 HF/TFE (R-22 route; AQS-SEL-FP, ULLMANN_FLUOROPOLY)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -12118,10 +12118,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.166036,
+        "value": 0.15,
         "unit": "kg/d",
         "status": "study",
-        "note": "VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-289). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-289)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -12140,10 +12140,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.107598,
+        "value": 0.1,
         "unit": "kg/d",
         "status": "study",
-        "note": "TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-289). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-289)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -13438,10 +13438,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.113634,
+        "value": 0.09,
         "unit": "kg/d",
         "status": "study",
-        "note": "PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RATE-FP-MET reclaim loop (suspension powder, not melt-processable; ULLMANN_FLUOROPOLY). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RATE-FP-MET reclaim loop (suspension powder, not melt-processable; ULLMANN_FLUOROPOLY)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -13482,10 +13482,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.113634,
+        "value": 0.09,
         "unit": "kg/d",
         "status": "study",
-        "note": "PTFE fine powder to stock (A-M-289). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "PTFE fine powder to stock (A-M-289)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -13548,10 +13548,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.023634,
+        "value": 0.12,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): formulated positive resist, 40 coats/d (5.0 wafer starts x 8 mask layers) x 3 mL at 25% solids (MOREAU1988). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): formulated positive resist, 40 coats/d (5.0 wafer starts x 8 mask layers) x 3 mL at 25% solids (MOREAU1988)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "FAB",
@@ -13596,10 +13596,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.348057,
+        "value": 0.332195,
         "unit": "kg/d",
         "status": "study",
-        "note": "Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen loop closes; AQS-SEL-FP; A-M-289 supersedes the A-M-290 no-internal-sink wording for this 0.62 kg/d Cl2 draw). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen loop closes; AQS-SEL-FP; A-M-289 supersedes the A-M-290 no-internal-sink wording for this 0.62 kg/d Cl2 draw)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "POLYMERS"
@@ -13618,10 +13618,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.291339,
+        "value": 0.283567,
         "unit": "kg/d",
         "status": "study",
-        "note": "Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-289). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-289)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "POLYMERS"
@@ -14552,10 +14552,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 27.487256,
+        "value": 27.510913,
         "unit": "kg/d",
         "status": "study",
-        "note": "CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 drawn 0.6158 = 27.5100 kg/d (chlorate consumed, NaCl + reaction water + monomer water formed; A-M-289). The leach sees +0.1379 kg/d liquor, below the 0.5 kg/d battery limit, absorbed by its reconciliation layer. Plus the 0.000938 kg/d phosgenation HCl of RESIST_SYN (A-M-432). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 drawn 0.6158 = 27.5100 kg/d (chlorate consumed, NaCl + reaction water + monomer water formed; A-M-289). The leach sees +0.1379 kg/d liquor, below the 0.5 kg/d battery limit, absorbed by its reconciliation layer. Plus the 0.000938 kg/d phosgenation HCl of RESIST_SYN (A-M-432)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -16924,10 +16924,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 66.527242,
+        "value": 66.500212,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): spent rinse water by difference on WAFER_FAB, now that the nitrogen purge vents. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): spent rinse water by difference on WAFER_FAB, now that the nitrogen purge vents."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "DIGESTER",
@@ -18052,10 +18052,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.557915,
+        "value": 0.33952,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): resist and rinse acetone issued to the coater = POLY_TO_FAB + IA-FAB-SOLV. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): resist and rinse acetone issued to the coater = POLY_TO_FAB + IA-FAB-SOLV."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -18082,10 +18082,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.557915,
+        "value": 0.33952,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): spent resist and acetone to the SOLV_PLANT still = POLY_TO_FAB + IA-FAB-SOLV. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): spent resist and acetone to the SOLV_PLANT still = POLY_TO_FAB + IA-FAB-SOLV."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -19621,10 +19621,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 7.635055,
+        "value": 6.629822,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Less 1.005233 kg/d to RESIST_SYN on IA-RESIST-BZ (A-M-432). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.2941 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Less 1.005233 kg/d to RESIST_SYN on IA-RESIST-BZ (A-M-432). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.2941 kg/d (AQS-DUTY-073) and the resist benzene feed 1.0052 kg/d (A-M-432) (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
@@ -22561,10 +22561,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.557915,
+        "value": 0.33952,
         "unit": "kg/d",
         "status": "study",
-        "note": "Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool handoff; wafer mass is below graph resolution). A-M-284. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool handoff; wafer mass is below graph resolution). A-M-284."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -25201,7 +25201,7 @@
         "value": 0.199474,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_CO)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -25228,10 +25228,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.467586,
+        "value": 0.519493,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): product = 0.519493 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): product = 0.519493 kg/d (solvent.py, route MEOH_CO)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -25258,10 +25258,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.543843,
+        "value": 0.14095,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): btms = 0.140950 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): btms = 0.140950 kg/d (solvent.py, route MEOH_CO)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "OIL",
@@ -25287,10 +25287,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.016578,
+        "value": 0.149902,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): vent = 0.149902 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): vent = 0.149902 kg/d (solvent.py, route MEOH_CO)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "DOCK",
@@ -25316,10 +25316,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.143533,
+        "value": 0.144254,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.144254 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.144254 kg/d (solvent.py, route MEOH_CO)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "FAB",
@@ -25345,10 +25345,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.12609,
+        "value": 0.126101,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): co = 0.126101 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): co = 0.126101 kg/d (solvent.py, route MEOH_CO)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FAB",
@@ -25377,7 +25377,7 @@
         "value": 0.000995,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "FAB",
@@ -25640,7 +25640,7 @@
         "value": 3.9e-05,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): lime_draw = 0.000039 kg/d (grease.py, route CA). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): lime_draw = 0.000039 kg/d (grease.py, route CA)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "DIGESTER",
@@ -25840,10 +25840,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0,
+        "value": 1.005233,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): bz_cut = 1.005233 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): bz_cut = 1.005233 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "FAB",
@@ -25872,7 +25872,7 @@
         "value": 0.366388,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): naph_cut = 0.366388 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): naph_cut = 0.366388 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "FAB",
@@ -25898,10 +25898,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.947336,
+        "value": 1.350229,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): extraction raffinate = cut drawn less the benzene and naphthalene taken. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): extraction raffinate = cut drawn less the benzene and naphthalene taken."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "OIL",
@@ -25927,10 +25927,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.00666,
+        "value": 0.005938,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): meoh = 0.005938 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): meoh = 0.005938 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "FAB",
@@ -25959,7 +25959,7 @@
         "value": 0.001314,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): nh3 = 0.001314 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): nh3 = 0.001314 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -25988,7 +25988,7 @@
         "value": 0.000104,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): h2 = 0.000104 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): h2 = 0.000104 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "FAB",
@@ -26014,10 +26014,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.000732,
+        "value": 0.000721,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): co = 0.000721 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): co = 0.000721 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FAB",
@@ -26046,7 +26046,7 @@
         "value": 0.001824,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): cl2 = 0.001824 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): cl2 = 0.001824 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FAB",
@@ -26075,7 +26075,7 @@
         "value": 0.002575,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): acid = 0.002575 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): acid = 0.002575 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "FAB",
@@ -26101,10 +26101,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.257613,
+        "value": 0.09,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): acetone = 0.090000 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): acetone = 0.090000 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -26130,10 +26130,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.319016,
+        "value": 0.092558,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): air = 0.092558 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): air = 0.092558 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "FAB",
@@ -26159,10 +26159,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0,
+        "value": 0.084138,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): vent = 0.084138 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): vent = 0.084138 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "WTR",
@@ -26190,10 +26190,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.000915,
+        "value": 0.000938,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): hcl = 0.000938 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): hcl = 0.000938 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "DIGESTER",
@@ -26219,10 +26219,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.007976,
+        "value": 0.011349,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): brine = 0.011349 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): brine = 0.011349 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "DIGESTER",
@@ -26248,10 +26248,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0,
+        "value": 0.12,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): resist = 0.120000 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): resist = 0.120000 kg/d (fab_resist.py, route DNQ_NOVOLAC)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "POLYMERS",
@@ -26277,10 +26277,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.0,
+        "value": 0.21952,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): edge-bead rinse and strip acetone at the coat rate. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): edge-bead rinse and strip acetone at the coat rate."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -26306,10 +26306,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.938489,
+        "value": 1.499799,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: fab photoresist made on site (A-M-432): the S03 nitrogen purge leaves the tools to atmosphere at its supply rate. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): the S03 nitrogen purge leaves the tools to atmosphere at its supply rate."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "WTR",

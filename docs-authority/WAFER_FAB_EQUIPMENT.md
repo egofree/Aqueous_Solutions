@@ -107,16 +107,16 @@ Table 6.1. Streams of the fab units
 | IA-BMED-01 | BMED_ACID | WS_NITRIC | 1.246 | kg/d |
 | IA-BMED-02 | BMED_BASE | WS_KOH | 0.2701 | kg/d |
 | IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | 0.08746 | kg/d |
-| IA-FAB-N2-VENT | WAFER_FAB | ATMOS | 0.9385 | kg/d |
+| IA-FAB-N2-VENT | WAFER_FAB | ATMOS | 1.5 | kg/d |
 | IA-FAB-PRODUCT | WAFER_FAB | NORTH_DOCK | 0.1389 | kg/d |
-| IA-FAB-SOLV | WS_SOLV | WAFER_FAB | 0 | kg/d |
-| IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | 66.53 | kg/d |
+| IA-FAB-SOLV | WS_SOLV | WAFER_FAB | 0.2195 | kg/d |
+| IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | 66.5 | kg/d |
 | IA-FAB-WAFER | WAFER_FAB | LITHO_COAT | 0.1389 | kg/d |
 | IA-H2O2-SRC | HDR_O2 | WS_PEROX | 0.176 | kg/d |
 | IA-HF-PROD | HF_GEN | WS_HF_ED | 1.5 | kg/d |
-| IA-LITHO-CARRY | LITHO_COAT | LITHO_DEV | 0.5579 | kg/d |
-| IA-LITHO-IN | WAFER_FAB | LITHO_COAT | 0.5579 | kg/d |
-| IA-LITHO-OUT | LITHO_DEV | SOLV_PLANT | 0.5579 | kg/d |
+| IA-LITHO-CARRY | LITHO_COAT | LITHO_DEV | 0.3395 | kg/d |
+| IA-LITHO-IN | WAFER_FAB | LITHO_COAT | 0.3395 | kg/d |
+| IA-LITHO-OUT | LITHO_DEV | SOLV_PLANT | 0.3395 | kg/d |
 | IA-LITHO-WAFER-A | LITHO_COAT | LITHO_ALIGN | 0.1389 | kg/d |
 | IA-LITHO-WAFER-B | LITHO_ALIGN | LITHO_DEV | 0.1389 | kg/d |
 | IA-LITHO-WAFER-RET | LITHO_DEV | WAFER_FAB | 0.1389 | kg/d |
@@ -127,33 +127,33 @@ Table 6.1. Streams of the fab units
 | IA-PHOS-SRC | LEACH_CSTR_1 | WS_PHOS | 0.62 | kg/d |
 | IA-PV-IN | WS_DOPE | SOLAR_PV_CELL | 0.01 | kg/d |
 | IA-PV-OUT | SOLAR_PV_CELL | WAFER_FAB | 0.009999 | kg/d |
-| IA-RESIST-ACET | WS_SOLV | RESIST_SYN | 0.2576 | kg/d |
+| IA-RESIST-ACET | WS_SOLV | RESIST_SYN | 0.09 | kg/d |
 | IA-RESIST-ACID | ACID_PLANT | RESIST_SYN | 0.002575 | kg/d |
-| IA-RESIST-AIR | ATMOS | RESIST_SYN | 0.319 | kg/d |
-| IA-RESIST-BRINE | RESIST_SYN | LEACH_CSTR_1 | 0.007976 | kg/d |
-| IA-RESIST-BZ | PROD_C5_C10 | RESIST_SYN | 0 | kg/d |
+| IA-RESIST-AIR | ATMOS | RESIST_SYN | 0.09256 | kg/d |
+| IA-RESIST-BRINE | RESIST_SYN | LEACH_CSTR_1 | 0.01135 | kg/d |
+| IA-RESIST-BZ | PROD_C5_C10 | RESIST_SYN | 1.005 | kg/d |
 | IA-RESIST-CL2 | AL_POT | RESIST_SYN | 0.001824 | kg/d |
-| IA-RESIST-CO | TI_CELL | RESIST_SYN | 0.000732 | kg/d |
+| IA-RESIST-CO | TI_CELL | RESIST_SYN | 0.000721 | kg/d |
 | IA-RESIST-H2 | HDR_H2 | RESIST_SYN | 0.000104 | kg/d |
-| IA-RESIST-HCL | RESIST_SYN | CRU | 0.000915 | kg/d |
-| IA-RESIST-MEOH | MEOH_TANK | RESIST_SYN | 0.00666 | kg/d |
+| IA-RESIST-HCL | RESIST_SYN | CRU | 0.000938 | kg/d |
+| IA-RESIST-MEOH | MEOH_TANK | RESIST_SYN | 0.005938 | kg/d |
 | IA-RESIST-NAPH | PROD_C11_C18 | RESIST_SYN | 0.3664 | kg/d |
 | IA-RESIST-NH3 | WS_AMMONIA | RESIST_SYN | 0.001314 | kg/d |
-| IA-RESIST-RAFF | RESIST_SYN | OIL_FRAC | 0.9473 | kg/d |
-| IA-RESIST-STOCK | RESIST_SYN | POLY_STOCK | 0 | kg/d |
-| IA-RESIST-VENT | RESIST_SYN | ATMOS | 0 | kg/d |
+| IA-RESIST-RAFF | RESIST_SYN | OIL_FRAC | 1.35 | kg/d |
+| IA-RESIST-STOCK | RESIST_SYN | POLY_STOCK | 0.12 | kg/d |
+| IA-RESIST-VENT | RESIST_SYN | ATMOS | 0.08414 | kg/d |
 | IA-SIL-SRC | GLASS_DIGEST | WS_SLURRY | 3.3 | kg/d |
-| IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | 0.5438 | kg/d |
+| IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | 0.1409 | kg/d |
 | IA-SOLV-CO | TI_CELL | SOLV_PLANT | 0.1261 | kg/d |
 | IA-SOLV-H2 | HDR_H2 | SOLV_PLANT | 0.000995 | kg/d |
-| IA-SOLV-MEOH | MEOH_TANK | SOLV_PLANT | 0.1435 | kg/d |
-| IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | 0.4676 | kg/d |
+| IA-SOLV-MEOH | MEOH_TANK | SOLV_PLANT | 0.1443 | kg/d |
+| IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | 0.5195 | kg/d |
 | IA-SOLV-SPENT | WET_BENCH | SOLV_PLANT | 0.1995 | kg/d |
-| IA-SOLV-VENT | SOLV_PLANT | NORTH_DOCK | 0.01658 | kg/d |
+| IA-SOLV-VENT | SOLV_PLANT | NORTH_DOCK | 0.1499 | kg/d |
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | 0.21 | kg/d |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | 60 | kg/d |
 | IA-UPW-USE | HDR_UPW | WAFER_FAB | 66.5 | kg/d |
-| POLY_TO_FAB | POLY_STOCK | WAFER_FAB | 0.02363 | kg/d |
+| POLY_TO_FAB | POLY_STOCK | WAFER_FAB | 0.12 | kg/d |
 | S03 | CRYO_N2 | WAFER_FAB | 1.5 | kg/d |
 | S09 | BMED_ACID | WET_BENCH | 9.277 | kg/d |
 | S10 | WET_BENCH | LEACH_CSTR_1 | 78.92 | kg/d |
@@ -177,7 +177,7 @@ Table 6.1. Streams of the fab units
 | SF-WET_BENCH | SOL_ARK_60K | WET_BENCH | 0.2066 | kW |
 | STOCK_TO_FAB | METAL_STORE | WAFER_FAB | 0.2264 | kg/d |
 
-The streams IA-FAB-SOLV, IA-NIT-VENT, IA-RESIST-BZ, IA-RESIST-STOCK and IA-RESIST-VENT carry no flow on the present graph.
+The streams IA-NIT-VENT carry no flow on the present graph.
 
 ## 7. Mass balance
 
@@ -188,7 +188,7 @@ Table 7.1. Mass in and out of each unit
 | Unit | Mass in, kg/d | Mass out, kg/d | Out less in, kg/d |
 | --- | --- | --- | --- |
 | FAB_UPW_TANK | 60.000 | 60.000 | 0.000 |
-| WAFER_FAB | 72.235 | 72.235 | 0.000 |
+| WAFER_FAB | 72.551 | 72.551 | 0.000 |
 | WET_BENCH | 79.122 | 79.122 | 0.000 |
 | WS_AMMONIA | 3.010 | 3.010 | -0.000 |
 | WS_DOPE | 0.010 | 0.010 | 0.000 |
@@ -197,14 +197,14 @@ Table 7.1. Mass in and out of each unit
 | WS_NITRIC | 1.246 | 1.246 | 0.000 |
 | WS_PEROX | 3.000 | 3.000 | 0.000 |
 | WS_SLURRY | 3.300 | 3.300 | 0.000 |
-| WS_SOLV | 0.468 | 0.468 | -0.000 |
+| WS_SOLV | 0.519 | 0.519 | 0.000 |
 | WS_PHOS | 0.620 | 0.620 | 0.000 |
-| LITHO_COAT | 0.697 | 0.697 | 0.000 |
+| LITHO_COAT | 0.478 | 0.478 | 0.000 |
 | LITHO_ALIGN | 0.139 | 0.139 | 0.000 |
-| LITHO_DEV | 0.697 | 0.697 | 0.000 |
+| LITHO_DEV | 0.478 | 0.478 | 0.000 |
 | SOLAR_PV_CELL | 0.010 | 0.010 | -0.000 |
-| SOLV_PLANT | 1.028 | 1.028 | -0.000 |
-| RESIST_SYN | 0.956 | 0.956 | 0.000 |
+| SOLV_PLANT | 0.810 | 0.810 | 0.000 |
+| RESIST_SYN | 1.567 | 1.567 | -0.000 |
 
 ## 8. Wet-line reagent interface
 

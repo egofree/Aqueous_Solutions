@@ -766,10 +766,10 @@ Table 2.1. Graph study and assumed values
 | A-G-2b2007 | 1.2456 | kg/d | graph S34 rate | AQS-DUTY-010: AUD s13 WS_NITRIC/WS_PHOS band 0.5-2 L/d at 3 starts = 1.250 L/d, 50/50 split; 2 M HNO3 at 1.064 kg/L / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-330711 | 0.61 | kg/d | graph S34B rate | Phosphate feed 0.620 less dopant 0.010. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-c518bd | 1.52 | kg/d | graph F_RECOVER_TO_HF_GEN rate | Fluoride concentrate to the kiln = leach fluoride 1.500 (IA-HF-SRC) + POLY_F off-spec reclaim 0.020 kg/d (depolymerization/regrind return; AQS-DUTY-FP sec. 2 ... |  | X-BAS-02 |
-| A-G-ff718a | 0.093912 | kg/d | graph HF_GEN_TO_VDF rate | Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 H2O; AQS-SEL-FP locked route, ULLMANN_FLUOROPOLY). / X-PAR-02 ... |  | X-BAS-02 |
-| A-G-41988d | 0.079842 | kg/d | graph HF_GEN_TO_TFE rate | Aqueous HF to TFE: 0.10 kg/d TFE x 4 HF/TFE (R-22 route; AQS-SEL-FP, ULLMANN_FLUOROPOLY). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-53091a | 0.166036 | kg/d | graph VDF_TO_POLY_F rate | VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-289). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-8a14a8 | 0.107598 | kg/d | graph TFE_TO_POLY_F rate | TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-289). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-ff718a | 0.093738 | kg/d | graph HF_GEN_TO_VDF rate | Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 H2O; AQS-SEL-FP locked route, ULLMANN_FLUOROPOLY). |  | X-BAS-02 |
+| A-G-41988d | 0.080016 | kg/d | graph HF_GEN_TO_TFE rate | Aqueous HF to TFE: 0.10 kg/d TFE x 4 HF/TFE (R-22 route; AQS-SEL-FP, ULLMANN_FLUOROPOLY). |  | X-BAS-02 |
+| A-G-53091a | 0.15 | kg/d | graph VDF_TO_POLY_F rate | VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-289). |  | X-BAS-02 |
+| A-G-8a14a8 | 0.1 | kg/d | graph TFE_TO_POLY_F rate | TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-289). |  | X-BAS-02 |
 | A-G-bfdd25 | 0.0 | kg/d | graph TI_CELL_SLAG_RETURN rate | grit fed 0.0000 less the oxide taken up 0.0000 kg/d returns to the leach as slag (Q-037, A-M-427). / X-PAR-02 TF: foundry/polymers sizing ... |  | X-BAS-02 |
 | A-G-35422f | 0.0 | kg/d | graph MO_CELL_RAFFINATE rate | Oxide feed has no liquor raffinate; the EW_9 stub stays retired (A-M-255). / {TAG}. |  | X-BAS-02 |
 | A-G-322f34 | 0.0 | kg/d | graph FLOAT_SINK_GRIT_TO_TI rate | 0.0000 kg/d of dense grit at 0 TiO2 x grit_chlor_recovery_frac 0.9 covers 0.0000 of the 0.8342 kg/d TiO2-equivalent need (Q-037, A-M-427; assay input ... |  | X-BAS-02 |
@@ -825,15 +825,15 @@ Table 2.1. Graph study and assumed values
 | A-G-f5082d | 0.0 | kg/d | graph DIGEST_TO_POLY rate | POLY_COND recipe waits on the digester organic assay (AQS-DES-POLY / AQS-SIZE-OIL-POLY: no rate treated as design); BLACK_DIGEST closes on IA-BLK-GREY. / ... |  | X-BAS-02 |
 | A-G-0f6816 | 0.294127 | kg/d | graph OLEFIN_TO_PELLET rate | Polyolefin resin = naphtha feed 0.2941 kg/d (mass-conserving oligomerization, AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). / X-PAR-02 TF ... |  | X-BAS-02 |
 | A-G-6158e5 | 0.0 | kg/d | graph POLYF_TO_PELLET rate | Pellet path rides the olefin line; the fluoropolymer products go to FILM_CAST (PVDF sheet) and POWDER_RESIN (PTFE) per the AQS-RATE-FP-MET demand table ... |  | X-BAS-02 |
-| A-G-e7f2ce | 0.113634 | kg/d | graph POLYF_TO_POWDER rate | PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RATE-FP-MET reclaim loop (suspension powder, not melt-processable ... |  | X-BAS-02 |
+| A-G-e7f2ce | 0.09 | kg/d | graph POLYF_TO_POWDER rate | PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RATE-FP-MET reclaim loop (suspension powder, not melt-processable ... |  | X-BAS-02 |
 | A-G-6b78ba | 0.294127 | kg/d | graph PELLET_TO_STOCK rate | Pellet line passes the resin to stock. / X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). |  | X-BAS-02 |
-| A-G-33d1ea | 0.113634 | kg/d | graph POWDER_TO_STOCK rate | PTFE fine powder to stock (A-M-289). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-33d1ea | 0.09 | kg/d | graph POWDER_TO_STOCK rate | PTFE fine powder to stock (A-M-289). |  | X-BAS-02 |
 | A-G-ef407d | 0.14 | kg/d | graph FILM_TO_STOCK rate | PVDF cast film/sheet to stock (A-M-289). |  | X-BAS-02 |
 | A-G-35d847 | 0.267388 | kg/d | graph POLY_TO_MFG rate | Shop polymer draw by difference on the shop closure (A-M-257 pattern): -r0 -0.005772 + melt loss term f*K/(1-f); molded articles ride BLOW_MOLD (IA-BLOW-OUT ... |  | X-BAS-02 |
-| A-G-825e07 | 0.023634 | kg/d | graph POLY_TO_FAB rate | X-RTE TF: fab photoresist made on site (A-M-432): formulated positive resist, 40 coats/d (5.0 wafer starts x 8 mask layers) x 3 mL at 25% solids (MOREAU1988). ... |  | X-BAS-02 |
+| A-G-825e07 | 0.12 | kg/d | graph POLY_TO_FAB rate | X-RTE TF: fab photoresist made on site (A-M-432): formulated positive resist, 40 coats/d (5.0 wafer starts x 8 mask layers) x 3 mL at 25% solids (MOREAU1988). |  | X-BAS-02 |
 | A-G-89e131 | 0.026739 | kg/d | graph POLY_TO_WET rate | Shop polymer offcut to the wet line, 10% of the issue (the S58/S59/S60 10 % shop-loss class, AQS-DUTY-010; A-M-263). / X-PAR-02 TF: foundry/polymers sizing ... |  | X-BAS-02 |
-| A-G-d44bee | 0.348057 | kg/d | graph CRU_TO_VDF rate | Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen loop closes; AQS-SEL-FP; A-M-289 supersedes the A-M-290 ... |  | X-BAS-02 |
-| A-G-ec9c6b | 0.291339 | kg/d | graph CRU_TO_TFE rate | Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-289). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-d44bee | 0.332195 | kg/d | graph CRU_TO_VDF rate | Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen loop closes; AQS-SEL-FP; A-M-289 supersedes the A-M-290 ... |  | X-BAS-02 |
+| A-G-ec9c6b | 0.283567 | kg/d | graph CRU_TO_TFE rate | Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-289). |  | X-BAS-02 |
 | A-G-30f59b | 0.002489 | kg/d | graph WAX_TO_GREASE_CA rate | X-RTE TF: shop grease on site (A-M-429): C19-C28 cut: base oil 0.002105 + wax oxidised to soap acid 0.000384 kg/d (route CA). |  | X-BAS-02 |
 | A-G-01a3b7 | 0.0 | kg/d | graph WAX_TO_GREASE_LI rate | X-RTE TF: shop grease on site (A-M-429): standby thickener route, carries wax when grease_thickener = LI and the polish liquor lithium tenor is measured ... |  | X-BAS-02 |
 | A-G-335b69 | 3.5e-05 | kg/d | graph PCA_TO_GREASE rate | X-RTE TF: shop grease on site (A-M-429): Ca(OH)2 for the soap, stoichiometric (route CA). |  | X-BAS-02 |
@@ -856,7 +856,7 @@ Table 2.1. Graph study and assumed values
 | A-G-5621db | 0.882362 | kg/d | graph S89 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Header passes the folded carbon to the beds. / X-SAN-01 Rev B: +0.3601 kg/d from sanitation cake and biogas combustion. / X-PAR-12 TF: light-limited uptake 29.12 m2 x 30.3 g CO2/m2/d (DLI 17.0, A-M-133); crew-duty area from GROW_BED params: S14 crew food / BVAD2022 tomato edible at the same flux (A-M-229) (AQS-PAR-005). |  | X-BAS-02 |
 | A-G-a49eb8 | 4.021 | kg/d | graph S90 rate | AQS-DUTY-010: S02 3.36 kg/d O2 x RQ 0.87 x 44.01/32.00 / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-75b109 | 244.641602 | kg/d | graph IA-GREY-01 rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. 110 grey + 8.437 bleed - 104.5 treated. / X-PAR-02 TF: grey sludge to the leach by difference (Rev ... |  | X-BAS-02 |
-| A-G-c27d95 | 27.487256 | kg/d | graph IA-CRU-01 rate | CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 drawn 0.6158 = 27.5100 kg/d (chlorate consumed, NaCl + reaction water + monomer water formed; A-M-289). The leach sees +0.1379 kg/d liquor, below the 0.5 kg/d battery limit, absorbed by its reconciliation layer. Plus the 0.000938 kg/d phosgenation HCl of RESIST_SYN (A-M-432). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-c27d95 | 27.510913 | kg/d | graph IA-CRU-01 rate | CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 drawn 0.6158 = 27.5100 kg/d (chlorate consumed, NaCl + reaction water + monomer water formed; A-M-289). The leach sees +0.1379 kg/d liquor, below the 0.5 kg/d battery limit, absorbed by its reconciliation layer. Plus the 0.000938 kg/d phosgenation HCl of RESIST_SYN (A-M-432). |  | X-BAS-02 |
 | A-G-ec5c10 | 0.0 | kW | graph HL-Q4-REJ rate | AQS-HEAT-STUDY-002 Rev A 2026-10-18 §10.8/§10.11 (A-M-244): rated-case terminal flow with the Rev M preheats restored — 13.1637 in - 3.0 life - 0.532 HX-9 - ... |  | X-BAS-02 |
 | A-G-a59b7e | 351.8735 | kW | graph IA-PV-01 rate | AQS-NOTE-PV-REBASE Rev A 2026-10-18 §8 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW. |  | X-BAS-02 |
 | A-G-181fa6 | 8.486841 | kg/d | graph IA-ZNBR-BD rate | AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. Purge-air water and NaOH make-up. Stops the accumulation. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
@@ -922,7 +922,7 @@ Table 2.1. Graph study and assumed values
 | A-G-da663a | 0.176 | kg/d | graph IA-H2O2-SRC rate | X-SAF-10. O2 to the cell at 12.31 A, FE 0.80 (WS_PEROX params.cell). Was 3.0 kg/d, which counted dilution water as oxygen. |  | X-BAS-02 |
 | A-G-c90b96 | 221.583096 | kg/d | graph IA-NOX-H2O rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. +24.31 kg/d flue quench water (X-SAF-07). / X-SAN-01 Rev B: +0.6780 kg/d from sanitation cake ... |  | X-BAS-02 |
 | A-G-966788 | 20.047016 | kg/d | graph IA-NOX-N rate | AQS-DUTY-016. Each waste has a user. Each chemical has a source. / X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion. |  | X-BAS-02 |
-| A-G-441808 | 66.527242 | kg/d | graph IA-FAB-SPENT rate | X-RTE TF: fab photoresist made on site (A-M-432): spent rinse water by difference on WAFER_FAB, now that the nitrogen purge vents. / X-PAR-02 reconciled ... |  | X-BAS-02 |
+| A-G-441808 | 66.500212 | kg/d | graph IA-FAB-SPENT rate | X-RTE TF: fab photoresist made on site (A-M-432): spent rinse water by difference on WAFER_FAB, now that the nitrogen purge vents. |  | X-BAS-02 |
 | A-G-6b4b5a | 0.006137 | kg/d | graph IA-GEN-AIR rate | AQS-DUTY-016. / X-PAR-02 reconciled (AQS-PAR-003). / X-PAR-12 TF: N2 diluent, scaled with the exercise fuel (AQS-PAR-005). |  | X-BAS-02 |
 | A-G-ce7030 | 207.279999 | kg/d | graph IA-NOX-HAB rate | AQS-DUTY-016. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-8975e6 | 31.363502 | kg/d | graph IA-NUT-BED rate | AQS-DUTY-016. / X-SAN-01 Rev B: +0.0470 kg/d from sanitation cake and biogas combustion. / X-PAR-02 re-base (D-FARM owner ruling 2026-10-18, A-M-229) ... |  | X-BAS-02 |
@@ -953,8 +953,8 @@ Table 2.1. Graph study and assumed values
 | A-G-b624c5 | 0.209973 | kg/d | graph IA-SOLV-WB rate | AQS-DUTY-026 / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-d9e163 | 1.0 | kg/d | graph IA-CLOSE-1 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-2de38a | 0.1896 | kg/d | graph IA-CLOSE-10 rate | AQS-PLAN-001 Rev B. Phase 1 energy sinks. Phase 2 vessels on the accounting edges. Named transfer, not an accounting edge. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-31b710 | 0.557915 | kg/d | graph IA-LITHO-IN rate | X-RTE TF: fab photoresist made on site (A-M-432): resist and rinse acetone issued to the coater = POLY_TO_FAB + IA-FAB-SOLV. / X-PAR-02 reconciled ... |  | X-BAS-02 |
-| A-G-460fc5 | 0.557915 | kg/d | graph IA-LITHO-OUT rate | X-RTE TF: fab photoresist made on site (A-M-432): spent resist and acetone to the SOLV_PLANT still = POLY_TO_FAB + IA-FAB-SOLV. / X-PAR-02 reconciled ... |  | X-BAS-02 |
+| A-G-31b710 | 0.33952 | kg/d | graph IA-LITHO-IN rate | X-RTE TF: fab photoresist made on site (A-M-432): resist and rinse acetone issued to the coater = POLY_TO_FAB + IA-FAB-SOLV. |  | X-BAS-02 |
+| A-G-460fc5 | 0.33952 | kg/d | graph IA-LITHO-OUT rate | X-RTE TF: fab photoresist made on site (A-M-432): spent resist and acetone to the SOLV_PLANT still = POLY_TO_FAB + IA-FAB-SOLV. |  | X-BAS-02 |
 | A-G-7ef519 | 8.407159 | kg/d | graph IA-BLOW-IN rate | C11-C18 wax from the tank. Not the dryer. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-f43bd4 | 8.407518 | kg/d | graph IA-BLOW-OUT rate | Molded parts. Same mass into the shop. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-73ca3e | 0.02 | kg/d | graph IA-COAT-IN rate | Daily average of a batch recoat. Returns on IA-COAT-OUT. Does not consume the EW nickel deposit. |  | X-BAS-02 |
@@ -1008,7 +1008,7 @@ Table 2.1. Graph study and assumed values
 | A-G-df6e1e | 104.952575 | kg/d | graph IA-EW7-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) ... |  | X-BAS-02 |
 | A-G-69707d | 7.451224 | kg/d | graph IA-EW8-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) ... |  | X-BAS-02 |
 | A-G-6ff097 | 111.134409 | kg/d | graph IA-EW9-CL2 rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-12 TF: anode 98% Cl2 + 2% O2, all to leach oxidation (burner share retired with HCL_BURNER; Cl2 + M -> MCl2, USBM_CL_EW) ... |  | X-BAS-02 |
-| A-G-8a99ed | 7.635055 | kg/d | graph IA-C5-SHIP rate | X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. / ... |  | X-BAS-02 |
+| A-G-8a99ed | 6.629822 | kg/d | graph IA-C5-SHIP rate | X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. / ... |  | X-BAS-02 |
 | A-G-55de32 | 1.145274 | kg/d | graph IA-C11-SHIP rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-02 TF: C11-C18 make less the plant draw (IA-BLOW-IN, IA-RESIST-NAPH), shipped (Q-002 pattern) (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-f83f73 | 2.015659 | kg/d | graph IA-C19-SHIP rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-02 TF: C19-C28 make less the plant draw (CUT-3-OUT, C19_TO_WAX, WAX_TO_GREASE_CA, WAX_TO_GREASE_LI), shipped (Q-002 pattern) (AQS-PAR-003). |  | X-BAS-02 |
 | A-G-8a2c06 | 0.355595 | kg/d | graph IA-ATOM-REMELT rate | X-PAR-12 TF (AQS-PAR-005). / X-PAR-02 TF: 10% off-spec remelted (AQS-PAR-003). |  | X-BAS-02 |
@@ -1117,7 +1117,7 @@ Table 2.1. Graph study and assumed values
 | A-G-9ebf03 | 0.0254 | kW | graph SF-LITHO_COAT rate | Feed equal to LITHO_COAT continuous_kw. / X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296). |  | X-BAS-02 |
 | A-G-24ca81 | 0.004 | kW | graph SF-LITHO_ALIGN rate | Feed equal to LITHO_ALIGN continuous_kw. / X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296). |  | X-BAS-02 |
 | A-G-3be802 | 0.008 | kW | graph SF-LITHO_DEV rate | Feed equal to LITHO_DEV continuous_kw. / X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296). |  | X-BAS-02 |
-| A-G-c5edb9 | 0.557915 | kg/d | graph IA-LITHO-CARRY rate | Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool handoff; wafer mass is below graph resolution). A-M-284. / ... |  | X-BAS-02 |
+| A-G-c5edb9 | 0.33952 | kg/d | graph IA-LITHO-CARRY rate | Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool handoff; wafer mass is below graph resolution). A-M-284. |  | X-BAS-02 |
 | A-G-e8723e | 0.046 | kW | graph SF-REMIN rate | Feed equal to REMIN continuous_kw. / X-PAR-02 stub activation (AQS-EQP-STUDY-001 rev G; A-M-287..296). |  | X-BAS-02 |
 | A-G-d7c28b | 49.419232 | kg/d | graph IA-ALCL3-MU rate | D-DOCK feedstock import (A-M-284): 10.0 kg/d Al line 8 + 25% export = 49.419 kg/d AlCl3 at 4.942 kg/kg Al (GREENWOOD); by difference on the pot. / X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). |  | X-BAS-02 |
 | A-G-ba4f73 | 39.20375 | kg/d | graph IA-CL2-SHIP rate | Pot Cl2 byproduct 3.942 kg/kg Al less the 0.2137 kg/d silicon-loop make-up on IA-CL2-SIREF (A-M-419) exports at the dock (D-DOCK outlet; CRU closes exactly on ... |  | X-BAS-02 |
@@ -1212,13 +1212,13 @@ Table 2.1. Graph study and assumed values
 | A-G-0012ab | 0.0 | kg/d | graph MO_CELL_SLAG_RETURN rate | grit fed 0.0000 less the oxide taken up 0.0000 kg/d returns to the leach as slag (Q-037, A-M-427). / X-PAR-02 TF: foundry/polymers sizing ... |  | X-BAS-02 |
 | A-G-bdb00d | 0.0 | kg/d | graph FLOAT_SINK_GRIT_TO_CR rate | 0.0000 kg/d of dense grit at 0 Cr2O3 x grit_chlor_recovery_frac 0.9 covers 0.0000 of the 0.3654 kg/d Cr2O3-equivalent need (Q-037, A-M-427; assay input ... |  | X-BAS-02 |
 | A-G-7b68c3 | 0.0 | kg/d | graph CR_CELL_SLAG_RETURN rate | grit fed 0.0000 less the oxide taken up 0.0000 kg/d returns to the leach as slag (Q-037, A-M-427). / X-PAR-02 TF: foundry/polymers sizing ... |  | X-BAS-02 |
-| A-G-275696 | 0.199474 | kg/d | graph IA-SOLV-SPENT rate | X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_CO). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-a683ef | 0.467586 | kg/d | graph IA-SOLV-PLANT rate | X-RTE TF: on-site bench solvent (A-M-428): product = 0.519493 kg/d (solvent.py, route MEOH_CO). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-03b6fb | 0.543843 | kg/d | graph IA-SOLV-BTMS rate | X-RTE TF: on-site bench solvent (A-M-428): btms = 0.140950 kg/d (solvent.py, route MEOH_CO). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-8e2aee | 0.016578 | kg/d | graph IA-SOLV-VENT rate | X-RTE TF: on-site bench solvent (A-M-428): vent = 0.149902 kg/d (solvent.py, route MEOH_CO). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-ae58d4 | 0.143533 | kg/d | graph IA-SOLV-MEOH rate | X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.144254 kg/d (solvent.py, route MEOH_CO). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-fd9667 | 0.12609 | kg/d | graph IA-SOLV-CO rate | X-RTE TF: on-site bench solvent (A-M-428): co = 0.126101 kg/d (solvent.py, route MEOH_CO). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-1681c4 | 0.000995 | kg/d | graph IA-SOLV-H2 rate | X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-275696 | 0.199474 | kg/d | graph IA-SOLV-SPENT rate | X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_CO). |  | X-BAS-02 |
+| A-G-a683ef | 0.519493 | kg/d | graph IA-SOLV-PLANT rate | X-RTE TF: on-site bench solvent (A-M-428): product = 0.519493 kg/d (solvent.py, route MEOH_CO). |  | X-BAS-02 |
+| A-G-03b6fb | 0.14095 | kg/d | graph IA-SOLV-BTMS rate | X-RTE TF: on-site bench solvent (A-M-428): btms = 0.140950 kg/d (solvent.py, route MEOH_CO). |  | X-BAS-02 |
+| A-G-8e2aee | 0.149902 | kg/d | graph IA-SOLV-VENT rate | X-RTE TF: on-site bench solvent (A-M-428): vent = 0.149902 kg/d (solvent.py, route MEOH_CO). |  | X-BAS-02 |
+| A-G-ae58d4 | 0.144254 | kg/d | graph IA-SOLV-MEOH rate | X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.144254 kg/d (solvent.py, route MEOH_CO). |  | X-BAS-02 |
+| A-G-fd9667 | 0.126101 | kg/d | graph IA-SOLV-CO rate | X-RTE TF: on-site bench solvent (A-M-428): co = 0.126101 kg/d (solvent.py, route MEOH_CO). |  | X-BAS-02 |
+| A-G-1681c4 | 0.000995 | kg/d | graph IA-SOLV-H2 rate | X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO). |  | X-BAS-02 |
 | A-G-4178e1 | 0.0 | kg/d | graph IA-SOLV-FW rate | X-RTE TF: on-site bench solvent (A-M-428): fw = 0.000000 kg/d (solvent.py, route MEOH_CO). |  | X-BAS-02 |
 | A-G-b48033 | 0.0 | kg/d | graph IA-SOLV-STILLAGE rate | X-RTE TF: on-site bench solvent (A-M-428): stillage = 0.000000 kg/d (solvent.py, route MEOH_CO). |  | X-BAS-02 |
 | A-G-bc7662 | 0.02963 | kW | graph SF-SOLV_PLANT rate | X-RTE TF: on-site bench solvent (A-M-428): feed equal to SOLV_PLANT continuous_kw. |  | X-BAS-02 |
@@ -1227,30 +1227,30 @@ Table 2.1. Graph study and assumed values
 | A-G-888102 | 0.000267 | kg/d | graph IA-GREASE-VENT rate | X-RTE TF: shop grease on site (A-M-429): vent = 0.000267 kg/d (grease.py, route CA). |  | X-BAS-02 |
 | A-G-6989d1 | 0.0 | kg/d | graph IA-GREASE-AIR-LI rate | X-RTE TF: shop grease on site (A-M-429): o2 = 0.000135 kg/d (grease.py, route CA). |  | X-BAS-02 |
 | A-G-4c648b | 0.0 | kg/d | graph IA-GREASE-VENT-LI rate | X-RTE TF: shop grease on site (A-M-429): vent = 0.000267 kg/d (grease.py, route CA). |  | X-BAS-02 |
-| A-G-e740c5 | 3.9e-05 | kg/d | graph IA-LIME-TO-PCA rate | X-RTE TF: shop grease on site (A-M-429): lime_draw = 0.000039 kg/d (grease.py, route CA). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-e740c5 | 3.9e-05 | kg/d | graph IA-LIME-TO-PCA rate | X-RTE TF: shop grease on site (A-M-429): lime_draw = 0.000039 kg/d (grease.py, route CA). |  | X-BAS-02 |
 | A-G-d00404 | 9e-06 | kg/d | graph IA-PCA-H2O rate | X-RTE TF: shop grease on site (A-M-429): slake_h2o = 0.000009 kg/d (grease.py, route CA). |  | X-BAS-02 |
 | A-G-0f91b3 | 1.2e-05 | kg/d | graph IA-PCA-REJECT rate | X-RTE TF: shop grease on site (A-M-429): reject = 0.000012 kg/d (grease.py, route CA). |  | X-BAS-02 |
 | A-G-1e1835 | 7e-05 | kW | graph SF-GREASE_CA rate | X-RTE TF: shop grease on site (A-M-429): feed equal to GREASE_CA continuous_kw. |  | X-BAS-02 |
 | A-G-a90625 | 0.0 | kW | graph SF-GREASE_LI rate | X-RTE TF: shop grease on site (A-M-429): feed equal to GREASE_LI continuous_kw. |  | X-BAS-02 |
 | A-G-65f3dc | 0.031825 | kg/d | graph IA-FLUX-SALT-REC rate | Water leach of the dross salt cake and evaporation of the brine returns 80% of the 0.0398 kg/d MgCl2 salt flux to MG_POT, before any dock brine (salt-cake ... |  | X-BAS-02 |
 | A-G-339ad5 | 0.016337 | kg/d | graph IA-CL2-MG-SHIP rate | Chlorine freed by the 0.0056 kg/d alloy Mg, 2.917 kg/kg Mg; the Kroll chlorinator already takes its full draw on IA-CL2-MG-TI, so this leaves with the pot ... |  | X-BAS-02 |
-| A-G-d9f319 | 0.0 | kg/d | graph IA-RESIST-BZ rate | X-RTE TF: fab photoresist made on site (A-M-432): bz_cut = 1.005233 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-93fd98 | 0.366388 | kg/d | graph IA-RESIST-NAPH rate | X-RTE TF: fab photoresist made on site (A-M-432): naph_cut = 0.366388 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-836ab8 | 0.947336 | kg/d | graph IA-RESIST-RAFF rate | X-RTE TF: fab photoresist made on site (A-M-432): extraction raffinate = cut drawn less the benzene and naphthalene taken. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-093ce0 | 0.00666 | kg/d | graph IA-RESIST-MEOH rate | X-RTE TF: fab photoresist made on site (A-M-432): meoh = 0.005938 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-544e60 | 0.001314 | kg/d | graph IA-RESIST-NH3 rate | X-RTE TF: fab photoresist made on site (A-M-432): nh3 = 0.001314 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-60dcb3 | 0.000104 | kg/d | graph IA-RESIST-H2 rate | X-RTE TF: fab photoresist made on site (A-M-432): h2 = 0.000104 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-a21579 | 0.000732 | kg/d | graph IA-RESIST-CO rate | X-RTE TF: fab photoresist made on site (A-M-432): co = 0.000721 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-e9485b | 0.001824 | kg/d | graph IA-RESIST-CL2 rate | X-RTE TF: fab photoresist made on site (A-M-432): cl2 = 0.001824 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-6da23b | 0.002575 | kg/d | graph IA-RESIST-ACID rate | X-RTE TF: fab photoresist made on site (A-M-432): acid = 0.002575 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-fa9ba3 | 0.257613 | kg/d | graph IA-RESIST-ACET rate | X-RTE TF: fab photoresist made on site (A-M-432): acetone = 0.090000 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-eb31e9 | 0.319016 | kg/d | graph IA-RESIST-AIR rate | X-RTE TF: fab photoresist made on site (A-M-432): air = 0.092558 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-8409db | 0.0 | kg/d | graph IA-RESIST-VENT rate | X-RTE TF: fab photoresist made on site (A-M-432): vent = 0.084138 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-04a423 | 0.000915 | kg/d | graph IA-RESIST-HCL rate | X-RTE TF: fab photoresist made on site (A-M-432): hcl = 0.000938 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-c7cc2e | 0.007976 | kg/d | graph IA-RESIST-BRINE rate | X-RTE TF: fab photoresist made on site (A-M-432): brine = 0.011349 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-c1bdba | 0.0 | kg/d | graph IA-RESIST-STOCK rate | X-RTE TF: fab photoresist made on site (A-M-432): resist = 0.120000 kg/d (fab_resist.py, route DNQ_NOVOLAC). / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-1e6248 | 0.0 | kg/d | graph IA-FAB-SOLV rate | X-RTE TF: fab photoresist made on site (A-M-432): edge-bead rinse and strip acetone at the coat rate. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
-| A-G-783b04 | 0.938489 | kg/d | graph IA-FAB-N2-VENT rate | X-RTE TF: fab photoresist made on site (A-M-432): the S03 nitrogen purge leaves the tools to atmosphere at its supply rate. / X-PAR-02 reconciled (AQS-PAR-003). |  | X-BAS-02 |
+| A-G-d9f319 | 1.005233 | kg/d | graph IA-RESIST-BZ rate | X-RTE TF: fab photoresist made on site (A-M-432): bz_cut = 1.005233 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-93fd98 | 0.366388 | kg/d | graph IA-RESIST-NAPH rate | X-RTE TF: fab photoresist made on site (A-M-432): naph_cut = 0.366388 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-836ab8 | 1.350229 | kg/d | graph IA-RESIST-RAFF rate | X-RTE TF: fab photoresist made on site (A-M-432): extraction raffinate = cut drawn less the benzene and naphthalene taken. |  | X-BAS-02 |
+| A-G-093ce0 | 0.005938 | kg/d | graph IA-RESIST-MEOH rate | X-RTE TF: fab photoresist made on site (A-M-432): meoh = 0.005938 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-544e60 | 0.001314 | kg/d | graph IA-RESIST-NH3 rate | X-RTE TF: fab photoresist made on site (A-M-432): nh3 = 0.001314 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-60dcb3 | 0.000104 | kg/d | graph IA-RESIST-H2 rate | X-RTE TF: fab photoresist made on site (A-M-432): h2 = 0.000104 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-a21579 | 0.000721 | kg/d | graph IA-RESIST-CO rate | X-RTE TF: fab photoresist made on site (A-M-432): co = 0.000721 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-e9485b | 0.001824 | kg/d | graph IA-RESIST-CL2 rate | X-RTE TF: fab photoresist made on site (A-M-432): cl2 = 0.001824 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-6da23b | 0.002575 | kg/d | graph IA-RESIST-ACID rate | X-RTE TF: fab photoresist made on site (A-M-432): acid = 0.002575 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-fa9ba3 | 0.09 | kg/d | graph IA-RESIST-ACET rate | X-RTE TF: fab photoresist made on site (A-M-432): acetone = 0.090000 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-eb31e9 | 0.092558 | kg/d | graph IA-RESIST-AIR rate | X-RTE TF: fab photoresist made on site (A-M-432): air = 0.092558 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-8409db | 0.084138 | kg/d | graph IA-RESIST-VENT rate | X-RTE TF: fab photoresist made on site (A-M-432): vent = 0.084138 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-04a423 | 0.000938 | kg/d | graph IA-RESIST-HCL rate | X-RTE TF: fab photoresist made on site (A-M-432): hcl = 0.000938 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-c7cc2e | 0.011349 | kg/d | graph IA-RESIST-BRINE rate | X-RTE TF: fab photoresist made on site (A-M-432): brine = 0.011349 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-c1bdba | 0.12 | kg/d | graph IA-RESIST-STOCK rate | X-RTE TF: fab photoresist made on site (A-M-432): resist = 0.120000 kg/d (fab_resist.py, route DNQ_NOVOLAC). |  | X-BAS-02 |
+| A-G-1e6248 | 0.21952 | kg/d | graph IA-FAB-SOLV rate | X-RTE TF: fab photoresist made on site (A-M-432): edge-bead rinse and strip acetone at the coat rate. |  | X-BAS-02 |
+| A-G-783b04 | 1.499799 | kg/d | graph IA-FAB-N2-VENT rate | X-RTE TF: fab photoresist made on site (A-M-432): the S03 nitrogen purge leaves the tools to atmosphere at its supply rate. |  | X-BAS-02 |
 | A-G-ef18e4 | 0.00366 | kW | graph SF-RESIST_SYN rate | X-RTE TF: fab photoresist made on site (A-M-432): feed equal to RESIST_SYN continuous_kw. |  | X-BAS-02 |
 
 ## 3. Model parameters

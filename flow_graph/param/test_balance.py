@@ -19,3 +19,10 @@ def test_closure_transfer_functions():
     g = json.load(open(B.GP)); B.physics(g); R, role, order = T.assign(g)
     assert len(role) == len(R['free'])
     assert T.rederive(g, R, role, order) < 1e-4
+
+def test_transfer_function_edges_are_held():
+    """A rate set by a transfer function (an X-PAR or X-RTE basis) is a design value; the least-squares fit must not move it.
+    Batch 42e: the X-RTE edges of A-M-428, A-M-429 and A-M-432 were free, and the fit had zeroed the resist feed."""
+    g = json.load(open(B.GP)); B.physics(g); R = B.reconcile(g)
+    free = [R['E'][i]['stream_id'] for i in R['free'] if any(m in (R['E'][i]['rate'].get('note') or '') for m in ('X-RTE', 'X-PAR-02 TF'))]
+    assert not free, free

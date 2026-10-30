@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AV
+Revision: AW
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -52,8 +52,9 @@ Date: 2026-10-29
 | AR | Batch 41: shop grease made on site from the wax cut and acid-plant residue lime, sized from the grease points (A-M-429) | 2026-10-29 |
 | AS | Batch 42a: MG_POT_CL2 retired, because MG_POT has no chlorine surplus at any titanium rate | 2026-10-29 |
 | AT | Batch 42b: magnesium alloying of the aluminium line on MG_POT_TO_IND, recovery first (A-M-430) | 2026-10-29 |
-| AU | Batch 42c: two chlorine sources for the monomer reactors, CRU HCl oxidation by default and the AL_POT byproduct chlorine selectable (A-M-431) | 2026-10-29 |
-| AV | Batch 42d: wafer-fab photoresist made on site by RESIST_SYN on POLY_TO_FAB, and the fab nitrogen purge vents (A-M-432) | 2026-10-29 |
+| AU | Batch 42c: two chlorine sources for the monomer reactors, CRU HCl oxidation by default and the AL_POT byproduct chlorine selectable (A-M-431) | 2026-10-30 |
+| AV | Batch 42d: wafer-fab photoresist made on site by RESIST_SYN on POLY_TO_FAB, and the fab nitrogen purge vents (A-M-432) | 2026-10-30 |
+| AW | Batch 42e: transfer-function rates held against the reconciliation fit, and the resist benzene feed taken off the C5-C10 shipment | 2026-10-30 |
 
 ## 1. Purpose and scope
 
@@ -220,6 +221,7 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/param/foundry_poly.py` (A-M-430) | MG_POT_TO_IND carries the alloy magnesium of the aluminium line. Only the remelt loss is made new; the flux salt is recovered from the dross salt cake before dock brine, and the Mg record is in the recovery inventory. |
 | `flow_graph/param/fluoro_train.py` (A-M-431) | AL_POT_CL2 is built as the selectable second chlorine source of the monomer reactors and stands by at its rated case; the CRU oxidation of the returned HCl stays the default. |
 | `flow_graph/param/fab_resist.py` (A-M-432) | POLY_TO_FAB carries the positive DNQ-novolac photoresist made on site from plant streams; the fab rinse acetone is recovered at SOLV_PLANT; the nitrogen purge vents and the fab closes without a hidden balancer. |
+| `flow_graph/param/balance.py` (batch 42e) | The X-RTE transfer-function rates are held as design values, so the fit no longer zeroes the photoresist feeds; a test guards the hold. |
 
 ## 3. In progress
 

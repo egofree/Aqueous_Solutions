@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.1136 kg/d. Mass out 0.1136 kg/d. Electrical duty 0.0152 kW. In: POLYF_TO_POWDER 0.1136 kg/d (fluoropolymer powder). Out: POWDER_TO_STOCK 0.1136 kg/d (powder stock).
+1. Basis. Mass in 0.09 kg/d. Mass out 0.09 kg/d. Electrical duty 0.0152 kW. In: POLYF_TO_POWDER 0.09 kg/d (fluoropolymer powder). Out: POWDER_TO_STOCK 0.09 kg/d (powder stock).
 
 2. Size.
-- Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 380167.9 h if it were full. It is not a residence time.
+- Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 480000.0 h if it were full. It is not a residence time.
 - Envelope basis (graph node): forming-class minimum (A-M-199); mill + classifier at the 0.09 kg/d powder duty (A-M-283).
 - Sizing study AQS-DUTY-073 (study): rate_kg_d 0.
 - Graph design (AQS-PAR-001 sizing): machine PTFE powder line: pin mill + cyclone classifier + collector; ptfe_kg_d 0.09; mill_kWh_kg 0.05; duty_kW 0.0152; product fine powder for compression sintering (PTFE is not melt-processable; ULLMANN_FLUOROPOLY).

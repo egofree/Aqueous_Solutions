@@ -20,7 +20,7 @@ This page sizes the units of the POLYMERS sector: the polyolefin line that turns
 
 ## 2. Demand
 
-The fabrication sector draws 0.023634 kg/d by stream POLY_TO_FAB, because the fab closes at steady state (A-M-257); a net draw will appear when the product basis of the fab is sized.
+The fabrication sector draws 0.12 kg/d by stream POLY_TO_FAB, because the fab closes at steady state (A-M-257); a net draw will appear when the product basis of the fab is sized.
 The shop draws 0.267388 kg/d of polyolefin by stream POLY_TO_MFG. This is the difference that closes the shop balance (A-M-257, A-M-266): the loop of shop goods is closed, since IA-MFG-OUT equals IA-WEAR, and the moulded articles are made by BLOW_MOLD from the 8.4072 kg/d of C11 to C18 wax in stream IA-BLOW-IN.
 The shop returns 0.026739 kg/d of offcut to the wet line by stream POLY_TO_WET, which is the shop loss fraction `poly_shop_reject_frac` of 10% of the polymer issued (A-M-263).
 The shop also draws 0.23 kg/d of fluoropolymer by stream FLUORO_TO_MFG (section 4).
@@ -35,9 +35,9 @@ Table 3.1. Polyolefin line
 | --- | --- | --- | --- |
 | POLY_OLEFIN | 0.294127 naphtha (IA-C5-POLY from PROD_C5_C10) | 0.294127 resin | 150 °C to 250 °C and 1 MPa to 5 MPa (AQS-SIZE-OIL-POLY); feed heating 0.0013 W for a rise of 175 K at 2.1 kJ/(kg K); the oligomerisation heat is neglected at this rate (study) |
 | PELLET | 0.294127 | 0.294127 | pellets of 2 mm to 4 mm (AQS-DES-POLY) |
-| POLY_STOCK | 0.547761 | 0.547761 | staged polymer feedstock for the shop, the wet line and the fab |
+| POLY_STOCK | 0.644127 | 0.644127 | staged polymer feedstock for the shop, the wet line and the fab |
 
-The line draws 0.294127 kg/d of naphtha at the cut tank by stream IA-C5-POLY. The naphtha shipped by stream IA-C5-SHIP is what the cut tank makes less the genset draw and the polyolefin draw: 7.929182 − 0.000000 − 0.294127 = 7.635055 kg/d. The saleable naphtha therefore falls kilogram for kilogram with the polymer need. Stream OIL_TO_OLEFIN carries 0 kg/d, because the wax path from the fractionator is closed while the investment train is blocked, and stream MEOH_TO_OLEFIN carries 0 kg/d, because the methanol is committed to the tank and shipping balance (X-PAR-12).
+The line draws 0.294127 kg/d of naphtha at the cut tank by stream IA-C5-POLY. The naphtha shipped by stream IA-C5-SHIP is what the cut tank makes less the genset draw and the polyolefin draw: 7.929182 − 0.000000 − 0.294127 = 6.629822 kg/d. The saleable naphtha therefore falls kilogram for kilogram with the polymer need. Stream OIL_TO_OLEFIN carries 0 kg/d, because the wax path from the fractionator is closed while the investment train is blocked, and stream MEOH_TO_OLEFIN carries 0 kg/d, because the methanol is committed to the tank and shipping balance (X-PAR-12).
 
 ## 4. Fluoropolymer train
 
@@ -50,10 +50,10 @@ Table 4.1. Fluoropolymer train
 | F_RECOVER | 1.5200 | 1.5200 | — |
 | HF_GEN | 2.2493 | 2.2493 | 0.3083 |
 | ACID_PLANT | 0.7749 | 0.7749 | 0.2061 |
-| VDF_SYN | 0.5921 | 0.5921 | 0.5128 |
-| TFE_SYN | 0.4353 | 0.4353 | 0.3989 |
-| POLY_F | 0.2736 | 0.2736 | 0.0449 |
-| POWDER_RESIN | 0.1136 | 0.1136 | 0.0152 |
+| VDF_SYN | 0.5761 | 0.5760 | 0.5128 |
+| TFE_SYN | 0.4277 | 0.4277 | 0.3989 |
+| POLY_F | 0.2500 | 0.2500 | 0.0449 |
+| POWDER_RESIN | 0.0900 | 0.0900 | 0.0152 |
 | FILM_CAST | 0.1400 | 0.1400 | 0.1087 |
 
 ### 4.1 Sulfuric acid plant

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 28.13 kg/d. Mass out 28.13 kg/d. Electrical duty 0.0000 kW. In: S66 27.37 kg/d (scrub liquor → chlorate finish); TI_CELL_CL2_TO_CRU 0 kg/d (chlorine from Kroll chlorinator / Mg recycle); MO_CELL_ANODE_GAS_TO_CRU 0 kg/d (anode gas (Cl2 or O2) from molten-salt pot); AL_POT_CL2 0 kg/d (Cl2 return); 3 more. Out: CRU_TO_VDF 0.3481 kg/d (chlorine); CRU_TO_TFE 0.2913 kg/d (chlorine); IA-CRU-01 27.49 kg/d (sodium chlorate liquor).
+1. Basis. Mass in 28.13 kg/d. Mass out 28.13 kg/d. Electrical duty 0.0000 kW. In: S66 27.37 kg/d (scrub liquor → chlorate finish); TI_CELL_CL2_TO_CRU 0 kg/d (chlorine from Kroll chlorinator / Mg recycle); MO_CELL_ANODE_GAS_TO_CRU 0 kg/d (anode gas (Cl2 or O2) from molten-salt pot); AL_POT_CL2 0 kg/d (Cl2 return); 3 more. Out: CRU_TO_VDF 0.3322 kg/d (chlorine); CRU_TO_TFE 0.2836 kg/d (chlorine); IA-CRU-01 27.51 kg/d (sodium chlorate liquor).
 
 2. Size.
 - In 27.36 kg/d, out 27.36 kg/d. No holdup claimed.

@@ -6,7 +6,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 1,POLYMERS,POLY_COND,0,,-,0,no
 1,POLYMERS,POLY_F,0,,-,0,no
 1,POLYMERS,POLY_OLEFIN,0,C5-C10,-,0,no
-1,POLYMERS,POLY_STOCK,0,,-,0,no
+1,POLYMERS,POLY_STOCK,0,resist,-,0,no
 1,POLYMERS,POWDER_RESIN,0,,-,0,no
 1,POLYMERS,TFE_SYN,0,,-,0,no
 1,POLYMERS,VDF_SYN,0,,-,0,no
@@ -41,10 +41,10 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 3,FAB,LITHO_ALIGN,0,Si,-,30,no
 3,FAB,LITHO_COAT,0,Si solute,-,36,no
 3,FAB,LITHO_DEV,0,Si solute,-,30,no
-3,FAB,RESIST_SYN,0,C11-C18 CH3OH CO Cl2 H2 H2SO4 NH3 acetone air,"N2 to < 25 % LFL, then < 1 % H2",0,no
+3,FAB,RESIST_SYN,0,C11-C18 C5-C10 CH3OH CO Cl2 H2 H2SO4 NH3 acetone air,"N2 to < 25 % LFL, then < 1 % H2",0,no
 3,FAB,SOLAR_PV_CELL,0,solute,-,691,no
 3,FAB,SOLV_PLANT,0,CH3OH CO H2 acetone ethanol solute,"N2 to < 25 % LFL, then < 1 % H2",0,no
-3,FAB,WAFER_FAB,0,Ar N2 Si diacetone alcohol novolac-DNQ resin solute,-,0,no
+3,FAB,WAFER_FAB,0,Ar N2 Si acetone diacetone alcohol novolac-DNQ resin solute,-,0,no
 3,FAB,WET_BENCH,0,acetone ethanol,-,0,no
 3,FAB,WS_AMMONIA,0,N2,-,106,no
 3,FAB,WS_DOPE,440,solute,-,106,no

@@ -17,7 +17,7 @@ This page records the size of unit POLY_STOCK, of class `store` in sector POLYME
 
 ## 2. Duty
 
-The unit takes 0.547761 kg/d by 4 streams and gives 0.547761 kg/d by 4 streams.
+The unit takes 0.644127 kg/d by 4 streams and gives 0.644127 kg/d by 4 streams.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -34,7 +34,7 @@ Table 2.1. Design parameters
 
 The envelope is 600 mm x 400 mm x 800 mm, from `params.envelope` (state live). Its basis is: 1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (study; A-M-264).
 
-The hold-up check takes 0.547761 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.5478 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 90 mm in diameter and 130 mm high. It fits within the envelope.
+The hold-up check takes 0.644127 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.6441 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 90 mm in diameter and 140 mm high. It fits within the envelope.
 
 ## 4. Material
 

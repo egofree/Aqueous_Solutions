@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.4676 kg/d. Mass out 0.4676 kg/d. Electrical duty 0.0000 kW. In: IA-SOLV-PLANT 0.4676 kg/d (recovered and new ethanol and acetone to the solvent store). Out: IA-SOLV-WB 0.21 kg/d (ethanol and acetone); IA-RESIST-ACET 0.2576 kg/d (acetone for the diacetone alcohol casting solvent); IA-FAB-SOLV 0 kg/d (acetone for edge-bead rinse and resist strip).
+1. Basis. Mass in 0.5195 kg/d. Mass out 0.5195 kg/d. Electrical duty 0.0000 kW. In: IA-SOLV-PLANT 0.5195 kg/d (recovered and new ethanol and acetone to the solvent store). Out: IA-SOLV-WB 0.21 kg/d (ethanol and acetone); IA-RESIST-ACET 0.09 kg/d (acetone for the diacetone alcohol casting solvent); IA-FAB-SOLV 0.2195 kg/d (acetone for edge-bead rinse and resist strip).
 
 2. Size.
 - In 0.2100 kg/d, out 0.2100 kg/d. No holdup claimed.

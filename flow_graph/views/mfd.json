@@ -1638,7 +1638,7 @@
           "exports_kg_d": {
             "IA-N2-VENT": 3.098,
             "IA-NA-PURGE": 0.642,
-            "IA-C5-SHIP": 7.635,
+            "IA-C5-SHIP": 6.63,
             "IA-C11-SHIP": 1.145,
             "IA-C19-SHIP": 2.016,
             "IA-O2-SHIP": 22.014,
@@ -1673,8 +1673,8 @@
             "IA-SULFUR-MU": 0.014,
             "IA-HALITE-MU": 0.676
           },
-          "net_kg_d": 10.371,
-          "residual_kg_d": 10.373,
+          "net_kg_d": 9.366,
+          "residual_kg_d": 9.368,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }

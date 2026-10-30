@@ -166,10 +166,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S34 | WS_NITRIC | WET_BENCH | L | mass | present | HNO3 | 1.2456 kg/d | — |
 | S34B | WS_PHOS | WET_BENCH | L | mass | present | H3PO4 | 0.61 kg/d | — |
 | F_RECOVER_TO_HF_GEN | F_RECOVER | HF_GEN | L | mass | present | fluoride concentrate | 1.52 kg/d | — |
-| HF_GEN_TO_VDF | HF_GEN | VDF_SYN | L | mass | present | aqueous HF | 0.093912 kg/d | — |
-| HF_GEN_TO_TFE | HF_GEN | TFE_SYN | L | mass | present | aqueous HF | 0.079842 kg/d | — |
-| VDF_TO_POLY_F | VDF_SYN | POLY_F | L | mass | present | VDF monomer | 0.166036 kg/d | — |
-| TFE_TO_POLY_F | TFE_SYN | POLY_F | L | mass | present | TFE monomer | 0.107598 kg/d | — |
+| HF_GEN_TO_VDF | HF_GEN | VDF_SYN | L | mass | present | aqueous HF | 0.093738 kg/d | — |
+| HF_GEN_TO_TFE | HF_GEN | TFE_SYN | L | mass | present | aqueous HF | 0.080016 kg/d | — |
+| VDF_TO_POLY_F | VDF_SYN | POLY_F | L | mass | present | VDF monomer | 0.15 kg/d | — |
+| TFE_TO_POLY_F | TFE_SYN | POLY_F | L | mass | present | TFE monomer | 0.1 kg/d | — |
 | TI_CELL_SLAG_RETURN | TI_CELL | LEACH_CSTR_1 | S | mass | present | slag / residual grit | 0.0 kg/d | — |
 | MO_CELL_RAFFINATE | MO_CELL | POLISH_BANK | L | mass | retired | raffinate after Mo cut | 0.0 kg/d | — |
 | FLOAT_SINK_GRIT_TO_TI | FLOAT_SINK | TI_CELL | S | mass | present | dense grit (ilmenite/rutile fraction) | 0.0 kg/d | — |
@@ -226,15 +226,15 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | L | mass | present | digester organics | 0.0 kg/d | — |
 | OLEFIN_TO_PELLET | POLY_OLEFIN | PELLET | S | mass | present | polyolefin resin | 0.294127 kg/d | — |
 | POLYF_TO_PELLET | POLY_F | PELLET | S | mass | present | PVDF/PTFE resin | 0.0 kg/d | — |
-| POLYF_TO_POWDER | POLY_F | POWDER_RESIN | S | mass | present | fluoropolymer powder | 0.113634 kg/d | — |
+| POLYF_TO_POWDER | POLY_F | POWDER_RESIN | S | mass | present | fluoropolymer powder | 0.09 kg/d | — |
 | PELLET_TO_STOCK | PELLET | POLY_STOCK | S | mass | present | pellet stock | 0.294127 kg/d | — |
-| POWDER_TO_STOCK | POWDER_RESIN | POLY_STOCK | S | mass | present | powder stock | 0.113634 kg/d | — |
+| POWDER_TO_STOCK | POWDER_RESIN | POLY_STOCK | S | mass | present | powder stock | 0.09 kg/d | — |
 | FILM_TO_STOCK | FILM_CAST | POLY_STOCK | S | mass | present | film stock | 0.14 kg/d | — |
 | POLY_TO_MFG | POLY_STOCK | MFG_SHOP | S | mass | present | polymer feedstock to manufacturing | 0.267388 kg/d | — |
-| POLY_TO_FAB | POLY_STOCK | WAFER_FAB | S | mass | present | polymer feedstock to fab | 0.023634 kg/d | — |
+| POLY_TO_FAB | POLY_STOCK | WAFER_FAB | S | mass | present | polymer feedstock to fab | 0.12 kg/d | — |
 | POLY_TO_WET | POLY_STOCK | LEACH_CSTR_1 | S | mass | present | lining/gasket stock return path | 0.026739 kg/d | — |
-| CRU_TO_VDF | CRU | VDF_SYN | G | mass | present | chlorine | 0.348057 kg/d | — |
-| CRU_TO_TFE | CRU | TFE_SYN | G | mass | present | chlorine | 0.291339 kg/d | — |
+| CRU_TO_VDF | CRU | VDF_SYN | G | mass | present | chlorine | 0.332195 kg/d | — |
+| CRU_TO_TFE | CRU | TFE_SYN | G | mass | present | chlorine | 0.283567 kg/d | — |
 | POLISH_TO_LI | POLISH_BANK | LI_RECOVER | L | mass | present | Li-bearing polish liquor | — | — |
 | WAX_TO_GREASE_CA | PROD_C19_C28 | GREASE_CA | L | mass | present | wax cut | 0.002489 kg/d | — |
 | WAX_TO_GREASE_LI | PROD_C19_C28 | GREASE_LI | L | mass | present | wax cut | 0.0 kg/d | — |
@@ -262,7 +262,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S89 | HDR_CO2 | GROW_BED | G | mass | present | CO2 enrichment dose (FARM AHU supply) | 0.882362 kg/d | — |
 | S90 | HABITATION | HDR_CO2 | G | mass | present | metabolic CO2 (desorbed from the HAB CO2 sorbent bed) | 4.021 kg/d | — |
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.641602 kg/d | — |
-| IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.487256 kg/d | — |
+| IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.510913 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
 | IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 351.8735 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
@@ -331,7 +331,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-H2O2-SRC | HDR_O2 | WS_PEROX | S/L | mass | present | oxygen to peroxide | 0.176 kg/d | — |
 | IA-NOX-H2O | NOX_SCRUB | ROOF_TANK | S/L | mass | present | scrubber condensate | 221.583096 kg/d | — |
 | IA-NOX-N | NOX_SCRUB | NUTRIENT_DOSE | S/L | mass | present | nitrate liquor | 20.047016 kg/d | — |
-| IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | L | mass | present | spent UPW | 66.527242 kg/d | — |
+| IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | L | mass | present | spent UPW | 66.500212 kg/d | — |
 | IA-GEN-AIR | HDR_N2 | BACKUP_GEN | L | mass | present | genset air | 0.006137 kg/d | — |
 | IA-NOX-HAB | ROOF_TANK | HABITATION | L | mass | present | scrubber water | 207.279999 kg/d | — |
 | IA-NUT-BED | NUTRIENT_DOSE | GROW_BED | L | mass | present | nitrate and bleed salts | 31.363502 kg/d | — |
@@ -362,8 +362,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | L | mass | present | ethanol and acetone | 0.209973 kg/d | — |
 | IA-CLOSE-1 | LEACH_CSTR_1 | NOX_SCRUB | S/L | mass | present | leach vent to the NOx scrubber | 1.0 kg/d | — |
 | IA-CLOSE-10 | LEACH_CSTR_1 | MEOH_FC | S/L | mass | present | leach condensate to the methanol cell | 0.1896 kg/d | — |
-| IA-LITHO-IN | WAFER_FAB | LITHO_COAT | S | mass | present | spent resist and solvent | 0.557915 kg/d | — |
-| IA-LITHO-OUT | LITHO_DEV | SOLV_PLANT | S | mass | present | spent resist and solvent | 0.557915 kg/d | — |
+| IA-LITHO-IN | WAFER_FAB | LITHO_COAT | S | mass | present | spent resist and solvent | 0.33952 kg/d | — |
+| IA-LITHO-OUT | LITHO_DEV | SOLV_PLANT | S | mass | present | spent resist and solvent | 0.33952 kg/d | — |
 | IA-BLOW-IN | PROD_C11_C18 | BLOW_MOLD | S | mass | present | C11-C18 to the mold | 8.407159 kg/d | — |
 | IA-BLOW-OUT | BLOW_MOLD | MFG_SHOP | S | mass | present | blown parts | 8.407518 kg/d | — |
 | IA-COAT-IN | EW_1 | ELECTRODE_COAT | S | mass | present | nickel sheet to the booth | 0.02 kg/d | — |
@@ -416,7 +416,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW7-CL2 | EW_7 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 104.952575 kg/d | — |
 | IA-EW8-CL2 | EW_8 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 7.451224 kg/d | — |
 | IA-EW9-CL2 | EW_9 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 111.134409 kg/d | — |
-| IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | L | mass | present | C5-C10 product shipped | 7.635055 kg/d | — |
+| IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | L | mass | present | C5-C10 product shipped | 6.629822 kg/d | — |
 | IA-C11-SHIP | PROD_C11_C18 | NORTH_DOCK | L | mass | present | C11-C18 surplus shipped | 1.145274 kg/d | — |
 | IA-C19-SHIP | PROD_C19_C28 | NORTH_DOCK | L | mass | present | C19-C28 surplus shipped | 2.015659 kg/d | — |
 | IA-ATOM-REMELT | GAS_ATOMIZER | MET_MELT | S | mass | present | off-spec powder to remelt | 0.355595 kg/d | — |
@@ -525,7 +525,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-LITHO_COAT | SOL_ARK_60K | LITHO_COAT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0254 kW | — |
 | SF-LITHO_ALIGN | SOL_ARK_60K | LITHO_ALIGN | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.004 kW | — |
 | SF-LITHO_DEV | SOL_ARK_60K | LITHO_DEV | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.008 kW | — |
-| IA-LITHO-CARRY | LITHO_COAT | LITHO_DEV | S | mass | present | resist/solvent carry (coat catch bowl + developer) to the develop bench | 0.557915 kg/d | — |
+| IA-LITHO-CARRY | LITHO_COAT | LITHO_DEV | S | mass | present | resist/solvent carry (coat catch bowl + developer) to the develop bench | 0.33952 kg/d | — |
 | SF-REMIN | SOL_ARK_60K | REMIN | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.046 kW | — |
 | IA-ALCL3-MU | NORTH_DOCK | AL_POT | S | mass | present | anhydrous AlCl3 feed (mining-waste chloride class) | 49.419232 kg/d | — |
 | IA-CL2-SHIP | AL_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class product) | 39.20375 kg/d | — |
@@ -621,11 +621,11 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | FLOAT_SINK_GRIT_TO_CR | FLOAT_SINK | CR_CELL | S | mass | present | dense grit from the float-sink as the first Cr2O3 source | 0.0 kg/d | — |
 | CR_CELL_SLAG_RETURN | CR_CELL | LEACH_CSTR_1 | S | mass | present | grit gangue and unreacted oxide back to the leach | 0.0 kg/d | — |
 | IA-SOLV-SPENT | WET_BENCH | SOLV_PLANT | L | mass | present | segregated spent solvent from the bench rinse drain | 0.199474 kg/d | — |
-| IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | L | mass | present | recovered and new ethanol and acetone to the solvent store | 0.467586 kg/d | — |
-| IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | L | mass | present | still bottoms (resist residue and heavy alcohols) to the light oil cut | 0.543843 kg/d | — |
-| IA-SOLV-VENT | SOLV_PLANT | NORTH_DOCK | G | mass | present | reactor or fermenter off-gas (fuel-gas class export) | 0.016578 kg/d | — |
-| IA-SOLV-MEOH | MEOH_TANK | SOLV_PLANT | L | mass | present | plant methanol for the carbonylation | 0.143533 kg/d | — |
-| IA-SOLV-CO | TI_CELL | SOLV_PLANT | G | mass | present | chlorinator carbon monoxide for the carbonylation | 0.12609 kg/d | — |
+| IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | L | mass | present | recovered and new ethanol and acetone to the solvent store | 0.519493 kg/d | — |
+| IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | L | mass | present | still bottoms (resist residue and heavy alcohols) to the light oil cut | 0.14095 kg/d | — |
+| IA-SOLV-VENT | SOLV_PLANT | NORTH_DOCK | G | mass | present | reactor or fermenter off-gas (fuel-gas class export) | 0.149902 kg/d | — |
+| IA-SOLV-MEOH | MEOH_TANK | SOLV_PLANT | L | mass | present | plant methanol for the carbonylation | 0.144254 kg/d | — |
+| IA-SOLV-CO | TI_CELL | SOLV_PLANT | G | mass | present | chlorinator carbon monoxide for the carbonylation | 0.126101 kg/d | — |
 | IA-SOLV-H2 | HDR_H2 | SOLV_PLANT | G | mass | present | header hydrogen for the acetic acid hydrogenation | 0.000995 kg/d | — |
 | IA-SOLV-FW | HABITATION | SOLV_PLANT | S | mass | retired | galley food waste for the solvent fermentation | 0.0 kg/d | — |
 | IA-SOLV-STILLAGE | SOLV_PLANT | BLACK_DIGEST | L | mass | retired | fermentation stillage to the digester | 0.0 kg/d | — |
@@ -642,21 +642,21 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-GREASE_LI | SOL_ARK_60K | GREASE_LI | E | elec | retired | 480 V AC | 0.0 kW | — |
 | IA-FLUX-SALT-REC | IND_MELT | MG_POT | L | mass | present | MgCl2 brine recovered from the dross salt cake | 0.031825 kg/d | — |
 | IA-CL2-MG-SHIP | MG_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class product) | 0.016337 kg/d | — |
-| IA-RESIST-BZ | PROD_C5_C10 | RESIST_SYN | L | mass | present | C5-C10 cut to the benzene extraction | 0.0 kg/d | — |
+| IA-RESIST-BZ | PROD_C5_C10 | RESIST_SYN | L | mass | present | C5-C10 cut to the benzene extraction | 1.005233 kg/d | — |
 | IA-RESIST-NAPH | PROD_C11_C18 | RESIST_SYN | L | mass | present | C11-C18 cut to the naphthalene extraction | 0.366388 kg/d | — |
-| IA-RESIST-RAFF | RESIST_SYN | OIL_FRAC | L | mass | present | aromatic-extraction raffinate back to the fractionator | 0.947336 kg/d | — |
-| IA-RESIST-MEOH | MEOH_TANK | RESIST_SYN | L | mass | present | plant methanol for the formaldehyde | 0.00666 kg/d | — |
+| IA-RESIST-RAFF | RESIST_SYN | OIL_FRAC | L | mass | present | aromatic-extraction raffinate back to the fractionator | 1.350229 kg/d | — |
+| IA-RESIST-MEOH | MEOH_TANK | RESIST_SYN | L | mass | present | plant methanol for the formaldehyde | 0.005938 kg/d | — |
 | IA-RESIST-NH3 | WS_AMMONIA | RESIST_SYN | L | mass | present | ammonia for the nitrous acid and the ester scavenger | 0.001314 kg/d | — |
 | IA-RESIST-H2 | HDR_H2 | RESIST_SYN | G | mass | present | header hydrogen for the nitroso reduction | 0.000104 kg/d | — |
-| IA-RESIST-CO | TI_CELL | RESIST_SYN | G | mass | present | chlorinator carbon monoxide for the phosgenation | 0.000732 kg/d | — |
+| IA-RESIST-CO | TI_CELL | RESIST_SYN | G | mass | present | chlorinator carbon monoxide for the phosgenation | 0.000721 kg/d | — |
 | IA-RESIST-CL2 | AL_POT | RESIST_SYN | G | mass | present | pot chlorine for the phosgenation | 0.001824 kg/d | — |
 | IA-RESIST-ACID | ACID_PLANT | RESIST_SYN | L | mass | present | sulfuric acid for the naphthol sulfonation | 0.002575 kg/d | — |
-| IA-RESIST-ACET | WS_SOLV | RESIST_SYN | L | mass | present | acetone for the diacetone alcohol casting solvent | 0.257613 kg/d | — |
-| IA-RESIST-AIR | ATMOS | RESIST_SYN | G | mass | present | process air for the oxidations | 0.319016 kg/d | — |
-| IA-RESIST-VENT | RESIST_SYN | ATMOS | G | mass | present | oxidation off-gas: nitrogen, unused oxygen and carbon dioxide | 0.0 kg/d | — |
-| IA-RESIST-HCL | RESIST_SYN | CRU | L | mass | present | phosgenation HCl to the chlorate finish | 0.000915 kg/d | — |
-| IA-RESIST-BRINE | RESIST_SYN | LEACH_CSTR_1 | L | mass | present | reaction water, acid water and ammonium chloride | 0.007976 kg/d | — |
-| IA-RESIST-STOCK | RESIST_SYN | POLY_STOCK | L | mass | present | formulated positive photoresist to stock | 0.0 kg/d | — |
-| IA-FAB-SOLV | WS_SOLV | WAFER_FAB | L | mass | present | acetone for edge-bead rinse and resist strip | 0.0 kg/d | — |
-| IA-FAB-N2-VENT | WAFER_FAB | ATMOS | G | mass | present | fab nitrogen purge exhaust | 0.938489 kg/d | — |
+| IA-RESIST-ACET | WS_SOLV | RESIST_SYN | L | mass | present | acetone for the diacetone alcohol casting solvent | 0.09 kg/d | — |
+| IA-RESIST-AIR | ATMOS | RESIST_SYN | G | mass | present | process air for the oxidations | 0.092558 kg/d | — |
+| IA-RESIST-VENT | RESIST_SYN | ATMOS | G | mass | present | oxidation off-gas: nitrogen, unused oxygen and carbon dioxide | 0.084138 kg/d | — |
+| IA-RESIST-HCL | RESIST_SYN | CRU | L | mass | present | phosgenation HCl to the chlorate finish | 0.000938 kg/d | — |
+| IA-RESIST-BRINE | RESIST_SYN | LEACH_CSTR_1 | L | mass | present | reaction water, acid water and ammonium chloride | 0.011349 kg/d | — |
+| IA-RESIST-STOCK | RESIST_SYN | POLY_STOCK | L | mass | present | formulated positive photoresist to stock | 0.12 kg/d | — |
+| IA-FAB-SOLV | WS_SOLV | WAFER_FAB | L | mass | present | acetone for edge-bead rinse and resist strip | 0.21952 kg/d | — |
+| IA-FAB-N2-VENT | WAFER_FAB | ATMOS | G | mass | present | fab nitrogen purge exhaust | 1.499799 kg/d | — |
 | SF-RESIST_SYN | SOL_ARK_60K | RESIST_SYN | E | elec | present | 480 V AC | 0.00366 kW | — |

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.028 kg/d. Mass out 1.028 kg/d. Electrical duty 0.0296 kW. In: IA-LITHO-OUT 0.5579 kg/d (spent resist and solvent); IA-SOLV-SPENT 0.1995 kg/d (segregated spent solvent from the bench rinse drain); IA-SOLV-MEOH 0.1435 kg/d (plant methanol for the carbonylation); IA-SOLV-CO 0.1261 kg/d (chlorinator carbon monoxide for the carbonylation); 1 more. Out: IA-SOLV-PLANT 0.4676 kg/d (recovered and new ethanol and acetone to the solvent store); IA-SOLV-BTMS 0.5438 kg/d (still bottoms (resist residue and heavy alcohols) to the light oil cut); IA-SOLV-VENT 0.01658 kg/d (reactor or fermenter off-gas (fuel-gas class export)).
+1. Basis. Mass in 0.8103 kg/d. Mass out 0.8103 kg/d. Electrical duty 0.0296 kW. In: IA-LITHO-OUT 0.3395 kg/d (spent resist and solvent); IA-SOLV-SPENT 0.1995 kg/d (segregated spent solvent from the bench rinse drain); IA-SOLV-MEOH 0.1443 kg/d (plant methanol for the carbonylation); IA-SOLV-CO 0.1261 kg/d (chlorinator carbon monoxide for the carbonylation); 1 more. Out: IA-SOLV-PLANT 0.5195 kg/d (recovered and new ethanol and acetone to the solvent store); IA-SOLV-BTMS 0.1409 kg/d (still bottoms (resist residue and heavy alcohols) to the light oil cut); IA-SOLV-VENT 0.1499 kg/d (reactor or fermenter off-gas (fuel-gas class export)).
 
 2. Size.
 - Graph design (AQS-PAR-001 sizing): route MEOH_CO; bench_kg_d 0.21; spent_kg_d 0.1995; recovered_kg_d 0.1895; make_kg_d 0.02047; acetone_kg_d 0.01024; ethanol_kg_d 0.01024; meoh_kg_d 0.02046; co_kg_d 0.01789; h2_kg_d 0.000995; fw_kg_d 0; stillage_kg_d 0; butanol_kg_d 0; vent_kg_d 0.01887; btms_kg_d 0.009974; product_kg_d 0.21; kw 0.01034; kw_still 0.009443; kw_rx 0.000901.

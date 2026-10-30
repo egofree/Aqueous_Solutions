@@ -17,7 +17,7 @@ This page records the size of unit POLY_F, of class `reactor` in sector POLYMERS
 
 ## 2. Duty
 
-The unit takes 0.273634 kg/d by 2 streams and gives 0.273634 kg/d by 4 streams. Its continuous electrical load is 0.0449 kW, fed by stream SF-POLY_F.
+The unit takes 0.25 kg/d by 2 streams and gives 0.25 kg/d by 4 streams. Its continuous electrical load is 0.0449 kW, fed by stream SF-POLY_F.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -42,7 +42,7 @@ Table 2.1. Design parameters
 
 The envelope is 600 mm x 600 mm x 1200 mm, from `params.envelope` (state live). Its basis is: reactor-class study minimum; jacketed kettle at the 0.25 kg/d monomer duty, reclaim loop to F_RECOVER (A-M-289).
 
-The hold-up check takes 0.273634 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.2736 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 70 mm in diameter and 100 mm high. It fits within the envelope.
+The hold-up check takes 0.25 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.25 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 70 mm in diameter and 100 mm high. It fits within the envelope.
 
 ## 4. Material
 

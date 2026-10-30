@@ -217,7 +217,8 @@ def tf(g):
     N['BACKUP_GEN']['continuous_kw'] = {'value': round(e_ex/24, 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: standby, NFPA 110 exercise average'}
     put('CUT-1-OUT', fuel, 'genset fallback fuel (priority 2): zero in normal operation; drawn when hydrogen is short'); put('S45', h2f, 'genset fuel priority 1: hydrogen for the NFPA 110 8.4.2 exercise'); put('S47', e_ex/24, 'exercise energy, daily average')
     poly = v('IA-C5-POLY') if 'IA-C5-POLY' in E else 0.0        # olefin feed drawn at the cut tank (AQS-DUTY-073)
-    put('IA-C5-SHIP', v('CUT-1') - fuel - poly, f'C5-C10 product not burned: shipped at the dock less the olefin draw {poly:.4f} kg/d (AQS-DUTY-073)')
+    bz = v('IA-RESIST-BZ') if 'IA-RESIST-BZ' in E and E['IA-RESIST-BZ'].get('presence') != 'retired' else 0.0   # resist benzene extraction (A-M-432)
+    put('IA-C5-SHIP', v('CUT-1') - fuel - poly - bz, f'C5-C10 product not burned: shipped at the dock less the olefin draw {poly:.4f} kg/d (AQS-DUTY-073) and the resist benzene feed {bz:.4f} kg/d (A-M-432)')
     e_full = gf['CUT-1-OUT']*GEN_ETA*LHV_C5 + gf['S45']*_fp['eta_h2']*_fp['lhv_h2']
     r = e_ex/e_full if e_full > 0 else 0.0                     # exercise share of the old full-duty fuel energy (equals fuel/gf cut when the cut was the fuel)
     # --- combustion O2

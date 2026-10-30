@@ -70,7 +70,7 @@
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">POLY_F</text>
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">VDF_TO_POLY_F</text>
-<text x="1476" y="299" font-size="10" text-anchor="end">0.2 kg/d · DN15 —</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">0.1 kg/d · DN15 —</text>
 <text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N2</text>
 <text x="24" y="474" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="484" font-size="9">Every incident graph edge is drawn: 4 in, 2 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
@@ -80,7 +80,7 @@
 <g id="aqs-title-block"><rect x="1116" y="566" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="583" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-VDF_SYN</text>
 <text x="1124" y="600" font-size="9">P&amp;ID VDF_SYN (reactor, POLYMERS sector)</text>
-<text x="1124" y="617" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 893e62d8   Issued 2026-10-19</text>
+<text x="1124" y="617" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev e9f5c4be   Issued 2026-10-19</text>
 <text x="1124" y="634" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="651" font-size="9">Graph SHA-256 53cde3c475e10dd6   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="651" font-size="9">Graph SHA-256 08f7fff441d4abd9   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

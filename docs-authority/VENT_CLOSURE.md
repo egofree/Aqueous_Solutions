@@ -58,7 +58,7 @@ Table 4.1. Streams of the closures
 | Process hydrogen | S24 | H2_DRYER | RELIEF_H2 | contingency | 0 | kg/d |
 | Acid gas and chlorine | S65 | ALK_SCRUBBER | ACID_POLISH_SCRUB | normal | 3.751e+04 | kg/d |
 | Acid gas and chlorine | S66 | ACID_POLISH_SCRUB | CRU | normal | 27.37 | kg/d |
-| Acid gas and chlorine | IA-CRU-01 | CRU | LEACH_CSTR_1 | normal | 27.49 | kg/d |
+| Acid gas and chlorine | IA-CRU-01 | CRU | LEACH_CSTR_1 | normal | 27.51 | kg/d |
 | Acid gas and chlorine | IA-SCRUB-SRC | LEACH_CSTR_1 | ACID_POLISH_SCRUB | normal | 27.34 | kg/d |
 | Afterburner flue | IA-AB-FLUE | AFTERBURNER | AFTERBURNER_FLUE | normal | 7.097 | kg/d |
 | Afterburner flue | S67 | AFTERBURNER_FLUE | FLUE_KO | normal | 117.4 | kg/d |
@@ -86,7 +86,7 @@ Every closure holds on the present graph: each named stream exists, each conting
 
 The normal-path streams S18 and IA-FC-EXH exist but carry no flow at present. They are kept routes, not discharges.
 
-The relief units and the atmospheric boundary on the graph are ATMOS, RELIEF_CRYO and RELIEF_H2. These streams into them carry flow in normal operation, which the rule does not allow: IA-SI-CO2 (0.8346 kg/d), IA-ACID-CO2 (0.08687 kg/d), IA-GREASE-VENT (0.000267 kg/d) and IA-FAB-N2-VENT (0.9385 kg/d).
+The relief units and the atmospheric boundary on the graph are ATMOS, RELIEF_CRYO and RELIEF_H2. These streams into them carry flow in normal operation, which the rule does not allow: IA-SI-CO2 (0.8346 kg/d), IA-ACID-CO2 (0.08687 kg/d), IA-GREASE-VENT (0.000267 kg/d), IA-RESIST-VENT (0.08414 kg/d) and IA-FAB-N2-VENT (1.5 kg/d).
 
 ## 5. Safety notes
 

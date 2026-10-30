@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,109,1730 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,810,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,109,1744 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,814,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 176 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
@@ -250,7 +250,7 @@ DIGESTER,BMED_CRU,EVAP_ACID,instrument,high-level switch,vibrating fork,"IEC 609
 DIGESTER,BMED_CRU,EVAP_ACID,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,BMED_CRU,EVAP_ACID,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,BMED_CRU,EVAP_ACID,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,BMED_CRU,EVAP_ACID,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-072 SIL 1
+DIGESTER,BMED_CRU,EVAP_ACID,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-071 SIL 1
 DIGESTER,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_ACID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_ACID,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 311.0 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -282,7 +282,7 @@ DIGESTER,BMED_CRU,EVAP_BASE,instrument,high-level switch,vibrating fork,"IEC 609
 DIGESTER,BMED_CRU,EVAP_BASE,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,BMED_CRU,EVAP_BASE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,BMED_CRU,EVAP_BASE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,BMED_CRU,EVAP_BASE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-073 SIL 1
+DIGESTER,BMED_CRU,EVAP_BASE,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-072 SIL 1
 DIGESTER,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_BASE,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,BMED_CRU,EVAP_BASE,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Recirculation pump 282.7 kg/h at 4 m: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
@@ -744,7 +744,7 @@ DIGESTER,scrubber,EVAP_ACID_VS,instrument,high-level switch,vibrating fork,"IEC 
 DIGESTER,scrubber,EVAP_ACID_VS,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,scrubber,EVAP_ACID_VS,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,scrubber,EVAP_ACID_VS,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
-DIGESTER,scrubber,EVAP_ACID_VS,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-077 SIL 1
+DIGESTER,scrubber,EVAP_ACID_VS,instrument,"temperature element (SIF, independent)",Pt100 class A,"IEC 60751, own thermowell",1,SIF-076 SIL 1
 DIGESTER,scrubber,EVAP_ACID_VS,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 DIGESTER,scrubber,EVAP_ACID_VS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",7,IA-VS-SPENT: AQS-PIP-005 span count
 DIGESTER,scrubber,EVAP_ACID_VS,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-VS-OFF: AQS-PIP-005 span count
@@ -962,16 +962,20 @@ FAB,coater,LITHO_COAT,instrument,temperature element,Pt100 class A,"IEC 60751, 3
 FAB,reactor,RESIST_SYN,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-RESIST-BRINE to LEACH_CSTR_1 (assumed size)
 FAB,reactor,RESIST_SYN,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-RESIST-HCL to CRU (assumed size)
 FAB,reactor,RESIST_SYN,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-RESIST-RAFF to OIL_FRAC (assumed size)
+FAB,reactor,RESIST_SYN,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-RESIST-STOCK to POLY_STOCK (assumed size)
 FAB,reactor,RESIST_SYN,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-RESIST-BRINE to LEACH_CSTR_1
 FAB,reactor,RESIST_SYN,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-RESIST-HCL to CRU
 FAB,reactor,RESIST_SYN,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-RESIST-RAFF to OIL_FRAC
+FAB,reactor,RESIST_SYN,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-RESIST-STOCK to POLY_STOCK
 FAB,reactor,RESIST_SYN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-RESIST-BRINE to LEACH_CSTR_1: run and fault (assumed)
 FAB,reactor,RESIST_SYN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-RESIST-HCL to CRU: run and fault (assumed)
 FAB,reactor,RESIST_SYN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-RESIST-RAFF to OIL_FRAC: run and fault (assumed)
+FAB,reactor,RESIST_SYN,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-RESIST-STOCK to POLY_STOCK: run and fault (assumed)
 FAB,reactor,RESIST_SYN,instrument,"gas detector, CO",electrochemical CO,"alarm 25 ppm, trip 50 ppm, breathing height",2,AQS-SAF-006 alarm 1oo2
 FAB,reactor,RESIST_SYN,instrument,"gas detector, Cl2 / HCl",electrochemical Cl2 and HCl,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",2,AQS-SAF-006 alarm 1oo2
 FAB,reactor,RESIST_SYN,instrument,"gas detector, H2",catalytic bead + IR backup,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",2,AQS-SAF-006 alarm 1oo2
 FAB,reactor,RESIST_SYN,instrument,"gas detector, NOx",electrochemical NO2,"alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height",2,AQS-SAF-006 alarm 1oo2
+FAB,reactor,RESIST_SYN,instrument,"gas detector, O2 deficiency",electrochemical O2,"alarm 19.5 vol %, trip 18.0 vol %, low (dense gases)",2,AQS-SAF-006 alarm 1oo2
 FAB,reactor,RESIST_SYN,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
 FAB,reactor,RESIST_SYN,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 FAB,reactor,RESIST_SYN,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -1111,14 +1115,19 @@ FAB,reagent,WS_SLURRY,instrument,temperature element,Pt100 class A,"IEC 60751, 3
 FAB,reagent,WS_SLURRY,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",9,S37: AQS-PIP-005 span count
 FAB,reagent,WS_SLURRY,valve,check valve,DN15,"PP-H swing/ball check valve, ISO 16137, EPDM seals",1,S37: pump discharge (assumed)
 FAB,reagent,WS_SLURRY,valve,isolation valve,DN15,"PP-H ball valve, ISO 16135, EPDM seals",2,S37: one at each end nozzle (assumed)
+FAB,reagent,WS_SOLV,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-FAB-SOLV to WAFER_FAB (assumed size)
 FAB,reagent,WS_SOLV,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-RESIST-ACET to RESIST_SYN (assumed size)
 FAB,reagent,WS_SOLV,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-SOLV-WB to WET_BENCH (assumed size)
+FAB,reagent,WS_SOLV,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-FAB-SOLV to WAFER_FAB
 FAB,reagent,WS_SOLV,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-RESIST-ACET to RESIST_SYN
 FAB,reagent,WS_SOLV,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-SOLV-WB to WET_BENCH
+FAB,reagent,WS_SOLV,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-FAB-SOLV: run and fault (assumed)
 FAB,reagent,WS_SOLV,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-RESIST-ACET: run and fault (assumed)
 FAB,reagent,WS_SOLV,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-SOLV-WB: run and fault (assumed)
+FAB,reagent,WS_SOLV,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-FAB-SOLV to WAFER_FAB: run and fault (assumed)
 FAB,reagent,WS_SOLV,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-RESIST-ACET to RESIST_SYN: run and fault (assumed)
 FAB,reagent,WS_SOLV,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-SOLV-WB to WET_BENCH: run and fault (assumed)
+FAB,reagent,WS_SOLV,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-FAB-SOLV
 FAB,reagent,WS_SOLV,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-RESIST-ACET
 FAB,reagent,WS_SOLV,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-SOLV-WB
 FAB,reagent,WS_SOLV,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,28,IA-SOLV-WB: 2 per support (assumed)
@@ -2254,10 +2263,15 @@ OIL,cut_tank,PROD_C29,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type
 OIL,cut_tank,PROD_C29,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,C29_RECYCLE: pump discharge (assumed)
 OIL,cut_tank,PROD_C29,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,C29_RECYCLE: one at each end nozzle (assumed)
 OIL,cut_tank,PROD_C5_C10,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-C5-POLY to POLY_OLEFIN (assumed size)
+OIL,cut_tank,PROD_C5_C10,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-RESIST-BZ to RESIST_SYN (assumed size)
 OIL,cut_tank,PROD_C5_C10,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-C5-POLY to POLY_OLEFIN
+OIL,cut_tank,PROD_C5_C10,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-RESIST-BZ to RESIST_SYN
 OIL,cut_tank,PROD_C5_C10,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-C5-POLY: run and fault (assumed)
+OIL,cut_tank,PROD_C5_C10,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve IA-RESIST-BZ: run and fault (assumed)
 OIL,cut_tank,PROD_C5_C10,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-C5-POLY to POLY_OLEFIN: run and fault (assumed)
+OIL,cut_tank,PROD_C5_C10,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-RESIST-BZ to RESIST_SYN: run and fault (assumed)
 OIL,cut_tank,PROD_C5_C10,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-C5-POLY
+OIL,cut_tank,PROD_C5_C10,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve IA-RESIST-BZ
 OIL,cut_tank,PROD_C5_C10,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,CUT-1-OUT: 2 per support (assumed)
 OIL,cut_tank,PROD_C5_C10,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,46,IA-C5-SHIP: 2 per support (assumed)
 OIL,cut_tank,PROD_C5_C10,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-1-OUT: pumped line (assumed)
@@ -2383,6 +2397,8 @@ POLYMERS,store,POLY_STOCK,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,tra
 POLYMERS,store,POLY_STOCK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump FLUORO_TO_MFG to MFG_SHOP: run and fault (assumed)
 POLYMERS,store,POLY_STOCK,fabricated part,fabricated part set,3 BOM lines,models/mfg/POLY_STOCK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 POLYMERS,store,POLY_STOCK,fastener,M10 clamp,M10 clamp,ISO 3506 A4-70,4,models/mfg/POLY_STOCK/fasteners.csv
+POLYMERS,store,POLY_STOCK,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+POLYMERS,store,POLY_STOCK,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 POLYMERS,store,POLY_STOCK,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 POLYMERS,store,POLY_STOCK,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 PUMPED_HYDRO,HYDRO,HYDRO_SET,bearing,deep-groove ball bearing,6206-2Z,"ISO 15 / ISO 492 normal class, C3",2,"pump-turbine motor-generator: drive and non-drive end, IEC 60072 frame 100L (assumed size)"

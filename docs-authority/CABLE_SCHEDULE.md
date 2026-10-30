@@ -93,12 +93,12 @@ Plant demand 224.7 kW at 480 V, power factor 0.9 assumed: 300 A. EW process bars
 | HYDRO_SET | pump-turbine motor-generator feeder | 14 AWG | 1 | 4.8 | 15 | 47.6 | 460 | 0.89 | 3 | yes |
 | IMID | Mineral wool insulation with SS cladding; recirculation pump feeder | 14 AWG | 1 | 2.4 | 15 | 16.9 | 460 | 0.16 | 3 | yes |
 | LEACH_CSTR_1 | Gearmotor 0.75 kW 150 rpm output on lid bridge feeder | 14 AWG | 1 | 3.0 | 15 | 12.1 | 460 | 0.14 | 3 | yes |
-| LITHO_DEV | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 8.0 | 460 | 0.09 | 3 | yes |
+| LITHO_DEV | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 9.1 | 460 | 0.11 | 3 | yes |
 | LP-DIGESTER | panel feeder 208 V | 6 AWG | 1 | 39.0 | 65 | 31.8 | 208 | 1.66 | 2 | yes |
 | LP-DIGESTER | panel feeder 460 V | 8 AWG | 1 | 36.4 | 50 | 31.8 | 460 | 1.09 | 2 | yes |
 | LP-ELEC | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 5.1 | 208 | 0.13 | 2 | yes |
 | LP-ELEC | panel feeder 460 V | 250 kcmil | 2 | 497.4 | 510 | 5.1 | 460 | 0.08 | 2 | yes |
-| LP-FAB | panel feeder 460 V | 14 AWG | 1 | 10.8 | 15 | 28.8 | 460 | 1.21 | 2 | yes |
+| LP-FAB | panel feeder 460 V | 14 AWG | 1 | 10.8 | 15 | 27.6 | 460 | 1.16 | 2 | yes |
 | LP-GEO | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 22.4 | 208 | 0.58 | 2 | yes |
 | LP-GEO | panel feeder 460 V | 14 AWG | 1 | 2.6 | 15 | 22.4 | 460 | 0.23 | 2 | yes |
 | LP-MEOH | panel feeder 208 V | 14 AWG | 1 | 3.0 | 15 | 21.4 | 208 | 0.55 | 2 | yes |
@@ -118,11 +118,11 @@ Plant demand 224.7 kW at 480 V, power factor 0.9 assumed: 300 A. EW process bars
 | MFG_SHOP | screw conveyor IA-MFG-OUT to HABITATION feeder | 14 AWG | 1 | 1.6 | 15 | 3.0 | 460 | 0.02 | 3 | yes |
 | POLISH_BANK | screw conveyor IA-POL-CAKE to MFG_SHOP feeder | 14 AWG | 1 | 1.6 | 15 | 12.5 | 460 | 0.08 | 3 | yes |
 | SALT_FEED | screw feeder feeder | 14 AWG | 1 | 2.4 | 15 | 12.5 | 460 | 0.12 | 3 | yes |
-| SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 5.9 | 460 | 0.03 | 3 | yes |
+| SOLAR_PV_CELL | main drive feeder | 14 AWG | 1 | 1.1 | 15 | 7.0 | 460 | 0.03 | 3 | yes |
 | TFE_SYN | Dilute-HCl return pump and transfer line to CRU feeder | 14 AWG | 1 | 2.4 | 15 | 30.0 | 460 | 0.28 | 3 | yes |
 | VDF_SYN | Dilute-HCl return pump and transfer line to CRU feeder | 14 AWG | 1 | 2.4 | 15 | 30.0 | 460 | 0.28 | 3 | yes |
-| WAFER_FAB | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 6.1 | 460 | 0.07 | 3 | yes |
-| WET_BENCH | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 6.1 | 460 | 0.07 | 3 | yes |
+| WAFER_FAB | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 7.2 | 460 | 0.08 | 3 | yes |
+| WET_BENCH | process vacuum pump feeder | 14 AWG | 1 | 3.0 | 15 | 7.2 | 460 | 0.08 | 3 | yes |
 | WIRE_DRAW | Bull-block wire drawer: main drive feeder | 14 AWG | 1 | 3.0 | 15 | 3.0 | 460 | 0.03 | 3 | yes |
 | YEAST | PIR insulation 50 mm with PE cladding; CO2 evolution; daily  feeder | 14 AWG | 1 | 2.4 | 15 | 11.7 | 460 | 0.11 | 3 | yes |
 | ZNBR2 | electrolyte pump (anolyte, catholyte) per stack string feeder | 14 AWG | 1 | 1.1 | 15 | 11.0 | 460 | 0.05 | 3 | yes |
