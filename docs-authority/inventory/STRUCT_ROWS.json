@@ -1346,9 +1346,9 @@
 {
 "unit": "H2_DRYER",
 "level": "L-1",
-"empty_kg": 37.6,
-"op_kg": 37.6,
-"test_kg": 37.6,
+"empty_kg": 37.7,
+"op_kg": 37.7,
+"test_kg": 37.7,
 "foot_m2": 0.24
 },
 {

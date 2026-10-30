@@ -7343,5 +7343,23 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.regen; ACID_PLANT continuous_kw equals params.kiln_duty.kw_avg, and AQS-DUTY-073 Table 4.2 lists both kiln duties."
+ },
+ {
+  "id": "A-M-426",
+  "value": "NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI route (naoh_route = CHLOR_ALKALI): halite ore re-saturates the brine of the membrane cells that already recover the purge salt. CAUSTICIZE stays selectable. The cell hydrogen goes to the H2 header with the electrowinning cathode hydrogen, through H2_DRYER to the hydrogen store CRYO_H2, which feeds methanol synthesis and the fuel cells.",
+  "units": "route choice; kW, kg/d",
+  "where": "flow_graph/param/drivers.json naoh_route; flow_graph/param/caustic.py; AQS-PAR-001 section 7.1",
+  "basis": "Q-035 and Q-036 decided on the merits under the owner delegation t62u. At the present make-up CHLOR_ALKALI draws less than half the load of CAUSTICIZE, needs no trona calciner or lime kiln, vents no carbon dioxide and takes one ore instead of two (AQS-PAR-001 Table 7.1). The cell hydrogen is the same gas as the electrowinning hydrogen and the existing dryer, store and consumers take it; a separate consumer or store would add equipment, and moving the electrolyser sizing is held with the O2 ownership.",
+  "sensitivity": "The chlorine export and the cell hydrogen rise with the top-up; the CAUSTICIZE kilns would carry their shell losses at any make-up.",
+  "replaced_by": "Cell trials on halite brine at the first article",
+  "task": "QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u)",
+  "files": [
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/caustic.py",
+   "flow_graph/param/report.py",
+   "docs-authority/OPEN_QUESTIONS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2."
  }
 ]

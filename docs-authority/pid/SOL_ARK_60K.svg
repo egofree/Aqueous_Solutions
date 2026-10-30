@@ -53,7 +53,7 @@
 <polygon points="586,424 577,420 577,428" fill="#111"/>
 <text x="24" y="405" font-size="9" fill="#666" text-anchor="start">PV_ARRAY</text>
 <text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">IA-PV-01</text>
-<text x="24" y="437" font-size="10" text-anchor="start">352.9 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="437" font-size="10" text-anchor="start">351.8 kW · cable (schedule X-ELS-06)</text>
 <line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,470 577,466 577,474" fill="#111"/>
 <text x="24" y="451" font-size="9" fill="#666" text-anchor="start">BACKUP_GEN</text>
@@ -209,7 +209,7 @@
 <polygon points="1070,1390 1061,1386 1061,1394" fill="#111"/>
 <text x="1476" y="1371" font-size="9" fill="#666" text-anchor="end">EXT_HALL</text>
 <text x="1476" y="1385" font-size="11" font-weight="600" text-anchor="end">SF-EXT_HALL</text>
-<text x="1476" y="1403" font-size="10" text-anchor="end">82.5 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="1403" font-size="10" text-anchor="end">82.1 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="1436" x2="1061" y2="1436" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,1436 1061,1432 1061,1440" fill="#111"/>
 <text x="1476" y="1417" font-size="9" fill="#666" text-anchor="end">FILM_CAST</text>
@@ -334,7 +334,7 @@
 <polygon points="1070,2540 1061,2536 1061,2544" fill="#111"/>
 <text x="1476" y="2521" font-size="9" fill="#666" text-anchor="end">NAOH_PLANT</text>
 <text x="1476" y="2535" font-size="11" font-weight="600" text-anchor="end">SF-NAOH_PLANT</text>
-<text x="1476" y="2553" font-size="10" text-anchor="end">1.2 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="2553" font-size="10" text-anchor="end">0.5 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="2586" x2="1061" y2="2586" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,2586 1061,2582 1061,2590" fill="#111"/>
 <text x="1476" y="2567" font-size="9" fill="#666" text-anchor="end">NOX_SCRUB</text>
@@ -463,7 +463,7 @@
 <g id="aqs-title-block"><rect x="1116" y="3832" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="3849" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-SOL_ARK_60K</text>
 <text x="1124" y="3866" font-size="9">P&amp;ID SOL_ARK_60K (inverter, ELEC sector)</text>
-<text x="1124" y="3883" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev a1fd6630   Issued 2026-10-19</text>
+<text x="1124" y="3883" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 1619d2e1   Issued 2026-10-19</text>
 <text x="1124" y="3900" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="3917" font-size="9">Graph SHA-256 15edcc2fe9038602   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="3917" font-size="9">Graph SHA-256 94817999e5d0abe4   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

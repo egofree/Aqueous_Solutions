@@ -30,7 +30,7 @@ VAR
   EVAP_ACIDTE-01_PV : REAL ;  (* band by service )
   EVAP_BASEFT-01_PV : REAL ;  (* IA-BASE-01 normal 0.92 L/h )
   EVAP_BASEFT-02_PV : REAL ;  (* IA-BASE-PPT normal 20.10 L/h )
-  EVAP_BASEFT-03_PV : REAL ;  (* IA-EVAP_BASE-COND normal 33.93 L/h )
+  EVAP_BASEFT-03_PV : REAL ;  (* IA-EVAP_BASE-COND normal 33.80 L/h )
   EVAP_BASELT-01_PV : REAL ;  (* A-M-182 liquid height )
   EVAP_BASEPT-01_PV : REAL ;  (* design 100.0 kPa g )
   EVAP_BASETE-01_PV : REAL ;  (* band by service )
@@ -267,10 +267,10 @@ END_VAR
   EVAP_BASEFT-02_ALARM_LO := 18.090000000000003 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  EVAP_BASEFT-03_SP := 33.93 ;  (* graph basis: IA-EVAP_BASE-COND normal 33.93 L/h )
+  EVAP_BASEFT-03_SP := 33.8 ;  (* graph basis: IA-EVAP_BASE-COND normal 33.80 L/h )
   FB_PI_EVAP_BASEFT-03( PV := EVAP_BASEFT-03_PV, SP := EVAP_BASEFT-03_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  EVAP_BASEFT-03_ALARM_HI := 37.323 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  EVAP_BASEFT-03_ALARM_LO := 30.537 ;
+  EVAP_BASEFT-03_ALARM_HI := 37.18 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  EVAP_BASEFT-03_ALARM_LO := 30.419999999999998 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_EVAP_BASELT-01( PV := EVAP_BASELT-01_PV );

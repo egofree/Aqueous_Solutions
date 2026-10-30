@@ -30,7 +30,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S19 | BAGHOUSE→LEACH_CSTR_1 | Closed | present | 0.0 kg/d | From register: BAGHOUSE fines → LEACH CSTR 1 |
 | S21 | ROOF_TANK→HABITATION | Closed | present | 120.68 kg/d | — |
 | S24 | H2_DRYER→RELIEF_H2 | — | present | 0.0 kg/d | NFPA 2 relief. Not freight. |
-| S25 | VCD_TRAIN→BMED_UPW_POLISH | Closed | present | 307.62916 kg/d | presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18 |
+| S25 | VCD_TRAIN→BMED_UPW_POLISH | Closed | present | 307.530211 kg/d | presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18 |
 | S26 | REMIN→HABITATION | Closed | present | 10.0 kg/d | — |
 | S27 | FAB_UPW_TANK→WET_BENCH | Closed | present | 60.000181 kg/d | From register: FAB_UPW_TANK → WET_BENCH |
 | S28 | VCD_TRAIN→LEACH_CSTR_1 | Closed | present | 17.877059 kg/d | presence placeholder->present (both endpoints live); per first-principles audit correction 1, owner rulings 2026-10-18 |
@@ -59,14 +59,14 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S60 | GAS_ATOMIZER→MFG_SHOP | Closed / Claimed | present | 3.200359 kg/d | From register: GAS_ATOMIZER → MET_POWDER_CRIB / FAB / RepRap |
 | S61 | MFG_SHOP→HOPPER | Closed | present | 1.197099 kg/d | From register: Forming swarf / trim → HOPPER / leach |
 | S62 | MET_AHU→MET_SCRUB | Partial / Claimed | present | 51145.68 kg/d | From register: MET_AHU → MET_SCRUB / baghouse (S71) |
-| S64 | H2_DRYER→CRYO_H2 | Partial | present | 2.075063 kg/d | S05 deleted as a duplicate parallel edge (same H2_DRYER->CRYO_H2 4.8 kg/d authority pool; Rev M retired S05 as an alias of S64, CO2_HEADER_DUTY AQS-DUTY-011); per first-principles audit correction 5, owner rulings 2026-10-18 |
+| S64 | H2_DRYER→CRYO_H2 | Partial | present | 2.086136 kg/d | S05 deleted as a duplicate parallel edge (same H2_DRYER->CRYO_H2 4.8 kg/d authority pool; Rev M retired S05 as an alias of S64, CO2_HEADER_DUTY AQS-DUTY-011); per first-principles audit correction 5, owner rulings 2026-10-18 |
 | S65 | ALK_SCRUBBER→ACID_POLISH_SCRUB | — | present | 37509.8546 kg/d | Not a self-loop. Polish then CRU via S66. |
 | S66 | ACID_POLISH_SCRUB→CRU | Claimed | present | 27.372033 kg/d | From register: ACID_POLISH / ALK blowdown → CRU |
 | S67 | AFTERBURNER_FLUE→FLUE_KO | — | present | 117.42759 kg/d | Knockout before any CO2 claim. |
 | S67B | FLUE_KO→CRYO_CO2 | — | present | 14.050492 kg/d | Only the CO2-rich cut. Reject N2/O2/NOx. |
 | S68 | CRYO_AHU→LEACH_CSTR_1 | — | present | 78.987901 kg/d | Acid condensate stays process. |
-| S69 | ZNBR2→ZNBR2_BR2_REGEN | — | present | 920.7045 kg/d | Own tower. |
-| S69B | ZNBR2_BR2_REGEN→ZNBR2 | — | present | 920.7045 kg/d | Return to the bromine tank only. |
+| S69 | ZNBR2→ZNBR2_BR2_REGEN | — | present | 916.12544 kg/d | Own tower. |
+| S69B | ZNBR2_BR2_REGEN→ZNBR2 | — | present | 916.12544 kg/d | Return to the bromine tank only. |
 | S70 | CRYO_AHU_COND_CONDENSABLE→FLUE_KO | — | present | 0.0521 kg/d | Not into the hydrogen box. |
 | S71 | MET_AHU→MET_SCRUB | Partial / Claimed | present | 20458.32 kg/d | From register: MET_AHU → MET_SCRUB / baghouse |
 | S72 | MET_SCRUB→LEACH_CSTR_1 | — | present | 2.4442 kg/d | Fines only. |
@@ -79,7 +79,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S78 | HABITATION→MEOH_FERM | — | present | 0.36 kg/d | From register: Farm/hab organics (S12/S30 class) → MEOH_FERM_DIG |
 | S81 | MEOH_FC→MEOH_COND | — | present | 7.251023 kg/d | Methanol residual stays process. |
 | S82 | MEOH_FC→CRYO_CO2 | — | present | 8.625641 kg/d | From register: MEOH_FC / MEOH_VENT_KO → CRYO_CO2 / FARM (Claimed) |
-| S83 | CRYO_O2→HDR_O2 | — | present | 32.377012 kg/d | Life header fill. Not the dock. |
+| S83 | CRYO_O2→HDR_O2 | — | present | 32.289136 kg/d | Life header fill. Not the dock. |
 | S84 | CRYO_N2→AIR_RECEIVER | — | present | 191.989014 kg/d | Life header fill. Not the dock. |
 | S85 | CRYO_CO2→HDR_CO2 | — | present | 0.0 kg/d | Life header fill. Not the dock. |
 | S86 | CRYO_AHU→RELIEF_CRYO | — | present | 0.0 kg/d | Same sink as S56. Issued so the old dock edge has a number and a legal end. |

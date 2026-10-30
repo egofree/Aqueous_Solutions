@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="595" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="587" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit EXT_HALL · building · sector ELEC · present</text>
-<text x="24" y="54" font-size="10.5">82.5023 kW continuous</text>
+<text x="24" y="54" font-size="10.5">82.1326 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 1 in + 0 out · valves 0 placed / 0 unplaced · instruments 1 (0 SIF) · nozzles 0</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -27,7 +27,7 @@
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">SF-EXT_HALL</text>
-<text x="24" y="253" font-size="10" text-anchor="start">82.5 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="253" font-size="10" text-anchor="start">82.1 kW · cable (schedule X-ELS-06)</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 1 in, 0 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="425" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; no nozzle schedule for EXT_HALL yet (unit task 04).</text>
@@ -35,7 +35,7 @@
 <g id="aqs-title-block"><rect x="1116" y="477" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="494" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-EXT_HALL</text>
 <text x="1124" y="511" font-size="9">P&amp;ID EXT_HALL (building, ELEC sector)</text>
-<text x="1124" y="528" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 2e55d811   Issued 2026-10-19</text>
+<text x="1124" y="528" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 14830cb0   Issued 2026-10-19</text>
 <text x="1124" y="545" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="562" font-size="9">Graph SHA-256 15edcc2fe9038602   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="562" font-size="9">Graph SHA-256 94817999e5d0abe4   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

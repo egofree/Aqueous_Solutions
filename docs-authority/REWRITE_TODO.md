@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AN
+Revision: AO
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -46,6 +46,7 @@ Date: 2026-10-29
 | AL | Batch 35: recovery first for every element taken as raw ore, with a generated inventory and check (A-M-423); sulfur, calcium and sodium revisited | 2026-10-29 |
 | AM | Batch 36: pattern wax make-up from the plant C19-C28 cut (A-M-424) | 2026-10-29 |
 | AN | Batch 37: Q-034 decided, the acid cake kiln runs in campaigns (A-M-425) | 2026-10-29 |
+| AO | Batch 38: Q-035 and Q-036 decided, chlor-alkali top-up and cell hydrogen on the H2 header (A-M-426) | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -204,6 +205,7 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/param/recovery.py` (A-M-423) | New: recovery-first inventory and check for every element taken as raw ore; the acid kiln now recovers the free acid sulfur too, the causticiser takes its lime from the acid-plant residue before limestone ore, and every ore-taking transfer function stamps a recovery record (owner decision t61u). |
 | `flow_graph/param/foundry_poly.py` (A-M-424) | The pattern wax make-up is the plant C19-C28 paraffin cut on C19_TO_WAX after the dewax reclaim; IA-WAX-MU retired and the C19-C28 export falls by the draw (owner decision t59u). |
 | `flow_graph/param/sulfuric.py` (A-M-425) | Q-034 closed under the owner delegation t62u: GYPSUM_LOOP stays (recovery first), and the cake kiln runs in campaigns from a cake store with an acid day store, which cuts its average load to about a fifth; CONTINUOUS duty is selectable. |
+| `flow_graph/param/caustic.py` (A-M-426) | Q-035 and Q-036 closed under the owner delegation t62u: the sodium hydroxide top-up runs on the chlor-alkali cells with halite ore, with CAUSTICIZE selectable, and the cell hydrogen stays on the H2 header to the hydrogen store. |
 
 ## 3. In progress
 

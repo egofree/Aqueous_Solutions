@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 475 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 476 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 670 items: 295 drivers, 375 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 671 items: 295 drivers, 376 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -686,6 +686,7 @@ Total 670 items: 295 drivers, 375 register entries. Classification rule: first m
 | A-M-423 | Recovery first: for every element the plant takes as raw ore kg/d of element | python3 -m flow_graph.param.recovery prints no flags; pytest flow_graph/param/test_recovery_first.py passes, and its negative cases show that an ore above the shortfall and an undeclared waste outflow are flagged. | QA audit 2026-10-29, recovery-first rule (owner decision t61u) |
 | A-M-424 | The pattern wax make-up is the paraffin of the plant's own C kg/d | python3 -m flow_graph.param.regen; IA-WAX-MU is retired, C19_TO_WAX carries the make-up from PROD_C19_C28, and IA-C19-SHIP equals CUT-3 less CUT-3-OUT and C19_TO_WAX. | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
 | A-M-425 | The ACID_PLANT cake kiln runs in campaigns (acid_kiln_mode = kW average and peak; kg and L of store | python3 -m flow_graph.param.regen; ACID_PLANT continuous_kw equals params.kiln_duty.kw_avg, and AQS-DUTY-073 Table 4.2 lists both kiln duties. | QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u) |
+| A-M-426 | NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI  route choice; kW, kg/d | python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2. | QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u) |
 
 ## 7. T6 Commissioning measurements
 

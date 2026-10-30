@@ -17,7 +17,7 @@ This page records the size of unit GEO_HP, of class `heat_pump` in sector GEO, f
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 0.7069 kW, fed by stream SF-GEO_HP.
+No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 0.7091 kW, fed by stream SF-GEO_HP.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -25,14 +25,14 @@ Table 2.1. Design parameters
 
 | Parameter | Value |
 | --- | --- |
-| lift_kW_th | 2.262 |
-| electric_kW | 0.7069 |
+| lift_kW_th | 2.2692 |
+| electric_kW | 0.7091 |
 | cop | 3.2 |
 | modules | 2 |
 | redundancy | 2 x 100 % (X-RED-07) |
-| module_kW_th | 2.262 |
-| source_area_m2 | 0.226 |
-| condenser_area_m2 | 0.297 |
+| module_kW_th | 2.269 |
+| source_area_m2 | 0.227 |
+| condenser_area_m2 | 0.298 |
 | hx_class | brazed plate, U 2.0 kW/m2 K at 5 K approach (PERRY9) |
 | cop_basis | graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014) |
 | material | 316L plates, R410A-class refrigerant, propylene-glycol brine source |

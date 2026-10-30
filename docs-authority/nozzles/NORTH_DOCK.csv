@@ -45,3 +45,4 @@ N43,solids,Class 150,"limestone ore (raw ore), lime-cycle make-up",outlet,600
 N44,DN15,Class 150,"chlor-alkali chlorine, shipped with the chlorine export",inlet,160
 N45,solids,Class 150,ore insolubles and the lime-mud purge,inlet,160
 N46,solids,Class 150,"cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up",inlet,160
+N47,solids,Class 150,halite ore (raw ore) to re-saturate the cell brine,outlet,600

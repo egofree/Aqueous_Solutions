@@ -49,7 +49,7 @@ Table 4.1. Commissioning sequence
 | 5 | GAS | 8 | 34 | 9 | 1 | Fe, HCl, N2, other_metals, solute |
 | 6 | CRYO | 14 | 37 | 10 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |
 | 7 | GEO | 3 | 6 | 4 | 0 |  |
-| 8 | DIGESTER | 25 | 152 | 28 | 20 | CaF2, CaO, CaSO4, Cl2, Fe, H2O, H2SO4, HCl, Na2CO3.NaHCO3.2H2O, NaCl, NaOH, O2 … |
+| 8 | DIGESTER | 25 | 152 | 28 | 20 | Cl2, Fe, H2O, HCl, NaCl, NaOH, O2, Si, SiCl4, SiO2, metal_plateable, metal_reactive … |
 | 9 | MEOH | 5 | 24 | 5 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |
 | 10 | OIL | 12 | 57 | 13 | 7 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute |
 | 11 | GLASS | 6 | 14 | 7 | 1 | C, Cl2, Fe, HCl, O2, Si, SiO2, other_metals, solute |

@@ -4879,9 +4879,9 @@
   "register": "A-M-421"
  },
  "naoh_route": {
-  "value": "CAUSTICIZE",
+  "value": "CHLOR_ALKALI",
   "units": "- sodium hydroxide route of NAOH_PLANT: CAUSTICIZE (trona ore to soda ash, lime causticising with a recalcining lime kiln) or CHLOR_ALKALI (membrane cells on the leach purge salt and halite ore)",
-  "register": "A-M-422"
+  "register": "A-M-422, A-M-426"
  },
  "caus_liquor_wt": {
   "value": 0.1,

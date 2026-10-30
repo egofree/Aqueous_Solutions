@@ -17,7 +17,7 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 195 units, 141 have an issued material for each wetted stream, 54 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 334 wetted stream ends, and each resolves to an issued service family.
+Of the 195 units, 141 have an issued material for each wetted stream, 54 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 333 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
@@ -27,7 +27,7 @@ The following service families of AQS-STD-002 are used, with the number of strea
 - Acid or brine, at or below 60 C: 52 stream ends.
 - Hot leach liquor: 46 stream ends.
 - Dry gas, H2/O2/N2/CO2: 42 stream ends.
-- Process vent gas: 37 stream ends.
+- Process vent gas: 36 stream ends.
 - Hydrocarbon product, fuel or wax cut: 18 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
 - Aqueous process liquor (AQS-ASSAY-001 envelope): 16 stream ends.
@@ -1025,7 +1025,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| IA-NAOH-VENT | NAOH_PLANT | ATMOS | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-NA-RECYCLE | LEACH_CSTR_1 | NAOH_PLANT | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-NAOH-CL2-SHIP | NAOH_PLANT | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-NAOH-H2 | NAOH_PLANT | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |

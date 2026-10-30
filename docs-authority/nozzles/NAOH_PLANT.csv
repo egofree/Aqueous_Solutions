@@ -11,3 +11,4 @@ N9,DN15,Class 150,sodium hydroxide liquor to the base evaporator,outlet,600
 N10,DN15,Class 150,drain,bottom,50
 N11,DN15,Class 150,vent,top,800
 N12,solids,Class 150,cake-kiln lime residue as the lime-cycle make-up,inlet,160
+N13,solids,Class 150,halite ore (raw ore) to re-saturate the cell brine,inlet,160

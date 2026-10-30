@@ -76,7 +76,7 @@
 <polygon points="586,516 577,512 577,520" fill="#111"/>
 <text x="24" y="497" font-size="9" fill="#666" text-anchor="start">REMIN</text>
 <text x="24" y="511" font-size="11" font-weight="600" text-anchor="start">IA-POT-01</text>
-<text x="24" y="529" font-size="10" text-anchor="start">164.3 kg/d · DN15 P1</text>
+<text x="24" y="529" font-size="10" text-anchor="start">164.2 kg/d · DN15 P1</text>
 <text x="598" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="start">N15</text>
 <line x1="430" y1="562" x2="577" y2="562" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,562 577,558 577,566" fill="#111"/>
@@ -108,7 +108,7 @@
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">H2O_ELYZ</text>
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-ELY-H2O</text>
-<text x="1476" y="345" font-size="10" text-anchor="end">82.7 kg/d · DN15 P1</text>
+<text x="1476" y="345" font-size="10" text-anchor="end">82.6 kg/d · DN15 P1</text>
 <text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N19</text>
 <line x1="914" y1="378" x2="1061" y2="378" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,378 1061,374 1061,382" fill="#111"/>
@@ -202,7 +202,7 @@
 <g id="aqs-title-block"><rect x="1116" y="796" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="813" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-ROOF_TANK</text>
 <text x="1124" y="830" font-size="9">P&amp;ID ROOF_TANK (tank, WTR sector)</text>
-<text x="1124" y="847" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 03802fda   Issued 2026-10-19</text>
+<text x="1124" y="847" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev b233454d   Issued 2026-10-19</text>
 <text x="1124" y="864" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="881" font-size="9">Graph SHA-256 15edcc2fe9038602   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="881" font-size="9">Graph SHA-256 94817999e5d0abe4   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

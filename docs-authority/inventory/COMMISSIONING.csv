@@ -5,17 +5,17 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 1,ELEC,PV_ARRAY,fill or function test per AQS-QA-001 R8,2,-,,
 1,ELEC,RECTIFIER,function test,2,-,,
 1,ELEC,SOL_ARK_60K,function test,2,-,,
-1,ELEC,ZNBR2,function test,7,SIF-165 SIF-170,929.19,Fe HCl other_metals
+1,ELEC,ZNBR2,function test,7,SIF-165 SIF-170,924.61,Fe HCl other_metals
 1,ELEC,ZNBR2_BR2_REGEN,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",5,SIF-166,,
 2,PUMPED_HYDRO,HYDRO_SET,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,-,,
 3,WTR,BLACK_DIGEST,fill or function test per AQS-QA-001 R8,4,SIF-089,21.06,solids
-3,WTR,BMED_UPW_POLISH,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",8,SIF-092,307.63,
+3,WTR,BMED_UPW_POLISH,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",8,SIF-092,307.53,
 3,WTR,CATCH_TANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",4,SIF-095,,
 3,WTR,GREY_TREAT,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",7,SIF-118,29.54,solute
 3,WTR,GW_INTAKE,function test,4,-,,
-3,WTR,REMIN,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-147,174.28,solute
-3,WTR,ROOF_TANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",11,SIF-148,231.73,solute
-3,WTR,VCD_TRAIN,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",7,SIF-151,332.22,Fe HCl other_metals solute
+3,WTR,REMIN,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-147,174.18,solute
+3,WTR,ROOF_TANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",11,SIF-148,231.63,solute
+3,WTR,VCD_TRAIN,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",7,SIF-151,332.12,Fe HCl other_metals solute
 4,HEAT,ADS_CHILL,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,SIF-074,,
 4,HEAT,DRY_COOLER,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,SIF-076,,
 4,HEAT,MAU_HX,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",1,SIF-075,,
@@ -45,7 +45,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 6,CRYO,CRYO_HX_Q4,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,-,,
 6,CRYO,CRYO_N2,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,SIF-012,,N2
 6,CRYO,CRYO_O2,"hydrostatic test at 1.5 x design, 10 min hold; then helium sensitive leak test (ASME B31.3 345.8)",2,SIF-013,,Ar O2
-6,CRYO,H2O_ELYZ,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-120,82.73,
+6,CRYO,H2O_ELYZ,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-120,82.63,
 6,CRYO,PROD_MEOH,fill or function test per AQS-QA-001 R8,5,SIF-146,28.03,CH3OH
 6,CRYO,PROD_O2,fill or function test per AQS-QA-001 R8; then helium sensitive leak test (ASME B31.3 345.8),2,-,,Ar O2
 6,CRYO,RELIEF_CRYO,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",1,-,,
@@ -58,7 +58,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 8,DIGESTER,CRU,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",5,SIF-099,28.13,
 8,DIGESTER,EVAP_ACID,fill or function test per AQS-QA-001 R8,8,SIF-072 SIF-100,1304.79,
 8,DIGESTER,EVAP_ACID_VS,fill or function test per AQS-QA-001 R8,9,SIF-077 SIF-101,0.0,
-8,DIGESTER,EVAP_BASE,fill or function test per AQS-QA-001 R8,8,SIF-073 SIF-102,1318.47,NaOH
+8,DIGESTER,EVAP_BASE,fill or function test per AQS-QA-001 R8,8,SIF-073 SIF-102,1315.45,NaOH
 8,DIGESTER,EW_1,bund and tank fill test,9,SIF-103,4287.8,solute
 8,DIGESTER,EW_2,bund and tank fill test,8,SIF-104,4139.22,
 8,DIGESTER,EW_3,bund and tank fill test,7,SIF-105,3990.59,
@@ -71,9 +71,9 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 8,DIGESTER,FLOAT_SINK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-114,,Fe HCl other_metals
 8,DIGESTER,F_RECOVER,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",4,SIF-045 SIF-116,0.02,Fe HCl other_metals
 8,DIGESTER,HX8,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,SIF-022,,
-8,DIGESTER,LEACH_CSTR_1,fill or function test per AQS-QA-001 R8,4,SIF-125,5112.07,Cl2 Fe HCl O2 Si SiCl4 SiO2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned
+8,DIGESTER,LEACH_CSTR_1,fill or function test per AQS-QA-001 R8,4,SIF-125,5114.99,Cl2 Fe HCl O2 Si SiCl4 SiO2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned
 8,DIGESTER,LI_RECOVER,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-126,,
-8,DIGESTER,NAOH_PLANT,pressure test as R2,6,SIF-084 SIF-133,20.01,CaF2 CaO CaSO4 H2O H2SO4 Na2CO3.NaHCO3.2H2O NaCl inerts
+8,DIGESTER,NAOH_PLANT,pressure test as R2,6,SIF-084 SIF-133,17.09,H2O NaCl
 8,DIGESTER,POLISH_BANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-139,3520.31,
 8,DIGESTER,P_CA,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",3,-,,
 8,DIGESTER,SALT_FEED,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,-,,

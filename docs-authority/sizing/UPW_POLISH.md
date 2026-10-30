@@ -17,7 +17,7 @@ This page sizes the ultrapure water (UPW) polish `BMED_UPW_POLISH`: a reverse os
 
 ## 2. Flows
 
-The feed, stream S25, is distillate from the vapour compression distiller, with about 20 mg/L of dissolved solids (A-M-176). The potable share of 174.3 kg/d goes to remineralisation `REMIN` and bypasses the polish. The ultrapure water product of 127.3 kg/d, for the fab and the header `HDR_UPW`, passes through the RO stage and then the EDI stage. The RO feed is 133.3 kg/d at a recovery of 95.5 %; the reject leaves by stream IA-UPW-REJ.
+The feed, stream S25, is distillate from the vapour compression distiller, with about 20 mg/L of dissolved solids (A-M-176). The potable share of 174.2 kg/d goes to remineralisation `REMIN` and bypasses the polish. The ultrapure water product of 127.3 kg/d, for the fab and the header `HDR_UPW`, passes through the RO stage and then the EDI stage. The RO feed is 133.3 kg/d at a recovery of 95.5 %; the reject leaves by stream IA-UPW-REJ.
 
 ## 3. Design
 

@@ -17,7 +17,7 @@ This page records the size of unit CRYO_O2, of class `cold_box` in sector CRYO, 
 
 ## 2. Duty
 
-The unit takes 74.177 kg/d by 3 streams and gives 74.177 kg/d by 4 streams.
+The unit takes 74.0891 kg/d by 3 streams and gives 74.0891 kg/d by 4 streams.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -47,7 +47,7 @@ Table 2.1. Design parameters
 
 The envelope is 6696 mm x 1500 mm x 600 mm, from `params.size_mm`. Its basis is: L x W x H mm tube rack, set by flow_graph/param/receivers.py (A-M-167).
 
-The hold-up check takes 74.177 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 74.18 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 430 mm in diameter and 650 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
+The hold-up check takes 74.0891 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 74.09 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 430 mm in diameter and 650 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
 
 ## 4. Material
 

@@ -76,7 +76,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 174.28376,
+          "bypass_kg_d": 174.184811,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -365,7 +365,7 @@
             "IA-C5-SHIP": 7.131,
             "IA-C11-SHIP": 1.512,
             "IA-C19-SHIP": 2.018,
-            "IA-O2-SHIP": 22.093,
+            "IA-O2-SHIP": 22.006,
             "IA-MEOH-SHIP": 28.029,
             "IA-CL2-SHIP": 39.206,
             "IA-CA-CL2-SHIP": 0.097,
@@ -376,12 +376,12 @@
             "IA-SHELL-EXPORT": 1.0,
             "IA-METAL-SHIP": 10.812,
             "IA-FAB-PRODUCT": 0.139,
-            "IA-LIME-SHIP": 0.259,
-            "IA-NAOH-CL2-SHIP": 3.505,
-            "IA-NAOH-RESIDUE": 0.126
+            "IA-LIME-SHIP": 0.282,
+            "IA-NAOH-CL2-SHIP": 3.894,
+            "IA-NAOH-RESIDUE": 0.034
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 53.367,
+            "IA-H2O-MU": 56.289,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
@@ -393,10 +393,10 @@
             "IA-SILICA-MU": 1.0,
             "IA-QUARTZ-MU": 0.718,
             "IA-SULFUR-MU": 0.013,
-            "IA-TRONA-MU": 0.92
+            "IA-HALITE-MU": 0.676
           },
-          "net_kg_d": 13.302,
-          "residual_kg_d": 13.304,
+          "net_kg_d": 10.857,
+          "residual_kg_d": 10.857,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -1125,13 +1125,7 @@
             "unrecovered": [
               {
                 "stream": "IA-LIME-SHIP",
-                "kg_d": 0.007074,
-                "recoverable": false,
-                "basis": "fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake"
-              },
-              {
-                "stream": "IA-NAOH-RESIDUE",
-                "kg_d": 0.00061,
+                "kg_d": 0.007684,
                 "recoverable": false,
                 "basis": "fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake"
               }

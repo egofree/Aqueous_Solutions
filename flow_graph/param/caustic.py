@@ -6,13 +6,15 @@ NAOH_PLANT first recovers that sodium: membrane chlor-alkali cells split the fra
 salt (IA-NA-RECYCLE), 2 NaCl + 2 H2O -> 2 NaOH + Cl2 + H2. The rest of the purge is bled to the dock to carry the
 impurities out, and only that shortfall is topped up from a sodium ore taken at the dock, by one of two routes of
 different technology selected with the driver naoh_route:
-- CAUSTICIZE (default): trona ore (Na2CO3.NaHCO3.2H2O) is calcined to soda ash, 2 trona -> 3 Na2CO3 + CO2 + 5 H2O, and
+- CAUSTICIZE: trona ore (Na2CO3.NaHCO3.2H2O) is calcined to soda ash, 2 trona -> 3 Na2CO3 + CO2 + 5 H2O, and
   causticised with slaked lime, Na2CO3 + Ca(OH)2 -> 2 NaOH + CaCO3. The lime mud is recalcined in an electrically
   heated kiln, CaCO3 -> CaO + CO2, as in a kraft-mill lime cycle; the fraction lime_purge_frac of the mud is purged to
   the dock and made up with limestone ore. Unreacted soda ash in the white liquor is recycled inside the unit.
-- CHLOR_ALKALI: halite ore re-saturates the cell brine, so the same cells make the top-up.
+- CHLOR_ALKALI (default, Q-035, A-M-426): halite ore re-saturates the cell brine, so the same cells make the top-up.
+  It draws less than half the load of CAUSTICIZE, needs no kiln, vents no carbon dioxide and takes one ore, not two.
 The cell chlorine is shipped at the dock with the plant's chlorine export, and the cell hydrogen goes to the H2 header the
-way the electrowinning cells' hydrogen does. The liquor goes to EVAP_BASE at its mixed strength, and the evaporator
+way the electrowinning cells' hydrogen does: through H2_DRYER to the hydrogen store CRYO_H2,
+which feeds methanol synthesis and the fuel cells (Q-036, A-M-426). The liquor goes to EVAP_BASE at its mixed strength, and the evaporator
 removes its water; solver.py takes that strength from product_wt(). Water comes from the well (GW_INTAKE), the kiln gases
 leave to ATMOS, and ore insolubles with the lime-mud purge leave at the dock. Kiln shell losses come from
 flow_graph/param/sizing/heat.py.

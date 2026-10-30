@@ -111,7 +111,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 11,DIGESTER,HX8,0,,-,22,no
 11,DIGESTER,LEACH_CSTR_1,2100,Cl2 Fe HCl O2 Si SiCl4 SiO2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
 11,DIGESTER,LI_RECOVER,0,,-,0,no
-11,DIGESTER,NAOH_PLANT,0,CaF2 CaO CaSO4 H2O H2SO4 Na2CO3.NaHCO3.2H2O NaCl inerts,-,0,no
+11,DIGESTER,NAOH_PLANT,0,H2O NaCl,-,0,no
 11,DIGESTER,POLISH_BANK,0,,-,0,no
 11,DIGESTER,P_CA,0,,-,0,no
 11,DIGESTER,SALT_FEED,0,,-,86,no

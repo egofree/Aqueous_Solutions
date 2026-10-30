@@ -17,7 +17,7 @@ This page records the size of unit EVAP_BASE, of class `evaporator` in sector DI
 
 ## 2. Duty
 
-The unit takes 1318.47 kg/d by 2 streams and gives 1318.47 kg/d by 3 streams. Its continuous electrical load is 1.349 kW, fed by stream SF-EVAP_BASE.
+The unit takes 1315.45 kg/d by 2 streams and gives 1315.45 kg/d by 3 streams. Its continuous electrical load is 1.344 kW, fed by stream SF-EVAP_BASE.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -31,33 +31,33 @@ Table 2.1. Design parameters
 | p_body_kPa | 101.325 |
 | p_shell_kPa | 163.73 |
 | ratio | 1.616 |
-| water_kg_h | 33.926 |
-| duty_kW | 21.27 |
-| comp_shaft_kW | 1.207 |
-| comp_elec_kW | 1.341 |
+| water_kg_h | 33.8 |
+| duty_kW | 21.19 |
+| comp_shaft_kW | 1.202 |
+| comp_elec_kW | 1.336 |
 | w_kJ_kg | 89.6 |
 | kWh_per_t | 39.8 |
-| A_ff_m2 | 2.36 |
-| tubes | 21 |
+| A_ff_m2 | 2.35 |
+| tubes | 20 |
 | tube_id_mm | 25 |
 | tube_L_mm | 1500 |
-| recirc_kg_h | 296.9 |
+| recirc_kg_h | 282.7 |
 | pump_kW | 0.008 |
 | shell_D_mm | 350 |
 | height_mm | 3100 |
 | ix_Q_kW | 3.67 |
 | ix_A_m2 | 0.143 |
 | T_feed_preheat_C | 98 |
-| T_out_C | 51.2 |
+| T_out_C | 51.1 |
 | trim_kW | 0 |
-| total_kW | 1.349 |
+| total_kW | 1.344 |
 | column | — |
 
 ## 3. Geometry
 
 The envelope is 1250 mm x 800 mm x 3100 mm, from `params.size_mm`. Its basis is: L x W x H mm: body plus interchanger and compressor frame, in-house design X-MFG-30 (AQS-DUTY-060).
 
-The hold-up check takes 1318.47 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 1318 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 1120 mm in diameter and 1680 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
+The hold-up check takes 1315.45 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 1315 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 1120 mm in diameter and 1680 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
 
 ## 4. Material
 

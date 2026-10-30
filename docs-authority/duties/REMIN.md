@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 174.3 kg/d. Mass out 174.3 kg/d. Electrical duty 0.0460 kW. In: IA-UPW-REMIN 174.3 kg/d (remineralizer). Out: S26 10 kg/d (potable); IA-POT-01 164.3 kg/d (potable makeup, remineralised).
+1. Basis. Mass in 174.2 kg/d. Mass out 174.2 kg/d. Electrical duty 0.0460 kW. In: IA-UPW-REMIN 174.2 kg/d (remineralizer). Out: S26 10 kg/d (potable); IA-POT-01 164.2 kg/d (potable makeup, remineralised).
 
 2. Size.
 - Envelope 600×400×800 mm is the shell. It is not full. Working volume, 7 days of throughput: V = (10.00/1000)×(168/24) = 0.0700 m³.

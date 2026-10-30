@@ -17,7 +17,7 @@ This page records the size of unit BMED_UPW_POLISH, of class `skid` in sector WT
 
 ## 2. Duty
 
-The unit takes 307.629 kg/d by 1 stream and gives 307.629 kg/d by 4 streams. Its continuous electrical load is 0.018 kW, fed by stream SF-BMED_UPW_POLISH.
+The unit takes 307.53 kg/d by 1 stream and gives 307.53 kg/d by 4 streams. Its continuous electrical load is 0.018 kW, fed by stream SF-BMED_UPW_POLISH.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -26,7 +26,7 @@ Table 2.1. Design parameters
 | Parameter | Value |
 | --- | --- |
 | UPW_kg_d | 127.3 |
-| bypass_kg_d | 174.284 |
+| bypass_kg_d | 174.185 |
 | RO_feed_kg_d | 133.345 |
 | recovery | 0.954667 |
 | osmotic_bar | 0.192041 |
@@ -45,7 +45,7 @@ Table 2.1. Design parameters
 
 The envelope is 2200 mm x 900 mm x 1400 mm, from the placement file `flow_graph/placement_seed.json`.
 
-The hold-up check takes 307.629 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 307.6 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 690 mm in diameter and 1040 mm high. It fits within the envelope.
+The hold-up check takes 307.53 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 307.5 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 690 mm in diameter and 1040 mm high. It fits within the envelope.
 
 ## 4. Material
 

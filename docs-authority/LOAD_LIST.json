@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "15edcc2fe9038602a3ccc1a0fe0ae19e5060ac0b00d70f0f662c13bc5d2ea1af",
+  "graph_sha256": "94817999e5d0abe4eb1e6777d0c24fde5d18cd0e44526906cbe22f1fb03b04a6",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 352.926,
-   "calc_kw": 352.926,
+   "kw": 351.835,
+   "calc_kw": 351.835,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,27 +16,27 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 219.102,
-   "calc_kw": 219.102,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 219.1 kW, charge 995.9 kW, 3067 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 218.013,
+   "calc_kw": 218.013,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.9 kW, 3052 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 82.502,
-   "calc_kw": 82.502,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28728 m2; lighting 25.28 kW (IECC 2021 C405, 10 % lit), ventilation 35.83 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.39 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.4 kW and cooling 100.4 kW thermal average after internal gains 36.1 kW and slab edge 2.99 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 82.133,
+   "calc_kw": 82.133,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 35.61 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.40 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.3 kW and cooling 100.0 kW thermal average after internal gains 35.8 kW and slab edge 3.04 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "H2O_ELYZ",
    "role": "load",
-   "kw": 21.216,
-   "calc_kw": 21.216,
-   "basis": "X-PAR-12 TF: 9.26 kg/d H2 x 55.0 kWh/kg / 24 h; rated 84.9 kW on a 6.0 h PV window.",
+   "kw": 21.191,
+   "calc_kw": 21.191,
+   "basis": "X-PAR-12 TF: 9.25 kg/d H2 x 55.0 kWh/kg / 24 h; rated 84.8 kW on a 6.0 h PV window.",
    "class": "calculated",
    "sector": "CRYO"
   },
@@ -178,18 +178,9 @@
   {
    "unit": "EVAP_BASE",
    "role": "load",
-   "kw": 1.349,
-   "calc_kw": 1.349,
-   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 814.2 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.341 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.35 kW. Study.",
-   "class": "calculated",
-   "sector": "DIGESTER"
-  },
-  {
-   "unit": "NAOH_PLANT",
-   "role": "\u2014",
-   "kw": 1.193,
-   "calc_kw": 1.193,
-   "basis": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): membrane cells 0.4503 kW (ca_cell_V x F / (M x ca_CE) through the rectifier) + trona calciner and lime kiln 0.7425 kW (shell loss + reaction + feed heat) (caustic.py, route CAUSTICIZE).",
+   "kw": 1.344,
+   "calc_kw": 1.344,
+   "basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 811.2 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.336 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.34 kW. Study.",
    "class": "calculated",
    "sector": "DIGESTER"
   },
@@ -259,9 +250,9 @@
   {
    "unit": "GEO_HP",
    "role": "load",
-   "kw": 0.707,
-   "calc_kw": 0.707,
-   "basis": "X-ELS-02: Q4-bus lift S44 2.2620 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.7069 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
+   "kw": 0.709,
+   "calc_kw": 0.709,
+   "basis": "X-ELS-02: Q4-bus lift S44 2.2692 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.7091 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317).",
    "class": "calculated",
    "sector": "GEO"
   },
@@ -291,6 +282,15 @@
    "basis": "X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289): chlorination 350 C + 142b cracking 650 C insulated losses (A-M-289).",
    "class": "calculated",
    "sector": "POLYMERS"
+  },
+  {
+   "unit": "NAOH_PLANT",
+   "role": "\u2014",
+   "kw": 0.5,
+   "calc_kw": 0.5,
+   "basis": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): membrane cells 0.5004 kW (ca_cell_V x F / (M x ca_CE) through the rectifier) (caustic.py, route CHLOR_ALKALI).",
+   "class": "calculated",
+   "sector": "DIGESTER"
   },
   {
    "unit": "TI_CELL",
@@ -849,10 +849,10 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 93,
-  "graph_sum_kW": 157.18,
-  "calc_sum_kW": 157.18,
-  "connected_load_kW": 157.2,
-  "connected_calculated_kW": 157.1,
+  "graph_sum_kW": 156.09,
+  "calc_sum_kW": 156.09,
+  "connected_load_kW": 156.1,
+  "connected_calculated_kW": 156.0,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 0.0,
   "connected_calculated_pct": 100.0,

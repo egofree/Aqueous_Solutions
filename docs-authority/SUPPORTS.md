@@ -242,8 +242,8 @@ Status. 261 lines, 4036 supports, 0 lines need a loop or offset.
 | IA-C11-SHIP | DN15 | M2 | 25 | 1.5 | 7 | 0.4 | 0.18 | 1.30 | ok |
 | IA-C19-SHIP | DN15 | M2 | 25 | 1.5 | 7 | 0.4 | 0.18 | 1.30 | ok |
 | IA-ACID-01 | DN15 | P2 | 49 | 1.05 | 22 | 29.4 | 0.82 | 2.50 | ok |
-| IA-BASE-01 | DN15 | P4 | 51 | 1.12 | 19 | 41.7 | 0.83 | 8.22 | ok |
-| IA-BASE-PPT | DN15 | P2 | 51 | 1.05 | 17 | 22.9 | 0.73 | 2.50 | ok |
+| IA-BASE-01 | DN15 | P4 | 51 | 1.12 | 19 | 41.5 | 0.83 | 8.22 | ok |
+| IA-BASE-PPT | DN15 | P2 | 51 | 1.05 | 17 | 22.8 | 0.73 | 2.50 | ok |
 | IA-EVAP_ACID-FEED | DN15 | P1 | 25 | 0.98 | 8 | 0.6 | 0.13 | 1.62 | ok |
 | IA-EVAP_ACID-COND | DN15 | P1 | 49 | 0.98 | 8 | 3.7 | 0.31 | 1.62 | ok |
 | IA-EVAP_BASE-FEED | DN15 | P4 | 25 | 1.12 | 8 | 2.1 | 0.19 | 1.65 | ok |

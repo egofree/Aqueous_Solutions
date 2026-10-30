@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 20.96 kg/d. Mass out 20.96 kg/d. Electrical duty 1.1929 kW. In: IA-TRONA-MU 0.9196 kg/d (trona ore (raw ore) for soda ash); IA-NA-RECYCLE 5.778 kg/d (sodium chloride of the leach purge recovered to the cell brine); IA-NAOH-H2O 14.24 kg/d (well water for the liquor, the slaker or the cell); IA-LIME-TO-NAOH 0.02237 kg/d (cake-kiln lime residue as the lime-cycle make-up). Out: IA-NAOH-VENT 0.4751 kg/d (carbon dioxide and water vapour of the trona calciner and lime kiln); IA-NAOH-CL2-SHIP 3.505 kg/d (chlor-alkali chlorine, shipped with the chlorine export); IA-NAOH-H2 0.09965 kg/d (chlor-alkali cathode hydrogen to the H2 header); IA-NAOH-RESIDUE 0.1264 kg/d (ore insolubles and the lime-mud purge); 1 more.
+1. Basis. Mass in 17.77 kg/d. Mass out 17.77 kg/d. Electrical duty 0.5004 kW. In: IA-HALITE-MU 0.6758 kg/d (halite ore (raw ore) to re-saturate the cell brine); IA-NA-RECYCLE 5.778 kg/d (sodium chloride of the leach purge recovered to the cell brine); IA-NAOH-H2O 11.32 kg/d (well water for the liquor, the slaker or the cell). Out: IA-NAOH-CL2-SHIP 3.894 kg/d (chlor-alkali chlorine, shipped with the chlorine export); IA-NAOH-H2 0.1107 kg/d (chlor-alkali cathode hydrogen to the H2 header); IA-NAOH-RESIDUE 0.03379 kg/d (ore insolubles and the lime-mud purge); IA-NAOH-LIQ 13.73 kg/d (sodium hydroxide liquor to the base evaporator).
 
 2. Size.
 - Node note: Sodium hydroxide plant (A-M-422).

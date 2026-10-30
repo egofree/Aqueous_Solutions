@@ -50,7 +50,7 @@ Table 3.1. Storage units
 | FOOD_STORE | D-DOCK food buffer: fresh harvest pass-through + X-RED-08 80 d dry reserve (A-M-270) | 0.252 | 80 | 600 | 0.0336 | 0.042 | 350 | 450 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
 | METAL_STORE | D-DOCK metal product buffer, 14 d dispatch campaign (A-M-270) | 26.126 | 14 | 2000 | 0.1897 | 0.2372 | 600 | 850 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
 | AIR_RECEIVER | D-DOCK plant-air receiver on the cold-box N2 delivery, 1 d of the ASU/vent margin (A-M-270) | 3.1 | 1.0 | 11.7 | 0.2649 | 0.3312 | 700 | 900 | SA-240 304L, welded | 3.06 | — | no envelope |
-| PROD_O2 | D-DOCK surplus-O2 product bank, cylinder-bank equivalent volume, 14 d dispatch campaign (A-M-278) | 22.093 | 14 | 293.4 | 1.0542 | 1.3178 | 1050 | 1550 | SA-240 304L, welded | 101.94 | — | no envelope |
+| PROD_O2 | D-DOCK surplus-O2 product bank, cylinder-bank equivalent volume, 14 d dispatch campaign (A-M-278) | 22.006 | 14 | 293.4 | 1.05 | 1.3125 | 1050 | 1550 | SA-240 304L, welded | 101.94 | — | no envelope |
 | PROD_MEOH | D-DOCK methanol product store, 14 d dispatch campaign (A-M-278) | 28.029 | 14 | 792 | 0.4955 | 0.6193 | 850 | 1100 | SA-240 304L, welded | 3.0 | — | no envelope |
 
 16 of the 23 units fit their envelope on the graph. None exceeds its envelope. The 7 units without an envelope take the sized vessel as their envelope at the next general arrangement build. The wall given for PROD_O2 is that of an equivalent thin-walled vessel; its storage is governed by the bank of seamless cylinders set by the storage mode of `CRYO_O2`.

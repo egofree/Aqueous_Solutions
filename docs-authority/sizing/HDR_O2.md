@@ -17,7 +17,7 @@ This page records the size of unit HDR_O2, of class `header` in sector GAS, from
 
 ## 2. Duty
 
-The unit takes 32.377 kg/d by 2 streams and gives 32.377 kg/d by 6 streams.
+The unit takes 32.2891 kg/d by 2 streams and gives 32.2891 kg/d by 6 streams.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -44,7 +44,7 @@ Table 2.1. Design parameters
 
 The envelope is 1000 mm x 1000 mm x 3000 mm, from the placement file `flow_graph/placement_blocks.json`.
 
-The hold-up check takes 32.377 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 32.38 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 330 mm in diameter and 490 mm high. It fits within the envelope.
+The hold-up check takes 32.2891 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 32.29 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 330 mm in diameter and 490 mm high. It fits within the envelope.
 
 ## 4. Material
 

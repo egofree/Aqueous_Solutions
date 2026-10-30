@@ -112,20 +112,11 @@
      "carries": "returned scrap"
     },
     {
-     "stream_id": "IA-LIME-TO-NAOH",
-     "from": "ACID_PLANT",
-     "to": "NAOH_PLANT",
-     "other_sector": "POLYMERS",
-     "rate": 0.022373,
-     "unit": "kg/d",
-     "carries": "cake-kiln lime residue as the lime-cycle make-up"
-    },
-    {
      "stream_id": "IA-NAOH-H2O",
      "from": "GW_INTAKE",
      "to": "NAOH_PLANT",
      "other_sector": "WTR",
-     "rate": 14.237076,
+     "rate": 11.3154,
      "unit": "kg/d",
      "carries": "well water for the liquor, the slaker or the cell"
     },
@@ -658,7 +649,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "WTR",
-     "rate": 167.10916,
+     "rate": 167.010211,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -667,18 +658,9 @@
      "from": "NAOH_PLANT",
      "to": "HDR_H2",
      "other_sector": "GAS",
-     "rate": 0.099655,
+     "rate": 0.110728,
      "unit": "kg/d",
      "carries": "chlor-alkali cathode hydrogen to the H2 header"
-    },
-    {
-     "stream_id": "IA-NAOH-VENT",
-     "from": "NAOH_PLANT",
-     "to": "ATMOS",
-     "other_sector": "WTR",
-     "rate": 0.475115,
-     "unit": "kg/d",
-     "carries": "carbon dioxide and water vapour of the trona calciner and lime kiln"
     },
     {
      "stream_id": "IA-PHOS-SRC",
@@ -802,7 +784,7 @@
      "from": "EVAP_BASE",
      "to": "HEAT_SINK",
      "other_sector": "GEO",
-     "rate": 1.349,
+     "rate": 1.344,
      "unit": "kW",
      "carries": "electrical input leaving as heat"
     }
@@ -894,9 +876,18 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 53.367231,
+     "rate": 56.288882,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
+    },
+    {
+     "stream_id": "IA-HALITE-MU",
+     "from": "NORTH_DOCK",
+     "to": "NAOH_PLANT",
+     "other_sector": "DOCK",
+     "rate": 0.67578,
+     "unit": "kg/d",
+     "carries": "halite ore (raw ore) to re-saturate the cell brine"
     },
     {
      "stream_id": "IA-NA-PURGE",
@@ -912,7 +903,7 @@
      "from": "NAOH_PLANT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 3.505031,
+     "rate": 3.894478,
      "unit": "kg/d",
      "carries": "chlor-alkali chlorine, shipped with the chlorine export"
     },
@@ -921,7 +912,7 @@
      "from": "NAOH_PLANT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.126417,
+     "rate": 0.033789,
      "unit": "kg/d",
      "carries": "ore insolubles and the lime-mud purge"
     },
@@ -933,15 +924,6 @@
      "rate": 15.882,
      "unit": "kW",
      "carries": "HX-5 electric trim at the process"
-    },
-    {
-     "stream_id": "IA-TRONA-MU",
-     "from": "NORTH_DOCK",
-     "to": "NAOH_PLANT",
-     "other_sector": "DOCK",
-     "rate": 0.919575,
-     "unit": "kg/d",
-     "carries": "trona ore (raw ore) for soda ash"
     },
     {
      "stream_id": "S17-BMED",
@@ -975,7 +957,7 @@
      "from": "SOL_ARK_60K",
      "to": "EVAP_BASE",
      "other_sector": "ELEC",
-     "rate": 1.349,
+     "rate": 1.344,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -993,7 +975,7 @@
      "from": "SOL_ARK_60K",
      "to": "NAOH_PLANT",
      "other_sector": "ELEC",
-     "rate": 1.1929,
+     "rate": 0.5004,
      "unit": "kW",
      "carries": "480 V AC"
     }
@@ -1054,15 +1036,6 @@
      "carries": "hood hydrogen"
     },
     {
-     "stream_id": "IA-HALITE-MU",
-     "from": "NORTH_DOCK",
-     "to": "NAOH_PLANT",
-     "other_sector": "DOCK",
-     "rate": 0.0,
-     "unit": "kg/d",
-     "carries": "halite ore (raw ore) to re-saturate the cell brine"
-    },
-    {
      "stream_id": "IA-LEACH-ASU",
      "from": "LEACH_CSTR_1",
      "to": "CRYO_ASU",
@@ -1081,6 +1054,15 @@
      "carries": "dissolved hydrogen"
     },
     {
+     "stream_id": "IA-LIME-TO-NAOH",
+     "from": "ACID_PLANT",
+     "to": "NAOH_PLANT",
+     "other_sector": "POLYMERS",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "cake-kiln lime residue as the lime-cycle make-up"
+    },
+    {
      "stream_id": "IA-LIMESTONE-MU",
      "from": "NORTH_DOCK",
      "to": "NAOH_PLANT",
@@ -1097,6 +1079,24 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "purchased NaOH flake make-up"
+    },
+    {
+     "stream_id": "IA-NAOH-VENT",
+     "from": "NAOH_PLANT",
+     "to": "ATMOS",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "carbon dioxide and water vapour of the trona calciner and lime kiln"
+    },
+    {
+     "stream_id": "IA-TRONA-MU",
+     "from": "NORTH_DOCK",
+     "to": "NAOH_PLANT",
+     "other_sector": "DOCK",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "trona ore (raw ore) for soda ash"
     },
     {
      "stream_id": "MG_POT_CL2",
@@ -1881,15 +1881,6 @@
      "carries": "aqueous HF to the fab reagent fork"
     },
     {
-     "stream_id": "IA-LIME-TO-NAOH",
-     "from": "ACID_PLANT",
-     "to": "NAOH_PLANT",
-     "other_sector": "DIGESTER",
-     "rate": 0.022373,
-     "unit": "kg/d",
-     "carries": "cake-kiln lime residue as the lime-cycle make-up"
-    },
-    {
      "stream_id": "POLYF_RECLAIM",
      "from": "POLY_F",
      "to": "F_RECOVER",
@@ -1950,7 +1941,7 @@
      "from": "ACID_PLANT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.259355,
+     "rate": 0.281728,
      "unit": "kg/d",
      "carries": "cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up"
     },
@@ -2054,6 +2045,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "98 wt% sulfuric acid make-up"
+    },
+    {
+     "stream_id": "IA-LIME-TO-NAOH",
+     "from": "ACID_PLANT",
+     "to": "NAOH_PLANT",
+     "other_sector": "DIGESTER",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "cake-kiln lime residue as the lime-cycle make-up"
     },
     {
      "stream_id": "MEOH_TO_OLEFIN",
@@ -2244,7 +2244,7 @@
      "from": "NAOH_PLANT",
      "to": "HDR_H2",
      "other_sector": "DIGESTER",
-     "rate": 0.099655,
+     "rate": 0.110728,
      "unit": "kg/d",
      "carries": "chlor-alkali cathode hydrogen to the H2 header"
     },
@@ -2298,7 +2298,7 @@
      "from": "CRYO_O2",
      "to": "HDR_O2",
      "other_sector": "CRYO",
-     "rate": 32.377012,
+     "rate": 32.289136,
      "unit": "kg/d",
      "carries": "O2 product"
     }
@@ -2390,7 +2390,7 @@
      "from": "HDR_O2",
      "to": "PROD_O2",
      "other_sector": "CRYO",
-     "rate": 22.093431,
+     "rate": 22.005555,
      "unit": "kg/d",
      "carries": "surplus O2 to product cylinders"
     },
@@ -2399,7 +2399,7 @@
      "from": "H2_DRYER",
      "to": "CRYO_H2",
      "other_sector": "CRYO",
-     "rate": 2.075063,
+     "rate": 2.086136,
      "unit": "kg/d",
      "carries": "H2 normal path"
     },
@@ -4518,7 +4518,7 @@
      "from": "ROOF_TANK",
      "to": "H2O_ELYZ",
      "other_sector": "WTR",
-     "rate": 82.729777,
+     "rate": 82.630828,
      "unit": "kg/d",
      "carries": "electrolyser feed water"
     },
@@ -4554,7 +4554,7 @@
      "from": "HDR_O2",
      "to": "PROD_O2",
      "other_sector": "GAS",
-     "rate": 22.093431,
+     "rate": 22.005555,
      "unit": "kg/d",
      "carries": "surplus O2 to product cylinders"
     },
@@ -4563,7 +4563,7 @@
      "from": "H2_DRYER",
      "to": "CRYO_H2",
      "other_sector": "GAS",
-     "rate": 2.075063,
+     "rate": 2.086136,
      "unit": "kg/d",
      "carries": "H2 normal path"
     },
@@ -4718,7 +4718,7 @@
      "from": "CRYO_O2",
      "to": "HDR_O2",
      "other_sector": "GAS",
-     "rate": 32.377012,
+     "rate": 32.289136,
      "unit": "kg/d",
      "carries": "O2 product"
     },
@@ -4727,7 +4727,7 @@
      "from": "H2O_ELYZ",
      "to": "Q4_BUS",
      "other_sector": "HEAT",
-     "rate": 6.0177,
+     "rate": 6.0105,
      "unit": "kW",
      "carries": "PEM stack heat above Q4 return"
     }
@@ -4756,7 +4756,7 @@
      "from": "PROD_O2",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 22.093431,
+     "rate": 22.005555,
      "unit": "kg/d",
      "carries": "O2 cylinders shipped at the dock"
     },
@@ -4792,7 +4792,7 @@
      "from": "SOL_ARK_60K",
      "to": "H2O_ELYZ",
      "other_sector": "ELEC",
-     "rate": 21.2163,
+     "rate": 21.1909,
      "unit": "kW",
      "carries": "480 V AC (daily average)"
     }
@@ -4978,7 +4978,7 @@
      "from": "LEACH_CSTR_1",
      "to": "VCD_TRAIN",
      "other_sector": "DIGESTER",
-     "rate": 167.10916,
+     "rate": 167.010211,
      "unit": "kg/d",
      "carries": "leach liquor water bleed to vapour-compression distillation"
     },
@@ -4990,15 +4990,6 @@
      "rate": 26.652161,
      "unit": "kg/d",
      "carries": "methanol condensate"
-    },
-    {
-     "stream_id": "IA-NAOH-VENT",
-     "from": "NAOH_PLANT",
-     "to": "ATMOS",
-     "other_sector": "DIGESTER",
-     "rate": 0.475115,
-     "unit": "kg/d",
-     "carries": "carbon dioxide and water vapour of the trona calciner and lime kiln"
     },
     {
      "stream_id": "IA-NOX-H2O",
@@ -5142,7 +5133,7 @@
      "from": "ROOF_TANK",
      "to": "H2O_ELYZ",
      "other_sector": "CRYO",
-     "rate": 82.729777,
+     "rate": 82.630828,
      "unit": "kg/d",
      "carries": "electrolyser feed water"
     },
@@ -5169,7 +5160,7 @@
      "from": "GW_INTAKE",
      "to": "NAOH_PLANT",
      "other_sector": "DIGESTER",
-     "rate": 14.237076,
+     "rate": 11.3154,
      "unit": "kg/d",
      "carries": "well water for the liquor, the slaker or the cell"
     },
@@ -5356,6 +5347,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "TSA regeneration condensate"
+    },
+    {
+     "stream_id": "IA-NAOH-VENT",
+     "from": "NAOH_PLANT",
+     "to": "ATMOS",
+     "other_sector": "DIGESTER",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "carbon dioxide and water vapour of the trona calciner and lime kiln"
     }
    ]
   },
@@ -5800,7 +5800,7 @@
      "from": "SOL_ARK_60K",
      "to": "EVAP_BASE",
      "other_sector": "DIGESTER",
-     "rate": 1.349,
+     "rate": 1.344,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -5836,7 +5836,7 @@
      "from": "SOL_ARK_60K",
      "to": "GEO_HP",
      "other_sector": "GEO",
-     "rate": 0.7069,
+     "rate": 0.7091,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -5863,7 +5863,7 @@
      "from": "SOL_ARK_60K",
      "to": "H2O_ELYZ",
      "other_sector": "CRYO",
-     "rate": 21.2163,
+     "rate": 21.1909,
      "unit": "kW",
      "carries": "480 V AC (daily average)"
     },
@@ -6007,7 +6007,7 @@
      "from": "SOL_ARK_60K",
      "to": "NAOH_PLANT",
      "other_sector": "DIGESTER",
-     "rate": 1.1929,
+     "rate": 0.5004,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -6411,7 +6411,7 @@
      "from": "GEO_HP",
      "to": "Q4_BUS",
      "other_sector": "GEO",
-     "rate": 2.262,
+     "rate": 2.2692,
      "unit": "kW",
      "carries": "heat < 80 °C"
     },
@@ -6456,7 +6456,7 @@
      "from": "H2O_ELYZ",
      "to": "Q4_BUS",
      "other_sector": "CRYO",
-     "rate": 6.0177,
+     "rate": 6.0105,
      "unit": "kW",
      "carries": "PEM stack heat above Q4 return"
     }
@@ -6879,7 +6879,7 @@
      "from": "EVAP_BASE",
      "to": "HEAT_SINK",
      "other_sector": "DIGESTER",
-     "rate": 1.349,
+     "rate": 1.344,
      "unit": "kW",
      "carries": "electrical input leaving as heat"
     }
@@ -6890,7 +6890,7 @@
      "from": "GEO_HP",
      "to": "Q4_BUS",
      "other_sector": "HEAT",
-     "rate": 2.262,
+     "rate": 2.2692,
      "unit": "kW",
      "carries": "heat < 80 °C"
     },
@@ -6910,7 +6910,7 @@
      "from": "SOL_ARK_60K",
      "to": "GEO_HP",
      "other_sector": "ELEC",
-     "rate": 0.7069,
+     "rate": 0.7091,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -7014,7 +7014,7 @@
      "from": "ACID_PLANT",
      "to": "NORTH_DOCK",
      "other_sector": "POLYMERS",
-     "rate": 0.259355,
+     "rate": 0.281728,
      "unit": "kg/d",
      "carries": "cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up"
     },
@@ -7068,7 +7068,7 @@
      "from": "NAOH_PLANT",
      "to": "NORTH_DOCK",
      "other_sector": "DIGESTER",
-     "rate": 3.505031,
+     "rate": 3.894478,
      "unit": "kg/d",
      "carries": "chlor-alkali chlorine, shipped with the chlorine export"
     },
@@ -7077,7 +7077,7 @@
      "from": "NAOH_PLANT",
      "to": "NORTH_DOCK",
      "other_sector": "DIGESTER",
-     "rate": 0.126417,
+     "rate": 0.033789,
      "unit": "kg/d",
      "carries": "ore insolubles and the lime-mud purge"
     },
@@ -7086,7 +7086,7 @@
      "from": "PROD_O2",
      "to": "NORTH_DOCK",
      "other_sector": "CRYO",
-     "rate": 22.093431,
+     "rate": 22.005555,
      "unit": "kg/d",
      "carries": "O2 cylinders shipped at the dock"
     },
@@ -7178,9 +7178,18 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 53.367231,
+     "rate": 56.288882,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
+    },
+    {
+     "stream_id": "IA-HALITE-MU",
+     "from": "NORTH_DOCK",
+     "to": "NAOH_PLANT",
+     "other_sector": "DIGESTER",
+     "rate": 0.67578,
+     "unit": "kg/d",
+     "carries": "halite ore (raw ore) to re-saturate the cell brine"
     },
     {
      "stream_id": "IA-MGCL2-MU",
@@ -7244,15 +7253,6 @@
      "rate": 0.834247,
      "unit": "kg/d",
      "carries": "TiO2-equivalent rutile concentrate (dock import class)"
-    },
-    {
-     "stream_id": "IA-TRONA-MU",
-     "from": "NORTH_DOCK",
-     "to": "NAOH_PLANT",
-     "other_sector": "DIGESTER",
-     "rate": 0.919575,
-     "unit": "kg/d",
-     "carries": "trona ore (raw ore) for soda ash"
     }
    ],
    "stops": [
@@ -7304,15 +7304,6 @@
      "carries": "98 wt% sulfuric acid make-up"
     },
     {
-     "stream_id": "IA-HALITE-MU",
-     "from": "NORTH_DOCK",
-     "to": "NAOH_PLANT",
-     "other_sector": "DIGESTER",
-     "rate": 0.0,
-     "unit": "kg/d",
-     "carries": "halite ore (raw ore) to re-saturate the cell brine"
-    },
-    {
      "stream_id": "IA-LIMESTONE-MU",
      "from": "NORTH_DOCK",
      "to": "NAOH_PLANT",
@@ -7338,6 +7329,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "imported polysilicon for the CZ charge"
+    },
+    {
+     "stream_id": "IA-TRONA-MU",
+     "from": "NORTH_DOCK",
+     "to": "NAOH_PLANT",
+     "other_sector": "DIGESTER",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "trona ore (raw ore) for soda ash"
     },
     {
      "stream_id": "IA-WAX-MU",
