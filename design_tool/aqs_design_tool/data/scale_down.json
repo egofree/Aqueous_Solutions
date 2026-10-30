@@ -2700,7 +2700,7 @@
      "from": "MEOH_FC",
      "to": "NOX_SCRUB",
      "other_sector": "MEOH",
-     "rate": 0,
+     "rate": 0.0,
      "unit": "kg/d",
      "carries": "cell exhaust"
     },
@@ -7444,7 +7444,7 @@
      "from": "MEOH_FC",
      "to": "NOX_SCRUB",
      "other_sector": "GAS",
-     "rate": 0,
+     "rate": 0.0,
      "unit": "kg/d",
      "carries": "cell exhaust"
     },

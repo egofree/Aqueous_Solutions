@@ -17,7 +17,7 @@ This page records the size of unit CRYO_ASU, of class `cold_box` in sector CRYO,
 
 ## 2. Duty
 
-The unit takes 218.77 kg/d by 8 streams and gives 218.77 kg/d by 4 streams. Its continuous electrical load is 1.6572 kW, fed by stream SF-CRYO_ASU.
+The unit takes 218.77 kg/d by 6 streams and gives 218.77 kg/d by 4 streams. Its continuous electrical load is 1.6572 kW, fed by stream SF-CRYO_ASU.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

@@ -17,14 +17,14 @@ This page indexes the instruments of the plant. It counts them by type and by pr
 
 ## 2. Counts
 
-The plant has 730 instruments: 180 temperature element, 178 pressure transmitter, 147 flow transmitter, 93 level transmitter, 87 high-level switch, 18 temperature element (SIF, independent), 5 current transmitter, 5 chlorine analyzer, 2 conductivity analyser, 2 speed transmitter, 2 pressure switch, high (rupture indication), 1 position transmitter, 1 HF analyzer, 1 SO2 analyzer, 1 flammable gas detector, 1 toxic gas detector, 1 conductivity transmitter, 1 pH analyzer, 1 ORP analyzer, 1 composition analyser, 1 perchlorate analyser, 1 carbon-dioxide analyser. Table 2.1 gives the count of each PLC and its analogue inputs (AI) and digital inputs (DI).
+The plant has 727 instruments: 180 temperature element, 178 pressure transmitter, 144 flow transmitter, 93 level transmitter, 87 high-level switch, 18 temperature element (SIF, independent), 5 current transmitter, 5 chlorine analyzer, 2 conductivity analyser, 2 speed transmitter, 2 pressure switch, high (rupture indication), 1 position transmitter, 1 HF analyzer, 1 SO2 analyzer, 1 flammable gas detector, 1 toxic gas detector, 1 conductivity transmitter, 1 pH analyzer, 1 ORP analyzer, 1 composition analyser, 1 perchlorate analyser, 1 carbon-dioxide analyser. Table 2.1 gives the count of each PLC and its analogue inputs (AI) and digital inputs (DI).
 
 Table 2.1. Instruments by PLC
 
 | PLC | Instruments | AI | DI |
 |---|---|---|---|
 | PLC-CRYO | 37 | 34 | 3 |
-| PLC-DIGESTER | 155 | 132 | 23 |
+| PLC-DIGESTER | 153 | 130 | 23 |
 | PLC-ELEC | 31 | 28 | 3 |
 | PLC-FAB | 86 | 72 | 14 |
 | PLC-FARM | 13 | 12 | 1 |
@@ -34,7 +34,7 @@ Table 2.1. Instruments by PLC
 | PLC-GLASS | 14 | 13 | 1 |
 | PLC-HAB | 6 | 5 | 1 |
 | PLC-HEAT | 24 | 24 | 0 |
-| PLC-MEOH | 24 | 21 | 3 |
+| PLC-MEOH | 23 | 20 | 3 |
 | PLC-MFG | 29 | 27 | 2 |
 | PLC-NUT | 10 | 9 | 1 |
 | PLC-OIL | 61 | 52 | 9 |

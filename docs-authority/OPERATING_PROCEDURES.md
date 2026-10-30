@@ -78,7 +78,7 @@ Units: GEO_GHEX, GEO_HP, GEO_HP_CLOSED_LOOP.
 
 Units: BMED_ACID, BMED_BASE, CONTINUOUS_RECYCLE, CRU, EVAP_ACID, EVAP_ACID_VS, EVAP_BASE, EW_1, EW_2, EW_3, EW_4, EW_5, EW_6, EW_7, EW_8, EW_9, FLOAT_SINK, F_RECOVER, HX8, LEACH_CSTR_1, LI_RECOVER, NAOH_PLANT, POLISH_BANK, P_CA, SALT_FEED.
 
-- **Normal:** 153 loops on PLC-DIGESTER in auto; operator rounds per shift on levels and temperatures of BMED_ACID, BMED_BASE, CONTINUOUS_RECYCLE, CRU, EVAP_ACID, EVAP_ACID_VS, EVAP_BASE, EW_1 …; alarm response per AQS-CTL-001.
+- **Normal:** 151 loops on PLC-DIGESTER in auto; operator rounds per shift on levels and temperatures of BMED_ACID, BMED_BASE, CONTINUOUS_RECYCLE, CRU, EVAP_ACID, EVAP_ACID_VS, EVAP_BASE, EW_1 …; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-7 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 9-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
 - **Emergency:** 29 trips: SIF-091 level high-high → close feed valve / stop feed pump; SIF-092 level high-high → close feed valve / stop feed pump; SIF-098 level high-high → close feed valve / stop feed pump; SIF-100 level high-high → close feed valve / stop feed pump; SIF-071 temperature high-high → heater supply off; SIF-101 level high-high → close feed valve / stop feed pump …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.
@@ -87,7 +87,7 @@ Units: BMED_ACID, BMED_BASE, CONTINUOUS_RECYCLE, CRU, EVAP_ACID, EVAP_ACID_VS, E
 
 Units: MEOH_COND, MEOH_FC, MEOH_FERM, MEOH_SYNTH, MEOH_TANK.
 
-- **Normal:** 24 loops on PLC-MEOH in auto; operator rounds per shift on levels and temperatures of MEOH_COND, MEOH_FC, MEOH_TANK; alarm response per AQS-CTL-001.
+- **Normal:** 23 loops on PLC-MEOH in auto; operator rounds per shift on levels and temperatures of MEOH_COND, MEOH_FC, MEOH_TANK; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-8 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 10-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
 - **Emergency:** 5 trips: SIF-129 level high-high → close feed valve / stop feed pump; SIF-130 level high-high → close feed valve / stop feed pump; SIF-023 flow or level low-low → pump stop; SIF-024 flow or level low-low → pump stop; SIF-131 level high-high → close feed valve / stop feed pump. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.

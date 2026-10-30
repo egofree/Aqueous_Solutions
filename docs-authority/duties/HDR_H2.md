@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 2.086 kg/d. Mass out 2.086 kg/d. Electrical duty 0.0000 kW. In: IA-HDR-H2-01 0.3826 kg/d (cathode H2 + sweep air); IA-HDR-H2-03 0.3827 kg/d (cathode H2 + sweep air); IA-HDR-H2-04 0.4814 kg/d (cathode H2 + sweep air); IA-H2-IN 0 kg/d (dried hydrogen); 10 more. Out: IA-HDR-H2-02 2.085 kg/d (process H2); IA-SOLV-H2 0.000995 kg/d (header hydrogen for the acetic acid hydrogenation); IA-RESIST-H2 0.000104 kg/d (header hydrogen for the nitroso reduction).
+1. Basis. Mass in 2.086 kg/d. Mass out 2.086 kg/d. Electrical duty 0.0000 kW. In: IA-HDR-H2-01 0.3826 kg/d (cathode H2 + sweep air); IA-HDR-H2-03 0.3827 kg/d (cathode H2 + sweep air); IA-HDR-H2-04 0.4814 kg/d (cathode H2 + sweep air); IA-H2-IN 0 kg/d (dried hydrogen); 8 more. Out: IA-HDR-H2-02 2.085 kg/d (process H2); IA-SOLV-H2 0.000995 kg/d (header hydrogen for the acetic acid hydrogenation); IA-RESIST-H2 0.000104 kg/d (header hydrogen for the nitroso reduction).
 
 2. Size.
 - In 6.63 kg/d, out 6.63 kg/d. No holdup claimed.

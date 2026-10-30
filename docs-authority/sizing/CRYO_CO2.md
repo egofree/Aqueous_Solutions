@@ -17,7 +17,7 @@ This page records the size of unit CRYO_CO2, of class `cold_box` in sector CRYO,
 
 ## 2. Duty
 
-The unit takes 44.2576 kg/d by 4 streams and gives 44.2576 kg/d by 4 streams.
+The unit takes 44.2576 kg/d by 3 streams and gives 44.2576 kg/d by 4 streams.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

@@ -11,7 +11,7 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-618 edges: 358 piped, 139 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 97.
+612 edges: 352 piped, 139 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 97.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -97,7 +97,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | S15 | GROW_BED | HABITATION | DN15 | P3 | process vent gas | 15.2 | GROW_BED → HABITATION, orthogonal × 1.2 (placement_report; placement_report) | velocity 10 m/s, ρ 1.2; min DN15 |
 | S16 | MFG_SHOP | LEACH_CSTR_1 | solids | — | — | 31.3 | MFG_SHOP → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | S17 | SOL_ARK_60K | RECTIFIER | cable | — | — | 2.4 | SOL_ARK_60K → RECTIFIER, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
-| S18 | AFTERBURNER | CRYO_CO2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 38.9 | AFTERBURNER → CRYO_CO2, orthogonal × 1.2 (placement_report + GA relocate; placement_report + GA move + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
 | S19 | BAGHOUSE | LEACH_CSTR_1 | solids | — | — | 36.4 | BAGHOUSE → LEACH_CSTR_1, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | S20 | SOL_ARK_60K | GROW_BED | cable | — | — | 39.2 | SOL_ARK_60K → GROW_BED, orthogonal × 1.2 (duty origin; placement_report) | electrical: cable schedule X-ELS-06 |
 | S21 | ROOF_TANK | HABITATION | DN15 | P1 | acid or brine, at or below 60 C | 15.2 | ROOF_TANK → HABITATION, orthogonal × 1.2 (placement_report; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -287,7 +286,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-LEACH-BD | LEACH_CSTR_1 | NUTRIENT_DOSE | DN15 | P2 | hot leach liquor | 39.7 | LEACH_CSTR_1 → NUTRIENT_DOSE, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor | 20.3 | VCD_TRAIN → LEACH_CSTR_1, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN15 |
 | IA-CHAR | OIL_PYRO | MFG_SHOP | solids | — | — | 36.3 | OIL_PYRO → MFG_SHOP, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
-| IA-FC-EXH | MEOH_FC | NOX_SCRUB | DN15 | F1 | flue or acid gas | 7.6 | MEOH_FC → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 38.7 | ZNBR2 → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | heat loop 1.67 kW at ΔT 10 K, 1 m/s |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | cable | — | — | 17.6 | RECTIFIER → Q4_A, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-Q4B-TRIM | RECTIFIER | Q4_B | cable | — | — | 32.2 | RECTIFIER → Q4_B, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
@@ -341,8 +339,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-LEACH-NOX | LEACH_CSTR_1 | NOX_SCRUB | DN50 | P2 | hot leach liquor | 13.0 | LEACH_CSTR_1 → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-LEACH-FLUE | LEACH_CSTR_1 | FLUE_KO | DN50 | P2 | hot leach liquor | 23.2 | LEACH_CSTR_1 → FLUE_KO, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-LEACH-HOP | LEACH_CSTR_1 | HOPPER | DN50 | P2 | hot leach liquor | 9.7 | LEACH_CSTR_1 → HOPPER, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1100; min DN50 |
-| IA-EW1-H2 | EW_1 | HDR_H2 | DN50 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 5.4 | EW_1 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
-| IA-EW2-H2 | EW_2 | HDR_H2 | DN50 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 4.7 | EW_2 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-EW4-H2 | EW_4 | HDR_H2 | DN50 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) | 12.4 | EW_4 → HDR_H2, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-EW4-N2 | EW_4 | HDR_N2 | DN50 | P1 | acid or brine, at or below 60 C | 23.8 | EW_4 → HDR_N2, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-O2-MAKE | CRYO_O2 | HDR_O2 | DN50 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 32.2 | CRYO_O2 → HDR_O2, orthogonal × 1.2 (placement_report + GA move + GA move + GA move; placement_report) | velocity 1 m/s, ρ 1000; min DN50 |
@@ -431,10 +427,8 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-ASU-N2 | CRYO_ASU | CRYO_N2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 10.9 | CRYO_ASU → CRYO_N2, orthogonal × 1.2 (placement_study (STUDY) + GA move + GA move; placement_report + GA move + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-ASU-O2 | CRYO_ASU | CRYO_O2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 12.1 | CRYO_ASU → CRYO_O2, orthogonal × 1.2 (placement_study (STUDY) + GA move + GA move; placement_report + GA move + GA move + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-ASU-CO2 | CRYO_ASU | CRYO_CO2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 25.3 | CRYO_ASU → CRYO_CO2, orthogonal × 1.2 (placement_study (STUDY) + GA move + GA move; placement_report + GA move + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-H2-AIR | H2_DRYER | CRYO_ASU | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 23.8 | H2_DRYER → CRYO_ASU, orthogonal × 1.2 (placement_report; placement_study (STUDY) + GA move + GA move) | velocity 10 m/s, ρ 0.09; min DN15 |
 | IA-O2-RET | HDR_O2 | CRYO_ASU | solids | — | — | 21.8 | HDR_O2 → CRYO_ASU, orthogonal × 1.2 (placement_report; placement_study (STUDY) + GA move + GA move) | solids: conveyor, bin or hand transfer; not piped |
 | IA-CO2-RET | CRYO_CO2 | CRYO_ASU | solids | — | — | 25.3 | CRYO_CO2 → CRYO_ASU, orthogonal × 1.2 (placement_report + GA move + GA move; placement_study (STUDY) + GA move + GA move) | solids: conveyor, bin or hand transfer; not piped |
-| IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | DN50 | P2 | hot leach liquor | 12.5 | LEACH_CSTR_1 → CRYO_ASU, orthogonal × 1.2 (duty origin; placement_study (STUDY) + GA move + GA move) | velocity 1 m/s, ρ 1100; min DN50 |
 | SF-CRYO_ASU | SOL_ARK_60K | CRYO_ASU | cable | — | — | 30.4 | SOL_ARK_60K → CRYO_ASU, orthogonal × 1.2 (duty origin; placement_study (STUDY) + GA move + GA move) | electrical: cable schedule X-ELS-06 |
 | IA-ELY-H2O | ROOF_TANK | H2O_ELYZ | DN15 | P1 | acid or brine, at or below 60 C |  | ROOF_TANK → H2O_ELYZ, position missing for H2O_ELYZ | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-ELY-H2 | H2O_ELYZ | CRYO_H2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 |  | H2O_ELYZ → CRYO_H2, position missing for H2O_ELYZ | velocity 10 m/s, ρ 0.09; min DN15 |

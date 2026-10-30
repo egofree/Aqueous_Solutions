@@ -64,7 +64,6 @@ Table 4.1. Streams of the closures
 | Afterburner flue | S67 | AFTERBURNER_FLUE | FLUE_KO | normal | 117.4 | kg/d |
 | Afterburner flue | S67B | FLUE_KO | CRYO_CO2 | normal | 14.05 | kg/d |
 | Afterburner flue | IA-FLUE-EXH | FLUE_KO | NOX_SCRUB | normal | 263.6 | kg/d |
-| Afterburner flue | S18 | AFTERBURNER | CRYO_CO2 | normal | 0 | kg/d |
 | Battery bromine | S69 | ZNBR2 | ZNBR2_BR2_REGEN | normal | 916.3 | kg/d |
 | Battery bromine | S69B | ZNBR2_BR2_REGEN | ZNBR2 | normal | 916.3 | kg/d |
 | Cryogenic room air | IA-AHU-POT | CRYO_AHU | CRYO_AHU_COND_CONDENSABLE | normal | 0.0521 | kg/d |
@@ -79,12 +78,9 @@ Table 4.1. Streams of the closures
 | Metal-aisle air | S72 | MET_SCRUB | LEACH_CSTR_1 | normal | 2.444 | kg/d |
 | Metal-aisle air | S72B | MET_SCRUB | OIL_FRAC | normal | 0.0158 | kg/d |
 | Fuel cell and generator exhaust | S82 | MEOH_FC | CRYO_CO2 | normal | 8.626 | kg/d |
-| Fuel cell and generator exhaust | IA-FC-EXH | MEOH_FC | NOX_SCRUB | normal | 0 | kg/d |
 | Fuel cell and generator exhaust | S46 | BACKUP_GEN | NOX_SCRUB | normal | 0.1981 | kg/d |
 
-Every closure holds on the present graph: each named stream exists, each contingency stream carries no flow, and no stream reaches the habitation or the farm.
-
-The normal-path streams S18 and IA-FC-EXH exist but carry no flow at present. They are kept routes, not discharges.
+The check found the following problems, which are open items: stream S18 of the afterburner flue closure is not on the graph; stream IA-FC-EXH of the fuel cell and generator exhaust closure is not on the graph.
 
 The relief units and the atmospheric boundary on the graph are ATMOS, RELIEF_CRYO and RELIEF_H2. These streams into them carry flow in normal operation, which the rule does not allow: IA-SI-CO2 (0.8346 kg/d), IA-ACID-CO2 (0.08687 kg/d), IA-GREASE-VENT (0.000267 kg/d), IA-RESIST-VENT (0.08414 kg/d) and IA-FAB-N2-VENT (1.5 kg/d).
 

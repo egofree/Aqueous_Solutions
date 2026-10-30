@@ -26,7 +26,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S14 | GROW_BED→FOOD_STORE | Closed | present | 4.2 kg/d | — |
 | S15 | GROW_BED→HABITATION | Closed | present | 0.0 kg/d | — |
 | S16 | MFG_SHOP→LEACH_CSTR_1 | Closed | present | 11.637534 kg/d | — |
-| S18 | AFTERBURNER→CRYO_CO2 | Claimed | present | 0.0 kg/d | — |
+| S18 | AFTERBURNER→CRYO_CO2 | Claimed | retired | 0.0 kg/d | — |
 | S19 | BAGHOUSE→LEACH_CSTR_1 | Closed | present | 0.0 kg/d | From register: BAGHOUSE fines → LEACH CSTR 1 |
 | S21 | ROOF_TANK→HABITATION | Closed | present | 120.68 kg/d | — |
 | S24 | H2_DRYER→RELIEF_H2 | — | present | 0.0 kg/d | NFPA 2 relief. Not freight. |

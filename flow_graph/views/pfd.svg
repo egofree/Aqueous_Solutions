@@ -4411,7 +4411,7 @@
 <title>MEOH_FC&#45;&gt;NOX_SCRUB</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1929.53,-14082.58C1959.94,-14081.83 2006.84,-14075.33 2030,-14044.65 2073.05,-13987.63 2024.69,-3823.46 2050,-3756.65 2152.41,-3486.32 2374.55,-3537.8 2480,-3268.65 2489.91,-3243.35 2472.55,-2798.63 2492,-2779.65 2516.33,-2755.91 2620.93,-2755.63 2645,-2779.65 2657.46,-2792.09 2664.77,-12904.04 2665,-12921.65 2683.5,-14318.66 2739.16,-16039.2 2747.06,-16279.33"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="2743.56,-16279.47 2747.39,-16289.35 2750.56,-16279.24 2743.56,-16279.47"/>
-<text text-anchor="middle" x="2342" y="-3548.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;FC&#45;EXH\n0 kg/d</text>
+<text text-anchor="middle" x="2342" y="-3548.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;FC&#45;EXH\n0.0 kg/d</text>
 </g>
 <!-- MEOH_FC&#45;&gt;Q4_BUS -->
 <g id="edge145" class="edge">
@@ -5542,5 +5542,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="3057.1" y="17644.5" width="2053.3" height="547.5" fill="white" stroke="black" stroke-width="5.70"/><text x="3091.3" y="17735.8" font-family="sans-serif" font-size="51.3">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3091.3" y="17832.7" font-family="sans-serif" font-size="51.3">Process flow diagram</text><text x="3091.3" y="17929.7" font-family="sans-serif" font-size="51.3">Type: flow diagram (ISO_10628_2)   Rev 2f840f85   Issued 2026-10-15</text><text x="3091.3" y="18026.6" font-family="sans-serif" font-size="51.3">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3091.3" y="18123.6" font-family="sans-serif" font-size="51.3">Graph SHA-256 265a78c949fba543   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="3057.1" y="17644.5" width="2053.3" height="547.5" fill="white" stroke="black" stroke-width="5.70"/><text x="3091.3" y="17735.8" font-family="sans-serif" font-size="51.3">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3091.3" y="17832.7" font-family="sans-serif" font-size="51.3">Process flow diagram</text><text x="3091.3" y="17929.7" font-family="sans-serif" font-size="51.3">Type: flow diagram (ISO_10628_2)   Rev d1026b6e   Issued 2026-10-15</text><text x="3091.3" y="18026.6" font-family="sans-serif" font-size="51.3">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3091.3" y="18123.6" font-family="sans-serif" font-size="51.3">Graph SHA-256 07cbd43ee7237a14   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

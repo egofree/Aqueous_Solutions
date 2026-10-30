@@ -17,7 +17,7 @@ This page records the size of unit H2_DRYER, of class `dryer` in sector GAS, fro
 
 ## 2. Duty
 
-The unit takes 2.08504 kg/d by 1 stream and gives 2.08504 kg/d by 5 streams. Its continuous electrical load is 0.0205 kW, fed by stream SF-H2_DRYER.
+The unit takes 2.08504 kg/d by 1 stream and gives 2.08504 kg/d by 4 streams. Its continuous electrical load is 0.0205 kW, fed by stream SF-H2_DRYER.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

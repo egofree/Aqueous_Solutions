@@ -17,7 +17,7 @@ This page indexes the isometric sheets of the plant piping and totals their mate
 
 ## 2. Summary
 
-The line list has 261 piped lines with a sheet. Together they need 4,498 m of pipe, 746 elbows of 90°, 522 flanges and 2,393 joints.
+The line list has 255 piped lines with a sheet. Together they need 4,406 m of pipe, 728 elbows of 90°, 510 flanges and 2,337 joints.
 
 A further 97 lines have no sheet yet, because the position of one of their ends is not yet fixed: S84, F_RECOVER_TO_HF_GEN, HF_GEN_TO_VDF, HF_GEN_TO_TFE, VDF_TO_POLY_F, TFE_TO_POLY_F, TI_CELL_CL2_TO_CRU, MO_CELL_ANODE_GAS_TO_CRU, IND_MELT_TO_CAST, IND_TO_CONT, AL_POT_CL2, IND_TO_ATOM, IND_TO_INV, VAC_TO_INV, WAX_RECLAIM_TO_PATTERN, WAX_TO_OIL, OIL_TO_OLEFIN, MEOH_TO_OLEFIN, DIGEST_TO_POLY, CRU_TO_VDF, CRU_TO_TFE, POLISH_TO_LI, WAX_TO_GREASE_CA, WAX_TO_GREASE_LI, HL-Q4-REJ, IA-DC-EVAP, IA-DC-SPRAY, IA-GW-MAKEUP, IA-HF-SRC, IA-ELY-H2O, IA-ELY-H2, IA-ELY-O2, IA-O2-PROD, IA-O2-SHIP, IA-MEOH-PROD, IA-MEOH-SHIP, IA-C5-POLY, IA-AIR-RX-OUT, POLYF_TO_FILM, IA-HF-PROD, MEOH_TO_VDF, MEOH_TO_TFE, VDF_HCL_TO_CRU, TFE_HCL_TO_CRU, POLYF_RECLAIM, FLUORO_TO_MFG, IA-CL2-SHIP, IA-MGCL2-KROLL, IA-MGCL2-MU, IA-CL2-MG-TI, IA-CACL2-MU, IA-CA-CL2-SHIP, IA-KROLL-CO, IA-MO-VENT, IA-CR-VENT, IA-BURNOUT-VENT, IA-SI-HOOD-O2, IA-SI-CO2, IA-CL2-SIREF, IA-SI-PURGE, IA-ACID-O2, IA-ACID-H2O, IA-ACID-CO2, IA-H2SO4-ACID, IA-NA-RECYCLE, IA-NAOH-CL2-SHIP, IA-NAOH-H2, IA-NAOH-H2O, IA-NAOH-LIQ, IA-SOLV-SPENT, IA-SOLV-PLANT, IA-SOLV-BTMS, IA-SOLV-VENT, IA-SOLV-MEOH, IA-SOLV-CO, IA-SOLV-H2, IA-GREASE-AIR, IA-GREASE-VENT, IA-PCA-H2O, IA-FLUX-SALT-REC, IA-CL2-MG-SHIP, IA-RESIST-BZ, IA-RESIST-NAPH, IA-RESIST-RAFF, IA-RESIST-MEOH, IA-RESIST-NH3, IA-RESIST-H2, IA-RESIST-CO, IA-RESIST-CL2, IA-RESIST-ACID, IA-RESIST-ACET, IA-RESIST-AIR, IA-RESIST-VENT, IA-RESIST-HCL, IA-RESIST-BRINE, IA-RESIST-STOCK, IA-FAB-N2-VENT.
 
@@ -34,19 +34,19 @@ Table 4.1. Quantities by class and size
 
 | Class | Material | DN | Lines | Pipe (m) | 90° elbows | Flanges | Joints |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| F1 | FRP vinyl ester | 15 | 4 | 55.2 | 12 | 8 | 36 |
+| F1 | FRP vinyl ester | 15 | 3 | 44.1 | 9 | 6 | 28 |
 | F1 | FRP vinyl ester | 20 | 1 | 30.4 | 3 | 2 | 12 |
 | F1 | FRP vinyl ester | 200 | 1 | 7.1 | 3 | 2 | 8 |
 | F1 | FRP vinyl ester | 250 | 3 | 9.5 | 7 | 6 | 20 |
-| M1 | 316L ASTM A312 | 15 | 53 | 1065.6 | 154 | 106 | 519 |
+| M1 | 316L ASTM A312 | 15 | 51 | 1010.5 | 148 | 102 | 496 |
 | M1 | 316L ASTM A312 | 20 | 2 | 39.2 | 6 | 4 | 19 |
 | M1 | 316L ASTM A312 | 25 | 2 | 42.2 | 6 | 4 | 21 |
 | M1 | 316L ASTM A312 | 50 | 1 | 17.1 | 3 | 2 | 9 |
 | M2 | CS ASTM A106 Gr B | 15 | 24 | 366.3 | 65 | 48 | 207 |
 | P1 | PVC-U Sch 80 ASTM D1785 | 15 | 63 | 1036.9 | 177 | 126 | 561 |
-| P1 | PVC-U Sch 80 ASTM D1785 | 50 | 11 | 185.2 | 33 | 22 | 102 |
+| P1 | PVC-U Sch 80 ASTM D1785 | 50 | 9 | 173.3 | 27 | 18 | 86 |
 | P2 | CPVC Sch 80 ASTM F441 | 15 | 27 | 545.2 | 81 | 54 | 260 |
-| P2 | CPVC Sch 80 ASTM F441 | 50 | 17 | 344.9 | 51 | 34 | 171 |
+| P2 | CPVC Sch 80 ASTM F441 | 50 | 16 | 330.8 | 48 | 32 | 162 |
 | P3 | PVDF SDR 21 ISO 10931 | 15 | 25 | 366.5 | 72 | 50 | 217 |
 | P3 | PVDF SDR 21 ISO 10931 | 32 | 1 | 7.4 | 3 | 2 | 8 |
 | P3 | PVDF SDR 21 ISO 10931 | 50 | 1 | 23.2 | 3 | 2 | 10 |
@@ -130,7 +130,6 @@ Table 5.1. Sheet index
 | S12 | 50 | P1 | HABITATION | GREY_TREAT | 16.27 | 3 | [svg](iso/S12.svg) |
 | S13 | 15 | P5 | GROW_BED | VCD_TRAIN | 27.99 | 3 | [svg](iso/S13.svg) |
 | S15 | 15 | P3 | GROW_BED | HABITATION | 14.51 | 2 | [svg](iso/S15.svg) |
-| S18 | 15 | M1 | AFTERBURNER | CRYO_CO2 | 34.12 | 3 | [svg](iso/S18.svg) |
 | S21 | 15 | P1 | ROOF_TANK | HABITATION | 13.26 | 2 | [svg](iso/S21.svg) |
 | S22 | 15 | P1 | ROOF_TANK | CATCH_TANK | 29.36 | 2 | [svg](iso/S22.svg) |
 | S23 | 15 | P1 | CATCH_TANK | ROOF_TANK | 29.36 | 2 | [svg](iso/S23.svg) |
@@ -219,7 +218,6 @@ Table 5.1. Sheet index
 | IA-FC-AIR | 15 | M1 | HDR_O2 | MEOH_FC | 27.42 | 3 | [svg](iso/IA-FC-AIR.svg) |
 | IA-LEACH-BD | 15 | P2 | LEACH_CSTR_1 | NUTRIENT_DOSE | 33.59 | 3 | [svg](iso/IA-LEACH-BD.svg) |
 | IA-VCD-BD | 15 | P2 | VCD_TRAIN | LEACH_CSTR_1 | 21.84 | 3 | [svg](iso/IA-VCD-BD.svg) |
-| IA-FC-EXH | 15 | F1 | MEOH_FC | NOX_SCRUB | 11.08 | 3 | [svg](iso/IA-FC-EXH.svg) |
 | IA-ZNBR-HEAT | 15 | P1 | ZNBR2 | Q4_BUS | 37.0 | 3 | [svg](iso/IA-ZNBR-HEAT.svg) |
 | IA-Q1A-LOSS | 15 | P1 | Q1_A | BOUNDARY_EXPORT | 8.54 | 3 | [svg](iso/IA-Q1A-LOSS.svg) |
 | IA-Q1B-LOSS | 15 | P1 | Q1_B | BOUNDARY_EXPORT | 25.94 | 3 | [svg](iso/IA-Q1B-LOSS.svg) |
@@ -254,8 +252,6 @@ Table 5.1. Sheet index
 | IA-LEACH-NOX | 50 | P2 | LEACH_CSTR_1 | NOX_SCRUB | 11.22 | 3 | [svg](iso/IA-LEACH-NOX.svg) |
 | IA-LEACH-FLUE | 50 | P2 | LEACH_CSTR_1 | FLUE_KO | 24.12 | 3 | [svg](iso/IA-LEACH-FLUE.svg) |
 | IA-LEACH-HOP | 50 | P2 | LEACH_CSTR_1 | HOPPER | 9.77 | 3 | [svg](iso/IA-LEACH-HOP.svg) |
-| IA-EW1-H2 | 50 | P1 | EW_1 | HDR_H2 | 6.19 | 3 | [svg](iso/IA-EW1-H2.svg) |
-| IA-EW2-H2 | 50 | P1 | EW_2 | HDR_H2 | 5.66 | 3 | [svg](iso/IA-EW2-H2.svg) |
 | IA-EW4-H2 | 50 | P1 | EW_4 | HDR_H2 | 12.01 | 3 | [svg](iso/IA-EW4-H2.svg) |
 | IA-EW4-N2 | 50 | P1 | EW_4 | HDR_N2 | 20.28 | 3 | [svg](iso/IA-EW4-N2.svg) |
 | IA-O2-MAKE | 50 | P1 | CRYO_O2 | HDR_O2 | 27.22 | 3 | [svg](iso/IA-O2-MAKE.svg) |
@@ -308,8 +304,6 @@ Table 5.1. Sheet index
 | IA-ASU-N2 | 15 | M1 | CRYO_ASU | CRYO_N2 | 11.22 | 3 | [svg](iso/IA-ASU-N2.svg) |
 | IA-ASU-O2 | 15 | M1 | CRYO_ASU | CRYO_O2 | 12.22 | 3 | [svg](iso/IA-ASU-O2.svg) |
 | IA-ASU-CO2 | 15 | M1 | CRYO_ASU | CRYO_CO2 | 23.22 | 3 | [svg](iso/IA-ASU-CO2.svg) |
-| IA-H2-AIR | 15 | M1 | H2_DRYER | CRYO_ASU | 21.02 | 3 | [svg](iso/IA-H2-AIR.svg) |
-| IA-LEACH-ASU | 50 | P2 | LEACH_CSTR_1 | CRYO_ASU | 14.07 | 3 | [svg](iso/IA-LEACH-ASU.svg) |
 | IA-URINE | 15 | P1 | HABITATION | BLACK_DIGEST | 15.99 | 3 | [svg](iso/IA-URINE.svg) |
 | IA-BLK-NUT | 15 | P1 | BLACK_DIGEST | NUTRIENT_DOSE | 27.34 | 3 | [svg](iso/IA-BLK-NUT.svg) |
 | IA-BLK-GREY | 15 | P1 | BLACK_DIGEST | GREY_TREAT | 5.14 | 3 | [svg](iso/IA-BLK-GREY.svg) |

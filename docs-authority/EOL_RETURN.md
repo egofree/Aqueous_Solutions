@@ -19,7 +19,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 |---|---|---|
 | metal_plateable | 626 | 47 % |
 | organic | 515 | 39 % |
-| metal_reactive | 83 | 6 % |
+| metal_reactive | 81 | 6 % |
 | silicate_oxide | 62 | 5 % |
 | unassigned | 51 | 4 % |
 
@@ -31,7 +31,7 @@ Unassigned: 51 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a n
 |---|---|
 | fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 86 |
 | held - material not identified on the line | 48 |
-| Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 27 |
+| Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 25 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
 | held - material pending: no duty sheet yet; assigned at unit task 09 under AQS-STD-002 | 2 |
 | Pt-Rh is not in the plateable set and has no recovery unit: gauze kept and re-drawn in house | 1 |
@@ -128,8 +128,8 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | EVAP_ACID | 1 | 9 | 1 | 0 | 0 |
 | EVAP_ACID_VS | 0 | 8 | 0 | 0 | 0 |
 | EVAP_BASE | 5 | 3 | 1 | 0 | 0 |
-| EW_1 | 0 | 0 | 3 | 0 | 0 |
-| EW_2 | 0 | 0 | 3 | 0 | 0 |
+| EW_1 | 0 | 0 | 2 | 0 | 0 |
+| EW_2 | 0 | 0 | 2 | 0 | 0 |
 | EW_3 | 0 | 0 | 2 | 0 | 0 |
 | EW_4 | 0 | 0 | 3 | 0 | 0 |
 | EW_5 | 0 | 0 | 2 | 0 | 0 |

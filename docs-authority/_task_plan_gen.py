@@ -658,7 +658,7 @@ CRIT_X = {'X-BAS-02', 'X-ELS-02', 'X-ELS-04', 'X-SAF-01', 'X-PIP-02', 'X-BLD-02'
 # X-RTE (owner decision 2026-10-29): a present mass route that carries no flow is unfinished design. Generated from the graph:
 # one task per open route; standby, return and retired routes are grouped. A route given its flow drops out of the open list;
 # the routes finished in the QA pass are kept below as done tasks with their evidence.
-RTE_HELD = {'IA-O2-RET', 'IA-CO2-RET'}   # owner holds (O2 ownership; greenhouse gas routes): left listed, not decided in the QA pass
+RTE_HELD = {'IA-O2-RET', 'IA-CO2-RET', 'IA-H2P-H2O'}   # owner holds (O2 ownership; greenhouse gas routes; the EW cathode hydrogen, whose saturation water IA-H2P-H2O would carry): left listed
 def _rte_kind(e):
     if (e.get('params') or {}).get('rate_rated_kg_d'): return None                   # standby route sized at its rated case (A-M-418)
     n = ((e['rate'].get('note') or '') + ' ' + str(e.get('notes') or '')).lower()
@@ -686,6 +686,7 @@ RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_
             ('X-RTE-POLY_TO_FAB', 'Route POLY_TO_FAB: photoresist to the fab', 'the positive DNQ-novolac resist is sized from the coats per day and made on site by RESIST_SYN from plant cuts, methanol, ammonia, hydrogen, chlorinator CO, pot chlorine and plant acid; the fab nitrogen purge now vents and the fab closes honestly (A-M-432)', 'flow_graph/param/fab_resist.py'),
             ('X-RTE-CAST_SCRAP_TO_IND', 'Route CAST_SCRAP_TO_IND: gating return to the melt', 'the gates and risers of the permanent-mold pours return to IND_MELT daily at cast_gating_return_frac of the pour, and the melt energy and heats include them (A-M-433)', 'flow_graph/param/foundry_poly.py'),
             ('X-RTE-RETIRED-43', 'Routes DRAW_TO_STOCK, SINTER_TO_STOCK, ATOM_TO_STOCK, COMB_OFFGAS, VAC_IND_TO_VAC_CAST and IA-N2-RET: retired', 'each duplicates another route or has no source that can give it flow, with the reason on the edge; set to presence retired (A-M-433)', 'flow_graph/param/standby_routes.py'),
+            ('X-RTE-RETIRED-44A', 'Routes IA-EW1-H2, IA-EW2-H2, IA-FC-EXH, IA-H2-AIR, IA-LEACH-ASU and S18: retired', 'each duplicates a live route or has no source that can give it flow, with the reason on the edge; set to presence retired (A-M-434)', 'flow_graph/param/standby_routes.py'),
             ('X-RTE-UPW_TO_FAB', 'Route UPW_TO_FAB: retired as a duplicate', 'IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired', 'flow_graph/plant_flow_graph.json')]
 RTE_DONE += [(f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']}: standby at its rated case",
              f"the route carries {_e['params']['rate_rated_kg_d']:g} kg/d when {_e['params']['rated_case']} (A-M-418)", _e['params'].get('rated_by', 'flow_graph/param/standby_routes.py'))
@@ -697,7 +698,7 @@ for _e in sorted(_RTE['open'], key=lambda e: e['stream_id']):
 for _k, _t, _c in (('standby', 'Standby routes without a rated case', 'each standby, N+1 or site-mode route carries the rate of the case that puts it in service, so its line and both units are sized for it'),
                    ('return', 'Return routes without flow', 'each return route is shown to be needed, with the case that uses it and its rate, or it is retired'),
                    ('assay', 'Routes waiting on the dense-grit assay', 'the float-sink grit and cell slag routes carry the rates that the AQS-ASSAY-TI-MO assay drivers give (Q-037, A-M-427); until the assay is set they stay at zero'),
-                   ('held', 'Routes in areas the owner holds', 'the owner decides the O2 ownership and greenhouse gas routes; each is then given a rated case or retired'),
+                   ('held', 'Routes in areas the owner holds', 'the owner decides the O2 ownership and greenhouse gas routes and the EW cathode hydrogen; each is then given a rated case or retired. IA-H2P-H2O carries real flow once the cathode hydrogen carries its saturation water, which its edges already state in their composition but not in their rate (A-M-434)'),
                    ('retired', 'Routes noted as retired but still present', 'each route is set to presence retired on the graph, or given a rate')):
     if _RTE[_k]:
         _rte_items.append((f'X-RTE-{_k.upper()}', f"{_t}: {', '.join(sorted(e['stream_id'] for e in _RTE[_k]))}", _c, 'X-PAR-02', None))

@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AX
+Revision: AY
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -56,6 +56,7 @@ Date: 2026-10-29
 | AV | Batch 42d: wafer-fab photoresist made on site by RESIST_SYN on POLY_TO_FAB, and the fab nitrogen purge vents (A-M-432) | 2026-10-30 |
 | AW | Batch 42e: transfer-function rates held against the reconciliation fit, and the resist benzene feed taken off the C5-C10 shipment | 2026-10-30 |
 | AX | Batch 43: the X-RTE standby and return route sets given rated cases, a real gating return, or retired (A-M-433) | 2026-10-30 |
+| AY | Batch 44a: the gas and hydrogen no-flow routes retired as duplicates or sourceless, and IA-H2P-H2O listed under the owner holds (A-M-434) | 2026-10-30 |
 
 ## 1. Purpose and scope
 
@@ -224,6 +225,7 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/param/fab_resist.py` (A-M-432) | POLY_TO_FAB carries the positive DNQ-novolac photoresist made on site from plant streams; the fab rinse acetone is recovered at SOLV_PLANT; the nitrogen purge vents and the fab closes without a hidden balancer. |
 | `flow_graph/param/balance.py` (batch 42e) | The X-RTE transfer-function rates are held as design values, so the fit no longer zeroes the photoresist feeds; a test guards the hold. |
 | `flow_graph/param/standby_routes.py` (A-M-433) | The standby routes carry the rate of the case that puts them in service, the cast-line gating returns daily to the melt, and six routes that duplicate another route or have no source are retired; the assay and owner-held routes stay listed. |
+| `flow_graph/param/standby_routes.py` (A-M-434) | Six gas and hydrogen routes that duplicate a live route or have no source are retired with their reasons; the TSA water route waits on the held cathode-hydrogen water. |
 
 ## 3. In progress
 

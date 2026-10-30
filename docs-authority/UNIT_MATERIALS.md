@@ -17,7 +17,7 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 197 units, 142 have an issued material for each wetted stream, 55 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 358 wetted stream ends, and each resolves to an issued service family.
+Of the 197 units, 142 have an issued material for each wetted stream, 55 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 352 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
@@ -25,19 +25,19 @@ A unit is closed when every wetted stream that touches it carries a wetted mater
 The following service families of AQS-STD-002 are used, with the number of stream ends in each.
 
 - Acid or brine, at or below 60 C: 55 stream ends.
-- Hot leach liquor: 47 stream ends.
+- Hot leach liquor: 46 stream ends.
 - Process vent gas: 44 stream ends.
-- Dry gas, H2/O2/N2/CO2: 43 stream ends.
+- Dry gas, H2/O2/N2/CO2: 41 stream ends.
 - Hydrocarbon product, fuel or wax cut: 22 stream ends.
 - Aqueous process liquor (AQS-ASSAY-001 envelope): 19 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
-- Wet acid H₂ + sweep air header: 16 stream ends.
+- Wet acid H₂ + sweep air header: 14 stream ends.
 - Oxidizer, wet HF or PVDF unit: 13 stream ends.
 - Wet methanol service: 13 stream ends.
 - Q1/Q2 thermal oil: 12 stream ends.
 - Water loops (protective, irrigation, UPW): 12 stream ends.
 - Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 11 stream ends.
-- Flue or acid gas: 9 stream ends.
+- Flue or acid gas: 8 stream ends.
 - Alkaline (NaOH/KOH base liquor): 7 stream ends.
 - Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours): 6 stream ends.
 - Alkaline silica slurry: 3 stream ends.
@@ -81,7 +81,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | HL-AFTERBURNER-Q1-A | AFTERBURNER | Q1_A | M2 | 12.1 q1/q2 thermal oil | Carbon steel A106 Gr B per section 4.4 |
 | HL-AFTERBURNER-Q1-B | AFTERBURNER | Q1_B | M2 | 12.1 q1/q2 thermal oil | Carbon steel A106 Gr B per section 4.4 |
 | NCG_TO_AB | NCG_HEADER | AFTERBURNER | P3 | 12.1 process vent gas | PVDF (P3) |
-| S18 | AFTERBURNER | CRYO_CO2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | IA-AB-FLUE | AFTERBURNER | AFTERBURNER_FLUE | F1 | 12.1 flue or acid gas | FRP/composite F1 per section 4.3 |
 | IA-BLK-GAS | BLACK_DIGEST | AFTERBURNER | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
@@ -289,8 +288,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-ASU-N2 | CRYO_ASU | CRYO_N2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | IA-ASU-O2 | CRYO_ASU | CRYO_O2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | IA-ASU-CO2 | CRYO_ASU | CRYO_CO2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
-| IA-H2-AIR | H2_DRYER | CRYO_ASU | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
-| IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-AR-CZ | CRYO_ASU | WAFER_FAB | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 
@@ -299,7 +296,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | S04 | CRYO_CO2 | GROW_BED | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
-| S18 | AFTERBURNER | CRYO_CO2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | S67B | FLUE_KO | CRYO_CO2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | S73 | CRYO_CO2 | MEOH_SYNTH | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | S82 | MEOH_FC | CRYO_CO2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
@@ -411,7 +407,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-EW-04 | LEACH_CSTR_1 | EW_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-HDR-H2-01 | EW_1 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-HX8 | EW_1 | HX8 | P3 | 12.1 oxidizer, hf or pvdf unit | PVDF (P3) |
-| IA-EW1-H2 | EW_1 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### EW_2
@@ -421,7 +416,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-EW-01 | EW_1 | EW_2 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-EW-02 | EW_2 | EW_3 | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-HDR-H2-03 | EW_2 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
-| IA-EW2-H2 | EW_2 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### EW_3
@@ -683,7 +677,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-HDR-H2-02 | HDR_H2 | H2_DRYER | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | S24 | H2_DRYER | RELIEF_H2 | P3 | 12.1 process vent gas | PVDF (P3) |
 | S64 | H2_DRYER | CRYO_H2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
-| IA-H2-AIR | H2_DRYER | CRYO_ASU | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | IA-H2P-H2O | H2_DRYER | VCD_TRAIN | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 
 ### HABITATION
@@ -727,8 +720,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-HDR-H2-02 | HDR_H2 | H2_DRYER | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-HDR-H2-03 | EW_2 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-HDR-H2-04 | EW_9 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
-| IA-EW1-H2 | EW_1 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
-| IA-EW2-H2 | EW_2 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-EW4-H2 | EW_4 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-LEACH-H2 | LEACH_CSTR_1 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-EW3-H2B | EW_3 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
@@ -878,7 +869,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-EW9-CL2 | EW_9 | LEACH_CSTR_1 | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-ACID-01 | EVAP_ACID | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
-| IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-SI-PURGE | SI_REFINE | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-NA-RECYCLE | LEACH_CSTR_1 | NAOH_PLANT | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-RESIST-BRINE | RESIST_SYN | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
@@ -936,7 +926,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | S81 | MEOH_FC | MEOH_COND | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | S82 | MEOH_FC | CRYO_CO2 | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | IA-FC-AIR | HDR_O2 | MEOH_FC | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
-| IA-FC-EXH | MEOH_FC | NOX_SCRUB | F1 | 12.1 flue or acid gas | FRP/composite F1 per section 4.3 |
 | IA-MEOH-REST | MEOH_TANK | MEOH_FC | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 | IA-CLOSE-10 | LEACH_CSTR_1 | MEOH_FC | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 
@@ -1053,7 +1042,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 |---|---|---|---|---|---|
 | S46 | BACKUP_GEN | NOX_SCRUB | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-FLUE-EXH | FLUE_KO | NOX_SCRUB | F1 | 12.1 flue or acid gas | FRP/composite F1 per section 4.3 |
-| IA-FC-EXH | MEOH_FC | NOX_SCRUB | F1 | 12.1 flue or acid gas | FRP/composite F1 per section 4.3 |
 | IA-NOX-H2O | NOX_SCRUB | ROOF_TANK | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-NOX-N | NOX_SCRUB | NUTRIENT_DOSE | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-LEACH-NOX | LEACH_CSTR_1 | NOX_SCRUB | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |

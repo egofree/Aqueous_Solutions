@@ -41,7 +41,6 @@ Table 4.1. Methanol train streams
 | --- | --- | --- | --- | --- |
 | IA-CLOSE-10 | `LEACH_CSTR_1` | `MEOH_FC` | leach condensate to the methanol cell | 0.19 kg/d |
 | IA-FC-AIR | `HDR_O2` | `MEOH_FC` | cell air | 9.41 kg/d |
-| IA-FC-EXH | `MEOH_FC` | `NOX_SCRUB` | cell exhaust | 0 kg/d |
 | IA-FERM-DIG | `MEOH_FERM` | `BLACK_DIGEST` | fermenter digestate (water + spent solids) | 0.345 kg/d |
 | IA-HCO2-MEOH | `HDR_CO2` | `MEOH_SYNTH` | CO2 not taken by the bed | 3.14 kg/d |
 | IA-MEOH-COND | `MEOH_COND` | `ROOF_TANK` | methanol condensate | 26.7 kg/d |

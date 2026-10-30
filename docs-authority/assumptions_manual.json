@@ -7489,5 +7489,21 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.standby_routes prints each rated case; after regen the X-RTE standby and return groups list only the assay-dependent and owner-held routes, and test_balance passes with no reconciled move."
+ },
+ {
+  "id": "A-M-434",
+  "value": "The gas and hydrogen routes of task X-RTE that carry no flow are decided route by route. IA-EW1-H2 and IA-EW2-H2 duplicate the Faraday cathode-hydrogen outlets IA-HDR-H2-01 and IA-HDR-H2-03. IA-FC-EXH has nothing to carry, because the methanol cell burns its fuel completely on stoichiometric oxygen and its products leave on S81 and S82. IA-H2-AIR has no source, because H2_DRYER is fed only by header hydrogen. IA-LEACH-ASU has no degasser or compressor behind it, and its closure solves to zero. S18 duplicates S67 and S67B. All six are retired. IA-H2P-H2O stays listed under the owner holds: it carries real flow once the EW cathode hydrogen carries its saturation water, which the cathode edges state in their composition but not in their rate.",
+  "units": "kg/d",
+  "where": "flow_graph/param/standby_routes.py RETIRE; flow_graph/param/balance.py T5; docs-authority/_task_plan_gen.py RTE_HELD",
+  "basis": "Owner decision of 2026-10-29 (X-RTE): a route without flow is given flow or retired. Mass conservation on each unit named above; the methanol oxidation CH3OH + 1.5 O2 -> CO2 + 2 H2O of AQS-DUTY-010.",
+  "sensitivity": "None on the design day: every retired route carried zero. If the oxidant of MEOH_FC is set above stoichiometric (an O2 ownership decision), the excess oxygen needs an exhaust route again.",
+  "replaced_by": "The owner decisions on O2 ownership and the EW cathode hydrogen",
+  "task": "QA audit 2026-10-30, X-RTE gas and hydrogen routes",
+  "files": [
+   "flow_graph/param/standby_routes.py",
+   "flow_graph/param/balance.py",
+   "docs-authority/_task_plan_gen.py"
+  ],
+  "needs_verification": false
  }
 ]

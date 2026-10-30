@@ -40,12 +40,10 @@ DIGESTER,BMED_CRU,POLISH_BANK,IA-POL-01,15,P1,PVC-U Sch 80 ASTM D1785,14.14,5,3,
 DIGESTER,BMED_CRU,POLISH_BANK,IA-POL-02,15,P1,PVC-U Sch 80 ASTM D1785,14.74,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
 DIGESTER,LEACH_EW,EW_1,IA-EW-01,15,P2,CPVC Sch 80 ASTM F441,8.58,4,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 DIGESTER,LEACH_EW,EW_1,IA-EW1-CL2,15,P3,PVDF SDR 21 ISO 10931,9.15,4,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,fusion
-DIGESTER,LEACH_EW,EW_1,IA-EW1-H2,50,P1,PVC-U Sch 80 ASTM D1785,6.19,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,8,solvent
 DIGESTER,LEACH_EW,EW_1,IA-HDR-H2-01,15,P1,PVC-U Sch 80 ASTM D1785,6.31,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 DIGESTER,LEACH_EW,EW_1,IA-HX8,15,P3,PVDF SDR 21 ISO 10931,11.78,4,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,fusion
 DIGESTER,LEACH_EW,EW_2,IA-EW-02,15,P1,PVC-U Sch 80 ASTM D1785,9.73,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 DIGESTER,LEACH_EW,EW_2,IA-EW2-CL2,15,P3,PVDF SDR 21 ISO 10931,12.15,4,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,fusion
-DIGESTER,LEACH_EW,EW_2,IA-EW2-H2,50,P1,PVC-U Sch 80 ASTM D1785,5.66,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,8,solvent
 DIGESTER,LEACH_EW,EW_2,IA-HDR-H2-03,15,P1,PVC-U Sch 80 ASTM D1785,5.78,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
 DIGESTER,LEACH_EW,EW_9,IA-EW-09,15,P1,PVC-U Sch 80 ASTM D1785,14.31,5,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,solvent
 DIGESTER,LEACH_EW,EW_9,IA-EW9-CL2,15,P3,PVDF SDR 21 ISO 10931,13.73,5,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,fusion
@@ -58,7 +56,6 @@ DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-CLOSE-1,50,P2,CPVC Sch 80 ASTM F441,11.22,5,3,
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-CLOSE-10,50,M1,316L ASTM A312,17.09,5,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,5/8 in,ASTM A193 B7 stud + 2 A194 2H nuts,9,butt weld
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-CULLET,50,P2,CPVC Sch 80 ASTM F441,12.72,5,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,solvent
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-EW-04,15,P2,CPVC Sch 80 ASTM F441,9.15,4,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,solvent
-DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-LEACH-ASU,50,P2,CPVC Sch 80 ASTM F441,14.07,5,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,9,solvent
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-LEACH-BD,15,P2,CPVC Sch 80 ASTM F441,33.59,8,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,12,solvent
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-LEACH-FLUE,50,P2,CPVC Sch 80 ASTM F441,24.12,6,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,10,solvent
 DIGESTER,LEACH_EW,LEACH_CSTR_1,IA-LEACH-H2,50,P1,PVC-U Sch 80 ASTM D1785,9.77,4,3,ASTM D2467 socket 90 elbow,2,ASTM D2467 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,8,solvent
@@ -135,7 +132,6 @@ GAS,SCRUB,ACID_POLISH_SCRUB,S66,15,P2,CPVC Sch 80 ASTM F441,14.69,5,3,ASTM F439 
 GAS,SCRUB,AFTERBURNER_FLUE,S67,15,F1,FRP vinyl ester,12.64,5,3,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,9,butt-and-strap
 GAS,SCRUB,ALK_SCRUBBER,S65,250,F1,FRP vinyl ester,1.25,3,2,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,EPDM full-face gasket,24,7/8 in,ASTM A193 B7 stud + nuts,6,butt-and-strap
 GAS,SCRUB,BAGHOUSE,IA-BAG-01,50,P2,CPVC Sch 80 ASTM F441,31.52,8,3,ASTM F439 socket 90 elbow,2,ASTM F439 flange,2,EPDM full-face gasket,8,5/8 in,ASTM A193 B7 stud + nuts,12,solvent
-GAS,SCRUB,H2_DRYER,IA-H2-AIR,15,M1,316L ASTM A312,21.02,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 GAS,SCRUB,H2_DRYER,IA-H2P-H2O,15,P5,HDPE PE4710 DR 11 (ASTM D3035),24.74,7,3,ASTM D3261 butt-fusion 90 elbow,2,ASTM D3261 stub end + backing ring,2,EPDM gasket,8,1/2 in,ASTM A193 B7 stud + nuts,11,fusion
 GAS,SCRUB,H2_DRYER,S24,15,P3,PVDF SDR 21 ISO 10931,20.94,6,3,ISO 10931 butt-fusion 90 elbow,2,ISO 10931 stub end + backing ring,2,PTFE envelope gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,fusion
 GAS,SCRUB,H2_DRYER,S64,15,M1,316L ASTM A312,26.17,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
@@ -194,7 +190,6 @@ HEAT,heat_battery,Q4_A,HL-Q4-X,15,M1,316L ASTM A312,20.17,6,3,ASME B16.9 LR 90 e
 HEAT,heat_battery,Q4_B,HL-Q4-B-BUS,15,M1,316L ASTM A312,21.42,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 HEAT,heat_battery,Q4_B,HL-Q4-X-BA,15,M1,316L ASTM A312,20.17,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 MEOH,ferment,MEOH_FERM,S77,15,M1,316L ASTM A312,8.42,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
-MEOH,iem_fc,MEOH_FC,IA-FC-EXH,15,F1,FRP vinyl ester,11.08,4,3,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,8,butt-and-strap
 MEOH,iem_fc,MEOH_FC,S81,15,M1,316L ASTM A312,6.97,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
 MEOH,iem_fc,MEOH_FC,S82,15,M1,316L ASTM A312,29.22,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 MEOH,reactor,MEOH_SYNTH,IA-ESS-MEOH-CHG,15,M1,316L ASTM A312,7.1,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
@@ -218,7 +213,6 @@ OIL,LEACH_EW,HOPPER,IA-FEED-01,15,P2,CPVC Sch 80 ASTM F441,9.89,4,3,ASTM F439 so
 OIL,OIL_GLASS,AFTERBURNER,HL-AFTERBURNER-Q1-A,15,M2,CS ASTM A106 Gr B,26.82,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 OIL,OIL_GLASS,AFTERBURNER,HL-AFTERBURNER-Q1-B,15,M2,CS ASTM A106 Gr B,19.02,6,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,10,butt weld
 OIL,OIL_GLASS,AFTERBURNER,IA-AB-FLUE,15,F1,FRP vinyl ester,16.49,6,3,ASTM D5421 FRP 90 elbow,2,ASTM D5421 FRP flange,2,EPDM full-face gasket,8,1/2 in,ASTM A193 B7 stud + nuts,10,butt-and-strap
-OIL,OIL_GLASS,AFTERBURNER,S18,15,M1,316L ASTM A312,34.12,9,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,13,butt weld
 OIL,OIL_GLASS,OIL_FRAC,CUT-1,15,M2,CS ASTM A106 Gr B,28.22,7,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,11,butt weld
 OIL,OIL_GLASS,OIL_FRAC,CUT-2,15,M2,CS ASTM A106 Gr B,6.12,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld
 OIL,OIL_GLASS,OIL_FRAC,CUT-3,15,M2,CS ASTM A106 Gr B,5.72,4,3,ASME B16.9 LR 90 elbow,2,ASME B16.5 Cl 150 flange,2,ASME B16.20 gasket,8,1/2 in,ASTM A193 B7 stud + 2 A194 2H nuts,8,butt weld

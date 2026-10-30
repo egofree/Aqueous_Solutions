@@ -75,6 +75,13 @@ RETIRE = {
     'COMB_OFFGAS': 'COMB_HEAT has no fuel route, so it can make no off-gas; a fuel-fired alternate needs a fuel route first (X-RTE-COMB-HEAT-FUEL)',
     'VAC_IND_TO_VAC_CAST': 'VAC_CAST has no product route, so its casting could go nowhere; the vacuum titanium melt pours to INV_CAST on VAC_TO_INV',
     'IA-N2-RET': 'the air and nitrogen header is fed by AIR_RECEIVER and holds its pressure by the receiver supply, so it never returns gas to the cold box',
+    # batch 44a, gas and hydrogen routes (A-M-434)
+    'IA-EW1-H2': ('the EW_1 cathode hydrogen leaves on IA-HDR-H2-01 by Faraday, so this hood stub duplicates it', 'A-M-434'),
+    'IA-EW2-H2': ('the EW_2 cathode hydrogen leaves on IA-HDR-H2-03 by Faraday, so this hood stub duplicates it', 'A-M-434'),
+    'IA-FC-EXH': ('the methanol cell burns its fuel completely on stoichiometric oxygen, and its products leave as water on S81 and carbon dioxide on S82, so no exhaust remains', 'A-M-434'),
+    'IA-H2-AIR': ('H2_DRYER is fed only by header hydrogen on IA-HDR-H2-02, so it has no sweep air to pass; hood sweep air is kept out of the hydrogen line', 'A-M-434'),
+    'IA-LEACH-ASU': ('the leach has no degasser or compressor to send dissolved gas to the cold box, and its T5 closure solves to zero', 'A-M-434'),
+    'S18': ('the afterburner carbon dioxide reaches the cold box on S67 and S67B through FLUE_KO, so this claim id duplicates them', 'A-M-434'),
 }
 
 def design(g, d=None):
@@ -107,9 +114,10 @@ def tf(g, d=None):
         e['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study',
                      'note': f"{TAG}: zero on the design day; rated {row['rated_kg_d']:.4f} kg/d ({row['backs_up']}) when {row['case']}, for {row['outage_d']:g} d (standby_routes.py)."}
     for sid, why in RETIRE.items():
+        why, am = why if isinstance(why, tuple) else (why, 'A-M-433')
         if sid in E:
             e = E[sid]; e['presence'] = 'retired'
-            e['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study', 'note': f'X-RTE retired 2026-10-30 (A-M-433): {why}.'}
+            e['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study', 'note': f'X-RTE retired 2026-10-30 ({am}): {why}.'}
     return r
 
 if __name__ == '__main__':

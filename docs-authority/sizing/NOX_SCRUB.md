@@ -17,7 +17,7 @@ This page records the size of unit NOX_SCRUB, of class `scrubber` in sector GAS,
 
 ## 2. Duty
 
-The unit takes 459.864 kg/d by 7 streams and gives 459.864 kg/d by 4 streams. Its continuous electrical load is 0.0385 kW, fed by stream SF-NOX_SCRUB.
+The unit takes 459.864 kg/d by 6 streams and gives 459.864 kg/d by 4 streams. Its continuous electrical load is 0.0385 kW, fed by stream SF-NOX_SCRUB.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

@@ -1906,7 +1906,7 @@
           "volume_m3": 0.0054,
           "material": "PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)",
           "hold_kg": 0.0,
-          "connections": 17
+          "connections": 15
         },
         "size_note": "DN25 manifold x 24 m run (0.005 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       }
@@ -10155,7 +10155,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "captured CO2/air",
       "header": "CRYO feed",
       "forbidden": "acid-gas header",
@@ -10164,7 +10164,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev J: the 15.0 kg/d afterburner CO2 basis moved to S67; the CRYO_CO2 credit is S67B. S18 kept as the OIL->CRYO claim id (BH 91d33f4 verbatim; Rev AC had re-rated it 15.0 on a revived pre-Rev-J basis)"
+        "note": "X-RTE retired 2026-10-30 (A-M-434): the afterburner carbon dioxide reaches the cold box on S67 and S67B through FLUE_KO, so this claim id duplicates them."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "CRYO",
@@ -15674,16 +15674,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "cell exhaust",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N."
+        "note": "X-RTE retired 2026-10-30 (A-M-434): the methanol cell burns its fuel completely on stoichiometric oxygen, and its products leave as water on S81 and carbon dioxide on S82, so no exhaust remains."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "GAS",
@@ -17604,7 +17604,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "hood hydrogen",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
@@ -17613,7 +17613,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
+        "note": "X-RTE retired 2026-10-30 (A-M-434): the EW_1 cathode hydrogen leaves on IA-HDR-H2-01 by Faraday, so this hood stub duplicates it."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -17650,7 +17650,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "hood hydrogen",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
@@ -17659,7 +17659,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-12 TF: cathode H2 now on IA-EWk-H2B by Faraday (AQS-PAR-005)."
+        "note": "X-RTE retired 2026-10-30 (A-M-434): the EW_2 cathode hydrogen leaves on IA-HDR-H2-03 by Faraday, so this hood stub duplicates it."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "GAS",
@@ -20417,7 +20417,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "sweep air from the hydrogen hood",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
@@ -20426,7 +20426,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "X-RTE retired 2026-10-30 (A-M-434): H2_DRYER is fed only by header hydrogen on IA-HDR-H2-02, so it has no sweep air to pass; hood sweep air is kept out of the hydrogen line."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "CRYO",
@@ -20543,7 +20543,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "dissolved gas",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
@@ -20552,7 +20552,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.612 kg/d (SANDER2015) (AQS-PAR-003)."
+        "note": "X-RTE retired 2026-10-30 (A-M-434): the leach has no degasser or compressor to send dissolved gas to the cold box, and its T5 closure solves to zero."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",

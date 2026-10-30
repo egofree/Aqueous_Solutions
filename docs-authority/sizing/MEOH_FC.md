@@ -17,7 +17,7 @@ This page records the size of unit MEOH_FC, of class `iem_fc` in sector MEOH, fr
 
 ## 2. Duty
 
-The unit takes 15.8767 kg/d by 4 streams and gives 15.8767 kg/d by 3 streams. Its continuous electrical load is 1 kW.
+The unit takes 15.8767 kg/d by 4 streams and gives 15.8767 kg/d by 2 streams. Its continuous electrical load is 1 kW.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

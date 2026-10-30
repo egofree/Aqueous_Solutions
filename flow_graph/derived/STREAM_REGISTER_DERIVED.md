@@ -92,7 +92,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S15 | GROW_BED | HABITATION | G | mass | present | photosynthetic O2 | 0.0 kg/d | — |
 | S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 11.637534 kg/d | — |
 | S17 | SOL_ARK_60K | RECTIFIER | E | elec | present | DC/480V | 12.0 kW | — |
-| S18 | AFTERBURNER | CRYO_CO2 | G | mass | present | captured CO2/air | 0.0 kg/d | — |
+| S18 | AFTERBURNER | CRYO_CO2 | G | mass | retired | captured CO2/air | 0.0 kg/d | — |
 | S19 | BAGHOUSE | LEACH_CSTR_1 | S | mass | present | dust | 0.0 kg/d | absent_from_candidate_mvs |
 | S20 | SOL_ARK_60K | GROW_BED | E | elec | present | load | 2.0463 kW | — |
 | S21 | ROOF_TANK | HABITATION | L | mass | present | clean tower water | 120.68 kg/d | — |
@@ -294,7 +294,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-LEACH-BD | LEACH_CSTR_1 | NUTRIENT_DOSE | L | mass | present | bleed salts to nutrient | 109.63 kg/d | — |
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | L | mass | present | still bottoms | 6.709424 kg/d | — |
 | IA-CHAR | OIL_PYRO | MFG_SHOP | S | mass | present | char reductant | 4.838035 kg/d | — |
-| IA-FC-EXH | MEOH_FC | NOX_SCRUB | G | mass | present | cell exhaust | 0 kg/d | — |
+| IA-FC-EXH | MEOH_FC | NOX_SCRUB | G | mass | retired | cell exhaust | 0.0 kg/d | — |
 | IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | thermal | thermal | present | round-trip loss | 1.67 kW | — |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | electric | thermal | present | store trim | 1.61 kW | — |
 | IA-Q4B-TRIM | RECTIFIER | Q4_B | electric | thermal | present | store trim | 1.61 kW | — |
@@ -349,8 +349,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-LEACH-NOX | LEACH_CSTR_1 | NOX_SCRUB | S/L | mass | present | leach offgas | 195.024701 kg/d | — |
 | IA-LEACH-FLUE | LEACH_CSTR_1 | FLUE_KO | S/L | mass | present | leach vent | 135.9019 kg/d | — |
 | IA-LEACH-HOP | LEACH_CSTR_1 | HOPPER | S/L | mass | present | returned solids | 35.355 kg/d | — |
-| IA-EW1-H2 | EW_1 | HDR_H2 | S/L | mass | present | hood hydrogen | 0.0 kg/d | — |
-| IA-EW2-H2 | EW_2 | HDR_H2 | S/L | mass | present | hood hydrogen | 0.0 kg/d | — |
+| IA-EW1-H2 | EW_1 | HDR_H2 | S/L | mass | retired | hood hydrogen | 0.0 kg/d | — |
+| IA-EW2-H2 | EW_2 | HDR_H2 | S/L | mass | retired | hood hydrogen | 0.0 kg/d | — |
 | IA-EW4-H2 | EW_4 | HDR_H2 | S/L | mass | present | hood hydrogen | 0.030994 kg/d | — |
 | IA-EW4-N2 | EW_4 | HDR_N2 | S/L | mass | present | sweep nitrogen | 0.396575 kg/d | — |
 | IA-O2-MAKE | CRYO_O2 | HDR_O2 | S/L | mass | present | oxygen makeup | 0.0 kg/d | — |
@@ -441,11 +441,11 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-ASU-N2 | CRYO_ASU | CRYO_N2 | G | mass | present | nitrogen product | 196.588594 kg/d | — |
 | IA-ASU-O2 | CRYO_ASU | CRYO_O2 | G | mass | present | oxygen product | 0.063683 kg/d | — |
 | IA-ASU-CO2 | CRYO_ASU | CRYO_CO2 | G | mass | present | CO2 product | 21.581514 kg/d | — |
-| IA-H2-AIR | H2_DRYER | CRYO_ASU | G | mass | present | sweep air from the hydrogen hood | 0.0 kg/d | — |
+| IA-H2-AIR | H2_DRYER | CRYO_ASU | G | mass | retired | sweep air from the hydrogen hood | 0.0 kg/d | — |
 | IA-N2-RET | HDR_N2 | CRYO_ASU | S | mass | retired | nitrogen return | 0.0 kg/d | — |
 | IA-O2-RET | HDR_O2 | CRYO_ASU | S | mass | present | oxygen return | 0.0 kg/d | — |
 | IA-CO2-RET | CRYO_CO2 | CRYO_ASU | S | mass | present | CO2 return | 0.0 kg/d | — |
-| IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | S/L | mass | present | dissolved gas | 0.0 kg/d | — |
+| IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | S/L | mass | retired | dissolved gas | 0.0 kg/d | — |
 | SF-CRYO_ASU | SOL_ARK_60K | CRYO_ASU | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.6572 kW | — |
 | IA-ELY-H2O | ROOF_TANK | H2O_ELYZ | L | mass | present | electrolyser feed water | 82.640649 kg/d | — |
 | IA-ELY-H2 | H2O_ELYZ | CRYO_H2 | G | mass | present | electrolyser H2 | 9.248046 kg/d | — |

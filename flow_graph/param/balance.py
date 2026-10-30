@@ -171,7 +171,7 @@ def physics(g):
         # the T4 shift so the header tracks the distillate/remin splits; d cancels (S25 and IA-UPW-REMIN shift together).
         put('S01', v('S01') + _unit_resid(g, 'BMED_UPW_POLISH'), 'UPW header passes its draws IA-UPW-HAB + IA-UPW-USE (BH 67.30, 91d33f4; Rev AC 95.00 overdrew the header)')
     a = _unit_resid(g, 'CRYO_ASU')
-    if 'IA-LEACH-ASU' in E:
+    if 'IA-LEACH-ASU' in E and E['IA-LEACH-ASU'].get('presence') == 'present':   # retired 2026-10-30 (A-M-434)
         # R8: the leach dissolved-gas edge and its Henry bound died with CRYO_ASU in Rev AC; the assert stays for the live path
         lim = henry_bound(g)
         put('IA-LEACH-ASU', max(0.0, v('IA-LEACH-ASU') - a), f'closes leach and cold box ({-a:+.4f} kg/d); Henry bound {lim:.3f} kg/d (SANDER2015)')

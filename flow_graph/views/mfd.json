@@ -2829,7 +2829,7 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "captured CO2/air",
       "header": "CRYO feed",
       "forbidden": "acid-gas header",
@@ -2838,7 +2838,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Rev J: the 15.0 kg/d afterburner CO2 basis moved to S67; the CRYO_CO2 credit is S67B. S18 kept as the OIL->CRYO claim id (BH 91d33f4 verbatim; Rev AC had re-rated it 15.0 on a revived pre-Rev-J basis)"
+        "note": "X-RTE retired 2026-10-30 (A-M-434): the afterburner carbon dioxide reaches the cold box on S67 and S67B through FLUE_KO, so this claim id duplicates them."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "CRYO",

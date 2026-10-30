@@ -59,8 +59,8 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 8,DIGESTER,EVAP_ACID,fill or function test per AQS-QA-001 R8,8,SIF-071 SIF-101,1304.79,
 8,DIGESTER,EVAP_ACID_VS,fill or function test per AQS-QA-001 R8,9,SIF-076 SIF-102,0.0,
 8,DIGESTER,EVAP_BASE,fill or function test per AQS-QA-001 R8,8,SIF-072 SIF-103,1315.45,NaOH
-8,DIGESTER,EW_1,bund and tank fill test,9,SIF-104,4287.8,solute
-8,DIGESTER,EW_2,bund and tank fill test,8,SIF-105,4139.22,
+8,DIGESTER,EW_1,bund and tank fill test,8,SIF-104,4287.8,solute
+8,DIGESTER,EW_2,bund and tank fill test,7,SIF-105,4139.22,
 8,DIGESTER,EW_3,bund and tank fill test,7,SIF-106,3990.59,
 8,DIGESTER,EW_4,bund and tank fill test,8,SIF-107,3934.81,
 8,DIGESTER,EW_5,bund and tank fill test,7,SIF-108,3922.37,
@@ -78,7 +78,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 8,DIGESTER,P_CA,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",4,SIF-150,0.0,CaF2 CaO CaSO4 H2O H2SO4 inerts
 8,DIGESTER,SALT_FEED,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,-,,
 9,MEOH,MEOH_COND,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-129,26.65,solute
-9,MEOH,MEOH_FC,function test; then helium sensitive leak test (ASME B31.3 345.8),7,SIF-130,5.0,Ar Fe HCl O2 other_metals solute
+9,MEOH,MEOH_FC,function test; then helium sensitive leak test (ASME B31.3 345.8),6,SIF-130,5.0,Ar Fe HCl O2 other_metals solute
 9,MEOH,MEOH_FERM,fill or function test per AQS-QA-001 R8,2,SIF-023,,
 9,MEOH,MEOH_SYNTH,fill or function test per AQS-QA-001 R8,5,SIF-024,,CO2
 9,MEOH,MEOH_TANK,function test,6,SIF-131,34.52,

@@ -17,7 +17,7 @@ This page records the size of unit AFTERBURNER, of class `thermal` in sector OIL
 
 ## 2. Duty
 
-The unit takes 7.09688 kg/d by 5 streams and gives 7.09688 kg/d by 2 streams. Its continuous electrical load is 0.1332 kW.
+The unit takes 7.09688 kg/d by 5 streams and gives 7.09688 kg/d by 1 stream. Its continuous electrical load is 0.1332 kW.
 
 The graph holds no design parameters for the unit.
 

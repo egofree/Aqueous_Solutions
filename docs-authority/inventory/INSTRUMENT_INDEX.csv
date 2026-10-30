@@ -82,16 +82,14 @@ SALT_FEED-TE-01,SALT_FEED,DIGESTER,temperature element,"IEC 60751, 316L thermowe
 EW_1-FT-01,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_1FT-01,PLC-DIGESTER,IA-EW-01 normal 172.47 L/h
 EW_1-FT-02,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),EW_1FT-02,PLC-DIGESTER,IA-HDR-H2-01 normal 0.02 L/h
 EW_1-FT-03,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),EW_1FT-03,PLC-DIGESTER,IA-HX8 normal 0.19 L/h
-EW_1-FT-04,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),EW_1FT-04,PLC-DIGESTER,IA-EW1-H2 normal 0.00 L/h
-EW_1-FT-05,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),EW_1FT-05,PLC-DIGESTER,IA-EW1-CL2 normal 3.68 L/h
+EW_1-FT-04,EW_1,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),EW_1FT-04,PLC-DIGESTER,IA-EW1-CL2 normal 3.68 L/h
 EW_1-LSH-01,EW_1,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_1LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_1-LT-01,EW_1,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_1LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_1-PT-01,EW_1,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_1PT-01,PLC-DIGESTER,no design pressure on the graph
 EW_1-TE-01,EW_1,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_1TE-01,PLC-DIGESTER,band by service
 EW_2-FT-01,EW_2,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-500 L/h,4-20 mA HART (AI),EW_2FT-01,PLC-DIGESTER,IA-EW-02 normal 166.27 L/h
 EW_2-FT-02,EW_2,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),EW_2FT-02,PLC-DIGESTER,IA-HDR-H2-03 normal 0.02 L/h
-EW_2-FT-03,EW_2,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),EW_2FT-03,PLC-DIGESTER,IA-EW2-H2 normal 0.00 L/h
-EW_2-FT-04,EW_2,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),EW_2FT-04,PLC-DIGESTER,IA-EW2-CL2 normal 3.68 L/h
+EW_2-FT-03,EW_2,DIGESTER,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),EW_2FT-03,PLC-DIGESTER,IA-EW2-CL2 normal 3.68 L/h
 EW_2-LSH-01,EW_2,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),EW_2LSH-01,PLC-DIGESTER,alarm at 90 %
 EW_2-LT-01,EW_2,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),EW_2LT-01,PLC-DIGESTER,A-M-182 liquid height
 EW_2-PT-01,EW_2,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),EW_2PT-01,PLC-DIGESTER,no design pressure on the graph
@@ -453,7 +451,6 @@ MEOH_FERM-PT-01,MEOH_FERM,MEOH,pressure transmitter,"ceramic diaphragm, IEC 6129
 MEOH_FERM-TE-01,MEOH_FERM,MEOH,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),MEOH_FERMTE-01,PLC-MEOH,band by service
 MEOH_FC-FT-01,MEOH_FC,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),MEOH_FCFT-01,PLC-MEOH,S81 normal 0.30 L/h
 MEOH_FC-FT-02,MEOH_FC,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),MEOH_FCFT-02,PLC-MEOH,S82 normal 0.36 L/h
-MEOH_FC-FT-03,MEOH_FC,MEOH,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),MEOH_FCFT-03,PLC-MEOH,IA-FC-EXH normal 0.00 L/h
 MEOH_FC-LSH-01,MEOH_FC,MEOH,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),MEOH_FCLSH-01,PLC-MEOH,alarm at 90 %
 MEOH_FC-LT-01,MEOH_FC,MEOH,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),MEOH_FCLT-01,PLC-MEOH,A-M-182 liquid height
 MEOH_FC-PT-01,MEOH_FC,MEOH,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),MEOH_FCPT-01,PLC-MEOH,no design pressure on the graph
