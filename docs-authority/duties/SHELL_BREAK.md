@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 10 kg/d. Mass out 10 kg/d. Electrical duty 0.4000 kW. In: INV_TO_BREAK 10 kg/d (cast + shell). Out: BREAK_TO_STOCK 2 kg/d (investment casting); SHELL_TO_GLASS 0 kg/d (spent ceramic shell to solids line); IA-SHELL-RECLAIM 7 kg/d (reclaimed shell stucco/flour); IA-SHELL-EXPORT 1 kg/d (spent foundry silica (solids return class)).
+1. Basis. Mass in 10 kg/d. Mass out 10 kg/d. Electrical duty 0.4000 kW. In: INV_TO_BREAK 10 kg/d (cast + shell). Out: BREAK_TO_STOCK 2 kg/d (investment casting); IA-SHELL-RECLAIM 7 kg/d (reclaimed shell stucco/flour); IA-SHELL-EXPORT 1 kg/d (spent foundry silica (solids return class)).
 
 2. Size.
 - Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 4320.0 h if it were full. It is not a residence time.

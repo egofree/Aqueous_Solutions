@@ -17,7 +17,7 @@ This page records the size of unit POLY_F, of class `reactor` in sector POLYMERS
 
 ## 2. Duty
 
-The unit takes 0.25 kg/d by 2 streams and gives 0.25 kg/d by 4 streams. Its continuous electrical load is 0.0449 kW, fed by stream SF-POLY_F.
+The unit takes 0.25 kg/d by 2 streams and gives 0.25 kg/d by 3 streams. Its continuous electrical load is 0.0449 kW, fed by stream SF-POLY_F.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

@@ -2263,8 +2263,17 @@
      "carries": "cake-kiln lime residue as the lime-cycle make-up"
     },
     {
+     "stream_id": "IA-MTO-H2O",
+     "from": "POLY_OLEFIN",
+     "to": "MEOH_COND",
+     "other_sector": "MEOH",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "methanol-to-olefin reaction water"
+    },
+    {
      "stream_id": "MEOH_TO_OLEFIN",
-     "from": "MEOH_SYNTH",
+     "from": "MEOH_TANK",
      "to": "POLY_OLEFIN",
      "other_sector": "MEOH",
      "rate": 0.0,
@@ -7449,8 +7458,17 @@
      "carries": "cell exhaust"
     },
     {
+     "stream_id": "IA-MTO-H2O",
+     "from": "POLY_OLEFIN",
+     "to": "MEOH_COND",
+     "other_sector": "POLYMERS",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "methanol-to-olefin reaction water"
+    },
+    {
      "stream_id": "MEOH_TO_OLEFIN",
-     "from": "MEOH_SYNTH",
+     "from": "MEOH_TANK",
      "to": "POLY_OLEFIN",
      "other_sector": "POLYMERS",
      "rate": 0.0,

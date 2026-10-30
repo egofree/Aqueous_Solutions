@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.03978 kg/d. Mass out 0.03978 kg/d. Electrical duty 0.1000 kW. In: SALT_TO_FLUX 0 kg/d (digester/leach salts to flux); IA-KROLL-FLUX 0.03978 kg/d (MgCl2-class salt drag-out (flux cover source)). Out: FLUX_TO_IND 0.03978 kg/d (flux).
+1. Basis. Mass in 0.03978 kg/d. Mass out 0.03978 kg/d. Electrical duty 0.1000 kW. In: IA-KROLL-FLUX 0.03978 kg/d (MgCl2-class salt drag-out (flux cover source)). Out: FLUX_TO_IND 0.03978 kg/d (flux).
 
 2. Size.
 - Envelope 800×600×1200 mm, 0.576 m³. That box over this flow would be 347502.6 h if it were full. It is not a residence time.

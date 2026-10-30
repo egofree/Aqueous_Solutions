@@ -198,7 +198,7 @@ Table 7.6. Photoresist streams at the present wafer starts
 
 ## 8. Drivers
 
-Table 8.1 lists the 972 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 973 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -537,6 +537,7 @@ Table 8.1. Drivers
 | atom_melt_rho_kg_m3 | 8000.0 | kg/m3 density of the atomised melt (Cu, Ni, Sn, Pb, Zn blend class) | A-M-416 | — |
 | standby_outage_d | 2.0 | d outage of a primary unit that a standby feed route covers; the N+1 outage basis of the foundry melt backups (A-M-283) | A-M-418 | — |
 | cast_gating_return_frac | 0.15 | - | ASM_V15_PM | yes |
+| olefin_feed_route | "NAPHTHA" | - polyolefin feed of POLY_OLEFIN: NAPHTHA (the C5-C10 cut oligomerised, drawn on IA-C5-POLY) or MTO (plant methanol from MEOH_TANK on MEOH_TO_OLEFIN, reaction water to MEOH_COND on IA-MTO-H2O) | A-M-435 | — |
 | atom_store_bar | 50.0 | bar argon receiver charge pressure; it discharges to the nozzle supply pressure atom_P_bar during a pour | A-M-416 | — |
 | mill_slab_t_mm | 10.0 | mm thickness of the cast slab entering the cold mill (ingot mould) | A-M-416 | — |
 | mill_slab_L_mm | 250.0 | mm length of the cast slab entering the cold mill (ingot mould) | A-M-416 | — |
@@ -1457,6 +1458,7 @@ Table 9.1. References
 | STRATHMANN2004 | Strathmann H., Ion-Exchange Membrane Separation Processes, Membrane Science and Technology Series 9, Elsevier (2004), ch. 4-5: reversible water-dissociation voltage of a bipolar membrane 0.059 V per pH unit (0.83 V at delta pH 14, 25 C); practical bipolar membrane voltage drop about 0.9-1.2 V at 100-200 A/m2; monopolar ion-exchange membrane area resistance about 2-5 ohm cm2 in 0.5 M NaCl; spacer shadow effect on solution resistance. |
 | SU2018_PYRO | Experimental study of thermal and catalytic pyrolysis of plastic waste components, Sustainability 10 (2018) 3979, doi:10.3390/su10113979: 460 C batch thermal pyrolysis oil, LDPE 24 % C7-C12 / 30 % C13-C20 / 46 % C21-C40; PP 44/33/23; liquid conversion 94 % LDPE, 86 % PP. |
 | TAIZ2015 | Taiz L., Zeiger E., Moller I.M., Murphy A., Plant Physiology and Development, 6th ed., Sinauer (2015), ch. 8-9: net photosynthesis CO2 + H2O -> (CH2O) + O2, photosynthetic quotient near 1.0; transpiration is the water taken up less the water fixed in biomass. |
+| TIAN2015 | Tian P., Wei Y., Ye M., Liu Z., Methanol to olefins (MTO): from fundamentals to commercialization, ACS Catalysis 5 (2015) 1922-1938: CH3OH to ethylene and propylene over SAPO-34 at 400-500 C with full methanol conversion; the water of reaction is one H2O per CH3OH, and the C4+ by-products are recycled or cracked |
 | TOWLER2013 | Towler G., Sinnott R., Chemical Engineering Design: Principles, Practice and Economics of Plant and Process Design, 2nd ed., Butterworth-Heinemann (2013): choice between batch and continuous operation; batch and campaign operation suit small production rates and multi-product trains. |
 | TREYBAL3 | Treybal R.E., Mass-Transfer Operations, 3rd ed., McGraw-Hill (1980), ch. 2-3 (film theory) and ch. 8 (gas absorption, HTU/NTU). |
 | TURNS2012 | Turns S.R., An Introduction to Combustion: Concepts and Applications, 3rd ed., McGraw-Hill (2012), ch. 2: stoichiometric oxidizer-fuel ratios for hydrocarbons, H2 and CO. |

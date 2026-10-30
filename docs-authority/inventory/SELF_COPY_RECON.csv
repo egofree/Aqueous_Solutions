@@ -722,7 +722,7 @@ GEO_ORC,Open vent DN25,1,316L if the stream is wet or chloride.,Missing,MET_MELT
 GLASS_BURNOUT,Body / envelope 800 x 600 x 1200 mm,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 GLASS_BURNOUT,Process nozzle DN15,2,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 GLASS_MILL,Body / envelope 800 x 600 x 800 mm,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-GLASS_MILL,Process nozzle DN15,5,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+GLASS_MILL,Process nozzle DN15,3,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 GLASS_RINSE,Body / envelope 1200 x 600 x 800 mm,1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 GLASS_RINSE,Process nozzle DN15,2,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 GOATS,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
@@ -797,11 +797,11 @@ LI_RECOVER,Process nozzle DN15,2,PP-H settling/carbonation vessel + PP agitator;
 LOAD_AGG,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 MAU_HX,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Aluminium-fin, copper-tube make-up-air heating coil (air side dry and above the ",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MEOH_COND,Body D400 x 600 mm,1,316L shell and coil (methanol/water traces) (graph node material).,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MEOH_COND,Process nozzle DN15,3,316L shell and coil (methanol/water traces) (graph node material).,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MEOH_COND,Process nozzle DN15,4,316L shell and coil (methanol/water traces) (graph node material).,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MEOH_FC,Body / envelope 1800 x 800 x 1600 mm,1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 MEOH_FC,Process nozzle DN15,6,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 MEOH_TANK,Body / envelope 600 x 600 x 600 mm,1,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MEOH_TANK,Process nozzle DN15,8,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MEOH_TANK,Process nozzle DN15,9,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MEOH_TANK,Process nozzle DN50,1,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 METAL_STORE,Body / envelope 800 x 800 x 950 mm,1,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 METAL_STORE,Process nozzle DN15,6,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
@@ -855,7 +855,7 @@ NUTRIENT_DOSE,Process nozzle DN50,1,PE (rotomoulded / fabricated) (graph node ma
 OIL_DRYER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_DRYER,Process nozzle DN15,2,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 OIL_FRAC,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
-OIL_FRAC,Process nozzle DN15,12,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
+OIL_FRAC,Process nozzle DN15,10,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 PEANUT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 PEANUT,Process nozzle DN15,6,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 PEANUT,Open vent DN25,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
@@ -913,7 +913,6 @@ ROOF_TANK,Process nozzle DN15,15,"PVC-U or HDPE, per AQS-STD-002 rule M1.",Parti
 S13_CLASS_TREAT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 S13_CLASS_TREAT,Open vent DN25,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 SALT_FEED,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-SALT_FEED,Process nozzle DN15,1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 SEED_BANK,Body / envelope 2000 x 2000 x 2200 mm,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 SEED_BANK,Process nozzle DN15,2,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 SEED_BANK,Open vent DN25,1,HDPE or PVC for the water.,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph

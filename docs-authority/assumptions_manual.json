@@ -7505,5 +7505,22 @@
    "docs-authority/_task_plan_gen.py"
   ],
   "needs_verification": false
+ },
+ {
+  "id": "A-M-435",
+  "value": "The polymer and foundry routes of task X-RTE that carry no flow are decided route by route. MEOH_TO_OLEFIN becomes the second olefin feed, selectable by olefin_feed_route: NAPHTHA (default) oligomerises the C5-C10 cut drawn on IA-C5-POLY, and MTO converts plant methanol drawn from MEOH_TANK, CH3OH -> (CH2) + H2O, with the reaction water to MEOH_COND on IA-MTO-H2O. The route not selected carries its rate as rated. CUT-1-OUT carries 94.8 kg/d rated, the C5-C10 reserve over crit_autonomy_d, when the hydrogen store is empty in an outage. POLISH_TO_LI waits on the lithium tenor of the polish liquor. DIGEST_TO_POLY, GLASS_MILL_TO_DIGEST, SHELL_TO_GLASS, WAX_TO_OIL, OIL_TO_OLEFIN, POLYF_TO_PELLET and SALT_TO_FLUX are retired because each duplicates a live route or has no source or product route.",
+  "units": "kg/d",
+  "where": "flow_graph/param/foundry_poly.py olefin feed; flow_graph/param/standby_routes.py ROUTES, RETIRE and WAIT; flow_graph/param/drivers.json olefin_feed_route",
+  "basis": "Owner decision of 2026-10-29 (X-RTE): a route without flow is given flow or retired, and where two valid designs exist both are built. NAPHTHA is the default on the merits: the cut is surplus that the plant ships, and oligomerisation needs no hydrogen, while MTO spends methanol made from electrolytic hydrogen and carbon dioxide. MTO gives the purer ethylene and propylene and is the choice if the cut is wanted elsewhere (TIAN2015). The generator reserve is from flow_graph/param/backup_fuel.py.",
+  "sensitivity": "In MTO mode the methanol product IA-MEOH-PROD falls by 2.29 kg of methanol per kg of resin, and IA-C5-SHIP rises by the naphtha no longer drawn.",
+  "replaced_by": "An owner choice of the olefin feed and the measured polish-liquor lithium tenor",
+  "task": "QA audit 2026-10-30, X-RTE polymer and foundry routes",
+  "files": [
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/standby_routes.py",
+   "flow_graph/param/drivers.json",
+   "docs-authority/_task_plan_gen.py"
+  ],
+  "needs_verification": false
  }
 ]

@@ -468,12 +468,12 @@ digraph G {
   "INV_CAST" -> "SHELL_BREAK" [label="INV_TO_BREAK\\n10.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SHELL_BREAK" -> "STOCK_OUT" [label="BREAK_TO_STOCK\\n2.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SHELL_BREAK" -> "GLASS_MILL" [label="SHELL_TO_GLASS\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GLASS_MILL" -> "GLASS_DIGEST" [label="GLASS_MILL_TO_DIGEST", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GLASS_MILL" -> "GLASS_DIGEST" [label="GLASS_MILL_TO_DIGEST\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MFG_SHOP" -> "IND_MELT" [label="MFG_SCRAP_TO_IND\\n26.161616 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SHELL_BURNOUT" -> "WAX_PATTERN" [label="WAX_RECLAIM_TO_PATTERN\\n1.8 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SHELL_BURNOUT" -> "OIL_FRAC" [label="WAX_TO_OIL\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "OIL_FRAC" -> "POLY_OLEFIN" [label="OIL_TO_OLEFIN\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MEOH_SYNTH" -> "POLY_OLEFIN" [label="MEOH_TO_OLEFIN\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MEOH_TANK" -> "POLY_OLEFIN" [label="MEOH_TO_OLEFIN\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BLACK_DIGEST" -> "POLY_COND" [label="DIGEST_TO_POLY\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_OLEFIN" -> "PELLET" [label="OLEFIN_TO_PELLET\\n0.294127 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_F" -> "PELLET" [label="POLYF_TO_PELLET\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -486,7 +486,7 @@ digraph G {
   "POLY_STOCK" -> "LEACH_CSTR_1" [label="POLY_TO_WET\\n0.026739 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRU" -> "VDF_SYN" [label="CRU_TO_VDF\\n0.332195 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CRU" -> "TFE_SYN" [label="CRU_TO_TFE\\n0.283567 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "POLISH_BANK" -> "LI_RECOVER" [label="POLISH_TO_LI", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "POLISH_BANK" -> "LI_RECOVER" [label="POLISH_TO_LI\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_C19_C28" -> "GREASE_CA" [label="WAX_TO_GREASE_CA\\n0.002489 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_C19_C28" -> "GREASE_LI" [label="WAX_TO_GREASE_LI\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "P_CA" -> "GREASE_CA" [label="PCA_TO_GREASE\\n3.5e-05 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -911,4 +911,5 @@ digraph G {
   "WS_SOLV" -> "WAFER_FAB" [label="IA-FAB-SOLV\\n0.21952 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WAFER_FAB" -> "ATMOS" [label="IA-FAB-N2-VENT\\n1.499799 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "RESIST_SYN" [label="SF-RESIST_SYN\\n0.00366 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "POLY_OLEFIN" -> "MEOH_COND" [label="IA-MTO-H2O\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

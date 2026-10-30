@@ -63,6 +63,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 GP = os.path.join(ROOT, 'flow_graph/plant_flow_graph.json')
 DOC_F, DOC_P = 'AQS-DUTY-072', 'AQS-DUTY-073'
 TAG = f'X-PAR-02 TF: foundry/polymers sizing ({DOC_F}/{DOC_P})'
+MW_MEOH, MW_CH2 = 32.042, 14.027                     # g/mol CH3OH and the CH2 polyolefin repeat unit (GREENWOOD / CRC)
 F = 96485.0                                          # C/mol, CODATA2018 class (refs.CODATA2018)
 MM = dict(Al=26.9815, Cl=35.453, Mg=24.305, Ca=40.078, Ti=47.867, O=15.9994, C=12.011,
           Mo=95.948, Cr=51.9962, H=1.008)            # GREENWOOD / CRC element mass table
@@ -572,11 +573,28 @@ def apply(g=None, write=False):
     put('OIL_TO_OLEFIN', 0.0,
         'Fractionator draw 0: the olefin feed draws as naphtha at the cut tank (IA-C5-POLY); the recovered-wax '
         f'path (WAX_TO_OIL) is 0 with the wax loop closing on reclaim (A-M-286). OIL_FRAC closes. | {TAG}.')
-    put('MEOH_TO_OLEFIN', 0.0,
-        'Methanol committed to the tank/ship balance (X-PAR-12 TF on S75); the olefin carbon source is the '
-        f'on-site C5-C10 naphtha cut (AQS-DES-POLY: carbon source on site). | {TAG}.')
+    # olefin feed (olefin_feed_route, A-M-435): NAPHTHA oligomerises the C5-C10 cut drawn at the tank on IA-C5-POLY; MTO
+    # converts plant methanol from MEOH_TANK, CH3OH -> (CH2) + H2O with the by-product hydrocarbons recycled to extinction
+    # (TIAN2015), and the reaction water goes to MEOH_COND on IA-MTO-H2O. The route not selected carries its rate as rated.
+    from .o2_close import _edge as _e2
+    if 'IA-MTO-H2O' not in E:
+        g['edges'].append(_e2('IA-MTO-H2O', 'POLY_OLEFIN', 'MEOH_COND', 'L', ['mass'], 'methanol-to-olefin reaction water', 0, 'kg/d',
+                              N['POLY_OLEFIN']['sector_id'], N['MEOH_COND']['sector_id'], {'water': 1.0})); E['IA-MTO-H2O'] = g['edges'][-1]
+    mto = DR.val(DR.load(), 'olefin_feed_route') == 'MTO'
+    m_meoh = spf * MW_MEOH / MW_CH2; m_w = m_meoh - spf
+    E['MEOH_TO_OLEFIN']['from_unit_id'] = 'MEOH_TANK'; E['MEOH_TO_OLEFIN']['from_sector_id'] = N['MEOH_TANK']['sector_id']
+    for sid, x, case in (('MEOH_TO_OLEFIN', m_meoh, 'olefin_feed_route = MTO'), ('IA-MTO-H2O', m_w, 'olefin_feed_route = MTO'),
+                         ('IA-C5-POLY', spf, 'olefin_feed_route = NAPHTHA')):
+        on = (sid == 'IA-C5-POLY') != mto
+        E[sid]['params'] = dict(E[sid].get('params') or {}, rate_rated_kg_d=round(x, 6), rated_case=case, rated_by='flow_graph/param/foundry_poly.py') if not on else \
+            {k: w for k, w in (E[sid].get('params') or {}).items() if k not in ('rate_rated_kg_d', 'rated_case', 'rated_by')}
+    put('MEOH_TO_OLEFIN', R(m_meoh) if mto else 0.0,
+        f'Methanol-to-olefin feed from MEOH_TANK: resin {spf:.4f} kg/d x {MW_MEOH}/{MW_CH2} (TIAN2015, A-M-435); '
+        f'{"selected" if mto else "rated, carried when olefin_feed_route = MTO"}. | {TAG}.')
+    put('IA-MTO-H2O', R(m_w) if mto else 0.0,
+        f'MTO reaction water, one H2O per CH3OH, to MEOH_COND (A-M-435); {"selected" if mto else "rated, carried when olefin_feed_route = MTO"}. | {TAG}.')
     put('OLEFIN_TO_PELLET', spf,
-        f'Polyolefin resin = naphtha feed {spf:.4f} kg/d (mass-conserving oligomerization, '
+        f'Polyolefin resin {spf:.4f} kg/d: the naphtha feed by mass-conserving oligomerization, or the CH2 of the MTO methanol (A-M-435) ('
         f'AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | {TAG}.')
     put('PELLET_TO_STOCK', spf, f'Pellet line passes the resin to stock. | {TAG}.')
     put('POLY_TO_MFG', sP,
@@ -616,7 +634,7 @@ def apply(g=None, write=False):
         g['edges'].append(src)
         E['IA-C5-POLY'] = src
     else:
-        put('IA-C5-POLY', spf, f'Polyolefin naphtha feed ({DOC_P}, A-M-264). | {TAG}.')
+        put('IA-C5-POLY', 0.0 if DR.val(DR.load(), 'olefin_feed_route') == 'MTO' else spf, f'Polyolefin naphtha feed ({DOC_P}, A-M-264; olefin_feed_route, A-M-435). | {TAG}.')
     cut1_out = float(s['E']['CUT-1-OUT']['rate']['value'] or 0)
     put('IA-C5-SHIP', R(float(s['E']['CUT-1']['rate']['value'] or 0)) - cut1_out - spf,
         f'X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset {cut1_out:.4f} and the '

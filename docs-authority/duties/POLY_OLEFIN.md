@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.2941 kg/d. Mass out 0.2941 kg/d. Electrical duty 0.0000 kW. In: OIL_TO_OLEFIN 0 kg/d (light cuts to polyolefin); MEOH_TO_OLEFIN 0 kg/d (methanol co-feed); IA-C5-POLY 0.2941 kg/d (C5-C10 naphtha olefin feed). Out: OLEFIN_TO_PELLET 0.2941 kg/d (polyolefin resin).
+1. Basis. Mass in 0.2941 kg/d. Mass out 0.2941 kg/d. Electrical duty 0.0000 kW. In: MEOH_TO_OLEFIN 0 kg/d (methanol co-feed); IA-C5-POLY 0.2941 kg/d (C5-C10 naphtha olefin feed). Out: OLEFIN_TO_PELLET 0.2941 kg/d (polyolefin resin); IA-MTO-H2O 0 kg/d (methanol-to-olefin reaction water).
 
 2. Size.
 - Envelope 600×600×1200 mm, 0.432 m³. That box over this flow would be 35250.1 h if it were full. It is not a residence time.

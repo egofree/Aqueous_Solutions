@@ -50,6 +50,11 @@ def _nit_vent(g, E, N, d):
     nm3_h = VT.out_breathing_Nm3_h(V, qi, DR.val(d, 'api2000_Y'))
     return nm3_h*24*SITE.air_density(0.0), f'the API 2000 out-breathing {nm3_h:.4f} Nm3/h of the {V:g} m3 tank for 24 h'
 
+def _gen_cut(g, E, N, d):
+    """BACKUP_GEN fallback fuel: the C5-C10 reserve held in PROD_C5_C10 (backup_fuel.py) burned over the critical-autonomy period."""
+    res = float(N['PROD_C5_C10']['params']['genset_reserve_kg']); aut = DR.val(d, 'crit_autonomy_d')
+    return res/aut, f'the {res:g} kg cut reserve over crit_autonomy_d {aut:g} d'
+
 # (standby route, primary route it stands in for or a rate function, rated case, store holds the outage feed)
 ROUTES = (
     ('STOCK_TO_WIRE_DRAW', 'S57', 'MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer', True),
@@ -64,6 +69,7 @@ ROUTES = (
     ('IA-ESS-HYDRO-CHG', _hydro, 'after a discharge the reservoir is pumped back up on the PV surplus (A-M-145)', False),
     ('IA-DC-SPRAY', _spray, 'the site heat-rejection mode is evaporative and the cooler rejects its rated duty on spray (X-LOC-13)', False),
     ('IA-DC-EVAP', _spray, 'the site heat-rejection mode is evaporative and the sprayed water evaporates at the cooler (X-LOC-13)', False),
+    ('CUT-1-OUT', _gen_cut, 'the hydrogen store is empty in an outage and BACKUP_GEN carries the critical list on the C5-C10 cut (A-M-435)', False),
     ('IA-NIT-VENT', _nit_vent, 'the nitric tank breathes out at its API 2000 normal venting rate (API2000_2020)', False),
 )
 
@@ -81,8 +87,19 @@ RETIRE = {
     'IA-FC-EXH': ('the methanol cell burns its fuel completely on stoichiometric oxygen, and its products leave as water on S81 and carbon dioxide on S82, so no exhaust remains', 'A-M-434'),
     'IA-H2-AIR': ('H2_DRYER is fed only by header hydrogen on IA-HDR-H2-02, so it has no sweep air to pass; hood sweep air is kept out of the hydrogen line', 'A-M-434'),
     'IA-LEACH-ASU': ('the leach has no degasser or compressor to send dissolved gas to the cold box, and its T5 closure solves to zero', 'A-M-434'),
+    # batch 44b, polymer and foundry routes (A-M-435)
+    'DIGEST_TO_POLY': ('POLY_COND has no product route, so digester organics sent to it could go nowhere; the digester closes on IA-BLK-GREY, IA-BLK-CAKE and IA-BLK-GAS', 'A-M-435'),
+    'GLASS_MILL_TO_DIGEST': ('the milled solids reach GLASS_DIGEST through GLASS_BURNOUT on IA-GLASS-02 and IA-GLASS-03, so a direct mill route duplicates them', 'A-M-435'),
+    'SHELL_TO_GLASS': ('the reusable spent shell is reclaimed as stucco on IA-SHELL-RECLAIM, and GLASS_DIGEST has no free capacity for the fines (A-M-267), which leave on IA-SHELL-EXPORT', 'A-M-435'),
+    'WAX_TO_OIL': ('the drainable wax returns to the patterns on WAX_RECLAIM_TO_PATTERN, and the wax left soaked in the shell burns in place in the burnout, so no wax remains to send to OIL_FRAC', 'A-M-435'),
+    'OIL_TO_OLEFIN': ('the olefin feed is drawn as naphtha at the cut tank on IA-C5-POLY, so a fractionator draw duplicates it', 'A-M-435'),
+    'POLYF_TO_PELLET': ('the fluoropolymers go to FILM_CAST and POWDER_RESIN by the demand table (A-M-289), and PELLET is the polyolefin line', 'A-M-435'),
+    'SALT_TO_FLUX': ('SALT_FEED has no feed route, and the flux is the Kroll salt drag-out on IA-KROLL-FLUX', 'A-M-435'),
     'S18': ('the afterburner carbon dioxide reaches the cold box on S67 and S67B through FLUE_KO, so this claim id duplicates them', 'A-M-434'),
 }
+
+# Routes that wait on a measurement: zero until the measured value is set (listed under X-RTE-ASSAY)
+WAIT = {'POLISH_TO_LI': 'X-RTE waits on assay: the lithium tenor of the polish liquor (notes/DIGESTER_LI.md) sets the lithium that LI_RECOVER can take for the LI grease thickener (A-M-429, A-M-435)'}
 
 def design(g, d=None):
     d = d or DR.load(); od = DR.val(d, 'standby_outage_d')
@@ -113,6 +130,9 @@ def tf(g, d=None):
         e['params'] = p
         e['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study',
                      'note': f"{TAG}: zero on the design day; rated {row['rated_kg_d']:.4f} kg/d ({row['backs_up']}) when {row['case']}, for {row['outage_d']:g} d (standby_routes.py)."}
+    for sid, why in WAIT.items():
+        if sid in E and E[sid].get('presence') == 'present':
+            E[sid]['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study', 'note': why + '.'}
     for sid, why in RETIRE.items():
         why, am = why if isinstance(why, tuple) else (why, 'A-M-433')
         if sid in E:

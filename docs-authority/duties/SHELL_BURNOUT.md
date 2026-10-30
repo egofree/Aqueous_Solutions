@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 10 kg/d. Mass out 10 kg/d. Electrical duty 0.2500 kW. In: SHELL_TO_BURNOUT 10 kg/d (green shell). Out: BURNOUT_TO_CAST 8 kg/d (fired shell); WAX_RECLAIM_TO_PATTERN 1.8 kg/d (wax condensate reclaim); WAX_TO_OIL 0 kg/d (unrecovered wax to oil line); IA-BURNOUT-VENT 0.2 kg/d (dewax/burnout off-gas (burned wax + steam)).
+1. Basis. Mass in 10 kg/d. Mass out 10 kg/d. Electrical duty 0.2500 kW. In: SHELL_TO_BURNOUT 10 kg/d (green shell). Out: BURNOUT_TO_CAST 8 kg/d (fired shell); WAX_RECLAIM_TO_PATTERN 1.8 kg/d (wax condensate reclaim); IA-BURNOUT-VENT 0.2 kg/d (dewax/burnout off-gas (burned wax + steam)).
 
 2. Size.
 - Envelope 1000×1000×1500 mm, 1.5 m³. That box over this flow would be 3600.0 h if it were full. It is not a residence time.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 26.65 kg/d. Mass out 26.65 kg/d. Electrical duty 0.0000 kW. In: S81 7.251 kg/d (MeOH FC condensate); IA-MEOH-H2O 19.4 kg/d (synthesis water). Out: IA-MEOH-COND 26.65 kg/d (methanol condensate).
+1. Basis. Mass in 26.65 kg/d. Mass out 26.65 kg/d. Electrical duty 0.0000 kW. In: S81 7.251 kg/d (MeOH FC condensate); IA-MEOH-H2O 19.4 kg/d (synthesis water); IA-MTO-H2O 0 kg/d (methanol-to-olefin reaction water). Out: IA-MEOH-COND 26.65 kg/d (methanol condensate).
 
 2. Size.
 - Envelope 400×400×600 mm, 0.0960 m³. That box over this flow would be 86.4 h if it were full. It is not a residence time.

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 36.82 kg/d. Mass out 36.82 kg/d. Electrical duty 0.0000 kW. In: IA-GLASS-01 36.82 kg/d (rinsed cullet); SHELL_TO_GLASS 0 kg/d (spent ceramic shell to solids line). Out: IA-GLASS-02 30 kg/d (milled cullet); IA-MILL-LOSS 6.82 kg/d (mill dust).
+1. Basis. Mass in 36.82 kg/d. Mass out 36.82 kg/d. Electrical duty 0.0000 kW. In: IA-GLASS-01 36.82 kg/d (rinsed cullet). Out: IA-GLASS-02 30 kg/d (milled cullet); IA-MILL-LOSS 6.82 kg/d (mill dust).
 
 2. Size.
 - Envelope 800×600×800 mm, 0.3840 m³. That box over this flow would be 250.3 h if it were full. It is not a residence time.

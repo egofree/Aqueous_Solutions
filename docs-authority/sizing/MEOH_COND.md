@@ -17,7 +17,7 @@ This page records the size of unit MEOH_COND, of class `separator` in sector MEO
 
 ## 2. Duty
 
-The unit takes 26.6522 kg/d by 2 streams and gives 26.6522 kg/d by 1 stream.
+The unit takes 26.6522 kg/d by 3 streams and gives 26.6522 kg/d by 1 stream.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

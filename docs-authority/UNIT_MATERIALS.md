@@ -17,23 +17,23 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 197 units, 142 have an issued material for each wetted stream, 55 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 352 wetted stream ends, and each resolves to an issued service family.
+Of the 197 units, 141 have an issued material for each wetted stream, 56 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 350 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
 
 The following service families of AQS-STD-002 are used, with the number of stream ends in each.
 
-- Acid or brine, at or below 60 C: 55 stream ends.
+- Acid or brine, at or below 60 C: 54 stream ends.
 - Hot leach liquor: 46 stream ends.
 - Process vent gas: 44 stream ends.
 - Dry gas, H2/O2/N2/CO2: 41 stream ends.
-- Hydrocarbon product, fuel or wax cut: 22 stream ends.
+- Hydrocarbon product, fuel or wax cut: 20 stream ends.
 - Aqueous process liquor (AQS-ASSAY-001 envelope): 19 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
+- Wet methanol service: 14 stream ends.
 - Wet acid H₂ + sweep air header: 14 stream ends.
 - Oxidizer, wet HF or PVDF unit: 13 stream ends.
-- Wet methanol service: 13 stream ends.
 - Q1/Q2 thermal oil: 12 stream ends.
 - Water loops (protective, irrigation, UPW): 12 stream ends.
 - Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 11 stream ends.
@@ -142,7 +142,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | S30 | BLACK_DIGEST | NUTRIENT_DOSE | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
-| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | HAB_BLACK | HABITATION | BLACK_DIGEST | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-BLK-01 | HABITATION | BLACK_DIGEST | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-BLK-GAS | BLACK_DIGEST | AFTERBURNER | P3 | 12.1 process vent gas | PVDF (P3) |
@@ -917,6 +916,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 |---|---|---|---|---|---|
 | S81 | MEOH_FC | MEOH_COND | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | IA-MEOH-H2O | MEOH_SYNTH | MEOH_COND | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
+| IA-MTO-H2O | POLY_OLEFIN | MEOH_COND | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 
 ### MEOH_FC
 
@@ -944,7 +944,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | S73 | CRYO_CO2 | MEOH_SYNTH | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | S74 | CRYO_H2 | MEOH_SYNTH | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | S75 | MEOH_SYNTH | MEOH_TANK | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
-| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | IA-MEOH-H2O | MEOH_SYNTH | MEOH_COND | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 
@@ -956,6 +955,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | S75 | MEOH_SYNTH | MEOH_TANK | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | S76 | MEOH_TANK | MEOH_FC | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | S77 | MEOH_FERM | MEOH_TANK | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
+| MEOH_TO_OLEFIN | MEOH_TANK | POLY_OLEFIN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | IA-MEOH-REST | MEOH_TANK | MEOH_FC | P5 | 12.1 water loops (protective, irrigation, upw) | HDPE per PIP-003 P5 |
 | IA-MEOH-PROD | MEOH_TANK | PROD_MEOH | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | MEOH_TO_VDF | MEOH_TANK | VDF_SYN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
@@ -1086,8 +1086,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-OIL-03 | OIL_FRAC | NCG_HEADER | P3 | 12.1 process vent gas | PVDF (P3) |
 | S38 | WET_BENCH | OIL_FRAC | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | S72B | MET_SCRUB | OIL_FRAC | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
-| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
-| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-RESIST-RAFF | RESIST_SYN | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 
@@ -1117,9 +1115,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 ### POLY_COND
 
-| Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
-|---|---|---|---|---|---|
-| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+This unit has no wetted piped stream: every edge is a solids transfer or an electrical connection. Its construction material is set by its fabrication route and bill of materials, which AQS-END-002 tracks, not by a wetted selection.
 
 ### POLY_F
 
@@ -1134,9 +1130,9 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
-| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
+| MEOH_TO_OLEFIN | MEOH_TANK | POLY_OLEFIN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-MTO-H2O | POLY_OLEFIN | MEOH_COND | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 
 ### POLY_STOCK
 
@@ -1411,7 +1407,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | WAX_RECLAIM_TO_PATTERN | SHELL_BURNOUT | WAX_PATTERN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
-| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-BURNOUT-VENT | SHELL_BURNOUT | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### SINTER

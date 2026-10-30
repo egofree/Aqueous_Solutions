@@ -17,7 +17,7 @@ This page records the size of unit BLACK_DIGEST, of class `digest` in sector WTR
 
 ## 2. Duty
 
-The unit takes 22.7194 kg/d by 5 streams and gives 22.7194 kg/d by 5 streams. Its continuous electrical load is 0.1052 kW, fed by stream SF-BLACK_DIGEST.
+The unit takes 22.7194 kg/d by 5 streams and gives 22.7194 kg/d by 4 streams. Its continuous electrical load is 0.1052 kW, fed by stream SF-BLACK_DIGEST.
 
 The graph holds no design parameters for the unit.
 

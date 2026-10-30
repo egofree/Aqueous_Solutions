@@ -17,7 +17,7 @@ This page records the size of unit FLUX_PREP, of class `prep` in sector FOUNDRY,
 
 ## 2. Duty
 
-The unit takes 0.039781 kg/d by 2 streams and gives 0.039781 kg/d by 1 stream. Its continuous electrical load is 0.1 kW, fed by stream SF-FLUX_PREP.
+The unit takes 0.039781 kg/d by 1 stream and gives 0.039781 kg/d by 1 stream. Its continuous electrical load is 0.1 kW, fed by stream SF-FLUX_PREP.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

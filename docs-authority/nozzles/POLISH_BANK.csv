@@ -6,3 +6,4 @@ N4,DN15,Class 150,drain,bottom,50
 N5,DN15,Class 150,vent,top,800
 N6,DN15,Class 150,Polish bank liquor return to the continuous recycle,outlet,600
 N7,DN15,Class 150,raffinate after Mo cut,inlet,160
+N8,DN15,Class 150,Li-bearing polish liquor,outlet,600

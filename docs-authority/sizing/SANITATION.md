@@ -35,7 +35,6 @@ Table 2.2. Streams out of BLACK_DIGEST
 
 | Stream | To | Rate, kg/d |
 | --- | --- | --- |
-| DIGEST_TO_POLY | POLY_COND | 0.000 |
 | IA-BLK-GAS | AFTERBURNER | 0.099 |
 | IA-BLK-CAKE | AFTERBURNER | 0.670 |
 | IA-BLK-NUT | NUTRIENT_DOSE | 0.900 |

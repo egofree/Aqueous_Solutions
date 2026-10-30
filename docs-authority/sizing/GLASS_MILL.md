@@ -17,7 +17,7 @@ This page records the size of unit GLASS_MILL, of class `intra` in sector GLASS,
 
 ## 2. Duty
 
-The unit takes 36.82 kg/d by 2 streams and gives 36.82 kg/d by 2 streams.
+The unit takes 36.82 kg/d by 1 stream and gives 36.82 kg/d by 2 streams.
 
 The graph holds no design parameters for the unit.
 

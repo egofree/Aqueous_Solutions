@@ -17,7 +17,7 @@ This page records the size of unit SHELL_BREAK, of class `separator` in sector F
 
 ## 2. Duty
 
-The unit takes 10 kg/d by 1 stream and gives 10 kg/d by 4 streams. Its continuous electrical load is 0.4 kW, fed by stream SF-SHELL_BREAK.
+The unit takes 10 kg/d by 1 stream and gives 10 kg/d by 3 streams. Its continuous electrical load is 0.4 kW, fed by stream SF-SHELL_BREAK.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="630" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit POLY_OLEFIN · reactor · sector POLYMERS · present</text>
 <text x="24" y="54" font-size="10.5">design T 250 C</text>
-<text x="24" y="72" font-size="10.5">Edges 3 in + 1 out · valves 0 placed / 0 unplaced · instruments 5 (2 SIF) · nozzles 6</text>
+<text x="24" y="72" font-size="10.5">Edges 3 in + 2 out · valves 0 placed / 0 unplaced · instruments 5 (2 SIF) · nozzles 7</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -49,31 +49,37 @@
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N4</text>
 <line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,286 577,282 577,290" fill="#111"/>
-<text x="24" y="267" font-size="9" fill="#666" text-anchor="start">MEOH_SYNTH</text>
+<text x="24" y="267" font-size="9" fill="#666" text-anchor="start">MEOH_TANK</text>
 <text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">MEOH_TO_OLEFIN</text>
 <text x="24" y="299" font-size="10" text-anchor="start">0.0 kg/d · DN15 M1</text>
 <text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
-<line x1="430" y1="332" x2="577" y2="332" stroke="#111" stroke-width="1.6" class="edge-in"/>
-<polygon points="586,332 577,328 577,336" fill="#111"/>
+<line x1="430" y1="332" x2="577" y2="332" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-in"/>
+<polygon points="586,332 577,328 577,336" fill="#999"/>
 <text x="24" y="313" font-size="9" fill="#666" text-anchor="start">OIL_FRAC</text>
 <text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">OIL_TO_OLEFIN</text>
-<text x="24" y="345" font-size="10" text-anchor="start">0.0 kg/d · DN15 M2</text>
+<text x="24" y="345" font-size="10" text-anchor="start">0.0 kg/d · not in line list · absent</text>
 <text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
-<line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
+<line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
-<text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">PELLET</text>
-<text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">OLEFIN_TO_PELLET</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">0.3 kg/d · solids transfer</text>
-<text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N3</text>
+<text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">MEOH_COND</text>
+<text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-MTO-H2O</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">0.0 kg/d · DN15 M1</text>
+<text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N7</text>
+<line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
+<polygon points="1070,286 1061,282 1061,290" fill="#111"/>
+<text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">PELLET</text>
+<text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">OLEFIN_TO_PELLET</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">0.3 kg/d · solids transfer</text>
+<text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N3</text>
 <text x="24" y="428" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="438" font-size="9">Every incident graph edge is drawn: 3 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="438" font-size="9">Every incident graph edge is drawn: 3 in, 2 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="453" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/POLY_OLEFIN.csv.</text>
 <text x="24" y="468" font-size="9">Nozzles with no matching graph edge (service text): N5 drain; N6 vent</text>
 <text x="24" y="483" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
 <g id="aqs-title-block"><rect x="1116" y="520" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="537" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-POLY_OLEFIN</text>
 <text x="1124" y="554" font-size="9">P&amp;ID POLY_OLEFIN (reactor, POLYMERS sector)</text>
-<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 48a6a95d   Issued 2026-10-19</text>
+<text x="1124" y="571" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev d3ee665d   Issued 2026-10-19</text>
 <text x="1124" y="588" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="605" font-size="9">Graph SHA-256 07cbd43ee7237a14   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="605" font-size="9">Graph SHA-256 9bbfc2e51bc8cfae   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

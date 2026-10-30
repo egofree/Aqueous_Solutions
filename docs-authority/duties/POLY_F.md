@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.25 kg/d. Mass out 0.25 kg/d. Electrical duty 0.0449 kW. In: VDF_TO_POLY_F 0.15 kg/d (VDF monomer); TFE_TO_POLY_F 0.1 kg/d (TFE monomer). Out: POLYF_TO_PELLET 0 kg/d (PVDF/PTFE resin); POLYF_TO_POWDER 0.09 kg/d (fluoropolymer powder); POLYF_TO_FILM 0.14 kg/d (PVDF resin to the film/sheet line); POLYF_RECLAIM 0.02 kg/d (off-spec fluoropolymer scrap/rework).
+1. Basis. Mass in 0.25 kg/d. Mass out 0.25 kg/d. Electrical duty 0.0449 kW. In: VDF_TO_POLY_F 0.15 kg/d (VDF monomer); TFE_TO_POLY_F 0.1 kg/d (TFE monomer). Out: POLYF_TO_POWDER 0.09 kg/d (fluoropolymer powder); POLYF_TO_FILM 0.14 kg/d (PVDF resin to the film/sheet line); POLYF_RECLAIM 0.02 kg/d (off-spec fluoropolymer scrap/rework).
 
 2. Size.
 - Envelope 600×600×1200 mm, 0.432 m³. That box over this flow would be 41472.0 h if it were full. It is not a residence time.

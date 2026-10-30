@@ -664,7 +664,7 @@ def _rte_kind(e):
     n = ((e['rate'].get('note') or '') + ' ' + str(e.get('notes') or '')).lower()
     if e['to_unit_id'].startswith('RELIEF') or 'contingency' in n: return None          # relief and contingency routes are closed by design
     if e['stream_id'] in RTE_HELD: return 'held'                                      # owner hold: O2 ownership and greenhouse gas routes
-    if 'q-037' in n: return 'assay'                                                     # waits on the dense-grit assay AQS-ASSAY-TI-MO (A-M-427)
+    if 'q-037' in n or 'waits on assay' in n: return 'assay'                                                     # waits on the dense-grit assay AQS-ASSAY-TI-MO (A-M-427)
     if 'retired' in n: return 'retired'
     if e['stream_id'].endswith(('-RET', '_RETURN')) or 'no surplus' in n or 'no co2 recy' in n or 'return' in n and 'no ' in n: return 'return'
     if any(k in n for k in ('standby', 'n+1', 'held full', 'evaporat', 'optional', 'campaign event', 'upset vent', 'purge-only')): return 'standby'
@@ -687,17 +687,20 @@ RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_
             ('X-RTE-CAST_SCRAP_TO_IND', 'Route CAST_SCRAP_TO_IND: gating return to the melt', 'the gates and risers of the permanent-mold pours return to IND_MELT daily at cast_gating_return_frac of the pour, and the melt energy and heats include them (A-M-433)', 'flow_graph/param/foundry_poly.py'),
             ('X-RTE-RETIRED-43', 'Routes DRAW_TO_STOCK, SINTER_TO_STOCK, ATOM_TO_STOCK, COMB_OFFGAS, VAC_IND_TO_VAC_CAST and IA-N2-RET: retired', 'each duplicates another route or has no source that can give it flow, with the reason on the edge; set to presence retired (A-M-433)', 'flow_graph/param/standby_routes.py'),
             ('X-RTE-RETIRED-44A', 'Routes IA-EW1-H2, IA-EW2-H2, IA-FC-EXH, IA-H2-AIR, IA-LEACH-ASU and S18: retired', 'each duplicates a live route or has no source that can give it flow, with the reason on the edge; set to presence retired (A-M-434)', 'flow_graph/param/standby_routes.py'),
+            ('X-RTE-RETIRED-44B', 'Routes DIGEST_TO_POLY, GLASS_MILL_TO_DIGEST, SHELL_TO_GLASS, WAX_TO_OIL, OIL_TO_OLEFIN, POLYF_TO_PELLET and SALT_TO_FLUX: retired', 'each duplicates a live route or has no source or product route, with the reason on the edge; set to presence retired (A-M-435)', 'flow_graph/param/standby_routes.py'),
+            ('X-RTE-MEOH_TO_OLEFIN', 'Route MEOH_TO_OLEFIN: methanol-to-olefin as the selectable olefin feed', 'olefin_feed_route selects the naphtha oligomerisation (default) or methanol-to-olefin from MEOH_TANK with its water to MEOH_COND; the route not selected carries its rated rate (A-M-435)', 'flow_graph/param/foundry_poly.py'),
             ('X-RTE-UPW_TO_FAB', 'Route UPW_TO_FAB: retired as a duplicate', 'IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired', 'flow_graph/plant_flow_graph.json')]
 RTE_DONE += [(f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']}: standby at its rated case",
              f"the route carries {_e['params']['rate_rated_kg_d']:g} kg/d when {_e['params']['rated_case']} (A-M-418)", _e['params'].get('rated_by', 'flow_graph/param/standby_routes.py'))
-             for _e in sorted((x for x in g['edges'] if x.get('presence') == 'present'), key=lambda e: e['stream_id']) if (_e.get('params') or {}).get('rate_rated_kg_d')]
+             for _e in sorted((x for x in g['edges'] if x.get('presence') == 'present'), key=lambda e: e['stream_id'])
+             if (_e.get('params') or {}).get('rate_rated_kg_d') and f"X-RTE-{_e['stream_id']}" not in {t for t, *_ in RTE_DONE}]
 _rte_items = [(tid, t, crit, '—', ev) for tid, t, crit, ev in RTE_DONE]
 for _e in sorted(_RTE['open'], key=lambda e: e['stream_id']):
     _rte_items.append((f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']} carries no flow",
                        'the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason', 'X-PAR-02', None))
 for _k, _t, _c in (('standby', 'Standby routes without a rated case', 'each standby, N+1 or site-mode route carries the rate of the case that puts it in service, so its line and both units are sized for it'),
                    ('return', 'Return routes without flow', 'each return route is shown to be needed, with the case that uses it and its rate, or it is retired'),
-                   ('assay', 'Routes waiting on the dense-grit assay', 'the float-sink grit and cell slag routes carry the rates that the AQS-ASSAY-TI-MO assay drivers give (Q-037, A-M-427); until the assay is set they stay at zero'),
+                   ('assay', 'Routes waiting on an assay', 'the float-sink grit and cell slag routes carry the rates that the AQS-ASSAY-TI-MO assay drivers give (Q-037, A-M-427), and POLISH_TO_LI the lithium that the measured polish-liquor tenor gives (A-M-435); until then they stay at zero'),
                    ('held', 'Routes in areas the owner holds', 'the owner decides the O2 ownership and greenhouse gas routes and the EW cathode hydrogen; each is then given a rated case or retired. IA-H2P-H2O carries real flow once the cathode hydrogen carries its saturation water, which its edges already state in their composition but not in their rate (A-M-434)'),
                    ('retired', 'Routes noted as retired but still present', 'each route is set to presence retired on the graph, or given a rate')):
     if _RTE[_k]:

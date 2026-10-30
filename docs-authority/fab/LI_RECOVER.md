@@ -7,7 +7,7 @@ service line: see the duty sheet section 1 basis
 Internals: duty sheet: "3. Material. PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the" [docs-authority/duties/LI_RECOVER.md]
 Material: PP-H settling/carbonation vessel + PP agitator; PE slurry lines; 316L frame metal outside the wetted zone. (continues on the duty sheet)
 
-Nozzles: 3 process connections per docs-authority/nozzles/LI_RECOVER.csv
+Nozzles: 4 process connections per docs-authority/nozzles/LI_RECOVER.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

@@ -17,7 +17,7 @@ This page records the size of unit POLY_OLEFIN, of class `reactor` in sector POL
 
 ## 2. Duty
 
-The unit takes 0.294127 kg/d by 3 streams and gives 0.294127 kg/d by 1 stream.
+The unit takes 0.294127 kg/d by 2 streams and gives 0.294127 kg/d by 2 streams.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

@@ -17,7 +17,7 @@ This page records the size of unit POLY_COND, of class `reactor` in sector POLYM
 
 ## 2. Duty
 
-The unit takes 0 kg/d by 1 stream and gives 0 kg/d by 0 streams.
+No stream with a mass rate enters or leaves the unit on the graph.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

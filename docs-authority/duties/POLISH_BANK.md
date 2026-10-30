@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 3520 kg/d. Mass out 3520 kg/d. Electrical duty 0.0000 kW. In: IA-EW-09 3520 kg/d (EW tail to polish). Out: IA-POL-02 3303 kg/d (Polish bank liquor return to the continuous recycle); IA-POL-CAKE 217.4 kg/d (recovered cake).
+1. Basis. Mass in 3520 kg/d. Mass out 3520 kg/d. Electrical duty 0.0000 kW. In: IA-EW-09 3520 kg/d (EW tail to polish). Out: IA-POL-02 3303 kg/d (Polish bank liquor return to the continuous recycle); POLISH_TO_LI 0 kg/d (Li-bearing polish liquor); IA-POL-CAKE 217.4 kg/d (recovered cake).
 
 2. Size.
 - V = (3971.1/1000)×(0.5/24) = 0.0827 m³. 30 min.

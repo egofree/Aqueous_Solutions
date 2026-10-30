@@ -2133,6 +2133,11 @@
   "needs_verification": true,
   "verification_test": "weigh the gates and risers cut from a week of permanent-mold copper pours against the poured mass"
  },
+ "olefin_feed_route": {
+  "value": "NAPHTHA",
+  "units": "- polyolefin feed of POLY_OLEFIN: NAPHTHA (the C5-C10 cut oligomerised, drawn on IA-C5-POLY) or MTO (plant methanol from MEOH_TANK on MEOH_TO_OLEFIN, reaction water to MEOH_COND on IA-MTO-H2O)",
+  "register": "A-M-435"
+ },
  "atom_store_bar": {
   "value": 50.0,
   "units": "bar argon receiver charge pressure; it discharges to the nozzle supply pressure atom_P_bar during a pour",

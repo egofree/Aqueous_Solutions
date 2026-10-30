@@ -58,7 +58,6 @@ Table 3.1. Water train streams
 | IA-ZNBR-BD | `ZNBR2` | `GREY_TREAT` | electrolyte bleed | 8.49 kg/d |
 | S12 | `HABITATION` | `GREY_TREAT` | grey/solids | 319.60 kg/d |
 | S29 | `GREY_TREAT` | `VCD_TRAIN` | treated grey | 104.50 kg/d |
-| DIGEST_TO_POLY | `BLACK_DIGEST` | `POLY_COND` | digester organics | 0.00 kg/d |
 | HAB_BLACK | `HABITATION` | `BLACK_DIGEST` | black water | no rate |
 | IA-BLK-01 | `HABITATION` | `BLACK_DIGEST` | vacuum-toilet blackwater | 19.64 kg/d |
 | IA-BLK-CAKE | `BLACK_DIGEST` | `AFTERBURNER` | dewatered digestate cake to incineration (barrier 2) | 0.67 kg/d |

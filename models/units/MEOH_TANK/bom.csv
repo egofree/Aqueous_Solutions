@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope 600 x 600 x 600 mm,1,"SA-240 304L, welded (graph node material).",docs-authority/duties/MEOH_TANK.md
-2,Process nozzle DN15,8,"SA-240 304L, welded (graph node material).",one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,9,"SA-240 304L, welded (graph node material).",one per mass edge; DN from AQS-INV-003
 3,Process nozzle DN50,1,"SA-240 304L, welded (graph node material).",one per mass edge; DN from AQS-INV-003
 4,"Motor: on/off valve IA-MEOH-PROD (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: on/off valve IA-MEOH-REST (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005

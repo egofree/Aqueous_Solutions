@@ -17,7 +17,7 @@ This page records the size of unit POLISH_BANK, of class `polish` in sector DIGE
 
 ## 2. Duty
 
-The unit takes 3520.31 kg/d by 1 stream and gives 3520.31 kg/d by 2 streams.
+The unit takes 3520.31 kg/d by 1 stream and gives 3520.31 kg/d by 3 streams.
 
 The graph holds no design parameters for the unit.
 

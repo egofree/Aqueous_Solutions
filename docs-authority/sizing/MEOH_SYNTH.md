@@ -17,7 +17,7 @@ This page records the size of unit MEOH_SYNTH, of class `reactor` in sector MEOH
 
 ## 2. Duty
 
-The unit takes 53.9096 kg/d by 3 streams and gives 53.9096 kg/d by 3 streams. Its continuous electrical load is 0.7388 kW, fed by stream SF-MEOH_SYNTH.
+The unit takes 53.9096 kg/d by 3 streams and gives 53.9096 kg/d by 2 streams. Its continuous electrical load is 0.7388 kW, fed by stream SF-MEOH_SYNTH.
 
 The graph holds no design parameters for the unit.
 

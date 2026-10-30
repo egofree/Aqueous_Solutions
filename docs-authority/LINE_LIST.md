@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-612 edges: 352 piped, 139 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 97.
+606 edges: 350 piped, 135 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 95.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 39: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, NAOH_PLANT, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, P_CA, RESIST_SYN, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, SOLV_PLANT, TFE_SYN, TI_CELL, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 38: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, NAOH_PLANT, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, P_CA, RESIST_SYN, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, SOLV_PLANT, TFE_SYN, TI_CELL, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -193,7 +193,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | STOCK_TO_MFG | METAL_STORE | MFG_SHOP | solids | — | — |  | METAL_STORE → MFG_SHOP, position missing for METAL_STORE | solids: conveyor, bin or hand transfer; not piped |
 | STOCK_TO_FAB | METAL_STORE | WAFER_FAB | solids | — | — |  | METAL_STORE → WAFER_FAB, position missing for METAL_STORE | solids: conveyor, bin or hand transfer; not piped |
 | FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | solids | — | — |  | IND_MELT → LEACH_CSTR_1, position missing for IND_MELT | solids: conveyor, bin or hand transfer; not piped |
-| SALT_TO_FLUX | SALT_FEED | FLUX_PREP | solids | — | — |  | SALT_FEED → FLUX_PREP, position missing for FLUX_PREP | solids: conveyor, bin or hand transfer; not piped |
 | AL_POT_TO_IND | AL_POT | IND_MELT | solids | — | — |  | AL_POT → IND_MELT, position missing for AL_POT, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | MG_POT_TO_IND | MG_POT | IND_MELT | solids | — | — |  | MG_POT → IND_MELT, position missing for MG_POT, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | CA_POT_TO_IND | CA_POT | IND_MELT | solids | — | — |  | CA_POT → IND_MELT, position missing for CA_POT, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
@@ -209,16 +208,10 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | VAC_TO_INV | VAC_IND | INV_CAST | DN15 | — | molten metal launder/pour (not piped) |  | VAC_IND → INV_CAST, position missing for VAC_IND, INV_CAST | velocity 1 m/s, ρ 1000; min DN15 |
 | INV_TO_BREAK | INV_CAST | SHELL_BREAK | solids | — | — |  | INV_CAST → SHELL_BREAK, position missing for INV_CAST, SHELL_BREAK | solids: conveyor, bin or hand transfer; not piped |
 | BREAK_TO_STOCK | SHELL_BREAK | STOCK_OUT | solids | — | — |  | SHELL_BREAK → STOCK_OUT, position missing for SHELL_BREAK, STOCK_OUT | solids: conveyor, bin or hand transfer; not piped |
-| SHELL_TO_GLASS | SHELL_BREAK | GLASS_MILL | solids | — | — |  | SHELL_BREAK → GLASS_MILL, position missing for SHELL_BREAK | solids: conveyor, bin or hand transfer; not piped |
-| GLASS_MILL_TO_DIGEST | GLASS_MILL | GLASS_DIGEST | solids | — | — | 6.7 | GLASS_MILL → GLASS_DIGEST, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | MFG_SCRAP_TO_IND | MFG_SHOP | IND_MELT | solids | — | — |  | MFG_SHOP → IND_MELT, position missing for IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | WAX_RECLAIM_TO_PATTERN | SHELL_BURNOUT | WAX_PATTERN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) |  | SHELL_BURNOUT → WAX_PATTERN, position missing for SHELL_BURNOUT, WAX_PATTERN | velocity 1 m/s, ρ 1000; min DN15 |
-| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) |  | SHELL_BURNOUT → OIL_FRAC, position missing for SHELL_BURNOUT | velocity 1 m/s, ρ 1000; min DN15 |
-| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) |  | OIL_FRAC → POLY_OLEFIN, position missing for POLY_OLEFIN | velocity 1 m/s, ρ 1000; min DN15 |
-| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | DN15 | M1 | wet methanol service (316L per unit duty sheets) |  | MEOH_SYNTH → POLY_OLEFIN, position missing for POLY_OLEFIN | velocity 1 m/s, ρ 1000; min DN15 |
-| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | DN15 | P1 | acid or brine, at or below 60 C |  | BLACK_DIGEST → POLY_COND, position missing for POLY_COND | velocity 1 m/s, ρ 1000; min DN15 |
+| MEOH_TO_OLEFIN | MEOH_TANK | POLY_OLEFIN | DN15 | M1 | wet methanol service (316L per unit duty sheets) |  | MEOH_TANK → POLY_OLEFIN, position missing for POLY_OLEFIN | velocity 1 m/s, ρ 1000; min DN15 |
 | OLEFIN_TO_PELLET | POLY_OLEFIN | PELLET | solids | — | — |  | POLY_OLEFIN → PELLET, position missing for POLY_OLEFIN, PELLET | solids: conveyor, bin or hand transfer; not piped |
-| POLYF_TO_PELLET | POLY_F | PELLET | solids | — | — |  | POLY_F → PELLET, position missing for POLY_F, PELLET | solids: conveyor, bin or hand transfer; not piped |
 | POLYF_TO_POWDER | POLY_F | POWDER_RESIN | solids | — | — |  | POLY_F → POWDER_RESIN, position missing for POLY_F, POWDER_RESIN | solids: conveyor, bin or hand transfer; not piped |
 | PELLET_TO_STOCK | PELLET | POLY_STOCK | solids | — | — |  | PELLET → POLY_STOCK, position missing for PELLET, POLY_STOCK | solids: conveyor, bin or hand transfer; not piped |
 | POWDER_TO_STOCK | POWDER_RESIN | POLY_STOCK | solids | — | — |  | POWDER_RESIN → POLY_STOCK, position missing for POWDER_RESIN, POLY_STOCK | solids: conveyor, bin or hand transfer; not piped |
@@ -629,3 +622,4 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-FAB-SOLV | WS_SOLV | WAFER_FAB | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 12.3 | WS_SOLV → WAFER_FAB, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-FAB-N2-VENT | WAFER_FAB | ATMOS | DN15 | P3 | process vent gas |  | WAFER_FAB → ATMOS, position missing for ATMOS | velocity 10 m/s, ρ 1.2; min DN15 |
 | SF-RESIST_SYN | SOL_ARK_60K | RESIST_SYN | cable | — | — |  | SOL_ARK_60K → RESIST_SYN, position missing for RESIST_SYN | electrical: cable schedule X-ELS-06 |
+| IA-MTO-H2O | POLY_OLEFIN | MEOH_COND | DN15 | M1 | wet methanol service (316L per unit duty sheets) |  | POLY_OLEFIN → MEOH_COND, position missing for POLY_OLEFIN | velocity 1 m/s, ρ 1000; min DN15 |

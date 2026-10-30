@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.2941 kg/d. Mass out 0.2941 kg/d. Electrical duty 0.0000 kW. In: OLEFIN_TO_PELLET 0.2941 kg/d (polyolefin resin); POLYF_TO_PELLET 0 kg/d (PVDF/PTFE resin). Out: PELLET_TO_STOCK 0.2941 kg/d (pellet stock).
+1. Basis. Mass in 0.2941 kg/d. Mass out 0.2941 kg/d. Electrical duty 0.0000 kW. In: OLEFIN_TO_PELLET 0.2941 kg/d (polyolefin resin). Out: PELLET_TO_STOCK 0.2941 kg/d (pellet stock).
 
 2. Size.
 - Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 146875.3 h if it were full. It is not a residence time.

@@ -17,7 +17,7 @@ This page records the size of unit OIL_FRAC, of class `frac` in sector OIL, from
 
 ## 2. Duty
 
-The unit takes 34.887 kg/d by 6 streams and gives 34.887 kg/d by 6 streams.
+The unit takes 34.887 kg/d by 5 streams and gives 34.887 kg/d by 5 streams.
 
 The graph holds no design parameters for the unit.
 

@@ -17,7 +17,7 @@ This page records the size of unit SALT_FEED, of class `feed` in sector DIGESTER
 
 ## 2. Duty
 
-The unit takes 0 kg/d by 0 streams and gives 0 kg/d by 1 stream.
+No stream with a mass rate enters or leaves the unit on the graph.
 
 The graph holds no design parameters for the unit.
 

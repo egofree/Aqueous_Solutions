@@ -12806,7 +12806,7 @@
       "from_unit_id": "SALT_FEED",
       "to_unit_id": "FLUX_PREP",
       "phase": "S",
-      "presence": "present",
+      "presence": "retired",
       "carries": "digester/leach salts to flux",
       "notes": "Integration edge. Rate TBD.",
       "namespace": "IA",
@@ -12818,7 +12818,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "SALT_FEED stays a stub source: the flux feed is the Kroll drag-out (A-M-284). | {TAG}."
+        "note": "X-RTE retired 2026-10-30 (A-M-435): SALT_FEED has no feed route, and the flux is the Kroll salt drag-out on IA-KROLL-FLUX."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "FOUNDRY"
@@ -13273,7 +13273,7 @@
       "from_unit_id": "SHELL_BREAK",
       "to_unit_id": "GLASS_MILL",
       "phase": "S",
-      "presence": "present",
+      "presence": "retired",
       "carries": "spent ceramic shell to solids line",
       "notes": "Investment casting baseline. Rate TBD.",
       "namespace": "IA",
@@ -13285,7 +13285,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Spent shell reclaims internally (IA-SHELL-RECLAIM) and exports the balance at the dock: GLASS_DIGEST is fully committed (A-M-267) so the solids line has no digest capacity for it. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-435): the reusable spent shell is reclaimed as stucco on IA-SHELL-RECLAIM, and GLASS_DIGEST has no free capacity for the fines (A-M-267), which leave on IA-SHELL-EXPORT."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "GLASS"
@@ -13295,7 +13295,7 @@
       "from_unit_id": "GLASS_MILL",
       "to_unit_id": "GLASS_DIGEST",
       "phase": "S",
-      "presence": "present",
+      "presence": "retired",
       "carries": "milled shell into digest",
       "notes": "Investment casting baseline. Rate TBD.",
       "namespace": "IA",
@@ -13304,10 +13304,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE retired 2026-10-30 (A-M-435): the milled solids reach GLASS_DIGEST through GLASS_BURNOUT on IA-GLASS-02 and IA-GLASS-03, so a direct mill route duplicates them."
       },
       "from_sector_id": "GLASS",
       "to_sector_id": "GLASS"
@@ -13361,7 +13361,7 @@
       "from_unit_id": "SHELL_BURNOUT",
       "to_unit_id": "OIL_FRAC",
       "phase": "L",
-      "presence": "present",
+      "presence": "retired",
       "carries": "unrecovered wax to oil line",
       "notes": "Foundry I/O. Rate per notes/FOUNDRY_SIZING.md.",
       "namespace": "IA",
@@ -13373,7 +13373,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Unrecovered wax (0.20 kg/d) burns in the flash-dewax firebox (A-M-286); no oil-line draw. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-435): the drainable wax returns to the patterns on WAX_RECLAIM_TO_PATTERN, and the wax left soaked in the shell burns in place in the burnout, so no wax remains to send to OIL_FRAC."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "OIL"
@@ -13383,7 +13383,7 @@
       "from_unit_id": "OIL_FRAC",
       "to_unit_id": "POLY_OLEFIN",
       "phase": "L",
-      "presence": "present",
+      "presence": "retired",
       "carries": "light cuts to polyolefin",
       "notes": "Polymers sector. Rate TBD.",
       "namespace": "IA",
@@ -13395,14 +13395,14 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Fractionator draw 0: the olefin feed draws as naphtha at the cut tank (IA-C5-POLY); the recovered-wax path (WAX_TO_OIL) is 0 with the wax loop closing on reclaim (A-M-286). OIL_FRAC closes. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-435): the olefin feed is drawn as naphtha at the cut tank on IA-C5-POLY, so a fractionator draw duplicates it."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "POLYMERS"
     },
     {
       "stream_id": "MEOH_TO_OLEFIN",
-      "from_unit_id": "MEOH_SYNTH",
+      "from_unit_id": "MEOH_TANK",
       "to_unit_id": "POLY_OLEFIN",
       "phase": "L",
       "presence": "present",
@@ -13417,17 +13417,22 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Methanol committed to the tank/ship balance (X-PAR-12 TF on S75); the olefin carbon source is the on-site C5-C10 naphtha cut (AQS-DES-POLY: carbon source on site). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Methanol-to-olefin feed from MEOH_TANK: resin 0.2941 kg/d x 32.042/14.027 (TIAN2015, A-M-435); rated, carried when olefin_feed_route = MTO. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "MEOH",
-      "to_sector_id": "POLYMERS"
+      "to_sector_id": "POLYMERS",
+      "params": {
+        "rate_rated_kg_d": 0.671877,
+        "rated_case": "olefin_feed_route = MTO",
+        "rated_by": "flow_graph/param/foundry_poly.py"
+      }
     },
     {
       "stream_id": "DIGEST_TO_POLY",
       "from_unit_id": "BLACK_DIGEST",
       "to_unit_id": "POLY_COND",
       "phase": "L",
-      "presence": "present",
+      "presence": "retired",
       "carries": "digester organics",
       "notes": "Polymers sector. Rate TBD.",
       "namespace": "IA",
@@ -13439,7 +13444,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "POLY_COND recipe waits on the digester organic assay (AQS-DES-POLY / AQS-SIZE-OIL-POLY: no rate treated as design); BLACK_DIGEST closes on IA-BLK-GREY. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-435): POLY_COND has no product route, so digester organics sent to it could go nowhere; the digester closes on IA-BLK-GREY, IA-BLK-CAKE and IA-BLK-GAS."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "POLYMERS"
@@ -13461,7 +13466,7 @@
         "value": 0.294127,
         "unit": "kg/d",
         "status": "study",
-        "note": "Polyolefin resin = naphtha feed 0.2941 kg/d (mass-conserving oligomerization, AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Polyolefin resin 0.2941 kg/d: the naphtha feed by mass-conserving oligomerization, or the CH2 of the MTO methanol (A-M-435) (AQS-SIZE-OIL-POLY POLY_OLEFIN 150-250 C / 1-5 MPa). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -13471,7 +13476,7 @@
       "from_unit_id": "POLY_F",
       "to_unit_id": "PELLET",
       "phase": "S",
-      "presence": "present",
+      "presence": "retired",
       "carries": "PVDF/PTFE resin",
       "notes": "Polymers sector. Rate TBD.",
       "namespace": "IA",
@@ -13483,7 +13488,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Pellet path rides the olefin line; the fluoropolymer products go to FILM_CAST (PVDF sheet) and POWDER_RESIN (PTFE) per the AQS-RATE-FP-MET demand table (A-M-289)."
+        "note": "X-RTE retired 2026-10-30 (A-M-435): the fluoropolymers go to FILM_CAST and POWDER_RESIN by the demand table (A-M-289), and PELLET is the polyolefin line."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS"
@@ -13704,10 +13709,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE waits on assay: the lithium tenor of the polish liquor (notes/DIGESTER_LI.md) sets the lithium that LI_RECOVER can take for the LI grease thickener (A-M-429, A-M-435)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER"
@@ -18437,14 +18442,22 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same mass as CUT-1. The generator draws the tank, not the column. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: genset fallback fuel (priority 2): zero in normal operation; drawn when hydrogen is short (AQS-PAR-005)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 94.8000 kg/d (the 189.6 kg cut reserve over crit_autonomy_d 2 d) when the hydrogen store is empty in an outage and BACKUP_GEN carries the critical list on the C5-C10 cut (A-M-435), for 2 d (standby_routes.py). | X-PAR-12 TF: genset fallback fuel (priority 2): zero in normal operation; drawn when hydrogen is short (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "ELEC",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "params": {
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 94.8,
+        "rated_case": "the hydrogen store is empty in an outage and BACKUP_GEN carries the critical list on the C5-C10 cut (A-M-435)",
+        "backs_up": "the 189.6 kg cut reserve over crit_autonomy_d 2 d",
+        "outage_d": 2.0,
+        "basis": "A-M-418; A-M-433; flow_graph/param/standby_routes.py"
+      }
     },
     {
       "stream_id": "CUT-3-OUT",
@@ -21793,7 +21806,7 @@
         "value": 0.294127,
         "unit": "kg/d",
         "status": "study",
-        "note": "Polyolefin naphtha feed (AQS-DUTY-073, A-M-264). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Polyolefin naphtha feed (AQS-DUTY-073, A-M-264; olefin_feed_route, A-M-435). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "POLYMERS",
@@ -21803,7 +21816,8 @@
       "notes": "Created by the polymers sizing pass: the olefin feed draws as naphtha at the cut tank (AQS-SIZE-OIL-POLY); the fractionator-side OIL_TO_OLEFIN stays 0 so OIL_FRAC closes.",
       "composition": {
         "C5-C10": 1.0
-      }
+      },
+      "params": {}
     },
     {
       "stream_id": "SQ-EVAP_ACID",
@@ -26428,6 +26442,40 @@
       "gap_flags": [],
       "notes": null,
       "composition": null
+    },
+    {
+      "stream_id": "IA-MTO-H2O",
+      "from_unit_id": "POLY_OLEFIN",
+      "to_unit_id": "MEOH_COND",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "methanol-to-olefin reaction water",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "MTO reaction water, one H2O per CH3OH, to MEOH_COND (A-M-435); rated, carried when olefin_feed_route = MTO. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "MEOH",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "water": 1.0
+      },
+      "params": {
+        "rate_rated_kg_d": 0.37775,
+        "rated_case": "olefin_feed_route = MTO",
+        "rated_by": "flow_graph/param/foundry_poly.py"
+      }
     }
   ],
   "view_presets": [

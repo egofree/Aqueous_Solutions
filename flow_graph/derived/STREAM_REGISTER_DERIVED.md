@@ -197,7 +197,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | STOCK_TO_MFG | METAL_STORE | MFG_SHOP | S | mass | present | plate/rod/wire to manufacturing | 25.9 kg/d | — |
 | STOCK_TO_FAB | METAL_STORE | WAFER_FAB | S | mass | present | electronic-grade silicon CZ charge from the store | 0.226363 kg/d | — |
 | FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | S | mass | present | slag return | 0.330241 kg/d | — |
-| SALT_TO_FLUX | SALT_FEED | FLUX_PREP | S | mass | present | digester/leach salts to flux | 0.0 kg/d | — |
+| SALT_TO_FLUX | SALT_FEED | FLUX_PREP | S | mass | retired | digester/leach salts to flux | 0.0 kg/d | — |
 | AL_POT_TO_IND | AL_POT | IND_MELT | S | mass | present | Al metal | 10.0 kg/d | — |
 | MG_POT_TO_IND | MG_POT | IND_MELT | S | mass | present | Mg metal | 0.0056 kg/d | — |
 | CA_POT_TO_IND | CA_POT | IND_MELT | S | mass | present | Ca metal | 0.055069 kg/d | — |
@@ -216,16 +216,16 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | VAC_TO_INV | VAC_IND | INV_CAST | L | mass | present | reactive melt for investment pour | 0.0 kg/d | — |
 | INV_TO_BREAK | INV_CAST | SHELL_BREAK | S | mass | present | cast + shell | 10.0 kg/d | — |
 | BREAK_TO_STOCK | SHELL_BREAK | STOCK_OUT | S | mass | present | investment casting | 2.0 kg/d | — |
-| SHELL_TO_GLASS | SHELL_BREAK | GLASS_MILL | S | mass | present | spent ceramic shell to solids line | 0.0 kg/d | — |
-| GLASS_MILL_TO_DIGEST | GLASS_MILL | GLASS_DIGEST | S | mass | present | milled shell into digest | — | — |
+| SHELL_TO_GLASS | SHELL_BREAK | GLASS_MILL | S | mass | retired | spent ceramic shell to solids line | 0.0 kg/d | — |
+| GLASS_MILL_TO_DIGEST | GLASS_MILL | GLASS_DIGEST | S | mass | retired | milled shell into digest | 0.0 kg/d | — |
 | MFG_SCRAP_TO_IND | MFG_SHOP | IND_MELT | S | mass | present | manufacturing scrap return | 26.161616 kg/d | — |
 | WAX_RECLAIM_TO_PATTERN | SHELL_BURNOUT | WAX_PATTERN | L | mass | present | wax condensate reclaim | 1.8 kg/d | — |
-| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | L | mass | present | unrecovered wax to oil line | 0.0 kg/d | — |
-| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | L | mass | present | light cuts to polyolefin | 0.0 kg/d | — |
-| MEOH_TO_OLEFIN | MEOH_SYNTH | POLY_OLEFIN | L | mass | present | methanol co-feed | 0.0 kg/d | — |
-| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | L | mass | present | digester organics | 0.0 kg/d | — |
+| WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | L | mass | retired | unrecovered wax to oil line | 0.0 kg/d | — |
+| OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | L | mass | retired | light cuts to polyolefin | 0.0 kg/d | — |
+| MEOH_TO_OLEFIN | MEOH_TANK | POLY_OLEFIN | L | mass | present | methanol co-feed | 0.0 kg/d | — |
+| DIGEST_TO_POLY | BLACK_DIGEST | POLY_COND | L | mass | retired | digester organics | 0.0 kg/d | — |
 | OLEFIN_TO_PELLET | POLY_OLEFIN | PELLET | S | mass | present | polyolefin resin | 0.294127 kg/d | — |
-| POLYF_TO_PELLET | POLY_F | PELLET | S | mass | present | PVDF/PTFE resin | 0.0 kg/d | — |
+| POLYF_TO_PELLET | POLY_F | PELLET | S | mass | retired | PVDF/PTFE resin | 0.0 kg/d | — |
 | POLYF_TO_POWDER | POLY_F | POWDER_RESIN | S | mass | present | fluoropolymer powder | 0.09 kg/d | — |
 | PELLET_TO_STOCK | PELLET | POLY_STOCK | S | mass | present | pellet stock | 0.294127 kg/d | — |
 | POWDER_TO_STOCK | POWDER_RESIN | POLY_STOCK | S | mass | present | powder stock | 0.09 kg/d | — |
@@ -235,7 +235,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | POLY_TO_WET | POLY_STOCK | LEACH_CSTR_1 | S | mass | present | lining/gasket stock return path | 0.026739 kg/d | — |
 | CRU_TO_VDF | CRU | VDF_SYN | G | mass | present | chlorine | 0.332195 kg/d | — |
 | CRU_TO_TFE | CRU | TFE_SYN | G | mass | present | chlorine | 0.283567 kg/d | — |
-| POLISH_TO_LI | POLISH_BANK | LI_RECOVER | L | mass | present | Li-bearing polish liquor | — | — |
+| POLISH_TO_LI | POLISH_BANK | LI_RECOVER | L | mass | present | Li-bearing polish liquor | 0.0 kg/d | — |
 | WAX_TO_GREASE_CA | PROD_C19_C28 | GREASE_CA | L | mass | present | wax cut | 0.002489 kg/d | — |
 | WAX_TO_GREASE_LI | PROD_C19_C28 | GREASE_LI | L | mass | present | wax cut | 0.0 kg/d | — |
 | PCA_TO_GREASE | P_CA | GREASE_CA | S | mass | present | calcium hydroxide | 3.5e-05 kg/d | — |
@@ -660,3 +660,4 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-FAB-SOLV | WS_SOLV | WAFER_FAB | L | mass | present | acetone for edge-bead rinse and resist strip | 0.21952 kg/d | — |
 | IA-FAB-N2-VENT | WAFER_FAB | ATMOS | G | mass | present | fab nitrogen purge exhaust | 1.499799 kg/d | — |
 | SF-RESIST_SYN | SOL_ARK_60K | RESIST_SYN | E | elec | present | 480 V AC | 0.00366 kW | — |
+| IA-MTO-H2O | POLY_OLEFIN | MEOH_COND | L | mass | present | methanol-to-olefin reaction water | 0.0 kg/d | — |
