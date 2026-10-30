@@ -4823,6 +4823,51 @@
   "units": "m heated length of the cake kiln tube",
   "register": "A-M-421"
  },
+ "acid_kiln_mode": {
+  "value": "CAMPAIGN",
+  "units": "- duty of the ACID_PLANT cake kiln: CAMPAIGN (cake stored, kiln fired one run every acid_kiln_campaign_d days, acid held in a day store) or CONTINUOUS (kiln held at temperature every day)",
+  "register": "A-M-425"
+ },
+ "acid_kiln_campaign_d": {
+  "value": 7,
+  "units": "d between kiln campaigns on the CAMPAIGN duty; sets the cake store and the acid store",
+  "register": "A-M-425"
+ },
+ "acid_kiln_run_h": {
+  "value": 24.0,
+  "units": "h the kiln is held at temperature per campaign, after heat-up",
+  "register": "A-M-425"
+ },
+ "caso4_kiln_wall_mm": {
+  "value": 6.0,
+  "units": "mm wall of the Inconel 600 kiln tube, heated with the tube at each campaign",
+  "register": "A-M-425"
+ },
+ "inconel600_rho_kg_m3": {
+  "value": 8470.0,
+  "units": "kg/m3 density of Inconel 600 (SPECIAL_METALS_I600)",
+  "register": "A-M-425"
+ },
+ "inconel600_cp_kJ_kgK": {
+  "value": 0.444,
+  "units": "kJ/(kg K) specific heat of Inconel 600 at room temperature, held over the heat-up (SPECIAL_METALS_I600)",
+  "register": "A-M-425"
+ },
+ "kiln_fibre_rho_kg_m3": {
+  "value": 128.0,
+  "units": "kg/m3 density of the ceramic-fibre insulation of the kiln (ASTM C892 grade 1260, 128 kg/m3 class)",
+  "register": "A-M-425"
+ },
+ "kiln_fibre_cp_kJ_kgK": {
+  "value": 1.13,
+  "units": "kJ/(kg K) specific heat of alumino-silicate ceramic fibre (ASTM C892 class), held over the heat-up",
+  "register": "A-M-425"
+ },
+ "acid_store_rho_kg_m3": {
+  "value": 1840.0,
+  "units": "kg/m3 density of 98 wt% sulfuric acid for the acid day store (ULLMANN_H2SO4)",
+  "register": "A-M-425"
+ },
  "caso4_dHrxn_kJ_mol": {
   "value": 303.0,
   "units": "kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197)",

@@ -17,7 +17,7 @@ This page records the size of unit EXT_HALL, of class `building` in sector ELEC,
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 82.6936 kW, fed by stream SF-EXT_HALL.
+No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 82.5023 kW, fed by stream SF-EXT_HALL.
 
 The graph holds no design parameters for the unit.
 

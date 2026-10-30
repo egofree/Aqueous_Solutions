@@ -1879,7 +1879,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M751.67,-12587.08C806.36,-12590.11 926.2,-12592.58 1022,-12564.95 1037.97,-12560.34 1054.33,-12552.28 1068.16,-12544.31"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1070.06,-12547.25 1076.85,-12539.12 1066.47,-12541.24 1070.06,-12547.25"/>
-<text text-anchor="middle" x="946.5" y="-12589.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n353.877 kW</text>
+<text text-anchor="middle" x="946.5" y="-12589.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n352.9258 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node45" class="node">
@@ -2087,7 +2087,7 @@
 <title>SOL_ARK_60K&#45;&gt;EXT_HALL</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M1137.05,-12502.79C1151.93,-12494.62 1170.09,-12485.21 1187,-12477.95 1258.55,-12447.24 1307.01,-12484.78 1353,-12421.95 1388.64,-12373.26 1339.05,-11385.84 1373,-11335.95 1380.98,-11324.23 1394.29,-11316.93 1407.47,-11312.39"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1408.85,-11315.63 1417.44,-11309.43 1406.85,-11308.92 1408.85,-11315.63"/>
-<text text-anchor="middle" x="1270" y="-12480.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;EXT_HALL\n82.6936 kW</text>
+<text text-anchor="middle" x="1270" y="-12480.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;EXT_HALL\n82.5023 kW</text>
 </g>
 <!-- SOL_ARK_60K&#45;&gt;WAFER_FAB -->
 <g id="edge383" class="edge">
@@ -2679,7 +2679,7 @@
 <title>SOL_ARK_60K&#45;&gt;ACID_PLANT</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M1107.87,-12539.17C1115.75,-12596.74 1143.14,-12772.87 1187,-12805.95 1245.91,-12850.37 1300.72,-12858 1353,-12805.95 1398.22,-12760.93 1327.78,-8256.97 1373,-8211.95 1420.56,-8164.6 1476.19,-8164.85 1524,-8211.95 1576.68,-8263.85 1491.32,-9491.05 1544,-9542.95 1600.04,-9598.16 1665.08,-9598.28 1721,-9542.95 1743.53,-9520.65 1713.08,-8426.61 1733,-8401.95 1754.68,-8375.1 1794.25,-8368.46 1825.31,-8367.9"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1825.47,-8371.4 1835.48,-8367.92 1825.49,-8364.4 1825.47,-8371.4"/>
-<text text-anchor="middle" x="1448.5" y="-8214.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ACID_PLANT\n0.966 kW</text>
+<text text-anchor="middle" x="1448.5" y="-8214.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;ACID_PLANT\n0.2061 kW</text>
 </g>
 <!-- BLACK_DIGEST -->
 <g id="node172" class="node">
@@ -2732,7 +2732,7 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1469.28,-11445.05C1487.37,-11460.55 1515.57,-11482.18 1544,-11493.95 1617.73,-11524.45 1655.33,-11478.63 1721,-11523.95 1802.46,-11580.17 1845.92,-11696.62 1862.28,-11750.05"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1858.99,-11751.27 1865.19,-11759.86 1865.7,-11749.28 1858.99,-11751.27"/>
-<text text-anchor="middle" x="1632.5" y="-11526.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n924.70191 kg/d</text>
+<text text-anchor="middle" x="1632.5" y="-11526.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n920.7045 kg/d</text>
 </g>
 <!-- ZNBR2&#45;&gt;Q4_BUS -->
 <g id="edge286" class="edge">
@@ -2752,7 +2752,7 @@
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1863.24,-11759.86C1846.43,-11717.58 1798.41,-11612.17 1721,-11562.95 1653.67,-11520.14 1613.82,-11571.57 1544,-11532.95 1509.99,-11514.14 1482.03,-11478.3 1465.57,-11453.54"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1468.4,-11451.47 1460.03,-11444.97 1462.52,-11455.27 1468.4,-11451.47"/>
-<text text-anchor="middle" x="1632.5" y="-11565.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n924.70191 kg/d</text>
+<text text-anchor="middle" x="1632.5" y="-11565.55" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n920.7045 kg/d</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node50" class="node">
@@ -5338,5 +5338,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="3015.4" y="12355.0" width="2025.3" height="540.1" fill="white" stroke="black" stroke-width="5.63"/><text x="3049.2" y="12445.0" font-family="sans-serif" font-size="50.6">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3049.2" y="12540.6" font-family="sans-serif" font-size="50.6">Process flow diagram</text><text x="3049.2" y="12636.3" font-family="sans-serif" font-size="50.6">Type: flow diagram (ISO_10628_2)   Rev 4d84acd9   Issued 2026-10-15</text><text x="3049.2" y="12731.9" font-family="sans-serif" font-size="50.6">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3049.2" y="12827.6" font-family="sans-serif" font-size="50.6">Graph SHA-256 d1045fd2b6907caf   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="3015.4" y="12355.0" width="2025.3" height="540.1" fill="white" stroke="black" stroke-width="5.63"/><text x="3049.2" y="12445.0" font-family="sans-serif" font-size="50.6">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3049.2" y="12540.6" font-family="sans-serif" font-size="50.6">Process flow diagram</text><text x="3049.2" y="12636.3" font-family="sans-serif" font-size="50.6">Type: flow diagram (ISO_10628_2)   Rev f3b923b1   Issued 2026-10-15</text><text x="3049.2" y="12731.9" font-family="sans-serif" font-size="50.6">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3049.2" y="12827.6" font-family="sans-serif" font-size="50.6">Graph SHA-256 15edcc2fe9038602   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

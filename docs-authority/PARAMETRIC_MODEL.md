@@ -81,7 +81,7 @@ Table 6.1. Graph values against the solver
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3051.000 | 3051.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3038.000 | 3038.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 7. Acid-loop decision (X-PAR-04)
 
@@ -151,7 +151,7 @@ The recovery-first check reports no flag.
 
 ## 8. Drivers
 
-Table 8.1 lists the 901 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 910 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -940,6 +940,15 @@ Table 8.1. Drivers
 | caso4_kiln_T_C | 1150.0 | C cake kiln temperature for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 | A-M-421 | — |
 | caso4_kiln_D_mm | 150.0 | mm bore of the small electrically heated cake kiln tube (the HF kiln class at this throughput) | A-M-421 | — |
 | caso4_kiln_L_m | 1.0 | m heated length of the cake kiln tube | A-M-421 | — |
+| acid_kiln_mode | "CAMPAIGN" | - duty of the ACID_PLANT cake kiln: CAMPAIGN (cake stored, kiln fired one run every acid_kiln_campaign_d days, acid held in a day store) or CONTINUOUS (kiln held at temperature every day) | A-M-425 | — |
+| acid_kiln_campaign_d | 7 | d between kiln campaigns on the CAMPAIGN duty; sets the cake store and the acid store | A-M-425 | — |
+| acid_kiln_run_h | 24.0 | h the kiln is held at temperature per campaign, after heat-up | A-M-425 | — |
+| caso4_kiln_wall_mm | 6.0 | mm wall of the Inconel 600 kiln tube, heated with the tube at each campaign | A-M-425 | — |
+| inconel600_rho_kg_m3 | 8470.0 | kg/m3 density of Inconel 600 (SPECIAL_METALS_I600) | A-M-425 | — |
+| inconel600_cp_kJ_kgK | 0.444 | kJ/(kg K) specific heat of Inconel 600 at room temperature, held over the heat-up (SPECIAL_METALS_I600) | A-M-425 | — |
+| kiln_fibre_rho_kg_m3 | 128.0 | kg/m3 density of the ceramic-fibre insulation of the kiln (ASTM C892 grade 1260, 128 kg/m3 class) | A-M-425 | — |
+| kiln_fibre_cp_kJ_kgK | 1.13 | kJ/(kg K) specific heat of alumino-silicate ceramic fibre (ASTM C892 class), held over the heat-up | A-M-425 | — |
+| acid_store_rho_kg_m3 | 1840.0 | kg/m3 density of 98 wt% sulfuric acid for the acid day store (ULLMANN_H2SO4) | A-M-425 | — |
 | caso4_dHrxn_kJ_mol | 303.0 | kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197) | A-M-421 | — |
 | caso4_feed_cp_kJ_kgK | 0.9 | kJ/kg K mean heat capacity of the cake and char feed to the kiln temperature | A-M-421 | — |
 | naoh_route | "CAUSTICIZE" | - sodium hydroxide route of NAOH_PLANT: CAUSTICIZE (trona ore to soda ash, lime causticising with a recalcining lime kiln) or CHLOR_ALKALI (membrane cells on the leach purge salt and halite ore) | A-M-422 | — |
@@ -1329,6 +1338,7 @@ Table 9.1. References
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
 | SEAWATER_MILLERO | Millero et al. (2008), standard seawater composition at practical salinity 35: total salinity 35.165 g/kg; sodium 10.78 g/kg, chloride 19.35 g/kg, magnesium 1.284 g/kg, bromide 0.067 g/kg (AQS-PLAN-011 section 10). |
 | SOLAS | Safety of Life at Sea convention: fire protection, life-saving appliances and evacuation (AQS-PLAN-011 section 10). |
+| SPECIAL_METALS_I600 | Special Metals Corporation, INCONEL alloy 600 product data sheet (publication SMC-027, 2008): density 8.47 Mg/m3, specific heat 444 J/(kg K) at 21 C. |
 | STRATHMANN2004 | Strathmann H., Ion-Exchange Membrane Separation Processes, Membrane Science and Technology Series 9, Elsevier (2004), ch. 4-5: reversible water-dissociation voltage of a bipolar membrane 0.059 V per pH unit (0.83 V at delta pH 14, 25 C); practical bipolar membrane voltage drop about 0.9-1.2 V at 100-200 A/m2; monopolar ion-exchange membrane area resistance about 2-5 ohm cm2 in 0.5 M NaCl; spacer shadow effect on solution resistance. |
 | SU2018_PYRO | Experimental study of thermal and catalytic pyrolysis of plastic waste components, Sustainability 10 (2018) 3979, doi:10.3390/su10113979: 460 C batch thermal pyrolysis oil, LDPE 24 % C7-C12 / 30 % C13-C20 / 46 % C21-C40; PP 44/33/23; liquid conversion 94 % LDPE, 86 % PP. |
 | TAIZ2015 | Taiz L., Zeiger E., Moller I.M., Murphy A., Plant Physiology and Development, 6th ed., Sinauer (2015), ch. 8-9: net photosynthesis CO2 + H2O -> (CH2O) + O2, photosynthetic quotient near 1.0; transpiration is the water taken up less the water fixed in biomass. |
@@ -1372,7 +1382,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 295 drivers and then the 374 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 295 drivers and then the 375 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -2047,3 +2057,4 @@ Table 10.1. Values to verify
 | A-M-422 | The sodium hydroxide make-up is made on site by NAOH_PLANT … kg/d, mass fraction, C, mm, m, kJ/mol, kJ/kg K, V | python3 -m flow_graph.param.caustic; python3 -m flow_graph.param.regen; IA-NAOH-MU is retired, IA-NAOH-LIQ carries the make-up liquor to EVAP_BASE, the streams of the route not selected are retired, and the mass and element balances of NAOH_PLANT agree (asserted in caustic.design). |
 | A-M-423 | Recovery first: for every element the plant takes as raw … kg/d of element | python3 -m flow_graph.param.recovery prints no flags; pytest flow_graph/param/test_recovery_first.py passes, and its negative cases show that an ore above the shortfall and an undeclared waste outflow are flagged. |
 | A-M-424 | The pattern wax make-up is the paraffin of the plant's own … kg/d | python3 -m flow_graph.param.regen; IA-WAX-MU is retired, C19_TO_WAX carries the make-up from PROD_C19_C28, and IA-C19-SHIP equals CUT-3 less CUT-3-OUT and C19_TO_WAX. |
+| A-M-425 | The ACID_PLANT cake kiln runs in campaigns (acid_kiln_mode … kW average and peak; kg and L of store | python3 -m flow_graph.param.regen; ACID_PLANT continuous_kw equals params.kiln_duty.kw_avg, and AQS-DUTY-073 Table 4.2 lists both kiln duties. |

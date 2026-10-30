@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "d1045fd2b6907caf0d7ab1fa04d00dbe8b943fef94332e354ea6e0a7da176f95",
+  "graph_sha256": "15edcc2fe9038602a3ccc1a0fe0ae19e5060ac0b00d70f0f662c13bc5d2ea1af",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 353.877,
-   "calc_kw": 353.877,
+   "kw": 352.926,
+   "calc_kw": 352.926,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 220.054,
-   "calc_kw": 220.054,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 220.1 kW, charge 1000.2 kW, 3081 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 219.102,
+   "calc_kw": 219.102,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 219.1 kW, charge 995.9 kW, 3067 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 82.694,
-   "calc_kw": 82.694,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28800 m2; lighting 25.34 kW (IECC 2021 C405, 10 % lit), ventilation 35.92 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.43 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.5 kW and cooling 100.6 kW thermal average after internal gains 36.1 kW and slab edge 2.99 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 82.502,
+   "calc_kw": 82.502,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28728 m2; lighting 25.28 kW (IECC 2021 C405, 10 % lit), ventilation 35.83 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.39 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.4 kW and cooling 100.4 kW thermal average after internal gains 36.1 kW and slab edge 2.99 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -219,15 +219,6 @@
    "basis": "X-PAR-03 house scrubber (flow_graph/param/house_scrubbers.py, A-M-164). Fan 847 W, pump 265 W.",
    "class": "calculated",
    "sector": "GAS"
-  },
-  {
-   "unit": "ACID_PLANT",
-   "role": "\u2014",
-   "kw": 0.966,
-   "calc_kw": 0.966,
-   "basis": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake kiln shell loss + reaction + feed heat (sulfuric.py, route GYPSUM_LOOP).",
-   "class": "calculated",
-   "sector": "POLYMERS"
   },
   {
    "unit": "CRYO_H2",
@@ -462,6 +453,15 @@
    "basis": "RCA/etch bench list (AQS-EQP-FAB-001 sec.1): 2 heated baths 10 L at 80 C (SC1/SC2) - heat-up once daily + insulated hold (ASTM_C680 method, X-MFG-38 pattern); DHF at ambient; 4.96 kWh/d. / X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
    "sector": "FAB"
+  },
+  {
+   "unit": "ACID_PLANT",
+   "role": "\u2014",
+   "kw": 0.206,
+   "calc_kw": 0.206,
+   "basis": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake kiln on CAMPAIGN duty (Q-034, A-M-425): daily average of shell loss + reaction + feed heat with one 24 h run every 7 d and 8.60 kWh heat-up per run; peak 1.0847 kW (sulfuric.py, route GYPSUM_LOOP).",
+   "class": "calculated",
+   "sector": "POLYMERS"
   },
   {
    "unit": "CR_CELL",
@@ -849,10 +849,10 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 93,
-  "graph_sum_kW": 158.13,
-  "calc_sum_kW": 158.13,
-  "connected_load_kW": 158.1,
-  "connected_calculated_kW": 158.1,
+  "graph_sum_kW": 157.18,
+  "calc_sum_kW": 157.18,
+  "connected_load_kW": 157.2,
+  "connected_calculated_kW": 157.1,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 0.0,
   "connected_calculated_pct": 100.0,

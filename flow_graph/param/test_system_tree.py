@@ -211,7 +211,8 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     # PV 350.0995 -> 350.105 (2026-10-29): the atomiser argon receiver charged to 50 bar raises the atomiser energy (A-M-416).
     # PV 350.105 -> 350.0702 (2026-10-29): the CZ charge and pull interval from the wafer need lower the WAFER_FAB load (A-M-417).
     # PV 350.0702 -> 351.3442 (2026-10-29): on-site silicon reduction and refining for the CZ charge (A-M-419, owner decision t58u).
-    assert gen["kw_sum"] == pytest.approx(353.877 + 4.0 + 0.0082)   # PV 353.877 (on-site silicon A-M-419, sulfuric acid A-M-421, sodium hydroxide A-M-422)
+    # PV 353.877 -> 352.926 (2026-10-29): the acid cake kiln runs in campaigns (Q-034, A-M-425).
+    assert gen["kw_sum"] == pytest.approx(352.926 + 4.0 + 0.0082)   # PV 352.926 (on-site silicon A-M-419, sulfuric acid A-M-421, sodium hydroxide A-M-422, kiln campaigns A-M-425)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(

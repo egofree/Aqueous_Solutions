@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.7724 kg/d. Mass out 0.7724 kg/d. Electrical duty 0.9660 kW. In: IA-SULFUR-MU 0.01294 kg/d (native sulfur (raw ore) for the acid plant); IA-GYPSUM-REGEN 0.5756 kg/d (HF kiln anhydrite cake to the sulfur-recovery kiln); CHAR_TO_ACID 0.02566 kg/d (plant pyrolysis char reductant for the cake kiln); IA-ACID-O2 0.07746 kg/d (oxygen of the process air (sulfur burning and SO2 oxidation)); 1 more. Out: IA-ACID-CO2 0.08687 kg/d (carbon dioxide and water vapour of the cake kiln); IA-LIME-SHIP 0.2594 kg/d (cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up); IA-H2SO4-ACID 0.4038 kg/d (98 wt% sulfuric acid to the HF kiln); IA-LIME-TO-NAOH 0.02237 kg/d (cake-kiln lime residue as the lime-cycle make-up).
+1. Basis. Mass in 0.7724 kg/d. Mass out 0.7724 kg/d. Electrical duty 0.2061 kW. In: IA-SULFUR-MU 0.01294 kg/d (native sulfur (raw ore) for the acid plant); IA-GYPSUM-REGEN 0.5756 kg/d (HF kiln anhydrite cake to the sulfur-recovery kiln); CHAR_TO_ACID 0.02566 kg/d (plant pyrolysis char reductant for the cake kiln); IA-ACID-O2 0.07746 kg/d (oxygen of the process air (sulfur burning and SO2 oxidation)); 1 more. Out: IA-ACID-CO2 0.08687 kg/d (carbon dioxide and water vapour of the cake kiln); IA-LIME-SHIP 0.2594 kg/d (cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up); IA-H2SO4-ACID 0.4038 kg/d (98 wt% sulfuric acid to the HF kiln); IA-LIME-TO-NAOH 0.02237 kg/d (cake-kiln lime residue as the lime-cycle make-up).
 
 2. Size.
 - Node note: Sulfuric acid plant (A-M-421).

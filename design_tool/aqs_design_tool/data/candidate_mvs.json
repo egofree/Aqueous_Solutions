@@ -2087,7 +2087,7 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3081.0,
+        "vs_znbr2_kwh": 3068.0,
         "fraction_of_znbr2_study": 0.069,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -2775,28 +2775,28 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6102,
+        "count": 6076,
         "presence": "present",
-        "nameplate_kw": 3051,
-        "area_m2": 26784,
-        "balance_kWp": 1526,
+        "nameplate_kw": 3038,
+        "area_m2": 26712,
+        "balance_kWp": 1519,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            174000,
-            168000
+            180000,
+            162000
           ],
           "bays": [
-            29,
-            28
+            30,
+            27
           ],
-          "footprint_m2": 29232.0,
-          "extension_m2": 28800.0,
-          "roof_capacity_kWp": 3053.4,
+          "footprint_m2": 29160.0,
+          "extension_m2": 28728.0,
+          "roof_capacity_kWp": 3045.1,
           "perimeter_pathway_mm": 1829,
           "arrays": 16,
-          "extension_load_kW": 82.69,
+          "extension_load_kW": 82.5,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -2807,7 +2807,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 353.877,
+        "value": 352.9258,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2949,8 +2949,8 @@
         "count": 43,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2359.9,
-          "export_kWh_d_clear": 6602,
+          "export_peak_kW": 2360.9,
+          "export_kWh_d_clear": 6573,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2980,9 +2980,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 220.1,
+          "bus_demand_kW": 219.1,
           "section_rating_A": 400,
-          "basis_A": 294.1,
+          "basis_A": 292.8,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -3317,27 +3317,27 @@
       "class": "flow_battery",
       "tags": [],
       "params": {
-        "kW": 1001,
-        "kWh": 3081,
+        "kW": 996,
+        "kWh": 3068,
         "presence": "present",
-        "charge_kW": 1001,
-        "discharge_kW": 221,
+        "charge_kW": 996,
+        "discharge_kW": 220,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 43 hybrid inverters, 71.7 kWh and 23.3 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 43 hybrid inverters, 71.3 kWh and 23.2 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.811,
-          "purge_m3_h": 32.54,
+          "H2_m3_d": 7.777,
+          "purge_m3_h": 32.4,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2015.1
+          "electrode_area_m2": 2006.4
         }
       },
       "modules": [],
       "electrical_role": "storage",
       "continuous_kw": {
-        "value": 220.0536,
+        "value": 219.1023,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 220.1 kW, charge 1000.2 kW, 3081 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 219.1 kW, charge 995.9 kW, 3067 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       }
     },
     {
@@ -7001,35 +7001,35 @@
       "tags": [],
       "params": {
         "hvac": {
-          "light_kW": 25.344,
-          "vent_kW": 35.921,
-          "envelope_kW": 21.429,
-          "total_kW": 82.694,
-          "vent_L_s": 8640.0,
-          "Qh_kW": 50.51,
-          "Qc_kW": 100.604,
+          "light_kW": 25.281,
+          "vent_kW": 35.831,
+          "envelope_kW": 21.391,
+          "total_kW": 82.502,
+          "vent_L_s": 8618.4,
+          "Qh_kW": 50.41,
+          "Qc_kW": 100.377,
           "slab_kW": 2.99,
-          "gains_kW": 36.144,
+          "gains_kW": 36.054,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 447.768,
-          "peak_c_kW": 397.697
+          "peak_h_kW": 446.827,
+          "peak_c_kW": 396.811
         },
-        "footprint_m2": 28800.0,
+        "footprint_m2": 28728.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 82.694 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 82.502 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 82.6936,
+        "value": 82.5023,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 28800 m2; lighting 25.34 kW (IECC 2021 C405, 10 % lit), ventilation 35.92 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.43 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.5 kW and cooling 100.6 kW thermal average after internal gains 36.1 kW and slab edge 2.99 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 28728 m2; lighting 25.28 kW (IECC 2021 C405, 10 % lit), ventilation 35.83 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.39 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.4 kW and cooling 100.4 kW thermal average after internal gains 36.1 kW and slab edge 2.99 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       }
     },
     {
@@ -7494,15 +7494,30 @@
               }
             ]
           }
-        ]
+        ],
+        "kiln_duty": {
+          "mode": "CAMPAIGN",
+          "campaign_d": 7,
+          "run_h": 24.0,
+          "insul_mm": 200,
+          "tube_kg": 24.9063,
+          "fibre_kg": 29.1138,
+          "heatup_kWh": 8.5961,
+          "kw_avg": 0.2061,
+          "kw_peak": 1.0847,
+          "kw_continuous": 0.966,
+          "cake_store_kg": 4.2085,
+          "acid_store_kg": 2.8264,
+          "acid_store_L": 1.5361
+        }
       },
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
-        "value": 0.966,
+        "value": 0.2061,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake kiln shell loss + reaction + feed heat (sulfuric.py, route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake kiln on CAMPAIGN duty (Q-034, A-M-425): daily average of shell loss + reaction + feed heat with one 24 h run every 7 d and 8.60 kWh heat-up per run; peak 1.0847 kW (sulfuric.py, route GYPSUM_LOOP)."
       }
     },
     {
@@ -9822,10 +9837,10 @@
       "phase": "G",
       "carries": "Br2 vapor",
       "rate": {
-        "value": 924.70191,
+        "value": 920.7045,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.5 m3/h holds H2 at 25 % LFL: HER 6.65 + open-circuit 1.16 m3/d H2 on 4401 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.4 m3/h holds H2 at 25 % LFL: HER 6.62 + open-circuit 1.16 m3/d H2 on 4382 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -9839,7 +9854,7 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 924.70191,
+        "value": 920.7045,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -11925,7 +11940,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 353.877,
+        "value": 352.9258,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -15767,7 +15782,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 82.6936,
+        "value": 82.5023,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -17671,7 +17686,7 @@
       "phase": "E",
       "carries": "480 V AC",
       "rate": {
-        "value": 0.966,
+        "value": 0.2061,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): feed equal to ACID_PLANT continuous_kw."
@@ -17915,19 +17930,19 @@
       "PUMPED_HYDRO"
     ],
     "need_kw": {
-      "value": 220.05,
+      "value": 219.1,
       "unit": "kW",
       "status": "study",
-      "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 29x28 bays, ext 82.69 kW)."
+      "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 30x27 bays, ext 82.50 kW)."
     },
     "target_kw": {
-      "value": 550.13,
+      "value": 547.76,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."
     },
     "pv_module_kw": 0.5,
-    "pv_count": 6102,
+    "pv_count": 6076,
     "znbr_module_kw": 60.0,
     "znbr_count": 43,
     "rect_count": 1,

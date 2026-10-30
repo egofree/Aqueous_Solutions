@@ -7325,5 +7325,23 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.regen; IA-WAX-MU is retired, C19_TO_WAX carries the make-up from PROD_C19_C28, and IA-C19-SHIP equals CUT-3 less CUT-3-OUT and C19_TO_WAX."
+ },
+ {
+  "id": "A-M-425",
+  "value": "The ACID_PLANT cake kiln runs in campaigns (acid_kiln_mode = CAMPAIGN): the HF kiln cake is stored and fired in one run of acid_kiln_run_h every acid_kiln_campaign_d days, and a day store holds the acid for HF_GEN between runs. Each run pays the heat-up of the Inconel 600 tube (caso4_kiln_wall_mm) and of its ceramic-fibre insulation, taken to its mean temperature; the insulation thickness comes from flow_graph/param/sizing/heat.py. CONTINUOUS duty stays selectable.",
+  "units": "kW average and peak; kg and L of store",
+  "where": "flow_graph/param/sulfuric.py _duty(); flow_graph/param/drivers.json acid_kiln_*; AQS-DUTY-073 section 4.1",
+  "basis": "Q-034 decided on the merits under the owner delegation t62u. At the present acid demand the shell loss is nearly all of the continuous kiln load, so campaign firing cuts the average load to about a fifth for a store of a few kilograms; material data SPECIAL_METALS_I600 and the ASTM C892 ceramic-fibre class.",
+  "sensitivity": "The average load falls with acid_kiln_campaign_d towards the process heat; the stores and the peak load during a run rise with it.",
+  "replaced_by": "A heat-up and thermal-cycling trial of the kiln lining at the first article",
+  "task": "QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u)",
+  "files": [
+   "flow_graph/param/sulfuric.py",
+   "flow_graph/param/drivers.json",
+   "docs-authority/_polymers_sizing.py",
+   "docs-authority/OPEN_QUESTIONS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.regen; ACID_PLANT continuous_kw equals params.kiln_duty.kw_avg, and AQS-DUTY-073 Table 4.2 lists both kiln duties."
  }
 ]

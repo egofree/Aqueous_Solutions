@@ -65,8 +65,8 @@ Table 4.1. Streams of the closures
 | Afterburner flue | S67B | FLUE_KO | CRYO_CO2 | normal | 14.05 | kg/d |
 | Afterburner flue | IA-FLUE-EXH | FLUE_KO | NOX_SCRUB | normal | 263.6 | kg/d |
 | Afterburner flue | S18 | AFTERBURNER | CRYO_CO2 | normal | 0 | kg/d |
-| Battery bromine | S69 | ZNBR2 | ZNBR2_BR2_REGEN | normal | 924.7 | kg/d |
-| Battery bromine | S69B | ZNBR2_BR2_REGEN | ZNBR2 | normal | 924.7 | kg/d |
+| Battery bromine | S69 | ZNBR2 | ZNBR2_BR2_REGEN | normal | 920.7 | kg/d |
+| Battery bromine | S69B | ZNBR2_BR2_REGEN | ZNBR2 | normal | 920.7 | kg/d |
 | Cryogenic room air | IA-AHU-POT | CRYO_AHU | CRYO_AHU_COND_CONDENSABLE | normal | 0.0521 | kg/d |
 | Cryogenic room air | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | normal | 0.0521 | kg/d |
 | Cryogenic room air | S68 | CRYO_AHU | LEACH_CSTR_1 | normal | 78.99 | kg/d |

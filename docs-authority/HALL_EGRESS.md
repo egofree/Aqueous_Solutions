@@ -7,7 +7,7 @@ Authority: AQS-PLAN-007 X-STD-01; AQS-EGR-001 Rev C 2.1 (most restrictive code g
 
 | Rev | Description | Date |
 | --- | --- | --- |
-| A | First issue for the 174 x 168 m building (D77). | 2026-10-15 |
+| A | First issue for the 180 x 162 m building (D77). | 2026-10-15 |
 
 ## 1. Basis
 
@@ -28,12 +28,12 @@ Authority: AQS-PLAN-007 X-STD-01; AQS-EGR-001 Rev C 2.1 (most restrictive code g
 
 | Quantity | Value |
 | --- | --- |
-| Hall floor area (excluding the base plate) | 28,800 m2 |
-| Occupant load | 3101 |
+| Hall floor area (excluding the base plate) | 28,728 m2 |
+| Occupant load | 3093 |
 | Door spacing on walls and passageway faces | 85 m |
-| Worst rectilinear travel on a 2 m grid | 66.5 m at (58, 122) (limit 76.2) |
-| Exterior exit door pairs | 9 pairs, 14.6 m clear (need 11.9 m for 2325 occupants) |
-| Exit passageway | 2.0 m clear x 174 m, 3 door pairs, serves 776 occupants, two discharges |
+| Worst rectilinear travel on a 2 m grid | 67.0 m at (60, 118) (limit 76.2) |
+| Exterior exit door pairs | 9 pairs, 14.6 m clear (need 11.8 m for 2319 occupants) |
+| Exit passageway | 2.0 m clear x 180 m, 3 door pairs, serves 774 occupants, two discharges |
 | Exits to outside | 11 (minimum 4) |
 | Travel | pass |
 | Capacity | pass |

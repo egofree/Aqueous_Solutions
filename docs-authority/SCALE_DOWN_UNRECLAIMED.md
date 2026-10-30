@@ -267,7 +267,7 @@ Table 3.4. POLYMERS off. Sector type: Process (Mass transform).
 | IA-CAF2-MU | NORTH_DOCK to HF_GEN | DOCK | 0.326 kg/d | stops with the sector |
 | IA-LIME-SHIP | ACID_PLANT to NORTH_DOCK | DOCK | 0.259 kg/d | stops with the sector |
 | IA-SULFUR-MU | NORTH_DOCK to ACID_PLANT | DOCK | 0.0129 kg/d | stops with the sector |
-| SF-ACID_PLANT | SOL_ARK_60K to ACID_PLANT | ELEC | 0.966 kW | stops with the sector |
+| SF-ACID_PLANT | SOL_ARK_60K to ACID_PLANT | ELEC | 0.206 kW | stops with the sector |
 | SF-FILM_CAST | SOL_ARK_60K to FILM_CAST | ELEC | 0.109 kW | stops with the sector |
 | SF-HF_GEN | SOL_ARK_60K to HF_GEN | ELEC | 0.308 kW | stops with the sector |
 | SF-POLY_F | SOL_ARK_60K to POLY_F | ELEC | 0.0449 kW | stops with the sector |
@@ -636,7 +636,7 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | S46 | BACKUP_GEN to NOX_SCRUB | GAS | 0.198 kg/d | left without a source: consumer goes short |
 | S52 | FUEL_CELL to VCD_TRAIN | WTR | 42.9 kg/d | left without a source: consumer goes short |
 | S53 | FUEL_CELL to Q4_BUS | HEAT | 1.14 kW | left without a source: consumer goes short |
-| SF-ACID_PLANT | SOL_ARK_60K to ACID_PLANT | POLYMERS | 0.966 kW | left without a source: consumer goes short |
+| SF-ACID_PLANT | SOL_ARK_60K to ACID_PLANT | POLYMERS | 0.206 kW | left without a source: consumer goes short |
 | SF-ACID_POLISH_SCRUB | SOL_ARK_60K to ACID_POLISH_SCRUB | GAS | 1.11 kW | left without a source: consumer goes short |
 | SF-ALK_SCRUBBER | SOL_ARK_60K to ALK_SCRUBBER | GAS | 1.11 kW | left without a source: consumer goes short |
 | SF-AL_POT | SOL_ARK_60K to AL_POT | FOUNDRY | 5.66 kW | left without a source: consumer goes short |

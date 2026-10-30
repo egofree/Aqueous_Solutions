@@ -11,7 +11,10 @@ that acid. Two routes of different technology can be selected with the driver h2
   sulfur, so the recovery-first check (flow_graph/param/recovery.py) flags it while it is selected.
 On either route the SO2 is oxidised on a vanadium catalyst, SO2 + 1/2 O2 -> SO3, and absorbed in water to H2SO4 (contact
 process). Oxygen comes from air drawn through the plant (ATMOS), water from the well (GW_INTAKE). The kiln load is its
-insulated-shell loss plus the reaction and feed heat; the contact steps are exothermic and are not credited.
+insulated-shell loss plus the reaction and feed heat; the contact steps are exothermic and are not credited. The kiln
+runs in campaigns from a cake store by default (driver acid_kiln_mode, Q-034, A-M-425): the shell loss is nearly all of
+its load at this throughput, so firing one run every acid_kiln_campaign_d days and holding the acid in a store cuts the
+average load; CONTINUOUS duty is selectable.
 
 Process basis ULLMANN_H2SO4. Called from flow_graph/param/fluoro_train.py apply() after the HF kiln is rated.
 Run: python3 -m flow_graph.param.sulfuric"""
@@ -23,6 +26,35 @@ FP = 'POLYMERS.fluoropolymer-train.'
 M_S, M_O2, M_C, M_CO2, M_H2O, M_CAO, M_CAF2 = 32.06, 31.998, 12.011, 44.009, 18.015, 56.077, 78.074
 M_H2SO4, M_CASO4 = M_S + 1.5*M_O2 + M_H2O, M_CAO + M_S + 1.5*M_O2   # built from the same parts so the balances close exactly
 ROUTES = ('GYPSUM_LOOP', 'SULFUR_ORE')
+
+KILN_MODES = ('CAMPAIGN', 'CONTINUOUS')
+
+def _duty(d, T, loss_W, proc_W, feed_kg_d, acid_kg_d):
+    """Cake-kiln duty (Q-034, A-M-425). On CONTINUOUS the kiln is held at T every day and draws its shell loss plus the
+    process heat. On CAMPAIGN the cake is stored and fired in one run of acid_kiln_run_h every acid_kiln_campaign_d days:
+    each run pays the heat-up of the tube and its fibre insulation (insulation taken to its mean temperature) and the
+    shell loss for the run only, and the process heat is the same per kg. The acid for the HF kiln is held in a store
+    sized for one campaign. Returns the daily average and peak loads in kW and the store sizes."""
+    v = lambda k: DR.val(d, k); mode = v('acid_kiln_mode')
+    if mode not in KILN_MODES:
+        raise SystemExit(f'sulfuric: acid_kiln_mode {mode!r} is not one of {KILN_MODES}')
+    import math
+    from .sizing import heat as HT
+    thk = HT.insulated_cylinder(T, v('caso4_kiln_D_mm'), v('caso4_kiln_L_m'))[0]
+    D = v('caso4_kiln_D_mm')/1000; L = v('caso4_kiln_L_m'); t = v('caso4_kiln_wall_mm')/1000; ti = thk/1000
+    m_tube = math.pi*(D + t)*t*L*v('inconel600_rho_kg_m3')
+    m_fibre = math.pi/4*((D + 2*t + 2*ti)**2 - (D + 2*t)**2)*L*v('kiln_fibre_rho_kg_m3')
+    heatup_kJ = m_tube*v('inconel600_cp_kJ_kgK')*(T - 25) + m_fibre*v('kiln_fibre_cp_kJ_kgK')*((T + 25)/2 - 25)
+    N = v('acid_kiln_campaign_d') if mode == 'CAMPAIGN' else 1; run_h = v('acid_kiln_run_h') if mode == 'CAMPAIGN' else 24.0
+    if mode == 'CAMPAIGN':
+        loss_kWh = loss_W/1000*run_h; kw_avg = (heatup_kJ/3600 + loss_kWh)/(N*24) + proc_W/1000
+        kw_peak = loss_W/1000 + proc_W/1000*N*24/run_h
+    else:
+        kw_avg = (loss_W + proc_W)/1000; kw_peak = kw_avg
+    kw_cont = (loss_W + proc_W)/1000
+    return dict(mode=mode, campaign_d=N, run_h=run_h, insul_mm=thk, tube_kg=m_tube, fibre_kg=m_fibre, heatup_kWh=heatup_kJ/3600,
+                kw_avg=kw_avg, kw_peak=kw_peak, kw_continuous=kw_cont, cake_store_kg=feed_kg_d*N, acid_store_kg=acid_kg_d*N,
+                acid_store_L=acid_kg_d*N/v('acid_store_rho_kg_m3')*1000)
 
 def design(acid_soln, caf2_conv, cake, d=None, spar=None):
     """Acid plant at the HF kiln demand. All the acid sulfur leaves HF_GEN in its cake, as anhydrite (one CaSO4 per CaF2
@@ -55,13 +87,16 @@ def design(acid_soln, caf2_conv, cake, d=None, spar=None):
         q_rxn = n_dec*1000*v('caso4_dHrxn_kJ_mol')/86400*1000         # kmol/d x 1000 mol/kmol x kJ/mol = kJ/d, / 86400 s = kW, x 1000 = W
         q_sens = (cake + char)*v('caso4_feed_cp_kJ_kgK')*(T - 25)/86400*1000
         kw = (loss + q_rxn + q_sens)/1000
+        duty = _duty(d, T, loss, q_rxn + q_sens, cake + char, acid_soln)
+        kw = duty['kw_avg']
     caf2_left = max(0.0, spar*v(FP + 'fluorspar_CaF2_wt') - caf2_conv) if spar is not None else 0.0
     comp = {}
     if residue > 0:
         parts = {'CaO': r_anh*M_CAO, 'CaSO4': (n_anh - r_anh)*M_CASO4, 'H2SO4': (n_free - r_free)*M_H2SO4, 'CaF2': caf2_left}
         parts['inerts'] = max(0.0, residue - sum(parts.values()))
         comp = {k: round(x/residue, 6) for k, x in parts.items() if x > 0}
-    return dict(route=route, acid_kg_d=acid_soln, n_acid=n_acid, sulfur_kg_d=sulfur, char_kg_d=char, o2_kg_d=o2, h2o_kg_d=h2o,
+    if n_dec <= 0: duty = None
+    return dict(duty=duty, route=route, acid_kg_d=acid_soln, n_acid=n_acid, sulfur_kg_d=sulfur, char_kg_d=char, o2_kg_d=o2, h2o_kg_d=h2o,
                 cake_kg_d=cake if route == 'GYPSUM_LOOP' else 0.0, residue_kg_d=residue, ship_kg_d=ship, co2_kg_d=co2 + vap,
                 co2_only_kg_d=co2, s_recovered_frac=n_dec/n_acid if n_acid else 0.0, kw=kw, residue_comp=comp,
                 cao_kg_d=r_anh*M_CAO, caf2_left_kg_d=caf2_left,
@@ -131,6 +166,12 @@ def tf(g, E, r_fluoro, d=None):
         imp['presence'] = 'retired'
         imp['rate'] = {'value': 0.0, 'unit': 'kg/d', 'status': 'study', 'note': 'Retired 2026-10-29 (owner decision t59u: no imports except waste or raw ore). The acid is made on site by ACID_PLANT (A-M-421).'}
     note = f"{TAG}: cake kiln shell loss + reaction + feed heat (sulfuric.py, route {r['route']})."
+    if r['duty']:
+        u = r['duty']
+        note = (f"{TAG}: cake kiln on {u['mode']} duty (Q-034, A-M-425): daily average of shell loss + reaction + feed heat"
+                + (f" with one {u['run_h']:g} h run every {u['campaign_d']:g} d and {u['heatup_kWh']:.2f} kWh heat-up per run; peak {u['kw_peak']:.4f} kW"
+                   if u['mode'] == 'CAMPAIGN' else '') + f" (sulfuric.py, route {r['route']}).")
+        N['ACID_PLANT'].setdefault('params', {})['kiln_duty'] = {k: (round(x, 4) if isinstance(x, float) else x) for k, x in u.items()}
     N['ACID_PLANT']['continuous_kw'] = {'value': round(r['kw'], 4), 'unit': 'kW', 'status': 'study', 'note': note}
     if 'SF-ACID_PLANT' not in E:
         e = _edge('SF-ACID_PLANT', 'SOL_ARK_60K', 'ACID_PLANT', 'E', ['elec'], '480 V AC', r['kw'], 'kW', N['SOL_ARK_60K']['sector_id'], N['ACID_PLANT']['sector_id'], None, note)

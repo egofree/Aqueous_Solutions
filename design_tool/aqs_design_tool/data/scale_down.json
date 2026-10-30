@@ -1968,7 +1968,7 @@
      "from": "SOL_ARK_60K",
      "to": "ACID_PLANT",
      "other_sector": "ELEC",
-     "rate": 0.966,
+     "rate": 0.2061,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -5647,7 +5647,7 @@
      "from": "SOL_ARK_60K",
      "to": "ACID_PLANT",
      "other_sector": "POLYMERS",
-     "rate": 0.966,
+     "rate": 0.2061,
      "unit": "kW",
      "carries": "480 V AC"
     },
