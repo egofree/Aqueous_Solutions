@@ -6,14 +6,21 @@ import csv, glob, json, os, collections
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 I = 'docs-authority/inventory/'
 rows = []
+# the roster is the graph (AQS-GOV authority): present units only. Model
+# directories of retired units stay on disk as artifacts but leave the plant
+# bill of materials, which is the buildable plant.
+_g = json.load(open('flow_graph/plant_flow_graph.json'))
+PRESENT = {n['unit_id'] for n in _g['nodes'] if n.get('presence') == 'present'}
 for f in sorted(glob.glob('models/mfg/*/bom.csv')):
     u = f.split('/')[2]
+    if u not in PRESENT: continue
     for r in csv.DictReader(open(f, newline='')):
         r = {k.strip(): (v or '').strip() for k, v in r.items() if k}
         rows.append(dict(source='unit', unit=u, item=r.get('description') or r.get('part', ''), qty=r.get('qty', ''), material=r.get('material', ''),
                          basis=r.get('basis') or r.get('make_or_buy', '')))
 for f in sorted(glob.glob('models/units/*/bom.csv')):
     u = f.split('/')[2]
+    if u not in PRESENT: continue
     for r in csv.DictReader(open(f, newline='')):
         if r['basis'].startswith(('AQS-INV-001', 'AQS-INV-004')): continue   # counted once in the motor family and building-block roll-ups
         rows.append(dict(source='unit envelope BOM', unit=u, item=r['description'], qty=r['qty'], material=r['material'], basis=r['basis']))
