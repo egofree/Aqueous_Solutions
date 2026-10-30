@@ -7,7 +7,7 @@ service line: see the duty sheet section 1 basis
 Internals: open: no issued internals basis for a reactor unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
 Material: Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route). (continues on the duty sheet)
 
-Nozzles: 6 process connections per docs-authority/nozzles/SI_REFINE.csv
+Nozzles: 7 process connections per docs-authority/nozzles/SI_REFINE.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

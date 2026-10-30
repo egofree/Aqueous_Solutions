@@ -428,7 +428,7 @@
 <title>MFG_SHOP&#45;&gt;LEACH_CSTR_1</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M941.45,-1480.9C937.97,-1427.7 924.83,-1273.69 888,-1243 833.97,-1197.98 747.78,-1207.85 692.95,-1220.71"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="691.97,-1217.35 683.09,-1223.14 693.64,-1224.15 691.97,-1217.35"/>
-<text text-anchor="middle" x="812.5" y="-1245.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S16\n11.637534 kg/d</text>
+<text text-anchor="middle" x="812.5" y="-1245.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S16\n10.634289 kg/d</text>
 </g>
 <!-- MFG_SHOP&#45;&gt;IND_MELT -->
 <g id="edge18" class="edge">
@@ -516,7 +516,7 @@
 <title>OIL_PYRO&#45;&gt;MFG_SHOP</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M670.03,-43.07C684.57,-48.25 702.24,-55.42 717,-64 726.84,-69.72 726.8,-74.94 737,-80 798.99,-110.76 844.39,-64.27 888,-118 932.18,-172.42 941.12,-1278.49 942.34,-1470.66"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="938.84,-1470.83 942.4,-1480.8 945.84,-1470.78 938.84,-1470.83"/>
-<text text-anchor="middle" x="812.5" y="-120.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;CHAR\n4.838035 kg/d</text>
+<text text-anchor="middle" x="812.5" y="-120.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;CHAR\n3.83479 kg/d</text>
 </g>
 <!-- PROD_C11_C18 -->
 <g id="node31" class="node">
@@ -592,5 +592,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="759.5" y="1715.5" width="510.1" height="136.0" fill="white" stroke="black" stroke-width="1.42"/><text x="768.0" y="1738.2" font-family="sans-serif" font-size="12.8">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD-MFG</text><text x="768.0" y="1762.3" font-family="sans-serif" font-size="12.8">pfd-mfg</text><text x="768.0" y="1786.4" font-family="sans-serif" font-size="12.8">Type: flow diagram (ISO_10628_2)   Rev b4594092   Issued 2026-10-15</text><text x="768.0" y="1810.4" font-family="sans-serif" font-size="12.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="768.0" y="1834.5" font-family="sans-serif" font-size="12.8">Graph SHA-256 6297c5010453afec   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="759.5" y="1715.5" width="510.1" height="136.0" fill="white" stroke="black" stroke-width="1.42"/><text x="768.0" y="1738.2" font-family="sans-serif" font-size="12.8">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD-MFG</text><text x="768.0" y="1762.3" font-family="sans-serif" font-size="12.8">pfd-mfg</text><text x="768.0" y="1786.4" font-family="sans-serif" font-size="12.8">Type: flow diagram (ISO_10628_2)   Rev 43d594c8   Issued 2026-10-15</text><text x="768.0" y="1810.4" font-family="sans-serif" font-size="12.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="768.0" y="1834.5" font-family="sans-serif" font-size="12.8">Graph SHA-256 f47abe003d003b41   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

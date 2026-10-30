@@ -31,7 +31,7 @@
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">SI_REFINE</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">IA-SI-EG</text>
-<text x="24" y="253" font-size="10" text-anchor="start">0.2 kg/d · solids transfer</text>
+<text x="24" y="253" font-size="10" text-anchor="start">1.6 kg/d · solids transfer</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N11</text>
 <line x1="430" y1="286" x2="577" y2="286" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-in"/>
 <polygon points="586,286 577,282 577,290" fill="#999"/>
@@ -55,7 +55,7 @@
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">WAFER_FAB</text>
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">STOCK_TO_FAB</text>
-<text x="1476" y="299" font-size="10" text-anchor="end">0.2 kg/d · solids transfer</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">1.6 kg/d · solids transfer</text>
 <text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N10</text>
 <line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
@@ -77,7 +77,7 @@
 <g id="aqs-title-block"><rect x="1116" y="566" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="583" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-METAL_STORE</text>
 <text x="1124" y="600" font-size="9">P&amp;ID METAL_STORE (store, FOUNDRY sector)</text>
-<text x="1124" y="617" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev c196295f   Issued 2026-10-19</text>
+<text x="1124" y="617" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 464ebf2e   Issued 2026-10-19</text>
 <text x="1124" y="634" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="651" font-size="9">Graph SHA-256 6297c5010453afec   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="651" font-size="9">Graph SHA-256 f47abe003d003b41   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

@@ -148,7 +148,7 @@
 <polygon points="586,1068 577,1064 577,1072" fill="#111"/>
 <text x="24" y="1049" font-size="9" fill="#666" text-anchor="start">WAFER_FAB</text>
 <text x="24" y="1063" font-size="11" font-weight="600" text-anchor="start">IA-FAB-KERF</text>
-<text x="24" y="1081" font-size="10" text-anchor="start">0.1 kg/d · solids transfer</text>
+<text x="24" y="1081" font-size="10" text-anchor="start">1.0 kg/d · solids transfer</text>
 <text x="598" y="1072" font-size="8" font-style="italic" fill="#555" text-anchor="start">N61</text>
 <line x1="430" y1="1114" x2="577" y2="1114" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1114 577,1110 577,1118" fill="#111"/>
@@ -178,7 +178,7 @@
 <polygon points="586,1298 577,1294 577,1302" fill="#111"/>
 <text x="24" y="1279" font-size="9" fill="#666" text-anchor="start">NORTH_DOCK</text>
 <text x="24" y="1293" font-size="11" font-weight="600" text-anchor="start">IA-H2O-MU</text>
-<text x="24" y="1311" font-size="10" text-anchor="start">57.0 kg/d · DN15 P2</text>
+<text x="24" y="1311" font-size="10" text-anchor="start">54.9 kg/d · DN15 P2</text>
 <text x="598" y="1302" font-size="8" font-style="italic" fill="#555" text-anchor="start">N48</text>
 <line x1="430" y1="1344" x2="577" y2="1344" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,1344 577,1340 577,1348" fill="#111"/>
@@ -208,13 +208,13 @@
 <polygon points="586,1528 577,1524 577,1532" fill="#111"/>
 <text x="24" y="1509" font-size="9" fill="#666" text-anchor="start">SI_REDUCE</text>
 <text x="24" y="1523" font-size="11" font-weight="600" text-anchor="start">IA-SI-FUME</text>
-<text x="24" y="1541" font-size="10" text-anchor="start">0.1 kg/d · solids transfer</text>
+<text x="24" y="1541" font-size="10" text-anchor="start">0.8 kg/d · solids transfer</text>
 <text x="598" y="1532" font-size="8" font-style="italic" fill="#555" text-anchor="start">N62</text>
 <line x1="430" y1="1574" x2="577" y2="1574" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1574 577,1570 577,1578" fill="#111"/>
 <text x="24" y="1555" font-size="9" fill="#666" text-anchor="start">SI_REFINE</text>
 <text x="24" y="1569" font-size="11" font-weight="600" text-anchor="start">IA-SI-PURGE</text>
-<text x="24" y="1587" font-size="10" text-anchor="start">0.3 kg/d · DN15 P2</text>
+<text x="24" y="1587" font-size="10" text-anchor="start">1.8 kg/d · DN15 P2</text>
 <text x="598" y="1578" font-size="8" font-style="italic" fill="#555" text-anchor="start">N63</text>
 <line x1="430" y1="1620" x2="577" y2="1620" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,1620 577,1616 577,1624" fill="#111"/>
@@ -272,7 +272,7 @@
 <polygon points="586,2034 577,2030 577,2038" fill="#111"/>
 <text x="24" y="2015" font-size="9" fill="#666" text-anchor="start">MFG_SHOP</text>
 <text x="24" y="2029" font-size="11" font-weight="600" text-anchor="start">S16</text>
-<text x="24" y="2047" font-size="10" text-anchor="start">11.6 kg/d · solids transfer</text>
+<text x="24" y="2047" font-size="10" text-anchor="start">10.6 kg/d · solids transfer</text>
 <text x="598" y="2038" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
 <line x1="430" y1="2080" x2="577" y2="2080" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,2080 577,2076 577,2084" fill="#111"/>
@@ -491,7 +491,7 @@
 <g id="aqs-title-block"><rect x="1116" y="2544" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="2561" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-LEACH_CSTR_1</text>
 <text x="1124" y="2578" font-size="9">P&amp;ID LEACH_CSTR_1 (vessel, DIGESTER sector)</text>
-<text x="1124" y="2595" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev fb82710b   Issued 2026-10-19</text>
+<text x="1124" y="2595" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 5e9efa0f   Issued 2026-10-19</text>
 <text x="1124" y="2612" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="2629" font-size="9">Graph SHA-256 6297c5010453afec   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="2629" font-size="9">Graph SHA-256 f47abe003d003b41   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

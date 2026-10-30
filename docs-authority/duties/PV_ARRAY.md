@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 351.7357 kW. In: none. Out: none.
+1. Basis. Mass in 0.4846 kg/d. Mass out 0.4846 kg/d. Electrical duty 360.7445 kW. In: IA-PV-CELL 0.4846 kg/d (finished cells to the replacement modules of the roof array). Out: IA-PV-EOL 0.4846 kg/d (silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop).
 
 2. Size.
 - Nameplate 70.00 kW. Average output 27.88 kW. No exchanger area. The old area used a heat-transfer formula on an electrical node. It is withdrawn.

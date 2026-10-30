@@ -41,7 +41,7 @@ Table 3.1. Fab units
 | Unit | Class | Role | Average load, kW |
 | --- | --- | --- | --- |
 | FAB_UPW_TANK | tank | Fab UPW tank (S27) | — |
-| WAFER_FAB | fab | ISO 14644-1 Class 7 wet bench, Class 6 tool row. | 0.2611 |
+| WAFER_FAB | fab | ISO 14644-1 Class 7 wet bench, Class 6 tool row. | 0.5788 |
 | WET_BENCH | wet_bench | No note on the graph. | 0.2066 |
 | WS_AMMONIA | reagent | Fab reagent fork (S33) | — |
 | WS_DOPE | reagent | Fab reagent fork (S36) | — |
@@ -55,7 +55,7 @@ Table 3.1. Fab units
 | LITHO_COAT | coater | Spin-coater line: spin bowl, vacuum chuck, softbake hotplate. Parent LITHO_STUB retired into the real tools (AQS-LITH-001 rev C; A-M-287). | 0.0254 |
 | LITHO_ALIGN | aligner | Contact aligner: 365 nm LED array over a 100 mm field, leadscrew stage (AQS-LITH-001 rev C; A-M-287). Not a stepper. | 0.0040 |
 | LITHO_DEV | wet_bench | Wet develop bench on the WET_BENCH chemistry class (TMAH/KOH developer fork, S38 resist-waste loop); developer is a share of the fab resist/solvent issue (A-M-287). | 0.0080 |
-| SOLAR_PV_CELL | tool | In-house PV cell line (X-MFG-38, AQS-DUTY-071, A-M-178): texture, POCl3 diffusion, PSG etch, PECVD SiNx, screen print, fast firing, IV. Tool table in params.design; not the yard array (PV_ARRAY). Study_stub class retired at the A-M-295 disposition. | 0.3917 |
+| SOLAR_PV_CELL | tool | In-house PV cell line (X-MFG-38, AQS-DUTY-071, A-M-178): texture, POCl3 diffusion, PSG etch, PECVD SiNx, screen print, fast firing, IV. Tool table in params.design; not the yard array (PV_ARRAY). Study_stub class retired at the A-M-295 disposition. | 1.7304 |
 | SOLV_PLANT | reactor | Solvent plant: spent-solvent still, with carbonylation, ketonisation and hydrogenation reactors or solvent fermenters (A-M-428). | 0.0296 |
 | RESIST_SYN | reactor | Photoresist synthesis: aromatic extraction, phenol and naphthol oxychlorination, formaldehyde, novolac, diazonaphthoquinone sulfonyl ester and formulation batch reactors (A-M-432). | 0.0037 |
 
@@ -67,17 +67,19 @@ Two methods were compared for growing the crystal: Czochralski pulling, which me
 
 ### 4.1 Silicon charge and blanket gas
 
-The fab starts 5 wafers a day of 27.8 g. Each wafer takes its own thickness and the saw kerf along the ingot, and the charge adds the crown, tail, diameter grind and pot scrap. A 7 d tool campaign needs 1.58 kg of charge, but a 40.5 cm crucible needs at least 33.5 kg of melt to pull from, so the charge is 33.5 kg. It yields about 740 wafers from a 61 cm body, enough for 148 d of starts; the wafers are stored until started. The silicon feed is 0.2264 kg/d on IA-SI-EG and STOCK_TO_FAB. The wafers, 0.1389 kg/d, run through the lithography units and back to the fab before going to the dock; the remaining 0.0875 kg/d leaves as kerf and crop on IA-FAB-KERF.
+The fab starts 5 wafers a day of 27.8 g. Each wafer takes its own thickness and the saw kerf along the ingot, and the charge adds the crown, tail, diameter grind and pot scrap. A 7 d tool campaign needs 11.45 kg of charge, but a 40.5 cm crucible needs at least 33.5 kg of melt to pull from, so the charge is 33.5 kg. It yields about 102 wafers from a 61 cm body, enough for 20 d of starts; the wafers are stored until started. 
+On the solar wafer route CZ_PSQ125 the same ingot also gives about 1595 thin solar wafers a pull for the cell line SOLAR_PV_CELL, so the pulls come closer together; on CAST_MC156 the cell line takes cast multicrystalline wafers from a cast furnace in this unit instead (AQS-DUTY-071, A-M-437). 
+The silicon feed is 1.6353 kg/d on IA-SI-EG and STOCK_TO_FAB. The wafers, 0.1389 kg/d, run through the lithography units and back to the fab before going to the dock; the remaining 1.0118 kg/d leaves as kerf and crop on IA-FAB-KERF.
 
 METAL_STORE holds one charge, 33.5 kg, until the pull. The charge is made on site, as Section 4.2 describes.
 
-The puller runs under argon from the cold box CRYO_ASU for 19.2 h a pull: meltdown, neck and crown, the 10.2 h body pull, and cool-down. At 39 slpm over a crucible of 1288 cm2 this is 79.3 kg of argon a pull, 0.536 kg/d on IA-AR-CZ averaged over the days between pulls. The exhaust returns on IA-AR-CZ-BACK to the heated getter of the cold box, so the loop is closed. Nitrogen is not offered as an alternative for the puller, because at the melt temperature it forms silicon nitride on the melt and the crucible; it remains the purge gas of the wafer tools on S03.
+The puller runs under argon from the cold box CRYO_ASU for 19.2 h a pull: meltdown, neck and crown, the 10.2 h body pull, and cool-down. At 39 slpm over a crucible of 1288 cm2 this is 79.3 kg of argon a pull, 3.871 kg/d on IA-AR-CZ averaged over the days between pulls. The exhaust returns on IA-AR-CZ-BACK to the heated getter of the cold box, so the loop is closed. Nitrogen is not offered as an alternative for the puller, because at the melt temperature it forms silicon nitride on the melt and the crucible; it remains the purge gas of the wafer tools on S03.
 
 ### 4.2 Silicon made on site
 
-The plant takes in only waste and raw ore, so the charge is made from quartz ore. SI_REDUCE reduces the quartz with pyrolysis char from OIL_PYRO in a small arc furnace, SiO2 + 2 C giving Si + 2 CO, to metallurgical-grade silicon of 98 % purity. It takes 0.7176 kg/d of quartz on IA-QUARTZ-MU and 0.2278 kg/d of char on CHAR_TO_SI, and sends 0.2717 kg/d of silicon on IA-SI-MG; the carbon monoxide burns to 0.8346 kg/d of carbon dioxide in the hood, and 0.1424 kg/d of silica fume is caught in the baghouse and sent to the acid leach. Its average load is 0.147 kW.
+The plant takes in only waste and raw ore, so the charge is made from quartz ore. SI_REDUCE reduces the quartz with pyrolysis char from OIL_PYRO in a small arc furnace, SiO2 + 2 C giving Si + 2 CO, to metallurgical-grade silicon of 98 % purity. It takes 3.8781 kg/d of quartz on IA-QUARTZ-MU and 1.2310 kg/d of char on CHAR_TO_SI, and sends 1.4686 kg/d of silicon on IA-SI-MG; the carbon monoxide burns to 4.5105 kg/d of carbon dioxide in the hood, and 0.7698 kg/d of silica fume is caught in the baghouse and sent to the acid leach. Its average load is 0.796 kW.
 
-SI_REFINE refines that silicon to electronic grade on a closed chlorosilane loop. The selected route is trichlorosilane decomposed on Siemens rods; the other route of the driver si_refine_route is the backup of a different technology on the same loop. The silicon is hydrochlorinated to trichlorosilane and distilled; the reactor off-gas of hydrogen, hydrogen chloride and silicon tetrachloride is recovered and recycled, so on the loop only chlorine is consumed. The loop bleeds the impurity chlorides and the silicon it does not recover, 15 % of its feed, as 0.2590 kg/d of chlorides on IA-SI-PURGE to the acid leach LEACH_CSTR_1, where the tetrachloride hydrolyses to silica and hydrogen chloride that joins the acid loop. The chlorine they carry, 0.2137 kg/d, is the make-up, drawn from the AL_POT cell gas on IA-CL2-SIREF. The electronic-grade silicon, 0.2264 kg/d, goes to METAL_STORE on IA-SI-EG. Its average load is 0.566 kW.
+SI_REFINE refines that silicon to electronic grade on a closed chlorosilane loop. The selected route is trichlorosilane decomposed on Siemens rods; the other route of the driver si_refine_route is the backup of a different technology on the same loop. The silicon is hydrochlorinated to trichlorosilane and distilled; the reactor off-gas of hydrogen, hydrogen chloride and silicon tetrachloride is recovered and recycled, so on the loop only chlorine is consumed. The loop bleeds the impurity chlorides and the silicon it does not recover, 15 % of its feed, as 1.8397 kg/d of chlorides on IA-SI-PURGE to the acid leach LEACH_CSTR_1, where the tetrachloride hydrolyses to silica and hydrogen chloride that joins the acid loop. The chlorine they carry, 1.5218 kg/d, is the make-up, drawn from the AL_POT cell gas on IA-CL2-SIREF. The electronic-grade silicon, 1.6353 kg/d, goes to METAL_STORE on IA-SI-EG. Its average load is 4.088 kW.
 
 ### 4.3 Hot-zone heater
 
@@ -104,13 +106,13 @@ Table 5.1. Equipment of the fab unit
 
 | Equipment | Average load, kW |
 | --- | --- |
-| CZ puller: charge heat-up + hot zone 8.51 kW over 15.2 h + graphite heat-up, one pull every 148 d | 0.0511 |
+| CZ puller: charge heat-up + hot zone 8.51 kW over 15.2 h + graphite heat-up, one pull every 20 d | 0.3688 |
 | ingot cool/anneal station: N2 circulator duty share | 0.0200 |
 | crop/grind/edge tools at 5 starts/d | 0.0400 |
 | FAB_TOOL dry row parasitics (ox, RTA, metal, probe standby) | 0.1200 |
 | N2 purge distribution (ISO 14644 Class 6 row) | 0.0300 |
 
-The equipment loads sum to 0.2611 kW against an average load of 0.2611 kW on the graph, so they agree.
+The equipment loads sum to 0.5788 kW against an average load of 0.5788 kW on the graph, so they agree.
 
 ## 6. Streams
 
@@ -120,11 +122,11 @@ Table 6.1. Streams of the fab units
 
 | Stream | From | To | Rate | Unit |
 | --- | --- | --- | --- | --- |
-| IA-AR-CZ | CRYO_ASU | WAFER_FAB | 0.5358 | kg/d |
-| IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | 0.5358 | kg/d |
+| IA-AR-CZ | CRYO_ASU | WAFER_FAB | 3.871 | kg/d |
+| IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | 3.871 | kg/d |
 | IA-BMED-01 | BMED_ACID | WS_NITRIC | 1.246 | kg/d |
 | IA-BMED-02 | BMED_BASE | WS_KOH | 0.2701 | kg/d |
-| IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | 0.08746 | kg/d |
+| IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | 1.012 | kg/d |
 | IA-FAB-N2-VENT | WAFER_FAB | ATMOS | 1.5 | kg/d |
 | IA-FAB-PRODUCT | WAFER_FAB | NORTH_DOCK | 0.1389 | kg/d |
 | IA-FAB-SOLV | WS_SOLV | WAFER_FAB | 0.2195 | kg/d |
@@ -143,8 +145,10 @@ Table 6.1. Streams of the fab units
 | IA-PEROX-H2O | ROOF_TANK | WS_PEROX | 2.824 | kg/d |
 | IA-PHOS-DOPE | WS_PHOS | WS_DOPE | 0.01 | kg/d |
 | IA-PHOS-SRC | LEACH_CSTR_1 | WS_PHOS | 0.62 | kg/d |
+| IA-PV-CELL | SOLAR_PV_CELL | PV_ARRAY | 0.4846 | kg/d |
 | IA-PV-IN | WS_DOPE | SOLAR_PV_CELL | 0.01 | kg/d |
 | IA-PV-OUT | SOLAR_PV_CELL | WAFER_FAB | 0.009999 | kg/d |
+| IA-PV-WAFER | WAFER_FAB | SOLAR_PV_CELL | 0.4846 | kg/d |
 | IA-RESIST-ACET | WS_SOLV | RESIST_SYN | 0.09 | kg/d |
 | IA-RESIST-ACID | ACID_PLANT | RESIST_SYN | 0.002575 | kg/d |
 | IA-RESIST-AIR | ATMOS | RESIST_SYN | 0.09256 | kg/d |
@@ -189,11 +193,11 @@ Table 6.1. Streams of the fab units
 | SF-LITHO_COAT | SOL_ARK_60K | LITHO_COAT | 0.0254 | kW |
 | SF-LITHO_DEV | SOL_ARK_60K | LITHO_DEV | 0.008 | kW |
 | SF-RESIST_SYN | SOL_ARK_60K | RESIST_SYN | 0.00366 | kW |
-| SF-SOLAR_PV_CELL | SOL_ARK_60K | SOLAR_PV_CELL | 0.3917 | kW |
+| SF-SOLAR_PV_CELL | SOL_ARK_60K | SOLAR_PV_CELL | 1.73 | kW |
 | SF-SOLV_PLANT | SOL_ARK_60K | SOLV_PLANT | 0.02963 | kW |
-| SF-WAFER_FAB | SOL_ARK_60K | WAFER_FAB | 0.2611 | kW |
+| SF-WAFER_FAB | SOL_ARK_60K | WAFER_FAB | 0.5788 | kW |
 | SF-WET_BENCH | SOL_ARK_60K | WET_BENCH | 0.2066 | kW |
-| STOCK_TO_FAB | METAL_STORE | WAFER_FAB | 0.2264 | kg/d |
+| STOCK_TO_FAB | METAL_STORE | WAFER_FAB | 1.635 | kg/d |
 
 The streams IA-NIT-VENT carry no flow on the present graph.
 
@@ -206,7 +210,7 @@ Table 7.1. Mass in and out of each unit
 | Unit | Mass in, kg/d | Mass out, kg/d | Out less in, kg/d |
 | --- | --- | --- | --- |
 | FAB_UPW_TANK | 60.000 | 60.000 | 0.000 |
-| WAFER_FAB | 72.551 | 72.551 | 0.000 |
+| WAFER_FAB | 77.295 | 77.295 | 0.000 |
 | WET_BENCH | 79.122 | 79.122 | 0.000 |
 | WS_AMMONIA | 3.010 | 3.010 | -0.000 |
 | WS_DOPE | 0.010 | 0.010 | 0.000 |
@@ -220,7 +224,7 @@ Table 7.1. Mass in and out of each unit
 | LITHO_COAT | 0.478 | 0.478 | 0.000 |
 | LITHO_ALIGN | 0.139 | 0.139 | 0.000 |
 | LITHO_DEV | 0.478 | 0.478 | 0.000 |
-| SOLAR_PV_CELL | 0.010 | 0.010 | -0.000 |
+| SOLAR_PV_CELL | 0.495 | 0.495 | -0.000 |
 | SOLV_PLANT | 0.810 | 0.810 | 0.000 |
 | RESIST_SYN | 1.567 | 1.567 | -0.000 |
 

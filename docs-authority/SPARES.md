@@ -10,13 +10,13 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | Kind | Family / unit | Item | Installed | Spares | Rule |
 |---|---|---|---|---|---|
 | building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x434) | 434 | 44 | 10 % min 2 |
-| building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z) | 356 | 36 | 10 % min 2 |
+| building block | OF-02 | bearing: deep-groove ball bearing (6202-2Z x212; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z) | 356 | 36 | 10 % min 2 |
 | building block | OF-03 | electronics: PLC digital I/O point (24 V DC x930) | 930 | 93 | 10 % min 1 |
 | building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x811) | 811 | 82 | 10 % min 1 |
 | building block | OF-05 | electronics: BLDC driver (24/48 V DC x214) | 214 | 22 | 10 % min 1 |
-| building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x104; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW ) | 145 | 15 | 10 % min 1 |
+| building block | OF-06 | electronics: motor starter (contactor + overload) (0.37 kW x103; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW ) | 144 | 15 | 10 % min 1 |
 | building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x109) | 109 | 11 | 10 % min 1 |
-| building block | OF-08 | electronics: variable-frequency drive (1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x2; 4 kW x1) | 33 | 4 | 10 % min 1 |
+| building block | OF-08 | electronics: variable-frequency drive (1.1 kW x21; 2.2 kW x7; 1.5 kW x3; 7.5 kW x2; 4 kW x1) | 34 | 4 | 10 % min 1 |
 | building block | OF-09 | electronics: solenoid driver channel (24 V DC x44) | 44 | 5 | 10 % min 1 |
 | building block | OF-10 | electronics: compressor contactor + overload (18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1) | 10 | 1 | 10 % min 1 |
 | building block | OF-11 | electronics: stepper driver (24/48 V DC x3) | 3 | 1 | 10 % min 1 |
@@ -92,12 +92,12 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | motor | MF-01 | BLDC 42 mm (NEMA 17 flange) 24 V DC | 131 | 7 | 5 % min 1 |
 | motor | MF-02 | BLDC 57 mm (NEMA 23 flange) 24 V DC | 56 | 3 | 5 % min 1 |
 | motor | MF-03 | BLDC actuator ISO 5211 F03 mount 24 V DC | 27 | 2 | 5 % min 1 |
-| motor | MF-06 | induction IE3 IEC 71 / 0.37 kW 480 V 3-ph | 104 | 6 | 5 % min 1 |
+| motor | MF-06 | induction IE3 IEC 71 / 0.37 kW 480 V 3-ph | 103 | 6 | 5 % min 1 |
 | motor | MF-07 | induction IE3 IEC 90S / 1.1 kW 480 V 3-ph | 23 | 2 | 5 % min 1 |
 | motor | MF-08 | induction IE3 IEC 90L / 1.5 kW 480 V 3-ph | 3 | 1 | 5 % min 1 |
 | motor | MF-09 | induction IE3 IEC 63 / 0.18 kW 208 V 3-ph | 20 | 1 | 5 % min 1 |
 | motor | MF-10 | induction IE3 IEC 80 / 0.55 kW 480 V 3-ph | 11 | 1 | 5 % min 1 |
-| motor | MF-11 | induction IE3 IEC 100L / 2.2 kW 480 V 3-ph | 6 | 1 | 5 % min 1 |
+| motor | MF-11 | induction IE3 IEC 100L / 2.2 kW 480 V 3-ph | 7 | 1 | 5 % min 1 |
 | motor | MF-12 | induction IE3 IEC 63 / 0.12 kW 208 V 3-ph | 4 | 1 | 5 % min 1 |
 | motor | MF-13 | induction IE3 IEC 71 / 0.25 kW 208 V 3-ph | 3 | 1 | 5 % min 1 |
 | motor | MF-14 | induction IE3 IEC 132M / 7.5 kW 480 V 3-ph | 2 | 1 | 5 % min 1 |

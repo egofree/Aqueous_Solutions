@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "6297c5010453afec357ba7beedabb060ccbbd9da02703d9bd0c4429e78487e1b",
+  "graph_sha256": "f47abe003d003b41cd5fa9f6ecffd591ae00df9b86e58ee2997f5ccf46ae26c5",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 351.736,
-   "calc_kw": 351.736,
+   "kw": 360.745,
+   "calc_kw": 360.745,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 217.913,
-   "calc_kw": 217.913,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.9 kW, charge 990.5 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 226.924,
+   "calc_kw": 226.924,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 226.9 kW, charge 1031.4 kW, 3177 kWh over 44 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 82.133,
-   "calc_kw": 82.133,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 35.61 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.40 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.3 kW and cooling 100.0 kW thermal average after internal gains 35.8 kW and slab edge 3.04 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 85.314,
+   "calc_kw": 85.314,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 29664 m2; lighting 26.10 kW (IECC 2021 C405, 10 % lit), ventilation 37.00 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 22.21 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 52.3 kW and cooling 103.8 kW thermal average after internal gains 37.2 kW and slab edge 3.15 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -113,6 +113,15 @@
    "sector": "DIGESTER"
   },
   {
+   "unit": "SI_REFINE",
+   "role": "\u2014",
+   "kw": 4.088,
+   "calc_kw": 4.088,
+   "basis": "X-MFG-40 TF, on-site silicon (A-M-419): 1.6353 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py).",
+   "class": "calculated",
+   "sector": "GLASS"
+  },
+  {
    "unit": "MFG_SHOP",
    "role": "load",
    "kw": 2.55,
@@ -147,6 +156,15 @@
    "basis": "AQS-DUTY-051 DC at the bounding current; fed from RECTIFIER (DC, not in the AC sum)",
    "class": "calculated",
    "sector": "DIGESTER"
+  },
+  {
+   "unit": "SOLAR_PV_CELL",
+   "role": "\u2014",
+   "kw": 1.73,
+   "calc_kw": 1.73,
+   "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 41.53 kWh/d for 77.8 cells/d in 4 batches of one carrier (A-M-437); peak 6.08 kW (one tool at a time).",
+   "class": "calculated",
+   "sector": "FAB"
   },
   {
    "unit": "OIL_PYRO",
@@ -230,6 +248,15 @@
    "sector": "FOUNDRY"
   },
   {
+   "unit": "SI_REDUCE",
+   "role": "\u2014",
+   "kw": 0.795,
+   "calc_kw": 0.795,
+   "basis": "X-MFG-40 TF, on-site silicon (A-M-419): 1.4686 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py).",
+   "class": "calculated",
+   "sector": "GLASS"
+  },
+  {
    "unit": "LEACH_CSTR_1",
    "role": "load",
    "kw": 0.75,
@@ -266,13 +293,13 @@
    "sector": "CRYO"
   },
   {
-   "unit": "SI_REFINE",
-   "role": "\u2014",
-   "kw": 0.566,
-   "calc_kw": 0.566,
-   "basis": "X-MFG-40 TF, on-site silicon (A-M-419): 0.2264 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py).",
+   "unit": "WAFER_FAB",
+   "role": "load",
+   "kw": 0.579,
+   "calc_kw": 0.579,
+   "basis": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 28.31 kWh/pull heat-up (CRC_SI cp/L) + 153 kWh/pull hot zone from its heat-loss model (A-M-436), meltdown peak 25.9 kW, one pull every 20 d (A-M-417) + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. / X-ELS-02 load-basis (A-M-301).",
    "class": "calculated",
-   "sector": "GLASS"
+   "sector": "FAB"
   },
   {
    "unit": "VDF_SYN",
@@ -365,15 +392,6 @@
    "sector": "POLYMERS"
   },
   {
-   "unit": "SOLAR_PV_CELL",
-   "role": "\u2014",
-   "kw": 0.392,
-   "calc_kw": 0.392,
-   "basis": "X-MFG-38 (A-M-178, AQS-DUTY-071): 9.40 kWh/d for 3 cells, one batch; peak 3.79 kW (one tool at a time).",
-   "class": "calculated",
-   "sector": "FAB"
-  },
-  {
    "unit": "BLOW_MOLD",
    "role": "\u2014",
    "kw": 0.369,
@@ -408,15 +426,6 @@
    "basis": "AQS-DUTY-072 slurry mixer + stucco rainfall at 8.0 kg/d shell (A-M-286 study).",
    "class": "calculated",
    "sector": "FOUNDRY"
-  },
-  {
-   "unit": "WAFER_FAB",
-   "role": "load",
-   "kw": 0.261,
-   "calc_kw": 0.261,
-   "basis": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 28.31 kWh/pull heat-up (CRC_SI cp/L) + 153 kWh/pull hot zone from its heat-loss model (A-M-436), meltdown peak 25.9 kW, one pull every 148 d (A-M-417) + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. / X-ELS-02 load-basis (A-M-301).",
-   "class": "calculated",
-   "sector": "FAB"
   },
   {
    "unit": "SHELL_BURNOUT",
@@ -480,15 +489,6 @@
    "basis": "AQS-DUTY-072 tilt-pour station at 2.0 kg/d castings (study).",
    "class": "calculated",
    "sector": "FOUNDRY"
-  },
-  {
-   "unit": "SI_REDUCE",
-   "role": "\u2014",
-   "kw": 0.147,
-   "calc_kw": 0.147,
-   "basis": "X-MFG-40 TF, on-site silicon (A-M-419): 0.2717 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py).",
-   "class": "calculated",
-   "sector": "GLASS"
   },
   {
    "unit": "AFTERBURNER",
@@ -885,10 +885,10 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 97,
-  "graph_sum_kW": 155.99,
-  "calc_sum_kW": 155.99,
-  "connected_load_kW": 156.0,
-  "connected_calculated_kW": 155.9,
+  "graph_sum_kW": 165.0,
+  "calc_sum_kW": 165.0,
+  "connected_load_kW": 165.0,
+  "connected_calculated_kW": 164.9,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 0.0,
   "connected_calculated_pct": 99.9,

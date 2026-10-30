@@ -17,7 +17,7 @@ This page records the size of unit SOLAR_PV_CELL, of class `tool` in sector FAB,
 
 ## 2. Duty
 
-The unit takes 0.01 kg/d by 1 stream and gives 0.009999 kg/d by 1 stream. Its continuous electrical load is 0.3917 kW, fed by stream SF-SOLAR_PV_CELL.
+The unit takes 0.494615 kg/d by 2 streams and gives 0.494614 kg/d by 2 streams. Its continuous electrical load is 1.7304 kW, fed by stream SF-SOLAR_PV_CELL.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -25,18 +25,21 @@ Table 2.1. Design parameters
 
 | Parameter | Value |
 | --- | --- |
-| cells_per_d | 3 |
+| need | parameters route, array_kw, life_yr, repl_per_yr, W_d, cell_area_cm2, cell_eff, cell_W, cells_per_d, wafer_g, slot_g, wafer_kg_d, slot_kg_d, t_cm, kerf_cm, Si_g_per_W |
+| cells_per_d | 77.8028 |
+| batches | 4 |
+| carrier | 25 |
 | tools | 7 items: PV-TEX-01, PV-EMIT-01, PV-PSG-01, PV-ARC-01, PV-CON-01, PV-FIRE-01, PV-IV-01 |
-| kWh_d | 9.40159 |
-| avg_kW | 0.391733 |
-| peak_kW | 3.79427 |
-| kWh_per_cell | 3.13386 |
+| kWh_d | 41.5294 |
+| avg_kW | 1.73039 |
+| peak_kW | 6.07748 |
+| kWh_per_cell | 0.533778 |
 
 ## 3. Geometry
 
 The envelope is 2400 mm x 1200 mm x 1600 mm, from `params.size_mm`. Its basis is: L x W x H mm, issued envelope (X-MFG-38 tool line).
 
-The hold-up check takes 0.01 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.01 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 30 mm in diameter and 40 mm high. It fits within the envelope.
+The hold-up check takes 0.494615 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.4946 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 90 mm in diameter and 130 mm high. It fits within the envelope.
 
 ## 4. Material
 

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.4854 kg/d. Mass out 0.4854 kg/d. Electrical duty 0.5659 kW. In: IA-SI-MG 0.2717 kg/d (metallurgical-grade silicon); IA-CL2-SIREF 0.2137 kg/d (chlorine make-up of the chlorosilane loop). Out: IA-SI-PURGE 0.259 kg/d (impurity chlorides and silicon tetrachloride bleed); IA-SI-EG 0.2264 kg/d (electronic-grade silicon for the CZ charge).
+1. Basis. Mass in 3.475 kg/d. Mass out 3.475 kg/d. Electrical duty 4.0882 kW. In: IA-SI-MG 1.469 kg/d (metallurgical-grade silicon); IA-CL2-SIREF 1.522 kg/d (chlorine make-up of the chlorosilane loop); IA-PV-EOL 0.4846 kg/d (silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop). Out: IA-SI-PURGE 1.84 kg/d (impurity chlorides and silicon tetrachloride bleed); IA-SI-EG 1.635 kg/d (electronic-grade silicon for the CZ charge).
 
 2. Size.
 - Node note: Electronic-grade silicon refining (A-M-419).

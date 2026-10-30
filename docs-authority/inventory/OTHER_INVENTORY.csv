@@ -1147,9 +1147,9 @@ FAB,tank,FAB_UPW_TANK,instrument,temperature element,Pt100 class A,"IEC 60751, 3
 FAB,tank,FAB_UPW_TANK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",14,S27: AQS-PIP-005 span count
 FAB,tank,FAB_UPW_TANK,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,S27: pump discharge (assumed)
 FAB,tank,FAB_UPW_TANK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,S27: one at each end nozzle (assumed)
-FAB,tool,SOLAR_PV_CELL,bearing,deep-groove ball bearing,6202-2Z,"ISO 15 / ISO 492 normal class, C3",2,"main drive: drive and non-drive end, IEC 60072 frame 71 (assumed size)"
+FAB,tool,SOLAR_PV_CELL,bearing,deep-groove ball bearing,6206-2Z,"ISO 15 / ISO 492 normal class, C3",2,"main drive: drive and non-drive end, IEC 60072 frame 100L (assumed size)"
 FAB,tool,SOLAR_PV_CELL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,main drive: run and fault (assumed)
-FAB,tool,SOLAR_PV_CELL,electronics,motor starter (contactor + overload),0.37 kW,IEC 60947-4-1,1,main drive (assumed VFD at >= 0.75 kW)
+FAB,tool,SOLAR_PV_CELL,electronics,variable-frequency drive,2.2 kW,IEC 61800-5-1,1,main drive (assumed VFD at >= 0.75 kW)
 FAB,tool,SOLAR_PV_CELL,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FAB,tool,SOLAR_PV_CELL,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 FAB,tool,SOLAR_PV_CELL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"

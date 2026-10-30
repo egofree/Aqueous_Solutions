@@ -7540,5 +7540,24 @@
   ],
   "needs_verification": true,
   "verification_test": "log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model"
+ },
+ {
+  "id": "A-M-437",
+  "value": "The solar cell line SOLAR_PV_CELL makes the cells that replace the roof array, so its rate follows from the array nameplate on the graph: a module is replaced when its output falls to 80 % of nameplate, which at 0.5 % a year gives a 40-year life, and 0.05 % of modules a year fail besides. The wafers come from WAFER_FAB by pv_wafer_route: CZ_PSQ125 (default) cuts 125 mm semi-square cells from the 150 mm CZ ingot of the one puller, and CAST_MC156 casts a multicrystalline block by directional solidification in a cast furnace in WAFER_FAB. A larger puller for 156 mm single-crystal cells is evaluated and not built. The cells retired from end-of-life modules return their silicon to the chlorosilane loop of SI_REFINE. The cell line runs in batches of one wafer carrier, and its PECVD electrode holds one carrier.",
+  "units": "cells/d",
+  "where": "flow_graph/param/pv_wafer.py; flow_graph/param/fab_silicon.py; flow_graph/param/si_refine.py IA-PV-EOL; flow_graph/param/pv_cell_line.py; flow_graph/param/drivers.json pv_wafer_route and FAB.pv-wafer-train.*",
+  "basis": "Owner rules of 2026-10-30: decide from first principles, build both designs where neither wins on the merits, nothing arbitrarily fixed, no imports except waste or raw ore, recovery first. Degradation (JORDAN_KURTZ2013), failure rate (JORDAN2017), wafer formats, thickness and cell efficiencies (ITRPV2020), directional solidification (LAN2017), the wafer carrier (SEMI_E1). The semi-square route is the default because it shares the puller, the hot zone and the refining with the fab wafers and gives the more efficient cell; the cast route is the second technology because it does not depend on the puller.",
+  "sensitivity": "The cell rate scales with the array nameplate and the replacement share; the silicon refined, and its energy, follow the cell rate. On CAST_MC156 the silicon per watt rises by the cropped share of the block.",
+  "replaced_by": "The efficiencies of the first in-house cells, the lifetime map of the first cast block, and the module materials of task X-RTE-PV-MODULE",
+  "task": "QA audit 2026-10-30, X-RTE-PV-SI",
+  "files": [
+   "flow_graph/param/pv_wafer.py",
+   "flow_graph/param/fab_silicon.py",
+   "flow_graph/param/si_refine.py",
+   "flow_graph/param/pv_cell_line.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "IV-test the first in-house cells and map the minority-carrier lifetime of the first cast block, and compare with the drivers"
  }
 ]

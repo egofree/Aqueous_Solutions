@@ -2163,10 +2163,162 @@
   "units": "- roll face width margin over the slab width for edge spread and tracking",
   "register": "A-M-416"
  },
- "pv_cells_per_d": {
-  "value": 3,
-  "units": "cells/d M2 156 mm (ST-SOLAR-01 study rate)",
-  "register": "ST-SOLAR-01"
+ "pv_wafer_route": {
+  "value": "CZ_PSQ125",
+  "units": "- wafer route of the solar cell line: CZ_PSQ125 (125 mm semi-square cells from the 150 mm CZ ingot of WAFER_FAB) or CAST_MC156 (156.75 mm multicrystalline cells from a block cast by directional solidification in WAFER_FAB)",
+  "register": "A-M-437"
+ },
+ "FAB.pv-wafer-train.eol_output_frac": {
+  "value": 0.8,
+  "units": "- module output, as a share of nameplate, at which a module is replaced: the end of the usual output warranty",
+  "register": "A-M-437",
+  "ref": "JORDAN_KURTZ2013"
+ },
+ "FAB.pv-wafer-train.degradation_per_yr": {
+  "value": 0.005,
+  "units": "- loss of module output per year, the median of field measurements",
+  "register": "A-M-437",
+  "ref": "JORDAN_KURTZ2013"
+ },
+ "FAB.pv-wafer-train.failure_per_yr": {
+  "value": 0.0005,
+  "units": "- share of modules that fail and are replaced each year apart from wear-out, about 5 in 10,000",
+  "register": "A-M-437",
+  "ref": "JORDAN2017"
+ },
+ "FAB.pv-wafer-train.wafer_t_um": {
+  "value": 180.0,
+  "units": "um as-cut thickness of a solar wafer",
+  "register": "A-M-437",
+  "ref": "ITRPV2020"
+ },
+ "FAB.pv-wafer-train.psq_side_mm": {
+  "value": 125.0,
+  "units": "mm width across the flats of the semi-square cell cut from the 150 mm ingot, the 125 mm format of 150 mm ingots",
+  "register": "A-M-437",
+  "ref": "ITRPV2020"
+ },
+ "FAB.pv-wafer-train.cell_eff_CZ": {
+  "value": 0.19,
+  "units": "- efficiency at standard test conditions of a screen-printed single-crystal cell with an aluminium back field",
+  "register": "A-M-437",
+  "ref": "ITRPV2020",
+  "needs_verification": true,
+  "verification_test": "IV-test the first in-house cells and compare the measured efficiency"
+ },
+ "FAB.pv-wafer-train.cell_eff_MC": {
+  "value": 0.175,
+  "units": "- efficiency at standard test conditions of a screen-printed multicrystalline cell with an aluminium back field",
+  "register": "A-M-437",
+  "ref": "ITRPV2020",
+  "needs_verification": true,
+  "verification_test": "IV-test the first in-house cells and compare the measured efficiency"
+ },
+ "FAB.pv-wafer-train.mc_side_mm": {
+  "value": 156.75,
+  "units": "mm side of a square 156 mm cell",
+  "register": "A-M-437",
+  "ref": "ITRPV2020"
+ },
+ "FAB.pv-wafer-train.mc_edge_crop_mm": {
+  "value": 20.0,
+  "units": "mm cropped from each side of a cast block: the zone that the crucible wall contaminates",
+  "register": "A-M-437",
+  "ref": "LAN2017",
+  "needs_verification": true,
+  "verification_test": "measure the minority-carrier lifetime across the first cast block"
+ },
+ "FAB.pv-wafer-train.mc_tb_crop_frac": {
+  "value": 0.2,
+  "units": "- share of the block height cropped at the bottom and the top: the contaminated foot and the segregated cap",
+  "register": "A-M-437",
+  "ref": "LAN2017",
+  "needs_verification": true,
+  "verification_test": "measure the minority-carrier lifetime along the first cast block"
+ },
+ "FAB.pv-wafer-train.mc_growth_mm_h": {
+  "value": 10.0,
+  "units": "mm/h growth rate of directional solidification",
+  "register": "A-M-437",
+  "ref": "LAN2017"
+ },
+ "FAB.pv-wafer-train.mc_G_K_cm": {
+  "value": 10.0,
+  "units": "K/cm temperature gradient in the solid at the growth front of directional solidification",
+  "register": "A-M-437",
+  "ref": "LAN2017"
+ },
+ "FAB.pv-wafer-train.mc_melt_h": {
+  "value": 4.0,
+  "units": "h meltdown and stabilisation of the cast charge under argon",
+  "register": "A-M-437",
+  "ref": "LAN2017",
+  "needs_verification": true,
+  "verification_test": "log the first cast"
+ },
+ "FAB.pv-wafer-train.mc_cool_h": {
+  "value": 6.0,
+  "units": "h cool-down of the cast block under argon, heater off",
+  "register": "A-M-437",
+  "ref": "LAN2017",
+  "needs_verification": true,
+  "verification_test": "log the first cast"
+ },
+ "FAB.pv-wafer-train.m2_ingot_D_mm": {
+  "value": 210.0,
+  "units": "mm ingot diameter for 156.75 mm single-crystal cells, the diagonal of that format",
+  "register": "A-M-437",
+  "ref": "ITRPV2020"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_cassette_n": {
+  "value": 25,
+  "units": "wafers in one carrier, the batch of the cell line",
+  "register": "A-M-437",
+  "ref": "SEMI_E1"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_boat_pitch_mm": {
+  "value": 4.76,
+  "units": "mm slot pitch of the quartz diffusion boat",
+  "register": "A-M-437",
+  "ref": "SEMI_E1"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg_m2": {
+  "value": 100.0,
+  "units": "kg/m2 heated platen of the PECVD electrode, the 5 kg platen of a 0.05 m2 electrode of revision B",
+  "register": "A-M-437",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "weigh the platen of the first PECVD tool"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_clear_mm": {
+  "value": 50.0,
+  "units": "mm clearance from the electrode to the chamber wall on each side",
+  "register": "A-M-437",
+  "ref": "INCROPERA7"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_print_min_cell": {
+  "value": 10.0,
+  "units": "min of screen printing and drying per cell, the 0.5 h for 3 cells of revision B",
+  "register": "A-M-437",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "time the first printed batch"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_fire_min_cell": {
+  "value": 3.4,
+  "units": "min of lamp time in the firing furnace per cell, the 0.17 h for 3 cells of revision B",
+  "register": "A-M-437",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "time the first fired batch"
+ },
+ "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_iv_min_cell": {
+  "value": 5.0,
+  "units": "min of flash IV test per cell, the 0.25 h for 3 cells of revision B",
+  "register": "A-M-437",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "time the first tested batch"
  },
  "pvl_tex_L": {
   "value": 10.0,
@@ -2237,11 +2389,6 @@
   "needs_verification": true,
   "verification_test": "First-article tool run (X-MFG-38)"
  },
- "pvl_pecvd_area_m2": {
-  "value": 0.05,
-  "units": "m2 electrode (two cells)",
-  "register": "A-M-178"
- },
  "pvl_pecvd_dep_h": {
   "value": 0.25,
   "units": "h deposition per batch",
@@ -2272,29 +2419,14 @@
   "units": "kW 200 C dryer",
   "register": "A-M-178"
  },
- "pvl_print_h": {
-  "value": 0.5,
-  "units": "h per batch",
-  "register": "A-M-178"
- },
  "pvl_fire_kW": {
   "value": 3.0,
   "units": "kW IR lamp fast-firing furnace",
   "register": "A-M-178"
  },
- "pvl_fire_h": {
-  "value": 0.17,
-  "units": "h lamp on per batch",
-  "register": "A-M-178"
- },
  "pvl_iv_kW": {
   "value": 0.1,
   "units": "kW flash IV tester",
-  "register": "A-M-178"
- },
- "pvl_iv_h": {
-  "value": 0.25,
-  "units": "h",
   "register": "A-M-178"
  },
  "znbr_ASR_ohm_cm2": {
@@ -3700,19 +3832,9 @@
   "units": "kJ/(kg K) diffusion-furnace heated mass (quartz tube and fixtures)",
   "register": "A-M-178 (X-MFG-38)"
  },
- "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg": {
-  "value": 5.0,
-  "units": "kg PECVD heated platen mass",
-  "register": "A-M-178 (X-MFG-38)"
- },
  "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_cp_kJ_kgK": {
   "value": 0.5,
   "units": "kJ/(kg K) PECVD platen cp",
-  "register": "A-M-178 (X-MFG-38)"
- },
- "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_chamber_D_mm": {
-  "value": 300,
-  "units": "mm PECVD chamber diameter",
   "register": "A-M-178 (X-MFG-38)"
  },
  "FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_chamber_H_m": {

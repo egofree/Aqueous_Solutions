@@ -90,7 +90,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S13 | GROW_BED | VCD_TRAIN | L | mass | present | condensate | 3.799494 kg/d | absent_from_candidate_mvs |
 | S14 | GROW_BED | FOOD_STORE | S | mass | present | food | 4.2 kg/d | — |
 | S15 | GROW_BED | HABITATION | G | mass | present | photosynthetic O2 | 0.0 kg/d | — |
-| S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 11.637534 kg/d | — |
+| S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 10.634289 kg/d | — |
 | S17 | SOL_ARK_60K | RECTIFIER | E | elec | present | DC/480V | 12.0 kW | — |
 | S18 | AFTERBURNER | CRYO_CO2 | G | mass | retired | captured CO2/air | 0.0 kg/d | — |
 | S19 | BAGHOUSE | LEACH_CSTR_1 | S | mass | present | dust | 0.0 kg/d | absent_from_candidate_mvs |
@@ -141,8 +141,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | 117.42759 kg/d | — |
 | S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 14.050492 kg/d | — |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | 78.987901 kg/d | — |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 915.705223 kg/d | — |
-| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 915.705223 kg/d | — |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 953.57401 kg/d | — |
+| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 953.57401 kg/d | — |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | L | mass | present | condensables | 0.0521 kg/d | — |
 | S71 | MET_AHU | MET_SCRUB | G | mass | present | metal-aisle fume / mist / dust | 20458.32 kg/d | absent_from_candidate_mvs |
 | S72 | MET_SCRUB | LEACH_CSTR_1 | L/S | mass | present | metal fines and aqueous scrub liquor | 2.4442 kg/d | — |
@@ -195,7 +195,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | CONT_TO_STOCK | CONT_CAST | STOCK_OUT | S | mass | present | as-cast stock | 21.7125 kg/d | — |
 | VAC_IND_TI | TI_CELL | VAC_IND | S | mass | present | Ti sponge/powder to vacuum melt | 0.0 kg/d | — |
 | STOCK_TO_MFG | METAL_STORE | MFG_SHOP | S | mass | present | plate/rod/wire to manufacturing | 25.9 kg/d | — |
-| STOCK_TO_FAB | METAL_STORE | WAFER_FAB | S | mass | present | electronic-grade silicon CZ charge from the store | 0.226363 kg/d | — |
+| STOCK_TO_FAB | METAL_STORE | WAFER_FAB | S | mass | present | electronic-grade silicon CZ charge from the store | 1.635293 kg/d | — |
 | FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | S | mass | present | slag return | 0.330241 kg/d | — |
 | SALT_TO_FLUX | SALT_FEED | FLUX_PREP | S | mass | retired | digester/leach salts to flux | 0.0 kg/d | — |
 | AL_POT_TO_IND | AL_POT | IND_MELT | S | mass | present | Al metal | 10.0 kg/d | — |
@@ -242,7 +242,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | LI_TO_GREASE | LI_RECOVER | GREASE_LI | S | mass | present | lithium hydroxide or carbonate | 0.0 kg/d | — |
 | GREASE_CA_TO_MFG | GREASE_CA | MFG_SHOP | S | mass | present | Ca grease | 0.002392 kg/d | — |
 | GREASE_LI_TO_MFG | GREASE_LI | MFG_SHOP | S | mass | present | Li grease | 0.0 kg/d | — |
-| CHAR_TO_SI | OIL_PYRO | SI_REDUCE | S | mass | present | pyrolysis char reductant | 0.227778 kg/d | — |
+| CHAR_TO_SI | OIL_PYRO | SI_REDUCE | S | mass | present | pyrolysis char reductant | 1.231023 kg/d | — |
 | CO2_TO_FARM | HDR_CO2 | GROW_BED | G | mass | present | CO2 enrichment | 0.0 kg/d | — |
 | FARM_O2_TO_HAB | GROW_BED | HABITATION | G | mass | present | farm O2 | 0.0 kg/d | — |
 | HAB_CO2_TO_HDR | HABITATION | HDR_CO2 | G | mass | present | habitation CO2 | — | — |
@@ -264,7 +264,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.641602 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.510913 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 351.7357 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 360.7445 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
@@ -293,7 +293,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-FC-AIR | HDR_O2 | MEOH_FC | G | mass | present | cell air | 9.407064 kg/d | — |
 | IA-LEACH-BD | LEACH_CSTR_1 | NUTRIENT_DOSE | L | mass | present | bleed salts to nutrient | 109.63 kg/d | — |
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | L | mass | present | still bottoms | 6.709424 kg/d | — |
-| IA-CHAR | OIL_PYRO | MFG_SHOP | S | mass | present | char reductant | 4.838035 kg/d | — |
+| IA-CHAR | OIL_PYRO | MFG_SHOP | S | mass | present | char reductant | 3.83479 kg/d | — |
 | IA-FC-EXH | MEOH_FC | NOX_SCRUB | G | mass | retired | cell exhaust | 0.0 kg/d | — |
 | IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | thermal | thermal | present | round-trip loss | 1.67 kW | — |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | electric | thermal | present | store trim | 1.61 kW | — |
@@ -331,7 +331,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-H2O2-SRC | HDR_O2 | WS_PEROX | S/L | mass | present | oxygen to peroxide | 0.176 kg/d | — |
 | IA-NOX-H2O | NOX_SCRUB | ROOF_TANK | S/L | mass | present | scrubber condensate | 221.583096 kg/d | — |
 | IA-NOX-N | NOX_SCRUB | NUTRIENT_DOSE | S/L | mass | present | nitrate liquor | 20.047016 kg/d | — |
-| IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | L | mass | present | spent UPW | 66.500212 kg/d | — |
+| IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | L | mass | present | spent UPW | 66.500211 kg/d | — |
 | IA-GEN-AIR | HDR_N2 | BACKUP_GEN | L | mass | present | genset air | 0.006137 kg/d | — |
 | IA-NOX-HAB | ROOF_TANK | HABITATION | L | mass | present | scrubber water | 207.279999 kg/d | — |
 | IA-NUT-BED | NUTRIENT_DOSE | GROW_BED | L | mass | present | nitrate and bleed salts | 31.363502 kg/d | — |
@@ -392,12 +392,12 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-MEOH_SYNTH | SOL_ARK_60K | MEOH_SYNTH | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.7388 kW | — |
 | SF-MFG_SHOP | SOL_ARK_60K | MFG_SHOP | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 2.55 kW | — |
 | SF-NUTRIENT_DOSE | SOL_ARK_60K | NUTRIENT_DOSE | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0245 kW | — |
-| SF-WAFER_FAB | SOL_ARK_60K | WAFER_FAB | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.2611 kW | — |
+| SF-WAFER_FAB | SOL_ARK_60K | WAFER_FAB | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.5788 kW | — |
 | SF-WET_BENCH | SOL_ARK_60K | WET_BENCH | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.2066 kW | — |
 | SF-LITHO_STUB | SOL_ARK_60K | LITHO_STUB | E | elec | retired | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0 kW | — |
 | SF-ELECTRODE_COAT | SOL_ARK_60K | ELECTRODE_COAT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0792 kW | — |
 | SF-BLOW_MOLD | SOL_ARK_60K | BLOW_MOLD | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.3691 kW | — |
-| SF-SOLAR_PV_CELL | SOL_ARK_60K | SOLAR_PV_CELL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.3917 kW | — |
+| SF-SOLAR_PV_CELL | SOL_ARK_60K | SOLAR_PV_CELL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 1.7304 kW | — |
 | IA-NA-PURGE | LEACH_CSTR_1 | NORTH_DOCK | L | mass | present | sodium chloride bleed of the leach purge (impurity bleed) | 0.641991 kg/d | — |
 | SF-OIL_PYRO | SOL_ARK_60K | OIL_PYRO | E | elec | present | 480 V AC | 1.664 kW | — |
 | IA-BLK-01 | HABITATION | BLACK_DIGEST | L | mass | present | vacuum-toilet blackwater | 19.644 kg/d | — |
@@ -406,7 +406,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.172239 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 57.022752 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 54.893691 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
@@ -490,7 +490,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW6-H2B | EW_6 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.03496 kg/d | — |
 | IA-EW7-H2B | EW_7 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.454643 kg/d | — |
 | IA-EW8-H2B | EW_8 | HDR_H2 | G | mass | present | cathode H2 to the H2 pool | 0.032278 kg/d | — |
-| SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 82.1326 kW | — |
+| SF-EXT_HALL | SOL_ARK_60K | EXT_HALL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 85.3144 kW | — |
 | IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | L | mass | present | C5-C10 naphtha olefin feed | 0.294127 kg/d | — |
 | SQ-EVAP_ACID | EVAP_ACID | HEAT_SINK | E | energy | present | electrical input leaving as heat | 1.498 kW | — |
 | SQ-EVAP_BASE | EVAP_BASE | HEAT_SINK | E | energy | present | electrical input leaving as heat | 1.344 kW | — |
@@ -528,7 +528,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-LITHO-CARRY | LITHO_COAT | LITHO_DEV | S | mass | present | resist/solvent carry (coat catch bowl + developer) to the develop bench | 0.33952 kg/d | — |
 | SF-REMIN | SOL_ARK_60K | REMIN | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.046 kW | — |
 | IA-ALCL3-MU | NORTH_DOCK | AL_POT | S | mass | present | anhydrous AlCl3 feed (mining-waste chloride class) | 49.419232 kg/d | — |
-| IA-CL2-SHIP | AL_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class product) | 39.20375 kg/d | — |
+| IA-CL2-SHIP | AL_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class product) | 37.895656 kg/d | — |
 | IA-MGCL2-KROLL | TI_CELL | MG_POT | L | mass | present | Kroll retort MgCl2 return (net of drag-out) | 1.949292 kg/d | — |
 | IA-KROLL-FLUX | TI_CELL | FLUX_PREP | S | mass | present | MgCl2-class salt drag-out (flux cover source) | 0.039781 kg/d | — |
 | IA-MGCL2-MU | NORTH_DOCK | MG_POT | L | mass | present | CaCl2-MgCl2 brine concentrate (mining-waste class) | 0.029894 kg/d | — |
@@ -581,19 +581,19 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-LITHO-WAFER-B | LITHO_ALIGN | LITHO_DEV | S | mass | present | exposed wafers to develop | 0.138904 kg/d | — |
 | IA-LITHO-WAFER-RET | LITHO_DEV | WAFER_FAB | S | mass | present | patterned wafers back to the fab tool row | 0.138904 kg/d | — |
 | IA-FAB-PRODUCT | WAFER_FAB | NORTH_DOCK | S | mass | present | finished wafers to the dock for dispatch | 0.138904 kg/d | — |
-| IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | S | mass | present | saw kerf, crop and pot scrap with the spent slurry | 0.087458 kg/d | — |
-| IA-AR-CZ | CRYO_ASU | WAFER_FAB | G | mass | present | argon blanket gas for the CZ puller | 0.535819 kg/d | — |
-| IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | G | mass | present | CZ argon exhaust back to the cold-box getter | 0.535819 kg/d | — |
-| IA-QUARTZ-MU | NORTH_DOCK | SI_REDUCE | S | mass | present | quartz ore for the silicon furnace (raw ore) | 0.71758 kg/d | — |
-| IA-SI-HOOD-O2 | ATMOS | SI_REDUCE | G | mass | present | oxygen of the hood air that burns the furnace carbon monoxide | 0.303408 kg/d | — |
-| IA-SI-CO2 | SI_REDUCE | ATMOS | G | mass | present | carbon dioxide of the burned furnace gas | 0.834593 kg/d | — |
-| IA-SI-FUME | SI_REDUCE | LEACH_CSTR_1 | S | mass | present | silica fume from the furnace baghouse | 0.142429 kg/d | — |
-| IA-SI-MG | SI_REDUCE | SI_REFINE | S | mass | present | metallurgical-grade silicon | 0.271744 kg/d | — |
-| IA-CL2-SIREF | AL_POT | SI_REFINE | G | mass | present | chlorine make-up of the chlorosilane loop | 0.213658 kg/d | — |
-| IA-SI-PURGE | SI_REFINE | LEACH_CSTR_1 | L | mass | present | impurity chlorides and silicon tetrachloride bleed | 0.259039 kg/d | — |
-| IA-SI-EG | SI_REFINE | METAL_STORE | S | mass | present | electronic-grade silicon for the CZ charge | 0.226363 kg/d | — |
-| SF-SI_REDUCE | SOL_ARK_60K | SI_REDUCE | E | elec | present | 480 V AC | 0.1472 kW | — |
-| SF-SI_REFINE | SOL_ARK_60K | SI_REFINE | E | elec | present | 480 V AC | 0.5659 kW | — |
+| IA-FAB-KERF | WAFER_FAB | LEACH_CSTR_1 | S | mass | present | saw kerf, crop and pot scrap with the spent slurry | 1.011774 kg/d | — |
+| IA-AR-CZ | CRYO_ASU | WAFER_FAB | G | mass | present | argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace | 3.870875 kg/d | — |
+| IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | G | mass | present | CZ argon exhaust back to the cold-box getter | 3.870875 kg/d | — |
+| IA-QUARTZ-MU | NORTH_DOCK | SI_REDUCE | S | mass | present | quartz ore for the silicon furnace (raw ore) | 3.878144 kg/d | — |
+| IA-SI-HOOD-O2 | ATMOS | SI_REDUCE | G | mass | present | oxygen of the hood air that burns the furnace carbon monoxide | 1.639758 kg/d | — |
+| IA-SI-CO2 | SI_REDUCE | ATMOS | G | mass | present | carbon dioxide of the burned furnace gas | 4.510539 kg/d | — |
+| IA-SI-FUME | SI_REDUCE | LEACH_CSTR_1 | S | mass | present | silica fume from the furnace baghouse | 0.769754 kg/d | — |
+| IA-SI-MG | SI_REDUCE | SI_REFINE | S | mass | present | metallurgical-grade silicon | 1.468632 kg/d | — |
+| IA-CL2-SIREF | AL_POT | SI_REFINE | G | mass | present | chlorine make-up of the chlorosilane loop | 1.521752 kg/d | — |
+| IA-SI-PURGE | SI_REFINE | LEACH_CSTR_1 | L | mass | present | impurity chlorides and silicon tetrachloride bleed | 1.839705 kg/d | — |
+| IA-SI-EG | SI_REFINE | METAL_STORE | S | mass | present | electronic-grade silicon for the CZ charge | 1.635293 kg/d | — |
+| SF-SI_REDUCE | SOL_ARK_60K | SI_REDUCE | E | elec | present | 480 V AC | 0.7955 kW | — |
+| SF-SI_REFINE | SOL_ARK_60K | SI_REFINE | E | elec | present | 480 V AC | 4.0882 kW | — |
 | IA-SULFUR-MU | NORTH_DOCK | ACID_PLANT | S | mass | present | native sulfur (raw ore) for the acid plant | 0.01376 kg/d | — |
 | IA-GYPSUM-REGEN | HF_GEN | ACID_PLANT | S | mass | present | HF kiln anhydrite cake to the sulfur-recovery kiln | 0.575554 kg/d | — |
 | CHAR_TO_ACID | OIL_PYRO | ACID_PLANT | S | mass | present | plant pyrolysis char reductant for the cake kiln | 0.025656 kg/d | — |
@@ -661,3 +661,6 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-FAB-N2-VENT | WAFER_FAB | ATMOS | G | mass | present | fab nitrogen purge exhaust | 1.499799 kg/d | — |
 | SF-RESIST_SYN | SOL_ARK_60K | RESIST_SYN | E | elec | present | 480 V AC | 0.00366 kW | — |
 | IA-MTO-H2O | POLY_OLEFIN | MEOH_COND | L | mass | present | methanol-to-olefin reaction water | 0.0 kg/d | — |
+| IA-PV-WAFER | WAFER_FAB | SOLAR_PV_CELL | S | mass | present | solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route | 0.484615 kg/d | — |
+| IA-PV-CELL | SOLAR_PV_CELL | PV_ARRAY | S | mass | present | finished cells to the replacement modules of the roof array | 0.484615 kg/d | — |
+| IA-PV-EOL | PV_ARRAY | SI_REFINE | S | mass | present | silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop | 0.484615 kg/d | — |

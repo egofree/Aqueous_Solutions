@@ -1229,8 +1229,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3051.0,
-        "fraction_of_znbr2_study": 0.07,
+        "vs_znbr2_kwh": 3177.0,
+        "fraction_of_znbr2_study": 0.067,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -1573,7 +1573,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 351.7357,
+        "value": 360.7445,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1581,28 +1581,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6042,
+        "count": 6292,
         "presence": "present",
-        "nameplate_kw": 3021,
-        "area_m2": 26574,
-        "balance_kWp": 1511,
+        "nameplate_kw": 3146,
+        "area_m2": 27632,
+        "balance_kWp": 1573,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            210000,
-            138000
+            228000,
+            132000
           ],
           "bays": [
-            35,
-            23
+            38,
+            22
           ],
-          "footprint_m2": 28980.0,
-          "extension_m2": 28548.0,
-          "roof_capacity_kWp": 3029.5,
+          "footprint_m2": 30096.0,
+          "extension_m2": 29664.0,
+          "roof_capacity_kWp": 3150.0,
           "perimeter_pathway_mm": 1829,
           "arrays": 15,
-          "extension_load_kW": 82.13,
+          "extension_load_kW": 85.31,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -1650,13 +1650,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 2520.0,
+        "kW": 2640.0,
         "presence": "present",
-        "count": 42,
+        "count": 44,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2302.1,
-          "export_kWh_d_clear": 6537,
+          "export_peak_kW": 2413.1,
+          "export_kWh_d_clear": 6808,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -1665,8 +1665,8 @@
           "inverters": [
             11,
             11,
-            10,
-            10
+            11,
+            11
           ],
           "breaker_A": [
             1000,
@@ -1686,9 +1686,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 217.9,
+          "bus_demand_kW": 226.9,
           "section_rating_A": 400,
-          "basis_A": 291.2,
+          "basis_A": 303.3,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -1709,10 +1709,10 @@
       "notes": " ISO 14644-1 Class 7 wet bench, Class 6 tool row.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.2611,
+        "value": 0.5788,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 28.31 kWh/pull heat-up (CRC_SI cp/L) + 153 kWh/pull hot zone from its heat-loss model (A-M-436), meltdown peak 25.9 kW, one pull every 148 d (A-M-417) + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-301)."
+        "note": "AQS-EQP-FAB-001 sec.3 tool train (CZ class) at 5 wafer starts/d: CZ charge 28.31 kWh/pull heat-up (CRC_SI cp/L) + 153 kWh/pull hot zone from its heat-loss model (A-M-436), meltdown peak 25.9 kW, one pull every 20 d (A-M-417) + tool-row parasitics; litho moved to the real LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share. | X-ELS-02 load-basis (A-M-301)."
       },
       "modules": [],
       "params": {
@@ -1721,8 +1721,8 @@
         "iso_14644_tool_row": "Class 6",
         "equipment": [
           {
-            "item": "CZ puller: charge heat-up + hot zone 8.51 kW over 15.2 h + graphite heat-up, one pull every 148 d",
-            "kW": 0.0511
+            "item": "CZ puller: charge heat-up + hot zone 8.51 kW over 15.2 h + graphite heat-up, one pull every 20 d",
+            "kW": 0.3688
           },
           {
             "item": "ingot cool/anneal station: N2 circulator duty share",
@@ -1742,7 +1742,7 @@
           },
           {
             "item": "total connected (calculated)",
-            "kW": 0.2611
+            "kW": 0.5788
           }
         ],
         "cz_hotzone": {
@@ -1834,25 +1834,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 217.9126,
+        "value": 226.9244,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.9 kW, charge 990.5 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 226.9 kW, charge 1031.4 kW, 3177 kWh over 44 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 991,
-        "kWh": 3051,
+        "kW": 1032,
+        "kWh": 3177,
         "presence": "present",
-        "charge_kW": 991,
-        "discharge_kW": 218,
+        "charge_kW": 1032,
+        "discharge_kW": 227,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 42 hybrid inverters, 72.6 kWh and 23.6 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 44 hybrid inverters, 72.2 kWh and 23.5 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.735,
-          "purge_m3_h": 32.23,
+          "H2_m3_d": 8.055,
+          "purge_m3_h": 33.56,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1995.5
+          "electrode_area_m2": 2078.1
         }
       }
     },
@@ -2133,7 +2133,7 @@
       ],
       "params": {
         "equipment_id": "PV-CELL-01",
-        "avg_kw": 0.3917,
+        "avg_kw": 1.7304,
         "koh": "WS_KOH",
         "not": "PV_ARRAY",
         "size_mm": [
@@ -2143,19 +2143,39 @@
         ],
         "size_note": "L x W x H mm, issued envelope (X-MFG-38 tool line)",
         "design": {
-          "cells_per_d": 3,
+          "need": {
+            "route": "CZ_PSQ125",
+            "array_kw": 3146.0,
+            "life_yr": 39.99999999999999,
+            "repl_per_yr": 0.025500000000000005,
+            "W_d": 219.6386036960986,
+            "cell_area_cm2": 148.5798641851732,
+            "cell_eff": 0.19,
+            "cell_W": 2.823017419518291,
+            "cells_per_d": 77.80278016618719,
+            "wafer_g": 6.228765066370831,
+            "slot_g": 13.581752994953481,
+            "wafer_kg_d": 0.48461523916567606,
+            "slot_kg_d": 1.0566981425378201,
+            "t_cm": 0.018,
+            "kerf_cm": 0.015,
+            "Si_g_per_W": 4.811076581054544
+          },
+          "cells_per_d": 77.80278016618719,
+          "batches": 4,
+          "carrier": 25,
           "tools": [
             {
               "id": "PV-TEX-01",
-              "design": "KOH texture bath, 10 L PP tank, immersion heater",
+              "design": "KOH texture bath, 10 L PP tank, immersion heater, one carrier a batch",
               "peak_kW": 1.9835999950403127,
-              "kWh_d": 0.6870259209662386
+              "kWh_d": 0.832270350531621
             },
             {
               "id": "PV-EMIT-01",
-              "design": "POCl3 diffusion, quartz tube 200 mm x 1.0 m, 200 mm ceramic fibre",
+              "design": "POCl3 diffusion, quartz tube 200 mm x 1.0 m, 200 mm ceramic fibre, boat of 210 slots",
               "peak_kW": 3.7942691188488986,
-              "kWh_d": 5.876082069096683
+              "kWh_d": 8.092222758976712
             },
             {
               "id": "PV-PSG-01",
@@ -2165,40 +2185,40 @@
             },
             {
               "id": "PV-ARC-01",
-              "design": "PECVD SiNx, parallel-plate RF, 5 kg heated platen, dry vacuum pump",
-              "peak_kW": 2.2514027215504537,
-              "kWh_d": 1.9534860548837867
+              "design": "PECVD SiNx, parallel-plate RF, 0.37 m2 electrode in a 788 mm chamber, dry vacuum pump",
+              "peak_kW": 6.077477661970402,
+              "kWh_d": 9.65312612878171
             },
             {
               "id": "PV-CON-01",
               "design": "Screen printer and 200 C dryer",
               "peak_kW": 0.7,
-              "kWh_d": 0.35
+              "kWh_d": 9.076991019388505
             },
             {
               "id": "PV-FIRE-01",
               "design": "IR lamp fast-firing furnace",
               "peak_kW": 3.0,
-              "kWh_d": 0.51
+              "kWh_d": 13.226472628251821
             },
             {
               "id": "PV-IV-01",
               "design": "Flash IV tester",
               "peak_kW": 0.1,
-              "kWh_d": 0.025
+              "kWh_d": 0.6483565013848933
             }
           ],
-          "kWh_d": 9.401594044946709,
-          "avg_kW": 0.3917330852061129,
-          "peak_kW": 3.7942691188488986,
-          "kWh_per_cell": 3.133864681648903
+          "kWh_d": 41.529439387315264,
+          "avg_kW": 1.7303933078048026,
+          "peak_kW": 6.077477661970402,
+          "kWh_per_cell": 0.5337783469769093
         }
       },
       "continuous_kw": {
-        "value": 0.3917,
+        "value": 1.7304,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-38 (A-M-178, AQS-DUTY-071): 9.40 kWh/d for 3 cells, one batch; peak 3.79 kW (one tool at a time)."
+        "note": "X-MFG-38 (A-M-178, AQS-DUTY-071): 41.53 kWh/d for 77.8 cells/d in 4 batches of one carrier (A-M-437); peak 6.08 kW (one tool at a time)."
       }
     },
     {
@@ -4263,7 +4283,7 @@
           {
             "element": "Si",
             "use": "silicon furnace quartz",
-            "need_kg_d": 0.3354234068608797,
+            "need_kg_d": 1.8127869891262367,
             "recovered_kg_d": 0.0,
             "recovered_from": [],
             "ore_streams": [
@@ -4275,10 +4295,10 @@
         ]
       },
       "continuous_kw": {
-        "value": 0.1472,
+        "value": 0.7955,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-40 TF, on-site silicon (A-M-419): 0.2717 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py)."
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): 1.4686 kg/d metallurgical silicon x si_saf_kWh_kg / 24 h (si_refine.py)."
       }
     },
     {
@@ -4486,33 +4506,33 @@
       "modules": [],
       "params": {
         "hvac": {
-          "light_kW": 25.122,
-          "vent_kW": 35.606,
-          "envelope_kW": 21.404,
-          "total_kW": 82.133,
-          "vent_L_s": 8564.4,
-          "Qh_kW": 50.346,
-          "Qc_kW": 99.976,
-          "slab_kW": 3.042,
-          "gains_kW": 35.828,
+          "light_kW": 26.104,
+          "vent_kW": 36.998,
+          "envelope_kW": 22.212,
+          "total_kW": 85.314,
+          "vent_L_s": 8899.2,
+          "Qh_kW": 52.265,
+          "Qc_kW": 103.84,
+          "slab_kW": 3.147,
+          "gains_kW": 37.228,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 445.723,
-          "peak_c_kW": 395.352
+          "peak_h_kW": 462.813,
+          "peak_c_kW": 410.605
         },
-        "footprint_m2": 28548.0,
+        "footprint_m2": 29664.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 82.133 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 85.314 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "continuous_kw": {
-        "value": 82.1326,
+        "value": 85.3144,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 35.61 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.40 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.3 kW and cooling 100.0 kW thermal average after internal gains 35.8 kW and slab edge 3.04 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 29664 m2; lighting 26.10 kW (IECC 2021 C405, 10 % lit), ventilation 37.00 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 22.21 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 52.3 kW and cooling 103.8 kW thermal average after internal gains 37.2 kW and slab edge 3.15 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -4563,10 +4583,10 @@
       "notes": "Electronic-grade silicon refining: chlorosilane loop on metallurgical silicon from SI_REDUCE (A-M-419).",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.5659,
+        "value": 4.0882,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-40 TF, on-site silicon (A-M-419): 0.2264 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py)."
+        "note": "X-MFG-40 TF, on-site silicon (A-M-419): 1.6353 kg/d electronic-grade silicon x si_refine_kWh_kg_TCS_SIEMENS / 24 h (si_refine.py)."
       },
       "modules": [],
       "params": {
@@ -5160,7 +5180,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 351.7357,
+        "value": 360.7445,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -5525,7 +5545,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.2611,
+        "value": 0.5788,
         "unit": "kW",
         "status": "study",
         "note": "Feed equal to WAFER_FAB continuous_kw. | X-ELS-02 load-basis (A-M-301)."
@@ -5655,7 +5675,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.3917,
+        "value": 1.7304,
         "unit": "kW",
         "status": "study",
         "note": "X-RSZ-07 feed edges for unfed loads. Equals node continuous_kw (study)."
@@ -6362,7 +6382,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 82.1326,
+        "value": 85.3144,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -7273,7 +7293,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.1472,
+        "value": 0.7955,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-40 TF, on-site silicon (A-M-419): feed equal to SI_REDUCE continuous_kw."
@@ -7300,7 +7320,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.5659,
+        "value": 4.0882,
         "unit": "kW",
         "status": "study",
         "note": "X-MFG-40 TF, on-site silicon (A-M-419): feed equal to SI_REFINE continuous_kw."

@@ -17,3 +17,4 @@ N15,solids,Class 150,CO2 return,inlet,160
 N16,DN50,Class 150,dissolved gas,inlet,160
 N17,DN15,Class 150,argon blanket gas for the CZ puller,outlet,600
 N18,DN15,Class 150,CZ argon exhaust back to the cold-box getter,inlet,160
+N19,DN15,Class 150,"argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace",outlet,600

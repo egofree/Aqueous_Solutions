@@ -62,7 +62,7 @@
      "from": "WAFER_FAB",
      "to": "LEACH_CSTR_1",
      "other_sector": "FAB",
-     "rate": 0.087458,
+     "rate": 1.011774,
      "unit": "kg/d",
      "carries": "saw kerf, crop and pot scrap with the spent slurry"
     },
@@ -71,7 +71,7 @@
      "from": "WAFER_FAB",
      "to": "LEACH_CSTR_1",
      "other_sector": "FAB",
-     "rate": 66.500212,
+     "rate": 66.500211,
      "unit": "kg/d",
      "carries": "spent UPW"
     },
@@ -170,7 +170,7 @@
      "from": "SI_REDUCE",
      "to": "LEACH_CSTR_1",
      "other_sector": "GLASS",
-     "rate": 0.142429,
+     "rate": 0.769754,
      "unit": "kg/d",
      "carries": "silica fume from the furnace baghouse"
     },
@@ -179,7 +179,7 @@
      "from": "SI_REFINE",
      "to": "LEACH_CSTR_1",
      "other_sector": "GLASS",
-     "rate": 0.259039,
+     "rate": 1.839705,
      "unit": "kg/d",
      "carries": "impurity chlorides and silicon tetrachloride bleed"
     },
@@ -251,7 +251,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "MFG",
-     "rate": 11.637534,
+     "rate": 10.634289,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -903,7 +903,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 57.022752,
+     "rate": 54.893691,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -1424,7 +1424,7 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": 0.227778,
+     "rate": 1.231023,
      "unit": "kg/d",
      "carries": "pyrolysis char reductant"
     },
@@ -1523,7 +1523,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 4.838035,
+     "rate": 3.83479,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -1720,7 +1720,7 @@
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
      "other_sector": "OIL",
-     "rate": 0.227778,
+     "rate": 1.231023,
      "unit": "kg/d",
      "carries": "pyrolysis char reductant"
     },
@@ -1756,7 +1756,7 @@
      "from": "AL_POT",
      "to": "SI_REFINE",
      "other_sector": "FOUNDRY",
-     "rate": 0.213658,
+     "rate": 1.521752,
      "unit": "kg/d",
      "carries": "chlorine make-up of the chlorosilane loop"
     },
@@ -1770,11 +1770,20 @@
      "carries": "cullet"
     },
     {
+     "stream_id": "IA-PV-EOL",
+     "from": "PV_ARRAY",
+     "to": "SI_REFINE",
+     "other_sector": "ELEC",
+     "rate": 0.484615,
+     "unit": "kg/d",
+     "carries": "silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop"
+    },
+    {
      "stream_id": "IA-SI-HOOD-O2",
      "from": "ATMOS",
      "to": "SI_REDUCE",
      "other_sector": "WTR",
-     "rate": 0.303408,
+     "rate": 1.639758,
      "unit": "kg/d",
      "carries": "oxygen of the hood air that burns the furnace carbon monoxide"
     },
@@ -1830,7 +1839,7 @@
      "from": "SI_REDUCE",
      "to": "ATMOS",
      "other_sector": "WTR",
-     "rate": 0.834593,
+     "rate": 4.510539,
      "unit": "kg/d",
      "carries": "carbon dioxide of the burned furnace gas"
     },
@@ -1839,7 +1848,7 @@
      "from": "SI_REFINE",
      "to": "METAL_STORE",
      "other_sector": "FOUNDRY",
-     "rate": 0.226363,
+     "rate": 1.635293,
      "unit": "kg/d",
      "carries": "electronic-grade silicon for the CZ charge"
     },
@@ -1848,7 +1857,7 @@
      "from": "SI_REDUCE",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 0.142429,
+     "rate": 0.769754,
      "unit": "kg/d",
      "carries": "silica fume from the furnace baghouse"
     },
@@ -1857,7 +1866,7 @@
      "from": "SI_REFINE",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 0.259039,
+     "rate": 1.839705,
      "unit": "kg/d",
      "carries": "impurity chlorides and silicon tetrachloride bleed"
     },
@@ -1886,7 +1895,7 @@
      "from": "NORTH_DOCK",
      "to": "SI_REDUCE",
      "other_sector": "DOCK",
-     "rate": 0.71758,
+     "rate": 3.878144,
      "unit": "kg/d",
      "carries": "quartz ore for the silicon furnace (raw ore)"
     },
@@ -1913,7 +1922,7 @@
      "from": "SOL_ARK_60K",
      "to": "SI_REDUCE",
      "other_sector": "ELEC",
-     "rate": 0.1472,
+     "rate": 0.7955,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -1922,7 +1931,7 @@
      "from": "SOL_ARK_60K",
      "to": "SI_REFINE",
      "other_sector": "ELEC",
-     "rate": 0.5659,
+     "rate": 4.0882,
      "unit": "kW",
      "carries": "480 V AC"
     }
@@ -2794,9 +2803,9 @@
      "from": "CRYO_ASU",
      "to": "WAFER_FAB",
      "other_sector": "CRYO",
-     "rate": 0.535819,
+     "rate": 3.870875,
      "unit": "kg/d",
-     "carries": "argon blanket gas for the CZ puller"
+     "carries": "argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace"
     },
     {
      "stream_id": "IA-BMED-01",
@@ -3019,7 +3028,7 @@
      "from": "METAL_STORE",
      "to": "WAFER_FAB",
      "other_sector": "FOUNDRY",
-     "rate": 0.226363,
+     "rate": 1.635293,
      "unit": "kg/d",
      "carries": "electronic-grade silicon CZ charge from the store"
     },
@@ -3039,7 +3048,7 @@
      "from": "WAFER_FAB",
      "to": "CRYO_ASU",
      "other_sector": "CRYO",
-     "rate": 0.535819,
+     "rate": 3.870875,
      "unit": "kg/d",
      "carries": "CZ argon exhaust back to the cold-box getter"
     },
@@ -3048,7 +3057,7 @@
      "from": "WAFER_FAB",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 0.087458,
+     "rate": 1.011774,
      "unit": "kg/d",
      "carries": "saw kerf, crop and pot scrap with the spent slurry"
     },
@@ -3066,9 +3075,18 @@
      "from": "WAFER_FAB",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 66.500212,
+     "rate": 66.500211,
      "unit": "kg/d",
      "carries": "spent UPW"
+    },
+    {
+     "stream_id": "IA-PV-CELL",
+     "from": "SOLAR_PV_CELL",
+     "to": "PV_ARRAY",
+     "other_sector": "ELEC",
+     "rate": 0.484615,
+     "unit": "kg/d",
+     "carries": "finished cells to the replacement modules of the roof array"
     },
     {
      "stream_id": "IA-RESIST-BRINE",
@@ -3212,7 +3230,7 @@
      "from": "SOL_ARK_60K",
      "to": "SOLAR_PV_CELL",
      "other_sector": "ELEC",
-     "rate": 0.3917,
+     "rate": 1.7304,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -3230,7 +3248,7 @@
      "from": "SOL_ARK_60K",
      "to": "WAFER_FAB",
      "other_sector": "ELEC",
-     "rate": 0.2611,
+     "rate": 0.5788,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -3353,7 +3371,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "OIL",
-     "rate": 4.838035,
+     "rate": 3.83479,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -3571,7 +3589,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 11.637534,
+     "rate": 10.634289,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -3777,7 +3795,7 @@
      "from": "SI_REFINE",
      "to": "METAL_STORE",
      "other_sector": "GLASS",
-     "rate": 0.226363,
+     "rate": 1.635293,
      "unit": "kg/d",
      "carries": "electronic-grade silicon for the CZ charge"
     },
@@ -3806,7 +3824,7 @@
      "from": "AL_POT",
      "to": "SI_REFINE",
      "other_sector": "GLASS",
-     "rate": 0.213658,
+     "rate": 1.521752,
      "unit": "kg/d",
      "carries": "chlorine make-up of the chlorosilane loop"
     },
@@ -3851,7 +3869,7 @@
      "from": "METAL_STORE",
      "to": "WAFER_FAB",
      "other_sector": "FAB",
-     "rate": 0.226363,
+     "rate": 1.635293,
      "unit": "kg/d",
      "carries": "electronic-grade silicon CZ charge from the store"
     },
@@ -3925,7 +3943,7 @@
      "from": "AL_POT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 39.20375,
+     "rate": 37.895656,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class product)"
     },
@@ -5013,7 +5031,7 @@
      "from": "WAFER_FAB",
      "to": "CRYO_ASU",
      "other_sector": "FAB",
-     "rate": 0.535819,
+     "rate": 3.870875,
      "unit": "kg/d",
      "carries": "CZ argon exhaust back to the cold-box getter"
     },
@@ -5123,9 +5141,9 @@
      "from": "CRYO_ASU",
      "to": "WAFER_FAB",
      "other_sector": "FAB",
-     "rate": 0.535819,
+     "rate": 3.870875,
      "unit": "kg/d",
-     "carries": "argon blanket gas for the CZ puller"
+     "carries": "argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace"
     },
     {
      "stream_id": "IA-HVAC-COND",
@@ -5563,7 +5581,7 @@
      "from": "SI_REDUCE",
      "to": "ATMOS",
      "other_sector": "GLASS",
-     "rate": 0.834593,
+     "rate": 4.510539,
      "unit": "kg/d",
      "carries": "carbon dioxide of the burned furnace gas"
     },
@@ -5754,7 +5772,7 @@
      "from": "ATMOS",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": 0.303408,
+     "rate": 1.639758,
      "unit": "kg/d",
      "carries": "oxygen of the hood air that burns the furnace carbon monoxide"
     },
@@ -5983,6 +6001,15 @@
      "carries": "combustion O2, 10 % excess"
     },
     {
+     "stream_id": "IA-PV-CELL",
+     "from": "SOLAR_PV_CELL",
+     "to": "PV_ARRAY",
+     "other_sector": "FAB",
+     "rate": 0.484615,
+     "unit": "kg/d",
+     "carries": "finished cells to the replacement modules of the roof array"
+    },
+    {
      "stream_id": "IA-ZNBR-MU",
      "from": "LEACH_CSTR_1",
      "to": "ZNBR2",
@@ -6127,6 +6154,15 @@
      "rate": 0.323377,
      "unit": "kg/d",
      "carries": "cell water"
+    },
+    {
+     "stream_id": "IA-PV-EOL",
+     "from": "PV_ARRAY",
+     "to": "SI_REFINE",
+     "other_sector": "GLASS",
+     "rate": 0.484615,
+     "unit": "kg/d",
+     "carries": "silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop"
     },
     {
      "stream_id": "IA-Q4A-TRIM",
@@ -6709,7 +6745,7 @@
      "from": "SOL_ARK_60K",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": 0.1472,
+     "rate": 0.7955,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -6718,7 +6754,7 @@
      "from": "SOL_ARK_60K",
      "to": "SI_REFINE",
      "other_sector": "GLASS",
-     "rate": 0.5659,
+     "rate": 4.0882,
      "unit": "kW",
      "carries": "480 V AC"
     },
@@ -6727,7 +6763,7 @@
      "from": "SOL_ARK_60K",
      "to": "SOLAR_PV_CELL",
      "other_sector": "FAB",
-     "rate": 0.3917,
+     "rate": 1.7304,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -6772,7 +6808,7 @@
      "from": "SOL_ARK_60K",
      "to": "WAFER_FAB",
      "other_sector": "FAB",
-     "rate": 0.2611,
+     "rate": 0.5788,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -7644,7 +7680,7 @@
      "from": "AL_POT",
      "to": "NORTH_DOCK",
      "other_sector": "FOUNDRY",
-     "rate": 39.20375,
+     "rate": 37.895656,
      "unit": "kg/d",
      "carries": "chlorine byproduct export (water-treatment class product)"
     },
@@ -7862,7 +7898,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 57.022752,
+     "rate": 54.893691,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -7898,7 +7934,7 @@
      "from": "NORTH_DOCK",
      "to": "SI_REDUCE",
      "other_sector": "GLASS",
-     "rate": 0.71758,
+     "rate": 3.878144,
      "unit": "kg/d",
      "carries": "quartz ore for the silicon furnace (raw ore)"
     },

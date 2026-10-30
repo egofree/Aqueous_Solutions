@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.249 kg/d. Mass out 1.249 kg/d. Electrical duty 0.1472 kW. In: CHAR_TO_SI 0.2278 kg/d (pyrolysis char reductant); IA-QUARTZ-MU 0.7176 kg/d (quartz ore for the silicon furnace (raw ore)); IA-SI-HOOD-O2 0.3034 kg/d (oxygen of the hood air that burns the furnace carbon monoxide). Out: IA-SI-CO2 0.8346 kg/d (carbon dioxide of the burned furnace gas); IA-SI-FUME 0.1424 kg/d (silica fume from the furnace baghouse); IA-SI-MG 0.2717 kg/d (metallurgical-grade silicon).
+1. Basis. Mass in 6.749 kg/d. Mass out 6.749 kg/d. Electrical duty 0.7955 kW. In: CHAR_TO_SI 1.231 kg/d (pyrolysis char reductant); IA-QUARTZ-MU 3.878 kg/d (quartz ore for the silicon furnace (raw ore)); IA-SI-HOOD-O2 1.64 kg/d (oxygen of the hood air that burns the furnace carbon monoxide). Out: IA-SI-CO2 4.511 kg/d (carbon dioxide of the burned furnace gas); IA-SI-FUME 0.7698 kg/d (silica fume from the furnace baghouse); IA-SI-MG 1.469 kg/d (metallurgical-grade silicon).
 
 2. Size.
 - Sizing calculation pending (unit task 02). The graph node carries no design and no envelope.

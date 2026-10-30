@@ -218,7 +218,8 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     # PV 351.8504 -> 351.8735 (2026-10-30): the RESIST_SYN reactors and the larger SOLV_PLANT still for the fab rinse acetone (A-M-432).
     # PV 351.8735 -> 351.8815 (2026-10-30): IND_MELT remelts the cast-line gating return CAST_SCRAP_TO_IND (A-M-433).
     # PV 351.8815 -> 351.7357 (2026-10-30): the CZ hot-zone heater from its heat-loss model instead of the 35 kW class value (A-M-436).
-    assert gen["kw_sum"] == pytest.approx(351.7357 + 4.0 + 0.0082)   # PV 351.7357 (on-site silicon A-M-419, sulfuric acid A-M-421, sodium hydroxide A-M-422, kiln campaigns A-M-425, chlor-alkali top-up A-M-426, solvent plant A-M-428, grease A-M-429, alloy Mg A-M-430, photoresist A-M-432, gating return A-M-433, CZ hot zone A-M-436)
+    # PV 351.7357 -> 360.7445 (2026-10-30): the cell line makes the cells that replace the roof array, from wafers refined on site (A-M-437).
+    assert gen["kw_sum"] == pytest.approx(360.7445 + 4.0 + 0.0082)   # PV 360.7445 (on-site silicon A-M-419, sulfuric acid A-M-421, sodium hydroxide A-M-422, kiln campaigns A-M-425, chlor-alkali top-up A-M-426, solvent plant A-M-428, grease A-M-429, alloy Mg A-M-430, photoresist A-M-432, gating return A-M-433, CZ hot zone A-M-436, replacement cells A-M-437)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(

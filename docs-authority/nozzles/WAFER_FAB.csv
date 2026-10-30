@@ -23,3 +23,5 @@ N21,DN15,Class 150,CZ argon exhaust back to the cold-box getter,outlet,600
 N22,solids,Class 150,electronic-grade silicon CZ charge from the store,inlet,160
 N23,DN15,Class 150,acetone for edge-bead rinse and resist strip,inlet,160
 N24,DN15,Class 150,fab nitrogen purge exhaust,outlet,600
+N25,DN15,Class 150,"argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace",inlet,160
+N26,solids,Class 150,"solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route",outlet,600

@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | BB | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | BC | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -112,7 +112,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-068 | `docs-authority/sizing/BMED_STACK.md` | A | 2026-10-15 | BMED stack | current |
 | AQS-DUTY-069 | `docs-authority/sizing/COLD_BOX.md` | C | 2026-10-16 | CRYO_ASU separation train | current |
 | AQS-DUTY-070 | `docs-authority/sizing/UPW_POLISH.md` | B | 2026-10-29 | Ultrapure water polish (RO and EDI) | current |
-| AQS-DUTY-071 | `docs-authority/sizing/PV_CELL_LINE.md` | B | 2026-10-29 | PV cell line tools | current |
+| AQS-DUTY-071 | `docs-authority/sizing/PV_CELL_LINE.md` | C | 2026-10-30 | PV cell line tools | current |
 | AQS-DUTY-072 | `docs-authority/sizing/FOUNDRY_LINE.md` | A | 2026-10-18 | FOUNDRY line sizing | current |
 | AQS-DUTY-073 | `docs-authority/sizing/POLYMERS_LINE.md` | E | 2026-10-29 | POLYMERS line sizing | current |
 | AQS-DUTY-074 | `docs-authority/sizing/HEAT_BATTERY.md` | A | 2026-10-20 | Heat battery sizing | current |

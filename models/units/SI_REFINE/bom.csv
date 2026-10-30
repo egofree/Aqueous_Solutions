@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route).",docs-authority/duties/SI_REFINE.md
-2,Process nozzle DN15,4,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route).",one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,5,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route).",one per mass edge; DN from AQS-INV-003
 3,"Motor: transfer pump IA-SI-PURGE to LEACH_CSTR_1 (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 4,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
 5,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004

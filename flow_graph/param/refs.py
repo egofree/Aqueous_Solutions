@@ -334,6 +334,11 @@ REFS = {
  'GLASSBRENNER1964': 'Glassbrenner C.J., Slack G.A., Thermal conductivity of silicon and germanium from 3 K to the melting point, Physical Review 134 (1964) A1058-A1069: about 22 W/(m K) for silicon near 1680 K.',
  'TAKASUKA1997': 'Takasuka E., Tokizaki E., Terashima K., Kimura S., Emissivity of liquid silicon in visible and infrared regions, Journal of Applied Physics 81 (1997) 6384-6389: liquid silicon emissivity of about 0.2 to 0.3.',
  'SGL_SIGRATHERM': 'SGL Carbon, SIGRATHERM soft and rigid graphite felt, technical data sheets: thermal conductivity in argon of about 0.15 to 0.35 W/(m K) between 1000 and 2000 C for felts of 0.08 to 0.15 g/cm3.',
+ 'JORDAN_KURTZ2013': 'Jordan D.C., Kurtz S.R., Photovoltaic degradation rates: an analytical review, Progress in Photovoltaics 21 (2013) 12-29: median loss of module output of 0.5 % a year.',
+ 'JORDAN2017': 'Jordan D.C., Silverman T.J., Wohlgemuth J.H., Kurtz S.R., VanSant K.T., Photovoltaic failure and degradation modes, Progress in Photovoltaics 25 (2017) 318-326: module failure rates of about 5 in 10,000 a year.',
+ 'ITRPV2020': 'International Technology Roadmap for Photovoltaic, 11th edition (2020), German Engineering Federation: wafer formats and thickness, kerf, and cell efficiencies of screen-printed cells.',
+ 'LAN2017': 'Lan C.W. and co-authors, The emergence of high-performance multi-crystalline silicon in photovoltaics, Journal of Crystal Growth 468 (2017) 17-23: directional solidification of silicon blocks, growth rate, gradient and the cropped zones.',
+ 'SEMI_E1': 'SEMI E1, Specification for 3 inch, 100 mm, 125 mm and 150 mm plastic and metal wafer carriers: the 25-wafer carrier.',
 }
 
 def cite(k):

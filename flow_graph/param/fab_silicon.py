@@ -3,7 +3,9 @@
 Silicon. The fab starts FAB.litho-train.starts_per_d wafers a day. Each wafer takes a slot of wafer thickness plus saw kerf
 along the ingot body; the charge adds the crown, tail, ground-off diameter and pot scrap (cz_crop_frac). The charge of a pull is
 the larger of the need of one tool campaign (campaign_d) and the least melt the crucible holds (cz_min_depth_frac of the crucible
-diameter); the days between pulls follow, and the wafers of a pull are stored until started. The plant makes only metallurgical-grade silicon
+diameter); the days between pulls follow, and the wafers of a pull are stored until started. On pv_wafer_route CZ_PSQ125 the same
+ingot also gives the thin solar wafers of the cell line, so the body taken a day includes them; on CAST_MC156 the cell line takes
+cast multicrystalline wafers instead and the cast charge is added (flow_graph/param/pv_wafer.py, A-M-437). The plant makes only metallurgical-grade silicon
 (SI_REDUCE), far below the purity a CZ charge needs, so flow_graph/param/si_refine.py refines it on site to electronic grade
 into the METAL_STORE buffer, which holds one charge until the pull (owner decision t58u: no imports except waste or raw ore). Finished
 wafers go to the lithography train and back to the fab tool row, then to the dock; kerf and crop leave with the
@@ -66,14 +68,20 @@ def design(d=None):
     D = v(F + 'wafer_D_mm')/10; t = v(F + 'wafer_t_um')/1e4; kerf = v(F + 'kerf_um')/1e4; rho = v(F + 'si_rho_g_cm3')   # cm, g/cm3
     area = math.pi/4*D**2; starts = v('FAB.litho-train.starts_per_d'); keep = 1 - v(F + 'cz_crop_frac')
     wafer_g = rho*area*t; slot_g = rho*area*(t + kerf)
+    from . import pv_wafer
+    pv = pv_wafer.need(d); on_cz = pv['route'] == 'CZ_PSQ125'                 # solar wafers from the same ingot on CZ_PSQ125 (A-M-437)
+    pv_slot_g_d = pv['slot_kg_d']*1000 if on_cz else 0.0; pv_cm_d = pv['cells_per_d']*(pv['t_cm'] + pv['kerf_cm']) if on_cz else 0.0
     # the charge is the larger of the wafer need of one tool campaign and the least melt the crucible can hold for a pull
     cru_D = D*v(F + 'cz_crucible_ratio'); crucible_cm2 = math.pi/4*cru_D**2
     min_kg = v(F + 'si_liquid_rho_g_cm3')*crucible_cm2*v(F + 'cz_min_depth_frac')*cru_D/1000
-    need_kg = starts*v(F + 'campaign_d')*slot_g/keep/1000
+    day_g = starts*slot_g + pv_slot_g_d                                          # ingot body taken a day: fab wafers and, on CZ, solar wafers
+    need_kg = v(F + 'campaign_d')*day_g/keep/1000
     charge_kg = max(need_kg, min_kg)
-    n = charge_kg*1000*keep/slot_g; interval_d = n/starts                     # wafers per pull, days between pulls
-    body_cm = n*(t + kerf)
-    si_kg_d = charge_kg/interval_d; wafer_kg_d = starts*wafer_g/1000; loss_kg_d = si_kg_d - wafer_kg_d
+    interval_d = charge_kg*1000*keep/day_g; n = starts*interval_d              # days between pulls, fab wafers per pull
+    body_cm = interval_d*(starts*(t + kerf) + pv_cm_d)
+    wafer_kg_d = starts*wafer_g/1000; pv_wafer_kg_d = pv['wafer_kg_d']
+    cz_kg_d = charge_kg/interval_d; mc = None if on_cz else pv_wafer.cast(d)
+    si_kg_d = cz_kg_d + (mc['si_kg_d'] if mc else 0.0); loss_kg_d = si_kg_d - wafer_kg_d - pv_wafer_kg_d
     pull_h = body_cm*10/v(F + 'cz_pull_mm_h')
     ar_h = v(F + 'cz_melt_h') + v(F + 'cz_neck_crown_h') + pull_h + v(F + 'cz_cool_h')
     slpm = crucible_cm2*v(F + 'cz_ar_slpm_per_cm2')
@@ -83,10 +91,10 @@ def design(d=None):
     hot_h = v(F + 'cz_melt_h') + v(F + 'cz_neck_crown_h') + pull_h                 # heater on; off for the cool-down
     hz_kWh = hz['kW']*hot_h + hz['graphite_kWh']
     melt_peak = hz['kW'] + (heat_kWh + hz['graphite_kWh'])/v(F + 'cz_melt_h')
-    return dict(hz=hz, charge_heat_kWh=heat_kWh, hot_h=hot_h, hz_kWh_pull=hz_kWh, melt_peak_kW=melt_peak, pull_kWh=heat_kWh + hz_kWh,
+    return dict(pv=pv, mc=mc, pv_wafer_kg_d=pv_wafer_kg_d, cz_kg_d=cz_kg_d, pv_wafers_per_pull=pv['cells_per_d']*interval_d if on_cz else 0.0, hz=hz, charge_heat_kWh=heat_kWh, hot_h=hot_h, hz_kWh_pull=hz_kWh, melt_peak_kW=melt_peak, pull_kWh=heat_kWh + hz_kWh,
                 wafers_per_pull=n, interval_d=interval_d, need_kg=need_kg, min_kg=min_kg, crucible_D_cm=cru_D, wafer_g=wafer_g, body_cm=body_cm, charge_kg=charge_kg, si_kg_d=si_kg_d, wafer_kg_d=wafer_kg_d,
                 loss_kg_d=loss_kg_d, holding_kg=charge_kg,
-                pull_h=pull_h, ar_h=ar_h, crucible_cm2=crucible_cm2, ar_slpm=slpm, ar_kg_pull=ar_kg_pull, ar_kg_d=ar_kg_pull/interval_d)
+                pull_h=pull_h, ar_h=ar_h, crucible_cm2=crucible_cm2, ar_slpm=slpm, ar_kg_pull=ar_kg_pull, ar_kg_d=ar_kg_pull/interval_d + (mc['ar_kg_d'] if mc else 0.0))
 
 # stream id, from, to, carries, phase, composition, key of the design dict
 STREAMS = (('STOCK_TO_FAB', 'METAL_STORE', 'WAFER_FAB', 'electronic-grade silicon CZ charge from the store', 'S', {'Si': 1.0}, 'si_kg_d'),
@@ -96,9 +104,11 @@ STREAMS = (('STOCK_TO_FAB', 'METAL_STORE', 'WAFER_FAB', 'electronic-grade silico
            ('IA-LITHO-WAFER-RET', 'LITHO_DEV', 'WAFER_FAB', 'patterned wafers back to the fab tool row', 'S', {'Si': 1.0}, 'wafer_kg_d'),
            ('IA-FAB-PRODUCT', 'WAFER_FAB', 'NORTH_DOCK', 'finished wafers to the dock for dispatch', 'S', {'Si': 1.0}, 'wafer_kg_d'),
            ('IA-FAB-KERF', 'WAFER_FAB', 'LEACH_CSTR_1', 'saw kerf, crop and pot scrap with the spent slurry', 'S', {'Si': 1.0}, 'loss_kg_d'),
-           ('IA-AR-CZ', 'CRYO_ASU', 'WAFER_FAB', 'argon blanket gas for the CZ puller', 'G', {'Ar': 1.0}, 'ar_kg_d'),
+           ('IA-PV-WAFER', 'WAFER_FAB', 'SOLAR_PV_CELL', 'solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route', 'S', {'Si': 1.0}, 'pv_wafer_kg_d'),
+           ('IA-PV-CELL', 'SOLAR_PV_CELL', 'PV_ARRAY', 'finished cells to the replacement modules of the roof array', 'S', {'Si': 1.0}, 'pv_wafer_kg_d'),
+           ('IA-AR-CZ', 'CRYO_ASU', 'WAFER_FAB', 'argon blanket gas for the CZ puller and, on CAST_MC156, the cast furnace', 'G', {'Ar': 1.0}, 'ar_kg_d'),
            ('IA-AR-CZ-BACK', 'WAFER_FAB', 'CRYO_ASU', 'CZ argon exhaust back to the cold-box getter', 'G', {'Ar': 1.0}, 'ar_kg_d'))
-WHY = {'si_kg_d': 'CZ charge per pull / days between pulls', 'wafer_kg_d': 'wafer starts x wafer mass',
+WHY = {'si_kg_d': 'CZ charge per pull / days between pulls, plus the cast charge on CAST_MC156', 'pv_wafer_kg_d': 'cells a day to replace the roof array x solar wafer mass (pv_wafer.py, A-M-437)', 'wafer_kg_d': 'wafer starts x wafer mass',
        'loss_kg_d': 'charge less wafers: kerf, crop and pot scrap', 'ar_kg_d': 'puller argon per pull / days between pulls; closed loop through the getter'}
 
 def tf(g, d=None):

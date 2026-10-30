@@ -84,7 +84,7 @@ Table 6.1. Graph values against the solver
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3021.000 | 3021.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3146.000 | 3146.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 7. Acid-loop decision (X-PAR-04)
 
@@ -122,7 +122,7 @@ Table 7.2. Recovery-first inventory by element, kg/d of the element
 | Mg | Kroll drag-out and aluminium alloy make-up | MG_POT | 0.0158 | 0.0081 | IA-FLUX-SALT-REC, MFG_SCRAP_TO_IND | 0.0000 |  | 0.0076 |
 | Si | investment shell silica | SHELL_BUILD | 3.7395 | 3.2721 | IA-SHELL-RECLAIM | 0.4674 | IA-SILICA-MU | 0.4674 |
 | Ca | grease soap thickener | P_CA | 0.0000 | 0.0000 | IA-LIME-TO-PCA | 0.0000 |  | 0.0000 |
-| Si | silicon furnace quartz | SI_REDUCE | 0.3354 | 0.0000 | — | 0.3354 | IA-QUARTZ-MU | 0.3354 |
+| Si | silicon furnace quartz | SI_REDUCE | 1.8128 | 0.0000 | — | 1.8128 | IA-QUARTZ-MU | 1.8128 |
 | S | sulfuric acid for the HF kiln and the resist | ACID_PLANT | 0.1302 | 0.1164 | IA-GYPSUM-REGEN | 0.0138 | IA-SULFUR-MU | 0.0138 |
 | Na | NaOH make-up | NAOH_PLANT | 2.5254 | 2.2729 | IA-NA-RECYCLE | 0.2525 | IA-HALITE-MU | 0.2525 |
 | C | bench solvent (ethanol and acetone) | SOLV_PLANT | 0.3119 | 0.2376 | IA-SOLV-SPENT, IA-LITHO-OUT | 0.0000 |  | 0.0743 |
@@ -198,7 +198,7 @@ Table 7.6. Photoresist streams at the present wafer starts
 
 ## 8. Drivers
 
-Table 8.1 lists the 987 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 1003 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -543,7 +543,29 @@ Table 8.1. Drivers
 | mill_slab_L_mm | 250.0 | mm length of the cast slab entering the cold mill (ingot mould) | A-M-416 | — |
 | mill_pass_reduction | 0.25 | - thickness reduction per cold-rolling pass of copper | A-M-416 | — |
 | mill_edge_margin | 0.25 | - roll face width margin over the slab width for edge spread and tracking | A-M-416 | — |
-| pv_cells_per_d | 3 | cells/d M2 156 mm (ST-SOLAR-01 study rate) | ST-SOLAR-01 | — |
+| pv_wafer_route | "CZ_PSQ125" | - wafer route of the solar cell line: CZ_PSQ125 (125 mm semi-square cells from the 150 mm CZ ingot of WAFER_FAB) or CAST_MC156 (156.75 mm multicrystalline cells from a block cast by directional solidification in WAFER_FAB) | A-M-437 | — |
+| FAB.pv-wafer-train.eol_output_frac | 0.8 | - module output, as a share of nameplate, at which a module is replaced: the end of the usual output warranty | JORDAN_KURTZ2013 | — |
+| FAB.pv-wafer-train.degradation_per_yr | 0.005 | - loss of module output per year, the median of field measurements | JORDAN_KURTZ2013 | — |
+| FAB.pv-wafer-train.failure_per_yr | 0.0005 | - share of modules that fail and are replaced each year apart from wear-out, about 5 in 10,000 | JORDAN2017 | — |
+| FAB.pv-wafer-train.wafer_t_um | 180.0 | um as-cut thickness of a solar wafer | ITRPV2020 | — |
+| FAB.pv-wafer-train.psq_side_mm | 125.0 | mm width across the flats of the semi-square cell cut from the 150 mm ingot, the 125 mm format of 150 mm ingots | ITRPV2020 | — |
+| FAB.pv-wafer-train.cell_eff_CZ | 0.19 | - efficiency at standard test conditions of a screen-printed single-crystal cell with an aluminium back field | ITRPV2020 | yes |
+| FAB.pv-wafer-train.cell_eff_MC | 0.175 | - efficiency at standard test conditions of a screen-printed multicrystalline cell with an aluminium back field | ITRPV2020 | yes |
+| FAB.pv-wafer-train.mc_side_mm | 156.75 | mm side of a square 156 mm cell | ITRPV2020 | — |
+| FAB.pv-wafer-train.mc_edge_crop_mm | 20.0 | mm cropped from each side of a cast block: the zone that the crucible wall contaminates | LAN2017 | yes |
+| FAB.pv-wafer-train.mc_tb_crop_frac | 0.2 | - share of the block height cropped at the bottom and the top: the contaminated foot and the segregated cap | LAN2017 | yes |
+| FAB.pv-wafer-train.mc_growth_mm_h | 10.0 | mm/h growth rate of directional solidification | LAN2017 | — |
+| FAB.pv-wafer-train.mc_G_K_cm | 10.0 | K/cm temperature gradient in the solid at the growth front of directional solidification | LAN2017 | — |
+| FAB.pv-wafer-train.mc_melt_h | 4.0 | h meltdown and stabilisation of the cast charge under argon | LAN2017 | yes |
+| FAB.pv-wafer-train.mc_cool_h | 6.0 | h cool-down of the cast block under argon, heater off | LAN2017 | yes |
+| FAB.pv-wafer-train.m2_ingot_D_mm | 210.0 | mm ingot diameter for 156.75 mm single-crystal cells, the diagonal of that format | ITRPV2020 | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_cassette_n | 25 | wafers in one carrier, the batch of the cell line | SEMI_E1 | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_boat_pitch_mm | 4.76 | mm slot pitch of the quartz diffusion boat | SEMI_E1 | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg_m2 | 100.0 | kg/m2 heated platen of the PECVD electrode, the 5 kg platen of a 0.05 m2 electrode of revision B | INCROPERA7 | yes |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_clear_mm | 50.0 | mm clearance from the electrode to the chamber wall on each side | INCROPERA7 | — |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_print_min_cell | 10.0 | min of screen printing and drying per cell, the 0.5 h for 3 cells of revision B | INCROPERA7 | yes |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_fire_min_cell | 3.4 | min of lamp time in the firing furnace per cell, the 0.17 h for 3 cells of revision B | INCROPERA7 | yes |
+| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_iv_min_cell | 5.0 | min of flash IV test per cell, the 0.25 h for 3 cells of revision B | INCROPERA7 | yes |
 | pvl_tex_L | 10.0 | L KOH texture bath | A-M-178 | — |
 | pvl_tex_C | 80.0 | C texture bath | A-M-178 | — |
 | pvl_tex_heat_h | 0.33 | h heat-up | A-M-178 | — |
@@ -557,18 +579,14 @@ Table 8.1. Drivers
 | pvl_hot_k_a | 0.035 | W/m K ceramic-fibre k at 0 C | A-M-178 | — |
 | pvl_hot_k_b | 0.0002 | W/m K2 ceramic-fibre k slope | A-M-178 | — |
 | pvl_pecvd_W_cm2 | 0.1 | W/cm2 RF power density on the electrode | A-M-178 | yes |
-| pvl_pecvd_area_m2 | 0.05 | m2 electrode (two cells) | A-M-178 | — |
 | pvl_pecvd_dep_h | 0.25 | h deposition per batch | A-M-178 | — |
 | pvl_pecvd_C | 400.0 | C substrate | A-M-178 | — |
 | pvl_vac_kW | 1.5 | kW dry vacuum pump | A-M-178 | — |
 | pvl_vac_h | 1.0 | h pump run per batch | A-M-178 | — |
 | pvl_print_kW | 0.2 | kW screen-printer drives | A-M-178 | — |
 | pvl_dry_kW | 0.5 | kW 200 C dryer | A-M-178 | — |
-| pvl_print_h | 0.5 | h per batch | A-M-178 | — |
 | pvl_fire_kW | 3.0 | kW IR lamp fast-firing furnace | A-M-178 | — |
-| pvl_fire_h | 0.17 | h lamp on per batch | A-M-178 | — |
 | pvl_iv_kW | 0.1 | kW flash IV tester | A-M-178 | — |
-| pvl_iv_h | 0.25 | h | A-M-178 | — |
 | znbr_ASR_ohm_cm2 | 5.0 | ohm cm2 cell area-specific resistance | A-M-179 | yes |
 | znbr_crossover_loss | 0.05 | - coulombic loss to Br2 crossover and self-discharge over the day | A-M-179 | yes |
 | znbr_aux_frac | 0.03 | - pump and control energy as a fraction of throughput | A-M-179 | yes |
@@ -806,9 +824,7 @@ Table 8.1. Drivers
 | FAB.wafer-line-train.SOLAR_PV_CELL.pvl_tex_tank_D_mm | 250 | mm texture-bath tank diameter (10 L PP tank) | A-M-178 (X-MFG-38) | — |
 | FAB.wafer-line-train.SOLAR_PV_CELL.pvl_tex_tank_H_m | 0.3 | m texture-bath tank height | A-M-178 (X-MFG-38) | — |
 | FAB.wafer-line-train.SOLAR_PV_CELL.pvl_diff_cp_kJ_kgK | 1.0 | kJ/(kg K) diffusion-furnace heated mass (quartz tube and fixtures) | A-M-178 (X-MFG-38) | — |
-| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg | 5.0 | kg PECVD heated platen mass | A-M-178 (X-MFG-38) | — |
 | FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_cp_kJ_kgK | 0.5 | kJ/(kg K) PECVD platen cp | A-M-178 (X-MFG-38) | — |
-| FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_chamber_D_mm | 300 | mm PECVD chamber diameter | A-M-178 (X-MFG-38) | — |
 | FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_chamber_H_m | 0.4 | m PECVD chamber height | A-M-178 (X-MFG-38) | — |
 | FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_heat_h | 0.5 | h platen heat-up time to the set point | A-M-178 (X-MFG-38) | — |
 | CRYO.cold-box-asu-recovery-train.cold-box.rcv_tube_OD_mm | 114.3 | mm DN100 (NPS 4) receiver tube OD | ASME_B36_10M | — |
@@ -1374,14 +1390,18 @@ Table 9.1. References
 | ISO_10628_2 | ISO 10628-2:2012, Diagrams for the chemical and petrochemical industry, Part 2: Graphical symbols: process flow and P&I diagram symbols. |
 | ISO_14687 | ISO 14687:2025, Hydrogen fuel quality, Product specification: Grade D (PEM fuel cells) limits water and O2 at 5 umol/mol and total halogenated compounds at 0.05 umol/mol. |
 | ISO_7200 | ISO 7200:2004, Technical product documentation, Data fields in title blocks and document headers: mandatory fields legal owner, identification number, revision index, date of issue, title, document type, approval and creator. |
+| ITRPV2020 | International Technology Roadmap for Photovoltaic, 11th edition (2020), German Engineering Federation: wafer formats and thickness, kerf, and cell efficiencies of screen-printed cells. |
 | JAE2022_AERO | Aeroponic systems design: considerations and challenges, Journal of Agricultural Engineering 53 (2022) 1387, doi:10.4081/jae.2022.1387: PD pump plus pressure tank and solenoid-timed short sprays; high-pressure swirl nozzles. |
 | JMS2017_GLASSFIBRE | Kinetics of dissolution of glass fibre in hot alkaline solution, J. Materials Science 53 (2018) doi:10.1007/s10853-017-1627-z: NaOH 3 mol/L, zero-order k 2.0e-4 g/(m2 s) at 80 C, 4.3e-4 at 95 C; reaction order in hydroxide 0.31-0.44. |
 | JONES1986 | Jones, D.T., Woods, D.R. (1986) Acetone-butanol fermentation revisited, Microbiological Reviews 50, 484-524: batch Clostridium acetobutylicum solvent fermentation about 36-72 h at 35-37 C, strictly anaerobic. |
+| JORDAN2017 | Jordan D.C., Silverman T.J., Wohlgemuth J.H., Kurtz S.R., VanSant K.T., Photovoltaic failure and degradation modes, Progress in Photovoltaics 25 (2017) 318-326: module failure rates of about 5 in 10,000 a year. |
+| JORDAN_KURTZ2013 | Jordan D.C., Kurtz S.R., Photovoltaic degradation rates: an analytical review, Progress in Photovoltaics 21 (2013) 12-29: median loss of module output of 0.5 % a year. |
 | KAVANAUGH2014 | Kavanaugh S.P. and Rafferty K., Geothermal Heating and Cooling: Design of Ground-Source Heat Pump Systems, ASHRAE (2014): bore length method, typical bore length per kW, pumping grade A <= 5 hp per 100 tons. |
 | KROLL1940 | Kroll W.J., The production of ductile titanium, Transactions of the Electrochemical Society 78 (1940) 35-47, DOI 10.1149/1.3071290: carbochlorination of TiO2 with chlorine over carbon at ~800-1000 C gives TiCl4, then batch Mg reduction in a steel/Mo-clad retort near 900 C; the sponge binds to the retort wall and the MgCl2 reaction product is distilled off. |
 | KRUIZENGA2012 | Kruizenga A.M., Corrosion mechanisms in chloride and carbonate salts, SAND2012-7594 (2012), Sandia National Laboratories: chloride-salt corrosion mechanisms (moisture/oxygen impurity hydroxide attack dominates), material class corrosion behaviour in the 650-800 C region, and the purification logic that sets exotic-alloy limits. |
 | KUSUMA2020 | Kusuma P., Pattison P.M., Bugbee B., From physics to fixtures to food: current and potential LED efficacy, Horticulture Research 7:56 (2020): best horticultural LED fixtures about 2.8-3.0 umol/J. |
 | LAKHIAR2018 | Lakhiar I.A. et al., Modern plant cultivation technologies in agriculture under controlled environment: a review on aeroponics, J. Plant Interactions 13 (2018) 338-352, doi:10.1080/17429145.2018.1472308: droplets 30-100 um; spray schedules 2 s/2 min, 3 s/10 min (tomato, pea), 7 s/90 s, 10 s/3 min. |
+| LAN2017 | Lan C.W. and co-authors, The emergence of high-performance multi-crystalline silicon in photovoltaics, Journal of Crystal Growth 468 (2017) 17-23: directional solidification of silicon blocks, growth rate, gradient and the cropped zones. |
 | LARSEN2013 | Larsen T.A., Udert K.M., Lienert J. (eds.), Source Separation and Decentralization for Wastewater Management, IWA Publishing (2013): vacuum toilets about 0.5-1.5 L per flush. |
 | LIBRA2011 | Libra, J.A. et al. (2011) Hydrothermal carbonization of biomass residuals: a comparative review of the chemistry, processes and applications of wet and dry pyrolysis, Biofuels 2(1), 71-106: HTC at 180-250 C, 1-12 h, under autogenous (saturated) pressure; mildly exothermic. |
 | LI_SEAWATER | Lithium in seawater: about 0.18 mg/kg, published oceanographic consensus (AQS-PLAN-011 section 10). |
@@ -1467,6 +1487,7 @@ Table 9.1. References
 | SCHACHT2004 | Schacht C.A. (ed.), Refractories Handbook, Marcel Dekker / CRC Press (2004), DOI 10.1201/9780203026328: alumina-silica brick (ch. 4), carbonaceous/graphite hot faces (ch. 8), refractory castables (ch. 10), thermomechanical lining design (ch. 13) and installation practice (ch. 17) for melt-shop furnaces, kilns and chloride-cell backup linings. |
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
 | SEAWATER_MILLERO | Millero et al. (2008), standard seawater composition at practical salinity 35: total salinity 35.165 g/kg; sodium 10.78 g/kg, chloride 19.35 g/kg, magnesium 1.284 g/kg, bromide 0.067 g/kg (AQS-PLAN-011 section 10). |
+| SEMI_E1 | SEMI E1, Specification for 3 inch, 100 mm, 125 mm and 150 mm plastic and metal wafer carriers: the 25-wafer carrier. |
 | SGL_SIGRATHERM | SGL Carbon, SIGRATHERM soft and rigid graphite felt, technical data sheets: thermal conductivity in argon of about 0.15 to 0.35 W/(m K) between 1000 and 2000 C for felts of 0.08 to 0.15 g/cm3. |
 | SKF_RELUB | SKF Group, Rolling bearings catalogue (publication 17000, 2018), Lubrication: the grease quantity for relubrication from the side is Gp = 0.005 D B grams (D outside diameter and B width in mm). |
 | SOLAS | Safety of Life at Sea convention: fire protection, life-saving appliances and evacuation (AQS-PLAN-011 section 10). |
@@ -1522,7 +1543,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 308 drivers and then the 384 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 318 drivers and then the 385 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1735,6 +1756,16 @@ Table 10.1. Values to verify
 | driver atom_GMR | 2.5 kg Ar per kg metal | Trial run on the first article (X-MFG-37) |
 | driver cu_flow_stress_MPa | 250.0 MPa mean flow stress, Cu cold work | Trial run on the first article (X-MFG-37) |
 | driver cast_gating_return_frac | 0.15 - | weigh the gates and risers cut from a week of permanent-mold copper pours against the poured mass |
+| driver FAB.pv-wafer-train.cell_eff_CZ | 0.19 - efficiency at standard test conditions of a screen-printed single-crystal cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency |
+| driver FAB.pv-wafer-train.cell_eff_MC | 0.175 - efficiency at standard test conditions of a screen-printed multicrystalline cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency |
+| driver FAB.pv-wafer-train.mc_edge_crop_mm | 20.0 mm cropped from each side of a cast block: the zone that the crucible wall contaminates | measure the minority-carrier lifetime across the first cast block |
+| driver FAB.pv-wafer-train.mc_tb_crop_frac | 0.2 - share of the block height cropped at the bottom and the top: the contaminated foot and the segregated cap | measure the minority-carrier lifetime along the first cast block |
+| driver FAB.pv-wafer-train.mc_melt_h | 4.0 h meltdown and stabilisation of the cast charge under argon | log the first cast |
+| driver FAB.pv-wafer-train.mc_cool_h | 6.0 h cool-down of the cast block under argon, heater off | log the first cast |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg_m2 | 100.0 kg/m2 heated platen of the PECVD electrode, the 5 kg platen of a 0.05 m2 electrode of revision B | weigh the platen of the first PECVD tool |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_print_min_cell | 10.0 min of screen printing and drying per cell, the 0.5 h for 3 cells of revision B | time the first printed batch |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_fire_min_cell | 3.4 min of lamp time in the firing furnace per cell, the 0.17 h for 3 cells of revision B | time the first fired batch |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_iv_min_cell | 5.0 min of flash IV test per cell, the 0.25 h for 3 cells of revision B | time the first tested batch |
 | driver pvl_diff_mass_kg | 20.0 kg heated mass (tube, boat, heater, hot-face insulation) | First-article tool run (X-MFG-38) |
 | driver pvl_pecvd_W_cm2 | 0.1 W/cm2 RF power density on the electrode | First-article tool run (X-MFG-38) |
 | driver znbr_ASR_ohm_cm2 | 5.0 ohm cm2 cell area-specific resistance | ZNBR2 stack test (X-MFG-41, AQS-TST-002) |
@@ -2220,3 +2251,4 @@ Table 10.1. Values to verify
 | A-M-432 | POLY_TO_FAB carries the wafer-fab photoresist, sized from … kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. |
 | A-M-433 | The standby and return route sets of task X-RTE are decided … kg/d | python3 -m flow_graph.param.standby_routes prints each rated case; after regen the X-RTE standby and return groups list only the assay-dependent and owner-held routes, and test_balance passes with no reconciled move. |
 | A-M-436 | The heater duty of the CZ hot zone in WAFER_FAB is found … kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model |
+| A-M-437 | The solar cell line SOLAR_PV_CELL makes the cells that … cells/d | IV-test the first in-house cells and map the minority-carrier lifetime of the first cast block, and compare with the drivers |

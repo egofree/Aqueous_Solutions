@@ -42,7 +42,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 3,FAB,LITHO_COAT,0,Si solute,-,36,no
 3,FAB,LITHO_DEV,0,Si solute,-,30,no
 3,FAB,RESIST_SYN,0,C11-C18 C5-C10 CH3OH CO Cl2 H2 H2SO4 NH3 acetone air,"N2 to < 25 % LFL, then < 1 % H2",0,no
-3,FAB,SOLAR_PV_CELL,0,solute,-,691,no
+3,FAB,SOLAR_PV_CELL,0,Si solute,-,691,no
 3,FAB,SOLV_PLANT,0,CH3OH CO H2 acetone ethanol solute,"N2 to < 25 % LFL, then < 1 % H2",0,no
 3,FAB,WAFER_FAB,0,Ar N2 Si acetone diacetone alcohol novolac-DNQ resin solute,-,0,no
 3,FAB,WET_BENCH,0,acetone ethanol,-,0,no
@@ -165,7 +165,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 18,ELEC,BACKUP_GEN,2000,Ar N2 O2,N2/air to 19.5-23.5 % O2,480,yes
 18,ELEC,FUEL_CELL,0,,-,346,no
 18,ELEC,LOAD_AGG,0,,-,65,no
-18,ELEC,PV_ARRAY,0,,-,528028,no
+18,ELEC,PV_ARRAY,0,Si,-,528028,no
 18,ELEC,RECTIFIER,0,,-,346,no
 18,ELEC,SOL_ARK_60K,0,,-,67,no
 18,ELEC,ZNBR2,2160,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",518,yes

@@ -21,6 +21,11 @@ digraph G {
     style=rounded; color="#94a3b8";
     "NORTH_DOCK" [fillcolor="#fde68a", label="NORTH_DOCK\nDedicated hydro_dock_pfd.png (graph-bridged); ca…"];
   }
+  subgraph "cluster_ELEC" {
+    label="ELEC";
+    style=rounded; color="#94a3b8";
+    "PV_ARRAY" [fillcolor="#ffffff", label="PV_ARRAY"];
+  }
   subgraph "cluster_FAB" {
     label="FAB";
     style=rounded; color="#94a3b8";
@@ -114,7 +119,7 @@ digraph G {
   "WAFER_FAB" -> "OIL_FRAC" [label="S39B\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_NITRIC" -> "WET_BENCH" [label="S34\\n1.2456 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_PHOS" -> "WET_BENCH" [label="S34B\\n0.61 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "METAL_STORE" -> "WAFER_FAB" [label="STOCK_TO_FAB\\n0.226363 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "METAL_STORE" -> "WAFER_FAB" [label="STOCK_TO_FAB\\n1.635293 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_STOCK" -> "WAFER_FAB" [label="POLY_TO_FAB\\n0.12 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_UPW" -> "FAB_UPW_TANK" [label="UPW_TO_FAB", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BMED_UPW_POLISH" -> "FAB_UPW_TANK" [label="IA-UPW-FAB\\n60.000181 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -123,7 +128,7 @@ digraph G {
   "GLASS_DIGEST" -> "WS_SLURRY" [label="IA-SIL-SRC\\n3.3 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_N2" -> "WS_AMMONIA" [label="IA-NH3-SRC\\n3.010053 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "HDR_O2" -> "WS_PEROX" [label="IA-H2O2-SRC\\n0.176 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "WAFER_FAB" -> "LEACH_CSTR_1" [label="IA-FAB-SPENT\\n66.500212 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "LEACH_CSTR_1" [label="IA-FAB-SPENT\\n66.500211 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "LEACH_CSTR_1" -> "WS_PHOS" [label="IA-PHOS-SRC\\n0.62 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_PHOS" -> "WS_DOPE" [label="IA-PHOS-DOPE\\n0.01 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_SOLV" -> "WET_BENCH" [label="IA-SOLV-WB\\n0.209973 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -141,9 +146,9 @@ digraph G {
   "LITHO_ALIGN" -> "LITHO_DEV" [label="IA-LITHO-WAFER-B\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "LITHO_DEV" -> "WAFER_FAB" [label="IA-LITHO-WAFER-RET\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WAFER_FAB" -> "NORTH_DOCK" [label="IA-FAB-PRODUCT\\n0.138904 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "WAFER_FAB" -> "LEACH_CSTR_1" [label="IA-FAB-KERF\\n0.087458 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "CRYO_ASU" -> "WAFER_FAB" [label="IA-AR-CZ\\n0.535819 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "WAFER_FAB" -> "CRYO_ASU" [label="IA-AR-CZ-BACK\\n0.535819 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "LEACH_CSTR_1" [label="IA-FAB-KERF\\n1.011774 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CRYO_ASU" -> "WAFER_FAB" [label="IA-AR-CZ\\n3.870875 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "CRYO_ASU" [label="IA-AR-CZ-BACK\\n3.870875 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WET_BENCH" -> "SOLV_PLANT" [label="IA-SOLV-SPENT\\n0.199474 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOLV_PLANT" -> "WS_SOLV" [label="IA-SOLV-PLANT\\n0.519493 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOLV_PLANT" -> "OIL_FRAC" [label="IA-SOLV-BTMS\\n0.14095 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -170,4 +175,6 @@ digraph G {
   "RESIST_SYN" -> "POLY_STOCK" [label="IA-RESIST-STOCK\\n0.12 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WS_SOLV" -> "WAFER_FAB" [label="IA-FAB-SOLV\\n0.21952 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WAFER_FAB" -> "ATMOS" [label="IA-FAB-N2-VENT\\n1.499799 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "WAFER_FAB" -> "SOLAR_PV_CELL" [label="IA-PV-WAFER\\n0.484615 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "SOLAR_PV_CELL" -> "PV_ARRAY" [label="IA-PV-CELL\\n0.484615 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

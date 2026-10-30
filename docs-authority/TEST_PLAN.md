@@ -16,13 +16,13 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 51 | Owner decision or site investigation report |
-| T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
+| T2 | In-house design tests and standard data | 36 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 64 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 492 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 500 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 692 items: 308 drivers, 384 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 703 items: 318 drivers, 385 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -88,6 +88,8 @@ Total 692 items: 308 drivers, 384 register entries. Classification rule: first m
 | driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_H_mm | 2200 mm skid height incl. separator deck | in-house skid GA at the fabrication-design task | X-PAR |
 | driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_W_mm | 1050 mm skid width (fits the CRYO H2-bay aisle) | in-house skid GA at the fabrication-design task | X-PAR |
 | driver CRYO.cold-box-asu-recovery-train.feed-and-recovery.H2O_ELYZ.skid_m2_per_kW | 0.025 m2 skid plan area per kW rated stack (PEM stack enclosure) | in-house skid GA at the fabrication-design task | X-PAR |
+| driver FAB.pv-wafer-train.cell_eff_CZ | 0.19 - efficiency at standard test conditions of a screen-printed single-crystal cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency | X-PAR |
+| driver FAB.pv-wafer-train.cell_eff_MC | 0.175 - efficiency at standard test conditions of a screen-printed multicrystalline cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency | X-PAR |
 | driver atom_GMR | 2.5 kg Ar per kg metal | Trial run on the first article (X-MFG-37) | X-PAR |
 | driver cu_flow_stress_MPa | 250.0 MPa mean flow stress, Cu cold work | Trial run on the first article (X-MFG-37) | X-PAR |
 | driver evap_comp_eta | 0.7 isentropic efficiency, single-stage blower | Compressor map of the in-house blower | X-PAR |
@@ -117,6 +119,7 @@ Total 692 items: 308 drivers, 384 register entries. Classification rule: first m
 | A-M-258 | Power chain derived again on the live graph: demand 281.99 k kW / kWp / kWh / m2 | python3 -m flow_graph.param.write_graph power exits 0; PV nameplate x 8.78 m2/kWp = area_m2 within rounding; nameplate <= roof capacity; sections breaker <= 1200 A (NEC 240.87) | R10b power-chain lane 2026-10-18 |
 | A-M-332 | EXT_HALL heat-pump condenser fans: electronically commutated kW | Check the selected fan's nameplate or datasheet for motor type (EC or induction), rated power, supply voltage and speed-control method; update the motor inventory row and this entry | X-INV-01 |
 | A-M-397 | 0.90 - | Coating coupon exposure test at the landing site | X-LOC-09 |
+| A-M-437 | The solar cell line SOLAR_PV_CELL makes the cells that repla cells/d | IV-test the first in-house cells and map the minority-carrier lifetime of the first cast block, and compare with the drivers | QA audit 2026-10-30, X-RTE-PV-SI |
 
 ## 4. T3 Bench and laboratory tests
 
@@ -228,6 +231,14 @@ Total 692 items: 308 drivers, 384 register entries. Classification rule: first m
 | driver DIGESTER.metals-leach-train.htc_header_T_K | 473.15 K | steam heater temperature vs duty sheet | X-PAR |
 | driver ELEC.storage-train.ZNBR2.purge_air_T_C | 25.0 C purge air temperature | Compare with the HVAC design room and line temperatures | X-PAR |
 | driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task | X-PAR |
+| driver FAB.pv-wafer-train.mc_cool_h | 6.0 h cool-down of the cast block under argon, heater off | log the first cast | X-PAR |
+| driver FAB.pv-wafer-train.mc_edge_crop_mm | 20.0 mm cropped from each side of a cast block: the zone that the crucible wall contaminates | measure the minority-carrier lifetime across the first cast block | X-PAR |
+| driver FAB.pv-wafer-train.mc_melt_h | 4.0 h meltdown and stabilisation of the cast charge under argon | log the first cast | X-PAR |
+| driver FAB.pv-wafer-train.mc_tb_crop_frac | 0.2 - share of the block height cropped at the bottom and the top: the contaminated foot and the segregated cap | measure the minority-carrier lifetime along the first cast block | X-PAR |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_fire_min_cell | 3.4 min of lamp time in the firing furnace per cell, the 0.17 h for 3 cells of revision B | time the first fired batch | X-PAR |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_iv_min_cell | 5.0 min of flash IV test per cell, the 0.25 h for 3 cells of revision B | time the first tested batch | X-PAR |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_pecvd_platen_kg_m2 | 100.0 kg/m2 heated platen of the PECVD electrode, the 5 kg platen of a 0.05 m2 electrode of revision B | weigh the platen of the first PECVD tool | X-PAR |
+| driver FAB.wafer-line-train.SOLAR_PV_CELL.pvl_print_min_cell | 10.0 min of screen printing and drying per cell, the 0.5 h for 3 cells of revision B | time the first printed batch | X-PAR |
 | driver FAB.wafer-line-train.hz_felt_k_W_mK | 0.25 W/(m K) graphite soft felt in argon at the mean felt temperature of about 800 C | measure the cold-face temperature of the felt at the first pull | X-PAR |
 | driver FAB.wafer-line-train.hz_felt_mm | 100.0 mm graphite felt pack on the sides, top and bottom of the hot zone | measure on the hot-zone drawing of the first puller | X-PAR |
 | driver FAB.wafer-line-train.hz_gap_mm | 40.0 mm radial gap from the crucible wall to the inner felt face: graphite susceptor, heater and clearances | measure on the hot-zone drawing of the first puller | X-PAR |

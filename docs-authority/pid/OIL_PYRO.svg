@@ -74,7 +74,7 @@
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">SI_REDUCE</text>
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">CHAR_TO_SI</text>
-<text x="1476" y="299" font-size="10" text-anchor="end">0.2 kg/d · solids transfer</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">1.2 kg/d · solids transfer</text>
 <text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N7</text>
 <line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
@@ -98,7 +98,7 @@
 <polygon points="1070,470 1061,466 1061,474" fill="#111"/>
 <text x="1476" y="451" font-size="9" fill="#666" text-anchor="end">MFG_SHOP</text>
 <text x="1476" y="465" font-size="11" font-weight="600" text-anchor="end">IA-CHAR</text>
-<text x="1476" y="483" font-size="10" text-anchor="end">4.8 kg/d · solids transfer</text>
+<text x="1476" y="483" font-size="10" text-anchor="end">3.8 kg/d · solids transfer</text>
 <text x="902" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="end">N4</text>
 <line x1="914" y1="516" x2="1061" y2="516" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,516 1061,512 1061,520" fill="#111"/>
@@ -122,7 +122,7 @@
 <g id="aqs-title-block"><rect x="1116" y="704" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="721" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-OIL_PYRO</text>
 <text x="1124" y="738" font-size="9">P&amp;ID OIL_PYRO (pyro, OIL sector)</text>
-<text x="1124" y="755" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev bcb5208e   Issued 2026-10-19</text>
+<text x="1124" y="755" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 0d3b8fcb   Issued 2026-10-19</text>
 <text x="1124" y="772" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="789" font-size="9">Graph SHA-256 6297c5010453afec   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="789" font-size="9">Graph SHA-256 f47abe003d003b41   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

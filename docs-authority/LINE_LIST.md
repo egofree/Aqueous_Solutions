@@ -11,7 +11,7 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-606 edges: 350 piped, 135 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 95.
+609 edges: 350 piped, 138 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 95.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -623,3 +623,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-FAB-N2-VENT | WAFER_FAB | ATMOS | DN15 | P3 | process vent gas |  | WAFER_FAB → ATMOS, position missing for ATMOS | velocity 10 m/s, ρ 1.2; min DN15 |
 | SF-RESIST_SYN | SOL_ARK_60K | RESIST_SYN | cable | — | — |  | SOL_ARK_60K → RESIST_SYN, position missing for RESIST_SYN | electrical: cable schedule X-ELS-06 |
 | IA-MTO-H2O | POLY_OLEFIN | MEOH_COND | DN15 | M1 | wet methanol service (316L per unit duty sheets) |  | POLY_OLEFIN → MEOH_COND, position missing for POLY_OLEFIN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-PV-WAFER | WAFER_FAB | SOLAR_PV_CELL | solids | — | — | 2.6 | WAFER_FAB → SOLAR_PV_CELL, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-PV-CELL | SOLAR_PV_CELL | PV_ARRAY | solids | — | — | 36.9 | SOLAR_PV_CELL → PV_ARRAY, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
+| IA-PV-EOL | PV_ARRAY | SI_REFINE | solids | — | — |  | PV_ARRAY → SI_REFINE, position missing for SI_REFINE | solids: conveyor, bin or hand transfer; not piped |

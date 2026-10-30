@@ -39,13 +39,13 @@ Table 2.1. Item families
 | Family | Category | Item | Specification | Qty | Sizes | Units |
 | --- | --- | --- | --- | --- | --- | --- |
 | OF-01 | bearing | deep-groove ball bearing | ISO 15, normal class | 434 | 608-2Z x434 | 75 |
-| OF-02 | bearing | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 356 | 6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z x12; 6308-2Z x4; 6306-2Z x2 | 48 |
+| OF-02 | bearing | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 356 | 6202-2Z x212; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z x14; 6308-2Z x4; 6306-2Z x2 | 48 |
 | OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 930 | 24 V DC x930 | 101 |
 | OF-04 | electronics | PLC analog input point | IEC 61131-2 | 811 | 4-20 mA HART x811 | 1 |
 | OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 214 | 24/48 V DC x214 | 74 |
-| OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 145 | 0.37 kW x104; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1 | 38 |
+| OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 144 | 0.37 kW x103; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1 | 37 |
 | OF-07 | electronics | PLC I/O module, 16 channel | IEC 61131-2 | 109 | 24 V DC x109 | 1 |
-| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 33 | 1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x2; 4 kW x1 | 15 |
+| OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 34 | 1.1 kW x21; 2.2 kW x7; 1.5 kW x3; 7.5 kW x2; 4 kW x1 | 16 |
 | OF-09 | electronics | solenoid driver channel | IEC 61131-2 DO | 44 | 24 V DC x44 | 19 |
 | OF-10 | electronics | compressor contactor + overload | IEC 60947-4-1 | 10 | 18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 3 |
 | OF-11 | electronics | stepper driver | IEC 61800-5-1 | 3 | 24/48 V DC x3 | 1 |
@@ -1302,9 +1302,9 @@ Table 2.1. Item families
 | tank | FAB_UPW_TANK | support | pipe clamp | DN15 | PP clamp with EPDM liner, MSS SP-58 Type 7 | 14 | S27: AQS-PIP-005 span count |
 | tank | FAB_UPW_TANK | valve | check valve | DN15 | PVC-U true-union swing/ball check valve, EPDM seals | 1 | S27: pump discharge (assumed) |
 | tank | FAB_UPW_TANK | valve | isolation valve | DN15 | PVC-U true-union ball valve, MSS SP-122, EPDM seals | 2 | S27: one at each end nozzle (assumed) |
-| tool | SOLAR_PV_CELL | bearing | deep-groove ball bearing | 6202-2Z | ISO 15 / ISO 492 normal class, C3 | 2 | main drive: drive and non-drive end, IEC 60072 frame 71 (assumed size) |
+| tool | SOLAR_PV_CELL | bearing | deep-groove ball bearing | 6206-2Z | ISO 15 / ISO 492 normal class, C3 | 2 | main drive: drive and non-drive end, IEC 60072 frame 100L (assumed size) |
 | tool | SOLAR_PV_CELL | electronics | PLC digital I/O point | 24 V DC | IEC 61131-2 | 2 | main drive: run and fault (assumed) |
-| tool | SOLAR_PV_CELL | electronics | motor starter (contactor + overload) | 0.37 kW | IEC 60947-4-1 | 1 | main drive (assumed VFD at >= 0.75 kW) |
+| tool | SOLAR_PV_CELL | electronics | variable-frequency drive | 2.2 kW | IEC 61800-5-1 | 1 | main drive (assumed VFD at >= 0.75 kW) |
 | tool | SOLAR_PV_CELL | instrument | pressure transmitter | 0-10 bar | ceramic diaphragm, IEC 61298 | 1 | duty item 5 (one per unit); range >= 1.25 x design pressure |
 | tool | SOLAR_PV_CELL | instrument | temperature element | Pt100 class A | IEC 60751, 316L thermowell | 1 | duty item 5 (assumed one per unit) |
 | tool | SOLAR_PV_CELL | protection | inverse-time circuit breaker, 3-pole | 15 A | UL 489 / IEC 60947-2 | 1 | NEC 430.52, from AQS-INV-002 |

@@ -5,3 +5,4 @@ N3,DN15,Class 150,impurity chlorides and silicon tetrachloride bleed,outlet,600
 N4,solids,Class 150,electronic-grade silicon for the CZ charge,outlet,600
 N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
+N7,solids,Class 150,"silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop",inlet,160

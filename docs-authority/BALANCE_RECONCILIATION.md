@@ -20,7 +20,7 @@ This page records how the plant mass balance is reconciled. The method is minimu
 
 X-SAF-10 corrected the peroxide cell feed from 3.0 kg/d O2 to 0.176 kg/d O2 (Faraday) plus 2.824 kg/d make-up water from ROOF_TANK, and took that water off S40. It did not propagate: TERRACE_IRRIG still transpired 40 kg/d on 37.176 kg/d irrigation, and the cold box still made 2.824 kg/d O2 that nothing drew. Revision A reconciled the two by least squares (IA-TERR-VAP -2.824, IA-O2-RET +2.824) and smeared small moves over 361 edges. Hypothesis tested: missing photosynthetic O2 from the terrace. Rejected for this cut: the terrace has no CO2 supply and no harvest edge, so net CO2 + H2O -> CH2O + O2 fixation there is zero (TAIZ2015), and the sign is wrong (the terrace was short water, the header long O2). Fix: Revision A moves withdrawn; T1-T5 in balance.physics. X-PAR-11 (T6): GROW_BED fixes the 19.0 kg/d CO2 dosed to it (S04 + S89); its photosynthetic O2, 32/44 x CO2 at PQ 1.0, leaves on S87 to CRYO_O2 instead of the trim lump; the trim, compost and nutrient surplus pass the difference; the cold box extracts that much less O2 and the leach dissolved-gas edge falls with it, now asserted under the Henry-law bound (SANDER2015). CO2 edges carry CO2 composition. Verification: T-PAR-02 (A-M-123).
 
-Mass edges 438; held by a transfer function or stoichiometry 416; reconciled 22. Units 143.
+Mass edges 441; held by a transfer function or stoichiometry 419; reconciled 22. Units 144.
 Before: 4 units out of balance (sum of residuals 0.002 kg/d). After: max unit residual 7.18e-04 kg/d. Negative rates after reconciliation: 0.
 
 ## 3. Units out of balance before reconciliation
@@ -48,7 +48,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-C5-SHIP | C5-C10 product shipped | 6.63 |
 | export | IA-CA-CL2-SHIP | chlorine byproduct export (water-treatme | 0.097 |
 | export | IA-CL2-MG-SHIP | chlorine byproduct export (water-treatme | 0.016 |
-| export | IA-CL2-SHIP | chlorine byproduct export (water-treatme | 39.204 |
+| export | IA-CL2-SHIP | chlorine byproduct export (water-treatme | 37.896 |
 | export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.217 |
 | export | IA-FAB-PRODUCT | finished wafers to the dock for dispatch | 0.139 |
 | export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.503 |
@@ -68,16 +68,16 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | IA-CACL2-MU | CaCl2 brine concentrate (mining-waste cl | 0.152 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 57.023 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 54.894 |
 | import | IA-HALITE-MU | halite ore (raw ore) to re-saturate the  | 0.676 |
 | import | IA-MGCL2-MU | CaCl2-MgCl2 brine concentrate (mining-wa | 0.03 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
-| import | IA-QUARTZ-MU | quartz ore for the silicon furnace (raw  | 0.718 |
+| import | IA-QUARTZ-MU | quartz ore for the silicon furnace (raw  | 3.878 |
 | import | IA-SILICA-MU | foundry silica (flour/stucco/binder make | 1.0 |
 | import | IA-SULFUR-MU | native sulfur (raw ore) for the acid pla | 0.014 |
 | import | IA-TIO2-MU | TiO2-equivalent rutile concentrate (dock | 0.834 |
 
-**Net trade: +9.366 kg/d** (exports 120.017 - imports 110.651); dock ledger residual +9.368 kg/d (reported, exempt per D-DOCK).
+**Net trade: +7.027 kg/d** (exports 118.709 - imports 111.682); dock ledger residual +7.028 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 
@@ -117,7 +117,7 @@ Table 6.1. Stoichiometric edges
 
 ## 5. Transfer functions for the study edges (closure layer complete)
 
-22 study edges: 18 closure transfer functions (rate = balance of the named unit, solved in elimination order) and 4 design inputs (independent rates with their stated basis; each is replaced when its unit sizing task issues a calculation). Re-derivation of every closure from the inputs reproduces the graph to 6.8e-13 kg/d.
+22 study edges: 18 closure transfer functions (rate = balance of the named unit, solved in elimination order) and 4 design inputs (independent rates with their stated basis; each is replaced when its unit sizing task issues a calculation). Re-derivation of every closure from the inputs reproduces the graph to 5.5e-13 kg/d.
 
 | Edge | Role | Closes unit | Rate kg/d | Basis |
 | --- | --- | --- | --- | --- |

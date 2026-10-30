@@ -282,6 +282,7 @@ def x_els_residuals(g, N, E, d):
     hz = SIL['hz_kWh_pull']                                         # kWh per pull, hot-zone heat-loss model while heated (A-M-436)
     camp = SIL['interval_d']
     fab = [(f"CZ puller: charge heat-up + hot zone {SIL['hz']['kW']:.2f} kW over {SIL['hot_h']:.1f} h + graphite heat-up, one pull every {camp:.0f} d", (cz + hz) / camp / 24),
+           *([(f"cast furnace of CAST_MC156: {SIL['mc']['charge_kg']:.1f} kg block every {SIL['mc']['interval_d']:.0f} d, {SIL['mc']['kWh_cast']:.0f} kWh a cast (A-M-437)", SIL['mc']['kW_avg'])] if SIL['mc'] else []),
            ('ingot cool/anneal station: N2 circulator duty share', 0.02),
            ('crop/grind/edge tools at 5 starts/d', 0.04),
            ('FAB_TOOL dry row parasitics (ox, RTA, metal, probe standby)', 0.12),

@@ -17,7 +17,7 @@ This page records the size of unit PV_ARRAY, of class `pv` in sector ELEC, from 
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 351.736 kW.
+The unit takes 0.484615 kg/d by 1 stream and gives 0.484615 kg/d by 1 stream. Its continuous electrical load is 360.745 kW.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The envelope is 182342 mm x 170342 mm x 300 mm, from the placement file `flow_graph/placement_seed.json`.
 
-With no mass flow, the unit has no hold-up volume to check.
+The hold-up check takes 0.484615 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.4846 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 90 mm in diameter and 130 mm high. It fits within the envelope.
 
 ## 4. Material
 

@@ -42,7 +42,7 @@ Table 4.1. Commissioning sequence
 
 | Seq | System | Units | Loops | SIFs | Water-run units | Chemical run reagents |
 |---|---|---|---|---|---|---|
-| 1 | ELEC | 8 | 29 | 5 | 2 | Ar, Fe, HCl, N2, O2, other_metals |
+| 1 | ELEC | 8 | 29 | 5 | 2 | Ar, Fe, HCl, N2, O2, Si, other_metals |
 | 2 | PUMPED_HYDRO | 1 | 2 | 0 | 0 |  |
 | 3 | WTR | 8 | 51 | 7 | 6 | Fe, HCl, other_metals, solids, solute |
 | 4 | HEAT | 11 | 21 | 5 | 0 |  |

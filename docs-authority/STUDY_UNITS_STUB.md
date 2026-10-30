@@ -88,7 +88,7 @@ The single stub LITHO_STUB has since been retired. The three tools LITHO_COAT, L
 
 The steps are alkaline texturing, phosphorus emitter diffusion, glass etch, silicon nitride antireflection coating, screen-printed contacts with a firing furnace, and the current-voltage test. The texturing, diffusion and etch steps used standard practice, and the study held the coating and firing furnaces as open until their tools were designed.
 
-That work closed on 2026-10-16. The cell line is now sized from its in-house tools (X-MFG-38, A-M-178). The wafer feed of the cell line is open as task X-RTE-PV-SI.
+That work closed on 2026-10-16. The cell line is now sized from its in-house tools (X-MFG-38, A-M-178). The cell rate is now the replacement need of the roof array, and the wafers come from the plant by a selectable route (A-M-437).
 
 ## 7. Blow-mould machine and electrode coating booth
 

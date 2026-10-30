@@ -305,6 +305,7 @@ def apply(g=None, write=False):
        f'exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-290 chlorine ruling). | {TAG}.',
        layers=['mass', 'energy'])
     E['IA-CL2-SHIP'].setdefault('params', {})['base_kg_d'] = E['IA-CL2-SHIP']['rate']['value']   # fluoro_train draws AL_POT_CL2 from this (A-M-431)
+    E['IA-CL2-SHIP']['params']['si_cl2_kg_d'] = _si_cl2     # si_refine.tf moves the export by any later change of this make-up (A-M-437)
     mk('IA-MGCL2-KROLL', 'TI_CELL', 'MG_POT', 'FOUNDRY', 'L', 'Kroll retort MgCl2 return (net of drag-out)',
        s['mgcl2_ret'],
        f'AQS-BAL-KROLL closure: {2 * (MM["Mg"] + 2 * MM["Cl"]) / MM["Ti"]:.3f} kg/kg Ti gross less the '

@@ -3,3 +3,5 @@ N1,DN15,Class 150,drain,bottom,50
 N2,DN15,Class 150,vent,top,800
 N3,solids,Class 150,dopant concentrate,inlet,160
 N4,solids,Class 150,dopant into the wafer fab,outlet,600
+N5,solids,Class 150,"solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route",inlet,160
+N6,solids,Class 150,finished cells to the replacement modules of the roof array,outlet,600

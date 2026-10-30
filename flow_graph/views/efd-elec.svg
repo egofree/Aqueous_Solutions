@@ -260,7 +260,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M176.78,-4431.65C226.26,-4424.25 328.43,-4408.22 414,-4390 417.2,-4389.32 420.5,-4388.58 423.81,-4387.81"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="424.84,-4391.17 433.75,-4385.44 423.21,-4384.36 424.84,-4391.17"/>
-<text text-anchor="middle" x="355" y="-4414.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n351.7357 kW</text>
+<text text-anchor="middle" x="355" y="-4414.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n360.7445 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node24" class="node">
@@ -459,7 +459,7 @@
 <title>SOL_ARK_60K&#45;&gt;EXT_HALL</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M514,-4375C570.31,-4375 673.85,-4375 730.81,-4375"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="730.88,-4378.5 740.88,-4375 730.88,-4371.5 730.88,-4378.5"/>
-<text text-anchor="middle" x="612.5" y="-4377.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;EXT_HALL\n82.1326 kW</text>
+<text text-anchor="middle" x="612.5" y="-4377.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;EXT_HALL\n85.3144 kW</text>
 </g>
 <!-- WAFER_FAB -->
 <g id="node28" class="node">
@@ -472,7 +472,7 @@
 <title>SOL_ARK_60K&#45;&gt;WAFER_FAB</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.78,-4356.88C479.7,-4269.53 498.51,-3894.68 534,-3858 583.62,-3806.72 673.17,-3808.45 726.85,-3815.17"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="726.71,-3818.69 737.09,-3816.57 727.65,-3811.75 726.71,-3818.69"/>
-<text text-anchor="middle" x="612.5" y="-3860.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;WAFER_FAB\n0.2611 kW</text>
+<text text-anchor="middle" x="612.5" y="-3860.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;WAFER_FAB\n0.5788 kW</text>
 </g>
 <!-- WET_BENCH -->
 <g id="node29" class="node">
@@ -550,7 +550,7 @@
 <title>SOL_ARK_60K&#45;&gt;SOLAR_PV_CELL</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.64,-4356.77C478.21,-4294.54 489.88,-4091.99 534,-4048 581.68,-4000.47 663.22,-3996.13 717.11,-3999.44"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="716.94,-4002.94 727.17,-4000.17 717.45,-3995.96 716.94,-4002.94"/>
-<text text-anchor="middle" x="612.5" y="-4050.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;SOLAR_PV_CELL\n0.3917 kW</text>
+<text text-anchor="middle" x="612.5" y="-4050.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;SOLAR_PV_CELL\n1.7304 kW</text>
 </g>
 <!-- SOLV_PLANT -->
 <g id="node35" class="node">
@@ -973,7 +973,7 @@
 <title>SOL_ARK_60K&#45;&gt;SI_REDUCE</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M476.7,-4356.84C480.73,-4324.25 493.74,-4255.61 534,-4217 637.43,-4117.83 710.77,-4177.85 840.5,-4117 900.17,-4089.01 905.1,-4063.19 966,-4038 996.17,-4025.52 1032.26,-4017.62 1059.82,-4012.91"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1060.63,-4016.33 1069.94,-4011.26 1059.5,-4009.42 1060.63,-4016.33"/>
-<text text-anchor="middle" x="772" y="-4151.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;SI_REDUCE\n0.1472 kW</text>
+<text text-anchor="middle" x="772" y="-4151.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;SI_REDUCE\n0.7955 kW</text>
 </g>
 <!-- SI_REFINE -->
 <g id="node69" class="node">
@@ -986,7 +986,7 @@
 <title>SOL_ARK_60K&#45;&gt;SI_REFINE</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M479.42,-4356.63C486.49,-4331.32 502.84,-4286.1 534,-4262 609.77,-4203.4 887.88,-4234.31 954,-4165 974.58,-4143.43 945.37,-4120.53 966,-4099 990.63,-4073.29 1031.73,-4066.83 1062.5,-4066.01"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1062.52,-4069.51 1072.5,-4065.93 1062.47,-4062.51 1062.52,-4069.51"/>
-<text text-anchor="middle" x="772" y="-4223.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;SI_REFINE\n0.5659 kW</text>
+<text text-anchor="middle" x="772" y="-4223.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;SI_REFINE\n4.0882 kW</text>
 </g>
 <!-- MEOH_FERM -->
 <g id="node71" class="node">
@@ -1364,5 +1364,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="770.2" y="5253.5" width="517.3" height="137.9" fill="white" stroke="black" stroke-width="1.44"/><text x="778.8" y="5276.5" font-family="sans-serif" font-size="12.9">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ELEC</text><text x="778.8" y="5300.9" font-family="sans-serif" font-size="12.9">Electrical flow diagram</text><text x="778.8" y="5325.4" font-family="sans-serif" font-size="12.9">Type: flow diagram (ISO_10628_2)   Rev 8b8e4296   Issued 2026-10-15</text><text x="778.8" y="5349.8" font-family="sans-serif" font-size="12.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="778.8" y="5374.2" font-family="sans-serif" font-size="12.9">Graph SHA-256 6297c5010453afec   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="770.2" y="5253.5" width="517.3" height="137.9" fill="white" stroke="black" stroke-width="1.44"/><text x="778.8" y="5276.5" font-family="sans-serif" font-size="12.9">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ELEC</text><text x="778.8" y="5300.9" font-family="sans-serif" font-size="12.9">Electrical flow diagram</text><text x="778.8" y="5325.4" font-family="sans-serif" font-size="12.9">Type: flow diagram (ISO_10628_2)   Rev e30cd6ca   Issued 2026-10-15</text><text x="778.8" y="5349.8" font-family="sans-serif" font-size="12.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="778.8" y="5374.2" font-family="sans-serif" font-size="12.9">Graph SHA-256 f47abe003d003b41   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

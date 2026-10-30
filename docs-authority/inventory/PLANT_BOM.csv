@@ -930,9 +930,9 @@ unit envelope BOM,SINTER,Process nozzle DN15,1,per AQS-STD-002 (no duty sheet),o
 unit envelope BOM,SI_REDUCE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7).,docs-authority/duties/SI_REDUCE.md
 unit envelope BOM,SI_REDUCE,Process nozzle DN15,6,Graphite hot-face carbothermic-reduction furnace with alumina brick backup and a mild-steel casing; dry char and silica-class feed handling; the hot face stays dry (M7).,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SI_REFINE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route).",docs-authority/duties/SI_REFINE.md
-unit envelope BOM,SI_REFINE,Process nozzle DN15,4,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route).",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,SI_REFINE,Process nozzle DN15,5,"Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite chucks (or a silicon-lined fluidised bed on the silane route).",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SOLAR_PV_CELL,Body / envelope 2400 x 1200 x 1600 mm,1,316L where the stream is wet.,docs-authority/duties/SOLAR_PV_CELL.md
-unit envelope BOM,SOLAR_PV_CELL,Process nozzle DN15,2,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,SOLAR_PV_CELL,Process nozzle DN15,4,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SOLV_PLANT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed.",docs-authority/duties/SOLV_PLANT.md
 unit envelope BOM,SOLV_PLANT,Process nozzle DN15,8,"316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,SOL_ARK_60K,Body / envelope per duty sheet section 2 (not yet dimensioned),1,No wetted alloy.,docs-authority/duties/SOL_ARK_60K.md
@@ -960,7 +960,7 @@ unit envelope BOM,VEG_BED,Body / envelope per duty sheet section 2 (not yet dime
 unit envelope BOM,VEG_BED,Process nozzle DN15,19,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,VEG_BED,Open vent DN32,1,HDPE or PVC for the water.,"API 2000, A-M-155"
 unit envelope BOM,WAFER_FAB,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,docs-authority/duties/WAFER_FAB.md
-unit envelope BOM,WAFER_FAB,Process nozzle DN15,16,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
+unit envelope BOM,WAFER_FAB,Process nozzle DN15,17,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,WAFER_FAB,Process nozzle DN50,1,316L where the stream is wet.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,WAX_PATTERN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,per AQS-STD-002 (no duty sheet),docs-authority/duties/WAX_PATTERN.md
 unit envelope BOM,WAX_PATTERN,Process nozzle DN15,2,per AQS-STD-002 (no duty sheet),one per mass edge; DN from AQS-INV-003
@@ -1027,12 +1027,12 @@ motor family,MF-05 x 0,magnet wire IEC 60317-13 22 AWG (0.130 mm2),0.61 kg,,X-IN
 motor family,MF-05 x 0,die-cast Al cage (bars + rings),0.14 kg,,A356 in-house melt (assumed 12 % of steel mass)
 motor family,MF-05 x 0,shaft C45,0,,turned
 motor family,MF-05 x 0,compressor shell (scroll line X-MFG-35),0,,not in this model
-motor family,MF-06 x 104,stator laminations M400-50A (EN 10106) 0.5 mm,10608,,EN 10106
-motor family,MF-06 x 104,rotor laminations M400-50A 0.5 mm,10608,,EN 10106
-motor family,MF-06 x 104,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.19 kg,,X-INV-03 wire line
-motor family,MF-06 x 104,die-cast Al cage (bars + rings),0.40 kg,,A356 in-house melt (assumed 12 % of steel mass)
-motor family,MF-06 x 104,shaft C45,104,,turned
-motor family,MF-06 x 104,compressor shell (scroll line X-MFG-35),0,,not in this model
+motor family,MF-06 x 103,stator laminations M400-50A (EN 10106) 0.5 mm,10506,,EN 10106
+motor family,MF-06 x 103,rotor laminations M400-50A 0.5 mm,10506,,EN 10106
+motor family,MF-06 x 103,magnet wire IEC 60317-13 19 AWG (0.394 mm2),1.19 kg,,X-INV-03 wire line
+motor family,MF-06 x 103,die-cast Al cage (bars + rings),0.40 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-06 x 103,shaft C45,103,,turned
+motor family,MF-06 x 103,compressor shell (scroll line X-MFG-35),0,,not in this model
 motor family,MF-07 x 23,stator laminations M400-50A (EN 10106) 0.5 mm,2806,,EN 10106
 motor family,MF-07 x 23,rotor laminations M400-50A 0.5 mm,2806,,EN 10106
 motor family,MF-07 x 23,magnet wire IEC 60317-13 17 AWG (0.927 mm2),2.58 kg,,X-INV-03 wire line
@@ -1069,16 +1069,16 @@ motor family,MF-10 x 11,end shields A356,22,,cast + machined
 motor family,MF-10 x 11,bearing 6205-2Z,22,,X-INV-05 OF bearing family
 motor family,MF-10 x 11,fan PP + fan cover steel,11,,IC 411
 motor family,MF-10 x 11,terminal box + 6-stud block,11,,IEC 60034-8 marking
-motor family,MF-11 x 6,stator laminations M400-50A (EN 10106) 0.5 mm,396,,EN 10106
-motor family,MF-11 x 6,rotor laminations M400-50A 0.5 mm,396,,EN 10106
-motor family,MF-11 x 6,magnet wire IEC 60317-13 21 AWG (0.184 mm2),0.55 kg,,X-INV-03 wire line
-motor family,MF-11 x 6,die-cast Al cage (bars + rings),0.18 kg,,A356 in-house melt (assumed 12 % of steel mass)
-motor family,MF-11 x 6,"shaft C45 (EN 10083-2) D11 x 176 mm, key to IEC 60072-1",6,,turned
-motor family,MF-11 x 6,"frame A356 IEC 63, feet A100 x B80, holes K7",6,,cast + machined
-motor family,MF-11 x 6,end shields A356,12,,cast + machined
-motor family,MF-11 x 6,bearing 6201-2Z,12,,X-INV-05 OF bearing family
-motor family,MF-11 x 6,fan PP + fan cover steel,6,,IC 411
-motor family,MF-11 x 6,terminal box + 6-stud block,6,,IEC 60034-8 marking
+motor family,MF-11 x 7,stator laminations M400-50A (EN 10106) 0.5 mm,462,,EN 10106
+motor family,MF-11 x 7,rotor laminations M400-50A 0.5 mm,462,,EN 10106
+motor family,MF-11 x 7,magnet wire IEC 60317-13 21 AWG (0.184 mm2),0.55 kg,,X-INV-03 wire line
+motor family,MF-11 x 7,die-cast Al cage (bars + rings),0.18 kg,,A356 in-house melt (assumed 12 % of steel mass)
+motor family,MF-11 x 7,"shaft C45 (EN 10083-2) D11 x 176 mm, key to IEC 60072-1",7,,turned
+motor family,MF-11 x 7,"frame A356 IEC 63, feet A100 x B80, holes K7",7,,cast + machined
+motor family,MF-11 x 7,end shields A356,14,,cast + machined
+motor family,MF-11 x 7,bearing 6201-2Z,14,,X-INV-05 OF bearing family
+motor family,MF-11 x 7,fan PP + fan cover steel,7,,IC 411
+motor family,MF-11 x 7,terminal box + 6-stud block,7,,IEC 60034-8 marking
 motor family,MF-12 x 4,stator laminations M400-50A (EN 10106) 0.5 mm,416,,EN 10106
 motor family,MF-12 x 4,rotor laminations M400-50A 0.5 mm,416,,EN 10106
 motor family,MF-12 x 4,magnet wire IEC 60317-13 20 AWG (0.266 mm2),0.98 kg,,X-INV-03 wire line
@@ -1226,16 +1226,16 @@ bulk pipe,PF-20,"316L ASTM A312 DN50 pipe, 3 x 6.096 m",17.1 m,316L ASTM A312,AQ
 bulk pipe,PF-20,ASME B16.9 LR 90 elbow; ASME B16.5 Cl 150 flange; gaskets; 5/8 in studs,3 / 2 / 2 / 8,316L ASTM A312,AQS-INV-003
 bulk pipe,PF-21,"PVDF SDR 21 ISO 10931 DN32 pipe, 2 x 6.096 m",7.4 m,PVDF SDR 21 ISO 10931,AQS-INV-003
 bulk pipe,PF-21,ISO 10931 butt-fusion 90 elbow; ISO 10931 stub end + backing ring; gaskets; 1/2 in studs,3 / 2 / 2 / 8,PVDF SDR 21 ISO 10931,AQS-INV-003
-bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",40320 m,Cu,AQS-INV-002
+bulk wire,WF-01,"PV DC 10 AWG PV Wire, UL 4703, 2 kV, 2000 V DC",42000 m,Cu,AQS-INV-002
 bulk wire,WF-02,"control 18 AWG TFFN 3-pair, shielded, 600 V",42045 m,Cu,AQS-INV-002
-bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",20520 m,Cu,AQS-INV-002
-bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",20160 m,Cu,AQS-INV-002
+bulk wire,WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",21240 m,Cu,AQS-INV-002
+bulk wire,WF-04,"equipment ground 10 AWG bare Cu, -",21000 m,Cu,AQS-INV-002
 bulk wire,WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",17923 m,Cu,AQS-INV-002
-bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",5262 m,Cu,AQS-INV-002
+bulk wire,WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",5496 m,Cu,AQS-INV-002
 bulk wire,WF-07,"control 18 AWG shielded pair, 300 V",5220 m,Cu,AQS-INV-002
 bulk wire,WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",5160 m,Cu,AQS-INV-002
 bulk wire,WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",5969 m,Cu,AQS-INV-002
-bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3150 m,Cu,AQS-INV-002
+bulk wire,WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3300 m,Cu,AQS-INV-002
 bulk wire,WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3091 m,Cu,AQS-INV-002
 bulk wire,WF-12,"MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield, 15 kV",1200 m,Cu,AQS-INV-002
 bulk wire,WF-13,"equipment ground 8 AWG green XHHW-2 Cu, 600 V",1030 m,Cu,AQS-INV-002
@@ -1255,9 +1255,9 @@ building block,OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal
 building block,OF-03,electronics: PLC digital I/O point (IEC 61131-2),930,,AQS-INV-004
 building block,OF-04,electronics: PLC analog input point (IEC 61131-2),811,,AQS-INV-004
 building block,OF-05,electronics: BLDC driver (IEC 61800-5-1),214,,AQS-INV-004
-building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),145,,AQS-INV-004
+building block,OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),144,,AQS-INV-004
 building block,OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",109,,AQS-INV-004
-building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),33,,AQS-INV-004
+building block,OF-08,electronics: variable-frequency drive (IEC 61800-5-1),34,,AQS-INV-004
 building block,OF-09,electronics: solenoid driver channel (IEC 61131-2 DO),44,,AQS-INV-004
 building block,OF-10,electronics: compressor contactor + overload (IEC 60947-4-1),10,,AQS-INV-004
 building block,OF-11,electronics: stepper driver (IEC 61800-5-1),3,,AQS-INV-004

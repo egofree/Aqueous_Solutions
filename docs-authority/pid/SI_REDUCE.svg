@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="684" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="676" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit SI_REDUCE · furnace · sector GLASS · present</text>
-<text x="24" y="54" font-size="10.5">0.1472 kW continuous</text>
+<text x="24" y="54" font-size="10.5">0.7955 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 4 in + 3 out · valves 0 placed / 0 unplaced · instruments 2 (0 SIF) · nozzles 9</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -31,42 +31,42 @@
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">OIL_PYRO</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">CHAR_TO_SI</text>
-<text x="24" y="253" font-size="10" text-anchor="start">0.2 kg/d · solids transfer</text>
+<text x="24" y="253" font-size="10" text-anchor="start">1.2 kg/d · solids transfer</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
 <line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,286 577,282 577,290" fill="#111"/>
 <text x="24" y="267" font-size="9" fill="#666" text-anchor="start">NORTH_DOCK</text>
 <text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">IA-QUARTZ-MU</text>
-<text x="24" y="299" font-size="10" text-anchor="start">0.7 kg/d · solids transfer</text>
+<text x="24" y="299" font-size="10" text-anchor="start">3.9 kg/d · solids transfer</text>
 <text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
 <line x1="430" y1="332" x2="577" y2="332" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
 <polygon points="586,332 577,328 577,336" fill="#111"/>
 <text x="24" y="313" font-size="9" fill="#666" text-anchor="start">ATMOS</text>
 <text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">IA-SI-HOOD-O2</text>
-<text x="24" y="345" font-size="10" text-anchor="start">0.3 kg/d · DN15 M1</text>
+<text x="24" y="345" font-size="10" text-anchor="start">1.6 kg/d · DN15 M1</text>
 <text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N7</text>
 <line x1="430" y1="378" x2="577" y2="378" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,378 577,374 577,382" fill="#111"/>
 <text x="24" y="359" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
 <text x="24" y="373" font-size="11" font-weight="600" text-anchor="start">SF-SI_REDUCE</text>
-<text x="24" y="391" font-size="10" text-anchor="start">0.1 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="391" font-size="10" text-anchor="start">0.8 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">ATMOS</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-SI-CO2</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">0.8 kg/d · DN15 P3</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">4.5 kg/d · DN15 P3</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N8</text>
 <line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">LEACH_CSTR_1</text>
 <text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">IA-SI-FUME</text>
-<text x="1476" y="299" font-size="10" text-anchor="end">0.1 kg/d · solids transfer</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">0.8 kg/d · solids transfer</text>
 <text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N9</text>
 <line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">SI_REFINE</text>
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-SI-MG</text>
-<text x="1476" y="345" font-size="10" text-anchor="end">0.3 kg/d · solids transfer</text>
+<text x="1476" y="345" font-size="10" text-anchor="end">1.5 kg/d · solids transfer</text>
 <text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N4</text>
 <text x="24" y="474" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="484" font-size="9">Every incident graph edge is drawn: 4 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
@@ -76,7 +76,7 @@
 <g id="aqs-title-block"><rect x="1116" y="566" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="583" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-SI_REDUCE</text>
 <text x="1124" y="600" font-size="9">P&amp;ID SI_REDUCE (furnace, GLASS sector)</text>
-<text x="1124" y="617" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 9a69917f   Issued 2026-10-19</text>
+<text x="1124" y="617" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev bd768199   Issued 2026-10-19</text>
 <text x="1124" y="634" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="651" font-size="9">Graph SHA-256 6297c5010453afec   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="651" font-size="9">Graph SHA-256 f47abe003d003b41   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

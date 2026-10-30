@@ -37,9 +37,11 @@ def design(d=None):
     if route not in ROUTES:
         raise SystemExit(f'si_refine: si_refine_route {route!r} is not one of {ROUTES}')
     eg = fab_silicon.design(d)['si_kg_d']                       # electronic-grade silicon for the CZ charge
-    y = v(f'si_refine_yield_{route}'); si_in = eg/y              # silicon in the metallurgical feed
+    y = v(f'si_refine_yield_{route}'); si_tot = eg/y             # silicon fed to the loop
+    eol = fab_silicon.design(d)['pv_wafer_kg_d']                 # retired cells of end-of-life modules, recovered first (A-M-437)
+    si_in = si_tot - eol                                         # silicon in the metallurgical feed
     mg = si_in/v('si_mg_purity'); imp = mg - si_in               # metallurgical silicon and its impurities
-    si_lost = si_in - eg
+    si_lost = si_tot - eg
     stc = si_lost*M_STC/M_SI; cl_stc = si_lost*4*M_CL/M_SI; cl_imp = imp*v('si_imp_cl_kg_kg')
     cl2 = cl_stc + cl_imp; purge = stc + imp + cl_imp
     r = v('si_saf_recovery')
@@ -47,11 +49,11 @@ def design(d=None):
     quartz = sio2_r + fume + imp; c = 2*M_C*si_in/M_SI; co = 2*M_CO*si_in/M_SI
     o2_hood = co*M_O2/2/M_CO; co2 = co*M_CO2/M_CO                   # CO + 1/2 O2 -> CO2 in the hood
     kw_reduce = mg*v('si_saf_kWh_kg')/24; kw_refine = eg*v(f'si_refine_kWh_kg_{route}')/24
-    out = dict(route=route, eg_kg_d=eg, yield_=y, si_in_kg_d=si_in, mg_kg_d=mg, imp_kg_d=imp, stc_kg_d=stc, cl2_kg_d=cl2, purge_kg_d=purge,
+    out = dict(route=route, eg_kg_d=eg, eol_kg_d=eol, yield_=y, si_in_kg_d=si_in, mg_kg_d=mg, imp_kg_d=imp, stc_kg_d=stc, cl2_kg_d=cl2, purge_kg_d=purge,
                quartz_kg_d=quartz, char_kg_d=c, co_kg_d=co, fume_kg_d=fume, o2_hood_kg_d=o2_hood, co2_kg_d=co2, kw_reduce=kw_reduce, kw_refine=kw_refine)
     if route == 'TCS_SIEMENS':
         out['tcs_circ_kg_d'] = eg/v('siemens_pass_conv')*M_TCS/M_SI   # trichlorosilane fed to the rods per day
-    assert abs(quartz + c + o2_hood - mg - co2 - fume) < 1e-9 and abs(mg + cl2 - eg - purge) < 1e-9
+    assert abs(quartz + c + o2_hood - mg - co2 - fume) < 1e-9 and abs(mg + eol + cl2 - eg - purge) < 1e-9
     return out
 
 # stream id, from, to, carries, phase, composition, key of the design dict
@@ -63,14 +65,21 @@ STREAMS = (('IA-QUARTZ-MU', 'NORTH_DOCK', 'SI_REDUCE', 'quartz ore for the silic
            ('IA-SI-MG', 'SI_REDUCE', 'SI_REFINE', 'metallurgical-grade silicon', 'S', {'Si': 1.0}, 'mg_kg_d'),
            ('IA-CL2-SIREF', 'AL_POT', 'SI_REFINE', 'chlorine make-up of the chlorosilane loop', 'G', {'Cl2': 1.0}, 'cl2_kg_d'),
            ('IA-SI-PURGE', 'SI_REFINE', 'LEACH_CSTR_1', 'impurity chlorides and silicon tetrachloride bleed', 'L', {'SiCl4': 1.0}, 'purge_kg_d'),
+           ('IA-PV-EOL', 'PV_ARRAY', 'SI_REFINE', 'silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop', 'S', {'Si': 1.0}, 'eol_kg_d'),
            ('IA-SI-EG', 'SI_REFINE', 'METAL_STORE', 'electronic-grade silicon for the CZ charge', 'S', {'Si': 1.0}, 'eg_kg_d'))
 WHY = {'quartz_kg_d': 'silica reduced plus fume plus impurities', 'char_kg_d': '2 C per Si reduced', 'o2_hood_kg_d': 'half an O2 per CO burned', 'co2_kg_d': 'one CO2 per CO burned', 'fume_kg_d': 'silica not recovered as silicon',
        'mg_kg_d': 'refining feed / yield / purity', 'cl2_kg_d': 'chlorine leaving in the purge', 'purge_kg_d': 'impurity chlorides plus SiCl4 of the unrecovered silicon',
-       'eg_kg_d': 'the CZ charge of fab_silicon.py'}
+       'eg_kg_d': 'the CZ charge of fab_silicon.py', 'eol_kg_d': 'cells retired a day, equal in steady state to the cells installed (pv_wafer.py, A-M-437)'}
 
 def tf(g, d=None):
     from flow_graph.param.o2_close import _edge, _node
     r = design(d); N = {n['unit_id']: n for n in g['nodes']}; E = {e['stream_id']: e for e in g['edges']}
+    sh = E.get('IA-CL2-SHIP')                                  # the pot chlorine export is net of this make-up (foundry_poly.py); keep it net when
+    if sh is not None and (sh.get('params') or {}).get('si_cl2_kg_d') is not None:   # the cell need moves the make-up after foundry_poly ran (A-M-437)
+        dl = sh['params']['si_cl2_kg_d'] - r['cl2_kg_d']
+        if dl:
+            sh['rate']['value'] = round(sh['rate']['value'] + dl, 6); sh['params']['base_kg_d'] = round(sh['params']['base_kg_d'] + dl, 6)
+            sh['params']['si_cl2_kg_d'] = r['cl2_kg_d']
     if 'SI_REFINE' not in N:
         n = _node('SI_REFINE', 'GLASS', 'reactor', None, 'Electronic-grade silicon refining (A-M-419).', {})
         n['notes'] = 'Electronic-grade silicon refining: chlorosilane loop on metallurgical silicon from SI_REDUCE (A-M-419).'
