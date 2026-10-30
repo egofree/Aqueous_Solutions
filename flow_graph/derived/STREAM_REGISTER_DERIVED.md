@@ -202,7 +202,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | MG_POT_TO_IND | MG_POT | IND_MELT | S | mass | present | Mg metal | 0.0 kg/d | — |
 | CA_POT_TO_IND | CA_POT | IND_MELT | S | mass | present | Ca metal | 0.055069 kg/d | — |
 | AL_POT_CL2 | AL_POT | CRU | G | mass,energy | present | Cl2 return | 0.0 kg/d | — |
-| MG_POT_CL2 | MG_POT | CRU | G | mass,energy | present | Cl2 return | 0.0 kg/d | — |
+| MG_POT_CL2 | MG_POT | CRU | G | mass,energy | retired | Cl2 return | 0.0 kg/d | — |
 | IND_HEAT_TO_HX | IND_MELT | MET_HX_Q4 | E | thermal | present | furnace coil + shell cooling water 40-60 C | 1.063 kW | — |
 | VAC_HEAT_TO_HX | VAC_IND | MET_HX_Q4 | E | thermal | present | furnace coil + shell cooling water 40-60 C | 0.638 kW | — |
 | COMB_OFFGAS | COMB_HEAT | MET_SCRUB | G | mass,energy | present | combustion off-gas when alternate used | 0.0 kg/d | — |

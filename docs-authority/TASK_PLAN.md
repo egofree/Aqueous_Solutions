@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 51 | 14 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 51 | 15 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 375 | 252 |
 | FAB | Process (Mass transform) | 255 | 169 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3048** | **2138** |
+| | **Total** | **3048** | **2139** |
 
 ## 3. Triage of open tasks
 
@@ -104,7 +104,7 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P1 | 3 |
-| desk P2 | 39 |
+| desk P2 | 38 |
 | desk P3 | 33 |
 | desk P4 | 469 |
 | desk P5 | 178 |
@@ -180,7 +180,6 @@ Table 6.1. Next cross-cutting desk tasks
 | X-RTE-IA-LEACH-ASU | Route IA-LEACH-ASU from LEACH_CSTR_1 to CRYO_ASU carries no flow | desk P2 |
 | X-RTE-LEGACY-PFD | Remaining hand-drawn process sheets | desk P2 |
 | X-RTE-MEOH_TO_OLEFIN | Route MEOH_TO_OLEFIN from MEOH_SYNTH to POLY_OLEFIN carries no flow | desk P2 |
-| X-RTE-MG_POT_CL2 | Route MG_POT_CL2 from MG_POT to CRU carries no flow | desk P2 |
 | X-RTE-MG_POT_TO_IND | Route MG_POT_TO_IND from MG_POT to IND_MELT carries no flow | desk P2 |
 | X-RTE-NUT_TO_BED | Route NUT_TO_BED from NUTRIENT_DOSE to GROW_BED carries no flow | desk P2 |
 | X-RTE-OIL_TO_OLEFIN | Route OIL_TO_OLEFIN from OIL_FRAC to POLY_OLEFIN carries no flow | desk P2 |
@@ -615,6 +614,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-RTE-IMPORT-IA-NAOH-MU** Import IA-NAOH-MU: sodium hydroxide made on site. Done when: NAOH_PLANT makes the make-up by lime causticising of soda ash from trona ore, with membrane chlor-alkali on the leach purge salt and halite ore selectable (A-M-422). Depends: —. Evidence: `flow_graph/param/caustic.py`.
 - [x] **X-RTE-IMPORT-IA-H2SO4-MU** Import IA-H2SO4-MU: sulfuric acid made on site. Done when: ACID_PLANT makes the HF kiln acid on the contact process from the kiln cake reduced with plant char and native sulfur ore, with a sulfur-ore-only route selectable (A-M-421). Depends: —. Evidence: `flow_graph/param/sulfuric.py`.
 - [x] **X-RTE-IMPORT-CARBON** Imports IA-C-TI, IA-C-MO and IA-C-CR: carbon reductant made on site. Done when: the Ti, Mo and Cr chlorinators take plant pyrolysis char from OIL_PYRO, sized from their carbon need over the char fixed carbon (A-M-420). Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
+- [x] **X-RTE-MG_POT_CL2** Route MG_POT_CL2: retired. Done when: MG_POT makes exactly the chlorine that the Kroll chlorinator draws on IA-CL2-MG-TI, so it has no surplus for CRU at any titanium rate; set to presence retired. Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
 - [x] **X-RTE-UPW_TO_FAB** Route UPW_TO_FAB: retired as a duplicate. Done when: IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired. Depends: —. Evidence: `flow_graph/plant_flow_graph.json`.
 - [x] **X-RTE-GREASE_LI_TO_MFG** Route GREASE_LI_TO_MFG from GREASE_LI to MFG_SHOP: standby at its rated case. Done when: the route carries 0.002349 kg/d when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-418). Depends: —. Evidence: `flow_graph/param/grease.py`.
 - [x] **X-RTE-IND_TO_ATOM** Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER: standby at its rated case. Done when: the route carries 3.556 kg/d when MET_MELT is out of service and the foundry melt IND_MELT pours the atomiser charge (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
@@ -638,7 +638,6 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-RTE-IA-H2P-H2O** Route IA-H2P-H2O from H2_DRYER to VCD_TRAIN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-IA-LEACH-ASU** Route IA-LEACH-ASU from LEACH_CSTR_1 to CRYO_ASU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-MEOH_TO_OLEFIN** Route MEOH_TO_OLEFIN from MEOH_SYNTH to POLY_OLEFIN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
-- [ ] **X-RTE-MG_POT_CL2** Route MG_POT_CL2 from MG_POT to CRU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-MG_POT_TO_IND** Route MG_POT_TO_IND from MG_POT to IND_MELT carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-NUT_TO_BED** Route NUT_TO_BED from NUTRIENT_DOSE to GROW_BED carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-OIL_TO_OLEFIN** Route OIL_TO_OLEFIN from OIL_FRAC to POLY_OLEFIN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
@@ -875,8 +874,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-MG_POT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MG_POT.md` §1; mass in = out 1.989 kg/d, 0.3375 kW.
   - [x] FOUNDRY-MG_POT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-MG_POT-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-MG_POT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-MG_POT-01, FOUNDRY-MG_POT-02. Evidence: `docs-authority/pid/MG_POT.svg` (AQS-PID-001).
-  - [x] FOUNDRY-MG_POT-04 Nozzle schedule. Done when: docs-authority/nozzles/MG_POT.csv, one row per edge. Depends: FOUNDRY-MG_POT-03. Evidence: `docs-authority/nozzles/MG_POT.csv` (all 6 process connections listed).
-  - [x] FOUNDRY-MG_POT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-MG_POT-04, FOUNDRY-MG_POT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FOUNDRY-MG_POT-04 Nozzle schedule. Done when: docs-authority/nozzles/MG_POT.csv, one row per edge. Depends: FOUNDRY-MG_POT-03. Evidence: `docs-authority/nozzles/MG_POT.csv` (all 5 process connections listed).
+  - [x] FOUNDRY-MG_POT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-MG_POT-04, FOUNDRY-MG_POT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FOUNDRY-MG_POT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FOUNDRY-MG_POT-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FOUNDRY-MG_POT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-MG_POT-02, FOUNDRY-MG_POT-03. Evidence: `docs-authority/duties/MG_POT.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-MG_POT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-MG_POT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (6 loops; AQS-CTL-001).
@@ -1150,8 +1149,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-CRU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRU.md` §1; mass in = out 28.13 kg/d, 0.0000 kW.
   - [x] DIGESTER-CRU-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: DIGESTER-CRU-01. Evidence: `docs-authority/sizing/CRU.md` (AQS-SIZE-CRU).
   - [x] DIGESTER-CRU-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: DIGESTER-CRU-01, DIGESTER-CRU-02. Evidence: `docs-authority/pid/CRU.svg` (AQS-PID-001).
-  - [x] DIGESTER-CRU-04 Nozzle schedule. Done when: docs-authority/nozzles/CRU.csv, one row per edge. Depends: DIGESTER-CRU-03. Evidence: `docs-authority/nozzles/CRU.csv` (all 10 process connections listed).
-  - [x] DIGESTER-CRU-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: DIGESTER-CRU-04, DIGESTER-CRU-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 10 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] DIGESTER-CRU-04 Nozzle schedule. Done when: docs-authority/nozzles/CRU.csv, one row per edge. Depends: DIGESTER-CRU-03. Evidence: `docs-authority/nozzles/CRU.csv` (all 9 process connections listed).
+  - [x] DIGESTER-CRU-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: DIGESTER-CRU-04, DIGESTER-CRU-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 9 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [ ] DIGESTER-CRU-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: DIGESTER-CRU-02. Triage: desk P3.
   - [x] DIGESTER-CRU-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: DIGESTER-CRU-02, DIGESTER-CRU-03. Evidence: `docs-authority/duties/CRU.md` §6 (C7 closed on MASTER_PLAN).
   - [x] DIGESTER-CRU-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: DIGESTER-CRU-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (5 loops; AQS-CTL-001).

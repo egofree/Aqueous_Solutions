@@ -17,7 +17,7 @@ This page records the size of unit CRU, of class `cru` in sector DIGESTER, from 
 
 ## 2. Duty
 
-The unit takes 28.1257 kg/d by 7 streams and gives 28.1257 kg/d by 3 streams.
+The unit takes 28.1257 kg/d by 6 streams and gives 28.1257 kg/d by 3 streams.
 
 The graph holds no design parameters for the unit.
 

@@ -17,7 +17,7 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 196 units, 143 have an issued material for each wetted stream, 53 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 342 wetted stream ends, and each resolves to an issued service family.
+Of the 196 units, 143 have an issued material for each wetted stream, 53 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 341 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
@@ -27,7 +27,7 @@ The following service families of AQS-STD-002 are used, with the number of strea
 - Acid or brine, at or below 60 C: 53 stream ends.
 - Hot leach liquor: 46 stream ends.
 - Dry gas, H2/O2/N2/CO2: 43 stream ends.
-- Process vent gas: 39 stream ends.
+- Process vent gas: 38 stream ends.
 - Hydrocarbon product, fuel or wax cut: 19 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
 - Aqueous process liquor (AQS-ASSAY-001 envelope): 17 stream ends.
@@ -253,7 +253,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | TI_CELL_CL2_TO_CRU | TI_CELL | CRU | P3 | 12.1 process vent gas | PVDF (P3) |
 | MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | P3 | 12.1 process vent gas | PVDF (P3) |
 | AL_POT_CL2 | AL_POT | CRU | P3 | 12.1 process vent gas | PVDF (P3) |
-| MG_POT_CL2 | MG_POT | CRU | P3 | 12.1 process vent gas | PVDF (P3) |
 | CRU_TO_VDF | CRU | VDF_SYN | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
 | CRU_TO_TFE | CRU | TFE_SYN | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
@@ -1014,7 +1013,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| MG_POT_CL2 | MG_POT | CRU | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-MGCL2-KROLL | TI_CELL | MG_POT | — | 12.2 molten mgcl2 salt return (ti_cell kroll retort to mg_pot, ~700 °c) | Graphite/Ni-200 wetted launder, per the AQS-STD-006 pot-cell selections (molten-chloride physics: DING2018_CL_REVIEW, KRUIZENGA2012) |
 | IA-MGCL2-MU | NORTH_DOCK | MG_POT | — | 12.2 cacl2/mgcl2 brine concentrates to molten-salt pots (ambient import legs, north_dock to mg_pot and ca_pot) | PVDF wetted handling at ambient, per the AQS-STD-006 pot-cell and brine selections (AQS-STD-002 section 12.1 P3 family practice) |
 | IA-CL2-MG-TI | MG_POT | TI_CELL | P3 | 12.1 process vent gas | PVDF (P3) |

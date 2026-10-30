@@ -594,7 +594,7 @@ unit envelope BOM,CROP_TOMATO,Body / envelope per duty sheet section 2 (not yet 
 unit envelope BOM,CROP_TOMATO,Process nozzle DN15,2,HDPE or PVC for the water.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CROP_TOMATO,Open vent DN25,1,HDPE or PVC for the water.,"API 2000, A-M-155"
 unit envelope BOM,CRU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/CRU.md
-unit envelope BOM,CRU,Process nozzle DN15,10,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+unit envelope BOM,CRU,Process nozzle DN15,9,"PVC-U wetted, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_AHU,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AHU.md
 unit envelope BOM,CRYO_AHU,Process nozzle DN15,9,316L.,one per mass edge; DN from AQS-INV-003
 unit envelope BOM,CRYO_AHU_COND_CONDENSABLE,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,docs-authority/duties/CRYO_AHU_COND_CONDENSABLE.md

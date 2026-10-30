@@ -17,7 +17,7 @@ This page records the size of unit MG_POT, of class `cell` in sector FOUNDRY, fr
 
 ## 2. Duty
 
-The unit takes 1.98907 kg/d by 2 streams and gives 1.98907 kg/d by 4 streams. Its continuous electrical load is 0.3375 kW, fed by stream SF-MG_POT.
+The unit takes 1.98907 kg/d by 2 streams and gives 1.98907 kg/d by 3 streams. Its continuous electrical load is 0.3375 kW, fed by stream SF-MG_POT.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

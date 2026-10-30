@@ -313,7 +313,9 @@ def apply(g=None, write=False):
     put('MG_POT_TO_IND', 0.0,
         f'MG_POT serves only the Kroll recycle at steady state (all Mg to the retort on IA-MG-TI); no Mg stock line '
         f'at the table. | {TAG}.')
-    put('MG_POT_CL2', 0.0, f'MG_POT Cl2 fully serves the chlorinator (IA-CL2-MG-TI); no CRU surplus. | {TAG}.')
+    put('MG_POT_CL2', 0.0, f'Retired 2026-10-30: MG_POT makes exactly the chlorine the Kroll chlorinator draws (IA-CL2-MG-TI), '
+        f'because both follow the same Ti rate, so the pot can never have a chlorine surplus for CRU. | {TAG}.')
+    E['MG_POT_CL2']['presence'] = 'retired'
     mk('IA-CACL2-MU', 'NORTH_DOCK', 'CA_POT', 'FOUNDRY', 'L', 'CaCl2 brine concentrate (mining-waste class)',
        R(s['ca']) + R(s['ca_cl2']),
        f'D-DOCK feedstock import (A-M-284): Ca deoxidizer addition {s["ca"]:.4f} kg/d at '

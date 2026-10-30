@@ -11,7 +11,7 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-606 edges: 342 piped, 144 solids transfers, 120 electrical. Piped edges without a length (unit position missing): 82.
+605 edges: 341 piped, 144 solids transfers, 120 electrical. Piped edges without a length (unit position missing): 81.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -202,7 +202,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | MG_POT_TO_IND | MG_POT | IND_MELT | solids | — | — |  | MG_POT → IND_MELT, position missing for MG_POT, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | CA_POT_TO_IND | CA_POT | IND_MELT | solids | — | — |  | CA_POT → IND_MELT, position missing for CA_POT, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | AL_POT_CL2 | AL_POT | CRU | DN15 | P3 | process vent gas |  | AL_POT → CRU, position missing for AL_POT | velocity 10 m/s, ρ 1.2; min DN15 |
-| MG_POT_CL2 | MG_POT | CRU | DN15 | P3 | process vent gas |  | MG_POT → CRU, position missing for MG_POT | velocity 10 m/s, ρ 1.2; min DN15 |
 | IND_HEAT_TO_HX | IND_MELT | MET_HX_Q4 | cable | — | — |  | IND_MELT → MET_HX_Q4, position missing for IND_MELT | electrical: cable schedule X-ELS-06 |
 | VAC_HEAT_TO_HX | VAC_IND | MET_HX_Q4 | cable | — | — |  | VAC_IND → MET_HX_Q4, position missing for VAC_IND | electrical: cable schedule X-ELS-06 |
 | COMB_OFFGAS | COMB_HEAT | MET_SCRUB | DN15 | F1 | flue or acid gas |  | COMB_HEAT → MET_SCRUB, position missing for COMB_HEAT | velocity 10 m/s, ρ 1.2; min DN15 |

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 1.989 kg/d. Mass out 1.989 kg/d. Electrical duty 0.3375 kW. In: IA-MGCL2-KROLL 1.949 kg/d (Kroll retort MgCl2 return (net of drag-out)); IA-MGCL2-MU 0.03978 kg/d (CaCl2-MgCl2 brine concentrate (mining-waste class)). Out: MG_POT_TO_IND 0 kg/d (Mg metal); MG_POT_CL2 0 kg/d (Cl2 return); IA-MG-TI 0.5078 kg/d (Mg reductant to the Kroll retort); IA-CL2-MG-TI 1.481 kg/d (chlorine to the Kroll chlorinator).
+1. Basis. Mass in 1.989 kg/d. Mass out 1.989 kg/d. Electrical duty 0.3375 kW. In: IA-MGCL2-KROLL 1.949 kg/d (Kroll retort MgCl2 return (net of drag-out)); IA-MGCL2-MU 0.03978 kg/d (CaCl2-MgCl2 brine concentrate (mining-waste class)). Out: MG_POT_TO_IND 0 kg/d (Mg metal); IA-MG-TI 0.5078 kg/d (Mg reductant to the Kroll retort); IA-CL2-MG-TI 1.481 kg/d (chlorine to the Kroll chlorinator).
 
 2. Size.
 - Envelope 800×800×1600 mm, 1.024 m³. That box over this flow would be 12355.5 h if it were full. It is not a residence time.

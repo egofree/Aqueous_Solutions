@@ -10983,7 +10983,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "MG_POT Cl2 fully serves the chlorinator (IA-CL2-MG-TI); no CRU surplus. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Retired 2026-10-30: MG_POT makes exactly the chlorine the Kroll chlorinator draws (IA-CL2-MG-TI), because both follow the same Ti rate, so the pot can never have a chlorine surplus for CRU. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER",
