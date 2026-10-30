@@ -1,433 +1,111 @@
-# Study / deferred units — VCD·remin, ORC, litho, solar, blow-mold, electrode coat
+# Study units: first-principles duty record and current status
 
 Document number: AQS-EQP-STUDY-001  
-Revision: F  
-Date: 2026-10-01  
-Authority: AQS-WTR-001; AQS-EQP-GEO-001; AQS-EQP-FAB-001; AQS-EQP-FAB-PV-001;
-AQS-EQP-MFG-001; AQS-MFG-ELC-001; AQS-GAP-001; AQS-MVS-GAP-001 §4.1.3;
-AQS-AUD-001 §10.4 / §11; seed `candidate_mvs.json`; Project decision 2026-10-01;
-the unpublished planning note UNIT_EQUIPMENT_SPEC_GAP (**AQS-EQ-GAP-001**).  
-Style: AQS-DOC-002.  
-**Stage = first-principles study + stubs toward MVS (Rev F: gap-register pointer).** Not Present CAD yet.
-Not vendor nameplates. Not PE stamps. Numbers below are **study** with cited
-method. Each open blocker is a **queued study in the plan** — not an accepted
-unreclaimed or sub-MVS endpoint. Sandbox stays modular as studies close.
-
-| Rev | Change | Description | Date |
-|---|---|---|---|
-| A | — | Name study units + streams for gap-close tracking | 2026-10-01 |
-| B | 1 | Present-path blockers table; remain study — no fake Present (WP-A5) | 2026-10-01 |
-| C | 2 | VCD first-principles kW; REMIN mineral balance; GEO_ORC Carnot-limited kW_e; SOLAR architecture promote; litho/blow/electrode in-scope units (WP-A5 close) | 2026-10-01 |
-| D | 3 | Framing: gaps = open studies queued toward MVS; sandbox tracks progress (not accepted unreclaimed/sub-MVS) | 2026-10-01 |
-| E | 4 | Phase A supplements A3b–d / A5b–e: LITHO/BLOW/ELC first-principles; VCD/REMIN/ORC/SOLAR physics closed + external next actions | 2026-10-01 |
-| F | 5 | Pointer to equipment spec gap register AQS-EQ-GAP-001 (commercial interim → the open-source software stack policy) | 2026-10-01 |
-
-Licence: **CERN-OHL-S-2.0**.
-
-Canonical in this tree: `docs-authority/STUDY_UNITS_STUB.md`
-
----
-
-## 1. Purpose
-
-Keep `loops_closed` accurate by **naming** deferred capabilities as study
-units/streams in the candidate MVS graph — not silent omissions — and by
-recording **first-principles** duty methods (system fit → standards/physics
-→ practicality → cost metrics) with citations. Decision trail:
-the unpublished planning note DECISION_LOG_A3_A5.
-
----
-
-## 2. Study units (seed)
-
-| unit_id | sector_id | Role | Status | Streams (study) | Next measurement |
-|---|---|---|---|---|---|
-| **VCD_TRAIN** | WTR | Vapor-compression distill train (HX/EVAP/COMP/COND) | Study — **duty kW issued** (§3) | S25 distillate; S28 brine; S29 grey feed | Compressor selection / equipment IDs for Present |
-| **REMIN** | WTR | Ca/Mg/K potable remineralization | Study — **mineral balance issued** (§4) | S26 potable → HAB | Confirm salt source vs S07; UV integrity; equipment IDs |
-| **GEO_ORC** | GEO | Binary ORC electric (heat→electric) | Study — **Carnot-limited band** (§5) | S48 → Sol-Ark AC couple | GHEX conductivity / T_source survey |
-| **LITHO_STUB** | FAB | Coat / aligner / develop Present-path schedule | **Study duty+mass issued** (§8) | WS_SOLV S38; resist waste → oil/org | FreeCAD children + wafer starts lock + UV datasheet (external) |
-| **SOLAR_PV_CELL** | FAB | Texture→emitter→ARC→contact→fire | **Study duty bands locked** (§6) | PV_* reagents; S03/S02; etch S10 | In-house tool designs (X-MFG-38) + PV_COUNT offtake (external) |
-| **BLOW_MOLD** | MFG | Blow / shoe mold polymer forming | **Study duty issued** (§9) | Polymer melt; scrap S16 | Mold FreeCAD + machine datasheet (external) |
-| **ELECTRODE_COAT** | MFG | Electrode coating booth (non-precious M1 class) | **Study duty+class issued** (§10) | MET substrate; exhaust S71–S72 | Booth CAD + lab formulation (external); RuO₂–IrO₂ deferred |
-
----
-
-## 2.1 Present-path blockers (Rev C / WP-A5)
-
-| unit_id | Promote to Present? | Blockers (do not invent) | Seed `params.present_path` |
-|---|---|---|---|
-| VCD_TRAIN | **No** — study duty only | Equipment IDs; compressor selection; AHJ | `study_duty_issued` |
-| REMIN | **No** — study balance only | Mineral source lock vs S07; UV; equipment IDs | `study_balance_issued` |
-| GEO_ORC | **No** — Carnot band only | GHEX survey; T_h / Q_surplus | `study_carnot_band` |
-| LITHO_STUB | **No CAD** — duty+mass **issued** | Coat/align/develop FreeCAD children; UV datasheet | `study_duty_mass_issued` |
-| SOLAR_PV_CELL | **Partial** — bands **locked** | Belt/PECVD **nameplates**; offtake vs PV_COUNT | `study_duty_bands_locked` |
-| BLOW_MOLD | **No** — duty **issued** | Mold CAD; selected datasheet | `study_duty_issued` |
-| ELECTRODE_COAT | **No** — duty+class **issued** | Booth CAD; lab formulation | `study_duty_formulation_class_issued` |
-
-**Potable surplus claim:** only if VCD_TRAIN + REMIN are **Present**. Seed keeps
-`self_copy.vcd_remin_on_site=false`. Inventory clean-water `pass_study` ≠
-drinking export. Study duty/balance **does not** flip Present — remaining
-blockers (equipment IDs, UV, source lock) stay on the **plan study queue**.
-
----
-
-## 3. VCD first-principles duty (kW) — study
-
-### 3.1 System fit
-
-Habitation regenerates distillate into roof–catch inventory (AQS-WTR-001):
-treated grey (~S12/S29) + clean condensates → VCD → S25 distillate /
-S28 brine. Distillate is **not** potable until ED polish + REMIN.
-
-### 3.2 Physics / engineering standard method
-
-Single-effect **mechanical vapor compression (MVC / VCD)** compressor work
-(DESWARE / classic MVC texts):
-
-\[
-w_\mathrm{ideal} \approx \frac{\lambda\,\Delta T}{T}
-\quad[\mathrm{kJ/kg}]
-\]
-
-with latent heat \(\lambda\), evaporator absolute temperature \(T\), and
-temperature lift \(\Delta T\) across evaporator/condenser (plus boiling-point
-elevation for saline feeds). Actual specific energy consumption:
-
-\[
-\mathrm{SEC} \approx \frac{w_\mathrm{ideal}}{\eta_\mathrm{comp}\,\eta_\mathrm{motor}}
-\quad[\mathrm{kWh/m^3}]
-\]
-
-(plus small pump share). Literature single-effect MVC SEC class ≈
-**10–25 kWh/m³** product (lower end for low-salinity / small lift; upper for
-high-salinity / small machines) — see cites §3.5.
-
-### 3.3 M1 numbers (study)
+Revision: G  
+Date: 2026-10-30  
+Authority: AQS-WTR-001, AQS-EQP-GEO-001, AQS-EQP-FAB-001, AQS-EQP-FAB-PV-001, AQS-EQP-MFG-001 and AQS-MFG-ELC-001 for the units; the plant flow graph `flow_graph/plant_flow_graph.json` for the current duties. Study. Not a PE stamp.
 
-| Quantity | Value | Source |
-|---|---|---|
-| Grey → VCD feed class | **~110 L/d** (0.110 m³/d) | AQS-AUD-001 §11; seed S12/S25 |
-| Study \(\Delta T\) | 4–8 K | MVC design class (DESWARE sample) |
-| Study \(T\) | ~343–373 K (70–100 °C class) | Hab VCD low-temp intent |
-| \(\lambda\) | ~2250–2400 kJ/kg | Steam tables (IAPWS / textbook) |
-| \(w_\mathrm{ideal}\) mid | ~\(\lambda\times5/353\) ≈ **33 kJ/kg** ≈ **9.2 kWh/m³** | §3.2 |
-| Combined η (small machine) | **0.5–0.7** | DESWARE small-MVC range |
-| **SEC study band** | **14–20 kWh/m³** (mid **~16**) | Ideal/η + ~5% pumps |
-| Energy / day | 0.110 × 14…20 = **1.5–2.2 kWh/d** | |
-| **Average continuous kW_e** | **0.06–0.09 kW** (mid **~0.08**) | energy/24 h |
-| Batch 8 h/d run duty | **~0.2–0.3 kW_e** during run | Optional campaign framing |
+| Rev | Description | Date |
+| --- | --- | --- |
+| A | First issue: the deferred capabilities named as study units and streams in the candidate graph. | 2026-10-01 |
+| B | Table of what blocks each study unit from becoming present. | 2026-10-01 |
+| C | First-principles duty of the vapour-compression still, mineral balance of REMIN, Carnot-limited band of GEO_ORC, solar cell line steps, and the lithography, blow-mould and electrode-coat units brought into scope. | 2026-10-01 |
+| D | Open gaps framed as studies queued toward the minimum viable system. | 2026-10-01 |
+| E | First-principles duty of the lithography, blow-mould and electrode-coat units. | 2026-10-01 |
+| F | Pointer to the equipment specification gap register AQS-EQ-GAP-001. | 2026-10-01 |
+| G | Rewritten to the documentation style guide (AQS-DOC-002). Each unit now states where its current duty is set: the study units were activated on the graph (A-M-287 to A-M-296), the lithography stub was replaced by three tools, and the solar cell line was sized from its tools (A-M-178). The study methods are kept as the record of how the first duties were found. | 2026-10-30 |
 
-**Seed study continuous_kw:** **0.08 kW_e** (status=`study`), note cites this
-section. **Supersedes** SLINGSHOT narrative 5–10 kW fresh-water allocation
-(AQS-WTR-001 / AQS-GAP-001) at M1 rates.
+## Purpose and scope
 
-### 3.4 Practicality / cost metrics
+This page records how the first duties of a group of units were estimated from first principles, before each unit had its own sizing page, and it states where each unit's current duty is set. The units are the vapour-compression still VCD_TRAIN, the drinking-water remineraliser REMIN, the geothermal organic Rankine cycle GEO_ORC, the lithography tools, the solar cell line SOLAR_PV_CELL, the blow-mould machine BLOW_MOLD and the electrode coating booth ELECTRODE_COAT.
 
-| Metric | Study judgment |
-|---|---|
-| Fit under module parasitics (~9 kW AC class, ELECTRICAL.md) | **Yes** — ≪ 1% of continuous plant |
-| Cost driver | Compressor + HX area vs ΔT trade (classic MVC) |
-| Present blocker | Named equipment IDs + selected compressor — **not** the kW order of magnitude |
+The current duties are not repeated here. They are the values on the plant flow graph and on the sizing pages named in Table 1, and those pages are regenerated with the graph. The figures in sections 2 to 7 are the study values of revision F, kept so that the method behind each first estimate can be checked.
 
-### 3.5 Citations (public / prior AQS — no PE)
+## 1. Current status
 
-1. DESWARE *Mechanical Vapor Compression Distillation* sample chapter
-   (D08-053) — ideal work \(\lambda\Delta T/T\); small-system η 20–50%
-   combined; example ~25 kWh/m³ at ΔT=4 °C.
-2. Nafey et al. / Alasfour-class MVC analyses — SEC decreases with higher
-   top brine T and smaller ΔT (trade vs heat-transfer area).
-3. Recent MVC thermoeconomic studies — SEC often **~10–13 kWh/m³**
-   (efficient single-effect) up to **~16–32 kWh/m³** cost-optimal bands
-   (Desalination / DOE literature class).
-4. AQS-WTR-001 §2.4; AQS-AUD-001 §11; AQS-GAP-001 (SLINGSHOT 5–10 kW
-   superseded).
+Table 1. Where each unit's duty is set now
 
----
+| Unit | Status on the graph | Duty set by |
+| --- | --- | --- |
+| VCD_TRAIN | Present, with its feed and product flows solved | `docs-authority/sizing/VCD_TRAIN.md` (A-M-149) |
+| REMIN | Present, activated from the study at the drinking-water basis of section 3 | the graph note on REMIN (A-M-287 to A-M-296) |
+| GEO_ORC | Placeholder: no power is claimed until the ground survey of section 4 is done | this page, section 4 |
+| LITHO_COAT, LITHO_ALIGN, LITHO_DEV | Present: the three tools replaced the retired LITHO_STUB | `docs-authority/sizing/LITHO_COAT.md`, `docs-authority/sizing/LITHO_ALIGN.md` and `docs-authority/sizing/LITHO_DEV.md` (A-M-287); the resist is made on site (A-M-432) |
+| SOLAR_PV_CELL | Present, sized from its in-house tools | `docs-authority/sizing/SOLAR_PV_CELL.md` (X-MFG-38, A-M-178) |
+| BLOW_MOLD | Present, activated from the study at its campaign basis | `docs-authority/sizing/BLOW_MOLD.md` |
+| ELECTRODE_COAT | Present, activated from the study at its campaign basis | `docs-authority/sizing/ELECTRODE_COAT.md` |
 
-## 4. REMIN mineral balance — first-principles study
+A study duty never made a unit present by itself. Each unit became present when its tools, its feed and its place on the graph were set, and the graph note on each unit names the assumption that did so.
 
-### 4.1 System fit
+## 2. Vapour-compression still
 
-REMIN doses Ca²⁺ / Mg²⁺ / K⁺ into **drinking** water after ED polish
-(AQS-WTR-001). **Not** S07 farm nutrient dose (FARM path separate).
+The still recovers distillate from treated grey water and clean condensates. The distillate is not drinking water until it has passed the ultrapure-water polish and REMIN (AQS-WTR-001).
 
-### 4.2 Standards / targets
+The method is the compressor work of single-effect mechanical vapour compression. The ideal specific work is about the latent heat times the temperature lift divided by the absolute evaporator temperature. The actual specific energy is the ideal work divided by the compressor and motor efficiencies, plus a small pump share. Published single-effect machines use about 10 to 25 kWh per cubic metre of product, the lower end for low salinity and a small lift.
 
-WHO expert guidance on demineralized / desalinated water (not a single
-mandatory GDWQ number): population-benefit discussion often cites about
-**Ca 20–30 mg/L** and **Mg ~10 mg/L** as desirable order-of-magnitude
-targets for remineralized drinking water; K has no WHO gate valve and is mainly
-dietary (WHO *Nutrients in Drinking-water*; *Safe Drinking Water from
-Desalination* WHO/HSE/WSH/11.03).
+Table 2. Study values of revision F for the still
 
-### 4.3 Mass balance (study)
+| Quantity | Study value |
+| --- | --- |
+| Feed | about 0.110 m3/d |
+| Temperature lift | 4 to 8 K |
+| Evaporator temperature | 70 to 100 C |
+| Ideal work at mid values | about 33 kJ/kg, or 9.2 kWh/m3 |
+| Combined efficiency of a small machine | 0.5 to 0.7 |
+| Specific energy | 14 to 20 kWh/m3 |
+| Average electrical duty | 0.06 to 0.09 kW |
 
-| Case | Volume | Ca target 25 mg/L | Mg 10 mg/L | K 5 mg/L (optional) |
-|---|---|---|---|---|
-| Drink only | 4 crew × 2.5 L/d = **10 L/d** | **0.25 g/d** | **0.10 g/d** | **0.05 g/d** |
-| Full potable distribute | ~**130 L/d** (AQS-AUD-001 §11) | **3.25 g/d** | **1.3 g/d** | **0.65 g/d** |
+The study replaced an earlier allocation of 5 to 10 kW for fresh water. The current still is sized on the larger solved feed of the graph at the midpoint of the same specific-energy band (A-M-149).
 
-**Decision (study default):** remineralize **drink stream (~10 L/d)** to
-WHO-class Ca/Mg; optionally stabilize full distribute for corrosion —
-document which when Present IDs issue. Salt mass is **grams/day** vs farm
-nutrients **kg/d** — negligible system mass.
+## 3. Remineraliser
 
-**Source trail:** prefer core-salt / BMED inventory salts (carbonates /
-chlorides as issued chemistry allows) — **forbid** silent tee of S07 farm
-dose into potable (AQS-WTR-001).
+REMIN doses calcium, magnesium and potassium into drinking water after the polish. It does not draw the farm nutrient dose, which serves a separate path.
 
-### 4.4 Practicality / cost
+The World Health Organization gives no single mandatory value, but its guidance on demineralised and desalinated water discusses about 20 to 30 mg/L of calcium and about 10 mg/L of magnesium as desirable for remineralised drinking water. Potassium has no limit and comes mainly from the diet.
 
-| Metric | Study |
-|---|---|
-| Electrical | Dosing pumps ≪ 0.05 kW — treat as **none** / negligible |
-| UV integrity after remin | Required for potable claim — equipment TBD |
-| Cost | Salt grams/day negligible vs CAPEX of VCD/ED |
+Table 3. Study mineral balance of revision F
 
-### 4.5 Citations
+| Case | Water | Calcium at 25 mg/L | Magnesium at 10 mg/L | Potassium at 5 mg/L |
+| --- | --- | --- | --- | --- |
+| Drinking water only | 10 L/d | 0.25 g/d | 0.10 g/d | 0.05 g/d |
+| All potable water | about 130 L/d | 3.25 g/d | 1.3 g/d | 0.65 g/d |
 
-1. WHO, *Nutrients in Drinking-water* (WHO/SDE/WSH/05.09) — Ca/Mg
-   discussion ~20–30 / ~10 mg/L class.
-2. WHO, *Safe Drinking Water from Desalination* (WHO/HSE/WSH/11.03) —
-   remineralization annex; K residual notes.
-3. AQS-WTR-001 §2.5; AQS-AUD-001 §11 (130 L/d potable study).
+The study default remineralises the drinking stream only. The salts are grams a day, taken from the plant's own salt inventory, and the electrical load is the metering pumps and the ultraviolet lamp.
 
----
+## 4. Geothermal organic Rankine cycle
 
-## 5. GEO_ORC — Carnot-limited kW_e study
+GEO_ORC would turn surplus ground-loop heat into electricity after the heat pump has served the life-support heat duty. Its power is the cycle efficiency times the surplus heat. The Carnot limit between the source and sink temperatures caps the efficiency, and binary cycles on low-temperature sources reach about 5 to 12 % in published work.
 
-**Definition:** GEO_ORC = geothermal **Organic Rankine Cycle**
-(heat → electric). Same first-principles trail.
+The ground loop of the reference site is shallow and close to ambient temperature, and the heat pump uses it first, so the surplus is about zero. The study therefore claims no power: 1 kW would need a surveyed surplus of about 10 kW of heat at 10 % efficiency. The unit stays on the graph as a placeholder so that the power path is tracked, and the open work is the ground survey ST-ORC-01 of the source temperature and the surplus heat. A fixed power figure for this unit is not allowed until that survey is done.
 
-### 5.1 System fit
+## 5. Lithography tools
 
-GHEX closed loop (S43) → GEO_HP → Q4 life priority (S44). ORC taps
-**surplus** heat after life priority, AC-couples via S48 (AQS-EQP-GEO-001;
-AQS-PWR-002). Forbidden: loop fluid into potable / Salria.
+The study of revision E sized the coat, align and develop steps for 1 to 5 wafer starts a day on 150 mm wafers. It took about 2 mL of resist dispensed per wafer, at about 10 % solids, and an average electrical duty of about 0.1 kW, because the spin coater, the bake plates and the aligner stand idle most of the day.
 
-### 5.2 Physics
+The single stub LITHO_STUB has since been retired. The three tools LITHO_COAT, LITHO_ALIGN and LITHO_DEV carry their own duties at the plant's wafer starts (A-M-287). The resist is no longer an estimate: it is sized from the coats per day and made on site by RESIST_SYN, and the spent resist returns to the solvent still (A-M-432).
 
-Carnot limit between source \(T_h\) and sink \(T_c\):
+## 6. Solar cell line
 
-\[
-\eta_\mathrm{C} = 1 - \frac{T_c}{T_h}
-\]
+The steps are alkaline texturing, phosphorus emitter diffusion, glass etch, silicon nitride antireflection coating, screen-printed contacts with a firing furnace, and the current-voltage test. The texturing, diffusion and etch steps used standard practice, and the study held the coating and firing furnaces as open until their tools were designed.
 
-Practical binary ORC thermal efficiency is a fraction of Carnot. Locked
-study class (AQS-AUD-001 §10.4 / AQS-EQP-GEO-001):
+That work closed on 2026-10-16. The cell line is now sized from its in-house tools (X-MFG-38, A-M-178). The wafer feed of the cell line is open as task X-RTE-PV-SI.
 
-\[
-P_\mathrm{ORC} \approx \eta_\mathrm{ORC}\times(Q_\mathrm{GHEX,avail}-Q_{4,\mathrm{life}})
-\]
+## 7. Blow-mould machine and electrode coating booth
 
-with \(\eta_\mathrm{ORC}\) study **0.08–0.12** for medium-low binary ORC;
-literature low-T geothermal (70–100 °C) often **~5–9%** thermal efficiency
-(Hepbasli / Hettiarachchi-class reviews).
+The blow-mould study took a polymer extruder of 2.2 to 4 kW with the clamp and blowing air, run in a campaign of 2 to 4 hours a day, for an average of about 0.5 kW. It refused the 14 to 28 kW averages of industrial extrusion blow-moulding lines as a basis, because those machines run continuously at far higher output.
 
-### 5.3 M1 practicality (shallow GHEX)
+The electrode coating study chose non-precious conductive coats of carbon, nickel or passivated stainless steel for the replaceable electrodes. Mixed ruthenium and iridium oxide anodes stay deferred. The booth exhaust and the infrared cure oven, run about 2 hours a day, gave an average of about 0.3 kW.
 
-| Premise | Implication |
-|---|---|
-| M1 GHEX serves **heat pump** to Q4 (HVAC ~1.5 kW_e class context) | Primary product is **thermal**, not power |
-| Shallow ground \(T_h\) near ambient | \(\eta_\mathrm{C}\) tiny if ORC tried on loop fluid alone |
-| \(Q_\mathrm{surplus}\) after Q4 priority | **≈ 0** until survey shows extra capacity or process waste-heat HX |
+Both units are now present at their campaign duties, and the basis is in their sizing pages.
 
-**Study band:**
+## 8. Equipment specification
 
-| Case | Q_surplus (kW_th) | η_ORC | P_ORC (kW_e) |
-|---|---|---|---|
-| M1 shallow, life-priority first | **~0** | 0.08–0.12 | **~0** |
-| Illustrative if survey frees 10 kW_th | 10 | 0.10 | **1.0** |
-| Illustrative upper study (not claim) | 20 | 0.12 | **2.4** |
+The equipment specification gap register AQS-EQ-GAP-001 holds the maker and model shortlists for underspecified units. A commercial interim choice is never the final authority for a present unit.
 
-**Seed:** `continuous_kw.value=null`, `status=study_carnot_band`, note
-“0–2 kW_e illustrative if Q_surplus 0–20 kW_th; M1 default ~0 until GHEX
-survey — **forbid hard-coded 100 kW**”.
+## 9. References
 
-### 5.4 Cost metrics
-
-ORC CAPEX is not justified while Q_surplus≈0 at shallow GHEX — but the unit
-**stays in the seed** so the sandbox tracks the MVS power path. Next work is
-**ST-ORC-01** (GHEX survey / T_source / Q_surplus) on the plan queue. Do not
-force `required_for_mvs_closure` true on GEO until ORC evidence (AQS-SEC-001 A7).
-
-### 5.5 Citations
-
-1. AQS-AUD-001 §10.4 method lock; AQS-EQP-GEO-001; AQS-PWR-002 §2.1.
-2. Hettiarachchi et al., *Energy* — low-T geothermal ORC ~5–9% (70–100 °C).
-3. Guo / Shengjun et al. — subcritical ORC thermal efficiency ~11% class
-   at 80–100 °C optimized fluids (illustrative, not M1 nameplate).
-4. Cengel/Boles *Thermodynamics* (textbook) — Carnot efficiency definition.
-
----
-
-## 6. SOLAR_PV_CELL — architecture promote (physics)
-
-Promote as far as physics + issued schedule allow (AQS-EQP-FAB-PV-001):
-
-| Step | Physics readiness | Seed |
-|---|---|---|
-| PV_TEXTURE (KOH pyramids) | Standard alkaline texture — **ready** | Named |
-| PV_EMITTER (POCl₃) | Standard diffusion — **ready** | Named |
-| PV_PSG_ETCH | Standard — **ready**; return S10 | Named |
-| PV_ARC (SiNₓ PECVD) | Physics OK; **nameplate kW TBD** | REQ-PECVD study 0.5–2 avg / 5–15 peak |
-| PV_CONTACT / PV_FIRE | Physics OK; **belt kW TBD** | REQ-BELT study 0.5–2 avg / 10–25 peak |
-| PV_IV | Electrical only | Named |
-
-**present_path:** `architecture_promoted`. Continuous study share remains
-**1.0 kW_e** mid (existing seed) — not belt nameplate. Does **not** claim
-Present FreeCAD solids complete.
-
----
-
-## 7. Framing (correction 2026-10-01)
-
-We design the **MVS in theory** because not all answers are known yet.
-The **sandbox is the live model** of progress toward that MVS — modular
-and extensible as gaps fill — **not** locked to a sub-MVS intended product.
-
-- Disabling or leaving Incomplete an in-scope unit **queues an open study**
-  (must happen before proceeding on that path). Solver may flag incomplete
-  physics; those flags are **work queue**, not accepted emissions / unreclaimed
-  endpoints.
-- Seed enables parent sectors; study units carry `electrical_role` /
-  `continuous_kw` study or null with `open_study_queued` where applicable.
-- `mvs_criteria.loops_closed` remains **false** until evidence closes loops.
-- `reprap_bom_complete` remains **false** until the BOM matrix warrants it.
-
-**Sector cross-use:** designs may host parts of a capability inside present
-sectors (e.g. electrode coat in MFG using FAB wet practice) — AQS-SEC-001
-§3.1 / AQS-UI-001. Boundaries are organisational, not physics firewalls.
-
-### 7.1 Open studies queued (A3/A5) — plan before proceeding
-
-| Study ID | WP | Topic | Phase A physics | Remaining (external — owner/date TBD) |
-|---|---|---|---|---|
-| ST-LITHO-01 | WP-A3b | LITHO duty + resist mass (§8) | **Closed** — 0.1 kW_e; 0.2–1 g/d dry | FreeCAD LITHO_* children; wafer starts lock; UV datasheet |
-| ST-BLOW-01 | WP-A3c | Blow-mold clamp/air duty (§9) | **Closed** — 0.5 kW_e avg / 2–4 peak | Mold FreeCAD; selected machine datasheet |
-| ST-ELC-01 | WP-A3d | Electrode coat duty + formulation class (§10) | **Closed** — 0.3 kW_e; non-precious M1 | Booth CAD; lab formulation trial |
-| ST-VCD-01 | WP-A5b | VCD compressor + equipment IDs | **Closed** (duty §3) — 0.08 kW_e | Compressor selection; equipment IDs |
-| ST-REMIN-01 | WP-A5c | Mineral source + UV + IDs | **Closed** (balance §4) | Source vs S07; UV; equipment IDs |
-| ST-ORC-01 | WP-A5d | GHEX survey / T_source / Q_surplus | **Closed** (Carnot §5) — M1 ~0 | Site GHEX survey |
-| ST-SOLAR-01 | WP-A5e | PECVD/belt nameplates; PV_COUNT | **Closed** 2026-10-16 by X-MFG-38 (AQS-DUTY-071): in-house tools, 9.4 kWh/d, 0.39 kW average, 3.8 kW peak | In-house tool designs (X-MFG-38); offtake decision |
-
----
-
-## 8. ST-LITHO-01 — resist mass + duty (first principles)
-
-### 8.1 System fit
-
-Photolithography required for MVS electronics self-copy (AQS-BOM-SC-001 §3.1).
-Steps: LITHO_COAT → LITHO_ALIGN → LITHO_DEV inside FAB envelope; residual to
-WS_SOLV / organics (S38 class).
-
-### 8.2 Method
-
-Pilot wafer starts **1–5 /d** (AQS-AUD-001 labeled assumption — not freeze).
-Spin photoresist on **150 mm** class wafer: film ~1–3 µm; dispense ~**2 mL/wafer**
-(~2 g wet at ~1 g/cm³); solids fraction ~10% → **~0.2 g dry resist/wafer**.
-At 1–5 starts: **2–10 g/d** wet dispense; **0.2–1.0 g/d** dry residual after develop.
-
-Electrical (intermittent): spin + softbake heaters ~0.3–1 kW; UV contact/LED
-aligner ~0.1–0.5 kW; develop pumps negligible. At low starts most time idle →
-**average continuous ~0.05–0.15 kW_e** (mid **0.1**); peak while running **0.5–1.5 kW_e**.
-
-### 8.3 Practicality / cost
-
-Fit under FAB module parasitics. Cost driver = tool CAD + resist chemistry, not
-kW order of magnitude. **Present** blocked on FreeCAD children + UV datasheet +
-starts lock — **owner/date TBD**.
-
-### 8.4 Citations
-
-1. AQS-AUD-001 FAB pilot starts assumption (1–5/d labeled).
-2. AQS-EQP-FAB-001 / AQS-BOM-SC-001 §3.1 schedule.
-3. Semiconductor process class (Campbell / Sze-class spin-coat practice) —
-   dispense volume order-of-magnitude; not a PE stamp.
-
----
-
-## 9. ST-BLOW-01 — clamp / air duty (first principles)
-
-### 9.1 System fit
-
-Blow / shoe mold **in MFG / in MVS** beside EXTRUSION / INJECTION
-(AQS-EQP-MFG-001; AQS-BOM-SC-001 §3.2). Prefer **lab/pilot or Precious Plastic
-extrusion add-on** architecture for M1.
-
-### 9.2 Method
-
-SI-MFG-01 polymer motors **2.2–4 kW** class (Precious Plastic kit). Clamp + blow
-air share study: **2–4 kW_e peak** while running; campaign **2–4 h/d** → average
-continuous mid **~0.5 kW_e** (band 0.3–0.8). Throughput campaign **1–5 kg/h**
-polymer articles.
-
-**Forbid** claiming industrial EBM average **14–28 kW** (the key study year/ABLB/MEPER-class
-catalog) as M1 continuous — architecture reference only (same rule as full-line
-PECVD forbid in AQS-REQ-KW-001).
-
-### 9.3 Practicality / cost
-
-Fits REQ-MFG-POLY-CONT **1–3 kW_e** avg intermittent budget. Present blocked on
-mold FreeCAD + selected datasheet within 2–4 kW peak — **owner/date TBD**.
-
-### 9.4 Citations
-
-1. AQS-REQ-KW-001 SI-MFG-01 / REQ-MFG-POLY-CONT.
-2. Precious Plastic / ONEARMY kit motor class (DEPENDENCIES.md).
-3. Industrial EBM catalog powers (the key study year ~14 kW avg; ABLB65 ~21 kW avg) — **cited as
-   forbidden M1 continuous**, not selected nameplate.
-
----
-
-## 10. ST-ELC-01 — coating duty + formulation class
-
-### 10.1 System fit
-
-Electrode coating **IN SCOPE** (AQS-MFG-ELC-001); MFG primary; exhaust
-MET_AHU → MET_SCRUB (S71–S72). Sector cross-use OK (FAB wet practice).
-
-### 10.2 Formulation class (decision — no precious nameplate)
-
-**M1 default study class:** non-precious conductive **carbon** / **Ni** /
-stainless passivation coats for EW / BMED replaceable electrodes.
-**RuO₂–IrO₂ DSA** remains **deferred** — do not invent slurry recipes or
-purchase claims.
-
-### 10.3 Duty method
-
-Booth exhaust fan **0.2–0.75 kW_e**; cure oven **0.5–2 kW_e** intermittent.
-Campaign ~**2 h/d** at ~1.5 kW cure+exhaust → average continuous mid **~0.3 kW_e**;
-peak **1–2 kW_e**.
-
-### 10.4 Practicality / cost
-
-Negligible vs MET melt / FAB strip. Present blocked on booth FreeCAD + lab
-formulation trial — **owner/date TBD**.
-
-### 10.5 Citations
-
-1. AQS-MFG-ELC-001 Rev B; AQS-VENT-001 exhaust path.
-2. AQS-BOM-SC-001 §3.3; industrial paint-booth / IR-cure class duty bands
-   (order-of-magnitude — not a stamped rating).
-
----
-
-
----
-
-## 11. Equipment specification gap register (pointer)
-
-Manufacturer / model inventory, the open-source software stack target policy, and researched **commercial
-interim** shortlists for ST-* / P0 underspecified units live in planning
-(not cad):
-
-the unpublished planning note UNIT_EQUIPMENT_SPEC_GAP — document **AQS-EQ-GAP-001**.
-
-Commercial interim never freezes as final MVS Present authority; open-source
-replacement tracked as `the open-source software stack-REP-*` work items. Physics / duty in §§3–10 of
-this stub remain controlling for study numbers.
-
-## 12. Sync
-
-This page lives in docs-authority/ and needs no copy step. The decision log is the unpublished planning note DECISION_LOG_A3_A5.
+- DESWARE, Mechanical Vapor Compression Distillation, sample chapter D08-053: ideal work and small-machine efficiencies.
+- World Health Organization, Nutrients in Drinking-water (WHO/SDE/WSH/05.09), and Safe Drinking Water from Desalination (WHO/HSE/WSH/11.03).
+- Hettiarachchi and co-authors, Energy: organic Rankine cycle efficiency on low-temperature geothermal sources.
+- Cengel and Boles, Thermodynamics: An Engineering Approach: the Carnot efficiency.
+- AQS-AUD-001 sections 10.4 and 11; AQS-REQ-KW-001; AQS-BOM-SC-001 section 3.

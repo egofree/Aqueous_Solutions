@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AZ
+Revision: BA
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -58,6 +58,7 @@ Date: 2026-10-29
 | AX | Batch 43: the X-RTE standby and return route sets given rated cases, a real gating return, or retired (A-M-433) | 2026-10-30 |
 | AY | Batch 44a: the gas and hydrogen no-flow routes retired as duplicates or sourceless, and IA-H2P-H2O listed under the owner holds (A-M-434) | 2026-10-30 |
 | AZ | Batch 44b: the polymer and foundry no-flow routes: methanol-to-olefin built as the selectable olefin feed, the generator fuel rated, seven routes retired (A-M-435) | 2026-10-30 |
+| BA | Page STUDY_UNITS_STUB rewritten (AQS-EQP-STUDY-001 revision G): current status of each study unit, with the study methods kept as the record | 2026-10-30 |
 
 ## 1. Purpose and scope
 
@@ -228,6 +229,7 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/param/standby_routes.py` (A-M-433) | The standby routes carry the rate of the case that puts them in service, the cast-line gating returns daily to the melt, and six routes that duplicate another route or have no source are retired; the assay and owner-held routes stay listed. |
 | `flow_graph/param/standby_routes.py` (A-M-434) | Six gas and hydrogen routes that duplicate a live route or have no source are retired with their reasons; the TSA water route waits on the held cathode-hydrogen water. |
 | `flow_graph/param/foundry_poly.py` (A-M-435) | POLY_OLEFIN takes the naphtha cut or plant methanol by olefin_feed_route; the generator cut fuel carries its outage rate; seven polymer and foundry routes that duplicate a live route or have no source are retired. |
+| `docs-authority/STUDY_UNITS_STUB.md` (AQS-EQP-STUDY-001 G) | Rewritten to the style guide; each unit points to where its duty is set now. |
 
 ## 3. In progress
 
@@ -260,7 +262,6 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/SIGN_SCHEDULE.md` | No purpose and scope section. |
-| `docs-authority/STUDY_UNITS_STUB.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/TERRACE_LANDSCAPE.md` | No purpose and scope section; list items written as fragments. |
 | `docs-authority/TEST_PLAN.md` | No purpose and scope section; working or stock phrasing. |
 
