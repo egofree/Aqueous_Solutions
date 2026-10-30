@@ -17,7 +17,7 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 193 units, 139 have an issued material for each wetted stream, 54 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 325 wetted stream ends, and each resolves to an issued service family.
+Of the 194 units, 140 have an issued material for each wetted stream, 54 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 328 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
@@ -26,18 +26,18 @@ The following service families of AQS-STD-002 are used, with the number of strea
 
 - Acid or brine, at or below 60 C: 52 stream ends.
 - Hot leach liquor: 45 stream ends.
-- Dry gas, H2/O2/N2/CO2: 41 stream ends.
-- Process vent gas: 34 stream ends.
+- Dry gas, H2/O2/N2/CO2: 42 stream ends.
+- Process vent gas: 35 stream ends.
 - Hydrocarbon product, fuel or wax cut: 18 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
-- Aqueous process liquor (AQS-ASSAY-001 envelope): 14 stream ends.
+- Aqueous process liquor (AQS-ASSAY-001 envelope): 15 stream ends.
 - Oxidizer, wet HF or PVDF unit: 13 stream ends.
 - Wet acid H₂ + sweep air header: 13 stream ends.
 - Q1/Q2 thermal oil: 12 stream ends.
 - Water loops (protective, irrigation, UPW): 12 stream ends.
 - Wet methanol service: 11 stream ends.
 - Flue or acid gas: 10 stream ends.
-- Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 9 stream ends.
+- Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 10 stream ends.
 - Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours): 7 stream ends.
 - Alkaline (NaOH/KOH base liquor): 6 stream ends.
 - Alkaline silica slurry: 3 stream ends.
@@ -45,12 +45,20 @@ The following service families of AQS-STD-002 are used, with the number of strea
 - Propylene-glycol ground loop: 1 stream ends.
 - Flue quench water: 1 stream ends.
 - Organic liquid (solvent make-up): 1 stream ends.
-- 98 wt% H₂SO₄ make-up: 1 stream ends.
 - Molten MgCl₂ salt return (TI_CELL Kroll retort to MG_POT, ~700 °C): 1 stream ends.
 
 ## 4. Selections by unit
 
 Each subsection lists the wetted streams of one unit with their class, service family and wetted material.
+
+### ACID_PLANT
+
+| Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
+|---|---|---|---|---|---|
+| IA-ACID-O2 | ATMOS | ACID_PLANT | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
+| IA-ACID-H2O | GW_INTAKE | ACID_PLANT | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
+| IA-ACID-CO2 | ACID_PLANT | ATMOS | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-H2SO4-ACID | ACID_PLANT | HF_GEN | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
 
 ### ACID_POLISH_SCRUB
 
@@ -653,6 +661,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | IA-GW-MAKEUP | GW_INTAKE | ROOF_TANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+| IA-ACID-H2O | GW_INTAKE | ACID_PLANT | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 
 ### H2O_ELYZ
 
@@ -761,8 +770,8 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | F_RECOVER_TO_HF_GEN | F_RECOVER | HF_GEN | P3 | 12.1 oxidizer, hf or pvdf unit | PVDF (P3) |
 | HF_GEN_TO_VDF | HF_GEN | VDF_SYN | P3 | 12.1 oxidizer, hf or pvdf unit | PVDF (P3) |
 | HF_GEN_TO_TFE | HF_GEN | TFE_SYN | P3 | 12.1 oxidizer, hf or pvdf unit | PVDF (P3) |
-| IA-H2SO4-MU | NORTH_DOCK | HF_GEN | M2 | 12.1 98 wt% h2so4 make-up | Carbon steel: iron passivates above ≈ 93 wt% at ambient (PERRY9_MAT) |
 | IA-HF-PROD | HF_GEN | WS_HF_ED | P3 | 12.1 oxidizer, hf or pvdf unit | PVDF (P3) |
+| IA-H2SO4-ACID | ACID_PLANT | HF_GEN | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
 
 ### HOPPER
 

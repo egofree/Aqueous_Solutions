@@ -1,5 +1,6 @@
 {
  "defined": {
+  "ACID_PLANT": "duty sheet: \"converter shell of aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of\" [docs-authority/duties/ACID_PLANT.md]",
   "ACID_POLISH_SCRUB": "packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) [sizing/HOUSE_SCRUBBERS.md]",
   "ADS_CHILL": "duty sheet: \"N+1. 3. Material. 304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and\" [docs-authority/duties/ADS_CHILL.md]",
   "ALK_SCRUBBER": "packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) [sizing/HOUSE_SCRUBBERS.md]",
@@ -198,5 +199,5 @@
   "WET_OX": "no issued internals basis for a wet_ox unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "ZNBR2": "no issued internals basis for a flow_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)"
  },
- "units": 193
+ "units": 194
 }

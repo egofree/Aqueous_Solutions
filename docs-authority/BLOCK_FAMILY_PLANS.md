@@ -70,11 +70,11 @@ Table 4.1. Building-block families
 
 | Family | Category | Item | Standard class | Qty | Units | Design row | Plan |
 |---|---|---|---|---|---|---|---|
-| OF-01 | bearing | deep-groove ball bearing | ISO 15, normal class | 390 | 69 | AQS-PRO-002 sheet, 3. Bearing datasheets | Bearings are bought to their ISO class and checked for identity and count on receipt. |
+| OF-01 | bearing | deep-groove ball bearing | ISO 15, normal class | 394 | 71 | AQS-PRO-002 sheet, 3. Bearing datasheets | Bearings are bought to their ISO class and checked for identity and count on receipt. |
 | OF-02 | bearing | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 356 | 48 | AQS-PRO-002 sheet, 3. Bearing datasheets | Bearings are bought to their ISO class and checked for identity and count on receipt. |
-| OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 870 | 95 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
-| OF-04 | electronics | PLC analog input point | IEC 61131-2 | 766 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
-| OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 192 | 68 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 874 | 97 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-04 | electronics | PLC analog input point | IEC 61131-2 | 772 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 194 | 70 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 145 | 38 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-07 | electronics | PLC I/O module, 16 channel | IEC 61131-2 | 103 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 33 | 15 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
@@ -104,12 +104,12 @@ Table 4.1. Building-block families
 | OF-32 | fastener | Lid gasket 40 mm wide | FKM | 1 | 1 | AQS-PRO-002 sheet, 10. Fastener datasheets | Fasteners are bought to the thread standard of the joint they serve: ASME B16.5 stud bolting for the pipe classes, and machine screws to the standard of the host assembly. |
 | OF-33 | fastener | Solvent cement | PVC-U per ASTM D2564 | 1 | 1 | AQS-PRO-002 sheet, 10. Fastener datasheets | Fasteners are bought to the thread standard of the joint they serve: ASME B16.5 stud bolting for the pipe classes, and machine screws to the standard of the host assembly. |
 | OF-34 | instrument | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | 139 | 54 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
-| OF-35 | instrument | pressure transmitter | ceramic diaphragm, IEC 61298 | 160 | 160 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
-| OF-36 | instrument | temperature element | IEC 60751, 316L thermowell | 163 | 163 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
-| OF-37 | instrument | high-level switch | IEC 60947-5, 316L | 80 | 80 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
-| OF-38 | instrument | level transmitter | IEC 62828, PTFE lens | 80 | 80 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
+| OF-35 | instrument | pressure transmitter | ceramic diaphragm, IEC 61298 | 161 | 161 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
+| OF-36 | instrument | temperature element | IEC 60751, 316L thermowell | 164 | 164 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
+| OF-37 | instrument | high-level switch | IEC 60947-5, 316L | 81 | 81 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
+| OF-38 | instrument | level transmitter | IEC 62828, PTFE lens | 81 | 81 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
 | OF-39 | instrument | gas detector, H2 | alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling | 30 | 14 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
-| OF-40 | instrument | gas detector, O2 deficiency | alarm 19.5 vol %, trip 18.0 vol %, low (dense gases) | 22 | 11 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
+| OF-40 | instrument | gas detector, O2 deficiency | alarm 19.5 vol %, trip 18.0 vol %, low (dense gases) | 24 | 12 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
 | OF-41 | instrument | gas detector, Cl2 / HCl | alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low | 40 | 20 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
 | OF-42 | instrument | temperature element (SIF, independent) | IEC 60751, own thermowell | 13 | 13 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
 | OF-43 | instrument | gas detector, O2 enrichment | alarm 23.5 vol %, trip 25 vol %, breathing height | 12 | 5 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |

@@ -59,7 +59,7 @@ Table 4.1. Commissioning sequence
 | 15 | MFG | 10 | 29 | 12 | 1 | Cu, Pb/Sn/Ni/Cd/Zn blend, hydrocarbon, metal, solute |
 | 16 | FAB | 16 | 72 | 17 | 9 | Ar, Fe, HCl, N2, O2, Si, other_metals, solute |
 | 17 | FOUNDRY | 27 | 83 | 24 | 6 | Si |
-| 18 | POLYMERS | 10 | 40 | 15 | 6 | C5-C10 |
+| 18 | POLYMERS | 11 | 46 | 17 | 7 | C, C5-C10, CaSO4, H2O, H2SO4, O2, S |
 
 The area SIFs (gas and flame detection) are proof-tested with AQS-SAF-006 in the CRYO and ZNBR2 steps.
 

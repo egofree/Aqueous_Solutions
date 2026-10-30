@@ -13,6 +13,7 @@ FUEL_CELL,ELEC,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vo
 H2O_ELYZ,CRYO,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),3,2oo3 to SIF (AQS-CTL-003)
 H2_DRYER,GAS,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
 MEOH_SYNTH,MEOH,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+ACID_PLANT,POLYMERS,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 AFTERBURNER_FLUE,GAS,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 AIR_RECEIVER,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 CRYO_ASU,CRYO,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2

@@ -206,7 +206,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "MFG",
-     "rate": 11.660798,
+     "rate": 11.636366,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -858,7 +858,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 64.562885,
+     "rate": 64.587317,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -1213,6 +1213,15 @@
    ],
    "no_source": [
     {
+     "stream_id": "CHAR_TO_ACID",
+     "from": "OIL_PYRO",
+     "to": "ACID_PLANT",
+     "other_sector": "POLYMERS",
+     "rate": 0.024432,
+     "unit": "kg/d",
+     "carries": "plant pyrolysis char reductant for the cake kiln"
+    },
+    {
      "stream_id": "CHAR_TO_SI",
      "from": "OIL_PYRO",
      "to": "SI_REDUCE",
@@ -1325,7 +1334,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 4.861299,
+     "rate": 4.836867,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -1663,6 +1672,15 @@
   "POLYMERS": {
    "no_sink": [
     {
+     "stream_id": "CHAR_TO_ACID",
+     "from": "OIL_PYRO",
+     "to": "ACID_PLANT",
+     "other_sector": "OIL",
+     "rate": 0.024432,
+     "unit": "kg/d",
+     "carries": "plant pyrolysis char reductant for the cake kiln"
+    },
+    {
      "stream_id": "CRU_TO_TFE",
      "from": "CRU",
      "to": "TFE_SYN",
@@ -1688,6 +1706,24 @@
      "rate": 1.52,
      "unit": "kg/d",
      "carries": "fluoride concentrate"
+    },
+    {
+     "stream_id": "IA-ACID-H2O",
+     "from": "GW_INTAKE",
+     "to": "ACID_PLANT",
+     "other_sector": "WTR",
+     "rate": 0.080761,
+     "unit": "kg/d",
+     "carries": "well water for SO3 absorption and dilution to 98 wt%"
+    },
+    {
+     "stream_id": "IA-ACID-O2",
+     "from": "ATMOS",
+     "to": "ACID_PLANT",
+     "other_sector": "WTR",
+     "rate": 0.083003,
+     "unit": "kg/d",
+     "carries": "oxygen of the process air (sulfur burning and SO2 oxidation)"
     },
     {
      "stream_id": "IA-C5-POLY",
@@ -1726,6 +1762,15 @@
      "rate": 0.23,
      "unit": "kg/d",
      "carries": "fluoropolymer stock issue to the shop"
+    },
+    {
+     "stream_id": "IA-ACID-CO2",
+     "from": "ACID_PLANT",
+     "to": "ATMOS",
+     "other_sector": "WTR",
+     "rate": 0.079758,
+     "unit": "kg/d",
+     "carries": "carbon dioxide of the cake kiln"
     },
     {
      "stream_id": "IA-HF-PROD",
@@ -1793,22 +1838,31 @@
      "carries": "fluorspar make-up, acid-spar class >= 97 % CaF2"
     },
     {
-     "stream_id": "IA-GYPSUM-SHIP",
-     "from": "HF_GEN",
+     "stream_id": "IA-LIME-SHIP",
+     "from": "ACID_PLANT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.575554,
+     "rate": 0.29871,
      "unit": "kg/d",
-     "carries": "fluorgypsum (anhydrite) cake byproduct"
+     "carries": "lime residue byproduct of the cake kiln"
     },
     {
-     "stream_id": "IA-H2SO4-MU",
+     "stream_id": "IA-SULFUR-MU",
      "from": "NORTH_DOCK",
-     "to": "HF_GEN",
+     "to": "ACID_PLANT",
      "other_sector": "DOCK",
-     "rate": 0.403768,
+     "rate": 0.018487,
      "unit": "kg/d",
-     "carries": "98 wt% sulfuric acid make-up"
+     "carries": "native sulfur (raw ore) for the acid plant"
+    },
+    {
+     "stream_id": "SF-ACID_PLANT",
+     "from": "SOL_ARK_60K",
+     "to": "ACID_PLANT",
+     "other_sector": "ELEC",
+     "rate": 0.9654,
+     "unit": "kW",
+     "carries": "480 V AC"
     },
     {
      "stream_id": "SF-FILM_CAST",
@@ -1874,6 +1928,24 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "digester organics"
+    },
+    {
+     "stream_id": "IA-GYPSUM-SHIP",
+     "from": "HF_GEN",
+     "to": "NORTH_DOCK",
+     "other_sector": "DOCK",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "fluorgypsum (anhydrite) cake byproduct"
+    },
+    {
+     "stream_id": "IA-H2SO4-MU",
+     "from": "NORTH_DOCK",
+     "to": "HF_GEN",
+     "other_sector": "DOCK",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "98 wt% sulfuric acid make-up"
     },
     {
      "stream_id": "MEOH_TO_OLEFIN",
@@ -2750,7 +2822,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "OIL",
-     "rate": 4.861299,
+     "rate": 4.836867,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -2959,7 +3031,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 11.660798,
+     "rate": 11.636366,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -4722,6 +4794,15 @@
      "carries": "grey water"
     },
     {
+     "stream_id": "IA-ACID-CO2",
+     "from": "ACID_PLANT",
+     "to": "ATMOS",
+     "other_sector": "POLYMERS",
+     "rate": 0.079758,
+     "unit": "kg/d",
+     "carries": "carbon dioxide of the cake kiln"
+    },
+    {
      "stream_id": "IA-BLK-01",
      "from": "HABITATION",
      "to": "BLACK_DIGEST",
@@ -4867,6 +4948,24 @@
     }
    ],
    "no_source": [
+    {
+     "stream_id": "IA-ACID-H2O",
+     "from": "GW_INTAKE",
+     "to": "ACID_PLANT",
+     "other_sector": "POLYMERS",
+     "rate": 0.080761,
+     "unit": "kg/d",
+     "carries": "well water for SO3 absorption and dilution to 98 wt%"
+    },
+    {
+     "stream_id": "IA-ACID-O2",
+     "from": "ATMOS",
+     "to": "ACID_PLANT",
+     "other_sector": "POLYMERS",
+     "rate": 0.083003,
+     "unit": "kg/d",
+     "carries": "oxygen of the process air (sulfur burning and SO2 oxidation)"
+    },
     {
      "stream_id": "IA-BED-H2O",
      "from": "ROOF_TANK",
@@ -5398,6 +5497,15 @@
      "rate": 1.1419,
      "unit": "kW",
      "carries": "heat < 80 °C"
+    },
+    {
+     "stream_id": "SF-ACID_PLANT",
+     "from": "SOL_ARK_60K",
+     "to": "ACID_PLANT",
+     "other_sector": "POLYMERS",
+     "rate": 0.9654,
+     "unit": "kW",
+     "carries": "480 V AC"
     },
     {
      "stream_id": "SF-ACID_POLISH_SCRUB",
@@ -6740,15 +6848,6 @@
      "carries": "finished wafers to the dock for dispatch"
     },
     {
-     "stream_id": "IA-GYPSUM-SHIP",
-     "from": "HF_GEN",
-     "to": "NORTH_DOCK",
-     "other_sector": "POLYMERS",
-     "rate": 0.575554,
-     "unit": "kg/d",
-     "carries": "fluorgypsum (anhydrite) cake byproduct"
-    },
-    {
      "stream_id": "IA-KROLL-CO",
      "from": "TI_CELL",
      "to": "NORTH_DOCK",
@@ -6756,6 +6855,15 @@
      "rate": 0.629453,
      "unit": "kg/d",
      "carries": "chlorinator CO (fuel-gas class export)"
+    },
+    {
+     "stream_id": "IA-LIME-SHIP",
+     "from": "ACID_PLANT",
+     "to": "NORTH_DOCK",
+     "other_sector": "POLYMERS",
+     "rate": 0.29871,
+     "unit": "kg/d",
+     "carries": "lime residue byproduct of the cake kiln"
     },
     {
      "stream_id": "IA-MEOH-SHIP",
@@ -6899,18 +7007,9 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 64.562885,
+     "rate": 64.587317,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
-    },
-    {
-     "stream_id": "IA-H2SO4-MU",
-     "from": "NORTH_DOCK",
-     "to": "HF_GEN",
-     "other_sector": "POLYMERS",
-     "rate": 0.403768,
-     "unit": "kg/d",
-     "carries": "98 wt% sulfuric acid make-up"
     },
     {
      "stream_id": "IA-MGCL2-MU",
@@ -6967,6 +7066,15 @@
      "carries": "solvent resupply (ethanol and acetone)"
     },
     {
+     "stream_id": "IA-SULFUR-MU",
+     "from": "NORTH_DOCK",
+     "to": "ACID_PLANT",
+     "other_sector": "POLYMERS",
+     "rate": 0.018487,
+     "unit": "kg/d",
+     "carries": "native sulfur (raw ore) for the acid plant"
+    },
+    {
      "stream_id": "IA-TIO2-MU",
      "from": "NORTH_DOCK",
      "to": "TI_CELL",
@@ -7014,6 +7122,24 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "intake air"
+    },
+    {
+     "stream_id": "IA-GYPSUM-SHIP",
+     "from": "HF_GEN",
+     "to": "NORTH_DOCK",
+     "other_sector": "POLYMERS",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "fluorgypsum (anhydrite) cake byproduct"
+    },
+    {
+     "stream_id": "IA-H2SO4-MU",
+     "from": "NORTH_DOCK",
+     "to": "HF_GEN",
+     "other_sector": "POLYMERS",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "98 wt% sulfuric acid make-up"
     },
     {
      "stream_id": "IA-SI-IMPORT",
@@ -7311,6 +7437,14 @@
       {
        "stream_id": "MEOH_TO_TFE",
        "kg_per_campaign": 0.21
+      },
+      {
+       "stream_id": "CHAR_TO_ACID",
+       "kg_per_campaign": 0.08
+      },
+      {
+       "stream_id": "IA-ACID-H2O",
+       "kg_per_campaign": 0.27
       }
      ]
     },

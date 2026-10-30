@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-128 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-130 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="198" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
@@ -69,7 +69,7 @@
 <polygon points="586,470 577,466 577,474" fill="#111"/>
 <text x="24" y="451" font-size="9" fill="#666" text-anchor="start">OIL_PYRO</text>
 <text x="24" y="465" font-size="11" font-weight="600" text-anchor="start">IA-CHAR</text>
-<text x="24" y="483" font-size="10" text-anchor="start">4.9 kg/d · solids transfer</text>
+<text x="24" y="483" font-size="10" text-anchor="start">4.8 kg/d · solids transfer</text>
 <text x="598" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="start">N28</text>
 <line x1="430" y1="516" x2="577" y2="516" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,516 577,512 577,520" fill="#111"/>
@@ -194,7 +194,7 @@
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">LEACH_CSTR_1</text>
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">S16</text>
-<text x="1476" y="345" font-size="10" text-anchor="end">11.7 kg/d · solids transfer</text>
+<text x="1476" y="345" font-size="10" text-anchor="end">11.6 kg/d · solids transfer</text>
 <text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N5</text>
 <line x1="914" y1="378" x2="1061" y2="378" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
 <polygon points="1070,378 1061,374 1061,382" fill="#111"/>
@@ -210,7 +210,7 @@
 <g id="aqs-title-block"><rect x="1116" y="1486" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="1503" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-MFG_SHOP</text>
 <text x="1124" y="1520" font-size="9">P&amp;ID MFG_SHOP (shop, MFG sector)</text>
-<text x="1124" y="1537" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev c8436ced   Issued 2026-10-19</text>
+<text x="1124" y="1537" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 0061c52e   Issued 2026-10-19</text>
 <text x="1124" y="1554" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="1571" font-size="9">Graph SHA-256 96617544b221fef5   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="1571" font-size="9">Graph SHA-256 c893cba12fa20cc4   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

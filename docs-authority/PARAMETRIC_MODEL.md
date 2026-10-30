@@ -79,7 +79,7 @@ Table 6.1. Graph values against the solver
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3016.000 | 3016.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3029.000 | 3029.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 7. Acid-loop decision (X-PAR-04)
 
@@ -93,7 +93,7 @@ Table 6.1. Graph values against the solver
 
 ## 8. Drivers
 
-Table 8.1 lists the 876 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 883 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -878,6 +878,13 @@ Table 8.1. Drivers
 | FAB.wafer-line-train.si_liquid_rho_g_cm3 | 2.57 | g/cm3 liquid silicon density at the melting point (CRC_SI) | A-M-417 | — |
 | FAB.wafer-line-train.cz_min_depth_frac | 0.25 | - least melt depth for a pull, as a share of the crucible diameter | A-M-417 | — |
 | FAB.wafer-line-train.cz_hotzone_kW | 35.0 | kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured) | A-M-417 | — |
+| h2so4_route | "GYPSUM_LOOP" | - sulfuric acid route: GYPSUM_LOOP (HF kiln cake reduced with char to SO2, sulfur ore make-up) or SULFUR_ORE (native sulfur ore burned), both on a contact converter | A-M-421 | — |
+| caso4_dec_frac | 0.9 | - fraction of the anhydrite in the HF kiln cake reduced to SO2 in the cake kiln (reductive decomposition class) | A-M-421 | — |
+| caso4_kiln_T_C | 1150.0 | C cake kiln temperature for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 | A-M-421 | — |
+| caso4_kiln_D_mm | 150.0 | mm bore of the small electrically heated cake kiln tube (the HF kiln class at this throughput) | A-M-421 | — |
+| caso4_kiln_L_m | 1.0 | m heated length of the cake kiln tube | A-M-421 | — |
+| caso4_dHrxn_kJ_mol | 303.0 | kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197) | A-M-421 | — |
+| caso4_feed_cp_kJ_kgK | 0.9 | kJ/kg K mean heat capacity of the cake and char feed to the kiln temperature | A-M-421 | — |
 | char_fixed_C_frac | 0.85 | - fixed-carbon mass fraction of the OIL_PYRO char used as the Ti, Mo and Cr chlorinator reductant (pyrolysis char class; the volatiles and ash leave with the chlorinator gas) | A-M-420 | — |
 | si_refine_route | "TCS_SIEMENS" | - refining route of the CZ charge: TCS_SIEMENS (trichlorosilane on Siemens rods) or SILANE_FBR (silane in a fluidised bed), two technologies on the same chlorosilane loop | A-M-419 | — |
 | si_refine_yield_TCS_SIEMENS | 0.85 | - fraction of the silicon fed to the chlorosilane loop that leaves as electronic-grade rod; the rest is bled as SiCl4 (Siemens class) | A-M-419 | — |
@@ -1263,6 +1270,7 @@ Table 9.1. References
 | UL891 | UL 891, Switchboards (12th ed., 2019). |
 | ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters: vinylidene fluoride (VDF, CH2=CF2) is made industrially by hydrofluorination of a chlorinated C2 feed to 1-chloro-1,1-difluoroethane (HCFC-142b) followed by dehydrochlorination/pyrolysis over Cr-base catalyst; tetrafluoroethylene (TFE, C2F4) by pyrolysis of chlorodifluoromethane (R-22, from chloroform + 2 HF) at 600-800 C with immediate quench (TFE autopolymerises/explosion hazard); both routes return HCl to the acid loop; PVDF by free-radical emulsion/suspension polymerization of VDF at 30-80 C; PTFE as granular/fine powder by suspension/dispersion polymerization of TFE (not melt-processable - finished as powder for compression sintering); per-pass conversions are held low with monomer recycle. |
 | ULLMANN_GLYOXAL | Mattioda G., Blanc A., Glyoxal, Ullmann's Encyclopedia of Industrial Chemistry (2011), doi:10.1002/14356007.a12_491.pub2: industrial routes are liquid-phase acetaldehyde oxidation with nitric acid and gas-phase ethylene glycol oxidation over silver. |
+| ULLMANN_H2SO4 | Mueller H., Sulfuric Acid and Sulfur Trioxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): sulfur burning, the contact process on vanadium catalyst with absorption in 98 wt% acid, and sulfur dioxide from the reductive decomposition of gypsum or anhydrite with coke (Mueller-Kuehne process); dry acid above 93 wt% is handled in carbon steel and hot strong acid in high-silicon iron, alloy or PTFE-lined equipment. |
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): impregnated graphite, tantalum and fluoropolymer-lined equipment for hot HCl concentration and absorption. |
 | ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter: HF is produced from fluorspar (CaF2) and sulfuric acid in indirectly heated rotary kilns; acid-grade spar (acid-spar) is >= 97 % CaF2 with < 1.5 % SiO2 (SiF4 generation) and < 0.2 % carbonates; sulfuric acid is fed at 100-110 % of stoichiometric; kiln gases leave at about 150-350 C and are absorbed in water to aqueous HF; per kg HF about 1.95-2.0 kg CaF2 (97 %) and 2.45-2.6 kg H2SO4 (100 % basis) are charged; conversion of the spar CaF2 in well-run kilns is about 95 %; the by-product is anhydrite (CaSO4) cake (fluorgypsum) discharged with the unreacted spar, excess acid and gangue. |
 | ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds): industrial magnesium comes from fused-salt electrolysis of dehydrated MgCl2 at ~660-700 C in cells with graphite anodes and steel cathodes (Dow/Hydro class); MgCl2 is strongly hygroscopic and must be kept anhydrous in electrolyte service. |
@@ -1287,7 +1295,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 370 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 296 drivers and then the 371 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1959,3 +1967,4 @@ Table 10.1. Values to verify
 | A-M-418 | A standby feed route carries no flow on the design day and … kg/d, d, kg | python3 -m flow_graph.param.standby_routes; the rated rate equals the S57 rate and METAL_STORE holds the rated feed for the outage; IND_TO_ATOM is rated at the IA-MELT-ATOM rate and the IND_MELT outage heats fit the day |
 | A-M-419 | The CZ charge is made on site (no imports except waste or … kg/d, kWh/kg, fraction | python3 -m flow_graph.param.si_refine; the furnace and loop mass balances close and the electronic-grade output equals the CZ charge |
 | A-M-420 | The Ti, Mo and Cr chlorinators take their carbon reductant … kg/d, fraction | python3 -m flow_graph.param.regen; IA-C-TI, IA-C-MO and IA-C-CR leave OIL_PYRO at the carbon need over char_fixed_C_frac and the cell balances close |
+| A-M-421 | The 98 wt% sulfuric acid for HF_GEN is made on site by … kg/d, fraction, C, mm, m, kJ/mol, kJ/kg K | python3 -m flow_graph.param.sulfuric; python3 -m flow_graph.param.regen; IA-H2SO4-MU is retired, IA-H2SO4-ACID carries the acid demand of HF_GEN, and the mass balance of ACID_PLANT closes (asserted in sulfuric.design). |

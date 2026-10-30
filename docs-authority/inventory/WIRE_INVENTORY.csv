@@ -151,7 +151,7 @@ ELEC,collection bus,CB-1,section main to CB-1 transformer LV,"power, 3 ph parall
 ELEC,collection bus,CB-2,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,11,825.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
 ELEC,collection bus,CB-2,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
 ELEC,collection bus,CB-2,section main to CB-2 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
-ELEC,collection bus,CB-3,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,10,750.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
+ELEC,collection bus,CB-3,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,11,825.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
 ELEC,collection bus,CB-3,section EGC,equipment ground,2/0 AWG,green XHHW-2 Cu,600 V,3,15.0,1,45.0,NEC 250.122
 ELEC,collection bus,CB-3,section main to CB-3 transformer LV,"power, 3 ph parallel",400 kcmil,XHHW-2 Cu,600 V,9,15.0,1,135.0,3 sets for 1000 A main (NEC 310.10(G)); 15 m (assumed)
 ELEC,collection bus,CB-4,inverter AC output to section bus,"power, 3 ph",3 AWG,XHHW-2 Cu,600 V,3,25.0,10,750.0,NEC 705.28: 1.25 x 72.2 A; 25 m inverter to section board (assumed)
@@ -185,8 +185,8 @@ ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN power,DC power pair,16 AWG,
 ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 ELEC,rectifier,RECTIFIER,cooling fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,4,80.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,rectifier,RECTIFIER,cooling fan signal,control,18 AWG,shielded pair,300 V,2,10.0,4,80.0,speed/position feedback (assumed)
-ELEC,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,336,40320.0,"6032 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 336 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
-ELEC,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,336,20160.0,NEC 690.45 / 250.122
+ELEC,roof array,PV_ARRAY,PV source circuit home run (+/-),PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,2,60.0,337,40440.0,"6058 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 337 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed)"
+ELEC,roof array,PV_ARRAY,array EGC,equipment ground,10 AWG,bare Cu,-,1,60.0,337,20220.0,NEC 690.45 / 250.122
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 ELEC,scrubber,ZNBR2_BR2_REGEN,transfer pump S69B to ZNBR2 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -470,6 +470,8 @@ OIL,cut_tank,PROD_C5_C10,on/off valve IA-C5-POLY power,DC power pair,16 AWG,TC-E
 OIL,cut_tank,PROD_C5_C10,on/off valve IA-C5-POLY signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 OIL,cut_tank,PROD_C5_C10,transfer pump IA-C5-POLY to POLY_OLEFIN power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 OIL,cut_tank,PROD_C5_C10,transfer pump IA-C5-POLY to POLY_OLEFIN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
+POLYMERS,reactor,ACID_PLANT,transfer pump IA-H2SO4-ACID to HF_GEN power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
+POLYMERS,reactor,ACID_PLANT,transfer pump IA-H2SO4-ACID to HF_GEN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 POLYMERS,reactor,HF_GEN,Acid day tank D160 x 300 mm with metering pump EGC,equipment ground,14 AWG,green XHHW-2 Cu,600 V,1,30.0,1,30.0,NEC 250.122 at 15 A OCPD
 POLYMERS,reactor,HF_GEN,Acid day tank D160 x 300 mm with metering pump control,control,18 AWG,"TFFN 3-pair, shielded",600 V,6,30.0,1,180.0,"start/stop, run, fault (assumed)"
 POLYMERS,reactor,HF_GEN,Acid day tank D160 x 300 mm with metering pump feeder,"power, 3 ph + EGC",14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3,30.0,1,90.0,NEC 430.22: 1.25 x 2.4 A FLC; no position: 30 m (assumed)
@@ -534,6 +536,8 @@ WTR,evaporator,VCD_TRAIN,transfer pump S25 to BMED_UPW_POLISH power,DC power pai
 WTR,evaporator,VCD_TRAIN,transfer pump S25 to BMED_UPW_POLISH signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 WTR,evaporator,VCD_TRAIN,transfer pump S28 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 WTR,evaporator,VCD_TRAIN,transfer pump S28 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
+WTR,intake,GW_INTAKE,transfer pump IA-ACID-H2O to ACID_PLANT power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
+WTR,intake,GW_INTAKE,transfer pump IA-ACID-H2O to ACID_PLANT signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 WTR,treat,GREY_TREAT,transfer pump IA-GREY-01 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 WTR,treat,GREY_TREAT,transfer pump IA-GREY-01 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 WTR,treat,GREY_TREAT,transfer pump S29 to VCD_TRAIN power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"

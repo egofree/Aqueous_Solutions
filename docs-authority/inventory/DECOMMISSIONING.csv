@@ -1,6 +1,7 @@
 step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
+1,POLYMERS,ACID_PLANT,0,C CaSO4 H2O O2 S,N2/air to 19.5-23.5 % O2,0,no
 1,POLYMERS,FILM_CAST,0,,-,0,no
-1,POLYMERS,HF_GEN,0,,-,0,no
+1,POLYMERS,HF_GEN,0,H2SO4,-,0,no
 1,POLYMERS,PELLET,0,,-,0,no
 1,POLYMERS,POLY_COND,0,,-,0,no
 1,POLYMERS,POLY_F,0,,-,0,no

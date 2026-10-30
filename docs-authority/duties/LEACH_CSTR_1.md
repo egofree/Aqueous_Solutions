@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 6380 kg/d. Mass out 6380 kg/d. Electrical duty 0.7500 kW. In: IA-REC-01 3303 kg/d (continuous recycle liquor); IA-WET-FLOAT-01 343.1 kg/d (Float/sink liquor return); S10 79.12 kg/d (spent etch); S16 11.66 kg/d (scrap); 35 more. Out: IA-BMED-03 450.2 kg/d (CRU → BMED acid regen loop); IA-BMED-04 500.1 kg/d (CRU → BMED base regen loop); IA-EW-04 4288 kg/d (CSTR to EW-1); S08 42 kg/d (metals/Si); 16 more.
+1. Basis. Mass in 6380 kg/d. Mass out 6380 kg/d. Electrical duty 0.7500 kW. In: IA-REC-01 3303 kg/d (continuous recycle liquor); IA-WET-FLOAT-01 343.1 kg/d (Float/sink liquor return); S10 79.12 kg/d (spent etch); S16 11.64 kg/d (scrap); 35 more. Out: IA-BMED-03 450.2 kg/d (CRU → BMED acid regen loop); IA-BMED-04 500.1 kg/d (CRU → BMED base regen loop); IA-EW-04 4288 kg/d (CSTR to EW-1); S08 42 kg/d (metals/Si); 16 more.
 
 2. Size.
 - Envelope 2000×1200×1400 mm. Sized in AQS-DUTY-050: working level 1100 mm, 2.14 m³ at 1100 kg/m³ (study), residence 13.2 h on IA-EW-04, 10.0 h on total inflow. Agitator PBT D450 at 150 rpm, 403 W shaft, 0.75 kW motor. Wall 16 mm CPVC with three FRP belts; panel stress 1.37 MPa against 3.03 MPa at 85 °C.

@@ -1,14 +1,14 @@
 family,type,size,insulation,voltage_class,conductor_m,circuits
-WF-01,PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,40320,336
+WF-01,PV DC,10 AWG,"PV Wire, UL 4703, 2 kV",2000 V DC,40440,337
 WF-02,control,18 AWG,"TFFN 3-pair, shielded",600 V,41987,204
 WF-03,power,6 AWG,THHN/THWN-2 Cu in EMT,600 V,20520,57
-WF-04,equipment ground,10 AWG,bare Cu,-,20160,336
+WF-04,equipment ground,10 AWG,bare Cu,-,20220,337
 WF-05,power,14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,17894,195
 WF-06,bare grounding,4/0 AWG,bare soft-drawn Cu,-,5262,1
-WF-07,control,18 AWG,shielded pair,300 V,4620,231
-WF-08,DC power pair,16 AWG,TC-ER 2-cond,600 V,4560,228
+WF-07,control,18 AWG,shielded pair,300 V,4660,233
+WF-08,DC power pair,16 AWG,TC-ER 2-cond,600 V,4600,230
 WF-09,equipment ground,14 AWG,green XHHW-2 Cu,600 V,5958,193
-WF-10,power,3 AWG,XHHW-2 Cu,600 V,3150,42
+WF-10,power,3 AWG,XHHW-2 Cu,600 V,3225,43
 WF-11,power,6 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3091,8
 WF-12,MV power,2 AWG,"MV-105 Cu, 133 % insulation, tape shield",15 kV,1200,4
 WF-13,equipment ground,8 AWG,green XHHW-2 Cu,600 V,1030,8

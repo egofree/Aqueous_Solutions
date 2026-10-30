@@ -17,7 +17,7 @@ This page records the size of unit PV_ARRAY, of class `pv` in sector ELEC, from 
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 351.344 kW.
+No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 352.31 kW.
 
 The graph holds no design parameters for the unit.
 

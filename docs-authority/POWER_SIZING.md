@@ -39,27 +39,27 @@ Table 3.1. Storage and generation sizing results
 
 | Quantity | Value | Unit | Graph field |
 |---|---|---|---|
-| Plant bus demand | 217.5 | kW | `mvs.electrical.need_kw` |
-| Mean-day average generation of the installed array | 543.8 | kW | `mvs.electrical.target_kw` |
-| PV balancing nameplate | 1,508 | kWp | `PV_ARRAY.params.balance_kWp` |
+| Plant bus demand | 218.5 | kW | `mvs.electrical.need_kw` |
+| Mean-day average generation of the installed array | 546.2 | kW | `mvs.electrical.target_kw` |
+| PV balancing nameplate | 1,515 | kWp | `PV_ARRAY.params.balance_kWp` |
 | PV oversize factor | 2.0 | - | `PV_ARRAY.params.oversize_factor` |
-| PV installed nameplate | 3,016 | kWp | `PV_ARRAY.params.nameplate_kw` |
-| PV modules | 6,032 | - | `PV_ARRAY.params.count` |
+| PV installed nameplate | 3,029 | kWp | `PV_ARRAY.params.nameplate_kw` |
+| PV modules | 6,058 | - | `PV_ARRAY.params.count` |
 | PV array area | 26,574 | m² | `PV_ARRAY.params.area_m2` |
 | Roof footprint | 28,980 | m² | `PV_ARRAY.params.roof.footprint_m2` |
 | Roof capacity after pathways | 3,029.5 | kWp | `PV_ARRAY.params.roof.roof_capacity_kWp` |
-| Storage energy | 3,046 | kWh | `ZNBR2.params.kWh` |
-| Storage charge rate | 989 | kW | `ZNBR2.params.charge_kW` |
-| Storage discharge rate | 218 | kW | `ZNBR2.params.discharge_kW` |
-| Hybrid inverters | 42 | - | `SOL_ARK_60K.params.count` |
-| Inverter capacity | 2,520 | kW | `SOL_ARK_60K.params.kW` |
-| Export at noon, store full | 2,302.5 | kW | `SOL_ARK_60K.params.interconnection.export_peak_kW` |
-| Export energy, clear day | 6,526 | kWh/d | `SOL_ARK_60K.params.interconnection.export_kWh_d_clear` |
+| Storage energy | 3,059 | kWh | `ZNBR2.params.kWh` |
+| Storage charge rate | 994 | kW | `ZNBR2.params.charge_kW` |
+| Storage discharge rate | 219 | kW | `ZNBR2.params.discharge_kW` |
+| Hybrid inverters | 43 | - | `SOL_ARK_60K.params.count` |
+| Inverter capacity | 2,580 | kW | `SOL_ARK_60K.params.kW` |
+| Export at noon, store full | 2,361.5 | kW | `SOL_ARK_60K.params.interconnection.export_peak_kW` |
+| Export energy, clear day | 6,554 | kWh/d | `SOL_ARK_60K.params.interconnection.export_kWh_d_clear` |
 | Fuel cell continuous output | 4.0 | kW | `FUEL_CELL.continuous_kw` |
 | Fuel cell loop round-trip efficiency | 0.364 | - | `FUEL_CELL.params.reversible_loop.round_trip` |
 | Backup generator rating | 40 | kW | `BACKUP_GEN.params.rated_kW` |
 
-The plant bus demand of 217.5 kW has four parts. The extension hall `EXT_HALL` takes 82.1 kW (`EXT_HALL.continuous_kw`). The rectifier input for the electrowinning cells at the bounding current is 38.7 kW (`RECTIFIER.params.rect_ac_input_kW`). The 4 electric trim heaters that the rectifier feeds are counted at their rated load (A-M-415): Q4_A by stream IA-Q4A-TRIM (1.61 kW), Q4_B by stream IA-Q4B-TRIM (1.61 kW), LEACH_CSTR_1 by stream IA-TRIM-HX5 (15.88 kW) and GLASS_DIGEST by stream IA-TRIM-HX6 (4.16 kW), 23.26 kW in all. The remaining 73.5 kW is the sum of the continuous loads of the other units and the feeds of the inverter bus, as `docs-authority/_power_sizing.py` adds them. The load list AQS-ELEC-003 gives a connected load of 155.6 kW, which is the bus demand less the rectifier input for the cells and the trim heaters: it lists the cells as direct-current loads behind the rectifier and leaves them out of its alternating-current sum.
+The plant bus demand of 218.5 kW has four parts. The extension hall `EXT_HALL` takes 82.1 kW (`EXT_HALL.continuous_kw`). The rectifier input for the electrowinning cells at the bounding current is 38.7 kW (`RECTIFIER.params.rect_ac_input_kW`). The 4 electric trim heaters that the rectifier feeds are counted at their rated load (A-M-415): Q4_A by stream IA-Q4A-TRIM (1.61 kW), Q4_B by stream IA-Q4B-TRIM (1.61 kW), LEACH_CSTR_1 by stream IA-TRIM-HX5 (15.88 kW) and GLASS_DIGEST by stream IA-TRIM-HX6 (4.16 kW), 23.26 kW in all. The remaining 74.4 kW is the sum of the continuous loads of the other units and the feeds of the inverter bus, as `docs-authority/_power_sizing.py` adds them. The load list AQS-ELEC-003 gives a connected load of 156.6 kW, which is the bus demand less the rectifier input for the cells and the trim heaters: it lists the cells as direct-current loads behind the rectifier and leaves them out of its alternating-current sum.
 
 Table 3.2 lists the critical loads that the backup generator carries. They total 14.46 kW. They come from `flow_graph/param/backup_fuel.py`, which takes them from the drivers and the graph.
 
@@ -83,7 +83,7 @@ Table 3.2. Critical loads
 
 The rule in the driver note gives a generator rating of 20 kW for the critical loads in Table 3.2. The driver holds 40 kW. The two differ, so either the driver or its note must be corrected; the owner decides which.
 
-The bus section rating in `SOL_ARK_60K.params.redundancy` was computed for a bus demand of 217.5 kW. This matches the plant bus demand in Table 3.1.
+The bus section rating in `SOL_ARK_60K.params.redundancy` was computed for a bus demand of 218.5 kW. This matches the plant bus demand in Table 3.1.
 
 The rectifier is fed from the inverter bus through three feeders on the one-line diagram AQS-ELEC-002: stream S17 at 12.0 kW for its 48 V rails and auxiliaries, the RECT-EW feeder at the 38.7 kW input for the electrowinning cells, and the RECT-TRIM feeder at the 23.3 kW of the trim heaters. The bus demand counts all of them.
 

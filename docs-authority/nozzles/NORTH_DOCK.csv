@@ -37,3 +37,5 @@ N35,solids,Class 150,"surplus foundry metal export (pot-line product, dispatch c
 N36,solids,Class 150,imported polysilicon for the CZ charge,outlet,600
 N37,solids,Class 150,finished wafers to the dock for dispatch,inlet,160
 N38,solids,Class 150,quartz ore for the silicon furnace (raw ore),outlet,600
+N39,solids,Class 150,native sulfur (raw ore) for the acid plant,outlet,600
+N40,solids,Class 150,lime residue byproduct of the cake kiln,inlet,160

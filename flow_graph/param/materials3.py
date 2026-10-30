@@ -361,6 +361,15 @@ SEL = {
   'Silicon-carbide hot face when batch chemistry reaches beyond the graphite class (a process-change '
   'decision, not a materials trade)',
   'no wetted stream on the graph; the selection is the construction class only.'),
+ 'ACID_PLANT': (
+  'Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation; sulfur burner and converter shell of '
+  'aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of carbon steel with PTFE-lined '
+  'nozzles; dilution cooler of high-silicon iron',
+  'Hot sulfur dioxide and trioxide gas, dry, up to about 1150 C in the cake kiln and about 600 C in the converter, and 98 wt% '
+  'sulfuric acid near ambient (A-M-421, flow_graph/param/sulfuric.py): strong acid above 93 wt% is carried in carbon steel '
+  'at low velocity, while hot or dilute acid needs high-silicon iron, alloy or PTFE lining (ULLMANN_H2SO4; PERRY9_MAT). ' + _TAG,
+  'Alloy 20 or PTFE-lined steel for the absorber if the acid strength falls below 93 wt% in service',
+  'wetted by 98 wt% sulfuric acid and dry sulfur oxides; dilution below 93 wt% is the corrosion load, held by the absorber control.'),
  'SI_REFINE': (
   'Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen '
   'chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite '

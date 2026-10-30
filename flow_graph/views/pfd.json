@@ -3,8 +3,8 @@
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 179,
-  "edge_count": 584,
+  "node_count": 180,
+  "edge_count": 593,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -2055,7 +2055,7 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3046.0,
+        "vs_znbr2_kwh": 3059.0,
         "fraction_of_znbr2_study": 0.07,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -2425,7 +2425,6 @@
             "IA-C19-SHIP": 2.218,
             "IA-O2-SHIP": 22.884,
             "IA-MEOH-SHIP": 28.029,
-            "IA-GYPSUM-SHIP": 0.576,
             "IA-CL2-SHIP": 39.206,
             "IA-CA-CL2-SHIP": 0.097,
             "IA-KROLL-CO": 0.629,
@@ -2434,14 +2433,14 @@
             "IA-BURNOUT-VENT": 0.2,
             "IA-SHELL-EXPORT": 1.0,
             "IA-METAL-SHIP": 10.812,
-            "IA-FAB-PRODUCT": 0.139
+            "IA-FAB-PRODUCT": 0.139,
+            "IA-LIME-SHIP": 0.299
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.563,
+            "IA-H2O-MU": 64.587,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
-            "IA-H2SO4-MU": 0.404,
             "IA-ALCL3-MU": 49.419,
             "IA-MGCL2-MU": 0.04,
             "IA-CACL2-MU": 0.152,
@@ -2450,10 +2449,11 @@
             "IA-CR2O3-MU": 0.365,
             "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
-            "IA-QUARTZ-MU": 0.718
+            "IA-QUARTZ-MU": 0.718,
+            "IA-SULFUR-MU": 0.018
           },
-          "net_kg_d": -0.53,
-          "residual_kg_d": -0.529,
+          "net_kg_d": -0.445,
+          "residual_kg_d": -0.445,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -2768,7 +2768,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 351.3442,
+        "value": 352.3096,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2776,11 +2776,11 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6032,
+        "count": 6058,
         "presence": "present",
-        "nameplate_kw": 3016,
+        "nameplate_kw": 3029,
         "area_m2": 26574,
-        "balance_kWp": 1508,
+        "balance_kWp": 1515,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -2942,13 +2942,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 2520.0,
+        "kW": 2580.0,
         "presence": "present",
-        "count": 42,
+        "count": 43,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2302.5,
-          "export_kWh_d_clear": 6526,
+          "export_peak_kW": 2361.5,
+          "export_kWh_d_clear": 6554,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2957,7 +2957,7 @@
           "inverters": [
             11,
             11,
-            10,
+            11,
             10
           ],
           "breaker_A": [
@@ -2978,9 +2978,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 217.5,
+          "bus_demand_kW": 218.5,
           "section_rating_A": 400,
-          "basis_A": 290.7,
+          "basis_A": 292.0,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -3349,25 +3349,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 217.5226,
+        "value": 218.4826,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.5 kW, charge 988.7 kW, 3045 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.5 kW, charge 993.1 kW, 3059 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 989,
-        "kWh": 3046,
+        "kW": 994,
+        "kWh": 3059,
         "presence": "present",
-        "charge_kW": 989,
-        "discharge_kW": 218,
+        "charge_kW": 994,
+        "discharge_kW": 219,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 42 hybrid inverters, 72.5 kWh and 23.5 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 43 hybrid inverters, 71.1 kWh and 23.1 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.721,
-          "purge_m3_h": 32.17,
+          "H2_m3_d": 7.755,
+          "purge_m3_h": 32.31,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1992.0
+          "electrode_area_m2": 2000.8
         }
       }
     },
@@ -4392,7 +4392,7 @@
           "hf_kg_d": 1.673754,
           "cake_kg_d": 0.575554,
           "drive_kW": 0.37,
-          "feed": "dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate",
+          "feed": "dock acid-spar 97 % CaF2 + 98 wt% H2SO4 from ACID_PLANT + F_RECOVER concentrate",
           "material": "carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts",
           "duty_kW": 0.3083
         },
@@ -5728,7 +5728,7 @@
         "design": {
           "machine": "two-strand horizontal semi-continuous caster",
           "feed_kg_d": 31.7125,
-          "billet_kg_d": 13.244228000000033,
+          "billet_kg_d": 13.244227999999968,
           "ingot_kg_d": 21.7125,
           "strands": 2,
           "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"
@@ -7248,6 +7248,35 @@
           "basis": "Dry chlorosilanes, hydrogen chloride and hydrogen at up to about 300 C in the hydrochlorinator and a cooled wall round rods at about 1100 C (A-M-419, flow_graph/param/si_refine.py): dry hydrogen chloride and chlorosilanes are carried in nickel and stainless steel, and any moisture makes hydrochloric acid, so the loop is kept dry (ULLMANN_HCL; PERRY9_MAT). The product-contact parts are silicon or graphite so the charge stays at electronic grade. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
           "alt": "Hastelloy C-276 for the purge and condensate lines if moisture ingress cannot be excluded",
           "note": "wetted by dry chlorosilanes; moisture is the corrosion load, controlled by the dry loop.",
+          "task": "X-MAT-22"
+        }
+      }
+    },
+    {
+      "unit_id": "ACID_PLANT",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Sulfuric acid plant: cake kiln and sulfur burner, contact converter and absorber (A-M-421).",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.9654,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake kiln shell loss + reaction + feed heat (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "Sulfuric acid plant (A-M-421).",
+        "sec3_material": {
+          "mat": "Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation; sulfur burner and converter shell of aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of carbon steel with PTFE-lined nozzles; dilution cooler of high-silicon iron",
+          "basis": "Hot sulfur dioxide and trioxide gas, dry, up to about 1150 C in the cake kiln and about 600 C in the converter, and 98 wt% sulfuric acid near ambient (A-M-421, flow_graph/param/sulfuric.py): strong acid above 93 wt% is carried in carbon steel at low velocity, while hot or dilute acid needs high-silicon iron, alloy or PTFE lining (ULLMANN_H2SO4; PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Alloy 20 or PTFE-lined steel for the absorber if the acid strength falls below 93 wt% in service",
+          "note": "wetted by 98 wt% sulfuric acid and dry sulfur oxides; dilution below 93 wt% is the corrosion load, held by the absorber control.",
           "task": "X-MAT-22"
         }
       }
@@ -9255,7 +9284,7 @@
       "forbidden": "pyro if FR-4",
       "claim_status": "Closed",
       "rate": {
-        "value": 11.660798,
+        "value": 11.636366,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
@@ -10610,10 +10639,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 914.066378,
+        "value": 918.100458,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.57 + open-circuit 1.15 m3/d H2 on 4350 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.3 m3/h holds H2 at 25 % LFL: HER 6.60 + open-circuit 1.15 m3/d H2 on 4370 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -10633,7 +10662,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 914.066378,
+        "value": 918.100458,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -13745,7 +13774,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 351.3442,
+        "value": 352.3096,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -14716,7 +14745,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.861299,
+        "value": 4.836867,
         "unit": "kg/d",
         "status": "study",
         "note": "Char less the carbon charged to the silicon-carbide furnace. | X-PAR-02 TF: char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET) (AQS-PAR-003)."
@@ -18448,7 +18477,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 64.562885,
+        "value": 64.587317,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -21272,7 +21301,7 @@
       "from_unit_id": "NORTH_DOCK",
       "to_unit_id": "HF_GEN",
       "phase": "L",
-      "presence": "present",
+      "presence": "retired",
       "carries": "98 wt% sulfuric acid make-up",
       "notes": "Created by the fluoropolymer train activation (Q-013 reopen; A-M-283).",
       "namespace": "IA",
@@ -21281,10 +21310,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.403768,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Reagent import on the NaOH-flake precedent (IA-NAOH-MU): 0.4038 kg/d chamber acid at 98 wt%, 105% of stoichiometric on the converted spar (ULLMANN_HF; A-M-289). The plant acid loop is HCl (BMED); no on-site H2SO4 exists at this scope. | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289)."
+        "note": "Retired 2026-10-29 (owner decision t59u: no imports except waste or raw ore). The acid is made on site by ACID_PLANT (A-M-421)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "POLYMERS"
@@ -21294,7 +21323,7 @@
       "from_unit_id": "HF_GEN",
       "to_unit_id": "NORTH_DOCK",
       "phase": "S",
-      "presence": "present",
+      "presence": "retired",
       "carries": "fluorgypsum (anhydrite) cake byproduct",
       "notes": "Created by the fluoropolymer train activation (Q-013 reopen; A-M-283).",
       "namespace": "IA",
@@ -21303,10 +21332,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.575554,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Kiln cake by difference = spar + acid + concentrate - HF product: anhydrite 0.523 kg/d with unreacted spar, excess acid, gangue and moisture (ULLMANN_HF); reported as a dock byproduct export (D-DOCK). | X-PAR-02 TF: fluoropolymer train activation (AQS-DUTY-073 sec. 3, A-M-289)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): the HF kiln cake is exported only on the SULFUR_ORE route; on GYPSUM_LOOP it goes to ACID_PLANT on IA-GYPSUM-REGEN (route GYPSUM_LOOP)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "DOCK"
@@ -23547,6 +23576,265 @@
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "GLASS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-SULFUR-MU",
+      "from_unit_id": "NORTH_DOCK",
+      "to_unit_id": "ACID_PLANT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "native sulfur (raw ore) for the acid plant",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.018487,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): sulfur = 0.0185 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "from_sector_id": "DOCK",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "S": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-GYPSUM-REGEN",
+      "from_unit_id": "HF_GEN",
+      "to_unit_id": "ACID_PLANT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "HF kiln anhydrite cake to the sulfur-recovery kiln",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.575554,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake = 0.5756 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CaSO4": 1.0
+      }
+    },
+    {
+      "stream_id": "CHAR_TO_ACID",
+      "from_unit_id": "OIL_PYRO",
+      "to_unit_id": "ACID_PLANT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plant pyrolysis char reductant for the cake kiln",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.024432,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): char = 0.0244 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "C": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-ACID-O2",
+      "from_unit_id": "ATMOS",
+      "to_unit_id": "ACID_PLANT",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxygen of the process air (sulfur burning and SO2 oxidation)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.083003,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): o2 = 0.0830 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "O2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-ACID-H2O",
+      "from_unit_id": "GW_INTAKE",
+      "to_unit_id": "ACID_PLANT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "well water for SO3 absorption and dilution to 98 wt%",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.080761,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): h2o = 0.0808 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2O": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-ACID-CO2",
+      "from_unit_id": "ACID_PLANT",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "carbon dioxide of the cake kiln",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.079758,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): co2 = 0.0798 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CO2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-LIME-SHIP",
+      "from_unit_id": "ACID_PLANT",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "lime residue byproduct of the cake kiln",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.29871,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): residue = 0.2987 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CaO": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-H2SO4-ACID",
+      "from_unit_id": "ACID_PLANT",
+      "to_unit_id": "HF_GEN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "98 wt% sulfuric acid to the HF kiln",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.403768,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): acid = 0.4038 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2SO4": 1.0
+      }
+    },
+    {
+      "stream_id": "SF-ACID_PLANT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "ACID_PLANT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.9654,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): feed equal to ACID_PLANT continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "POLYMERS",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],

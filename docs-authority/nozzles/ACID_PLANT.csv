@@ -1,0 +1,11 @@
+tag,size,rating,service,face,height_mm
+N1,solids,Class 150,native sulfur (raw ore) for the acid plant,inlet,160
+N2,solids,Class 150,HF kiln anhydrite cake to the sulfur-recovery kiln,inlet,160
+N3,solids,Class 150,plant pyrolysis char reductant for the cake kiln,inlet,160
+N4,DN15,Class 150,oxygen of the process air (sulfur burning and SO2 oxidation),inlet,160
+N5,DN15,Class 150,well water for SO3 absorption and dilution to 98 wt%,inlet,160
+N6,DN15,Class 150,carbon dioxide of the cake kiln,outlet,600
+N7,solids,Class 150,lime residue byproduct of the cake kiln,outlet,600
+N8,DN15,Class 150,98 wt% sulfuric acid to the HF kiln,outlet,600
+N9,DN15,Class 150,drain,bottom,50
+N10,DN15,Class 150,vent,top,800

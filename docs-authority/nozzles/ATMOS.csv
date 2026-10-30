@@ -4,3 +4,5 @@ N2,DN15,Class 150,drain,bottom,50
 N3,DN15,Class 150,vent,top,800
 N4,DN15,Class 150,oxygen of the hood air that burns the furnace carbon monoxide,outlet,600
 N5,DN15,Class 150,carbon dioxide of the burned furnace gas,inlet,160
+N6,DN15,Class 150,oxygen of the process air (sulfur burning and SO2 oxidation),outlet,600
+N7,DN15,Class 150,carbon dioxide of the cake kiln,inlet,160

@@ -50,7 +50,7 @@ Table 3.1. Sectors
 | DIGESTER | Process (Mass transform) | true | true | 25 | ew-cascade-train, metals-leach-train |
 | OIL | Process (Mass transform) | true | true | 14 | pyro-fractionation-train |
 | GLASS | Process (Mass transform) | true | true | 6 | glass-recycle-train |
-| POLYMERS | Process (Mass transform) | true | true | 10 | fluoropolymer-train, forming-train, polyolefin-train |
+| POLYMERS | Process (Mass transform) | true | true | 11 | fluoropolymer-train, forming-train, polyolefin-train |
 | GAS | Process (Mass transform) | true | true | 12 | scrubbing-headers-train |
 | FAB | Process (Mass transform) | true | true | 17 | litho-train, wafer-line-train, wet-reagent-train |
 | MFG | Process (Mass transform) | true | true | 10 | tools-metal-forming-train |

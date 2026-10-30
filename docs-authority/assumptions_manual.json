@@ -7246,5 +7246,24 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.regen; IA-C-TI, IA-C-MO and IA-C-CR leave OIL_PYRO at the carbon need over char_fixed_C_frac and the cell balances close"
+ },
+ {
+  "id": "A-M-421",
+  "value": "The 98 wt% sulfuric acid for HF_GEN is made on site by ACID_PLANT on the contact process. On the default route GYPSUM_LOOP, the HF kiln anhydrite cake is reduced with plant char, CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2, recovering caso4_dec_frac (0.9) of its sulfur in a 1150 C electrically heated kiln tube; the rest of the sulfur is native sulfur ore taken at the dock and burned. The alternative route SULFUR_ORE burns native sulfur ore only and ships the cake. Oxygen comes from the process air and water from the well. The kiln load is its insulated-shell loss plus a reaction heat of 303 kJ/mol and the feed heat; the contact steps are exothermic and not credited.",
+  "units": "kg/d, fraction, C, mm, m, kJ/mol, kJ/kg K",
+  "where": "flow_graph/param/sulfuric.py (called from flow_graph/param/fluoro_train.py); flow_graph/param/drivers.json h2so4_route, caso4_dec_frac, caso4_kiln_T_C, caso4_kiln_D_mm, caso4_kiln_L_m, caso4_dHrxn_kJ_mol, caso4_feed_cp_kJ_kgK",
+  "basis": "Owner decision 2026-10-29 (t59u): no imports except waste or raw ore. Native sulfur is a raw ore; the cake is the plant's own waste. Reductive decomposition of gypsum or anhydrite with carbon to SO2 for a contact plant is an industrial route (Mueller-Kuehne process), and sulfur burning with the contact process is the standard route (ULLMANN_H2SO4). The reaction heat is CaSO4 -> CaO + SO3 (+401 kJ/mol) plus SO3 -> SO2 + 1/2 O2 (+99 kJ/mol) less half a mole of carbon burned to CO2 (-197 kJ/mol).",
+  "sensitivity": "The sulfur ore scales with 1 - caso4_dec_frac on GYPSUM_LOOP. The kiln load is dominated by the shell loss of a continuously hot tube; campaign operation would cut it in proportion to the hot hours.",
+  "replaced_by": "A cake kiln trial on the HF_GEN anhydrite with char, and an assay of the sulfur ore",
+  "task": "QA audit 2026-10-29, imports made on site (X-RTE-IMPORT)",
+  "files": [
+   "flow_graph/param/sulfuric.py",
+   "flow_graph/param/fluoro_train.py",
+   "flow_graph/param/drivers.json",
+   "docs-authority/_polymers_sizing.py",
+   "docs-authority/_task_plan_gen.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.sulfuric; python3 -m flow_graph.param.regen; IA-H2SO4-MU is retired, IA-H2SO4-ACID carries the acid demand of HF_GEN, and the mass balance of ACID_PLANT closes (asserted in sulfuric.design)."
  }
 ]

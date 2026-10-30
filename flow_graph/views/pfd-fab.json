@@ -367,7 +367,6 @@
             "IA-C19-SHIP": 2.218,
             "IA-O2-SHIP": 22.884,
             "IA-MEOH-SHIP": 28.029,
-            "IA-GYPSUM-SHIP": 0.576,
             "IA-CL2-SHIP": 39.206,
             "IA-CA-CL2-SHIP": 0.097,
             "IA-KROLL-CO": 0.629,
@@ -376,14 +375,14 @@
             "IA-BURNOUT-VENT": 0.2,
             "IA-SHELL-EXPORT": 1.0,
             "IA-METAL-SHIP": 10.812,
-            "IA-FAB-PRODUCT": 0.139
+            "IA-FAB-PRODUCT": 0.139,
+            "IA-LIME-SHIP": 0.299
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.563,
+            "IA-H2O-MU": 64.587,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
-            "IA-H2SO4-MU": 0.404,
             "IA-ALCL3-MU": 49.419,
             "IA-MGCL2-MU": 0.04,
             "IA-CACL2-MU": 0.152,
@@ -392,10 +391,11 @@
             "IA-CR2O3-MU": 0.365,
             "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
-            "IA-QUARTZ-MU": 0.718
+            "IA-QUARTZ-MU": 0.718,
+            "IA-SULFUR-MU": 0.018
           },
-          "net_kg_d": -0.53,
-          "residual_kg_d": -0.529,
+          "net_kg_d": -0.445,
+          "residual_kg_d": -0.445,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -1095,7 +1095,7 @@
           "hf_kg_d": 1.673754,
           "cake_kg_d": 0.575554,
           "drive_kW": 0.37,
-          "feed": "dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate",
+          "feed": "dock acid-spar 97 % CaF2 + 98 wt% H2SO4 from ACID_PLANT + F_RECOVER concentrate",
           "material": "carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts",
           "duty_kW": 0.3083
         },

@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-574 edges: 325 piped, 133 solids transfers, 116 electrical. Piped edges without a length (unit position missing): 64.
+581 edges: 328 piped, 136 solids transfers, 117 electrical. Piped edges without a length (unit position missing): 67.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 36: AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 37: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -506,8 +506,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-SOLV-MU | NORTH_DOCK | WS_SOLV | DN15 | M1 | organic liquid (316L per unit duty sheets) | 11.5 | NORTH_DOCK → WS_SOLV, orthogonal × 1.2 (placement_report; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | POLYF_TO_FILM | POLY_F | FILM_CAST | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B |  | POLY_F → FILM_CAST, position missing for POLY_F, FILM_CAST | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-CAF2-MU | NORTH_DOCK | HF_GEN | solids | — | — |  | NORTH_DOCK → HF_GEN, position missing for HF_GEN | solids: conveyor, bin or hand transfer; not piped |
-| IA-H2SO4-MU | NORTH_DOCK | HF_GEN | DN15 | M2 | 98 wt% H2SO4 make-up; carbon steel passivates above 93 wt% and at ambient (PERRY9_MAT) |  | NORTH_DOCK → HF_GEN, position missing for HF_GEN | velocity 1 m/s, ρ 1000; min DN15 |
-| IA-GYPSUM-SHIP | HF_GEN | NORTH_DOCK | solids | — | — |  | HF_GEN → NORTH_DOCK, position missing for HF_GEN | solids: conveyor, bin or hand transfer; not piped |
 | IA-HF-PROD | HF_GEN | WS_HF_ED | DN15 | P3 | oxidizer, HF or PVDF unit |  | HF_GEN → WS_HF_ED, position missing for HF_GEN | velocity 1 m/s, ρ 1000; min DN15 |
 | MEOH_TO_VDF | MEOH_TANK | VDF_SYN | DN15 | M1 | wet methanol service (316L per unit duty sheets) |  | MEOH_TANK → VDF_SYN, position missing for VDF_SYN | velocity 1 m/s, ρ 1000; min DN15 |
 | MEOH_TO_TFE | MEOH_TANK | TFE_SYN | DN15 | M1 | wet methanol service (316L per unit duty sheets) |  | MEOH_TANK → TFE_SYN, position missing for TFE_SYN | velocity 1 m/s, ρ 1000; min DN15 |
@@ -591,3 +589,12 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-SI-EG | SI_REFINE | METAL_STORE | solids | — | — |  | SI_REFINE → METAL_STORE, position missing for SI_REFINE, METAL_STORE | solids: conveyor, bin or hand transfer; not piped |
 | SF-SI_REDUCE | SOL_ARK_60K | SI_REDUCE | cable | — | — |  | SOL_ARK_60K → SI_REDUCE, position missing for SI_REDUCE | electrical: cable schedule X-ELS-06 |
 | SF-SI_REFINE | SOL_ARK_60K | SI_REFINE | cable | — | — |  | SOL_ARK_60K → SI_REFINE, position missing for SI_REFINE | electrical: cable schedule X-ELS-06 |
+| IA-SULFUR-MU | NORTH_DOCK | ACID_PLANT | solids | — | — |  | NORTH_DOCK → ACID_PLANT, position missing for ACID_PLANT | solids: conveyor, bin or hand transfer; not piped |
+| IA-GYPSUM-REGEN | HF_GEN | ACID_PLANT | solids | — | — |  | HF_GEN → ACID_PLANT, position missing for HF_GEN, ACID_PLANT | solids: conveyor, bin or hand transfer; not piped |
+| CHAR_TO_ACID | OIL_PYRO | ACID_PLANT | solids | — | — |  | OIL_PYRO → ACID_PLANT, position missing for ACID_PLANT | solids: conveyor, bin or hand transfer; not piped |
+| IA-ACID-O2 | ATMOS | ACID_PLANT | DN15 | M1 | dry gas, H2/O2/N2/CO2 |  | ATMOS → ACID_PLANT, position missing for ATMOS, ACID_PLANT | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-ACID-H2O | GW_INTAKE | ACID_PLANT | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | GW_INTAKE → ACID_PLANT, position missing for GW_INTAKE, ACID_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-ACID-CO2 | ACID_PLANT | ATMOS | DN15 | P3 | process vent gas |  | ACID_PLANT → ATMOS, position missing for ACID_PLANT, ATMOS | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-LIME-SHIP | ACID_PLANT | NORTH_DOCK | solids | — | — |  | ACID_PLANT → NORTH_DOCK, position missing for ACID_PLANT | solids: conveyor, bin or hand transfer; not piped |
+| IA-H2SO4-ACID | ACID_PLANT | HF_GEN | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B |  | ACID_PLANT → HF_GEN, position missing for ACID_PLANT, HF_GEN | velocity 1 m/s, ρ 1000; min DN15 |
+| SF-ACID_PLANT | SOL_ARK_60K | ACID_PLANT | cable | — | — |  | SOL_ARK_60K → ACID_PLANT, position missing for ACID_PLANT | electrical: cable schedule X-ELS-06 |

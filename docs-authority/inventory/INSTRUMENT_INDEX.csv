@@ -179,7 +179,7 @@ LI_RECOVER-LSH-01,LI_RECOVER,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip
 LI_RECOVER-LT-01,LI_RECOVER,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),LI_RECOVERLT-01,PLC-DIGESTER,A-M-182 liquid height
 LI_RECOVER-PT-01,LI_RECOVER,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),LI_RECOVERPT-01,PLC-DIGESTER,no design pressure on the graph
 LI_RECOVER-TE-01,LI_RECOVER,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),LI_RECOVERTE-01,PLC-DIGESTER,band by service
-ZNBR2-FT-01,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2FT-01,PLC-ELEC,S69 normal 38.09 L/h
+ZNBR2-FT-01,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2FT-01,PLC-ELEC,S69 normal 38.25 L/h
 ZNBR2-FT-02,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),ZNBR2FT-02,PLC-ELEC,IA-ZNBR-BD normal 0.35 L/h
 ZNBR2-FT-03,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),ZNBR2FT-03,PLC-ELEC,IA-ZNBR-HEAT normal 0.07 L/h
 ZNBR2-LSH-01,ZNBR2,ELEC,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ZNBR2LSH-01,PLC-ELEC,alarm at 90 %
@@ -203,7 +203,7 @@ PV_ARRAY-PT-01,PV_ARRAY,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298"
 PV_ARRAY-TE-01,PV_ARRAY,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PV_ARRAYTE-01,PLC-ELEC,band by service
 RECTIFIER-PT-01,RECTIFIER,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),RECTIFIERPT-01,PLC-ELEC,no design pressure on the graph
 RECTIFIER-TE-01,RECTIFIER,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),RECTIFIERTE-01,PLC-ELEC,band by service
-ZNBR2_BR2_REGEN-FT-01,ZNBR2_BR2_REGEN,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2_BR2_REGENFT-01,PLC-ELEC,S69B normal 38.09 L/h
+ZNBR2_BR2_REGEN-FT-01,ZNBR2_BR2_REGEN,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2_BR2_REGENFT-01,PLC-ELEC,S69B normal 38.25 L/h
 ZNBR2_BR2_REGEN-LSH-01,ZNBR2_BR2_REGEN,ELEC,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ZNBR2_BR2_REGENLSH-01,PLC-ELEC,alarm at 90 %
 ZNBR2_BR2_REGEN-LT-01,ZNBR2_BR2_REGEN,ELEC,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),ZNBR2_BR2_REGENLT-01,PLC-ELEC,A-M-182 liquid height
 ZNBR2_BR2_REGEN-PT-01,ZNBR2_BR2_REGEN,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),ZNBR2_BR2_REGENPT-01,PLC-ELEC,no design pressure on the graph
@@ -560,6 +560,10 @@ PELLET-PT-01,PELLET,POLYMERS,pressure transmitter,"ceramic diaphragm, IEC 61298"
 PELLET-TE-01,PELLET,POLYMERS,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PELLETTE-01,PLC-POLYMERS,band by service
 POWDER_RESIN-PT-01,POWDER_RESIN,POLYMERS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),POWDER_RESINPT-01,PLC-POLYMERS,no design pressure on the graph
 POWDER_RESIN-TE-01,POWDER_RESIN,POLYMERS,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),POWDER_RESINTE-01,PLC-POLYMERS,band by service
+ACID_PLANT-LSH-01,ACID_PLANT,POLYMERS,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ACID_PLANTLSH-01,PLC-POLYMERS,alarm at 90 %
+ACID_PLANT-LT-01,ACID_PLANT,POLYMERS,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),ACID_PLANTLT-01,PLC-POLYMERS,A-M-182 liquid height
+ACID_PLANT-PT-01,ACID_PLANT,POLYMERS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),ACID_PLANTPT-01,PLC-POLYMERS,no design pressure on the graph
+ACID_PLANT-TE-01,ACID_PLANT,POLYMERS,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),ACID_PLANTTE-01,PLC-POLYMERS,band by service
 HF_GEN-LSH-01,HF_GEN,POLYMERS,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),HF_GENLSH-01,PLC-POLYMERS,alarm at 90 %
 HF_GEN-LT-01,HF_GEN,POLYMERS,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),HF_GENLT-01,PLC-POLYMERS,A-M-182 liquid height
 HF_GEN-PT-01,HF_GEN,POLYMERS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HF_GENPT-01,PLC-POLYMERS,no design pressure on the graph
@@ -658,6 +662,8 @@ FLUX_PREP-LT-01,FLUX_PREP,FOUNDRY,level transmitter,"radar 80 GHz, IEC 62828, PT
 SHELL_BUILD-LT-01,SHELL_BUILD,FOUNDRY,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of slurry tank height,4-20 mA HART (AI),SHELL_BUILDLT-01,PLC-FOUNDRY,slurry tank: design slurry_L 40 L
 HF_GEN-FT-01,HF_GEN,POLYMERS,flow transmitter,gravimetric loss-in-weight feeder (solids feed),0-0.05 kg/h,4-20 mA HART (AI),HF_GENFT-01,PLC-POLYMERS,acid-spar feed: IA-CAF2-MU 0.33 kg/d (design spar_kg_d)
 HF_GEN-AE-01,HF_GEN,POLYMERS,HF analyzer,electrochemical HF cell,0-10 ppm HF,4-20 mA HART (AI),HF_GENAE-01,PLC-POLYMERS,kiln offgas HF watch: design hf_kg_d 1.67 kg/d
+ACID_PLANT-TE-90,ACID_PLANT,POLYMERS,"temperature element (SIF, independent)","type K thermocouple, own sheath",0 to 1300 C,4-20 mA HART (AI),ACID_PLANTTE-90,PLC-POLYMERS,independent high-temperature trip on the cake kiln (AQS-CTL-003)
+ACID_PLANT-AE-01,ACID_PLANT,POLYMERS,SO2 analyzer,electrochemical SO2 cell,0-20 ppm SO2,4-20 mA HART (AI),ACID_PLANTAE-01,PLC-POLYMERS,absorber tail-gas SO2 watch on the contact process (A-M-421)
 POLY_COND-LT-01,POLY_COND,POLYMERS,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of 0.30 m kettle,4-20 mA HART (AI),POLY_CONDLT-01,PLC-POLYMERS,kettle: design H_mm 300
 POWDER_RESIN-ST-01,POWDER_RESIN,POLYMERS,speed transmitter,incremental encoder on the mill drive,0-100 % of drive speed,4-20 mA HART (AI),POWDER_RESINST-01,PLC-POLYMERS,mill drive: design duty_kW 0.0152 kW
 FILM_CAST-ST-01,FILM_CAST,POLYMERS,speed transmitter,incremental encoder on the chill-roll/haul-off drive,0-100 % of drive speed,4-20 mA HART (AI),FILM_CASTST-01,PLC-POLYMERS,chill-roll drive: design chill_roll_D_mm 150

@@ -17,7 +17,7 @@ This register records, for every unit on the plant graph, whether its process in
 
 ## 2. Summary and method
 
-Of the 193 units, 64 have their internals defined and sized in an issued document (section 4), 82 have no process internals by a class rule (section 3), and 47 are open, each with its gap named (section 5). A unit whose construction material is still unselected in AQS-STD-005 (`UNIT_MATERIALS.md`) is open here too.
+Of the 194 units, 65 have their internals defined and sized in an issued document (section 4), 82 have no process internals by a class rule (section 3), and 47 are open, each with its gap named (section 5). A unit whose construction material is still unselected in AQS-STD-005 (`UNIT_MATERIALS.md`) is open here too.
 A class rule closes a unit only if none of its own documents books an internal. The generator first scans the sizing sheet, the duty sheet and the bill of materials of the unit for internals; if it finds one, the unit is taken out of the class rule.
 
 ## 3. Class rules
@@ -79,6 +79,7 @@ Table 4.1. Defined internals
 
 | Unit | Class | Internals | Evidence |
 |---|---|---|---|
+| ACID_PLANT | reactor | duty sheet: "converter shell of aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of" | docs-authority/duties/ACID_PLANT.md |
 | ACID_POLISH_SCRUB | scrubber | packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) | sizing/HOUSE_SCRUBBERS.md |
 | ADS_CHILL | adsorption_chiller | duty sheet: "N+1. 3. Material. 304L adsorber shells with silica-gel adsorbent beds and 316L chilled-water coils and" | docs-authority/duties/ADS_CHILL.md |
 | ALK_SCRUBBER | scrubber | packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) | sizing/HOUSE_SCRUBBERS.md |

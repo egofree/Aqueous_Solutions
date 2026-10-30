@@ -253,6 +253,9 @@ nodes:
   - id: POLYMERS.fluoropolymer-train.HF_GEN
     parent: POLYMERS.fluoropolymer-train
     unit_id: HF_GEN
+  - id: POLYMERS.fluoropolymer-train.ACID_PLANT
+    parent: POLYMERS.fluoropolymer-train
+    unit_id: ACID_PLANT
   - id: POLYMERS.fluoropolymer-train.VDF_SYN
     parent: POLYMERS.fluoropolymer-train
     unit_id: VDF_SYN

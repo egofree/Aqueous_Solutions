@@ -37,7 +37,7 @@ Table 2.1. Design parameters
 | hf_kg_d | 1.67375 |
 | cake_kg_d | 0.575554 |
 | drive_kW | 0.37 |
-| feed | dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate |
+| feed | dock acid-spar 97 % CaF2 + 98 wt% H2SO4 from ACID_PLANT + F_RECOVER concentrate |
 | material | carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts |
 | duty_kW | 0.3083 |
 

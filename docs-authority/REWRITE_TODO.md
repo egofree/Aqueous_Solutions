@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AI
+Revision: AJ
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -41,6 +41,7 @@ Date: 2026-10-29
 | AG | Batch 30: retired routes leave the line list, and their isometric sheets are removed through the generator | 2026-10-29 |
 | AH | Batch 31: the CZ silicon is made on site (SI_REDUCE and the new SI_REFINE, A-M-419); the polysilicon import is retired; WAFER_FAB_EQUIPMENT revision G | 2026-10-29 |
 | AI | Batch 32: water make-up allowed as a natural resource; Ti, Mo and Cr carbon reductant from plant char (A-M-420) | 2026-10-29 |
+| AJ | Batch 33: sulfuric acid made on site by ACID_PLANT from the HF kiln cake and native sulfur ore (A-M-421) | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -194,6 +195,7 @@ Table 2.1. Pages rewritten in full
 | `docs-authority/_line_list.py`, `docs-authority/_iso_sheets.py` | Retired routes are skipped, and a sheet whose line left the line list is removed; five sheets of retired routes gone (owner decision 2026-10-29). |
 | `flow_graph/param/si_refine.py` (A-M-419) | New: quartz reduction and chlorosilane refining sized from the CZ charge, with a selectable backup of a different technology; IA-SI-IMPORT retired; other imports that break the rule listed as X-RTE-IMPORT tasks (owner decision t58u). |
 | `flow_graph/param/foundry_poly.py` (A-M-420) | The chlorinator carbon is plant pyrolysis char from OIL_PYRO, sized from the carbon need over its fixed carbon; the petcoke imports are gone; water make-up is allowed and the baseline site profile lists its water sources. |
+| `flow_graph/param/sulfuric.py` (A-M-421) | New: ACID_PLANT makes the HF kiln acid on the contact process; the kiln cake is reduced with plant char and the rest of the sulfur is native sulfur ore, with a sulfur-ore-only route selectable; IA-H2SO4-MU retired (owner decision t59u). |
 
 ## 3. In progress
 

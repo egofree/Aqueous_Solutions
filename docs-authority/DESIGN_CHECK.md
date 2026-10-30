@@ -22,16 +22,16 @@ Table 2.1. Closed-form checks
 
 | Check | Module | Item | Model | Independent | Tol | Result |
 |---|---|---|---|---|---|---|
-| QC-01 | `flow_graph/param/balance.py` | mass balance, 109 units (in = out) | 109 | 109 | 1 % per unit | pass |
+| QC-01 | `flow_graph/param/balance.py` | mass balance, 110 units (in = out) | 110 | 110 | 1 % per unit | pass |
 | QC-02 | `flow_graph/param/water_tower.py` | hydro ideal energy kWh = rho g V h | 266.3 | 266.3241 | 1 % | pass |
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_H2 pressure-design wall mm | 10.1559 | 10.1559 | 2 % | pass |
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_O2 pressure-design wall mm | 10.1559 | 10.1559 | 2 % | pass |
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_CO2 pressure-design wall mm | 1.085 | 1.085 | 2 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_A stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_B stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
-| QC-05 | `flow_graph/param/write_graph.py` | kW of the 67 feeder-supplied units: node continuous kW vs SF- feeder edges | 134.3683 | 134.3683 | 1 % | pass |
+| QC-05 | `flow_graph/param/write_graph.py` | kW of the 68 feeder-supplied units: node continuous kW vs SF- feeder edges | 135.3337 | 135.3337 | 1 % | pass |
 | QC-06 | `docs-authority/_struct_loads.py` | equipment rows with test >= operating >= empty | 179 | 179 | 0 % | pass |
-| QC-07 | `flow_graph/param/write_graph.py` | stream compositions sum to 1 and match their note (174 streams) | 174 | 174 | 2 % | pass |
+| QC-07 | `flow_graph/param/write_graph.py` | stream compositions sum to 1 and match their note (182 streams) | 182 | 182 | 2 % | pass |
 | QC-09 | `flow_graph/param/receivers.py` | H2 bank kg at 200 bar vs the sized store (AQS-ELEC-007 / X-PAR-12 basis in the graph) | 17 | 17.406 | 5 % | pass |
 | QC-12 | `docs-authority/HEAT_LADDER.md` | Q1_A oil kWh over 80 K (basis 10 kWh) | 10.0 | 12.4667 | 30 % | pass |
 | QC-16 | `flow_graph/param/water_tower.py` | hydro head m, upper to lower water centroid | 36.2119 | 35.9119 | 3 % | pass |
@@ -64,4 +64,4 @@ The checks have found and led to the correction of the following errors.
 
 ## 4. Review status of the calculation modules
 
-The record covers 174 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 166 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.
+The record covers 175 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 167 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.

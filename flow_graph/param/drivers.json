@@ -4805,6 +4805,41 @@
   "units": "kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured)",
   "register": "A-M-417"
  },
+ "h2so4_route": {
+  "value": "GYPSUM_LOOP",
+  "units": "- sulfuric acid route: GYPSUM_LOOP (HF kiln cake reduced with char to SO2, sulfur ore make-up) or SULFUR_ORE (native sulfur ore burned), both on a contact converter",
+  "register": "A-M-421"
+ },
+ "caso4_dec_frac": {
+  "value": 0.9,
+  "units": "- fraction of the anhydrite in the HF kiln cake reduced to SO2 in the cake kiln (reductive decomposition class)",
+  "register": "A-M-421"
+ },
+ "caso4_kiln_T_C": {
+  "value": 1150.0,
+  "units": "C cake kiln temperature for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2",
+  "register": "A-M-421"
+ },
+ "caso4_kiln_D_mm": {
+  "value": 150.0,
+  "units": "mm bore of the small electrically heated cake kiln tube (the HF kiln class at this throughput)",
+  "register": "A-M-421"
+ },
+ "caso4_kiln_L_m": {
+  "value": 1.0,
+  "units": "m heated length of the cake kiln tube",
+  "register": "A-M-421"
+ },
+ "caso4_dHrxn_kJ_mol": {
+  "value": 303.0,
+  "units": "kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197)",
+  "register": "A-M-421"
+ },
+ "caso4_feed_cp_kJ_kgK": {
+  "value": 0.9,
+  "units": "kJ/kg K mean heat capacity of the cake and char feed to the kiln temperature",
+  "register": "A-M-421"
+ },
  "char_fixed_C_frac": {
   "value": 0.85,
   "units": "- fixed-carbon mass fraction of the OIL_PYRO char used as the Ti, Mo and Cr chlorinator reductant (pyrolysis char class; the volatiles and ash leave with the chlorinator gas)",

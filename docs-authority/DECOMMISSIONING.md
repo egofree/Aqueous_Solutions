@@ -9,7 +9,7 @@ Order: process systems first, utilities last (reverse of AQS-COM-001), so power,
 
 | Step | System | Units | Drain (t) | Chemicals drained | Purge | Dismantled (t) |
 |---|---|---|---|---|---|---|
-| 1 | POLYMERS | 10 | 0.00 | C5-C10 | - | 0.00 |
+| 1 | POLYMERS | 11 | 0.00 | C, C5-C10, CaSO4, H2O, H2SO4, O2, S | N2/air to 19.5-23.5 % O2 | 0.00 |
 | 2 | FOUNDRY | 27 | 0.00 | Si | - | 0.00 |
 | 3 | FAB | 16 | 2.77 | Ar, Fe, HCl, N2, O2, Si, other_metals, solute | N2/air to 19.5-23.5 % O2; air purge | 1.75 |
 | 4 | MFG | 10 | 0.00 | Cu, Pb/Sn/Ni/Cd/Zn, blend, hydrocarbon, metal, solute | N2 to < 25 % LFL | 2.00 |

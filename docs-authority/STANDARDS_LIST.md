@@ -15,7 +15,7 @@ Authority: task X-BAS-04 of AQS-PLAN-007. Jurisdiction: USA (AQS-STD-003, AQS-HS
 
 This list gives the codes and standards that the project cites, grouped by discipline. It is built from the register of references in `flow_graph/param/refs.py`: every key there that names a code or standard is listed, with the number of repository files that cite it and up to three of those files. A key that no file cites yet is marked as registered but not cited.
 
-The list has 144 codes and standards in 9 disciplines; every one is cited by at least one file. Quantities are in SI units, with US customary units only where a code states them, such as NEC conductor sizes and ASME B16.5 pressure classes.
+The list has 145 codes and standards in 9 disciplines; every one is cited by at least one file. Quantities are in SI units, with US customary units only where a code states them, such as NEC conductor sizes and ASME B16.5 pressure classes.
 
 ## 2. Pressure equipment and piping
 
@@ -112,6 +112,7 @@ Table 4.1. Electrical
 | UL891 | UL 891, Switchboards (12th ed., 2019). | 6 | docs-authority/BUSBAR.md, docs-authority/PARAMETRIC_MODEL.md, docs-authority/_cable_schedule.py |
 | ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters | 32 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/BALANCE_RECONCILIATION.md, docs-authority/INTERNALS.md |
 | ULLMANN_GLYOXAL | Mattioda G., Blanc A., Glyoxal, Ullmann's Encyclopedia of Industrial Chemistry (2011), doi | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
+| ULLMANN_H2SO4 | Mueller H., Sulfuric Acid and Sulfur Trioxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 10 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/duties/EVAP_ACID.md |
 | ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds) | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/MATERIALS_STD.md |

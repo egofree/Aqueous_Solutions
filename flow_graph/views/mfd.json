@@ -1315,7 +1315,7 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3046.0,
+        "vs_znbr2_kwh": 3059.0,
         "fraction_of_znbr2_study": 0.07,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -1643,7 +1643,6 @@
             "IA-C19-SHIP": 2.218,
             "IA-O2-SHIP": 22.884,
             "IA-MEOH-SHIP": 28.029,
-            "IA-GYPSUM-SHIP": 0.576,
             "IA-CL2-SHIP": 39.206,
             "IA-CA-CL2-SHIP": 0.097,
             "IA-KROLL-CO": 0.629,
@@ -1652,14 +1651,14 @@
             "IA-BURNOUT-VENT": 0.2,
             "IA-SHELL-EXPORT": 1.0,
             "IA-METAL-SHIP": 10.812,
-            "IA-FAB-PRODUCT": 0.139
+            "IA-FAB-PRODUCT": 0.139,
+            "IA-LIME-SHIP": 0.299
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.563,
+            "IA-H2O-MU": 64.587,
             "IA-NAOH-MU": 4.394,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
-            "IA-H2SO4-MU": 0.404,
             "IA-ALCL3-MU": 49.419,
             "IA-MGCL2-MU": 0.04,
             "IA-CACL2-MU": 0.152,
@@ -1668,10 +1667,11 @@
             "IA-CR2O3-MU": 0.365,
             "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
-            "IA-QUARTZ-MU": 0.718
+            "IA-QUARTZ-MU": 0.718,
+            "IA-SULFUR-MU": 0.018
           },
-          "net_kg_d": -0.53,
-          "residual_kg_d": -0.529,
+          "net_kg_d": -0.445,
+          "residual_kg_d": -0.445,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -2170,25 +2170,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 217.5226,
+        "value": 218.4826,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.5 kW, charge 988.7 kW, 3045 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.5 kW, charge 993.1 kW, 3059 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 989,
-        "kWh": 3046,
+        "kW": 994,
+        "kWh": 3059,
         "presence": "present",
-        "charge_kW": 989,
-        "discharge_kW": 218,
+        "charge_kW": 994,
+        "discharge_kW": 219,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 42 hybrid inverters, 72.5 kWh and 23.5 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 43 hybrid inverters, 71.1 kWh and 23.1 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.721,
-          "purge_m3_h": 32.17,
+          "H2_m3_d": 7.755,
+          "purge_m3_h": 32.31,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1992.0
+          "electrode_area_m2": 2000.8
         }
       }
     },
@@ -2803,7 +2803,7 @@
       "forbidden": "pyro if FR-4",
       "claim_status": "Closed",
       "rate": {
-        "value": 11.660798,
+        "value": 11.636366,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
@@ -3862,10 +3862,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 914.066378,
+        "value": 918.100458,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.57 + open-circuit 1.15 m3/d H2 on 4350 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.3 m3/h holds H2 at 25 % LFL: HER 6.60 + open-circuit 1.15 m3/d H2 on 4370 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -3885,7 +3885,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 914.066378,
+        "value": 918.100458,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."

@@ -18,7 +18,7 @@ At end of life each part goes back into the plant as feed of its class, through 
 | Feed class | BOM lines | Share |
 |---|---|---|
 | metal_plateable | 626 | 47 % |
-| organic | 511 | 38 % |
+| organic | 513 | 39 % |
 | metal_reactive | 81 | 6 % |
 | silicate_oxide | 60 | 5 % |
 | unassigned | 51 | 4 % |
@@ -29,7 +29,7 @@ Unassigned: 51 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a n
 
 | Reason | Lines |
 |---|---|
-| fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 84 |
+| fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 86 |
 | held - material not identified on the line | 48 |
 | Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 25 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
@@ -46,6 +46,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | ABE | 0 | 6 | 0 | 0 | 0 |
 | ACETOX | 0 | 6 | 0 | 0 | 0 |
 | ACEX | 0 | 6 | 0 | 0 | 0 |
+| ACID_PLANT | 0 | 2 | 0 | 0 | 0 |
 | ACID_POLISH_SCRUB | 0 | 3 | 0 | 0 | 0 |
 | ADS_CHILL | 0 | 1 | 0 | 0 | 0 |
 | AFTERBURNER | 2 | 0 | 0 | 0 | 0 |
@@ -208,7 +209,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | MET_HX_Q4 | 1 | 0 | 0 | 0 | 0 |
 | MET_MELT | 0 | 3 | 0 | 0 | 0 |
 | MET_SCRUB | 0 | 4 | 0 | 0 | 0 |
-| MF-01 x 109 | 3 | 1 | 2 | 0 | 0 |
+| MF-01 x 111 | 3 | 1 | 2 | 0 | 0 |
 | MF-02 x 56 | 3 | 1 | 2 | 0 | 0 |
 | MF-03 x 27 | 5 | 1 | 2 | 0 | 0 |
 | MF-04 x 0 | 5 | 0 | 1 | 0 | 0 |

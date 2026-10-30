@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: none. Out: IA-GW-MAKEUP 0 kg/d (groundwater make-up, reverse-osmosis treated).
+1. Basis. Mass in 0 kg/d. Mass out 0.08076 kg/d. Electrical duty 0.0000 kW. In: none. Out: IA-GW-MAKEUP 0 kg/d (groundwater make-up, reverse-osmosis treated); IA-ACID-H2O 0.08076 kg/d (well water for SO3 absorption and dilution to 98 wt%).
 
 2. Size.
 - Envelope 900×700×1800 mm, 1.134 m³.

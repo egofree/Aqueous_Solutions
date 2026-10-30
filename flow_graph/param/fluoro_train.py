@@ -2,9 +2,8 @@
 
 Runs AFTER flow_graph.param.foundry_poly in each regen graph pass and turns the F-blocked standby train live:
 
-  F source  : dock-imported fluorspar (acid-spar class >= 97 % CaF2) + 98 wt% H2SO4 -> HF_GEN rotary kiln
-              (ULLMANN_HF), under the D-DOCK feedstock-import ruling (2026-10-19). The plant acid loop is HCl
-              (BMED), so no on-site H2SO4 exists at this scope; the acid imports on the NaOH-flake precedent.
+  F source  : dock-imported fluorspar (acid-spar class >= 97 % CaF2, a raw ore) + 98 wt% H2SO4 -> HF_GEN rotary
+              kiln (ULLMANN_HF). The acid is made on site by ACID_PLANT (flow_graph/param/sulfuric.py, A-M-421).
   Recovery  : the digester fluoride (IA-HF-SRC, re-pointed LEACH -> F_RECOVER) and the POLY_F off-spec reclaim
               close the fluorine inventory through F_RECOVER -> HF_GEN (AQS-DUTY-FP section 2).
   Scale     : graph reagent draw S31 (1.5 kg/d aqueous HF, WET_BENCH fork) + the AQS-RATE-FP-MET seal/gasket
@@ -151,14 +150,13 @@ def apply(g=None, write=False):
     _mk(g, E, 'IA-CAF2-MU', 'NORTH_DOCK', 'HF_GEN', 'S', 'fluorspar make-up, acid-spar class >= 97 % CaF2', r['spar'],
         f'D-DOCK feedstock import (mining-waste class, 2026-10-19): {r["spar"]:.4f} kg/d acid-spar at 97 % CaF2 covers '
         f'the HF product beyond the recovered fluoride (ULLMANN_HF; {AM})')
-    _mk(g, E, 'IA-H2SO4-MU', 'NORTH_DOCK', 'HF_GEN', 'L', '98 wt% sulfuric acid make-up', r['acid_soln'],
-        f'Reagent import on the NaOH-flake precedent (IA-NAOH-MU): {r["acid_soln"]:.4f} kg/d chamber acid at 98 wt%, '
-        f'{DR.val(d, FP + "hf_kiln.H2SO4_stoich_frac"):.0%} of stoichiometric on the converted spar (ULLMANN_HF; {AM}). '
-        f'The plant acid loop is HCl (BMED); no on-site H2SO4 exists at this scope.')
     _mk(g, E, 'IA-GYPSUM-SHIP', 'HF_GEN', 'NORTH_DOCK', 'S', 'fluorgypsum (anhydrite) cake byproduct', r['cake'],
         f'Kiln cake by difference = spar + acid + concentrate - HF product: anhydrite '
         f'{r["caf2_conv"] * M_CASO4 / M_CAF2:.3f} kg/d with unreacted spar, excess acid, gangue and moisture '
         f'(ULLMANN_HF); reported as a dock byproduct export (D-DOCK).')
+    # the 98 wt% acid is made on site by ACID_PLANT; on its default route the kiln cake goes there instead of the dock (A-M-421)
+    from flow_graph.param import sulfuric
+    sulfuric.tf(g, E, r, d)
     _mk(g, E, 'IA-HF-PROD', 'HF_GEN', 'WS_HF_ED', 'L', 'aqueous HF to the fab reagent fork', r['hf_ed'],
         f'HF_GEN supplies the reagent fork at the S31 draw {r["hf_ed"]:.3f} kg/d (AQS-DUTY-FP sec. 2: product to the '
         f'monomer units and the direct HF users; replaces the direct leach feed of IA-HF-SRC, which now runs through F_RECOVER)')
@@ -231,7 +229,7 @@ def stamp(g, r):
              slope_deg=2.0, rpm=4, residence_min=DR.val(d, FP + 'hf_kiln.residence_min'),
              T_C=kiln_T, spar_kg_d=r['spar'], acid_kg_d=r['acid_soln'], hf_kg_d=r['hf_prod'],
              cake_kg_d=r['cake'], drive_kW=0.37,
-             feed='dock acid-spar 97 % CaF2 + 98 wt% H2SO4 + F_RECOVER concentrate',
+             feed='dock acid-spar 97 % CaF2 + 98 wt% H2SO4 from ACID_PLANT + F_RECOVER concentrate',
              material='carbon steel shell, dry HF service (PERRY9_MAT); Monel trunnion inserts',
              duty_kW=r['hf_gen_kW']),
         f'kiln-class study minimum at the {r["hf_prod"]:.3f} kg/d HF duty (ULLMANN_HF; {AM}); tube 200 x 1200 mm, '

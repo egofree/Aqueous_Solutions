@@ -17,7 +17,7 @@ This page records the size of unit OIL_PYRO, of class `pyro` in sector OIL, from
 
 ## 2. Duty
 
-The unit takes 38.8733 kg/d by 2 streams and gives 38.8733 kg/d by 6 streams. Its continuous electrical load is 1.664 kW, fed by stream SF-OIL_PYRO.
+The unit takes 38.8733 kg/d by 2 streams and gives 38.8733 kg/d by 7 streams. Its continuous electrical load is 1.664 kW, fed by stream SF-OIL_PYRO.
 
 The graph holds no design parameters for the unit.
 

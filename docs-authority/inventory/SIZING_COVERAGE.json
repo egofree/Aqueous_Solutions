@@ -1,4 +1,9 @@
 {
+ "ACID_PLANT": {
+  "doc": "docs-authority/sizing/POLYMERS_LINE.md",
+  "docnum": "AQS-DUTY-073",
+  "family": "POLYMERS line (docs-authority/_polymers_sizing.py; transfer functions foundry_poly/fluoro_train)"
+ },
  "ACID_POLISH_SCRUB": {
   "doc": "docs-authority/sizing/HOUSE_SCRUBBERS.md",
   "docnum": "AQS-DUTY-079",

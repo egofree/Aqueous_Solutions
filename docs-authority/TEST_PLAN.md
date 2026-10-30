@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 470 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 471 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 666 items: 296 drivers, 370 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 667 items: 296 drivers, 371 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -682,6 +682,7 @@ Total 666 items: 296 drivers, 370 register entries. Classification rule: first m
 | A-M-418 | A standby feed route carries no flow on the design day and i kg/d, d, kg | python3 -m flow_graph.param.standby_routes; the rated rate equals the S57 rate and METAL_STORE holds the rated feed for the outage; IND_TO_ATOM is rated at the IA-MELT-ATOM rate and the IND_MELT outage heats fit the day | QA audit 2026-10-29, routes without flow (X-RTE) |
 | A-M-419 | The CZ charge is made on site (no imports except waste or ra kg/d, kWh/kg, fraction | python3 -m flow_graph.param.si_refine; the furnace and loop mass balances close and the electronic-grade output equals the CZ charge | QA audit 2026-10-29, on-site silicon (owner decision t58u) |
 | A-M-420 | The Ti, Mo and Cr chlorinators take their carbon reductant a kg/d, fraction | python3 -m flow_graph.param.regen; IA-C-TI, IA-C-MO and IA-C-CR leave OIL_PYRO at the carbon need over char_fixed_C_frac and the cell balances close | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
+| A-M-421 | The 98 wt% sulfuric acid for HF_GEN is made on site by ACID_ kg/d, fraction, C, mm, m, kJ/mol, kJ/kg K | python3 -m flow_graph.param.sulfuric; python3 -m flow_graph.param.regen; IA-H2SO4-MU is retired, IA-H2SO4-ACID carries the acid demand of HF_GEN, and the mass balance of ACID_PLANT closes (asserted in sulfuric.design). | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
 
 ## 7. T6 Commissioning measurements
 

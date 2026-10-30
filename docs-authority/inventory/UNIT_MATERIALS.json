@@ -1,5 +1,6 @@
 {
  "issued": [
+  "ACID_PLANT",
   "ACID_POLISH_SCRUB",
   "ADS_CHILL",
   "AFTERBURNER",
@@ -195,6 +196,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 325,
- "units": 193
+ "tot_wetted_rows": 328,
+ "units": 194
 }

@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1912 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1916 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -168,6 +168,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/ABE.md` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/duties/ACETOX.md` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/duties/ACEX.md` | 92cebc5 (regenerated, no change) | current |
+| `docs-authority/duties/ACID_PLANT.md` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/duties/ACID_POLISH_SCRUB.md` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/duties/ADS_CHILL.md` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/duties/AFTERBURNER.md` | 92cebc5 (regenerated, no change) | current |
@@ -801,6 +802,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/nozzles/ABE.csv` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/nozzles/ACETOX.csv` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/nozzles/ACEX.csv` | 92cebc5 (regenerated, no change) | current |
+| `docs-authority/nozzles/ACID_PLANT.csv` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/nozzles/ACID_POLISH_SCRUB.csv` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/nozzles/AFTERBURNER.csv` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/nozzles/AFTERBURNER_FLUE.csv` | 92cebc5 (regenerated, no change) | current |
@@ -1054,6 +1056,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/nozzles/YEAST.csv` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/nozzles/ZNBR2.csv` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/nozzles/ZNBR2_BR2_REGEN.csv` | 92cebc5 (regenerated, no change) | current |
+| `docs-authority/pid/ACID_PLANT.svg` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/pid/ACID_POLISH_SCRUB.svg` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/pid/ADS_CHILL.svg` | 92cebc5 (regenerated, no change) | current |
 | `docs-authority/pid/AFTERBURNER.svg` | 92cebc5 (regenerated, no change) | current |
@@ -1489,6 +1492,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/openscad/foam_ew/cut_list.csv` | 92cebc5 (regenerated, no change) | current |
 | `models/openscad/foam_ew/nest_sheet_1.png` | 92cebc5 (regenerated, no change) | current |
 | `models/openscad/foam_ew/nest_sheet_2.png` | 92cebc5 (regenerated, no change) | current |
+| `models/units/ACID_PLANT/itp.csv` | 92cebc5 (regenerated, no change) | current |
 | `models/units/ACID_POLISH_SCRUB/bom.csv` | 92cebc5 (regenerated, no change) | current |
 | `models/units/ACID_POLISH_SCRUB/itp.csv` | 92cebc5 (regenerated, no change) | current |
 | `models/units/ACID_POLISH_SCRUB/maint.csv` | 92cebc5 (regenerated, no change) | current |
