@@ -1640,6 +1640,15 @@
      "carries": "Li grease"
     },
     {
+     "stream_id": "IA-C5-COMB",
+     "from": "PROD_C5_C10",
+     "to": "COMB_HEAT",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "C5-C10 cut fuel for the fuel-fired melt backup"
+    },
+    {
      "stream_id": "IA-GREASE-AIR-LI",
      "from": "ATMOS",
      "to": "GREASE_LI",
@@ -3721,7 +3730,7 @@
      "other_sector": "FOUNDRY",
      "rate": 0.0,
      "unit": "kg/d",
-     "carries": "combustion off-gas when alternate used"
+     "carries": "combustion off-gas of the fuel-fired melt backup"
     },
     {
      "stream_id": "GREASE_LI_TO_MFG",
@@ -4190,7 +4199,7 @@
      "other_sector": "MFG",
      "rate": 0.0,
      "unit": "kg/d",
-     "carries": "combustion off-gas when alternate used"
+     "carries": "combustion off-gas of the fuel-fired melt backup"
     },
     {
      "stream_id": "CR_CELL_SLAG_RETURN",
@@ -4245,6 +4254,33 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "dense grit (ilmenite/rutile fraction)"
+    },
+    {
+     "stream_id": "IA-C5-COMB",
+     "from": "PROD_C5_C10",
+     "to": "COMB_HEAT",
+     "other_sector": "OIL",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "C5-C10 cut fuel for the fuel-fired melt backup"
+    },
+    {
+     "stream_id": "IA-COMB-O2",
+     "from": "ATMOS",
+     "to": "COMB_HEAT",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "oxygen of the combustion air of the fuel-fired melt backup"
+    },
+    {
+     "stream_id": "IA-MEOH-COMB",
+     "from": "MEOH_TANK",
+     "to": "COMB_HEAT",
+     "other_sector": "MEOH",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "plant methanol fuel for the fuel-fired melt backup"
     },
     {
      "stream_id": "IA-SI-IMPORT",
@@ -5907,6 +5943,15 @@
      "carries": "digester organics"
     },
     {
+     "stream_id": "IA-COMB-O2",
+     "from": "ATMOS",
+     "to": "COMB_HEAT",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "oxygen of the combustion air of the fuel-fired melt backup"
+    },
+    {
      "stream_id": "IA-DC-EVAP",
      "from": "DRY_COOLER",
      "to": "ATMOS",
@@ -7492,6 +7537,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "cell exhaust"
+    },
+    {
+     "stream_id": "IA-MEOH-COMB",
+     "from": "MEOH_TANK",
+     "to": "COMB_HEAT",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "plant methanol fuel for the fuel-fired melt backup"
     },
     {
      "stream_id": "IA-MTO-H2O",

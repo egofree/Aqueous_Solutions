@@ -205,7 +205,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | MG_POT_CL2 | MG_POT | CRU | G | mass,energy | retired | Cl2 return | 0.0 kg/d | — |
 | IND_HEAT_TO_HX | IND_MELT | MET_HX_Q4 | E | thermal | present | furnace coil + shell cooling water 40-60 C | 1.063 kW | — |
 | VAC_HEAT_TO_HX | VAC_IND | MET_HX_Q4 | E | thermal | present | furnace coil + shell cooling water 40-60 C | 0.638 kW | — |
-| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | G | mass,energy | retired | combustion off-gas when alternate used | 0.0 kg/d | — |
+| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | G | mass,energy | present | combustion off-gas of the fuel-fired melt backup | 0.0 kg/d | — |
 | STOCK_TO_WIRE_DRAW | METAL_STORE | WIRE_DRAW | S | mass | present | rod/wire for final sizing | 0.0 kg/d | — |
 | IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | L | mass | present | melt to atomizer when powder required | 0.0 kg/d | — |
 | ATOM_TO_STOCK | GAS_ATOMIZER | STOCK_OUT | S | mass | retired | powder stock | 0.0 kg/d | — |
@@ -664,3 +664,6 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-PV-WAFER | WAFER_FAB | SOLAR_PV_CELL | S | mass | present | solar wafers to the cell line, from the CZ ingot or the cast block by pv_wafer_route | 0.484615 kg/d | — |
 | IA-PV-CELL | SOLAR_PV_CELL | PV_ARRAY | S | mass | present | finished cells to the replacement modules of the roof array | 0.484615 kg/d | — |
 | IA-PV-EOL | PV_ARRAY | SI_REFINE | S | mass | present | silicon of the cells retired from end-of-life modules, crushed, to the chlorosilane loop | 0.484615 kg/d | — |
+| IA-C5-COMB | PROD_C5_C10 | COMB_HEAT | L | mass,energy | present | C5-C10 cut fuel for the fuel-fired melt backup | 0.0 kg/d | — |
+| IA-MEOH-COMB | MEOH_TANK | COMB_HEAT | L | mass,energy | present | plant methanol fuel for the fuel-fired melt backup | 0.0 kg/d | — |
+| IA-COMB-O2 | ATMOS | COMB_HEAT | G | mass,energy | present | oxygen of the combustion air of the fuel-fired melt backup | 0.0 kg/d | — |

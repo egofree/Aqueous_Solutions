@@ -3025,13 +3025,16 @@
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
           "connected_kW": 30.0,
-          "backup_of": "IND_MELT (tertiary, fuel-fired C5-C10 class)",
-          "outage_basis": "long IND_MELT outage with both electric alternates unavailable (A-M-282); off-gas to MET_SCRUB when energized",
+          "backup_of": "IND_MELT (third melt path, fuel-fired; the one path independent of the electrical supply of IND_MELT and RF_HEAT)",
+          "outage_basis": "IND_MELT and RF_HEAT both out, for standby_outage_d (A-M-283, A-M-418, A-M-438)",
           "size_mm": [
             1000,
             1000,
             1500
-          ]
+          ],
+          "fuel": "C5C10",
+          "rated_fuel_kg_d": 7.4354,
+          "rated_fuel_kWh_d": 90.712
         },
         "design": {
           "service": "combustion reheating furnace (C5-C10 fuel class), tertiary N+1 of IND_MELT",

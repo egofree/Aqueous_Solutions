@@ -55,6 +55,7 @@ def physics(g):
     from flow_graph.param import ess_tf; ess_tf.tf(g)
     from flow_graph.param import fab_silicon; fab_silicon.tf(g)     # X-MFG-40: fab silicon feed and CZ argon loop (A-M-417)
     from flow_graph.param import si_refine; si_refine.tf(g)         # X-RTE-SI: on-site silicon reduction and refining for the CZ charge (A-M-419)
+    from flow_graph.param import comb_heat; comb_heat.ensure(g)          # X-RTE-COMB-HEAT-FUEL: fuel, oxygen and off-gas routes of COMB_HEAT (A-M-438)
     from flow_graph.param import standby_routes; standby_routes.tf(g)   # X-RTE: standby feed routes at their rated case (A-M-418)
     o2_close.patch(g); o2_close.tf(g)
     E = {e['stream_id']: e for e in g['edges']}

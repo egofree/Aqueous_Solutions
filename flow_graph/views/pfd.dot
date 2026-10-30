@@ -915,4 +915,7 @@ digraph G {
   "WAFER_FAB" -> "SOLAR_PV_CELL" [label="IA-PV-WAFER\\n0.484615 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOLAR_PV_CELL" -> "PV_ARRAY" [label="IA-PV-CELL\\n0.484615 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PV_ARRAY" -> "SI_REFINE" [label="IA-PV-EOL\\n0.484615 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PROD_C5_C10" -> "COMB_HEAT" [label="IA-C5-COMB\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MEOH_TANK" -> "COMB_HEAT" [label="IA-MEOH-COMB\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "ATMOS" -> "COMB_HEAT" [label="IA-COMB-O2\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

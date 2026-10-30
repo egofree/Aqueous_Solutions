@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 36 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 64 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 500 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 502 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 703 items: 318 drivers, 385 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 705 items: 319 drivers, 386 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -288,6 +288,7 @@ Total 703 items: 318 drivers, 385 register entries. Classification rule: first m
 | driver cb_chiller_COP | 2.5 - condenser chiller at -25 C evaporating | Chiller COP on the first article | X-PAR |
 | driver cb_dH_ads_kJ_mol | 36.0 kJ/mol CO2 on 13X | Regeneration energy measured on the first bed (X-MFG-33) | X-PAR |
 | driver cb_getter_W | 100.0 W heated Ar getter (Ar return from WAFER_FAB) | Getter heater power at temperature | X-PAR |
+| driver comb_crucible_eta | 0.13 - share of the fuel heat that a fuel-fired crucible furnace passes to the metal, the middle of the published range of 7 to 19 % | measure the fuel burned per kilogram melted on the first heats of COMB_HEAT | X-PAR |
 | driver combustion_excess_O2 | 1.1 - | see A-M-133 | X-PAR |
 | driver cp_hcl20_kJ_kgK | 3.0 kJ/(kg K) | Check against the Perry sec. 2 aqueous HCl heat-capacity table at 20 wt% and 60 C | X-PAR |
 | driver cp_naoh20_kJ_kgK | 3.6 kJ/(kg K) | Check against the Perry sec. 2 aqueous NaOH heat-capacity table at 20 wt% and 60 C | X-PAR |
@@ -719,6 +720,7 @@ Total 703 items: 318 drivers, 385 register entries. Classification rule: first m
 | A-M-431 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. | QA audit 2026-10-30, X-RTE-AL_POT_CL2 |
 | A-M-432 | POLY_TO_FAB carries the wafer-fab photoresist, sized from th kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-30, X-RTE-POLY_TO_FAB |
 | A-M-436 | The heater duty of the CZ hot zone in WAFER_FAB is found fro kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model | QA audit 2026-10-30, X-RTE-CZ-HOTZONE |
+| A-M-438 | COMB_HEAT, the fuel-fired melt backup of IND_MELT, is kept a kg/d | measure the fuel burned per kilogram melted on the first heats of COMB_HEAT and compare with the rated fuel | QA audit 2026-10-30, X-RTE-COMB-HEAT-FUEL |
 
 ## 7. T6 Commissioning measurements
 

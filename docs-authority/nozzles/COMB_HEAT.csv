@@ -2,3 +2,7 @@ tag,size,rating,service,face,height_mm
 N1,DN15,Class 150,combustion off-gas when alternate used,outlet,600
 N2,DN15,Class 150,drain,bottom,50
 N3,DN15,Class 150,vent,top,800
+N4,DN15,Class 150,combustion off-gas of the fuel-fired melt backup,outlet,600
+N5,DN15,Class 150,C5-C10 cut fuel for the fuel-fired melt backup,inlet,160
+N6,DN15,Class 150,plant methanol fuel for the fuel-fired melt backup,inlet,160
+N7,DN15,Class 150,oxygen of the combustion air of the fuel-fired melt backup,inlet,160

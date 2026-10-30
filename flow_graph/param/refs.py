@@ -339,6 +339,8 @@ REFS = {
  'ITRPV2020': 'International Technology Roadmap for Photovoltaic, 11th edition (2020), German Engineering Federation: wafer formats and thickness, kerf, and cell efficiencies of screen-printed cells.',
  'LAN2017': 'Lan C.W. and co-authors, The emergence of high-performance multi-crystalline silicon in photovoltaics, Journal of Crystal Growth 468 (2017) 17-23: directional solidification of silicon blocks, growth rate, gradient and the cropped zones.',
  'SEMI_E1': 'SEMI E1, Specification for 3 inch, 100 mm, 125 mm and 150 mm plastic and metal wafer carriers: the 25-wafer carrier.',
+ 'BCS2005': 'BCS Incorporated for the U.S. Department of Energy, Advanced Melting Technologies: Energy Saving Concepts and Opportunities for the Metal Casting Industry (2005): melting efficiencies by furnace type, 7 to 19 % for fuel-fired crucible furnaces.',
+ 'DOE_PHS2016': 'U.S. Department of Energy, Improving Process Heating System Performance: A Sourcebook for Industry, 3rd ed. (2016): burner excess air of about 10 to 20 % for liquid and gaseous fuels.',
 }
 
 def cite(k):

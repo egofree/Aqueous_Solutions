@@ -2124,6 +2124,25 @@
   "units": "d outage of a primary unit that a standby feed route covers; the N+1 outage basis of the foundry melt backups (A-M-283)",
   "register": "A-M-418"
  },
+ "comb_heat_fuel": {
+  "value": "C5C10",
+  "units": "- fuel of the fuel-fired melt backup COMB_HEAT: C5C10 (the C5-C10 cut from PROD_C5_C10) or MEOH (plant methanol from MEOH_TANK); the selected fuel is held in its store for the outage",
+  "register": "A-M-438"
+ },
+ "comb_crucible_eta": {
+  "value": 0.13,
+  "units": "- share of the fuel heat that a fuel-fired crucible furnace passes to the metal, the middle of the published range of 7 to 19 %",
+  "register": "A-M-438",
+  "ref": "BCS2005",
+  "needs_verification": true,
+  "verification_test": "measure the fuel burned per kilogram melted on the first heats of COMB_HEAT"
+ },
+ "comb_excess_air": {
+  "value": 0.15,
+  "units": "- combustion air above the stoichiometric need of a liquid-fuel burner, as a share of it",
+  "register": "A-M-438",
+  "ref": "DOE_PHS2016"
+ },
  "cast_gating_return_frac": {
   "value": 0.15,
   "units": "-",

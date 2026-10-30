@@ -801,7 +801,7 @@ MEOH_COND,Process nozzle DN15,4,316L shell and coil (methanol/water traces) (gra
 MEOH_FC,Body / envelope 1800 x 800 x 1600 mm,1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 MEOH_FC,Process nozzle DN15,6,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 MEOH_TANK,Body / envelope 600 x 600 x 600 mm,1,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-MEOH_TANK,Process nozzle DN15,9,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+MEOH_TANK,Process nozzle DN15,10,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 MEOH_TANK,Process nozzle DN50,1,"SA-240 304L, welded (graph node material).",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 METAL_STORE,Body / envelope 800 x 800 x 950 mm,1,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
 METAL_STORE,Process nozzle DN15,6,PE (rotomoulded / fabricated) (graph node material).,Unstated,-,not classed: PE (rotomoulded / fabricated) (graph nod
@@ -814,7 +814,7 @@ MET_MELT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Graphi
 MET_MELT,Process nozzle DN15,4,Graphite or refractory on the hot face.,Closed,GLASS / silicate melt,
 MET_MELT,Process nozzle DN50,1,Graphite or refractory on the hot face.,Closed,GLASS / silicate melt,
 MET_SCRUB,Body D800 x 3803 mm,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-MET_SCRUB,Process nozzle DN15,4,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+MET_SCRUB,Process nozzle DN15,5,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 MET_SCRUB,Process nozzle DN50,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 MET_SCRUB,Process nozzle DN300,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 MFG_SHOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -880,7 +880,7 @@ PROD_C19_C28,Process nozzle DN15,6,Carbon steel.,Closed,Fe EW -> MET_MELT -> mil
 PROD_C29,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_C29,Process nozzle DN15,2,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_C5_C10,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
-PROD_C5_C10,Process nozzle DN15,5,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
+PROD_C5_C10,Process nozzle DN15,6,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 P_CA,Body / envelope per duty sheet section 2 (not yet dimensioned),1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housin,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 P_CA,Process nozzle DN15,4,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housin,Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 Q1_A,Body D650 x 950 mm,1,"Carbon steel, ASTM A106 Gr B, welded, spiral-wound 304/graphite gaskets; synthet",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train

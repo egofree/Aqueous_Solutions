@@ -6,3 +6,4 @@ N4,DN15,Class 150,C5-C10 fuel from the tank,outlet,600
 N5,DN15,Class 150,C5-C10 product shipped,outlet,600
 N6,DN15,Class 150,C5-C10 naphtha olefin feed,outlet,600
 N7,DN15,Class 150,C5-C10 cut to the benzene extraction,outlet,600
+N8,DN15,Class 150,C5-C10 cut fuel for the fuel-fired melt backup,outlet,600

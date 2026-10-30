@@ -17,7 +17,7 @@ This page records the size of unit COMB_HEAT, of class `furnace` in sector FOUND
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 0.05 kW, fed by stream SF-COMB_HEAT.
+The unit takes 0 kg/d by 3 streams and gives 0 kg/d by 1 stream. Its continuous electrical load is 0.05 kW, fed by stream SF-COMB_HEAT.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

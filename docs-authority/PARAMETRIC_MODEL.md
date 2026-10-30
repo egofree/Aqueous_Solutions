@@ -198,7 +198,7 @@ Table 7.6. Photoresist streams at the present wafer starts
 
 ## 8. Drivers
 
-Table 8.1 lists the 1003 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 1006 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -536,6 +536,9 @@ Table 8.1. Drivers
 | atom_Cd | 0.8 | - discharge coefficient of the melt nozzle | A-M-416 | — |
 | atom_melt_rho_kg_m3 | 8000.0 | kg/m3 density of the atomised melt (Cu, Ni, Sn, Pb, Zn blend class) | A-M-416 | — |
 | standby_outage_d | 2.0 | d outage of a primary unit that a standby feed route covers; the N+1 outage basis of the foundry melt backups (A-M-283) | A-M-418 | — |
+| comb_heat_fuel | "C5C10" | - fuel of the fuel-fired melt backup COMB_HEAT: C5C10 (the C5-C10 cut from PROD_C5_C10) or MEOH (plant methanol from MEOH_TANK); the selected fuel is held in its store for the outage | A-M-438 | — |
+| comb_crucible_eta | 0.13 | - share of the fuel heat that a fuel-fired crucible furnace passes to the metal, the middle of the published range of 7 to 19 % | BCS2005 | yes |
+| comb_excess_air | 0.15 | - combustion air above the stoichiometric need of a liquid-fuel burner, as a share of it | DOE_PHS2016 | — |
 | cast_gating_return_frac | 0.15 | - | ASM_V15_PM | yes |
 | olefin_feed_route | "NAPHTHA" | - polyolefin feed of POLY_OLEFIN: NAPHTHA (the C5-C10 cut oligomerised, drawn on IA-C5-POLY) or MTO (plant methanol from MEOH_TANK on MEOH_TO_OLEFIN, reaction water to MEOH_COND on IA-MTO-H2O) | A-M-435 | — |
 | atom_store_bar | 50.0 | bar argon receiver charge pressure; it discharges to the nozzle supply pressure atom_P_bar during a pour | A-M-416 | — |
@@ -1287,6 +1290,7 @@ Table 9.1. References
 | AWWA_D100_2021 | AWWA D100-21, Welded Carbon Steel Tanks for Water Storage: elevated and ground tanks, wind and seismic design. |
 | BAI2008 | Bai, F.W., Anderson, W.A., Moo-Young, M. (2008) Ethanol fermentation technologies from sugar and starch feedstocks, Biotechnology Advances 26, 89-105: batch yeast ethanol fermentation 48-72 h at 30-35 C. |
 | BAKER2012 | Baker R.W., Membrane Technology and Applications, 3rd ed., Wiley (2012), ch. 5 reverse osmosis: solution-diffusion flux J = A (dP - d pi); thin-film composite brackish-water membranes, water permeance about 3-5 L/(m2 h bar); osmotic pressure by van t Hoff pi = i c R T. |
+| BCS2005 | BCS Incorporated for the U.S. Department of Energy, Advanced Melting Technologies: Energy Saving Concepts and Opportunities for the Metal Casting Industry (2005): melting efficiencies by furnace type, 7 to 19 % for fuel-fired crucible furnaces. |
 | BVAD2022 | Anderson M.S. et al., Life Support Baseline Values and Assumptions Document, NASA/TP-2015-218570 Rev 2 (Feb 2022), Tables 4-90 and 4-91: per-crop harvest index, edible and inedible productivity and water content (inedible 90 % water), carbon content, O2 production, CO2 uptake and transpiration (tomato HI 45 %, edible 94 % water, C 43 %, CO2 36.24 g/m2/d, transpiration 2.77 kg/m2/d). |
 | CAMEO_REACT | NOAA CAMEO Chemicals reactivity groups: Peroxides, inorganic (H2O2) incompatible with Bases (KOH, NH3 aq) and with Hydrocarbons/solvents; Acids, strong oxidizing (HNO3) incompatible with Bases and Amines; Acids, strong non-oxidizing (HF, H3PO4) incompatible with Bases. |
 | CARLETON_HCL_2023 | Carleton University thesis, HCl leaching of lunar regolith simulant, doi:10.22215/etd/2023-15477: 38 % HCl, 90-108 C, 4 h, 150 % of stoichiometric acid. |
@@ -1320,6 +1324,7 @@ Table 9.1. References
 | DING2018_CL_REVIEW | Ding W., Bonk A., Bauer T., Corrosion behavior of metallic alloys in molten chloride salts for thermal energy storage in concentrated solar power plants - A review, Frontiers of Chemical Science and Engineering 12(3) (2018) 564-576, DOI 10.1007/s11705-018-1720-0: molten-chloride hot-salt corrosion of Fe-Cr-Ni alloys 600-750 C, Cr-selective loss, impurity (oxyhydride/oxygen) driven attack, Mg-anode salt purification, and the emerging NaCl/KCl/MgCl2 ternary at 700 C. |
 | DING2021_ENG | Ding W., Bauer T., Progress in Research and Development of Molten Chloride Salt Technology for Next Generation Concentrated Solar Power Plants, Engineering 7 (2021) 334-347, DOI 10.1016/j.eng.2020.06.027: chloride-salt technology review above 650 C including corrosion control of structural alloys in molten chloride salts (alloy class and purification strategies). |
 | DOE_H2_COMP | Standard isothermal ideal-gas compression work W = (R T / M) ln(P2/P1), e.g. Perry's 9th ed. sec. 10; efficiency from the in-house compressor design and bench run (X-MFG-36). |
+| DOE_PHS2016 | U.S. Department of Energy, Improving Process Heating System Performance: A Sourcebook for Industry, 3rd ed. (2016): burner excess air of about 10 to 20 % for liquid and gaseous fuels. |
 | DOE_PSH | U.S. Department of Energy, Water Power Technologies Office, Pumped Storage Hydropower (energy.gov/eere/water/pumped-storage-hydropower, accessed 2026-10-15): round-trip efficiency 70-80 %. |
 | DVS2205 | DVS 2205-1 (2015) design of thermoplastic tanks: hoop stress from hydrostatic head with long-term creep factors; allowable stress CPVC and PVC-U at temperature. |
 | DVS_2207 | DVS 2207-1 (PE), DVS 2207-11 (PP) and DVS 2207-15 (PVDF), Welding of thermoplastics - heated tool welding of pipes, pipeline components and sheets: heater temperature, bead-up and joining pressure, heat-soak and cooling times per wall thickness; DVS 2212-1 welder qualification. |
@@ -1543,7 +1548,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 318 drivers and then the 385 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 319 drivers and then the 386 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1755,6 +1760,7 @@ Table 10.1. Values to verify
 | driver melt_eta | 0.55 - coreless induction furnace, coil to melt | Trial run on the first article (X-MFG-37) |
 | driver atom_GMR | 2.5 kg Ar per kg metal | Trial run on the first article (X-MFG-37) |
 | driver cu_flow_stress_MPa | 250.0 MPa mean flow stress, Cu cold work | Trial run on the first article (X-MFG-37) |
+| driver comb_crucible_eta | 0.13 - share of the fuel heat that a fuel-fired crucible furnace passes to the metal, the middle of the published range of 7 to 19 % | measure the fuel burned per kilogram melted on the first heats of COMB_HEAT |
 | driver cast_gating_return_frac | 0.15 - | weigh the gates and risers cut from a week of permanent-mold copper pours against the poured mass |
 | driver FAB.pv-wafer-train.cell_eff_CZ | 0.19 - efficiency at standard test conditions of a screen-printed single-crystal cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency |
 | driver FAB.pv-wafer-train.cell_eff_MC | 0.175 - efficiency at standard test conditions of a screen-printed multicrystalline cell with an aluminium back field | IV-test the first in-house cells and compare the measured efficiency |
@@ -2252,3 +2258,4 @@ Table 10.1. Values to verify
 | A-M-433 | The standby and return route sets of task X-RTE are decided … kg/d | python3 -m flow_graph.param.standby_routes prints each rated case; after regen the X-RTE standby and return groups list only the assay-dependent and owner-held routes, and test_balance passes with no reconciled move. |
 | A-M-436 | The heater duty of the CZ hot zone in WAFER_FAB is found … kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model |
 | A-M-437 | The solar cell line SOLAR_PV_CELL makes the cells that … cells/d | IV-test the first in-house cells and map the minority-carrier lifetime of the first cast block, and compare with the drivers |
+| A-M-438 | COMB_HEAT, the fuel-fired melt backup of IND_MELT, is kept … kg/d | measure the fuel burned per kilogram melted on the first heats of COMB_HEAT and compare with the rated fuel |

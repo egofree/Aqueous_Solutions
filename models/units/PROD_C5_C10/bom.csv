@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,docs-authority/duties/PROD_C5_C10.md
-2,Process nozzle DN15,5,Carbon steel.,one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,6,Carbon steel.,one per mass edge; DN from AQS-INV-003
 3,"Motor: on/off valve IA-C5-POLY (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: on/off valve IA-RESIST-BZ (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: transfer pump IA-C5-POLY to POLY_OLEFIN (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005

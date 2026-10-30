@@ -21,6 +21,7 @@ Run: python3 -m flow_graph.param.standby_routes"""
 import json, math
 from . import drivers as DR
 from . import site as SITE
+from . import comb_heat as CH
 
 TAG = 'X-RTE TF (A-M-418)'
 RHO_W = 1000.0           # kg/m3, fresh water at the reservoir temperature (density to 0.3 % from 4 to 30 C, NIST_WEBBOOK)
@@ -70,6 +71,10 @@ ROUTES = (
     ('IA-DC-SPRAY', _spray, 'the site heat-rejection mode is evaporative and the cooler rejects its rated duty on spray (X-LOC-13)', False),
     ('IA-DC-EVAP', _spray, 'the site heat-rejection mode is evaporative and the sprayed water evaporates at the cooler (X-LOC-13)', False),
     ('CUT-1-OUT', _gen_cut, 'the hydrogen store is empty in an outage and BACKUP_GEN carries the critical list on the C5-C10 cut (A-M-435)', False),
+    ('IA-C5-COMB', CH._fuel_fn('C5C10'), 'IND_MELT and RF_HEAT are both out and COMB_HEAT melts the IND_MELT charge on the C5-C10 cut (A-M-438)', CH._hold('C5C10')),
+    ('IA-MEOH-COMB', CH._fuel_fn('MEOH'), 'IND_MELT and RF_HEAT are both out and COMB_HEAT melts the IND_MELT charge on plant methanol (A-M-438)', CH._hold('MEOH')),
+    ('IA-COMB-O2', CH._o2, 'COMB_HEAT burns its selected fuel with air at comb_excess_air (A-M-438)', False),
+    ('COMB_OFFGAS', CH._offgas, 'COMB_HEAT is in service and its off-gas goes to MET_SCRUB (A-M-438)', False),
     ('IA-NIT-VENT', _nit_vent, 'the nitric tank breathes out at its API 2000 normal venting rate (API2000_2020)', False),
 )
 
@@ -78,7 +83,6 @@ RETIRE = {
     'DRAW_TO_STOCK': 'DRAW has no feed route, and wire is drawn by the MFG wire drawer on S57 with STOCK_TO_WIRE_DRAW as its standby',
     'SINTER_TO_STOCK': 'SINTER has no feed route, and the atomiser powder S60 goes to MFG_SHOP, its only consumer',
     'ATOM_TO_STOCK': 'the atomiser powder S60 goes to MFG_SHOP, its only consumer, so a powder stock route duplicates it',
-    'COMB_OFFGAS': 'COMB_HEAT has no fuel route, so it can make no off-gas; a fuel-fired alternate needs a fuel route first (X-RTE-COMB-HEAT-FUEL)',
     'VAC_IND_TO_VAC_CAST': 'VAC_CAST has no product route, so its casting could go nowhere; the vacuum titanium melt pours to INV_CAST on VAC_TO_INV',
     'IA-N2-RET': 'the air and nitrogen header is fed by AIR_RECEIVER and holds its pressure by the receiver supply, so it never returns gas to the cold box',
     # batch 44a, gas and hydrogen routes (A-M-434)
@@ -114,7 +118,7 @@ def design(g, d=None):
         sz = (src.get('params') or {}).get('sizing') or {}
         if isinstance(sz, dict) and sz.get('crucible_kg'):   # a melt furnace: extra heats in the outage
             row['heats_d'] = math.ceil(((sz.get('charge_kg_d') or 0) + rated)/sz['crucible_kg']); row['heats_d_normal'] = sz.get('heats_d')
-        elif hold:                  # a store: hold the rated feed for the outage
+        elif (hold(d) if callable(hold) else hold):   # a store: hold the rated feed for the outage (a function picks the selected fuel, A-M-438)
             row['hold_kg'] = rated*od
         out[sid] = row
     return out

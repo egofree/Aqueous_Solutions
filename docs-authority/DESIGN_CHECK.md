@@ -31,7 +31,7 @@ Table 2.1. Closed-form checks
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_B stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
 | QC-05 | `flow_graph/param/write_graph.py` | kW of the 72 feeder-supplied units: node continuous kW vs SF- feeder edges | 143.7687 | 143.7687 | 1 % | pass |
 | QC-06 | `docs-authority/_struct_loads.py` | equipment rows with test >= operating >= empty | 179 | 179 | 0 % | pass |
-| QC-07 | `flow_graph/param/write_graph.py` | stream compositions sum to 1 and match their note (220 streams) | 219 | 220 | 2 % | fail IA-PCA-REJECT |
+| QC-07 | `flow_graph/param/write_graph.py` | stream compositions sum to 1 and match their note (223 streams) | 222 | 223 | 2 % | fail IA-PCA-REJECT |
 | QC-09 | `flow_graph/param/receivers.py` | H2 bank kg at 200 bar vs the sized store (AQS-ELEC-007 / X-PAR-12 basis in the graph) | 17 | 17.406 | 5 % | pass |
 | QC-12 | `docs-authority/HEAT_LADDER.md` | Q1_A oil kWh over 80 K (basis 10 kWh) | 10.0 | 12.4667 | 30 % | pass |
 | QC-16 | `flow_graph/param/water_tower.py` | hydro head m, upper to lower water centroid | 36.2119 | 35.9119 | 3 % | pass |
@@ -52,7 +52,7 @@ Table 2.1. Closed-form checks
 | QC-29 | `flow_graph/param/water_tower.py` | catch tank top below L-1 FFL - slab (mm) | -6500 | -6300 | <= | pass |
 | QC-30 | `models/freecad/regroup.py` | L-1 flow adjacency m (18 units, 18 moves) | 142.4 | 320.7 | <= | pass |
 
-One check fails: stream compositions sum to 1 and match their note (220 streams), where the model gives 219 and the independent value is 220.
+One check fails: stream compositions sum to 1 and match their note (223 streams), where the model gives 222 and the independent value is 223.
 
 ## 3. Findings
 
@@ -64,4 +64,4 @@ The checks have found and led to the correction of the following errors.
 
 ## 4. Review status of the calculation modules
 
-The record covers 181 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 173 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.
+The record covers 182 calculation modules. Of these, 8 are checked automatically by the checks of Table 2.1, and 174 still need a review by a second person; for those, the checker field is blank. The record for each module is in `docs-authority/inventory/DESIGN_CHECK.csv`.

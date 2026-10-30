@@ -3,8 +3,8 @@ A component passes when every unit balances and the cut balances, per rate unit,
 Pass is on the present edges in this file. It is not on-site evidence.
 This result is not the MVS flag. mvs.mvs_criteria.loops_closed is not set here.
 
-## mass: 447 edges, 1 loops
-- 146 units. Circuits listed: 20 (cap 20).
+## mass: 451 edges, 1 loops
+- 147 units. Circuits listed: 20 (cap 20).
   ACID_PLANT, ACID_POLISH_SCRUB, AFTERBURNER, AFTERBURNER_FLUE, AIR_RECEIVER, ALK_SCRUBBER, AL_POT, ATMOS, BACKUP_GEN, BAGHOUSE, BLACK_DIGEST, BLOW_MOLD, BMED_ACID, BMED_BASE ...
   one circuit: IA-ACID-CO2 -> IA-SI-HOOD-O2 -> IA-SI-FUME -> IA-BMED-03 -> IA-BMED-01 -> S34 -> S38 -> CUT-1
   kg/d: nodes off 3, cut in 11.40 out 0.00 fail

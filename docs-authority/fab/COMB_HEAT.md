@@ -7,7 +7,7 @@ service line: service combustion reheating furnace (C5-C10 fuel class), tertiary
 Internals: duty sheet: "3. Material. Alumina-silica brick + castable crown hot face on a mild-steel shell; 310S burner tube; flue path" [docs-authority/duties/COMB_HEAT.md]
 Material: Alumina-silica brick + castable crown hot face on a mild-steel shell; 310S burner tube; flue path dry above the acid dew point into MET_SCRUB. Basis: tertiary N+1 fuel-fired melt heat (graph design): combustion hot-face class per SCHACHT2004 ch. 10; the fuel class is the plant C5-C10 product (duty section 1); combustion stoichiometry per TURNS2012. (continues on the duty sheet)
 
-Nozzles: 3 process connections per docs-authority/nozzles/COMB_HEAT.csv
+Nozzles: 7 process connections per docs-authority/nozzles/COMB_HEAT.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

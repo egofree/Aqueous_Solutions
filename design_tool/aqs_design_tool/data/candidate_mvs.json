@@ -5131,13 +5131,16 @@
           "source": "AQS-DUTY-072",
           "rate_kg_d": 0.0,
           "connected_kW": 30.0,
-          "backup_of": "IND_MELT (tertiary, fuel-fired C5-C10 class)",
-          "outage_basis": "long IND_MELT outage with both electric alternates unavailable (A-M-282); off-gas to MET_SCRUB when energized",
+          "backup_of": "IND_MELT (third melt path, fuel-fired; the one path independent of the electrical supply of IND_MELT and RF_HEAT)",
+          "outage_basis": "IND_MELT and RF_HEAT both out, for standby_outage_d (A-M-283, A-M-418, A-M-438)",
           "size_mm": [
             1000,
             1000,
             1500
-          ]
+          ],
+          "fuel": "C5C10",
+          "rated_fuel_kg_d": 7.4354,
+          "rated_fuel_kWh_d": 90.712
         },
         "design": {
           "service": "combustion reheating furnace (C5-C10 fuel class), tertiary N+1 of IND_MELT",
@@ -11171,12 +11174,12 @@
       "from_unit_id": "COMB_HEAT",
       "to_unit_id": "MET_SCRUB",
       "phase": "G",
-      "carries": "combustion off-gas when alternate used",
+      "carries": "combustion off-gas of the fuel-fired melt backup",
       "rate": {
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE retired 2026-10-30 (A-M-433): COMB_HEAT has no fuel route, so it can make no off-gas; a fuel-fired alternate needs a fuel route first (X-RTE-COMB-HEAT-FUEL)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 36.6939 kg/d (C5C10 fuel plus its combustion oxygen) when COMB_HEAT is in service and its off-gas goes to MET_SCRUB (A-M-438), for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "MFG",
@@ -18972,6 +18975,57 @@
       "to_sector_id": "GLASS",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-C5-COMB",
+      "from_unit_id": "PROD_C5_C10",
+      "to_unit_id": "COMB_HEAT",
+      "phase": "L",
+      "carries": "C5-C10 cut fuel for the fuel-fired melt backup",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 7.4354 kg/d (the IND_MELT melt heat 11.79 kWh/d over comb_crucible_eta and the C5C10 heating value) when IND_MELT and RF_HEAT are both out and COMB_HEAT melts the IND_MELT charge on the C5-C10 cut (A-M-438), for 2 d (standby_routes.py)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass,energy"
+    },
+    {
+      "stream_id": "IA-MEOH-COMB",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "COMB_HEAT",
+      "phase": "L",
+      "carries": "plant methanol fuel for the fuel-fired melt backup",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 16.4102 kg/d (the IND_MELT melt heat 11.79 kWh/d over comb_crucible_eta and the MEOH heating value) when IND_MELT and RF_HEAT are both out and COMB_HEAT melts the IND_MELT charge on plant methanol (A-M-438), for 2 d (standby_routes.py)."
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass,energy"
+    },
+    {
+      "stream_id": "IA-COMB-O2",
+      "from_unit_id": "ATMOS",
+      "to_unit_id": "COMB_HEAT",
+      "phase": "G",
+      "carries": "oxygen of the combustion air of the fuel-fired melt backup",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 29.2585 kg/d (7.435 kg/d of C5C10 at comb_excess_air over the stoichiometric oxygen) when COMB_HEAT burns its selected fuel with air at comb_excess_air (A-M-438), for 2 d (standby_routes.py)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass,energy"
     }
   ],
   "electrical": {

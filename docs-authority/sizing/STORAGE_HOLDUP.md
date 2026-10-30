@@ -41,7 +41,7 @@ Table 3.1. Storage units
 | WS_SLURRY | CMP slurry, 30 d resupply | 0 | 30 | 1200 | 0.0 | 0.02 | 300 | 300 | PE (rotomoulded / fabricated) | 4.75 | 800 x 800 x 1100 | yes |
 | WS_SOLV | solvent (IPA), 30 d resupply | 0 | 30 | 790 | 0.0 | 0.02 | 300 | 300 | SA-240 304L, welded | 3.0 | 800 x 800 x 1100 | yes |
 | WS_PHOS | H3PO4 85 %, 30 d resupply | 0 | 30 | 1690 | 0.0 | 0.02 | 300 | 300 | PE (rotomoulded / fabricated) | 4.75 | 800 x 800 x 1100 | yes |
-| PROD_C5_C10 | naphtha cut, 14 d to dispatch | 0 | 14 | 720 | 0.0 | 0.02 | 300 | 300 | SA-240 304L, welded | 3.0 | 600 x 300 x 700 | yes |
+| PROD_C5_C10 | naphtha cut, 14 d to dispatch | 0 | 14 | 720 | 0.0207 | 0.0258 | 300 | 400 | SA-240 304L, welded | 3.0 | 600 x 300 x 700 | yes |
 | PROD_C11_C18 | middle distillate cut, 14 d | 0 | 14 | 770 | 0.0 | 0.02 | 300 | 300 | SA-240 304L, welded | 3.0 | 600 x 300 x 700 | yes |
 | PROD_C19_C28 | heavy distillate cut, 14 d | 0 | 14 | 800 | 0.0 | 0.02 | 300 | 300 | SA-240 304L, welded | 3.0 | 600 x 300 x 700 | yes |
 | PROD_C29 | C29+ to recycle, 3 d buffer | 0 | 3 | 850 | 0.0 | 0.02 | 300 | 300 | SA-240 304L, welded | 3.0 | 600 x 300 x 700 | yes |

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0500 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0500 kW. In: IA-C5-COMB 0 kg/d (C5-C10 cut fuel for the fuel-fired melt backup); IA-MEOH-COMB 0 kg/d (plant methanol fuel for the fuel-fired melt backup); IA-COMB-O2 0 kg/d (oxygen of the combustion air of the fuel-fired melt backup). Out: COMB_OFFGAS 0 kg/d (combustion off-gas of the fuel-fired melt backup).
 
 2. Size.
 - Envelope 1000×1000×1500 mm, 1.5 m³.

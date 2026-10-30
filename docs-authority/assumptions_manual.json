@@ -7559,5 +7559,24 @@
   ],
   "needs_verification": true,
   "verification_test": "IV-test the first in-house cells and map the minority-carrier lifetime of the first cast block, and compare with the drivers"
+ },
+ {
+  "id": "A-M-438",
+  "value": "COMB_HEAT, the fuel-fired melt backup of IND_MELT, is kept and given a fuel route. It is the one melt path that does not depend on the electrical supply of IND_MELT and its electric alternate RF_HEAT, so it has real redundancy value. In its rated case, IND_MELT and RF_HEAT both out for standby_outage_d, it melts the IND_MELT design-day charge: the heat into the metal is the IND_MELT melt energy times melt_eta, and the fuel is that heat over comb_crucible_eta and the lower heating value. The fuel is selectable by comb_heat_fuel: the C5-C10 cut from PROD_C5_C10 (default) on IA-C5-COMB, or plant methanol from MEOH_TANK on IA-MEOH-COMB; the store of the selected fuel holds the outage. Oxygen comes from the air on IA-COMB-O2 at comb_excess_air, and COMB_OFFGAS takes the off-gas to MET_SCRUB. All four routes are zero on the design day. The chlorinator carbon monoxide is not a valid fuel for this duty.",
+  "units": "kg/d",
+  "where": "flow_graph/param/comb_heat.py; flow_graph/param/standby_routes.py ROUTES; flow_graph/param/balance.py physics; flow_graph/param/drivers.json comb_heat_fuel, comb_crucible_eta, comb_excess_air",
+  "basis": "Owner rules of 2026-10-30: redundancy is good in hardware; give the burner a real fuel route sized against a rated standby duty, or retire it only if it duplicates the RF heater with no redundancy value. Crucible-furnace efficiency (BCS2005), excess air (DOE_PHS2016), heating values of the cut (backup generator driver) and of methanol (PERRY9), combustion stoichiometry. The cut is the default because it is surplus that the plant ships and is already stored for the backup generator; methanol is the alternative because it burns clean and is stored on site. The chlorination makes about 2 CO per Ti, under a kilogram a day and mostly drawn by SOLV_PLANT and RESIST_SYN, against a rated need of tens of kilograms a day, so holding it for the outage would mean filling a large store of toxic gas over months.",
+  "sensitivity": "The fuel rate scales with the IND_MELT melt energy and inversely with comb_crucible_eta, which spans 7 to 19 % in the published range.",
+  "replaced_by": "The fuel burned per kilogram melted on the first heats of COMB_HEAT",
+  "task": "QA audit 2026-10-30, X-RTE-COMB-HEAT-FUEL",
+  "files": [
+   "flow_graph/param/comb_heat.py",
+   "flow_graph/param/standby_routes.py",
+   "flow_graph/param/balance.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/refs.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "measure the fuel burned per kilogram melted on the first heats of COMB_HEAT and compare with the rated fuel"
  }
 ]
