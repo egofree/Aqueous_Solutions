@@ -376,12 +376,12 @@
             "IA-SHELL-EXPORT": 1.0,
             "IA-METAL-SHIP": 10.812,
             "IA-FAB-PRODUCT": 0.139,
-            "IA-LIME-SHIP": 0.299,
+            "IA-LIME-SHIP": 0.259,
             "IA-NAOH-CL2-SHIP": 3.505,
-            "IA-NAOH-RESIDUE": 0.121
+            "IA-NAOH-RESIDUE": 0.126
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 53.366,
+            "IA-H2O-MU": 53.367,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
@@ -393,11 +393,10 @@
             "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
             "IA-QUARTZ-MU": 0.718,
-            "IA-SULFUR-MU": 0.018,
-            "IA-TRONA-MU": 0.92,
-            "IA-LIMESTONE-MU": 0.029
+            "IA-SULFUR-MU": 0.013,
+            "IA-TRONA-MU": 0.92
           },
-          "net_kg_d": 13.304,
+          "net_kg_d": 13.302,
           "residual_kg_d": 13.304,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
@@ -1111,7 +1110,35 @@
           "style": "rotary_kiln",
           "state": "live",
           "basis": "kiln-class study minimum at the 1.674 kg/d HF duty (ULLMANN_HF; A-M-289); tube 200 x 1200 mm, 2 deg slope, kiln gas absorbed into the recovered-F liquor at the dissolution tank"
-        }
+        },
+        "recovery": [
+          {
+            "element": "F",
+            "use": "HF kiln",
+            "need_kg_d": 1.5971060991210455,
+            "recovered_kg_d": 1.4434149755073478,
+            "recovered_from": [
+              "F_RECOVER_TO_HF_GEN"
+            ],
+            "ore_streams": [
+              "IA-CAF2-MU"
+            ],
+            "unrecovered": [
+              {
+                "stream": "IA-LIME-SHIP",
+                "kg_d": 0.007074,
+                "recoverable": false,
+                "basis": "fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake"
+              },
+              {
+                "stream": "IA-NAOH-RESIDUE",
+                "kg_d": 0.00061,
+                "recoverable": false,
+                "basis": "fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake"
+              }
+            ]
+          }
+        ]
       },
       "continuous_kw": {
         "value": 0.3083,

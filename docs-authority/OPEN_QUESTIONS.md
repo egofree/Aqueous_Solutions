@@ -1,13 +1,14 @@
 # Open questions
 
 Document number: AQS-OQ-001
-Revision: B
-Date: 2026-10-25
+Revision: C
+Date: 2026-10-29
 
 | Rev | Description | Date |
 | --- | --- | --- |
 | A | First issue | 2026-10-15 |
 | B | Purpose and scope added; introduction rewritten to the documentation style guide (AQS-DOC-002). No question or default changed. | 2026-10-25 |
+| C | Questions Q-034 to Q-037 added on the on-site acid and caustic plants and the recovery-first rule. | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -56,3 +57,7 @@ Table 2.1. Open and closed questions
 | Q-030 | X-LOC-11 | Floating island site and jurisdiction: moored or free-floating, and under which flag or coastal state? The flag or coastal state decides which marine codes apply (AQS-PLAN-011 section 10). | Moored in tropical waters with an ocean thermal gradient; class society rules with SOLAS and MARPOL. |
 | Q-031 | X-LOC-11 | Storm strategy for the floating island: ride out the design storm on the moorings, or relocate ahead of it (AQS-PLAN-011 section 10)? | Ride it out on the moorings, with relocation kept as an option. |
 | Q-032 | X-LOC-03 | CLOSED (owner, 2026-10-25): hard-coded values are a gap and the sizing must be parametric. Every module reads the profile gravity; the small change to baseline outputs from the rounded 9.81 m/s² is accepted. The baseline profile keeps standard gravity and the standard atmosphere, flagged for verification. | — |
+| Q-034 | X-RTE-IMPORT-IA-H2SO4-MU | Sulfuric acid route and duty: keep GYPSUM_LOOP, which recovers the kiln cake sulfur but draws about 1 kW for its hot kiln, and run the kiln continuously or in campaigns from a cake store (A-M-421)? SULFUR_ORE recovers no sulfur, so the recovery-first check flags it while it is selected. | GYPSUM_LOOP with continuous duty. |
+| Q-035 | X-RTE-IMPORT-IA-NAOH-MU | Sodium hydroxide top-up technology: lime causticising of trona ore (CAUSTICIZE), whose small top-up carries the shell losses of two hot kiln tubes, or halite ore in the chlor-alkali cells that already recover the purge salt (CHLOR_ALKALI), which needs no kiln (A-M-422, AQS-PAR-001 Table 7.1)? | CAUSTICIZE. |
+| Q-036 | X-RTE-IMPORT-IA-NAOH-MU | Chlor-alkali hydrogen: the cell hydrogen joins the H2 header as the electrowinning hydrogen does. Does it stay there, or go to a separate consumer or store, given the held hydrogen and oxygen ownership questions (A-M-422)? | The H2 header. |
+| Q-037 | X-RTE-RECOVERY | Ti, Mo and Cr ore concentrates: no waste stream on the graph carries these metals yet. Should the leach grit replace the concentrates once AQS-ASSAY-TI-MO lands (A-M-284, A-M-423)? | Concentrates until the assay lands, then the grit first. |

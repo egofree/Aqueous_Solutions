@@ -92,6 +92,11 @@ def tf(g, d=None):
             e = _edge(sid, 'SOL_ARK_60K', u, 'E', ['elec'], '480 V AC', r[k], 'kW', N['SOL_ARK_60K']['sector_id'], N[u]['sector_id'], None, note)
             e['header'] = 'tray'; g['edges'].append(e); E[sid] = e
         E[sid]['rate'] = {'value': round(r[k], 4), 'unit': 'kW', 'status': 'study', 'note': f'{TAG}: feed equal to {u} continuous_kw.'}
+    from .recovery import frac as _fr
+    N['SI_REDUCE'].setdefault('params', {})['recovery'] = [dict(
+        element='Si', use='silicon furnace quartz', need_kg_d=r['quartz_kg_d']*_fr('SiO2', 'Si'), recovered_kg_d=0.0, recovered_from=[],
+        ore_streams=['IA-QUARTZ-MU'], unrecovered=[],
+        note='the plant silica wastes are fines (spent shell flour, silica fume), not the lump quartz the arc furnace burden needs, and the silica fume already goes to the leach')]
     imp = E.get('IA-SI-IMPORT')
     if imp is not None and imp['presence'] != 'retired':
         imp['presence'] = 'retired'

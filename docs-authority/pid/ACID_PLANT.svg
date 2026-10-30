@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="776" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="768" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit ACID_PLANT · reactor · sector POLYMERS · present</text>
-<text x="24" y="54" font-size="10.5">0.9654 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 6 in + 3 out · valves 0 placed / 0 unplaced · instruments 6 (2 SIF) · nozzles 10</text>
+<text x="24" y="54" font-size="10.5">0.966 kW continuous</text>
+<text x="24" y="72" font-size="10.5">Edges 6 in + 4 out · valves 0 placed / 0 unplaced · instruments 6 (2 SIF) · nozzles 13</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -85,7 +85,7 @@
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">ATMOS</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">IA-ACID-CO2</text>
 <text x="1476" y="253" font-size="10" text-anchor="end">0.1 kg/d · DN15 P3</text>
-<text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
+<text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N11</text>
 <line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
 <text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">HF_GEN</text>
@@ -97,16 +97,22 @@
 <text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">NORTH_DOCK</text>
 <text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-LIME-SHIP</text>
 <text x="1476" y="345" font-size="10" text-anchor="end">0.3 kg/d · solids transfer</text>
-<text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N7</text>
+<text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N12</text>
+<line x1="914" y1="378" x2="1061" y2="378" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
+<polygon points="1070,378 1061,374 1061,382" fill="#111"/>
+<text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">NAOH_PLANT</text>
+<text x="1476" y="373" font-size="11" font-weight="600" text-anchor="end">IA-LIME-TO-NAOH</text>
+<text x="1476" y="391" font-size="10" text-anchor="end">0.0 kg/d · solids transfer</text>
+<text x="902" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="end">N13</text>
 <text x="24" y="566" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="576" font-size="9">Every incident graph edge is drawn: 6 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="576" font-size="9">Every incident graph edge is drawn: 6 in, 4 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="591" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/ACID_PLANT.csv.</text>
-<text x="24" y="606" font-size="9">Nozzles with no matching graph edge (service text): N9 drain; N10 vent</text>
+<text x="24" y="606" font-size="9">Nozzles with no matching graph edge (service text): N6 carbon dioxide of the cake kiln; N7 lime residue byproduct of the cake kiln; N9 drain; N10 vent</text>
 <text x="24" y="621" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
 <g id="aqs-title-block"><rect x="1116" y="658" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="675" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-ACID_PLANT</text>
 <text x="1124" y="692" font-size="9">P&amp;ID ACID_PLANT (reactor, POLYMERS sector)</text>
-<text x="1124" y="709" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev b643a54b   Issued 2026-10-19</text>
+<text x="1124" y="709" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev c817d3d6   Issued 2026-10-19</text>
 <text x="1124" y="726" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="743" font-size="9">Graph SHA-256 048924eca4b2883d   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="743" font-size="9">Graph SHA-256 8a86220e5069046b   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

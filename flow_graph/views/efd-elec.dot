@@ -254,6 +254,6 @@ digraph G {
   "SOL_ARK_60K" -> "GEO_HP_CLOSED_LOOP" [label="SF-GEO_HP_CLOSED_LOOP\\n0.1257 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "SI_REDUCE" [label="SF-SI_REDUCE\\n0.1472 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "SI_REFINE" [label="SF-SI_REFINE\\n0.5659 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "ACID_PLANT" [label="SF-ACID_PLANT\\n0.9654 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
-  "SOL_ARK_60K" -> "NAOH_PLANT" [label="SF-NAOH_PLANT\\n1.1935 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "ACID_PLANT" [label="SF-ACID_PLANT\\n0.966 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "NAOH_PLANT" [label="SF-NAOH_PLANT\\n1.1929 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

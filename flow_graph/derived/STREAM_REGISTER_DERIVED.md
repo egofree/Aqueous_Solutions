@@ -90,7 +90,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S13 | GROW_BED | VCD_TRAIN | L | mass | present | condensate | 3.799494 kg/d | absent_from_candidate_mvs |
 | S14 | GROW_BED | FOOD_STORE | S | mass | present | food | 4.2 kg/d | — |
 | S15 | GROW_BED | HABITATION | G | mass | present | photosynthetic O2 | 0.0 kg/d | — |
-| S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 11.636366 kg/d | — |
+| S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 11.635142 kg/d | — |
 | S17 | SOL_ARK_60K | RECTIFIER | E | elec | present | DC/480V | 12.0 kW | — |
 | S18 | AFTERBURNER | CRYO_CO2 | G | mass | present | captured CO2/air | 0.0 kg/d | — |
 | S19 | BAGHOUSE | LEACH_CSTR_1 | S | mass | present | dust | 0.0 kg/d | absent_from_candidate_mvs |
@@ -293,7 +293,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-FC-AIR | HDR_O2 | MEOH_FC | G | mass | present | cell air | 9.407064 kg/d | — |
 | IA-LEACH-BD | LEACH_CSTR_1 | NUTRIENT_DOSE | L | mass | present | bleed salts to nutrient | 109.63 kg/d | — |
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | L | mass | present | still bottoms | 6.709424 kg/d | — |
-| IA-CHAR | OIL_PYRO | MFG_SHOP | S | mass | present | char reductant | 4.836867 kg/d | — |
+| IA-CHAR | OIL_PYRO | MFG_SHOP | S | mass | present | char reductant | 4.835643 kg/d | — |
 | IA-FC-EXH | MEOH_FC | NOX_SCRUB | G | mass | present | cell exhaust | 0 kg/d | — |
 | IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | thermal | thermal | present | round-trip loss | 1.67 kW | — |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | electric | thermal | present | store trim | 1.61 kW | — |
@@ -406,7 +406,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.172239 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 53.366007 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 53.367231 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
@@ -594,23 +594,24 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-SI-EG | SI_REFINE | METAL_STORE | S | mass | present | electronic-grade silicon for the CZ charge | 0.226363 kg/d | — |
 | SF-SI_REDUCE | SOL_ARK_60K | SI_REDUCE | E | elec | present | 480 V AC | 0.1472 kW | — |
 | SF-SI_REFINE | SOL_ARK_60K | SI_REFINE | E | elec | present | 480 V AC | 0.5659 kW | — |
-| IA-SULFUR-MU | NORTH_DOCK | ACID_PLANT | S | mass | present | native sulfur (raw ore) for the acid plant | 0.018487 kg/d | — |
+| IA-SULFUR-MU | NORTH_DOCK | ACID_PLANT | S | mass | present | native sulfur (raw ore) for the acid plant | 0.012935 kg/d | — |
 | IA-GYPSUM-REGEN | HF_GEN | ACID_PLANT | S | mass | present | HF kiln anhydrite cake to the sulfur-recovery kiln | 0.575554 kg/d | — |
-| CHAR_TO_ACID | OIL_PYRO | ACID_PLANT | S | mass | present | plant pyrolysis char reductant for the cake kiln | 0.024432 kg/d | — |
-| IA-ACID-O2 | ATMOS | ACID_PLANT | G | mass | present | oxygen of the process air (sulfur burning and SO2 oxidation) | 0.083003 kg/d | — |
+| CHAR_TO_ACID | OIL_PYRO | ACID_PLANT | S | mass | present | plant pyrolysis char reductant for the cake kiln | 0.025656 kg/d | — |
+| IA-ACID-O2 | ATMOS | ACID_PLANT | G | mass | present | oxygen of the process air (sulfur burning and SO2 oxidation) | 0.077462 kg/d | — |
 | IA-ACID-H2O | GW_INTAKE | ACID_PLANT | L | mass | present | well water for SO3 absorption and dilution to 98 wt% | 0.080761 kg/d | — |
-| IA-ACID-CO2 | ACID_PLANT | ATMOS | G | mass | present | carbon dioxide of the cake kiln | 0.079758 kg/d | — |
-| IA-LIME-SHIP | ACID_PLANT | NORTH_DOCK | S | mass | present | lime residue byproduct of the cake kiln | 0.29871 kg/d | — |
+| IA-ACID-CO2 | ACID_PLANT | ATMOS | G | mass | present | carbon dioxide and water vapour of the cake kiln | 0.086872 kg/d | — |
+| IA-LIME-SHIP | ACID_PLANT | NORTH_DOCK | S | mass | present | cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up | 0.259355 kg/d | — |
 | IA-H2SO4-ACID | ACID_PLANT | HF_GEN | L | mass | present | 98 wt% sulfuric acid to the HF kiln | 0.403768 kg/d | — |
-| SF-ACID_PLANT | SOL_ARK_60K | ACID_PLANT | E | elec | present | 480 V AC | 0.9654 kW | — |
+| SF-ACID_PLANT | SOL_ARK_60K | ACID_PLANT | E | elec | present | 480 V AC | 0.966 kW | — |
 | IA-TRONA-MU | NORTH_DOCK | NAOH_PLANT | S | mass | present | trona ore (raw ore) for soda ash | 0.919575 kg/d | — |
-| IA-LIMESTONE-MU | NORTH_DOCK | NAOH_PLANT | S | mass | present | limestone ore (raw ore), lime-cycle make-up | 0.028933 kg/d | — |
-| IA-NAOH-VENT | NAOH_PLANT | ATMOS | G | mass | present | carbon dioxide and water vapour of the trona calciner and lime kiln | 0.487201 kg/d | — |
+| IA-LIMESTONE-MU | NORTH_DOCK | NAOH_PLANT | S | mass | retired | limestone ore (raw ore), lime-cycle make-up | 0.0 kg/d | — |
+| IA-NAOH-VENT | NAOH_PLANT | ATMOS | G | mass | present | carbon dioxide and water vapour of the trona calciner and lime kiln | 0.475115 kg/d | — |
 | IA-HALITE-MU | NORTH_DOCK | NAOH_PLANT | S | mass | retired | halite ore (raw ore) to re-saturate the cell brine | 0.0 kg/d | — |
 | IA-NA-RECYCLE | LEACH_CSTR_1 | NAOH_PLANT | L | mass | present | sodium chloride of the leach purge recovered to the cell brine | 5.777917 kg/d | — |
 | IA-NAOH-CL2-SHIP | NAOH_PLANT | NORTH_DOCK | G | mass | present | chlor-alkali chlorine, shipped with the chlorine export | 3.505031 kg/d | — |
 | IA-NAOH-H2 | NAOH_PLANT | HDR_H2 | G | mass | present | chlor-alkali cathode hydrogen to the H2 header | 0.099655 kg/d | — |
 | IA-NAOH-H2O | GW_INTAKE | NAOH_PLANT | L | mass | present | well water for the liquor, the slaker or the cell | 14.237076 kg/d | — |
-| IA-NAOH-RESIDUE | NAOH_PLANT | NORTH_DOCK | S | mass | present | ore insolubles and the lime-mud purge | 0.12089 kg/d | — |
+| IA-NAOH-RESIDUE | NAOH_PLANT | NORTH_DOCK | S | mass | present | ore insolubles and the lime-mud purge | 0.126417 kg/d | — |
 | IA-NAOH-LIQ | NAOH_PLANT | EVAP_BASE | L | mass | present | sodium hydroxide liquor to the base evaporator | 16.750724 kg/d | — |
-| SF-NAOH_PLANT | SOL_ARK_60K | NAOH_PLANT | E | elec | present | 480 V AC | 1.1935 kW | — |
+| SF-NAOH_PLANT | SOL_ARK_60K | NAOH_PLANT | E | elec | present | 480 V AC | 1.1929 kW | — |
+| IA-LIME-TO-NAOH | ACID_PLANT | NAOH_PLANT | S | mass | present | cake-kiln lime residue as the lime-cycle make-up | 0.022373 kg/d | — |

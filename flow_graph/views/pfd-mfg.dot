@@ -71,7 +71,7 @@ digraph G {
   }
   "LEACH_CSTR_1" -> "MFG_SHOP" [label="S08\\n41.996408 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GLASS_DIGEST" -> "MFG_SHOP" [label="S08G\\n26.7 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MFG_SHOP" -> "LEACH_CSTR_1" [label="S16\\n11.636366 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MFG_SHOP" -> "LEACH_CSTR_1" [label="S16\\n11.635142 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_MELT" -> "WIRE_DRAW" [label="S57\\n6.8389 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WIRE_DRAW" -> "MFG_SHOP" [label="S58\\n3.9389 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "COLD_MILL" -> "MFG_SHOP" [label="S59\\n3.950359 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -101,7 +101,7 @@ digraph G {
   "EW_9" -> "MFG_SHOP" [label="IA-EW-MET-9\\n61.341099 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLISH_BANK" -> "MFG_SHOP" [label="IA-POL-CAKE\\n217.369993 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MFG_SHOP" -> "HABITATION" [label="IA-MFG-OUT\\n596.862802 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "OIL_PYRO" -> "MFG_SHOP" [label="IA-CHAR\\n4.836867 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "OIL_PYRO" -> "MFG_SHOP" [label="IA-CHAR\\n4.835643 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WIRE_DRAW" -> "BAGHOUSE" [label="IA-WIRE-LOSS\\n0.44 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_9" -> "MET_MELT" [label="IA-EW-SHEET\\n13.9889 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_MELT" -> "COLD_MILL" [label="IA-MELT-MILL\\n3.949641 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];

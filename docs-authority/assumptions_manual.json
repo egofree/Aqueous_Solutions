@@ -7249,7 +7249,7 @@
  },
  {
   "id": "A-M-421",
-  "value": "The 98 wt% sulfuric acid for HF_GEN is made on site by ACID_PLANT on the contact process. On the default route GYPSUM_LOOP, the HF kiln anhydrite cake is reduced with plant char, CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2, recovering caso4_dec_frac (0.9) of its sulfur in a 1150 C electrically heated kiln tube; the rest of the sulfur is native sulfur ore taken at the dock and burned. The alternative route SULFUR_ORE burns native sulfur ore only and ships the cake. Oxygen comes from the process air and water from the well. The kiln load is its insulated-shell loss plus a reaction heat of 303 kJ/mol and the feed heat; the contact steps are exothermic and not credited.",
+  "value": "The 98 wt% sulfuric acid for HF_GEN is made on site by ACID_PLANT on the contact process. On the default route GYPSUM_LOOP, the HF kiln cake, its anhydrite and the free acid of the stoichiometric excess, is reduced with plant char, CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2, recovering caso4_dec_frac (0.9) of all the acid sulfur first (A-M-423) in a 1150 C electrically heated kiln tube; the rest of the sulfur is native sulfur ore taken at the dock and burned. The lime of the kiln residue is the lime make-up of NAOH_PLANT. The alternative route SULFUR_ORE burns native sulfur ore only and ships the cake; it recovers no sulfur, so the recovery-first check flags it while it is selected. Oxygen comes from the process air and water from the well. The kiln load is its insulated-shell loss plus a reaction heat of 303 kJ/mol and the feed heat; the contact steps are exothermic and not credited.",
   "units": "kg/d, fraction, C, mm, m, kJ/mol, kJ/kg K",
   "where": "flow_graph/param/sulfuric.py (called from flow_graph/param/fluoro_train.py); flow_graph/param/drivers.json h2so4_route, caso4_dec_frac, caso4_kiln_T_C, caso4_kiln_D_mm, caso4_kiln_L_m, caso4_dHrxn_kJ_mol, caso4_feed_cp_kJ_kgK",
   "basis": "Owner decision 2026-10-29 (t59u): no imports except waste or raw ore. Native sulfur is a raw ore; the cake is the plant's own waste. Reductive decomposition of gypsum or anhydrite with carbon to SO2 for a contact plant is an industrial route (Mueller-Kuehne process), and sulfur burning with the contact process is the standard route (ULLMANN_H2SO4). The reaction heat is CaSO4 -> CaO + SO3 (+401 kJ/mol) plus SO3 -> SO2 + 1/2 O2 (+99 kJ/mol) less half a mole of carbon burned to CO2 (-197 kJ/mol).",
@@ -7285,5 +7285,27 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.caustic; python3 -m flow_graph.param.regen; IA-NAOH-MU is retired, IA-NAOH-LIQ carries the make-up liquor to EVAP_BASE, the streams of the route not selected are retired, and the mass and element balances of NAOH_PLANT agree (asserted in caustic.design)."
+ },
+ {
+  "id": "A-M-423",
+  "value": "Recovery first: for every element the plant takes as raw ore, the transfer function recovers it first from the plant's waste and byproduct streams and sizes the ore as the shortfall need - recovered. Each such function stamps a recovery record (element, use, need, recovered and its source streams, ore streams, and each unrecovered loss with its basis and whether it is recoverable) on its unit; flow_graph/param/recovery.py checks the records against the graph. Present records: sodium (the leach purge salt recovered in the chlor-alkali cells), sulfur (the HF kiln cake reduced in the cake kiln, now including the free acid of the stoichiometric excess), calcium (the cake-kiln residue lime as the causticiser lime make-up, before limestone ore), fluorine (F_RECOVER concentrate before fluorspar), silicon (shell reclaim before foundry silica; the arc-furnace quartz has no lump-quartz waste source), and titanium, molybdenum and chromium (no waste stream on the graph carries them yet).",
+  "units": "kg/d of element",
+  "where": "flow_graph/param/recovery.py; recovery records in flow_graph/param/caustic.py, sulfuric.py, foundry_poly.py and si_refine.py; flow_graph/param/test_recovery_first.py; AGENTS.md",
+  "basis": "Owner decision 2026-10-29 (t61u): the sodium rule applies to every element; recover from waste and byproducts first, and take raw ore only as a top-up for the shortfall, sized by the code.",
+  "sensitivity": "Each ore top-up scales with the unrecovered fraction of its element: 1 - na_purge_recycle_frac for sodium, 1 - caso4_dec_frac for sulfur, 1 - foundry_inv_shell_reclaim_frac for shell silica, and the HF kiln non-conversion for fluorine.",
+  "replaced_by": "Assays of the waste streams that would extend the records (AQS-ASSAY-TI-MO for the leach grit)",
+  "task": "QA audit 2026-10-29, recovery-first rule (owner decision t61u)",
+  "files": [
+   "flow_graph/param/recovery.py",
+   "flow_graph/param/test_recovery_first.py",
+   "flow_graph/param/caustic.py",
+   "flow_graph/param/sulfuric.py",
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/si_refine.py",
+   "flow_graph/param/report.py",
+   "AGENTS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.recovery prints no flags; pytest flow_graph/param/test_recovery_first.py passes, and its negative cases show that an ore above the shortfall and an undeclared waste outflow are flagged."
  }
 ]

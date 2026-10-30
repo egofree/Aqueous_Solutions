@@ -68,7 +68,7 @@ Table 5.1. Streams of the shop units
 | GREASE_LI_TO_MFG | GREASE_LI | MFG_SHOP | — | — | mass |
 | IA-BLOW-IN | PROD_C11_C18 | BLOW_MOLD | 8.407 | kg/d | mass |
 | IA-BLOW-OUT | BLOW_MOLD | MFG_SHOP | 8.408 | kg/d | mass |
-| IA-CHAR | OIL_PYRO | MFG_SHOP | 4.837 | kg/d | mass |
+| IA-CHAR | OIL_PYRO | MFG_SHOP | 4.836 | kg/d | mass |
 | IA-COAT-IN | EW_1 | ELECTRODE_COAT | 0.02 | kg/d | mass |
 | IA-COAT-OUT | ELECTRODE_COAT | EW_1 | 0.02 | kg/d | mass |
 | IA-EW-MET-1 | EW_1 | MFG_SHOP | 59.87 | kg/d | mass |
@@ -106,7 +106,7 @@ Table 6.1. Mass in and out of each unit
 
 | Unit | Mass in, kg/d | Mass out, kg/d | Out less in, kg/d |
 | --- | --- | --- | --- |
-| MFG_SHOP | 635.858 | 635.858 | 0.000 |
+| MFG_SHOP | 635.857 | 635.857 | 0.000 |
 | ELECTRODE_COAT | 0.020 | 0.020 | 0.000 |
 | BLOW_MOLD | 8.407 | 8.408 | 0.000 |
 

@@ -51,33 +51,32 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.217 |
 | export | IA-FAB-PRODUCT | finished wafers to the dock for dispatch | 0.139 |
 | export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.629 |
-| export | IA-LIME-SHIP | lime residue byproduct of the cake kiln | 0.299 |
+| export | IA-LIME-SHIP | cake-kiln residue (lime, unreacted anhyd | 0.259 |
 | export | IA-MEOH-SHIP | methanol shipped at the dock | 28.029 |
 | export | IA-METAL-SHIP | surplus foundry metal export (pot-line p | 10.812 |
 | export | IA-MO-VENT | chlorinator CO2 (vent class) | 0.045 |
 | export | IA-N2-VENT | nitrogen vent | 3.1 |
 | export | IA-NA-PURGE | sodium chloride bleed of the leach purge | 0.642 |
 | export | IA-NAOH-CL2-SHIP | chlor-alkali chlorine, shipped with the  | 3.505 |
-| export | IA-NAOH-RESIDUE | ore insolubles and the lime-mud purge | 0.121 |
+| export | IA-NAOH-RESIDUE | ore insolubles and the lime-mud purge | 0.126 |
 | export | IA-O2-SHIP | O2 cylinders shipped at the dock | 22.093 |
 | export | IA-SHELL-EXPORT | spent foundry silica (solids return clas | 1.0 |
 | import | IA-ALCL3-MU | anhydrous AlCl3 feed (mining-waste chlor | 49.419 |
 | import | IA-CACL2-MU | CaCl2 brine concentrate (mining-waste cl | 0.152 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 53.366 |
-| import | IA-LIMESTONE-MU | limestone ore (raw ore), lime-cycle make | 0.029 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 53.367 |
 | import | IA-MGCL2-MU | CaCl2-MgCl2 brine concentrate (mining-wa | 0.04 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
 | import | IA-QUARTZ-MU | quartz ore for the silicon furnace (raw  | 0.718 |
 | import | IA-SILICA-MU | foundry silica (flour/stucco/binder make | 1.0 |
 | import | IA-SOLV-MU | solvent resupply (ethanol and acetone) | 0.21 |
-| import | IA-SULFUR-MU | native sulfur (raw ore) for the acid pla | 0.018 |
+| import | IA-SULFUR-MU | native sulfur (raw ore) for the acid pla | 0.013 |
 | import | IA-TIO2-MU | TiO2-equivalent rutile concentrate (dock | 0.834 |
 | import | IA-TRONA-MU | trona ore (raw ore) for soda ash | 0.92 |
 | import | IA-WAX-MU | pattern wax make-up (petro-wax class imp | 0.2 |
 
-**Net trade: +13.304 kg/d** (exports 120.995 - imports 107.691); dock ledger residual +13.304 kg/d (reported, exempt per D-DOCK).
+**Net trade: +13.302 kg/d** (exports 120.960 - imports 107.658); dock ledger residual +13.304 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 

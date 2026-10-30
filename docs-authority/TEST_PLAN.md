@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 472 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 473 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 667 items: 295 drivers, 372 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 668 items: 295 drivers, 373 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -683,6 +683,7 @@ Total 667 items: 295 drivers, 372 register entries. Classification rule: first m
 | A-M-420 | The Ti, Mo and Cr chlorinators take their carbon reductant a kg/d, fraction | python3 -m flow_graph.param.regen; IA-C-TI, IA-C-MO and IA-C-CR leave OIL_PYRO at the carbon need over char_fixed_C_frac and the cell balances close | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
 | A-M-421 | The 98 wt% sulfuric acid for HF_GEN is made on site by ACID_ kg/d, fraction, C, mm, m, kJ/mol, kJ/kg K | python3 -m flow_graph.param.sulfuric; python3 -m flow_graph.param.regen; IA-H2SO4-MU is retired, IA-H2SO4-ACID carries the acid demand of HF_GEN, and the mass balance of ACID_PLANT closes (asserted in sulfuric.design). | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
 | A-M-422 | The sodium hydroxide make-up is made on site by NAOH_PLANT,  kg/d, mass fraction, C, mm, m, kJ/mol, kJ/kg K, V | python3 -m flow_graph.param.caustic; python3 -m flow_graph.param.regen; IA-NAOH-MU is retired, IA-NAOH-LIQ carries the make-up liquor to EVAP_BASE, the streams of the route not selected are retired, and the mass and element balances of NAOH_PLANT agree (asserted in caustic.design). | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
+| A-M-423 | Recovery first: for every element the plant takes as raw ore kg/d of element | python3 -m flow_graph.param.recovery prints no flags; pytest flow_graph/param/test_recovery_first.py passes, and its negative cases show that an ore above the shortfall and an undeclared waste outflow are flagged. | QA audit 2026-10-29, recovery-first rule (owner decision t61u) |
 
 ## 7. T6 Commissioning measurements
 

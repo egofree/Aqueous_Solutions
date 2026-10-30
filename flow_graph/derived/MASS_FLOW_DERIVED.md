@@ -25,7 +25,7 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S13 | GROW_BED→VCD_TRAIN | Closed | present | 3.799494 kg/d | From register: FARM SUMP + HVAC → UPW POLISH / SALT FEED / VCD_FEED |
 | S14 | GROW_BED→FOOD_STORE | Closed | present | 4.2 kg/d | — |
 | S15 | GROW_BED→HABITATION | Closed | present | 0.0 kg/d | — |
-| S16 | MFG_SHOP→LEACH_CSTR_1 | Closed | present | 11.636366 kg/d | — |
+| S16 | MFG_SHOP→LEACH_CSTR_1 | Closed | present | 11.635142 kg/d | — |
 | S18 | AFTERBURNER→CRYO_CO2 | Claimed | present | 0.0 kg/d | — |
 | S19 | BAGHOUSE→LEACH_CSTR_1 | Closed | present | 0.0 kg/d | From register: BAGHOUSE fines → LEACH CSTR 1 |
 | S21 | ROOF_TANK→HABITATION | Closed | present | 120.68 kg/d | — |

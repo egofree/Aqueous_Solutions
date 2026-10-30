@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 54 | 8 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 55 | 9 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 375 | 252 |
 | FAB | Process (Mass transform) | 240 | 160 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3036** | **2123** |
+| | **Total** | **3037** | **2124** |
 
 ## 3. Triage of open tasks
 
@@ -616,6 +616,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 - [x] **X-RTE-STOCK_TO_FAB** Route STOCK_TO_FAB: silicon charge to WAFER_FAB. Done when: the CZ charge is sized from the wafer need (A-M-417) and made on site by SI_REDUCE and SI_REFINE (A-M-419). Depends: —. Evidence: `flow_graph/param/fab_silicon.py`.
 - [x] **X-RTE-SI-BACKUP** Refining of SI_REDUCE silicon to charge grade, with a backup of a different technology. Done when: the CZ charge is refined on site on a chlorosilane loop by the Siemens route, with the silane fluidised bed as the selectable other technology (si_refine_route, A-M-419); the polysilicon import is retired. Depends: —. Evidence: `flow_graph/param/si_refine.py`.
+- [x] **X-RTE-RECOVERY-FIRST** Recovery first for every element taken as raw ore. Done when: each ore top-up is sized as the shortfall after recovery from waste, with a generated per-element inventory and a test that flags any excess (A-M-423). Depends: —. Evidence: `flow_graph/param/recovery.py`.
 - [x] **X-RTE-IMPORT-IA-NAOH-MU** Import IA-NAOH-MU: sodium hydroxide made on site. Done when: NAOH_PLANT makes the make-up by lime causticising of soda ash from trona ore, with membrane chlor-alkali on the leach purge salt and halite ore selectable (A-M-422). Depends: —. Evidence: `flow_graph/param/caustic.py`.
 - [x] **X-RTE-IMPORT-IA-H2SO4-MU** Import IA-H2SO4-MU: sulfuric acid made on site. Done when: ACID_PLANT makes the HF kiln acid on the contact process from the kiln cake reduced with plant char and native sulfur ore, with a sulfur-ore-only route selectable (A-M-421). Depends: —. Evidence: `flow_graph/param/sulfuric.py`.
 - [x] **X-RTE-IMPORT-CARBON** Imports IA-C-TI, IA-C-MO and IA-C-CR: carbon reductant made on site. Done when: the Ti, Mo and Cr chlorinators take plant pyrolysis char from OIL_PYRO, sized from their carbon need over the char fixed carbon (A-M-420). Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
@@ -1445,7 +1446,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] DIGESTER-LI_RECOVER-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: DIGESTER-LI_RECOVER-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] DIGESTER-LI_RECOVER-15 Test and commission. Done when: test procedure and acceptance record. Depends: DIGESTER-LI_RECOVER-14, X-COM-01. Triage: hardware.
 - **DIGESTER-NAOH_PLANT** (reactor, sector DIGESTER)
-  - [x] DIGESTER-NAOH_PLANT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NAOH_PLANT.md` §1; mass in = out 20.96 kg/d, 1.1935 kW.
+  - [x] DIGESTER-NAOH_PLANT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/NAOH_PLANT.md` §1; mass in = out 20.96 kg/d, 1.1929 kW.
   - [x] DIGESTER-NAOH_PLANT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: DIGESTER-NAOH_PLANT-01. Evidence: `docs-authority/PARAMETRIC_MODEL.md` (AQS-PAR-001).
   - [x] DIGESTER-NAOH_PLANT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: DIGESTER-NAOH_PLANT-01, DIGESTER-NAOH_PLANT-02. Evidence: `docs-authority/pid/NAOH_PLANT.svg` (AQS-PID-001).
   - [x] DIGESTER-NAOH_PLANT-04 Nozzle schedule. Done when: docs-authority/nozzles/NAOH_PLANT.csv, one row per edge. Depends: DIGESTER-NAOH_PLANT-03. Evidence: `docs-authority/nozzles/NAOH_PLANT.csv` (all 9 process connections listed).
@@ -2404,11 +2405,11 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 ### POLYMERS. Process (Mass transform)
 
 - **POLYMERS-ACID_PLANT** (reactor, sector POLYMERS)
-  - [x] POLYMERS-ACID_PLANT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ACID_PLANT.md` §1; mass in = out 0.7822 kg/d, 0.9654 kW.
+  - [x] POLYMERS-ACID_PLANT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ACID_PLANT.md` §1; mass in = out 0.7724 kg/d, 0.9660 kW.
   - [x] POLYMERS-ACID_PLANT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: POLYMERS-ACID_PLANT-01. Evidence: `docs-authority/sizing/POLYMERS_LINE.md` (AQS-DUTY-073).
   - [x] POLYMERS-ACID_PLANT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: POLYMERS-ACID_PLANT-01, POLYMERS-ACID_PLANT-02. Evidence: `docs-authority/pid/ACID_PLANT.svg` (AQS-PID-001).
-  - [x] POLYMERS-ACID_PLANT-04 Nozzle schedule. Done when: docs-authority/nozzles/ACID_PLANT.csv, one row per edge. Depends: POLYMERS-ACID_PLANT-03. Evidence: `docs-authority/nozzles/ACID_PLANT.csv` (all 8 process connections listed).
-  - [x] POLYMERS-ACID_PLANT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: POLYMERS-ACID_PLANT-04, POLYMERS-ACID_PLANT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 9 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] POLYMERS-ACID_PLANT-04 Nozzle schedule. Done when: docs-authority/nozzles/ACID_PLANT.csv, one row per edge. Depends: POLYMERS-ACID_PLANT-03. Evidence: `docs-authority/nozzles/ACID_PLANT.csv` (all 9 process connections listed).
+  - [x] POLYMERS-ACID_PLANT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: POLYMERS-ACID_PLANT-04, POLYMERS-ACID_PLANT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 10 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] POLYMERS-ACID_PLANT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: POLYMERS-ACID_PLANT-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] POLYMERS-ACID_PLANT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: POLYMERS-ACID_PLANT-02, POLYMERS-ACID_PLANT-03. Evidence: `docs-authority/duties/ACID_PLANT.md` §6 (C7 closed on MASTER_PLAN).
   - [x] POLYMERS-ACID_PLANT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: POLYMERS-ACID_PLANT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (6 loops; AQS-CTL-001).

@@ -7,3 +7,4 @@ N5,DN15,Class 150,carbon dioxide of the burned furnace gas,inlet,160
 N6,DN15,Class 150,oxygen of the process air (sulfur burning and SO2 oxidation),outlet,600
 N7,DN15,Class 150,carbon dioxide of the cake kiln,inlet,160
 N8,DN15,Class 150,carbon dioxide and water vapour of the trona calciner and lime kiln,inlet,160
+N9,DN15,Class 150,carbon dioxide and water vapour of the cake kiln,inlet,160

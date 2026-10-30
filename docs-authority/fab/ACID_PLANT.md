@@ -7,7 +7,7 @@ service line: see the duty sheet section 1 basis
 Internals: duty sheet: "converter shell of aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of" [docs-authority/duties/ACID_PLANT.md]
 Material: Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation; sulfur burner and converter shell of aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of carbon steel with PTFE-lined nozzles; dilution cooler of high-silicon iron. (continues on the duty sheet)
 
-Nozzles: 10 process connections per docs-authority/nozzles/ACID_PLANT.csv
+Nozzles: 13 process connections per docs-authority/nozzles/ACID_PLANT.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

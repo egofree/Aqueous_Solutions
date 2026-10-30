@@ -159,6 +159,19 @@ internal demand plus a saleable surplus, and every surplus stream has a defined
 outlet (product store, export meter). PV is sized at `pv_oversize_factor` (set in `drivers.json`)
 times the nameplate that closes the daily balance.
 
+## On-site production and recovery first
+
+The plant makes what it uses on site. It imports nothing except waste and raw
+ore; water and air are natural resources. For every element the plant needs,
+recover it first from waste and byproduct streams anywhere on the graph; raw ore
+at the dock only tops up the shortfall left after recovery, and the code sizes
+that top-up. Each transfer function that takes an ore stamps a recovery record on
+its unit, and `flow_graph/param/recovery.py` (A-M-423, AQS-PAR-001 section 7.2)
+flags any dock ore input above the unrecovered shortfall, any recoverable loss
+left unrecovered while ore is taken, and any waste outflow of an ore element that
+no record recovers or declares. `pytest flow_graph/param/test_recovery_first.py`
+fails on a flag.
+
 ## Redundancy
 
 Build redundancy into every energy and life-support system wherever possible

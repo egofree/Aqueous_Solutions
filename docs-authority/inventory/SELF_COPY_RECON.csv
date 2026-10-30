@@ -462,7 +462,7 @@ YEAST,Legs 40x40 x 300 mm,3,"HDPE PE100 sheet, rolled and extrusion-welded (DVS 
 YEAST,PIR insulation 50 mm with PE cladding; CO2 evolution; daily recirculation pump,1,PIR,Partial,OIL/MEOH chemistry,monomer route not yet in the graph
 YEAST,Heater mat 5 W with thermostat,1,silicone,Partial,OIL/MEOH chemistry,monomer route not yet in the graph
 ACID_PLANT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation,Missing,-,no fluorine source on site; end of life Q-011
-ACID_PLANT,Process nozzle DN15,8,Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation,Missing,-,no fluorine source on site; end of life Q-011
+ACID_PLANT,Process nozzle DN15,9,Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation,Missing,-,no fluorine source on site; end of life Q-011
 ACID_POLISH_SCRUB,Body D600 x 3803 mm,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 ACID_POLISH_SCRUB,Process nozzle DN15,3,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 ACID_POLISH_SCRUB,Process nozzle DN250,1,"CPVC shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units

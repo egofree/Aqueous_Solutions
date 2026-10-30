@@ -7,7 +7,7 @@ service line: see the duty sheet section 1 basis
 Internals: duty sheet: "anode pans, nickel cathode pans and perfluorinated membranes, with nickel catholyte piping and PVC-lined brine" [docs-authority/duties/NAOH_PLANT.md]
 Material: Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and mineral-wool insulation; slaker, causticiser and white-liquor tank of carbon steel; on the chlor-alkali route, titanium anode pans, nickel cathode pans and perfluorinated membranes, with nickel catholyte piping and PVC-lined brine piping. (continues on the duty sheet)
 
-Nozzles: 11 process connections per docs-authority/nozzles/NAOH_PLANT.csv
+Nozzles: 12 process connections per docs-authority/nozzles/NAOH_PLANT.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

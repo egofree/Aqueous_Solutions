@@ -31,6 +31,7 @@ M_NA2CO3 = 2*M_NA + M_C + 3*M_O
 M_TRONA = M_NA2CO3 + (M_NA + M_H + M_C + 3*M_O) + 2*M_H2O       # Na2CO3.NaHCO3.2H2O
 M_CACO3 = M_CA + M_C + 3*M_O
 M_NACL = M_NA + M_CL
+M_CAO = M_CA + M_O
 F = 96485.33212
 ROUTES = ('CAUSTICIZE', 'CHLOR_ALKALI')
 
@@ -60,17 +61,35 @@ def design(naoh_mol_d, d=None):
     naoh = n*M_NAOH
     z = dict(trona_ore_kg_d=0.0, limestone_ore_kg_d=0.0, halite_ore_kg_d=0.0, recycle_kg_d=rec*M_NACL, purge_kg_d=n*M_NACL,
              bleed_kg_d=top*M_NACL, vent_kg_d=0.0, vent_co2_kg_d=0.0, residue_kg_d=0.0)
-    cell = rec; kw_kiln = 0.0
+    cell = rec; kw_kiln = 0.0; z['lime_draw_kg_d'] = 0.0; z['ca'] = None
     if route == 'CAUSTICIZE':
         n_sa = top/2; n_tr = n_sa/1.5; n_ca = n_sa
-        trona = n_tr*M_TRONA; p = v('lime_purge_frac'); ls = p*n_ca*M_CACO3
+        trona = n_tr*M_TRONA; p = v('lime_purge_frac'); need = p*n_ca     # lime make-up, kmol CaO/d
+        # recovery first (t61u): the lime of the ACID_PLANT cake-kiln residue covers the make-up before limestone ore
+        from . import sulfuric, fluoro_train
+        rf = fluoro_train.solve(); sa = sulfuric.design(rf['acid_soln'], rf['caf2_conv'], rf['cake'], d, spar=rf['spar'])
+        cao_frac = (sa['residue_comp'] or {}).get('CaO', 0.0)
+        draw = min(need, sa['cao_kg_d']/M_CAO) if cao_frac > 0 else 0.0
+        z['lime_draw_kg_d'] = draw*M_CAO/cao_frac if draw > 0 else 0.0
+        z['lime_draw_comp'] = dict(sa['residue_comp'])
+        n_ls = need - draw; ls = n_ls*M_CACO3
         z['trona_ore_kg_d'] = trona/v('trona_ore_purity'); z['limestone_ore_kg_d'] = ls/v('limestone_ore_purity')
-        z['vent_co2_kg_d'] = 0.5*n_tr*M_CO2 + n_ca*M_CO2          # trona calciner + lime kiln (mud and limestone)
+        calc = (1 - p)*n_ca + n_ls                                 # mud recalcined plus limestone, kmol CaCO3/d
+        z['vent_co2_kg_d'] = 0.5*n_tr*M_CO2 + calc*M_CO2          # trona calciner + lime kiln
         z['vent_kg_d'] = z['vent_co2_kg_d'] + 2.5*n_tr*M_H2O
-        z['residue_kg_d'] = p*n_ca*M_CACO3 + (z['trona_ore_kg_d'] - trona) + (z['limestone_ore_kg_d'] - ls)
+        z['mud_kg_d'] = p*n_ca*M_CACO3
+        z['residue_kg_d'] = z['mud_kg_d'] + (z['trona_ore_kg_d'] - trona) + (z['limestone_ore_kg_d'] - ls) + (z['lime_draw_kg_d'] - draw*M_CAO)
+        ship_res = sa['residue_kg_d'] - z['lime_draw_kg_d']
+        ship_ca = ship_res*sum(sa['residue_comp'].get(k, 0.0)*M_CA/m for k, m in (('CaO', M_CAO), ('CaSO4', M_CAO + 32.06 + 3*M_O)))
+        z['ca'] = dict(element='Ca', use='lime-cycle make-up of the causticiser', need_kg_d=need*M_CA, recovered_kg_d=draw*M_CA,
+                       recovered_from=['IA-LIME-TO-NAOH'] if draw > 0 else [], ore_streams=['IA-LIMESTONE-MU'],
+                       unrecovered=[dict(stream='IA-NAOH-RESIDUE', kg_d=need*M_CA, recoverable=False,
+                                         basis='lime-mud purge that carries the non-process elements out (lime_purge_frac)')]
+                                   + ([dict(stream='IA-LIME-SHIP', kg_d=ship_ca, recoverable=False,
+                                            basis='cake-kiln residue lime beyond the lime make-up need')] if ship_res > 0 else []))
         if top > 0:
             q_tr = n_tr*1000*v('trona_dH_kJ_mol')/86.4 + z['trona_ore_kg_d']*v('caus_feed_cp_kJ_kgK')*(v('trona_calc_T_C') - 25)/86.4
-            q_lk = n_ca*1000*v('caco3_dH_kJ_mol')/86.4 + n_ca*M_CACO3*v('caus_feed_cp_kJ_kgK')*(v('lime_kiln_T_C') - 25)/86.4
+            q_lk = calc*1000*v('caco3_dH_kJ_mol')/86.4 + (calc*M_CACO3 + z['lime_draw_kg_d'])*v('caus_feed_cp_kJ_kgK')*(v('lime_kiln_T_C') - 25)/86.4
             kw_kiln = (q_tr + q_lk + _shell_W(d, 'trona_calc') + _shell_W(d, 'lime_kiln'))/1000   # W -> kW
         liquor = rec*M_NAOH/wc + top*M_NAOH/v('caus_liquor_wt')
     else:
@@ -82,20 +101,22 @@ def design(naoh_mol_d, d=None):
     z.update(route=route, naoh_kg_d=naoh, product_wt=naoh/liquor if liquor else product_wt(d), liquor_kg_d=liquor,
              kw=kw_cell + kw_kiln, kw_cell=kw_cell, kw_kiln=kw_kiln)
     assert abs(z['product_wt'] - product_wt(d)) < 1e-12
-    ins = z['trona_ore_kg_d'] + z['limestone_ore_kg_d'] + z['halite_ore_kg_d'] + z['recycle_kg_d']
+    ins = z['trona_ore_kg_d'] + z['limestone_ore_kg_d'] + z['halite_ore_kg_d'] + z['recycle_kg_d'] + z['lime_draw_kg_d']
     outs = liquor + z['cl2_kg_d'] + z['h2_kg_d'] + z['vent_kg_d'] + z['residue_kg_d']
     z['h2o_kg_d'] = outs - ins                                     # well water closes the unit (absorbed in the liquor, the slaker and the cell)
     # net reactions: Na2CO3 + H2O -> 2 NaOH + CO2 over the lime cycle; NaCl + H2O -> NaOH + 1/2 Cl2 + 1/2 H2 in the cell
     water_need = liquor - naoh + cell*M_H2O + (top/2*M_H2O if route == 'CAUSTICIZE' else 0.0)
     assert abs(z['h2o_kg_d'] - water_need) < 1e-9*max(1.0, liquor), (z['h2o_kg_d'], water_need)   # element balance agrees with closure
     na = lambda kmol: kmol*M_NA
-    z['recovery'] = dict(element='Na', demand_kg_d=na(n), recovered_kg_d=na(rec), recovered_from=['IA-NA-PURGE'],
-                         ore_kg_d=na(top), ore_streams=['IA-TRONA-MU' if route == 'CAUSTICIZE' else 'IA-HALITE-MU'],
-                         unrecovered=[('IA-NA-PURGE', na(top), 'bleed of the purge salt that carries the impurities out (na_purge_recycle_frac)')])
+    z['recovery'] = dict(element='Na', use='NaOH make-up', need_kg_d=na(n), recovered_kg_d=na(rec), recovered_from=['IA-NA-RECYCLE'],
+                         ore_streams=['IA-TRONA-MU' if route == 'CAUSTICIZE' else 'IA-HALITE-MU'],
+                         unrecovered=[dict(stream='IA-NA-PURGE', kg_d=na(top), recoverable=False,
+                                           basis='bleed of the purge salt that carries the impurities out (na_purge_recycle_frac)')])
     return z
 
 STREAMS = (('IA-TRONA-MU', 'NORTH_DOCK', 'NAOH_PLANT', 'trona ore (raw ore) for soda ash', 'S', {'Na2CO3.NaHCO3.2H2O': 1.0}, 'trona_ore_kg_d', 'CAUSTICIZE'),
            ('IA-LIMESTONE-MU', 'NORTH_DOCK', 'NAOH_PLANT', 'limestone ore (raw ore), lime-cycle make-up', 'S', {'CaCO3': 1.0}, 'limestone_ore_kg_d', 'CAUSTICIZE'),
+           ('IA-LIME-TO-NAOH', 'ACID_PLANT', 'NAOH_PLANT', 'cake-kiln lime residue as the lime-cycle make-up', 'S', {'CaO': 1.0}, 'lime_draw_kg_d', 'CAUSTICIZE'),
            ('IA-NAOH-VENT', 'NAOH_PLANT', 'ATMOS', 'carbon dioxide and water vapour of the trona calciner and lime kiln', 'G', {'CO2': 1.0}, 'vent_kg_d', 'CAUSTICIZE'),
            ('IA-HALITE-MU', 'NORTH_DOCK', 'NAOH_PLANT', 'halite ore (raw ore) to re-saturate the cell brine', 'S', {'NaCl': 1.0}, 'halite_ore_kg_d', 'CHLOR_ALKALI'),
            ('IA-NA-RECYCLE', 'LEACH_CSTR_1', 'NAOH_PLANT', 'sodium chloride of the leach purge recovered to the cell brine', 'L', {'NaCl': 1.0}, 'recycle_kg_d', None),
@@ -125,6 +146,13 @@ def tf(g, E, naoh_mol_d, d=None):
         e['rate'] = {'value': round(r[key], 6), 'unit': 'kg/d', 'status': 'study', 'note': note}
     if r['vent_kg_d'] > 0:
         f = r['vent_co2_kg_d']/r['vent_kg_d']; E['IA-NAOH-VENT']['composition'] = {'CO2': round(f, 6), 'water': round(1 - f, 6)}
+    if r['lime_draw_kg_d'] > 0:
+        E['IA-LIME-TO-NAOH']['composition'] = dict(r['lime_draw_comp'])
+    if r['residue_kg_d'] > 0:
+        m = r.get('mud_kg_d', 0.0)/r['residue_kg_d']
+        E['IA-NAOH-RESIDUE']['composition'] = {k: round(x, 6) for k, x in (('CaCO3', m), ('inerts', 1 - m)) if x > 0}
+    E['IA-NA-PURGE']['composition'] = {'NaCl': 1.0}
+    N['NAOH_PLANT'].setdefault('params', {})['recovery'] = [r['recovery']] + ([r['ca']] if r['ca'] else [])
     E['IA-NAOH-LIQ']['params'] = {'NaOH_kg_d': round(r['naoh_kg_d'], 6), 'NaOH_wt': r['product_wt']}
     E['IA-NA-PURGE']['carries'] = 'sodium chloride bleed of the leach purge (impurity bleed)'
     E['IA-NA-PURGE']['rate'] = {'value': round(r['bleed_kg_d'], 6), 'unit': 'kg/d', 'status': 'study',
@@ -148,4 +176,4 @@ if __name__ == '__main__':
     d, g, s = solver.solve()
     for rt in ROUTES:
         dd = json.loads(json.dumps(d)); dd['naoh_route']['value'] = rt
-        print(json.dumps({k: (round(x, 5) if isinstance(x, float) else x) for k, x in design(s['naoh']['makeup_mol'], dd).items() if k != 'recovery'}))
+        print(json.dumps({k: (round(x, 5) if isinstance(x, float) else x) for k, x in design(s['naoh']['makeup_mol'], dd).items() if k not in ('recovery', 'ca', 'lime_draw_comp')}))

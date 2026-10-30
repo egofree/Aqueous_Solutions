@@ -2464,12 +2464,12 @@
             "IA-SHELL-EXPORT": 1.0,
             "IA-METAL-SHIP": 10.812,
             "IA-FAB-PRODUCT": 0.139,
-            "IA-LIME-SHIP": 0.299,
+            "IA-LIME-SHIP": 0.259,
             "IA-NAOH-CL2-SHIP": 3.505,
-            "IA-NAOH-RESIDUE": 0.121
+            "IA-NAOH-RESIDUE": 0.126
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 53.366,
+            "IA-H2O-MU": 53.367,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
@@ -2481,11 +2481,10 @@
             "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
             "IA-QUARTZ-MU": 0.718,
-            "IA-SULFUR-MU": 0.018,
-            "IA-TRONA-MU": 0.92,
-            "IA-LIMESTONE-MU": 0.029
+            "IA-SULFUR-MU": 0.013,
+            "IA-TRONA-MU": 0.92
           },
-          "net_kg_d": 13.304,
+          "net_kg_d": 13.302,
           "residual_kg_d": 13.304,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
@@ -4452,7 +4451,35 @@
           "style": "rotary_kiln",
           "state": "live",
           "basis": "kiln-class study minimum at the 1.674 kg/d HF duty (ULLMANN_HF; A-M-289); tube 200 x 1200 mm, 2 deg slope, kiln gas absorbed into the recovered-F liquor at the dissolution tank"
-        }
+        },
+        "recovery": [
+          {
+            "element": "F",
+            "use": "HF kiln",
+            "need_kg_d": 1.5971060991210455,
+            "recovered_kg_d": 1.4434149755073478,
+            "recovered_from": [
+              "F_RECOVER_TO_HF_GEN"
+            ],
+            "ore_streams": [
+              "IA-CAF2-MU"
+            ],
+            "unrecovered": [
+              {
+                "stream": "IA-LIME-SHIP",
+                "kg_d": 0.007074,
+                "recoverable": false,
+                "basis": "fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake"
+              },
+              {
+                "stream": "IA-NAOH-RESIDUE",
+                "kg_d": 0.00061,
+                "recoverable": false,
+                "basis": "fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake"
+              }
+            ]
+          }
+        ]
       },
       "continuous_kw": {
         "value": 0.3083,
@@ -4723,7 +4750,21 @@
           "alt": "SiC/SiAlON bed brick if chloride carryover drives the hot face past graphite life; Cr metal cathode-worked parts passivate in situ",
           "note": "0.25 kg/d Cr line; the CO off-gas (0.202 kg/d) leaves on the dry IA-CR-VENT (M7); no measured rate.",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "Cr",
+            "use": "CR_CELL metal",
+            "need_kg_d": 0.25000186123995816,
+            "recovered_kg_d": 0.0,
+            "recovered_from": [],
+            "ore_streams": [
+              "IA-CR2O3-MU"
+            ],
+            "unrecovered": [],
+            "note": "no waste stream on the graph carries Cr; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)"
+          }
+        ]
       },
       "continuous_kw": {
         "value": 0.16,
@@ -4802,7 +4843,21 @@
           "alt": "Mo-clad retort (Kroll shipped his demonstration retort Mo-clad) if service pushes above 950 C; Hastelloy C-276 condensation if TiCl4 hydrolysis is ever traced",
           "note": "batch 1 kg sponge class retort (graph design); the Mg recycles from MG_POT and the MgCl2 returns through the issued section 12.2 last-row launder.",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "Ti",
+            "use": "TI_CELL metal",
+            "need_kg_d": 0.5000050228385401,
+            "recovered_kg_d": 0.0,
+            "recovered_from": [],
+            "ore_streams": [
+              "IA-TIO2-MU"
+            ],
+            "unrecovered": [],
+            "note": "no waste stream on the graph carries Ti; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)"
+          }
+        ]
       },
       "continuous_kw": {
         "value": 0.5,
@@ -4879,7 +4934,21 @@
           "alt": "SiC bed brick above the design temperature class",
           "note": "the 0.0625 kg/d Mo line is also the house Mo-rod source for cell hardware; anode gas is the internal Cl2 loop; no measured rate.",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "Mo",
+            "use": "MO_CELL metal",
+            "need_kg_d": 0.06250111290961256,
+            "recovered_kg_d": 0.0,
+            "recovered_from": [],
+            "ore_streams": [
+              "IA-MOO3-MU"
+            ],
+            "unrecovered": [],
+            "note": "no waste stream on the graph carries Mo; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)"
+          }
+        ]
       },
       "continuous_kw": {
         "value": 0.1141,
@@ -5775,7 +5844,7 @@
         "design": {
           "machine": "two-strand horizontal semi-continuous caster",
           "feed_kg_d": 31.7125,
-          "billet_kg_d": 13.244227999999968,
+          "billet_kg_d": 13.244228000000062,
           "ingot_kg_d": 21.7125,
           "strands": 2,
           "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"
@@ -6144,7 +6213,29 @@
           "alt": "316L tank if a binder chemistry change moves the pH below neutral",
           "note": "slurry stays in-house; reclaim dusts are the only loose silica.",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "Si",
+            "use": "investment shell silica",
+            "need_kg_d": 3.7394937003811397,
+            "recovered_kg_d": 3.2720569878334973,
+            "recovered_from": [
+              "IA-SHELL-RECLAIM"
+            ],
+            "ore_streams": [
+              "IA-SILICA-MU"
+            ],
+            "unrecovered": [
+              {
+                "stream": "IA-SHELL-EXPORT",
+                "kg_d": 0.46743671254764246,
+                "recoverable": false,
+                "basis": "spent shell beyond foundry_inv_shell_reclaim_frac: fines and fired binder that the stucco cannot take back (A-M-286)"
+              }
+            ]
+          }
+        ]
       },
       "continuous_kw": {
         "value": 0.3,
@@ -6757,7 +6848,21 @@
           "alt": "Silicon-carbide hot face when batch chemistry reaches beyond the graphite class (a process-change decision, not a materials trade)",
           "note": "no wetted stream on the graph; the selection is the construction class only.",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "Si",
+            "use": "silicon furnace quartz",
+            "need_kg_d": 0.3354234068608797,
+            "recovered_kg_d": 0.0,
+            "recovered_from": [],
+            "ore_streams": [
+              "IA-QUARTZ-MU"
+            ],
+            "unrecovered": [],
+            "note": "the plant silica wastes are fines (spent shell flour, silica fume), not the lump quartz the arc furnace burden needs, and the silica fume already goes to the leach"
+          }
+        ]
       },
       "continuous_kw": {
         "value": 0.1472,
@@ -7625,7 +7730,7 @@
       "notes": "Sulfuric acid plant: cake kiln and sulfur burner, contact converter and absorber (A-M-421).",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.9654,
+        "value": 0.966,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake kiln shell loss + reaction + feed heat (sulfuric.py, route GYPSUM_LOOP)."
@@ -7640,7 +7745,35 @@
           "alt": "Alloy 20 or PTFE-lined steel for the absorber if the acid strength falls below 93 wt% in service",
           "note": "wetted by 98 wt% sulfuric acid and dry sulfur oxides; dilution below 93 wt% is the corrosion load, held by the absorber control.",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "S",
+            "use": "sulfuric acid for the HF kiln",
+            "need_kg_d": 0.12935298595317726,
+            "recovered_kg_d": 0.11641768735785955,
+            "recovered_from": [
+              "IA-GYPSUM-REGEN"
+            ],
+            "ore_streams": [
+              "IA-SULFUR-MU"
+            ],
+            "unrecovered": [
+              {
+                "stream": "IA-LIME-SHIP",
+                "kg_d": 0.011908,
+                "recoverable": false,
+                "basis": "cake-kiln non-conversion (caso4_dec_frac) leaves with the residue"
+              },
+              {
+                "stream": "IA-NAOH-RESIDUE",
+                "kg_d": 0.001027,
+                "recoverable": false,
+                "basis": "cake-kiln non-conversion (caso4_dec_frac) leaves with the residue"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -7654,10 +7787,10 @@
       "notes": "Sodium hydroxide plant: trona calciner, causticiser and lime kiln, or membrane chlor-alkali cells (A-M-422).",
       "enabled": true,
       "continuous_kw": {
-        "value": 1.1935,
+        "value": 1.1929,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): membrane cells 0.4503 kW (ca_cell_V x F / (M x ca_CE) through the rectifier) + trona calciner and lime kiln 0.7431 kW (shell loss + reaction + feed heat) (caustic.py, route CAUSTICIZE)."
+        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): membrane cells 0.4503 kW (ca_cell_V x F / (M x ca_CE) through the rectifier) + trona calciner and lime kiln 0.7425 kW (shell loss + reaction + feed heat) (caustic.py, route CAUSTICIZE)."
       },
       "modules": [],
       "params": {
@@ -7669,7 +7802,55 @@
           "alt": "Nickel 200 for the liquor lines if the caustic runs hot and strong in service",
           "note": "wetted by caustic liquor (and wet chlorine on the chlor-alkali route); caustic cracking of stressed carbon steel is the corrosion load.",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "Na",
+            "use": "NaOH make-up",
+            "need_kg_d": 2.5254297015574187,
+            "recovered_kg_d": 2.272886731401677,
+            "recovered_from": [
+              "IA-NA-RECYCLE"
+            ],
+            "ore_streams": [
+              "IA-TRONA-MU"
+            ],
+            "unrecovered": [
+              {
+                "stream": "IA-NA-PURGE",
+                "kg_d": 0.2525429701557418,
+                "recoverable": false,
+                "basis": "bleed of the purge salt that carries the impurities out (na_purge_recycle_frac)"
+              }
+            ]
+          },
+          {
+            "element": "Ca",
+            "use": "lime-cycle make-up of the causticiser",
+            "need_kg_d": 0.011006325748044606,
+            "recovered_kg_d": 0.011006325748044606,
+            "recovered_from": [
+              "IA-LIME-TO-NAOH"
+            ],
+            "ore_streams": [
+              "IA-LIMESTONE-MU"
+            ],
+            "unrecovered": [
+              {
+                "stream": "IA-NAOH-RESIDUE",
+                "kg_d": 0.011006325748044606,
+                "recoverable": false,
+                "basis": "lime-mud purge that carries the non-process elements out (lime_purge_frac)"
+              },
+              {
+                "stream": "IA-LIME-SHIP",
+                "kg_d": 0.14176289375192558,
+                "recoverable": false,
+                "basis": "cake-kiln residue lime beyond the lime make-up need"
+              }
+            ]
+          }
+        ]
       }
     }
   ],
@@ -9675,7 +9856,7 @@
       "forbidden": "pyro if FR-4",
       "claim_status": "Closed",
       "rate": {
-        "value": 11.636366,
+        "value": 11.635142,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
@@ -15136,7 +15317,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.836867,
+        "value": 4.835643,
         "unit": "kg/d",
         "status": "study",
         "note": "Char less the carbon charged to the silicon-carbide furnace. | X-PAR-02 TF: char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET) (AQS-PAR-003)."
@@ -18659,7 +18840,10 @@
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
-      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged"
+      "notes": "restored verbatim from graph Rev BH (91d33f4) after Rev AC consolidation dropped it; both endpoint units unchanged",
+      "composition": {
+        "NaCl": 1.0
+      }
     },
     {
       "stream_id": "SF-OIL_PYRO",
@@ -18868,7 +19052,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 53.366007,
+        "value": 53.367231,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -22770,7 +22954,9 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null,
-      "composition": null
+      "composition": {
+        "SiO2": 1.0
+      }
     },
     {
       "stream_id": "SF-AL_POT",
@@ -23987,10 +24173,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.018487,
+        "value": 0.012935,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): sulfur = 0.0185 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): sulfur = 0.0129 kg/d (sulfuric.py, route GYPSUM_LOOP)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "POLYMERS",
@@ -24045,10 +24231,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.024432,
+        "value": 0.025656,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): char = 0.0244 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): char = 0.0257 kg/d (sulfuric.py, route GYPSUM_LOOP)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "POLYMERS",
@@ -24074,10 +24260,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.083003,
+        "value": 0.077462,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): o2 = 0.0830 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): o2 = 0.0775 kg/d (sulfuric.py, route GYPSUM_LOOP)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "POLYMERS",
@@ -24127,15 +24313,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "carbon dioxide of the cake kiln",
+      "carries": "carbon dioxide and water vapour of the cake kiln",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.079758,
+        "value": 0.086872,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): co2 = 0.0798 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): co2 = 0.0869 kg/d (sulfuric.py, route GYPSUM_LOOP)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "WTR",
@@ -24144,7 +24330,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 1.0
+        "CO2": 0.96409,
+        "water": 0.03591
       }
     },
     {
@@ -24156,15 +24343,15 @@
         "mass"
       ],
       "presence": "present",
-      "carries": "lime residue byproduct of the cake kiln",
+      "carries": "cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.29871,
+        "value": 0.259355,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): residue = 0.2987 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake-kiln residue 0.2817 kg/d less the lime make-up of NAOH_PLANT on IA-LIME-TO-NAOH 0.0224 kg/d (route GYPSUM_LOOP)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "DOCK",
@@ -24173,7 +24360,11 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CaO": 1.0
+        "CaO": 0.688319,
+        "CaSO4": 0.185665,
+        "H2SO4": 0.006698,
+        "CaF2": 0.056044,
+        "inerts": 0.063274
       }
     },
     {
@@ -24219,7 +24410,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.9654,
+        "value": 0.966,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): feed equal to ACID_PLANT continuous_kw."
@@ -24269,16 +24460,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "limestone ore (raw ore), lime-cycle make-up",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.028933,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): limestone_ore = 0.0289 kg/d (caustic.py, route CAUSTICIZE)."
+        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): limestone_ore = 0.0000 kg/d (caustic.py, route CAUSTICIZE)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "DIGESTER",
@@ -24304,10 +24495,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.487201,
+        "value": 0.475115,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): vent = 0.4872 kg/d (caustic.py, route CAUSTICIZE)."
+        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): vent = 0.4751 kg/d (caustic.py, route CAUSTICIZE)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "WTR",
@@ -24316,8 +24507,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CO2": 0.661513,
-        "water": 0.338487
+        "CO2": 0.652903,
+        "water": 0.347097
       }
     },
     {
@@ -24480,10 +24671,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.12089,
+        "value": 0.126417,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): residue = 0.1209 kg/d (caustic.py, route CAUSTICIZE)."
+        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): residue = 0.1264 kg/d (caustic.py, route CAUSTICIZE)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DOCK",
@@ -24492,7 +24683,8 @@
       "gap_flags": [],
       "notes": null,
       "composition": {
-        "CaCO3": 1.0
+        "CaCO3": 0.217423,
+        "inerts": 0.782577
       }
     },
     {
@@ -24542,7 +24734,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.1935,
+        "value": 1.1929,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): feed equal to NAOH_PLANT continuous_kw."
@@ -24554,6 +24746,39 @@
       "gap_flags": [],
       "notes": null,
       "composition": null
+    },
+    {
+      "stream_id": "IA-LIME-TO-NAOH",
+      "from_unit_id": "ACID_PLANT",
+      "to_unit_id": "NAOH_PLANT",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cake-kiln lime residue as the lime-cycle make-up",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.022373,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): lime_draw = 0.0224 kg/d (caustic.py, route CAUSTICIZE)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CaO": 0.688319,
+        "CaSO4": 0.185665,
+        "H2SO4": 0.006698,
+        "CaF2": 0.056044,
+        "inerts": 0.063274
+      }
     }
   ],
   "view_presets": [

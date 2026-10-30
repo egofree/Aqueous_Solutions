@@ -1,5 +1,5 @@
 unit,drawing,rev,file,sector,unit_class,edges_in,edges_out,valves_placed,valves_unplaced,instruments,sifs,nozzles
-ACID_PLANT,AQS-PID-001-ACID_PLANT,b643a54b,docs-authority/pid/ACID_PLANT.svg,POLYMERS,reactor,6,3,0,0,6,2,10
+ACID_PLANT,AQS-PID-001-ACID_PLANT,c817d3d6,docs-authority/pid/ACID_PLANT.svg,POLYMERS,reactor,6,4,0,0,6,2,13
 ACID_POLISH_SCRUB,AQS-PID-001-ACID_POLISH_SCRUB,7be344c7,docs-authority/pid/ACID_POLISH_SCRUB.svg,GAS,scrubber,3,2,6,0,6,1,6
 ADS_CHILL,AQS-PID-001-ADS_CHILL,66ec033f,docs-authority/pid/ADS_CHILL.svg,HEAT,adsorption_chiller,1,2,0,0,2,0,0
 AFTERBURNER,AQS-PID-001-AFTERBURNER,fc2b6d2e,docs-authority/pid/AFTERBURNER.svg,OIL,thermal,5,4,8,0,3,1,13
@@ -106,7 +106,7 @@ MET_SCRUB,AQS-PID-001-MET_SCRUB,0efed5a3,docs-authority/pid/MET_SCRUB.svg,MFG,sc
 MFG_SHOP,AQS-PID-001-MFG_SHOP,398211b2,docs-authority/pid/MFG_SHOP.svg,MFG,shop,24,4,0,0,4,2,31
 MG_POT,AQS-PID-001-MG_POT,4c7e82e0,docs-authority/pid/MG_POT.svg,FOUNDRY,cell,3,4,0,0,6,1,8
 MO_CELL,AQS-PID-001-MO_CELL,ad4c4c18,docs-authority/pid/MO_CELL.svg,FOUNDRY,cell,4,4,0,0,4,0,10
-NAOH_PLANT,AQS-PID-001-NAOH_PLANT,9786ad65,docs-authority/pid/NAOH_PLANT.svg,DIGESTER,reactor,6,5,0,0,6,2,11
+NAOH_PLANT,AQS-PID-001-NAOH_PLANT,ac5f8537,docs-authority/pid/NAOH_PLANT.svg,DIGESTER,reactor,7,5,0,0,6,2,12
 NCG_HEADER,AQS-PID-001-NCG_HEADER,ca5ff3b7,docs-authority/pid/NCG_HEADER.svg,OIL,header,1,1,2,0,1,0,4
 NOX_SCRUB,AQS-PID-001-NOX_SCRUB,8ce059dc,docs-authority/pid/NOX_SCRUB.svg,GAS,scrubber,8,4,12,0,8,1,15
 NUTRIENT_DOSE,AQS-PID-001-NUTRIENT_DOSE,c70dd4e2,docs-authority/pid/NUTRIENT_DOSE.svg,NUT,dose,5,6,18,0,10,1,13

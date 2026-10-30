@@ -417,6 +417,20 @@ def apply(g=None, write=False):
     mk('IA-SHELL-EXPORT', 'SHELL_BREAK', 'NORTH_DOCK', 'DOCK', 'S', 'spent foundry silica (solids return class)',
        s['sh_mu'], f'Spent-shell balance = the 0.5 kg/kg-casting make-up (AQS-SIZE-FOUNDRY registered waste line; '
        f'A-M-286); GLASS_MILL has no digest capacity (A-M-267). | {TAG}.')
+    # recovery-first records (owner rule t61u, A-M-423; checked by flow_graph/param/recovery.py)
+    from .recovery import frac as _fr
+    _v = lambda k: float(E[k]['rate']['value'] or 0)
+    E['IA-SHELL-EXPORT']['composition'] = {'SiO2': 1.0}
+    si = _fr('SiO2', 'Si')
+    N['SHELL_BUILD'].setdefault('params', {})['recovery'] = [dict(
+        element='Si', use='investment shell silica', need_kg_d=(_v('IA-SHELL-RECLAIM') + _v('IA-SILICA-MU'))*si,
+        recovered_kg_d=_v('IA-SHELL-RECLAIM')*si, recovered_from=['IA-SHELL-RECLAIM'], ore_streams=['IA-SILICA-MU'],
+        unrecovered=[dict(stream='IA-SHELL-EXPORT', kg_d=_v('IA-SHELL-EXPORT')*si, recoverable=False,
+                          basis='spent shell beyond foundry_inv_shell_reclaim_frac: fines and fired binder that the stucco cannot take back (A-M-286)')])]
+    for _sid, _u, _el, _f in (('IA-TIO2-MU', 'TI_CELL', 'Ti', 'TiO2'), ('IA-MOO3-MU', 'MO_CELL', 'Mo', 'MoO3'), ('IA-CR2O3-MU', 'CR_CELL', 'Cr', 'Cr2O3')):
+        N[_u].setdefault('params', {})['recovery'] = [dict(
+            element=_el, use=f'{_u} metal', need_kg_d=_v(_sid)*_fr(_f, _el), recovered_kg_d=0.0, recovered_from=[], ore_streams=[_sid],
+            unrecovered=[], note=f'no waste stream on the graph carries {_el}; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)')]
     put('SHELL_TO_GLASS', 0.0,
         'Spent shell reclaims internally (IA-SHELL-RECLAIM) and exports the balance at the dock: GLASS_DIGEST is fully '
         f'committed (A-M-267) so the solids line has no digest capacity for it. | {TAG}.')
