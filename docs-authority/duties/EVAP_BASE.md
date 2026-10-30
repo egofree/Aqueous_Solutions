@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 1306 kg/d. Mass out 1306 kg/d. Electrical duty 1.3280 kW. In: IA-EVAP_BASE-FEED 1302 kg/d (NaOH 2 M from BMED); IA-NAOH-MU 4.394 kg/d (purchased NaOH flake make-up). Out: IA-BASE-01 21.97 kg/d (digest NaOH, 20 wt%); IA-BASE-PPT 482.3 kg/d (NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)); IA-EVAP_BASE-COND 801.9 kg/d (evaporator condensate return (BMED water make-up)).
+1. Basis. Mass in 1318 kg/d. Mass out 1318 kg/d. Electrical duty 1.3490 kW. In: IA-EVAP_BASE-FEED 1302 kg/d (NaOH 2 M from BMED); IA-NAOH-LIQ 16.75 kg/d (sodium hydroxide liquor to the base evaporator). Out: IA-BASE-01 21.97 kg/d (digest NaOH, 20 wt%); IA-BASE-PPT 482.3 kg/d (NaOH 20 wt% to hydroxide precipitation of leached Al, Ca, Mg, Fe (class A)); IA-EVAP_BASE-COND 814.2 kg/d (evaporator condensate return (BMED water make-up)).
 
 2. Size.
 - X-PAR acid-loop decision (AQS-PAR-001). Mechanical vapour recompression evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%.

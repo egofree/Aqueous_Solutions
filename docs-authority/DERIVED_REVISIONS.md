@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1916 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1920 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -341,6 +341,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/MUSHROOM.md` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/duties/MUSH_BLOCK.md` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/duties/MUSH_STRAW.md` | 3de9a3d (regenerated, no change) | current |
+| `docs-authority/duties/NAOH_PLANT.md` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/duties/NCG_HEADER.md` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/duties/NFIX_BED.md` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/duties/NFT.md` | 3de9a3d (regenerated, no change) | current |
@@ -974,6 +975,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/nozzles/MUSHROOM.csv` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/nozzles/MUSH_BLOCK.csv` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/nozzles/MUSH_STRAW.csv` | 3de9a3d (regenerated, no change) | current |
+| `docs-authority/nozzles/NAOH_PLANT.csv` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/nozzles/NCG_HEADER.csv` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/nozzles/NFIX_BED.csv` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/nozzles/NFT.csv` | 3de9a3d (regenerated, no change) | current |
@@ -1163,6 +1165,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/pid/MFG_SHOP.svg` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/pid/MG_POT.svg` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/pid/MO_CELL.svg` | 3de9a3d (regenerated, no change) | current |
+| `docs-authority/pid/NAOH_PLANT.svg` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/pid/NCG_HEADER.svg` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/pid/NOX_SCRUB.svg` | 3de9a3d (regenerated, no change) | current |
 | `docs-authority/pid/NUTRIENT_DOSE.svg` | 3de9a3d (regenerated, no change) | current |
@@ -1779,6 +1782,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `models/units/MUSHROOM/itp.csv` | 3de9a3d (regenerated, no change) | current |
 | `models/units/MUSH_BLOCK/itp.csv` | 3de9a3d (regenerated, no change) | current |
 | `models/units/MUSH_STRAW/itp.csv` | 3de9a3d (regenerated, no change) | current |
+| `models/units/NAOH_PLANT/itp.csv` | 3de9a3d (regenerated, no change) | current |
 | `models/units/NCG_HEADER/maint.csv` | 3de9a3d (regenerated, no change) | current |
 | `models/units/NFIX_BED/itp.csv` | 3de9a3d (regenerated, no change) | current |
 | `models/units/NFT/itp.csv` | 3de9a3d (regenerated, no change) | current |

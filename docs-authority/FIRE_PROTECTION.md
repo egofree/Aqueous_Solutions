@@ -98,7 +98,7 @@ Table 7.1. Fire case of the gas receivers
 | Receiver | Tubes | Exposed area (m²) | P1 (kPa abs) | T1 (K) | Fire area per half bank (mm²) | Fire bore per half bank (mm) | Blocked-outlet bore (mm) | Installed bore, two valves (mm) | Depressuring release (kg) | Depressuring bore (mm) |
 |---|---|---|---|---|---|---|---|---|---|---|
 | CRYO_H2 | 32 | 70.0 | 26721 | 344 | 116.1 | 12.2 | 0.21 | 13 | 8.6 | 1.41 |
-| CRYO_O2 | 16 | 35.0 | 26721 | 344 | 58.2 | 8.6 | 0.28 | 9 | 68.8 | 1.92 |
+| CRYO_O2 | 16 | 35.0 | 26721 | 344 | 58.2 | 8.6 | 0.27 | 9 | 68.8 | 1.92 |
 | CRYO_CO2 | 4 | 8.8 | 2763 | 283 | 61.1 | 8.8 | 0.28 | 9 | 0.0 | 0.00 |
 
 The fire case governs every receiver. Each manifolded half bank has its own relief valve sized for a fire on its tubes, and the installed bore is written to the graph field `relief_mm` and to the relief register.

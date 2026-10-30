@@ -17,7 +17,7 @@ This register records, for every unit on the plant graph, whether its process in
 
 ## 2. Summary and method
 
-Of the 194 units, 65 have their internals defined and sized in an issued document (section 4), 82 have no process internals by a class rule (section 3), and 47 are open, each with its gap named (section 5). A unit whose construction material is still unselected in AQS-STD-005 (`UNIT_MATERIALS.md`) is open here too.
+Of the 195 units, 66 have their internals defined and sized in an issued document (section 4), 82 have no process internals by a class rule (section 3), and 47 are open, each with its gap named (section 5). A unit whose construction material is still unselected in AQS-STD-005 (`UNIT_MATERIALS.md`) is open here too.
 A class rule closes a unit only if none of its own documents books an internal. The generator first scans the sizing sheet, the duty sheet and the bill of materials of the unit for internals; if it finds one, the unit is taken out of the class rule.
 
 ## 3. Class rules
@@ -127,6 +127,7 @@ Table 4.1. Defined internals
 | MET_SCRUB | scrubber | packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) | sizing/HOUSE_SCRUBBERS.md |
 | MG_POT | cell | issued mfg model BOM (3 internals part row): "step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per" | models/mfg/MG_POT/bom.csv |
 | MO_CELL | cell | issued mfg model BOM (3 internals part row): "step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per" | models/mfg/MO_CELL/bom.csv |
+| NAOH_PLANT | reactor | duty sheet: "anode pans, nickel cathode pans and perfluorinated membranes, with nickel catholyte piping and PVC-lined brine" | docs-authority/duties/NAOH_PLANT.md |
 | NOX_SCRUB | scrubber | packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) | sizing/HOUSE_SCRUBBERS.md |
 | PELLET | former | duty sheet: "Material. 316L die plate and cutter hub; UHMW-PE trough liner; PE/PP water trough on the resin-cooling loop;" | docs-authority/duties/PELLET.md |
 | POLISH_BANK | polish | duty sheet: "room. 5. Instruments. Differential pressure across the packing, and pH if there is a liquor loop. High" | docs-authority/duties/POLISH_BANK.md |

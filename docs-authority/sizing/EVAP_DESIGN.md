@@ -37,26 +37,26 @@ Table 3.1. Evaporator design
 | Body pressure, kPa abs | 101.325 | 101.325 |
 | Shell pressure, kPa abs | 166.98 | 163.73 |
 | Compression ratio | 1.648 | 1.616 |
-| Water evaporated, kg/h | 36.049 | 33.411 |
-| Evaporation duty, kW | 22.6 | 20.95 |
+| Water evaporated, kg/h | 36.049 | 33.926 |
+| Evaporation duty, kW | 22.6 | 21.27 |
 | Compressor work, kJ/kg | 93.7 | 89.6 |
-| Compressor shaft power, kW | 1.34 | 1.189 |
-| Compressor electrical power, kW | 1.489 | 1.321 |
+| Compressor shaft power, kW | 1.34 | 1.207 |
+| Compressor electrical power, kW | 1.489 | 1.341 |
 | Recirculation pump, kW | 0.008 | 0.008 |
 | Trim heater, kW | 0.0 | 0.0 |
-| Total electrical power, kW | 1.498 | 1.328 |
+| Total electrical power, kW | 1.498 | 1.349 |
 | Specific energy, kWh per tonne of water | 41.5 | 39.8 |
-| Falling-film area, m² | 2.51 | 2.33 |
-| Tubes | 22 | 20 |
+| Falling-film area, m² | 2.51 | 2.36 |
+| Tubes | 22 | 21 |
 | Tube inside diameter, mm | 25.0 | 25.0 |
 | Tube length, mm | 1500.0 | 1500.0 |
-| Recirculation, kg/h | 311.0 | 282.7 |
+| Recirculation, kg/h | 311.0 | 296.9 |
 | Shell diameter, mm | 350 | 350 |
 | Height, mm | 3800 | 3100 |
 | Interchanger duty, kW | 3.7 | 3.67 |
-| Interchanger area, m² | 0.155 | 0.146 |
+| Interchanger area, m² | 0.155 | 0.143 |
 | Feed after the interchanger, °C | 98.6 | 98.0 |
-| Product and condensate outlet, °C | 49.1 | 50.6 |
+| Product and condensate outlet, °C | 49.1 | 51.2 |
 
 The compressor work covers the heat needed to bring the feed to the boil, so neither evaporator needs a continuous trim heater.
 
@@ -71,11 +71,11 @@ Table 4.1. Relief cases
 | Body fire | EVAP_ACID | 41.32 | 222.3 | 34.0 | API 526 D (71 mm²), adequate |
 | Shell blocked outlet | EVAP_ACID | 43.26 | 486.3 | 16.646 | API 526 D (71 mm²), adequate |
 | Body fire | EVAP_BASE | 41.32 | 222.3 | 33.98 | API 526 D (71 mm²), adequate |
-| Shell blocked outlet | EVAP_BASE | 40.09 | 486.3 | 15.427 | API 526 D (71 mm²), adequate |
+| Shell blocked outlet | EVAP_BASE | 40.71 | 486.3 | 15.665 | API 526 D (71 mm²), adequate |
 
 ## 5. Outlet temperatures (X-MAT-20)
 
-The product and the condensate leave the interchanger at 49.1 °C on the acid unit and 50.6 °C on the base unit, below the 60 °C limit of line class P1 (AQS-STD-002). The condensate lines therefore stay in class P1, and IA-ACID-01 stays in class P2 for hot leach service. The parameter `T_C` of each outlet stream on the graph carries these values.
+The product and the condensate leave the interchanger at 49.1 °C on the acid unit and 51.2 °C on the base unit, below the 60 °C limit of line class P1 (AQS-STD-002). The condensate lines therefore stay in class P1, and IA-ACID-01 stays in class P2 for hot leach service. The parameter `T_C` of each outlet stream on the graph carries these values.
 
 ## 6. Materials
 

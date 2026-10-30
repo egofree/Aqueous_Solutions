@@ -534,6 +534,11 @@
   "docnum": "AQS-DUTY-072",
   "family": "FOUNDRY line (docs-authority/_foundry_sizing.py; transfer functions flow_graph/param/foundry_poly.py)"
  },
+ "NAOH_PLANT": {
+  "doc": "docs-authority/PARAMETRIC_MODEL.md",
+  "docnum": "AQS-PAR-001",
+  "family": "Sodium hydroxide plant (flow_graph/param/caustic.py, section 7.1, A-M-422)"
+ },
  "NCG_HEADER": {
   "doc": "docs-authority/sizing/HEADERS.md",
   "docnum": "AQS-DUTY-075",

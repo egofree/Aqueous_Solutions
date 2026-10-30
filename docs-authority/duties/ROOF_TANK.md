@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 480.9 kg/d. Mass out 480.9 kg/d. Electrical duty 0.0000 kW. In: IA-ESS-HYDRO-CHG 0 kg/d (Pumped hydro charge (pump up; peers S23)); IA-HVAC-COND 67.44 kg/d (AHU condensate to the water cycle); IA-GREY-RET 0 kg/d (treated grey to the water cycle); IA-GW-MAKEUP 0 kg/d (groundwater make-up, reverse-osmosis treated); 3 more. Out: IA-ESS-HYDRO-DIS 0 kg/d (Pumped hydro discharge (penstock; peers S22)); S21 120.7 kg/d (clean tower water); IA-BED-H2O 42.14 kg/d (irrigation); IA-DC-SPRAY 0 kg/d (evaporative spray make-up); 4 more.
+1. Basis. Mass in 480 kg/d. Mass out 480 kg/d. Electrical duty 0.0000 kW. In: IA-ESS-HYDRO-CHG 0 kg/d (Pumped hydro charge (pump up; peers S23)); IA-HVAC-COND 67.44 kg/d (AHU condensate to the water cycle); IA-GREY-RET 0 kg/d (treated grey to the water cycle); IA-GW-MAKEUP 0 kg/d (groundwater make-up, reverse-osmosis treated); 3 more. Out: IA-ESS-HYDRO-DIS 0 kg/d (Pumped hydro discharge (penstock; peers S22)); S21 120.7 kg/d (clean tower water); IA-BED-H2O 42.14 kg/d (irrigation); IA-DC-SPRAY 0 kg/d (evaporative spray make-up); 4 more.
 
 2. Size.
 - Circulation 200384.0 kg/d. Two-minute holdup 0.2783 m³. A 20-day volume at this rate is not a tank.

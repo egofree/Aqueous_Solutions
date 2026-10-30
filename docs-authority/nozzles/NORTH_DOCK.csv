@@ -39,3 +39,8 @@ N37,solids,Class 150,finished wafers to the dock for dispatch,inlet,160
 N38,solids,Class 150,quartz ore for the silicon furnace (raw ore),outlet,600
 N39,solids,Class 150,native sulfur (raw ore) for the acid plant,outlet,600
 N40,solids,Class 150,lime residue byproduct of the cake kiln,inlet,160
+N41,DN15,Class 150,sodium chloride bleed of the leach purge (impurity bleed),inlet,160
+N42,solids,Class 150,trona ore (raw ore) for soda ash,outlet,600
+N43,solids,Class 150,"limestone ore (raw ore), lime-cycle make-up",outlet,600
+N44,DN15,Class 150,"chlor-alkali chlorine, shipped with the chlorine export",inlet,160
+N45,solids,Class 150,ore insolubles and the lime-mud purge,inlet,160

@@ -7265,5 +7265,25 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.sulfuric; python3 -m flow_graph.param.regen; IA-H2SO4-MU is retired, IA-H2SO4-ACID carries the acid demand of HF_GEN, and the mass balance of ACID_PLANT closes (asserted in sulfuric.design)."
+ },
+ {
+  "id": "A-M-422",
+  "value": "The sodium hydroxide make-up is made on site by NAOH_PLANT, recovery first (owner decisions t59u and t61u). The make-up sodium leaves the leach as sodium chloride; membrane chlor-alkali cells at 3.1 V and current efficiency 0.95 recover 90 % of that salt (na_purge_recycle_frac) to 32 wt% catholyte, and the other 10 % is bled to the dock to carry the impurities out. Only that shortfall is topped up from ore: on the default route CAUSTICIZE, trona ore is calcined to soda ash and causticised with slaked lime to a 10 wt% white liquor, the lime mud is recalcined at 900 C in an electrically heated kiln, and 5 % of the mud is purged and made up with limestone ore; on the alternative route CHLOR_ALKALI, halite ore re-saturates the cell brine. The cell chlorine is shipped with the chlorine export and the cell hydrogen goes to the H2 header. The liquor goes to EVAP_BASE at its mixed strength, and EVAP_BASE removes its water.",
+  "units": "kg/d, mass fraction, C, mm, m, kJ/mol, kJ/kg K, V",
+  "where": "flow_graph/param/caustic.py (called from flow_graph/param/write_graph.py); flow_graph/param/solver.py naoh_balance and evap; flow_graph/param/drivers.json naoh_route and the caustic drivers",
+  "basis": "Owner decision 2026-10-29 (t59u): no imports except waste or raw ore. The plant has no sodium source, so the sodium comes from trona, limestone or halite ore, all raw ores; the purge salt is the plant's own waste. Causticising soda ash with lime and membrane chlor-alkali electrolysis are the two industrial routes to sodium hydroxide (ULLMANN_NAOH); the lime cycle follows kraft-mill practice. The reaction heats are CaCO3 -> CaO + CO2 (+178.3 kJ/mol) and 2 trona -> 3 Na2CO3 + CO2 + 5 H2O(g) (about +185 kJ/mol trona from standard formation enthalpies). Retires the driver naoh_makeup_form.",
+  "sensitivity": "The ore top-up scales with 1 - na_purge_recycle_frac and with 1 / ore purity. On CAUSTICIZE the kiln shell losses dominate the load of the small top-up; the cell load scales with the cell voltage over the current efficiency. The EVAP_BASE load rises with the water of the make-up liquor.",
+  "replaced_by": "Assays of the trona, limestone and halite ores, a causticising trial, and the membrane cell supplier data",
+  "task": "QA audit 2026-10-29, imports made on site (X-RTE-IMPORT)",
+  "files": [
+   "flow_graph/param/caustic.py",
+   "flow_graph/param/solver.py",
+   "flow_graph/param/write_graph.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/report.py",
+   "docs-authority/_task_plan_gen.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.caustic; python3 -m flow_graph.param.regen; IA-NAOH-MU is retired, IA-NAOH-LIQ carries the make-up liquor to EVAP_BASE, the streams of the route not selected are retired, and the mass and element balances of NAOH_PLANT agree (asserted in caustic.design)."
  }
 ]

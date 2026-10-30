@@ -54,7 +54,7 @@
 <polygon points="586,424 577,420 577,428" fill="#111"/>
 <text x="24" y="405" font-size="9" fill="#666" text-anchor="start">GEO_HP</text>
 <text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">S44</text>
-<text x="24" y="437" font-size="10" text-anchor="start">2.2 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="437" font-size="10" text-anchor="start">2.3 kW · cable (schedule X-ELS-06)</text>
 <text x="598" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="start">N3</text>
 <line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,470 577,466 577,474" fill="#111"/>
@@ -81,7 +81,7 @@
 <polygon points="586,654 577,650 577,658" fill="#111"/>
 <text x="24" y="635" font-size="9" fill="#666" text-anchor="start">H2O_ELYZ</text>
 <text x="24" y="649" font-size="11" font-weight="600" text-anchor="start">SQ-H2O_ELYZ-Q4</text>
-<text x="24" y="667" font-size="10" text-anchor="start">6.1 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="667" font-size="10" text-anchor="start">6.0 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="2.6" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">DRY_COOLER</text>
@@ -124,7 +124,7 @@
 <g id="aqs-title-block"><rect x="1116" y="842" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="859" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-Q4_BUS</text>
 <text x="1124" y="876" font-size="9">P&amp;ID Q4_BUS (header, HEAT sector)</text>
-<text x="1124" y="893" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 7d79536e   Issued 2026-10-19</text>
+<text x="1124" y="893" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 30da7d34   Issued 2026-10-19</text>
 <text x="1124" y="910" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="927" font-size="9">Graph SHA-256 c893cba12fa20cc4   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="927" font-size="9">Graph SHA-256 048924eca4b2883d   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

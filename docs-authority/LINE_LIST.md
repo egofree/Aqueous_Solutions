@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-581 edges: 328 piped, 136 solids transfers, 117 electrical. Piped edges without a length (unit position missing): 67.
+590 edges: 334 piped, 138 solids transfers, 118 electrical. Piped edges without a length (unit position missing): 73.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 37: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 38: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, NAOH_PLANT, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -432,7 +432,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-EVAP_BASE-FEED | BMED_BASE | EVAP_BASE | DN15 | P4 | alkaline | 4.6 | BMED_BASE → EVAP_BASE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-EVAP_BASE-COND | EVAP_BASE | BMED_BASE | DN15 | P1 | acid or brine, at or below 60 C | 4.6 | EVAP_BASE → BMED_BASE, orthogonal × 1.2 (placement_study (STUDY); placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
 | SF-EVAP_BASE | SOL_ARK_60K | EVAP_BASE | cable | — | — | 34.0 | SOL_ARK_60K → EVAP_BASE, orthogonal × 1.2 (duty origin; placement_study (STUDY)) | electrical: cable schedule X-ELS-06 |
-| IA-NAOH-MU | NORTH_DOCK | EVAP_BASE | solids | — | — | 23.5 | NORTH_DOCK → EVAP_BASE, orthogonal × 1.2 (placement_report; placement_study (STUDY)) | solids: conveyor, bin or hand transfer; not piped |
 | IA-AIR-IN | NORTH_DOCK | CRYO_ASU | DN50 | P5 | water | 19.9 | NORTH_DOCK → CRYO_ASU, orthogonal × 1.2 (placement_report; placement_study (STUDY) + GA move + GA move) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-NOX-CO2 | NOX_SCRUB | CRYO_ASU | DN50 | P2 | hot leach liquor | 23.8 | NOX_SCRUB → CRYO_ASU, orthogonal × 1.2 (duty origin; placement_study (STUDY) + GA move + GA move) | velocity 1 m/s, ρ 1000; min DN50 |
 | IA-NOX-N2 | NOX_SCRUB | CRYO_ASU | DN50 | P2 | hot leach liquor | 23.8 | NOX_SCRUB → CRYO_ASU, orthogonal × 1.2 (duty origin; placement_study (STUDY) + GA move + GA move) | velocity 1 m/s, ρ 1000; min DN50 |
@@ -598,3 +597,13 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-LIME-SHIP | ACID_PLANT | NORTH_DOCK | solids | — | — |  | ACID_PLANT → NORTH_DOCK, position missing for ACID_PLANT | solids: conveyor, bin or hand transfer; not piped |
 | IA-H2SO4-ACID | ACID_PLANT | HF_GEN | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B |  | ACID_PLANT → HF_GEN, position missing for ACID_PLANT, HF_GEN | velocity 1 m/s, ρ 1000; min DN15 |
 | SF-ACID_PLANT | SOL_ARK_60K | ACID_PLANT | cable | — | — |  | SOL_ARK_60K → ACID_PLANT, position missing for ACID_PLANT | electrical: cable schedule X-ELS-06 |
+| IA-TRONA-MU | NORTH_DOCK | NAOH_PLANT | solids | — | — |  | NORTH_DOCK → NAOH_PLANT, position missing for NAOH_PLANT | solids: conveyor, bin or hand transfer; not piped |
+| IA-LIMESTONE-MU | NORTH_DOCK | NAOH_PLANT | solids | — | — |  | NORTH_DOCK → NAOH_PLANT, position missing for NAOH_PLANT | solids: conveyor, bin or hand transfer; not piped |
+| IA-NAOH-VENT | NAOH_PLANT | ATMOS | DN15 | P3 | process vent gas |  | NAOH_PLANT → ATMOS, position missing for NAOH_PLANT, ATMOS | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-NA-RECYCLE | LEACH_CSTR_1 | NAOH_PLANT | DN15 | P2 | hot leach liquor |  | LEACH_CSTR_1 → NAOH_PLANT, position missing for NAOH_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-NAOH-CL2-SHIP | NAOH_PLANT | NORTH_DOCK | DN15 | P3 | process vent gas |  | NAOH_PLANT → NORTH_DOCK, position missing for NAOH_PLANT | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-NAOH-H2 | NAOH_PLANT | HDR_H2 | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) |  | NAOH_PLANT → HDR_H2, position missing for NAOH_PLANT | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-NAOH-H2O | GW_INTAKE | NAOH_PLANT | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | GW_INTAKE → NAOH_PLANT, position missing for GW_INTAKE, NAOH_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-NAOH-RESIDUE | NAOH_PLANT | NORTH_DOCK | solids | — | — |  | NAOH_PLANT → NORTH_DOCK, position missing for NAOH_PLANT | solids: conveyor, bin or hand transfer; not piped |
+| IA-NAOH-LIQ | NAOH_PLANT | EVAP_BASE | DN15 | P4 | alkaline |  | NAOH_PLANT → EVAP_BASE, position missing for NAOH_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
+| SF-NAOH_PLANT | SOL_ARK_60K | NAOH_PLANT | cable | — | — |  | SOL_ARK_60K → NAOH_PLANT, position missing for NAOH_PLANT | electrical: cable schedule X-ELS-06 |

@@ -15,7 +15,7 @@ Authority: task X-BAS-04 of AQS-PLAN-007. Jurisdiction: USA (AQS-STD-003, AQS-HS
 
 This list gives the codes and standards that the project cites, grouped by discipline. It is built from the register of references in `flow_graph/param/refs.py`: every key there that names a code or standard is listed, with the number of repository files that cite it and up to three of those files. A key that no file cites yet is marked as registered but not cited.
 
-The list has 145 codes and standards in 9 disciplines; every one is cited by at least one file. Quantities are in SI units, with US customary units only where a code states them, such as NEC conductor sizes and ASME B16.5 pressure classes.
+The list has 146 codes and standards in 9 disciplines; every one is cited by at least one file. Quantities are in SI units, with US customary units only where a code states them, such as NEC conductor sizes and ASME B16.5 pressure classes.
 
 ## 2. Pressure equipment and piping
 
@@ -116,6 +116,7 @@ Table 4.1. Electrical
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/duties/EVAP_ACID.md |
 | ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds) | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/MATERIALS_STD.md |
+| ULLMANN_NAOH | Kurt C., Bittner J., Sodium Hydroxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2006) | 10 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | ULLMANN_NITRIC | Thiemann M., Scheibler E., Wiegand K.W., Nitric Acid, Nitrous Acid, and Nitrogen Oxides, Ullmann's Encyclopedia of Industrial Chemistry (2000), doi | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
 | ULLMANN_TITANIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Titanium chapter (Titanium, Titanium Alloys, and Titanium Compounds) | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | ULLMANN_WAX | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Waxes chapter (Waxes) | 14 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |

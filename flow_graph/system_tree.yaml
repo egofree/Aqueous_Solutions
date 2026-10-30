@@ -78,6 +78,9 @@ nodes:
   - id: DIGESTER.metals-leach-train.acid-base-regen.EVAP_BASE
     parent: DIGESTER.metals-leach-train.acid-base-regen
     unit_id: EVAP_BASE
+  - id: DIGESTER.metals-leach-train.acid-base-regen.NAOH_PLANT
+    parent: DIGESTER.metals-leach-train.acid-base-regen
+    unit_id: NAOH_PLANT
   - id: DIGESTER.metals-leach-train.acid-base-regen.EVAP_ACID_VS
     parent: DIGESTER.metals-leach-train.acid-base-regen
     unit_id: EVAP_ACID_VS

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 33.17 kg/d. Mass out 33.17 kg/d. Electrical duty 0.0000 kW. In: S83 33.17 kg/d (O2 product); IA-O2-MAKE 0 kg/d (oxygen makeup). Out: IA-FC-AIR 9.407 kg/d (cell air); IA-H2O2-SRC 0.176 kg/d (oxygen to peroxide); IA-GEN-O2 0.1722 kg/d (combustion O2, 10 % excess); IA-AB-O2 0.5283 kg/d (combustion O2, 10 % excess); 2 more.
+1. Basis. Mass in 32.38 kg/d. Mass out 32.38 kg/d. Electrical duty 0.0000 kW. In: S83 32.38 kg/d (O2 product); IA-O2-MAKE 0 kg/d (oxygen makeup). Out: IA-FC-AIR 9.407 kg/d (cell air); IA-H2O2-SRC 0.176 kg/d (oxygen to peroxide); IA-GEN-O2 0.1722 kg/d (combustion O2, 10 % excess); IA-AB-O2 0.5283 kg/d (combustion O2, 10 % excess); 2 more.
 
 2. Size.
 - Duct at 10 m/s. Gas 1.67 m³/h. Bore 8 mm, DN15. Not a packed tower.

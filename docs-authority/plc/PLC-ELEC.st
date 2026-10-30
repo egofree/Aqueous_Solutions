@@ -4,7 +4,7 @@
 PROGRAM PLC_ELEC_CTRL
 VAR
   (* 100 ms cyclic task per AQS-CTL-002 *)
-  ZNBR2FT-01_PV : REAL ;  (* S69 normal 38.25 L/h )
+  ZNBR2FT-01_PV : REAL ;  (* S69 normal 38.53 L/h )
   ZNBR2FT-02_PV : REAL ;  (* IA-ZNBR-BD normal 0.35 L/h )
   ZNBR2FT-03_PV : REAL ;  (* IA-ZNBR-HEAT normal 0.07 L/h )
   ZNBR2LT-01_PV : REAL ;  (* A-M-182 liquid height )
@@ -26,7 +26,7 @@ VAR
   PV_ARRAYTE-01_PV : REAL ;  (* band by service )
   RECTIFIERPT-01_PV : REAL ;  (* no design pressure on the graph )
   RECTIFIERTE-01_PV : REAL ;  (* band by service )
-  ZNBR2_BR2_REGENFT-01_PV : REAL ;  (* S69B normal 38.25 L/h )
+  ZNBR2_BR2_REGENFT-01_PV : REAL ;  (* S69B normal 38.53 L/h )
   ZNBR2_BR2_REGENLT-01_PV : REAL ;  (* A-M-182 liquid height )
   ZNBR2_BR2_REGENPT-01_PV : REAL ;  (* no design pressure on the graph )
   ZNBR2_BR2_REGENTE-01_PV : REAL ;  (* band by service )
@@ -35,10 +35,10 @@ VAR
 END_VAR
 
   (* FLOW control loop - set-point from the graph basis *)
-  ZNBR2FT-01_SP := 38.25 ;  (* graph basis: S69 normal 38.25 L/h )
+  ZNBR2FT-01_SP := 38.53 ;  (* graph basis: S69 normal 38.53 L/h )
   FB_PI_ZNBR2FT-01( PV := ZNBR2FT-01_PV, SP := ZNBR2FT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  ZNBR2FT-01_ALARM_HI := 42.075 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  ZNBR2FT-01_ALARM_LO := 34.425000000000004 ;
+  ZNBR2FT-01_ALARM_HI := 42.383 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  ZNBR2FT-01_ALARM_LO := 34.677 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   ZNBR2FT-02_SP := 0.35 ;  (* graph basis: IA-ZNBR-BD normal 0.35 L/h )
@@ -134,10 +134,10 @@ END_VAR
   RECTIFIERTE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  ZNBR2_BR2_REGENFT-01_SP := 38.25 ;  (* graph basis: S69B normal 38.25 L/h )
+  ZNBR2_BR2_REGENFT-01_SP := 38.53 ;  (* graph basis: S69B normal 38.53 L/h )
   FB_PI_ZNBR2_BR2_REGENFT-01( PV := ZNBR2_BR2_REGENFT-01_PV, SP := ZNBR2_BR2_REGENFT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  ZNBR2_BR2_REGENFT-01_ALARM_HI := 42.075 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  ZNBR2_BR2_REGENFT-01_ALARM_LO := 34.425000000000004 ;
+  ZNBR2_BR2_REGENFT-01_ALARM_HI := 42.383 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  ZNBR2_BR2_REGENFT-01_ALARM_LO := 34.677 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_ZNBR2_BR2_REGENLT-01( PV := ZNBR2_BR2_REGENLT-01_PV );

@@ -47,7 +47,7 @@ Table 3.1. Sectors
 
 | sector_id | Sector definition | MVS | Enabled | Units | Trains |
 |---|---|---|---|---|---|
-| DIGESTER | Process (Mass transform) | true | true | 25 | ew-cascade-train, metals-leach-train |
+| DIGESTER | Process (Mass transform) | true | true | 26 | ew-cascade-train, metals-leach-train |
 | OIL | Process (Mass transform) | true | true | 14 | pyro-fractionation-train |
 | GLASS | Process (Mass transform) | true | true | 6 | glass-recycle-train |
 | POLYMERS | Process (Mass transform) | true | true | 11 | fluoropolymer-train, forming-train, polyolefin-train |

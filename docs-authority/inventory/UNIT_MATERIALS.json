@@ -118,6 +118,7 @@
   "MFG_SHOP",
   "MG_POT",
   "MO_CELL",
+  "NAOH_PLANT",
   "NCG_HEADER",
   "NOX_SCRUB",
   "NUTRIENT_DOSE",
@@ -196,6 +197,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 328,
- "units": 194
+ "tot_wetted_rows": 334,
+ "units": 195
 }

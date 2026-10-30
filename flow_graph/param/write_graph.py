@@ -40,11 +40,9 @@ def process():
     for t in (N['GLASS_DIGEST']['params'].get('balance_rev_l') or {}).get('terms', []):
         if t['layer']=='mass' and ('digest liquor' in t['label'] or 'silicate liquor' in t['label']):
             t['value'] = round(nb['digest_mol']/DR.val(d,'bmed_product_molarity')*1.081, 3); t['basis'] = f"{nb['digest_mol']:.1f} mol/d at 2 M, 1.081 kg/L (PERRY9_HCL); {NT}"
-    mk = [edge('IA-NAOH-MU','NORTH_DOCK','EVAP_BASE','S',['mass'],'purchased NaOH flake make-up',rate(nb['makeup_kg_d'],'kg/d',f"{NT}. Demand {nb['ppt_mol']+nb['digest_mol']:.0f} mol/d less BMED {nb['bmed_mol']:.0f} mol/d; worst case, no credit for sodium returned in the silicate liquor."),'DOCK','DIGESTER'),
-          edge('IA-NA-PURGE','LEACH_CSTR_1','NORTH_DOCK','L',['mass'],'sodium salt purge equal to the make-up mass',rate(nb['makeup_kg_d'],'kg/d',f'{NT}. Sodium brought in on IA-NAOH-MU leaves the loop as salt; mass equal to the make-up (study).'),'DIGESTER','DOCK')]
-    for e in mk:
-        if e['stream_id'] in E: E[e['stream_id']]['rate'] = e['rate']
-        else: g['edges'].append(e); E[e['stream_id']] = e
+    # the make-up is made on site by NAOH_PLANT (A-M-422); IA-NAOH-MU is retired and IA-NA-PURGE carries the sodium chloride
+    from . import caustic
+    caustic.tf(g, E, nb['makeup_mol'], d)
     # evaporators
     for side, key, src, prods, sa in (('ACID','evap_acid','BMED_ACID',('IA-ACID-01',),'HCl'),('BASE','evap_base','BMED_BASE',solver.BASE_DEMAND,'NaOH')):
         u = f'EVAP_{side}'; v = s[key]; w = DR.val(d,'acid_conc_design_wt' if side=='ACID' else 'base_conc_design_wt')

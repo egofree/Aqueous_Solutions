@@ -3,8 +3,8 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 90,
-  "edge_count": 94,
+  "node_count": 91,
+  "edge_count": 95,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -207,7 +207,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 175.174278,
+          "bypass_kg_d": 174.28376,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -372,7 +372,7 @@
       "params": {
         "presence": "present",
         "store_kg": 17,
-        "store_basis": "need: 7.0 kg dark-hours buffer (9.36 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
+        "store_basis": "need: 6.9 kg dark-hours buffer (9.26 kg/d x (1 - 6/24)) + 9.6 kg = 2 d fuel-cell autonomy (AQS-ELEC-007 AUT_CRIT); X-PAR-12",
         "store_water_volume_m3": 1.14,
         "design": {
           "P_design_MPa": 22.0,
@@ -510,10 +510,10 @@
       "notes": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
-        "value": 21.4447,
+        "value": 21.2163,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-12 TF: 9.36 kg/d H2 x 55.0 kWh/kg / 24 h; rated 85.8 kW on a 6.0 h PV window."
+        "note": "X-PAR-12 TF: 9.26 kg/d H2 x 55.0 kWh/kg / 24 h; rated 84.9 kW on a 6.0 h PV window."
       },
       "modules": [],
       "params": {
@@ -537,10 +537,10 @@
           "adequate": true
         },
         "stack_heat_kw": {
-          "value": 6.0825,
+          "value": 6.0177,
           "unit": "kW",
           "status": "study",
-          "note": "X-PAR-12 TF: 6.08 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
+          "note": "X-PAR-12 TF: 6.02 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
         },
         "sec3_material": {
           "mat": "PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family",
@@ -934,10 +934,10 @@
       "notes": " Duty: notes/POWER_DUTIES.md.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.6866,
+        "value": 0.7069,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: Q4-bus lift S44 2.1972 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6866 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
+        "note": "X-ELS-02: Q4-bus lift S44 2.2620 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.7069 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
       },
       "modules": [],
       "params": {
@@ -948,14 +948,14 @@
         "units_installed": 2,
         "redundancy": "2 x 100 % (X-RED-07)",
         "design": {
-          "lift_kW_th": 2.1972,
-          "electric_kW": 0.6866,
+          "lift_kW_th": 2.262,
+          "electric_kW": 0.7069,
           "cop": 3.2,
           "modules": 2,
           "redundancy": "2 x 100 % (X-RED-07)",
-          "module_kW_th": 2.2,
-          "source_area_m2": 0.22,
-          "condenser_area_m2": 0.289,
+          "module_kW_th": 2.262,
+          "source_area_m2": 0.226,
+          "condenser_area_m2": 0.297,
           "hx_class": "brazed plate, U 2.0 kW/m2 K at 5 K approach (PERRY9)",
           "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
           "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
@@ -1157,24 +1157,24 @@
         "value": 0.0205,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-39 (A-M-168): TSA regeneration 1.0 W / 0.7 + half the insulated loss."
+        "note": "X-MFG-39 (A-M-168): TSA regeneration 1.1 W / 0.7 + half the insulated loss."
       },
       "modules": [],
       "params": {
         "presence": "present",
         "design": {
-          "H2_kg_d": 1.975408,
-          "Nm3_h": 0.9151123287037036,
-          "O2_mol_d": 0.9798650793650794,
-          "water_kg_d": 0.03530453880952381,
-          "HCl_kg_d": 3.572686065873015e-05,
-          "guard_kg": 0.03215417459285713,
-          "sieve_kg": 0.3530453880952381,
+          "H2_kg_d": 2.075063,
+          "Nm3_h": 0.961277738136574,
+          "O2_mol_d": 1.029297123015873,
+          "water_kg_d": 0.0370855753422619,
+          "HCl_kg_d": 3.752920240228174e-05,
+          "guard_kg": 0.03377628216205356,
+          "sieve_kg": 0.370855753422619,
           "beds": {
             "deoxo": {
-              "V_L": 0.18302246574074074,
+              "V_L": 0.1922555476273148,
               "tube": "DN25 Sch 40 316L",
-              "L_mm": 328,
+              "L_mm": 345,
               "count": 2
             },
             "guard": {
@@ -1184,25 +1184,25 @@
               "count": 2
             },
             "TSA": {
-              "V_L": 0.5043505544217688,
+              "V_L": 0.5297939334608843,
               "tube": "DN50 Sch 40 316L",
               "L_mm": 300,
               "count": 2
             }
           },
-          "regen_W": 1.031007210286295,
+          "regen_W": 1.0826698441834424,
           "loss_W": 37.98279150873541,
           "insulation_mm": 38,
           "kW": 0.0205,
           "D_mm": 60,
-          "H_mm": 628,
+          "H_mm": 645,
           "T_C": 250.0,
           "wall_mm": 3.91
         },
         "size_mm": [
           600,
           400,
-          1028
+          1045
         ]
       }
     },
@@ -1229,8 +1229,8 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3059.0,
-        "fraction_of_znbr2_study": 0.07,
+        "vs_znbr2_kwh": 3081.0,
+        "fraction_of_znbr2_study": 0.069,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
         "presence": "present",
@@ -1573,7 +1573,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 352.3096,
+        "value": 353.877,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1581,28 +1581,28 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6058,
+        "count": 6102,
         "presence": "present",
-        "nameplate_kw": 3029,
-        "area_m2": 26574,
-        "balance_kWp": 1515,
+        "nameplate_kw": 3051,
+        "area_m2": 26784,
+        "balance_kWp": 1526,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
           "footprint_mm": [
-            210000,
-            138000
+            174000,
+            168000
           ],
           "bays": [
-            35,
-            23
+            29,
+            28
           ],
-          "footprint_m2": 28980.0,
-          "extension_m2": 28548.0,
-          "roof_capacity_kWp": 3029.5,
+          "footprint_m2": 29232.0,
+          "extension_m2": 28800.0,
+          "roof_capacity_kWp": 3053.4,
           "perimeter_pathway_mm": 1829,
-          "arrays": 15,
-          "extension_load_kW": 82.13,
+          "arrays": 16,
+          "extension_load_kW": 82.69,
           "roof_load_kPa": {
             "service_kPa": 1.11,
             "lrfd_kPa": 1.716
@@ -1655,8 +1655,8 @@
         "count": 43,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2361.5,
-          "export_kWh_d_clear": 6554,
+          "export_peak_kW": 2359.9,
+          "export_kWh_d_clear": 6602,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -1686,9 +1686,9 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 218.5,
+          "bus_demand_kW": 220.1,
           "section_rating_A": 400,
-          "basis_A": 292.0,
+          "basis_A": 294.1,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
@@ -1820,25 +1820,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 218.4826,
+        "value": 220.0536,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.5 kW, charge 993.1 kW, 3059 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 220.1 kW, charge 1000.2 kW, 3081 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 994,
-        "kWh": 3059,
+        "kW": 1001,
+        "kWh": 3081,
         "presence": "present",
-        "charge_kW": 994,
-        "discharge_kW": 219,
+        "charge_kW": 1001,
+        "discharge_kW": 221,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 43 hybrid inverters, 71.1 kWh and 23.1 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 43 hybrid inverters, 71.7 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.755,
-          "purge_m3_h": 32.31,
+          "H2_m3_d": 7.811,
+          "purge_m3_h": 32.54,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2000.8
+          "electrode_area_m2": 2015.1
         }
       }
     },
@@ -4161,7 +4161,7 @@
       "modules": [],
       "params": {
         "presence": "present",
-        "water_off_kg_d": 801.86,
+        "water_off_kg_d": 814.21,
         "feed_wt": 0.0741,
         "product_wt": 0.2,
         "mvr_kWh_per_t": 39.8,
@@ -4180,26 +4180,26 @@
           "p_body_kPa": 101.325,
           "p_shell_kPa": 163.73,
           "ratio": 1.616,
-          "water_kg_h": 33.411,
-          "duty_kW": 20.95,
-          "comp_shaft_kW": 1.189,
-          "comp_elec_kW": 1.321,
+          "water_kg_h": 33.926,
+          "duty_kW": 21.27,
+          "comp_shaft_kW": 1.207,
+          "comp_elec_kW": 1.341,
           "w_kJ_kg": 89.6,
           "kWh_per_t": 39.8,
-          "A_ff_m2": 2.33,
-          "tubes": 20,
+          "A_ff_m2": 2.36,
+          "tubes": 21,
           "tube_id_mm": 25.0,
           "tube_L_mm": 1500.0,
-          "recirc_kg_h": 282.7,
+          "recirc_kg_h": 296.9,
           "pump_kW": 0.008,
           "shell_D_mm": 350,
           "height_mm": 3100,
           "ix_Q_kW": 3.67,
-          "ix_A_m2": 0.146,
+          "ix_A_m2": 0.143,
           "T_feed_preheat_C": 98.0,
-          "T_out_C": 50.6,
+          "T_out_C": 51.2,
           "trim_kW": 0.0,
-          "total_kW": 1.328,
+          "total_kW": 1.349,
           "column": null
         },
         "relief_mm": 9.51,
@@ -4218,12 +4218,12 @@
           "computed_by": "flow_graph/param/sizing/relief.py gas_area_in2 (API520)",
           "shell_side": {
             "case": "blocked outlet, compressor at 120 % design flow",
-            "W_kg_h": 40.09,
+            "W_kg_h": 40.71,
             "P1_kPa_abs": 486.3,
             "T_K": 423.9,
             "M_kg_kmol": 18.02,
             "k": 1.33,
-            "A_req_mm2": 15.427,
+            "A_req_mm2": 15.665,
             "orifice": "API 526 D (71 mm2)",
             "adequate": true
           },
@@ -4233,10 +4233,10 @@
       },
       "notes": "NaOH concentrator after BMED_BASE (X-PAR acid-loop decision (AQS-PAR-001 \u00a73)). Nickel or fluoropolymer-lined wetted parts (study).",
       "continuous_kw": {
-        "value": 1.328,
+        "value": 1.349,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 801.9 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.321 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.33 kW. Study."
+        "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). MVR evaporator, NaOH from 2 M (7.41 wt%) to 20 wt%; water off 814.2 kg/d x 39.8 kWh/t (in-house MVR design X-MFG-30, AQS-DUTY-060: blower 1.341 kW, recirculation 0.008 kW, trim 0.000 kW) = 1.35 kW. Study."
       }
     },
     {
@@ -4251,33 +4251,33 @@
       "modules": [],
       "params": {
         "hvac": {
-          "light_kW": 25.122,
-          "vent_kW": 35.606,
-          "envelope_kW": 21.404,
-          "total_kW": 82.133,
-          "vent_L_s": 8564.4,
-          "Qh_kW": 50.346,
-          "Qc_kW": 99.976,
-          "slab_kW": 3.042,
-          "gains_kW": 35.828,
+          "light_kW": 25.344,
+          "vent_kW": 35.921,
+          "envelope_kW": 21.429,
+          "total_kW": 82.694,
+          "vent_L_s": 8640.0,
+          "Qh_kW": 50.51,
+          "Qc_kW": 100.604,
+          "slab_kW": 2.99,
+          "gains_kW": 36.144,
           "pump_kW": 0.0,
           "mode": "air",
-          "peak_h_kW": 445.723,
-          "peak_c_kW": 395.352
+          "peak_h_kW": 447.768,
+          "peak_c_kW": 397.697
         },
-        "footprint_m2": 28548.0,
+        "footprint_m2": 28800.0,
         "conditioned": true,
         "blocks": [
           "EXT_HALL_E",
           "EXT_HALL_N"
         ],
-        "duty": "In 0.000 kg/d, out 0.000 kg/d, 82.133 kW. Sheet docs-authority/duties/EXT_HALL.md."
+        "duty": "In 0.000 kg/d, out 0.000 kg/d, 82.694 kW. Sheet docs-authority/duties/EXT_HALL.md."
       },
       "continuous_kw": {
-        "value": 82.1326,
+        "value": 82.6936,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 35.61 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.40 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.3 kW and cooling 100.0 kW thermal average after internal gains 35.8 kW and slab edge 3.04 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
+        "note": "X-PAR-07 solver.roof_close: conditioned extension 28800 m2; lighting 25.34 kW (IECC 2021 C405, 10 % lit), ventilation 35.92 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 21.43 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 50.5 kW and cooling 100.6 kW thermal average after internal gains 36.1 kW and slab edge 2.99 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: ."
       },
       "class": "building"
     },
@@ -4371,6 +4371,35 @@
           "basis": "Hot sulfur dioxide and trioxide gas, dry, up to about 1150 C in the cake kiln and about 600 C in the converter, and 98 wt% sulfuric acid near ambient (A-M-421, flow_graph/param/sulfuric.py): strong acid above 93 wt% is carried in carbon steel at low velocity, while hot or dilute acid needs high-silicon iron, alloy or PTFE lining (ULLMANN_H2SO4; PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
           "alt": "Alloy 20 or PTFE-lined steel for the absorber if the acid strength falls below 93 wt% in service",
           "note": "wetted by 98 wt% sulfuric acid and dry sulfur oxides; dilution below 93 wt% is the corrosion load, held by the absorber control.",
+          "task": "X-MAT-22"
+        }
+      }
+    },
+    {
+      "unit_id": "NAOH_PLANT",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Sodium hydroxide plant: trona calciner, causticiser and lime kiln, or membrane chlor-alkali cells (A-M-422).",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 1.1935,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): membrane cells 0.4503 kW (ca_cell_V x F / (M x ca_CE) through the rectifier) + trona calciner and lime kiln 0.7431 kW (shell loss + reaction + feed heat) (caustic.py, route CAUSTICIZE)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "Sodium hydroxide plant (A-M-422).",
+        "sec3_material": {
+          "mat": "Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and mineral-wool insulation; slaker, causticiser and white-liquor tank of carbon steel; on the chlor-alkali route, titanium anode pans, nickel cathode pans and perfluorinated membranes, with nickel catholyte piping and PVC-lined brine piping",
+          "basis": "Sodium hydroxide liquor at about 10 wt% and 90 C from the causticiser, or 32 wt% catholyte with wet chlorine and brine on the chlor-alkali route (A-M-422, flow_graph/param/caustic.py): carbon steel serves dilute caustic below the caustic-cracking range, nickel serves hot strong caustic, and wet chlorine and acid brine need titanium or lined steel (ULLMANN_NAOH; PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Nickel 200 for the liquor lines if the caustic runs hot and strong in service",
+          "note": "wetted by caustic liquor (and wet chlorine on the chlor-alkali route); caustic cracking of stressed carbon steel is the corrosion load.",
           "task": "X-MAT-22"
         }
       }
@@ -4668,7 +4697,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 352.3096,
+        "value": 353.877,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -4851,7 +4880,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.6866,
+        "value": 0.7069,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to GEO_HP continuous_kw."
@@ -5398,7 +5427,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 1.328,
+        "value": 1.349,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73). 480 V feed equal to EVAP_BASE continuous_kw."
@@ -5450,7 +5479,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 21.4447,
+        "value": 21.2163,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
@@ -5870,7 +5899,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 82.1326,
+        "value": 82.6936,
         "unit": "kW",
         "status": "study",
         "note": "Equals EXT_HALL continuous_kw (X-PAR-07)."
@@ -6842,6 +6871,33 @@
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "SF-NAOH_PLANT",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "NAOH_PLANT",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.1935,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-06 TF: on-site sodium hydroxide (A-M-422): feed equal to NAOH_PLANT continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "DIGESTER",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],

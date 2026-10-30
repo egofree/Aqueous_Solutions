@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.6866 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.7069 kW. In: none. Out: none.
 
 2. Size.
 - No mass throughput. No volume is invented.

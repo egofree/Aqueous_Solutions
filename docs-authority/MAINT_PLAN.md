@@ -176,5 +176,6 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | BRIN_RECOVER | evaporator | external visual (1 y, A-M-189) |
 | SI_REFINE | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | ACID_PLANT | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| NAOH_PLANT | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 
-167 units, 371 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+168 units, 375 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

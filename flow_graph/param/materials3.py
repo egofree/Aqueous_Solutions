@@ -370,6 +370,16 @@ SEL = {
   'at low velocity, while hot or dilute acid needs high-silicon iron, alloy or PTFE lining (ULLMANN_H2SO4; PERRY9_MAT). ' + _TAG,
   'Alloy 20 or PTFE-lined steel for the absorber if the acid strength falls below 93 wt% in service',
   'wetted by 98 wt% sulfuric acid and dry sulfur oxides; dilution below 93 wt% is the corrosion load, held by the absorber control.'),
+ 'NAOH_PLANT': (
+  'Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and mineral-wool insulation; slaker, causticiser '
+  'and white-liquor tank of carbon steel; on the chlor-alkali route, titanium anode pans, nickel cathode pans and '
+  'perfluorinated membranes, with nickel catholyte piping and PVC-lined brine piping',
+  'Sodium hydroxide liquor at about 10 wt% and 90 C from the causticiser, or 32 wt% catholyte with wet chlorine and '
+  'brine on the chlor-alkali route (A-M-422, flow_graph/param/caustic.py): carbon steel serves dilute caustic below '
+  'the caustic-cracking range, nickel serves hot strong caustic, and wet chlorine and acid brine need titanium or '
+  'lined steel (ULLMANN_NAOH; PERRY9_MAT). ' + _TAG,
+  'Nickel 200 for the liquor lines if the caustic runs hot and strong in service',
+  'wetted by caustic liquor (and wet chlorine on the chlor-alkali route); caustic cracking of stressed carbon steel is the corrosion load.'),
  'SI_REFINE': (
   'Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen '
   'chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite '

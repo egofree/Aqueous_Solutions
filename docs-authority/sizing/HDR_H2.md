@@ -17,7 +17,7 @@ This page records the size of unit HDR_H2, of class `header` in sector GAS, from
 
 ## 2. Duty
 
-The unit takes 1.97541 kg/d by 13 streams and gives 1.97541 kg/d by 1 stream.
+The unit takes 2.07506 kg/d by 14 streams and gives 2.07506 kg/d by 1 stream.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -32,19 +32,19 @@ Table 2.1. Design parameters
 | rho_kg_m3 | 0.084 |
 | Q_m3_s | 0.0003 |
 | v_m_s | 8 |
-| id_req_mm | 6.6 |
+| id_req_mm | 6.7 |
 | DN | 25 |
 | length_m | 23.6 |
 | volume_m3 | 0.0054 |
 | material | PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06) |
 | hold_kg | 0 |
-| connections | 14 |
+| connections | 15 |
 
 ## 3. Geometry
 
 The envelope is 1000 mm x 1000 mm x 4500 mm, from the placement file `flow_graph/placement_blocks.json`.
 
-The hold-up check takes 1.97541 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 1.975 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 130 mm in diameter and 200 mm high. It fits within the envelope.
+The hold-up check takes 2.07506 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 2.075 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 140 mm in diameter and 200 mm high. It fits within the envelope.
 
 ## 4. Material
 

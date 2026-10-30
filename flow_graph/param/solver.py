@@ -45,9 +45,10 @@ def bmed(d, hcl_mol):
                 kW_published=bv['sec_kWh_kg']*base_kg/24, kW_whey_2M=DR.val(d,'bmed_sec_kWh_per_kg_base')*base_kg/24,
                 kW_design=DR.val(d,'bmed_sec_design_kWh_per_kg_pair')*(hcl_mol*HCL/1000+base_kg)/24)
 
-def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0, unit=None):
+def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0, unit=None, added_water_kg_d=0.0):
     """Evaporative concentration of a BMED product from w_in to w_out by MVR.
-    Mass: feed = solute/w_in, product = solute/w_out, water off = feed - product.
+    Mass: feed = solute/w_in, product = solute/w_out, water off = feed - product. A make-up liquor adds its solute
+    (added_kg_d) and its water (added_water_kg_d), and the evaporator removes that water too.
     HCl side: w_out must stay below the HCl-water azeotrope [PERRY9_HCL]; vapour is then water-rich.
     Power: in-house MVR design (X-MFG-30, flow_graph/param/evap_design.py: IAPWS-IF97 compression ratio, isentropic blower,
     recirculation pump, trim heat) when unit is given; else water off x specific MVR energy [VOGELBUSCH_MVR] (upper bound)."""
@@ -55,27 +56,29 @@ def evap(d, solute_kg_d, w_in, w_out, added_kg_d=0.0, unit=None):
     c = DR.val(d,'evap_cond_hcl_wt') if unit == 'EVAP_ACID' else 0.0   # HCl in the condensate (X-MFG-30 column, PERRY7_HCL_VLE)
     prod = (solute_kg_d+added_kg_d)/w_out
     feed = solute_kg_d/w_in if not c else prod*(w_out - c)/(w_in - c)   # condensate HCl recycles to BMED_ACID and returns in the feed
-    water = feed + added_kg_d - prod
-    r = dict(solute_kg_d=solute_kg_d, added_kg_d=added_kg_d, feed_kg_d=feed, product_kg_d=prod, water_kg_d=water, cond_hcl_wt=c,
+    water = feed + added_kg_d + added_water_kg_d - prod
+    r = dict(solute_kg_d=solute_kg_d, added_kg_d=added_kg_d, added_water_kg_d=added_water_kg_d, feed_kg_d=feed, product_kg_d=prod, water_kg_d=water, cond_hcl_wt=c,
              recycle_hcl_kg_d=water*c,
-             kW=water/1000*DR.val(d,'mvr_kWh_per_t')/24, closure=(feed+added_kg_d, prod+water))
+             kW=water/1000*DR.val(d,'mvr_kWh_per_t')/24, closure=(feed+added_kg_d+added_water_kg_d, prod+water))
     if unit:
         from .evap_design import design
         r['design'] = design(d, r, unit); r['kW'] = r['design']['total_kW']
     return r
 
 SIO2 = mw({'Si':1,'O':2})
+from . import caustic as _caustic
 def naoh_balance(d, g, hcl_mol, vs_mol=0.0):
     """NaOH demand and make-up. Precipitation: one NaOH per chloride [GREENWOOD]. Digest: SiO2 + 2 NaOH
     [GREENWOOD] on the dissolved cullet (IA-GLASS-03 less S08G, all as SiO2, bounding). BMED makes NaOH 1:1
-    with the leach HCl. Make-up = demand - BMED, no credit for sodium returned in the silicate liquor (worst case)."""
+    with the leach HCl. Make-up = demand - BMED, no credit for sodium returned in the silicate liquor (worst case).
+    makeup_kg_d is the liquor mass of NAOH_PLANT at the strength of its selected route (flow_graph/param/caustic.py, A-M-422)."""
     R = {x['stream_id']: x['rate']['value'] for x in g['edges']}
     ppt = hcl_mol*DR.val(d,'ppt_naoh_per_cl')
     sio2 = max(0.0, R['IA-GLASS-03'] - R['S08G'])*1000/SIO2
     dig = sio2*DR.val(d,'digest_naoh_per_sio2')
     acex = R.get('IA-BMIM', 0.0)*1000/174.67              # X-PAR-14: one NaOH per [Bmim]Cl to regenerate the OH-form anion resin (A-M-162)
     mk = max(0.0, ppt + dig + vs_mol + acex - hcl_mol)    # vs_mol: vent-scrubber bleed (X-PAR-10)
-    return dict(ppt_mol=ppt, digest_mol=dig, acex_mol=acex, acex_kg_d=acex*NAOH/1000, bmed_mol=hcl_mol, makeup_mol=mk, vs_mol=vs_mol, makeup_kg_d=mk*NAOH/1000/DR.val(d,'naoh_makeup_form'),
+    return dict(ppt_mol=ppt, digest_mol=dig, acex_mol=acex, acex_kg_d=acex*NAOH/1000, bmed_mol=hcl_mol, makeup_mol=mk, vs_mol=vs_mol, makeup_kg_d=mk*NAOH/1000/_caustic.product_wt(d),
                 ppt_kg_d=ppt*NAOH/1000, digest_kg_d=dig*NAOH/1000)
 
 BASE_DEMAND = ('IA-BASE-01','IA-BASE-PPT','IA-ACEX-NAOH')   # 20 wt% NaOH users (glass digest, hydroxide precipitation)
@@ -103,7 +106,8 @@ def solve():
     from .vent_scrubber import design as _vs
     vs = _vs(d, ea)                                                       # X-PAR-10: NaOH bleed from BMED_BASE to the vent scrubber
     nb = naoh_balance(d, g, la['hcl_mol_d'], vs['upset']['naoh_mol_d'])
-    eb = evap(d, bm['base_kg_d'] - vs['upset']['naoh_mol_d']*NAOH/1000, DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'), added_kg_d=nb['makeup_kg_d']*DR.val(d,'naoh_makeup_form'), unit='EVAP_BASE')
+    eb = evap(d, bm['base_kg_d'] - vs['upset']['naoh_mol_d']*NAOH/1000, DR.val(d,'bmed_product_wt_base'), DR.val(d,'base_conc_design_wt'), added_kg_d=nb['makeup_kg_d']*_caustic.product_wt(d), unit='EVAP_BASE',
+              added_water_kg_d=nb['makeup_kg_d']*(1 - _caustic.product_wt(d)))
     import subprocess, sys as _s, os as _o
     root = _o.path.dirname(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))))
     roof = json.loads(subprocess.run([_s.executable, 'docs-authority/_power_sizing.py'], cwd=root, capture_output=True, text=True, check=True).stdout)['roof']
@@ -126,7 +130,7 @@ def check():
     w = DR.val(d,'base_conc_design_wt'); nb = s['naoh']
     cmp('IA-BASE-PPT NaOH, kg/d', E['IA-BASE-PPT']['rate']['value']*w, nb['ppt_kg_d'], 'GREENWOOD')
     cmp('IA-BASE-01 NaOH, kg/d', E['IA-BASE-01']['rate']['value']*w, nb['digest_kg_d'], 'GREENWOOD')
-    if 'IA-NAOH-MU' in E: cmp('IA-NAOH-MU make-up, kg/d', E['IA-NAOH-MU']['rate']['value'], nb['makeup_kg_d'], 'NaOH balance')
+    if 'IA-NAOH-LIQ' in E: cmp('IA-NAOH-LIQ make-up liquor, kg/d', E['IA-NAOH-LIQ']['rate']['value'], nb['makeup_kg_d'], 'NaOH balance, A-M-422')
     for k,u in (('evap_acid','EVAP_ACID'),('evap_base','EVAP_BASE')):
         if u in N:
             cmp(f'{u} kW', N[u]['continuous_kw']['value'], s[k]['kW'], 'X-MFG-30 in-house MVR design')

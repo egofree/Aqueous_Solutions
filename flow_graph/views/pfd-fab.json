@@ -76,7 +76,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 175.174278,
+          "bypass_kg_d": 174.28376,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -276,7 +276,7 @@
           "rho_kg_m3": 1.2041,
           "Q_m3_s": 0.0003,
           "v_m_s": 8.0,
-          "id_req_mm": 7.1,
+          "id_req_mm": 7.0,
           "DN": 25,
           "length_m": 33.6,
           "volume_m3": 0.0076,
@@ -361,11 +361,11 @@
         "trade_statement": {
           "exports_kg_d": {
             "IA-N2-VENT": 3.1,
-            "IA-NA-PURGE": 4.394,
+            "IA-NA-PURGE": 0.642,
             "IA-C5-SHIP": 7.131,
             "IA-C11-SHIP": 1.512,
             "IA-C19-SHIP": 2.218,
-            "IA-O2-SHIP": 22.884,
+            "IA-O2-SHIP": 22.093,
             "IA-MEOH-SHIP": 28.029,
             "IA-CL2-SHIP": 39.206,
             "IA-CA-CL2-SHIP": 0.097,
@@ -376,11 +376,12 @@
             "IA-SHELL-EXPORT": 1.0,
             "IA-METAL-SHIP": 10.812,
             "IA-FAB-PRODUCT": 0.139,
-            "IA-LIME-SHIP": 0.299
+            "IA-LIME-SHIP": 0.299,
+            "IA-NAOH-CL2-SHIP": 3.505,
+            "IA-NAOH-RESIDUE": 0.121
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 64.587,
-            "IA-NAOH-MU": 4.394,
+            "IA-H2O-MU": 53.366,
             "IA-SOLV-MU": 0.21,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
@@ -392,10 +393,12 @@
             "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
             "IA-QUARTZ-MU": 0.718,
-            "IA-SULFUR-MU": 0.018
+            "IA-SULFUR-MU": 0.018,
+            "IA-TRONA-MU": 0.92,
+            "IA-LIMESTONE-MU": 0.029
           },
-          "net_kg_d": -0.445,
-          "residual_kg_d": -0.445,
+          "net_kg_d": 13.304,
+          "residual_kg_d": 13.304,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }

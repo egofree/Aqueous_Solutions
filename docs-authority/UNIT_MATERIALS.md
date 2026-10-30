@@ -17,7 +17,7 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 194 units, 140 have an issued material for each wetted stream, 54 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 328 wetted stream ends, and each resolves to an issued service family.
+Of the 195 units, 141 have an issued material for each wetted stream, 54 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 334 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
@@ -25,21 +25,21 @@ A unit is closed when every wetted stream that touches it carries a wetted mater
 The following service families of AQS-STD-002 are used, with the number of stream ends in each.
 
 - Acid or brine, at or below 60 C: 52 stream ends.
-- Hot leach liquor: 45 stream ends.
+- Hot leach liquor: 46 stream ends.
 - Dry gas, H2/O2/N2/CO2: 42 stream ends.
-- Process vent gas: 35 stream ends.
+- Process vent gas: 37 stream ends.
 - Hydrocarbon product, fuel or wax cut: 18 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
-- Aqueous process liquor (AQS-ASSAY-001 envelope): 15 stream ends.
+- Aqueous process liquor (AQS-ASSAY-001 envelope): 16 stream ends.
+- Wet acid H₂ + sweep air header: 14 stream ends.
 - Oxidizer, wet HF or PVDF unit: 13 stream ends.
-- Wet acid H₂ + sweep air header: 13 stream ends.
 - Q1/Q2 thermal oil: 12 stream ends.
 - Water loops (protective, irrigation, UPW): 12 stream ends.
 - Wet methanol service: 11 stream ends.
 - Flue or acid gas: 10 stream ends.
 - Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 10 stream ends.
+- Alkaline (NaOH/KOH base liquor): 7 stream ends.
 - Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours): 7 stream ends.
-- Alkaline (NaOH/KOH base liquor): 6 stream ends.
 - Alkaline silica slurry: 3 stream ends.
 - CaCl₂/MgCl₂ brine concentrates to molten-salt pots (ambient import legs, NORTH_DOCK to MG_POT and CA_POT): 2 stream ends.
 - Propylene-glycol ground loop: 1 stream ends.
@@ -401,6 +401,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-EVAP_BASE-FEED | BMED_BASE | EVAP_BASE | P4 | 12.1 alkaline (naoh/koh base liquor) | PP-H to 80 °C (P4) |
 | IA-EVAP_BASE-COND | EVAP_BASE | BMED_BASE | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+| IA-NAOH-LIQ | NAOH_PLANT | EVAP_BASE | P4 | 12.1 alkaline (naoh/koh base liquor) | PP-H to 80 °C (P4) |
 
 ### EW_1
 
@@ -662,6 +663,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 |---|---|---|---|---|---|
 | IA-GW-MAKEUP | GW_INTAKE | ROOF_TANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-ACID-H2O | GW_INTAKE | ACID_PLANT | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
+| IA-NAOH-H2O | GW_INTAKE | NAOH_PLANT | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 
 ### H2O_ELYZ
 
@@ -731,6 +733,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-EW6-H2B | EW_6 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-EW7-H2B | EW_7 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-EW8-H2B | EW_8 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
+| IA-NAOH-H2 | NAOH_PLANT | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 
 ### HDR_N2
 
@@ -871,6 +874,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-BASE-PPT | EVAP_BASE | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-SI-PURGE | SI_REFINE | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
+| IA-NA-RECYCLE | LEACH_CSTR_1 | NAOH_PLANT | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 
 ### LIO_BAT
 
@@ -1016,6 +1020,17 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 |---|---|---|---|---|---|
 | MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-MO-VENT | MO_CELL | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
+
+### NAOH_PLANT
+
+| Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
+|---|---|---|---|---|---|
+| IA-NAOH-VENT | NAOH_PLANT | ATMOS | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-NA-RECYCLE | LEACH_CSTR_1 | NAOH_PLANT | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
+| IA-NAOH-CL2-SHIP | NAOH_PLANT | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-NAOH-H2 | NAOH_PLANT | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
+| IA-NAOH-H2O | GW_INTAKE | NAOH_PLANT | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
+| IA-NAOH-LIQ | NAOH_PLANT | EVAP_BASE | P4 | 12.1 alkaline (naoh/koh base liquor) | PP-H to 80 °C (P4) |
 
 ### NCG_HEADER
 

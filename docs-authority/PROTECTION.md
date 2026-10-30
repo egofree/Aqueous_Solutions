@@ -50,6 +50,7 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | CRYO_ASU | 15 | 6,207 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | EVAP_ACID | 15 | 6,207 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | EVAP_BASE | 15 | 6,207 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | NAOH_PLANT | 15 | 6,207 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | ALK_SCRUBBER | 15 | 6,207 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | ACID_POLISH_SCRUB | 15 | 6,207 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | ACID_PLANT | 15 | 6,207 | thermal-magnetic, instantaneous 5× | 75 A |
@@ -119,15 +120,15 @@ The electrowinning rectifier `RECTIFIER` limits its current to 1.05 times the ra
 
 ## 5. Earth fault, touch and step voltages
 
-The inverters bound the earth-fault current at 6,207 A; the contribution of the utility is not yet known (A-M-110). The ground grid of `docs-authority/_grounding_study.py` covers 30,360 m² with a perimeter conductor of 716 m, 4,546 m of mesh conductors at a spacing of 12 m, 2/0 AWG at a depth of 0.75 m, and 72 rods of 3 m. Its resistance is 0.136 Ω, so the ground potential rise is 844 V.
-Because the ground potential rise exceeds the tolerable touch voltage, the mesh and step voltages of IEEE 80-2013 (equations 85 to 94) govern. They are 134 V and 56 V. Table 5.1 compares them with the tolerable voltages for a 50 kg person and a clearing time of 0.5 s (IEEE 80-2013 equations 29 and 32).
+The inverters bound the earth-fault current at 6,207 A; the contribution of the utility is not yet known (A-M-110). The ground grid of `docs-authority/_grounding_study.py` covers 30,912 m² with a perimeter conductor of 704 m, 4,744 m of mesh conductors at a spacing of 12 m, 2/0 AWG at a depth of 0.75 m, and 71 rods of 3 m. Its resistance is 0.135 Ω, so the ground potential rise is 838 V.
+Because the ground potential rise exceeds the tolerable touch voltage, the mesh and step voltages of IEEE 80-2013 (equations 85 to 94) govern. They are 133 V and 56 V. Table 5.1 compares them with the tolerable voltages for a 50 kg person and a clearing time of 0.5 s (IEEE 80-2013 equations 29 and 32).
 
 Table 5.1. Touch and step voltages
 
 | Surface | Tolerable touch (V) | Tolerable step (V) | Mesh voltage (V) | Step voltage (V) | Result |
 | --- | --- | --- | --- | --- | --- |
-| bare soil | 176 | 213 | 134 | 56 | safe |
-| crushed rock 0.1 m, 3000 ohm m | 677 | 2,216 | 134 | 56 | safe |
+| bare soil | 176 | 213 | 133 | 56 | safe |
+| crushed rock 0.1 m, 3000 ohm m | 677 | 2,216 | 133 | 56 | safe |
 
 A crushed rock layer 0.1 m deep with a resistivity of at least 3000 Ω·m is kept on the outdoor yard around the flow battery and the methanol train, as a margin against the unknown utility contribution. Indoors, the slab reinforcement is bonded to the grid as an equipotential mat (AQS-ELEC-005).
 

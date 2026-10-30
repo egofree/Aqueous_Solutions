@@ -1,0 +1,12 @@
+tag,size,rating,service,face,height_mm
+N1,solids,Class 150,trona ore (raw ore) for soda ash,inlet,160
+N2,solids,Class 150,"limestone ore (raw ore), lime-cycle make-up",inlet,160
+N3,DN15,Class 150,carbon dioxide and water vapour of the trona calciner and lime kiln,outlet,600
+N4,DN15,Class 150,sodium chloride of the leach purge recovered to the cell brine,inlet,160
+N5,DN15,Class 150,"chlor-alkali chlorine, shipped with the chlorine export",outlet,600
+N6,DN15,Class 150,chlor-alkali cathode hydrogen to the H2 header,outlet,600
+N7,DN15,Class 150,"well water for the liquor, the slaker or the cell",inlet,160
+N8,solids,Class 150,ore insolubles and the lime-mud purge,outlet,600
+N9,DN15,Class 150,sodium hydroxide liquor to the base evaporator,outlet,600
+N10,DN15,Class 150,drain,bottom,50
+N11,DN15,Class 150,vent,top,800

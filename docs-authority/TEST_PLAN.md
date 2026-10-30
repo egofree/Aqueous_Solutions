@@ -18,11 +18,11 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T1 | Owner and site data | 50 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
-| T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 471 | Calculation or drawing issued under the named task |
+| T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
+| T5 | Design calculations and drawings | 472 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 667 items: 296 drivers, 371 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 667 items: 295 drivers, 372 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -196,7 +196,6 @@ Total 667 items: 296 drivers, 371 register entries. Classification rule: first m
 | driver evap_dT_drive_K | 6.0 K condensing minus boiling | Pilot run: compressor ratio vs heat flux | X-PAR |
 | driver evap_wet_min | 0.05 kg/(m s) minimum falling-film wetting rate | Pilot wetting test | X-PAR |
 | driver mvr_kWh_per_t | 72.0 kWh/t water evaporated | Vendor MVR quote at 0.8 t/d for 7 -> 20 wt% HCl and NaOH; small-unit penalty measured on the pilot | X-PAR |
-| driver naoh_makeup_form | 1.0 mass fraction NaOH in purchased make-up (anhydrous flake) | Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot | X-PAR |
 | driver rx_digester_srt_d | 20.0 d mesophilic SRT (high-rate, 35 C; typical 15-20 d) | VS destruction and gas yield in the pilot digester | X-PAR |
 | driver rx_pyro_heater_eff | 0.7 electric to process, insulated retort | Heater energy meter on the pilot retort | X-PAR |
 | A-M-088 | 2 M acid and base leaving BMED (7.07 wt% HCl, 7.41 wt% NaOH) mol/L | EDBM pilot at 2 M product: SEC, current efficiency and product purity | X-PAR-04 |
@@ -683,6 +682,7 @@ Total 667 items: 296 drivers, 371 register entries. Classification rule: first m
 | A-M-419 | The CZ charge is made on site (no imports except waste or ra kg/d, kWh/kg, fraction | python3 -m flow_graph.param.si_refine; the furnace and loop mass balances close and the electronic-grade output equals the CZ charge | QA audit 2026-10-29, on-site silicon (owner decision t58u) |
 | A-M-420 | The Ti, Mo and Cr chlorinators take their carbon reductant a kg/d, fraction | python3 -m flow_graph.param.regen; IA-C-TI, IA-C-MO and IA-C-CR leave OIL_PYRO at the carbon need over char_fixed_C_frac and the cell balances close | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
 | A-M-421 | The 98 wt% sulfuric acid for HF_GEN is made on site by ACID_ kg/d, fraction, C, mm, m, kJ/mol, kJ/kg K | python3 -m flow_graph.param.sulfuric; python3 -m flow_graph.param.regen; IA-H2SO4-MU is retired, IA-H2SO4-ACID carries the acid demand of HF_GEN, and the mass balance of ACID_PLANT closes (asserted in sulfuric.design). | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
+| A-M-422 | The sodium hydroxide make-up is made on site by NAOH_PLANT,  kg/d, mass fraction, C, mm, m, kJ/mol, kJ/kg K, V | python3 -m flow_graph.param.caustic; python3 -m flow_graph.param.regen; IA-NAOH-MU is retired, IA-NAOH-LIQ carries the make-up liquor to EVAP_BASE, the streams of the route not selected are retired, and the mass and element balances of NAOH_PLANT agree (asserted in caustic.design). | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT) |
 
 ## 7. T6 Commissioning measurements
 

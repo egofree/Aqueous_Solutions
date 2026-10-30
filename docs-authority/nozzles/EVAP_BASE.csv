@@ -6,3 +6,4 @@ N4,DN15,Class 150,evaporator condensate return (BMED water make-up),outlet,600
 N5,solids,Class 150,purchased NaOH flake make-up,inlet,160
 N6,DN15,Class 150,drain,bottom,50
 N7,DN15,Class 150,vent,top,800
+N8,DN15,Class 150,sodium hydroxide liquor to the base evaporator,inlet,160

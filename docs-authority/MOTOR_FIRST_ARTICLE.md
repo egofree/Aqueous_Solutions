@@ -49,7 +49,7 @@ Table 2.1. Other motor families
 
 | Family | Type | Rating | Items | First article |
 |---|---|---|---|---|
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 111 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 113 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 56 | stator stack + bonded NdFeB rotor, hall board; back-EMF constant and torque constant on the rig |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 27 | BLDC + harmonic or spur gearhead to ISO 5211 F03 flange; stall torque and cycle life 10,000 strokes |
 | MF-17 | solenoid | ISO 15218 coil, 22 mm | 36 | bobbin coil, plunger and frame; pull-in and drop-out voltage, coil temperature rise at 110 % V |

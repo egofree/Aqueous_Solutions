@@ -48,6 +48,7 @@
   "MET_SCRUB": "packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) [sizing/HOUSE_SCRUBBERS.md]",
   "MG_POT": "issued mfg model BOM (3 internals part row): \"step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per\" [models/mfg/MG_POT/bom.csv]",
   "MO_CELL": "issued mfg model BOM (3 internals part row): \"step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per\" [models/mfg/MO_CELL/bom.csv]",
+  "NAOH_PLANT": "duty sheet: \"anode pans, nickel cathode pans and perfluorinated membranes, with nickel catholyte piping and PVC-lined brine\" [docs-authority/duties/NAOH_PLANT.md]",
   "NOX_SCRUB": "packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) [sizing/HOUSE_SCRUBBERS.md]",
   "PELLET": "duty sheet: \"Material. 316L die plate and cutter hub; UHMW-PE trough liner; PE/PP water trough on the resin-cooling loop;\" [docs-authority/duties/PELLET.md]",
   "POLISH_BANK": "duty sheet: \"room. 5. Instruments. Differential pressure across the packing, and pH if there is a liquor loop. High\" [docs-authority/duties/POLISH_BANK.md]",
@@ -199,5 +200,5 @@
   "WET_OX": "no issued internals basis for a wet_ox unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "ZNBR2": "no issued internals basis for a flow_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)"
  },
- "units": 194
+ "units": 195
 }

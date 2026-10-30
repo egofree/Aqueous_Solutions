@@ -62,3 +62,5 @@ N60,DN50,Class 150,dissolved gas,outlet,600
 N61,solids,Class 150,"saw kerf, crop and pot scrap with the spent slurry",inlet,160
 N62,solids,Class 150,silica fume from the furnace baghouse,inlet,160
 N63,DN15,Class 150,impurity chlorides and silicon tetrachloride bleed,inlet,160
+N64,DN15,Class 150,sodium chloride bleed of the leach purge (impurity bleed),outlet,600
+N65,DN15,Class 150,sodium chloride of the leach purge recovered to the cell brine,outlet,600

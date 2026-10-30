@@ -1,9 +1,13 @@
 item,description,qty,material,basis
 1,Body / envelope 900 x 700 x 1800 mm,1,"Selections issued (unit task 09 pattern; checked across the AQS-ASSAY-001 Rev C bounding cases, AQS-STD-002).",docs-authority/duties/GW_INTAKE.md
-2,Process nozzle DN15,2,"Selections issued (unit task 09 pattern; checked across the AQS-ASSAY-001 Rev C bounding cases, AQS-STD-002).",one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,3,"Selections issued (unit task 09 pattern; checked across the AQS-ASSAY-001 Rev C bounding cases, AQS-STD-002).",one per mass edge; DN from AQS-INV-003
 3,"Motor: transfer pump IA-ACID-H2O to ACID_PLANT (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
-4,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
-5,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
-6,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
-7,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
-8,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004
+4,"Motor: transfer pump IA-NAOH-H2O to NAOH_PLANT (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+5,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+6,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+7,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+8,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+9,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+10,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+11,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+12,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-120 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-121 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -45,7 +45,7 @@
 <polygon points="586,240 577,236 577,244" fill="#111"/>
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">HDR_H2</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">IA-HDR-H2-02</text>
-<text x="24" y="253" font-size="10" text-anchor="start">2.0 kg/d · DN15 P1</text>
+<text x="24" y="253" font-size="10" text-anchor="start">2.1 kg/d · DN15 P1</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
 <line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,286 577,282 577,290" fill="#111"/>
@@ -86,7 +86,7 @@
 <polygon points="1070,424 1061,420 1061,428" fill="#111"/>
 <text x="1476" y="405" font-size="9" fill="#666" text-anchor="end">CRYO_H2</text>
 <text x="1476" y="419" font-size="11" font-weight="600" text-anchor="end">S64</text>
-<text x="1476" y="437" font-size="10" text-anchor="end">2.0 kg/d · DN15 M1</text>
+<text x="1476" y="437" font-size="10" text-anchor="end">2.1 kg/d · DN15 M1</text>
 <text x="902" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="end">N6</text>
 <path d="M 1023.6,418 L 1031.6,424 L 1023.6,430 Z M 1041.6,418 L 1033.6,424 L 1041.6,430 Z" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="1032.6" y="413.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
@@ -98,7 +98,7 @@
 <g id="aqs-title-block"><rect x="1116" y="612" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="629" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-H2_DRYER</text>
 <text x="1124" y="646" font-size="9">P&amp;ID H2_DRYER (dryer, GAS sector)</text>
-<text x="1124" y="663" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 888d9248   Issued 2026-10-19</text>
+<text x="1124" y="663" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev e3332cd0   Issued 2026-10-19</text>
 <text x="1124" y="680" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="697" font-size="9">Graph SHA-256 c893cba12fa20cc4   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="697" font-size="9">Graph SHA-256 048924eca4b2883d   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

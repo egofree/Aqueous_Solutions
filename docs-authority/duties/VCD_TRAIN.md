@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 333.1 kg/d. Mass out 333.1 kg/d. Electrical duty 0.2359 kW. In: S13 3.799 kg/d (condensate); S29 104.5 kg/d (treated grey); S52 42.88 kg/d (PEM product H2O); IA-NUT-01 13.93 kg/d (digest surplus); 2 more. Out: S25 308.5 kg/d (VCD distillate); S28 17.88 kg/d (VCD brine); IA-VCD-BD 6.709 kg/d (still bottoms).
+1. Basis. Mass in 332.2 kg/d. Mass out 332.2 kg/d. Electrical duty 0.2353 kW. In: S13 3.799 kg/d (condensate); S29 104.5 kg/d (treated grey); S52 42.88 kg/d (PEM product H2O); IA-NUT-01 13.93 kg/d (digest surplus); 2 more. Out: S25 307.6 kg/d (VCD distillate); S28 17.88 kg/d (VCD brine); IA-VCD-BD 6.709 kg/d (still bottoms).
 
 2. Size.
 - Envelope 1400×600×1200 mm is the shell. It is not full. Working volume, 2 h: V = (165.1/1000)×(2/24) = 0.0138 m³.

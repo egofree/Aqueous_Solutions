@@ -273,13 +273,6 @@
   "needs_verification": true,
   "verification_test": "Bench caustic digest of burned cullet: mass dissolved and NaOH consumed per kg cullet"
  },
- "naoh_makeup_form": {
-  "value": 1.0,
-  "units": "mass fraction NaOH in purchased make-up (anhydrous flake)",
-  "register": "X-PAR NaOH balance (owner decision 2026-10-15)",
-  "needs_verification": true,
-  "verification_test": "Supplier certificate for NaOH flake; dissolution into EVAP_BASE product checked on the pilot"
- },
  "bay_mm": {
   "value": 6000,
   "units": "mm structural bay",
@@ -4839,6 +4832,101 @@
   "value": 0.9,
   "units": "kJ/kg K mean heat capacity of the cake and char feed to the kiln temperature",
   "register": "A-M-421"
+ },
+ "naoh_route": {
+  "value": "CAUSTICIZE",
+  "units": "- sodium hydroxide route of NAOH_PLANT: CAUSTICIZE (trona ore to soda ash, lime causticising with a recalcining lime kiln) or CHLOR_ALKALI (membrane cells on the leach purge salt and halite ore)",
+  "register": "A-M-422"
+ },
+ "caus_liquor_wt": {
+  "value": 0.1,
+  "units": "mass fraction NaOH in the white liquor of the causticiser (the practical causticising limit)",
+  "register": "A-M-422"
+ },
+ "lime_purge_frac": {
+  "value": 0.05,
+  "units": "- fraction of the lime mud purged to the dock each cycle and made up with limestone ore (non-process element control)",
+  "register": "A-M-422"
+ },
+ "trona_ore_purity": {
+  "value": 0.9,
+  "units": "mass fraction trona in the trona ore; the rest leaves as insolubles",
+  "register": "A-M-422"
+ },
+ "limestone_ore_purity": {
+  "value": 0.95,
+  "units": "mass fraction CaCO3 in the limestone ore; the rest leaves as insolubles",
+  "register": "A-M-422"
+ },
+ "halite_ore_purity": {
+  "value": 0.95,
+  "units": "mass fraction NaCl in the halite ore; the rest leaves as insolubles",
+  "register": "A-M-422"
+ },
+ "trona_calc_T_C": {
+  "value": 200.0,
+  "units": "C trona calciner temperature (monohydrate-process class)",
+  "register": "A-M-422"
+ },
+ "trona_calc_D_mm": {
+  "value": 150.0,
+  "units": "mm bore of the electrically heated trona calciner tube",
+  "register": "A-M-422"
+ },
+ "trona_calc_L_m": {
+  "value": 0.5,
+  "units": "m heated length of the trona calciner tube",
+  "register": "A-M-422"
+ },
+ "trona_dH_kJ_mol": {
+  "value": 185.0,
+  "units": "kJ per mol trona for 2 trona -> 3 Na2CO3 + CO2 + 5 H2O(g), from standard formation enthalpies",
+  "register": "A-M-422"
+ },
+ "lime_kiln_T_C": {
+  "value": 900.0,
+  "units": "C lime kiln temperature for CaCO3 -> CaO + CO2",
+  "register": "A-M-422"
+ },
+ "lime_kiln_D_mm": {
+  "value": 150.0,
+  "units": "mm bore of the electrically heated lime kiln tube",
+  "register": "A-M-422"
+ },
+ "lime_kiln_L_m": {
+  "value": 1.0,
+  "units": "m heated length of the lime kiln tube",
+  "register": "A-M-422"
+ },
+ "caco3_dH_kJ_mol": {
+  "value": 178.3,
+  "units": "kJ per mol CaCO3 for CaCO3 -> CaO + CO2",
+  "register": "A-M-422"
+ },
+ "caus_feed_cp_kJ_kgK": {
+  "value": 0.9,
+  "units": "kJ/kg K mean heat capacity of the ore and mud fed to the calciner and kiln",
+  "register": "A-M-422"
+ },
+ "ca_catholyte_wt": {
+  "value": 0.32,
+  "units": "mass fraction NaOH in the membrane-cell catholyte",
+  "register": "A-M-422"
+ },
+ "ca_cell_V": {
+  "value": 3.1,
+  "units": "V membrane chlor-alkali cell voltage at design current density",
+  "register": "A-M-422"
+ },
+ "ca_CE": {
+  "value": 0.95,
+  "units": "- current efficiency of the membrane cell for NaOH",
+  "register": "A-M-422"
+ },
+ "na_purge_recycle_frac": {
+  "value": 0.9,
+  "units": "- fraction of the leach sodium chloride purge recycled to the cell brine on the CHLOR_ALKALI route; the rest is bled to the dock",
+  "register": "A-M-422"
  },
  "char_fixed_C_frac": {
   "value": 0.85,

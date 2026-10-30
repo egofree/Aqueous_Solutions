@@ -100,10 +100,10 @@
       "notes": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
-        "value": 21.4447,
+        "value": 21.2163,
         "unit": "kW",
         "status": "study",
-        "note": "X-PAR-12 TF: 9.36 kg/d H2 x 55.0 kWh/kg / 24 h; rated 85.8 kW on a 6.0 h PV window."
+        "note": "X-PAR-12 TF: 9.26 kg/d H2 x 55.0 kWh/kg / 24 h; rated 84.9 kW on a 6.0 h PV window."
       },
       "modules": [],
       "params": {
@@ -127,10 +127,10 @@
           "adequate": true
         },
         "stack_heat_kw": {
-          "value": 6.0825,
+          "value": 6.0177,
           "unit": "kW",
           "status": "study",
-          "note": "X-PAR-12 TF: 6.08 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
+          "note": "X-PAR-12 TF: 6.02 kW stack heat routed on SQ-H2O_ELYZ-Q4 to the Q4 water header (Rev AC heat-study wiring; BH HEAT_SINK retired) - A-M-230 note restamped R10b."
         },
         "sec3_material": {
           "mat": "PEM stack: Ti porous transport layers, Ir/Ru mixed-oxide anode with Pt cathode catalyst, PTFE-class ionomer membrane, Ti cell hardware and PTFE compression seals; deoxo on a bed of 316L hardware; dry product H2/O2 lines on the issued M1 316L family",
@@ -270,10 +270,10 @@
       "notes": " Duty: notes/POWER_DUTIES.md.",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.6866,
+        "value": 0.7069,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: Q4-bus lift S44 2.1972 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.6866 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
+        "note": "X-ELS-02: Q4-bus lift S44 2.2620 kW (write_graph heat re-solve, AQS-DUTY-010 dispatch: lift only on deficit) / ground-source heating COP 3.2 (drivers gsh_cop_h, ASHRAE 90.1-2025 class) = 0.7069 kW; 2 x 100 % units (X-RED-07). Source-loop circulator sized by AQS-DUTY-076 (pump stamped on GEO_HP_CLOSED_LOOP, counted on the same bounding winter case, A-M-317)."
       },
       "modules": [],
       "params": {
@@ -284,14 +284,14 @@
         "units_installed": 2,
         "redundancy": "2 x 100 % (X-RED-07)",
         "design": {
-          "lift_kW_th": 2.1972,
-          "electric_kW": 0.6866,
+          "lift_kW_th": 2.262,
+          "electric_kW": 0.7069,
           "cop": 3.2,
           "modules": 2,
           "redundancy": "2 x 100 % (X-RED-07)",
-          "module_kW_th": 2.2,
-          "source_area_m2": 0.22,
-          "condenser_area_m2": 0.289,
+          "module_kW_th": 2.262,
+          "source_area_m2": 0.226,
+          "condenser_area_m2": 0.297,
           "hx_class": "brazed plate, U 2.0 kW/m2 K at 5 K approach (PERRY9)",
           "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
           "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
@@ -605,25 +605,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 218.4826,
+        "value": 220.0536,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.5 kW, charge 993.1 kW, 3059 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 220.1 kW, charge 1000.2 kW, 3081 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 994,
-        "kWh": 3059,
+        "kW": 1001,
+        "kWh": 3081,
         "presence": "present",
-        "charge_kW": 994,
-        "discharge_kW": 219,
+        "charge_kW": 1001,
+        "discharge_kW": 221,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 43 hybrid inverters, 71.1 kWh and 23.1 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 43 hybrid inverters, 71.7 kWh and 23.3 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.755,
-          "purge_m3_h": 32.31,
+          "H2_m3_d": 7.811,
+          "purge_m3_h": 32.54,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 2000.8
+          "electrode_area_m2": 2015.1
         }
       }
     },
@@ -1840,10 +1840,10 @@
       "forbidden": "Q1 flue in hab air",
       "claim_status": "Closed",
       "rate": {
-        "value": 2.1972,
+        "value": 2.262,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.197 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
+        "note": "AQS-DUTY-010: GEO_HP dispatch: lift only on Q4 deficit. Normal bus 4.244 kW >= life 3.0 kW, so 0. Standby (ladder down): 1.5 kW to Q4 / hab | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-THM-01 R10b: GEO_HP lifts the Q4 bus deficit 2.262 kW (AQS-DUTY-010 dispatch: lift only on deficit) (A-M-259)."
       },
       "from_sector_id": "GEO",
       "to_sector_id": "HEAT",
@@ -3000,10 +3000,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 6.0825,
+        "value": 6.0177,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 6.08 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
+        "note": "AQS-HEAT-STUDY-002 Rev A 2026-10-18 (heat lane) + A-M-230: X-PAR-12 stack heat 7.30 kW routed to the Q4 water header \u2014 replaces the retired BH SQ-H2O_ELYZ -> HEAT_SINK booking; 45-60 C class, Q4 feed per the S53/S54 pattern. | X-PAR-12 TF: stack heat 6.02 kW routed to Q4_BUS (Rev AC heat-study wiring; BH HEAT_SINK retired), closes the ELY energy balance (A-M-230, restamped R10b)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "HEAT"

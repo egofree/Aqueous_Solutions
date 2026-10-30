@@ -20,7 +20,7 @@ This page records how the plant mass balance is reconciled. The method is minimu
 
 X-SAF-10 corrected the peroxide cell feed from 3.0 kg/d O2 to 0.176 kg/d O2 (Faraday) plus 2.824 kg/d make-up water from ROOF_TANK, and took that water off S40. It did not propagate: TERRACE_IRRIG still transpired 40 kg/d on 37.176 kg/d irrigation, and the cold box still made 2.824 kg/d O2 that nothing drew. Revision A reconciled the two by least squares (IA-TERR-VAP -2.824, IA-O2-RET +2.824) and smeared small moves over 361 edges. Hypothesis tested: missing photosynthetic O2 from the terrace. Rejected for this cut: the terrace has no CO2 supply and no harvest edge, so net CO2 + H2O -> CH2O + O2 fixation there is zero (TAIZ2015), and the sign is wrong (the terrace was short water, the header long O2). Fix: Revision A moves withdrawn; T1-T5 in balance.physics. X-PAR-11 (T6): GROW_BED fixes the 19.0 kg/d CO2 dosed to it (S04 + S89); its photosynthetic O2, 32/44 x CO2 at PQ 1.0, leaves on S87 to CRYO_O2 instead of the trim lump; the trim, compost and nutrient surplus pass the difference; the cold box extracts that much less O2 and the leach dissolved-gas edge falls with it, now asserted under the Henry-law bound (SANDER2015). CO2 edges carry CO2 composition. Verification: T-PAR-02 (A-M-123).
 
-Mass edges 409; held by a transfer function or stoichiometry 380; reconciled 29. Units 142.
+Mass edges 417; held by a transfer function or stoichiometry 388; reconciled 29. Units 143.
 Before: 4 units out of balance (sum of residuals 0.002 kg/d). After: max unit residual 7.18e-04 kg/d. Negative rates after reconciliation: 0.
 
 ## 3. Units out of balance before reconciliation
@@ -56,25 +56,28 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | export | IA-METAL-SHIP | surplus foundry metal export (pot-line p | 10.812 |
 | export | IA-MO-VENT | chlorinator CO2 (vent class) | 0.045 |
 | export | IA-N2-VENT | nitrogen vent | 3.1 |
-| export | IA-NA-PURGE | sodium salt purge equal to the make-up m | 4.394 |
-| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 22.884 |
+| export | IA-NA-PURGE | sodium chloride bleed of the leach purge | 0.642 |
+| export | IA-NAOH-CL2-SHIP | chlor-alkali chlorine, shipped with the  | 3.505 |
+| export | IA-NAOH-RESIDUE | ore insolubles and the lime-mud purge | 0.121 |
+| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 22.093 |
 | export | IA-SHELL-EXPORT | spent foundry silica (solids return clas | 1.0 |
 | import | IA-ALCL3-MU | anhydrous AlCl3 feed (mining-waste chlor | 49.419 |
 | import | IA-CACL2-MU | CaCl2 brine concentrate (mining-waste cl | 0.152 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 64.587 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 53.366 |
+| import | IA-LIMESTONE-MU | limestone ore (raw ore), lime-cycle make | 0.029 |
 | import | IA-MGCL2-MU | CaCl2-MgCl2 brine concentrate (mining-wa | 0.04 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
-| import | IA-NAOH-MU | purchased NaOH flake make-up | 4.394 |
 | import | IA-QUARTZ-MU | quartz ore for the silicon furnace (raw  | 0.718 |
 | import | IA-SILICA-MU | foundry silica (flour/stucco/binder make | 1.0 |
 | import | IA-SOLV-MU | solvent resupply (ethanol and acetone) | 0.21 |
 | import | IA-SULFUR-MU | native sulfur (raw ore) for the acid pla | 0.018 |
 | import | IA-TIO2-MU | TiO2-equivalent rutile concentrate (dock | 0.834 |
+| import | IA-TRONA-MU | trona ore (raw ore) for soda ash | 0.92 |
 | import | IA-WAX-MU | pattern wax make-up (petro-wax class imp | 0.2 |
 
-**Net trade: -0.445 kg/d** (exports 121.912 - imports 122.357); dock ledger residual -0.445 kg/d (reported, exempt per D-DOCK).
+**Net trade: +13.304 kg/d** (exports 120.995 - imports 107.691); dock ledger residual +13.304 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 

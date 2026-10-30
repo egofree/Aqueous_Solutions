@@ -12,7 +12,7 @@ Authority: graph Rev AC; AQS-PLAN-007 MET-LEACH_CSTR_1-02. Study. Not a PE stamp
 
 ## 1. Liquor and holdup
 
-Density 1100 kg/m³ (study: dilute HCl with dissolved metal chlorides). Working level 1100 mm in a 1856 × 1048 mm inside plan: 2.14 m³. Residence 13.2 h on IA-EW-04 (3.90 m³/d) and 8.9 h on the total inflow 6380.5 kg/d (all present mass edges in). The graph envelope 2000 × 1200 × 1400 mm is kept.
+Density 1100 kg/m³ (study: dilute HCl with dissolved metal chlorides). Working level 1100 mm in a 1856 × 1048 mm inside plan: 2.14 m³. Residence 13.2 h on IA-EW-04 (3.90 m³/d) and 8.9 h on the total inflow 6369.2 kg/d (all present mass edges in). The graph envelope 2000 × 1200 × 1400 mm is kept.
 
 ## 2. Agitator
 

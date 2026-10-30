@@ -49,7 +49,7 @@ Table 3.1. Route R2 welded 316L
 
 ## 4. Route R3 welded carbon steel
 
-Table 4.1 gives the steps of route R3 welded carbon steel. It applies to 16 units: ACID_PLANT, AFTERBURNER, BAGHOUSE, C29_RECYCLE, EXT_HALL, HOPPER, OIL_DRYER, OIL_FRAC, PROD_C11_C18, PROD_C19_C28, PROD_C29, PROD_C5_C10, Q1_A, Q1_B, Q2_A, Q2_B.
+Table 4.1 gives the steps of route R3 welded carbon steel. It applies to 17 units: ACID_PLANT, AFTERBURNER, BAGHOUSE, C29_RECYCLE, EXT_HALL, HOPPER, NAOH_PLANT, OIL_DRYER, OIL_FRAC, PROD_C11_C18, PROD_C19_C28, PROD_C29, PROD_C5_C10, Q1_A, Q1_B, Q2_A, Q2_B.
 
 Table 4.1. Route R3 welded carbon steel
 
@@ -137,4 +137,4 @@ Table 10.1. Common steps
 | electrical panels: dielectric and continuity test | UL 891 / NEC 2026 | H |
 | loop check of every instrument | A-M-190 | W |
 
-In all, 225 units are assigned to a route.
+In all, 226 units are assigned to a route.

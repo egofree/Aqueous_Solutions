@@ -1,0 +1,13 @@
+item,description,qty,material,basis
+1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and mineral-wool insulation; slaker, causticiser and white-liquor tank of carbon steel; on the chlor-alkali route, titanium anode pans, nickel cathode pans and perfluorinated membranes, with nickel catholyte piping and PVC-lined brine piping.",docs-authority/duties/NAOH_PLANT.md
+2,Process nozzle DN15,9,"Lime kiln and trona calciner tubes of Inconel 600 with alumina lining and mineral-wool insulation; slaker, causticiser and white-liquor tank of carbon steel; on the chlor-alkali route, titanium anode pans, nickel cathode pans and perfluorinated membranes, with nickel catholyte piping and PVC-lined brine piping.",one per mass edge; DN from AQS-INV-003
+3,"Motor: transfer pump IA-NAOH-LIQ to EVAP_BASE (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
+4,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004
+5,electronics: BLDC driver 24/48 V DC,1,IEC 61800-5-1,AQS-INV-004
+6,electronics: PLC digital I/O point 24 V DC,2,IEC 61131-2,AQS-INV-004
+7,"instrument: gas detector, Cl2 / HCl electrochemical Cl2 and HCl",2,"alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low",AQS-INV-004
+8,"instrument: gas detector, H2 catalytic bead + IR backup",2,"alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",AQS-INV-004
+9,instrument: high-level switch vibrating fork,1,"IEC 60947-5, 316L",AQS-INV-004
+10,instrument: level transmitter radar 80 GHz,1,"IEC 62828, PTFE lens",AQS-INV-004
+11,instrument: pressure transmitter 0-10 bar,1,"ceramic diaphragm, IEC 61298",AQS-INV-004
+12,instrument: temperature element Pt100 class A,1,"IEC 60751, 316L thermowell",AQS-INV-004

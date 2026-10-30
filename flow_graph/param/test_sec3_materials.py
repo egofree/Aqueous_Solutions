@@ -13,7 +13,7 @@ def _sel():
 
 def test_sec3_selections_issued_and_rendered():
     sel = _sel()
-    assert len(sel) == 40, sorted(sel)[:3]
+    assert len(sel) == 41, sorted(sel)[:3]
     for u, s in sel.items():
         assert all(s.get(k) for k in ('mat', 'basis', 'alt', 'note', 'task')), u
         d = open(f'{ROOT}/docs-authority/duties/{u}.md').read()

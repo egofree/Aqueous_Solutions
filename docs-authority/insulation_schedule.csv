@@ -34,12 +34,12 @@ IA-CLOSE-1,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), A
 IA-LEACH-VCD,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,21.84,398.0,,True,0.0306
 IA-NA-PURGE,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,18.34,334.2,,True,0.0257
 IA-H2O-MU,line,15,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,37.3,0.0485,18.22,24.14,439.9,,True,0.0338
-IA-BASE-01,line,15,50.6,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.0,0.0456,7.4,19.66,145.4,,True,0.0275
-IA-BASE-PPT,line,15,50.6,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.0,0.0456,7.4,15.91,117.7,,True,0.0223
-IA-EVAP_BASE-COND,line,15,50.6,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.0,0.0456,7.4,6.71,49.6,,True,0.0094
+IA-BASE-01,line,15,51.2,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.1,0.0456,7.58,19.66,149.0,,True,0.0275
+IA-BASE-PPT,line,15,51.2,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.1,0.0456,7.58,15.91,120.6,,True,0.0223
+IA-EVAP_BASE-COND,line,15,51.2,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,30.1,0.0456,7.58,6.71,50.8,,True,0.0094
 IA-NOX-CO2,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,24.87,965.3,,True,0.0745
 IA-NOX-N2,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,24.87,965.3,,True,0.0745
 IA-LEACH-ASU,line,50,85.0,"hot, personnel protection","mineral wool (ASTM C547), Al jacket",13,39.3,0.0485,38.81,14.07,546.1,,True,0.0421
-H2_DRYER,vessel,60,250.0,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",38,47.7,0.0625,97.07,0.628,79.2,,True,0.0096
+H2_DRYER,vessel,60,250.0,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",38,47.7,0.0625,97.07,0.645,81.4,,True,0.0098
 POLY_F,vessel,150,60,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",13,33.7,0.0464,47.96,0.225,14.0,,True,0.0019
 POLY_OLEFIN,vessel,150,250.0,"hot, personnel protection and heat conservation","mineral wool (ASTM C547), SS cladding",50,45.1,0.0625,157.55,0.225,46.1,,True,0.0092

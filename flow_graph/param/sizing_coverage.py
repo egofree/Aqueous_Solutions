@@ -29,6 +29,7 @@ FAMILIES = [
      ['ACID_PLANT', 'FILM_CAST', 'HF_GEN', 'PELLET', 'POLY_COND', 'POLY_F', 'POLY_OLEFIN', 'POLY_STOCK', 'POWDER_RESIN', 'TFE_SYN', 'VDF_SYN']),
     ('docs-authority/sizing/REACTOR_DESIGN.md', 'AQS-DUTY-062', 'In-house reactors (flow_graph/param/reactor_design.py)',
      ['GLASS_DIGEST', 'OIL_PYRO', 'MEOH_SYNTH', 'MEOH_FERM']),
+    ('docs-authority/PARAMETRIC_MODEL.md', 'AQS-PAR-001', 'Sodium hydroxide plant (flow_graph/param/caustic.py, section 7.1, A-M-422)', ['NAOH_PLANT']),
     ('docs-authority/sizing/EVAP_DESIGN.md', 'AQS-DUTY-060', 'MVR evaporators (flow_graph/param/evap_design.py)', ['EVAP_ACID', 'EVAP_BASE']),
     ('docs-authority/sizing/COLD_BOX.md', 'AQS-DUTY-069', 'Micro cold box (flow_graph/param/cold_box.py)', ['CRYO_ASU']),
     ('docs-authority/sizing/GAS_RECEIVERS.md', 'AQS-DUTY-065', 'Gas receiver banks (flow_graph/param/receivers.py)', ['CRYO_H2', 'CRYO_O2', 'CRYO_CO2']),

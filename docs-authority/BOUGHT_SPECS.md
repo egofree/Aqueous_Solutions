@@ -19,9 +19,9 @@ This page is the specification sheet for everything the shop buys: one datasheet
 |---|---|
 | fastener | 8874 |
 | support | 4036 |
-| electronics | 2172 |
-| instrument | 772 |
-| bearing | 750 |
+| electronics | 2187 |
+| instrument | 780 |
+| bearing | 754 |
 | valve | 671 |
 | protection | 204 |
 | seal | 124 |
@@ -45,34 +45,34 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x394 | 394 | 71 | AHU damper actuator (assumed size); Biogas recirculation blower, diaphragm, about 1 L/min (assumed size); Biogas recirculation diaphragm blower about  |  |
+| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x398 | 398 | 72 | AHU damper actuator (assumed size); Biogas recirculation blower, diaphragm, about 1 L/min (assumed size); Biogas recirculation diaphragm blower about  |  |
 | OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z x12; 6308-2Z x4; 6306-2Z x2 | 356 | 48 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x874 | 874 | 97 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
-| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x772 | 772 | 1 | one per instrument |  |
-| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x194 | 194 | 70 | AHU damper actuator; Biogas recirculation blower, diaphragm, about 1 L/min; Biogas recirculation diaphragm blower about 2 L/min |  |
+| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x878 | 878 | 98 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
+| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x780 | 780 | 1 | one per instrument |  |
+| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x196 | 196 | 71 | AHU damper actuator; Biogas recirculation blower, diaphragm, about 1 L/min; Biogas recirculation diaphragm blower about 2 L/min |  |
 | OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.37 kW x104; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1 | 145 | 38 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Close-coupled gas atomiser with Ar recirculation: main drive (assumed VFD  |  |
-| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x103 | 103 | 1 | 1646 points / 16 |  |
+| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x104 | 104 | 1 | 1658 points / 16 |  |
 | OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x2; 4 kW x1 | 33 | 15 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
 | OF-09 | solenoid driver channel | IEC 61131-2 DO | 24 V DC x36 | 36 | 18 | NaOH dosing pump, solenoid diaphragm; on/off valve C29_RECYCLE; on/off valve CUT-3-OUT |  |
 | OF-10 | compressor contactor + overload | IEC 60947-4-1 | 18.5 kW hermetic x8; 1.1 kW hermetic x1; 0.75 kW hermetic x1 | 10 | 3 | air-source heat pump compressor; cryocooler compressor; heat pump compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
-| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 168 SIFs, redundant pair |  |
+| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 170 SIFs, redundant pair |  |
 ## 5. Instrument datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-34 | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | DN15 x119; DN50 x17; DN32 x1; DN250 x1; DN300 x1 | 139 | 54 | C29_RECYCLE: pumped line (assumed); CUT-1-OUT: pumped line (assumed); CUT-1: pumped line (assumed) | spec per tag on AQS-CTL-001 |
-| OF-35 | pressure transmitter | ceramic diaphragm, IEC 61298 | 0-10 bar x160; 0-16 bar x1 | 161 | 161 | duty item 5 (one per unit); range >= 1.25 x design pressure | spec per tag on AQS-CTL-001 |
-| OF-36 | temperature element | IEC 60751, 316L thermowell | Pt100 class A x164 | 164 | 164 | duty item 5 (assumed one per unit) | spec per tag on AQS-CTL-001 |
-| OF-37 | high-level switch | IEC 60947-5, 316L | vibrating fork x81 | 81 | 81 | duty item 5: high level trips the inlet | spec per tag on AQS-CTL-001 |
-| OF-38 | level transmitter | IEC 62828, PTFE lens | radar 80 GHz x81 | 81 | 81 | duty item 5: liquid holdup | spec per tag on AQS-CTL-001 |
-| OF-39 | gas detector, H2 | alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling | catalytic bead + IR backup x30 | 30 | 14 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
+| OF-35 | pressure transmitter | ceramic diaphragm, IEC 61298 | 0-10 bar x161; 0-16 bar x1 | 162 | 162 | duty item 5 (one per unit); range >= 1.25 x design pressure | spec per tag on AQS-CTL-001 |
+| OF-36 | temperature element | IEC 60751, 316L thermowell | Pt100 class A x165 | 165 | 165 | duty item 5 (assumed one per unit) | spec per tag on AQS-CTL-001 |
+| OF-37 | high-level switch | IEC 60947-5, 316L | vibrating fork x82 | 82 | 82 | duty item 5: high level trips the inlet | spec per tag on AQS-CTL-001 |
+| OF-38 | level transmitter | IEC 62828, PTFE lens | radar 80 GHz x82 | 82 | 82 | duty item 5: liquid holdup | spec per tag on AQS-CTL-001 |
+| OF-39 | gas detector, H2 | alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling | catalytic bead + IR backup x32 | 32 | 15 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-40 | gas detector, O2 deficiency | alarm 19.5 vol %, trip 18.0 vol %, low (dense gases) | electrochemical O2 x24 | 24 | 12 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
-| OF-41 | gas detector, Cl2 / HCl | alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low | electrochemical Cl2 and HCl x40 | 40 | 20 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
+| OF-41 | gas detector, Cl2 / HCl | alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low | electrochemical Cl2 and HCl x42 | 42 | 21 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-42 | temperature element (SIF, independent) | IEC 60751, own thermowell | Pt100 class A x13 | 13 | 13 | SIF-002 SIL 2; SIF-004 SIL 2; SIF-020 SIL 1 | spec per tag on AQS-CTL-001 |
 | OF-43 | gas detector, O2 enrichment | alarm 23.5 vol %, trip 25 vol %, breathing height | electrochemical O2 x12 | 12 | 5 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-44 | gas detector, CO | alarm 25 ppm, trip 50 ppm, breathing height | electrochemical CO x16 | 16 | 8 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |

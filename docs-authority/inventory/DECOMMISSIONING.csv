@@ -96,7 +96,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 11,DIGESTER,CRU,0,,-,0,no
 11,DIGESTER,EVAP_ACID,5094,,-,1223,yes
 11,DIGESTER,EVAP_ACID_VS,0,,-,0,no
-11,DIGESTER,EVAP_BASE,1938,,-,465,yes
+11,DIGESTER,EVAP_BASE,1938,NaOH,-,465,yes
 11,DIGESTER,EW_1,913,solute,-,219,yes
 11,DIGESTER,EW_2,913,,-,219,yes
 11,DIGESTER,EW_3,400,,-,96,no
@@ -111,6 +111,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 11,DIGESTER,HX8,0,,-,22,no
 11,DIGESTER,LEACH_CSTR_1,2100,Cl2 Fe HCl O2 Si SiCl4 SiO2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned,N2/air to 19.5-23.5 % O2,504,yes
 11,DIGESTER,LI_RECOVER,0,,-,0,no
+11,DIGESTER,NAOH_PLANT,0,CaCO3 H2O Na2CO3.NaHCO3.2H2O NaCl,-,0,no
 11,DIGESTER,POLISH_BANK,0,,-,0,no
 11,DIGESTER,P_CA,0,,-,0,no
 11,DIGESTER,SALT_FEED,0,,-,86,no
@@ -136,7 +137,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 14,GAS,ALK_SCRUBBER,0,,-,616,no
 14,GAS,BAGHOUSE,0,solute,-,192,no
 14,GAS,FLUE_KO,289,Fe HCl other_metals,"air purge, scrubbed to vent (TLV)",69,no
-14,GAS,H2_DRYER,0,,-,37,no
+14,GAS,H2_DRYER,0,,-,38,no
 14,GAS,NOX_SCRUB,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",43,no
 14,GAS,RELIEF_H2,0,,-,75,no
 15,HEAT,ADS_CHILL,0,,-,0,no

@@ -70,18 +70,18 @@ Table 3.1. Water train streams
 | IA-URINE | `HABITATION` | `BLACK_DIGEST` | urine to the blackwater barrier train | 1.42 kg/d |
 | S30 | `BLACK_DIGEST` | `NUTRIENT_DOSE` | digest liquor / nutrients | no rate |
 | IA-H2P-H2O | `H2_DRYER` | `VCD_TRAIN` | TSA regeneration condensate | 0.00 kg/d |
-| IA-LEACH-VCD | `LEACH_CSTR_1` | `VCD_TRAIN` | leach liquor water bleed to vapour-compression distillation | 168.00 kg/d |
+| IA-LEACH-VCD | `LEACH_CSTR_1` | `VCD_TRAIN` | leach liquor water bleed to vapour-compression distillation | 167.11 kg/d |
 | IA-NUT-01 | `NUTRIENT_DOSE` | `VCD_TRAIN` | digest surplus | 13.93 kg/d |
 | IA-VCD-BD | `VCD_TRAIN` | `LEACH_CSTR_1` | still bottoms | 6.71 kg/d |
 | S13 | `GROW_BED` | `VCD_TRAIN` | condensate | 3.80 kg/d |
-| S25 | `VCD_TRAIN` | `BMED_UPW_POLISH` | VCD distillate | 308.52 kg/d |
+| S25 | `VCD_TRAIN` | `BMED_UPW_POLISH` | VCD distillate | 307.63 kg/d |
 | S28 | `VCD_TRAIN` | `LEACH_CSTR_1` | VCD brine | 17.88 kg/d |
 | S52 | `FUEL_CELL` | `VCD_TRAIN` | PEM product H2O | 42.88 kg/d |
 | IA-UPW-FAB | `BMED_UPW_POLISH` | `FAB_UPW_TANK` | fab UPW | 60.00 kg/d |
 | IA-UPW-REJ | `BMED_UPW_POLISH` | `LEACH_CSTR_1` | polish reject | 6.05 kg/d |
-| IA-UPW-REMIN | `BMED_UPW_POLISH` | `REMIN` | remineralizer | 175.17 kg/d |
+| IA-UPW-REMIN | `BMED_UPW_POLISH` | `REMIN` | remineralizer | 174.28 kg/d |
 | S01 | `BMED_UPW_POLISH` | `HDR_UPW` | UPW | 67.30 kg/d |
-| IA-POT-01 | `REMIN` | `ROOF_TANK` | potable makeup, remineralised | 165.17 kg/d |
+| IA-POT-01 | `REMIN` | `ROOF_TANK` | potable makeup, remineralised | 164.28 kg/d |
 | S26 | `REMIN` | `HABITATION` | potable | 10.00 kg/d |
 | IA-UPW-HAB | `HDR_UPW` | `HABITATION` | potable makeup | 0.80 kg/d |
 | IA-UPW-USE | `HDR_UPW` | `WAFER_FAB` | fab UPW | 66.50 kg/d |
@@ -95,9 +95,9 @@ Table 3.2. Mass balance of the water units
 | --- | --- | --- |
 | `GREY_TREAT` | 349.14 | 349.14 |
 | `BLACK_DIGEST` | 22.72 | 22.72 |
-| `VCD_TRAIN` | 333.11 | 333.11 |
-| `BMED_UPW_POLISH` | 308.52 | 308.52 |
-| `REMIN` | 175.17 | 175.17 |
+| `VCD_TRAIN` | 332.22 | 332.22 |
+| `BMED_UPW_POLISH` | 307.63 | 307.63 |
+| `REMIN` | 174.28 | 174.28 |
 | `HDR_UPW` | 67.30 | 67.30 |
 | `FAB_UPW_TANK` | 60.00 | 60.00 |
 

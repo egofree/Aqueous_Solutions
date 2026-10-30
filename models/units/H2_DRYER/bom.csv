@@ -1,5 +1,5 @@
 item,description,qty,material,basis
-1,Body D60 x 628 mm,1,Inlet knock-out PVC-U (wet).,docs-authority/duties/H2_DRYER.md
+1,Body D60 x 645 mm,1,Inlet knock-out PVC-U (wet).,docs-authority/duties/H2_DRYER.md
 2,Process nozzle DN15,6,Inlet knock-out PVC-U (wet).,one per mass edge; DN from AQS-INV-003
 3,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 4,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004

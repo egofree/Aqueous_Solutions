@@ -29,7 +29,7 @@ Other abbreviations are in `docs-authority/GLOSSARY.md`.
 
 Method: radial conduction in series with an outer coefficient of 10.0 W/(m2 K) (ASTM_C680). Hot items above 50.0 C: smallest standard thickness giving a surface at or below 50.0 C (ASTM_C1055 contact threshold about 60 C). Cold items: surface at least 1 K above the dew point 16.7 C of 25.0 C / 60 % RH air (ASHRAE_FUND2021_PSY). Vessel losses include 30 % for heads and nozzles.
 
-Total insulation 4.689 m3; total loss 17.101 kW hot, -89.1 W gain cold.
+Total insulation 4.689 m3; total loss 17.110 kW hot, -89.1 W gain cold.
 
 Heat-ladder lines (HL-*) also carry a heat-conservation limit: loss at most 10 % of the rated loop duty. Lines that cannot meet it even at 200 mm are marked (limit not met) in Table 4.1; their loss fraction is carried to X-THM-01 (heat ladder duty balance).
 
@@ -39,7 +39,7 @@ Table 4.1. Insulation schedule
 
 | Item | Kind | DN/D mm | T C | Duty | Material | Thickness mm | Surface C | Loss W/m | Length m | Loss W | Loss / duty |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| H2_DRYER | vessel | 60 | 250.0 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 38 | 47.7 | 97.07 | 0.628 | 79.2 |  |
+| H2_DRYER | vessel | 60 | 250.0 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 38 | 47.7 | 97.07 | 0.645 | 81.4 |  |
 | POLY_OLEFIN | vessel | 150 | 250.0 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 50 | 45.1 | 157.55 | 0.225 | 46.1 |  |
 | HL-Q3-A-HX4 | line | 15 | 95.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 200 | 25.5 | 7.21 | 7.57 | 54.6 | 0.181 (limit not met) |
 | HL-Q3-A-HX5 | line | 20 | 95.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 40.1 | 25.02 | 9.68 | 242.2 | 0.03 |
@@ -79,9 +79,9 @@ Table 4.1. Insulation schedule
 | IA-FC-FIX | line | 50 | 60.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 33.1 | 21.88 | 16.32 | 357.0 |  |
 | IA-FC-LEACH | line | 15 | 60.0 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 31.9 | 10.26 | 27.24 | 279.4 |  |
 | POLY_F | vessel | 150 | 60 | hot, personnel protection and heat conservation | mineral wool (ASTM C547), SS cladding | 13 | 33.7 | 47.96 | 0.225 | 14.0 |  |
-| IA-BASE-01 | line | 15 | 50.6 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.0 | 7.4 | 19.66 | 145.4 |  |
-| IA-BASE-PPT | line | 15 | 50.6 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.0 | 7.4 | 15.91 | 117.7 |  |
-| IA-EVAP_BASE-COND | line | 15 | 50.6 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.0 | 7.4 | 6.71 | 49.6 |  |
+| IA-BASE-01 | line | 15 | 51.2 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.1 | 7.58 | 19.66 | 149.0 |  |
+| IA-BASE-PPT | line | 15 | 51.2 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.1 | 7.58 | 15.91 | 120.6 |  |
+| IA-EVAP_BASE-COND | line | 15 | 51.2 | hot, personnel protection | mineral wool (ASTM C547), Al jacket | 13 | 30.1 | 7.58 | 6.71 | 50.8 |  |
 | IA-HVAC-COND | line | 15 | 10.0 | cold, anti-condensation | flexible elastomeric (ASTM C534), vapour-sealed | 13 | 22.4 | -3.9 | 22.86 | -89.1 |  |
 
 ## 5. Heat-ladder store closure (X-THM-01, A-M-166)
