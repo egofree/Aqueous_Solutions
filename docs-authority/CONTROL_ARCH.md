@@ -57,7 +57,7 @@ Table 4.1. I/O and modules by PLC
 | PLC-ELEC | 28 | 17 | 445 | 106 | 82 | 3/2/34/8 | redundant pair | 118 |
 | PLC-FAB | 67 | 3 | 81 | 11 | 20 | 6/1/7/1 | single | 42 |
 | PLC-FARM | 12 | 0 | 3 | 0 | 1 | 1/0/1/0 | redundant pair | 28 |
-| PLC-FOUNDRY | 77 | 0 | 17 | 0 | 5 | 6/0/2/0 | single | 28 |
+| PLC-FOUNDRY | 77 | 0 | 19 | 0 | 6 | 6/0/2/0 | single | 28 |
 | PLC-GAS | 32 | 0 | 36 | 6 | 9 | 3/0/3/1 | redundant pair | 38 |
 | PLC-GEO | 8 | 0 | 4 | 2 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-GLASS | 13 | 0 | 5 | 1 | 1 | 1/0/1/1 | single | 18 |
@@ -70,7 +70,7 @@ Table 4.1. I/O and modules by PLC
 | PLC-POLYMERS | 39 | 0 | 21 | 3 | 4 | 3/0/2/1 | single | 24 |
 | PLC-PUMPED_HYDRO | 2 | 1 | 2 | 0 | 0 | 1/1/1/0 | redundant pair | 30 |
 | PLC-WTR | 54 | 0 | 63 | 8 | 20 | 5/0/5/1 | redundant pair | 46 |
-| Total | 635 | 33 | 981 | 193 | 205 | 167 modules | 9 redundant of 18 | 658 |
+| Total | 635 | 33 | 983 | 193 | 206 | 167 modules | 9 redundant of 18 | 658 |
 
 The control system draws about 0.66 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 

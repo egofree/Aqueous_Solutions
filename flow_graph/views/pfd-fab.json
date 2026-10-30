@@ -546,13 +546,14 @@
             "IA-NAOH-CL2-SHIP": 3.894,
             "IA-NAOH-RESIDUE": 0.034,
             "IA-SOLV-VENT": 0.019,
-            "IA-PCA-REJECT": 0.0
+            "IA-PCA-REJECT": 0.0,
+            "IA-CL2-MG-SHIP": 0.016
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 56.495,
+            "IA-H2O-MU": 56.521,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
-            "IA-MGCL2-MU": 0.04,
+            "IA-MGCL2-MU": 0.03,
             "IA-CACL2-MU": 0.152,
             "IA-TIO2-MU": 0.834,
             "IA-MOO3-MU": 0.094,

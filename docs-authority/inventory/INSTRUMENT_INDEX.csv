@@ -656,7 +656,7 @@ GREY_TREAT-TE-01,GREY_TREAT,WTR,temperature element,"IEC 60751, 316L thermowell"
 AL_POT-IT-01,AL_POT,FOUNDRY,current transmitter,"DC shunt + isolated amplifier, IEC 61010-1",0-5000 A,4-20 mA HART (AI),AL_POTIT-01,PLC-FOUNDRY,cell current: design I_A 1460.77 A
 CA_POT-IT-01,CA_POT,FOUNDRY,current transmitter,"DC shunt + isolated amplifier, IEC 61010-1",0-10 A,4-20 mA HART (AI),CA_POTIT-01,PLC-FOUNDRY,cell current: design I_A 3.61 A
 CR_CELL-IT-01,CR_CELL,FOUNDRY,current transmitter,"DC shunt + isolated amplifier, IEC 61010-1",0-50 A,4-20 mA HART (AI),CR_CELLIT-01,PLC-FOUNDRY,cell current: design I_A 18.95 A
-MG_POT-IT-01,MG_POT,FOUNDRY,current transmitter,"DC shunt + isolated amplifier, IEC 61010-1",0-200 A,4-20 mA HART (AI),MG_POTIT-01,PLC-FOUNDRY,cell current: design I_A 54.89 A
+MG_POT-IT-01,MG_POT,FOUNDRY,current transmitter,"DC shunt + isolated amplifier, IEC 61010-1",0-200 A,4-20 mA HART (AI),MG_POTIT-01,PLC-FOUNDRY,cell current: design I_A 55.5 A
 MO_CELL-IT-01,MO_CELL,FOUNDRY,current transmitter,"DC shunt + isolated amplifier, IEC 61010-1",0-10 A,4-20 mA HART (AI),MO_CELLIT-01,PLC-FOUNDRY,cell current: design I_A 2.57 A
 AL_POT-AE-01,AL_POT,FOUNDRY,chlorine analyzer,electrochemical Cl2 cell,0-100 vol % Cl2,4-20 mA HART (AI),AL_POTAE-01,PLC-FOUNDRY,anode-gas Cl2 offtake: IA-CL2-SHIP 39.42 kg/d; AL_POT_CL2 recycle standby
 CA_POT-AE-01,CA_POT,FOUNDRY,chlorine analyzer,electrochemical Cl2 cell,0-100 vol % Cl2,4-20 mA HART (AI),CA_POTAE-01,PLC-FOUNDRY,anode-gas Cl2 offtake: IA-CA-CL2-SHIP 0.10 kg/d

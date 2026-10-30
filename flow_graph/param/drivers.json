@@ -5273,6 +5273,25 @@
   "verification_test": "first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge",
   "published": "Ca treatment 0.10-0.20 % of charge class (steelmaking practice; the grease-thickener Ca(OH)2 draw of AQS-DUTY-GREASE rides the same line)"
  },
+ "al_mg_alloy_wt": {
+  "value": 0.0035,
+  "units": "mass fraction Mg in the cast aluminium line, A356 class 0.25-0.45 % (ASM_V15_AL)",
+  "register": "A-M-430"
+ },
+ "al_mg_melt_loss_frac": {
+  "value": 0.2,
+  "units": "fraction of the alloy Mg oxidised to the dross per remelt of the aluminium scrap (ASM_V15_AL, Mg loss of Al-Mg alloys in remelting)",
+  "register": "A-M-430",
+  "needs_verification": true,
+  "verification_test": "Mg assay of the Al melt before and after a remelt at the first article"
+ },
+ "flux_salt_recovery_frac": {
+  "value": 0.8,
+  "units": "fraction of the MgCl2 salt flux recovered from the dross salt cake by water leach and evaporation (ASM_V15_AL, salt-cake recycling)",
+  "register": "A-M-430",
+  "needs_verification": true,
+  "verification_test": "chloride balance of a salt-cake leach batch"
+ },
  "HEAT.heat-battery-train.hb_oil_hold_kWh_th": {
   "value": 10,
   "units": "kWh_th sensible hold per oil store",

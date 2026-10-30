@@ -270,6 +270,8 @@ FARM,FARM,GROW_BED,transfer pump S13 to VCD_TRAIN power,DC power pair,16 AWG,TC-
 FARM,FARM,GROW_BED,transfer pump S13 to VCD_TRAIN signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FOUNDRY,cell,TI_CELL,transfer pump IA-MGCL2-KROLL to MG_POT power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FOUNDRY,cell,TI_CELL,transfer pump IA-MGCL2-KROLL to MG_POT signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
+FOUNDRY,furnace,IND_MELT,transfer pump IA-FLUX-SALT-REC to MG_POT power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
+FOUNDRY,furnace,IND_MELT,transfer pump IA-FLUX-SALT-REC to MG_POT signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FOUNDRY,furnace,IND_MELT,transfer pump IND_MELT_TO_CAST to CAST_LINE power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 FOUNDRY,furnace,IND_MELT,transfer pump IND_MELT_TO_CAST to CAST_LINE signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 FOUNDRY,furnace,IND_MELT,transfer pump IND_TO_CONT to CONT_CAST power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"

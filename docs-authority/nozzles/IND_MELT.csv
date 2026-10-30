@@ -16,3 +16,4 @@ N14,DN15,Class 150,melt for investment pour,outlet,600
 N15,solids,Class 150,manufacturing scrap return,inlet,160
 N16,DN15,Class 150,drain,bottom,50
 N17,DN15,Class 150,vent,top,800
+N18,DN15,Class 150,MgCl2 brine recovered from the dross salt cake,outlet,600

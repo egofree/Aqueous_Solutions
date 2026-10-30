@@ -1573,7 +1573,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 351.8479,
+        "value": 351.8504,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2779,7 +2779,7 @@
           "source": "AQS-DUTY-072",
           "charge_kg_d": 37.0139,
           "stock_out_kg_d": 25.9,
-          "slag_kg_d": 0.3565,
+          "slag_kg_d": 0.3302,
           "crucible_kg": 10.0,
           "heats_d": 4,
           "melt_kWh_d": 21.249,
@@ -3549,17 +3549,19 @@
         "sizing": {
           "status": "study",
           "source": "AQS-DUTY-072",
-          "mg_kg_d": 0.5078,
+          "mg_kg_d": 0.513361,
+          "mg_alloy_kg_d": 0.0056,
+          "flux_salt_recovered_kg_d": 0.031825,
           "mgcl2_return_kg_d": 1.9493,
-          "mgcl2_makeup_kg_d": 0.0398,
+          "mgcl2_makeup_kg_d": 0.0299,
           "cl2_kg_d": 1.4813,
           "chemistry": "MgCl2 -> Mg + Cl2, 700 C (AQS-BAL-KROLL closure)",
-          "I_A": 54.89,
+          "I_A": 55.5,
           "V": 4.2,
-          "dc_kW": 0.2306,
+          "dc_kW": 0.2331,
           "hold_kW": 0.1069,
-          "kW": 0.3375,
-          "basis": "Kroll Mg recycle at the 0.50 kg/d Ti line; CaCl2-MgCl2 brine make-up covers the drag-out (A-M-284)",
+          "kW": 0.34,
+          "basis": "Kroll Mg recycle at the Ti line plus the alloy make-up of the Al line; the dross salt cake is recovered first and the CaCl2-MgCl2 brine covers the shortfall (A-M-284, A-M-430)",
           "size_mm": [
             800,
             800,
@@ -3569,12 +3571,12 @@
         "design": {
           "service": "molten MgCl2 electrolysis cell (Kroll Mg recycle), 700 C",
           "chemistry": "MgCl2 -> Mg + Cl2",
-          "feed_kg_d": 1.9891,
+          "feed_kg_d": 1.9792,
           "metal_kg_d": 0.5078,
           "cl2_kg_d": 1.4813,
-          "I_A": 54.89,
+          "I_A": 55.5,
           "cell_V": 4.2,
-          "dc_kW": 0.2306,
+          "dc_kW": 0.2331,
           "hold_kW": 0.1069,
           "connected_kW": 1,
           "bath_T_C": 700.0,
@@ -3599,13 +3601,35 @@
           "alt": "monolithic graphite pot if the CaCl2-brine impurity load runs above the design, at the cost of a brittle liner",
           "note": "MgCl2 is hygroscopic: the pot-feed import leg stays PVDF (P3) and the headspace stays dry; no measured rate (unit task 12 first article).",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "Mg",
+            "use": "Kroll drag-out and aluminium alloy make-up",
+            "need_kg_d": 0.015755,
+            "recovered_kg_d": 0.008124,
+            "recovered_from": [
+              "IA-FLUX-SALT-REC",
+              "MFG_SCRAP_TO_IND"
+            ],
+            "ore_streams": [],
+            "note": "The alloy Mg of the Al line, 0.0280 kg/d, returns with the shop scrap and is not made new. The shortfall comes from the CaCl2-MgCl2 brine at the dock, a mining-waste stream (A-M-430).",
+            "unrecovered": [
+              {
+                "stream": "FOUNDRY_SLAG_TO_LEACH",
+                "kg_d": 0.007631,
+                "recoverable": false,
+                "basis": "the salt left in the washed cake and the MgO from the remelt oxidation report to the leach; MgO needs a chlorination step that this scale does not justify"
+              }
+            ]
+          }
+        ]
       },
       "continuous_kw": {
-        "value": 0.3375,
+        "value": 0.34,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-072 Kroll Mg recycle: 54.9 A x 4.2 V = 0.231 kW + hold 0.11 kW (A-M-282)."
+        "note": "AQS-DUTY-072 Kroll Mg recycle: 55.5 A x 4.2 V = 0.233 kW + hold 0.11 kW (A-M-282)."
       }
     },
     {
@@ -3635,7 +3659,7 @@
           "dc_kW": 0.0152,
           "hold_kW": 0.1069,
           "kW": 0.1221,
-          "basis": "grease-thickener Ca line (AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2); brine import per A-M-284",
+          "basis": "Ca deoxidizer line of the melt; the grease soap lime comes from the acid-plant residue (A-M-429); brine import per A-M-284",
           "size_mm": [
             800,
             800,
@@ -5036,7 +5060,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 351.8479,
+        "value": 351.8504,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -6551,7 +6575,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.3375,
+        "value": 0.34,
         "unit": "kW",
         "status": "study",
         "note": "Equals MG_POT continuous_kw (AQS-DUTY-072)."

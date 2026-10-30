@@ -196,10 +196,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | VAC_IND_TI | TI_CELL | VAC_IND | S | mass | present | Ti sponge/powder to vacuum melt | 0.0 kg/d | — |
 | STOCK_TO_MFG | METAL_STORE | MFG_SHOP | S | mass | present | plate/rod/wire to manufacturing | 25.9 kg/d | — |
 | STOCK_TO_FAB | METAL_STORE | WAFER_FAB | S | mass | present | electronic-grade silicon CZ charge from the store | 0.226363 kg/d | — |
-| FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | S | mass | present | slag return | 0.356466 kg/d | — |
+| FOUNDRY_SLAG_TO_LEACH | IND_MELT | LEACH_CSTR_1 | S | mass | present | slag return | 0.330241 kg/d | — |
 | SALT_TO_FLUX | SALT_FEED | FLUX_PREP | S | mass | present | digester/leach salts to flux | 0.0 kg/d | — |
 | AL_POT_TO_IND | AL_POT | IND_MELT | S | mass | present | Al metal | 10.0 kg/d | — |
-| MG_POT_TO_IND | MG_POT | IND_MELT | S | mass | present | Mg metal | 0.0 kg/d | — |
+| MG_POT_TO_IND | MG_POT | IND_MELT | S | mass | present | Mg metal | 0.0056 kg/d | — |
 | CA_POT_TO_IND | CA_POT | IND_MELT | S | mass | present | Ca metal | 0.055069 kg/d | — |
 | AL_POT_CL2 | AL_POT | CRU | G | mass,energy | present | Cl2 return | 0.0 kg/d | — |
 | MG_POT_CL2 | MG_POT | CRU | G | mass,energy | retired | Cl2 return | 0.0 kg/d | — |
@@ -264,7 +264,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.641602 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.509975 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 351.8479 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 351.8504 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
@@ -406,7 +406,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.172239 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 56.494899 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 56.521124 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
@@ -531,7 +531,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-CL2-SHIP | AL_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class product) | 39.205574 kg/d | — |
 | IA-MGCL2-KROLL | TI_CELL | MG_POT | L | mass | present | Kroll retort MgCl2 return (net of drag-out) | 1.949292 kg/d | — |
 | IA-KROLL-FLUX | TI_CELL | FLUX_PREP | S | mass | present | MgCl2-class salt drag-out (flux cover source) | 0.039781 kg/d | — |
-| IA-MGCL2-MU | NORTH_DOCK | MG_POT | L | mass | present | CaCl2-MgCl2 brine concentrate (mining-waste class) | 0.039782 kg/d | — |
+| IA-MGCL2-MU | NORTH_DOCK | MG_POT | L | mass | present | CaCl2-MgCl2 brine concentrate (mining-waste class) | 0.029894 kg/d | — |
 | IA-MG-TI | MG_POT | TI_CELL | S | mass | present | Mg reductant to the Kroll retort | 0.507761 kg/d | — |
 | IA-CL2-MG-TI | MG_POT | TI_CELL | G | mass | present | chlorine to the Kroll chlorinator | 1.481313 kg/d | — |
 | IA-CACL2-MU | NORTH_DOCK | CA_POT | L | mass | present | CaCl2 brine concentrate (mining-waste class) | 0.152497 kg/d | — |
@@ -551,7 +551,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-SHELL-RECLAIM | SHELL_BREAK | SHELL_BUILD | S | mass | present | reclaimed shell stucco/flour | 7.0 kg/d | — |
 | IA-SHELL-EXPORT | SHELL_BREAK | NORTH_DOCK | S | mass | present | spent foundry silica (solids return class) | 1.0 kg/d | — |
 | SF-AL_POT | SOL_ARK_60K | AL_POT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 5.6578 kW | — |
-| SF-MG_POT | SOL_ARK_60K | MG_POT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.3375 kW | — |
+| SF-MG_POT | SOL_ARK_60K | MG_POT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.34 kW | — |
 | SF-CA_POT | SOL_ARK_60K | CA_POT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.1221 kW | — |
 | SF-TI_CELL | SOL_ARK_60K | TI_CELL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.5 kW | — |
 | SF-MO_CELL | SOL_ARK_60K | MO_CELL | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.1141 kW | — |
@@ -640,3 +640,5 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-PCA-REJECT | P_CA | NORTH_DOCK | S | mass | present | slaker grit (anhydrite, fluorspar and inerts of the kiln residue) | 1.2e-05 kg/d | — |
 | SF-GREASE_CA | SOL_ARK_60K | GREASE_CA | E | elec | present | 480 V AC | 7e-05 kW | — |
 | SF-GREASE_LI | SOL_ARK_60K | GREASE_LI | E | elec | retired | 480 V AC | 0.0 kW | — |
+| IA-FLUX-SALT-REC | IND_MELT | MG_POT | L | mass | present | MgCl2 brine recovered from the dross salt cake | 0.031825 kg/d | — |
+| IA-CL2-MG-SHIP | MG_POT | NORTH_DOCK | G | mass,energy | present | chlorine byproduct export (water-treatment class product) | 0.016337 kg/d | — |

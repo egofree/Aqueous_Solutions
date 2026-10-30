@@ -1,9 +1,9 @@
 family,category,item,spec,qty,sizes,units
-OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",410,608-2Z x410,73
+OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",412,608-2Z x412,73
 OF-02,bearing,deep-groove ball bearing,"ISO 15 / ISO 492 normal class, C3",356,6202-2Z x214; 6205-2Z x52; 6201-2Z x48; 6204-2Z x24; 6206-2Z x12; 6308-2Z x4; 6306-2Z x2,48
-OF-03,electronics,PLC digital I/O point,IEC 61131-2,894,24 V DC x894,99
+OF-03,electronics,PLC digital I/O point,IEC 61131-2,896,24 V DC x896,99
 OF-04,electronics,PLC analog input point,IEC 61131-2,796,4-20 mA HART x796,1
-OF-05,electronics,BLDC driver,IEC 61800-5-1,202,24/48 V DC x202,72
+OF-05,electronics,BLDC driver,IEC 61800-5-1,203,24/48 V DC x203,72
 OF-06,electronics,motor starter (contactor + overload),IEC 60947-4-1,145,0.37 kW x104; 0.18 kW x20; 0.55 kW x11; 0.12 kW x4; 0.25 kW x3; 1.1 kW x2; 0.75 kW x1,38
 OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,106,24 V DC x106,1
 OF-08,electronics,variable-frequency drive,IEC 61800-5-1,33,1.1 kW x21; 2.2 kW x6; 1.5 kW x3; 7.5 kW x2; 4 kW x1,15

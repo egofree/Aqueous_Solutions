@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 37.07 kg/d. Mass out 37.07 kg/d. Electrical duty 0.8854 kW. In: CAST_SCRAP_TO_IND 0 kg/d (foundry scrap); METALS_TO_IND_MELT 0.5 kg/d (Ti and other metal powders/sponge); FLUX_TO_IND 0.03978 kg/d (flux); MO_TO_IND 0.0625 kg/d (Mo metal); 5 more. Out: IND_MELT_TO_CAST 3 kg/d (molten metal); IND_TO_CONT 31.71 kg/d (melt to continuous caster); FOUNDRY_SLAG_TO_LEACH 0.3565 kg/d (slag return); IND_TO_ATOM 0 kg/d (melt to atomizer when powder required); 1 more.
+1. Basis. Mass in 37.07 kg/d. Mass out 37.07 kg/d. Electrical duty 0.8854 kW. In: CAST_SCRAP_TO_IND 0 kg/d (foundry scrap); METALS_TO_IND_MELT 0.5 kg/d (Ti and other metal powders/sponge); FLUX_TO_IND 0.03978 kg/d (flux); MO_TO_IND 0.0625 kg/d (Mo metal); 5 more. Out: IND_MELT_TO_CAST 3 kg/d (molten metal); IND_TO_CONT 31.71 kg/d (melt to continuous caster); FOUNDRY_SLAG_TO_LEACH 0.3302 kg/d (slag return); IND_TO_ATOM 0 kg/d (melt to atomizer when powder required); 2 more.
 
 2. Size.
-- Envelope 1000×1000×1500 mm, 1.5 m³. That box over this flow would be 971.2 h if it were full. It is not a residence time.
+- Envelope 1000×1000×1500 mm, 1.5 m³. That box over this flow would be 971.0 h if it were full. It is not a residence time.
 - Envelope basis (graph node): A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load.
 - Sizing study AQS-DUTY-072 (study): charge_kg_d 37.01; stock_out_kg_d 25.9; slag_kg_d 0.3565; crucible_kg 10; heats_d 4; melt_kWh_d 21.25; avg_kW 0.8854; peak_kW 15; connected_kW 25; basis scrap remelt + pot metal; class energies (cp_s dT + L + cp_l superheat)/eta per A-M-177 method, CRC_CU/CRC_FE/CRC_ZN/CRC_AL/CRC_TI (reactive/addition class bounding at Ti).
 - Graph design (AQS-PAR-001 sizing): service Cu/Fe/Zn/Al scrap + pot-metal remelt; medium-frequency coreless induction, tilt pour; crucible_kg 10; crucible_D_mm 110; crucible_H_mm 165; heats_d 4; connected_kW 25; peak_kW 15; melt_kWh_d 21.25; lining ceramic-fibre hot face 150 mm + 4 mm CS casing (study).

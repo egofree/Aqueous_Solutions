@@ -118,6 +118,7 @@ Table 7.2. Recovery-first inventory by element, kg/d of the element
 | Cr | CR_CELL metal | CR_CELL | 0.2500 | 0.0000 | FLOAT_SINK_GRIT_TO_CR | 0.2500 | IA-CR2O3-MU | 0.2500 |
 | Ti | TI_CELL metal | TI_CELL | 0.5000 | 0.0000 | FLOAT_SINK_GRIT_TO_TI | 0.5000 | IA-TIO2-MU | 0.5000 |
 | Mo | MO_CELL metal | MO_CELL | 0.0625 | 0.0000 | FLOAT_SINK_GRIT_TO_MO | 0.0625 | IA-MOO3-MU | 0.0625 |
+| Mg | Kroll drag-out and aluminium alloy make-up | MG_POT | 0.0158 | 0.0081 | IA-FLUX-SALT-REC, MFG_SCRAP_TO_IND | 0.0000 |  | 0.0076 |
 | Si | investment shell silica | SHELL_BUILD | 3.7395 | 3.2721 | IA-SHELL-RECLAIM | 0.4674 | IA-SILICA-MU | 0.4674 |
 | Ca | grease soap thickener | P_CA | 0.0000 | 0.0000 | IA-LIME-TO-PCA | 0.0000 |  | 0.0000 |
 | Si | silicon furnace quartz | SI_REDUCE | 0.3354 | 0.0000 | — | 0.3354 | IA-QUARTZ-MU | 0.3354 |
@@ -131,6 +132,7 @@ Table 7.3. Unrecovered losses and their basis
 | --- | --- | --- | --- | --- |
 | F | IA-LIME-SHIP | 0.0077 | no | fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake |
 | F | IA-PCA-REJECT | 0.0000 | no | fluorspar the HF kiln does not convert; the residue drawn for the grease lime leaves with the slaker grit |
+| Mg | FOUNDRY_SLAG_TO_LEACH | 0.0076 | no | the salt left in the washed cake and the MgO from the remelt oxidation report to the leach; MgO needs a chlorination step that this scale does not justify |
 | Si | IA-SHELL-EXPORT | 0.4674 | no | spent shell beyond foundry_inv_shell_reclaim_frac: fines and fired binder that the stucco cannot take back (A-M-286) |
 | S | IA-LIME-SHIP | 0.0129 | no | cake-kiln non-conversion (caso4_dec_frac) leaves with the residue |
 | S | IA-PCA-REJECT | 0.0000 | no | cake-kiln non-conversion; the residue drawn for the grease lime leaves with the slaker grit |
@@ -140,6 +142,7 @@ Table 7.3. Unrecovered losses and their basis
 | Cr | — | — | — | the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_Cr2O3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427) |
 | Ti | — | — | — | the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_TiO2_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427) |
 | Mo | — | — | — | the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_MoO3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427) |
+| Mg | — | — | — | The alloy Mg of the Al line, 0.0280 kg/d, returns with the shop scrap and is not made new. The shortfall comes from the CaCl2-MgCl2 brine at the dock, a mining-waste stream (A-M-430). |
 | Ca | — | — | — | the calcium is the lime of the ACID_PLANT cake-kiln residue, a waste of the plant (A-M-429) |
 | Si | — | — | — | the plant silica wastes are fines (spent shell flour, silica fume), not the lump quartz the arc furnace burden needs, and the silica fume already goes to the leach |
 | C | — | — | — | the shortfall is made from plant methanol and the chlorinator CO that was exported as fuel gas |
@@ -149,7 +152,7 @@ Table 7.4. Waste streams taken in at the dock
 | Stream | To | kg/d | Carries |
 | --- | --- | --- | --- |
 | IA-ALCL3-MU | AL_POT | 49.4192 | anhydrous AlCl3 feed (mining-waste chloride class) |
-| IA-MGCL2-MU | MG_POT | 0.0398 | CaCl2-MgCl2 brine concentrate (mining-waste class) |
+| IA-MGCL2-MU | MG_POT | 0.0299 | CaCl2-MgCl2 brine concentrate (mining-waste class) |
 | IA-CACL2-MU | CA_POT | 0.1525 | CaCl2 brine concentrate (mining-waste class) |
 
 The recovery-first check reports no flag.
@@ -167,7 +170,7 @@ Table 7.5. Solvent routes at the present bench draw
 
 ## 8. Drivers
 
-Table 8.1 lists the 949 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 952 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -1045,6 +1048,9 @@ Table 8.1. Drivers
 | POLYMERS.fluoropolymer-train.hf_kiln.dHrxn_kJ_mol | 65.7 | kJ/mol CaF2 | NIST_WEBBOOK | — |
 | POLYMERS.fluoropolymer-train.hf_kiln.feed_cp_kJ_kgK | 1.1 | kJ/kg K | PERRY9 | — |
 | foundry_ca_add_frac | 0.0015 | kg Ca deoxidizer/desulfurizer per kg melt charge | A-M-316 | yes |
+| al_mg_alloy_wt | 0.0035 | mass fraction Mg in the cast aluminium line, A356 class 0.25-0.45 % (ASM_V15_AL) | A-M-430 | — |
+| al_mg_melt_loss_frac | 0.2 | fraction of the alloy Mg oxidised to the dross per remelt of the aluminium scrap (ASM_V15_AL, Mg loss of Al-Mg alloys in remelting) | A-M-430 | yes |
+| flux_salt_recovery_frac | 0.8 | fraction of the MgCl2 salt flux recovered from the dross salt cake by water leach and evaporation (ASM_V15_AL, salt-cake recycling) | A-M-430 | yes |
 | HEAT.heat-battery-train.hb_oil_hold_kWh_th | 10 | kWh_th sensible hold per oil store | A-M-302 | — |
 | HEAT.heat-battery-train.hb_oil_swing_K | 80 | K swing | A-M-302 | — |
 | HEAT.heat-battery-train.hb_water_hold_kWh_th | 20 | kWh_th sensible hold per water store | A-M-302 | — |
@@ -1175,6 +1181,7 @@ Table 9.1. References
 | ASME_Y14_35 | ASME Y14.35-2025, Revision of Engineering Drawings and Associated Documents: revision letters, revision history block, change identification. |
 | ASME_Y14_5 | ASME Y14.5-2018, Dimensioning and Tolerancing: dimensioning and geometric tolerancing for fabrication drawings. |
 | ASM_V1 | ASM International, ASM Handbook Vol 1, Properties and Selection: Irons, Steels, and High-Performance Alloys (1990): AISI H13 hot-work tool steel (Cr-Mo-V) for hot-work dies, extrusion and forge tooling; heat-resisting Fe-Cr-Ni alloys incl. the 80Ni-20Cr electrical-resistance element class to about 1100 C. |
+| ASM_V15_AL | ASM Handbook Vol. 15, Casting (2008), Aluminum and aluminum alloys: A356 contains 0.25-0.45 % Mg; magnesium is lost preferentially to the dross on remelting and is made up by alloy additions; salt fluxes are recovered from the dross salt cake by water leaching and evaporation. |
 | ASM_V7 | ASM International, ASM Handbook Vol 7, Powder Metal Technologies and Applications (1998): press-and-sinter consolidation practice; sintering-furnace construction with graphite or MoSi2 element hot zones under inert or vacuum atmosphere for reactive powders. |
 | ASTM_A992 | ASTM A992/A992M, Standard Specification for Structural Steel Shapes: Fy 345 MPa (50 ksi) minimum, Fu 450 MPa. |
 | ASTM_A999 | ASTM A999/A999M-19, Standard Specification for General Requirements for Alloy and Stainless Steel Pipe: pipe furnished to dimensional specifications may be ordered to minimum wall; the customary supplied-wall practice carries a 12.5 % under-tolerance on wall thickness (0.875 factor on nominal wall). |
@@ -1442,7 +1449,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 295 drivers and then the 379 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 297 drivers and then the 380 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1725,6 +1732,8 @@ Table 10.1. Values to verify
 | driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task |
 | driver FAB.wafer-line-train.campaign_d | 7.0 d | logged campaign schedule at the fab commissioning task |
 | driver foundry_ca_add_frac | 0.0015 kg Ca deoxidizer/desulfurizer per kg melt charge | first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge |
+| driver al_mg_melt_loss_frac | 0.2 fraction of the alloy Mg oxidised to the dross per remelt of the aluminium scrap (ASM_V15_AL, Mg loss of Al-Mg alloys in remelting) | Mg assay of the Al melt before and after a remelt at the first article |
+| driver flux_salt_recovery_frac | 0.8 fraction of the MgCl2 salt flux recovered from the dross salt cake by water leach and evaporation (ASM_V15_AL, salt-cake recycling) | chloride balance of a salt-cake leach batch |
 | driver HEAT.heat-battery-train.hb_q3_hold_kWh_th | 14 kWh_th | Q3 hold from the single-ladder sizing case of AQS-DUTY-008 sec. 6.2 at the next ladder revision |
 | driver HDR.headers-train.hdr_min_DN_gas | 25 DN minimum, gas headers | Take-off and instrument tapping check on the header GA at unit task 05 |
 | driver HDR.headers-train.hdr_min_DN_flue | 100 DN minimum, afterburner flue | Natural-draft and condensate-drainage check on the flue routing drawing |
@@ -2122,3 +2131,4 @@ Table 10.1. Values to verify
 | A-M-427 | TI_CELL, MO_CELL and CR_CELL take their oxide first from … kg/d; mass fractions | Set the grit_* assay drivers to the assay values and run python3 -m flow_graph.param.regen; the grit feeds carry the oxide the assay supports, the concentrate edges fall by the same amount, and python3 -m flow_graph.param.recovery reports no flags. |
 | A-M-428 | SOLV_PLANT supplies the bench ethanol and acetone, recovery … kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. |
 | A-M-429 | The shop grease is made on site from the wax cut, sized … kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. |
+| A-M-430 | MG_POT_TO_IND carries magnesium for alloying the cast … kg/d; A | After regen MG_POT_TO_IND equals al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac, MG_POT and IND_MELT close, and python3 -m flow_graph.param.recovery lists the Mg record with no flags. |

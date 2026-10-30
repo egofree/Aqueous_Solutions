@@ -7,3 +7,5 @@ N5,solids,Class 150,Mg reductant to the Kroll retort,outlet,600
 N6,DN15,Class 150,chlorine to the Kroll chlorinator,outlet,600
 N7,DN15,Class 150,drain,bottom,50
 N8,DN15,Class 150,vent,top,800
+N9,DN15,Class 150,MgCl2 brine recovered from the dross salt cake,inlet,160
+N10,DN15,Class 150,chlorine byproduct export (water-treatment class product),outlet,600

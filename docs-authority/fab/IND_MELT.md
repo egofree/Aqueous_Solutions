@@ -7,7 +7,7 @@ service line: service Cu/Fe/Zn/Al scrap + pot-metal remelt; medium-frequency cor
 Internals: sizing sheet: "remelt; medium-frequency coreless induction, tilt pour, crucible_kg=10, crucible_D_mm=110, crucible_H_mm=165," [docs-authority/sizing/IND_MELT.md]
 Material: Clay-graphite crucibles assigned per melt family (Cu/Zn/Fe/Al one each), ceramic-fibre hot face 150 mm + 4 mm CS casing; alumina castable hearth under the pour lip. (continues on the duty sheet)
 
-Nozzles: 17 process connections per docs-authority/nozzles/IND_MELT.csv
+Nozzles: 18 process connections per docs-authority/nozzles/IND_MELT.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

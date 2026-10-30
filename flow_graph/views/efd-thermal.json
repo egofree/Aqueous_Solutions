@@ -1101,7 +1101,7 @@
           "source": "AQS-DUTY-072",
           "charge_kg_d": 37.0139,
           "stock_out_kg_d": 25.9,
-          "slag_kg_d": 0.3565,
+          "slag_kg_d": 0.3302,
           "crucible_kg": 10.0,
           "heats_d": 4,
           "melt_kWh_d": 21.249,

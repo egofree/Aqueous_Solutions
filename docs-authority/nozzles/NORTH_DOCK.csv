@@ -48,3 +48,4 @@ N46,solids,Class 150,"cake-kiln residue (lime, unreacted anhydrite and fluorspar
 N47,solids,Class 150,halite ore (raw ore) to re-saturate the cell brine,outlet,600
 N48,DN15,Class 150,reactor or fermenter off-gas (fuel-gas class export),inlet,160
 N49,solids,Class 150,"slaker grit (anhydrite, fluorspar and inerts of the kiln residue)",inlet,160
+N50,DN15,Class 150,chlorine byproduct export (water-treatment class product),inlet,160

@@ -1,5 +1,5 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1690 points / 16
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1692 points / 16
 CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,796,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
@@ -1254,12 +1254,15 @@ FOUNDRY,furnace,COMB_HEAT,fabricated part,fabricated part set,1 BOM lines,models
 FOUNDRY,furnace,COMB_HEAT,fastener,M12 anchor,M12 anchor,ISO 898-1 8.8,4,models/mfg/COMB_HEAT/fasteners.csv
 FOUNDRY,furnace,COMB_HEAT,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 FOUNDRY,furnace,COMB_HEAT,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
+FOUNDRY,furnace,IND_MELT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-FLUX-SALT-REC to MG_POT (assumed size)
 FOUNDRY,furnace,IND_MELT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IND_MELT_TO_CAST to CAST_LINE (assumed size)
 FOUNDRY,furnace,IND_MELT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IND_TO_CONT to CONT_CAST (assumed size)
 FOUNDRY,furnace,IND_MELT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IND_TO_INV to INV_CAST (assumed size)
+FOUNDRY,furnace,IND_MELT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-FLUX-SALT-REC to MG_POT
 FOUNDRY,furnace,IND_MELT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IND_MELT_TO_CAST to CAST_LINE
 FOUNDRY,furnace,IND_MELT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IND_TO_CONT to CONT_CAST
 FOUNDRY,furnace,IND_MELT,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IND_TO_INV to INV_CAST
+FOUNDRY,furnace,IND_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-FLUX-SALT-REC to MG_POT: run and fault (assumed)
 FOUNDRY,furnace,IND_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IND_MELT_TO_CAST to CAST_LINE: run and fault (assumed)
 FOUNDRY,furnace,IND_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IND_TO_CONT to CONT_CAST: run and fault (assumed)
 FOUNDRY,furnace,IND_MELT,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IND_TO_INV to INV_CAST: run and fault (assumed)

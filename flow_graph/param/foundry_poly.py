@@ -140,7 +140,14 @@ def solve(g=None):
     kd = val('foundry_kroll_dragout_frac')
     kroll_flux = kd * mgcl2_g                     # MgCl2-class salt drag-out to FLUX_PREP
     mgcl2_ret = mgcl2_g - kroll_flux              # arrives at MG_POT
-    mgcl2_mu = mg_ti + cl2_ti - mgcl2_ret         # brine make-up that restores the retort Mg need
+    # magnesium alloying of the aluminium line, recovery first (A-M-430): the alloy Mg rides the shop-scrap loop with the
+    # Al line and only the remelt oxidation loss is made up; the flux MgCl2 is recovered from the dross salt cake first
+    mg_circ = val('al_mg_alloy_wt') * al_i        # Mg carried round the scrap loop in the Al line
+    mg_ind = mg_circ * val('al_mg_melt_loss_frac')     # remelt oxidation loss, made up by MG_POT on MG_POT_TO_IND
+    mgcl2_alloy = mg_ind * (MM['Mg'] + 2 * MM['Cl']) / MM['Mg']
+    cl2_mg = mgcl2_alloy - mg_ind                 # chlorine freed by the alloy Mg, exported with the pot chlorine class
+    flux_rec = val('flux_salt_recovery_frac') * kroll_flux   # MgCl2 water-leached from the dross salt cake back to MG_POT
+    mgcl2_mu = mg_ti + cl2_ti + mgcl2_alloy - mgcl2_ret - flux_rec   # dock brine covers only the shortfall
     moo3 = mo * (MM['Mo'] + 3 * MM['O']) / MM['Mo']
     c_mo = mo * 1.5 * MM['C'] / MM['Mo']
     co2_mo = mo * 1.5 * (MM['C'] + 2 * MM['O']) / MM['Mo']
@@ -149,9 +156,9 @@ def solve(g=None):
     co_cr = cr * 3 * (MM['C'] + MM['O']) / (2 * MM['Cr'])
     potm = al + ti + mo + cr                      # pot metal charged to the melt
     flux = kroll_flux
-    slag = f * S + flux + ca                      # dross + flux pass-through + deoxidizer Ca reports to slag (metal-equivalent)
+    slag = f * S + flux + ca + mg_ind - flux_rec  # dross + flux pass-through + deoxidizer Ca reports to slag (metal-equivalent)
     inv = val('foundry_inv_line_kg_d')
-    cont = S + potm + ca + flux - 3.0 - inv - slag     # IND_TO_CONT by difference; ca enters and reports to slag (f*S = S-K identity closes the ledger)
+    cont = S + potm + ca + flux + mg_ind - flux_rec - 3.0 - inv - slag     # IND_TO_CONT by difference; ca enters and reports to slag (f*S = S-K identity closes the ledger)
     cont_roll, cont_stock = 10.0, cont - 10.0
     stock_in = 13.0 + cont_stock + inv            # = K + potm exactly
     assert abs(stock_in - (K + potm)) < 1e-9
@@ -167,7 +174,7 @@ def solve(g=None):
     Vc = DR.val(d, 'foundry_pot_voltage_V')
     ce = DR.val(d, 'foundry_pot_ce')
     pot_e = {}
-    for u, m, el, z, v in (('AL_POT', al, 'Al', 3, Vc['al']), ('MG_POT', mg_ti, 'Mg', 2, Vc['mg']),
+    for u, m, el, z, v in (('AL_POT', al, 'Al', 3, Vc['al']), ('MG_POT', mg_ti + mg_ind, 'Mg', 2, Vc['mg']),
                            ('CA_POT', ca, 'Ca', 2, Vc['ca']), ('MO_CELL', mo, 'Mo', 3, Vc['mo']),
                            ('CR_CELL', cr, 'Cr', 3, Vc['cr'])):
         i = faraday_A(m, el, z, ce)
@@ -200,7 +207,8 @@ def solve(g=None):
                 al=al, ti=ti, mo=mo, cr=cr, ca=ca, xf=xf, al_i=al_i, ti_i=ti_i, mo_i=mo_i, cr_i=cr_i,
                 alcl3=alcl3, al_cl2=al_cl2, cacl2=cacl2,
                 ca_cl2=ca_cl2, tio2=tio2, c_ti=c_ti, cl2_ti=cl2_ti, mg_ti=mg_ti, mgcl2_g=mgcl2_g,
-                mgcl2_ret=mgcl2_ret, mgcl2_mu=mgcl2_mu, kroll_flux=kroll_flux, co_ti=co_ti, moo3=moo3,
+                mgcl2_ret=mgcl2_ret, mgcl2_mu=mgcl2_mu, kroll_flux=kroll_flux, mg_circ=mg_circ, mg_ind=mg_ind,
+                mgcl2_alloy=mgcl2_alloy, cl2_mg=cl2_mg, flux_rec=flux_rec, co_ti=co_ti, moo3=moo3,
                 c_mo=c_mo, co2_mo=co2_mo, cr2o3=cr2o3, c_cr=c_cr, co_cr=co_cr, sh=sh, sh_mu=sh_mu,
                 sh_recl=sh_recl, wx=wx, wx_mu=wx_mu, wx_recl=wx_recl, wx_burn=wx_burn, pot_e=pot_e,
                 poly_feed=P * (1 + rej), poly_wet=rej * P, c5_ship=c5, q=q, mix=mix, e_melt=e_melt,
@@ -237,16 +245,18 @@ def apply(g=None, write=False):
     sP = R(s['P']); sS = R(K + sP + s['r0'])      # S from the rounded P so MFG_SHOP closes on the grid
     s['S'] = sS
     sflux, spotm, sca = R(s['flux']), R(s['potm']), R(s['ca'])
-    sslag = R(s['f'] * sS) + sflux + sca          # deoxidizer Ca reports to the dross (metal-equivalent)
+    smg, sfrec = R(s['mg_ind']), R(s['flux_rec'])
+    sslag = R(s['f'] * sS) + sflux + sca + smg - sfrec   # deoxidizer Ca reports to the dross (metal-equivalent)
     s['slag'] = sslag
     put('MFG_SCRAP_TO_IND', sS,
         f'Shop scrap (charge) to the melt; closes MFG_SHOP on the store draws ({DOC_F}, A-M-261 rev). | {TAG}.')
     put('FOUNDRY_SLAG_TO_LEACH', sslag,
-        f'Melt slag+dross {s["f"]:.0%} of charge plus the {s["flux"]:.4f} kg/d salt-flux pass-through by mass '
-        f'conservation on the melt (INDUCT_SOCX 1-2 % band, A-M-262); returns to the leach. | {TAG}.')
+        f'Melt slag+dross {s["f"]:.0%} of charge plus the {s["flux"] - s["flux_rec"]:.4f} kg/d salt flux left in the cake after the '
+        f'salt recovery and the {s["mg_ind"]:.4f} kg/d alloy Mg oxidised in the remelt, by mass conservation on the melt '
+        f'(INDUCT_SOCX 1-2 % band, A-M-262, A-M-430); returns to the leach. | {TAG}.')
     put('IND_MELT_TO_CAST', 3.0,
         f'Cu-class melt to the cast line: bus/winding stock (AQS-SIZE-FOUNDRY Cu 3 kg/d). | {TAG}.')
-    put('IND_TO_CONT', R(sS + spotm + sca + sflux) - 3.0 - R(s['inv']) - sslag,
+    put('IND_TO_CONT', R(sS + spotm + sca + sflux) + smg - sfrec - 3.0 - R(s['inv']) - sslag,
         f'Melt to the semi-continuous caster by difference on the melt: Fe 11.5 (10 low-alloy + 1.5 stainless base) '
         f'+ Zn 1 + pot metal {s["potm"]:.4f} (Al {s["al"]:.1f} / Ti {s["ti"]:.2f} / Mo {s["mo"]:.4f} / Cr {s["cr"]:.2f}, '
         f'A-M-261 rev table). | {TAG}.')
@@ -257,7 +267,7 @@ def apply(g=None, write=False):
     put('CAST_TO_EXTRUDE', 0.0,
         'EXTRUDE is ROLL\'s N+1 alternate (A-M-283): standby-zero on the design day; the Cu line rolls. | {TAG}.')
     put('CONT_TO_ROLL', s['cont_roll'], f'Fe billet to rolling (AQS-SIZE-FOUNDRY Fe 10). | {TAG}.')
-    put('CONT_TO_STOCK', R(sS + spotm + sca + sflux) - 3.0 - R(s['inv']) - sslag - s['cont_roll'],
+    put('CONT_TO_STOCK', R(sS + spotm + sca + sflux) + smg - sfrec - 3.0 - R(s['inv']) - sslag - s['cont_roll'],
         f'As-cast stock by difference: Zn 1 + stainless base 1.5 + pot metal {s["potm"]:.4f} ingot to stock. | {TAG}.')
     put('ROLL_TO_STOCK', 13.0, f'Rolled plate/sheet stock (Cu 3 + Fe 10). | {TAG}.')
     put('STOCK_TO_MFG', K,
@@ -298,8 +308,9 @@ def apply(g=None, write=False):
        f'{DR.val(s["d"], "foundry_kroll_dragout_frac"):.0%} of the Kroll MgCl2 gross: the salt-flux cover for the '
        f'Al-charged melt (A-M-284); unblocks FLUX_PREP from the SALT_FEED stub. | {TAG}.')
     mk('IA-MGCL2-MU', 'NORTH_DOCK', 'MG_POT', 'FOUNDRY', 'L', 'CaCl2-MgCl2 brine concentrate (mining-waste class)',
-       R(s['mg_ti']) + R(s['cl2_ti']) - R(s['mgcl2_ret']),
-       f'D-DOCK feedstock import (A-M-284): restores the drag-out so MG_POT delivers the retort Mg exactly; '
+       R(s['mg_ti']) + R(s['cl2_ti']) + R(s['mg_ind']) + R(s['cl2_mg']) - R(s['mgcl2_ret']) - R(s['flux_rec']),
+       f'D-DOCK feedstock import (A-M-284), the shortfall only (A-M-430): the drag-out and the alloy make-up less the '
+       f'{s["flux_rec"]:.4f} kg/d MgCl2 recovered from the dross salt cake on IA-FLUX-SALT-REC; '
        f'{s["mgcl2_mu"]:.4f} kg/d MgCl2-equivalent. | {TAG}.')
     mk('IA-MG-TI', 'MG_POT', 'TI_CELL', 'FOUNDRY', 'S', 'Mg reductant to the Kroll retort',
        s['mg_ti'],
@@ -310,9 +321,20 @@ def apply(g=None, write=False):
        f'Chlorine closes internally (AQS-BAL-KROLL): MG_POT returns exactly the {4 * MM["Cl"] / MM["Ti"]:.3f} kg/kg Ti '
        f'the chlorination draws; the EW anode gas stays booked to the leach (Faraday balance, A-M-255 pattern; '
        f'A-M-284 ruling - it is the initial loop charge only). | {TAG}.')
-    put('MG_POT_TO_IND', 0.0,
-        f'MG_POT serves only the Kroll recycle at steady state (all Mg to the retort on IA-MG-TI); no Mg stock line '
-        f'at the table. | {TAG}.')
+    put('MG_POT_TO_IND', R(s['mg_ind']),
+        f'Mg alloying of the aluminium line (A356 class, al_mg_alloy_wt {DR.val(s["d"], "al_mg_alloy_wt"):.2%}): the '
+        f'{s["mg_circ"]:.4f} kg/d alloy Mg rides the shop-scrap loop with the Al line, and MG_POT makes up only the '
+        f'{DR.val(s["d"], "al_mg_melt_loss_frac"):.0%} remelt oxidation loss (ASM_V15_AL; A-M-430). | {TAG}.')
+    mk('IA-FLUX-SALT-REC', 'IND_MELT', 'MG_POT', 'FOUNDRY', 'L', 'MgCl2 brine recovered from the dross salt cake',
+       R(s['flux_rec']),
+       f'Water leach of the dross salt cake and evaporation of the brine returns '
+       f'{DR.val(s["d"], "flux_salt_recovery_frac"):.0%} of the {s["flux"]:.4f} kg/d MgCl2 salt flux to MG_POT, before '
+       f'any dock brine (salt-cake recycling practice, ASM_V15_AL; A-M-430). | {TAG}.')
+    mk('IA-CL2-MG-SHIP', 'MG_POT', 'NORTH_DOCK', 'DOCK', 'G', 'chlorine byproduct export (water-treatment class product)',
+       R(s['cl2_mg']),
+       f'Chlorine freed by the {s["mg_ind"]:.4f} kg/d alloy Mg, {2 * MM["Cl"] / MM["Mg"]:.3f} kg/kg Mg; the Kroll chlorinator '
+       f'already takes its full draw on IA-CL2-MG-TI, so this leaves with the pot chlorine class at the dock (A-M-430). | {TAG}.',
+       layers=['mass', 'energy'])
     put('MG_POT_CL2', 0.0, f'Retired 2026-10-30: MG_POT makes exactly the chlorine the Kroll chlorinator draws (IA-CL2-MG-TI), '
         f'because both follow the same Ti rate, so the pot can never have a chlorine surplus for CRU. | {TAG}.')
     E['MG_POT_CL2']['presence'] = 'retired'
@@ -426,6 +448,16 @@ def apply(g=None, write=False):
     from . import solvent as _SV
     _SV.tf(g, E, s['d'])
     # recovery-first records (owner rule t61u, A-M-423; checked by flow_graph/param/recovery.py)
+    _mgf = MM['Mg'] / (MM['Mg'] + 2 * MM['Cl'])
+    N['MG_POT'].setdefault('params', {})['recovery'] = [dict(
+        element='Mg', use='Kroll drag-out and aluminium alloy make-up',
+        need_kg_d=round((s['kroll_flux'] + s['mgcl2_alloy']) * _mgf, 6), recovered_kg_d=round(s['flux_rec'] * _mgf, 6),
+        recovered_from=['IA-FLUX-SALT-REC', 'MFG_SCRAP_TO_IND'], ore_streams=[],
+        note=(f'The alloy Mg of the Al line, {s["mg_circ"]:.4f} kg/d, returns with the shop scrap and is not made new. The '
+              f'shortfall comes from the CaCl2-MgCl2 brine at the dock, a mining-waste stream (A-M-430).'),
+        unrecovered=[dict(stream='FOUNDRY_SLAG_TO_LEACH', kg_d=round((s['flux'] - s['flux_rec']) * _mgf + s['mg_ind'], 6), recoverable=False,
+                          basis='the salt left in the washed cake and the MgO from the remelt oxidation report to the leach; MgO '
+                                'needs a chlorination step that this scale does not justify')])]
     from .recovery import frac as _fr
     _v = lambda k: float(E[k]['rate']['value'] or 0)
     E['IA-SHELL-EXPORT']['composition'] = {'SiO2': 1.0}
@@ -659,13 +691,15 @@ def stamp(g, s):
        alcl3_kg_d=round(s['alcl3'], 4), cl2_kg_d=round(s['al_cl2'], 4), chemistry='2 AlCl3 -> 2 Al + 3 Cl2, 700 C '
        'NaCl-KCl-AlCl3 bath (GREENWOOD stoichiometry)', **pe['AL_POT'],
        basis='D-DOCK anhydrous AlCl3 import; Faraday at CE 0.85 (A-M-282); A-M-284 feedstock ruling')
-    st('MG_POT', source=src_f, mg_kg_d=round(s['mg_ti'], 4), mgcl2_return_kg_d=round(s['mgcl2_ret'], 4),
+    st('MG_POT', source=src_f, mg_kg_d=round(s['mg_ti'] + s['mg_ind'], 6), mg_alloy_kg_d=round(s['mg_ind'], 6),
+       flux_salt_recovered_kg_d=round(s['flux_rec'], 6), mgcl2_return_kg_d=round(s['mgcl2_ret'], 4),
        mgcl2_makeup_kg_d=round(s['mgcl2_mu'], 4), cl2_kg_d=round(s['cl2_ti'], 4), chemistry='MgCl2 -> Mg + Cl2, '
        '700 C (AQS-BAL-KROLL closure)', **pe['MG_POT'],
-       basis='Kroll Mg recycle at the 0.50 kg/d Ti line; CaCl2-MgCl2 brine make-up covers the drag-out (A-M-284)')
+       basis='Kroll Mg recycle at the Ti line plus the alloy make-up of the Al line; the dross salt cake is recovered first and '
+             'the CaCl2-MgCl2 brine covers the shortfall (A-M-284, A-M-430)')
     st('CA_POT', source=src_f, ca_kg_d=round(s['ca'], 6), cacl2_kg_d=round(s['cacl2'], 6), cl2_kg_d=round(s['ca_cl2'], 6),
        chemistry='CaCl2 -> Ca + Cl2, 700 C', **pe['CA_POT'],
-       basis='grease-thickener Ca line (AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2); brine import per A-M-284')
+       basis='Ca deoxidizer line of the melt; the grease soap lime comes from the acid-plant residue (A-M-429); brine import per A-M-284')
     st('TI_CELL', source=src_f, ti_kg_d=s['ti'], tio2_kg_d=round(s['tio2'], 4), c_kg_d=round(s['c_ti'], 4),
        cl2_kg_d=round(s['cl2_ti'], 4), mg_kg_d=round(s['mg_ti'], 4), mgcl2_gross_kg_d=round(s['mgcl2_g'], 4),
        co_kg_d=round(s['co_ti'], 4), chemistry='TiO2 + 2C + 2Cl2 -> TiCl4 + 2CO; TiCl4 + 2Mg -> Ti + 2MgCl2 (AQS-BAL-KROLL)',

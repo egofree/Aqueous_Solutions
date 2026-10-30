@@ -70,11 +70,11 @@ Table 4.1. Building-block families
 
 | Family | Category | Item | Standard class | Qty | Units | Design row | Plan |
 |---|---|---|---|---|---|---|---|
-| OF-01 | bearing | deep-groove ball bearing | ISO 15, normal class | 410 | 73 | AQS-PRO-002 sheet, 3. Bearing datasheets | Bearings are bought to their ISO class and checked for identity and count on receipt. |
+| OF-01 | bearing | deep-groove ball bearing | ISO 15, normal class | 412 | 73 | AQS-PRO-002 sheet, 3. Bearing datasheets | Bearings are bought to their ISO class and checked for identity and count on receipt. |
 | OF-02 | bearing | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 356 | 48 | AQS-PRO-002 sheet, 3. Bearing datasheets | Bearings are bought to their ISO class and checked for identity and count on receipt. |
-| OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 894 | 99 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 896 | 99 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-04 | electronics | PLC analog input point | IEC 61131-2 | 796 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
-| OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 202 | 72 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 203 | 72 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 145 | 38 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-07 | electronics | PLC I/O module, 16 channel | IEC 61131-2 | 106 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 33 | 15 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |

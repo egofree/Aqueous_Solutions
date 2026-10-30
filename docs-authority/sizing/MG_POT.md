@@ -17,7 +17,7 @@ This page records the size of unit MG_POT, of class `cell` in sector FOUNDRY, fr
 
 ## 2. Duty
 
-The unit takes 1.98907 kg/d by 2 streams and gives 1.98907 kg/d by 3 streams. Its continuous electrical load is 0.3375 kW, fed by stream SF-MG_POT.
+The unit takes 2.01101 kg/d by 3 streams and gives 2.01101 kg/d by 4 streams. Its continuous electrical load is 0.34 kW, fed by stream SF-MG_POT.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -27,12 +27,12 @@ Table 2.1. Design parameters
 | --- | --- |
 | service | molten MgCl2 electrolysis cell (Kroll Mg recycle), 700 C |
 | chemistry | MgCl2 -> Mg + Cl2 |
-| feed_kg_d | 1.9891 |
+| feed_kg_d | 1.9792 |
 | metal_kg_d | 0.5078 |
 | cl2_kg_d | 1.4813 |
-| I_A | 54.89 |
+| I_A | 55.5 |
 | cell_V | 4.2 |
-| dc_kW | 0.2306 |
+| dc_kW | 0.2331 |
 | hold_kW | 0.1069 |
 | connected_kW | 1 |
 | bath_T_C | 700 |
@@ -45,7 +45,7 @@ Table 2.1. Design parameters
 
 The envelope is 800 mm x 800 mm x 1600 mm, from `params.envelope` (state live). Its basis is: cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282).
 
-The hold-up check takes 1.98907 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 1.989 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 130 mm in diameter and 200 mm high. It fits within the envelope.
+The hold-up check takes 2.01101 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 2.011 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 130 mm in diameter and 200 mm high. It fits within the envelope.
 
 ## 4. Material
 

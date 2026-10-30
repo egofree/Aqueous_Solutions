@@ -40,12 +40,12 @@ Properties: NdFeB sintered N42, Br 1.29-1.32 T, Hcj >= 955 kA/m; ferrite anisotr
 
 | Family | Magnet | Count | Torque mN m | B gap T | Rotor D x L mm | Frame | Efficiency % | Magnet g/unit | Rare earth g/unit | Fleet magnet kg | Fleet RE kg |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | NdFeB | 119 | 6.4 | 0.8 | 7.0 x 7.0 | fits | 83.7 | 3.4 | 1.1 | 0.41 | 0.13 |
-| MF-01 | ferrite | 119 | 6.4 | 0.22 | 10.7 x 10.7 | fits | 72.1 | 7.7 | 0.0 | 0.92 | 0.0 |
+| MF-01 | NdFeB | 120 | 6.4 | 0.8 | 7.0 x 7.0 | fits | 83.7 | 3.4 | 1.1 | 0.41 | 0.13 |
+| MF-01 | ferrite | 120 | 6.4 | 0.22 | 10.7 x 10.7 | fits | 72.0 | 7.7 | 0.0 | 0.92 | 0.0 |
 | MF-02 | NdFeB | 56 | 155.2 | 0.8 | 20.2 x 20.2 | fits | 90.9 | 28.8 | 8.9 | 1.61 | 0.5 |
 | MF-02 | ferrite | 56 | 155.2 | 0.22 | 28.5 x 36.3 | fits | 85.6 | 70.2 | 0.0 | 3.93 | 0.0 |
 | MF-03 | NdFeB | 27 | 6.4 | 0.8 | 7.0 x 7.0 | fits | 83.7 | 3.4 | 1.1 | 0.09 | 0.03 |
-| MF-03 | ferrite | 27 | 6.4 | 0.22 | 10.7 x 10.7 | fits | 72.1 | 7.7 | 0.0 | 0.21 | 0.0 |
+| MF-03 | ferrite | 27 | 6.4 | 0.22 | 10.7 x 10.7 | fits | 72.0 | 7.7 | 0.0 | 0.21 | 0.0 |
 
 | Item | NdFeB | Bonded ferrite |
 | --- | --- | --- |

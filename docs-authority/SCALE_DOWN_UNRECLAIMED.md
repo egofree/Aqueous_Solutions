@@ -62,7 +62,7 @@ Table 3.1. DIGESTER off. Sector type: Process (Mass transform).
 
 | Stream | From and to | Other sector | Design rate | When the sector is off |
 |---|---|---|---|---|
-| FOUNDRY_SLAG_TO_LEACH | IND_MELT to LEACH_CSTR_1 | FOUNDRY | 0.356 kg/d | left without a sink: unreclaimed |
+| FOUNDRY_SLAG_TO_LEACH | IND_MELT to LEACH_CSTR_1 | FOUNDRY | 0.33 kg/d | left without a sink: unreclaimed |
 | HL-Q3-A-HX5 | Q3_A to LEACH_CSTR_1 | HEAT | 1.45 kW | left without a sink: unreclaimed |
 | HL-Q3-B-HX5 | Q3_B to LEACH_CSTR_1 | HEAT | 1.45 kW | left without a sink: unreclaimed |
 | IA-BAG-01 | BAGHOUSE to LEACH_CSTR_1 | GAS | 7.77 kg/d | left without a sink: unreclaimed |
@@ -422,7 +422,7 @@ Table 3.8. FOUNDRY off. Sector type: Process (Mass transform).
 | IA-C-TI | OIL_PYRO to TI_CELL | OIL | 0.295 kg/d | left without a sink: unreclaimed |
 | IA-SI-EG | SI_REFINE to METAL_STORE | GLASS | 0.226 kg/d | left without a sink: unreclaimed |
 | MFG_SCRAP_TO_IND | MFG_SHOP to IND_MELT | MFG | 26.2 kg/d | left without a sink: unreclaimed |
-| FOUNDRY_SLAG_TO_LEACH | IND_MELT to LEACH_CSTR_1 | DIGESTER | 0.356 kg/d | left without a source: consumer goes short |
+| FOUNDRY_SLAG_TO_LEACH | IND_MELT to LEACH_CSTR_1 | DIGESTER | 0.33 kg/d | left without a source: consumer goes short |
 | IA-CL2-SIREF | AL_POT to SI_REFINE | GLASS | 0.214 kg/d | left without a source: consumer goes short |
 | IA-SOLV-CO | TI_CELL to SOLV_PLANT | FAB | 0.0179 kg/d | left without a source: consumer goes short |
 | IND_HEAT_TO_HX | IND_MELT to MET_HX_Q4 | MFG | 1.06 kW | left without a source: consumer goes short |
@@ -433,12 +433,13 @@ Table 3.8. FOUNDRY off. Sector type: Process (Mass transform).
 | IA-BURNOUT-VENT | SHELL_BURNOUT to NORTH_DOCK | DOCK | 0.2 kg/d | stops with the sector |
 | IA-CA-CL2-SHIP | CA_POT to NORTH_DOCK | DOCK | 0.0974 kg/d | stops with the sector |
 | IA-CACL2-MU | NORTH_DOCK to CA_POT | DOCK | 0.152 kg/d | stops with the sector |
+| IA-CL2-MG-SHIP | MG_POT to NORTH_DOCK | DOCK | 0.0163 kg/d | stops with the sector |
 | IA-CL2-SHIP | AL_POT to NORTH_DOCK | DOCK | 39.2 kg/d | stops with the sector |
 | IA-CR-VENT | CR_CELL to NORTH_DOCK | DOCK | 0.217 kg/d | stops with the sector |
 | IA-CR2O3-MU | NORTH_DOCK to CR_CELL | DOCK | 0.365 kg/d | stops with the sector |
 | IA-KROLL-CO | TI_CELL to NORTH_DOCK | DOCK | 0.612 kg/d | stops with the sector |
 | IA-METAL-SHIP | METAL_STORE to NORTH_DOCK | DOCK | 10.8 kg/d | stops with the sector |
-| IA-MGCL2-MU | NORTH_DOCK to MG_POT | DOCK | 0.0398 kg/d | stops with the sector |
+| IA-MGCL2-MU | NORTH_DOCK to MG_POT | DOCK | 0.0299 kg/d | stops with the sector |
 | IA-MO-VENT | MO_CELL to NORTH_DOCK | DOCK | 0.0451 kg/d | stops with the sector |
 | IA-MOO3-MU | NORTH_DOCK to MO_CELL | DOCK | 0.0938 kg/d | stops with the sector |
 | IA-SHELL-EXPORT | SHELL_BREAK to NORTH_DOCK | DOCK | 1 kg/d | stops with the sector |
@@ -451,7 +452,7 @@ Table 3.8. FOUNDRY off. Sector type: Process (Mass transform).
 | SF-FLUX_PREP | SOL_ARK_60K to FLUX_PREP | ELEC | 0.1 kW | stops with the sector |
 | SF-IND_MELT | SOL_ARK_60K to IND_MELT | ELEC | 0.885 kW | stops with the sector |
 | SF-INV_CAST | SOL_ARK_60K to INV_CAST | ELEC | 0.15 kW | stops with the sector |
-| SF-MG_POT | SOL_ARK_60K to MG_POT | ELEC | 0.338 kW | stops with the sector |
+| SF-MG_POT | SOL_ARK_60K to MG_POT | ELEC | 0.34 kW | stops with the sector |
 | SF-MO_CELL | SOL_ARK_60K to MO_CELL | ELEC | 0.114 kW | stops with the sector |
 | SF-SHELL_BREAK | SOL_ARK_60K to SHELL_BREAK | ELEC | 0.4 kW | stops with the sector |
 | SF-SHELL_BUILD | SOL_ARK_60K to SHELL_BUILD | ELEC | 0.3 kW | stops with the sector |
@@ -687,7 +688,7 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | SF-MET_MELT | SOL_ARK_60K to MET_MELT | MFG | 0.237 kW | left without a source: consumer goes short |
 | SF-MET_SCRUB | SOL_ARK_60K to MET_SCRUB | MFG | 2.12 kW | left without a source: consumer goes short |
 | SF-MFG_SHOP | SOL_ARK_60K to MFG_SHOP | MFG | 2.55 kW | left without a source: consumer goes short |
-| SF-MG_POT | SOL_ARK_60K to MG_POT | FOUNDRY | 0.338 kW | left without a source: consumer goes short |
+| SF-MG_POT | SOL_ARK_60K to MG_POT | FOUNDRY | 0.34 kW | left without a source: consumer goes short |
 | SF-MO_CELL | SOL_ARK_60K to MO_CELL | FOUNDRY | 0.114 kW | left without a source: consumer goes short |
 | SF-NAOH_PLANT | SOL_ARK_60K to NAOH_PLANT | DIGESTER | 0.5 kW | left without a source: consumer goes short |
 | SF-NOX_SCRUB | SOL_ARK_60K to NOX_SCRUB | GAS | 0.0385 kW | left without a source: consumer goes short |
@@ -801,6 +802,7 @@ Table 3.19. DOCK off. Sector type: Export / dock.
 | IA-C19-SHIP | PROD_C19_C28 to NORTH_DOCK | OIL | 2.02 kg/d | left without a sink: unreclaimed |
 | IA-C5-SHIP | PROD_C5_C10 to NORTH_DOCK | OIL | 7.14 kg/d | left without a sink: unreclaimed |
 | IA-CA-CL2-SHIP | CA_POT to NORTH_DOCK | FOUNDRY | 0.0974 kg/d | left without a sink: unreclaimed |
+| IA-CL2-MG-SHIP | MG_POT to NORTH_DOCK | FOUNDRY | 0.0163 kg/d | left without a sink: unreclaimed |
 | IA-CL2-SHIP | AL_POT to NORTH_DOCK | FOUNDRY | 39.2 kg/d | left without a sink: unreclaimed |
 | IA-CR-VENT | CR_CELL to NORTH_DOCK | FOUNDRY | 0.217 kg/d | left without a sink: unreclaimed |
 | IA-FAB-PRODUCT | WAFER_FAB to NORTH_DOCK | FAB | 0.139 kg/d | left without a sink: unreclaimed |
@@ -827,7 +829,7 @@ Table 3.19. DOCK off. Sector type: Export / dock.
 | IA-CR2O3-MU | NORTH_DOCK to CR_CELL | FOUNDRY | 0.365 kg/d | left without a source: consumer goes short |
 | IA-H2O-MU | NORTH_DOCK to LEACH_CSTR_1 | DIGESTER | 56.5 kg/d | left without a source: consumer goes short |
 | IA-HALITE-MU | NORTH_DOCK to NAOH_PLANT | DIGESTER | 0.676 kg/d | left without a source: consumer goes short |
-| IA-MGCL2-MU | NORTH_DOCK to MG_POT | FOUNDRY | 0.0398 kg/d | left without a source: consumer goes short |
+| IA-MGCL2-MU | NORTH_DOCK to MG_POT | FOUNDRY | 0.0299 kg/d | left without a source: consumer goes short |
 | IA-MOO3-MU | NORTH_DOCK to MO_CELL | FOUNDRY | 0.0938 kg/d | left without a source: consumer goes short |
 | IA-QUARTZ-MU | NORTH_DOCK to SI_REDUCE | GLASS | 0.718 kg/d | left without a source: consumer goes short |
 | IA-SILICA-MU | NORTH_DOCK to SHELL_BUILD | FOUNDRY | 1 kg/d | left without a source: consumer goes short |
@@ -905,7 +907,7 @@ Table 4.2. Molten-salt cells: energy per kilogram relative to full scale
 | AL_POT | 0.107 | 5.55 | 0.019 | 1 | 1.01 | 1.02 | 1.06 | 1.17 |
 | CA_POT | 0.107 | 0.0152 | 0.876 | 1 | 1.29 | 1.88 | 3.63 | 8.88 |
 | CR_CELL | 0.107 | 0.0531 | 0.668 | 1 | 1.22 | 1.67 | 3 | 7.01 |
-| MG_POT | 0.107 | 0.231 | 0.317 | 1 | 1.11 | 1.32 | 1.95 | 3.85 |
+| MG_POT | 0.107 | 0.233 | 0.314 | 1 | 1.1 | 1.31 | 1.94 | 3.83 |
 | MO_CELL | 0.107 | 0.0072 | 0.937 | 1 | 1.31 | 1.94 | 3.81 | 9.43 |
 | TI_CELL | 0.5 | 0 | 1 | 1 | 1.33 | 2 | 4 | 10 |
 

@@ -7416,5 +7416,22 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags."
+ },
+ {
+  "id": "A-M-430",
+  "value": "MG_POT_TO_IND carries magnesium for alloying the cast aluminium line to the A356 class (al_mg_alloy_wt). The alloy magnesium rides the shop-scrap loop with the aluminium line, so MG_POT makes up only the share oxidised to the dross in each remelt (al_mg_melt_loss_frac). The MgCl2 salt flux is recovered from the dross salt cake by water leach and evaporation (flux_salt_recovery_frac) and returns to MG_POT on IA-FLUX-SALT-REC before any dock brine. The dock CaCl2-MgCl2 brine, a mining-waste stream, covers only the shortfall. The chlorine freed by the alloy magnesium leaves on IA-CL2-MG-SHIP with the pot chlorine class, because the Kroll chlorinator already takes its full draw.",
+  "units": "kg/d; A",
+  "where": "flow_graph/param/foundry_poly.py; flow_graph/param/drivers.json al_mg_alloy_wt, al_mg_melt_loss_frac, flux_salt_recovery_frac",
+  "basis": "Owner decision of 2026-10-30 (Mg alloying of the aluminium line, sourced recovery first, recorded in the recovery inventory) and the rules t59u and t61u. A356 composition, preferential Mg loss on remelting and salt-cake recycling from ASM_V15_AL.",
+  "sensitivity": "MG_POT_TO_IND scales with al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac; the dock brine falls by the recovered flux salt as flux_salt_recovery_frac rises.",
+  "replaced_by": "Mg assays of the aluminium melt across a remelt and a salt-cake leach trial at the first article",
+  "task": "QA audit 2026-10-30, X-RTE-MG_POT_TO_IND",
+  "files": [
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/refs.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "After regen MG_POT_TO_IND equals al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac, MG_POT and IND_MELT close, and python3 -m flow_graph.param.recovery lists the Mg record with no flags."
  }
 ]

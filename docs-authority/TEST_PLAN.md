@@ -17,12 +17,12 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 50 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 61 | Bench test report with method, data and result |
+| T3 | Bench and laboratory tests | 62 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 478 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 480 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 674 items: 295 drivers, 379 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 677 items: 297 drivers, 380 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -126,6 +126,7 @@ Total 674 items: 295 drivers, 379 register entries. Classification rule: first m
 | driver MEOH.synthesis-train.MEOH_FC.cell_V | 0.6 V per cell at the design point | Stack polarisation set at the first article | X-PAR |
 | driver MEOH.synthesis-train.MEOH_FC.j_A_cm2 | 0.3 A/cm2 current density at the design point | Stack polarisation set at the first article | X-PAR |
 | driver acid_conc_design_wt | 0.2 mass fraction HCl on IA-ACID-01 | Bench leach of class A feed at 20 wt% HCl, 90-108 C (CARLETON_HCL_2023 basis is 38 %); ICP-OES extraction vs time | X-PAR |
+| driver al_mg_melt_loss_frac | 0.2 fraction of the alloy Mg oxidised to the dross per remelt of the aluminium scrap (ASM_V15_AL, Mg loss of Al-Mg alloys in remelting) | Mg assay of the Al melt before and after a remelt at the first article | X-PAR |
 | driver base_conc_design_wt | 0.2 mass fraction NaOH on IA-BASE-01 and IA-BASE-PPT | Bench hydroxide precipitation of class A leach liquor with 20 wt% NaOH; glass digest at 20 wt% | X-PAR |
 | driver bmed_cell_area_m2 | 0.04 m2 active area per membrane (200 x 200 mm) | stack polarisation test on the first-article stack | X-PAR |
 | driver case_A_leach_extent | 1.0 fraction of listed oxides dissolved | Bench leach of class A feed in HCl at 85 C, ICP-OES of liquor for Al, Ca, Mg, Fe extraction | X-PAR |
@@ -307,6 +308,7 @@ Total 674 items: 295 drivers, 379 register entries. Classification rule: first m
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing | X-PAR |
 | driver fire_pump_head_margin_kPa | 150 kPa design margin over static + friction to the remote area | Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record) | X-PAR |
 | driver fire_tank_refill_h | 8 h to refill the reserve from the normal supply | City/well fill-rate confirmation at X-BAS-03 (site utilities) | X-PAR |
+| driver flux_salt_recovery_frac | 0.8 fraction of the MgCl2 salt flux recovered from the dross salt cake by water leach and evaporation (ASM_V15_AL, salt-cake recycling) | chloride balance of a salt-cake leach batch | X-PAR |
 | driver foundry_ca_add_frac | 0.0015 kg Ca deoxidizer/desulfurizer per kg melt charge | first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge | X-PAR |
 | driver foundry_inv_shell_kg_per_kg | 4.0 kg green shell per kg casting (6-dip class; envelope 3-6) | first shell campaign: built shell mass per kg castings across the 6-dip schedule | X-PAR |
 | driver foundry_inv_shell_reclaim_frac | 0.875 kg spent shell reclaimed to stucco/flour per kg spent shell | knock-out sieve yield: reclaimed stucco vs 0.5 kg/kg make-up balance (AQS-SIZE-FOUNDRY shell-waste line) | X-PAR |
@@ -690,6 +692,7 @@ Total 674 items: 295 drivers, 379 register entries. Classification rule: first m
 | A-M-426 | NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI  route choice; kW, kg/d | python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2. | QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u) |
 | A-M-428 | SOLV_PLANT supplies the bench ethanol and acetone, recovery  kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT-IA-SOLV-MU) |
 | A-M-429 | The shop grease is made on site from the wax cut, sized from kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, shop routes (X-RTE-GREASE_CA_TO_MFG, X-RTE-WAX_TO_GREASE_CA, X-RTE-PCA_TO_GREASE and the lithium routes) |
+| A-M-430 | MG_POT_TO_IND carries magnesium for alloying the cast alumin kg/d; A | After regen MG_POT_TO_IND equals al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac, MG_POT and IND_MELT close, and python3 -m flow_graph.param.recovery lists the Mg record with no flags. | QA audit 2026-10-30, X-RTE-MG_POT_TO_IND |
 
 ## 7. T6 Commissioning measurements
 

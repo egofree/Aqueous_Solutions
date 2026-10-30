@@ -1,5 +1,5 @@
 family,motor_type,size,voltage,count,units,installed_shaft_kW
-MF-01,BLDC,42 mm (NEMA 17 flange),24 V DC,119,66,0.24
+MF-01,BLDC,42 mm (NEMA 17 flange),24 V DC,120,66,0.24
 MF-02,BLDC,57 mm (NEMA 23 flange),24 V DC,56,6,2.73
 MF-03,BLDC actuator,ISO 5211 F03 mount,24 V DC,27,2,0.15
 MF-06,induction IE3,IEC 71 / 0.37 kW,480 V 3-ph,104,5,26.06

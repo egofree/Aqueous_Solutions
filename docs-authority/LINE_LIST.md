@@ -11,7 +11,7 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-605 edges: 341 piped, 144 solids transfers, 120 electrical. Piped edges without a length (unit position missing): 81.
+607 edges: 343 piped, 144 solids transfers, 120 electrical. Piped edges without a length (unit position missing): 83.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -622,3 +622,5 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-PCA-H2O | GW_INTAKE | P_CA | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | GW_INTAKE → P_CA, position missing for GW_INTAKE, P_CA | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-PCA-REJECT | P_CA | NORTH_DOCK | solids | — | — |  | P_CA → NORTH_DOCK, position missing for P_CA | solids: conveyor, bin or hand transfer; not piped |
 | SF-GREASE_CA | SOL_ARK_60K | GREASE_CA | cable | — | — |  | SOL_ARK_60K → GREASE_CA, position missing for GREASE_CA | electrical: cable schedule X-ELS-06 |
+| IA-FLUX-SALT-REC | IND_MELT | MG_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) |  | IND_MELT → MG_POT, position missing for IND_MELT, MG_POT | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-CL2-MG-SHIP | MG_POT | NORTH_DOCK | DN15 | P3 | process vent gas |  | MG_POT → NORTH_DOCK, position missing for MG_POT | velocity 10 m/s, ρ 1.2; min DN15 |

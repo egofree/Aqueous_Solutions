@@ -2468,13 +2468,14 @@
             "IA-NAOH-CL2-SHIP": 3.894,
             "IA-NAOH-RESIDUE": 0.034,
             "IA-SOLV-VENT": 0.019,
-            "IA-PCA-REJECT": 0.0
+            "IA-PCA-REJECT": 0.0,
+            "IA-CL2-MG-SHIP": 0.016
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 56.495,
+            "IA-H2O-MU": 56.521,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
-            "IA-MGCL2-MU": 0.04,
+            "IA-MGCL2-MU": 0.03,
             "IA-CACL2-MU": 0.152,
             "IA-TIO2-MU": 0.834,
             "IA-MOO3-MU": 0.094,
@@ -2800,7 +2801,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 351.8479,
+        "value": 351.8504,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -4983,7 +4984,7 @@
           "source": "AQS-DUTY-072",
           "charge_kg_d": 37.0139,
           "stock_out_kg_d": 25.9,
-          "slag_kg_d": 0.3565,
+          "slag_kg_d": 0.3302,
           "crucible_kg": 10.0,
           "heats_d": 4,
           "melt_kWh_d": 21.249,
@@ -5971,17 +5972,19 @@
         "sizing": {
           "status": "study",
           "source": "AQS-DUTY-072",
-          "mg_kg_d": 0.5078,
+          "mg_kg_d": 0.513361,
+          "mg_alloy_kg_d": 0.0056,
+          "flux_salt_recovered_kg_d": 0.031825,
           "mgcl2_return_kg_d": 1.9493,
-          "mgcl2_makeup_kg_d": 0.0398,
+          "mgcl2_makeup_kg_d": 0.0299,
           "cl2_kg_d": 1.4813,
           "chemistry": "MgCl2 -> Mg + Cl2, 700 C (AQS-BAL-KROLL closure)",
-          "I_A": 54.89,
+          "I_A": 55.5,
           "V": 4.2,
-          "dc_kW": 0.2306,
+          "dc_kW": 0.2331,
           "hold_kW": 0.1069,
-          "kW": 0.3375,
-          "basis": "Kroll Mg recycle at the 0.50 kg/d Ti line; CaCl2-MgCl2 brine make-up covers the drag-out (A-M-284)",
+          "kW": 0.34,
+          "basis": "Kroll Mg recycle at the Ti line plus the alloy make-up of the Al line; the dross salt cake is recovered first and the CaCl2-MgCl2 brine covers the shortfall (A-M-284, A-M-430)",
           "size_mm": [
             800,
             800,
@@ -5991,12 +5994,12 @@
         "design": {
           "service": "molten MgCl2 electrolysis cell (Kroll Mg recycle), 700 C",
           "chemistry": "MgCl2 -> Mg + Cl2",
-          "feed_kg_d": 1.9891,
+          "feed_kg_d": 1.9792,
           "metal_kg_d": 0.5078,
           "cl2_kg_d": 1.4813,
-          "I_A": 54.89,
+          "I_A": 55.5,
           "cell_V": 4.2,
-          "dc_kW": 0.2306,
+          "dc_kW": 0.2331,
           "hold_kW": 0.1069,
           "connected_kW": 1,
           "bath_T_C": 700.0,
@@ -6021,13 +6024,35 @@
           "alt": "monolithic graphite pot if the CaCl2-brine impurity load runs above the design, at the cost of a brittle liner",
           "note": "MgCl2 is hygroscopic: the pot-feed import leg stays PVDF (P3) and the headspace stays dry; no measured rate (unit task 12 first article).",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "Mg",
+            "use": "Kroll drag-out and aluminium alloy make-up",
+            "need_kg_d": 0.015755,
+            "recovered_kg_d": 0.008124,
+            "recovered_from": [
+              "IA-FLUX-SALT-REC",
+              "MFG_SCRAP_TO_IND"
+            ],
+            "ore_streams": [],
+            "note": "The alloy Mg of the Al line, 0.0280 kg/d, returns with the shop scrap and is not made new. The shortfall comes from the CaCl2-MgCl2 brine at the dock, a mining-waste stream (A-M-430).",
+            "unrecovered": [
+              {
+                "stream": "FOUNDRY_SLAG_TO_LEACH",
+                "kg_d": 0.007631,
+                "recoverable": false,
+                "basis": "the salt left in the washed cake and the MgO from the remelt oxidation report to the leach; MgO needs a chlorination step that this scale does not justify"
+              }
+            ]
+          }
+        ]
       },
       "continuous_kw": {
-        "value": 0.3375,
+        "value": 0.34,
         "unit": "kW",
         "status": "study",
-        "note": "AQS-DUTY-072 Kroll Mg recycle: 54.9 A x 4.2 V = 0.231 kW + hold 0.11 kW (A-M-282)."
+        "note": "AQS-DUTY-072 Kroll Mg recycle: 55.5 A x 4.2 V = 0.233 kW + hold 0.11 kW (A-M-282)."
       }
     },
     {
@@ -6057,7 +6082,7 @@
           "dc_kW": 0.0152,
           "hold_kW": 0.1069,
           "kW": 0.1221,
-          "basis": "grease-thickener Ca line (AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2); brine import per A-M-284",
+          "basis": "Ca deoxidizer line of the melt; the grease soap lime comes from the acid-plant residue (A-M-429); brine import per A-M-284",
           "size_mm": [
             800,
             800,
@@ -12626,10 +12651,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.356466,
+        "value": 0.330241,
         "unit": "kg/d",
         "status": "study",
-        "note": "Melt slag+dross 1% of charge plus the 0.0398 kg/d salt-flux pass-through by mass conservation on the melt (INDUCT_SOCX 1-2 % band, A-M-262); returns to the leach. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Melt slag+dross 1% of charge plus the 0.0080 kg/d salt flux left in the cake after the salt recovery and the 0.0056 kg/d alloy Mg oxidised in the remelt, by mass conservation on the melt (INDUCT_SOCX 1-2 % band, A-M-262, A-M-430); returns to the leach. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER"
@@ -12692,10 +12717,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.0,
+        "value": 0.0056,
         "unit": "kg/d",
         "status": "study",
-        "note": "MG_POT serves only the Kroll recycle at steady state (all Mg to the retort on IA-MG-TI); no Mg stock line at the table. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Mg alloying of the aluminium line (A356 class, al_mg_alloy_wt 0.35%): the 0.0280 kg/d alloy Mg rides the shop-scrap loop with the Al line, and MG_POT makes up only the 20% remelt oxidation loss (ASM_V15_AL; A-M-430). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY"
@@ -14493,7 +14518,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 351.8479,
+        "value": 351.8504,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -19199,7 +19224,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 56.494899,
+        "value": 56.521124,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -22603,10 +22628,10 @@
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.039782,
+        "value": 0.029894,
         "unit": "kg/d",
         "status": "study",
-        "note": "D-DOCK feedstock import (A-M-284): restores the drag-out so MG_POT delivers the retort Mg exactly; 0.0398 kg/d MgCl2-equivalent. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "D-DOCK feedstock import (A-M-284), the shortfall only (A-M-430): the drag-out and the alloy make-up less the 0.0318 kg/d MgCl2 recovered from the dross salt cake on IA-FLUX-SALT-REC; 0.0299 kg/d MgCl2-equivalent. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "FOUNDRY",
@@ -22633,7 +22658,7 @@
         "value": 0.507761,
         "unit": "kg/d",
         "status": "study",
-        "note": "1.016 kg Mg per kg Ti (AQS-BAL-KROLL); MG_POT electrolysis of the returned MgCl2 at 55 A (A-M-282). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "1.016 kg Mg per kg Ti (AQS-BAL-KROLL); MG_POT electrolysis of the returned MgCl2 at 56 A (A-M-282). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -23145,7 +23170,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.3375,
+        "value": 0.34,
         "unit": "kW",
         "status": "study",
         "note": "Equals MG_POT continuous_kw (AQS-DUTY-072)."
@@ -25639,6 +25664,61 @@
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-FLUX-SALT-REC",
+      "from_unit_id": "IND_MELT",
+      "to_unit_id": "MG_POT",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "MgCl2 brine recovered from the dross salt cake",
+      "header": "dedicated",
+      "forbidden": "process aisle",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.031825,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Water leach of the dross salt cake and evaporation of the brine returns 80% of the 0.0398 kg/d MgCl2 salt flux to MG_POT, before any dock brine (salt-cake recycling practice, ASM_V15_AL; A-M-430). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-CL2-MG-SHIP",
+      "from_unit_id": "MG_POT",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "G",
+      "layers": [
+        "mass",
+        "energy"
+      ],
+      "presence": "present",
+      "carries": "chlorine byproduct export (water-treatment class product)",
+      "header": "dedicated",
+      "forbidden": "process aisle",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.016337,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "Chlorine freed by the 0.0056 kg/d alloy Mg, 2.917 kg/kg Mg; the Kroll chlorinator already takes its full draw on IA-CL2-MG-TI, so this leaves with the pot chlorine class at the dock (A-M-430). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DOCK",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],

@@ -996,12 +996,12 @@ ZNBR2,Process nozzle DN15,3,No wetted alloy.,Unstated,-,material not stated on t
 ZNBR2,Process nozzle DN32,1,No wetted alloy.,Unstated,-,material not stated on the unit BOM line
 ZNBR2_BR2_REGEN,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",Missing,-,no fluorine source on site; end of life Q-011
 ZNBR2_BR2_REGEN,Process nozzle DN15,2,"PVC-U shell, sump, liquor piping, and Pall-ring packing; FKM gaskets.",Missing,-,no fluorine source on site; end of life Q-011
-MF-01 x 119,stator laminations M270-35A 0.35 mm,2142,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 119,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),119,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 119,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 119,"housing extruded 6063, NEMA ICS 16 42 mm flange",119,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 119,bearing 6000-2Z,238,,Unstated,-,material not stated on the unit BOM line
-MF-01 x 119,Hall sensor PCB,119,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 120,stator laminations M270-35A 0.35 mm,2160,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 120,NdFeB magnets 2.8 g (basis; ferrite variant in AQS-INV-005),120,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 120,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 120,"housing extruded 6063, NEMA ICS 16 42 mm flange",120,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 120,bearing 6000-2Z,240,,Unstated,-,material not stated on the unit BOM line
+MF-01 x 120,Hall sensor PCB,120,,Unstated,-,material not stated on the unit BOM line
 MF-02 x 56,stator laminations M270-35A 0.35 mm,3248,,Unstated,-,material not stated on the unit BOM line
 MF-02 x 56,NdFeB magnets 28.7 g (basis; ferrite variant in AQS-INV-005),56,,Unstated,-,material not stated on the unit BOM line
 MF-02 x 56,magnet wire IEC 60317-13 class 200,-,,Unstated,-,material not stated on the unit BOM line
@@ -1233,8 +1233,8 @@ WF-03,"power 6 AWG THHN/THWN-2 Cu in EMT, 600 V",20520 m,Cu,Closed,Cu EW -> WIRE
 WF-04,"equipment ground 10 AWG bare Cu, -",20160 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-05,"power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",17871 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-06,"bare grounding 4/0 AWG bare soft-drawn Cu, -",5262 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-07,"control 18 AWG shielded pair, 300 V",4860 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",4800 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-07,"control 18 AWG shielded pair, 300 V",4880 m,Cu,Closed,Cu EW -> WIRE_DRAW,
+WF-08,"DC power pair 16 AWG TC-ER 2-cond, 600 V",4820 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-09,"equipment ground 14 AWG green XHHW-2 Cu, 600 V",5951 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-10,"power 3 AWG XHHW-2 Cu, 600 V",3150 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-11,"power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",3091 m,Cu,Closed,Cu EW -> WIRE_DRAW,
@@ -1251,11 +1251,11 @@ WF-25,"power 10 AWG XHHW-2 Cu, 600 V, tray cable TC-ER, 600 V",9 m,Cu,Closed,Cu 
 WF-28,"power 8 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",129 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-30,"power 250 kcmil XHHW-2 Cu, tray cable TC-ER, 600 V",40 m,Cu,Closed,Cu EW -> WIRE_DRAW,
 WF-31,"power 4 AWG XHHW-2 Cu, tray cable TC-ER, 600 V",173 m,Cu,Closed,Cu EW -> WIRE_DRAW,
-OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",410,,Unstated,-,material not stated on the unit BOM line
+OF-01,"bearing: deep-groove ball bearing (ISO 15, normal class)",412,,Unstated,-,material not stated on the unit BOM line
 OF-02,"bearing: deep-groove ball bearing (ISO 15 / ISO 492 normal class, C3)",356,,Unstated,-,material not stated on the unit BOM line
-OF-03,electronics: PLC digital I/O point (IEC 61131-2),894,,Unstated,-,material not stated on the unit BOM line
+OF-03,electronics: PLC digital I/O point (IEC 61131-2),896,,Unstated,-,material not stated on the unit BOM line
 OF-04,electronics: PLC analog input point (IEC 61131-2),796,,Unstated,-,material not stated on the unit BOM line
-OF-05,electronics: BLDC driver (IEC 61800-5-1),202,,Unstated,-,material not stated on the unit BOM line
+OF-05,electronics: BLDC driver (IEC 61800-5-1),203,,Unstated,-,material not stated on the unit BOM line
 OF-06,electronics: motor starter (contactor + overload) (IEC 60947-4-1),145,,Unstated,-,material not stated on the unit BOM line
 OF-07,"electronics: PLC I/O module, 16 channel (IEC 61131-2)",106,,Unstated,-,material not stated on the unit BOM line
 OF-08,electronics: variable-frequency drive (IEC 61800-5-1),33,,Unstated,-,material not stated on the unit BOM line

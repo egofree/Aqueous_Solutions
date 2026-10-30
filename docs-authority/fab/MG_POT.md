@@ -7,7 +7,7 @@ service line: service molten MgCl2 electrolysis cell (Kroll Mg recycle), 700 C; 
 Internals: issued mfg model BOM (3 internals part row): "step 1; duty section 3 CS outer shell below the liner, 700 C, dry outside the lining; envelope per" [models/mfg/MG_POT/bom.csv]
 Material: Graphite anodes, steel cathode plates, mullite-class alumina-silica refractory cell lining in a mild-steel shell; skim launder kept graphite-wetted. Basis: molten MgCl2 at 700 C: the industrial MgCl2-electrolysis pot class is graphite anodes + steel cathodes (ULLMANN_MAGNESIUM); alloy containment loses Cr to the melt (DING2021_ENG, KRUIZENGA2012); backup lining per SCHACHT2004. (continues on the duty sheet)
 
-Nozzles: 8 process connections per docs-authority/nozzles/MG_POT.csv
+Nozzles: 10 process connections per docs-authority/nozzles/MG_POT.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

@@ -8,7 +8,7 @@
      "from": "IND_MELT",
      "to": "LEACH_CSTR_1",
      "other_sector": "FOUNDRY",
-     "rate": 0.356466,
+     "rate": 0.330241,
      "unit": "kg/d",
      "carries": "slag return"
     },
@@ -885,7 +885,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 56.494899,
+     "rate": 56.521124,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -3599,7 +3599,7 @@
      "from": "IND_MELT",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 0.356466,
+     "rate": 0.330241,
      "unit": "kg/d",
      "carries": "slag return"
     },
@@ -3696,6 +3696,15 @@
      "carries": "CaCl2 brine concentrate (mining-waste class)"
     },
     {
+     "stream_id": "IA-CL2-MG-SHIP",
+     "from": "MG_POT",
+     "to": "NORTH_DOCK",
+     "other_sector": "DOCK",
+     "rate": 0.016337,
+     "unit": "kg/d",
+     "carries": "chlorine byproduct export (water-treatment class product)"
+    },
+    {
      "stream_id": "IA-CL2-SHIP",
      "from": "AL_POT",
      "to": "NORTH_DOCK",
@@ -3745,7 +3754,7 @@
      "from": "NORTH_DOCK",
      "to": "MG_POT",
      "other_sector": "DOCK",
-     "rate": 0.039782,
+     "rate": 0.029894,
      "unit": "kg/d",
      "carries": "CaCl2-MgCl2 brine concentrate (mining-waste class)"
     },
@@ -3862,7 +3871,7 @@
      "from": "SOL_ARK_60K",
      "to": "MG_POT",
      "other_sector": "ELEC",
-     "rate": 0.3375,
+     "rate": 0.34,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -6340,7 +6349,7 @@
      "from": "SOL_ARK_60K",
      "to": "MG_POT",
      "other_sector": "FOUNDRY",
-     "rate": 0.3375,
+     "rate": 0.34,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -7352,6 +7361,15 @@
      "carries": "chlorine byproduct export (water-treatment class)"
     },
     {
+     "stream_id": "IA-CL2-MG-SHIP",
+     "from": "MG_POT",
+     "to": "NORTH_DOCK",
+     "other_sector": "FOUNDRY",
+     "rate": 0.016337,
+     "unit": "kg/d",
+     "carries": "chlorine byproduct export (water-treatment class product)"
+    },
+    {
      "stream_id": "IA-CL2-SHIP",
      "from": "AL_POT",
      "to": "NORTH_DOCK",
@@ -7574,7 +7592,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 56.494899,
+     "rate": 56.521124,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -7592,7 +7610,7 @@
      "from": "NORTH_DOCK",
      "to": "MG_POT",
      "other_sector": "FOUNDRY",
-     "rate": 0.039782,
+     "rate": 0.029894,
      "unit": "kg/d",
      "carries": "CaCl2-MgCl2 brine concentrate (mining-waste class)"
     },
@@ -7939,14 +7957,14 @@
     {
      "unit_id": "MG_POT",
      "hold_kW": 0.1069,
-     "dc_kW": 0.2306,
-     "hold_share": 0.317,
+     "dc_kW": 0.2331,
+     "hold_share": 0.314,
      "energy_factor": {
       "1.0": 1.0,
-      "0.75": 1.11,
-      "0.5": 1.32,
-      "0.25": 1.95,
-      "0.1": 3.85
+      "0.75": 1.1,
+      "0.5": 1.31,
+      "0.25": 1.94,
+      "0.1": 3.83
      }
     },
     {

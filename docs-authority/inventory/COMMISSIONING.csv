@@ -71,7 +71,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 8,DIGESTER,FLOAT_SINK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-115,,Fe HCl other_metals
 8,DIGESTER,F_RECOVER,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",4,SIF-045 SIF-117,0.02,Fe HCl other_metals
 8,DIGESTER,HX8,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",2,SIF-022,,
-8,DIGESTER,LEACH_CSTR_1,fill or function test per AQS-QA-001 R8,4,SIF-127,5115.0,Cl2 Fe HCl O2 Si SiCl4 SiO2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned
+8,DIGESTER,LEACH_CSTR_1,fill or function test per AQS-QA-001 R8,4,SIF-127,5115.02,Cl2 Fe HCl O2 Si SiCl4 SiO2 metal_plateable metal_reactive organic other_metals silicate_oxide unassigned
 8,DIGESTER,LI_RECOVER,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",4,SIF-128,,
 8,DIGESTER,NAOH_PLANT,pressure test as R2,6,SIF-084 SIF-135,17.09,H2O NaCl
 8,DIGESTER,POLISH_BANK,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",6,SIF-141,3520.31,
@@ -144,7 +144,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 17,FOUNDRY,IND_MELT,function test,3,SIF-054 SIF-055 SIF-056,,
 17,FOUNDRY,INV_CAST,function test,4,SIF-126,2.0,
 17,FOUNDRY,METAL_STORE,function test,2,SIF-079,,Si
-17,FOUNDRY,MG_POT,function test,6,SIF-134,1.99,
+17,FOUNDRY,MG_POT,function test,6,SIF-134,2.01,
 17,FOUNDRY,MO_CELL,function test,4,SIF-053,,
 17,FOUNDRY,RES_HEAT,function test,2,-,,
 17,FOUNDRY,RF_HEAT,function test,1,-,,

@@ -33,8 +33,8 @@ Table 2.1. Wire families
 | WF-04 | 10 AWG | 5.261 | 7 | 0.978 | 19 | bare, no covering | 2.93 | single conductor |  | 20,160 | 961.8 | 0.0 | 3.343 | ASTM_B3_2013 / ASTM_B8_2023 |
 | WF-05 | 14 AWG | 2.081 | 7 | 0.615 | 23 | XHHW-2 | 3.37 | TC-ER 3 + green ground | 10.4 | 17,871 | 337.2 | 105.6 | 8.451 | UL44_2018 |
 | WF-06 | 4/0 AWG | 107.219 | 19 | 2.680 | 10 | bare, no covering | 13.40 | single conductor |  | 5,262 | 5,115.9 | 0.0 | 0.164 | ASTM_B3_2013 / ASTM_B8_2023 |
-| WF-07 | 18 AWG | 0.823 | 7 | 0.387 | 28 | PLTC shielded pair | 1.92 | twisted pair, Al/PET foil and drain, PVC jacket | 6.1 | 4,860 | 36.3 | 12.5 | 21.367 | UL1581_2019 |
-| WF-08 | 16 AWG | 1.309 | 7 | 0.488 | 26 | XHHW-2 | 2.98 | TC-ER 2-conductor | 8.2 | 4,800 | 57.0 | 24.2 | 13.438 | UL44_2018 |
+| WF-07 | 18 AWG | 0.823 | 7 | 0.387 | 28 | PLTC shielded pair | 1.92 | twisted pair, Al/PET foil and drain, PVC jacket | 6.1 | 4,880 | 36.4 | 12.6 | 21.367 | UL1581_2019 |
+| WF-08 | 16 AWG | 1.309 | 7 | 0.488 | 26 | XHHW-2 | 2.98 | TC-ER 2-conductor | 8.2 | 4,820 | 57.2 | 24.3 | 13.438 | UL44_2018 |
 | WF-09 | 14 AWG | 2.081 | 7 | 0.615 | 23 | XHHW-2 | 3.37 | single conductor |  | 5,951 | 112.3 | 35.2 | 8.451 | UL44_2018 |
 | WF-10 | 3 AWG | 26.670 | 7 | 2.203 | 12 | XHHW-2 | 8.89 | single conductor |  | 3,150 | 761.8 | 83.0 | 0.659 | UL44_2018 |
 | WF-11 | 6 AWG | 13.302 | 7 | 1.555 | 15 | XHHW-2 | 6.95 | TC-ER 3 + green ground | 19.8 | 3,091 | 372.8 | 61.1 | 1.322 | UL44_2018 |
@@ -109,15 +109,15 @@ The strand wire is drawn in 10 passes from 8 mm rod. The family is made to ASTM_
 
 ### WF-07: control 18 AWG, shielded pair
 
-The family serves 243 circuits with 4,860 m of conductor at voltage class 300 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-07.svg`.
-The conductor is 0.823 mm2 of soft copper, 7 wires of 0.387 mm, with a stranded diameter of 1.16 mm and a resistance at 20 °C of 21.367 ohm/km including the stranding factor; it uses 36.3 kg of copper. The covering layers are: PVC insulation 0.38 mm. The core diameter is 1.92 mm. It is made up as twisted pair, Al/PET foil and drain, PVC jacket, with a jacket of 1.14 mm from the UL 1277 table [UL1277_2019] and a cable outside diameter of 6.1 mm.
-The strand wire is drawn in 28 passes from 8 mm rod. The family is made to UL1581_2019 and uses 12.5 kg of compound.
+The family serves 244 circuits with 4,880 m of conductor at voltage class 300 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-07.svg`.
+The conductor is 0.823 mm2 of soft copper, 7 wires of 0.387 mm, with a stranded diameter of 1.16 mm and a resistance at 20 °C of 21.367 ohm/km including the stranding factor; it uses 36.4 kg of copper. The covering layers are: PVC insulation 0.38 mm. The core diameter is 1.92 mm. It is made up as twisted pair, Al/PET foil and drain, PVC jacket, with a jacket of 1.14 mm from the UL 1277 table [UL1277_2019] and a cable outside diameter of 6.1 mm.
+The strand wire is drawn in 28 passes from 8 mm rod. The family is made to UL1581_2019 and uses 12.6 kg of compound.
 
 ### WF-08: DC power pair 16 AWG, TC-ER 2-cond
 
-The family serves 240 circuits with 4,800 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-08.svg`.
-The conductor is 1.309 mm2 of soft copper, 7 wires of 0.488 mm, with a stranded diameter of 1.46 mm and a resistance at 20 °C of 13.438 ohm/km including the stranding factor; it uses 57.0 kg of copper. The covering layers are: XLPE insulation (XHHW-2) 0.76 mm. The core diameter is 2.98 mm. It is made up as TC-ER 2-conductor, with a jacket of 1.14 mm from the UL 1277 table [UL1277_2019] and a cable outside diameter of 8.2 mm.
-The strand wire is drawn in 26 passes from 8 mm rod. The family is made to UL44_2018 and uses 24.2 kg of compound.
+The family serves 241 circuits with 4,820 m of conductor at voltage class 600 V (AQS-INV-002). Its drawing is `docs-authority/drawings/wire/WF-08.svg`.
+The conductor is 1.309 mm2 of soft copper, 7 wires of 0.488 mm, with a stranded diameter of 1.46 mm and a resistance at 20 °C of 13.438 ohm/km including the stranding factor; it uses 57.2 kg of copper. The covering layers are: XLPE insulation (XHHW-2) 0.76 mm. The core diameter is 2.98 mm. It is made up as TC-ER 2-conductor, with a jacket of 1.14 mm from the UL 1277 table [UL1277_2019] and a cable outside diameter of 8.2 mm.
+The strand wire is drawn in 26 passes from 8 mm rod. The family is made to UL44_2018 and uses 24.3 kg of compound.
 
 ### WF-09: equipment ground 14 AWG, green XHHW-2 Cu
 

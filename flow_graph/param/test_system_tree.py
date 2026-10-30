@@ -214,7 +214,8 @@ def test_aggregate(tree: SystemTree, graph: dict) -> None:
     # PV 353.877 -> 352.926 (2026-10-29): the acid cake kiln runs in campaigns (Q-034, A-M-425).
     # PV 352.926 -> 351.8354 (2026-10-29): the sodium hydroxide top-up runs on the chlor-alkali cells, with no kilns (Q-035, A-M-426).
     # PV 351.8354 -> 351.8478 (2026-10-29): SOLV_PLANT recovers and makes the bench solvent on site (A-M-428).
-    assert gen["kw_sum"] == pytest.approx(351.8478 + 4.0 + 0.0082)   # PV 351.8478 (on-site silicon A-M-419, sulfuric acid A-M-421, sodium hydroxide A-M-422, kiln campaigns A-M-425, chlor-alkali top-up A-M-426, solvent plant A-M-428)
+    # PV 351.8478 -> 351.8504 (2026-10-30): the grease kettle (A-M-429) and the MG_POT current for the alloy magnesium of the aluminium line (A-M-430).
+    assert gen["kw_sum"] == pytest.approx(351.8504 + 4.0 + 0.0082)   # PV 351.8504 (on-site silicon A-M-419, sulfuric acid A-M-421, sodium hydroxide A-M-422, kiln campaigns A-M-425, chlor-alkali top-up A-M-426, solvent plant A-M-428, grease A-M-429, alloy Mg A-M-430)
     assert gen["presence"] == "present"
     # worst presence: retired (S13_CLASS_TREAT) < placeholder (GEO_ORC) < present
     assert tree.aggregate(

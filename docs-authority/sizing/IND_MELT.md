@@ -17,7 +17,7 @@ This page records the size of unit IND_MELT, of class `furnace` in sector FOUNDR
 
 ## 2. Duty
 
-The unit takes 37.069 kg/d by 9 streams and gives 37.069 kg/d by 5 streams. Its continuous electrical load is 0.8854 kW, fed by stream SF-IND_MELT.
+The unit takes 37.0746 kg/d by 9 streams and gives 37.0746 kg/d by 6 streams. Its continuous electrical load is 0.8854 kW, fed by stream SF-IND_MELT.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -39,7 +39,7 @@ Table 2.1. Design parameters
 
 The envelope is 1000 mm x 1000 mm x 1500 mm, from `params.envelope` (state live). Its basis is: A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load.
 
-The hold-up check takes 37.069 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 37.07 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 350 mm in diameter and 520 mm high. It fits within the envelope.
+The hold-up check takes 37.0746 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 37.07 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 350 mm in diameter and 520 mm high. It fits within the envelope.
 
 ## 4. Material
 

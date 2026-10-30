@@ -17,7 +17,7 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 196 units, 143 have an issued material for each wetted stream, 53 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 341 wetted stream ends, and each resolves to an issued service family.
+Of the 196 units, 143 have an issued material for each wetted stream, 53 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 343 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
@@ -27,7 +27,7 @@ The following service families of AQS-STD-002 are used, with the number of strea
 - Acid or brine, at or below 60 C: 53 stream ends.
 - Hot leach liquor: 46 stream ends.
 - Dry gas, H2/O2/N2/CO2: 43 stream ends.
-- Process vent gas: 38 stream ends.
+- Process vent gas: 39 stream ends.
 - Hydrocarbon product, fuel or wax cut: 19 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
 - Aqueous process liquor (AQS-ASSAY-001 envelope): 17 stream ends.
@@ -41,7 +41,7 @@ The following service families of AQS-STD-002 are used, with the number of strea
 - Alkaline (NaOH/KOH base liquor): 7 stream ends.
 - Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours): 7 stream ends.
 - Alkaline silica slurry: 3 stream ends.
-- CaCl₂/MgCl₂ brine concentrates to molten-salt pots (ambient import legs, NORTH_DOCK to MG_POT and CA_POT): 2 stream ends.
+- CaCl₂/MgCl₂ brine concentrates to molten-salt pots (ambient import legs, NORTH_DOCK to MG_POT and CA_POT): 3 stream ends.
 - Propylene-glycol ground loop: 1 stream ends.
 - Flue quench water: 1 stream ends.
 - Molten MgCl₂ salt return (TI_CELL Kroll retort to MG_POT, ~700 °C): 1 stream ends.
@@ -814,6 +814,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IND_TO_CONT | IND_MELT | CONT_CAST | — | 12.2 molten metal launder/pour (s57, ind_melt and vac_ind melt pours) | Not piped: launder/pour hot faces (M7) |
 | IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | — | 12.2 molten metal launder/pour (s57, ind_melt and vac_ind melt pours) | Not piped: launder/pour hot faces (M7) |
 | IND_TO_INV | IND_MELT | INV_CAST | — | 12.2 molten metal launder/pour (s57, ind_melt and vac_ind melt pours) | Not piped: launder/pour hot faces (M7) |
+| IA-FLUX-SALT-REC | IND_MELT | MG_POT | — | 12.2 cacl2/mgcl2 brine concentrates to molten-salt pots (ambient import legs, north_dock to mg_pot and ca_pot) | PVDF wetted handling at ambient, per the AQS-STD-006 pot-cell and brine selections (AQS-STD-002 section 12.1 P3 family practice) |
 
 ### INV_CAST
 
@@ -1016,6 +1017,8 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-MGCL2-KROLL | TI_CELL | MG_POT | — | 12.2 molten mgcl2 salt return (ti_cell kroll retort to mg_pot, ~700 °c) | Graphite/Ni-200 wetted launder, per the AQS-STD-006 pot-cell selections (molten-chloride physics: DING2018_CL_REVIEW, KRUIZENGA2012) |
 | IA-MGCL2-MU | NORTH_DOCK | MG_POT | — | 12.2 cacl2/mgcl2 brine concentrates to molten-salt pots (ambient import legs, north_dock to mg_pot and ca_pot) | PVDF wetted handling at ambient, per the AQS-STD-006 pot-cell and brine selections (AQS-STD-002 section 12.1 P3 family practice) |
 | IA-CL2-MG-TI | MG_POT | TI_CELL | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-FLUX-SALT-REC | IND_MELT | MG_POT | — | 12.2 cacl2/mgcl2 brine concentrates to molten-salt pots (ambient import legs, north_dock to mg_pot and ca_pot) | PVDF wetted handling at ambient, per the AQS-STD-006 pot-cell and brine selections (AQS-STD-002 section 12.1 P3 family practice) |
+| IA-CL2-MG-SHIP | MG_POT | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### MO_CELL
 

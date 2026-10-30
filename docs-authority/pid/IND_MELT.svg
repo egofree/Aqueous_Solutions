@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="998" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit IND_MELT · furnace · sector FOUNDRY · present</text>
 <text x="24" y="54" font-size="10.5">0.8854 kW continuous</text>
-<text x="24" y="72" font-size="10.5">Edges 11 in + 6 out · valves 0 placed / 0 unplaced · instruments 3 (1 SIF) · nozzles 17</text>
+<text x="24" y="72" font-size="10.5">Edges 11 in + 7 out · valves 0 placed / 0 unplaced · instruments 3 (1 SIF) · nozzles 18</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -101,46 +101,52 @@
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">LEACH_CSTR_1</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">FOUNDRY_SLAG_TO_LEACH</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">0.4 kg/d · solids transfer</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">0.3 kg/d · solids transfer</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N9</text>
-<line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
+<line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
-<text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">MET_HX_Q4</text>
-<text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">IND_HEAT_TO_HX</text>
-<text x="1476" y="299" font-size="10" text-anchor="end">1.1 kW · cable (schedule X-ELS-06)</text>
-<line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.6" class="edge-out"/>
+<text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">MG_POT</text>
+<text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">IA-FLUX-SALT-REC</text>
+<text x="1476" y="299" font-size="10" text-anchor="end">0.0 kg/d · DN15 —</text>
+<text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N18</text>
+<line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,332 1061,328 1061,336" fill="#111"/>
-<text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">CAST_LINE</text>
-<text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IND_MELT_TO_CAST</text>
-<text x="1476" y="345" font-size="10" text-anchor="end">3.0 kg/d · DN15 —</text>
-<text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N1</text>
+<text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">MET_HX_Q4</text>
+<text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IND_HEAT_TO_HX</text>
+<text x="1476" y="345" font-size="10" text-anchor="end">1.1 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="378" x2="1061" y2="378" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,378 1061,374 1061,382" fill="#111"/>
-<text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">GAS_ATOMIZER</text>
-<text x="1476" y="373" font-size="11" font-weight="600" text-anchor="end">IND_TO_ATOM</text>
-<text x="1476" y="391" font-size="10" text-anchor="end">0.0 kg/d · DN15 —</text>
-<text x="902" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="end">N13</text>
+<text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">CAST_LINE</text>
+<text x="1476" y="373" font-size="11" font-weight="600" text-anchor="end">IND_MELT_TO_CAST</text>
+<text x="1476" y="391" font-size="10" text-anchor="end">3.0 kg/d · DN15 —</text>
+<text x="902" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="end">N1</text>
 <line x1="914" y1="424" x2="1061" y2="424" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,424 1061,420 1061,428" fill="#111"/>
-<text x="1476" y="405" font-size="9" fill="#666" text-anchor="end">CONT_CAST</text>
-<text x="1476" y="419" font-size="11" font-weight="600" text-anchor="end">IND_TO_CONT</text>
-<text x="1476" y="437" font-size="10" text-anchor="end">31.7 kg/d · DN15 —</text>
-<text x="902" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="end">N8</text>
+<text x="1476" y="405" font-size="9" fill="#666" text-anchor="end">GAS_ATOMIZER</text>
+<text x="1476" y="419" font-size="11" font-weight="600" text-anchor="end">IND_TO_ATOM</text>
+<text x="1476" y="437" font-size="10" text-anchor="end">0.0 kg/d · DN15 —</text>
+<text x="902" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="end">N13</text>
 <line x1="914" y1="470" x2="1061" y2="470" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,470 1061,466 1061,474" fill="#111"/>
-<text x="1476" y="451" font-size="9" fill="#666" text-anchor="end">INV_CAST</text>
-<text x="1476" y="465" font-size="11" font-weight="600" text-anchor="end">IND_TO_INV</text>
-<text x="1476" y="483" font-size="10" text-anchor="end">2.0 kg/d · DN15 —</text>
-<text x="902" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="end">N14</text>
+<text x="1476" y="451" font-size="9" fill="#666" text-anchor="end">CONT_CAST</text>
+<text x="1476" y="465" font-size="11" font-weight="600" text-anchor="end">IND_TO_CONT</text>
+<text x="1476" y="483" font-size="10" text-anchor="end">31.7 kg/d · DN15 —</text>
+<text x="902" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="end">N8</text>
+<line x1="914" y1="516" x2="1061" y2="516" stroke="#111" stroke-width="1.6" class="edge-out"/>
+<polygon points="1070,516 1061,512 1061,520" fill="#111"/>
+<text x="1476" y="497" font-size="9" fill="#666" text-anchor="end">INV_CAST</text>
+<text x="1476" y="511" font-size="11" font-weight="600" text-anchor="end">IND_TO_INV</text>
+<text x="1476" y="529" font-size="10" text-anchor="end">2.0 kg/d · DN15 —</text>
+<text x="902" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="end">N14</text>
 <text x="24" y="796" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="806" font-size="9">Every incident graph edge is drawn: 11 in, 6 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="806" font-size="9">Every incident graph edge is drawn: 11 in, 7 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="821" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/IND_MELT.csv.</text>
 <text x="24" y="836" font-size="9">Nozzles with no matching graph edge (service text): N16 drain; N17 vent</text>
 <text x="24" y="851" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
 <g id="aqs-title-block"><rect x="1116" y="888" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="905" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-IND_MELT</text>
 <text x="1124" y="922" font-size="9">P&amp;ID IND_MELT (furnace, FOUNDRY sector)</text>
-<text x="1124" y="939" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 51b349ba   Issued 2026-10-19</text>
+<text x="1124" y="939" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 1dbdfb67   Issued 2026-10-19</text>
 <text x="1124" y="956" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="973" font-size="9">Graph SHA-256 6228f8b486a3f0c7   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="973" font-size="9">Graph SHA-256 c7def345371a7697   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

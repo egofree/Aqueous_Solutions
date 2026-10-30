@@ -23,8 +23,8 @@ Authority: AQS-PLAN-007 unit tasks (FOUNDRY)-02; graph Rev AC; notes/FOUNDRY_SIZ
     f  = 0.01                      melt loss to slag+dross (INDUCT_SOCX 1-2 % band, A-M-262)
     P  = -r0 + f*K/(1-f) = 0.267388    shop polymer draw that closes the shop (A-M-257 pattern, AQS-DUTY-073)
     S  = K + P + r0 = 26.161616         shop scrap charge to IND_MELT (MFG_SCRAP_TO_IND)
-    slag = f*S = 0.356466           FOUNDRY_SLAG_TO_LEACH by mass conservation on the melt
-    stock out = S - slag = 25.805150 = K    STOCK_TO_MFG
+    slag = f*S = 0.330241           FOUNDRY_SLAG_TO_LEACH by mass conservation on the melt
+    stock out = S - slag = 25.831375 = K    STOCK_TO_MFG
 ```
 
 Every FOUNDRY unit closes to 0.000000 kg/d on the written graph (battery limit 0.5).
@@ -33,7 +33,7 @@ Every FOUNDRY unit closes to 0.000000 kg/d on the written graph (battery limit 0
 
 | Unit | In, kg/d | Out, kg/d | Duty |
 | --- | --- | --- | --- |
-| IND_MELT | 26.1616 scrap | 3.0 to cast + 31.7 to cont-cast + 0.3565 slag | melt 21.25 kWh/d (0.885 kW avg, 15.0 kW peak vs 25 kW connected, A-M-232); 4 heats/d of the 10 kg crucible |
+| IND_MELT | 26.1616 scrap | 3.0 to cast + 31.7 to cont-cast + 0.3302 slag | melt 21.25 kWh/d (0.885 kW avg, 15.0 kW peak vs 25 kW connected, A-M-232); 4 heats/d of the 10 kg crucible |
 | CAST_LINE | 3.0 | 3.0 to roll | Cu permanent-mould ingot/billet; sprue return 0 (campaign events) |
 | CONT_CAST | 31.7 | 10.0 billet + 21.7 ingot | Fe semi-continuous billet, Zn ingot (AQS-SIZE-FOUNDRY) |
 | ROLL | 13.0 | 13.0 | 0.42 kWh/d at 0.032 kWh/kg cold class (A-M-177) |

@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "6228f8b486a3f0c739e5f14070cbd6a54bb38a1f0265114f0437a68042f25ffd",
+  "graph_sha256": "c7def345371a7697fc67062788fc57cc5889672711398bd0a89a119b4570f212",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 351.848,
-   "calc_kw": 351.848,
+   "kw": 351.85,
+   "calc_kw": 351.85,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -394,9 +394,9 @@
   {
    "unit": "MG_POT",
    "role": "load",
-   "kw": 0.338,
-   "calc_kw": 0.338,
-   "basis": "AQS-DUTY-072 Kroll Mg recycle: 54.9 A x 4.2 V = 0.231 kW + hold 0.11 kW (A-M-282).",
+   "kw": 0.34,
+   "calc_kw": 0.34,
+   "basis": "AQS-DUTY-072 Kroll Mg recycle: 55.5 A x 4.2 V = 0.233 kW + hold 0.11 kW (A-M-282).",
    "class": "calculated",
    "sector": "FOUNDRY"
   },
