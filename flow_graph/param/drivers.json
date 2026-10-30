@@ -5292,6 +5292,11 @@
   "needs_verification": true,
   "verification_test": "chloride balance of a salt-cake leach batch"
  },
+ "cru_cl2_source": {
+  "value": "HCL_OX",
+  "units": "- chlorine source of the VDF and TFE reactors: HCL_OX (CRU oxidises the returned dilute HCl with the chlorate liquor, the halogen loop closes internally) or POT (the AL_POT byproduct chlorine on AL_POT_CL2, the HCl returns pass to the leach)",
+  "register": "A-M-431"
+ },
  "HEAT.heat-battery-train.hb_oil_hold_kWh_th": {
   "value": 10,
   "units": "kWh_th sensible hold per oil store",

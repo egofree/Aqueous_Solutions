@@ -170,7 +170,7 @@ Table 7.5. Solvent routes at the present bench draw
 
 ## 8. Drivers
 
-Table 8.1 lists the 952 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 953 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -1051,6 +1051,7 @@ Table 8.1. Drivers
 | al_mg_alloy_wt | 0.0035 | mass fraction Mg in the cast aluminium line, A356 class 0.25-0.45 % (ASM_V15_AL) | A-M-430 | — |
 | al_mg_melt_loss_frac | 0.2 | fraction of the alloy Mg oxidised to the dross per remelt of the aluminium scrap (ASM_V15_AL, Mg loss of Al-Mg alloys in remelting) | A-M-430 | yes |
 | flux_salt_recovery_frac | 0.8 | fraction of the MgCl2 salt flux recovered from the dross salt cake by water leach and evaporation (ASM_V15_AL, salt-cake recycling) | A-M-430 | yes |
+| cru_cl2_source | "HCL_OX" | - chlorine source of the VDF and TFE reactors: HCL_OX (CRU oxidises the returned dilute HCl with the chlorate liquor, the halogen loop closes internally) or POT (the AL_POT byproduct chlorine on AL_POT_CL2, the HCl returns pass to the leach) | A-M-431 | — |
 | HEAT.heat-battery-train.hb_oil_hold_kWh_th | 10 | kWh_th sensible hold per oil store | A-M-302 | — |
 | HEAT.heat-battery-train.hb_oil_swing_K | 80 | K swing | A-M-302 | — |
 | HEAT.heat-battery-train.hb_water_hold_kWh_th | 20 | kWh_th sensible hold per water store | A-M-302 | — |
@@ -1449,7 +1450,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 297 drivers and then the 380 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 297 drivers and then the 381 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -2132,3 +2133,4 @@ Table 10.1. Values to verify
 | A-M-428 | SOLV_PLANT supplies the bench ethanol and acetone, recovery … kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. |
 | A-M-429 | The shop grease is made on site from the wax cut, sized … kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. |
 | A-M-430 | MG_POT_TO_IND carries magnesium for alloying the cast … kg/d; A | After regen MG_POT_TO_IND equals al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac, MG_POT and IND_MELT close, and python3 -m flow_graph.param.recovery lists the Mg record with no flags. |
+| A-M-431 | The chlorine of the VDF and TFE reactors has two built … kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. |

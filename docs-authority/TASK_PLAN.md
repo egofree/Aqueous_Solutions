@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 50 | 15 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 50 | 16 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 375 | 252 |
 | FAB | Process (Mass transform) | 255 | 169 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3047** | **2139** |
+| | **Total** | **3047** | **2140** |
 
 ## 3. Triage of open tasks
 
@@ -104,7 +104,7 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P1 | 3 |
-| desk P2 | 37 |
+| desk P2 | 36 |
 | desk P3 | 33 |
 | desk P4 | 469 |
 | desk P5 | 178 |
@@ -161,7 +161,6 @@ Table 6.1. Next cross-cutting desk tasks
 | --- | --- | --- |
 | X-END-02 | End-of-life material return | desk P2 |
 | X-LOC-11 | Floating island variant | desk P2 |
-| X-RTE-AL_POT_CL2 | Route AL_POT_CL2 from AL_POT to CRU carries no flow | desk P2 |
 | X-RTE-CO2_TO_FARM | Route CO2_TO_FARM from HDR_CO2 to GROW_BED carries no flow | desk P2 |
 | X-RTE-CUT-1-OUT | Route CUT-1-OUT from PROD_C5_C10 to BACKUP_GEN carries no flow | desk P2 |
 | X-RTE-CZ-HOTZONE | CZ hot-zone heater from a heat-loss model | desk P2 |
@@ -615,12 +614,12 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-RTE-IMPORT-CARBON** Imports IA-C-TI, IA-C-MO and IA-C-CR: carbon reductant made on site. Done when: the Ti, Mo and Cr chlorinators take plant pyrolysis char from OIL_PYRO, sized from their carbon need over the char fixed carbon (A-M-420). Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
 - [x] **X-RTE-MG_POT_CL2** Route MG_POT_CL2: retired. Done when: MG_POT makes exactly the chlorine that the Kroll chlorinator draws on IA-CL2-MG-TI, so it has no surplus for CRU at any titanium rate; set to presence retired. Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
 - [x] **X-RTE-UPW_TO_FAB** Route UPW_TO_FAB: retired as a duplicate. Done when: IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired. Depends: —. Evidence: `flow_graph/plant_flow_graph.json`.
+- [x] **X-RTE-AL_POT_CL2** Route AL_POT_CL2 from AL_POT to CRU: standby at its rated case. Done when: the route carries 0.615762 kg/d when cru_cl2_source is POT or the CRU chlorate finish is out of service (A-M-418). Depends: —. Evidence: `flow_graph/param/fluoro_train.py`.
 - [x] **X-RTE-GREASE_LI_TO_MFG** Route GREASE_LI_TO_MFG from GREASE_LI to MFG_SHOP: standby at its rated case. Done when: the route carries 0.002349 kg/d when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-418). Depends: —. Evidence: `flow_graph/param/grease.py`.
 - [x] **X-RTE-IND_TO_ATOM** Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER: standby at its rated case. Done when: the route carries 3.556 kg/d when MET_MELT is out of service and the foundry melt IND_MELT pours the atomiser charge (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-LI_TO_GREASE** Route LI_TO_GREASE from LI_RECOVER to GREASE_LI: standby at its rated case. Done when: the route carries 2.3e-05 kg/d when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-418). Depends: —. Evidence: `flow_graph/param/grease.py`.
 - [x] **X-RTE-STOCK_TO_WIRE_DRAW** Route STOCK_TO_WIRE_DRAW from METAL_STORE to WIRE_DRAW: standby at its rated case. Done when: the route carries 6.8389 kg/d when MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-WAX_TO_GREASE_LI** Route WAX_TO_GREASE_LI from PROD_C19_C28 to GREASE_LI: standby at its rated case. Done when: the route carries 0.002462 kg/d when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-418). Depends: —. Evidence: `flow_graph/param/grease.py`.
-- [ ] **X-RTE-AL_POT_CL2** Route AL_POT_CL2 from AL_POT to CRU carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-CO2_TO_FARM** Route CO2_TO_FARM from HDR_CO2 to GROW_BED carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-CUT-1-OUT** Route CUT-1-OUT from PROD_C5_C10 to BACKUP_GEN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-DIGEST_TO_POLY** Route DIGEST_TO_POLY from BLACK_DIGEST to POLY_COND carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.

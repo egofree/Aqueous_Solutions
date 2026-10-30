@@ -7433,5 +7433,22 @@
   ],
   "needs_verification": true,
   "verification_test": "After regen MG_POT_TO_IND equals al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac, MG_POT and IND_MELT close, and python3 -m flow_graph.param.recovery lists the Mg record with no flags."
+ },
+ {
+  "id": "A-M-431",
+  "value": "The chlorine of the VDF and TFE reactors has two built sources, selected by cru_cl2_source. HCL_OX (default): CRU oxidises the dilute HCl returned by the monomer reactors with the chlorate liquor (NaClO3 + 6 HCl -> 3 Cl2 + NaCl + 3 H2O), so the halogen loop closes inside the plant; AL_POT_CL2 stands by at its rated case. POT: AL_POT_CL2 carries the monomer chlorine from the AL_POT byproduct chlorine, taken from the dock export IA-CL2-SHIP, and the HCl returns pass unoxidised to the leach on IA-CRU-01.",
+  "units": "kg/d",
+  "where": "flow_graph/param/fluoro_train.py; flow_graph/param/foundry_poly.py IA-CL2-SHIP base; flow_graph/param/drivers.json cru_cl2_source",
+  "basis": "Owner decision of 2026-10-30 (both designs behind a driver, default on the merits). HCL_OX is the default because it recovers the HCl returns, a plant waste, into chlorine; on the POT route the same acid would reach the leach as a waste for the sodium hydroxide neutralisation to absorb, and the leach liquor would rise by about the whole HCl return rather than the small net of the oxidation. POT is kept as the backup when the chlorate finish is out of service, and it lowers the chlorine export.",
+  "sensitivity": "AL_POT_CL2 on the POT route equals the monomer chlorine draw, which scales with the VDF and TFE rates; IA-CL2-SHIP falls by the same amount.",
+  "replaced_by": "Operating experience of the chlorate finish at the first article",
+  "task": "QA audit 2026-10-30, X-RTE-AL_POT_CL2",
+  "files": [
+   "flow_graph/param/fluoro_train.py",
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case."
  }
 ]

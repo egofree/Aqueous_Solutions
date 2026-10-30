@@ -12765,10 +12765,17 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AL_POT idle (unfed); Cl2 return table per kg Al in AQS-DUTY-072 sec. 4. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Standby (A-M-431): the CRU chlorate finish makes the monomer chlorine from the returned dilute HCl (cru_cl2_source HCL_OX), so the acid is recovered rather than neutralised in the leach. AL_POT_CL2 carries 0.6158 kg/d from the AL_POT byproduct chlorine when cru_cl2_source is POT or the chlorate finish is out of service."
       },
       "from_sector_id": "FOUNDRY",
-      "to_sector_id": "DIGESTER"
+      "to_sector_id": "DIGESTER",
+      "params": {
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 0.615762,
+        "rated_case": "cru_cl2_source is POT or the CRU chlorate finish is out of service",
+        "backs_up": "CRU chlorate finish (CRU_TO_VDF, CRU_TO_TFE)",
+        "rated_by": "flow_graph/param/fluoro_train.py"
+      }
     },
     {
       "stream_id": "MG_POT_CL2",
@@ -22558,7 +22565,10 @@
       "namespace": "IA",
       "gap_flags": [],
       "notes": null,
-      "composition": null
+      "composition": null,
+      "params": {
+        "base_kg_d": 39.205574
+      }
     },
     {
       "stream_id": "IA-MGCL2-KROLL",

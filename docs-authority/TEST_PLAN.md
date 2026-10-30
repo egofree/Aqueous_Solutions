@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 62 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 480 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 481 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 677 items: 297 drivers, 380 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 678 items: 297 drivers, 381 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -693,6 +693,7 @@ Total 677 items: 297 drivers, 380 register entries. Classification rule: first m
 | A-M-428 | SOLV_PLANT supplies the bench ethanol and acetone, recovery  kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT-IA-SOLV-MU) |
 | A-M-429 | The shop grease is made on site from the wax cut, sized from kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, shop routes (X-RTE-GREASE_CA_TO_MFG, X-RTE-WAX_TO_GREASE_CA, X-RTE-PCA_TO_GREASE and the lithium routes) |
 | A-M-430 | MG_POT_TO_IND carries magnesium for alloying the cast alumin kg/d; A | After regen MG_POT_TO_IND equals al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac, MG_POT and IND_MELT close, and python3 -m flow_graph.param.recovery lists the Mg record with no flags. | QA audit 2026-10-30, X-RTE-MG_POT_TO_IND |
+| A-M-431 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. | QA audit 2026-10-30, X-RTE-AL_POT_CL2 |
 
 ## 7. T6 Commissioning measurements
 

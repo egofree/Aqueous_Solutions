@@ -147,6 +147,25 @@ def apply(g=None, write=False):
         f'{r["hcl_vdf"] + r["hcl_tfe"]:.4f} - Cl2 drawn {r["cl2_vdf"] + r["cl2_tfe"]:.4f} = {r["cru_01"]:.4f} kg/d '
         f'(chlorate consumed, NaCl + reaction water + monomer water formed; {AM}). The leach sees '
         f'+{r["cru_01"] - r["s66"]:.4f} kg/d liquor, below the 0.5 kg/d battery limit, absorbed by its reconciliation layer.')
+    # chlorine source of the monomer reactors, two designs selected by cru_cl2_source (A-M-431)
+    r6 = lambda x: round(x, 6)
+    cl2 = r6(r['cl2_vdf'] + r['cl2_tfe']); ship = E['IA-CL2-SHIP']; base = float(ship['params']['base_kg_d'])
+    al = E['AL_POT_CL2']; p = al.setdefault('params', {})
+    if DR.val(d, 'cru_cl2_source') == 'POT':
+        put('AL_POT_CL2', cl2, f'The AL_POT byproduct chlorine feeds the monomer reactors through CRU (cru_cl2_source POT, A-M-431): '
+            f'{cl2:.4f} kg/d taken from the dock export IA-CL2-SHIP.')
+        for k in ('rate_normal_kg_d', 'rate_rated_kg_d', 'rated_case', 'backs_up', 'rated_by'): p.pop(k, None)
+        put('IA-CRU-01', r6(r['s66'] + r['hcl_vdf'] + r['hcl_tfe']),
+            f'CRU liquor on the POT route (A-M-431): S66 {r["s66"]:.4f} + dilute HCl returns {r["hcl_vdf"] + r["hcl_tfe"]:.4f} kg/d '
+            f'pass to the leach unoxidised; no chlorate is consumed, and the leach neutralises the acid.')
+        put('IA-CL2-SHIP', r6(base - cl2), ship['rate']['note'].split(' | ')[0] + f' Less the {cl2:.4f} kg/d to CRU on AL_POT_CL2 (A-M-431).')
+    else:
+        put('AL_POT_CL2', 0.0, f'Standby (A-M-431): the CRU chlorate finish makes the monomer chlorine from the returned dilute HCl '
+            f'(cru_cl2_source HCL_OX), so the acid is recovered rather than neutralised in the leach. AL_POT_CL2 carries '
+            f'{cl2:.4f} kg/d from the AL_POT byproduct chlorine when cru_cl2_source is POT or the chlorate finish is out of service.')
+        p.update(rate_normal_kg_d=0.0, rate_rated_kg_d=cl2, rated_case='cru_cl2_source is POT or the CRU chlorate finish is out of service',
+                 backs_up='CRU chlorate finish (CRU_TO_VDF, CRU_TO_TFE)', rated_by='flow_graph/param/fluoro_train.py')
+        put('IA-CL2-SHIP', r6(base), ship['rate']['note'])
     _mk(g, E, 'IA-CAF2-MU', 'NORTH_DOCK', 'HF_GEN', 'S', 'fluorspar make-up, acid-spar class >= 97 % CaF2', r['spar'],
         f'D-DOCK feedstock import (mining-waste class, 2026-10-19): {r["spar"]:.4f} kg/d acid-spar at 97 % CaF2 covers '
         f'the HF product beyond the recovered fluoride (ULLMANN_HF; {AM})')
