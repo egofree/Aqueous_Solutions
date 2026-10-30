@@ -3230,7 +3230,7 @@
      "from": "SOL_ARK_60K",
      "to": "WAFER_FAB",
      "other_sector": "ELEC",
-     "rate": 0.4069,
+     "rate": 0.2611,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -6772,7 +6772,7 @@
      "from": "SOL_ARK_60K",
      "to": "WAFER_FAB",
      "other_sector": "FAB",
-     "rate": 0.4069,
+     "rate": 0.2611,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },

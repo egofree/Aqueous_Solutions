@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 54 | 35 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 54 | 36 |
 | FOUNDRY | Process (Mass transform) | 405 | 307 |
 | DIGESTER | Process (Mass transform) | 375 | 250 |
 | FAB | Process (Mass transform) | 270 | 178 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3066** | **2161** |
+| | **Total** | **3066** | **2162** |
 
 ## 3. Triage of open tasks
 
@@ -104,7 +104,7 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P1 | 4 |
-| desk P2 | 25 |
+| desk P2 | 24 |
 | desk P3 | 34 |
 | desk P4 | 472 |
 | desk P5 | 179 |
@@ -164,7 +164,6 @@ Table 6.1. Next cross-cutting desk tasks
 | X-RTE-ASSAY | Routes waiting on an assay: CR_CELL_SLAG_RETURN, FLOAT_SINK_GRIT_TO_CR, FLOAT_SINK_GRIT_TO_MO, FLOAT_SINK_GRIT_TO_TI, MO_CELL_SLAG_RETURN, POLISH_TO_LI, TI_CELL_SLAG_RETURN | desk P2 |
 | X-RTE-CO2_TO_FARM | Route CO2_TO_FARM from HDR_CO2 to GROW_BED carries no flow | desk P2 |
 | X-RTE-COMB-HEAT-FUEL | Fuel route for the fuel-fired alternate COMB_HEAT | desk P2 |
-| X-RTE-CZ-HOTZONE | CZ hot-zone heater from a heat-loss model | desk P2 |
 | X-RTE-FARM_O2_TO_HAB | Route FARM_O2_TO_HAB from GROW_BED to HABITATION carries no flow | desk P2 |
 | X-RTE-HAB_BLACK | Route HAB_BLACK from HABITATION to BLACK_DIGEST carries no flow | desk P2 |
 | X-RTE-HAB_CO2_TO_HDR | Route HAB_CO2_TO_HDR from HABITATION to HDR_CO2 carries no flow | desk P2 |
@@ -588,6 +587,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 ### X-RTE. Routes without flow (owner decision 2026-10-29)
 
+- [x] **X-RTE-CZ-HOTZONE** CZ hot-zone heater from a heat-loss model. Done when: the 35 kW class value is replaced by a heat-loss model of felt conduction, melt radiation, the crystal and the argon purge, with every input a driver and its validation at the first pull in A-M-436. Depends: —. Evidence: `flow_graph/param/fab_silicon.py`.
 - [x] **X-RTE-STOCK_TO_FAB** Route STOCK_TO_FAB: silicon charge to WAFER_FAB. Done when: the CZ charge is sized from the wafer need (A-M-417) and made on site by SI_REDUCE and SI_REFINE (A-M-419). Depends: —. Evidence: `flow_graph/param/fab_silicon.py`.
 - [x] **X-RTE-SI-BACKUP** Refining of SI_REDUCE silicon to charge grade, with a backup of a different technology. Done when: the CZ charge is refined on site on a chlorosilane loop by the Siemens route, with the silane fluidised bed as the selectable other technology (si_refine_route, A-M-419); the polysilicon import is retired. Depends: —. Evidence: `flow_graph/param/si_refine.py`.
 - [x] **X-RTE-IMPORT-IA-SOLV-MU** Import IA-SOLV-MU: bench solvent made on site. Done when: SOLV_PLANT redistils the spent bench solvent first and makes the shortfall from plant methanol and the chlorinator CO, with a food-waste fermentation selectable (A-M-428). Depends: —. Evidence: `flow_graph/param/solvent.py`.
@@ -637,7 +637,6 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-RTE-ASSAY** Routes waiting on an assay: CR_CELL_SLAG_RETURN, FLOAT_SINK_GRIT_TO_CR, FLOAT_SINK_GRIT_TO_MO, FLOAT_SINK_GRIT_TO_TI, MO_CELL_SLAG_RETURN, POLISH_TO_LI, TI_CELL_SLAG_RETURN. Done when: the float-sink grit and cell slag routes carry the rates that the AQS-ASSAY-TI-MO assay drivers give (Q-037, A-M-427), and POLISH_TO_LI the lithium that the measured polish-liquor tenor gives (A-M-435); until then they stay at zero. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-HELD** Routes in areas the owner holds: IA-CO2-RET, IA-H2P-H2O, IA-O2-RET. Done when: the owner decides the O2 ownership and greenhouse gas routes and the EW cathode hydrogen; each is then given a rated case or retired. IA-H2P-H2O carries real flow once the cathode hydrogen carries its saturation water, which its edges already state in their composition but not in their rate (A-M-434). Depends: X-PAR-02. Triage: owner.
 - [ ] **X-RTE-PV-SI** Silicon wafers for SOLAR_PV_CELL. Done when: the cell line has a wafer route sized from pv_cells_per_d, from the fab or an import, with both balances closed. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
-- [ ] **X-RTE-CZ-HOTZONE** CZ hot-zone heater from a heat-loss model. Done when: the 35 kW hot-zone duty of A-M-417 is replaced by a heat-loss model of the hot zone, and the pull peak is carried in the one-line. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
 - [ ] **X-RTE-RESIST-ISOPRENE** Isoprene for a negative cyclised-rubber resist. Done when: the C5 diene is separated from the cracked C5-C10 cut and polymerised and cyclised on site, sized from the resist need, if the negative resist is to become a selectable fab_resist_route (A-M-432). Depends: X-RTE-POLY_TO_FAB. Triage: hardware.
 - [ ] **X-RTE-RESIST-AZIDE** Aromatic bis-azide sensitiser for a negative resist. Done when: an azide route from plant streams (hydrazine from ammonia and hypochlorite, then the nitrite azide synthesis) and the aromatic amine and ketone it is built on are sized and closed, with an organic developer for LITHO_DEV, or the negative class is dropped (A-M-432). Depends: X-RTE-POLY_TO_FAB. Triage: desk P2.
 - [ ] **X-RTE-COMB-HEAT-FUEL** Fuel route for the fuel-fired alternate COMB_HEAT. Done when: COMB_HEAT gets a fuel route from a plant fuel (the C5-C10 cut or the chlorinator CO) and its off-gas route back, sized at the outage of the electric furnace it backs up, or the unit is retired (A-M-433). Depends: X-RTE-RETIRED-43. Triage: desk P2.
@@ -1598,7 +1597,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] FAB-SOLV_PLANT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FAB-SOLV_PLANT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FAB-SOLV_PLANT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FAB-SOLV_PLANT-14, X-COM-01. Triage: hardware.
 - **FAB-WAFER_FAB** (fab, sector FAB)
-  - [x] FAB-WAFER_FAB-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WAFER_FAB.md` §1; mass in = out 72.55 kg/d, 0.4069 kW.
+  - [x] FAB-WAFER_FAB-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/WAFER_FAB.md` §1; mass in = out 72.55 kg/d, 0.2611 kW.
   - [x] FAB-WAFER_FAB-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FAB-WAFER_FAB-01. Evidence: `docs-authority/sizing/WAFER_FAB.md` (AQS-SIZE-WAFER_FAB).
   - [x] FAB-WAFER_FAB-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FAB-WAFER_FAB-01, FAB-WAFER_FAB-02. Evidence: `docs-authority/pid/WAFER_FAB.svg` (AQS-PID-001).
   - [x] FAB-WAFER_FAB-04 Nozzle schedule. Done when: docs-authority/nozzles/WAFER_FAB.csv, one row per edge. Depends: FAB-WAFER_FAB-03. Evidence: `docs-authority/nozzles/WAFER_FAB.csv` (all 17 process connections listed).
@@ -3128,7 +3127,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-LOAD_AGG-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-LOAD_AGG-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-LOAD_AGG-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-LOAD_AGG-14, X-COM-01. Triage: hardware.
 - **ELEC-PV_ARRAY** (pv, sector ELEC)
-  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 351.8815 kW.
+  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 351.7357 kW.
   - [x] ELEC-PV_ARRAY-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-PV_ARRAY-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-PV_ARRAY-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-PV_ARRAY-01, ELEC-PV_ARRAY-02. Evidence: `docs-authority/pid/PV_ARRAY.svg` (AQS-PID-001).
   - [x] ELEC-PV_ARRAY-04 Nozzle schedule. Done when: docs-authority/nozzles/PV_ARRAY.csv, one row per edge. Depends: ELEC-PV_ARRAY-03. Evidence: `docs-authority/nozzles/PV_ARRAY.csv` (file current; 0 piped kg/d process connections under the _noz_edges rule).
@@ -3176,7 +3175,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-SOL_ARK_60K-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-SOL_ARK_60K-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-SOL_ARK_60K-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-SOL_ARK_60K-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2** (flow_battery, sector ELEC)
-  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 924.8 kg/d, 218.0626 kW.
+  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 924.2 kg/d, 217.9126 kW.
   - [x] ELEC-ZNBR2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-ZNBR2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2-01, ELEC-ZNBR2-02. Evidence: `docs-authority/pid/ZNBR2.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2.csv, one row per edge. Depends: ELEC-ZNBR2-03. Evidence: `docs-authority/nozzles/ZNBR2.csv` (all 5 process connections listed).
@@ -3192,7 +3191,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-ZNBR2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-ZNBR2-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-ZNBR2-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2_BR2_REGEN** (scrubber, sector ELEC)
-  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; mass in = out 916.3 kg/d, 0.0000 kW.
+  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; mass in = out 915.7 kg/d, 0.0000 kW.
   - [x] ELEC-ZNBR2_BR2_REGEN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2_BR2_REGEN-01. Evidence: `docs-authority/sizing/ZNBR2_BR2_REGEN.md` (AQS-SIZE-ZNBR2_BR2_REGEN).
   - [x] ELEC-ZNBR2_BR2_REGEN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2_BR2_REGEN-01, ELEC-ZNBR2_BR2_REGEN-02. Evidence: `docs-authority/pid/ZNBR2_BR2_REGEN.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2_BR2_REGEN-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2_BR2_REGEN.csv, one row per edge. Depends: ELEC-ZNBR2_BR2_REGEN-03. Evidence: `docs-authority/nozzles/ZNBR2_BR2_REGEN.csv` (all 2 process connections listed).

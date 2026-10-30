@@ -4807,10 +4807,109 @@
   "units": "- least melt depth for a pull, as a share of the crucible diameter",
   "register": "A-M-417"
  },
- "FAB.wafer-line-train.cz_hotzone_kW": {
-  "value": 35.0,
-  "units": "kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured)",
-  "register": "A-M-417"
+ "FAB.wafer-line-train.hz_heater_C": {
+  "value": 1500.0,
+  "units": "C heater and inner felt face while the melt is held and pulled: above the 1414 C melt by the drop through the crucible wall and the melt (CRC_SI melting point)",
+  "register": "A-M-436",
+  "ref": "CRC_SI",
+  "needs_verification": true,
+  "verification_test": "log the heater pyrometer at the first pull and compare with this value"
+ },
+ "FAB.wafer-line-train.hz_wall_C": {
+  "value": 40.0,
+  "units": "C water-cooled chamber wall, the cold sink of the felt and of the radiation through the shield opening",
+  "register": "A-M-436",
+  "ref": "INCROPERA7"
+ },
+ "FAB.wafer-line-train.hz_gap_mm": {
+  "value": 40.0,
+  "units": "mm radial gap from the crucible wall to the inner felt face: graphite susceptor, heater and clearances",
+  "register": "A-M-436",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "measure on the hot-zone drawing of the first puller"
+ },
+ "FAB.wafer-line-train.hz_height_ratio": {
+  "value": 1.2,
+  "units": "- inner height of the felt pack over the crucible diameter: crucible, pedestal and heater above the melt",
+  "register": "A-M-436",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "measure on the hot-zone drawing of the first puller"
+ },
+ "FAB.wafer-line-train.hz_felt_mm": {
+  "value": 100.0,
+  "units": "mm graphite felt pack on the sides, top and bottom of the hot zone",
+  "register": "A-M-436",
+  "ref": "SGL_SIGRATHERM",
+  "needs_verification": true,
+  "verification_test": "measure on the hot-zone drawing of the first puller"
+ },
+ "FAB.wafer-line-train.hz_felt_k_W_mK": {
+  "value": 0.25,
+  "units": "W/(m K) graphite soft felt in argon at the mean felt temperature of about 800 C",
+  "register": "A-M-436",
+  "ref": "SGL_SIGRATHERM",
+  "needs_verification": true,
+  "verification_test": "measure the cold-face temperature of the felt at the first pull"
+ },
+ "FAB.wafer-line-train.hz_open_ratio": {
+  "value": 1.3,
+  "units": "- heat-shield opening over the ingot diameter; the melt radiates to the cold lid through the annulus",
+  "register": "A-M-436",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "measure on the hot-zone drawing of the first puller"
+ },
+ "FAB.wafer-line-train.si_melt_emissivity": {
+  "value": 0.25,
+  "units": "- total emissivity of liquid silicon, about 0.2 to 0.3 in the visible and infrared",
+  "register": "A-M-436",
+  "ref": "TAKASUKA1997"
+ },
+ "FAB.wafer-line-train.si_k_solid_W_mK": {
+  "value": 22.0,
+  "units": "W/(m K) thermal conductivity of solid silicon near the melting point",
+  "register": "A-M-436",
+  "ref": "GLASSBRENNER1964"
+ },
+ "FAB.wafer-line-train.si_cp_kJ_kgK": {
+  "value": 0.9,
+  "units": "kJ/(kg K) silicon specific heat averaged over 25 to 1414 C",
+  "register": "A-M-436",
+  "ref": "CRC_SI"
+ },
+ "FAB.wafer-line-train.si_latent_kJ_kg": {
+  "value": 1790.0,
+  "units": "kJ/kg enthalpy of fusion of silicon",
+  "register": "A-M-436",
+  "ref": "CRC_SI"
+ },
+ "FAB.wafer-line-train.cz_voronkov_mm2_Kmin": {
+  "value": 0.13,
+  "units": "mm2/(K min) critical ratio of pull rate to axial gradient at the growth interface; the hot zone is set to this ratio for a defect-lean crystal, so the gradient follows from the pull rate",
+  "register": "A-M-436",
+  "ref": "VORONKOV1982"
+ },
+ "FAB.wafer-line-train.hz_graphite_t_mm": {
+  "value": 15.0,
+  "units": "mm wall of the graphite susceptor and of the heater, both heated to the hot-zone temperature at each meltdown",
+  "register": "A-M-436",
+  "ref": "INCROPERA7",
+  "needs_verification": true,
+  "verification_test": "weigh the susceptor and heater of the first puller"
+ },
+ "FAB.wafer-line-train.graphite_rho_g_cm3": {
+  "value": 1.8,
+  "units": "g/cm3 isostatic graphite",
+  "register": "A-M-436",
+  "ref": "INCROPERA7"
+ },
+ "FAB.wafer-line-train.graphite_cp_kJ_kgK": {
+  "value": 1.5,
+  "units": "kJ/(kg K) graphite specific heat averaged over 25 to 1500 C",
+  "register": "A-M-436",
+  "ref": "INCROPERA7"
  },
  "h2so4_route": {
   "value": "GYPSUM_LOOP",

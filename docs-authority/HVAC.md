@@ -20,7 +20,7 @@ Extract per room = max(ASHRAE 62.1 0.30 L/s m2; IFC 5004.3 5.08 L/s m2 where haz
 | L-2 PUMPED_HYDRO | 1 | 1.1 | 11 | no | 1 | 0.1 | 1 | ASHRAE 62.1 | 0.0 |
 | L-2 WTR | 1 | 430.9 | 4309 | no | 465 | 0.1 | 442 | ASHRAE 62.1 | 0.19 |
 | L0 DOCK | 1 | 8.2 | 49 | no | 9 | 0.2 | 8 | ASHRAE 62.1 | 0.004 |
-| L0 ELEC | 7 | 21.7 | 130 | yes | 34936 | 268.1 | 33189 | heat | 14.233 |
+| L0 ELEC | 7 | 21.7 | 130 | yes | 34914 | 268.0 | 33168 | heat | 14.224 |
 | L0 FAB | 15 | 31.3 | 188 | yes | 573 | 3.0 | 545 | IFC 5004.3 | 0.234 |
 | L0 GAS | 1 | 0.7 | 4 | yes | 13 | 3.0 | 12 | IFC 5004.3 | 0.005 |
 | L0 GEO | 4 | 11.9 | 71 | no | 125 | 1.7 | 118 | heat | 0.051 |
@@ -33,5 +33,5 @@ Extract per room = max(ASHRAE 62.1 0.30 L/s m2; IFC 5004.3 5.08 L/s m2 where haz
 | L1 OTHER | 44 | 427.7 | 2566 | no | 462 | 0.2 | 439 | ASHRAE 62.1 | 0.188 |
 | L1 WTR | 3 | 3.2 | 19 | no | 23 | 1.2 | 21 | heat | 0.009 |
 
-23 rooms; total extract 41,625 m3/h; duty fan power 16.96 kW (standby fans idle). Life levels (HAB, FARM) also carry their own AHU duties in the graph (CRYO_AHU and farm AHU); this table is the room exhaust and make-up layer.
+23 rooms; total extract 41,603 m3/h; duty fan power 16.95 kW (standby fans idle). Life levels (HAB, FARM) also carry their own AHU duties in the graph (CRYO_AHU and farm AHU); this table is the room exhaust and make-up layer.
 Make-up air is tempered from the Q4 ladder in winter (99.6 % -7.2 C) and by the building chiller in summer (0.4 % 37.8 C), AQS-SITE-002.

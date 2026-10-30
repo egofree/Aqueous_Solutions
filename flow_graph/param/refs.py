@@ -330,6 +330,10 @@ REFS = {
  'CGPM1901_GN': 'BIPM, The International System of Units (SI Brochure), 9th ed. (2019), Appendix 1: declaration of the 3rd CGPM (1901) fixing the standard acceleration of gravity g_n = 980.665 cm/s2 (9.80665 m/s2).',
  'CGPM1954_ATM': 'BIPM, The International System of Units (SI Brochure), 9th ed. (2019), Appendix 1: Resolution 4 of the 10th CGPM (1954) defining the standard atmosphere as 1 013 250 dyn/cm2 (101 325 Pa).',
  'USSA1976': 'NOAA, NASA and USAF, U.S. Standard Atmosphere, 1976, NOAA-S/T 76-1562, U.S. Government Printing Office (1976): sea-level composition of dry air by volume (N2 0.78084, O2 0.209476, Ar 0.00934) and the sea-level pressure 101 325 Pa.',
+ 'VORONKOV1982': 'Voronkov V.V., The mechanism of swirl defects formation in silicon, Journal of Crystal Growth 59 (1982) 625-643: the ratio of pull rate to axial temperature gradient at the interface, about 0.13 mm2/(K min), separates vacancy-rich from interstitial-rich silicon.',
+ 'GLASSBRENNER1964': 'Glassbrenner C.J., Slack G.A., Thermal conductivity of silicon and germanium from 3 K to the melting point, Physical Review 134 (1964) A1058-A1069: about 22 W/(m K) for silicon near 1680 K.',
+ 'TAKASUKA1997': 'Takasuka E., Tokizaki E., Terashima K., Kimura S., Emissivity of liquid silicon in visible and infrared regions, Journal of Applied Physics 81 (1997) 6384-6389: liquid silicon emissivity of about 0.2 to 0.3.',
+ 'SGL_SIGRATHERM': 'SGL Carbon, SIGRATHERM soft and rigid graphite felt, technical data sheets: thermal conductivity in argon of about 0.15 to 0.35 W/(m K) between 1000 and 2000 C for felts of 0.08 to 0.15 g/cm3.',
 }
 
 def cite(k):

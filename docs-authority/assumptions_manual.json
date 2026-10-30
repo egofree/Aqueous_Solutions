@@ -7522,5 +7522,23 @@
    "docs-authority/_task_plan_gen.py"
   ],
   "needs_verification": false
+ },
+ {
+  "id": "A-M-436",
+  "value": "The heater duty of the CZ hot zone in WAFER_FAB is found from a heat-loss model instead of the 35 kW class value of A-M-417. While the melt is held and pulled, the heater makes up the conduction through the graphite felt on the sides, top and bottom; the radiation from the melt through the heat-shield opening; the heat the melt gives to the crystal, which is the conduction up the crystal at the interface less the latent heat of growth; and the sensible heat of the argon purge. The axial gradient at the interface follows from the pull rate by the Voronkov ratio. At each meltdown the heater also brings the graphite susceptor and heater up to temperature, and it is off during the cool-down.",
+  "units": "kW",
+  "where": "flow_graph/param/fab_silicon.py hotzone and felt_box; flow_graph/param/write_graph.py WAFER_FAB; flow_graph/param/drivers.json FAB.wafer-line-train.hz_* and the silicon and graphite properties",
+  "basis": "Fourier conduction through a felt cylinder and discs and grey-body radiation (INCROPERA7); graphite felt conductivity (SGL_SIGRATHERM); liquid silicon emissivity (TAKASUKA1997); solid silicon conductivity (GLASSBRENNER1964); the ratio of pull rate to gradient for defect-lean growth (VORONKOV1982); silicon heat capacity and enthalpy of fusion (CRC_SI). Owner rule of 2026-10-30: nothing arbitrarily fixed and no calibration factors.",
+  "sensitivity": "The felt conductivity, the felt thickness and the heater temperature set most of the duty: the felt terms are about half of it and scale with k over the thickness. The meltdown peak is set by the charge and graphite heat over the meltdown hours.",
+  "replaced_by": "The model has not been checked against a puller. Validation: log the heater power through the meltdown and the body pull of the first pull, and the cold-face temperature of the felt, and compare each with the model. A difference is resolved by measuring the input that is wrong, such as the felt conductivity, the gap or the shield opening, and never by a factor.",
+  "task": "QA audit 2026-10-30, X-RTE-CZ-HOTZONE",
+  "files": [
+   "flow_graph/param/fab_silicon.py",
+   "flow_graph/param/write_graph.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/refs.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model"
  }
 ]

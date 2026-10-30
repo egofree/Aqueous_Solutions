@@ -5,7 +5,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 1,ELEC,PV_ARRAY,fill or function test per AQS-QA-001 R8,2,-,,
 1,ELEC,RECTIFIER,function test,2,-,,
 1,ELEC,SOL_ARK_60K,function test,2,-,,
-1,ELEC,ZNBR2,function test,7,SIF-171 SIF-176,924.82,Fe HCl other_metals
+1,ELEC,ZNBR2,function test,7,SIF-171 SIF-176,924.19,Fe HCl other_metals
 1,ELEC,ZNBR2_BR2_REGEN,"hydrostatic test 1.5 x design, or 24 h fill test if atmospheric",5,SIF-172,,
 2,PUMPED_HYDRO,HYDRO_SET,"pressure test: hydro 1.5 x design (piping) or 1.3 x MAWP (vessel), or 24 h fill test if atmospheric",2,-,,
 3,WTR,BLACK_DIGEST,fill or function test per AQS-QA-001 R8,4,SIF-090,21.06,solids

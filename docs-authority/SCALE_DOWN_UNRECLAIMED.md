@@ -384,7 +384,7 @@ Table 3.6. FAB off. Sector type: Process (Mass transform).
 | SF-RESIST_SYN | SOL_ARK_60K to RESIST_SYN | ELEC | 0.00366 kW | stops with the sector |
 | SF-SOLAR_PV_CELL | SOL_ARK_60K to SOLAR_PV_CELL | ELEC | 0.392 kW | stops with the sector |
 | SF-SOLV_PLANT | SOL_ARK_60K to SOLV_PLANT | ELEC | 0.0296 kW | stops with the sector |
-| SF-WAFER_FAB | SOL_ARK_60K to WAFER_FAB | ELEC | 0.407 kW | stops with the sector |
+| SF-WAFER_FAB | SOL_ARK_60K to WAFER_FAB | ELEC | 0.261 kW | stops with the sector |
 | SF-WET_BENCH | SOL_ARK_60K to WET_BENCH | ELEC | 0.207 kW | stops with the sector |
 
 Table 3.7. MFG off. Sector type: Process (Mass transform).
@@ -734,7 +734,7 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | SF-TFE_SYN | SOL_ARK_60K to TFE_SYN | POLYMERS | 0.399 kW | left without a source: consumer goes short |
 | SF-TI_CELL | SOL_ARK_60K to TI_CELL | FOUNDRY | 0.5 kW | left without a source: consumer goes short |
 | SF-VDF_SYN | SOL_ARK_60K to VDF_SYN | POLYMERS | 0.513 kW | left without a source: consumer goes short |
-| SF-WAFER_FAB | SOL_ARK_60K to WAFER_FAB | FAB | 0.407 kW | left without a source: consumer goes short |
+| SF-WAFER_FAB | SOL_ARK_60K to WAFER_FAB | FAB | 0.261 kW | left without a source: consumer goes short |
 | SF-WAX_PATTERN | SOL_ARK_60K to WAX_PATTERN | FOUNDRY | 0.5 kW | left without a source: consumer goes short |
 | SF-WET_BENCH | SOL_ARK_60K to WET_BENCH | FAB | 0.207 kW | left without a source: consumer goes short |
 | SF-WIRE_DRAW | SOL_ARK_60K to WIRE_DRAW | MFG | 0.0189 kW | left without a source: consumer goes short |

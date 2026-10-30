@@ -276,13 +276,12 @@ def x_els_residuals(g, N, E, d):
             dict(item='critical-capacity lock (drivers, NFPA 110)', kW=v('ELEC.generation-train.BACKUP_GEN.crit_HABITATION_kW'))])
 
     # 3) WAFER_FAB + WET_BENCH: tool lists from AQS-EQP-FAB-001 (litho now on its own real tools, A-M-287)
-    cp_si, L_si, T_melt = 0.9, 1790.0, 1414.0                      # kJ/kg K, kJ/kg (CRC_SI)
     from flow_graph.param import fab_silicon
     SIL = fab_silicon.design(d)                                   # charge and pull interval from the wafer need (A-M-417)
-    cz = SIL['charge_kg'] * (cp_si * (T_melt - 25) + L_si) / 3600   # kWh per pull, charge heat-up
-    hz = v('FAB.wafer-line-train.cz_hotzone_kW') * SIL['ar_h']       # kWh per pull, hot-zone heater over the hours under argon
+    cz = SIL['charge_heat_kWh']                                     # kWh per pull, charge heat-up (CRC_SI cp and L)
+    hz = SIL['hz_kWh_pull']                                         # kWh per pull, hot-zone heat-loss model while heated (A-M-436)
     camp = SIL['interval_d']
-    fab = [(f"CZ puller: charge heat-up + hot zone over {SIL['ar_h']:.1f} h, one pull every {camp:.0f} d", (cz + hz) / camp / 24),
+    fab = [(f"CZ puller: charge heat-up + hot zone {SIL['hz']['kW']:.2f} kW over {SIL['hot_h']:.1f} h + graphite heat-up, one pull every {camp:.0f} d", (cz + hz) / camp / 24),
            ('ingot cool/anneal station: N2 circulator duty share', 0.02),
            ('crop/grind/edge tools at 5 starts/d', 0.04),
            ('FAB_TOOL dry row parasitics (ox, RTA, metal, probe standby)', 0.12),
@@ -290,9 +289,13 @@ def x_els_residuals(g, N, E, d):
     fab_kw = round(sum(x[1] for x in fab), 4)
     _st('WAFER_FAB', fab_kw,
         f"AQS-EQP-FAB-001 sec.3 tool train (CZ class) at {v('FAB.litho-train.starts_per_d')} wafer starts/d: CZ charge "
-        f"{cz:.2f} kWh/pull heat-up (CRC_SI cp/L) + {hz:.0f} kWh/pull hot zone, one pull every {camp:.0f} d (A-M-417) + tool-row parasitics; litho moved to the real "
+        f"{cz:.2f} kWh/pull heat-up (CRC_SI cp/L) + {hz:.0f} kWh/pull hot zone from its heat-loss model (A-M-436), meltdown peak {SIL['melt_peak_kW']:.1f} kW, one pull every {camp:.0f} d (A-M-417) + tool-row parasitics; litho moved to the real "
         f"LITHO_* tools (A-M-287); was the 2 kW PECVD+belt study share.",
         design=[dict(item=i, kW=round(w, 4)) for i, w in fab] + [dict(item='total connected (calculated)', kW=fab_kw)])
+    if 'WAFER_FAB' in N:
+        N['WAFER_FAB']['params']['cz_hotzone'] = dict(model='heat-loss model of the hot zone (fab_silicon.hotzone, A-M-436)',
+            held_kW=round(SIL['hz']['kW'], 4), terms_kW={k: round(x, 4) for k, x in SIL['hz']['terms_kW'].items()},
+            graphite_kg=round(SIL['hz']['graphite_kg'], 2), meltdown_peak_kW=round(SIL['melt_peak_kW'], 3), hours_heated_per_pull=round(SIL['hot_h'], 2))
     from .sizing import heat as HT
     bath_L, bath_C, n_b = v('FAB.wet-bench-train.bath_L'), v('FAB.wet-bench-train.bath_C'), int(v('FAB.wet-bench-train.heated_baths'))
     _, b_loss = HT.insulated_cylinder(bath_C, 300.0, 0.4)

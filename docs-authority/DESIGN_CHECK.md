@@ -29,7 +29,7 @@ Table 2.1. Closed-form checks
 | QC-03 | `flow_graph/param/receivers.py` | CRYO_CO2 pressure-design wall mm | 1.085 | 1.085 | 2 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_A stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
 | QC-04 | `docs-authority/HEAT_LADDER.md` | Q4_B stored kWh over 30 K (basis 20 kWh_th Q4 hold) | 20 | 20.9 | 10 % | pass |
-| QC-05 | `flow_graph/param/write_graph.py` | kW of the 72 feeder-supplied units: node continuous kW vs SF- feeder edges | 134.9057 | 134.9057 | 1 % | pass |
+| QC-05 | `flow_graph/param/write_graph.py` | kW of the 72 feeder-supplied units: node continuous kW vs SF- feeder edges | 134.7599 | 134.7599 | 1 % | pass |
 | QC-06 | `docs-authority/_struct_loads.py` | equipment rows with test >= operating >= empty | 179 | 179 | 0 % | pass |
 | QC-07 | `flow_graph/param/write_graph.py` | stream compositions sum to 1 and match their note (217 streams) | 216 | 217 | 2 % | fail IA-PCA-REJECT |
 | QC-09 | `flow_graph/param/receivers.py` | H2 bank kg at 200 bar vs the sized store (AQS-ELEC-007 / X-PAR-12 basis in the graph) | 17 | 17.406 | 5 % | pass |

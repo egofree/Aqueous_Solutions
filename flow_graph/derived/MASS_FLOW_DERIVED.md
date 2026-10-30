@@ -65,8 +65,8 @@ Only namespace=S and SANDBOX mass-layer edges listed (MFD campus view).
 | S67 | AFTERBURNER_FLUE→FLUE_KO | — | present | 117.42759 kg/d | Knockout before any CO2 claim. |
 | S67B | FLUE_KO→CRYO_CO2 | — | present | 14.050492 kg/d | Only the CO2-rich cut. Reject N2/O2/NOx. |
 | S68 | CRYO_AHU→LEACH_CSTR_1 | — | present | 78.987901 kg/d | Acid condensate stays process. |
-| S69 | ZNBR2→ZNBR2_BR2_REGEN | — | present | 916.335548 kg/d | Own tower. |
-| S69B | ZNBR2_BR2_REGEN→ZNBR2 | — | present | 916.335548 kg/d | Return to the bromine tank only. |
+| S69 | ZNBR2→ZNBR2_BR2_REGEN | — | present | 915.705223 kg/d | Own tower. |
+| S69B | ZNBR2_BR2_REGEN→ZNBR2 | — | present | 915.705223 kg/d | Return to the bromine tank only. |
 | S70 | CRYO_AHU_COND_CONDENSABLE→FLUE_KO | — | present | 0.0521 kg/d | Not into the hydrogen box. |
 | S71 | MET_AHU→MET_SCRUB | Partial / Claimed | present | 20458.32 kg/d | From register: MET_AHU → MET_SCRUB / baghouse |
 | S72 | MET_SCRUB→LEACH_CSTR_1 | — | present | 2.4442 kg/d | Fines only. |

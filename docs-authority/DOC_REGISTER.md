@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | BA | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | BB | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -152,7 +152,7 @@ Table 3.1. Document numbers in use
 | AQS-END-002 | `docs-authority/EOL_RETURN.md` | D | 2026-10-21 | End-of-life material return | current |
 | AQS-ENV-FP-MET | `notes/VESSEL_ENVELOPES.md` | A | 2026-10-16 | Vessel envelopes — fluoropolymer train and critical-metal cells | current |
 | AQS-EQP-CRY-001 | `docs-authority/CRYO_EQUIPMENT.md` | G | 2026-10-29 | Cryogenic equipment list | current |
-| AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | G | 2026-10-29 | Wafer fab equipment and process list | current |
+| AQS-EQP-FAB-001 | `docs-authority/WAFER_FAB_EQUIPMENT.md` | H | 2026-10-29 | Wafer fab equipment and process list | current |
 | AQS-EQP-FAB-PV-001 | `docs-authority/SOLAR_CELL_EQUIPMENT.md` | D | 2026-10-29 | Solar-cell line equipment | current |
 | AQS-EQP-FAB-RGN-001 | `docs-authority/FAB_WET_REAGENTS.md` | B | 2026-10-01 | Fab wet reagents — wet-line synth forks | current |
 | AQS-EQP-FAB-UPW-001 | `docs-authority/FAB_UPW.md` | B | 2026-09-27 | Fab UPW — equipment list | current |

@@ -84,7 +84,7 @@ Table 6.1. Graph values against the solver
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3024.000 | 3024.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3021.000 | 3021.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 7. Acid-loop decision (X-PAR-04)
 
@@ -198,7 +198,7 @@ Table 7.6. Photoresist streams at the present wafer starts
 
 ## 8. Drivers
 
-Table 8.1 lists the 973 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 987 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -983,7 +983,21 @@ Table 8.1. Drivers
 | FAB.wafer-line-train.cz_ar_slpm_per_cm2 | 0.03 | slpm argon per cm2 of crucible area (about 40 slpm on a 16 inch crucible) | A-M-417 | — |
 | FAB.wafer-line-train.si_liquid_rho_g_cm3 | 2.57 | g/cm3 liquid silicon density at the melting point (CRC_SI) | A-M-417 | — |
 | FAB.wafer-line-train.cz_min_depth_frac | 0.25 | - least melt depth for a pull, as a share of the crucible diameter | A-M-417 | — |
-| FAB.wafer-line-train.cz_hotzone_kW | 35.0 | kW hot-zone heater duty of a 16 inch crucible puller while under argon (class value, to be measured) | A-M-417 | — |
+| FAB.wafer-line-train.hz_heater_C | 1500.0 | C heater and inner felt face while the melt is held and pulled: above the 1414 C melt by the drop through the crucible wall and the melt (CRC_SI melting point) | CRC_SI | yes |
+| FAB.wafer-line-train.hz_wall_C | 40.0 | C water-cooled chamber wall, the cold sink of the felt and of the radiation through the shield opening | INCROPERA7 | — |
+| FAB.wafer-line-train.hz_gap_mm | 40.0 | mm radial gap from the crucible wall to the inner felt face: graphite susceptor, heater and clearances | INCROPERA7 | yes |
+| FAB.wafer-line-train.hz_height_ratio | 1.2 | - inner height of the felt pack over the crucible diameter: crucible, pedestal and heater above the melt | INCROPERA7 | yes |
+| FAB.wafer-line-train.hz_felt_mm | 100.0 | mm graphite felt pack on the sides, top and bottom of the hot zone | SGL_SIGRATHERM | yes |
+| FAB.wafer-line-train.hz_felt_k_W_mK | 0.25 | W/(m K) graphite soft felt in argon at the mean felt temperature of about 800 C | SGL_SIGRATHERM | yes |
+| FAB.wafer-line-train.hz_open_ratio | 1.3 | - heat-shield opening over the ingot diameter; the melt radiates to the cold lid through the annulus | INCROPERA7 | yes |
+| FAB.wafer-line-train.si_melt_emissivity | 0.25 | - total emissivity of liquid silicon, about 0.2 to 0.3 in the visible and infrared | TAKASUKA1997 | — |
+| FAB.wafer-line-train.si_k_solid_W_mK | 22.0 | W/(m K) thermal conductivity of solid silicon near the melting point | GLASSBRENNER1964 | — |
+| FAB.wafer-line-train.si_cp_kJ_kgK | 0.9 | kJ/(kg K) silicon specific heat averaged over 25 to 1414 C | CRC_SI | — |
+| FAB.wafer-line-train.si_latent_kJ_kg | 1790.0 | kJ/kg enthalpy of fusion of silicon | CRC_SI | — |
+| FAB.wafer-line-train.cz_voronkov_mm2_Kmin | 0.13 | mm2/(K min) critical ratio of pull rate to axial gradient at the growth interface; the hot zone is set to this ratio for a defect-lean crystal, so the gradient follows from the pull rate | VORONKOV1982 | — |
+| FAB.wafer-line-train.hz_graphite_t_mm | 15.0 | mm wall of the graphite susceptor and of the heater, both heated to the hot-zone temperature at each meltdown | INCROPERA7 | yes |
+| FAB.wafer-line-train.graphite_rho_g_cm3 | 1.8 | g/cm3 isostatic graphite | INCROPERA7 | — |
+| FAB.wafer-line-train.graphite_cp_kJ_kgK | 1.5 | kJ/(kg K) graphite specific heat averaged over 25 to 1500 C | INCROPERA7 | — |
 | h2so4_route | "GYPSUM_LOOP" | - sulfuric acid route: GYPSUM_LOOP (HF kiln cake reduced with char to SO2, sulfur ore make-up) or SULFUR_ORE (native sulfur ore burned), both on a contact converter | A-M-421 | — |
 | caso4_dec_frac | 0.9 | - fraction of the anhydrite in the HF kiln cake reduced to SO2 in the cake kiln (reductive decomposition class) | A-M-421 | — |
 | caso4_kiln_T_C | 1150.0 | C cake kiln temperature for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 | A-M-421 | — |
@@ -1302,6 +1316,7 @@ Table 9.1. References
 | EVAPCRYST_MVR | EvapCryst / manufacturer application notes on MVR evaporators: 15-25 kWh/t water for low boiling-point elevation, 30-60 kWh/t for high. |
 | FORMOX_REVIEW2021 | A Review and Experimental Revisit of Alternative Catalysts for Selective Oxidation of Methanol to Formaldehyde, Catalysts 11 (2021) 1329: Formox at ambient pressure, 250-400 C, conversion above 99 %, yield 88-92 %, MeOH about 10 mol% and O2 about 10 mol% in recycled tail gas, kept on the lean side of the explosive limit; tubes 1-1.5 m. |
 | GAO2010 | Gao F., Pyrolysis of waste plastics into fuels, PhD thesis, University of Canterbury (2010): measured heat of pyrolysis of polyolefins about 1.0-1.3 MJ/kg. |
+| GLASSBRENNER1964 | Glassbrenner C.J., Slack G.A., Thermal conductivity of silicon and germanium from 3 K to the melting point, Physical Review 134 (1964) A1058-A1069: about 22 W/(m K) for silicon near 1680 K. |
 | GREENLEE2009 | Greenlee L.F., Lawler D.F., Freeman B.D., Marrot B., Moulin P., Reverse osmosis desalination: water sources, technology, and today's challenges, Water Research 43 (2009) 2317-2348: brackish-water RO specific energy about 0.5-3 kWh/m3. |
 | GREENWOOD | Greenwood N.N., Earnshaw A., Chemistry of the Elements, 2nd ed., Butterworth-Heinemann (1997): basic oxides dissolve in HCl to chlorides and water (Al2O3 + 6 HCl, MO + 2 HCl). |
 | GRJOTHEIM1988 | Grjotheim K., Welch B.J., Aluminium Smelter Technology: A Pure and Applied Approach, 2nd ed., Aluminium-Verlag, Duesseldorf (1988): heat balance of electrolysis cells; the cell voltage above the thermoneutral voltage supplies the heat lost through the lining, so a reduced current needs added heat to keep the bath molten. |
@@ -1452,12 +1467,14 @@ Table 9.1. References
 | SCHACHT2004 | Schacht C.A. (ed.), Refractories Handbook, Marcel Dekker / CRC Press (2004), DOI 10.1201/9780203026328: alumina-silica brick (ch. 4), carbonaceous/graphite hot faces (ch. 8), refractory castables (ch. 10), thermomechanical lining design (ch. 13) and installation practice (ch. 17) for melt-shop furnaces, kilns and chloride-cell backup linings. |
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
 | SEAWATER_MILLERO | Millero et al. (2008), standard seawater composition at practical salinity 35: total salinity 35.165 g/kg; sodium 10.78 g/kg, chloride 19.35 g/kg, magnesium 1.284 g/kg, bromide 0.067 g/kg (AQS-PLAN-011 section 10). |
+| SGL_SIGRATHERM | SGL Carbon, SIGRATHERM soft and rigid graphite felt, technical data sheets: thermal conductivity in argon of about 0.15 to 0.35 W/(m K) between 1000 and 2000 C for felts of 0.08 to 0.15 g/cm3. |
 | SKF_RELUB | SKF Group, Rolling bearings catalogue (publication 17000, 2018), Lubrication: the grease quantity for relubrication from the side is Gp = 0.005 D B grams (D outside diameter and B width in mm). |
 | SOLAS | Safety of Life at Sea convention: fire protection, life-saving appliances and evacuation (AQS-PLAN-011 section 10). |
 | SPECIAL_METALS_I600 | Special Metals Corporation, INCONEL alloy 600 product data sheet (publication SMC-027, 2008): density 8.47 Mg/m3, specific heat 444 J/(kg K) at 21 C. |
 | STRATHMANN2004 | Strathmann H., Ion-Exchange Membrane Separation Processes, Membrane Science and Technology Series 9, Elsevier (2004), ch. 4-5: reversible water-dissociation voltage of a bipolar membrane 0.059 V per pH unit (0.83 V at delta pH 14, 25 C); practical bipolar membrane voltage drop about 0.9-1.2 V at 100-200 A/m2; monopolar ion-exchange membrane area resistance about 2-5 ohm cm2 in 0.5 M NaCl; spacer shadow effect on solution resistance. |
 | SU2018_PYRO | Experimental study of thermal and catalytic pyrolysis of plastic waste components, Sustainability 10 (2018) 3979, doi:10.3390/su10113979: 460 C batch thermal pyrolysis oil, LDPE 24 % C7-C12 / 30 % C13-C20 / 46 % C21-C40; PP 44/33/23; liquid conversion 94 % LDPE, 86 % PP. |
 | TAIZ2015 | Taiz L., Zeiger E., Moller I.M., Murphy A., Plant Physiology and Development, 6th ed., Sinauer (2015), ch. 8-9: net photosynthesis CO2 + H2O -> (CH2O) + O2, photosynthetic quotient near 1.0; transpiration is the water taken up less the water fixed in biomass. |
+| TAKASUKA1997 | Takasuka E., Tokizaki E., Terashima K., Kimura S., Emissivity of liquid silicon in visible and infrared regions, Journal of Applied Physics 81 (1997) 6384-6389: liquid silicon emissivity of about 0.2 to 0.3. |
 | TIAN2015 | Tian P., Wei Y., Ye M., Liu Z., Methanol to olefins (MTO): from fundamentals to commercialization, ACS Catalysis 5 (2015) 1922-1938: CH3OH to ethylene and propylene over SAPO-34 at 400-500 C with full methanol conversion; the water of reaction is one H2O per CH3OH, and the C4+ by-products are recycled or cracked |
 | TOWLER2013 | Towler G., Sinnott R., Chemical Engineering Design: Principles, Practice and Economics of Plant and Process Design, 2nd ed., Butterworth-Heinemann (2013): choice between batch and continuous operation; batch and campaign operation suit small production rates and multi-product trains. |
 | TREYBAL3 | Treybal R.E., Mass-Transfer Operations, 3rd ed., McGraw-Hill (1980), ch. 2-3 (film theory) and ch. 8 (gas absorption, HTU/NTU). |
@@ -1493,6 +1510,7 @@ Table 9.1. References
 | USSA1976 | NOAA, NASA and USAF, U.S. Standard Atmosphere, 1976, NOAA-S/T 76-1562, U.S. Government Printing Office (1976): sea-level composition of dry air by volume (N2 0.78084, O2 0.209476, Ar 0.00934) and the sea-level pressure 101 325 Pa. |
 | US_ANTARCTIC_ACT | Antarctic Conservation Act (16 USC 2401 et seq.) and 45 CFR Part 670: the United States implementing regulations for the Madrid Protocol (AQS-PLAN-011 section 7, [15]). |
 | VOGELBUSCH_MVR | Vogelbusch Biocommodities, mechanical vapour recompression evaporators, manufacturer data table: specific power 19-72 kWh per t water evaporated, rising with boiling-point elevation and stage count. |
+| VORONKOV1982 | Voronkov V.V., The mechanism of swirl defects formation in silicon, Journal of Crystal Growth 59 (1982) 625-643: the ratio of pull rate to axial temperature gradient at the interface, about 0.13 mm2/(K min), separates vacancy-rich from interstitial-rich silicon. |
 | WALTON2015 | Walton A. et al., The use of hydrogen to separate and recycle neodymium-iron-boron-type magnets from electronic waste, Journal of Cleaner Production 104 (2015) 236-241. |
 | WANG2006_ADS | Wang R.Z., Oliveira R.G., Adsorption refrigeration - An efficient way to make good use of waste heat and solar energy, Progress in Energy and Combustion Science 32(4) (2006) 424-458, DOI 10.1016/j.pecs.2006.01.002: silica gel-water adsorption chillers driven by ~55-90 C hot water, COP 0.2-0.6 (commercial units to 0.7), beds housed as sealed adsorber shells. |
 | WAVE_GLOBAL | About 2.11 TW of wave power crosses the world coasts and open-ocean contours, unevenly spread (AQS-PLAN-011 section 10). |
@@ -1504,7 +1522,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 301 drivers and then the 383 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 308 drivers and then the 384 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1787,6 +1805,13 @@ Table 10.1. Values to verify
 | driver POLYMERS.fluoropolymer-train.hf_kiln.residence_min | 30.0 min | kiln exit HF strength vs residence at the first-article campaign |
 | driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task |
 | driver FAB.wafer-line-train.campaign_d | 7.0 d | logged campaign schedule at the fab commissioning task |
+| driver FAB.wafer-line-train.hz_heater_C | 1500.0 C heater and inner felt face while the melt is held and pulled: above the 1414 C melt by the drop through the crucible wall and the melt (CRC_SI melting point) | log the heater pyrometer at the first pull and compare with this value |
+| driver FAB.wafer-line-train.hz_gap_mm | 40.0 mm radial gap from the crucible wall to the inner felt face: graphite susceptor, heater and clearances | measure on the hot-zone drawing of the first puller |
+| driver FAB.wafer-line-train.hz_height_ratio | 1.2 - inner height of the felt pack over the crucible diameter: crucible, pedestal and heater above the melt | measure on the hot-zone drawing of the first puller |
+| driver FAB.wafer-line-train.hz_felt_mm | 100.0 mm graphite felt pack on the sides, top and bottom of the hot zone | measure on the hot-zone drawing of the first puller |
+| driver FAB.wafer-line-train.hz_felt_k_W_mK | 0.25 W/(m K) graphite soft felt in argon at the mean felt temperature of about 800 C | measure the cold-face temperature of the felt at the first pull |
+| driver FAB.wafer-line-train.hz_open_ratio | 1.3 - heat-shield opening over the ingot diameter; the melt radiates to the cold lid through the annulus | measure on the hot-zone drawing of the first puller |
+| driver FAB.wafer-line-train.hz_graphite_t_mm | 15.0 mm wall of the graphite susceptor and of the heater, both heated to the hot-zone temperature at each meltdown | weigh the susceptor and heater of the first puller |
 | driver foundry_ca_add_frac | 0.0015 kg Ca deoxidizer/desulfurizer per kg melt charge | first-article heats: Ca treatment recovery (O/S in the product) at 0.10-0.20 % of charge |
 | driver al_mg_melt_loss_frac | 0.2 fraction of the alloy Mg oxidised to the dross per remelt of the aluminium scrap (ASM_V15_AL, Mg loss of Al-Mg alloys in remelting) | Mg assay of the Al melt before and after a remelt at the first article |
 | driver flux_salt_recovery_frac | 0.8 fraction of the MgCl2 salt flux recovered from the dross salt cake by water leach and evaporation (ASM_V15_AL, salt-cake recycling) | chloride balance of a salt-cake leach batch |
@@ -2194,3 +2219,4 @@ Table 10.1. Values to verify
 | A-M-431 | The chlorine of the VDF and TFE reactors has two built … kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. |
 | A-M-432 | POLY_TO_FAB carries the wafer-fab photoresist, sized from … kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. |
 | A-M-433 | The standby and return route sets of task X-RTE are decided … kg/d | python3 -m flow_graph.param.standby_routes prints each rated case; after regen the X-RTE standby and return groups list only the assay-dependent and owner-held routes, and test_balance passes with no reconciled move. |
+| A-M-436 | The heater duty of the CZ hot zone in WAFER_FAB is found … kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model |

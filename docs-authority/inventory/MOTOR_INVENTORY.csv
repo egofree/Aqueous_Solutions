@@ -66,7 +66,7 @@ ELEC,pem_fc,FUEL_CELL,transfer pump IA-FC-LEACH to LEACH_CSTR_1,BLDC,42 mm (NEMA
 ELEC,pem_fc,FUEL_CELL,transfer pump S52 to VCD_TRAIN,BLDC,42 mm (NEMA 17 flange),0.0001,24 V DC,S3,BLDC driver,1,"42.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 ELEC,rectifier,RECTIFIER,cooling fan,BLDC,57 mm (NEMA 23 flange),0.05,24 V DC,S1,BLDC driver,4,assumed per cabinet
 ELEC,scrubber,ZNBR2_BR2_REGEN,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
-ELEC,scrubber,ZNBR2_BR2_REGEN,transfer pump S69B to ZNBR2,BLDC,42 mm (NEMA 17 flange),0.0026,24 V DC,S1,BLDC driver,1,"916.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
+ELEC,scrubber,ZNBR2_BR2_REGEN,transfer pump S69B to ZNBR2,BLDC,42 mm (NEMA 17 flange),0.0026,24 V DC,S1,BLDC driver,1,"915.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 FAB,FAB,WAFER_FAB,induced-draft fan,BLDC,42 mm (NEMA 17 flange),0.01,24 V DC,S1,BLDC driver,1,"2.0 kg/d gas at 1000 Pa, eff 0.5 (assumed)"
 FAB,FAB,WAFER_FAB,process vacuum pump,induction IE3,IEC 90S / 1.1 kW,0.75,480 V 3-ph,S1,fixed speed,1,assumed
 FAB,FAB,WAFER_FAB,transfer pump IA-FAB-SPENT to LEACH_CSTR_1,BLDC,42 mm (NEMA 17 flange),0.0002,24 V DC,S3,BLDC driver,1,"66.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"

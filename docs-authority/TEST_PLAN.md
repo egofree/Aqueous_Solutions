@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 64 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 484 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 492 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 684 items: 301 drivers, 383 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 692 items: 308 drivers, 384 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -228,6 +228,13 @@ Total 684 items: 301 drivers, 383 register entries. Classification rule: first m
 | driver DIGESTER.metals-leach-train.htc_header_T_K | 473.15 K | steam heater temperature vs duty sheet | X-PAR |
 | driver ELEC.storage-train.ZNBR2.purge_air_T_C | 25.0 C purge air temperature | Compare with the HVAC design room and line temperatures | X-PAR |
 | driver FAB.litho-train.starts_per_d | 5 wafer starts/d | lock the wafer starts rate at the fab product-basis task | X-PAR |
+| driver FAB.wafer-line-train.hz_felt_k_W_mK | 0.25 W/(m K) graphite soft felt in argon at the mean felt temperature of about 800 C | measure the cold-face temperature of the felt at the first pull | X-PAR |
+| driver FAB.wafer-line-train.hz_felt_mm | 100.0 mm graphite felt pack on the sides, top and bottom of the hot zone | measure on the hot-zone drawing of the first puller | X-PAR |
+| driver FAB.wafer-line-train.hz_gap_mm | 40.0 mm radial gap from the crucible wall to the inner felt face: graphite susceptor, heater and clearances | measure on the hot-zone drawing of the first puller | X-PAR |
+| driver FAB.wafer-line-train.hz_graphite_t_mm | 15.0 mm wall of the graphite susceptor and of the heater, both heated to the hot-zone temperature at each meltdown | weigh the susceptor and heater of the first puller | X-PAR |
+| driver FAB.wafer-line-train.hz_heater_C | 1500.0 C heater and inner felt face while the melt is held and pulled: above the 1414 C melt by the drop through the crucible wall and the melt (CRC_SI melting point) | log the heater pyrometer at the first pull and compare with this value | X-PAR |
+| driver FAB.wafer-line-train.hz_height_ratio | 1.2 - inner height of the felt pack over the crucible diameter: crucible, pedestal and heater above the melt | measure on the hot-zone drawing of the first puller | X-PAR |
+| driver FAB.wafer-line-train.hz_open_ratio | 1.3 - heat-shield opening over the ingot diameter; the melt radiates to the cold lid through the annulus | measure on the hot-zone drawing of the first puller | X-PAR |
 | driver GAS.headers.meam_header_P_bar | 20.7 bar a | MeAM loop design pressure vs duty sheet | X-PAR |
 | driver GAS.headers.meam_header_T_K | 673.15 K | MeAM loop temperature vs duty sheet | X-PAR |
 | driver GAS.headers.methanol_synth_loop_P_bar | 50.0 bar a | loop reactor design pressure vs MEOH_SYNTH duty sheet | X-PAR |
@@ -700,6 +707,7 @@ Total 684 items: 301 drivers, 383 register entries. Classification rule: first m
 | A-M-430 | MG_POT_TO_IND carries magnesium for alloying the cast alumin kg/d; A | After regen MG_POT_TO_IND equals al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac, MG_POT and IND_MELT close, and python3 -m flow_graph.param.recovery lists the Mg record with no flags. | QA audit 2026-10-30, X-RTE-MG_POT_TO_IND |
 | A-M-431 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. | QA audit 2026-10-30, X-RTE-AL_POT_CL2 |
 | A-M-432 | POLY_TO_FAB carries the wafer-fab photoresist, sized from th kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-30, X-RTE-POLY_TO_FAB |
+| A-M-436 | The heater duty of the CZ hot zone in WAFER_FAB is found fro kW | log the heater power through the meltdown and the body pull of the first CZ pull and the felt cold-face temperature, and compare each with the hot-zone model | QA audit 2026-10-30, X-RTE-CZ-HOTZONE |
 
 ## 7. T6 Commissioning measurements
 

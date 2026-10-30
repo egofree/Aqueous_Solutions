@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: BA
+Revision: BB
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -59,6 +59,7 @@ Date: 2026-10-29
 | AY | Batch 44a: the gas and hydrogen no-flow routes retired as duplicates or sourceless, and IA-H2P-H2O listed under the owner holds (A-M-434) | 2026-10-30 |
 | AZ | Batch 44b: the polymer and foundry no-flow routes: methanol-to-olefin built as the selectable olefin feed, the generator fuel rated, seven routes retired (A-M-435) | 2026-10-30 |
 | BA | Page STUDY_UNITS_STUB rewritten (AQS-EQP-STUDY-001 revision G): current status of each study unit, with the study methods kept as the record | 2026-10-30 |
+| BB | Batch 46a: the CZ hot-zone heater from a heat-loss model with every input a driver (A-M-436); AQS-EQP-FAB-001 revision H | 2026-10-30 |
 
 ## 1. Purpose and scope
 

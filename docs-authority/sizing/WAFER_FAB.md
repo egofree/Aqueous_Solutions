@@ -17,7 +17,7 @@ This page records the size of unit WAFER_FAB, of class `fab` in sector FAB, from
 
 ## 2. Duty
 
-The unit takes 72.5506 kg/d by 9 streams and gives 72.5506 kg/d by 8 streams. Its continuous electrical load is 0.4069 kW, fed by stream SF-WAFER_FAB.
+The unit takes 72.5506 kg/d by 9 streams and gives 72.5506 kg/d by 8 streams. Its continuous electrical load is 0.2611 kW, fed by stream SF-WAFER_FAB.
 
 The graph holds no design parameters for the unit.
 

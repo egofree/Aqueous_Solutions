@@ -63,7 +63,6 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | NAOH_PLANT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | TI_CELL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | WAX_PATTERN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | WAFER_FAB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | SHELL_BREAK | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | TFE_SYN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | SOLAR_PV_CELL | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
@@ -71,6 +70,7 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | MG_POT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | HF_GEN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | SHELL_BUILD | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | WAFER_FAB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | SHELL_BURNOUT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | MET_MELT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | WET_BENCH | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |

@@ -1,0 +1,7 @@
+# Rewrite batch 46a: CZ hot-zone heater from a heat-loss model
+
+Task X-RTE-CZ-HOTZONE is closed. The heater duty of the CZ puller in WAFER_FAB was a class value of 35 kW, charged for every hour under argon, including the cool-down. It is now found from a heat-loss model of the hot zone in `flow_graph/param/fab_silicon.py` (A-M-436).
+
+While the melt is held and pulled, the heater makes up four losses. The first is conduction through the graphite felt on the sides, top and bottom. The second is radiation from the melt through the heat-shield opening. The third is the heat the melt gives to the crystal: the conduction up the crystal at the interface, less the latent heat that the growth releases. The fourth is the sensible heat of the argon purge. The axial gradient at the interface follows from the pull rate by the Voronkov ratio. At each meltdown the heater also brings the graphite susceptor and heater up to temperature, and it is off during the cool-down.
+
+Every input is a driver with its basis, and the new references are VORONKOV1982, GLASSBRENNER1964, TAKASUKA1997 and SGL_SIGRATHERM. No calibration factor is applied. The model is to be checked against the heater power log of the first pull, and that check is recorded in A-M-436. The puller page AQS-EQP-FAB-001 gains section 4.3 with the terms at revision H. The fab average load falls, and the PV pin of `test_system_tree.py` follows it. The balance fit moves no rate. The meltdown peak is stored on the WAFER_FAB node, but no one-line generator reads a peak yet.

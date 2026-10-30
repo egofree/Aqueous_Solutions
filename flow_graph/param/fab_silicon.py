@@ -13,6 +13,15 @@ Blanket gas. The puller runs under argon from the cold box (CRYO_ASU) for the me
 cool-down. Flow scales with the crucible area. The exhaust returns to CRYO_ASU through its heated argon getter, so the loop
 is closed and the supply equals the return. Nitrogen is not a valid CZ ambient: at the melt temperature it forms silicon
 nitride on the melt and the crucible (cz_blanket_gas = 'N2' is refused); nitrogen stays the purge of the wafer tools (S03).
+
+Hot zone (A-M-436). The heater duty is a heat-loss model of the hot zone, not a class value. While the melt is held and pulled the
+heater makes up: conduction through the graphite felt on the sides (a cylinder, Fourier) and on the top and bottom (flat discs);
+radiation from the melt through the annulus of the heat-shield opening to the cold lid (grey body, emissivity of liquid silicon);
+the heat the melt gives to the crystal, which is the conduction up the crystal at the interface, k G, less the latent heat that
+the growth itself releases, rho v L; and the sensible heat of the argon purge, which leaves at the heater temperature. The axial
+gradient G follows from the pull rate v by the Voronkov ratio at which the crystal grows defect-lean. At each meltdown the heater
+also brings the graphite susceptor and heater up to temperature. During cool-down the heater is off. Every input is a driver, and
+the model is to be checked against the heater power log of the first pull; no calibration factor is applied.
 Run: python3 -m flow_graph.param.fab_silicon"""
 import json, math, os
 from . import drivers as DR
@@ -20,6 +29,34 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 F = 'FAB.wafer-line-train.'
 TAG = 'X-MFG-40 TF (A-M-417)'
 AR_RHO_STD = 1.784          # g/L argon at 0 C and 1 atm, the reference of a standard litre per minute
+SIGMA = 5.670374e-8         # W/(m2 K4) Stefan-Boltzmann constant (CODATA 2018, INCROPERA7)
+R_GAS, M_AR = 8.314462, 39.948   # J/(mol K), g/mol; a monatomic gas has cp = 5/2 R / M
+
+def felt_box(d, T_in_C, r_in_m, h_in_m, open_m2=0.0):
+    """Conduction loss (W) through a felt pack around a cylinder of inner radius r_in and height h_in: Fourier through the side
+    cylinder and through the top and bottom discs, less any opening in the top. The outer face sits at the cold wall."""
+    k = DR.val(d, F + 'hz_felt_k_W_mK'); t = DR.val(d, F + 'hz_felt_mm')/1000; dT = T_in_C - DR.val(d, F + 'hz_wall_C')
+    side = 2*math.pi*k*h_in_m*dT/math.log((r_in_m + t)/r_in_m)
+    ends = k*(2*math.pi*r_in_m**2 - open_m2)*dT/t
+    return side, ends
+
+def hotzone(d, cru_D_cm, ingot_D_cm, pull_mm_h, ar_slpm):
+    """Heater duty (kW) of the CZ hot zone while the melt is held and pulled, by term, and the heat (kWh) to bring the graphite up (A-M-436)."""
+    v = lambda k: DR.val(d, F + k)
+    Th = v('hz_heater_C'); Tw = v('hz_wall_C') + 273.15; Tm = 1414.0 + 273.15      # melting point of silicon (CRC_SI)
+    r_cru = cru_D_cm/200; r_in = r_cru + v('hz_gap_mm')/1000; h_in = v('hz_height_ratio')*cru_D_cm/100
+    r_ing = ingot_D_cm/200; r_open = r_ing*v('hz_open_ratio'); a_open = math.pi*(r_open**2 - r_ing**2); a_ing = math.pi*r_ing**2
+    side, ends = felt_box(d, Th, r_in, h_in, math.pi*r_open**2)
+    rad = v('si_melt_emissivity')*SIGMA*(Tm**4 - Tw**4)*a_open
+    vel = pull_mm_h/1000/3600; G = (pull_mm_h/60)/v('cz_voronkov_mm2_Kmin')*1000     # m/s; K/m from v/G = xi (mm/min over mm2/(K min) gives K/mm)
+    k_g = v('si_k_solid_W_mK')*G*a_ing; latent = v('si_rho_g_cm3')*1000*vel*v('si_latent_kJ_kg')*1000*a_ing
+    xtal = k_g - latent
+    ar = ar_slpm/60*AR_RHO_STD/1000*2.5*R_GAS/M_AR*1000*(Th - 25)                       # kg/s x J/(kg K) x K
+    t = v('hz_graphite_t_mm')/1000; area = 2*math.pi*r_cru*h_in + math.pi*r_cru**2 + 2*math.pi*(r_in - t)*h_in
+    g_kg = area*t*v('graphite_rho_g_cm3')*1000
+    terms = dict(felt_side=side, felt_ends=ends, melt_radiation=rad, crystal=xtal, argon=ar)
+    return dict(terms_kW={k: x/1000 for k, x in terms.items()}, kW=sum(terms.values())/1000, G_K_mm=G/1000, conduction_up_crystal_kW=k_g/1000, latent_kW=latent/1000,
+                graphite_kg=g_kg, graphite_kWh=g_kg*v('graphite_cp_kJ_kgK')*(Th - 25)/3600, felt_inner_D_m=2*r_in, felt_inner_h_m=h_in)
 
 def design(d=None):
     d = d or DR.load(); v = lambda k: DR.val(d, k)
@@ -41,7 +78,13 @@ def design(d=None):
     ar_h = v(F + 'cz_melt_h') + v(F + 'cz_neck_crown_h') + pull_h + v(F + 'cz_cool_h')
     slpm = crucible_cm2*v(F + 'cz_ar_slpm_per_cm2')
     ar_kg_pull = slpm*60*ar_h*AR_RHO_STD/1000
-    return dict(wafers_per_pull=n, interval_d=interval_d, need_kg=need_kg, min_kg=min_kg, crucible_D_cm=cru_D, wafer_g=wafer_g, body_cm=body_cm, charge_kg=charge_kg, si_kg_d=si_kg_d, wafer_kg_d=wafer_kg_d,
+    hz = hotzone(d, cru_D, D, v(F + 'cz_pull_mm_h'), slpm)
+    heat_kWh = charge_kg*(v(F + 'si_cp_kJ_kgK')*(1414.0 - 25) + v(F + 'si_latent_kJ_kg'))/3600     # charge to melt (CRC_SI)
+    hot_h = v(F + 'cz_melt_h') + v(F + 'cz_neck_crown_h') + pull_h                 # heater on; off for the cool-down
+    hz_kWh = hz['kW']*hot_h + hz['graphite_kWh']
+    melt_peak = hz['kW'] + (heat_kWh + hz['graphite_kWh'])/v(F + 'cz_melt_h')
+    return dict(hz=hz, charge_heat_kWh=heat_kWh, hot_h=hot_h, hz_kWh_pull=hz_kWh, melt_peak_kW=melt_peak, pull_kWh=heat_kWh + hz_kWh,
+                wafers_per_pull=n, interval_d=interval_d, need_kg=need_kg, min_kg=min_kg, crucible_D_cm=cru_D, wafer_g=wafer_g, body_cm=body_cm, charge_kg=charge_kg, si_kg_d=si_kg_d, wafer_kg_d=wafer_kg_d,
                 loss_kg_d=loss_kg_d, holding_kg=charge_kg,
                 pull_h=pull_h, ar_h=ar_h, crucible_cm2=crucible_cm2, ar_slpm=slpm, ar_kg_pull=ar_kg_pull, ar_kg_d=ar_kg_pull/interval_d)
 
