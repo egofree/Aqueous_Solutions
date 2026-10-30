@@ -61,7 +61,7 @@ All solved units close.
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 2657.000 | 2657.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3021.000 | 3021.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 4a. Acid loop decision (X-PAR-04)
 
@@ -132,7 +132,7 @@ All solved units close.
 | ext_lpd_W_m2 | 8.8 | W/m2 | IECC2021_C405 | yes |
 | ext_light_frac | 0.1 | fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | A-M-104 | yes |
 | ext_Ra_L_s_m2 | 0.3 | L/(s m2) | ASHRAE621_2019 | yes |
-| ext_dT_mean_K | 7.9 | K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA_NORMALS_DFW | yes |
+| ext_dT_mean_K | 9.916 | K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA_WRCC_DV | yes |
 | ext_cop | 3.2 | heat pump COP | AHRI340_ASHRAE901 | yes |
 | ext_sfp_W_per_L_s | 1.25 | W per L/s | ISO16798_3 | yes |
 | ext_U_roof | 0.199 | W/(m2 K) | IECC2021_C402 | yes |
@@ -178,8 +178,8 @@ All solved units close.
 | vs_mwr | 0.08 | m3/(m h) minimum wetting rate, packings below 75 mm | PERRY9_ABS | — |
 | vs_naoh_excess | 2.0 | mol NaOH fed / mol HCl absorbed | A-M-111 | yes |
 | vs_p_shell_case | "upset" | design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported | A-M-111 | yes |
-| ext_dTh_K | 3.458 | K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | NOAA_NORMALS_DFW | yes |
-| ext_dTc_K | 4.381 | K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | NOAA_NORMALS_DFW | yes |
+| ext_dTh_K | 1.904 | K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | NOAA_WRCC_DV | yes |
+| ext_dTc_K | 8.012 | K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | NOAA_WRCC_DV | yes |
 | ext_F_slab | 1.264 | W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3 | IECC2021_C402 | yes |
 | ext_hvac | "air" | 'air', 'ground' or 'best' (lower converged footprint) | A-M-112 | yes |
 | ash_cop_h | 3.3 | air-source heat pump heating COP at 8.3 C, >= 19 kW | ASHRAE901_2019_T6812 | yes |
@@ -1234,6 +1234,7 @@ All solved units close.
 | NOAA_MCMURDO | NOAA and Antarctica New Zealand climate records, McMurdo Station (77 51 S, 166 40 E): mean annual temperature -18 C; summer extreme 8 C, winter extreme -50 C; mean wind 12 kn (6.2 m/s), gusts above 100 kn (51 m/s) (AQS-PLAN-011 section 7, [9]). |
 | NOAA_NORMALS_DFW | NOAA NCEI U.S. Climate Normals 1991-2020, Dallas-Fort Worth Intl Airport (USW00003927): annual heating degree days base 65 F about 2272, cooling degree days about 2878. |
 | NOAA_NORMALS_DV | NOAA NCEI U.S. Climate Normals 1991-2020, Death Valley NP (USC00042319), 36.46 N 116.87 W, elevation -59 m: July mean daily maximum 47.4 C, July mean daily minimum 32.8 C, mean annual precipitation 56 mm (AQS-PLAN-011 section 6). |
+| NOAA_WRCC_DV | Western Regional Climate Center (WRCC), NOAA cooperative station USC00042319 (Death Valley, CA, Furnace Creek) 1961-1990 monthly normals: annual heating degree days base 65 F = 1251, annual cooling degree days base 65 F = 5264, annual mean temperature 75.9 F. The bounding station normals of AQS-SITE-002 Rev C. |
 | NREL_NSRDB | Sengupta M. et al., The National Solar Radiation Data Base (NSRDB), Renewable and Sustainable Energy Reviews 89 (2018) 51-60; TMY hourly irradiance used by PVWatts v8. |
 | NREL_PVWATTS | NREL PVWatts Calculator v8, site run recorded in AQS-SITE-002 (5.41 kWh/kWp/d). |
 | NREL_PVWATTS8 | Dobos A.P., PVWatts Version 5 Manual, NREL/TP-6A20-62641 (2014), and NREL PVWatts Version 8 documentation (2022): module types standard (nominal efficiency about 19 %) and premium (about 21 %); ground coverage ratio input. |
@@ -1356,7 +1357,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension |
 | driver ext_light_frac | 0.1 fraction of 24 h lit; occupant-sensor controlled storage/production hall (IECC 2021 C405.2.1) | Operating schedule and daylight study |
 | driver ext_Ra_L_s_m2 | 0.3 L/(s m2) | Occupancy classification of the extension |
-| driver ext_dT_mean_K | 7.9 K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation |
+| driver ext_dT_mean_K | 9.916 K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation |
 | driver ext_cop | 3.2 heat pump COP | Selected heat-pump rating |
 | driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection |
 | driver ext_U_roof | 0.199 W/(m2 K) | Roof assembly design |
@@ -1400,8 +1401,8 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver vs_a_m2_m3 | 340.0 m2/m3 specific area of 16 mm rings | Measured ring geometry |
 | driver vs_naoh_excess | 2.0 mol NaOH fed / mol HCl absorbed | Sump pH above 12 at the bleed rate |
 | driver vs_p_shell_case | "upset" design case: column bypassed, condensate at the body vapour composition (17.1 wt% HCl); normal case reported | Condensate titration during start-up before the column profile forms |
-| driver ext_dTh_K | 3.458 K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | TMY3 bin-hour calculation |
-| driver ext_dTc_K | 4.381 K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | TMY3 bin-hour calculation |
+| driver ext_dTh_K | 1.904 K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | TMY3 bin-hour calculation |
+| driver ext_dTc_K | 8.012 K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | TMY3 bin-hour calculation |
 | driver ext_F_slab | 1.264 W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3 | Slab edge detail |
 | driver ext_hvac | "air" 'air', 'ground' or 'best' (lower converged footprint) | Owner review of the X-PAR-08 comparison |
 | driver ash_cop_h | 3.3 air-source heat pump heating COP at 8.3 C, >= 19 kW | Selected unit rating; low-ambient derate in bin-hour run |

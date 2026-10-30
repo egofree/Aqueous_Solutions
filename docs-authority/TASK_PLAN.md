@@ -41,7 +41,7 @@ Table 2.1. Tasks by group
 | X-RSZ | Bounding-case resizing (owner approval 2026-10-15) | 7 | 7 |
 | X-SAN | Sanitation and pathogen barriers (owner decision 2026-10-15) | 1 | 1 |
 | X-INV | Building-block inventories (owner programme 2026-10-15; in order) | 155 | 154 |
-| X-BAS | Design basis | 4 | 3 |
+| X-BAS | Design basis | 4 | 4 |
 | X-PIP | Piping and line list | 5 | 5 |
 | X-ELS | Electrical system (plant level) | 12 | 12 |
 | X-CTL | Controls, instrumentation, software | 5 | 5 |
@@ -57,7 +57,7 @@ Table 2.1. Tasks by group
 | X-OPS | Operations and maintenance | 3 | 3 |
 | X-QA | QA and verification | 3 | 2 |
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
-| X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
+| X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 11 |
 | X-TOOL | Modeling tooling | 4 | 4 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
@@ -71,14 +71,14 @@ Table 2.1. Tasks by group
 | WTR | Utility / header | 136 | 88 |
 | MFG | Process (Mass transform) | 150 | 99 |
 | ELEC | Utility / header | 135 | 88 |
-| HAB | Life support / habitat | 135 | 98 |
+| HAB | Life support / habitat | 135 | 102 |
 | MEOH | Energy Storage System (Electrochemical) | 90 | 59 |
 | GLASS | Process (Mass transform) | 75 | 50 |
 | GEO | Utility / header | 45 | 30 |
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3266** | **2340** |
+| | **Total** | **3266** | **2343** |
 
 ## 3. Triage of open tasks
 
@@ -102,7 +102,7 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P2 | 7 |
+| desk P2 | 4 |
 | desk P3 | 38 |
 | desk P4 | 481 |
 | desk P5 | 196 |
@@ -156,8 +156,9 @@ Table 6.1. Next cross-cutting desk tasks
 
 | Task | Title | Triage |
 | --- | --- | --- |
-| X-BAS-03 | Site basis | desk P2 |
 | X-END-02 | End-of-life material return | desk P2 |
+| X-LOC-01 | Localization plan | desk P2 |
+| X-LOC-02 | Site profile schema, baseline profile and loader | desk P2 |
 | X-PRO-03 | Cost estimate | desk P2 |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
@@ -257,16 +258,16 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-INV-02D** PM magnet comparison, NdFeB vs bonded ferrite (owner 2026-10-15, after X-PAR-11). Done when: for each BLDC/stepper family (MF-01, MF-02, MF-03, MF-22, MF-23) size an NdFeB variant and a bonded-ferrite variant from cited magnet properties (remanence, coercivity); compare frame size, mass, efficiency, material inputs (rare-earth recovery from feedstock vs in-house ferrite production) and production-line implications; comparison table in AQS-INV-005; assumptions registered. Depends: X-INV-02, X-PAR-11. Evidence: `docs-authority/inventory/MOTOR_DESIGNS.md`.
 - [x] **X-INV-02C** Motor family drawings and BOMs. Done when: CadQuery models, drawings and BOM per X-INV-02 family from the AQS-INV-005 design sheets (laminations, winding, rotor, shaft, frame). Depends: X-INV-02. Evidence: `models/motors/build.py`.
 - [x] **X-INV-03** Wire inventory. Done when: every conductor by sector > sub-system > unit: size, insulation, voltage, length, ampacity basis; family rollup and production plan. Depends: X-INV-01, X-ELS-02. Evidence: `docs-authority/inventory/WIRE_INVENTORY.md`.
-- [x] **X-INV-03-WF-01** Wire family WF-01: PV DC 10 AWG PV Wire, UL 4703, 2 kV. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 35520 m in 296 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
+- [x] **X-INV-03-WF-01** Wire family WF-01: PV DC 10 AWG PV Wire, UL 4703, 2 kV. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 40320 m in 336 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-02** Wire family WF-02: control 18 AWG TFFN 3-pair, shielded. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 41896 m in 204 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
-- [x] **X-INV-03-WF-03** Wire family WF-03: power 6 AWG THHN/THWN-2 Cu in EMT. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 18360 m in 51 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
-- [x] **X-INV-03-WF-04** Wire family WF-04: equipment ground 10 AWG bare Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 17760 m in 296 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
+- [x] **X-INV-03-WF-03** Wire family WF-03: power 6 AWG THHN/THWN-2 Cu in EMT. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 20520 m in 57 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
+- [x] **X-INV-03-WF-04** Wire family WF-04: equipment ground 10 AWG bare Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 20160 m in 336 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-05** Wire family WF-05: power 14 AWG XHHW-2 Cu, 600 V, tray cable TC-ER. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 17897 m in 195 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
-- [x] **X-INV-03-WF-06** Wire family WF-06: bare grounding 4/0 AWG bare soft-drawn Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 4698 m in 1 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
+- [x] **X-INV-03-WF-06** Wire family WF-06: bare grounding 4/0 AWG bare soft-drawn Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 5262 m in 1 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-07** Wire family WF-07: control 18 AWG shielded pair. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 4600 m in 230 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-08** Wire family WF-08: DC power pair 16 AWG TC-ER 2-cond. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 4540 m in 227 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-09** Wire family WF-09: equipment ground 14 AWG green XHHW-2 Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 5957 m in 192 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
-- [x] **X-INV-03-WF-10** Wire family WF-10: power 3 AWG XHHW-2 Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 2775 m in 37 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
+- [x] **X-INV-03-WF-10** Wire family WF-10: power 3 AWG XHHW-2 Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 3150 m in 42 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-11** Wire family WF-11: power 6 AWG XHHW-2 Cu, 600 V, tray cable TC-ER. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 3042 m in 8 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-12** Wire family WF-12: MV power 2 AWG MV-105 Cu, 133 % insulation, tape shield. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 1200 m in 4 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
 - [x] **X-INV-03-WF-13** Wire family WF-13: equipment ground 8 AWG green XHHW-2 Cu. Done when: open specification and production plan (drawing, stranding, insulation extrusion, test to the listed standard) for 1014 m in 8 circuits; feeds the wire line (WIRE_DRAW, X-INV-03). Depends: X-INV-03. Evidence: `docs-authority/WIRE_SPECS.md`.
@@ -391,7 +392,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 - [x] **X-BAS-01** Feedstock assay schema and bounding envelope. Done when: AQS-ASSAY-001 Rev C: seven-class schema, regolith-like to metal-rich PCB. Depends: —. Evidence: `docs-authority/FEED_ASSAY.md`.
 - [x] **X-BAS-02** Bounding-case check of every held rate. Done when: each held rate recalculated at both bounding cases, or stated as held with reason. Depends: X-BAS-01. Evidence: `docs-authority/FEED_ASSAY.md`.
-- [ ] **X-BAS-03** Site basis. Done when: the location-neutral bounding values (climate, wind, snow, soil) with source; seismic is a per-site input; per-location values come from the site design tool profiles (AQS-SITE-002 Rev C). Depends: —. Start from `docs-authority/SITE_BASIS.md` (partial). Triage: desk P2.
+- [x] **X-BAS-03** Site basis. Done when: the location-neutral bounding values (climate, wind, snow, soil) with source; seismic is a per-site input; per-location values come from the site design tool profiles (AQS-SITE-002 Rev C). Depends: —. Evidence: `docs-authority/SITE_BASIS.md`.
 - [x] **X-BAS-04** Units and standards basis. Done when: codes and standards list per discipline. Depends: —. Evidence: `docs-authority/STANDARDS_LIST.md`.
 
 ### X-PIP. Piping and line list
@@ -543,8 +544,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 ### X-LOC. Localization: site profiles and locale variants (AQS-PLAN-011)
 
-- [x] **X-LOC-01** Localization plan. Done when: AQS-PLAN-011 issued: current site inputs and Earth-surface constants found, site profile schema, unit needs and capability decisions, per-locale consequences, build order and acceptance checks; owner questions logged in AQS-OQ-001. Depends: —. Evidence: `docs-authority/LOCALIZATION_PLAN.md`.
-- [x] **X-LOC-02** Site profile schema, baseline profile and loader. Done when: flow_graph/schema/site_profile.schema.json and flow_graph/param/sites/baseline.json committed; drivers.load() resolves site-bound drivers from the selected profile; no script reads drivers.json except through the loader; a profile entry without a basis or a missing required entry fails; baseline regeneration changes nothing. Depends: X-LOC-01. Evidence: `flow_graph/param/test_site_profile.py`.
+- [ ] **X-LOC-01** Localization plan. Done when: AQS-PLAN-011 issued: current site inputs and Earth-surface constants found, site profile schema, unit needs and capability decisions, per-locale consequences, build order and acceptance checks; owner questions logged in AQS-OQ-001. Depends: —. Start from `docs-authority/LOCALIZATION_PLAN.md` (partial). Triage: desk P2.
+- [ ] **X-LOC-02** Site profile schema, baseline profile and loader. Done when: flow_graph/schema/site_profile.schema.json and flow_graph/param/sites/baseline.json committed; drivers.load() resolves site-bound drivers from the selected profile; no script reads drivers.json except through the loader; a profile entry without a basis or a missing required entry fails; baseline regeneration changes nothing. Depends: X-LOC-01. Start from `flow_graph/param/test_site_profile.py` (partial). Triage: desk P2.
 - [x] **X-LOC-03** Earth-surface constants into the profile. Done when: gravity, atmospheric pressure, air composition and air densities read from the profile through flow_graph/param/site.py; no sizing module holds a gravity or pressure literal (test); baseline regeneration changes nothing except the owner-accepted gravity and air density change (Q-032). Depends: X-LOC-02. Evidence: `flow_graph/param/test_site_constants.py`.
 - [x] **X-LOC-04** Site selection and output namespaces. Done when: regen --site and --all-sites; a locale regenerates in a temporary worktree and writes only sites/<site_id>/ with SITE_OUTPUTS.json (outputs that differ from the baseline, profile hash); an in-place locale run is refused; document register and test_doc_numbers handle locale numbers (Q-028). Depends: X-LOC-03. Evidence: `flow_graph/param/test_site_outputs.py`.
 - [x] **X-LOC-05** Sector and unit scaling. Done when: flow_graph/param/unit_needs.json by unit class with unit overrides, a capabilities group and a scaling map in each profile (size factor, unit count, replacement, elimination with import path); test_site_scaling.py fails on an unmet need that is neither replaced nor eliminated, on an elimination with no import path or replacement, on a same-technology replacement, and on an energy or life-support unit eliminated without a different-technology replacement; SITE_SCALING.md generated per site. The redundancy count per function moves to X-LOC-06. Depends: X-LOC-04. Evidence: `flow_graph/param/test_site_scaling.py`.
@@ -3212,7 +3213,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-BACKUP_GEN-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-BACKUP_GEN-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-BACKUP_GEN-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-BACKUP_GEN-14, X-COM-01. Triage: hardware.
 - **ELEC-EXT_HALL** (building, sector ELEC)
-  - [x] ELEC-EXT_HALL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EXT_HALL.md` §1; mass in = out 0 kg/d, 72.9001 kW.
+  - [x] ELEC-EXT_HALL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/EXT_HALL.md` §1; mass in = out 0 kg/d, 99.1801 kW.
   - [x] ELEC-EXT_HALL-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-EXT_HALL-01. Evidence: `docs-authority/sizing/EXT_HALL.md` (AQS-SIZE-EXT_HALL).
   - [x] ELEC-EXT_HALL-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-EXT_HALL-01, ELEC-EXT_HALL-02. Evidence: `docs-authority/pid/EXT_HALL.svg` (AQS-PID-001).
   - [x] ELEC-EXT_HALL-04 Nozzle schedule. Done when: docs-authority/nozzles/EXT_HALL.csv, one row per edge. Depends: ELEC-EXT_HALL-03. Evidence: building with no piped process connection; SF-EXT_HALL is an electrical row; _nozzle_sched.py rule: no file.
@@ -3260,7 +3261,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-LOAD_AGG-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-LOAD_AGG-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-LOAD_AGG-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-LOAD_AGG-14, X-COM-01. Triage: hardware.
 - **ELEC-PV_ARRAY** (pv, sector ELEC)
-  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 342.6279 kW.
+  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 368.9079 kW.
   - [x] ELEC-PV_ARRAY-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-PV_ARRAY-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-PV_ARRAY-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-PV_ARRAY-01, ELEC-PV_ARRAY-02. Evidence: `docs-authority/pid/PV_ARRAY.svg` (AQS-PID-001).
   - [x] ELEC-PV_ARRAY-04 Nozzle schedule. Done when: docs-authority/nozzles/PV_ARRAY.csv, one row per edge. Depends: ELEC-PV_ARRAY-03. Evidence: `docs-authority/nozzles/PV_ARRAY.csv` (file current; 0 piped kg/d process connections under the _noz_edges rule).
@@ -3308,7 +3309,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-SOL_ARK_60K-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-SOL_ARK_60K-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-SOL_ARK_60K-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-SOL_ARK_60K-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2** (flow_battery, sector ELEC)
-  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 813.6 kg/d, 191.5901 kW.
+  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 924 kg/d, 217.8701 kW.
   - [x] ELEC-ZNBR2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-ZNBR2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2-01, ELEC-ZNBR2-02. Evidence: `docs-authority/pid/ZNBR2.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2.csv, one row per edge. Depends: ELEC-ZNBR2-03. Evidence: `docs-authority/nozzles/ZNBR2.csv` (all 5 process connections listed).
@@ -3324,7 +3325,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-ZNBR2-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-ZNBR2-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-ZNBR2-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-ZNBR2-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2_BR2_REGEN** (scrubber, sector ELEC)
-  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; mass in = out 805.1 kg/d, 0.0000 kW.
+  - [x] ELEC-ZNBR2_BR2_REGEN-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2_BR2_REGEN.md` §1; mass in = out 915.5 kg/d, 0.0000 kW.
   - [x] ELEC-ZNBR2_BR2_REGEN-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2_BR2_REGEN-01. Evidence: `docs-authority/sizing/ZNBR2_BR2_REGEN.md` (AQS-SIZE-ZNBR2_BR2_REGEN).
   - [x] ELEC-ZNBR2_BR2_REGEN-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2_BR2_REGEN-01, ELEC-ZNBR2_BR2_REGEN-02. Evidence: `docs-authority/pid/ZNBR2_BR2_REGEN.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2_BR2_REGEN-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2_BR2_REGEN.csv, one row per edge. Depends: ELEC-ZNBR2_BR2_REGEN-03. Evidence: `docs-authority/nozzles/ZNBR2_BR2_REGEN.csv` (all 2 process connections listed).
@@ -3346,7 +3347,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-COMMON_AREA-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/COMMON_AREA.md` §1; mass in = out 0 kg/d, 0.0000 kW.
   - [x] HAB-COMMON_AREA-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: HAB-COMMON_AREA-01. Evidence: `docs-authority/HAB_DESIGN.md` (AQS-HAB-002).
   - [x] HAB-COMMON_AREA-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: HAB-COMMON_AREA-01, HAB-COMMON_AREA-02. Evidence: `docs-authority/pid/COMMON_AREA.svg` (AQS-PID-001).
-  - [ ] HAB-COMMON_AREA-04 Nozzle schedule. Done when: docs-authority/nozzles/COMMON_AREA.csv, one row per edge. Depends: HAB-COMMON_AREA-03. Triage: desk P2.
+  - [x] HAB-COMMON_AREA-04 Nozzle schedule. Done when: docs-authority/nozzles/COMMON_AREA.csv, one row per edge. Depends: HAB-COMMON_AREA-03. Evidence: hab room (space) with no piped process connection; _nozzle_sched.py rule: no file, nothing to schedule, nothing invented.
   - [x] HAB-COMMON_AREA-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HAB-COMMON_AREA-04, HAB-COMMON_AREA-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 0 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] HAB-COMMON_AREA-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: HAB-COMMON_AREA-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] HAB-COMMON_AREA-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-COMMON_AREA-02, HAB-COMMON_AREA-03. Evidence: `docs-authority/duties/COMMON_AREA.md` §6 (C7 closed on MASTER_PLAN).
@@ -3426,7 +3427,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-MEDICAL-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MEDICAL.md` §1; mass in = out 0 kg/d, 0.0000 kW.
   - [x] HAB-MEDICAL-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: HAB-MEDICAL-01. Evidence: `docs-authority/HAB_DESIGN.md` (AQS-HAB-002).
   - [x] HAB-MEDICAL-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: HAB-MEDICAL-01, HAB-MEDICAL-02. Evidence: `docs-authority/pid/MEDICAL.svg` (AQS-PID-001).
-  - [ ] HAB-MEDICAL-04 Nozzle schedule. Done when: docs-authority/nozzles/MEDICAL.csv, one row per edge. Depends: HAB-MEDICAL-03. Triage: desk P2.
+  - [x] HAB-MEDICAL-04 Nozzle schedule. Done when: docs-authority/nozzles/MEDICAL.csv, one row per edge. Depends: HAB-MEDICAL-03. Evidence: hab room (space) with no piped process connection; _nozzle_sched.py rule: no file, nothing to schedule, nothing invented.
   - [x] HAB-MEDICAL-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HAB-MEDICAL-04, HAB-MEDICAL-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 0 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] HAB-MEDICAL-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: HAB-MEDICAL-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] HAB-MEDICAL-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-MEDICAL-02, HAB-MEDICAL-03. Evidence: `docs-authority/duties/MEDICAL.md` §6 (C7 closed on MASTER_PLAN).
@@ -3442,7 +3443,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-REC_DAYROOM-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REC_DAYROOM.md` §1; mass in = out 0 kg/d, 0.0000 kW.
   - [x] HAB-REC_DAYROOM-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: HAB-REC_DAYROOM-01. Evidence: `docs-authority/HAB_DESIGN.md` (AQS-HAB-002).
   - [x] HAB-REC_DAYROOM-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: HAB-REC_DAYROOM-01, HAB-REC_DAYROOM-02. Evidence: `docs-authority/pid/REC_DAYROOM.svg` (AQS-PID-001).
-  - [ ] HAB-REC_DAYROOM-04 Nozzle schedule. Done when: docs-authority/nozzles/REC_DAYROOM.csv, one row per edge. Depends: HAB-REC_DAYROOM-03. Triage: desk P2.
+  - [x] HAB-REC_DAYROOM-04 Nozzle schedule. Done when: docs-authority/nozzles/REC_DAYROOM.csv, one row per edge. Depends: HAB-REC_DAYROOM-03. Evidence: hab room (space) with no piped process connection; _nozzle_sched.py rule: no file, nothing to schedule, nothing invented.
   - [x] HAB-REC_DAYROOM-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HAB-REC_DAYROOM-04, HAB-REC_DAYROOM-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 0 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] HAB-REC_DAYROOM-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: HAB-REC_DAYROOM-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] HAB-REC_DAYROOM-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-REC_DAYROOM-02, HAB-REC_DAYROOM-03. Evidence: `docs-authority/duties/REC_DAYROOM.md` §6 (C7 closed on MASTER_PLAN).
@@ -3458,7 +3459,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-SLEEP_QUARTERS-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SLEEP_QUARTERS.md` §1; mass in = out 0 kg/d, 0.0000 kW.
   - [x] HAB-SLEEP_QUARTERS-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: HAB-SLEEP_QUARTERS-01. Evidence: `docs-authority/HAB_DESIGN.md` (AQS-HAB-002).
   - [x] HAB-SLEEP_QUARTERS-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: HAB-SLEEP_QUARTERS-01, HAB-SLEEP_QUARTERS-02. Evidence: `docs-authority/pid/SLEEP_QUARTERS.svg` (AQS-PID-001).
-  - [ ] HAB-SLEEP_QUARTERS-04 Nozzle schedule. Done when: docs-authority/nozzles/SLEEP_QUARTERS.csv, one row per edge. Depends: HAB-SLEEP_QUARTERS-03. Triage: desk P2.
+  - [x] HAB-SLEEP_QUARTERS-04 Nozzle schedule. Done when: docs-authority/nozzles/SLEEP_QUARTERS.csv, one row per edge. Depends: HAB-SLEEP_QUARTERS-03. Evidence: hab room (space) with no piped process connection; _nozzle_sched.py rule: no file, nothing to schedule, nothing invented.
   - [x] HAB-SLEEP_QUARTERS-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HAB-SLEEP_QUARTERS-04, HAB-SLEEP_QUARTERS-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 0 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] HAB-SLEEP_QUARTERS-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: HAB-SLEEP_QUARTERS-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] HAB-SLEEP_QUARTERS-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-SLEEP_QUARTERS-02, HAB-SLEEP_QUARTERS-03. Evidence: `docs-authority/duties/SLEEP_QUARTERS.md` §6 (C7 closed on MASTER_PLAN).

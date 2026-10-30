@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "5e63a4ab671f032ddca23070f57914c5c6afb3bd5e245013131b74d1b6b72d9c",
+  "graph_sha256": "f33e6b7d6043759091e829b96b4574371faf24e503f4a460ac150ecdbff07839",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 342.628,
-   "calc_kw": 342.628,
+   "kw": 368.908,
+   "calc_kw": 368.908,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,18 +16,18 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 191.59,
-   "calc_kw": 191.59,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 191.6 kW, charge 870.8 kW, 2682 kWh over 37 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 217.87,
+   "calc_kw": 217.87,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.9 kW, charge 990.3 kW, 3050 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
   {
    "unit": "EXT_HALL",
    "role": "load",
-   "kw": 72.9,
-   "calc_kw": 72.9,
-   "basis": "X-PAR-07 solver.roof_close: conditioned extension 25236 m2; lighting 22.21 kW (IECC 2021 C405, 10 % lit), ventilation 31.48 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 19.22 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 45.0 kW and cooling 88.8 kW thermal average after internal gains 31.7 kW and slab edge 2.83 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
+   "kw": 99.18,
+   "calc_kw": 99.18,
+   "basis": "X-PAR-07 solver.roof_close: conditioned extension 28548 m2; lighting 25.12 kW (IECC 2021 C405, 10 % lit), ventilation 42.40 kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope 31.66 kW (IECC 2021 C402 roof and walls, NOAA DFW degree days). X-PAR-08: air-source heat pumps (ASHRAE 90.1-2025 Table 6.8.1-2), heating 29.5 kW and cooling 175.2 kW thermal average after internal gains 35.8 kW and slab edge 1.68 kW (IECC F-factor); loop pumping 0.00 kW. Comparison: .",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -930,13 +930,13 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 102,
-  "graph_sum_kW": 152.92,
-  "calc_sum_kW": 152.92,
-  "connected_load_kW": 152.9,
-  "connected_calculated_kW": 151.3,
+  "graph_sum_kW": 179.2,
+  "calc_sum_kW": 179.2,
+  "connected_load_kW": 179.2,
+  "connected_calculated_kW": 177.5,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 1.6,
-  "connected_calculated_pct": 98.9,
+  "connected_calculated_pct": 99.1,
   "by_sector": {
    "CRYO": {
     "calculated": 4

@@ -10,7 +10,7 @@ L-1 WTR,L-1,WTR,2,8.1,48,yes,147,3.0,140,IFC 5004.3,0.06,"2 x 100 % extract, 2 x
 L-2 WTR,L-2,WTR,1,432.0,4320,no,467,0.1,443,ASHRAE 62.1,0.19,"2 x 100 % extract, 2 x 100 % make-up"
 L0 DIGESTER,L0,DIGESTER,12,27.6,166,yes,1280,7.7,1216,heat,0.522,"2 x 100 % extract, 2 x 100 % make-up"
 L0 DOCK,L0,DOCK,2,8.7,52,no,9,0.2,9,ASHRAE 62.1,0.004,"2 x 100 % extract, 2 x 100 % make-up"
-L0 ELEC,L0,ELEC,8,18.0,108,yes,41865,386.6,39772,heat,17.056,"2 x 100 % extract, 2 x 100 % make-up"
+L0 ELEC,L0,ELEC,8,18.0,108,yes,49710,459.0,47225,heat,20.252,"2 x 100 % extract, 2 x 100 % make-up"
 L0 FAB,L0,FAB,17,27.7,166,yes,507,3.0,481,IFC 5004.3,0.206,"2 x 100 % extract, 2 x 100 % make-up"
 L0 FARM,L0,FARM,1,11.4,69,no,12,0.2,12,ASHRAE 62.1,0.005,"2 x 100 % extract, 2 x 100 % make-up"
 L0 FOUNDRY,L0,FOUNDRY,27,50.4,302,no,1422,4.7,1351,heat,0.579,"2 x 100 % extract, 2 x 100 % make-up"

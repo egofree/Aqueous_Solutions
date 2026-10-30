@@ -32,7 +32,7 @@ Table 1.1. Motor families
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 56 | 6 | 2.73 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 27 | 2 | 0.15 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 104 | 5 | 26.06 |
-| MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 23 | 8 | 18.02 |
+| MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 23 | 8 | 19.68 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
 | MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 20 | 20 | 2.40 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 10 | 8 | 3.70 |
@@ -47,7 +47,7 @@ Table 1.1. Motor families
 | MF-25 | hermetic induction (scroll) | 1.1 kW hermetic | 480 V 3-ph | 1 | 1 | 0.93 |
 | MF-26 | hermetic induction (scroll) | 0.75 kW hermetic | 480 V 3-ph | 1 | 1 | 0.62 |
 | MF-27 | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 480 V 3-ph | 16 | 1 | 12.00 |
-| MF-28 | hermetic induction (scroll) | 18.5 kW hermetic | 480 V 3-ph | 8 | 1 | 109.18 |
+| MF-28 | hermetic induction (scroll) | 18.5 kW hermetic | 480 V 3-ph | 8 | 1 | 122.78 |
 
 ## 2. Inventory by sector, sub-system and unit
 
@@ -119,9 +119,9 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | EXT_HALL_N | EXT_HALL | AHU damper actuator | BLDC actuator | ISO 5211 F03 mount | 0.005 | 24 V DC | S2 | on/off | 24 | assumed 3 per AHU |
-| EXT_HALL_N | EXT_HALL | AHU exhaust fan | induction IE3 | IEC 90S / 1.1 kW | 0.7886 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 7571 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
-| EXT_HALL_N | EXT_HALL | AHU supply fan | induction IE3 | IEC 90S / 1.1 kW | 0.7886 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 7571 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
-| EXT_HALL_N | EXT_HALL | air-source heat pump compressor | hermetic induction (scroll) | 18.5 kW hermetic | 13.6472 | 480 V 3-ph | S1 | variable-frequency drive | 8 | peak cooling 352 kW / COP 3.22 / 8 modules (module count assumed, A-M-119) |
+| EXT_HALL_N | EXT_HALL | AHU exhaust fan | induction IE3 | IEC 90S / 1.1 kW | 0.8921 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
+| EXT_HALL_N | EXT_HALL | AHU supply fan | induction IE3 | IEC 90S / 1.1 kW | 0.8921 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
+| EXT_HALL_N | EXT_HALL | air-source heat pump compressor | hermetic induction (scroll) | 18.5 kW hermetic | 15.3475 | 480 V 3-ph | S1 | variable-frequency drive | 8 | peak cooling 395 kW / COP 3.22 / 8 modules (module count assumed, A-M-119) |
 | EXT_HALL_N | EXT_HALL | heat pump condenser fan | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 0.75 | 480 V 3-ph | S1 | electronically commutated (EC) motor | 16 | assumed 2 per module; EC fan type assumed (A-M-119) |
 | flow_battery | ZNBR2 | electrolyte pump (anolyte, catholyte) per stack string | induction IE3 | IEC 71 / 0.37 kW | 0.25 | 480 V 3-ph | S1 | fixed speed | 96 | assumed 0.25 kW per string, 2 per string, 48 strings (A-M-119) |
 | flow_battery | ZNBR2 | transfer pump IA-ZNBR-BD to GREY_TREAT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 8.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
@@ -134,7 +134,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | pem_fc | FUEL_CELL | transfer pump S52 to VCD_TRAIN | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 42.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | rectifier | RECTIFIER | cooling fan | BLDC | 57 mm (NEMA 23 flange) | 0.05 | 24 V DC | S1 | BLDC driver | 4 | assumed per cabinet |
 | scrubber | ZNBR2_BR2_REGEN | induced-draft fan | BLDC | 42 mm (NEMA 17 flange) | 0.01 | 24 V DC | S1 | BLDC driver | 1 | 0.0 kg/d gas at 1000 Pa, eff 0.5 (assumed) |
-| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0023 | 24 V DC | S1 | BLDC driver | 1 | 805.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| scrubber | ZNBR2_BR2_REGEN | transfer pump S69B to ZNBR2 | BLDC | 42 mm (NEMA 17 flange) | 0.0026 | 24 V DC | S1 | BLDC driver | 1 | 915.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 
 ### FAB
 

@@ -47,3 +47,20 @@
 (including the site-profile identity gate: the baseline profile resolves to `drivers.json`
 exactly, entry for entry). `scripts/check_all.sh` clean. The task plan regenerates with
 X-BAS-03 and X-PRO-03 as desk tasks and the owner-gated table empty.
+
+## Follow-up close-outs (same day)
+
+- **X-BAS-03 closed.** The remaining named lookups landed: the bounding station normals are the
+  Furnace Creek record (USC00042319, WRCC: HDD65 1251 F-d, CDD65 5264 F-d, annual mean 75.9 F,
+  1961-1990 normals), so the envelope coefficients bound to the governing site
+  (`ext_dTh_K` 1.904 K, `ext_dTc_K` 8.012 K, `ext_dT_mean_K` 9.916 K, ref `NOAA_WRCC_DV`). The
+  IECC envelope values are already the set's strictest (the baseline's zone 3 governs over the
+  hotter sites' zones 1-2) and say so. Seismic stays per-site by the recorded rule. Evidence:
+  `docs-authority/SITE_BASIS.md` Rev C and the drivers.
+- **The four hab-room nozzle tasks closed** (HAB-COMMON_AREA-04, HAB-MEDICAL-04,
+  HAB-REC_DAYROOM-04, HAB-SLEEP_QUARTERS-04): the rooms carry no piped process connections, so
+  the nozzle-schedule rule closes them with the no-file note, as FORGE and the other
+  connectionless machines already are.
+
+Desk P1 is now empty and desk P2 holds only the gated items (X-END-02's named holds, X-PRO-03's
+mass dependency) and the localization program's own tasks (X-LOC-01/02).

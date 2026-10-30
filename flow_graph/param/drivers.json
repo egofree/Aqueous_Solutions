@@ -382,11 +382,12 @@
   "verification_test": "Occupancy classification of the extension"
  },
  "ext_dT_mean_K": {
-  "value": 7.9,
+  "value": 9.916,
   "units": "K mean |T_in - T_out|: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals)",
   "needs_verification": true,
   "verification_test": "NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation",
-  "ref": "NOAA_NORMALS_DFW"
+  "ref": "NOAA_WRCC_DV",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest station normals across the daily-cycle localization set, carried from the governing site death_valley (Furnace Creek, USC00042319). A site design replaces it with its own station normals. (HDD65 1251 F-d + CDD65 5264 F-d) x 5/9 / 365."
  },
  "ext_cop": {
   "value": 3.2,
@@ -443,7 +444,8 @@
   "units": "W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3",
   "ref": "IECC2021_C402",
   "needs_verification": true,
-  "verification_test": "Wall assembly design"
+  "verification_test": "Wall assembly design",
+  "basis": "IECC 2021 C402.1.4 metal building wall, climate zone 3 - already the strictest prescriptive value across the localization set (the hotter sites sit in zones 1-2, whose requirements are lower). Location-neutral per AQS-SITE-002 Rev C."
  },
  "ext_wall_h_mm": {
   "value": 6000,
@@ -708,25 +710,28 @@
   "verification_test": "Condensate titration during start-up before the column profile forms"
  },
  "ext_dTh_K": {
-  "value": 3.458,
+  "value": 1.904,
   "units": "K mean heating dT = HDD65 2272 F-d x 5/9 / 365",
-  "ref": "NOAA_NORMALS_DFW",
+  "ref": "NOAA_WRCC_DV",
   "needs_verification": true,
-  "verification_test": "TMY3 bin-hour calculation"
+  "verification_test": "TMY3 bin-hour calculation",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest station normals across the daily-cycle localization set, carried from the governing site death_valley (Furnace Creek, USC00042319). A site design replaces it with its own station normals."
  },
  "ext_dTc_K": {
-  "value": 4.381,
+  "value": 8.012,
   "units": "K mean cooling dT = CDD65 2878 F-d x 5/9 / 365",
-  "ref": "NOAA_NORMALS_DFW",
+  "ref": "NOAA_WRCC_DV",
   "needs_verification": true,
-  "verification_test": "TMY3 bin-hour calculation"
+  "verification_test": "TMY3 bin-hour calculation",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest station normals across the daily-cycle localization set, carried from the governing site death_valley (Furnace Creek, USC00042319). A site design replaces it with its own station normals."
  },
  "ext_F_slab": {
   "value": 1.264,
   "units": "W/(m K), unheated slab F-0.73 Btu/(h ft F), climate zone 3",
   "ref": "IECC2021_C402",
   "needs_verification": true,
-  "verification_test": "Slab edge detail"
+  "verification_test": "Slab edge detail",
+  "basis": "IECC 2021 C402 climate zone 3 slab F-factor - already the strictest across the localization set. Location-neutral per AQS-SITE-002 Rev C."
  },
  "ext_hvac": {
   "value": "air",

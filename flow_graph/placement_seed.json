@@ -453,15 +453,15 @@
    "level": "L0",
    "origin_mm": [
     0,
-    68100
+    68050
    ],
    "size_mm": [
-    186000,
-    1800,
+    210000,
+    1900,
     6000
    ],
    "unit_ids": [],
-   "source": "X-STD-01 AQS-EGR-002: 2 h exit passageway (NFPA 101 7.2.6, IBC 1024), 1.8 m clear, across the hall at mid-depth, discharging at both ends."
+   "source": "X-STD-01 AQS-EGR-002: 2 h exit passageway (NFPA 101 7.2.6, IBC 1024), 1.9 m clear, across the hall at mid-depth, discharging at both ends."
   }
  ],
  "units": [

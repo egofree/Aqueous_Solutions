@@ -184,7 +184,7 @@ CONTINUOUS_RECYCLE-LSH-01,CONTINUOUS_RECYCLE,DIGESTER,high-level switch,"IEC 609
 CONTINUOUS_RECYCLE-LT-01,CONTINUOUS_RECYCLE,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),CONTINUOUS_RECYCLELT-01,PLC-DIGESTER,A-M-182 liquid height
 CONTINUOUS_RECYCLE-PT-01,CONTINUOUS_RECYCLE,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),CONTINUOUS_RECYCLEPT-01,PLC-DIGESTER,no design pressure on the graph
 CONTINUOUS_RECYCLE-TE-01,CONTINUOUS_RECYCLE,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),CONTINUOUS_RECYCLETE-01,PLC-DIGESTER,band by service
-ZNBR2-FT-01,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2FT-01,PLC-ELEC,S69 normal 33.55 L/h
+ZNBR2-FT-01,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2FT-01,PLC-ELEC,S69 normal 38.15 L/h
 ZNBR2-FT-02,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),ZNBR2FT-02,PLC-ELEC,IA-ZNBR-BD normal 0.35 L/h
 ZNBR2-FT-03,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),ZNBR2FT-03,PLC-ELEC,IA-ZNBR-HEAT normal 0.07 L/h
 ZNBR2-LSH-01,ZNBR2,ELEC,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ZNBR2LSH-01,PLC-ELEC,alarm at 90 %
@@ -208,7 +208,7 @@ PV_ARRAY-PT-01,PV_ARRAY,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298"
 PV_ARRAY-TE-01,PV_ARRAY,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PV_ARRAYTE-01,PLC-ELEC,band by service
 RECTIFIER-PT-01,RECTIFIER,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),RECTIFIERPT-01,PLC-ELEC,no design pressure on the graph
 RECTIFIER-TE-01,RECTIFIER,ELEC,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),RECTIFIERTE-01,PLC-ELEC,band by service
-ZNBR2_BR2_REGEN-FT-01,ZNBR2_BR2_REGEN,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2_BR2_REGENFT-01,PLC-ELEC,S69B normal 33.55 L/h
+ZNBR2_BR2_REGEN-FT-01,ZNBR2_BR2_REGEN,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2_BR2_REGENFT-01,PLC-ELEC,S69B normal 38.15 L/h
 ZNBR2_BR2_REGEN-LSH-01,ZNBR2_BR2_REGEN,ELEC,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),ZNBR2_BR2_REGENLSH-01,PLC-ELEC,alarm at 90 %
 ZNBR2_BR2_REGEN-LT-01,ZNBR2_BR2_REGEN,ELEC,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),ZNBR2_BR2_REGENLT-01,PLC-ELEC,A-M-182 liquid height
 ZNBR2_BR2_REGEN-PT-01,ZNBR2_BR2_REGEN,ELEC,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),ZNBR2_BR2_REGENPT-01,PLC-ELEC,no design pressure on the graph

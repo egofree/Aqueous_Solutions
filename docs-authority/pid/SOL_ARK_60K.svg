@@ -53,7 +53,7 @@
 <polygon points="586,424 577,420 577,428" fill="#111"/>
 <text x="24" y="405" font-size="9" fill="#666" text-anchor="start">PV_ARRAY</text>
 <text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">IA-PV-01</text>
-<text x="24" y="437" font-size="10" text-anchor="start">342.6 kW · cable (schedule X-ELS-06)</text>
+<text x="24" y="437" font-size="10" text-anchor="start">368.9 kW · cable (schedule X-ELS-06)</text>
 <line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-in"/>
 <polygon points="586,470 577,466 577,474" fill="#111"/>
 <text x="24" y="451" font-size="9" fill="#666" text-anchor="start">BACKUP_GEN</text>
@@ -224,7 +224,7 @@
 <polygon points="1070,1528 1061,1524 1061,1532" fill="#111"/>
 <text x="1476" y="1509" font-size="9" fill="#666" text-anchor="end">EXT_HALL</text>
 <text x="1476" y="1523" font-size="11" font-weight="600" text-anchor="end">SF-EXT_HALL</text>
-<text x="1476" y="1541" font-size="10" text-anchor="end">72.9 kW · cable (schedule X-ELS-06)</text>
+<text x="1476" y="1541" font-size="10" text-anchor="end">99.2 kW · cable (schedule X-ELS-06)</text>
 <line x1="914" y1="1574" x2="1061" y2="1574" stroke="#111" stroke-width="1.2" stroke-dasharray="2,3" class="edge-out"/>
 <polygon points="1070,1574 1061,1570 1061,1578" fill="#111"/>
 <text x="1476" y="1555" font-size="9" fill="#666" text-anchor="end">FILM_CAST</text>
@@ -473,7 +473,7 @@
 <g id="aqs-title-block"><rect x="1116" y="3924" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="3941" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-SOL_ARK_60K</text>
 <text x="1124" y="3958" font-size="9">P&amp;ID SOL_ARK_60K (inverter, ELEC sector)</text>
-<text x="1124" y="3975" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 8de45b6d   Issued 2026-10-19</text>
+<text x="1124" y="3975" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev c1e8cea7   Issued 2026-10-19</text>
 <text x="1124" y="3992" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="4009" font-size="9">Graph SHA-256 5e63a4ab671f032d   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="4009" font-size="9">Graph SHA-256 f33e6b7d60437590   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

@@ -1392,6 +1392,7 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {UVT -- Ultraviolet intensity transmitter. The 254 nm dose watchdog on the loop sanitizer: lamp depletion or sleeve fouling decays its signal (AQUA_UV; A-M-428).}
 {HCN -- Hydrogen cyanide. The Strecker-step reagent for the DL-methionine synthesis (MET_SYN; A-M-416).}
 {MMP -- 3-(Methylthio)propanal. The Strecker-step aldehyde precursor: CH3SH + acrolein (MET_SYN; A-M-416).}
+{WRCC -- Western Regional Climate Center. It publishes the NOAA cooperative station normals for the western United States, including the Furnace Creek record (AQS-SITE-002).}
 {USGS -- United States Geological Survey. Its Mineral Commodity Summaries (annual) is the commodity price source for the cost estimate (AQS-PRO-003).}
 {CEPCI -- Chemical Engineering Plant Cost Index, published monthly in Chemical Engineering magazine; the escalation index of the cost estimate (AQS-PRO-003).}
 {RAS -- Recirculating aquaculture system. The fish-tank water loop: AQUA_TANK, BIOFILTER, the grow beds and DUCKWEED (A-M-415).}

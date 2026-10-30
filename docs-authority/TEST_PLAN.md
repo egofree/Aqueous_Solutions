@@ -302,9 +302,9 @@ Total 685 items: 305 drivers, 380 register entries. Classification rule: first m
 | driver ext_U_wall | 0.534 W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | Wall assembly design | X-PAR |
 | driver ext_conditioned | 1.0 1 conditioned, 0 unconditioned hall | Bin-hour load calculation on TMY3 for the hall programme | X-PAR |
 | driver ext_cop | 3.2 heat pump COP | Selected heat-pump rating | X-PAR |
-| driver ext_dT_mean_K | 7.9 K mean /T_in - T_out/: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation | X-PAR |
-| driver ext_dTc_K | 4.381 K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
-| driver ext_dTh_K | 3.458 K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
+| driver ext_dT_mean_K | 9.916 K mean /T_in - T_out/: (HDD65 + CDD65) x 5/9 / 365 with HDD65 2272 F-d and CDD65 2878 F-d (DFW 1991-2020 normals) | NOAA 1991-2020 normals for the final site; TMY3 bin-hour calculation | X-PAR |
+| driver ext_dTc_K | 8.012 K mean cooling dT = CDD65 2878 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
+| driver ext_dTh_K | 1.904 K mean heating dT = HDD65 2272 F-d x 5/9 / 365 | TMY3 bin-hour calculation | X-PAR |
 | driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension | X-PAR |
 | driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection | X-PAR |
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing | X-PAR |
