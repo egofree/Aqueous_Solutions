@@ -17,7 +17,7 @@ This page records the size of unit MET_SCRUB, of class `scrubber` in sector MFG,
 
 ## 2. Duty
 
-The unit takes 71606.5 kg/d by 4 streams and gives 71606.5 kg/d by 3 streams. Its continuous electrical load is 2.1232 kW, fed by stream SF-MET_SCRUB.
+The unit takes 71606.5 kg/d by 3 streams and gives 71606.5 kg/d by 3 streams. Its continuous electrical load is 2.1232 kW, fed by stream SF-MET_SCRUB.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

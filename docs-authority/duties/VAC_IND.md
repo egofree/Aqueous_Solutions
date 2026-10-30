@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: VAC_IND_TI 0 kg/d (Ti sponge/powder to vacuum melt). Out: VAC_IND_TO_VAC_CAST 0 kg/d (vacuum melt to cast); VAC_TO_INV 0 kg/d (reactive melt for investment pour).
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: VAC_IND_TI 0 kg/d (Ti sponge/powder to vacuum melt). Out: VAC_TO_INV 0 kg/d (reactive melt for investment pour).
 
 2. Size.
 - Envelope 1000×1000×1500 mm, 1.5 m³.

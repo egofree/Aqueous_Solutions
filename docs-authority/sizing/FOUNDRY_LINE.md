@@ -33,8 +33,8 @@ Every FOUNDRY unit closes to 0.000000 kg/d on the written graph (battery limit 0
 
 | Unit | In, kg/d | Out, kg/d | Duty |
 | --- | --- | --- | --- |
-| IND_MELT | 26.1616 scrap | 3.0 to cast + 31.7 to cont-cast + 0.3302 slag | melt 21.25 kWh/d (0.885 kW avg, 15.0 kW peak vs 25 kW connected, A-M-232); 4 heats/d of the 10 kg crucible |
-| CAST_LINE | 3.0 | 3.0 to roll | Cu permanent-mould ingot/billet; sprue return 0 (campaign events) |
+| IND_MELT | 26.1616 scrap | 3.5 to cast + 31.7 to cont-cast + 0.3302 slag | melt 21.44 kWh/d (0.893 kW avg, 15.0 kW peak vs 25 kW connected, A-M-232); 4 heats/d of the 10 kg crucible |
+| CAST_LINE | 3.5 | 3.0 to roll | Cu permanent-mould ingot/billet; sprue return 0 (campaign events) |
 | CONT_CAST | 31.7 | 10.0 billet + 21.7 ingot | Fe semi-continuous billet, Zn ingot (AQS-SIZE-FOUNDRY) |
 | ROLL | 13.0 | 13.0 | 0.42 kWh/d at 0.032 kWh/kg cold class (A-M-177) |
 | STOCK_OUT | 34.7 | 25.9 to MFG (FAB 0, wire 0) | staged stock |
@@ -53,7 +53,7 @@ Melt energy by class, (cp_s dT + L + cp_l superheat)/eta 0.55 (A-M-177 method): 
 | Ca pot | CA_POT | no CaCl2 feed edge at Rev AC | CaCl2 2.77 kg per kg Ca |
 | Investment casting | WAX_PATTERN, SHELL_BUILD, SHELL_BURNOUT, INV_CAST, SHELL_BREAK | no wax make-up source (WAX_PATTERN closes on reclaim only) and GLASS_DIGEST fully committed (IA-GLASS-03 30.0 = S08G 26.7 + IA-SIL-SRC 3.3), so spent shell has no digest capacity | 2 kg/d castings (AQS-SIZE-FOUNDRY), shell 0.5 kg/kg casting (same source) |
 | Flux | FLUX_PREP | SALT_FEED is a stub source (no in-edge); flux cover is a campaign addition | <0.5 kg/d salt |
-| Alternates | RES_HEAT, COMB_HEAT | off-baseline redundant paths (FOUNDRY_DUTY heat policy); COMB_OFFGAS 0 | sized by the primary-path outage they back up |
+| Alternates | RES_HEAT, COMB_HEAT | off-baseline redundant paths (FOUNDRY_DUTY heat policy); COMB_OFFGAS retired, as COMB_HEAT has no fuel route (A-M-433) | sized by the primary-path outage they back up |
 | Forming extras | EXTRUDE, DRAW, FORGE, SINTER | extrusion is the Al/Cu/Mg profile path (pots blocked, Cu rolls); FOUNDRY DRAW has no feed edge (wire sizing is MFG WIRE_DRAW on S57); FORGE has no edges; sinter feed is Ti/Mo/Cr powder | 5 / 3 / - / 0.5 kg/d class (AQS-SIZE-FOUNDRY) when feeds exist |
 
 ### Kroll per-kg feed table (AQS-BAL-KROLL, stoichiometric; no rate until the grit assay)

@@ -198,7 +198,10 @@ def solve(g=None):
     mix = {'Cu': 3.0, 'Fe': 10.0 + (val('foundry_ss_line_kg_d') - mo_i - cr_i) + inv + r0, 'Zn': 1.0,
            'Al': al + al_i, 'Ti': (ti + mo + cr) + (ti_i + mo_i + cr_i)}
     assert abs(sum(mix.values()) - (S - P + potm)) < 1e-9
-    e_melt = sum(m * q[c] for c, m in mix.items()) + val('melt_hold_kW') * val('melt_time_h') * math.ceil((S + potm + flux) / val('melt_charge_kg'))
+    # the cast line pours its 3 kg/d of copper stock plus the gating and risers, which return to the melt on CAST_SCRAP_TO_IND
+    # as a daily flow (cast_gating_return_frac of the pour, ASM_V15_PM, A-M-433); the return is remelted with the Cu class
+    cret = 3.0 * val('cast_gating_return_frac') / (1 - val('cast_gating_return_frac'))
+    e_melt = sum(m * q[c] for c, m in mix.items()) + cret * q['Cu'] + val('melt_hold_kW') * val('melt_time_h') * math.ceil((S + potm + flux + cret) / val('melt_charge_kg'))
     kw_peak = math.ceil(val('melt_charge_kg') * max(q.values()) / val('melt_time_h') * 2) / 2   # largest cold heat
     e_roll = 0.032 * (mix['Cu'] + 10.0)                        # A-M-177 rolling 0.032 kWh/kg (bounding, cold class)
     c5 = rated('CUT-1') - rated('CUT-1-OUT') - P * (1 + rej)   # IA-C5-SHIP re-solve (make - burned - olefin)
@@ -212,7 +215,7 @@ def solve(g=None):
                 c_mo=c_mo, co2_mo=co2_mo, cr2o3=cr2o3, c_cr=c_cr, co_cr=co_cr, sh=sh, sh_mu=sh_mu,
                 sh_recl=sh_recl, wx=wx, wx_mu=wx_mu, wx_recl=wx_recl, wx_burn=wx_burn, pot_e=pot_e,
                 poly_feed=P * (1 + rej), poly_wet=rej * P, c5_ship=c5, q=q, mix=mix, e_melt=e_melt,
-                kw_peak=kw_peak, e_roll=e_roll, heats=math.ceil((S + potm + flux) / val('melt_charge_kg')),
+                kw_peak=kw_peak, e_roll=e_roll, heats=math.ceil((S + potm + flux + cret) / val('melt_charge_kg')), cast_ret=cret,
                 charge=val('melt_charge_kg'))
 
 
@@ -254,15 +257,16 @@ def apply(g=None, write=False):
         f'Melt slag+dross {s["f"]:.0%} of charge plus the {s["flux"] - s["flux_rec"]:.4f} kg/d salt flux left in the cake after the '
         f'salt recovery and the {s["mg_ind"]:.4f} kg/d alloy Mg oxidised in the remelt, by mass conservation on the melt '
         f'(INDUCT_SOCX 1-2 % band, A-M-262, A-M-430); returns to the leach. | {TAG}.')
-    put('IND_MELT_TO_CAST', 3.0,
-        f'Cu-class melt to the cast line: bus/winding stock (AQS-SIZE-FOUNDRY Cu 3 kg/d). | {TAG}.')
+    put('IND_MELT_TO_CAST', R(3.0 + s['cast_ret']),
+        f'Cu-class melt to the cast line: bus/winding stock (AQS-SIZE-FOUNDRY Cu 3 kg/d) plus the gating and risers, '
+        f'{s["cast_ret"]:.4f} kg/d at cast_gating_return_frac of the pour (A-M-433). | {TAG}.')
     put('IND_TO_CONT', R(sS + spotm + sca + sflux) + smg - sfrec - 3.0 - R(s['inv']) - sslag,
         f'Melt to the semi-continuous caster by difference on the melt: Fe 11.5 (10 low-alloy + 1.5 stainless base) '
         f'+ Zn 1 + pot metal {s["potm"]:.4f} (Al {s["al"]:.1f} / Ti {s["ti"]:.2f} / Mo {s["mo"]:.4f} / Cr {s["cr"]:.2f}, '
         f'A-M-261 rev table). | {TAG}.')
-    put('CAST_SCRAP_TO_IND', 0.0,
-        'Near-net permanent-mold pours at 3 kg/d; sprue/runner returns are campaign events, not a daily '
-        f'continuous rate (the melt loop closes on MFG_SCRAP_TO_IND). | {TAG}.')
+    put('CAST_SCRAP_TO_IND', R(s['cast_ret']),
+        f'Gating and risers of the permanent-mold pours return to the melt daily: {s["cast_ret"]:.4f} kg/d at '
+        f'cast_gating_return_frac of the pour (ASM_V15_PM, A-M-433). | {TAG}.')
     put('CAST_TO_ROLL', 3.0, f'Cu cast stock to rolling (bus bar / winding strip, FOUNDRY_DESIGN machine table). | {TAG}.')
     put('CAST_TO_EXTRUDE', 0.0,
         'EXTRUDE is ROLL\'s N+1 alternate (A-M-283): standby-zero on the design day; the Cu line rolls. | {TAG}.')

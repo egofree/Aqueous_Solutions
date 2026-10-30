@@ -1969,7 +1969,7 @@
           "volume_m3": 0.0202,
           "material": "316L tube",
           "hold_kg": 0.02,
-          "connections": 7
+          "connections": 6
         },
         "size_note": "DN32 manifold x 45 m run (0.020 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       },
@@ -2777,9 +2777,9 @@
       "tags": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6046,
+        "count": 6048,
         "presence": "present",
-        "nameplate_kw": 3023,
+        "nameplate_kw": 3024,
         "area_m2": 26574,
         "balance_kWp": 1512,
         "oversize_factor": 2.0,
@@ -2809,7 +2809,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 351.8735,
+        "value": 351.8815,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -3330,16 +3330,16 @@
           "H2_m3_d": 7.74,
           "purge_m3_h": 32.25,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1996.8
+          "electrode_area_m2": 1996.9
         }
       },
       "modules": [],
       "electrical_role": "storage",
       "continuous_kw": {
-        "value": 218.0526,
+        "value": 218.0626,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.1 kW, charge 991.1 kW, 3053 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.1 kW, charge 991.2 kW, 3053 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       }
     },
     {
@@ -4897,8 +4897,8 @@
           "slag_kg_d": 0.3302,
           "crucible_kg": 10.0,
           "heats_d": 4,
-          "melt_kWh_d": 21.249,
-          "avg_kW": 0.8854,
+          "melt_kWh_d": 21.441,
+          "avg_kW": 0.8934,
           "peak_kW": 15.0,
           "connected_kW": 25.0,
           "kWh_per_kg": {
@@ -4923,7 +4923,7 @@
           "heats_d": 4,
           "connected_kW": 25.0,
           "peak_kW": 15.0,
-          "melt_kWh_d": 21.249,
+          "melt_kWh_d": 21.441,
           "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
         },
         "envelope": {
@@ -4937,10 +4937,10 @@
           "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
         },
         "duty_cycle": {
-          "avg_kW": 0.8854,
+          "avg_kW": 0.8934,
           "peak_kW": 15.0,
           "connected_kW": 25.0,
-          "kWh_d": 21.249,
+          "kWh_d": 21.441,
           "heats_d": 4,
           "basis": "X-MFG-37 logged batch schedule class"
         },
@@ -4955,10 +4955,10 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 0.8854,
+        "value": 0.8934,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.25 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
+        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.44 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
       }
     },
     {
@@ -8383,7 +8383,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full 200 m3 cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 2700000.0000 kg/d (the full 2700 m3 upper reservoir in one day) when after a discharge the reservoir is pumped back up on the PV surplus (A-M-145), for 2 d (standby_routes.py)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -8400,7 +8400,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 2700000.0000 kg/d (the full 2700 m3 upper reservoir in one day) when ZNBR2 is lost and the reservoir discharges through the turbine over the night class hours (A-M-145), for 2 d (standby_routes.py)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -10051,10 +10051,10 @@
       "phase": "G",
       "carries": "Br2 vapor",
       "rate": {
-        "value": 916.293526,
+        "value": 916.335548,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.59 + open-circuit 1.15 m3/d H2 on 4361 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.3 m3/h holds H2 at 25 % LFL: HER 6.59 + open-circuit 1.15 m3/d H2 on 4361 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -10068,7 +10068,7 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 916.293526,
+        "value": 916.335548,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -10615,7 +10615,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Kroll chlorine closes on the Mg pot loop (IA-CL2-MG-TI); the CRU tap is purge-only. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 1.4813 kg/d (the IA-CL2-MG-TI rate) when the Kroll chlorinator is out of service while MG_POT runs down, and the pot chlorine goes to CRU, for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER",
@@ -10632,7 +10632,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Anode gas recycles to the cell chlorination step (A-M-290); CRU tap purge-only. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 0.0693 kg/d (the MO_CELL anode chlorine, 1.5 Cl2 per Mo of MO_TO_IND) when the MO_CELL carbochlorination step is out of service while the cell runs down, and its anode chlorine goes to CRU, for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER",
@@ -10646,10 +10646,10 @@
       "phase": "L",
       "carries": "molten metal",
       "rate": {
-        "value": 3.0,
+        "value": 3.529412,
         "unit": "kg/d",
         "status": "study",
-        "note": "Cu-class melt to the cast line: bus/winding stock (AQS-SIZE-FOUNDRY Cu 3 kg/d). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Cu-class melt to the cast line: bus/winding stock (AQS-SIZE-FOUNDRY Cu 3 kg/d) plus the gating and risers, 0.5294 kg/d at cast_gating_return_frac of the pour (A-M-433). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -10663,10 +10663,10 @@
       "phase": "S",
       "carries": "foundry scrap",
       "rate": {
-        "value": 0.0,
+        "value": 0.529412,
         "unit": "kg/d",
         "status": "study",
-        "note": "Near-net permanent-mold pours at 3 kg/d; sprue/runner returns are campaign events, not a daily continuous rate (the melt loop closes on MFG_SCRAP_TO_IND). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Gating and risers of the permanent-mold pours return to the melt daily: 0.5294 kg/d at cast_gating_return_frac of the pour (ASM_V15_PM, A-M-433). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -10700,7 +10700,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "VAC_CAST rides VAC_IND (N+1 pair, A-M-283): standby-zero. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-433): VAC_CAST has no product route, so its casting could go nowhere; the vacuum titanium melt pours to INV_CAST on VAC_TO_INV."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -10734,7 +10734,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "EXTRUDE is ROLL's N+1 alternate (A-M-283): standby-zero on the design day; the Cu line rolls. | {TAG}."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 3.0000 kg/d (the CAST_TO_ROLL rate) when ROLL is out of service and the cast-line billet is extruded instead (EXTRUDE is the N+1 alternate, A-M-283), for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -10768,7 +10768,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "EXTRUDE standby-zero: ROLL N+1 alternate (A-M-283), energized on a roll-stand outage. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 3.0000 kg/d (the CAST_TO_ROLL rate) when ROLL is out of service and EXTRUDE sends the extruded cast-line stock to STOCK_OUT, for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -10785,7 +10785,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "DRAW standby-zero: ROLL N+1 alternate (A-M-283); wire sizing is MFG WIRE_DRAW S57. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-433): DRAW has no feed route, and wire is drawn by the MFG wire drawer on S57 with STOCK_TO_WIRE_DRAW as its standby."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -10802,7 +10802,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "SINTER standby-zero: consolidation N+1 alternate (A-M-283); powder path optional. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-433): SINTER has no feed route, and the atomiser powder S60 goes to MFG_SHOP, its only consumer."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -10938,7 +10938,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "VAC_IND is the N+1 diverse melt path (A-M-283): standby-zero on the design day. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 0.5000 kg/d (the METALS_TO_IND_MELT rate) when IND_MELT is out of service and the titanium sponge is melted in the VAC_IND skull furnace (A-M-283), for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -11142,7 +11142,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "COMB_HEAT is the fuel-fired N+1 alternate (A-M-283): standby-zero; off-gas routes to MET_SCRUB only when the alternate is energized. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-433): COMB_HEAT has no fuel route, so it can make no off-gas; a fuel-fired alternate needs a fuel route first (X-RTE-COMB-HEAT-FUEL)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "MFG",
@@ -11193,7 +11193,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Gas-atomizer powder path optional, not baseline (FOUNDRY_INTEGRATION). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-433): the atomiser powder S60 goes to MFG_SHOP, its only consumer, so a powder stock route duplicates it."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "FOUNDRY",
@@ -11278,7 +11278,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "VAC_IND N+1 pour path (A-M-283): standby-zero on the design day. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 0.5000 kg/d (the METALS_TO_IND_MELT rate) when IND_MELT is out of service and the VAC_IND titanium melt pours to the investment line, for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FOUNDRY",
@@ -12148,7 +12148,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 351.8735,
+        "value": 351.8815,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -12983,8 +12983,8 @@
       "rate": {
         "value": 0.0,
         "unit": "kg/d",
-        "status": "tbd",
-        "note": "closure TF: equals IA-DC-SPRAY where the site mode is evaporative (X-PAR-02 difference-type role) | X-PAR-02 TF: nothing evaporates at the cooler at this site (AQS-PAR-003)."
+        "status": "study",
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 422.4939 kg/d (the DRY_COOLER rated 12 kW rejected by evaporation) when the site heat-rejection mode is evaporative and the sprayed water evaporates at the cooler (X-LOC-13), for 2 d (standby_routes.py). | X-PAR-02 TF: nothing evaporates at the cooler at this site (AQS-PAR-003)."
       },
       "from_sector_id": "HEAT",
       "to_sector_id": "WTR",
@@ -13000,8 +13000,8 @@
       "rate": {
         "value": 0.0,
         "unit": "kg/d",
-        "status": "tbd",
-        "note": "closure TF: rejected kW x 86400 s x 1000 W/kW / 2.454 MJ per kg (NIST_WEBBOOK) | X-PAR-02 TF: no site evaporative charge: the low-grade loop rejects on air at this site (AQS-PAR-003)."
+        "status": "study",
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 422.4939 kg/d (the DRY_COOLER rated 12 kW rejected by evaporation) when the site heat-rejection mode is evaporative and the cooler rejects its rated duty on spray (X-LOC-13), for 2 d (standby_routes.py). | X-PAR-02 TF: no site evaporative charge: the low-grade loop rejects on air at this site (AQS-PAR-003)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "HEAT",
@@ -14038,7 +14038,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DSN-OX-001: tank breathing and upset vent; no continuous flow on the design day (assumption)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 0.3708 kg/d (the API 2000 out-breathing 0.0120 Nm3/h of the 0.02 m3 tank for 24 h) when the nitric tank breathes out at its API 2000 normal venting rate (API2000_2020), for 2 d (standby_routes.py)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "GAS",
@@ -15177,7 +15177,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-019. No vent. Goods and gases return. | X-PAR-02 reconciled (AQS-PAR-003). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
+        "note": "X-RTE retired 2026-10-30 (A-M-433): the air and nitrogen header is fed by AIR_RECEIVER and holds its pressure by the receiver supply, so it never returns gas to the cold box."
       },
       "from_sector_id": "HAB",
       "to_sector_id": "CRYO",
@@ -15361,7 +15361,7 @@
       "phase": "E",
       "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)",
       "rate": {
-        "value": 0.8854,
+        "value": 0.8934,
         "unit": "kW",
         "status": "study",
         "note": "Feed equal to IND_MELT continuous_kw. | X-ELS-02."
@@ -18886,19 +18886,19 @@
       "PUMPED_HYDRO"
     ],
     "need_kw": {
-      "value": 218.05,
+      "value": 218.06,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 35x23 bays, ext 82.13 kW)."
     },
     "target_kw": {
-      "value": 545.13,
+      "value": 545.16,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."
     },
     "pv_module_kw": 0.5,
-    "pv_count": 6046,
+    "pv_count": 6048,
     "znbr_module_kw": 60.0,
     "znbr_count": 42,
     "rect_count": 1,

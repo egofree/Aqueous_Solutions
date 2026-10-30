@@ -141,8 +141,8 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S67 | AFTERBURNER_FLUE | FLUE_KO | G | mass | present | flue N2/O2/CO2/NOx | 117.42759 kg/d | — |
 | S67B | FLUE_KO | CRYO_CO2 | G | mass | present | CO2-rich gas after KO | 14.050492 kg/d | — |
 | S68 | CRYO_AHU | LEACH_CSTR_1 | L | mass | present | flue condensate | 78.987901 kg/d | — |
-| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 916.293526 kg/d | — |
-| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 916.293526 kg/d | — |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | G | mass | present | Br2 vapor | 916.335548 kg/d | — |
+| S69B | ZNBR2_BR2_REGEN | ZNBR2 | L | mass | present | NaBr after ORP | 916.335548 kg/d | — |
 | S70 | CRYO_AHU_COND_CONDENSABLE | FLUE_KO | L | mass | present | condensables | 0.0521 kg/d | — |
 | S71 | MET_AHU | MET_SCRUB | G | mass | present | metal-aisle fume / mist / dust | 20458.32 kg/d | absent_from_candidate_mvs |
 | S72 | MET_SCRUB | LEACH_CSTR_1 | L/S | mass | present | metal fines and aqueous scrub liquor | 2.4442 kg/d | — |
@@ -176,16 +176,16 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | EW9_LIQUOR_TO_MO | EW_9 | MO_CELL | L | mass | retired | post-EW liquor for Mo cut | 0.0 kg/d | — |
 | TI_CELL_CL2_TO_CRU | TI_CELL | CRU | G | mass | present | chlorine from Kroll chlorinator / Mg recycle | 0.0 kg/d | — |
 | MO_CELL_ANODE_GAS_TO_CRU | MO_CELL | CRU | G | mass | present | anode gas (Cl2 or O2) from molten-salt pot | 0.0 kg/d | — |
-| IND_MELT_TO_CAST | IND_MELT | CAST_LINE | L | mass | present | molten metal | 3.0 kg/d | — |
-| CAST_SCRAP_TO_IND | CAST_LINE | IND_MELT | S | mass | present | foundry scrap | 0.0 kg/d | — |
+| IND_MELT_TO_CAST | IND_MELT | CAST_LINE | L | mass | present | molten metal | 3.529412 kg/d | — |
+| CAST_SCRAP_TO_IND | CAST_LINE | IND_MELT | S | mass | present | foundry scrap | 0.529412 kg/d | — |
 | METALS_TO_IND_MELT | TI_CELL | IND_MELT | S | mass | present | Ti and other metal powders/sponge | 0.5 kg/d | — |
-| VAC_IND_TO_VAC_CAST | VAC_IND | VAC_CAST | L | mass | present | vacuum melt to cast | 0.0 kg/d | — |
+| VAC_IND_TO_VAC_CAST | VAC_IND | VAC_CAST | L | mass | retired | vacuum melt to cast | 0.0 kg/d | — |
 | CAST_TO_ROLL | CAST_LINE | ROLL | S | mass | present | billet to roll | 3.0 kg/d | — |
 | CAST_TO_EXTRUDE | CAST_LINE | EXTRUDE | S | mass | present | billet to extrude | 0.0 kg/d | — |
 | ROLL_TO_STOCK | ROLL | STOCK_OUT | S | mass | present | plate/sheet | 13.0 kg/d | — |
 | EXTRUDE_TO_STOCK | EXTRUDE | STOCK_OUT | S | mass | present | rod/profile | 0.0 kg/d | — |
-| DRAW_TO_STOCK | DRAW | STOCK_OUT | S | mass | present | wire | 0.0 kg/d | — |
-| SINTER_TO_STOCK | SINTER | STOCK_OUT | S | mass | present | sintered stock | 0.0 kg/d | — |
+| DRAW_TO_STOCK | DRAW | STOCK_OUT | S | mass | retired | wire | 0.0 kg/d | — |
+| SINTER_TO_STOCK | SINTER | STOCK_OUT | S | mass | retired | sintered stock | 0.0 kg/d | — |
 | FLUX_TO_IND | FLUX_PREP | IND_MELT | S | mass | present | flux | 0.039781 kg/d | — |
 | EW_METALS_TO_IND | EW_9 | IND_MELT | S | mass | retired | EW cathode/powder metals | 0.0 kg/d | — |
 | MO_TO_IND | MO_CELL | IND_MELT | S | mass | present | Mo metal | 0.0625 kg/d | — |
@@ -205,10 +205,10 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | MG_POT_CL2 | MG_POT | CRU | G | mass,energy | retired | Cl2 return | 0.0 kg/d | — |
 | IND_HEAT_TO_HX | IND_MELT | MET_HX_Q4 | E | thermal | present | furnace coil + shell cooling water 40-60 C | 1.063 kW | — |
 | VAC_HEAT_TO_HX | VAC_IND | MET_HX_Q4 | E | thermal | present | furnace coil + shell cooling water 40-60 C | 0.638 kW | — |
-| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | G | mass,energy | present | combustion off-gas when alternate used | 0.0 kg/d | — |
+| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | G | mass,energy | retired | combustion off-gas when alternate used | 0.0 kg/d | — |
 | STOCK_TO_WIRE_DRAW | METAL_STORE | WIRE_DRAW | S | mass | present | rod/wire for final sizing | 0.0 kg/d | — |
 | IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | L | mass | present | melt to atomizer when powder required | 0.0 kg/d | — |
-| ATOM_TO_STOCK | GAS_ATOMIZER | STOCK_OUT | S | mass | present | powder stock | 0.0 kg/d | — |
+| ATOM_TO_STOCK | GAS_ATOMIZER | STOCK_OUT | S | mass | retired | powder stock | 0.0 kg/d | — |
 | WAX_TO_SHELL | WAX_PATTERN | SHELL_BUILD | S | mass | present | wax pattern | 2.0 kg/d | — |
 | SHELL_TO_BURNOUT | SHELL_BUILD | SHELL_BURNOUT | S | mass | present | green shell | 10.0 kg/d | — |
 | BURNOUT_TO_CAST | SHELL_BURNOUT | INV_CAST | S | mass | present | fired shell | 8.0 kg/d | — |
@@ -264,7 +264,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.641602 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.510913 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 351.8735 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 351.8815 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
@@ -442,7 +442,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-ASU-O2 | CRYO_ASU | CRYO_O2 | G | mass | present | oxygen product | 0.063683 kg/d | — |
 | IA-ASU-CO2 | CRYO_ASU | CRYO_CO2 | G | mass | present | CO2 product | 21.581514 kg/d | — |
 | IA-H2-AIR | H2_DRYER | CRYO_ASU | G | mass | present | sweep air from the hydrogen hood | 0.0 kg/d | — |
-| IA-N2-RET | HDR_N2 | CRYO_ASU | S | mass | present | nitrogen return | 0.0 kg/d | — |
+| IA-N2-RET | HDR_N2 | CRYO_ASU | S | mass | retired | nitrogen return | 0.0 kg/d | — |
 | IA-O2-RET | HDR_O2 | CRYO_ASU | S | mass | present | oxygen return | 0.0 kg/d | — |
 | IA-CO2-RET | CRYO_CO2 | CRYO_ASU | S | mass | present | CO2 return | 0.0 kg/d | — |
 | IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | S/L | mass | present | dissolved gas | 0.0 kg/d | — |
@@ -453,7 +453,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-H2O_ELYZ | SOL_ARK_60K | H2O_ELYZ | E | elec | present | 480 V AC (daily average) | 21.1934 kW | — |
 | IA-O2-PROD | HDR_O2 | PROD_O2 | G | mass | present | surplus O2 to product cylinders | 22.014277 kg/d | — |
 | IA-O2-SHIP | PROD_O2 | NORTH_DOCK | G | mass | present | O2 cylinders shipped at the dock | 22.014277 kg/d | — |
-| SF-IND_MELT | SOL_ARK_60K | IND_MELT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.8854 kW | — |
+| SF-IND_MELT | SOL_ARK_60K | IND_MELT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.8934 kW | — |
 | SF-VAC_IND | SOL_ARK_60K | VAC_IND | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0 kW | — |
 | SF-RF_HEAT | SOL_ARK_60K | RF_HEAT | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.0 kW | — |
 | SF-HF_GEN | SOL_ARK_60K | HF_GEN | E | elec | present | 480 V or 208/120 V AC (bus per AQS-ELEC-002) | 0.3083 kW | — |

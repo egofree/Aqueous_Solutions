@@ -17,7 +17,7 @@ This page records the size of unit GAS_ATOMIZER, of class `forming` in sector MF
 
 ## 2. Duty
 
-The unit takes 3.55595 kg/d by 2 streams and gives 3.55595 kg/d by 3 streams. Its continuous electrical load is 0.0836 kW, fed by stream SF-GAS_ATOMIZER.
+The unit takes 3.55595 kg/d by 2 streams and gives 3.55595 kg/d by 2 streams. Its continuous electrical load is 0.0836 kW, fed by stream SF-GAS_ATOMIZER.
 
 The graph holds no design parameters for the unit.
 

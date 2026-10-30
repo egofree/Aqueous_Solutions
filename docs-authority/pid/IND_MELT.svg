@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1006" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="998" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit IND_MELT · furnace · sector FOUNDRY · present</text>
-<text x="24" y="54" font-size="10.5">0.8854 kW continuous</text>
+<text x="24" y="54" font-size="10.5">0.8934 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 11 in + 7 out · valves 0 placed / 0 unplaced · instruments 3 (1 SIF) · nozzles 18</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -42,7 +42,7 @@
 <polygon points="586,286 577,282 577,290" fill="#111"/>
 <text x="24" y="267" font-size="9" fill="#666" text-anchor="start">CAST_LINE</text>
 <text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">CAST_SCRAP_TO_IND</text>
-<text x="24" y="299" font-size="10" text-anchor="start">0.0 kg/d · solids transfer</text>
+<text x="24" y="299" font-size="10" text-anchor="start">0.5 kg/d · solids transfer</text>
 <text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N2</text>
 <line x1="430" y1="332" x2="577" y2="332" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-in"/>
 <polygon points="586,332 577,328 577,336" fill="#111"/>
@@ -118,7 +118,7 @@
 <polygon points="1070,378 1061,374 1061,382" fill="#111"/>
 <text x="1476" y="359" font-size="9" fill="#666" text-anchor="end">CAST_LINE</text>
 <text x="1476" y="373" font-size="11" font-weight="600" text-anchor="end">IND_MELT_TO_CAST</text>
-<text x="1476" y="391" font-size="10" text-anchor="end">3.0 kg/d · DN15 —</text>
+<text x="1476" y="391" font-size="10" text-anchor="end">3.5 kg/d · DN15 —</text>
 <text x="902" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="end">N1</text>
 <line x1="914" y1="424" x2="1061" y2="424" stroke="#111" stroke-width="1.6" class="edge-out"/>
 <polygon points="1070,424 1061,420 1061,428" fill="#111"/>
@@ -146,7 +146,7 @@
 <g id="aqs-title-block"><rect x="1116" y="888" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="905" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-IND_MELT</text>
 <text x="1124" y="922" font-size="9">P&amp;ID IND_MELT (furnace, FOUNDRY sector)</text>
-<text x="1124" y="939" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 1dbdfb67   Issued 2026-10-19</text>
+<text x="1124" y="939" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 4623e8cf   Issued 2026-10-19</text>
 <text x="1124" y="956" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="973" font-size="9">Graph SHA-256 08f7fff441d4abd9   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="973" font-size="9">Graph SHA-256 265a78c949fba543   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

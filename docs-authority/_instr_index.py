@@ -96,7 +96,7 @@ A('CAST_LINE', 'TE', MELT[0], MELT[1], MELT[2], 'mould pour: IND_MELT_TO_CAST 3.
 A('CAST_LINE', 'LT', 'level transmitter', 'laser level meter, non-contact', '0-100 % of ladle height', 'pour ladle: IND_MELT_TO_CAST 3.0 kg/d molten metal')
 A('VAC_IND', 'TE', MELT[0], MELT[1], MELT[2], 'vacuum induction skull melt (design service, 2 kg ISM case)')
 A('VAC_IND', 'PT', 'pressure transmitter', 'ceramic diaphragm, IEC 61298', '0 to 1000 mbar a', 'melt-chamber vacuum; no design pressure on the graph')
-A('VAC_CAST', 'TE', MELT[0], MELT[1], MELT[2], 'vacuum tilt-pour of VAC_IND_TO_VAC_CAST melt (design case 3 kg)')
+A('VAC_CAST', 'TE', MELT[0], MELT[1], MELT[2], 'vacuum tilt-pour; the casting has no product route, so VAC_IND_TO_VAC_CAST is retired and the titanium melt pours to INV_CAST (A-M-433)')
 A('VAC_CAST', 'PT', 'pressure transmitter', 'ceramic diaphragm, IEC 61298', '0 to 1000 mbar a', 'cast-chamber vacuum; no design pressure on the graph')
 A('ROLL', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', K600, 'hot rolling of CAST_TO_ROLL + CONT_TO_ROLL billet (13 kg/d); no design T on the graph')
 A('EXTRUDE', 'TE', 'temperature element', 'Pt100 class A, IEC 60751, 316L thermowell', K600, 'billet/container preheat for extrusion (N+1 of ROLL); no design T on the graph')

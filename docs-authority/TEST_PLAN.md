@@ -15,14 +15,14 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
-| T1 | Owner and site data | 50 | Owner decision or site investigation report |
+| T1 | Owner and site data | 51 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 64 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 483 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 484 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 682 items: 300 drivers, 382 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 684 items: 301 drivers, 383 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -78,6 +78,7 @@ Total 682 items: 300 drivers, 382 register entries. Classification rule: first m
 | A-M-114 | Collection at 480 V in sections with breakers <= 1000 A (NEC A, kVA, kV | Utility service voltage; short-circuit and coordination study with the utility source | X-ELS-11 |
 | A-M-115 | Hall classed general industrial ordinary hazard, sprinklered m, m2/person | Owner hall programme (contents hazard class); AHJ pre-application meeting; egress plan on the fit-out model | X-STD-01 |
 | A-M-268 | backup_gen_rated_kW 40.0 / crit_autonomy_d 2.0 (drivers.json kW / d | Critical-load list confirmation at unit task 02 completion; acceptance load test per NFPA 110 8.4.9 at 4 h; owner outage-basis decision vs AQS-SITE-002 NSRDB run | X-PAR |
+| A-M-433 | The standby and return route sets of task X-RTE are decided  kg/d | python3 -m flow_graph.param.standby_routes prints each rated case; after regen the X-RTE standby and return groups list only the assay-dependent and owner-held routes, and test_balance passes with no reconciled move. | QA audit 2026-10-30, X-RTE-STANDBY and X-RTE-RETURN |
 
 ## 3. T2 In-house design tests and standard data
 
@@ -264,6 +265,7 @@ Total 682 items: 300 drivers, 382 register entries. Classification rule: first m
 | driver bmed_cells_per_stack_max | 100 cell triplets per stack (manifold flow distribution) | same test: per-cell voltage spread | X-PAR |
 | driver bmed_sec_design_kWh_per_kg_pair | 2.1 kWh per kg acid+base (current graph basis) | Superseded: BMED energy now from bmed_sec_kWh_per_kg_base (X-PAR acid-loop decision) | X-PAR |
 | driver bmed_spacer_shadow | 1.5 - solution resistance multiplier for a woven mesh spacer | Stack ohmic resistance at three flow rates (X-MFG-35) | X-PAR |
+| driver cast_gating_return_frac | 0.15 - | weigh the gates and risers cut from a week of permanent-mold copper pours against the poured mass | X-PAR |
 | driver cb_13x_CO2_mol_kg | 1.5 mol CO2 per kg 13X working capacity at about 6.6 kPa CO2, 25 C adsorb / 200 C regenerate | Breakthrough test of one 13X bed on the scrubbed flue gas (X-MFG-33) | X-PAR |
 | driver cb_chiller_COP | 2.5 - condenser chiller at -25 C evaporating | Chiller COP on the first article | X-PAR |
 | driver cb_dH_ads_kJ_mol | 36.0 kJ/mol CO2 on 13X | Regeneration energy measured on the first bed (X-MFG-33) | X-PAR |

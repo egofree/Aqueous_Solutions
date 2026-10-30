@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body D414 x 1243 mm,1,316L.,docs-authority/duties/CRYO_ASU.md
-2,Process nozzle DN15,13,316L.,one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,12,316L.,one per mass edge; DN from AQS-INV-003
 3,Open vent DN25,1,316L.,"API 2000, A-M-155"
 4,"Motor: air compressor (cold box feed) (induction IE3, IEC 100L / 2.2 kW)",1,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: expander brake / generator (induction IE3, IEC 63 / 0.12 kW)",1,-,AQS-INV-001 / AQS-INV-005

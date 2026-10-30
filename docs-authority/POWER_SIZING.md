@@ -40,11 +40,11 @@ Table 3.1. Storage and generation sizing results
 | Quantity | Value | Unit | Graph field |
 |---|---|---|---|
 | Plant bus demand | 218.1 | kW | `mvs.electrical.need_kw` |
-| Mean-day average generation of the installed array | 545.1 | kW | `mvs.electrical.target_kw` |
+| Mean-day average generation of the installed array | 545.2 | kW | `mvs.electrical.target_kw` |
 | PV balancing nameplate | 1,512 | kWp | `PV_ARRAY.params.balance_kWp` |
 | PV oversize factor | 2.0 | - | `PV_ARRAY.params.oversize_factor` |
-| PV installed nameplate | 3,023 | kWp | `PV_ARRAY.params.nameplate_kw` |
-| PV modules | 6,046 | - | `PV_ARRAY.params.count` |
+| PV installed nameplate | 3,024 | kWp | `PV_ARRAY.params.nameplate_kw` |
+| PV modules | 6,048 | - | `PV_ARRAY.params.count` |
 | PV array area | 26,574 | m² | `PV_ARRAY.params.area_m2` |
 | Roof footprint | 28,980 | m² | `PV_ARRAY.params.roof.footprint_m2` |
 | Roof capacity after pathways | 3,029.5 | kWp | `PV_ARRAY.params.roof.roof_capacity_kWp` |

@@ -17,7 +17,7 @@ This page records the size of unit HDR_N2, of class `header` in sector HAB, from
 
 ## 2. Duty
 
-The unit takes 192.387 kg/d by 2 streams and gives 192.387 kg/d by 5 streams.
+The unit takes 192.387 kg/d by 2 streams and gives 192.387 kg/d by 4 streams.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -38,7 +38,7 @@ Table 2.1. Design parameters
 | volume_m3 | 0.0202 |
 | material | 316L tube |
 | hold_kg | 0.02 |
-| connections | 7 |
+| connections | 6 |
 
 ## 3. Geometry
 

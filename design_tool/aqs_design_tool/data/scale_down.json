@@ -4060,7 +4060,7 @@
      "from": "SOL_ARK_60K",
      "to": "IND_MELT",
      "other_sector": "ELEC",
-     "rate": 0.8854,
+     "rate": 0.8934,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -6484,7 +6484,7 @@
      "from": "SOL_ARK_60K",
      "to": "IND_MELT",
      "other_sector": "FOUNDRY",
-     "rate": 0.8854,
+     "rate": 0.8934,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },

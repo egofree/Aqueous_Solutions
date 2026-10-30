@@ -17,7 +17,7 @@ This page records the size of unit STOCK_OUT, of class `store` in sector FOUNDRY
 
 ## 2. Duty
 
-The unit takes 36.7125 kg/d by 7 streams and gives 36.7125 kg/d by 1 stream.
+The unit takes 36.7125 kg/d by 4 streams and gives 36.7125 kg/d by 1 stream.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

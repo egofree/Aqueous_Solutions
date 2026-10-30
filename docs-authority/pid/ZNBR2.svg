@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="730" font-family="sans-serif">
 <rect x="4" y="4" width="1492" height="722" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit ZNBR2 · flow_battery · sector ELEC · present</text>
-<text x="24" y="54" font-size="10.5">218.053 kW continuous</text>
+<text x="24" y="54" font-size="10.5">218.063 kW continuous</text>
 <text x="24" y="72" font-size="10.5">Edges 3 in + 5 out · valves 9 placed / 0 unplaced · instruments 7 (1 SIF) · nozzles 10</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
@@ -115,7 +115,7 @@
 <g id="aqs-title-block"><rect x="1116" y="612" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="629" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-ZNBR2</text>
 <text x="1124" y="646" font-size="9">P&amp;ID ZNBR2 (flow_battery, ELEC sector)</text>
-<text x="1124" y="663" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 87957b77   Issued 2026-10-19</text>
+<text x="1124" y="663" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev ef66aaff   Issued 2026-10-19</text>
 <text x="1124" y="680" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="697" font-size="9">Graph SHA-256 08f7fff441d4abd9   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="697" font-size="9">Graph SHA-256 265a78c949fba543   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

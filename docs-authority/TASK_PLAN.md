@@ -59,8 +59,8 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 52 | 17 |
-| FOUNDRY | Process (Mass transform) | 405 | 311 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 66 | 30 |
+| FOUNDRY | Process (Mass transform) | 405 | 307 |
 | DIGESTER | Process (Mass transform) | 375 | 251 |
 | FAB | Process (Mass transform) | 270 | 178 |
 | CRYO | Utility / header | 210 | 135 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3064** | **2149** |
+| | **Total** | **3078** | **2158** |
 
 ## 3. Triage of open tasks
 
@@ -104,12 +104,12 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P1 | 4 |
-| desk P2 | 36 |
+| desk P2 | 40 |
 | desk P3 | 34 |
 | desk P4 | 472 |
 | desk P5 | 179 |
 | hardware | 188 |
-| owner | 2 |
+| owner | 3 |
 
 ## 4. Unit task template
 
@@ -161,7 +161,9 @@ Table 6.1. Next cross-cutting desk tasks
 | --- | --- | --- |
 | X-END-02 | End-of-life material return | desk P2 |
 | X-LOC-11 | Floating island variant | desk P2 |
+| X-RTE-ASSAY | Routes waiting on the dense-grit assay: CR_CELL_SLAG_RETURN, FLOAT_SINK_GRIT_TO_CR, FLOAT_SINK_GRIT_TO_MO, FLOAT_SINK_GRIT_TO_TI, MO_CELL_SLAG_RETURN, TI_CELL_SLAG_RETURN | desk P2 |
 | X-RTE-CO2_TO_FARM | Route CO2_TO_FARM from HDR_CO2 to GROW_BED carries no flow | desk P2 |
+| X-RTE-COMB-HEAT-FUEL | Fuel route for the fuel-fired alternate COMB_HEAT | desk P2 |
 | X-RTE-CUT-1-OUT | Route CUT-1-OUT from PROD_C5_C10 to BACKUP_GEN carries no flow | desk P2 |
 | X-RTE-CZ-HOTZONE | CZ hot-zone heater from a heat-loss model | desk P2 |
 | X-RTE-DIGEST_TO_POLY | Route DIGEST_TO_POLY from BLACK_DIGEST to POLY_COND carries no flow | desk P2 |
@@ -185,7 +187,6 @@ Table 6.1. Next cross-cutting desk tasks
 | X-RTE-POLYF_TO_PELLET | Route POLYF_TO_PELLET from POLY_F to PELLET carries no flow | desk P2 |
 | X-RTE-PV-SI | Silicon wafers for SOLAR_PV_CELL | desk P2 |
 | X-RTE-RESIST-AZIDE | Aromatic bis-azide sensitiser for a negative resist | desk P2 |
-| X-RTE-RETURN | Return routes without flow: CR_CELL_SLAG_RETURN, IA-CO2-RET, IA-N2-RET, IA-O2-RET, MO_CELL_SLAG_RETURN, TI_CELL_SLAG_RETURN | desk P2 |
 | X-RTE-S04 | Route S04 from CRYO_CO2 to GROW_BED carries no flow | desk P2 |
 | X-RTE-S15 | Route S15 from GROW_BED to HABITATION carries no flow | desk P2 |
 | X-RTE-S18 | Route S18 from AFTERBURNER to CRYO_CO2 carries no flow | desk P2 |
@@ -193,7 +194,6 @@ Table 6.1. Next cross-cutting desk tasks
 | X-RTE-S85 | Route S85 from CRYO_CO2 to HDR_CO2 carries no flow | desk P2 |
 | X-RTE-SALT_TO_FLUX | Route SALT_TO_FLUX from SALT_FEED to FLUX_PREP carries no flow | desk P2 |
 | X-RTE-SHELL_TO_GLASS | Route SHELL_TO_GLASS from SHELL_BREAK to GLASS_MILL carries no flow | desk P2 |
-| X-RTE-STANDBY | Standby routes without a rated case: ATOM_TO_STOCK, CAST_SCRAP_TO_IND, CAST_TO_EXTRUDE, COMB_OFFGAS, DRAW_TO_STOCK, EXTRUDE_TO_STOCK, FLOAT_SINK_GRIT_TO_CR, FLOAT_SINK_GRIT_TO_MO, FLOAT_SINK_GRIT_TO_TI, IA-DC-EVAP, IA-DC-SPRAY, IA-ESS-HYDRO-CHG, IA-ESS-HYDRO-DIS, IA-NIT-VENT, MO_CELL_ANODE_GAS_TO_CRU, SINTER_TO_STOCK, TI_CELL_CL2_TO_CRU, VAC_IND_TI, VAC_IND_TO_VAC_CAST, VAC_TO_INV | desk P2 |
 | X-RTE-WAX_TO_OIL | Route WAX_TO_OIL from SHELL_BURNOUT to OIL_FRAC carries no flow | desk P2 |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
@@ -204,6 +204,7 @@ Table 6.2. Tasks waiting on an owner decision
 | --- | --- |
 | X-BAS-03 | Site basis |
 | X-PRO-03 | Cost estimate |
+| X-RTE-HELD | Routes in areas the owner holds: IA-CO2-RET, IA-O2-RET |
 
 Sizing-driven changes to rates and layout are approved by default (task group X-RSZ). The sizing rule is in `AGENTS.md`, section "Sizing".
 
@@ -614,12 +615,25 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [x] **X-RTE-IMPORT-CARBON** Imports IA-C-TI, IA-C-MO and IA-C-CR: carbon reductant made on site. Done when: the Ti, Mo and Cr chlorinators take plant pyrolysis char from OIL_PYRO, sized from their carbon need over the char fixed carbon (A-M-420). Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
 - [x] **X-RTE-MG_POT_CL2** Route MG_POT_CL2: retired. Done when: MG_POT makes exactly the chlorine that the Kroll chlorinator draws on IA-CL2-MG-TI, so it has no surplus for CRU at any titanium rate; set to presence retired. Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
 - [x] **X-RTE-POLY_TO_FAB** Route POLY_TO_FAB: photoresist to the fab. Done when: the positive DNQ-novolac resist is sized from the coats per day and made on site by RESIST_SYN from plant cuts, methanol, ammonia, hydrogen, chlorinator CO, pot chlorine and plant acid; the fab nitrogen purge now vents and the fab closes honestly (A-M-432). Depends: —. Evidence: `flow_graph/param/fab_resist.py`.
+- [x] **X-RTE-CAST_SCRAP_TO_IND** Route CAST_SCRAP_TO_IND: gating return to the melt. Done when: the gates and risers of the permanent-mold pours return to IND_MELT daily at cast_gating_return_frac of the pour, and the melt energy and heats include them (A-M-433). Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
+- [x] **X-RTE-RETIRED-43** Routes DRAW_TO_STOCK, SINTER_TO_STOCK, ATOM_TO_STOCK, COMB_OFFGAS, VAC_IND_TO_VAC_CAST and IA-N2-RET: retired. Done when: each duplicates another route or has no source that can give it flow, with the reason on the edge; set to presence retired (A-M-433). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-UPW_TO_FAB** Route UPW_TO_FAB: retired as a duplicate. Done when: IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired. Depends: —. Evidence: `flow_graph/plant_flow_graph.json`.
 - [x] **X-RTE-AL_POT_CL2** Route AL_POT_CL2 from AL_POT to CRU: standby at its rated case. Done when: the route carries 0.615762 kg/d when cru_cl2_source is POT or the CRU chlorate finish is out of service (A-M-418). Depends: —. Evidence: `flow_graph/param/fluoro_train.py`.
+- [x] **X-RTE-CAST_TO_EXTRUDE** Route CAST_TO_EXTRUDE from CAST_LINE to EXTRUDE: standby at its rated case. Done when: the route carries 3 kg/d when ROLL is out of service and the cast-line billet is extruded instead (EXTRUDE is the N+1 alternate, A-M-283) (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
+- [x] **X-RTE-EXTRUDE_TO_STOCK** Route EXTRUDE_TO_STOCK from EXTRUDE to STOCK_OUT: standby at its rated case. Done when: the route carries 3 kg/d when ROLL is out of service and EXTRUDE sends the extruded cast-line stock to STOCK_OUT (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-GREASE_LI_TO_MFG** Route GREASE_LI_TO_MFG from GREASE_LI to MFG_SHOP: standby at its rated case. Done when: the route carries 0.002392 kg/d when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-418). Depends: —. Evidence: `flow_graph/param/grease.py`.
+- [x] **X-RTE-IA-DC-EVAP** Route IA-DC-EVAP from DRY_COOLER to ATMOS: standby at its rated case. Done when: the route carries 422.494 kg/d when the site heat-rejection mode is evaporative and the sprayed water evaporates at the cooler (X-LOC-13) (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
+- [x] **X-RTE-IA-DC-SPRAY** Route IA-DC-SPRAY from ROOF_TANK to DRY_COOLER: standby at its rated case. Done when: the route carries 422.494 kg/d when the site heat-rejection mode is evaporative and the cooler rejects its rated duty on spray (X-LOC-13) (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
+- [x] **X-RTE-IA-ESS-HYDRO-CHG** Route IA-ESS-HYDRO-CHG from CATCH_TANK to ROOF_TANK: standby at its rated case. Done when: the route carries 2.7e+06 kg/d when after a discharge the reservoir is pumped back up on the PV surplus (A-M-145) (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
+- [x] **X-RTE-IA-ESS-HYDRO-DIS** Route IA-ESS-HYDRO-DIS from ROOF_TANK to CATCH_TANK: standby at its rated case. Done when: the route carries 2.7e+06 kg/d when ZNBR2 is lost and the reservoir discharges through the turbine over the night class hours (A-M-145) (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
+- [x] **X-RTE-IA-NIT-VENT** Route IA-NIT-VENT from WS_NITRIC to NOX_SCRUB: standby at its rated case. Done when: the route carries 0.3708 kg/d when the nitric tank breathes out at its API 2000 normal venting rate (API2000_2020) (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-IND_TO_ATOM** Route IND_TO_ATOM from IND_MELT to GAS_ATOMIZER: standby at its rated case. Done when: the route carries 3.556 kg/d when MET_MELT is out of service and the foundry melt IND_MELT pours the atomiser charge (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-LI_TO_GREASE** Route LI_TO_GREASE from LI_RECOVER to GREASE_LI: standby at its rated case. Done when: the route carries 2.4e-05 kg/d when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-418). Depends: —. Evidence: `flow_graph/param/grease.py`.
+- [x] **X-RTE-MO_CELL_ANODE_GAS_TO_CRU** Route MO_CELL_ANODE_GAS_TO_CRU from MO_CELL to CRU: standby at its rated case. Done when: the route carries 0.0693 kg/d when the MO_CELL carbochlorination step is out of service while the cell runs down, and its anode chlorine goes to CRU (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-STOCK_TO_WIRE_DRAW** Route STOCK_TO_WIRE_DRAW from METAL_STORE to WIRE_DRAW: standby at its rated case. Done when: the route carries 6.8389 kg/d when MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
+- [x] **X-RTE-TI_CELL_CL2_TO_CRU** Route TI_CELL_CL2_TO_CRU from TI_CELL to CRU: standby at its rated case. Done when: the route carries 1.4813 kg/d when the Kroll chlorinator is out of service while MG_POT runs down, and the pot chlorine goes to CRU (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
+- [x] **X-RTE-VAC_IND_TI** Route VAC_IND_TI from TI_CELL to VAC_IND: standby at its rated case. Done when: the route carries 0.5 kg/d when IND_MELT is out of service and the titanium sponge is melted in the VAC_IND skull furnace (A-M-283) (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
+- [x] **X-RTE-VAC_TO_INV** Route VAC_TO_INV from VAC_IND to INV_CAST: standby at its rated case. Done when: the route carries 0.5 kg/d when IND_MELT is out of service and the VAC_IND titanium melt pours to the investment line (A-M-418). Depends: —. Evidence: `flow_graph/param/standby_routes.py`.
 - [x] **X-RTE-WAX_TO_GREASE_LI** Route WAX_TO_GREASE_LI from PROD_C19_C28 to GREASE_LI: standby at its rated case. Done when: the route carries 0.002506 kg/d when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-418). Depends: —. Evidence: `flow_graph/param/grease.py`.
 - [ ] **X-RTE-CO2_TO_FARM** Route CO2_TO_FARM from HDR_CO2 to GROW_BED carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-CUT-1-OUT** Route CUT-1-OUT from PROD_C5_C10 to BACKUP_GEN carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
@@ -649,12 +663,13 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-RTE-SALT_TO_FLUX** Route SALT_TO_FLUX from SALT_FEED to FLUX_PREP carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-SHELL_TO_GLASS** Route SHELL_TO_GLASS from SHELL_BREAK to GLASS_MILL carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
 - [ ] **X-RTE-WAX_TO_OIL** Route WAX_TO_OIL from SHELL_BURNOUT to OIL_FRAC carries no flow. Done when: the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason. Depends: X-PAR-02. Triage: desk P2.
-- [ ] **X-RTE-STANDBY** Standby routes without a rated case: ATOM_TO_STOCK, CAST_SCRAP_TO_IND, CAST_TO_EXTRUDE, COMB_OFFGAS, DRAW_TO_STOCK, EXTRUDE_TO_STOCK, FLOAT_SINK_GRIT_TO_CR, FLOAT_SINK_GRIT_TO_MO, FLOAT_SINK_GRIT_TO_TI, IA-DC-EVAP, IA-DC-SPRAY, IA-ESS-HYDRO-CHG, IA-ESS-HYDRO-DIS, IA-NIT-VENT, MO_CELL_ANODE_GAS_TO_CRU, SINTER_TO_STOCK, TI_CELL_CL2_TO_CRU, VAC_IND_TI, VAC_IND_TO_VAC_CAST, VAC_TO_INV. Done when: each standby, N+1 or site-mode route carries the rate of the case that puts it in service, so its line and both units are sized for it. Depends: X-PAR-02. Triage: desk P2.
-- [ ] **X-RTE-RETURN** Return routes without flow: CR_CELL_SLAG_RETURN, IA-CO2-RET, IA-N2-RET, IA-O2-RET, MO_CELL_SLAG_RETURN, TI_CELL_SLAG_RETURN. Done when: each return route is shown to be needed, with the case that uses it and its rate, or it is retired. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-ASSAY** Routes waiting on the dense-grit assay: CR_CELL_SLAG_RETURN, FLOAT_SINK_GRIT_TO_CR, FLOAT_SINK_GRIT_TO_MO, FLOAT_SINK_GRIT_TO_TI, MO_CELL_SLAG_RETURN, TI_CELL_SLAG_RETURN. Done when: the float-sink grit and cell slag routes carry the rates that the AQS-ASSAY-TI-MO assay drivers give (Q-037, A-M-427); until the assay is set they stay at zero. Depends: X-PAR-02. Triage: desk P2.
+- [ ] **X-RTE-HELD** Routes in areas the owner holds: IA-CO2-RET, IA-O2-RET. Done when: the owner decides the O2 ownership and greenhouse gas routes; each is then given a rated case or retired. Depends: X-PAR-02. Triage: owner.
 - [ ] **X-RTE-PV-SI** Silicon wafers for SOLAR_PV_CELL. Done when: the cell line has a wafer route sized from pv_cells_per_d, from the fab or an import, with both balances closed. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
 - [ ] **X-RTE-CZ-HOTZONE** CZ hot-zone heater from a heat-loss model. Done when: the 35 kW hot-zone duty of A-M-417 is replaced by a heat-loss model of the hot zone, and the pull peak is carried in the one-line. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
 - [ ] **X-RTE-RESIST-ISOPRENE** Isoprene for a negative cyclised-rubber resist. Done when: the C5 diene is separated from the cracked C5-C10 cut and polymerised and cyclised on site, sized from the resist need, if the negative resist is to become a selectable fab_resist_route (A-M-432). Depends: X-RTE-POLY_TO_FAB. Triage: hardware.
 - [ ] **X-RTE-RESIST-AZIDE** Aromatic bis-azide sensitiser for a negative resist. Done when: an azide route from plant streams (hydrazine from ammonia and hypochlorite, then the nitrite azide synthesis) and the aromatic amine and ketone it is built on are sized and closed, with an organic developer for LITHO_DEV, or the negative class is dropped (A-M-432). Depends: X-RTE-POLY_TO_FAB. Triage: desk P2.
+- [ ] **X-RTE-COMB-HEAT-FUEL** Fuel route for the fuel-fired alternate COMB_HEAT. Done when: COMB_HEAT gets a fuel route from a plant fuel (the C5-C10 cut or the chlorinator CO) and its off-gas route back, sized at the outage of the electric furnace it backs up, or the unit is retired (A-M-433). Depends: X-RTE-RETIRED-43. Triage: desk P2.
 - [ ] **X-RTE-LEGACY-PFD** Remaining hand-drawn process sheets. Done when: each script in flow_graph/exporters/matplotlib/ that the regenerator does not run is checked for what it draws and who cites it, then retired or replaced by a graph view. Depends: —. Triage: desk P2.
 
 ## 8. Unit tasks by system
@@ -678,7 +693,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] FOUNDRY-AL_POT-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-AL_POT-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FOUNDRY-AL_POT-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-AL_POT-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-CAST_LINE** (caster, sector FOUNDRY)
-  - [x] FOUNDRY-CAST_LINE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CAST_LINE.md` §1; mass in = out 3 kg/d, 0.0000 kW.
+  - [x] FOUNDRY-CAST_LINE-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CAST_LINE.md` §1; mass in = out 3.529 kg/d, 0.0000 kW.
   - [x] FOUNDRY-CAST_LINE-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-CAST_LINE-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-CAST_LINE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-CAST_LINE-01, FOUNDRY-CAST_LINE-02. Evidence: `docs-authority/pid/CAST_LINE.svg` (AQS-PID-001).
   - [x] FOUNDRY-CAST_LINE-04 Nozzle schedule. Done when: docs-authority/nozzles/CAST_LINE.csv, one row per edge. Depends: FOUNDRY-CAST_LINE-03. Evidence: `docs-authority/nozzles/CAST_LINE.csv` (all 4 process connections listed).
@@ -713,8 +728,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-COMB_HEAT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/COMB_HEAT.md` §1; mass in = out 0 kg/d, 0.0500 kW.
   - [x] FOUNDRY-COMB_HEAT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-COMB_HEAT-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-COMB_HEAT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-COMB_HEAT-01, FOUNDRY-COMB_HEAT-02. Evidence: `docs-authority/pid/COMB_HEAT.svg` (AQS-PID-001).
-  - [x] FOUNDRY-COMB_HEAT-04 Nozzle schedule. Done when: docs-authority/nozzles/COMB_HEAT.csv, one row per edge. Depends: FOUNDRY-COMB_HEAT-03. Evidence: `docs-authority/nozzles/COMB_HEAT.csv` (all 1 process connections listed).
-  - [x] FOUNDRY-COMB_HEAT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-COMB_HEAT-04, FOUNDRY-COMB_HEAT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 2 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FOUNDRY-COMB_HEAT-04 Nozzle schedule. Done when: docs-authority/nozzles/COMB_HEAT.csv, one row per edge. Depends: FOUNDRY-COMB_HEAT-03. Status: no piped process connections; nozzle schedule n/a. Triage: desk P2.
+  - [x] FOUNDRY-COMB_HEAT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-COMB_HEAT-04, FOUNDRY-COMB_HEAT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 1 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FOUNDRY-COMB_HEAT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FOUNDRY-COMB_HEAT-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FOUNDRY-COMB_HEAT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-COMB_HEAT-02, FOUNDRY-COMB_HEAT-03. Evidence: `docs-authority/duties/COMB_HEAT.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-COMB_HEAT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-COMB_HEAT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -761,8 +776,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-DRAW-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/DRAW.md` §1; mass in = out 0 kg/d, 0.0000 kW.
   - [x] FOUNDRY-DRAW-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-DRAW-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-DRAW-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-DRAW-01, FOUNDRY-DRAW-02. Evidence: `docs-authority/pid/DRAW.svg` (AQS-PID-001).
-  - [x] FOUNDRY-DRAW-04 Nozzle schedule. Done when: docs-authority/nozzles/DRAW.csv, one row per edge. Depends: FOUNDRY-DRAW-03. Evidence: `docs-authority/nozzles/DRAW.csv` (all 1 process connections listed).
-  - [x] FOUNDRY-DRAW-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-DRAW-04, FOUNDRY-DRAW-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 2 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FOUNDRY-DRAW-04 Nozzle schedule. Done when: docs-authority/nozzles/DRAW.csv, one row per edge. Depends: FOUNDRY-DRAW-03. Status: no piped process connections; nozzle schedule n/a. Triage: desk P2.
+  - [x] FOUNDRY-DRAW-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-DRAW-04, FOUNDRY-DRAW-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 1 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FOUNDRY-DRAW-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FOUNDRY-DRAW-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FOUNDRY-DRAW-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-DRAW-02, FOUNDRY-DRAW-03. Evidence: `docs-authority/duties/DRAW.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-DRAW-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-DRAW-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -822,7 +837,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] FOUNDRY-FORGE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FOUNDRY-FORGE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FOUNDRY-FORGE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FOUNDRY-FORGE-14, X-COM-01. Triage: hardware.
 - **FOUNDRY-IND_MELT** (furnace, sector FOUNDRY)
-  - [x] FOUNDRY-IND_MELT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/IND_MELT.md` §1; mass in = out 37.07 kg/d, 0.8854 kW.
+  - [x] FOUNDRY-IND_MELT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/IND_MELT.md` §1; mass in = out 37.6 kg/d, 0.8934 kW.
   - [x] FOUNDRY-IND_MELT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-IND_MELT-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-IND_MELT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-IND_MELT-01, FOUNDRY-IND_MELT-02. Evidence: `docs-authority/pid/IND_MELT.svg` (AQS-PID-001).
   - [x] FOUNDRY-IND_MELT-04 Nozzle schedule. Done when: docs-authority/nozzles/IND_MELT.csv, one row per edge. Depends: FOUNDRY-IND_MELT-03. Evidence: `docs-authority/nozzles/IND_MELT.csv` (all 15 process connections listed).
@@ -1001,8 +1016,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-SINTER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/SINTER.md` §1; mass in = out 0 kg/d, 0.0000 kW.
   - [x] FOUNDRY-SINTER-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-SINTER-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-SINTER-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-SINTER-01, FOUNDRY-SINTER-02. Evidence: `docs-authority/pid/SINTER.svg` (AQS-PID-001).
-  - [x] FOUNDRY-SINTER-04 Nozzle schedule. Done when: docs-authority/nozzles/SINTER.csv, one row per edge. Depends: FOUNDRY-SINTER-03. Evidence: `docs-authority/nozzles/SINTER.csv` (all 1 process connections listed).
-  - [x] FOUNDRY-SINTER-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-SINTER-04, FOUNDRY-SINTER-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 2 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FOUNDRY-SINTER-04 Nozzle schedule. Done when: docs-authority/nozzles/SINTER.csv, one row per edge. Depends: FOUNDRY-SINTER-03. Status: no piped process connections; nozzle schedule n/a. Triage: desk P2.
+  - [x] FOUNDRY-SINTER-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-SINTER-04, FOUNDRY-SINTER-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 1 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [ ] FOUNDRY-SINTER-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FOUNDRY-SINTER-02. Triage: desk P3.
   - [x] FOUNDRY-SINTER-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-SINTER-02, FOUNDRY-SINTER-03. Evidence: `docs-authority/duties/SINTER.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-SINTER-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-SINTER-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
@@ -1017,8 +1032,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-STOCK_OUT-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/STOCK_OUT.md` §1; mass in = out 36.71 kg/d, 0.0000 kW.
   - [x] FOUNDRY-STOCK_OUT-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-STOCK_OUT-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-STOCK_OUT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-STOCK_OUT-01, FOUNDRY-STOCK_OUT-02. Evidence: `docs-authority/pid/STOCK_OUT.svg` (AQS-PID-001).
-  - [x] FOUNDRY-STOCK_OUT-04 Nozzle schedule. Done when: docs-authority/nozzles/STOCK_OUT.csv, one row per edge. Depends: FOUNDRY-STOCK_OUT-03. Evidence: `docs-authority/nozzles/STOCK_OUT.csv` (all 8 process connections listed).
-  - [x] FOUNDRY-STOCK_OUT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-STOCK_OUT-04, FOUNDRY-STOCK_OUT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 8 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FOUNDRY-STOCK_OUT-04 Nozzle schedule. Done when: docs-authority/nozzles/STOCK_OUT.csv, one row per edge. Depends: FOUNDRY-STOCK_OUT-03. Evidence: `docs-authority/nozzles/STOCK_OUT.csv` (all 5 process connections listed).
+  - [x] FOUNDRY-STOCK_OUT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-STOCK_OUT-04, FOUNDRY-STOCK_OUT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FOUNDRY-STOCK_OUT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FOUNDRY-STOCK_OUT-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FOUNDRY-STOCK_OUT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-STOCK_OUT-02, FOUNDRY-STOCK_OUT-03. Evidence: `docs-authority/duties/STOCK_OUT.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-STOCK_OUT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-STOCK_OUT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -1049,8 +1064,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-VAC_CAST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VAC_CAST.md` §1; mass in = out 0 kg/d, 0.0000 kW.
   - [x] FOUNDRY-VAC_CAST-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-VAC_CAST-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-VAC_CAST-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-VAC_CAST-01, FOUNDRY-VAC_CAST-02. Evidence: `docs-authority/pid/VAC_CAST.svg` (AQS-PID-001).
-  - [x] FOUNDRY-VAC_CAST-04 Nozzle schedule. Done when: docs-authority/nozzles/VAC_CAST.csv, one row per edge. Depends: FOUNDRY-VAC_CAST-03. Evidence: `docs-authority/nozzles/VAC_CAST.csv` (all 1 process connections listed).
-  - [x] FOUNDRY-VAC_CAST-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-VAC_CAST-04, FOUNDRY-VAC_CAST-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 2 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [ ] FOUNDRY-VAC_CAST-04 Nozzle schedule. Done when: docs-authority/nozzles/VAC_CAST.csv, one row per edge. Depends: FOUNDRY-VAC_CAST-03. Status: no piped process connections; nozzle schedule n/a. Triage: desk P2.
+  - [x] FOUNDRY-VAC_CAST-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-VAC_CAST-04, FOUNDRY-VAC_CAST-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 1 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FOUNDRY-VAC_CAST-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FOUNDRY-VAC_CAST-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FOUNDRY-VAC_CAST-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-VAC_CAST-02, FOUNDRY-VAC_CAST-03. Evidence: `docs-authority/duties/VAC_CAST.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-VAC_CAST-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-VAC_CAST-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -1065,8 +1080,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] FOUNDRY-VAC_IND-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/VAC_IND.md` §1; mass in = out 0 kg/d, 0.0000 kW.
   - [x] FOUNDRY-VAC_IND-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FOUNDRY-VAC_IND-01. Evidence: `docs-authority/sizing/FOUNDRY_LINE.md` (AQS-DUTY-072).
   - [x] FOUNDRY-VAC_IND-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FOUNDRY-VAC_IND-01, FOUNDRY-VAC_IND-02. Evidence: `docs-authority/pid/VAC_IND.svg` (AQS-PID-001).
-  - [x] FOUNDRY-VAC_IND-04 Nozzle schedule. Done when: docs-authority/nozzles/VAC_IND.csv, one row per edge. Depends: FOUNDRY-VAC_IND-03. Evidence: `docs-authority/nozzles/VAC_IND.csv` (all 3 process connections listed).
-  - [x] FOUNDRY-VAC_IND-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-VAC_IND-04, FOUNDRY-VAC_IND-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] FOUNDRY-VAC_IND-04 Nozzle schedule. Done when: docs-authority/nozzles/VAC_IND.csv, one row per edge. Depends: FOUNDRY-VAC_IND-03. Evidence: `docs-authority/nozzles/VAC_IND.csv` (all 2 process connections listed).
+  - [x] FOUNDRY-VAC_IND-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FOUNDRY-VAC_IND-04, FOUNDRY-VAC_IND-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 4 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FOUNDRY-VAC_IND-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FOUNDRY-VAC_IND-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] FOUNDRY-VAC_IND-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FOUNDRY-VAC_IND-02, FOUNDRY-VAC_IND-03. Evidence: `docs-authority/duties/VAC_IND.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FOUNDRY-VAC_IND-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FOUNDRY-VAC_IND-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -1842,8 +1857,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_ASU-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/CRYO_ASU.md` §1; mass in = out 218.8 kg/d, 1.6572 kW.
   - [x] CRYO-CRYO_ASU-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: CRYO-CRYO_ASU-01. Evidence: `docs-authority/sizing/COLD_BOX.md` (AQS-DUTY-069).
   - [x] CRYO-CRYO_ASU-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: CRYO-CRYO_ASU-01, CRYO-CRYO_ASU-02. Evidence: `docs-authority/pid/CRYO_ASU.svg` (AQS-PID-001).
-  - [x] CRYO-CRYO_ASU-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_ASU.csv, one row per edge. Depends: CRYO-CRYO_ASU-03. Evidence: `docs-authority/nozzles/CRYO_ASU.csv` (all 13 process connections listed).
-  - [x] CRYO-CRYO_ASU-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: CRYO-CRYO_ASU-04, CRYO-CRYO_ASU-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 14 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] CRYO-CRYO_ASU-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_ASU.csv, one row per edge. Depends: CRYO-CRYO_ASU-03. Evidence: `docs-authority/nozzles/CRYO_ASU.csv` (all 12 process connections listed).
+  - [x] CRYO-CRYO_ASU-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: CRYO-CRYO_ASU-04, CRYO-CRYO_ASU-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 13 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] CRYO-CRYO_ASU-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: CRYO-CRYO_ASU-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] CRYO-CRYO_ASU-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: CRYO-CRYO_ASU-02, CRYO-CRYO_ASU-03. Evidence: `docs-authority/duties/CRYO_ASU.md` §6 (C7 closed on MASTER_PLAN).
   - [x] CRYO-CRYO_ASU-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: CRYO-CRYO_ASU-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -2966,8 +2981,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-GAS_ATOMIZER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GAS_ATOMIZER.md` §1; mass in = out 3.556 kg/d, 0.0836 kW.
   - [x] MFG-GAS_ATOMIZER-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: MFG-GAS_ATOMIZER-01. Evidence: `docs-authority/MFG_TOOLS.md` (AQS-MFG-010).
   - [x] MFG-GAS_ATOMIZER-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: MFG-GAS_ATOMIZER-01, MFG-GAS_ATOMIZER-02. Evidence: `docs-authority/pid/GAS_ATOMIZER.svg` (AQS-PID-001).
-  - [x] MFG-GAS_ATOMIZER-04 Nozzle schedule. Done when: docs-authority/nozzles/GAS_ATOMIZER.csv, one row per edge. Depends: MFG-GAS_ATOMIZER-03. Evidence: `docs-authority/nozzles/GAS_ATOMIZER.csv` (all 5 process connections listed).
-  - [x] MFG-GAS_ATOMIZER-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: MFG-GAS_ATOMIZER-04, MFG-GAS_ATOMIZER-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] MFG-GAS_ATOMIZER-04 Nozzle schedule. Done when: docs-authority/nozzles/GAS_ATOMIZER.csv, one row per edge. Depends: MFG-GAS_ATOMIZER-03. Evidence: `docs-authority/nozzles/GAS_ATOMIZER.csv` (all 4 process connections listed).
+  - [x] MFG-GAS_ATOMIZER-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: MFG-GAS_ATOMIZER-04, MFG-GAS_ATOMIZER-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] MFG-GAS_ATOMIZER-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: MFG-GAS_ATOMIZER-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] MFG-GAS_ATOMIZER-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: MFG-GAS_ATOMIZER-02, MFG-GAS_ATOMIZER-03. Evidence: `docs-authority/duties/GAS_ATOMIZER.md` §6 (C7 closed on MASTER_PLAN).
   - [x] MFG-GAS_ATOMIZER-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: MFG-GAS_ATOMIZER-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
@@ -3030,8 +3045,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-MET_SCRUB-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/MET_SCRUB.md` §1; mass in = out 7.161e+04 kg/d, 2.1232 kW.
   - [x] MFG-MET_SCRUB-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: MFG-MET_SCRUB-01. Evidence: `docs-authority/sizing/HOUSE_SCRUBBERS.md` (AQS-DUTY-079).
   - [x] MFG-MET_SCRUB-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: MFG-MET_SCRUB-01, MFG-MET_SCRUB-02. Evidence: `docs-authority/pid/MET_SCRUB.svg` (AQS-PID-001).
-  - [x] MFG-MET_SCRUB-04 Nozzle schedule. Done when: docs-authority/nozzles/MET_SCRUB.csv, one row per edge. Depends: MFG-MET_SCRUB-03. Evidence: `docs-authority/nozzles/MET_SCRUB.csv` (all 7 process connections listed).
-  - [x] MFG-MET_SCRUB-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: MFG-MET_SCRUB-04, MFG-MET_SCRUB-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 8 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] MFG-MET_SCRUB-04 Nozzle schedule. Done when: docs-authority/nozzles/MET_SCRUB.csv, one row per edge. Depends: MFG-MET_SCRUB-03. Evidence: `docs-authority/nozzles/MET_SCRUB.csv` (all 6 process connections listed).
+  - [x] MFG-MET_SCRUB-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: MFG-MET_SCRUB-04, MFG-MET_SCRUB-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] MFG-MET_SCRUB-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: MFG-MET_SCRUB-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] MFG-MET_SCRUB-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: MFG-MET_SCRUB-02, MFG-MET_SCRUB-03. Evidence: `docs-authority/duties/MET_SCRUB.md` §6 (C7 closed on MASTER_PLAN).
   - [x] MFG-MET_SCRUB-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: MFG-MET_SCRUB-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
@@ -3142,7 +3157,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-LOAD_AGG-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-LOAD_AGG-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-LOAD_AGG-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-LOAD_AGG-14, X-COM-01. Triage: hardware.
 - **ELEC-PV_ARRAY** (pv, sector ELEC)
-  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 351.8735 kW.
+  - [x] ELEC-PV_ARRAY-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PV_ARRAY.md` §1; mass in = out 0 kg/d, 351.8815 kW.
   - [x] ELEC-PV_ARRAY-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-PV_ARRAY-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-PV_ARRAY-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-PV_ARRAY-01, ELEC-PV_ARRAY-02. Evidence: `docs-authority/pid/PV_ARRAY.svg` (AQS-PID-001).
   - [x] ELEC-PV_ARRAY-04 Nozzle schedule. Done when: docs-authority/nozzles/PV_ARRAY.csv, one row per edge. Depends: ELEC-PV_ARRAY-03. Evidence: `docs-authority/nozzles/PV_ARRAY.csv` (file current; 0 piped kg/d process connections under the _noz_edges rule).
@@ -3190,7 +3205,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] ELEC-SOL_ARK_60K-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-SOL_ARK_60K-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] ELEC-SOL_ARK_60K-15 Test and commission. Done when: test procedure and acceptance record. Depends: ELEC-SOL_ARK_60K-14, X-COM-01. Triage: hardware.
 - **ELEC-ZNBR2** (flow_battery, sector ELEC)
-  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 924.8 kg/d, 218.0526 kW.
+  - [x] ELEC-ZNBR2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ZNBR2.md` §1; mass in = out 924.8 kg/d, 218.0626 kW.
   - [x] ELEC-ZNBR2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: ELEC-ZNBR2-01. Evidence: `docs-authority/POWER_SIZING.md` (AQS-ELEC-007).
   - [x] ELEC-ZNBR2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2-01, ELEC-ZNBR2-02. Evidence: `docs-authority/pid/ZNBR2.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2.csv, one row per edge. Depends: ELEC-ZNBR2-03. Evidence: `docs-authority/nozzles/ZNBR2.csv` (all 5 process connections listed).
@@ -3493,8 +3508,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] HAB-HDR_N2-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/HDR_N2.md` §1; mass in = out 192.4 kg/d, 0.0000 kW.
   - [x] HAB-HDR_N2-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: HAB-HDR_N2-01. Evidence: `docs-authority/sizing/HEADERS.md` (AQS-DUTY-075).
   - [x] HAB-HDR_N2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: HAB-HDR_N2-01, HAB-HDR_N2-02. Evidence: `docs-authority/pid/HDR_N2.svg` (AQS-PID-001).
-  - [x] HAB-HDR_N2-04 Nozzle schedule. Done when: docs-authority/nozzles/HDR_N2.csv, one row per edge. Depends: HAB-HDR_N2-03. Evidence: `docs-authority/nozzles/HDR_N2.csv` (all 7 process connections listed).
-  - [x] HAB-HDR_N2-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HAB-HDR_N2-04, HAB-HDR_N2-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] HAB-HDR_N2-04 Nozzle schedule. Done when: docs-authority/nozzles/HDR_N2.csv, one row per edge. Depends: HAB-HDR_N2-03. Evidence: `docs-authority/nozzles/HDR_N2.csv` (all 6 process connections listed).
+  - [x] HAB-HDR_N2-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: HAB-HDR_N2-04, HAB-HDR_N2-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] HAB-HDR_N2-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: HAB-HDR_N2-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] HAB-HDR_N2-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: HAB-HDR_N2-02, HAB-HDR_N2-03. Evidence: `docs-authority/duties/HDR_N2.md` §6 (C7 closed on MASTER_PLAN).
   - [x] HAB-HDR_N2-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: HAB-HDR_N2-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (1 loops; AQS-CTL-001).

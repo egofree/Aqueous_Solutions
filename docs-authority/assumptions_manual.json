@@ -7471,5 +7471,23 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags."
+ },
+ {
+  "id": "A-M-433",
+  "value": "The standby and return route sets of task X-RTE are decided route by route. Standby routes carry the rate of the case that puts them in service (rate_rated_kg_d, as in A-M-418): CAST_TO_EXTRUDE and EXTRUDE_TO_STOCK at the CAST_TO_ROLL rate for a roll-stand outage; VAC_IND_TI and VAC_TO_INV at the METALS_TO_IND_MELT titanium rate for an IND_MELT outage; TI_CELL_CL2_TO_CRU at the IA-CL2-MG-TI rate and MO_CELL_ANODE_GAS_TO_CRU at the anode chlorine of MO_TO_IND (1.5 Cl2 per Mo) when the chlorination step is out while the cell runs down; IA-ESS-HYDRO-DIS and IA-ESS-HYDRO-CHG at the full upper reservoir in one day for a ZNBR2 loss; IA-DC-SPRAY and IA-DC-EVAP at the DRY_COOLER rated duty on evaporation for an evaporative site mode; IA-NIT-VENT at the API 2000 out-breathing of the nitric tank for 24 h. CAST_SCRAP_TO_IND is a real daily return: the gates and risers, cast_gating_return_frac of the permanent-mold pour, are remelted, and the melt energy and heats include them. DRAW_TO_STOCK, SINTER_TO_STOCK, ATOM_TO_STOCK, COMB_OFFGAS, VAC_IND_TO_VAC_CAST and IA-N2-RET are retired because each duplicates another route or has no source that can give it flow.",
+  "units": "kg/d",
+  "where": "flow_graph/param/standby_routes.py ROUTES and RETIRE; flow_graph/param/foundry_poly.py CAST_SCRAP_TO_IND; flow_graph/param/drivers.json cast_gating_return_frac",
+  "basis": "Owner decision of 2026-10-29 (X-RTE): a route without flow is given flow or retired. Each standby rate is the design-day rate of the route or unit it stands in for, or the physical rate of its case (Faraday and stoichiometry for the anode chlorine, NIST_WEBBOOK latent heat for the spray, API2000_2020 for the tank vent). The casting yield is from ASM_V15_PM. The float-sink grit and cell slag routes wait on the assay of A-M-427, and the O2 and CO2 returns to the cold box are owner holds; they stay listed.",
+  "sensitivity": "The standby rates follow their primary routes; the gating return scales with cast_gating_return_frac and raises the IND_MELT energy by the copper melt energy of the return.",
+  "replaced_by": "Measured outage cases at commissioning and the weighed gating return of the cast line",
+  "task": "QA audit 2026-10-30, X-RTE-STANDBY and X-RTE-RETURN",
+  "files": [
+   "flow_graph/param/standby_routes.py",
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/drivers.json",
+   "docs-authority/_task_plan_gen.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.standby_routes prints each rated case; after regen the X-RTE standby and return groups list only the assay-dependent and owner-held routes, and test_balance passes with no reconciled move."
  }
 ]

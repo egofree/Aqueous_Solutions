@@ -17,7 +17,7 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 197 units, 144 have an issued material for each wetted stream, 53 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 360 wetted stream ends, and each resolves to an issued service family.
+Of the 197 units, 142 have an issued material for each wetted stream, 55 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 358 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
@@ -37,9 +37,9 @@ The following service families of AQS-STD-002 are used, with the number of strea
 - Q1/Q2 thermal oil: 12 stream ends.
 - Water loops (protective, irrigation, UPW): 12 stream ends.
 - Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 11 stream ends.
-- Flue or acid gas: 10 stream ends.
+- Flue or acid gas: 9 stream ends.
 - Alkaline (NaOH/KOH base liquor): 7 stream ends.
-- Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours): 7 stream ends.
+- Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours): 6 stream ends.
 - Alkaline silica slurry: 3 stream ends.
 - CaCl₂/MgCl₂ brine concentrates to molten-salt pots (ambient import legs, NORTH_DOCK to MG_POT and CA_POT): 3 stream ends.
 - Organic liquid (solvent make-up): 2 stream ends.
@@ -230,9 +230,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 ### COMB_HEAT
 
-| Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
-|---|---|---|---|---|---|
-| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | F1 | 12.1 flue or acid gas | FRP/composite F1 per section 4.3 |
+This unit has no wetted piped stream: every edge is a solids transfer or an electrical connection. Its construction material is set by its fabrication route and bill of materials, which AQS-END-002 tracks, not by a wetted selection.
 
 ### CONTINUOUS_RECYCLE
 
@@ -1006,7 +1004,6 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | S71 | MET_AHU | MET_SCRUB | F1 | 12.1 flue or acid gas | FRP/composite F1 per section 4.3 |
 | S72 | MET_SCRUB | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | S72B | MET_SCRUB | OIL_FRAC | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
-| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | F1 | 12.1 flue or acid gas | FRP/composite F1 per section 4.3 |
 | IA-MET-AIR-RET | MET_SCRUB | MET_AHU | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### MFG_SHOP
@@ -1502,15 +1499,12 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 ### VAC_CAST
 
-| Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
-|---|---|---|---|---|---|
-| VAC_IND_TO_VAC_CAST | VAC_IND | VAC_CAST | — | 12.2 molten metal launder/pour (s57, ind_melt and vac_ind melt pours) | Not piped: launder/pour hot faces (M7) |
+This unit has no wetted piped stream: every edge is a solids transfer or an electrical connection. Its construction material is set by its fabrication route and bill of materials, which AQS-END-002 tracks, not by a wetted selection.
 
 ### VAC_IND
 
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
-| VAC_IND_TO_VAC_CAST | VAC_IND | VAC_CAST | — | 12.2 molten metal launder/pour (s57, ind_melt and vac_ind melt pours) | Not piped: launder/pour hot faces (M7) |
 | VAC_TO_INV | VAC_IND | INV_CAST | — | 12.2 molten metal launder/pour (s57, ind_melt and vac_ind melt pours) | Not piped: launder/pour hot faces (M7) |
 
 ### VCD_TRAIN

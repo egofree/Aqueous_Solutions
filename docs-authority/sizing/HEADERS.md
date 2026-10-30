@@ -31,7 +31,7 @@ Table 3.1. Header sizes
 |---|---|---|---|---|---|---|---|---|
 | HDR_H2 | H2 header (EW cathode gas in, dryer and trim draws out) | DN25 | 6.8 | 23.6 | 0.0054 | 0.0 | 17 | PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06) |
 | HDR_O2 | O2 header (ASU/receiver in; fuel cell, peroxide, genset, afterburner, product draws) | DN25 | 7.0 | 33.6 | 0.0076 | 0.01 | 8 | 316L tube, oxygen-clean per ASTM_G93, socketless |
-| HDR_N2 | plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws) | DN32 | 17.2 | 44.7 | 0.0202 | 0.02 | 7 | 316L tube |
+| HDR_N2 | plant air / N2 header (receiver in; AHU, afterburner air, reagent sparge draws) | DN32 | 17.2 | 44.7 | 0.0202 | 0.02 | 6 | 316L tube |
 | HDR_CO2 | CO2 header (crew and cold-box in; farm and methanol-synthesis draws) | DN25 | 2.0 | 29.2 | 0.0066 | 0.01 | 5 | 316L tube |
 | HDR_UPW | UPW distribution header (polish skid in; fab and hab draws) | DN25 | 0.8 | 32.5 | 0.0074 | 7.24 | 3 | PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002) |
 | Q4_BUS | Q4 hot-water bus (Q4 batteries in; life, HX-9/HX-10 preheat, GHEX recharge, MAU/ADS branches) | DN32 | 18.1 | 37.1 | 0.0168 | 16.48 | 14 | PP-H SDR 11 (80 C class), fusion-welded |

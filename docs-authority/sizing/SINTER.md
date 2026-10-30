@@ -17,7 +17,7 @@ This page records the size of unit SINTER, of class `furnace` in sector FOUNDRY,
 
 ## 2. Duty
 
-The unit takes 0 kg/d by 0 streams and gives 0 kg/d by 1 stream. Its continuous electrical load is 0 kW, fed by stream SF-SINTER.
+No stream with a mass rate enters or leaves the unit on the graph. Its continuous electrical load is 0 kW, fed by stream SF-SINTER.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

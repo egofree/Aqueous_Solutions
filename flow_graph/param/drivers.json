@@ -2124,6 +2124,15 @@
   "units": "d outage of a primary unit that a standby feed route covers; the N+1 outage basis of the foundry melt backups (A-M-283)",
   "register": "A-M-418"
  },
+ "cast_gating_return_frac": {
+  "value": 0.15,
+  "units": "-",
+  "note": "mass fraction of the permanent-mold pour that is gating and risers, cut off and remelted on CAST_SCRAP_TO_IND; permanent-mold casting yields of 75-90 % (ASM_V15_PM)",
+  "ref": "ASM_V15_PM",
+  "register": "A-M-433",
+  "needs_verification": true,
+  "verification_test": "weigh the gates and risers cut from a week of permanent-mold copper pours against the poured mass"
+ },
  "atom_store_bar": {
   "value": 50.0,
   "units": "bar argon receiver charge pressure; it discharges to the nozzle supply pressure atom_P_bar during a pour",

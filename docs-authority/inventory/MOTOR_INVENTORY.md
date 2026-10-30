@@ -198,7 +198,7 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | cell | TI_CELL | transfer pump IA-MGCL2-KROLL to MG_POT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 1.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | furnace | IND_MELT | transfer pump IA-FLUX-SALT-REC to MG_POT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
-| furnace | IND_MELT | transfer pump IND_MELT_TO_CAST to CAST_LINE | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 3.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| furnace | IND_MELT | transfer pump IND_MELT_TO_CAST to CAST_LINE | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 3.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | furnace | IND_MELT | transfer pump IND_TO_CONT to CONT_CAST | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 31.7 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | furnace | IND_MELT | transfer pump IND_TO_INV to INV_CAST | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 2.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | furnace | SHELL_BURNOUT | transfer pump WAX_RECLAIM_TO_PATTERN to WAX_PATTERN | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 1.8 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |

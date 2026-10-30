@@ -17,7 +17,7 @@ This page records the size of unit CAST_LINE, of class `caster` in sector FOUNDR
 
 ## 2. Duty
 
-The unit takes 3 kg/d by 1 stream and gives 3 kg/d by 3 streams.
+The unit takes 3.52941 kg/d by 1 stream and gives 3.52941 kg/d by 3 streams.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -34,7 +34,7 @@ Table 2.1. Design parameters
 
 The envelope is 1500 mm x 800 mm x 1500 mm, from `params.envelope` (state live). Its basis is: A-M-199 forming class; 1 h hold-up of the Cu pour is below the class minimum.
 
-The hold-up check takes 3 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 3 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 150 mm in diameter and 230 mm high. It fits within the envelope.
+The hold-up check takes 3.52941 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 3.529 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 160 mm in diameter and 240 mm high. It fits within the envelope.
 
 ## 4. Material
 

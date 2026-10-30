@@ -658,10 +658,13 @@ CRIT_X = {'X-BAS-02', 'X-ELS-02', 'X-ELS-04', 'X-SAF-01', 'X-PIP-02', 'X-BLD-02'
 # X-RTE (owner decision 2026-10-29): a present mass route that carries no flow is unfinished design. Generated from the graph:
 # one task per open route; standby, return and retired routes are grouped. A route given its flow drops out of the open list;
 # the routes finished in the QA pass are kept below as done tasks with their evidence.
+RTE_HELD = {'IA-O2-RET', 'IA-CO2-RET'}   # owner holds (O2 ownership; greenhouse gas routes): left listed, not decided in the QA pass
 def _rte_kind(e):
     if (e.get('params') or {}).get('rate_rated_kg_d'): return None                   # standby route sized at its rated case (A-M-418)
     n = ((e['rate'].get('note') or '') + ' ' + str(e.get('notes') or '')).lower()
     if e['to_unit_id'].startswith('RELIEF') or 'contingency' in n: return None          # relief and contingency routes are closed by design
+    if e['stream_id'] in RTE_HELD: return 'held'                                      # owner hold: O2 ownership and greenhouse gas routes
+    if 'q-037' in n: return 'assay'                                                     # waits on the dense-grit assay AQS-ASSAY-TI-MO (A-M-427)
     if 'retired' in n: return 'retired'
     if e['stream_id'].endswith(('-RET', '_RETURN')) or 'no surplus' in n or 'no co2 recy' in n or 'return' in n and 'no ' in n: return 'return'
     if any(k in n for k in ('standby', 'n+1', 'held full', 'evaporat', 'optional', 'campaign event', 'upset vent', 'purge-only')): return 'standby'
@@ -681,6 +684,8 @@ RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_
             ('X-RTE-IMPORT-CARBON', 'Imports IA-C-TI, IA-C-MO and IA-C-CR: carbon reductant made on site', 'the Ti, Mo and Cr chlorinators take plant pyrolysis char from OIL_PYRO, sized from their carbon need over the char fixed carbon (A-M-420)', 'flow_graph/param/foundry_poly.py'),
             ('X-RTE-MG_POT_CL2', 'Route MG_POT_CL2: retired', 'MG_POT makes exactly the chlorine that the Kroll chlorinator draws on IA-CL2-MG-TI, so it has no surplus for CRU at any titanium rate; set to presence retired', 'flow_graph/param/foundry_poly.py'),
             ('X-RTE-POLY_TO_FAB', 'Route POLY_TO_FAB: photoresist to the fab', 'the positive DNQ-novolac resist is sized from the coats per day and made on site by RESIST_SYN from plant cuts, methanol, ammonia, hydrogen, chlorinator CO, pot chlorine and plant acid; the fab nitrogen purge now vents and the fab closes honestly (A-M-432)', 'flow_graph/param/fab_resist.py'),
+            ('X-RTE-CAST_SCRAP_TO_IND', 'Route CAST_SCRAP_TO_IND: gating return to the melt', 'the gates and risers of the permanent-mold pours return to IND_MELT daily at cast_gating_return_frac of the pour, and the melt energy and heats include them (A-M-433)', 'flow_graph/param/foundry_poly.py'),
+            ('X-RTE-RETIRED-43', 'Routes DRAW_TO_STOCK, SINTER_TO_STOCK, ATOM_TO_STOCK, COMB_OFFGAS, VAC_IND_TO_VAC_CAST and IA-N2-RET: retired', 'each duplicates another route or has no source that can give it flow, with the reason on the edge; set to presence retired (A-M-433)', 'flow_graph/param/standby_routes.py'),
             ('X-RTE-UPW_TO_FAB', 'Route UPW_TO_FAB: retired as a duplicate', 'IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired', 'flow_graph/plant_flow_graph.json')]
 RTE_DONE += [(f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']}: standby at its rated case",
              f"the route carries {_e['params']['rate_rated_kg_d']:g} kg/d when {_e['params']['rated_case']} (A-M-418)", _e['params'].get('rated_by', 'flow_graph/param/standby_routes.py'))
@@ -691,6 +696,8 @@ for _e in sorted(_RTE['open'], key=lambda e: e['stream_id']):
                        'the route carries a rate sized from need with both unit balances closed, or it is retired from the graph with its reason', 'X-PAR-02', None))
 for _k, _t, _c in (('standby', 'Standby routes without a rated case', 'each standby, N+1 or site-mode route carries the rate of the case that puts it in service, so its line and both units are sized for it'),
                    ('return', 'Return routes without flow', 'each return route is shown to be needed, with the case that uses it and its rate, or it is retired'),
+                   ('assay', 'Routes waiting on the dense-grit assay', 'the float-sink grit and cell slag routes carry the rates that the AQS-ASSAY-TI-MO assay drivers give (Q-037, A-M-427); until the assay is set they stay at zero'),
+                   ('held', 'Routes in areas the owner holds', 'the owner decides the O2 ownership and greenhouse gas routes; each is then given a rated case or retired'),
                    ('retired', 'Routes noted as retired but still present', 'each route is set to presence retired on the graph, or given a rate')):
     if _RTE[_k]:
         _rte_items.append((f'X-RTE-{_k.upper()}', f"{_t}: {', '.join(sorted(e['stream_id'] for e in _RTE[_k]))}", _c, 'X-PAR-02', None))
@@ -698,6 +705,7 @@ _rte_items += [('X-RTE-PV-SI', 'Silicon wafers for SOLAR_PV_CELL', 'the cell lin
                ('X-RTE-CZ-HOTZONE', 'CZ hot-zone heater from a heat-loss model', 'the 35 kW hot-zone duty of A-M-417 is replaced by a heat-loss model of the hot zone, and the pull peak is carried in the one-line', 'X-RTE-STOCK_TO_FAB', None),
                ('X-RTE-RESIST-ISOPRENE', 'Isoprene for a negative cyclised-rubber resist', 'the C5 diene is separated from the cracked C5-C10 cut and polymerised and cyclised on site, sized from the resist need, if the negative resist is to become a selectable fab_resist_route (A-M-432)', 'X-RTE-POLY_TO_FAB', None),
                ('X-RTE-RESIST-AZIDE', 'Aromatic bis-azide sensitiser for a negative resist', 'an azide route from plant streams (hydrazine from ammonia and hypochlorite, then the nitrite azide synthesis) and the aromatic amine and ketone it is built on are sized and closed, with an organic developer for LITHO_DEV, or the negative class is dropped (A-M-432)', 'X-RTE-POLY_TO_FAB', None),
+               ('X-RTE-COMB-HEAT-FUEL', 'Fuel route for the fuel-fired alternate COMB_HEAT', 'COMB_HEAT gets a fuel route from a plant fuel (the C5-C10 cut or the chlorinator CO) and its off-gas route back, sized at the outage of the electric furnace it backs up, or the unit is retired (A-M-433)', 'X-RTE-RETIRED-43', None),
                ('X-RTE-LEGACY-PFD', 'Remaining hand-drawn process sheets', 'each script in flow_graph/exporters/matplotlib/ that the regenerator does not run is checked for what it draws and who cites it, then retired or replaced by a graph view', '—', None)]
 # Owner decision 2026-10-29 (t58u): the plant makes everything on site; only waste and raw ore come in. Every present dock
 # import that carries flow and is not waste or raw ore is an open task: make it on site, or show it is waste or ore.
@@ -710,7 +718,7 @@ for _e in sorted(g['edges'], key=lambda e: e['stream_id']):
             _rte_items.append((f"X-RTE-IMPORT-{_e['stream_id']}", f"Import {_e['stream_id']} to {_e['to_unit_id']} ({_e.get('carries')}) is neither waste nor raw ore",
                                'the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore', 'X-RTE-SI-BACKUP', None))
 X.append(('RTE', 'Routes without flow (owner decision 2026-10-29)', _rte_items))
-OWNER_X |= {'X-RTE-RETIRED'}
+OWNER_X |= {'X-RTE-RETIRED', 'X-RTE-HELD'}
 DONE_X |= {tid for tid, *_ in RTE_DONE}
 HAND_NEXT = ['X-PAR-02 Extend the solver unit by unit (LEACH full balance, FLOAT_SINK, VCD, UPW, gas train) until every edge is solved.', 'X-PAR-03 Atmospheric venting (API 2000) per unit task 07; API 520 relief recomputed for EXPANDER 2026-10-15 by `write_graph.py relief`. Converted 2026-10-15: rectifier, LEACH_CSTR_1, HX-5/HX8, power and one-line scripts (AQS-PAR-001 section 2).', 'X-PAR-03 Apply the scrubber function to ALK_SCRUBBER, ACID_POLISH_SCRUB, NOX_SCRUB and MET_SCRUB with C_s and HTU from the in-house packing design (X-MFG-31) (function added 2026-10-15, `flow_graph/param/sizing/scrubber.py`). Tank, agitator and pump functions added 2026-10-15 (`flow_graph/param/sizing/tank.py`).', 'X-PAR-04 BOMs for EVAP_ACID and EVAP_BASE come from the in-house design (X-MFG-30; no bought skid, owner decision 2026-10-15); CadQuery envelopes, line list, isometric routes and supports regenerated 2026-10-15 (`flow_graph/param/envelopes.py`). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).', 'X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).', 'X-PIP-03 Fabrication isometrics from AQS-ISO-001.', 'X-ELS-02 Remaining study-share loads; CRYO_ASU basis.', 'X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test, site area for the PV field.', 'X-PAR-02 Solver extension: LEACH full balance, FLOAT_SINK, VCD, UPW, gas train.']
 PROGRESS_LOG = [

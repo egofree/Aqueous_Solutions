@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-624 edges: 360 piped, 143 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 99.
+618 edges: 358 piped, 139 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 97.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 41: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, NAOH_PLANT, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, P_CA, RESIST_SYN, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, SOLV_PLANT, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 39: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, NAOH_PLANT, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, P_CA, RESIST_SYN, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, SOLV_PLANT, TFE_SYN, TI_CELL, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -180,13 +180,10 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IND_MELT_TO_CAST | IND_MELT | CAST_LINE | DN15 | — | molten metal launder/pour (not piped) |  | IND_MELT → CAST_LINE, position missing for IND_MELT, CAST_LINE | velocity 1 m/s, ρ 1000; min DN15 |
 | CAST_SCRAP_TO_IND | CAST_LINE | IND_MELT | solids | — | — |  | CAST_LINE → IND_MELT, position missing for CAST_LINE, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | METALS_TO_IND_MELT | TI_CELL | IND_MELT | solids | — | — |  | TI_CELL → IND_MELT, position missing for TI_CELL, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
-| VAC_IND_TO_VAC_CAST | VAC_IND | VAC_CAST | DN15 | — | molten metal launder/pour (not piped) |  | VAC_IND → VAC_CAST, position missing for VAC_IND, VAC_CAST | velocity 1 m/s, ρ 1000; min DN15 |
 | CAST_TO_ROLL | CAST_LINE | ROLL | solids | — | — |  | CAST_LINE → ROLL, position missing for CAST_LINE, ROLL | solids: conveyor, bin or hand transfer; not piped |
 | CAST_TO_EXTRUDE | CAST_LINE | EXTRUDE | solids | — | — |  | CAST_LINE → EXTRUDE, position missing for CAST_LINE, EXTRUDE | solids: conveyor, bin or hand transfer; not piped |
 | ROLL_TO_STOCK | ROLL | STOCK_OUT | solids | — | — |  | ROLL → STOCK_OUT, position missing for ROLL, STOCK_OUT | solids: conveyor, bin or hand transfer; not piped |
 | EXTRUDE_TO_STOCK | EXTRUDE | STOCK_OUT | solids | — | — |  | EXTRUDE → STOCK_OUT, position missing for EXTRUDE, STOCK_OUT | solids: conveyor, bin or hand transfer; not piped |
-| DRAW_TO_STOCK | DRAW | STOCK_OUT | solids | — | — |  | DRAW → STOCK_OUT, position missing for DRAW, STOCK_OUT | solids: conveyor, bin or hand transfer; not piped |
-| SINTER_TO_STOCK | SINTER | STOCK_OUT | solids | — | — |  | SINTER → STOCK_OUT, position missing for SINTER, STOCK_OUT | solids: conveyor, bin or hand transfer; not piped |
 | FLUX_TO_IND | FLUX_PREP | IND_MELT | solids | — | — |  | FLUX_PREP → IND_MELT, position missing for FLUX_PREP, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | MO_TO_IND | MO_CELL | IND_MELT | solids | — | — |  | MO_CELL → IND_MELT, position missing for MO_CELL, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
 | CR_TO_IND | CR_CELL | IND_MELT | solids | — | — |  | CR_CELL → IND_MELT, position missing for CR_CELL, IND_MELT | solids: conveyor, bin or hand transfer; not piped |
@@ -204,10 +201,8 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | AL_POT_CL2 | AL_POT | CRU | DN15 | P3 | process vent gas |  | AL_POT → CRU, position missing for AL_POT | velocity 10 m/s, ρ 1.2; min DN15 |
 | IND_HEAT_TO_HX | IND_MELT | MET_HX_Q4 | cable | — | — |  | IND_MELT → MET_HX_Q4, position missing for IND_MELT | electrical: cable schedule X-ELS-06 |
 | VAC_HEAT_TO_HX | VAC_IND | MET_HX_Q4 | cable | — | — |  | VAC_IND → MET_HX_Q4, position missing for VAC_IND | electrical: cable schedule X-ELS-06 |
-| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | DN15 | F1 | flue or acid gas |  | COMB_HEAT → MET_SCRUB, position missing for COMB_HEAT | velocity 10 m/s, ρ 1.2; min DN15 |
 | STOCK_TO_WIRE_DRAW | METAL_STORE | WIRE_DRAW | solids | — | — |  | METAL_STORE → WIRE_DRAW, position missing for METAL_STORE | solids: conveyor, bin or hand transfer; not piped |
 | IND_TO_ATOM | IND_MELT | GAS_ATOMIZER | DN15 | — | molten metal launder/pour (not piped) |  | IND_MELT → GAS_ATOMIZER, position missing for IND_MELT | velocity 1 m/s, ρ 1000; min DN15 |
-| ATOM_TO_STOCK | GAS_ATOMIZER | STOCK_OUT | solids | — | — |  | GAS_ATOMIZER → STOCK_OUT, position missing for STOCK_OUT | solids: conveyor, bin or hand transfer; not piped |
 | WAX_TO_SHELL | WAX_PATTERN | SHELL_BUILD | solids | — | — |  | WAX_PATTERN → SHELL_BUILD, position missing for WAX_PATTERN, SHELL_BUILD | solids: conveyor, bin or hand transfer; not piped |
 | SHELL_TO_BURNOUT | SHELL_BUILD | SHELL_BURNOUT | solids | — | — |  | SHELL_BUILD → SHELL_BURNOUT, position missing for SHELL_BUILD, SHELL_BURNOUT | solids: conveyor, bin or hand transfer; not piped |
 | BURNOUT_TO_CAST | SHELL_BURNOUT | INV_CAST | solids | — | — |  | SHELL_BURNOUT → INV_CAST, position missing for SHELL_BURNOUT, INV_CAST | solids: conveyor, bin or hand transfer; not piped |
@@ -437,7 +432,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-ASU-O2 | CRYO_ASU | CRYO_O2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 12.1 | CRYO_ASU → CRYO_O2, orthogonal × 1.2 (placement_study (STUDY) + GA move + GA move; placement_report + GA move + GA move + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-ASU-CO2 | CRYO_ASU | CRYO_CO2 | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 25.3 | CRYO_ASU → CRYO_CO2, orthogonal × 1.2 (placement_study (STUDY) + GA move + GA move; placement_report + GA move + GA move) | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-H2-AIR | H2_DRYER | CRYO_ASU | DN15 | M1 | dry gas, H2/O2/N2/CO2 | 23.8 | H2_DRYER → CRYO_ASU, orthogonal × 1.2 (placement_report; placement_study (STUDY) + GA move + GA move) | velocity 10 m/s, ρ 0.09; min DN15 |
-| IA-N2-RET | HDR_N2 | CRYO_ASU | solids | — | — | 25.4 | HDR_N2 → CRYO_ASU, orthogonal × 1.2 (placement_study (STUDY); placement_study (STUDY) + GA move + GA move) | solids: conveyor, bin or hand transfer; not piped |
 | IA-O2-RET | HDR_O2 | CRYO_ASU | solids | — | — | 21.8 | HDR_O2 → CRYO_ASU, orthogonal × 1.2 (placement_report; placement_study (STUDY) + GA move + GA move) | solids: conveyor, bin or hand transfer; not piped |
 | IA-CO2-RET | CRYO_CO2 | CRYO_ASU | solids | — | — | 25.3 | CRYO_CO2 → CRYO_ASU, orthogonal × 1.2 (placement_report + GA move + GA move; placement_study (STUDY) + GA move + GA move) | solids: conveyor, bin or hand transfer; not piped |
 | IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | DN50 | P2 | hot leach liquor | 12.5 | LEACH_CSTR_1 → CRYO_ASU, orthogonal × 1.2 (duty origin; placement_study (STUDY) + GA move + GA move) | velocity 1 m/s, ρ 1100; min DN50 |

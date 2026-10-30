@@ -603,7 +603,7 @@ CRYO_AR,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L.,M
 CRYO_AR,Process nozzle DN15,2,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_AR,Open vent DN25,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_ASU,Body D414 x 1243 mm,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-CRYO_ASU,Process nozzle DN15,13,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+CRYO_ASU,Process nozzle DN15,12,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_ASU,Open vent DN25,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_CO2,Body D114 x 450 mm,1,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 CRYO_CO2,Process nozzle DN15,8,316L.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -713,7 +713,7 @@ FUEL_CELL,Process nozzle DN50,1,No wetted alloy.,Unstated,-,material not stated 
 F_RECOVER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) leg,Missing,-,no fluorine source on site; end of life Q-011
 F_RECOVER,Process nozzle DN15,3,PE concentrate hold tank at ambient with PVDF internals and PVDF (P3-family) leg,Missing,-,no fluorine source on site; end of life Q-011
 GAS_ATOMIZER,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
-GAS_ATOMIZER,Process nozzle DN15,5,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
+GAS_ATOMIZER,Process nozzle DN15,4,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
 GEO_GHEX,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal (graph n",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 GEO_GHEX,Process nozzle DN15,1,"HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal (graph n",Partial,OIL cuts -> olefin -> polymer (MFG),olefin cracking and polymerisation are not yet units in the graph
 GEO_HP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"316L plates, R410A-class refrigerant, propylene-glycol brine source (graph node ",Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train
@@ -816,7 +816,7 @@ MET_MELT,Body / envelope per duty sheet section 2 (not yet dimensioned),1,Graphi
 MET_MELT,Process nozzle DN15,4,Graphite or refractory on the hot face.,Closed,GLASS / silicate melt,
 MET_MELT,Process nozzle DN50,1,Graphite or refractory on the hot face.,Closed,GLASS / silicate melt,
 MET_SCRUB,Body D800 x 3803 mm,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
-MET_SCRUB,Process nozzle DN15,5,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
+MET_SCRUB,Process nozzle DN15,4,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 MET_SCRUB,Process nozzle DN50,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 MET_SCRUB,Process nozzle DN300,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",Partial,OIL cuts + Cl2/HCl (WET) -> PVC (MFG),Cl on site; ethylene and VCM steps not yet units
 MFG_SHOP,Body / envelope per duty sheet section 2 (not yet dimensioned),1,316L where the stream is wet.,Missing,MET_MELT + forming,needs Cr (and Mo for 316L); Cr/Mo not recovered by the leach/EW train

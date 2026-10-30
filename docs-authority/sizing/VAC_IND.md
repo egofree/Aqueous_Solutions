@@ -17,7 +17,7 @@ This page records the size of unit VAC_IND, of class `furnace` in sector FOUNDRY
 
 ## 2. Duty
 
-The unit takes 0 kg/d by 1 stream and gives 0 kg/d by 2 streams. Its continuous electrical load is 0 kW, fed by stream SF-VAC_IND.
+The unit takes 0 kg/d by 1 stream and gives 0 kg/d by 1 stream. Its continuous electrical load is 0 kW, fed by stream SF-VAC_IND.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

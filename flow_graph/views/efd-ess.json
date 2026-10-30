@@ -223,7 +223,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 351.8735,
+        "value": 351.8815,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -231,9 +231,9 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6046,
+        "count": 6048,
         "presence": "present",
-        "nameplate_kw": 3023,
+        "nameplate_kw": 3024,
         "area_m2": 26574,
         "balance_kWp": 1512,
         "oversize_factor": 2.0,
@@ -362,10 +362,10 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 218.0526,
+        "value": 218.0626,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.1 kW, charge 991.1 kW, 3053 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.1 kW, charge 991.2 kW, 3053 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
@@ -380,7 +380,7 @@
           "H2_m3_d": 7.74,
           "purge_m3_h": 32.25,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1996.8
+          "electrode_area_m2": 1996.9
         }
       }
     }
@@ -404,7 +404,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full 200 m3 cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 2700000.0000 kg/d (the full 2700 m3 upper reservoir in one day) when after a discharge the reservoir is pumped back up on the PV surplus (A-M-145), for 2 d (standby_routes.py)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -413,7 +413,15 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 2700000.0,
+        "rated_case": "after a discharge the reservoir is pumped back up on the PV surplus (A-M-145)",
+        "backs_up": "the full 2700 m3 upper reservoir in one day",
+        "outage_d": 2.0,
+        "basis": "A-M-418; A-M-433; flow_graph/param/standby_routes.py"
+      }
     },
     {
       "stream_id": "IA-ESS-HYDRO-DIS",
@@ -433,7 +441,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: one full cycle per day | X-PAR-02 TF: standby: reservoir held full; discharges only on loss of ZNBR2 (A-M-145); recharge after an event on PV surplus (AQS-PAR-003)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 2700000.0000 kg/d (the full 2700 m3 upper reservoir in one day) when ZNBR2 is lost and the reservoir discharges through the turbine over the night class hours (A-M-145), for 2 d (standby_routes.py)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "WTR",
@@ -442,7 +450,15 @@
       "gap_flags": [
         "ess_layer"
       ],
-      "notes": "EFD chemical-storage / charge-discharge typing"
+      "notes": "EFD chemical-storage / charge-discharge typing",
+      "params": {
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 2700000.0,
+        "rated_case": "ZNBR2 is lost and the reservoir discharges through the turbine over the night class hours (A-M-145)",
+        "backs_up": "the full 2700 m3 upper reservoir in one day",
+        "outage_d": 2.0,
+        "basis": "A-M-418; A-M-433; flow_graph/param/standby_routes.py"
+      }
     },
     {
       "stream_id": "IA-ESS-HYDRO-ELEC",

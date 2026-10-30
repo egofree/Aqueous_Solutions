@@ -84,7 +84,7 @@ Table 6.1. Graph values against the solver
 | EW_8 DC kW (cell + bus drop) | 0.505 | 0.505 | +0.0 % | CODATA2018, USBM_CL_EW |
 | EW_9 DC kW (cell + bus drop) | 7.538 | 7.538 | +0.0 % | CODATA2018, USBM_CL_EW |
 | RECT_EW AC kW (params stamp) | 38.663 | 38.663 | -0.0 % | USBM_CL_EW |
-| PV_ARRAY nameplate kWp vs roof-closed need | 3023.000 | 3023.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
+| PV_ARRAY nameplate kWp vs roof-closed need | 3024.000 | 3024.000 | +0.0 % | NREL_PVWATTS, X-PAR-07 |
 
 ## 7. Acid-loop decision (X-PAR-04)
 
@@ -198,7 +198,7 @@ Table 7.6. Photoresist streams at the present wafer starts
 
 ## 8. Drivers
 
-Table 8.1 lists the 971 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 972 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -536,6 +536,7 @@ Table 8.1. Drivers
 | atom_Cd | 0.8 | - discharge coefficient of the melt nozzle | A-M-416 | — |
 | atom_melt_rho_kg_m3 | 8000.0 | kg/m3 density of the atomised melt (Cu, Ni, Sn, Pb, Zn blend class) | A-M-416 | — |
 | standby_outage_d | 2.0 | d outage of a primary unit that a standby feed route covers; the N+1 outage basis of the foundry melt backups (A-M-283) | A-M-418 | — |
+| cast_gating_return_frac | 0.15 | - | ASM_V15_PM | yes |
 | atom_store_bar | 50.0 | bar argon receiver charge pressure; it discharges to the nozzle supply pressure atom_P_bar during a pour | A-M-416 | — |
 | mill_slab_t_mm | 10.0 | mm thickness of the cast slab entering the cold mill (ingot mould) | A-M-416 | — |
 | mill_slab_L_mm | 250.0 | mm length of the cast slab entering the cold mill (ingot mould) | A-M-416 | — |
@@ -1229,6 +1230,7 @@ Table 9.1. References
 | ASME_Y14_5 | ASME Y14.5-2018, Dimensioning and Tolerancing: dimensioning and geometric tolerancing for fabrication drawings. |
 | ASM_V1 | ASM International, ASM Handbook Vol 1, Properties and Selection: Irons, Steels, and High-Performance Alloys (1990): AISI H13 hot-work tool steel (Cr-Mo-V) for hot-work dies, extrusion and forge tooling; heat-resisting Fe-Cr-Ni alloys incl. the 80Ni-20Cr electrical-resistance element class to about 1100 C. |
 | ASM_V15_AL | ASM Handbook Vol. 15, Casting (2008), Aluminum and aluminum alloys: A356 contains 0.25-0.45 % Mg; magnesium is lost preferentially to the dross on remelting and is made up by alloy additions; salt fluxes are recovered from the dross salt cake by water leaching and evaporation. |
+| ASM_V15_PM | ASM Handbook Vol. 15, Casting (2008), Permanent mold casting: the gating system and risers take 10-25 % of the poured metal (casting yield 75-90 %), and the cut-off gates and risers are remelted in the same melt shop |
 | ASM_V7 | ASM International, ASM Handbook Vol 7, Powder Metal Technologies and Applications (1998): press-and-sinter consolidation practice; sintering-furnace construction with graphite or MoSi2 element hot zones under inert or vacuum atmosphere for reactive powders. |
 | ASTM_A992 | ASTM A992/A992M, Standard Specification for Structural Steel Shapes: Fy 345 MPa (50 ksi) minimum, Fu 450 MPa. |
 | ASTM_A999 | ASTM A999/A999M-19, Standard Specification for General Requirements for Alloy and Stainless Steel Pipe: pipe furnished to dimensional specifications may be ordered to minimum wall; the customary supplied-wall practice carries a 12.5 % under-tolerance on wall thickness (0.875 factor on nominal wall). |
@@ -1500,7 +1502,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 300 drivers and then the 382 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 301 drivers and then the 383 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -1712,6 +1714,7 @@ Table 10.1. Values to verify
 | driver melt_eta | 0.55 - coreless induction furnace, coil to melt | Trial run on the first article (X-MFG-37) |
 | driver atom_GMR | 2.5 kg Ar per kg metal | Trial run on the first article (X-MFG-37) |
 | driver cu_flow_stress_MPa | 250.0 MPa mean flow stress, Cu cold work | Trial run on the first article (X-MFG-37) |
+| driver cast_gating_return_frac | 0.15 - | weigh the gates and risers cut from a week of permanent-mold copper pours against the poured mass |
 | driver pvl_diff_mass_kg | 20.0 kg heated mass (tube, boat, heater, hot-face insulation) | First-article tool run (X-MFG-38) |
 | driver pvl_pecvd_W_cm2 | 0.1 W/cm2 RF power density on the electrode | First-article tool run (X-MFG-38) |
 | driver znbr_ASR_ohm_cm2 | 5.0 ohm cm2 cell area-specific resistance | ZNBR2 stack test (X-MFG-41, AQS-TST-002) |
@@ -2188,3 +2191,4 @@ Table 10.1. Values to verify
 | A-M-430 | MG_POT_TO_IND carries magnesium for alloying the cast … kg/d; A | After regen MG_POT_TO_IND equals al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac, MG_POT and IND_MELT close, and python3 -m flow_graph.param.recovery lists the Mg record with no flags. |
 | A-M-431 | The chlorine of the VDF and TFE reactors has two built … kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. |
 | A-M-432 | POLY_TO_FAB carries the wafer-fab photoresist, sized from … kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. |
+| A-M-433 | The standby and return route sets of task X-RTE are decided … kg/d | python3 -m flow_graph.param.standby_routes prints each rated case; after regen the X-RTE standby and return groups list only the assay-dependent and owner-held routes, and test_balance passes with no reconciled move. |

@@ -50,8 +50,6 @@ Table 4.1. Streams of the metal-forming units
 
 | Stream | From | To | Rate | Unit | Layers |
 | --- | --- | --- | --- | --- | --- |
-| ATOM_TO_STOCK | GAS_ATOMIZER | STOCK_OUT | 0 | kg/d | mass |
-| COMB_OFFGAS | COMB_HEAT | MET_SCRUB | 0 | kg/d | mass, energy |
 | IA-ATOM-REMELT | GAS_ATOMIZER | MET_MELT | 0.3556 | kg/d | mass |
 | IA-DRAW-FUME | WIRE_DRAW | MET_SCRUB | 2.46 | kg/d | mass |
 | IA-EW-SHEET | EW_9 | MET_MELT | 13.99 | kg/d | mass |
@@ -78,7 +76,7 @@ Table 4.1. Streams of the metal-forming units
 | STOCK_TO_WIRE_DRAW | METAL_STORE | WIRE_DRAW | 0 | kg/d | mass |
 | VAC_HEAT_TO_HX | VAC_IND | MET_HX_Q4 | 0.638 | kW | thermal |
 
-The streams ATOM_TO_STOCK, COMB_OFFGAS, IND_TO_ATOM and STOCK_TO_WIRE_DRAW carry no flow on the present graph.
+The streams IND_TO_ATOM and STOCK_TO_WIRE_DRAW carry no flow on the present graph.
 
 ## 5. Mass balance
 

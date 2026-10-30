@@ -1888,7 +1888,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M729.85,-10927.3C752.6,-10873.53 819.44,-10711.37 859,-10571.65 866.29,-10545.9 850.28,-10529.58 871,-10512.65 928.13,-10465.97 975.14,-10472.45 1037,-10512.65 1055.35,-10524.58 1040.53,-10543.24 1057,-10557.65 1064.43,-10564.15 1073.69,-10568.73 1083.14,-10571.96"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1082.41,-10575.4 1092.99,-10574.86 1084.39,-10568.68 1082.41,-10575.4"/>
-<text text-anchor="middle" x="954" y="-10515.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n351.8735 kW</text>
+<text text-anchor="middle" x="954" y="-10515.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n351.8815 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node45" class="node">
@@ -2222,7 +2222,7 @@
 <title>SOL_ARK_60K&#45;&gt;IND_MELT</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M1173.19,-10577.32C1186.65,-10574.44 1200.46,-10568.71 1209,-10557.65 1255.12,-10497.91 1179.45,-9935.58 1229,-9878.65 1281.38,-9818.46 1354.16,-9909.3 1406,-9848.65 1437.4,-9811.91 1400.52,-8149.73 1426,-8108.65 1433.67,-8096.28 1446.91,-8087.88 1459.99,-8082.25"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="1461.33,-8085.48 1469.4,-8078.62 1458.81,-8078.95 1461.33,-8085.48"/>
-<text text-anchor="middle" x="1317.5" y="-9881.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;IND_MELT\n0.8854 kW</text>
+<text text-anchor="middle" x="1317.5" y="-9881.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;IND_MELT\n0.8934 kW</text>
 </g>
 <!-- RF_HEAT -->
 <g id="node75" class="node">
@@ -2718,7 +2718,7 @@
 <title>ZNBR2&#45;&gt;ZNBR2_BR2_REGEN</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1526.57,-8845.82C1542.88,-8841.94 1562.7,-8834.16 1573,-8818.65 1598.52,-8780.23 1560.29,-5530.17 1593,-5497.65 1617.74,-5473.05 1725.27,-5473.04 1750,-5497.65 1762.91,-5510.51 1761.77,-8103.43 1762,-8121.65 1797.14,-10865.49 1888.82,-14258.94 1898.22,-14603.14"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1894.72,-14603.37 1898.5,-14613.27 1901.72,-14603.18 1894.72,-14603.37"/>
-<text text-anchor="middle" x="1671.5" y="-5500.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n916.293526 kg/d</text>
+<text text-anchor="middle" x="1671.5" y="-5500.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69\n916.335548 kg/d</text>
 </g>
 <!-- ZNBR2&#45;&gt;Q4_BUS -->
 <g id="edge286" class="edge">
@@ -2745,7 +2745,7 @@
 <title>ZNBR2_BR2_REGEN&#45;&gt;ZNBR2</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1898.5,-14613.27C1890.94,-14332.72 1799.03,-10895.27 1762,-8121.65 1761.8,-8106.92 1760.45,-6010.04 1750,-5999.65 1700.52,-5950.45 1642.52,-5950.49 1593,-5999.65 1565.22,-6027.24 1594.68,-8786.05 1573,-8818.65 1564.7,-8831.12 1550.25,-8838.6 1536.42,-8843.07"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1535.25,-8839.76 1526.56,-8845.82 1537.13,-8846.5 1535.25,-8839.76"/>
-<text text-anchor="middle" x="1671.5" y="-6002.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n916.293526 kg/d</text>
+<text text-anchor="middle" x="1671.5" y="-6002.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S69B\n916.335548 kg/d</text>
 </g>
 <!-- FAB_UPW_TANK -->
 <g id="node50" class="node">
@@ -3286,7 +3286,7 @@
 <title>IND_MELT&#45;&gt;CAST_LINE</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1529.56,-8070.72C1545.08,-8068.55 1563,-8063.03 1573,-8049.65 1619.44,-7987.5 1537.94,-5311.31 1593,-5256.65 1617.76,-5232.07 1725.31,-5232 1750,-5256.65 1767.77,-5274.39 1746.72,-12466.73 1762,-12486.65 1783.89,-12515.19 1825.37,-12523.21 1856.98,-12524.84"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1857.17,-12528.34 1867.27,-12525.16 1857.39,-12521.35 1857.17,-12528.34"/>
-<text text-anchor="middle" x="1671.5" y="-5259.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IND_MELT_TO_CAST\n3.0 kg/d</text>
+<text text-anchor="middle" x="1671.5" y="-5259.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IND_MELT_TO_CAST\n3.529412 kg/d</text>
 </g>
 <!-- CONT_CAST -->
 <g id="node88" class="node">
@@ -3347,7 +3347,7 @@
 <title>CAST_LINE&#45;&gt;IND_MELT</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M1867.27,-12525.16C1835,-12524.76 1786.37,-12518.42 1762,-12486.65 1746.8,-12466.84 1767.67,-5313.29 1750,-5295.65 1725.31,-5271 1617.76,-5271.07 1593,-5295.65 1538.71,-5349.55 1618.79,-7988.37 1573,-8049.65 1565.11,-8060.21 1552.29,-8065.87 1539.6,-8068.86"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="1538.75,-8065.45 1529.56,-8070.72 1540.03,-8072.34 1538.75,-8065.45"/>
-<text text-anchor="middle" x="1671.5" y="-5298.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">CAST_SCRAP_TO_IND\n0.0 kg/d</text>
+<text text-anchor="middle" x="1671.5" y="-5298.25" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">CAST_SCRAP_TO_IND\n0.529412 kg/d</text>
 </g>
 <!-- ROLL -->
 <g id="node81" class="node">
@@ -5542,5 +5542,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="3057.1" y="17644.5" width="2053.3" height="547.5" fill="white" stroke="black" stroke-width="5.70"/><text x="3091.3" y="17735.8" font-family="sans-serif" font-size="51.3">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3091.3" y="17832.7" font-family="sans-serif" font-size="51.3">Process flow diagram</text><text x="3091.3" y="17929.7" font-family="sans-serif" font-size="51.3">Type: flow diagram (ISO_10628_2)   Rev dbdd13bb   Issued 2026-10-15</text><text x="3091.3" y="18026.6" font-family="sans-serif" font-size="51.3">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3091.3" y="18123.6" font-family="sans-serif" font-size="51.3">Graph SHA-256 08f7fff441d4abd9   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="3057.1" y="17644.5" width="2053.3" height="547.5" fill="white" stroke="black" stroke-width="5.70"/><text x="3091.3" y="17735.8" font-family="sans-serif" font-size="51.3">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD</text><text x="3091.3" y="17832.7" font-family="sans-serif" font-size="51.3">Process flow diagram</text><text x="3091.3" y="17929.7" font-family="sans-serif" font-size="51.3">Type: flow diagram (ISO_10628_2)   Rev 2f840f85   Issued 2026-10-15</text><text x="3091.3" y="18026.6" font-family="sans-serif" font-size="51.3">Created: flow graph pipeline   Approved: not approved (study)</text><text x="3091.3" y="18123.6" font-family="sans-serif" font-size="51.3">Graph SHA-256 265a78c949fba543   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

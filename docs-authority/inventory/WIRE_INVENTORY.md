@@ -270,7 +270,7 @@ Table 1.1. Conductor families
 | pem_fc | FUEL_CELL | transfer pump S52 to VCD_TRAIN signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |
 | rectifier | RECTIFIER | cooling fan power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 4 | 80.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | rectifier | RECTIFIER | cooling fan signal | 18 AWG | shielded pair | 2 | 10.0 | 4 | 80.0 | speed/position feedback (assumed) |
-| roof array | PV_ARRAY | PV source circuit home run (+/-) | 10 AWG | PV Wire, UL 4703, 2 kV | 2 | 60.0 | 336 | 40320.0 | 6046 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 336 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed) |
+| roof array | PV_ARRAY | PV source circuit home run (+/-) | 10 AWG | PV Wire, UL 4703, 2 kV | 2 | 60.0 | 336 | 40320.0 | 6048 modules / 18 per string (Voc x 1.1 < 1000 V, assumed) = 336 strings; NEC 690.8 1.56 x Isc; 60 m mean home run (assumed) |
 | roof array | PV_ARRAY | array EGC | 10 AWG | bare Cu | 1 | 60.0 | 336 | 20160.0 | NEC 690.45 / 250.122 |
 | scrubber | ZNBR2_BR2_REGEN | induced-draft fan power | 16 AWG | TC-ER 2-cond | 2 | 10.0 | 1 | 20.0 | from the local 24/48 V DC panel at the unit, 10 m (assumed) |
 | scrubber | ZNBR2_BR2_REGEN | induced-draft fan signal | 18 AWG | shielded pair | 2 | 10.0 | 1 | 20.0 | speed/position feedback (assumed) |

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 36.71 kg/d. Mass out 36.71 kg/d. Electrical duty 0.0000 kW. In: ROLL_TO_STOCK 13 kg/d (plate/sheet); EXTRUDE_TO_STOCK 0 kg/d (rod/profile); DRAW_TO_STOCK 0 kg/d (wire); SINTER_TO_STOCK 0 kg/d (sintered stock); 3 more. Out: IA-STOCK-STORE 36.71 kg/d (formed metal product to the store).
+1. Basis. Mass in 36.71 kg/d. Mass out 36.71 kg/d. Electrical duty 0.0000 kW. In: ROLL_TO_STOCK 13 kg/d (plate/sheet); EXTRUDE_TO_STOCK 0 kg/d (rod/profile); CONT_TO_STOCK 21.71 kg/d (as-cast stock); BREAK_TO_STOCK 2 kg/d (investment casting). Out: IA-STOCK-STORE 36.71 kg/d (formed metal product to the store).
 
 2. Size.
 - Envelope 1200×800×1500 mm, 1.44 m³. That box over this flow would be 941.4 h if it were full. It is not a residence time.

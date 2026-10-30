@@ -394,7 +394,7 @@
           "volume_m3": 0.0202,
           "material": "316L tube",
           "hold_kg": 0.02,
-          "connections": 7
+          "connections": 6
         },
         "size_note": "DN32 manifold x 45 m run (0.020 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       }
@@ -2861,16 +2861,15 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DSN-OX-001: tank breathing and upset vent; no continuous flow on the design day (assumption)."
+        "note": "X-RTE TF (A-M-418): zero on the design day; rated 0.3708 kg/d (the API 2000 out-breathing 0.0120 Nm3/h of the 0.02 m3 tank for 24 h) when the nitric tank breathes out at its API 2000 normal venting rate (API2000_2020), for 2 d (standby_routes.py)."
       },
       "params": {
-        "rate_basis": "breathing and upset vent; no continuous flow on the design day (assumption)",
-        "rate_source": "AQS-DSN-OX-001",
-        "medium": "air with NOx and HNO3 mist",
-        "conditions": "ambient, atm",
-        "rate_kind": "derived",
-        "doc": "AQS-DSN-OX-001",
-        "material": "PVDF or PVC-U (AQS-STD-002)"
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 0.3708,
+        "rated_case": "the nitric tank breathes out at its API 2000 normal venting rate (API2000_2020)",
+        "backs_up": "the API 2000 out-breathing 0.0120 Nm3/h of the 0.02 m3 tank for 24 h",
+        "outage_d": 2.0,
+        "basis": "A-M-418; A-M-433; flow_graph/param/standby_routes.py"
       },
       "composition": {
         "air": 0.999,

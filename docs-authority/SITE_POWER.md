@@ -52,7 +52,7 @@ Table 3. Storage and coverage of the worst stretch
 | pumped_hydro | HYDRO_SET | 213.1 | `energy_kwh_recoverable_study` |
 | all | - | 3266.1 | - |
 
-Plant demand 218.05 kW; energy drawn over the stretch 3052.7 kWh; coverage 1.07.
+Plant demand 218.06 kW; energy drawn over the stretch 3052.8 kWh; coverage 1.07.
 
 ## 3. Redundancy of energy and life-support functions
 

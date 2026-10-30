@@ -605,10 +605,10 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 218.0526,
+        "value": 218.0626,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.1 kW, charge 991.1 kW, 3053 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.1 kW, charge 991.2 kW, 3053 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
@@ -623,7 +623,7 @@
           "H2_m3_d": 7.74,
           "purge_m3_h": 32.25,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1996.8
+          "electrode_area_m2": 1996.9
         }
       }
     },
@@ -1104,8 +1104,8 @@
           "slag_kg_d": 0.3302,
           "crucible_kg": 10.0,
           "heats_d": 4,
-          "melt_kWh_d": 21.249,
-          "avg_kW": 0.8854,
+          "melt_kWh_d": 21.441,
+          "avg_kW": 0.8934,
           "peak_kW": 15.0,
           "connected_kW": 25.0,
           "kWh_per_kg": {
@@ -1130,7 +1130,7 @@
           "heats_d": 4,
           "connected_kW": 25.0,
           "peak_kW": 15.0,
-          "melt_kWh_d": 21.249,
+          "melt_kWh_d": 21.441,
           "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
         },
         "envelope": {
@@ -1144,10 +1144,10 @@
           "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
         },
         "duty_cycle": {
-          "avg_kW": 0.8854,
+          "avg_kW": 0.8934,
           "peak_kW": 15.0,
           "connected_kW": 25.0,
-          "kWh_d": 21.249,
+          "kWh_d": 21.441,
           "heats_d": 4,
           "basis": "X-MFG-37 logged batch schedule class"
         },
@@ -1160,10 +1160,10 @@
         }
       },
       "continuous_kw": {
-        "value": 0.8854,
+        "value": 0.8934,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.25 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
+        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.44 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
       }
     },
     {

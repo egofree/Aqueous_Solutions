@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body D800 x 3803 mm,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",docs-authority/duties/MET_SCRUB.md
-2,Process nozzle DN15,5,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,4,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 3,Process nozzle DN50,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 4,Process nozzle DN300,1,"PVC-U shell, sump, and packing support, per AQS-STD-002 rules M1 and M2.",one per mass edge; DN from AQS-INV-003
 5,"Motor: induced-draft fan (induction IE3, IEC 100L / 2.2 kW)",1,-,AQS-INV-001 / AQS-INV-005

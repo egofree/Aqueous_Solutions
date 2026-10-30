@@ -2,10 +2,10 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 3 kg/d. Mass out 3 kg/d. Electrical duty 0.0000 kW. In: IND_MELT_TO_CAST 3 kg/d (molten metal). Out: CAST_SCRAP_TO_IND 0 kg/d (foundry scrap); CAST_TO_ROLL 3 kg/d (billet to roll); CAST_TO_EXTRUDE 0 kg/d (billet to extrude).
+1. Basis. Mass in 3.529 kg/d. Mass out 3.529 kg/d. Electrical duty 0.0000 kW. In: IND_MELT_TO_CAST 3.529 kg/d (molten metal). Out: CAST_SCRAP_TO_IND 0.5294 kg/d (foundry scrap); CAST_TO_ROLL 3 kg/d (billet to roll); CAST_TO_EXTRUDE 0 kg/d (billet to extrude).
 
 2. Size.
-- Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 14400.0 h if it were full. It is not a residence time.
+- Envelope 1500×800×1500 mm, 1.8 m³. That box over this flow would be 12240.0 h if it were full. It is not a residence time.
 - Envelope basis (graph node): A-M-199 forming class; 1 h hold-up of the Cu pour is below the class minimum.
 - Sizing study AQS-DUTY-072 (study): pour_kg_d 3; products Cu ingot/billet, permanent mold; scrap_return_kg_d 0.
 - Graph design (AQS-PAR-001 sizing): machine permanent-mould cast line; pour_kg_d 3; moulds 2; table_L_mm 700.

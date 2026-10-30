@@ -854,8 +854,8 @@
           "slag_kg_d": 0.3302,
           "crucible_kg": 10.0,
           "heats_d": 4,
-          "melt_kWh_d": 21.249,
-          "avg_kW": 0.8854,
+          "melt_kWh_d": 21.441,
+          "avg_kW": 0.8934,
           "peak_kW": 15.0,
           "connected_kW": 25.0,
           "kWh_per_kg": {
@@ -880,7 +880,7 @@
           "heats_d": 4,
           "connected_kW": 25.0,
           "peak_kW": 15.0,
-          "melt_kWh_d": 21.249,
+          "melt_kWh_d": 21.441,
           "lining": "ceramic-fibre hot face 150 mm + 4 mm CS casing (study)"
         },
         "envelope": {
@@ -894,10 +894,10 @@
           "basis": "A-M-199 melt class: crucible melt_charge_kg at 7000 kg/m3, H/D atm_HD, +300/+500 allowances; box furnace at the connected load"
         },
         "duty_cycle": {
-          "avg_kW": 0.8854,
+          "avg_kW": 0.8934,
           "peak_kW": 15.0,
           "connected_kW": 25.0,
-          "kWh_d": 21.249,
+          "kWh_d": 21.441,
           "heats_d": 4,
           "basis": "X-MFG-37 logged batch schedule class"
         },
@@ -910,10 +910,10 @@
         }
       },
       "continuous_kw": {
-        "value": 0.8854,
+        "value": 0.8934,
         "unit": "kW",
         "status": "study",
-        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.25 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
+        "note": "X-MFG-37 trial basis (A-M-177 melt energies, AQS-DUTY-072): 21.44 kWh/d over 24 h at 4 heats/d of the 10 kg crucible; peak 15.0 kW, connected 25 kW (A-M-232 face value kept as installed capacity; the load list carries the duty-cycle average). X-ELS-02."
       }
     },
     {
@@ -1558,7 +1558,7 @@
       "from_unit_id": "COMB_HEAT",
       "to_unit_id": "MET_SCRUB",
       "phase": "G",
-      "presence": "present",
+      "presence": "retired",
       "carries": "combustion off-gas when alternate used",
       "notes": "Role fix / integration. Rate TBD.",
       "namespace": "IA",
@@ -1571,7 +1571,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "COMB_HEAT is the fuel-fired N+1 alternate (A-M-283): standby-zero; off-gas routes to MET_SCRUB only when the alternate is energized. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-433): COMB_HEAT has no fuel route, so it can make no off-gas; a fuel-fired alternate needs a fuel route first (X-RTE-COMB-HEAT-FUEL)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "MFG"
@@ -1601,9 +1601,9 @@
         "rate_normal_kg_d": 0.0,
         "rate_rated_kg_d": 6.8389,
         "rated_case": "MET_MELT is out of service and copper rod from the METAL_STORE dock buffer feeds the wire drawer",
-        "backs_up": "S57",
+        "backs_up": "the S57 rate",
         "outage_d": 2.0,
-        "basis": "A-M-418; flow_graph/param/standby_routes.py",
+        "basis": "A-M-418; A-M-433; flow_graph/param/standby_routes.py",
         "hold_kg": 13.6778
       }
     },
@@ -1632,9 +1632,9 @@
         "rate_normal_kg_d": 0.0,
         "rate_rated_kg_d": 3.556,
         "rated_case": "MET_MELT is out of service and the foundry melt IND_MELT pours the atomiser charge",
-        "backs_up": "IA-MELT-ATOM",
+        "backs_up": "the IA-MELT-ATOM rate",
         "outage_d": 2.0,
-        "basis": "A-M-418; flow_graph/param/standby_routes.py",
+        "basis": "A-M-418; A-M-433; flow_graph/param/standby_routes.py",
         "source_heats_d_normal": 4,
         "source_heats_d_in_outage": 5
       }
@@ -1644,7 +1644,7 @@
       "from_unit_id": "GAS_ATOMIZER",
       "to_unit_id": "STOCK_OUT",
       "phase": "S",
-      "presence": "present",
+      "presence": "retired",
       "carries": "powder stock",
       "notes": "Role fix / integration. Rate TBD.",
       "namespace": "IA",
@@ -1656,7 +1656,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Gas-atomizer powder path optional, not baseline (FOUNDRY_INTEGRATION). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "X-RTE retired 2026-10-30 (A-M-433): the atomiser powder S60 goes to MFG_SHOP, its only consumer, so a powder stock route duplicates it."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "FOUNDRY"

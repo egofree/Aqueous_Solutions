@@ -107,7 +107,7 @@ A('| Investment casting | WAX_PATTERN, SHELL_BUILD, SHELL_BURNOUT, INV_CAST, SHE
   '(WAX_PATTERN closes on reclaim only) and GLASS_DIGEST fully committed (IA-GLASS-03 30.0 = S08G 26.7 + IA-SIL-SRC 3.3), '
   'so spent shell has no digest capacity | 2 kg/d castings (AQS-SIZE-FOUNDRY), shell 0.5 kg/kg casting (same source) |')
 A('| Flux | FLUX_PREP | SALT_FEED is a stub source (no in-edge); flux cover is a campaign addition | <0.5 kg/d salt |')
-A('| Alternates | RES_HEAT, COMB_HEAT | off-baseline redundant paths (FOUNDRY_DUTY heat policy); COMB_OFFGAS 0 | '
+A('| Alternates | RES_HEAT, COMB_HEAT | off-baseline redundant paths (FOUNDRY_DUTY heat policy); COMB_OFFGAS retired, as COMB_HEAT has no fuel route (A-M-433) | '
   'sized by the primary-path outage they back up |')
 A('| Forming extras | EXTRUDE, DRAW, FORGE, SINTER | extrusion is the Al/Cu/Mg profile path (pots blocked, Cu rolls); '
   'FOUNDRY DRAW has no feed edge (wire sizing is MFG WIRE_DRAW on S57); FORGE has no edges; sinter feed is Ti/Mo/Cr powder | '

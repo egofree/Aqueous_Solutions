@@ -473,7 +473,7 @@ Table 3.8. FOUNDRY off. Sector type: Process (Mass transform).
 | SF-COMB_HEAT | SOL_ARK_60K to COMB_HEAT | ELEC | 0.05 kW | stops with the sector |
 | SF-CR_CELL | SOL_ARK_60K to CR_CELL | ELEC | 0.16 kW | stops with the sector |
 | SF-FLUX_PREP | SOL_ARK_60K to FLUX_PREP | ELEC | 0.1 kW | stops with the sector |
-| SF-IND_MELT | SOL_ARK_60K to IND_MELT | ELEC | 0.885 kW | stops with the sector |
+| SF-IND_MELT | SOL_ARK_60K to IND_MELT | ELEC | 0.893 kW | stops with the sector |
 | SF-INV_CAST | SOL_ARK_60K to INV_CAST | ELEC | 0.15 kW | stops with the sector |
 | SF-MG_POT | SOL_ARK_60K to MG_POT | ELEC | 0.34 kW | stops with the sector |
 | SF-MO_CELL | SOL_ARK_60K to MO_CELL | ELEC | 0.114 kW | stops with the sector |
@@ -703,7 +703,7 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | SF-H2O_ELYZ | SOL_ARK_60K to H2O_ELYZ | CRYO | 21.2 kW | left without a source: consumer goes short |
 | SF-H2_DRYER | SOL_ARK_60K to H2_DRYER | GAS | 0.0205 kW | left without a source: consumer goes short |
 | SF-HF_GEN | SOL_ARK_60K to HF_GEN | POLYMERS | 0.308 kW | left without a source: consumer goes short |
-| SF-IND_MELT | SOL_ARK_60K to IND_MELT | FOUNDRY | 0.885 kW | left without a source: consumer goes short |
+| SF-IND_MELT | SOL_ARK_60K to IND_MELT | FOUNDRY | 0.893 kW | left without a source: consumer goes short |
 | SF-INV_CAST | SOL_ARK_60K to INV_CAST | FOUNDRY | 0.15 kW | left without a source: consumer goes short |
 | SF-LEACH_CSTR_1 | SOL_ARK_60K to LEACH_CSTR_1 | DIGESTER | 0.75 kW | left without a source: consumer goes short |
 | SF-LITHO_ALIGN | SOL_ARK_60K to LITHO_ALIGN | FAB | 0.004 kW | left without a source: consumer goes short |

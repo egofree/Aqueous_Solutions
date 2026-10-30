@@ -32,11 +32,11 @@
 <text x="24" y="221" font-size="9" fill="#666" text-anchor="start">SOL_ARK_60K</text>
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">SF-DRAW</text>
 <text x="24" y="253" font-size="10" text-anchor="start">0.0 kW · cable (schedule X-ELS-06)</text>
-<line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.6" stroke-dasharray="12,4,3,4" class="edge-out"/>
-<polygon points="1070,240 1061,236 1061,244" fill="#111"/>
+<line x1="914" y1="240" x2="1061" y2="240" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-out"/>
+<polygon points="1070,240 1061,236 1061,244" fill="#999"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">STOCK_OUT</text>
 <text x="1476" y="235" font-size="11" font-weight="600" text-anchor="end">DRAW_TO_STOCK</text>
-<text x="1476" y="253" font-size="10" text-anchor="end">0.0 kg/d · solids transfer</text>
+<text x="1476" y="253" font-size="10" text-anchor="end">0.0 kg/d · not in line list · absent</text>
 <text x="902" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="end">N1</text>
 <text x="24" y="400" font-size="10" font-weight="600">Notes</text>
 <text x="24" y="410" font-size="9">Every incident graph edge is drawn: 1 in, 1 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
@@ -46,7 +46,7 @@
 <g id="aqs-title-block"><rect x="1116" y="492" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="509" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-DRAW</text>
 <text x="1124" y="526" font-size="9">P&amp;ID DRAW (mill, FOUNDRY sector)</text>
-<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 089da736   Issued 2026-10-19</text>
+<text x="1124" y="543" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 101b600e   Issued 2026-10-19</text>
 <text x="1124" y="560" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="577" font-size="9">Graph SHA-256 08f7fff441d4abd9   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="577" font-size="9">Graph SHA-256 265a78c949fba543   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

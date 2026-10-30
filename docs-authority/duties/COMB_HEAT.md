@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0500 kW. In: none. Out: COMB_OFFGAS 0 kg/d (combustion off-gas when alternate used).
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0500 kW. In: none. Out: none.
 
 2. Size.
 - Envelope 1000×1000×1500 mm, 1.5 m³.
