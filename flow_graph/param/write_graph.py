@@ -444,7 +444,7 @@ def power():
     kw = round(rf['ext']['total_kW'], 4); E = {x['stream_id']: x for x in g['edges']}
     cond = "conditioned" if DR.val(DR.load(), "ext_conditioned") else "unconditioned"
     note = (f"X-PAR-07 solver.roof_close: {cond} extension {rf['added_m2']:.0f} m2; lighting {rf['ext']['light_kW']:.2f} kW (IECC 2021 C405, 10 % lit), "
-            f"ventilation {rf['ext']['vent_kW']:.2f} kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope {rf['ext']['envelope_kW']:.2f} kW (IECC 2021 C402 roof and walls, NOAA DFW degree days).")
+            f"ventilation {rf['ext']['vent_kW']:.2f} kW (ASHRAE 62.1-2025 air at COP per ASHRAE 90.1-2025 Table 6.8.1-2, ISO 16798-3 fans), envelope {rf['ext']['envelope_kW']:.2f} kW (IECC 2021 C402 roof and walls; envelope deltas from the bounding station normals, AQS-SITE-002 Rev C).")
     if 'EXT_HALL' not in N:
         n = dict(unit_id='EXT_HALL', sector_id='ELEC', presence='present', class_='building', tags=[], electrical_role='load', diagram_gap=None,
                  notes='Single-storey extension carrying the roof PV (X-PAR-07). Duty sheet docs-authority/duties/EXT_HALL.md.', enabled=True, modules=[], params={}, continuous_kw=None)

@@ -52,7 +52,7 @@ Outdoor equipment and cooling loops are rated at the bounding 0.4 % cooling dry 
 
 ## 5. Values still to be sourced
 
-- The annual-mean envelope coefficients (heating and cooling season mean temperature differences and the IECC climate-zone envelope values) still carry the former DFW-derived study values; their bounding needs the published station normals of the governing sites. Tracked under X-BAS-03.
+- The annual-mean envelope coefficients are bounded to the governing station: the Furnace Creek normals (NOAA_WRCC_DV) give heating and cooling season mean temperature differences of 1.904 K and 8.012 K (mean 9.916 K). The IECC climate-zone envelope values are already the set's strictest (the baseline's zone 3 governs over the hotter sites' zones 1-2).
 - The polar-night power architecture for the antarctic site is a different technology class question: Q-034.
 - Per-parcel values (ASCE Hazard Tool, geotechnical report, Wenner test) belong to each site design, not to the baseline.
 

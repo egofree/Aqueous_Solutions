@@ -36,10 +36,11 @@
   the daily-cycle solar architecture; default is that the polar site is a different technology
   class carrying its own power-portfolio replacements, as leo and mars already do.
 - New assumption-registry injury found and recorded, not silently patched: the value fields of
-  the assumption entries A-M-131..A-M-187 all carry the A-M-131 motor-family text regardless of
-  their (correct) titles - a mass overwrite from an earlier era. The wind bounding change
-  touches a driver whose register cites this injured region. Repair needs per-entry recovery
-  from git history; it is its own work item (proposed X-GOV task).
+  the assumption entries A-M-131..A-M-226 (96 entries) all carry the A-M-131 motor-family text
+  regardless of their (correct) titles and statement fields - a mass overwrite from an earlier
+  era. The wind bounding change touches a driver whose register cites this injured region.
+  Repair needs per-entry recovery (the statement fields survive for most entries; git history
+  has the rest); it is its own work item (proposed X-GOV task).
 
 ## Verification
 

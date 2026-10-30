@@ -22,12 +22,15 @@ the task plan marks them done with the sheet as evidence.
 oxidation), but its placeholder model stubs (the HCL_BURNER unit-BOM
 directory, "not yet dimensioned", no duty sheet) still rolled two
 unassignable envelope rows into the plant BOM. The stubs are removed with the
-unit. The EOL matrix
-is Rev E: the roster itself grew 1020 → 1436 lines as the build-out and M3
-BOMs rolled in, so the honest split is 1380 classed / 56 unassigned — each of
-the 56 held with a named reason (51 material not identified on the newer
-build-out BOM lines, 4 duty-sheet §3 pending at unit task 09, 1 pointer row);
-173 composition holds (fluoropolymer 86, Ti 25, Nd/Dy 5, Pt-Rh 1).
+unit. The EOL matrix is Rev E, restated with the roster correction that
+followed later the same day: the plant BOM rosters from the graph (present
+units), so the retired units and the superseded envelope BOMs leave the
+matrix; the classing rules cover the material families the build-out BOMs
+introduced. Every remaining unassigned line is a named hold - the standby
+machines awaiting their unit task 10/12 designs (owner programme gate) and the
+AQS-INV-004 pointer row - and the composition holds (fluoropolymer, Ti, Nd/Dy,
+Pt-Rh recovery units) continue. The live tally is in
+`docs-authority/EOL_RETURN.md` and `docs-authority/inventory/EOL_RETURN.csv`.
 
 **New §3 material selections** (X-MAT-22, AQS-STD-002): AQUA_TANK and
 GROWBED_A join the issued set (HDPE/EPDM liner class, CPVC loop piping,

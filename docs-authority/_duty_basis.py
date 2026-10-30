@@ -148,6 +148,26 @@ def main():
             _tag = f'`models/mfg/{u}/{os.path.basename(_mfg_mod[0])}`'
             if _m7 and _tag not in _m7.group(0):
                 s = s.replace(_m7.group(0), _m7.group(0) + f' Manufacturing model {_tag} (AQS-PLAN-006).', 1)
+        # A unit whose params carry a solved hvac block (the X-PAR-07/X-PAR-08 extension) has its
+        # section 2 re-rendered from the graph every pass, like section 1 - the hand-authored load
+        # text would otherwise trail the drivers it was written from.
+        _hv = prm.get('hvac')
+        if _hv and _hv.get('total_kW') is not None:
+            _ck = n.get('continuous_kw') or {}
+            _s2m = re.search(r'^2\. Size\..*?(?=^3\. )', s, flags=re.M | re.S)
+            if _s2m:
+                _s2 = (f"2. Size.\n"
+                       f"- Envelope and loads are solved in the graph (X-PAR-07/X-PAR-08, A-M-104, A-M-112) from the "
+                       f"location-neutral bounding climate of AQS-SITE-002 Rev C; a site design re-solves them.\n"
+                       f"- Electrical, average: lighting {_hv.get('light_kW', 0):.2f} kW (IECC 2021 C405, 10 % lit), ventilation "
+                       f"{_hv.get('vent_kW', 0):.2f} kW (ASHRAE 62.1-2025), envelope service {_hv.get('envelope_kW', 0):.2f} kW; "
+                       f"total {float(_ck.get('value') or _hv.get('total_kW')):.2f} kW on the bus.\n"
+                       f"- Thermal, average: heating {_hv.get('Qh_kW', 0):.2f} kW and cooling {_hv.get('Qc_kW', 0):.2f} kW after internal "
+                       f"gains {_hv.get('gains_kW', 0):.2f} kW and slab edge {_hv.get('slab_kW', 0):.2f} kW (IECC C402 F-factor); "
+                       f"heat pumps per ASHRAE 90.1-2025 Table 6.8.1-2, loop pumping {_hv.get('pump_kW', 0):.2f} kW.\n"
+                       f"- Peak block load: heating {_hv.get('peak_h_kW', 0):.1f} kW, cooling {_hv.get('peak_c_kW', 0):.1f} kW at the "
+                       f"bounding design temperatures.\n\n")
+                if _s2m.group(0) != _s2: s = s.replace(_s2m.group(0), _s2, 1)
         if s != s0: open(p, 'w').write(s); ch += 1
     # R11 Rev AC regen: the graph is closed this lane, so params.duty is refreshed in memory only
     # (CRYO_ASU duty text trails its balanced rates; a graph-write lane picks it up). The manifest
