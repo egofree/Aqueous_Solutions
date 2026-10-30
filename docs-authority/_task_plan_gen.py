@@ -465,7 +465,7 @@ EVIDENCE_PASS={
  'X-QA-01':'docs-authority/ITP.md',
  'X-QA-02':'docs-authority/DESIGN_CHECK.md',
  'X-END-01':'docs-authority/DECOMMISSIONING.md',
- 'X-END-02':'PARTIAL:docs-authority/EOL_RETURN.md|Rev D classing (X-MAT-22): 1017 of 1020 lines classed; 3 unassigned, each held with a named reason (2 wait on the HCL_BURNER duty sheet at unit task 01, 1 pointer row to the AQS-INV-004 fabricated-part roll-up); 101 held total (fluoropolymer 67, Ti 25, Nd/Dy 5, Pt-Rh 1, duty-pending 2, pointer 1) - these are composition holds (HF off-gas recovery, Ti re-use, Nd/Dy and Pt-Rh recovery units) not selection gaps',
+ 'X-END-02':'PARTIAL:docs-authority/EOL_RETURN.md|Rev E classing (retired-unit close-out + roster growth): 1380 of 1436 lines classed - the roster grew 1020 -> 1436 as the build-out and M3 unit BOMs rolled in, and the HCL_BURNER placeholder stubs left with the retired unit (A-M-255); 56 unassigned, each held with a named reason (51 material not identified on the newer build-out BOM lines, 4 duty-sheet section 3 pending at unit task 09, 1 pointer row to the AQS-INV-004 fabricated-part roll-up); 173 held total for composition (fluoropolymer 86, Ti 25, Nd/Dy 5, Pt-Rh 1) - these are composition holds (HF off-gas recovery, Ti re-use, Nd/Dy and Pt-Rh recovery units) not selection gaps',
  'X-MAT-01':'docs-authority/MATERIALS_STD.md',
 'X-MAT-06':'docs-authority/MATERIALS_STD.md',
 'X-MAT-03':'docs-authority/MATERIALS_STD.md',

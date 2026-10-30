@@ -103,9 +103,14 @@ def main():
         kw = ((n.get('continuous_kw') or {}).get('value') or 0) if isinstance(n.get('continuous_kw'), dict) else 0
         prm = n.setdefault('params', {})
         if 'duty' in prm: prm['duty'] = re.sub(r'^In [\d.]+ kg/d, out [\d.]+ kg/d, [\d.]+ kW\.', f'In {mi:.3f} kg/d, out {mo:.3f} kg/d, {kw:.3f} kW.', prm['duty'])
-        if not os.path.exists(p):
+        # a zero-byte sheet is a corpse from an interrupted create (the old code truncated the
+        # file before author() ran): it blocks the create path forever, because the update
+        # regexes never match an empty sheet. Regenerate it, and author() before open() so a
+        # mid-author exception leaves any previous file intact instead of a new corpse.
+        if not os.path.exists(p) or os.path.getsize(p) == 0:
             if n.get('presence') != 'present': continue   # standby units keep no sheet until they go present
-            open(p, 'w').write(author(n, g, ins, outs, mi, mo, kw)); au += 1; continue
+            content = author(n, g, ins, outs, mi, mo, kw)
+            open(p, 'w').write(content); au += 1; continue
         s = open(p).read(); s0 = s
         s = re.sub(r'^1\. Basis\..*$', f'1. Basis. Mass in {f4(mi)} kg/d. Mass out {f4(mo)} kg/d. Electrical duty {kw:.4f} kW. In: {lst(ins)}. Out: {lst(outs)}.', s, count=1, flags=re.M)
         # X-MAT-06: re-render section 3 only where it still carries a default template, so an

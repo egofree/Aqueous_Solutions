@@ -12,18 +12,19 @@ Classes are the seven of AQS-ASSAY-001 section 1; material names follow the AQS-
 | B | Honesty pass: no silently unassigned line. Envelope lines classed from the unit duty sheet section 3 where it exists; instruments, coils and the bought gearmotor classed by keyword; PFA added to the fluoropolymer hold; every remaining unassigned line held with the pending unit task named. | 2026-10-19 |
 | C | Duty-sheet sweep (the 2026-10-19/20 duty-sheet issue wave): the 44 units that waited on a duty sheet are swept; unassigned 89 -> 73 and every residual line carries a named hold: 70 lines wait on the section-3 material selection at unit task 09 (across the AQS-ASSAY-001 Rev C bounding cases, AQS-STD-002), 2 lines wait on the HCL_BURNER duty sheet (unit task 01), 1 pointer row. 159 held total. Not closed: no material selection is invented for lines whose duty sheet says pending. | 2026-10-21 |
 | D | X-MAT-22 (AQS-STD-006/MATERIALS_SEC3.md): the 38 held units have issued duty section 3 material selections, so the 70 duty-sheet-pending lines class from the section 3 keyword text (graphite, alumina/refractory, steels, PVDF/PTFE/PE/PP/UHMW). Unassigned 73 -> 3 (2 lines wait on the HCL_BURNER duty sheet at unit task 01, 1 pointer row); held total 159 -> 101 (fluoropolymer 67, Ti 25 + Nd/Dy 5, Pt-Rh 1, unassigned 3). Material-proxy classing by section 3 keyword, not by measured mass; unit masses still pending. | 2026-10-21 |
+| E | Retired-unit close-out and roster growth: HCL_BURNER left the design at graph Rev AC (A-M-255: the EW cathode H2 goes to the H2 pool, anode Cl2 all to leach oxidation), but its placeholder model stubs (models/units/HCL_BURNER, no duty sheet, not dimensioned) still rolled two unassignable envelope rows into the plant BOM; the stubs are removed with the unit. Meanwhile the plant BOM roster itself grew 1020 -> 1436 lines as the build-out and M3 unit BOMs rolled in, so the classed/unassigned split moves to 1380 classed, 56 unassigned - each held with a named reason (51 material not identified on the newer build-out BOM lines, 4 duty-sheet section 3 pending at unit task 09, 1 pointer row to the AQS-INV-004 fabricated-part roll-up); 173 held total for composition (fluoropolymer 86, Ti 25, Nd/Dy 5, Pt-Rh 1). Material-proxy classing by section 3 keyword, not by measured mass; unit masses still pending. | 2026-10-29 |
 
 At end of life each part goes back into the plant as feed of its class, through the same dock and assay as any other lot. Classing is by BOM line (count), not mass; the mass split waits for unit weights.
 
 | Feed class | BOM lines | Share |
 |---|---|---|
-| metal_plateable | 672 | 47 % |
-| organic | 545 | 38 % |
+| metal_plateable | 671 | 47 % |
+| organic | 549 | 38 % |
 | metal_reactive | 104 | 7 % |
 | silicate_oxide | 60 | 4 % |
-| unassigned | 58 | 4 % |
+| unassigned | 52 | 4 % |
 
-Unassigned: 58 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
+Unassigned: 52 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a named reason and owner in the hold column - the `held -` prefix marks a line that waits on a unit task (mostly 09, materials and corrosion) or is a roll-up pointer. Where an alloy choice is genuinely open at order time, the hold reads `held - vendor TBD` with what is undecidable; no line carries that today.
 
 ## Held lines (no route in the present plant, or material pending)
 
@@ -32,7 +33,6 @@ Unassigned: 58 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a n
 | fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 86 |
 | held - material not identified on the line | 51 |
 | Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 25 |
-| held - material pending: no duty sheet yet; assigned at unit task 09 under AQS-STD-002 | 6 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
 | Pt-Rh is not in the plateable set and has no recovery unit: gauze kept and re-drawn in house | 1 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |
@@ -56,7 +56,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | AL_POT | 4 | 6 | 0 | 4 | 4 |
 | AMF | 0 | 3 | 0 | 0 | 0 |
 | ANIMAL_PEN | 0 | 4 | 0 | 0 | 0 |
-| AQUA_TANK | 0 | 3 | 0 | 0 | 2 |
+| AQUA_TANK | 0 | 5 | 0 | 0 | 0 |
 | AQUA_UV | 3 | 2 | 0 | 0 | 0 |
 | ASH | 0 | 3 | 0 | 0 | 0 |
 | AZOLLA | 0 | 3 | 0 | 0 | 0 |
@@ -175,7 +175,7 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | GREASE_CA | 2 | 0 | 0 | 0 | 0 |
 | GREASE_LI | 2 | 0 | 0 | 0 | 0 |
 | GREY_TREAT | 0 | 3 | 0 | 0 | 0 |
-| GROWBED_A | 0 | 2 | 0 | 0 | 2 |
+| GROWBED_A | 0 | 4 | 0 | 0 | 0 |
 | GROWBED_B | 0 | 4 | 0 | 0 | 0 |
 | GROW_BED | 0 | 2 | 0 | 0 | 0 |
 | GW_INTAKE | 0 | 2 | 0 | 0 | 0 |
@@ -187,7 +187,6 @@ Findings: fluoropolymer parts (PVDF piping, pumps and seals; PFA-lined meters) c
 | HAB_MED | 0 | 3 | 0 | 0 | 0 |
 | HAB_SLEEP | 0 | 3 | 0 | 0 | 0 |
 | HAB_WASH | 0 | 3 | 0 | 0 | 0 |
-| HCL_BURNER | 1 | 0 | 0 | 0 | 2 |
 | HEAT_SINK | 2 | 0 | 0 | 0 | 0 |
 | HF_GEN | 4 | 2 | 0 | 1 | 2 |
 | HNO3 | 6 | 1 | 0 | 0 | 0 |

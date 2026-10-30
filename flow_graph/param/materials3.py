@@ -370,6 +370,22 @@ SEL = {
 # the closed shell excludes outgassing polymer classes from habitable rooms and from the hive.
 # 5-tuples: (mat, basis, alt, note, task) - task is the unit's own A-M verification lane.
 SEL_FARM = {
+ 'AQUA_TANK': (
+  'HDPE tank body with a food-grade LDPE aquaculture liner, SS316 hardware above the waterline, CPVC loop fittings',
+  'the tank holds the fish stock in the RAS loop at 26-28 C (graph design; A-M-415): ichthyotoxicity governs the '
+  'wetted set, so Cu/Zn/brass are excluded outright; the liner is the aquaculture food-contact class over the '
+  '2.5 m3 envelope (203.8 kg/d loop).',
+  'FRP tank with gelcoat in place of the liner if liner abrasion ever shows',
+  'loop top-up 27.4 kg/d and duckweed ration 18 kg/d in; 200 kg/d to the biofilter, 3 kg/d sludge to the BSFL bin.',
+  'X-FARM-11'),
+ 'GROWBED_A': (
+  'HDPE tray with EPDM liner at the ponded inlet zone, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping',
+  'aerobic mineralisation front half of the dual root zone (A-M-229; A-M-415): oxygenated trickling water, so the '
+  'sulfide exclusion of the anaerobic half does not bind - but the water returns to the fish stock, and Cu/Zn/brass '
+  'stay out of every wetted face regardless (ichthyotoxicity, AQS-STD-002 with the duty section 2 environment).',
+  'PP tray if media abrasion ever shows on the HDPE floor (same polymer family, higher cost)',
+  'pairs with GROWBED_B (the anaerobic half); the bed passes 202.8 kg/d loop water and 1.9 kg/d vermicompost to the beds.',
+  'X-FARM-11'),
  'GROWBED_B': (
   'HDPE tray with EPDM liner, expanded-clay (LECA) media on a geotextile separation cloth, CPVC loop piping',
   'anaerobic mineralisation root zone (A-M-229; A-M-415): the bed runs sulfidic under the ponded tail, and '

@@ -62,13 +62,13 @@ Table 2.1. Tasks by group
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
 | FAB | Process (Mass transform) | 240 | 160 |
-| FARM | Life support / habitat | 240 | 181 |
+| FARM | Life support / habitat | 240 | 185 |
 | CRYO | Utility / header | 210 | 135 |
 | OIL | Process (Mass transform) | 195 | 128 |
 | HEAT | Utility / header | 180 | 112 |
 | POLYMERS | Process (Mass transform) | 165 | 123 |
 | GAS | Process (Mass transform) | 150 | 98 |
-| WTR | Utility / header | 136 | 87 |
+| WTR | Utility / header | 136 | 88 |
 | MFG | Process (Mass transform) | 150 | 99 |
 | ELEC | Utility / header | 135 | 88 |
 | HAB | Life support / habitat | 135 | 98 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3266** | **2335** |
+| | **Total** | **3266** | **2340** |
 
 ## 3. Triage of open tasks
 
@@ -102,8 +102,7 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P1 | 3 |
-| desk P2 | 7 |
+| desk P2 | 5 |
 | desk P3 | 38 |
 | desk P4 | 481 |
 | desk P5 | 196 |
@@ -540,7 +539,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 ### X-END. Decommissioning and recycling loop closure
 
 - [x] **X-END-01** Decommissioning plan. Done when: drain, purge, and dismantle per system. Depends: X-OPS-01. Evidence: `docs-authority/DECOMMISSIONING.md`.
-- [ ] **X-END-02** End-of-life material return. Done when: each unit material assigned to a plant feed class under AQS-ASSAY-001. Depends: X-BAS-01, X-PRO-01. Start from `docs-authority/EOL_RETURN.md` (partial). Triage: desk P2. Status: Rev D classing (X-MAT-22): 1017 of 1020 lines classed; 3 unassigned, each held with a named reason (2 wait on the HCL_BURNER duty sheet at unit task 01, 1 pointer row to the AQS-INV-004 fabricated-part roll-up); 101 held total (fluoropolymer 67, Ti 25, Nd/Dy 5, Pt-Rh 1, duty-pending 2, pointer 1) - these are composition holds (HF off-gas recovery, Ti re-use, Nd/Dy and Pt-Rh recovery units) not selection gaps.
+- [ ] **X-END-02** End-of-life material return. Done when: each unit material assigned to a plant feed class under AQS-ASSAY-001. Depends: X-BAS-01, X-PRO-01. Start from `docs-authority/EOL_RETURN.md` (partial). Triage: desk P2. Status: Rev E classing (retired-unit close-out + roster growth): 1380 of 1436 lines classed - the roster grew 1020 -> 1436 as the build-out and M3 unit BOMs rolled in, and the HCL_BURNER placeholder stubs left with the retired unit (A-M-255); 56 unassigned, each held with a named reason (51 material not identified on the newer build-out BOM lines, 4 duty-sheet section 3 pending at unit task 09, 1 pointer row to the AQS-INV-004 fabricated-part roll-up); 173 held total for composition (fluoropolymer 86, Ti 25, Nd/Dy 5, Pt-Rh 1) - these are composition holds (HF off-gas recovery, Ti re-use, Nd/Dy and Pt-Rh recovery units) not selection gaps.
 
 ### X-LOC. Localization: site profiles and locale variants (AQS-PLAN-011)
 
@@ -1651,13 +1650,13 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 ### FARM. Life support / habitat
 
 - **FARM-AQUA_TANK** (fish_tank, sector FARM)
-  - [ ] FARM-AQUA_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Triage: desk P1.
+  - [x] FARM-AQUA_TANK-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/AQUA_TANK.md` §1; mass in = out 203.8 kg/d, 0.0000 kW.
   - [x] FARM-AQUA_TANK-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-AQUA_TANK-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
   - [x] FARM-AQUA_TANK-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-AQUA_TANK-01, FARM-AQUA_TANK-02. Evidence: `docs-authority/pid/AQUA_TANK.svg` (AQS-PID-001).
   - [x] FARM-AQUA_TANK-04 Nozzle schedule. Done when: docs-authority/nozzles/AQUA_TANK.csv, one row per edge. Depends: FARM-AQUA_TANK-03. Evidence: `docs-authority/nozzles/AQUA_TANK.csv` (all 6 process connections listed).
   - [x] FARM-AQUA_TANK-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-AQUA_TANK-04, FARM-AQUA_TANK-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 7 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FARM-AQUA_TANK-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-AQUA_TANK-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [ ] FARM-AQUA_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-03. Triage: desk P2.
+  - [x] FARM-AQUA_TANK-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-03. Evidence: `docs-authority/duties/AQUA_TANK.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-AQUA_TANK-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-AQUA_TANK-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] FARM-AQUA_TANK-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-AQUA_TANK-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
   - [x] FARM-AQUA_TANK-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/AQUA_TANK/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-AQUA_TANK-02, FARM-AQUA_TANK-04, FARM-AQUA_TANK-06, FARM-AQUA_TANK-09. Evidence: `models/mfg/AQUA_TANK/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
@@ -1811,13 +1810,13 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [ ] FARM-FOOD_STORE-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: FARM-FOOD_STORE-13, X-BLD-05, X-ASM-01. Triage: desk P5.
   - [ ] FARM-FOOD_STORE-15 Test and commission. Done when: test procedure and acceptance record. Depends: FARM-FOOD_STORE-14, X-COM-01. Triage: hardware.
 - **FARM-GROWBED_A** (growbed, sector FARM)
-  - [ ] FARM-GROWBED_A-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Triage: desk P1.
+  - [x] FARM-GROWBED_A-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/GROWBED_A.md` §1; mass in = out 202.8 kg/d, 0.0000 kW.
   - [x] FARM-GROWBED_A-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: FARM-GROWBED_A-01. Evidence: `docs-authority/FARM_DESIGN.md` (AQS-FARM-001).
   - [x] FARM-GROWBED_A-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: FARM-GROWBED_A-01, FARM-GROWBED_A-02. Evidence: `docs-authority/pid/GROWBED_A.svg` (AQS-PID-001).
   - [x] FARM-GROWBED_A-04 Nozzle schedule. Done when: docs-authority/nozzles/GROWBED_A.csv, one row per edge. Depends: FARM-GROWBED_A-03. Evidence: `docs-authority/nozzles/GROWBED_A.csv` (all 5 process connections listed).
   - [x] FARM-GROWBED_A-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: FARM-GROWBED_A-04, FARM-GROWBED_A-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] FARM-GROWBED_A-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: FARM-GROWBED_A-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
-  - [ ] FARM-GROWBED_A-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-03. Triage: desk P2.
+  - [x] FARM-GROWBED_A-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-03. Evidence: `docs-authority/duties/GROWBED_A.md` §6 (C7 closed on MASTER_PLAN).
   - [x] FARM-GROWBED_A-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: FARM-GROWBED_A-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
   - [x] FARM-GROWBED_A-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: FARM-GROWBED_A-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
   - [x] FARM-GROWBED_A-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/GROWBED_A/ builds; acceptance per AQS-PLAN-006 section 5. Depends: FARM-GROWBED_A-02, FARM-GROWBED_A-04, FARM-GROWBED_A-06, FARM-GROWBED_A-09. Evidence: `models/mfg/GROWBED_A/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
@@ -2885,7 +2884,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 ### WTR. Utility / header
 
 - **WTR-ATMOS** (boundary, sector WTR)
-  - [ ] WTR-ATMOS-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Triage: desk P1.
+  - [x] WTR-ATMOS-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/ATMOS.md` §1; mass in = out 0 kg/d, 0.0000 kW.
 - **WTR-BLACK_DIGEST** (digest, sector WTR)
   - [x] WTR-BLACK_DIGEST-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/BLACK_DIGEST.md` §1; mass in = out 22.72 kg/d, 0.1052 kW.
   - [x] WTR-BLACK_DIGEST-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: WTR-BLACK_DIGEST-01. Evidence: `docs-authority/sizing/SANITATION.md` (AQS-DUTY-063).
