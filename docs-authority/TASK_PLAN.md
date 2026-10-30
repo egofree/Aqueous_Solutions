@@ -57,7 +57,7 @@ Table 2.1. Tasks by group
 | X-OPS | Operations and maintenance | 3 | 3 |
 | X-QA | QA and verification | 3 | 2 |
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
-| X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 11 |
+| X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 360 | 242 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3266** | **2343** |
+| | **Total** | **3266** | **2345** |
 
 ## 3. Triage of open tasks
 
@@ -102,7 +102,7 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P2 | 4 |
+| desk P2 | 2 |
 | desk P3 | 38 |
 | desk P4 | 481 |
 | desk P5 | 196 |
@@ -157,8 +157,6 @@ Table 6.1. Next cross-cutting desk tasks
 | Task | Title | Triage |
 | --- | --- | --- |
 | X-END-02 | End-of-life material return | desk P2 |
-| X-LOC-01 | Localization plan | desk P2 |
-| X-LOC-02 | Site profile schema, baseline profile and loader | desk P2 |
 | X-PRO-03 | Cost estimate | desk P2 |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
@@ -544,8 +542,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 ### X-LOC. Localization: site profiles and locale variants (AQS-PLAN-011)
 
-- [ ] **X-LOC-01** Localization plan. Done when: AQS-PLAN-011 issued: current site inputs and Earth-surface constants found, site profile schema, unit needs and capability decisions, per-locale consequences, build order and acceptance checks; owner questions logged in AQS-OQ-001. Depends: —. Start from `docs-authority/LOCALIZATION_PLAN.md` (partial). Triage: desk P2.
-- [ ] **X-LOC-02** Site profile schema, baseline profile and loader. Done when: flow_graph/schema/site_profile.schema.json and flow_graph/param/sites/baseline.json committed; drivers.load() resolves site-bound drivers from the selected profile; no script reads drivers.json except through the loader; a profile entry without a basis or a missing required entry fails; baseline regeneration changes nothing. Depends: X-LOC-01. Start from `flow_graph/param/test_site_profile.py` (partial). Triage: desk P2.
+- [x] **X-LOC-01** Localization plan. Done when: AQS-PLAN-011 issued: current site inputs and Earth-surface constants found, site profile schema, unit needs and capability decisions, per-locale consequences, build order and acceptance checks; owner questions logged in AQS-OQ-001. Depends: —. Evidence: `docs-authority/LOCALIZATION_PLAN.md`.
+- [x] **X-LOC-02** Site profile schema, baseline profile and loader. Done when: flow_graph/schema/site_profile.schema.json and flow_graph/param/sites/baseline.json committed; drivers.load() resolves site-bound drivers from the selected profile; no script reads drivers.json except through the loader; a profile entry without a basis or a missing required entry fails; baseline regeneration changes nothing. Depends: X-LOC-01. Evidence: `flow_graph/param/test_site_profile.py`.
 - [x] **X-LOC-03** Earth-surface constants into the profile. Done when: gravity, atmospheric pressure, air composition and air densities read from the profile through flow_graph/param/site.py; no sizing module holds a gravity or pressure literal (test); baseline regeneration changes nothing except the owner-accepted gravity and air density change (Q-032). Depends: X-LOC-02. Evidence: `flow_graph/param/test_site_constants.py`.
 - [x] **X-LOC-04** Site selection and output namespaces. Done when: regen --site and --all-sites; a locale regenerates in a temporary worktree and writes only sites/<site_id>/ with SITE_OUTPUTS.json (outputs that differ from the baseline, profile hash); an in-place locale run is refused; document register and test_doc_numbers handle locale numbers (Q-028). Depends: X-LOC-03. Evidence: `flow_graph/param/test_site_outputs.py`.
 - [x] **X-LOC-05** Sector and unit scaling. Done when: flow_graph/param/unit_needs.json by unit class with unit overrides, a capabilities group and a scaling map in each profile (size factor, unit count, replacement, elimination with import path); test_site_scaling.py fails on an unmet need that is neither replaced nor eliminated, on an elimination with no import path or replacement, on a same-technology replacement, and on an energy or life-support unit eliminated without a different-technology replacement; SITE_SCALING.md generated per site. The redundancy count per function moves to X-LOC-06. Depends: X-LOC-04. Evidence: `flow_graph/param/test_site_scaling.py`.
