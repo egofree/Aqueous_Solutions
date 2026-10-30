@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 82.64 kg/d. Mass out 82.64 kg/d. Electrical duty 21.1932 kW. In: IA-ELY-H2O 82.64 kg/d (electrolyser feed water). Out: IA-ELY-H2 9.248 kg/d (electrolyser H2); IA-ELY-O2 73.39 kg/d (electrolyser O2).
+1. Basis. Mass in 82.64 kg/d. Mass out 82.64 kg/d. Electrical duty 21.1934 kW. In: IA-ELY-H2O 82.64 kg/d (electrolyser feed water). Out: IA-ELY-H2 9.248 kg/d (electrolyser H2); IA-ELY-O2 73.39 kg/d (electrolyser O2).
 
 2. Size.
 - Node note: X-PAR-12: PEM water electrolyser; H2 and O2 leave on separate lines (NFPA 2, ISO 22734).

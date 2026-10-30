@@ -709,6 +709,11 @@
   "docnum": "AQS-DUTY-064",
   "family": "Storage and holdup (docs-authority/_storage_sizing.py)"
  },
+ "RESIST_SYN": {
+  "doc": "docs-authority/PARAMETRIC_MODEL.md",
+  "docnum": "AQS-PAR-001",
+  "family": "Photoresist synthesis (flow_graph/param/fab_resist.py, section 7.4, A-M-432)"
+ },
  "RES_HEAT": {
   "doc": "docs-authority/sizing/FOUNDRY_LINE.md",
   "docnum": "AQS-DUTY-072",

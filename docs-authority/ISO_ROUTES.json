@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "8f23d7d46094ce9f09fa752ead4a76d12dc5282bc32fe237e88d730712c241b7",
+  "graph_sha256": "53cde3c475e10dd650ae9708b5611ccf6c88c1ca606279fb7124e80398e8f076",
   "generator": "docs-authority/_iso_routes.py"
  },
  "rows": [
@@ -3903,11 +3903,26 @@
    ],
    "length_m": 22.8,
    "elbows": 3
+  },
+  {
+   "line": "IA-FAB-SOLV",
+   "dn": 15,
+   "class": "P1",
+   "from": "WS_SOLV",
+   "to": "WAFER_FAB",
+   "legs_mm": [
+    2650,
+    5400,
+    -3400,
+    -1200
+   ],
+   "length_m": 12.7,
+   "elbows": 3
   }
  ],
  "summary": {
-  "routed": 260,
-  "missing_position": 83,
-  "total_m": 4522
+  "routed": 261,
+  "missing_position": 99,
+  "total_m": 4534
  }
 }

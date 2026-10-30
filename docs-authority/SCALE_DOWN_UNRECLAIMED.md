@@ -65,7 +65,7 @@ Table 3.1. DIGESTER off. Sector type: Process (Mass transform).
 | FOUNDRY_SLAG_TO_LEACH | IND_MELT to LEACH_CSTR_1 | FOUNDRY | 0.33 kg/d | left without a sink: unreclaimed |
 | HL-Q3-A-HX5 | Q3_A to LEACH_CSTR_1 | HEAT | 1.45 kW | left without a sink: unreclaimed |
 | HL-Q3-B-HX5 | Q3_B to LEACH_CSTR_1 | HEAT | 1.45 kW | left without a sink: unreclaimed |
-| IA-BAG-01 | BAGHOUSE to LEACH_CSTR_1 | GAS | 7.77 kg/d | left without a sink: unreclaimed |
+| IA-BAG-01 | BAGHOUSE to LEACH_CSTR_1 | GAS | 7.26 kg/d | left without a sink: unreclaimed |
 | IA-COAT-OUT | ELECTRODE_COAT to EW_1 | MFG | 0.02 kg/d | left without a sink: unreclaimed |
 | IA-DIG-LIQ | GLASS_DIGEST to LEACH_CSTR_1 | GLASS | 22 kg/d | left without a sink: unreclaimed |
 | IA-FAB-KERF | WAFER_FAB to LEACH_CSTR_1 | FAB | 0.0875 kg/d | left without a sink: unreclaimed |
@@ -74,10 +74,12 @@ Table 3.1. DIGESTER off. Sector type: Process (Mass transform).
 | IA-FEED-01 | HOPPER to LEACH_CSTR_1 | OIL | 103 kg/d | left without a sink: unreclaimed |
 | IA-GREY-01 | GREY_TREAT to LEACH_CSTR_1 | WTR | 245 kg/d | left without a sink: unreclaimed |
 | IA-HOP-01 | HOPPER to LEACH_CSTR_1 | OIL | 531 kg/d | left without a sink: unreclaimed |
-| IA-LIME-TO-PCA | ACID_PLANT to P_CA | POLYMERS | 3.8e-05 kg/d | left without a sink: unreclaimed |
+| IA-LIME-TO-PCA | ACID_PLANT to P_CA | POLYMERS | 3.9e-05 kg/d | left without a sink: unreclaimed |
 | IA-NAOH-H2O | GW_INTAKE to NAOH_PLANT | WTR | 11.3 kg/d | left without a sink: unreclaimed |
 | IA-NUT-LEACH | NUTRIENT_DOSE to LEACH_CSTR_1 | NUT | 82.3 kg/d | left without a sink: unreclaimed |
-| IA-PCA-H2O | GW_INTAKE to P_CA | WTR | 8e-06 kg/d | left without a sink: unreclaimed |
+| IA-PCA-H2O | GW_INTAKE to P_CA | WTR | 9e-06 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-BRINE | RESIST_SYN to LEACH_CSTR_1 | FAB | 0.00798 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-HCL | RESIST_SYN to CRU | FAB | 0.000915 kg/d | left without a sink: unreclaimed |
 | IA-SI-FUME | SI_REDUCE to LEACH_CSTR_1 | GLASS | 0.142 kg/d | left without a sink: unreclaimed |
 | IA-SI-PURGE | SI_REFINE to LEACH_CSTR_1 | GLASS | 0.259 kg/d | left without a sink: unreclaimed |
 | IA-SIC-RET | NUTRIENT_DOSE to LEACH_CSTR_1 | NUT | 0.466 kg/d | left without a sink: unreclaimed |
@@ -95,8 +97,8 @@ Table 3.1. DIGESTER off. Sector type: Process (Mass transform).
 | S72 | MET_SCRUB to LEACH_CSTR_1 | MFG | 2.44 kg/d | left without a sink: unreclaimed |
 | TFE_HCL_TO_CRU | TFE_SYN to CRU | POLYMERS | 0.328 kg/d | left without a sink: unreclaimed |
 | VDF_HCL_TO_CRU | VDF_SYN to CRU | POLYMERS | 0.426 kg/d | left without a sink: unreclaimed |
-| CRU_TO_TFE | CRU to TFE_SYN | POLYMERS | 0.284 kg/d | left without a source: consumer goes short |
-| CRU_TO_VDF | CRU to VDF_SYN | POLYMERS | 0.332 kg/d | left without a source: consumer goes short |
+| CRU_TO_TFE | CRU to TFE_SYN | POLYMERS | 0.291 kg/d | left without a source: consumer goes short |
+| CRU_TO_VDF | CRU to VDF_SYN | POLYMERS | 0.348 kg/d | left without a source: consumer goes short |
 | F_RECOVER_TO_HF_GEN | F_RECOVER to HF_GEN | POLYMERS | 1.52 kg/d | left without a source: consumer goes short |
 | HL-HX8-Q3-A | HX8 to Q3_A | HEAT | not yet rated | left without a source: consumer goes short |
 | HL-HX8-Q3-B | HX8 to Q3_B | HEAT | not yet rated | left without a source: consumer goes short |
@@ -144,7 +146,7 @@ Table 3.1. DIGESTER off. Sector type: Process (Mass transform).
 | IA-SCRUB-SRC | LEACH_CSTR_1 to ACID_POLISH_SCRUB | GAS | 27.3 kg/d | left without a source: consumer goes short |
 | IA-VS-OFF | EVAP_ACID_VS to ALK_SCRUBBER | GAS | 0.0292 kg/d | left without a source: consumer goes short |
 | IA-ZNBR-MU | LEACH_CSTR_1 to ZNBR2 | ELEC | 8.49 kg/d | left without a source: consumer goes short |
-| PCA_TO_GREASE | P_CA to GREASE_CA | OIL | 3.4e-05 kg/d | left without a source: consumer goes short |
+| PCA_TO_GREASE | P_CA to GREASE_CA | OIL | 3.5e-05 kg/d | left without a source: consumer goes short |
 | S08 | LEACH_CSTR_1 to MFG_SHOP | MFG | 42 kg/d | left without a source: consumer goes short |
 | S09 | BMED_ACID to WET_BENCH | FAB | 9.28 kg/d | left without a source: consumer goes short |
 | SQ-EVAP_ACID | EVAP_ACID to HEAT_SINK | GEO | 1.5 kW | left without a source: consumer goes short |
@@ -159,7 +161,7 @@ Table 3.1. DIGESTER off. Sector type: Process (Mass transform).
 | IA-DC-EW_7 | RECTIFIER to EW_7 | ELEC | 7.12 kW | stops with the sector |
 | IA-DC-EW_8 | RECTIFIER to EW_8 | ELEC | 0.505 kW | stops with the sector |
 | IA-DC-EW_9 | RECTIFIER to EW_9 | ELEC | 7.54 kW | stops with the sector |
-| IA-H2O-MU | NORTH_DOCK to LEACH_CSTR_1 | DOCK | 56.5 kg/d | stops with the sector |
+| IA-H2O-MU | NORTH_DOCK to LEACH_CSTR_1 | DOCK | 57 kg/d | stops with the sector |
 | IA-HALITE-MU | NORTH_DOCK to NAOH_PLANT | DOCK | 0.676 kg/d | stops with the sector |
 | IA-NA-PURGE | LEACH_CSTR_1 to NORTH_DOCK | DOCK | 0.642 kg/d | stops with the sector |
 | IA-NAOH-CL2-SHIP | NAOH_PLANT to NORTH_DOCK | DOCK | 3.89 kg/d | stops with the sector |
@@ -182,23 +184,23 @@ Table 3.2. OIL off. Sector type: Process (Mass transform).
 | IA-AB-O2 | HDR_O2 to AFTERBURNER | GAS | 0.528 kg/d | left without a sink: unreclaimed |
 | IA-BLK-CAKE | BLACK_DIGEST to AFTERBURNER | WTR | 0.67 kg/d | left without a sink: unreclaimed |
 | IA-BLK-GAS | BLACK_DIGEST to AFTERBURNER | WTR | 0.0986 kg/d | left without a sink: unreclaimed |
-| IA-GREASE-AIR | ATMOS to GREASE_CA | WTR | 0.000132 kg/d | left without a sink: unreclaimed |
-| IA-GREASE-SPENT | MFG_SHOP to OIL_PYRO | MFG | 0.00235 kg/d | left without a sink: unreclaimed |
+| IA-GREASE-AIR | ATMOS to GREASE_CA | WTR | 0.000135 kg/d | left without a sink: unreclaimed |
+| IA-GREASE-SPENT | MFG_SHOP to OIL_PYRO | MFG | 0.00239 kg/d | left without a sink: unreclaimed |
 | IA-LEACH-HOP | LEACH_CSTR_1 to HOPPER | DIGESTER | 35.4 kg/d | left without a sink: unreclaimed |
-| IA-LITHO-OUT | LITHO_DEV to OIL_FRAC | FAB | 0.987 kg/d | left without a sink: unreclaimed |
 | IA-PLAST-01 | FLOAT_SINK to OIL_DRYER | DIGESTER | 33 kg/d | left without a sink: unreclaimed |
-| IA-SOLV-BTMS | SOLV_PLANT to OIL_FRAC | FAB | 0.00997 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-RAFF | RESIST_SYN to OIL_FRAC | FAB | 0.947 kg/d | left without a sink: unreclaimed |
+| IA-SOLV-BTMS | SOLV_PLANT to OIL_FRAC | FAB | 0.544 kg/d | left without a sink: unreclaimed |
 | IA-WEAR | HABITATION to HOPPER | HAB | 597 kg/d | left without a sink: unreclaimed |
-| PCA_TO_GREASE | P_CA to GREASE_CA | DIGESTER | 3.4e-05 kg/d | left without a sink: unreclaimed |
+| PCA_TO_GREASE | P_CA to GREASE_CA | DIGESTER | 3.5e-05 kg/d | left without a sink: unreclaimed |
 | S11 | GROW_BED to AFTERBURNER | FARM | 0.8 kg/d | left without a sink: unreclaimed |
-| S38 | WET_BENCH to OIL_FRAC | FAB | 0.006 kg/d | left without a sink: unreclaimed |
+| S38 | WET_BENCH to OIL_FRAC | FAB | 0.00673 kg/d | left without a sink: unreclaimed |
 | S61 | MFG_SHOP to HOPPER | MFG | 1.2 kg/d | left without a sink: unreclaimed |
 | S72B | MET_SCRUB to OIL_FRAC | MFG | 0.0158 kg/d | left without a sink: unreclaimed |
 | C19_TO_WAX | PROD_C19_C28 to WAX_PATTERN | FOUNDRY | 0.2 kg/d | left without a source: consumer goes short |
 | CHAR_TO_ACID | OIL_PYRO to ACID_PLANT | POLYMERS | 0.0257 kg/d | left without a source: consumer goes short |
 | CHAR_TO_SI | OIL_PYRO to SI_REDUCE | GLASS | 0.228 kg/d | left without a source: consumer goes short |
 | CUT-3-OUT | PROD_C19_C28 to MFG_SHOP | MFG | 3.95 kg/d | left without a source: consumer goes short |
-| GREASE_CA_TO_MFG | GREASE_CA to MFG_SHOP | MFG | 0.00235 kg/d | left without a source: consumer goes short |
+| GREASE_CA_TO_MFG | GREASE_CA to MFG_SHOP | MFG | 0.00239 kg/d | left without a source: consumer goes short |
 | HL-AFTERBURNER-Q1-A | AFTERBURNER to Q1_A | HEAT | 1.38 kW | left without a source: consumer goes short |
 | HL-AFTERBURNER-Q1-B | AFTERBURNER to Q1_B | HEAT | 1.38 kW | left without a source: consumer goes short |
 | IA-AB-FLUE | AFTERBURNER to AFTERBURNER_FLUE | GAS | 7.1 kg/d | left without a source: consumer goes short |
@@ -209,11 +211,12 @@ Table 3.2. OIL off. Sector type: Process (Mass transform).
 | IA-C5-POLY | PROD_C5_C10 to POLY_OLEFIN | POLYMERS | 0.294 kg/d | left without a source: consumer goes short |
 | IA-CHAR | OIL_PYRO to MFG_SHOP | MFG | 4.84 kg/d | left without a source: consumer goes short |
 | IA-FEED-01 | HOPPER to LEACH_CSTR_1 | DIGESTER | 103 kg/d | left without a source: consumer goes short |
-| IA-GREASE-VENT | GREASE_CA to ATMOS | WTR | 0.000262 kg/d | left without a source: consumer goes short |
+| IA-GREASE-VENT | GREASE_CA to ATMOS | WTR | 0.000267 kg/d | left without a source: consumer goes short |
 | IA-HOP-01 | HOPPER to LEACH_CSTR_1 | DIGESTER | 531 kg/d | left without a source: consumer goes short |
-| IA-C11-SHIP | PROD_C11_C18 to NORTH_DOCK | DOCK | 1.51 kg/d | stops with the sector |
+| IA-RESIST-NAPH | PROD_C11_C18 to RESIST_SYN | FAB | 0.366 kg/d | left without a source: consumer goes short |
+| IA-C11-SHIP | PROD_C11_C18 to NORTH_DOCK | DOCK | 1.15 kg/d | stops with the sector |
 | IA-C19-SHIP | PROD_C19_C28 to NORTH_DOCK | DOCK | 2.02 kg/d | stops with the sector |
-| IA-C5-SHIP | PROD_C5_C10 to NORTH_DOCK | DOCK | 7.14 kg/d | stops with the sector |
+| IA-C5-SHIP | PROD_C5_C10 to NORTH_DOCK | DOCK | 7.64 kg/d | stops with the sector |
 | SF-GREASE_CA | SOL_ARK_60K to GREASE_CA | ELEC | 7e-05 kW | stops with the sector |
 | SF-OIL_PYRO | SOL_ARK_60K to OIL_PYRO | ELEC | 1.66 kW | stops with the sector |
 
@@ -250,26 +253,28 @@ Table 3.4. POLYMERS off. Sector type: Process (Mass transform).
 | Stream | From and to | Other sector | Design rate | When the sector is off |
 |---|---|---|---|---|
 | CHAR_TO_ACID | OIL_PYRO to ACID_PLANT | OIL | 0.0257 kg/d | left without a sink: unreclaimed |
-| CRU_TO_TFE | CRU to TFE_SYN | DIGESTER | 0.284 kg/d | left without a sink: unreclaimed |
-| CRU_TO_VDF | CRU to VDF_SYN | DIGESTER | 0.332 kg/d | left without a sink: unreclaimed |
+| CRU_TO_TFE | CRU to TFE_SYN | DIGESTER | 0.291 kg/d | left without a sink: unreclaimed |
+| CRU_TO_VDF | CRU to VDF_SYN | DIGESTER | 0.348 kg/d | left without a sink: unreclaimed |
 | F_RECOVER_TO_HF_GEN | F_RECOVER to HF_GEN | DIGESTER | 1.52 kg/d | left without a sink: unreclaimed |
-| IA-ACID-H2O | GW_INTAKE to ACID_PLANT | WTR | 0.0808 kg/d | left without a sink: unreclaimed |
-| IA-ACID-O2 | ATMOS to ACID_PLANT | WTR | 0.0775 kg/d | left without a sink: unreclaimed |
+| IA-ACID-H2O | GW_INTAKE to ACID_PLANT | WTR | 0.0813 kg/d | left without a sink: unreclaimed |
+| IA-ACID-O2 | ATMOS to ACID_PLANT | WTR | 0.0787 kg/d | left without a sink: unreclaimed |
 | IA-C5-POLY | PROD_C5_C10 to POLY_OLEFIN | OIL | 0.294 kg/d | left without a sink: unreclaimed |
 | MEOH_TO_TFE | MEOH_TANK to TFE_SYN | MEOH | 0.0641 kg/d | left without a sink: unreclaimed |
 | MEOH_TO_VDF | MEOH_TANK to VDF_SYN | MEOH | 0.15 kg/d | left without a sink: unreclaimed |
 | FLUORO_TO_MFG | POLY_STOCK to MFG_SHOP | MFG | 0.23 kg/d | left without a source: consumer goes short |
 | IA-ACID-CO2 | ACID_PLANT to ATMOS | WTR | 0.0869 kg/d | left without a source: consumer goes short |
 | IA-HF-PROD | HF_GEN to WS_HF_ED | FAB | 1.5 kg/d | left without a source: consumer goes short |
-| IA-LIME-TO-PCA | ACID_PLANT to P_CA | DIGESTER | 3.8e-05 kg/d | left without a source: consumer goes short |
+| IA-LIME-TO-PCA | ACID_PLANT to P_CA | DIGESTER | 3.9e-05 kg/d | left without a source: consumer goes short |
+| IA-RESIST-ACID | ACID_PLANT to RESIST_SYN | FAB | 0.00258 kg/d | left without a source: consumer goes short |
 | POLYF_RECLAIM | POLY_F to F_RECOVER | DIGESTER | 0.02 kg/d | left without a source: consumer goes short |
+| POLY_TO_FAB | POLY_STOCK to WAFER_FAB | FAB | 0.0236 kg/d | left without a source: consumer goes short |
 | POLY_TO_MFG | POLY_STOCK to MFG_SHOP | MFG | 0.267 kg/d | left without a source: consumer goes short |
 | POLY_TO_WET | POLY_STOCK to LEACH_CSTR_1 | DIGESTER | 0.0267 kg/d | left without a source: consumer goes short |
 | TFE_HCL_TO_CRU | TFE_SYN to CRU | DIGESTER | 0.328 kg/d | left without a source: consumer goes short |
 | VDF_HCL_TO_CRU | VDF_SYN to CRU | DIGESTER | 0.426 kg/d | left without a source: consumer goes short |
 | IA-CAF2-MU | NORTH_DOCK to HF_GEN | DOCK | 0.326 kg/d | stops with the sector |
 | IA-LIME-SHIP | ACID_PLANT to NORTH_DOCK | DOCK | 0.282 kg/d | stops with the sector |
-| IA-SULFUR-MU | NORTH_DOCK to ACID_PLANT | DOCK | 0.0129 kg/d | stops with the sector |
+| IA-SULFUR-MU | NORTH_DOCK to ACID_PLANT | DOCK | 0.0138 kg/d | stops with the sector |
 | SF-ACID_PLANT | SOL_ARK_60K to ACID_PLANT | ELEC | 0.206 kW | stops with the sector |
 | SF-FILM_CAST | SOL_ARK_60K to FILM_CAST | ELEC | 0.109 kW | stops with the sector |
 | SF-HF_GEN | SOL_ARK_60K to HF_GEN | ELEC | 0.308 kW | stops with the sector |
@@ -291,7 +296,6 @@ Table 3.5. GAS off. Sector type: Process (Mass transform).
 | IA-EW6-H2B | EW_6 to HDR_H2 | DIGESTER | 0.035 kg/d | left without a sink: unreclaimed |
 | IA-EW7-H2B | EW_7 to HDR_H2 | DIGESTER | 0.455 kg/d | left without a sink: unreclaimed |
 | IA-EW8-H2B | EW_8 to HDR_H2 | DIGESTER | 0.0323 kg/d | left without a sink: unreclaimed |
-| IA-FAB-LOSS | WAFER_FAB to BAGHOUSE | FAB | 0.51 kg/d | left without a sink: unreclaimed |
 | IA-FLUE-QUENCH | ROOF_TANK to FLUE_KO | WTR | 24.3 kg/d | left without a sink: unreclaimed |
 | IA-HDR-H2-01 | EW_1 to HDR_H2 | DIGESTER | 0.383 kg/d | left without a sink: unreclaimed |
 | IA-HDR-H2-03 | EW_2 to HDR_H2 | DIGESTER | 0.383 kg/d | left without a sink: unreclaimed |
@@ -307,7 +311,7 @@ Table 3.5. GAS off. Sector type: Process (Mass transform).
 | S70 | CRYO_AHU_COND_CONDENSABLE to FLUE_KO | CRYO | 0.0521 kg/d | left without a sink: unreclaimed |
 | S83 | CRYO_O2 to HDR_O2 | CRYO | 32.3 kg/d | left without a sink: unreclaimed |
 | IA-AB-O2 | HDR_O2 to AFTERBURNER | OIL | 0.528 kg/d | left without a source: consumer goes short |
-| IA-BAG-01 | BAGHOUSE to LEACH_CSTR_1 | DIGESTER | 7.77 kg/d | left without a source: consumer goes short |
+| IA-BAG-01 | BAGHOUSE to LEACH_CSTR_1 | DIGESTER | 7.26 kg/d | left without a source: consumer goes short |
 | IA-FC-AIR | HDR_O2 to MEOH_FC | MEOH | 9.41 kg/d | left without a source: consumer goes short |
 | IA-GEN-O2 | HDR_O2 to BACKUP_GEN | ELEC | 0.172 kg/d | left without a source: consumer goes short |
 | IA-H2O2-SRC | HDR_O2 to WS_PEROX | FAB | 0.176 kg/d | left without a source: consumer goes short |
@@ -316,6 +320,7 @@ Table 3.5. GAS off. Sector type: Process (Mass transform).
 | IA-NOX-N | NOX_SCRUB to NUTRIENT_DOSE | NUT | 20 kg/d | left without a source: consumer goes short |
 | IA-NOX-N2 | NOX_SCRUB to CRYO_ASU | CRYO | 197 kg/d | left without a source: consumer goes short |
 | IA-O2-PROD | HDR_O2 to PROD_O2 | CRYO | 22 kg/d | left without a source: consumer goes short |
+| IA-RESIST-H2 | HDR_H2 to RESIST_SYN | FAB | 0.000104 kg/d | left without a source: consumer goes short |
 | IA-SOLV-H2 | HDR_H2 to SOLV_PLANT | FAB | 0.000995 kg/d | left without a source: consumer goes short |
 | S64 | H2_DRYER to CRYO_H2 | CRYO | 2.09 kg/d | left without a source: consumer goes short |
 | S66 | ACID_POLISH_SCRUB to CRU | DIGESTER | 27.4 kg/d | left without a source: consumer goes short |
@@ -337,32 +342,43 @@ Table 3.6. FAB off. Sector type: Process (Mass transform).
 | IA-NH3-SRC | HDR_N2 to WS_AMMONIA | HAB | 3.01 kg/d | left without a sink: unreclaimed |
 | IA-PEROX-H2O | ROOF_TANK to WS_PEROX | WTR | 2.82 kg/d | left without a sink: unreclaimed |
 | IA-PHOS-SRC | LEACH_CSTR_1 to WS_PHOS | DIGESTER | 0.62 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-ACID | ACID_PLANT to RESIST_SYN | POLYMERS | 0.00258 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-AIR | ATMOS to RESIST_SYN | WTR | 0.319 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-CL2 | AL_POT to RESIST_SYN | FOUNDRY | 0.00182 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-CO | TI_CELL to RESIST_SYN | FOUNDRY | 0.000732 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-H2 | HDR_H2 to RESIST_SYN | GAS | 0.000104 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-MEOH | MEOH_TANK to RESIST_SYN | MEOH | 0.00666 kg/d | left without a sink: unreclaimed |
+| IA-RESIST-NAPH | PROD_C11_C18 to RESIST_SYN | OIL | 0.366 kg/d | left without a sink: unreclaimed |
 | IA-SIL-SRC | GLASS_DIGEST to WS_SLURRY | GLASS | 3.3 kg/d | left without a sink: unreclaimed |
-| IA-SOLV-CO | TI_CELL to SOLV_PLANT | FOUNDRY | 0.0179 kg/d | left without a sink: unreclaimed |
+| IA-SOLV-CO | TI_CELL to SOLV_PLANT | FOUNDRY | 0.126 kg/d | left without a sink: unreclaimed |
 | IA-SOLV-H2 | HDR_H2 to SOLV_PLANT | GAS | 0.000995 kg/d | left without a sink: unreclaimed |
-| IA-SOLV-MEOH | MEOH_TANK to SOLV_PLANT | MEOH | 0.0205 kg/d | left without a sink: unreclaimed |
+| IA-SOLV-MEOH | MEOH_TANK to SOLV_PLANT | MEOH | 0.144 kg/d | left without a sink: unreclaimed |
 | IA-UPW-FAB | BMED_UPW_POLISH to FAB_UPW_TANK | WTR | 60 kg/d | left without a sink: unreclaimed |
 | IA-UPW-USE | HDR_UPW to WAFER_FAB | WTR | 66.5 kg/d | left without a sink: unreclaimed |
+| POLY_TO_FAB | POLY_STOCK to WAFER_FAB | POLYMERS | 0.0236 kg/d | left without a sink: unreclaimed |
 | S03 | CRYO_N2 to WAFER_FAB | CRYO | 1.5 kg/d | left without a sink: unreclaimed |
 | S09 | BMED_ACID to WET_BENCH | DIGESTER | 9.28 kg/d | left without a sink: unreclaimed |
 | STOCK_TO_FAB | METAL_STORE to WAFER_FAB | FOUNDRY | 0.226 kg/d | left without a sink: unreclaimed |
 | UPW_TO_FAB | HDR_UPW to FAB_UPW_TANK | WTR | not yet rated | left without a sink: unreclaimed |
 | IA-AR-CZ-BACK | WAFER_FAB to CRYO_ASU | CRYO | 0.536 kg/d | left without a source: consumer goes short |
 | IA-FAB-KERF | WAFER_FAB to LEACH_CSTR_1 | DIGESTER | 0.0875 kg/d | left without a source: consumer goes short |
-| IA-FAB-LOSS | WAFER_FAB to BAGHOUSE | GAS | 0.51 kg/d | left without a source: consumer goes short |
+| IA-FAB-N2-VENT | WAFER_FAB to ATMOS | WTR | 0.938 kg/d | left without a source: consumer goes short |
 | IA-FAB-SPENT | WAFER_FAB to LEACH_CSTR_1 | DIGESTER | 66.5 kg/d | left without a source: consumer goes short |
-| IA-LITHO-OUT | LITHO_DEV to OIL_FRAC | OIL | 0.987 kg/d | left without a source: consumer goes short |
-| IA-SOLV-BTMS | SOLV_PLANT to OIL_FRAC | OIL | 0.00997 kg/d | left without a source: consumer goes short |
+| IA-RESIST-BRINE | RESIST_SYN to LEACH_CSTR_1 | DIGESTER | 0.00798 kg/d | left without a source: consumer goes short |
+| IA-RESIST-HCL | RESIST_SYN to CRU | DIGESTER | 0.000915 kg/d | left without a source: consumer goes short |
+| IA-RESIST-RAFF | RESIST_SYN to OIL_FRAC | OIL | 0.947 kg/d | left without a source: consumer goes short |
+| IA-SOLV-BTMS | SOLV_PLANT to OIL_FRAC | OIL | 0.544 kg/d | left without a source: consumer goes short |
 | S10 | WET_BENCH to LEACH_CSTR_1 | DIGESTER | 78.9 kg/d | left without a source: consumer goes short |
-| S38 | WET_BENCH to OIL_FRAC | OIL | 0.006 kg/d | left without a source: consumer goes short |
+| S38 | WET_BENCH to OIL_FRAC | OIL | 0.00673 kg/d | left without a source: consumer goes short |
 | S39 | WAFER_FAB to LEACH_CSTR_1 | DIGESTER | 3.31 kg/d | left without a source: consumer goes short |
 | IA-FAB-PRODUCT | WAFER_FAB to NORTH_DOCK | DOCK | 0.139 kg/d | stops with the sector |
-| IA-SOLV-VENT | SOLV_PLANT to NORTH_DOCK | DOCK | 0.0189 kg/d | stops with the sector |
+| IA-SOLV-VENT | SOLV_PLANT to NORTH_DOCK | DOCK | 0.0166 kg/d | stops with the sector |
 | SF-LITHO_ALIGN | SOL_ARK_60K to LITHO_ALIGN | ELEC | 0.004 kW | stops with the sector |
 | SF-LITHO_COAT | SOL_ARK_60K to LITHO_COAT | ELEC | 0.0254 kW | stops with the sector |
 | SF-LITHO_DEV | SOL_ARK_60K to LITHO_DEV | ELEC | 0.008 kW | stops with the sector |
+| SF-RESIST_SYN | SOL_ARK_60K to RESIST_SYN | ELEC | 0.00366 kW | stops with the sector |
 | SF-SOLAR_PV_CELL | SOL_ARK_60K to SOLAR_PV_CELL | ELEC | 0.392 kW | stops with the sector |
-| SF-SOLV_PLANT | SOL_ARK_60K to SOLV_PLANT | ELEC | 0.0103 kW | stops with the sector |
+| SF-SOLV_PLANT | SOL_ARK_60K to SOLV_PLANT | ELEC | 0.0296 kW | stops with the sector |
 | SF-WAFER_FAB | SOL_ARK_60K to WAFER_FAB | ELEC | 0.407 kW | stops with the sector |
 | SF-WET_BENCH | SOL_ARK_60K to WET_BENCH | ELEC | 0.207 kW | stops with the sector |
 
@@ -372,7 +388,7 @@ Table 3.7. MFG off. Sector type: Process (Mass transform).
 |---|---|---|---|---|
 | CUT-3-OUT | PROD_C19_C28 to MFG_SHOP | OIL | 3.95 kg/d | left without a sink: unreclaimed |
 | FLUORO_TO_MFG | POLY_STOCK to MFG_SHOP | POLYMERS | 0.23 kg/d | left without a sink: unreclaimed |
-| GREASE_CA_TO_MFG | GREASE_CA to MFG_SHOP | OIL | 0.00235 kg/d | left without a sink: unreclaimed |
+| GREASE_CA_TO_MFG | GREASE_CA to MFG_SHOP | OIL | 0.00239 kg/d | left without a sink: unreclaimed |
 | IA-BLOW-IN | PROD_C11_C18 to BLOW_MOLD | OIL | 8.41 kg/d | left without a sink: unreclaimed |
 | IA-CHAR | OIL_PYRO to MFG_SHOP | OIL | 4.84 kg/d | left without a sink: unreclaimed |
 | IA-COAT-IN | EW_1 to ELECTRODE_COAT | DIGESTER | 0.02 kg/d | left without a sink: unreclaimed |
@@ -394,7 +410,7 @@ Table 3.7. MFG off. Sector type: Process (Mass transform).
 | STOCK_TO_MFG | METAL_STORE to MFG_SHOP | FOUNDRY | 25.9 kg/d | left without a sink: unreclaimed |
 | VAC_HEAT_TO_HX | VAC_IND to MET_HX_Q4 | FOUNDRY | 0.638 kW | left without a sink: unreclaimed |
 | IA-COAT-OUT | ELECTRODE_COAT to EW_1 | DIGESTER | 0.02 kg/d | left without a source: consumer goes short |
-| IA-GREASE-SPENT | MFG_SHOP to OIL_PYRO | OIL | 0.00235 kg/d | left without a source: consumer goes short |
+| IA-GREASE-SPENT | MFG_SHOP to OIL_PYRO | OIL | 0.00239 kg/d | left without a source: consumer goes short |
 | IA-MFG-OUT | MFG_SHOP to HABITATION | HAB | 597 kg/d | left without a source: consumer goes short |
 | IA-WIRE-LOSS | WIRE_DRAW to BAGHOUSE | GAS | 0.44 kg/d | left without a source: consumer goes short |
 | MFG_SCRAP_TO_IND | MFG_SHOP to IND_MELT | FOUNDRY | 26.2 kg/d | left without a source: consumer goes short |
@@ -424,7 +440,9 @@ Table 3.8. FOUNDRY off. Sector type: Process (Mass transform).
 | MFG_SCRAP_TO_IND | MFG_SHOP to IND_MELT | MFG | 26.2 kg/d | left without a sink: unreclaimed |
 | FOUNDRY_SLAG_TO_LEACH | IND_MELT to LEACH_CSTR_1 | DIGESTER | 0.33 kg/d | left without a source: consumer goes short |
 | IA-CL2-SIREF | AL_POT to SI_REFINE | GLASS | 0.214 kg/d | left without a source: consumer goes short |
-| IA-SOLV-CO | TI_CELL to SOLV_PLANT | FAB | 0.0179 kg/d | left without a source: consumer goes short |
+| IA-RESIST-CL2 | AL_POT to RESIST_SYN | FAB | 0.00182 kg/d | left without a source: consumer goes short |
+| IA-RESIST-CO | TI_CELL to RESIST_SYN | FAB | 0.000732 kg/d | left without a source: consumer goes short |
+| IA-SOLV-CO | TI_CELL to SOLV_PLANT | FAB | 0.126 kg/d | left without a source: consumer goes short |
 | IND_HEAT_TO_HX | IND_MELT to MET_HX_Q4 | MFG | 1.06 kW | left without a source: consumer goes short |
 | STOCK_TO_FAB | METAL_STORE to WAFER_FAB | FAB | 0.226 kg/d | left without a source: consumer goes short |
 | STOCK_TO_MFG | METAL_STORE to MFG_SHOP | MFG | 25.9 kg/d | left without a source: consumer goes short |
@@ -437,7 +455,7 @@ Table 3.8. FOUNDRY off. Sector type: Process (Mass transform).
 | IA-CL2-SHIP | AL_POT to NORTH_DOCK | DOCK | 39.2 kg/d | stops with the sector |
 | IA-CR-VENT | CR_CELL to NORTH_DOCK | DOCK | 0.217 kg/d | stops with the sector |
 | IA-CR2O3-MU | NORTH_DOCK to CR_CELL | DOCK | 0.365 kg/d | stops with the sector |
-| IA-KROLL-CO | TI_CELL to NORTH_DOCK | DOCK | 0.612 kg/d | stops with the sector |
+| IA-KROLL-CO | TI_CELL to NORTH_DOCK | DOCK | 0.503 kg/d | stops with the sector |
 | IA-METAL-SHIP | METAL_STORE to NORTH_DOCK | DOCK | 10.8 kg/d | stops with the sector |
 | IA-MGCL2-MU | NORTH_DOCK to MG_POT | DOCK | 0.0299 kg/d | stops with the sector |
 | IA-MO-VENT | MO_CELL to NORTH_DOCK | DOCK | 0.0451 kg/d | stops with the sector |
@@ -530,7 +548,7 @@ Table 3.12. CRYO off. Sector type: Utility / header.
 | IA-AR-CZ-BACK | WAFER_FAB to CRYO_ASU | FAB | 0.536 kg/d | left without a sink: unreclaimed |
 | IA-BED-VAP | GROW_BED to CRYO_AHU | FARM | 67.4 kg/d | left without a sink: unreclaimed |
 | IA-ELY-H2O | ROOF_TANK to H2O_ELYZ | WTR | 82.6 kg/d | left without a sink: unreclaimed |
-| IA-MEOH-PROD | MEOH_TANK to PROD_MEOH | MEOH | 28 kg/d | left without a sink: unreclaimed |
+| IA-MEOH-PROD | MEOH_TANK to PROD_MEOH | MEOH | 27.9 kg/d | left without a sink: unreclaimed |
 | IA-NOX-CO2 | NOX_SCRUB to CRYO_ASU | GAS | 21.6 kg/d | left without a sink: unreclaimed |
 | IA-NOX-N2 | NOX_SCRUB to CRYO_ASU | GAS | 197 kg/d | left without a sink: unreclaimed |
 | IA-O2-PROD | HDR_O2 to PROD_O2 | GAS | 22 kg/d | left without a sink: unreclaimed |
@@ -553,7 +571,7 @@ Table 3.12. CRYO off. Sector type: Utility / header.
 | S74 | CRYO_H2 to MEOH_SYNTH | MEOH | 6.51 kg/d | left without a source: consumer goes short |
 | S83 | CRYO_O2 to HDR_O2 | GAS | 32.3 kg/d | left without a source: consumer goes short |
 | SQ-H2O_ELYZ-Q4 | H2O_ELYZ to Q4_BUS | HEAT | 6.01 kW | left without a source: consumer goes short |
-| IA-MEOH-SHIP | PROD_MEOH to NORTH_DOCK | DOCK | 28 kg/d | stops with the sector |
+| IA-MEOH-SHIP | PROD_MEOH to NORTH_DOCK | DOCK | 27.9 kg/d | stops with the sector |
 | IA-N2-VENT | CRYO_N2 to NORTH_DOCK | DOCK | 3.1 kg/d | stops with the sector |
 | IA-O2-SHIP | PROD_O2 to NORTH_DOCK | DOCK | 22 kg/d | stops with the sector |
 | SF-CRYO_AHU | SOL_ARK_60K to CRYO_AHU | ELEC | 0.647 kW | stops with the sector |
@@ -569,10 +587,11 @@ Table 3.13. WTR off. Sector type: Utility / header.
 | HAB_GREY | HABITATION to GREY_TREAT | HAB | not yet rated | left without a sink: unreclaimed |
 | IA-ACID-CO2 | ACID_PLANT to ATMOS | POLYMERS | 0.0869 kg/d | left without a sink: unreclaimed |
 | IA-BLK-01 | HABITATION to BLACK_DIGEST | HAB | 19.6 kg/d | left without a sink: unreclaimed |
+| IA-FAB-N2-VENT | WAFER_FAB to ATMOS | FAB | 0.938 kg/d | left without a sink: unreclaimed |
 | IA-FEC-01 | HABITATION to BLACK_DIGEST | HAB | 0.13 kg/d | left without a sink: unreclaimed |
 | IA-FERM-DIG | MEOH_FERM to BLACK_DIGEST | MEOH | 0.345 kg/d | left without a sink: unreclaimed |
 | IA-GAL | HABITATION to BLACK_DIGEST | HAB | 1.18 kg/d | left without a sink: unreclaimed |
-| IA-GREASE-VENT | GREASE_CA to ATMOS | OIL | 0.000262 kg/d | left without a sink: unreclaimed |
+| IA-GREASE-VENT | GREASE_CA to ATMOS | OIL | 0.000267 kg/d | left without a sink: unreclaimed |
 | IA-HVAC-COND | CRYO_AHU to ROOF_TANK | CRYO | 67.4 kg/d | left without a sink: unreclaimed |
 | IA-LEACH-VCD | LEACH_CSTR_1 to VCD_TRAIN | DIGESTER | 167 kg/d | left without a sink: unreclaimed |
 | IA-MEOH-COND | MEOH_COND to ROOF_TANK | MEOH | 26.7 kg/d | left without a sink: unreclaimed |
@@ -585,20 +604,21 @@ Table 3.13. WTR off. Sector type: Utility / header.
 | S12 | HABITATION to GREY_TREAT | HAB | 320 kg/d | left without a sink: unreclaimed |
 | S13 | GROW_BED to VCD_TRAIN | FARM | 3.8 kg/d | left without a sink: unreclaimed |
 | S52 | FUEL_CELL to VCD_TRAIN | ELEC | 42.9 kg/d | left without a sink: unreclaimed |
-| IA-ACID-H2O | GW_INTAKE to ACID_PLANT | POLYMERS | 0.0808 kg/d | left without a source: consumer goes short |
-| IA-ACID-O2 | ATMOS to ACID_PLANT | POLYMERS | 0.0775 kg/d | left without a source: consumer goes short |
+| IA-ACID-H2O | GW_INTAKE to ACID_PLANT | POLYMERS | 0.0813 kg/d | left without a source: consumer goes short |
+| IA-ACID-O2 | ATMOS to ACID_PLANT | POLYMERS | 0.0787 kg/d | left without a source: consumer goes short |
 | IA-BED-H2O | ROOF_TANK to GROW_BED | FARM | 42.1 kg/d | left without a source: consumer goes short |
 | IA-BLK-CAKE | BLACK_DIGEST to AFTERBURNER | OIL | 0.67 kg/d | left without a source: consumer goes short |
 | IA-BLK-GAS | BLACK_DIGEST to AFTERBURNER | OIL | 0.0986 kg/d | left without a source: consumer goes short |
 | IA-BLK-NUT | BLACK_DIGEST to NUTRIENT_DOSE | NUT | 0.9 kg/d | left without a source: consumer goes short |
 | IA-ELY-H2O | ROOF_TANK to H2O_ELYZ | CRYO | 82.6 kg/d | left without a source: consumer goes short |
 | IA-FLUE-QUENCH | ROOF_TANK to FLUE_KO | GAS | 24.3 kg/d | left without a source: consumer goes short |
-| IA-GREASE-AIR | ATMOS to GREASE_CA | OIL | 0.000132 kg/d | left without a source: consumer goes short |
+| IA-GREASE-AIR | ATMOS to GREASE_CA | OIL | 0.000135 kg/d | left without a source: consumer goes short |
 | IA-GREY-01 | GREY_TREAT to LEACH_CSTR_1 | DIGESTER | 245 kg/d | left without a source: consumer goes short |
 | IA-NAOH-H2O | GW_INTAKE to NAOH_PLANT | DIGESTER | 11.3 kg/d | left without a source: consumer goes short |
 | IA-NOX-HAB | ROOF_TANK to HABITATION | HAB | 207 kg/d | left without a source: consumer goes short |
-| IA-PCA-H2O | GW_INTAKE to P_CA | DIGESTER | 8e-06 kg/d | left without a source: consumer goes short |
+| IA-PCA-H2O | GW_INTAKE to P_CA | DIGESTER | 9e-06 kg/d | left without a source: consumer goes short |
 | IA-PEROX-H2O | ROOF_TANK to WS_PEROX | FAB | 2.82 kg/d | left without a source: consumer goes short |
+| IA-RESIST-AIR | ATMOS to RESIST_SYN | FAB | 0.319 kg/d | left without a source: consumer goes short |
 | IA-SI-HOOD-O2 | ATMOS to SI_REDUCE | GLASS | 0.303 kg/d | left without a source: consumer goes short |
 | IA-UPW-FAB | BMED_UPW_POLISH to FAB_UPW_TANK | FAB | 60 kg/d | left without a source: consumer goes short |
 | IA-UPW-HAB | HDR_UPW to HABITATION | HAB | 0.8 kg/d | left without a source: consumer goes short |
@@ -697,13 +717,14 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | SF-POLY_F | SOL_ARK_60K to POLY_F | POLYMERS | 0.0449 kW | left without a source: consumer goes short |
 | SF-POWDER_RESIN | SOL_ARK_60K to POWDER_RESIN | POLYMERS | 0.0152 kW | left without a source: consumer goes short |
 | SF-REMIN | SOL_ARK_60K to REMIN | WTR | 0.046 kW | left without a source: consumer goes short |
+| SF-RESIST_SYN | SOL_ARK_60K to RESIST_SYN | FAB | 0.00366 kW | left without a source: consumer goes short |
 | SF-SHELL_BREAK | SOL_ARK_60K to SHELL_BREAK | FOUNDRY | 0.4 kW | left without a source: consumer goes short |
 | SF-SHELL_BUILD | SOL_ARK_60K to SHELL_BUILD | FOUNDRY | 0.3 kW | left without a source: consumer goes short |
 | SF-SHELL_BURNOUT | SOL_ARK_60K to SHELL_BURNOUT | FOUNDRY | 0.25 kW | left without a source: consumer goes short |
 | SF-SI_REDUCE | SOL_ARK_60K to SI_REDUCE | GLASS | 0.147 kW | left without a source: consumer goes short |
 | SF-SI_REFINE | SOL_ARK_60K to SI_REFINE | GLASS | 0.566 kW | left without a source: consumer goes short |
 | SF-SOLAR_PV_CELL | SOL_ARK_60K to SOLAR_PV_CELL | FAB | 0.392 kW | left without a source: consumer goes short |
-| SF-SOLV_PLANT | SOL_ARK_60K to SOLV_PLANT | FAB | 0.0103 kW | left without a source: consumer goes short |
+| SF-SOLV_PLANT | SOL_ARK_60K to SOLV_PLANT | FAB | 0.0296 kW | left without a source: consumer goes short |
 | SF-TFE_SYN | SOL_ARK_60K to TFE_SYN | POLYMERS | 0.399 kW | left without a source: consumer goes short |
 | SF-TI_CELL | SOL_ARK_60K to TI_CELL | FOUNDRY | 0.5 kW | left without a source: consumer goes short |
 | SF-VDF_SYN | SOL_ARK_60K to VDF_SYN | POLYMERS | 0.513 kW | left without a source: consumer goes short |
@@ -765,8 +786,9 @@ Table 3.16. MEOH off. Sector type: Energy Storage System (Electrochemical).
 | IA-ESS-MEOH-DIS | MEOH_FC to SOL_ARK_60K | ELEC | not yet rated | left without a source: consumer goes short |
 | IA-FERM-DIG | MEOH_FERM to BLACK_DIGEST | WTR | 0.345 kg/d | left without a source: consumer goes short |
 | IA-MEOH-COND | MEOH_COND to ROOF_TANK | WTR | 26.7 kg/d | left without a source: consumer goes short |
-| IA-MEOH-PROD | MEOH_TANK to PROD_MEOH | CRYO | 28 kg/d | left without a source: consumer goes short |
-| IA-SOLV-MEOH | MEOH_TANK to SOLV_PLANT | FAB | 0.0205 kg/d | left without a source: consumer goes short |
+| IA-MEOH-PROD | MEOH_TANK to PROD_MEOH | CRYO | 27.9 kg/d | left without a source: consumer goes short |
+| IA-RESIST-MEOH | MEOH_TANK to RESIST_SYN | FAB | 0.00666 kg/d | left without a source: consumer goes short |
+| IA-SOLV-MEOH | MEOH_TANK to SOLV_PLANT | FAB | 0.144 kg/d | left without a source: consumer goes short |
 | MEOH_TO_TFE | MEOH_TANK to TFE_SYN | POLYMERS | 0.0641 kg/d | left without a source: consumer goes short |
 | MEOH_TO_VDF | MEOH_TANK to VDF_SYN | POLYMERS | 0.15 kg/d | left without a source: consumer goes short |
 | S79 | MEOH_FC to SOL_ARK_60K | ELEC | 1 kW | left without a source: consumer goes short |
@@ -798,17 +820,17 @@ Table 3.19. DOCK off. Sector type: Export / dock.
 | Stream | From and to | Other sector | Design rate | When the sector is off |
 |---|---|---|---|---|
 | IA-BURNOUT-VENT | SHELL_BURNOUT to NORTH_DOCK | FOUNDRY | 0.2 kg/d | left without a sink: unreclaimed |
-| IA-C11-SHIP | PROD_C11_C18 to NORTH_DOCK | OIL | 1.51 kg/d | left without a sink: unreclaimed |
+| IA-C11-SHIP | PROD_C11_C18 to NORTH_DOCK | OIL | 1.15 kg/d | left without a sink: unreclaimed |
 | IA-C19-SHIP | PROD_C19_C28 to NORTH_DOCK | OIL | 2.02 kg/d | left without a sink: unreclaimed |
-| IA-C5-SHIP | PROD_C5_C10 to NORTH_DOCK | OIL | 7.14 kg/d | left without a sink: unreclaimed |
+| IA-C5-SHIP | PROD_C5_C10 to NORTH_DOCK | OIL | 7.64 kg/d | left without a sink: unreclaimed |
 | IA-CA-CL2-SHIP | CA_POT to NORTH_DOCK | FOUNDRY | 0.0974 kg/d | left without a sink: unreclaimed |
 | IA-CL2-MG-SHIP | MG_POT to NORTH_DOCK | FOUNDRY | 0.0163 kg/d | left without a sink: unreclaimed |
 | IA-CL2-SHIP | AL_POT to NORTH_DOCK | FOUNDRY | 39.2 kg/d | left without a sink: unreclaimed |
 | IA-CR-VENT | CR_CELL to NORTH_DOCK | FOUNDRY | 0.217 kg/d | left without a sink: unreclaimed |
 | IA-FAB-PRODUCT | WAFER_FAB to NORTH_DOCK | FAB | 0.139 kg/d | left without a sink: unreclaimed |
-| IA-KROLL-CO | TI_CELL to NORTH_DOCK | FOUNDRY | 0.612 kg/d | left without a sink: unreclaimed |
+| IA-KROLL-CO | TI_CELL to NORTH_DOCK | FOUNDRY | 0.503 kg/d | left without a sink: unreclaimed |
 | IA-LIME-SHIP | ACID_PLANT to NORTH_DOCK | POLYMERS | 0.282 kg/d | left without a sink: unreclaimed |
-| IA-MEOH-SHIP | PROD_MEOH to NORTH_DOCK | CRYO | 28 kg/d | left without a sink: unreclaimed |
+| IA-MEOH-SHIP | PROD_MEOH to NORTH_DOCK | CRYO | 27.9 kg/d | left without a sink: unreclaimed |
 | IA-METAL-SHIP | METAL_STORE to NORTH_DOCK | FOUNDRY | 10.8 kg/d | left without a sink: unreclaimed |
 | IA-MO-VENT | MO_CELL to NORTH_DOCK | FOUNDRY | 0.0451 kg/d | left without a sink: unreclaimed |
 | IA-N2-VENT | CRYO_N2 to NORTH_DOCK | CRYO | 3.1 kg/d | left without a sink: unreclaimed |
@@ -822,18 +844,18 @@ Table 3.19. DOCK off. Sector type: Export / dock.
 | IA-Q2A-LOSS | Q2_A to BOUNDARY_EXPORT | HEAT | 0.17 kW | left without a sink: unreclaimed |
 | IA-Q2B-LOSS | Q2_B to BOUNDARY_EXPORT | HEAT | 0.17 kW | left without a sink: unreclaimed |
 | IA-SHELL-EXPORT | SHELL_BREAK to NORTH_DOCK | FOUNDRY | 1 kg/d | left without a sink: unreclaimed |
-| IA-SOLV-VENT | SOLV_PLANT to NORTH_DOCK | FAB | 0.0189 kg/d | left without a sink: unreclaimed |
+| IA-SOLV-VENT | SOLV_PLANT to NORTH_DOCK | FAB | 0.0166 kg/d | left without a sink: unreclaimed |
 | IA-ALCL3-MU | NORTH_DOCK to AL_POT | FOUNDRY | 49.4 kg/d | left without a source: consumer goes short |
 | IA-CACL2-MU | NORTH_DOCK to CA_POT | FOUNDRY | 0.152 kg/d | left without a source: consumer goes short |
 | IA-CAF2-MU | NORTH_DOCK to HF_GEN | POLYMERS | 0.326 kg/d | left without a source: consumer goes short |
 | IA-CR2O3-MU | NORTH_DOCK to CR_CELL | FOUNDRY | 0.365 kg/d | left without a source: consumer goes short |
-| IA-H2O-MU | NORTH_DOCK to LEACH_CSTR_1 | DIGESTER | 56.5 kg/d | left without a source: consumer goes short |
+| IA-H2O-MU | NORTH_DOCK to LEACH_CSTR_1 | DIGESTER | 57 kg/d | left without a source: consumer goes short |
 | IA-HALITE-MU | NORTH_DOCK to NAOH_PLANT | DIGESTER | 0.676 kg/d | left without a source: consumer goes short |
 | IA-MGCL2-MU | NORTH_DOCK to MG_POT | FOUNDRY | 0.0299 kg/d | left without a source: consumer goes short |
 | IA-MOO3-MU | NORTH_DOCK to MO_CELL | FOUNDRY | 0.0938 kg/d | left without a source: consumer goes short |
 | IA-QUARTZ-MU | NORTH_DOCK to SI_REDUCE | GLASS | 0.718 kg/d | left without a source: consumer goes short |
 | IA-SILICA-MU | NORTH_DOCK to SHELL_BUILD | FOUNDRY | 1 kg/d | left without a source: consumer goes short |
-| IA-SULFUR-MU | NORTH_DOCK to ACID_PLANT | POLYMERS | 0.0129 kg/d | left without a source: consumer goes short |
+| IA-SULFUR-MU | NORTH_DOCK to ACID_PLANT | POLYMERS | 0.0138 kg/d | left without a source: consumer goes short |
 | IA-TIO2-MU | NORTH_DOCK to TI_CELL | FOUNDRY | 0.834 kg/d | left without a source: consumer goes short |
 | IA-PV-CURTAIL | SOL_ARK_60K to BOUNDARY_EXPORT | ELEC | 4.64 kW | stops with the sector |
 | IA-ZNBR-LOSS | ZNBR2 to BOUNDARY_EXPORT | ELEC | 1.67 kW | stops with the sector |

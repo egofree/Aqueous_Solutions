@@ -436,7 +436,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 174.193703,
+          "bypass_kg_d": 174.194633,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -953,8 +953,8 @@
         "o2_gap": {
           "hdr_short_kg_d": 0.0,
           "system_short_kg_d": 0.0,
-          "system_surplus_kg_d": 22.0135,
-          "src_kg_d": 74.097,
+          "system_surplus_kg_d": 22.0143,
+          "src_kg_d": 74.0979,
           "hdr_draw_kg_d": 10.2836,
           "direct_draw_kg_d": 41.8,
           "basis": "A-M-230 (D-O2): H2O_ELYZ restored \u2014 sources IA-ELY-O2 (PEM electrolyser, the O2 source) + S87 (crew-duty bed, A-M-229) + IA-ASU-O2 (recovered combustion excess); S02/S50 draw directly on CRYO_O2 (Rev AC re-home), the rest via HDR_O2",
@@ -1084,7 +1084,7 @@
       "modules": [],
       "electrical_role": "load",
       "continuous_kw": {
-        "value": 21.1932,
+        "value": 21.1934,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF: 9.25 kg/d H2 x 55.0 kWh/kg / 24 h; rated 84.8 kW on a 6.0 h PV window."
@@ -1764,16 +1764,16 @@
       "params": {
         "presence": "present",
         "design": {
-          "H2_kg_d": 2.085141,
-          "Nm3_h": 0.9659463949652777,
-          "O2_mol_d": 1.0342961309523808,
-          "water_kg_d": 0.03726568959821428,
-          "HCl_kg_d": 3.771147123065476e-05,
-          "guard_kg": 0.033940324107589286,
-          "sieve_kg": 0.3726568959821428,
+          "H2_kg_d": 2.085037,
+          "Nm3_h": 0.9658982167245371,
+          "O2_mol_d": 1.0342445436507937,
+          "water_kg_d": 0.0372638309077381,
+          "HCl_kg_d": 3.7709590306051586e-05,
+          "guard_kg": 0.033938631275446426,
+          "sieve_kg": 0.372638309077381,
           "beds": {
             "deoxo": {
-              "V_L": 0.19318927899305555,
+              "V_L": 0.19317964334490742,
               "tube": "DN25 Sch 40 316L",
               "L_mm": 347,
               "count": 2
@@ -1785,13 +1785,13 @@
               "count": 2
             },
             "TSA": {
-              "V_L": 0.5323669942602041,
+              "V_L": 0.5323404415391157,
               "tube": "DN50 Sch 40 316L",
               "L_mm": 300,
               "count": 2
             }
           },
-          "regen_W": 1.0878944292460628,
+          "regen_W": 1.0878405140995546,
           "loss_W": 37.98279150873541,
           "insulation_mm": 38,
           "kW": 0.0205,
@@ -1940,7 +1940,7 @@
           "volume_m3": 0.0054,
           "material": "PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)",
           "hold_kg": 0.0,
-          "connections": 16
+          "connections": 17
         },
         "size_note": "DN25 manifold x 24 m run (0.005 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       },
@@ -2438,16 +2438,16 @@
         "presence": "present",
         "trade_statement": {
           "exports_kg_d": {
-            "IA-N2-VENT": 3.1,
+            "IA-N2-VENT": 3.098,
             "IA-NA-PURGE": 0.642,
-            "IA-C5-SHIP": 7.141,
-            "IA-C11-SHIP": 1.512,
+            "IA-C5-SHIP": 7.635,
+            "IA-C11-SHIP": 1.145,
             "IA-C19-SHIP": 2.016,
-            "IA-O2-SHIP": 22.013,
-            "IA-MEOH-SHIP": 28.008,
-            "IA-CL2-SHIP": 39.206,
+            "IA-O2-SHIP": 22.014,
+            "IA-MEOH-SHIP": 27.879,
+            "IA-CL2-SHIP": 39.204,
             "IA-CA-CL2-SHIP": 0.097,
-            "IA-KROLL-CO": 0.612,
+            "IA-KROLL-CO": 0.503,
             "IA-MO-VENT": 0.045,
             "IA-CR-VENT": 0.217,
             "IA-BURNOUT-VENT": 0.2,
@@ -2457,12 +2457,12 @@
             "IA-LIME-SHIP": 0.282,
             "IA-NAOH-CL2-SHIP": 3.894,
             "IA-NAOH-RESIDUE": 0.034,
-            "IA-SOLV-VENT": 0.019,
+            "IA-SOLV-VENT": 0.15,
             "IA-PCA-REJECT": 0.0,
             "IA-CL2-MG-SHIP": 0.016
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 56.521,
+            "IA-H2O-MU": 57.023,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
             "IA-MGCL2-MU": 0.03,
@@ -2472,11 +2472,11 @@
             "IA-CR2O3-MU": 0.365,
             "IA-SILICA-MU": 1.0,
             "IA-QUARTZ-MU": 0.718,
-            "IA-SULFUR-MU": 0.013,
+            "IA-SULFUR-MU": 0.014,
             "IA-HALITE-MU": 0.676
           },
-          "net_kg_d": 10.857,
-          "residual_kg_d": 10.857,
+          "net_kg_d": 10.371,
+          "residual_kg_d": 10.373,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -2809,7 +2809,7 @@
       "modules": [],
       "electrical_role": "generation",
       "continuous_kw": {
-        "value": 351.8504,
+        "value": 351.8735,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2951,8 +2951,8 @@
         "count": 42,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2302.0,
-          "export_kWh_d_clear": 6541,
+          "export_peak_kW": 2301.9,
+          "export_kWh_d_clear": 6542,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -2982,7 +2982,7 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 218.0,
+          "bus_demand_kW": 218.1,
           "section_rating_A": 400,
           "basis_A": 291.4,
           "MCC": "MCC-1A / MCC-1B",
@@ -3319,27 +3319,27 @@
       "class": "flow_battery",
       "tags": [],
       "params": {
-        "kW": 991,
+        "kW": 992,
         "kWh": 3053,
         "presence": "present",
-        "charge_kW": 991,
+        "charge_kW": 992,
         "discharge_kW": 219,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 42 hybrid inverters, 72.7 kWh and 23.6 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.739,
-          "purge_m3_h": 32.24,
+          "H2_m3_d": 7.74,
+          "purge_m3_h": 32.25,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1996.5
+          "electrode_area_m2": 1996.8
         }
       },
       "modules": [],
       "electrical_role": "storage",
       "continuous_kw": {
-        "value": 218.0226,
+        "value": 218.0526,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 991.0 kW, 3052 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.1 kW, charge 991.1 kW, 3053 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       }
     },
     {
@@ -6630,28 +6630,28 @@
         },
         "design": {
           "route": "CA",
-          "units": 55,
+          "units": 56,
           "gp_g": 3.9,
           "interval_d": 182.625,
-          "grease_kg_d": 0.002349,
-          "soap_kg_d": 0.000282,
-          "base_oil_kg_d": 0.002067,
-          "wax_kg_d": 0.002445,
-          "wax_ox_kg_d": 0.000377,
-          "acid_kg_d": 0.000264,
-          "o2_kg_d": 0.000132,
-          "vent_kg_d": 0.000262,
-          "thickener_kg_d": 3.4e-05,
-          "caoh2_kg_d": 3.4e-05,
+          "grease_kg_d": 0.002392,
+          "soap_kg_d": 0.000287,
+          "base_oil_kg_d": 0.002105,
+          "wax_kg_d": 0.002489,
+          "wax_ox_kg_d": 0.000384,
+          "acid_kg_d": 0.000269,
+          "o2_kg_d": 0.000135,
+          "vent_kg_d": 0.000267,
+          "thickener_kg_d": 3.5e-05,
+          "caoh2_kg_d": 3.5e-05,
           "lioh_kg_d": 0.0,
-          "lime_draw_kg_d": 3.8e-05,
-          "slake_h2o_kg_d": 8e-06,
+          "lime_draw_kg_d": 3.9e-05,
+          "slake_h2o_kg_d": 9e-06,
           "reject_kg_d": 1.2e-05,
-          "kettle_L": 0.335582,
+          "kettle_L": 0.341684,
           "kettle_D_mm": 100.0,
           "insul_mm": 25,
           "loss_W": 11.54743,
-          "kw": 7.2e-05,
+          "kw": 7.3e-05,
           "kettle_T_C": 150.0,
           "campaign_d": 90
         }
@@ -6711,8 +6711,8 @@
           {
             "element": "Ca",
             "use": "grease soap thickener",
-            "need_kg_d": 1.861143753085425e-05,
-            "recovered_kg_d": 1.861143753085425e-05,
+            "need_kg_d": 1.8949827304142514e-05,
+            "recovered_kg_d": 1.8949827304142514e-05,
             "recovered_from": [
               "IA-LIME-TO-PCA"
             ],
@@ -7553,8 +7553,8 @@
         "recovery": [
           {
             "element": "S",
-            "use": "sulfuric acid for the HF kiln",
-            "need_kg_d": 0.12935298595317726,
+            "use": "sulfuric acid for the HF kiln and the resist",
+            "need_kg_d": 0.13017792487560162,
             "recovered_kg_d": 0.11641768735785955,
             "recovered_from": [
               "IA-GYPSUM-REGEN"
@@ -7568,6 +7568,12 @@
                 "kg_d": 0.012935,
                 "recoverable": false,
                 "basis": "cake-kiln non-conversion (caso4_dec_frac) leaves with the residue"
+              },
+              {
+                "stream": "IA-RESIST-ACID",
+                "kg_d": 0.000825,
+                "recoverable": false,
+                "basis": "sulfur bound in the photoresist ester; it leaves the still bottoms with the oil cut (A-M-432)"
               },
               {
                 "stream": "IA-PCA-REJECT",
@@ -7664,10 +7670,11 @@
           {
             "element": "C",
             "use": "bench solvent (ethanol and acetone)",
-            "need_kg_d": 0.1198775889411408,
-            "recovered_kg_d": 0.10818952401937956,
+            "need_kg_d": 0.3119046922469259,
+            "recovered_kg_d": 0.2375708248458258,
             "recovered_from": [
-              "IA-SOLV-SPENT"
+              "IA-SOLV-SPENT",
+              "IA-LITHO-OUT"
             ],
             "ore_streams": [],
             "unrecovered": [
@@ -7679,7 +7686,7 @@
               },
               {
                 "stream": "IA-SOLV-BTMS",
-                "kg_d": 0.005694185474704193,
+                "kg_d": 0.06833998795404304,
                 "recoverable": false,
                 "basis": "still bottoms with the resist residue, burned with the light oil cut (solv_still_recovery_frac)"
               }
@@ -7691,22 +7698,25 @@
           "route": "MEOH_CO",
           "bench_kg_d": 0.209973,
           "spent_kg_d": 0.199474,
-          "recovered_kg_d": 0.189501,
-          "make_kg_d": 0.020472,
-          "acetone_kg_d": 0.010236,
+          "fab_need_kg_d": 0.30952,
+          "fab_spent_kg_d": 0.33952,
+          "fab_recovered_kg_d": 0.208544,
+          "recovered_kg_d": 0.398045,
+          "make_kg_d": 0.121448,
+          "acetone_kg_d": 0.111212,
           "ethanol_kg_d": 0.010236,
-          "meoh_kg_d": 0.02046,
-          "co_kg_d": 0.017885,
+          "meoh_kg_d": 0.144254,
+          "co_kg_d": 0.126101,
           "h2_kg_d": 0.000995,
           "fw_kg_d": 0.0,
           "stillage_kg_d": 0.0,
           "butanol_kg_d": 0.0,
-          "vent_kg_d": 0.018868,
-          "btms_kg_d": 0.009974,
-          "product_kg_d": 0.209973,
-          "kw": 0.010344,
-          "kw_still": 0.009443,
-          "kw_rx": 0.000901
+          "vent_kg_d": 0.149902,
+          "btms_kg_d": 0.14095,
+          "product_kg_d": 0.519493,
+          "kw": 0.029632,
+          "kw_still": 0.023363,
+          "kw_rx": 0.006269
         },
         "sec3_material": {
           "mat": "316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed",
@@ -7719,10 +7729,83 @@
       "modules": [],
       "electrical_role": null,
       "continuous_kw": {
-        "value": 0.01034,
+        "value": 0.02963,
         "unit": "kW",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): still reboiler 0.00944 kW + reactor heaters 0.00090 kW (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): still reboiler 0.02336 kW + reactor heaters 0.00627 kW (solvent.py, route MEOH_CO)."
+      }
+    },
+    {
+      "unit_id": "RESIST_SYN",
+      "sector_id": "FAB",
+      "enabled": true,
+      "class": "reactor",
+      "tags": [],
+      "params": {
+        "presence": "present",
+        "note": "Photoresist synthesis (A-M-432).",
+        "design": {
+          "route": "DNQ_NOVOLAC",
+          "starts_d": 5.0,
+          "coats_d": 40.0,
+          "resist_kg_d": 0.12,
+          "solids_kg_d": 0.03,
+          "daa_kg_d": 0.09,
+          "rinse_kg_d": 0.21952,
+          "novolac_kg_d": 0.024025932,
+          "dnq_kg_d": 0.006,
+          "bz_cut_kg_d": 1.005232635,
+          "naph_cut_kg_d": 0.366387818,
+          "benzene_kg_d": 0.018094187,
+          "naphthalene_kg_d": 0.00329749,
+          "raff_kg_d": 1.350228776,
+          "meoh_kg_d": 0.005937721,
+          "nh3_kg_d": 0.001314453,
+          "h2_kg_d": 0.00010373,
+          "co_kg_d": 0.000720604,
+          "cl2_kg_d": 0.001824175,
+          "acid_kg_d": 0.002574557,
+          "acetone_kg_d": 0.09,
+          "air_kg_d": 0.092557646,
+          "vent_kg_d": 0.08413788,
+          "hcl_kg_d": 0.00093802,
+          "brine_kg_d": 0.011348664,
+          "kw": 0.003655991,
+          "ledger_kmol_d": {
+            "C6H6": -0.000231638214,
+            "O2": -0.000298517742,
+            "CH4O": -0.000185310571,
+            "H2O": 0.000550707841,
+            "C6.8H6O": 0.000205911543,
+            "C10H8": -2.5726671e-05,
+            "NH3": -7.7180014e-05,
+            "H2": -5.1453343e-05,
+            "H2SO4": -2.5726671e-05,
+            "CO": -2.5726671e-05,
+            "Cl2": -2.5726671e-05,
+            "CO2": 2.5726671e-05,
+            "HCl": 2.5726671e-05,
+            "ESTER": 2.5726671e-05,
+            "NH4Cl": 2.5726671e-05,
+            "C3H6O": -0.001549586777,
+            "C6H12O2": 0.000774793388
+          }
+        },
+        "sec3_material": {
+          "mat": "Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines",
+          "basis": "Wet HCl, nitrous acid and sulfuric acid at up to 100 C in the naphthol and diazonaphthoquinone steps, and phenol, formaldehyde and acetone in the novolac and formulation steps (A-M-432, flow_graph/param/fab_resist.py): glass lining serves the wet acid chlorides, stainless steel the organics and the dry gases, and nickel-copper alloy the dry chlorine and phosgene (PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Hastelloy C-276 reactors if the glass lining is chipped in service",
+          "note": "wetted by hot wet HCl, nitrous and sulfuric acids, phenol and acetone; chloride attack of any bare stainless steel is the corrosion load.",
+          "task": "X-MAT-22"
+        }
+      },
+      "modules": [],
+      "electrical_role": null,
+      "continuous_kw": {
+        "value": 0.00366,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): batch reactor heating to 100 C (fab_resist.py)."
       }
     }
   ],
@@ -7768,7 +7851,7 @@
       "phase": "L",
       "carries": "fractionator cut",
       "rate": {
-        "value": 7.434747,
+        "value": 7.929182,
         "unit": "kg/d",
         "status": "study",
         "note": "C5-C10 into the cut tank. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-02 TF: C5-C10 28.6% of net oil + solvent and resist feeds (by difference) (AQS-PAR-003)."
@@ -7802,7 +7885,7 @@
       "phase": "L",
       "carries": "fractionator cut",
       "rate": {
-        "value": 6.165705,
+        "value": 6.165707,
         "unit": "kg/d",
         "status": "study",
         "note": "C19-C28 into the cut tank. | X-PAR-02 TF: C19-C28 27.3% of net oil + S72B lube mist (SU2018_PYRO bands) (AQS-PAR-003)."
@@ -8656,7 +8739,7 @@
       "phase": "G",
       "carries": "process H2",
       "rate": {
-        "value": 2.085141,
+        "value": 2.085037,
         "unit": "kg/d",
         "status": "study",
         "note": "HDR_H2\u2192H2_DRYER = sum EW hood Faraday pool 1.6\u00d73 = 4.8 kg/d \u2014 true-closure \u2014 plant Faraday pool unchanged 4.8 kg/d (AQS-GAS-003). | X-PAR-12 TF: header passes the EW cathode H2 (R10b Faraday re-base, A-M-255) (AQS-PAR-005)."
@@ -8758,10 +8841,10 @@
       "phase": "G",
       "carries": "NCG only",
       "rate": {
-        "value": 5.0,
+        "value": 4.999999,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: NCG C1-C4 = DUTY-008 afterburner fuel (CO2 15.0 / 3.002)"
+        "note": "AQS-DUTY-010: NCG C1-C4 = DUTY-008 afterburner fuel (CO2 15.0 / 3.002) | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -8844,10 +8927,10 @@
       "phase": "G",
       "carries": "NCG",
       "rate": {
-        "value": 5.0,
+        "value": 4.999999,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: = IA-OIL-03 (header pass-through)"
+        "note": "AQS-DUTY-010: = IA-OIL-03 (header pass-through) | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -8932,7 +9015,7 @@
         "value": 2.5,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study BMED salt / nutrient dose mid-band (AQS-EQP-NUT-001 / AQS-AUD-001 \u00a74.6) \u2014 not tote schedule"
+        "note": "Study BMED salt / nutrient dose mid-band (AQS-EQP-NUT-001 / AQS-AUD-001 \u00a74.6) \u2014 not tote schedule | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "NUT",
       "to_sector_id": "FARM",
@@ -8997,7 +9080,7 @@
       "phase": "L",
       "carries": "spent etch",
       "rate": {
-        "value": 78.916303,
+        "value": 78.915574,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-AUD-001 \u00a713 spent etch/return order-of-magnitude (~WS_* forwards sum mid) | X-PAR-02 TF: spent etch/return order-of-magnitude band unchanged; closes the bench by difference (AQS-PAR-003)."
@@ -9014,10 +9097,10 @@
       "phase": "S",
       "carries": "organics",
       "rate": {
-        "value": 0.8,
+        "value": 0.800001,
         "unit": "kg/d",
         "status": "study",
-        "note": "Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 \u00a712)"
+        "note": "Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 \u00a712) | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FARM",
       "to_sector_id": "OIL",
@@ -9099,7 +9182,7 @@
       "phase": "S",
       "carries": "scrap",
       "rate": {
-        "value": 11.637491,
+        "value": 11.637534,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
@@ -9252,7 +9335,7 @@
       "phase": "L",
       "carries": "VCD distillate",
       "rate": {
-        "value": 307.539103,
+        "value": 307.540033,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-013. Bed water now returns as AHU condensate, not distillate. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +123.296 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -9457,10 +9540,10 @@
       "phase": "L",
       "carries": "resist and solvent waste",
       "rate": {
-        "value": 0.006,
+        "value": 0.006729,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d"
+        "note": "AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "OIL",
@@ -9866,7 +9949,7 @@
       "phase": "G",
       "carries": "H2 normal path",
       "rate": {
-        "value": 2.085141,
+        "value": 2.085037,
         "unit": "kg/d",
         "status": "authority",
         "note": "Same Faraday pool as S05; normal H2 path (AQS-VENT-001); S24 contingency only | X-PAR-12 TF: dryer pass-through to the store (S24 relief stays shut, AQS-VENT-001) (AQS-PAR-005)."
@@ -9968,10 +10051,10 @@
       "phase": "G",
       "carries": "Br2 vapor",
       "rate": {
-        "value": 916.167461,
+        "value": 916.293526,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.59 + open-circuit 1.15 m3/d H2 on 4360 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.59 + open-circuit 1.15 m3/d H2 on 4361 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC",
@@ -9985,7 +10068,7 @@
       "phase": "L",
       "carries": "NaBr after ORP",
       "rate": {
-        "value": 916.167461,
+        "value": 916.293526,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -10022,7 +10105,7 @@
         "value": 20458.32,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -10053,10 +10136,10 @@
       "phase": "L",
       "carries": "organic mist",
       "rate": {
-        "value": 0.0158,
+        "value": 0.015801,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d"
+        "note": "AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "OIL",
@@ -10240,7 +10323,7 @@
       "phase": "G",
       "carries": "O2 product",
       "rate": {
-        "value": 32.297033,
+        "value": 32.297858,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-SAN-01 Rev B: -0.3195 kg/d from sanitation cake and biogas combustion. | X-PAR-02 TF: O2 product = header draw (AQS-PAR-003)."
@@ -10257,7 +10340,7 @@
       "phase": "G",
       "carries": "N2 product",
       "rate": {
-        "value": 191.989014,
+        "value": 191.990328,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-017. Cold box separates intake air and scrubbed flue. | X-PAR-02 reconciled (AQS-PAR-003). | X-PAR-12 TF: cold-box N2 product to the air receiver, less direct draws (S03 fab N2 purge BH 1.4998 AQS-DUTY-010, R10b) and the dock export (AQS-PAR-005)."
@@ -10393,10 +10476,10 @@
       "phase": "L",
       "carries": "aqueous HF",
       "rate": {
-        "value": 0.093738,
+        "value": 0.093912,
         "unit": "kg/d",
         "status": "study",
-        "note": "Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 H2O; AQS-SEL-FP locked route, ULLMANN_FLUOROPOLY)."
+        "note": "Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 H2O; AQS-SEL-FP locked route, ULLMANN_FLUOROPOLY). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS",
@@ -10410,10 +10493,10 @@
       "phase": "L",
       "carries": "aqueous HF",
       "rate": {
-        "value": 0.080016,
+        "value": 0.079842,
         "unit": "kg/d",
         "status": "study",
-        "note": "Aqueous HF to TFE: 0.10 kg/d TFE x 4 HF/TFE (R-22 route; AQS-SEL-FP, ULLMANN_FLUOROPOLY)."
+        "note": "Aqueous HF to TFE: 0.10 kg/d TFE x 4 HF/TFE (R-22 route; AQS-SEL-FP, ULLMANN_FLUOROPOLY). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS",
@@ -10427,10 +10510,10 @@
       "phase": "L",
       "carries": "VDF monomer",
       "rate": {
-        "value": 0.15,
+        "value": 0.166036,
         "unit": "kg/d",
         "status": "study",
-        "note": "VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-289)."
+        "note": "VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-289). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS",
@@ -10444,10 +10527,10 @@
       "phase": "L",
       "carries": "TFE monomer",
       "rate": {
-        "value": 0.1,
+        "value": 0.107598,
         "unit": "kg/d",
         "status": "study",
-        "note": "TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-289)."
+        "note": "TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-289). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS",
@@ -11414,10 +11497,10 @@
       "phase": "S",
       "carries": "fluoropolymer powder",
       "rate": {
-        "value": 0.09,
+        "value": 0.113634,
         "unit": "kg/d",
         "status": "study",
-        "note": "PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RATE-FP-MET reclaim loop (suspension powder, not melt-processable; ULLMANN_FLUOROPOLY)."
+        "note": "PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RATE-FP-MET reclaim loop (suspension powder, not melt-processable; ULLMANN_FLUOROPOLY). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS",
@@ -11448,10 +11531,10 @@
       "phase": "S",
       "carries": "powder stock",
       "rate": {
-        "value": 0.09,
+        "value": 0.113634,
         "unit": "kg/d",
         "status": "study",
-        "note": "PTFE fine powder to stock (A-M-289)."
+        "note": "PTFE fine powder to stock (A-M-289). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "POLYMERS",
@@ -11499,10 +11582,10 @@
       "phase": "S",
       "carries": "polymer feedstock to fab",
       "rate": {
-        "value": 0.0,
+        "value": 0.023634,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b A-M-257: rated 0 by difference on live endpoints - the fab closes at steady state on UPW (IA-UPW-USE) + slurry (S37) + N2 purge (S03); its wafer output rides IA-PV-OUT 0.01 kg/d. A net POLY_STOCK draw appears when the foundry/goods pass sizes the fab product basis (DOCK_EXPORT_TBD lane)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): formulated positive resist, 40 coats/d (5.0 wafer starts x 8 mask layers) x 3 mL at 25% solids (MOREAU1988). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "FAB",
@@ -11533,10 +11616,10 @@
       "phase": "G",
       "carries": "chlorine",
       "rate": {
-        "value": 0.332195,
+        "value": 0.348057,
         "unit": "kg/d",
         "status": "study",
-        "note": "Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen loop closes; AQS-SEL-FP; A-M-289 supersedes the A-M-290 no-internal-sink wording for this 0.62 kg/d Cl2 draw)."
+        "note": "Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen loop closes; AQS-SEL-FP; A-M-289 supersedes the A-M-290 no-internal-sink wording for this 0.62 kg/d Cl2 draw). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "POLYMERS",
@@ -11550,10 +11633,10 @@
       "phase": "G",
       "carries": "chlorine",
       "rate": {
-        "value": 0.283567,
+        "value": 0.291339,
         "unit": "kg/d",
         "status": "study",
-        "note": "Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-289)."
+        "note": "Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-289). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "POLYMERS",
@@ -11585,10 +11668,10 @@
       "phase": "L",
       "carries": "wax cut",
       "rate": {
-        "value": 0.002445,
+        "value": 0.002489,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): C19-C28 cut: base oil 0.002067 + wax oxidised to soap acid 0.000377 kg/d (route CA)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): C19-C28 cut: base oil 0.002105 + wax oxidised to soap acid 0.000384 kg/d (route CA)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL",
@@ -11619,7 +11702,7 @@
       "phase": "S",
       "carries": "calcium hydroxide",
       "rate": {
-        "value": 3.4e-05,
+        "value": 3.5e-05,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RTE TF: shop grease on site (A-M-429): Ca(OH)2 for the soap, stoichiometric (route CA)."
@@ -11653,10 +11736,10 @@
       "phase": "S",
       "carries": "Ca grease",
       "rate": {
-        "value": 0.002349,
+        "value": 0.002392,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): grease need: 55 lubricated units x points x Gp 3.90 g every 182.6 d (SKF_RELUB, AQS-OPS-002; route CA)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): grease need: 56 lubricated units x points x Gp 3.90 g every 182.6 d (SKF_RELUB, AQS-OPS-002; route CA)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "MFG",
@@ -12031,10 +12114,10 @@
       "phase": "L",
       "carries": "sodium chlorate liquor",
       "rate": {
-        "value": 27.509975,
+        "value": 27.487256,
         "unit": "kg/d",
         "status": "study",
-        "note": "CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 drawn 0.6158 = 27.5100 kg/d (chlorate consumed, NaCl + reaction water + monomer water formed; A-M-289). The leach sees +0.1379 kg/d liquor, below the 0.5 kg/d battery limit, absorbed by its reconciliation layer."
+        "note": "CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 drawn 0.6158 = 27.5100 kg/d (chlorate consumed, NaCl + reaction water + monomer water formed; A-M-289). The leach sees +0.1379 kg/d liquor, below the 0.5 kg/d battery limit, absorbed by its reconciliation layer. Plus the 0.000938 kg/d phosgenation HCl of RESIST_SYN (A-M-432). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "DIGESTER",
@@ -12065,7 +12148,7 @@
       "phase": "electric",
       "carries": "PV daily average",
       "rate": {
-        "value": 351.8504,
+        "value": 351.8735,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -12133,7 +12216,7 @@
       "phase": "L",
       "carries": "remineralizer",
       "rate": {
-        "value": 174.193703,
+        "value": 174.194633,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Sized to the continuous neighbor draw. X-RSZ-06 (potable via VCD, UPW polish and REMIN): +120.47056170745005 kg/d. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -12473,7 +12556,7 @@
       "phase": "L",
       "carries": "irrigation",
       "rate": {
-        "value": 42.138417,
+        "value": 42.138418,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. | X-PAR-02 TF: crew-duty bed closes by difference on the clean-water line (A-M-229) (AQS-PAR-003)."
@@ -12558,7 +12641,7 @@
       "phase": "S",
       "carries": "char reductant",
       "rate": {
-        "value": 4.837992,
+        "value": 4.838035,
         "unit": "kg/d",
         "status": "study",
         "note": "Char less the carbon charged to the silicon-carbide furnace. | X-PAR-02 TF: char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET) (AQS-PAR-003)."
@@ -12643,10 +12726,10 @@
       "phase": "S",
       "carries": "kerf",
       "rate": {
-        "value": 0.51,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Retired 2026-10-30 (A-M-432): the fab dust line duplicated the kerf that fab_silicon.py sends to the leach on IA-FAB-KERF, and only the unvented nitrogen purge balanced it."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "GAS",
@@ -12949,7 +13032,7 @@
       "phase": "L",
       "carries": "potable makeup, remineralised",
       "rate": {
-        "value": 164.193664,
+        "value": 164.194594,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-014. Potable makeup from treated water. Roof tank was short the habitation draw. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -12983,10 +13066,10 @@
       "phase": "S/L",
       "carries": "captured dust",
       "rate": {
-        "value": 7.77,
+        "value": 7.26,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): BAGHOUSE dust to the leach = its live inputs."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "DIGESTER",
@@ -13136,7 +13219,7 @@
       "phase": "S/L",
       "carries": "nitrogen to ammonia",
       "rate": {
-        "value": 3.008739,
+        "value": 3.010053,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 TF: ammonia source sized to the bench draw S33 (AQS-DUTY-016: each chemical has a source); the N2 header re-settles in o2_close (AQS-PAR-003)."
@@ -13204,10 +13287,10 @@
       "phase": "L",
       "carries": "spent UPW",
       "rate": {
-        "value": 66.502511,
+        "value": 66.527242,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): spent rinse water by difference on WAFER_FAB, now that the nitrogen purge vents. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "DIGESTER",
@@ -13272,10 +13355,10 @@
       "phase": "G",
       "carries": "nitrogen vent",
       "rate": {
-        "value": 3.09978,
+        "value": 3.098466,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: retired, no vent | X-PAR-12 TF: cold-box N2 surplus exported at the dock boundary (D-DOCK 2026-10-19; BH vent path re-opened with D-AIR): available 195.089 less header need 191.989 kg/d (AQS-PAR-005)."
+        "note": "AQS-DUTY-024. No placeholder. Contingency valves are closed. Retired streams name the live path. Live path: retired, no vent | X-PAR-12 TF: cold-box N2 surplus exported at the dock boundary (D-DOCK 2026-10-19; BH vent path re-opened with D-AIR): available 195.089 less header need 191.990 kg/d (AQS-PAR-005)."
       },
       "from_sector_id": "CRYO",
       "to_sector_id": "DOCK",
@@ -13731,10 +13814,10 @@
       "phase": "S",
       "carries": "spent resist and solvent",
       "rate": {
-        "value": 0.987499,
+        "value": 0.557915,
         "unit": "kg/d",
         "status": "study",
-        "note": "Spent resist and solvent. Same mass as S39B, through LITHO_STUB. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): resist and rinse acetone issued to the coater = POLY_TO_FAB + IA-FAB-SOLV. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -13744,17 +13827,17 @@
     {
       "stream_id": "IA-LITHO-OUT",
       "from_unit_id": "LITHO_DEV",
-      "to_unit_id": "OIL_FRAC",
+      "to_unit_id": "SOLV_PLANT",
       "phase": "S",
       "carries": "spent resist and solvent",
       "rate": {
-        "value": 0.987499,
+        "value": 0.557915,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same mass into the fractionator. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): spent resist and acetone to the SOLV_PLANT still = POLY_TO_FAB + IA-FAB-SOLV. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
-      "to_sector_id": "OIL",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "note": "Re-pointed from LITHO_STUB at its retirement: spent resist and solvent to the oil line (A-M-287).; namespace=IA; layers=mass"
     },
@@ -14054,7 +14137,7 @@
       "phase": "L",
       "carries": "leach liquor water bleed to vapour-compression distillation",
       "rate": {
-        "value": 167.019103,
+        "value": 167.020033,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RSZ-06 (potable via VCD, UPW polish and REMIN). Water surplus of the leach loop (was IA-POT-01) plus UPW reject. | X-PAR-02 TF: roof-tank shortfall -0.0000 kg/d by difference on the potable path (AQS-PAR-003)."
@@ -14479,7 +14562,7 @@
       "phase": "L",
       "carries": "water make-up for H and O leaving as product",
       "rate": {
-        "value": 56.521124,
+        "value": 57.022752,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -14649,10 +14732,10 @@
       "phase": "L",
       "carries": "C5-C10 product shipped",
       "rate": {
-        "value": 7.14062,
+        "value": 7.635055,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.2941 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
+        "note": "X-PAR-12 TF (AQS-PAR-005): C5-C10 make less the plant draws - genset 0.0000 and the olefin feed 0.2941 (this pass, AQS-DUTY-073); shipped at the dock. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Less 1.005233 kg/d to RESIST_SYN on IA-RESIST-BZ (A-M-432). | X-PAR-12 TF: C5-C10 product not burned: shipped at the dock less the olefin draw 0.2941 kg/d (AQS-DUTY-073) (AQS-PAR-005)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
@@ -14666,10 +14749,10 @@
       "phase": "L",
       "carries": "C11-C18 surplus shipped",
       "rate": {
-        "value": 1.511662,
+        "value": 1.145274,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C11-C18 make less the plant draw (IA-BLOW-IN), shipped (Q-002 pattern) (AQS-PAR-003)."
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C11-C18 make less the plant draw (IA-BLOW-IN, IA-RESIST-NAPH), shipped (Q-002 pattern) (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
@@ -14683,7 +14766,7 @@
       "phase": "L",
       "carries": "C19-C28 surplus shipped",
       "rate": {
-        "value": 2.015701,
+        "value": 2.015659,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C19-C28 make less the plant draw (CUT-3-OUT, C19_TO_WAX, WAX_TO_GREASE_CA, WAX_TO_GREASE_LI), shipped (Q-002 pattern) (AQS-PAR-003)."
@@ -15145,7 +15228,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.611 kg/d (SANDER2015) (AQS-PAR-003)."
+        "note": "AQS-DUTY-022. | X-PAR-02 TF: closes leach and cold box (+0.0000 kg/d); Henry bound 3.612 kg/d (SANDER2015) (AQS-PAR-003)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "CRYO",
@@ -15176,7 +15259,7 @@
       "phase": "L",
       "carries": "electrolyser feed water",
       "rate": {
-        "value": 82.63972,
+        "value": 82.640649,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: water split (AQS-PAR-005)."
@@ -15193,7 +15276,7 @@
       "phase": "G",
       "carries": "electrolyser H2",
       "rate": {
-        "value": 9.247942,
+        "value": 9.248046,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: H2 demand net of the live EW Faraday cathode credit: genset 0.02 + fuel cell 4.80 + methanol 6.51 - S64 2.085 kg/d (A-M-255 credit; H2 side governs, O2 headroom documented in A-M-272) (AQS-PAR-005)."
@@ -15210,7 +15293,7 @@
       "phase": "G",
       "carries": "electrolyser O2",
       "rate": {
-        "value": 73.391778,
+        "value": 73.392603,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: O2 = 7.937 x H2 (AQS-PAR-005)."
@@ -15227,7 +15310,7 @@
       "phase": "E",
       "carries": "480 V AC (daily average)",
       "rate": {
-        "value": 21.1932,
+        "value": 21.1934,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
@@ -15244,7 +15327,7 @@
       "phase": "G",
       "carries": "surplus O2 to product cylinders",
       "rate": {
-        "value": 22.013452,
+        "value": 22.014277,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -15261,7 +15344,7 @@
       "phase": "G",
       "carries": "O2 cylinders shipped at the dock",
       "rate": {
-        "value": 22.013452,
+        "value": 22.014277,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-AIR): accidentally deleted with the farm scope"
@@ -15635,7 +15718,7 @@
       "phase": "L",
       "carries": "methanol product",
       "rate": {
-        "value": 28.008454,
+        "value": 27.878722,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: methanol product by difference (AQS-PAR-005)."
@@ -15652,7 +15735,7 @@
       "phase": "L",
       "carries": "methanol shipped at the dock",
       "rate": {
-        "value": 28.008454,
+        "value": 27.878722,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-12 TF: shipped (AQS-PAR-005)."
@@ -16128,7 +16211,7 @@
       "phase": "G",
       "carries": "plant air from the receiver bank",
       "rate": {
-        "value": 191.989014,
+        "value": 191.990328,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF: air receiver passes the cold-box delivery to the header at steady state (D-DOCK buffer, A-M-270). | X-PAR-12 TF: air receiver passes the cold-box delivery to the header at steady state (D-DOCK product buffer; A-M-270) (AQS-PAR-005)."
@@ -16162,7 +16245,7 @@
       "phase": "L",
       "carries": "solvent resupply (ethanol and acetone)",
       "rate": {
-        "value": 0.0,
+        "value": -0.0,
         "unit": "kg/d",
         "status": "study",
         "note": "Retired 2026-10-29 (owner decision t59u: no imports except waste or raw ore). SOLV_PLANT recovers the spent solvent and makes the shortfall on site (A-M-428). | X-PAR-02 TF: solvent resupply imported at the dock boundary equals the bench draw IA-SOLV-WB (D-DOCK reagent import; 30 d hold already sized, A-M-225) (AQS-PAR-003)."
@@ -16502,10 +16585,10 @@
       "phase": "S",
       "carries": "resist/solvent carry (coat catch bowl + developer) to the develop bench",
       "rate": {
-        "value": 0.987499,
+        "value": 0.557915,
         "unit": "kg/d",
         "status": "study",
-        "note": "Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool handoff; wafer mass is below graph resolution). A-M-284."
+        "note": "Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool handoff; wafer mass is below graph resolution). A-M-284. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -16553,10 +16636,10 @@
       "phase": "G",
       "carries": "chlorine byproduct export (water-treatment class product)",
       "rate": {
-        "value": 39.205574,
+        "value": 39.20375,
         "unit": "kg/d",
         "status": "study",
-        "note": "Pot Cl2 byproduct 3.942 kg/kg Al less the 0.2137 kg/d silicon-loop make-up on IA-CL2-SIREF (A-M-419) exports at the dock (D-DOCK outlet; CRU closes exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-290 chlorine ruling). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Pot Cl2 byproduct 3.942 kg/kg Al less the 0.2137 kg/d silicon-loop make-up on IA-CL2-SIREF (A-M-419) exports at the dock (D-DOCK outlet; CRU closes exactly on S66 = IA-CRU-01 so it has no internal sink - A-M-290 chlorine ruling). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Less 0.001824 kg/d to RESIST_SYN on IA-RESIST-CL2 (A-M-432)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
@@ -16723,10 +16806,10 @@
       "phase": "G",
       "carries": "chlorinator CO (fuel-gas class export)",
       "rate": {
-        "value": 0.611568,
+        "value": 0.502631,
         "unit": "kg/d",
         "status": "study",
-        "note": "1.170 kg/kg Ti chlorinator CO to the dock fuel-gas class (IA-N2-VENT precedent; no spare burner capacity at Rev AC scope - burner routing is an integration follow-up). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Less 0.017885 kg/d to SOLV_PLANT on IA-SOLV-CO (A-M-428)."
+        "note": "1.170 kg/kg Ti chlorinator CO to the dock fuel-gas class (IA-N2-VENT precedent; no spare burner capacity at Rev AC scope - burner routing is an integration follow-up). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Less 0.126101 kg/d to SOLV_PLANT on IA-SOLV-CO (A-M-428). Less 0.000721 kg/d to RESIST_SYN on IA-RESIST-CO (A-M-432)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DOCK",
@@ -17675,10 +17758,10 @@
       "phase": "S",
       "carries": "native sulfur (raw ore) for the acid plant",
       "rate": {
-        "value": 0.012935,
+        "value": 0.01376,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): sulfur = 0.0129 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): sulfur = 0.0138 kg/d (sulfuric.py, route GYPSUM_LOOP)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "POLYMERS",
@@ -17726,10 +17809,10 @@
       "phase": "G",
       "carries": "oxygen of the process air (sulfur burning and SO2 oxidation)",
       "rate": {
-        "value": 0.077462,
+        "value": 0.078697,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): o2 = 0.0775 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): o2 = 0.0787 kg/d (sulfuric.py, route GYPSUM_LOOP)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "POLYMERS",
@@ -17743,10 +17826,10 @@
       "phase": "L",
       "carries": "well water for SO3 absorption and dilution to 98 wt%",
       "rate": {
-        "value": 0.080761,
+        "value": 0.081276,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): h2o = 0.0808 kg/d (sulfuric.py, route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): h2o = 0.0813 kg/d (sulfuric.py, route GYPSUM_LOOP)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "POLYMERS",
@@ -17777,10 +17860,10 @@
       "phase": "S",
       "carries": "cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up",
       "rate": {
-        "value": 0.28169,
+        "value": 0.281689,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake-kiln residue 0.2817 kg/d less the lime make-up of NAOH_PLANT on IA-LIME-TO-NAOH 0.0000 kg/d (route GYPSUM_LOOP). Less 0.000038 kg/d to P_CA for the grease soap (A-M-429)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake-kiln residue 0.2817 kg/d less the lime make-up of NAOH_PLANT on IA-LIME-TO-NAOH 0.0000 kg/d (route GYPSUM_LOOP). Less 0.000039 kg/d to P_CA for the grease soap (A-M-429)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "DOCK",
@@ -18120,7 +18203,7 @@
         "value": 0.199474,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -18134,10 +18217,10 @@
       "phase": "L",
       "carries": "recovered and new ethanol and acetone to the solvent store",
       "rate": {
-        "value": 0.209973,
+        "value": 0.467586,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): product = 0.209973 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): product = 0.519493 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -18151,10 +18234,10 @@
       "phase": "L",
       "carries": "still bottoms (resist residue and heavy alcohols) to the light oil cut",
       "rate": {
-        "value": 0.009974,
+        "value": 0.543843,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): btms = 0.009974 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): btms = 0.140950 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "OIL",
@@ -18168,10 +18251,10 @@
       "phase": "G",
       "carries": "reactor or fermenter off-gas (fuel-gas class export)",
       "rate": {
-        "value": 0.018867,
+        "value": 0.016578,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): vent = 0.018868 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): vent = 0.149902 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "DOCK",
@@ -18185,10 +18268,10 @@
       "phase": "L",
       "carries": "plant methanol for the carbonylation",
       "rate": {
-        "value": 0.02046,
+        "value": 0.143533,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.020460 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.144254 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "FAB",
@@ -18202,10 +18285,10 @@
       "phase": "G",
       "carries": "chlorinator carbon monoxide for the carbonylation",
       "rate": {
-        "value": 0.017885,
+        "value": 0.12609,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): co = 0.017885 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): co = 0.126101 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FAB",
@@ -18222,7 +18305,7 @@
         "value": 0.000995,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "FAB",
@@ -18270,7 +18353,7 @@
       "phase": "E",
       "carries": "480 V AC",
       "rate": {
-        "value": 0.01034,
+        "value": 0.02963,
         "unit": "kW",
         "status": "study",
         "note": "X-RTE TF: on-site bench solvent (A-M-428): feed equal to SOLV_PLANT continuous_kw."
@@ -18287,7 +18370,7 @@
       "phase": "S",
       "carries": "purged grease to the pyrolysis feed",
       "rate": {
-        "value": 0.002349,
+        "value": 0.002392,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RTE TF: shop grease on site (A-M-429): purged grease collected at relubrication goes to pyrolysis with the plastics feed (recovery first); equals the grease issued."
@@ -18304,10 +18387,10 @@
       "phase": "G",
       "carries": "oxygen of the process air for the wax oxidation",
       "rate": {
-        "value": 0.000132,
+        "value": 0.000135,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): o2 = 0.000132 kg/d (grease.py, route CA)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): o2 = 0.000135 kg/d (grease.py, route CA)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "OIL",
@@ -18321,10 +18404,10 @@
       "phase": "G",
       "carries": "water, carbon dioxide and light acids of the wax oxidation and saponification",
       "rate": {
-        "value": 0.000262,
+        "value": 0.000267,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): vent = 0.000262 kg/d (grease.py, route CA)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): vent = 0.000267 kg/d (grease.py, route CA)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "WTR",
@@ -18341,7 +18424,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): o2 = 0.000132 kg/d (grease.py, route CA)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): o2 = 0.000135 kg/d (grease.py, route CA)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "OIL",
@@ -18358,7 +18441,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): vent = 0.000262 kg/d (grease.py, route CA)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): vent = 0.000267 kg/d (grease.py, route CA)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "WTR",
@@ -18372,10 +18455,10 @@
       "phase": "S",
       "carries": "cake-kiln lime residue to the slaker",
       "rate": {
-        "value": 3.8e-05,
+        "value": 3.9e-05,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): lime_draw = 0.000038 kg/d (grease.py, route CA)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): lime_draw = 0.000039 kg/d (grease.py, route CA). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "DIGESTER",
@@ -18389,10 +18472,10 @@
       "phase": "L",
       "carries": "well water to slake the lime",
       "rate": {
-        "value": 8e-06,
+        "value": 9e-06,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): slake_h2o = 0.000008 kg/d (grease.py, route CA)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): slake_h2o = 0.000009 kg/d (grease.py, route CA)."
       },
       "from_sector_id": "WTR",
       "to_sector_id": "DIGESTER",
@@ -18483,6 +18566,312 @@
       "to_sector_id": "DOCK",
       "open_boundary": false,
       "note": "namespace=IA; layers=mass,energy"
+    },
+    {
+      "stream_id": "IA-RESIST-BZ",
+      "from_unit_id": "PROD_C5_C10",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "carries": "C5-C10 cut to the benzene extraction",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): bz_cut = 1.005233 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-NAPH",
+      "from_unit_id": "PROD_C11_C18",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "carries": "C11-C18 cut to the naphthalene extraction",
+      "rate": {
+        "value": 0.366388,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): naph_cut = 0.366388 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-RAFF",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "carries": "aromatic-extraction raffinate back to the fractionator",
+      "rate": {
+        "value": 0.947336,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): extraction raffinate = cut drawn less the benzene and naphthalene taken. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-MEOH",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "carries": "plant methanol for the formaldehyde",
+      "rate": {
+        "value": 0.00666,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): meoh = 0.005938 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-NH3",
+      "from_unit_id": "WS_AMMONIA",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "carries": "ammonia for the nitrous acid and the ester scavenger",
+      "rate": {
+        "value": 0.001314,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): nh3 = 0.001314 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-H2",
+      "from_unit_id": "HDR_H2",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "G",
+      "carries": "header hydrogen for the nitroso reduction",
+      "rate": {
+        "value": 0.000104,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): h2 = 0.000104 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-CO",
+      "from_unit_id": "TI_CELL",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "G",
+      "carries": "chlorinator carbon monoxide for the phosgenation",
+      "rate": {
+        "value": 0.000732,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): co = 0.000721 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-CL2",
+      "from_unit_id": "AL_POT",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "G",
+      "carries": "pot chlorine for the phosgenation",
+      "rate": {
+        "value": 0.001824,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): cl2 = 0.001824 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-ACID",
+      "from_unit_id": "ACID_PLANT",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "carries": "sulfuric acid for the naphthol sulfonation",
+      "rate": {
+        "value": 0.002575,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): acid = 0.002575 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-ACET",
+      "from_unit_id": "WS_SOLV",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "carries": "acetone for the diacetone alcohol casting solvent",
+      "rate": {
+        "value": 0.257613,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): acetone = 0.090000 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-AIR",
+      "from_unit_id": "ATMOS",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "G",
+      "carries": "process air for the oxidations",
+      "rate": {
+        "value": 0.319016,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): air = 0.092558 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-VENT",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "carries": "oxidation off-gas: nitrogen, unused oxygen and carbon dioxide",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): vent = 0.084138 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-HCL",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "CRU",
+      "phase": "L",
+      "carries": "phosgenation HCl to the chlorate finish",
+      "rate": {
+        "value": 0.000915,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): hcl = 0.000938 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-BRINE",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "carries": "reaction water, acid water and ammonium chloride",
+      "rate": {
+        "value": 0.007976,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): brine = 0.011349 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-RESIST-STOCK",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "POLY_STOCK",
+      "phase": "L",
+      "carries": "formulated positive photoresist to stock",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): resist = 0.120000 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-FAB-SOLV",
+      "from_unit_id": "WS_SOLV",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "L",
+      "carries": "acetone for edge-bead rinse and resist strip",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): edge-bead rinse and strip acetone at the coat rate. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "IA-FAB-N2-VENT",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "carries": "fab nitrogen purge exhaust",
+      "rate": {
+        "value": 0.938489,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): the S03 nitrogen purge leaves the tools to atmosphere at its supply rate. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=mass"
+    },
+    {
+      "stream_id": "SF-RESIST_SYN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "E",
+      "carries": "480 V AC",
+      "rate": {
+        "value": 0.00366,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): feed equal to RESIST_SYN continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "note": "namespace=IA; layers=elec"
     }
   ],
   "electrical": {
@@ -18497,13 +18886,13 @@
       "PUMPED_HYDRO"
     ],
     "need_kw": {
-      "value": 218.02,
+      "value": 218.05,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 35x23 bays, ext 82.13 kW)."
     },
     "target_kw": {
-      "value": 545.06,
+      "value": 545.13,
       "unit": "kW",
       "status": "study",
       "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."

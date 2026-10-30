@@ -14,6 +14,7 @@ H2O_ELYZ,CRYO,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol
 H2_DRYER,GAS,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
 MEOH_SYNTH,MEOH,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
 NAOH_PLANT,DIGESTER,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
+RESIST_SYN,FAB,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
 SOLV_PLANT,FAB,H2,catalytic bead + IR backup,ceiling,0.4 vol % (10 % LFL),1.0 vol % (25 % LFL),2,alarm 1oo2
 ACID_PLANT,POLYMERS,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
 AFTERBURNER_FLUE,GAS,O2 deficiency,electrochemical O2,low (dense gases),19.5 vol %,18.0 vol %,2,alarm 1oo2
@@ -38,12 +39,14 @@ CR_CELL,FOUNDRY,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo
 OIL_DRYER,OIL,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
 OIL_FRAC,OIL,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
 OIL_PYRO,OIL,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
+RESIST_SYN,FAB,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
 SI_REDUCE,GLASS,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
 SOLV_PLANT,FAB,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
 TI_CELL,FOUNDRY,CO,electrochemical CO,breathing height,25 ppm,50 ppm,2,alarm 1oo2
 AFTERBURNER_FLUE,GAS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 FLUE_KO,GAS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 NOX_SCRUB,GAS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
+RESIST_SYN,FAB,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 SI_REDUCE,GLASS,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 SOLV_PLANT,FAB,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
 TI_CELL,FOUNDRY,NOx,electrochemical NO2,breathing height,0.2 ppm NO2,0.4 ppm NO2,2,alarm 1oo2
@@ -64,6 +67,7 @@ EW_9,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,
 LEACH_CSTR_1,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
 MG_POT,FOUNDRY,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
 NAOH_PLANT,DIGESTER,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
+RESIST_SYN,FAB,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
 SI_REFINE,GLASS,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
 TFE_SYN,POLYMERS,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2
 TI_CELL,FOUNDRY,Cl2 / HCl,electrochemical Cl2 and HCl,low,0.1 ppm Cl2 / 2 ppm HCl,0.4 ppm Cl2 / 4 ppm HCl,2,alarm 1oo2

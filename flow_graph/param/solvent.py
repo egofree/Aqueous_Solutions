@@ -45,14 +45,17 @@ def _tank_W(V_L, T, Ta=20.0, U=0.5):
     V = max(V_L, 1e-6)/1000; D = (2*V/math.pi)**(1/3); A = math.pi*D*2*D + math.pi*D**2/2
     return U*A*(T - Ta), D*1000
 
-def design(bench_kg_d, galley_kg_d=None, co_avail_kg_d=None, d=None):
+def design(bench_kg_d, galley_kg_d=None, co_avail_kg_d=None, d=None, fab_need_kg_d=0.0, fab_spent_kg_d=0.0, fab_spent_acetone_kg_d=0.0):
     """bench_kg_d: solvent drawn by WET_BENCH (IA-SOLV-WB). Returns the stream rates in kg/d, the load in kW and the
-    carbon recovery record."""
+    carbon recovery record. fab_*: acetone that RESIST_SYN and the fab rinse draw from WS_SOLV, and the spent resist and
+    acetone that returns on IA-LITHO-OUT with the acetone share recovered by the still (A-M-432)."""
     d = d or DR.load(); v = lambda k: DR.val(d, k)
     route = _route(d); fa = v('solv_acetone_frac')
-    spent = bench_kg_d*v('solv_spent_catch_frac'); rec = spent*v('solv_still_recovery_frac'); btms = spent - rec
-    make = bench_kg_d - rec; ace = make*fa; eth = make*(1 - fa)
-    z = dict(route=route, bench_kg_d=bench_kg_d, spent_kg_d=spent, recovered_kg_d=rec, make_kg_d=make, acetone_kg_d=ace, ethanol_kg_d=eth,
+    spent = bench_kg_d*v('solv_spent_catch_frac'); rec_b = spent*v('solv_still_recovery_frac')
+    rec_f = fab_spent_acetone_kg_d*v('solv_still_recovery_frac'); rec = rec_b + rec_f
+    btms = spent + fab_spent_kg_d - rec
+    make = bench_kg_d + fab_need_kg_d - rec; ace = (bench_kg_d - rec_b)*fa + fab_need_kg_d - rec_f; eth = (bench_kg_d - rec_b)*(1 - fa)
+    z = dict(route=route, bench_kg_d=bench_kg_d, spent_kg_d=spent, fab_need_kg_d=fab_need_kg_d, fab_spent_kg_d=fab_spent_kg_d, fab_recovered_kg_d=rec_f, recovered_kg_d=rec, make_kg_d=make, acetone_kg_d=ace, ethanol_kg_d=eth,
              meoh_kg_d=0.0, co_kg_d=0.0, h2_kg_d=0.0, fw_kg_d=0.0, stillage_kg_d=0.0, butanol_kg_d=0.0)
     kw_rx = 0.0
     if route == 'MEOH_CO':
@@ -90,17 +93,18 @@ def design(bench_kg_d, galley_kg_d=None, co_avail_kg_d=None, d=None):
     dist = rec + make + (z['butanol_kg_d'] if route == 'FERMENT' else 0.0)
     kw_still = (v('solv_still_reflux') + 1)*dist*v('solv_dHvap_kJ_kg')/86.4/v('solv_still_heater_eff')/1000
     z.update(kw=kw_still + kw_rx, kw_still=kw_still, kw_rx=kw_rx)
-    ins = spent + z['meoh_kg_d'] + z['co_kg_d'] + z['h2_kg_d'] + z['fw_kg_d']
+    ins = spent + fab_spent_kg_d + z['meoh_kg_d'] + z['co_kg_d'] + z['h2_kg_d'] + z['fw_kg_d']
     outs = z['product_kg_d'] + z['btms_kg_d'] + z['vent_kg_d'] + z['stillage_kg_d']
     assert abs(ins - outs) < 1e-9, (ins, outs)
     cf = lambda kg, M, nc: kg*nc*M_C/M
-    c_need = cf(bench_kg_d*fa, M_ACE, 3) + cf(bench_kg_d*(1 - fa), M_ETOH, 2)
-    c_rec = cf(rec*fa, M_ACE, 3) + cf(rec*(1 - fa), M_ETOH, 2)
-    z['recovery'] = dict(element='C', use='bench solvent (ethanol and acetone)', need_kg_d=c_need, recovered_kg_d=c_rec, recovered_from=['IA-SOLV-SPENT'],
+    c_need = cf(bench_kg_d*fa + fab_need_kg_d, M_ACE, 3) + cf(bench_kg_d*(1 - fa), M_ETOH, 2)
+    c_rec = cf(rec_b*fa + rec_f, M_ACE, 3) + cf(rec_b*(1 - fa), M_ETOH, 2)
+    c_s10 = (cf(bench_kg_d*fa, M_ACE, 3) + cf(bench_kg_d*(1 - fa), M_ETOH, 2))*(1 - v('solv_spent_catch_frac'))
+    z['recovery'] = dict(element='C', use='bench solvent (ethanol and acetone)', need_kg_d=c_need, recovered_kg_d=c_rec, recovered_from=['IA-SOLV-SPENT'] + (['IA-LITHO-OUT'] if rec_f > 0 else []),
                          ore_streams=[], unrecovered=[
-                             dict(stream='S10', kg_d=c_need*(1 - v('solv_spent_catch_frac')), recoverable=False,
+                             dict(stream='S10', kg_d=c_s10, recoverable=False,
                                   basis='solvent that evaporates at the bench or leaves with the spent etch, outside the segregated drain (solv_spent_catch_frac)'),
-                             dict(stream='IA-SOLV-BTMS', kg_d=c_need*v('solv_spent_catch_frac')*(1 - v('solv_still_recovery_frac')), recoverable=False,
+                             dict(stream='IA-SOLV-BTMS', kg_d=c_need - c_rec - c_s10, recoverable=False,
                                   basis='still bottoms with the resist residue, burned with the light oil cut (solv_still_recovery_frac)')],
                          note=('the shortfall is made from plant methanol and the chlorinator CO that was exported as fuel gas' if route == 'MEOH_CO'
                                else 'the shortfall is fermented from galley food waste'))
@@ -125,8 +129,11 @@ def tf(g, E, d=None):
     d = d or DR.load()
     N = {n['unit_id']: n for n in g['nodes']}
     gal = E['IA-GAL']; co = E['IA-KROLL-CO']
+    from flow_graph.param import fab_resist                              # fab resist acetone and its spent return (A-M-432)
+    fr = fab_resist.design(d)
     r = design(float(E['IA-SOLV-WB']['rate']['value']), galley_kg_d=(gal.get('params') or {}).get('pre_solv_kg_d', float(gal['rate']['value'])),
-               co_avail_kg_d=float(co['rate']['value']), d=d)
+               co_avail_kg_d=float(co['rate']['value']), d=d, fab_need_kg_d=round(fr['acetone_kg_d'], 6) + round(fr['rinse_kg_d'], 6),
+               fab_spent_kg_d=round(fr['resist_kg_d'], 6) + round(fr['rinse_kg_d'], 6), fab_spent_acetone_kg_d=fr['rinse_kg_d'])
     if 'SOLV_PLANT' not in N:
         n = _node('SOLV_PLANT', N['WS_SOLV']['sector_id'], 'reactor', None, 'Solvent plant (A-M-428).', {})
         n['notes'] = 'Solvent plant: spent-solvent still, with carbonylation, ketonisation and hydrogenation reactors or solvent fermenters (A-M-428).'

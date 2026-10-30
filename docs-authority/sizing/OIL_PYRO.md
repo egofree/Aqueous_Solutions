@@ -17,7 +17,7 @@ This page records the size of unit OIL_PYRO, of class `pyro` in sector OIL, from
 
 ## 2. Duty
 
-The unit takes 38.8756 kg/d by 3 streams and gives 38.8756 kg/d by 7 streams. Its continuous electrical load is 1.664 kW, fed by stream SF-OIL_PYRO.
+The unit takes 38.8757 kg/d by 3 streams and gives 38.8757 kg/d by 7 streams. Its continuous electrical load is 1.664 kW, fed by stream SF-OIL_PYRO.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The envelope is 500 mm x 500 mm x 670 mm, from the placement file `flow_graph/placement_blocks.json`.
 
-The hold-up check takes 38.8756 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 38.88 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 350 mm in diameter and 520 mm high. It fits within the envelope.
+The hold-up check takes 38.8757 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 38.88 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 350 mm in diameter and 520 mm high. It fits within the envelope.
 
 ## 4. Material
 

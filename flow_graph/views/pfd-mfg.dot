@@ -71,7 +71,7 @@ digraph G {
   }
   "LEACH_CSTR_1" -> "MFG_SHOP" [label="S08\\n41.996408 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GLASS_DIGEST" -> "MFG_SHOP" [label="S08G\\n26.7 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MFG_SHOP" -> "LEACH_CSTR_1" [label="S16\\n11.637491 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MFG_SHOP" -> "LEACH_CSTR_1" [label="S16\\n11.637534 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_MELT" -> "WIRE_DRAW" [label="S57\\n6.8389 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WIRE_DRAW" -> "MFG_SHOP" [label="S58\\n3.9389 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "COLD_MILL" -> "MFG_SHOP" [label="S59\\n3.950359 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -80,7 +80,7 @@ digraph G {
   "MET_AHU" -> "MET_SCRUB" [label="S62\\n51145.68 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_AHU" -> "MET_SCRUB" [label="S71\\n20458.32 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_SCRUB" -> "LEACH_CSTR_1" [label="S72\\n2.4442 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MET_SCRUB" -> "OIL_FRAC" [label="S72B\\n0.0158 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MET_SCRUB" -> "OIL_FRAC" [label="S72B\\n0.015801 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "METAL_STORE" -> "MFG_SHOP" [label="STOCK_TO_MFG\\n25.9 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "COMB_HEAT" -> "MET_SCRUB" [label="COMB_OFFGAS\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "METAL_STORE" -> "WIRE_DRAW" [label="STOCK_TO_WIRE_DRAW\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -88,7 +88,7 @@ digraph G {
   "GAS_ATOMIZER" -> "STOCK_OUT" [label="ATOM_TO_STOCK\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MFG_SHOP" -> "IND_MELT" [label="MFG_SCRAP_TO_IND\\n26.161616 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_STOCK" -> "MFG_SHOP" [label="POLY_TO_MFG\\n0.267388 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "GREASE_CA" -> "MFG_SHOP" [label="GREASE_CA_TO_MFG\\n0.002349 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "GREASE_CA" -> "MFG_SHOP" [label="GREASE_CA_TO_MFG\\n0.002392 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GREASE_LI" -> "MFG_SHOP" [label="GREASE_LI_TO_MFG\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_1" -> "MFG_SHOP" [label="IA-EW-MET-1\\n59.869999 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_2" -> "MFG_SHOP" [label="IA-EW-MET-2\\n59.889999 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -101,7 +101,7 @@ digraph G {
   "EW_9" -> "MFG_SHOP" [label="IA-EW-MET-9\\n61.341099 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLISH_BANK" -> "MFG_SHOP" [label="IA-POL-CAKE\\n217.369993 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MFG_SHOP" -> "HABITATION" [label="IA-MFG-OUT\\n596.862802 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "OIL_PYRO" -> "MFG_SHOP" [label="IA-CHAR\\n4.837992 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "OIL_PYRO" -> "MFG_SHOP" [label="IA-CHAR\\n4.838035 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "WIRE_DRAW" -> "BAGHOUSE" [label="IA-WIRE-LOSS\\n0.44 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "EW_9" -> "MET_MELT" [label="IA-EW-SHEET\\n13.9889 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "MET_MELT" -> "COLD_MILL" [label="IA-MELT-MILL\\n3.949641 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -115,5 +115,5 @@ digraph G {
   "PROD_C19_C28" -> "MFG_SHOP" [label="CUT-3-OUT\\n3.947559 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GAS_ATOMIZER" -> "MET_MELT" [label="IA-ATOM-REMELT\\n0.355595 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "POLY_STOCK" -> "MFG_SHOP" [label="FLUORO_TO_MFG\\n0.23 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MFG_SHOP" -> "OIL_PYRO" [label="IA-GREASE-SPENT\\n0.002349 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MFG_SHOP" -> "OIL_PYRO" [label="IA-GREASE-SPENT\\n0.002392 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

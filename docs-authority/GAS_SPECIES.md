@@ -41,7 +41,7 @@ The 110.3 kg/d drawn as combustion air (IA-AB-AIR, IA-GEN-AIR) is N2 product; at
 | --- | --- | --- |
 | S87 | grow-bed photosynthesis | 0.642 |
 | IA-ASU-O2 | cold box: excess combustion O2 recovered (species-conserving) | 0.064 |
-| IA-ELY-O2 | PEM electrolyser | 73.392 |
+| IA-ELY-O2 | PEM electrolyser | 73.393 |
 
 ## 4. Result
 

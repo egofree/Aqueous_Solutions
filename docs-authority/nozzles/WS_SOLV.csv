@@ -7,3 +7,5 @@ N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
 N7,DN15,Class 150,solvent resupply (ethanol and acetone),inlet,160
 N8,DN15,Class 150,recovered and new ethanol and acetone to the solvent store,inlet,160
+N9,DN15,Class 150,acetone for the diacetone alcohol casting solvent,outlet,600
+N10,DN15,Class 150,acetone for edge-bead rinse and resist strip,outlet,600

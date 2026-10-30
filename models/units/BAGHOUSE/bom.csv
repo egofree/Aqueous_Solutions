@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",docs-authority/duties/BAGHOUSE.md
-2,Process nozzle DN15,4,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,3,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",one per mass edge; DN from AQS-INV-003
 3,Process nozzle DN50,1,"Carbon steel housing, painted, bonded, and grounded; antistatic polyester bags; deflagration venting or suppression (combustible dust).",one per mass edge; DN from AQS-INV-003
 4,"Motor: induced-draft fan (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,"Motor: pulse-jet solenoid valve (solenoid, ISO 15218 coil, 22 mm)",4,-,AQS-INV-001 / AQS-INV-005

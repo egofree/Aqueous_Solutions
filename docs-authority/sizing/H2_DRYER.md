@@ -17,7 +17,7 @@ This page records the size of unit H2_DRYER, of class `dryer` in sector GAS, fro
 
 ## 2. Duty
 
-The unit takes 2.08514 kg/d by 1 stream and gives 2.08514 kg/d by 5 streams. Its continuous electrical load is 0.0205 kW, fed by stream SF-H2_DRYER.
+The unit takes 2.08504 kg/d by 1 stream and gives 2.08504 kg/d by 5 streams. Its continuous electrical load is 0.0205 kW, fed by stream SF-H2_DRYER.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -25,15 +25,15 @@ Table 2.1. Design parameters
 
 | Parameter | Value |
 | --- | --- |
-| H2_kg_d | 2.08514 |
-| Nm3_h | 0.965946 |
-| O2_mol_d | 1.0343 |
-| water_kg_d | 0.0372657 |
-| HCl_kg_d | 3.77115e-05 |
-| guard_kg | 0.0339403 |
-| sieve_kg | 0.372657 |
+| H2_kg_d | 2.08504 |
+| Nm3_h | 0.965898 |
+| O2_mol_d | 1.03424 |
+| water_kg_d | 0.0372638 |
+| HCl_kg_d | 3.77096e-05 |
+| guard_kg | 0.0339386 |
+| sieve_kg | 0.372638 |
 | beds | parameters deoxo, guard, TSA |
-| regen_W | 1.08789 |
+| regen_W | 1.08784 |
 | loss_W | 37.9828 |
 | insulation_mm | 38 |
 | kW | 0.0205 |
@@ -46,7 +46,7 @@ Table 2.1. Design parameters
 
 The envelope is 600 mm x 400 mm x 1047 mm, from `params.size_mm`.
 
-The hold-up check takes 2.08514 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 2.085 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 140 mm in diameter and 200 mm high. It fits within the envelope.
+The hold-up check takes 2.08504 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 2.085 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 140 mm in diameter and 200 mm high. It fits within the envelope.
 
 ## 4. Material
 

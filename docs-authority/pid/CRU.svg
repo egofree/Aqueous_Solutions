@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="822" font-family="sans-serif">
-<rect x="4" y="4" width="1492" height="814" fill="white" stroke="#111"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="868" font-family="sans-serif">
+<rect x="4" y="4" width="1492" height="860" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit CRU · cru · sector DIGESTER · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 7 in + 3 out · valves 3 placed / 0 unplaced · instruments 5 (1 SIF) · nozzles 13</text>
+<text x="24" y="72" font-size="10.5">Edges 8 in + 3 out · valves 3 placed / 0 unplaced · instruments 5 (1 SIF) · nozzles 14</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -19,7 +19,7 @@
 <circle cx="40" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <circle cx="40" cy="172" r="11.5" fill="none" stroke="#111" stroke-width="0.9"/>
 <text x="40" y="175.5" font-size="7.5" text-anchor="middle">LSH-01</text>
-<text x="62" y="170" font-size="7">SIF-100 · SIL -</text>
+<text x="62" y="170" font-size="7">SIF-101 · SIL -</text>
 <text x="62" y="180" font-size="6.5" fill="#555">level high-high -&gt; close feed valve / stop f</text>
 <circle cx="198" cy="172" r="16" fill="white" stroke="#111" stroke-width="1.4"/>
 <text x="198" y="175.5" font-size="7.5" text-anchor="middle">LT-01</text>
@@ -33,7 +33,7 @@
 <text x="514" y="175.5" font-size="7.5" text-anchor="middle">TE-01</text>
 <text x="536" y="170" font-size="7">-20 to 150 C</text>
 <text x="536" y="180" font-size="6.5" fill="#555">4-20 mA HART (AI)</text>
-<rect x="590" y="210" width="320" height="352" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
+<rect x="590" y="210" width="320" height="398" rx="10" fill="#f6f6f6" stroke="#111" stroke-width="2"/>
 <text x="750.0" y="236" font-size="15" font-weight="700" text-anchor="middle">CRU</text>
 <text x="750.0" y="252" font-size="9.5" text-anchor="middle">cru · DIGESTER sector</text>
 <line x1="430" y1="240" x2="577" y2="240" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
@@ -42,42 +42,48 @@
 <text x="24" y="235" font-size="11" font-weight="600" text-anchor="start">AL_POT_CL2</text>
 <text x="24" y="253" font-size="10" text-anchor="start">0.0 kg/d · DN15 P3</text>
 <text x="598" y="244" font-size="8" font-style="italic" fill="#555" text-anchor="start">N7</text>
-<line x1="430" y1="286" x2="577" y2="286" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-in"/>
-<polygon points="586,286 577,282 577,290" fill="#999"/>
-<text x="24" y="267" font-size="9" fill="#666" text-anchor="start">MG_POT</text>
-<text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">MG_POT_CL2</text>
-<text x="24" y="299" font-size="10" text-anchor="start">0.0 kg/d · not in line list · absent</text>
-<text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N8</text>
-<line x1="430" y1="332" x2="577" y2="332" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
-<polygon points="586,332 577,328 577,336" fill="#111"/>
-<text x="24" y="313" font-size="9" fill="#666" text-anchor="start">MO_CELL</text>
-<text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">MO_CELL_ANODE_GAS_TO_CRU</text>
-<text x="24" y="345" font-size="10" text-anchor="start">0.0 kg/d · DN15 P3</text>
-<text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N6</text>
-<line x1="430" y1="378" x2="577" y2="378" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<line x1="430" y1="286" x2="577" y2="286" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<polygon points="586,286 577,282 577,290" fill="#111"/>
+<text x="24" y="267" font-size="9" fill="#666" text-anchor="start">RESIST_SYN</text>
+<text x="24" y="281" font-size="11" font-weight="600" text-anchor="start">IA-RESIST-HCL</text>
+<text x="24" y="299" font-size="10" text-anchor="start">0.0 kg/d · DN15 P1</text>
+<text x="598" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="start">N14</text>
+<line x1="430" y1="332" x2="577" y2="332" stroke="#999" stroke-width="1.4" stroke-dasharray="4,4" class="edge-in"/>
+<polygon points="586,332 577,328 577,336" fill="#999"/>
+<text x="24" y="313" font-size="9" fill="#666" text-anchor="start">MG_POT</text>
+<text x="24" y="327" font-size="11" font-weight="600" text-anchor="start">MG_POT_CL2</text>
+<text x="24" y="345" font-size="10" text-anchor="start">0.0 kg/d · not in line list · absent</text>
+<text x="598" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="start">N8</text>
+<line x1="430" y1="378" x2="577" y2="378" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
 <polygon points="586,378 577,374 577,382" fill="#111"/>
-<text x="24" y="359" font-size="9" fill="#666" text-anchor="start">ACID_POLISH_SCRUB</text>
-<text x="24" y="373" font-size="11" font-weight="600" text-anchor="start">S66</text>
-<text x="24" y="391" font-size="10" text-anchor="start">27.4 kg/d · DN15 P2</text>
-<text x="598" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
+<text x="24" y="359" font-size="9" fill="#666" text-anchor="start">MO_CELL</text>
+<text x="24" y="373" font-size="11" font-weight="600" text-anchor="start">MO_CELL_ANODE_GAS_TO_CRU</text>
+<text x="24" y="391" font-size="10" text-anchor="start">0.0 kg/d · DN15 P3</text>
+<text x="598" y="382" font-size="8" font-style="italic" fill="#555" text-anchor="start">N6</text>
 <line x1="430" y1="424" x2="577" y2="424" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,424 577,420 577,428" fill="#111"/>
-<text x="24" y="405" font-size="9" fill="#666" text-anchor="start">TFE_SYN</text>
-<text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">TFE_HCL_TO_CRU</text>
-<text x="24" y="437" font-size="10" text-anchor="start">0.3 kg/d · DN15 —</text>
-<text x="598" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="start">N11</text>
-<line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
+<text x="24" y="405" font-size="9" fill="#666" text-anchor="start">ACID_POLISH_SCRUB</text>
+<text x="24" y="419" font-size="11" font-weight="600" text-anchor="start">S66</text>
+<text x="24" y="437" font-size="10" text-anchor="start">27.4 kg/d · DN15 P2</text>
+<text x="598" y="428" font-size="8" font-style="italic" fill="#555" text-anchor="start">N1</text>
+<line x1="430" y1="470" x2="577" y2="470" stroke="#111" stroke-width="1.6" class="edge-in"/>
 <polygon points="586,470 577,466 577,474" fill="#111"/>
-<text x="24" y="451" font-size="9" fill="#666" text-anchor="start">TI_CELL</text>
-<text x="24" y="465" font-size="11" font-weight="600" text-anchor="start">TI_CELL_CL2_TO_CRU</text>
-<text x="24" y="483" font-size="10" text-anchor="start">0.0 kg/d · DN15 P3</text>
-<text x="598" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="start">N5</text>
-<line x1="430" y1="516" x2="577" y2="516" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<text x="24" y="451" font-size="9" fill="#666" text-anchor="start">TFE_SYN</text>
+<text x="24" y="465" font-size="11" font-weight="600" text-anchor="start">TFE_HCL_TO_CRU</text>
+<text x="24" y="483" font-size="10" text-anchor="start">0.3 kg/d · DN15 —</text>
+<text x="598" y="474" font-size="8" font-style="italic" fill="#555" text-anchor="start">N11</text>
+<line x1="430" y1="516" x2="577" y2="516" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-in"/>
 <polygon points="586,516 577,512 577,520" fill="#111"/>
-<text x="24" y="497" font-size="9" fill="#666" text-anchor="start">VDF_SYN</text>
-<text x="24" y="511" font-size="11" font-weight="600" text-anchor="start">VDF_HCL_TO_CRU</text>
-<text x="24" y="529" font-size="10" text-anchor="start">0.4 kg/d · DN15 —</text>
-<text x="598" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
+<text x="24" y="497" font-size="9" fill="#666" text-anchor="start">TI_CELL</text>
+<text x="24" y="511" font-size="11" font-weight="600" text-anchor="start">TI_CELL_CL2_TO_CRU</text>
+<text x="24" y="529" font-size="10" text-anchor="start">0.0 kg/d · DN15 P3</text>
+<text x="598" y="520" font-size="8" font-style="italic" fill="#555" text-anchor="start">N5</text>
+<line x1="430" y1="562" x2="577" y2="562" stroke="#111" stroke-width="1.6" class="edge-in"/>
+<polygon points="586,562 577,558 577,566" fill="#111"/>
+<text x="24" y="543" font-size="9" fill="#666" text-anchor="start">VDF_SYN</text>
+<text x="24" y="557" font-size="11" font-weight="600" text-anchor="start">VDF_HCL_TO_CRU</text>
+<text x="24" y="575" font-size="10" text-anchor="start">0.4 kg/d · DN15 —</text>
+<text x="598" y="566" font-size="8" font-style="italic" fill="#555" text-anchor="start">N12</text>
 <line x1="914" y1="240" x2="1061" y2="240" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,240 1061,236 1061,244" fill="#111"/>
 <text x="1476" y="221" font-size="9" fill="#666" text-anchor="end">TFE_SYN</text>
@@ -104,15 +110,15 @@
 <text x="1032.6" y="321.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <circle cx="995.12" cy="332" r="12" fill="white" stroke="#111" stroke-width="1.3"/>
 <text x="995.12" y="335" font-size="7" text-anchor="middle">FT-01</text>
-<text x="24" y="612" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="622" font-size="9">Every incident graph edge is drawn: 7 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
-<text x="24" y="637" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/CRU.csv.</text>
-<text x="24" y="652" font-size="9">Nozzles with no matching graph edge (service text): N3 drain; N4 vent; N13 impurity chlorides and silicon tetrachloride bleed</text>
-<text x="24" y="667" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
-<g id="aqs-title-block"><rect x="1116" y="704" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
-<text x="1124" y="721" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRU</text>
-<text x="1124" y="738" font-size="9">P&amp;ID CRU (cru, DIGESTER sector)</text>
-<text x="1124" y="755" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 025702f0   Issued 2026-10-19</text>
-<text x="1124" y="772" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="789" font-size="9">Graph SHA-256 8f23d7d46094ce9f   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="24" y="658" font-size="10" font-weight="600">Notes</text>
+<text x="24" y="668" font-size="9">Every incident graph edge is drawn: 8 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="683" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/CRU.csv.</text>
+<text x="24" y="698" font-size="9">Nozzles with no matching graph edge (service text): N3 drain; N4 vent; N13 impurity chlorides and silicon tetrachloride bleed</text>
+<text x="24" y="713" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
+<g id="aqs-title-block"><rect x="1116" y="750" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
+<text x="1124" y="767" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-CRU</text>
+<text x="1124" y="784" font-size="9">P&amp;ID CRU (cru, DIGESTER sector)</text>
+<text x="1124" y="801" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev dc4b6672   Issued 2026-10-19</text>
+<text x="1124" y="818" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
+<text x="1124" y="835" font-size="9">Graph SHA-256 53cde3c475e10dd6   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

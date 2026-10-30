@@ -228,3 +228,5 @@ HZ-226,NAOH_PLANT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duti
 HZ-227,NAOH_PLANT,flow,Reverse,check valve on the pumped inlet,X-PIP,open
 HZ-228,SOLV_PLANT,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-085 (AQS-CTL-003)
 HZ-229,SOLV_PLANT,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/SOLV_PLANT.md section 6 names the case or atmospheric statement (X-SAF-03 C7)
+HZ-230,RESIST_SYN,flow,No/Less,pump dry-run protection (low-flow or low-level interlock),X-CTL-03,closed by SIF-086 (AQS-CTL-003)
+HZ-231,RESIST_SYN,pressure,High,relief case,X-SAF-04,closed: docs-authority/duties/RESIST_SYN.md section 6 names the case or atmospheric statement (X-SAF-03 C7)

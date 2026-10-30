@@ -17,35 +17,35 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 196 units, 143 have an issued material for each wetted stream, 53 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 343 wetted stream ends, and each resolves to an issued service family.
+Of the 197 units, 144 have an issued material for each wetted stream, 53 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 360 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
 
 The following service families of AQS-STD-002 are used, with the number of stream ends in each.
 
-- Acid or brine, at or below 60 C: 53 stream ends.
-- Hot leach liquor: 46 stream ends.
+- Acid or brine, at or below 60 C: 55 stream ends.
+- Hot leach liquor: 47 stream ends.
+- Process vent gas: 44 stream ends.
 - Dry gas, H2/O2/N2/CO2: 43 stream ends.
-- Process vent gas: 39 stream ends.
-- Hydrocarbon product, fuel or wax cut: 19 stream ends.
+- Hydrocarbon product, fuel or wax cut: 22 stream ends.
+- Aqueous process liquor (AQS-ASSAY-001 envelope): 19 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
-- Aqueous process liquor (AQS-ASSAY-001 envelope): 17 stream ends.
-- Wet acid H₂ + sweep air header: 15 stream ends.
+- Wet acid H₂ + sweep air header: 16 stream ends.
 - Oxidizer, wet HF or PVDF unit: 13 stream ends.
+- Wet methanol service: 13 stream ends.
 - Q1/Q2 thermal oil: 12 stream ends.
-- Wet methanol service: 12 stream ends.
 - Water loops (protective, irrigation, UPW): 12 stream ends.
+- Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 11 stream ends.
 - Flue or acid gas: 10 stream ends.
-- Fluoro synthesis train (HF_GEN, VDF_SYN, TFE_SYN, POLY_F, F_RECOVER and their dry monomer/Cl₂ legs): 10 stream ends.
 - Alkaline (NaOH/KOH base liquor): 7 stream ends.
 - Molten metal launder/pour (S57, IND_MELT and VAC_IND melt pours): 7 stream ends.
 - Alkaline silica slurry: 3 stream ends.
 - CaCl₂/MgCl₂ brine concentrates to molten-salt pots (ambient import legs, NORTH_DOCK to MG_POT and CA_POT): 3 stream ends.
+- Organic liquid (solvent make-up): 2 stream ends.
 - Propylene-glycol ground loop: 1 stream ends.
 - Flue quench water: 1 stream ends.
 - Molten MgCl₂ salt return (TI_CELL Kroll retort to MG_POT, ~700 °C): 1 stream ends.
-- Organic liquid (solvent make-up): 1 stream ends.
 
 ## 4. Selections by unit
 
@@ -59,6 +59,7 @@ Each subsection lists the wetted streams of one unit with their class, service f
 | IA-ACID-H2O | GW_INTAKE | ACID_PLANT | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 | IA-ACID-CO2 | ACID_PLANT | ATMOS | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-H2SO4-ACID | ACID_PLANT | HF_GEN | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
+| IA-RESIST-ACID | ACID_PLANT | RESIST_SYN | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 
 ### ACID_POLISH_SCRUB
 
@@ -115,6 +116,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | AL_POT_CL2 | AL_POT | CRU | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-CL2-SHIP | AL_POT | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-CL2-SIREF | AL_POT | SI_REFINE | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-RESIST-CL2 | AL_POT | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### ATM_INT
 
@@ -258,6 +260,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | VDF_HCL_TO_CRU | VDF_SYN | CRU | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
 | TFE_HCL_TO_CRU | TFE_SYN | CRU | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
+| IA-RESIST-HCL | RESIST_SYN | CRU | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 
 ### CRYO_AHU
 
@@ -737,6 +740,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-EW8-H2B | EW_8 | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-NAOH-H2 | NAOH_PLANT | HDR_H2 | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 | IA-SOLV-H2 | HDR_H2 | SOLV_PLANT | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
+| IA-RESIST-H2 | HDR_H2 | RESIST_SYN | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
 
 ### HDR_N2
 
@@ -879,6 +883,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-LEACH-ASU | LEACH_CSTR_1 | CRYO_ASU | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-SI-PURGE | SI_REFINE | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-NA-RECYCLE | LEACH_CSTR_1 | NAOH_PLANT | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
+| IA-RESIST-BRINE | RESIST_SYN | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 
 ### LIO_BAT
 
@@ -969,6 +974,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | MEOH_TO_VDF | MEOH_TANK | VDF_SYN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | MEOH_TO_TFE | MEOH_TANK | TFE_SYN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 | IA-SOLV-MEOH | MEOH_TANK | SOLV_PLANT | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
+| IA-RESIST-MEOH | MEOH_TANK | RESIST_SYN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
 
 ### METAL_STORE
 
@@ -1098,6 +1104,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | WAX_TO_OIL | SHELL_BURNOUT | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | OIL_TO_OLEFIN | OIL_FRAC | POLY_OLEFIN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-RESIST-RAFF | RESIST_SYN | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 
 ### OIL_PYRO
 
@@ -1151,6 +1158,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | FLUORO_TO_MFG | POLY_STOCK | MFG_SHOP | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
+| IA-RESIST-STOCK | RESIST_SYN | POLY_STOCK | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
 
 ### POWDER_RESIN
 
@@ -1162,6 +1170,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 |---|---|---|---|---|---|
 | CUT-2 | OIL_FRAC | PROD_C11_C18 | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-C11-SHIP | PROD_C11_C18 | NORTH_DOCK | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-RESIST-NAPH | PROD_C11_C18 | RESIST_SYN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 
 ### PROD_C19_C28
 
@@ -1188,6 +1197,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | CUT-1-OUT | PROD_C5_C10 | BACKUP_GEN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 | IA-C5-POLY | PROD_C5_C10 | POLY_OLEFIN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-RESIST-BZ | PROD_C5_C10 | RESIST_SYN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
 
 ### PROD_MEOH
 
@@ -1342,6 +1352,26 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-UPW-REMIN | BMED_UPW_POLISH | REMIN | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-POT-01 | REMIN | ROOF_TANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 
+### RESIST_SYN
+
+| Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
+|---|---|---|---|---|---|
+| IA-RESIST-BZ | PROD_C5_C10 | RESIST_SYN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-RESIST-NAPH | PROD_C11_C18 | RESIST_SYN | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-RESIST-RAFF | RESIST_SYN | OIL_FRAC | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-RESIST-MEOH | MEOH_TANK | RESIST_SYN | M1 | 12.1 wet methanol service | 316L: MEOH_TANK duty ("316L if the stream is wet"), MEOH_SYNTH shell 316L (API 941, 50 bar a, 250 °C synthesis study) |
+| IA-RESIST-NH3 | WS_AMMONIA | RESIST_SYN | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+| IA-RESIST-H2 | HDR_H2 | RESIST_SYN | P1 | 12.1 wet acid h2 + sweep air header | PVC-U, bonded (AQS-REV-H2-001 M3 |
+| IA-RESIST-CO | TI_CELL | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-RESIST-CL2 | AL_POT | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-RESIST-ACID | ACID_PLANT | RESIST_SYN | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
+| IA-RESIST-ACET | WS_SOLV | RESIST_SYN | M1 | 12.1 organic liquid (solvent make-up) | 316L where wet per the WS_SOLV duty |
+| IA-RESIST-AIR | ATMOS | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-RESIST-VENT | RESIST_SYN | ATMOS | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-RESIST-HCL | RESIST_SYN | CRU | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+| IA-RESIST-BRINE | RESIST_SYN | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
+| IA-RESIST-STOCK | RESIST_SYN | POLY_STOCK | — | 12.2 fluoro synthesis train (hf_gen, vdf_syn, tfe_syn, poly_f, f_recover and their dry monomer/cl2 legs) | HF_GEN carbon steel shell, dry HF (PERRY9_MAT), Monel trunnions |
+
 ### RES_HEAT
 
 This unit has no wetted piped stream: every edge is a solids transfer or an electrical connection. Its construction material is set by its fabrication route and bill of materials, which AQS-END-002 tracks, not by a wetted selection.
@@ -1468,6 +1498,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-CL2-MG-TI | MG_POT | TI_CELL | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-KROLL-CO | TI_CELL | NORTH_DOCK | P3 | 12.1 process vent gas | PVDF (P3) |
 | IA-SOLV-CO | TI_CELL | SOLV_PLANT | P3 | 12.1 process vent gas | PVDF (P3) |
+| IA-RESIST-CO | TI_CELL | RESIST_SYN | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### VAC_CAST
 
@@ -1517,6 +1548,8 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-FAB-SPENT | WAFER_FAB | LEACH_CSTR_1 | P2 | 12.1 hot leach liquor | CPVC Sch 80 (M5 limit 93 °C, operated ≤ 88 °C) |
 | IA-AR-CZ | CRYO_ASU | WAFER_FAB | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
 | IA-AR-CZ-BACK | WAFER_FAB | CRYO_ASU | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
+| IA-FAB-SOLV | WS_SOLV | WAFER_FAB | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
+| IA-FAB-N2-VENT | WAFER_FAB | ATMOS | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### WAX_PATTERN
 
@@ -1557,6 +1590,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 |---|---|---|---|---|---|
 | S33 | WS_AMMONIA | WET_BENCH | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-NH3-SRC | HDR_N2 | WS_AMMONIA | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
+| IA-RESIST-NH3 | WS_AMMONIA | RESIST_SYN | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 
 ### WS_DOPE
 
@@ -1614,6 +1648,8 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 |---|---|---|---|---|---|
 | IA-SOLV-WB | WS_SOLV | WET_BENCH | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | M1 | 12.1 organic liquid (solvent make-up) | 316L where wet per the WS_SOLV duty |
+| IA-RESIST-ACET | WS_SOLV | RESIST_SYN | M1 | 12.1 organic liquid (solvent make-up) | 316L where wet per the WS_SOLV duty |
+| IA-FAB-SOLV | WS_SOLV | WAFER_FAB | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 
 ### ZNBR2
 

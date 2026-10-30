@@ -56,7 +56,7 @@ def _duty(d, T, loss_W, proc_W, feed_kg_d, acid_kg_d):
                 kw_avg=kw_avg, kw_peak=kw_peak, kw_continuous=kw_cont, cake_store_kg=feed_kg_d*N, acid_store_kg=acid_kg_d*N,
                 acid_store_L=acid_kg_d*N/v('acid_store_rho_kg_m3')*1000)
 
-def design(acid_soln, caf2_conv, cake, d=None, spar=None):
+def design(acid_soln, caf2_conv, cake, d=None, spar=None, extra_acid=0.0):
     """Acid plant at the HF kiln demand. All the acid sulfur leaves HF_GEN in its cake, as anhydrite (one CaSO4 per CaF2
     converted) and as the free acid of the stoichiometric excess. On GYPSUM_LOOP the cake kiln reduces the fraction
     caso4_dec_frac of both with char, recovering that sulfur first (owner rule t61u); sulfur ore covers only the rest.
@@ -69,17 +69,18 @@ def design(acid_soln, caf2_conv, cake, d=None, spar=None):
     n_anh = min(caf2_conv/M_CAF2, n_acid); n_free = n_acid - n_anh  # anhydrite and free acid in the cake, kmol/d
     f = v('caso4_dec_frac') if route == 'GYPSUM_LOOP' else 0.0
     r_anh, r_free = f*n_anh, f*n_free; n_dec = r_anh + r_free     # sulfur recovered as SO2, kmol/d
-    n_s = n_acid - n_dec                                          # sulfur ore top-up, kmol/d
+    n_x = extra_acid*wt/M_H2SO4                                   # acid for the resist sulfonation (A-M-432); its sulfur leaves in the resist
+    n_s = n_acid - n_dec + n_x                                    # sulfur ore top-up, kmol/d
     fc = v('char_fixed_C_frac'); char = 0.5*n_dec*M_C/fc          # CaSO4 or H2SO4 + 1/2 C -> SO2 + 1/2 CO2 (+ CaO or H2O)
     co2 = 0.5*n_dec*M_CO2 + char*(1 - fc)                         # char volatiles and ash leave with the kiln gas (A-M-420 basis)
     vap = r_free*M_H2O                                            # water of the reduced free acid
     residue = (cake - r_anh*(M_CASO4 - M_CAO) - r_free*M_H2SO4) if route == 'GYPSUM_LOOP' else 0.0
     ship = cake if route == 'SULFUR_ORE' else 0.0
     sulfur = n_s*M_S
-    o2 = n_s*M_O2 + 0.5*n_acid*M_O2                               # sulfur burning + SO2 oxidation
-    h2o = n_acid*M_H2O + water_dil
+    o2 = n_s*M_O2 + 0.5*(n_acid + n_x)*M_O2                               # sulfur burning + SO2 oxidation
+    h2o = n_acid*M_H2O + water_dil + n_x*M_H2O + extra_acid*(1 - wt)
     feed_in = (cake if route == 'GYPSUM_LOOP' else 0.0) + char + o2 + h2o + sulfur
-    assert abs(feed_in - acid_soln - residue - co2 - vap) < 1e-9, (feed_in, acid_soln + residue + co2 + vap)
+    assert abs(feed_in - acid_soln - extra_acid - residue - co2 - vap) < 1e-9, (feed_in, acid_soln + extra_acid + residue + co2 + vap)
     from .sizing import heat as HT
     kw = 0.0
     if n_dec > 0:
@@ -100,7 +101,8 @@ def design(acid_soln, caf2_conv, cake, d=None, spar=None):
                 cake_kg_d=cake if route == 'GYPSUM_LOOP' else 0.0, residue_kg_d=residue, ship_kg_d=ship, co2_kg_d=co2 + vap,
                 co2_only_kg_d=co2, s_recovered_frac=n_dec/n_acid if n_acid else 0.0, kw=kw, residue_comp=comp,
                 cao_kg_d=r_anh*M_CAO, caf2_left_kg_d=caf2_left,
-                s_need_kg_d=n_acid*M_S, s_recovered_kg_d=n_dec*M_S, s_ore_kg_d=n_s*M_S)
+                s_need_kg_d=(n_acid + n_x)*M_S, s_recovered_kg_d=n_dec*M_S, s_ore_kg_d=n_s*M_S,
+                extra_acid_kg_d=extra_acid, s_resist_kg_d=n_x*M_S)
 
 STREAMS = (('IA-SULFUR-MU', 'NORTH_DOCK', 'ACID_PLANT', 'native sulfur (raw ore) for the acid plant', 'S', {'S': 1.0}, 'sulfur_kg_d'),
            ('IA-GYPSUM-REGEN', 'HF_GEN', 'ACID_PLANT', 'HF kiln anhydrite cake to the sulfur-recovery kiln', 'S', {'CaSO4': 1.0}, 'cake_kg_d'),
@@ -113,7 +115,8 @@ STREAMS = (('IA-SULFUR-MU', 'NORTH_DOCK', 'ACID_PLANT', 'native sulfur (raw ore)
 
 def tf(g, E, r_fluoro, d=None):
     from flow_graph.param.o2_close import _edge, _node
-    r = design(r_fluoro['acid_soln'], r_fluoro['caf2_conv'], r_fluoro['cake'], d, spar=r_fluoro['spar'])
+    xa = E.get('IA-RESIST-ACID'); xa = float(xa['rate']['value'] or 0) if xa is not None and xa.get('presence') != 'retired' else 0.0
+    r = design(r_fluoro['acid_soln'], r_fluoro['caf2_conv'], r_fluoro['cake'], d, spar=r_fluoro['spar'], extra_acid=xa)
     N = {n['unit_id']: n for n in g['nodes']}
     lt = E.get('IA-LIME-TO-NAOH'); draw = float(lt['rate']['value'] or 0) if lt is not None and lt.get('presence') != 'retired' else 0.0
     assert draw <= r['residue_kg_d'] + 1e-9, (draw, r['residue_kg_d'])
@@ -143,12 +146,14 @@ def tf(g, E, r_fluoro, d=None):
     split = (lambda kg: [(sid, kg*x) for sid, x in (('IA-LIME-SHIP', r['ship_residue_kg_d']), ('IA-NAOH-RESIDUE', draw)) if x > 0]) \
         if r['route'] == 'GYPSUM_LOOP' else (lambda kg: [('IA-GYPSUM-SHIP', kg)])
     tot = r['residue_kg_d'] if r['route'] == 'GYPSUM_LOOP' else 1.0
-    s_rec = dict(element='S', use='sulfuric acid for the HF kiln', need_kg_d=r['s_need_kg_d'], recovered_kg_d=r['s_recovered_kg_d'],
+    s_rec = dict(element='S', use='sulfuric acid for the HF kiln and the resist', need_kg_d=r['s_need_kg_d'], recovered_kg_d=r['s_recovered_kg_d'],
                  recovered_from=['IA-GYPSUM-REGEN'] if r['s_recovered_kg_d'] > 0 else [], ore_streams=['IA-SULFUR-MU'],
                  unrecovered=[dict(stream=sid, kg_d=round(kg/tot, 6), recoverable=r['route'] != 'GYPSUM_LOOP',
                                    basis=('cake-kiln non-conversion (caso4_dec_frac) leaves with the residue' if r['route'] == 'GYPSUM_LOOP'
                                           else 'SULFUR_ORE ships the cake: its sulfur is recoverable on GYPSUM_LOOP'))
-                              for sid, kg in split(r['s_need_kg_d'] - r['s_recovered_kg_d'])])
+                              for sid, kg in split(r['s_need_kg_d'] - r['s_recovered_kg_d'] - r['s_resist_kg_d'])]
+                             + ([dict(stream='IA-RESIST-ACID', kg_d=round(r['s_resist_kg_d'], 6), recoverable=False,
+                                      basis='sulfur bound in the photoresist ester; it leaves the still bottoms with the oil cut (A-M-432)')] if r['s_resist_kg_d'] > 0 else []))
     N['ACID_PLANT'].setdefault('params', {})['recovery'] = [s_rec]
     M_HF, M_F = 20.006, 18.998
     f_left = r['caf2_left_kg_d']*2*M_F/M_CAF2

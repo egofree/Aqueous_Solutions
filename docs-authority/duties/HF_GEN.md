@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 2.249 kg/d. Mass out 2.249 kg/d. Electrical duty 0.3083 kW. In: F_RECOVER_TO_HF_GEN 1.52 kg/d (fluoride concentrate); IA-CAF2-MU 0.3255 kg/d (fluorspar make-up, acid-spar class >= 97 % CaF2); IA-H2SO4-ACID 0.4038 kg/d (98 wt% sulfuric acid to the HF kiln). Out: HF_GEN_TO_VDF 0.09374 kg/d (aqueous HF); HF_GEN_TO_TFE 0.08002 kg/d (aqueous HF); IA-HF-PROD 1.5 kg/d (aqueous HF to the fab reagent fork); IA-GYPSUM-REGEN 0.5756 kg/d (HF kiln anhydrite cake to the sulfur-recovery kiln).
+1. Basis. Mass in 2.249 kg/d. Mass out 2.249 kg/d. Electrical duty 0.3083 kW. In: F_RECOVER_TO_HF_GEN 1.52 kg/d (fluoride concentrate); IA-CAF2-MU 0.3255 kg/d (fluorspar make-up, acid-spar class >= 97 % CaF2); IA-H2SO4-ACID 0.4038 kg/d (98 wt% sulfuric acid to the HF kiln). Out: HF_GEN_TO_VDF 0.09391 kg/d (aqueous HF); HF_GEN_TO_TFE 0.07984 kg/d (aqueous HF); IA-HF-PROD 1.5 kg/d (aqueous HF to the fab reagent fork); IA-GYPSUM-REGEN 0.5756 kg/d (HF kiln anhydrite cake to the sulfur-recovery kiln).
 
 2. Size.
 - Envelope 1200×700×1500 mm, 1.26 m³. That box over this flow would be 13444.1 h if it were full. It is not a residence time.

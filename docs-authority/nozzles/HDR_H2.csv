@@ -17,3 +17,4 @@ N15,DN15,Class 150,cathode H2 to the H2 pool,inlet,160
 N16,DN15,Class 150,cathode H2 to the H2 pool,inlet,160
 N17,DN15,Class 150,chlor-alkali cathode hydrogen to the H2 header,inlet,160
 N18,DN15,Class 150,header hydrogen for the acetic acid hydrogenation,outlet,600
+N19,DN15,Class 150,header hydrogen for the nitroso reduction,outlet,600

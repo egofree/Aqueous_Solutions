@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope per duty sheet section 2 (not yet dimensioned),1,"316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed.",docs-authority/duties/SOLV_PLANT.md
-2,Process nozzle DN15,7,"316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed.",one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,8,"316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed.",one per mass edge; DN from AQS-INV-003
 3,"Motor: transfer pump IA-SOLV-BTMS to OIL_FRAC (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: transfer pump IA-SOLV-PLANT to WS_SOLV (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004

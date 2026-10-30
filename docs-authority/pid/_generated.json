@@ -1,6 +1,6 @@
 {
  "generated_by": "docs-authority/_pid_sheets.py",
- "graph_sha256": "8f23d7d46094ce9f09fa752ead4a76d12dc5282bc32fe237e88d730712c241b7",
+ "graph_sha256": "53cde3c475e10dd650ae9708b5611ccf6c88c1ca606279fb7124e80398e8f076",
  "patterns": [
   "docs-authority/pid/*"
  ],
@@ -147,6 +147,7 @@
   "RELIEF_CRYO",
   "RELIEF_H2",
   "REMIN",
+  "RESIST_SYN",
   "RES_HEAT",
   "RF_HEAT",
   "ROLL",

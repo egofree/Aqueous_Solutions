@@ -66,3 +66,4 @@ N64,DN15,Class 150,sodium chloride bleed of the leach purge (impurity bleed),out
 N65,DN15,Class 150,sodium chloride of the leach purge recovered to the cell brine,outlet,600
 N66,solids,Class 150,grit gangue and unreacted oxide back to the leach,inlet,160
 N67,solids,Class 150,grit gangue and unreacted oxide back to the leach,inlet,160
+N68,DN15,Class 150,"reaction water, acid water and ammonium chloride",inlet,160

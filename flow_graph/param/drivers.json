@@ -5297,6 +5297,102 @@
   "units": "- chlorine source of the VDF and TFE reactors: HCL_OX (CRU oxidises the returned dilute HCl with the chlorate liquor, the halogen loop closes internally) or POT (the AL_POT byproduct chlorine on AL_POT_CL2, the HCl returns pass to the leach)",
   "register": "A-M-431"
  },
+ "fab_resist_route": {
+  "value": "DNQ_NOVOLAC",
+  "units": "- photoresist chemistry made by RESIST_SYN: DNQ_NOVOLAC (positive diazonaphthoquinone-novolac, aqueous TMAH/KOH develop). The negative cyclised-polyisoprene/bis-azide class waits on X-RTE-RESIST-ISOPRENE and X-RTE-RESIST-AZIDE",
+  "register": "A-M-432"
+ },
+ "fab_mask_layers": {
+  "value": 8,
+  "units": "mask layers per wafer of the fab process, i.e. resist coats per wafer start",
+  "register": "A-M-432",
+  "needs_verification": true,
+  "verification_test": "mask count of the issued fab process sheet"
+ },
+ "fab_resist_mL_per_coat": {
+  "value": 3.0,
+  "units": "mL resist solution dispensed per coat on a 150 mm wafer, static dispense (MOREAU1988)",
+  "register": "A-M-432"
+ },
+ "fab_resist_solids_frac": {
+  "value": 0.25,
+  "units": "mass fraction resin solids in the positive resist solution, 20-30 % for DNQ-novolac resists (DAMMEL1993)",
+  "register": "A-M-432"
+ },
+ "fab_resist_dnq_wt": {
+  "value": 0.2,
+  "units": "mass fraction of the bound DNQ-5-sulfonyl moiety in the resist solids, the 15-25 % photoactive loading of DNQ-novolac resists (DAMMEL1993)",
+  "register": "A-M-432"
+ },
+ "fab_resist_rho_kg_m3": {
+  "value": 1000.0,
+  "units": "kg/m3 resist solution density in diacetone alcohol",
+  "register": "A-M-432"
+ },
+ "fab_ebr_mL_per_coat": {
+  "value": 2.0,
+  "units": "mL acetone edge-bead and backside rinse per coat (MOREAU1988)",
+  "register": "A-M-432"
+ },
+ "fab_strip_mL_per_coat": {
+  "value": 5.0,
+  "units": "mL acetone to strip the positive resist after each pattern step (MOREAU1988)",
+  "register": "A-M-432"
+ },
+ "acetone_rho_kg_m3": {
+  "value": 784.0,
+  "units": "kg/m3 acetone density at 25 C",
+  "register": "A-M-432"
+ },
+ "novolac_fp_ratio": {
+  "value": 0.8,
+  "units": "mol formaldehyde per mol phenol in the acid-catalysed novolac, 0.75-0.85 (DAMMEL1993)",
+  "register": "A-M-432"
+ },
+ "oil_c5c10_benzene_frac": {
+  "value": 0.02,
+  "units": "mass fraction benzene in the C5-C10 cut of the plastics pyrolysis oil (SU2018_PYRO)",
+  "register": "A-M-432",
+  "needs_verification": true,
+  "verification_test": "aromatics assay of the C5-C10 cut"
+ },
+ "oil_c11c18_naphthalene_frac": {
+  "value": 0.01,
+  "units": "mass fraction naphthalene in the C11-C18 cut of the plastics pyrolysis oil (SU2018_PYRO)",
+  "register": "A-M-432",
+  "needs_verification": true,
+  "verification_test": "aromatics assay of the C11-C18 cut"
+ },
+ "aromatic_extract_recovery": {
+  "value": 0.9,
+  "units": "fraction of the cut aromatic recovered by the solvent extraction and distillation (ULLMANN_PHENOL feed preparation class)",
+  "register": "A-M-432"
+ },
+ "formox_meoh_vol_frac": {
+  "value": 0.08,
+  "units": "mole fraction methanol in air at the formaldehyde oxidation feed, below the lower explosive limit (ULLMANN_FORMALDEHYDE)",
+  "register": "A-M-432"
+ },
+ "ostwald_nh3_vol_frac": {
+  "value": 0.1,
+  "units": "mole fraction ammonia in air at the ammonia oxidation feed (ULLMANN_NITRIC)",
+  "register": "A-M-432"
+ },
+ "resist_rx_T_C": {
+  "value": 100.0,
+  "units": "C batch temperature for the RESIST_SYN heating load (novolac condensation near reflux)",
+  "register": "A-M-432"
+ },
+ "resist_cp_kJ_kgK": {
+  "value": 2.0,
+  "units": "kJ/(kg K) heat capacity of the organic batch feeds",
+  "register": "A-M-432"
+ },
+ "resist_heater_eff": {
+  "value": 0.7,
+  "units": "fraction of the electric batch heat that reaches the batch (A-M-157 convention)",
+  "register": "A-M-432"
+ },
  "HEAT.heat-battery-train.hb_oil_hold_kWh_th": {
   "value": 10,
   "units": "kWh_th sensible hold per oil store",

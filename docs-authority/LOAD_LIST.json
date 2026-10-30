@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "8f23d7d46094ce9f09fa752ead4a76d12dc5282bc32fe237e88d730712c241b7",
+  "graph_sha256": "53cde3c475e10dd650ae9708b5611ccf6c88c1ca606279fb7124e80398e8f076",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 351.85,
-   "calc_kw": 351.85,
+   "kw": 351.873,
+   "calc_kw": 351.873,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 218.023,
-   "calc_kw": 218.023,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 991.0 kW, 3052 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 218.053,
+   "calc_kw": 218.053,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.1 kW, charge 991.1 kW, 3053 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -754,7 +754,16 @@
   {
    "unit": "SOLV_PLANT",
    "role": "\u2014",
-   "kw": 0.01,
+   "kw": 0.03,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "FAB"
+  },
+  {
+   "unit": "RESIST_SYN",
+   "role": "\u2014",
+   "kw": 0.004,
    "calc_kw": null,
    "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
    "class": "pending",
@@ -871,18 +880,18 @@
  ],
  "summary": {
   "calculated": 80,
-  "pending": 3,
+  "pending": 4,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 96,
-  "graph_sum_kW": 156.1,
-  "calc_sum_kW": 156.1,
+  "rows": 97,
+  "graph_sum_kW": 156.13,
+  "calc_sum_kW": 156.13,
   "connected_load_kW": 156.1,
   "connected_calculated_kW": 156.0,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 0.0,
-  "connected_calculated_pct": 100.0,
+  "connected_calculated_pct": 99.9,
   "by_sector": {
    "CRYO": {
     "calculated": 4
@@ -896,7 +905,7 @@
    },
    "FAB": {
     "calculated": 7,
-    "pending": 1
+    "pending": 2
    },
    "FARM": {
     "calculated": 1

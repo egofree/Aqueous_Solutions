@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 6.166 kg/d. Mass out 6.166 kg/d. Electrical duty 0.0000 kW. In: CUT-3 6.166 kg/d (fractionator cut). Out: WAX_TO_GREASE_CA 0.002445 kg/d (wax cut); WAX_TO_GREASE_LI 0 kg/d (wax cut); CUT-3-OUT 3.948 kg/d (C19-C28 from the tank); IA-C19-SHIP 2.016 kg/d (C19-C28 surplus shipped); 1 more.
+1. Basis. Mass in 6.166 kg/d. Mass out 6.166 kg/d. Electrical duty 0.0000 kW. In: CUT-3 6.166 kg/d (fractionator cut). Out: WAX_TO_GREASE_CA 0.002489 kg/d (wax cut); WAX_TO_GREASE_LI 0 kg/d (wax cut); CUT-3-OUT 3.948 kg/d (C19-C28 from the tank); IA-C19-SHIP 2.016 kg/d (C19-C28 surplus shipped); 1 more.
 
 2. Size.
 - V = (3.95/1000)×(168/24) = 0.0276 m³. 7 days of the cut.

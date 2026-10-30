@@ -17,7 +17,7 @@ This page records the size of unit VCD_TRAIN, of class `evaporator` in sector WT
 
 ## 2. Duty
 
-The unit takes 332.125 kg/d by 6 streams and gives 332.126 kg/d by 3 streams. Its continuous electrical load is 0.2353 kW.
+The unit takes 332.126 kg/d by 6 streams and gives 332.127 kg/d by 3 streams. Its continuous electrical load is 0.2353 kW.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -40,7 +40,7 @@ Table 2.1. Design parameters
 
 The envelope is 1400 mm x 600 mm x 1200 mm, from `params.size_mm`. Its basis is: L×W×H mm, issued envelope.
 
-The hold-up check takes 332.126 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 332.1 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 710 mm in diameter and 1060 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
+The hold-up check takes 332.127 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 332.1 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 710 mm in diameter and 1060 mm high. A full day of flow would not fit within the envelope, so the unit must hold less than a day; its duty sheet sets the working volume.
 
 ## 4. Material
 

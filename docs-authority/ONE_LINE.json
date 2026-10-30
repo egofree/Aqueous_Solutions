@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "8f23d7d46094ce9f09fa752ead4a76d12dc5282bc32fe237e88d730712c241b7",
+  "graph_sha256": "53cde3c475e10dd650ae9708b5611ccf6c88c1ca606279fb7124e80398e8f076",
   "generator": "docs-authority/_one_line.py"
  },
  "bus": {
-  "SOL_ARK 480 V": 223.1,
+  "SOL_ARK 480 V": 223.2,
   "MCC-1 480 V": 1.2,
   "PP-1 208/120 V": 0.4
  },
  "xf": 15,
- "gen": 361.86,
- "demand": 224.69
+ "gen": 361.88,
+ "demand": 224.72
 }

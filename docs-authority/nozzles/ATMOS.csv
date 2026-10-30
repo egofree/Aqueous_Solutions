@@ -10,3 +10,6 @@ N8,DN15,Class 150,carbon dioxide and water vapour of the trona calciner and lime
 N9,DN15,Class 150,carbon dioxide and water vapour of the cake kiln,inlet,160
 N10,DN15,Class 150,oxygen of the process air for the wax oxidation,outlet,600
 N11,DN15,Class 150,"water, carbon dioxide and light acids of the wax oxidation and saponification",inlet,160
+N12,DN15,Class 150,process air for the oxidations,outlet,600
+N13,DN15,Class 150,"oxidation off-gas: nitrogen, unused oxygen and carbon dioxide",inlet,160
+N14,DN15,Class 150,fab nitrogen purge exhaust,inlet,160

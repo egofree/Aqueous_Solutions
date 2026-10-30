@@ -91,6 +91,7 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | REMIN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | POLY_F | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | NOX_SCRUB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | SOLV_PLANT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_COAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | NUTRIENT_DOSE | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | EVAP_ACID_VS | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
@@ -100,9 +101,9 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | WIRE_DRAW | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | BMED_UPW_POLISH | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | POWDER_RESIN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
-| SOL_ARK 480 V | SOLV_PLANT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_DEV | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_ALIGN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | RESIST_SYN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | GREASE_CA | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_STUB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | VAC_IND | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |

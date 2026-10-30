@@ -17,7 +17,7 @@ This page gives the production plan of each pipe family in the pipe inventory AQ
 
 ## 2. Summary and rules
 
-The inventory has 21 families with 4,484.4 m of pipe in 259 lines. The pipe is delivered as 761 stock lengths of 6.096 m, with a cutting allowance of 150.9 m, which is 3.4 % of the installed length. The families need 742 elbows and 518 flange sets and have 2381 joints. Every figure is taken line by line from AQS-INV-003.
+The inventory has 21 families with 4,496.9 m of pipe in 260 lines. The pipe is delivered as 763 stock lengths of 6.096 m, with a cutting allowance of 150.5 m, which is 3.3 % of the installed length. The families need 745 elbows and 520 flange sets and have 2389 joints. Every figure is taken line by line from AQS-INV-003.
 
 The following rules apply to every family.
 
@@ -34,7 +34,7 @@ Table 3.1. Pipe families
 
 | Family | Class | DN | Material | Pipe m | Lines | Stock 6.096 m | Offcut m | Joints | WPS |
 |---|---|---|---|---|---|---|---|---|---|
-| PF-01 | P1 | 15 | PVC-U Sch 80 ASTM D1785 | 1024.4 | 62 | 171 | 17.3 | 553 | WPS-06 |
+| PF-01 | P1 | 15 | PVC-U Sch 80 ASTM D1785 | 1036.9 | 63 | 173 | 16.9 | 561 | WPS-06 |
 | PF-02 | M1 | 15 | 316L ASTM A312 | 1065.6 | 53 | 178 | 18.5 | 519 | WPS-01 |
 | PF-03 | P2 | 15 | CPVC Sch 80 ASTM F441 | 545.2 | 27 | 93 | 21.3 | 260 | WPS-07 |
 | PF-04 | P2 | 50 | CPVC Sch 80 ASTM F441 | 344.9 | 17 | 58 | 8.4 | 171 | WPS-07 |
@@ -62,8 +62,8 @@ Each subsection gives the plan of one family. The rules of section 2 apply to ev
 
 ### PF-01: P1 DN15, PVC-U Sch 80 ASTM D1785
 
-The family has 1024.4 m of pipe in 62 lines, cut from 171 stock lengths of 6.096 m with a cutting allowance of 17.3 m; the off-cuts return to the store for spool pieces. The pipe is bought mill stock to class sheet P1 of AQS-PIP-003 (PVC-U Sch 80, ASTM D1785 pipe, D2467 fittings, D2564 cement).
-It needs 174 elbows to ASTM D2467 socket 90 elbow, 124 flanges to ASTM D2467 flange, 124 gaskets and 496 stud bolts of 1/2 in. Its 553 joints are made to WPS-06: two-step primer and solvent cement. It is tested to class sheet P1.
+The family has 1036.9 m of pipe in 63 lines, cut from 173 stock lengths of 6.096 m with a cutting allowance of 16.9 m; the off-cuts return to the store for spool pieces. The pipe is bought mill stock to class sheet P1 of AQS-PIP-003 (PVC-U Sch 80, ASTM D1785 pipe, D2467 fittings, D2564 cement).
+It needs 177 elbows to ASTM D2467 socket 90 elbow, 126 flanges to ASTM D2467 flange, 126 gaskets and 504 stud bolts of 1/2 in. Its 561 joints are made to WPS-06: two-step primer and solvent cement. It is tested to class sheet P1.
 
 ### PF-02: M1 DN15, 316L ASTM A312
 

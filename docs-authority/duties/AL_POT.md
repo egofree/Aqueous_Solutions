@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 49.42 kg/d. Mass out 49.42 kg/d. Electrical duty 5.6578 kW. In: IA-ALCL3-MU 49.42 kg/d (anhydrous AlCl3 feed (mining-waste chloride class)). Out: AL_POT_TO_IND 10 kg/d (Al metal); AL_POT_CL2 0 kg/d (Cl2 return); IA-CL2-SHIP 39.21 kg/d (chlorine byproduct export (water-treatment class product)); IA-CL2-SIREF 0.2137 kg/d (chlorine make-up of the chlorosilane loop).
+1. Basis. Mass in 49.42 kg/d. Mass out 49.42 kg/d. Electrical duty 5.6578 kW. In: IA-ALCL3-MU 49.42 kg/d (anhydrous AlCl3 feed (mining-waste chloride class)). Out: AL_POT_TO_IND 10 kg/d (Al metal); AL_POT_CL2 0 kg/d (Cl2 return); IA-CL2-SHIP 39.2 kg/d (chlorine byproduct export (water-treatment class product)); IA-CL2-SIREF 0.2137 kg/d (chlorine make-up of the chlorosilane loop); 1 more.
 
 2. Size.
 - Envelope 800×800×1600 mm, 1.024 m³. That box over this flow would be 497.3 h if it were full. It is not a residence time.

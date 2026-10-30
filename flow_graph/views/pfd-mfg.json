@@ -1105,28 +1105,28 @@
         },
         "design": {
           "route": "CA",
-          "units": 55,
+          "units": 56,
           "gp_g": 3.9,
           "interval_d": 182.625,
-          "grease_kg_d": 0.002349,
-          "soap_kg_d": 0.000282,
-          "base_oil_kg_d": 0.002067,
-          "wax_kg_d": 0.002445,
-          "wax_ox_kg_d": 0.000377,
-          "acid_kg_d": 0.000264,
-          "o2_kg_d": 0.000132,
-          "vent_kg_d": 0.000262,
-          "thickener_kg_d": 3.4e-05,
-          "caoh2_kg_d": 3.4e-05,
+          "grease_kg_d": 0.002392,
+          "soap_kg_d": 0.000287,
+          "base_oil_kg_d": 0.002105,
+          "wax_kg_d": 0.002489,
+          "wax_ox_kg_d": 0.000384,
+          "acid_kg_d": 0.000269,
+          "o2_kg_d": 0.000135,
+          "vent_kg_d": 0.000267,
+          "thickener_kg_d": 3.5e-05,
+          "caoh2_kg_d": 3.5e-05,
           "lioh_kg_d": 0.0,
-          "lime_draw_kg_d": 3.8e-05,
-          "slake_h2o_kg_d": 8e-06,
+          "lime_draw_kg_d": 3.9e-05,
+          "slake_h2o_kg_d": 9e-06,
           "reject_kg_d": 1.2e-05,
-          "kettle_L": 0.335582,
+          "kettle_L": 0.341684,
           "kettle_D_mm": 100.0,
           "insul_mm": 25,
           "loss_W": 11.54743,
-          "kw": 7.2e-05,
+          "kw": 7.3e-05,
           "kettle_T_C": 150.0,
           "campaign_d": 90
         }
@@ -1271,7 +1271,7 @@
       "forbidden": "pyro if FR-4",
       "claim_status": "Closed",
       "rate": {
-        "value": 11.637491,
+        "value": 11.637534,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
@@ -1474,7 +1474,7 @@
         "value": 20458.32,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology"
+        "note": "AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converted kg/h to kg/d. Air returns; it does not leave the building. | value restored from graph Rev BH (91d33f4): Rev AC consolidation blanked it on unchanged topology | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "MFG",
@@ -1523,10 +1523,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.0158,
+        "value": 0.015801,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d"
+        "note": "AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MFG",
       "to_sector_id": "OIL"
@@ -1719,10 +1719,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.002349,
+        "value": 0.002392,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: shop grease on site (A-M-429): grease need: 55 lubricated units x points x Gp 3.90 g every 182.6 d (SKF_RELUB, AQS-OPS-002; route CA)."
+        "note": "X-RTE TF: shop grease on site (A-M-429): grease need: 56 lubricated units x points x Gp 3.90 g every 182.6 d (SKF_RELUB, AQS-OPS-002; route CA)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "MFG"
@@ -1750,7 +1750,7 @@
       "to_sector_id": "MFG",
       "params": {
         "rate_normal_kg_d": 0.0,
-        "rate_rated_kg_d": 0.002349,
+        "rate_rated_kg_d": 0.002392,
         "rated_case": "grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md)",
         "backs_up": "GREASE_CA_TO_MFG",
         "rated_by": "flow_graph/param/grease.py"
@@ -2163,7 +2163,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.837992,
+        "value": 4.838035,
         "unit": "kg/d",
         "status": "study",
         "note": "Char less the carbon charged to the silicon-carbide furnace. | X-PAR-02 TF: char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET) (AQS-PAR-003)."
@@ -2579,7 +2579,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.002349,
+        "value": 0.002392,
         "unit": "kg/d",
         "status": "study",
         "note": "X-RTE TF: shop grease on site (A-M-429): purged grease collected at relubrication goes to pyrolysis with the plastics feed (recovery first); equals the grease issued."

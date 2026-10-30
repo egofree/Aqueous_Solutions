@@ -5,7 +5,7 @@ Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 1. Basis. Mass in 22.01 kg/d. Mass out 22.01 kg/d. Electrical duty 0.0000 kW. In: IA-O2-PROD 22.01 kg/d (surplus O2 to product cylinders). Out: IA-O2-SHIP 22.01 kg/d (O2 cylinders shipped at the dock).
 
 2. Size.
-- Envelope 1400×1400×1750 mm, 3.43 m³. That box over this flow would be 3739.5 h if it were full. It is not a residence time.
+- Envelope 1400×1400×1750 mm, 3.43 m³. That box over this flow would be 3739.4 h if it were full. It is not a residence time.
 - Envelope: L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064).
 - Storage sizing (AQS-DUTY-064, graph design_storage): hold_d 14; V_nom_m3 1.365; D_mm 1100; H_mm 1450; wall_mm 106.8.
 - Node note: X-PAR-12: surplus O2 at 200 bar, product cylinders (no vent).

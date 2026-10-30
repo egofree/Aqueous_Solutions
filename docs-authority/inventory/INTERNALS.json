@@ -190,6 +190,7 @@
   "Q4_B": "no issued internals basis for a heat_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "RAD_PANEL": "no issued internals basis for a radiator unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "REC_HDR": "no issued internals basis for a recovery_header unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
+  "RESIST_SYN": "no issued internals basis for a reactor unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "RES_HEAT": "no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "SINTER": "no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "SI_REDUCE": "no issued internals basis for a furnace unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
@@ -201,5 +202,5 @@
   "WET_OX": "no issued internals basis for a wet_ox unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)",
   "ZNBR2": "no issued internals basis for a flow_battery unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)"
  },
- "units": 196
+ "units": 197
 }

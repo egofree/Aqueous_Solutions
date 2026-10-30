@@ -17,12 +17,12 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 50 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 62 | Bench test report with method, data and result |
+| T3 | Bench and laboratory tests | 64 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 481 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 483 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 678 items: 297 drivers, 381 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 682 items: 300 drivers, 382 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -140,6 +140,8 @@ Total 678 items: 297 drivers, 381 register entries. Classification rule: first m
 | driver foundry_pot_voltage_V | {"al": 3.8, "mg": 4.2, "ca": 4.2, "mo": 2.8, "cr": 2.8} V cell terminal (decomposition + overpotential + bath ohmic) | bench molten-chloride cell at the design current density: terminal voltage vs charge | X-PAR |
 | driver h2c_eta_ad | 0.65 stage adiabatic efficiency incl. valve losses | bench run of the first-article head: indicator diagram and flow | X-PAR |
 | driver h2c_eta_v | 0.8 volumetric efficiency | same bench run | X-PAR |
+| driver oil_c11c18_naphthalene_frac | 0.01 mass fraction naphthalene in the C11-C18 cut of the plastics pyrolysis oil (SU2018_PYRO) | aromatics assay of the C11-C18 cut | X-PAR |
+| driver oil_c5c10_benzene_frac | 0.02 mass fraction benzene in the C5-C10 cut of the plastics pyrolysis oil (SU2018_PYRO) | aromatics assay of the C5-C10 cut | X-PAR |
 | driver ppt_naoh_per_cl | 1.0 mol NaOH per mol chloride precipitated as hydroxide | Bench hydroxide precipitation of class A leach liquor: NaOH consumed per mol chloride to the target pH; Ca retained in solution (Ca(OH)2 is sparingly soluble) measured by ICP-OES | X-PAR |
 | driver ro_feed_TDS_mg_L | 20.0 mg/L NaCl equivalent in VCD distillate | Conductivity of S25 at commissioning | X-PAR |
 | driver rx_bucl_T_C | 105 C | bench ZnCl2-catalysed n-butanol + HCl at reflux: conversion against time | X-PAR |
@@ -306,6 +308,7 @@ Total 678 items: 297 drivers, 381 register entries. Classification rule: first m
 | driver ext_lpd_W_m2 | 8.8 W/m2 | Lighting design of the extension | X-PAR |
 | driver ext_sfp_W_per_L_s | 1.25 W per L/s | Fan selection | X-PAR |
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing | X-PAR |
+| driver fab_mask_layers | 8 mask layers per wafer of the fab process, i.e. resist coats per wafer start | mask count of the issued fab process sheet | X-PAR |
 | driver fire_pump_head_margin_kPa | 150 kPa design margin over static + friction to the remote area | Hydraulic calculation from the riser to the hydraulically most remote sprinkler (fire engineer of record) | X-PAR |
 | driver fire_tank_refill_h | 8 h to refill the reserve from the normal supply | City/well fill-rate confirmation at X-BAS-03 (site utilities) | X-PAR |
 | driver flux_salt_recovery_frac | 0.8 fraction of the MgCl2 salt flux recovered from the dross salt cake by water leach and evaporation (ASM_V15_AL, salt-cake recycling) | chloride balance of a salt-cake leach batch | X-PAR |
@@ -694,6 +697,7 @@ Total 678 items: 297 drivers, 381 register entries. Classification rule: first m
 | A-M-429 | The shop grease is made on site from the wax cut, sized from kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, shop routes (X-RTE-GREASE_CA_TO_MFG, X-RTE-WAX_TO_GREASE_CA, X-RTE-PCA_TO_GREASE and the lithium routes) |
 | A-M-430 | MG_POT_TO_IND carries magnesium for alloying the cast alumin kg/d; A | After regen MG_POT_TO_IND equals al_mg_alloy_wt x foundry_al_line_kg_d x al_mg_melt_loss_frac, MG_POT and IND_MELT close, and python3 -m flow_graph.param.recovery lists the Mg record with no flags. | QA audit 2026-10-30, X-RTE-MG_POT_TO_IND |
 | A-M-431 | The chlorine of the VDF and TFE reactors has two built sourc kg/d | With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case. | QA audit 2026-10-30, X-RTE-AL_POT_CL2 |
+| A-M-432 | POLY_TO_FAB carries the wafer-fab photoresist, sized from th kg/d; kW | python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-30, X-RTE-POLY_TO_FAB |
 
 ## 7. T6 Commissioning measurements
 

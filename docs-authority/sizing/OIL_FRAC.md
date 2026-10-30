@@ -17,7 +17,7 @@ This page records the size of unit OIL_FRAC, of class `frac` in sector OIL, from
 
 ## 2. Duty
 
-The unit takes 34.3925 kg/d by 6 streams and gives 34.3925 kg/d by 6 streams.
+The unit takes 34.887 kg/d by 6 streams and gives 34.887 kg/d by 6 streams.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The envelope is 600 mm x 600 mm x 4500 mm, from the placement file `flow_graph/placement_blocks.json`.
 
-The hold-up check takes 34.3925 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 34.39 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 340 mm in diameter and 500 mm high. It fits within the envelope.
+The hold-up check takes 34.887 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 34.89 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 340 mm in diameter and 500 mm high. It fits within the envelope.
 
 ## 4. Material
 

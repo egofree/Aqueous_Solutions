@@ -421,14 +421,14 @@
 <title>MET_SCRUB&#45;&gt;OIL_FRAC</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M910.67,-1541.72C907,-1538.3 903.76,-1534.39 901.5,-1530 874.24,-1477.11 919.08,-509.75 888,-459 864.7,-420.95 743.33,-374.28 680.03,-352.01"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="680.98,-348.64 670.39,-348.66 678.68,-355.25 680.98,-348.64"/>
-<text text-anchor="middle" x="812.5" y="-461.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S72B\n0.0158 kg/d</text>
+<text text-anchor="middle" x="812.5" y="-461.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S72B\n0.015801 kg/d</text>
 </g>
 <!-- MFG_SHOP&#45;&gt;LEACH_CSTR_1 -->
 <g id="edge3" class="edge">
 <title>MFG_SHOP&#45;&gt;LEACH_CSTR_1</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M941.45,-1480.9C937.97,-1427.7 924.83,-1273.69 888,-1243 833.97,-1197.98 747.78,-1207.85 692.95,-1220.71"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="691.97,-1217.35 683.09,-1223.14 693.64,-1224.15 691.97,-1217.35"/>
-<text text-anchor="middle" x="812.5" y="-1245.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S16\n11.637491 kg/d</text>
+<text text-anchor="middle" x="812.5" y="-1245.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">S16\n11.637534 kg/d</text>
 </g>
 <!-- MFG_SHOP&#45;&gt;IND_MELT -->
 <g id="edge18" class="edge">
@@ -468,7 +468,7 @@
 <title>MFG_SHOP&#45;&gt;OIL_PYRO</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M942.47,-1480.85C942.15,-1318.53 938.07,-120.85 888,-66 835.8,-8.81 735.67,-16.07 680.45,-25.53"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="679.57,-22.13 670.36,-27.37 680.82,-29.02 679.57,-22.13"/>
-<text text-anchor="middle" x="812.5" y="-68.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;GREASE&#45;SPENT\n0.002349 kg/d</text>
+<text text-anchor="middle" x="812.5" y="-68.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;GREASE&#45;SPENT\n0.002392 kg/d</text>
 </g>
 <!-- WIRE_DRAW&#45;&gt;BAGHOUSE -->
 <g id="edge34" class="edge">
@@ -516,7 +516,7 @@
 <title>OIL_PYRO&#45;&gt;MFG_SHOP</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M670.03,-43.07C684.57,-48.25 702.24,-55.42 717,-64 726.84,-69.72 726.8,-74.94 737,-80 798.99,-110.76 844.39,-64.27 888,-118 932.18,-172.42 941.12,-1278.49 942.34,-1470.66"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="938.84,-1470.83 942.4,-1480.8 945.84,-1470.78 938.84,-1470.83"/>
-<text text-anchor="middle" x="812.5" y="-120.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;CHAR\n4.837992 kg/d</text>
+<text text-anchor="middle" x="812.5" y="-120.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">IA&#45;CHAR\n4.838035 kg/d</text>
 </g>
 <!-- PROD_C11_C18 -->
 <g id="node31" class="node">
@@ -555,7 +555,7 @@
 <title>GREASE_CA&#45;&gt;MFG_SHOP</title>
 <path fill="none" stroke="#1b5e20" stroke-width="1.2" d="M675.86,-218.76C737,-222.67 860.86,-234.38 888,-266 928.54,-313.23 940.39,-1290.72 942.23,-1470.66"/>
 <polygon fill="#1b5e20" stroke="#1b5e20" stroke-width="1.2" points="938.73,-1470.94 942.33,-1480.9 945.73,-1470.87 938.73,-1470.94"/>
-<text text-anchor="middle" x="812.5" y="-268.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">GREASE_CA_TO_MFG\n0.002349 kg/d</text>
+<text text-anchor="middle" x="812.5" y="-268.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1b5e20">GREASE_CA_TO_MFG\n0.002392 kg/d</text>
 </g>
 <!-- GREASE_LI -->
 <g id="node34" class="node">
@@ -592,5 +592,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="759.5" y="1715.5" width="510.1" height="136.0" fill="white" stroke="black" stroke-width="1.42"/><text x="768.0" y="1738.2" font-family="sans-serif" font-size="12.8">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD-MFG</text><text x="768.0" y="1762.3" font-family="sans-serif" font-size="12.8">pfd-mfg</text><text x="768.0" y="1786.4" font-family="sans-serif" font-size="12.8">Type: flow diagram (ISO_10628_2)   Rev 717cea70   Issued 2026-10-15</text><text x="768.0" y="1810.4" font-family="sans-serif" font-size="12.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="768.0" y="1834.5" font-family="sans-serif" font-size="12.8">Graph SHA-256 8f23d7d46094ce9f   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="759.5" y="1715.5" width="510.1" height="136.0" fill="white" stroke="black" stroke-width="1.42"/><text x="768.0" y="1738.2" font-family="sans-serif" font-size="12.8">Aqueous Solutions (owner)   AQS-DWG-PFD-PFD-MFG</text><text x="768.0" y="1762.3" font-family="sans-serif" font-size="12.8">pfd-mfg</text><text x="768.0" y="1786.4" font-family="sans-serif" font-size="12.8">Type: flow diagram (ISO_10628_2)   Rev b4594092   Issued 2026-10-15</text><text x="768.0" y="1810.4" font-family="sans-serif" font-size="12.8">Created: flow graph pipeline   Approved: not approved (study)</text><text x="768.0" y="1834.5" font-family="sans-serif" font-size="12.8">Graph SHA-256 53cde3c475e10dd6   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

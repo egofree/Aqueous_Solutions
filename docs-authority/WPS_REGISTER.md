@@ -24,7 +24,7 @@ Table 2.1. Joining procedures
 
 | WPS | Material | Joint | Lines | Joints | Process | Qualification | Essential variables | PQR test | Examination |
 |---|---|---|---|---|---|---|---|---|---|
-| WPS-06 | PVC-U Sch 80 ASTM D1785 | solvent | 73 | 655 | two-step primer and solvent cement | ASTM_D2855 with D2564 cement; installer demonstration joint | square cut, deburr, dry-fit interference, primer then cement, quarter turn, set and cure times by temperature | demonstration joint sectioned and pressure tested | visual bead 100 %; system hydrotest |
+| WPS-06 | PVC-U Sch 80 ASTM D1785 | solvent | 74 | 663 | two-step primer and solvent cement | ASTM_D2855 with D2564 cement; installer demonstration joint | square cut, deburr, dry-fit interference, primer then cement, quarter turn, set and cure times by temperature | demonstration joint sectioned and pressure tested | visual bead 100 %; system hydrotest |
 | WPS-01 | 316L ASTM A312 | butt weld | 58 | 568 | GTAW root and fill, open butt, argon purge to < 1 % O2 on the root side | ASME_IX QW, P-8 to P-8, F-6 ER316L (AWS_FILLER) | preheat none, interpass <= 175 C, Ar shielding 10-15 L/min, heat input recorded | QW-451 tension x2 and side bends x4; ferrite check | visual 100 %, RT 5 % random (B31.3 341.4.1) |
 | WPS-07 | CPVC Sch 80 ASTM F441 | solvent | 44 | 431 | two-step primer and solvent cement | ASTM_D2855 with F493 cement; installer demonstration joint | as WPS-06, CPVC cement, longer cure above 60 C service | demonstration joint sectioned and pressure tested | visual bead 100 %; system hydrotest |
 | WPS-04 | PVDF SDR 21 ISO 10931 | fusion | 28 | 243 | heated-tool butt fusion | DVS_2207 part 15; qualification by DVS 2212-1 welder test | heater 240 C, bead-up and joining pressure per DVS 2207-15 | DVS 2203 tensile and bend | visual bead 100 %, 5 % coupons |
@@ -33,7 +33,7 @@ Table 2.1. Joining procedures
 | WPS-05 | PP-H ISO 15494 | fusion | 9 | 81 | heated-tool butt fusion | DVS_2207 part 11; DVS 2212-1 welder test | heater 210 C, pressures and times per DVS 2207-11 | DVS 2203 tensile and bend | visual bead 100 %, 5 % coupons |
 | WPS-08 | FRP vinyl ester | butt-and-strap | 9 | 76 | secondary bond, butt-and-strap hand lay-up | ASME_RTP1 Part 7 laminator demonstration | grind to fresh fibre, layup schedule per wall, Barcol hardness at cure | demonstration laminate shear (ASTM D2344) and Barcol | visual 100 %, Barcol per joint; system hydrotest |
 
-The inventory holds 2385 joints in 9 combinations of material and joint type, and 8 of those combinations have a procedure.
+The inventory holds 2393 joints in 9 combinations of material and joint type, and 8 of those combinations have a procedure.
 
 4 joints on 1 inventory lines have no stated material or joint type, so no procedure can be assigned to them until the pipe inventory states both.
 

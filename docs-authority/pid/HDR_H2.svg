@@ -2,7 +2,7 @@
 <rect x="4" y="4" width="1492" height="1136" fill="white" stroke="#111"/>
 <text x="24" y="34" font-size="15" font-weight="600">Unit HDR_H2 · header · sector GAS · present</text>
 <text x="24" y="54" font-size="10.5">no design params on the graph node</text>
-<text x="24" y="72" font-size="10.5">Edges 14 in + 2 out · valves 2 placed / 0 unplaced · instruments 1 (0 SIF) · nozzles 18</text>
+<text x="24" y="72" font-size="10.5">Edges 14 in + 3 out · valves 2 placed / 0 unplaced · instruments 1 (0 SIF) · nozzles 19</text>
 <text x="24" y="90" font-size="10.5">Rates and DN/class per AQS-PIP-004; tags per AQS-CTL-001; valves per AQS-INV-005; SIFs per AQS-CTL-003.</text>
 <rect x="1170" y="20" width="310" height="120" fill="white" stroke="#111"/>
 <line x1="1182" y1="32" x2="1226" y2="32" stroke="#111" stroke-width="1.6"/><text x="1234" y="35" font-size="8.5">liquid</text>
@@ -117,19 +117,25 @@
 <text x="1032.6" y="229.0" font-size="7.5" text-anchor="middle">2x isol DN15</text>
 <line x1="914" y1="286" x2="1061" y2="286" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
 <polygon points="1070,286 1061,282 1061,290" fill="#111"/>
-<text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">SOLV_PLANT</text>
-<text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">IA-SOLV-H2</text>
+<text x="1476" y="267" font-size="9" fill="#666" text-anchor="end">RESIST_SYN</text>
+<text x="1476" y="281" font-size="11" font-weight="600" text-anchor="end">IA-RESIST-H2</text>
 <text x="1476" y="299" font-size="10" text-anchor="end">0.0 kg/d · DN15 P1</text>
-<text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N18</text>
+<text x="902" y="290" font-size="8" font-style="italic" fill="#555" text-anchor="end">N19</text>
+<line x1="914" y1="332" x2="1061" y2="332" stroke="#111" stroke-width="1.4" stroke-dasharray="8,4" class="edge-out"/>
+<polygon points="1070,332 1061,328 1061,336" fill="#111"/>
+<text x="1476" y="313" font-size="9" fill="#666" text-anchor="end">SOLV_PLANT</text>
+<text x="1476" y="327" font-size="11" font-weight="600" text-anchor="end">IA-SOLV-H2</text>
+<text x="1476" y="345" font-size="10" text-anchor="end">0.0 kg/d · DN15 P1</text>
+<text x="902" y="336" font-size="8" font-style="italic" fill="#555" text-anchor="end">N18</text>
 <text x="24" y="934" font-size="10" font-weight="600">Notes</text>
-<text x="24" y="944" font-size="9">Every incident graph edge is drawn: 14 in, 2 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
+<text x="24" y="944" font-size="9">Every incident graph edge is drawn: 14 in, 3 out. Cables and solids transfers carry no DN (line list rows cable/solids).</text>
 <text x="24" y="959" font-size="9">Sources: AQS-PIP-004 line list; AQS-CTL-001 instrument index; AQS-INV-005 valve inventory; AQS-CTL-003 cause and effect; nozzles/HDR_H2.csv.</text>
 <text x="24" y="974" font-size="9">Nozzles with no matching graph edge (service text): N6 drain; N7 vent</text>
 <text x="24" y="989" font-size="9">Study. Not a PE stamp. Symbols per ISA-5.1-2022 and ISO 10628-2 intent; sheet format per AQS-DWG-001.</text>
 <g id="aqs-title-block"><rect x="1116" y="1026" width="360" height="96" fill="white" stroke="black" stroke-width="1"/>
 <text x="1124" y="1043" font-size="9">Aqueous Solutions (owner)   AQS-PID-001-HDR_H2</text>
 <text x="1124" y="1060" font-size="9">P&amp;ID HDR_H2 (header, GAS sector)</text>
-<text x="1124" y="1077" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev c28405d3   Issued 2026-10-19</text>
+<text x="1124" y="1077" font-size="9">Type: P&amp;ID (ISO_10628_2)   Rev 52c0c785   Issued 2026-10-19</text>
 <text x="1124" y="1094" font-size="9">Created: flow graph pipeline   Approved: not approved (study)</text>
-<text x="1124" y="1111" font-size="9">Graph SHA-256 8f23d7d46094ce9f   Sheet 1 of 1   AQS-DWG-001</text>
+<text x="1124" y="1111" font-size="9">Graph SHA-256 53cde3c475e10dd6   Sheet 1 of 1   AQS-DWG-001</text>
 </g></svg>

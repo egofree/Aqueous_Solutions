@@ -49,9 +49,9 @@ Table 3.1. Storage units
 | HOPPER | shredded feed, 1 d (bulk density) | 0 | 1.0 | 500 | 0.0 | 0.02 | 300 | 300 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
 | FOOD_STORE | D-DOCK food buffer: fresh harvest pass-through + X-RED-08 80 d dry reserve (A-M-270) | 0.252 | 80 | 600 | 0.0336 | 0.042 | 350 | 450 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
 | METAL_STORE | D-DOCK metal product buffer, 14 d dispatch campaign (A-M-270) | 26.126 | 14 | 2000 | 0.1897 | 0.2372 | 600 | 850 | PE (rotomoulded / fabricated) | 4.75 | — | no envelope |
-| AIR_RECEIVER | D-DOCK plant-air receiver on the cold-box N2 delivery, 1 d of the ASU/vent margin (A-M-270) | 3.1 | 1.0 | 11.7 | 0.2649 | 0.3312 | 700 | 900 | SA-240 304L, welded | 3.06 | — | no envelope |
-| PROD_O2 | D-DOCK surplus-O2 product bank, cylinder-bank equivalent volume, 14 d dispatch campaign (A-M-278) | 22.014 | 14 | 293.4 | 1.0504 | 1.313 | 1050 | 1550 | SA-240 304L, welded | 101.94 | — | no envelope |
-| PROD_MEOH | D-DOCK methanol product store, 14 d dispatch campaign (A-M-278) | 28.009 | 14 | 792 | 0.4951 | 0.6189 | 850 | 1100 | SA-240 304L, welded | 3.0 | — | no envelope |
+| AIR_RECEIVER | D-DOCK plant-air receiver on the cold-box N2 delivery, 1 d of the ASU/vent margin (A-M-270) | 3.099 | 1.0 | 11.7 | 0.2648 | 0.331 | 700 | 900 | SA-240 304L, welded | 3.06 | — | no envelope |
+| PROD_O2 | D-DOCK surplus-O2 product bank, cylinder-bank equivalent volume, 14 d dispatch campaign (A-M-278) | 22.014 | 14 | 293.4 | 1.0504 | 1.3131 | 1050 | 1550 | SA-240 304L, welded | 101.94 | — | no envelope |
+| PROD_MEOH | D-DOCK methanol product store, 14 d dispatch campaign (A-M-278) | 27.879 | 14 | 792 | 0.4928 | 0.616 | 850 | 1100 | SA-240 304L, welded | 3.0 | — | no envelope |
 
 16 of the 23 units fit their envelope on the graph. None exceeds its envelope. The 7 units without an envelope take the sized vessel as their envelope at the next general arrangement build. The wall given for PROD_O2 is that of an equivalent thin-walled vessel; its storage is governed by the bank of seamless cylinders set by the storage mode of `CRYO_O2`.
 

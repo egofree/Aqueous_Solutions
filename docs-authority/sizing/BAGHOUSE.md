@@ -17,7 +17,7 @@ This page records the size of unit BAGHOUSE, of class `baghouse` in sector GAS, 
 
 ## 2. Duty
 
-The unit takes 7.77 kg/d by 3 streams and gives 7.77 kg/d by 2 streams.
+The unit takes 7.26 kg/d by 2 streams and gives 7.26 kg/d by 2 streams.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The envelope is 800 mm x 800 mm x 5000 mm, from the placement file `flow_graph/placement_blocks.json`.
 
-The hold-up check takes 7.77 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 7.77 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 210 mm in diameter and 310 mm high. It fits within the envelope.
+The hold-up check takes 7.26 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 7.26 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 200 mm in diameter and 300 mm high. It fits within the envelope.
 
 ## 4. Material
 

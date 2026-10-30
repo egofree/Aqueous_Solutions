@@ -3,8 +3,8 @@
   "view_mode": "PFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 40,
-  "edge_count": 56,
+  "node_count": 47,
+  "edge_count": 73,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -95,7 +95,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 174.193703,
+          "bypass_kg_d": 174.194633,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -111,6 +111,20 @@
           "kWh_per_m3_RO_EDI": 0.5463508924805983
         }
       }
+    },
+    {
+      "unit_id": "CRU",
+      "sector_id": "DIGESTER",
+      "presence": "present",
+      "class": "cru",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Chlorate finish / CRU (S66)",
+      "enabled": true,
+      "modules": [],
+      "params": {},
+      "continuous_kw": null
     },
     {
       "unit_id": "CRYO_ASU",
@@ -352,7 +366,7 @@
           "volume_m3": 0.0054,
           "material": "PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)",
           "hold_kg": 0.0,
-          "connections": 16
+          "connections": 17
         },
         "size_note": "DN25 manifold x 24 m run (0.005 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
       }
@@ -526,16 +540,16 @@
         "presence": "present",
         "trade_statement": {
           "exports_kg_d": {
-            "IA-N2-VENT": 3.1,
+            "IA-N2-VENT": 3.098,
             "IA-NA-PURGE": 0.642,
-            "IA-C5-SHIP": 7.141,
-            "IA-C11-SHIP": 1.512,
+            "IA-C5-SHIP": 7.635,
+            "IA-C11-SHIP": 1.145,
             "IA-C19-SHIP": 2.016,
-            "IA-O2-SHIP": 22.013,
-            "IA-MEOH-SHIP": 28.008,
-            "IA-CL2-SHIP": 39.206,
+            "IA-O2-SHIP": 22.014,
+            "IA-MEOH-SHIP": 27.879,
+            "IA-CL2-SHIP": 39.204,
             "IA-CA-CL2-SHIP": 0.097,
-            "IA-KROLL-CO": 0.612,
+            "IA-KROLL-CO": 0.503,
             "IA-MO-VENT": 0.045,
             "IA-CR-VENT": 0.217,
             "IA-BURNOUT-VENT": 0.2,
@@ -545,12 +559,12 @@
             "IA-LIME-SHIP": 0.282,
             "IA-NAOH-CL2-SHIP": 3.894,
             "IA-NAOH-RESIDUE": 0.034,
-            "IA-SOLV-VENT": 0.019,
+            "IA-SOLV-VENT": 0.15,
             "IA-PCA-REJECT": 0.0,
             "IA-CL2-MG-SHIP": 0.016
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 56.521,
+            "IA-H2O-MU": 57.023,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
             "IA-MGCL2-MU": 0.03,
@@ -560,11 +574,11 @@
             "IA-CR2O3-MU": 0.365,
             "IA-SILICA-MU": 1.0,
             "IA-QUARTZ-MU": 0.718,
-            "IA-SULFUR-MU": 0.013,
+            "IA-SULFUR-MU": 0.014,
             "IA-HALITE-MU": 0.676
           },
-          "net_kg_d": 10.857,
-          "residual_kg_d": 10.857,
+          "net_kg_d": 10.371,
+          "residual_kg_d": 10.373,
           "basis": "inter-plant trade boundary per owner ruling D-DOCK (2026-10-19): imports of arbitrary feedstock (landfill reclaim, mining waste, lunar regolith class), exports of surplus products to other plants; reported, not balance-constrained",
           "note": "net > 0 means the plant ships more product than it imports (the plant surplus statement). The residual repeats the unit ledger (in - out) for information only; the dock is exempt from unit closure per D-DOCK and rate rounding here is accepted design-phase noise. R10b closed the EW cascade (A-M-255), CRYO_ASU Ar (A-M-256) and WAFER_FAB (A-M-257)."
         }
@@ -634,6 +648,60 @@
         }
       },
       "continuous_kw": null
+    },
+    {
+      "unit_id": "PROD_C11_C18",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "cut_tank",
+      "notes": "Mid cut tank. Product. Design: notes/OIL_SECTOR.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "oil_line.py",
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
+        }
+      }
+    },
+    {
+      "unit_id": "PROD_C5_C10",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "cut_tank",
+      "notes": "Light cut tank. Product, not fuel to the afterburner. Design: notes/OIL_SECTOR.md.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "ref": "oil_line.py",
+        "size_mm": [
+          600,
+          600,
+          600
+        ],
+        "size_note": "L x W x H mm, set by docs-authority/_storage_sizing.py (AQS-DUTY-064)",
+        "design_storage": {
+          "hold_d": 14,
+          "V_nom_m3": 0.02,
+          "D_mm": 300,
+          "H_mm": 300,
+          "wall_mm": 3.0,
+          "material": "SA-240 304L, welded"
+        },
+        "genset_reserve_kg": 189.6,
+        "genset_reserve_basis": "BACKUP_GEN fallback fuel, not shipped: critical list 14.5 kW x 24 h x crit_autonomy_d 2 d = 694 kWh, at engine efficiency 30% on 12.2 kWh/kg; edge case: hydrogen store empty at the start of the outage"
+      }
     },
     {
       "unit_id": "ROOF_TANK",
@@ -1410,6 +1478,84 @@
       }
     },
     {
+      "unit_id": "AL_POT",
+      "sector_id": "FOUNDRY",
+      "presence": "present",
+      "class": "cell",
+      "tags": [
+        "molten_salt",
+        "metal"
+      ],
+      "electrical_role": "load",
+      "diagram_gap": null,
+      "notes": "Aluminum electrolytic pot. Chloride melt. Metal to foundry. Sector placement MFG -> FOUNDRY 2026-10-18 per first_principles_audit_2026-10-17.md \u00a7Organization defects (edge-majority basis).",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sizing": {
+          "status": "study",
+          "source": "AQS-DUTY-072",
+          "al_kg_d": 10.0,
+          "line_kg_d": 8.0,
+          "export_kg_d": 2.0,
+          "alcl3_kg_d": 49.4192,
+          "cl2_kg_d": 39.4192,
+          "chemistry": "2 AlCl3 -> 2 Al + 3 Cl2, 700 C NaCl-KCl-AlCl3 bath (GREENWOOD stoichiometry)",
+          "I_A": 1460.77,
+          "V": 3.8,
+          "dc_kW": 5.5509,
+          "hold_kW": 0.1069,
+          "kW": 5.6578,
+          "basis": "D-DOCK anhydrous AlCl3 import; Faraday at CE 0.85 (A-M-282); A-M-284 feedstock ruling",
+          "size_mm": [
+            800,
+            800,
+            1600
+          ]
+        },
+        "design": {
+          "service": "molten AlCl3-(NaCl-KCl) electrolysis cell, 700 C",
+          "chemistry": "2 AlCl3 -> 2 Al + 3 Cl2",
+          "feed_kg_d": 49.4192,
+          "metal_kg_d": 10.0,
+          "cl2_kg_d": 39.4192,
+          "I_A": 1460.77,
+          "cell_V": 3.8,
+          "dc_kW": 5.5509,
+          "hold_kW": 0.1069,
+          "connected_kW": 7,
+          "bath_T_C": 700.0,
+          "anode_D_mm": 75,
+          "anode_imm_mm": 400,
+          "cathodes": 5,
+          "busbar_mm2": 975
+        },
+        "envelope": {
+          "size_mm": [
+            800,
+            800,
+            1600
+          ],
+          "style": "pot_cell",
+          "state": "live",
+          "basis": "cell-class study minimum; live on the D-DOCK chloride import (A-M-284); bath 0.5 d hold at 1800 kg/m3, electrodes and busbar from the Faraday current (A-M-282)"
+        },
+        "sec3_material": {
+          "mat": "Graphite cell liner (design allowance 10 mm on the wetted faces), graphite anodes at j 0.5 A/cm2 (A-M-282 class), steel cathode bus above the melt with copper busbar frame-isolated to AQS-STD-002 section 11; 90 % alumina brick + ceramic-fibre backup lining; mild-steel outer shell below the liner",
+          "basis": "molten NaCl-KCl-AlCl3 bath at 700 C (graph design): Fe-Cr-Ni alloys lose Cr selectively to the melt (DING2018_CL_REVIEW, KRUIZENGA2012); graphite is the standard fused-chloride wetted face; alumina backup lining per SCHACHT2004 ch. 4/13; M6/M7 with the section 11 bus isolation. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "SiC hot face if AlCl3 carryover concentrates beyond the dry-gas headspace design; Ni-200 baffling at the take-off",
+          "note": "dry Cl2 headspace at 700 C: the 39.4 kg/d Cl2 export leaves on a dry hot line above the AlCl3 dew point (M7) with PVDF (P3 family) only below the dew point. No measured pit rate; the anode/liner change-out is the unit task 12 work order.",
+          "task": "X-MAT-22"
+        }
+      },
+      "continuous_kw": {
+        "value": 5.6578,
+        "unit": "kW",
+        "status": "study",
+        "note": "AQS-DUTY-072 pot cell: Faraday 1461 A x 3.8 V at CE 0.85 = 5.55 kW DC + bath hold 0.11 kW (150 mm fibre, study; A-M-282)."
+      }
+    },
+    {
       "unit_id": "POLY_STOCK",
       "sector_id": "POLYMERS",
       "presence": "present",
@@ -1459,6 +1605,18 @@
       "continuous_kw": null
     },
     {
+      "unit_id": "ATMOS",
+      "sector_id": "WTR",
+      "presence": "present",
+      "class": "boundary",
+      "notes": "Atmospheric exchange boundary (bookkeeping, not a process unit): water that leaves the cycle as vapour is booked here - today only the site evaporative rejection spray at DRY_COOLER (AQS-PLAN-011 section 6.2, task X-LOC-13). In does not equal out by design; the unit is exempt from closure like the dock and relief meters.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "equipment_id": "ATMOS"
+      }
+    },
+    {
       "unit_id": "METAL_STORE",
       "sector_id": "FOUNDRY",
       "presence": "present",
@@ -1492,6 +1650,84 @@
       }
     },
     {
+      "unit_id": "ACID_PLANT",
+      "sector_id": "POLYMERS",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Sulfuric acid plant: cake kiln and sulfur burner, contact converter and absorber (A-M-421).",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.2061,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake kiln on CAMPAIGN duty (Q-034, A-M-425): daily average of shell loss + reaction + feed heat with one 24 h run every 7 d and 8.60 kWh heat-up per run; peak 1.0847 kW (sulfuric.py, route GYPSUM_LOOP)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "Sulfuric acid plant (A-M-421).",
+        "sec3_material": {
+          "mat": "Cake kiln tube of Inconel 600 with an alumina lining and mineral-wool insulation; sulfur burner and converter shell of aluminised carbon steel with vanadium catalyst beds; absorber and product acid tank of carbon steel with PTFE-lined nozzles; dilution cooler of high-silicon iron",
+          "basis": "Hot sulfur dioxide and trioxide gas, dry, up to about 1150 C in the cake kiln and about 600 C in the converter, and 98 wt% sulfuric acid near ambient (A-M-421, flow_graph/param/sulfuric.py): strong acid above 93 wt% is carried in carbon steel at low velocity, while hot or dilute acid needs high-silicon iron, alloy or PTFE lining (ULLMANN_H2SO4; PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Alloy 20 or PTFE-lined steel for the absorber if the acid strength falls below 93 wt% in service",
+          "note": "wetted by 98 wt% sulfuric acid and dry sulfur oxides; dilution below 93 wt% is the corrosion load, held by the absorber control.",
+          "task": "X-MAT-22"
+        },
+        "recovery": [
+          {
+            "element": "S",
+            "use": "sulfuric acid for the HF kiln and the resist",
+            "need_kg_d": 0.13017792487560162,
+            "recovered_kg_d": 0.11641768735785955,
+            "recovered_from": [
+              "IA-GYPSUM-REGEN"
+            ],
+            "ore_streams": [
+              "IA-SULFUR-MU"
+            ],
+            "unrecovered": [
+              {
+                "stream": "IA-LIME-SHIP",
+                "kg_d": 0.012935,
+                "recoverable": false,
+                "basis": "cake-kiln non-conversion (caso4_dec_frac) leaves with the residue"
+              },
+              {
+                "stream": "IA-RESIST-ACID",
+                "kg_d": 0.000825,
+                "recoverable": false,
+                "basis": "sulfur bound in the photoresist ester; it leaves the still bottoms with the oil cut (A-M-432)"
+              },
+              {
+                "stream": "IA-PCA-REJECT",
+                "kg_d": 2e-06,
+                "recoverable": false,
+                "basis": "cake-kiln non-conversion; the residue drawn for the grease lime leaves with the slaker grit"
+              }
+            ]
+          }
+        ],
+        "kiln_duty": {
+          "mode": "CAMPAIGN",
+          "campaign_d": 7,
+          "run_h": 24.0,
+          "insul_mm": 200,
+          "tube_kg": 24.9063,
+          "fibre_kg": 29.1138,
+          "heatup_kWh": 8.5961,
+          "kw_avg": 0.2061,
+          "kw_peak": 1.0847,
+          "kw_continuous": 0.966,
+          "cake_store_kg": 4.2085,
+          "acid_store_kg": 2.8264,
+          "acid_store_L": 1.5361
+        }
+      }
+    },
+    {
       "unit_id": "SOLV_PLANT",
       "sector_id": "FAB",
       "presence": "present",
@@ -1502,10 +1738,10 @@
       "notes": "Solvent plant: spent-solvent still, with carbonylation, ketonisation and hydrogenation reactors or solvent fermenters (A-M-428).",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.01034,
+        "value": 0.02963,
         "unit": "kW",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): still reboiler 0.00944 kW + reactor heaters 0.00090 kW (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): still reboiler 0.02336 kW + reactor heaters 0.00627 kW (solvent.py, route MEOH_CO)."
       },
       "modules": [],
       "params": {
@@ -1515,10 +1751,11 @@
           {
             "element": "C",
             "use": "bench solvent (ethanol and acetone)",
-            "need_kg_d": 0.1198775889411408,
-            "recovered_kg_d": 0.10818952401937956,
+            "need_kg_d": 0.3119046922469259,
+            "recovered_kg_d": 0.2375708248458258,
             "recovered_from": [
-              "IA-SOLV-SPENT"
+              "IA-SOLV-SPENT",
+              "IA-LITHO-OUT"
             ],
             "ore_streams": [],
             "unrecovered": [
@@ -1530,7 +1767,7 @@
               },
               {
                 "stream": "IA-SOLV-BTMS",
-                "kg_d": 0.005694185474704193,
+                "kg_d": 0.06833998795404304,
                 "recoverable": false,
                 "basis": "still bottoms with the resist residue, burned with the light oil cut (solv_still_recovery_frac)"
               }
@@ -1542,28 +1779,107 @@
           "route": "MEOH_CO",
           "bench_kg_d": 0.209973,
           "spent_kg_d": 0.199474,
-          "recovered_kg_d": 0.189501,
-          "make_kg_d": 0.020472,
-          "acetone_kg_d": 0.010236,
+          "fab_need_kg_d": 0.30952,
+          "fab_spent_kg_d": 0.33952,
+          "fab_recovered_kg_d": 0.208544,
+          "recovered_kg_d": 0.398045,
+          "make_kg_d": 0.121448,
+          "acetone_kg_d": 0.111212,
           "ethanol_kg_d": 0.010236,
-          "meoh_kg_d": 0.02046,
-          "co_kg_d": 0.017885,
+          "meoh_kg_d": 0.144254,
+          "co_kg_d": 0.126101,
           "h2_kg_d": 0.000995,
           "fw_kg_d": 0.0,
           "stillage_kg_d": 0.0,
           "butanol_kg_d": 0.0,
-          "vent_kg_d": 0.018868,
-          "btms_kg_d": 0.009974,
-          "product_kg_d": 0.209973,
-          "kw": 0.010344,
-          "kw_still": 0.009443,
-          "kw_rx": 0.000901
+          "vent_kg_d": 0.149902,
+          "btms_kg_d": 0.14095,
+          "product_kg_d": 0.519493,
+          "kw": 0.029632,
+          "kw_still": 0.023363,
+          "kw_rx": 0.006269
         },
         "sec3_material": {
           "mat": "316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed",
           "basis": "Ethanol and acetone at their boiling points in the still, and acetic acid with an iodide promoter at 150-200 C in the carbonylation (A-M-428, flow_graph/param/solvent.py): stainless steel serves the solvents and the dry reactor gases, while hot acetic acid with iodide needs a nickel-molybdenum alloy (ULLMANN_ACETIC; PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
           "alt": "Zirconium for the carbonylation autoclave if iodide corrosion of C-276 is seen in service",
           "note": "wetted by ethanol, acetone and hot acetic acid with an iodide promoter; iodide pitting of the carbonylation vessel is the corrosion load.",
+          "task": "X-MAT-22"
+        }
+      }
+    },
+    {
+      "unit_id": "RESIST_SYN",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Photoresist synthesis: aromatic extraction, phenol and naphthol oxychlorination, formaldehyde, novolac, diazonaphthoquinone sulfonyl ester and formulation batch reactors (A-M-432).",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.00366,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): batch reactor heating to 100 C (fab_resist.py)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "Photoresist synthesis (A-M-432).",
+        "design": {
+          "route": "DNQ_NOVOLAC",
+          "starts_d": 5.0,
+          "coats_d": 40.0,
+          "resist_kg_d": 0.12,
+          "solids_kg_d": 0.03,
+          "daa_kg_d": 0.09,
+          "rinse_kg_d": 0.21952,
+          "novolac_kg_d": 0.024025932,
+          "dnq_kg_d": 0.006,
+          "bz_cut_kg_d": 1.005232635,
+          "naph_cut_kg_d": 0.366387818,
+          "benzene_kg_d": 0.018094187,
+          "naphthalene_kg_d": 0.00329749,
+          "raff_kg_d": 1.350228776,
+          "meoh_kg_d": 0.005937721,
+          "nh3_kg_d": 0.001314453,
+          "h2_kg_d": 0.00010373,
+          "co_kg_d": 0.000720604,
+          "cl2_kg_d": 0.001824175,
+          "acid_kg_d": 0.002574557,
+          "acetone_kg_d": 0.09,
+          "air_kg_d": 0.092557646,
+          "vent_kg_d": 0.08413788,
+          "hcl_kg_d": 0.00093802,
+          "brine_kg_d": 0.011348664,
+          "kw": 0.003655991,
+          "ledger_kmol_d": {
+            "C6H6": -0.000231638214,
+            "O2": -0.000298517742,
+            "CH4O": -0.000185310571,
+            "H2O": 0.000550707841,
+            "C6.8H6O": 0.000205911543,
+            "C10H8": -2.5726671e-05,
+            "NH3": -7.7180014e-05,
+            "H2": -5.1453343e-05,
+            "H2SO4": -2.5726671e-05,
+            "CO": -2.5726671e-05,
+            "Cl2": -2.5726671e-05,
+            "CO2": 2.5726671e-05,
+            "HCl": 2.5726671e-05,
+            "ESTER": 2.5726671e-05,
+            "NH4Cl": 2.5726671e-05,
+            "C3H6O": -0.001549586777,
+            "C6H12O2": 0.000774793388
+          }
+        },
+        "sec3_material": {
+          "mat": "Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines",
+          "basis": "Wet HCl, nitrous acid and sulfuric acid at up to 100 C in the naphthol and diazonaphthoquinone steps, and phenol, formaldehyde and acetone in the novolac and formulation steps (A-M-432, flow_graph/param/fab_resist.py): glass lining serves the wet acid chlorides, stainless steel the organics and the dry gases, and nickel-copper alloy the dry chlorine and phosgene (PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Hastelloy C-276 reactors if the glass lining is chipped in service",
+          "note": "wetted by hot wet HCl, nitrous and sulfuric acids, phenol and acetone; chloride attack of any bare stainless steel is the corrosion load.",
           "task": "X-MAT-22"
         }
       }
@@ -1679,7 +1995,7 @@
       "forbidden": "floor drain",
       "claim_status": "Closed",
       "rate": {
-        "value": 78.916303,
+        "value": 78.915574,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-AUD-001 \u00a713 spent etch/return order-of-magnitude (~WS_* forwards sum mid) | X-PAR-02 TF: spent etch/return order-of-magnitude band unchanged; closes the bench by difference (AQS-PAR-003)."
@@ -1905,10 +2221,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.006,
+        "value": 0.006729,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d"
+        "note": "AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "OIL"
@@ -2043,13 +2359,17 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 0.0,
+        "value": 0.023634,
         "unit": "kg/d",
         "status": "study",
-        "note": "R10b A-M-257: rated 0 by difference on live endpoints - the fab closes at steady state on UPW (IA-UPW-USE) + slurry (S37) + N2 purge (S03); its wafer output rides IA-PV-OUT 0.01 kg/d. A net POLY_STOCK draw appears when the foundry/goods pass sizes the fab product basis (DOCK_EXPORT_TBD lane)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): formulated positive resist, 40 coats/d (5.0 wafer starts x 8 mask layers) x 3 mL at 25% solids (MOREAU1988). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "POLYMERS",
-      "to_sector_id": "FAB"
+      "to_sector_id": "FAB",
+      "composition": {
+        "novolac-DNQ resin": 0.25,
+        "diacetone alcohol": 0.75
+      }
     },
     {
       "stream_id": "UPW_TO_FAB",
@@ -2111,16 +2431,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "kerf",
       "header": "dedicated",
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.51,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-012 Rev N. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "Retired 2026-10-30 (A-M-432): the fab dust line duplicated the kerf that fab_silicon.py sends to the leach on IA-FAB-KERF, and only the unvented nitrogen purge balanced it."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "GAS",
@@ -2207,7 +2527,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 3.008739,
+        "value": 3.010053,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-016. Each waste has a user. Each chemical has a source. | X-PAR-02 TF: ammonia source sized to the bench draw S33 (AQS-DUTY-016: each chemical has a source); the N2 header re-settles in o2_close (AQS-PAR-003)."
@@ -2223,7 +2543,8 @@
       },
       "params": {
         "T_C": 40.0,
-        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up"
+        "T_basis": "X-MAT-09: assumption: no heat input stated upstream; 40 C, the 0.4 % site dry bulb 37.8 C (AQS-SITE-002) rounded up",
+        "pre_resist_kg_d": 3.008739
       }
     },
     {
@@ -2274,10 +2595,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 66.502511,
+        "value": 66.527242,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-016. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): spent rinse water by difference on WAFER_FAB, now that the nitrogen purge vents. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "DIGESTER",
@@ -2414,10 +2735,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.987499,
+        "value": 0.557915,
         "unit": "kg/d",
         "status": "study",
-        "note": "Spent resist and solvent. Same mass as S39B, through LITHO_STUB. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): resist and rinse acetone issued to the coater = POLY_TO_FAB + IA-FAB-SOLV. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -2433,7 +2754,7 @@
     {
       "stream_id": "IA-LITHO-OUT",
       "from_unit_id": "LITHO_DEV",
-      "to_unit_id": "OIL_FRAC",
+      "to_unit_id": "SOLV_PLANT",
       "phase": "S",
       "layers": [
         "mass"
@@ -2444,13 +2765,13 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.987499,
+        "value": 0.557915,
         "unit": "kg/d",
         "status": "study",
-        "note": "Same mass into the fractionator. | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): spent resist and acetone to the SOLV_PLANT still = POLY_TO_FAB + IA-FAB-SOLV. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
-      "to_sector_id": "OIL",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],
@@ -2607,7 +2928,7 @@
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.0,
+        "value": -0.0,
         "unit": "kg/d",
         "status": "study",
         "note": "Retired 2026-10-29 (owner decision t59u: no imports except waste or raw ore). SOLV_PLANT recovers the spent solvent and makes the shortfall on site (A-M-428). | X-PAR-02 TF: solvent resupply imported at the dock boundary equals the bench draw IA-SOLV-WB (D-DOCK reagent import; 30 d hold already sized, A-M-225) (AQS-PAR-003)."
@@ -2656,10 +2977,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.987499,
+        "value": 0.557915,
         "unit": "kg/d",
         "status": "study",
-        "note": "Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool handoff; wafer mass is below graph resolution). A-M-284."
+        "note": "Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the tool-to-tool handoff; wafer mass is below graph resolution). A-M-284. | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -2921,7 +3242,7 @@
         "value": 0.199474,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -2948,10 +3269,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.209973,
+        "value": 0.467586,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): product = 0.209973 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): product = 0.519493 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "FAB",
@@ -2978,10 +3299,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.009974,
+        "value": 0.543843,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): btms = 0.009974 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): btms = 0.140950 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "OIL",
@@ -3007,10 +3328,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.018867,
+        "value": 0.016578,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): vent = 0.018868 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): vent = 0.149902 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FAB",
       "to_sector_id": "DOCK",
@@ -3036,10 +3357,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.02046,
+        "value": 0.143533,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.020460 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.144254 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "MEOH",
       "to_sector_id": "FAB",
@@ -3065,10 +3386,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.017885,
+        "value": 0.12609,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): co = 0.017885 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): co = 0.126101 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "FAB",
@@ -3097,7 +3418,7 @@
         "value": 0.000995,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO). | X-PAR-02 reconciled (AQS-PAR-003)."
       },
       "from_sector_id": "GAS",
       "to_sector_id": "FAB",
@@ -3166,6 +3487,501 @@
       "composition": {
         "water": 0.9,
         "solids": 0.1
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-BZ",
+      "from_unit_id": "PROD_C5_C10",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C5-C10 cut to the benzene extraction",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): bz_cut = 1.005233 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "C5-C10": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-NAPH",
+      "from_unit_id": "PROD_C11_C18",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C11-C18 cut to the naphthalene extraction",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.366388,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): naph_cut = 0.366388 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "C11-C18": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-RAFF",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "OIL_FRAC",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "aromatic-extraction raffinate back to the fractionator",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.947336,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): extraction raffinate = cut drawn less the benzene and naphthalene taken. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-MEOH",
+      "from_unit_id": "MEOH_TANK",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "plant methanol for the formaldehyde",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.00666,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): meoh = 0.005938 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "MEOH",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CH3OH": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-NH3",
+      "from_unit_id": "WS_AMMONIA",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "ammonia for the nitrous acid and the ester scavenger",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.001314,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): nh3 = 0.001314 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "NH3": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-H2",
+      "from_unit_id": "HDR_H2",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "header hydrogen for the nitroso reduction",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.000104,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): h2 = 0.000104 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "GAS",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-CO",
+      "from_unit_id": "TI_CELL",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "chlorinator carbon monoxide for the phosgenation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.000732,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): co = 0.000721 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CO": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-CL2",
+      "from_unit_id": "AL_POT",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "pot chlorine for the phosgenation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.001824,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): cl2 = 0.001824 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "Cl2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-ACID",
+      "from_unit_id": "ACID_PLANT",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "sulfuric acid for the naphthol sulfonation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.002575,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): acid = 0.002575 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2SO4": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-ACET",
+      "from_unit_id": "WS_SOLV",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "acetone for the diacetone alcohol casting solvent",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.257613,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): acetone = 0.090000 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "acetone": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-AIR",
+      "from_unit_id": "ATMOS",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "process air for the oxidations",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.319016,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): air = 0.092558 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "air": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-VENT",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxidation off-gas: nitrogen, unused oxygen and carbon dioxide",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): vent = 0.084138 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "N2": 0.75,
+        "O2": 0.24,
+        "CO2": 0.01
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-HCL",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "CRU",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "phosgenation HCl to the chlorate finish",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.000915,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): hcl = 0.000938 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "HCl": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-BRINE",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "reaction water, acid water and ammonium chloride",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.007976,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): brine = 0.011349 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "water": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-RESIST-STOCK",
+      "from_unit_id": "RESIST_SYN",
+      "to_unit_id": "POLY_STOCK",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "formulated positive photoresist to stock",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): resist = 0.120000 kg/d (fab_resist.py, route DNQ_NOVOLAC). | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "POLYMERS",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "resist": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-FAB-SOLV",
+      "from_unit_id": "WS_SOLV",
+      "to_unit_id": "WAFER_FAB",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "acetone for edge-bead rinse and resist strip",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): edge-bead rinse and strip acetone at the coat rate. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "acetone": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-FAB-N2-VENT",
+      "from_unit_id": "WAFER_FAB",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "fab nitrogen purge exhaust",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.938489,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): the S03 nitrogen purge leaves the tools to atmosphere at its supply rate. | X-PAR-02 reconciled (AQS-PAR-003)."
+      },
+      "from_sector_id": "FAB",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "N2": 1.0
       }
     }
   ],

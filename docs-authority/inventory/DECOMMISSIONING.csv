@@ -41,9 +41,10 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 3,FAB,LITHO_ALIGN,0,Si,-,30,no
 3,FAB,LITHO_COAT,0,Si solute,-,36,no
 3,FAB,LITHO_DEV,0,Si solute,-,30,no
+3,FAB,RESIST_SYN,0,C11-C18 CH3OH CO Cl2 H2 H2SO4 NH3 acetone air,"N2 to < 25 % LFL, then < 1 % H2",0,no
 3,FAB,SOLAR_PV_CELL,0,solute,-,691,no
-3,FAB,SOLV_PLANT,0,CH3OH CO H2 acetone ethanol,"N2 to < 25 % LFL, then < 1 % H2",0,no
-3,FAB,WAFER_FAB,0,Ar N2 Si solute,-,0,no
+3,FAB,SOLV_PLANT,0,CH3OH CO H2 acetone ethanol solute,"N2 to < 25 % LFL, then < 1 % H2",0,no
+3,FAB,WAFER_FAB,0,Ar N2 Si diacetone alcohol novolac-DNQ resin solute,-,0,no
 3,FAB,WET_BENCH,0,acetone ethanol,-,0,no
 3,FAB,WS_AMMONIA,0,N2,-,106,no
 3,FAB,WS_DOPE,440,solute,-,106,no
@@ -80,7 +81,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 9,OIL,GREASE_LI,0,,-,0,no
 9,OIL,HOPPER,0,Fe HCl other_metals solute,"air purge, scrubbed to vent (TLV)",32,no
 9,OIL,OIL_DRYER,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",86,no
-9,OIL,OIL_FRAC,0,hydrocarbon solute,"N2 to < 25 % LFL, then < 1 % H2",0,no
+9,OIL,OIL_FRAC,0,hydrocarbon,"N2 to < 25 % LFL, then < 1 % H2",0,no
 9,OIL,OIL_PYRO,0,hydrocarbon soap,"N2 to < 25 % LFL, then < 1 % H2",0,no
 9,OIL,PROD_C11_C18,79,,-,5,no
 9,OIL,PROD_C19_C28,79,,-,5,no
@@ -94,7 +95,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 11,DIGESTER,BMED_ACID,0,,-,0,no
 11,DIGESTER,BMED_BASE,0,,-,0,no
 11,DIGESTER,CONTINUOUS_RECYCLE,3,,-,1,no
-11,DIGESTER,CRU,0,,-,0,no
+11,DIGESTER,CRU,0,HCl,"air purge, scrubbed to vent (TLV)",0,no
 11,DIGESTER,EVAP_ACID,5094,,-,1223,yes
 11,DIGESTER,EVAP_ACID_VS,0,,-,0,no
 11,DIGESTER,EVAP_BASE,1938,NaOH,-,465,yes

@@ -156,6 +156,7 @@
   "RELIEF_CRYO",
   "RELIEF_H2",
   "REMIN",
+  "RESIST_SYN",
   "RES_HEAT",
   "RF_HEAT",
   "ROLL",
@@ -198,6 +199,6 @@
   "ZNBR2_BR2_REGEN"
  ],
  "open": {},
- "tot_wetted_rows": 343,
- "units": 196
+ "tot_wetted_rows": 360,
+ "units": 197
 }

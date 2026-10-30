@@ -20,8 +20,8 @@ This page records how the plant mass balance is reconciled. The method is minimu
 
 X-SAF-10 corrected the peroxide cell feed from 3.0 kg/d O2 to 0.176 kg/d O2 (Faraday) plus 2.824 kg/d make-up water from ROOF_TANK, and took that water off S40. It did not propagate: TERRACE_IRRIG still transpired 40 kg/d on 37.176 kg/d irrigation, and the cold box still made 2.824 kg/d O2 that nothing drew. Revision A reconciled the two by least squares (IA-TERR-VAP -2.824, IA-O2-RET +2.824) and smeared small moves over 361 edges. Hypothesis tested: missing photosynthetic O2 from the terrace. Rejected for this cut: the terrace has no CO2 supply and no harvest edge, so net CO2 + H2O -> CH2O + O2 fixation there is zero (TAIZ2015), and the sign is wrong (the terrace was short water, the header long O2). Fix: Revision A moves withdrawn; T1-T5 in balance.physics. X-PAR-11 (T6): GROW_BED fixes the 19.0 kg/d CO2 dosed to it (S04 + S89); its photosynthetic O2, 32/44 x CO2 at PQ 1.0, leaves on S87 to CRYO_O2 instead of the trim lump; the trim, compost and nutrient surplus pass the difference; the cold box extracts that much less O2 and the leach dissolved-gas edge falls with it, now asserted under the Henry-law bound (SANDER2015). CO2 edges carry CO2 composition. Verification: T-PAR-02 (A-M-123).
 
-Mass edges 438; held by a transfer function or stoichiometry 393; reconciled 45. Units 148.
-Before: 4 units out of balance (sum of residuals 0.002 kg/d). After: max unit residual 7.18e-04 kg/d. Negative rates after reconciliation: 0.
+Mass edges 454; held by a transfer function or stoichiometry 394; reconciled 60. Units 149.
+Before: 5 units out of balance (sum of residuals 1.007 kg/d). After: max unit residual 7.18e-04 kg/d. Negative rates after reconciliation: 0.
 
 ## 3. Units out of balance before reconciliation
 
@@ -33,6 +33,7 @@ Table 3.1. Unit residual before reconciliation
 | --- | --- |
 | BLOW_MOLD | -0.0004 |
 | COLD_MILL | -0.0007 |
+| PROD_C5_C10 | -1.0052 |
 | VCD_TRAIN | -0.0004 |
 | ZNBR2 | -0.0004 |
 
@@ -43,41 +44,41 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | Direction | Edge | Commodity | kg/d |
 | --- | --- | --- | --- |
 | export | IA-BURNOUT-VENT | dewax/burnout off-gas (burned wax + stea | 0.2 |
-| export | IA-C11-SHIP | C11-C18 surplus shipped | 1.512 |
+| export | IA-C11-SHIP | C11-C18 surplus shipped | 1.145 |
 | export | IA-C19-SHIP | C19-C28 surplus shipped | 2.016 |
-| export | IA-C5-SHIP | C5-C10 product shipped | 7.141 |
+| export | IA-C5-SHIP | C5-C10 product shipped | 7.635 |
 | export | IA-CA-CL2-SHIP | chlorine byproduct export (water-treatme | 0.097 |
 | export | IA-CL2-MG-SHIP | chlorine byproduct export (water-treatme | 0.016 |
-| export | IA-CL2-SHIP | chlorine byproduct export (water-treatme | 39.206 |
+| export | IA-CL2-SHIP | chlorine byproduct export (water-treatme | 39.204 |
 | export | IA-CR-VENT | chlorinator CO (fuel-gas class export) | 0.217 |
 | export | IA-FAB-PRODUCT | finished wafers to the dock for dispatch | 0.139 |
-| export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.612 |
+| export | IA-KROLL-CO | chlorinator CO (fuel-gas class export) | 0.503 |
 | export | IA-LIME-SHIP | cake-kiln residue (lime, unreacted anhyd | 0.282 |
-| export | IA-MEOH-SHIP | methanol shipped at the dock | 28.008 |
+| export | IA-MEOH-SHIP | methanol shipped at the dock | 27.879 |
 | export | IA-METAL-SHIP | surplus foundry metal export (pot-line p | 10.812 |
 | export | IA-MO-VENT | chlorinator CO2 (vent class) | 0.045 |
-| export | IA-N2-VENT | nitrogen vent | 3.1 |
+| export | IA-N2-VENT | nitrogen vent | 3.098 |
 | export | IA-NA-PURGE | sodium chloride bleed of the leach purge | 0.642 |
 | export | IA-NAOH-CL2-SHIP | chlor-alkali chlorine, shipped with the  | 3.894 |
 | export | IA-NAOH-RESIDUE | ore insolubles and the lime-mud purge | 0.034 |
-| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 22.013 |
+| export | IA-O2-SHIP | O2 cylinders shipped at the dock | 22.014 |
 | export | IA-PCA-REJECT | slaker grit (anhydrite, fluorspar and in | 0.0 |
 | export | IA-SHELL-EXPORT | spent foundry silica (solids return clas | 1.0 |
-| export | IA-SOLV-VENT | reactor or fermenter off-gas (fuel-gas c | 0.019 |
+| export | IA-SOLV-VENT | reactor or fermenter off-gas (fuel-gas c | 0.15 |
 | import | IA-ALCL3-MU | anhydrous AlCl3 feed (mining-waste chlor | 49.419 |
 | import | IA-CACL2-MU | CaCl2 brine concentrate (mining-waste cl | 0.152 |
 | import | IA-CAF2-MU | fluorspar make-up, acid-spar class >= 97 | 0.326 |
 | import | IA-CR2O3-MU | Cr2O3-equivalent chromite concentrate (d | 0.365 |
-| import | IA-H2O-MU | water make-up for H and O leaving as pro | 56.521 |
+| import | IA-H2O-MU | water make-up for H and O leaving as pro | 57.023 |
 | import | IA-HALITE-MU | halite ore (raw ore) to re-saturate the  | 0.676 |
 | import | IA-MGCL2-MU | CaCl2-MgCl2 brine concentrate (mining-wa | 0.03 |
 | import | IA-MOO3-MU | MoO3-equivalent concentrate (dock import | 0.094 |
 | import | IA-QUARTZ-MU | quartz ore for the silicon furnace (raw  | 0.718 |
 | import | IA-SILICA-MU | foundry silica (flour/stucco/binder make | 1.0 |
-| import | IA-SULFUR-MU | native sulfur (raw ore) for the acid pla | 0.013 |
+| import | IA-SULFUR-MU | native sulfur (raw ore) for the acid pla | 0.014 |
 | import | IA-TIO2-MU | TiO2-equivalent rutile concentrate (dock | 0.834 |
 
-**Net trade: +10.857 kg/d** (exports 121.005 - imports 110.148); dock ledger residual +10.857 kg/d (reported, exempt per D-DOCK).
+**Net trade: +10.371 kg/d** (exports 121.022 - imports 110.651); dock ledger residual +10.373 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 
@@ -85,6 +86,28 @@ Table 4.1. Reconciled moves outside tolerance
 
 | Edge | From | To | Held study rate | Reconciled | Change |
 | --- | --- | --- | --- | --- | --- |
+| IA-RESIST-BZ | PROD_C5_C10 | RESIST_SYN | 1.0052 | 0.0000 | -1.0052 |
+| IA-FAB-N2-VENT | WAFER_FAB | ATMOS | 1.4998 | 0.9385 | -0.5613 |
+| IA-RESIST-RAFF | RESIST_SYN | OIL_FRAC | 1.3502 | 0.9473 | -0.4029 |
+| IA-SOLV-BTMS | SOLV_PLANT | OIL_FRAC | 0.1409 | 0.5438 | +0.4029 |
+| IA-RESIST-AIR | ATMOS | RESIST_SYN | 0.0926 | 0.3190 | +0.2265 |
+| IA-FAB-SOLV | WS_SOLV | WAFER_FAB | 0.2195 | 0.0000 | -0.2195 |
+| IA-LITHO-OUT | LITHO_DEV | SOLV_PLANT | 0.3395 | 0.5579 | +0.2184 |
+| IA-LITHO-CARRY | LITHO_COAT | LITHO_DEV | 0.3395 | 0.5579 | +0.2184 |
+| IA-LITHO-IN | WAFER_FAB | LITHO_COAT | 0.3395 | 0.5579 | +0.2184 |
+| IA-RESIST-ACET | WS_SOLV | RESIST_SYN | 0.0900 | 0.2576 | +0.1676 |
+| IA-SOLV-VENT | SOLV_PLANT | NORTH_DOCK | 0.1499 | 0.0166 | -0.1333 |
+| IA-RESIST-STOCK | RESIST_SYN | POLY_STOCK | 0.1200 | 0.0000 | -0.1200 |
+| POLY_TO_FAB | POLY_STOCK | WAFER_FAB | 0.1200 | 0.0236 | -0.0964 |
+| IA-RESIST-VENT | RESIST_SYN | ATMOS | 0.0841 | 0.0000 | -0.0841 |
+| IA-SOLV-PLANT | SOLV_PLANT | WS_SOLV | 0.5195 | 0.4676 | -0.0519 |
+| POWDER_TO_STOCK | POWDER_RESIN | POLY_STOCK | 0.0900 | 0.1136 | +0.0236 |
+| POLYF_TO_POWDER | POLY_F | POWDER_RESIN | 0.0900 | 0.1136 | +0.0236 |
+| VDF_TO_POLY_F | VDF_SYN | POLY_F | 0.1500 | 0.1660 | +0.0160 |
+| CRU_TO_VDF | CRU | VDF_SYN | 0.3322 | 0.3481 | +0.0159 |
+| CRU_TO_TFE | CRU | TFE_SYN | 0.2836 | 0.2913 | +0.0078 |
+| TFE_TO_POLY_F | TFE_SYN | POLY_F | 0.1000 | 0.1076 | +0.0076 |
+| IA-RESIST-BRINE | RESIST_SYN | LEACH_CSTR_1 | 0.0113 | 0.0080 | -0.0034 |
 
 ## 5. All reconciled changes above 0.1 g/d
 
@@ -92,6 +115,34 @@ Table 5.1. Reconciled changes
 
 | Edge | Held | Reconciled | Change, % |
 | --- | --- | --- | --- |
+| IA-RESIST-BZ | 1.0052 | 0.0000 | -100.00 |
+| IA-FAB-N2-VENT | 1.4998 | 0.9385 | -37.43 |
+| IA-RESIST-RAFF | 1.3502 | 0.9473 | -29.84 |
+| IA-SOLV-BTMS | 0.1409 | 0.5438 | +285.84 |
+| IA-RESIST-AIR | 0.0926 | 0.3190 | +244.67 |
+| IA-FAB-SOLV | 0.2195 | 0.0000 | -100.00 |
+| IA-LITHO-OUT | 0.3395 | 0.5579 | +64.32 |
+| IA-LITHO-CARRY | 0.3395 | 0.5579 | +64.32 |
+| IA-LITHO-IN | 0.3395 | 0.5579 | +64.32 |
+| IA-RESIST-ACET | 0.0900 | 0.2576 | +186.24 |
+| IA-SOLV-VENT | 0.1499 | 0.0166 | -88.94 |
+| IA-RESIST-STOCK | 0.1200 | 0.0000 | -100.00 |
+| POLY_TO_FAB | 0.1200 | 0.0236 | -80.30 |
+| IA-RESIST-VENT | 0.0841 | 0.0000 | -100.00 |
+| IA-SOLV-PLANT | 0.5195 | 0.4676 | -9.99 |
+| IA-FAB-SPENT | 66.5002 | 66.5272 | +0.04 |
+| IA-CRU-01 | 27.5109 | 27.4873 | -0.09 |
+| POWDER_TO_STOCK | 0.0900 | 0.1136 | +26.26 |
+| POLYF_TO_POWDER | 0.0900 | 0.1136 | +26.26 |
+| VDF_TO_POLY_F | 0.1500 | 0.1660 | +10.69 |
+| CRU_TO_VDF | 0.3322 | 0.3481 | +4.77 |
+| CRU_TO_TFE | 0.2836 | 0.2913 | +2.74 |
+| TFE_TO_POLY_F | 0.1000 | 0.1076 | +7.60 |
+| IA-RESIST-BRINE | 0.0113 | 0.0080 | -29.72 |
+| IA-RESIST-MEOH | 0.0059 | 0.0067 | +12.15 |
+| IA-SOLV-MEOH | 0.1443 | 0.1435 | -0.50 |
+| HF_GEN_TO_VDF | 0.0937 | 0.0939 | +0.19 |
+| HF_GEN_TO_TFE | 0.0800 | 0.0798 | -0.22 |
 
 ## 6. Held stoichiometric edges
 
@@ -117,52 +168,67 @@ Table 6.1. Stoichiometric edges
 
 ## 5. Transfer functions for the study edges (closure layer complete)
 
-45 study edges: 37 closure transfer functions (rate = balance of the named unit, solved in elimination order) and 8 design inputs (independent rates with their stated basis; each is replaced when its unit sizing task issues a calculation). Re-derivation of every closure from the inputs reproduces the graph to 1.0e-06 kg/d.
+60 study edges: 40 closure transfer functions (rate = balance of the named unit, solved in elimination order) and 20 design inputs (independent rates with their stated basis; each is replaced when its unit sizing task issues a calculation). Re-derivation of every closure from the inputs reproduces the graph to 1.0e+00 kg/d.
 
 | Edge | Role | Closes unit | Rate kg/d | Basis |
 | --- | --- | --- | --- | --- |
-| CRU_TO_VDF | closure | CRU | 0.3322 | Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen |
 | FILM_TO_STOCK | closure | FILM_CAST | 0.1400 | PVDF cast film/sheet to stock (A-M-289). |
 | F_RECOVER_TO_HF_GEN | closure | F_RECOVER | 1.5200 | Fluoride concentrate to the kiln = leach fluoride 1.500 (IA-HF-SRC) + POLY_F off-spec recl |
-| GREASE_CA_TO_MFG | closure | MFG_SHOP | 0.0023 | X-RTE TF: shop grease on site (A-M-429): grease need: 55 lubricated units x points x Gp 3. |
+| GREASE_CA_TO_MFG | closure | MFG_SHOP | 0.0024 | X-RTE TF: shop grease on site (A-M-429): grease need: 56 lubricated units x points x Gp 3. |
 | HF_GEN_TO_VDF | closure | HF_GEN | 0.0937 | Aqueous HF to VDF: 0.15 kg/d VDF x 2 HF/VDF (2 CH3OH + 2 Cl2 + 2 HF -> CH2=CF2 + 4 HCl + 2 |
+| IA-BAG-01 | closure | BAGHOUSE | 7.2600 | X-RTE TF: fab photoresist made on site (A-M-432): BAGHOUSE dust to the leach = its live in |
 | IA-COAT-OUT | closure | ELECTRODE_COAT | 0.0200 | Coated anode back to EW-1. Net zero. |
-| IA-CRU-01 | closure | LEACH_CSTR_1 | 27.5100 | CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 dr |
 | IA-EW-SHEET | closure | EW_9 | 13.9889 | AQS-DUTY-019. No vent. Goods and gases return. |
-| IA-GREASE-SPENT | closure | OIL_PYRO | 0.0023 | X-RTE TF: shop grease on site (A-M-429): purged grease collected at relubrication goes to  |
-| IA-LIME-TO-PCA | closure | ACID_PLANT | 0.0000 | X-RTE TF: shop grease on site (A-M-429): lime_draw = 0.000038 kg/d (grease.py, route CA). |
-| IA-LITHO-CARRY | closure | LITHO_COAT | 0.9875 | Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the too |
+| IA-FAB-SPENT | closure | LEACH_CSTR_1 | 66.5002 | X-RTE TF: fab photoresist made on site (A-M-432): spent rinse water by difference on WAFER |
+| IA-GREASE-SPENT | closure | OIL_PYRO | 0.0024 | X-RTE TF: shop grease on site (A-M-429): purged grease collected at relubrication goes to  |
+| IA-LITHO-IN | closure | LITHO_COAT | 0.3395 | X-RTE TF: fab photoresist made on site (A-M-432): resist and rinse acetone issued to the c |
+| IA-LITHO-OUT | closure | LITHO_DEV | 0.3395 | X-RTE TF: fab photoresist made on site (A-M-432): spent resist and acetone to the SOLV_PLA |
 | IA-MILL-LOSS | closure | GLASS_MILL | 6.8200 | AQS-DUTY-012 Rev N. Missing product or return, sized to the neighbor. |
-| IA-OIL-03 | closure | NCG_HEADER | 5.0000 | AQS-DUTY-010: NCG C1-C4 = DUTY-008 afterburner fuel (CO2 15.0 / 3.002) |
 | IA-PCA-REJECT | closure | P_CA | 0.0000 | X-RTE TF: shop grease on site (A-M-429): reject = 0.000012 kg/d (grease.py, route CA). |
-| IA-SOLV-CO | closure | TI_CELL | 0.0179 | X-RTE TF: on-site bench solvent (A-M-428): co = 0.017885 kg/d (solvent.py, route MEOH_CO). |
+| IA-RESIST-ACID | closure | ACID_PLANT | 0.0026 | X-RTE TF: fab photoresist made on site (A-M-432): acid = 0.002575 kg/d (fab_resist.py, rou |
+| IA-RESIST-BZ | closure | PROD_C5_C10 | 1.0052 | X-RTE TF: fab photoresist made on site (A-M-432): bz_cut = 1.005233 kg/d (fab_resist.py, r |
+| IA-RESIST-CL2 | closure | AL_POT | 0.0018 | X-RTE TF: fab photoresist made on site (A-M-432): cl2 = 0.001824 kg/d (fab_resist.py, rout |
+| IA-RESIST-HCL | closure | CRU | 0.0009 | X-RTE TF: fab photoresist made on site (A-M-432): hcl = 0.000938 kg/d (fab_resist.py, rout |
+| IA-RESIST-NAPH | closure | PROD_C11_C18 | 0.3664 | X-RTE TF: fab photoresist made on site (A-M-432): naph_cut = 0.366388 kg/d (fab_resist.py, |
+| IA-RESIST-NH3 | closure | WS_AMMONIA | 0.0013 | X-RTE TF: fab photoresist made on site (A-M-432): nh3 = 0.001314 kg/d (fab_resist.py, rout |
+| IA-RESIST-RAFF | closure | RESIST_SYN | 1.3502 | X-RTE TF: fab photoresist made on site (A-M-432): extraction raffinate = cut drawn less th |
+| IA-RESIST-STOCK | closure | POLY_STOCK | 0.1200 | X-RTE TF: fab photoresist made on site (A-M-432): resist = 0.120000 kg/d (fab_resist.py, r |
+| IA-SOLV-BTMS | closure | OIL_FRAC | 0.1409 | X-RTE TF: on-site bench solvent (A-M-428): btms = 0.140950 kg/d (solvent.py, route MEOH_CO |
+| IA-SOLV-CO | closure | TI_CELL | 0.1261 | X-RTE TF: on-site bench solvent (A-M-428): co = 0.126101 kg/d (solvent.py, route MEOH_CO). |
 | IA-SOLV-H2 | closure | HDR_H2 | 0.0010 | X-RTE TF: on-site bench solvent (A-M-428): h2 = 0.000995 kg/d (solvent.py, route MEOH_CO). |
-| IA-SOLV-MEOH | closure | MEOH_TANK | 0.0205 | X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.020460 kg/d (solvent.py, route MEOH_CO |
-| IA-SOLV-PLANT | closure | WS_SOLV | 0.2100 | X-RTE TF: on-site bench solvent (A-M-428): product = 0.209973 kg/d (solvent.py, route MEOH |
+| IA-SOLV-MEOH | closure | MEOH_TANK | 0.1443 | X-RTE TF: on-site bench solvent (A-M-428): meoh = 0.144254 kg/d (solvent.py, route MEOH_CO |
+| IA-SOLV-PLANT | closure | WS_SOLV | 0.5195 | X-RTE TF: on-site bench solvent (A-M-428): product = 0.519493 kg/d (solvent.py, route MEOH |
 | IA-SOLV-SPENT | closure | WET_BENCH | 0.1995 | X-RTE TF: on-site bench solvent (A-M-428): spent = 0.199474 kg/d (solvent.py, route MEOH_C |
-| IA-SOLV-VENT | closure | SOLV_PLANT | 0.0189 | X-RTE TF: on-site bench solvent (A-M-428): vent = 0.018868 kg/d (solvent.py, route MEOH_CO |
+| IA-SOLV-VENT | closure | SOLV_PLANT | 0.1499 | X-RTE TF: on-site bench solvent (A-M-428): vent = 0.149902 kg/d (solvent.py, route MEOH_CO |
 | IA-WIRE-LOSS | closure | WIRE_DRAW | 0.4400 | AQS-DUTY-012 Rev N. |
-| NCG_TO_AB | closure | AFTERBURNER | 5.0000 | AQS-DUTY-010: = IA-OIL-03 (header pass-through) |
 | PCA_TO_GREASE | closure | GREASE_CA | 0.0000 | X-RTE TF: shop grease on site (A-M-429): Ca(OH)2 for the soap, stoichiometric (route CA). |
-| POLYF_TO_POWDER | closure | POWDER_RESIN | 0.0900 | PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RA |
-| POWDER_TO_STOCK | closure | POLY_STOCK | 0.0900 | PTFE fine powder to stock (A-M-289). |
-| S07 | closure | NUTRIENT_DOSE | 2.5000 | Study BMED salt / nutrient dose mid-band (AQS-EQP-NUT-001 / AQS-AUD-001 §4.6) — not tote s |
-| S11 | closure | GROW_BED | 0.8000 | Study farm/galley organics return order ~fraction of S14 (AQS-AUD-001 §12) |
+| POLYF_TO_POWDER | closure | POLY_F | 0.0900 | PTFE resin to the powder line: 0.10 kg/d TFE -> 0.09 kg/d at the ~90 % yield of the AQS-RA |
+| POLY_TO_FAB | closure | WAFER_FAB | 0.1200 | X-RTE TF: fab photoresist made on site (A-M-432): formulated positive resist, 40 coats/d ( |
+| POWDER_TO_STOCK | closure | POWDER_RESIN | 0.0900 | PTFE fine powder to stock (A-M-289). |
 | S32 | closure | WS_PEROX | 3.0000 | AQS-DUTY-010: AUD s13 band 1-5 L/d at 3 of 1-5 starts, dilute 1.0 kg/L | value restored fr |
-| S38 | closure | OIL_FRAC | 0.0060 | AQS-DUTY-010: ST-LITHO-01 resist waste 6 g/d |
 | S57 | closure | MET_MELT | 6.8389 | AQS-DUTY-010: Cu deposit 8.784 x 0.5 to wire, less melt fume 0.3% | value restored from gr |
-| S71 | closure | MET_AHU | 20458.3200 | AQS-DUTY-010: MET LEV 720.0 m3/h (VENT_SCRUB 2.4 band 540-900 mid) at 1.184 kg/m3 Converte |
-| S72B | closure | MET_SCRUB | 0.0158 | AQS-DUTY-010: lubricant mist 2.0 g/kg formed x 7.89 kg/d |
 | S76 | closure | MEOH_FC | 5.0000 | Matches mid Source-A synth ~2–8 kg/d MeOH (AQS-MeOH-001); fuel to MEOH_FC |
 | S77 | closure | MEOH_FERM | 0.0146 | AQS-DUTY-010: VS 0.0486 kg/d x 0.3 Nm3 CH4/kg VS -> MeOH at 70% | value restored from grap |
 | TFE_TO_POLY_F | closure | TFE_SYN | 0.1000 | TFE monomer to polymerization (AQS-RATE-FP-MET; A-M-289). |
 | VDF_TO_POLY_F | closure | VDF_SYN | 0.1500 | VDF monomer to polymerization (AQS-RATE-FP-MET; A-M-289). |
-| WAX_TO_GREASE_CA | closure | PROD_C19_C28 | 0.0024 | X-RTE TF: shop grease on site (A-M-429): C19-C28 cut: base oil 0.002067 + wax oxidised to  |
+| WAX_TO_GREASE_CA | closure | PROD_C19_C28 | 0.0025 | X-RTE TF: shop grease on site (A-M-429): C19-C28 cut: base oil 0.002105 + wax oxidised to  |
 | CRU_TO_TFE | input | - | 0.2836 | Cl2 to TFE: 4 Cl2 per TFE from the CRU chlorate finish (AQS-SEL-FP; A-M-289). |
+| CRU_TO_VDF | input | - | 0.3322 | Cl2 to VDF: 2 Cl2 per VDF from the CRU chlorate finish on the returned dilute HCl (halogen |
 | HF_GEN_TO_TFE | input | - | 0.0800 | Aqueous HF to TFE: 0.10 kg/d TFE x 4 HF/TFE (R-22 route; AQS-SEL-FP, ULLMANN_FLUOROPOLY). |
 | IA-COAT-IN | input | - | 0.0200 | Daily average of a batch recoat. Returns on IA-COAT-OUT. Does not consume the EW nickel de |
-| IA-GREASE-AIR | input | - | 0.0001 | X-RTE TF: shop grease on site (A-M-429): o2 = 0.000132 kg/d (grease.py, route CA). |
-| IA-GREASE-VENT | input | - | 0.0003 | X-RTE TF: shop grease on site (A-M-429): vent = 0.000262 kg/d (grease.py, route CA). |
+| IA-CRU-01 | input | - | 27.5109 | CRU liquor re-solved on the unit balance: S66 27.3720 + dilute HCl returns 0.7537 - Cl2 dr |
+| IA-FAB-N2-VENT | input | - | 1.4998 | X-RTE TF: fab photoresist made on site (A-M-432): the S03 nitrogen purge leaves the tools  |
+| IA-FAB-SOLV | input | - | 0.2195 | X-RTE TF: fab photoresist made on site (A-M-432): edge-bead rinse and strip acetone at the |
+| IA-GREASE-AIR | input | - | 0.0001 | X-RTE TF: shop grease on site (A-M-429): o2 = 0.000135 kg/d (grease.py, route CA). |
+| IA-GREASE-VENT | input | - | 0.0003 | X-RTE TF: shop grease on site (A-M-429): vent = 0.000267 kg/d (grease.py, route CA). |
+| IA-LIME-TO-PCA | input | - | 0.0000 | X-RTE TF: shop grease on site (A-M-429): lime_draw = 0.000039 kg/d (grease.py, route CA). |
+| IA-LITHO-CARRY | input | - | 0.3395 | Resist/solvent carry coat -> develop at the fab issue rate (the coated wafers ride the too |
 | IA-MEOH-REST | input | - | 1.2800 | AQS-DUTY-016. Each waste has a user. Each chemical has a source. |
-| IA-PCA-H2O | input | - | 0.0000 | X-RTE TF: shop grease on site (A-M-429): slake_h2o = 0.000008 kg/d (grease.py, route CA). |
-| IA-SOLV-BTMS | input | - | 0.0100 | X-RTE TF: on-site bench solvent (A-M-428): btms = 0.009974 kg/d (solvent.py, route MEOH_CO |
+| IA-PCA-H2O | input | - | 0.0000 | X-RTE TF: shop grease on site (A-M-429): slake_h2o = 0.000009 kg/d (grease.py, route CA). |
+| IA-RESIST-ACET | input | - | 0.0900 | X-RTE TF: fab photoresist made on site (A-M-432): acetone = 0.090000 kg/d (fab_resist.py,  |
+| IA-RESIST-AIR | input | - | 0.0926 | X-RTE TF: fab photoresist made on site (A-M-432): air = 0.092558 kg/d (fab_resist.py, rout |
+| IA-RESIST-BRINE | input | - | 0.0113 | X-RTE TF: fab photoresist made on site (A-M-432): brine = 0.011349 kg/d (fab_resist.py, ro |
+| IA-RESIST-CO | input | - | 0.0007 | X-RTE TF: fab photoresist made on site (A-M-432): co = 0.000721 kg/d (fab_resist.py, route |
+| IA-RESIST-H2 | input | - | 0.0001 | X-RTE TF: fab photoresist made on site (A-M-432): h2 = 0.000104 kg/d (fab_resist.py, route |
+| IA-RESIST-MEOH | input | - | 0.0059 | X-RTE TF: fab photoresist made on site (A-M-432): meoh = 0.005938 kg/d (fab_resist.py, rou |
+| IA-RESIST-VENT | input | - | 0.0841 | X-RTE TF: fab photoresist made on site (A-M-432): vent = 0.084138 kg/d (fab_resist.py, rou |

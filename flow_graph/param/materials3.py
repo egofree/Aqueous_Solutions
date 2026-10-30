@@ -388,6 +388,14 @@ SEL = {
   'while hot acetic acid with iodide needs a nickel-molybdenum alloy (ULLMANN_ACETIC; PERRY9_MAT). ' + _TAG,
   'Zirconium for the carbonylation autoclave if iodide corrosion of C-276 is seen in service',
   'wetted by ethanol, acetone and hot acetic acid with an iodide promoter; iodide pitting of the carbonylation vessel is the corrosion load.'),
+ 'RESIST_SYN': (
+  'Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the '
+  'formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines',
+  'Wet HCl, nitrous acid and sulfuric acid at up to 100 C in the naphthol and diazonaphthoquinone steps, and phenol, formaldehyde and acetone in the '
+  'novolac and formulation steps (A-M-432, flow_graph/param/fab_resist.py): glass lining serves the wet acid chlorides, stainless steel the '
+  'organics and the dry gases, and nickel-copper alloy the dry chlorine and phosgene (PERRY9_MAT). ' + _TAG,
+  'Hastelloy C-276 reactors if the glass lining is chipped in service',
+  'wetted by hot wet HCl, nitrous and sulfuric acids, phenol and acetone; chloride attack of any bare stainless steel is the corrosion load.'),
  'SI_REFINE': (
   'Nickel 200 hydrochlorinator and trichlorosilane distillation column, dry service; 316L chlorosilane and hydrogen '
   'chloride piping kept dry; Siemens bell jar of 316L with a cooled wall and high-purity silicon rods on graphite '

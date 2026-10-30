@@ -13,3 +13,4 @@ N11,DN15,Class 150,carbon dioxide and water vapour of the cake kiln,outlet,600
 N12,solids,Class 150,"cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up",outlet,600
 N13,solids,Class 150,cake-kiln lime residue as the lime-cycle make-up,outlet,600
 N14,solids,Class 150,cake-kiln lime residue to the slaker,outlet,600
+N15,DN15,Class 150,sulfuric acid for the naphthol sulfonation,outlet,600

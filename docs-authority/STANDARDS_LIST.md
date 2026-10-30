@@ -15,7 +15,7 @@ Authority: task X-BAS-04 of AQS-PLAN-007. Jurisdiction: USA (AQS-STD-003, AQS-HS
 
 This list gives the codes and standards that the project cites, grouped by discipline. It is built from the register of references in `flow_graph/param/refs.py`: every key there that names a code or standard is listed, with the number of repository files that cite it and up to three of those files. A key that no file cites yet is marked as registered but not cited.
 
-The list has 149 codes and standards in 9 disciplines; every one is cited by at least one file. Quantities are in SI units, with US customary units only where a code states them, such as NEC conductor sizes and ASME B16.5 pressure classes.
+The list has 151 codes and standards in 9 disciplines; every one is cited by at least one file. Quantities are in SI units, with US customary units only where a code states them, such as NEC conductor sizes and ASME B16.5 pressure classes.
 
 ## 2. Pressure equipment and piping
 
@@ -113,14 +113,16 @@ Table 4.1. Electrical
 | ULLMANN_ACETIC | Le Berre C., Serp P., Kalck P., Torrence G.P., Acetic Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2014) | 13 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | ULLMANN_FATTY_ACIDS | Anneken D.J. et al., Fatty Acids, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2006) | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, docs-authority/notes/2026-10-29-rewrite-batch-41.md |
 | ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters | 32 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/BALANCE_RECONCILIATION.md, docs-authority/INTERNALS.md |
+| ULLMANN_FORMALDEHYDE | Reuss G. et al., Formaldehyde, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
 | ULLMANN_GLYOXAL | Mattioda G., Blanc A., Glyoxal, Ullmann's Encyclopedia of Industrial Chemistry (2011), doi | 2 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
-| ULLMANN_H2SO4 | Mueller H., Sulfuric Acid and Sulfur Trioxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
+| ULLMANN_H2SO4 | Mueller H., Sulfuric Acid and Sulfur Trioxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000) | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/duties/EVAP_ACID.md |
 | ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | ULLMANN_LUBRICANTS | Mang T., Dresel W. (eds.), Lubricants and Lubrication, Wiley-VCH (2017), and Ullmann's Encyclopedia of Industrial Chemistry, Lubricants and Lubrication | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, docs-authority/notes/2026-10-29-rewrite-batch-41.md |
 | ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds) | 16 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/MATERIALS_STD.md |
 | ULLMANN_NAOH | Kurt C., Bittner J., Sodium Hydroxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2006) | 11 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json |
-| ULLMANN_NITRIC | Thiemann M., Scheibler E., Wiegand K.W., Nitric Acid, Nitrous Acid, and Nitrogen Oxides, Ullmann's Encyclopedia of Industrial Chemistry (2000), doi | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
+| ULLMANN_NITRIC | Thiemann M., Scheibler E., Wiegand K.W., Nitric Acid, Nitrous Acid, and Nitrogen Oxides, Ullmann's Encyclopedia of Industrial Chemistry (2000), doi | 7 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
+| ULLMANN_PHENOL | Weber M., Weber M., Kleine-Boymann M., Phenol, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2004) | 5 | docs-authority/PARAMETRIC_MODEL.md, docs-authority/assumptions_manual.json, flow_graph/param/drivers.json |
 | ULLMANN_TITANIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Titanium chapter (Titanium, Titanium Alloys, and Titanium Compounds) | 12 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 | ULLMANN_WAX | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Waxes chapter (Waxes) | 14 | design_tool/aqs_design_tool/data/candidate_mvs.json, docs-authority/MATERIALS_SEC3.md, docs-authority/PARAMETRIC_MODEL.md |
 

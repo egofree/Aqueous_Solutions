@@ -3,8 +3,8 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 94,
-  "edge_count": 98,
+  "node_count": 95,
+  "edge_count": 99,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -207,7 +207,7 @@
         "internals": "potable bypass; 2 x flat-sheet RO module, 2 x EDI stack, UV-TOC lamp",
         "design": {
           "UPW_kg_d": 127.300395,
-          "bypass_kg_d": 174.193703,
+          "bypass_kg_d": 174.194633,
           "RO_feed_kg_d": 133.34539999999998,
           "recovery": 0.9546665651758517,
           "osmotic_bar": 0.19204145086101648,
@@ -510,7 +510,7 @@
       "notes": "restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)",
       "enabled": true,
       "continuous_kw": {
-        "value": 21.1932,
+        "value": 21.1934,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF: 9.25 kg/d H2 x 55.0 kWh/kg / 24 h; rated 84.8 kW on a 6.0 h PV window."
@@ -1163,16 +1163,16 @@
       "params": {
         "presence": "present",
         "design": {
-          "H2_kg_d": 2.085141,
-          "Nm3_h": 0.9659463949652777,
-          "O2_mol_d": 1.0342961309523808,
-          "water_kg_d": 0.03726568959821428,
-          "HCl_kg_d": 3.771147123065476e-05,
-          "guard_kg": 0.033940324107589286,
-          "sieve_kg": 0.3726568959821428,
+          "H2_kg_d": 2.085037,
+          "Nm3_h": 0.9658982167245371,
+          "O2_mol_d": 1.0342445436507937,
+          "water_kg_d": 0.0372638309077381,
+          "HCl_kg_d": 3.7709590306051586e-05,
+          "guard_kg": 0.033938631275446426,
+          "sieve_kg": 0.372638309077381,
           "beds": {
             "deoxo": {
-              "V_L": 0.19318927899305555,
+              "V_L": 0.19317964334490742,
               "tube": "DN25 Sch 40 316L",
               "L_mm": 347,
               "count": 2
@@ -1184,13 +1184,13 @@
               "count": 2
             },
             "TSA": {
-              "V_L": 0.5323669942602041,
+              "V_L": 0.5323404415391157,
               "tube": "DN50 Sch 40 316L",
               "L_mm": 300,
               "count": 2
             }
           },
-          "regen_W": 1.0878944292460628,
+          "regen_W": 1.0878405140995546,
           "loss_W": 37.98279150873541,
           "insulation_mm": 38,
           "kW": 0.0205,
@@ -1573,7 +1573,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 351.8504,
+        "value": 351.8735,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1655,8 +1655,8 @@
         "count": 42,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2302.0,
-          "export_kWh_d_clear": 6541,
+          "export_peak_kW": 2301.9,
+          "export_kWh_d_clear": 6542,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -1686,7 +1686,7 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 218.0,
+          "bus_demand_kW": 218.1,
           "section_rating_A": 400,
           "basis_A": 291.4,
           "MCC": "MCC-1A / MCC-1B",
@@ -1820,25 +1820,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 218.0226,
+        "value": 218.0526,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 991.0 kW, 3052 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.1 kW, charge 991.1 kW, 3053 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 991,
+        "kW": 992,
         "kWh": 3053,
         "presence": "present",
-        "charge_kW": 991,
+        "charge_kW": 992,
         "discharge_kW": 219,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
         "distribution": "distributed over the 42 hybrid inverters, 72.7 kWh and 23.6 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.739,
-          "purge_m3_h": 32.24,
+          "H2_m3_d": 7.74,
+          "purge_m3_h": 32.25,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1996.5
+          "electrode_area_m2": 1996.8
         }
       }
     },
@@ -4162,28 +4162,28 @@
         },
         "design": {
           "route": "CA",
-          "units": 55,
+          "units": 56,
           "gp_g": 3.9,
           "interval_d": 182.625,
-          "grease_kg_d": 0.002349,
-          "soap_kg_d": 0.000282,
-          "base_oil_kg_d": 0.002067,
-          "wax_kg_d": 0.002445,
-          "wax_ox_kg_d": 0.000377,
-          "acid_kg_d": 0.000264,
-          "o2_kg_d": 0.000132,
-          "vent_kg_d": 0.000262,
-          "thickener_kg_d": 3.4e-05,
-          "caoh2_kg_d": 3.4e-05,
+          "grease_kg_d": 0.002392,
+          "soap_kg_d": 0.000287,
+          "base_oil_kg_d": 0.002105,
+          "wax_kg_d": 0.002489,
+          "wax_ox_kg_d": 0.000384,
+          "acid_kg_d": 0.000269,
+          "o2_kg_d": 0.000135,
+          "vent_kg_d": 0.000267,
+          "thickener_kg_d": 3.5e-05,
+          "caoh2_kg_d": 3.5e-05,
           "lioh_kg_d": 0.0,
-          "lime_draw_kg_d": 3.8e-05,
-          "slake_h2o_kg_d": 8e-06,
+          "lime_draw_kg_d": 3.9e-05,
+          "slake_h2o_kg_d": 9e-06,
           "reject_kg_d": 1.2e-05,
-          "kettle_L": 0.335582,
+          "kettle_L": 0.341684,
           "kettle_D_mm": 100.0,
           "insul_mm": 25,
           "loss_W": 11.54743,
-          "kw": 7.2e-05,
+          "kw": 7.3e-05,
           "kettle_T_C": 150.0,
           "campaign_d": 90
         }
@@ -4597,8 +4597,8 @@
         "recovery": [
           {
             "element": "S",
-            "use": "sulfuric acid for the HF kiln",
-            "need_kg_d": 0.12935298595317726,
+            "use": "sulfuric acid for the HF kiln and the resist",
+            "need_kg_d": 0.13017792487560162,
             "recovered_kg_d": 0.11641768735785955,
             "recovered_from": [
               "IA-GYPSUM-REGEN"
@@ -4612,6 +4612,12 @@
                 "kg_d": 0.012935,
                 "recoverable": false,
                 "basis": "cake-kiln non-conversion (caso4_dec_frac) leaves with the residue"
+              },
+              {
+                "stream": "IA-RESIST-ACID",
+                "kg_d": 0.000825,
+                "recoverable": false,
+                "basis": "sulfur bound in the photoresist ester; it leaves the still bottoms with the oil cut (A-M-432)"
               },
               {
                 "stream": "IA-PCA-REJECT",
@@ -4701,10 +4707,10 @@
       "notes": "Solvent plant: spent-solvent still, with carbonylation, ketonisation and hydrogenation reactors or solvent fermenters (A-M-428).",
       "enabled": true,
       "continuous_kw": {
-        "value": 0.01034,
+        "value": 0.02963,
         "unit": "kW",
         "status": "study",
-        "note": "X-RTE TF: on-site bench solvent (A-M-428): still reboiler 0.00944 kW + reactor heaters 0.00090 kW (solvent.py, route MEOH_CO)."
+        "note": "X-RTE TF: on-site bench solvent (A-M-428): still reboiler 0.02336 kW + reactor heaters 0.00627 kW (solvent.py, route MEOH_CO)."
       },
       "modules": [],
       "params": {
@@ -4714,10 +4720,11 @@
           {
             "element": "C",
             "use": "bench solvent (ethanol and acetone)",
-            "need_kg_d": 0.1198775889411408,
-            "recovered_kg_d": 0.10818952401937956,
+            "need_kg_d": 0.3119046922469259,
+            "recovered_kg_d": 0.2375708248458258,
             "recovered_from": [
-              "IA-SOLV-SPENT"
+              "IA-SOLV-SPENT",
+              "IA-LITHO-OUT"
             ],
             "ore_streams": [],
             "unrecovered": [
@@ -4729,7 +4736,7 @@
               },
               {
                 "stream": "IA-SOLV-BTMS",
-                "kg_d": 0.005694185474704193,
+                "kg_d": 0.06833998795404304,
                 "recoverable": false,
                 "basis": "still bottoms with the resist residue, burned with the light oil cut (solv_still_recovery_frac)"
               }
@@ -4741,28 +4748,107 @@
           "route": "MEOH_CO",
           "bench_kg_d": 0.209973,
           "spent_kg_d": 0.199474,
-          "recovered_kg_d": 0.189501,
-          "make_kg_d": 0.020472,
-          "acetone_kg_d": 0.010236,
+          "fab_need_kg_d": 0.30952,
+          "fab_spent_kg_d": 0.33952,
+          "fab_recovered_kg_d": 0.208544,
+          "recovered_kg_d": 0.398045,
+          "make_kg_d": 0.121448,
+          "acetone_kg_d": 0.111212,
           "ethanol_kg_d": 0.010236,
-          "meoh_kg_d": 0.02046,
-          "co_kg_d": 0.017885,
+          "meoh_kg_d": 0.144254,
+          "co_kg_d": 0.126101,
           "h2_kg_d": 0.000995,
           "fw_kg_d": 0.0,
           "stillage_kg_d": 0.0,
           "butanol_kg_d": 0.0,
-          "vent_kg_d": 0.018868,
-          "btms_kg_d": 0.009974,
-          "product_kg_d": 0.209973,
-          "kw": 0.010344,
-          "kw_still": 0.009443,
-          "kw_rx": 0.000901
+          "vent_kg_d": 0.149902,
+          "btms_kg_d": 0.14095,
+          "product_kg_d": 0.519493,
+          "kw": 0.029632,
+          "kw_still": 0.023363,
+          "kw_rx": 0.006269
         },
         "sec3_material": {
           "mat": "316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed",
           "basis": "Ethanol and acetone at their boiling points in the still, and acetic acid with an iodide promoter at 150-200 C in the carbonylation (A-M-428, flow_graph/param/solvent.py): stainless steel serves the solvents and the dry reactor gases, while hot acetic acid with iodide needs a nickel-molybdenum alloy (ULLMANN_ACETIC; PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
           "alt": "Zirconium for the carbonylation autoclave if iodide corrosion of C-276 is seen in service",
           "note": "wetted by ethanol, acetone and hot acetic acid with an iodide promoter; iodide pitting of the carbonylation vessel is the corrosion load.",
+          "task": "X-MAT-22"
+        }
+      }
+    },
+    {
+      "unit_id": "RESIST_SYN",
+      "sector_id": "FAB",
+      "presence": "present",
+      "class": "reactor",
+      "tags": [],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Photoresist synthesis: aromatic extraction, phenol and naphthol oxychlorination, formaldehyde, novolac, diazonaphthoquinone sulfonyl ester and formulation batch reactors (A-M-432).",
+      "enabled": true,
+      "continuous_kw": {
+        "value": 0.00366,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): batch reactor heating to 100 C (fab_resist.py)."
+      },
+      "modules": [],
+      "params": {
+        "presence": "present",
+        "note": "Photoresist synthesis (A-M-432).",
+        "design": {
+          "route": "DNQ_NOVOLAC",
+          "starts_d": 5.0,
+          "coats_d": 40.0,
+          "resist_kg_d": 0.12,
+          "solids_kg_d": 0.03,
+          "daa_kg_d": 0.09,
+          "rinse_kg_d": 0.21952,
+          "novolac_kg_d": 0.024025932,
+          "dnq_kg_d": 0.006,
+          "bz_cut_kg_d": 1.005232635,
+          "naph_cut_kg_d": 0.366387818,
+          "benzene_kg_d": 0.018094187,
+          "naphthalene_kg_d": 0.00329749,
+          "raff_kg_d": 1.350228776,
+          "meoh_kg_d": 0.005937721,
+          "nh3_kg_d": 0.001314453,
+          "h2_kg_d": 0.00010373,
+          "co_kg_d": 0.000720604,
+          "cl2_kg_d": 0.001824175,
+          "acid_kg_d": 0.002574557,
+          "acetone_kg_d": 0.09,
+          "air_kg_d": 0.092557646,
+          "vent_kg_d": 0.08413788,
+          "hcl_kg_d": 0.00093802,
+          "brine_kg_d": 0.011348664,
+          "kw": 0.003655991,
+          "ledger_kmol_d": {
+            "C6H6": -0.000231638214,
+            "O2": -0.000298517742,
+            "CH4O": -0.000185310571,
+            "H2O": 0.000550707841,
+            "C6.8H6O": 0.000205911543,
+            "C10H8": -2.5726671e-05,
+            "NH3": -7.7180014e-05,
+            "H2": -5.1453343e-05,
+            "H2SO4": -2.5726671e-05,
+            "CO": -2.5726671e-05,
+            "Cl2": -2.5726671e-05,
+            "CO2": 2.5726671e-05,
+            "HCl": 2.5726671e-05,
+            "ESTER": 2.5726671e-05,
+            "NH4Cl": 2.5726671e-05,
+            "C3H6O": -0.001549586777,
+            "C6H12O2": 0.000774793388
+          }
+        },
+        "sec3_material": {
+          "mat": "Glass-lined steel batch reactors for the oxychlorination, nitrosation, diazotisation and esterification; 316L for the formaldehyde and ammonia oxidisers, the novolac kettle and the solvent steps; Monel 400 for the dry phosgene and chlorine lines",
+          "basis": "Wet HCl, nitrous acid and sulfuric acid at up to 100 C in the naphthol and diazonaphthoquinone steps, and phenol, formaldehyde and acetone in the novolac and formulation steps (A-M-432, flow_graph/param/fab_resist.py): glass lining serves the wet acid chlorides, stainless steel the organics and the dry gases, and nickel-copper alloy the dry chlorine and phosgene (PERRY9_MAT). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Hastelloy C-276 reactors if the glass lining is chipped in service",
+          "note": "wetted by hot wet HCl, nitrous and sulfuric acids, phenol and acetone; chloride attack of any bare stainless steel is the corrosion load.",
           "task": "X-MAT-22"
         }
       }
@@ -5060,7 +5146,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 351.8504,
+        "value": 351.8735,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -5842,7 +5928,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 21.1932,
+        "value": 21.1934,
         "unit": "kW",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | restored verbatim from Rev BH (91d33f4) per owner ruling 2026-10-18 (D-O2): the plant O2 source (the ASU is a species-recovery box, not a source); diverse N+1 O2 pair with the crew-duty grow bed (A-M-230)"
@@ -7281,7 +7367,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.01034,
+        "value": 0.02963,
         "unit": "kW",
         "status": "study",
         "note": "X-RTE TF: on-site bench solvent (A-M-428): feed equal to SOLV_PLANT continuous_kw."
@@ -7342,6 +7428,33 @@
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "SF-RESIST_SYN",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "RESIST_SYN",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.00366,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: fab photoresist made on site (A-M-432): feed equal to RESIST_SYN continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "FAB",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],

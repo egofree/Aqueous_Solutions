@@ -3,7 +3,7 @@
   "family": "MF-01",
   "type": "BLDC",
   "rating": "42 mm (NEMA 17 flange)",
-  "items": 120
+  "items": 128
  },
  {
   "family": "MF-02",
@@ -318,7 +318,7 @@
   "family": "MF-17",
   "type": "solenoid",
   "rating": "ISO 15218 coil, 22 mm",
-  "items": 38
+  "items": 42
  },
  {
   "family": "MF-19",

@@ -7,7 +7,7 @@ service line: bin pellet tote bin; issue_kg_d 0.2674; to_wet_kg_d 0.02674; hold_
 Internals: none with basis: static storage; no contacting or separation internals; holdup is the duty size line
 Material: HDPE tote bins and PP powder drums; steel rack; no wetted streams. Basis: 1 d shop issue + reject staging at the 500 kg/m3 pellet bulk density (graph design; A-M-264): dry resin storage, no process contact (AQS-DUTY-073 class). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). Alternative: antistatic PP totes if the powder-drum fraction builds charge (a spares-check item). (continues on the duty sheet)
 
-Nozzles: 9 process connections per docs-authority/nozzles/POLY_STOCK.csv
+Nozzles: 10 process connections per docs-authority/nozzles/POLY_STOCK.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

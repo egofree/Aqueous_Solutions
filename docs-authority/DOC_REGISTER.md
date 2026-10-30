@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AU | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AV | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -176,7 +176,7 @@ Table 3.1. Document numbers in use
 | AQS-FONT-001 | `docs-authority/FONTS.md` | A | 2026-10-25 | Fonts for 3D sign glyphs | current |
 | AQS-GAS-002 | `docs-authority/SCRUBBER_CHEMISTRY.md` | B | 2026-10-29 | Scrubber chemistry | current |
 | AQS-GAS-003 | `docs-authority/FAN_STACK.md` | B | 2026-09-27 | Fan curves and stack heights | current |
-| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | C | 2026-10-29 | Glossary | current |
+| AQS-GLO-001 | `docs-authority/GLOSSARY.md` | D | 2026-10-30 | Glossary | current |
 | AQS-GOV-006 | `docs-authority/DERIVED_REVISIONS.md` | B | — | Derived file revisions | current |
 | AQS-HAB-001 | `docs-authority/HAB_FIXTURES.md` | C | 2026-10-29 | Habitation fixtures | current |
 | AQS-HEAT-LADDER-001 | `docs-authority/HEAT_LADDER.md` | A | 2026-10-25 | Dual heat ladder | current |
@@ -226,7 +226,7 @@ Table 3.1. Document numbers in use
 | AQS-OPS-002 | `docs-authority/MAINT_PLAN.md` | A | 2026-10-16 | Maintenance plan | current |
 | AQS-OPS-003 | `docs-authority/SPARES.md` | A | 2026-10-16 | Critical spares list | current |
 | AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | F | 2026-10-29 | Open questions | current |
-| AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | G | 2026-10-29 | Parametric model | current |
+| AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | H | 2026-10-30 | Parametric model | current |
 | AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | E | 2026-10-25 | Mass balance reconciliation | current |
 | AQS-PAR-004 | `docs-authority/GAS_SPECIES.md` | B | 2026-10-15 | Oxygen species ledger | current |
 | AQS-PAR-005 | `docs-authority/O2_SOURCE.md` | D | 2026-10-18 | O2 source duty summary | current |

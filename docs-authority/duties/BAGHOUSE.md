@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 7.77 kg/d. Mass out 7.77 kg/d. Electrical duty 0.0000 kW. In: IA-MILL-LOSS 6.82 kg/d (mill dust); IA-FAB-LOSS 0.51 kg/d (kerf); IA-WIRE-LOSS 0.44 kg/d (draw scrap). Out: S19 0 kg/d (dust); IA-BAG-01 7.77 kg/d (captured dust).
+1. Basis. Mass in 7.26 kg/d. Mass out 7.26 kg/d. Electrical duty 0.0000 kW. In: IA-MILL-LOSS 6.82 kg/d (mill dust); IA-WIRE-LOSS 0.44 kg/d (draw scrap). Out: S19 0 kg/d (dust); IA-BAG-01 7.26 kg/d (captured dust).
 
 2. Size.
 - In 7.77 kg/d, out 7.77 kg/d. No holdup claimed.

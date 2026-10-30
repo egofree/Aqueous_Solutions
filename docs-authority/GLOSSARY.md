@@ -1,14 +1,15 @@
 # Glossary
 
 Document number: AQS-GLO-001  
-Revision: C  
-Date: 2026-10-29  
+Revision: D  
+Date: 2026-10-30  
 
 | Rev | Description | Date |
 |---|---|---|
 | A | First issue | — |
 | B | Purpose statement added; the withdrawn document-line scan removed from the A-M entry; style findings cleared | 2026-10-25 |
 | C | Wrong expansions corrected against the pages that use them (for example PA, PG, IED, FFC, CRC, LR); entries with two meanings or no use removed; duplicate entries removed | 2026-10-29 |
+| D | Diazonaphthoquinone added for the on-site photoresist (A-M-432) | 2026-10-30 |
 
 ## 1. Purpose and scope
 
@@ -111,6 +112,7 @@ Each entry is `{term -- definition}`. Acronyms used in the plant flow graph, des
 
 {CERAMIC GRIT -- Undigested ceramic (Al₂O₃, SiC, filler). Product: media, aggregate, or the host matrix that vitrifies PK-9 sludge.}
 
+{DNQ -- Diazonaphthoquinone. The photoactive compound of the positive novolac photoresist that RESIST_SYN makes for the wafer fab (A-M-432).}
 {DRYER -- Paddle or belt, 80–120 °C from HX-4 (Q3). Float plus dense-plastic jumper. Condensate to Q4.}
 
 {EW CASCADE -- Nine CEM cells in E° order, EW-1 through EW-9. Each cell harvests independently to METALS / ELEMENTS.}

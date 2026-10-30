@@ -21,3 +21,5 @@ N19,solids,Class 150,"saw kerf, crop and pot scrap with the spent slurry",outlet
 N20,DN15,Class 150,argon blanket gas for the CZ puller,inlet,160
 N21,DN15,Class 150,CZ argon exhaust back to the cold-box getter,outlet,600
 N22,solids,Class 150,electronic-grade silicon CZ charge from the store,inlet,160
+N23,DN15,Class 150,acetone for edge-bead rinse and resist strip,inlet,160
+N24,DN15,Class 150,fab nitrogen purge exhaust,outlet,600

@@ -17,7 +17,7 @@ This page records the size of unit P_CA, of class `precip` in sector DIGESTER, f
 
 ## 2. Duty
 
-The unit takes 4.6e-05 kg/d by 2 streams and gives 4.6e-05 kg/d by 2 streams.
+The unit takes 4.8e-05 kg/d by 2 streams and gives 4.7e-05 kg/d by 2 streams.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The graph gives no envelope for the unit.
 
-The hold-up check takes 4.6e-05 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 4.6e-05 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 10 mm in diameter and 10 mm high.
+The hold-up check takes 4.8e-05 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 4.8e-05 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 10 mm in diameter and 10 mm high.
 
 ## 4. Material
 

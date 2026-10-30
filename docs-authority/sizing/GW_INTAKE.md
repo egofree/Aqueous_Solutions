@@ -17,7 +17,7 @@ This page records the size of unit GW_INTAKE, of class `intake` in sector WTR, f
 
 ## 2. Duty
 
-The unit takes 0 kg/d by 0 streams and gives 11.3962 kg/d by 4 streams.
+The unit takes 0 kg/d by 0 streams and gives 11.3967 kg/d by 4 streams.
 
 The graph holds no design parameters for the unit.
 
@@ -25,7 +25,7 @@ The graph holds no design parameters for the unit.
 
 The envelope is 900 mm x 700 mm x 1800 mm, from `params.size_mm`. Its basis is: L x W x H mm study envelope for the well pump, sand separator and RO rack; unit task 02 sizing pending.
 
-The hold-up check takes 11.3962 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 11.4 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 230 mm in diameter and 350 mm high. It fits within the envelope.
+The hold-up check takes 11.3967 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 11.4 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 230 mm in diameter and 350 mm high. It fits within the envelope.
 
 ## 4. Material
 

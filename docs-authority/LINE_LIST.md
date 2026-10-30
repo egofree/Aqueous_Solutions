@@ -11,11 +11,11 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-607 edges: 343 piped, 144 solids transfers, 120 electrical. Piped edges without a length (unit position missing): 83.
+624 edges: 360 piped, 143 solids transfers, 121 electrical. Piped edges without a length (unit position missing): 99.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-Units with no position anywhere in the repo (no duty origin, no placement row): 40: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, NAOH_PLANT, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, P_CA, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, SOLV_PLANT, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
+Units with no position anywhere in the repo (no duty origin, no placement row): 41: ACID_PLANT, AIR_RECEIVER, AL_POT, ATMOS, CAST_LINE, CA_POT, COMB_HEAT, CONT_CAST, CR_CELL, DRY_COOLER, FILM_CAST, F_RECOVER, GREASE_CA, GREASE_LI, GW_INTAKE, H2O_ELYZ, HF_GEN, IND_MELT, INV_CAST, LI_RECOVER, MG_POT, MO_CELL, NAOH_PLANT, POLY_COND, POLY_F, POLY_OLEFIN, POLY_STOCK, PROD_MEOH, PROD_O2, P_CA, RESIST_SYN, SHELL_BURNOUT, SI_REDUCE, SI_REFINE, SOLV_PLANT, TFE_SYN, TI_CELL, VAC_CAST, VAC_IND, VDF_SYN, WAX_PATTERN. Their lines carry DN and class; length and route wait for X-BLD placement.
 
 | C29_RECYCLE | PROD_C29 | C29_RECYCLE | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 2.4 | PROD_C29 → C29_RECYCLE, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1000; min DN15 |
 | C29_TO_PYRO | C29_RECYCLE | OIL_PYRO | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) | 6.8 | C29_RECYCLE → OIL_PYRO, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
@@ -296,7 +296,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 38.7 | ZNBR2 → Q4_BUS, orthogonal × 1.2 (duty origin; duty origin) | heat loop 1.67 kW at ΔT 10 K, 1 m/s |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | cable | — | — | 17.6 | RECTIFIER → Q4_A, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
 | IA-Q4B-TRIM | RECTIFIER | Q4_B | cable | — | — | 32.2 | RECTIFIER → Q4_B, orthogonal × 1.2 (duty origin; duty origin) | electrical: cable schedule X-ELS-06 |
-| IA-FAB-LOSS | WAFER_FAB | BAGHOUSE | solids | — | — | 12.6 | WAFER_FAB → BAGHOUSE, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-WIRE-LOSS | WIRE_DRAW | BAGHOUSE | solids | — | — | 24.0 | WIRE_DRAW → BAGHOUSE, orthogonal × 1.2 (placement_report; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-Q1A-LOSS | Q1_A | BOUNDARY_EXPORT | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 9.6 | Q1_A → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0.25 kW at ΔT 10 K, 1 m/s |
 | IA-Q1B-LOSS | Q1_B | BOUNDARY_EXPORT | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 30.5 | Q1_B → BOUNDARY_EXPORT, orthogonal × 1.2 (duty origin; duty origin) | heat loop 0.25 kW at ΔT 10 K, 1 m/s |
@@ -361,7 +360,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-CLOSE-1 | LEACH_CSTR_1 | NOX_SCRUB | DN50 | P2 | hot leach liquor | 13.0 | LEACH_CSTR_1 → NOX_SCRUB, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-CLOSE-10 | LEACH_CSTR_1 | MEOH_FC | DN50 | M1 | wet methanol service (316L per unit duty sheets) | 20.3 | LEACH_CSTR_1 → MEOH_FC, orthogonal × 1.2 (duty origin; duty origin) | velocity 1 m/s, ρ 1100; min DN50 |
 | IA-LITHO-IN | WAFER_FAB | LITHO_COAT | solids | — | — | 2.7 | WAFER_FAB → LITHO_COAT, orthogonal × 1.2 (placement_report; duty origin) | solids: conveyor, bin or hand transfer; not piped |
-| IA-LITHO-OUT | LITHO_DEV | OIL_FRAC | solids | — | — | 26.9 | LITHO_DEV → OIL_FRAC, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
+| IA-LITHO-OUT | LITHO_DEV | SOLV_PLANT | solids | — | — |  | LITHO_DEV → SOLV_PLANT, position missing for SOLV_PLANT | solids: conveyor, bin or hand transfer; not piped |
 | IA-BLOW-IN | PROD_C11_C18 | BLOW_MOLD | solids | — | — | 33.5 | PROD_C11_C18 → BLOW_MOLD, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
 | IA-BLOW-OUT | BLOW_MOLD | MFG_SHOP | solids | — | — | 7.1 | BLOW_MOLD → MFG_SHOP, orthogonal × 1.2 (duty origin; placement_report) | solids: conveyor, bin or hand transfer; not piped |
 | IA-COAT-IN | EW_1 | ELECTRODE_COAT | solids | — | — | 32.7 | EW_1 → ELECTRODE_COAT, orthogonal × 1.2 (duty origin; duty origin) | solids: conveyor, bin or hand transfer; not piped |
@@ -624,3 +623,21 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | SF-GREASE_CA | SOL_ARK_60K | GREASE_CA | cable | — | — |  | SOL_ARK_60K → GREASE_CA, position missing for GREASE_CA | electrical: cable schedule X-ELS-06 |
 | IA-FLUX-SALT-REC | IND_MELT | MG_POT | DN15 | — | CaCl2/MgCl2 brine concentrate import (ambient legs): PVDF wetted handling per AQS-STD-006 (AQS-STD-002 section 12.2) |  | IND_MELT → MG_POT, position missing for IND_MELT, MG_POT | velocity 1 m/s, ρ 1000; min DN15 |
 | IA-CL2-MG-SHIP | MG_POT | NORTH_DOCK | DN15 | P3 | process vent gas |  | MG_POT → NORTH_DOCK, position missing for MG_POT | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-RESIST-BZ | PROD_C5_C10 | RESIST_SYN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) |  | PROD_C5_C10 → RESIST_SYN, position missing for RESIST_SYN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-RESIST-NAPH | PROD_C11_C18 | RESIST_SYN | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) |  | PROD_C11_C18 → RESIST_SYN, position missing for RESIST_SYN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-RESIST-RAFF | RESIST_SYN | OIL_FRAC | DN15 | M2 | hydrocarbon product, fuel or wax cut (carbon steel per unit duty sheets; dry) |  | RESIST_SYN → OIL_FRAC, position missing for RESIST_SYN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-RESIST-MEOH | MEOH_TANK | RESIST_SYN | DN15 | M1 | wet methanol service (316L per unit duty sheets) |  | MEOH_TANK → RESIST_SYN, position missing for RESIST_SYN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-RESIST-NH3 | WS_AMMONIA | RESIST_SYN | DN15 | P1 | acid or brine, at or below 60 C |  | WS_AMMONIA → RESIST_SYN, position missing for RESIST_SYN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-RESIST-H2 | HDR_H2 | RESIST_SYN | DN15 | P1 | wet acid H2 + sweep air header (PVC-U; AQS-REV-H2-001 M3, X-MAT-06) |  | HDR_H2 → RESIST_SYN, position missing for RESIST_SYN | velocity 10 m/s, ρ 0.09; min DN15 |
+| IA-RESIST-CO | TI_CELL | RESIST_SYN | DN15 | P3 | process vent gas |  | TI_CELL → RESIST_SYN, position missing for TI_CELL, RESIST_SYN | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-RESIST-CL2 | AL_POT | RESIST_SYN | DN15 | P3 | process vent gas |  | AL_POT → RESIST_SYN, position missing for AL_POT, RESIST_SYN | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-RESIST-ACID | ACID_PLANT | RESIST_SYN | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) |  | ACID_PLANT → RESIST_SYN, position missing for ACID_PLANT, RESIST_SYN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-RESIST-ACET | WS_SOLV | RESIST_SYN | DN15 | M1 | organic liquid (316L per unit duty sheets) |  | WS_SOLV → RESIST_SYN, position missing for RESIST_SYN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-RESIST-AIR | ATMOS | RESIST_SYN | DN15 | P3 | process vent gas |  | ATMOS → RESIST_SYN, position missing for ATMOS, RESIST_SYN | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-RESIST-VENT | RESIST_SYN | ATMOS | DN15 | P3 | process vent gas |  | RESIST_SYN → ATMOS, position missing for RESIST_SYN, ATMOS | velocity 10 m/s, ρ 1.2; min DN15 |
+| IA-RESIST-HCL | RESIST_SYN | CRU | DN15 | P1 | acid or brine, at or below 60 C |  | RESIST_SYN → CRU, position missing for RESIST_SYN | velocity 1 m/s, ρ 1100; min DN15 |
+| IA-RESIST-BRINE | RESIST_SYN | LEACH_CSTR_1 | DN15 | P2 | hot leach liquor |  | RESIST_SYN → LEACH_CSTR_1, position missing for RESIST_SYN | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-RESIST-STOCK | RESIST_SYN | POLY_STOCK | DN15 | — | fluoro synthesis train; shell materials per duty sheets (Hastelloy C-276, Ni, Inconel 600); class pending PIP-003 Rev B |  | RESIST_SYN → POLY_STOCK, position missing for RESIST_SYN, POLY_STOCK | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-FAB-SOLV | WS_SOLV | WAFER_FAB | DN15 | P1 | aqueous process liquor (AQS-ASSAY-001 envelope) | 12.3 | WS_SOLV → WAFER_FAB, orthogonal × 1.2 (duty origin; placement_report) | velocity 1 m/s, ρ 1000; min DN15 |
+| IA-FAB-N2-VENT | WAFER_FAB | ATMOS | DN15 | P3 | process vent gas |  | WAFER_FAB → ATMOS, position missing for ATMOS | velocity 10 m/s, ρ 1.2; min DN15 |
+| SF-RESIST_SYN | SOL_ARK_60K | RESIST_SYN | cable | — | — |  | SOL_ARK_60K → RESIST_SYN, position missing for RESIST_SYN | electrical: cable schedule X-ELS-06 |

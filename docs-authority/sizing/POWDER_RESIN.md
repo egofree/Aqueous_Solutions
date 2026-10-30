@@ -17,7 +17,7 @@ This page records the size of unit POWDER_RESIN, of class `former` in sector POL
 
 ## 2. Duty
 
-The unit takes 0.09 kg/d by 1 stream and gives 0.09 kg/d by 1 stream. Its continuous electrical load is 0.0152 kW, fed by stream SF-POWDER_RESIN.
+The unit takes 0.113634 kg/d by 1 stream and gives 0.113634 kg/d by 1 stream. Its continuous electrical load is 0.0152 kW, fed by stream SF-POWDER_RESIN.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 
@@ -36,7 +36,7 @@ Table 2.1. Design parameters
 
 The envelope is 1500 mm x 800 mm x 1500 mm, from `params.envelope` (state live). Its basis is: forming-class minimum (A-M-199); mill + classifier at the 0.09 kg/d powder duty (A-M-289).
 
-The hold-up check takes 0.09 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.09 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 50 mm in diameter and 70 mm high. It fits within the envelope.
+The hold-up check takes 0.113634 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.1136 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 50 mm in diameter and 80 mm high. It fits within the envelope.
 
 ## 4. Material
 

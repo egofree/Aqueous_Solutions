@@ -348,11 +348,13 @@ nodes:
   - id: FAB.wet-reagent-train.reagents.SOLV_PLANT
     parent: FAB.wet-reagent-train.reagents
     unit_id: SOLV_PLANT
+  - id: FAB.wet-reagent-train.reagents.RESIST_SYN
+    parent: FAB.wet-reagent-train.reagents
+    unit_id: RESIST_SYN
   - id: FAB.litho-train
     parent: FAB
     description: >-
-      STANDBY. Coat / align / develop tools with the LITHO_STUB spent-resist handoff to OIL_FRAC
-      (ST-LITHO-01 until Present).
+      Coat / align / develop tools; the spent resist and acetone go to the SOLV_PLANT still (A-M-432).
   - id: FAB.litho-train.LITHO_COAT
     parent: FAB.litho-train
     unit_id: LITHO_COAT

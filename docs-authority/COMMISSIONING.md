@@ -51,13 +51,13 @@ Table 4.1. Commissioning sequence
 | 7 | GEO | 3 | 6 | 4 | 0 |  |
 | 8 | DIGESTER | 25 | 153 | 29 | 21 | CaF2, CaO, CaSO4, Cl2, Fe, H2O, H2SO4, HCl, NaCl, NaOH, O2, Si … |
 | 9 | MEOH | 5 | 24 | 5 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |
-| 10 | OIL | 12 | 58 | 14 | 8 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, soap, solute |
+| 10 | OIL | 12 | 59 | 14 | 8 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, soap, solute |
 | 11 | GLASS | 6 | 14 | 7 | 1 | C, Cl2, Fe, HCl, O2, Si, SiO2, other_metals, solute |
 | 12 | NUT | 1 | 10 | 1 | 1 | Fe, HCl, other_metals |
 | 13 | FARM | 2 | 12 | 2 | 1 | CO2 |
 | 14 | HAB | 1 | 4 | 1 | 1 | solute |
 | 15 | MFG | 10 | 29 | 12 | 1 | Cu, Pb/Sn/Ni/Cd/Zn blend, hydrocarbon, metal, solute |
-| 16 | FAB | 17 | 78 | 19 | 10 | Ar, CH3OH, CO, Fe, H2, HCl, N2, O2, Si, acetone, ethanol, other_metals … |
+| 16 | FAB | 18 | 84 | 21 | 11 | Ar, C11-C18, CH3OH, CO, Cl2, Fe, H2, H2SO4, HCl, N2, NH3, O2 … |
 | 17 | FOUNDRY | 27 | 83 | 24 | 6 | C19-C28, Si |
 | 18 | POLYMERS | 11 | 46 | 17 | 7 | C, C5-C10, CaSO4, H2O, H2SO4, O2, S |
 

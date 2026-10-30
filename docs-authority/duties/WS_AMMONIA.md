@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 3.009 kg/d. Mass out 3.009 kg/d. Electrical duty 0.0000 kW. In: IA-NH3-SRC 3.009 kg/d (nitrogen to ammonia). Out: S33 3.009 kg/d (NH₄OH / NH₃ (aq)).
+1. Basis. Mass in 3.01 kg/d. Mass out 3.01 kg/d. Electrical duty 0.0000 kW. In: IA-NH3-SRC 3.01 kg/d (nitrogen to ammonia). Out: S33 3.009 kg/d (NH₄OH / NH₃ (aq)); IA-RESIST-NH3 0.001314 kg/d (ammonia for the nitrous acid and the ester scavenger).
 
 2. Size.
 - The largest edge is gas. This class is not a scrubber. No tower diameter is calculated from 1.5 m/s.

@@ -14,7 +14,7 @@ VAR
   ALK_SCRUBBERLT-01_PV : REAL ;  (* A-M-182 liquid height )
   ALK_SCRUBBERPT-01_PV : REAL ;  (* no design pressure on the graph )
   ALK_SCRUBBERTE-01_PV : REAL ;  (* band by service )
-  BAGHOUSEFT-01_PV : REAL ;  (* IA-BAG-01 normal 0.32 L/h )
+  BAGHOUSEFT-01_PV : REAL ;  (* IA-BAG-01 normal 0.30 L/h )
   BAGHOUSEPT-01_PV : REAL ;  (* no design pressure on the graph )
   BAGHOUSETE-01_PV : REAL ;  (* band by service )
   H2_DRYERLT-01_PV : REAL ;  (* A-M-182 liquid height )
@@ -83,10 +83,10 @@ END_VAR
   ALK_SCRUBBERTE-01_ALARM_HI := 135.0 ;  (* 90 % of span, registered LSH convention )
 
   (* FLOW control loop - set-point from the graph basis *)
-  BAGHOUSEFT-01_SP := 0.32 ;  (* graph basis: IA-BAG-01 normal 0.32 L/h )
+  BAGHOUSEFT-01_SP := 0.3 ;  (* graph basis: IA-BAG-01 normal 0.30 L/h )
   FB_PI_BAGHOUSEFT-01( PV := BAGHOUSEFT-01_PV, SP := BAGHOUSEFT-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  BAGHOUSEFT-01_ALARM_HI := 0.35200000000000004 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  BAGHOUSEFT-01_ALARM_LO := 0.28800000000000003 ;
+  BAGHOUSEFT-01_ALARM_HI := 0.33 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  BAGHOUSEFT-01_ALARM_LO := 0.27 ;
 
   (* PRESSURE monitoring block - indication, no set-point invented )
   FB_AI_BAGHOUSEPT-01( PV := BAGHOUSEPT-01_PV );

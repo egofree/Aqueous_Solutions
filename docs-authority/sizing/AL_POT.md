@@ -17,7 +17,7 @@ This page records the size of unit AL_POT, of class `cell` in sector FOUNDRY, fr
 
 ## 2. Duty
 
-The unit takes 49.4192 kg/d by 1 stream and gives 49.4192 kg/d by 4 streams. Its continuous electrical load is 5.6578 kW, fed by stream SF-AL_POT.
+The unit takes 49.4192 kg/d by 1 stream and gives 49.4192 kg/d by 5 streams. Its continuous electrical load is 5.6578 kW, fed by stream SF-AL_POT.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

@@ -174,6 +174,9 @@ def apply(g=None, write=False):
         f'{r["caf2_conv"] * M_CASO4 / M_CAF2:.3f} kg/d with unreacted spar, excess acid, gangue and moisture '
         f'(ULLMANN_HF); reported as a dock byproduct export (D-DOCK).')
     # the 98 wt% acid is made on site by ACID_PLANT; on its default route the kiln cake goes there instead of the dock (A-M-421)
+    # wafer-fab photoresist made on site; draws chlorine, CO, acid and cuts, returns HCl to CRU (A-M-432)
+    from flow_graph.param import fab_resist
+    fab_resist.tf(g, E, d)
     from flow_graph.param import sulfuric
     sulfuric.tf(g, E, r, d)
     # shop grease from the wax cut, with its soap lime from the acid-plant residue (A-M-429)

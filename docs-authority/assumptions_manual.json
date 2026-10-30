@@ -7450,5 +7450,26 @@
   ],
   "needs_verification": true,
   "verification_test": "With cru_cl2_source POT, regen gives AL_POT_CL2 = CRU_TO_VDF + CRU_TO_TFE, IA-CL2-SHIP lower by the same amount, and CRU and AL_POT close; with HCL_OX, AL_POT_CL2 is 0 with that rate as its rated case."
+ },
+ {
+  "id": "A-M-432",
+  "value": "POLY_TO_FAB carries the wafer-fab photoresist, sized from the coats per day (wafer starts x fab_mask_layers) x fab_resist_mL_per_coat at fab_resist_solids_frac solids, and the fab draws rinse and strip acetone on IA-FAB-SOLV. The resist is the positive diazonaphthoquinone-novolac class (fab_resist_route DNQ_NOVOLAC), made in RESIST_SYN from plant streams: benzene and naphthalene extracted from the C5-C10 and C11-C18 cuts, plant methanol, ammonia from WS_AMMONIA, header hydrogen, chlorinator CO, pot chlorine, ACID_PLANT acid, SOLV_PLANT acetone and air, on a stoichiometric ledger checked for element closure. The phosgenation HCl returns to CRU, the brine goes to the leach and the raffinate to OIL_FRAC. The spent resist and acetone return to the SOLV_PLANT still on IA-LITHO-OUT. The fab nitrogen purge S03 vents on IA-FAB-N2-VENT, IA-FAB-LOSS is retired as a duplicate of the kerf, and IA-FAB-SPENT closes the fab by difference.",
+  "units": "kg/d; kW",
+  "where": "flow_graph/param/fab_resist.py; flow_graph/param/solvent.py; flow_graph/param/sulfuric.py; flow_graph/param/fluoro_train.py; flow_graph/param/ess_tf.py; flow_graph/param/drivers.json fab_*, novolac_fp_ratio, oil_*_frac, aromatic_extract_recovery, formox_meoh_vol_frac, ostwald_nh3_vol_frac, resist_*; AQS-PAR-001 section 7.4",
+  "basis": "Owner decision of 2026-10-30: define the fab polymer consumables from first principles and make the resist and its photoactive compound from plant streams, recovery first, choosing the chemistry on the merits. DNQ-novolac is chosen because it images at the 365 nm aligner, develops in the aqueous TMAH/KOH bench that LITHO_DEV already is, and every precursor has a plant source (MOREAU1988, DAMMEL1993, ULLMANN_PHENOL, ULLMANN_FORMALDEHYDE, ULLMANN_NITRIC). The negative cyclised-polyisoprene/bis-azide class needs an organic developer and has no isoprene or azide route; its precursors are open tasks X-RTE-RESIST-ISOPRENE and X-RTE-RESIST-AZIDE. Wafer carriers and wet-bench parts are shop-made spares, not a fab draw.",
+  "sensitivity": "Every resist stream scales with the wafer starts x fab_mask_layers x fab_resist_mL_per_coat; the cut draws scale inversely with oil_c5c10_benzene_frac, oil_c11c18_naphthalene_frac and aromatic_extract_recovery.",
+  "replaced_by": "The issued fab process sheet (mask count, dispense volumes) and aromatics assays of the oil cuts",
+  "task": "QA audit 2026-10-30, X-RTE-POLY_TO_FAB",
+  "files": [
+   "flow_graph/param/fab_resist.py",
+   "flow_graph/param/solvent.py",
+   "flow_graph/param/sulfuric.py",
+   "flow_graph/param/fluoro_train.py",
+   "flow_graph/param/ess_tf.py",
+   "flow_graph/param/report.py",
+   "flow_graph/param/drivers.json"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.fab_resist prints the streams with the ledger element-closed; after regen POLY_TO_FAB = IA-RESIST-STOCK, IA-FAB-N2-VENT = S03, RESIST_SYN, WAFER_FAB, WS_SOLV and SOLV_PLANT close, and python3 -m flow_graph.param.recovery reports no flags."
  }
 ]

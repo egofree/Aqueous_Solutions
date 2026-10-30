@@ -7,7 +7,7 @@ service line: service Kroll chlorinator + Mg-reduction retort train; chemistry T
 Internals: duty sheet: "carbochlorinator at 800 C with graphite hot face; TiCl4 take-off cooled through a 316L condensation train;" [docs-authority/duties/TI_CELL.md]
 Material: Alumina-brick-lined carbochlorinator at 800 C with graphite hot face; TiCl4 take-off cooled through a 316L condensation train; Kroll reduction retort 310S (25Cr-20Ni) with a graphite crucible insert at 900 C; molten MgCl2 return through graphite/Ni-200 launder. (continues on the duty sheet)
 
-Nozzles: 16 process connections per docs-authority/nozzles/TI_CELL.csv
+Nozzles: 17 process connections per docs-authority/nozzles/TI_CELL.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

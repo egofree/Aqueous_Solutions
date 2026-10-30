@@ -7,7 +7,7 @@ service line: route MEOH_CO; bench_kg_d 0.21; spent_kg_d 0.1995; recovered_kg_d 
 Internals: open: no issued internals basis for a reactor unit: the contacting/separation internals need a design (column media, dryer media, stack or exchange element)
 Material: 316L batch still, reboiler and receivers; Hastelloy C-276 carbonylation autoclave for the iodide-promoted acetic acid step; 316L ketonisation and hydrogenation tube reactors; on the fermentation route, HDPE fermenters, nitrogen-blanketed. (continues on the duty sheet)
 
-Nozzles: 9 process connections per docs-authority/nozzles/SOLV_PLANT.csv
+Nozzles: 10 process connections per docs-authority/nozzles/SOLV_PLANT.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):
