@@ -39,7 +39,7 @@ Table 3.1. Release sources and zones
 | NAOH_PLANT | DIGESTER | H2 | 0.098 | IIC (Group B) | T1 | none (no vent on the unit) | 1.5 m around the envelope, upward bias | 6 | 0 |
 | POLY_OLEFIN | POLYMERS | C5-C10 | 0.294 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
 | PROD_C11_C18 | OIL | C11-C18 | 1.512 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 4 | 0 |
-| PROD_C19_C28 | OIL | C19-C28 | 2.218 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 6 | 0 |
+| PROD_C19_C28 | OIL | C19-C28 | 2.018 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 6 | 0 |
 | PROD_C5_C10 | OIL | C5-C10 | 7.131 | IIA (Group D) | T3 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 6 | 0 |
 | PROD_MEOH | CRYO | CH3OH | 28.029 | IIA (Group D) | T1 | none (no vent on the unit) | 3.0 m around the envelope, to floor | 5 | 0 |
 

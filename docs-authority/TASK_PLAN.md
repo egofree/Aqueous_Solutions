@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 55 | 9 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 55 | 10 |
 | FOUNDRY | Process (Mass transform) | 405 | 311 |
 | DIGESTER | Process (Mass transform) | 375 | 252 |
 | FAB | Process (Mass transform) | 240 | 160 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3037** | **2124** |
+| | **Total** | **3037** | **2125** |
 
 ## 3. Triage of open tasks
 
@@ -108,7 +108,7 @@ Table 3.1. Open tasks by triage tag
 | desk P3 | 32 |
 | desk P4 | 466 |
 | desk P5 | 177 |
-| hardware | 187 |
+| hardware | 186 |
 | owner | 2 |
 
 ## 4. Unit task template
@@ -616,6 +616,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 - [x] **X-RTE-STOCK_TO_FAB** Route STOCK_TO_FAB: silicon charge to WAFER_FAB. Done when: the CZ charge is sized from the wafer need (A-M-417) and made on site by SI_REDUCE and SI_REFINE (A-M-419). Depends: —. Evidence: `flow_graph/param/fab_silicon.py`.
 - [x] **X-RTE-SI-BACKUP** Refining of SI_REDUCE silicon to charge grade, with a backup of a different technology. Done when: the CZ charge is refined on site on a chlorosilane loop by the Siemens route, with the silane fluidised bed as the selectable other technology (si_refine_route, A-M-419); the polysilicon import is retired. Depends: —. Evidence: `flow_graph/param/si_refine.py`.
+- [x] **X-RTE-IMPORT-IA-WAX-MU** Import IA-WAX-MU: pattern wax made on site. Done when: the make-up is the plant C19-C28 paraffin cut from PROD_C19_C28, after the dewax reclaim (A-M-424). Depends: —. Evidence: `flow_graph/param/foundry_poly.py`.
 - [x] **X-RTE-RECOVERY-FIRST** Recovery first for every element taken as raw ore. Done when: each ore top-up is sized as the shortfall after recovery from waste, with a generated per-element inventory and a test that flags any excess (A-M-423). Depends: —. Evidence: `flow_graph/param/recovery.py`.
 - [x] **X-RTE-IMPORT-IA-NAOH-MU** Import IA-NAOH-MU: sodium hydroxide made on site. Done when: NAOH_PLANT makes the make-up by lime causticising of soda ash from trona ore, with membrane chlor-alkali on the leach purge salt and halite ore selectable (A-M-422). Depends: —. Evidence: `flow_graph/param/caustic.py`.
 - [x] **X-RTE-IMPORT-IA-H2SO4-MU** Import IA-H2SO4-MU: sulfuric acid made on site. Done when: ACID_PLANT makes the HF kiln acid on the contact process from the kiln cake reduced with plant char and native sulfur ore, with a sulfur-ore-only route selectable (A-M-421). Depends: —. Evidence: `flow_graph/param/sulfuric.py`.
@@ -668,7 +669,6 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-RTE-CZ-HOTZONE** CZ hot-zone heater from a heat-loss model. Done when: the 35 kW hot-zone duty of A-M-417 is replaced by a heat-loss model of the hot zone, and the pull peak is carried in the one-line. Depends: X-RTE-STOCK_TO_FAB. Triage: desk P2.
 - [ ] **X-RTE-LEGACY-PFD** Remaining hand-drawn process sheets. Done when: each script in flow_graph/exporters/matplotlib/ that the regenerator does not run is checked for what it draws and who cites it, then retired or replaced by a graph view. Depends: —. Triage: desk P2.
 - [ ] **X-RTE-IMPORT-IA-SOLV-MU** Import IA-SOLV-MU to WS_SOLV (solvent resupply (ethanol and acetone)) is neither waste nor raw ore. Done when: the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore. Depends: X-RTE-SI-BACKUP. Triage: hardware.
-- [ ] **X-RTE-IMPORT-IA-WAX-MU** Import IA-WAX-MU to WAX_PATTERN (pattern wax make-up (petro-wax class import)) is neither waste nor raw ore. Done when: the material is made on site from plant streams, with its route sized from need and both balances closed, or it is shown to be waste or raw ore. Depends: X-RTE-SI-BACKUP. Triage: hardware.
 
 ## 8. Unit tasks by system
 
@@ -2162,8 +2162,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-PROD_C19_C28-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/PROD_C19_C28.md` §1; mass in = out 6.166 kg/d, 0.0000 kW.
   - [x] OIL-PROD_C19_C28-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: OIL-PROD_C19_C28-01. Evidence: `docs-authority/sizing/STORAGE_HOLDUP.md` (AQS-DUTY-064).
   - [x] OIL-PROD_C19_C28-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: OIL-PROD_C19_C28-01, OIL-PROD_C19_C28-02. Evidence: `docs-authority/pid/PROD_C19_C28.svg` (AQS-PID-001).
-  - [x] OIL-PROD_C19_C28-04 Nozzle schedule. Done when: docs-authority/nozzles/PROD_C19_C28.csv, one row per edge. Depends: OIL-PROD_C19_C28-03. Evidence: `docs-authority/nozzles/PROD_C19_C28.csv` (all 3 process connections listed).
-  - [x] OIL-PROD_C19_C28-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: OIL-PROD_C19_C28-04, OIL-PROD_C19_C28-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
+  - [x] OIL-PROD_C19_C28-04 Nozzle schedule. Done when: docs-authority/nozzles/PROD_C19_C28.csv, one row per edge. Depends: OIL-PROD_C19_C28-03. Evidence: `docs-authority/nozzles/PROD_C19_C28.csv` (all 4 process connections listed).
+  - [x] OIL-PROD_C19_C28-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: OIL-PROD_C19_C28-04, OIL-PROD_C19_C28-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] OIL-PROD_C19_C28-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: OIL-PROD_C19_C28-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] OIL-PROD_C19_C28-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: OIL-PROD_C19_C28-02, OIL-PROD_C19_C28-03. Evidence: `docs-authority/duties/PROD_C19_C28.md` §6 (C7 closed on MASTER_PLAN).
   - [x] OIL-PROD_C19_C28-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: OIL-PROD_C19_C28-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (6 loops; AQS-CTL-001).

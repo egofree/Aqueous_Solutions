@@ -227,7 +227,8 @@ def apply(g=None, write=False):
         if sid not in E:
             src = dict(E['IA-SOLV-MU'])
             src.update(stream_id=sid, from_unit_id=frm, to_unit_id=to, to_sector_id=tsec, phase=phase,
-                       carries=carries, layers=list(layers), notes=None, composition=None, gap_flags=[])
+                       carries=carries, layers=list(layers), notes=None, composition=None, gap_flags=[], presence='present',
+                       from_sector_id=N[frm]['sector_id'])
             g['edges'].append(src); E[sid] = src
         put(sid, v, note)
 
@@ -385,11 +386,19 @@ def apply(g=None, write=False):
         f're-point the feed to the grit when AQS-ASSAY-TI-MO lands (A-M-284). | {TAG}.')
     mk('IA-CR-VENT', 'CR_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO (fuel-gas class export)',
        R(s['cr2o3']) + R(CH['c_cr']) - R(s['cr']), f'3 CO per 2 Cr on the carbochlorination net (A-M-284); dock fuel-gas class. | {TAG}.')
-    # ---- investment casting: wax make-up + foundry silica imports (A-M-286) ----------------
-    mk('IA-WAX-MU', 'NORTH_DOCK', 'WAX_PATTERN', 'FOUNDRY', 'S', 'pattern wax make-up (petro-wax class import)',
+    # ---- investment casting: wax make-up from the plant wax cut + foundry silica (A-M-286, A-M-424) ----
+    # Owner decision t59u (no imports except waste or raw ore): the dewax reclaim covers foundry_inv_wax_reclaim_frac of
+    # the pattern wax first (recovery first, t61u); the make-up is the paraffin of the plant's own C19-C28 pyrolysis
+    # cut, drawn from PROD_C19_C28 before its surplus ships (ess_tf.py takes this draw off IA-C19-SHIP).
+    mk('C19_TO_WAX', 'PROD_C19_C28', 'WAX_PATTERN', 'FOUNDRY', 'S', 'C19-C28 paraffin cut as the pattern wax make-up',
        s['wx_mu'],
-       f'D-DOCK feedstock import (A-M-284): {1 - DR.val(s["d"], "foundry_inv_wax_reclaim_frac"):.0%} of the '
-       f'{s["wx"]:.1f} kg/d pattern wax (reclaim {s["wx_recl"]:.1f} covers the rest, A-M-286). | {TAG}.')
+       f'{1 - DR.val(s["d"], "foundry_inv_wax_reclaim_frac"):.0%} of the {s["wx"]:.1f} kg/d pattern wax, the share the '
+       f'dewax reclaim ({s["wx_recl"]:.1f} kg/d) does not cover, from the plant C19-C28 paraffin cut (A-M-286, A-M-424). | {TAG}.')
+    E['C19_TO_WAX']['composition'] = {'C19-C28': 1.0}
+    if 'IA-WAX-MU' in E:
+        E['IA-WAX-MU']['presence'] = 'retired'
+        E['IA-WAX-MU']['rate'] = rate(0.0, 'Retired 2026-10-29 (owner decision t59u: no imports except waste or raw ore). '
+                                      'The make-up is the plant C19-C28 paraffin cut on C19_TO_WAX (A-M-424).')
     mk('IA-SILICA-MU', 'NORTH_DOCK', 'SHELL_BUILD', 'FOUNDRY', 'S', 'foundry silica (flour/stucco/binder make-up)',
        s['sh_mu'],
        f'D-DOCK feedstock import (A-M-284): shell make-up {1 - DR.val(s["d"], "foundry_inv_shell_reclaim_frac"):.1%} of '
@@ -791,7 +800,7 @@ def stamp(g, s):
     cad('WAX_PATTERN', 'bench_prep', 'prep', D_hold(s['wx'], 1000.0, 1.0),
         dict(bench='wax pattern injection bench', wax_kg_d=round(s['wx'], 4), makeup_kg_d=round(s['wx_mu'], 4),
              reclaim_kg_d=round(s['wx_recl'], 4), injector_kW=0.5, pot_L=10),
-        'live', 'prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)')
+        'live', 'prep-class study minimum; live on the C19-C28 wax make-up (A-M-424) + 90 % reclaim (A-M-286)')
     cad('SHELL_BUILD', 'line_machine', 'forming', D_hold(s['sh'], 1600.0, 1.0),
         dict(machine='dip-coat + stucco rainfall shell-building booth', shell_kg_d=round(s['sh'], 4),
              silica_makeup_kg_d=round(s['sh_mu'], 4), reclaim_kg_d=round(s['sh_recl'], 4), dips=6, slurry_L=40),

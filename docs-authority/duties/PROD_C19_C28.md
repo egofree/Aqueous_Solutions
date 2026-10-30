@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 6.166 kg/d. Mass out 6.166 kg/d. Electrical duty 0.0000 kW. In: CUT-3 6.166 kg/d (fractionator cut). Out: CUT-3-OUT 3.948 kg/d (C19-C28 from the tank); IA-C19-SHIP 2.218 kg/d (C19-C28 surplus shipped).
+1. Basis. Mass in 6.166 kg/d. Mass out 6.166 kg/d. Electrical duty 0.0000 kW. In: CUT-3 6.166 kg/d (fractionator cut). Out: CUT-3-OUT 3.948 kg/d (C19-C28 from the tank); IA-C19-SHIP 2.018 kg/d (C19-C28 surplus shipped); C19_TO_WAX 0.2 kg/d (C19-C28 paraffin cut as the pattern wax make-up).
 
 2. Size.
 - V = (3.95/1000)×(168/24) = 0.0276 m³. 7 days of the cut.

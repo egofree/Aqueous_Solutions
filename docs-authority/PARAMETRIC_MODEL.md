@@ -1372,7 +1372,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 295 drivers and then the 373 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 295 drivers and then the 374 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -2046,3 +2046,4 @@ Table 10.1. Values to verify
 | A-M-421 | The 98 wt% sulfuric acid for HF_GEN is made on site by … kg/d, fraction, C, mm, m, kJ/mol, kJ/kg K | python3 -m flow_graph.param.sulfuric; python3 -m flow_graph.param.regen; IA-H2SO4-MU is retired, IA-H2SO4-ACID carries the acid demand of HF_GEN, and the mass balance of ACID_PLANT closes (asserted in sulfuric.design). |
 | A-M-422 | The sodium hydroxide make-up is made on site by NAOH_PLANT … kg/d, mass fraction, C, mm, m, kJ/mol, kJ/kg K, V | python3 -m flow_graph.param.caustic; python3 -m flow_graph.param.regen; IA-NAOH-MU is retired, IA-NAOH-LIQ carries the make-up liquor to EVAP_BASE, the streams of the route not selected are retired, and the mass and element balances of NAOH_PLANT agree (asserted in caustic.design). |
 | A-M-423 | Recovery first: for every element the plant takes as raw … kg/d of element | python3 -m flow_graph.param.recovery prints no flags; pytest flow_graph/param/test_recovery_first.py passes, and its negative cases show that an ore above the shortfall and an undeclared waste outflow are flagged. |
+| A-M-424 | The pattern wax make-up is the paraffin of the plant's own … kg/d | python3 -m flow_graph.param.regen; IA-WAX-MU is retired, C19_TO_WAX carries the make-up from PROD_C19_C28, and IA-C19-SHIP equals CUT-3 less CUT-3-OUT and C19_TO_WAX. |

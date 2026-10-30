@@ -1303,6 +1303,15 @@
    ],
    "no_source": [
     {
+     "stream_id": "C19_TO_WAX",
+     "from": "PROD_C19_C28",
+     "to": "WAX_PATTERN",
+     "other_sector": "FOUNDRY",
+     "rate": 0.2,
+     "unit": "kg/d",
+     "carries": "C19-C28 paraffin cut as the pattern wax make-up"
+    },
+    {
      "stream_id": "CHAR_TO_ACID",
      "from": "OIL_PYRO",
      "to": "ACID_PLANT",
@@ -1462,7 +1471,7 @@
      "from": "PROD_C19_C28",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 2.218146,
+     "rate": 2.018146,
      "unit": "kg/d",
      "carries": "C19-C28 surplus shipped"
     },
@@ -3296,6 +3305,15 @@
   "FOUNDRY": {
    "no_sink": [
     {
+     "stream_id": "C19_TO_WAX",
+     "from": "PROD_C19_C28",
+     "to": "WAX_PATTERN",
+     "other_sector": "OIL",
+     "rate": 0.2,
+     "unit": "kg/d",
+     "carries": "C19-C28 paraffin cut as the pattern wax make-up"
+    },
+    {
      "stream_id": "IA-C-CR",
      "from": "OIL_PYRO",
      "to": "CR_CELL",
@@ -3534,15 +3552,6 @@
      "carries": "TiO2-equivalent rutile concentrate (dock import class)"
     },
     {
-     "stream_id": "IA-WAX-MU",
-     "from": "NORTH_DOCK",
-     "to": "WAX_PATTERN",
-     "other_sector": "DOCK",
-     "rate": 0.2,
-     "unit": "kg/d",
-     "carries": "pattern wax make-up (petro-wax class import)"
-    },
-    {
      "stream_id": "SF-AL_POT",
      "from": "SOL_ARK_60K",
      "to": "AL_POT",
@@ -3732,6 +3741,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "imported polysilicon for the CZ charge"
+    },
+    {
+     "stream_id": "IA-WAX-MU",
+     "from": "NORTH_DOCK",
+     "to": "WAX_PATTERN",
+     "other_sector": "DOCK",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "pattern wax make-up (petro-wax class import)"
     },
     {
      "stream_id": "IND_TO_ATOM",
@@ -6933,7 +6951,7 @@
      "from": "PROD_C19_C28",
      "to": "NORTH_DOCK",
      "other_sector": "OIL",
-     "rate": 2.218146,
+     "rate": 2.018146,
      "unit": "kg/d",
      "carries": "C19-C28 surplus shipped"
     },
@@ -7235,15 +7253,6 @@
      "rate": 0.919575,
      "unit": "kg/d",
      "carries": "trona ore (raw ore) for soda ash"
-    },
-    {
-     "stream_id": "IA-WAX-MU",
-     "from": "NORTH_DOCK",
-     "to": "WAX_PATTERN",
-     "other_sector": "FOUNDRY",
-     "rate": 0.2,
-     "unit": "kg/d",
-     "carries": "pattern wax make-up (petro-wax class import)"
     }
    ],
    "stops": [
@@ -7329,6 +7338,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "imported polysilicon for the CZ charge"
+    },
+    {
+     "stream_id": "IA-WAX-MU",
+     "from": "NORTH_DOCK",
+     "to": "WAX_PATTERN",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "pattern wax make-up (petro-wax class import)"
     }
    ]
   }

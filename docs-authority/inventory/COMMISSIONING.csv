@@ -156,7 +156,7 @@ seq,system,unit,pressure_test,loops,sif_proof,water_run_kg_d,chemicals
 17,FOUNDRY,TI_CELL,function test,3,SIF-051 SIF-052,,
 17,FOUNDRY,VAC_CAST,function test,2,-,,
 17,FOUNDRY,VAC_IND,function test,2,-,,
-17,FOUNDRY,WAX_PATTERN,function test,4,SIF-154,1.8,
+17,FOUNDRY,WAX_PATTERN,function test,4,SIF-154,1.8,C19-C28
 18,POLYMERS,ACID_PLANT,pressure test as R2; then helium sensitive leak test (ASME B31.3 345.8),6,SIF-083 SIF-085,0.08,C CaSO4 H2O O2 S
 18,POLYMERS,FILM_CAST,function test,5,SIF-113,0.14,
 18,POLYMERS,HF_GEN,function test,7,SIF-046 SIF-123,1.92,H2SO4

@@ -878,7 +878,7 @@ POWDER_RESIN,Process nozzle DN15,2,per AQS-STD-002 (no duty sheet),Unstated,-,ma
 PROD_C11_C18,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_C11_C18,Process nozzle DN15,3,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_C19_C28,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
-PROD_C19_C28,Process nozzle DN15,5,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
+PROD_C19_C28,Process nozzle DN15,6,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_C29,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_C29,Process nozzle DN15,2,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,
 PROD_C5_C10,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,Closed,Fe EW -> MET_MELT -> mill/draw,

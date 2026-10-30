@@ -540,7 +540,6 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-CR2O3-MU | NORTH_DOCK | CR_CELL | solids | — | — |  | NORTH_DOCK → CR_CELL, position missing for CR_CELL | solids: conveyor, bin or hand transfer; not piped |
 | IA-C-CR | OIL_PYRO | CR_CELL | solids | — | — |  | OIL_PYRO → CR_CELL, position missing for CR_CELL | solids: conveyor, bin or hand transfer; not piped |
 | IA-CR-VENT | CR_CELL | NORTH_DOCK | DN15 | P3 | process vent gas |  | CR_CELL → NORTH_DOCK, position missing for CR_CELL | velocity 10 m/s, ρ 1.2; min DN15 |
-| IA-WAX-MU | NORTH_DOCK | WAX_PATTERN | solids | — | — |  | NORTH_DOCK → WAX_PATTERN, position missing for WAX_PATTERN | solids: conveyor, bin or hand transfer; not piped |
 | IA-SILICA-MU | NORTH_DOCK | SHELL_BUILD | solids | — | — |  | NORTH_DOCK → SHELL_BUILD, position missing for SHELL_BUILD | solids: conveyor, bin or hand transfer; not piped |
 | IA-BURNOUT-VENT | SHELL_BURNOUT | NORTH_DOCK | DN15 | P3 | process vent gas |  | SHELL_BURNOUT → NORTH_DOCK, position missing for SHELL_BURNOUT | velocity 10 m/s, ρ 1.2; min DN15 |
 | IA-SHELL-RECLAIM | SHELL_BREAK | SHELL_BUILD | solids | — | — |  | SHELL_BREAK → SHELL_BUILD, position missing for SHELL_BREAK, SHELL_BUILD | solids: conveyor, bin or hand transfer; not piped |
@@ -607,3 +606,4 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-NAOH-LIQ | NAOH_PLANT | EVAP_BASE | DN15 | P4 | alkaline |  | NAOH_PLANT → EVAP_BASE, position missing for NAOH_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
 | SF-NAOH_PLANT | SOL_ARK_60K | NAOH_PLANT | cable | — | — |  | SOL_ARK_60K → NAOH_PLANT, position missing for NAOH_PLANT | electrical: cable schedule X-ELS-06 |
 | IA-LIME-TO-NAOH | ACID_PLANT | NAOH_PLANT | solids | — | — |  | ACID_PLANT → NAOH_PLANT, position missing for ACID_PLANT, NAOH_PLANT | solids: conveyor, bin or hand transfer; not piped |
+| C19_TO_WAX | PROD_C19_C28 | WAX_PATTERN | solids | — | — |  | PROD_C19_C28 → WAX_PATTERN, position missing for WAX_PATTERN | solids: conveyor, bin or hand transfer; not piped |

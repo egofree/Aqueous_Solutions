@@ -7307,5 +7307,23 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.recovery prints no flags; pytest flow_graph/param/test_recovery_first.py passes, and its negative cases show that an ore above the shortfall and an undeclared waste outflow are flagged."
+ },
+ {
+  "id": "A-M-424",
+  "value": "The pattern wax make-up is the paraffin of the plant's own C19-C28 pyrolysis cut, drawn from PROD_C19_C28 on C19_TO_WAX before the cut surplus ships. The dewax reclaim covers foundry_inv_wax_reclaim_frac of the pattern wax first (recovery first, A-M-423), and the cut covers only the rest. The reclaimed wax carries the blend modifiers round the loop, so the make-up is taken as straight paraffin.",
+  "units": "kg/d",
+  "where": "flow_graph/param/foundry_poly.py (C19_TO_WAX, IA-WAX-MU retired); flow_graph/param/ess_tf.py (IA-C19-SHIP less the wax draw)",
+  "basis": "Owner decision 2026-10-29 (t59u): no imports except waste or raw ore. The C19-C28 cut of the plastics pyrolysis is the paraffin-wax range, the base of investment-casting pattern waxes (ULLMANN_WAX), and the plant already ships its surplus.",
+  "sensitivity": "The draw scales with 1 - foundry_inv_wax_reclaim_frac and with the castings rate; the C19-C28 export falls by the same amount.",
+  "replaced_by": "A pattern-wax trial on the C19-C28 cut: melting range, shrinkage and ash against the casting specification",
+  "task": "QA audit 2026-10-29, imports made on site (X-RTE-IMPORT)",
+  "files": [
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/ess_tf.py",
+   "flow_graph/param/recovery.py",
+   "docs-authority/_task_plan_gen.py"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.regen; IA-WAX-MU is retired, C19_TO_WAX carries the make-up from PROD_C19_C28, and IA-C19-SHIP equals CUT-3 less CUT-3-OUT and C19_TO_WAX."
  }
 ]

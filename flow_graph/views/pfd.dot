@@ -667,7 +667,7 @@ digraph G {
   "EW_9" -> "LEACH_CSTR_1" [label="IA-EW9-CL2\\n111.134409 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_C5_C10" -> "NORTH_DOCK" [label="IA-C5-SHIP\\n7.130646 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_C11_C18" -> "NORTH_DOCK" [label="IA-C11-SHIP\\n1.511662 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "PROD_C19_C28" -> "NORTH_DOCK" [label="IA-C19-SHIP\\n2.218146 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PROD_C19_C28" -> "NORTH_DOCK" [label="IA-C19-SHIP\\n2.018146 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GAS_ATOMIZER" -> "MET_MELT" [label="IA-ATOM-REMELT\\n0.355595 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "CRYO_AHU" [label="SF-CRYO_AHU\\n0.6472 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "MEOH_FERM" [label="SF-MEOH_FERM\\n0.0207 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -794,7 +794,7 @@ digraph G {
   "NORTH_DOCK" -> "CR_CELL" [label="IA-CR2O3-MU\\n0.365389 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "OIL_PYRO" -> "CR_CELL" [label="IA-C-CR\\n0.101911 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "CR_CELL" -> "NORTH_DOCK" [label="IA-CR-VENT\\n0.2173 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "NORTH_DOCK" -> "WAX_PATTERN" [label="IA-WAX-MU\\n0.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "NORTH_DOCK" -> "WAX_PATTERN" [label="IA-WAX-MU\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "NORTH_DOCK" -> "SHELL_BUILD" [label="IA-SILICA-MU\\n1.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SHELL_BURNOUT" -> "NORTH_DOCK" [label="IA-BURNOUT-VENT\\n0.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SHELL_BREAK" -> "SHELL_BUILD" [label="IA-SHELL-RECLAIM\\n7.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
@@ -864,4 +864,5 @@ digraph G {
   "NAOH_PLANT" -> "EVAP_BASE" [label="IA-NAOH-LIQ\\n16.750724 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "SOL_ARK_60K" -> "NAOH_PLANT" [label="SF-NAOH_PLANT\\n1.1929 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ACID_PLANT" -> "NAOH_PLANT" [label="IA-LIME-TO-NAOH\\n0.022373 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "PROD_C19_C28" -> "WAX_PATTERN" [label="C19_TO_WAX\\n0.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

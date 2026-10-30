@@ -36,7 +36,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 2,FOUNDRY,TI_CELL,0,,-,0,no
 2,FOUNDRY,VAC_CAST,0,,-,0,no
 2,FOUNDRY,VAC_IND,0,,-,0,no
-2,FOUNDRY,WAX_PATTERN,0,,-,0,no
+2,FOUNDRY,WAX_PATTERN,0,C19-C28,-,0,no
 3,FAB,FAB_UPW_TANK,125,solute,-,8,no
 3,FAB,LITHO_ALIGN,0,Si,-,30,no
 3,FAB,LITHO_COAT,0,Si solute,-,36,no

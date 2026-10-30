@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AL
+Revision: AM
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -44,6 +44,7 @@ Date: 2026-10-29
 | AJ | Batch 33: sulfuric acid made on site by ACID_PLANT from the HF kiln cake and native sulfur ore (A-M-421) | 2026-10-29 |
 | AK | Batch 34: sodium hydroxide made on site by NAOH_PLANT, lime causticising of trona ore or membrane chlor-alkali (A-M-422) | 2026-10-29 |
 | AL | Batch 35: recovery first for every element taken as raw ore, with a generated inventory and check (A-M-423); sulfur, calcium and sodium revisited | 2026-10-29 |
+| AM | Batch 36: pattern wax make-up from the plant C19-C28 cut (A-M-424) | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -200,6 +201,7 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/param/sulfuric.py` (A-M-421) | New: ACID_PLANT makes the HF kiln acid on the contact process; the kiln cake is reduced with plant char and the rest of the sulfur is native sulfur ore, with a sulfur-ore-only route selectable; IA-H2SO4-MU retired (owner decision t59u). |
 | `flow_graph/param/caustic.py` (A-M-422) | New: NAOH_PLANT makes the NaOH make-up from trona ore by lime causticising, with membrane chlor-alkali on the leach purge salt and halite ore selectable; EVAP_BASE removes the liquor water; IA-NAOH-MU retired (owner decision t59u). |
 | `flow_graph/param/recovery.py` (A-M-423) | New: recovery-first inventory and check for every element taken as raw ore; the acid kiln now recovers the free acid sulfur too, the causticiser takes its lime from the acid-plant residue before limestone ore, and every ore-taking transfer function stamps a recovery record (owner decision t61u). |
+| `flow_graph/param/foundry_poly.py` (A-M-424) | The pattern wax make-up is the plant C19-C28 paraffin cut on C19_TO_WAX after the dewax reclaim; IA-WAX-MU retired and the C19-C28 export falls by the draw (owner decision t59u). |
 
 ## 3. In progress
 

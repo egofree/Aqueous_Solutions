@@ -192,6 +192,7 @@ Table 3.2. OIL off. Sector type: Process (Mass transform).
 | S38 | WET_BENCH to OIL_FRAC | FAB | 0.006 kg/d | left without a sink: unreclaimed |
 | S61 | MFG_SHOP to HOPPER | MFG | 1.2 kg/d | left without a sink: unreclaimed |
 | S72B | MET_SCRUB to OIL_FRAC | MFG | 0.0158 kg/d | left without a sink: unreclaimed |
+| C19_TO_WAX | PROD_C19_C28 to WAX_PATTERN | FOUNDRY | 0.2 kg/d | left without a source: consumer goes short |
 | CHAR_TO_ACID | OIL_PYRO to ACID_PLANT | POLYMERS | 0.0257 kg/d | left without a source: consumer goes short |
 | CHAR_TO_SI | OIL_PYRO to SI_REDUCE | GLASS | 0.228 kg/d | left without a source: consumer goes short |
 | CUT-3-OUT | PROD_C19_C28 to MFG_SHOP | MFG | 3.95 kg/d | left without a source: consumer goes short |
@@ -209,7 +210,7 @@ Table 3.2. OIL off. Sector type: Process (Mass transform).
 | IA-FEED-01 | HOPPER to LEACH_CSTR_1 | DIGESTER | 103 kg/d | left without a source: consumer goes short |
 | IA-HOP-01 | HOPPER to LEACH_CSTR_1 | DIGESTER | 531 kg/d | left without a source: consumer goes short |
 | IA-C11-SHIP | PROD_C11_C18 to NORTH_DOCK | DOCK | 1.51 kg/d | stops with the sector |
-| IA-C19-SHIP | PROD_C19_C28 to NORTH_DOCK | DOCK | 2.22 kg/d | stops with the sector |
+| IA-C19-SHIP | PROD_C19_C28 to NORTH_DOCK | DOCK | 2.02 kg/d | stops with the sector |
 | IA-C5-SHIP | PROD_C5_C10 to NORTH_DOCK | DOCK | 7.13 kg/d | stops with the sector |
 | SF-OIL_PYRO | SOL_ARK_60K to OIL_PYRO | ELEC | 1.66 kW | stops with the sector |
 
@@ -406,6 +407,7 @@ Table 3.8. FOUNDRY off. Sector type: Process (Mass transform).
 
 | Stream | From and to | Other sector | Design rate | When the sector is off |
 |---|---|---|---|---|
+| C19_TO_WAX | PROD_C19_C28 to WAX_PATTERN | OIL | 0.2 kg/d | left without a sink: unreclaimed |
 | IA-C-CR | OIL_PYRO to CR_CELL | OIL | 0.102 kg/d | left without a sink: unreclaimed |
 | IA-C-MO | OIL_PYRO to MO_CELL | OIL | 0.0138 kg/d | left without a sink: unreclaimed |
 | IA-C-TI | OIL_PYRO to TI_CELL | OIL | 0.295 kg/d | left without a sink: unreclaimed |
@@ -432,7 +434,6 @@ Table 3.8. FOUNDRY off. Sector type: Process (Mass transform).
 | IA-SHELL-EXPORT | SHELL_BREAK to NORTH_DOCK | DOCK | 1 kg/d | stops with the sector |
 | IA-SILICA-MU | NORTH_DOCK to SHELL_BUILD | DOCK | 1 kg/d | stops with the sector |
 | IA-TIO2-MU | NORTH_DOCK to TI_CELL | DOCK | 0.834 kg/d | stops with the sector |
-| IA-WAX-MU | NORTH_DOCK to WAX_PATTERN | DOCK | 0.2 kg/d | stops with the sector |
 | SF-AL_POT | SOL_ARK_60K to AL_POT | ELEC | 5.66 kW | stops with the sector |
 | SF-CA_POT | SOL_ARK_60K to CA_POT | ELEC | 0.122 kW | stops with the sector |
 | SF-COMB_HEAT | SOL_ARK_60K to COMB_HEAT | ELEC | 0.05 kW | stops with the sector |
@@ -782,7 +783,7 @@ Table 3.19. DOCK off. Sector type: Export / dock.
 |---|---|---|---|---|
 | IA-BURNOUT-VENT | SHELL_BURNOUT to NORTH_DOCK | FOUNDRY | 0.2 kg/d | left without a sink: unreclaimed |
 | IA-C11-SHIP | PROD_C11_C18 to NORTH_DOCK | OIL | 1.51 kg/d | left without a sink: unreclaimed |
-| IA-C19-SHIP | PROD_C19_C28 to NORTH_DOCK | OIL | 2.22 kg/d | left without a sink: unreclaimed |
+| IA-C19-SHIP | PROD_C19_C28 to NORTH_DOCK | OIL | 2.02 kg/d | left without a sink: unreclaimed |
 | IA-C5-SHIP | PROD_C5_C10 to NORTH_DOCK | OIL | 7.13 kg/d | left without a sink: unreclaimed |
 | IA-CA-CL2-SHIP | CA_POT to NORTH_DOCK | FOUNDRY | 0.0974 kg/d | left without a sink: unreclaimed |
 | IA-CL2-SHIP | AL_POT to NORTH_DOCK | FOUNDRY | 39.2 kg/d | left without a sink: unreclaimed |
@@ -816,7 +817,6 @@ Table 3.19. DOCK off. Sector type: Export / dock.
 | IA-SULFUR-MU | NORTH_DOCK to ACID_PLANT | POLYMERS | 0.0129 kg/d | left without a source: consumer goes short |
 | IA-TIO2-MU | NORTH_DOCK to TI_CELL | FOUNDRY | 0.834 kg/d | left without a source: consumer goes short |
 | IA-TRONA-MU | NORTH_DOCK to NAOH_PLANT | DIGESTER | 0.92 kg/d | left without a source: consumer goes short |
-| IA-WAX-MU | NORTH_DOCK to WAX_PATTERN | FOUNDRY | 0.2 kg/d | left without a source: consumer goes short |
 | IA-PV-CURTAIL | SOL_ARK_60K to BOUNDARY_EXPORT | ELEC | 4.64 kW | stops with the sector |
 | IA-ZNBR-LOSS | ZNBR2 to BOUNDARY_EXPORT | ELEC | 1.67 kW | stops with the sector |
 

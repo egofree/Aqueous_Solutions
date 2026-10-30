@@ -28,7 +28,7 @@ VAR
   PROD_C11_C18PT-01_PV : REAL ;  (* no design pressure on the graph )
   PROD_C11_C18TE-01_PV : REAL ;  (* band by service )
   PROD_C19_C28FT-01_PV : REAL ;  (* CUT-3-OUT normal 0.16 L/h )
-  PROD_C19_C28FT-02_PV : REAL ;  (* IA-C19-SHIP normal 0.09 L/h )
+  PROD_C19_C28FT-02_PV : REAL ;  (* IA-C19-SHIP normal 0.08 L/h )
   PROD_C19_C28LT-01_PV : REAL ;  (* A-M-182 liquid height )
   PROD_C19_C28PT-01_PV : REAL ;  (* no design pressure on the graph )
   PROD_C19_C28TE-01_PV : REAL ;  (* band by service )
@@ -170,10 +170,10 @@ END_VAR
   PROD_C19_C28FT-01_ALARM_LO := 0.14400000000000002 ;
 
   (* FLOW control loop - set-point from the graph basis *)
-  PROD_C19_C28FT-02_SP := 0.09 ;  (* graph basis: IA-C19-SHIP normal 0.09 L/h )
+  PROD_C19_C28FT-02_SP := 0.08 ;  (* graph basis: IA-C19-SHIP normal 0.08 L/h )
   FB_PI_PROD_C19_C28FT-02( PV := PROD_C19_C28FT-02_PV, SP := PROD_C19_C28FT-02_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
-  PROD_C19_C28FT-02_ALARM_HI := 0.099 ;  (* SP x 1.1 margin, A-M-188 margin class *)
-  PROD_C19_C28FT-02_ALARM_LO := 0.081 ;
+  PROD_C19_C28FT-02_ALARM_HI := 0.08800000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  PROD_C19_C28FT-02_ALARM_LO := 0.07200000000000001 ;
 
   (* LEVEL monitoring block - indication, no set-point invented )
   FB_AI_PROD_C19_C28LT-01( PV := PROD_C19_C28LT-01_PV );

@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 2 kg/d. Mass out 2 kg/d. Electrical duty 0.5000 kW. In: WAX_RECLAIM_TO_PATTERN 1.8 kg/d (wax condensate reclaim); IA-WAX-MU 0.2 kg/d (pattern wax make-up (petro-wax class import)). Out: WAX_TO_SHELL 2 kg/d (wax pattern).
+1. Basis. Mass in 2 kg/d. Mass out 2 kg/d. Electrical duty 0.5000 kW. In: WAX_RECLAIM_TO_PATTERN 1.8 kg/d (wax condensate reclaim); C19_TO_WAX 0.2 kg/d (C19-C28 paraffin cut as the pattern wax make-up). Out: WAX_TO_SHELL 2 kg/d (wax pattern).
 
 2. Size.
 - Envelope 800×600×1200 mm, 0.576 m³. That box over this flow would be 6912.0 h if it were full. It is not a residence time.

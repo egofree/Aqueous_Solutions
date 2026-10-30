@@ -2452,7 +2452,7 @@
             "IA-NA-PURGE": 0.642,
             "IA-C5-SHIP": 7.131,
             "IA-C11-SHIP": 1.512,
-            "IA-C19-SHIP": 2.218,
+            "IA-C19-SHIP": 2.018,
             "IA-O2-SHIP": 22.093,
             "IA-MEOH-SHIP": 28.029,
             "IA-CL2-SHIP": 39.206,
@@ -2478,7 +2478,6 @@
             "IA-TIO2-MU": 0.834,
             "IA-MOO3-MU": 0.094,
             "IA-CR2O3-MU": 0.365,
-            "IA-WAX-MU": 0.2,
             "IA-SILICA-MU": 1.0,
             "IA-QUARTZ-MU": 0.718,
             "IA-SULFUR-MU": 0.013,
@@ -6144,7 +6143,7 @@
           ],
           "style": "bench_prep",
           "state": "live",
-          "basis": "prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286)"
+          "basis": "prep-class study minimum; live on the C19-C28 wax make-up (A-M-424) + 90 % reclaim (A-M-286)"
         },
         "sec3_material": {
           "mat": "304L wax melt tank with steam/hot-water manifold; PP-H storage bins; PE drain pans",
@@ -19409,10 +19408,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.218146,
+        "value": 2.018146,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C19-C28 make less the plant draw (CUT-3-OUT), shipped (Q-002 pattern) (AQS-PAR-003)."
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C19-C28 make less the plant draw (CUT-3-OUT, C19_TO_WAX), shipped (Q-002 pattern) (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
@@ -22829,16 +22828,16 @@
       "layers": [
         "mass"
       ],
-      "presence": "present",
+      "presence": "retired",
       "carries": "pattern wax make-up (petro-wax class import)",
       "header": "dedicated",
       "forbidden": "process aisle",
       "claim_status": "Closed",
       "rate": {
-        "value": 0.2,
+        "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "D-DOCK feedstock import (A-M-284): 10% of the 2.0 kg/d pattern wax (reclaim 1.8 covers the rest, A-M-286). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "Retired 2026-10-29 (owner decision t59u: no imports except waste or raw ore). The make-up is the plant C19-C28 paraffin cut on C19_TO_WAX (A-M-424)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "FOUNDRY",
@@ -24778,6 +24777,35 @@
         "H2SO4": 0.006698,
         "CaF2": 0.056044,
         "inerts": 0.063274
+      }
+    },
+    {
+      "stream_id": "C19_TO_WAX",
+      "from_unit_id": "PROD_C19_C28",
+      "to_unit_id": "WAX_PATTERN",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "C19-C28 paraffin cut as the pattern wax make-up",
+      "header": "dedicated",
+      "forbidden": "process aisle",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.2,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "10% of the 2.0 kg/d pattern wax, the share the dewax reclaim (1.8 kg/d) does not cover, from the plant C19-C28 paraffin cut (A-M-286, A-M-424). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "C19-C28": 1.0
       }
     }
   ],

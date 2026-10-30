@@ -4,3 +4,4 @@ N2,DN15,Class 150,vent,top,800
 N3,DN15,Class 150,fractionator cut,inlet,160
 N4,DN15,Class 150,C19-C28 from the tank,outlet,600
 N5,DN15,Class 150,C19-C28 surplus shipped,outlet,600
+N6,solids,Class 150,C19-C28 paraffin cut as the pattern wax make-up,outlet,600

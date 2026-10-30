@@ -1,6 +1,6 @@
 item,description,qty,material,basis
 1,Body / envelope 600 x 600 x 600 mm,1,Carbon steel.,docs-authority/duties/PROD_C19_C28.md
-2,Process nozzle DN15,5,Carbon steel.,one per mass edge; DN from AQS-INV-003
+2,Process nozzle DN15,6,Carbon steel.,one per mass edge; DN from AQS-INV-003
 3,"Motor: on/off valve CUT-3-OUT (solenoid, ISO 15218 coil, 22 mm)",1,-,AQS-INV-001 / AQS-INV-005
 4,"Motor: transfer pump CUT-3-OUT to MFG_SHOP (BLDC, 42 mm (NEMA 17 flange))",1,-,AQS-INV-001 / AQS-INV-005
 5,bearing: deep-groove ball bearing 608-2Z,2,"ISO 15, normal class",AQS-INV-004

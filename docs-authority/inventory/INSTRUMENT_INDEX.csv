@@ -532,7 +532,7 @@ PROD_C11_C18-LT-01,PROD_C11_C18,OIL,level transmitter,"IEC 62828, PTFE lens",0-1
 PROD_C11_C18-PT-01,PROD_C11_C18,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),PROD_C11_C18PT-01,PLC-OIL,no design pressure on the graph
 PROD_C11_C18-TE-01,PROD_C11_C18,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PROD_C11_C18TE-01,PLC-OIL,band by service
 PROD_C19_C28-FT-01,PROD_C19_C28,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),PROD_C19_C28FT-01,PLC-OIL,CUT-3-OUT normal 0.16 L/h
-PROD_C19_C28-FT-02,PROD_C19_C28,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),PROD_C19_C28FT-02,PLC-OIL,IA-C19-SHIP normal 0.09 L/h
+PROD_C19_C28-FT-02,PROD_C19_C28,OIL,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),PROD_C19_C28FT-02,PLC-OIL,IA-C19-SHIP normal 0.08 L/h
 PROD_C19_C28-LSH-01,PROD_C19_C28,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),PROD_C19_C28LSH-01,PLC-OIL,alarm at 90 %
 PROD_C19_C28-LT-01,PROD_C19_C28,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),PROD_C19_C28LT-01,PLC-OIL,A-M-182 liquid height
 PROD_C19_C28-PT-01,PROD_C19_C28,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),PROD_C19_C28PT-01,PLC-OIL,no design pressure on the graph

@@ -34,7 +34,7 @@ Table 2.1. Design parameters
 
 ## 3. Geometry
 
-The envelope is 800 mm x 600 mm x 1200 mm, from `params.envelope` (state live). Its basis is: prep-class study minimum; live on the wax make-up import + 90 % reclaim (A-M-286).
+The envelope is 800 mm x 600 mm x 1200 mm, from `params.envelope` (state live). Its basis is: prep-class study minimum; live on the C19-C28 wax make-up (A-M-424) + 90 % reclaim (A-M-286).
 
 The hold-up check takes 2 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 2 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 130 mm in diameter and 200 mm high. It fits within the envelope.
 

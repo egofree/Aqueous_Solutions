@@ -44,7 +44,7 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | --- | --- | --- | --- |
 | export | IA-BURNOUT-VENT | dewax/burnout off-gas (burned wax + stea | 0.2 |
 | export | IA-C11-SHIP | C11-C18 surplus shipped | 1.512 |
-| export | IA-C19-SHIP | C19-C28 surplus shipped | 2.218 |
+| export | IA-C19-SHIP | C19-C28 surplus shipped | 2.018 |
 | export | IA-C5-SHIP | C5-C10 product shipped | 7.131 |
 | export | IA-CA-CL2-SHIP | chlorine byproduct export (water-treatme | 0.097 |
 | export | IA-CL2-SHIP | chlorine byproduct export (water-treatme | 39.206 |
@@ -74,9 +74,8 @@ NORTH_DOCK is the inter-plant trade boundary, not a balance-constrained sector: 
 | import | IA-SULFUR-MU | native sulfur (raw ore) for the acid pla | 0.013 |
 | import | IA-TIO2-MU | TiO2-equivalent rutile concentrate (dock | 0.834 |
 | import | IA-TRONA-MU | trona ore (raw ore) for soda ash | 0.92 |
-| import | IA-WAX-MU | pattern wax make-up (petro-wax class imp | 0.2 |
 
-**Net trade: +13.302 kg/d** (exports 120.960 - imports 107.658); dock ledger residual +13.304 kg/d (reported, exempt per D-DOCK).
+**Net trade: +13.302 kg/d** (exports 120.760 - imports 107.458); dock ledger residual +13.304 kg/d (reported, exempt per D-DOCK).
 
 ## 4. Moves outside measurement tolerance (2 % of the rate, 1 g/d floor); must be empty
 

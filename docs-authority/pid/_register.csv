@@ -121,7 +121,7 @@ POLY_OLEFIN,AQS-PID-001-POLY_OLEFIN,6ad0d3b1,docs-authority/pid/POLY_OLEFIN.svg,
 POLY_STOCK,AQS-PID-001-POLY_STOCK,1dfbb0c0,docs-authority/pid/POLY_STOCK.svg,POLYMERS,store,3,4,0,0,3,1,9
 POWDER_RESIN,AQS-PID-001-POWDER_RESIN,2cffe6b5,docs-authority/pid/POWDER_RESIN.svg,POLYMERS,former,2,1,0,0,3,0,4
 PROD_C11_C18,AQS-PID-001-PROD_C11_C18,90e2863d,docs-authority/pid/PROD_C11_C18.svg,OIL,cut_tank,1,2,2,0,4,1,5
-PROD_C19_C28,AQS-PID-001-PROD_C19_C28,3f119e88,docs-authority/pid/PROD_C19_C28.svg,OIL,cut_tank,1,4,6,0,6,1,5
+PROD_C19_C28,AQS-PID-001-PROD_C19_C28,5eb61dfd,docs-authority/pid/PROD_C19_C28.svg,OIL,cut_tank,1,5,6,0,6,1,6
 PROD_C29,AQS-PID-001-PROD_C29,8ff102ad,docs-authority/pid/PROD_C29.svg,OIL,cut_tank,1,1,3,0,5,1,4
 PROD_C5_C10,AQS-PID-001-PROD_C5_C10,a2186949,docs-authority/pid/PROD_C5_C10.svg,OIL,cut_tank,1,3,6,0,6,1,6
 PROD_MEOH,AQS-PID-001-PROD_MEOH,68a39e22,docs-authority/pid/PROD_MEOH.svg,CRYO,product,1,1,0,0,5,1,4
@@ -162,7 +162,7 @@ VAC_IND,AQS-PID-001-VAC_IND,3ac6cf84,docs-authority/pid/VAC_IND.svg,FOUNDRY,furn
 VCD_TRAIN,AQS-PID-001-VCD_TRAIN,309338bc,docs-authority/pid/VCD_TRAIN.svg,WTR,evaporator,6,3,9,0,7,1,11
 VDF_SYN,AQS-PID-001-VDF_SYN,660e4dd5,docs-authority/pid/VDF_SYN.svg,POLYMERS,reactor,4,2,0,0,4,2,7
 WAFER_FAB,AQS-PID-001-WAFER_FAB,a7cf9273,docs-authority/pid/WAFER_FAB.svg,FAB,fab,10,9,9,0,7,1,22
-WAX_PATTERN,AQS-PID-001-WAX_PATTERN,a0c7492e,docs-authority/pid/WAX_PATTERN.svg,FOUNDRY,prep,3,1,0,0,4,1,5
+WAX_PATTERN,AQS-PID-001-WAX_PATTERN,0a288c34,docs-authority/pid/WAX_PATTERN.svg,FOUNDRY,prep,4,1,0,0,4,1,6
 WET_BENCH,AQS-PID-001-WET_BENCH,66dba35e,docs-authority/pid/WET_BENCH.svg,FAB,wet_bench,10,2,6,0,6,1,13
 WIRE_DRAW,AQS-PID-001-WIRE_DRAW,810f260d,docs-authority/pid/WIRE_DRAW.svg,MFG,forming,3,3,0,0,2,0,7
 WS_AMMONIA,AQS-PID-001-WS_AMMONIA,f1be3535,docs-authority/pid/WS_AMMONIA.svg,FAB,reagent,1,1,3,0,5,1,7

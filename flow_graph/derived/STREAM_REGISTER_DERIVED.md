@@ -418,7 +418,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW9-CL2 | EW_9 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 111.134409 kg/d | — |
 | IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | L | mass | present | C5-C10 product shipped | 7.130646 kg/d | — |
 | IA-C11-SHIP | PROD_C11_C18 | NORTH_DOCK | L | mass | present | C11-C18 surplus shipped | 1.511662 kg/d | — |
-| IA-C19-SHIP | PROD_C19_C28 | NORTH_DOCK | L | mass | present | C19-C28 surplus shipped | 2.218146 kg/d | — |
+| IA-C19-SHIP | PROD_C19_C28 | NORTH_DOCK | L | mass | present | C19-C28 surplus shipped | 2.018146 kg/d | — |
 | IA-ATOM-REMELT | GAS_ATOMIZER | MET_MELT | S | mass | present | off-spec powder to remelt | 0.355595 kg/d | — |
 | SF-CRYO_AHU | SOL_ARK_60K | CRYO_AHU | E | elec | present | AHU coil chiller | 0.6472 kW | — |
 | SF-MEOH_FERM | SOL_ARK_60K | MEOH_FERM | E | elec | present | 480 V AC | 0.0207 kW | — |
@@ -545,7 +545,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-CR2O3-MU | NORTH_DOCK | CR_CELL | S | mass | present | Cr2O3-equivalent chromite concentrate (dock import class) | 0.365389 kg/d | — |
 | IA-C-CR | OIL_PYRO | CR_CELL | S | mass | present | plant pyrolysis char reductant | 0.101911 kg/d | — |
 | IA-CR-VENT | CR_CELL | NORTH_DOCK | G | mass | present | chlorinator CO (fuel-gas class export) | 0.2173 kg/d | — |
-| IA-WAX-MU | NORTH_DOCK | WAX_PATTERN | S | mass | present | pattern wax make-up (petro-wax class import) | 0.2 kg/d | — |
+| IA-WAX-MU | NORTH_DOCK | WAX_PATTERN | S | mass | retired | pattern wax make-up (petro-wax class import) | 0.0 kg/d | — |
 | IA-SILICA-MU | NORTH_DOCK | SHELL_BUILD | S | mass | present | foundry silica (flour/stucco/binder make-up) | 1.0 kg/d | — |
 | IA-BURNOUT-VENT | SHELL_BURNOUT | NORTH_DOCK | G | mass | present | dewax/burnout off-gas (burned wax + steam) | 0.2 kg/d | — |
 | IA-SHELL-RECLAIM | SHELL_BREAK | SHELL_BUILD | S | mass | present | reclaimed shell stucco/flour | 7.0 kg/d | — |
@@ -615,3 +615,4 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-NAOH-LIQ | NAOH_PLANT | EVAP_BASE | L | mass | present | sodium hydroxide liquor to the base evaporator | 16.750724 kg/d | — |
 | SF-NAOH_PLANT | SOL_ARK_60K | NAOH_PLANT | E | elec | present | 480 V AC | 1.1929 kW | — |
 | IA-LIME-TO-NAOH | ACID_PLANT | NAOH_PLANT | S | mass | present | cake-kiln lime residue as the lime-cycle make-up | 0.022373 kg/d | — |
+| C19_TO_WAX | PROD_C19_C28 | WAX_PATTERN | S | mass | present | C19-C28 paraffin cut as the pattern wax make-up | 0.2 kg/d | — |
