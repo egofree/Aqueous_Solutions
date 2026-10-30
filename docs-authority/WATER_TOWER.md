@@ -37,9 +37,9 @@ The earlier CATCH_TANK was a fixed 12 x 8 x 4 m box scaled by plate area (384 m3
 | Seismic overturning at grade | 42652 kN m | water centroid height |
 | Convective period, sloshing height | 4.79 s, 0.19 m (Sac 0.025 g) | ACI 350.3 rectangular cell, ASCE 7 15.7.6.1.2 |
 | Freeboard in each reservoir level | 2.64 m, covers the sloshing height | soffit must not take wave impact |
-| Wind on the reservoir storeys | 809 kN (qz 1.70 kPa at 34.8 m) | ASCE 7 ch. 26-27, exposure C, 50.0 m/s |
+| Wind on the reservoir storeys | 1586 kN (qz 3.32 kPa at 34.8 m) | ASCE 7 ch. 26-27, exposure C, 70.0 m/s |
 
-Seismic governs over wind by 2 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 crack control. Site SDS, SD1 and wind speed are assumptions until the geotechnical report (A-M-187).
+Seismic governs over wind by 1 x. The lateral system (X-BLD-01) and the foundations (X-BLD-03) must carry it; walls and slabs that retain water follow ACI 350 crack control. Site SDS, SD1 and wind speed are assumptions until the geotechnical report (A-M-187).
 
 ## Egress and access (IBC2027_CH10, NFPA101_2027)
 

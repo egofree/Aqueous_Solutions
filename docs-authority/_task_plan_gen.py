@@ -216,7 +216,7 @@ X=[
 ('BAS','Design basis',[
 ('X-BAS-01','Feedstock assay schema and bounding envelope','AQS-ASSAY-001 Rev C: seven-class schema, regolith-like to metal-rich PCB','—','docs-authority/FEED_ASSAY.md'),
 ('X-BAS-02','Bounding-case check of every held rate','each held rate recalculated at both bounding cases, or stated as held with reason','X-BAS-01','docs-authority/FEED_ASSAY.md'),
-('X-BAS-03','Site basis','site, climate, seismic, soil, wind, snow values with source','—','docs-authority/SITE_BASIS.md'),
+('X-BAS-03','Site basis','the location-neutral bounding values (climate, wind, snow, soil) with source; seismic is a per-site input; per-location values come from the site design tool profiles (AQS-SITE-002 Rev C)','—','docs-authority/SITE_BASIS.md'),
 ('X-BAS-04','Units and standards basis','codes and standards list per discipline','—',None)]),
 ('PIP','Piping and line list',[
 ('X-PIP-01','Piping class sheets','class sheets per service and material','X-MAT-01','docs-authority/PIPING_CLASSES.md'),
@@ -311,7 +311,7 @@ X=[
 ('PRO','Procurement, BOM, cost',[
 ('X-PRO-01','Plant BOM','roll-up of every unit bom.csv plus bulk materials','unit task 12',None),
 ('X-PRO-02','Bought-item specifications','datasheet per bought item','unit task 12',None),
-('X-PRO-03','Cost estimate','priced BOM with source per price','X-PRO-01',None),
+('X-PRO-03','Cost estimate','priced BOM with source per price (mass x published commodity price x fabrication factor, AQS-PRO-003)','X-PRO-01','docs-authority/COST_ESTIMATE.md'),
 ('X-PRO-04','Self-copy BOM','AQS-BOM-SC-001 reconciled with unit BOMs','X-PRO-01',None)]),
 ('DWG','Drawings package',[
 ('X-DWG-01','Drawing standard and title block','numbering, sheet sizes, revision blocks','X-GOV-04',None),
@@ -649,9 +649,9 @@ def box(d): return '[x]' if d else '[ ]'
 # unit-task dependency chain (basis/sizing first) and the critical path for cross-cutting tasks.
 import re as _re
 HW_RE = _re.compile(r"(test record|coupon|first article|bench|stack test|polarisation test|on site|as-built|build one|type test|Wenner|acceptance record)", _re.I)
-OWNER_X = {'X-PRO-03', 'X-BAS-03', 'X-ELS-08'}
+OWNER_X = {'X-ELS-08'}   # Q-012 closed (price basis b) and the site basis re-framed location-neutral (2026-10-29); the grounding Wenner test still needs the parcel
 CRIT_X = {'X-BAS-02', 'X-ELS-02', 'X-ELS-04', 'X-SAF-01', 'X-PIP-02', 'X-BLD-02', 'X-BLD-01', 'X-BLD-03', 'X-PAR-02', 'X-PAR-03', 'X-PAR-04', 'X-PIP-03', 'X-MAT-01'}
-HAND_NEXT = ['X-PAR-02 Extend the solver unit by unit (LEACH full balance, FLOAT_SINK, VCD, UPW, gas train) until every edge is solved.', 'X-PAR-03 Atmospheric venting (API 2000) per unit task 07; API 520 relief recomputed for EXPANDER 2026-10-15 by `write_graph.py relief`. Converted 2026-10-15: rectifier, LEACH_CSTR_1, HX-5/HX8, power and one-line scripts (AQS-PAR-001 section 2).', 'X-PAR-03 Apply the scrubber function to ALK_SCRUBBER, ACID_POLISH_SCRUB, NOX_SCRUB and MET_SCRUB with C_s and HTU from the in-house packing design (X-MFG-31) (function added 2026-10-15, `flow_graph/param/sizing/scrubber.py`). Tank, agitator and pump functions added 2026-10-15 (`flow_graph/param/sizing/tank.py`).', 'X-PAR-04 BOMs for EVAP_ACID and EVAP_BASE come from the in-house design (X-MFG-30; no bought skid, owner decision 2026-10-15); CadQuery envelopes, line list, isometric routes and supports regenerated 2026-10-15 (`flow_graph/param/envelopes.py`). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).', 'X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).', 'X-PIP-03 Fabrication isometrics from AQS-ISO-001.', 'X-ELS-02 Remaining study-share loads; CRYO_ASU basis.', 'X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test, site area for the PV field.', 'X-PAR-02 Solver extension: LEACH full balance, FLOAT_SINK, VCD, UPW, gas train.']
+HAND_NEXT = ['X-PAR-02 Extend the solver unit by unit (LEACH full balance, FLOAT_SINK, VCD, UPW, gas train) until every edge is solved.', 'X-PAR-03 Atmospheric venting (API 2000) per unit task 07; API 520 relief recomputed for EXPANDER 2026-10-15 by `write_graph.py relief`. Converted 2026-10-15: rectifier, LEACH_CSTR_1, HX-5/HX8, power and one-line scripts (AQS-PAR-001 section 2).', 'X-PAR-03 Apply the scrubber function to ALK_SCRUBBER, ACID_POLISH_SCRUB, NOX_SCRUB and MET_SCRUB with C_s and HTU from the in-house packing design (X-MFG-31) (function added 2026-10-15, `flow_graph/param/sizing/scrubber.py`). Tank, agitator and pump functions added 2026-10-15 (`flow_graph/param/sizing/tank.py`).', 'X-PAR-04 BOMs for EVAP_ACID and EVAP_BASE come from the in-house design (X-MFG-30; no bought skid, owner decision 2026-10-15); CadQuery envelopes, line list, isometric routes and supports regenerated 2026-10-15 (`flow_graph/param/envelopes.py`). Done 2026-10-15: acid-loop misfits resolved and written by `flow_graph/param/write_graph.py` (AQS-PAR-001 Rev B section 4a); misfit gate `flow_graph/param/test_param_misfit.py` (1 %).', 'X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).', 'X-PIP-03 Fabrication isometrics from AQS-ISO-001.', 'X-ELS-02 Remaining study-share loads; CRYO_ASU basis.', 'X-BAS-03: the bounding station normals (heating and cooling season means) and the IECC climate-zone envelope values for the location-neutral baseline. X-ELS-08: the Wenner soil test is a per-parcel site design input (owner/site track). Site area for the PV field is a per-site design input.', 'X-PAR-02 Solver extension: LEACH full balance, FLOAT_SINK, VCD, UPW, gas train.']
 PROGRESS_LOG = [
     'X-BLD-04 closed 2026-10-15 (seed Rev K): AQS-BLD-010 0 overlaps / 0 pairs; AQS-BLD-011 10/10 incompatible pairs; AQS-BLD-012 9/9 NEC 110.26 rows and 139/139 rows with a 914 mm face; L1 farm re-rowed to 914 mm paths (`flow_graph/farm_rerow.py`, A-M-102). Next: X-PAR-07 roof-only PV, X-STD-01, X-MFG-30..32, X-GOV-20 (owner decisions 2026-10-15).',
     'X-PAR-07 closed 2026-10-15 (conditioned hall, owner decision): roof_close in the solver (156 x 84 m, 26 x 14 bays, 13,104 m²; PV 1336 kWp roof-only, roof capacity 1341 kWp), gate test_roof_carries_pv, EXT_HALL node with SF-EXT_HALL 37.26 kW and duty sheet, IA-PV-01 carries it, ground field removed, seed Rev L (`flow_graph/place_roof.py`). Follow-ups: bin-hour load calculation; FreeCAD extension massing; hall egress under X-STD-01.',
@@ -682,7 +682,7 @@ PROGRESS_LOG = [
     '2026-10-16 X-SAF-02 closed (A-M-209).',
     '2026-10-16 X-BLD-03 closed (A-M-208).',
     '2026-10-16 X-BLD-01 closed (A-M-207).',
-    '2026-10-16 X-PRO-03 held on Q-012.',
+    '2026-10-29 X-PRO-03: Q-012 closed, price basis (b) - mass x published commodity price x fabrication factor (AQS-PRO-003); the priced BOM computes as the unit masses land (tasks 02/10).',
     '2026-10-16 X-PRO-04 closed (A-M-206).',
     '2026-10-16 Hydro energy propagated.',
     '2026-10-16 X-QA-02 closed (A-M-205).',

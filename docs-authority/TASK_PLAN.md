@@ -102,12 +102,11 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P2 | 5 |
+| desk P2 | 7 |
 | desk P3 | 38 |
 | desk P4 | 481 |
 | desk P5 | 196 |
 | hardware | 204 |
-| owner | 2 |
 
 ## 4. Unit task template
 
@@ -157,7 +156,9 @@ Table 6.1. Next cross-cutting desk tasks
 
 | Task | Title | Triage |
 | --- | --- | --- |
+| X-BAS-03 | Site basis | desk P2 |
 | X-END-02 | End-of-life material return | desk P2 |
+| X-PRO-03 | Cost estimate | desk P2 |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
 
@@ -165,8 +166,7 @@ Table 6.2. Tasks waiting on an owner decision
 
 | Task | Title |
 | --- | --- |
-| X-BAS-03 | Site basis |
-| X-PRO-03 | Cost estimate |
+| — | None |
 
 Sizing-driven changes to rates and layout are approved by default (task group X-RSZ). The sizing rule is in `AGENTS.md`, section "Sizing".
 
@@ -391,7 +391,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 - [x] **X-BAS-01** Feedstock assay schema and bounding envelope. Done when: AQS-ASSAY-001 Rev C: seven-class schema, regolith-like to metal-rich PCB. Depends: —. Evidence: `docs-authority/FEED_ASSAY.md`.
 - [x] **X-BAS-02** Bounding-case check of every held rate. Done when: each held rate recalculated at both bounding cases, or stated as held with reason. Depends: X-BAS-01. Evidence: `docs-authority/FEED_ASSAY.md`.
-- [ ] **X-BAS-03** Site basis. Done when: site, climate, seismic, soil, wind, snow values with source. Depends: —. Start from `docs-authority/SITE_BASIS.md` (partial). Triage: owner.
+- [ ] **X-BAS-03** Site basis. Done when: the location-neutral bounding values (climate, wind, snow, soil) with source; seismic is a per-site input; per-location values come from the site design tool profiles (AQS-SITE-002 Rev C). Depends: —. Start from `docs-authority/SITE_BASIS.md` (partial). Triage: desk P2.
 - [x] **X-BAS-04** Units and standards basis. Done when: codes and standards list per discipline. Depends: —. Evidence: `docs-authority/STANDARDS_LIST.md`.
 
 ### X-PIP. Piping and line list
@@ -504,7 +504,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 - [x] **X-PRO-01** Plant BOM. Done when: roll-up of every unit bom.csv plus bulk materials. Depends: unit task 12. Evidence: `docs-authority/PLANT_BOM.md`.
 - [x] **X-PRO-02** Bought-item specifications. Done when: datasheet per bought item. Depends: unit task 12. Evidence: `docs-authority/BOUGHT_SPECS.md`.
-- [ ] **X-PRO-03** Cost estimate. Done when: priced BOM with source per price. Depends: X-PRO-01. Triage: owner.
+- [ ] **X-PRO-03** Cost estimate. Done when: priced BOM with source per price (mass x published commodity price x fabrication factor, AQS-PRO-003). Depends: X-PRO-01. Start from `docs-authority/COST_ESTIMATE.md` (partial). Triage: desk P2.
 - [x] **X-PRO-04** Self-copy BOM. Done when: AQS-BOM-SC-001 reconciled with unit BOMs. Depends: X-PRO-01. Evidence: `docs-authority/SELF_COPY_BOM.md`.
 
 ### X-DWG. Drawings package
@@ -3778,7 +3778,7 @@ This appendix keeps, as written, the list of next tasks and the record of progre
 - X-PAR-04 Vendor MVR quote and bench leach at 20 wt% HCl (A-M-089, A-M-090).
 - X-PIP-03 Fabrication isometrics from AQS-ISO-001.
 - X-ELS-02 Remaining study-share loads; CRYO_ASU basis.
-- X-BAS-03 and X-ELS-08 Owner inputs: ASCE Hazard Tool lookup, Wenner soil test, site area for the PV field.
+- X-BAS-03: the bounding station normals (heating and cooling season means) and the IECC climate-zone envelope values for the location-neutral baseline. X-ELS-08: the Wenner soil test is a per-parcel site design input (owner/site track). Site area for the PV field is a per-site design input.
 - X-PAR-02 Solver extension: LEACH full balance, FLOAT_SINK, VCD, UPW, gas train.
 
 ### A.2 Record of progress, 2026-10-15 to 2026-10-16
@@ -3812,7 +3812,7 @@ This appendix keeps, as written, the list of next tasks and the record of progre
 - 2026-10-16 X-SAF-02 closed (A-M-209).
 - 2026-10-16 X-BLD-03 closed (A-M-208).
 - 2026-10-16 X-BLD-01 closed (A-M-207).
-- 2026-10-16 X-PRO-03 held on Q-012.
+- 2026-10-29 X-PRO-03: Q-012 closed, price basis (b) - mass x published commodity price x fabrication factor (AQS-PRO-003); the priced BOM computes as the unit masses land (tasks 02/10).
 - 2026-10-16 X-PRO-04 closed (A-M-206).
 - 2026-10-16 Hydro energy propagated.
 - 2026-10-16 X-QA-02 closed (A-M-205).

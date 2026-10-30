@@ -85,9 +85,12 @@
   "basis": "V = E_spec M CE / (z F) with E_spec 2.1 kWh/kg (cupric), CE 0.85, z 2: 2.12 V"
  },
  "site_design_dry_bulb_C": {
-  "value": 37.8,
+  "value": 47.4,
   "units": "C",
-  "register": "AQS-SITE-002"
+  "register": "AQS-SITE-002",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest value across the daily-cycle localization set, carried from the governing site profile. A site design replaces it with its own published value. Governing site: death_valley (0.4 % cooling, NOAA_NORMALS_DV).",
+  "needs_verification": true,
+  "verification_test": "the site design tool run for the chosen location replaces the bounding value"
  },
  "continuous_load_factor": {
   "value": 1.25,
@@ -425,7 +428,8 @@
   "units": "kPa flat-roof snow",
   "register": "A-M-105",
   "needs_verification": true,
-  "verification_test": "ASCE 7 Hazard Tool ground snow load at the site"
+  "verification_test": "the site design tool run for the chosen location replaces the bounding value",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest value across the daily-cycle localization set, carried from the governing site profile. A site design replaces it with its own published value. The bounding value is the baseline run own 0.24 kPa (A-M-105): the other daily-cycle sites carry less."
  },
  "ext_conditioned": {
   "value": 1.0,
@@ -2454,15 +2458,19 @@
   "value": 0.107,
   "units": "g design short-period spectral acceleration = 2/3 Fa Ss",
   "needs_verification": true,
-  "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
-  "ref": "ASCE7_22"
+  "verification_test": "ASCE 7 Hazard Tool at the chosen location; the foundation re-solves",
+  "ref": "ASCE7_22",
+  "register": "AQS-SITE-002",
+  "basis": "per-site input (AQS-SITE-002 Rev C): the seismic spectral shape changes the foundation method (presumptive bearing vs engineered), so the baseline carries its study-site value; a site design replaces it with the site spectral values and the foundation re-solves."
  },
  "wt_SD1": {
   "value": 0.08,
   "units": "g design 1 s spectral acceleration = 2/3 Fv S1",
   "needs_verification": true,
-  "verification_test": "ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held)",
-  "ref": "ASCE7_22"
+  "verification_test": "ASCE 7 Hazard Tool at the chosen location; the foundation re-solves",
+  "ref": "ASCE7_22",
+  "register": "AQS-SITE-002",
+  "basis": "per-site input (AQS-SITE-002 Rev C): the seismic spectral shape changes the foundation method (presumptive bearing vs engineered), so the baseline carries its study-site value; a site design replaces it with the site spectral values and the foundation re-solves."
  },
  "wt_TL_s": {
   "value": 8.0,
@@ -2486,11 +2494,13 @@
   "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
  },
  "wt_wind_ms": {
-  "value": 50.0,
+  "value": 70.0,
   "units": "m/s basic wind speed",
-  "register": "A-M-187",
+  "register": "AQS-SITE-002",
   "needs_verification": true,
-  "verification_test": "Structural and geotechnical design of the reservoir floors and the site seismic and wind study"
+  "verification_test": "the site design tool run for the chosen location replaces the bounding value",
+  "ref": "SAFFIR_CAT5",
+  "basis": "location-neutral bounding (AQS-SITE-002 Rev C): the strictest value across the daily-cycle localization set, carried from the governing site profile. A site design replaces it with its own published value. Governing site: floating_island (Saffir-Simpson category 5)."
  },
  "wt_life_per_shop": {
   "value": 2,

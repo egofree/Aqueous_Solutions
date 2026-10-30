@@ -15,14 +15,14 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 
 | Phase | Scope | Items | Closes with |
 | --- | --- | --- | --- |
-| T1 | Owner and site data | 50 | Owner decision or site investigation report |
+| T1 | Owner and site data | 48 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
 | T4 | Pilot runs | 21 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 483 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 486 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 37 | Commissioning record |
 
-Total 684 items: 304 drivers, 380 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 685 items: 305 drivers, 380 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -39,7 +39,6 @@ Total 684 items: 304 drivers, 380 register entries. Classification rule: first m
 | driver ifc_perim_small_mm | 1219 mm | AHJ fire-code review | X-PAR |
 | driver mv_kV | 12.47 kV collection and point of common coupling | Utility interconnection study (owner input A-M-113): service voltage | X-PAR |
 | driver pv_oversize_factor | 2.0 PV nameplate / PV needed to close the daily balance | NREL NSRDB TMY hourly run (PVWatts v8) for the site: fraction of days with yield below 1/factor of the mean; export tariff from the serving utility | X-PAR |
-| driver roof_snow_kPa | 0.24 kPa flat-roof snow | ASCE 7 Hazard Tool ground snow load at the site | X-PAR |
 | driver san_compost_fraction | 0.25 share of excreta to compost toilets (daily average; each path sized for 100 %) | Owner HAB fit-out (number of each toilet type) and use log | X-PAR |
 | driver san_crew | 4 persons, HAB design occupancy (HABITATION params.crew_study) | Owner occupancy schedule | X-PAR |
 | driver san_farm_sep_m | 7.62 m minimum edge distance, sanitation units to any FARM unit, in addition to the HAB/FARM wall and separate ventilation | Owner and AHJ review; air-pressure cascade test FARM > HAB corridor > sanitation room | X-PAR |
@@ -47,8 +46,8 @@ Total 684 items: 304 drivers, 380 register entries. Classification rule: first m
 | driver soil_unit_weight_kN_m3 | 18.0 kN/m3 moist soil | Geotechnical report unit weight | X-PAR |
 | driver wt_Ie | 1.5 - importance factor, Risk Category IV (life-support energy) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_R | 3.0 - response modification, elevated-mass structure (conservative) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
-| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1 | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
-| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) | X-PAR |
+| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1 | ASCE 7 Hazard Tool at the chosen location; the foundation re-solves | X-PAR |
+| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss | ASCE 7 Hazard Tool at the chosen location; the foundation re-solves | X-PAR |
 | driver wt_TL_s | 8.0 s long-period transition | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_cell_len_m | 12.0 m max reservoir cell length (sloshing; min 2 cells per level) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_core_frac | 0.15 - plate fraction kept for stair, lift and penstock cores | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
@@ -56,7 +55,6 @@ Total 684 items: 304 drivers, 380 register entries. Classification rule: first m
 | driver wt_level_clear_mm | 6000 mm reservoir storey floor-to-floor | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_penstock_loss_frac | 0.05 - penstock friction as fraction of head | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | driver wt_water_max_m | 4.5 m max water depth per reservoir level (slab load 44 kPa) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
-| driver wt_wind_ms | 50.0 m/s basic wind speed | Structural and geotechnical design of the reservoir floors and the site seismic and wind study | X-PAR |
 | A-M-013 | 115 mph 3 s gust | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-014 | Ss 0.10, S1 0.05 g | ASCE Hazard Tool at the parcel | X-BAS-03 |
 | A-M-015 | D site class | Geotechnical report | X-BAS-03 |
@@ -378,6 +376,7 @@ Total 684 items: 304 drivers, 380 register entries. Classification rule: first m
 | driver rcv_tube_len_m | 6.096 m, one random length per tube (as AQS-INV-003) | rack layout check against the CRYO bay | X-PAR |
 | driver roof_live_kPa | 0.96 kPa | Structural review | X-PAR |
 | driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 | X-PAR |
+| driver roof_snow_kPa | 0.24 kPa flat-roof snow | the site design tool run for the chosen location replaces the bounding value | X-PAR |
 | driver rx_ald_whsv_h | 1.0 1/h on ethanol (3.16 h-1 published / about 3) | see A-M-157 | X-PAR |
 | driver rx_cat_bulk_kg_L | 1.0 kg/L | see A-M-157 | X-PAR |
 | driver rx_hno3_absorber_tau_h | 2 h | NO absorption test of the HNO3 column at plant rate: outlet NOx | X-PAR |
@@ -392,6 +391,7 @@ Total 684 items: 304 drivers, 380 register entries. Classification rule: first m
 | driver san_past_batches_d | 4 batches per day | Pasteuriser cycle log | X-PAR |
 | driver san_vs_destruction | 0.5 fraction of VS destroyed, thermophilic anaerobic | VS reduction across BLACK_DIGEST (Standard Methods 2540 G) | X-PAR |
 | driver san_vs_fraction | 0.85 VS / TS of faeces | TS/VS (Standard Methods 2540 G) on the digester feed | X-PAR |
+| driver site_design_dry_bulb_C | 47.4 C | the site design tool run for the chosen location replaces the bounding value | X-PAR |
 | driver storage.default_no_heat_input_T_C | 40.0 C | 0.4% site dry bulb 37.8 C (AQS-SITE-002) rounded up - confirm as the default | X-PAR |
 | driver struct_equip_density_kg_m3 | 150.0 kg/m3 empty equipment weight per envelope volume | Replace with CAD weights per unit as models are built | X-PAR |
 | driver struct_tank_kg_m3 | 40.0 kg/m3 empty storage tank weight per envelope volume (thin shell) | CAD weight per tank | X-PAR |
@@ -402,6 +402,7 @@ Total 684 items: 304 drivers, 380 register entries. Classification rule: first m
 | driver vs_margin | 1.5 packed height margin | as vs_htu_m | X-PAR |
 | driver vs_naoh_excess | 2.0 mol NaOH fed / mol HCl absorbed | Sump pH above 12 at the bleed rate | X-PAR |
 | driver vs_y_out_ppm | 1.0 ppmv HCl at the scrubber outlet (half the ACGIH TLV-C 2 ppm) | Outlet HCl by NIOSH 7903 sampling | X-PAR |
+| driver wt_wind_ms | 70.0 m/s basic wind speed | the site design tool run for the chosen location replaces the bounding value | X-PAR |
 | driver znbr_charge_h | 6.0 h/d | see A-M-135 | X-PAR |
 | A-M-005 | 300 / 1000 W/m2K | Agitator selection and coil test | X-MAT-11 |
 | A-M-006 | 1500 W/m2K | Exchanger maker rating | X-MAT-12 |

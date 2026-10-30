@@ -251,6 +251,7 @@ Table 3.1. Document numbers in use
 | AQS-PLAN-011 | `docs-authority/LOCALIZATION_PLAN.md` | J | 2026-10-25 | Localization plan: site profiles and locale variants | current |
 | AQS-PRO-001 | `docs-authority/PLANT_BOM.md` | A | 2026-10-16 | Plant BOM roll-up | current |
 | AQS-PRO-002 | `docs-authority/BOUGHT_SPECS.md` | B | 2026-10-25 | Bought-item specification sheets | current |
+| AQS-PRO-003 | `docs-authority/COST_ESTIMATE.md` | A | 2026-10-29 | Cost estimate method | current |
 | AQS-PV-001 | `docs-authority/PV_CELL_MOD.md` | C | 2026-10-11 | Photovoltaic cell | current |
 | AQS-PWR-001 | `docs-authority/POWER.md` | A | 2026-10-17 | Power | current |
 | AQS-PWR-002 | `docs-authority/GEOTHERMAL_BACKUP.md` | B | 2026-09-28 | Geothermal loop and backup generator | current |
@@ -287,7 +288,7 @@ Table 3.1. Document numbers in use
 | AQS-SIDE-003 | `docs-authority/SIDE_CRYO.md` | C | 2026-10-12 | Cold box module | current |
 | AQS-SIGN-001 | `docs-authority/SIGN_SCHEDULE.md` | A | 2026-09-26 | Sign and label schedule | current |
 | AQS-SITE-001 | `docs-authority/SITE_ACCESS.md` | E | 2026-10-24 | Site access: orientation, north dock, service entrance and egress | current |
-| AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | B | 2026-10-24 | Site basis | current |
+| AQS-SITE-002 | `docs-authority/SITE_BASIS.md` | C | 2026-10-29 | Site basis | current |
 | AQS-SITE-003 | `docs-authority/SITE_ACCESS_CHECK.md` | A | 2026-10-16 | Site access and dock check | current |
 | AQS-SITE-004 | `docs-authority/SITE_SCALING.md` | A | 2026-10-25 | Site scaling | current |
 | AQS-SITE-005 | `docs-authority/SITE_POWER.md` | A | 2026-10-25 | Site power portfolio and redundancy | current |

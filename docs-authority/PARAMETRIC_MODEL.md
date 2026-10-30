@@ -88,7 +88,7 @@ All solved units close.
 | ew_current_density_A_m2 | 200.0 | A/m2 | SCHLESINGER2011 | — |
 | ew_current_efficiency_design | 0.85 | - | USBM_CL_EW | yes |
 | ew_cell_voltage_V | 2.12 | V | USBM_CL_EW | yes |
-| site_design_dry_bulb_C | 37.8 | C | AQS-SITE-002 | — |
+| site_design_dry_bulb_C | 47.4 | C | AQS-SITE-002 | yes |
 | continuous_load_factor | 1.25 | - | NEC2026 | — |
 | pvc_u_max_C | 60.0 | C | ASTM_D1785 | — |
 | cp_hcl20_kJ_kgK | 3.0 | kJ/(kg K) | PERRY9 | yes |
@@ -462,7 +462,7 @@ All solved units close.
 | wt_TL_s | 8.0 | s long-period transition | A-M-187 | yes |
 | wt_R | 3.0 | - response modification, elevated-mass structure (conservative) | A-M-187 | yes |
 | wt_Ie | 1.5 | - importance factor, Risk Category IV (life-support energy) | A-M-187 | yes |
-| wt_wind_ms | 50.0 | m/s basic wind speed | A-M-187 | yes |
+| wt_wind_ms | 70.0 | m/s basic wind speed | SAFFIR_CAT5 | yes |
 | wt_life_per_shop | 2 | - HAB/FARM levels added per added shop level as the building grows (owner rule, Q-009) | A-M-187 | — |
 | maint_insert_life_y | {"BMED_ACID": 5, "BMED_BASE": 5, "BMED_UPW_POLISH": 5, "CRYO_ASU": 5, "CRYO_H2": 2, "H2_PURIFIER": 3, "MEOH_SYNTH": 3, "ALD": 2, "FORM": 1, "MEAM": 2, "HNO3": 0.5, "ACEX": 3, "ZNBR2": 5} | years between replacements of the consumable insert of each unit (membranes, sorbent, catalyst, gauze, resin, diaphragms, stack) | A-M-189 | yes |
 | maint_rotating | {"lube_mo": 6, "vibration_mo": 3, "bearing_y": 5, "seal_y": 3} | months/years for motors, pumps, fans and compressors | A-M-189 | yes |
@@ -1318,6 +1318,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver bmed_sec_design_kWh_per_kg_pair | 2.1 kWh per kg acid+base (current graph basis) | Superseded: BMED energy now from bmed_sec_kWh_per_kg_base (X-PAR acid-loop decision) |
 | driver ew_current_efficiency_design | 0.85 - | Bench chloride EW cell per metal: deposit mass vs charge (current efficiency) |
 | driver ew_cell_voltage_V | 2.12 V | Bench diaphragm chloride EW cell, cupric electrolyte, 200 A/m2: cell voltage and energy per kg Cu |
+| driver site_design_dry_bulb_C | 47.4 C | the site design tool run for the chosen location replaces the bounding value |
 | driver cp_hcl20_kJ_kgK | 3.0 kJ/(kg K) | Check against the Perry sec. 2 aqueous HCl heat-capacity table at 20 wt% and 60 C |
 | driver cp_naoh20_kJ_kgK | 3.6 kJ/(kg K) | Check against the Perry sec. 2 aqueous NaOH heat-capacity table at 20 wt% and 60 C |
 | driver U_free_convection_W_m2K | 7.0 W/(m2 K) | Coil outlet temperature on the installed air cooler |
@@ -1357,7 +1358,7 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver ext_U_roof | 0.199 W/(m2 K) | Roof assembly design |
 | driver roof_pv_dead_kPa | 0.15 kPa PV modules and ballasted racking | Racking design weight per m2 |
 | driver roof_live_kPa | 0.96 kPa | Structural review |
-| driver roof_snow_kPa | 0.24 kPa flat-roof snow | ASCE 7 Hazard Tool ground snow load at the site |
+| driver roof_snow_kPa | 0.24 kPa flat-roof snow | the site design tool run for the chosen location replaces the bounding value |
 | driver ext_conditioned | 1.0 1 conditioned, 0 unconditioned hall | Bin-hour load calculation on TMY3 for the hall programme |
 | driver ext_U_wall | 0.534 W/(m2 K) metal building wall U-0.094 Btu/h ft2 F, climate zone 3 | Wall assembly design |
 | driver ext_wall_h_mm | 6000 mm eave height of the extension (EXT_HALL block height) | Hall section drawing |
@@ -1537,12 +1538,12 @@ Feeds the testing and prototyping rollout plan. Drivers first, then register ent
 | driver wt_penstock_loss_frac | 0.05 - penstock friction as fraction of head | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver wt_freeboard_m | 0.5 m freeboard, lower reservoir | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver wt_cell_len_m | 12.0 m max reservoir cell length (sloshing; min 2 cells per level) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
-| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) |
-| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1 | ASCE Hazard Tool lookup at the fixed parcel and site class from the geotechnical report (AQS-SITE-002 held) |
+| driver wt_SDS | 0.107 g design short-period spectral acceleration = 2/3 Fa Ss | ASCE 7 Hazard Tool at the chosen location; the foundation re-solves |
+| driver wt_SD1 | 0.08 g design 1 s spectral acceleration = 2/3 Fv S1 | ASCE 7 Hazard Tool at the chosen location; the foundation re-solves |
 | driver wt_TL_s | 8.0 s long-period transition | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver wt_R | 3.0 - response modification, elevated-mass structure (conservative) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
 | driver wt_Ie | 1.5 - importance factor, Risk Category IV (life-support energy) | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
-| driver wt_wind_ms | 50.0 m/s basic wind speed | Structural and geotechnical design of the reservoir floors and the site seismic and wind study |
+| driver wt_wind_ms | 70.0 m/s basic wind speed | the site design tool run for the chosen location replaces the bounding value |
 | driver maint_insert_life_y | {"BMED_ACID": 5, "BMED_BASE": 5, "BMED_UPW_POLISH": 5, "CRYO_ASU": 5, "CRYO_H2": 2, "H2_PURIFIER": 3, "MEOH_SYNTH": 3, "ALD": 2, "FORM": 1, "MEAM": 2, "HNO3": 0.5, "ACEX": 3, "ZNBR2": 5} years between replacements of the consumable insert of each unit (membranes, sorbent, catalyst, gauze, resin, diaphragms, stack) | Performance trending from the first operating year (pressure drop, conversion, current efficiency, breakthrough) sets the interval |
 | driver maint_rotating | {"lube_mo": 6, "vibration_mo": 3, "bearing_y": 5, "seal_y": 3} months/years for motors, pumps, fans and compressors | Vibration and temperature trending; bearing L10 life from the motor design load |
 | driver soil_allow_kPa | 72.0 kPa allowable bearing, presumptive | Geotechnical investigation per IBC 1803 at the parcel: borings, swell tests, allowable bearing and modulus |
