@@ -19,9 +19,10 @@ the task plan marks them done with the sheet as evidence.
 
 **HCL_BURNER close-out (X-END-02)**: the unit left the design at graph Rev AC
 (A-M-255 — the EW cathode H₂ goes to the H₂ pool, anode Cl₂ all to leach
-oxidation), but its placeholder model stubs (`models/units/HCL_BURNER`,
-"not yet dimensioned", no duty sheet) still rolled two unassignable envelope
-rows into the plant BOM. The stubs are removed with the unit. The EOL matrix
+oxidation), but its placeholder model stubs (the HCL_BURNER unit-BOM
+directory, "not yet dimensioned", no duty sheet) still rolled two
+unassignable envelope rows into the plant BOM. The stubs are removed with the
+unit. The EOL matrix
 is Rev E: the roster itself grew 1020 → 1436 lines as the build-out and M3
 BOMs rolled in, so the honest split is 1380 classed / 56 unassigned — each of
 the 56 held with a named reason (51 material not identified on the newer
