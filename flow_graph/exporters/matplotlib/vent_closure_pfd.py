@@ -105,7 +105,7 @@ def main():
 
     ab = S.unit(ax, 2, 34.0, 14, 8.0, "AFTERBURNER", "NCG destroy\nQ1 heat stays",
                 fill="#fff7ed", edge="#b45309", ts=14, ss=9.9)
-    flue = S.unit(ax, 18, 34.0, 14, 8.0, "FLUE_CAP", "S67 / S18\n→ CRYO_CO2",
+    flue = S.unit(ax, 18, 34.0, 14, 8.0, "FLUE_CAP", "S67 / S67B\n→ CRYO_CO2",
                   fill="#ffedd5", edge="#9a3412", ts=14, ss=9.9)
     co2 = S.iface(ax, 34, 34.0, 12, 8.0, "CRYO_CO2", "→ S04 FARM\nS68 condens.",
                   fill="#ffedd5", edge="#c2410c")
@@ -161,7 +161,7 @@ def main():
         "S24 dark in normal operation",
     ], fill="#fff3e0", edge=PARTIAL)
     S.callout(ax, 27, 2.5, 23, 9.5, "CO₂ CAPTURE", [
-        "S67 / S18 → CRYO_CO2 → S04",
+        "S67 / S67B → CRYO_CO2 → S04",
         "Claimed — capture η / duty TBD",
         "Destruction upstream remains",
     ], fill="#fff3e0", edge=CLAIMED)

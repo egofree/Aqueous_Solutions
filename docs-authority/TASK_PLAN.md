@@ -59,7 +59,7 @@ Table 2.1. Tasks by group
 | X-END | Decommissioning and recycling loop closure | 2 | 1 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 12 |
 | X-TOOL | Modeling tooling | 4 | 4 |
-| X-RTE | Routes without flow (owner decision 2026-10-29) | 59 | 42 |
+| X-RTE | Routes without flow (owner decision 2026-10-29) | 59 | 43 |
 | FOUNDRY | Process (Mass transform) | 405 | 308 |
 | DIGESTER | Process (Mass transform) | 375 | 250 |
 | FAB | Process (Mass transform) | 270 | 178 |
@@ -79,7 +79,7 @@ Table 2.1. Tasks by group
 | FARM | Life support / habitat | 30 | 20 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3071** | **2169** |
+| | **Total** | **3071** | **2170** |
 
 ## 3. Triage of open tasks
 
@@ -104,7 +104,7 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P1 | 4 |
-| desk P2 | 21 |
+| desk P2 | 20 |
 | desk P3 | 34 |
 | desk P4 | 472 |
 | desk P5 | 179 |
@@ -168,7 +168,6 @@ Table 6.1. Next cross-cutting desk tasks
 | X-RTE-HAB_CO2_TO_HDR | Route HAB_CO2_TO_HDR from HABITATION to HDR_CO2 carries no flow | desk P2 |
 | X-RTE-HAB_GREY | Route HAB_GREY from HABITATION to GREY_TREAT carries no flow | desk P2 |
 | X-RTE-IA-GW-MAKEUP | Route IA-GW-MAKEUP from GW_INTAKE to ROOF_TANK carries no flow | desk P2 |
-| X-RTE-LEGACY-PFD | Remaining hand-drawn process sheets | desk P2 |
 | X-RTE-NUT_TO_BED | Route NUT_TO_BED from NUTRIENT_DOSE to GROW_BED carries no flow | desk P2 |
 | X-RTE-RESIST-AZIDE | Aromatic bis-azide sensitiser for a negative resist | desk P2 |
 | X-RTE-S04 | Route S04 from CRYO_CO2 to GROW_BED carries no flow | desk P2 |
@@ -585,6 +584,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 
 ### X-RTE. Routes without flow (owner decision 2026-10-29)
 
+- [x] **X-RTE-LEGACY-PFD** Remaining hand-drawn process sheets. Done when: every script in flow_graph/exporters/matplotlib/ was run, its identifiers checked against the graph and its citations listed; none only repeats a graph view, so all are kept, the stale labels and paths are fixed and every sheet number is registered (flow_graph/LEGACY_PFD_SCRIPTS.md revision B). Depends: —. Evidence: `flow_graph/LEGACY_PFD_SCRIPTS.md`.
 - [x] **X-RTE-COMB-HEAT-FUEL** Fuel route for the fuel-fired alternate COMB_HEAT. Done when: COMB_HEAT is kept as the one melt path independent of the electrical supply and burns the C5-C10 cut, or plant methanol by comb_heat_fuel, at the IND_MELT melt heat over the crucible-furnace efficiency, with its oxygen and off-gas routes rated; the chlorinator CO cannot carry the duty (A-M-438). Depends: —. Evidence: `flow_graph/param/comb_heat.py`.
 - [x] **X-RTE-PV-SI** Silicon wafers for SOLAR_PV_CELL. Done when: the cell rate is the replacement need of the roof array, and the wafers come from the plant: 125 mm semi-square cells from the CZ ingot by default, or cast multicrystalline cells, selectable by pv_wafer_route; retired cells return their silicon to SI_REFINE (A-M-437). Depends: —. Evidence: `flow_graph/param/pv_wafer.py`.
 - [x] **X-RTE-CZ-HOTZONE** CZ hot-zone heater from a heat-loss model. Done when: the 35 kW class value is replaced by a heat-loss model of felt conduction, melt radiation, the crystal and the argon purge, with every input a driver and its validation at the first pull in A-M-436. Depends: —. Evidence: `flow_graph/param/fab_silicon.py`.
@@ -643,7 +643,6 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 - [ ] **X-RTE-PV-MODULE** Module materials for the replacement cells. Done when: the module glass, encapsulant, ribbon, frame and the contact pastes of the cells that replace the roof array are made on site from plant streams, sized from the cells a day of pv_wafer.py, with both balances closed (A-M-437). Depends: X-RTE-PV-SI. Triage: hardware.
 - [ ] **X-RTE-RESIST-ISOPRENE** Isoprene for a negative cyclised-rubber resist. Done when: the C5 diene is separated from the cracked C5-C10 cut and polymerised and cyclised on site, sized from the resist need, if the negative resist is to become a selectable fab_resist_route (A-M-432). Depends: X-RTE-POLY_TO_FAB. Triage: hardware.
 - [ ] **X-RTE-RESIST-AZIDE** Aromatic bis-azide sensitiser for a negative resist. Done when: an azide route from plant streams (hydrazine from ammonia and hypochlorite, then the nitrite azide synthesis) and the aromatic amine and ketone it is built on are sized and closed, with an organic developer for LITHO_DEV, or the negative class is dropped (A-M-432). Depends: X-RTE-POLY_TO_FAB. Triage: desk P2.
-- [ ] **X-RTE-LEGACY-PFD** Remaining hand-drawn process sheets. Done when: each script in flow_graph/exporters/matplotlib/ that the regenerator does not run is checked for what it draws and who cites it, then retired or replaced by a graph view. Depends: —. Triage: desk P2.
 
 ## 8. Unit tasks by system
 

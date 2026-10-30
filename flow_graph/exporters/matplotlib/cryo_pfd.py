@@ -2,7 +2,7 @@
 """AQS-PFD-CRY-001 — CRYO / air liquefaction cold-box internals + Q4/HVAC hooks.
 
 Authority: AQS-CRY-002, AQS-EQP-CRY-001, doc 09, freecad/cryo.py,
-STREAM_REGISTER S02–S05/S18/S24/S45/S49–S50/S54–S56/S64/S67/S70. AQS-VENT-001.
+STREAM_REGISTER S02–S05/S24/S45/S49–S50/S54–S56/S64/S67/S70. AQS-VENT-001.
 COLD BOX internals on L-1 east of CORE. Not the ZnBr2 Br₂ tower.
 """
 from __future__ import annotations
@@ -62,7 +62,7 @@ def main():
     h2d = S.iface(ax, 2, 41, 13, 6.5, "H2_DRYER",
                   "S05 process H₂\ndried · arrestor", fill="#dbeafe", edge="#1e3a8a")
     flue = S.iface(ax, 17, 41, 13, 6.5, "FLUE CAP",
-                   "S18 / S67 CO₂\nclosure path", fill="#ffedd5", edge="#9a3412")
+                   "S67 / S67B CO₂\nvia FLUE_KO", fill="#ffedd5", edge="#9a3412")
 
     # ---- Cold box parent with internals ----
     ax.text(47, 62.0, "2   COLD BOX INTERNALS",
@@ -93,7 +93,7 @@ def main():
     slabel(ax, 40, 48.5, "S05 / S64", S.C_H2, size=7.0)
     arrow(ax, R(flue), (45.5, cy(flue) - 1), S.C_ORG, lw=1.2, ls="--")
     arrow(ax, (45.5, cy(flue) - 1), (46, reb[1] + 0.8), S.C_ORG, lw=1.2, ls="--")
-    slabel(ax, 39, 40.5, "S18/S67", S.C_ORG, size=6.4)
+    slabel(ax, 39, 40.5, "S67/S67B", S.C_ORG, size=6.4)
 
     # ---- Product receivers ----
     ax.text(78, 62.0, "3   RECEIVERS",
@@ -176,7 +176,7 @@ def main():
     ], fill="#e0f2fe", edge="#0284c7")
 
     S.legend(ax, 2.0, 1.5)
-    S.graph_bridge_note(ax, _GP, "S02–S05/S18/S54–S56/S64/S67–S68/S70")
+    S.graph_bridge_note(ax, _GP, "S02–S05/S54–S56/S64/S67–S68/S70")
     # overlay a few callouts where stream IDs already appear on-sheet
     for _i, (_sid, _e) in enumerate(sorted(_SEC.items())[:6]):
         pass  # register below; arrow callouts stay honest to drawn labels

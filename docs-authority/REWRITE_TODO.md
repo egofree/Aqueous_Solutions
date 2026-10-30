@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: BD
+Revision: BE
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -62,6 +62,7 @@ Date: 2026-10-29
 | BB | Batch 46a: the CZ hot-zone heater from a heat-loss model with every input a driver (A-M-436); AQS-EQP-FAB-001 revision H | 2026-10-30 |
 | BC | Batch 46b: silicon wafers for the solar cell line from the plant, the cell rate from the replacement need of the roof array, CZ semi-square and cast multicrystalline selectable, retired cells recovered (A-M-437); AQS-DUTY-071 revision C | 2026-10-30 |
 | BD | Batch 46c: COMB_HEAT kept as the melt path independent of the electrical supply, with a rated fuel route on the C5-C10 cut or plant methanol, oxygen and off-gas routes (A-M-438) | 2026-10-30 |
+| BE | Batch 47a: audit of the matplotlib flow sheet scripts; all kept, stale labels and paths fixed, sheet numbers registered from the scripts | 2026-10-30 |
 
 ## 1. Purpose and scope
 
@@ -233,6 +234,7 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/param/standby_routes.py` (A-M-434) | Six gas and hydrogen routes that duplicate a live route or have no source are retired with their reasons; the TSA water route waits on the held cathode-hydrogen water. |
 | `flow_graph/param/foundry_poly.py` (A-M-435) | POLY_OLEFIN takes the naphtha cut or plant methanol by olefin_feed_route; the generator cut fuel carries its outage rate; seven polymer and foundry routes that duplicate a live route or have no source are retired. |
 | `docs-authority/STUDY_UNITS_STUB.md` (AQS-EQP-STUDY-001 G) | Rewritten to the style guide; each unit points to where its duty is set now. |
+| `flow_graph/LEGACY_PFD_SCRIPTS.md` (AQS-FLOW-GRAPH-001 annex B) | Rewritten as the audit record of the matplotlib sheet scripts. The question on the unregistered AQS-PFD numbers is settled: the drawing register now reads each sheet number from its script, and the four removed sheets are kept there as retired numbers. |
 
 ## 3. In progress
 
@@ -411,5 +413,4 @@ Table 6.1. Pages kept pending a decision
 | `docs-authority/SOLVENT_ROUTE.md` (AQS-DUTY-026) | The ionic-liquid solvent chain (fermentation, acetic acid, glyoxal, formaldehyde, methylimidazole, chlorobutane and the quaternisation) has build models in `models/mfg/` but no units on the present graph. Should it be put back on the graph with its rates, or retired with its build models? |
 | `docs-authority/SCRUBBER_CHEMISTRY.md` (AQS-GAS-002) | Revision A had a separate caustic scrubber for the vents of the glass digest and the BMED base tank, trimming the mist to salt for the BMED salt feed. Neither that scrubber nor its header is on the graph. Do these vents need their own unit, or does another unit cover them? |
 | `docs-authority/sizing/FUEL_CELL.md` | The sizing page reports an empty envelope and a polyethylene vessel for the fuel cell. Should `flow_graph/param` sizing skip bought stacks, or size them from the vendor envelope? |
-| `docs-authority/unregistered_doc_numbers.json` | Pages cite AQS-PFD-* flow diagram numbers that are in neither register. Should they be added to the drawing register with the scripts in `flow_graph/exporters/matplotlib/` as their source, or removed from the pages? |
 | `docs-authority/unregistered_doc_numbers.json` | Many pages cite AQS-AUD-001, a crew and water audit that is not in the repository. Should it be added, or should each citation be replaced by the graph value it stood for? |

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Factory wet line — one leach vessel, weir + in-tank auger, funnel EW aisle."""
+"""AQS-PFD-WET-001 — Factory wet line: one leach vessel, weir + in-tank auger, funnel EW aisle."""
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))

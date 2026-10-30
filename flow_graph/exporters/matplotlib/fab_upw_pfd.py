@@ -118,7 +118,7 @@ def main():
     ], fill="#fffbeb", edge="#b45309")
 
     S.callout(ax, 56, 7.5, 42, 7.5, "SHEETS / NAMING", [
-        "Parent sector: AQS-PFD-FAB-001",
+        "Parent sector: views/pfd-fab.svg",
         "Authority: AQS-WTR-001 §3 · AQS-EQP-FAB-UPW-001",
         "Forge / cut / reagent forks remain open",
         "  on AQS-EQP-FAB-001 (next fab pass).",

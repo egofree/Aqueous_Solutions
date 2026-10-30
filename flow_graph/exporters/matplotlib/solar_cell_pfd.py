@@ -48,10 +48,10 @@ def main():
            "RULE  ·  Separate train from FAB_TOOL IC litho/implant.  Share UPW, KOH, etch return, N₂.  "
            "No free outdoor dump (AQS-VENT-001).  PECVD / belt kW = vendor TBD — do not invent.")
 
-    ax.text(2, 68.0, "1   FEED  (from AQS-PFD-FAB-001 polish path)",
+    ax.text(2, 68.0, "1   FEED  (IA-PV-WAFER from WAFER_FAB; views/pfd-fab.svg)",
             fontsize=14.3, fontweight="bold", color="#1c1917")
     preclean = S.iface(ax, 2, 57.5, 16, 7.5, "PRE_CLEAN",
-                       "polished wafers\nAQS-PFD-FAB-001",
+                       "solar wafers\nIA-PV-WAFER",
                        fill="#e0f2fe", edge="#0369a1")
     upw = S.iface(ax, 21, 57.5, 14, 7.5, "FAB UPW",
                   "S27 rinse",
@@ -144,7 +144,7 @@ def main():
         "CAD envelopes: freecad/wafer_fab.py (PV_* east strip)",
         "Reagents: WS_KOH (S35) · WS_SOLV · POCl₃ via WS_DOPE class",
         "Detail: docs-authority/SOLAR_CELL_EQUIPMENT.md (AQS-EQP-FAB-PV-001)",
-        "Parent fab: AQS-PFD-FAB-001 §5 points here",
+        "Parent fab: views/pfd-fab.svg",
     ], fill="#fffbeb", edge="#b45309")
 
     S.callout(ax, 62, 8.5, 36, 15.5, "OPEN / STUDY", [
@@ -156,7 +156,7 @@ def main():
     ], fill="#f8fafc", edge="#64748b")
 
     S.legend(ax, 2.0, 1.2)
-    S.graph_bridge_note(ax, _GP, "S10/S27/S35; SOLAR_PV_CELL node has no dedicated edges yet")
+    S.graph_bridge_note(ax, _GP, "S10/S27/S35; wafers in on IA-PV-WAFER, cells out on IA-PV-CELL (A-M-437)")
     # overlay a few callouts where stream IDs already appear on-sheet
     for _i, (_sid, _e) in enumerate(sorted(_SEC.items())[:6]):
         pass  # register below; arrow callouts stay honest to drawn labels
