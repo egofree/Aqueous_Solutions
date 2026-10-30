@@ -1,9 +1,9 @@
 # Materials standard
 
 Document number: AQS-STD-002
-Revision: O
-Date: 2026-10-21
-Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. Referenced from AQS-PLAN-007 section X-MAT.
+Revision: P
+Date: 2026-10-30
+Authority: the plant graph `flow_graph/plant_flow_graph.json`; feed basis AQS-ASSAY-001 Rev C. AQS-PLAN-007 section X-MAT refers to this page. This page is a design study and is not an engineering stamp.
 
 | Rev | Description | Date |
 | --- | --- | --- |
@@ -18,12 +18,15 @@ Authority: graph Rev BH. Study. Not a PE stamp. Feed basis AQS-ASSAY-001 Rev C. 
 | I | Material temperatures on thermoplastic inlets (X-MAT-09); HX-5 coil guard. | 2026-10-15 |
 | J | EW electrode materials in chloride (X-MAT-18). | 2026-10-15 |
 | K | Galvanic and stray-current design for the EW aisle (X-MAT-07). | 2026-10-15 |
-| L | Service-class selection guide across the assay envelope added as section 12 (X-MAT-01). Line-list class rules keyed to the guide families: the "aqueous process, default thermoplastic" catchall is retired, hydrocarbon/fuel cuts go to M2 (carbon steel, dry, per the issued duties), wet methanol and solvents to M1 (316L per the issued duties), melt pours become launder rows (not piped), and the fluoro synthesis train, dopant concentrates and molten-salt pot brines carry per-duty-sheet materials pending a PIP-003 Rev B class. Section 8 checker aligned: unit map equals the issued CPVC and PVDF members, and the BMED inlets are derived from the booked X-RSZ-04 trim duties with driver heat capacities; 0 exceed, 33 rows on the registered 40 °C ambient assumption (A-M-269). Also refreshes the section 10 trim table to the X-RSZ-04 booked duty and flow basis. | 2026-10-21 |
-| M | Section 2 ambiguous audit list resolved (X-MAT-06): the two contradicting or out-of-class materials adjudicated (HDR_H2 is the PVC-U wet-acid header of AQS-REV-H2-001 - graph row corrected; Q3 heat batteries are SA-240 304L at the 100 C tier - PP-H is an 80 C class material [S4], graph row corrected); unstated temperatures given stated bases (edge T_C stamps, loop t_nom, or the registered 40 C ambient A-M-269); the 32 template-duty units covered by the generated per-unit table of section 13.2. Also: the 13 wet-HDR_H2 lines move to the new P1 wet-acid-header family (AQS-PIP-004 Rev C), updating the section 12 counts (dry gas 47 to 38, hot leach 46 to 44, acid or brine 54 to 52). Done-when evidence: docs-authority/_ambiguous_units.py --done (roster 77: 27 doc-section, 18 row of 13.1, 32 generated). | 2026-10-21 |
+| L | Service-class selection guide across the assay envelope added as section 12 (X-MAT-01). Line-list class rules keyed to the guide families: the "aqueous process, default thermoplastic" catchall is retired, hydrocarbon/fuel cuts go to M2 (carbon steel, dry, per the issued duties), wet methanol and solvents to M1 (316L per the issued duties), melt pours become launder rows (not piped), and the fluoro synthesis train, dopant concentrates and molten-salt pot brines carry per-duty-sheet materials pending a PIP-003 Rev B class. Section 8 checker aligned: the unit map equals the issued CPVC and PVDF members, and the BMED inlets are derived from the booked X-RSZ-04 trim duties with driver heat capacities. No inlet exceeds its limit, and the inlets with no stamped temperature use the registered 40 °C ambient (A-M-269). Also refreshes the section 10 trim table to the X-RSZ-04 booked duty and flow basis. | 2026-10-21 |
+| M | Section 2 ambiguous audit list resolved (X-MAT-06): the two contradicting or out-of-class materials adjudicated (HDR_H2 is the PVC-U wet-acid header of AQS-REV-H2-001 - graph row corrected; Q3 heat batteries are SA-240 304L at the 100 C tier - PP-H is an 80 C class material [S4], graph row corrected); unstated temperatures given stated bases (edge T_C stamps, loop t_nom, or the registered 40 C ambient A-M-269); the template-duty units covered by the generated per-unit table of section 13.2. The wet HDR_H2 lines move to the new P1 wet-acid-header family (AQS-PIP-004 Rev C), which updates the section 12 family counts. The evidence that the task is done is `docs-authority/_ambiguous_units.py --done`. | 2026-10-21 |
 | N | Elastomer and gasket compatibility per service resolved (X-MAT-03): section 14 adds the per-class decision table (Parker O-Ring Handbook ORD 5700 [S23] alongside the registered PERRY9_MAT, ULLMANN_FLUOROPOLY and [S11]/[S12] rows) and the family-level exceptions, including the solvent families (EPDM: alcohols and ketones in its polar-solvent range; the exact FKM grade for a methanol or acetone duty stays a maker-table check), the EPDM special-compound row for the 100 C Q3 water, the wet-acid H2 header (FKM, bonded hardware), the 98 wt% H2SO4 leg (PTFE envelope) and the rapid-gas-decompression note for H2 soft goods. AQS-PIP-003 Rev B points its held line at section 14; the WS gasket-detail holds of sections 12.3/13 resolve there. Gate: docs-authority/_gasket_census.py. | 2026-10-21 |
-| O | Pot-cell and brine wetted materials issued (X-MAT-22): section 12.2 last row splits into the ambient import legs (PVDF wetted, anhydrous-handled concentrate) and the molten MgCl2 return (graphite/Ni-200 launder); AQS-PIP-004 service text updated through the regenerated line list. The per-unit duty section 3 material selections behind the pot cells, the metallurgy train and the 38 held units are issued in AQS-STD-006 (docs-authority/MATERIALS_SEC3.md) and render from the graph params.sec3_material; no measured rate is claimed anywhere. | 2026-10-21 |
+| O | Pot-cell and brine wetted materials issued (X-MAT-22): section 12.2 last row splits into the ambient import legs (PVDF wetted, anhydrous-handled concentrate) and the molten MgCl2 return (graphite/Ni-200 launder); AQS-PIP-004 service text updated through the regenerated line list. The per-unit duty section 3 material selections behind the pot cells, the metallurgy train and the held units are issued in AQS-STD-006 (docs-authority/MATERIALS_SEC3.md) and render from the graph params.sec3_material; no measured rate is claimed anywhere. | 2026-10-21 |
+| P | Rewritten to the style guide. Section 1 states the purpose and scope; the audit lists of section 2 and the hydrogen rules of section 6 are written as sentences; sections 3.3 and 4.5 move under their parent sections; the references are gathered in section 15; counts are removed from the text. No material decision is changed. | 2026-10-30 |
 
-## 1. Rules
+## 1. Purpose, scope and rules
+
+This standard sets the rules for choosing the material of every wetted part in the plant, and records the material decisions made under them. It controls rules M1 to M7, the decisions of sections 3 to 11, the service-class guide of section 12 and the elastomer and gasket choices of section 14. It does not control the per-unit section 3 selections issued in AQS-STD-006 (`MATERIALS_SEC3.md`), the pipe classes of AQS-PIP-003, the line list AQS-PIP-004 or the design codes of AQS-STD-007. Those pages apply the rules set here.
 
 M1. Compatibility decides every material choice. A material is named only with the stream it touches. A duty sheet section 3 that names a material without its stream is not complete.
 
@@ -35,47 +38,48 @@ M4. Fasteners, supports, and frames in the head space of these vessels are non-m
 
 M5. Thermoplastic limits. PVC-U to 60 °C. CPVC to 93 °C. These two limits are assumptions from published PVC-U and CPVC data, not measured in this plant. Above 60 °C the choice is CPVC. Above 93 °C the case is flagged and held; the alternative is a higher-rated thermoplastic or a lined part, never bare metal in M3 service. Temperature is taken from the graph; where the graph has none, the duty says so.
 
-M6. Electrochemistry. Metal is allowed where it is the electrode: EW cathodes and anodes, CRU and BMED electrodes, fuel-cell and flow-battery stacks. Each such metal is listed on its duty with its potential role. Required with it:
-- Galvanic couples. No two dissimilar metals in one electrolyte unless that couple is the cell. No metal bolt through a metal electrode into a different metal.
-- Stray current. Every pipe and header between cells at different potential is non-metallic, with a stated electrolyte path length. Rectifier busbars are isolated from the frame. The frame is grounded on its own path, not through the liquor.
-- Anodic dissolution. Every electrode carries a dissolution or coating-loss basis, or the item is held.
-- Hydrogen embrittlement. Metal in wet H₂ or at a cathode is austenitic stainless or titanium only where the H₂ partial pressure and temperature are stated; titanium at a cathode is held for hydriding. Carbon and high-strength steel are not used in H₂ service.
+M6. Electrochemistry. Metal is allowed where it is the electrode: EW cathodes and anodes, CRU and BMED electrodes, fuel-cell and flow-battery stacks. Each such metal is listed on its duty with its potential role. The following are required with it:
+- No two dissimilar metals share one electrolyte unless that couple is the cell, and no metal bolt passes through a metal electrode into a different metal, so that no stray galvanic couple forms.
+- Every pipe and header between cells at different potential is non-metallic, with a stated electrolyte path length, to limit stray current. Rectifier busbars are isolated from the frame, and the frame is grounded on its own path, not through the liquor.
+- Every electrode carries a basis for its anodic dissolution or coating loss, or the item is held.
+- To avoid hydrogen embrittlement, metal in wet H₂ or at a cathode is austenitic stainless or titanium only where the H₂ partial pressure and temperature are stated; titanium at a cathode is held for hydriding. Carbon and high-strength steel are not used in H₂ service.
 
 M7. Metal is permitted where no polymer survives: cryogenic service, pyrolysis and melt hot faces, dry O₂ (polymers ignite), dry hydrocarbon, non-aqueous heat-transfer oil, dry hot gas held above its acid dew point, dry combustible-dust housings that must be conductive and grounded, and H₂ vent stacks exposed to flame. Each case is isolated from any electrolyte by a dielectric flange (M6). Each such unit states which of these applies.
 
 ## 2. Audit, 2026-10-15
 
-Every present unit's section 3 was read against M1 to M7.
+The section 3 of every present unit was read against rules M1 to M7 on 2026-10-15. Sections 12.3 and 13 record how each open item of this audit was later settled.
 
-Fixed in this pass (clear violations, section 3 rewritten, no rate change):
-- PVC-U, acid-regen and leach liquors (M2): BMED_ACID, BMED_BASE, POLISH_BANK, CONTINUOUS_RECYCLE, CRU, FLOAT_SINK, S13_CLASS_TREAT, SALT_FEED. LEACH_CSTR_1 is changed with its model.
-- PVC-U, oxidizing or reducing wet service (M3): WS_KOH, WS_PHOS, WS_AMMONIA, WS_HF_ED, WET_BENCH, GREY_TREAT, BLACK_DIGEST, MEOH_FERM.
-- PVC-U scrubbers (M2, M3): ACID_POLISH_SCRUB, ALK_SCRUBBER, NOX_SCRUB, MET_SCRUB.
-- PVC-U or HDPE water tanks (M1): CATCH_TANK, ROOF_TANK, REMIN.
-- Glass or PVC-U, 316L removed (M3): ACETOX, ACEX, ALD, BUCL, FORM, GLYOXAL, IMID, MEAM, QUAT.
-- LEACH_CSTR_1 tank: 316L withdrawn. PVC-U in Rev A, corrected to CPVC in Rev F on the liquor temperature (section 7).
+The audit fixed the clear violations by rewriting section 3 of the duty, with no change of rate:
 
-Flagged on temperature (M5):
-- LEACH_CSTR_1, HL-Q3-A/B-HX5 ports. Q3 supply 95 °C on the graph exceeds PVC-U and the CPVC limit. CPVC is the thermoplastic alternative. Held.
+- BMED_ACID, BMED_BASE, POLISH_BANK, CONTINUOUS_RECYCLE, CRU, FLOAT_SINK, S13_CLASS_TREAT and SALT_FEED carry acid-regeneration and leach liquors and became PVC-U (M2). LEACH_CSTR_1 was changed with its model.
+- WS_KOH, WS_PHOS, WS_AMMONIA, WS_HF_ED, WET_BENCH, GREY_TREAT, BLACK_DIGEST and MEOH_FERM are in oxidizing or reducing wet service and became PVC-U (M3).
+- The scrubbers ACID_POLISH_SCRUB, ALK_SCRUBBER, NOX_SCRUB and MET_SCRUB became PVC-U (M2, M3).
+- The water tanks CATCH_TANK, ROOF_TANK and REMIN became PVC-U or HDPE (M1).
+- ACETOX, ACEX, ALD, BUCL, FORM, GLYOXAL, IMID, MEAM and QUAT lost their 316L and became glass or PVC-U (M3).
+- The 316L of the LEACH_CSTR_1 tank was withdrawn. The tank became PVC-U in Rev A and CPVC in Rev F, on the liquor temperature (section 7).
 
-Ambiguous, not changed (each is a TASK_PLAN X-MAT-06 item):
-- EW_1 to EW_9. 316L cathode, Ti/PbO₂ anode, PVC/FRP tank. Electrodes allowed under M6; dissolution and stray-current basis missing.
-- HX8. Titanium plates in EW aisle liquor. Ti in reducing chloride liquor is a hydriding and crevice risk. Non-metallic exchanger not evaluated.
-- ZNBR2_BR2_REGEN. 316L shell with wet Br₂. Violates M3. PVC is poor in wet Br₂; PVDF or glass not evaluated.
-- GLASS_DIGEST. 316L, digest liquor not characterized; may be HF or alkali.
-- WS_NITRIC, WS_PEROX. Strong oxidizers. PVC limit depends on concentration, not on the graph.
-- WS_SOLV, WS_DOPE, WS_SLURRY. Solvent and dopant compatibility not stated.
-- ETOH_STILL, BUOH_STILL. 316L for boiling solvent; fermentation broth may be reducing and acidic. Temperature exceeds PVC.
-- VCD_TRAIN, FAB_UPW_TANK, HDR_UPW, BMED_UPW_POLISH. UPW and distillation; PVC leaching and temperature not stated.
-- HDR_H2, RELIEF_H2, H2_DRYER. 316L in H₂. M6 embrittlement basis needed.
-- HDR_O2. 316L. Dry O₂ is an M7 metal service; wet O₂ is not stated.
-- FLUE_KO, BAGHOUSE, AFTERBURNER_FLUE. Hot flue with acid condensate. M7 vs M3 depends on temperature not on the graph.
-- Q1_A to Q4_B, GEO_*, CURTAIL, HEAT_SINK, Q4_BUS, MET_HX_Q4, CRYO_HX_Q4, HYDRO_SET, TERRACE_IRRIG, NUTRIENT_DOSE. Water loops in 316L; no redox service stated. Q1/Q2 temperatures exceed thermoplastics.
-- MEOH_SYNTH, MEOH_TANK, MEOH_COND. Methanol; reducing synthesis gas. M6/M7 basis needed.
-- OIL sector (carbon steel). Pyrolysis is reducing but hot. M7 applies to the hot face; cut tanks and condensers need a stated temperature.
-- MFG units with "316L where wet". Wet service not named.
+The audit held one case on temperature (M5). The Q3 supply to the LEACH_CSTR_1 ports on HL-Q3-A-HX5 and HL-Q3-B-HX5 is 95 °C on the graph, above the PVC-U and CPVC limits; section 3.2 settles it.
 
-Compliant as written: CRYO sector (M7 cryogenic), MET_MELT and SIC_FURNACE (M7 hot face), electrical nodes and stacks with no wetted alloy (M6 for the stacks), farm and habitation units already HDPE or PVC.
+The audit left the following cases open as task X-MAT-06, without changing them:
+
+- EW_1 to EW_9 had 316L cathodes, Ti/PbO₂ anodes and PVC or FRP tanks. The electrodes are allowed under M6, but the dissolution and stray-current basis was missing.
+- HX8 had titanium plates in the EW aisle liquor. Titanium in reducing chloride liquor risks hydriding and crevice attack, and no non-metallic exchanger had been evaluated.
+- ZNBR2_BR2_REGEN had a 316L shell in wet bromine, which violates M3. PVC is poor in wet bromine, and PVDF or glass had not been evaluated.
+- GLASS_DIGEST was 316L, and its liquor was not characterized; it might carry fluoride or alkali.
+- WS_NITRIC and WS_PEROX handle strong oxidizers, and the PVC limit depends on a concentration that was not on the graph.
+- The solvent and dopant compatibility of WS_SOLV, WS_DOPE and WS_SLURRY was not stated.
+- ETOH_STILL and BUOH_STILL were 316L for a boiling solvent, while the fermentation broth may be reducing and acidic, and the temperature exceeds the PVC limit.
+- For VCD_TRAIN, FAB_UPW_TANK, HDR_UPW and BMED_UPW_POLISH, in ultrapure water and distillation service, neither PVC leaching nor the temperature was stated.
+- HDR_H2, RELIEF_H2 and H2_DRYER were 316L in hydrogen and needed the M6 embrittlement basis.
+- HDR_O2 was 316L. Dry oxygen is an M7 metal service, but whether the oxygen is wet was not stated.
+- FLUE_KO, BAGHOUSE and AFTERBURNER_FLUE carry hot flue gas with acid condensate, and whether M7 or M3 applies depends on a temperature that was not on the graph.
+- Q1_A to Q4_B, GEO_*, CURTAIL, HEAT_SINK, Q4_BUS, MET_HX_Q4, CRYO_HX_Q4, HYDRO_SET, TERRACE_IRRIG and NUTRIENT_DOSE were water loops in 316L with no stated redox service, and the Q1 and Q2 temperatures exceed every thermoplastic.
+- MEOH_SYNTH, MEOH_TANK and MEOH_COND handle methanol and reducing synthesis gas and needed an M6 or M7 basis.
+- The oil sector is carbon steel. Pyrolysis is reducing but hot, so M7 applies to the hot face, while the cut tanks and condensers needed a stated temperature.
+- The manufacturing units described as "316L where wet" did not name the wet service.
+
+The audit found the following compliant as written: the cryogenic sector (M7 cryogenic), MET_MELT and SIC_FURNACE (M7 hot face), the electrical nodes and stacks with no wetted alloy (M6 for the stacks), and the farm and habitation units that were already HDPE or PVC.
 
 ## 3. Decisions, Rev B
 
@@ -92,7 +96,7 @@ Service from the graph: S69 is the ZNBR2 headspace purge, 30 m³/h at ambient hu
 | PTFE/PFA lining | Inert | — | Costly at this size | Not chosen |
 | FRP vinyl ester, C-veil | Wet halogen service is common; caustic needs a synthetic veil, not C-glass | — | Shop fabrication | Not chosen: two-veil liner for one small column |
 | PP | No resistance to halogens or strong oxidants [S4] | — | Cheap | Excluded |
-| PVC-U | Resists NaOH and hypohalite at ambient; Br₂ at ppm level in air; limited in concentrated Br₂ | 60 °C limit [S3] | Cheapest; pipe, sheet, Pall rings common | **Chosen** |
+| PVC-U | Resists NaOH and hypohalite at ambient; Br₂ at ppm level in air; limited in concentrated Br₂ | 60 °C limit [S3] | Cheapest; pipe, sheet, Pall rings common | Chosen |
 
 Decision. PVC-U shell, sump, liquor piping, and Pall-ring packing. FKM gaskets. Basis: the Br₂ load is 10 ppmv in air and is converted to bromide and hypobromite in a caustic liquor, where PVC is suitable and PVDF is not. Held: the hypobromite rating at the liquor ORP is not on the cited chart; a coupon test is a TASK_PLAN X-MAT-06 item. If the S69 Br₂ concentration rises above trace, the inlet spool changes to borosilicate glass.
 
@@ -106,26 +110,22 @@ Service from the graph: HL-Q3-A/B-HX5 bring Q3 water at 95 °C supply and 85 °C
 | PP-H | Good with hot water; no resistance to strong oxidants [S4] | 100 °C, 80 °C continuous [S4] | Cheap | Not chosen: chlorate liquor on the outside |
 | Borosilicate glass 3.3 coil | Inert to HCl and chlorate | Above service; thermal shock limit | Moderate cost, fragile | Fallback |
 | Impregnated graphite | Inert; electrically conductive | Above service | Costly | Not chosen: conductor in an electrochemical plant |
-| PVDF homopolymer | Chlorinated acid brine rated to 95 °C [S1]; hot water well above | Meets 95 °C | Tube, fittings, and flanges common | **Chosen** |
+| PVDF homopolymer | Chlorinated acid brine rated to 95 °C [S1]; hot water well above | Meets 95 °C | Tube, fittings, and flanges common | Chosen |
 | Metal (Ti, 316L) | — | — | — | Excluded by M3 |
 
 Design change considered. Lowering the Q3 supply is not taken: Q3 also serves HX-4 and HX-6 at the same tier (AQS-HEAT-LADDER-001), so the tier temperature stays. A blending loop to below 60 °C would need a new edge and is not taken.
 
 Decision. HX-5 is a PVDF immersion coil with PVDF DN20 nozzles, bolted through PVDF flanges to PVC-U stub flanges on the tank, FKM gaskets. The Q3 metal piping ends at a dielectric isolating flange outside the tank (M6). A liquor high-temperature trip at 88 °C (assumption, 5 K below the CPVC limit) closes the Q3 supply. Coil area: TASK_PLAN X-MAT-11.
 
-## References
+### 3.3 HX-5 glass coil, Rev G
 
-- [S1] Arkema, Kynar PVDF Chemical Resistance Chart (maximum use temperatures), https://page.arkema.com/rs/253-HSZ-754/images/kynar-pvdf-chemical-resistance-chart.pdf
-- [S2] Arkema, Kynar Chemical Resistance and Fuel Resistance (pH limits), https://hpp.arkema.com/en/product-families/kynar-fluoropolymer-family/chemical-resistance-fuel-resistance/
-- [S3] Spears Manufacturing, PVC and CPVC Engineering Guide (maximum service temperature PVC 60 °C, CPVC 93 °C), https://spearsmfg.com/listings_approvals/036_IP-4-1125-Complete_web.pdf
-- [S4] SIMONA, PP tech.info (service temperature, no resistance to strong oxidants and halogens), https://www.simona.de/fileadmin/user_upload/Medien/Mediacenter/Technische_Informationen/tech.info_SIMONA_PP_-english-.pdf
-- [S5] PPI TN-62, CPVC piping temperature derating, https://www.plasticpipe.org/common/Uploaded%20files/Technical/PPI-TN-62.pdf
+Decision (owner approval 2026-10-15). HX-5 is a borosilicate glass 3.3 coil. Glass is inert to HCl and chlorate at 95 °C and conducts heat about six times better than PVDF (1.2 vs 0.18 W/mK), so the coil is smaller: 4.22 m² in the natural-convection case of AQS-DUTY-049, 2.65 m² if agitation is confirmed. The 4.22 m² case is built. Tube 25 × 3 mm, 53.7 m, two concentric helices D 600 and 900 mm (arrangement is an assumption, see AQS-REG-002). Glass density 2230 kg/m³ and permitted thermal shock 120 K per ISO 3585 (S17); Q3 supply 95 °C into liquor 70–85 °C is a 25 K step. The coil sits on PTFE pads. An agitator guard is held for X-MAT-09. The PVDF coil of section 3.2 is superseded, and the 88 °C trip stands.
 
 ## 4. Unit decisions, Rev C
 
 ### 4.1 HX8, EW aisle liquor cooler
 
-Graph: liquor 55 → 51 °C from EW_1 (IA-HX8), Q4 treated water 45 → 49 °C, 4.572 kW, 0.51 m². The liquor is EW catholyte-side chloride, reducing at the cathode, and the feed envelope (AQS-ASSAY-001 Rev C) admits halides including fluoride.
+On the graph the liquor from EW_1 (IA-HX8) is cooled from 55 to 51 °C, and the Q4 treated water is heated from 45 to 49 °C, at 4.572 kW and 0.51 m². The liquor is EW catholyte-side chloride, reducing at the cathode, and the feed envelope (AQS-ASSAY-001 Rev C) admits halides including fluoride.
 
 - Ti Grade 2 (present): crevice attack in brine is unlikely below 70 °C [S6], but reducing HCl attacks unalloyed Ti, useful only to about 7 % HCl at room temperature with resistance falling with temperature [S6]. Ti is not used where HF can be present [S7]. Violates M3.
 - Ti-Pd (Grade 7): best Ti grade in reducing acid and crevices [S6, S7], but still metal in reducing chloride (M3), still attacked by fluoride, and costly.
@@ -153,29 +153,27 @@ BAGHOUSE. Graph: dry dusts (S19 shredded feed fines, mill dust, kerf, wire scrap
 
 Graph: Q1_A/B at 250 °C and Q2_A/B at 150 °C, synthetic thermal oil, hydrogenated terphenyl class (HL-AFTERBURNER-Q1-A, HL-GLASS_BURNOUT-Q2-A). No water and no electrolyte, so no galvanic cell forms in the loop. No commodity polymer survives 250 °C. Decision: carbon steel, ASTM A106 Gr B pipe, welded joints, spiral-wound 304/graphite gaskets, per the fluid maker's system guide [S8]; M7 (non-aqueous heat-transfer oil). Each Q1/Q2 loop that ends at an exchanger touching an electrolyte or a Q3/Q4 water loop has a dielectric isolating flange there (M6). Water chemistry does not apply to these loops; it applies to Q3 and Q4 (X-MAT-06).
 
-### References, Rev C
+### 4.5 HX8 PVDF bundle, Rev H
 
-- [S6] TIMET, Corrosion Resistance of Titanium, https://www.timet.com/assets/local/documents/technicalmanuals/corrosion.pdf
-- [S7] Titanium in the Geothermal Industry (IGA, Szeged), https://pangea.stanford.edu/ERE/pdf/IGAstandard/EGC/szeged/O-7-10.pdf
-- [S8] Eastman, Therminol heat transfer fluids system design (carbon steel pipe A106 Gr B, welded joints), https://www.eastman.com/content/dam/eastman/corporate/en/literature/t/tf8695a.pdf
-- [S9] OSHA Technical Manual Section IV Chapter 6, Combustible Dusts; NFPA 652 and NFPA 660 Chapter 22, https://www.osha.gov/sites/default/files/otm%5FsecIV%5Fchap6.pdf
+Decision (owner approval 2026-10-15). HX8 is a PVDF shell-and-tube bundle, 7.53 m² at U 101 W/m²K (AQS-DUTY-049). PVDF was chosen over isolated impregnated graphite (0.85 m²) for these reasons:
+- Graphite conducts. In the EW aisle it would sit in the liquor path between cells at different potentials; isolation must hold at both liquor connections and the Q4 side for the life of the plant. A failed isolator gives a stray-current path and a noble galvanic partner (M6). PVDF has no such failure mode.
+- Graphite is brittle and fails on thermal or pressure shock; PVDF tolerates handling and water hammer.
+- The penalty is about nine times the area and footprint, which is acceptable at 7.5 m².
+
+Graphite is not clearly better, so the approved default stands, and the open graphite option of section 4.1 is closed.
 
 ## 5. Oxidizer reagents, Rev D
 
 WS_NITRIC, HNO3, and WS_PEROX are defined in AQS-DSN-OX-001, `docs-authority/OXIDIZER_REAGENTS.md`. Nitric at no more than 2 M: PVC-U storage, PVDF pumps and absorber, 304L excluded under M3. Peroxide at no more than 6 wt%: HDPE tank, PVDF piping, PTFE/FKM seals; passivated stainless and aluminum, though accepted by the producer, are excluded under M3.
 
-- [S10] Vinidex, Chemical Performance of PVC, https://www.vinidex.com.au/app/uploads/pdf/Chemical-Performance-of-PVC.pdf
-- [S11] Solvay, Materials of Construction for the Storage of H₂O₂, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Materials%20of%20Construction%20for%20the%20Storage%20of%20H2O2.pdf
-- [S12] Solvay, Safety and Handling of Hydrogen Peroxide, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Safety%20and%20Handling%20of%20Hydrogen%20Peroxide.pdf
-
 ## 6. Hydrogen service, Rev E
 
-AQS-REV-H2-001, `docs-authority/H2_EMBRITTLEMENT_REVIEW.md`, applies M6 to every H₂-wetted unit:
-- No carbon, low-alloy, or high-strength steel.
-- 316L, annealed, for dry H₂ and for EW cathodes.
-- PVC-U for the wet acid HDR_H2 header.
-- HDPE, PA, or copper only for dry low-pressure lines.
-- Pressure-dependent checks are held until the graph carries P, T, and purity. Sources S13 to S15.
+AQS-REV-H2-001, `docs-authority/H2_EMBRITTLEMENT_REVIEW.md`, applies M6 to every H₂-wetted unit, with the sources it cites:
+- No carbon, low-alloy or high-strength steel is used in hydrogen.
+- Annealed 316L is used for dry hydrogen and for the EW cathodes.
+- The wet acid HDR_H2 header is PVC-U.
+- HDPE, PA or copper is used only for dry low-pressure lines.
+- The checks that depend on pressure are held until the graph carries the pressure, temperature and purity of each line.
 
 ## 7. Leach liquor temperature, Rev F
 
@@ -183,23 +181,9 @@ The Rev A to E text treated the leach liquor temperature as absent from the grap
 
 Under M5 this exceeds PVC-U (60 °C). The tank, headers, and stubs are CPVC (limit 93 °C [S3], specific gravity 1.51 [S3]). This is the material AQS-NZ-001 had originally. The high-temperature trip is 88 °C (assumption). CPVC strength derates steeply with temperature (factor 0.25 at 82 °C for pressure pipe [S5]), so the wall check at 85 °C is part of the LEACH_CSTR_1 sizing task. Units on the same liquor loop with no temperature on the graph (CONTINUOUS_RECYCLE, FLOAT_SINK, S13_CLASS_TREAT) stay on PVC-U only if their liquor is at or below 60 °C. That check is X-MAT-09.
 
-### 3.3 HX-5 glass coil, Rev G
-
-Decision (owner approval 2026-10-15). HX-5 is a borosilicate glass 3.3 coil. Glass is inert to HCl and chlorate at 95 °C and conducts heat about six times better than PVDF (1.2 vs 0.18 W/mK), so the coil is smaller: 4.22 m² in the natural-convection case of AQS-DUTY-049, 2.65 m² if agitation is confirmed. The 4.22 m² case is built. Tube 25 × 3 mm, 53.7 m, two concentric helices D 600 and 900 mm (arrangement is an assumption, see AQS-REG-002). Glass density 2230 kg/m³ and permitted thermal shock 120 K per ISO 3585 (S17); Q3 supply 95 °C into liquor 70–85 °C is a 25 K step. The coil sits on PTFE pads. An agitator guard is held for X-MAT-09. Section 3.2's PVDF coil is superseded; the 88 °C trip stands.
-
-S17. ISO 3585:1998, Borosilicate glass 3.3 — Properties.
-
-### 4.5 HX8 PVDF bundle, Rev H
-
-Decision (owner approval 2026-10-15). HX8 is a PVDF shell-and-tube bundle, 7.53 m² at U 101 W/m²K (AQS-DUTY-049). Rationale against isolated impregnated graphite (0.85 m²):
-- Graphite conducts. In the EW aisle it would sit in the liquor path between cells at different potentials; isolation must hold at both liquor connections and the Q4 side for the life of the plant. A failed isolator gives a stray-current path and a noble galvanic partner (M6). PVDF has no such failure mode.
-- Graphite is brittle and fails on thermal or pressure shock; PVDF tolerates handling and water hammer.
-- The penalty is area and footprint (about nine times), which is acceptable at 7.5 m².
-Graphite is not clearly better, so the approved default stands. Section 4.1's open graphite option is closed.
-
 ## 8. Material temperatures on thermoplastic inlets, Rev I (table refreshed Rev L)
 
-X-MAT-09. Script `docs-authority/_material_temps.py` checks every liquid edge into a thermoplastic unit against the M5 limit of its material. The unit map is the issued section 12 material basis: CPVC for LEACH_CSTR_1, FLOAT_SINK, EW_1, ACID_POLISH_SCRUB and NOX_SCRUB (the section 8 85 °C draw resolution and section 7), PVDF for HX8, WS_NITRIC, WS_PEROX, HNO3 and WS_HF_ED, PVC-U elsewhere per section 2. The IA-BMED-03/04 inlet temperatures are derived: booked X-RSZ-04 trim duty minus flow times driver heat capacity (cp_hcl20_kJ_kgK 3.0, cp_naoh20_kJ_kgK 3.6, PERRY9). Where no temperature exists on or upstream of an edge the check prints 40 °C, the 0.4 % site dry bulb 37.8 °C of AQS-SITE-002 rounded up.
+This section answers task X-MAT-09. The script `docs-authority/_material_temps.py` checks every liquid edge into a thermoplastic unit against the M5 limit of its material. The unit map is the issued section 12 material basis: CPVC for LEACH_CSTR_1, FLOAT_SINK, EW_1, ACID_POLISH_SCRUB and NOX_SCRUB (the section 8 85 °C draw resolution and section 7), PVDF for HX8, WS_NITRIC, WS_PEROX, HNO3 and WS_HF_ED, PVC-U elsewhere per section 2. The IA-BMED-03/04 inlet temperatures are derived: booked X-RSZ-04 trim duty minus flow times driver heat capacity (cp_hcl20_kJ_kgK 3.0, cp_naoh20_kJ_kgK 3.6, PERRY9). Where no temperature exists on or upstream of an edge the check prints 40 °C, the 0.4 % site dry bulb 37.8 °C of AQS-SITE-002 rounded up.
 
 | Edge | From | To | Material | T °C | Limit °C | Check | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -284,7 +268,7 @@ HX-5 coil guard. The impeller (D 450 mm, AQS-DUTY-050) turns inside the coil (ID
 
 ## 9. EW electrodes in chloride with anodic Cl₂, Rev J
 
-X-MAT-18. Service: chloride liquor (HCl with metal chlorides, 55–77.5 °C), anodic Cl₂ evolution on every cell (EDGE_RATING_DUTY), side-reaction H₂ at EW_1, EW_2, EW_4 and EW_9 cathodes.
+This section answers task X-MAT-18. The service is chloride liquor (HCl with metal chlorides, 55–77.5 °C), anodic Cl₂ evolution on every cell (EDGE_RATING_DUTY), side-reaction H₂ at EW_1, EW_2, EW_4 and EW_9 cathodes.
 
 | Part | Was | Decision | Reason |
 | --- | --- | --- | --- |
@@ -294,17 +278,14 @@ X-MAT-18. Service: chloride liquor (HCl with metal chlorides, 55–77.5 °C), an
 
 Hydrogen. Titanium takes up hydrogen as a cathode and forms brittle hydride, mostly above about 80 °C and at high current density [S21]. Cells at 55 °C run below that; EW_1 sees 77.5 °C at the inlet (X-MAT-09). Rule: Ti blanks on the H₂-making cells (EW_1, EW_2, EW_4, EW_9) are inspected for hydride (bend test) at each strip cycle for the first year; reverse current is not applied to Ti. AQS-REV-H2-001 carries this.
 
-S21. Schutz R.W., Thomas D.E., "Corrosion of Titanium and Titanium Alloys", ASM Handbook Vol. 13, 1987.
-S22. Trasatti S., "Electrocatalysis: understanding the success of DSA", Electrochimica Acta 45 (2000) 2377–2385.
-
 ## 10. Hot LEACH draws, Rev J addendum (X-MAT-19)
 
-Script `docs-authority/_hot_draw_coolers.py`.
+The script `docs-authority/_hot_draw_coolers.py` computes the table.
 
 | Edge | kg/d | cp kJ/(kg K) | °C | Booked trim | Cooled inlet | Target |
 | --- | --- | --- | --- | --- | --- | --- |
-| IA-BMED-03 | 450.164 | 3.0 (cp_hcl20_kJ_kgK, PERRY9) | 85 → 35 | IA-BMED-03-TRIM 0.780 kW | 35.1 °C | BMED_ACID membrane inlet 35 C |
-| IA-BMED-04 | 500.131 | 3.6 (cp_naoh20_kJ_kgK, PERRY9) | 85 → 35 | IA-BMED-04-TRIM 1.027 kW | 35.7 °C | BMED_BASE membrane inlet 35 C |
+| IA-BMED-03 | 450.164 | 3.0 (cp_hcl20_kJ_kgK, PERRY9) | 85 to 35 | IA-BMED-03-TRIM 0.780 kW | 35.1 °C | BMED_ACID membrane inlet 35 C |
+| IA-BMED-04 | 500.131 | 3.6 (cp_naoh20_kJ_kgK, PERRY9) | 85 to 35 | IA-BMED-04-TRIM 1.027 kW | 35.7 °C | BMED_BASE membrane inlet 35 C |
 
 - IA-POT-01: superseded by X-RSZ-06. The potable makeup now comes from REMIN at 25 °C; the hot leach water bleed goes to VCD_TRAIN on IA-LEACH-VCD (123.296 kg/d, 85 °C), which is an evaporator duty, not a cooler. No coil. VCD_TRAIN wetted parts on this feed are Ti Gr 2 or PVDF-lined (acid chloride at 85 °C, §9 basis); the condensate is polished by BMED_UPW_POLISH before REMIN.
 - IA-BMED-03 and IA-BMED-04: air cannot reach 35 °C at the 37.8 °C design dry bulb. They take a water-cooled trim exchanger on the GEO_GHEX ground loop. X-RSZ-04 books it at the resized flows: IA-BMED-03-TRIM 0.780 kW and IA-BMED-04-TRIM 1.027 kW (1.81 kW), taken from IA-E-LEACH, rejected by IA-GHEX-REJ. Outlet 35 °C.
@@ -312,9 +293,9 @@ Script `docs-authority/_hot_draw_coolers.py`.
 
 ## 11. Galvanic and stray current, EW aisle, Rev K
 
-X-MAT-07. Script `docs-authority/_shunt_current.py`.
+This section answers task X-MAT-07, and the script `docs-authority/_shunt_current.py` computes it.
 
-Electrolyte path. Liquor runs EW_1 → EW_9 in series (IA-EW-01 to IA-EW-08). Each cell has its own floating 6 V channel (AQS-ELEC-004), so in normal service no cell is referenced to another and no shunt current flows. With two simultaneous earth faults on opposite poles of two channels, up to 6 V can appear across the liquor link. At 30 S/m (assumption) a full DN50 link has 13.1 Ω at the 0.75 m pitch, 0.46 A. To hold stray current under 0.1 A (assumption) a full pipe needs 3.4 m. Decision: every cell-to-cell transfer is a free-fall overflow launder with an air break (open drop of at least 50 mm) into the next cell's feed box, so the liquid path is broken. Pipe length is then not relied on. Drains to a common sump also fall freely.
+Electrolyte path. Liquor runs from EW_1 to EW_9 in series (IA-EW-01 to IA-EW-08). Each cell has its own floating 6 V channel (AQS-ELEC-004), so in normal service no cell is referenced to another and no shunt current flows. With two simultaneous earth faults on opposite poles of two channels, up to 6 V can appear across the liquor link. At 30 S/m (assumption) a full DN50 link has 13.1 Ω at the 0.75 m pitch, 0.46 A. To hold stray current under 0.1 A (assumption) a full pipe needs 3.4 m. Decision: every cell-to-cell transfer is a free-fall overflow launder with an air break (open drop of at least 50 mm) into the next cell's feed box, so the liquid path is broken. Pipe length is then not relied on. Drains to a common sump also fall freely.
 
 Busbars. Copper on non-conductive standoffs (glass-polyester or porcelain), creepage per the rectifier voltage; no busbar touches a tank lip, rack or pipe. Each channel's positive and negative bars run as a pair to keep loops small.
 
@@ -325,7 +306,7 @@ Metal piping. The H2 header is PVC-U per AQS-REV-H2-001 (M3, wet acid + sweep ai
 Electrode dissolution. Mixed-metal-oxide anodes (section 9) wear by coating loss; life is a vendor figure at the cell current density, not assumed here. Titanium cathodes are passive. On shutdown a cell with metal on the cathode and Cl₂ on the anode is a galvanic cell; reverse current strips the deposit and damages the oxide coating. Rule: on rectifier trip, the channel holds a protection current of 1 % of rating (study) or the cell is drained within 30 minutes; anodes are never left wetted and unpolarized against a loaded cathode.
 
 
-### §11 check at the re-placed aisle (X-RSZ-03, seed Rev I)
+### 11.1 Check at the re-placed aisle (X-RSZ-03, seed Rev I)
 
 Routes from AQS-ISO-001. Required continuous electrolyte path for ≤ 1 % protection current: 3.44 m (`_shunt_current.py`). Every inter-cell liquor line keeps the free-fall air break; where the route is shorter than the required path the break is the only protection.
 
@@ -343,9 +324,9 @@ Routes from AQS-ISO-001. Required continuous electrolyte path for ≤ 1 % protec
 
 ## 12. Service-class selection guide across the assay envelope, Rev L
 
-X-MAT-01. Done when: material per service class across the AQS-ASSAY-001 Rev C bounding cases, with source data.
+This section answers task X-MAT-01, which is done when every service class has a material across the bounding cases of AQS-ASSAY-001 Rev C, with its source data.
 
-Method. Every present edge that is not a cable (the wetted census, 422 edges) is classed into exactly one family below by the rules in `docs-authority/_line_list.py` (AQS-PIP-004). `docs-authority/_service_census.py` regenerates the census table and exits nonzero if a wetted line still carries the retired "aqueous process, default thermoplastic" catchall or if a class letter contradicts its family. Status at this revision: 323 piped wetted lines, 22 declared families, 0 default catchalls (2026-10-21, current graph, census run committed with this revision).
+Method. Every present edge that is not a cable (the wetted census) is classed into exactly one family below by the rules in `docs-authority/_line_list.py` (AQS-PIP-004). `docs-authority/_service_census.py` regenerates the census table and exits nonzero if a wetted line still carries the retired "aqueous process, default thermoplastic" catchall or if a class letter contradicts its family. At this revision no wetted line carries the catchall, and every class letter matches its family.
 
 Bounding chemistry. The aqueous families are bounded by the feed envelope: phase classes per AQS-ASSAY-001 Rev C (section 1) and the leach/EW metal loading of ASSAY.md (Fe 20, Cu 8, Ni 3, Zn 4, Al 6, other 9 g/L). No family takes a vendor gauge figure. Every material statement below cites the reference set of this document ([S1] to [S12], plus [S21]/[S22] of section 9) or the registered PERRY9_MAT row (Perry's Chemical Engineers' Handbook, 9th ed., 2019, sec. 25, materials of construction, in `flow_graph/param/refs.py`). Per-unit shell materials remain governed by the unit duty sheets (section 3 of each) and, where stated, the issued graph `params.design.material`.
 
@@ -413,14 +394,13 @@ The 2026-10-15 audit items below were ambiguous then and are resolved by the sec
 
 X-MAT-06 Done when: each unit in the section 2 ambiguous list has a material with a stated stream and
 temperature. Method. Three dispositions cover the list: (a) the already-issued sections of this document
-that resolve their units (13.4 pointer list); (b) the hand adjudications below - the two material
+that resolve their units (the pointer list of section 13.3); (b) the hand adjudications below - the two material
 conflicts, the material selections the graph lacked, and the previously unstated temperatures, each
 carrying its basis ("no invented rates": every temperature here is an edge params.T_C stamp, a loop
 t_nom, or the registered 40 C ambient A-M-269); (c) the generated per-unit table of section 13.2 for
 every unit whose generated duty sheet still carries the unresolved section 3 template. The done-when
 check is machine: `python3 docs-authority/_ambiguous_units.py --done` prints the section 2 roster
-coverage and exits nonzero if any listed unit is uncovered (2026-10-21: roster 77 units - 27 covered by
-issued sections, 18 by 13.1, 32 by 13.2 - no misses).
+coverage and exits nonzero if any listed unit is uncovered (on 2026-10-21 it found no uncovered unit).
 
 ### 13.1 Hand adjudications
 
@@ -626,9 +606,9 @@ temperature basis for unstamped wetted lines.
 | WIRE_DRAW | IA-WIRE-LOSS: draw scrap | solids (not piped) | ambient (A-M-269) | per service family |
 | WIRE_DRAW | IA-DRAW-FUME: draw fume | solids (not piped) | ambient (A-M-269) | per service family |
 
-32 template-roster units, 165 wetted lines; every unit carries a material, stream and temperature statement.
+Every unit in the table carries a material, a stream and a temperature statement.
 
-### 13.4 Sections that already resolved their ambiguous items
+### 13.3 Sections that already resolved their ambiguous items
 
 | Section 2 item | Issued resolution |
 | --- | --- |
@@ -669,9 +649,9 @@ ULLMANN_FLUOROPOLY (PTFE chemical inertness), [S11]/[S12] (H₂O₂ handling) an
 
 | Service family / special | Elastomer decision | Basis and holds |
 | --- | --- | --- |
-| Wet methanol service (M1, 11 lines) and organic liquid (M1, ethanol + acetone resupply) | EPDM primary: alcohols and ketones are inside the EPDM polar-solvent range [S23]; FFKM alternate (polar solvents, acids, water/steam verified) [S23] | a standard-FKM grade is not ruled out on this page: the exact FKM compound for a methanol or acetone duty is chosen from the maker fluid-compatibility table before that line is accepted — held check, per-line |
+| Wet methanol service (M1) and organic liquid (M1, ethanol + acetone resupply) | EPDM primary: alcohols and ketones are inside the EPDM polar-solvent range [S23]; FFKM alternate (polar solvents, acids, water/steam verified) [S23] | a standard-FKM grade is not ruled out on this page: the exact FKM compound for a methanol or acetone duty is chosen from the maker fluid-compatibility table before that line is accepted — held check, per-line |
 | Q3 water at 100 °C (304L vessels Rev M) | EPDM special compound (hot water/steam range 149 °C, to 260 °C special [S23]) | compounds at 100 °C water must be confirmed against the maker table at procurement — held check |
-| Wet acid H₂ + sweep air header (P1, 13 lines) | FKM at the Class 150 joints; bonded metal hardware | ignition governs per AQS-REV-H2-001 (M3/M6); FKM is the non-sparking soft good; header pressure relief-bounded (~17.8 kPa design), so no rapid-gas-decompression exposure at the flanges |
+| Wet acid H₂ + sweep air header (P1) | FKM at the Class 150 joints; bonded metal hardware | ignition governs per AQS-REV-H2-001 (M3/M6); FKM is the non-sparking soft good; header pressure relief-bounded (~17.8 kPa design), so no rapid-gas-decompression exposure at the flanges |
 | Dry H₂ (RELIEF_H2, H2_DRYER, M1) | FKM O-rings at equipment joints; PTFE soft goods acceptable | rapid gas decompression: smaller cross-sections resist explosive decompression better [S23 §2.5]; RGD-resistant compound grading remains a maker-table check when compressed H₂ duty (X-MAT-09 P/T) is sized |
 | 98 wt% H₂SO₄ make-up (M2) | PTFE envelope over an FKM base at the single flanged joint | passivating carbon steel pipe per PERRY9_MAT; the envelope keeps the elastomer out of direct 98 wt% contact where the FKM acid-compound grade would otherwise be necessary |
 | Fluoro synthesis train ("—") | issued duty-sheet rows govern (unfilled PTFE preferred over mineral-filled soft goods in HF service; the Br₂/HF contexts already name FKM/PTFE per issued sections 3.1/4.5 class sheets) | class sheet pending PIP-003 Rev B; no new elastomer selected here outside the issued rows |
@@ -682,10 +662,27 @@ ULLMANN_FLUOROPOLY (PTFE chemical inertness), [S11]/[S12] (H₂O₂ handling) an
 | WS_DOPE, WS_SLURRY PE-vessel connections | EPDM at vessel flanges (P4 alkaline / P4 slurry classes); the rotomoulded shells carry no flanged elastomer joints | section 13.1 rows; X-MAT-03 gasket hold resolves here |
 | ALK/acid/BMED scrubber wash and potable UPW legs | EPDM (P4/P5 rows above); potable-water-certified compound at the potable joints | compound listing confirmed at procurement — held check; chemistry basis is the EPDM row of the P4/P5 class entries [S23] |
 
-Rule reminder (M6 interlock): every metal-to-thermoplastic or metal-to-glass break in an electrolyte or
+The M6 interlock still applies: every metal-to-thermoplastic or metal-to-glass break in an electrolyte or
 water service keeps the dielectric isolating flange (AQS-PIP-003 section 2); the elastomer choice does not
 change that ruling.
 
-### References Rev N
+## 15. References
 
+The references keep the keys under which the sections above cite them. Sources S13 to S15 are cited and listed in AQS-REV-H2-001, and the registered keys PERRY9_MAT, ULLMANN_FLUOROPOLY, ULLMANN_MAGNESIUM, DING2018_CL_REVIEW and KRUIZENGA2012 are in `flow_graph/param/refs.py`.
+
+- [S1] Arkema, Kynar PVDF Chemical Resistance Chart (maximum use temperatures), https://page.arkema.com/rs/253-HSZ-754/images/kynar-pvdf-chemical-resistance-chart.pdf
+- [S2] Arkema, Kynar Chemical Resistance and Fuel Resistance (pH limits), https://hpp.arkema.com/en/product-families/kynar-fluoropolymer-family/chemical-resistance-fuel-resistance/
+- [S3] Spears Manufacturing, PVC and CPVC Engineering Guide (maximum service temperature PVC 60 °C, CPVC 93 °C), https://spearsmfg.com/listings_approvals/036_IP-4-1125-Complete_web.pdf
+- [S4] SIMONA, PP tech.info (service temperature, no resistance to strong oxidants and halogens), https://www.simona.de/fileadmin/user_upload/Medien/Mediacenter/Technische_Informationen/tech.info_SIMONA_PP_-english-.pdf
+- [S5] PPI TN-62, CPVC piping temperature derating, https://www.plasticpipe.org/common/Uploaded%20files/Technical/PPI-TN-62.pdf
+- [S6] TIMET, Corrosion Resistance of Titanium, https://www.timet.com/assets/local/documents/technicalmanuals/corrosion.pdf
+- [S7] Titanium in the Geothermal Industry (IGA, Szeged), https://pangea.stanford.edu/ERE/pdf/IGAstandard/EGC/szeged/O-7-10.pdf
+- [S8] Eastman, Therminol heat transfer fluids system design (carbon steel pipe A106 Gr B, welded joints), https://www.eastman.com/content/dam/eastman/corporate/en/literature/t/tf8695a.pdf
+- [S9] OSHA Technical Manual Section IV Chapter 6, Combustible Dusts; NFPA 652 and NFPA 660 Chapter 22, https://www.osha.gov/sites/default/files/otm%5FsecIV%5Fchap6.pdf
+- [S10] Vinidex, Chemical Performance of PVC, https://www.vinidex.com.au/app/uploads/pdf/Chemical-Performance-of-PVC.pdf
+- [S11] Solvay, Materials of Construction for the Storage of H₂O₂, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Materials%20of%20Construction%20for%20the%20Storage%20of%20H2O2.pdf
+- [S12] Solvay, Safety and Handling of Hydrogen Peroxide, https://www.solvay.com/sites/solvay_solvay/files/2019-10/H2O2%20Safety%20and%20Handling%20of%20Hydrogen%20Peroxide.pdf
+- [S17] ISO 3585:1998, Borosilicate glass 3.3 — Properties.
+- [S21] Schutz R.W., Thomas D.E., "Corrosion of Titanium and Titanium Alloys", ASM Handbook Vol. 13, 1987.
+- [S22] Trasatti S., "Electrocatalysis: understanding the success of DSA", Electrochimica Acta 45 (2000) 2377–2385.
 - [S23] Parker Hannifin O-Ring Division, Parker O-Ring Handbook, ORD 5700 (2022 ed.), https://www.parker.com/content/dam/Parker-com/Literature/O-Ring-Division-Literature/ORD-5700.pdf

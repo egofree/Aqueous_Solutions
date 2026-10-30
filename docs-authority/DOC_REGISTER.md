@@ -82,14 +82,14 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | BE | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | BF | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
 | AQS-DUTY-008 | `docs-authority/HEAT_LADDER_DUTIES.md` | D | 2026-10-08 | Heat-ladder edge duties | current |
 | AQS-DUTY-009 | `docs-authority/CO2_HEADER_DUTY.md` | D | 2026-10-25 | HDR_CO2 consumer duty | current |
 | AQS-DUTY-010 | `docs-authority/EDGE_RATING_DUTY.md` | A | 2026-10-07 | Edge rating and node conservation | current |
-| AQS-DUTY-011 | `docs-authority/REV_M_CLOSURE_DUTY.md` | A | 2026-10-08 | Rev M closure: node balances, chloride loop, heater ratings and Q4 sinks | current |
+| AQS-DUTY-011 | `docs-authority/REV_M_CLOSURE_DUTY.md` | B | 2026-10-30 | Rev M closure: node balances, chloride loop, heater ratings and Q4 sinks | current |
 | AQS-DUTY-012 | `docs-authority/BALANCE_CLOSE_N.md` | A | 2026-10-09 | Balance close, remaining nodes | current |
 | AQS-DUTY-013 | `docs-authority/GREENHOUSE_WATER.md` | A | 2026-10-09 | Greenhouse water and battery margin | current |
 | AQS-DUTY-016 | `notes/mass_disposition.md` | A | 2026-10-09 | Mass disposition | current |
@@ -444,7 +444,7 @@ Table 3.1. Document numbers in use
 | AQS-SIZE-ZNBR2 | `docs-authority/sizing/ZNBR2.md` | B | 2026-10-29 | Sizing calculation for ZNBR2 | current |
 | AQS-SIZE-ZNBR2_BR2_REGEN | `docs-authority/sizing/ZNBR2_BR2_REGEN.md` | B | 2026-10-29 | Sizing calculation for ZNBR2_BR2_REGEN | current |
 | AQS-STD-001 | `docs-authority/AQS-STD-001.md` | A | 2026-10-10 | Unit duty standard | current |
-| AQS-STD-002 | `docs-authority/MATERIALS_STD.md` | O | 2026-10-21 | Materials standard | current |
+| AQS-STD-002 | `docs-authority/MATERIALS_STD.md` | P | 2026-10-30 | Materials standard | current |
 | AQS-STD-003 | `docs-authority/STANDARDS_BASIS.md` | — | 2026-10-02 | Standards basis for the audit fixes | current |
 | AQS-STD-004 | `docs-authority/STANDARDS_LIST.md` | B | 2026-10-29 | Codes and standards list | current |
 | AQS-STD-005 | `docs-authority/UNIT_MATERIALS.md` | B | 2026-10-29 | Per-unit material selections | current |

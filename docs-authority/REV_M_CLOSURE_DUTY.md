@@ -1,19 +1,22 @@
 # Rev M closure: node balances, chloride loop, heater ratings and Q4 sinks
 
 Document number: AQS-DUTY-011
-Revision: A
-Date: 2026-10-08
-Authority: AQS-FLOW-GRAPH-001 Rev M; AQS-DUTY-010 Rev A; AQS-DUTY-008 Rev C; AQS-DUTY-009 Rev B; ELECTRICAL AQS-ELC-001 Rev B. Not a PE stamp.
+Revision: B
+Date: 2026-10-30
+Authority: AQS-FLOW-GRAPH-001 Rev M; AQS-DUTY-010 Rev A; AQS-DUTY-008 Rev C; AQS-DUTY-009 Rev B; ELECTRICAL AQS-ELC-001 Rev B. This page is a design study and is not an engineering stamp.
 
 | Rev | Change | Description | Date |
 |---|---|---|---|
-| A | — | First issue. Closes the eleven Rev L open node balances and the AFTERBURNER CO₂ residual; resolves the six routing decisions; rates the leach and digest heaters; assigns the Q4 surplus; retires S87/S88 | 2026-10-08 |
+| A | — | First issue. Closes the open Rev L node balances and the AFTERBURNER carbon dioxide residual, settles the routing decisions, rates the leach and digest heaters, assigns the Q4 surplus and retires S87 and S88. | 2026-10-08 |
+| B | — | Rewritten to the style guide. The status of the study is stated, and the counts, arrows and emphasis are replaced by sentences. The study values are not changed. | 2026-10-30 |
 
 Licence: CERN-OHL-S-2.0.
 
-## 1. Purpose
+## 1. Purpose and scope
 
-AQS-DUTY-010 (Rev L) rated every present edge and left eleven node balances and one species check open (§6 of that note), together with six topology decisions, two heater ratings, the Q4 surplus and the S87/S88 hold. This note resolves each item from first principles and records the result in graph Rev M.
+AQS-DUTY-010 (Rev L) rated every present edge and left some node balances and a species check open (§6 of that note), together with topology decisions, two heater ratings, the Q4 surplus and the hold on S87 and S88. This page records how the Rev M study settled each item from first principles, and the graph Rev M that resulted.
+
+The page is the record of that study on 2026-10-08. The present rates, routes and ratings are on the plant graph `flow_graph/plant_flow_graph.json` and in the sizing pages, and many have changed since Rev M; where they differ, the graph governs. The values below are the Rev M values, kept so that the study can be checked and reproduced.
 
 The calculation is `docs-authority/_rev_m_closure_study.py`. It reads the Rev L graph from commit c4e1818 (or `--base FILE`), reruns the AQS-DUTY-010 rating pass, applies the Rev M topology and rates, and checks conservation at every node. `--write` produces the Rev M graph; a rerun reproduces it byte for byte. Each Rev M rate carries `rate_status: study`, a note beginning `AQS-DUTY-011:` and the Rev L value in `params.rev_l_value`. Node off-graph terms move from `params.balance_rev_l` to `params.balance_rev_m`. Retargeted edges carry `params.rev_l_from` / `params.rev_l_to`.
 
@@ -21,15 +24,17 @@ AQS-DUTY-010 remains reproducible against its Rev L base: run on a Rev M working
 
 ## 2. Result
 
-- Graph Rev M: 123 nodes, 179 edges, all present. Placeholders: none. Present edges with no rate: none.
-- Retired: S05, S86, S87, S88. New: IA-BMED-05, IA-BMED-06, IA-BMED-07, IA-BMED-08, IA-BMED-09, IA-BMED-10, S91, S92, S93, S94, S95, S96, S97, S98, S99, S100, S101, S102. Retargeted: IA-BMED-03, IA-BMED-04, IA-HDR-H2-01, IA-HDR-H2-03, IA-HDR-H2-04, S12, S20, S68.
-- Node conservation at ±1 % (daily average): 94 node-layer balances checked. 74 close with independently derived terms; 20 close with one term set by difference; none open. Three of the 74 carry zero flow on the design day (BACKUP_GEN, FUEL_CELL and TERRACE_IRRIG mass; standby or dry-weather cases).
-- Species checks: 9 checked, all close (AFTERBURNER/CO2, CRYO_CO2/CO2, HDR_CO2/CO2, H2_DRYER/H2, CRYO_H2/H2, LEACH/electrons, LEACH_LOOP/Cl, SALT_FEED/Na, BMED/pairs).
+- In graph Rev M every edge is present and rated, and there are no placeholders.
+- Rev M retires S05, S86, S87 and S88. It adds IA-BMED-05 to IA-BMED-10 and S91 to S102. It retargets IA-BMED-03, IA-BMED-04, IA-HDR-H2-01, IA-HDR-H2-03, IA-HDR-H2-04, S12, S20 and S68. Section 10 lists every change.
+- Every node balance closes within ±1 % on the daily average (§8). Most close with independently derived terms; the rest close with one term set by difference, and none is open. BACKUP_GEN, FUEL_CELL and the TERRACE_IRRIG mass balance carry no flow on the design day, because they serve the standby and wet-weather cases.
+- Every species check closes (§9): carbon dioxide at AFTERBURNER, CRYO_CO2 and HDR_CO2, hydrogen at H2_DRYER and CRYO_H2, electrons at the leach, chloride in the leach loop, sodium at SALT_FEED, and the acid and base pairs at BMED.
 - `loops_closed` and every `*_on_site` flag stay false. The MVS energy-surplus criterion is not met on the design day: the bus imports 40.0 kW average from the utility (§4.9).
 
 ## 3. Basis and decisions
 
-The design day is the AQS-DUTY-010 basis: daily average, plant running normal, dry weather, one hydro cycle per day. Rev M study decisions are named `A_RM_*` in the script. Values marked (P) are provisional; all provisional decisions are listed in §5.
+The design day is the AQS-DUTY-010 basis: daily average, plant running normal, dry weather, one hydro cycle per day. Rev M study decisions are named `A_RM_*` in the script. Values marked (P) are provisional; all provisional decisions are listed in §5. Table 3.1 gives the decisions.
+
+Table 3.1. Rev M study decisions
 
 | Decision | Value | Basis |
 |---|---|---|
@@ -44,7 +49,7 @@ The design day is the AQS-DUTY-010 basis: daily average, plant running normal, d
 | Stream temperatures | raffinate 50 °C; BMED HCl 35 °C; CRU 40 °C; float return 60 °C; S28 40 °C; Q4 preheat outlet 55 °C | stack limit ≤ 40 °C for BMED; Q4 supply 60 °C less 5 K approach |
 | Heater rating | ceil(rating-case duty × 1.25) to 0.5 kW | AQS-DUTY-008 margin |
 | Filter cake | 50 wt % solids | filter press, hydroxide/silicate cake |
-| PV yield | 1550 kWh/kWp·yr, 70 kWp → 12.39 kW average | SITE_LAT 33 sandbox, fixed tilt |
+| PV yield | 1550 kWh/kWp·yr on 70 kWp, giving 12.39 kW average | SITE_LAT 33 sandbox, fixed tilt |
 | Rectifier / inverter | η 0.95; Sol-Ark conversion loss 3 % of AC delivered | vendor class |
 | Fuel cell | η 0.52 LHV at 4.0 kW; standby with 8 h inventory | PEM system band 0.50–0.55 |
 | ZnBr₂ electrolyte | water activity 0.78; purge outlet at 0.5 approach to equilibrium humidity | 2–3 M ZnBr₂ |
@@ -59,7 +64,9 @@ The design day is the AQS-DUTY-010 basis: daily average, plant running normal, d
 ## 4. Resolution by item
 
 ### 4.1 Faraday H₂ and EW electron chain (item 3)
-Rev L carried 1.6 kg/d H₂ on each of IA-HDR-H2-01/03/04 (4.8 kg/d). With the ELECTRICAL CE table, the cathodic side reaction at every cell is n_side = n_dep (1 − CE)/CE. Total deposit electrons are 1415.4 mol/d and side electrons 331.2 mol/d, which gives 0.334 kg/d H₂ in total. This is an upper bound: it books all inefficiency as H₂, where some is Fe³⁺/Fe²⁺ shuttling. The anode evolves Cl₂ for every electron: 61.9 kg/d (873.3 mol/d). The EW DC power from the same chain is 5.75 kW against the 6.0 kW issued rectifier share, which confirms the basis.
+Rev L carried 1.6 kg/d H₂ on each of IA-HDR-H2-01/03/04 (4.8 kg/d). With the ELECTRICAL CE table, the cathodic side reaction at every cell is n_side = n_dep (1 − CE)/CE. Total deposit electrons are 1415.4 mol/d and side electrons 331.2 mol/d, which gives 0.334 kg/d H₂ in total. This is an upper bound: it books all inefficiency as H₂, where some is Fe³⁺/Fe²⁺ shuttling. The anode evolves Cl₂ for every electron: 61.9 kg/d (873.3 mol/d). The EW DC power from the same chain is 5.75 kW against the 6.0 kW issued rectifier share, which confirms the basis. Table 4.1 gives the chain cell by cell.
+
+Table 4.1. Electron chain of the electrowinning cells
 
 | Cell | Metal | Deposit kg/d | e⁻ dep mol/d | e⁻ side mol/d | Cl₂ kg/d | H₂ kg/d | Collected | DC kW |
 |---|---|---|---|---|---|---|---|---|
@@ -93,14 +100,16 @@ Fuel-cell efficiency (item 3): Rev L S51 4.0 kW from S49 4.8 kg/d implied η 0.6
 
 ### 4.4 S12 to GREY_TREAT and NUTRIENT_DOSE (items 1, 2)
 
-S12 grey water is retargeted HABITATION → GREY_TREAT (114.9 kg/d, by difference on the HABITATION balance). GREY_TREAT sends 0.95 to VCD_TRAIN as S29 (109.2 kg/d) and 0.05 as sludge to BLACK_DIGEST. NUTRIENT_DOSE takes S30 (22.17 kg/d) and adds 0.02 kg/d trace salts; S07 is 22.19 kg/d. GREY_TREAT and NUTRIENT_DOSE both close.
+S12 grey water is retargeted from HABITATION to GREY_TREAT (114.9 kg/d, by difference on the HABITATION balance). GREY_TREAT sends 0.95 to VCD_TRAIN as S29 (109.2 kg/d) and 0.05 as sludge to BLACK_DIGEST. NUTRIENT_DOSE takes S30 (22.17 kg/d) and adds 0.02 kg/d trace salts; S07 is 22.19 kg/d. GREY_TREAT and NUTRIENT_DOSE both close.
 
 ### 4.5 S56/S86 alias (item 2)
 
-S56 and S86 are the same CRYO_AHU → RELIEF_CRYO contingency relief. S86 is retired; S56 stays as contingency relief at 0 (not product).
+S56 and S86 are the same contingency relief from CRYO_AHU to RELIEF_CRYO. S86 is retired; S56 stays as contingency relief at 0 (not product).
 
 ### 4.6 Chloride loop, BMED and CRU (items 1, 2, 3)
-**Electron balance at the leach.** Metal oxidized in LEACH_CSTR_1 per day: deposited metal 1415.4 mol e⁻, metal dissolved but not plated (undeposited, carried to the bleed) 107.3 mol e⁻, and aluminium 708.9 mol e⁻ (236.3 mol Al). Demand is 2231.5 mol e⁻/d. Oxidant supply:
+The electron balance at the leach is as follows. The metal oxidized in LEACH_CSTR_1 each day is the deposited metal 1415.4 mol e⁻, metal dissolved but not plated (undeposited, carried to the bleed) 107.3 mol e⁻, and aluminium 708.9 mol e⁻ (236.3 mol Al). The demand is 2231.5 mol e⁻/d, and Table 4.2 gives the oxidant supply.
+
+Table 4.2. Oxidant supply at the leach
 
 | Oxidant | mol e⁻/d | Source |
 |---|---|---|
@@ -110,15 +119,15 @@ S56 and S86 are the same CRYO_AHU → RELIEF_CRYO contingency relief. S86 is ret
 
 The O₂ term closes the electron balance; it is drawn from HDR_O2 (S83 4.311 kg/d) and does not tee into habitation air or BOUNDARY_EXPORT. Unabsorbed Cl₂ (43.7 mol/d) and unused O₂ leave with the lid purge to ALK_SCRUBBER.
 
-**Chloride.** Anode Cl₂ that is not re-absorbed reaches ALK_SCRUBBER and leaves as NaCl/NaClO₃ in CRU liquor (IA-BMED-08 49.75 kg/d, IA-BMED-09 50.14 kg/d to CONTINUOUS_RECYCLE). ALK caustic is IA-BMED-07 (46.69 kg/d, 86.5 mol NaOH). S66 polish blowdown to CRU is re-rated to 0.3868 kg/d.
+Chloride: anode Cl₂ that is not re-absorbed reaches ALK_SCRUBBER and leaves as NaCl/NaClO₃ in CRU liquor (IA-BMED-08 49.75 kg/d, IA-BMED-09 50.14 kg/d to CONTINUOUS_RECYCLE). ALK caustic is IA-BMED-07 (46.69 kg/d, 86.5 mol NaOH). S66 polish blowdown to CRU is re-rated to 0.3868 kg/d.
 
-Leach level is held by a brine bleed from POLISH_BANK to SALT_FEED: IA-BMED-05 782.2 kg/d (978.0 mol/d Cl⁻, 74.5 mol/d free HCl, Al 236.3 mol/d). At SALT_FEED, BMED base (IA-BMED-10 161.6 kg/d) and the digest liquor (S92 326 kg/d) raise pH to 9; Al(OH)₃, metal hydroxides, silica and sodium aluminosilicate leave as filter cake S97 (91.08 kg/d). The clarified NaCl brine feeds BMED (IA-BMED-03 505.8 kg/d to the acid compartment, IA-BMED-04 528.8 kg/d to the base compartment; the Rev L CRU origin is replaced by SALT_FEED). BMED splits 979.2 mol/d NaCl (74.9 kg/d) at 6.55 kW DC. HCl returns to CONTINUOUS_RECYCLE (IA-BMED-06 495.8 kg/d, 960.0 mol/d), with fab draws S09/IA-BMED-01 (17.96 and 1.25 mol/d). NaOH serves GLASS_DIGEST (S91 320.8 kg/d), ALK_SCRUBBER (IA-BMED-07), SALT_FEED (IA-BMED-10) and IA-BMED-02. The diluate leaves SALT_FEED to VCD_TRAIN (S98 144.1 kg/d, by difference). The fixed point converges in 11 iterations.
+Leach level is held by a brine bleed from POLISH_BANK to SALT_FEED: IA-BMED-05 782.2 kg/d (978.0 mol/d Cl⁻, 74.5 mol/d free HCl, Al 236.3 mol/d). At SALT_FEED, BMED base (IA-BMED-10 161.6 kg/d) and the digest liquor (S92 326 kg/d) raise pH to 9; Al(OH)₃, metal hydroxides, silica and sodium aluminosilicate leave as filter cake S97 (91.08 kg/d). The clarified NaCl brine feeds BMED (IA-BMED-03 505.8 kg/d to the acid compartment, IA-BMED-04 528.8 kg/d to the base compartment; the Rev L CRU origin is replaced by SALT_FEED). BMED splits 979.2 mol/d NaCl (74.9 kg/d) at 6.55 kW DC. HCl returns to CONTINUOUS_RECYCLE (IA-BMED-06 495.8 kg/d, 960.0 mol/d), with fab draws S09/IA-BMED-01 (17.96 and 1.25 mol/d). NaOH serves GLASS_DIGEST (S91 320.8 kg/d), ALK_SCRUBBER (IA-BMED-07), SALT_FEED (IA-BMED-10) and IA-BMED-02. The diluate leaves SALT_FEED to VCD_TRAIN (S98 144.1 kg/d, by difference).
 
 The loop closes on Cl, Na and electrons (§9). BMED_ACID and BMED_BASE close on mass with 2 M products.
 
 Option chosen (P): Option B, anode Cl₂ sparged into the leach. Alternative Option A sends all anode Cl₂ to ALK_SCRUBBER and regenerates the oxidant as HCl + O₂; it needs about 16 kW of BMED DC instead of 6.6 kW, because each Cl₂ would cost two NaCl splits. Lever: eddy-current Al removal upstream of the shredder cuts the Al electron demand (32 % of total) and with it about 60 % of the BMED duty. The BMED rating is 9 kW (1.25 × 6.55 kW rounded up), above the 5–8 kW RECT-BMED study class; the RECTIFIER `continuous_kw` is updated to the Rev M average.
 
-**Sodium.** Glass Na (cullet Na₂O, the only net Na input to the loop, 125.8 mol/d) is fixed in the pH-9 cake as sodium aluminosilicate, limited by Al (125.8 mol/d). This is RS-DSP; if the bench shows less Na fixation, the excess leaves with the diluate and the BMED duty rises by the same molar amount.
+Sodium: glass Na (cullet Na₂O, the only net Na input to the loop, 125.8 mol/d) is fixed in the pH-9 cake as sodium aluminosilicate, limited by Al (125.8 mol/d). This is RS-DSP; if the bench shows less Na fixation, the excess leaves with the diluate and the BMED duty rises by the same molar amount.
 
 ### 4.7 Glass digest (items 1, 4)
 
@@ -133,7 +142,9 @@ VCD capacity (item 3): the Rev M feed is 0.283 m³/d against the issued 0.11 m³
 The S99 export (104.6 kg/d) is the MVS clean-water surplus.
 
 ### 4.9 Electrical bus: SOL_ARK_60K, RECTIFIER, LOAD_AGG (items 1, 2)
-New S93 PV_ARRAY → SOL_ARK_60K (12.39 kW, 70 kWp × 1550 kWh/kWp·yr). S17 is the daily-average rectifier draw (13.48 kW = (EW 5.75 + BMED 6.55 + PK 0.5) / 0.95), replacing the 50 kW peak. S20 is reversed to SOL_ARK_60K → GROW_BED (5 kW). New S94 SOL_ARK_60K → LOAD_AGG (31.13 kW) carries the itemized process and life loads:
+The new stream S93 runs from PV_ARRAY to SOL_ARK_60K (12.39 kW, 70 kWp × 1550 kWh/kWp·yr). S17 is the daily-average rectifier draw (13.48 kW = (EW 5.75 + BMED 6.55 + PK 0.5) / 0.95), replacing the 50 kW peak. S20 is reversed to run from SOL_ARK_60K to GROW_BED (5 kW). The new stream S94 from SOL_ARK_60K to LOAD_AGG (31.13 kW) carries the process and life loads of Table 4.3.
+
+Table 4.3. Loads on S94
 
 | Load | kW |
 |---|---|
@@ -164,7 +175,7 @@ New S93 PV_ARRAY → SOL_ARK_60K (12.39 kW, 70 kWp × 1550 kWh/kWp·yr). S17 is 
 | HX-6 trim | 0.802 |
 | GEO_HP (idle) | 0.000 |
 
-Supply on the design day: PV 12.39 kW, ZnBr₂ discharge 5.0 kW, hydro 0.29 kW, MEOH_FC 0.1007 kW. Demand including ZnBr₂ charge, S17, S20, S94 and the 1.49 kW conversion loss: 57.76 kW. The utility import at the GRID port closes the bus by difference: **39.99 kW average (960 kWh/d)**. SOL_ARK_60K closes with that term; the MVS energy-surplus criterion is not met. Closing it on site requires about 226 kWp of additional PV at the sandbox yield, or load reduction (MFG_SHOP 12 kW is the largest item). This is recorded in §7.
+Supply on the design day: PV 12.39 kW, ZnBr₂ discharge 5.0 kW, hydro 0.29 kW, MEOH_FC 0.1007 kW. Demand including ZnBr₂ charge, S17, S20, S94 and the 1.49 kW conversion loss: 57.76 kW. The utility import at the GRID port closes the bus by difference: 39.99 kW average (960 kWh/d). SOL_ARK_60K closes with that term; the MVS energy-surplus criterion is not met. Closing it on site requires about 226 kWp of additional PV at the sandbox yield, or load reduction (MFG_SHOP 12 kW is the largest item). This is recorded in §7.
 
 ### 4.10 ZnBr₂ humidity (item 1)
 
@@ -176,13 +187,15 @@ S11 farm trim (0.8 kg/d wet, 42 % DM, 45 % C) adds 0.554 kg/d CO₂ and 0.068 kW
 
 ### 4.12 Other item-3 findings
 
-- **27.94 kg/d sink residue.** Unleached metal, fillers and the unassigned 15 % assay leave GLASS_RINSE as S96 to BOUNDARY_EXPORT (34.29 kg/d with drained moisture). Disposal or sale requires leachate characterization (RS-RESIDUE-TCLP).
-- **S16 composition.** S16 is redefined as harvest rinse liquor: entrained electrolyte plus two displacement rinse volumes (12.6 kg/d). The 12 kg/d metal that Rev L returned to leach is product; DOCK_EXPORT_TBD goods rise to 40.75 kg/d.
-- **S68 text.** S68 carries "CRYO AHU coil condensate (acid trace, flue-cap zone)" (173.7 kg/d); the route to LEACH_CSTR_1 stays (acid trace, not UPW quality).
-- **CONTINUOUS_RECYCLE velocity.** IA-REC-01 is 3.72 m³/d of filtered liquor. DN50 gave 0.02 m/s. Rev M issues DN15 CPVC at 0.22 m/s with a 25 µm cartridge upstream; the line carries clear liquor, so no solids-carrying velocity applies. CONTINUOUS_RECYCLE still discharges only to LEACH_CSTR_1 and stays off the heat ladder.
+- The sink residue is 27.94 kg/d. Unleached metal, fillers and the unassigned 15 % assay leave GLASS_RINSE as S96 to BOUNDARY_EXPORT (34.29 kg/d with drained moisture). Disposal or sale requires leachate characterization (RS-RESIDUE-TCLP).
+- S16 is redefined as harvest rinse liquor: entrained electrolyte plus two displacement rinse volumes (12.6 kg/d). The 12 kg/d metal that Rev L returned to leach is product; DOCK_EXPORT_TBD goods rise to 40.75 kg/d.
+- S68 carries "CRYO AHU coil condensate (acid trace, flue-cap zone)" (173.7 kg/d); the route to LEACH_CSTR_1 stays (acid trace, not UPW quality).
+- The velocity in CONTINUOUS_RECYCLE was too low. IA-REC-01 is 3.72 m³/d of filtered liquor. DN50 gave 0.02 m/s. Rev M issues DN15 CPVC at 0.22 m/s with a 25 µm cartridge upstream; the line carries clear liquor, so no solids-carrying velocity applies. CONTINUOUS_RECYCLE still discharges only to LEACH_CSTR_1 and stays off the heat ladder.
 
 ### 4.13 Leach heater HX-5 (item 4)
-Rev L rated HX-5 at 6.353 kW from a 35 °C regen return of the whole 4284 kg/d recirculation. Rev M re-derives the leach energy balance at 77.5 °C:
+Rev L rated HX-5 at 6.353 kW from a 35 °C regen return of the whole 4284 kg/d recirculation. Rev M re-derives the leach energy balance at 77.5 °C in Table 4.4.
+
+Table 4.4. Leach energy balance
 
 | Term | kW | Note |
 |---|---|---|
@@ -190,12 +203,12 @@ Rev L rated HX-5 at 6.353 kW from a 35 °C regen return of the whole 4284 kg/d r
 | Cold make-up (S68, S10, S16, S39, S72, S28) | 0.852 | 10–40 °C |
 | Shell, shredder and purge losses | 1.118 | AQS-DUTY-008 |
 | Metal dissolution exotherm, lowest credit | −2.562 | AQS-DUTY-008 leach basis |
-| **Rating case** (no Q3, no Q4 preheat, no oxidant credit) | **4.602** | |
+| Rating case (no Q3, no Q4 preheat, no oxidant credit) | 4.602 | |
 | Q4 make-up preheat HX-9 (S100) | −0.532 | cold streams to 55 °C |
 | Oxidant credit above the rating case | −3.640 | Cl₂ re-absorption returns the EW chemical energy; O₂ reduction |
-| **Normal duty** | **0.430** | |
+| Normal duty | 0.430 | |
 
-HX-5 rating: ceil(4.602 × 1.25) = **6.0 kW** electric trim heater (Rev L 6.353 kW unissued). HL-Q3-A/B-HX5 rated duty is 5.753 kW. On the design day Q3 serves HX-4 (0.242 kW) and HX-6 (0.579 kW) first and has nothing left for HX-5; the normal HX-5 trim is 0.430 kW.
+HX-5 rating: ceil(4.602 × 1.25) = 6.0 kW electric trim heater (Rev L 6.353 kW unissued). HL-Q3-A/B-HX5 rated duty is 5.753 kW. On the design day Q3 serves HX-4 (0.242 kW) and HX-6 (0.579 kW) first and has nothing left for HX-5; the normal HX-5 trim is 0.430 kW.
 
 The rating case covers loss of the Cl₂ sparge, where ALK_SCRUBBER takes all anode Cl₂ and needs a NaOH day tank. Startup from 25 °C (about 2.7 m³ liquor, 153 kWh) takes about 30 h at the rated heater less the 1.1 kW shell, shredder and purge losses.
 
@@ -203,11 +216,11 @@ Alternative (not adopted): a recuperator R-1 between raffinate and recycle retur
 
 ### 4.14 Digest heater HX-6 (item 4)
 
-GLASS_DIGEST at 80 °C: AQS-DUTY-008 duty 1.663 kW. HX-10 preheats the caustic from Q4 (0.282 kW, S101), so the normal duty is 1.381 kW: 0.579 kW from Q3 and 0.802 kW electric trim. HX-6 rating: ceil(1.663 × 1.25) = **2.5 kW** (rating case without HX-10 and Q3). The 1.5 kW study class is retired.
+GLASS_DIGEST at 80 °C: AQS-DUTY-008 duty 1.663 kW. HX-10 preheats the caustic from Q4 (0.282 kW, S101), so the normal duty is 1.381 kW: 0.579 kW from Q3 and 0.802 kW electric trim. HX-6 rating: ceil(1.663 × 1.25) = 2.5 kW (rating case without HX-10 and Q3). The 1.5 kW study class is retired.
 
 ### 4.15 Q4 surplus (item 5)
 
-Q4 sources at normal duty: ladder 4.244 kW + S54 0.100 + S63 0.017 + S80 0.127 = 4.488 kW (S53 is 0 with the fuel cell on standby; Rev L surplus 3.32 kW). Sinks: life load 3.0 kW, HX-9 leach make-up preheat (S100 0.532 kW), HX-10 caustic preheat (S101 0.282 kW), and the remainder to the borefield (S102 Q4_BUS → GEO_GHEX, 0.674 kW, by difference). Q4_BUS remains the Q4 water header only; HX-9 and HX-10 are on Q4_BUS branches, not HL-* edges. The ORC pad stays reserved at 0 kW.
+Q4 sources at normal duty: ladder 4.244 kW + S54 0.100 + S63 0.017 + S80 0.127 = 4.488 kW (S53 is 0 with the fuel cell on standby; Rev L surplus 3.32 kW). Sinks: life load 3.0 kW, HX-9 leach make-up preheat (S100 0.532 kW), HX-10 caustic preheat (S101 0.282 kW), and the remainder to the borefield (S102 from Q4_BUS to GEO_GHEX, 0.674 kW, by difference). Q4_BUS remains the Q4 water header only; HX-9 and HX-10 are on Q4_BUS branches, not HL-* edges. The ORC pad stays reserved at 0 kW.
 
 Borefield recharge at 0.67 kW continuous into a 100 m bore raises the ground temperature by about 5 K over 10 years (line-source estimate, k = 2 W/m·K). This favours GEO_HP in winter; it is RS-GHEX-RECHARGE because the field data are design_survey_locked.
 
@@ -215,10 +228,14 @@ Borefield recharge at 0.67 kW continuous into a 100 m bore raises the ground tem
 
 Both are retired; neither carries a physical flow.
 
-- S87 GROW_BED → CRYO_O2 (surplus O₂ capture). Photosynthetic O₂ is 0.806 kg/d, a 0.003 % enrichment of the farm exhaust air at the DUTY-009 outdoor-air rate. Recovering it is air separation, which the cold box already performs on intake air, and any endpoint would send farm air into a process header.
-- S88 CRYO_N2 → GROW_BED (N₂ make-up). GROW_BED has no N₂ demand; it is ventilated with outdoor air. The only candidate N₂ consumer is habitation cabin-leak make-up from HDR_N2 (not from the cryo residual). Reinstating that path needs the habitation envelope leak rate at operating pressure (RS-HAB-N2); with it, the edge is HDR_N2 → HABITATION at the leak rate.
+- S87 ran from GROW_BED to CRYO_O2 to capture surplus oxygen. Photosynthetic O₂ is 0.806 kg/d, a 0.003 % enrichment of the farm exhaust air at the DUTY-009 outdoor-air rate. Recovering it is air separation, which the cold box already performs on intake air, and any endpoint would send farm air into a process header.
+- S88 ran from CRYO_N2 to GROW_BED as nitrogen make-up. GROW_BED has no N₂ demand; it is ventilated with outdoor air. The only candidate N₂ consumer is habitation cabin-leak make-up from HDR_N2 (not from the cryo residual). Reinstating that path needs the habitation envelope leak rate at operating pressure (RS-HAB-N2); with it, the edge runs from HDR_N2 to HABITATION at the leak rate.
 
 ### 4.17 Routing summary (item 2)
+
+Table 4.5 summarises the routing decisions.
+
+Table 4.5. Routing decisions
 
 | Decision | Rev M | Status |
 |---|---|---|
@@ -227,9 +244,13 @@ Both are retired; neither carries a physical flow.
 | S12 destination | GREY_TREAT | final |
 | S56/S86 duplicate | S86 retired | final |
 | BMED/CRU edges | IA-BMED-03/04 from SALT_FEED; IA-BMED-05…10, S91, S92, S97, S98 added | provisional (Option B) |
-| S20 direction | SOL_ARK_60K → GROW_BED | final |
+| S20 direction | from SOL_ARK_60K to GROW_BED | final |
 
 ## 5. Provisional decisions (for review)
+
+Table 5.1 gives the provisional decisions and their alternatives.
+
+Table 5.1. Provisional decisions
 
 | # | Decision | Alternatives |
 |---|---|---|
@@ -246,10 +267,14 @@ Both are retired; neither carries a physical flow.
 
 ## 6. Required studies
 
+Table 6.1 gives the studies that the Rev M decisions depend on.
+
+Table 6.1. Required studies
+
 | ID | What is needed |
 |---|---|
 | RS-LEACH-H2 | Leach lid H₂ under oxidant upset (Cl₂ sparge or O₂ off): purge dilution to < 25 % LFL and interlock |
-| RS-HAB-N2 | Habitation envelope leak rate at operating pressure; sets HDR_N2 → HABITATION make-up (S88) |
+| RS-HAB-N2 | Habitation envelope leak rate at operating pressure; sets the make-up from HDR_N2 to HABITATION (S88) |
 | RS-RESIDUE-TCLP | S96 sink residue and S97 cake leachate characterization before disposal or sale |
 | RS-DSP | Bench confirmation that glass Na leaves in the pH-9 cake as sodium aluminosilicate (Na ≤ Al) |
 | RS-CL2-SPARGE | Anode Cl₂ absorption in LEACH_CSTR_1 (0.95 basis) and the Fe³⁺ effect on EW CE |
@@ -260,14 +285,16 @@ Both are retired; neither carries a physical flow.
 
 ## 7. What still blocks a loops_closed review
 
-1. Energy surplus: the design day imports 40.0 kW average from the utility.
-2. REQ-MEOH-FC 0.5–2 kW is not met (MEOH_FC 0.1007 kW, H₂-limited).
-3. The provisional decisions in §5 and the required studies in §6.
-4. CAD clearance on the Rev M placement copy. Seed Rev I (`placement_seed.json`) moves 24 origins: 71 seed boxes, 2485 pairs, 0 intersections and 0 pairs under 600 mm within a level (1100 mm at BACKUP_GEN and FUEL_CELL); Rev L had 20 pairs under 600 mm. `plant_placed_2026-10-08_revM.FCStd` is derived from the revK copy by `apply_placement.py` (39 applied, 9 resized, 0 gaps); `plant.FCStd` is not touched. Every moved Feature has 0 intersections and at least 600 mm to same-level equipment, except MET_AHU and MET_SCRUB, which sit on OVERFLOW_APRON_E as drawn. An all-pairs common-volume check on the copy (423 solids) gives 1016 intersecting pairs (1075 on revK): 598 allowed (assembly, nozzle, penetration, containment), 210 for review and 208 clashes (245 on revK). The remaining clashes are legacy massing in RS-CAD-HYDRO, RS-CAD-YARD and RS-CAD-LEGACY (§6); details in the unpublished planning note REV_M_CLOSURE.
+1. The energy surplus is not met: the design day imports 40.0 kW average from the utility.
+2. REQ-MEOH-FC (0.5–2 kW) is not met, because MEOH_FC makes 0.1007 kW, limited by the hydrogen supply.
+3. The provisional decisions in §5 and the required studies in §6 are open.
+4. The CAD clearance on the Rev M placement copy is open. Seed Rev I (`placement_seed.json`) moved equipment origins so that no two seed boxes on one level intersect or come closer than 600 mm (1100 mm at BACKUP_GEN and FUEL_CELL). `plant_placed_2026-10-08_revM.FCStd` is derived from the revK copy by `apply_placement.py`, and `plant.FCStd` is not touched. Every moved feature clears same-level equipment by at least 600 mm, except MET_AHU and MET_SCRUB, which sit on OVERFLOW_APRON_E as drawn. An all-pairs check of common volume on the copy still finds clashes, fewer than on revK; they are legacy massing covered by RS-CAD-HYDRO, RS-CAD-YARD and RS-CAD-LEGACY (§6). The details are in the unpublished planning note REV_M_CLOSURE.
 
 ## 8. Node balances
 
-Status: closed = within ±1 % with independently derived terms; closed (one term by difference) = one term sets the balance. Units: mass kg/d, energy kW.
+Table 8.1 gives each node balance of Rev M. A balance marked closed is within ±1 % with independently derived terms. A balance marked closed (one term by difference) has one term set by the balance. Mass is in kg/d and energy in kW.
+
+Table 8.1. Node balances of Rev M
 
 | Node / layer | In | Out | Residual % | Status |
 |---|---|---|---|---|
@@ -368,6 +395,10 @@ Status: closed = within ±1 % with independently derived terms; closed (one term
 
 ## 9. Species checks
 
+Table 9.1 gives the species checks of Rev M.
+
+Table 9.1. Species checks of Rev M
+
 | Check | In | Out | Status | Note |
 |---|---|---|---|---|
 | AFTERBURNER/CO2 | 15.554 | 15.554 | closed | S11 trim carbon folded into the S67 CO2 basis (Rev M) |
@@ -380,92 +411,96 @@ Status: closed = within ±1 % with independently derived terms; closed (one term
 | SALT_FEED/Na | 1105.4 | 1103.8 | closed | Na in: bleed (CRU Na) + digest NaOH + glass Na + IA-BMED-10; out: NaCl to BMED (= Cl in bleed) + Na retained in the cake |
 | BMED/pairs | 979.2 | 979.2 | closed | HCl made = NaOH made; NaOH uses: S91 + IA-BMED-07 + IA-BMED-10 + IA-BMED-02 |
 
-## 10. Edge changes Rev L → Rev M
+## 10. Edge changes from Rev L to Rev M
 
-| Stream | From → To | Rev L | Rev M | Unit | Change |
-|---|---|---|---|---|---|
-| DOCK_EXPORT_TBD | NORTH_DOCK → BOUNDARY_EXPORT | 28.75 | 40.75 | kg/d | re-rated |
-| HL-Q3-A-HX5 | Q3_A → LEACH_CSTR_1 | 7.941 | 5.753 | kW | re-rated |
-| HL-Q3-B-HX5 | Q3_B → LEACH_CSTR_1 | 7.941 | 5.753 | kW | re-rated |
-| IA-BMED-03 | SALT_FEED → BMED_ACID | 38.6 | 505.8 | kg/d | retargeted (Rev L CRU → BMED_ACID) |
-| IA-BMED-04 | SALT_FEED → BMED_BASE | 40.36 | 528.8 | kg/d | retargeted (Rev L CRU → BMED_BASE) |
-| IA-EW-01 | EW_1 → EW_2 | 4222 | 4280 | kg/d | re-rated |
-| IA-EW-02 | EW_2 → EW_3 | 4160 | 4276 | kg/d | re-rated |
-| IA-EW-03 | EW_3 → EW_4 | 4138 | 4251 | kg/d | re-rated |
-| IA-EW-05 | EW_5 → EW_6 | 4128 | 4241 | kg/d | re-rated |
-| IA-EW-06 | EW_6 → EW_7 | 4123 | 4235 | kg/d | re-rated |
-| IA-EW-07 | EW_7 → EW_8 | 4051 | 4151 | kg/d | re-rated |
-| IA-EW-08 | EW_8 → EW_9 | 4046 | 4146 | kg/d | re-rated |
-| IA-EW-09 | EW_9 → POLISH_BANK | 3983 | 4140 | kg/d | re-rated |
-| IA-EW-10 | EW_4 → EW_5 | 4133 | 4246 | kg/d | re-rated |
-| IA-HDR-H2-01 | EW_7 → HDR_H2 | 1.6 | 0.7087 | kg/d | retargeted (Rev L EW_1 → HDR_H2) |
-| IA-HDR-H2-02 | HDR_H2 → H2_DRYER | 4.8 | 0.8536 | kg/d | re-rated |
-| IA-HDR-H2-03 | EW_3 → HDR_H2 | 1.6 | 0.1303 | kg/d | retargeted (Rev L EW_2 → HDR_H2) |
-| IA-HDR-H2-04 | EW_9 → HDR_H2 | 1.6 | 0.0145 | kg/d | re-rated |
-| IA-POL-02 | POLISH_BANK → CONTINUOUS_RECYCLE | 3754 | 3358 | kg/d | re-rated |
-| IA-REC-01 | CONTINUOUS_RECYCLE → LEACH_CSTR_1 | 3978 | 3904 | kg/d | re-rated |
-| S01 | BMED_UPW_POLISH → HDR_UPW | 95 | 77.28 | kg/d | re-rated |
-| S07 | NUTRIENT_DOSE → GROW_BED | 2.5 | 22.19 | kg/d | re-rated |
-| S08G | GLASS_DIGEST → BOUNDARY_EXPORT | 30 | 4.5 | kg/d | re-rated |
-| S12 | HABITATION → GREY_TREAT | 110 | 114.9 | kg/d | retargeted (Rev L HABITATION → NUTRIENT_DOSE) |
-| S13 | GROW_BED → VCD_TRAIN | 31.5 | 29.91 | kg/d | re-rated |
-| S16 | MFG_SHOP → LEACH_CSTR_1 | 12 | 12.6 | kg/d | re-rated |
-| S17 | SOL_ARK_60K → RECTIFIER | 50 | 13.48 | kW | re-rated |
-| S20 | SOL_ARK_60K → GROW_BED | 5 | 5 | kW | retargeted (Rev L GROW_BED → SOL_ARK_60K) |
-| S25 | VCD_TRAIN → BMED_UPW_POLISH | 161 | 150.3 | kg/d | re-rated |
-| S28 | VCD_TRAIN → LEACH_CSTR_1 | 17.89 | 28.32 | kg/d | re-rated |
-| S29 | GREY_TREAT → VCD_TRAIN | 104.5 | 109.2 | kg/d | re-rated |
-| S30 | BLACK_DIGEST → NUTRIENT_DOSE | 16.43 | 22.17 | kg/d | re-rated |
-| S45 | CRYO_H2 → BACKUP_GEN | 3.6 | 0 | kg/d | re-rated |
-| S46 | BACKUP_GEN → NOX_SCRUB | 250.6 | 0 | kg/d | re-rated |
-| S47 | BACKUP_GEN → SOL_ARK_60K | 2.5 | 0 | kW | re-rated |
-| S49 | CRYO_H2 → FUEL_CELL | 4.8 | 0 | kg/d | re-rated |
-| S50 | CRYO_O2 → FUEL_CELL | 38.4 | 0 | kg/d | re-rated |
-| S51 | FUEL_CELL → SOL_ARK_60K | 4 | 0 | kW | re-rated |
-| S52 | FUEL_CELL → VCD_TRAIN | 42.89 | 0 | kg/d | re-rated |
-| S53 | FUEL_CELL → Q4_BUS | 1.142 | 0 | kW | re-rated |
-| S54 | CRYO_HX_Q4 → Q4_BUS | 0.5448 | 0.1001 | kW | re-rated |
-| S55 | CRYO_DED_COOL → CRYO_DED_COOL | 4.284 | 4.061 | kW | re-rated |
-| S64 | H2_DRYER → CRYO_H2 | 4.8 | 0.3221 | kg/d | re-rated |
-| S66 | ACID_POLISH_SCRUB → CRU | 27.36 | 0.3868 | kg/d | re-rated |
-| S67 | AFTERBURNER_FLUE → FLUE_KO | 241.7 | 242.5 | kg/d | re-rated |
-| S67B | FLUE_KO → CRYO_CO2 | 12.75 | 13.22 | kg/d | re-rated |
-| S68 | CRYO_AHU → LEACH_CSTR_1 | 173.7 | 173.7 | kg/d | text |
-| S69 | ZNBR2 → ZNBR2_BR2_REGEN | 852.5 | 854.9 | kg/d | re-rated |
-| S69B | ZNBR2_BR2_REGEN → ZNBR2 | 8.487 | 0.0473 | kg/d | re-rated |
-| S73 | CRYO_CO2 → MEOH_SYNTH | 6.9 | 2.344 | kg/d | re-rated |
-| S74 | CRYO_H2 → MEOH_SYNTH | 0.94 | 0.3221 | kg/d | re-rated |
-| S75 | MEOH_SYNTH → MEOH_TANK | 5 | 1.706 | kg/d | re-rated |
-| S76 | MEOH_TANK → MEOH_FC | 5 | 1.721 | kg/d | re-rated |
-| S79 | MEOH_FC → SOL_ARK_60K | 0.2925 | 0.1007 | kW | re-rated |
-| S80 | MEOH_FC → Q4_BUS | 0.3689 | 0.127 | kW | re-rated |
-| S81 | MEOH_FC → MEOH_COND | 5.622 | 1.935 | kg/d | re-rated |
-| S82 | MEOH_FC → CRYO_CO2 | 6.875 | 2.364 | kg/d | re-rated |
-| S83 | CRYO_O2 → HDR_O2 | 0 | 4.311 | kg/d | re-rated |
-| S85 | CRYO_CO2 → HDR_CO2 | 11.62 | 12.08 | kg/d | re-rated |
-| S89 | HDR_CO2 → GROW_BED | 15.64 | 16.1 | kg/d | re-rated |
-| IA-BMED-05 | POLISH_BANK → SALT_FEED | — | 782.2 | kg/d | new |
-| IA-BMED-06 | BMED_ACID → CONTINUOUS_RECYCLE | — | 495.8 | kg/d | new |
-| IA-BMED-07 | BMED_BASE → ALK_SCRUBBER | — | 46.69 | kg/d | new |
-| IA-BMED-08 | ALK_SCRUBBER → CRU | — | 49.75 | kg/d | new |
-| IA-BMED-09 | CRU → CONTINUOUS_RECYCLE | — | 50.14 | kg/d | new |
-| IA-BMED-10 | BMED_BASE → SALT_FEED | — | 161.6 | kg/d | new |
-| S91 | BMED_BASE → GLASS_DIGEST | — | 320.8 | kg/d | new |
-| S92 | GLASS_DIGEST → SALT_FEED | — | 326 | kg/d | new |
-| S93 | PV_ARRAY → SOL_ARK_60K | — | 12.39 | kW | new |
-| S94 | SOL_ARK_60K → LOAD_AGG | — | 31.13 | kW | new |
-| S95 | HDR_O2 → LEACH_CSTR_1 | — | 4.311 | kg/d | new |
-| S96 | GLASS_RINSE → BOUNDARY_EXPORT | — | 34.29 | kg/d | new |
-| S97 | SALT_FEED → BOUNDARY_EXPORT | — | 91.08 | kg/d | new |
-| S98 | SALT_FEED → VCD_TRAIN | — | 144.1 | kg/d | new |
-| S99 | VCD_TRAIN → BOUNDARY_EXPORT | — | 104.6 | kg/d | new |
-| S100 | Q4_BUS → LEACH_CSTR_1 | — | 0.5322 | kW | new |
-| S101 | Q4_BUS → GLASS_DIGEST | — | 0.2822 | kW | new |
-| S102 | Q4_BUS → GEO_GHEX | — | 0.6738 | kW | new |
-| S05 | H2_DRYER → CRYO_H2 | 4.8 | — | kg/d | retired |
-| S86 | CRYO_AHU → RELIEF_CRYO | 0.0 | — | kg/d | retired |
-| S87 | GROW_BED → CRYO_O2 | placeholder | — | — | retired |
-| S88 | CRYO_N2 → GROW_BED | placeholder | — | — | retired |
+Table 10.1 gives every edge that Rev M changed, added or retired.
+
+Table 10.1. Edge changes from Rev L to Rev M
+
+| Stream | From | To | Rev L | Rev M | Unit | Change |
+|---|---|---|---|---|---|---|
+| DOCK_EXPORT_TBD | NORTH_DOCK | BOUNDARY_EXPORT | 28.75 | 40.75 | kg/d | re-rated |
+| HL-Q3-A-HX5 | Q3_A | LEACH_CSTR_1 | 7.941 | 5.753 | kW | re-rated |
+| HL-Q3-B-HX5 | Q3_B | LEACH_CSTR_1 | 7.941 | 5.753 | kW | re-rated |
+| IA-BMED-03 | SALT_FEED | BMED_ACID | 38.6 | 505.8 | kg/d | retargeted (Rev L from CRU to BMED_ACID) |
+| IA-BMED-04 | SALT_FEED | BMED_BASE | 40.36 | 528.8 | kg/d | retargeted (Rev L from CRU to BMED_BASE) |
+| IA-EW-01 | EW_1 | EW_2 | 4222 | 4280 | kg/d | re-rated |
+| IA-EW-02 | EW_2 | EW_3 | 4160 | 4276 | kg/d | re-rated |
+| IA-EW-03 | EW_3 | EW_4 | 4138 | 4251 | kg/d | re-rated |
+| IA-EW-05 | EW_5 | EW_6 | 4128 | 4241 | kg/d | re-rated |
+| IA-EW-06 | EW_6 | EW_7 | 4123 | 4235 | kg/d | re-rated |
+| IA-EW-07 | EW_7 | EW_8 | 4051 | 4151 | kg/d | re-rated |
+| IA-EW-08 | EW_8 | EW_9 | 4046 | 4146 | kg/d | re-rated |
+| IA-EW-09 | EW_9 | POLISH_BANK | 3983 | 4140 | kg/d | re-rated |
+| IA-EW-10 | EW_4 | EW_5 | 4133 | 4246 | kg/d | re-rated |
+| IA-HDR-H2-01 | EW_7 | HDR_H2 | 1.6 | 0.7087 | kg/d | retargeted (Rev L from EW_1 to HDR_H2) |
+| IA-HDR-H2-02 | HDR_H2 | H2_DRYER | 4.8 | 0.8536 | kg/d | re-rated |
+| IA-HDR-H2-03 | EW_3 | HDR_H2 | 1.6 | 0.1303 | kg/d | retargeted (Rev L from EW_2 to HDR_H2) |
+| IA-HDR-H2-04 | EW_9 | HDR_H2 | 1.6 | 0.0145 | kg/d | re-rated |
+| IA-POL-02 | POLISH_BANK | CONTINUOUS_RECYCLE | 3754 | 3358 | kg/d | re-rated |
+| IA-REC-01 | CONTINUOUS_RECYCLE | LEACH_CSTR_1 | 3978 | 3904 | kg/d | re-rated |
+| S01 | BMED_UPW_POLISH | HDR_UPW | 95 | 77.28 | kg/d | re-rated |
+| S07 | NUTRIENT_DOSE | GROW_BED | 2.5 | 22.19 | kg/d | re-rated |
+| S08G | GLASS_DIGEST | BOUNDARY_EXPORT | 30 | 4.5 | kg/d | re-rated |
+| S12 | HABITATION | GREY_TREAT | 110 | 114.9 | kg/d | retargeted (Rev L from HABITATION to NUTRIENT_DOSE) |
+| S13 | GROW_BED | VCD_TRAIN | 31.5 | 29.91 | kg/d | re-rated |
+| S16 | MFG_SHOP | LEACH_CSTR_1 | 12 | 12.6 | kg/d | re-rated |
+| S17 | SOL_ARK_60K | RECTIFIER | 50 | 13.48 | kW | re-rated |
+| S20 | SOL_ARK_60K | GROW_BED | 5 | 5 | kW | retargeted (Rev L from GROW_BED to SOL_ARK_60K) |
+| S25 | VCD_TRAIN | BMED_UPW_POLISH | 161 | 150.3 | kg/d | re-rated |
+| S28 | VCD_TRAIN | LEACH_CSTR_1 | 17.89 | 28.32 | kg/d | re-rated |
+| S29 | GREY_TREAT | VCD_TRAIN | 104.5 | 109.2 | kg/d | re-rated |
+| S30 | BLACK_DIGEST | NUTRIENT_DOSE | 16.43 | 22.17 | kg/d | re-rated |
+| S45 | CRYO_H2 | BACKUP_GEN | 3.6 | 0 | kg/d | re-rated |
+| S46 | BACKUP_GEN | NOX_SCRUB | 250.6 | 0 | kg/d | re-rated |
+| S47 | BACKUP_GEN | SOL_ARK_60K | 2.5 | 0 | kW | re-rated |
+| S49 | CRYO_H2 | FUEL_CELL | 4.8 | 0 | kg/d | re-rated |
+| S50 | CRYO_O2 | FUEL_CELL | 38.4 | 0 | kg/d | re-rated |
+| S51 | FUEL_CELL | SOL_ARK_60K | 4 | 0 | kW | re-rated |
+| S52 | FUEL_CELL | VCD_TRAIN | 42.89 | 0 | kg/d | re-rated |
+| S53 | FUEL_CELL | Q4_BUS | 1.142 | 0 | kW | re-rated |
+| S54 | CRYO_HX_Q4 | Q4_BUS | 0.5448 | 0.1001 | kW | re-rated |
+| S55 | CRYO_DED_COOL | CRYO_DED_COOL | 4.284 | 4.061 | kW | re-rated |
+| S64 | H2_DRYER | CRYO_H2 | 4.8 | 0.3221 | kg/d | re-rated |
+| S66 | ACID_POLISH_SCRUB | CRU | 27.36 | 0.3868 | kg/d | re-rated |
+| S67 | AFTERBURNER_FLUE | FLUE_KO | 241.7 | 242.5 | kg/d | re-rated |
+| S67B | FLUE_KO | CRYO_CO2 | 12.75 | 13.22 | kg/d | re-rated |
+| S68 | CRYO_AHU | LEACH_CSTR_1 | 173.7 | 173.7 | kg/d | text |
+| S69 | ZNBR2 | ZNBR2_BR2_REGEN | 852.5 | 854.9 | kg/d | re-rated |
+| S69B | ZNBR2_BR2_REGEN | ZNBR2 | 8.487 | 0.0473 | kg/d | re-rated |
+| S73 | CRYO_CO2 | MEOH_SYNTH | 6.9 | 2.344 | kg/d | re-rated |
+| S74 | CRYO_H2 | MEOH_SYNTH | 0.94 | 0.3221 | kg/d | re-rated |
+| S75 | MEOH_SYNTH | MEOH_TANK | 5 | 1.706 | kg/d | re-rated |
+| S76 | MEOH_TANK | MEOH_FC | 5 | 1.721 | kg/d | re-rated |
+| S79 | MEOH_FC | SOL_ARK_60K | 0.2925 | 0.1007 | kW | re-rated |
+| S80 | MEOH_FC | Q4_BUS | 0.3689 | 0.127 | kW | re-rated |
+| S81 | MEOH_FC | MEOH_COND | 5.622 | 1.935 | kg/d | re-rated |
+| S82 | MEOH_FC | CRYO_CO2 | 6.875 | 2.364 | kg/d | re-rated |
+| S83 | CRYO_O2 | HDR_O2 | 0 | 4.311 | kg/d | re-rated |
+| S85 | CRYO_CO2 | HDR_CO2 | 11.62 | 12.08 | kg/d | re-rated |
+| S89 | HDR_CO2 | GROW_BED | 15.64 | 16.1 | kg/d | re-rated |
+| IA-BMED-05 | POLISH_BANK | SALT_FEED | — | 782.2 | kg/d | new |
+| IA-BMED-06 | BMED_ACID | CONTINUOUS_RECYCLE | — | 495.8 | kg/d | new |
+| IA-BMED-07 | BMED_BASE | ALK_SCRUBBER | — | 46.69 | kg/d | new |
+| IA-BMED-08 | ALK_SCRUBBER | CRU | — | 49.75 | kg/d | new |
+| IA-BMED-09 | CRU | CONTINUOUS_RECYCLE | — | 50.14 | kg/d | new |
+| IA-BMED-10 | BMED_BASE | SALT_FEED | — | 161.6 | kg/d | new |
+| S91 | BMED_BASE | GLASS_DIGEST | — | 320.8 | kg/d | new |
+| S92 | GLASS_DIGEST | SALT_FEED | — | 326 | kg/d | new |
+| S93 | PV_ARRAY | SOL_ARK_60K | — | 12.39 | kW | new |
+| S94 | SOL_ARK_60K | LOAD_AGG | — | 31.13 | kW | new |
+| S95 | HDR_O2 | LEACH_CSTR_1 | — | 4.311 | kg/d | new |
+| S96 | GLASS_RINSE | BOUNDARY_EXPORT | — | 34.29 | kg/d | new |
+| S97 | SALT_FEED | BOUNDARY_EXPORT | — | 91.08 | kg/d | new |
+| S98 | SALT_FEED | VCD_TRAIN | — | 144.1 | kg/d | new |
+| S99 | VCD_TRAIN | BOUNDARY_EXPORT | — | 104.6 | kg/d | new |
+| S100 | Q4_BUS | LEACH_CSTR_1 | — | 0.5322 | kW | new |
+| S101 | Q4_BUS | GLASS_DIGEST | — | 0.2822 | kW | new |
+| S102 | Q4_BUS | GEO_GHEX | — | 0.6738 | kW | new |
+| S05 | H2_DRYER | CRYO_H2 | 4.8 | — | kg/d | retired |
+| S86 | CRYO_AHU | RELIEF_CRYO | 0.0 | — | kg/d | retired |
+| S87 | GROW_BED | CRYO_O2 | placeholder | — | — | retired |
+| S88 | CRYO_N2 | GROW_BED | placeholder | — | — | retired |
 
 ## 11. Reproduction
 

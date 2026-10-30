@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: BE
+Revision: BF
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -63,6 +63,7 @@ Date: 2026-10-29
 | BC | Batch 46b: silicon wafers for the solar cell line from the plant, the cell rate from the replacement need of the roof array, CZ semi-square and cast multicrystalline selectable, retired cells recovered (A-M-437); AQS-DUTY-071 revision C | 2026-10-30 |
 | BD | Batch 46c: COMB_HEAT kept as the melt path independent of the electrical supply, with a rated fuel route on the C5-C10 cut or plant methanol, oxygen and off-gas routes (A-M-438) | 2026-10-30 |
 | BE | Batch 47a: audit of the matplotlib flow sheet scripts; all kept, stale labels and paths fixed, sheet numbers registered from the scripts | 2026-10-30 |
+| BF | Batch 47b: REV_M_CLOSURE_DUTY and MATERIALS_STD rewritten to the style guide | 2026-10-30 |
 
 ## 1. Purpose and scope
 
@@ -235,6 +236,8 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/param/foundry_poly.py` (A-M-435) | POLY_OLEFIN takes the naphtha cut or plant methanol by olefin_feed_route; the generator cut fuel carries its outage rate; seven polymer and foundry routes that duplicate a live route or have no source are retired. |
 | `docs-authority/STUDY_UNITS_STUB.md` (AQS-EQP-STUDY-001 G) | Rewritten to the style guide; each unit points to where its duty is set now. |
 | `flow_graph/LEGACY_PFD_SCRIPTS.md` (AQS-FLOW-GRAPH-001 annex B) | Rewritten as the audit record of the matplotlib sheet scripts. The question on the unregistered AQS-PFD numbers is settled: the drawing register now reads each sheet number from its script, and the four removed sheets are kept there as retired numbers. |
+| `docs-authority/REV_M_CLOSURE_DUTY.md` (AQS-DUTY-011 B) | Rewritten to the style guide as the record of the Rev M closure study, with its status stated and the counts, arrows and emphasis replaced by sentences. |
+| `docs-authority/MATERIALS_STD.md` (AQS-STD-002 P) | Rewritten to the style guide: purpose and scope in section 1, the audit and hydrogen lists as sentences, sections 3.3 and 4.5 under their parents, one reference section, and no counts in the text. The section numbers that other pages cite are kept. |
 
 ## 3. In progress
 
@@ -261,11 +264,9 @@ Table 4.1. Pending pages directly under docs-authority/
 | `docs-authority/INSTRUMENT_LOOPS.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/LIFE_FITOUT_PLAN.md` | No purpose and scope section; working or stock phrasing. |
 | `docs-authority/LIFE_NOZZLE_SCHEDULE.md` | No record of revisions; no purpose and scope section. |
-| `docs-authority/MATERIALS_STD.md` | No purpose and scope section; list items written as fragments; working or stock phrasing. |
 | `docs-authority/MFG_MODEL_PLAN.md` | No purpose and scope section. |
 | `docs-authority/O2_SOURCE.md` | No purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
 | `docs-authority/O2_SOURCE_AUDIT.md` | No record of revisions; no purpose and scope section. Written by `flow_graph/param/o2_source.py`; fix the generator. |
-| `docs-authority/REV_M_CLOSURE_DUTY.md` | Arrows used in place of sentences; working or stock phrasing. |
 | `docs-authority/SIGN_SCHEDULE.md` | No purpose and scope section. |
 | `docs-authority/TERRACE_LANDSCAPE.md` | No purpose and scope section; list items written as fragments. |
 | `docs-authority/TEST_PLAN.md` | No purpose and scope section; working or stock phrasing. |
