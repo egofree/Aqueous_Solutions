@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: none. Out: none.
+1. Basis. Mass in 0 kg/d. Mass out 0 kg/d. Electrical duty 0.0000 kW. In: none. Out: LI_TO_GREASE 0 kg/d (lithium hydroxide or carbonate).
 
 2. Size.
 - Sizing calculation pending (unit task 02). The graph node carries no design and no envelope.

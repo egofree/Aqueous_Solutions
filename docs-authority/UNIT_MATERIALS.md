@@ -17,7 +17,7 @@ This page states the wetted material of every unit on the plant graph. It joins 
 
 ## 2. Summary and rule
 
-Of the 196 units, 142 have an issued material for each wetted stream, 54 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 339 wetted stream ends, and each resolves to an issued service family.
+Of the 196 units, 143 have an issued material for each wetted stream, 53 have no wetted piped stream because every edge carries solids or electricity, and 0 are open (section 5). The line list has 342 wetted stream ends, and each resolves to an issued service family.
 A unit is closed when every wetted stream that touches it carries a wetted material issued in section 12 of AQS-STD-002; the material in section 4 is quoted from that family, with its sources. A unit stays open only where a wetted stream that touches it has no issued family. The end-of-life matrix AQS-END-002 classifies the same rows and does not contradict this register.
 
 ## 3. Service families used
@@ -26,11 +26,11 @@ The following service families of AQS-STD-002 are used, with the number of strea
 
 - Acid or brine, at or below 60 C: 53 stream ends.
 - Hot leach liquor: 46 stream ends.
-- Dry gas, H2/O2/N2/CO2: 42 stream ends.
-- Process vent gas: 38 stream ends.
+- Dry gas, H2/O2/N2/CO2: 43 stream ends.
+- Process vent gas: 39 stream ends.
 - Hydrocarbon product, fuel or wax cut: 19 stream ends.
 - Q3/Q4 water loop: 18 stream ends.
-- Aqueous process liquor (AQS-ASSAY-001 envelope): 16 stream ends.
+- Aqueous process liquor (AQS-ASSAY-001 envelope): 17 stream ends.
 - Wet acid H₂ + sweep air header: 15 stream ends.
 - Oxidizer, wet HF or PVDF unit: 13 stream ends.
 - Q1/Q2 thermal oil: 12 stream ends.
@@ -620,6 +620,8 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
 |---|---|---|---|---|---|
 | WAX_TO_GREASE_CA | PROD_C19_C28 | GREASE_CA | M2 | 12.1 hydrocarbon product, fuel or wax cut | Carbon steel, dry hydrocarbon service per the issued duties (OIL_FRAC and OIL_PYRO: "Carbon steel. Hydrocarbon. No aqueous chloride", CA 1.5 mm) |
+| IA-GREASE-AIR | ATMOS | GREASE_CA | M1 | 12.1 dry gas, h2/o2/n2/co2 | 316L with M6 dielectric breaks |
+| IA-GREASE-VENT | GREASE_CA | ATMOS | P3 | 12.1 process vent gas | PVDF (P3) |
 
 ### GREASE_LI
 
@@ -664,6 +666,7 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 | IA-GW-MAKEUP | GW_INTAKE | ROOF_TANK | P1 | 12.1 acid or brine, at or below 60 c | PVC-U Sch 80 P1 |
 | IA-ACID-H2O | GW_INTAKE | ACID_PLANT | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 | IA-NAOH-H2O | GW_INTAKE | NAOH_PLANT | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
+| IA-PCA-H2O | GW_INTAKE | P_CA | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 
 ### H2O_ELYZ
 
@@ -1205,7 +1208,9 @@ This unit has no wetted piped stream: every edge is a solids transfer or an elec
 
 ### P_CA
 
-This unit has no wetted piped stream: every edge is a solids transfer or an electrical connection. Its construction material is set by its fabrication route and bill of materials, which AQS-END-002 tracks, not by a wetted selection.
+| Stream | From | To | Class | Service family (AQS-STD-002) | Wetted material |
+|---|---|---|---|---|---|
+| IA-PCA-H2O | GW_INTAKE | P_CA | P1 | 12.1 aqueous process liquor (aqs-assay-001 envelope) | PVC-U Sch 80 P1 |
 
 ### Q1_A
 

@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "45fb0db28bae1d46277cac015f9297612986741486018ee417ccea3493f51e0f",
+  "graph_sha256": "d3f1fae09bb21ac3da3ff31c30bac1177c2d96917c87f50d14525b826f514b28",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
@@ -761,6 +761,15 @@
    "sector": "FAB"
   },
   {
+   "unit": "GREASE_CA",
+   "role": "\u2014",
+   "kw": 0.0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "OIL"
+  },
+  {
    "unit": "HYDRO_SET",
    "role": "storage",
    "kw": 0,
@@ -849,15 +858,24 @@
    "basis": "standby-zero on the design day: N+1 consolidation of ROLL (press-and-sinter P/M route, A-M-283); connected rating in params.design.",
    "class": "standby-zero",
    "sector": "FOUNDRY"
+  },
+  {
+   "unit": "GREASE_LI",
+   "role": "\u2014",
+   "kw": 0,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "OIL"
   }
  ],
  "summary": {
   "calculated": 80,
-  "pending": 1,
+  "pending": 3,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 94,
+  "rows": 96,
   "graph_sum_kW": 156.1,
   "calc_sum_kW": 156.1,
   "connected_load_kW": 156.1,
@@ -911,7 +929,8 @@
     "calculated": 1
    },
    "OIL": {
-    "calculated": 2
+    "calculated": 2,
+    "pending": 2
    },
    "POLYMERS": {
     "calculated": 7

@@ -103,6 +103,7 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | SOLV_PLANT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_DEV | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_ALIGN | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | GREASE_CA | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | LITHO_STUB | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | VAC_IND | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | RF_HEAT | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
@@ -112,6 +113,7 @@ Table 3.1. Feeder devices
 | SOL_ARK 480 V | FORGE | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | EXTRUDE | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 | SOL_ARK 480 V | DRAW | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
+| SOL_ARK 480 V | GREASE_LI | 15 | 6,062 | thermal-magnetic, instantaneous 5× | 75 A |
 
 The plant is collected in 4 sections, each with its main breaker (1000 A, 1000 A, 1000 A, 1000 A), fed by step-up transformers to 12.47 kV (AQS-ELEC-008). The section mains have electronic trip units with a short-time delay of 0.3 s and an interrupting rating of 65 kA, so they are selective over the feeders, which trip within 0.1 s. Transformer T-1 is protected as NFPA 70 450.3(B) requires; its 5 % impedance limits the fault current on the 208 V buses.
 

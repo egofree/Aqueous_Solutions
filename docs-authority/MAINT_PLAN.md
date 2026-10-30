@@ -145,7 +145,7 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | FILM_CAST | former | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | POLY_STOCK | store | external visual (1 y, A-M-189) |
 | LI_RECOVER | separator | external visual (1 y, A-M-189) |
-| GREASE_CA | kettle | external visual (1 y, A-M-189) |
+| GREASE_CA | kettle | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | GREASE_LI | kettle | external visual (1 y, A-M-189) |
 | P_CA | precip | external visual (1 y, A-M-189) |
 | SI_REDUCE | furnace | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
@@ -179,4 +179,4 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | NAOH_PLANT | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | SOLV_PLANT | reactor | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 
-169 units, 379 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+169 units, 382 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

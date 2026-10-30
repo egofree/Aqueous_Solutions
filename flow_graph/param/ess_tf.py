@@ -99,7 +99,7 @@ def tf(g, ps=None):
     for sid, tank, cut, use, comp in (('IA-C11-SHIP', 'PROD_C11_C18', 'CUT-2', 'IA-BLOW-IN', 'C11-C18'), ('IA-C19-SHIP', 'PROD_C19_C28', 'CUT-3', 'CUT-3-OUT', 'C19-C28')):
         if sid not in E:
             g['edges'].append(_edge(sid, tank, 'NORTH_DOCK', 'L', ['mass'], f'{comp} surplus shipped', 0, 'kg/d', 'CRYO', 'DOCK', {comp: 1.0})); E[sid] = g['edges'][-1]
-        extra = [k for k in ('C19_TO_WAX',) if tank == 'PROD_C19_C28' and k in E and E[k].get('presence') != 'retired']   # pattern wax make-up (A-M-424)
+        extra = [k for k in ('C19_TO_WAX', 'WAX_TO_GREASE_CA', 'WAX_TO_GREASE_LI') if tank == 'PROD_C19_C28' and k in E and E[k].get('presence') != 'retired']   # pattern wax make-up (A-M-424)
         ship = E[cut]['rate']['value'] - E[use]['rate']['value'] - sum(E[k]['rate']['value'] or 0 for k in extra)
         assert ship >= -1e-9, f'{tank}: the plant draws exceed the cut ({ship:.6f} kg/d)'
         put(sid, ship, f'{comp} make less the plant draw ({", ".join([use] + extra)}), shipped (Q-002 pattern)')

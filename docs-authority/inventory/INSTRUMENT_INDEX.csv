@@ -158,6 +158,8 @@ EW_8-PT-01,EW_8,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-1
 EW_8-TE-01,EW_8,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),EW_8TE-01,PLC-DIGESTER,band by service
 HX8-PT-01,HX8,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HX8PT-01,PLC-DIGESTER,no design pressure on the graph
 HX8-TE-01,HX8,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),HX8TE-01,PLC-DIGESTER,band by service
+P_CA-LSH-01,P_CA,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),P_CALSH-01,PLC-DIGESTER,alarm at 90 %
+P_CA-LT-01,P_CA,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),P_CALT-01,PLC-DIGESTER,A-M-182 liquid height
 P_CA-PT-01,P_CA,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),P_CAPT-01,PLC-DIGESTER,no design pressure on the graph
 P_CA-TE-01,P_CA,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),P_CATE-01,PLC-DIGESTER,band by service
 NAOH_PLANT-LSH-01,NAOH_PLANT,DIGESTER,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),NAOH_PLANTLSH-01,PLC-DIGESTER,alarm at 90 %
@@ -552,6 +554,8 @@ PROD_C5_C10-LSH-01,PROD_C5_C10,OIL,high-level switch,"IEC 60947-5, 316L",trip at
 PROD_C5_C10-LT-01,PROD_C5_C10,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),PROD_C5_C10LT-01,PLC-OIL,A-M-182 liquid height
 PROD_C5_C10-PT-01,PROD_C5_C10,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),PROD_C5_C10PT-01,PLC-OIL,no design pressure on the graph
 PROD_C5_C10-TE-01,PROD_C5_C10,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),PROD_C5_C10TE-01,PLC-OIL,band by service
+GREASE_CA-LSH-01,GREASE_CA,OIL,high-level switch,"IEC 60947-5, 316L",trip at 90 % of vessel height,24 V DC discrete (DI),GREASE_CALSH-01,PLC-OIL,alarm at 90 %
+GREASE_CA-LT-01,GREASE_CA,OIL,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),GREASE_CALT-01,PLC-OIL,A-M-182 liquid height
 GREASE_CA-PT-01,GREASE_CA,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GREASE_CAPT-01,PLC-OIL,no design pressure on the graph
 GREASE_CA-TE-01,GREASE_CA,OIL,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),GREASE_CATE-01,PLC-OIL,band by service
 GREASE_LI-PT-01,GREASE_LI,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),GREASE_LIPT-01,PLC-OIL,no design pressure on the graph
@@ -689,7 +693,6 @@ GW_INTAKE-FT-01,GW_INTAKE,WTR,flow transmitter,"electromagnetic, PFA liner, Hast
 GW_INTAKE-CT-01,GW_INTAKE,WTR,conductivity transmitter,"inductive conductivity, IEC 60746-1",0-2000 uS/cm,4-20 mA HART (AI),GW_INTAKECT-01,PLC-WTR,"RO product quality watch; well water moderately mineralised with high silica, fluoride and arsenic (USGS_DV_GW)"
 EVAP_ACID_VS-AE-01,EVAP_ACID_VS,DIGESTER,pH analyzer,"glass electrode pH, IEC 60746-2",0-14 pH,4-20 mA HART (AI),EVAP_ACID_VSAE-01,PLC-DIGESTER,scrub liquor: NaOH 2 M bleed IA-VS-NAOH 0.5 g/d
 EVAP_ACID_VS-AE-02,EVAP_ACID_VS,DIGESTER,ORP analyzer,"ORP electrode, IEC 60746-2",-1000 to +1000 mV,4-20 mA HART (AI),EVAP_ACID_VSAE-02,PLC-DIGESTER,acid-gas breakthrough watch: IA-VS-OFF 0.029 kg/d scrubbed vent
-P_CA-LT-01,P_CA,DIGESTER,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),P_CALT-01,PLC-DIGESTER,standby Ca precipitator: PCA_TO_GREASE (rate pending assay)
 HDR_H2-PT-01,HDR_H2,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HDR_H2PT-01,PLC-GAS,H2 pool header: IA-HDR-H2-02 1.98 kg/d max feed; no design pressure on the graph
 HDR_O2-PT-01,HDR_O2,GAS,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HDR_O2PT-01,PLC-GAS,O2 pool header: S83 33.2 kg/d product + returns; no design pressure on the graph
 HDR_CO2-PT-01,HDR_CO2,HAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HDR_CO2PT-01,PLC-HAB,CO2 header: S89 0.88 + S90 4.02 kg/d; no design pressure on the graph
@@ -697,7 +700,6 @@ HDR_N2-PT-01,HDR_N2,HAB,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10
 HDR_UPW-PT-01,HDR_UPW,WTR,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),HDR_UPWPT-01,PLC-WTR,UPW header; no design pressure on the graph
 HDR_UPW-FT-01,HDR_UPW,WTR,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h,4-20 mA HART (AI),HDR_UPWFT-01,PLC-WTR,UPW supply: S01 67.30 kg/d (2.80 L/h)
 NCG_HEADER-PT-01,NCG_HEADER,OIL,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),NCG_HEADERPT-01,PLC-OIL,NCG header: IA-OIL-03 5.0 kg/d to the afterburner; no design pressure on the graph
-GREASE_CA-LT-01,GREASE_CA,OIL,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of kettle height,4-20 mA HART (AI),GREASE_CALT-01,PLC-OIL,kettle holdup (class kettle)
 GREASE_LI-LT-01,GREASE_LI,OIL,level transmitter,"radar 80 GHz, IEC 62828, PTFE lens",0-100 % of kettle height,4-20 mA HART (AI),GREASE_LILT-01,PLC-OIL,kettle holdup (class kettle)
 PROD_MEOH-FT-01,PROD_MEOH,CRYO,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),PROD_MEOHFT-01,PLC-CRYO,methanol product: IA-MEOH-PROD 28.15 kg/d (1.47 L/h at 792 kg/m3)
 RELIEF_CRYO-PSH-01,RELIEF_CRYO,CRYO,"pressure switch, high (rupture indication)","diaphragm pressure switch, IEC 60947-5-1",trips on header pressure rise (disc burst / PSV lift),24 V DC discrete (DI),RELIEF_CRYOPSH-01,PLC-CRYO,vent stack: S56 + S86 cryo contingency vents

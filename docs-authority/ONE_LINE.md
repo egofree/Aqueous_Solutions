@@ -118,6 +118,8 @@ flowchart LR
   BUS -->|SF-ACID_PLANT| ACID_PLANT["ACID_PLANT 0.21 kW"]
   BUS -->|SF-NAOH_PLANT| NAOH_PLANT["NAOH_PLANT 0.50 kW"]
   BUS -->|SF-SOLV_PLANT| SOLV_PLANT["SOLV_PLANT 0.01 kW"]
+  BUS -->|SF-GREASE_CA| GREASE_CA["GREASE_CA 0.00 kW"]
+  BUS -->|SF-GREASE_LI| GREASE_LI["GREASE_LI 0.00 kW"]
   CB1["CB-1 480 V, 11 inverters, 1000 A"] --> TX1["750 kVA 480 V / 12.47 kV"] --> MV
   CB2["CB-2 480 V, 11 inverters, 1000 A"] --> TX2["750 kVA 480 V / 12.47 kV"] --> MV
   CB3["CB-3 480 V, 10 inverters, 1000 A"] --> TX3["750 kVA 480 V / 12.47 kV"] --> MV
@@ -204,6 +206,7 @@ Table 1. Loads on the main bus, largest first
 | SOL_ARK 480 V | SOLV_PLANT | 0.01 | 0.0 | 15 | graph SF-SOLV_PLANT |
 | SOL_ARK 480 V | LITHO_DEV | 0.01 | 0.0 | 15 | graph SF-LITHO_DEV |
 | SOL_ARK 480 V | LITHO_ALIGN | 0.00 | 0.0 | 15 | graph SF-LITHO_ALIGN |
+| SOL_ARK 480 V | GREASE_CA | 0.00 | 0.0 | 15 | graph SF-GREASE_CA |
 | SOL_ARK 480 V | LITHO_STUB | 0.00 | 0.0 | 15 | graph SF-LITHO_STUB |
 | SOL_ARK 480 V | VAC_IND | 0.00 | 0.0 | 15 | graph SF-VAC_IND |
 | SOL_ARK 480 V | RF_HEAT | 0.00 | 0.0 | 15 | graph SF-RF_HEAT |
@@ -213,6 +216,7 @@ Table 1. Loads on the main bus, largest first
 | SOL_ARK 480 V | FORGE | 0.00 | 0.0 | 15 | graph SF-FORGE |
 | SOL_ARK 480 V | EXTRUDE | 0.00 | 0.0 | 15 | graph SF-EXTRUDE |
 | SOL_ARK 480 V | DRAW | 0.00 | 0.0 | 15 | graph SF-DRAW |
+| SOL_ARK 480 V | GREASE_LI | 0.00 | 0.0 | 15 | graph SF-GREASE_LI |
 
 ## Totals
 

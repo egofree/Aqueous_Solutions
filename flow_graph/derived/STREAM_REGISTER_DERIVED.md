@@ -90,7 +90,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | S13 | GROW_BED | VCD_TRAIN | L | mass | present | condensate | 3.799494 kg/d | absent_from_candidate_mvs |
 | S14 | GROW_BED | FOOD_STORE | S | mass | present | food | 4.2 kg/d | — |
 | S15 | GROW_BED | HABITATION | G | mass | present | photosynthetic O2 | 0.0 kg/d | — |
-| S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 11.635142 kg/d | — |
+| S16 | MFG_SHOP | LEACH_CSTR_1 | S | mass | present | scrap | 11.637491 kg/d | — |
 | S17 | SOL_ARK_60K | RECTIFIER | E | elec | present | DC/480V | 12.0 kW | — |
 | S18 | AFTERBURNER | CRYO_CO2 | G | mass | present | captured CO2/air | 0.0 kg/d | — |
 | S19 | BAGHOUSE | LEACH_CSTR_1 | S | mass | present | dust | 0.0 kg/d | absent_from_candidate_mvs |
@@ -236,12 +236,12 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | CRU_TO_VDF | CRU | VDF_SYN | G | mass | present | chlorine | 0.332195 kg/d | — |
 | CRU_TO_TFE | CRU | TFE_SYN | G | mass | present | chlorine | 0.283567 kg/d | — |
 | POLISH_TO_LI | POLISH_BANK | LI_RECOVER | L | mass | present | Li-bearing polish liquor | — | — |
-| WAX_TO_GREASE_CA | PROD_C19_C28 | GREASE_CA | L | mass | present | wax cut | — | — |
-| WAX_TO_GREASE_LI | PROD_C19_C28 | GREASE_LI | L | mass | present | wax cut | — | — |
-| PCA_TO_GREASE | P_CA | GREASE_CA | S | mass | present | calcium hydroxide | — | — |
-| LI_TO_GREASE | LI_RECOVER | GREASE_LI | S | mass | present | lithium hydroxide or carbonate | — | — |
-| GREASE_CA_TO_MFG | GREASE_CA | MFG_SHOP | S | mass | present | Ca grease | — | — |
-| GREASE_LI_TO_MFG | GREASE_LI | MFG_SHOP | S | mass | present | Li grease | — | — |
+| WAX_TO_GREASE_CA | PROD_C19_C28 | GREASE_CA | L | mass | present | wax cut | 0.002445 kg/d | — |
+| WAX_TO_GREASE_LI | PROD_C19_C28 | GREASE_LI | L | mass | present | wax cut | 0.0 kg/d | — |
+| PCA_TO_GREASE | P_CA | GREASE_CA | S | mass | present | calcium hydroxide | 3.4e-05 kg/d | — |
+| LI_TO_GREASE | LI_RECOVER | GREASE_LI | S | mass | present | lithium hydroxide or carbonate | 0.0 kg/d | — |
+| GREASE_CA_TO_MFG | GREASE_CA | MFG_SHOP | S | mass | present | Ca grease | 0.002349 kg/d | — |
+| GREASE_LI_TO_MFG | GREASE_LI | MFG_SHOP | S | mass | present | Li grease | 0.0 kg/d | — |
 | CHAR_TO_SI | OIL_PYRO | SI_REDUCE | S | mass | present | pyrolysis char reductant | 0.227778 kg/d | — |
 | CO2_TO_FARM | HDR_CO2 | GROW_BED | G | mass | present | CO2 enrichment | 0.0 kg/d | — |
 | FARM_O2_TO_HAB | GROW_BED | HABITATION | G | mass | present | farm O2 | 0.0 kg/d | — |
@@ -264,7 +264,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GREY-01 | GREY_TREAT | LEACH_CSTR_1 | S/L | mass | present | grey sludge | 244.641602 kg/d | — |
 | IA-CRU-01 | CRU | LEACH_CSTR_1 | L | mass | present | sodium chlorate liquor | 27.509975 kg/d | — |
 | HL-Q4-REJ | Q4_BUS | DRY_COOLER | thermal | thermal | present | Q4 surplus heat | 0.0 kW | — |
-| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 351.8478 kW | — |
+| IA-PV-01 | PV_ARRAY | SOL_ARK_60K | electric | elec | present | PV daily average | 351.8479 kW | — |
 | IA-ZNBR-BD | ZNBR2 | GREY_TREAT | L | mass | present | electrolyte bleed | 8.486841 kg/d | — |
 | IA-NUT-01 | NUTRIENT_DOSE | VCD_TRAIN | L | mass | present | digest surplus | 13.930007 kg/d | — |
 | IA-UPW-FAB | BMED_UPW_POLISH | FAB_UPW_TANK | L | mass | present | fab UPW | 60.000181 kg/d | — |
@@ -293,7 +293,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-FC-AIR | HDR_O2 | MEOH_FC | G | mass | present | cell air | 9.407064 kg/d | — |
 | IA-LEACH-BD | LEACH_CSTR_1 | NUTRIENT_DOSE | L | mass | present | bleed salts to nutrient | 109.63 kg/d | — |
 | IA-VCD-BD | VCD_TRAIN | LEACH_CSTR_1 | L | mass | present | still bottoms | 6.709424 kg/d | — |
-| IA-CHAR | OIL_PYRO | MFG_SHOP | S | mass | present | char reductant | 4.835643 kg/d | — |
+| IA-CHAR | OIL_PYRO | MFG_SHOP | S | mass | present | char reductant | 4.837992 kg/d | — |
 | IA-FC-EXH | MEOH_FC | NOX_SCRUB | G | mass | present | cell exhaust | 0 kg/d | — |
 | IA-ZNBR-HEAT | ZNBR2 | Q4_BUS | thermal | thermal | present | round-trip loss | 1.67 kW | — |
 | IA-Q4A-TRIM | RECTIFIER | Q4_A | electric | thermal | present | store trim | 1.61 kW | — |
@@ -406,7 +406,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-GEN-O2 | HDR_O2 | BACKUP_GEN | G | mass | present | combustion O2, 10 % excess | 0.172239 kg/d | — |
 | IA-AB-O2 | HDR_O2 | AFTERBURNER | G | mass | present | combustion O2, 10 % excess | 0.528278 kg/d | — |
 | IA-HCO2-MEOH | HDR_CO2 | MEOH_SYNTH | G | mass | present | CO2 not taken by the bed | 3.138638 kg/d | — |
-| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 56.497248 kg/d | — |
+| IA-H2O-MU | NORTH_DOCK | LEACH_CSTR_1 | L | mass | present | water make-up for H and O leaving as product | 56.494899 kg/d | — |
 | IA-EW1-CL2 | EW_1 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.32517 kg/d | — |
 | IA-EW2-CL2 | EW_2 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 88.354656 kg/d | — |
 | IA-EW3-CL2 | EW_3 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 33.164878 kg/d | — |
@@ -418,7 +418,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-EW9-CL2 | EW_9 | LEACH_CSTR_1 | G | mass | present | anode Cl2 (+ O2 side) to leach oxidation | 111.134409 kg/d | — |
 | IA-C5-SHIP | PROD_C5_C10 | NORTH_DOCK | L | mass | present | C5-C10 product shipped | 7.14062 kg/d | — |
 | IA-C11-SHIP | PROD_C11_C18 | NORTH_DOCK | L | mass | present | C11-C18 surplus shipped | 1.511662 kg/d | — |
-| IA-C19-SHIP | PROD_C19_C28 | NORTH_DOCK | L | mass | present | C19-C28 surplus shipped | 2.018146 kg/d | — |
+| IA-C19-SHIP | PROD_C19_C28 | NORTH_DOCK | L | mass | present | C19-C28 surplus shipped | 2.015701 kg/d | — |
 | IA-ATOM-REMELT | GAS_ATOMIZER | MET_MELT | S | mass | present | off-spec powder to remelt | 0.355595 kg/d | — |
 | SF-CRYO_AHU | SOL_ARK_60K | CRYO_AHU | E | elec | present | AHU coil chiller | 0.6472 kW | — |
 | SF-MEOH_FERM | SOL_ARK_60K | MEOH_FERM | E | elec | present | 480 V AC | 0.0207 kW | — |
@@ -600,7 +600,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-ACID-O2 | ATMOS | ACID_PLANT | G | mass | present | oxygen of the process air (sulfur burning and SO2 oxidation) | 0.077462 kg/d | — |
 | IA-ACID-H2O | GW_INTAKE | ACID_PLANT | L | mass | present | well water for SO3 absorption and dilution to 98 wt% | 0.080761 kg/d | — |
 | IA-ACID-CO2 | ACID_PLANT | ATMOS | G | mass | present | carbon dioxide and water vapour of the cake kiln | 0.086872 kg/d | — |
-| IA-LIME-SHIP | ACID_PLANT | NORTH_DOCK | S | mass | present | cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up | 0.281728 kg/d | — |
+| IA-LIME-SHIP | ACID_PLANT | NORTH_DOCK | S | mass | present | cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up | 0.28169 kg/d | — |
 | IA-H2SO4-ACID | ACID_PLANT | HF_GEN | L | mass | present | 98 wt% sulfuric acid to the HF kiln | 0.403768 kg/d | — |
 | SF-ACID_PLANT | SOL_ARK_60K | ACID_PLANT | E | elec | present | 480 V AC | 0.2061 kW | — |
 | IA-TRONA-MU | NORTH_DOCK | NAOH_PLANT | S | mass | retired | trona ore (raw ore) for soda ash | 0.0 kg/d | — |
@@ -630,3 +630,13 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | IA-SOLV-FW | HABITATION | SOLV_PLANT | S | mass | retired | galley food waste for the solvent fermentation | 0.0 kg/d | — |
 | IA-SOLV-STILLAGE | SOLV_PLANT | BLACK_DIGEST | L | mass | retired | fermentation stillage to the digester | 0.0 kg/d | — |
 | SF-SOLV_PLANT | SOL_ARK_60K | SOLV_PLANT | E | elec | present | 480 V AC | 0.01034 kW | — |
+| IA-GREASE-SPENT | MFG_SHOP | OIL_PYRO | S | mass | present | purged grease to the pyrolysis feed | 0.002349 kg/d | — |
+| IA-GREASE-AIR | ATMOS | GREASE_CA | G | mass | present | oxygen of the process air for the wax oxidation | 0.000132 kg/d | — |
+| IA-GREASE-VENT | GREASE_CA | ATMOS | G | mass | present | water, carbon dioxide and light acids of the wax oxidation and saponification | 0.000262 kg/d | — |
+| IA-GREASE-AIR-LI | ATMOS | GREASE_LI | G | mass | retired | oxygen of the process air for the wax oxidation | 0.0 kg/d | — |
+| IA-GREASE-VENT-LI | GREASE_LI | ATMOS | G | mass | retired | water, carbon dioxide and light acids of the wax oxidation and saponification | 0.0 kg/d | — |
+| IA-LIME-TO-PCA | ACID_PLANT | P_CA | S | mass | present | cake-kiln lime residue to the slaker | 3.8e-05 kg/d | — |
+| IA-PCA-H2O | GW_INTAKE | P_CA | L | mass | present | well water to slake the lime | 8e-06 kg/d | — |
+| IA-PCA-REJECT | P_CA | NORTH_DOCK | S | mass | present | slaker grit (anhydrite, fluorspar and inerts of the kiln residue) | 1.2e-05 kg/d | — |
+| SF-GREASE_CA | SOL_ARK_60K | GREASE_CA | E | elec | present | 480 V AC | 7e-05 kW | — |
+| SF-GREASE_LI | SOL_ARK_60K | GREASE_LI | E | elec | retired | 480 V AC | 0.0 kW | — |

@@ -112,6 +112,15 @@
      "carries": "returned scrap"
     },
     {
+     "stream_id": "IA-LIME-TO-PCA",
+     "from": "ACID_PLANT",
+     "to": "P_CA",
+     "other_sector": "POLYMERS",
+     "rate": 3.8e-05,
+     "unit": "kg/d",
+     "carries": "cake-kiln lime residue to the slaker"
+    },
+    {
      "stream_id": "IA-NAOH-H2O",
      "from": "GW_INTAKE",
      "to": "NAOH_PLANT",
@@ -128,6 +137,15 @@
      "rate": 82.317318,
      "unit": "kg/d",
      "carries": "nutrient surplus"
+    },
+    {
+     "stream_id": "IA-PCA-H2O",
+     "from": "GW_INTAKE",
+     "to": "P_CA",
+     "other_sector": "WTR",
+     "rate": 8e-06,
+     "unit": "kg/d",
+     "carries": "well water to slake the lime"
     },
     {
      "stream_id": "IA-SI-FUME",
@@ -215,7 +233,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "MFG",
-     "rate": 11.635142,
+     "rate": 11.637491,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -726,21 +744,12 @@
      "carries": "electrolyte water make-up"
     },
     {
-     "stream_id": "LI_TO_GREASE",
-     "from": "LI_RECOVER",
-     "to": "GREASE_LI",
-     "other_sector": "OIL",
-     "rate": null,
-     "unit": null,
-     "carries": "lithium hydroxide or carbonate"
-    },
-    {
      "stream_id": "PCA_TO_GREASE",
      "from": "P_CA",
      "to": "GREASE_CA",
      "other_sector": "OIL",
-     "rate": null,
-     "unit": null,
+     "rate": 3.4e-05,
+     "unit": "kg/d",
      "carries": "calcium hydroxide"
     },
     {
@@ -876,7 +885,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DOCK",
-     "rate": 56.497248,
+     "rate": 56.494899,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },
@@ -915,6 +924,15 @@
      "rate": 0.033789,
      "unit": "kg/d",
      "carries": "ore insolubles and the lime-mud purge"
+    },
+    {
+     "stream_id": "IA-PCA-REJECT",
+     "from": "P_CA",
+     "to": "NORTH_DOCK",
+     "other_sector": "DOCK",
+     "rate": 1.2e-05,
+     "unit": "kg/d",
+     "carries": "slaker grit (anhydrite, fluorspar and inerts of the kiln residue)"
     },
     {
      "stream_id": "IA-TRIM-HX5",
@@ -1126,6 +1144,15 @@
      "carries": "trona ore (raw ore) for soda ash"
     },
     {
+     "stream_id": "LI_TO_GREASE",
+     "from": "LI_RECOVER",
+     "to": "GREASE_LI",
+     "other_sector": "OIL",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "lithium hydroxide or carbonate"
+    },
+    {
      "stream_id": "MG_POT_CL2",
      "from": "MG_POT",
      "to": "CRU",
@@ -1247,6 +1274,24 @@
      "carries": "digester biogas, flared in the afterburner"
     },
     {
+     "stream_id": "IA-GREASE-AIR",
+     "from": "ATMOS",
+     "to": "GREASE_CA",
+     "other_sector": "WTR",
+     "rate": 0.000132,
+     "unit": "kg/d",
+     "carries": "oxygen of the process air for the wax oxidation"
+    },
+    {
+     "stream_id": "IA-GREASE-SPENT",
+     "from": "MFG_SHOP",
+     "to": "OIL_PYRO",
+     "other_sector": "MFG",
+     "rate": 0.002349,
+     "unit": "kg/d",
+     "carries": "purged grease to the pyrolysis feed"
+    },
+    {
      "stream_id": "IA-LEACH-HOP",
      "from": "LEACH_CSTR_1",
      "to": "HOPPER",
@@ -1292,21 +1337,12 @@
      "carries": "worn goods"
     },
     {
-     "stream_id": "LI_TO_GREASE",
-     "from": "LI_RECOVER",
-     "to": "GREASE_LI",
-     "other_sector": "DIGESTER",
-     "rate": null,
-     "unit": null,
-     "carries": "lithium hydroxide or carbonate"
-    },
-    {
      "stream_id": "PCA_TO_GREASE",
      "from": "P_CA",
      "to": "GREASE_CA",
      "other_sector": "DIGESTER",
-     "rate": null,
-     "unit": null,
+     "rate": 3.4e-05,
+     "unit": "kg/d",
      "carries": "calcium hydroxide"
     },
     {
@@ -1388,18 +1424,9 @@
      "from": "GREASE_CA",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": null,
-     "unit": null,
+     "rate": 0.002349,
+     "unit": "kg/d",
      "carries": "Ca grease"
-    },
-    {
-     "stream_id": "GREASE_LI_TO_MFG",
-     "from": "GREASE_LI",
-     "to": "MFG_SHOP",
-     "other_sector": "MFG",
-     "rate": null,
-     "unit": null,
-     "carries": "Li grease"
     },
     {
      "stream_id": "HL-AFTERBURNER-Q1-A",
@@ -1478,7 +1505,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "MFG",
-     "rate": 4.835643,
+     "rate": 4.837992,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -1490,6 +1517,15 @@
      "rate": 102.680001,
      "unit": "kg/d",
      "carries": "plant feedstock, any class"
+    },
+    {
+     "stream_id": "IA-GREASE-VENT",
+     "from": "GREASE_CA",
+     "to": "ATMOS",
+     "other_sector": "WTR",
+     "rate": 0.000262,
+     "unit": "kg/d",
+     "carries": "water, carbon dioxide and light acids of the wax oxidation and saponification"
     },
     {
      "stream_id": "IA-HOP-01",
@@ -1516,7 +1552,7 @@
      "from": "PROD_C19_C28",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 2.018146,
+     "rate": 2.015701,
      "unit": "kg/d",
      "carries": "C19-C28 surplus shipped"
     },
@@ -1528,6 +1564,15 @@
      "rate": 7.14062,
      "unit": "kg/d",
      "carries": "C5-C10 product shipped"
+    },
+    {
+     "stream_id": "SF-GREASE_CA",
+     "from": "SOL_ARK_60K",
+     "to": "GREASE_CA",
+     "other_sector": "ELEC",
+     "rate": 7e-05,
+     "unit": "kW",
+     "carries": "480 V AC"
     },
     {
      "stream_id": "SF-OIL_PYRO",
@@ -1548,6 +1593,42 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "C5-C10 fuel from the tank"
+    },
+    {
+     "stream_id": "GREASE_LI_TO_MFG",
+     "from": "GREASE_LI",
+     "to": "MFG_SHOP",
+     "other_sector": "MFG",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "Li grease"
+    },
+    {
+     "stream_id": "IA-GREASE-AIR-LI",
+     "from": "ATMOS",
+     "to": "GREASE_LI",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "oxygen of the process air for the wax oxidation"
+    },
+    {
+     "stream_id": "IA-GREASE-VENT-LI",
+     "from": "GREASE_LI",
+     "to": "ATMOS",
+     "other_sector": "WTR",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "water, carbon dioxide and light acids of the wax oxidation and saponification"
+    },
+    {
+     "stream_id": "LI_TO_GREASE",
+     "from": "LI_RECOVER",
+     "to": "GREASE_LI",
+     "other_sector": "DIGESTER",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "lithium hydroxide or carbonate"
     },
     {
      "stream_id": "OIL_TO_OLEFIN",
@@ -1575,6 +1656,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "solvent and photoresist"
+    },
+    {
+     "stream_id": "SF-GREASE_LI",
+     "from": "SOL_ARK_60K",
+     "to": "GREASE_LI",
+     "other_sector": "ELEC",
+     "rate": 0.0,
+     "unit": "kW",
+     "carries": "480 V AC"
     },
     {
      "stream_id": "WAX_TO_OIL",
@@ -1926,6 +2016,15 @@
      "carries": "aqueous HF to the fab reagent fork"
     },
     {
+     "stream_id": "IA-LIME-TO-PCA",
+     "from": "ACID_PLANT",
+     "to": "P_CA",
+     "other_sector": "DIGESTER",
+     "rate": 3.8e-05,
+     "unit": "kg/d",
+     "carries": "cake-kiln lime residue to the slaker"
+    },
+    {
      "stream_id": "POLYF_RECLAIM",
      "from": "POLY_F",
      "to": "F_RECOVER",
@@ -1986,7 +2085,7 @@
      "from": "ACID_PLANT",
      "to": "NORTH_DOCK",
      "other_sector": "DOCK",
-     "rate": 0.281728,
+     "rate": 0.28169,
      "unit": "kg/d",
      "carries": "cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up"
     },
@@ -3038,18 +3137,9 @@
      "from": "GREASE_CA",
      "to": "MFG_SHOP",
      "other_sector": "OIL",
-     "rate": null,
-     "unit": null,
+     "rate": 0.002349,
+     "unit": "kg/d",
      "carries": "Ca grease"
-    },
-    {
-     "stream_id": "GREASE_LI_TO_MFG",
-     "from": "GREASE_LI",
-     "to": "MFG_SHOP",
-     "other_sector": "OIL",
-     "rate": null,
-     "unit": null,
-     "carries": "Li grease"
     },
     {
      "stream_id": "IA-BLOW-IN",
@@ -3065,7 +3155,7 @@
      "from": "OIL_PYRO",
      "to": "MFG_SHOP",
      "other_sector": "OIL",
-     "rate": 4.835643,
+     "rate": 4.837992,
      "unit": "kg/d",
      "carries": "char reductant"
     },
@@ -3243,6 +3333,15 @@
      "carries": "coated anode"
     },
     {
+     "stream_id": "IA-GREASE-SPENT",
+     "from": "MFG_SHOP",
+     "to": "OIL_PYRO",
+     "other_sector": "OIL",
+     "rate": 0.002349,
+     "unit": "kg/d",
+     "carries": "purged grease to the pyrolysis feed"
+    },
+    {
      "stream_id": "IA-MFG-OUT",
      "from": "MFG_SHOP",
      "to": "HABITATION",
@@ -3274,7 +3373,7 @@
      "from": "MFG_SHOP",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 11.635142,
+     "rate": 11.637491,
      "unit": "kg/d",
      "carries": "scrap"
     },
@@ -3407,6 +3506,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "combustion off-gas when alternate used"
+    },
+    {
+     "stream_id": "GREASE_LI_TO_MFG",
+     "from": "GREASE_LI",
+     "to": "MFG_SHOP",
+     "other_sector": "OIL",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "Li grease"
     },
     {
      "stream_id": "IND_TO_ATOM",
@@ -5145,6 +5253,15 @@
      "carries": "galley food waste to the blackwater barrier train"
     },
     {
+     "stream_id": "IA-GREASE-VENT",
+     "from": "GREASE_CA",
+     "to": "ATMOS",
+     "other_sector": "OIL",
+     "rate": 0.000262,
+     "unit": "kg/d",
+     "carries": "water, carbon dioxide and light acids of the wax oxidation and saponification"
+    },
+    {
      "stream_id": "IA-HVAC-COND",
      "from": "CRYO_AHU",
      "to": "ROOF_TANK",
@@ -5327,6 +5444,15 @@
      "carries": "flue quench water"
     },
     {
+     "stream_id": "IA-GREASE-AIR",
+     "from": "ATMOS",
+     "to": "GREASE_CA",
+     "other_sector": "OIL",
+     "rate": 0.000132,
+     "unit": "kg/d",
+     "carries": "oxygen of the process air for the wax oxidation"
+    },
+    {
      "stream_id": "IA-GREY-01",
      "from": "GREY_TREAT",
      "to": "LEACH_CSTR_1",
@@ -5352,6 +5478,15 @@
      "rate": 207.279999,
      "unit": "kg/d",
      "carries": "scrubber water"
+    },
+    {
+     "stream_id": "IA-PCA-H2O",
+     "from": "GW_INTAKE",
+     "to": "P_CA",
+     "other_sector": "DIGESTER",
+     "rate": 8e-06,
+     "unit": "kg/d",
+     "carries": "well water to slake the lime"
     },
     {
      "stream_id": "IA-PEROX-H2O",
@@ -5518,6 +5653,24 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "evaporative spray make-up"
+    },
+    {
+     "stream_id": "IA-GREASE-AIR-LI",
+     "from": "ATMOS",
+     "to": "GREASE_LI",
+     "other_sector": "OIL",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "oxygen of the process air for the wax oxidation"
+    },
+    {
+     "stream_id": "IA-GREASE-VENT-LI",
+     "from": "GREASE_LI",
+     "to": "ATMOS",
+     "other_sector": "OIL",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "water, carbon dioxide and light acids of the wax oxidation and saponification"
     },
     {
      "stream_id": "IA-H2P-H2O",
@@ -6048,6 +6201,15 @@
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
     {
+     "stream_id": "SF-GREASE_CA",
+     "from": "SOL_ARK_60K",
+     "to": "GREASE_CA",
+     "other_sector": "OIL",
+     "rate": 7e-05,
+     "unit": "kW",
+     "carries": "480 V AC"
+    },
+    {
      "stream_id": "SF-H2O_ELYZ",
      "from": "SOL_ARK_60K",
      "to": "H2O_ELYZ",
@@ -6455,6 +6617,15 @@
      "rate": 0.0,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
+    },
+    {
+     "stream_id": "SF-GREASE_LI",
+     "from": "SOL_ARK_60K",
+     "to": "GREASE_LI",
+     "other_sector": "OIL",
+     "rate": 0.0,
+     "unit": "kW",
+     "carries": "480 V AC"
     },
     {
      "stream_id": "SF-LITHO_STUB",
@@ -7158,7 +7329,7 @@
      "from": "PROD_C19_C28",
      "to": "NORTH_DOCK",
      "other_sector": "OIL",
-     "rate": 2.018146,
+     "rate": 2.015701,
      "unit": "kg/d",
      "carries": "C19-C28 surplus shipped"
     },
@@ -7221,7 +7392,7 @@
      "from": "ACID_PLANT",
      "to": "NORTH_DOCK",
      "other_sector": "POLYMERS",
-     "rate": 0.281728,
+     "rate": 0.28169,
      "unit": "kg/d",
      "carries": "cake-kiln residue (lime, unreacted anhydrite and fluorspar) beyond the NAOH_PLANT lime make-up"
     },
@@ -7296,6 +7467,15 @@
      "rate": 22.013452,
      "unit": "kg/d",
      "carries": "O2 cylinders shipped at the dock"
+    },
+    {
+     "stream_id": "IA-PCA-REJECT",
+     "from": "P_CA",
+     "to": "NORTH_DOCK",
+     "other_sector": "DIGESTER",
+     "rate": 1.2e-05,
+     "unit": "kg/d",
+     "carries": "slaker grit (anhydrite, fluorspar and inerts of the kiln residue)"
     },
     {
      "stream_id": "IA-Q1A-LOSS",
@@ -7394,7 +7574,7 @@
      "from": "NORTH_DOCK",
      "to": "LEACH_CSTR_1",
      "other_sector": "DIGESTER",
-     "rate": 56.497248,
+     "rate": 56.494899,
      "unit": "kg/d",
      "carries": "water make-up for H and O leaving as product"
     },

@@ -1,7 +1,7 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,105,1680 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,792,one per instrument
-CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 172 SIFs, redundant pair"
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,106,1690 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,796,one per instrument
+CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump S70 to FLUE_KO (assumed size)
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump S70 to FLUE_KO
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump S70 to FLUE_KO: run and fault (assumed)
@@ -709,6 +709,8 @@ DIGESTER,hx,HX8,support,U-bolt with guide,DN25,"316 U-bolt, MSS SP-58 Type 24",7
 DIGESTER,hx,HX8,support,U-bolt with guide,DN25,"316 U-bolt, MSS SP-58 Type 24",16,HL-HX8-Q4-B: AQS-PIP-005 span count
 DIGESTER,hx,HX8,valve,isolation valve,DN25,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-HX8-Q4-A: one at each end nozzle (assumed)
 DIGESTER,hx,HX8,valve,isolation valve,DN25,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,HL-HX8-Q4-B: one at each end nozzle (assumed)
+DIGESTER,precip,P_CA,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+DIGESTER,precip,P_CA,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 DIGESTER,precip,P_CA,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 DIGESTER,precip,P_CA,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 DIGESTER,reactor,NAOH_PLANT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-NAOH-LIQ to EVAP_BASE (assumed size)
@@ -1816,8 +1818,8 @@ MFG,-,BLACK_PASTEUR,fabricated part,fabricated part set,5 BOM lines,models/mfg/B
 MFG,-,BLACK_PASTEUR,fastener,M10 anchor,M10 anchor,ISO 3506 A4-70,4,models/mfg/BLACK_PASTEUR/fasteners.csv
 MFG,-,BLACK_PASTEUR,fastener,M8 x 30 lid bolt,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/BLACK_PASTEUR/fasteners.csv
 MFG,-,BLACK_PASTEUR,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-169 one per bank half
 MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-171 one per bank half
+MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-173 one per bank half
 MFG,-,DIGESTER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,"Biogas recirculation blower, diaphragm, about 1 L/min (assumed size)"
 MFG,-,DIGESTER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,"Biogas recirculation blower, diaphragm, about 1 L/min"
 MFG,-,DIGESTER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Biogas recirculation blower, diaphragm, about 1 L/min: run and fault (assumed)"
@@ -2167,10 +2169,15 @@ OIL,cut_tank,PROD_C11_C18,instrument,temperature element,Pt100 class A,"IEC 6075
 OIL,cut_tank,PROD_C11_C18,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",7,IA-C11-SHIP: AQS-PIP-005 span count
 OIL,cut_tank,PROD_C11_C18,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-C11-SHIP: one at each end nozzle (assumed)
 OIL,cut_tank,PROD_C19_C28,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump CUT-3-OUT to MFG_SHOP (assumed size)
+OIL,cut_tank,PROD_C19_C28,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump WAX_TO_GREASE_CA to GREASE_CA (assumed size)
 OIL,cut_tank,PROD_C19_C28,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump CUT-3-OUT to MFG_SHOP
+OIL,cut_tank,PROD_C19_C28,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump WAX_TO_GREASE_CA to GREASE_CA
 OIL,cut_tank,PROD_C19_C28,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve CUT-3-OUT: run and fault (assumed)
+OIL,cut_tank,PROD_C19_C28,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,on/off valve WAX_TO_GREASE_CA: run and fault (assumed)
 OIL,cut_tank,PROD_C19_C28,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump CUT-3-OUT to MFG_SHOP: run and fault (assumed)
+OIL,cut_tank,PROD_C19_C28,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump WAX_TO_GREASE_CA to GREASE_CA: run and fault (assumed)
 OIL,cut_tank,PROD_C19_C28,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve CUT-3-OUT
+OIL,cut_tank,PROD_C19_C28,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,on/off valve WAX_TO_GREASE_CA
 OIL,cut_tank,PROD_C19_C28,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,44,CUT-3-OUT: 2 per support (assumed)
 OIL,cut_tank,PROD_C19_C28,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,14,IA-C19-SHIP: 2 per support (assumed)
 OIL,cut_tank,PROD_C19_C28,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CUT-3-OUT: pumped line (assumed)
@@ -2221,6 +2228,8 @@ OIL,cut_tank,PROD_C5_C10,valve,isolation valve,DN15,"CS A216 WCB ball valve, ASM
 OIL,header,NCG_HEADER,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,48,NCG_TO_AB: 2 per support (assumed)
 OIL,header,NCG_HEADER,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",24,NCG_TO_AB: AQS-PIP-005 span count
 OIL,header,NCG_HEADER,valve,isolation valve,DN15,"PVDF ball valve, ISO 16135, PTFE seats",2,NCG_TO_AB: one at each end nozzle (assumed)
+OIL,kettle,GREASE_CA,instrument,high-level switch,vibrating fork,"IEC 60947-5, 316L",1,duty item 5: high level trips the inlet
+OIL,kettle,GREASE_CA,instrument,level transmitter,radar 80 GHz,"IEC 62828, PTFE lens",1,duty item 5: liquid holdup
 OIL,kettle,GREASE_CA,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 OIL,kettle,GREASE_CA,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 OIL,kettle,GREASE_LI,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
@@ -2527,10 +2536,13 @@ WTR,evaporator,VCD_TRAIN,valve,isolation valve,DN15,"CPVC true-union ball valve,
 WTR,evaporator,VCD_TRAIN,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-VCD-BD: one at each end nozzle (assumed)
 WTR,intake,GW_INTAKE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-ACID-H2O to ACID_PLANT (assumed size)
 WTR,intake,GW_INTAKE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-NAOH-H2O to NAOH_PLANT (assumed size)
+WTR,intake,GW_INTAKE,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-PCA-H2O to P_CA (assumed size)
 WTR,intake,GW_INTAKE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-ACID-H2O to ACID_PLANT
 WTR,intake,GW_INTAKE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-NAOH-H2O to NAOH_PLANT
+WTR,intake,GW_INTAKE,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,transfer pump IA-PCA-H2O to P_CA
 WTR,intake,GW_INTAKE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-ACID-H2O to ACID_PLANT: run and fault (assumed)
 WTR,intake,GW_INTAKE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-NAOH-H2O to NAOH_PLANT: run and fault (assumed)
+WTR,intake,GW_INTAKE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,transfer pump IA-PCA-H2O to P_CA: run and fault (assumed)
 WTR,intake,GW_INTAKE,instrument,pressure transmitter,0-10 bar,"ceramic diaphragm, IEC 61298",1,duty item 5 (one per unit); range >= 1.25 x design pressure
 WTR,intake,GW_INTAKE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 WTR,treat,GREY_TREAT,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,transfer pump IA-GREY-01 to LEACH_CSTR_1 (assumed size)

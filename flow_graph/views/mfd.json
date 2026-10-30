@@ -1640,7 +1640,7 @@
             "IA-NA-PURGE": 0.642,
             "IA-C5-SHIP": 7.141,
             "IA-C11-SHIP": 1.512,
-            "IA-C19-SHIP": 2.018,
+            "IA-C19-SHIP": 2.016,
             "IA-O2-SHIP": 22.013,
             "IA-MEOH-SHIP": 28.008,
             "IA-CL2-SHIP": 39.206,
@@ -1655,10 +1655,11 @@
             "IA-LIME-SHIP": 0.282,
             "IA-NAOH-CL2-SHIP": 3.894,
             "IA-NAOH-RESIDUE": 0.034,
-            "IA-SOLV-VENT": 0.019
+            "IA-SOLV-VENT": 0.019,
+            "IA-PCA-REJECT": 0.0
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 56.497,
+            "IA-H2O-MU": 56.495,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
             "IA-MGCL2-MU": 0.04,
@@ -2807,7 +2808,7 @@
       "forbidden": "pyro if FR-4",
       "claim_status": "Closed",
       "rate": {
-        "value": 11.635142,
+        "value": 11.637491,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."

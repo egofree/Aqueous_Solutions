@@ -19,10 +19,10 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
 | T3 | Bench and laboratory tests | 61 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
-| T5 | Design calculations and drawings | 477 | Calculation or drawing issued under the named task |
+| T5 | Design calculations and drawings | 478 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 673 items: 295 drivers, 378 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 674 items: 295 drivers, 379 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -689,6 +689,7 @@ Total 673 items: 295 drivers, 378 register entries. Classification rule: first m
 | A-M-425 | The ACID_PLANT cake kiln runs in campaigns (acid_kiln_mode = kW average and peak; kg and L of store | python3 -m flow_graph.param.regen; ACID_PLANT continuous_kw equals params.kiln_duty.kw_avg, and AQS-DUTY-073 Table 4.2 lists both kiln duties. | QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u) |
 | A-M-426 | NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI  route choice; kW, kg/d | python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2. | QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u) |
 | A-M-428 | SOLV_PLANT supplies the bench ethanol and acetone, recovery  kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, imports made on site (X-RTE-IMPORT-IA-SOLV-MU) |
+| A-M-429 | The shop grease is made on site from the wax cut, sized from kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, shop routes (X-RTE-GREASE_CA_TO_MFG, X-RTE-WAX_TO_GREASE_CA, X-RTE-PCA_TO_GREASE and the lithium routes) |
 
 ## 7. T6 Commissioning measurements
 

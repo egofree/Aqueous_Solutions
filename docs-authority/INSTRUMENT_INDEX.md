@@ -17,14 +17,14 @@ This page indexes the instruments of the plant. It counts them by type and by pr
 
 ## 2. Counts
 
-The plant has 720 instruments: 179 temperature element, 177 pressure transmitter, 145 flow transmitter, 92 level transmitter, 83 high-level switch, 18 temperature element (SIF, independent), 5 current transmitter, 5 chlorine analyzer, 2 conductivity analyser, 2 speed transmitter, 2 pressure switch, high (rupture indication), 1 position transmitter, 1 HF analyzer, 1 SO2 analyzer, 1 flammable gas detector, 1 conductivity transmitter, 1 pH analyzer, 1 ORP analyzer, 1 composition analyser, 1 perchlorate analyser, 1 carbon-dioxide analyser. Table 2.1 gives the count of each PLC and its analogue inputs (AI) and digital inputs (DI).
+The plant has 722 instruments: 179 temperature element, 177 pressure transmitter, 145 flow transmitter, 92 level transmitter, 85 high-level switch, 18 temperature element (SIF, independent), 5 current transmitter, 5 chlorine analyzer, 2 conductivity analyser, 2 speed transmitter, 2 pressure switch, high (rupture indication), 1 position transmitter, 1 HF analyzer, 1 SO2 analyzer, 1 flammable gas detector, 1 conductivity transmitter, 1 pH analyzer, 1 ORP analyzer, 1 composition analyser, 1 perchlorate analyser, 1 carbon-dioxide analyser. Table 2.1 gives the count of each PLC and its analogue inputs (AI) and digital inputs (DI).
 
 Table 2.1. Instruments by PLC
 
 | PLC | Instruments | AI | DI |
 |---|---|---|---|
 | PLC-CRYO | 37 | 34 | 3 |
-| PLC-DIGESTER | 154 | 132 | 22 |
+| PLC-DIGESTER | 155 | 132 | 23 |
 | PLC-ELEC | 31 | 28 | 3 |
 | PLC-FAB | 80 | 67 | 13 |
 | PLC-FARM | 13 | 12 | 1 |
@@ -37,7 +37,7 @@ Table 2.1. Instruments by PLC
 | PLC-MEOH | 24 | 21 | 3 |
 | PLC-MFG | 29 | 27 | 2 |
 | PLC-NUT | 10 | 9 | 1 |
-| PLC-OIL | 59 | 51 | 8 |
+| PLC-OIL | 60 | 51 | 9 |
 | PLC-POLYMERS | 46 | 39 | 7 |
 | PLC-PUMPED_HYDRO | 2 | 2 | 0 |
 | PLC-WTR | 61 | 54 | 7 |
@@ -54,7 +54,7 @@ Table 3.1. Ranges below the duty
 
 ## 4. Loops written by this generator
 
-The instrument inventory (`flow_graph/inventory/other.py`) writes instrument rows only for a unit that has a nozzle list, a liquid inflow or one of a few named classes, and it skips boundaries, headers and relief units. Machines, headers, relief stacks, stores and some vessels therefore had no instruments. This generator writes 70 loops for such units from the design parameters of each unit, the rates of its edges and the inventory files it cites; the citation is the basis column of the CSV.
+The instrument inventory (`flow_graph/inventory/other.py`) writes instrument rows only for a unit that has a nozzle list, a liquid inflow or one of a few named classes, and it skips boundaries, headers and relief units. Machines, headers, relief stacks, stores and some vessels therefore had no instruments. This generator writes 68 loops for such units from the design parameters of each unit, the rates of its edges and the inventory files it cites; the citation is the basis column of the CSV.
 If AQS-INV-004 later issues a row with the same tag letters for one of these units, the inventory row is kept and the written row is dropped, so no tag is duplicated; the generator asserts this. Table 4.1 lists, for each of the 82 units concerned, all its loops. A unit of graph class boundary has no loop, because it is a trade or bookkeeping boundary and not a process unit (ATMOS, BOUNDARY_EXPORT, NORTH_DOCK).
 
 Table 4.1. Loops written by this generator
@@ -86,7 +86,7 @@ Table 4.1. Loops written by this generator
 | FOOD_STORE | 3 | LT, PT, TE |
 | FORGE | 2 | TE, ZT |
 | F_RECOVER | 4 | LSH, LT, PT, TE |
-| GREASE_CA | 3 | LT, PT, TE |
+| GREASE_CA | 4 | LSH, LT, PT, TE |
 | GREASE_LI | 3 | LT, PT, TE |
 | GW_INTAKE | 4 | CT, FT, PT, TE |
 | HDR_CO2 | 1 | PT |
@@ -117,7 +117,7 @@ Table 4.1. Loops written by this generator
 | POWDER_RESIN | 3 | PT, ST, TE |
 | PROD_MEOH | 5 | FT, LSH, LT, PT, TE |
 | PROD_O2 | 2 | PT, TE |
-| P_CA | 3 | LT, PT, TE |
+| P_CA | 4 | LSH, LT, PT, TE |
 | Q4_BUS | 2 | PT, TE |
 | RAD_PANEL | 1 | TE |
 | REC_HDR | 1 | PT |

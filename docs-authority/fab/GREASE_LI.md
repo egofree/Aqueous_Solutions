@@ -7,7 +7,7 @@ service line: see the duty sheet section 1 basis
 Internals: duty sheet: "envelope. 3. Material. 316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the" [docs-authority/duties/GREASE_LI.md]
 Material: 316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap. Basis: lithium 12-hydroxystearate soap saponification, wax cut + Li source from LI_RECOVER (graph edges): Li soaps are the standard thickeners and their kettles run the same 95-120 C class (MANG2007 ch. 14). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22). (continues on the duty sheet)
 
-Nozzles: 2 process connections per docs-authority/nozzles/GREASE_LI.csv
+Nozzles: 5 process connections per docs-authority/nozzles/GREASE_LI.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

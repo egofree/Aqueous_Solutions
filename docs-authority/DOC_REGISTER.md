@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AQ | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AR | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -127,7 +127,7 @@ Table 3.1. Document numbers in use
 | AQS-DUTY-FOUNDRY | `notes/FOUNDRY_DUTY.md` | A | 2026-10-16 | FOUNDRY sector | current |
 | AQS-DUTY-FP | `notes/FLUOROPOLYMER_DUTY.md` | A | 2026-10-16 | Fluoropolymer train duties | current |
 | AQS-DUTY-GGC | `notes/GLASS_GAS_CRYO.md` | A | 2026-10-17 | Glass, gas, and cryo — item 5 | current |
-| AQS-DUTY-GREASE | `notes/GREASE_LINES.md` | A | 2026-10-16 | Ca and Li grease lines | current |
+| AQS-DUTY-GREASE | `notes/GREASE_LINES.md` | B | 2026-10-29 | Ca and Li grease lines | current |
 | AQS-DUTY-INV | `notes/INVESTMENT_CASTING.md` | A | 2026-10-16 | Investment casting — baseline | current |
 | AQS-DUTY-LI-DIG | `notes/DIGESTER_LI.md` | A | 2026-10-17 | LI_RECOVER method and digester placement | current |
 | AQS-DUTY-POLY | `notes/POLYMERS_SECTOR.md` | A | 2026-10-16 | POLYMERS sector | current |

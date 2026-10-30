@@ -17,7 +17,7 @@ This page records the size of unit LI_RECOVER, of class `separator` in sector DI
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph.
+The unit takes 0 kg/d by 0 streams and gives 0 kg/d by 1 stream.
 
 The graph holds no design parameters for the unit.
 

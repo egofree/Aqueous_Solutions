@@ -4988,6 +4988,81 @@
   "units": "fraction of the theoretical 0.511 kg ethanol per kg glucose reached by the yeast fermentation (BAI2008)",
   "register": "A-M-428"
  },
+ "grease_thickener": {
+  "value": "CA",
+  "units": "- grease soap of the shop grease: CA (calcium soap in GREASE_CA, lime from the acid-plant residue) or LI (lithium soap in GREASE_LI, lithium from LI_RECOVER once the polish-liquor tenor is measured)",
+  "register": "A-M-429"
+ },
+ "grease_points_per_unit": {
+  "value": 2,
+  "units": "grease points per lubricated rotating unit (drive-end and non-drive-end bearing)",
+  "register": "A-M-429"
+ },
+ "grease_bearing_D_mm": {
+  "value": 52.0,
+  "units": "mm outside diameter of the bearing class at the grease points (6205 class, the motor bearing size of AQS-INV-004 family OF-02)",
+  "register": "A-M-429"
+ },
+ "grease_bearing_B_mm": {
+  "value": 15.0,
+  "units": "mm width of the bearing class at the grease points (6205 class)",
+  "register": "A-M-429"
+ },
+ "grease_soap_frac": {
+  "value": 0.12,
+  "units": "mass fraction soap thickener in the grease, 8-15 % for calcium and lithium soap greases (ULLMANN_LUBRICANTS, AQS-DUTY-GREASE)",
+  "register": "A-M-429"
+ },
+ "grease_wax_ox_acid_yield": {
+  "value": 0.7,
+  "units": "kg fatty acid per kg C19-C28 wax in the air oxidation to soap acids (ULLMANN_FATTY_ACIDS, paraffin oxidation)",
+  "register": "A-M-429"
+ },
+ "grease_wax_ox_o2": {
+  "value": 0.35,
+  "units": "kg oxygen taken up per kg wax in the air oxidation (ULLMANN_FATTY_ACIDS)",
+  "register": "A-M-429"
+ },
+ "grease_kettle_T_C_ca": {
+  "value": 150.0,
+  "units": "C kettle temperature for the anhydrous calcium soap grease (ULLMANN_LUBRICANTS)",
+  "register": "A-M-429"
+ },
+ "grease_kettle_T_C_li": {
+  "value": 200.0,
+  "units": "C kettle temperature for the lithium soap grease (ULLMANN_LUBRICANTS)",
+  "register": "A-M-429"
+ },
+ "grease_campaign_d": {
+  "value": 90,
+  "units": "d between grease kettle campaigns; the shop holds the grease between them",
+  "register": "A-M-429"
+ },
+ "grease_run_h": {
+  "value": 8.0,
+  "units": "h the kettle is held at temperature per campaign",
+  "register": "A-M-429"
+ },
+ "grease_rho_kg_m3": {
+  "value": 900.0,
+  "units": "kg/m3 grease density for the kettle volume",
+  "register": "A-M-429"
+ },
+ "grease_fill": {
+  "value": 0.7,
+  "units": "working fill of the grease kettle",
+  "register": "A-M-429"
+ },
+ "grease_cp_kJ_kgK": {
+  "value": 2.2,
+  "units": "kJ/(kg K) heat capacity of wax and soap feed",
+  "register": "A-M-429"
+ },
+ "grease_heater_eff": {
+  "value": 0.7,
+  "units": "fraction of the electric kettle heat that reaches the batch (A-M-157 convention)",
+  "register": "A-M-429"
+ },
  "caso4_dHrxn_kJ_mol": {
   "value": 303.0,
   "units": "kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197)",

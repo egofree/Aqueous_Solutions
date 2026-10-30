@@ -5,8 +5,8 @@ WF-03,power,6 AWG,THHN/THWN-2 Cu in EMT,600 V,20520,57
 WF-04,equipment ground,10 AWG,bare Cu,-,20160,336
 WF-05,power,14 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,17871,195
 WF-06,bare grounding,4/0 AWG,bare soft-drawn Cu,-,5262,1
-WF-07,control,18 AWG,shielded pair,300 V,4800,240
-WF-08,DC power pair,16 AWG,TC-ER 2-cond,600 V,4740,237
+WF-07,control,18 AWG,shielded pair,300 V,4860,243
+WF-08,DC power pair,16 AWG,TC-ER 2-cond,600 V,4800,240
 WF-09,equipment ground,14 AWG,green XHHW-2 Cu,600 V,5951,193
 WF-10,power,3 AWG,XHHW-2 Cu,600 V,3150,42
 WF-11,power,6 AWG,"XHHW-2 Cu, 600 V, tray cable TC-ER",600 V,3091,8

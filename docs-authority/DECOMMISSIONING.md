@@ -17,9 +17,9 @@ Order: process systems first, utilities last (reverse of AQS-COM-001), so power,
 | 6 | FARM | 2 | 0.00 | CO2 | - | 0.00 |
 | 7 | NUT | 1 | 0.14 | Fe, HCl, other_metals | air purge | 0.03 |
 | 8 | GLASS | 6 | 0.00 | C, Cl2, Fe, HCl, O2, Si, SiO2, other_metals … | N2/air to 19.5-23.5 % O2; air purge | 0.23 |
-| 9 | OIL | 12 | 0.32 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2; air purge | 0.20 |
+| 9 | OIL | 12 | 0.32 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, soap, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2; air purge | 0.20 |
 | 10 | MEOH | 5 | 1.94 | Ar, CO2, Fe, HCl, O2, other_metals, solute | N2/air to 19.5-23.5 % O2 | 1.22 |
-| 11 | DIGESTER | 25 | 14.17 | Cl2, Fe, H2O, HCl, NaCl, NaOH, O2, Si … | N2/air to 19.5-23.5 % O2; air purge | 3.73 |
+| 11 | DIGESTER | 25 | 14.17 | CaF2, CaO, CaSO4, Cl2, Fe, H2O, H2SO4, HCl … | N2/air to 19.5-23.5 % O2; air purge | 3.73 |
 | 12 | GEO | 3 | 0.00 |  | - | 0.46 |
 | 13 | CRYO | 14 | 0.00 | Ar, CH3OH, CO2, H2, N2, O2, solute | N2 to < 25 % LFL; N2/air to 19.5-23.5 % O2 | 10.78 |
 | 14 | GAS | 8 | 0.29 | Fe, HCl, N2, other_metals, solute | air purge | 1.65 |

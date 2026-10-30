@@ -138,6 +138,8 @@ digraph G {
     label="OIL";
     style=rounded; color="#94a3b8";
     "OIL_PYRO" [fillcolor="#ffffff", label="OIL_PYRO"];
+    "GREASE_CA" [fillcolor="#ffffff", label="GREASE_CA"];
+    "GREASE_LI" [fillcolor="#ffffff", label="GREASE_LI"];
   }
   subgraph "cluster_POLYMERS" {
     label="POLYMERS";
@@ -172,7 +174,7 @@ digraph G {
   "GEO_ORC" -> "SOL_ARK_60K" [label="S48", style=dashed, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "FUEL_CELL" -> "SOL_ARK_60K" [label="S51\\n4.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "MEOH_FC" -> "SOL_ARK_60K" [label="S79\\n1.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=2.2];
-  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n351.8478 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "PV_ARRAY" -> "SOL_ARK_60K" [label="IA-PV-01\\n351.8479 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BOUNDARY_EXPORT" [label="IA-PV-CURTAIL\\n4.645 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ZNBR2" -> "BOUNDARY_EXPORT" [label="IA-ZNBR-LOSS\\n1.67 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "BMED_ACID" [label="S17-BMED\\n5.6267 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
@@ -258,4 +260,6 @@ digraph G {
   "SOL_ARK_60K" -> "ACID_PLANT" [label="SF-ACID_PLANT\\n0.2061 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "NAOH_PLANT" [label="SF-NAOH_PLANT\\n0.5004 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "SOL_ARK_60K" -> "SOLV_PLANT" [label="SF-SOLV_PLANT\\n0.01034 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "GREASE_CA" [label="SF-GREASE_CA\\n7e-05 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
+  "SOL_ARK_60K" -> "GREASE_LI" [label="SF-GREASE_LI\\n0.0 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
 }

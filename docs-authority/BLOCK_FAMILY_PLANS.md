@@ -70,15 +70,15 @@ Table 4.1. Building-block families
 
 | Family | Category | Item | Standard class | Qty | Units | Design row | Plan |
 |---|---|---|---|---|---|---|---|
-| OF-01 | bearing | deep-groove ball bearing | ISO 15, normal class | 406 | 73 | AQS-PRO-002 sheet, 3. Bearing datasheets | Bearings are bought to their ISO class and checked for identity and count on receipt. |
+| OF-01 | bearing | deep-groove ball bearing | ISO 15, normal class | 410 | 73 | AQS-PRO-002 sheet, 3. Bearing datasheets | Bearings are bought to their ISO class and checked for identity and count on receipt. |
 | OF-02 | bearing | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 356 | 48 | AQS-PRO-002 sheet, 3. Bearing datasheets | Bearings are bought to their ISO class and checked for identity and count on receipt. |
-| OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 888 | 99 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
-| OF-04 | electronics | PLC analog input point | IEC 61131-2 | 792 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
-| OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 200 | 72 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-03 | electronics | PLC digital I/O point | IEC 61131-2 | 894 | 99 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-04 | electronics | PLC analog input point | IEC 61131-2 | 796 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-05 | electronics | BLDC driver | IEC 61800-5-1 | 202 | 72 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-06 | electronics | motor starter (contactor + overload) | IEC 60947-4-1 | 145 | 38 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
-| OF-07 | electronics | PLC I/O module, 16 channel | IEC 61131-2 | 105 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-07 | electronics | PLC I/O module, 16 channel | IEC 61131-2 | 106 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-08 | electronics | variable-frequency drive | IEC 61800-5-1 | 33 | 15 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
-| OF-09 | electronics | solenoid driver channel | IEC 61131-2 DO | 37 | 18 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
+| OF-09 | electronics | solenoid driver channel | IEC 61131-2 DO | 38 | 18 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-10 | electronics | compressor contactor + overload | IEC 60947-4-1 | 10 | 3 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-11 | electronics | stepper driver | IEC 61800-5-1 | 3 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
 | OF-12 | electronics | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | 2 | 1 | AQS-PRO-002 sheet, 4. Electronics datasheets | Electronic modules are bought to their IEC class and checked for identity and count on receipt. |
@@ -106,8 +106,8 @@ Table 4.1. Building-block families
 | OF-34 | instrument | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | 139 | 54 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
 | OF-35 | instrument | pressure transmitter | ceramic diaphragm, IEC 61298 | 163 | 163 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
 | OF-36 | instrument | temperature element | IEC 60751, 316L thermowell | 166 | 166 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
-| OF-37 | instrument | high-level switch | IEC 60947-5, 316L | 83 | 83 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
-| OF-38 | instrument | level transmitter | IEC 62828, PTFE lens | 83 | 83 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
+| OF-37 | instrument | high-level switch | IEC 60947-5, 316L | 85 | 85 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
+| OF-38 | instrument | level transmitter | IEC 62828, PTFE lens | 85 | 85 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
 | OF-39 | instrument | gas detector, H2 | alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling | 34 | 16 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
 | OF-40 | instrument | gas detector, O2 deficiency | alarm 19.5 vol %, trip 18.0 vol %, low (dense gases) | 24 | 12 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |
 | OF-41 | instrument | gas detector, Cl2 / HCl | alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low | 42 | 21 | AQS-PRO-002 sheet, 5. Instrument datasheets | Instruments are bought to their device class. |

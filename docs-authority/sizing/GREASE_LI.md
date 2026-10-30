@@ -17,7 +17,7 @@ This page records the size of unit GREASE_LI, of class `kettle` in sector OIL, f
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph.
+The unit takes 0 kg/d by 2 streams and gives 0 kg/d by 1 stream. Its continuous electrical load is 0 kW.
 
 The graph holds no design parameters for the unit.
 

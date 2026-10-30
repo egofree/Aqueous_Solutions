@@ -64,11 +64,11 @@ Table 5.1. Streams of the shop units
 | --- | --- | --- | --- | --- | --- |
 | CUT-3-OUT | PROD_C19_C28 | MFG_SHOP | 3.948 | kg/d | mass |
 | FLUORO_TO_MFG | POLY_STOCK | MFG_SHOP | 0.23 | kg/d | mass |
-| GREASE_CA_TO_MFG | GREASE_CA | MFG_SHOP | — | — | mass |
-| GREASE_LI_TO_MFG | GREASE_LI | MFG_SHOP | — | — | mass |
+| GREASE_CA_TO_MFG | GREASE_CA | MFG_SHOP | 0.002349 | kg/d | mass |
+| GREASE_LI_TO_MFG | GREASE_LI | MFG_SHOP | 0 | kg/d | mass |
 | IA-BLOW-IN | PROD_C11_C18 | BLOW_MOLD | 8.407 | kg/d | mass |
 | IA-BLOW-OUT | BLOW_MOLD | MFG_SHOP | 8.408 | kg/d | mass |
-| IA-CHAR | OIL_PYRO | MFG_SHOP | 4.836 | kg/d | mass |
+| IA-CHAR | OIL_PYRO | MFG_SHOP | 4.838 | kg/d | mass |
 | IA-COAT-IN | EW_1 | ELECTRODE_COAT | 0.02 | kg/d | mass |
 | IA-COAT-OUT | ELECTRODE_COAT | EW_1 | 0.02 | kg/d | mass |
 | IA-EW-MET-1 | EW_1 | MFG_SHOP | 59.87 | kg/d | mass |
@@ -80,6 +80,7 @@ Table 5.1. Streams of the shop units
 | IA-EW-MET-7 | EW_7 | MFG_SHOP | 71.14 | kg/d | mass |
 | IA-EW-MET-8 | EW_8 | MFG_SHOP | 5.05 | kg/d | mass |
 | IA-EW-MET-9 | EW_9 | MFG_SHOP | 61.34 | kg/d | mass |
+| IA-GREASE-SPENT | MFG_SHOP | OIL_PYRO | 0.002349 | kg/d | mass |
 | IA-MFG-OUT | MFG_SHOP | HABITATION | 596.9 | kg/d | mass |
 | IA-POL-CAKE | POLISH_BANK | MFG_SHOP | 217.4 | kg/d | mass |
 | MFG_SCRAP_TO_IND | MFG_SHOP | IND_MELT | 26.16 | kg/d | mass |
@@ -96,7 +97,7 @@ Table 5.1. Streams of the shop units
 | SF-MFG_SHOP | SOL_ARK_60K | MFG_SHOP | 2.55 | kW | elec |
 | STOCK_TO_MFG | METAL_STORE | MFG_SHOP | 25.9 | kg/d | mass |
 
-The streams GREASE_CA_TO_MFG and GREASE_LI_TO_MFG have no rate on the present graph.
+The streams GREASE_LI_TO_MFG have no rate on the present graph.
 
 ## 6. Mass balance
 
@@ -106,7 +107,7 @@ Table 6.1. Mass in and out of each unit
 
 | Unit | Mass in, kg/d | Mass out, kg/d | Out less in, kg/d |
 | --- | --- | --- | --- |
-| MFG_SHOP | 635.857 | 635.857 | 0.000 |
+| MFG_SHOP | 635.861 | 635.861 | 0.000 |
 | ELECTRODE_COAT | 0.020 | 0.020 | 0.000 |
 | BLOW_MOLD | 8.407 | 8.408 | 0.000 |
 

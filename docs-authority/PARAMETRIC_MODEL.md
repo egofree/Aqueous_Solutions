@@ -119,6 +119,7 @@ Table 7.2. Recovery-first inventory by element, kg/d of the element
 | Ti | TI_CELL metal | TI_CELL | 0.5000 | 0.0000 | FLOAT_SINK_GRIT_TO_TI | 0.5000 | IA-TIO2-MU | 0.5000 |
 | Mo | MO_CELL metal | MO_CELL | 0.0625 | 0.0000 | FLOAT_SINK_GRIT_TO_MO | 0.0625 | IA-MOO3-MU | 0.0625 |
 | Si | investment shell silica | SHELL_BUILD | 3.7395 | 3.2721 | IA-SHELL-RECLAIM | 0.4674 | IA-SILICA-MU | 0.4674 |
+| Ca | grease soap thickener | P_CA | 0.0000 | 0.0000 | IA-LIME-TO-PCA | 0.0000 |  | 0.0000 |
 | Si | silicon furnace quartz | SI_REDUCE | 0.3354 | 0.0000 | — | 0.3354 | IA-QUARTZ-MU | 0.3354 |
 | S | sulfuric acid for the HF kiln | ACID_PLANT | 0.1294 | 0.1164 | IA-GYPSUM-REGEN | 0.0129 | IA-SULFUR-MU | 0.0129 |
 | Na | NaOH make-up | NAOH_PLANT | 2.5254 | 2.2729 | IA-NA-RECYCLE | 0.2525 | IA-HALITE-MU | 0.2525 |
@@ -129,14 +130,17 @@ Table 7.3. Unrecovered losses and their basis
 | Element | Stream | kg/d of the element | Recoverable | Basis |
 | --- | --- | --- | --- | --- |
 | F | IA-LIME-SHIP | 0.0077 | no | fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake |
+| F | IA-PCA-REJECT | 0.0000 | no | fluorspar the HF kiln does not convert; the residue drawn for the grease lime leaves with the slaker grit |
 | Si | IA-SHELL-EXPORT | 0.4674 | no | spent shell beyond foundry_inv_shell_reclaim_frac: fines and fired binder that the stucco cannot take back (A-M-286) |
 | S | IA-LIME-SHIP | 0.0129 | no | cake-kiln non-conversion (caso4_dec_frac) leaves with the residue |
+| S | IA-PCA-REJECT | 0.0000 | no | cake-kiln non-conversion; the residue drawn for the grease lime leaves with the slaker grit |
 | Na | IA-NA-PURGE | 0.2525 | no | bleed of the purge salt that carries the impurities out (na_purge_recycle_frac) |
 | C | S10 | 0.0060 | no | solvent that evaporates at the bench or leaves with the spent etch, outside the segregated drain (solv_spent_catch_frac) |
 | C | IA-SOLV-BTMS | 0.0057 | no | still bottoms with the resist residue, burned with the light oil cut (solv_still_recovery_frac) |
 | Cr | — | — | — | the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_Cr2O3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427) |
 | Ti | — | — | — | the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_TiO2_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427) |
 | Mo | — | — | — | the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_MoO3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427) |
+| Ca | — | — | — | the calcium is the lime of the ACID_PLANT cake-kiln residue, a waste of the plant (A-M-429) |
 | Si | — | — | — | the plant silica wastes are fines (spent shell flour, silica fume), not the lump quartz the arc furnace burden needs, and the silica fume already goes to the leach |
 | C | — | — | — | the shortfall is made from plant methanol and the chlorinator CO that was exported as fuel gas |
 
@@ -163,7 +167,7 @@ Table 7.5. Solvent routes at the present bench draw
 
 ## 8. Drivers
 
-Table 8.1 lists the 934 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 949 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -985,6 +989,21 @@ Table 8.1. Drivers
 | abe_ethanol_yield | 0.033 | kg ethanol per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986) | A-M-428 | — |
 | abe_gas_yield | 0.5 | kg CO2 and H2 per kg sugar in the acetone-butanol-ethanol fermentation (JONES1986) | A-M-428 | — |
 | yeast_ethanol_yield_frac | 0.9 | fraction of the theoretical 0.511 kg ethanol per kg glucose reached by the yeast fermentation (BAI2008) | A-M-428 | — |
+| grease_thickener | "CA" | - grease soap of the shop grease: CA (calcium soap in GREASE_CA, lime from the acid-plant residue) or LI (lithium soap in GREASE_LI, lithium from LI_RECOVER once the polish-liquor tenor is measured) | A-M-429 | — |
+| grease_points_per_unit | 2 | grease points per lubricated rotating unit (drive-end and non-drive-end bearing) | A-M-429 | — |
+| grease_bearing_D_mm | 52.0 | mm outside diameter of the bearing class at the grease points (6205 class, the motor bearing size of AQS-INV-004 family OF-02) | A-M-429 | — |
+| grease_bearing_B_mm | 15.0 | mm width of the bearing class at the grease points (6205 class) | A-M-429 | — |
+| grease_soap_frac | 0.12 | mass fraction soap thickener in the grease, 8-15 % for calcium and lithium soap greases (ULLMANN_LUBRICANTS, AQS-DUTY-GREASE) | A-M-429 | — |
+| grease_wax_ox_acid_yield | 0.7 | kg fatty acid per kg C19-C28 wax in the air oxidation to soap acids (ULLMANN_FATTY_ACIDS, paraffin oxidation) | A-M-429 | — |
+| grease_wax_ox_o2 | 0.35 | kg oxygen taken up per kg wax in the air oxidation (ULLMANN_FATTY_ACIDS) | A-M-429 | — |
+| grease_kettle_T_C_ca | 150.0 | C kettle temperature for the anhydrous calcium soap grease (ULLMANN_LUBRICANTS) | A-M-429 | — |
+| grease_kettle_T_C_li | 200.0 | C kettle temperature for the lithium soap grease (ULLMANN_LUBRICANTS) | A-M-429 | — |
+| grease_campaign_d | 90 | d between grease kettle campaigns; the shop holds the grease between them | A-M-429 | — |
+| grease_run_h | 8.0 | h the kettle is held at temperature per campaign | A-M-429 | — |
+| grease_rho_kg_m3 | 900.0 | kg/m3 grease density for the kettle volume | A-M-429 | — |
+| grease_fill | 0.7 | working fill of the grease kettle | A-M-429 | — |
+| grease_cp_kJ_kgK | 2.2 | kJ/(kg K) heat capacity of wax and soap feed | A-M-429 | — |
+| grease_heater_eff | 0.7 | fraction of the electric kettle heat that reaches the batch (A-M-157 convention) | A-M-429 | — |
 | caso4_dHrxn_kJ_mol | 303.0 | kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197) | A-M-421 | — |
 | caso4_feed_cp_kJ_kgK | 0.9 | kJ/kg K mean heat capacity of the cake and char feed to the kiln temperature | A-M-421 | — |
 | naoh_route | "CHLOR_ALKALI" | - sodium hydroxide route of NAOH_PLANT: CAUSTICIZE (trona ore to soda ash, lime causticising with a recalcining lime kiln) or CHLOR_ALKALI (membrane cells on the leach purge salt and halite ore) | A-M-422, A-M-426 | — |
@@ -1374,6 +1393,7 @@ Table 9.1. References
 | SCHACHT2004 | Schacht C.A. (ed.), Refractories Handbook, Marcel Dekker / CRC Press (2004), DOI 10.1201/9780203026328: alumina-silica brick (ch. 4), carbonaceous/graphite hot faces (ch. 8), refractory castables (ch. 10), thermomechanical lining design (ch. 13) and installation practice (ch. 17) for melt-shop furnaces, kilns and chloride-cell backup linings. |
 | SCHLESINGER2011 | Schlesinger M.E., King M.J., Sole K.C., Davenport W.G., Extractive Metallurgy of Copper, 5th ed., Elsevier (2011), ch. 17 electrowinning: current density 200-350 A/m2, cell voltage about 2 V, current efficiency 0.85-0.92. |
 | SEAWATER_MILLERO | Millero et al. (2008), standard seawater composition at practical salinity 35: total salinity 35.165 g/kg; sodium 10.78 g/kg, chloride 19.35 g/kg, magnesium 1.284 g/kg, bromide 0.067 g/kg (AQS-PLAN-011 section 10). |
+| SKF_RELUB | SKF Group, Rolling bearings catalogue (publication 17000, 2018), Lubrication: the grease quantity for relubrication from the side is Gp = 0.005 D B grams (D outside diameter and B width in mm). |
 | SOLAS | Safety of Life at Sea convention: fire protection, life-saving appliances and evacuation (AQS-PLAN-011 section 10). |
 | SPECIAL_METALS_I600 | Special Metals Corporation, INCONEL alloy 600 product data sheet (publication SMC-027, 2008): density 8.47 Mg/m3, specific heat 444 J/(kg K) at 21 C. |
 | STRATHMANN2004 | Strathmann H., Ion-Exchange Membrane Separation Processes, Membrane Science and Technology Series 9, Elsevier (2004), ch. 4-5: reversible water-dissociation voltage of a bipolar membrane 0.059 V per pH unit (0.83 V at delta pH 14, 25 C); practical bipolar membrane voltage drop about 0.9-1.2 V at 100-200 A/m2; monopolar ion-exchange membrane area resistance about 2-5 ohm cm2 in 0.5 M NaCl; spacer shadow effect on solution resistance. |
@@ -1392,11 +1412,13 @@ Table 9.1. References
 | UL83_2017 | UL 83, Thermoplastic-Insulated Wires and Cables (2017): THHN/THWN-2 PVC insulation with nylon jacket and TFFN fixture wire, thickness tables and tests. |
 | UL891 | UL 891, Switchboards (12th ed., 2019). |
 | ULLMANN_ACETIC | Le Berre C., Serp P., Kalck P., Torrence G.P., Acetic Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2014): rhodium- or iridium-iodide low-pressure methanol carbonylation at 150-200 C and 30-60 bar with above 99 % selectivity on methanol; hydrogenation of acetic acid to ethanol. |
+| ULLMANN_FATTY_ACIDS | Anneken D.J. et al., Fatty Acids, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2006): synthetic fatty acids by liquid-phase air oxidation of paraffin wax at 105-120 C with a manganese catalyst. |
 | ULLMANN_FLUOROPOLY | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluoropolymers and Chlorofluorocarbons/Hydrofluorocarbons chapters: vinylidene fluoride (VDF, CH2=CF2) is made industrially by hydrofluorination of a chlorinated C2 feed to 1-chloro-1,1-difluoroethane (HCFC-142b) followed by dehydrochlorination/pyrolysis over Cr-base catalyst; tetrafluoroethylene (TFE, C2F4) by pyrolysis of chlorodifluoromethane (R-22, from chloroform + 2 HF) at 600-800 C with immediate quench (TFE autopolymerises/explosion hazard); both routes return HCl to the acid loop; PVDF by free-radical emulsion/suspension polymerization of VDF at 30-80 C; PTFE as granular/fine powder by suspension/dispersion polymerization of TFE (not melt-processable - finished as powder for compression sintering); per-pass conversions are held low with monomer recycle. |
 | ULLMANN_GLYOXAL | Mattioda G., Blanc A., Glyoxal, Ullmann's Encyclopedia of Industrial Chemistry (2011), doi:10.1002/14356007.a12_491.pub2: industrial routes are liquid-phase acetaldehyde oxidation with nitric acid and gas-phase ethylene glycol oxidation over silver. |
 | ULLMANN_H2SO4 | Mueller H., Sulfuric Acid and Sulfur Trioxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): sulfur burning, the contact process on vanadium catalyst with absorption in 98 wt% acid, and sulfur dioxide from the reductive decomposition of gypsum or anhydrite with coke (Mueller-Kuehne process); dry acid above 93 wt% is handled in carbon steel and hot strong acid in high-silicon iron, alloy or PTFE-lined equipment. |
 | ULLMANN_HCL | Austin S., Glowacki A., Hydrochloric Acid, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2000): impregnated graphite, tantalum and fluoropolymer-lined equipment for hot HCl concentration and absorption. |
 | ULLMANN_HF | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Fluorine Compounds, Inorganic - Hydrogen Fluoride chapter: HF is produced from fluorspar (CaF2) and sulfuric acid in indirectly heated rotary kilns; acid-grade spar (acid-spar) is >= 97 % CaF2 with < 1.5 % SiO2 (SiF4 generation) and < 0.2 % carbonates; sulfuric acid is fed at 100-110 % of stoichiometric; kiln gases leave at about 150-350 C and are absorbed in water to aqueous HF; per kg HF about 1.95-2.0 kg CaF2 (97 %) and 2.45-2.6 kg H2SO4 (100 % basis) are charged; conversion of the spar CaF2 in well-run kilns is about 95 %; the by-product is anhydrite (CaSO4) cake (fluorgypsum) discharged with the unreacted spar, excess acid and gangue. |
+| ULLMANN_LUBRICANTS | Mang T., Dresel W. (eds.), Lubricants and Lubrication, Wiley-VCH (2017), and Ullmann's Encyclopedia of Industrial Chemistry, Lubricants and Lubrication: metal soap greases of 8-15 % calcium or lithium soap in mineral base oil, anhydrous calcium soap made near 150 C and lithium soap near 200 C. |
 | ULLMANN_MAGNESIUM | Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH, Magnesium chapter (Magnesium, Magnesium Alloys, and Magnesium Compounds): industrial magnesium comes from fused-salt electrolysis of dehydrated MgCl2 at ~660-700 C in cells with graphite anodes and steel cathodes (Dow/Hydro class); MgCl2 is strongly hygroscopic and must be kept anhydrous in electrolyte service. |
 | ULLMANN_NAOH | Kurt C., Bittner J., Sodium Hydroxide, Ullmann's Encyclopedia of Industrial Chemistry, Wiley-VCH (2006): membrane-cell chlor-alkali electrolysis to about 32 wt% caustic at about 3 V per cell, and caustic soda made by causticising soda ash with slaked lime, with the lime mud recalcined. |
 | ULLMANN_NITRIC | Thiemann M., Scheibler E., Wiegand K.W., Nitric Acid, Nitrous Acid, and Nitrogen Oxides, Ullmann's Encyclopedia of Industrial Chemistry (2000), doi:10.1002/14356007.a17_293: Ostwald process, NH3 oxidised over Pt-Rh gauze at about 850-950 C with 93-98 % NO yield, NO oxidised and absorbed in water in a stainless-steel absorption column. |
@@ -1420,7 +1442,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 295 drivers and then the 378 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 295 drivers and then the 379 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -2099,3 +2121,4 @@ Table 10.1. Values to verify
 | A-M-426 | NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI … route choice; kW, kg/d | python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2. |
 | A-M-427 | TI_CELL, MO_CELL and CR_CELL take their oxide first from … kg/d; mass fractions | Set the grit_* assay drivers to the assay values and run python3 -m flow_graph.param.regen; the grit feeds carry the oxide the assay supports, the concentrate edges fall by the same amount, and python3 -m flow_graph.param.recovery reports no flags. |
 | A-M-428 | SOLV_PLANT supplies the bench ethanol and acetone, recovery … kg/d; kW | python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags. |
+| A-M-429 | The shop grease is made on site from the wax cut, sized … kg/d; kW | python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags. |

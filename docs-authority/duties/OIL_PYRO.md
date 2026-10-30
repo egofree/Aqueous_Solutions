@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 38.87 kg/d. Mass out 38.87 kg/d. Electrical duty 1.6640 kW. In: C29_TO_PYRO 5.873 kg/d (C29 heavy cut); IA-OIL-01 33 kg/d (Dryer → pyro). Out: IA-OIL-02 33.37 kg/d (Pyro → frac); CHAR_TO_SI 0.2278 kg/d (pyrolysis char reductant); IA-CHAR 4.836 kg/d (char reductant); IA-C-TI 0.2952 kg/d (plant pyrolysis char reductant); 3 more.
+1. Basis. Mass in 38.88 kg/d. Mass out 38.88 kg/d. Electrical duty 1.6640 kW. In: C29_TO_PYRO 5.873 kg/d (C29 heavy cut); IA-OIL-01 33 kg/d (Dryer → pyro); IA-GREASE-SPENT 0.002349 kg/d (purged grease to the pyrolysis feed). Out: IA-OIL-02 33.37 kg/d (Pyro → frac); CHAR_TO_SI 0.2278 kg/d (pyrolysis char reductant); IA-CHAR 4.838 kg/d (char reductant); IA-C-TI 0.2952 kg/d (plant pyrolysis char reductant); 3 more.
 
 2. Size.
 - V = (34.40/1000)×(1/24) = 0.0014 m³. 1 h. Density 1000 kg/m³.

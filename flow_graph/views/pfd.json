@@ -4,7 +4,7 @@
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
   "node_count": 182,
-  "edge_count": 620,
+  "edge_count": 630,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -2422,7 +2422,7 @@
             "IA-NA-PURGE": 0.642,
             "IA-C5-SHIP": 7.141,
             "IA-C11-SHIP": 1.512,
-            "IA-C19-SHIP": 2.018,
+            "IA-C19-SHIP": 2.016,
             "IA-O2-SHIP": 22.013,
             "IA-MEOH-SHIP": 28.008,
             "IA-CL2-SHIP": 39.206,
@@ -2437,10 +2437,11 @@
             "IA-LIME-SHIP": 0.282,
             "IA-NAOH-CL2-SHIP": 3.894,
             "IA-NAOH-RESIDUE": 0.034,
-            "IA-SOLV-VENT": 0.019
+            "IA-SOLV-VENT": 0.019,
+            "IA-PCA-REJECT": 0.0
           },
           "imports_kg_d": {
-            "IA-H2O-MU": 56.497,
+            "IA-H2O-MU": 56.495,
             "IA-CAF2-MU": 0.326,
             "IA-ALCL3-MU": 49.419,
             "IA-MGCL2-MU": 0.04,
@@ -2769,7 +2770,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 351.8478,
+        "value": 351.8479,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -4425,6 +4426,12 @@
                 "kg_d": 0.007684,
                 "recoverable": false,
                 "basis": "fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake"
+              },
+              {
+                "stream": "IA-PCA-REJECT",
+                "kg_d": 1e-06,
+                "recoverable": false,
+                "basis": "fluorspar the HF kiln does not convert; the residue drawn for the grease lime leaves with the slaker grit"
               }
             ]
           }
@@ -5799,7 +5806,7 @@
         "design": {
           "machine": "two-strand horizontal semi-continuous caster",
           "feed_kg_d": 31.7125,
-          "billet_kg_d": 13.244228000000062,
+          "billet_kg_d": 13.24422800000006,
           "ingot_kg_d": 21.7125,
           "strands": 2,
           "mould": "water-cooled copper (AQS-SIZE-FOUNDRY)"
@@ -6727,13 +6734,45 @@
       "params": {
         "sec3_material": {
           "mat": "316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water heads keep the jacket wetted side on the issued Q3/Q4 M1 water family",
-          "basis": "calcium soap saponification at the 95-120 C kettle class, wax cut + Ca(OH)2 (graph edges/duty AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2): grease manufacture practice selects 304/316L hot-soap contact (MANG2007 ch. 14.6); the alkaline soap concentrate is hot and basic, out of the PP-H class. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "basis": "calcium soap saponification of the air-oxidised wax cut with Ca(OH)2 slaked from the acid-plant residue lime, in an electrically heated campaign kettle (rates and kettle sized in flow_graph/param/grease.py, A-M-429): grease manufacture practice selects 304/316L hot-soap contact (MANG2007 ch. 14.6); the alkaline soap concentrate is hot and basic, out of the PP-H class. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
           "alt": "304L kettle if the wax cut proves the only wetted face at a lower saponification temperature (cost down, first-article choice)",
           "note": "allowance: corrosion is not the limit - cleaning and soap residue set the maintenance surface; no measured pit rate.",
           "task": "X-MAT-22"
+        },
+        "design": {
+          "route": "CA",
+          "units": 55,
+          "gp_g": 3.9,
+          "interval_d": 182.625,
+          "grease_kg_d": 0.002349,
+          "soap_kg_d": 0.000282,
+          "base_oil_kg_d": 0.002067,
+          "wax_kg_d": 0.002445,
+          "wax_ox_kg_d": 0.000377,
+          "acid_kg_d": 0.000264,
+          "o2_kg_d": 0.000132,
+          "vent_kg_d": 0.000262,
+          "thickener_kg_d": 3.4e-05,
+          "caoh2_kg_d": 3.4e-05,
+          "lioh_kg_d": 0.0,
+          "lime_draw_kg_d": 3.8e-05,
+          "slake_h2o_kg_d": 8e-06,
+          "reject_kg_d": 1.2e-05,
+          "kettle_L": 0.335582,
+          "kettle_D_mm": 100.0,
+          "insul_mm": 25,
+          "loss_W": 11.54743,
+          "kw": 7.2e-05,
+          "kettle_T_C": 150.0,
+          "campaign_d": 90
         }
       },
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 7e-05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): feed heat to 150 C + shell loss 11.5 W for a 8 h run every 90 d, over the heater efficiency."
+      }
     },
     {
       "unit_id": "GREASE_LI",
@@ -6757,7 +6796,12 @@
           "task": "X-MAT-22"
         }
       },
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): standby kettle (route CA)."
+      }
     },
     {
       "unit_id": "P_CA",
@@ -6779,7 +6823,21 @@
           "alt": "316L vessel + PP agitator as a mixed-build alternative if hot-work temperatures reach the PP limit",
           "note": "scale is knocked down mechanically at clean-out: a mechanical design note, not a material allowance.",
           "task": "X-MAT-22"
-        }
+        },
+        "recovery": [
+          {
+            "element": "Ca",
+            "use": "grease soap thickener",
+            "need_kg_d": 1.861143753085425e-05,
+            "recovered_kg_d": 1.861143753085425e-05,
+            "recovered_from": [
+              "IA-LIME-TO-PCA"
+            ],
+            "ore_streams": [],
+            "unrecovered": [],
+            "note": "the calcium is the lime of the ACID_PLANT cake-kiln residue, a waste of the plant (A-M-429)"
+          }
+        ]
       },
       "continuous_kw": null
     },
@@ -7404,6 +7462,12 @@
                 "kg_d": 0.012935,
                 "recoverable": false,
                 "basis": "cake-kiln non-conversion (caso4_dec_frac) leaves with the residue"
+              },
+              {
+                "stream": "IA-PCA-REJECT",
+                "kg_d": 2e-06,
+                "recoverable": false,
+                "basis": "cake-kiln non-conversion; the residue drawn for the grease lime leaves with the slaker grit"
               }
             ]
           }
@@ -9559,7 +9623,7 @@
       "forbidden": "pyro if FR-4",
       "claim_status": "Closed",
       "rate": {
-        "value": 11.635142,
+        "value": 11.637491,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
@@ -13117,10 +13181,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.002445,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): C19-C28 cut: base oil 0.002067 + wax oxidised to soap acid 0.000377 kg/d (route CA)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "OIL"
@@ -13139,13 +13203,20 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): standby thickener route, carries wax when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-429)."
       },
       "from_sector_id": "OIL",
-      "to_sector_id": "OIL"
+      "to_sector_id": "OIL",
+      "params": {
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 0.002462,
+        "rated_case": "grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md)",
+        "backs_up": "GREASE_CA_TO_MFG",
+        "rated_by": "flow_graph/param/grease.py"
+      }
     },
     {
       "stream_id": "PCA_TO_GREASE",
@@ -13161,10 +13232,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 3.4e-05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): Ca(OH)2 for the soap, stoichiometric (route CA)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "OIL"
@@ -13183,13 +13254,20 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): standby thickener route, carries thickener when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-429)."
       },
       "from_sector_id": "DIGESTER",
-      "to_sector_id": "OIL"
+      "to_sector_id": "OIL",
+      "params": {
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 2.3e-05,
+        "rated_case": "grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md)",
+        "backs_up": "GREASE_CA_TO_MFG",
+        "rated_by": "flow_graph/param/grease.py"
+      }
     },
     {
       "stream_id": "GREASE_CA_TO_MFG",
@@ -13205,10 +13283,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.002349,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): grease need: 55 lubricated units x points x Gp 3.90 g every 182.6 d (SKF_RELUB, AQS-OPS-002; route CA)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "MFG"
@@ -13227,13 +13305,20 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): standby thickener route, carries grease when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-429)."
       },
       "from_sector_id": "OIL",
-      "to_sector_id": "MFG"
+      "to_sector_id": "MFG",
+      "params": {
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 0.002349,
+        "rated_case": "grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md)",
+        "backs_up": "GREASE_CA_TO_MFG",
+        "rated_by": "flow_graph/param/grease.py"
+      }
     },
     {
       "stream_id": "CHAR_TO_SI",
@@ -14049,7 +14134,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 351.8478,
+        "value": 351.8479,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -15020,7 +15105,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.835643,
+        "value": 4.837992,
         "unit": "kg/d",
         "status": "study",
         "note": "Char less the carbon charged to the silicon-carbide furnace. | X-PAR-02 TF: char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET) (AQS-PAR-003)."
@@ -18755,7 +18840,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 56.497248,
+        "value": 56.494899,
         "unit": "kg/d",
         "status": "study",
         "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: leach water make-up by difference (H and O leave as methanol and O2 product) (AQS-PAR-003)."
@@ -19112,10 +19197,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 2.018146,
+        "value": 2.015701,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C19-C28 make less the plant draw (CUT-3-OUT, C19_TO_WAX), shipped (Q-002 pattern) (AQS-PAR-003)."
+        "note": "X-PAR-12 TF (AQS-PAR-005). | X-PAR-02 TF: C19-C28 make less the plant draw (CUT-3-OUT, C19_TO_WAX, WAX_TO_GREASE_CA, WAX_TO_GREASE_LI), shipped (Q-002 pattern) (AQS-PAR-003)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "DOCK",
@@ -24051,10 +24136,10 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 0.281728,
+        "value": 0.28169,
         "unit": "kg/d",
         "status": "study",
-        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake-kiln residue 0.2817 kg/d less the lime make-up of NAOH_PLANT on IA-LIME-TO-NAOH 0.0000 kg/d (route GYPSUM_LOOP)."
+        "note": "X-PAR-02 TF: on-site sulfuric acid (A-M-421): cake-kiln residue 0.2817 kg/d less the lime make-up of NAOH_PLANT on IA-LIME-TO-NAOH 0.0000 kg/d (route GYPSUM_LOOP). Less 0.000038 kg/d to P_CA for the grease soap (A-M-429)."
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "DOCK",
@@ -24899,6 +24984,302 @@
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "IA-GREASE-SPENT",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "OIL_PYRO",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "purged grease to the pyrolysis feed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.002349,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): purged grease collected at relubrication goes to pyrolysis with the plastics feed (recovery first); equals the grease issued."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 0.88,
+        "soap": 0.12
+      }
+    },
+    {
+      "stream_id": "IA-GREASE-AIR",
+      "from_unit_id": "ATMOS",
+      "to_unit_id": "GREASE_CA",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "oxygen of the process air for the wax oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.000132,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): o2 = 0.000132 kg/d (grease.py, route CA)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "O2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-GREASE-VENT",
+      "from_unit_id": "GREASE_CA",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "water, carbon dioxide and light acids of the wax oxidation and saponification",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.000262,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): vent = 0.000262 kg/d (grease.py, route CA)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CO2": 0.5,
+        "water": 0.5
+      }
+    },
+    {
+      "stream_id": "IA-GREASE-AIR-LI",
+      "from_unit_id": "ATMOS",
+      "to_unit_id": "GREASE_LI",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "retired",
+      "carries": "oxygen of the process air for the wax oxidation",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): o2 = 0.000132 kg/d (grease.py, route CA)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "O2": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-GREASE-VENT-LI",
+      "from_unit_id": "GREASE_LI",
+      "to_unit_id": "ATMOS",
+      "phase": "G",
+      "layers": [
+        "mass"
+      ],
+      "presence": "retired",
+      "carries": "water, carbon dioxide and light acids of the wax oxidation and saponification",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): vent = 0.000262 kg/d (grease.py, route CA)."
+      },
+      "from_sector_id": "OIL",
+      "to_sector_id": "WTR",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CO2": 0.5,
+        "water": 0.5
+      }
+    },
+    {
+      "stream_id": "IA-LIME-TO-PCA",
+      "from_unit_id": "ACID_PLANT",
+      "to_unit_id": "P_CA",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "cake-kiln lime residue to the slaker",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 3.8e-05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): lime_draw = 0.000038 kg/d (grease.py, route CA)."
+      },
+      "from_sector_id": "POLYMERS",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CaO": 0.688319,
+        "CaSO4": 0.185665,
+        "H2SO4": 0.006698,
+        "CaF2": 0.056044,
+        "inerts": 0.063274
+      }
+    },
+    {
+      "stream_id": "IA-PCA-H2O",
+      "from_unit_id": "GW_INTAKE",
+      "to_unit_id": "P_CA",
+      "phase": "L",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "well water to slake the lime",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 8e-06,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): slake_h2o = 0.000008 kg/d (grease.py, route CA)."
+      },
+      "from_sector_id": "WTR",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "H2O": 1.0
+      }
+    },
+    {
+      "stream_id": "IA-PCA-REJECT",
+      "from_unit_id": "P_CA",
+      "to_unit_id": "NORTH_DOCK",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "slaker grit (anhydrite, fluorspar and inerts of the kiln residue)",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 1.2e-05,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): reject = 0.000012 kg/d (grease.py, route CA)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "DOCK",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "CaSO4": 0.185665,
+        "H2SO4": 0.006698,
+        "CaF2": 0.056044,
+        "inerts": 0.063274
+      }
+    },
+    {
+      "stream_id": "SF-GREASE_CA",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GREASE_CA",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 7e-05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): feed equal to GREASE_CA continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "SF-GREASE_LI",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GREASE_LI",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "retired",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): feed equal to GREASE_LI continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],

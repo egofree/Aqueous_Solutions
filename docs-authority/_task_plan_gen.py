@@ -681,7 +681,7 @@ RTE_DONE = [('X-RTE-STOCK_TO_FAB', 'Route STOCK_TO_FAB: silicon charge to WAFER_
             ('X-RTE-IMPORT-CARBON', 'Imports IA-C-TI, IA-C-MO and IA-C-CR: carbon reductant made on site', 'the Ti, Mo and Cr chlorinators take plant pyrolysis char from OIL_PYRO, sized from their carbon need over the char fixed carbon (A-M-420)', 'flow_graph/param/foundry_poly.py'),
             ('X-RTE-UPW_TO_FAB', 'Route UPW_TO_FAB: retired as a duplicate', 'IA-UPW-FAB already fills FAB_UPW_TANK from the same polisher, so the header path adds no diversity; set to presence retired', 'flow_graph/plant_flow_graph.json')]
 RTE_DONE += [(f"X-RTE-{_e['stream_id']}", f"Route {_e['stream_id']} from {_e['from_unit_id']} to {_e['to_unit_id']}: standby at its rated case",
-             f"the route carries {_e['params']['rate_rated_kg_d']:g} kg/d when {_e['params']['rated_case']} (A-M-418)", 'flow_graph/param/standby_routes.py')
+             f"the route carries {_e['params']['rate_rated_kg_d']:g} kg/d when {_e['params']['rated_case']} (A-M-418)", _e['params'].get('rated_by', 'flow_graph/param/standby_routes.py'))
              for _e in sorted((x for x in g['edges'] if x.get('presence') == 'present'), key=lambda e: e['stream_id']) if (_e.get('params') or {}).get('rate_rated_kg_d')]
 _rte_items = [(tid, t, crit, '—', ev) for tid, t, crit, ev in RTE_DONE]
 for _e in sorted(_RTE['open'], key=lambda e: e['stream_id']):

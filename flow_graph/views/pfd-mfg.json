@@ -4,7 +4,7 @@
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
   "node_count": 35,
-  "edge_count": 46,
+  "edge_count": 47,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -1098,13 +1098,45 @@
       "params": {
         "sec3_material": {
           "mat": "316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water heads keep the jacket wetted side on the issued Q3/Q4 M1 water family",
-          "basis": "calcium soap saponification at the 95-120 C kettle class, wax cut + Ca(OH)2 (graph edges/duty AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2): grease manufacture practice selects 304/316L hot-soap contact (MANG2007 ch. 14.6); the alkaline soap concentrate is hot and basic, out of the PP-H class. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "basis": "calcium soap saponification of the air-oxidised wax cut with Ca(OH)2 slaked from the acid-plant residue lime, in an electrically heated campaign kettle (rates and kettle sized in flow_graph/param/grease.py, A-M-429): grease manufacture practice selects 304/316L hot-soap contact (MANG2007 ch. 14.6); the alkaline soap concentrate is hot and basic, out of the PP-H class. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
           "alt": "304L kettle if the wax cut proves the only wetted face at a lower saponification temperature (cost down, first-article choice)",
           "note": "allowance: corrosion is not the limit - cleaning and soap residue set the maintenance surface; no measured pit rate.",
           "task": "X-MAT-22"
+        },
+        "design": {
+          "route": "CA",
+          "units": 55,
+          "gp_g": 3.9,
+          "interval_d": 182.625,
+          "grease_kg_d": 0.002349,
+          "soap_kg_d": 0.000282,
+          "base_oil_kg_d": 0.002067,
+          "wax_kg_d": 0.002445,
+          "wax_ox_kg_d": 0.000377,
+          "acid_kg_d": 0.000264,
+          "o2_kg_d": 0.000132,
+          "vent_kg_d": 0.000262,
+          "thickener_kg_d": 3.4e-05,
+          "caoh2_kg_d": 3.4e-05,
+          "lioh_kg_d": 0.0,
+          "lime_draw_kg_d": 3.8e-05,
+          "slake_h2o_kg_d": 8e-06,
+          "reject_kg_d": 1.2e-05,
+          "kettle_L": 0.335582,
+          "kettle_D_mm": 100.0,
+          "insul_mm": 25,
+          "loss_W": 11.54743,
+          "kw": 7.2e-05,
+          "kettle_T_C": 150.0,
+          "campaign_d": 90
         }
       },
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 7e-05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): feed heat to 150 C + shell loss 11.5 W for a 8 h run every 90 d, over the heater efficiency."
+      }
     },
     {
       "unit_id": "GREASE_LI",
@@ -1128,7 +1160,12 @@
           "task": "X-MAT-22"
         }
       },
-      "continuous_kw": null
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): standby kettle (route CA)."
+      }
     },
     {
       "unit_id": "METAL_STORE",
@@ -1234,7 +1271,7 @@
       "forbidden": "pyro if FR-4",
       "claim_status": "Closed",
       "rate": {
-        "value": 11.635142,
+        "value": 11.637491,
         "unit": "kg/d",
         "status": "study",
         "note": "Study MFG scrap continuous-equiv mid of polymer/metal band (AQS-AUD-001 \u00a710.6) | X-PAR-02 TF: shop scrap to the leach closes the shop by difference (AUD s10.6 band; absorbs the char-reductant re-base) (AQS-PAR-003)."
@@ -1682,10 +1719,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.002349,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): grease need: 55 lubricated units x points x Gp 3.90 g every 182.6 d (SKF_RELUB, AQS-OPS-002; route CA)."
       },
       "from_sector_id": "OIL",
       "to_sector_id": "MFG"
@@ -1704,13 +1741,20 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": null,
-        "unit": null,
-        "status": "null",
-        "note": "Rev AC new topology \u2014 unrated pending param pass"
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): standby thickener route, carries grease when grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md) (A-M-429)."
       },
       "from_sector_id": "OIL",
-      "to_sector_id": "MFG"
+      "to_sector_id": "MFG",
+      "params": {
+        "rate_normal_kg_d": 0.0,
+        "rate_rated_kg_d": 0.002349,
+        "rated_case": "grease_thickener = LI and the polish liquor lithium tenor is measured (notes/DIGESTER_LI.md)",
+        "backs_up": "GREASE_CA_TO_MFG",
+        "rated_by": "flow_graph/param/grease.py"
+      }
     },
     {
       "stream_id": "IA-EW-MET-1",
@@ -2119,7 +2163,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 4.835643,
+        "value": 4.837992,
         "unit": "kg/d",
         "status": "study",
         "note": "Char less the carbon charged to the silicon-carbide furnace. | X-PAR-02 TF: char by difference: pyro feed less the per-pass volatiles = the documented oil 22.5 + NCG 5.0 + C29 pass-through split (the SiC-furnace carbon charge rides IA-SIC-RET) (AQS-PAR-003)."
@@ -2520,6 +2564,36 @@
       },
       "from_sector_id": "POLYMERS",
       "to_sector_id": "MFG"
+    },
+    {
+      "stream_id": "IA-GREASE-SPENT",
+      "from_unit_id": "MFG_SHOP",
+      "to_unit_id": "OIL_PYRO",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "purged grease to the pyrolysis feed",
+      "header": "dedicated",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.002349,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): purged grease collected at relubrication goes to pyrolysis with the plastics feed (recovery first); equals the grease issued."
+      },
+      "from_sector_id": "MFG",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": {
+        "hydrocarbon": 0.88,
+        "soap": 0.12
+      }
     }
   ],
   "render_note": "JSON + Graphviz DOT/SVG from plant_flow_graph.json \u2014 no invented rates; placeholders dashed"

@@ -1,8 +1,8 @@
 # Ca and Li grease lines
 
 Document number: AQS-DUTY-GREASE  
-Revision: A  
-Date: 2026-10-16  
+Revision: B  
+Date: 2026-10-29  
 Authority: graph Rev W, notes/oil_cuts.md. Not a PE stamp.  
 Rates are design assumptions. Not measured.
 
@@ -50,20 +50,16 @@ Use: bearings and any service above the Ca-grease range.
 
 Lithium is recovered on-site. The path is no longer “unavailable.”
 
-## Rates (assumptions)
+## Rates
 
-| Product | Rate | Notes |
-|---------|------|-------|
-| Wax to grease | 2.0 kg/d | From C19–C28 |
-| Ca grease | 1.2 kg/d | Majority of shop use |
-| Li grease | 0.6 kg/d | Bearings / higher temp |
-| P-Ca to kettle | ~0.1 kg/d | Stoichiometric excess |
-| Li to kettle | ~0.02 kg/d | Stoichiometric; depends on polish tenor |
+Revision B replaces the fixed rates of revision A with rates that `flow_graph/param/grease.py` computes (A-M-429). The grease need is the relubrication quantity of the lubricated rotating units of the maintenance plan, at the SKF side-fill quantity of 0.005 D B grams per point and the lubrication interval of the maintenance plan. The wax draw follows from the soap fraction, the fatty-acid yield of the air oxidation of the wax and the base oil that the grease carries. The rates are therefore far below the revision A figures, which were not tied to any grease point.
+
+Both soaps stay built. The driver `grease_thickener` selects the soap in service. The calcium soap is the default because its lime comes from the acid-plant residue that the plant would otherwise ship. The lithium kettle stands by at its rated case until the lithium tenor of the polish liquor is measured. Spent grease returns to oil pyrolysis.
 
 ## Graph
 
 Rev W. Edges: POLISH_BANK → LI_RECOVER → GREASE_LI; P_CA → GREASE_CA; PROD_C19_C28 → both kettles; both kettles → MFG_SHOP.
 
-Fatty-acid split sized in notes/OIL_POLY_SIZE.md (0.8 kg/d saponifiable from 2.0 kg/d wax).
+The fatty acid comes from the air oxidation of part of the wax cut, sized in `flow_graph/param/grease.py`.
 
 Locked: Li₂CO₃ precipitation, optional conversion to LiOH. See notes/DIGESTER_LI.md.

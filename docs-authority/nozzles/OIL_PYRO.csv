@@ -10,3 +10,4 @@ N8,solids,Class 150,plant pyrolysis char reductant,outlet,600
 N9,solids,Class 150,plant pyrolysis char reductant,outlet,600
 N10,solids,Class 150,plant pyrolysis char reductant,outlet,600
 N11,solids,Class 150,plant pyrolysis char reductant for the cake kiln,outlet,600
+N12,solids,Class 150,purged grease to the pyrolysis feed,inlet,160

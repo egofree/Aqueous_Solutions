@@ -28,7 +28,7 @@ Table 1.1. Motor families
 
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
-| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 117 | 66 | 0.24 |
+| MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 119 | 66 | 0.24 |
 | MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 56 | 6 | 2.73 |
 | MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 27 | 2 | 0.15 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 104 | 5 | 26.06 |
@@ -42,7 +42,7 @@ Table 1.1. Motor families
 | MF-14 | induction IE3 | IEC 132M / 7.5 kW | 480 V 3-ph | 2 | 1 | 11.30 |
 | MF-15 | induction IE3 | IEC 112M / 4 kW | 480 V 3-ph | 1 | 1 | 3.48 |
 | MF-16 | induction IE3 | IEC 80 / 0.75 kW | 480 V 3-ph | 1 | 1 | 0.55 |
-| MF-17 | solenoid | ISO 15218 coil, 22 mm | 24 V DC | 37 | 18 | 0.33 |
+| MF-17 | solenoid | ISO 15218 coil, 22 mm | 24 V DC | 38 | 18 | 0.33 |
 | MF-19 | stepper | NEMA 34 (86 mm) | 48 V DC | 3 | 1 | 1.20 |
 | MF-25 | hermetic induction (scroll) | 1.1 kW hermetic | 480 V 3-ph | 1 | 1 | 0.93 |
 | MF-26 | hermetic induction (scroll) | 0.75 kW hermetic | 480 V 3-ph | 1 | 1 | 0.64 |
@@ -307,7 +307,9 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | OIL_GLASS | OIL_FRAC | transfer pump CUT-4 to PROD_C29 | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 5.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | OIL_GLASS | OIL_PYRO | transfer pump IA-OIL-02 to OIL_FRAC | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 33.4 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | cut_tank | PROD_C19_C28 | on/off valve CUT-3-OUT | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
+| cut_tank | PROD_C19_C28 | on/off valve WAX_TO_GREASE_CA | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | cut_tank | PROD_C19_C28 | transfer pump CUT-3-OUT to MFG_SHOP | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 3.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| cut_tank | PROD_C19_C28 | transfer pump WAX_TO_GREASE_CA to GREASE_CA | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | cut_tank | PROD_C29 | on/off valve C29_RECYCLE | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
 | cut_tank | PROD_C29 | transfer pump C29_RECYCLE to C29_RECYCLE | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 5.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | cut_tank | PROD_C5_C10 | on/off valve IA-C5-POLY | solenoid | ISO 15218 coil, 22 mm | 0.008 | 24 V DC | S3 | on/off | 1 | assumed one per dosed line |
@@ -360,5 +362,6 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | evaporator | VCD_TRAIN | transfer pump S28 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0001 | 24 V DC | S3 | BLDC driver | 1 | 17.9 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | intake | GW_INTAKE | transfer pump IA-ACID-H2O to ACID_PLANT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | intake | GW_INTAKE | transfer pump IA-NAOH-H2O to NAOH_PLANT | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 11.3 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
+| intake | GW_INTAKE | transfer pump IA-PCA-H2O to P_CA | BLDC | 42 mm (NEMA 17 flange) | 0 | 24 V DC | S3 | BLDC driver | 1 | 0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | treat | GREY_TREAT | transfer pump IA-GREY-01 to LEACH_CSTR_1 | BLDC | 42 mm (NEMA 17 flange) | 0.0007 | 24 V DC | S3 | BLDC driver | 1 | 244.6 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |
 | treat | GREY_TREAT | transfer pump S29 to VCD_TRAIN | BLDC | 42 mm (NEMA 17 flange) | 0.0003 | 24 V DC | S3 | BLDC driver | 1 | 104.5 kg/d at 10 m, eff 0.4 (assumed; gravity not credited) |

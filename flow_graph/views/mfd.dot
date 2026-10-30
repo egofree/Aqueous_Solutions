@@ -150,7 +150,7 @@ digraph G {
   "GROW_BED" -> "VCD_TRAIN" [label="S13\\n3.799494 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "FOOD_STORE" [label="S14\\n4.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "GROW_BED" -> "HABITATION" [label="S15\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
-  "MFG_SHOP" -> "LEACH_CSTR_1" [label="S16\\n11.635142 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MFG_SHOP" -> "LEACH_CSTR_1" [label="S16\\n11.637491 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "AFTERBURNER" -> "CRYO_CO2" [label="S18\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "BAGHOUSE" -> "LEACH_CSTR_1" [label="S19\\n0.0 kg/d", style=dashed, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "ROOF_TANK" -> "HABITATION" [label="S21\\n120.68 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];

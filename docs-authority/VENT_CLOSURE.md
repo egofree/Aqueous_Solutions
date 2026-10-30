@@ -86,7 +86,7 @@ Every closure holds on the present graph: each named stream exists, each conting
 
 The normal-path streams S18 and IA-FC-EXH exist but carry no flow at present. They are kept routes, not discharges.
 
-The relief units and the atmospheric boundary on the graph are ATMOS, RELIEF_CRYO and RELIEF_H2. These streams into them carry flow in normal operation, which the rule does not allow: IA-SI-CO2 (0.8346 kg/d) and IA-ACID-CO2 (0.08687 kg/d).
+The relief units and the atmospheric boundary on the graph are ATMOS, RELIEF_CRYO and RELIEF_H2. These streams into them carry flow in normal operation, which the rule does not allow: IA-SI-CO2 (0.8346 kg/d), IA-ACID-CO2 (0.08687 kg/d) and IA-GREASE-VENT (0.000262 kg/d).
 
 ## 5. Safety notes
 

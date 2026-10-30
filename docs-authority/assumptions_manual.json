@@ -7397,5 +7397,24 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.solvent prints both routes; after regen IA-SOLV-MU is retired, IA-SOLV-PLANT equals IA-SOLV-WB, and python3 -m flow_graph.param.recovery reports no flags."
+ },
+ {
+  "id": "A-M-429",
+  "value": "The shop grease is made on site from the wax cut, sized from the grease points. The need is the lubricated rotating units of the maintenance plan x grease_points_per_unit x the SKF side-fill quantity 0.005 D B g (grease_bearing_D_mm, grease_bearing_B_mm) per lubrication interval (maint_rotating.lube_mo). The grease is grease_soap_frac soap in the C19-C28 base oil; the soap acid comes from air oxidation of part of the wax at grease_wax_ox_acid_yield with air from the atmosphere. The soap is selected by grease_thickener: CA (default) slakes lime drawn from the acid-plant residue (IA-LIME-SHIP) in P_CA and saponifies in GREASE_CA; LI uses lithium from LI_RECOVER in GREASE_LI and stands by at its rated case. Spent grease returns from MFG_SHOP to oil pyrolysis. Each kettle is sized as an insulated campaign kettle (grease_campaign_d, grease_run_h).",
+  "units": "kg/d; kW",
+  "where": "flow_graph/param/grease.py; flow_graph/param/drivers.json grease_*; notes/GREASE_LINES.md revision B",
+  "basis": "Owner decisions t59u (no imports except waste or raw ore) and t61u (recover first), with both soaps built and selectable. The relubrication quantity is from SKF_RELUB, the soap greases from ULLMANN_LUBRICANTS and the paraffin oxidation from ULLMANN_FATTY_ACIDS. CA is the default because its lime is a residue the plant would otherwise ship; LI waits on the lithium tenor of the polish liquor.",
+  "sensitivity": "All grease rates scale linearly with the number of lubricated units, the points per unit, D x B and the inverse of the lubrication interval; the lime draw scales with grease_soap_frac.",
+  "replaced_by": "The grease issue log of the first article",
+  "task": "QA audit 2026-10-29, shop routes (X-RTE-GREASE_CA_TO_MFG, X-RTE-WAX_TO_GREASE_CA, X-RTE-PCA_TO_GREASE and the lithium routes)",
+  "files": [
+   "flow_graph/param/grease.py",
+   "flow_graph/param/drivers.json",
+   "flow_graph/param/fluoro_train.py",
+   "flow_graph/param/ess_tf.py",
+   "notes/GREASE_LINES.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "python3 -m flow_graph.param.grease prints both routes; after regen GREASE_CA_TO_MFG equals IA-GREASE-SPENT, the lithium routes carry their rated case at zero flow, and python3 -m flow_graph.param.recovery reports no flags."
  }
 ]

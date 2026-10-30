@@ -472,8 +472,12 @@ OIL,OIL_GLASS,OIL_PYRO,transfer pump IA-OIL-02 to OIL_FRAC power,DC power pair,1
 OIL,OIL_GLASS,OIL_PYRO,transfer pump IA-OIL-02 to OIL_FRAC signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 OIL,cut_tank,PROD_C19_C28,on/off valve CUT-3-OUT power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 OIL,cut_tank,PROD_C19_C28,on/off valve CUT-3-OUT signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
+OIL,cut_tank,PROD_C19_C28,on/off valve WAX_TO_GREASE_CA power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
+OIL,cut_tank,PROD_C19_C28,on/off valve WAX_TO_GREASE_CA signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 OIL,cut_tank,PROD_C19_C28,transfer pump CUT-3-OUT to MFG_SHOP power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 OIL,cut_tank,PROD_C19_C28,transfer pump CUT-3-OUT to MFG_SHOP signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
+OIL,cut_tank,PROD_C19_C28,transfer pump WAX_TO_GREASE_CA to GREASE_CA power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
+OIL,cut_tank,PROD_C19_C28,transfer pump WAX_TO_GREASE_CA to GREASE_CA signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 OIL,cut_tank,PROD_C29,on/off valve C29_RECYCLE power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 OIL,cut_tank,PROD_C29,on/off valve C29_RECYCLE signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 OIL,cut_tank,PROD_C29,transfer pump C29_RECYCLE to C29_RECYCLE power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
@@ -552,6 +556,8 @@ WTR,intake,GW_INTAKE,transfer pump IA-ACID-H2O to ACID_PLANT power,DC power pair
 WTR,intake,GW_INTAKE,transfer pump IA-ACID-H2O to ACID_PLANT signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 WTR,intake,GW_INTAKE,transfer pump IA-NAOH-H2O to NAOH_PLANT power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 WTR,intake,GW_INTAKE,transfer pump IA-NAOH-H2O to NAOH_PLANT signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
+WTR,intake,GW_INTAKE,transfer pump IA-PCA-H2O to P_CA power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
+WTR,intake,GW_INTAKE,transfer pump IA-PCA-H2O to P_CA signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 WTR,treat,GREY_TREAT,transfer pump IA-GREY-01 to LEACH_CSTR_1 power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"
 WTR,treat,GREY_TREAT,transfer pump IA-GREY-01 to LEACH_CSTR_1 signal,control,18 AWG,shielded pair,300 V,2,10.0,1,20.0,speed/position feedback (assumed)
 WTR,treat,GREY_TREAT,transfer pump S29 to VCD_TRAIN power,DC power pair,16 AWG,TC-ER 2-cond,600 V,2,10.0,1,20.0,"from the local 24/48 V DC panel at the unit, 10 m (assumed)"

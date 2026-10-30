@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 121 kg/d. Mass out 110.1 kg/d. Electrical duty 0.0000 kW. In: IA-N2-VENT 3.1 kg/d (nitrogen vent); IA-NA-PURGE 0.642 kg/d (sodium chloride bleed of the leach purge (impurity bleed)); IA-C5-SHIP 7.141 kg/d (C5-C10 product shipped); IA-C11-SHIP 1.512 kg/d (C11-C18 surplus shipped); 16 more. Out: IA-H2O-MU 56.5 kg/d (water make-up for H and O leaving as product); IA-AIR-IN 0 kg/d (intake air); IA-CAF2-MU 0.3255 kg/d (fluorspar make-up, acid-spar class >= 97 % CaF2); IA-ALCL3-MU 49.42 kg/d (anhydrous AlCl3 feed (mining-waste chloride class)); 9 more.
+1. Basis. Mass in 121 kg/d. Mass out 110.1 kg/d. Electrical duty 0.0000 kW. In: IA-N2-VENT 3.1 kg/d (nitrogen vent); IA-NA-PURGE 0.642 kg/d (sodium chloride bleed of the leach purge (impurity bleed)); IA-C5-SHIP 7.141 kg/d (C5-C10 product shipped); IA-C11-SHIP 1.512 kg/d (C11-C18 surplus shipped); 17 more. Out: IA-H2O-MU 56.49 kg/d (water make-up for H and O leaving as product); IA-AIR-IN 0 kg/d (intake air); IA-CAF2-MU 0.3255 kg/d (fluorspar make-up, acid-spar class >= 97 % CaF2); IA-ALCL3-MU 49.42 kg/d (anhydrous AlCl3 feed (mining-waste chloride class)); 9 more.
 
 2. Size.
 - No mass throughput. No volume is invented.

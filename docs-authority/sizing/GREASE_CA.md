@@ -17,15 +17,45 @@ This page records the size of unit GREASE_CA, of class `kettle` in sector OIL, f
 
 ## 2. Duty
 
-No stream with a mass rate enters or leaves the unit on the graph.
+The unit takes 0.002611 kg/d by 3 streams and gives 0.002611 kg/d by 2 streams. Its continuous electrical load is 7e-05 kW, fed by stream SF-GREASE_CA.
 
-The graph holds no design parameters for the unit.
+Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
+
+Table 2.1. Design parameters
+
+| Parameter | Value |
+| --- | --- |
+| route | CA |
+| units | 55 |
+| gp_g | 3.9 |
+| interval_d | 182.625 |
+| grease_kg_d | 0.002349 |
+| soap_kg_d | 0.000282 |
+| base_oil_kg_d | 0.002067 |
+| wax_kg_d | 0.002445 |
+| wax_ox_kg_d | 0.000377 |
+| acid_kg_d | 0.000264 |
+| o2_kg_d | 0.000132 |
+| vent_kg_d | 0.000262 |
+| thickener_kg_d | 3.4e-05 |
+| caoh2_kg_d | 3.4e-05 |
+| lioh_kg_d | 0 |
+| lime_draw_kg_d | 3.8e-05 |
+| slake_h2o_kg_d | 8e-06 |
+| reject_kg_d | 1.2e-05 |
+| kettle_L | 0.335582 |
+| kettle_D_mm | 100 |
+| insul_mm | 25 |
+| loss_W | 11.5474 |
+| kw | 7.2e-05 |
+| kettle_T_C | 150 |
+| campaign_d | 90 |
 
 ## 3. Geometry
 
 The graph gives no envelope for the unit.
 
-With no mass flow, the unit has no hold-up volume to check.
+The hold-up check takes 0.002611 kg/d for a hold of 1 d (one day, the default of the sweep) at a density of 1000 kg/m³, a working volume of 0.002611 L. At a fill of 0.8 in an upright cylinder with a height of 1.5 diameters, the vessel is 20 mm in diameter and 30 mm high.
 
 ## 4. Material
 

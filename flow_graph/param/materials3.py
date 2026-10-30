@@ -283,8 +283,8 @@ SEL = {
  'GREASE_CA': (
   '316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water '
   'heads keep the jacket wetted side on the issued Q3/Q4 M1 water family',
-  'calcium soap saponification at the 95-120 C kettle class, wax cut + Ca(OH)2 (graph edges/duty '
-  'AQS-DUTY-GREASE 0.1 kg/d Ca(OH)2): grease manufacture practice selects 304/316L hot-soap contact '
+  'calcium soap saponification of the air-oxidised wax cut with Ca(OH)2 slaked from the acid-plant residue lime, '
+  'in an electrically heated campaign kettle (rates and kettle sized in flow_graph/param/grease.py, A-M-429): grease manufacture practice selects 304/316L hot-soap contact '
   '(MANG2007 ch. 14.6); the alkaline soap concentrate is hot and basic, out of the PP-H class. ' + _TAG,
   '304L kettle if the wax cut proves the only wetted face at a lower saponification temperature '
   '(cost down, first-article choice)',

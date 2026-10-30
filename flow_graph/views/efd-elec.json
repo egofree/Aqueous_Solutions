@@ -3,8 +3,8 @@
   "view_mode": "EFD",
   "source_doc": "AQS-FLOW-GRAPH-001",
   "source_revision": "AC",
-  "node_count": 92,
-  "edge_count": 96,
+  "node_count": 94,
+  "edge_count": 98,
   "orphan_campus_units": [],
   "nodes": [
     {
@@ -1573,7 +1573,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 351.8478,
+        "value": 351.8479,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -2266,6 +2266,12 @@
                 "kg_d": 0.007684,
                 "recoverable": false,
                 "basis": "fluorspar the HF kiln does not convert (hf_kiln.CaF2_conversion) leaves with the cake"
+              },
+              {
+                "stream": "IA-PCA-REJECT",
+                "kg_d": 1e-06,
+                "recoverable": false,
+                "basis": "fluorspar the HF kiln does not convert; the residue drawn for the grease lime leaves with the slaker grit"
               }
             ]
           }
@@ -4110,6 +4116,91 @@
       }
     },
     {
+      "unit_id": "GREASE_CA",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "kettle",
+      "tags": [
+        "grease"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Calcium soap grease kettle. Wax C19-C28 + P-Ca. Shop grease.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sec3_material": {
+          "mat": "316L jacketed soap kettle + 316L agitator; steel frame and insulation stays dry; steam - hot-water heads keep the jacket wetted side on the issued Q3/Q4 M1 water family",
+          "basis": "calcium soap saponification of the air-oxidised wax cut with Ca(OH)2 slaked from the acid-plant residue lime, in an electrically heated campaign kettle (rates and kettle sized in flow_graph/param/grease.py, A-M-429): grease manufacture practice selects 304/316L hot-soap contact (MANG2007 ch. 14.6); the alkaline soap concentrate is hot and basic, out of the PP-H class. Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "304L kettle if the wax cut proves the only wetted face at a lower saponification temperature (cost down, first-article choice)",
+          "note": "allowance: corrosion is not the limit - cleaning and soap residue set the maintenance surface; no measured pit rate.",
+          "task": "X-MAT-22"
+        },
+        "design": {
+          "route": "CA",
+          "units": 55,
+          "gp_g": 3.9,
+          "interval_d": 182.625,
+          "grease_kg_d": 0.002349,
+          "soap_kg_d": 0.000282,
+          "base_oil_kg_d": 0.002067,
+          "wax_kg_d": 0.002445,
+          "wax_ox_kg_d": 0.000377,
+          "acid_kg_d": 0.000264,
+          "o2_kg_d": 0.000132,
+          "vent_kg_d": 0.000262,
+          "thickener_kg_d": 3.4e-05,
+          "caoh2_kg_d": 3.4e-05,
+          "lioh_kg_d": 0.0,
+          "lime_draw_kg_d": 3.8e-05,
+          "slake_h2o_kg_d": 8e-06,
+          "reject_kg_d": 1.2e-05,
+          "kettle_L": 0.335582,
+          "kettle_D_mm": 100.0,
+          "insul_mm": 25,
+          "loss_W": 11.54743,
+          "kw": 7.2e-05,
+          "kettle_T_C": 150.0,
+          "campaign_d": 90
+        }
+      },
+      "continuous_kw": {
+        "value": 7e-05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): feed heat to 150 C + shell loss 11.5 W for a 8 h run every 90 d, over the heater efficiency."
+      }
+    },
+    {
+      "unit_id": "GREASE_LI",
+      "sector_id": "OIL",
+      "presence": "present",
+      "class": "kettle",
+      "tags": [
+        "grease"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "notes": "Lithium soap grease kettle. Wax C19-C28 + Li from LI_RECOVER. Higher-temp grease.",
+      "enabled": true,
+      "modules": [],
+      "params": {
+        "sec3_material": {
+          "mat": "316L jacketed soap kettle + 316L agitator (same kettle class as GREASE_CA) for the lithium soap",
+          "basis": "lithium 12-hydroxystearate soap saponification, wax cut + Li source from LI_RECOVER (graph edges): Li soaps are the standard thickeners and their kettles run the same 95-120 C class (MANG2007 ch. 14). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "304L kettle at the same trade-off as GREASE_CA",
+          "note": "Li-bearing residues drive the cleaning protocol, not corrosion.",
+          "task": "X-MAT-22"
+        }
+      },
+      "continuous_kw": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): standby kettle (route CA)."
+      }
+    },
+    {
       "unit_id": "SI_REDUCE",
       "sector_id": "GLASS",
       "presence": "present",
@@ -4497,6 +4588,12 @@
                 "kg_d": 0.012935,
                 "recoverable": false,
                 "basis": "cake-kiln non-conversion (caso4_dec_frac) leaves with the residue"
+              },
+              {
+                "stream": "IA-PCA-REJECT",
+                "kg_d": 2e-06,
+                "recoverable": false,
+                "basis": "cake-kiln non-conversion; the residue drawn for the grease lime leaves with the slaker grit"
               }
             ]
           }
@@ -4939,7 +5036,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 351.8478,
+        "value": 351.8479,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -7167,6 +7264,60 @@
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "FAB",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "SF-GREASE_CA",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GREASE_CA",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "present",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 7e-05,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): feed equal to GREASE_CA continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "OIL",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "SF-GREASE_LI",
+      "from_unit_id": "SOL_ARK_60K",
+      "to_unit_id": "GREASE_LI",
+      "phase": "E",
+      "layers": [
+        "elec"
+      ],
+      "presence": "retired",
+      "carries": "480 V AC",
+      "header": "tray",
+      "forbidden": "HDR_O2, HDR_CO2",
+      "claim_status": "Claimed / Partial",
+      "rate": {
+        "value": 0.0,
+        "unit": "kW",
+        "status": "study",
+        "note": "X-RTE TF: shop grease on site (A-M-429): feed equal to GREASE_LI continuous_kw."
+      },
+      "from_sector_id": "ELEC",
+      "to_sector_id": "OIL",
       "open_boundary": false,
       "namespace": "IA",
       "gap_flags": [],

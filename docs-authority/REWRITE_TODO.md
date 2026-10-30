@@ -1,7 +1,7 @@
 # Documentation rewrite status
 
 Document number: AQS-DOC-003
-Revision: AQ
+Revision: AR
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -49,6 +49,7 @@ Date: 2026-10-29
 | AO | Batch 38: Q-035 and Q-036 decided, chlor-alkali top-up and cell hydrogen on the H2 header (A-M-426) | 2026-10-29 |
 | AP | Batch 39: Q-037 decided, the Ti, Mo and Cr cells take the float-sink grit first (A-M-427) | 2026-10-29 |
 | AQ | Batch 40: bench solvent made on site by SOLV_PLANT, recovery first (A-M-428) | 2026-10-29 |
+| AR | Batch 41: shop grease made on site from the wax cut and acid-plant residue lime, sized from the grease points (A-M-429) | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -210,6 +211,7 @@ Table 2.1. Pages rewritten in full
 | `flow_graph/param/caustic.py` (A-M-426) | Q-035 and Q-036 closed under the owner delegation t62u: the sodium hydroxide top-up runs on the chlor-alkali cells with halite ore, with CAUSTICIZE selectable, and the cell hydrogen stays on the H2 header to the hydrogen store. |
 | `flow_graph/param/foundry_poly.py` (A-M-427) | Q-037 closed under the owner delegation t62u: the cells take their oxide from the float-sink dense grit first, with the assay as driver inputs at 0 until AQS-ASSAY-TI-MO lands, and the dock concentrate covers the rest as the redundant source. |
 | `flow_graph/param/solvent.py` (A-M-428) | IA-SOLV-MU retired: SOLV_PLANT redistils the spent bench solvent first and makes the shortfall from plant methanol and the chlorinator CO (MEOH_CO), with a galley food-waste fermentation selectable (FERMENT). |
+| `flow_graph/param/grease.py` (A-M-429) | The grease routes carry flow: the need is sized from the grease points of the lubricated units, the calcium soap uses residue lime from the acid plant, the lithium soap stands by at its rated case, and spent grease returns to pyrolysis. |
 
 ## 3. In progress
 

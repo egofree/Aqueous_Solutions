@@ -1,3 +1,7 @@
 tag,size,rating,service,face,height_mm
 N1,DN15,Class 150,drain,bottom,50
 N2,DN15,Class 150,vent,top,800
+N3,solids,Class 150,calcium hydroxide,outlet,600
+N4,solids,Class 150,cake-kiln lime residue to the slaker,inlet,160
+N5,DN15,Class 150,well water to slake the lime,inlet,160
+N6,solids,Class 150,"slaker grit (anhydrite, fluorspar and inerts of the kiln residue)",outlet,600

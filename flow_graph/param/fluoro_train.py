@@ -157,6 +157,9 @@ def apply(g=None, write=False):
     # the 98 wt% acid is made on site by ACID_PLANT; on its default route the kiln cake goes there instead of the dock (A-M-421)
     from flow_graph.param import sulfuric
     sulfuric.tf(g, E, r, d)
+    # shop grease from the wax cut, with its soap lime from the acid-plant residue (A-M-429)
+    from flow_graph.param import grease
+    grease.tf(g, E, d)
     _mk(g, E, 'IA-HF-PROD', 'HF_GEN', 'WS_HF_ED', 'L', 'aqueous HF to the fab reagent fork', r['hf_ed'],
         f'HF_GEN supplies the reagent fork at the S31 draw {r["hf_ed"]:.3f} kg/d (AQS-DUTY-FP sec. 2: product to the '
         f'monomer units and the direct HF users; replaces the direct leach feed of IA-HF-SRC, which now runs through F_RECOVER)')

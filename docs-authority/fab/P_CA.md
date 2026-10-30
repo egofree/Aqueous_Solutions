@@ -7,7 +7,7 @@ service line: see the duty sheet section 1 basis
 Internals: duty sheet: "no envelope. 3. Material. PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing" [docs-authority/duties/P_CA.md]
 Material: PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside the wetted headspace. (continues on the duty sheet)
 
-Nozzles: 2 process connections per docs-authority/nozzles/P_CA.csv
+Nozzles: 6 process connections per docs-authority/nozzles/P_CA.csv
 
 Production route (issued ahead of the CAD build; fabrication does not start before unit
 tasks 10-12 close; the section 3 material selections are issued per AQS-STD-006):

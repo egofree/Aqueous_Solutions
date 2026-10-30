@@ -17,7 +17,7 @@ This page records the size of unit GW_INTAKE, of class `intake` in sector WTR, f
 
 ## 2. Duty
 
-The unit takes 0 kg/d by 0 streams and gives 11.3962 kg/d by 3 streams.
+The unit takes 0 kg/d by 0 streams and gives 11.3962 kg/d by 4 streams.
 
 The graph holds no design parameters for the unit.
 
