@@ -17,7 +17,7 @@ This page records the size of unit CR_CELL, of class `cell` in sector FOUNDRY, f
 
 ## 2. Duty
 
-The unit takes 0.4673 kg/d by 2 streams and gives 0.4673 kg/d by 2 streams. Its continuous electrical load is 0.16 kW, fed by stream SF-CR_CELL.
+The unit takes 0.4673 kg/d by 3 streams and gives 0.4673 kg/d by 3 streams. Its continuous electrical load is 0.16 kW, fed by stream SF-CR_CELL.
 
 Table 2.1 lists the design parameters that the graph holds for the unit in `params.design`.
 

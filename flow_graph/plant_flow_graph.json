@@ -4750,12 +4750,14 @@
             "use": "CR_CELL metal",
             "need_kg_d": 0.25000186123995816,
             "recovered_kg_d": 0.0,
-            "recovered_from": [],
+            "recovered_from": [
+              "FLOAT_SINK_GRIT_TO_CR"
+            ],
             "ore_streams": [
               "IA-CR2O3-MU"
             ],
             "unrecovered": [],
-            "note": "no waste stream on the graph carries Cr; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)"
+            "note": "the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_Cr2O3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427)"
           }
         ]
       },
@@ -4843,12 +4845,14 @@
             "use": "TI_CELL metal",
             "need_kg_d": 0.5000050228385401,
             "recovered_kg_d": 0.0,
-            "recovered_from": [],
+            "recovered_from": [
+              "FLOAT_SINK_GRIT_TO_TI"
+            ],
             "ore_streams": [
               "IA-TIO2-MU"
             ],
             "unrecovered": [],
-            "note": "no waste stream on the graph carries Ti; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)"
+            "note": "the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_TiO2_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427)"
           }
         ]
       },
@@ -4934,12 +4938,14 @@
             "use": "MO_CELL metal",
             "need_kg_d": 0.06250111290961256,
             "recovered_kg_d": 0.0,
-            "recovered_from": [],
+            "recovered_from": [
+              "FLOAT_SINK_GRIT_TO_MO"
+            ],
             "ore_streams": [
               "IA-MOO3-MU"
             ],
             "unrecovered": [],
-            "note": "no waste stream on the graph carries Mo; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)"
+            "note": "the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_MoO3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427)"
           }
         ]
       },
@@ -11904,7 +11910,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Oxide-equivalent feed leaves no grit slag on the design basis; the gangue/Fe terms are the assay-day task (A-M-284 envelope: the real concentrate assay re-points the feed to FLOAT_SINK grit when it lands). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "grit fed 0.0000 less the oxide taken up 0.0000 kg/d returns to the leach as slag (Q-037, A-M-427). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "FOUNDRY",
       "to_sector_id": "DIGESTER"
@@ -11948,7 +11954,7 @@
         "value": 0.0,
         "unit": "kg/d",
         "status": "study",
-        "note": "Internal dense-grit feed superseded by the dock rutile class at the design point; the assay-day task can re-point the feed to the grit when AQS-ASSAY-TI-MO lands (A-M-284). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "0.0000 kg/d of dense grit at 0 TiO2 x grit_chlor_recovery_frac 0.9 covers 0.0000 of the 0.8342 kg/d TiO2-equivalent need (Q-037, A-M-427; assay input AQS-ASSAY-TI-MO, route GRIT_FIRST). Standby at 0 until the assay drivers are set; the dock concentrate is the redundant source. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
       },
       "from_sector_id": "DIGESTER",
       "to_sector_id": "FOUNDRY"
@@ -22571,7 +22577,7 @@
         "value": 0.834247,
         "unit": "kg/d",
         "status": "study",
-        "note": "D-DOCK feedstock import (A-M-284): 1.668 kg/kg Ti on the oxide-equivalent basis (AQS-BAL-KROLL); concentrate grade envelope TiO2 90-97 wt%, design point 94 % (A-M-284 needs_verification: XRF assay of the accepted lot). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "D-DOCK feedstock import (A-M-284): 1.668 kg/kg Ti on the oxide-equivalent basis (AQS-BAL-KROLL); concentrate grade envelope TiO2 90-97 wt%, design point 94 % (A-M-284 needs_verification: XRF assay of the accepted lot). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Ore covers the shortfall after the grit: 0.8342 - 0.0000 kg/d (Q-037, A-M-427)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "FOUNDRY",
@@ -22652,7 +22658,7 @@
         "value": 0.093766,
         "unit": "kg/d",
         "status": "study",
-        "note": "D-DOCK feedstock import (A-M-284): 1.500 kg/kg Mo oxide-equivalent; tech-oxide grade envelope 95-99 wt% MoO3, design 98 % (A-M-284 assay-verification task). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "D-DOCK feedstock import (A-M-284): 1.500 kg/kg Mo oxide-equivalent; tech-oxide grade envelope 95-99 wt% MoO3, design 98 % (A-M-284 assay-verification task). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Ore covers the shortfall after the grit: 0.0938 - 0.0000 kg/d (Q-037, A-M-427)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "FOUNDRY",
@@ -22733,7 +22739,7 @@
         "value": 0.365389,
         "unit": "kg/d",
         "status": "study",
-        "note": "D-DOCK feedstock import (A-M-284): 1.462 kg/kg Cr oxide-equivalent; chromite class envelope 40-52 wt% Cr2O3, design 46 % (A-M-284 assay-verification task; the Fe/Mg/Al gangue balance is the assay-day follow-up). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+        "note": "D-DOCK feedstock import (A-M-284): 1.462 kg/kg Cr oxide-equivalent; chromite class envelope 40-52 wt% Cr2O3, design 46 % (A-M-284 assay-verification task; the Fe/Mg/Al gangue balance is the assay-day follow-up). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073). Ore covers the shortfall after the grit: 0.3654 - 0.0000 kg/d (Q-037, A-M-427)."
       },
       "from_sector_id": "DOCK",
       "to_sector_id": "FOUNDRY",
@@ -24778,6 +24784,114 @@
       "composition": {
         "C19-C28": 1.0
       }
+    },
+    {
+      "stream_id": "FLOAT_SINK_GRIT_TO_MO",
+      "from_unit_id": "FLOAT_SINK",
+      "to_unit_id": "MO_CELL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "dense grit from the float-sink as the first MoO3 source",
+      "header": "dedicated",
+      "forbidden": "process aisle",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "0.0000 kg/d of dense grit at 0 MoO3 x grit_chlor_recovery_frac 0.9 covers 0.0000 of the 0.0938 kg/d MoO3-equivalent need (Q-037, A-M-427; assay input AQS-ASSAY-TI-MO, route GRIT_FIRST). Standby at 0 until the assay drivers are set; the dock concentrate is the redundant source. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "MO_CELL_SLAG_RETURN",
+      "from_unit_id": "MO_CELL",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "grit gangue and unreacted oxide back to the leach",
+      "header": "dedicated",
+      "forbidden": "process aisle",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "grit fed 0.0000 less the oxide taken up 0.0000 kg/d returns to the leach as slag (Q-037, A-M-427). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "FLOAT_SINK_GRIT_TO_CR",
+      "from_unit_id": "FLOAT_SINK",
+      "to_unit_id": "CR_CELL",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "dense grit from the float-sink as the first Cr2O3 source",
+      "header": "dedicated",
+      "forbidden": "process aisle",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "0.0000 kg/d of dense grit at 0 Cr2O3 x grit_chlor_recovery_frac 0.9 covers 0.0000 of the 0.3654 kg/d Cr2O3-equivalent need (Q-037, A-M-427; assay input AQS-ASSAY-TI-MO, route GRIT_FIRST). Standby at 0 until the assay drivers are set; the dock concentrate is the redundant source. | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "DIGESTER",
+      "to_sector_id": "FOUNDRY",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
+    },
+    {
+      "stream_id": "CR_CELL_SLAG_RETURN",
+      "from_unit_id": "CR_CELL",
+      "to_unit_id": "LEACH_CSTR_1",
+      "phase": "S",
+      "layers": [
+        "mass"
+      ],
+      "presence": "present",
+      "carries": "grit gangue and unreacted oxide back to the leach",
+      "header": "dedicated",
+      "forbidden": "process aisle",
+      "claim_status": "Closed",
+      "rate": {
+        "value": 0.0,
+        "unit": "kg/d",
+        "status": "study",
+        "note": "grit fed 0.0000 less the oxide taken up 0.0000 kg/d returns to the leach as slag (Q-037, A-M-427). | X-PAR-02 TF: foundry/polymers sizing (AQS-DUTY-072/AQS-DUTY-073)."
+      },
+      "from_sector_id": "FOUNDRY",
+      "to_sector_id": "DIGESTER",
+      "open_boundary": false,
+      "namespace": "IA",
+      "gap_flags": [],
+      "notes": null,
+      "composition": null
     }
   ],
   "view_presets": [

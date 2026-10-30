@@ -114,9 +114,9 @@ Table 7.2. Recovery-first inventory by element, kg/d of the element
 | Element | Use | Unit | Need | Recovered from waste | Recovered from | Ore top-up | Ore streams | Shortfall |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | F | HF kiln | HF_GEN | 1.5971 | 1.4434 | F_RECOVER_TO_HF_GEN | 0.1537 | IA-CAF2-MU | 0.1537 |
-| Cr | CR_CELL metal | CR_CELL | 0.2500 | 0.0000 | — | 0.2500 | IA-CR2O3-MU | 0.2500 |
-| Ti | TI_CELL metal | TI_CELL | 0.5000 | 0.0000 | — | 0.5000 | IA-TIO2-MU | 0.5000 |
-| Mo | MO_CELL metal | MO_CELL | 0.0625 | 0.0000 | — | 0.0625 | IA-MOO3-MU | 0.0625 |
+| Cr | CR_CELL metal | CR_CELL | 0.2500 | 0.0000 | FLOAT_SINK_GRIT_TO_CR | 0.2500 | IA-CR2O3-MU | 0.2500 |
+| Ti | TI_CELL metal | TI_CELL | 0.5000 | 0.0000 | FLOAT_SINK_GRIT_TO_TI | 0.5000 | IA-TIO2-MU | 0.5000 |
+| Mo | MO_CELL metal | MO_CELL | 0.0625 | 0.0000 | FLOAT_SINK_GRIT_TO_MO | 0.0625 | IA-MOO3-MU | 0.0625 |
 | Si | investment shell silica | SHELL_BUILD | 3.7395 | 3.2721 | IA-SHELL-RECLAIM | 0.4674 | IA-SILICA-MU | 0.4674 |
 | Si | silicon furnace quartz | SI_REDUCE | 0.3354 | 0.0000 | — | 0.3354 | IA-QUARTZ-MU | 0.3354 |
 | S | sulfuric acid for the HF kiln | ACID_PLANT | 0.1294 | 0.1164 | IA-GYPSUM-REGEN | 0.0129 | IA-SULFUR-MU | 0.0129 |
@@ -130,9 +130,9 @@ Table 7.3. Unrecovered losses and their basis
 | Si | IA-SHELL-EXPORT | 0.4674 | no | spent shell beyond foundry_inv_shell_reclaim_frac: fines and fired binder that the stucco cannot take back (A-M-286) |
 | S | IA-LIME-SHIP | 0.0129 | no | cake-kiln non-conversion (caso4_dec_frac) leaves with the residue |
 | Na | IA-NA-PURGE | 0.2525 | no | bleed of the purge salt that carries the impurities out (na_purge_recycle_frac) |
-| Cr | — | — | — | no waste stream on the graph carries Cr; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284) |
-| Ti | — | — | — | no waste stream on the graph carries Ti; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284) |
-| Mo | — | — | — | no waste stream on the graph carries Mo; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284) |
+| Cr | — | — | — | the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_Cr2O3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427) |
+| Ti | — | — | — | the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_TiO2_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427) |
+| Mo | — | — | — | the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_MoO3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427) |
 | Si | — | — | — | the plant silica wastes are fines (spent shell flour, silica fume), not the lump quartz the arc furnace burden needs, and the silica fume already goes to the leach |
 
 Table 7.4. Waste streams taken in at the dock
@@ -147,7 +147,7 @@ The recovery-first check reports no flag.
 
 ## 8. Drivers
 
-Table 8.1 lists the 910 drivers. The source is a reference key, a register entry or an owner basis.
+Table 8.1 lists the 916 drivers. The source is a reference key, a register entry or an owner basis.
 
 Table 8.1. Drivers
 
@@ -945,6 +945,12 @@ Table 8.1. Drivers
 | kiln_fibre_rho_kg_m3 | 128.0 | kg/m3 density of the ceramic-fibre insulation of the kiln (ASTM C892 grade 1260, 128 kg/m3 class) | A-M-425 | — |
 | kiln_fibre_cp_kJ_kgK | 1.13 | kJ/(kg K) specific heat of alumino-silicate ceramic fibre (ASTM C892 class), held over the heat-up | A-M-425 | — |
 | acid_store_rho_kg_m3 | 1840.0 | kg/m3 density of 98 wt% sulfuric acid for the acid day store (ULLMANN_H2SO4) | A-M-425 | — |
+| grit_route_mode | "GRIT_FIRST" | - feed of TI_CELL, MO_CELL and CR_CELL: GRIT_FIRST (the dense grit of FLOAT_SINK covers what its assay supports, the dock concentrate the rest and stays installed as the redundant source) or ORE_ONLY (concentrate only) | A-M-427 | — |
+| grit_dense_frac | 0.0 | kg of dense grit per kg of dry sink solids on IA-SINK-01 (water and HCl excluded); assay input from AQS-ASSAY-TI-MO, 0 until the assay lands | A-M-427 | — |
+| grit_TiO2_wt | 0.0 | mass fraction TiO2 in the dense grit; assay input from AQS-ASSAY-TI-MO, 0 until the assay lands | A-M-427 | — |
+| grit_MoO3_wt | 0.0 | mass fraction MoO3-equivalent in the dense grit; assay input from AQS-ASSAY-TI-MO, 0 until the assay lands | A-M-427 | — |
+| grit_Cr2O3_wt | 0.0 | mass fraction Cr2O3-equivalent in the dense grit; assay input from AQS-ASSAY-TI-MO, 0 until the assay lands | A-M-427 | — |
+| grit_chlor_recovery_frac | 0.9 | fraction of the grit metal oxide taken up by the carbochlorination; the rest leaves with the grit gangue in the slag return to the leach | A-M-427 | — |
 | caso4_dHrxn_kJ_mol | 303.0 | kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197) | A-M-421 | — |
 | caso4_feed_cp_kJ_kgK | 0.9 | kJ/kg K mean heat capacity of the cake and char feed to the kiln temperature | A-M-421 | — |
 | naoh_route | "CHLOR_ALKALI" | - sodium hydroxide route of NAOH_PLANT: CAUSTICIZE (trona ore to soda ash, lime causticising with a recalcining lime kiln) or CHLOR_ALKALI (membrane cells on the leach purge salt and halite ore) | A-M-422, A-M-426 | — |
@@ -1378,7 +1384,7 @@ Table 9.1. References
 
 ## 10. Verification list
 
-This list feeds the testing and prototyping rollout plan. It gives the 295 drivers and then the 376 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
+This list feeds the testing and prototyping rollout plan. It gives the 295 drivers and then the 377 entries of the assumptions register AQS-REG-002 that are flagged for verification. Long values are cut at a word.
 
 Table 10.1. Values to verify
 
@@ -2055,3 +2061,4 @@ Table 10.1. Values to verify
 | A-M-424 | The pattern wax make-up is the paraffin of the plant's own … kg/d | python3 -m flow_graph.param.regen; IA-WAX-MU is retired, C19_TO_WAX carries the make-up from PROD_C19_C28, and IA-C19-SHIP equals CUT-3 less CUT-3-OUT and C19_TO_WAX. |
 | A-M-425 | The ACID_PLANT cake kiln runs in campaigns (acid_kiln_mode … kW average and peak; kg and L of store | python3 -m flow_graph.param.regen; ACID_PLANT continuous_kw equals params.kiln_duty.kw_avg, and AQS-DUTY-073 Table 4.2 lists both kiln duties. |
 | A-M-426 | NAOH_PLANT tops up the sodium hydroxide on the CHLOR_ALKALI … route choice; kW, kg/d | python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2. |
+| A-M-427 | TI_CELL, MO_CELL and CR_CELL take their oxide first from … kg/d; mass fractions | Set the grit_* assay drivers to the assay values and run python3 -m flow_graph.param.regen; the grit feeds carry the oxide the assay supports, the concentrate edges fall by the same amount, and python3 -m flow_graph.param.recovery reports no flags. |

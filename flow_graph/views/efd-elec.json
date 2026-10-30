@@ -2547,12 +2547,14 @@
             "use": "CR_CELL metal",
             "need_kg_d": 0.25000186123995816,
             "recovered_kg_d": 0.0,
-            "recovered_from": [],
+            "recovered_from": [
+              "FLOAT_SINK_GRIT_TO_CR"
+            ],
             "ore_streams": [
               "IA-CR2O3-MU"
             ],
             "unrecovered": [],
-            "note": "no waste stream on the graph carries Cr; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)"
+            "note": "the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_Cr2O3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427)"
           }
         ]
       },
@@ -2640,12 +2642,14 @@
             "use": "TI_CELL metal",
             "need_kg_d": 0.5000050228385401,
             "recovered_kg_d": 0.0,
-            "recovered_from": [],
+            "recovered_from": [
+              "FLOAT_SINK_GRIT_TO_TI"
+            ],
             "ore_streams": [
               "IA-TIO2-MU"
             ],
             "unrecovered": [],
-            "note": "no waste stream on the graph carries Ti; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)"
+            "note": "the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_TiO2_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427)"
           }
         ]
       },
@@ -2731,12 +2735,14 @@
             "use": "MO_CELL metal",
             "need_kg_d": 0.06250111290961256,
             "recovered_kg_d": 0.0,
-            "recovered_from": [],
+            "recovered_from": [
+              "FLOAT_SINK_GRIT_TO_MO"
+            ],
             "ore_streams": [
               "IA-MOO3-MU"
             ],
             "unrecovered": [],
-            "note": "no waste stream on the graph carries Mo; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)"
+            "note": "the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, grit_MoO3_wt; AQS-ASSAY-TI-MO); the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427)"
           }
         ]
       },

@@ -11,7 +11,7 @@ Authority: graph state 2026-10-21; AQS-PLAN-007 X-PIP-02; class rules keyed to t
 | B | Class rules keyed to the AQS-STD-002 Rev L section 12 families (X-MAT-01): the "aqueous process, default thermoplastic" catchall retired; hydrocarbon/fuel/wax cuts to M2 (carbon steel, dry), wet methanol and solvents to M1 (316L), melt pours to "—" launder rows, and the fluoro synthesis train, dopant and pot-brine concentrates to "—" pending PIP-003 Rev B. Run `_service_census.py` as the gate. | 2026-10-21 |
 | A | First issue. | 2026-10-15 |
 
-588 edges: 333 piped, 137 solids transfers, 118 electrical. Piped edges without a length (unit position missing): 72.
+592 edges: 333 piped, 141 solids transfers, 118 electrical. Piped edges without a length (unit position missing): 72.
 
 | Line | From | To | DN | Class | Service | Length m | Route | DN basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -605,3 +605,7 @@ Units with no position anywhere in the repo (no duty origin, no placement row): 
 | IA-NAOH-LIQ | NAOH_PLANT | EVAP_BASE | DN15 | P4 | alkaline |  | NAOH_PLANT → EVAP_BASE, position missing for NAOH_PLANT | velocity 1 m/s, ρ 1000; min DN15 |
 | SF-NAOH_PLANT | SOL_ARK_60K | NAOH_PLANT | cable | — | — |  | SOL_ARK_60K → NAOH_PLANT, position missing for NAOH_PLANT | electrical: cable schedule X-ELS-06 |
 | C19_TO_WAX | PROD_C19_C28 | WAX_PATTERN | solids | — | — |  | PROD_C19_C28 → WAX_PATTERN, position missing for WAX_PATTERN | solids: conveyor, bin or hand transfer; not piped |
+| FLOAT_SINK_GRIT_TO_MO | FLOAT_SINK | MO_CELL | solids | — | — |  | FLOAT_SINK → MO_CELL, position missing for MO_CELL | solids: conveyor, bin or hand transfer; not piped |
+| MO_CELL_SLAG_RETURN | MO_CELL | LEACH_CSTR_1 | solids | — | — |  | MO_CELL → LEACH_CSTR_1, position missing for MO_CELL | solids: conveyor, bin or hand transfer; not piped |
+| FLOAT_SINK_GRIT_TO_CR | FLOAT_SINK | CR_CELL | solids | — | — |  | FLOAT_SINK → CR_CELL, position missing for CR_CELL | solids: conveyor, bin or hand transfer; not piped |
+| CR_CELL_SLAG_RETURN | CR_CELL | LEACH_CSTR_1 | solids | — | — |  | CR_CELL → LEACH_CSTR_1, position missing for CR_CELL | solids: conveyor, bin or hand transfer; not piped |

@@ -17,12 +17,12 @@ Phases run in the order below; T1 and T2 start at once and in parallel. T3 bench
 | --- | --- | --- | --- |
 | T1 | Owner and site data | 50 | Owner decision or site investigation report |
 | T2 | In-house design tests and standard data | 33 | In-house test record or standard data filed against the item |
-| T3 | Bench and laboratory tests | 60 | Bench test report with method, data and result |
+| T3 | Bench and laboratory tests | 61 | Bench test report with method, data and result |
 | T4 | Pilot runs | 20 | Pilot campaign on plant brine / feed |
 | T5 | Design calculations and drawings | 476 | Calculation or drawing issued under the named task |
 | T6 | Commissioning measurements | 32 | Commissioning record |
 
-Total 671 items: 295 drivers, 376 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
+Total 672 items: 295 drivers, 377 register entries. Classification rule: first match of the phase regex on the verification test text (see the generator).
 
 ## 2. T1 Owner and site data
 
@@ -181,6 +181,7 @@ Total 671 items: 295 drivers, 376 register entries. Classification rule: first m
 | A-M-312 | PEM cell design point 0.6 V at 0.3 A/cm2 (IEC62282-3-100 mod V per cell; A/cm2 at the design point | Stack polarisation set at the first article | reconstructed 2026-10-21: dead register lane re-homed from the surviving citing sources (owning unit tasks recorded in where) |
 | A-M-406 | sublimation or drill-and-melt extraction - | In-situ ice assay and extraction trial at the landing site | X-LOC-09 |
 | A-M-408 | dust filter and compressor to process pressure - | In-situ atmospheric assay and compressor endurance test | X-LOC-09 |
+| A-M-427 | TI_CELL, MO_CELL and CR_CELL take their oxide first from the kg/d; mass fractions | Set the grit_* assay drivers to the assay values and run python3 -m flow_graph.param.regen; the grit feeds carry the oxide the assay supports, the concentrate edges fall by the same amount, and python3 -m flow_graph.param.recovery reports no flags. | QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u) |
 
 ## 5. T4 Pilot runs
 

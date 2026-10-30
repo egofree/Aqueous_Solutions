@@ -865,4 +865,8 @@ digraph G {
   "SOL_ARK_60K" -> "NAOH_PLANT" [label="SF-NAOH_PLANT\\n0.5004 kW", style=solid, color="#1e3a8a", fontcolor="#1e3a8a", penwidth=1.2];
   "ACID_PLANT" -> "NAOH_PLANT" [label="IA-LIME-TO-NAOH\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
   "PROD_C19_C28" -> "WAX_PATTERN" [label="C19_TO_WAX\\n0.2 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "FLOAT_SINK" -> "MO_CELL" [label="FLOAT_SINK_GRIT_TO_MO\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "MO_CELL" -> "LEACH_CSTR_1" [label="MO_CELL_SLAG_RETURN\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "FLOAT_SINK" -> "CR_CELL" [label="FLOAT_SINK_GRIT_TO_CR\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
+  "CR_CELL" -> "LEACH_CSTR_1" [label="CR_CELL_SLAG_RETURN\\n0.0 kg/d", style=solid, color="#1b5e20", fontcolor="#1b5e20", penwidth=1.2];
 }

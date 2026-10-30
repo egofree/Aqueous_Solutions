@@ -2,7 +2,7 @@
 
 Standard: AQS-STD-001 Rev A. Graph Rev AC. Study. Not a PE stamp.
 
-1. Basis. Mass in 0.1076 kg/d. Mass out 0.1076 kg/d. Electrical duty 0.1141 kW. In: IA-MOO3-MU 0.09377 kg/d (MoO3-equivalent concentrate (dock import class)); IA-C-MO 0.01381 kg/d (plant pyrolysis char reductant). Out: MO_CELL_ANODE_GAS_TO_CRU 0 kg/d (anode gas (Cl2 or O2) from molten-salt pot); MO_TO_IND 0.0625 kg/d (Mo metal); IA-MO-VENT 0.04507 kg/d (chlorinator CO2 (vent class)).
+1. Basis. Mass in 0.1076 kg/d. Mass out 0.1076 kg/d. Electrical duty 0.1141 kW. In: IA-MOO3-MU 0.09377 kg/d (MoO3-equivalent concentrate (dock import class)); IA-C-MO 0.01381 kg/d (plant pyrolysis char reductant); FLOAT_SINK_GRIT_TO_MO 0 kg/d (dense grit from the float-sink as the first MoO3 source). Out: MO_CELL_ANODE_GAS_TO_CRU 0 kg/d (anode gas (Cl2 or O2) from molten-salt pot); MO_TO_IND 0.0625 kg/d (Mo metal); IA-MO-VENT 0.04507 kg/d (chlorinator CO2 (vent class)); MO_CELL_SLAG_RETURN 0 kg/d (grit gangue and unreacted oxide back to the leach).
 
 2. Size.
 - Envelope 800×800×1600 mm, 1.024 m³. That box over this flow would be 228458.8 h if it were full. It is not a residence time.

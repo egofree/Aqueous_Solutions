@@ -64,3 +64,5 @@ N62,solids,Class 150,silica fume from the furnace baghouse,inlet,160
 N63,DN15,Class 150,impurity chlorides and silicon tetrachloride bleed,inlet,160
 N64,DN15,Class 150,sodium chloride bleed of the leach purge (impurity bleed),outlet,600
 N65,DN15,Class 150,sodium chloride of the leach purge recovered to the cell brine,outlet,600
+N66,solids,Class 150,grit gangue and unreacted oxide back to the leach,inlet,160
+N67,solids,Class 150,grit gangue and unreacted oxide back to the leach,inlet,160

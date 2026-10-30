@@ -616,3 +616,7 @@ Intra-aisle (IA-*) and TBD namespaces included for full_depth_now visibility.
 | SF-NAOH_PLANT | SOL_ARK_60K | NAOH_PLANT | E | elec | present | 480 V AC | 0.5004 kW | — |
 | IA-LIME-TO-NAOH | ACID_PLANT | NAOH_PLANT | S | mass | retired | cake-kiln lime residue as the lime-cycle make-up | 0.0 kg/d | — |
 | C19_TO_WAX | PROD_C19_C28 | WAX_PATTERN | S | mass | present | C19-C28 paraffin cut as the pattern wax make-up | 0.2 kg/d | — |
+| FLOAT_SINK_GRIT_TO_MO | FLOAT_SINK | MO_CELL | S | mass | present | dense grit from the float-sink as the first MoO3 source | 0.0 kg/d | — |
+| MO_CELL_SLAG_RETURN | MO_CELL | LEACH_CSTR_1 | S | mass | present | grit gangue and unreacted oxide back to the leach | 0.0 kg/d | — |
+| FLOAT_SINK_GRIT_TO_CR | FLOAT_SINK | CR_CELL | S | mass | present | dense grit from the float-sink as the first Cr2O3 source | 0.0 kg/d | — |
+| CR_CELL_SLAG_RETURN | CR_CELL | LEACH_CSTR_1 | S | mass | present | grit gangue and unreacted oxide back to the leach | 0.0 kg/d | — |

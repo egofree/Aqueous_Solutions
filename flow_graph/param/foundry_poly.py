@@ -343,9 +343,6 @@ def apply(g=None, write=False):
     put('METALS_TO_IND_MELT', s['ti'],
         f'Ti sponge to the melt under salt flux: {s["ti"]:.2f} kg/d = 0.40 line + export margin (A-M-285); the vacuum '
         f'consolidation path (VAC_IND_TI) is the N+1 quality route, standby-zero (A-M-283). | {TAG}.')
-    put('TI_CELL_SLAG_RETURN', 0.0,
-        'Oxide-equivalent feed leaves no grit slag on the design basis; the gangue/Fe terms are the assay-day task '
-        f'(A-M-284 envelope: the real concentrate assay re-points the feed to FLOAT_SINK grit when it lands). | {TAG}.')
     put('TI_CELL_CL2_TO_CRU', 0.0, f'Kroll chlorine closes on the Mg pot loop (IA-CL2-MG-TI); the CRU tap is purge-only. | {TAG}.')
     mk('IA-KROLL-CO', 'TI_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO (fuel-gas class export)',
        R(s['tio2']) + R(CH['c_ti']) + R(s['cl2_ti']) + R(s['mg_ti']) - R(s['ti']) - R(s['mgcl2_ret']) - R(s['kroll_flux']),
@@ -381,9 +378,6 @@ def apply(g=None, write=False):
     put('CR_TO_IND', s['cr'],
         f'Cr metal to the melt: carbochlorination to CrCl3 then molten-salt electrolysis 2CrCl3 -> 2Cr + 3Cl2 with the '
         f'anode gas recycled internally (A-M-284); {s["cr_i"]:.2f} kg/d stainless addition + export margin. | {TAG}.')
-    put('FLOAT_SINK_GRIT_TO_TI', 0.0,
-        'Internal dense-grit feed superseded by the dock rutile class at the design point; the assay-day task can '
-        f're-point the feed to the grit when AQS-ASSAY-TI-MO lands (A-M-284). | {TAG}.')
     mk('IA-CR-VENT', 'CR_CELL', 'NORTH_DOCK', 'DOCK', 'G', 'chlorinator CO (fuel-gas class export)',
        R(s['cr2o3']) + R(CH['c_cr']) - R(s['cr']), f'3 CO per 2 Cr on the carbochlorination net (A-M-284); dock fuel-gas class. | {TAG}.')
     # ---- investment casting: wax make-up from the plant wax cut + foundry silica (A-M-286, A-M-424) ----
@@ -436,10 +430,40 @@ def apply(g=None, write=False):
         recovered_kg_d=_v('IA-SHELL-RECLAIM')*si, recovered_from=['IA-SHELL-RECLAIM'], ore_streams=['IA-SILICA-MU'],
         unrecovered=[dict(stream='IA-SHELL-EXPORT', kg_d=_v('IA-SHELL-EXPORT')*si, recoverable=False,
                           basis='spent shell beyond foundry_inv_shell_reclaim_frac: fines and fired binder that the stucco cannot take back (A-M-286)')])]
-    for _sid, _u, _el, _f in (('IA-TIO2-MU', 'TI_CELL', 'Ti', 'TiO2'), ('IA-MOO3-MU', 'MO_CELL', 'Mo', 'MoO3'), ('IA-CR2O3-MU', 'CR_CELL', 'Cr', 'Cr2O3')):
+    # Q-037 (A-M-427): the dense grit of FLOAT_SINK is the first source of the Ti, Mo and Cr oxides, as far as its assay
+    # supports; the dock concentrate covers the rest and stays installed as the redundant source. The assay is a driver
+    # input (grit_dense_frac and grit_<oxide>_wt, AQS-ASSAY-TI-MO); until it lands it is 0 and the grit feeds stand by.
+    _d = s['d']; _gv = lambda k: DR.val(_d, k)
+    _mode = _gv('grit_route_mode'); assert _mode in ('GRIT_FIRST', 'ORE_ONLY'), _mode
+    _sk = E['IA-SINK-01']; _sc = _sk.get('composition') or {}
+    _dry = _v('IA-SINK-01')*(1 - _sc.get('water', 0.0) - _sc.get('HCl', 0.0))
+    _grit_avail = _dry*_gv('grit_dense_frac') if _mode == 'GRIT_FIRST' else 0.0
+    _rec = _gv('grit_chlor_recovery_frac'); _drawn = 0.0
+    for _sid, _u, _el, _f, _gsid, _ssid, _wk in (('IA-TIO2-MU', 'TI_CELL', 'Ti', 'TiO2', 'FLOAT_SINK_GRIT_TO_TI', 'TI_CELL_SLAG_RETURN', 'grit_TiO2_wt'),
+                                               ('IA-MOO3-MU', 'MO_CELL', 'Mo', 'MoO3', 'FLOAT_SINK_GRIT_TO_MO', 'MO_CELL_SLAG_RETURN', 'grit_MoO3_wt'),
+                                               ('IA-CR2O3-MU', 'CR_CELL', 'Cr', 'Cr2O3', 'FLOAT_SINK_GRIT_TO_CR', 'CR_CELL_SLAG_RETURN', 'grit_Cr2O3_wt')):
+        _need = _v(_sid)                                   # oxide-equivalent need of the cell, kg/d
+        _y = _gv(_wk)*_rec                                 # oxide taken up per kg of grit fed
+        _left = max(0.0, _grit_avail - _drawn)
+        _feed = min(_left, _need/_y) if _y > 0 else 0.0     # grit fed to this cell, kg/d (one grit pool, Ti first)
+        _cov = _feed*_y; _drawn += _feed
+        _why = (f'{_feed:.4f} kg/d of dense grit at {_gv(_wk):g} {_f} x grit_chlor_recovery_frac {_rec:g} covers {_cov:.4f} of the {_need:.4f} kg/d '
+                f'{_f}-equivalent need (Q-037, A-M-427; assay input AQS-ASSAY-TI-MO, route {_mode})')
+        mk(_gsid, 'FLOAT_SINK', _u, 'FOUNDRY', 'S', f'dense grit from the float-sink as the first {_f} source', R(_feed),
+           f'{_why}. Standby at 0 until the assay drivers are set; the dock concentrate is the redundant source. | {TAG}.')
+        mk(_ssid, _u, 'LEACH_CSTR_1', 'DIGESTER', 'S', 'grit gangue and unreacted oxide back to the leach', R(_feed - _cov),
+           f'grit fed {_feed:.4f} less the oxide taken up {_cov:.4f} kg/d returns to the leach as slag (Q-037, A-M-427). | {TAG}.')
+        put(_sid, R(_need - _cov), f'{E[_sid]["rate"]["note"]} Ore covers the shortfall after the grit: {_need:.4f} - {_cov:.4f} kg/d (Q-037, A-M-427).')
         N[_u].setdefault('params', {})['recovery'] = [dict(
-            element=_el, use=f'{_u} metal', need_kg_d=_v(_sid)*_fr(_f, _el), recovered_kg_d=0.0, recovered_from=[], ore_streams=[_sid],
-            unrecovered=[], note=f'no waste stream on the graph carries {_el}; the leach grit becomes the source when AQS-ASSAY-TI-MO lands (A-M-284)')]
+            element=_el, use=f'{_u} metal', need_kg_d=_need*_fr(_f, _el), recovered_kg_d=_cov*_fr(_f, _el), recovered_from=[_gsid],
+            ore_streams=[_sid], unrecovered=[],
+            note=(f'the dense grit of FLOAT_SINK is the first source as far as its assay supports (grit_dense_frac, {_wk}; AQS-ASSAY-TI-MO); '
+                  f'the dock concentrate covers the rest and stays installed as the redundant source (Q-037, A-M-427)'))]
+    _wf = E['IA-WET-FLOAT-01']
+    if _drawn > 0 or 'pre_grit_kg_d' in (_wf.get('params') or {}):
+        _base = _wf.setdefault('params', {}).setdefault('pre_grit_kg_d', _v('IA-WET-FLOAT-01'))
+        put('IA-WET-FLOAT-01', R(_base - _drawn),
+            f'Float/sink liquor return {_base:.4f} kg/d less the dense grit drawn to the cells {_drawn:.4f} kg/d (Q-037, A-M-427). | {TAG}.')
     put('SHELL_TO_GLASS', 0.0,
         'Spent shell reclaims internally (IA-SHELL-RECLAIM) and exports the balance at the dock: GLASS_DIGEST is fully '
         f'committed (A-M-267) so the solids line has no digest capacity for it. | {TAG}.')

@@ -1,7 +1,7 @@
 # Open questions
 
 Document number: AQS-OQ-001
-Revision: E
+Revision: F
 Date: 2026-10-29
 
 | Rev | Description | Date |
@@ -11,6 +11,7 @@ Date: 2026-10-29
 | C | Questions Q-034 to Q-037 added on the on-site acid and caustic plants and the recovery-first rule. | 2026-10-29 |
 | D | Question Q-034 closed on the merits under the owner's delegation (t62u). | 2026-10-29 |
 | E | Questions Q-035 and Q-036 closed on the merits under the owner's delegation (t62u). | 2026-10-29 |
+| F | Question Q-037 closed on the merits under the owner's delegation (t62u). | 2026-10-29 |
 
 ## 1. Purpose and scope
 
@@ -62,4 +63,4 @@ Table 2.1. Open and closed questions
 | Q-034 | X-RTE-IMPORT-IA-H2SO4-MU | CLOSED (owner delegation t62u, 2026-10-29): GYPSUM_LOOP stays the route, because it recovers 90 % of the acid sulfur from the HF kiln cake and SULFUR_ORE recovers none, which fails the recovery-first rule (A-M-423). The cake kiln runs in campaigns from a cake store (driver acid_kiln_mode = CAMPAIGN, A-M-425). At this throughput the shell loss is nearly all of the kiln load, so one run every acid_kiln_campaign_d days, with the heat-up of the tube and its fibre insulation paid at each run, cuts the average load to about a fifth of the continuous duty. The cake store and the acid day store are a few kilograms, and the peak load during a run is close to the former continuous load. CONTINUOUS duty stays selectable as the fallback if the lining does not tolerate the thermal cycles. AQS-DUTY-073 section 4.1 gives both duties. | - |
 | Q-035 | X-RTE-IMPORT-IA-NAOH-MU | CLOSED (owner delegation t62u, 2026-10-29): CHLOR_ALKALI is selected (driver naoh_route, A-M-426). At the present make-up it draws less than half the load of CAUSTICIZE, because it needs no trona calciner or lime kiln, whose shell losses dominate the small top-up. It also vents no carbon dioxide and takes one ore, halite, instead of trona and lime. The cells that recover the purge salt already exist, so the top-up adds no unit. CAUSTICIZE stays selectable. AQS-PAR-001 Table 7.1 gives both routes. | - |
 | Q-036 | X-RTE-IMPORT-IA-NAOH-MU | CLOSED (owner delegation t62u, 2026-10-29): The cell hydrogen stays on the H2 header (A-M-426). It is the same gas as the electrowinning cathode hydrogen and goes through H2_DRYER to the hydrogen store CRYO_H2, which feeds methanol synthesis and the fuel cells, so it is used in full and backs the store. A separate consumer or store would add equipment for the same gas, and resizing the electrolyser against it is held with the O2 ownership. | - |
-| Q-037 | X-RTE-RECOVERY | Ti, Mo and Cr ore concentrates: no waste stream on the graph carries these metals yet. Should the leach grit replace the concentrates once AQS-ASSAY-TI-MO lands (A-M-284, A-M-423)? | Concentrates until the assay lands, then the grit first. |
+| Q-037 | X-RTE-RECOVERY | CLOSED (owner delegation t62u, 2026-10-29): The cells take their oxide from the float-sink dense grit first and from the dock concentrate only for the rest (driver grit_route_mode = GRIT_FIRST, A-M-427). This follows the recovery-first rule, and the concentrate stays installed as the redundant source. No assay of the grit exists yet, so its dense fraction and its TiO2, MoO3 and Cr2O3 contents are driver inputs (grit_dense_frac and grit_<oxide>_wt) that are 0 until AQS-ASSAY-TI-MO lands. Until then the grit feeds stand by and the concentrate carries the full need. Setting the assay values moves the feed to the grit with no code change. | - |

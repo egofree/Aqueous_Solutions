@@ -991,6 +991,15 @@
      "carries": "Cl2 return"
     },
     {
+     "stream_id": "CR_CELL_SLAG_RETURN",
+     "from": "CR_CELL",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "grit gangue and unreacted oxide back to the leach"
+    },
+    {
      "stream_id": "EW9_LIQUOR_TO_MO",
      "from": "EW_9",
      "to": "MO_CELL",
@@ -1007,6 +1016,24 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "EW cathode/powder metals"
+    },
+    {
+     "stream_id": "FLOAT_SINK_GRIT_TO_CR",
+     "from": "FLOAT_SINK",
+     "to": "CR_CELL",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "dense grit from the float-sink as the first Cr2O3 source"
+    },
+    {
+     "stream_id": "FLOAT_SINK_GRIT_TO_MO",
+     "from": "FLOAT_SINK",
+     "to": "MO_CELL",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "dense grit from the float-sink as the first MoO3 source"
     },
     {
      "stream_id": "FLOAT_SINK_GRIT_TO_TI",
@@ -1124,6 +1151,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "raffinate after Mo cut"
+    },
+    {
+     "stream_id": "MO_CELL_SLAG_RETURN",
+     "from": "MO_CELL",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "FOUNDRY",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "grit gangue and unreacted oxide back to the leach"
     },
     {
      "stream_id": "S19",
@@ -3707,6 +3743,15 @@
      "carries": "combustion off-gas when alternate used"
     },
     {
+     "stream_id": "CR_CELL_SLAG_RETURN",
+     "from": "CR_CELL",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "DIGESTER",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "grit gangue and unreacted oxide back to the leach"
+    },
+    {
      "stream_id": "EW9_LIQUOR_TO_MO",
      "from": "EW_9",
      "to": "MO_CELL",
@@ -3723,6 +3768,24 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "EW cathode/powder metals"
+    },
+    {
+     "stream_id": "FLOAT_SINK_GRIT_TO_CR",
+     "from": "FLOAT_SINK",
+     "to": "CR_CELL",
+     "other_sector": "DIGESTER",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "dense grit from the float-sink as the first Cr2O3 source"
+    },
+    {
+     "stream_id": "FLOAT_SINK_GRIT_TO_MO",
+     "from": "FLOAT_SINK",
+     "to": "MO_CELL",
+     "other_sector": "DIGESTER",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "dense grit from the float-sink as the first MoO3 source"
     },
     {
      "stream_id": "FLOAT_SINK_GRIT_TO_TI",
@@ -3786,6 +3849,15 @@
      "rate": 0.0,
      "unit": "kg/d",
      "carries": "raffinate after Mo cut"
+    },
+    {
+     "stream_id": "MO_CELL_SLAG_RETURN",
+     "from": "MO_CELL",
+     "to": "LEACH_CSTR_1",
+     "other_sector": "DIGESTER",
+     "rate": 0.0,
+     "unit": "kg/d",
+     "carries": "grit gangue and unreacted oxide back to the leach"
     },
     {
      "stream_id": "SALT_TO_FLUX",

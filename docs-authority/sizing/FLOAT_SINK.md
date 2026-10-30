@@ -17,7 +17,7 @@ This page records the size of unit FLOAT_SINK, of class `separator` in sector DI
 
 ## 2. Duty
 
-The unit takes 376.1 kg/d by 1 stream and gives 376.1 kg/d by 3 streams.
+The unit takes 376.1 kg/d by 1 stream and gives 376.1 kg/d by 5 streams.
 
 The graph holds no design parameters for the unit.
 

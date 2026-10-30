@@ -6,3 +6,5 @@ N4,DN15,Class 150,chlorinator CO (fuel-gas class export),outlet,600
 N5,DN15,Class 150,drain,bottom,50
 N6,DN15,Class 150,vent,top,800
 N7,solids,Class 150,plant pyrolysis char reductant,inlet,160
+N8,solids,Class 150,dense grit from the float-sink as the first Cr2O3 source,inlet,160
+N9,solids,Class 150,grit gangue and unreacted oxide back to the leach,outlet,600

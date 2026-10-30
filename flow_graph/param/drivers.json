@@ -4868,6 +4868,36 @@
   "units": "kg/m3 density of 98 wt% sulfuric acid for the acid day store (ULLMANN_H2SO4)",
   "register": "A-M-425"
  },
+ "grit_route_mode": {
+  "value": "GRIT_FIRST",
+  "units": "- feed of TI_CELL, MO_CELL and CR_CELL: GRIT_FIRST (the dense grit of FLOAT_SINK covers what its assay supports, the dock concentrate the rest and stays installed as the redundant source) or ORE_ONLY (concentrate only)",
+  "register": "A-M-427"
+ },
+ "grit_dense_frac": {
+  "value": 0.0,
+  "units": "kg of dense grit per kg of dry sink solids on IA-SINK-01 (water and HCl excluded); assay input from AQS-ASSAY-TI-MO, 0 until the assay lands",
+  "register": "A-M-427"
+ },
+ "grit_TiO2_wt": {
+  "value": 0.0,
+  "units": "mass fraction TiO2 in the dense grit; assay input from AQS-ASSAY-TI-MO, 0 until the assay lands",
+  "register": "A-M-427"
+ },
+ "grit_MoO3_wt": {
+  "value": 0.0,
+  "units": "mass fraction MoO3-equivalent in the dense grit; assay input from AQS-ASSAY-TI-MO, 0 until the assay lands",
+  "register": "A-M-427"
+ },
+ "grit_Cr2O3_wt": {
+  "value": 0.0,
+  "units": "mass fraction Cr2O3-equivalent in the dense grit; assay input from AQS-ASSAY-TI-MO, 0 until the assay lands",
+  "register": "A-M-427"
+ },
+ "grit_chlor_recovery_frac": {
+  "value": 0.9,
+  "units": "fraction of the grit metal oxide taken up by the carbochlorination; the rest leaves with the grit gangue in the slag return to the leach",
+  "register": "A-M-427"
+ },
  "caso4_dHrxn_kJ_mol": {
   "value": 303.0,
   "units": "kJ per mol CaSO4 for CaSO4 + 1/2 C -> CaO + SO2 + 1/2 CO2 (CaSO4 -> CaO + SO3 +401, SO3 -> SO2 + 1/2 O2 +99, 1/2 C + 1/2 O2 -> 1/2 CO2 -197)",

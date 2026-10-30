@@ -7361,5 +7361,22 @@
   ],
   "needs_verification": true,
   "verification_test": "python3 -m flow_graph.param.regen; NAOH_PLANT runs CHLOR_ALKALI, IA-HALITE-MU is present and IA-TRONA-MU retired, and IA-NAOH-H2 enters HDR_H2."
+ },
+ {
+  "id": "A-M-427",
+  "value": "TI_CELL, MO_CELL and CR_CELL take their oxide first from the dense grit of FLOAT_SINK (grit_route_mode = GRIT_FIRST), as far as its assay supports, and the dock concentrate covers the rest. The grit available is the dry sink solids of IA-SINK-01 times grit_dense_frac; each cell takes grit_<oxide>_wt x grit_chlor_recovery_frac of oxide per kg of grit, Ti first, and the gangue returns to the leach on the cell's slag return. The assay drivers are 0 until AQS-ASSAY-TI-MO lands, so the grit feeds stand by and the concentrate carries the full need; the concentrate stays installed as the redundant source either way.",
+  "units": "kg/d; mass fractions",
+  "where": "flow_graph/param/foundry_poly.py (FLOAT_SINK_GRIT_TO_TI/MO/CR, TI/MO/CR_CELL_SLAG_RETURN); flow_graph/param/drivers.json grit_*",
+  "basis": "Q-037 decided on the merits under the owner delegation t62u: recovery first (A-M-423) puts the plant's own grit ahead of ore, and the redundancy principle keeps the concentrate as a second, different source. No assay of the grit exists yet (AQS-ASSAY-TI-MO), so its content is a parametric input and is not invented.",
+  "sensitivity": "The ore take falls one for one with the oxide the grit supplies; the leach liquor return falls by the grit drawn.",
+  "replaced_by": "The AQS-ASSAY-TI-MO assay of the float-sink dense grit (XRF, with the Fe and gangue terms)",
+  "task": "QA audit 2026-10-29, owner questions Q-034 to Q-037 (t62u)",
+  "files": [
+   "flow_graph/param/foundry_poly.py",
+   "flow_graph/param/drivers.json",
+   "docs-authority/OPEN_QUESTIONS.md"
+  ],
+  "needs_verification": true,
+  "verification_test": "Set the grit_* assay drivers to the assay values and run python3 -m flow_graph.param.regen; the grit feeds carry the oxide the assay supports, the concentrate edges fall by the same amount, and python3 -m flow_graph.param.recovery reports no flags."
  }
 ]

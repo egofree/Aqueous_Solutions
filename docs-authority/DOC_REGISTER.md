@@ -82,7 +82,7 @@ Table 3.1. Document numbers in use
 | AQS-DES-OIL | `notes/OIL_SECTOR.md` | A | 2026-10-16 | OIL sector — finished design | current |
 | AQS-DES-POLY | `notes/POLYMERS_DESIGN.md` | A | 2026-10-16 | POLYMERS sector — finished design | current |
 | AQS-DOC-002 | `docs-authority/DOC_STYLE.md` | C | 2026-10-29 | Documentation style guide | current |
-| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AO | 2026-10-29 | Documentation rewrite status | current |
+| AQS-DOC-003 | `docs-authority/REWRITE_TODO.md` | AP | 2026-10-29 | Documentation rewrite status | current |
 | AQS-DSN-INT-001 | `docs-authority/INTERNALS.md` | B | 2026-10-29 | Unit internals register | current |
 | AQS-DSN-OX-001 | `docs-authority/OXIDIZER_REAGENTS.md` | A | 2026-10-15 | Nitric acid and hydrogen peroxide systems | current |
 | AQS-DUTY-007 | `docs-authority/COMPLETION_DUTIES.md` | — | — | Completion duties | current |
@@ -225,7 +225,7 @@ Table 3.1. Document numbers in use
 | AQS-OPS-001 | `docs-authority/OPERATING_PROCEDURES.md` | A | 2026-10-16 | Operating procedures | current |
 | AQS-OPS-002 | `docs-authority/MAINT_PLAN.md` | A | 2026-10-16 | Maintenance plan | current |
 | AQS-OPS-003 | `docs-authority/SPARES.md` | A | 2026-10-16 | Critical spares list | current |
-| AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | E | 2026-10-29 | Open questions | current |
+| AQS-OQ-001 | `docs-authority/OPEN_QUESTIONS.md` | F | 2026-10-29 | Open questions | current |
 | AQS-PAR-001 | `docs-authority/PARAMETRIC_MODEL.md` | F | 2026-10-29 | Parametric model | current |
 | AQS-PAR-003 | `docs-authority/BALANCE_RECONCILIATION.md` | E | 2026-10-25 | Mass balance reconciliation | current |
 | AQS-PAR-004 | `docs-authority/GAS_SPECIES.md` | B | 2026-10-15 | Oxygen species ledger | current |
