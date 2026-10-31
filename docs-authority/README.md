@@ -321,6 +321,9 @@ Mass and energy closure studies built on the graph. Several are generated; see D
 | [TEST_RIGS.md](TEST_RIGS.md) | AQS-TST-003 | In-house test rigs: build packages |
 | [BENCH_TEST_H2_COMPRESSOR.md](BENCH_TEST_H2_COMPRESSOR.md) | AQS-TST-005 | Hydrogen compressor first-article bench run |
 | [BENCH_TEST_UPW_POLISH.md](BENCH_TEST_UPW_POLISH.md) | AQS-TST-004 | UPW polish module bench test (RO permeance, rejection, EDI resistivity |
+| [BENCH_TEST_BMED_STACK.md](BENCH_TEST_BMED_STACK.md) | AQS-TST-006 | BMED stack polarisation bench (X-MFG-35) |
+| [BENCH_TEST_ZNBR2_FLOW_CELL.md](BENCH_TEST_ZNBR2_FLOW_CELL.md) | AQS-TST-007 | ZNBR2 flow-cell round-trip bench (X-MFG-41) |
+| [PARCEL_INTERFACE.md](PARCEL_INTERFACE.md) | AQS-SITE-014 | Parcel selection interface: the contract a parcel-selection application satisfies to feed the site design tool |
 
 ## CAD, drawings and the design tool
 

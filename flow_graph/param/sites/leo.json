@@ -33,6 +33,18 @@
      "value": "AQS-SITE-010",
      "units": "document number",
      "register": "AQS-SITE-010"
+    },
+    "orbit_class": {
+     "value": "station-class orbit: about 400 km, 51.6 deg inclination, eclipse each orbit",
+     "units": "class",
+     "basis": "Q-023: profile input; sun-synchronous (little eclipse) is the alternative value.",
+     "owner": "OPEN_QUESTIONS.md Q-034/Q-021/Q-022/Q-023/Q-025/Q-026/Q-027/Q-030/Q-031/Q-033 closures (2026-10-30)"
+    },
+    "crew": {
+     "value": 4,
+     "units": "persons",
+     "basis": "Q-029: crew size is a profile entry derived from the locale habitable volume and food production; 4 is the issued HAB design occupancy. A locale profile may set its own.",
+     "owner": "OPEN_QUESTIONS.md Q-029 closure (2026-10-30)"
     }
    }
   },

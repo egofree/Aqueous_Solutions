@@ -178,7 +178,8 @@
      "verification_test": "ASCE 7 Hazard Tool at the chosen location; the foundation re-solves",
      "ref": "ASCE7_22",
      "register": "AQS-SITE-002",
-     "basis": "per-site input (AQS-SITE-002 Rev C): the seismic spectral shape changes the foundation method (presumptive bearing vs engineered), so the baseline carries its study-site value; a site design replaces it with the site spectral values and the foundation re-solves."
+     "basis": "per-site input (AQS-SITE-002 Rev C): the seismic spectral shape changes the foundation method (presumptive bearing vs engineered), so the baseline carries its study-site value; a site design replaces it with the site spectral values and the foundation re-solves.",
+     "binds": "wt_SDS"
     },
     "SD1_g": {
      "value": 0.08,
@@ -187,7 +188,8 @@
      "verification_test": "ASCE 7 Hazard Tool at the chosen location; the foundation re-solves",
      "ref": "ASCE7_22",
      "register": "AQS-SITE-002",
-     "basis": "per-site input (AQS-SITE-002 Rev C): the seismic spectral shape changes the foundation method (presumptive bearing vs engineered), so the baseline carries its study-site value; a site design replaces it with the site spectral values and the foundation re-solves."
+     "basis": "per-site input (AQS-SITE-002 Rev C): the seismic spectral shape changes the foundation method (presumptive bearing vs engineered), so the baseline carries its study-site value; a site design replaces it with the site spectral values and the foundation re-solves.",
+     "binds": "wt_SD1"
     },
     "TL_s": {
      "value": 8.0,

@@ -300,6 +300,7 @@ Table 3.1. Document numbers in use
 | AQS-SITE-011 | `docs-authority/SITE_COMPARISON.md` | A | 2026-10-26 | Site comparison | current |
 | AQS-SITE-012 | `docs-authority/HULL_DESIGN.md` | A | 2026-10-26 | Floating island hull design | current |
 | AQS-SITE-013 | `docs-authority/SITE_UNITS.md` | A | 2026-10-26 | Site unit placements | current |
+| AQS-SITE-014 | `docs-authority/PARCEL_INTERFACE.md` | A | 2026-10-30 | Parcel selection interface | current |
 | AQS-SIZE-ACID_POLISH_SCRUB | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | A | 2026-10-20 | Sizing calculation - ACID_POLISH_SCRUB | current |
 | AQS-SIZE-ADS_CHILL | `docs-authority/sizing/ADS_CHILL.md` | A | 2026-10-20 | Sizing calculation - ADS_CHILL | current |
 | AQS-SIZE-AFTERBURNER | `docs-authority/sizing/AFTERBURNER.md` | A | 2026-10-20 | Sizing calculation - AFTERBURNER | current |
@@ -469,6 +470,8 @@ Table 3.1. Document numbers in use
 | AQS-TST-003 | `docs-authority/TEST_RIGS.md` | A | 2026-10-16 | In-house test rigs: build packages | current |
 | AQS-TST-004 | `docs-authority/BENCH_TEST_UPW_POLISH.md` | B | 2026-10-24 | UPW polish module bench test (RO permeance, rejection, EDI resistivity) | current |
 | AQS-TST-005 | `docs-authority/BENCH_TEST_H2_COMPRESSOR.md` | B | 2026-10-24 | Hydrogen compressor first-article bench run | current |
+| AQS-TST-006 | `docs-authority/BENCH_TEST_BMED_STACK.md` | A | 2026-10-30 | Bench test - BMED stack polarisation | current |
+| AQS-TST-007 | `docs-authority/BENCH_TEST_ZNBR2_FLOW_CELL.md` | A | 2026-10-30 | Bench test - ZNBR2 flow-cell round trip | current |
 | AQS-UI-001 | `docs-authority/DESIGN_TOOL_ARCHITECTURE.md` | H | 2026-10-24 | Design-tool architecture | current |
 | AQS-VENT-001 | `docs-authority/VENT_CLOSURE.md` | C | 2026-10-01 | Vent and stack closure — scrub / regen or CRYO | current |
 | AQS-WLD-001 | `docs-authority/WELD_MAP.md` | A | 2026-09-27 | Weld and joint map | current |
