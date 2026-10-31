@@ -1,9 +1,9 @@
 item,description,qty,material,basis
 1,"Shell DN350 x 2050 mm, wall 6.0 mm",1,nickel 200,AQS-DUTY-060 section 2
-2,Tubes ID 25.0 x OD 29.0 x 1500 mm,20,nickel 200 (PERRY9_MAT),falling film 2.32 m2 at U from PERRY9_EVAP
+2,Tubes ID 25.0 x OD 29.0 x 1500 mm,20,nickel 200 (PERRY9_MAT),falling film 2.33 m2 at U from PERRY9_EVAP
 3,Tubesheets 25.0 mm,2,nickel 200 (PERRY9_MAT),AQS-DUTY-060
 4,Vapour separator DN350 x 900 mm with mesh pad,1,nickel 200; PTFE or PVDF mesh,AQS-DUTY-060
-5,"Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaft",1,impeller titanium grade 7 or PVDF-lined (acid); nickel (base),X-MFG-32 in-house line; motor IEC 60034 frame
+5,"Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaft",1,impeller titanium grade 7 or PVDF-lined (acid); nickel (base),X-MFG-32 in-house line; motor IEC 60034 frame
 6,Feed/condensate/product interchanger 0.146 m2,1,nickel 200 (PERRY9_MAT),"3.67 kW, outlets 50.6 C"
 7,Recirculation pump 282.7 kg/h at 4 m,1,PVDF (acid) or nickel (base) wetted,X-MFG-32
 8,"Body relief valve API 526 D orifice, set 100 kPa g",1,PTFE-lined (acid) or nickel trim (base),"fire case ISO 23251, sized in-house"

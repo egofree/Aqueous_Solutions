@@ -158,7 +158,26 @@
       "notes": "Black digest (S30)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "design": {
+          "D_mm": 800,
+          "H_mm": 760,
+          "wall_mm": 5.0,
+          "V_L": 378,
+          "material": "PP-H sheet, extrusion-welded (DVS 2207-11)",
+          "insulation": "PIR 50 mm, PE cladding",
+          "heat_W": 85,
+          "T_C": 55,
+          "SRT_d": 15,
+          "biogas_g_d": 99
+        },
+        "size_mm": [
+          1100,
+          1100,
+          1260
+        ],
+        "size_note": "DN800 x 760 mm thermophilic anaerobic digester + 300 mm envelope margin, per AQS-DUTY-063 (sizing/SANITATION.md section 2 row 1: 378 L, PP-H 5.0 mm, 50 mm PIR, 85 W, 55 C SRT 15 d METCALF5); graph-side design restored from the governing sizing doc because the X-SAN-01 writer is R11-blocked (owner lane)"
+      },
       "continuous_kw": {
         "value": 0.1052,
         "unit": "kW",
@@ -177,7 +196,14 @@
       "notes": "BMED acid loop node",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 5.6267,
         "unit": "kW",
@@ -221,7 +247,13 @@
           "total_kW": 0.01803555742909093,
           "kWh_per_m3": 3.2461065645922726,
           "kWh_per_m3_RO_EDI": 0.5463508924805983
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -254,7 +286,14 @@
       "notes": "Cold mill (S59)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.0191,
         "unit": "kW",
@@ -273,7 +312,14 @@
       "notes": "CRYO AHU (S56/S70)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.6472,
         "unit": "kW",
@@ -302,15 +348,15 @@
           "case": "atmospheric",
           "method": "API 2000 normal venting (API2000_2020), flow_graph/param/sizing/vent.py, A-M-155",
           "relief_mm_status": "atmospheric; no relief orifice, open vent per API 2000",
-          "V_tk_m3": 0.0,
+          "V_tk_m3": 0.18,
           "pump_in_m3_h": 0.0,
           "pump_out_m3_h": 0.0,
-          "out_breathing_Nm3_h": 0.0,
-          "in_breathing_Nm3_h": 0.0,
+          "out_breathing_Nm3_h": 0.068,
+          "in_breathing_Nm3_h": 1.957,
           "vent_dP_Pa": 500,
-          "vent_bore_req_mm": 0.0,
+          "vent_bore_req_mm": 6.4,
           "vent_DN": 25,
-          "thermal_term": "no sized volume: pump terms only",
+          "thermal_term": "envelope volume",
           "design_case": "vapour 2.0 kPa (4 x vent dP) + hydrostatic 15.2 kPa (1.24 m full at SG 1.25) = 17.5 kPa g (A-M-174)"
         },
         "design": {
@@ -342,7 +388,13 @@
           },
           "H_mm": 1243,
           "D_mm": 414
-        }
+        },
+        "size_mm": [
+          300,
+          300,
+          2000
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "continuous_kw": {
         "value": 1.6572,
@@ -936,7 +988,14 @@
       "notes": "Powder production. Fed from FOUNDRY melt when powder stock required. Not baseline.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.0781,
         "unit": "kW",
@@ -981,7 +1040,12 @@
           "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
           "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       }
     },
     {
@@ -1006,7 +1070,12 @@
           "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
           "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "continuous_kw": {
         "value": 0.1257,
@@ -1111,7 +1180,34 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "X": 0.11,
+          "delta_um": 1.905,
+          "t_kin_h": 7.5005,
+          "tau_h": 22.5014,
+          "V_work_L": 37.4793,
+          "V_L": 49.9724,
+          "D_mm": 400,
+          "H_mm": 400,
+          "wall_mm": 4.0,
+          "agitator": {
+            "D_imp_mm": 133,
+            "rpm": 358,
+            "shaft_W": 14.790912041447882,
+            "motor_kW": 0.09
+          },
+          "T_C": 85,
+          "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",
+          "heat": "Q3 coil HX-6 (graph HL-Q3-A/B-HX6)",
+          "kW": 0.09
+        },
+        "size_mm": [
+          700,
+          700,
+          900
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -1161,7 +1257,13 @@
           "basis": "BVAD2022 tomato; crew-duty area from S14 (A-M-229)"
         },
         "yield_assumption": "0.1442 kg/(m2\u00b7d) edible fresh at DLI 17 (BVAD2022 tomato carbon chain, A-M-229) x 29.12 m2",
-        "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)"
+        "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)",
+        "size_mm": [
+          2000,
+          1000,
+          400
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1250,7 +1352,7 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3051.0,
+        "vs_znbr2_kwh": 3052.0,
         "fraction_of_znbr2_study": 0.07,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -1273,7 +1375,13 @@
           "upper": "3 reservoir levels x 3.06 m water over 367 m2, 2.0 cells per level",
           "lower": "CATCH_TANK 9.17 m deep over 367 m2",
           "eta_net_with_penstock": 0.76
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1355,11 +1463,24 @@
       "modules": [],
       "params": {
         "size_mm": [
-          2200,
-          900,
-          1400
+          425,
+          425,
+          600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "design": {
+          "T_C": 35,
+          "tau_h": 48,
+          "V_work_L": 0.72,
+          "V_L": 0.96,
+          "D_mm": 125,
+          "H_mm": 100,
+          "wall_mm": 4.0,
+          "heat_W": 0.7399,
+          "mixer": "daily recirculation pump",
+          "material": "HDPE (PE100), 50 mm PIR",
+          "kW": 0.0207
+        }
       },
       "continuous_kw": {
         "value": 0.0207,
@@ -1379,7 +1500,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.7388,
+        "value": 0.818,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02: node aligned to its calculated SF-MEOH_SYNTH feed (feed preheat, no interchanger credit); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw.."
@@ -1388,11 +1509,34 @@
       "params": {
         "presence": "present",
         "size_mm": [
-          2200,
-          900,
-          1400
+          414,
+          414,
+          2585
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "design": {
+          "T_C": 250,
+          "P_bar": 50.0,
+          "design_MPa": 5.5,
+          "MeOH_kg_h": 1.4379,
+          "cat_kg": 3.5357,
+          "V_bed_L": 3.2143,
+          "tubes": 1,
+          "tube": "DN50 Sch 40 SA-106 B",
+          "L_bed_mm": 1485,
+          "t_req_mm": 2.8796,
+          "t_nom_mm": 3.91,
+          "t_ok": true,
+          "exotherm_kW": 0.617,
+          "preheat_kW": 0.818,
+          "D_mm": 114,
+          "H_mm": 2085,
+          "wall_mm": 3.91,
+          "V_work_L": 3.2143,
+          "V_L": 3.2143,
+          "material": "SA-106 B tube in a DN100 thermal-oil jacket (exotherm to Q3); Cu/ZnO/Al2O3 pellets",
+          "kW": 0.818
+        }
       }
     },
     {
@@ -1406,7 +1550,14 @@
       "notes": "Superseded for bulk melt by FOUNDRY IND_MELT. Retained as MFG hold/transfer only. Do not size as primary melt.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.2369,
         "unit": "kW",
@@ -1473,7 +1624,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1575,7 +1732,29 @@
       "notes": "Oil pyro (intra) Design: notes/OIL_SECTOR.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "design": {
+          "T_C": 500.0,
+          "tau_h": 1.0,
+          "V_work_L": 1.9056,
+          "V_L": 3.8111,
+          "D_mm": 200,
+          "H_mm": 170,
+          "wall_mm": 4.5,
+          "Q_process_kW": 1.1192,
+          "insulation_mm": 125,
+          "loss_W": 65.1293,
+          "kW": 1.664,
+          "material": "ASME SA-240 304H (carbon steel limited to 425 C, ASME II-D); ceramic-fibre insulation; band heaters",
+          "relief": "vapour line to OIL_FRAC open; bursting disc on the retort lid to the flare header (study)"
+        },
+        "size_mm": [
+          500,
+          500,
+          670
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
+      },
       "continuous_kw": {
         "value": 1.664,
         "unit": "kW",
@@ -1594,7 +1773,7 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: 6932 x 0.5 kWp in-house class (ST-SOLAR-01) = 3466 kWp = 2.0 x 1733 kWp balancing (D75); array 30 444 m2 on the roof at 8.77 m2/kWp (A-M-235).",
       "enabled": true,
       "continuous_kw": {
-        "value": 368.9079,
+        "value": 368.9871,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233)."
@@ -1602,9 +1781,9 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6042,
+        "count": 6044,
         "presence": "present",
-        "nameplate_kw": 3021,
+        "nameplate_kw": 3022,
         "area_m2": 26574,
         "balance_kWp": 1511,
         "oversize_factor": 2.0,
@@ -1629,7 +1808,13 @@
             "lrfd_kPa": 1.716
           },
           "basis": "flow_graph/param/solver.py roof_close (IFC 2027 1205.3, NFPA 1 11.12, IECC 2021, ASHRAE 62.1, ISO 16798-3, ASCE 7-22)"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1655,7 +1840,13 @@
         "nameplate_kw_dc": 99.0,
         "rect_ac_input_kW": 38.663,
         "rect_loss_kW": 7.733,
-        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004). Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255)."
+        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004). Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255).",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1676,8 +1867,8 @@
         "count": 42,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2302.1,
-          "export_kWh_d_clear": 6536,
+          "export_peak_kW": 2302.0,
+          "export_kWh_d_clear": 6539,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -1707,16 +1898,22 @@
         },
         "redundancy": {
           "arrangement": "main-tie-main, sections A/B, normally-open tie",
-          "bus_demand_kW": 182.9,
+          "bus_demand_kW": 183.0,
           "section_rating_A": 350,
-          "basis_A": 244.5,
+          "basis_A": 244.6,
           "MCC": "MCC-1A / MCC-1B",
           "transformer": "2 x 100 % T-1 15 kVA",
           "critical_ATS_A": 100,
           "critical_kW": 14.459999999999999,
           "inverter_sections": 6,
           "rule": "X-RED-03, A-M-152; NEC 240.6, 0.9 pf, 125 % continuous"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1765,7 +1962,13 @@
             "item": "total connected (calculated)",
             "kW": 0.4417
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1808,7 +2011,13 @@
             "item": "total",
             "kWh_d": 5.008
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1822,7 +2031,14 @@
       "notes": "Final wire sizing in MFG. Takes rod/wire stock from FOUNDRY DRAW via STOCK_OUT. Not the primary draw.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.0189,
         "unit": "kW",
@@ -1841,26 +2057,32 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 217.8701,
+        "value": 217.9501,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.9 kW, charge 990.3 kW, 3050 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.6 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
         "kW": 991,
-        "kWh": 3051,
+        "kWh": 3052,
         "presence": "present",
         "charge_kW": 991,
         "discharge_kW": 218,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 42 hybrid inverters, 72.6 kWh and 23.6 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 42 hybrid inverters, 72.7 kWh and 23.6 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.733,
-          "purge_m3_h": 32.22,
+          "H2_m3_d": 7.736,
+          "purge_m3_h": 32.23,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1995.1
-        }
+          "electrode_area_m2": 1995.9
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -4856,7 +5078,7 @@
       "forbidden": "HDR_O2, HDR_CO2",
       "claim_status": "Claimed / Partial",
       "rate": {
-        "value": 368.9079,
+        "value": 368.9871,
         "unit": "kW",
         "status": "study",
         "note": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78 (A-M-233): set absolutely = balancing energy / 24 h; retires the BH X-RSZ accumulator value 242.0676. X-PAR-07 extension hall: +105.21 kW."
@@ -5143,7 +5365,7 @@
       "forbidden": "battery Br\u2082 into CRU",
       "claim_status": null,
       "rate": {
-        "value": 0.7388,
+        "value": 0.818,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw."

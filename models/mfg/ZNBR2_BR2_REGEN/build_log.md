@@ -1,15 +1,21 @@
 # Build log - ZNBR2_BR2_REGEN
 
-Class: scrubber
-Envelope: per duty sheet section 2
-Material: per AQS-STD-002
-Graph: AQS-FLOW-GRAPH-001
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/ZNBR2_BR2_REGEN.md`; sizing `docs-authority/sizing/ZNBR2_BR2_REGEN.md`).
 
-## Acceptance
+## Tool versions
 
-Envelope model: `cad/stl/ZNBR2_BR2_REGEN.stl`
-BOM: `models/mfg/ZNBR2_BR2_REGEN/bom.csv`
-Placement: `flow_graph/param/sites/baseline.json`
-Duty sheet: `docs-authority/duties/ZNBR2_BR2_REGEN.md`
-Material selection: AQS-STD-005 (per duty sheet section 3)
-Status: envelope-class build; the detailed design follows at the unit task 10-12 fabrication model
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
+
+## Checks
+
+- Build bbox 400 x 400 x 2000 mm: inside the envelope with margin (envelope 400 x 400 x 2000 mm)
+- Solid source: envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)
+- BOM `models/mfg/ZNBR2_BR2_REGEN/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/ZNBR2_BR2_REGEN/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
+
+## Sources
+
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

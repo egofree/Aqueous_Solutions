@@ -155,6 +155,7 @@ def write(d, g, R):
     TAG = 'X-MFG-31 in-house reactor design (AQS-DUTY-062)'
     for u, r in R.items():
         if u not in N: continue   # R11 Rev AC regen: unit absent from the graph (removed in a later revision)
+        if 'D_mm' not in r: continue   # bench/train unit without a vessel envelope (MET_SYN: specialty_sizing owns design + size per X-UI-002)
         n = N[u]; p = n.setdefault('params', {})
         p['design'] = {k: (round(x, 4) if isinstance(x, float) else x) for k, x in r.items()}
         p['size_mm'] = [r['D_mm'] + 300, r['D_mm'] + 300, r['H_mm'] + 500]; p['size_note'] = 'L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)'

@@ -1,14 +1,14 @@
 {
  "_generated_from": {
-  "graph_sha256": "dda6fec22e1d2666daa38b0e6ced69c0b98553d4a8f7c427054b6d58ef2a48d5",
+  "graph_sha256": "a68069cea430aa988f392ed5983c64b1e0fc779ac1b46b8bff45f81929bf5159",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
   {
    "unit": "PV_ARRAY",
    "role": "generation",
-   "kw": 368.908,
-   "calc_kw": 368.908,
+   "kw": 368.987,
+   "calc_kw": 368.987,
    "basis": "AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: average delivered = balancing energy / 24 h (= IA-PV-01); nameplate class not continuous avg \u2014 resolved (A-M-233).",
    "class": "calculated",
    "sector": "ELEC"
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 217.87,
-   "calc_kw": 217.87,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.9 kW, charge 990.3 kW, 3050 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 217.95,
+   "calc_kw": 217.95,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.6 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -239,6 +239,15 @@
    "sector": "FOUNDRY"
   },
   {
+   "unit": "MEOH_SYNTH",
+   "role": "load",
+   "kw": 0.818,
+   "calc_kw": 0.818,
+   "basis": "X-ELS-02: node aligned to its calculated SF-MEOH_SYNTH feed (feed preheat, no interchanger credit); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw..",
+   "class": "calculated",
+   "sector": "MEOH"
+  },
+  {
    "unit": "LEACH_CSTR_1",
    "role": "load",
    "kw": 0.75,
@@ -246,15 +255,6 @@
    "basis": "X-ELS-02: agitator PBT D450 at 150 rpm, 403 W shaft (Np x rho x N^3 x D^5) -> 0.75 kW motor (drivers key motor_kW; AQS-DUTY-050 Rev B); leach heat is Q3 via HX-5, not electric (was the 2 kW AC parasitics share).",
    "class": "calculated",
    "sector": "DIGESTER"
-  },
-  {
-   "unit": "MEOH_SYNTH",
-   "role": "load",
-   "kw": 0.739,
-   "calc_kw": 0.739,
-   "basis": "X-ELS-02: node aligned to its calculated SF-MEOH_SYNTH feed (feed preheat, no interchanger credit); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw..",
-   "class": "calculated",
-   "sector": "MEOH"
   },
   {
    "unit": "GEO_HP",
@@ -930,10 +930,10 @@
   "owner_lock": 2,
   "null": 2,
   "rows": 102,
-  "graph_sum_kW": 179.2,
-  "calc_sum_kW": 179.2,
-  "connected_load_kW": 179.2,
-  "connected_calculated_kW": 177.5,
+  "graph_sum_kW": 179.28,
+  "calc_sum_kW": 179.28,
+  "connected_load_kW": 179.3,
+  "connected_calculated_kW": 177.6,
   "connected_standby_kW": 0.1,
   "connected_study_kW": 1.6,
   "connected_calculated_pct": 99.1,

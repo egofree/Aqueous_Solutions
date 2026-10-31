@@ -675,7 +675,7 @@ Table 3.14. ELEC off. Sector type: Utility / header.
 | SF-LITHO_COAT | SOL_ARK_60K to LITHO_COAT | FAB | 0.0254 kW | left without a source: consumer goes short |
 | SF-LITHO_DEV | SOL_ARK_60K to LITHO_DEV | FAB | 0.008 kW | left without a source: consumer goes short |
 | SF-MEOH_FERM | SOL_ARK_60K to MEOH_FERM | MEOH | 0.0207 kW | left without a source: consumer goes short |
-| SF-MEOH_SYNTH | SOL_ARK_60K to MEOH_SYNTH | MEOH | 0.739 kW | left without a source: consumer goes short |
+| SF-MEOH_SYNTH | SOL_ARK_60K to MEOH_SYNTH | MEOH | 0.818 kW | left without a source: consumer goes short |
 | SF-MET_MELT | SOL_ARK_60K to MET_MELT | MFG | 0.237 kW | left without a source: consumer goes short |
 | SF-MET_SCRUB | SOL_ARK_60K to MET_SCRUB | MFG | 2.12 kW | left without a source: consumer goes short |
 | SF-MET_SYN | SOL_ARK_60K to MET_SYN | MEOH | 0.2 kW | left without a source: consumer goes short |
@@ -761,7 +761,7 @@ Table 3.16. MEOH off. Sector type: Energy Storage System (Electrochemical).
 | S80 | MEOH_FC to Q4_BUS | HEAT | 0.369 kW | left without a source: consumer goes short |
 | S82 | MEOH_FC to CRYO_CO2 | CRYO | 8.63 kg/d | left without a source: consumer goes short |
 | SF-MEOH_FERM | SOL_ARK_60K to MEOH_FERM | ELEC | 0.0207 kW | stops with the sector |
-| SF-MEOH_SYNTH | SOL_ARK_60K to MEOH_SYNTH | ELEC | 0.739 kW | stops with the sector |
+| SF-MEOH_SYNTH | SOL_ARK_60K to MEOH_SYNTH | ELEC | 0.818 kW | stops with the sector |
 | SF-MET_SYN | SOL_ARK_60K to MET_SYN | ELEC | 0.2 kW | stops with the sector |
 
 Table 3.17. PUMPED_HYDRO off. Sector type: Energy Storage System (Gravity).

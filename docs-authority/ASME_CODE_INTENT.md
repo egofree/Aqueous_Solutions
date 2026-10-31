@@ -62,7 +62,7 @@ Table 4.1. Code intent per unit
 | BAGHOUSE | GAS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BEE_HIVE | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BIOFILTER | FARM |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
-| BLACK_DIGEST | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| BLACK_DIGEST | WTR |  | 55 | 790 | not a vessel (no design pressure on the graph) | - | - | - |
 | BLOW_MOLD | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BMED_ACID | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | BMED_BASE | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -130,7 +130,7 @@ Table 4.1. Code intent per unit
 | GEO_HP_CLOSED_LOOP | GEO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GEO_ORC | GEO |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GLASS_BURNOUT | GLASS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
-| GLASS_DIGEST | GLASS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| GLASS_DIGEST | GLASS |  | 85 | 392 | not a vessel (no design pressure on the graph) | - | - | - |
 | GLASS_MILL | GLASS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GLASS_RINSE | GLASS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | GREASE_CA | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -169,8 +169,8 @@ Table 4.1. Code intent per unit
 | MEM_DIST | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MEOH_COND | MEOH |  |  | 400 | not a vessel (no design pressure on the graph) | - | - | - |
 | MEOH_FC | MEOH |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
-| MEOH_FERM | MEOH |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
-| MEOH_SYNTH | MEOH |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| MEOH_FERM | MEOH |  | 35 | 117 | not a vessel (no design pressure on the graph) | - | - | - |
+| MEOH_SYNTH | MEOH |  | 250 | 106 | not a vessel (no design pressure on the graph) | - | - | - |
 | MEOH_TANK | MEOH |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | METAL_STORE | FOUNDRY |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | MET_AHU | MFG |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
@@ -187,7 +187,7 @@ Table 4.1. Code intent per unit
 | NUTRIENT_DOSE | NUT |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | OIL_DRYER | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | OIL_FRAC | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
-| OIL_PYRO | OIL |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
+| OIL_PYRO | OIL |  | 500.0 | 191 | not a vessel (no design pressure on the graph) | - | - | - |
 | PELLET | POLYMERS |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | PERC_REMOVE | WTR |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |
 | POLISH_BANK | DIGESTER |  |  |  | not a vessel (no design pressure on the graph) | - | - | - |

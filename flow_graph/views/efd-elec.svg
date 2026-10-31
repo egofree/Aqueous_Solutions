@@ -254,7 +254,7 @@
 <title>PV_ARRAY&#45;&gt;SOL_ARK_60K</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M176.51,-4318C232.56,-4318 354.97,-4318 423.69,-4318"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="423.83,-4321.5 433.83,-4318 423.83,-4314.5 423.83,-4321.5"/>
-<text text-anchor="middle" x="355" y="-4320.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n368.9079 kW</text>
+<text text-anchor="middle" x="355" y="-4320.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">IA&#45;PV&#45;01\n368.9871 kW</text>
 </g>
 <!-- RECTIFIER -->
 <g id="node23" class="node">
@@ -999,7 +999,7 @@
 <title>SOL_ARK_60K&#45;&gt;MEOH_SYNTH</title>
 <path fill="none" stroke="#1e3a8a" stroke-width="1.2" d="M475.04,-4299.63C475.64,-4057.3 483.18,-1497.71 534,-1441 580.44,-1389.17 667.73,-1391.94 722.43,-1400.02"/>
 <polygon fill="#1e3a8a" stroke="#1e3a8a" stroke-width="1.2" points="722.15,-1403.52 732.58,-1401.64 723.25,-1396.61 722.15,-1403.52"/>
-<text text-anchor="middle" x="612.5" y="-1443.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEOH_SYNTH\n0.7388 kW</text>
+<text text-anchor="middle" x="612.5" y="-1443.6" font-family="Helvetica,sans-Serif" font-size="8.00" fill="#1e3a8a">SF&#45;MEOH_SYNTH\n0.818 kW</text>
 </g>
 <!-- MET_SYN -->
 <g id="node72" class="node">
@@ -1338,5 +1338,5 @@
 </g>
 </g>
 
-<g id="aqs-title-block"><rect x="770.2" y="5029.5" width="517.3" height="137.9" fill="white" stroke="black" stroke-width="1.44"/><text x="778.8" y="5052.5" font-family="sans-serif" font-size="12.9">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ELEC</text><text x="778.8" y="5076.9" font-family="sans-serif" font-size="12.9">Electrical flow diagram</text><text x="778.8" y="5101.4" font-family="sans-serif" font-size="12.9">Type: flow diagram (ISO_10628_2)   Rev c5eb62f7   Issued 2026-10-15</text><text x="778.8" y="5125.8" font-family="sans-serif" font-size="12.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="778.8" y="5150.2" font-family="sans-serif" font-size="12.9">Graph SHA-256 dda6fec22e1d2666   Sheet 1 of 1   AQS-DWG-001</text></g>
+<g id="aqs-title-block"><rect x="770.2" y="5029.5" width="517.3" height="137.9" fill="white" stroke="black" stroke-width="1.44"/><text x="778.8" y="5052.5" font-family="sans-serif" font-size="12.9">Aqueous Solutions (owner)   AQS-DWG-PFD-EFD-ELEC</text><text x="778.8" y="5076.9" font-family="sans-serif" font-size="12.9">Electrical flow diagram</text><text x="778.8" y="5101.4" font-family="sans-serif" font-size="12.9">Type: flow diagram (ISO_10628_2)   Rev d3eb2195   Issued 2026-10-15</text><text x="778.8" y="5125.8" font-family="sans-serif" font-size="12.9">Created: flow graph pipeline   Approved: not approved (study)</text><text x="778.8" y="5150.2" font-family="sans-serif" font-size="12.9">Graph SHA-256 a68069cea430aa98   Sheet 1 of 1   AQS-DWG-001</text></g>
 </svg>

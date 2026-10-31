@@ -15,7 +15,7 @@ DIGESTER,DIGESTER_EXT,CRU,"Motor: transfer pump IA-CRU-01 to LEACH_CSTR_1 (BLDC,
 DIGESTER,DIGESTER_EXT,EVAP_ACID,"Blower, single-stage centrifugal, ratio 1.648, 1.34 kW shaft",induction IE3,IEC 100L / 2.2 kW,1.34,480 V 3-ph,S1,fixed speed,1,BOM (sized)
 DIGESTER,DIGESTER_EXT,EVAP_ACID,Recirculation pump 311.0 kg/h at 4 m,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,DIGESTER_EXT,EVAP_ACID_VS,"Sump recirculation pump, magnetic drive, about 0.35 m3/h at ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-DIGESTER,DIGESTER_EXT,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.185 kW shaf",induction IE3,IEC 90L / 1.5 kW,1.185,480 V 3-ph,S1,fixed speed,1,BOM (sized)
+DIGESTER,DIGESTER_EXT,EVAP_BASE,"Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf",induction IE3,IEC 90L / 1.5 kW,1.189,480 V 3-ph,S1,fixed speed,1,BOM (sized)
 DIGESTER,DIGESTER_EXT,EVAP_BASE,Recirculation pump 282.7 kg/h at 4 m,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,DIGESTER_EXT,FLOAT_SINK,"Motor: transfer pump IA-PLAST-01 to OIL_DRYER (BLDC, 42 mm (",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,DIGESTER_EXT,FLOAT_SINK,"Motor: transfer pump IA-WET-FLOAT-01 to LEACH_CSTR_1 (BLDC, ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
@@ -43,11 +43,8 @@ DIGESTER,ew_cell,EW_7,"Motor: electrolyte circulation pump (induction IE3, IEC 6
 DIGESTER,ew_cell,EW_7,"Motor: transfer pump IA-EW-07 to EW_8 (BLDC, 42 mm (NEMA 17 ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,ew_cell,EW_8,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,ew_cell,EW_8,"Motor: transfer pump IA-EW-08 to EW_9 (BLDC, 42 mm (NEMA 17 ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-ELEC,EXT_HALL_N,EXT_HALL,AHU damper actuator,BLDC actuator,ISO 5211 F03 mount,0.005,24 V DC,S2,on/off,24,assumed 3 per AHU
-ELEC,EXT_HALL_N,EXT_HALL,AHU exhaust fan,induction IE3,IEC 90S / 1.1 kW,0.8921,480 V 3-ph,S1,variable-frequency drive,8,"8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
-ELEC,EXT_HALL_N,EXT_HALL,AHU supply fan,induction IE3,IEC 90S / 1.1 kW,0.8921,480 V 3-ph,S1,variable-frequency drive,8,"8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
-ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor,hermetic induction (scroll),18.5 kW hermetic,15.3475,480 V 3-ph,S1,variable-frequency drive,8,"peak cooling 395 kW / COP 3.22 / 8 modules (module count assumed, A-M-119)"
-ELEC,EXT_HALL_N,EXT_HALL,heat pump condenser fan,"EC (electronically commutated, permanent-magnet) fan motor","1.1 kW EC fan, integrated drive",0.75,480 V 3-ph,S1,electronically commutated (EC) motor,16,assumed 2 per module; EC fan type assumed (A-M-119)
+ELEC,EXT_HALL_N,EXT_HALL,Motor: air-source heat pump compressor (hermetic induction (,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,8,BOM; shaft assumed (A-M-119)
+ELEC,EXT_HALL_N,EXT_HALL,Motor: heat pump condenser fan (EC (electronically commutate,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,16,BOM; shaft assumed (A-M-119)
 ELEC,flow_battery,ZNBR2,"Motor: electrolyte pump (anolyte, catholyte) per stack strin",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,96,BOM; shaft assumed (A-M-119)
 ELEC,flow_battery,ZNBR2,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 ELEC,genset,BACKUP_GEN,radiator fan,induction IE3,IEC 71 / 0.37 kW,0.25,480 V 3-ph,S1,fixed speed,1,assumed
@@ -94,7 +91,7 @@ GAS,scrubber,NOX_SCRUB,"Motor: transfer pump IA-NOX-H2O to ROOF_TANK (BLDC, 42 m
 GAS,scrubber,NOX_SCRUB,"Motor: transfer pump IA-NOX-N to NUTRIENT_DOSE (BLDC, 42 mm ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 GAS,scrubber,NOX_SCRUB,"Motor: transfer pump IA-NOX-N2 to CRYO_ASU (BLDC, 42 mm (NEM",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 GEO,heat_pump,GEO_HP,"Motor: heat pump compressor (hermetic induction (scroll), 0.",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D150 at 318 rpm, 0.09",induction IE3,IEC 63 / 0.12 kW,0.09,208 V 3-ph,S1,fixed speed,1,BOM (sized)
+GLASS,OIL_GLASS,GLASS_DIGEST,"Top-entry agitator, 4-blade 45 deg PBT D133 at 358 rpm, 0.09",induction IE3,IEC 63 / 0.12 kW,0.09,208 V 3-ph,S1,fixed speed,1,BOM (sized)
 MEOH,ferment,MEOH_FERM,PIR insulation 50 mm with PE cladding; daily recirculation p,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 MEOH,iem_fc,MEOH_FC,"Motor: cathode air blower (BLDC, 57 mm (NEMA 23 flange))",BLDC,57 mm (NEMA 23 flange),0.02,24 V DC,S1,BLDC driver,1,BOM; shaft assumed (A-M-119)
 MEOH,iem_fc,MEOH_FC,"Motor: coolant pump (BLDC, 42 mm (NEMA 17 flange))",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
@@ -141,6 +138,7 @@ OIL,cut_tank,PROD_C19_C28,"Motor: transfer pump CUT-3-OUT to MFG_SHOP (BLDC, 42 
 OIL,cut_tank,PROD_C29,"Motor: transfer pump C29_RECYCLE to C29_RECYCLE (BLDC, 42 mm",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 OIL,cut_tank,PROD_C5_C10,"Motor: transfer pump IA-C5-POLY to POLY_OLEFIN (BLDC, 42 mm ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 POLYMERS,POLY_MON,HF_GEN,Acid day tank D160 x 300 mm with metering pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
+POLYMERS,POLY_MON,POLY_COND,Dilute-HCl return pump and transfer line to CRU,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 POLYMERS,POLY_MON,POLY_F,transfer pump POLYF_RECLAIM to F_RECOVER,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"0.0 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 POLYMERS,POLY_MON,POLY_F,transfer pump POLYF_TO_FILM to FILM_CAST,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"0.1 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"
 POLYMERS,POLY_MON,POLY_STOCK,transfer pump FLUORO_TO_MFG to MFG_SHOP,BLDC,42 mm (NEMA 17 flange),0.0,24 V DC,S3,BLDC driver,1,"0.2 kg/d at 10 m, eff 0.4 (assumed; gravity not credited)"

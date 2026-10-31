@@ -1,15 +1,21 @@
 # Build log - ADS_CHILL
 
-Class: adsorption_chiller
-Envelope: 700 x 500 x 1200 mm
-Material: per AQS-STD-002
-Graph: AQS-FLOW-GRAPH-001
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/ADS_CHILL.md`; sizing `docs-authority/sizing/ADS_CHILL.md`).
 
-## Acceptance
+## Tool versions
 
-Envelope model: `cad/stl/ADS_CHILL.stl`
-BOM: `models/mfg/ADS_CHILL/bom.csv`
-Placement: `flow_graph/param/sites/baseline.json`
-Duty sheet: `docs-authority/duties/ADS_CHILL.md`
-Material selection: AQS-STD-005 (per duty sheet section 3)
-Status: envelope-class build; the detailed design follows at the unit task 10-12 fabrication model
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
+
+## Checks
+
+- Build bbox 700 x 500 x 1200 mm: inside the envelope with margin (envelope 700 x 500 x 1200 mm)
+- Solid source: envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)
+- BOM `models/mfg/ADS_CHILL/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/ADS_CHILL/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
+
+## Sources
+
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

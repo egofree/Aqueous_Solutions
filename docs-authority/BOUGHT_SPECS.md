@@ -17,14 +17,14 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Category | Items |
 |---|---|
-| fastener | 15305 |
+| fastener | 15283 |
 | support | 7355 |
-| electronics | 2058 |
+| electronics | 1953 |
 | valve | 988 |
-| instrument | 841 |
-| bearing | 704 |
-| protection | 281 |
-| seal | 205 |
+| instrument | 842 |
+| bearing | 674 |
+| protection | 266 |
+| seal | 222 |
 
 ## 2a. What a datasheet is here
 
@@ -45,21 +45,21 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x192 | 192 | 17 | AHU damper actuator (assumed size); Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size) |  |
-| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x438; 6205-2Z x44; 6206-2Z x8; 6204-2Z x8; 6202-2Z x6; 6308-2Z x6; 6306-2Z x2 | 512 | 74 | AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size); AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed si |  |
+| OF-01 | deep-groove ball bearing | ISO 15, normal class | 608-2Z x144 | 144 | 16 | Biogas recirculation diaphragm blower about 2 L/min (assumed size); CNC vertical mill: axis drive (assumed size); Motor: cathode air blower (BLDC, 57  |  |
+| OF-02 | deep-groove ball bearing | ISO 15 / ISO 492 normal class, C3 | 6201-2Z x488; 6205-2Z x12; 6206-2Z x8; 6204-2Z x8; 6202-2Z x6; 6308-2Z x6; 6306-2Z x2 | 530 | 75 | Acid day tank D160 x 300 mm with metering pump: drive and non-drive end, IEC 600; Band saw: main drive: drive and non-drive end, IEC 60072 frame 90L ( |  |
 ## 4. Electronics datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x754 | 754 | 88 | AHU damper actuator: run and fault (assumed); AHU exhaust fan: run and fault (assumed); AHU supply fan: run and fault (assumed) |  |
-| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x841 | 841 | 1 | one per instrument |  |
-| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x93 | 93 | 16 | AHU damper actuator; Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (BLDC, 57 mm (NEMA 23 flange)) |  |
-| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x217; 0.55 kW x3; 0.12 kW x2; 0.37 kW x2; 0.25 kW x1; 1.1 kW x1; 0.75 kW x1 | 227 | 68 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 600 x 600 x 600 mm (assumed VFD at >= 0.75 kW); Body / env |  |
-| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x100 | 100 | 1 | 1595 points / 16 |  |
-| OF-08 | variable-frequency drive | IEC 61800-5-1 | 1.1 kW x18; 2.2 kW x4; 1.5 kW x3; 7.5 kW x3; 4 kW x1 | 29 | 11 | AHU exhaust fan (assumed VFD at >= 0.75 kW); AHU supply fan (assumed VFD at >= 0.75 kW); Band saw: main drive (assumed VFD at >= 0.75 kW) |  |
-| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 18.5 kW hermetic x8; 1.1 kW hermetic x1 | 9 | 2 | air-source heat pump compressor; cryocooler compressor |  |
+| OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x676 | 676 | 89 | Acid day tank D160 x 300 mm with metering pump: run and fault (assumed); Band saw: main drive: run and fault (assumed); Biogas recirculation diaphragm |  |
+| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x842 | 842 | 1 | one per instrument |  |
+| OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x69 | 69 | 15 | Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (BLDC, 57 mm (NEMA 23 flange)); Motor: cathode air blower (induction IE |  |
+| OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x242; 0.55 kW x3; 0.12 kW x2; 0.37 kW x2; 0.25 kW x1; 1.1 kW x1; 0.75 kW x1 | 252 | 70 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 600 x 600 x 600 mm (assumed VFD at >= 0.75 kW); Body / env |  |
+| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x95 | 95 | 1 | 1518 points / 16 |  |
+| OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x4; 1.5 kW x3; 7.5 kW x3; 1.1 kW x2; 4 kW x1 | 13 | 10 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
+| OF-10 | compressor contactor + overload | IEC 60947-4-1 | 1.1 kW hermetic x1 | 1 | 1 | cryocooler compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
-| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 174 SIFs, redundant pair |  |
+| OF-12 | safety PLC (SIL 2 capable), CPU and I/O rack | IEC 61508 / IEC 61511 | - x2 | 2 | 1 | AQS-CTL-003: 175 SIFs, redundant pair |  |
 ## 5. Instrument datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -72,7 +72,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-39 | gas detector, H2 | alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling | catalytic bead + IR backup x30 | 30 | 14 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-40 | gas detector, O2 deficiency | alarm 19.5 vol %, trip 18.0 vol %, low (dense gases) | electrochemical O2 x20 | 20 | 10 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-41 | gas detector, Cl2 / HCl | alarm 0.1 ppm Cl2 / 2 ppm HCl, trip 0.4 ppm Cl2 / 4 ppm HCl, low | electrochemical Cl2 and HCl x38 | 38 | 19 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
-| OF-42 | temperature element (SIF, independent) | IEC 60751, own thermowell | Pt100 class A x13 | 13 | 13 | SIF-002 SIL 2; SIF-004 SIL 2; SIF-020 SIL 1 | spec per tag on AQS-CTL-001 |
+| OF-42 | temperature element (SIF, independent) | IEC 60751, own thermowell | Pt100 class A x14 | 14 | 14 | SIF-002 SIL 2; SIF-004 SIL 2; SIF-020 SIL 1 | spec per tag on AQS-CTL-001 |
 | OF-43 | gas detector, O2 enrichment | alarm 23.5 vol %, trip 25 vol %, breathing height | electrochemical O2 x12 | 12 | 5 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-44 | gas detector, CO | alarm 25 ppm, trip 50 ppm, breathing height | electrochemical CO x14 | 14 | 7 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
 | OF-45 | gas detector, NOx | alarm 0.2 ppm NO2, trip 0.4 ppm NO2, breathing height | electrochemical NO2 x6 | 6 | 3 | AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |
@@ -81,12 +81,12 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x269; 90 A x8; 30 A x3; 60 A x1 | 281 | 75 | NEC 430.52, from AQS-INV-002 |  |
+| OF-46 | inverse-time circuit breaker, 3-pole | UL 489 / IEC 60947-2 | 15 A x262; 30 A x3; 60 A x1 | 266 | 76 | NEC 430.52, from AQS-INV-002 |  |
 ## 7. Seal datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
-| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x205 | 205 | 58 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
+| OF-47 | mechanical seal, single | SiC/SiC faces, FKM | EN 12756 x222 | 222 | 60 | Acid day tank D160 x 300 mm with metering pump: induction-driven pump assumed se; Dilute-HCl return pump and transfer line to CRU: induction-driven pu |  |
 ## 8. Support datasheets
 
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
@@ -119,7 +119,7 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-14 | anchor bolt | ISO 3506 A4-70 wedge anchor | M10 x14710 | 14710 | 138 | AL_POT_CL2: 2 per support (assumed); AQUA_BYPASS: 2 per support (assumed); AQUA_LOOP1: 2 per support (assumed) |  |
-| OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x24 | 24 | 2 | models/mfg/GLASS_DIGEST/fasteners.csv; models/mfg/MEOH_FERM/fasteners.csv |  |
+| OF-15 | M10 x 40 lid bolt | ISO 3506 A4-70 | M10 x 40 lid bolt with nut and washers x20 | 20 | 2 | models/mfg/GLASS_DIGEST/fasteners.csv; models/mfg/MEOH_FERM/fasteners.csv |  |
 | OF-16 | M8 x 30 lid bolt | ISO 3506 A4-70 | M8 x 30 lid bolt with nut and washers x12 | 12 | 1 | models/mfg/BLACK_DIGEST/fasteners.csv |  |
 | OF-17 | M12 anchor | ISO 3506 A4-70 | M12 anchor x10 | 10 | 3 | models/mfg/GLASS_DIGEST/fasteners.csv; models/mfg/MEOH_FERM/fasteners.csv; models/mfg/OIL_PYRO/fasteners.csv |  |
 | OF-18 | M12x40 hex bolt + nut + 2 washers | PVDF | M12x40 hex bolt + nut + 2 washers x36 | 36 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
@@ -133,18 +133,16 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | OF-31 | M10 U-bolt for DN150 | ISO 3506 A4-70 | M10 U-bolt for DN150 x2 | 2 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
 | OF-32 | Lid gasket 40 mm wide | FKM | Lid gasket 40 mm wide x1 | 1 | 1 | models/mfg/LEACH_CSTR_1/fasteners.csv |  |
 | OF-33 | Solvent cement | PVC-U per ASTM D2564 | Solvent cement x1 | 1 | 1 | models/mfg/EVAP_ACID_VS/fasteners.csv |  |
-| OF-66 | M12 anchor | ISO 898-1 8.8 | M12 anchor x102 | 102 | 23 | models/mfg/AL_POT/fasteners.csv; models/mfg/CAST_LINE/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv |  |
+| OF-66 | M12 anchor | ISO 898-1 8.8 | M12 anchor x104 | 104 | 23 | models/mfg/AL_POT/fasteners.csv; models/mfg/CAST_LINE/fasteners.csv; models/mfg/COMB_HEAT/fasteners.csv |  |
 | OF-67 | M10 x 30 hood bolts | ISO 898-1 8.8 | M10 x 30 hood bolts x16 | 16 | 1 | models/mfg/AL_POT/fasteners.csv |  |
 | OF-68 | M16 T-bolt + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 T-bolt + nut (ISO 4014 / ISO 4032) x12 | 12 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
 | OF-69 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M16 stud + 2 nuts (ISO 4014 / ISO 4032) x12 | 12 | 1 | models/mfg/HF_GEN/fasteners.csv |  |
 | OF-70 | M12 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M12 stud + nut (ISO 4014 / ISO 4032) x26 | 26 | 3 | models/mfg/AL_POT/fasteners.csv; models/mfg/INV_CAST/fasteners.csv; models/mfg/ROLL/fasteners.csv |  |
 | OF-71 | M10 x 30 guard screws | ISO 3506 A4-70 | M10 x 30 guard screws x16 | 16 | 1 | models/mfg/PELLET/fasteners.csv |  |
-| OF-72 | M10 x 30 jacket screws | ISO 3506 A4-70 | M10 x 30 jacket screws x32 | 32 | 2 | models/mfg/TFE_SYN/fasteners.csv; models/mfg/VDF_SYN/fasteners.csv |  |
+| OF-72 | M10 x 30 jacket screws | ISO 3506 A4-70 | M10 x 30 jacket screws x48 | 48 | 3 | models/mfg/POLY_COND/fasteners.csv; models/mfg/TFE_SYN/fasteners.csv; models/mfg/VDF_SYN/fasteners.csv |  |
 | OF-74 | M10 x 40 lid bolt | ISO 3506 A4-80 | M10 x 40 lid bolt with nut and washers x8 | 8 | 1 | models/mfg/POLY_OLEFIN/fasteners.csv |  |
 | OF-75 | M10 clamp | ISO 3506 A4-70 | M10 clamp x4 | 4 | 1 | models/mfg/POLY_STOCK/fasteners.csv |  |
 | OF-76 | M12 anchor | ISO 3506 A4-80 | M12 anchor x3 | 3 | 1 | models/mfg/POLY_OLEFIN/fasteners.csv |  |
-| OF-79 | M12 hex socket head cap screw (ISO 4762) | ISO 898-1 8.8 | M12 hex socket head cap screw (ISO 4762) x28 | 28 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
-| OF-80 | M8 hex socket head cap screw (ISO 4762) | ISO 898-1 8.8 | M8 hex socket head cap screw (ISO 4762) x8 | 8 | 1 | models/mfg/CAST_LINE/fasteners.csv |  |
 | OF-81 | M10 stud + nut (ISO 4014 / ISO 4032) | ISO 898-1 8.8 | M10 stud + nut (ISO 4014 / ISO 4032) x66 | 66 | 9 | models/mfg/CA_POT/fasteners.csv; models/mfg/CONT_CAST/fasteners.csv; models/mfg/CR_CELL/fasteners.csv |  |
 | OF-82 | M8 x 25 hood bolts | ISO 898-1 8.8 | M8 x 25 hood bolts x48 | 48 | 4 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/MG_POT/fasteners.csv |  |
 | OF-83 | M10 anchor | ISO 898-1 8.8 | M10 anchor x40 | 40 | 10 | models/mfg/CA_POT/fasteners.csv; models/mfg/CR_CELL/fasteners.csv; models/mfg/FILM_CAST/fasteners.csv |  |
@@ -152,6 +150,6 @@ This page is the specification sheet for everything the shop buys: one datasheet
 
 ## 11. Coverage gate
 
-- Bought families covered: 76 of 77 (the excluded one is OF-13, the fabricated-part set:
+- Bought families covered: 74 of 75 (the excluded one is OF-13, the fabricated-part set:
   sheets like those are `models/mfg/*/bom.csv` + `WORK_ORDER.md`, in-house work).
 - Items rest on the A-M-125 counting rule where the roll-up assumed; the count is the basis, not a measurement.

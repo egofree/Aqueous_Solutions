@@ -1,7 +1,7 @@
 item,description,qty,material,mass_kg,make_or_buy,basis
-1,"Bench frame 800 x 600, work top z 850..900",1,carbon steel,255.10000000000002,make,WORK_ORDER step 1; AQS-DUTY-072 bench_prep class
-2,Extraction hood with the N-vent stub,1,carbon steel,223.4,make,task-04 schedule N5
+1,Bench frame 800 x 600, work top z 850..900,1,carbon steel,255.10000000000002,make,"WORK_ORDER step 1; AQS-DUTY-072 bench_prep class"
+2,Extraction hood with the N-vent stub,1,carbon steel,223.4,make,"task-04 schedule N5"
 3,Flux hopper 20 L cone + 0.1 kW mixer stage,1,CS + carbon steel,105.3,make,"design hopper 20 L, mixer 0.1 kW; 0.0398 kg/d salt batch"
 4,N1 flux discharge chute +X z 600,1,carbon steel,18.84,make,"task-04 schedule N1 (solids, bore not calculated)"
-5,N2/N3 inlet chutes -X z 160 (digester salts; MgCl2 drag-out from TI_CELL N7),2,carbon steel,4.5,make,task-04 schedule N2/N3; A-M-284 feedstock ruling
-6,N4 drain well,1,carbon steel,1.0072096647506712,make,task-04 schedule N4
+5,N2/N3 inlet chutes -X z 160 (digester salts; MgCl2 drag-out from TI_CELL N7),2,carbon steel,4.5,make,"task-04 schedule N2/N3; A-M-284 feedstock ruling"
+6,N4 drain well,1,carbon steel,1.0072096647506712,make,"task-04 schedule N4"

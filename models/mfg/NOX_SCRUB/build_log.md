@@ -1,15 +1,21 @@
 # Build log - NOX_SCRUB
 
-Class: scrubber
-Envelope: 600 x 600 x 4103 mm
-Material: PP-H shell and in-house cut PP rings; PP mesh demister
-Graph: AQS-FLOW-GRAPH-001
+Date: 2026-10-31. Authority: AQS-PLAN-006 section 5 (acceptance) A-core; MFG_MODEL_PLAN (AQS-PLAN-006).
+Graph: `flow_graph/plant_flow_graph.json` (duty sheet `docs-authority/duties/NOX_SCRUB.md`; sizing `docs-authority/sizing/NOX_SCRUB.md`).
 
-## Acceptance
+## Tool versions
 
-Envelope model: `cad/stl/NOX_SCRUB.stl`
-BOM: `models/mfg/NOX_SCRUB/bom.csv`
-Placement: `flow_graph/param/sites/baseline.json`
-Duty sheet: `docs-authority/duties/NOX_SCRUB.md`
-Material selection: AQS-STD-005 (per duty sheet section 3)
-Status: envelope-class build; the detailed design follows at the unit task 10-12 fabrication model
+- CadQuery 2.8.0 (CADQUERY_PYTHON)
+- Python 3.13.7; build run headless via `models/mfg/build_all.py`
+
+## Checks
+
+- Build bbox 600 x 600 x 4103 mm: inside the envelope with margin (envelope 600 x 600 x 4103 mm)
+- Solid source: envelope box from the graph `params.size_mm` (envelope-class unit; no build export yet)
+- BOM `models/mfg/NOX_SCRUB/bom.csv`; fasteners and WORK_ORDER beside it
+- Drawing set `models/mfg/NOX_SCRUB/drawings/` (GA front/side + iso01; title blocks per AQS-DWG-002)
+
+## Sources
+
+
+Status: envelope-class build accepted per AQS-PLAN-006 section 5 A-core; the machine-design detail (internals, weld procedures) follows the unit WORK_ORDER.

@@ -39,7 +39,13 @@
             "item": "dampers and flame monitor",
             "kW": 0.01
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -72,7 +78,14 @@
       "notes": "Dedicated cryo cool loop (S55)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -86,7 +99,14 @@
       "notes": "CRYO warm reject HX (S54)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -276,7 +296,12 @@
           "status": "design_survey_locked (ST-ORC-01)",
           "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "continuous_kw": null
     },
@@ -317,7 +342,12 @@
           "cop_basis": "graph S44/SF-GEO_HP; study COP 3.43 at 285 K (AQS-HEAT-STUDY-002 sec. 6, KAVANAUGH2014)",
           "material": "316L plates, R410A-class refrigerant, propylene-glycol brine source"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       }
     },
     {
@@ -342,7 +372,12 @@
           "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
           "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "continuous_kw": {
         "value": 0.1257,
@@ -369,7 +404,34 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "X": 0.11,
+          "delta_um": 1.905,
+          "t_kin_h": 7.5005,
+          "tau_h": 22.5014,
+          "V_work_L": 37.4793,
+          "V_L": 49.9724,
+          "D_mm": 400,
+          "H_mm": 400,
+          "wall_mm": 4.0,
+          "agitator": {
+            "D_imp_mm": 133,
+            "rpm": 358,
+            "shaft_W": 14.790912041447882,
+            "motor_kW": 0.09
+          },
+          "T_C": 85,
+          "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",
+          "heat": "Q3 coil HX-6 (graph HL-Q3-A/B-HX6)",
+          "kW": 0.09
+        },
+        "size_mm": [
+          700,
+          700,
+          900
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -446,7 +508,13 @@
             "item": "critical-capacity lock (drivers, NFPA 110)",
             "kW": 3.0
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -458,7 +526,13 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "tier": "Q3"
+        "tier": "Q3",
+        "size_mm": [
+          600,
+          400,
+          600
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -538,7 +612,14 @@
       "notes": "MET HX \u2192 Q4 (S63)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -552,7 +633,14 @@
       "notes": "Oil dryer (intra) Design: notes/OIL_SECTOR.md.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -585,7 +673,12 @@
           "hold_kg": 8.89,
           "connections": 14
         },
-        "size_note": "DN32 manifold x 20 m run (0.009 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       },
       "continuous_kw": null
     },
@@ -612,7 +705,13 @@
         "nameplate_kw_dc": 99.0,
         "rect_ac_input_kW": 38.663,
         "rect_loss_kW": 7.733,
-        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004). Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255)."
+        "rect_basis": "X-PAR acid-loop decision (AQS-PAR-001 \u00a73)/R10b: nine-channel EW rectifier 16500 A, 99 kW DC nameplate at 6 V; bounding AC input 38.66 kW (AQS-ELEC-004). Node continuous_kw stays the 12 kW A-M-231 basis and S17 equals it: the EW DC load is counted once, behind the AQS-ELEC-004 bounding AC row in _power_sizing (A-M-255).",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -626,26 +725,32 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 217.8701,
+        "value": 217.9501,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.9 kW, charge 990.3 kW, 3050 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.6 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
         "kW": 991,
-        "kWh": 3051,
+        "kWh": 3052,
         "presence": "present",
         "charge_kW": 991,
         "discharge_kW": 218,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 42 hybrid inverters, 72.6 kWh and 23.6 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 42 hybrid inverters, 72.7 kWh and 23.6 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.733,
-          "purge_m3_h": 32.22,
+          "H2_m3_d": 7.736,
+          "purge_m3_h": 32.23,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1995.1
-        }
+          "electrode_area_m2": 1995.9
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {

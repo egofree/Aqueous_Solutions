@@ -13,21 +13,15 @@ def tank(D, H, t, n=1, gap=150):
         m = b if m is None else m.union(b)
     return m
 S = {}
-d = N['BLACK_DIGEST']['params']['design']; S['BLACK_DIGEST'] = (tank(d['D_mm'], d['H_mm'], d['wall_mm']), [
+_bd = N.get('BLACK_DIGEST')
+if not (_bd and _bd.get('presence') == 'present' and 'design' in (_bd.get('params') or {})):
+    raise SystemExit('BLACK_DIGEST absent or unsized on the graph; nothing to build')
+d = _bd['params']['design']; S['BLACK_DIGEST'] = (tank(d['D_mm'], d['H_mm'], d['wall_mm']), [
     ('1', f"Shell DN{d['D_mm']} x {d['H_mm']} mm x {d['wall_mm']} mm, flat bottom, domed gas lid", 1, 'PP-H sheet, extrusion-welded (DVS 2207-11)', 'AQS-DUTY-063 section 2'),
     ('2', 'Nozzles DN25: blackwater in, toilet solids in, digestate out, biogas out, gas recirc in', 5, 'PP-H', 'AQS-DUTY-063'),
     ('3', 'Biogas recirculation diaphragm blower about 2 L/min', 1, 'PP/EPDM', 'X-INV-01 family'), ('4', 'Heating mat 150 W, thermostat 55 C, two RTDs', 1, 'silicone / 316L', 'AQS-DUTY-063'),
     ('5', 'PIR insulation 50 mm, PE cladding', 1, 'PIR', 'AQS-DUTY-063'), ('6', 'Water seal and flame arrester on the biogas line to AFTERBURNER', 1, '316L', 'NFPA 54 / ISO 16852')])
-S['BLACK_DEWATER'] = (cq.Workplane('XY').box(700, 200, 200).translate((350, 0, 600)).union(cq.Workplane('XY').box(300, 300, 400).translate((150, 0, 200))), [
-    ('1', 'Screw press, 100 mm screw in 0.5 mm wedge-wire screen, 700 mm long', 1, '316L', 'METCALF5 cake 20 % TS'), ('2', 'Gearmotor 0.09 kW, 10 rpm output', 1, 'IEC 63 frame', 'X-INV-01'),
-    ('3', 'Sealed cake bin 20 L with gasketed lid', 2, 'HDPE', 'AQS-DUTY-063: cake to AFTERBURNER in sealed bins'), ('4', 'Centrate trough and DN25 outlet', 1, 'PP-H', 'AQS-DUTY-063')])
-d = N['BLACK_PASTEUR']['params']['design']; S['BLACK_PASTEUR'] = (tank(d['D_mm'], d['H_mm'], d['wall_mm'], 2), [
-    ('1', f"Batch vessel DN{d['D_mm']} x {d['H_mm']} mm x {d['wall_mm']} mm", 2, '316L, GTAW (ASME IX)', 'AQS-DUTY-063'), ('2', 'Immersion heater 500 W each, 480 V', 2, 'Incoloy 800 sheath', 'AQS-DUTY-063'),
-    ('3', 'Two independent RTDs per vessel (IEC 60751 class A)', 4, '316L', 'hold timer restarts below 70 C'), ('4', 'Transfer pump, magnetic drive', 1, 'PVDF', 'X-INV-01'), ('5', 'Insulation 50 mm mineral wool, SS cladding', 2, 'ASTM C547', 'AQS-DUTY-063')])
-d = N['BLACK_ALK_HOLD']['params']['design']; S['BLACK_ALK_HOLD'] = (tank(d['D_mm'], d['H_mm'], d['wall_mm'], 3), [
-    ('1', f"Hold tank DN{d['D_mm']} x {d['H_mm']} mm x {d['wall_mm']} mm", 3, 'HDPE PE100, extrusion-welded (DVS 2207-4)', 'AQS-DUTY-063'), ('2', 'NaOH dosing pump, solenoid diaphragm', 1, 'PVDF/PTFE', 'X-INV-01'),
-    ('3', 'pH probe per tank (high-pH glass)', 3, 'PVDF body', 'pH > 12 standby barrier'), ('4', 'Release valve per tank, actuated, interlocked to the batch test result', 3, 'PVDF ball valve', 'AQS-DUTY-063'),
-    ('5', 'Sample valve per tank', 3, 'PVDF', 'EPA 1680/1682 batch test')])
+# BLACK_DEWATER / BLACK_PASTEUR / BLACK_ALK_HOLD retired with their units (2026-10-30 cleanup); the train is BLACK_DIGEST only
 for U, (m, rows) in S.items():
     o = f'models/mfg/{U}/export'; os.makedirs(o, exist_ok=True)
     cq.exporters.export(m, f'{o}/{U.lower()}.step'); cq.exporters.export(m, f'{o}/{U.lower()}.stl')

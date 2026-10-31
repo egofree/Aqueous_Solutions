@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="800.0"
+   height="340.0"
+
+>
+    <g transform="scale(0.0854563038327971, -0.0854563038327971)   translate(3966.7229712445533,-756.270705318643)" stroke-width="11.701886872577468"  fill="none">
+       <!-- hidden lines -->
+       <g  stroke="rgb(160,160,160)" fill="none" stroke-dasharray="11.701886872577468,11.701886872577468" >
+			<path d="M0.0,0.0 L-565.685424949238,-278.52424952911656 " />
+			<path d="M-565.685424949238,-278.52424952911656 L-565.685424949238,-1584.1066691968506 " />
+			<path d="M-565.685424949238,-278.52424952911656 L-1626.3455967290595,243.70871833797707 " />
+
+       </g>
+
+       <!-- solid lines -->
+       <g  stroke="rgb(0,0,0)" fill="none">
+			<path d="M0.0,0.0 L0.0,-1305.582419667734 " />
+			<path d="M0.0,-1305.582419667734 L-565.685424949238,-1584.1066691968506 " />
+			<path d="M-1060.6601717798214,522.2329678670935 L-1060.6601717798214,-783.3494518006405 " />
+			<path d="M-1060.6601717798214,522.2329678670935 L-1626.3455967290595,243.70871833797696 " />
+			<path d="M-1626.3455967290595,243.70871833797696 L-1626.3455967290595,-1061.873701329757 " />
+			<path d="M-1060.6601717798214,-783.3494518006405 L-1626.3455967290595,-1061.873701329757 " />
+			<path d="M0.0,0.0 L-1060.6601717798214,522.2329678670936 " />
+			<path d="M0.0,-1305.582419667734 L-1060.6601717798214,-783.3494518006404 " />
+			<path d="M-565.685424949238,-1584.1066691968506 L-1626.3455967290595,-1061.8737013297568 " />
+
+       </g>
+    </g>
+    
+<g id="aqs-fab-notes" transform="translate(0,240.0)" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000"><text x="6" y="24">Graph revision BH - iso01.svg: Overall build bbox 1500 x 800 x 1500 mm (X x Y x Z, build origin at the tray)</text><text x="6" y="37">Graph revision BH - iso01.svg: Nozzle orientation per `docs-authority/nozzles/FORGE.csv`; P&ID `docs-authority/pid/FORGE.svg`</text><text x="6" y="50">Graph revision BH - iso01.svg: Welds per the unit WORK_ORDER; procedure qualification ASME IX (shop, not stamped)</text><text x="6" y="63">Graph revision BH - iso01.svg: General tolerance ISO 2768-m unless noted</text></g>
+<g id="aqs-title-block"><rect x="581.6" y="280.0" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="585.2" y="289.6" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-MFG-FORGE-ISO01</text><text x="585.2" y="299.8" font-family="sans-serif" font-size="5.4">FORGE fabrication drawing ISO01 (AQS-PLAN-006 M3; graph revi</text><text x="585.2" y="310.0" font-family="sans-serif" font-size="5.4">Type: fabrication drawing (GA / nozzle orientation / part sheet)   Rev 0d03b10f   Issued 2026-10-15</text><text x="585.2" y="320.2" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="585.2" y="330.4" font-family="sans-serif" font-size="5.4">Sheet 1 of 1   AQS-DWG-001</text></g>
+</svg>

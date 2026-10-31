@@ -50,7 +50,7 @@ Table 4.1. Commissioning sequence
 | 6 | CRYO | 14 | 37 | 10 | 2 | Ar, CH3OH, CO2, H2, N2, O2, solute |
 | 7 | GEO | 3 | 6 | 4 | 0 |  |
 | 8 | DIGESTER | 24 | 151 | 25 | 19 | Cl2, Fe, HCl, O2, metal_plateable, metal_reactive, organic, other_metals, silicate_oxide, solute, unassigned |
-| 9 | MEOH | 6 | 33 | 6 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |
+| 9 | MEOH | 6 | 34 | 7 | 3 | Ar, CO2, Fe, HCl, O2, other_metals, solute |
 | 10 | OIL | 12 | 63 | 15 | 7 | Ar, Fe, HCl, O2, hydrocarbon, other_metals, solute |
 | 11 | GLASS | 5 | 11 | 5 | 1 | Fe, HCl, other_metals, solute |
 | 12 | NUT | 1 | 10 | 1 | 1 | Fe, HCl, other_metals |

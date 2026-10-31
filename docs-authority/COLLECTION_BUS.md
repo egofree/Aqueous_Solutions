@@ -36,14 +36,14 @@ Table 2.1. Collection bus sections
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | CB-1 | 11 | 660 | 794 | 1000 | 750 | 34.7 | 65 | 799 | 260 |
 | CB-2 | 11 | 660 | 794 | 1000 | 750 | 34.7 | 65 | 799 | 260 |
-| CB-3 | 10 | 600 | 722 | 1000 | 750 | 34.7 | 65 | 726 | 236 |
-| CB-4 | 10 | 600 | 722 | 1000 | 750 | 34.7 | 65 | 726 | 236 |
+| CB-3 | 10 | 600 | 722 | 1000 | 750 | 34.7 | 65 | 727 | 236 |
+| CB-4 | 10 | 600 | 722 | 1000 | 750 | 34.7 | 65 | 727 | 236 |
 
 MV collection bus: 117 A at 12.47 kV for 2520 kW.
 
 ## 3. Plant loads and islanding
 
-The plant bus (MCC-1, PP-1, RECT-EW and the process feeders, 182.9 kW on the graph) is fed from CB-1 at 480 V. On loss of the utility (NEC 705.40, IEEE 1547-2018 unintentional islanding within 2 s) the PCC breaker opens; the sections stay tied on the MV bus and carry the plant as an intentional island on storage, under a microgrid controller (IEEE 2030.7). Export resumes after the utility returns and the 5 min reconnection delay of IEEE 1547-2018 4.10.
+The plant bus (MCC-1, PP-1, RECT-EW and the process feeders, 183.0 kW on the graph) is fed from CB-1 at 480 V. On loss of the utility (NEC 705.40, IEEE 1547-2018 unintentional islanding within 2 s) the PCC breaker opens; the sections stay tied on the MV bus and carry the plant as an intentional island on storage, under a microgrid controller (IEEE 2030.7). Export resumes after the utility returns and the 5 min reconnection delay of IEEE 1547-2018 4.10.
 
 ## 4. Fault level
 

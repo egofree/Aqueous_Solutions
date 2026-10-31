@@ -69,7 +69,7 @@
   "MEOH_COND": "issued mfg model BOM (2 internals part row): \"1,Body D400 x 600 mm,1,316L shell and coil (methanol/water traces) (graph node\" [models/mfg/MEOH_COND/bom.csv]",
   "MEOH_FC": "IEM fuel-cell stack internals per the sizing basis: 28 cells x 200 cm2 at 0.3 A/cm2 (0.6 V/cell), 1.0 kWe rated, with the methanol anode loop and air cathode supply (params.design) [docs-authority/sizing/MEOH_FC.md]",
   "MEOH_FERM": "none with basis: a static anaerobic fermenter - the gas headspace, the daily recirculation and the heating mat are the issued mfg BOM services; no contacting or separation internals [models/mfg/MEOH_FERM/bom.csv]",
-  "MEOH_SYNTH": "issued mfg model BOM (2 internals part row): \"6,Cu/ZnO/Al2O3 catalyst pellets 3.10 kg (2.82 L),1,Cu/ZnO/Al2O3,CTC2020_CZA 7,Catalyst support grid\" [models/mfg/MEOH_SYNTH/bom.csv]",
+  "MEOH_SYNTH": "issued mfg model BOM (2 internals part row): \"6,Cu/ZnO/Al2O3 catalyst pellets 3.54 kg (3.21 L),1,Cu/ZnO/Al2O3,CTC2020_CZA 7,Catalyst support grid\" [models/mfg/MEOH_SYNTH/bom.csv]",
   "MET_HX_Q4": "melt off-heat recovery coil internals per the graph duties (IND_HEAT_TO_HX 1.063 kW + VAC_HEAT_TO_HX 0.638 kW, S63 0.017 kW to Q4_BUS): an immersed water coil in the melt-shop enclosure recovering induction and vacuum-furnace off-heat to the Q4 loop at 40-60 C; no separate contacting internals [docs-authority/sizing/MET_HX_Q4.md]",
   "MET_MELT": "issued mfg model BOM (6 internals part row): \"2 (not yet dimensioned),1,Graphite or refractory on the hot face.,docs-authority/duties/MET_MELT.md 2,Process \" [models/mfg/MET_MELT/bom.csv]",
   "MET_SCRUB": "packed bed per scrubber: diameter at 0.7 of flood, bed 2303 mm, height, liquid rate (PERRY9_ABS) [sizing/HOUSE_SCRUBBERS.md]",

@@ -131,6 +131,10 @@ def status(n,k):
         if v: return f'`docs-authority/INSTRUMENT_INDEX.md` ({len(v)} loops; AQS-CTL-001)'
     if k=='10' and ex(f'models/mfg/{u}/build_log.md') and ex(f'models/mfg/{u}/drawings') and ex(f'cad/stl/{u}.stl'):
         return f'`models/mfg/{u}/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision)'
+    if k=='11':
+        dd = f'models/mfg/{u}/drawings'
+        if ex(dd) and any(f.endswith(('.svg', '.pdf')) for f in os.listdir(dd) if os.path.isfile(os.path.join(dd, f))):
+            return f'`models/mfg/{u}/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes)'
     if k=='12' and ex(f'models/mfg/{u}/bom.csv'): return f'`models/mfg/{u}/bom.csv`'
     if k=='13' and ex(f'docs-authority/fab/{u}.md'): return f'`docs-authority/fab/{u}.md` (study route)'
     return None

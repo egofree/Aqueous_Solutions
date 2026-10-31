@@ -33,7 +33,7 @@ VAR
   ROOF_TANKTE-01_PV : REAL ;  (* band by service )
   BLACK_DIGESTLT-01_PV : REAL ;  (* A-M-182 liquid height )
   BLACK_DIGESTPT-01_PV : REAL ;  (* no design pressure on the graph )
-  BLACK_DIGESTTE-01_PV : REAL ;  (* band by service )
+  BLACK_DIGESTTE-01_PV : REAL ;  (* design T 55 C )
   REMINFT-01_PV : REAL ;  (* S26 normal 0.42 L/h )
   REMINFT-02_PV : REAL ;  (* IA-POT-01 normal 8.20 L/h )
   REMINLT-01_PV : REAL ;  (* A-M-182 liquid height )
@@ -215,9 +215,11 @@ END_VAR
   FB_AI_BLACK_DIGESTPT-01( PV := BLACK_DIGESTPT-01_PV );
   BLACK_DIGESTPT-01_ALARM_HI := 9.0 ;  (* 90 % of span, registered LSH convention )
 
-  (* TEMPERATURE monitoring block - indication, no set-point invented )
-  FB_AI_BLACK_DIGESTTE-01( PV := BLACK_DIGESTTE-01_PV );
-  BLACK_DIGESTTE-01_ALARM_HI := 540.0 ;  (* 90 % of span, registered LSH convention )
+  (* TEMPERATURE control loop - set-point from the graph basis *)
+  BLACK_DIGESTTE-01_SP := 55.0 ;  (* graph basis: design T 55 C )
+  FB_PI_BLACK_DIGESTTE-01( PV := BLACK_DIGESTTE-01_PV, SP := BLACK_DIGESTTE-01_SP );  (* PI per AQS-CTL-002; GAIN/KI entered at commissioning from the step test (AQS-COM-001 sec. 3), anti-windup clamp per this FB *)
+  BLACK_DIGESTTE-01_ALARM_HI := 60.50000000000001 ;  (* SP x 1.1 margin, A-M-188 margin class *)
+  BLACK_DIGESTTE-01_ALARM_LO := 49.5 ;
 
   (* FLOW control loop - set-point from the graph basis *)
   REMINFT-01_SP := 0.42 ;  (* graph basis: S26 normal 0.42 L/h )

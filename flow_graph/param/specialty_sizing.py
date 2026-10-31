@@ -185,6 +185,76 @@ def write():
         ('SI_REDUCE', [1200, 1000, 1600]),
     ):
         put(uid, size_mm=sz, size_note='envelope from the placement seed (AQS-PLACE-SEED-001); sized by need')
+    # 2026-10-31 recovery: these units' study envelopes lived only in the cad/stl registry after a
+    # regen dropped params.size_mm; bounds read back from the STLs (trimesh), recorded verbatim.
+    for uid, sz in (
+        ('AFTERBURNER', [1000, 600, 800]),
+        ('AFTERBURNER_FLUE', [1000, 600, 800]),
+        ('BAGHOUSE', [1000, 600, 800]),
+        ('BMED_ACID', [1000, 600, 800]),
+        ('BMED_BASE', [1000, 600, 800]),
+        ('BMED_UPW_POLISH', [1000, 600, 800]),
+        ('C29_RECYCLE', [1000, 600, 800]),
+        ('CATCH_TANK', [1000, 600, 800]),
+        ('COLD_MILL', [1000, 600, 800]),
+        ('CONTINUOUS_RECYCLE', [1500, 60, 60]),
+        ('CRU', [1000, 600, 800]),
+        ('CRYO_AHU', [1000, 600, 800]),
+        ('CRYO_AHU_COND_CONDENSABLE', [1000, 600, 800]),
+        ('CRYO_ASU', [300, 300, 2000]),
+        ('CRYO_DED_COOL', [1000, 600, 800]),
+        ('CRYO_HX_Q4', [1000, 600, 800]),
+        ('CRYO_N2', [300, 300, 2000]),
+        ('FLOAT_SINK', [1000, 600, 800]),
+        ('FLUE_KO', [1000, 600, 800]),
+        ('GAS_ATOMIZER', [1000, 600, 800]),
+        ('GEO_GHEX', [1000, 600, 800]),
+        ('GEO_HP', [1000, 600, 800]),
+        ('GEO_HP_CLOSED_LOOP', [1000, 600, 800]),
+        ('GREY_TREAT', [1000, 600, 800]),
+        ('GROW_BED', [2000, 1000, 400]),
+        ('HABITATION', [1000, 600, 800]),
+        ('HDR_CO2', [2000, 50, 50]),
+        ('HDR_H2', [2000, 50, 50]),
+        ('HDR_N2', [2000, 50, 50]),
+        ('HDR_O2', [2000, 50, 50]),
+        ('HDR_UPW', [2000, 50, 50]),
+        ('HX8', [600, 400, 600]),
+        ('HYDRO_SET', [1000, 600, 800]),
+        ('LOAD_AGG', [1000, 600, 800]),
+        ('MEOH_COND', [400, 400, 600]),
+        ('MET_AHU', [1000, 600, 800]),
+        ('MET_HX_Q4', [1000, 600, 800]),
+        ('MET_MELT', [1000, 600, 800]),
+        ('MFG_SHOP', [1000, 600, 800]),
+        ('NCG_HEADER', [2000, 50, 50]),
+        ('OIL_DRYER', [1000, 600, 800]),
+        ('OIL_FRAC', [1000, 600, 800]),
+        ('POLISH_BANK', [1000, 600, 800]),
+        ('PV_ARRAY', [1000, 600, 800]),
+        ('Q4_BUS', [2000, 50, 50]),
+        ('RECTIFIER', [1000, 600, 800]),
+        ('RELIEF_CRYO', [600, 400, 600]),
+        ('RELIEF_H2', [1000, 600, 800]),
+        ('ROOF_TANK', [1000, 600, 800]),
+        ('SALT_FEED', [1000, 600, 800]),
+        ('SOL_ARK_60K', [1000, 600, 800]),
+        ('WAFER_FAB', [1000, 600, 800]),
+        ('WET_BENCH', [1000, 600, 800]),
+        ('WIRE_DRAW', [1000, 600, 800]),
+        ('ZNBR2', [1000, 600, 800]),
+        ('ZNBR2_BR2_REGEN', [400, 400, 2000]),
+):
+        put(uid, size_mm=sz, size_note='study default envelope box, read back from the cad/stl registry '
+            '(M0 study envelope; design sizing per the duty sheet follows)')
+
+    put('BLACK_DIGEST',
+        design={'D_mm': 800, 'H_mm': 760, 'wall_mm': 5.0, 'V_L': 378, 'material': 'PP-H sheet, extrusion-welded (DVS 2207-11)',
+                'insulation': 'PIR 50 mm, PE cladding', 'heat_W': 85, 'T_C': 55, 'SRT_d': 15, 'biogas_g_d': 99},
+        size_mm=[1100, 1100, 1260],
+        size_note='DN800 x 760 mm thermophilic anaerobic digester + 300 mm envelope margin, per AQS-DUTY-063 '
+                  '(sizing/SANITATION.md section 2 row 1: 378 L, PP-H 5.0 mm, 50 mm PIR, 85 W, 55 C SRT 15 d METCALF5); '
+                  'graph-side design restored from the governing sizing doc because the X-SAN-01 writer is R11-blocked (owner lane)')
     put('MET_SYN', size_mm=[1500, 1000, 1800],
         size_note=('bench fume-hood train: glass-lined reactor column (2 L working volume), '
                    'reagent feed tanks, Hastelloy C crystalliser; the 9 g/d DL-Met duty sets '

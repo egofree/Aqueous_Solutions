@@ -82,7 +82,13 @@
             "item": "dampers and flame monitor",
             "kW": 0.01
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -113,7 +119,12 @@
           "hold_kg": 0.1,
           "connections": 3
         },
-        "size_note": "DN100 manifold x 20 m run (0.133 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "continuous_kw": null
     },
@@ -227,7 +238,14 @@
       "notes": "Dust baghouse (S19)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -241,7 +259,26 @@
       "notes": "Black digest (S30)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "design": {
+          "D_mm": 800,
+          "H_mm": 760,
+          "wall_mm": 5.0,
+          "V_L": 378,
+          "material": "PP-H sheet, extrusion-welded (DVS 2207-11)",
+          "insulation": "PIR 50 mm, PE cladding",
+          "heat_W": 85,
+          "T_C": 55,
+          "SRT_d": 15,
+          "biogas_g_d": 99
+        },
+        "size_mm": [
+          1100,
+          1100,
+          1260
+        ],
+        "size_note": "DN800 x 760 mm thermophilic anaerobic digester + 300 mm envelope margin, per AQS-DUTY-063 (sizing/SANITATION.md section 2 row 1: 378 L, PP-H 5.0 mm, 50 mm PIR, 85 W, 55 C SRT 15 d METCALF5); graph-side design restored from the governing sizing doc because the X-SAN-01 writer is R11-blocked (owner lane)"
+      },
       "continuous_kw": {
         "value": 0.1052,
         "unit": "kW",
@@ -260,7 +297,14 @@
       "notes": "BMED acid loop node",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 5.6267,
         "unit": "kW",
@@ -304,7 +348,13 @@
           "total_kW": 0.01803555742909093,
           "kWh_per_m3": 3.2461065645922726,
           "kWh_per_m3_RO_EDI": 0.5463508924805983
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -337,7 +387,14 @@
       "notes": "Cold mill (S59)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.0191,
         "unit": "kW",
@@ -356,7 +413,14 @@
       "notes": "Chlorate finish / CRU (S66)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -370,7 +434,14 @@
       "notes": "CRYO AHU (S56/S70)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.6472,
         "unit": "kW",
@@ -389,7 +460,14 @@
       "notes": null,
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -485,7 +563,14 @@
       "notes": "Dedicated cryo cool loop (S55)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -646,7 +731,14 @@
       "notes": "Register S03 endpoint; not yet in candidate_mvs units[]",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          300,
+          300,
+          2000
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -819,7 +911,14 @@
       "notes": "Afterburner flue knockout. N2/O2/NOx rejected. CO2-rich gas only may continue to CRYO_CO2.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      }
     },
     {
       "unit_id": "FUEL_CELL",
@@ -865,7 +964,14 @@
       "notes": "Powder production. Fed from FOUNDRY melt when powder stock required. Not baseline.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.0781,
         "unit": "kW",
@@ -910,7 +1016,12 @@
           "status": "design_survey_locked (ST-ORC-01)",
           "material": "HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "continuous_kw": null
     },
@@ -936,7 +1047,12 @@
           "duty": "source loop between the bore field and the heat-pump evaporators; S43 carries it on the graph (0 kW idle standby)",
           "material": "HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)"
         },
-        "size_note": "sized at the survey-locked design case, GEO loop sizing (flow_graph/param/geo_loop.py, AQS-DUTY-076)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ]
       },
       "continuous_kw": {
         "value": 0.1257,
@@ -963,7 +1079,34 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "design": {
+          "X": 0.11,
+          "delta_um": 1.905,
+          "t_kin_h": 7.5005,
+          "tau_h": 22.5014,
+          "V_work_L": 37.4793,
+          "V_L": 49.9724,
+          "D_mm": 400,
+          "H_mm": 400,
+          "wall_mm": 4.0,
+          "agitator": {
+            "D_imp_mm": 133,
+            "rpm": 358,
+            "shaft_W": 14.790912041447882,
+            "motor_kW": 0.09
+          },
+          "T_C": 85,
+          "material": "CPVC (to 93 C; DVS 2205 allowable 3.0 MPa at 85 C); PVDF impeller and shaft sleeve",
+          "heat": "Q3 coil HX-6 (graph HL-Q3-A/B-HX6)",
+          "kW": 0.09
+        },
+        "size_mm": [
+          700,
+          700,
+          900
+        ],
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)"
       }
     },
     {
@@ -977,7 +1120,14 @@
       "notes": "Grey treatment (S29)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -1027,7 +1177,13 @@
           "basis": "BVAD2022 tomato; crew-duty area from S14 (A-M-229)"
         },
         "yield_assumption": "0.1442 kg/(m2\u00b7d) edible fresh at DLI 17 (BVAD2022 tomato carbon chain, A-M-229) x 29.12 m2",
-        "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)"
+        "area_basis": "crew duty (A-M-229): S14 4.2 kg/d / 0.1442 kg/m2/d = 29.12 m2 (supersedes the BH ~28 m2 / 120.4 m2 residue-claim studies)",
+        "size_mm": [
+          2000,
+          1000,
+          400
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1167,7 +1323,13 @@
             "item": "critical-capacity lock (drivers, NFPA 110)",
             "kW": 3.0
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1195,7 +1357,12 @@
           "hold_kg": 0.01,
           "connections": 5
         },
-        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       }
     },
     {
@@ -1226,7 +1393,12 @@
           "hold_kg": 0.01,
           "connections": 8
         },
-        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       },
       "continuous_kw": null
     },
@@ -1260,7 +1432,12 @@
           "hold_kg": 4.46,
           "connections": 3
         },
-        "size_note": "DN25 manifold x 20 m run (0.004 m3), header sizing (flow_graph/param/headers.py, AQS-DUTY-075)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          2000,
+          50,
+          50
+        ]
       }
     },
     {
@@ -1315,7 +1492,7 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3051.0,
+        "vs_znbr2_kwh": 3052.0,
         "fraction_of_znbr2_study": 0.07,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -1338,7 +1515,13 @@
           "upper": "3 reservoir levels x 3.06 m water over 367 m2, 2.0 cells per level",
           "lower": "CATCH_TANK 9.17 m deep over 367 m2",
           "eta_net_with_penstock": 0.76
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1387,7 +1570,12 @@
           "material": "316L shell and coil (methanol/water traces)",
           "note": "knock-out pot + condenser on the same skid"
         },
-        "size_note": "sized from the issued graph duties, methanol train residual sizing (flow_graph/param/meoh_train.py, AQS-DUTY-077)"
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)",
+        "size_mm": [
+          400,
+          400,
+          600
+        ]
       }
     },
     {
@@ -1447,11 +1635,24 @@
       "modules": [],
       "params": {
         "size_mm": [
-          2200,
-          900,
-          1400
+          425,
+          425,
+          600
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "design": {
+          "T_C": 35,
+          "tau_h": 48,
+          "V_work_L": 0.72,
+          "V_L": 0.96,
+          "D_mm": 125,
+          "H_mm": 100,
+          "wall_mm": 4.0,
+          "heat_W": 0.7399,
+          "mixer": "daily recirculation pump",
+          "material": "HDPE (PE100), 50 mm PIR",
+          "kW": 0.0207
+        }
       },
       "continuous_kw": {
         "value": 0.0207,
@@ -1471,7 +1672,7 @@
       "notes": null,
       "enabled": true,
       "continuous_kw": {
-        "value": 0.7388,
+        "value": 0.818,
         "unit": "kW",
         "status": "study",
         "note": "X-ELS-02: node aligned to its calculated SF-MEOH_SYNTH feed (feed preheat, no interchanger credit); sizing module flow_graph/param/reactor_design.py (X-MFG-31, AQS-DUTY-062). Feed basis: X-ELS-02 load-basis (A-M-275). Feed equal to MEOH_SYNTH continuous_kw.."
@@ -1480,11 +1681,34 @@
       "params": {
         "presence": "present",
         "size_mm": [
-          2200,
-          900,
-          1400
+          414,
+          414,
+          2585
         ],
-        "size_note": "L\u00d7W\u00d7H mm, issued envelope"
+        "size_note": "L x W x H mm, set by flow_graph/param/reactor_design.py (X-MFG-31)",
+        "design": {
+          "T_C": 250,
+          "P_bar": 50.0,
+          "design_MPa": 5.5,
+          "MeOH_kg_h": 1.4379,
+          "cat_kg": 3.5357,
+          "V_bed_L": 3.2143,
+          "tubes": 1,
+          "tube": "DN50 Sch 40 SA-106 B",
+          "L_bed_mm": 1485,
+          "t_req_mm": 2.8796,
+          "t_nom_mm": 3.91,
+          "t_ok": true,
+          "exotherm_kW": 0.617,
+          "preheat_kW": 0.818,
+          "D_mm": 114,
+          "H_mm": 2085,
+          "wall_mm": 3.91,
+          "V_work_L": 3.2143,
+          "V_L": 3.2143,
+          "material": "SA-106 B tube in a DN100 thermal-oil jacket (exotherm to Q3); Cu/ZnO/Al2O3 pellets",
+          "kW": 0.818
+        }
       }
     },
     {
@@ -1535,7 +1759,14 @@
       "notes": "Metal aisle AHU (S62/S71)",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": null
     },
     {
@@ -1549,7 +1780,14 @@
       "notes": "Superseded for bulk melt by FOUNDRY IND_MELT. Retained as MFG hold/transfer only. Do not size as primary melt.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.2369,
         "unit": "kW",
@@ -1616,7 +1854,13 @@
       },
       "modules": [],
       "params": {
-        "presence": "present"
+        "presence": "present",
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1792,7 +2036,13 @@
             0.207
           ],
           "A-M": "A-M-138"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       },
       "continuous_kw": null
     },
@@ -1804,7 +2054,14 @@
       "notes": "Cryo non-condensable contingency. NFPA 55. Not the dock.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "size_mm": [
+          600,
+          400,
+          600
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      }
     },
     {
       "unit_id": "RELIEF_H2",
@@ -1814,7 +2071,14 @@
       "notes": "H2 contingency relief. NFPA 2. Not BOUNDARY_EXPORT. Not a product sink.",
       "enabled": true,
       "modules": [],
-      "params": {}
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      }
     },
     {
       "unit_id": "ROOF_TANK",
@@ -1842,7 +2106,13 @@
           "pump_kW": 2.1,
           "refill_h": 8,
           "basis": "AQS-SAF-005 rev B (X-FIR-01); drivers fire_* keys; NFPA13_2025 / NFPA20_2025 / NFPA22_2023"
-        }
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1891,7 +2161,13 @@
             "item": "total connected (calculated)",
             "kW": 0.4417
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1934,7 +2210,13 @@
             "item": "total",
             "kWh_d": 5.008
           }
-        ]
+        ],
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -1948,7 +2230,14 @@
       "notes": "Final wire sizing in MFG. Takes rod/wire stock from FOUNDRY DRAW via STOCK_OUT. Not the primary draw.",
       "enabled": true,
       "modules": [],
-      "params": {},
+      "params": {
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
+      },
       "continuous_kw": {
         "value": 0.0189,
         "unit": "kW",
@@ -2175,26 +2464,32 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 217.8701,
+        "value": 217.9501,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 217.9 kW, charge 990.3 kW, 3050 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.6 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
         "kW": 991,
-        "kWh": 3051,
+        "kWh": 3052,
         "presence": "present",
         "charge_kW": 991,
         "discharge_kW": 218,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 42 hybrid inverters, 72.6 kWh and 23.6 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 42 hybrid inverters, 72.7 kWh and 23.6 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.733,
-          "purge_m3_h": 32.22,
+          "H2_m3_d": 7.736,
+          "purge_m3_h": 32.23,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1995.1
-        }
+          "electrode_area_m2": 1995.9
+        },
+        "size_mm": [
+          1000,
+          600,
+          800
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -2206,7 +2501,13 @@
       "enabled": true,
       "modules": [],
       "params": {
-        "ref": "FLOW_BATTERY.md"
+        "ref": "FLOW_BATTERY.md",
+        "size_mm": [
+          400,
+          400,
+          2000
+        ],
+        "size_note": "study default envelope box, read back from the cad/stl registry (M0 study envelope; design sizing per the duty sheet follows)"
       }
     },
     {
@@ -3867,10 +4168,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 915.526468,
+        "value": 915.862641,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.58 + open-circuit 1.15 m3/d H2 on 4357 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.59 + open-circuit 1.15 m3/d H2 on 4359 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -3890,7 +4191,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 915.526468,
+        "value": 915.862641,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."

@@ -6070,7 +6070,7 @@
      "from": "SOL_ARK_60K",
      "to": "MEOH_SYNTH",
      "other_sector": "MEOH",
-     "rate": 0.7388,
+     "rate": 0.818,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },
@@ -6902,7 +6902,7 @@
      "from": "SOL_ARK_60K",
      "to": "MEOH_SYNTH",
      "other_sector": "ELEC",
-     "rate": 0.7388,
+     "rate": 0.818,
      "unit": "kW",
      "carries": "480 V or 208/120 V AC (bus per AQS-ELEC-002)"
     },

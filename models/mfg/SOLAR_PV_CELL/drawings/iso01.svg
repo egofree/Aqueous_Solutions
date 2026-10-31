@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="800.0"
+   height="340.0"
+
+>
+    <g transform="scale(0.06802771555110822, -0.06802771555110822)   translate(5485.56260174558,-1129.5705675347506)" stroke-width="14.699890947370044"  fill="none">
+       <!-- hidden lines -->
+       <g  stroke="rgb(160,160,160)" fill="none" stroke-dasharray="14.699890947370044,14.699890947370044" >
+			<path d="M-848.5281374238571,-417.78637429367484 L-848.5281374238571,-1810.4076219392578 " />
+			<path d="M0.0,0.0 L-848.5281374238571,-417.78637429367484 " />
+			<path d="M-848.5281374238571,-417.78637429367484 L-2545.584412271571,417.78637429367484 " />
+
+       </g>
+
+       <!-- solid lines -->
+       <g  stroke="rgb(0,0,0)" fill="none">
+			<path d="M0.0,0.0 L0.0,-1392.6212476455828 " />
+			<path d="M0.0,-1392.6212476455828 L-848.5281374238571,-1810.4076219392578 " />
+			<path d="M-1697.0562748477141,835.5727485873497 L-1697.0562748477141,-557.0484990582331 " />
+			<path d="M-1697.0562748477141,-557.0484990582331 L-2545.584412271571,-974.834873351908 " />
+			<path d="M-2545.584412271571,417.78637429367484 L-2545.584412271571,-974.834873351908 " />
+			<path d="M-1697.0562748477141,835.5727485873497 L-2545.584412271571,417.78637429367484 " />
+			<path d="M0.0,0.0 L-1697.0562748477141,835.5727485873497 " />
+			<path d="M0.0,-1392.6212476455828 L-1697.0562748477141,-557.0484990582331 " />
+			<path d="M-848.5281374238571,-1810.4076219392578 L-2545.584412271571,-974.8348733519081 " />
+
+       </g>
+    </g>
+    
+<g id="aqs-fab-notes" transform="translate(0,240.0)" font-family="DejaVu Sans,sans-serif" font-size="10" fill="#000"><text x="6" y="24">Graph revision BH - iso01.svg: Overall build bbox 2400 x 1200 x 1600 mm (X x Y x Z, build origin at the tray)</text><text x="6" y="37">Graph revision BH - iso01.svg: Graph envelope 2400 x 1200 x 1600 mm (duty sheet section 2): build fits inside with margin</text><text x="6" y="50">Graph revision BH - iso01.svg: Nozzle orientation per `docs-authority/nozzles/SOLAR_PV_CELL.csv`; P&ID `docs-authority/pid/SOLAR_PV_CELL.svg`</text><text x="6" y="63">Graph revision BH - iso01.svg: Welds per the unit WORK_ORDER; procedure qualification ASME IX (shop, not stamped)</text><text x="6" y="76">Graph revision BH - iso01.svg: General tolerance ISO 2768-m unless noted</text></g>
+<g id="aqs-title-block"><rect x="581.6" y="280.0" width="216.0" height="57.6" fill="white" stroke="black" stroke-width="0.60"/><text x="585.2" y="289.6" font-family="sans-serif" font-size="5.4">Aqueous Solutions (owner)   AQS-MFG-SOLAR_PV_CELL-ISO01</text><text x="585.2" y="299.8" font-family="sans-serif" font-size="5.4">SOLAR_PV_CELL fabrication drawing ISO01 (AQS-PLAN-006 M3; gr</text><text x="585.2" y="310.0" font-family="sans-serif" font-size="5.4">Type: fabrication drawing (GA / nozzle orientation / part sheet)   Rev df168eba   Issued 2026-10-15</text><text x="585.2" y="320.2" font-family="sans-serif" font-size="5.4">Created: flow graph pipeline   Approved: not approved (study)</text><text x="585.2" y="330.4" font-family="sans-serif" font-size="5.4">Sheet 1 of 1   AQS-DWG-001</text></g>
+</svg>
