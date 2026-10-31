@@ -2034,10 +2034,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Grow-bed O2 is light-limited: net canopy quantum yield 0.045 mol CO2/mol absorbed, absorptance 0.90, LED 2.8 umol/J (WHEELER1996, KUSUMA2020); PEM electrolysis 55 kWh/kg H2 (IEA_GHR2023); EW anode O2 side reaction 2 % of current in chloride electrolyte (OBRIEN2005), not captured.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "WHEELER1996; IEA_GHR2023; OBRIEN2005",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2054,10 +2054,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "EW cathode CE 0.85 (AQS-DUTY-051), anode 2 % O2 (O_BRIEN2005); main anode Cl2 oxidises the metallic scrap loop in the leach, side Cl2 + H2 to HCl synthesis (NIST_WEBBOOK 92.31 kJ/mol); PEM 55 kWh/kg H2 (IEA_GHR2023) on a 6 h PV window; combustion at 10 % excess O2 (TURNS2012); 200 bar store Z: H2 1.13, O2 0.93 (NIST_WEBBOOK); fuel cell 16.5 kWh/kg H2 from S51/S49.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "O_BRIEN2005; IEA_GHR2023; TURNS2012; NIST_WEBBOOK",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2074,10 +2074,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "BACKUP_GEN 40 kW exercised monthly 30 min at 30 % load (NFPA110_2025 8.4.2), engine efficiency 30 % on C5-C10 LHV 12.2 kWh/kg (TURNS2012); H2 bank = ELY H2 x (1 - 6/24) + 2 d of fuel-cell H2 (AQS-ELEC-007 autonomy).",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "TURNS2012",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2094,10 +2094,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "ZnBr2 H2: 0.66 % of charge current plus 3.2e-3 mL/h/cm2 open-circuit corrosion (ZBFB_REVIEW2023), 1.82 V cell (SAND2000-0893), 20 mA/cm2, 6 h charge; purge holds 25 % LFL (NFPA69_2024). Hydro set has no storage role after ZNBR2 + H2 bank; cycle zero. NFT 1 L/min per gully at 200 mm pitch (COOPER1996, CROPKING_NFT).",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "ZBFB_REVIEW2023; NFPA69_2024; COOPER1996",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2114,10 +2114,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Mister supply = chamber area x 6 nozzles/m2 x 0.057 L/min (0.3 mm nozzle at 80 psi) x 4 s/244 s duty (HPA_PRACTICE, JAE2022_AERO). Return = supply. Schedule 4 s/4 min lies within the peer-reviewed HPA range (LAKHIAR2018); nozzle flow remains a manufacturer-class figure.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "HPA_PRACTICE; LAKHIAR2018",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2134,10 +2134,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "DUAL_ROOT ET per m2 equals the grow bed (same LED, same room); supply = ET/(1-0.20) (PLOSONE2017_DRAIN, AGRIC2024_LF); 20 % drain returns to the bed; ET to CRYO_AHU on new edge IA-DR-VAP; bed irrigation IA-BED-H2O carries the extra ET.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "PLOSONE2017_DRAIN",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2154,10 +2154,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "OIL_FRAC per-pass oil = 50/50 PE/PP thermal bands 34/31.5/34.5 % (C7-C12/C13-C20/C21-C40, SU2018_PYRO), uniform per carbon number within a band, re-binned: C5-C10 22.7 %, C11-C18 35.0 %, C19-C28 21.7 %, C29+ 20.7 % (recycled to extinction). Replaces the ASF fit. Make above the plant draw on C11-C18 and C19-C28 ships at NORTH_DOCK.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "SU2018_PYRO",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2174,10 +2174,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "IA-MELT-ATOM = S60/(1 - 0.10 off-spec, A_RL_SWARF); off-spec remelted on IA-ATOM-REMELT; melt-line edges carry metal, not the water/solute default. Stale blend-charge and off-spec off-graph terms removed.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "a mass-balance derivation from the graph flows; no single external reference",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2194,10 +2194,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Bed and dual-root ET = BVAD2022 tomato 2.77 kg/m2/d per 36.24 g CO2/m2/d, scaled to the light-limited 30.3 g CO2/m2/d: 2.32 kg/m2/d (was 0.60 implied by the 16.7 kg/d study figure).",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "BVAD2022",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2214,10 +2214,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Bed DM = fixed CO2 x 12/44 / 0.43 C; HI 45 %, edible 94 % water, inedible 90 % water (BVAD2022 tomato). S14X = edible - S14; frass closes BSFL. Inedible-line gap logged as Q-008.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "BVAD2022 (the tomato crop carbon-partition model)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2234,10 +2234,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "VEG_BED crop harvests are the study need; per-crop area = harvest / BVAD2022 edible fresh productivity; CO2, O2, transpiration and inedible trim per m2 from BVAD2022 (proxies: cucumber=tomato, kale=cabbage, allium=onion, basil=lettuce, rosemary=spinach). CO2 from HDR_CO2 (off the methanol feed), O2 to CRYO_O2, ET to CRYO_AHU, loop make-up IA-SUMP-MU from the roof tank.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "BVAD2022 (the per-crop edible fresh productivity and gas-exchange table)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2254,10 +2254,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "FRUIT_GUTTER (strawberry), PEANUT (peanut) and NFIX_BED (dry-bean proxy, whole plant returned as cover/residue) areas from harvest or claimed biomass / BVAD2022 fresh productivity; CO2 from HDR_CO2, O2 to CRYO_O2, ET to CRYO_AHU, inedible to compost (new IA-PN-TRIM); spill-supply edges carry the water by difference; bed return IA-BED-SUMP closes GROW_BED; loop make-up IA-SUMP-MU.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "BVAD2022 (the strawberry, peanut and dry-bean proxy productivity)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2274,10 +2274,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Each BVAD-sized crop unit carries sole-source LED at DLI 17 mol/m2/d and 2.8 umol/J (70.3 W/m2 average, same basis as GROW_BED in AQS-PAR-005) plus its previous aux study load.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "BVAD2022; AQS-PAR-005 (sole-source LED at DLI 17 mol/m2/d, 2.8 umol/J)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2294,10 +2294,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "HYDRO_SET is a diverse N+1 backup of ZNBR2 (owner redundancy rule): NFPA 111 Level 1, Class X = night_hours 14 h at the AQS-ELEC-007 critical load 32 kW = 448 kWh at the bus; 18 m head; turbine-generator 0.80, pump 0.85 (round trip 0.68, small set below the DOE_PSH 70-80 % range); upper reservoir 11,417 m3, held full; recharge on PV surplus over 6 h after an event.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "NFPA 111 Level 1 Class X; AQS-ELEC-007 (the 32 kW critical load); the owner redundancy rule",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2314,10 +2314,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Crew O2 reserve held in a separate cylinder bank that FUEL_CELL cannot draw: S02 x 2 d (AQS-ELEC-007 autonomy, above the NFPA 99 one-day reserve).",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-ELEC-007 (the autonomy basis); NFPA 99 (the one-day reserve minimum)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2334,10 +2334,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "HABITATION CO2 removal: two-bed 5A zeolite swing assembly at 1.0 wt% loading (0.4 kPa), 144 min half-cycle, 40 kg per bed for 4.02 kg/d; a second full assembly for N+1 (161 kg zeolite total).",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the issued zeolite swing assembly sizing (1.0 wt% loading, 144 min half-cycle, 40 kg/bed)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2354,10 +2354,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Dry food reserve in HAB_GALLEY covers a total bed-crop loss until the replant harvests: tomato tM 80 d (BVAD2022 Table 4-112) x S14 2.81 kg/d fresh x 6 % DM = 13.5 kg DM; retuned when the ration is locked.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "BVAD2022 Table 4-112 (the tomato tM 80 d replant cycle); AQS-DUTY-030",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2374,10 +2374,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "VCD_TRAIN and COMPOST_TOILET installed 2 x 100 %; VCD feed derived again from present inflow (0.187 -> 0.383 m3/d) at 17 kWh/m3 (midpoint of the issued 14-20 band); roof-tank inventory 1520 d is the diverse water backup.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-DUTY-060 (the VCD sizing at 17 kWh/m3); the COMPOST_TOILET design",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2394,10 +2394,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "HEAT_SINK split into 3 x 50 % plate-pack modules on the summed heat edges (146.5 kW); GEO_HP 2 x 100 %.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-THM-001 (the heat ladder); the GEO_HP design",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2414,10 +2414,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "GROW_BED area = residue-line claim 12.73 kg/d fresh / BVAD tomato inedible yield at the light-limited 30.3 g CO2/m2/d (0.106 kg/m2/d) = 120.4 m2 (owner Q-008: grow the bed). LED, CO2 uptake, transpiration, O2 and methanol follow.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "BVAD2022; owner Q-008 (the tomato inedible yield at the light-limited CO2 rate)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2434,10 +2434,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "480 V bus split main-tie-main, each section rated 125 % of the whole bus demand at 0.9 pf (NEC 240.6 standard size); MCC-1A/1B; 2 x 100 % T-1; critical loads on a dual-fed ATS.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "NEC 240.6 (standard breaker size); the main-tie-main distribution architecture",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2454,10 +2454,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "CRYO_AHU latent = condensate x 2.454 MJ/kg (NIST_WEBBOOK, 20 C); coil chiller COP 2.96 (ASHRAE 90.1-2025 minimum); electric on new SF-CRYO_AHU, heat on SQ-CRYO_AHU to HEAT_SINK.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "NIST_WEBBOOK (the 2.454 MJ/kg latent heat at 20 C); ASHRAE 90.1-2025 (the coil chiller COP 2.96)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2474,10 +2474,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Crop beds are laid out from their sized area (GROW_BED params.area_m2, crop_basis.area_m2) as rows 1200 mm wide, at most 10.8 m long, 600 mm high, with 914 mm walked aisles (NFPA 101 7.3.4.1.1, as A-M-102) on two tiers of the L1 FARM block; FARM process skids, pens and bed overflow go to a bay of EXT_HALL_E on L0 at (24000, 0), 18 m deep, its length grown in 6 m column bays until every unit packs (18 m)",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the crop sizing (GROW_BED params.area_m2, crop_basis.area_m2); the 1200 mm row and 914 mm aisle layout",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2494,10 +2494,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "API 2000 normal venting: each atmospheric node moves its daily liquid in or out volume in a 1 h transfer window; latitude band below 42 deg (Y 0.32) and C 6.5 (vapour pressure unknown) until the site basis X-BAS-03; volatile out-breathing factor 2 on all tanks; open-vent dP min(500 Pa, 25 % of design_kPa), Cd 0.61; DN 25 minimum",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "API 2000 (the normal venting method); the latitude band and vapour pressure class",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2514,10 +2514,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "MEOH_SYNTH, CRYO_H2 and CRYO_O2 are pressure equipment (50, 200, 200 bar operating), design = 1.10 x operating, relief API 520 blocked outlet at full inflow (electrolyser streams over the 6 h PV window); MEOH_SYNTH catalyst sized at the CO2-only weight-time yield 1.22 kg/(kg h) divided by 3 for 50 bar and ageing, bulk density 1.1 kg/L; feed preheat without interchanger credit, heater efficiency 0.7",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "ASME VIII-1 UG-27 (the wall thickness at 1.10 x operating); API 520 blocked outlet",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2534,10 +2534,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "ALD WHSV 1.0 h-1 (published 3.16 h-1 at 85 % conversion, CUSIO2_ALD2023, reduced about 3 x for ageing and conversion); FORM at the longest published space time 50.63 g h/mol (CEAT2010_FORM); MEAM at GHSV 1100 h-1 (US1875746); catalyst bulk density 1.0 kg/L; feed cp 2.5 kJ/(kg K); heater efficiency 0.7; exotherms not credited",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "CUSIO2_ALD2023 (the published WHSV, reduced for ageing); FORMOX_REVIEW2021 (the FORM space time)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2554,10 +2554,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Outer combined surface coefficient 10 W/(m2 K); hot lines and vessels above 50 C insulated for personnel protection to a 50 C surface (ASTM C1055 threshold 60 C); cold lines below the dew point of 25 C / 60 % RH air insulated so the surface stays 1 K above the dew point; mineral wool k = 0.037 + 0.00017 x T_mean W/(m K); elastomeric k 0.040; standard thicknesses 13-150 mm",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "ASTM C1055 (the 60 C burn threshold); the 50 C personnel-protection surface rule",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2574,10 +2574,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "FORM feed made up to about 10 mol% MeOH, 10 mol% O2, 80 mol% N2 (FORMOX_REVIEW2021 lean side): O2 1 mol per MeOH, N2 8 mol per MeOH from HDR_N2 taken out of the afterburner dilution air; tail gas (N2, unreacted O2, trace CH2O and CO) to the afterburner chamber for destruction",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "FORMOX_REVIEW2021 (the lean-side composition at about 10 mol% MeOH)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2594,10 +2594,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "GLYOXAL re-routed to the industrial liquid-phase oxidation of acetaldehyde by aqueous HNO3 (HOTANAHALLI1972, US3429929, ULLMANN_GLYOXAL): 3 CH3CHO + 4 HNO3 -> 3 glyoxal + 4 NO + 5 H2O, NO recycled to the HNO3 absorber with 3/4 O2 per NO; stoichiometric yield carried (published yields 45-70 %, by-products acetic and glyoxylic acid not yet split out)",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "HOTANAHALLI1972; US3429929; ULLMANN_GLYOXAL (the HNO3 oxidation route)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2614,10 +2614,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "GLYOXAL 6 h at 40 C (HOTANAHALLI1972 temperature, residence assumed), IMID 4 h at 70 C, BUCL 6 h ZnCl2-catalysed at reflux 105 C, HNO3 Pt-Rh gauze 900 C (ULLMANN_NITRIC) with 2 h absorber hold-up; burner held at temperature by the bus at this rate",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "HOTANAHALLI1972 (the GLYOXAL temperature and residence); ULLMANN_NITRIC (the Pt-Rh gauze temperature)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2634,10 +2634,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "ACEX converts [Bmim]Cl to [Bmim]OAc over an OH-form strong-base type I resin then neutralises with acetic acid (PERRY9_IX); the direct exchange with acetic acid is not thermodynamically driven. Resin regenerated stoichiometrically with 20 wt% NaOH from EVAP_BASE (one NaOH per Cl, no regenerant excess yet), spent regenerant to the leach; two columns, one on line and one regenerating; 50 % utilisation, 24 h cycle",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "PERRY9_IX (the OH-form strong-base resin exchange); PERRY9 (the acetic acid neutralisation)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2654,10 +2654,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "MEOH_FERM sized as an insulated HDPE tank at 35 C and 48 h on its 0.36 kg/d feed; methanol release basis not yet cited (pectin demethylation assumed)",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the MEOH_FERM sizing (48 h at 35 C on 0.36 kg/d); pectin demethylation assumed",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2674,10 +2674,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "ALK_SCRUBBER, ACID_POLISH_SCRUB, NOX_SCRUB and MET_SCRUB sized with the X-PAR-03 scrubber function on in-house 25 mm cut PP rings: C_s 0.07 m/s at flood, HTU 0.5 m, 400 Pa/m, a 190 m2/m3, 99 % removal, fan efficiency 0.5, pump 10 m at 0.4; gas density 1.2 kg/m3",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "X-PAR-03 (the scrubber function); PERRY9_ABS (the C_s at flood and HTU); EDBM_PILOT_2023 (the 400 PP rings class)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2694,10 +2694,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Insulated heat-ladder line losses from AQS-THM-003 carried on the graph: lines in flow lose continuously to HEAT_SINK (HLL- edges); normally-off same-tier ties lose only while running and are covered by duty_source_rated_kw = rated + loss; the 10 % loss target is relaxed for the 12 small loops where it is set by duty, not insulation",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-THM-003 (the insulated line-loss basis)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2714,10 +2714,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Each Q store re-closed on graph rates after the line losses: the shortfall passes down the ladder on the downhill steps and ends as less heat rejected on HL-Q4-REJ; no electric trim added because Q4 rejects a surplus in normal operation",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-THM-001 (the heat-ladder store closure); the graph rates after the line losses",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2734,10 +2734,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "CRYO_H2 and CRYO_O2 stores built as banks of SA-312 TP316L DN100 Sch 160 seamless tubes, one 6.096 m random length each, in two manifolded halves per bank; wall to B31.3 304.1.2 at S 115 MPa; 316L for both gases; ID below the Section VIII size limit",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "ASME B31.3 (the tube-wall sizing); SA-312 TP316L DN100 Sch 160 (the receiver construction)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2754,10 +2754,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Deoxo Pd/Al2O3 at GHSV 5000 1/h on 1000 ppm v O2; chloride guard promoted alumina at 0.10 kg/kg for 1 ppm v HCl, 90 d change-out; TSA 4A/13X working capacity 0.10 kg/kg, 8 h half-cycle, margin 3, regenerated at 250 C; every bed duplicated",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the purifier sizing basis (GHSV 5000 1/h, the 0.10 kg/kg guard capacity, the TSA working capacity)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2774,10 +2774,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Two-stage in-house diaphragm compressor 10 to 200 bar a, equal ratio, intercooled to 35 C, adiabatic efficiency 0.65, motor 0.90, volumetric 0.80, 300 rpm, 3 mm cavity, running 8 h/d with the electrolyser; 2 x 100 %",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the compressor design basis (two-stage diaphragm, adiabatic eta 0.65, motor 0.90, volumetric 0.80)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2794,10 +2794,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "In-house BMED stack: 0.04 m2 cells, at most 100 triplets per stack, 200 A/m2 and CE 0.80 (EDBM_PILOT_2023), one spare stack; energy stays on the 2 M SEC",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "EDBM_PILOT_2023 (the 200 A/m2 and CE 0.80 basis); the 0.04 m2 cell construction",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2814,10 +2814,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Triplet voltage = bipolar membrane 1.0 V + 2 x 3 ohm cm2 monopolar + 1.5 x 0.8 mm x sum(1/kappa) solution + 3 V/stack end electrodes; design takes the larger of this (1.22 V) and the pilot-measured 1.67 V",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "STRATHMANN2004 (the bipolar and monopolar membrane voltages); CRC_COND (the solution conductivity)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2834,10 +2834,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Stage count is the fewest equal-ratio stages with predicted discharge at or below 135 C (API618 hydrogen-rich) at eta_ad 0.65; intercooled to 35 C after each stage",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "API 618 (the discharge-temperature limit at eta_ad 0.65); the equal-ratio staging rule",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2854,10 +2854,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "EW bars sized so I2R heat is shed by free convection and radiation at a 30 K rise over 40 C, painted (emissivity 0.8), 6.3 mm flats spaced one thickness apart; section also held to the UL891 155 A/cm2 default",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "CDA_PUB22 (the copper bus-bar convection and radiation at the 30 K rise)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2874,10 +2874,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Atmospheric design pressure = 4 x open-vent dP (vent dP held to 25 % of design) + full-height hydrostatic head at SG 1.25; units without a sized height carry the vapour case only",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the atmospheric design-pressure rule (4 x vent dP + full-height hydrostatic at SG 1.25)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2894,10 +2894,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "No air intake: CO2 removed from the scrubbed flue by 3 x 13X TSA beds (1.5 mol/kg working capacity, 8 h half-cycle, dH 36 kJ/mol, steel mass equal to sorbent, 20 % regen loss), CO2 compressed to 20 bar and condensed at -20 C (chiller COP 2.5), 100 W Ar getter; no cryogenic column",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "X-MFG-33 (the TSA bed sizing: 1.5 mol/kg 13X working capacity, 8 h half-cycle, dH 36 kJ/mol)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2914,10 +2914,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "S25 is VCD distillate at about 20 mg/L; potable share bypasses; UPW share through flat-sheet TFC RO (A 3 LMH/bar, flux 20 LMH, rejection 0.98, pump eta 0.40) then EDI (CE 0.10, 10 cell pairs at 4 V) and a 15 W UV-TOC lamp; 2 x 100 % trains",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the UPW polish sizing (TFC RO A 3 LMH/bar, flux 20 LMH, rejection 0.98; EDI CE and voltage)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2934,10 +2934,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Induction melt eta 0.55, 10 kg charge, 0.5 h melt, 100 K superheat; atomiser Ar GMR 2.5 at 30 bar, compressor isothermal eta 0.6, 10 min pour, 1 kW tundish; Cu mean flow stress 250 MPa, rolling strain 2.3, drawing strain 3.0, deformation eta 0.55; mill 2.2 kW and drawer 1.1 kW with 15 % no-load for 1 h",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "A_RL_2023 (the metal-shop physics: melt eta, atomiser GMR, Cu flow stress, Ar/recirc rates)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2954,10 +2954,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "One batch of 3 cells/d; texture 10 L at 80 C; diffusion 20 kg heated mass to 850 C in 1.5 h, ceramic fibre k 0.035 + 0.0002 T; PECVD 0.1 W/cm2 on 0.05 m2 for 15 min, 5 kg platen at 400 C, 1.5 kW vacuum pump 1 h; printer 0.2 + dryer 0.5 kW 0.5 h; IR firing 3 kW 10 min; IV 0.1 kW",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-DUTY-065 (the PV cell line tool sizing: texture, diffusion, PECVD, print, firing)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2974,10 +2974,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "ASR 5 ohm cm2, crossover and self-discharge 5 % of charge, auxiliaries 3 %; design round trip held at 0.70 below the 0.82 prediction until the X-MFG-41 stack test",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "A-M-062 (the vendor prediction: ASR 5 ohm cm2, 5 % crossover, 3 % auxiliaries); X-MFG-41 gates the test",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -2994,10 +2994,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Every compressor stage discharge carries a PSV set at 1.10 x stage outlet, sized for blocked discharge at the stage peak flow with 10 % overpressure (API 520 critical gas flow); in-house bores 6-15 mm in a DN15 body; CO2 compressor peak = one bed desorbed over 8 h; CRYO_CO2 liquid store at 20 bar, -20 C is a pressure vessel",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "API 520 (the PSV sizing for blocked discharge at the stage peak flow, 10 % overpressure)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3014,10 +3014,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "CRYO_CO2 holds 2 d of its inflow as liquid at 20 bar, -20 C (1032 kg/m3, NIST_WEBBOOK) at 90 % fill, in the same DN100 Sch 160 316L tubes as the gas receivers",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "NIST_WEBBOOK (the 1032 kg/m3 liquid CO2 density at 20 bar, -20 C); the DN100 Sch 160 receiver construction",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3034,10 +3034,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Atmospheric units with liquid inflow but no sized height take their liquid head from a hold-up volume: 2 d of inflow for stores, 1 d for process units, vertical H/D 1.5; farm beds and habitation fixtures 0.3 m; headers and recycle pipes carry no standing liquid",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the hold-up rule (2 d stores, 1 d process, H/D 1.5); AQS-DUTY-064 class",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3054,10 +3054,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Every present unit without a CAD BOM gets an envelope BOM from the graph: body from size or vessel design, material from its duty sheet, one nozzle per mass edge at its pipe-inventory DN, vent or relief valve, motors and building blocks from AQS-INV-001/004",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "A-M-183 (the envelope-BOM rule); AQS-STD-001 (the duty-sheet basis); AQS-INV-003 (the nozzle DN)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3074,10 +3074,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Empty weight from design steel where known, else envelope x 150 kg/m3 (storage tanks 40 kg/m3, PV 17 kg/m2); operating liquid at SG 1.25 from the hold-up or 50 % of envelope; test fills liquid units with water",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the weight-fraction rule (150 kg/m3 envelope, 40 kg/m3 storage tanks, 17 kg/m2 PV; SG 1.25 liquid)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3094,10 +3094,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Spares by fraction of installed with a minimum: bearings 10 % min 2, seals 20 % min 2, electronics and instruments 10 % min 1, valves 5 % min 1, fasteners 2 % min 4, motors 5 % per family min 1; one charge or set of each consumable process insert",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the spares-fraction rule (bearings 10 % min 2, seals 20 % min 2, etc.)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3114,10 +3114,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Reverse-Brayton N2 loop backs up the CO2 condenser chiller: pressure ratio 5, inlet 300 K, expander eta_s 0.75, compressor eta_s 0.70, N2 cp 1.04 kJ/kg K (PERRY9), gas warms to -25 C at the condenser",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "PERRY9 (the N2 cp and the gas properties); the reverse-Brayton cycle parameters",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3134,10 +3134,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Upper reservoir on the top floors, lower in CATCH_TANK, both over the plate less 15 % cores; max 4.5 m water per 6 m level; >=2 cells per level, cell <=12 m; penstock loss 5 % of head; freeboard 0.5 m lower; site SDS 1.0 g, SD1 0.6 g, TL 8 s, R 3, Ie 1.5, wind 50 m/s exposure C; LIFE_LEVELS = 1 + 2 (SHOP_LEVELS - 1)",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-DUTY-008 (the pumped-hydro reservoir geometry and loss basis)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3154,10 +3154,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "NFPA 13 hazard classes by level: L-1 OH2, L0 EH1 (pyrolysis, oils, genset fuel), L1 OH1/LH; +10 % hydraulic margin; fire reserve = governing demand held as dead storage in the water tower; receivers one relief valve per half bank sized for the API 521 fire on its tubes, Tw 593 C; depressuring to 50 % in 15 min at 2 x average rate",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "NFPA 13 (the hazard classes by level); the +10 % hydraulic margin; the fire-reserve storage basis",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3174,10 +3174,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Code maxima where a code applies (API 510/570/576, NFPA 25/70B/110/111); otherwise atmospheric vessels annual external and 10 y internal, rotating lube 6 mo, vibration 3 mo, bearings 5 y, seals 3 y, insert lives per maint_insert_life_y (Pt-Rh gauze 0.5 y to membranes 5 y), farm clean-down quarterly, reservoir cells drained one at a time every 5 y",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "API 510/570/576; NFPA 25/70B/110/111 (the code maxima); the atmospheric-vessel default intervals",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3194,10 +3194,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Route from the BOM body material (8 routes); B31.3 / VIII-1 test factors and NDE extents where they apply; PMI on 316L wetted parts, passivation with ferroxyl test, 24 h fill test for atmospheric vessels, and function tests as study practice",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "ASME B31.3 / VIII-1 (the test factors and NDE extents); the BOM-material route table",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3214,10 +3214,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "BOM line classed by keyword in its material (or item) text to the AQS-ASSAY-001 classes, first rule wins; classing by line count until unit masses exist; Ti, NdFeB, Pt-Rh and fluoropolymer lines held with reason",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-ASSAY-001 (the feed classes); the keyword-first-match rule",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3234,10 +3234,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Heaviest lift = largest empty weight per level from AQS-BLD-013, excluding items built in place (tanks, reservoirs, PV, beds, rooms, headers); tube racks lifted per half; rigging allowance 10 %; standard hoist sizes; 2 hoists where a level has more than 10 lifted units",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-BLD-013 (the heaviest-lift basis); the in-place exclusions",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3254,10 +3254,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Flow range 2 x normal at edge density or 1000 kg/m3; pressure range next standard >= 1.25 x design gauge (ceramic to 16 bar, 316L thin-film above); temperature bands cryogenic -200..50, hot 0..600, ambient -20..150 C; level 0-100 % of the A-M-182 liquid height, LSH at 90 %",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the instrument-range rules (flow 2 x normal, pressure 1.25 x design, the cryogenic and standard bands)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3274,10 +3274,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "One PLC per sector; 16-channel modules with 20 % spare; redundant CPU pair and dual 24 V supplies for life-support and energy sectors; 2 W per module, 12 W per CPU; MRP fibre ring; safety trips outside the basic control PLCs",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the PLC architecture rule (one per sector, 16-channel modules, 20 % spare, redundant CPU pair)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3294,10 +3294,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "One node per unit with inflow; guide words No/Less, More, High, Low, Reverse, Other-than on flow, pressure, temperature, level, composition; safeguards read from relief basis, AQS-CTL-001 instruments, AQS-INV-004 check valves and pumps, AQS-SAF-005; every liquid-receiving unit gets LT and LSH (rule added to AQS-INV-004)",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-HSE-001 (the HAZOP guide words and the safeguard sources)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3314,10 +3314,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "H2O_ELYZ H2 side at 9 bar g (compressor suction 10 bar a), blocked outlet = H2 production over the PV window, O2 side on its own valve at the same set; HCL_BURNER 0.5 bar g, 1000 C products, blocked outlet = Cl2 + H2 feed, deflagration rupture disc at detail; EVAP_ACID_VS API 2000 vent; product nodes are boundaries, not vessels",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the HAZOP relief cases (A-M-195); API 520 for the relief sizing; the compressor-suction and PV-window basis",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3334,10 +3334,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Consequence class sets SIL: fire or explosion with people = SIL 2 (1oo2), equipment damage or bunded toxic release = SIL 1, overfill to bund = basic control trip; safety PLC separate from BPCS, de-energise to trip, 1-year proof test; independent TE per heater trip; ESD valve per bank half",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "IEC 61511 / ISA-84 (the consequence class to SIL mapping); the 1oo2 and 2oo3 voting architectures",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3354,10 +3354,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Sources = units on present gas edges carrying the species plus stated sources; 2 heads per source unit, 3 where a SIF votes 2oo3; set points H2 10/25 % LFL, O2 19.5/23.5 %, toxics at TLV TWA (alarm) and 2 x TWA or ceiling (trip); bump test quarterly, calibration 6-monthly, heads 3-5 years",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "IEC 60079-29-1 / ISA-TR60079-29-2 (the gas detection set points and head counts per source)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3374,10 +3374,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "15 units with no graph size are given envelope = max(hold-up box from inflow x residence / bulk density at H/D 1.5, smallest task frame per class) in flow_graph/param/unit_envelopes.py; weight at struct_equip_density_kg_m3",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-PLAN-011 section 5.3 (the need-based envelope rule: hold-up box or the smallest task frame per class)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3394,10 +3394,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Systems = graph sectors, utilities first; per unit the ITP pressure-test hold point (+ helium leak test for H2/O2), loop check of every instrument, SIF proof test, 24 h water run at graph liquid rate, chemical run 25/50/100 % x 24 h; acceptance within 10 % of graph rates",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-COM-001 (the commissioning basis: sectors, utilities first, ITP hold points, SIF proof, the 24 h run)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3414,10 +3414,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "ZnBr2 charge to 80 % at charge_kW; heat batteries warmed from 20 C (oil 850 kg/m3 2.2 kJ/kgK, water 4.18) by GEO_HP one per ladder; CO2 condenser cold mass 20 kg 316L cp 0.5; H2 bank at 200 bar 14.9 kg/m3",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the startup basis (ZnBr2 charge, heat-battery warm-up, CO2 condenser cold mass, geo-loop fill)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3434,10 +3434,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Class A feed at design rate; 72 h steady run; product, EW metal and H2 rates within 10 % of the graph, plant power within +10 %, mass closure 2 %; measured by AQS-CTL-001 FT where present else weighed",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-COM-001 (the performance test: Class A feed, 72 h, the 10 % and 2 % closure acceptances)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3454,10 +3454,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Per system from AQS-COM-001; start permissive = upstream systems running and trips healthy; stop = reverse order, liquids held; emergency = the system SIFs plus plant ESD; two-person reset",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-COM-001 (the operating procedure basis: start permissive, stop reverse, emergency ESD)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3474,10 +3474,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Reverse commissioning order, utilities last; drain = operating minus empty weight; flammable purge N2 to <25 % LFL then <1 %; O2 to 19.5-23.5 %; toxics air-purged to scrubber; confined-space entry where drain > 500 kg",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-END-001 (the decommissioning basis: reverse order, flammable purge, O2 inerting, toxics scrubbed)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3494,10 +3494,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Closed-form recomputation by a different route (mass balance per unit, rho g V h, ASME B31.3 304.1.2 wall, V rho cp dT, feeder kW, load ordering); every other module recorded as needing a second-person review; not a PE review",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-PAR-001 section U3 (the design check: closed-form recomputation by a different route)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3514,10 +3514,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Each AQS-PRO-001 line is classed by its stated material against the species on present graph edges; the worst constituent sets the flag; Cr, Mo, Ti, F, Pt, B, mica not recovered; reprap_bom_complete false while any line is Missing",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-BOM-SC-001 rev G (the self-copy reconciliation: material against graph species, worst constituent)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3534,10 +3534,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Welded A992 plate sections sized from need on the 6 m grid; live by ASCE 7 Table 4.3-1 occupancy (6.0 shop, 4.79 life levels, 0.96 roof, water storeys F); 1.4(D+F) and 1.2(D+F)+1.6L; slab braces beams; two braced lines per direction, two bays each, tension-only; deflection L/360 under L+F",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-BLD-016 (the frame basis: A992 plate sections, ASCE 7 Table 4.3-1 live loads, the 6 m grid)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3554,10 +3554,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Mat under the plate at the CATCH_TANK floor; IBC 1806.2 clay 72 kPa (SITE_BASIS corrected from 2000 psf) with the 1806.3.1 depth increase; groundwater at grade until measured; uplift FS 1.10 with plant empty sets raft ballast; 600 mm basement walls; fc 35 MPa; seismic from AQS-SITE-002 (SDS 0.107, SD1 0.08) replacing the 1.0 g placeholder",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "IBC 1806.2 (the presumptive clay bearing corrected to 72 kPa); 1806.3.1 (the depth increase); SITE_BASIS",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3574,10 +3574,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "AQS-HSE-001 S1 oxidizer gas to H2/organic and S2 ignition to H2/organic at 7,620 mm; floor slabs credited 2 h, X=15000 partition 1 h; failing ignition/oxidizer units get a 1 h rated room with own exhaust (unit plan + 1 m); block-placed units unresolved",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-HSE-001 (the separation distances: S1 7,620 mm, S2 ignition); AQS-SAF-007 (the application sweep)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3594,10 +3594,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "IEC 60079-10-1 medium ventilation, good availability; Zone 0 inside vessels; Zone 1 at relief/vent outlets R1 1.0 m (H2) / 1.5 m (vapour); Zone 2 around envelope R2 1.5 m (H2, upward) / 3.0 m (vapour, to floor); solids and biological organics excluded; confirm by Annex C release-rate calc",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "IEC 60079-10-1 (the hazardous-area classification: medium ventilation, the Zone 0/1/2 radii)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3614,10 +3614,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Room = sector on a level; area = footprint / 0.35, capped at the plate; extract = max(ASHRAE 62.1 0.30 L/s m2, IFC 5004.3 5.08 L/s m2 hazardous, H2 to 25 % LFL, half the electrical input at 10 K); make-up 95 %; fans dp 500/400 Pa, eta 0.6, 2 x 100 %",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "ASHRAE 62.1 (the 0.30 L/s m2 extract base); IFC 5004.3 (the 5.08 L/s m2 hazardous rate); the H2 25 % LFL and the half-AHU offset rules",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3634,10 +3634,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "AASHTO WB-67 design vehicle; apron depth 1.5 x 22.4 m, apron along the full north face; door 4.3 m high; dock space holds a 20 ft ISO container plus 1.5 m forklift aisles; 40 ft unloaded on the trailer; basement units over the elevator go by a 2 h covered equipment hatch",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AASHTO WB-67 (the design vehicle); the dock and apron geometry basis",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3654,10 +3654,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "IBC 1004.5 factors (industrial 9.3, residential 18.6, storage/agricultural 27.9 m2/occ; reservoir and L-2 at 15 % walkway); 2 exits per level; flight clear = (box - 300)/2 >= 1,118 mm; travel to stair <= 76 m; envelope U 0.534 wall / 0.199 roof; stair box 2,600, maint stair 1,300",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "IBC 1004.5 (the occupancy factors); the two-exit and flight-clear rules; the reservoir and walkway allowances",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3674,10 +3674,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Units placed only as a shared block box are packed in rows inside the box (graph size or square of the AQS-BLD-013 footprint, 1 m aisles; ignition first, H2/organic/oxidizer last); overflowing blocks grow along the free axis and are reported",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-BLD-013 (the block member packing: rows inside the box, ignition first, the H2/organic/oxidiser order)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3694,10 +3694,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "CRYO room 8.7 m wide with a 1 h H2 partition; BACKUP_GEN to NW yard corner >= 5 m from FUEL_CELL; AFTERBURNER to a free 2x2 m L-1 bay with ~3 m NCG duct; GROW_BED, MET_SCRUB, BMED_UPW_POLISH, YARD_PAD and SERVICE_DOOR_N moved clear of stairs, core and wall line. Rated rooms take own clearances and close ancillaries; line keep-outs pass through firestopped sleeves.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the GA rev C clash-resolution moves (CAD_MOVES.json): the CRYO room partition, the BACKUP_GEN to the NW corner, the AFTERBURNER relocation",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3714,10 +3714,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Bounding cases A, B and MSW are carried downstream from their class edges in proportion to design-day out-edge rates; a unit more than 2 % over design day gets design_capacity_kg_d at the governing case. Separation splits are held at design day (bound, not model).",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "X-RSZ-07 (the bounding-case carry: proportional to design-day out-edge rates, the 2 % design_cap threshold)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3734,10 +3734,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Drawing at 20 % area reduction per pass from 8 mm rod; class B stranding; insulation per UL 44/83/66/4703/1072 tables, PV Wire 2 kV 1.52 mm and TC-ER jackets are working values to confirm against the standard text; compound densities PVC 1.40, nylon 1.15, XLPE/EPR 0.95.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "UL 44/83/66/4703/1072 (the insulation tables); the 20 % drawing reduction and the class B stranding",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3754,10 +3754,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Slot fill 0.40 with 15 % enamel, tooth 1.6 T, yoke 1.5 T, stacking 0.97, air gap from the PYRHONEN2014 empirical relation, rotor bars at 5 A/mm2 die-cast Al; five families flagged for longer cores.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "PYRHONEN2014 (the lamination empirical relations: slot fill, tooth/yoke flux, air gap, rotor bar density)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3774,10 +3774,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Rigs sized from the plant cell designs: BMED 10 triplets at 200 A/m2 and 5 cm/s, ZNBR2 10 x 0.1 m2 cells to 40 mA/cm2, FRP load frame 50 kN for a 6 mm coupon at 400 MPa; liquor ageing 1,000 h added.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-TST-001 (the test-rig sizing from the plant cell designs: BMED triplets, ZNBR2 cells, the FRP load frame)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3794,10 +3794,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "The smaller unit of each overlapping pair moves to the nearest clear position on its level with 100 mm gap; containers and internals are exempt; L-1 corridors re-routed round the process hall; catch tank top 0.5 m below L-1 FFL.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "the overlap-resolution rule (the smaller unit moves to the nearest clear position, 100 mm gap)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3814,10 +3814,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "PV Wire 2 kV 10 AWG insulation 1.91 mm (75 mil, UL 4703 1000/2000 V wall) replaces 1.52 mm; TC-ER jacket steps per UL 1277 table confirmed and extended to 2.79/3.56 mm.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "UL 4703 (the PV Wire 1.91 mm insulation wall); UL 1277 (the TC-ER jacket steps confirmed and extended)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3834,10 +3834,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Line centres in _line_list.py take the GA rev C relocation (params.RELOCATE) and every GA rev C2 overlap move (CAD_MOVES.json) as plan offsets; 19 of 53 moves touch piped units. ISO-001/002 regenerated: 370 lines, route total 6949 -> 7030 m.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-PIP-003 (the line centres follow the GA relocations: params.RELOCATE and CAD_MOVES.json)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3854,10 +3854,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "models/freecad/regroup.py moves L-1 units with flow-graph streams greedily on a 500 mm grid within 12 m to cut the plan Manhattan distance to connected units, keeping every clash gate clear. 23 units, 12 moves; adjacency 701 -> 518 m. Moves are logged in CAD_MOVES.json as REGROUP and carry into the isometrics.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "A-M-223 (the L-1 flow-adjacency regroup: greedy on a 500 mm grid within 12 m, corridors kept clear)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3874,10 +3874,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Every open task in AQS-PLAN-007 rev B is tagged desk P1..P5, hardware or owner by _task_plan_gen.py: unit task 15 is hardware (acceptance record needs the built unit); cross-cutting tasks whose criteria need a test, coupon, first article, bench, site measurement or as-built are hardware; X-PRO-03 and X-ELS-08 are owner. 2444 open: 2224 desk, 216 hardware, 2 owner (plus X-BAS-03 site).",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-PLAN-007 rev B (the triage rule: unit task 15 hardware, critical path desk P1..P2)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3894,10 +3894,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "Hold times per service (30 d reagent resupply, 14 d product cuts and methanol, 3 d C29 recycle buffer, 1 d UPW, remineralisation, dosing and hopper); 80 % fill; upright cylinder H/D 1.5; PE per ASTM D1998 for aqueous, SA-240 304L per NFPA 30 ch. 21 for flammables. 6 units exceed the issued GA envelope (MEOH_TANK, REMIN, four PROD_ cut tanks); graph size_mm updated, FreeCAD GA dims still to follow.",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-DUTY-064 (the storage hold times per service and the vessel rule: 80 % fill, upright cylinder H/D 1.5)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
@@ -3914,10 +3914,10 @@
   "files": [
    "models/motors/build.py"
   ],
-  "value": "Motor family models: envelope-correct parts from AQS-INV-005 (stator slot depth 22 % of the radial build, slot width 50 % of slot pitch, rotor slots 8 % of bore deep, air gap 0.3 mm, frame wall to 0.98 x 2H, Al cage 12 % of steel mass); BLDC/stepper magnet ring 3 mm, stator OD 0.8 x flange; NdFeB basis",
+  "value": "models/freecad/graph_dims.py rebuilds every unit with params.design_storage (AQS-DUTY-064) as a D x H cylinder at its placed centre before the overlap resolver; 15 of 18 applied. HOPPER is modelled as the combined HOPPER_SHREDDER; REMIN and WS_PHOS have no CAD solid yet (placed under the unrouted-unit task). Clash gates 0/0/0 after rebuild (47 resolver moves, 12 regroup moves).",
   "units": "mm",
   "where": "models/motors/<MF-nn>/",
-  "basis": "AQS-INV-005; IEC 60072-1; NEMA ICS 16; ISO 15218; ISO 5211",
+  "basis": "AQS-DUTY-064 (the graph-dims rule: D x H cylinder at the placed centre, 15 of 18 applied)",
   "sensitivity": "Slot geometry sets copper fill and losses; replaced by the winding design at first article",
   "replaced_by": "Production drawings with tolerances after the X-INV-02B first article",
   "verification_test": "First-article dimensional inspection against the STEP (frame, shaft, feet to IEC 60072-1 tolerances) and slot fill measured on the wound stator",
