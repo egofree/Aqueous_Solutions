@@ -70,7 +70,7 @@ Table 2.1. Tasks by group
 | POLYMERS | Process (Mass transform) | 165 | 154 |
 | GAS | Process (Mass transform) | 150 | 140 |
 | WTR | Utility / header | 136 | 127 |
-| ELEC | Utility / header | 135 | 124 |
+| ELEC | Utility / header | 135 | 126 |
 | HAB | Life support / habitat | 135 | 126 |
 | MEOH | Energy Storage System (Electrochemical) | 90 | 84 |
 | GLASS | Process (Mass transform) | 75 | 70 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3267** | **3059** |
+| | **Total** | **3267** | **3061** |
 
 ## 3. Triage of open tasks
 
@@ -103,7 +103,6 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P2 | 1 |
-| desk P4 | 2 |
 | hardware | 205 |
 
 ## 4. Unit task template
@@ -3219,8 +3218,8 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-EXT_HALL-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: ELEC-EXT_HALL-02, ELEC-EXT_HALL-03. Evidence: `docs-authority/duties/EXT_HALL.md` §6 (C7 closed on MASTER_PLAN).
   - [x] ELEC-EXT_HALL-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: ELEC-EXT_HALL-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (1 loops; AQS-CTL-001).
   - [x] ELEC-EXT_HALL-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: ELEC-EXT_HALL-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
-  - [ ] ELEC-EXT_HALL-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/EXT_HALL/ builds; acceptance per AQS-PLAN-006 section 5. Depends: ELEC-EXT_HALL-02, ELEC-EXT_HALL-04, ELEC-EXT_HALL-06, ELEC-EXT_HALL-09. Status: partial: M2 at `models/mfg/EXT_HALL/` (real BOM), not accepted per AQS-PLAN-006 section 5 (no drawings). Triage: desk P4.
-  - [ ] ELEC-EXT_HALL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-EXT_HALL-10, X-DWG-01. Triage: desk P4.
+  - [x] ELEC-EXT_HALL-10 CAD model accepted (AQS-PLAN-006 M3). Done when: models/mfg/EXT_HALL/ builds; acceptance per AQS-PLAN-006 section 5. Depends: ELEC-EXT_HALL-02, ELEC-EXT_HALL-04, ELEC-EXT_HALL-06, ELEC-EXT_HALL-09. Evidence: `models/mfg/EXT_HALL/build_log.md` (AQS-PLAN-006 section 5 A-core acceptance: tool versions + checks recorded; STL manifold-checked, drawings name the graph revision).
+  - [x] ELEC-EXT_HALL-11 Fabrication drawings. Done when: drawing set with dimensions, welds, tolerances. Depends: ELEC-EXT_HALL-10, X-DWG-01. Evidence: `models/mfg/EXT_HALL/drawings/` (sheet set: GA + part sheets with dimensions, weld callouts, ISO 2768-m tolerance notes).
   - [x] ELEC-EXT_HALL-12 BOM. Done when: models/mfg/EXT_HALL/bom.csv. Depends: ELEC-EXT_HALL-10. Evidence: `models/mfg/EXT_HALL/bom.csv`.
   - [x] ELEC-EXT_HALL-13 Fabrication route. Done when: docs-authority/fab/EXT_HALL.md. Depends: ELEC-EXT_HALL-10, ELEC-EXT_HALL-12. Evidence: `docs-authority/fab/EXT_HALL.md` (study route).
   - [x] ELEC-EXT_HALL-14 Installation. Done when: installed position, supports, connections in the install sequence. Depends: ELEC-EXT_HALL-13, X-BLD-05, X-ASM-01. Evidence: `docs-authority/INSTALL_SEQUENCE.md` (seat row 56: level position, structural/hoist supports, connections named per edge).
