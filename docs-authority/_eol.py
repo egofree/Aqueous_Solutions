@@ -11,11 +11,11 @@ R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 RULES = [  # (keywords, class, entry, hold or None) first match wins
  (('ndfeb', 'rare earth'), 'metal_reactive', 'leach to precipitate cake (rare earths are not electrowon)', 'Nd/Dy recovery has no unit: held in cake'),
  (('pt-rh', 'platinum'), 'metal_plateable', 'held', 'Pt-Rh is not in the plateable set and has no recovery unit: gauze kept and re-drawn in house'),
- (('titanium', 'ti grade'), 'metal_reactive', 'precipitate cake', 'Ti is not leached at the plant acid strength: held, re-used as cathode blanks'),
+ (('titanium', 'ti grade'), 'metal_reactive', 're-melt in the melt shop (VAC_IND / IND_MELT take Ti scrap and cathode blanks; the EW cascade re-issues them)', None),
  (('6063', 'aluminium', 'aluminum', 'die-cast al', 'al cage', 'a356'), 'metal_reactive', 'leach to precipitate cake', None),
  (('massing only',), 'unassigned', '-',
   'held - standby machine, envelope-only placeholder; material issues at its unit task 10/12 design (owner programme gate)'),
- (('pvdf', 'ptfe', 'fluoro', 'fkm', 'pfa'), 'organic', 'held', 'fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for'),
+ (('pvdf', 'ptfe', 'fluoro', 'fkm', 'pfa'), 'organic', 'F_RECOVER; pyrolysis in the inert retort, the HF off-gas absorbed on the acid loop (A-M-077 acid duty covers the HF class at the plant acid strength)', None),
  (('pvc', 'cpvc'), 'organic', 'OIL_DRYER, OIL_PYRO; chlorine to the HCl loop', None),
  (('frp', 'vinyl ester'), 'organic', 'OIL_PYRO; the glass fibre then reports to silicate_oxide (FLOAT_SINK)', None),
  (('hdpe', 'pe100', 'pe4710', 'pp-h', 'polyprop', 'pir', 'epdm', 'silicone', 'rubber', 'nylon', 'pps', 'peek', 'resin', 'membrane', 'gasket', 'pcb'), 'organic', 'OIL_DRYER, OIL_PYRO', None),

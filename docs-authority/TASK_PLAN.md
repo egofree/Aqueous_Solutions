@@ -60,17 +60,17 @@ Table 2.1. Tasks by group
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
 | FOUNDRY | Process (Mass transform) | 405 | 313 |
-| DIGESTER | Process (Mass transform) | 360 | 243 |
+| DIGESTER | Process (Mass transform) | 360 | 244 |
 | FAB | Process (Mass transform) | 240 | 160 |
 | FARM | Life support / habitat | 240 | 188 |
-| CRYO | Utility / header | 210 | 139 |
-| OIL | Process (Mass transform) | 195 | 130 |
+| CRYO | Utility / header | 210 | 140 |
+| OIL | Process (Mass transform) | 195 | 131 |
 | HEAT | Utility / header | 180 | 120 |
 | POLYMERS | Process (Mass transform) | 165 | 125 |
-| GAS | Process (Mass transform) | 150 | 99 |
-| WTR | Utility / header | 136 | 91 |
+| GAS | Process (Mass transform) | 150 | 100 |
+| WTR | Utility / header | 136 | 92 |
 | MFG | Process (Mass transform) | 150 | 100 |
-| ELEC | Utility / header | 135 | 89 |
+| ELEC | Utility / header | 135 | 90 |
 | HAB | Life support / habitat | 135 | 102 |
 | MEOH | Energy Storage System (Electrochemical) | 90 | 62 |
 | GLASS | Process (Mass transform) | 75 | 51 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 10 |
 | NUT | Process (Mass transform) | 15 | 10 |
-| | **Total** | **3266** | **2377** |
+| | **Total** | **3266** | **2383** |
 
 ## 3. Triage of open tasks
 
@@ -103,7 +103,6 @@ Table 3.1. Open tasks by triage tag
 | Triage | Open tasks |
 | --- | --- |
 | desk P2 | 2 |
-| desk P3 | 6 |
 | desk P4 | 481 |
 | desk P5 | 196 |
 | hardware | 204 |
@@ -1056,7 +1055,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] DIGESTER-CRU-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: DIGESTER-CRU-01, DIGESTER-CRU-02. Evidence: `docs-authority/pid/CRU.svg` (AQS-PID-001).
   - [x] DIGESTER-CRU-04 Nozzle schedule. Done when: docs-authority/nozzles/CRU.csv, one row per edge. Depends: DIGESTER-CRU-03. Evidence: `docs-authority/nozzles/CRU.csv` (all 10 process connections listed).
   - [x] DIGESTER-CRU-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: DIGESTER-CRU-04, DIGESTER-CRU-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 10 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] DIGESTER-CRU-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: DIGESTER-CRU-02. Triage: desk P3.
+  - [x] DIGESTER-CRU-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: DIGESTER-CRU-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] DIGESTER-CRU-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: DIGESTER-CRU-02, DIGESTER-CRU-03. Evidence: `docs-authority/duties/CRU.md` §6 (C7 closed on MASTER_PLAN).
   - [x] DIGESTER-CRU-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: DIGESTER-CRU-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
   - [x] DIGESTER-CRU-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: DIGESTER-CRU-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
@@ -2041,7 +2040,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] CRYO-CRYO_N2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: CRYO-CRYO_N2-01, CRYO-CRYO_N2-02. Evidence: `docs-authority/pid/CRYO_N2.svg` (AQS-PID-001).
   - [x] CRYO-CRYO_N2-04 Nozzle schedule. Done when: docs-authority/nozzles/CRYO_N2.csv, one row per edge. Depends: CRYO-CRYO_N2-03. Evidence: `docs-authority/nozzles/CRYO_N2.csv` (all 6 process connections listed).
   - [x] CRYO-CRYO_N2-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: CRYO-CRYO_N2-04, CRYO-CRYO_N2-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 6 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] CRYO-CRYO_N2-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: CRYO-CRYO_N2-02. Triage: desk P3.
+  - [x] CRYO-CRYO_N2-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: CRYO-CRYO_N2-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] CRYO-CRYO_N2-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: CRYO-CRYO_N2-02, CRYO-CRYO_N2-03. Evidence: `docs-authority/duties/CRYO_N2.md` §6 (C7 closed on MASTER_PLAN).
   - [x] CRYO-CRYO_N2-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: CRYO-CRYO_N2-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (2 loops; AQS-CTL-001).
   - [x] CRYO-CRYO_N2-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: CRYO-CRYO_N2-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
@@ -2252,7 +2251,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] OIL-OIL_FRAC-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: OIL-OIL_FRAC-01, OIL-OIL_FRAC-02. Evidence: `docs-authority/pid/OIL_FRAC.svg` (AQS-PID-001).
   - [x] OIL-OIL_FRAC-04 Nozzle schedule. Done when: docs-authority/nozzles/OIL_FRAC.csv, one row per edge. Depends: OIL-OIL_FRAC-03. Evidence: `docs-authority/nozzles/OIL_FRAC.csv` (all 12 process connections listed).
   - [x] OIL-OIL_FRAC-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: OIL-OIL_FRAC-04, OIL-OIL_FRAC-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 12 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] OIL-OIL_FRAC-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: OIL-OIL_FRAC-02. Triage: desk P3.
+  - [x] OIL-OIL_FRAC-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: OIL-OIL_FRAC-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] OIL-OIL_FRAC-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: OIL-OIL_FRAC-02, OIL-OIL_FRAC-03. Evidence: `docs-authority/duties/OIL_FRAC.md` §6 (C7 closed on MASTER_PLAN).
   - [x] OIL-OIL_FRAC-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: OIL-OIL_FRAC-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (10 loops; AQS-CTL-001).
   - [x] OIL-OIL_FRAC-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: OIL-OIL_FRAC-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
@@ -2773,7 +2772,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] GAS-BAGHOUSE-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: GAS-BAGHOUSE-01, GAS-BAGHOUSE-02. Evidence: `docs-authority/pid/BAGHOUSE.svg` (AQS-PID-001).
   - [x] GAS-BAGHOUSE-04 Nozzle schedule. Done when: docs-authority/nozzles/BAGHOUSE.csv, one row per edge. Depends: GAS-BAGHOUSE-03. Evidence: `docs-authority/nozzles/BAGHOUSE.csv` (all 5 process connections listed).
   - [x] GAS-BAGHOUSE-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: GAS-BAGHOUSE-04, GAS-BAGHOUSE-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 5 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] GAS-BAGHOUSE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: GAS-BAGHOUSE-02. Triage: desk P3.
+  - [x] GAS-BAGHOUSE-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: GAS-BAGHOUSE-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] GAS-BAGHOUSE-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: GAS-BAGHOUSE-02, GAS-BAGHOUSE-03. Evidence: `docs-authority/duties/BAGHOUSE.md` §6 (C7 closed on MASTER_PLAN).
   - [x] GAS-BAGHOUSE-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: GAS-BAGHOUSE-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (3 loops; AQS-CTL-001).
   - [x] GAS-BAGHOUSE-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: GAS-BAGHOUSE-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
@@ -2938,7 +2937,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] WTR-GREY_TREAT-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: WTR-GREY_TREAT-01, WTR-GREY_TREAT-02. Evidence: `docs-authority/pid/GREY_TREAT.svg` (AQS-PID-001).
   - [x] WTR-GREY_TREAT-04 Nozzle schedule. Done when: docs-authority/nozzles/GREY_TREAT.csv, one row per edge. Depends: WTR-GREY_TREAT-03. Evidence: `docs-authority/nozzles/GREY_TREAT.csv` (all 9 process connections listed).
   - [x] WTR-GREY_TREAT-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: WTR-GREY_TREAT-04, WTR-GREY_TREAT-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 10 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] WTR-GREY_TREAT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-GREY_TREAT-02. Triage: desk P3.
+  - [x] WTR-GREY_TREAT-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: WTR-GREY_TREAT-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] WTR-GREY_TREAT-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: WTR-GREY_TREAT-02, WTR-GREY_TREAT-03. Evidence: `docs-authority/duties/GREY_TREAT.md` §6 (C7 closed on MASTER_PLAN).
   - [x] WTR-GREY_TREAT-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: WTR-GREY_TREAT-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
   - [x] WTR-GREY_TREAT-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: WTR-GREY_TREAT-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).
@@ -3312,7 +3311,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] ELEC-ZNBR2-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: ELEC-ZNBR2-01, ELEC-ZNBR2-02. Evidence: `docs-authority/pid/ZNBR2.svg` (AQS-PID-001).
   - [x] ELEC-ZNBR2-04 Nozzle schedule. Done when: docs-authority/nozzles/ZNBR2.csv, one row per edge. Depends: ELEC-ZNBR2-03. Evidence: `docs-authority/nozzles/ZNBR2.csv` (all 5 process connections listed).
   - [x] ELEC-ZNBR2-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: ELEC-ZNBR2-04, ELEC-ZNBR2-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 8 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
-  - [ ] ELEC-ZNBR2-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: ELEC-ZNBR2-02. Triage: desk P3.
+  - [x] ELEC-ZNBR2-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: ELEC-ZNBR2-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] ELEC-ZNBR2-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: ELEC-ZNBR2-02, ELEC-ZNBR2-03. Evidence: `docs-authority/duties/ZNBR2.md` §6 (C7 closed on MASTER_PLAN).
   - [x] ELEC-ZNBR2-08 Instruments and control. Done when: loop listed in AQS-INST-001 with trip and setpoint. Depends: ELEC-ZNBR2-03, X-CTL-01. Evidence: `docs-authority/INSTRUMENT_INDEX.md` (7 loops; AQS-CTL-001).
   - [x] ELEC-ZNBR2-09 Materials and corrosion. Done when: material per wetted stream under AQS-STD-002, checked across AQS-ASSAY-001 Rev C bounding cases. Depends: ELEC-ZNBR2-01, X-MAT-01. Evidence: `docs-authority/UNIT_MATERIALS.md` (per-unit wetted materials; AQS-STD-005 on AQS-STD-002 section 12).

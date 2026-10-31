@@ -30,8 +30,6 @@ Unassigned: 11 lines (Rev A: 113; Rev B: 89; Rev C: 73), every one held with a n
 
 | Reason | Lines |
 |---|---|
-| fluoropolymer: pyrolysis releases HF, which the HCl scrubbers are not designed for | 69 |
-| Ti is not leached at the plant acid strength: held, re-used as cathode blanks | 23 |
 | held - standby machine, envelope-only placeholder; material issues at its unit task 10/12 design (owner programme gate) | 10 |
 | Nd/Dy recovery has no unit: held in cake | 5 |
 | held - pointer line: these parts are classed line by line in their unit BOMs (AQS-INV-004 roll-up) | 1 |

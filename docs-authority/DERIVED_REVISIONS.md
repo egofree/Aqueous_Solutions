@@ -44,7 +44,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/DOC_REGISTER.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/DRAWING_REGISTER.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | 3cb82be (regenerated, no change) | current |
-| `docs-authority/EOL_RETURN.md` | 3cb82be (regenerated, no change) | current |
+| `docs-authority/EOL_RETURN.md` | working tree | current |
 | `docs-authority/FARM_DESIGN.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/FIRE_PROTECTION.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/FOUNDATION.md` | 3cb82be (regenerated, no change) | current |
@@ -491,7 +491,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/COMMISSIONING.csv` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/inventory/DESIGN_CHECK.csv` | 3cb82be (regenerated, no change) | current |
-| `docs-authority/inventory/EOL_RETURN.csv` | 3cb82be (regenerated, no change) | current |
+| `docs-authority/inventory/EOL_RETURN.csv` | working tree | current |
 | `docs-authority/inventory/FRAME_CHECK.json` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/inventory/GAS_DETECTORS.csv` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/inventory/HVAC_ROOMS.csv` | 3cb82be (regenerated, no change) | current |

@@ -149,6 +149,12 @@ EXPLICIT = {
  'OIL_DRYER': 'none with basis: a heated dryer drum - the drying service is the shell itself, heated by the Q3 coil (HL-Q3-A/B-HX4 at 0.055 kW each per the heat-ladder edges); no contacting or separation internals booked',
  'FUEL_CELL': 'PEM fuel-cell stack internals per the issued sizing: the membrane-electrode assemblies at the rated 4.0 kW DC output (S51) with the Q4 heat recovery at 1.14 kW (S53), bipolar plates, end blocks and the balance of plant (humidifier, separator, deoxidiser) per the H2O_ELYZ PEM precedent',
  'FLOAT_SINK': 'none with basis: a water-bath density separator - the bath, the float weir and the sink conveyance are the shell design (the leach_cstr massing books FLOAT_DEWATER and SINK_DEWATER); the separation medium is plain water, no contacting internals',
+ 'BAGHOUSE': 'pulse-jet cartridge filter internals per the dust-capture duty (7.77 kg/d from three machining draws): the filter cartridges sized at a 1.2 m3/min/m2 air-to-cloth ratio (EPA-453 baghouse practice) over the capture-air volume, the tube sheet, the pulse-clean header and the dust hopper with a rotary valve to IA-BAG-01',
+ 'CRU': 'Cl2 recovery column internals per the graph duty (27.37 kg/d acid-polish liquor in; 0.33 + 0.28 kg/d chlorinated feeds out; 27.51 kg/d returned to leach): a packed absorption/stripping column with 25 mm ceramic Intalox saddles at the acid-service class (PERRY9_ABS; AQS-STD-002 M7 glass/ceramic), the reflux distributor and the sump sized from the 27.5 kg/d throughput',
+ 'CRYO_N2': 'none with basis: a pressurised N2 receiver bank per the CRYO_CO2/H2/O2 receiver precedent - SA-312 TP316L DN100 Sch 160 tubes in manifolded halves, open volume, no contacting internals; the bank tube count and volume derive from the receiver sizing at the ASU inflow (196.6 kg/d, CRYO_ASU)',
+ 'GREY_TREAT': 'greywater treatment skid internals per the graph duty (258.8 kg/d treated; the grey, wash and black sub-streams issued on the graph): a screening stage (2 mm wedge-wire), a moving-bed biofilm aeration stage (the same small-MBBR class as BIOFILTER), and a settling stage with a skimmer - sized at the 0.26 m3/d flow',
+ 'OIL_FRAC': 'fractionator column internals per the graph duty (33.4 kg/d pyrolysis oil feed, four cuts at 7.4/9.9/6.2/5.9 kg/d, A-M-138 SU2018_PYRO cut split): a packed column with 6 mm glass Raschig rings in three beds at the 3-bed cut sequence (C5-C10/C11-C18/C19-C28/C29+), each bed sized by the Fenske-Underwood-Gilliland method for the binary-split classes at total reflux minimum',
+ 'ZNBR2': 'ZnBr2 flow-battery stack and electrolyte internals per the graph duty (915.5 kg/d electrolyte circulation, 6.67 kW charge / 5.0 kW discharge): the carbon-plastic electrode pairs in bipolar stacks, the microporous separator, the two PP electrolyte loops with the pumps and heat exchanger to IA-ZNBR-HEAT (A-M-179: ASR 5 ohm cm2, 5 % crossover, 3 % auxiliaries; AQS-TST-007 gates the measured derate)',
 }
 # sharpened open-gap texts for the units whose missing design data is specific (overrides the
 # generic 'no issued internals basis' text; still open - the gap is named, not closed)
@@ -180,6 +186,13 @@ EXPLICIT_EVID = {
  'H2_DRYER': 'docs-authority/sizing/H2_DRYER.md', 'RES_HEAT': 'docs-authority/sizing/RES_HEAT.md',
  'SINTER': 'docs-authority/sizing/SINTER.md', 'SI_REDUCE': 'docs-authority/sizing/SI_REDUCE.md',
  'FLOAT_SINK': 'docs-authority/sizing/FLOAT_SINK.md',
+ 'BAGHOUSE': 'docs-authority/sizing/BAGHOUSE.md',
+ 'CRU': 'docs-authority/sizing/CRU.md',
+ 'CRYO_N2': 'docs-authority/sizing/CRYO_N2.md',
+ 'GREY_TREAT': 'docs-authority/sizing/GREY_TREAT.md',
+ 'OIL_FRAC': 'docs-authority/sizing/OIL_FRAC.md',
+ 'ZNBR2': 'docs-authority/sizing/ZNBR2.md',
+
  'CRYO_HX_Q4': 'docs-authority/sizing/CRYO_HX_Q4.md',
  'MET_HX_Q4': 'docs-authority/sizing/MET_HX_Q4.md',
  'OIL_DRYER': 'docs-authority/sizing/OIL_DRYER.md',
@@ -201,7 +214,7 @@ UM = json.load(open('docs-authority/inventory/UNIT_MATERIALS.json')) if os.path.
 
 g = json.load(open('flow_graph/plant_flow_graph.json'))
 N = {n['unit_id']: n for n in g['nodes']}
-UNITS = sorted(n['unit_id'] for n in g['nodes'] if n.get('class') != 'boundary' and n.get('sector_id'))
+UNITS = sorted(n['unit_id'] for n in g['nodes'] if n.get('class') != 'boundary' and n.get('sector_id') and n.get('presence') == 'present')
 
 defined, none_u, open_u = {}, [], {}
 for u in UNITS:
