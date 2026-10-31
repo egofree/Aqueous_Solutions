@@ -40,7 +40,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/CONTROL_SOFTWARE.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/DECOMMISSIONING.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
-| `docs-authority/DESIGN_CHECK.md` | working tree | current |
+| `docs-authority/DESIGN_CHECK.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/DOC_REGISTER.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/DRAWING_REGISTER.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | 3cb82be (regenerated, no change) | current |
@@ -51,7 +51,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/FRAME_CHECK.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/GAS_DETECTION.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/GAS_SPECIES.md` | 3cb82be (regenerated, no change) | current |
-| `docs-authority/GA_CHECK.md` | working tree | current |
+| `docs-authority/GA_CHECK.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/HAB_DESIGN.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/HALL_EGRESS.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | 3cb82be (regenerated, no change) | current |
