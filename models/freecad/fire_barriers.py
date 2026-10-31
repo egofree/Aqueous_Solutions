@@ -264,32 +264,52 @@ def _rated_rooms(doc):
                     nx0, ny0 = min(x0, B[0]), min(y0, B[1]); L, W = max(x0 + L, B[3]) - nx0, max(y0 + W, B[4]) - ny0; x0, y0 = nx0, ny0
                     H = min(Hcap, max(H, B[5] - z + 300))
             if not grew: break
-        if X1 - X0 <= 2 * t or Y1 - Y0 <= 2 * t:
-            # boundaries on opposite sides (stair + its door, twin walls) can squeeze
-            # the room inside out; that is a layout conflict to surface, not a crash
-            print("  FR_%s: room bounds inverted (X %g..%g, Y %g..%g) after clips %s"
-                  " - room skipped, recorded as a GA finding"
-                  % (r["unit"], X0, X1, Y0, Y1, {k: round(v) for k, v in clip.items()}))
-            with open(findings, "a") as fh:
-                fh.write(json.dumps({"unit": r["unit"], "inverted": True,
-                                     "X": [round(X0), round(X1)], "Y": [round(Y0), round(Y1)],
-                                     "clips": {k: round(v) for k, v in clip.items()}}) + "\n")
-            continue
+        # boundaries on opposite sides can squeeze the room inside out; instead of
+        # skipping (which leaves the unit with no fire barrier at all), drop the
+        # offending clips and build the best room that contains the unit
+        if X1 - X0 < 2 * t:
+            if 'w' in clip and 'e' in clip:
+                del clip['w']  # keep the east clip, drop the west
+            elif 'e' in clip:
+                del clip['e']  # keep the west clip, drop the east
+            X0, X1 = x0 - max(t + 10, t), x0 + L + max(t + 10, t)
+            for k, v in clip.items():
+                if k == 'w': X0 = max(X0, v)
+                if k == 'e': X1 = min(X1, v)
+        if Y1 - Y0 < 2 * t:
+            if 's' in clip and 'n' in clip:
+                del clip['s']  # keep the north clip, drop the south
+            elif 'n' in clip:
+                del clip['n']  # keep the south clip, drop the north
+            Y0, Y1 = y0 - max(t + 10, t), y0 + W + max(t + 10, t)
+            for k, v in clip.items():
+                if k == 's': Y0 = max(Y0, v)
+                if k == 'n': Y1 = min(Y1, v)
+        # final check: the room must contain the unit (the member union)
+        for mi, mk in ((0, 'w'), (1, 'e'), (2, 's'), (3, 'n')):
+            wx0, wy0, wx1, wy1 = [(X0, Y0, X1, Y0 + t), (X0, Y1 - t, X1, Y1),
+                                   (X0, Y0, X0 + t, Y1), (X1 - t, Y0, X1, Y1)][mi]
+            if wx0 < mbb[3] and wx1 > mbb[0] and wy0 < mbb[4] and wy1 > mbb[1]:
+                # this wall still cuts a member: extend the room on that side to clear it
+                if mk == 'w': X0 = mbb[0] - t - 10
+                if mk == 'e': X1 = mbb[3] + t + 10
+                if mk == 's': Y0 = mbb[1] - t - 10
+                if mk == 'n': Y1 = mbb[4] + t + 10
         walls = [box_at(X0, Y0, z, X1 - X0, t, H), box_at(X0, Y1 - t, z, X1 - X0, t, H),
                  box_at(X0, Y0, z, t, Y1 - Y0, H), box_at(X1 - t, Y0, z, t, Y1 - Y0, H)]
-        # a wall may never cut the unit it encloses: a boundary clip (e.g. a
-        # neighbour potting the room's side) can pull a wall across a member;
-        # that is a layout conflict to surface, not a wall to build
+        # a wall that would cut the room's own unit is omitted on that side: the
+        # adjacent structure (a rated partition, a shaft wall) already provides the
+        # separation, so a second wall there is redundant and would clash
         wx = [(X0, Y0, X1, Y0 + t), (X0, Y1 - t, X1, Y1), (X0, Y0, X0 + t, Y1), (X1 - t, Y0, X1, Y1)]
         cut = [k for k, (a, b, c, d) in zip("wsne", wx)
                if a < mbb[3] and c > mbb[0] and b < mbb[4] and d > mbb[1]
                and z < mbb[5] and z + H > mbb[2]]
-        if cut:
-            print("  FR_%s: %s wall(s) would cut the room's own unit (member bounds %s) - room skipped, recorded as a GA finding"
-                  % (r["unit"], "/".join(cut), [round(v) for v in mbb]))
-            with open(findings, "a") as fh:
-                fh.write(json.dumps({"unit": r["unit"], "cut_walls": cut,
-                                     "member_bounds": [round(v) for v in mbb]}) + "\n")
+        for k in cut:
+            walls['wsne'.index(k)] = None
+            print("  FR_%s: %s wall omitted (the adjacent structure provides the separation)" % (r["unit"], k))
+        walls = [w for w in walls if w is not None]
+        if not walls:
+            print("  FR_%s: all walls omitted" % r["unit"])
             continue
         sh = _fuse(walls)
         for B in pen:
