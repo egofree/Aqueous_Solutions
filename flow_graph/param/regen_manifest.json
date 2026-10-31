@@ -437,6 +437,24 @@
    "note": "X-LOC-SPEC: unit task 02 close-out for the ten last unsized units - the grease/lithium specialty chain (GREASE_CA/GREASE_LI kettles, P_CA precipitation, LI_RECOVER carbonation), SI_REDUCE (the PV cell line silicon), ADS_CHILL, DRY_COOLER, GW_INTAKE, MAU_HX and the FEED_PREP/POLY_FIBER/AQUA_UV load bases - rates, design parameters and envelopes, every value with a cited basis."
   },
   {
+   "name": "ree_recover",
+   "argv": [
+    "python3",
+    "-m",
+    "flow_graph.param.ree_recover",
+    "--write"
+   ],
+   "outputs": [
+    "flow_graph/plant_flow_graph.json"
+   ],
+   "depends_on": [
+    "specialty_sizing"
+   ],
+   "writes_graph": true,
+   "quick": false,
+   "note": "A-M-433 X-END-02 rare-earth route (Q-013): REE_RECOVER batch-campaign bench; idempotent node/params/placement seat."
+  },
+  {
    "name": "storage_sizing",
    "argv": [
     "python3",

@@ -630,6 +630,10 @@
 <polygon points="4330,-10700 5023,-11100 5023,-12200 4330,-11800" fill="#00000022" fill-opacity="1.0" stroke="#117864" stroke-width="2"/>
 <polygon points="5023,-11100 4330,-11500 4330,-12600 5023,-12200" fill="#00000044" fill-opacity="1.0" stroke="#117864" stroke-width="2"/>
 <text x="4330" y="-11650" textAnchor="middle" fontSize="12" fill="#111">WS_NITRIC</text>
+<polygon points="11345,-12150 12038,-12550 11518,-12850 10825,-12450" fill="#6c3483" fill-opacity="0.92" stroke="#6c3483" stroke-width="2"/>
+<polygon points="11345,-10750 12038,-11150 12038,-12550 11345,-12150" fill="#00000022" fill-opacity="1.0" stroke="#6c3483" stroke-width="2"/>
+<polygon points="12038,-11150 11518,-11450 11518,-12850 12038,-12550" fill="#00000044" fill-opacity="1.0" stroke="#6c3483" stroke-width="2"/>
+<text x="11432" y="-11800" textAnchor="middle" fontSize="12" fill="#111">REE_RECOVER</text>
 <polygon points="-7621,-17860 -6668,-18410 -7621,-18960 -8574,-18410" fill="#2471a3" fill-opacity="0.92" stroke="#2471a3" stroke-width="2"/>
 <polygon points="-7621,-16600 -6668,-17150 -6668,-18410 -7621,-17860" fill="#00000022" fill-opacity="1.0" stroke="#2471a3" stroke-width="2"/>
 <polygon points="-6668,-17150 -7621,-17700 -7621,-18960 -6668,-18410" fill="#00000044" fill-opacity="1.0" stroke="#2471a3" stroke-width="2"/>

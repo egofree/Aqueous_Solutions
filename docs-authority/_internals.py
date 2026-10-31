@@ -85,6 +85,7 @@ NONE_REASON = {
  'study_stub': 'a study-stub bench; no process internals booked',
  'ferment': 'a static fermenter: headspace, heating and recirculation are the issued mfg BOM services; no contacting internals',
  'digest': 'an anaerobic digester tank: gas headspace, heating mat and flame-arrested recirculation are the issued mfg BOM services; no contacting internals',
+ 'precip': 'a bench precipitation station: jacket, stirrer and filter are the issued mfg BOM services; no separate contacting internals',
  'melt_spin': 'a melt-spin line is a machine: extruder, quench and winder are the issued mfg model; the tooling is the unit task 10-13 deliverable',
  'None-class': 'no classed process internals; duty envelope and material lines carry the design',
 }

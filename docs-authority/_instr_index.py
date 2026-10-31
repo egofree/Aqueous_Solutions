@@ -220,6 +220,10 @@ A('MET_SYN', 'TIR', 'temperature instrumentation recorder', 'reactor column, the
    'the Strecker step is temperature-sensitive: the hydrolysis runs at 100-150 C (X-UI-002; A-M-416)')
 A('MET_SYN', 'FIT', 'flow instrumentation transmitter', 'reagent feed lines', '0-50 g/h',
    'the precursor metering: CH3SH, acrolein and NH3 are each fed at the gram/h class (A-M-416)')
+A('REE_RECOVER', 'TIR', 'temperature instrumentation recorder', 'leach reactor jacket + demag oven + calcine muffle wells', '0-1000 C',
+   'campaign temperature control: leach 55 C, demag > 320 C (Nd2Fe14B Curie), calcine 900 C (A-M-433)')
+A('REE_RECOVER', 'SIT', 'pH instrumentation transmitter', 'leach reactor, PTFE-body pH probe', '0-14 pH',
+   'pH fronts the two precipitations: Fe(OH)3 sweep at pH 3-3.5, RE oxalate at pH 1-2 (A-M-433)')
 A('POLY_FIBER', 'TIR', 'temperature instrumentation recorder', 'melt vessel, thermocouple well', '0-300 C', 'melt temperature is the spin-quality variable: PP spins at the 200-260 C class (X-POLY-01; A-M-429)')
 A('POLY_FIBER', 'FIT', 'flow instrumentation transmitter', 'spin pump discharge', '0-2 kg/h', 'denier control: fibre mass per unit length follows the pump volumetric consistency (X-POLY-01; A-M-429)')
 A('BIOFILTER', 'PT', 'pressure transmitter', 'gauge, loop side', '0-50 kPa', 'biofilter loop pressure watch (X-FARM build-out; A-M-415)')

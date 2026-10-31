@@ -12,7 +12,7 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-01 | bearing: deep-groove ball bearing (608-2Z x144) | 144 | 15 | 10 % min 2 |
 | building block | OF-02 | bearing: deep-groove ball bearing (6201-2Z x488; 6205-2Z x12; 6206-2Z x8; 6204-2Z x8; 6202-2Z x) | 530 | 53 | 10 % min 2 |
 | building block | OF-03 | electronics: PLC digital I/O point (24 V DC x676) | 676 | 68 | 10 % min 1 |
-| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x842) | 842 | 85 | 10 % min 1 |
+| building block | OF-04 | electronics: PLC analog input point (4-20 mA HART x844) | 844 | 85 | 10 % min 1 |
 | building block | OF-05 | electronics: BLDC driver (24/48 V DC x69) | 69 | 7 | 10 % min 1 |
 | building block | OF-06 | electronics: motor starter (contactor + overload) (0.18 kW x242; 0.55 kW x3; 0.12 kW x2; 0.37 kW x2; 0.25 kW x1) | 252 | 26 | 10 % min 1 |
 | building block | OF-07 | electronics: PLC I/O module, 16 channel (24 V DC x95) | 95 | 10 | 10 % min 1 |
@@ -36,8 +36,8 @@ Rule: building blocks and motors by fraction of installed with a minimum; one ch
 | building block | OF-32 | fastener: Lid gasket 40 mm wide (Lid gasket 40 mm wide x1) | 1 | 4 | 2 % min 4 |
 | building block | OF-33 | fastener: Solvent cement (Solvent cement x1) | 1 | 4 | 2 % min 4 |
 | building block | OF-34 | instrument: flow transmitter (DN15 x166; DN50 x17; DN32 x1; DN250 x1; DN300 x1) | 186 | 19 | 10 % min 1 |
-| building block | OF-35 | instrument: pressure transmitter (0-10 bar x175; 0-16 bar x1) | 176 | 18 | 10 % min 1 |
-| building block | OF-36 | instrument: temperature element (Pt100 class A x179) | 179 | 18 | 10 % min 1 |
+| building block | OF-35 | instrument: pressure transmitter (0-10 bar x176; 0-16 bar x1) | 177 | 18 | 10 % min 1 |
+| building block | OF-36 | instrument: temperature element (Pt100 class A x180) | 180 | 18 | 10 % min 1 |
 | building block | OF-37 | instrument: high-level switch (vibrating fork x82) | 82 | 9 | 10 % min 1 |
 | building block | OF-38 | instrument: level transmitter (radar 80 GHz x82) | 82 | 9 | 10 % min 1 |
 | building block | OF-39 | instrument: gas detector, H2 (catalytic bead + IR backup x30) | 30 | 3 | 10 % min 1 |

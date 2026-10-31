@@ -2332,7 +2332,7 @@
         "ref": "AQS-ESS-001",
         "volume_m3_m1": 2700.0,
         "head_m_m1": 36.21,
-        "vs_znbr2_kwh": 3052.0,
+        "vs_znbr2_kwh": 3056.0,
         "fraction_of_znbr2_study": 0.07,
         "continuous_kw_status": "incomplete",
         "diagram_gap": "Dedicated hydro_dock_pfd.png (graph-bridged); campus water_cycle still shows inventory narrative",
@@ -3202,11 +3202,11 @@
       "modules": [],
       "params": {
         "module_kw": 0.5,
-        "count": 6044,
+        "count": 6052,
         "presence": "present",
-        "nameplate_kw": 3022,
+        "nameplate_kw": 3026,
         "area_m2": 26574,
-        "balance_kWp": 1511,
+        "balance_kWp": 1513,
         "oversize_factor": 2.0,
         "mounting": "roof only (X-PAR-07); ground field removed",
         "roof": {
@@ -3426,13 +3426,13 @@
       "continuous_kw": null,
       "modules": [],
       "params": {
-        "kW": 2520.0,
+        "kW": 2580.0,
         "presence": "present",
-        "count": 42,
+        "count": 43,
         "dc_ac_ratio": 1.2,
         "interconnection": {
-          "export_peak_kW": 2302.0,
-          "export_kWh_d_clear": 6539,
+          "export_peak_kW": 2361.7,
+          "export_kWh_d_clear": 6548,
           "standards": "IEEE 1547-2018 Cat. B / III, UL 1741 SB listed; NEC 2026 705.11 supply-side connection, 705.20 disconnect; ANSI C12.20 class 0.2 bidirectional meter",
           "decision": "D75"
         },
@@ -3441,7 +3441,7 @@
           "inverters": [
             11,
             11,
-            10,
+            11,
             10
           ],
           "breaker_A": [
@@ -3858,25 +3858,25 @@
       "notes": "Duty: notes/POWER_DUTIES.md. AQS-NOTE-PV-REBASE Rev A 2026-10-18 \u00a78: kW is charge-governed 1137 / 250 discharge, 3500 kWh = P x 14 h out (5000 in at rt 0.70, A-M-179); distributed over the 49 hybrid inverters (AQS-ELEC-008).",
       "enabled": true,
       "continuous_kw": {
-        "value": 217.9501,
+        "value": 218.2501,
         "unit": "kW",
         "status": "study",
-        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.6 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
+        "note": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.3 kW, charge 992.0 kW, 3056 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value."
       },
       "modules": [],
       "params": {
-        "kW": 991,
-        "kWh": 3052,
+        "kW": 993,
+        "kWh": 3056,
         "presence": "present",
-        "charge_kW": 991,
-        "discharge_kW": 218,
+        "charge_kW": 993,
+        "discharge_kW": 219,
         "charge_basis": "D75 cloudy-day case: yield 0.50 x mean (NREL_PVWATTS8 hourly scaling; NREL_NSRDB distribution to verify, A-M-109); charge = PV peak on that day less direct load",
-        "distribution": "distributed over the 42 hybrid inverters, 72.7 kWh and 23.6 kW charge each (AQS-ELEC-008)",
+        "distribution": "distributed over the 43 hybrid inverters, 71.1 kWh and 23.1 kW charge each (AQS-ELEC-008)",
         "purge_basis": {
-          "H2_m3_d": 7.736,
-          "purge_m3_h": 32.23,
+          "H2_m3_d": 7.747,
+          "purge_m3_h": 32.28,
           "HER_fraction": 0.00658,
-          "electrode_area_m2": 1995.9
+          "electrode_area_m2": 1998.6
         },
         "size_mm": [
           1000,
@@ -9069,6 +9069,72 @@
         "note": "heating jacket + stirrer + metering pumps (X-UI-002 MET_SYN design; A-M-416 route A)"
       },
       "notes": "DL-methionine synthesis closes the animal-loop methionine supplement (A-M-416). Study."
+    },
+    {
+      "unit_id": "REE_RECOVER",
+      "sector_id": "MFG",
+      "class": "precip",
+      "presence": "present",
+      "enabled": true,
+      "tags": [
+        "rare earth",
+        "eol"
+      ],
+      "electrical_role": null,
+      "diagram_gap": null,
+      "modules": [],
+      "notes": "Rare-earth magnet recovery bench (batch campaign, X-END-02 route; Q-013). No continuous mass edges: magnet scrap arises at motor retirement, not per day.",
+      "continuous_kw": {
+        "value": 0.3,
+        "unit": "kW",
+        "status": "study",
+        "note": "A-M-433 X-END-02 rare-earth route (Q-013): REE_RECOVER batch campaign. muffle 0.25 kW + stirrer/pumps 0.05 kW; campaign duty, not continuous process load."
+      },
+      "params": {
+        "sizing": {
+          "campaign_kg": 1.618,
+          "reo_kg_campaign": 0.585,
+          "reactor_L": 10.0,
+          "power_kW": 0.3,
+          "basis": "bench campaign skid: 10 L glass-lined leach reactor + demag oven + filter + muffle; largest installed-family campaign MF-02 1.578 kg (A-M-433)"
+        },
+        "sec3_material": {
+          "mat": "glass-lined reactor, PTFE transfer, PP-H filter wetted (HCl service per AQS-STD-002 thermoplastic rules; no metal wetted part below 60 C); 316L muffle shell (dry oxide, 900 C)",
+          "basis": "X-MAT-22 section-3 selection for the REE_RECOVER campaign bench: HCl leach at < 60 C (thermoplastic/glass class per AQS-STD-002 M-rules); the 900 C muffle is dry oxide service (316L shell). The campaign chemistry is dilute 30 wt% HCl at 55 C with PTFE/PP-H wetted faces (A-M-433). Selection per AQS-STD-002 with the duty section 2 environment (X-MAT-22).",
+          "alt": "Hastelloy C-276 wetted parts if the campaign moves above 60 C (AQS-STD-002 metal-acid rule); not required at the bench campaign scale",
+          "note": "X-MAT-22 issued selection for the campaign bench; thermoplastic/glass wetted class",
+          "task": "X-MAT-22"
+        },
+        "size_mm": [
+          800,
+          600,
+          1400
+        ],
+        "size_note": "bench campaign skid: demag oven + 10 L leach reactor + filter + muffle on one frame (fume-hood class, MET_SYN row); A-M-433 X-END-02 rare-earth route (Q-013): REE_RECOVER batch campaign",
+        "design": {
+          "service": "rare-earth magnet recovery (batch campaign): demag > 320 C, HCl leach, Fe removal, RE oxalate precipitation, 900 C calcine",
+          "route": "published short-product NdFeB recycling; HCl from the plant acid loop (BMED 30 wt% class)",
+          "campaign": {
+            "ndfeb_kg": 1.618,
+            "re_pct": 31.0,
+            "fe_pct": 67.8,
+            "b_pct": 1.2,
+            "hcl_30_kg": 6.0,
+            "h2o2_30_kg": 1.11,
+            "oxalic_kg": 0.46,
+            "naoh_kg": 2.36,
+            "wash_kg": 10.0,
+            "reo_kg": 0.585,
+            "fe_cake_kg": 2.1,
+            "brine_kg": 18.8,
+            "brine_nacl_pct": 16.6,
+            "h2_kg": 0.04,
+            "families": "MF-01 14 x 2.8 g; MF-02 55 x 28.7 g installed; MF-03/22/23 reserved variants"
+          },
+          "campaign_basis": "largest installed-family campaign MF-02 55 x 28.7 g = 1.578 kg; full-fleet campaign 1.618 kg (A-M-433); reserved families (MF-23 555.2 g/unit) ride the same batch capacity",
+          "closures": "Fe(OH)3 cake to MET_MELT remnant; NaCl brine filtrate to the BMED feed class; REO product exported"
+        }
+      }
     }
   ],
   "edges": [
@@ -12428,10 +12494,10 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 915.862641,
+        "value": 917.123291,
         "unit": "kg/d",
         "status": "study",
-        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.2 m3/h holds H2 at 25 % LFL: HER 6.59 + open-circuit 1.15 m3/d H2 on 4359 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
+        "note": "AQS-DUTY-010: headspace purge 30.0 m3/h (VENT_SCRUB 2.2 band 10-50 mid) at ambient humidity + 10 ppmv Br2 | X-PAR-02 TF: purge 32.3 m3/h holds H2 at 25 % LFL: HER 6.60 + open-circuit 1.15 m3/d H2 on 4365 kWh/d charge (ZBFB_REVIEW2023, NFPA 69) (AQS-PAR-003)."
       },
       "from_sector_id": "ELEC",
       "to_sector_id": "ELEC"
@@ -12451,7 +12517,7 @@
       ],
       "open_boundary": false,
       "rate": {
-        "value": 915.862641,
+        "value": 917.123291,
         "unit": "kg/d",
         "status": "study",
         "note": "AQS-DUTY-011 Rev M. Circulation returns. Water accumulation leaves on IA-ZNBR-BD. | X-PAR-02 TF: regen return = purge (closed loop, H2 recombined with Br2 in the regen bed) (AQS-PAR-003)."
@@ -26802,21 +26868,21 @@
         "PUMPED_HYDRO"
       ],
       "need_kw": {
-        "value": 217.95,
+        "value": 218.25,
         "unit": "kW",
         "status": "study",
         "note": "write_graph power() live derivation (A-M-234 replaced_by; A-M-258): converged bounding demand incl. the EXT_HALL extension (roof_close 35x23 bays, ext 99.18 kW)."
       },
       "target_kw": {
-        "value": 544.88,
+        "value": 545.63,
         "unit": "kW",
         "status": "study",
         "note": "write_graph power() live derivation: mean-day average generation of the installed array = pv_oversize_factor x balancing energy / 24 (= 2.5 x need at the drivers basis; A-M-234 formula, D75)."
       },
       "pv_module_kw": 0.5,
-      "pv_count": 6044,
+      "pv_count": 6052,
       "znbr_module_kw": 60.0,
-      "znbr_count": 42,
+      "znbr_count": 43,
       "rect_count": 1,
       "notes": "write_graph power() (single writer, D1/D2/D4): need/target/PV/storage chain derived again per A-M-234 replaced_by / A-M-258 from docs-authority/_power_sizing.py (demand = max(node continuous_kw, SOL_ARK feed) + RECT-EW bounding AC, A-M-231) and solver.roof_close; pv_module_kw x pv_count = PV_ARRAY.params.nameplate_kw; znbr_* = the SOL_ARK hybrid-inverter block the ZNBR2 store is distributed over; rect_count = the single nine-channel RECTIFIER (Rev AC; RECT_EW remap, A-M-255)."
     },

@@ -160,6 +160,8 @@
 <text x="39586" y="4596" fontSize="11">Q4_BUS</text>
 <rect x="25680" y="17380" width="1600" height="800" fill="#2c6fbb33" stroke="#2c6fbb" stroke-width="2"/>
 <text x="25686" y="17396" fontSize="11">RECTIFIER</text>
+<rect x="44880" y="8780" width="800" height="600" fill="#6c348333" stroke="#6c3483" stroke-width="2"/>
+<text x="44886" y="8796" fontSize="11">REE_RECOVER</text>
 <rect x="80" y="14080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>
 <text x="86" y="14096" fontSize="11">RES_HEAT</text>
 <rect x="1880" y="14080" width="1000" height="1000" fill="#93511633" stroke="#935116" stroke-width="2"/>

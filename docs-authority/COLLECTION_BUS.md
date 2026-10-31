@@ -34,12 +34,12 @@ Table 2.1. Collection bus sections
 
 | Section | Inverters | kW | 480 V A | Breaker A | Transformer kVA | MV A | MV fuse A | Storage kWh | Charge kW |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| CB-1 | 11 | 660 | 794 | 1000 | 750 | 34.7 | 65 | 799 | 260 |
-| CB-2 | 11 | 660 | 794 | 1000 | 750 | 34.7 | 65 | 799 | 260 |
-| CB-3 | 10 | 600 | 722 | 1000 | 750 | 34.7 | 65 | 727 | 236 |
-| CB-4 | 10 | 600 | 722 | 1000 | 750 | 34.7 | 65 | 727 | 236 |
+| CB-1 | 11 | 660 | 794 | 1000 | 750 | 34.7 | 65 | 782 | 254 |
+| CB-2 | 11 | 660 | 794 | 1000 | 750 | 34.7 | 65 | 782 | 254 |
+| CB-3 | 11 | 660 | 794 | 1000 | 750 | 34.7 | 65 | 782 | 254 |
+| CB-4 | 10 | 600 | 722 | 1000 | 750 | 34.7 | 65 | 711 | 231 |
 
-MV collection bus: 117 A at 12.47 kV for 2520 kW.
+MV collection bus: 119 A at 12.47 kV for 2580 kW.
 
 ## 3. Plant loads and islanding
 
@@ -47,7 +47,7 @@ The plant bus (MCC-1, PP-1, RECT-EW and the process feeders, 183.0 kW on the gra
 
 ## 4. Fault level
 
-Every 480 V section sees its own inverters plus the others through two transformers; bounded by all inverters at 2 x rated, 6062 A (AQS-ELEC-006). Section breakers are rated for that with margin (65 kA interrupting class). Utility contribution at the MV bus is held (A-M-113).
+Every 480 V section sees its own inverters plus the others through two transformers; bounded by all inverters at 2 x rated, 6207 A (AQS-ELEC-006). Section breakers are rated for that with margin (65 kA interrupting class). Utility contribution at the MV bus is held (A-M-113).
 
 ## Code basis (X-STD-01)
 

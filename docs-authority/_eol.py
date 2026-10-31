@@ -9,7 +9,7 @@ and docs-authority/EOL_RETURN.md. Run: python3 docs-authority/_eol.py"""
 import csv, collections, os, re
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__))); os.chdir(R)
 RULES = [  # (keywords, class, entry, hold or None) first match wins
- (('ndfeb', 'rare earth'), 'metal_reactive', 'leach to precipitate cake (rare earths are not electrowon)', 'Nd/Dy recovery has no unit: held in cake'),
+ (('ndfeb', 'rare earth'), 'metal_reactive', 'REE_RECOVER campaign: demag > 320 C, HCl leach, Fe(OH)3 removal (cake to MET_MELT remnant), oxalate precipitation, 900 C calcine to REO; NaCl filtrate to the BMED feed class (A-M-433)', None),
  (('pt-rh', 'platinum'), 'metal_plateable', 'held', 'Pt-Rh is not in the plateable set and has no recovery unit: gauze kept and re-drawn in house'),
  (('titanium', 'ti grade'), 'metal_reactive', 're-melt in the melt shop (VAC_IND / IND_MELT take Ti scrap and cathode blanks; the EW cascade re-issues them)', None),
  (('6063', 'aluminium', 'aluminum', 'die-cast al', 'al cage', 'a356'), 'metal_reactive', 'leach to precipitate cake', None),

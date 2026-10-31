@@ -566,6 +566,7 @@ Four process headers stay isolated. A fifth caustic branch is local to BMED / di
 {HRC -- hot-rolled coil: the baseline carbon-steel mill product form used for the steel price basis.}
 {HC -- hot-rolled carbon steel: sheet and plate from the HRC mill route.}
 {SHS -- square hollow section: structural steel tube.}
+{SIT -- pH instrumentation transmitter (indicate/transmit), tagged per ISA5.1_2022 practice.}
 {NFPA -- National Fire Protection Association. Fire/H₂/ESS/oxidizer themes (e.g. NFPA 2, 13, 30, 55, 400, 855).}
 
 {CGP -- Construction General Permit, the TPDES general permit for stormwater from construction sites.}

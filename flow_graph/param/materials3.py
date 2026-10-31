@@ -361,6 +361,15 @@ SEL = {
   'Silicon-carbide hot face when batch chemistry reaches beyond the graphite class (a process-change '
   'decision, not a materials trade)',
   'no wetted stream on the graph; the selection is the construction class only.'),
+ 'REE_RECOVER': (
+  'glass-lined reactor, PTFE transfer, PP-H filter wetted (HCl service per AQS-STD-002 thermoplastic '
+  'rules; no metal wetted part below 60 C); 316L muffle shell (dry oxide, 900 C)',
+  'X-MAT-22 section-3 selection for the REE_RECOVER campaign bench: HCl leach at < 60 C '
+  '(thermoplastic/glass class per AQS-STD-002 M-rules); the 900 C muffle is dry oxide service (316L '
+  'shell). The campaign chemistry is dilute 30 wt% HCl at 55 C with PTFE/PP-H wetted faces (A-M-433). ' + _TAG,
+  'Hastelloy C-276 wetted parts if the campaign moves above 60 C (AQS-STD-002 metal-acid rule); '
+  'not required at the bench campaign scale',
+  'X-MAT-22 issued selection for the campaign bench; thermoplastic/glass wetted class'),
 }
 
 # X-FARM/X-HAB lane: the FARM/HAB build-out units (A-M-415..425). Same method as X-MAT-22:

@@ -62,6 +62,7 @@ step,system,unit,drain_kg,chemicals,purge,dismantle_kg,confined_space
 4,MFG,MET_MELT,0,Pb/Sn/Ni/Cd/Zn blend metal,-,338,no
 4,MFG,MET_SCRUB,0,solute,-,192,no
 4,MFG,MFG_SHOP,1406,Pb/Sn/Ni/Cd/Zn blend hydrocarbon metal solute,"N2 to < 25 % LFL, then < 1 % H2",338,yes
+4,MFG,REE_RECOVER,0,,-,101,no
 4,MFG,WIRE_DRAW,0,Cu,-,338,no
 5,HAB,COMMON_AREA,0,,-,3600,no
 5,HAB,GALLEY,0,,-,4320,no

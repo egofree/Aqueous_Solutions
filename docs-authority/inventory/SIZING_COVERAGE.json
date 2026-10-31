@@ -779,6 +779,11 @@
   "docnum": "AQS-HAB-002",
   "family": "Hab interior zoning (docs-authority/_farm_hab.py; A-M-419)"
  },
+ "REE_RECOVER": {
+  "doc": "docs-authority/sizing/REE_RECOVER.md",
+  "docnum": "AQS-SIZE-REE_RECOVER",
+  "family": "Unit sizing sweep - graph params + vessel calc (docs-authority/_unit_sizing_sweep.py)"
+ },
  "RELIEF_CRYO": {
   "doc": "docs-authority/sizing/RELIEF_CRYO.md",
   "docnum": "AQS-SIZE-RELIEF_CRYO",

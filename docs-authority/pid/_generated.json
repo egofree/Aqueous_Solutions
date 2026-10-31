@@ -1,6 +1,6 @@
 {
  "generated_by": "docs-authority/_pid_sheets.py",
- "graph_sha256": "a68069cea430aa988f392ed5983c64b1e0fc779ac1b46b8bff45f81929bf5159",
+ "graph_sha256": "475d1b8987f93a3ec8e9d9ada6223f59ff362b10e22ac346960eb0bbbc788060",
  "patterns": [
   "docs-authority/pid/*"
  ],
@@ -161,6 +161,7 @@
   "RABBIT_HUTCH",
   "RECTIFIER",
   "REC_DAYROOM",
+  "REE_RECOVER",
   "RELIEF_CRYO",
   "RELIEF_H2",
   "REMIN",

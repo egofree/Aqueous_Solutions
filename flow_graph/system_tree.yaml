@@ -410,6 +410,15 @@ nodes:
   - id: MFG.tools-metal-forming-train.hall-services.MET_HX_Q4
     parent: MFG.tools-metal-forming-train.hall-services
     unit_id: MET_HX_Q4
+  - id: MFG.tools-metal-forming-train.eol-recovery
+    parent: MFG.tools-metal-forming-train
+    description: >-
+      Rare-earth magnet recovery bench (batch campaign): the motor families' NdFeB at
+      retirement; demag, HCl leach, Fe(OH)3 removal, RE oxalate precipitation, REO calcine
+      (X-END-02 route; A-M-433).
+  - id: MFG.tools-metal-forming-train.eol-recovery.REE_RECOVER
+    parent: MFG.tools-metal-forming-train.eol-recovery
+    unit_id: REE_RECOVER
   - id: MFG.tools-metal-forming-train.tool-stubs
     parent: MFG.tools-metal-forming-train
     description: >-

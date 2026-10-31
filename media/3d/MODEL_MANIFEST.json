@@ -1,8 +1,8 @@
 {
  "site_id": "baseline",
  "placement_seed_revision": "O",
- "units_total": 215,
- "built": 200,
+ "units_total": 216,
+ "built": 201,
  "ghosts_eliminated": 0,
  "block_centre_massing": 0,
  "unplaced": [
@@ -39,7 +39,7 @@
   "L2": "LEVEL_L2.svg",
   "ROOF": "LEVEL_ROOF.svg"
  },
- "glb_units": 200,
+ "glb_units": 201,
  "errors": [],
  "units": [
   {
@@ -1221,6 +1221,13 @@
    "unit_id": "REC_HDR",
    "sector_id": "GAS",
    "status": "unplaced"
+  },
+  {
+   "unit_id": "REE_RECOVER",
+   "sector_id": "MFG",
+   "level": "L0",
+   "status": "built",
+   "basis": "A-M-433 X-END-02 rare-earth route (Q-013): REE_RECOVER batch campaign: bench campaign unit seated beside the MFG wet-chem row (MET_SYN), 800 mm clearance; no daily mass edges, so the process-adjacency refinement does not re-seat it."
   },
   {
    "unit_id": "RELIEF_CRYO",

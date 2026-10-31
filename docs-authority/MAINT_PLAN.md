@@ -221,5 +221,6 @@ Gas detectors (AQS-SAF-006): quarterly bump test, 6-monthly calibration, heads r
 | AQUA_UV | uv_sanitizer | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | POLY_FIBER | melt_spin | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 | MET_SYN | chemical_synthesis | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
+| REE_RECOVER | precip | lubrication (6 mo, A-M-189); vibration and temperature check (3 mo, A-M-189); bearing replacement (5 y, A-M-189); seal replacement (3 y, A-M-189) |
 
-212 units, 462 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.
+213 units, 466 tasks. Intervals marked A-M-189 are study values until the first year of condition data; code intervals are maxima.

@@ -19,9 +19,9 @@ This page is the specification sheet for everything the shop buys: one datasheet
 |---|---|
 | fastener | 15283 |
 | support | 7355 |
-| electronics | 1953 |
+| electronics | 1955 |
 | valve | 988 |
-| instrument | 842 |
+| instrument | 844 |
 | bearing | 674 |
 | protection | 266 |
 | seal | 222 |
@@ -52,10 +52,10 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-03 | PLC digital I/O point | IEC 61131-2 | 24 V DC x676 | 676 | 89 | Acid day tank D160 x 300 mm with metering pump: run and fault (assumed); Band saw: main drive: run and fault (assumed); Biogas recirculation diaphragm |  |
-| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x842 | 842 | 1 | one per instrument |  |
+| OF-04 | PLC analog input point | IEC 61131-2 | 4-20 mA HART x844 | 844 | 1 | one per instrument |  |
 | OF-05 | BLDC driver | IEC 61800-5-1 | 24/48 V DC x69 | 69 | 15 | Biogas recirculation diaphragm blower about 2 L/min; Motor: cathode air blower (BLDC, 57 mm (NEMA 23 flange)); Motor: cathode air blower (induction IE |  |
 | OF-06 | motor starter (contactor + overload) | IEC 60947-4-1 | 0.18 kW x242; 0.55 kW x3; 0.12 kW x2; 0.37 kW x2; 0.25 kW x1; 1.1 kW x1; 0.75 kW x1 | 252 | 70 | Acid day tank D160 x 300 mm with metering pump (assumed VFD at >= 0.75 kW); Body / envelope 600 x 600 x 600 mm (assumed VFD at >= 0.75 kW); Body / env |  |
-| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x95 | 95 | 1 | 1518 points / 16 |  |
+| OF-07 | PLC I/O module, 16 channel | IEC 61131-2 | 24 V DC x95 | 95 | 1 | 1520 points / 16 |  |
 | OF-08 | variable-frequency drive | IEC 61800-5-1 | 2.2 kW x4; 1.5 kW x3; 7.5 kW x3; 1.1 kW x2; 4 kW x1 | 13 | 10 | Band saw: main drive (assumed VFD at >= 0.75 kW); Blower, single-stage centrifugal, ratio 1.616, 1.189 kW shaf (assumed VFD at >= ; Blower, single-sta |  |
 | OF-10 | compressor contactor + overload | IEC 60947-4-1 | 1.1 kW hermetic x1 | 1 | 1 | cryocooler compressor |  |
 | OF-11 | stepper driver | IEC 61800-5-1 | 24/48 V DC x3 | 3 | 1 | CNC vertical mill: axis drive |  |
@@ -65,8 +65,8 @@ This page is the specification sheet for everything the shop buys: one datasheet
 | Family | Item | Standard class (bought to) | Sizes in use | Qty | Units | Basis | Interface note |
 |---|---|---|---|---|---|---|---|
 | OF-34 | flow transmitter | electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456 | DN15 x166; DN50 x17; DN32 x1; DN250 x1; DN300 x1 | 186 | 64 | C29_RECYCLE: pumped line (assumed); CRU_TO_TFE: pumped line (assumed); CRU_TO_VDF: pumped line (assumed) | spec per tag on AQS-CTL-001 |
-| OF-35 | pressure transmitter | ceramic diaphragm, IEC 61298 | 0-10 bar x175; 0-16 bar x1 | 176 | 176 | duty item 5 (one per unit); range >= 1.25 x design pressure | spec per tag on AQS-CTL-001 |
-| OF-36 | temperature element | IEC 60751, 316L thermowell | Pt100 class A x179 | 179 | 179 | duty item 5 (assumed one per unit) | spec per tag on AQS-CTL-001 |
+| OF-35 | pressure transmitter | ceramic diaphragm, IEC 61298 | 0-10 bar x176; 0-16 bar x1 | 177 | 177 | duty item 5 (one per unit); range >= 1.25 x design pressure | spec per tag on AQS-CTL-001 |
+| OF-36 | temperature element | IEC 60751, 316L thermowell | Pt100 class A x180 | 180 | 180 | duty item 5 (assumed one per unit) | spec per tag on AQS-CTL-001 |
 | OF-37 | high-level switch | IEC 60947-5, 316L | vibrating fork x82 | 82 | 82 | duty item 5: high level trips the inlet | spec per tag on AQS-CTL-001 |
 | OF-38 | level transmitter | IEC 62828, PTFE lens | radar 80 GHz x82 | 82 | 82 | duty item 5: liquid holdup | spec per tag on AQS-CTL-001 |
 | OF-39 | gas detector, H2 | alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling | catalytic bead + IR backup x30 | 30 | 14 | AQS-SAF-006 2oo3 to SIF (AQS-CTL-003); AQS-SAF-006 alarm 1oo2 | spec per tag on AQS-CTL-001 |

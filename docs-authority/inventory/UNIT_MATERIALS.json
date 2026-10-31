@@ -170,6 +170,7 @@
   "RECTIFIER",
   "REC_DAYROOM",
   "REC_HDR",
+  "REE_RECOVER",
   "RELIEF_CRYO",
   "RELIEF_H2",
   "REMIN",
@@ -217,5 +218,5 @@
  ],
  "open": {},
  "tot_wetted_rows": 396,
- "units": 214
+ "units": 215
 }

@@ -155,6 +155,7 @@ QUAIL_CAGE,AQS-PID-001-QUAIL_CAGE,635f276a,docs-authority/pid/QUAIL_CAGE.svg,FAR
 RABBIT_HUTCH,AQS-PID-001-RABBIT_HUTCH,dc9bf14e,docs-authority/pid/RABBIT_HUTCH.svg,FARM,hutch,1,3,6,0,2,0,6
 RECTIFIER,AQS-PID-001-RECTIFIER,8446e9d7,docs-authority/pid/RECTIFIER.svg,ELEC,rectifier,1,14,0,0,2,0,7
 REC_DAYROOM,AQS-PID-001-REC_DAYROOM,859c3421,docs-authority/pid/REC_DAYROOM.svg,HAB,dayroom,0,0,0,0,1,0,0
+REE_RECOVER,AQS-PID-001-REE_RECOVER,7510ee98,docs-authority/pid/REE_RECOVER.svg,MFG,precip,0,0,0,0,4,0,2
 RELIEF_CRYO,AQS-PID-001-RELIEF_CRYO,174daece,docs-authority/pid/RELIEF_CRYO.svg,CRYO,relief,2,0,0,0,1,0,4
 RELIEF_H2,AQS-PID-001-RELIEF_H2,b7da409d,docs-authority/pid/RELIEF_H2.svg,GAS,relief,1,0,0,0,1,0,3
 REMIN,AQS-PID-001-REMIN,ce8bddcf,docs-authority/pid/REMIN.svg,WTR,dose,2,2,6,0,6,1,5
@@ -193,5 +194,5 @@ WS_PEROX,AQS-PID-001-WS_PEROX,be9d3c1d,docs-authority/pid/WS_PEROX.svg,FAB,reage
 WS_PHOS,AQS-PID-001-WS_PHOS,93a22b27,docs-authority/pid/WS_PHOS.svg,FAB,reagent,1,2,6,0,6,1,5
 WS_SLURRY,AQS-PID-001-WS_SLURRY,8f905312,docs-authority/pid/WS_SLURRY.svg,FAB,reagent,1,1,3,0,5,1,4
 WS_SOLV,AQS-PID-001-WS_SOLV,78112ec2,docs-authority/pid/WS_SOLV.svg,FAB,reagent,1,1,3,0,5,1,7
-ZNBR2,AQS-PID-001-ZNBR2,5fd43763,docs-authority/pid/ZNBR2.svg,ELEC,flow_battery,3,5,9,0,7,1,10
-ZNBR2_BR2_REGEN,AQS-PID-001-ZNBR2_BR2_REGEN,b2892c48,docs-authority/pid/ZNBR2_BR2_REGEN.svg,ELEC,scrubber,1,1,3,0,5,1,4
+ZNBR2,AQS-PID-001-ZNBR2,13870377,docs-authority/pid/ZNBR2.svg,ELEC,flow_battery,3,5,9,0,7,1,10
+ZNBR2_BR2_REGEN,AQS-PID-001-ZNBR2_BR2_REGEN,cbe5e29e,docs-authority/pid/ZNBR2_BR2_REGEN.svg,ELEC,scrubber,1,1,3,0,5,1,4

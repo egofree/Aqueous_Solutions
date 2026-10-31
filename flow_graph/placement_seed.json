@@ -3787,6 +3787,21 @@
     1500
    ],
    "source": "process-adjacency placement (two-level refinement: Rev N blocks seated by weighted adjacency around the pinned constellation, then greedy nearest-to-seated-neighbours; mass edges set geometry; 800 mm clearance). Grid predecessor: sequential fill without design logic."
+  },
+  {
+   "unit_id": "REE_RECOVER",
+   "level": "L0",
+   "origin_mm": [
+    17300,
+    4200,
+    0
+   ],
+   "size_mm": [
+    800,
+    600,
+    1400
+   ],
+   "source": "A-M-433 X-END-02 rare-earth route (Q-013): REE_RECOVER batch campaign: bench campaign unit seated beside the MFG wet-chem row (MET_SYN), 800 mm clearance; no daily mass edges, so the process-adjacency refinement does not re-seat it."
   }
  ],
  "notes_rev_f": "2026-10-07. Origins only; issued size_mm unchanged. Resolved BACKUP_GEN x FUEL_CELL, MEOH_SYNTH x MEOH_TANK, PV_ARRAY x ZNBR2_BR2_REGEN, GLASS_BURNOUT x PROD_C5_C10 / PROD_C11_C18 and C29_RECYCLE x GLASS_RINSE / GLASS_MILL. Moved boxes keep 600 mm (maint_clear_mm) to every neighbour; BACKUP_GEN and FUEL_CELL keep 1100 mm (nec_110_26_mm, stricter than 1000 mm) on all faces because the electrical face is not fixed in docs-authority. Line items (recycle pipe) are exempt from the maintenance figure but may not intersect. GEO_ORC pad stays empty. Plate-world origins; PROCESS_DX/DY not applied.",

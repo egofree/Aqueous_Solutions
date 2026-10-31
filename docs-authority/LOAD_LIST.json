@@ -1,6 +1,6 @@
 {
  "_generated_from": {
-  "graph_sha256": "a68069cea430aa988f392ed5983c64b1e0fc779ac1b46b8bff45f81929bf5159",
+  "graph_sha256": "475d1b8987f93a3ec8e9d9ada6223f59ff362b10e22ac346960eb0bbbc788060",
   "generator": "docs-authority/_load_list.py"
  },
  "rows": [
@@ -16,9 +16,9 @@
   {
    "unit": "ZNBR2",
    "role": "storage",
-   "kw": 217.95,
-   "calc_kw": 217.95,
-   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.0 kW, charge 990.6 kW, 3051 kWh over 42 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
+   "kw": 218.25,
+   "calc_kw": 218.25,
+   "basis": "X-ELS-02: solved continuous discharge rating from docs-authority/_power_sizing.py (AQS-ELEC-007, D75 chain; single writer write_graph power()): discharge 218.3 kW, charge 992.0 kW, 3056 kWh over 43 hybrid inverters (AQS-ELEC-008). Neither path is demand (storage); the charge draw rides IA-ESS-ZNBR2-CHG. Was the stale 60 kW study value.",
    "class": "calculated",
    "sector": "ELEC"
   },
@@ -743,6 +743,15 @@
    "sector": "POLYMERS"
   },
   {
+   "unit": "REE_RECOVER",
+   "role": "\u2014",
+   "kw": 0.3,
+   "calc_kw": null,
+   "basis": "study share - basis pending: no calculation cited on the graph stamp (unit task 02)",
+   "class": "pending",
+   "sector": "MFG"
+  },
+  {
    "unit": "GREASE_CA",
    "role": "\u2014",
    "kw": 0.2,
@@ -925,18 +934,18 @@
  ],
  "summary": {
   "calculated": 78,
-  "pending": 11,
+  "pending": 12,
   "standby_zero": 9,
   "owner_lock": 2,
   "null": 2,
-  "rows": 102,
-  "graph_sum_kW": 179.28,
-  "calc_sum_kW": 179.28,
-  "connected_load_kW": 179.3,
+  "rows": 103,
+  "graph_sum_kW": 179.58,
+  "calc_sum_kW": 179.58,
+  "connected_load_kW": 179.6,
   "connected_calculated_kW": 177.6,
   "connected_standby_kW": 0.1,
-  "connected_study_kW": 1.6,
-  "connected_calculated_pct": 99.1,
+  "connected_study_kW": 1.9,
+  "connected_calculated_pct": 98.9,
   "by_sector": {
    "CRYO": {
     "calculated": 4
@@ -982,7 +991,8 @@
     "null": 1
    },
    "MFG": {
-    "calculated": 8
+    "calculated": 8,
+    "pending": 1
    },
    "NUT": {
     "calculated": 1

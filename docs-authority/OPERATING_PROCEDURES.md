@@ -139,9 +139,9 @@ Units: COMMON_AREA, GALLEY, HABITATION, MEDICAL, REC_DAYROOM, SLEEP_QUARTERS, WA
 
 ## 15. MFG
 
-Units: BLOW_MOLD, COLD_MILL, ELECTRODE_COAT, GAS_ATOMIZER, MET_AHU, MET_HX_Q4, MET_MELT, MET_SCRUB, MFG_SHOP, WIRE_DRAW.
+Units: BLOW_MOLD, COLD_MILL, ELECTRODE_COAT, GAS_ATOMIZER, MET_AHU, MET_HX_Q4, MET_MELT, MET_SCRUB, MFG_SHOP, REE_RECOVER, WIRE_DRAW.
 
-- **Normal:** 30 loops on PLC-MFG in auto; operator rounds per shift on levels and temperatures of MFG_SHOP; alarm response per AQS-CTL-001.
+- **Normal:** 34 loops on PLC-MFG in auto; operator rounds per shift on levels and temperatures of MFG_SHOP; alarm response per AQS-CTL-001.
 - **Start:** permissives: upstream systems 1-14 running, trips healthy and reset, gas detection healthy. Fill liquid units, warm, then feed at 25/50/100 % with 1 h holds (AQS-COM-002 rates).
 - **Stop:** feeds off, hold until temperature and gas inventories reach the hold state, isolate; downstream systems 16-18 stopped first. Normal stop leaves liquids in place, hot or cold standby.
 - **Emergency:** 11 trips: SIF-041 flow or level low-low → pump stop; SIF-006 flow or level low-low → pump stop; SIF-040 flow or level low-low → pump stop; SIF-015 flow or level low-low → pump stop; SIF-026 flow or level low-low → pump stop; SIF-027 flow or level low-low → pump stop …. After a trip: find cause, reset at the safety PLC (two-person), restart from Start.

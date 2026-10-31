@@ -2,7 +2,7 @@ family,category,item,spec,qty,sizes,units
 OF-01,bearing,deep-groove ball bearing,"ISO 15, normal class",144,608-2Z x144,16
 OF-02,bearing,deep-groove ball bearing,"ISO 15 / ISO 492 normal class, C3",530,6201-2Z x488; 6205-2Z x12; 6206-2Z x8; 6204-2Z x8; 6202-2Z x6; 6308-2Z x6; 6306-2Z x2,75
 OF-03,electronics,PLC digital I/O point,IEC 61131-2,676,24 V DC x676,89
-OF-04,electronics,PLC analog input point,IEC 61131-2,842,4-20 mA HART x842,1
+OF-04,electronics,PLC analog input point,IEC 61131-2,844,4-20 mA HART x844,1
 OF-05,electronics,BLDC driver,IEC 61800-5-1,69,24/48 V DC x69,15
 OF-06,electronics,motor starter (contactor + overload),IEC 60947-4-1,252,0.18 kW x242; 0.55 kW x3; 0.12 kW x2; 0.37 kW x2; 0.25 kW x1; 1.1 kW x1; 0.75 kW x1,70
 OF-07,electronics,"PLC I/O module, 16 channel",IEC 61131-2,95,24 V DC x95,1
@@ -27,8 +27,8 @@ OF-31,fastener,M10 U-bolt for DN150,ISO 3506 A4-70,2,M10 U-bolt for DN150 x2,1
 OF-32,fastener,Lid gasket 40 mm wide,FKM,1,Lid gasket 40 mm wide x1,1
 OF-33,fastener,Solvent cement,PVC-U per ASTM D2564,1,Solvent cement x1,1
 OF-34,instrument,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",186,DN15 x166; DN50 x17; DN32 x1; DN250 x1; DN300 x1,64
-OF-35,instrument,pressure transmitter,"ceramic diaphragm, IEC 61298",176,0-10 bar x175; 0-16 bar x1,176
-OF-36,instrument,temperature element,"IEC 60751, 316L thermowell",179,Pt100 class A x179,179
+OF-35,instrument,pressure transmitter,"ceramic diaphragm, IEC 61298",177,0-10 bar x176; 0-16 bar x1,177
+OF-36,instrument,temperature element,"IEC 60751, 316L thermowell",180,Pt100 class A x180,180
 OF-37,instrument,high-level switch,"IEC 60947-5, 316L",82,vibrating fork x82,82
 OF-38,instrument,level transmitter,"IEC 62828, PTFE lens",82,radar 80 GHz x82,82
 OF-39,instrument,"gas detector, H2","alarm 0.4 vol % (10 % LFL), trip 1.0 vol % (25 % LFL), ceiling",30,catalytic bead + IR backup x30,14

@@ -1752,6 +1752,14 @@
 "foot_m2": 1.5
 },
 {
+"unit": "REE_RECOVER",
+"level": "L0",
+"empty_kg": 100.8,
+"op_kg": 100.8,
+"test_kg": 100.8,
+"foot_m2": 0.48
+},
+{
 "unit": "GROW_BED/R1",
 "level": "L1",
 "empty_kg": 1090.8,

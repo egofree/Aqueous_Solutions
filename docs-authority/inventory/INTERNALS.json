@@ -86,7 +86,7 @@
   "POLY_F": "issued mfg model BOM (1 internals part row): \"4,Agitator: shaft + 2 impellers + 0.1 kW drive,1,Cu/steel,12.3,make,design mixer row\" [models/mfg/POLY_F/bom.csv]",
   "POLY_FIBER": "none with basis: a melt-spin line is a machine - the extruder, quench cabinet and winder are the issued mfg model (models/mfg/POLY_FIBER/bom.csv); the tooling is the unit task 10-13 deliverable, not separate internals [models/mfg/POLY_FIBER/bom.csv]",
   "POLY_OLEFIN": "issued mfg model BOM (1 internals part row): \"3,Top-entry agitator with variable-speed drive,1,\"316L shaft, PTFE gland\",\"AQS-DUTY-073 section 2\" [models/mfg/POLY_OLEFIN/bom.csv]",
-  "P_CA": "issued mfg model BOM (2 internals part row): \"300 x 300 x 400 mm,1,PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside\" [models/mfg/P_CA/bom.csv]",
+  "P_CA": "duty sheet: \"0.025. 3. Material. PP-H precipitation vessel + PP agitator; PE slurry lines; steel frame and housing outside \" [docs-authority/duties/P_CA.md]",
   "Q1_A": "heat-battery internals per AQS-DUTY-008 sec. 14: the thermal-oil medium (214.3 kg at 0.302 m3, Q1 tier, 80 K swing) with the internal thermosyphon downhill steps and cross-ties; no other contacting internals [docs-authority/sizing/HEAT_BATTERY.md]",
   "Q1_B": "heat-battery internals per AQS-DUTY-008 sec. 14: the thermal-oil medium with the internal thermosyphon downhill steps and cross-ties, sized per the issued store table (Q1 tier); no other contacting internals [docs-authority/sizing/HEAT_BATTERY.md]",
   "Q2_A": "heat-battery internals per AQS-DUTY-008 sec. 14: the thermal-oil medium with the internal thermosyphon downhill steps and cross-ties, sized per the issued store table (Q2 tier); no other contacting internals [docs-authority/sizing/HEAT_BATTERY.md]",
@@ -176,6 +176,7 @@
   "PV_ARRAY": "the PV array: modules wired, not process internals",
   "Q4_BUS": "a distribution header: bore, routing and class sheet carry the design; no internals",
   "RECTIFIER": "a rectifier machine; no process internals",
+  "REE_RECOVER": "a bench precipitation station: jacket, stirrer and filter are the issued mfg BOM services; no separate contacting internals",
   "RELIEF_CRYO": "a vent/relief manifold; open path, no internals (shop rule: open vent, no valve)",
   "RELIEF_H2": "a vent/relief manifold; open path, no internals (shop rule: open vent, no valve)",
   "REMIN": "static dosing tank; no internals booked by the sizing sheet",
@@ -200,5 +201,5 @@
   "WS_SOLV": "static reagent tote or day tank; no internals booked by the duty or sizing sheet"
  },
  "open": {},
- "units": 196
+ "units": 197
 }
