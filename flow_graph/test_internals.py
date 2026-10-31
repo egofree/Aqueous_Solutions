@@ -69,9 +69,7 @@ def test_open_set_is_a_named_gap_after_xmat22():
         assert 'column packing or tray design' in open_u[u], u
     for u in ('ZNBR2',):
         assert 'X-MFG-41 stack test' in open_u[u], u
-    for u in ('FUEL_CELL',):
-        assert 'cell count and active area' in open_u[u], u
-    for u in ('VCD_TRAIN', 'Q1_A', 'H2_DRYER'):
+    for u in ('VCD_TRAIN', 'Q1_A', 'H2_DRYER', 'FUEL_CELL'):
         assert u in IN['defined'], u
     # none of the open units may be rendered as closed
     src = open(DOC).read()

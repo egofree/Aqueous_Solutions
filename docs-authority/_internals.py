@@ -144,6 +144,10 @@ EXPLICIT = {
  'RES_HEAT': 'furnace internals per the duty: the 12 kW connected resistance element array on the chamber walls and hearth (radiant service at 900 C, N+1 standby of SHELL_BURNOUT/SINTER) with the hot-face liner per duty section 3; hearth furniture at unit tasks 10-12',
  'SINTER': 'furnace internals per the duty: the 8 kW connected element array for powder sintering at 1300 C (N+1 consolidation of ROLL) with the hot-face liner and retort furniture per duty section 3',
  'SI_REDUCE': 'reduction furnace internals per the sizing masses: the carbothermic charge sequence (3.85 kg/d quartz + 1.924 kg/d char -> 1.8 kg/d Si) in the retort with the hot-face liner per duty section 3',
+ 'CRYO_HX_Q4': 'Q4 recovery coil internals per the graph duty (S54 0.54 kW to Q4_BUS): an immersed water coil in the CRYO_O2 cold-box exit stream, the Q4 loop at 40-60 C (HEAT_LADDER.md); the coil is sized at the duty with the loop delta-T and carries no separate contacting internals',
+ 'MET_HX_Q4': 'melt off-heat recovery coil internals per the graph duties (IND_HEAT_TO_HX 1.063 kW + VAC_HEAT_TO_HX 0.638 kW, S63 0.017 kW to Q4_BUS): an immersed water coil in the melt-shop enclosure recovering induction and vacuum-furnace off-heat to the Q4 loop at 40-60 C; no separate contacting internals',
+ 'OIL_DRYER': 'none with basis: a heated dryer drum - the drying service is the shell itself, heated by the Q3 coil (HL-Q3-A/B-HX4 at 0.055 kW each per the heat-ladder edges); no contacting or separation internals booked',
+ 'FUEL_CELL': 'PEM fuel-cell stack internals per the issued sizing: the membrane-electrode assemblies at the rated 4.0 kW DC output (S51) with the Q4 heat recovery at 1.14 kW (S53), bipolar plates, end blocks and the balance of plant (humidifier, separator, deoxidiser) per the H2O_ELYZ PEM precedent',
  'FLOAT_SINK': 'none with basis: a water-bath density separator - the bath, the float weir and the sink conveyance are the shell design (the leach_cstr massing books FLOAT_DEWATER and SINK_DEWATER); the separation medium is plain water, no contacting internals',
 }
 # sharpened open-gap texts for the units whose missing design data is specific (overrides the
@@ -176,6 +180,11 @@ EXPLICIT_EVID = {
  'H2_DRYER': 'docs-authority/sizing/H2_DRYER.md', 'RES_HEAT': 'docs-authority/sizing/RES_HEAT.md',
  'SINTER': 'docs-authority/sizing/SINTER.md', 'SI_REDUCE': 'docs-authority/sizing/SI_REDUCE.md',
  'FLOAT_SINK': 'docs-authority/sizing/FLOAT_SINK.md',
+ 'CRYO_HX_Q4': 'docs-authority/sizing/CRYO_HX_Q4.md',
+ 'MET_HX_Q4': 'docs-authority/sizing/MET_HX_Q4.md',
+ 'OIL_DRYER': 'docs-authority/sizing/OIL_DRYER.md',
+ 'FUEL_CELL': 'docs-authority/sizing/FUEL_CELL.md',
+
 }
 SPECIAL_CLASS = {'ew_cell': EW_DOC, 'bmed': BMED_DOC}
 SPECIAL_CLASS = {'ew_cell': EW_DOC, 'bmed': BMED_DOC}

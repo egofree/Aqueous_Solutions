@@ -65,7 +65,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/INSTALL_SEQUENCE.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/INSTRUMENT_INDEX.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/INSULATION_SCHEDULE.md` | 3cb82be (regenerated, no change) | current |
-| `docs-authority/INTERNALS.md` | 3cb82be (regenerated, no change) | current |
+| `docs-authority/INTERNALS.md` | working tree | current |
 | `docs-authority/ISO_ROUTES.json` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/ISO_ROUTES.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/ISO_SHEETS.md` | 3cb82be (regenerated, no change) | current |
@@ -105,7 +105,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/STARTUP.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/STRUCT_LOADS.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/SUPPORTS.md` | 3cb82be (regenerated, no change) | current |
-| `docs-authority/TASK_PLAN.md` | 3cb82be (regenerated, no change) | current |
+| `docs-authority/TASK_PLAN.md` | working tree | current |
 | `docs-authority/TEST_PLAN.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/TEST_RIGS.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/UNIT_MATERIALS.md` | 3cb82be (regenerated, no change) | current |
@@ -496,7 +496,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/GAS_DETECTORS.csv` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/inventory/HVAC_ROOMS.csv` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/inventory/INSTRUMENT_INDEX.csv` | 3cb82be (regenerated, no change) | current |
-| `docs-authority/inventory/INTERNALS.json` | 3cb82be (regenerated, no change) | current |
+| `docs-authority/inventory/INTERNALS.json` | working tree | current |
 | `docs-authority/inventory/MAGNET_COMPARISON.csv` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/inventory/MOTOR_DESIGNS.csv` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/inventory/MOTOR_DESIGNS.md` | 3cb82be (regenerated, no change) | current |
