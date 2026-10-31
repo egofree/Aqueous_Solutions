@@ -1395,6 +1395,8 @@ Abbreviations of standards bodies, materials, file formats and general engineeri
 {WRCC -- Western Regional Climate Center. It publishes the NOAA cooperative station normals for the western United States, including the Furnace Creek record (AQS-SITE-002).}
 {FL -- Florida, United States: the state of the cocoa_fl example site.}
 {KMLB -- Melbourne International Airport, Florida (WMO 747945): the nearest published NOAA normals station to the cocoa_fl example site.}
+{CUS -- Copper-silica: the Cu/SiO2 catalyst class of the ALD reactor charge (from CUSIO2_ALD2023).}
+{CUSIO2_ALD2023 -- Cu/SiO2 catalyst for methanol synthesis from CO2 and H2 (the ALD reactor charge): the published WHSV and conversion class for the ALD sizing (A-M-157).}
 {BAY -- The structural bay grid: one 6.0 
 {USGS -- United States Geological Survey. Its Mineral Commodity Summaries (annual) is the commodity price source for the cost estimate (AQS-PRO-003).}
 {CEPCI -- Chemical Engineering Plant Cost Index, published monthly in Chemical Engineering magazine; the escalation index of the cost estimate (AQS-PRO-003).}
