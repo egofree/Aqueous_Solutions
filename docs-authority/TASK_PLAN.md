@@ -56,7 +56,7 @@ Table 2.1. Tasks by group
 | X-COM | Commissioning and startup | 3 | 3 |
 | X-OPS | Operations and maintenance | 3 | 3 |
 | X-QA | QA and verification | 3 | 2 |
-| X-END | Decommissioning and recycling loop closure | 2 | 1 |
+| X-END | Decommissioning and recycling loop closure | 2 | 2 |
 | X-LOC | Localization: site profiles and locale variants (AQS-PLAN-011) | 13 | 13 |
 | X-TOOL | Modeling tooling | 4 | 4 |
 | FOUNDRY | Process (Mass transform) | 405 | 378 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3267** | **3058** |
+| | **Total** | **3267** | **3059** |
 
 ## 3. Triage of open tasks
 
@@ -102,7 +102,7 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P2 | 2 |
+| desk P2 | 1 |
 | desk P4 | 2 |
 | hardware | 205 |
 
@@ -154,7 +154,7 @@ Table 6.1. Next cross-cutting desk tasks
 
 | Task | Title | Triage |
 | --- | --- | --- |
-| X-END-02 | End-of-life material return | desk P2 |
+| — | No open cross-cutting desk task | — |
 
 Table 6.2 lists the open cross-cutting tasks that wait on a decision by the project owner.
 
@@ -521,7 +521,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
 ### X-END. Decommissioning and recycling loop closure
 
 - [x] **X-END-01** Decommissioning plan. Done when: drain, purge, and dismantle per system. Depends: X-OPS-01. Evidence: `docs-authority/DECOMMISSIONING.md`.
-- [ ] **X-END-02** End-of-life material return. Done when: each unit material assigned to a plant feed class under AQS-ASSAY-001. Depends: X-BAS-01, X-PRO-01. Start from `docs-authority/EOL_RETURN.md` (partial). Triage: desk P2. Status: Rev E classing (retired-unit close-out and roster correction): the plant BOM rosters from the graph (present units), so the retired units and the superseded envelope BOMs leave the matrix; the classing rules cover the material families the build-out BOMs introduced (graphite ram class, wood, PE rotomoulded, Hastelloy/Monel, bought electrical cabinets), and three BOM rows with CSV quoting defects were fixed at source. Every remaining unassigned line is a named hold - the standby machines awaiting their unit task 10/12 designs (owner programme gate) and the AQS-INV-004 pointer row - and the composition holds (fluoropolymer, Ti, Nd/Dy, Pt-Rh recovery units) continue. Live tally: docs-authority/EOL_RETURN.md and docs-authority/inventory/EOL_RETURN.csv.
+- [x] **X-END-02** End-of-life material return. Done when: each unit material assigned to a plant feed class under AQS-ASSAY-001. Depends: X-BAS-01, X-PRO-01. Evidence: `docs-authority/EOL_RETURN.md`.
 
 ### X-LOC. Localization: site profiles and locale variants (AQS-PLAN-011)
 

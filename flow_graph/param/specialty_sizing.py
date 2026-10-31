@@ -177,6 +177,11 @@ def write():
     put('FEED_PREP', sizing={'load_basis': v['feed_prep_kw'][1]}, kw=v['feed_prep_kw'][0], kw_note=v['feed_prep_kw'][1] + ' (X-SPEC calculated)')
     put('POLY_FIBER', sizing={'load_basis': v['poly_fiber_kw'][1]}, kw=v['poly_fiber_kw'][0], kw_note=v['poly_fiber_kw'][1] + ' (X-SPEC calculated)')
     put('AQUA_UV', sizing={'load_basis': v['aqua_uv_kw'][1]}, kw=v['aqua_uv_kw'][0], kw_note=v['aqua_uv_kw'][1] + ' (X-SPEC calculated)')
+    put('EXT_HALL', size_mm=[186000, 174000, 6000],
+        size_note='building massing envelope (bounding box of the issued L-shape): EXT_HALL_E 162 x 174 m east '
+                  'extension + EXT_HALL_N 24 x 156 m north extension, 6 m eave, portal frames on the 6 m grid '
+                  '(31 x 29 bays, X-PAR-07, A-M-104; placement_seed blocks EXT_HALL_E/N are the authority). '
+                  'Conditioned footprint per params.footprint_m2; the fitout programme stays the duty-sheet open item.')
     for uid, sz in (
         ('ADS_CHILL', [700, 500, 1200]), ('DRY_COOLER', [1200, 600, 1200]),
         ('GREASE_CA', [500, 400, 600]), ('GREASE_LI', [500, 400, 600]),
