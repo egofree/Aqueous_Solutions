@@ -101,7 +101,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/SITE_SCALING.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/SITE_UNITS.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/SPARES.md` | 3cb82be (regenerated, no change) | current |
-| `docs-authority/STANDARDS_LIST.md` | 3cb82be (regenerated, no change) | current |
+| `docs-authority/STANDARDS_LIST.md` | working tree | current |
 | `docs-authority/STARTUP.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/STRUCT_LOADS.md` | 3cb82be (regenerated, no change) | current |
 | `docs-authority/SUPPORTS.md` | 3cb82be (regenerated, no change) | current |
