@@ -16,7 +16,7 @@ This page ties every derived file to the graph commit it was last made from, so 
 
 The count line below is generated with the page. `python3 -m flow_graph.param.regen` refreshes the stamps; `--check` fails on any stale file.
 
-1568 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
+1569 derived files, 0 stale (gated set: every file not classified by-design; regenerate with `python3 -m flow_graph.param.regen`).
 
 | File | Made from graph commit | Status |
 |---|---|---|
@@ -26,25 +26,25 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/ASME_CODE_INTENT.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/ASSUMPTIONS_REGISTER.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/BALANCE_RECONCILIATION.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/BLOCK_FAMILY_PLANS.md` | working tree | current |
-| `docs-authority/BOUGHT_SPECS.md` | working tree | current |
+| `docs-authority/BLOCK_FAMILY_PLANS.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/BOUGHT_SPECS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/BUSBAR.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/BUSBAR.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/CABLE_SCHEDULE.md` | working tree | current |
+| `docs-authority/CABLE_SCHEDULE.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/CAUSE_EFFECT.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/CODE_BASIS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/COLLECTION_BUS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/COMMISSIONING.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/COMPLIANCE_MATRIX.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/CONTROL_ARCH.md` | working tree | current |
-| `docs-authority/CONTROL_SOFTWARE.md` | working tree | current |
+| `docs-authority/CONTROL_ARCH.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/CONTROL_SOFTWARE.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/DECOMMISSIONING.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/DERIVED_REVISIONS.md` | - | this register (its own row would change with each write) |
 | `docs-authority/DESIGN_CHECK.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/DOC_REGISTER.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/DRAWING_REGISTER.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/ENCLOSURE_EGRESS.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/EOL_RETURN.md` | working tree | current |
+| `docs-authority/EOL_RETURN.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/FARM_DESIGN.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/FIRE_PROTECTION.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/FOUNDATION.md` | 3be5b7b (regenerated, no change) | current |
@@ -56,21 +56,21 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/HALL_EGRESS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/HAZARD_SEPARATION_LAYOUT.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/HAZMAT_SEPARATION.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/HAZOP.md` | working tree | current |
+| `docs-authority/HAZOP.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/HAZOP_ACTION_REGISTER.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/HAZ_AREA.md` | working tree | current |
+| `docs-authority/HAZ_AREA.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/HULL_DESIGN.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/HVAC.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/HYDRO_SITING.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/INSTALL_SEQUENCE.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/INSTRUMENT_INDEX.md` | working tree | current |
+| `docs-authority/INSTRUMENT_INDEX.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/INSULATION_SCHEDULE.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/INTERNALS.md` | working tree | current |
+| `docs-authority/INTERNALS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/ISO_ROUTES.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/ISO_ROUTES.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/ISO_SHEETS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/ITP.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/JELLYBEAN.md` | working tree | current |
+| `docs-authority/JELLYBEAN.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/LIFTING.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/LINE_LIST.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/LOAD_LIST.json` | 3be5b7b (regenerated, no change) | current |
@@ -78,7 +78,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/MAINT_PLAN.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/MFG_TOOLS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/MODEL_WORKBOOK.xlsx` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/MOTOR_FIRST_ARTICLE.md` | working tree | current |
+| `docs-authority/MOTOR_FIRST_ARTICLE.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/O2_SOURCE.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/O2_SOURCE_AUDIT.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/ONE_LINE.json` | 3be5b7b (regenerated, no change) | current |
@@ -87,30 +87,30 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/PARAMETRIC_MODEL.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/PERF_TEST.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/PIPE_SPECS.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/PLANT_BOM.md` | working tree | current |
+| `docs-authority/PLANT_BOM.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/POWER_SIZING.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/PROTECTION.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/RELIEF_REGISTER.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/RIGGING_PLANS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/SCALE_DOWN_UNRECLAIMED.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/SECTOR_DEFINITIONS.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/SELF_COPY_BOM.md` | working tree | current |
+| `docs-authority/SELF_COPY_BOM.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/SITE_ACCESS_CHECK.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/SITE_COMPARISON.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/SITE_POWER.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/SITE_SCALING.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/SITE_UNITS.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/SPARES.md` | working tree | current |
+| `docs-authority/SPARES.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/STANDARDS_LIST.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/STARTUP.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/STRUCT_LOADS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/SUPPORTS.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/TASK_PLAN.md` | working tree | current |
+| `docs-authority/TASK_PLAN.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/TEST_PLAN.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/TEST_RIGS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/UNIT_MATERIALS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/WATER_TOWER.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/WIRE_SPECS.md` | working tree | current |
+| `docs-authority/WIRE_SPECS.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/WPS_REGISTER.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/ZNBR2_STACK_TEST.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/drawings/motor_fa/MF-04.svg` | 3be5b7b (regenerated, no change) | current |
@@ -155,7 +155,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/drawings/wire/WF-19.svg` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/drawings/wire/WF-20.svg` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/drawings/wire/WF-21.svg` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/drawings/wire/WF-22.svg` | working tree | current |
+| `docs-authority/drawings/wire/WF-22.svg` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/drawings/wire/WF-23.svg` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/drawings/wire/WF-24.svg` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/drawings/wire/WF-25.svg` | 3be5b7b (regenerated, no change) | current |
@@ -440,7 +440,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/duties/ZNBR2_BR2_REGEN.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/duties/_generated.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/duties/_origins.json` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/fab/ADS_CHILL.md` | working tree | current |
+| `docs-authority/fab/ADS_CHILL.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/AIR_RECEIVER.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/AL_POT.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/CAST_LINE.md` | 3be5b7b (regenerated, no change) | current |
@@ -456,14 +456,14 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/fab/FLUX_PREP.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/FOOD_STORE.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/FORGE.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/fab/F_RECOVER.md` | working tree | current |
-| `docs-authority/fab/GREASE_CA.md` | working tree | current |
-| `docs-authority/fab/GREASE_LI.md` | working tree | current |
-| `docs-authority/fab/H2O_ELYZ.md` | working tree | current |
+| `docs-authority/fab/F_RECOVER.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/fab/GREASE_CA.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/fab/GREASE_LI.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/fab/H2O_ELYZ.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/IND_MELT.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/INV_CAST.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/fab/LI_RECOVER.md` | working tree | current |
-| `docs-authority/fab/MAU_HX.md` | working tree | current |
+| `docs-authority/fab/LI_RECOVER.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/fab/MAU_HX.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/METAL_STORE.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/MG_POT.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/MO_CELL.md` | 3be5b7b (regenerated, no change) | current |
@@ -472,7 +472,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/fab/POWDER_RESIN.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/PROD_MEOH.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/PROD_O2.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/fab/P_CA.md` | working tree | current |
+| `docs-authority/fab/P_CA.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/RES_HEAT.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/RF_HEAT.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/fab/ROLL.md` | 3be5b7b (regenerated, no change) | current |
@@ -491,54 +491,54 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/inventory/COMMISSIONING.csv` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/DECOMMISSIONING.csv` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/DESIGN_CHECK.csv` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/inventory/EOL_RETURN.csv` | working tree | current |
+| `docs-authority/inventory/EOL_RETURN.csv` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/FRAME_CHECK.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/GAS_DETECTORS.csv` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/HVAC_ROOMS.csv` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/inventory/INSTRUMENT_INDEX.csv` | working tree | current |
-| `docs-authority/inventory/INTERNALS.json` | working tree | current |
-| `docs-authority/inventory/MAGNET_COMPARISON.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_DESIGNS.md` | working tree | current |
-| `docs-authority/inventory/MOTOR_FA.json` | working tree | current |
-| `docs-authority/inventory/MOTOR_FAMILIES.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.csv` | working tree | current |
-| `docs-authority/inventory/MOTOR_INVENTORY.md` | working tree | current |
-| `docs-authority/inventory/OTHER_FAMILIES.csv` | working tree | current |
-| `docs-authority/inventory/OTHER_INVENTORY.csv` | working tree | current |
-| `docs-authority/inventory/OTHER_INVENTORY.md` | working tree | current |
+| `docs-authority/inventory/INSTRUMENT_INDEX.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/INTERNALS.json` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/MAGNET_COMPARISON.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/MOTOR_DESIGNS.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/MOTOR_FA.json` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/MOTOR_FAMILIES.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/MOTOR_INVENTORY.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/OTHER_FAMILIES.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/OTHER_INVENTORY.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/OTHER_INVENTORY.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/PIPE_FAMILIES.csv` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/PIPE_INVENTORY.csv` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/PIPE_INVENTORY.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/inventory/PLANT_BOM.csv` | working tree | current |
-| `docs-authority/inventory/SELF_COPY_RECON.csv` | working tree | current |
+| `docs-authority/inventory/PLANT_BOM.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/SELF_COPY_RECON.csv` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/SITE_ACCESS.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/SIZING_COVERAGE.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/STORAGE_HOLDUP.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/STRUCT_ROWS.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/TEST_RIGS.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/UNIT_MATERIALS.json` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/inventory/WIRE_FAMILIES.csv` | working tree | current |
-| `docs-authority/inventory/WIRE_INVENTORY.csv` | working tree | current |
-| `docs-authority/inventory/WIRE_INVENTORY.md` | working tree | current |
-| `docs-authority/inventory/WIRE_SPECS.json` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-01.md` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-02.md` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-03.md` | working tree | current |
+| `docs-authority/inventory/WIRE_FAMILIES.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/WIRE_INVENTORY.csv` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/WIRE_INVENTORY.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/WIRE_SPECS.json` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-01.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-02.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-03.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-04.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-05.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/inventory/motor_families/MF-06.md` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-07.md` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-06.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-07.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-08.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/inventory/motor_families/MF-09.md` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-10.md` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-11.md` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-12.md` | working tree | current |
-| `docs-authority/inventory/motor_families/MF-13.md` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-09.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-10.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-11.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-12.md` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/inventory/motor_families/MF-13.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-14.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-15.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-16.md` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/inventory/motor_families/MF-17.md` | working tree | current |
+| `docs-authority/inventory/motor_families/MF-17.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-18.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-19.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/inventory/motor_families/MF-20.md` | 3be5b7b (regenerated, no change) | current |
@@ -1019,24 +1019,25 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/pid/ZNBR2_BR2_REGEN.svg` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/pid/_generated.json` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/pid/_register.csv` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/plc/PLC-CRYO.st` | working tree | current |
-| `docs-authority/plc/PLC-DIGESTER.st` | working tree | current |
-| `docs-authority/plc/PLC-ELEC.st` | working tree | current |
-| `docs-authority/plc/PLC-FAB.st` | working tree | current |
-| `docs-authority/plc/PLC-FARM.st` | working tree | current |
+| `docs-authority/plc/PLC-CRYO.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-DIGESTER.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-DOCK.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-ELEC.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-FAB.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-FARM.st` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/plc/PLC-FOUNDRY.st` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/plc/PLC-GAS.st` | working tree | current |
-| `docs-authority/plc/PLC-GEO.st` | working tree | current |
+| `docs-authority/plc/PLC-GAS.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-GEO.st` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/plc/PLC-GLASS.st` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/plc/PLC-HAB.st` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/plc/PLC-HEAT.st` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/plc/PLC-MEOH.st` | working tree | current |
-| `docs-authority/plc/PLC-MFG.st` | working tree | current |
-| `docs-authority/plc/PLC-NUT.st` | working tree | current |
-| `docs-authority/plc/PLC-OIL.st` | working tree | current |
+| `docs-authority/plc/PLC-MEOH.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-MFG.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-NUT.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-OIL.st` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/plc/PLC-POLYMERS.st` | 3be5b7b (regenerated, no change) | current |
-| `docs-authority/plc/PLC-PUMPED_HYDRO.st` | working tree | current |
-| `docs-authority/plc/PLC-WTR.st` | working tree | current |
+| `docs-authority/plc/PLC-PUMPED_HYDRO.st` | 3be5b7b (regenerated, no change) | current |
+| `docs-authority/plc/PLC-WTR.st` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/sif_list.csv` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/sizing/ACID_POLISH_SCRUB.md` | 3be5b7b (regenerated, no change) | current |
 | `docs-authority/sizing/ADS_CHILL.md` | 3be5b7b (regenerated, no change) | current |
@@ -1212,7 +1213,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `flow_graph/inventory/motor_family_ids.json` | 3be5b7b (regenerated, no change) | current |
 | `flow_graph/inventory/other_family_ids.json` | 3be5b7b (regenerated, no change) | current |
 | `flow_graph/inventory/pipe_family_ids.json` | 3be5b7b (regenerated, no change) | current |
-| `flow_graph/inventory/wire_family_ids.json` | working tree | current |
+| `flow_graph/inventory/wire_family_ids.json` | 3be5b7b (regenerated, no change) | current |
 | `flow_graph/placement_seed.json` | 3be5b7b (regenerated, no change) | current |
 | `flow_graph/plant_flow_graph.json` | 3be5b7b (regenerated, no change) | current |
 | `flow_graph/views/efd-elec.dot` | 3be5b7b (regenerated, no change) | current |
