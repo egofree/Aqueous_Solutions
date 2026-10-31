@@ -105,7 +105,7 @@ The count line below is generated with the page. `python3 -m flow_graph.param.re
 | `docs-authority/STARTUP.md` | e286326 | stale |
 | `docs-authority/STRUCT_LOADS.md` | 48bc545 | stale |
 | `docs-authority/SUPPORTS.md` | 97033c5 | stale |
-| `docs-authority/TASK_PLAN.md` | working tree | current |
+| `docs-authority/TASK_PLAN.md` | 3be5b7b | current |
 | `docs-authority/TEST_PLAN.md` | 3cb82be | stale |
 | `docs-authority/TEST_RIGS.md` | 91d33f4 | stale |
 | `docs-authority/UNIT_MATERIALS.md` | 48bc545 | stale |
