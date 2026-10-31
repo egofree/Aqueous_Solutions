@@ -1,6 +1,5 @@
 # Build log - GLASS_RINSE
 
-Document number: AQS-SIZE-GLASS_RINSE
 Class: intra
 Envelope: 1200 x 600 x 800 mm
 Material: per AQS-STD-002

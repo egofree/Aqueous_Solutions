@@ -1,6 +1,5 @@
 # Build log - WS_SOLV
 
-Document number: AQS-SIZE-WS_SOLV
 Class: reagent
 Envelope: 600 x 600 x 600 mm
 Material: per AQS-STD-002

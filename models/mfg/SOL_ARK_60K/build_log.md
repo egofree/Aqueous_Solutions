@@ -1,6 +1,5 @@
 # Build log - SOL_ARK_60K
 
-Document number: AQS-SIZE-SOL_ARK_60K
 Class: inverter
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

@@ -1,6 +1,5 @@
 # Build log - GREASE_LI
 
-Document number: AQS-SIZE-GREASE_LI
 Class: kettle
 Envelope: 500 x 400 x 600 mm
 Material: per AQS-STD-002

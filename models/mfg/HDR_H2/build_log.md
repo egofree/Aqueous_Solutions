@@ -1,6 +1,5 @@
 # Build log - HDR_H2
 
-Document number: AQS-SIZE-HDR_H2
 Class: header
 Envelope: per duty sheet section 2
 Material: PVC-U, bonded; wet acid H2 + sweep air per AQS-REV-H2-001 (M3, X-MAT-06)

@@ -1,6 +1,5 @@
 # Build log - MEOH_FC
 
-Document number: AQS-SIZE-MEOH_FC
 Class: iem_fc
 Envelope: 1800 x 800 x 1600 mm
 Material: PEM stack, 316L reformer shell (Cu/ZnO class catalyst), PTFE gaskets

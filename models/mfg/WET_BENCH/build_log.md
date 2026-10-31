@@ -1,6 +1,5 @@
 # Build log - WET_BENCH
 
-Document number: AQS-SIZE-WET_BENCH
 Class: wet_bench
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

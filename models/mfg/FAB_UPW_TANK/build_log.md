@@ -1,6 +1,5 @@
 # Build log - FAB_UPW_TANK
 
-Document number: AQS-SIZE-FAB_UPW_TANK
 Class: tank
 Envelope: 600 x 600 x 600 mm
 Material: per AQS-STD-002

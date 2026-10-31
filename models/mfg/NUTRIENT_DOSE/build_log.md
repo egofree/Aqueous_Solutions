@@ -1,6 +1,5 @@
 # Build log - NUTRIENT_DOSE
 
-Document number: AQS-SIZE-NUTRIENT_DOSE
 Class: dose
 Envelope: 600 x 600 x 600 mm
 Material: per AQS-STD-002

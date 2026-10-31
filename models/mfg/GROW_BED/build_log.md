@@ -1,6 +1,5 @@
 # Build log - GROW_BED
 
-Document number: AQS-SIZE-GROW_BED
 Class: farm
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

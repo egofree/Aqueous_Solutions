@@ -1,6 +1,5 @@
 # Build log - FLOAT_SINK
 
-Document number: AQS-SIZE-FLOAT_SINK
 Class: separator
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

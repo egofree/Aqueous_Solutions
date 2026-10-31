@@ -1,6 +1,5 @@
 # Build log - GEO_HP_CLOSED_LOOP
 
-Document number: AQS-SIZE-GEO_HP_CLOSED_LOOP
 Class: unclassed
 Envelope: per duty sheet section 2
 Material: HDPE DR-11 buried; 25 % propylene glycol (freeze protection to -10 C)

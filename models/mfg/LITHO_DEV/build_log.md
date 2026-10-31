@@ -1,6 +1,5 @@
 # Build log - LITHO_DEV
 
-Document number: AQS-SIZE-LITHO_DEV
 Class: wet_bench
 Envelope: 1200 x 600 x 900 mm
 Material: per AQS-STD-002

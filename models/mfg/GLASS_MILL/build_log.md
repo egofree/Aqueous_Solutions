@@ -1,6 +1,5 @@
 # Build log - GLASS_MILL
 
-Document number: AQS-SIZE-GLASS_MILL
 Class: intra
 Envelope: 800 x 600 x 800 mm
 Material: per AQS-STD-002

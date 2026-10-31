@@ -1,6 +1,5 @@
 # Build log - Q1_A
 
-Document number: AQS-SIZE-Q1_A
 Class: heat_battery
 Envelope: 800 x 800 x 1200 mm
 Material: SA-240 304L, welded

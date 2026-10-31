@@ -1,6 +1,5 @@
 # Build log - Q3_B
 
-Document number: AQS-SIZE-Q3_B
 Class: heat_battery
 Envelope: 800 x 800 x 1200 mm
 Material: SA-240 304L, welded (100 C tier is above the PP-H class of 80 C)

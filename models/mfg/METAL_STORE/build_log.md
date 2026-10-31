@@ -1,6 +1,5 @@
 # Build log - METAL_STORE
 
-Document number: AQS-SIZE-METAL_STORE
 Class: store
 Envelope: 800 x 800 x 950 mm
 Material: per AQS-STD-002

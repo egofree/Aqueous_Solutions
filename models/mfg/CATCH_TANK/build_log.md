@@ -1,6 +1,5 @@
 # Build log - CATCH_TANK
 
-Document number: AQS-SIZE-CATCH_TANK
 Class: tank
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

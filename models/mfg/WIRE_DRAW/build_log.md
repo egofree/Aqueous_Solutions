@@ -1,6 +1,5 @@
 # Build log - WIRE_DRAW
 
-Document number: AQS-SIZE-WIRE_DRAW
 Class: forming
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

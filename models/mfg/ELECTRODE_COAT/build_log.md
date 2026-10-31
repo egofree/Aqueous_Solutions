@@ -1,6 +1,5 @@
 # Build log - ELECTRODE_COAT
 
-Document number: AQS-SIZE-ELECTRODE_COAT
 Class: coater
 Envelope: 1200 x 800 x 1800 mm
 Material: per AQS-STD-002

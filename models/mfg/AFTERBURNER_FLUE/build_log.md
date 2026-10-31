@@ -1,6 +1,5 @@
 # Build log - AFTERBURNER_FLUE
 
-Document number: AQS-SIZE-AFTERBURNER_FLUE
 Class: flue_junction
 Envelope: per duty sheet section 2
 Material: CS Sch 40, insulated per AQS-THM-003

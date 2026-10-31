@@ -1,6 +1,5 @@
 # Build log - NCG_HEADER
 
-Document number: AQS-SIZE-NCG_HEADER
 Class: header
 Envelope: per duty sheet section 2
 Material: 304L, heat-traced (tar service)

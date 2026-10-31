@@ -1,6 +1,5 @@
 # Build log - BMED_BASE
 
-Document number: AQS-SIZE-BMED_BASE
 Class: bmed
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

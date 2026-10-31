@@ -1,6 +1,5 @@
 # Build log - CONTINUOUS_RECYCLE
 
-Document number: AQS-SIZE-CONTINUOUS_RECYCLE
 Class: recycle_pipe
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

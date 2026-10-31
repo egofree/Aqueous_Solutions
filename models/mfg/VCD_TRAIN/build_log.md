@@ -1,6 +1,5 @@
 # Build log - VCD_TRAIN
 
-Document number: AQS-SIZE-VCD_TRAIN
 Class: evaporator
 Envelope: 1400 x 600 x 1200 mm
 Material: per AQS-STD-002

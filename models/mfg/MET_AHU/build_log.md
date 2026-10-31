@@ -1,6 +1,5 @@
 # Build log - MET_AHU
 
-Document number: AQS-SIZE-MET_AHU
 Class: ahu
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

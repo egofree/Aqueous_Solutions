@@ -1,6 +1,5 @@
 # Build log - CRYO_DED_COOL
 
-Document number: AQS-SIZE-CRYO_DED_COOL
 Class: cool
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

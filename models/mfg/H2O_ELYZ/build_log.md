@@ -1,6 +1,5 @@
 # Build log - H2O_ELYZ
 
-Document number: AQS-SIZE-H2O_ELYZ
 Class: pem_electrolyser
 Envelope: 1800 x 800 x 1600 mm
 Material: per AQS-STD-002

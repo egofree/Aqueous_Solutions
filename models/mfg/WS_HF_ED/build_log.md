@@ -1,6 +1,5 @@
 # Build log - WS_HF_ED
 
-Document number: AQS-SIZE-WS_HF_ED
 Class: reagent
 Envelope: 600 x 600 x 600 mm
 Material: per AQS-STD-002

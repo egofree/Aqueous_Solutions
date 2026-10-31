@@ -1,6 +1,5 @@
 # Build log - BMED_UPW_POLISH
 
-Document number: AQS-SIZE-BMED_UPW_POLISH
 Class: skid
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

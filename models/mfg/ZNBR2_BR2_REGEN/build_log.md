@@ -1,6 +1,5 @@
 # Build log - ZNBR2_BR2_REGEN
 
-Document number: AQS-SIZE-ZNBR2_BR2_REGEN
 Class: scrubber
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

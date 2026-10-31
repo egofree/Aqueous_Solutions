@@ -1,6 +1,5 @@
 # Build log - OIL_FRAC
 
-Document number: AQS-SIZE-OIL_FRAC
 Class: frac
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

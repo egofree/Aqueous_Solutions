@@ -1,6 +1,5 @@
 # Build log - LI_RECOVER
 
-Document number: AQS-SIZE-LI_RECOVER
 Class: separator
 Envelope: 200 x 200 x 800 mm
 Material: per AQS-STD-002

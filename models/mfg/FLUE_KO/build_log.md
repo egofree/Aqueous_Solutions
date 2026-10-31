@@ -1,6 +1,5 @@
 # Build log - FLUE_KO
 
-Document number: AQS-SIZE-FLUE_KO
 Class: separator
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

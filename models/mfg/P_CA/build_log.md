@@ -1,6 +1,5 @@
 # Build log - P_CA
 
-Document number: AQS-SIZE-P_CA
 Class: precip
 Envelope: 300 x 300 x 400 mm
 Material: per AQS-STD-002

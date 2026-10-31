@@ -1,6 +1,5 @@
 # Build log - CRU
 
-Document number: AQS-SIZE-CRU
 Class: cru
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

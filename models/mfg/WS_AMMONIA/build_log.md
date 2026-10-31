@@ -1,6 +1,5 @@
 # Build log - WS_AMMONIA
 
-Document number: AQS-SIZE-WS_AMMONIA
 Class: reagent
 Envelope: 600 x 600 x 600 mm
 Material: per AQS-STD-002

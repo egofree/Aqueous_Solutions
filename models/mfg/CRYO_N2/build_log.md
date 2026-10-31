@@ -1,6 +1,5 @@
 # Build log - CRYO_N2
 
-Document number: AQS-SIZE-CRYO_N2
 Class: cold_box
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

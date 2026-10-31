@@ -1,6 +1,5 @@
 # Build log - HYDRO_SET
 
-Document number: AQS-SIZE-HYDRO_SET
 Class: hydro
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

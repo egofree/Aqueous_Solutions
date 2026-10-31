@@ -1,6 +1,5 @@
 # Build log - PROD_O2
 
-Document number: AQS-SIZE-PROD_O2
 Class: product
 Envelope: 1400 x 1400 x 1750 mm
 Material: per AQS-STD-002

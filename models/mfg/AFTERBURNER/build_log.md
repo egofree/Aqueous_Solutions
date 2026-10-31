@@ -1,6 +1,5 @@
 # Build log - AFTERBURNER
 
-Document number: AQS-SIZE-AFTERBURNER
 Class: thermal
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

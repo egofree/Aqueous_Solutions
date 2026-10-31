@@ -1,6 +1,5 @@
 # Build log - CRYO_O2
 
-Document number: AQS-SIZE-CRYO_O2
 Class: cold_box
 Envelope: 6696 x 1500 x 600 mm
 Material: SA-312 TP316L seamless DN100 Sch 160, B16.11 Class 9000 fittings / autoclave cone-and-thread, O2 bank cleaned to ASTM G93

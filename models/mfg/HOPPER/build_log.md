@@ -1,6 +1,5 @@
 # Build log - HOPPER
 
-Document number: AQS-SIZE-HOPPER
 Class: hopper
 Envelope: 600 x 600 x 600 mm
 Material: per AQS-STD-002

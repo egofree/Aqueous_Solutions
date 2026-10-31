@@ -1,6 +1,5 @@
 # Build log - SALT_FEED
 
-Document number: AQS-SIZE-SALT_FEED
 Class: feed
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

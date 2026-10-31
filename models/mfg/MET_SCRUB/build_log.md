@@ -1,6 +1,5 @@
 # Build log - MET_SCRUB
 
-Document number: AQS-SIZE-MET_SCRUB
 Class: scrubber
 Envelope: 1200 x 1200 x 4103 mm
 Material: PP-H shell and in-house cut PP rings; PP mesh demister

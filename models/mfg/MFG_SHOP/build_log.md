@@ -1,6 +1,5 @@
 # Build log - MFG_SHOP
 
-Document number: AQS-SIZE-MFG_SHOP
 Class: shop
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

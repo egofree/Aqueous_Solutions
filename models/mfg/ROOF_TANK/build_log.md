@@ -1,6 +1,5 @@
 # Build log - ROOF_TANK
 
-Document number: AQS-SIZE-ROOF_TANK
 Class: tank
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

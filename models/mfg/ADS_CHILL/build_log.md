@@ -1,6 +1,5 @@
 # Build log - ADS_CHILL
 
-Document number: AQS-SIZE-ADS_CHILL
 Class: adsorption_chiller
 Envelope: 700 x 500 x 1200 mm
 Material: per AQS-STD-002

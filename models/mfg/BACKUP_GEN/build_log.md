@@ -1,6 +1,5 @@
 # Build log - BACKUP_GEN
 
-Document number: AQS-SIZE-BACKUP_GEN
 Class: genset
 Envelope: 2000 x 1000 x 1600 mm
 Material: per AQS-STD-002

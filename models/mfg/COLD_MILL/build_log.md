@@ -1,6 +1,5 @@
 # Build log - COLD_MILL
 
-Document number: AQS-SIZE-COLD_MILL
 Class: forming
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

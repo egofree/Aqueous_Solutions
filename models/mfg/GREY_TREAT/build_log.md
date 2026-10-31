@@ -1,6 +1,5 @@
 # Build log - GREY_TREAT
 
-Document number: AQS-SIZE-GREY_TREAT
 Class: treat
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

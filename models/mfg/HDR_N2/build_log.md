@@ -1,6 +1,5 @@
 # Build log - HDR_N2
 
-Document number: AQS-SIZE-HDR_N2
 Class: header
 Envelope: per duty sheet section 2
 Material: 316L tube

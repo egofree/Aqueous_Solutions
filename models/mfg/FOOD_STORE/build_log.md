@@ -1,6 +1,5 @@
 # Build log - FOOD_STORE
 
-Document number: AQS-SIZE-FOOD_STORE
 Class: store
 Envelope: 650 x 650 x 750 mm
 Material: per AQS-STD-002

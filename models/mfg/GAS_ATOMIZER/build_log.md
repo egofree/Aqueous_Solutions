@@ -1,6 +1,5 @@
 # Build log - GAS_ATOMIZER
 
-Document number: AQS-SIZE-GAS_ATOMIZER
 Class: forming
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

@@ -1,6 +1,5 @@
 # Build log - LITHO_ALIGN
 
-Document number: AQS-SIZE-LITHO_ALIGN
 Class: aligner
 Envelope: 1200 x 600 x 800 mm
 Material: per AQS-STD-002

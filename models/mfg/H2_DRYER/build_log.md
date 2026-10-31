@@ -1,6 +1,5 @@
 # Build log - H2_DRYER
 
-Document number: AQS-SIZE-H2_DRYER
 Class: dryer
 Envelope: 600 x 400 x 1028 mm
 Material: per AQS-STD-002

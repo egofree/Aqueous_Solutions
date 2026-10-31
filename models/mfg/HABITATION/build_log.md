@@ -1,6 +1,5 @@
 # Build log - HABITATION
 
-Document number: AQS-SIZE-HABITATION
 Class: hab
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

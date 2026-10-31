@@ -1,6 +1,5 @@
 # Build log - RELIEF_CRYO
 
-Document number: AQS-SIZE-RELIEF_CRYO
 Class: relief
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

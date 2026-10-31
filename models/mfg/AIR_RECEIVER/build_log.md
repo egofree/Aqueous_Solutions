@@ -1,6 +1,5 @@
 # Build log - AIR_RECEIVER
 
-Document number: AQS-SIZE-AIR_RECEIVER
 Class: store
 Envelope: 1000 x 1000 x 1200 mm
 Material: per AQS-STD-002

@@ -1,6 +1,5 @@
 # Build log - GEO_GHEX
 
-Document number: AQS-SIZE-GEO_GHEX
 Class: ghex
 Envelope: per duty sheet section 2
 Material: HDPE DR-11 U-tubes, 1 in bore + horizontal runs; borehole grout thermal

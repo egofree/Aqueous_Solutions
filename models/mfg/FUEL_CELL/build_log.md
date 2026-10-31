@@ -1,6 +1,5 @@
 # Build log - FUEL_CELL
 
-Document number: AQS-SIZE-FUEL_CELL
 Class: pem_fc
 Envelope: 1800 x 800 x 1600 mm
 Material: per AQS-STD-002

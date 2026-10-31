@@ -1,6 +1,5 @@
 # Build log - PROD_MEOH
 
-Document number: AQS-SIZE-PROD_MEOH
 Class: product
 Envelope: 1150 x 1150 x 1450 mm
 Material: per AQS-STD-002

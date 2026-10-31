@@ -1,6 +1,5 @@
 # Build log - NOX_SCRUB
 
-Document number: AQS-SIZE-NOX_SCRUB
 Class: scrubber
 Envelope: 600 x 600 x 4103 mm
 Material: PP-H shell and in-house cut PP rings; PP mesh demister

@@ -1,6 +1,5 @@
 # Build log - RECTIFIER
 
-Document number: AQS-SIZE-RECTIFIER
 Class: rectifier
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

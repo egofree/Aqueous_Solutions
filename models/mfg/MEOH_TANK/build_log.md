@@ -1,6 +1,5 @@
 # Build log - MEOH_TANK
 
-Document number: AQS-SIZE-MEOH_TANK
 Class: tank
 Envelope: 600 x 600 x 600 mm
 Material: per AQS-STD-002

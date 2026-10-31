@@ -1,6 +1,5 @@
 # Build log - MAU_HX
 
-Document number: AQS-SIZE-MAU_HX
 Class: hx
 Envelope: 600 x 400 x 400 mm
 Material: per AQS-STD-002

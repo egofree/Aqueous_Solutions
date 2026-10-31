@@ -1,6 +1,5 @@
 # Build log - MET_MELT
 
-Document number: AQS-SIZE-MET_MELT
 Class: melt
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

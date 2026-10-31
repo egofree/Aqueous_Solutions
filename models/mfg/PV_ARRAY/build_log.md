@@ -1,6 +1,5 @@
 # Build log - PV_ARRAY
 
-Document number: AQS-SIZE-PV_ARRAY
 Class: pv
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

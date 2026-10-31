@@ -124,13 +124,13 @@ T0 gate, before tier 1:
 
 Generated from `flow_graph/plant_flow_graph.json` Rev BH, `flow_graph/placement_seed.json` Rev H, the `cad/stl` sizes, and AQS-MFG-001. 199 present units.
 
-Status codes. M0: `cad/stl` is an envelope box or boxes. M1: `cad/stl` has coarse internals, such as the cell plate racks or a packed section, but there is no manufacturing source. M2: parametric source in `models/mfg` builds. M3: accepted under section 5. Today (2026-10-21): AL_POT is the first unit at M3 (AQS-PLAN-006 section 5 A-core accepted; `models/mfg/AL_POT/build_log.md`, 8-sheet drawing set at `models/mfg/AL_POT/drawings/`, `cad/stl/AL_POT.stl` replaced from the build in the X-PAR-04 registry form). EXPANDER and LEACH_CSTR_1 remain M2 (build + STEP + closed STL, no drawings); the rest of the table stays at the M0/M1 states shown.
+Status codes. M0: `cad/stl` is an envelope box or boxes. M1: `cad/stl` has coarse internals, such as the cell plate racks or a packed section, but there is no manufacturing source. M2: parametric source in `models/mfg` builds. M3: accepted under section 5. Today (2026-10-21): AL_POT is the first unit at M3 (AQS-PLAN-006 section 5 A-core accepted; `models/mfg/AL_POT/build_log.md`, 8-sheet drawing set at `models/mfg/AL_POT/drawings/`, `cad/stl/AL_POT.stl` replaced from the build in the X-PAR-04 registry form). EXPANDER retired with its unit (graph Rev BH; model dir removed 2026-10-30). LEACH_CSTR_1 remains M2 (build + STEP + closed STL, no drawings); the rest of the table stays at the M0/M1 states shown.
 
 Facet counts are estimated from the ASCII STL file size. "Existing source" is an AQS-MFG-001 or `models/freecad` file that bears on the unit. None of them is accepted.
 
 | Seq | Unit | Sector | Class | Tier | Internal on node | Seed origin | `cad/stl` now | Existing source | Route | Acceptance | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | EXPANDER | CRYO | tool | 1 | none | yes | envelope, ~23 f | `models/mfg/EXPANDER/expander.py` | F-MACH | A-core, A-MACH, A-P | M2. Builds, STEP, one closed STL, `cad/stl` replaced. No drawings |
+| 1 | EXPANDER | CRYO | tool | 1 | none | yes | envelope, ~23 f | retired with the unit at graph Rev BH (dir removed 2026-10-30) | F-MACH | A-core, A-MACH, A-P | retired |
 | 2 | LEACH_CSTR_1 | DIGESTER | vessel | 2 | none | yes | envelope, ~23 f | `models/mfg/LEACH_CSTR_1/leach_cstr_1.py` | F-VES | A-core, A-VES | M2. Builds, STEP, one closed STL, `cad/stl` replaced. CPVC per AQS-STD-002 Rev F. No drawings |
 | 3 | EW_1 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |
 | 4 | EW_2 | DIGESTER | ew_cell | 2 | cathode plates, edge strips, PbO2 anodes, launder | yes | plate rack, ~260 f | ew_cell.py, ew_cell.step, mfg_ew_fitout.scad | F-CELL | A-core, A-CELL | M1 |

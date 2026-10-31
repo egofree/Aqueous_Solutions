@@ -1,6 +1,5 @@
 # Build log - F_RECOVER
 
-Document number: AQS-SIZE-F_RECOVER
 Class: separator
 Envelope: 800 x 600 x 1200 mm
 Material: per AQS-STD-002

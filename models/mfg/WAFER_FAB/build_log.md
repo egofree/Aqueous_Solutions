@@ -1,6 +1,5 @@
 # Build log - WAFER_FAB
 
-Document number: AQS-SIZE-WAFER_FAB
 Class: fab
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

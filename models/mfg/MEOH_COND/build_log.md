@@ -1,6 +1,5 @@
 # Build log - MEOH_COND
 
-Document number: AQS-SIZE-MEOH_COND
 Class: separator
 Envelope: per duty sheet section 2
 Material: 316L shell and coil (methanol/water traces)

@@ -1,6 +1,5 @@
 # Build log - SI_REDUCE
 
-Document number: AQS-SIZE-SI_REDUCE
 Class: furnace
 Envelope: 1200 x 1000 x 1600 mm
 Material: per AQS-STD-002

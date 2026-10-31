@@ -1,6 +1,5 @@
 # Build log - POLISH_BANK
 
-Document number: AQS-SIZE-POLISH_BANK
 Class: polish
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

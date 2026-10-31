@@ -1,6 +1,5 @@
 # Build log - OIL_DRYER
 
-Document number: AQS-SIZE-OIL_DRYER
 Class: dryer
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

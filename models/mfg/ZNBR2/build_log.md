@@ -1,6 +1,5 @@
 # Build log - ZNBR2
 
-Document number: AQS-SIZE-ZNBR2
 Class: flow_battery
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

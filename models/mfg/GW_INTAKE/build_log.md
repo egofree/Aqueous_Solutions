@@ -1,6 +1,5 @@
 # Build log - GW_INTAKE
 
-Document number: AQS-SIZE-GW_INTAKE
 Class: intake
 Envelope: 900 x 700 x 1800 mm
 Material: per AQS-STD-002

@@ -1,6 +1,5 @@
 # Build log - MET_HX_Q4
 
-Document number: AQS-SIZE-MET_HX_Q4
 Class: hx
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

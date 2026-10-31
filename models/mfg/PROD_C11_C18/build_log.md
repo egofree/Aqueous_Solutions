@@ -1,6 +1,5 @@
 # Build log - PROD_C11_C18
 
-Document number: AQS-SIZE-PROD_C11_C18
 Class: cut_tank
 Envelope: 600 x 600 x 600 mm
 Material: per AQS-STD-002

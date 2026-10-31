@@ -1,6 +1,5 @@
 # Build log - BMED_ACID
 
-Document number: AQS-SIZE-BMED_ACID
 Class: bmed
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

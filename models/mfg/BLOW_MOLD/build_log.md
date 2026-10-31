@@ -1,6 +1,5 @@
 # Build log - BLOW_MOLD
 
-Document number: AQS-SIZE-BLOW_MOLD
 Class: former
 Envelope: 1200 x 800 x 1600 mm
 Material: per AQS-STD-002

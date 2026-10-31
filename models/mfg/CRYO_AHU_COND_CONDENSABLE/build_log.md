@@ -1,6 +1,5 @@
 # Build log - CRYO_AHU_COND_CONDENSABLE
 
-Document number: AQS-SIZE-CRYO_AHU_COND_CONDENSABLE
 Class: unclassed
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

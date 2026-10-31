@@ -1,6 +1,5 @@
 # Build log - BAGHOUSE
 
-Document number: AQS-SIZE-BAGHOUSE
 Class: baghouse
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

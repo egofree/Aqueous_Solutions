@@ -1,6 +1,5 @@
 # Build log - EW_7
 
-Document number: AQS-SIZE-EW_7
 Class: ew_cell
 Envelope: 600 x 420 x 650 mm
 Material: per AQS-STD-002

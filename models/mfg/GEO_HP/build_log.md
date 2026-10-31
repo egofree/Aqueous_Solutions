@@ -1,6 +1,5 @@
 # Build log - GEO_HP
 
-Document number: AQS-SIZE-GEO_HP
 Class: heat_pump
 Envelope: per duty sheet section 2
 Material: 316L plates, R410A-class refrigerant, propylene-glycol brine source

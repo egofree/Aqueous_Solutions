@@ -1,6 +1,5 @@
 # Build log - HDR_O2
 
-Document number: AQS-SIZE-HDR_O2
 Class: header
 Envelope: per duty sheet section 2
 Material: 316L tube, oxygen-clean per ASTM_G93, socketless

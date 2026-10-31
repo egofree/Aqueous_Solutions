@@ -1,6 +1,5 @@
 # Build log - Q4_B
 
-Document number: AQS-SIZE-Q4_B
 Class: heat_battery
 Envelope: 800 x 800 x 1200 mm
 Material: PP-H (fusion welded)

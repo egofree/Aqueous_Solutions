@@ -1,6 +1,5 @@
 # Build log - HDR_UPW
 
-Document number: AQS-SIZE-HDR_UPW
 Class: header
 Envelope: per duty sheet section 2
 Material: PVDF SDR 21, fusion-welded (high-purity water, AQS-STD-002)

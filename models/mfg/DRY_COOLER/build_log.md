@@ -1,6 +1,5 @@
 # Build log - DRY_COOLER
 
-Document number: AQS-SIZE-DRY_COOLER
 Class: dry_cooler
 Envelope: 1200 x 600 x 1200 mm
 Material: per AQS-STD-002

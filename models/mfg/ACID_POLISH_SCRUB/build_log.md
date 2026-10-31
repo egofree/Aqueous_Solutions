@@ -1,6 +1,5 @@
 # Build log - ACID_POLISH_SCRUB
 
-Document number: AQS-SIZE-ACID_POLISH_SCRUB
 Class: scrubber
 Envelope: 1000 x 1000 x 4103 mm
 Material: PP-H shell and in-house cut PP rings; PP mesh demister

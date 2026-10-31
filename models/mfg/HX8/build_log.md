@@ -1,6 +1,5 @@
 # Build log - HX8
 
-Document number: AQS-SIZE-HX8
 Class: hx
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

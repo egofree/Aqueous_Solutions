@@ -1,6 +1,5 @@
 # Build log - PROD_C5_C10
 
-Document number: AQS-SIZE-PROD_C5_C10
 Class: cut_tank
 Envelope: 600 x 600 x 600 mm
 Material: per AQS-STD-002

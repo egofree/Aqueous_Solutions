@@ -1,6 +1,5 @@
 # Build log - ALK_SCRUBBER
 
-Document number: AQS-SIZE-ALK_SCRUBBER
 Class: scrubber
 Envelope: 1000 x 1000 x 4103 mm
 Material: PP-H shell and in-house cut PP rings; PP mesh demister

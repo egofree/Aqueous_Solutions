@@ -1,6 +1,5 @@
 # Build log - C29_RECYCLE
 
-Document number: AQS-SIZE-C29_RECYCLE
 Class: recycle_pipe
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

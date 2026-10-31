@@ -1,6 +1,5 @@
 # Build log - LOAD_AGG
 
-Document number: AQS-SIZE-LOAD_AGG
 Class: load_agg
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

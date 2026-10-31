@@ -1,6 +1,5 @@
 # Build log - RELIEF_H2
 
-Document number: AQS-SIZE-RELIEF_H2
 Class: relief
 Envelope: per duty sheet section 2
 Material: per AQS-STD-002

@@ -1,6 +1,5 @@
 # Build log - GLASS_BURNOUT
 
-Document number: AQS-SIZE-GLASS_BURNOUT
 Class: intra
 Envelope: 800 x 600 x 1200 mm
 Material: per AQS-STD-002

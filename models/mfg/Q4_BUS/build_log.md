@@ -1,6 +1,5 @@
 # Build log - Q4_BUS
 
-Document number: AQS-SIZE-Q4_BUS
 Class: header
 Envelope: per duty sheet section 2
 Material: PP-H SDR 11 (80 C class), fusion-welded

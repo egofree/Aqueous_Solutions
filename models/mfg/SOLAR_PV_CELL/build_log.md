@@ -1,6 +1,5 @@
 # Build log - SOLAR_PV_CELL
 
-Document number: AQS-SIZE-SOLAR_PV_CELL
 Class: tool
 Envelope: 2400 x 1200 x 1600 mm
 Material: per AQS-STD-002
