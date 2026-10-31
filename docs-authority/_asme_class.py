@@ -5,7 +5,7 @@ ID <= 152 mm at higher pressure -> outside Section VIII by size, designed as a p
 otherwise Section VIII Division 1 (in-house design, no stamp in this study). Replaces the "Vendor" class. Run: python3 docs-authority/_asme_class.py"""
 import collections, json, os
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MACHINES = {'EXPANDER': 'reciprocating expander, cylinder and head are parts of the machine (models/mfg/EXPANDER); hydrotest 1.5 x 550 kPa g'}
+MACHINES = {}  # EXPANDER retired (graph Rev AC); the model dir was removed with the unit
 def main():
     g = json.load(open(os.path.join(R, 'flow_graph/plant_flow_graph.json'))); rows = []
     for n in sorted(g['nodes'], key=lambda n: n['unit_id']):
