@@ -29,22 +29,23 @@ Table 1.1. Motor families
 | Family | Motor type | Size | Voltage | Count | Units | Installed shaft kW |
 | --- | --- | --- | --- | --- | --- | --- |
 | MF-01 | BLDC | 42 mm (NEMA 17 flange) | 24 V DC | 14 | 10 | 0.03 |
-| MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 56 | 6 | 2.68 |
-| MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 3 | 1 | 0.03 |
+| MF-02 | BLDC | 57 mm (NEMA 23 flange) | 24 V DC | 55 | 5 | 2.66 |
+| MF-03 | BLDC actuator | ISO 5211 F03 mount | 24 V DC | 24 | 1 | 0.12 |
 | MF-06 | induction IE3 | IEC 71 / 0.37 kW | 480 V 3-ph | 2 | 2 | 0.56 |
-| MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 3 | 3 | 2.43 |
+| MF-07 | induction IE3 | IEC 90S / 1.1 kW | 480 V 3-ph | 19 | 4 | 16.70 |
 | MF-08 | induction IE3 | IEC 90L / 1.5 kW | 480 V 3-ph | 3 | 3 | 3.49 |
-| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 247 | 68 | 29.64 |
+| MF-09 | induction IE3 | IEC 63 / 0.18 kW | 208 V 3-ph | 217 | 62 | 26.04 |
 | MF-10 | induction IE3 | IEC 80 / 0.55 kW | 480 V 3-ph | 3 | 2 | 1.11 |
 | MF-11 | induction IE3 | IEC 100L / 2.2 kW | 480 V 3-ph | 4 | 4 | 6.04 |
-| MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 3 | 3 | 0.26 |
+| MF-12 | induction IE3 | IEC 63 / 0.12 kW | 208 V 3-ph | 2 | 2 | 0.17 |
 | MF-13 | induction IE3 | IEC 71 / 0.25 kW | 208 V 3-ph | 1 | 1 | 0.18 |
 | MF-14 | induction IE3 | IEC 132M / 7.5 kW | 480 V 3-ph | 3 | 2 | 16.09 |
 | MF-15 | induction IE3 | IEC 112M / 4 kW | 480 V 3-ph | 1 | 1 | 3.48 |
 | MF-16 | induction IE3 | IEC 80 / 0.75 kW | 480 V 3-ph | 1 | 1 | 0.55 |
-| MF-17 | solenoid | ISO 15218 coil, 22 mm | 24 V DC | 1 | 1 | 0.03 |
 | MF-19 | stepper | NEMA 34 (86 mm) | 48 V DC | 3 | 1 | 1.20 |
 | MF-25 | hermetic induction (scroll) | 1.1 kW hermetic | 480 V 3-ph | 1 | 1 | 0.93 |
+| MF-27 | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 480 V 3-ph | 16 | 1 | 12.00 |
+| MF-28 | hermetic induction (scroll) | 18.5 kW hermetic | 480 V 3-ph | 8 | 1 | 122.78 |
 
 ## 2. Inventory by sector, sub-system and unit
 
@@ -105,18 +106,15 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 | ew_cell | EW_8 | Motor: electrolyte circulation pump (induction IE3, IEC 63 / | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | ew_cell | EW_8 | Motor: transfer pump IA-EW-08 to EW_9 (BLDC, 42 mm (NEMA 17  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 
-### DOCK
-
-| Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DOCK | NORTH_DOCK | Motor: dock leveller hydraulic pump (induction IE3, IEC 90S  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 2 | BOM; shaft assumed (A-M-119) |
-
 ### ELEC
 
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| EXT_HALL_N | EXT_HALL | Motor: air-source heat pump compressor (hermetic induction ( | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 8 | BOM; shaft assumed (A-M-119) |
-| EXT_HALL_N | EXT_HALL | Motor: heat pump condenser fan (EC (electronically commutate | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 16 | BOM; shaft assumed (A-M-119) |
+| EXT_HALL_N | EXT_HALL | AHU damper actuator | BLDC actuator | ISO 5211 F03 mount | 0.005 | 24 V DC | S2 | on/off | 24 | assumed 3 per AHU |
+| EXT_HALL_N | EXT_HALL | AHU exhaust fan | induction IE3 | IEC 90S / 1.1 kW | 0.8921 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
+| EXT_HALL_N | EXT_HALL | AHU supply fan | induction IE3 | IEC 90S / 1.1 kW | 0.8921 | 480 V 3-ph | S1 | variable-frequency drive | 8 | 8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed) |
+| EXT_HALL_N | EXT_HALL | air-source heat pump compressor | hermetic induction (scroll) | 18.5 kW hermetic | 15.3475 | 480 V 3-ph | S1 | variable-frequency drive | 8 | peak cooling 395 kW / COP 3.22 / 8 modules (module count assumed, A-M-119) |
+| EXT_HALL_N | EXT_HALL | heat pump condenser fan | EC (electronically commutated, permanent-magnet) fan motor | 1.1 kW EC fan, integrated drive | 0.75 | 480 V 3-ph | S1 | electronically commutated (EC) motor | 16 | assumed 2 per module; EC fan type assumed (A-M-119) |
 | flow_battery | ZNBR2 | Motor: electrolyte pump (anolyte, catholyte) per stack strin | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 96 | BOM; shaft assumed (A-M-119) |
 | flow_battery | ZNBR2 | Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm ( | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | genset | BACKUP_GEN | radiator fan | induction IE3 | IEC 71 / 0.37 kW | 0.25 | 480 V 3-ph | S1 | fixed speed | 1 | assumed |
@@ -215,14 +213,6 @@ The tables below list the items of each sector. Duty is the IEC 60034-1 duty typ
 
 | Sub-system | Unit | Device | Motor type | Size | Shaft kW | Voltage | Duty | Speed control | Qty | Basis |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| - | BLACK_ALK_HOLD | NaOH dosing pump, solenoid diaphragm | solenoid | ISO 15218 coil, 22 mm | 0.03 | 24 V DC | S3 | on/off | 1 | BOM; shaft assumed (A-M-119) |
-| - | BLACK_ALK_HOLD | Release valve per tank, actuated, interlocked to the batch t | BLDC actuator | ISO 5211 F03 mount | 0.01 | 24 V DC | S2 | on/off | 3 | BOM |
-| - | BLACK_DEWATER | Gearmotor 0.09 kW, 10 rpm output | induction IE3 | IEC 63 / 0.12 kW | 0.09 | 208 V 3-ph | S1 | fixed speed | 1 | BOM (sized) |
-| - | BLACK_PASTEUR | Transfer pump, magnetic drive | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| - | DIGESTER | Biogas recirculation blower, diaphragm, about 1 L/min | BLDC | 57 mm (NEMA 23 flange) | 0.02 | 24 V DC | S1 | BLDC driver | 1 | BOM; shaft assumed (A-M-119) |
-| FARM | GLYOXAL | Mineral wool insulation with SS cladding; recirculation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| FARM | IMID | Mineral wool insulation with SS cladding; recirculation pump | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
-| FARM | YEAST | PIR insulation 50 mm with PE cladding; CO2 evolution; daily  | induction IE3 | IEC 63 / 0.18 kW | 0.12 | 208 V 3-ph | S1 | fixed speed | 1 | BOM; shaft assumed (A-M-119) |
 | MFG | COLD_MILL | Two-high cold rolling mill: main drive | induction IE3 | IEC 100L / 2.2 kW | 1.913 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
 | MFG | GAS_ATOMIZER | Close-coupled gas atomiser with Ar recirculation: main drive | induction IE3 | IEC 132M / 7.5 kW | 4.7826 | 480 V 3-ph | S3 | fixed speed | 1 | MFG_TOOLS nameplate |
 | MFG | MET_MELT | Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump | induction IE3 | IEC 80 / 0.55 kW | 0.37 | 480 V 3-ph | S1 | fixed speed | 1 | MFG_TOOLS; assumed (A-M-119) |

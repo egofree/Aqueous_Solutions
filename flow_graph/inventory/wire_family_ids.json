@@ -198,6 +198,18 @@
    "size": "350 kcmil",
    "insulation": "XHHW-2 Cu, tray cable TC-ER",
    "voltage_class": "600 V"
+  },
+  "WF-34": {
+   "type": "power",
+   "size": "3/0 AWG",
+   "insulation": "XHHW-2 Cu, tray cable TC-ER",
+   "voltage_class": "600 V"
+  },
+  "WF-35": {
+   "type": "power",
+   "size": "300 kcmil",
+   "insulation": "XHHW-2 Cu, tray cable TC-ER",
+   "voltage_class": "600 V"
   }
  }
 }

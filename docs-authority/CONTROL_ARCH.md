@@ -54,8 +54,7 @@ Table 4.1. I/O and modules by PLC
 |---|---|---|---|---|---|---|---|---|
 | PLC-CRYO | 34 | 1 | 15 | 5 | 0 | 3/1/2/1 | redundant pair | 38 |
 | PLC-DIGESTER | 132 | 3 | 101 | 37 | 0 | 10/1/8/3 | single | 56 |
-| PLC-DOCK | 10 | 0 | 4 | 2 | 0 | 1/0/1/1 | single | 18 |
-| PLC-ELEC | 28 | 1 | 363 | 126 | 53 | 3/1/28/10 | redundant pair | 108 |
+| PLC-ELEC | 28 | 17 | 443 | 110 | 77 | 3/2/34/9 | redundant pair | 120 |
 | PLC-FAB | 63 | 0 | 56 | 22 | 0 | 5/0/5/2 | single | 36 |
 | PLC-FARM | 48 | 0 | 3 | 1 | 0 | 4/0/1/1 | redundant pair | 36 |
 | PLC-FOUNDRY | 87 | 0 | 17 | 0 | 5 | 7/0/2/0 | single | 30 |
@@ -65,14 +64,14 @@ Table 4.1. I/O and modules by PLC
 | PLC-HAB | 13 | 0 | 1 | 0 | 0 | 1/0/1/0 | redundant pair | 28 |
 | PLC-HEAT | 24 | 0 | 0 | 0 | 0 | 2/0/0/0 | single | 16 |
 | PLC-MEOH | 30 | 0 | 25 | 8 | 3 | 3/0/2/1 | single | 24 |
-| PLC-MFG | 28 | 8 | 62 | 15 | 7 | 3/1/5/2 | single | 34 |
+| PLC-MFG | 28 | 8 | 42 | 9 | 3 | 3/1/4/1 | single | 30 |
 | PLC-NUT | 9 | 0 | 11 | 5 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-OIL | 55 | 0 | 32 | 8 | 3 | 5/0/3/1 | single | 30 |
 | PLC-POLYMERS | 48 | 0 | 18 | 3 | 3 | 4/0/2/1 | single | 26 |
 | PLC-PUMPED_HYDRO | 2 | 0 | 2 | 1 | 0 | 1/0/1/1 | redundant pair | 30 |
 | PLC-WTR | 61 | 0 | 45 | 18 | 1 | 5/0/4/2 | redundant pair | 46 |
-| Total | 722 | 13 | 782 | 260 | 76 | 167 modules | 9 redundant of 19 | 670 |
+| Total | 712 | 29 | 838 | 236 | 96 | 168 modules | 9 redundant of 18 | 660 |
 
-The control system draws about 0.67 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
+The control system draws about 0.66 kW from the 24 V supplies, which is within the critical load of AQS-ELEC-007.
 
 The module count in AQS-INV-004 (item OF-07) uses a different basis, the number of points divided by 16 with no spare, and is superseded by Table 4.1. The DI count adds the high-level switches of the instrument index to the digital points of the inventory. If the inventory already counts those switches, the DI count is 113 too high, which errs on the safe side.

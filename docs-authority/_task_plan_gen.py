@@ -351,7 +351,7 @@ X=[
 ('X-LOC-13','Evaporative rejection water charge','at sites whose low-grade rejection mode is evaporative (AQS-PLAN-011 section 6.2), the spray consumed is booked against the water balance as rejected duty divided by the latent heat of water, and the groundwater intake closes the deficit by difference; the design pass states the ordering between the heat solve and the mass closure and the baseline output stays unchanged','X-LOC-07','flow_graph/param/balance.py')]),
 ('TOOL','Modeling tooling',[
 ('X-TOOL-01','Manufacturing model plan','AQS-PLAN-006 issued with tracker (D5)','—','docs-authority/MFG_MODEL_PLAN.md'),
-('X-TOOL-02','CadQuery installed and proven','EXPANDER and LEACH_CSTR_1 at M2 (D6, D7)','X-TOOL-01','models/mfg/EXPANDER/expander.py'),
+('X-TOOL-02','CadQuery installed and proven','EXPANDER and LEACH_CSTR_1 at M2 (D6, D7)','X-TOOL-01','models/mfg/LEACH_CSTR_1/'),
 ('X-TOOL-03','STL storage in LFS','all cad/stl files are LFS pointers','—','cad/stl'),
 ('X-TOOL-04','Design tool phases','AQS-UI-001 phases beyond P0, P1, B-prime','—',None)])]
 # X-INV-02 children: one open-design + manufacturing-plan task per motor family in the X-INV-01 rollup (regenerated from the CSV)

@@ -9,13 +9,13 @@
   "family": "MF-02",
   "type": "BLDC",
   "rating": "57 mm (NEMA 23 flange)",
-  "items": 56
+  "items": 55
  },
  {
   "family": "MF-03",
   "type": "BLDC actuator",
   "rating": "ISO 5211 F03 mount",
-  "items": 3
+  "items": 24
  },
  {
   "family": "MF-06",
@@ -48,7 +48,7 @@
   "family": "MF-07",
   "type": "induction IE3",
   "rating": "IEC 90S / 1.1 kW",
-  "items": 3,
+  "items": 19,
   "P_kW": 1.1,
   "poles": 4,
   "Dg": 84.0,
@@ -102,7 +102,7 @@
   "family": "MF-09",
   "type": "induction IE3",
   "rating": "IEC 63 / 0.18 kW",
-  "items": 247,
+  "items": 217,
   "P_kW": 0.18,
   "poles": 4,
   "Dg": 59.0,
@@ -183,7 +183,7 @@
   "family": "MF-12",
   "type": "induction IE3",
   "rating": "IEC 63 / 0.12 kW",
-  "items": 3,
+  "items": 2,
   "P_kW": 0.12,
   "poles": 4,
   "Dg": 52.0,
@@ -315,12 +315,6 @@
   "T_Nm": 4.1
  },
  {
-  "family": "MF-17",
-  "type": "solenoid",
-  "rating": "ISO 15218 coil, 22 mm",
-  "items": 1
- },
- {
   "family": "MF-19",
   "type": "stepper",
   "rating": "NEMA 34 (86 mm)",
@@ -352,5 +346,38 @@
   "ring_mm2": 29.9,
   "frame": "",
   "T_Nm": 3.0
+ },
+ {
+  "family": "MF-27",
+  "type": "EC (electronically commutated, permanent-magnet) fan motor",
+  "rating": "1.1 kW EC fan, integrated drive",
+  "items": 16
+ },
+ {
+  "family": "MF-28",
+  "type": "hermetic induction (scroll)",
+  "rating": "18.5 kW hermetic",
+  "items": 8,
+  "P_kW": 18.5,
+  "poles": 2,
+  "Dg": 138.0,
+  "L": 113.0,
+  "Dout": 277.0,
+  "airgap_mm": 0.709,
+  "Dbore": 138.71,
+  "Qs": 36,
+  "Qr": 28,
+  "slot_area_mm2": 301.3,
+  "tooth_mm": 5.82,
+  "slot_depth_mm": 33.08,
+  "yoke_mm": 35.57,
+  "Dout_check_mm": 276.0,
+  "od_ok": true,
+  "L_req_mm": 113,
+  "N_req": 92,
+  "bar_mm2": 90.9,
+  "ring_mm2": 202.5,
+  "frame": "",
+  "T_Nm": 50.6
  }
 ]

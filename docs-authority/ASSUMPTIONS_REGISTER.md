@@ -1287,15 +1287,6 @@ Table 3.1. Model parameters
 | A-P-0d4f78 | 2.0 | mm | models/mfg/CR_CELL/params.json DN50_wall_mm | assumption |  | unit task 10 (CR_CELL) |
 | A-P-22b167 | 21.3 | mm | models/mfg/CR_CELL/params.json DN15_OD_mm | assumption |  | unit task 10 (CR_CELL) |
 | A-P-c4e278 | 2.0 | mm | models/mfg/CR_CELL/params.json DN15_wall_mm | assumption |  | unit task 10 (CR_CELL) |
-| A-P-4e3f95 | 12 | mm | models/mfg/EXPANDER/params.json baseplate_t_mm | assumption |  | unit task 10 (EXPANDER) |
-| A-P-917f64 | 10 | mm | models/mfg/EXPANDER/params.json cylinder_wall_mm | assumption |  | unit task 10 (EXPANDER) |
-| A-P-0829fa | [300, 300, 250] | mm | models/mfg/EXPANDER/params.json crankcase_mm | assumption |  | unit task 10 (EXPANDER) |
-| A-P-5cf34a | 240 | mm | models/mfg/EXPANDER/params.json flywheel_d_mm | assumption |  | unit task 10 (EXPANDER) |
-| A-P-2b38e0 | 30 | mm | models/mfg/EXPANDER/params.json flywheel_t_mm | assumption |  | unit task 10 (EXPANDER) |
-| A-P-6cb5ae | 21.3 | mm | models/mfg/EXPANDER/params.json DN15_OD_mm | assumption |  | unit task 10 (EXPANDER) |
-| A-P-d87378 | 50 | mm | models/mfg/EXPANDER/params.json nozzle_stub_len_mm | assumption |  | unit task 10 (EXPANDER) |
-| A-P-763503 | 115 |  | models/mfg/EXPANDER/params.json allowable_stress_MPa | assumption |  | unit task 10 (EXPANDER) |
-| A-P-fd20b0 | Not on the graph. Shop proportions chosen to fit size_mm. Not measured. Not a design calculation except the wall check. |  | models/mfg/EXPANDER/params.json note | assumption |  | unit task 10 (EXPANDER) |
 | A-P-65a831 | 21.3 | mm | models/mfg/FILM_CAST/params.json DN15_OD_mm | assumption |  | unit task 10 (FILM_CAST) |
 | A-P-a1e904 | 2.0 | mm | models/mfg/FILM_CAST/params.json DN15_wall_mm | assumption |  | unit task 10 (FILM_CAST) |
 | A-P-413496 | 21.3 | mm | models/mfg/FLUX_PREP/params.json DN15_OD_mm | assumption |  | unit task 10 (FLUX_PREP) |

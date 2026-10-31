@@ -43,9 +43,11 @@ DIGESTER,ew_cell,EW_7,"Motor: electrolyte circulation pump (induction IE3, IEC 6
 DIGESTER,ew_cell,EW_7,"Motor: transfer pump IA-EW-07 to EW_8 (BLDC, 42 mm (NEMA 17 ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,ew_cell,EW_8,"Motor: electrolyte circulation pump (induction IE3, IEC 63 /",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 DIGESTER,ew_cell,EW_8,"Motor: transfer pump IA-EW-08 to EW_9 (BLDC, 42 mm (NEMA 17 ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-DOCK,DOCK,NORTH_DOCK,"Motor: dock leveller hydraulic pump (induction IE3, IEC 90S ",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,2,BOM; shaft assumed (A-M-119)
-ELEC,EXT_HALL_N,EXT_HALL,Motor: air-source heat pump compressor (hermetic induction (,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,8,BOM; shaft assumed (A-M-119)
-ELEC,EXT_HALL_N,EXT_HALL,Motor: heat pump condenser fan (EC (electronically commutate,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,16,BOM; shaft assumed (A-M-119)
+ELEC,EXT_HALL_N,EXT_HALL,AHU damper actuator,BLDC actuator,ISO 5211 F03 mount,0.005,24 V DC,S2,on/off,24,assumed 3 per AHU
+ELEC,EXT_HALL_N,EXT_HALL,AHU exhaust fan,induction IE3,IEC 90S / 1.1 kW,0.8921,480 V 3-ph,S1,variable-frequency drive,8,"8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
+ELEC,EXT_HALL_N,EXT_HALL,AHU supply fan,induction IE3,IEC 90S / 1.1 kW,0.8921,480 V 3-ph,S1,variable-frequency drive,8,"8564 L/s (ASHRAE 62.1) / 8 AHUs at 500 Pa, fan eff 0.6 (assumed)"
+ELEC,EXT_HALL_N,EXT_HALL,air-source heat pump compressor,hermetic induction (scroll),18.5 kW hermetic,15.3475,480 V 3-ph,S1,variable-frequency drive,8,"peak cooling 395 kW / COP 3.22 / 8 modules (module count assumed, A-M-119)"
+ELEC,EXT_HALL_N,EXT_HALL,heat pump condenser fan,"EC (electronically commutated, permanent-magnet) fan motor","1.1 kW EC fan, integrated drive",0.75,480 V 3-ph,S1,electronically commutated (EC) motor,16,assumed 2 per module; EC fan type assumed (A-M-119)
 ELEC,flow_battery,ZNBR2,"Motor: electrolyte pump (anolyte, catholyte) per stack strin",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,96,BOM; shaft assumed (A-M-119)
 ELEC,flow_battery,ZNBR2,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 ELEC,genset,BACKUP_GEN,radiator fan,induction IE3,IEC 71 / 0.37 kW,0.25,480 V 3-ph,S1,fixed speed,1,assumed
@@ -104,14 +106,6 @@ MEOH,tank,MEOH_TANK,"Motor: transfer pump IA-MEOH-REST to MEOH_FC (BLDC, 42 mm (
 MEOH,tank,MEOH_TANK,"Motor: transfer pump MEOH_TO_TFE to TFE_SYN (BLDC, 42 mm (NE",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 MEOH,tank,MEOH_TANK,"Motor: transfer pump MEOH_TO_VDF to VDF_SYN (BLDC, 42 mm (NE",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 MEOH,tank,MEOH_TANK,"Motor: transfer pump S76 to MEOH_FC (BLDC, 42 mm (NEMA 17 fl",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-MFG,-,BLACK_ALK_HOLD,"NaOH dosing pump, solenoid diaphragm",solenoid,"ISO 15218 coil, 22 mm",0.03,24 V DC,S3,on/off,1,BOM; shaft assumed (A-M-119)
-MFG,-,BLACK_ALK_HOLD,"Release valve per tank, actuated, interlocked to the batch t",BLDC actuator,ISO 5211 F03 mount,0.01,24 V DC,S2,on/off,3,BOM
-MFG,-,BLACK_DEWATER,"Gearmotor 0.09 kW, 10 rpm output",induction IE3,IEC 63 / 0.12 kW,0.09,208 V 3-ph,S1,fixed speed,1,BOM (sized)
-MFG,-,BLACK_PASTEUR,"Transfer pump, magnetic drive",induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-MFG,-,DIGESTER,"Biogas recirculation blower, diaphragm, about 1 L/min",BLDC,57 mm (NEMA 23 flange),0.02,24 V DC,S1,BLDC driver,1,BOM; shaft assumed (A-M-119)
-MFG,FARM,GLYOXAL,Mineral wool insulation with SS cladding; recirculation pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-MFG,FARM,IMID,Mineral wool insulation with SS cladding; recirculation pump,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
-MFG,FARM,YEAST,PIR insulation 50 mm with PE cladding; CO2 evolution; daily ,induction IE3,IEC 63 / 0.18 kW,0.12,208 V 3-ph,S1,fixed speed,1,BOM; shaft assumed (A-M-119)
 MFG,MFG,COLD_MILL,Two-high cold rolling mill: main drive,induction IE3,IEC 100L / 2.2 kW,1.913,480 V 3-ph,S3,fixed speed,1,MFG_TOOLS nameplate
 MFG,MFG,GAS_ATOMIZER,Close-coupled gas atomiser with Ar recirculation: main drive,induction IE3,IEC 132M / 7.5 kW,4.7826,480 V 3-ph,S3,fixed speed,1,MFG_TOOLS nameplate
 MFG,MFG,MET_MELT,"Induction melt furnace, coreless, 10 kg Cu crucible: cooling-water pump",induction IE3,IEC 80 / 0.55 kW,0.37,480 V 3-ph,S1,fixed speed,1,MFG_TOOLS; assumed (A-M-119)

@@ -184,16 +184,6 @@ CONTINUOUS_RECYCLE-LSH-01,CONTINUOUS_RECYCLE,DIGESTER,high-level switch,"IEC 609
 CONTINUOUS_RECYCLE-LT-01,CONTINUOUS_RECYCLE,DIGESTER,level transmitter,"IEC 62828, PTFE lens",0-100 % of vessel height,4-20 mA HART (AI),CONTINUOUS_RECYCLELT-01,PLC-DIGESTER,A-M-182 liquid height
 CONTINUOUS_RECYCLE-PT-01,CONTINUOUS_RECYCLE,DIGESTER,pressure transmitter,"ceramic diaphragm, IEC 61298",0-10 bar g,4-20 mA HART (AI),CONTINUOUS_RECYCLEPT-01,PLC-DIGESTER,no design pressure on the graph
 CONTINUOUS_RECYCLE-TE-01,CONTINUOUS_RECYCLE,DIGESTER,temperature element,"IEC 60751, 316L thermowell",-20 to 150 C,4-20 mA HART (AI),CONTINUOUS_RECYCLETE-01,PLC-DIGESTER,band by service
-NORTH_DOCK-FT-01,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-5 L/h,4-20 mA HART (AI),NORTH_DOCKFT-01,PLC-DOCK,IA-H2O-MU normal 2.41 L/h
-NORTH_DOCK-FT-02,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-10 L/h (standby line),4-20 mA HART (AI),NORTH_DOCKFT-02,PLC-DOCK,IA-AIR-IN normal 0.00 L/h
-NORTH_DOCK-FT-03,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.02 L/h,4-20 mA HART (AI),NORTH_DOCKFT-03,PLC-DOCK,IA-SOLV-MU normal 0.01 L/h
-NORTH_DOCK-FT-04,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.05 L/h,4-20 mA HART (AI),NORTH_DOCKFT-04,PLC-DOCK,IA-H2SO4-MU normal 0.02 L/h
-NORTH_DOCK-FT-05,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.005 L/h,4-20 mA HART (AI),NORTH_DOCKFT-05,PLC-DOCK,IA-MGCL2-MU normal 0.00 L/h
-NORTH_DOCK-FT-06,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.02 L/h,4-20 mA HART (AI),NORTH_DOCKFT-06,PLC-DOCK,IA-CACL2-MU normal 0.01 L/h
-NORTH_DOCK-FT-07,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.5 L/h,4-20 mA HART (AI),NORTH_DOCKFT-07,PLC-DOCK,NUT_AQUA normal 0.23 L/h
-NORTH_DOCK-FT-08,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.1 L/h,4-20 mA HART (AI),NORTH_DOCKFT-08,PLC-DOCK,NUT_AQUA_BED normal 0.04 L/h
-NORTH_DOCK-FT-09,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.005 L/h,4-20 mA HART (AI),NORTH_DOCKFT-09,PLC-DOCK,CA_HOPPER normal 0.00 L/h
-NORTH_DOCK-FT-10,NORTH_DOCK,DOCK,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.0002 L/h,4-20 mA HART (AI),NORTH_DOCKFT-10,PLC-DOCK,FR_FINISH normal 0.00 L/h
 ZNBR2-FT-01,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-100 L/h,4-20 mA HART (AI),ZNBR2FT-01,PLC-ELEC,S69 normal 38.15 L/h
 ZNBR2-FT-02,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-1 L/h,4-20 mA HART (AI),ZNBR2FT-02,PLC-ELEC,IA-ZNBR-BD normal 0.35 L/h
 ZNBR2-FT-03,ZNBR2,ELEC,flow transmitter,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",0-0.2 L/h,4-20 mA HART (AI),ZNBR2FT-03,PLC-ELEC,IA-ZNBR-HEAT normal 0.07 L/h

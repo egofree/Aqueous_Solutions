@@ -1,6 +1,6 @@
 sector,subsystem,unit,category,item,size,spec,qty,basis
-CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,97,1549 points / 16
-CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,851,one per instrument
+CONTROL,PLC,PLC,electronics,"PLC I/O module, 16 channel",24 V DC,IEC 61131-2,100,1595 points / 16
+CONTROL,PLC,PLC,electronics,PLC analog input point,4-20 mA HART,IEC 61131-2,841,one per instrument
 CONTROL,SIS,PLC,electronics,"safety PLC (SIL 2 capable), CPU and I/O rack",-,IEC 61508 / IEC 61511,2,"AQS-CTL-003: 174 SIFs, redundant pair"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 CRYO,-,CRYO_AHU_COND_CONDENSABLE,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Motor: transfer pump S70 to FLUE_KO (BLDC, 42 mm (NEMA 17 fl: run and fault (assumed)"
@@ -856,10 +856,6 @@ DIGESTER,recycle_pipe,CONTINUOUS_RECYCLE,instrument,pressure transmitter,0-10 ba
 DIGESTER,recycle_pipe,CONTINUOUS_RECYCLE,instrument,temperature element,Pt100 class A,"IEC 60751, 316L thermowell",1,duty item 5 (assumed one per unit)
 DIGESTER,recycle_pipe,CONTINUOUS_RECYCLE,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",10,IA-REC-01: AQS-PIP-005 span count
 DIGESTER,recycle_pipe,CONTINUOUS_RECYCLE,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-REC-01: one at each end nozzle (assumed)
-DOCK,DOCK,NORTH_DOCK,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",4,"Motor: dock leveller hydraulic pump (induction IE3, IEC 90S : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-DOCK,DOCK,NORTH_DOCK,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,4,"Motor: dock leveller hydraulic pump (induction IE3, IEC 90S : run and fault (assumed)"
-DOCK,DOCK,NORTH_DOCK,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,2,"Motor: dock leveller hydraulic pump (induction IE3, IEC 90S  (assumed VFD at >= 0.75 kW)"
-DOCK,DOCK,NORTH_DOCK,fabricated part,fabricated part set,28 BOM lines,models/mfg/NORTH_DOCK/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,50,IA-H2O-MU: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,32,IA-AIR-IN: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,22,IA-SOLV-MU: 2 per support (assumed)
@@ -870,18 +866,6 @@ DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,110,NU
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,52,NUT_AQUA_BED: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,54,CA_HOPPER: 2 per support (assumed)
 DOCK,DOCK,NORTH_DOCK,fastener,anchor bolt,M10,ISO 3506 A4-70 wedge anchor,58,FR_FINISH: 2 per support (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-H2O-MU: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN50,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-AIR-IN: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-SOLV-MU: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-H2SO4-MU: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-MGCL2-MU: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,IA-CACL2-MU: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,NUT_AQUA: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,NUT_AQUA_BED: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,CA_HOPPER: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,instrument,flow transmitter,DN15,"electromagnetic, PFA liner, Hastelloy C electrodes, ISO 20456",1,FR_FINISH: pumped line (assumed)
-DOCK,DOCK,NORTH_DOCK,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,2,"NEC 430.52, from AQS-INV-002"
-DOCK,DOCK,NORTH_DOCK,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",2,"Motor: dock leveller hydraulic pump (induction IE3, IEC 90S : induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive"
 DOCK,DOCK,NORTH_DOCK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",11,IA-SOLV-MU: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,U-bolt with guide,DN15,"316 U-bolt, MSS SP-58 Type 24",18,IA-H2SO4-MU: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",25,IA-H2O-MU: AQS-PIP-005 span count
@@ -892,16 +876,6 @@ DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-5
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",26,NUT_AQUA_BED: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",27,CA_HOPPER: AQS-PIP-005 span count
 DOCK,DOCK,NORTH_DOCK,support,pipe clamp,DN15,"PP clamp with EPDM liner, MSS SP-58 Type 7",29,FR_FINISH: AQS-PIP-005 span count
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN15,"CPVC true-union swing/ball check valve, FKM seals",1,IA-H2O-MU: pump discharge (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN50,"PP swing/ball check valve with HDPE stub ends, ISO 16137",1,IA-AIR-IN: pump discharge (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-SOLV-MU: pump discharge (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN15,"CS A216 WCB swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-H2SO4-MU: pump discharge (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-MGCL2-MU: pump discharge (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN15,"316L swing/ball check valve, ASME B16.34 Cl 150, RF flanged",1,IA-CACL2-MU: pump discharge (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,NUT_AQUA: pump discharge (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,NUT_AQUA_BED: pump discharge (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,CA_HOPPER: pump discharge (assumed)
-DOCK,DOCK,NORTH_DOCK,valve,check valve,DN15,"PVC-U true-union swing/ball check valve, EPDM seals",1,FR_FINISH: pump discharge (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"CPVC true-union ball valve, MSS SP-122, FKM seals",2,IA-H2O-MU: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN50,"PP ball valve with HDPE stub ends, ISO 16135",2,IA-AIR-IN: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-SOLV-MU: one at each end nozzle (assumed)
@@ -912,17 +886,22 @@ DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MS
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,NUT_AQUA_BED: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,CA_HOPPER: one at each end nozzle (assumed)
 DOCK,DOCK,NORTH_DOCK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,FR_FINISH: one at each end nozzle (assumed)
-DOCK,boundary,BOUNDARY_EXPORT,fabricated part,fabricated part set,1 BOM lines,models/mfg/BOUNDARY_EXPORT/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",16,"Motor: air-source heat pump compressor (hermetic induction (: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",32,"Motor: heat pump condenser fan (EC (electronically commutate: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,Motor: air-source heat pump compressor (hermetic induction (: run and fault (assumed)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,32,Motor: heat pump condenser fan (EC (electronically commutate: run and fault (assumed)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,8,Motor: air-source heat pump compressor (hermetic induction ( (assumed VFD at >= 0.75 kW)
-ELEC,EXT_HALL_N,EXT_HALL,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,16,Motor: heat pump condenser fan (EC (electronically commutate (assumed VFD at >= 0.75 kW)
-ELEC,EXT_HALL_N,EXT_HALL,fabricated part,fabricated part set,22 BOM lines,models/mfg/EXT_HALL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
+ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",48,AHU damper actuator (assumed size)
+ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU exhaust fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
+ELEC,EXT_HALL_N,EXT_HALL,bearing,deep-groove ball bearing,6205-2Z,"ISO 15 / ISO 492 normal class, C3",16,"AHU supply fan: drive and non-drive end, IEC 60072 frame 90S (assumed size)"
+ELEC,EXT_HALL_N,EXT_HALL,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,24,AHU damper actuator
+ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,48,AHU damper actuator: run and fault (assumed)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,AHU exhaust fan: run and fault (assumed)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,AHU supply fan: run and fault (assumed)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,16,air-source heat pump compressor: run and fault (assumed)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,32,heat pump condenser fan: run and fault (assumed)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,compressor contactor + overload,18.5 kW hermetic,IEC 60947-4-1,8,air-source heat pump compressor
+ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,8,AHU exhaust fan (assumed VFD at >= 0.75 kW)
+ELEC,EXT_HALL_N,EXT_HALL,electronics,variable-frequency drive,1.1 kW,IEC 61800-5-1,8,AHU supply fan (assumed VFD at >= 0.75 kW)
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
+ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
+ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",90 A,UL 489 / IEC 60947-2,8,"NEC 430.52, from AQS-INV-002"
 ELEC,EXT_HALL_N,EXT_HALL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,16,"NEC 430.52, from AQS-INV-002"
-ELEC,EXT_HALL_N,EXT_HALL,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",16,Motor: heat pump condenser fan (EC (electronically commutate: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
 ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",192,"Motor: electrolyte pump (anolyte, catholyte) per stack strin: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 ELEC,flow_battery,ZNBR2,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Motor: transfer pump IA-ZNBR-BD to GREY_TREAT (BLDC, 42 mm (: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
 ELEC,flow_battery,ZNBR2,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,192,"Motor: electrolyte pump (anolyte, catholyte) per stack strin: run and fault (assumed)"
@@ -2330,86 +2309,8 @@ MEOH,tank,MEOH_TANK,valve,isolation valve,DN50,"PP ball valve with HDPE stub end
 MEOH,tank,MEOH_TANK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,IA-MEOH-PROD: one at each end nozzle (assumed)
 MEOH,tank,MEOH_TANK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,MEOH_TO_VDF: one at each end nozzle (assumed)
 MEOH,tank,MEOH_TANK,valve,isolation valve,DN15,"316L ball valve, ASME B16.34 Cl 150, RF flanged",2,MEOH_TO_TFE: one at each end nozzle (assumed)
-MFG,-,BLACK_ALK_HOLD,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",6,"Release valve per tank, actuated, interlocked to the batch t (assumed size)"
-MFG,-,BLACK_ALK_HOLD,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,3,"Release valve per tank, actuated, interlocked to the batch t"
-MFG,-,BLACK_ALK_HOLD,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"NaOH dosing pump, solenoid diaphragm: run and fault (assumed)"
-MFG,-,BLACK_ALK_HOLD,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,6,"Release valve per tank, actuated, interlocked to the batch t: run and fault (assumed)"
-MFG,-,BLACK_ALK_HOLD,electronics,solenoid driver channel,24 V DC,IEC 61131-2 DO,1,"NaOH dosing pump, solenoid diaphragm"
-MFG,-,BLACK_ALK_HOLD,fabricated part,fabricated part set,5 BOM lines,models/mfg/BLACK_ALK_HOLD/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,-,BLACK_ALK_HOLD,fastener,M10 anchor,M10 anchor,ISO 3506 A4-70,4,models/mfg/BLACK_ALK_HOLD/fasteners.csv
-MFG,-,BLACK_ALK_HOLD,fastener,M8 x 30 lid bolt,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/BLACK_ALK_HOLD/fasteners.csv
-MFG,-,BLACK_DEWATER,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Gearmotor 0.09 kW, 10 rpm output: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-MFG,-,BLACK_DEWATER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Gearmotor 0.09 kW, 10 rpm output: run and fault (assumed)"
-MFG,-,BLACK_DEWATER,electronics,motor starter (contactor + overload),0.12 kW,IEC 60947-4-1,1,"Gearmotor 0.09 kW, 10 rpm output (assumed VFD at >= 0.75 kW)"
-MFG,-,BLACK_DEWATER,fabricated part,fabricated part set,4 BOM lines,models/mfg/BLACK_DEWATER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,-,BLACK_DEWATER,fastener,M10 anchor,M10 anchor,ISO 3506 A4-70,4,models/mfg/BLACK_DEWATER/fasteners.csv
-MFG,-,BLACK_DEWATER,fastener,M8 x 30 lid bolt,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/BLACK_DEWATER/fasteners.csv
-MFG,-,BLACK_DEWATER,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,-,BLACK_PASTEUR,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Transfer pump, magnetic drive: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-MFG,-,BLACK_PASTEUR,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Transfer pump, magnetic drive: run and fault (assumed)"
-MFG,-,BLACK_PASTEUR,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,"Transfer pump, magnetic drive (assumed VFD at >= 0.75 kW)"
-MFG,-,BLACK_PASTEUR,fabricated part,fabricated part set,5 BOM lines,models/mfg/BLACK_PASTEUR/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,-,BLACK_PASTEUR,fastener,M10 anchor,M10 anchor,ISO 3506 A4-70,4,models/mfg/BLACK_PASTEUR/fasteners.csv
-MFG,-,BLACK_PASTEUR,fastener,M8 x 30 lid bolt,M8 x 30 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/BLACK_PASTEUR/fasteners.csv
-MFG,-,BLACK_PASTEUR,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
 MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-171 one per bank half
 MFG,-,CONTROL,valve,"ESD valve, spring-return actuator",DN15,"316L, fail-safe, IEC 61511",2,SIF-173 one per bank half
-MFG,-,DIGESTER,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,"Biogas recirculation blower, diaphragm, about 1 L/min (assumed size)"
-MFG,-,DIGESTER,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,"Biogas recirculation blower, diaphragm, about 1 L/min"
-MFG,-,DIGESTER,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,"Biogas recirculation blower, diaphragm, about 1 L/min: run and fault (assumed)"
-MFG,-,DIGESTER,fabricated part,fabricated part set,6 BOM lines,models/mfg/DIGESTER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,-,DIGESTER,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,12,models/mfg/DIGESTER/fasteners.csv
-MFG,-,DIGESTER,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/DIGESTER/fasteners.csv
-MFG,-,EXPANDER,fabricated part,fabricated part set,13 BOM lines,models/mfg/EXPANDER/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,-,EXPANDER,fastener,M10,M10,A4-70,8,models/mfg/EXPANDER/fasteners.csv
-MFG,-,EXPANDER,fastener,M12,M12,A4-70,4,models/mfg/EXPANDER/fasteners.csv
-MFG,-,EXPANDER,fastener,M8,M8,A4-70,4,models/mfg/EXPANDER/fasteners.csv
-MFG,FARM,ABE,fabricated part,fabricated part set,6 BOM lines,models/mfg/ABE/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM,ABE,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,8,models/mfg/ABE/fasteners.csv
-MFG,FARM,ABE,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/ABE/fasteners.csv
-MFG,FARM,ACETOX,fabricated part,fabricated part set,6 BOM lines,models/mfg/ACETOX/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM,ACETOX,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,8,models/mfg/ACETOX/fasteners.csv
-MFG,FARM,ACETOX,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/ACETOX/fasteners.csv
-MFG,FARM,GLYOXAL,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Mineral wool insulation with SS cladding; recirculation pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-MFG,FARM,GLYOXAL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Mineral wool insulation with SS cladding; recirculation pump: run and fault (assumed)
-MFG,FARM,GLYOXAL,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,Mineral wool insulation with SS cladding; recirculation pump (assumed VFD at >= 0.75 kW)
-MFG,FARM,GLYOXAL,fabricated part,fabricated part set,6 BOM lines,models/mfg/GLYOXAL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM,GLYOXAL,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,8,models/mfg/GLYOXAL/fasteners.csv
-MFG,FARM,GLYOXAL,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/GLYOXAL/fasteners.csv
-MFG,FARM,GLYOXAL,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,FARM,GLYOXAL,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Mineral wool insulation with SS cladding; recirculation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
-MFG,FARM,HNO3,fabricated part,fabricated part set,7 BOM lines,models/mfg/HNO3/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM,HNO3,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,8,models/mfg/HNO3/fasteners.csv
-MFG,FARM,HNO3,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/HNO3/fasteners.csv
-MFG,FARM,HTC,fabricated part,fabricated part set,7 BOM lines,models/mfg/HTC/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM,HTC,fastener,3/4 in stud bolt,3/4 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,16,models/mfg/HTC/fasteners.csv
-MFG,FARM,IMID,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Mineral wool insulation with SS cladding; recirculation pump: drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-MFG,FARM,IMID,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Mineral wool insulation with SS cladding; recirculation pump: run and fault (assumed)
-MFG,FARM,IMID,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,Mineral wool insulation with SS cladding; recirculation pump (assumed VFD at >= 0.75 kW)
-MFG,FARM,IMID,fabricated part,fabricated part set,6 BOM lines,models/mfg/IMID/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM,IMID,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,8,models/mfg/IMID/fasteners.csv
-MFG,FARM,IMID,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/IMID/fasteners.csv
-MFG,FARM,IMID,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,FARM,IMID,seal,"mechanical seal, single",EN 12756,"SiC/SiC faces, FKM",1,Mineral wool insulation with SS cladding; recirculation pump: induction-driven pump assumed seal-type; BLDC pumps assumed magnetic drive
-MFG,FARM,YEAST,bearing,deep-groove ball bearing,6201-2Z,"ISO 15 / ISO 492 normal class, C3",2,"PIR insulation 50 mm with PE cladding; CO2 evolution; daily : drive and non-drive end, IEC 60072 frame 63 (assumed size)"
-MFG,FARM,YEAST,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,PIR insulation 50 mm with PE cladding; CO2 evolution; daily : run and fault (assumed)
-MFG,FARM,YEAST,electronics,motor starter (contactor + overload),0.18 kW,IEC 60947-4-1,1,PIR insulation 50 mm with PE cladding; CO2 evolution; daily  (assumed VFD at >= 0.75 kW)
-MFG,FARM,YEAST,fabricated part,fabricated part set,6 BOM lines,models/mfg/YEAST/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM,YEAST,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,8,models/mfg/YEAST/fasteners.csv
-MFG,FARM,YEAST,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/YEAST/fasteners.csv
-MFG,FARM,YEAST,protection,"inverse-time circuit breaker, 3-pole",15 A,UL 489 / IEC 60947-2,1,"NEC 430.52, from AQS-INV-002"
-MFG,FARM_EXT,ACEX,fabricated part,fabricated part set,6 BOM lines,models/mfg/ACEX/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM_EXT,ACEX,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,8,models/mfg/ACEX/fasteners.csv
-MFG,FARM_EXT,ACEX,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/ACEX/fasteners.csv
-MFG,FARM_EXT,ALD,fabricated part,fabricated part set,7 BOM lines,models/mfg/ALD/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM_EXT,ALD,fastener,1/2 in stud bolt,1/2 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,8,models/mfg/ALD/fasteners.csv
-MFG,FARM_EXT,BUCL,fabricated part,fabricated part set,7 BOM lines,models/mfg/BUCL/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM_EXT,BUCL,fastener,M10 x 40 lid bolt,M10 x 40 lid bolt with nut and washers,ISO 3506 A4-70,8,models/mfg/BUCL/fasteners.csv
-MFG,FARM_EXT,BUCL,fastener,M12 anchor,M12 anchor,ISO 3506 A4-70,3,models/mfg/BUCL/fasteners.csv
-MFG,FARM_EXT,FORM,fabricated part,fabricated part set,8 BOM lines,models/mfg/FORM/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM_EXT,FORM,fastener,1/2 in stud bolt,1/2 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,8,models/mfg/FORM/fasteners.csv
-MFG,FARM_EXT,MEAM,fabricated part,fabricated part set,8 BOM lines,models/mfg/MEAM/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
-MFG,FARM_EXT,MEAM,fastener,1/2 in stud bolt,1/2 in stud bolt with 2 heavy hex nuts,ASTM A193 B8M / A194 8M,8,models/mfg/MEAM/fasteners.csv
 MFG,MFG,COLD_MILL,bearing,deep-groove ball bearing,6206-2Z,"ISO 15 / ISO 492 normal class, C3",2,"Two-high cold rolling mill: main drive: drive and non-drive end, IEC 60072 frame 100L (assumed size)"
 MFG,MFG,COLD_MILL,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Two-high cold rolling mill: main drive: run and fault (assumed)
 MFG,MFG,COLD_MILL,electronics,variable-frequency drive,2.2 kW,IEC 61800-5-1,1,Two-high cold rolling mill: main drive (assumed VFD at >= 0.75 kW)
@@ -3153,7 +3054,6 @@ WTR,ROOF,ROOF_TANK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS 
 WTR,ROOF,ROOF_TANK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-DUCK-H2O: one at each end nozzle (assumed)
 WTR,ROOF,ROOF_TANK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,IA-WASH-FEED: one at each end nozzle (assumed)
 WTR,ROOF,ROOF_TANK,valve,isolation valve,DN15,"PVC-U true-union ball valve, MSS SP-122, EPDM seals",2,QUAIL_H2O: one at each end nozzle (assumed)
-WTR,boundary,ATMOS,fabricated part,fabricated part set,1 BOM lines,models/mfg/ATMOS/bom.csv and WORK_ORDER.md,1,unit work order; bought-in lines in the set are counted again in their own inventory
 WTR,digest,BLACK_DIGEST,bearing,deep-groove ball bearing,608-2Z,"ISO 15, normal class",2,Biogas recirculation diaphragm blower about 2 L/min (assumed size)
 WTR,digest,BLACK_DIGEST,electronics,BLDC driver,24/48 V DC,IEC 61800-5-1,1,Biogas recirculation diaphragm blower about 2 L/min
 WTR,digest,BLACK_DIGEST,electronics,PLC digital I/O point,24 V DC,IEC 61131-2,2,Biogas recirculation diaphragm blower about 2 L/min: run and fault (assumed)
