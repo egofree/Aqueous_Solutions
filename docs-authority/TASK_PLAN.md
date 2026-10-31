@@ -66,7 +66,7 @@ Table 2.1. Tasks by group
 | CRYO | Utility / header | 210 | 196 |
 | OIL | Process (Mass transform) | 195 | 182 |
 | HEAT | Utility / header | 180 | 168 |
-| MFG | Process (Mass transform) | 165 | 153 |
+| MFG | Process (Mass transform) | 165 | 154 |
 | POLYMERS | Process (Mass transform) | 165 | 154 |
 | GAS | Process (Mass transform) | 150 | 140 |
 | WTR | Utility / header | 136 | 127 |
@@ -78,7 +78,7 @@ Table 2.1. Tasks by group
 | DOCK | Export / dock | 2 | 2 |
 | PUMPED_HYDRO | Energy Storage System (Gravity) | 15 | 14 |
 | NUT | Process (Mass transform) | 15 | 14 |
-| | **Total** | **3267** | **3061** |
+| | **Total** | **3267** | **3062** |
 
 ## 3. Triage of open tasks
 
@@ -102,7 +102,6 @@ Table 3.1. Open tasks by triage tag
 
 | Triage | Open tasks |
 | --- | --- |
-| desk P2 | 1 |
 | hardware | 205 |
 
 ## 4. Unit task template
@@ -2670,7 +2669,7 @@ Sizing-driven changes to rates and layout are approved by default (task group X-
   - [x] MFG-REE_RECOVER-01 Process basis and mass/energy closure. Done when: duty sheet section 1 with in = out (kg/d) and kW from the graph. Depends: —. Evidence: `docs-authority/duties/REE_RECOVER.md` §1; mass in = out 0 kg/d, 0.3000 kW.
   - [x] MFG-REE_RECOVER-02 Sizing calculation. Done when: calculation with stated basis replacing the graph envelope; study size only is not done. Depends: MFG-REE_RECOVER-01. Evidence: `docs-authority/sizing/REE_RECOVER.md` (AQS-SIZE-REE_RECOVER).
   - [x] MFG-REE_RECOVER-03 P&ID sheet. Done when: P&ID drawing listing every edge, valve, and instrument tag. Depends: MFG-REE_RECOVER-01, MFG-REE_RECOVER-02. Evidence: `docs-authority/pid/REE_RECOVER.svg` (AQS-PID-001).
-  - [ ] MFG-REE_RECOVER-04 Nozzle schedule. Done when: docs-authority/nozzles/REE_RECOVER.csv, one row per edge. Depends: MFG-REE_RECOVER-03. Status: no piped process connections; nozzle schedule n/a. Triage: desk P2.
+  - [x] MFG-REE_RECOVER-04 Nozzle schedule. Done when: docs-authority/nozzles/REE_RECOVER.csv, one row per edge. Depends: MFG-REE_RECOVER-03. Evidence: `docs-authority/nozzles/REE_RECOVER.csv` (no piped process connections on the graph; drain and vent utilities only).
   - [x] MFG-REE_RECOVER-05 Line list and bores. Done when: DN, schedule, rating, and material per edge, calculated, not copied. Depends: MFG-REE_RECOVER-04, MFG-REE_RECOVER-02, X-PIP-01. Evidence: `docs-authority/LINE_LIST.md` (all 0 edges with DN + class; schedule/rating/material per class in AQS-PIP-003).
   - [x] MFG-REE_RECOVER-06 Internals. Done when: internals defined and sized, or stated none with basis. Depends: MFG-REE_RECOVER-02. Evidence: `docs-authority/INTERNALS.md` (internals disposition; AQS-DSN-INT-001).
   - [x] MFG-REE_RECOVER-07 Relief case. Done when: duty sheet section 6: case, destination, or atmospheric statement. Depends: MFG-REE_RECOVER-02, MFG-REE_RECOVER-03. Evidence: `docs-authority/duties/REE_RECOVER.md` §6 (C7 closed on MASTER_PLAN).

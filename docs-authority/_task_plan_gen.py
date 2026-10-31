@@ -130,6 +130,7 @@ def status(n,k):
     if k=='04':
         v=_NOZ.get(u)
         if v and v[1] and v[0]==0: return f'`docs-authority/nozzles/{u}.csv` (all {v[1]} process connections listed)'
+        if v and not v[1] and ex(f'docs-authority/nozzles/{u}.csv'): return f'`docs-authority/nozzles/{u}.csv` (no piped process connections on the graph; drain and vent utilities only)'
     if k=='05' and _ll_ok(u): return f'`docs-authority/LINE_LIST.md` (all {len(_EU.get(u,()))} edges with DN + class; schedule/rating/material per class in AQS-PIP-003)'
     if k=='07' and ex(d) and re.search(r'^6\. Relief',open(d).read(),re.M): return f'`{d}` §6 (C7 closed on MASTER_PLAN)'
     if k=='08':
